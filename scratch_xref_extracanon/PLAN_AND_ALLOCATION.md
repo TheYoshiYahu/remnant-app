@@ -390,3 +390,27 @@ anchor_check.py jasher jasher + pglast + verify_fidelity + resolve_check jasher 
 recon.py jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from
 /tmp/extracanon-xref-wt with keychain unlocked — 21 commits (85b660c..f115506) need to land on
 origin/main (still at 47a9e48); prod is authoritative meanwhile.
+
+## RECEIPT — Jasher Pack 3 (ch17–24, Abraham cycle) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **132 `jasher-*` threads / 469 members**, band 55000–55587,
+  per-ch(17-24) 5/4/6/5/5/5/6/5, 0 orphans. +41/131. Commit `5cf5108`. Six gates green.
+- Minions authored from the DUMP (Jasher numbering differs from standard — they verified each chapter's
+  actual content): circumcision covenant/name-change + Chittim-Tubal war=isles-of-Japheth (17→Gen17/Gen10/
+  Rom4:11/Jub15); circumcision+Mamre-visit+Sodom+Hedad-court (18→Gen17-18/Ezek16:49/2Pet2:6/Jub16); SODOM
+  cruelty cycle/Paltith-burned/Lot-delivered/brimstone (19→Gen19/Ezek16:49/Luke17:29/Jude7/Jub16); Sarah &
+  Abimelech at Gerar (20→Gen20); Hagar/Ishmael (21→Gen16/21/Gal4); Isaac/the binding-setup (22→Gen21-22);
+  Akedah/Sodom-aftermath (23); Eliezer's oath/Rebecca (24→Gen24).
+- ⚑ The blob-verse WARNING in the prompt WORKED: ch20 minion confirmed + handled the defect (only vv1-13
+  are separate records; standard 20:14-30 crammed into v13). Keep the warning in every Jasher pack prompt.
+  Dropped 1 stale jub19:10 self-link (Jubilees gap, caught by resolve_check).
+- Push blocked. origin/main 47a9e48; local HEAD `5cf5108` (22 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 1 ENOCH + JUBILEES COMPLETE + JASHER ch1-24 all LIVE = 819 threads/2993
+members. NEXT = Jasher Pack 4 ch25-32 (Abraham's death/Isaac; Esau & Jacob/the birthright sold/the
+blessing stolen; Jacob flees to Haran/Bethel; Laban/the wives → Gen23-29 — VERIFY each chapter vs the
+dump; keep the BLOB-VERSE warning). Then J5 ch33-40 … through ch91 (~8-9 more packs). Then Apocrypha
+(session253 @58000). METHOD: workflow (pack-3 script pattern + per-ch CONTEXT + blob-verse warning) →
+render → anchor_check.py jasher jasher + pglast + verify_fidelity + resolve_check jasher jasher → fold →
+audit → recon.py jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from
+/tmp/extracanon-xref-wt with keychain unlocked — 22 commits (85b660c..5cf5108) need to land on
+origin/main (still at 47a9e48); prod is authoritative meanwhile.

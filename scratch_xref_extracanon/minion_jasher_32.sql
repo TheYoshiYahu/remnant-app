@@ -1,0 +1,305 @@
+-- ----- fragment: minion_jasher_32.sql (session252 jasher 32) -----
+-- Source anchor: jasher/jasher ch32. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja32 (view _session252_ja32_lookup). Sort band base 55775, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja32_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-32-messengers-to-esau
+  ('jasher', 'jasher', 32, 1, 'canon', 'genesis', 32, 3, 'free', E'Genesis 32:3 — *And Jacob sent messengers before him to Esau his brother unto the land of Seir, the country of Edom.* Jasher 32:1''s embassy ''toward the land of Seir'' is the same canon sending to Esau in Edom.'),
+  ('jasher', 'jasher', 32, 5, 'canon', 'genesis', 32, 5, 'free', E'Genesis 32:5 — *And I have oxen, and asses, flocks, and menservants, and womenservants: and I have sent to tell my lord, that I may find grace in thy sight.* Jasher 32:5''s list of oxen, asses, cattle and servants ''to find favor in the sight of my Lord'' is the same message Genesis records verbatim.'),
+  ('jasher', 'jasher', 32, 13, 'canon', 'genesis', 32, 6, 'free', E'Genesis 32:6 — *And the messengers returned to Jacob, saying, We came to thy brother Esau, and also he cometh to meet thee, and four hundred men with him.* Jasher 32:13''s returning messengers reporting Esau ''comes to meet you with four hundred men'' is the canon''s dread report unchanged.'),
+  -- thread: jasher-32-prayer-of-jacob
+  ('jasher', 'jasher', 32, 15, 'canon', 'genesis', 32, 7, 'free', E'Genesis 32:7 — *Then Jacob was greatly afraid and distressed: and he divided the people that was with him, and the flocks, and herds, and the camels, into two bands.* Jasher 32:15''s ''Jacob was greatly afraid and he was distressed'' and the two-camp division (Jasher 32:24) are the canon''s same fear and division.'),
+  ('jasher', 'jasher', 32, 16, 'canon', 'genesis', 32, 9, 'free', E'Genesis 32:9 — *And Jacob said, O Elohim (God) of my father Abraham, and Elohim (God) of my father Isaac, Yahuah (LORD) which saidst unto me, Return unto thy country, and to thy kindred, and I will deal well with thee.* Jasher 32:16''s invocation of ''the Elohim of my fathers, Abraham and Isaac'' is the canon prayer Jasher unfolds at length.'),
+  ('jasher', 'jasher', 32, 21, 'canon', 'genesis', 32, 11, 'free', E'Genesis 32:11 — *Deliver me, I pray thee, from the hand of my brother, from the hand of Esau: for I fear him, lest he will come and smite me, and the mother with the children.* Jasher 32:21''s ''deliver me from the hands of my brother Esau, for I am greatly afraid of him'' is the canon plea word for word.'),
+  ('jasher', 'jasher', 32, 17, 'canon', 'genesis', 32, 12, 'free', E'Genesis 32:12 — *And thou saidst, I will surely do thee good, and make thy seed as the sand of the sea, which cannot be numbered for multitude.* Jasher 32:17''s ''I will make your seed as the stars of heaven... in your seed shall all the families of the earth be blessed'' is the covenant-seed oath the canon prayer leans on.'),
+  -- thread: jasher-32-angel-camps-mahanaim
+  ('jasher', 'jasher', 32, 28, 'canon', 'genesis', 32, 1, 'free', E'Genesis 32:1 — *And Jacob went on his way, and the angels of Elohim (God) met him.* Jasher 32:28''s ''Yahuah sent three angels of the angels of heaven'' to go before Esau expands the canon''s bare meeting of the angels of Elohim.'),
+  ('jasher', 'jasher', 32, 29, 'canon', 'genesis', 32, 2, 'free', E'Genesis 32:2 — *And when Jacob saw them, he said, This is Elohim''s (God''s) host: and he called the name of that place Mahanaim.* Jasher 32:29''s angel camps ''divided into four camps'' carry the ''host of Elohim'' and the Mahanaim (''two camps'') the canon names.'),
+  ('jasher', 'jasher', 32, 27, 'canon', 'genesis', 32, 8, 'free', E'Genesis 32:8 — *And said, If Esau come to the one company, and smite it, then the other company which is left shall escape.* Jasher 32:25''s two-camp safeguard (''if Esau come to one camp and slay it, the other camp... will escape'') matches the canon plan exactly, the deliverance of Jasher 32:27 answering it.'),
+  -- thread: jasher-32-present-to-esau
+  ('jasher', 'jasher', 32, 43, 'canon', 'genesis', 32, 16, 'free', E'Genesis 32:16 — *And he delivered them into the hand of his servants, every drove by themselves; and said unto his servants, Pass over before me, and put a space betwixt drove and drove.* Jasher 32:43-44''s ten droves ''each sort by itself'' with ''a space between the droves'' is the canon staging verbatim.'),
+  ('jasher', 'jasher', 32, 44, 'canon', 'genesis', 32, 17, 'free', E'Genesis 32:17 — *And he commanded the foremost, saying, When Esau my brother meeteth thee, and asketh thee, saying, Whose art thou? and whither goest thou? and whose are these before thee?* Jasher 32:44''s instruction for when Esau asks ''Whose are you, and whither do you go'' matches the canon''s commanded answer.'),
+  ('jasher', 'jasher', 32, 46, 'canon', 'genesis', 32, 20, 'free', E'Genesis 32:20 — *And say ye moreover, Behold, thy servant Jacob is behind us. For he said, I will appease him with the present that goeth before me, and afterward I will see his face; peradventure he will accept of me.* Jasher 32:46''s ''I will appease him with the present... and after this I will see his face, peradventure he will accept of me'' is the canon''s reasoning nearly word for word.'),
+  -- thread: jasher-32-wrestling-peniel-israel
+  ('jasher', 'jasher', 32, 48, 'canon', 'genesis', 32, 24, 'free', E'Genesis 32:24 — *And Jacob was left alone; and there wrestled a man with him until the breaking of the day.* Jasher 32:48''s ''Jacob was left by himself, and a man met him, and he wrestled with him that night until the breaking of the day'' is the canon scene verbatim.'),
+  ('jasher', 'jasher', 32, 49, 'canon', 'genesis', 32, 28, 'free', E'Genesis 32:28 — *And he said, Thy name shall be called no more Jacob, but Yashar''el (Israel): for as a prince hast thou power with Elohim (God) and with men, and hast prevailed.* Jasher 32:49''s blessing at the break of day is the canon''s renaming — the name Israel born of this wrestling.'),
+  ('jasher', 'jasher', 32, 50, 'canon', 'genesis', 32, 30, 'free', E'Genesis 32:30 — *And Jacob called the name of the place Peniel: for I have seen Elohim (God) face to face, and my life is preserved.* Jasher 32:50''s sun rising as he passed the brook follows the canon''s Peniel — ''I have seen Elohim face to face.'''),
+  ('jasher', 'jasher', 32, 48, 'canon', 'hosea', 12, 4, 'free', E'Hosea 12:4 — *Yea, he had power over the angel, and prevailed: he wept, and made supplication unto him: he found him in Beth-el, and there he spake with us.* The prophet reads Jasher 32:48''s all-night wrestling as Israel''s defining ''power over the angel,'' the nation''s own name carried in the grip.'),
+  -- thread: jasher-32-esau-met-and-parted
+  ('jasher', 'jasher', 32, 56, 'canon', 'genesis', 33, 4, 'free', E'Genesis 33:4 — *And Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept.* Jasher 32:56''s ''he ran toward him and he embraced him, and he fell upon his neck, and they kissed and they wept'' is the canon reunion verbatim.'),
+  ('jasher', 'jasher', 32, 54, 'canon', 'genesis', 33, 3, 'free', E'Genesis 33:3 — *And he passed over before them, and bowed himself to the ground seven times, until he came near to his brother.* Jasher 32:54''s ''he bowed down seven times until he approached his brother'' matches the canon''s sevenfold bowing.'),
+  ('jasher', 'jasher', 32, 64, 'canon', 'genesis', 33, 10, 'free', E'Genesis 33:10 — *And Jacob said, Nay, I pray thee, if now I have found grace in thy sight, then receive my present at my hand: for therefore I have seen thy face, as though I had seen the face of Elohim (God), and thou wast pleased with me.* Jasher 32:64''s ''as though I had seen a god-like face, because you were pleased with me'' is the canon''s face-of-Elohim word.'),
+  ('jasher', 'jasher', 32, 73, 'jubilees', 'jubilees', 29, 11, 'extras', E'Jubilees 29:11 — *And on that day Esau, his brother, came to him, and he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents.* Jasher 32:73''s parting — Esau back to Seir, Jacob on to Canaan — is the same reconciliation and departure the Jubilees apparatus records.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja32_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja32_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-messengers-to-esau',
+       E'Jacob sends word to Esau in Seir — the messengers and the blessing',
+       E'Jasher opens the return-home reckoning: *And at that time Jacob sent messengers to his brother Esau toward the land of Seir, and he spoke to him words of supplication* (Jasher 32:1), the servant pleading *Let not my Lord imagine that my father''s blessing with which he did bless me has proved beneficial to me* (Jasher 32:2). This is Genesis told fuller. The canon carries the same embassy and the same Seir address: *And Jacob sent messengers before him to Esau his brother unto the land of Seir, the country of Edom* (Genesis 32:3). Jasher''s long catalogue of oxen, asses, cattle and servants is Genesis compressed: *And I have oxen, and asses, flocks, and menservants, and womenservants: and I have sent to tell my lord, that I may find grace in thy sight* (Genesis 32:5). And the dread report comes back word for word — four hundred men: *And the messengers returned to Jacob, saying, We came to thy brother Esau, and also he cometh to meet thee, and four hundred men with him* (Genesis 32:6). It ain''t new — the despised-birthright brothers (election precedes confession) close their twenty-year breach exactly as the Torah records it.',
+       sv.verse_id, ev.verse_id, 'extras', 55775
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-prayer-of-jacob',
+       E'Jacob''s prayer — the covenant seed pleaded back to Yahuah',
+       E'Afraid and distressed, Jacob prays the covenant back to its Giver: *And Jacob prayed to Yahuah his Elohim (the Lord his God), and he said, O Yahuah Elohim (O Lord God) of my fathers, Abraham and Isaac, you did say to me when I went away from my father''s house, saying* (Jasher 32:16). He rehearses the promise — *I will make your seed as the stars of heaven... and in you and in your seed shall all the families of the earth be blessed* (Jasher 32:17) — and pleads *deliver me, I pray you, also from the hands of my brother Esau, for I am greatly afraid of him* (Jasher 32:21). The Torah holds the same fear and the same prayer, the chosen seed clinging to the word given: *Then Jacob was greatly afraid and distressed* (Genesis 32:7); *And Jacob said, O Elohim (God) of my father Abraham, and Elohim (God) of my father Isaac, Yahuah (LORD) which saidst unto me, Return unto thy country, and to thy kindred, and I will deal well with thee* (Genesis 32:9); *Deliver me, I pray thee, from the hand of my brother, from the hand of Esau: for I fear him* (Genesis 32:11). The seed-as-stars promise Jasher quotes is the canon''s own oath kept: *And thou saidst, I will surely do thee good, and make thy seed as the sand of the sea, which cannot be numbered for multitude* (Genesis 32:12). Torah-before-Sinai: the father calls on the Name and is heard.',
+       sv.verse_id, ev.verse_id, 'extras', 55778
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-angel-camps-mahanaim',
+       E'The angel host turns Esau back — Mahanaim, two camps',
+       E'Where the canon names the place where the angels met Jacob, Jasher tells the deliverance the name was given for: *And Yahuah (the Lord) heard the prayer of Jacob on that day, and Yahuah (the Lord) then delivered Jacob from the hands of his brother Esau* (Jasher 32:27). Heaven''s host rides out — *And Yahuah (the Lord) sent three angels of the angels of heaven, and they went before Esau and came to him* (Jasher 32:28) — appearing as four terrifying camps that throw Esau from his horse, the warriors crying *Surely we are the servants of Jacob, who is the servant of Elohim, and who then can stand against us?* (Jasher 32:32). The Torah opens this very chapter with that meeting and the place-name it leaves behind: *And Jacob went on his way, and the angels of Elohim (God) met him* (Genesis 32:1); *And when Jacob saw them, he said, This is Elohim''s (God''s) host: and he called the name of that place Mahanaim* (Genesis 32:2) — Mahanaim, ''two camps,'' the very doubling Jasher fills with four angel hosts. The chosen seed is kept by heaven''s own armies; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55781
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=27
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=40
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-present-to-esau',
+       E'The present sent ahead — droves with a space between',
+       E'Jacob appeases his brother with a graded gift: *And this is the amount of the present which Jacob chose from his flock to give to his brother Esau... two hundred and forty head from the flocks... thirty each... of the herds he chose fifty kine* (Jasher 32:42), set in droves with his servants charged *Keep yourselves at a distance from each other, and put a space between the droves* (Jasher 32:44), the word to carry being *We are the servants of Jacob... and behold Jacob comes behind us* (Jasher 32:44). The Torah gives the same livestock present and the same staging: *And he delivered them into the hand of his servants, every drove by themselves; and said unto his servants, Pass over before me, and put a space betwixt drove and drove* (Genesis 32:16); *And he commanded the foremost, saying, When Esau my brother meeteth thee, and asketh thee, saying, Whose art thou? and whither goest thou? and whose are these before thee?* (Genesis 32:17). And Jacob''s stated strategy is the canon''s own reasoning: *For he said, I will appease him with the present that goeth before me, and afterward I will see his face; peradventure he will accept of me* (Genesis 32:20) — which Jasher echoes as *I will appease him with the present that goes to him, and after this I will see his face, peradventure he will accept of me* (Jasher 32:46).',
+       sv.verse_id, ev.verse_id, 'extras', 55784
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=41
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=47
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-wrestling-peniel-israel',
+       E'Wrestling at Jabbok — thy name shall be Israel, I have seen Elohim face to face',
+       E'The high scene: alone at the ford, Jacob is gripped till dawn — *And when he passed all belonging to him over the brook, Jacob was left by himself, and a man met him, and he wrestled with him that night until the breaking of the day, and the hollow of Jacob''s thigh was out of joint through wrestling with him* (Jasher 32:48); *And at the break of day the man left Jacob there, and he blessed him and went away, and Jacob passed the brook at the break of day, and he halted upon his thigh* (Jasher 32:49). The Torah carries the wrestling, the new name, and the face-to-face: *And Jacob was left alone; and there wrestled a man with him until the breaking of the day* (Genesis 32:24); *Thy name shall be called no more Jacob, but Yashar''el (Israel): for as a prince hast thou power with Elohim (God) and with men, and hast prevailed* (Genesis 32:28); *And Jacob called the name of the place Peniel: for I have seen Elohim (God) face to face, and my life is preserved* (Genesis 32:30). The prophet seals it as the nation''s own birth-mark: *He took his brother by the heel in the womb, and by his strength he had power with Elohim (God)* (Hosea 12:3); *Yea, he had power over the angel, and prevailed: he wept, and made supplication unto him* (Hosea 12:4). Israel is the name borne out of this grip — the man named for prevailing with Elohim. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55787
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=47
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=50
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-esau-met-and-parted',
+       E'Esau met in peace — they part, Jacob toward Canaan',
+       E'The dreaded meeting turns to embrace: *And Jacob hastened and divided his children to his wives and his handmaids... And he passed before his children and wives to meet his brother, and he bowed down to the ground, yea he bowed down seven times until he approached his brother* (Jasher 32:53-54); *And when Esau saw Jacob running toward him, he also ran toward him and he embraced him, and he fell upon his neck, and they kissed and they wept* (Jasher 32:56). Jacob presses the gift with the face-of-Elohim word: *if now I have found favor in your sight, then receive my present at my hand, for I have therefore seen your face, as though I had seen a god-like face* (Jasher 32:64), and they part, Esau to Seir, *Jacob and all belonging to him went that day as far as the extremity of the land of Canaan* (Jasher 32:73). Genesis 33 holds the very same reunion: *And Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept* (Genesis 33:4); *for therefore I have seen thy face, as though I had seen the face of Elohim (God), and thou wast pleased with me* (Genesis 33:10); *So Esau returned that day on his way unto Seir* (Genesis 33:16). And Jubilees, narrating the same days, seals the parting: *And on that day Esau, his brother, came to him, and he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents* (Jubilees 29:11). Three witnesses, one event — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55790
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=51
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=73
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-32-messengers-to-esau
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:3 — *And Jacob sent messengers before him to Esau his brother unto the land of Seir, the country of Edom.* Jasher 32:1''s embassy ''toward the land of Seir'' is the same canon sending to Esau in Edom.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-messengers-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 32:5 — *And I have oxen, and asses, flocks, and menservants, and womenservants: and I have sent to tell my lord, that I may find grace in thy sight.* Jasher 32:5''s list of oxen, asses, cattle and servants ''to find favor in the sight of my Lord'' is the same message Genesis records verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-messengers-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 32:6 — *And the messengers returned to Jacob, saying, We came to thy brother Esau, and also he cometh to meet thee, and four hundred men with him.* Jasher 32:13''s returning messengers reporting Esau ''comes to meet you with four hundred men'' is the canon''s dread report unchanged.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-messengers-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-32-prayer-of-jacob
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:7 — *Then Jacob was greatly afraid and distressed: and he divided the people that was with him, and the flocks, and herds, and the camels, into two bands.* Jasher 32:15''s ''Jacob was greatly afraid and he was distressed'' and the two-camp division (Jasher 32:24) are the canon''s same fear and division.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-prayer-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 32:9 — *And Jacob said, O Elohim (God) of my father Abraham, and Elohim (God) of my father Isaac, Yahuah (LORD) which saidst unto me, Return unto thy country, and to thy kindred, and I will deal well with thee.* Jasher 32:16''s invocation of ''the Elohim of my fathers, Abraham and Isaac'' is the canon prayer Jasher unfolds at length.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-prayer-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 32:11 — *Deliver me, I pray thee, from the hand of my brother, from the hand of Esau: for I fear him, lest he will come and smite me, and the mother with the children.* Jasher 32:21''s ''deliver me from the hands of my brother Esau, for I am greatly afraid of him'' is the canon plea word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-prayer-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 32:12 — *And thou saidst, I will surely do thee good, and make thy seed as the sand of the sea, which cannot be numbered for multitude.* Jasher 32:17''s ''I will make your seed as the stars of heaven... in your seed shall all the families of the earth be blessed'' is the covenant-seed oath the canon prayer leans on.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-prayer-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-32-angel-camps-mahanaim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:1 — *And Jacob went on his way, and the angels of Elohim (God) met him.* Jasher 32:28''s ''Yahuah sent three angels of the angels of heaven'' to go before Esau expands the canon''s bare meeting of the angels of Elohim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-angel-camps-mahanaim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 32:2 — *And when Jacob saw them, he said, This is Elohim''s (God''s) host: and he called the name of that place Mahanaim.* Jasher 32:29''s angel camps ''divided into four camps'' carry the ''host of Elohim'' and the Mahanaim (''two camps'') the canon names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-angel-camps-mahanaim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 32:8 — *And said, If Esau come to the one company, and smite it, then the other company which is left shall escape.* Jasher 32:25''s two-camp safeguard (''if Esau come to one camp and slay it, the other camp... will escape'') matches the canon plan exactly, the deliverance of Jasher 32:27 answering it.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-angel-camps-mahanaim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-32-present-to-esau
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:16 — *And he delivered them into the hand of his servants, every drove by themselves; and said unto his servants, Pass over before me, and put a space betwixt drove and drove.* Jasher 32:43-44''s ten droves ''each sort by itself'' with ''a space between the droves'' is the canon staging verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-present-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=43
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 32:17 — *And he commanded the foremost, saying, When Esau my brother meeteth thee, and asketh thee, saying, Whose art thou? and whither goest thou? and whose are these before thee?* Jasher 32:44''s instruction for when Esau asks ''Whose are you, and whither do you go'' matches the canon''s commanded answer.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-present-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=44
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 32:20 — *And say ye moreover, Behold, thy servant Jacob is behind us. For he said, I will appease him with the present that goeth before me, and afterward I will see his face; peradventure he will accept of me.* Jasher 32:46''s ''I will appease him with the present... and after this I will see his face, peradventure he will accept of me'' is the canon''s reasoning nearly word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-present-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=46
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-32-wrestling-peniel-israel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:24 — *And Jacob was left alone; and there wrestled a man with him until the breaking of the day.* Jasher 32:48''s ''Jacob was left by himself, and a man met him, and he wrestled with him that night until the breaking of the day'' is the canon scene verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-wrestling-peniel-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=48
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 32:28 — *And he said, Thy name shall be called no more Jacob, but Yashar''el (Israel): for as a prince hast thou power with Elohim (God) and with men, and hast prevailed.* Jasher 32:49''s blessing at the break of day is the canon''s renaming — the name Israel born of this wrestling.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-wrestling-peniel-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=49
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 32:30 — *And Jacob called the name of the place Peniel: for I have seen Elohim (God) face to face, and my life is preserved.* Jasher 32:50''s sun rising as he passed the brook follows the canon''s Peniel — ''I have seen Elohim face to face.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-wrestling-peniel-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hosea 12:4 — *Yea, he had power over the angel, and prevailed: he wept, and made supplication unto him: he found him in Beth-el, and there he spake with us.* The prophet reads Jasher 32:48''s all-night wrestling as Israel''s defining ''power over the angel,'' the nation''s own name carried in the grip.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-wrestling-peniel-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=48
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=12 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-32-esau-met-and-parted
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 33:4 — *And Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept.* Jasher 32:56''s ''he ran toward him and he embraced him, and he fell upon his neck, and they kissed and they wept'' is the canon reunion verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-esau-met-and-parted'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=56
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 33:3 — *And he passed over before them, and bowed himself to the ground seven times, until he came near to his brother.* Jasher 32:54''s ''he bowed down seven times until he approached his brother'' matches the canon''s sevenfold bowing.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-esau-met-and-parted'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=54
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 33:10 — *And Jacob said, Nay, I pray thee, if now I have found grace in thy sight, then receive my present at my hand: for therefore I have seen thy face, as though I had seen the face of Elohim (God), and thou wast pleased with me.* Jasher 32:64''s ''as though I had seen a god-like face, because you were pleased with me'' is the canon''s face-of-Elohim word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-esau-met-and-parted'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=64
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 29:11 — *And on that day Esau, his brother, came to him, and he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents.* Jasher 32:73''s parting — Esau back to Seir, Jacob on to Canaan — is the same reconciliation and departure the Jubilees apparatus records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-esau-met-and-parted'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=73
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=29 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
