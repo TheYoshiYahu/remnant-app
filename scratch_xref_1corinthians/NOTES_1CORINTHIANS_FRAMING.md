@@ -195,3 +195,51 @@ unresolved, pglast 68 stmts on the assembled migration).
   DECISION: Paul's authority for assembly order IS the law — Torah as living authority for the
   gathered. Long pastoral middle (14:1–20, 22–32, 36–40) honestly "none warranted."
 - **Extras:** ch13 one clean add (Sirach 40:17); ch14 zero (assembly-order is Tanakh-rooted).
+
+---
+
+## PACK 6 (ch15–16) — LIVE in prod, applied 2026-06-11. FINAL pack. Resurrection climax (blessing).
+10 threads / 35 cross_refs / 35 members, per-ch 7/3, band 6950–6981.
+
+### Load-bearing / framework-sensitive decisions:
+- **15:3–4 *died and rose the third day according to the scriptures*** — Isaiah 53:5,6,11 (suffering
+  servant) + Hosea 6:2 (*in the third day he will raise us up*) + Jonah 1:17. DECISION: Paul's *the
+  scriptures* = the Tanakh witness; built on the actual texts.
+- **★ BLESSING — 15:45 *the first man Adam / the last Adam* (slug `1-corinthians-15-the-first-man-adam-and-the-last-adam-the-spiritual-body-genesis-2`)**
+  — built on Genesis 2:7 (the cited verse) + Wisdom 2:23, 3:1 (immortality, image of eternity) +
+  2 Esdras 7:32 (the earth restores those asleep). DECISION: **the resurrection body is REAL and
+  transformed — the natural raised spiritual — NOT a platonic escape from the body, NOT a disembodied
+  immortal-soul heaven.** The two Adams: first of dust/living-soul, last life-giving-spirit. Summary
+  surfaced to Yoshi.
+- **★ BLESSING — 15:51–52 *the last trump* (slug `1-corinthians-15-the-last-trump-we-shall-all-be-changed-isaiah-27-1-thessalonians-4`)**
+  — built on **Isaiah 27:13 (the great trumpet + the ingathering of the scattered/outcast seed)** +
+  1 Thessalonians 4:16 (the trump of Elohim, the dead in Messiah raised) + Revelation 11:15 (the
+  seventh/last trumpet, the kingdom). DECISION: **ONE last-trump event — the trumpet that gathers the
+  outcasts home is the trumpet that raises the dead** (ties the resurrection to the two-house
+  ingathering; cross-links to the live Revelation apparatus 11:15/11:18). Summary surfaced to Yoshi.
+- **★ Christology — 15:24–28 *the Son himself shall be subject* (slug `1-corinthians-15-he-must-reign-till-all-enemies-under-his-feet-the-son-subject-psalm-110-8`)**
+  — built on Psalm 110:1 + Psalm 8:6. DECISION: the Son delivers up the kingdom to Elohim the Father
+  and is himself subject — **the Formed Son ordered under the Father, NOT co-equal-persons.** Consistent
+  with 8:6 (one Elohim the Father / one Lord Yahusha) and 11:3 (the head of Messiah is Elohim).
+- **15:21–22 *as in Adam all die, in Messiah made alive*** — Genesis 2:17, 3:19 + Romans 5:12,18 +
+  2 Esdras 7:29. **15:54–55 death-swallowed-up** — Isaiah 25:8 + Hosea 13:14 + 1 Enoch 51:1 (earth
+  gives back the dead) + 2 Maccabees 7:9 (the King of the world will raise us up). Bodily-resurrection
+  frame held throughout; extras all clean apocrypha/enoch pulls, fidelity-verified.
+- **★ 16:2 *upon the first day of the week*** — DECISION: explicitly a **weekly collection/fund-
+  administration day, NOT a sabbath-change** (no transfer of the seventh-day Sabbath; "to read a
+  sabbath-change into it is to read in what is not there"). NO thread built on a sabbath-transfer
+  reading. Guard noted in the file header + the collection thread summary. **If Yoshi ever sees a
+  first-day-of-the-week question raised, this is the controlling framing.**
+- **16:1–4 the collection for the saints (slug `...the-nations-ministering-to-jerusalem-acts-11-romans-15`)**
+  — Acts 11:29–30, 24:17 + Romans 15:25–27. DECISION: the nations ministering material things to
+  Israel (the debt of the nations to Israel) — the grafted-in serving the mother-assembly, consistent
+  with the two-house/grafting frame. **16:13 be-strong** on Deut 31:6 / Joshua 1:7,9 / Psalm 31:24;
+  **16:22 Maranatha** on Psalm 96:13 / 98:9 (Yahuah comes to judge) + Revelation 22:20.
+
+---
+
+## ✅✅ 1 CORINTHIANS COMPLETE — chapters 1–16. 56 threads / 202 members, band 6600–6981,
+migration `session228_1corinthians_cross_references.sql`. Per-chapter threads:
+3/3/4/4/4/4/3/3/4/5/2/3/2/2/7/3. Every pack five-gates-green + LIVE resolve_check 0 unresolved +
+exact reconciliation. NEXT BOOK per roadmap: **2 Corinthians (band 7000, session229)** — packs
+1–4 · 5–7 · 8–9 · 10–13.
