@@ -9414,6 +9414,2057 @@ SELECT t.id, x.id, 3, E'Revelation 20:15 — *And whosoever was not found writte
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1enoch_45.sql (session250 1-enoch 45) -----
+-- Source anchor: enoch/1-enoch ch45. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en45 (view _session250_en45_lookup). Sort band base 51100, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en45_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-45-elect-one-throne-of-glory
+  ('enoch', '1-enoch', 45, 3, 'canon', 'matthew', 25, 31, 'free', E'Matthew 25:31 — *When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory:* Yahusha takes up Enoch''s exact image — the Son of Adam seated on the throne of glory to judge — which 1 Enoch 45:3 sets at the head of the Second Parable.'),
+  ('enoch', '1-enoch', 45, 3, 'canon', 'matthew', 19, 28, 'free', E'Matthew 19:28 — *And Yahusha (Jesus) said unto them, Verily I say unto you, That ye which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar''el (Israel).* The throne of glory that tries works in 1 Enoch 45:3 is the same seat from which the Son of Adam judges the regathered twelve tribes.'),
+  ('enoch', '1-enoch', 45, 3, 'canon', 'daniel', 7, 13, 'free', E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees one *like* the Son of Adam (the kaph; he resembles mortal-man because he took flesh) while 1 Enoch 45:3 names that same enthroned Elect One — both land on Yahusha.'),
+  ('enoch', '1-enoch', 45, 3, 'enoch', '1-enoch', 62, 1, 'extras', E'1 Enoch 62:1 — *And thus Yahuah (God) of Spirits named the Elect One, And seated him on the throne of His glory, And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* The Father seats and names the Elect One to weigh deeds — the same throne-of-glory judgement Enoch 45:3 announces.'),
+  ('enoch', '1-enoch', 45, 3, 'enoch', '1-enoch', 51, 3, 'extras', E'1 Enoch 51:3 — *And the Elect One shall in those days sit on My throne, And his mouth shall pour forth all the secrets of wisdom and counsel: For Yahuah (God) of Spirits hath given (them) to him and hath glorified him.* The Father''s own throne is given to the Formed Son — Enoch 45:3''s Elect One enthroned to try works, glorified by the Head of Days.'),
+  -- thread: 1-enoch-45-new-heavens-new-earth-for-the-elect
+  ('enoch', '1-enoch', 45, 4, 'canon', 'isaiah', 65, 17, 'free', E'Isaiah 65:17 — *For, behold, I create new heavens and a new earth: and the former shall not be remembered, nor come into mind.* The Father''s promise to create new heavens and a new earth is the very change Enoch 45:4 records Him speaking over the day of the Elect One.'),
+  ('enoch', '1-enoch', 45, 4, 'canon', 'isaiah', 66, 22, 'free', E'Isaiah 66:22 — *For as the new heavens and the new earth, which I will make, shall remain before me, saith Yahuah (LORD), so shall your seed and your name remain.* The enduring new heavens and earth guarantee the elect''s enduring name — the dwelling Enoch 45:4 prepares for the Elect One among His people.'),
+  ('enoch', '1-enoch', 45, 4, 'canon', 'revelation', 21, 3, 'free', E'Revelation 21:3 — *And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God).* John sees consummated what Enoch 45:4 foretells: the Elect One caused to dwell among His people on the renewed earth.'),
+  ('enoch', '1-enoch', 45, 4, 'canon', 'revelation', 21, 1, 'free', E'Revelation 21:1 — *And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away; and there was no more sea.* The passing of the first heaven and earth is the very changing of heaven and earth Yahuah (God) of Spirits declares in 1 Enoch 45:4.'),
+  ('enoch', '1-enoch', 45, 4, 'jubilees', 'jubilees', 1, 29, 'extras', E'Jubilees 1:29 — *...from the day of the new creation when the heavens and the earth shall be renewed and all their creation according to the powers of the heaven, and according to all the creation of the earth, until the sanctuary of Yahuah (God) shall be made in Jerusalem on Mount Zion, and all the luminaries be renewed for healing and for peace and for blessing for all the elect of Yashar''el (Israel)...* Jubilees ties the renewed heaven and earth to the elect of Israel — the same renewal Enoch 45:4 makes for the elect to dwell.'),
+  -- thread: 1-enoch-45-election-named-and-chosen
+  ('enoch', '1-enoch', 45, 12, 'enoch', '1-enoch', 48, 3, 'extras', E'1 Enoch 48:3 — *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* The Elect One who chooses the righteous in 1 Enoch 45:12 was Himself named before creation — election rooted before the worlds.'),
+  ('enoch', '1-enoch', 45, 12, 'enoch', '1-enoch', 48, 6, 'extras', E'1 Enoch 48:6 — *And for this reason hath he been chosen and hidden before Him, Before the creation of the world and for evermore.* The Son chosen and hidden before the creation of the world is the One who chooses the righteous in Enoch 45:12 — the Lamb foreknown before the foundation of the world.'),
+  ('enoch', '1-enoch', 45, 12, 'enoch', '1-enoch', 47, 3, 'extras', E'1 Enoch 47:3 — *In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him.* The books of the living hold the named righteous whom Enoch 45:12 says He shall choose to be saved.'),
+  ('enoch', '1-enoch', 45, 12, 'canon', 'isaiah', 42, 1, 'free', E'Isaiah 42:1 — *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles.* The Father''s own "mine elect" Servant is the Elect One of Enoch who chooses the righteous in 45:12 to bring forth judgement.'),
+  -- thread: 1-enoch-45-sinners-as-straw-furnace-of-fire
+  ('enoch', '1-enoch', 45, 6, 'canon', 'matthew', 13, 42, 'free', E'Matthew 13:42 — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* Yahusha''s furnace of fire for the wicked is the very furnace into which Enoch 45:6 casts the sinners.'),
+  ('enoch', '1-enoch', 45, 6, 'canon', 'matthew', 13, 43, 'free', E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* The righteous shining as the sun matches Enoch 45:9, the bright counterpart to the sinners-as-straw of 45:5-6.'),
+  ('enoch', '1-enoch', 45, 5, 'canon', 'malachi', 4, 1, 'free', E'Malachi 4:1 — *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith Yahuah Tseva''ot (LORD of hosts), that it shall leave them neither root nor branch.* The wicked as stubble in the burning day is Enoch 45:5''s sinners as straw in the unquenchable fire.'),
+  ('enoch', '1-enoch', 45, 5, 'apocrypha', 'the-wisdom-of-solomon', 3, 7, 'extras', E'Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The righteous flaming over the stubble is the bright reverse of Enoch 45:5, where the sinners themselves become the straw that burns.'),
+  -- thread: 1-enoch-45-kings-and-mighty-cast-from-thrones
+  ('enoch', '1-enoch', 45, 7, 'enoch', '1-enoch', 46, 4, 'extras', E'1 Enoch 46:4 — *And this Son of Adam whom thou hast seen shall raise up the kings and the mighty from their seats, [And the strong from their thrones] And shall loosen the reins of the strong, And break the teeth of the sinners.* The named Son of Adam casts the kings and mighty from their thrones — the very judgement Enoch 45:7 enacts on the rulers who possess the earth.'),
+  ('enoch', '1-enoch', 45, 7, 'canon', 'revelation', 6, 15, 'free', E'Revelation 6:15 — *And the kings of the earth, and the great men, and the rich men, and the chief captains, and the mighty men, and every bondman, and every free man, hid themselves in the dens and in the rocks of the mountains;* John''s kings and mighty fleeing the throne are Enoch 45:7''s kings cast down from their thrones in shame.'),
+  ('enoch', '1-enoch', 45, 7, 'canon', 'revelation', 6, 17, 'free', E'Revelation 6:17 — *For the great day of his wrath is come; and who shall be able to stand?* The great day from which no king can stand is Enoch 45:7''s day when the mighty are cast from their thrones into the fire.'),
+  ('enoch', '1-enoch', 45, 7, 'canon', 'isaiah', 11, 4, 'free', E'Isaiah 11:4 — *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* The Branch who slays the wicked with the breath of his lips is the Elect One who casts the mighty down in Enoch 45:7.'),
+  ('enoch', '1-enoch', 45, 7, 'canon', 'psalms', 2, 9, 'free', E'Psalm 2:9 — *Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel.* The enthroned Son shattering the rulers'' kingdoms is Enoch 45:7''s casting of the kings and mighty from their thrones.'),
+  -- thread: 1-enoch-45-resurrection-earth-and-sheol-give-back
+  ('enoch', '1-enoch', 45, 11, 'canon', 'daniel', 12, 2, 'free', E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The sleepers in the dust waking to two ends is the resurrection Enoch 45:11 frames as the earth and Sheol giving back their dead.'),
+  ('enoch', '1-enoch', 45, 11, 'canon', 'john', 5, 28, 'free', E'John 5:28 — *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,* The hour when the graves hear the Son''s voice is Enoch 45:11''s day when the earth gives back what was entrusted to it.'),
+  ('enoch', '1-enoch', 45, 11, 'canon', 'isaiah', 26, 19, 'free', E'Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* The earth casting out its dead is the very giving-back Enoch 45:11 records of the earth and Sheol.'),
+  ('enoch', '1-enoch', 45, 11, 'enoch', '1-enoch', 51, 1, 'extras', E'1 Enoch 51:1 — *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes. 5a. For in those days the Elect One shall arise,* Enoch''s own near-verbatim parallel names the Elect One who arises when the earth gives back its dead — the resurrection of 45:11.'),
+  ('enoch', '1-enoch', 45, 11, 'apocrypha', '2-esdras', 7, 32, 'extras', E'2 Esdras 7:32 — *And the earth shall restore those that are asleep in her, and so shall the dust those that dwell in silence, and the secret places shall deliver those souls that were committed to them.* The earth restoring its sleepers is Enoch 45:11''s earth and Sheol giving back what was entrusted to them.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en45_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en45_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-45-elect-one-throne-of-glory',
+       E'The Elect One on the throne of glory tries their works',
+       E'The Second Parable opens with judgement seated: *On that day Mine Elect One shall sit on the throne of glory and shall try their works, and their place shall be nothing and their dwelling shall be with the faithless.* (1 Enoch 45:3). The Elect One is the Formed Son ordered under the Head of Days (the formless Father) — the same figure Enoch later *names*: *And thus Yahuah (God) of Spirits named the Elect One, And seated him on the throne of His glory, And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* (1 Enoch 62:1), and again *And the Elect One shall in those days sit on My throne, And his mouth shall pour forth all the secrets of wisdom and counsel: For Yahuah (God) of Spirits hath given (them) to him and hath glorified him.* (1 Enoch 51:3). When Yahusha says *When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory:* (Matthew 25:31), and *in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar''el (Israel).* (Matthew 19:28), the Gospel is not coining a phrase — it is taking up Enoch''s own. Daniel sees the figure under the kaph-comparative — *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days* (Daniel 7:13) — *like* mortal-man because he took flesh while remaining the Formed cloud-rider; Enoch NAMES that same One enthroned. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51100
+  FROM _session250_en45_lookup sv, _session250_en45_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=45 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-45-new-heavens-new-earth-for-the-elect',
+       E'Heaven and earth changed for the elect to dwell',
+       E'Judgement is not the end but a renewal: *And on that day I will cause Mine Elect One to dwell among them, and I will change the heaven and the earth and the light and the darkness, and I will make the earth a thing of light and the darkness a thing of darkness.* (1 Enoch 45:4). This is the Tanakh''s own promise: *For, behold, I create new heavens and a new earth: and the former shall not be remembered, nor come into mind.* (Isaiah 65:17), and *For as the new heavens and the new earth, which I will make, shall remain before me, saith Yahuah (LORD), so shall your seed and your name remain.* (Isaiah 66:22). John sees it consummated — *And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away; and there was no more sea.* (Revelation 21:1), *And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband.* (Revelation 21:2), *And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God).* (Revelation 21:3) — the Elect One dwelling among His people on a renewed earth, exactly Enoch''s word. Jubilees binds the renewed creation to the elect of Israel: *from the day of the new creation when the heavens and the earth shall be renewed... and all the luminaries be renewed... for all the elect of Yashar''el (Israel)* (Jubilees 1:29). The renewed creation is for the elect to dwell — not a church replacing Israel, but the covenant people restored. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51103
+  FROM _session250_en45_lookup sv, _session250_en45_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=45 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-45-election-named-and-chosen',
+       E'The chosen righteous, named and gathered',
+       E'The chapter both opens against those who *deny the name of Yahuah (God) of Spirits* (1 Enoch 45:1-2) and closes with election by name: *And He shall choose the righteous and holy from among them: for the day has drawn nigh that they should be saved.* (1 Enoch 45:12). Election precedes confession — and Enoch grounds it before the worlds. The Elect One Himself was named before creation: *And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days.* (1 Enoch 48:2), *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* (1 Enoch 48:3), *And for this reason hath he been chosen and hidden before Him, Before the creation of the world and for evermore.* (1 Enoch 48:6) — the Logos named before time, the same One John opens with and Revelation calls the Lamb slain from the foundation of the world. The names of the righteous are likewise on record: *And the books of the living were opened before Him* (1 Enoch 47:3). And the Tanakh''s Servant carries the same election language: *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles.* (Isaiah 42:1). The elect are a chosen people, named before they ever heard. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51106
+  FROM _session250_en45_lookup sv, _session250_en45_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=12
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=45 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-45-sinners-as-straw-furnace-of-fire',
+       E'The sinners as straw in the fire',
+       E'Against the renewed dwelling of the elect stands the sinners'' lot: *And I will make the sinners to be as straw in the fire, and they shall burn before the face of the holy, and they shall not be quenched.* (1 Enoch 45:5), *And the righteous shall be victorious in the name of Yahuah (God) of Spirits, and the sinners shall be cast into the furnace of fire.* (1 Enoch 45:6). The judgement is for breaking covenant — the wicked as stubble is Malachi''s own day: *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith Yahuah Tseva''ot (LORD of hosts), that it shall leave them neither root nor branch.* (Malachi 4:1). Yahusha speaks Enoch''s very furnace and contrasts it with the shining righteous: *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* (Matthew 13:42), *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* (Matthew 13:43). The Wisdom of Solomon paints the same two ends — the righteous flame out over the stubble: *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* (Wisdom of Solomon 3:7), *They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.* (Wisdom of Solomon 3:8). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51109
+  FROM _session250_en45_lookup sv, _session250_en45_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=45 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-45-kings-and-mighty-cast-from-thrones',
+       E'The kings and the mighty cast down from their thrones',
+       E'The day reaches the high seats of the earth: *And in those days the kings and the mighty who possess the earth shall be cast down from their thrones, and they shall be cast into the furnace of fire, and their faces shall be covered with shame.* (1 Enoch 45:7). This is the Son of Adam''s named office within the Parables: *And this Son of Adam whom thou hast seen shall raise up the kings and the mighty from their seats, [And the strong from their thrones] And shall loosen the reins of the strong, And break the teeth of the sinners.* (1 Enoch 46:4), *[And he shall put down the kings from their thrones and kingdoms] Because they do not extol and praise Him, Nor humbly acknowledge whence the kingdom was bestowed upon them.* (1 Enoch 46:5). John sees the same terror seize earth''s rulers: *And the kings of the earth, and the great men, and the rich men, and the chief captains, and the mighty men, and every bondman, and every free man, hid themselves in the dens and in the rocks of the mountains;* (Revelation 6:15), and the day from which none stand — *For the great day of his wrath is come; and who shall be able to stand?* (Revelation 6:17). The Tanakh''s righteous Branch judges with the same rod: *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* (Isaiah 11:4), and the enthroned Son shatters the proud thrones — *Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel.* (Psalm 2:9). The systems of the proud are dismantled; the meek are vindicated. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51112
+  FROM _session250_en45_lookup sv, _session250_en45_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=45 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-45-resurrection-earth-and-sheol-give-back',
+       E'The earth and Sheol give back the dead',
+       E'At the chapter''s height the dead return: *And in those days the earth shall give back that which has been entrusted to it, and Sheol also shall give back that which it has received, and hell shall give back that which it owes.* (1 Enoch 45:11). Enoch repeats it almost word for word and names the One who raises them: *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes. 5a. For in those days the Elect One shall arise,* (1 Enoch 51:1). This is the canon''s whole resurrection-chorus: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2), *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* (Isaiah 26:19), and Yahusha''s own voice over the graves: *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,* (John 5:28), *And shall come forth; they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation.* (John 5:29). 2 Esdras joins the same witness: *And the earth shall restore those that are asleep in her, and so shall the dust those that dwell in silence, and the secret places shall deliver those souls that were committed to them.* (2 Esdras 7:32). The earth gives back what was entrusted, and the Elect One arises. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51115
+  FROM _session250_en45_lookup sv, _session250_en45_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=11
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=45 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-45-elect-one-throne-of-glory
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 25:31 — *When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory:* Yahusha takes up Enoch''s exact image — the Son of Adam seated on the throne of glory to judge — which 1 Enoch 45:3 sets at the head of the Second Parable.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-elect-one-throne-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 19:28 — *And Yahusha (Jesus) said unto them, Verily I say unto you, That ye which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar''el (Israel).* The throne of glory that tries works in 1 Enoch 45:3 is the same seat from which the Son of Adam judges the regathered twelve tribes.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-elect-one-throne-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=19 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees one *like* the Son of Adam (the kaph; he resembles mortal-man because he took flesh) while 1 Enoch 45:3 names that same enthroned Elect One — both land on Yahusha.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-elect-one-throne-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 62:1 — *And thus Yahuah (God) of Spirits named the Elect One, And seated him on the throne of His glory, And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* The Father seats and names the Elect One to weigh deeds — the same throne-of-glory judgement Enoch 45:3 announces.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-elect-one-throne-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=62 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 51:3 — *And the Elect One shall in those days sit on My throne, And his mouth shall pour forth all the secrets of wisdom and counsel: For Yahuah (God) of Spirits hath given (them) to him and hath glorified him.* The Father''s own throne is given to the Formed Son — Enoch 45:3''s Elect One enthroned to try works, glorified by the Head of Days.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-elect-one-throne-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=51 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-45-new-heavens-new-earth-for-the-elect
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 65:17 — *For, behold, I create new heavens and a new earth: and the former shall not be remembered, nor come into mind.* The Father''s promise to create new heavens and a new earth is the very change Enoch 45:4 records Him speaking over the day of the Elect One.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-new-heavens-new-earth-for-the-elect'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 66:22 — *For as the new heavens and the new earth, which I will make, shall remain before me, saith Yahuah (LORD), so shall your seed and your name remain.* The enduring new heavens and earth guarantee the elect''s enduring name — the dwelling Enoch 45:4 prepares for the Elect One among His people.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-new-heavens-new-earth-for-the-elect'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 21:3 — *And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God).* John sees consummated what Enoch 45:4 foretells: the Elect One caused to dwell among His people on the renewed earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-new-heavens-new-earth-for-the-elect'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 21:1 — *And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away; and there was no more sea.* The passing of the first heaven and earth is the very changing of heaven and earth Yahuah (God) of Spirits declares in 1 Enoch 45:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-new-heavens-new-earth-for-the-elect'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 1:29 — *...from the day of the new creation when the heavens and the earth shall be renewed and all their creation according to the powers of the heaven, and according to all the creation of the earth, until the sanctuary of Yahuah (God) shall be made in Jerusalem on Mount Zion, and all the luminaries be renewed for healing and for peace and for blessing for all the elect of Yashar''el (Israel)...* Jubilees ties the renewed heaven and earth to the elect of Israel — the same renewal Enoch 45:4 makes for the elect to dwell.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-new-heavens-new-earth-for-the-elect'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=4
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-45-election-named-and-chosen
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 48:3 — *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* The Elect One who chooses the righteous in 1 Enoch 45:12 was Himself named before creation — election rooted before the worlds.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-election-named-and-chosen'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=12
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 48:6 — *And for this reason hath he been chosen and hidden before Him, Before the creation of the world and for evermore.* The Son chosen and hidden before the creation of the world is the One who chooses the righteous in Enoch 45:12 — the Lamb foreknown before the foundation of the world.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-election-named-and-chosen'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=12
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 47:3 — *In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him.* The books of the living hold the named righteous whom Enoch 45:12 says He shall choose to be saved.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-election-named-and-chosen'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=12
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=47 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 42:1 — *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles.* The Father''s own "mine elect" Servant is the Elect One of Enoch who chooses the righteous in 45:12 to bring forth judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-election-named-and-chosen'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-45-sinners-as-straw-furnace-of-fire
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 13:42 — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* Yahusha''s furnace of fire for the wicked is the very furnace into which Enoch 45:6 casts the sinners.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-sinners-as-straw-furnace-of-fire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* The righteous shining as the sun matches Enoch 45:9, the bright counterpart to the sinners-as-straw of 45:5-6.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-sinners-as-straw-furnace-of-fire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 4:1 — *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith Yahuah Tseva''ot (LORD of hosts), that it shall leave them neither root nor branch.* The wicked as stubble in the burning day is Enoch 45:5''s sinners as straw in the unquenchable fire.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-sinners-as-straw-furnace-of-fire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The righteous flaming over the stubble is the bright reverse of Enoch 45:5, where the sinners themselves become the straw that burns.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-sinners-as-straw-furnace-of-fire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=5
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-45-kings-and-mighty-cast-from-thrones
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 46:4 — *And this Son of Adam whom thou hast seen shall raise up the kings and the mighty from their seats, [And the strong from their thrones] And shall loosen the reins of the strong, And break the teeth of the sinners.* The named Son of Adam casts the kings and mighty from their thrones — the very judgement Enoch 45:7 enacts on the rulers who possess the earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-kings-and-mighty-cast-from-thrones'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=7
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=46 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 6:15 — *And the kings of the earth, and the great men, and the rich men, and the chief captains, and the mighty men, and every bondman, and every free man, hid themselves in the dens and in the rocks of the mountains;* John''s kings and mighty fleeing the throne are Enoch 45:7''s kings cast down from their thrones in shame.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-kings-and-mighty-cast-from-thrones'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 6:17 — *For the great day of his wrath is come; and who shall be able to stand?* The great day from which no king can stand is Enoch 45:7''s day when the mighty are cast from their thrones into the fire.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-kings-and-mighty-cast-from-thrones'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 11:4 — *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* The Branch who slays the wicked with the breath of his lips is the Elect One who casts the mighty down in Enoch 45:7.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-kings-and-mighty-cast-from-thrones'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Psalm 2:9 — *Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel.* The enthroned Son shattering the rulers'' kingdoms is Enoch 45:7''s casting of the kings and mighty from their thrones.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-kings-and-mighty-cast-from-thrones'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-45-resurrection-earth-and-sheol-give-back
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The sleepers in the dust waking to two ends is the resurrection Enoch 45:11 frames as the earth and Sheol giving back their dead.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-resurrection-earth-and-sheol-give-back'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'John 5:28 — *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,* The hour when the graves hear the Son''s voice is Enoch 45:11''s day when the earth gives back what was entrusted to it.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-resurrection-earth-and-sheol-give-back'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* The earth casting out its dead is the very giving-back Enoch 45:11 records of the earth and Sheol.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-resurrection-earth-and-sheol-give-back'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 51:1 — *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes. 5a. For in those days the Elect One shall arise,* Enoch''s own near-verbatim parallel names the Elect One who arises when the earth gives back its dead — the resurrection of 45:11.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-resurrection-earth-and-sheol-give-back'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=11
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=51 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Esdras 7:32 — *And the earth shall restore those that are asleep in her, and so shall the dust those that dwell in silence, and the secret places shall deliver those souls that were committed to them.* The earth restoring its sleepers is Enoch 45:11''s earth and Sheol giving back what was entrusted to them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en45_lookup sv, _session250_en45_lookup tv
+ WHERE t.slug='1-enoch-45-resurrection-earth-and-sheol-give-back'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=45 AND sv.verse_number=11
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=7 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_46.sql (session250 1-enoch 46) -----
+-- Source anchor: enoch/1-enoch ch46. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en46 (view _session250_en46_lookup). Sort band base 51125, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en46_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-46-head-of-days-and-the-son-of-adam
+  ('enoch', '1-enoch', 46, 1, 'canon', 'daniel', 7, 9, 'free', E'Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* Daniel''s Ancient of Days with hair like pure wool is Enoch''s Head of Days whose head is white like wool (46:1) — the formless Father on His throne.'),
+  ('enoch', '1-enoch', 46, 2, 'canon', 'daniel', 7, 13, 'free', E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees one *like* the Son of Adam (the kaph-comparative, for the Formed Son took on flesh) coming to the Ancient of Days; Enoch 46:2 NAMES that same One who goes with the Head of Days — same figure, different grammar, both Yahusha.'),
+  ('enoch', '1-enoch', 46, 1, 'canon', 'revelation', 1, 14, 'free', E'Revelation 1:14 — *His head and his hairs were white like wool, as white as snow; and his eyes were as a flame of fire.* On Patmos John sees the Son of Adam (1:13) himself now bearing the white-wool hair Enoch saw on the Head of Days (46:1) — the Formed Son shares the Father''s glory.'),
+  ('enoch', '1-enoch', 46, 2, 'canon', 'matthew', 26, 64, 'free', E'Matthew 26:64 — *Yahusha (Jesus) saith unto him, Thou hast said: nevertheless I say unto you, Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven.* Yahusha claims under oath the title Enoch named (46:2) — the Son of Adam beside the Head of Days, coming in the clouds as Daniel foresaw.'),
+  -- thread: 1-enoch-46-the-son-of-adam-who-hath-righteousness
+  ('enoch', '1-enoch', 46, 3, 'canon', 'isaiah', 42, 1, 'free', E'Isaiah 42:1 — *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles.* The Father''s chosen, Spirit-rested elect servant is Enoch''s Son of Adam whom Yahuah of Spirits hath chosen (46:3) — election before confession.'),
+  ('enoch', '1-enoch', 46, 3, 'canon', 'isaiah', 53, 11, 'free', E'Isaiah 53:11 — *He shall see of the travail of his soul, and shall be satisfied: by his knowledge shall my righteous servant justify many; for he shall bear their iniquities.* The righteous servant in whom righteousness dwells (46:3) is the same One who justifies many by bearing their iniquities.'),
+  ('enoch', '1-enoch', 46, 3, 'enoch', '1-enoch', 48, 2, 'extras', E'1 Enoch 48:2 — *And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days.* The choosing of 46:3 reaches back to a naming before the Head of Days — the Formed Son named before He is confessed.'),
+  ('enoch', '1-enoch', 46, 3, 'enoch', '1-enoch', 62, 7, 'extras', E'1 Enoch 62:7 — *And Yahuah (God) of Spirits said: ''This is the Son of Adam who is born unto righteousness, And righteousness abides over him, And the righteousness of the Head of Days forsakes him not.''* Parables restates 46:3 — the same Son of Adam over whom righteousness abides, never forsaken by the Head of Days.'),
+  -- thread: 1-enoch-46-he-raises-up-kings-and-puts-them-down
+  ('enoch', '1-enoch', 46, 5, 'canon', 'psalms', 2, 2, 'free', E'Psalm 2:2 — *The kings of the earth set themselves, and the rulers take counsel together, against Yahuah (LORD), and against his anointed, saying,* The kings who will not extol the Son of Adam (46:5) are the conspiring rulers of Psalm 2 ranged against Yahuah''s Anointed.'),
+  ('enoch', '1-enoch', 46, 4, 'canon', 'psalms', 2, 9, 'free', E'Psalm 2:9 — *Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel.* The Anointed who breaks the rebellious is Enoch''s Son of Adam who breaks the teeth of the sinners and puts down the strong (46:4).'),
+  ('enoch', '1-enoch', 46, 4, 'canon', 'isaiah', 11, 4, 'free', E'Isaiah 11:4 — *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* The Spirit-anointed Branch who smites the earth and slays the wicked is the Son of Adam who lays low the inhabitants and breaks the sinners'' teeth (46:4).'),
+  ('enoch', '1-enoch', 46, 4, 'canon', 'john', 5, 27, 'free', E'John 5:27 — *And hath given him authority to execute judgment also, because he is the Son of Adam.* Yahusha holds judgment authority precisely as the Son of Adam — the very title and office Enoch saw raising up and putting down the kings (46:4).'),
+  ('enoch', '1-enoch', 46, 6, 'canon', 'revelation', 6, 15, 'free', E'Revelation 6:15 — *And the kings of the earth, and the great men, and the rich men, and the chief captains, and the mighty men, and every bondman, and every free man, hid themselves in the dens and in the rocks of the mountains;* The strong whose pride He abases and whose countenance He covers with shame (46:6) are these kings fleeing to the rocks before the wrath of the throne.'),
+  -- thread: 1-enoch-46-they-deny-the-name-and-persecute-the-congregations
+  ('enoch', '1-enoch', 46, 9, 'canon', 'psalms', 14, 1, 'free', E'Psalm 14:1 — *The fool hath said in his heart, There is no Elohim (God). They are corrupt, they have done abominable works, there is none that doeth good.* The mighty who deny the name of Yahuah of Spirits (46:9) are the corrupt fool of the Psalm, whose denial breeds abominable works.'),
+  ('enoch', '1-enoch', 46, 10, 'apocrypha', 'the-wisdom-of-solomon', 2, 12, 'extras', E'Wisdom of Solomon 2:12 — *Therefore let us lie in wait for the righteous; because he is not for our turn, and he is clean contrary to our doings: he upbraideth us with our offending the law, and objecteth to our infamy the transgressings of our education.* The wicked lie in wait for the righteous because he keeps the law — the same persecution of His congregations and the faithful Enoch names (46:10).'),
+  ('enoch', '1-enoch', 46, 9, 'canon', '2-thessalonians', 1, 8, 'free', E'2 Thessalonians 1:8 — *In flaming fire taking vengeance on them that know not Elohim (God), and that obey not the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ):* The vengeance on those who know not Elohim is Enoch''s judgment on the mighty who deny the name of Yahuah of Spirits (46:9).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en46_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en46_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-46-head-of-days-and-the-son-of-adam',
+       E'The Head of Days and the Son of Adam — Daniel''s two figures, named',
+       E'Enoch is shown the keystone of the whole Book of Parables: *And there I saw One who had a head of days, and His head was white like wool, and with Him was another being whose countenance had the appearance of a man, and his face was full of graciousness, like one of the holy angels* (1 Enoch 46:1). This is the very throne-room Daniel saw — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire* (Daniel 7:9) — the Head of Days is the Ancient of Days, the formless Father. And beside Him Daniel saw a second figure: *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him* (Daniel 7:13). Hold the difference plainly: Daniel sees *one **like** the Son of Adam* (the kaph-comparative — he resembles mortal-man because he took on flesh, while remaining the Formed cloud-rider), whereas Enoch does not use the comparative but **names** him outright as *that Son of Adam* (1 Enoch 46:2) — different grammar, the same One, both landing on Yahusha. John saw him on Patmos and kept the comparative too: *And in the midst of the seven candlesticks one like unto the Son of Adam, clothed with a garment down to the foot* — *His head and his hairs were white like wool, as white as snow* (Revelation 1:13–14), the white-wool hair of Enoch''s first figure now shared by the Formed Son who took flesh. And Yahusha named himself this very One before the high priest: *Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven* (Matthew 26:64). The Head of Days is the Father; the Son of Adam is the Formed Son ordered under Him, worshipped with Him yet distinct from Him — not a created angel, not a mere man, but the One Enoch named centuries before Bethlehem.',
+       sv.verse_id, ev.verse_id, 'extras', 51125
+  FROM _session250_en46_lookup sv, _session250_en46_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=46 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-46-the-son-of-adam-who-hath-righteousness',
+       E'The Son of Adam who hath righteousness — chosen by Yahuah of Spirits',
+       E'The angel answers Enoch''s question about the second figure: *This is the Son of Adam who hath righteousness, with whom dwelleth righteousness, and who revealeth all the treasures of that which is hidden, because Yahuah (God) of Spirits hath chosen him, and whose lot hath the pre-eminence before Yahuah (God) of Spirits in uprightness for ever* (1 Enoch 46:3). He is the Father''s elect, chosen and set apart — the very servant Isaiah heard the Father announce: *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles* (Isaiah 42:1). His indwelling righteousness is the righteousness Isaiah''s Suffering Servant carries: *by his knowledge shall my righteous servant justify many; for he shall bear their iniquities* (Isaiah 53:11). Election precedes confession here — the Son of Adam is the chosen One *before* He is the confessed One, and Enoch later tells us how far back that choosing reaches: *And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* (1 Enoch 48:2), yea *before the sun and the signs were created* (48:3). Parables itself restates this verse''s righteousness almost word for word: *This is the Son of Adam who is born unto righteousness, And righteousness abides over him, And the righteousness of the Head of Days forsakes him not* (1 Enoch 62:7). The Son of Adam is the Formed One who proceeds from the formless Head of Days, named before the worlds, in whom righteousness dwells — Yahusha.',
+       sv.verse_id, ev.verse_id, 'extras', 51128
+  FROM _session250_en46_lookup sv, _session250_en46_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=46 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-46-he-raises-up-kings-and-puts-them-down',
+       E'He raises and puts down the kings and the mighty',
+       E'The Son of Adam is no passive throne-mate; He is the Judge who unseats earth''s rulers: *And this Son of Adam whom thou hast seen shall raise up the kings and the mighty from their seats, [And the strong from their thrones] And shall loosen the reins of the strong, And break the teeth of the sinners* (1 Enoch 46:4), *And he shall put down the kings from their thrones and kingdoms* (46:5). This is the Anointed of the second Psalm before whom the rulers conspire in vain: *The kings of the earth set themselves, and the rulers take counsel together, against Yahuah (LORD), and against his anointed* (Psalm 2:2) — yet *Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel* (Psalm 2:9). It is the rod-of-the-mouth judgment Isaiah saw in the Spirit-anointed Branch: *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked* (Isaiah 11:4) — the same justice given because *he is the Son of Adam* (John 5:27). And when this judgment falls the kings who would not extol Him (46:5) crowd the rocks: *And the kings of the earth, and the great men, and the rich men, and the chief captains, and the mighty men ... hid themselves in the dens and in the rocks of the mountains* (Revelation 6:15). The dominion is His because it was *given* — the everlasting kingdom of Daniel 7:14 — and the Son of Adam administers it, putting down every throne that will not humbly acknowledge whence its kingdom was bestowed.',
+       sv.verse_id, ev.verse_id, 'extras', 51131
+  FROM _session250_en46_lookup sv, _session250_en46_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=46 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-46-they-deny-the-name-and-persecute-the-congregations',
+       E'They deny the name and persecute His congregations',
+       E'The chapter closes on the indictment of the mighty: their power *rests upon their riches, And their faith is in the gods which they have made with their hands, And they deny the name of Yahuah (God) of Spirits* (1 Enoch 46:9), *And they persecute the houses of His congregations, And the faithful who hang upon the name of Yahuah (God) of Spirits* (46:10). The root sin is the fool''s denial Scripture names: *The fool hath said in his heart, There is no Elohim (God). They are corrupt, they have done abominable works, there is none that doeth good* (Psalm 14:1). It is the very persecution of the righteous the Wisdom of Solomon dramatizes in the mouths of the wicked: *Therefore let us lie in wait for the righteous; because he is not for our turn, and he is clean contrary to our doings: he upbraideth us with our offending the law* (Wisdom of Solomon 2:12) — those who hang upon the Father''s name are hunted because they keep His way and the lawless cannot bear it. But the judgment Enoch foresaw against those who deny the name is the judgment Paul preaches: *when the Lord Yahusha (Lord Jesus) shall be revealed from heaven with his mighty angels, In flaming fire taking vengeance on them that know not Elohim (God), and that obey not the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ)* (2 Thessalonians 1:7–8). The faithful who *hang upon the name* (46:10) are the covenant remnant — not a class that selected itself but a people who keep the Father''s name and His Torah; their persecutors'' worms-and-darkness end (46:7) is sure because they would not extol that name.',
+       sv.verse_id, ev.verse_id, 'extras', 51134
+  FROM _session250_en46_lookup sv, _session250_en46_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=46 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-46-head-of-days-and-the-son-of-adam
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* Daniel''s Ancient of Days with hair like pure wool is Enoch''s Head of Days whose head is white like wool (46:1) — the formless Father on His throne.'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-head-of-days-and-the-son-of-adam'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees one *like* the Son of Adam (the kaph-comparative, for the Formed Son took on flesh) coming to the Ancient of Days; Enoch 46:2 NAMES that same One who goes with the Head of Days — same figure, different grammar, both Yahusha.'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-head-of-days-and-the-son-of-adam'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 1:14 — *His head and his hairs were white like wool, as white as snow; and his eyes were as a flame of fire.* On Patmos John sees the Son of Adam (1:13) himself now bearing the white-wool hair Enoch saw on the Head of Days (46:1) — the Formed Son shares the Father''s glory.'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-head-of-days-and-the-son-of-adam'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 26:64 — *Yahusha (Jesus) saith unto him, Thou hast said: nevertheless I say unto you, Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven.* Yahusha claims under oath the title Enoch named (46:2) — the Son of Adam beside the Head of Days, coming in the clouds as Daniel foresaw.'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-head-of-days-and-the-son-of-adam'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=64
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-46-the-son-of-adam-who-hath-righteousness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 42:1 — *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles.* The Father''s chosen, Spirit-rested elect servant is Enoch''s Son of Adam whom Yahuah of Spirits hath chosen (46:3) — election before confession.'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-the-son-of-adam-who-hath-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 53:11 — *He shall see of the travail of his soul, and shall be satisfied: by his knowledge shall my righteous servant justify many; for he shall bear their iniquities.* The righteous servant in whom righteousness dwells (46:3) is the same One who justifies many by bearing their iniquities.'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-the-son-of-adam-who-hath-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 48:2 — *And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days.* The choosing of 46:3 reaches back to a naming before the Head of Days — the Formed Son named before He is confessed.'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-the-son-of-adam-who-hath-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 62:7 — *And Yahuah (God) of Spirits said: ''This is the Son of Adam who is born unto righteousness, And righteousness abides over him, And the righteousness of the Head of Days forsakes him not.''* Parables restates 46:3 — the same Son of Adam over whom righteousness abides, never forsaken by the Head of Days.'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-the-son-of-adam-who-hath-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=62 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-46-he-raises-up-kings-and-puts-them-down
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 2:2 — *The kings of the earth set themselves, and the rulers take counsel together, against Yahuah (LORD), and against his anointed, saying,* The kings who will not extol the Son of Adam (46:5) are the conspiring rulers of Psalm 2 ranged against Yahuah''s Anointed.'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-he-raises-up-kings-and-puts-them-down'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 2:9 — *Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel.* The Anointed who breaks the rebellious is Enoch''s Son of Adam who breaks the teeth of the sinners and puts down the strong (46:4).'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-he-raises-up-kings-and-puts-them-down'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 11:4 — *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* The Spirit-anointed Branch who smites the earth and slays the wicked is the Son of Adam who lays low the inhabitants and breaks the sinners'' teeth (46:4).'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-he-raises-up-kings-and-puts-them-down'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'John 5:27 — *And hath given him authority to execute judgment also, because he is the Son of Adam.* Yahusha holds judgment authority precisely as the Son of Adam — the very title and office Enoch saw raising up and putting down the kings (46:4).'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-he-raises-up-kings-and-puts-them-down'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 6:15 — *And the kings of the earth, and the great men, and the rich men, and the chief captains, and the mighty men, and every bondman, and every free man, hid themselves in the dens and in the rocks of the mountains;* The strong whose pride He abases and whose countenance He covers with shame (46:6) are these kings fleeing to the rocks before the wrath of the throne.'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-he-raises-up-kings-and-puts-them-down'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-46-they-deny-the-name-and-persecute-the-congregations
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 14:1 — *The fool hath said in his heart, There is no Elohim (God). They are corrupt, they have done abominable works, there is none that doeth good.* The mighty who deny the name of Yahuah of Spirits (46:9) are the corrupt fool of the Psalm, whose denial breeds abominable works.'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-they-deny-the-name-and-persecute-the-congregations'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=14 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Wisdom of Solomon 2:12 — *Therefore let us lie in wait for the righteous; because he is not for our turn, and he is clean contrary to our doings: he upbraideth us with our offending the law, and objecteth to our infamy the transgressings of our education.* The wicked lie in wait for the righteous because he keeps the law — the same persecution of His congregations and the faithful Enoch names (46:10).'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-they-deny-the-name-and-persecute-the-congregations'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=10
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=2 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Thessalonians 1:8 — *In flaming fire taking vengeance on them that know not Elohim (God), and that obey not the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ):* The vengeance on those who know not Elohim is Enoch''s judgment on the mighty who deny the name of Yahuah of Spirits (46:9).'
+  FROM cross_reference_threads t, cross_references x, _session250_en46_lookup sv, _session250_en46_lookup tv
+ WHERE t.slug='1-enoch-46-they-deny-the-name-and-persecute-the-congregations'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=46 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_47.sql (session250 1-enoch 47) -----
+-- Source anchor: enoch/1-enoch ch47. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en47 (view _session250_en47_lookup). Sort band base 51150, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en47_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-47-blood-of-the-righteous-cries
+  ('enoch', '1-enoch', 47, 1, 'canon', 'genesis', 4, 10, 'free', E'Genesis 4:10 — *And he said, What hast thou done? the voice of thy brother’s blood crieth unto me from the ground.* The first shed blood already cried from the earth before Yahuah, exactly as Enoch 47:1 says the blood of the righteous ascends from the ground.'),
+  ('enoch', '1-enoch', 47, 1, 'canon', 'genesis', 4, 11, 'free', E'Genesis 4:11 — *And now art thou cursed from the earth, which hath opened her mouth to receive thy brother’s blood from thy hand;* The earth that opened to receive Abel''s blood is the same earth from which the righteous blood ascends in Enoch 47:1.'),
+  ('enoch', '1-enoch', 47, 1, 'canon', 'psalms', 56, 8, 'free', E'Psalm 56:8 — *Thou tellest my wanderings: put thou my tears into thy bottle: are they not in thy book?* The Father keeps an exact account of the suffering of the righteous, the same reckoning Enoch 47:1 says rises before Yahuah of Spirits.'),
+  ('enoch', '1-enoch', 47, 1, 'canon', 'revelation', 6, 9, 'free', E'Revelation 6:9 — *And when he had opened the fifth seal, I saw under the altar the souls of them that were slain for the word of Elohim (God), and for the testimony which they held:* John sees the shed blood of the righteous gathered under the altar, the same blood Enoch 47:1 sees ascending before Yahuah of Spirits.'),
+  -- thread: 1-enoch-47-holy-ones-intercede-how-long
+  ('enoch', '1-enoch', 47, 2, 'canon', 'revelation', 6, 10, 'free', E'Revelation 6:10 — *And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* The martyrs'' ''how long'' is the answered echo of the holy ones'' plea in Enoch 47:2 that judgement be done for the blood of the righteous.'),
+  ('enoch', '1-enoch', 47, 2, 'canon', 'revelation', 6, 11, 'free', E'Revelation 6:11 — *And white robes were given unto every one of them; and it was said unto them, that they should rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled.* The ''little season'' until the number is full is Enoch 47:2''s prayer that the righteous not suffer for ever — vindication delayed, never in vain.'),
+  -- thread: 1-enoch-47-head-of-days-throne-books-opened
+  ('enoch', '1-enoch', 47, 3, 'canon', 'daniel', 7, 9, 'free', E'Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* Daniel''s white-haired Ancient of days seating Himself to judge is Enoch 47:3''s Head of Days seating Himself upon the throne of His glory.'),
+  ('enoch', '1-enoch', 47, 3, 'canon', 'daniel', 7, 10, 'free', E'Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* The myriads standing before Him and the books opened are precisely the host, counsellors, and books of the living of Enoch 47:3.'),
+  ('enoch', '1-enoch', 47, 3, 'canon', 'revelation', 20, 12, 'free', E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* John''s opened books and the book of life are Enoch 47:3''s books of the living opened before the Head of Days.'),
+  -- thread: 1-enoch-47-number-of-the-righteous-election
+  ('enoch', '1-enoch', 47, 4, 'canon', 'daniel', 12, 1, 'free', E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* Deliverance belongs to those already written in the book — the named, counted righteous whose number Enoch 47:4 says has been offered.'),
+  ('enoch', '1-enoch', 47, 4, 'canon', 'revelation', 20, 15, 'free', E'Revelation 20:15 — *And whosoever was not found written in the book of life was cast into the lake of fire.* The reckoning turns on whether the name stands in the book — the same books of the living whose tally of the righteous gladdens heaven in Enoch 47:4.'),
+  ('enoch', '1-enoch', 47, 4, 'canon', 'revelation', 13, 8, 'free', E'Revelation 13:8 — *And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.* The names were inscribed before the foundation of the world — election precedes confession, so the number of the righteous in Enoch 47:4 is fixed, not assembled.'),
+  ('enoch', '1-enoch', 47, 4, 'canon', 'revelation', 6, 11, 'free', E'Revelation 6:11 — *And white robes were given unto every one of them; and it was said unto them, that they should rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled.* The completing of the brethren''s number is the same fulness Enoch 47:4 calls ''the number of the righteous had been offered.'''),
+  -- thread: 1-enoch-47-son-of-adam-elect-one-beside-head-of-days
+  ('enoch', '1-enoch', 47, 3, 'enoch', '1-enoch', 46, 3, 'extras', E'1 Enoch 46:3 — *And he answered and said unto me: This is the Son of Adam who hath righteousness, with whom dwelleth righteousness, and who revealeth all the treasures of that which is hidden, because Yahuah (God) of Spirits hath chosen him, and whose lot hath the pre-eminence before Yahuah (God) of Spirits in uprightness for ever.* The chosen Son of Adam of ch46 is the One sharing the throne-court where the Head of Days seats Himself in Enoch 47:3.'),
+  ('enoch', '1-enoch', 47, 3, 'enoch', '1-enoch', 48, 3, 'extras', E'1 Enoch 48:3 — *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* The Son of Adam named before creation is the One enthroned beside the Head of Days whose court Enoch 47:3 describes.'),
+  ('enoch', '1-enoch', 47, 3, 'canon', 'daniel', 7, 13, 'free', E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees one LIKE the Son of Adam brought near the Ancient of days, the comparative kaph; Enoch 47:3 names that same One enthroned beside the Head of Days.'),
+  ('enoch', '1-enoch', 47, 3, 'canon', 'john', 1, 1, 'free', E'John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The One named before the sun and stars were made (Enoch 48:3) is the Word who was in the beginning with the Father, the Formed Son enthroned beside the Head of Days in Enoch 47:3.'),
+  ('enoch', '1-enoch', 47, 3, 'canon', 'matthew', 26, 64, 'free', E'Matthew 26:64 — *Yahusha (Jesus) saith unto him, Thou hast said: nevertheless I say unto you, Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven.* Yahusha claims Daniel''s kaph-clouds and the throne-seat of the Head of Days, the very Son of Adam enthroned in Enoch 47:3.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en47_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en47_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-47-blood-of-the-righteous-cries',
+       E'The blood of the righteous cries from the earth',
+       E'Enoch hears it ascend: *And in those days shall have ascended the prayer of the righteous, And the blood of the righteous from the earth before Yahuah (God) of Spirits.* (1 Enoch 47:1) — the very first blood ever spilled already cried this way: *And he said, What hast thou done? the voice of thy brother’s blood crieth unto me from the ground.* (Genesis 4:10), and the ground itself drank it: *And now art thou cursed from the earth, which hath opened her mouth to receive thy brother’s blood from thy hand;* (Genesis 4:11). The Father keeps an exact reckoning of every tear that ground absorbs: *Thou tellest my wanderings: put thou my tears into thy bottle: are they not in thy book?* (Psalm 56:8). And John sees the same martyr-blood under the altar, still crying the same single question: *And when he had opened the fifth seal, I saw under the altar the souls of them that were slain for the word of Elohim (God), and for the testimony which they held:* (Revelation 6:9) — *And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* (Revelation 6:10). It ain''t new: the cry of Abel, the bottle of tears, the souls under the altar, and Enoch''s ascending blood are one cry awaiting one answer.',
+       sv.verse_id, ev.verse_id, 'extras', 51150
+  FROM _session250_en47_lookup sv, _session250_en47_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=47 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-47-holy-ones-intercede-how-long',
+       E'The holy ones intercede; how long until judgement?',
+       E'The angels do not stay silent over the blood: *In those days the holy ones who dwell above in the heavens Shall unite with one voice And supplicate and pray ... On behalf of the blood of the righteous which has been shed, And that the prayer of the righteous may not be in vain before Yahuah (God) of Spirits, That judgement may be done unto them, And that they may not have to suffer for ever.* (1 Enoch 47:2). That intercession is answered in John''s vision when the martyrs cry the very cry Enoch describes: *And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* (Revelation 6:10), and they are told to wait, with the number not yet full: *And white robes were given unto every one of them; and it was said unto them, that they should rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled.* (Revelation 6:11). Enoch''s plea that they ''may not have to suffer for ever'' is the same delayed-but-certain vindication of the white-robed souls — the prayer is not in vain, only awaiting the fulness.',
+       sv.verse_id, ev.verse_id, 'extras', 51153
+  FROM _session250_en47_lookup sv, _session250_en47_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=47 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-47-head-of-days-throne-books-opened',
+       E'The Head of Days enthroned; the books of the living opened',
+       E'Enoch watches the court convene: *In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him.* (1 Enoch 47:3). Daniel saw the identical scene — the white-haired Ancient enthroned, the myriads ministering, the books spread open: *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* (Daniel 7:9) — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* (Daniel 7:10). John sees the same opened books at the consummation, with one in particular: *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* (Revelation 20:12). Enoch''s ''Head of Days'' is Daniel''s ''Ancient of days'' — the formless Father seated on the throne of glory, His host and counsellors standing as the assize is set. It ain''t new: one throne, one fiery host, one set of opened books across Enoch, Daniel, and the Apocalypse.',
+       sv.verse_id, ev.verse_id, 'extras', 51156
+  FROM _session250_en47_lookup sv, _session250_en47_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=47 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-47-number-of-the-righteous-election',
+       E'The number of the righteous offered — election in the books',
+       E'The court''s verdict gladdens heaven: *And the hearts of the holy were filled with joy; Because the number of the righteous had been offered, And the prayer of the righteous had been heard, And the blood of the righteous been required before Yahuah (God) of Spirits.* (1 Enoch 47:4). The ''number of the righteous'' being complete is the same fulness John awaits when the martyrs rest ''until their fellowservants also and their brethren ... should be fulfilled'' (Revelation 6:11) — and these righteous are not a self-chosen class but a named, written people: *And at that time shall Michael stand up ... and at that time thy people shall be delivered, every one that shall be found written in the book.* (Daniel 12:1). Deliverance follows the writing, not the other way round: *And whosoever was not found written in the book of life was cast into the lake of fire.* (Revelation 20:15). And the names were not entered late but sealed before the world began: *And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.* (Revelation 13:8). Election precedes confession — the number of the righteous is fixed and named in the books of the living before the assize is ever read.',
+       sv.verse_id, ev.verse_id, 'extras', 51159
+  FROM _session250_en47_lookup sv, _session250_en47_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=47 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-47-son-of-adam-elect-one-beside-head-of-days',
+       E'The Son of Adam named beside the Head of Days',
+       E'Chapter 47''s throne-court is the heart of the Parables, where the One who shares that throne is named. Just before, Enoch saw Him: *And there I saw One who had a head of days, and His head was white like wool, and with Him was another being whose countenance had the appearance of a man ... This is the Son of Adam who hath righteousness ... because Yahuah (God) of Spirits hath chosen him* (1 Enoch 46:1, 46:3); and Enoch hears His name spoken before creation itself: *And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits ... Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* (1 Enoch 48:2-3). Enoch NAMES the figure; Daniel sees the same One only by comparison, keeping the kaph: *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* (Daniel 7:13) — Daniel beholds *one like the Son of Adam* (He resembles mortal-man because He took on flesh, while remaining the Formed cloud-rider), and Enoch names that very One. He who was named before the sun was made is the Word who was there before all things: *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* (John 1:1) — *All things were made by him; and without him was not any thing made that was made.* (John 1:3); and Yahusha claimed Daniel''s seat under oath, again with the kaph-clouds: *Yahusha (Jesus) saith unto him, Thou hast said: nevertheless I say unto you, Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven.* (Matthew 26:64). The Head of Days is the formless Father; the Son of Adam / Elect One is the Formed Son, chosen and named before the worlds, ordered under the Father and worshipped with Him yet distinct from Him — not co-equal-persons, not a created angel, not a mere man, who came in flesh as Yahusha.',
+       sv.verse_id, ev.verse_id, 'extras', 51162
+  FROM _session250_en47_lookup sv, _session250_en47_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=47 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-47-blood-of-the-righteous-cries
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 4:10 — *And he said, What hast thou done? the voice of thy brother’s blood crieth unto me from the ground.* The first shed blood already cried from the earth before Yahuah, exactly as Enoch 47:1 says the blood of the righteous ascends from the ground.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-blood-of-the-righteous-cries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 4:11 — *And now art thou cursed from the earth, which hath opened her mouth to receive thy brother’s blood from thy hand;* The earth that opened to receive Abel''s blood is the same earth from which the righteous blood ascends in Enoch 47:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-blood-of-the-righteous-cries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 56:8 — *Thou tellest my wanderings: put thou my tears into thy bottle: are they not in thy book?* The Father keeps an exact account of the suffering of the righteous, the same reckoning Enoch 47:1 says rises before Yahuah of Spirits.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-blood-of-the-righteous-cries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=56 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 6:9 — *And when he had opened the fifth seal, I saw under the altar the souls of them that were slain for the word of Elohim (God), and for the testimony which they held:* John sees the shed blood of the righteous gathered under the altar, the same blood Enoch 47:1 sees ascending before Yahuah of Spirits.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-blood-of-the-righteous-cries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-47-holy-ones-intercede-how-long
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Revelation 6:10 — *And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* The martyrs'' ''how long'' is the answered echo of the holy ones'' plea in Enoch 47:2 that judgement be done for the blood of the righteous.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-holy-ones-intercede-how-long'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 6:11 — *And white robes were given unto every one of them; and it was said unto them, that they should rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled.* The ''little season'' until the number is full is Enoch 47:2''s prayer that the righteous not suffer for ever — vindication delayed, never in vain.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-holy-ones-intercede-how-long'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-47-head-of-days-throne-books-opened
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* Daniel''s white-haired Ancient of days seating Himself to judge is Enoch 47:3''s Head of Days seating Himself upon the throne of His glory.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-head-of-days-throne-books-opened'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* The myriads standing before Him and the books opened are precisely the host, counsellors, and books of the living of Enoch 47:3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-head-of-days-throne-books-opened'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* John''s opened books and the book of life are Enoch 47:3''s books of the living opened before the Head of Days.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-head-of-days-throne-books-opened'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-47-number-of-the-righteous-election
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* Deliverance belongs to those already written in the book — the named, counted righteous whose number Enoch 47:4 says has been offered.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-number-of-the-righteous-election'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 20:15 — *And whosoever was not found written in the book of life was cast into the lake of fire.* The reckoning turns on whether the name stands in the book — the same books of the living whose tally of the righteous gladdens heaven in Enoch 47:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-number-of-the-righteous-election'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 13:8 — *And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.* The names were inscribed before the foundation of the world — election precedes confession, so the number of the righteous in Enoch 47:4 is fixed, not assembled.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-number-of-the-righteous-election'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 6:11 — *And white robes were given unto every one of them; and it was said unto them, that they should rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled.* The completing of the brethren''s number is the same fulness Enoch 47:4 calls ''the number of the righteous had been offered.'''
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-number-of-the-righteous-election'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-47-son-of-adam-elect-one-beside-head-of-days
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 46:3 — *And he answered and said unto me: This is the Son of Adam who hath righteousness, with whom dwelleth righteousness, and who revealeth all the treasures of that which is hidden, because Yahuah (God) of Spirits hath chosen him, and whose lot hath the pre-eminence before Yahuah (God) of Spirits in uprightness for ever.* The chosen Son of Adam of ch46 is the One sharing the throne-court where the Head of Days seats Himself in Enoch 47:3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-son-of-adam-elect-one-beside-head-of-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=46 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 48:3 — *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* The Son of Adam named before creation is the One enthroned beside the Head of Days whose court Enoch 47:3 describes.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-son-of-adam-elect-one-beside-head-of-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees one LIKE the Son of Adam brought near the Ancient of days, the comparative kaph; Enoch 47:3 names that same One enthroned beside the Head of Days.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-son-of-adam-elect-one-beside-head-of-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The One named before the sun and stars were made (Enoch 48:3) is the Word who was in the beginning with the Father, the Formed Son enthroned beside the Head of Days in Enoch 47:3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-son-of-adam-elect-one-beside-head-of-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Matthew 26:64 — *Yahusha (Jesus) saith unto him, Thou hast said: nevertheless I say unto you, Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven.* Yahusha claims Daniel''s kaph-clouds and the throne-seat of the Head of Days, the very Son of Adam enthroned in Enoch 47:3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en47_lookup sv, _session250_en47_lookup tv
+ WHERE t.slug='1-enoch-47-son-of-adam-elect-one-beside-head-of-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=64
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_48.sql (session250 1-enoch 48) -----
+-- Source anchor: enoch/1-enoch ch48. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en48 (view _session250_en48_lookup). Sort band base 51175, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en48_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-48-fountain-of-wisdom
+  ('enoch', '1-enoch', 48, 1, 'canon', 'jeremiah', 2, 13, 'free', E'Jeremiah 2:13 — *For my people have committed two evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water.* Enoch''s inexhaustible fountain of righteousness (48:1) is the very fountain of living waters Yahuah''s people abandoned for cracked cisterns.'),
+  ('enoch', '1-enoch', 48, 1, 'canon', 'isaiah', 12, 3, 'free', E'Isaiah 12:3 — *Therefore with joy shall ye draw water out of the wells of salvation.* The thirsty who drink and are filled with wisdom in Enoch 48:1 are those Isaiah sees drawing with joy from salvation''s wells.'),
+  ('enoch', '1-enoch', 48, 1, 'canon', 'john', 4, 14, 'free', E'John 4:14 — *But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.* Yahusha gives the inexhaustible water Enoch saw, so that the thirsty (48:1) thirst no more.'),
+  ('enoch', '1-enoch', 48, 1, 'apocrypha', 'the-wisdom-of-solomon', 9, 9, 'extras', E'Wisdom of Solomon 9:9 — *And wisdom was with you: which knoweth your works, and was present when you madest the world, and knew what was acceptable in your sight, and right in your commandments.* The fountains of wisdom around Enoch''s spring (48:1) flow from the Wisdom that stood with Elohim at the making of the world.'),
+  -- thread: 1-enoch-48-son-of-adam-named
+  ('enoch', '1-enoch', 48, 2, 'canon', 'daniel', 7, 13, 'free', E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees one LIKE the Son of Adam (the kaph: He resembles mortal-man because He took flesh, while remaining the cloud-rider); Enoch 48:2 NAMES that same One in the presence of the Head of Days.'),
+  ('enoch', '1-enoch', 48, 2, 'canon', 'daniel', 7, 14, 'free', E'Daniel 7:14 — *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* The Son of Adam named before the Head of Days (48:2) is the One given the everlasting kingdom Daniel records.'),
+  ('enoch', '1-enoch', 48, 2, 'enoch', '1-enoch', 46, 3, 'extras', E'1 Enoch 46:3 — *This is the Son of Adam who hath righteousness, with whom dwelleth righteousness, and who revealeth all the treasures of that which is hidden, because Yahuah (God) of Spirits hath chosen him, and whose lot hath the pre-eminence before Yahuah (God) of Spirits in uprightness for ever.* The naming of the Son of Adam at ch48:2 echoes His choosing and pre-eminence first declared at ch46:3.'),
+  ('enoch', '1-enoch', 48, 2, 'enoch', '1-enoch', 62, 1, 'extras', E'1 Enoch 62:1 — *And thus Yahuah (God) of Spirits named the Elect One, And seated him on the throne of His glory, And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* The Son of Adam named in 48:2 is the same Elect One named and enthroned to judge at ch62:1.'),
+  -- thread: 1-enoch-48-name-before-creation-logos
+  ('enoch', '1-enoch', 48, 3, 'canon', 'john', 1, 1, 'free', E'John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The name named before the sun and signs were created (48:3) is the Word who was in the beginning, with the Father and yet ordered as the Formed Son.'),
+  ('enoch', '1-enoch', 48, 3, 'canon', 'john', 1, 3, 'free', E'John 1:3 — *All things were made by him; and without him was not any thing made that was made.* Enoch dates the naming before the stars were made (48:3); John names Him the One by whom those very things were made.'),
+  ('enoch', '1-enoch', 48, 3, 'canon', 'proverbs', 8, 23, 'free', E'Proverbs 8:23 — *I was set up from everlasting, from the beginning, or ever the earth was.* Wisdom''s everlasting setting-up before the earth matches the name named before the stars of heaven were made (48:3).'),
+  ('enoch', '1-enoch', 48, 6, 'canon', 'colossians', 1, 17, 'free', E'Colossians 1:17 — *And he is before all things, and by him all things consist.* The One chosen and hidden before the creation of the world (48:6) is He who is before all things and in whom all things consist.'),
+  ('enoch', '1-enoch', 48, 6, 'canon', '1-peter', 1, 20, 'free', E'1 Peter 1:20 — *Who verily was foreordained before the foundation of the world, but was manifest in these last times for you,* The Son chosen and hidden before the creation (48:6) was foreordained before the foundation of the world and manifest in the flesh as Yahusha.'),
+  -- thread: 1-enoch-48-light-of-the-gentiles-staff
+  ('enoch', '1-enoch', 48, 4, 'canon', 'isaiah', 49, 1, 'free', E'Isaiah 49:1 — *Listen, O isles, unto me; and hearken, ye people, from far; Yahuah (LORD) hath called me from the womb; from the bowels of my mother hath he made mention of my name.* The Servant''s name made mention of from the womb answers the Son of Adam whose name was named and who is the hope of the troubled (48:4).'),
+  ('enoch', '1-enoch', 48, 4, 'canon', 'isaiah', 49, 6, 'free', E'Isaiah 49:6 — *And he said, It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth.* The Son of Adam as light of the Gentiles (48:4) first raises up the tribes of Jacob and restores scattered Yashar''el, then reaches the nations.'),
+  ('enoch', '1-enoch', 48, 4, 'canon', 'isaiah', 11, 10, 'free', E'Isaiah 11:10 — *And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious.* The staff on whom the righteous stay themselves (48:4) is the root of Jesse standing as an ensign to which the Gentiles seek.'),
+  ('enoch', '1-enoch', 48, 7, 'canon', 'micah', 5, 2, 'free', E'Micah 5:2 — *But thou, Beth-lehem Ephratah, though thou be little among the thousands of Yahudah (Judah), yet out of thee shall he come forth unto me that is to be ruler in Yashar''el (Israel); whose goings forth have been from of old, from everlasting.* The One in whose name the righteous are saved (48:7) is the ruler whose goings forth are from of old, from everlasting.'),
+  -- thread: 1-enoch-48-all-shall-worship-kings-fall
+  ('enoch', '1-enoch', 48, 5, 'canon', 'philippians', 2, 10, 'free', E'Philippians 2:10 — *That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth;* All who dwell on earth falling down to worship before Him (48:5) is every knee bowing at the name of Yahusha.'),
+  ('enoch', '1-enoch', 48, 5, 'canon', 'philippians', 2, 11, 'free', E'Philippians 2:11 — *And that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father.* The worship before the Son bends to the Father, just as Enoch''s worshippers praise and bless Yahuah of Spirits (48:5) — the Son worshipped, the glory the Father''s.'),
+  ('enoch', '1-enoch', 48, 5, 'canon', 'psalms', 72, 11, 'free', E'Psalms 72:11 — *Yea, all kings shall fall down before him: all nations shall serve him.* The earth falling down to worship before Him (48:5) is the Psalm''s all kings falling down and all nations serving Him.'),
+  ('enoch', '1-enoch', 48, 8, 'canon', 'psalms', 72, 17, 'free', E'Psalms 72:17 — *His name shall endure for ever: his name shall be continued as long as the sun: and men shall be blessed in him: all nations shall call him blessed.* The name named before the sun (48:3) and worshipped by all (48:5) is the name continued as long as the sun, before which the kings of 48:8 must answer.'),
+  ('enoch', '1-enoch', 48, 8, 'enoch', '1-enoch', 46, 4, 'extras', E'1 Enoch 46:4 — *And this Son of Adam whom thou hast seen shall raise up the kings and the mighty from their seats, [And the strong from their thrones] And shall loosen the reins of the strong, And break the teeth of the sinners.* The kings who implore too late (48:8) are the kings and mighty the Son of Adam raises from their seats at ch46:4.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en48_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en48_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-48-fountain-of-wisdom',
+       E'The inexhaustible fountain of righteousness and wisdom',
+       E'Enoch opens the chapter at a wellspring: *And in that place I saw the fountain of righteousness Which was inexhaustible: And around it were many fountains of wisdom: And all the thirsty drank of them, And were filled with wisdom, And their dwellings were with the righteous and holy and elect.* (1 Enoch 48:1). The Tanakh already knows this fountain and the folly of leaving it: *For my people have committed two evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water.* (Jeremiah 2:13) — and Isaiah points the thirsty back to it: *Therefore with joy shall ye draw water out of the wells of salvation.* (Isaiah 12:3). Yahusha takes that same fountain onto His own lips: *But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.* (John 4:14). The wisdom-edition of the apocrypha confesses that this Wisdom was present at creation and flows from Elohim Himself — *And wisdom was with you: which knoweth your works, and was present when you madest the world, and knew what was acceptable in your sight, and right in your commandments.* (Wisdom of Solomon 9:9) — so that the fountain of Enoch 48:1 is no new image but the Father''s own well of living water, around which the elect take up their dwelling.',
+       sv.verse_id, ev.verse_id, 'extras', 51175
+  FROM _session250_en48_lookup sv, _session250_en48_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=48 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-48-son-of-adam-named',
+       E'The Son of Adam named in the presence of the Head of Days',
+       E'Here Enoch NAMES the One Daniel only glimpsed: *And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days.* (1 Enoch 48:2). Daniel sees the same figure but holds the kaph-comparative — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* (Daniel 7:13) — *one LIKE the Son of Adam,* because the Formed Son resembles mortal-man, having taken flesh while remaining the cloud-rider; Enoch names that very One, and to Him is given the kingdom Daniel records: *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* (Daniel 7:14). The same naming and chosen-pre-eminence sounds again within Enoch''s own Parables: *This is the Son of Adam who hath righteousness, with whom dwelleth righteousness, and who revealeth all the treasures of that which is hidden, because Yahuah (God) of Spirits hath chosen him, and whose lot hath the pre-eminence before Yahuah (God) of Spirits in uprightness for ever.* (1 Enoch 46:3), and at the throne of glory He is named once more — *And thus Yahuah (God) of Spirits named the Elect One, And seated him on the throne of His glory, And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* (1 Enoch 62:1). The Head of Days is the Father, formless; the Son of Adam is the Formed Son, ordered under Him, named before Him — not a second co-equal person, not a mere man, not a created angel, but the Messiah who came as Yahusha.',
+       sv.verse_id, ev.verse_id, 'extras', 51178
+  FROM _session250_en48_lookup sv, _session250_en48_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=48 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-48-name-before-creation-logos',
+       E'His name was named before the sun and the stars were made',
+       E'This is the chapter''s heart: *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* (1 Enoch 48:3), and again *And for this reason hath he been chosen and hidden before Him, Before the creation of the world and for evermore.* (1 Enoch 48:6) — the Son of Adam named and chosen BEFORE the worlds. John opens his Gospel on the same eternal ground: *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* (John 1:1), and through Him the very creation that Enoch dates the naming before came to be: *All things were made by him; and without him was not any thing made that was made.* (John 1:3). Paul names Him the firstborn before all things and the agent of creation: *Who is the image of the invisible Elohim (God), the firstborn of every creature:* (Colossians 1:15), *And he is before all things, and by him all things consist.* (Colossians 1:17). Wisdom''s own confession in the Tanakh reaches back the same way — *Yahuah (LORD) possessed me in the beginning of his way, before his works of old.* (Proverbs 8:22), *I was set up from everlasting, from the beginning, or ever the earth was.* (Proverbs 8:23) — and Peter ties the foreordaining to the manifestation in flesh: *Who verily was foreordained before the foundation of the world, but was manifest in these last times for you,* (1 Peter 1:20). Election precedes creation: the Formed Son was named before the sun, hidden with the Father, and revealed in time as Yahusha.',
+       sv.verse_id, ev.verse_id, 'extras', 51181
+  FROM _session250_en48_lookup sv, _session250_en48_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=48 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-48-light-of-the-gentiles-staff',
+       E'A staff to the righteous and a light of the Gentiles',
+       E'The named Son of Adam is given a twofold office — support for His people and light for the nations: *He shall be a staff to the righteous whereon to stay themselves and not fall, And he shall be the light of the Gentiles, And the hope of those who are troubled of heart.* (1 Enoch 48:4), and Enoch presses the saving power of His name — *For in his name they are saved, And according to his good pleasure hath it been in regard to their life.* (1 Enoch 48:7). Isaiah''s Servant-Song says exactly this of the One called from the womb: *Listen, O isles, unto me; and hearken, ye people, from far; Yahuah (LORD) hath called me from the womb; from the bowels of my mother hath he made mention of my name.* (Isaiah 49:1) — His name made mention of (as Enoch''s name was named) — and His commission reaches the nations: *And he said, It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth.* (Isaiah 49:6). Note the order: He first raises up the tribes of Jacob and restores scattered Yashar''el, and THEN is light to the nations — the gathering of the twelve tribes, not a people replacing Israel. The root of Jesse stands as the same ensign: *And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious.* (Isaiah 11:10). And the Tanakh fixes His origin from of old, the ruler born in Beth-lehem: *But thou, Beth-lehem Ephratah, though thou be little among the thousands of Yahudah (Judah), yet out of thee shall he come forth unto me that is to be ruler in Yashar''el (Israel); whose goings forth have been from of old, from everlasting.* (Micah 5:2).',
+       sv.verse_id, ev.verse_id, 'extras', 51184
+  FROM _session250_en48_lookup sv, _session250_en48_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=48 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-48-all-shall-worship-kings-fall',
+       E'All shall fall down and worship; the kings implore too late',
+       E'Worship is rendered to the Son of Adam, yet bent through Him to the Father: *All who dwell on earth shall fall down and worship before him, And will praise and bless and celebrate with song Yahuah (God) of Spirits.* (1 Enoch 48:5) — worshipped-with, yet the song lifts to the Yahuah of Spirits, the Father; the Formed Son is worshipped and distinct, never co-equal-modalism. Paul renders it precisely so: *That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth;* (Philippians 2:10), *And that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father.* (Philippians 2:11) — every knee bows to the Son, to the GLORY of the Father. The Psalm sang it of the everlasting King: *Yea, all kings shall fall down before him: all nations shall serve him.* (Psalm 72:11), and *His name shall endure for ever: his name shall be continued as long as the sun: and men shall be blessed in him: all nations shall call him blessed.* (Psalm 72:17) — His name continued as long as the sun, the very sun before which Enoch says His name was named. But the proud kings come too late: *In these days shall the kings and the mighty who possess the earth implore (Him) To grant them a little respite from His angels of punishment To whom they were delivered.* (1 Enoch 48:8) — the same reversal Enoch presses in the Parables, where the Son of Adam *shall raise up the kings and the mighty from their seats... And break the teeth of the sinners* (1 Enoch 46:4); the kings of the earth fall before the One they would not extol.',
+       sv.verse_id, ev.verse_id, 'extras', 51187
+  FROM _session250_en48_lookup sv, _session250_en48_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=48 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-48-fountain-of-wisdom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 2:13 — *For my people have committed two evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water.* Enoch''s inexhaustible fountain of righteousness (48:1) is the very fountain of living waters Yahuah''s people abandoned for cracked cisterns.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-fountain-of-wisdom'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=2 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 12:3 — *Therefore with joy shall ye draw water out of the wells of salvation.* The thirsty who drink and are filled with wisdom in Enoch 48:1 are those Isaiah sees drawing with joy from salvation''s wells.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-fountain-of-wisdom'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 4:14 — *But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.* Yahusha gives the inexhaustible water Enoch saw, so that the thirsty (48:1) thirst no more.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-fountain-of-wisdom'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 9:9 — *And wisdom was with you: which knoweth your works, and was present when you madest the world, and knew what was acceptable in your sight, and right in your commandments.* The fountains of wisdom around Enoch''s spring (48:1) flow from the Wisdom that stood with Elohim at the making of the world.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-fountain-of-wisdom'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=1
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=9 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-48-son-of-adam-named
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees one LIKE the Son of Adam (the kaph: He resembles mortal-man because He took flesh, while remaining the cloud-rider); Enoch 48:2 NAMES that same One in the presence of the Head of Days.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-son-of-adam-named'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:14 — *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* The Son of Adam named before the Head of Days (48:2) is the One given the everlasting kingdom Daniel records.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-son-of-adam-named'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 46:3 — *This is the Son of Adam who hath righteousness, with whom dwelleth righteousness, and who revealeth all the treasures of that which is hidden, because Yahuah (God) of Spirits hath chosen him, and whose lot hath the pre-eminence before Yahuah (God) of Spirits in uprightness for ever.* The naming of the Son of Adam at ch48:2 echoes His choosing and pre-eminence first declared at ch46:3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-son-of-adam-named'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=46 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 62:1 — *And thus Yahuah (God) of Spirits named the Elect One, And seated him on the throne of His glory, And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* The Son of Adam named in 48:2 is the same Elect One named and enthroned to judge at ch62:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-son-of-adam-named'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=62 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-48-name-before-creation-logos
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The name named before the sun and signs were created (48:3) is the Word who was in the beginning, with the Father and yet ordered as the Formed Son.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-name-before-creation-logos'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'John 1:3 — *All things were made by him; and without him was not any thing made that was made.* Enoch dates the naming before the stars were made (48:3); John names Him the One by whom those very things were made.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-name-before-creation-logos'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 8:23 — *I was set up from everlasting, from the beginning, or ever the earth was.* Wisdom''s everlasting setting-up before the earth matches the name named before the stars of heaven were made (48:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-name-before-creation-logos'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=8 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Colossians 1:17 — *And he is before all things, and by him all things consist.* The One chosen and hidden before the creation of the world (48:6) is He who is before all things and in whom all things consist.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-name-before-creation-logos'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Peter 1:20 — *Who verily was foreordained before the foundation of the world, but was manifest in these last times for you,* The Son chosen and hidden before the creation (48:6) was foreordained before the foundation of the world and manifest in the flesh as Yahusha.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-name-before-creation-logos'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-48-light-of-the-gentiles-staff
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 49:1 — *Listen, O isles, unto me; and hearken, ye people, from far; Yahuah (LORD) hath called me from the womb; from the bowels of my mother hath he made mention of my name.* The Servant''s name made mention of from the womb answers the Son of Adam whose name was named and who is the hope of the troubled (48:4).'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-light-of-the-gentiles-staff'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 49:6 — *And he said, It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth.* The Son of Adam as light of the Gentiles (48:4) first raises up the tribes of Jacob and restores scattered Yashar''el, then reaches the nations.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-light-of-the-gentiles-staff'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 11:10 — *And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious.* The staff on whom the righteous stay themselves (48:4) is the root of Jesse standing as an ensign to which the Gentiles seek.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-light-of-the-gentiles-staff'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Micah 5:2 — *But thou, Beth-lehem Ephratah, though thou be little among the thousands of Yahudah (Judah), yet out of thee shall he come forth unto me that is to be ruler in Yashar''el (Israel); whose goings forth have been from of old, from everlasting.* The One in whose name the righteous are saved (48:7) is the ruler whose goings forth are from of old, from everlasting.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-light-of-the-gentiles-staff'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=5 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-48-all-shall-worship-kings-fall
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Philippians 2:10 — *That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth;* All who dwell on earth falling down to worship before Him (48:5) is every knee bowing at the name of Yahusha.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-all-shall-worship-kings-fall'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Philippians 2:11 — *And that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father.* The worship before the Son bends to the Father, just as Enoch''s worshippers praise and bless Yahuah of Spirits (48:5) — the Son worshipped, the glory the Father''s.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-all-shall-worship-kings-fall'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 72:11 — *Yea, all kings shall fall down before him: all nations shall serve him.* The earth falling down to worship before Him (48:5) is the Psalm''s all kings falling down and all nations serving Him.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-all-shall-worship-kings-fall'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalms 72:17 — *His name shall endure for ever: his name shall be continued as long as the sun: and men shall be blessed in him: all nations shall call him blessed.* The name named before the sun (48:3) and worshipped by all (48:5) is the name continued as long as the sun, before which the kings of 48:8 must answer.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-all-shall-worship-kings-fall'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 46:4 — *And this Son of Adam whom thou hast seen shall raise up the kings and the mighty from their seats, [And the strong from their thrones] And shall loosen the reins of the strong, And break the teeth of the sinners.* The kings who implore too late (48:8) are the kings and mighty the Son of Adam raises from their seats at ch46:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en48_lookup sv, _session250_en48_lookup tv
+ WHERE t.slug='1-enoch-48-all-shall-worship-kings-fall'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=48 AND sv.verse_number=8
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=46 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_49.sql (session250 1-enoch 49) -----
+-- Source anchor: enoch/1-enoch ch49. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en49 (view _session250_en49_lookup). Sort band base 51200, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en49_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-49-spirit-of-wisdom-rests
+  ('enoch', '1-enoch', 49, 3, 'canon', 'isaiah', 11, 2, 'free', E'Isaiah 11:2 — *And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD);* the very sevenfold Spirit Enoch sees dwelling in the Elect One is Isaiah''s Spirit resting on the branch of Jesse.'),
+  ('enoch', '1-enoch', 49, 2, 'canon', 'isaiah', 42, 1, 'free', E'Isaiah 42:1 — *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles.* Isaiah''s ''mine elect'' on whom the Spirit is put is Enoch''s named ''Elect One'' standing before Yahuah of Spirits.'),
+  ('enoch', '1-enoch', 49, 3, 'canon', 'john', 3, 34, 'free', E'John 3:34 — *For he whom Elohim (God) hath sent speaketh the words of Elohim (God): for Elohim (God) giveth not the Spirit by measure unto him.* When the Elect One came in flesh as Yahusha, the Spirit that dwells in Him was given without measure, exactly as Enoch saw it indwelling Him in full.'),
+  ('enoch', '1-enoch', 49, 2, 'canon', 'matthew', 12, 18, 'free', E'Matthew 12:18 — *Behold my servant, whom I have chosen; my beloved, in whom my soul is well pleased: I will put my spirit upon him, and he shall shew judgment to the Gentiles.* Matthew reads Isaiah''s elect-servant straight onto Yahusha — the same chosen One Enoch names standing before Yahuah of Spirits.'),
+  -- thread: 1-enoch-49-treasures-of-wisdom-hidden
+  ('enoch', '1-enoch', 49, 1, 'canon', 'colossians', 2, 3, 'free', E'Colossians 2:3 — *In whom are hid all the treasures of wisdom and knowledge.* The wisdom Enoch sees poured out like water from the Elect One is, in Paul, the whole treasury hidden in the Messiah.'),
+  ('enoch', '1-enoch', 49, 1, 'canon', '1-corinthians', 1, 24, 'free', E'1 Corinthians 1:24 — *But unto them which are called, both Yahudim (Jews) and Greeks, Messiah (Christ) the power of Elohim (God), and the wisdom of Elohim (God).* The wisdom flowing from the Elect One is named in the Messiah Himself, who is the wisdom of Elohim.'),
+  ('enoch', '1-enoch', 49, 1, 'canon', 'proverbs', 8, 12, 'free', E'Proverbs 8:12 — *I wisdom dwell with prudence, and find out knowledge of witty inventions.* The Wisdom Proverbs personifies as present from the beginning is the same wisdom Enoch sees poured out without fail from the Elect One.'),
+  ('enoch', '1-enoch', 49, 1, 'enoch', '1-enoch', 48, 1, 'extras', E'1 Enoch 48:1 — *And in that place I saw the fountain of righteousness Which was inexhaustible: And around it were many fountains of wisdom: And all the thirsty drank of them, And were filled with wisdom, And their dwellings were with the righteous and holy and elect.* Enoch''s own fountains of wisdom in ch48 are here gathered into the Elect One, from whom wisdom is poured out like water.'),
+  -- thread: 1-enoch-49-elect-one-judges-secret-things
+  ('enoch', '1-enoch', 49, 4, 'canon', 'daniel', 7, 13, 'free', E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees one LIKE the Son of Adam (the kaph-comparative — he resembles mortal-man because he took flesh); Enoch names that same Elect One who judges before Yahuah of Spirits.'),
+  ('enoch', '1-enoch', 49, 4, 'canon', 'daniel', 7, 14, 'free', E'Daniel 7:14 — *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* The everlasting dominion given to the Son of Adam is the judging authority Enoch sees vested in the Elect One forever.'),
+  ('enoch', '1-enoch', 49, 4, 'canon', 'isaiah', 11, 4, 'free', E'Isaiah 11:4 — *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* The Spirit-anointed branch judges in righteousness, not by sight — the very judging of secret things Enoch ascribes to the Elect One.'),
+  ('enoch', '1-enoch', 49, 4, 'enoch', '1-enoch', 62, 1, 'extras', E'1 Enoch 62:1 — *And thus Yahuah (God) of Spirits named the Elect One, And seated him on the throne of His glory, And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* Enoch''s own ch62 enthrones the Elect One to judge — the office of judging the secret things named here in 49:4.'),
+  -- thread: 1-enoch-49-elect-one-stands-glory-forever
+  ('enoch', '1-enoch', 49, 3, 'canon', 'isaiah', 26, 19, 'free', E'Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* The ''spirit of those who have fallen asleep in righteousness'' resting on the Elect One points to Isaiah''s dust-dwellers waking — the earth casting out its dead.'),
+  ('enoch', '1-enoch', 49, 3, 'canon', 'daniel', 12, 2, 'free', E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The fallen-asleep-in-righteousness whose spirit rests with the Elect One are Daniel''s sleepers in the dust who awake to everlasting life.'),
+  ('enoch', '1-enoch', 49, 3, 'canon', 'john', 5, 28, 'free', E'John 5:28 — *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,* Yahusha names Himself the voice that wakes the graves — the Elect One whose might over the sleeping righteous Enoch sees in 49:3.'),
+  ('enoch', '1-enoch', 49, 3, 'enoch', '1-enoch', 51, 1, 'extras', E'1 Enoch 51:1 — *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes. 5a. For in those days the Elect One shall arise,* Enoch''s own ch51 makes the Elect One the agent of resurrection — the rising of the righteous who fell asleep in Him.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en49_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en49_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-49-spirit-of-wisdom-rests',
+       E'The Spirit of Wisdom Rests on the Elect One',
+       E'Enoch sees the sevenfold Spirit poured out on the chosen One: *And in him dwells the spirit of wisdom, And the spirit which gives insight, And the spirit of understanding and of might, And the spirit of those who have fallen asleep in righteousness.* (1 Enoch 49:3). This is no new revelation — it is Isaiah''s branch from Jesse, on whom the same Spirit settles in the same registers: *And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD)* (Isaiah 11:2). Yahuah''s own voice names the same servant and the same anointing: *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles* (Isaiah 42:1) — and Enoch''s title ''the Elect One'' is precisely Isaiah''s ''mine elect.'' When this Elect One came in flesh as Yahusha, the measure was the whole: *For he whom Elohim (God) hath sent speaketh the words of Elohim (God): for Elohim (God) giveth not the Spirit by measure unto him* (John 3:34). The Spirit rests on the Formed Son, ordered under the Head of Days who is its source — the Father gives, the Son bears it without measure; named before creation, the same One across every page.',
+       sv.verse_id, ev.verse_id, 'extras', 51200
+  FROM _session250_en49_lookup sv, _session250_en49_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=49 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-49-treasures-of-wisdom-hidden',
+       E'Wisdom Poured Out, Treasures Hidden in Him',
+       E'The chapter opens with wisdom overflowing from the Elect One: *For wisdom is poured out like water, And glory faileth not before him for evermore* (1 Enoch 49:1). This is the fountain of 1 Enoch 48 made personal — in the Son of Adam the wells of wisdom run inexhaustible. The Tanakh''s Wisdom speaks as the companion at creation: *I wisdom dwell with prudence, and find out knowledge of witty inventions* (Proverbs 8:12). And the New Testament gathers it into one Person: the crucified Messiah is *Messiah (Christ) the power of Elohim (God), and the wisdom of Elohim (God)* (1 Corinthians 1:24), who *of Elohim (God) is made unto us wisdom, and righteousness, and sanctification, and redemption* (1 Corinthians 1:30) — so that all the stores Enoch sees overflowing are sealed up in Him: *In whom are hid all the treasures of wisdom and knowledge* (Colossians 2:3). It ain''t new: the Wisdom that Proverbs personifies, that Enoch sees poured out from the Elect One, is the Formed Son who came as Yahusha.',
+       sv.verse_id, ev.verse_id, 'extras', 51203
+  FROM _session250_en49_lookup sv, _session250_en49_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=49 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-49-elect-one-judges-secret-things',
+       E'The Elect One Judges the Secret Things',
+       E'The Spirit-bearing One is also the judge: *And he shall judge the secret things, And none shall be able to utter a lying word before him; For he is the Elect One before Yahuah (God) of Spirits according to His good pleasure* (1 Enoch 49:4). Isaiah''s Spirit-anointed branch judges in the same righteousness, not by appearance: *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked* (Isaiah 11:4). Daniel sees this same enthroned figure receive the dominion to judge — *one like the Son of Adam* (the kaph-comparative: he resembles mortal-man because he took flesh, while remaining the Formed cloud-rider): *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him* (Daniel 7:13), *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him* (Daniel 7:14). Daniel sees one LIKE the Son of Adam; Enoch NAMES that same One as the Elect One — the constructions differ, but both land on Yahusha. Within Enoch this office is settled on the throne: *And thus Yahuah (God) of Spirits named the Elect One, And seated him on the throne of His glory, And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance* (1 Enoch 62:1). The Head of Days (the Father) seats and gives; the Elect One judges by His good pleasure — distinct from the Father, ordered under Him, never a co-equal-person nor a mere man.',
+       sv.verse_id, ev.verse_id, 'extras', 51206
+  FROM _session250_en49_lookup sv, _session250_en49_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=49 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-49-elect-one-stands-glory-forever',
+       E'The Elect One Stands; Unrighteousness Vanishes Like a Shadow',
+       E'Enoch sets the standing of the Elect One against the vanishing of evil: *For he is mighty in all the secrets of righteousness, And unrighteousness shall disappear as a shadow, And have no continuance; Because the Elect One standeth before Yahuah (God) of Spirits, And his glory is for ever and ever, And his might unto all generations* (1 Enoch 49:2). The Spirit that rests on Him includes *the spirit of those who have fallen asleep in righteousness* (1 Enoch 49:3) — and this points to the resurrection where the Elect One arises and the dead are given back. Isaiah''s dew wakes the sleepers: *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead* (Isaiah 26:19). Daniel sets the same waking: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2). Yahusha gathers the chorus: *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice* (John 5:28). And Enoch''s own ch51 makes the Elect One the agent of that rising: *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received... For in those days the Elect One shall arise* (1 Enoch 51:1). The same One whose righteousness makes evil a shadow without continuance is the One who raises the righteous who fell asleep in Him.',
+       sv.verse_id, ev.verse_id, 'extras', 51209
+  FROM _session250_en49_lookup sv, _session250_en49_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=49 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-49-spirit-of-wisdom-rests
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 11:2 — *And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD);* the very sevenfold Spirit Enoch sees dwelling in the Elect One is Isaiah''s Spirit resting on the branch of Jesse.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-spirit-of-wisdom-rests'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 42:1 — *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles.* Isaiah''s ''mine elect'' on whom the Spirit is put is Enoch''s named ''Elect One'' standing before Yahuah of Spirits.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-spirit-of-wisdom-rests'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 3:34 — *For he whom Elohim (God) hath sent speaketh the words of Elohim (God): for Elohim (God) giveth not the Spirit by measure unto him.* When the Elect One came in flesh as Yahusha, the Spirit that dwells in Him was given without measure, exactly as Enoch saw it indwelling Him in full.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-spirit-of-wisdom-rests'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=3 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 12:18 — *Behold my servant, whom I have chosen; my beloved, in whom my soul is well pleased: I will put my spirit upon him, and he shall shew judgment to the Gentiles.* Matthew reads Isaiah''s elect-servant straight onto Yahusha — the same chosen One Enoch names standing before Yahuah of Spirits.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-spirit-of-wisdom-rests'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-49-treasures-of-wisdom-hidden
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Colossians 2:3 — *In whom are hid all the treasures of wisdom and knowledge.* The wisdom Enoch sees poured out like water from the Elect One is, in Paul, the whole treasury hidden in the Messiah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-treasures-of-wisdom-hidden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=2 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Corinthians 1:24 — *But unto them which are called, both Yahudim (Jews) and Greeks, Messiah (Christ) the power of Elohim (God), and the wisdom of Elohim (God).* The wisdom flowing from the Elect One is named in the Messiah Himself, who is the wisdom of Elohim.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-treasures-of-wisdom-hidden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 8:12 — *I wisdom dwell with prudence, and find out knowledge of witty inventions.* The Wisdom Proverbs personifies as present from the beginning is the same wisdom Enoch sees poured out without fail from the Elect One.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-treasures-of-wisdom-hidden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=8 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 48:1 — *And in that place I saw the fountain of righteousness Which was inexhaustible: And around it were many fountains of wisdom: And all the thirsty drank of them, And were filled with wisdom, And their dwellings were with the righteous and holy and elect.* Enoch''s own fountains of wisdom in ch48 are here gathered into the Elect One, from whom wisdom is poured out like water.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-treasures-of-wisdom-hidden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=1
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-49-elect-one-judges-secret-things
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees one LIKE the Son of Adam (the kaph-comparative — he resembles mortal-man because he took flesh); Enoch names that same Elect One who judges before Yahuah of Spirits.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-elect-one-judges-secret-things'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:14 — *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* The everlasting dominion given to the Son of Adam is the judging authority Enoch sees vested in the Elect One forever.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-elect-one-judges-secret-things'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 11:4 — *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* The Spirit-anointed branch judges in righteousness, not by sight — the very judging of secret things Enoch ascribes to the Elect One.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-elect-one-judges-secret-things'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 62:1 — *And thus Yahuah (God) of Spirits named the Elect One, And seated him on the throne of His glory, And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* Enoch''s own ch62 enthrones the Elect One to judge — the office of judging the secret things named here in 49:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-elect-one-judges-secret-things'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=4
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=62 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-49-elect-one-stands-glory-forever
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* The ''spirit of those who have fallen asleep in righteousness'' resting on the Elect One points to Isaiah''s dust-dwellers waking — the earth casting out its dead.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-elect-one-stands-glory-forever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The fallen-asleep-in-righteousness whose spirit rests with the Elect One are Daniel''s sleepers in the dust who awake to everlasting life.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-elect-one-stands-glory-forever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 5:28 — *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,* Yahusha names Himself the voice that wakes the graves — the Elect One whose might over the sleeping righteous Enoch sees in 49:3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-elect-one-stands-glory-forever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 51:1 — *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes. 5a. For in those days the Elect One shall arise,* Enoch''s own ch51 makes the Elect One the agent of resurrection — the rising of the righteous who fell asleep in Him.'
+  FROM cross_reference_threads t, cross_references x, _session250_en49_lookup sv, _session250_en49_lookup tv
+ WHERE t.slug='1-enoch-49-elect-one-stands-glory-forever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=49 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=51 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_50.sql (session250 1-enoch 50) -----
+-- Source anchor: enoch/1-enoch ch50. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en50 (view _session250_en50_lookup). Sort band base 51225, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en50_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-50-change-for-the-elect-light-and-glory
+  ('enoch', '1-enoch', 50, 1, 'canon', 'malachi', 4, 2, 'free', E'Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* Enoch''s light and glory that ''turn to the holy'' (50:1) is Malachi''s Sun of righteousness rising on those who fear His name.'),
+  ('enoch', '1-enoch', 50, 1, 'canon', 'isaiah', 30, 18, 'free', E'Isaiah 30:18 — *And therefore will Yahuah (LORD) wait, that he may be gracious unto you, and therefore will he be exalted, that he may have mercy upon you: for Yahuah (LORD) is a Elohim (God) of judgment: blessed are all they that wait for him.* The ''change'' for the elect (50:1) is the gracious verdict of the Elohim of judgement who waited.'),
+  ('enoch', '1-enoch', 50, 1, 'canon', 'daniel', 12, 2, 'free', E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The ''light of days'' abiding on the holy (50:1) is the everlasting life Daniel sees for those who awake.'),
+  ('enoch', '1-enoch', 50, 1, 'enoch', '1-enoch', 51, 2, 'extras', E'1 Enoch 51:2 — *And he shall choose the righteous and holy from among them: For the day has drawn nigh that they should be saved.* Enoch''s own next chapter names the Elect One under whom the change of 50:1 takes place.'),
+  -- thread: 1-enoch-50-evil-treasured-up-and-the-call-to-repent
+  ('enoch', '1-enoch', 50, 2, 'canon', 'romans', 2, 4, 'free', E'Romans 2:4 — *Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of Elohim (God) leadeth thee to repentance?* Paul names the same goodness that ''causes the others to witness that they may repent'' (50:2).'),
+  ('enoch', '1-enoch', 50, 2, 'canon', 'romans', 2, 5, 'free', E'Romans 2:5 — *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God).* Paul''s ''treasurest up... against the day of wrath'' is Enoch''s ''evil shall have been treasured up against the sinners'' (50:2).'),
+  ('enoch', '1-enoch', 50, 2, 'canon', '2-peter', 3, 9, 'free', E'2 Peter 3:9 — *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.* Peter explains why the others are made to witness and repent (50:2): the Creator is not willing that any should perish.'),
+  ('enoch', '1-enoch', 50, 2, 'apocrypha', 'the-wisdom-of-solomon', 11, 23, 'extras', E'The Wisdom of Solomon 11:23 — *But you have mercy upon all; for you can do all things, and winkest at the sins of men, because they should amend.* A parallel extra-canonical witness to the mercy that gives the sinners room to repent (50:2).'),
+  -- thread: 1-enoch-50-saved-through-his-name
+  ('enoch', '1-enoch', 50, 3, 'canon', 'joel', 2, 32, 'free', E'Joel 2:32 — *And it shall come to pass, that whosoever shall call on the name of Yahuah (LORD) shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call.* ''Through His name shall they be saved'' (50:3) is Joel''s deliverance for all who call on the name, in the remnant He calls.'),
+  ('enoch', '1-enoch', 50, 3, 'canon', 'acts', 2, 21, 'free', E'Acts 2:21 — *And it shall come to pass, that whosoever shall call on the name of Yahuah (Lord) shall be saved.* Peter at Shavuot preaches Enoch''s same saving name (50:3).'),
+  ('enoch', '1-enoch', 50, 3, 'canon', 'romans', 10, 13, 'free', E'Romans 10:13 — *For whosoever shall call upon the name of Yahuah (Lord) shall be saved.* Paul restates the doctrine of 50:3: salvation comes through His name, not through honour of one''s own.'),
+  ('enoch', '1-enoch', 50, 3, 'canon', 'proverbs', 18, 10, 'free', E'Proverbs 18:10 — *The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe.* The name through which the righteous are saved (50:3) is itself their refuge.'),
+  ('enoch', '1-enoch', 50, 3, 'enoch', '1-enoch', 48, 7, 'extras', E'1 Enoch 48:7 — *And the wisdom of Yahuah (God) of Spirits hath revealed him to the holy and righteous; For he hath preserved the lot of the righteous, Because they have hated and despised this world of unrighteousness, And have hated all its works and ways in the name of Yahuah (God) of Spirits: For in his name they are saved, And according to his good pleasure hath it been in regard to their life.* Enoch''s own Parables ground the saving name of 50:3 in the named Elect One, the Son of Adam.'),
+  -- thread: 1-enoch-50-discern-the-righteous-from-the-wicked
+  ('enoch', '1-enoch', 50, 2, 'canon', 'malachi', 3, 16, 'free', E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The holy who are made victorious in His name (50:2) are those written in Malachi''s book of remembrance for thinking upon His name.'),
+  ('enoch', '1-enoch', 50, 4, 'canon', 'malachi', 3, 18, 'free', E'Malachi 3:18 — *Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not.* The chapter''s sorting — glory to the holy, the unrepentant perishing (50:1, 50:4) — is Malachi''s discernment of the righteous from the wicked.'),
+  ('enoch', '1-enoch', 50, 4, 'canon', 'revelation', 20, 12, 'free', E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The righteous judgement of 50:4 is John''s opened books and book of life.'),
+  ('enoch', '1-enoch', 50, 1, 'canon', 'revelation', 3, 5, 'free', E'Revelation 3:5 — *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels.* The glory and honour that turn to the holy (50:1) is the unblotted name confessed before the Father.'),
+  ('enoch', '1-enoch', 50, 4, 'enoch', '1-enoch', 108, 3, 'extras', E'1 Enoch 108:3 — *Wait ye in patience until sin has passed away, For their names shall be blotted out of the book of life, And out of the books of the holy ones, And their seed shall be destroyed forever, And their spirits shall be slain, And they shall cry and lament in a waste place that has no water, And in the fire shall they burn.* Enoch''s own books show the inverse of 50:4''s verdict: the unrepentant blotted out, while the elect''s names stand.'),
+  -- thread: 1-enoch-50-righteous-judgement-and-the-end-of-mercy
+  ('enoch', '1-enoch', 50, 5, 'canon', 'malachi', 4, 1, 'free', E'Malachi 4:1 — *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith Yahuah Tseva''ot (LORD of hosts), that it shall leave them neither root nor branch.* The day when He will have no more mercy (50:5) is Malachi''s oven-day that burns up the proud.'),
+  ('enoch', '1-enoch', 50, 4, 'canon', 'isaiah', 30, 15, 'free', E'Isaiah 30:15 — *For thus saith Adonai Yahuah (the Lord GOD), the Holy One of Yashar''el (Israel); In returning and rest shall ye be saved; in quietness and in confidence shall be your strength: and ye would not.* The unrepentant who perish (50:4) are those who ''would not'' return to the salvation that was offered.'),
+  ('enoch', '1-enoch', 50, 4, 'canon', 'romans', 2, 5, 'free', E'Romans 2:5 — *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God).* Paul''s ''righteous judgment of Elohim'' against the impenitent heart is Enoch''s righteous judgement under which the unrepentant perish (50:4).'),
+  ('enoch', '1-enoch', 50, 4, 'enoch', '1-enoch', 51, 1, 'extras', E'1 Enoch 51:1 — *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes. 5a. For in those days the Elect One shall arise.* Enoch''s own next chapter sets the righteous judgement of 50:4 after the resurrection, when the Elect One arises to judge.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en50_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en50_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-50-change-for-the-elect-light-and-glory',
+       E'The change for the holy and elect: light and glory turned upon them',
+       E'Enoch opens the chapter with the turning of the age for Yahuah''s people: *And in those days a change shall take place for the holy and elect, And the light of days shall abide upon them, And glory and honour shall turn to the holy* (1 Enoch 50:1). This is not a self-selected class earning reward but the elect already named (ch48) now vindicated. Malachi binds the same dawn to the fear of His name: *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall* (Malachi 4:2). The change is the patient verdict of a Elohim of judgement: *And therefore will Yahuah (LORD) wait, that he may be gracious unto you, and therefore will he be exalted, that he may have mercy upon you: for Yahuah (LORD) is a Elohim (God) of judgment: blessed are all they that wait for him* (Isaiah 30:18). Daniel sees the resurrection-glory that ''the light of days'' anticipates: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2). And Enoch''s own next chapter names the One under whom the change comes — *For in those days the Elect One shall arise, And he shall choose the righteous and holy from among them: For the day has drawn nigh that they should be saved* (1 Enoch 51:2) — the Formed Son ordered under the Head of Days, vindicating Yashar''el''s gathered remnant, never a church replacing the elect.',
+       sv.verse_id, ev.verse_id, 'extras', 51225
+  FROM _session250_en50_lookup sv, _session250_en50_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=50 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-50-evil-treasured-up-and-the-call-to-repent',
+       E'Evil treasured up against the sinners, yet space given to repent',
+       E'On the day of reckoning the stored-up wickedness is opened, yet even then mercy makes room: *On the day of affliction on which evil shall have been treasured up against the sinners. And the righteous shall be victorious in the name of Yahuah (God) of Spirits: And He will cause the others to witness (this) That they may repent And forgo the works of their hands* (1 Enoch 50:2). Paul uses the very image of evil ''treasured up'' for the day of wrath, and the same goodness leading to repentance: *Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of Elohim (God) leadeth thee to repentance?* (Romans 2:4); *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God)* (Romans 2:5). Peter explains the delay as room for turning, not slackness: *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance* (2 Peter 3:9). The Wisdom of Solomon, a parallel extra-canonical witness, says the same of the Creator''s restraint: *But you have mercy upon all; for you can do all things, and winkest at the sins of men, because they should amend* (The Wisdom of Solomon 11:23). The repentance is real and Torah-shaped — to ''forgo the works of their hands'' is to turn from covenant-breaking, never a curse on the law itself.',
+       sv.verse_id, ev.verse_id, 'extras', 51228
+  FROM _session250_en50_lookup sv, _session250_en50_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=50 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-50-saved-through-his-name',
+       E'No honour of their own — yet saved through His name',
+       E'Enoch states the gospel of grace centuries before the apostles: *They shall have no honour through the name of Yahuah (God) of Spirits, Yet through His name shall they be saved, And Yahuah (God) of Spirits will have compassion on them, For His compassion is great* (1 Enoch 50:3). Salvation is ''through His name,'' not through merit. Joel pronounces the same: *And it shall come to pass, that whosoever shall call on the name of Yahuah (LORD) shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call* (Joel 2:32) — note the remnant whom He calls, election preceding the call. The apostles carry it word for word: *And it shall come to pass, that whosoever shall call on the name of Yahuah (Lord) shall be saved* (Acts 2:21); *For whosoever shall call upon the name of Yahuah (Lord) shall be saved* (Romans 10:13). The name is itself the refuge: *The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe* (Proverbs 18:10). And Enoch''s own Parables ground the saving name in the Named Son — the Elect One revealed to the righteous: *For in his name they are saved, And according to his good pleasure hath it been in regard to their life* (1 Enoch 48:7). The Son of Adam was named before the worlds (48:3); the name that saves in ch50 is the name of that Formed Son who came in flesh as Yahusha, ordered under the Head of Days yet bearing His own name to call upon.',
+       sv.verse_id, ev.verse_id, 'extras', 51231
+  FROM _session250_en50_lookup sv, _session250_en50_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=50 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-50-discern-the-righteous-from-the-wicked',
+       E'The book of remembrance: discerning the righteous from the wicked',
+       E'Across the chapter the elect and the sinners are sorted — glory turns to the holy (50:1), the righteous are victorious in His name (50:2), the unrepentant perish (50:4) — exactly the discernment Malachi promises around the book of remembrance: *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name* (Malachi 3:16); *Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not* (Malachi 3:18). Revelation shows the same books at the judgement: *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12), and the elect name kept secure: *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels* (Revelation 3:5). Enoch''s own books carry the inverse — the names of the unrepentant erased: *For their names shall be blotted out of the book of life, And out of the books of the holy ones, And their seed shall be destroyed forever* (1 Enoch 108:3). Election precedes confession: the holy are remembered before they speak, written before the worlds (48:3), names blotted but never added.',
+       sv.verse_id, ev.verse_id, 'extras', 51234
+  FROM _session250_en50_lookup sv, _session250_en50_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=50 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-50-righteous-judgement-and-the-end-of-mercy',
+       E'His righteous judgement: the unrepentant perish before Him',
+       E'The chapter closes on the limit of the offered mercy — repentance was extended (50:2), but for those who refuse it, the door shuts: *And He is righteous also in His judgement, And in the presence of His glory unrighteousness also shall not maintain itself: At His judgement the unrepentant shall perish before Him* (1 Enoch 50:4); *And from henceforth I will have no mercy on them, saith Yahuah (God) of Spirits* (1 Enoch 50:5). Malachi pictures the same burning day for the proud: *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith Yahuah Tseva''ot (LORD of hosts), that it shall leave them neither root nor branch* (Malachi 4:1). Isaiah names the salvation refused in returning and rest — the very repentance the unrepentant forgo: *For thus saith Adonai Yahuah (the Lord GOD), the Holy One of Yashar''el (Israel); In returning and rest shall ye be saved; in quietness and in confidence shall be your strength: and ye would not* (Isaiah 30:15). Paul gathers the impenitent into that same day: *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God)* (Romans 2:5). And Enoch''s own resurrection scene sets this judgement after the dead are raised — the Elect One choosing the righteous: *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes. 5a. For in those days the Elect One shall arise* (1 Enoch 51:1). The judgement is righteous because it is the Father''s order upheld through the Formed Son; mercy was great and real, and ends only where repentance is finally refused.',
+       sv.verse_id, ev.verse_id, 'extras', 51237
+  FROM _session250_en50_lookup sv, _session250_en50_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=50 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-50-change-for-the-elect-light-and-glory
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* Enoch''s light and glory that ''turn to the holy'' (50:1) is Malachi''s Sun of righteousness rising on those who fear His name.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-change-for-the-elect-light-and-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 30:18 — *And therefore will Yahuah (LORD) wait, that he may be gracious unto you, and therefore will he be exalted, that he may have mercy upon you: for Yahuah (LORD) is a Elohim (God) of judgment: blessed are all they that wait for him.* The ''change'' for the elect (50:1) is the gracious verdict of the Elohim of judgement who waited.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-change-for-the-elect-light-and-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The ''light of days'' abiding on the holy (50:1) is the everlasting life Daniel sees for those who awake.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-change-for-the-elect-light-and-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 51:2 — *And he shall choose the righteous and holy from among them: For the day has drawn nigh that they should be saved.* Enoch''s own next chapter names the Elect One under whom the change of 50:1 takes place.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-change-for-the-elect-light-and-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=1
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=51 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-50-evil-treasured-up-and-the-call-to-repent
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Romans 2:4 — *Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of Elohim (God) leadeth thee to repentance?* Paul names the same goodness that ''causes the others to witness that they may repent'' (50:2).'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-evil-treasured-up-and-the-call-to-repent'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 2:5 — *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God).* Paul''s ''treasurest up... against the day of wrath'' is Enoch''s ''evil shall have been treasured up against the sinners'' (50:2).'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-evil-treasured-up-and-the-call-to-repent'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Peter 3:9 — *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.* Peter explains why the others are made to witness and repent (50:2): the Creator is not willing that any should perish.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-evil-treasured-up-and-the-call-to-repent'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'The Wisdom of Solomon 11:23 — *But you have mercy upon all; for you can do all things, and winkest at the sins of men, because they should amend.* A parallel extra-canonical witness to the mercy that gives the sinners room to repent (50:2).'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-evil-treasured-up-and-the-call-to-repent'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=2
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=11 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-50-saved-through-his-name
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joel 2:32 — *And it shall come to pass, that whosoever shall call on the name of Yahuah (LORD) shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call.* ''Through His name shall they be saved'' (50:3) is Joel''s deliverance for all who call on the name, in the remnant He calls.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-saved-through-his-name'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 2:21 — *And it shall come to pass, that whosoever shall call on the name of Yahuah (Lord) shall be saved.* Peter at Shavuot preaches Enoch''s same saving name (50:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-saved-through-his-name'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 10:13 — *For whosoever shall call upon the name of Yahuah (Lord) shall be saved.* Paul restates the doctrine of 50:3: salvation comes through His name, not through honour of one''s own.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-saved-through-his-name'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 18:10 — *The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe.* The name through which the righteous are saved (50:3) is itself their refuge.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-saved-through-his-name'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 48:7 — *And the wisdom of Yahuah (God) of Spirits hath revealed him to the holy and righteous; For he hath preserved the lot of the righteous, Because they have hated and despised this world of unrighteousness, And have hated all its works and ways in the name of Yahuah (God) of Spirits: For in his name they are saved, And according to his good pleasure hath it been in regard to their life.* Enoch''s own Parables ground the saving name of 50:3 in the named Elect One, the Son of Adam.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-saved-through-his-name'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-50-discern-the-righteous-from-the-wicked
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The holy who are made victorious in His name (50:2) are those written in Malachi''s book of remembrance for thinking upon His name.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-discern-the-righteous-from-the-wicked'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Malachi 3:18 — *Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not.* The chapter''s sorting — glory to the holy, the unrepentant perishing (50:1, 50:4) — is Malachi''s discernment of the righteous from the wicked.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-discern-the-righteous-from-the-wicked'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The righteous judgement of 50:4 is John''s opened books and book of life.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-discern-the-righteous-from-the-wicked'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 3:5 — *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels.* The glory and honour that turn to the holy (50:1) is the unblotted name confessed before the Father.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-discern-the-righteous-from-the-wicked'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=3 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 108:3 — *Wait ye in patience until sin has passed away, For their names shall be blotted out of the book of life, And out of the books of the holy ones, And their seed shall be destroyed forever, And their spirits shall be slain, And they shall cry and lament in a waste place that has no water, And in the fire shall they burn.* Enoch''s own books show the inverse of 50:4''s verdict: the unrepentant blotted out, while the elect''s names stand.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-discern-the-righteous-from-the-wicked'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=4
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=108 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-50-righteous-judgement-and-the-end-of-mercy
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Malachi 4:1 — *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith Yahuah Tseva''ot (LORD of hosts), that it shall leave them neither root nor branch.* The day when He will have no more mercy (50:5) is Malachi''s oven-day that burns up the proud.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-righteous-judgement-and-the-end-of-mercy'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 30:15 — *For thus saith Adonai Yahuah (the Lord GOD), the Holy One of Yashar''el (Israel); In returning and rest shall ye be saved; in quietness and in confidence shall be your strength: and ye would not.* The unrepentant who perish (50:4) are those who ''would not'' return to the salvation that was offered.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-righteous-judgement-and-the-end-of-mercy'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 2:5 — *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God).* Paul''s ''righteous judgment of Elohim'' against the impenitent heart is Enoch''s righteous judgement under which the unrepentant perish (50:4).'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-righteous-judgement-and-the-end-of-mercy'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 51:1 — *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes. 5a. For in those days the Elect One shall arise.* Enoch''s own next chapter sets the righteous judgement of 50:4 after the resurrection, when the Elect One arises to judge.'
+  FROM cross_reference_threads t, cross_references x, _session250_en50_lookup sv, _session250_en50_lookup tv
+ WHERE t.slug='1-enoch-50-righteous-judgement-and-the-end-of-mercy'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=50 AND sv.verse_number=4
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=51 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_51.sql (session250 1-enoch 51) -----
+-- Source anchor: enoch/1-enoch ch51. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en51 (view _session250_en51_lookup). Sort band base 51250, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en51_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-51-earth-gives-back-the-dead
+  ('enoch', '1-enoch', 51, 1, 'canon', 'daniel', 12, 2, 'free', E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The dust giving up its sleepers is Enoch''s earth giving back what was entrusted to it (51:1).'),
+  ('enoch', '1-enoch', 51, 1, 'canon', 'isaiah', 26, 19, 'free', E'Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* Isaiah''s ''earth shall cast out the dead'' is the same earth that gives back its entrusted dead in Enoch 51:1.'),
+  ('enoch', '1-enoch', 51, 1, 'canon', 'revelation', 20, 13, 'free', E'Revelation 20:13 — *And the sea gave up the dead which were in it; and death and hell delivered up the dead which were in them: and they were judged every man according to their works.* John''s threefold giving-back — sea, death, hell — matches Enoch''s earth, Sheol, and hell each surrendering what they hold (51:1).'),
+  ('enoch', '1-enoch', 51, 1, 'canon', 'hosea', 13, 14, 'free', E'Hosea 13:14 — *I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction: repentance shall be hid from mine eyes.* The grave is plundered and made to pay its debt, exactly as Enoch''s hell ''gives back that which it owes'' (51:1).'),
+  -- thread: 1-enoch-51-all-in-the-graves-hear-his-voice
+  ('enoch', '1-enoch', 51, 2, 'canon', 'john', 5, 28, 'free', E'John 5:28 — *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,* The Elect One who ''shall arise'' and gather the righteous in Enoch 51:1–2 is the Son of Adam whose voice empties the graves.'),
+  ('enoch', '1-enoch', 51, 2, 'canon', 'john', 5, 29, 'free', E'John 5:29 — *And shall come forth; they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation.* The twofold raising matches Enoch''s Elect One choosing the righteous and holy ''from among them'' (51:2).'),
+  ('enoch', '1-enoch', 51, 2, 'canon', 'john', 5, 27, 'free', E'John 5:27 — *And hath given him authority to execute judgment also, because he is the Son of Adam.* The very title Enoch names in 46:3 is given resurrection-and-judgment authority — the Elect One arising to save in 51:1–2.'),
+  ('enoch', '1-enoch', 51, 2, 'canon', 'ezekiel', 37, 12, 'free', E'Ezekiel 37:12 — *Therefore prophesy and say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, O my people, I will open your graves, and cause you to come up out of your graves, and bring you into the land of Yashar''el (Israel).* The opened graves of the whole house of Israel are the people Enoch''s Elect One chooses to be saved (51:2).'),
+  ('enoch', '1-enoch', 51, 2, 'canon', 'ezekiel', 37, 14, 'free', E'Ezekiel 37:14 — *And shall put my spirit in you, and ye shall live, and I shall place you in your own land: then shall ye know that I Yahuah (LORD) have spoken it, and performed it, saith Yahuah (LORD).* The raised people are placed in their own land — the regathered tribes, not a church replacing them, answering Enoch''s day ''that they should be saved'' (51:2).'),
+  -- thread: 1-enoch-51-elect-one-on-the-throne-of-glory
+  ('enoch', '1-enoch', 51, 3, 'canon', 'daniel', 7, 13, 'free', E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees *one like* the Son of Adam under the kaph-comparative; Enoch names that same One seated on the Father''s throne (51:3).'),
+  ('enoch', '1-enoch', 51, 3, 'canon', 'daniel', 7, 14, 'free', E'Daniel 7:14 — *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* The Head of Days giving and glorifying the Son in Enoch 51:3 is Daniel''s ''there was given him'' an everlasting kingdom.'),
+  ('enoch', '1-enoch', 51, 3, 'canon', 'matthew', 25, 31, 'free', E'Matthew 25:31 — *When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory:* Yahusha''s own throne of glory is the throne the Father seats the Elect One upon in Enoch 51:3.'),
+  ('enoch', '1-enoch', 51, 3, 'canon', 'isaiah', 11, 2, 'free', E'Isaiah 11:2 — *And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD);* The wisdom and counsel pouring from the Elect One''s mouth in Enoch 51:3 is the Spirit of wisdom and counsel resting on the Branch.'),
+  ('enoch', '1-enoch', 51, 3, 'enoch', '1-enoch', 61, 8, 'extras', E'1 Enoch 61:8 — *And the Head of Days placed the Elect One on the throne of His glory; And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* Enoch''s own parallel: the Father places the Elect One on the throne of glory to judge, the same enthronement as 51:3.'),
+  -- thread: 1-enoch-51-named-before-creation-the-elect-one
+  ('enoch', '1-enoch', 51, 1, 'enoch', '1-enoch', 46, 3, 'extras', E'1 Enoch 46:3 — *And he answered and said unto me: This is the Son of Adam who hath righteousness, with whom dwelleth righteousness, and who revealeth all the treasures of that which is hidden, because Yahuah (God) of Spirits hath chosen him, and whose lot hath the pre-eminence before Yahuah (God) of Spirits in uprightness for ever.* The Elect One who arises to raise the dead in 51:1 is the named, chosen Son of Adam of the foundational vision.'),
+  ('enoch', '1-enoch', 51, 2, 'enoch', '1-enoch', 48, 2, 'extras', E'1 Enoch 48:2 — *And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days.* The Elect One who chooses the righteous in 51:2 is the One whose name was named before the Father — election before confession.'),
+  ('enoch', '1-enoch', 51, 2, 'enoch', '1-enoch', 48, 3, 'extras', E'1 Enoch 48:3 — *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* Named before sun, signs, and stars — the chosen-before-creation One whose ''day has drawn nigh'' to save in 51:2.'),
+  ('enoch', '1-enoch', 51, 3, 'canon', 'john', 1, 1, 'free', E'John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The Son named before creation in Enoch 48 is the Word who was with the Father in the beginning — the Formed One enthroned in 51:3.'),
+  ('enoch', '1-enoch', 51, 3, 'canon', 'revelation', 13, 8, 'free', E'Revelation 13:8 — *And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.* The Lamb chosen and hidden before creation (1 Enoch 48:6) is the One the Father has glorified and seated in 51:3.'),
+  -- thread: 1-enoch-51-books-of-the-living-prayer-of-the-righteous
+  ('enoch', '1-enoch', 51, 2, 'enoch', '1-enoch', 47, 3, 'extras', E'1 Enoch 47:3 — *In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him.* The Elect One''s choosing of the righteous in 51:2 is reckoned from the books of the living opened before the Head of Days.'),
+  ('enoch', '1-enoch', 51, 2, 'canon', 'daniel', 7, 10, 'free', E'Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* The same heavenly court — host standing, judgment set, books opened — from which the righteous are chosen in Enoch 51:2.'),
+  ('enoch', '1-enoch', 51, 2, 'canon', 'revelation', 20, 12, 'free', E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* John''s book of life is Enoch''s books of the living, from which the Elect One chooses the righteous in 51:2.'),
+  -- thread: 1-enoch-51-the-earth-shall-rejoice-the-elect-dwell
+  ('enoch', '1-enoch', 51, 4, 'canon', 'psalms', 2, 6, 'free', E'Psalm 2:6 — *Yet have I set my king upon my holy hill of Zion.* The King the Father sets on Zion reigns over the rejoicing earth where Enoch''s elect walk (51:4).'),
+  ('enoch', '1-enoch', 51, 4, 'canon', 'psalms', 2, 7, 'free', E'Psalm 2:7 — *I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee.* The begotten Son ordered under the Father is the Elect One enthroned, whose reign brings the earth''s rejoicing in 51:4.'),
+  ('enoch', '1-enoch', 51, 4, 'canon', 'isaiah', 11, 4, 'free', E'Isaiah 11:4 — *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* The righteous reign that lets the meek inherit answers Enoch''s righteous dwelling and elect walking the rejoicing earth (51:4).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en51_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en51_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-51-earth-gives-back-the-dead',
+       E'The earth, Sheol, and hell give back the dead',
+       E'Enoch sees the resurrection as a returning of what was held in trust: *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes.* (1 Enoch 51:1). This is no new doctrine — it is the prophets'' own hope. Daniel names it: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2). Isaiah sings it: *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* (Isaiah 26:19) — the very ''earth casting out'' Enoch describes. And John''s Revelation makes the threefold giving-back exact: *And the sea gave up the dead which were in it; and death and hell delivered up the dead which were in them: and they were judged every man according to their works.* (Revelation 20:13). The grave holds nothing of its own; it owes, and it must pay.',
+       sv.verse_id, ev.verse_id, 'extras', 51250
+  FROM _session250_en51_lookup sv, _session250_en51_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=51 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-51-all-in-the-graves-hear-his-voice',
+       E'All in the graves shall hear his voice and come forth',
+       E'Enoch joins the resurrection to the Elect One Himself: *For in those days the Elect One shall arise, And he shall choose the righteous and holy from among them: For the day has drawn nigh that they should be saved.* (1 Enoch 51:1–2). The Son of Adam whom Enoch *names* (1 Enoch 46:3) is the one Yahusha says will raise and judge the dead by His own voice: *And hath given him authority to execute judgment also, because he is the Son of Adam.* (John 5:27) — *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,* (John 5:28) *And shall come forth; they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation.* (John 5:29). Enoch''s ''choosing of the righteous from among them'' is exactly this twofold raising — life for some, damnation for others. And Ezekiel had already promised it to a people, not a self-selected class: *Therefore prophesy and say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, O my people, I will open your graves, and cause you to come up out of your graves, and bring you into the land of Yashar''el (Israel).* (Ezekiel 37:12) — the opened graves of the whole house of Israel regathered.',
+       sv.verse_id, ev.verse_id, 'extras', 51253
+  FROM _session250_en51_lookup sv, _session250_en51_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=51 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-51-elect-one-on-the-throne-of-glory',
+       E'The Elect One on the throne, pouring forth wisdom',
+       E'Enoch sees the Father seat the Son: *And the Elect One shall in those days sit on My throne, And his mouth shall pour forth all the secrets of wisdom and counsel: For Yahuah (God) of Spirits hath given (them) to him and hath glorified him.* (1 Enoch 51:3). This is the Son of Adam *named* — not a kaph-comparison but a title. Daniel, by contrast, sees him under the comparative: *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* (Daniel 7:13) — *one like* the Son of Adam, for the Formed cloud-rider had taken on flesh and so resembles mortal-man; Enoch names that same One. To him is given the throne and dominion: *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* (Daniel 7:14). Yahusha confirms it is His own throne of glory: *When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory:* (Matthew 25:31). The wisdom poured from His mouth is the Spirit Isaiah named: *And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD);* (Isaiah 11:2). The Head of Days (the formless Father) glorifies and gives; the Elect One (the Formed Son) receives, sits, and reigns — ordered under the Father, worshipped with Him yet distinct from Him.',
+       sv.verse_id, ev.verse_id, 'extras', 51256
+  FROM _session250_en51_lookup sv, _session250_en51_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=51 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-51-named-before-creation-the-elect-one',
+       E'The named Son of Adam, chosen before the worlds',
+       E'The throne of 51:3 belongs to no created angel and no mere man but to the One Enoch saw beside the Head of Days from the first: *And there I saw One who had a head of days, and His head was white like wool, and with Him was another being whose countenance had the appearance of a man... This is the Son of Adam who hath righteousness, with whom dwelleth righteousness... because Yahuah (God) of Spirits hath chosen him, and whose lot hath the pre-eminence before Yahuah (God) of Spirits in uprightness for ever.* (1 Enoch 46:1, 46:3). Election precedes confession — this One was named before the worlds were: *And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days.* (1 Enoch 48:2) — *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* (1 Enoch 48:3). The Gospel opens the same way: *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* (John 1:1), and the Lamb is *slain from the foundation of the world* (Revelation 13:8). The Father decrees and begets; the Son is chosen and hidden before creation, then revealed in flesh as Yahusha: *And for this reason hath he been chosen and hidden before Him, Before the creation of the world and for evermore.* (1 Enoch 48:6).',
+       sv.verse_id, ev.verse_id, 'extras', 51259
+  FROM _session250_en51_lookup sv, _session250_en51_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=51 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-51-books-of-the-living-prayer-of-the-righteous',
+       E'The books of the living and the chosen righteous',
+       E'The ''choosing of the righteous and holy from among them'' (51:2) is not arbitrary — it is reckoned from the books. Enoch''s own parallel shows the Head of Days enthroned over open books: *In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him.* (1 Enoch 47:3), and the hearts of the holy filled with joy *Because the number of the righteous had been offered, And the prayer of the righteous had been heard, And the blood of the righteous been required before Yahuah (God) of Spirits.* (1 Enoch 47:4). Daniel saw the same court: *the judgment was set, and the books were opened.* (Daniel 7:10). John saw it consummated: *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* (Revelation 20:12). The righteous Enoch''s Elect One chooses are those already written — election precedes the verdict, and the earth''s rejoicing in 51:4 is their vindication.',
+       sv.verse_id, ev.verse_id, 'extras', 51262
+  FROM _session250_en51_lookup sv, _session250_en51_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=51 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-51-the-earth-shall-rejoice-the-elect-dwell',
+       E'The mountains leap and the elect walk the rejoicing earth',
+       E'The resurrection ends not in dread but in creation''s gladness: *And in those days shall the mountains leap like rams, And the hills also shall skip like lambs satisfied with milk, And the faces of [all] the angels in heaven shall be lighted up with joy. And the earth shall rejoice, And the righteous shall dwell upon it, And the elect shall walk thereon.* (1 Enoch 51:4). The psalmist had set the King who reigns over this joy: *Yet have I set my king upon my holy hill of Zion.* (Psalm 2:6) — *I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee.* (Psalm 2:7), the begotten Son enthroned, the Formed under the Father. Isaiah names the reign that makes the meek inherit the rejoicing earth: *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* (Isaiah 11:4). And the inheriting people are not a self-selected class but the elect who walk it — the regathered righteous of a redeemed land, the dew-raised dead of *Awake and sing, ye that dwell in dust... and the earth shall cast out the dead.* (Isaiah 26:19).',
+       sv.verse_id, ev.verse_id, 'extras', 51265
+  FROM _session250_en51_lookup sv, _session250_en51_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=51 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-51-earth-gives-back-the-dead
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The dust giving up its sleepers is Enoch''s earth giving back what was entrusted to it (51:1).'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-earth-gives-back-the-dead'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* Isaiah''s ''earth shall cast out the dead'' is the same earth that gives back its entrusted dead in Enoch 51:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-earth-gives-back-the-dead'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 20:13 — *And the sea gave up the dead which were in it; and death and hell delivered up the dead which were in them: and they were judged every man according to their works.* John''s threefold giving-back — sea, death, hell — matches Enoch''s earth, Sheol, and hell each surrendering what they hold (51:1).'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-earth-gives-back-the-dead'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hosea 13:14 — *I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction: repentance shall be hid from mine eyes.* The grave is plundered and made to pay its debt, exactly as Enoch''s hell ''gives back that which it owes'' (51:1).'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-earth-gives-back-the-dead'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=13 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-51-all-in-the-graves-hear-his-voice
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'John 5:28 — *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,* The Elect One who ''shall arise'' and gather the righteous in Enoch 51:1–2 is the Son of Adam whose voice empties the graves.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-all-in-the-graves-hear-his-voice'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'John 5:29 — *And shall come forth; they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation.* The twofold raising matches Enoch''s Elect One choosing the righteous and holy ''from among them'' (51:2).'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-all-in-the-graves-hear-his-voice'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 5:27 — *And hath given him authority to execute judgment also, because he is the Son of Adam.* The very title Enoch names in 46:3 is given resurrection-and-judgment authority — the Elect One arising to save in 51:1–2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-all-in-the-graves-hear-his-voice'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 37:12 — *Therefore prophesy and say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, O my people, I will open your graves, and cause you to come up out of your graves, and bring you into the land of Yashar''el (Israel).* The opened graves of the whole house of Israel are the people Enoch''s Elect One chooses to be saved (51:2).'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-all-in-the-graves-hear-his-voice'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Ezekiel 37:14 — *And shall put my spirit in you, and ye shall live, and I shall place you in your own land: then shall ye know that I Yahuah (LORD) have spoken it, and performed it, saith Yahuah (LORD).* The raised people are placed in their own land — the regathered tribes, not a church replacing them, answering Enoch''s day ''that they should be saved'' (51:2).'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-all-in-the-graves-hear-his-voice'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-51-elect-one-on-the-throne-of-glory
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel sees *one like* the Son of Adam under the kaph-comparative; Enoch names that same One seated on the Father''s throne (51:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-elect-one-on-the-throne-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:14 — *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* The Head of Days giving and glorifying the Son in Enoch 51:3 is Daniel''s ''there was given him'' an everlasting kingdom.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-elect-one-on-the-throne-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 25:31 — *When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory:* Yahusha''s own throne of glory is the throne the Father seats the Elect One upon in Enoch 51:3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-elect-one-on-the-throne-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 11:2 — *And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD);* The wisdom and counsel pouring from the Elect One''s mouth in Enoch 51:3 is the Spirit of wisdom and counsel resting on the Branch.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-elect-one-on-the-throne-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 61:8 — *And the Head of Days placed the Elect One on the throne of His glory; And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* Enoch''s own parallel: the Father places the Elect One on the throne of glory to judge, the same enthronement as 51:3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-elect-one-on-the-throne-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=61 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-51-named-before-creation-the-elect-one
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 46:3 — *And he answered and said unto me: This is the Son of Adam who hath righteousness, with whom dwelleth righteousness, and who revealeth all the treasures of that which is hidden, because Yahuah (God) of Spirits hath chosen him, and whose lot hath the pre-eminence before Yahuah (God) of Spirits in uprightness for ever.* The Elect One who arises to raise the dead in 51:1 is the named, chosen Son of Adam of the foundational vision.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-named-before-creation-the-elect-one'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=46 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 48:2 — *And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days.* The Elect One who chooses the righteous in 51:2 is the One whose name was named before the Father — election before confession.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-named-before-creation-the-elect-one'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 48:3 — *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* Named before sun, signs, and stars — the chosen-before-creation One whose ''day has drawn nigh'' to save in 51:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-named-before-creation-the-elect-one'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The Son named before creation in Enoch 48 is the Word who was with the Father in the beginning — the Formed One enthroned in 51:3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-named-before-creation-the-elect-one'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 13:8 — *And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.* The Lamb chosen and hidden before creation (1 Enoch 48:6) is the One the Father has glorified and seated in 51:3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-named-before-creation-the-elect-one'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-51-books-of-the-living-prayer-of-the-righteous
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 47:3 — *In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him.* The Elect One''s choosing of the righteous in 51:2 is reckoned from the books of the living opened before the Head of Days.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-books-of-the-living-prayer-of-the-righteous'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=47 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* The same heavenly court — host standing, judgment set, books opened — from which the righteous are chosen in Enoch 51:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-books-of-the-living-prayer-of-the-righteous'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* John''s book of life is Enoch''s books of the living, from which the Elect One chooses the righteous in 51:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-books-of-the-living-prayer-of-the-righteous'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-51-the-earth-shall-rejoice-the-elect-dwell
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 2:6 — *Yet have I set my king upon my holy hill of Zion.* The King the Father sets on Zion reigns over the rejoicing earth where Enoch''s elect walk (51:4).'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-the-earth-shall-rejoice-the-elect-dwell'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 2:7 — *I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee.* The begotten Son ordered under the Father is the Elect One enthroned, whose reign brings the earth''s rejoicing in 51:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-the-earth-shall-rejoice-the-elect-dwell'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 11:4 — *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* The righteous reign that lets the meek inherit answers Enoch''s righteous dwelling and elect walking the rejoicing earth (51:4).'
+  FROM cross_reference_threads t, cross_references x, _session250_en51_lookup sv, _session250_en51_lookup tv
+ WHERE t.slug='1-enoch-51-the-earth-shall-rejoice-the-elect-dwell'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=51 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session250 — 1 Enoch cross-references complete.'

@@ -1,0 +1,280 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 50,
+  "session": "session250",
+  "tag": "en50",
+  "base_band": 51225,
+  "threads": [
+    {
+      "slug": "1-enoch-50-change-for-the-elect-light-and-glory",
+      "title": "The change for the holy and elect: light and glory turned upon them",
+      "summary_md": "Enoch opens the chapter with the turning of the age for Yahuah's people: *And in those days a change shall take place for the holy and elect, And the light of days shall abide upon them, And glory and honour shall turn to the holy* (1 Enoch 50:1). This is not a self-selected class earning reward but the elect already named (ch48) now vindicated. Malachi binds the same dawn to the fear of His name: *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall* (Malachi 4:2). The change is the patient verdict of a Elohim of judgement: *And therefore will Yahuah (LORD) wait, that he may be gracious unto you, and therefore will he be exalted, that he may have mercy upon you: for Yahuah (LORD) is a Elohim (God) of judgment: blessed are all they that wait for him* (Isaiah 30:18). Daniel sees the resurrection-glory that 'the light of days' anticipates: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2). And Enoch's own next chapter names the One under whom the change comes — *For in those days the Elect One shall arise, And he shall choose the righteous and holy from among them: For the day has drawn nigh that they should be saved* (1 Enoch 51:2) — the Formed Son ordered under the Head of Days, vindicating Yashar'el's gathered remnant, never a church replacing the elect.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 50,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 4,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* Enoch's light and glory that 'turn to the holy' (50:1) is Malachi's Sun of righteousness rising on those who fear His name."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 30,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Isaiah 30:18 — *And therefore will Yahuah (LORD) wait, that he may be gracious unto you, and therefore will he be exalted, that he may have mercy upon you: for Yahuah (LORD) is a Elohim (God) of judgment: blessed are all they that wait for him.* The 'change' for the elect (50:1) is the gracious verdict of the Elohim of judgement who waited."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The 'light of days' abiding on the holy (50:1) is the everlasting life Daniel sees for those who awake."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 1,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 51,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "1 Enoch 51:2 — *And he shall choose the righteous and holy from among them: For the day has drawn nigh that they should be saved.* Enoch's own next chapter names the Elect One under whom the change of 50:1 takes place."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-50-evil-treasured-up-and-the-call-to-repent",
+      "title": "Evil treasured up against the sinners, yet space given to repent",
+      "summary_md": "On the day of reckoning the stored-up wickedness is opened, yet even then mercy makes room: *On the day of affliction on which evil shall have been treasured up against the sinners. And the righteous shall be victorious in the name of Yahuah (God) of Spirits: And He will cause the others to witness (this) That they may repent And forgo the works of their hands* (1 Enoch 50:2). Paul uses the very image of evil 'treasured up' for the day of wrath, and the same goodness leading to repentance: *Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of Elohim (God) leadeth thee to repentance?* (Romans 2:4); *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God)* (Romans 2:5). Peter explains the delay as room for turning, not slackness: *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance* (2 Peter 3:9). The Wisdom of Solomon, a parallel extra-canonical witness, says the same of the Creator's restraint: *But you have mercy upon all; for you can do all things, and winkest at the sins of men, because they should amend* (The Wisdom of Solomon 11:23). The repentance is real and Torah-shaped — to 'forgo the works of their hands' is to turn from covenant-breaking, never a curse on the law itself.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 50,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Romans 2:4 — *Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of Elohim (God) leadeth thee to repentance?* Paul names the same goodness that 'causes the others to witness that they may repent' (50:2)."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 2,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Romans 2:5 — *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God).* Paul's 'treasurest up... against the day of wrath' is Enoch's 'evil shall have been treasured up against the sinners' (50:2)."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 3,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "2 Peter 3:9 — *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.* Peter explains why the others are made to witness and repent (50:2): the Creator is not willing that any should perish."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 2,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 11,
+          "tgt_v": 23,
+          "tier": "extras",
+          "note": "The Wisdom of Solomon 11:23 — *But you have mercy upon all; for you can do all things, and winkest at the sins of men, because they should amend.* A parallel extra-canonical witness to the mercy that gives the sinners room to repent (50:2)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-50-saved-through-his-name",
+      "title": "No honour of their own — yet saved through His name",
+      "summary_md": "Enoch states the gospel of grace centuries before the apostles: *They shall have no honour through the name of Yahuah (God) of Spirits, Yet through His name shall they be saved, And Yahuah (God) of Spirits will have compassion on them, For His compassion is great* (1 Enoch 50:3). Salvation is 'through His name,' not through merit. Joel pronounces the same: *And it shall come to pass, that whosoever shall call on the name of Yahuah (LORD) shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call* (Joel 2:32) — note the remnant whom He calls, election preceding the call. The apostles carry it word for word: *And it shall come to pass, that whosoever shall call on the name of Yahuah (Lord) shall be saved* (Acts 2:21); *For whosoever shall call upon the name of Yahuah (Lord) shall be saved* (Romans 10:13). The name is itself the refuge: *The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe* (Proverbs 18:10). And Enoch's own Parables ground the saving name in the Named Son — the Elect One revealed to the righteous: *For in his name they are saved, And according to his good pleasure hath it been in regard to their life* (1 Enoch 48:7). The Son of Adam was named before the worlds (48:3); the name that saves in ch50 is the name of that Formed Son who came in flesh as Yahusha, ordered under the Head of Days yet bearing His own name to call upon.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 50,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "joel",
+          "tgt_ch": 2,
+          "tgt_v": 32,
+          "tier": "free",
+          "note": "Joel 2:32 — *And it shall come to pass, that whosoever shall call on the name of Yahuah (LORD) shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call.* 'Through His name shall they be saved' (50:3) is Joel's deliverance for all who call on the name, in the remnant He calls."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "acts",
+          "tgt_ch": 2,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Acts 2:21 — *And it shall come to pass, that whosoever shall call on the name of Yahuah (Lord) shall be saved.* Peter at Shavuot preaches Enoch's same saving name (50:3)."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 10,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Romans 10:13 — *For whosoever shall call upon the name of Yahuah (Lord) shall be saved.* Paul restates the doctrine of 50:3: salvation comes through His name, not through honour of one's own."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 18,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Proverbs 18:10 — *The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe.* The name through which the righteous are saved (50:3) is itself their refuge."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 3,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 48,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "1 Enoch 48:7 — *And the wisdom of Yahuah (God) of Spirits hath revealed him to the holy and righteous; For he hath preserved the lot of the righteous, Because they have hated and despised this world of unrighteousness, And have hated all its works and ways in the name of Yahuah (God) of Spirits: For in his name they are saved, And according to his good pleasure hath it been in regard to their life.* Enoch's own Parables ground the saving name of 50:3 in the named Elect One, the Son of Adam."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-50-discern-the-righteous-from-the-wicked",
+      "title": "The book of remembrance: discerning the righteous from the wicked",
+      "summary_md": "Across the chapter the elect and the sinners are sorted — glory turns to the holy (50:1), the righteous are victorious in His name (50:2), the unrepentant perish (50:4) — exactly the discernment Malachi promises around the book of remembrance: *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name* (Malachi 3:16); *Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not* (Malachi 3:18). Revelation shows the same books at the judgement: *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12), and the elect name kept secure: *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels* (Revelation 3:5). Enoch's own books carry the inverse — the names of the unrepentant erased: *For their names shall be blotted out of the book of life, And out of the books of the holy ones, And their seed shall be destroyed forever* (1 Enoch 108:3). Election precedes confession: the holy are remembered before they speak, written before the worlds (48:3), names blotted but never added.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 50,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 3,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The holy who are made victorious in His name (50:2) are those written in Malachi's book of remembrance for thinking upon His name."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 3,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Malachi 3:18 — *Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not.* The chapter's sorting — glory to the holy, the unrepentant perishing (50:1, 50:4) — is Malachi's discernment of the righteous from the wicked."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The righteous judgement of 50:4 is John's opened books and book of life."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 3,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Revelation 3:5 — *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels.* The glory and honour that turn to the holy (50:1) is the unblotted name confessed before the Father."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 4,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 108,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "1 Enoch 108:3 — *Wait ye in patience until sin has passed away, For their names shall be blotted out of the book of life, And out of the books of the holy ones, And their seed shall be destroyed forever, And their spirits shall be slain, And they shall cry and lament in a waste place that has no water, And in the fire shall they burn.* Enoch's own books show the inverse of 50:4's verdict: the unrepentant blotted out, while the elect's names stand."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-50-righteous-judgement-and-the-end-of-mercy",
+      "title": "His righteous judgement: the unrepentant perish before Him",
+      "summary_md": "The chapter closes on the limit of the offered mercy — repentance was extended (50:2), but for those who refuse it, the door shuts: *And He is righteous also in His judgement, And in the presence of His glory unrighteousness also shall not maintain itself: At His judgement the unrepentant shall perish before Him* (1 Enoch 50:4); *And from henceforth I will have no mercy on them, saith Yahuah (God) of Spirits* (1 Enoch 50:5). Malachi pictures the same burning day for the proud: *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith Yahuah Tseva'ot (LORD of hosts), that it shall leave them neither root nor branch* (Malachi 4:1). Isaiah names the salvation refused in returning and rest — the very repentance the unrepentant forgo: *For thus saith Adonai Yahuah (the Lord GOD), the Holy One of Yashar'el (Israel); In returning and rest shall ye be saved; in quietness and in confidence shall be your strength: and ye would not* (Isaiah 30:15). Paul gathers the impenitent into that same day: *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God)* (Romans 2:5). And Enoch's own resurrection scene sets this judgement after the dead are raised — the Elect One choosing the righteous: *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes. 5a. For in those days the Elect One shall arise* (1 Enoch 51:1). The judgement is righteous because it is the Father's order upheld through the Formed Son; mercy was great and real, and ends only where repentance is finally refused.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 50,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 4,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Malachi 4:1 — *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith Yahuah Tseva'ot (LORD of hosts), that it shall leave them neither root nor branch.* The day when He will have no more mercy (50:5) is Malachi's oven-day that burns up the proud."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 30,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Isaiah 30:15 — *For thus saith Adonai Yahuah (the Lord GOD), the Holy One of Yashar'el (Israel); In returning and rest shall ye be saved; in quietness and in confidence shall be your strength: and ye would not.* The unrepentant who perish (50:4) are those who 'would not' return to the salvation that was offered."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 2,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Romans 2:5 — *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God).* Paul's 'righteous judgment of Elohim' against the impenitent heart is Enoch's righteous judgement under which the unrepentant perish (50:4)."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 4,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 51,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "1 Enoch 51:1 — *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes. 5a. For in those days the Elect One shall arise.* Enoch's own next chapter sets the righteous judgement of 50:4 after the resurrection, when the Elect One arises to judge."
+        }
+      ]
+    }
+  ]
+}
