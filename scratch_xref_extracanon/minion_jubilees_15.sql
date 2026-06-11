@@ -52,7 +52,7 @@ SELECT 'jubilees-15-circumcision-eternal-sign',
        sv.verse_id, ev.verse_id, 'extras', 53350
   FROM _session251_ju15_lookup sv, _session251_ju15_lookup ev
  WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=11
-   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=15 AND ev.verse_number=14
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=15 AND ev.verse_number=13
 ON CONFLICT (slug) DO NOTHING;
 
 INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
