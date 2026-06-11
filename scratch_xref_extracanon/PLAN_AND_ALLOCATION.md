@@ -275,3 +275,30 @@ with keychain unlocked — 13 commits (85b660c..f94f71e) need to land on origin/
   Jacob/against intermarriage (22→Gen28:3/Deut7); the RESTORATION/return-to-the-way=THE AWAKENING
   (23→Deut30/Mal4/Isa65/Dan12 — highest framework value); Isaac's wells/birthright (24→Gen26/Heb12:16).
 - Push blocked. origin/main 47a9e48; local HEAD `f793b98` (16 commits ahead). Prod authoritative.
+
+## RECEIPT — Jubilees Pack J4 (ch25–32) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT threads: cumulative **173 threads / 606 members**, band 53000–53790,
+  per-ch(25-32) 5/6/6/5/5/5/5/6, 0 orphans. +43/156 (157 authored − 1 self-equal jub27:15→27:15
+  correctly dropped by the sv<>tv guard). Commit `bc48bb6`. Six gates green (anchor_check caught
+  jub26 esau-thread anchored on v25-gap → re-anchored v24 before apply).
+- Seed-kept-holy/no-Canaanite-wife (25→Gen27:46/Gen24:3/Deut7:3); birthright blessing/election
+  (26→Gen27/Rom9:12-13/Heb12:16); the BETHEL LADDER→John 1:51 "angels ascending on the Son of Adam"
+  + tithe (27→Gen28/Gal3:8/Lev27:30); the TWELVE TRIBES born (28→Gen29-30/Gen35:22/Exod1:2); Jacob
+  leaves Laban/Mahanaim (29→Gen31-32); DINAH/SHECHEM + anti-intermarriage/seed-kept-holy (30→Gen34/
+  Deut7:3/Ezra9/Num25:11/Mal2:11); LEVI=priesthood + JUDAH=kingship/Messianic-sceptre (31→Deut33:8/
+  Gen49:10/Num24:17/Heb7:14); Bethel/Israel-renamed/the tithe (32→Gen35:9/Lev27:30/Deut14:22).
+- Push blocked. origin/main 47a9e48; local HEAD `bc48bb6` (17 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 1 ENOCH COMPLETE (423/1613) + JUBILEES ch1-32 (173/606) all LIVE.
+NEXT = Jubilees Pack J5 ch33-40 (Reuben/Bilhah+the law 33→Gen35:22/Lev18; Joseph sold 34→Gen37;
+Rebekah's death/Esau 35; Isaac's death/testament/love-one-another 36; Esau's war on Jacob 37-38;
+Joseph in Egypt/Potiphar/dreams/ruler 39-40→Gen39-41), J6 ch41-50 (Judah+Tamar 41→Gen38; famine/
+Jacob-to-Egypt 42-45→Gen42-47; Israel multiplies/Moses/Mastema/exodus 46-48→Exod1-14; PASSOVER 49→
+Exod12/Lev23:5; Sabbath+Jubilee laws 50→Exod20/Lev25) = FINISHES JUBILEES. Then JASHER (session252
+@55000, edition jasher book jasher, 91 ch — narratives retold from Genesis/Exodus, Nimrod/Abraham
+legends, the wars): write MINION_BRIEF_JASHER.md (reuse the Jubilees brief structure), launch Jasher
+Pack 1 ch1-8. METHOD per pack: workflow (pack-J4 script pattern + per-ch CONTEXT map) → render →
+anchor_check.py + pglast + verify_fidelity + resolve_check → fold → audit → recon.py. ALWAYS run
+anchor_check (gapped editions silently drop gap-anchored threads). ⚠️ FIRST NEXT SESSION: retry
+`git push origin HEAD:main` from /tmp/extracanon-xref-wt with keychain unlocked — 17 commits
+(85b660c..bc48bb6) need to land on origin/main (still at 47a9e48); prod is authoritative meanwhile.

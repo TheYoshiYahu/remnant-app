@@ -1,0 +1,65 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 40,
+  "session": "session251",
+  "tag": "ju40",
+  "base_band": 53975,
+  "threads": [
+    {
+      "slug": "jubilees-40-pharaoh-two-dreams",
+      "title": "Pharaoh's two dreams, the one interpretation — the seven of plenty, the seven of famine",
+      "summary_md": "Jubilees opens the chapter exactly where Genesis does: *And in those days Pharaoh dreamed two dreams in one night concerning a famine which was to be in all the land, and he awoke from his sleep and called all the interpreters of dreams that were in Egypt, and magicians, and told them his two dreams, and they were not able to declare (them)* (Jubilees 40:1). The Egyptian wisdom is dumb before the dream — *And it came to pass in the morning that his spirit was troubled; and he sent and called for all the magicians of Egypt, and all the wise men thereof: and Pharaoh told them his dream; but there was none that could interpret them unto Pharaoh* (Genesis 41:8). Joseph alone declares that the doubled dream is one — *And he said before Pharaoh that his two dreams were one, and he said to him: “Seven years will come (in which there will be) plenty over all the land of Egypt, and after that seven years of famine, such a famine as has not been in all the land* (Jubilees 40:3) — which Genesis tells the same: *The seven good kine are seven years; and the seven good ears are seven years: the dream is one* (Genesis 41:26). It ain't new: Jubilees is retelling Genesis 41 line for line.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 40, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 8, "tier": "free", "note": "Genesis 41:8 — *And it came to pass in the morning that his spirit was troubled; and he sent and called for all the magicians of Egypt, and all the wise men thereof: and Pharaoh told them his dream; but there was none that could interpret them unto Pharaoh.* Jubilees 40:1's interpreters and magicians who “were not able to declare” the dream is Genesis 41:8 retold."},
+        {"src_ch": 40, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 14, "tier": "free", "note": "Genesis 41:14 — *Then Pharaoh sent and called Joseph, and they brought him hastily out of the dungeon: and he shaved himself, and changed his raiment, and came in unto Pharaoh.* The butler's remembering and Joseph being brought “forth from the prison” in Jubilees 40:2 is Genesis 41:14."},
+        {"src_ch": 40, "src_v": 3, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 26, "tier": "free", "note": "Genesis 41:26 — *The seven good kine are seven years; and the seven good ears are seven years: the dream is one.* Jubilees 40:3 (“his two dreams were one… seven years… of plenty… seven years of famine”) is Joseph's Genesis 41:26 interpretation in brief."},
+        {"src_ch": 40, "src_v": 3, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 30, "tier": "free", "note": "Genesis 41:30 — *And there shall arise after them seven years of famine; and all the plenty shall be forgotten in the land of Egypt; and the famine shall consume the land.* The “seven years of famine, such a famine as has not been” of Jubilees 40:3 is Genesis 41:30 word for word in substance."}
+      ]
+    },
+    {
+      "slug": "jubilees-40-spirit-of-god-favour",
+      "title": "The Spirit of Elohim is with him — favour before Pharaoh, set over all Egypt",
+      "summary_md": "Jubilees names what made Joseph wise where the magicians failed: *And Yahuah (God) gave Joseph favour and mercy in the eyes of Pharaoh, and Pharaoh said to his servants: “We shall not find such a wise and discreet man as this man, for the spirit of Yahuah (God) is with him* (Jubilees 40:5). Genesis says it the same way: *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* (Genesis 41:38). Then the exaltation — the second chariot, the byssus, the gold chain, the ring, ruler over all his house — *And Pharaoh said unto Joseph, Thou shalt be over my house, and according unto thy word shall all my people be ruled: only in the throne will I be greater than thou* (Genesis 41:40), and *And Pharaoh took off his ring from his hand, and put it upon Joseph’s hand, and arrayed him in vestures of fine linen, and put a gold chain about his neck* (Genesis 41:42). Stephen sums the whole pattern to Israel: *And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house* (Acts 7:10). It ain't new.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 40, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 38, "tier": "free", "note": "Genesis 41:38 — *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* Jubilees 40:5's “such a wise and discreet man… for the spirit of Yahuah (God) is with him” is Genesis 41:38 verbatim in sense."},
+        {"src_ch": 40, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 40, "tier": "free", "note": "Genesis 41:40 — *Thou shalt be over my house, and according unto thy word shall all my people be ruled: only in the throne will I be greater than thou.* Pharaoh's words in Jubilees 40:6 (“made him ruler over all his house… Only on the throne shall I be greater than you”) are Genesis 41:40 exactly."},
+        {"src_ch": 40, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 42, "tier": "free", "note": "Genesis 41:42 — *And Pharaoh took off his ring from his hand, and put it upon Joseph’s hand, and arrayed him in vestures of fine linen, and put a gold chain about his neck.* The ring, the byssus garments, and the gold chain of Jubilees 40:6 are the regalia of Genesis 41:42."},
+        {"src_ch": 40, "src_v": 5, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 10, "tier": "free", "note": "Acts 7:10 — *And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house.* Stephen's “favour and wisdom… governor over Egypt” gathers Jubilees 40:5 into the NT's witness against Israel."}
+      ]
+    },
+    {
+      "slug": "jubilees-40-joseph-uprightness",
+      "title": "He judged in uprightness, no respect of persons — Yahuah was with him still",
+      "summary_md": "Jubilees adds the moral portrait the canon implies: *And Joseph ruled over all the land of Egypt, and all the princes of Pharaoh, and all his servants, and all who did the king’s business loved him, for he walked in uprightness, for he was without pride and arrogance, and he had no respect of persons, and did not accept gifts, but he judged in uprightness all the people of the land* (Jubilees 40:8). This is the same righteous Joseph who fled the Egyptian woman a chapter earlier — *And Yahuah (God) gave Joseph favour in the sight of the chief of the prison guards and compassion before him, for he saw that Yahuah (God) was with him, and that Yahuah (God) made all that he did to prosper* (Jubilees 39:11) — the pit and the prison did not break him. And the refrain that carries from the prison to the throne is one refrain: *And the land of Egypt was at peace before Pharaoh because of Joseph, for Yahuah (God) was with him* (Jubilees 40:9), echoing the Spirit-given uprightness Pharaoh himself confessed. The same hand that prospered him in chains exalts him over a kingdom.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 40, "src_v": 8, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 39, "tgt_v": 11, "tier": "extras", "note": "Jubilees 39:11 — *And the Egyptian saw the garment of Joseph and the broken door, and heard the words of his wife, and cast Joseph into prison… and Yahuah (God) gave Joseph favour in the sight of the chief of the prison guards and compassion before him, for he saw that Yahuah (God) was with him, and that Yahuah (God) made all that he did to prosper.* The upright Joseph of Jubilees 40:8 is the same man who kept his purity in Jubilees 39:11 — “Yahuah was with him” ties the pit to the throne."},
+        {"src_ch": 40, "src_v": 9, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 39, "tgt_v": 23, "tier": "free", "note": "Genesis 39:23 — *The keeper of the prison looked not to any thing that was under his hand; because Yahuah (LORD) was with him, and that which he did, Yahuah (LORD) made it to prosper.* Jubilees 40:9's “Yahuah (God) was with him” is Genesis 39:23 carried from the prison into the palace."},
+        {"src_ch": 40, "src_v": 8, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 16, "tgt_v": 19, "tier": "free", "note": "Deuteronomy 16:19 — *Thou shalt not wrest judgment; thou shalt not respect persons, neither take a gift: for a gift doth blind the eyes of the wise, and pervert the words of the righteous.* Joseph judging “in uprightness… no respect of persons… did not accept gifts” in Jubilees 40:8 keeps the Torah's standard of judgment before Sinai gave it."}
+      ]
+    },
+    {
+      "slug": "jubilees-40-exalted-from-pit-revealer",
+      "title": "The revealer of secrets, exalted from the pit — a Messiah type who saves many alive",
+      "summary_md": "When Egypt's wisdom failed and Joseph alone declared the dream, Jubilees shows the pattern the prophets would name again: the man Elohim raises from the pit to be the revealer of what is hidden and the saviour of many. *And the king called Joseph’s name Sĕphânṭîphâns, and gave Joseph to wife the daughter of Potiphar* (Jubilees 40:10) crowns the same arc Daniel will stand in before another heathen king: *But there is a Elohim (God) in heaven that revealeth secrets, and maketh known to the king Nebuchadnezzar what shall be in the latter days* (Daniel 2:28). Psalm 105 reads the whole rise as Yahuah's doing — *Until the time that his word came: the word of Yahuah (LORD) tried him* (Psalm 105:19) — and the purpose is salvation: *And Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance* (Genesis 45:7). The exalted-from-the-pit righteous one who saves a people alive is a Messiah type, and it ain't new.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 40, "src_v": 10, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 2, "tgt_v": 28, "tier": "free", "note": "Daniel 2:28 — *But there is a Elohim (God) in heaven that revealeth secrets, and maketh known to the king Nebuchadnezzar what shall be in the latter days. Thy dream, and the visions of thy head upon thy bed, are these.* Joseph the dream-revealer of Jubilees 40 is the same type Daniel stands in — Elohim, not Egypt's or Babylon's wise men, reveals the secret."},
+        {"src_ch": 40, "src_v": 9, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 19, "tier": "free", "note": "Psalm 105:19 — *Until the time that his word came: the word of Yahuah (LORD) tried him.* Psalm 105 reads Joseph's rise in Jubilees 40:9 as Yahuah's own work, the pit and prison a trial until the appointed word came."},
+        {"src_ch": 40, "src_v": 9, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 21, "tier": "free", "note": "Psalm 105:21 — *He made him lord of his house, and ruler of all his substance.* The exaltation of Jubilees 40 (ruler over all Egypt) is Psalm 105:21 confessing Yahuah, not Pharaoh, as the one who made him lord."},
+        {"src_ch": 40, "src_v": 10, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 45, "tgt_v": 7, "tier": "free", "note": "Genesis 45:7 — *And Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance.* The point of Joseph's exaltation in Jubilees 40 is salvation — the righteous one raised from the pit to save many alive, the Messiah pattern Genesis 45:7 names."}
+      ]
+    }
+  ]
+}

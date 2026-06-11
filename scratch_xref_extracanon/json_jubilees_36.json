@@ -1,0 +1,112 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 36,
+  "session": "session251",
+  "tag": "ju36",
+  "base_band": 53875,
+  "threads": [
+    {
+      "slug": "jubilees-36-double-cave-burial",
+      "title": "Bury me near Abraham in the double cave",
+      "summary_md": "Isaac, going the way of his fathers, charges his sons: *Wherefore bury me near Abraham my father, in the double cave in the field of Ephron the Hittite, where Abraham purchased a sepulchre to bury in* (Jubilees 36:2). This is the Machpelah of Genesis, the field bought for a burying-place — *That he may give me the cave of Machpelah, which he hath, which is in the end of his field; for as much money as it is worth he shall give it me for a possession of a buryingplace amongst you* (Genesis 23:9) — where Abraham had already laid Sarah: *And after this, Abraham buried Sarah his wife in the cave of the field of Machpelah before Mamre: the same is Hebron in the land of Canaan* (Genesis 23:19). Jacob will repeat the same charge over the same cave — *bury me with my fathers in the cave that is in the field of Ephron the Hittite* (Genesis 49:29). Jubilees retells Genesis: the patriarchs are gathered to one ground. It ain't new.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 36, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 23, "tgt_v": 9, "tier": "free",
+         "note": "Genesis 23:9 — *That he may give me the cave of Machpelah, which he hath, which is in the end of his field; for as much money as it is worth he shall give it me for a possession of a buryingplace amongst you.* The double cave Isaac names is the Machpelah Abraham bought, retold here in Jubilees 36:2."},
+        {"src_ch": 36, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 23, "tgt_v": 19, "tier": "free",
+         "note": "Genesis 23:19 — *And after this, Abraham buried Sarah his wife in the cave of the field of Machpelah before Mamre: the same is Hebron in the land of Canaan.* Sarah was already laid in this same cave that Isaac asks to share in Jubilees 36:2."},
+        {"src_ch": 36, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 29, "tier": "free",
+         "note": "Genesis 49:29 — *And he charged them, and said unto them, I am to be gathered unto my people: bury me with my fathers in the cave that is in the field of Ephron the Hittite.* Jacob will give the very charge Isaac gives in Jubilees 36:2, both naming Ephron's field."}
+      ]
+    },
+    {
+      "slug": "jubilees-36-love-one-another",
+      "title": "Love one another as a man loves his own soul",
+      "summary_md": "Isaac's dying testament is the two great commandments grounded in the patriarch: *And love one another, my sons, your brothers as a man who loves his own soul, and let each seek in what he may benefit his brother, and act together on the earth; and let them love each other as their own souls* (Jubilees 36:4). That is the Torah word verbatim — *Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18) — set beside the first command Isaac also presses, to fear and worship Yahuah: *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:5). Yahusha hangs all the Law and the prophets on these two: *And the second is like unto it, Thou shalt love thy neighbour as thyself* (Matthew 22:39). When He said *A new commandment I give unto you, That ye love one another* (John 13:34) it was new only in measure, not in substance — Isaac is already commanding it. And John seals the testament: *If a man say, I love Elohim (God), and hateth his brother, he is a liar* (1 John 4:20). It ain't new.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 36, "src_v": 4, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 19, "tgt_v": 18, "tier": "free",
+         "note": "Leviticus 19:18 — *Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* Isaac's charge to love one's brother as one's own soul in Jubilees 36:4 is this Torah command spoken before Sinai."},
+        {"src_ch": 36, "src_v": 6, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 6, "tgt_v": 5, "tier": "free",
+         "note": "Deuteronomy 6:5 — *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* Isaac binds his sons to fear and worship Yahuah in Jubilees 36:6 — the first of the two great commandments."},
+        {"src_ch": 36, "src_v": 8, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 22, "tgt_v": 39, "tier": "free",
+         "note": "Matthew 22:39 — *And the second is like unto it, Thou shalt love thy neighbour as thyself.* Yahusha names the very pairing Isaac's testament holds in Jubilees 36:8 — love of Yahuah and love of brother."},
+        {"src_ch": 36, "src_v": 4, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 13, "tgt_v": 34, "tier": "free",
+         "note": "John 13:34 — *A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another.* What Yahusha calls a new commandment Isaac already commands in Jubilees 36:4 — new in love's measure, not in its origin."},
+        {"src_ch": 36, "src_v": 9, "tgt_edition": "canon", "tgt_book": "1-john", "tgt_ch": 4, "tgt_v": 20, "tier": "free",
+         "note": "1 John 4:20 — *If a man say, I love Elohim (God), and hateth his brother, he is a liar: for he that loveth not his brother whom he hath seen, how can he love Elohim (God) whom he hath not seen?* Isaac's warning that whoever devises evil against his brother is destroyed (Jubilees 36:9) is the same testimony John gives."}
+      ]
+    },
+    {
+      "slug": "jubilees-36-reject-the-idols",
+      "title": "Reject the idols and hate them",
+      "summary_md": "Isaac's testament flees idolatry no less than it commands love: *And concerning the question of idols, I command and admonish you to reject them and hate them, and love them not; for they are full of deception for those that worship them and for those that bow down to them* (Jubilees 36:5). This is the heart of the commandment given at Sinai — *Thou shalt have no other gods before me* (Exodus 20:3); *Thou shalt make unto thee any graven image* (Exodus 20:4) — but Isaac speaks it long before. His father Abraham's own testament had said the same in Jubilees: *And do you, my son, observe His commandments and His ordinances and His judgments, and walk not after the abominations and after the graven images and after the molten images* (Jubilees 21:5). And the apostle's last word closes the same circle: *Little children, keep yourselves from idols. Amen* (1 John 5:21). The abominations were always to be hated. It ain't new.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 36, "src_v": 5, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 20, "tgt_v": 3, "tier": "free",
+         "note": "Exodus 20:3 — *Thou shalt have no other gods before me.* Isaac commands his sons to reject and hate the idols in Jubilees 36:5 — the first word of the Decalogue spoken before Sinai."},
+        {"src_ch": 36, "src_v": 5, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 20, "tgt_v": 4, "tier": "free",
+         "note": "Exodus 20:4 — *Thou shalt make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth.* Isaac's command against the idols in Jubilees 36:5 is this engraved law of the heavenly tablets."},
+        {"src_ch": 36, "src_v": 5, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 21, "tgt_v": 5, "tier": "extras",
+         "note": "Jubilees 21:5 — *And do you, my son, observe His commandments and His ordinances and His judgments, and walk not after the abominations and after the graven images and after the molten images.* Abraham's testament to Isaac is the same charge Isaac now passes to his sons in Jubilees 36:5."},
+        {"src_ch": 36, "src_v": 5, "tgt_edition": "canon", "tgt_book": "1-john", "tgt_ch": 5, "tgt_v": 21, "tier": "free",
+         "note": "1 John 5:21 — *Little children, keep yourselves from idols. Amen.* The apostle's closing word is Isaac's dying word in Jubilees 36:5 — flee the idols."}
+      ]
+    },
+    {
+      "slug": "jubilees-36-seed-as-the-stars",
+      "title": "Multiply your seed as the stars, the plant of righteousness",
+      "summary_md": "Isaac recalls the covenant promise as he blesses: *that He might multiply you and increase your seed as the stars of heaven in multitude, and establish you on the earth as the plant of righteousness which will not be rooted out to all the generations for ever* (Jubilees 36:6). This is the oath sworn to Abraham at the binding — *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore* (Genesis 22:17) — and renewed to Isaac himself: *And I will make thy seed to multiply as the stars of heaven, and will give unto thy seed all these countries* (Genesis 26:4). The plant-of-righteousness language is Jubilees' own, already spoken over Abraham: *And He will bless you in all your deeds, And will raise up from you the plant of righteousness through all the earth* (Jubilees 21:24). The seed is kept and rooted forever. It ain't new.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 36, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 22, "tgt_v": 17, "tier": "free",
+         "note": "Genesis 22:17 — *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies.* Isaac in Jubilees 36:6 recalls the very stars-of-heaven oath sworn to Abraham at the binding."},
+        {"src_ch": 36, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 26, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 26:4 — *And I will make thy seed to multiply as the stars of heaven, and will give unto thy seed all these countries; and in thy seed shall all the nations of the earth be blessed.* The promise Isaac repeats in Jubilees 36:6 is the one Yahuah had renewed to Isaac directly."},
+        {"src_ch": 36, "src_v": 6, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 21, "tgt_v": 24, "tier": "extras",
+         "note": "Jubilees 21:24 — *And He will bless you in all your deeds, And will raise up from you the plant of righteousness through all the earth, throughout all generations of the earth, And my name and your name will not be forgotten under heaven for ever.* Isaac's plant-of-righteousness blessing in Jubilees 36:6 echoes the blessing Abraham spoke before him."}
+      ]
+    },
+    {
+      "slug": "jubilees-36-book-of-life",
+      "title": "Blotted from the book of life",
+      "summary_md": "Isaac's warning against the brother who devises evil reaches to the final ledger: *he will be blotted out of the book of the discipline of the children of men, and not be recorded in the book of life, but in that which is appointed to destruction* (Jubilees 36:10). The book is the heavenly tablet of judgement. Moses pled at that same book — *blot me, I pray thee, out of thy book which thou hast written* (Exodus 32:32) — and the psalmist invoked it against the wicked: *Let them be blotted out of the book of the living, and not be written with the righteous* (Psalm 69:28). The Revelation closes the testament Isaac opens: *And whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15). The names were written and weighed before they were lived. It ain't new.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 36, "src_v": 10, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 32, "tgt_v": 32, "tier": "free",
+         "note": "Exodus 32:32 — *Yet now, if thou wilt forgive their sin—; and if not, blot me, I pray thee, out of thy book which thou hast written.* The book of life from which the evildoer is blotted in Jubilees 36:10 is the very book Moses names at Sinai."},
+        {"src_ch": 36, "src_v": 10, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 69, "tgt_v": 28, "tier": "free",
+         "note": "Psalms 69:28 — *Let them be blotted out of the book of the living, and not be written with the righteous.* Isaac's sentence in Jubilees 36:10 — blotted from the book of life, recorded for destruction — is the psalmist's plea against the wicked."},
+        {"src_ch": 36, "src_v": 10, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 20, "tgt_v": 15, "tier": "free",
+         "note": "Revelation 20:15 — *And whosoever was not found written in the book of life was cast into the lake of fire.* The destruction-appointed ledger Isaac names in Jubilees 36:10 is sealed at the white throne."}
+      ]
+    },
+    {
+      "slug": "jubilees-36-isaac-dies-buried",
+      "title": "Isaac slept the eternal sleep; his sons buried him",
+      "summary_md": "The retelling closes on the Genesis verse exactly: *And Isaac slept on his bed that day rejoicing; and he slept the eternal sleep, and died one hundred and eighty years old... and his two sons Esau and Jacob buried him* (Jubilees 36:18). Genesis gives the same age and the same burial by the same two sons: *And the days of Isaac were an hundred and fourscore years* (Genesis 35:28); *And Isaac gave up the ghost, and died, and was gathered unto his people, being old and full of days: and his sons Esau and Jacob buried him* (Genesis 35:29). And Esau departs to his portion — *And Esau went to the land of Edom, to the mountains of Seir, and dwelt there* (Jubilees 36:19) — as Genesis records the division of the brothers: *Thus dwelt Esau in mount Seir: Esau is Edom* (Genesis 36:8). The elder to Seir, the younger keeping his father's tower. It ain't new.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 36, "src_v": 18, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 35, "tgt_v": 28, "tier": "free",
+         "note": "Genesis 35:28 — *And the days of Isaac were an hundred and fourscore years.* Jubilees 36:18 gives the identical age — one hundred and eighty years — at Isaac's death."},
+        {"src_ch": 36, "src_v": 18, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 35, "tgt_v": 29, "tier": "free",
+         "note": "Genesis 35:29 — *And Isaac gave up the ghost, and died, and was gathered unto his people, being old and full of days: and his sons Esau and Jacob buried him.* Jubilees 36:18 retells this verse — Isaac dies and his two sons Esau and Jacob bury him."},
+        {"src_ch": 36, "src_v": 19, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 36, "tgt_v": 8, "tier": "free",
+         "note": "Genesis 36:8 — *Thus dwelt Esau in mount Seir: Esau is Edom.* Jubilees 36:19 records the same departure of the elder brother to the mountains of Seir — the Esau-Edom line dividing from the elect line of Jacob."}
+      ]
+    }
+  ]
+}
