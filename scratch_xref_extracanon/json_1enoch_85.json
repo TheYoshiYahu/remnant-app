@@ -1,0 +1,220 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 85,
+  "session": "session250",
+  "tag": "en85",
+  "base_band": 52100,
+  "threads": [
+    {
+      "slug": "1-enoch-85-white-bull-adam-formed",
+      "title": "The white bull come forth from the earth — Adam, the formed seed-line",
+      "summary_md": "The Animal Apocalypse opens with the whole history of the world cast as a herd, and the first figure is the white bull formed from the ground: *and behold a bull came forth from the earth, and that bull was white; and after it came forth a heifer* (1 Enoch 85:3). The white bull is Adam, the righteous seed-line; the heifer is Eve drawn from his side. This is the canon's own forming: *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul* (Genesis 2:7) — the bull \"came forth from the earth\" because the man was formed of the dust. And the line carried the likeness forward: *This is the book of the generations of Adam. In the day that Elohim (God) created man, in the likeness of Elohim (God) made he him* (Genesis 5:1), *and begat a son in his own likeness, after his image; and called his name Seth* (Genesis 5:3) — exactly the white bulls of Enoch that *resembled him* and bred *many white bulls, which resembled them.* Jubilees reckons the same beginning in jubilee-weeks: *And in the third week in the second jubilee she gave birth to Cain, and in the fourth she gave birth to Abel* (Jubilees 4:1). The white is no accident of colour — it is the righteous Adamic line, the seed that will run, blinded and scattered and at last regathered, all the way to the great white bull at the end (the Messiah).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 85,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 2:7 — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* The white bull that \"came forth from the earth\" is Adam, formed of the dust of the ground."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Genesis 5:1 — *This is the book of the generations of Adam. In the day that Elohim (God) created man, in the likeness of Elohim (God) made he him.* The white bull is Adam, the head of the generations whose seed-line Enoch is about to trace as a herd."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 5,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Genesis 5:3 — *And Adam lived an hundred and thirty years, and begat a son in his own likeness, after his image; and called his name Seth.* The white bulls that \"resembled him\" and begat white bulls \"which resembled them\" are the righteous line bearing Adam's likeness."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 3,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 4,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "Jubilees 4:1 — *And in the third week in the second jubilee she gave birth to Cain, and in the fourth she gave birth to Abel, and in the fifth she gave birth to her daughter ’Âwân.* Jubilees names the same first births that Enoch shows as the heifer's young bulls."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-85-black-bull-red-cain-abel-seed-war",
+      "title": "The black bull gores the red — Cain and Abel, and the seed-war begins",
+      "summary_md": "Two young bulls come with the heifer, and at once the seed-war is drawn in their colours: *along with this (heifer) two young bulls, one of them black and the other red. And that black young bull gored the red one and pursued him over the earth, and thereupon I could no longer see that red young bull* (1 Enoch 85:3-4). The black bull is Cain, the red is Abel slain. The canon tells it plainly: *And Abel was a keeper of sheep, but Cain was a tiller of the ground* (Genesis 4:2), and *Cain rose up against Abel his brother, and slew him* (Genesis 4:8). John reads the very seed-war the colours signal: *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother’s righteous* (1 John 3:12) — the line of the wicked one against the righteous line, the tares sown among the wheat from the first field. Yahusha names that same sowing: *his enemy came and sowed tares among the wheat* (Matthew 13:25), *the good seed are the children of the kingdom; but the tares are the children of the wicked one* (Matthew 13:38). Jude marks the apostate by it: *Woe unto them! for they have gone in the way of Cain* (Jude 1:11). The black bull that \"grew\" and went on while the red was seen no more is the line of Cain woven in among the white — never the church, never a replacement, but the old seed-war Enoch saw before he ever fathered Methuselah.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 85,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Genesis 4:8 — *And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him.* The black bull goring the red bull \"over the earth\" until he is seen no more is Cain slaying Abel in the field."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 4:2 — *And she again bare his brother Abel. And Abel was a keeper of sheep, but Cain was a tiller of the ground.* The two young bulls born with the heifer are Cain and Abel, the first brothers of the herd."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 3,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "1 John 3:12 — *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother’s righteous.* John reads the colours of the two bulls as the seed-war: the line of the wicked one against the righteous line."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 13,
+          "tgt_v": 38,
+          "tier": "free",
+          "note": "Matthew 13:38 — *The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one.* The black bull woven in among the white is the tares-among-the-wheat seed-war that began with Cain."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* Jude marks the apostate by the way of the black bull, the way of Cain."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-85-lament-abel-blood-witness",
+      "title": "The cow seeks the red bull and laments — Abel's blood that yet speaketh",
+      "summary_md": "When the red bull is gone, the first cow grieves for him: *And that cow, that first one, went from the presence of that first bull in order to seek that red one, but found him not, and lamented with a great lamentation over him and sought him* (1 Enoch 85:5). This is Eve's mourning for Abel, and the canon hears the slain one still crying: *the voice of thy brother’s blood crieth unto me from the ground* (Genesis 4:10). Abel's death is not erased — it stands as the first witness of the righteous line: *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts: and by it he being dead yet speaketh* (Hebrews 11:4). Yahusha counts that blood at the head of all the righteous blood the seed-war has spilled: *from the blood of righteous Abel unto the blood of Zacharias son of Barachias, whom ye slew between the temple and the altar* (Matthew 23:35). And the lament finds its answer in a better blood: the red bull's cry is hushed only at the cross, *the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24). The herd's first grief is the canon's standing testimony that the murdered righteous are not lost but kept.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 85,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Genesis 4:10 — *And he said, What hast thou done? the voice of thy brother’s blood crieth unto me from the ground.* The cow seeking the red bull and finding him not is Abel gone, his blood crying from the ground."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Hebrews 11:4 — *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts: and by it he being dead yet speaketh.* The red bull lamented and sought is the righteous Abel who, being dead, yet speaks."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 23,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Matthew 23:35 — *That upon you may come all the righteous blood shed upon the earth, from the blood of righteous Abel unto the blood of Zacharias son of Barachias, whom ye slew between the temple and the altar.* Abel's blood, the herd's first lament, heads the whole tally of righteous blood spilled in the seed-war."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 12,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Hebrews 12:24 — *And to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel.* The great lamentation over the red bull is answered at last by a better blood than Abel's."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-85-seth-second-white-bull-restored-seed",
+      "title": "The second white bull — Seth, the seed appointed, the white line toward Messiah",
+      "summary_md": "The first bull quiets the grieving cow, and the seed-line is restored white: *And I looked till that first bull came to her and quieted her... And after that she bore another white bull... I saw in my sleep that white bull likewise grow and become a great white bull, and from Him proceeded many white bulls, and they resembled him* (1 Enoch 85:6-8). The second white bull is Seth, given in Abel's place: *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew* (Genesis 4:25), and from him *began men to call upon the name of Yahuah (LORD)* (Genesis 4:26). Jubilees tells the same comfort after the mourning: *Adam knew his wife again, and she bare him a son, and he called his name Seth; for he said “Elohim (God) has raised up a second seed to us on the earth instead of Abel; for Cain slew him”* (Jubilees 4:7). The white bulls that proceed and resemble Him are the righteous Sethite line — Enoch, Noah, the patriarchs — running unbroken toward the great white bull born at the end of the vision, the Formed Son, the Messiah, in whom the whole flock is at last made white again. The line that survives the seed-war is the same election that gathers the houses of Israel.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 85,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Genesis 4:25 — *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew.* The second white bull the cow bears is Seth, the seed appointed in Abel's place."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* The many white bulls proceeding from the second white bull are the righteous Sethite line that called on the name of Yahuah."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 7,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 4,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "Jubilees 4:7 — *And Adam and his wife mourned for Abel four weeks of years, and in the fourth year of the fifth week they became joyful, and Adam knew his wife again, and she bare him a son, and he called his name Seth; for he said “Elohim (God) has raised up a second seed to us on the earth instead of Abel; for Cain slew him.”* Jubilees tells the comfort after the lament that Enoch shows as the cow quieted and bearing the second white bull."
+        },
+        {
+          "src_ch": 85,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Hebrews 11:5 — *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God).* The white bulls proceeding one from another are the righteous line — Enoch among them — that runs from Seth toward the great white bull at the vision's end."
+        }
+      ]
+    }
+  ]
+}

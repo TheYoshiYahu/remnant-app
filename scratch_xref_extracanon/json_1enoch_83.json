@@ -1,0 +1,230 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 83,
+  "session": "session250",
+  "tag": "en83",
+  "base_band": 52050,
+  "threads": [
+    {
+      "slug": "1-enoch-83-flood-earth-swallowed",
+      "title": "The heaven cast down, the earth swallowed — the deluge foreseen",
+      "summary_md": "Enoch's first dream-vision is the Flood: *And when it fell to the earth I saw how the earth was swallowed up in a great abyss, and mountains were suspended on mountains* (1 Enoch 83:5), and *the earth was rent asunder, and all that was upon the earth perished, and the earth was dissolved* (1 Enoch 83:7). It ain't new — this is Genesis read from heaven. The corruption that brings it is the very violence Yahuah names to Noah: *The earth also was corrupt before Elohim (God), and the earth was filled with violence* (Genesis 6:11), so that *Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth* (Genesis 6:13). The vision's swallowing abyss is the very mechanism of the deluge: *the same day were all the fountains of the great deep broken up, and the windows of heaven were opened* (Genesis 7:11), until *every living substance was destroyed which was upon the face of the ground... and Noah only remained alive, and they that were with him in the ark* (Genesis 7:23). Enoch within his own book had already heard the Watcher-judgment announced to Noah: *reveal to him the end that is approaching: that the whole earth will be destroyed, and a deluge is about to come upon the whole earth* (1 Enoch 10:2) — the seed-war of Genesis 6 closing in water.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 83,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Genesis 6:11 — *The earth also was corrupt before Elohim (God), and the earth was filled with violence.* The violence that fills the earth is the corruption Enoch sees punished when the earth is swallowed in the abyss at 83:5."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Genesis 6:13 — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* Enoch's \"all that was upon the earth perished\" (83:7) is this very decree against all flesh."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 7,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Genesis 7:11 — *In the six hundredth year of Noah's life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* The broken-up deep is the great abyss that swallows the earth in Enoch's vision (83:5)."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 7,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Genesis 7:23 — *And every living substance was destroyed which was upon the face of the ground, both man, and cattle, and the creeping things, and the fowl of the heaven; and they were destroyed from the earth: and Noah only remained alive, and they that were with him in the ark.* Enoch's \"all that was upon the earth perished\" (83:7) is the deluge that left only Noah's house alive."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 4,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "1 Enoch 10:2 — *And said to him: 'Go to Noah and tell him in My Name \"Hide thyself!\" and reveal to him the end that is approaching: that the whole earth will be destroyed, and a deluge is about to come upon the whole earth, and will destroy all that is on it.* The Flood Enoch now sees collapse from heaven (83:4) is the same judgment his book already announced to Noah."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-83-heaven-rolled-scroll",
+      "title": "The heaven rolled up like a scroll, the luminaries fall",
+      "summary_md": "In the second movement of the vision the cosmos itself comes undone: *And again I saw in a vision, and behold the heaven was rolled up like a scroll, and all the luminaries fell down* (1 Enoch 83:10). It ain't new — the prophets and the Revelation see the same unmaking of the heavens on the Day of Yahuah. Isaiah: *And all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll: and all their host shall fall down, as the leaf falleth off from the vine, and as a falling fig from the fig tree* (Isaiah 34:4). The Lamb's sixth seal answers it word for word: *And the heaven departed as a scroll when it is rolled together; and every mountain and island were moved out of their places* (Revelation 6:14) — and Enoch's mountains \"suspended on mountains\" (83:5) are these mountains moved out of place. Peter binds the Flood-of-water to the coming judgment-by-fire as one pattern: *Whereby the world that then was, being overflowed with water, perished* (2 Peter 3:6), so that now *the heavens and the earth, which are now, by the same word are kept in store, reserved unto fire against the day of judgment* (2 Peter 3:7). The first dissolution prefigures the last; the same Word that drowned the old order keeps the present one for the day Enoch's scroll-vision foreshadows.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 83,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 34,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Isaiah 34:4 — *And all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll: and all their host shall fall down, as the leaf falleth off from the vine, and as a falling fig from the fig tree.* Enoch's heaven \"rolled up like a scroll\" with the luminaries falling (83:10) is Isaiah's Day-of-Yahuah unmaking of the host of heaven."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 6,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Revelation 6:14 — *And the heaven departed as a scroll when it is rolled together; and every mountain and island were moved out of their places.* The sixth seal repeats Enoch's scroll-rolled heaven (83:10) and the mountains displaced from his vision (83:5)."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 3,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "2 Peter 3:6 — *Whereby the world that then was, being overflowed with water, perished.* Peter names the very deluge Enoch's vision dissolves (83:12) as the pattern of the world that perished."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 3,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "2 Peter 3:7 — *But the heavens and the earth, which are now, by the same word are kept in store, reserved unto fire against the day of judgment and perdition of ungodly men.* The dissolving earth of Enoch's vision (83:12) is the type of the heavens and earth reserved unto the final fire."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-83-enoch-intercessor-spare-earth",
+      "title": "Enoch the intercessor — that He would not destroy the whole earth",
+      "summary_md": "Twice in the vision Enoch falls on his face and pleads: *And I prayed to Yahuah (God) of Spirits that He would not destroy the whole earth* (1 Enoch 83:9), and again *I prayed to Yahuah (God) of Spirits that He would not destroy the whole earth* (1 Enoch 83:14). It ain't new — Enoch stands in the office every true prophet fills: the man who stands in the breach. The next chapter resolves the prayer he begins here, asking not for the wicked but for a remnant: *And now I beseech Thee, O Yahuah (God) of Spirits, To have mercy upon the children of men, And not to destroy the whole race of men, But to preserve a seed from them for the righteous* (1 Enoch 84:10). Abraham bargains the same way before Sodom: *And Abraham drew near, and said, Wilt thou also destroy the righteous with the wicked?* (Genesis 18:23). Moses turns wrath at Sinai: *Turn from thy fierce wrath, and repent of this evil against thy people* (Exodus 32:12). And Amos cries the prophet's plea for the small remnant: *O Yahuah (Lord) GOD, cease, I beseech thee: by whom shall Jacob arise? for he is small* (Amos 7:5) — and *Yahuah (LORD) repented for this: This also shall not be* (Amos 7:6). Enoch is the first in this line of intercessors; Torah's mercy and the prophets' standing-in-the-gap are already here.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 83,
+          "src_v": 9,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 84,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "1 Enoch 84:10 — *And now I beseech Thee, O Yahuah (God) of Spirits, To have mercy upon the children of men, And not to destroy the whole race of men, But to preserve a seed from them for the righteous.* The very next chapter unfolds the prayer Enoch begins in 83:9 — that the whole earth not be destroyed but a righteous seed preserved."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 18,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Genesis 18:23 — *And Abraham drew near, and said, Wilt thou also destroy the righteous with the wicked?* Abraham's plea over Sodom is the same intercessor's posture as Enoch's prayer that Yahuah not destroy the whole earth (83:14)."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 32,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Exodus 32:12 — *Wherefore should the Egyptians speak, and say, For mischief did he bring them out, to slay them in the mountains, and to consume them from the face of the earth? Turn from thy fierce wrath, and repent of this evil against thy people.* Moses standing in the breach turns wrath just as Enoch pleads against total destruction (83:14)."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 7,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Amos 7:5 — *Then said I, O Yahuah (Lord) GOD, cease, I beseech thee: by whom shall Jacob arise? for he is small.* The prophet's intercession for the small remnant echoes Enoch praying that the whole earth not be destroyed (83:9)."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 7,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Amos 7:6 — *Yahuah (LORD) repented for this: This also shall not be, saith Adonai Yahuah (the Lord GOD).* Yahuah relents at the prophet's plea, the very answer Enoch's intercession seeks when he prays the earth be spared (83:9)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-83-flood-type-coming-of-son-of-adam",
+      "title": "The days of Noah — the Flood as type of the coming judgment",
+      "summary_md": "Enoch's terror — *O Yahuah (God) of Spirits, what is this terrible thing that Thou hast done to the earth?* (1 Enoch 83:6) — sets the Flood as the pattern for the end. It ain't new — Yahusha (Jesus) makes the deluge the very figure of His coming: *But as the days of Noe were, so shall also the coming of the Son of Adam be* (Matthew 24:37), for *they knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be* (Matthew 24:39). Note the title stands plainly here — \"the coming of the Son of Adam\" — the Formed Son whom Enoch's own Parables name. Peter draws the same line and presses it toward holiness: *Seeing then that all these things shall be dissolved, what manner of persons ought ye to be in all holy conversation and godliness* (2 Peter 3:11). And when the Flood has done its work, the covenant mercy turns: *And Elohim (God) remembered Noah, and every living thing, and all the cattle that was with him in the ark: and Elohim (God) made a wind to pass over the earth, and the waters asswaged* (Genesis 8:1) — the remembering that answers Enoch's plea (83:9, 14) that a seed be preserved. The judgment is real, but it is for a corrupted, violent generation; the righteous are remembered and kept, never the law made a curse.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 83,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 37,
+          "tier": "free",
+          "note": "Matthew 24:37 — *But as the days of Noe were, so shall also the coming of the Son of Adam be.* Yahusha makes the Flood Enoch sees in his vision (83:6) the very type of the coming of the Son of Adam."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 39,
+          "tier": "free",
+          "note": "Matthew 24:39 — *And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be.* The Flood that takes all away is Enoch's \"all that was upon the earth perished\" (83:7), made the figure of the last day."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 8,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Genesis 8:1 — *And Elohim (God) remembered Noah, and every living thing, and all the cattle that was with him in the ark: and Elohim (God) made a wind to pass over the earth, and the waters asswaged.* The remembering of Noah is the answer to Enoch's prayer that the whole earth not be destroyed (83:9) — a seed preserved through the waters."
+        },
+        {
+          "src_ch": 83,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 3,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "2 Peter 3:11 — *Seeing then that all these things shall be dissolved, what manner of persons ought ye to be in all holy conversation and godliness.* Peter turns the dissolving earth of Enoch's vision (83:6) toward holy living, not toward law-as-curse."
+        }
+      ]
+    }
+  ]
+}

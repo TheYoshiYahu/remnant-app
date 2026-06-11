@@ -17732,6 +17732,2033 @@ SELECT t.id, x.id, 3, E'Jubilees 6:17 — *For this reason it is ordained and wr
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1enoch_83.sql (session250 1-enoch 83) -----
+-- Source anchor: enoch/1-enoch ch83. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en83 (view _session250_en83_lookup). Sort band base 52050, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en83_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-83-flood-earth-swallowed
+  ('enoch', '1-enoch', 83, 5, 'canon', 'genesis', 6, 11, 'free', E'Genesis 6:11 — *The earth also was corrupt before Elohim (God), and the earth was filled with violence.* The violence that fills the earth is the corruption Enoch sees punished when the earth is swallowed in the abyss at 83:5.'),
+  ('enoch', '1-enoch', 83, 7, 'canon', 'genesis', 6, 13, 'free', E'Genesis 6:13 — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* Enoch''s "all that was upon the earth perished" (83:7) is this very decree against all flesh.'),
+  ('enoch', '1-enoch', 83, 5, 'canon', 'genesis', 7, 11, 'free', E'Genesis 7:11 — *In the six hundredth year of Noah''s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* The broken-up deep is the great abyss that swallows the earth in Enoch''s vision (83:5).'),
+  ('enoch', '1-enoch', 83, 7, 'canon', 'genesis', 7, 23, 'free', E'Genesis 7:23 — *And every living substance was destroyed which was upon the face of the ground, both man, and cattle, and the creeping things, and the fowl of the heaven; and they were destroyed from the earth: and Noah only remained alive, and they that were with him in the ark.* Enoch''s "all that was upon the earth perished" (83:7) is the deluge that left only Noah''s house alive.'),
+  ('enoch', '1-enoch', 83, 4, 'enoch', '1-enoch', 10, 2, 'extras', E'1 Enoch 10:2 — *And said to him: ''Go to Noah and tell him in My Name "Hide thyself!" and reveal to him the end that is approaching: that the whole earth will be destroyed, and a deluge is about to come upon the whole earth, and will destroy all that is on it.* The Flood Enoch now sees collapse from heaven (83:4) is the same judgment his book already announced to Noah.'),
+  -- thread: 1-enoch-83-heaven-rolled-scroll
+  ('enoch', '1-enoch', 83, 10, 'canon', 'isaiah', 34, 4, 'free', E'Isaiah 34:4 — *And all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll: and all their host shall fall down, as the leaf falleth off from the vine, and as a falling fig from the fig tree.* Enoch''s heaven "rolled up like a scroll" with the luminaries falling (83:10) is Isaiah''s Day-of-Yahuah unmaking of the host of heaven.'),
+  ('enoch', '1-enoch', 83, 10, 'canon', 'revelation', 6, 14, 'free', E'Revelation 6:14 — *And the heaven departed as a scroll when it is rolled together; and every mountain and island were moved out of their places.* The sixth seal repeats Enoch''s scroll-rolled heaven (83:10) and the mountains displaced from his vision (83:5).'),
+  ('enoch', '1-enoch', 83, 12, 'canon', '2-peter', 3, 6, 'free', E'2 Peter 3:6 — *Whereby the world that then was, being overflowed with water, perished.* Peter names the very deluge Enoch''s vision dissolves (83:12) as the pattern of the world that perished.'),
+  ('enoch', '1-enoch', 83, 12, 'canon', '2-peter', 3, 7, 'free', E'2 Peter 3:7 — *But the heavens and the earth, which are now, by the same word are kept in store, reserved unto fire against the day of judgment and perdition of ungodly men.* The dissolving earth of Enoch''s vision (83:12) is the type of the heavens and earth reserved unto the final fire.'),
+  -- thread: 1-enoch-83-enoch-intercessor-spare-earth
+  ('enoch', '1-enoch', 83, 9, 'enoch', '1-enoch', 84, 10, 'extras', E'1 Enoch 84:10 — *And now I beseech Thee, O Yahuah (God) of Spirits, To have mercy upon the children of men, And not to destroy the whole race of men, But to preserve a seed from them for the righteous.* The very next chapter unfolds the prayer Enoch begins in 83:9 — that the whole earth not be destroyed but a righteous seed preserved.'),
+  ('enoch', '1-enoch', 83, 14, 'canon', 'genesis', 18, 23, 'free', E'Genesis 18:23 — *And Abraham drew near, and said, Wilt thou also destroy the righteous with the wicked?* Abraham''s plea over Sodom is the same intercessor''s posture as Enoch''s prayer that Yahuah not destroy the whole earth (83:14).'),
+  ('enoch', '1-enoch', 83, 14, 'canon', 'exodus', 32, 12, 'free', E'Exodus 32:12 — *Wherefore should the Egyptians speak, and say, For mischief did he bring them out, to slay them in the mountains, and to consume them from the face of the earth? Turn from thy fierce wrath, and repent of this evil against thy people.* Moses standing in the breach turns wrath just as Enoch pleads against total destruction (83:14).'),
+  ('enoch', '1-enoch', 83, 9, 'canon', 'amos', 7, 5, 'free', E'Amos 7:5 — *Then said I, O Yahuah (Lord) GOD, cease, I beseech thee: by whom shall Jacob arise? for he is small.* The prophet''s intercession for the small remnant echoes Enoch praying that the whole earth not be destroyed (83:9).'),
+  ('enoch', '1-enoch', 83, 9, 'canon', 'amos', 7, 6, 'free', E'Amos 7:6 — *Yahuah (LORD) repented for this: This also shall not be, saith Adonai Yahuah (the Lord GOD).* Yahuah relents at the prophet''s plea, the very answer Enoch''s intercession seeks when he prays the earth be spared (83:9).'),
+  -- thread: 1-enoch-83-flood-type-coming-of-son-of-adam
+  ('enoch', '1-enoch', 83, 6, 'canon', 'matthew', 24, 37, 'free', E'Matthew 24:37 — *But as the days of Noe were, so shall also the coming of the Son of Adam be.* Yahusha makes the Flood Enoch sees in his vision (83:6) the very type of the coming of the Son of Adam.'),
+  ('enoch', '1-enoch', 83, 7, 'canon', 'matthew', 24, 39, 'free', E'Matthew 24:39 — *And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be.* The Flood that takes all away is Enoch''s "all that was upon the earth perished" (83:7), made the figure of the last day.'),
+  ('enoch', '1-enoch', 83, 9, 'canon', 'genesis', 8, 1, 'free', E'Genesis 8:1 — *And Elohim (God) remembered Noah, and every living thing, and all the cattle that was with him in the ark: and Elohim (God) made a wind to pass over the earth, and the waters asswaged.* The remembering of Noah is the answer to Enoch''s prayer that the whole earth not be destroyed (83:9) — a seed preserved through the waters.'),
+  ('enoch', '1-enoch', 83, 6, 'canon', '2-peter', 3, 11, 'free', E'2 Peter 3:11 — *Seeing then that all these things shall be dissolved, what manner of persons ought ye to be in all holy conversation and godliness.* Peter turns the dissolving earth of Enoch''s vision (83:6) toward holy living, not toward law-as-curse.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en83_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en83_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-83-flood-earth-swallowed',
+       E'The heaven cast down, the earth swallowed — the deluge foreseen',
+       E'Enoch''s first dream-vision is the Flood: *And when it fell to the earth I saw how the earth was swallowed up in a great abyss, and mountains were suspended on mountains* (1 Enoch 83:5), and *the earth was rent asunder, and all that was upon the earth perished, and the earth was dissolved* (1 Enoch 83:7). It ain''t new — this is Genesis read from heaven. The corruption that brings it is the very violence Yahuah names to Noah: *The earth also was corrupt before Elohim (God), and the earth was filled with violence* (Genesis 6:11), so that *Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth* (Genesis 6:13). The vision''s swallowing abyss is the very mechanism of the deluge: *the same day were all the fountains of the great deep broken up, and the windows of heaven were opened* (Genesis 7:11), until *every living substance was destroyed which was upon the face of the ground... and Noah only remained alive, and they that were with him in the ark* (Genesis 7:23). Enoch within his own book had already heard the Watcher-judgment announced to Noah: *reveal to him the end that is approaching: that the whole earth will be destroyed, and a deluge is about to come upon the whole earth* (1 Enoch 10:2) — the seed-war of Genesis 6 closing in water.',
+       sv.verse_id, ev.verse_id, 'extras', 52050
+  FROM _session250_en83_lookup sv, _session250_en83_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=83 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-83-heaven-rolled-scroll',
+       E'The heaven rolled up like a scroll, the luminaries fall',
+       E'In the second movement of the vision the cosmos itself comes undone: *And again I saw in a vision, and behold the heaven was rolled up like a scroll, and all the luminaries fell down* (1 Enoch 83:10). It ain''t new — the prophets and the Revelation see the same unmaking of the heavens on the Day of Yahuah. Isaiah: *And all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll: and all their host shall fall down, as the leaf falleth off from the vine, and as a falling fig from the fig tree* (Isaiah 34:4). The Lamb''s sixth seal answers it word for word: *And the heaven departed as a scroll when it is rolled together; and every mountain and island were moved out of their places* (Revelation 6:14) — and Enoch''s mountains "suspended on mountains" (83:5) are these mountains moved out of place. Peter binds the Flood-of-water to the coming judgment-by-fire as one pattern: *Whereby the world that then was, being overflowed with water, perished* (2 Peter 3:6), so that now *the heavens and the earth, which are now, by the same word are kept in store, reserved unto fire against the day of judgment* (2 Peter 3:7). The first dissolution prefigures the last; the same Word that drowned the old order keeps the present one for the day Enoch''s scroll-vision foreshadows.',
+       sv.verse_id, ev.verse_id, 'extras', 52053
+  FROM _session250_en83_lookup sv, _session250_en83_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=83 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-83-enoch-intercessor-spare-earth',
+       E'Enoch the intercessor — that He would not destroy the whole earth',
+       E'Twice in the vision Enoch falls on his face and pleads: *And I prayed to Yahuah (God) of Spirits that He would not destroy the whole earth* (1 Enoch 83:9), and again *I prayed to Yahuah (God) of Spirits that He would not destroy the whole earth* (1 Enoch 83:14). It ain''t new — Enoch stands in the office every true prophet fills: the man who stands in the breach. The next chapter resolves the prayer he begins here, asking not for the wicked but for a remnant: *And now I beseech Thee, O Yahuah (God) of Spirits, To have mercy upon the children of men, And not to destroy the whole race of men, But to preserve a seed from them for the righteous* (1 Enoch 84:10). Abraham bargains the same way before Sodom: *And Abraham drew near, and said, Wilt thou also destroy the righteous with the wicked?* (Genesis 18:23). Moses turns wrath at Sinai: *Turn from thy fierce wrath, and repent of this evil against thy people* (Exodus 32:12). And Amos cries the prophet''s plea for the small remnant: *O Yahuah (Lord) GOD, cease, I beseech thee: by whom shall Jacob arise? for he is small* (Amos 7:5) — and *Yahuah (LORD) repented for this: This also shall not be* (Amos 7:6). Enoch is the first in this line of intercessors; Torah''s mercy and the prophets'' standing-in-the-gap are already here.',
+       sv.verse_id, ev.verse_id, 'extras', 52056
+  FROM _session250_en83_lookup sv, _session250_en83_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=9
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=83 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-83-flood-type-coming-of-son-of-adam',
+       E'The days of Noah — the Flood as type of the coming judgment',
+       E'Enoch''s terror — *O Yahuah (God) of Spirits, what is this terrible thing that Thou hast done to the earth?* (1 Enoch 83:6) — sets the Flood as the pattern for the end. It ain''t new — Yahusha (Jesus) makes the deluge the very figure of His coming: *But as the days of Noe were, so shall also the coming of the Son of Adam be* (Matthew 24:37), for *they knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be* (Matthew 24:39). Note the title stands plainly here — "the coming of the Son of Adam" — the Formed Son whom Enoch''s own Parables name. Peter draws the same line and presses it toward holiness: *Seeing then that all these things shall be dissolved, what manner of persons ought ye to be in all holy conversation and godliness* (2 Peter 3:11). And when the Flood has done its work, the covenant mercy turns: *And Elohim (God) remembered Noah, and every living thing, and all the cattle that was with him in the ark: and Elohim (God) made a wind to pass over the earth, and the waters asswaged* (Genesis 8:1) — the remembering that answers Enoch''s plea (83:9, 14) that a seed be preserved. The judgment is real, but it is for a corrupted, violent generation; the righteous are remembered and kept, never the law made a curse.',
+       sv.verse_id, ev.verse_id, 'extras', 52059
+  FROM _session250_en83_lookup sv, _session250_en83_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=83 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-83-flood-earth-swallowed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 6:11 — *The earth also was corrupt before Elohim (God), and the earth was filled with violence.* The violence that fills the earth is the corruption Enoch sees punished when the earth is swallowed in the abyss at 83:5.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-flood-earth-swallowed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 6:13 — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* Enoch''s "all that was upon the earth perished" (83:7) is this very decree against all flesh.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-flood-earth-swallowed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 7:11 — *In the six hundredth year of Noah''s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* The broken-up deep is the great abyss that swallows the earth in Enoch''s vision (83:5).'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-flood-earth-swallowed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 7:23 — *And every living substance was destroyed which was upon the face of the ground, both man, and cattle, and the creeping things, and the fowl of the heaven; and they were destroyed from the earth: and Noah only remained alive, and they that were with him in the ark.* Enoch''s "all that was upon the earth perished" (83:7) is the deluge that left only Noah''s house alive.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-flood-earth-swallowed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 10:2 — *And said to him: ''Go to Noah and tell him in My Name "Hide thyself!" and reveal to him the end that is approaching: that the whole earth will be destroyed, and a deluge is about to come upon the whole earth, and will destroy all that is on it.* The Flood Enoch now sees collapse from heaven (83:4) is the same judgment his book already announced to Noah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-flood-earth-swallowed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=4
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-83-heaven-rolled-scroll
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 34:4 — *And all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll: and all their host shall fall down, as the leaf falleth off from the vine, and as a falling fig from the fig tree.* Enoch''s heaven "rolled up like a scroll" with the luminaries falling (83:10) is Isaiah''s Day-of-Yahuah unmaking of the host of heaven.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-heaven-rolled-scroll'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=34 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 6:14 — *And the heaven departed as a scroll when it is rolled together; and every mountain and island were moved out of their places.* The sixth seal repeats Enoch''s scroll-rolled heaven (83:10) and the mountains displaced from his vision (83:5).'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-heaven-rolled-scroll'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Peter 3:6 — *Whereby the world that then was, being overflowed with water, perished.* Peter names the very deluge Enoch''s vision dissolves (83:12) as the pattern of the world that perished.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-heaven-rolled-scroll'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Peter 3:7 — *But the heavens and the earth, which are now, by the same word are kept in store, reserved unto fire against the day of judgment and perdition of ungodly men.* The dissolving earth of Enoch''s vision (83:12) is the type of the heavens and earth reserved unto the final fire.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-heaven-rolled-scroll'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-83-enoch-intercessor-spare-earth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 84:10 — *And now I beseech Thee, O Yahuah (God) of Spirits, To have mercy upon the children of men, And not to destroy the whole race of men, But to preserve a seed from them for the righteous.* The very next chapter unfolds the prayer Enoch begins in 83:9 — that the whole earth not be destroyed but a righteous seed preserved.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-enoch-intercessor-spare-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=9
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=84 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 18:23 — *And Abraham drew near, and said, Wilt thou also destroy the righteous with the wicked?* Abraham''s plea over Sodom is the same intercessor''s posture as Enoch''s prayer that Yahuah not destroy the whole earth (83:14).'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-enoch-intercessor-spare-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 32:12 — *Wherefore should the Egyptians speak, and say, For mischief did he bring them out, to slay them in the mountains, and to consume them from the face of the earth? Turn from thy fierce wrath, and repent of this evil against thy people.* Moses standing in the breach turns wrath just as Enoch pleads against total destruction (83:14).'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-enoch-intercessor-spare-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Amos 7:5 — *Then said I, O Yahuah (Lord) GOD, cease, I beseech thee: by whom shall Jacob arise? for he is small.* The prophet''s intercession for the small remnant echoes Enoch praying that the whole earth not be destroyed (83:9).'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-enoch-intercessor-spare-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=7 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Amos 7:6 — *Yahuah (LORD) repented for this: This also shall not be, saith Adonai Yahuah (the Lord GOD).* Yahuah relents at the prophet''s plea, the very answer Enoch''s intercession seeks when he prays the earth be spared (83:9).'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-enoch-intercessor-spare-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=7 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-83-flood-type-coming-of-son-of-adam
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 24:37 — *But as the days of Noe were, so shall also the coming of the Son of Adam be.* Yahusha makes the Flood Enoch sees in his vision (83:6) the very type of the coming of the Son of Adam.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-flood-type-coming-of-son-of-adam'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 24:39 — *And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be.* The Flood that takes all away is Enoch''s "all that was upon the earth perished" (83:7), made the figure of the last day.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-flood-type-coming-of-son-of-adam'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 8:1 — *And Elohim (God) remembered Noah, and every living thing, and all the cattle that was with him in the ark: and Elohim (God) made a wind to pass over the earth, and the waters asswaged.* The remembering of Noah is the answer to Enoch''s prayer that the whole earth not be destroyed (83:9) — a seed preserved through the waters.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-flood-type-coming-of-son-of-adam'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=8 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Peter 3:11 — *Seeing then that all these things shall be dissolved, what manner of persons ought ye to be in all holy conversation and godliness.* Peter turns the dissolving earth of Enoch''s vision (83:6) toward holy living, not toward law-as-curse.'
+  FROM cross_reference_threads t, cross_references x, _session250_en83_lookup sv, _session250_en83_lookup tv
+ WHERE t.slug='1-enoch-83-flood-type-coming-of-son-of-adam'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=83 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_84.sql (session250 1-enoch 84) -----
+-- Source anchor: enoch/1-enoch ch84. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en84 (view _session250_en84_lookup). Sort band base 52075, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en84_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-84-everlasting-throne-dominion
+  ('enoch', '1-enoch', 84, 2, 'canon', 'daniel', 4, 34, 'free', E'Daniel 4:34 — *And at the end of the days I Nebuchadnezzar lifted up mine eyes unto heaven, and mine understanding returned unto me, and I blessed the El Elyon (most High), and I praised and honoured him that liveth for ever, whose dominion is an everlasting dominion, and his kingdom is from generation to generation:* the pagan king is driven to Enoch''s exact confession of an everlasting throne and dominion.'),
+  ('enoch', '1-enoch', 84, 3, 'canon', 'daniel', 4, 35, 'free', E'Daniel 4:35 — *And all the inhabitants of the earth are reputed as nothing: and he doeth according to his will in the army of heaven, and among the inhabitants of the earth: and none can stay his hand, or say unto him, What doest thou?* Enoch''s ''Thou hast power over all things'' is Daniel''s ''none can stay his hand.'''),
+  ('enoch', '1-enoch', 84, 2, 'canon', 'psalms', 145, 13, 'free', E'Psalm 145:13 — *Thy kingdom is an everlasting kingdom, and thy dominion endureth throughout all generations.* The Psalmist''s crown matches Enoch''s ''Thy throne is for ever and ever.'''),
+  ('enoch', '1-enoch', 84, 2, 'canon', 'isaiah', 6, 1, 'free', E'Isaiah 6:1 — *In the year that king Uzziah died I saw also Yahuah (Lord) sitting upon a throne, high and lifted up, and his train filled the temple.* Isaiah is shown the very throne ''for ever and ever'' that Enoch is blessing.'),
+  ('enoch', '1-enoch', 84, 2, 'canon', 'revelation', 11, 17, 'free', E'Revelation 11:17 — *Saying, We give thee thanks, O Yahuah Elohim (Lord God) Almighty, which art, and wast, and art to come; because thou hast taken to thee thy great power, and hast reigned.* The redeemed close the age with Enoch''s confession of the everlasting King who reigns.'),
+  ('enoch', '1-enoch', 84, 2, 'enoch', '1-enoch', 9, 4, 'extras', E'1 Enoch 9:4 — *And they said to Yahuah (God) of the ages: "Lord of lords, Elohim (God) of elohiym, King of kings, and Elohim (God) of the ages, the throne of Thy glory (standeth) unto all the generations of the world, and Thy Name is holy and glorious and blessed unto all the ages!* the angels'' first cry against the Watchers names the same everlasting throne Enoch blesses here.'),
+  -- thread: 1-enoch-84-all-naked-and-open
+  ('enoch', '1-enoch', 84, 3, 'canon', 'hebrews', 4, 13, 'free', E'Hebrews 4:13 — *Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do.* the canon carries Enoch''s exact phrase: all things naked and open before the eyes of God.'),
+  ('enoch', '1-enoch', 84, 8, 'canon', 'psalms', 139, 7, 'free', E'Psalm 139:7 — *Whither shall I go from thy spirit? or whither shall I flee from thy presence?* David confesses Enoch''s ''nothing can hide itself from Thee.'''),
+  ('enoch', '1-enoch', 84, 3, 'canon', 'psalms', 11, 4, 'free', E'Psalm 11:4 — *Yahuah (LORD) is in his holy temple, the LORD''S throne is in heaven: his eyes behold, his eyelids try, the children of men.* the enthroned One whose eyes see all is the same God Enoch blesses.'),
+  ('enoch', '1-enoch', 84, 3, 'enoch', '1-enoch', 9, 5, 'extras', E'1 Enoch 9:5 — *Thou hast made all things, and power over all things hast Thou: and all things are naked and open in Thy sight, and Thou seest all things, and nothing can hide itself from Thee.* the angels'' intercession against the Watchers uses the identical formula Enoch repeats in his prayer.'),
+  -- thread: 1-enoch-84-watchers-azazel-giants
+  ('enoch', '1-enoch', 84, 6, 'canon', 'genesis', 6, 2, 'free', E'Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* the canon''s account of the Watchers going to the daughters of men that Enoch is rehearsing.'),
+  ('enoch', '1-enoch', 84, 7, 'canon', 'genesis', 6, 4, 'free', E'Genesis 6:4 — *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.* Enoch''s ''the women have borne giants'' is Genesis 6:4 itself.'),
+  ('enoch', '1-enoch', 84, 7, 'canon', 'genesis', 6, 11, 'free', E'Genesis 6:11 — *The earth also was corrupt before Elohim (God), and the earth was filled with violence.* matches Enoch''s ''the whole earth has thereby been filled with blood and unrighteousness.'''),
+  ('enoch', '1-enoch', 84, 9, 'canon', 'jude', 1, 6, 'free', E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude carries forward Enoch''s ''fallen angels'' who led astray the children of men.'),
+  ('enoch', '1-enoch', 84, 9, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* the apostle binds the same fallen Watchers Enoch names to their reserved judgment.'),
+  ('enoch', '1-enoch', 84, 6, 'jubilees', 'jubilees', 5, 1, 'extras', E'Jubilees 5:1 — *And it came to pass when the children of men began to multiply on the face of the earth and daughters were born to them, that the angels of Elohim (God) saw them on a certain year of this jubilee, that they were beautiful to look upon; and they took themselves wives of all whom they chose, and they bare to them sons and they were giants.* a parallel extra-canon witness to the descent Enoch lays before the throne.'),
+  -- thread: 1-enoch-84-preserve-a-seed-remnant
+  ('enoch', '1-enoch', 84, 10, 'canon', 'genesis', 6, 8, 'free', E'Genesis 6:8 — *But Noah found grace in the eyes of Yahuah (LORD).* the seed preserved for the righteous in Enoch''s plea is, in the Flood account, the one man left alive.'),
+  ('enoch', '1-enoch', 84, 10, 'canon', 'genesis', 7, 23, 'free', E'Genesis 7:23 — *And every living substance was destroyed which was upon the face of the ground, both man, and cattle, and the creeping things, and the fowl of the heaven; and they were destroyed from the earth: and Noah only remained alive, and they that were with him in the ark.* the destruction of unrighteousness with a seed preserved is exactly Enoch''s request answered.'),
+  ('enoch', '1-enoch', 84, 11, 'canon', 'micah', 1, 3, 'free', E'Micah 1:3 — *For, behold, Yahuah (LORD) cometh forth out of his place, and will come down, and tread upon the high places of the earth.* the prophet''s cry matches Enoch''s ''come forth from Thy holy habitation, And come down upon the earth.'''),
+  ('enoch', '1-enoch', 84, 11, 'canon', 'isaiah', 64, 1, 'free', E'Isaiah 64:1 — *Oh that thou wouldest rend the heavens, that thou wouldest come down, that the mountains might flow down at thy presence,* the same plea that the Most High come down upon the earth.'),
+  ('enoch', '1-enoch', 84, 12, 'canon', 'isaiah', 1, 9, 'free', E'Isaiah 1:9 — *Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah.* the preserved-seed principle of Enoch''s plea is the remnant left to Israel.'),
+  ('enoch', '1-enoch', 84, 12, 'canon', 'romans', 11, 5, 'free', E'Romans 11:5 — *Even so then at this present time also there is a remnant according to the election of grace.* Paul reads the preserved seed as the elect remnant of Israel in the present — election precedes the preserving, the very frame of Enoch''s ''the righteous and elect Thou shalt preserve.'''),
+  ('enoch', '1-enoch', 84, 10, 'jubilees', 'jubilees', 5, 19, 'extras', E'Jubilees 5:19 — *And as for all those who corrupted their ways and their thoughts before the flood, no man''s person was accepted save that of Noah alone; for his person was accepted in behalf of his sons, whom Elohim (God) saved from the waters of the flood on his account; for his heart was righteous in all his ways, according as it was commanded regarding him, and he had not departed from aught that was ordained for him.* a parallel witness to the lone preserved seed Enoch begs for.'),
+  ('enoch', '1-enoch', 84, 10, 'enoch', '1-enoch', 10, 3, 'extras', E'1 Enoch 10:3 — *And now instruct him that he may escape and his seed may be preserved for all the generations of the world.* Enoch''s own earlier commission to Noah is the answer to the plea he prays here — the seed preserved through the Flood.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en84_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en84_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-84-everlasting-throne-dominion',
+       E'Thy throne is for ever and ever — the everlasting dominion',
+       E'Enoch opens his blessing by exalting the Most High as King over an unending reign: *''Blessed be Thou, O Yahuah (God), King, Great and mighty in Thy greatness, Elyon in Thy dominion, And Thy throne is for ever and ever, And Thy name is holy and great for ever and ever, And blessed be Thou for ever.''* (1 Enoch 84:2). This is the same confession Nebuchadnezzar is forced to make when his reason returns: *''I blessed the El Elyon (most High), and I praised and honoured him that liveth for ever, whose dominion is an everlasting dominion, and his kingdom is from generation to generation''* (Daniel 4:34) — and *''none can stay his hand, or say unto him, What doest thou?''* (Daniel 4:35). The Psalmist sings the same crown: *''Thy kingdom is an everlasting kingdom, and thy dominion endureth throughout all generations.''* (Psalm 145:13). Isaiah is granted the vision behind Enoch''s words — *''I saw also Yahuah (Lord) sitting upon a throne, high and lifted up, and his train filled the temple.''* (Isaiah 6:1) — and the redeemed at the consummation echo the everlasting King: *''We give thee thanks, O Yahuah Elohim (Lord God) Almighty, which art, and wast, and art to come; because thou hast taken to thee thy great power, and hast reigned.''* (Revelation 11:17). The throne of glory that opens Enoch''s plea is the same throne the watching angels named at the first cry against the Watchers: *''Lord of lords, Elohim (God) of elohiym, King of kings... the throne of Thy glory (standeth) unto all the generations of the world''* (1 Enoch 9:4). The sovereignty is total, ordered, and unshakeable — the ground on which a remnant can be safely asked for.',
+       sv.verse_id, ev.verse_id, 'extras', 52075
+  FROM _session250_en84_lookup sv, _session250_en84_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=84 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-84-all-naked-and-open',
+       E'All things are naked and open in Thy sight — the searching omniscience',
+       E'Enoch presses past the throne to the eyes of the One on it: *''Thou hast made all things, And Thou hast power over all things: And all things are naked and open in Thy sight, And Thou seest all things, And nothing can hide itself from Thee.''* (1 Enoch 84:3) — and again, *''And now, O Yahuah (God) of Spirits, Thou knowest all things, And all the hidden things are manifest before Thee.''* (1 Enoch 84:8). Hebrews lifts this line nearly word for word into the canon: *''Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do.''* (Hebrews 4:13). David knew there is no hiding from the same gaze — *''Whither shall I go from thy spirit? or whither shall I flee from thy presence?''* (Psalm 139:7) — and the same enthroned eyes try the sons of men: *''Yahuah (LORD) is in his holy temple, the LORD''S throne is in heaven: his eyes behold, his eyelids try, the children of men.''* (Psalm 11:4). This is the same omniscience the angels declared at the dawn of the Watcher-judgment, the page Enoch is deliberately echoing: *''Thou hast made all things, and power over all things hast Thou: and all things are naked and open in Thy sight, and Thou seest all things, and nothing can hide itself from Thee.''* (1 Enoch 9:5). Nothing of the Watchers'' secret arts is hidden — which is exactly why Enoch can name them next and trust the verdict.',
+       sv.verse_id, ev.verse_id, 'extras', 52078
+  FROM _session250_en84_lookup sv, _session250_en84_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=84 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-84-watchers-azazel-giants',
+       E'Thou seest what Azazel has done — the Watchers, the women, and the giants',
+       E'Enoch lays the whole catastrophe of Genesis 6 before the all-seeing King: *''Thou seest what Azâzêl has done, Who has taught all unrighteousness on earth And revealed the eternal secrets which were (preserved) in heaven... And they have gone to the daughters of men upon the earth, And have lain with the women, And have defiled themselves... And the women have borne giants, And the whole earth has thereby been filled with blood and unrighteousness.''* (1 Enoch 84:4-7). This is the canon''s own account: *''That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.''* (Genesis 6:2), and *''There were giants in the earth in those days... the same became mighty men which were of old, men of renown.''* (Genesis 6:4), so that *''the earth was filled with violence.''* (Genesis 6:11). The New Testament keeps the same dossier: *''And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.''* (Jude 1:6), and *''For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;''* (2 Peter 2:4). Jubilees recounts the identical descent — *''the angels of Elohim (God) saw them... and they took themselves wives of all whom they chose, and they bare to them sons and they were giants.''* (Jubilees 5:1). The Watchers'' sin is rebellion against the Creator''s order — fallen stars teaching forbidden arts, the seed-war sown — not a tale of mere human wickedness; and because the all-seeing One has already seen it (84:9, *''how they have led astray the children of men''*), the verdict is sure.',
+       sv.verse_id, ev.verse_id, 'extras', 52081
+  FROM _session250_en84_lookup sv, _session250_en84_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=84 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-84-preserve-a-seed-remnant',
+       E'Preserve a seed for the righteous — the plea and the remnant left',
+       E'Enoch''s blessing turns to intercession, asking not for a blanket reprieve but for a preserved seed: *''And now I beseech Thee, O Yahuah (God) of Spirits, To have mercy upon the children of men, And not to destroy the whole race of men, But to preserve a seed from them for the righteous.''* (1 Enoch 84:10), and he pleads for the Most High to come down — *''Arise and come forth from Thy holy habitation, And come down upon the earth, And destroy the unrighteousness from off the face of the earth''* (1 Enoch 84:11) — *''But the righteous and elect Thou shalt preserve, And they shall dwell in Thy presence for ever and ever.''* (1 Enoch 84:12). The seed preserved through the Flood is one man and his house: *''But Noah found grace in the eyes of Yahuah (LORD).''* (Genesis 6:8), so that *''Noah only remained alive, and they that were with him in the ark.''* (Genesis 7:23). The plea that the Lord ''come forth from His holy habitation'' is the prophets'' cry — *''For, behold, Yahuah (LORD) cometh forth out of his place, and will come down, and tread upon the high places of the earth.''* (Micah 1:3) and *''Oh that thou wouldest rend the heavens, that thou wouldest come down''* (Isaiah 64:1). And the preserved-seed principle runs straight to the two-house remnant: *''Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom''* (Isaiah 1:9), *''yet a remnant of them shall return''* (Isaiah 10:22) — which Paul reads as God leaving Israel a seed in the present awakening: *''Even so then at this present time also there is a remnant according to the election of grace.''* (Romans 11:5). Election precedes the preserving: the righteous and elect are already His — *they* are the seed left, not a self-selected class. Jubilees marks the same lone-survivor mercy: *''no man''s person was accepted save that of Noah alone... for his heart was righteous in all his ways''* (Jubilees 5:19), the Flood-pattern that Enoch''s own commission already framed — *''that he may escape and his seed may be preserved for all the generations of the world.''* (1 Enoch 10:3). The Watchers are bound, the unrighteousness swept off, but the elect dwell in His presence for ever — sovereignty and a preserved seed held together.',
+       sv.verse_id, ev.verse_id, 'extras', 52084
+  FROM _session250_en84_lookup sv, _session250_en84_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=84 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-84-everlasting-throne-dominion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 4:34 — *And at the end of the days I Nebuchadnezzar lifted up mine eyes unto heaven, and mine understanding returned unto me, and I blessed the El Elyon (most High), and I praised and honoured him that liveth for ever, whose dominion is an everlasting dominion, and his kingdom is from generation to generation:* the pagan king is driven to Enoch''s exact confession of an everlasting throne and dominion.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-everlasting-throne-dominion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 4:35 — *And all the inhabitants of the earth are reputed as nothing: and he doeth according to his will in the army of heaven, and among the inhabitants of the earth: and none can stay his hand, or say unto him, What doest thou?* Enoch''s ''Thou hast power over all things'' is Daniel''s ''none can stay his hand.'''
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-everlasting-throne-dominion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 145:13 — *Thy kingdom is an everlasting kingdom, and thy dominion endureth throughout all generations.* The Psalmist''s crown matches Enoch''s ''Thy throne is for ever and ever.'''
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-everlasting-throne-dominion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=145 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 6:1 — *In the year that king Uzziah died I saw also Yahuah (Lord) sitting upon a throne, high and lifted up, and his train filled the temple.* Isaiah is shown the very throne ''for ever and ever'' that Enoch is blessing.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-everlasting-throne-dominion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 11:17 — *Saying, We give thee thanks, O Yahuah Elohim (Lord God) Almighty, which art, and wast, and art to come; because thou hast taken to thee thy great power, and hast reigned.* The redeemed close the age with Enoch''s confession of the everlasting King who reigns.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-everlasting-throne-dominion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'1 Enoch 9:4 — *And they said to Yahuah (God) of the ages: "Lord of lords, Elohim (God) of elohiym, King of kings, and Elohim (God) of the ages, the throne of Thy glory (standeth) unto all the generations of the world, and Thy Name is holy and glorious and blessed unto all the ages!* the angels'' first cry against the Watchers names the same everlasting throne Enoch blesses here.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-everlasting-throne-dominion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=9 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-84-all-naked-and-open
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hebrews 4:13 — *Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do.* the canon carries Enoch''s exact phrase: all things naked and open before the eyes of God.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-all-naked-and-open'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 139:7 — *Whither shall I go from thy spirit? or whither shall I flee from thy presence?* David confesses Enoch''s ''nothing can hide itself from Thee.'''
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-all-naked-and-open'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=139 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 11:4 — *Yahuah (LORD) is in his holy temple, the LORD''S throne is in heaven: his eyes behold, his eyelids try, the children of men.* the enthroned One whose eyes see all is the same God Enoch blesses.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-all-naked-and-open'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 9:5 — *Thou hast made all things, and power over all things hast Thou: and all things are naked and open in Thy sight, and Thou seest all things, and nothing can hide itself from Thee.* the angels'' intercession against the Watchers uses the identical formula Enoch repeats in his prayer.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-all-naked-and-open'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=9 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-84-watchers-azazel-giants
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* the canon''s account of the Watchers going to the daughters of men that Enoch is rehearsing.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-watchers-azazel-giants'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 6:4 — *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.* Enoch''s ''the women have borne giants'' is Genesis 6:4 itself.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-watchers-azazel-giants'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 6:11 — *The earth also was corrupt before Elohim (God), and the earth was filled with violence.* matches Enoch''s ''the whole earth has thereby been filled with blood and unrighteousness.'''
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-watchers-azazel-giants'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude carries forward Enoch''s ''fallen angels'' who led astray the children of men.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-watchers-azazel-giants'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* the apostle binds the same fallen Watchers Enoch names to their reserved judgment.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-watchers-azazel-giants'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Jubilees 5:1 — *And it came to pass when the children of men began to multiply on the face of the earth and daughters were born to them, that the angels of Elohim (God) saw them on a certain year of this jubilee, that they were beautiful to look upon; and they took themselves wives of all whom they chose, and they bare to them sons and they were giants.* a parallel extra-canon witness to the descent Enoch lays before the throne.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-watchers-azazel-giants'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-84-preserve-a-seed-remnant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 6:8 — *But Noah found grace in the eyes of Yahuah (LORD).* the seed preserved for the righteous in Enoch''s plea is, in the Flood account, the one man left alive.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-preserve-a-seed-remnant'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 7:23 — *And every living substance was destroyed which was upon the face of the ground, both man, and cattle, and the creeping things, and the fowl of the heaven; and they were destroyed from the earth: and Noah only remained alive, and they that were with him in the ark.* the destruction of unrighteousness with a seed preserved is exactly Enoch''s request answered.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-preserve-a-seed-remnant'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Micah 1:3 — *For, behold, Yahuah (LORD) cometh forth out of his place, and will come down, and tread upon the high places of the earth.* the prophet''s cry matches Enoch''s ''come forth from Thy holy habitation, And come down upon the earth.'''
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-preserve-a-seed-remnant'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 64:1 — *Oh that thou wouldest rend the heavens, that thou wouldest come down, that the mountains might flow down at thy presence,* the same plea that the Most High come down upon the earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-preserve-a-seed-remnant'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=64 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 1:9 — *Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah.* the preserved-seed principle of Enoch''s plea is the remnant left to Israel.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-preserve-a-seed-remnant'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Romans 11:5 — *Even so then at this present time also there is a remnant according to the election of grace.* Paul reads the preserved seed as the elect remnant of Israel in the present — election precedes the preserving, the very frame of Enoch''s ''the righteous and elect Thou shalt preserve.'''
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-preserve-a-seed-remnant'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Jubilees 5:19 — *And as for all those who corrupted their ways and their thoughts before the flood, no man''s person was accepted save that of Noah alone; for his person was accepted in behalf of his sons, whom Elohim (God) saved from the waters of the flood on his account; for his heart was righteous in all his ways, according as it was commanded regarding him, and he had not departed from aught that was ordained for him.* a parallel witness to the lone preserved seed Enoch begs for.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-preserve-a-seed-remnant'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=10
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'1 Enoch 10:3 — *And now instruct him that he may escape and his seed may be preserved for all the generations of the world.* Enoch''s own earlier commission to Noah is the answer to the plea he prays here — the seed preserved through the Flood.'
+  FROM cross_reference_threads t, cross_references x, _session250_en84_lookup sv, _session250_en84_lookup tv
+ WHERE t.slug='1-enoch-84-preserve-a-seed-remnant'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=84 AND sv.verse_number=10
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_85.sql (session250 1-enoch 85) -----
+-- Source anchor: enoch/1-enoch ch85. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en85 (view _session250_en85_lookup). Sort band base 52100, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en85_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-85-white-bull-adam-formed
+  ('enoch', '1-enoch', 85, 3, 'canon', 'genesis', 2, 7, 'free', E'Genesis 2:7 — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* The white bull that "came forth from the earth" is Adam, formed of the dust of the ground.'),
+  ('enoch', '1-enoch', 85, 3, 'canon', 'genesis', 5, 1, 'free', E'Genesis 5:1 — *This is the book of the generations of Adam. In the day that Elohim (God) created man, in the likeness of Elohim (God) made he him.* The white bull is Adam, the head of the generations whose seed-line Enoch is about to trace as a herd.'),
+  ('enoch', '1-enoch', 85, 3, 'canon', 'genesis', 5, 3, 'free', E'Genesis 5:3 — *And Adam lived an hundred and thirty years, and begat a son in his own likeness, after his image; and called his name Seth.* The white bulls that "resembled him" and begat white bulls "which resembled them" are the righteous line bearing Adam''s likeness.'),
+  ('enoch', '1-enoch', 85, 3, 'jubilees', 'jubilees', 4, 1, 'extras', E'Jubilees 4:1 — *And in the third week in the second jubilee she gave birth to Cain, and in the fourth she gave birth to Abel, and in the fifth she gave birth to her daughter ’Âwân.* Jubilees names the same first births that Enoch shows as the heifer''s young bulls.'),
+  -- thread: 1-enoch-85-black-bull-red-cain-abel-seed-war
+  ('enoch', '1-enoch', 85, 4, 'canon', 'genesis', 4, 8, 'free', E'Genesis 4:8 — *And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him.* The black bull goring the red bull "over the earth" until he is seen no more is Cain slaying Abel in the field.'),
+  ('enoch', '1-enoch', 85, 3, 'canon', 'genesis', 4, 2, 'free', E'Genesis 4:2 — *And she again bare his brother Abel. And Abel was a keeper of sheep, but Cain was a tiller of the ground.* The two young bulls born with the heifer are Cain and Abel, the first brothers of the herd.'),
+  ('enoch', '1-enoch', 85, 4, 'canon', '1-john', 3, 12, 'free', E'1 John 3:12 — *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother’s righteous.* John reads the colours of the two bulls as the seed-war: the line of the wicked one against the righteous line.'),
+  ('enoch', '1-enoch', 85, 4, 'canon', 'matthew', 13, 38, 'free', E'Matthew 13:38 — *The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one.* The black bull woven in among the white is the tares-among-the-wheat seed-war that began with Cain.'),
+  ('enoch', '1-enoch', 85, 4, 'canon', 'jude', 1, 11, 'free', E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* Jude marks the apostate by the way of the black bull, the way of Cain.'),
+  -- thread: 1-enoch-85-lament-abel-blood-witness
+  ('enoch', '1-enoch', 85, 5, 'canon', 'genesis', 4, 10, 'free', E'Genesis 4:10 — *And he said, What hast thou done? the voice of thy brother’s blood crieth unto me from the ground.* The cow seeking the red bull and finding him not is Abel gone, his blood crying from the ground.'),
+  ('enoch', '1-enoch', 85, 5, 'canon', 'hebrews', 11, 4, 'free', E'Hebrews 11:4 — *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts: and by it he being dead yet speaketh.* The red bull lamented and sought is the righteous Abel who, being dead, yet speaks.'),
+  ('enoch', '1-enoch', 85, 5, 'canon', 'matthew', 23, 35, 'free', E'Matthew 23:35 — *That upon you may come all the righteous blood shed upon the earth, from the blood of righteous Abel unto the blood of Zacharias son of Barachias, whom ye slew between the temple and the altar.* Abel''s blood, the herd''s first lament, heads the whole tally of righteous blood spilled in the seed-war.'),
+  ('enoch', '1-enoch', 85, 5, 'canon', 'hebrews', 12, 24, 'free', E'Hebrews 12:24 — *And to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel.* The great lamentation over the red bull is answered at last by a better blood than Abel''s.'),
+  -- thread: 1-enoch-85-seth-second-white-bull-restored-seed
+  ('enoch', '1-enoch', 85, 7, 'canon', 'genesis', 4, 25, 'free', E'Genesis 4:25 — *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew.* The second white bull the cow bears is Seth, the seed appointed in Abel''s place.'),
+  ('enoch', '1-enoch', 85, 7, 'canon', 'genesis', 4, 26, 'free', E'Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* The many white bulls proceeding from the second white bull are the righteous Sethite line that called on the name of Yahuah.'),
+  ('enoch', '1-enoch', 85, 7, 'jubilees', 'jubilees', 4, 7, 'extras', E'Jubilees 4:7 — *And Adam and his wife mourned for Abel four weeks of years, and in the fourth year of the fifth week they became joyful, and Adam knew his wife again, and she bare him a son, and he called his name Seth; for he said “Elohim (God) has raised up a second seed to us on the earth instead of Abel; for Cain slew him.”* Jubilees tells the comfort after the lament that Enoch shows as the cow quieted and bearing the second white bull.'),
+  ('enoch', '1-enoch', 85, 8, 'canon', 'hebrews', 11, 5, 'free', E'Hebrews 11:5 — *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God).* The white bulls proceeding one from another are the righteous line — Enoch among them — that runs from Seth toward the great white bull at the vision''s end.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en85_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en85_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-85-white-bull-adam-formed',
+       E'The white bull come forth from the earth — Adam, the formed seed-line',
+       E'The Animal Apocalypse opens with the whole history of the world cast as a herd, and the first figure is the white bull formed from the ground: *and behold a bull came forth from the earth, and that bull was white; and after it came forth a heifer* (1 Enoch 85:3). The white bull is Adam, the righteous seed-line; the heifer is Eve drawn from his side. This is the canon''s own forming: *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul* (Genesis 2:7) — the bull "came forth from the earth" because the man was formed of the dust. And the line carried the likeness forward: *This is the book of the generations of Adam. In the day that Elohim (God) created man, in the likeness of Elohim (God) made he him* (Genesis 5:1), *and begat a son in his own likeness, after his image; and called his name Seth* (Genesis 5:3) — exactly the white bulls of Enoch that *resembled him* and bred *many white bulls, which resembled them.* Jubilees reckons the same beginning in jubilee-weeks: *And in the third week in the second jubilee she gave birth to Cain, and in the fourth she gave birth to Abel* (Jubilees 4:1). The white is no accident of colour — it is the righteous Adamic line, the seed that will run, blinded and scattered and at last regathered, all the way to the great white bull at the end (the Messiah).',
+       sv.verse_id, ev.verse_id, 'extras', 52100
+  FROM _session250_en85_lookup sv, _session250_en85_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=85 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-85-black-bull-red-cain-abel-seed-war',
+       E'The black bull gores the red — Cain and Abel, and the seed-war begins',
+       E'Two young bulls come with the heifer, and at once the seed-war is drawn in their colours: *along with this (heifer) two young bulls, one of them black and the other red. And that black young bull gored the red one and pursued him over the earth, and thereupon I could no longer see that red young bull* (1 Enoch 85:3-4). The black bull is Cain, the red is Abel slain. The canon tells it plainly: *And Abel was a keeper of sheep, but Cain was a tiller of the ground* (Genesis 4:2), and *Cain rose up against Abel his brother, and slew him* (Genesis 4:8). John reads the very seed-war the colours signal: *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother’s righteous* (1 John 3:12) — the line of the wicked one against the righteous line, the tares sown among the wheat from the first field. Yahusha names that same sowing: *his enemy came and sowed tares among the wheat* (Matthew 13:25), *the good seed are the children of the kingdom; but the tares are the children of the wicked one* (Matthew 13:38). Jude marks the apostate by it: *Woe unto them! for they have gone in the way of Cain* (Jude 1:11). The black bull that "grew" and went on while the red was seen no more is the line of Cain woven in among the white — never the church, never a replacement, but the old seed-war Enoch saw before he ever fathered Methuselah.',
+       sv.verse_id, ev.verse_id, 'extras', 52103
+  FROM _session250_en85_lookup sv, _session250_en85_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=85 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-85-lament-abel-blood-witness',
+       E'The cow seeks the red bull and laments — Abel''s blood that yet speaketh',
+       E'When the red bull is gone, the first cow grieves for him: *And that cow, that first one, went from the presence of that first bull in order to seek that red one, but found him not, and lamented with a great lamentation over him and sought him* (1 Enoch 85:5). This is Eve''s mourning for Abel, and the canon hears the slain one still crying: *the voice of thy brother’s blood crieth unto me from the ground* (Genesis 4:10). Abel''s death is not erased — it stands as the first witness of the righteous line: *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts: and by it he being dead yet speaketh* (Hebrews 11:4). Yahusha counts that blood at the head of all the righteous blood the seed-war has spilled: *from the blood of righteous Abel unto the blood of Zacharias son of Barachias, whom ye slew between the temple and the altar* (Matthew 23:35). And the lament finds its answer in a better blood: the red bull''s cry is hushed only at the cross, *the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24). The herd''s first grief is the canon''s standing testimony that the murdered righteous are not lost but kept.',
+       sv.verse_id, ev.verse_id, 'extras', 52106
+  FROM _session250_en85_lookup sv, _session250_en85_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=85 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-85-seth-second-white-bull-restored-seed',
+       E'The second white bull — Seth, the seed appointed, the white line toward Messiah',
+       E'The first bull quiets the grieving cow, and the seed-line is restored white: *And I looked till that first bull came to her and quieted her... And after that she bore another white bull... I saw in my sleep that white bull likewise grow and become a great white bull, and from Him proceeded many white bulls, and they resembled him* (1 Enoch 85:6-8). The second white bull is Seth, given in Abel''s place: *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew* (Genesis 4:25), and from him *began men to call upon the name of Yahuah (LORD)* (Genesis 4:26). Jubilees tells the same comfort after the mourning: *Adam knew his wife again, and she bare him a son, and he called his name Seth; for he said “Elohim (God) has raised up a second seed to us on the earth instead of Abel; for Cain slew him”* (Jubilees 4:7). The white bulls that proceed and resemble Him are the righteous Sethite line — Enoch, Noah, the patriarchs — running unbroken toward the great white bull born at the end of the vision, the Formed Son, the Messiah, in whom the whole flock is at last made white again. The line that survives the seed-war is the same election that gathers the houses of Israel.',
+       sv.verse_id, ev.verse_id, 'extras', 52109
+  FROM _session250_en85_lookup sv, _session250_en85_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=85 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-85-white-bull-adam-formed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:7 — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* The white bull that "came forth from the earth" is Adam, formed of the dust of the ground.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-white-bull-adam-formed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 5:1 — *This is the book of the generations of Adam. In the day that Elohim (God) created man, in the likeness of Elohim (God) made he him.* The white bull is Adam, the head of the generations whose seed-line Enoch is about to trace as a herd.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-white-bull-adam-formed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=5 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 5:3 — *And Adam lived an hundred and thirty years, and begat a son in his own likeness, after his image; and called his name Seth.* The white bulls that "resembled him" and begat white bulls "which resembled them" are the righteous line bearing Adam''s likeness.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-white-bull-adam-formed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=5 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 4:1 — *And in the third week in the second jubilee she gave birth to Cain, and in the fourth she gave birth to Abel, and in the fifth she gave birth to her daughter ’Âwân.* Jubilees names the same first births that Enoch shows as the heifer''s young bulls.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-white-bull-adam-formed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=3
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-85-black-bull-red-cain-abel-seed-war
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 4:8 — *And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him.* The black bull goring the red bull "over the earth" until he is seen no more is Cain slaying Abel in the field.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-black-bull-red-cain-abel-seed-war'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 4:2 — *And she again bare his brother Abel. And Abel was a keeper of sheep, but Cain was a tiller of the ground.* The two young bulls born with the heifer are Cain and Abel, the first brothers of the herd.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-black-bull-red-cain-abel-seed-war'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 John 3:12 — *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother’s righteous.* John reads the colours of the two bulls as the seed-war: the line of the wicked one against the righteous line.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-black-bull-red-cain-abel-seed-war'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=3 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 13:38 — *The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one.* The black bull woven in among the white is the tares-among-the-wheat seed-war that began with Cain.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-black-bull-red-cain-abel-seed-war'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* Jude marks the apostate by the way of the black bull, the way of Cain.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-black-bull-red-cain-abel-seed-war'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-85-lament-abel-blood-witness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 4:10 — *And he said, What hast thou done? the voice of thy brother’s blood crieth unto me from the ground.* The cow seeking the red bull and finding him not is Abel gone, his blood crying from the ground.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-lament-abel-blood-witness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 11:4 — *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts: and by it he being dead yet speaketh.* The red bull lamented and sought is the righteous Abel who, being dead, yet speaks.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-lament-abel-blood-witness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 23:35 — *That upon you may come all the righteous blood shed upon the earth, from the blood of righteous Abel unto the blood of Zacharias son of Barachias, whom ye slew between the temple and the altar.* Abel''s blood, the herd''s first lament, heads the whole tally of righteous blood spilled in the seed-war.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-lament-abel-blood-witness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 12:24 — *And to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel.* The great lamentation over the red bull is answered at last by a better blood than Abel''s.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-lament-abel-blood-witness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-85-seth-second-white-bull-restored-seed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 4:25 — *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew.* The second white bull the cow bears is Seth, the seed appointed in Abel''s place.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-seth-second-white-bull-restored-seed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* The many white bulls proceeding from the second white bull are the righteous Sethite line that called on the name of Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-seth-second-white-bull-restored-seed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 4:7 — *And Adam and his wife mourned for Abel four weeks of years, and in the fourth year of the fifth week they became joyful, and Adam knew his wife again, and she bare him a son, and he called his name Seth; for he said “Elohim (God) has raised up a second seed to us on the earth instead of Abel; for Cain slew him.”* Jubilees tells the comfort after the lament that Enoch shows as the cow quieted and bearing the second white bull.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-seth-second-white-bull-restored-seed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=7
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 11:5 — *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God).* The white bulls proceeding one from another are the righteous line — Enoch among them — that runs from Seth toward the great white bull at the vision''s end.'
+  FROM cross_reference_threads t, cross_references x, _session250_en85_lookup sv, _session250_en85_lookup tv
+ WHERE t.slug='1-enoch-85-seth-second-white-bull-restored-seed'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=85 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_87.sql (session250 1-enoch 87) -----
+-- Source anchor: enoch/1-enoch ch87. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en87 (view _session250_en87_lookup). Sort band base 52150, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en87_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-87-white-ones-bind-the-stars
+  ('enoch', '1-enoch', 87, 2, 'enoch', '1-enoch', 10, 11, 'extras', E'1 Enoch 10:11 — *And Yahuah (God) said unto Michael: ''Go, bind Semjâzâ and his associates who have united themselves with women so as to have defiled themselves with them in all their uncleanness.* The white ones who descend in 87:2 are the archangels first commissioned to bind the Watchers.'),
+  ('enoch', '1-enoch', 87, 2, 'enoch', '1-enoch', 10, 12, 'extras', E'1 Enoch 10:12 — *And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated.* The descent in 87:2 enacts the binding-command Enoch already received in ch10.'),
+  ('enoch', '1-enoch', 87, 2, 'canon', 'daniel', 4, 13, 'free', E'Daniel 4:13 — *I saw in the visions of my head upon my bed, and, behold, a watcher and an holy one came down from heaven;* Daniel''s night-vision shows the same heavenly white one descending that Enoch sees in 87:2.'),
+  ('enoch', '1-enoch', 87, 4, 'canon', 'daniel', 4, 17, 'free', E'Daniel 4:17 — *This matter is by the decree of the watchers, and the demand by the word of the holy ones: to the intent that the living may know that the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will, and setteth up over it the basest of men.* The watchers who carry out the Most High''s decree are the appointed ministers stationed to watch in 87:4.'),
+  -- thread: 1-enoch-87-the-host-bound-in-the-pit
+  ('enoch', '1-enoch', 87, 2, 'canon', 'jude', 1, 6, 'free', E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude carries Enoch''s binding-of-the-Watchers into canon as the reason the white ones descend in 87:2.'),
+  ('enoch', '1-enoch', 87, 2, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter confirms the chains-of-darkness sentence the descending white ones execute in 87:2.'),
+  ('enoch', '1-enoch', 87, 1, 'canon', 'isaiah', 24, 21, 'free', E'Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* Isaiah names the high host that, with the goring beasts of 87:1, comes under the same judgement.'),
+  ('enoch', '1-enoch', 87, 1, 'canon', 'isaiah', 24, 22, 'free', E'Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* The shutting-up of the high ones in the pit is the very binding the white ones carry out beginning in 87:1.'),
+  ('enoch', '1-enoch', 87, 2, 'canon', 'revelation', 20, 3, 'free', E'Revelation 20:3 — *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* John shows the same binding-until-the-judgement that the descending white ones begin in 87:2.'),
+  -- thread: 1-enoch-87-enoch-taken-up-to-the-tower
+  ('enoch', '1-enoch', 87, 3, 'canon', 'genesis', 5, 24, 'free', E'Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* The taking-up away from the generations of the earth in 87:3 is the canon''s record of Enoch''s translation.'),
+  ('enoch', '1-enoch', 87, 5, 'canon', 'genesis', 6, 2, 'free', E'Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* The spirits of the departed giants crying out in 87:5 are the offspring of the union Genesis 6 records.'),
+  ('enoch', '1-enoch', 87, 5, 'enoch', '1-enoch', 10, 9, 'extras', E'1 Enoch 10:9 — *And to Gabriel said Yahuah (God): ''Proceed against the bastards and the reprobates, and against the children of fornication: and destroy [the children of fornication and] the children of the Watchers from amongst men [and cause them to go forth]: send them one against the other that they may destroy each other in battle: for length of days shall they not have.* The departed giants whose spirits cry in 87:5 are the children of the Watchers Enoch was told would destroy one another.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en87_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en87_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-87-white-ones-bind-the-stars',
+       E'The white ones come down to bind the fallen stars',
+       E'In the Animal Apocalypse the heavens split and the archangels descend in human likeness: *And I raised mine eyes again to heaven, And I saw in the vision, and behold there came forth from heaven beings who were like white men: And four went forth from that place And three with them.* (1 Enoch 87:2). These are the same holy ones first sent to bind the rebel Watchers and their offspring, the command Enoch already heard plainly: *And Yahuah (God) said unto Michael: ''Go, bind Semjâzâ and his associates who have united themselves with women so as to have defiled themselves with them in all their uncleanness.* (1 Enoch 10:11) — *And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated.* (1 Enoch 10:12). Daniel saw one of these very beings descend in his own night-vision: *I saw in the visions of my head upon my bed, and, behold, a watcher and an holy one came down from heaven;* (Daniel 4:13), and named their office: *This matter is by the decree of the watchers, and the demand by the word of the holy ones: to the intent that the living may know that the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will, and setteth up over it the basest of men.* (Daniel 4:17). It ain''t new: the white men of Enoch''s vision are the watchers and holy ones of Daniel, the appointed ministers who carry out the Most High''s decree of binding.',
+       sv.verse_id, ev.verse_id, 'extras', 52150
+  FROM _session250_en87_lookup sv, _session250_en87_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=87 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-87-the-host-bound-in-the-pit',
+       E'The host of the high ones reserved in chains for judgement',
+       E'The descent of the white ones is for one purpose — to chain the fallen powers until the day of judgement, exactly as the canon and the parallel chapters of Enoch testify. The earth that *began to cry aloud* (1 Enoch 87:1) under the goring of the beasts is the corrupted earth Enoch was shown would be healed only when the rebels are bound: *And to Gabriel said Yahuah (God): ''Proceed against the bastards and the reprobates, and against the children of fornication: and destroy the children of the Watchers from amongst men send them one against the other that they may destroy each other in battle: for length of days shall they not have.* (1 Enoch 10:9). Isaiah saw the same sentence on the high host: *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* (Isaiah 24:21) — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* (Isaiah 24:22). Jude carries it forward as canon: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6), and Peter agrees: *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* (2 Peter 2:4). The Watchers'' sin is rebellion against the Creator''s order — not Torah broken by the righteous but the heavenly order broken by the proud — and their binding stands until the great day.',
+       sv.verse_id, ev.verse_id, 'extras', 52153
+  FROM _session250_en87_lookup sv, _session250_en87_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=87 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-87-enoch-taken-up-to-the-tower',
+       E'Enoch taken up to the tower to behold the end',
+       E'One of the three white ones takes Enoch from among men and sets him on a height to watch: *And those three that had last come forth grasped me by my right hand And took me up away from the generations of the earth, And raised me up to a lofty place, And showed me a tower raised high above the earth, And all the hills were lower.* (1 Enoch 87:3), and the charge is given: *And one said unto me: ''Remain here till thou seest everything That befalls those elephants, camels, and asses, And the stars and the oxen, and all of them.''* (1 Enoch 87:4). This is the same Enoch the canon records was carried off from the generations of the earth: *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* (Genesis 5:24). He is set above to see the whole symbolic history play out — the giants whose spirits still cry, the fallen stars, and the oxen of the patriarchal line: *And I beheld the spirits of the departed giants, And they were standing in the vision, And their voices went forth to heaven, And they cried aloud.* (1 Enoch 87:5), the residue of the children of the Watchers whose origin Enoch already learned: *And it came to pass, when men began to multiply on the face of the earth, and daughters were born unto them, That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* (Genesis 6:2). It ain''t new: the seed-war Enoch is lifted up to watch begins in Genesis 6, runs through the goring beasts, and ends only at the binding the white ones now carry down.',
+       sv.verse_id, ev.verse_id, 'extras', 52156
+  FROM _session250_en87_lookup sv, _session250_en87_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=87 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-87-white-ones-bind-the-stars
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 10:11 — *And Yahuah (God) said unto Michael: ''Go, bind Semjâzâ and his associates who have united themselves with women so as to have defiled themselves with them in all their uncleanness.* The white ones who descend in 87:2 are the archangels first commissioned to bind the Watchers.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-white-ones-bind-the-stars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 10:12 — *And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated.* The descent in 87:2 enacts the binding-command Enoch already received in ch10.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-white-ones-bind-the-stars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 4:13 — *I saw in the visions of my head upon my bed, and, behold, a watcher and an holy one came down from heaven;* Daniel''s night-vision shows the same heavenly white one descending that Enoch sees in 87:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-white-ones-bind-the-stars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Daniel 4:17 — *This matter is by the decree of the watchers, and the demand by the word of the holy ones: to the intent that the living may know that the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will, and setteth up over it the basest of men.* The watchers who carry out the Most High''s decree are the appointed ministers stationed to watch in 87:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-white-ones-bind-the-stars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-87-the-host-bound-in-the-pit
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude carries Enoch''s binding-of-the-Watchers into canon as the reason the white ones descend in 87:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-the-host-bound-in-the-pit'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter confirms the chains-of-darkness sentence the descending white ones execute in 87:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-the-host-bound-in-the-pit'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* Isaiah names the high host that, with the goring beasts of 87:1, comes under the same judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-the-host-bound-in-the-pit'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* The shutting-up of the high ones in the pit is the very binding the white ones carry out beginning in 87:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-the-host-bound-in-the-pit'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 20:3 — *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* John shows the same binding-until-the-judgement that the descending white ones begin in 87:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-the-host-bound-in-the-pit'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-87-enoch-taken-up-to-the-tower
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* The taking-up away from the generations of the earth in 87:3 is the canon''s record of Enoch''s translation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-enoch-taken-up-to-the-tower'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=5 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* The spirits of the departed giants crying out in 87:5 are the offspring of the union Genesis 6 records.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-enoch-taken-up-to-the-tower'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 10:9 — *And to Gabriel said Yahuah (God): ''Proceed against the bastards and the reprobates, and against the children of fornication: and destroy [the children of fornication and] the children of the Watchers from amongst men [and cause them to go forth]: send them one against the other that they may destroy each other in battle: for length of days shall they not have.* The departed giants whose spirits cry in 87:5 are the children of the Watchers Enoch was told would destroy one another.'
+  FROM cross_reference_threads t, cross_references x, _session250_en87_lookup sv, _session250_en87_lookup tv
+ WHERE t.slug='1-enoch-87-enoch-taken-up-to-the-tower'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=87 AND sv.verse_number=5
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_88.sql (session250 1-enoch 88) -----
+-- Source anchor: enoch/1-enoch ch88. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en88 (view _session250_en88_lookup). Sort band base 52175, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en88_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-88-fallen-star-bound-in-the-abyss
+  ('enoch', '1-enoch', 88, 1, 'enoch', '1-enoch', 10, 4, 'extras', E'1 Enoch 10:4 — *And again Yahuah (God) said to Raphael: ’Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dûdâêl, and cast him therein.* Enoch''s vision replays in animal figures the very binding command given the archangels earlier in his own book — the first fallen star is Azâzêl, bound hand and foot and cast into the abyss.'),
+  ('enoch', '1-enoch', 88, 1, 'canon', 'jude', 1, 6, 'free', E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude''s reserved-in-chains-until-judgment is Enoch''s star bound in the narrow, horrible, dark abyss.'),
+  ('enoch', '1-enoch', 88, 3, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* — Peter''s chains of darkness for the sinning angels are the binding of all the great stars hand and foot, cast into the abyss of the earth.'),
+  ('enoch', '1-enoch', 88, 1, 'canon', 'isaiah', 24, 22, 'free', E'Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* Isaiah''s host-of-the-high-ones shut in the pit until a later visitation is Enoch''s star sealed in the deep abyss until the day of judgement.'),
+  ('enoch', '1-enoch', 88, 3, 'canon', 'revelation', 20, 3, 'free', E'Revelation 20:3 — *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* John''s binding of the dragon in the sealed pit reuses Enoch''s exact gesture — seized, bound, cast down, shut into the deep.'),
+  -- thread: 1-enoch-88-giants-slay-one-another-by-the-sword
+  ('enoch', '1-enoch', 88, 2, 'enoch', '1-enoch', 10, 9, 'extras', E'1 Enoch 10:9 — *Proceed against the bastards and the reprobates, and against the children of fornication: and destroy [the children of fornication and] the children of the Watchers from amongst men [and cause them to go forth]: send them one against the other that they may destroy each other in battle: for length of days shall they not have.* The sword given the elephants, camels and asses to smite one another is Enoch''s own decree against the giants — sent each against the other to destroy each other in battle.'),
+  ('enoch', '1-enoch', 88, 2, 'jubilees', 'jubilees', 5, 9, 'extras', E'Jubilees 5:9 — *And He sent His sword into their midst that each should slay his neighbour, and they began to slay each other till they all fell by the sword and were destroyed from the earth.* Jubilees records the identical judgement on the giants — the sword set in their midst so they slay one another — that the Animal Apocalypse shows as beasts smiting each other.'),
+  ('enoch', '1-enoch', 88, 2, 'canon', 'genesis', 6, 13, 'free', E'Genesis 6:13 — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* The whole earth quaking because of the giants is Genesis'' earth filled with violence — the corruption that brings the verdict on all flesh.'),
+  -- thread: 1-enoch-88-white-bull-noah-builds-the-vessel
+  ('enoch', '1-enoch', 88, 4, 'canon', 'genesis', 6, 14, 'free', E'Genesis 6:14 — *Make thee an ark of gopher wood; rooms shalt thou make in the ark, and shalt pitch it within and without with pitch.* The white bull building for himself a great vessel and dwelling thereon is Noah commanded to make the ark.'),
+  ('enoch', '1-enoch', 88, 4, 'canon', 'genesis', 6, 17, 'free', E'Genesis 6:17 — *And, behold, I, even I, do bring a flood of waters upon the earth, to destroy all flesh, wherein is the breath of life, from under heaven; and every thing that is in the earth shall die.* This flood of waters is the very secret the archangel instructs the white bull in, without his being terrified.'),
+  ('enoch', '1-enoch', 88, 4, 'canon', '1-peter', 3, 20, 'free', E'1 Peter 3:20 — *Which sometime were disobedient, when once the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water.* Peter''s eight souls in the ark match Enoch''s white bull and the three bulls (with their wives) covered in within the vessel.'),
+  ('enoch', '1-enoch', 88, 4, 'jasher', 'jasher', 6, 15, 'extras', E'Jasher 6:15 — *And Noah and his household, and all the living creatures that were with him, came into the ark on account of the waters of the flood, and Yahuah (the Lord) shut him in.* Jasher''s household sealed into the ark is Enoch''s white bull and three bulls dwelling in the vessel and covered in.'),
+  -- thread: 1-enoch-88-the-flood-the-vessel-floats-the-earth-dries
+  ('enoch', '1-enoch', 88, 6, 'canon', 'genesis', 7, 11, 'free', E'Genesis 7:11 — *In the six hundredth year of Noah’s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* Enoch''s seven torrents from the lofty roof and the fountains opened on the earth are Genesis'' windows of heaven and fountains of the great deep.'),
+  ('enoch', '1-enoch', 88, 8, 'canon', 'genesis', 7, 21, 'free', E'Genesis 7:21 — *And all flesh died that moved upon the earth, both of fowl, and of cattle, and of beast, and of every creeping thing that creepeth upon the earth, and every man* — the cattle of the enclosure swallowed up and perished in the water is Genesis'' all flesh dying in the Flood.'),
+  ('enoch', '1-enoch', 88, 12, 'canon', 'genesis', 8, 13, 'free', E'Genesis 8:13 — *And it came to pass in the six hundredth and first year, in the first month, the first day of the month, the waters were dried up from off the earth: and Noah removed the covering of the ark, and looked, and, behold, the face of the ground was dry.* The water withdrawn and the dry earth covered with verdure is Genesis'' face of the ground made dry.'),
+  ('enoch', '1-enoch', 88, 5, 'jasher', 'jasher', 6, 14, 'extras', E'Jasher 6:14 — *And all the fountains of the deep were broken up, and the windows of heaven were opened, and the rain was upon the earth forty days and forty nights.* Jasher''s fountains and windows of heaven are Enoch''s seven torrents and opened fountains pouring into the enclosure.'),
+  ('enoch', '1-enoch', 88, 12, 'jubilees', 'jubilees', 5, 31, 'extras', E'Jubilees 5:31 — *And the waters disappeared from above the earth in the fifth week in the seventh year thereof, and on the seventeenth day in the second month the earth was dry.* Jubilees dates the drying that Enoch sees as the water withdrawn and the earth covered with verdure.'),
+  ('enoch', '1-enoch', 88, 9, 'canon', 'matthew', 24, 39, 'free', E'Matthew 24:39 — *And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be.* Yahusha makes the Flood — the herd swept off while the vessel floats safe — the type of the coming of the Son of Adam, the elect kept while judgement takes the rest.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en88_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en88_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-88-fallen-star-bound-in-the-abyss',
+       E'The fallen star bound hand and foot, cast into the deep abyss',
+       E'The Animal Apocalypse turns the Watchers'' judgement into a single, stark image: *And I saw one of those four who had come forth first, and he seized that first star which had fallen from the heaven, and bound it hand and foot and cast it into an abyss: now that abyss was narrow and deep, and horrible and dark.* (1 Enoch 88:1), and again *one of those four who had come forth stoned (them) from heaven, and gathered and took all the great stars whose privy members were like those of horses, and bound them all hand and foot, and cast them in an abyss of the earth* (1 Enoch 88:3). This is Enoch''s own earlier scene retold in figures — the same binding command the four archangels received: *And again Yahuah (God) said to Raphael: ’Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dûdâêl, and cast him therein.* (1 Enoch 10:4). The canon carries the very same sentence forward: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6), and *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4). The Watchers'' rebellion against the Creator''s order — not Torah, but its breaking — earns the chains. Isaiah sees the same double court above and below: *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* (Isaiah 24:21), *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* (Isaiah 24:22). And John, at the end, reuses Enoch''s exact gesture upon the dragon: *And I saw an angel come down from heaven, having the key of the bottomless pit and a great chain in his hand.* (Revelation 20:1), *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* (Revelation 20:3). It ain''t new — the bound star of Enoch is the chained Watcher of Jude, the prisoner of the pit of Isaiah, the sealed dragon of Revelation.',
+       sv.verse_id, ev.verse_id, 'extras', 52175
+  FROM _session250_en88_lookup sv, _session250_en88_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=88 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-88-giants-slay-one-another-by-the-sword',
+       E'The sword given the giants — they smite each other and the earth quakes',
+       E'*And one of them drew a sword, and gave it to those elephants and camels and asses: then they began to smite each other, and the whole earth quaked because of them.* (1 Enoch 88:2). The elephants, camels, and asses are the giants — the monstrous offspring of the Watchers and the daughters of men — and their end is mutual slaughter at heaven''s own appointment. This is Enoch''s earlier decree dramatized: *Proceed against the bastards and the reprobates, and against the children of fornication: and destroy [the children of fornication and] the children of the Watchers from amongst men [and cause them to go forth]: send them one against the other that they may destroy each other in battle: for length of days shall they not have.* (1 Enoch 10:9). Jubilees tells it the same way: *And He sent His sword into their midst that each should slay his neighbour, and they began to slay each other till they all fell by the sword and were destroyed from the earth.* (Jubilees 5:9). This is the canon''s seed-war — the line of corruption sown among men, the tares woven into the field — and its first great purge is the giants turning the sword on themselves before ever the Flood comes. The earth itself quakes at the violence; *the earth is filled with violence through them* (Genesis 6:13) is the same indictment, and the sword is the appointed answer to it.',
+       sv.verse_id, ev.verse_id, 'extras', 52178
+  FROM _session250_en88_lookup sv, _session250_en88_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=88 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-88-white-bull-noah-builds-the-vessel',
+       E'The white bull instructed in a secret — born a bull, became a man, built the vessel',
+       E'Out of the white seed-line a deliverer is raised: *And one of those four went to that white bull and instructed him in a secret, without his being terrified: he was born a bull and became a man, and built for himself a great vessel and dwelt thereon; and three bulls dwelt with him in that vessel and they were covered in.* (1 Enoch 88:4). The white bull is Noah — of the righteous line that runs from the white bull Adam — taught the secret of the coming Flood by an archangel and told to build the ark; the three bulls dwelling with him are Shem, Ham, and Japheth. This is Genesis told in colours: *Make thee an ark of gopher wood; rooms shalt thou make in the ark, and shalt pitch it within and without with pitch.* (Genesis 6:14), and *And, behold, I, even I, do bring a flood of waters upon the earth, to destroy all flesh, wherein is the breath of life, from under heaven; and every thing that is in the earth shall die.* (Genesis 6:17) — the very secret Noah is instructed in. Peter counts the same household: *Which sometime were disobedient, when once the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water.* (1 Peter 3:20). The Book of Jasher remembers Noah''s hundred-and-twenty-year warning and the sealing-in: *And Noah and his household, and all the living creatures that were with him, came into the ark on account of the waters of the flood, and Yahuah (the Lord) shut him in.* (Jasher 6:15). Election precedes the rescue — the white bull is chosen out of the herd before the waters rise; he is not self-saved but instructed, covered in, and kept.',
+       sv.verse_id, ev.verse_id, 'extras', 52181
+  FROM _session250_en88_lookup sv, _session250_en88_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=88 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-88-the-flood-the-vessel-floats-the-earth-dries',
+       E'The torrents and fountains — the cattle perish, the vessel floats, the earth dries',
+       E'The Flood comes from above and below at once: *And again I raised mine eyes toward heaven and saw a lofty roof, with seven water torrents thereon, and those torrents flow with much water into an enclosure.* (1 Enoch 88:5), *And I saw again and behold fountains were opened on the earth, in that great enclosure, and that water began to swell and rise upon the earth* (1 Enoch 88:6). That is Genesis exactly: *the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* (Genesis 7:11). The whole herd of the corrupted earth is swept away — *And all the cattle of that enclosure were gathered together until I saw how they sank and were swallowed up and perished in that water.* (1 Enoch 88:8) — as the canon records: *And all flesh died that moved upon the earth, both of fowl, and of cattle, and of beast, and of every creeping thing that creepeth upon the earth, and every man* (Genesis 7:21). Only the vessel rides safe: *But that vessel floated on the water, while all the oxen and elephants and camels and asses sank to the bottom with all the animals* (1 Enoch 88:9). The Book of Jasher remembers the same fountains and the terror: *And all the fountains of the deep were broken up, and the windows of heaven were opened, and the rain was upon the earth forty days and forty nights.* (Jasher 6:14). Then the waters recede and the earth is renewed: *But the water was withdrawn, and the earth became dry, and the earth was covered with verdure.* (1 Enoch 88:12), as in Genesis: *the waters were dried up from off the earth: and Noah removed the covering of the ark, and looked, and, behold, the face of the ground was dry.* (Genesis 8:13), and as Jubilees dates it: *And the waters disappeared from above the earth in the fifth week in the seventh year thereof, and on the seventeenth day in the second month the earth was dry.* (Jubilees 5:31). Yahusha set the Flood as the type of His own coming: *And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be.* (Matthew 24:39) — the cattle swallowed up, the elect kept in the vessel, the dry earth covered with new verdure: it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 52184
+  FROM _session250_en88_lookup sv, _session250_en88_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=88 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-88-fallen-star-bound-in-the-abyss
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 10:4 — *And again Yahuah (God) said to Raphael: ’Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dûdâêl, and cast him therein.* Enoch''s vision replays in animal figures the very binding command given the archangels earlier in his own book — the first fallen star is Azâzêl, bound hand and foot and cast into the abyss.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-fallen-star-bound-in-the-abyss'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=1
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude''s reserved-in-chains-until-judgment is Enoch''s star bound in the narrow, horrible, dark abyss.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-fallen-star-bound-in-the-abyss'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* — Peter''s chains of darkness for the sinning angels are the binding of all the great stars hand and foot, cast into the abyss of the earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-fallen-star-bound-in-the-abyss'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* Isaiah''s host-of-the-high-ones shut in the pit until a later visitation is Enoch''s star sealed in the deep abyss until the day of judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-fallen-star-bound-in-the-abyss'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 20:3 — *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* John''s binding of the dragon in the sealed pit reuses Enoch''s exact gesture — seized, bound, cast down, shut into the deep.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-fallen-star-bound-in-the-abyss'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-88-giants-slay-one-another-by-the-sword
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 10:9 — *Proceed against the bastards and the reprobates, and against the children of fornication: and destroy [the children of fornication and] the children of the Watchers from amongst men [and cause them to go forth]: send them one against the other that they may destroy each other in battle: for length of days shall they not have.* The sword given the elephants, camels and asses to smite one another is Enoch''s own decree against the giants — sent each against the other to destroy each other in battle.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-giants-slay-one-another-by-the-sword'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 5:9 — *And He sent His sword into their midst that each should slay his neighbour, and they began to slay each other till they all fell by the sword and were destroyed from the earth.* Jubilees records the identical judgement on the giants — the sword set in their midst so they slay one another — that the Animal Apocalypse shows as beasts smiting each other.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-giants-slay-one-another-by-the-sword'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=2
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 6:13 — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* The whole earth quaking because of the giants is Genesis'' earth filled with violence — the corruption that brings the verdict on all flesh.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-giants-slay-one-another-by-the-sword'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-88-white-bull-noah-builds-the-vessel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 6:14 — *Make thee an ark of gopher wood; rooms shalt thou make in the ark, and shalt pitch it within and without with pitch.* The white bull building for himself a great vessel and dwelling thereon is Noah commanded to make the ark.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-white-bull-noah-builds-the-vessel'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 6:17 — *And, behold, I, even I, do bring a flood of waters upon the earth, to destroy all flesh, wherein is the breath of life, from under heaven; and every thing that is in the earth shall die.* This flood of waters is the very secret the archangel instructs the white bull in, without his being terrified.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-white-bull-noah-builds-the-vessel'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Peter 3:20 — *Which sometime were disobedient, when once the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water.* Peter''s eight souls in the ark match Enoch''s white bull and the three bulls (with their wives) covered in within the vessel.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-white-bull-noah-builds-the-vessel'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=3 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jasher 6:15 — *And Noah and his household, and all the living creatures that were with him, came into the ark on account of the waters of the flood, and Yahuah (the Lord) shut him in.* Jasher''s household sealed into the ark is Enoch''s white bull and three bulls dwelling in the vessel and covered in.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-white-bull-noah-builds-the-vessel'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=4
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=6 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-88-the-flood-the-vessel-floats-the-earth-dries
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 7:11 — *In the six hundredth year of Noah’s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* Enoch''s seven torrents from the lofty roof and the fountains opened on the earth are Genesis'' windows of heaven and fountains of the great deep.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-the-flood-the-vessel-floats-the-earth-dries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 7:21 — *And all flesh died that moved upon the earth, both of fowl, and of cattle, and of beast, and of every creeping thing that creepeth upon the earth, and every man* — the cattle of the enclosure swallowed up and perished in the water is Genesis'' all flesh dying in the Flood.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-the-flood-the-vessel-floats-the-earth-dries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 8:13 — *And it came to pass in the six hundredth and first year, in the first month, the first day of the month, the waters were dried up from off the earth: and Noah removed the covering of the ark, and looked, and, behold, the face of the ground was dry.* The water withdrawn and the dry earth covered with verdure is Genesis'' face of the ground made dry.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-the-flood-the-vessel-floats-the-earth-dries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=8 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jasher 6:14 — *And all the fountains of the deep were broken up, and the windows of heaven were opened, and the rain was upon the earth forty days and forty nights.* Jasher''s fountains and windows of heaven are Enoch''s seven torrents and opened fountains pouring into the enclosure.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-the-flood-the-vessel-floats-the-earth-dries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=5
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=6 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 5:31 — *And the waters disappeared from above the earth in the fifth week in the seventh year thereof, and on the seventeenth day in the second month the earth was dry.* Jubilees dates the drying that Enoch sees as the water withdrawn and the earth covered with verdure.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-the-flood-the-vessel-floats-the-earth-dries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=12
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Matthew 24:39 — *And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be.* Yahusha makes the Flood — the herd swept off while the vessel floats safe — the type of the coming of the Son of Adam, the elect kept while judgement takes the rest.'
+  FROM cross_reference_threads t, cross_references x, _session250_en88_lookup sv, _session250_en88_lookup tv
+ WHERE t.slug='1-enoch-88-the-flood-the-vessel-floats-the-earth-dries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=88 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_89.sql (session250 1-enoch 89) -----
+-- Source anchor: enoch/1-enoch ch89. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en89 (view _session250_en89_lookup). Sort band base 52200, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en89_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-89-ark-and-the-flood
+  ('enoch', '1-enoch', 89, 3, 'canon', 'genesis', 7, 11, 'free', E'Genesis 7:11 — *In the six hundredth year of Noah''s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* Enoch''s opened fountains and torrents from the high roof (89:2-3) are Genesis'' great-deep and windows-of-heaven.'),
+  ('enoch', '1-enoch', 89, 4, 'canon', 'genesis', 7, 17, 'free', E'Genesis 7:17 — *And the flood was forty days upon the earth; and the waters increased, and bare up the ark, and it was lift up above the earth.* The flood rising above the enclosure while the vessel floats (89:4-6) is the ark borne up above the earth.'),
+  ('enoch', '1-enoch', 89, 5, 'canon', 'genesis', 7, 23, 'free', E'Genesis 7:23 — *And every living substance was destroyed which was upon the face of the ground, both man, and cattle, and the creeping things, and the fowl of the heaven; and they were destroyed from the earth: and Noah only remained alive, and they that were with him in the ark.* The cattle of the enclosure sinking and perishing (89:5-6) is the destruction of all flesh, only Noah remaining.'),
+  ('enoch', '1-enoch', 89, 3, 'jubilees', 'jubilees', 5, 23, 'extras', E'Jubilees 5:23 — *And Yahuah (God) opened seven flood-gates of heaven, And the mouths of the fountains of the great deep, seven mouths in number. And the flood-gates began to pour down water from the heaven forty days and forty nights... Fifteen cubits did the waters rise above all the high mountains, And the ark was lift up above the earth.* Jubilees'' seven flood-gates match Enoch''s seven water torrents on the high roof (89:2).'),
+  ('enoch', '1-enoch', 89, 1, 'apocrypha', 'ecclesiasticus', 44, 17, 'extras', E'Ecclesiasticus 44:17 — *Noah was found perfect and righteous; in the time of wrath he was taken in exchange for the world; therefore was he left as a remnant to the earth, when the flood came.* Sirach names the white bull (89:1) the righteous remnant carried through the wrath.'),
+  -- thread: 1-enoch-89-sheep-from-jacob-and-egypt-the-wolves
+  ('enoch', '1-enoch', 89, 14, 'canon', 'exodus', 1, 13, 'free', E'Exodus 1:13 — *And the Egyptians made the children of Yashar''el (Israel) to serve with rigour:* The twelve sheep given over to the wolves (89:15) is Israel made to serve Egypt with rigour.'),
+  ('enoch', '1-enoch', 89, 15, 'canon', 'exodus', 1, 22, 'free', E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* The wolves'' violence against the sheep (89:15,18) is Pharaoh''s order to drown the sons.'),
+  ('enoch', '1-enoch', 89, 15, 'canon', 'exodus', 3, 7, 'free', E'Exodus 3:7 — *And Yahuah (LORD) said, I have surely seen the affliction of my people which are in Egypt, and have heard their cry by reason of their taskmasters; for I know their sorrows;* The Lord of the sheep who hears the sheep''s cry (89:16,19) is Yahuah hearing Israel''s cry in Egypt.'),
+  ('enoch', '1-enoch', 89, 16, 'canon', 'exodus', 3, 8, 'free', E'Exodus 3:8 — *And I am come down to deliver them out of the hand of the Egyptians, and to bring them up out of that land unto a good land and a large, unto a land flowing with milk and honey...* The Lord of the sheep coming down to deliver from the wolves (89:19) is Yahuah come down to deliver Israel.'),
+  -- thread: 1-enoch-89-moses-the-deliverer-and-the-sea
+  ('enoch', '1-enoch', 89, 18, 'canon', 'exodus', 14, 21, 'free', E'Exodus 14:21 — *And Moses stretched out his hand over the sea; and Yahuah (LORD) caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided.* The wolves pursuing the fleeing sheep (89:18) is Pharaoh''s pursuit broken at the divided sea.'),
+  ('enoch', '1-enoch', 89, 19, 'canon', 'exodus', 14, 28, 'free', E'Exodus 14:28 — *And the waters returned, and covered the chariots, and the horsemen, and all the host of Pharaoh that came into the sea after them; there remained not so much as one of them.* The Lord of the sheep delivering it from the wolves (89:19) is the host of Pharaoh drowned in the returning sea.'),
+  ('enoch', '1-enoch', 89, 19, 'canon', 'exodus', 14, 30, 'free', E'Exodus 14:30 — *Thus Yahuah (LORD) saved Yashar''el (Israel) that day out of the hand of the Egyptians; and Yashar''el (Israel) saw the Egyptians dead upon the sea shore.* The Lord of the sheep heard its cry and delivered it from the wolves (89:19) — Yahuah Himself saved Israel out of Egypt''s hand.'),
+  ('enoch', '1-enoch', 89, 16, 'canon', 'exodus', 19, 4, 'free', E'Exodus 19:4 — *Ye have seen what I did unto the Egyptians, and how I bare you on eagles'' wings, and brought you unto myself.* The Lord bringing the saved sheep out from among the wolves to Himself (89:16,19) is Yahuah bearing Israel on eagles'' wings to Himself.'),
+  -- thread: 1-enoch-89-sinai-and-the-house
+  ('enoch', '1-enoch', 89, 23, 'canon', 'exodus', 19, 18, 'free', E'Exodus 19:18 — *And mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire: and the smoke thereof ascended as the smoke of a furnace, and the whole mount quaked greatly.* The eyes of all the sheep opened to glorify the Lord of the sheep (89:23) is the flock at Sinai where Yahuah descended in fire.'),
+  ('enoch', '1-enoch', 89, 21, 'canon', 'exodus', 19, 6, 'free', E'Exodus 19:6 — *And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar''el (Israel).* The sheep placed in the great house built for the Lord of the sheep (89:21) is Israel made a kingdom of priests and holy nation at the covenant.'),
+  ('enoch', '1-enoch', 89, 23, 'canon', 'exodus', 24, 8, 'free', E'Exodus 24:8 — *And Moses took the blood, and sprinkled it on the people, and said, Behold the blood of the covenant, which Yahuah (LORD) hath made with you concerning all these words.* The sheep speaking together and glorifying Yahuah (God) of Spirits (89:23) is the people sealed under the blood of the covenant.'),
+  ('enoch', '1-enoch', 89, 21, 'canon', '1-kings', 6, 1, 'free', E'1 Kings 6:1 — *And it came to pass in the four hundred and eightieth year after the children of Yashar''el (Israel) were come out of the land of Egypt, in the fourth year of Solomon''s reign over Yashar''el (Israel)... that he began to build the house of Yahuah (LORD).* The great house built for the Lord of the sheep (89:21) is fulfilled in the house of Yahuah, the temple.'),
+  -- thread: 1-enoch-89-sheep-blinded-scattered-given-to-beasts
+  ('enoch', '1-enoch', 89, 35, 'canon', '2-kings', 17, 6, 'free', E'2 Kings 17:6 — *In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes.* The sheep devoured and scattered (89:35) is the northern house carried away into Assyria.'),
+  ('enoch', '1-enoch', 89, 35, 'canon', '2-kings', 17, 23, 'free', E'2 Kings 17:23 — *Until Yahuah (LORD) removed Yashar''el (Israel) out of his sight, as he had said by all his servants the prophets. So was Yashar''el (Israel) carried away out of their own land to Assyria unto this day.* The Lord of the sheep going silent while the sheep are scattered (89:35) is Yahuah removing Israel out of His sight for breaking the covenant.'),
+  ('enoch', '1-enoch', 89, 34, 'canon', 'ezekiel', 34, 5, 'free', E'Ezekiel 34:5 — *And they were scattered, because there is no shepherd: and they became meat to all the beasts of the field, when they were scattered.* The beasts and birds devouring the sheep (89:34) is Ezekiel''s flock made meat to the beasts of the field.'),
+  ('enoch', '1-enoch', 89, 35, 'canon', 'psalms', 80, 1, 'free', E'Psalm 80:1 — *Give ear, O Shepherd of Yashar''el (Israel), thou that leadest Joseph like a flock; thou that dwellest between the cherubims, shine forth.* The Lord of the sheep silent while the flock is scattered (89:35) is the cry to the Shepherd of Israel to shine forth on Joseph''s scattered flock.'),
+  -- thread: 1-enoch-89-seventy-shepherds-the-false-shepherds
+  ('enoch', '1-enoch', 89, 45, 'canon', 'ezekiel', 34, 2, 'free', E'Ezekiel 34:2 — *Son of Adam, prophesy against the shepherds of Yashar''el (Israel)... Woe be to the shepherds of Yashar''el (Israel) that do feed themselves! should not the shepherds feed the flocks?* The shepherds who had not fed the sheep (89:45) are Ezekiel''s self-feeding shepherds of Israel.'),
+  ('enoch', '1-enoch', 89, 45, 'canon', 'ezekiel', 34, 10, 'free', E'Ezekiel 34:10 — *Behold, I am against the shepherds; and I will require my flock at their hand, and cause them to cease from feeding the flock... for I will deliver my flock from their mouth, that they may not be meat for them.* The judgment of the shepherds and their casting into the abyss (89:45) is Yahuah requiring His flock at the false shepherds'' hand.'),
+  ('enoch', '1-enoch', 89, 45, 'canon', 'jeremiah', 23, 1, 'free', E'Jeremiah 23:1 — *Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD).* The shepherds judged for not feeding the sheep (89:45) are Jeremiah''s pastors who destroy and scatter the flock.'),
+  ('enoch', '1-enoch', 89, 45, 'canon', 'zechariah', 11, 17, 'free', E'Zechariah 11:17 — *Woe to the idol shepherd that leaveth the flock! the sword shall be upon his arm, and upon his right eye: his arm shall be clean dried up, and his right eye shall be utterly darkened.* The shepherds cast into the fiery abyss (89:45) are Zechariah''s worthless idol shepherd who abandons the flock of slaughter.'),
+  -- thread: 1-enoch-89-books-opened-new-house-white-bull-messiah
+  ('enoch', '1-enoch', 89, 41, 'canon', 'daniel', 7, 10, 'free', E'Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* The Lord of the sheep opening the books of the living and of the sinners (89:41) is Daniel''s judgment set and the books opened.'),
+  ('enoch', '1-enoch', 89, 41, 'canon', 'revelation', 20, 12, 'free', E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The books of the living and of the sinners opened (89:41) is the white-throne judgment with the books opened.'),
+  ('enoch', '1-enoch', 89, 46, 'canon', 'ezekiel', 37, 22, 'free', E'Ezekiel 37:22 — *And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all:* The new house gathering all the sheep (89:46) is the two houses made one nation under one king, the regathering.'),
+  ('enoch', '1-enoch', 89, 46, 'canon', 'isaiah', 11, 12, 'free', E'Isaiah 11:12 — *And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth.* The Lord bringing all the sheep into the new house (89:46) is the assembling of the outcasts of Israel and dispersed of Judah.'),
+  ('enoch', '1-enoch', 89, 46, 'canon', 'revelation', 21, 2, 'free', E'Revelation 21:2 — *And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband.* The new house greater and loftier than the first (89:46) is the New Jerusalem coming down from heaven.'),
+  ('enoch', '1-enoch', 89, 49, 'canon', 'ezekiel', 34, 23, 'free', E'Ezekiel 34:23 — *And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd.* The white bull born with great horns whom all the beasts fear (89:49) is the one Shepherd, the Messiah, set over the regathered flock.'),
+  ('enoch', '1-enoch', 89, 49, 'canon', 'john', 10, 16, 'free', E'John 10:16 — *And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* The white bull before whom all are transformed into white bulls (89:49-50) is the one Shepherd gathering the scattered into one fold.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en89_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en89_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-89-ark-and-the-flood',
+       E'The white bull becomes a man, the vessel, and the flood',
+       E'The Animal Apocalypse opens with Noah: *And one of those four went to the white bull and instructed him in a secret, without his being terrified: he was born a bull and became a man, and built for himself a great vessel and dwelt thereon; and three bulls dwelt with him in that vessel and they were covered in.* (1 Enoch 89:1) The torrents and fountains break open and swallow the cattle: *And I saw again and behold fountains were opened on the earth, in that great enclosure, and that water began to swell and rise upon the earth* (1 Enoch 89:3). This is Genesis told in colour: *In the six hundredth year of Noah''s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* (Genesis 7:11), and *the waters increased, and bare up the ark, and it was lift up above the earth.* (Genesis 7:17), while *every living substance was destroyed which was upon the face of the ground* (Genesis 7:23). Jubilees keeps the very count: *And Yahuah (God) opened seven flood-gates of heaven... Fifteen cubits did the waters rise above all the high mountains, And the ark was lift up above the earth* (Jubilees 5:23). And Sirach names Noah the remnant-seed of the righteous line: *Noah was found perfect and righteous; in the time of wrath he was taken in exchange for the world; therefore was he left as a remnant to the earth, when the flood came.* (Ecclesiasticus 44:17) The white bull is the righteous seed-line carried through the waters; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 52200
+  FROM _session250_en89_lookup sv, _session250_en89_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=89 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-89-sheep-from-jacob-and-egypt-the-wolves',
+       E'The sheep born of Jacob and the wolves of Egypt',
+       E'The seed narrows from bull to sheep: *But that bull which was born from him begat a black wild boar and a white sheep; and the former begat many boars, but that sheep begat twelve sheep.* (1 Enoch 89:14) — Jacob and the twelve tribes. Then the bondage: *And when those twelve sheep had grown, they gave up one of them to the asses, and those asses again gave up that sheep to the wolves, and that sheep grew up among the wolves.* (1 Enoch 89:15) The wolves are Egypt: *And the Egyptians made the children of Yashar''el (Israel) to serve with rigour* (Exodus 1:13), and *Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river* (Exodus 1:22). But the Lord of the sheep hears: *I have surely seen the affliction of my people which are in Egypt, and have heard their cry by reason of their taskmasters; for I know their sorrows* (Exodus 3:7), and comes down *to deliver them out of the hand of the Egyptians, and to bring them up out of that land unto a good land and a large, unto a land flowing with milk and honey* (Exodus 3:8). The twelve sheep are the covenant people Israel — never displaced, never replaced; the wolves are the oppressor-nations, not a permanent home.',
+       sv.verse_id, ev.verse_id, 'extras', 52203
+  FROM _session250_en89_lookup sv, _session250_en89_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=12
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=89 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-89-moses-the-deliverer-and-the-sea',
+       E'The sheep that became a man, the exodus, and the sea',
+       E'The deliverer is raised from among the oppressed: *And the Lord of the sheep brought it up among the wolves, and it grew up with them, and the Lord of the sheep brought it out from among the wolves, and it began to open its eyes and to see.* (1 Enoch 89:16) — Moses, raised in Pharaoh''s house. He is sent: *And the Lord of the sheep sent it to the sheep* (1 Enoch 89:17), and the wolves pursue: *And that sheep which had been saved from the wolves escaped and fled away from the wolves, and the wolves began to pursue it with great violence.* (1 Enoch 89:18) Then the deliverance at the sea: *And Moses stretched out his hand over the sea; and Yahuah (LORD) caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided.* (Exodus 14:21), and *the children of Yashar''el (Israel) went into the midst of the sea upon the dry ground* (Exodus 14:22), while *the waters returned, and covered the chariots, and the horsemen, and all the host of Pharaoh* (Exodus 14:28), so that *Yahuah (LORD) saved Yashar''el (Israel) that day out of the hand of the Egyptians* (Exodus 14:30). The sheep made a man (89:21) is Moses; the deliverance is wholly Yahuah''s, the Lord of the sheep coming Himself.',
+       sv.verse_id, ev.verse_id, 'extras', 52206
+  FROM _session250_en89_lookup sv, _session250_en89_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=16
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=89 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-89-sinai-and-the-house',
+       E'Sinai, the covenant, and the house built for the Lord of the sheep',
+       E'The saved sheep becomes a man and builds the house: *And that sheep which had been saved became a man, and built a great house for the Lord of the sheep, and placed all the sheep in that house.* (1 Enoch 89:21) — the tabernacle/temple where the flock dwells under their Shepherd. This follows Sinai, where the covenant is cut: *And mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire... and the whole mount quaked greatly.* (Exodus 19:18) There the flock is constituted a peculiar people: *if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people... ye shall be unto me a kingdom of priests, and an holy nation* (Exodus 19:5-6) — Torah stands, the covenant the very ground of their being a flock. The blood of the covenant seals it: *And Moses took the blood, and sprinkled it on the people, and said, Behold the blood of the covenant, which Yahuah (LORD) hath made with you concerning all these words.* (Exodus 24:8) And the house itself: *it came to pass in the four hundred and eightieth year after the children of Yashar''el (Israel) were come out of the land of Egypt... that he began to build the house of Yahuah (LORD).* (1 Kings 6:1) The eyes of all the sheep opened to glorify the Lord (89:23) is the flock seeing their God at the mountain and the house.',
+       sv.verse_id, ev.verse_id, 'extras', 52209
+  FROM _session250_en89_lookup sv, _session250_en89_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=21
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=89 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-89-sheep-blinded-scattered-given-to-beasts',
+       E'The sheep go astray, are forsaken, and given to the wild beasts',
+       E'After the kings and the house, the flock turns and is abandoned to the nations: *And after that those beasts and birds began to attack the sheep, and to devour them, and to tear them in pieces. And the Lord of the sheep was silent, and the beasts and birds devoured the sheep, and the sheep were scattered.* (1 Enoch 89:34-35) This is the two-house scattering — Israel blinded, removed, carried off: *In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes.* (2 Kings 17:6) The cause is covenant-breaking, not the law: *the children of Yashar''el (Israel) had sinned against Yahuah (LORD) their Elohim (God)... and had feared other gods* (2 Kings 17:7), until *Yahuah (LORD) removed Yashar''el (Israel) out of his sight, as he had said by all his servants the prophets* (2 Kings 17:23). Ezekiel names exactly this scattering of the flock: *they were scattered, because there is no shepherd: and they became meat to all the beasts of the field, when they were scattered* (Ezekiel 34:5), *My sheep wandered through all the mountains... yea, my flock was scattered upon all the face of the earth, and none did search or seek after them* (Ezekiel 34:6). And the Shepherd of Israel is invoked: *Give ear, O Shepherd of Yashar''el (Israel), thou that leadest Joseph like a flock... shine forth.* (Psalm 80:1) The beasts are the nations; the scattering is the exile of the houses — awaiting regathering, never a replacement.',
+       sv.verse_id, ev.verse_id, 'extras', 52212
+  FROM _session250_en89_lookup sv, _session250_en89_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=34
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=89 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-89-seventy-shepherds-the-false-shepherds',
+       E'The shepherds who did not feed the sheep are judged',
+       E'The exile is administered by overseers who fail their charge, and they answer for it: *And the shepherds who had not fed the sheep were judged, and cast into the same fiery abyss with the beasts.* (1 Enoch 89:45) These are the seventy shepherds of the Animal Apocalypse — the appointed, faithless overseers who destroyed more than commanded. The prophets name them as the false shepherds who feed themselves: *Son of Adam, prophesy against the shepherds of Yashar''el (Israel)... Woe be to the shepherds of Yashar''el (Israel) that do feed themselves! should not the shepherds feed the flocks?* (Ezekiel 34:2), and *the diseased have ye not strengthened, neither have ye healed that which was sick... neither have ye sought that which was lost; but with force and with cruelty have ye ruled them* (Ezekiel 34:4). Yahuah turns against them: *Behold, I am against the shepherds; and I will require my flock at their hand* (Ezekiel 34:10). Jeremiah pronounces the woe: *Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD).* (Jeremiah 23:1) And Zechariah''s worthless shepherd: *Woe to the idol shepherd that leaveth the flock! the sword shall be upon his arm, and upon his right eye* (Zechariah 11:17). The judged shepherds of Enoch are these false shepherds, not the Lord of the sheep.',
+       sv.verse_id, ev.verse_id, 'extras', 52215
+  FROM _session250_en89_lookup sv, _session250_en89_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=45
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=89 AND ev.verse_number=45
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-89-books-opened-new-house-white-bull-messiah',
+       E'The books opened, the new house, and the white bull born',
+       E'The vision closes in judgment and restoration. The books are opened: *And after that I saw in the vision that the Lord of the sheep opened the books of the living, and the books of the sinners were opened.* (1 Enoch 89:41), and the fallen stars are bound: *And the stars which had transgressed were bound and cast into the same abyss* (1 Enoch 89:44). This is Daniel''s throne-room: *the judgment was set, and the books were opened* (Daniel 7:10), and John''s white throne: *the books were opened... and the dead were judged out of those things which were written in the books* (Revelation 20:12). Then the regathering and the new house: *And a new house was built greater and loftier than the first, and the Lord of the sheep brought all the sheep into that new house.* (1 Enoch 89:46) — the regathering of the scattered tribes: *Behold, I will take the children of Yashar''el (Israel) from among the heathen... and will make them one nation in the land... and they shall be no more two nations* (Ezekiel 37:21-22); *he shall... assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). The new house is the New Jerusalem: *I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven* (Revelation 21:2), where *the tabernacle of Elohim (God) is with men* (Revelation 21:3). And the white bull born with great horns: *And I saw till a white bull was born, with large horns, and all the beasts of the field and all the birds of the air feared him... and they all became white bulls* (1 Enoch 89:49-50) — the Messiah, the Formed Son, the one Shepherd: *I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11), *other sheep I have, which are not of this fold... and there shall be one fold, and one shepherd* (John 10:16); *And David my servant shall be king over them; and they all shall have one shepherd* (Ezekiel 34:23). The transformation of all into white bulls is the regathered people made righteous under their one Shepherd — never a church replacing Israel.',
+       sv.verse_id, ev.verse_id, 'extras', 52218
+  FROM _session250_en89_lookup sv, _session250_en89_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=41
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=89 AND ev.verse_number=50
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-89-ark-and-the-flood
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 7:11 — *In the six hundredth year of Noah''s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* Enoch''s opened fountains and torrents from the high roof (89:2-3) are Genesis'' great-deep and windows-of-heaven.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-ark-and-the-flood'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 7:17 — *And the flood was forty days upon the earth; and the waters increased, and bare up the ark, and it was lift up above the earth.* The flood rising above the enclosure while the vessel floats (89:4-6) is the ark borne up above the earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-ark-and-the-flood'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 7:23 — *And every living substance was destroyed which was upon the face of the ground, both man, and cattle, and the creeping things, and the fowl of the heaven; and they were destroyed from the earth: and Noah only remained alive, and they that were with him in the ark.* The cattle of the enclosure sinking and perishing (89:5-6) is the destruction of all flesh, only Noah remaining.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-ark-and-the-flood'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 5:23 — *And Yahuah (God) opened seven flood-gates of heaven, And the mouths of the fountains of the great deep, seven mouths in number. And the flood-gates began to pour down water from the heaven forty days and forty nights... Fifteen cubits did the waters rise above all the high mountains, And the ark was lift up above the earth.* Jubilees'' seven flood-gates match Enoch''s seven water torrents on the high roof (89:2).'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-ark-and-the-flood'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=3
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Ecclesiasticus 44:17 — *Noah was found perfect and righteous; in the time of wrath he was taken in exchange for the world; therefore was he left as a remnant to the earth, when the flood came.* Sirach names the white bull (89:1) the righteous remnant carried through the wrath.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-ark-and-the-flood'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=1
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=44 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-89-sheep-from-jacob-and-egypt-the-wolves
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:13 — *And the Egyptians made the children of Yashar''el (Israel) to serve with rigour:* The twelve sheep given over to the wolves (89:15) is Israel made to serve Egypt with rigour.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sheep-from-jacob-and-egypt-the-wolves'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* The wolves'' violence against the sheep (89:15,18) is Pharaoh''s order to drown the sons.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sheep-from-jacob-and-egypt-the-wolves'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 3:7 — *And Yahuah (LORD) said, I have surely seen the affliction of my people which are in Egypt, and have heard their cry by reason of their taskmasters; for I know their sorrows;* The Lord of the sheep who hears the sheep''s cry (89:16,19) is Yahuah hearing Israel''s cry in Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sheep-from-jacob-and-egypt-the-wolves'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 3:8 — *And I am come down to deliver them out of the hand of the Egyptians, and to bring them up out of that land unto a good land and a large, unto a land flowing with milk and honey...* The Lord of the sheep coming down to deliver from the wolves (89:19) is Yahuah come down to deliver Israel.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sheep-from-jacob-and-egypt-the-wolves'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-89-moses-the-deliverer-and-the-sea
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 14:21 — *And Moses stretched out his hand over the sea; and Yahuah (LORD) caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided.* The wolves pursuing the fleeing sheep (89:18) is Pharaoh''s pursuit broken at the divided sea.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-moses-the-deliverer-and-the-sea'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 14:28 — *And the waters returned, and covered the chariots, and the horsemen, and all the host of Pharaoh that came into the sea after them; there remained not so much as one of them.* The Lord of the sheep delivering it from the wolves (89:19) is the host of Pharaoh drowned in the returning sea.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-moses-the-deliverer-and-the-sea'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 14:30 — *Thus Yahuah (LORD) saved Yashar''el (Israel) that day out of the hand of the Egyptians; and Yashar''el (Israel) saw the Egyptians dead upon the sea shore.* The Lord of the sheep heard its cry and delivered it from the wolves (89:19) — Yahuah Himself saved Israel out of Egypt''s hand.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-moses-the-deliverer-and-the-sea'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 19:4 — *Ye have seen what I did unto the Egyptians, and how I bare you on eagles'' wings, and brought you unto myself.* The Lord bringing the saved sheep out from among the wolves to Himself (89:16,19) is Yahuah bearing Israel on eagles'' wings to Himself.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-moses-the-deliverer-and-the-sea'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-89-sinai-and-the-house
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 19:18 — *And mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire: and the smoke thereof ascended as the smoke of a furnace, and the whole mount quaked greatly.* The eyes of all the sheep opened to glorify the Lord of the sheep (89:23) is the flock at Sinai where Yahuah descended in fire.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sinai-and-the-house'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 19:6 — *And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar''el (Israel).* The sheep placed in the great house built for the Lord of the sheep (89:21) is Israel made a kingdom of priests and holy nation at the covenant.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sinai-and-the-house'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 24:8 — *And Moses took the blood, and sprinkled it on the people, and said, Behold the blood of the covenant, which Yahuah (LORD) hath made with you concerning all these words.* The sheep speaking together and glorifying Yahuah (God) of Spirits (89:23) is the people sealed under the blood of the covenant.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sinai-and-the-house'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=24 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Kings 6:1 — *And it came to pass in the four hundred and eightieth year after the children of Yashar''el (Israel) were come out of the land of Egypt, in the fourth year of Solomon''s reign over Yashar''el (Israel)... that he began to build the house of Yahuah (LORD).* The great house built for the Lord of the sheep (89:21) is fulfilled in the house of Yahuah, the temple.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sinai-and-the-house'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=6 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-89-sheep-blinded-scattered-given-to-beasts
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'2 Kings 17:6 — *In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes.* The sheep devoured and scattered (89:35) is the northern house carried away into Assyria.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sheep-blinded-scattered-given-to-beasts'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Kings 17:23 — *Until Yahuah (LORD) removed Yashar''el (Israel) out of his sight, as he had said by all his servants the prophets. So was Yashar''el (Israel) carried away out of their own land to Assyria unto this day.* The Lord of the sheep going silent while the sheep are scattered (89:35) is Yahuah removing Israel out of His sight for breaking the covenant.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sheep-blinded-scattered-given-to-beasts'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 34:5 — *And they were scattered, because there is no shepherd: and they became meat to all the beasts of the field, when they were scattered.* The beasts and birds devouring the sheep (89:34) is Ezekiel''s flock made meat to the beasts of the field.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sheep-blinded-scattered-given-to-beasts'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 80:1 — *Give ear, O Shepherd of Yashar''el (Israel), thou that leadest Joseph like a flock; thou that dwellest between the cherubims, shine forth.* The Lord of the sheep silent while the flock is scattered (89:35) is the cry to the Shepherd of Israel to shine forth on Joseph''s scattered flock.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-sheep-blinded-scattered-given-to-beasts'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-89-seventy-shepherds-the-false-shepherds
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 34:2 — *Son of Adam, prophesy against the shepherds of Yashar''el (Israel)... Woe be to the shepherds of Yashar''el (Israel) that do feed themselves! should not the shepherds feed the flocks?* The shepherds who had not fed the sheep (89:45) are Ezekiel''s self-feeding shepherds of Israel.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-seventy-shepherds-the-false-shepherds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=45
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 34:10 — *Behold, I am against the shepherds; and I will require my flock at their hand, and cause them to cease from feeding the flock... for I will deliver my flock from their mouth, that they may not be meat for them.* The judgment of the shepherds and their casting into the abyss (89:45) is Yahuah requiring His flock at the false shepherds'' hand.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-seventy-shepherds-the-false-shepherds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=45
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 23:1 — *Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD).* The shepherds judged for not feeding the sheep (89:45) are Jeremiah''s pastors who destroy and scatter the flock.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-seventy-shepherds-the-false-shepherds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=45
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Zechariah 11:17 — *Woe to the idol shepherd that leaveth the flock! the sword shall be upon his arm, and upon his right eye: his arm shall be clean dried up, and his right eye shall be utterly darkened.* The shepherds cast into the fiery abyss (89:45) are Zechariah''s worthless idol shepherd who abandons the flock of slaughter.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-seventy-shepherds-the-false-shepherds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=45
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=11 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-89-books-opened-new-house-white-bull-messiah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* The Lord of the sheep opening the books of the living and of the sinners (89:41) is Daniel''s judgment set and the books opened.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-books-opened-new-house-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The books of the living and of the sinners opened (89:41) is the white-throne judgment with the books opened.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-books-opened-new-house-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 37:22 — *And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all:* The new house gathering all the sheep (89:46) is the two houses made one nation under one king, the regathering.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-books-opened-new-house-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=46
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 11:12 — *And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth.* The Lord bringing all the sheep into the new house (89:46) is the assembling of the outcasts of Israel and dispersed of Judah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-books-opened-new-house-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=46
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 21:2 — *And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband.* The new house greater and loftier than the first (89:46) is the New Jerusalem coming down from heaven.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-books-opened-new-house-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=46
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Ezekiel 34:23 — *And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd.* The white bull born with great horns whom all the beasts fear (89:49) is the one Shepherd, the Messiah, set over the regathered flock.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-books-opened-new-house-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=49
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'John 10:16 — *And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* The white bull before whom all are transformed into white bulls (89:49-50) is the one Shepherd gathering the scattered into one fold.'
+  FROM cross_reference_threads t, cross_references x, _session250_en89_lookup sv, _session250_en89_lookup tv
+ WHERE t.slug='1-enoch-89-books-opened-new-house-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=89 AND sv.verse_number=49
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_90.sql (session250 1-enoch 90) -----
+-- Source anchor: enoch/1-enoch ch90. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en90 (view _session250_en90_lookup). Sort band base 52225, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en90_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-90-the-great-horn-raised
+  ('enoch', '1-enoch', 90, 3, 'apocrypha', '1-maccabees', 2, 1, 'extras', E'1 Maccabees 2:1 — *In those days arose Mattathias the son of John, the son of Simeon, a priest of the sons of Joarib, from Jerusalem, and dwelt in Modin.* The great horn that cries aloud to the sheep is read first against the Maccabean priest-line raised up to rally a scattered Israel.'),
+  ('enoch', '1-enoch', 90, 1, 'apocrypha', '1-maccabees', 2, 66, 'extras', E'1 Maccabees 2:66 — *As for Judas Maccabeus, he has been mighty and strong, even from his youth up: let him be your captain, and fight the battle of the people.* The horn that grows great and butts the beasts down matches the mighty captain raised to fight the people''s battle.'),
+  ('enoch', '1-enoch', 90, 4, 'canon', 'jeremiah', 23, 5, 'free', E'Jeremiah 23:5 — *Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.* The Lord of the sheep rejoicing over the horn points beyond the Maccabees to the righteous Branch raised to David.'),
+  -- thread: 1-enoch-90-lord-empowers-the-horn
+  ('enoch', '1-enoch', 90, 7, 'canon', 'ezekiel', 34, 23, 'free', E'Ezekiel 34:23 — *And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd.* The Lord of the sheep empowering the horn is His setting up the one Davidic shepherd over the flock.'),
+  ('enoch', '1-enoch', 90, 10, 'canon', 'john', 10, 16, 'free', E'John 10:16 — *And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* The scattered sheep gathering to the horn is the two-house ingathering into one fold under one shepherd.'),
+  ('enoch', '1-enoch', 90, 11, 'canon', 'john', 10, 11, 'free', E'John 10:11 — *I am the good shepherd: the good shepherd giveth his life for the sheep.* The Lord of the sheep rejoicing over horn and flock together is the good shepherd who lays down his life for his own.'),
+  -- thread: 1-enoch-90-books-opened-judgment
+  ('enoch', '1-enoch', 90, 12, 'canon', 'daniel', 7, 9, 'free', E'Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* The Lord of the sheep opening the books is the Ancient of days seated for judgment.'),
+  ('enoch', '1-enoch', 90, 12, 'canon', 'daniel', 7, 10, 'free', E'Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* Enoch''s opened books of the living and of the sinners are Daniel''s set judgment with the books opened.'),
+  ('enoch', '1-enoch', 90, 12, 'canon', 'revelation', 20, 12, 'free', E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The books of the living opened in Enoch are the book of life at the white-throne judgment.'),
+  -- thread: 1-enoch-90-stars-shepherds-judged
+  ('enoch', '1-enoch', 90, 16, 'canon', 'jeremiah', 23, 1, 'free', E'Jeremiah 23:1 — *Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD).* The shepherds who had not fed the sheep, cast into the abyss, are the pastors woed for destroying and scattering the flock.'),
+  ('enoch', '1-enoch', 90, 16, 'canon', 'jeremiah', 23, 2, 'free', E'Jeremiah 23:2 — *Therefore thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel) against the pastors that feed my people; Ye have scattered my flock, and driven them away, and have not visited them: behold, I will visit upon you the evil of your doings, saith Yahuah (LORD).* The judged shepherds are visited for scattering and not visiting the flock.'),
+  ('enoch', '1-enoch', 90, 16, 'canon', 'zechariah', 11, 17, 'free', E'Zechariah 11:17 — *Woe to the idol shepherd that leaveth the flock! the sword shall be upon his arm, and upon his right eye: his arm shall be clean dried up, and his right eye shall be utterly darkened.* The faithless shepherds cast into the fiery abyss answer the woe on the idol shepherd who leaves the flock.'),
+  ('enoch', '1-enoch', 90, 15, 'canon', 'revelation', 20, 10, 'free', E'Revelation 20:10 — *And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.* The transgressing stars bound and cast into the fiery abyss are the deceiving powers consigned to the lake of fire.'),
+  -- thread: 1-enoch-90-new-house-greater
+  ('enoch', '1-enoch', 90, 17, 'canon', 'revelation', 21, 2, 'free', E'Revelation 21:2 — *And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband.* The new house greater and loftier than the first is the holy city, new Jerusalem, coming down from heaven.'),
+  ('enoch', '1-enoch', 90, 19, 'canon', 'revelation', 21, 3, 'free', E'Revelation 21:3 — *And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God).* The sheep returned to His house is the tabernacle of God dwelling with His people.'),
+  ('enoch', '1-enoch', 90, 17, 'canon', 'ezekiel', 37, 26, 'free', E'Ezekiel 37:26 — *Moreover I will make a covenant of peace with them; it shall be an everlasting covenant with them: and I will place them, and multiply them, and will set my sanctuary in the midst of them for evermore.* All the sheep brought into the new house is the everlasting sanctuary set in the midst of the regathered nation.'),
+  ('enoch', '1-enoch', 90, 17, 'canon', 'micah', 4, 1, 'free', E'Micah 4:1 — *But in the last days it shall come to pass, that the mountain of the house of Yahuah (LORD) shall be established in the top of the mountains, and it shall be exalted above the hills; and people shall flow unto it.* The new house built greater and loftier is the mountain of the house exalted in the last days.'),
+  -- thread: 1-enoch-90-eyes-opened-gathering
+  ('enoch', '1-enoch', 90, 10, 'canon', 'isaiah', 35, 5, 'free', E'Isaiah 35:5 — *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.* The blinded sheep recovered and gathering to the horn is the promised opening of the eyes of the blind.'),
+  ('enoch', '1-enoch', 90, 10, 'canon', 'isaiah', 29, 18, 'free', E'Isaiah 29:18 — *And in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity, and out of darkness.* The sheep''s awakening to the great horn is the day the blind see out of darkness.'),
+  ('enoch', '1-enoch', 90, 18, 'canon', 'ezekiel', 37, 21, 'free', E'Ezekiel 37:21 — *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* The gathering of the recovered flock is the regathering of scattered Israel from the heathen into their land.'),
+  ('enoch', '1-enoch', 90, 10, 'canon', 'hosea', 1, 11, 'free', E'Hosea 1:11 — *Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel.* The sheep gathering to the one horn is the two houses, Judah and Israel, gathered under one head.'),
+  -- thread: 1-enoch-90-white-bull-messiah
+  ('enoch', '1-enoch', 90, 20, 'canon', 'daniel', 7, 13, 'free', E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* The great white bull born at the end is the same dominion-bearer Daniel sees as one like the Son of Adam, the Formed One who took on flesh (note the kaph-comparative, like).'),
+  ('enoch', '1-enoch', 90, 20, 'canon', 'daniel', 7, 14, 'free', E'Daniel 7:14 — *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* All the beasts and birds fearing the white bull and petitioning him is the dominion given to the Son of Adam that all nations should serve.'),
+  ('enoch', '1-enoch', 90, 21, 'canon', 'isaiah', 11, 6, 'free', E'Isaiah 11:6 — *The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them.* The transformation of all generations into white bulls is the restored peace where wolf and lamb dwell together.'),
+  ('enoch', '1-enoch', 90, 21, 'canon', 'isaiah', 65, 25, 'free', E'Isaiah 65:25 — *The wolf and the lamb shall feed together, and the lion shall eat straw like the bullock: and dust shall be the serpent’s meat. They shall not hurt nor destroy in all my holy mountain, saith Yahuah (LORD).* The whole flock made white bulls is the new-creation peace where lion and lamb feed together and none hurt in the holy mountain.'),
+  ('enoch', '1-enoch', 90, 20, 'canon', 'genesis', 1, 26, 'free', E'Genesis 1:26 — *And Elohim (God) said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.* The great white bull crowning the seed-line restores the dominion first given to Adam in God''s image.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en90_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en90_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-90-the-great-horn-raised',
+       E'The great horn raised — the deliverer who gathers the scattered sheep',
+       E'The vision''s climax opens with the deliverer raised up: *And I saw till that horn grew great, and the Lord of the sheep rejoiced over it, and it began to butt the beasts with its horns, and to cast them down, and to trample upon them.* (1 Enoch 90:1), and *And that great horn cried aloud to the sheep, and the sheep began to gather together to it.* (1 Enoch 90:3). The horn is the Maccabean/Messianic champion through whom the Lord of the sheep rallies the flock — the historical figure first seen in *In those days arose Mattathias the son of John, the son of Simeon, a priest of the sons of Joarib, from Jerusalem, and dwelt in Modin.* (1 Maccabees 2:1) and *As for Judas Maccabeus, he has been mighty and strong, even from his youth up: let him be your captain, and fight the battle of the people.* (1 Maccabees 2:66) — yet the horn that *gathers* the sheep reaches past the Maccabees to the promised Branch: *Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.* (Jeremiah 23:5). Israel is the flock, the beasts the oppressing nations; the horn does not replace the sheep but recovers them for the Lord who owns them.',
+       sv.verse_id, ev.verse_id, 'extras', 52225
+  FROM _session250_en90_lookup sv, _session250_en90_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=90 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-90-lord-empowers-the-horn',
+       E'The Lord of the sheep empowers the horn — David my servant, the one shepherd',
+       E'When the beasts and birds tear the scattered sheep and the Lord is silent (90:5-6), He then acts: *And the Lord of the sheep called that great horn, and it came to Him, and He gave it power to cast down the beasts and the birds.* (1 Enoch 90:7), so that *the sheep gathered together to that great horn, and they began to rejoice.* (1 Enoch 90:10). This is the Lord setting His own appointed shepherd over the flock — *And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd.* (Ezekiel 34:23) — the one shepherd who gathers the divided houses into a single flock: *And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* (John 10:16), the very voice who *giveth his life for the sheep* — *I am the good shepherd: the good shepherd giveth his life for the sheep.* (John 10:11). The horn has no power of its own; the Lord of the sheep gives it — the Formed One ordered under the Father, sent to recover His scattered people, never a new flock supplanting the old.',
+       sv.verse_id, ev.verse_id, 'extras', 52228
+  FROM _session250_en90_lookup sv, _session250_en90_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=90 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-90-books-opened-judgment',
+       E'The books of the living opened — the thrones, the books, the fiery abyss',
+       E'The judgement-seat is set: *And after that I saw in the vision that the Lord of the sheep opened the books of the living, and the books of the sinners were opened.* (1 Enoch 90:12), and *And the Lord of the sheep took the staff of His wrath, and cast it upon the earth, and the earth began to quake.* (1 Enoch 90:13). This is Daniel''s throne-room exactly: *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* (Daniel 7:9) and *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* (Daniel 7:10). John sees the same opened books at the last assize: *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* (Revelation 20:12). Enoch''s *books of the living* are the canon''s book of life — election written before the deeds are judged.',
+       sv.verse_id, ev.verse_id, 'extras', 52231
+  FROM _session250_en90_lookup sv, _session250_en90_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=12
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=90 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-90-stars-shepherds-judged',
+       E'The fallen stars and the seventy shepherds judged — the false shepherds reckoned',
+       E'The oppressors are thrown down in order — first the nations, then the Watchers, then the faithless overseers: *And the stars which had transgressed were bound and cast into the same abyss.* (1 Enoch 90:15), and *And the shepherds (corrupt leaders) who had not fed the sheep were judged, and cast into the same fiery abyss with the beasts.* (1 Enoch 90:16). The transgressing stars are the Watchers bound for judgement; the shepherds are the appointed-but-faithless overseers of the exile who destroyed more than they were charged to — the false shepherds the prophets indict: *Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD).* (Jeremiah 23:1) and *Therefore thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel) against the pastors that feed my people; Ye have scattered my flock, and driven them away, and have not visited them: behold, I will visit upon you the evil of your doings, saith Yahuah (LORD).* (Jeremiah 23:2), and the worthless shepherd of Zechariah: *Woe to the idol shepherd that leaveth the flock! the sword shall be upon his arm, and upon his right eye: his arm shall be clean dried up, and his right eye shall be utterly darkened.* (Zechariah 11:17). The shepherds are systems of misrule judged — not the sheep, who are gathered.',
+       sv.verse_id, ev.verse_id, 'extras', 52234
+  FROM _session250_en90_lookup sv, _session250_en90_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=14
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=90 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-90-new-house-greater',
+       E'The new house, greater and loftier — the New Jerusalem, the mountain of the house',
+       E'The old house is folded up and a greater one raised, and the whole flock brought home: *And a new house was built greater and loftier than the first, and the Lord of the sheep brought all the sheep into that new house.* (1 Enoch 90:17), and *And the Lord of the sheep rejoiced with great joy because they were all good and had returned to His house.* (1 Enoch 90:19). This is the New Jerusalem descending and the tabernacle dwelling with the gathered people: *And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband.* (Revelation 21:2) and *And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God).* (Revelation 21:3); the house exalted in the last days: *But in the last days it shall come to pass, that the mountain of the house of Yahuah (LORD) shall be established in the top of the mountains, and it shall be exalted above the hills; and people shall flow unto it.* (Micah 4:1). And the Lord sets His sanctuary in their midst for ever — the two houses made one nation: *Moreover I will make a covenant of peace with them; it shall be an everlasting covenant with them: and I will place them, and multiply them, and will set my sanctuary in the midst of them for evermore.* (Ezekiel 37:26). The new house is not a church replacing Israel; it is the regathered twelve tribes brought home to the everlasting sanctuary.',
+       sv.verse_id, ev.verse_id, 'extras', 52237
+  FROM _session250_en90_lookup sv, _session250_en90_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=17
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=90 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-90-eyes-opened-gathering',
+       E'The eyes opened, the sheep gathered — the awakening of the scattered houses',
+       E'Through the long vision the sheep had been blinded and scattered to the beasts; now the flock is recovered and rejoices: *And the sheep gathered together to that great horn, and they began to rejoice.* (1 Enoch 90:10), and all the nations come and fear the Lord of the sheep: *And I saw till all the beasts and the birds and the wild animals were gathered, and they all feared the Lord of the sheep, and they began to praise Him.* (1 Enoch 90:18). The opened eyes and the recovered flock are the prophets'' promised awakening: *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.* (Isaiah 35:5) and *And in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity, and out of darkness.* (Isaiah 29:18). The scattering reverses into the two-house ingathering: *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* (Ezekiel 37:21), the divided houses appointing one head: *Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel.* (Hosea 1:11). This is the awakening and return happening now — never a replacement of Israel.',
+       sv.verse_id, ev.verse_id, 'extras', 52240
+  FROM _session250_en90_lookup sv, _session250_en90_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=90 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-90-white-bull-messiah',
+       E'The great white bull born — the Messiah and all transformed into white bulls',
+       E'The vision ends with the birth of the great white bull and the transformation of the whole flock: *And I saw till a white bull was born, with large horns, and all the beasts of the field and all the birds of the air feared him and made petition to him all the time.* (1 Enoch 90:20), and *And I saw till all their generations were transformed, and they all became white bulls; and the first among them became a lamb, and that lamb became a great animal and had great black horns on its head.* (1 Enoch 90:21). In the allegory the white bull is Adam''s righteous seed-line; this great white bull born at the end is the Messiah, the Formed Son — the one to whom dominion is given, who in flesh resembled mortal man: *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* (Daniel 7:13) — note the kaph, *one like the Son of Adam*: Daniel sees a figure resembling mortal-man because the Formed One took on flesh, while Enoch''s bull names that same dominion-bearer to whom *was given dominion, and glory, and a kingdom* (Daniel 7:14). All the generations becoming white bulls is the restored, regathered people made righteous, dwelling where the wolf and the lamb are at peace: *The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them.* (Isaiah 11:6) and *The wolf and the lamb shall feed together, and the lion shall eat straw like the bullock: and dust shall be the serpent’s meat. They shall not hurt nor destroy in all my holy mountain, saith Yahuah (LORD).* (Isaiah 65:25). The white bull is the same Formed Son named elsewhere as the Son of Adam; I do not force the title here, keeping him as the Formed Son the figure plainly is.',
+       sv.verse_id, ev.verse_id, 'extras', 52243
+  FROM _session250_en90_lookup sv, _session250_en90_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=20
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=90 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-90-the-great-horn-raised
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Maccabees 2:1 — *In those days arose Mattathias the son of John, the son of Simeon, a priest of the sons of Joarib, from Jerusalem, and dwelt in Modin.* The great horn that cries aloud to the sheep is read first against the Maccabean priest-line raised up to rally a scattered Israel.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-the-great-horn-raised'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=2 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Maccabees 2:66 — *As for Judas Maccabeus, he has been mighty and strong, even from his youth up: let him be your captain, and fight the battle of the people.* The horn that grows great and butts the beasts down matches the mighty captain raised to fight the people''s battle.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-the-great-horn-raised'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=1
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=2 AND tv.verse_number=66
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 23:5 — *Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.* The Lord of the sheep rejoicing over the horn points beyond the Maccabees to the righteous Branch raised to David.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-the-great-horn-raised'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-90-lord-empowers-the-horn
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 34:23 — *And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd.* The Lord of the sheep empowering the horn is His setting up the one Davidic shepherd over the flock.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-lord-empowers-the-horn'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'John 10:16 — *And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.* The scattered sheep gathering to the horn is the two-house ingathering into one fold under one shepherd.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-lord-empowers-the-horn'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 10:11 — *I am the good shepherd: the good shepherd giveth his life for the sheep.* The Lord of the sheep rejoicing over horn and flock together is the good shepherd who lays down his life for his own.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-lord-empowers-the-horn'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-90-books-opened-judgment
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* The Lord of the sheep opening the books is the Ancient of days seated for judgment.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-books-opened-judgment'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* Enoch''s opened books of the living and of the sinners are Daniel''s set judgment with the books opened.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-books-opened-judgment'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The books of the living opened in Enoch are the book of life at the white-throne judgment.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-books-opened-judgment'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-90-stars-shepherds-judged
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 23:1 — *Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD).* The shepherds who had not fed the sheep, cast into the abyss, are the pastors woed for destroying and scattering the flock.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-stars-shepherds-judged'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 23:2 — *Therefore thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel) against the pastors that feed my people; Ye have scattered my flock, and driven them away, and have not visited them: behold, I will visit upon you the evil of your doings, saith Yahuah (LORD).* The judged shepherds are visited for scattering and not visiting the flock.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-stars-shepherds-judged'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Zechariah 11:17 — *Woe to the idol shepherd that leaveth the flock! the sword shall be upon his arm, and upon his right eye: his arm shall be clean dried up, and his right eye shall be utterly darkened.* The faithless shepherds cast into the fiery abyss answer the woe on the idol shepherd who leaves the flock.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-stars-shepherds-judged'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=11 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 20:10 — *And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.* The transgressing stars bound and cast into the fiery abyss are the deceiving powers consigned to the lake of fire.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-stars-shepherds-judged'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-90-new-house-greater
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Revelation 21:2 — *And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband.* The new house greater and loftier than the first is the holy city, new Jerusalem, coming down from heaven.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-new-house-greater'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 21:3 — *And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God).* The sheep returned to His house is the tabernacle of God dwelling with His people.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-new-house-greater'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 37:26 — *Moreover I will make a covenant of peace with them; it shall be an everlasting covenant with them: and I will place them, and multiply them, and will set my sanctuary in the midst of them for evermore.* All the sheep brought into the new house is the everlasting sanctuary set in the midst of the regathered nation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-new-house-greater'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Micah 4:1 — *But in the last days it shall come to pass, that the mountain of the house of Yahuah (LORD) shall be established in the top of the mountains, and it shall be exalted above the hills; and people shall flow unto it.* The new house built greater and loftier is the mountain of the house exalted in the last days.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-new-house-greater'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=4 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-90-eyes-opened-gathering
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 35:5 — *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.* The blinded sheep recovered and gathering to the horn is the promised opening of the eyes of the blind.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-eyes-opened-gathering'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 29:18 — *And in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity, and out of darkness.* The sheep''s awakening to the great horn is the day the blind see out of darkness.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-eyes-opened-gathering'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=29 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 37:21 — *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* The gathering of the recovered flock is the regathering of scattered Israel from the heathen into their land.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-eyes-opened-gathering'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hosea 1:11 — *Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel.* The sheep gathering to the one horn is the two houses, Judah and Israel, gathered under one head.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-eyes-opened-gathering'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-90-white-bull-messiah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* The great white bull born at the end is the same dominion-bearer Daniel sees as one like the Son of Adam, the Formed One who took on flesh (note the kaph-comparative, like).'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:14 — *And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* All the beasts and birds fearing the white bull and petitioning him is the dominion given to the Son of Adam that all nations should serve.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 11:6 — *The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them.* The transformation of all generations into white bulls is the restored peace where wolf and lamb dwell together.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 65:25 — *The wolf and the lamb shall feed together, and the lion shall eat straw like the bullock: and dust shall be the serpent’s meat. They shall not hurt nor destroy in all my holy mountain, saith Yahuah (LORD).* The whole flock made white bulls is the new-creation peace where lion and lamb feed together and none hurt in the holy mountain.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Genesis 1:26 — *And Elohim (God) said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.* The great white bull crowning the seed-line restores the dominion first given to Adam in God''s image.'
+  FROM cross_reference_threads t, cross_references x, _session250_en90_lookup sv, _session250_en90_lookup tv
+ WHERE t.slug='1-enoch-90-white-bull-messiah'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=90 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session250 — 1 Enoch cross-references complete.'

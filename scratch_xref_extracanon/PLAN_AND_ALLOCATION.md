@@ -165,3 +165,17 @@ Then Jubilees (session251 @53000), Jasher (session252 @55000), Apocrypha (@58000
 - NOTE: concurrent Tanakh fan-out (S301) uses band 20000-49999 / sessions 301+ → NO collision with
   extra-canon (50000+/session250). Keychain push blocked session-wide (Tanakh worktree too).
 - Push blocked. origin/main 47a9e48; local HEAD `340c8c7` (9 commits ahead). Prod authoritative.
+
+## RECEIPT — Pack 9 (1 Enoch ch72–82) ✅ LIVE — ASTRONOMICAL BOOK COMPLETE
+- Applied 2026-06-11. EXACT: cumulative **323 threads / 1196 members**, band 50000–52037, 0 orphans.
+  per-ch(72-82) 3/3/4/3/3/3/4/4/4/4/4. +39/124. Commit `670a8d9`. Five gates green (fidelity 1196/1196,
+  FULL-LIBRARY PASS, resolve 0 unresolved).
+- The moedim written into creation by the lights (72-74→Gen 1:14-16/Ps 104:19/Jub 6); 364-day solar
+  reckoning + intercalary days (74-75→Jub 6:32); winds/quarters (76-77→Job 38/Gen 2:10); moon phases/
+  new moon (78→Ps 81:3/Isa 66:23); CORRUPTED reckoning→Dan 7:25 change-the-times + Deut 4:19 host-of-
+  heaven idolatry (80); heavenly tablets + teach-thy-children (81→Exod 32:32/Mal 3:16/Deut 6:6);
+  keep-the-reckoning blessing (82→Lev 23/Ps 1/Jub 6:17). Ties to Yoshi's Appointed Times framework.
+- ⚑ GATE CAUGHT A REAL ERROR: ch79 self-link mis-cited 1 Enoch 74:12 while quoting v11's text
+  ("deficient in the intercalated months by thirty days"); fidelity flagged it, fixed tgt_v 12→11
+  before apply. (Validates the gate; this edition's ch74 lunar figures are tangled — see ch74 notes.)
+- Push blocked. origin/main 47a9e48; local HEAD `670a8d9` (10 commits ahead). Prod authoritative.

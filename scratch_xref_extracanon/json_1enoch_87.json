@@ -1,0 +1,160 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 87,
+  "session": "session250",
+  "tag": "en87",
+  "base_band": 52150,
+  "threads": [
+    {
+      "slug": "1-enoch-87-white-ones-bind-the-stars",
+      "title": "The white ones come down to bind the fallen stars",
+      "summary_md": "In the Animal Apocalypse the heavens split and the archangels descend in human likeness: *And I raised mine eyes again to heaven, And I saw in the vision, and behold there came forth from heaven beings who were like white men: And four went forth from that place And three with them.* (1 Enoch 87:2). These are the same holy ones first sent to bind the rebel Watchers and their offspring, the command Enoch already heard plainly: *And Yahuah (God) said unto Michael: 'Go, bind Semjâzâ and his associates who have united themselves with women so as to have defiled themselves with them in all their uncleanness.* (1 Enoch 10:11) — *And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated.* (1 Enoch 10:12). Daniel saw one of these very beings descend in his own night-vision: *I saw in the visions of my head upon my bed, and, behold, a watcher and an holy one came down from heaven;* (Daniel 4:13), and named their office: *This matter is by the decree of the watchers, and the demand by the word of the holy ones: to the intent that the living may know that the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will, and setteth up over it the basest of men.* (Daniel 4:17). It ain't new: the white men of Enoch's vision are the watchers and holy ones of Daniel, the appointed ministers who carry out the Most High's decree of binding.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 87,
+          "src_v": 2,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 11,
+          "tier": "extras",
+          "note": "1 Enoch 10:11 — *And Yahuah (God) said unto Michael: 'Go, bind Semjâzâ and his associates who have united themselves with women so as to have defiled themselves with them in all their uncleanness.* The white ones who descend in 87:2 are the archangels first commissioned to bind the Watchers."
+        },
+        {
+          "src_ch": 87,
+          "src_v": 2,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 12,
+          "tier": "extras",
+          "note": "1 Enoch 10:12 — *And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated.* The descent in 87:2 enacts the binding-command Enoch already received in ch10."
+        },
+        {
+          "src_ch": 87,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 4,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Daniel 4:13 — *I saw in the visions of my head upon my bed, and, behold, a watcher and an holy one came down from heaven;* Daniel's night-vision shows the same heavenly white one descending that Enoch sees in 87:2."
+        },
+        {
+          "src_ch": 87,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 4,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Daniel 4:17 — *This matter is by the decree of the watchers, and the demand by the word of the holy ones: to the intent that the living may know that the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will, and setteth up over it the basest of men.* The watchers who carry out the Most High's decree are the appointed ministers stationed to watch in 87:4."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-87-the-host-bound-in-the-pit",
+      "title": "The host of the high ones reserved in chains for judgement",
+      "summary_md": "The descent of the white ones is for one purpose — to chain the fallen powers until the day of judgement, exactly as the canon and the parallel chapters of Enoch testify. The earth that *began to cry aloud* (1 Enoch 87:1) under the goring of the beasts is the corrupted earth Enoch was shown would be healed only when the rebels are bound: *And to Gabriel said Yahuah (God): 'Proceed against the bastards and the reprobates, and against the children of fornication: and destroy the children of the Watchers from amongst men send them one against the other that they may destroy each other in battle: for length of days shall they not have.* (1 Enoch 10:9). Isaiah saw the same sentence on the high host: *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* (Isaiah 24:21) — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* (Isaiah 24:22). Jude carries it forward as canon: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6), and Peter agrees: *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* (2 Peter 2:4). The Watchers' sin is rebellion against the Creator's order — not Torah broken by the righteous but the heavenly order broken by the proud — and their binding stands until the great day.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 87,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude carries Enoch's binding-of-the-Watchers into canon as the reason the white ones descend in 87:2."
+        },
+        {
+          "src_ch": 87,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter confirms the chains-of-darkness sentence the descending white ones execute in 87:2."
+        },
+        {
+          "src_ch": 87,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 24,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* Isaiah names the high host that, with the goring beasts of 87:1, comes under the same judgement."
+        },
+        {
+          "src_ch": 87,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 24,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* The shutting-up of the high ones in the pit is the very binding the white ones carry out beginning in 87:1."
+        },
+        {
+          "src_ch": 87,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Revelation 20:3 — *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* John shows the same binding-until-the-judgement that the descending white ones begin in 87:2."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-87-enoch-taken-up-to-the-tower",
+      "title": "Enoch taken up to the tower to behold the end",
+      "summary_md": "One of the three white ones takes Enoch from among men and sets him on a height to watch: *And those three that had last come forth grasped me by my right hand And took me up away from the generations of the earth, And raised me up to a lofty place, And showed me a tower raised high above the earth, And all the hills were lower.* (1 Enoch 87:3), and the charge is given: *And one said unto me: 'Remain here till thou seest everything That befalls those elephants, camels, and asses, And the stars and the oxen, and all of them.'* (1 Enoch 87:4). This is the same Enoch the canon records was carried off from the generations of the earth: *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* (Genesis 5:24). He is set above to see the whole symbolic history play out — the giants whose spirits still cry, the fallen stars, and the oxen of the patriarchal line: *And I beheld the spirits of the departed giants, And they were standing in the vision, And their voices went forth to heaven, And they cried aloud.* (1 Enoch 87:5), the residue of the children of the Watchers whose origin Enoch already learned: *And it came to pass, when men began to multiply on the face of the earth, and daughters were born unto them, That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* (Genesis 6:2). It ain't new: the seed-war Enoch is lifted up to watch begins in Genesis 6, runs through the goring beasts, and ends only at the binding the white ones now carry down.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 87,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 5,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* The taking-up away from the generations of the earth in 87:3 is the canon's record of Enoch's translation."
+        },
+        {
+          "src_ch": 87,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* The spirits of the departed giants crying out in 87:5 are the offspring of the union Genesis 6 records."
+        },
+        {
+          "src_ch": 87,
+          "src_v": 5,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "1 Enoch 10:9 — *And to Gabriel said Yahuah (God): 'Proceed against the bastards and the reprobates, and against the children of fornication: and destroy [the children of fornication and] the children of the Watchers from amongst men [and cause them to go forth]: send them one against the other that they may destroy each other in battle: for length of days shall they not have.* The departed giants whose spirits cry in 87:5 are the children of the Watchers Enoch was told would destroy one another."
+        }
+      ]
+    }
+  ]
+}
