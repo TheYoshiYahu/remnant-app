@@ -1,0 +1,116 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 13,
+  "session": "session252",
+  "tag": "ja13",
+  "base_band": 55300,
+  "threads": [
+    {
+      "slug": "jasher-13-out-of-haran",
+      "title": "Out of Haran — the call to go to Canaan",
+      "summary_md": "Jasher opens with the chosen seed pulled out of the idol-world: *And Terah took his son Abram and his grandson Lot, the son of Haran, and Sarai his daughter-in-law, the wife of his son Abram, and all the souls of his household and went with them from Ur Casdim to go to the land of Canaan. And when they came as far as the land of Haran they remained there, for it was exceedingly good land for pasture* (Jasher 13:1). This is the very migration Stephen sets at the head of the whole story: *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* (Acts 7:2), and *Then came he out of the land of the Chaldæans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell* (Acts 7:4). Joshua names the idolatry the seed was called out of: *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* (Joshua 24:2). Election precedes confession — Yahuah took Abram out before he could choose: *And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac* (Joshua 24:3). Jubilees keeps the same stop at Haran and the father's blessing to go: *And it came to pass in the seventh year of the sixth week that he spoke to his father, and informed him that he would leave Haran to go into the land of Canaan to see it and return to him* (Jubilees 12:28). It ain't new — the canon already carries the call out of Chaldea.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 13, "src_v": 1, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 2, "tier": "free",
+         "note": "Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* — Stephen sets the same Ur-to-Haran migration that opens Jasher 13:1 at the head of the gospel story."},
+        {"src_ch": 13, "src_v": 1, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 4, "tier": "free",
+         "note": "Acts 7:4 — *Then came he out of the land of the Chaldæans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell* — the very Ur-Casdim-to-Haran-to-Canaan route Terah's household travels in Jasher 13:1."},
+        {"src_ch": 13, "src_v": 2, "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 24, "tgt_v": 2, "tier": "free",
+         "note": "Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* — names the idolatry the seed Abram teaches against in Haran (Jasher 13:2) was called out of."},
+        {"src_ch": 13, "src_v": 5, "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 24, "tgt_v": 3, "tier": "free",
+         "note": "Joshua 24:3 — *And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac* — election precedes confession: the same going-up to Canaan Abram makes at Yahuah's word in Jasher 13:5."},
+        {"src_ch": 13, "src_v": 1, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 12, "tgt_v": 28, "tier": "extras",
+         "note": "Jubilees 12:28 — *And it came to pass in the seventh year of the sixth week that he spoke to his father, and informed him that he would leave Haran to go into the land of Canaan to see it and return to him...* — the Jubilees apparatus keeps the same Haran stop on the road to Canaan that opens Jasher 13:1."}
+      ]
+    },
+    {
+      "slug": "jasher-13-keep-my-commandments",
+      "title": "Hearken to my voice and keep my commandments — Torah before Sinai",
+      "summary_md": "Yahuah meets Abram in Haran and binds the promise to obedience long before Sinai: *And now therefore if you will hearken to my voice and keep my commandments, my statutes and my laws, then will I cause your enemies to fall before you, and I will multiply your seed like the stars of heaven, and I will send my blessing upon all the works of your hands, and you shall lack nothing* (Jasher 13:4). The fathers kept the way; the law was not a curse hung on Israel at Horeb but the path the chosen seed already walked — it ain't new. And the seed-like-the-stars word is the canon's own: *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* (Genesis 15:5), which Abram answered with the faith that anchors the whole covenant: *And he believed in Yahuah (LORD); and he counted it to him for righteousness* (Genesis 15:6). Jasher's altar-builder is the canon's: *And Abram built an altar in the place where Elohim had spoken to him, and Abram there called upon the name of Yahuah (the Lord)* (Jasher 13:8) — *and there builded he an altar unto Yahuah (LORD), who appeared unto him* (Genesis 12:7). Hebrews names the faith that obeyed the call: *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went* (Hebrews 11:8).",
+      "anchor_start_v": 4,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 13, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 15, "tgt_v": 5, "tier": "free",
+         "note": "Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* — the seed-like-the-stars promise Yahuah binds to keeping his commandments in Jasher 13:4."},
+        {"src_ch": 13, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 15, "tgt_v": 6, "tier": "free",
+         "note": "Genesis 15:6 — *And he believed in Yahuah (LORD); and he counted it to him for righteousness* — Abram's faith answers the same star-multiplied promise spoken over him in Jasher 13:4."},
+        {"src_ch": 13, "src_v": 4, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 8, "tier": "free",
+         "note": "Hebrews 11:8 — *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went* — the obedience to Yahuah's voice that Jasher 13:4 lays as the condition of the blessing."},
+        {"src_ch": 13, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* — the same altar Abram builds and calls on the Name in Jasher 13:8."}
+      ]
+    },
+    {
+      "slug": "jasher-13-this-land-to-thy-seed",
+      "title": "This is the land I give to your seed forever",
+      "summary_md": "Arriving in Canaan, Abram receives the land-grant that frames the whole Torah: *And Yahuah (the Lord) appeared to Abram when he came to the land of Canaan, and said to him, This is the land which I gave to you and to your seed after you forever, and I will make your seed like the stars of heaven, and I will give to your seed for an inheritance all the lands which you see* (Jasher 13:7). The canon speaks it word for word: *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land* (Genesis 12:7), and again *For all the land which thou seest, to thee will I give it, and to thy seed for ever* (Genesis 13:15). The boundaries Jasher draws — *Now therefore walk before me and be perfect and keep my commands, for to you and to your seed I will give this land for an inheritance, from the river Mitzraim to the great river Euphrates* (Jasher 13:18) — are the cut-covenant of Genesis: *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18). This is the twelve-tribe inheritance kept and chosen, not a spiritual category. Jubilees holds the same grant on the same hill: *And Yahuah (God) said to him: “To you and to your seed will I give this land”* (Jubilees 13:2).",
+      "anchor_start_v": 7,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 13, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* — the same land-to-your-seed word Yahuah speaks at Abram's entry into Canaan in Jasher 13:7."},
+        {"src_ch": 13, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 13, "tgt_v": 15, "tier": "free",
+         "note": "Genesis 13:15 — *For all the land which thou seest, to thee will I give it, and to thy seed for ever* — the all-the-lands-which-you-see inheritance forever of Jasher 13:7."},
+        {"src_ch": 13, "src_v": 18, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 15, "tgt_v": 18, "tier": "free",
+         "note": "Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* — the very river-to-river boundary Yahuah draws for the seed in Jasher 13:18."},
+        {"src_ch": 13, "src_v": 7, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 13, "tgt_v": 2, "tier": "extras",
+         "note": "Jubilees 13:2 — *...And Yahuah (God) said to him: “To you and to your seed will I give this land.”* — the Jubilees apparatus carries the same land-grant to the seed at Abram's entry that Jasher 13:7 records."}
+      ]
+    },
+    {
+      "slug": "jasher-13-nimrod-chedorlaomer-war",
+      "title": "Nimrod king of Shinar wars with Chedorlaomer — the kingdom of man",
+      "summary_md": "Jasher fills in the back-story of the war Genesis only names: *And in the tenth year of Abram’s dwelling in the land of Canaan there was war between Nimrod king of Shinar and Chedorlaomer king of Elam, and Nimrod came to fight with Chedorlaomer and to subdue him* (Jasher 13:12). This is the rebel kingdom-of-man at its own throat — the Babel-builder whose tower-host scattered: *For Chedorlaomer was at that time one of the princes of the hosts of Nimrod, and when all the people at the tower were dispersed and those that remained were also scattered upon the face of the earth, Chedorlaomer went to the land of Elam and reigned over it and rebelled against his Lord* (Jasher 13:13). The canon names Nimrod the first tyrant-king: *And Cush begat Nimrod: he began to be a mighty one in the earth* (Genesis 10:8), *He was a mighty hunter before Yahuah (LORD): wherefore it is said, Even as Nimrod the mighty hunter before Yahuah (LORD)* (Genesis 10:9) — and scatters his tower: *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city* (Genesis 11:8). Genesis carries the same Chedorlaomer revolt Jasher times to Abram's fifth year (Jasher 13:11): *Twelve years they served Chedorlaomer, and in the thirteenth year they rebelled* (Genesis 14:4), with the same Arioch and Tidal of Jasher 13:16: *And it came to pass in the days of Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of nations* (Genesis 14:1). The kingdom of man rises and tears itself; the seed sits quiet in Canaan.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 13, "src_v": 12, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 10, "tgt_v": 8, "tier": "free",
+         "note": "Genesis 10:8 — *And Cush begat Nimrod: he began to be a mighty one in the earth* — the canon names Nimrod the first tyrant-king of Shinar whose war Jasher 13:12 recounts."},
+        {"src_ch": 13, "src_v": 13, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 11, "tgt_v": 8, "tier": "free",
+         "note": "Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city* — the dispersal of the tower-host that Jasher 13:13 says scattered Chedorlaomer to Elam."},
+        {"src_ch": 13, "src_v": 11, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 14, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 14:4 — *Twelve years they served Chedorlaomer, and in the thirteenth year they rebelled* — the same twelve-year service and thirteenth-year revolt against Chedorlaomer that Jasher 13:11 dates to Abram's fifth year in Canaan."},
+        {"src_ch": 13, "src_v": 16, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 14, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 14:1 — *And it came to pass in the days of Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of nations* — the same Arioch and Tidal Chedorlaomer covenants with in Jasher 13:16."}
+      ]
+    },
+    {
+      "slug": "jasher-13-go-forth-great-nation",
+      "title": "Go forth from your land — in you shall the families of the earth be blessed",
+      "summary_md": "After the war and the altars, Yahuah renews the founding call of Genesis 12, which Jasher quotes almost word for word: *Behold, I spoke to you these twenty years back saying, Go forth from your land, from your birth-place and from your father’s house, to the land which I have shown you to give it to you and to your children, for there in that land will I bless you, and make you a great nation, and make your name great, and in you shall the families of the earth be blessed* (Jasher 13:22-23). The canon's own first words to Abram: *Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father’s house, unto a land that I will shew thee* (Genesis 12:1), *And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing* (Genesis 12:2), *And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). And Jasher's seventy-five-year-old who returns to Canaan with Lot — *and Abram was seventy-five years old when he went forth from Haran to return to the land of Canaan* (Jasher 13:26) — is the canon's exactly: *So Abram departed, as Yahuah (LORD) had spoken unto him; and Lot went with him: and Abram was seventy and five years old when he departed out of Haran* (Genesis 12:4). It ain't new — the families-of-the-earth blessing was already spoken over the chosen seed.",
+      "anchor_start_v": 22,
+      "anchor_end_v": 26,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 13, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 12:1 — *Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father’s house, unto a land that I will shew thee* — the founding go-forth call Yahuah renews in Jasher 13:23."},
+        {"src_ch": 13, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 2, "tier": "free",
+         "note": "Genesis 12:2 — *And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing* — the great-nation, great-name blessing Jasher 13:23 quotes back to Abram."},
+        {"src_ch": 13, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 3, "tier": "free",
+         "note": "Genesis 12:3 — *And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* — the families-of-the-earth blessing Jasher 13:23 carries verbatim."},
+        {"src_ch": 13, "src_v": 26, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 12:4 — *So Abram departed, as Yahuah (LORD) had spoken unto him; and Lot went with him: and Abram was seventy and five years old when he departed out of Haran* — the same seventy-five-year-old Abram leaving Haran with Lot in Jasher 13:26."}
+      ]
+    },
+    {
+      "slug": "jasher-13-death-of-noah",
+      "title": "Noah died — nine hundred and fifty years",
+      "summary_md": "Jasher marks the seed-line's generations by their deaths, and here the ark-father passes in Abram's lifetime: *At that time, at the end of three years of Abram’s dwelling in the land of Canaan, in that year Noah died, which was the fifty-eighth year of the life of Abram; and all the days that Noah lived were nine hundred and fifty years and he died* (Jasher 13:9). The canon closes Noah's nine-hundred-fifty exactly there: *And Noah lived after the flood three hundred and fifty years* (Genesis 9:28) — the same total the genealogy of the chosen line records. And Hebrews keeps Noah in the very roll of faith that runs straight into Abram's call, the seed kept generation to generation: *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* (Hebrews 11:7). Adam to Seth to Noah to Shem to Abraham — Jasher traces the line death by death; it ain't new.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 13, "src_v": 9, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 9, "tgt_v": 28, "tier": "free",
+         "note": "Genesis 9:28 — *And Noah lived after the flood three hundred and fifty years* — the canon's count that closes Noah's nine hundred and fifty years just as Jasher 13:9 marks his death in Abram's fifty-eighth year."},
+        {"src_ch": 13, "src_v": 9, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 7, "tier": "free",
+         "note": "Hebrews 11:7 — *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* — keeps the same Noah whose death Jasher 13:9 records in the roll of faith that runs into Abram's call."}
+      ]
+    }
+  ]
+}
