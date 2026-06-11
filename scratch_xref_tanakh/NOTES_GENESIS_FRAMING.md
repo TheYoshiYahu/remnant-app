@@ -45,3 +45,32 @@ Band base 20000, migration `session301_genesis_cross_references.sql`.
   judgment. Noah "perfect in his generations" = the uncorrupted paternal seed-line preserved.
 - Gate note: 1 Chronicles 1:1 ("Adam, Sheth, Enosh") fidelity-flagged — FALSE POSITIVE, the quote
   is verbatim; a 3-word verse can't form a 4-gram shingle. Benign; quote confirmed exact.
+
+## Pack 3 (Gen 7–11) — LIVE, +19 threads/+92 members (cumulative 51/235)
+- **★ Gen 7:2 / 8:20 / clean-and-unclean before Sinai** — Noah takes clean beasts by sevens
+  centuries before Moses; woven to Leviticus 11 as the NAMING of a creational distinction Noah
+  already kept — the dietary law spelled out at Sinai, never invented there, never repealed
+  (the Acts 10 / Mark 7 "abolition" misread deliberately excluded).
+- **Gen 8:22 seedtime-and-harvest** — the sworn covenant-ORDER of the seasons (Jer 33:20,25), the
+  constancy the whole moedim calendar (Jubilees 6) and every restoration promise (Isa 54:9) rests on.
+- **★★ Gen 9:8-17 the bow** — the everlasting, unconditional oath Yahuah swears and remembers for
+  HIMSELF over all flesh; woven to Isa 54:9-10 (the "waters of Noah" guarantee of his unbreakable
+  kindness to scattered Yashar'el) and the rainbow round the throne (Rev 4:3, 10:1).
+- **Gen 9:4-6 the blood / the image** — life in the blood (Lev 17:11) reserved for atonement, kept
+  by the Jerusalem council (Acts 15:20,29); the murder-ban rooted in the image of Elohim (Gen 1:27).
+- **Gen 9:25-27 Shem/Canaan** — handled as covenant-line/CONDUCT, explicitly NOT a race-curse:
+  blessing runs through Shem (the seed-line to Abraham), Japheth's enlargement = the nations coming
+  to dwell in Shem's tents (foreshadow of the ingathering), the curse on Canaan for the dishonouring
+  conduct in the household. Victims-not-enemies posture stated plainly in the prose.
+- **Gen 10 Table of Nations** — THE NATIONS (Category 3, the Genesis-1 peoples) before Israel is
+  called; Deut 32:8 names the dividing as El Elyon apportioning the bounds "according to the number
+  of the children of Yashar'el" — Israel-yet-to-come is the measure laid across the whole table
+  (Acts 17:26 reads it forward).
+- **★★ Gen 11:1-9 Babel → Pentecost reversal** — the men of Shinar seize a NAME for themselves and
+  are scattered; Acts 2 reverses it (the scattered hear each in his own tongue — firstfruits of the
+  regathering), consummated in Zeph 3:9's pure language; answered in the chapter's own next breath
+  where Yahuah MAKES Abram's name (12:2) rather than letting man grasp it.
+- **★ Gen 11:10-26 seed-line to Abram** — the line of promise narrowing Shem→Eber→Peleg→Terah→Abram
+  (Luke 3:34-36), converging on the call of Gen 12; Abram called out of idolatry (Josh 24:2, Acts 7:2).
+- Parse cautions recorded: Jasher 7 runs together from v.18, Jasher 9:7 swallows vv.7-39 (used only
+  clean verses); Jubilees parse skips 6:7-16 region (used only present clean verses).

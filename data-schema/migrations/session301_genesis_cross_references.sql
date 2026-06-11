@@ -2322,6 +2322,1729 @@ SELECT t.id, cr.id, 3, E'*when the proud giants perished, the hope of the world.
  WHERE t.slug='genesis-6-the-ark-the-first-covenant-and-the-water-that-saves'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_genesis_7.sql (Genesis 7) -----
+-- Chapter: Genesis 7 (Noah and all flesh enter the ark; the clean and unclean by sevens; the
+--          fountains of the deep and the windows of heaven broken up; Yahuah shut him in; all flesh died)
+-- Tag: ge07   Temp view: _s301_ge07_lookup
+-- Sort band: base 20150, step 3 -> threads at 20150, 20153, 20156, 20159 (4 threads)
+-- Source of EVERY row: 'canon','genesis',7,v
+--
+-- Genesis 7 coverage:
+--   v.1 (Come thou and all thy house into the ark; thee have I seen righteous before me in this generation)
+--        NT:     carried in the "Noah entered / Yahuah shut him in" thread (Heb 11:7, 1 Pet 3:20)
+--        Extras: Jubilees 5:19 (no man's person accepted save Noah; saved his sons on his account) — placed in the all-flesh-died thread
+--        Tanakh: none warranted as own member (righteousness named again at v.21-23 -> Ezek 14:14)
+--   ★ v.2-3 (of every clean beast by sevens, male and female; of beasts not clean by two; fowls by sevens, to keep seed alive)
+--        NT:     none warranted (the dietary categories are LAW; Acts 10/Mark 7 are the Christianized-abolition misread, deliberately NOT pulled)
+--        Extras: Jasher 6:9 (from the clean animals and clean fowls he brought seven couples, as Elohim had commanded)
+--        Tanakh: LEVITICUS 11 (the dietary law NAMED, not invented — the clean/unclean Noah already knew): Lev 11:2,11:3,11:8,11:46,11:47
+--   v.4 (yet seven days, and I will cause it to rain forty days and forty nights; destroy every living substance)
+--        NT:     none warranted (woven by reference into the fountains-of-the-deep thread)
+--        Extras: none warranted distinct (Jasher 6:10 the seven-day delay; quoted by reference in summary)
+--        Tanakh: none warranted
+--   v.5 (Noah did according unto all that Yahuah commanded him)
+--        NT:     Hebrews 11:7 (by faith Noah... prepared an ark to the saving of his house) — placed in the entered/shut-in thread
+--        Extras: none warranted
+--        Tanakh: none warranted
+--   v.6-7 (Noah six hundred years old when the flood was upon the earth; Noah went in, his sons, wife, sons' wives)
+--        NT:     none warranted as own thread
+--        Extras: none warranted distinct
+--        Tanakh: none warranted
+--   ★ v.8 (of clean beasts, and of beasts not clean, and of fowls, and of every thing that creepeth) — restates the clean/unclean distinction
+--        NT:     none warranted
+--        Extras: Jasher 6:9 (covered at v.2-3)
+--        Tanakh: LEVITICUS 11:47 (to make a difference between the unclean and the clean) — placed in the by-sevens thread
+--   v.9 (there went in two and two unto Noah into the ark, male and female, as Elohim had commanded Noah)
+--        NT:     none warranted
+--        Extras: none warranted distinct (the pairs; the sevens carry the load)
+--        Tanakh: none warranted
+--   v.10 (after seven days, the waters of the flood were upon the earth)
+--        NT:     none warranted
+--        Extras: none warranted distinct
+--        Tanakh: none warranted
+--   ★ v.11-12 (in the six hundredth year... the same day were all the fountains of the great deep broken up, and the windows of heaven were opened; rain forty days and forty nights) — THE UN-CREATION
+--        NT:     Matthew 24:38,24:39 (until the day Noe entered... and knew not until the flood came, and took them all away);
+--                Luke 17:27 (the flood came, and destroyed them all); 2 Peter 3:6 (the world that then was, being overflowed with water, perished)
+--        Extras: Jubilees 5:23 (Yahuah opened seven flood-gates of heaven and the mouths of the great deep, seven mouths in number);
+--                Jasher 6:14 (all the fountains of the deep were broken up, and the windows of heaven were opened, rain forty days and forty nights)
+--        Tanakh: Isaiah 24:18 (the windows from on high are open, and the foundations of the earth do shake) — the latter-day un-creation echoing the flood
+--   ★ v.13,16 (in the selfsame day entered Noah, Shem, Ham, Japheth... and Yahuah shut him in) — THE DOOR SHUT, THE DELIVERANCE SEALED
+--        NT:     1 Peter 3:20 (the longsuffering waited in the days of Noah... eight souls saved by water);
+--                Hebrews 11:7 (by faith Noah prepared an ark to the saving of his house)
+--        Extras: Jubilees 5:23 (Yahuah God closed it from without on the seventeenth evening);
+--                Jasher 6:15 (Noah and his household came into the ark... and Yahuah shut him in)
+--        Tanakh: none warranted (the ark-of-safety figure carried forward to NT + out to Jubilees/Jasher)
+--   v.14-15,17-20 (every beast after his kind entered; the waters prevailed, the ark lifted up; fifteen cubits; the mountains covered)
+--        NT:     none warranted distinct
+--        Extras: none warranted distinct (Jubilees 5:23 fifteen cubits / ark lifted up — quoted by reference)
+--        Tanakh: none warranted
+--   ★ v.21-23 (all flesh died... every man; Noah only remained alive, and they that were with him in the ark) — THE JUDGMENT UNIVERSAL
+--        NT:     2 Peter 3:6 (the world that then was, being overflowed with water, perished) — placed in fountains thread; here Matthew 24:39 (took them all away)
+--        Extras: Jubilees 5:19 (no man's person accepted save Noah alone); Jasher 6:26 (all flesh that was upon the earth died... there only remained Noah and those with him in the ark)
+--        Tanakh: Ezekiel 14:14 (Noah, Daniel, and Job... deliver but their own souls by their righteousness); Isaiah 54:9 (the waters of Noah... should no more go over the earth)
+--   v.24 (the waters prevailed upon the earth an hundred and fifty days)
+--        NT:     none warranted
+--        Extras: Jubilees 5:23 (the water prevailed... one hundred and fifty days) — quoted by reference in summary
+--        Tanakh: none warranted
+--
+-- Threads (slug -> target libraries):
+--   genesis-7-the-clean-and-unclean-by-sevens-the-distinction-before-sinai   [Tanakh+Extras]  tier extras  ★ creational, pre-Sinai
+--   genesis-7-the-fountains-of-the-deep-and-the-windows-of-heaven            [NT+Extras+Tanakh] tier extras ★ the un-creation
+--   genesis-7-noah-entered-and-yahuah-shut-him-in                            [NT+Extras]      tier extras  ★ the door shut
+--   genesis-7-all-flesh-died-and-noah-only-remained                         [NT+Extras+Tanakh] tier extras ★ judgment universal
+--
+-- Framework-load-bearing notes:
+--   ★ v.2-3,8 CLEAN/UNCLEAN BY SEVENS: the clean/unclean distinction is PRESENT BEFORE SINAI — Noah is
+--     commanded to take clean beasts by sevens and unclean by twos centuries before Moses. This is
+--     CREATIONAL knowledge, not a Mosaic invention and emphatically NOT a temporary/abolished law. The
+--     thread weaves LATERALLY to Leviticus 11, where the SAME categories Noah already knew are NAMED and
+--     written into the covenant Torah (*to make a difference between the unclean and the clean* — Lev
+--     11:47). The Christianized "the dietary law was abolished / invented at Sinai" default is overridden:
+--     the law names what was already true. Acts 10 / Mark 7 deliberately NOT pulled (the abolition misread).
+--   ★ v.11 THE UN-CREATION: *the fountains of the great deep broken up, and the windows of heaven were
+--     opened* is the reversal of Genesis 1 — the waters above and below, divided on day two, let back in.
+--     Woven FORWARD as the type of the final reckoning (Matthew 24:38-39, Luke 17:27, 2 Peter 3:6) and OUT
+--     to the restored witnesses that count the seven flood-gates (Jubilees 5:23) and repeat the formula
+--     verbatim (Jasher 6:14); LATERALLY to Isaiah 24:18 (the windows from on high open in the day of the LORD).
+--   ★ v.16 YAHUAH SHUT HIM IN: the door is shut by Yahuah's own hand — the deliverance sealed, the ark of
+--     safety. Forward to 1 Peter 3:20 (eight souls saved by water, the figure of baptism) and Hebrews 11:7
+--     (by faith, to the saving of his house); out to Jubilees 5:23 (closed from without) and Jasher 6:15.
+--   ★ v.21-23 ALL FLESH DIED: the judgment is universal — *Noah only remained alive*. Ezekiel 14:14 reads
+--     it as deliverance by personal righteousness (Noah, Daniel, Job deliver but their own souls); Isaiah
+--     54:9 names *the waters of Noah* as Yahuah's sworn covenant-mercy. The Formed/Formless lens: it is
+--     Yahuah (the visible LORD who shut the door) who judges and who swears the after-mercy.
+
+CREATE TEMP VIEW _s301_ge07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================== cross_references ==============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the clean and unclean by sevens — the distinction before Sinai
+    ('canon','genesis',7,2,'canon','leviticus',11,2,'free',
+      E'*Speak unto the children of Yashar''el (Israel), saying, These are the beasts which ye shall eat among all the beasts that are on the earth* (Leviticus 11:2). When Noah is told *Of every clean beast thou shalt take to thee by sevens... and of beasts that are not clean by two* (Genesis 7:2), the clean/unclean distinction is already in force — generations before Sinai. Leviticus 11 does not invent the categories; it names in covenant Torah what Noah already knew, the beasts *which ye shall eat* set apart from those *not clean*.'),
+    ('canon','genesis',7,2,'canon','leviticus',11,3,'free',
+      E'*Whatsoever parteth the hoof, and is clovenfooted, and cheweth the cud, among the beasts, that shall ye eat* (Leviticus 11:3). The *clean beast* Noah took *by sevens* (Genesis 7:2) is here given its marks. The dietary law is not a new yoke laid at Sinai but the spelling-out of a creational distinction the righteous already observed — the same clean kinds, now described so Yashar''el (Israel) may keep them.'),
+    ('canon','genesis',7,2,'canon','leviticus',11,8,'free',
+      E'*Of their flesh shall ye not eat, and their carcase shall ye not touch; they are unclean to you* (Leviticus 11:8). Noah''s *beasts that are not clean* taken only *by two* (Genesis 7:2) are the same unclean kinds the Torah names. The category is creational and continuous: what was *not clean* in Noah''s day is *unclean to you* in the covenant Torah — never abolished, never a temporary measure, the difference written into the world before it was written on tablets.'),
+    ('canon','genesis',7,8,'canon','leviticus',11,47,'free',
+      E'*To make a difference between the unclean and the clean, and between the beast that may be eaten and the beast that may not be eaten* (Leviticus 11:47). Genesis 7:8 quietly repeats the whole categorization — *Of clean beasts, and of beasts that are not clean, and of fowls, and of every thing that creepeth* — proving the distinction stood before the Torah codified it. The very purpose Leviticus states, *to make a difference between the unclean and the clean*, is the difference Noah was already keeping at the ark door.'),
+    ('canon','genesis',7,8,'canon','leviticus',11,46,'free',
+      E'*This is the law of the beasts, and of the fowl, and of every living creature that moveth in the waters, and of every creature that creepeth upon the earth* (Leviticus 11:46). The four kinds Noah marks at the ark — *clean beasts... beasts that are not clean... fowls... every thing that creepeth* (Genesis 7:8) — are the same four the law of Leviticus 11 governs. The Torah gathers into one *law of the beasts* the distinction Noah obeyed by command, the creational order made covenant instruction.'),
+    ('canon','genesis',7,2,'jasher','jasher',6,9,'extras',
+      E'*Two and two came to Noah into the ark, but from the clean animals, and clean fowls, he brought seven couples, as Elohim (God) had commanded him* (Jasher 6:9). Jasher carries Genesis 7:2 with the same reckoning — the unclean *two and two*, the *clean animals, and clean fowls... seven couples* — and grounds it in command: *as Elohim (God) had commanded him*. The sevens of the clean are not Noah''s preference but obedience to a clean/unclean order already given, the same order Leviticus 11 will name.'),
+
+    -- THREAD 2 (★): the fountains of the deep and the windows of heaven — the un-creation
+    ('canon','genesis',7,11,'jubilees','jubilees',5,23,'extras',
+      E'*And Yahuah (God) opened seven flood-gates of heaven, And the mouths of the fountains of the great deep, seven mouths in number. And the flood-gates began to pour down water from the heaven forty days and forty nights, And the fountains of the deep also sent up waters, until the whole world was full of water* (Jubilees 5:23). The Torah''s *all the fountains of the great deep broken up, and the windows of heaven were opened* (Genesis 7:11) is here counted out — *seven flood-gates of heaven... seven mouths* of the deep — the waters above and the waters below, divided in Genesis 1, let back in at once: the un-creation, the world un-made by the same waters it was framed from.'),
+    ('canon','genesis',7,11,'jasher','jasher',6,14,'extras',
+      E'*And all the fountains of the deep were broken up, and the windows of heaven were opened, and the rain was upon the earth forty days and forty nights* (Jasher 6:14). Jasher repeats Genesis 7:11 almost word for word — *all the fountains of the great deep broken up, and the windows of heaven were opened* — the double breach of the deep beneath and the heaven above, the ordered separation of the second day undone and the flood loosed for *forty days and forty nights*.'),
+    ('canon','genesis',7,11,'canon','isaiah',24,18,'free',
+      E'*And it shall come to pass, that he who fleeth from the noise of the fear shall fall into the pit; and he that cometh up out of the midst of the pit shall be taken in the snare: for the windows from on high are open, and the foundations of the earth do shake* (Isaiah 24:18). Isaiah takes up the flood-language of Genesis 7:11 — *the windows of heaven were opened* — for the day of Yahuah: *the windows from on high are open, and the foundations of the earth do shake*. The un-creation of Noah''s day is the prophet''s figure for the final reckoning, the heavens opened once more upon a guilty earth.'),
+    ('canon','genesis',7,11,'canon','2-peter',3,6,'free',
+      E'*Whereby the world that then was, being overflowed with water, perished* (2 Peter 3:6). When *the fountains of the great deep* were *broken up, and the windows of heaven were opened* (Genesis 7:11), *the world that then was* perished by water. Kepha sets that flood beside the coming judgement by fire — the same word of Elohim (God) that framed the heavens and the earth out of water now keeps them *reserved unto fire* — making the un-creation of Genesis 7 the pledge that the present world too will be judged.'),
+    ('canon','genesis',7,12,'canon','matthew',24,38,'free',
+      E'*For as in the days that were before the flood they were eating and drinking, marrying and giving in marriage, until the day that Noe entered into the ark* (Matthew 24:38). The forty days of rain (Genesis 7:12) fell on a world that lived on heedless to the last day. Yahusha (Jesus) names *the days that were before the flood* — the ordinary eating and drinking *until the day that Noe entered into the ark* — as the very pattern of the world at his coming.'),
+    ('canon','genesis',7,12,'canon','matthew',24,39,'free',
+      E'*And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be* (Matthew 24:39). When *the rain was upon the earth forty days and forty nights* (Genesis 7:12), the condemned world *knew not until the flood came, and took them all away*. The Son of Adam makes the suddenness and totality of the flood the figure of his return — *so shall also the coming of the Son of Adam be*.'),
+    ('canon','genesis',7,12,'canon','luke',17,27,'free',
+      E'*They did eat, they drank, they married wives, they were given in marriage, until the day that Noe entered into the ark, and the flood came, and destroyed them all* (Luke 17:27). Luke''s witness joins the rain of Genesis 7:12 to the return of the Son of Adam: the world ate and drank *until the day that Noe entered into the ark, and the flood came, and destroyed them all* — the un-creation breaking upon a world that read no sign.'),
+
+    -- THREAD 3 (★): Noah entered, and Yahuah shut him in — the door sealed
+    ('canon','genesis',7,16,'canon','1-peter',3,20,'free',
+      E'*Which sometime were disobedient, when once the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water* (1 Peter 3:20). When *they went in unto Noah into the ark... and Yahuah (LORD) shut him in* (Genesis 7:16), the long-suffering closed and the deliverance sealed — *eight souls were saved by water*. The shut door is the boundary between the saved few and the drowning world, the ark of safety the apostle names as the figure of salvation.'),
+    ('canon','genesis',7,13,'canon','hebrews',11,7,'free',
+      E'*By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* (Hebrews 11:7). *In the selfsame day entered Noah, and Shem, and Ham, and Japheth... and Noah''s wife, and the three wives of his sons with them, into the ark* (Genesis 7:13) — the whole house entering is the ark *to the saving of his house*. Noah''s obedience in building and entering is faith made visible, the righteous remnant condemning the world by going in.'),
+    ('canon','genesis',7,16,'jubilees','jubilees',5,23,'extras',
+      E'*And he entered in the sixth (year) thereof, in the second month, on the new moon of the second month, till the sixteenth; and he entered, and all that we brought to him, into the ark, and Yahuah (God) closed it from without on the seventeenth evening* (Jubilees 5:23). Jubilees carries Genesis 7:16 — *Yahuah (LORD) shut him in* — with the same hand sealing the door from outside: *Yahuah (God) closed it from without on the seventeenth evening*. The deliverance is shut by Yahuah''s own act, the ark sealed against the rising waters.'),
+    ('canon','genesis',7,16,'jasher','jasher',6,15,'extras',
+      E'*And Noah and his household, and all the living creatures that were with him, came into the ark on account of the waters of the flood, and Yahuah (the Lord) shut him in* (Jasher 6:15). Jasher repeats Genesis 7:16 word for word — *and Yahuah (the Lord) shut him in* — Noah and his household and the creatures gathered inside, and the door closed by Yahuah. The same sealed deliverance: those within preserved, the door shut by the hand that judges.'),
+
+    -- THREAD 4 (★): all flesh died, and Noah only remained
+    ('canon','genesis',7,21,'jasher','jasher',6,26,'extras',
+      E'*And the rain was still descending upon the earth, and it descended forty days and forty nights, and the waters prevailed greatly upon the earth; and all flesh that was upon the earth or in the waters died, whether men, animals, beasts, creeping things or birds of the air, and there only remained Noah and those that were with him in the ark* (Jasher 6:26). Jasher carries Genesis 7:21 in full — *all flesh died that moved upon the earth* — and names the sole exception the Torah names: *there only remained Noah and those that were with him in the ark*. The judgement is universal; the preserved are only those the door shut in.'),
+    ('canon','genesis',7,23,'jubilees','jubilees',5,19,'extras',
+      E'*And as for all those who corrupted their ways and their thoughts before the flood, no man''s person was accepted save that of Noah alone; for his person was accepted in behalf of his sons, whom Elohim (God) saved from the waters of the flood on his account; for his heart was righteous in all his ways* (Jubilees 5:19). *Noah only remained alive, and they that were with him in the ark* (Genesis 7:23): Jubilees gives the reason — *no man''s person was accepted save that of Noah alone* — and the mechanism of the sons'' survival, *accepted in behalf of his sons*. The seed-line is preserved through the one righteous man while all corrupted flesh is swept away.'),
+    ('canon','genesis',7,23,'canon','ezekiel',14,14,'free',
+      E'*Though these three men, Noah, Daniel, and Job, were in it, they should deliver but their own souls by their righteousness, saith Adonai Yahuah (the Lord GOD)* (Ezekiel 14:14). *Noah only remained alive* (Genesis 7:23) is read by Ezekiel as the pattern of deliverance by personal righteousness: even *Noah, Daniel, and Job* could *deliver but their own souls by their righteousness*. The flood shows it — Noah''s righteousness saved Noah''s house, not the guilty world; each is answerable for his own standing before Yahuah.'),
+    ('canon','genesis',7,23,'canon','isaiah',54,9,'free',
+      E'*For this is as the waters of Noah unto me: for as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that I would not be wroth with thee, nor rebuke thee* (Isaiah 54:9). The universal judgement of Genesis 7:23 — *every living substance was destroyed... and Noah only remained alive* — becomes Yahuah''s standing oath of mercy: *the waters of Noah should no more go over the earth*. The flood that drowned all flesh is named in the covenant of peace, the sworn pledge that such wrath will not return upon his people.'),
+    ('canon','genesis',7,21,'canon','matthew',24,39,'free',
+      E'*And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be* (Matthew 24:39). *And all flesh died that moved upon the earth, both of fowl, and of cattle, and of beast... and every man* (Genesis 7:21): the flood *took them all away*. Yahusha (Jesus) makes that total taking the figure of his coming — the unready world swept off in a day, *so shall also the coming of the Son of Adam be*.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================== threads ==============================
+-- THREAD 1 (★): the clean and unclean by sevens — the distinction before Sinai
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-7-the-clean-and-unclean-by-sevens-the-distinction-before-sinai',
+       E'The clean and unclean by sevens — the distinction before Sinai',
+       E'Long before Sinai, before any tablet was cut, the clean and the unclean are already two kinds. *Of every clean beast thou shalt take to thee by sevens, the male and his female: and of beasts that are not clean by two, the male and his female* (Genesis 7:2), *to keep seed alive upon the face of all the earth* (Genesis 7:3). Genesis 7:8 says it again at the ark door — *Of clean beasts, and of beasts that are not clean, and of fowls, and of every thing that creepeth upon the earth*. Noah does not ask which beasts are clean; he already knows. This is creational knowledge, the difference written into the world. When the Torah later sets it in covenant law, it does not invent the categories — it names them: *Speak unto the children of Yashar''el (Israel), saying, These are the beasts which ye shall eat* (Leviticus 11:2); *Whatsoever parteth the hoof, and is clovenfooted, and cheweth the cud, among the beasts, that shall ye eat* (Leviticus 11:3); *Of their flesh shall ye not eat, and their carcase shall ye not touch; they are unclean to you* (Leviticus 11:8). And the purpose Leviticus states is the very distinction Noah was keeping: *This is the law of the beasts, and of the fowl... To make a difference between the unclean and the clean, and between the beast that may be eaten and the beast that may not be eaten* (Leviticus 11:46-47). Jasher remembers it as command, not custom: *from the clean animals, and clean fowls, he brought seven couples, as Elohim (God) had commanded him* (Jasher 6:9). The clean/unclean distinction is not a Mosaic novelty and not a temporary measure abolished later — it predates Moses, Noah already knew it, and the Torah merely wrote down what was true before it was written. The dietary law is named at Sinai, never invented there, and never repealed.',
+       sv.verse_id, ev.verse_id, 'extras', 20150
+  FROM _s301_ge07_lookup sv, _s301_ge07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=7 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★): the fountains of the deep and the windows of heaven — the un-creation
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-7-the-fountains-of-the-deep-and-the-windows-of-heaven',
+       E'The fountains of the deep and the windows of heaven — the un-creation',
+       E'On one day the world is un-made. *In the six hundredth year of Noah''s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened* (Genesis 7:11), *and the rain was upon the earth forty days and forty nights* (Genesis 7:12). This is the reversal of Genesis 1: the waters above and the waters below, divided on the second day, are let back in at once. The restored witnesses count the breach: *Yahuah (God) opened seven flood-gates of heaven, And the mouths of the fountains of the great deep, seven mouths in number... until the whole world was full of water* (Jubilees 5:23); Jasher repeats the Torah almost word for word — *all the fountains of the deep were broken up, and the windows of heaven were opened, and the rain was upon the earth forty days and forty nights* (Jasher 6:14). The prophet takes up the same language for the day of Yahuah: *the windows from on high are open, and the foundations of the earth do shake* (Isaiah 24:18). And the New Testament makes the flood the pledge of the final reckoning: *Whereby the world that then was, being overflowed with water, perished* (2 Peter 3:6); *as in the days that were before the flood they were eating and drinking, marrying and giving in marriage, until the day that Noe entered into the ark* (Matthew 24:38), *And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be* (Matthew 24:39); *the flood came, and destroyed them all* (Luke 17:27). The un-creation of Noah''s day is no closed event — it is the figure of the world un-made again, sudden and total, upon a generation that read no sign.',
+       sv.verse_id, ev.verse_id, 'extras', 20153
+  FROM _s301_ge07_lookup sv, _s301_ge07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=7 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★): Noah entered, and Yahuah shut him in
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-7-noah-entered-and-yahuah-shut-him-in',
+       E'Noah entered, and Yahuah shut him in',
+       E'The deliverance is sealed by Yahuah''s own hand. *In the selfsame day entered Noah, and Shem, and Ham, and Japheth, the sons of Noah, and Noah''s wife, and the three wives of his sons with them, into the ark* (Genesis 7:13), *And they that went in, went in male and female of all flesh, as Elohim (God) had commanded him: and Yahuah (LORD) shut him in* (Genesis 7:16). The door is not closed by Noah but by Yahuah — the same visible LORD who walked with the fathers seals the ark from without. The restored books keep that detail: *Yahuah (God) closed it from without on the seventeenth evening* (Jubilees 5:23); *Noah and his household, and all the living creatures that were with him, came into the ark... and Yahuah (the Lord) shut him in* (Jasher 6:15). The shut door is the boundary between the saved few and the drowning world. The apostles read the ark as the figure of salvation itself: *the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water* (1 Peter 3:20); *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* (Hebrews 11:7). The whole house entering, the door shut by Yahuah — this is the ark of safety, the few preserved inside while the long-suffering closes and the waters rise.',
+       sv.verse_id, ev.verse_id, 'extras', 20156
+  FROM _s301_ge07_lookup sv, _s301_ge07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=7 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★): all flesh died, and Noah only remained
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-7-all-flesh-died-and-noah-only-remained',
+       E'All flesh died, and Noah only remained',
+       E'The judgement is universal, the exception is one household. *And all flesh died that moved upon the earth, both of fowl, and of cattle, and of beast, and of every creeping thing that creepeth upon the earth, and every man* (Genesis 7:21); *All in whose nostrils was the breath of life, of all that was in the dry land, died* (Genesis 7:22); *and Noah only remained alive, and they that were with him in the ark* (Genesis 7:23). The restored witnesses tell it the same: *all flesh that was upon the earth or in the waters died... and there only remained Noah and those that were with him in the ark* (Jasher 6:26); and Jubilees gives the reason — *no man''s person was accepted save that of Noah alone; for his person was accepted in behalf of his sons, whom Elohim (God) saved from the waters of the flood on his account; for his heart was righteous in all his ways* (Jubilees 5:19). The seed-line passes through the one righteous man while all corrupted flesh is swept away. Ezekiel reads the flood as the pattern of deliverance by personal righteousness: *Though these three men, Noah, Daniel, and Job, were in it, they should deliver but their own souls by their righteousness, saith Adonai Yahuah (the Lord GOD)* (Ezekiel 14:14) — Noah''s righteousness saved Noah''s house, not the guilty world. And the same waters become Yahuah''s sworn mercy in the covenant of peace: *as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that I would not be wroth with thee* (Isaiah 54:9). The flood that drowned all flesh is also the oath that such wrath will not return upon his people — judgement universal, mercy sworn, the seed preserved through the one whom Yahuah shut into the ark.',
+       sv.verse_id, ev.verse_id, 'extras', 20159
+  FROM _s301_ge07_lookup sv, _s301_ge07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=7 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================== thread_members ==============================
+-- THREAD 1 members (★ clean/unclean before Sinai)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*These are the beasts which ye shall eat* (Leviticus 11:2) — the Torah names, not invents, the clean/unclean kinds Noah took by sevens and twos (Genesis 7:2).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-clean-and-unclean-by-sevens-the-distinction-before-sinai'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Whatsoever parteth the hoof... that shall ye eat* (Leviticus 11:3) — the marks of the clean beast Noah took by sevens (Genesis 7:2), the creational distinction spelled out.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-clean-and-unclean-by-sevens-the-distinction-before-sinai'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they are unclean to you* (Leviticus 11:8) — the *beasts that are not clean* Noah took only by two (Genesis 7:2); the category continuous, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-clean-and-unclean-by-sevens-the-distinction-before-sinai'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*This is the law of the beasts, and of the fowl* (Leviticus 11:46) — the four kinds Genesis 7:8 marks at the ark, gathered into one law of the beasts.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=8
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-clean-and-unclean-by-sevens-the-distinction-before-sinai'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*To make a difference between the unclean and the clean* (Leviticus 11:47) — the very purpose Noah was already keeping when he sorted clean from unclean at the ark (Genesis 7:8).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=8
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-clean-and-unclean-by-sevens-the-distinction-before-sinai'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*from the clean animals, and clean fowls, he brought seven couples, as Elohim (God) had commanded him* (Jasher 6:9) — the sevens of Genesis 7:2 grounded in command, an order already given.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-clean-and-unclean-by-sevens-the-distinction-before-sinai'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★ the un-creation)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*seven flood-gates of heaven, And the mouths of the fountains of the great deep, seven mouths in number* (Jubilees 5:23) — the breach of Genesis 7:11 counted out, the waters above and below let in.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=11
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-fountains-of-the-deep-and-the-windows-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*all the fountains of the deep were broken up, and the windows of heaven were opened* (Jasher 6:14) — Genesis 7:11 repeated almost verbatim, the double breach of deep and heaven.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=11
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=6 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-fountains-of-the-deep-and-the-windows-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the windows from on high are open, and the foundations of the earth do shake* (Isaiah 24:18) — the flood-language of Genesis 7:11 taken up for the day of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=11
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-fountains-of-the-deep-and-the-windows-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the world that then was, being overflowed with water, perished* (2 Peter 3:6) — the un-creation of Genesis 7:11 as the pledge of the coming judgement.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=11
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-fountains-of-the-deep-and-the-windows-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*eating and drinking, marrying and giving in marriage, until the day that Noe entered into the ark* (Matthew 24:38) — the heedless world of the forty days'' rain (Genesis 7:12) as the pattern of the last days.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=12
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-fountains-of-the-deep-and-the-windows-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be* (Matthew 24:39) — the suddenness of Genesis 7:12 made the figure of the return.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=12
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-fountains-of-the-deep-and-the-windows-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the flood came, and destroyed them all* (Luke 17:27) — the rain of Genesis 7:12 joined again to the coming of the Son of Adam.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=12
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=17 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-the-fountains-of-the-deep-and-the-windows-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★ the door shut)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the longsuffering of Elohim (God) waited in the days of Noah... eight souls were saved by water* (1 Peter 3:20) — the door Yahuah shut (Genesis 7:16) as the boundary of the saved few.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=16
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=3 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-noah-entered-and-yahuah-shut-him-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*By faith Noah... prepared an ark to the saving of his house* (Hebrews 11:7) — the whole house entering (Genesis 7:13) as faith made visible, condemning the world.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=13
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-noah-entered-and-yahuah-shut-him-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (God) closed it from without on the seventeenth evening* (Jubilees 5:23) — Genesis 7:16''s *Yahuah shut him in* sealed by his own hand from outside.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=16
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-noah-entered-and-yahuah-shut-him-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*and Yahuah (the Lord) shut him in* (Jasher 6:15) — Genesis 7:16 word for word, the household and creatures sealed inside the ark.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=16
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=6 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-noah-entered-and-yahuah-shut-him-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★ all flesh died)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*all flesh that was upon the earth or in the waters died... there only remained Noah and those that were with him in the ark* (Jasher 6:26) — Genesis 7:21 in full, the sole exception named.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=21
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=6 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-all-flesh-died-and-noah-only-remained'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*no man''s person was accepted save that of Noah alone... accepted in behalf of his sons* (Jubilees 5:19) — the reason *Noah only remained alive* (Genesis 7:23), the seed-line preserved.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=23
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-all-flesh-died-and-noah-only-remained'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Noah, Daniel, and Job... should deliver but their own souls by their righteousness* (Ezekiel 14:14) — the flood (Genesis 7:23) read as deliverance by personal righteousness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=23
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=14 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-all-flesh-died-and-noah-only-remained'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the waters of Noah should no more go over the earth* (Isaiah 54:9) — the flood of Genesis 7:23 named as Yahuah''s sworn covenant-mercy.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=23
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=54 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-all-flesh-died-and-noah-only-remained'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*knew not until the flood came, and took them all away* (Matthew 24:39) — *all flesh died... every man* (Genesis 7:21), the total taking made the figure of the coming.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=7 AND sv.verse_number=21
+  JOIN _s301_ge07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-7-all-flesh-died-and-noah-only-remained'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_8.sql (Genesis 8) -----
+-- Chapter: Genesis 8 (Elohim remembered Noah; the waters assuaged; the ark rested on Ararat; the raven and the dove; the olive leaf; Noah's altar and the sweet savour; seedtime and harvest shall not cease)
+-- Tag: ge08   Temp view: _s301_ge08_lookup
+-- Sort band: base 20175, step 3 -> threads at 20175, 20178, 20181, 20184 (4 threads)
+-- Source of EVERY row: 'canon','genesis',8,v
+--
+-- Genesis 8 coverage:
+--   ★ v.1-3 (Elohim REMEMBERED Noah; made a wind/ruach to pass over the earth; the waters asswaged; the fountains/windows stopped)
+--        NT:     1 Peter 3:20 (longsuffering of Elohim waited in the days of Noah... eight souls saved by water);
+--                1 Peter 3:21 (the like figure whereunto even baptism doth also now save us, by the resurrection)
+--        Extras: Jasher 6:32 (Yahuah remembered him); Jasher 6:33 (a wind passed over the earth, the waters were still, the ark rested)
+--        Tanakh: Genesis 1:2 (the Spirit/Ruach of Elohim moved upon the face of the waters — the new-creation-through-water echo)
+--   v.4-5 (the ark rested in the seventh month on the seventeenth day, on the mountains of Ararat; the tops of the mountains seen)
+--        NT:     none warranted (the resting carried in the remembered-Noah thread)
+--        Extras: none warranted as MEMBER (Jubilees 6:27 / Jasher 6:35 are near-verbatim retellings, woven by reference)
+--        Tanakh: none warranted
+--   v.6-12 (Noah opened the window; the raven to and fro; the dove sent thrice; the olive leaf pluckt off; the dove returned no more)
+--        NT:     Matthew 3:16 (he saw the Spirit of Elohim descending like a dove, and lighting upon him — the new creation begun)
+--        Extras: none warranted distinct (Jasher's flood-narrative does not carry the dove episode cleanly)
+--        Tanakh: none warranted as MEMBER (the dove/olive-leaf sign carried FORWARD to the Spirit-dove at the immersion)
+--   v.13-19 (the waters dried; Noah removed the covering; Elohim spake "Go forth"; every living thing went forth after their kinds, breed/be fruitful)
+--        NT:     none warranted (go-forth/be-fruitful echoes Genesis 1:28, woven by reference in summary)
+--        Extras: none warranted as MEMBER (Jasher 6:40-42 retelling of the going-forth and the blessing, woven by reference)
+--        Tanakh: none warranted
+--   ★ v.20-21 (Noah builded an altar; took of every CLEAN beast/fowl; offered burnt offerings; Yahuah smelled a SWEET SAVOUR; I will not again curse the ground)
+--        NT:     Ephesians 5:2 (Messiah... hath given himself for us an offering and a sacrifice to Elohim for a sweetsmelling savour);
+--                Hebrews 13:15 (by him let us offer the sacrifice of praise to Elohim continually)
+--        Extras: Jubilees 6:1 (on the new moon of the third month he went forth, built an altar); Jubilees 6:3 (placed a burnt
+--                sacrifice... caused a goodly savour to arise, acceptable before Yahuah); Jasher 6:9 (of the clean animals/fowls
+--                he brought seven couples, as Elohim had commanded — the clean/unclean distinction pre-Sinai)
+--        Tanakh: none warranted as MEMBER (the clean-beast/sweet-savour type carried FORWARD to Messiah's offering)
+--   ★ v.22 (While the earth remaineth, seedtime and harvest, cold and heat, summer and winter, day and night shall not cease)
+--        NT:     none warranted (the covenant-order of the seasons carried OUT to Jubilees + LATERALLY to Jeremiah/Isaiah)
+--        Extras: Jubilees 6:4 (He made a covenant... seed-time and harvest should never cease; cold and heat, summer and winter,
+--                day and night should not change their order); Jubilees 6:17 (celebrate the feast of weeks... to renew the covenant
+--                every year — the moedim rooted in the constant order)
+--        Tanakh: Jeremiah 33:20 (my covenant of the day and my covenant of the night); Jeremiah 33:25 (if my covenant be not with
+--                day and night, the ordinances of heaven and earth); Isaiah 54:9 (as the waters of Noah... I have sworn);
+--                Genesis 9:11 (I will establish my covenant... neither shall there any more be a flood to destroy the earth)
+--
+-- Threads (slug -> target libraries):
+--   genesis-8-elohim-remembered-noah-the-wind-over-the-waters          [NT+Extras+Tanakh]  tier extras  ★
+--   genesis-8-the-dove-and-the-olive-leaf-the-spirit-descending        [NT]                tier free
+--   genesis-8-noahs-altar-the-clean-beasts-and-the-sweet-savour        [NT+Extras]         tier extras  ★
+--   genesis-8-seedtime-and-harvest-shall-not-cease                     [Extras+Tanakh]     tier extras  ★
+--
+-- Framework-load-bearing notes:
+--   ★ v.1 "Elohim remembered Noah... made a wind to pass over the earth": framed as the TURNING of the flood and as the
+--     NEW-CREATION-THROUGH-WATER motif. The ruach (wind) moving over the waters deliberately echoes Genesis 1:2, where *the
+--     Spirit of Elohim (God) moved upon the face of the waters* over the same deep — the flood-world re-emerging as a creation
+--     re-made through judgement-water. 1 Peter 3:20-21 reads the very water that drowned the world as the figure of the water
+--     that now saves by the resurrection. Jasher 6:32-33 carries the same beat verbatim: *Yahuah remembered him... a wind passed
+--     over the earth, and the waters were still and the ark rested.* "Remembered" is covenant-faithfulness, not recollection.
+--   ★ v.20-21 Noah's altar / clean beasts / sweet savour: the FIRST altar after the flood. The clean/unclean distinction is
+--     ALREADY in force (8:20, "every clean beast"; Jasher 6:9, "seven couples" of the clean) — pre-Sinai, against the
+--     Christianized "the food/clean laws were a late Jewish invention" default. The *sweet savour* is woven FORWARD to Ephesians
+--     5:2, *Messiah... hath given himself for us an offering and a sacrifice to Elohim (God) for a sweetsmelling savour* — Noah's
+--     accepted offering is the atonement/acceptance foreshadow, fulfilled in the Formed Son's self-offering. Jubilees 6:1-3
+--     unfolds the altar and the goodly savour acceptable before Yahuah; Hebrews 13:15 carries the savour forward into the
+--     assembly's sacrifice of praise.
+--   ★ v.22 "seedtime and harvest... shall not cease": framed as the COVENANT-ORDER of the seasons/appointed times — the
+--     faithfulness of Yahuah to the created order He set in Genesis 1:14. The moedim (Leviticus 23) rest on this constancy:
+--     Jubilees 6:4 makes the seedtime/harvest promise a COVENANT and Jubilees 6:17 roots the feast of weeks in renewing it;
+--     Jeremiah 33:20,25 calls day and night themselves a covenant, the ordinances of heaven — as unbreakable as the throne of
+--     David. Isaiah 54:9 swears by "the waters of Noah" that the wrath is past. The order of the seasons is not mere nature; it
+--     is the standing pledge the calendar of Yahuah is built upon. (Christianized "seasons = generic providence" default
+--     overridden — this is covenant constancy, the ground of the appointed times.)
+--   Christology: v.1 the wind/ruach over the waters and v.21 the accepted offering are framed as the work of the covenant
+--     Yahuah and the Formed Son's foreshadowed sacrifice; NO Trinitarian co-equal-persons grammar; the Genesis-1:2 Ruach echo
+--     is the same Spirit of Elohim over the same waters, not a third co-equal person.
+--   Jubilees/Jasher double-write trap honored: every VALUES row writes 'jubilees','jubilees',... and 'jasher','jasher',...
+--     (edition AND book slug both literal) to keep 10-column arity. Jubilees 6:7 and several vv. are absent from this parse
+--     (the parse jumps 6->8, skips 6:12/18/23/28/33); only clean present verses (6:1,6:3,6:4,6:17) are quoted as members.
+
+CREATE TEMP VIEW _s301_ge08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================== cross_references ==============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Elohim remembered Noah — the wind/ruach over the waters, new creation through water
+    ('canon','genesis',8,1,'canon','genesis',1,2,'free',
+      E'*And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of Elohim (God) moved upon the face of the waters* (Genesis 1:2). When *Elohim (God) made a wind to pass over the earth, and the waters asswaged* (Genesis 8:1), the language of the first creation returns: the same *waters*, the same *deep*, and the breath/Spirit of Elohim moving over them. The flood-world is a creation re-made through judgement-water — the deep covered over and then drawn back, the dry land appearing again, as in the beginning.'),
+    ('canon','genesis',8,1,'jasher','jasher',6,32,'extras',
+      E'*And Yahuah (the Lord) hearkened to the voice of Noah, and Yahuah (the Lord) remembered him* (Jasher 6:32). Jasher carries the very turning of Genesis 8:1 — *And Elohim (God) remembered Noah* — and names it as answered prayer: Noah cried from the tossed ark, and *Yahuah... remembered him.* The "remembering" is covenant-faithfulness acting, not mere recollection; the deliverance begins the instant Yahuah turns toward the one He has kept.'),
+    ('canon','genesis',8,1,'jasher','jasher',6,33,'extras',
+      E'*And a wind passed over the earth, and the waters were still and the ark rested* (Jasher 6:33). Almost verbatim with the Torah — *Elohim (God) made a wind to pass over the earth, and the waters asswaged* (Genesis 8:1) — Jasher binds the wind, the stilling of the waters, and the resting of the ark into one moment. The ruach passes over the deep and the chaos subsides, the same Spirit-over-the-waters that ordered the first creation now quieting the flood.'),
+    ('canon','genesis',8,1,'canon','1-peter',3,20,'free',
+      E'*Which sometime were disobedient, when once the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water* (1 Peter 3:20). The waters that *asswaged* (Genesis 8:1) had borne the *eight souls* through: Kepha reads the flood not only as judgement but as the means by which the remnant was *saved by water* — the deep that drowned the old world carried the ark of the new through.'),
+    ('canon','genesis',8,3,'canon','1-peter',3,21,'free',
+      E'*The like figure whereunto even baptism doth also now save us (not the putting away of the filth of the flesh, but the answer of a good conscience toward Elohim (God),) by the resurrection of Yahusha HaMashiach (Jesus Christ)* (1 Peter 3:21). As *the waters returned from off the earth continually* (Genesis 8:3) and the dry land rose, the world passed through water into new life. Kepha names this the figure of the salvation now given — the new creation through water, fulfilled *by the resurrection of Yahusha HaMashiach (Jesus Christ).*'),
+
+    -- THREAD 2: the dove and the olive leaf — the Spirit descending like a dove
+    ('canon','genesis',8,11,'canon','matthew',3,16,'free',
+      E'*And Yahusha (Jesus), when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of Elohim (God) descending like a dove, and lighting upon him* (Matthew 3:16). *And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf pluckt off: so Noah knew that the waters were abated from off the earth* (Genesis 8:11). The dove returning over the receding waters with the olive leaf — the sign of peace and renewed earth — is answered when, over the waters of the immersion, *the Spirit of Elohim (God) descending like a dove* lights on the Messiah: the new creation begun, the deep crossed, peace declared from heaven.'),
+
+    -- THREAD 3 (★): Noah's altar — the clean beasts and the sweet savour
+    ('canon','genesis',8,21,'canon','ephesians',5,2,'free',
+      E'*And walk in love, as Messiah (Christ) also hath loved us, and hath given himself for us an offering and a sacrifice to Elohim (God) for a sweetsmelling savour* (Ephesians 5:2). *And Yahuah (LORD) smelled a sweet savour* (Genesis 8:21) at Noah''s burnt offering, and stayed His hand from the curse. The accepted savour of the first altar after the flood is the foreshadow Sha''ul names fulfilled: the Formed Son *hath given himself for us an offering and a sacrifice to Elohim (God) for a sweetsmelling savour* — the offering that finally and fully turns away the wrath.'),
+    ('canon','genesis',8,20,'canon','hebrews',13,15,'free',
+      E'*By him therefore let us offer the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15). *And Noah builded an altar unto Yahuah (LORD)... and offered burnt offerings on the altar* (Genesis 8:20) — the first act of the saved remnant is worship at an altar. That altar-pattern is carried forward into the assembly: *by him* the burnt offering becomes *the sacrifice of praise to Elohim (God) continually*, the same upward-rising savour now borne on the lips of the redeemed.'),
+    ('canon','genesis',8,20,'jubilees','jubilees',6,1,'extras',
+      E'*And on the new moon of the third month he went forth from the ark, and built an altar on that mountain* (Jubilees 6:1). Jubilees fixes the date of Genesis 8:20 — *And Noah builded an altar unto Yahuah (LORD)* — to the new moon of the third month, the very season of Shavuot. The first altar of the cleansed earth is built not at random but on an appointed time, the worship of the remnant already tied to the calendar of Yahuah.'),
+    ('canon','genesis',8,21,'jubilees','jubilees',6,3,'extras',
+      E'*And he placed the fat thereof on the altar... and placed a burnt sacrifice on the altar, and poured thereon an offering mingled with oil, and sprinkled wine and strewed frankincense over everything, and caused a goodly savour to arise, acceptable before Yahuah (God)* (Jubilees 6:3). The Torah''s *Yahuah (LORD) smelled a sweet savour* (Genesis 8:21) is unfolded here in full liturgy: the fat, the oil, the wine, the frankincense, and the *goodly savour... acceptable before Yahuah (God).* The acceptance of the offering is the ground on which the no-more-curse oath is spoken.'),
+    ('canon','genesis',8,20,'jasher','jasher',6,9,'extras',
+      E'*Two and two came to Noah into the ark, but from the clean animals, and clean fowls, he brought seven couples, as Elohim (God) had commanded him* (Jasher 6:9). When Noah *took of every clean beast, and of every clean fowl, and offered burnt offerings* (Genesis 8:20), he could do so because the clean had been gathered by sevens — and Jasher names it *as Elohim (God) had commanded him.* The clean/unclean distinction is already in force, pre-Sinai, written into the gathering of the ark and the altar of the new earth.'),
+
+    -- THREAD 4 (★): While the earth remaineth, seedtime and harvest shall not cease
+    ('canon','genesis',8,22,'jubilees','jubilees',6,4,'extras',
+      E'*And Yahuah (God) smelt the goodly savour, and He made a covenant with him that there should not be any more a flood to destroy the earth; that all the days of the earth seed-time and harvest should never cease; cold and heat, and summer and winter, and day and night should not change their order, nor cease for ever* (Jubilees 6:4). The Torah''s promise — *While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease* (Genesis 8:22) — is here declared to be a COVENANT. The constancy of the seasons is not mere nature; it is a sworn order of Yahuah, the standing pledge beneath all the appointed times.'),
+    ('canon','genesis',8,22,'jubilees','jubilees',6,17,'extras',
+      E'*For this reason it is ordained and written on the heavenly tables, that they should celebrate the feast of weeks in this month once a year, to renew the covenant every year* (Jubilees 6:17). The unbroken order of *seedtime and harvest... summer and winter* (Genesis 8:22) is the ground on which the moed stands: the feast of weeks (Shavuot) is set *to renew the covenant every year*, the appointed time growing directly out of the covenant-constancy of the seasons sworn at Noah''s altar.'),
+    ('canon','genesis',8,22,'canon','jeremiah',33,20,'free',
+      E'*Thus saith Yahuah (LORD); If ye can break my covenant of the day, and my covenant of the night, and that there should not be day and night in their season* (Jeremiah 33:20). Genesis 8:22 promises that *day and night shall not cease*; Jeremiah calls that very order *my covenant of the day, and my covenant of the night.* The rhythm of *day and night in their season* is a covenant as binding as any oath — the faithfulness of Yahuah to the created order made the surety of His faithfulness to His people.'),
+    ('canon','genesis',8,22,'canon','jeremiah',33,25,'free',
+      E'*Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth* (Jeremiah 33:25). The pledge of Genesis 8:22 — *summer and winter, and day and night shall not cease* — Jeremiah names *the ordinances of heaven and earth*, as unbreakable as the throne promised to David. The constancy of the seasons is the measure of covenant-certainty itself: as surely as the seasons keep their order, so surely Yahuah keeps His word.'),
+    ('canon','genesis',8,22,'canon','isaiah',54,9,'free',
+      E'*For this is as the waters of Noah unto me: for as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that I would not be wroth with thee, nor rebuke thee* (Isaiah 54:9). The sworn constancy behind *While the earth remaineth... shall not cease* (Genesis 8:22) is taken up by the prophet as the pattern of Yahuah''s mercy: *as I have sworn that the waters of Noah should no more go over the earth*, so He swears everlasting kindness to His people — the oath of the seasons made the figure of the oath of restoration.'),
+    ('canon','genesis',8,21,'canon','genesis',9,11,'free',
+      E'*And I will establish my covenant with you; neither shall all flesh be cut off any more by the waters of a flood; neither shall there any more be a flood to destroy the earth* (Genesis 9:11). The resolve spoken in Yahuah''s heart at the altar — *I will not again curse the ground any more for man''s sake... neither will I again smite any more every thing living, as I have done* (Genesis 8:21) — is then sealed openly as covenant: *neither shall there any more be a flood to destroy the earth.* The inward oath of acceptance becomes the standing covenant with all flesh.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================== threads ==============================
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-8-elohim-remembered-noah-the-wind-over-the-waters',
+       E'Elohim remembered Noah — the wind over the waters',
+       E'The flood turns at a single word: *And Elohim (God) remembered Noah, and every living thing, and all the cattle that was with him in the ark: and Elohim (God) made a wind to pass over the earth, and the waters asswaged* (Genesis 8:1); *And the waters returned from off the earth continually* (Genesis 8:3). The "remembering" is not recollection but covenant-faithfulness acting — Jasher hears it as answered prayer: *Yahuah (the Lord) hearkened to the voice of Noah, and Yahuah (the Lord) remembered him* (Jasher 6:32), and then, almost in the Torah''s own words, *a wind passed over the earth, and the waters were still and the ark rested* (Jasher 6:33). And the wind over the waters is no new thing: it is the breath of the first creation returning. *And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of Elohim (God) moved upon the face of the waters* (Genesis 1:2) — the same deep, the same waters, the same Spirit-wind, now drawing back the flood so the dry land may rise again. The flood-world is a creation re-made through judgement-water. Kepha names what that water was for: *the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water* (1 Peter 3:20), *the like figure whereunto even baptism doth also now save us... by the resurrection of Yahusha HaMashiach (Jesus Christ)* (1 Peter 3:21). The deep that drowned the old world bore the ark of the new through — the new creation through water, remembered and brought up by the faithfulness of Yahuah.',
+       sv.verse_id, ev.verse_id, 'extras', 20175
+  FROM _s301_ge08_lookup sv, _s301_ge08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=8 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-8-the-dove-and-the-olive-leaf-the-spirit-descending',
+       E'The dove and the olive leaf — the Spirit descending',
+       E'Noah sends out the birds to read the waters. First *a raven, which went forth to and fro, until the waters were dried up from off the earth* (Genesis 8:7); then the dove, who *found no rest for the sole of her foot* (Genesis 8:9) and returned. Seven days later he sent her again: *And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf pluckt off: so Noah knew that the waters were abated from off the earth* (Genesis 8:11). The dove returning over the receding deep with the olive leaf — the sign of peace and a renewed, fruit-bearing earth — is the quiet emblem of the new creation. And it is answered at the Jordan, over another water, at the beginning of another new creation: *And Yahusha (Jesus), when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of Elohim (God) descending like a dove, and lighting upon him* (Matthew 3:16). The dove that found rest on the olive over the abated flood becomes the Spirit who lights upon the Messiah as he rises from the water — peace declared from the opened heavens, the new creation begun.',
+       sv.verse_id, ev.verse_id, 'free', 20178
+  FROM _s301_ge08_lookup sv, _s301_ge08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=8 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-8-noahs-altar-the-clean-beasts-and-the-sweet-savour',
+       E'Noah''s altar — the clean beasts and the sweet savour',
+       E'The first act of the saved remnant on the cleansed earth is worship: *And Noah builded an altar unto Yahuah (LORD); and took of every clean beast, and of every clean fowl, and offered burnt offerings on the altar. And Yahuah (LORD) smelled a sweet savour* (Genesis 8:20-21). Two things stand out. First, the clean/unclean distinction is already in force, long before Sinai — Jasher names it plainly: *from the clean animals, and clean fowls, he brought seven couples, as Elohim (God) had commanded him* (Jasher 6:9), the clean gathered by sevens for this very altar. Second, the offering is ACCEPTED — the *sweet savour* turns Yahuah''s heart from the curse. Jubilees fixes the altar to an appointed time and unfolds its liturgy: *on the new moon of the third month he went forth from the ark, and built an altar on that mountain* (Jubilees 6:1); he *placed a burnt sacrifice on the altar... and caused a goodly savour to arise, acceptable before Yahuah (God)* (Jubilees 6:3). And the accepted savour of the first post-flood altar is the foreshadow the apostle names fulfilled: *Messiah (Christ) also hath loved us, and hath given himself for us an offering and a sacrifice to Elohim (God) for a sweetsmelling savour* (Ephesians 5:2) — the offering that finally and fully turns away the wrath. The altar-pattern continues in the assembly: *by him therefore let us offer the sacrifice of praise to Elohim (God) continually* (Hebrews 13:15). Noah''s burnt offering is atonement and acceptance in figure; the Formed Son is the savour in full.',
+       sv.verse_id, ev.verse_id, 'extras', 20181
+  FROM _s301_ge08_lookup sv, _s301_ge08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=8 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-8-seedtime-and-harvest-shall-not-cease',
+       E'While the earth remaineth — seedtime and harvest shall not cease',
+       E'Out of the accepted offering comes a promise about time itself: *While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease* (Genesis 8:22). This is not a comment on weather; it is the covenant-order of the seasons, the faithfulness of Yahuah to the created order He set when He made the lights *for signs, and for seasons.* Jubilees declares it outright a covenant: *He made a covenant with him... that all the days of the earth seed-time and harvest should never cease; cold and heat, and summer and winter, and day and night should not change their order, nor cease for ever* (Jubilees 6:4) — and roots the appointed times in it, *that they should celebrate the feast of weeks in this month once a year, to renew the covenant every year* (Jubilees 6:17). The prophets reach back to this very constancy as the measure of Yahuah''s reliability: *If ye can break my covenant of the day, and my covenant of the night, and that there should not be day and night in their season* (Jeremiah 33:20), *if my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth* (Jeremiah 33:25) — only then could His covenant with David be broken. Isaiah swears by it: *as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that I would not be wroth with thee* (Isaiah 54:9). And what was resolved in Yahuah''s heart at the altar — *I will not again curse the ground any more for man''s sake* (Genesis 8:21) — is sealed openly: *neither shall there any more be a flood to destroy the earth* (Genesis 9:11). The unbroken seasons are the standing pledge the whole calendar of the moedim, and every promise of restoration, is built upon.',
+       sv.verse_id, ev.verse_id, 'extras', 20184
+  FROM _s301_ge08_lookup sv, _s301_ge08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=8 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================== thread_members ==============================
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the Spirit of Elohim (God) moved upon the face of the waters* (Genesis 1:2) — the wind/ruach over the waters of Genesis 8:1 is the breath of the first creation returning over the same deep.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=1
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-elohim-remembered-noah-the-wind-over-the-waters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (the Lord)... remembered him* (Jasher 6:32) — Genesis 8:1''s remembering read as answered prayer, covenant-faithfulness acting.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=1
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=6 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-elohim-remembered-noah-the-wind-over-the-waters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*a wind passed over the earth, and the waters were still and the ark rested* (Jasher 6:33) — almost verbatim with Genesis 8:1, the ruach quieting the deep.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=1
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=6 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-elohim-remembered-noah-the-wind-over-the-waters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*eight souls were saved by water* (1 Peter 3:20) — the asswaging waters of Genesis 8:1 bore the remnant through; the longsuffering of Elohim fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=1
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=3 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-elohim-remembered-noah-the-wind-over-the-waters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the like figure whereunto even baptism doth also now save us... by the resurrection* (1 Peter 3:21) — the waters returning off the earth (Genesis 8:3) as the figure of the new creation through water.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=3
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=3 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-elohim-remembered-noah-the-wind-over-the-waters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he saw the Spirit of Elohim (God) descending like a dove, and lighting upon him* (Matthew 3:16) — the dove with the olive leaf over the abated flood (Genesis 8:11) answered by the Spirit-dove over the immersion, the new creation begun.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-the-dove-and-the-olive-leaf-the-spirit-descending'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*from the clean animals, and clean fowls, he brought seven couples, as Elohim (God) had commanded him* (Jasher 6:9) — the clean/unclean distinction already in force pre-Sinai, the clean gathered for the altar of Genesis 8:20.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=20
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-noahs-altar-the-clean-beasts-and-the-sweet-savour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*on the new moon of the third month he went forth from the ark, and built an altar* (Jubilees 6:1) — the first altar (Genesis 8:20) fixed to an appointed time, the season of Shavuot.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=20
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-noahs-altar-the-clean-beasts-and-the-sweet-savour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*caused a goodly savour to arise, acceptable before Yahuah (God)* (Jubilees 6:3) — the *sweet savour* of Genesis 8:21 unfolded in full liturgy, the offering accepted.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=21
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-noahs-altar-the-clean-beasts-and-the-sweet-savour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*hath given himself for us an offering and a sacrifice to Elohim (God) for a sweetsmelling savour* (Ephesians 5:2) — Noah''s accepted savour (Genesis 8:21) the foreshadow of the Formed Son''s self-offering that turns away the wrath.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=21
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-noahs-altar-the-clean-beasts-and-the-sweet-savour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*by him... let us offer the sacrifice of praise to Elohim (God) continually* (Hebrews 13:15) — Noah''s altar (Genesis 8:20) the pattern carried into the assembly''s continual upward-rising savour.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=20
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-noahs-altar-the-clean-beasts-and-the-sweet-savour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He made a covenant with him... seed-time and harvest should never cease; cold and heat, and summer and winter... should not change their order* (Jubilees 6:4) — Genesis 8:22''s promise declared a COVENANT, the constancy of the seasons a sworn order.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=22
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-seedtime-and-harvest-shall-not-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*celebrate the feast of weeks in this month once a year, to renew the covenant every year* (Jubilees 6:17) — the moed (Shavuot) rooted in the season-constancy of Genesis 8:22.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=22
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-seedtime-and-harvest-shall-not-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*my covenant of the day, and my covenant of the night... day and night in their season* (Jeremiah 33:20) — the day/night order of Genesis 8:22 named a covenant as binding as the throne of David.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=22
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=33 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-seedtime-and-harvest-shall-not-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*if my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth* (Jeremiah 33:25) — Genesis 8:22''s seasons named *the ordinances of heaven*, the measure of covenant-certainty.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=22
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=33 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-seedtime-and-harvest-shall-not-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*as I have sworn that the waters of Noah should no more go over the earth; so have I sworn... everlasting kindness* (Isaiah 54:9) — the oath of the seasons (Genesis 8:22) the figure of the oath of restoration.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=22
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=54 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-seedtime-and-harvest-shall-not-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*neither shall there any more be a flood to destroy the earth* (Genesis 9:11) — the inward resolve at the altar (Genesis 8:21) sealed openly as the covenant with all flesh.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=8 AND sv.verse_number=21
+  JOIN _s301_ge08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-8-seedtime-and-harvest-shall-not-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_9.sql (Genesis 9) -----
+-- Chapter: Genesis 9 (The re-commissioning of Noah, the blood prohibition, the murder ban in the image of Elohim, the everlasting covenant of the bow, the blessing of Shem and the enlarging of Japheth)
+-- Tag: ge09   Temp view: _s301_ge09_lookup
+-- Sort band: base 20200, step 3 -> threads at 20200, 20203, 20206, 20209 (4 threads)
+-- Source of EVERY row: 'canon','genesis',9,v
+--
+-- Genesis 9 coverage:
+--   v.1-3,7 (Be fruitful and multiply; the fear of you on every beast; every moving thing for meat)
+--        NT:     none warranted (the re-commissioning is an OT/Tanakh-and-extras weave back to Gen 1:28)
+--        Extras: Jubilees 6:5 (increase you and multiply... the fear of you and the dread of you I shall inspire);
+--                Jubilees 6:6 (I have given to you all beasts... as the green herbs, I have given you all things to eat)
+--        Tanakh: Genesis 1:28 (Be fruitful, and multiply, and replenish the earth, and subdue it; have dominion);
+--                Genesis 1:27 (held for the image-of-Elohim thread, v.6)
+--   ★ v.4-6 (the blood prohibition — flesh with the life thereof; blood for blood; the image of Elohim grounds the murder ban)
+--        NT:     Acts 15:20 (that they abstain from... blood); Acts 15:29 (that ye abstain from... blood) — the
+--                Jerusalem council keeps the Noahic blood-term for the gathered
+--        Extras: Jubilees 6:8 (Whoso sheds man's blood by man shall his blood be shed; for in the image of Elohim
+--                made He man); Jubilees 6:10 (Noah and his sons swore that they would not eat any blood)
+--        Tanakh: Leviticus 17:11 (the life of the flesh is in the blood; given upon the altar to make atonement);
+--                Leviticus 17:14 (the blood of it is for the life thereof; ye shall eat the blood of no manner of flesh);
+--                Genesis 1:27 (in the image of Elohim created he him) grounding 9:6
+--   ★★ v.8-17 (the everlasting covenant with Noah and ALL FLESH; I do set my bow in the cloud; the waters no more a flood)
+--        NT:     Revelation 4:3 (a rainbow round about the throne); Revelation 10:1 (a rainbow was upon his head)
+--        Extras: Jubilees 6:15 (He gave to Noah and his sons a sign that there should not again be a flood);
+--                Jubilees 6:16 (He set His bow in the cloud for a sign of the eternal covenant)
+--        Tanakh: Isaiah 54:9 (as the waters of Noah... so have I sworn that I would not be wroth with thee);
+--                Isaiah 54:10 (my kindness shall not depart from thee, neither shall the covenant of my peace be removed)
+--   v.18-19 (the sons of Noah — Shem, Ham, Japheth — of them the whole earth overspread)
+--        NT:     none warranted (the table-of-nations seed-spread carried by Jasher's genealogy)
+--        Extras: Jasher 7:1 (these are the names of the sons of Noah... children born after the flood)
+--        Tanakh: none warranted distinct (Genesis 10 develops the table of nations)
+--   v.20-27 (Noah's vineyard and drunkenness; Ham; the blessing of Shem and Japheth; the curse on Canaan)
+--        NT:     none warranted (CAREFUL: no race-curse reading; conduct/covenant-line only)
+--        Extras: Jubilees 7:10 (Cursed be Canaan; an enslaved servant shall he be to his brethren);
+--                Jubilees 7:11 (Blessed be Yahuah Elohim of Shem... Elohim shall enlarge Japheth, and shall dwell
+--                in the dwelling of Shem)
+--        Tanakh: none warranted distinct (the seed-line to Abraham runs through Shem — Gen 11 develops it)
+--   v.28-29 (Noah lived after the flood three hundred and fifty years; all his days nine hundred and fifty years)
+--        NT:     none warranted
+--        Extras: none warranted (the post-flood lifespan is a genealogical close, no framework weight added)
+--        Tanakh: none warranted (the Genesis-5/11 longevity pattern; no distinct add)
+--
+-- Threads (slug -> target libraries):
+--   genesis-9-be-fruitful-and-the-fear-of-you-upon-every-beast            [Tanakh+Extras]  tier extras
+--   genesis-9-the-life-is-in-the-blood-and-the-image-of-elohim            [Tanakh+NT+Extras]  tier extras  ★
+--   genesis-9-the-everlasting-covenant-of-the-bow-in-the-cloud            [Tanakh+NT+Extras]  tier extras  ★★ CENTERPIECE
+--   genesis-9-blessed-be-the-elohim-of-shem-and-the-enlarging-of-japheth  [Extras]  tier extras
+--
+-- Framework-load-bearing notes:
+--   v.1-3,7 RE-COMMISSIONING: framed as Genesis 1:28 spoken again over the new world — the SAME blessing
+--     (be fruitful, multiply, replenish) and the SAME dominion, now carried through the flood by the preserved
+--     seed-line. The fear/dread on the beasts is the dominion renewed after the world's reset, not a new mandate.
+--   ★ v.4-6 THE BLOOD: this is load-bearing law. *flesh with the life thereof, which is the blood thereof, shall
+--     ye not eat* (9:4) is the Noahic blood-prohibition — the life is in the blood. Woven LATERALLY to Leviticus
+--     17:11 (*the life of the flesh is in the blood; and I have given it to you upon the altar to make an
+--     atonement for your souls*) and 17:14 (*ye shall eat the blood of no manner of flesh*): the blood is
+--     reserved BECAUSE it carries the life and is given for atonement. Woven FORWARD to Acts 15:20,29 — the
+--     Jerusalem council, deciding what stands for the gathered from the nations, KEEPS the blood-term: *that
+--     they abstain from... blood*. The Noahic blood-law still stands; it was never abolished. Held against the
+--     1 John 2:3-4 filter — a reading that makes the blood-command irrelevant is the false reading. v.6 grounds
+--     the MURDER ban in the image of Elohim (Genesis 1:27): the sanctity of human life rests on the image, not
+--     on sentiment — *for in the image of Elohim (God) made he man*.
+--   ★★ v.8-17 THE BOW: the everlasting covenant with Noah AND ALL FLESH — universal, unconditional, sworn by
+--     Yahuah and remembered by him (the bow is for HIM to look upon, v.16). The covenant-faithfulness of Yahuah:
+--     Isaiah 54:9-10 makes "the waters of Noah" the very oath-pattern of his unbreakable kindness to scattered
+--     Yashar'el — *as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that
+--     I would not be wroth with thee... my kindness shall not depart from thee, neither shall the covenant of my
+--     peace be removed*. The Noah-covenant is the guarantee-figure of the restoration covenant. The rainbow
+--     reappears round the throne (Revelation 4:3) and on the head of the mighty cloud-clothed angel (Revelation
+--     10:1) — the bow of the flood-covenant standing at the consummation, the sign of mercy held over judgement.
+--   v.20-27 SHEM / JAPHETH / CANAAN — CAREFUL FRAMING (read this): this is NOT a race-curse, and the thread
+--     refuses any such reading. The blessing/covenant line runs through SHEM — *Blessed be Yahuah Elohim (the
+--     LORD God) of Shem* (9:26) — the seed-line that carries to Abraham. Japheth's enlargement is the NATIONS
+--     coming to *dwell in the tents of Shem* (9:27) — a foreshadow of the nations gathered into the covenant of
+--     Shem (the two-house ingathering, never a replacement). The curse falls on CANAAN (Ham's line) for the
+--     CONDUCT (the dishonouring of the father), framed as covenant-line/conduct, NEVER ethnic condemnation; the
+--     victims-not-enemies posture is held. No race-curse reading is imported, and the thread says so plainly.
+--     Jubilees retells it the same (curse on Canaan, blessing on Shem, Japheth enlarged); Jasher's sons-of-Noah
+--     genealogy (clean vv.1-17) carries the seed-spread of the three lines after the flood.
+--   GATE NOTE: Jasher 7 in this parse runs together / mis-numbers from v.18 onward (v.18 carries "15 19. ... 20.
+--     ..." apparatus and the Nimrod material run into one block); ONLY clean vv.1-17 are quoted. Jubilees 6:7,
+--     6:12, 7:7, 7:12 etc. are skipped numbers in this parse (gaps), avoided — only verified-present verses used.
+--   Christology: the covenant of the bow is the oath of the covenant Yahuah, kept and remembered by him; no
+--     co-equal-persons grammar imported. The rainbow-throne (Revelation 4:3) and the cloud-clothed angel with
+--     the bow (Revelation 10:1) show the Formed One bearing the flood-covenant's sign at the end.
+
+CREATE TEMP VIEW _s301_ge09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================== cross_references ==============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: be fruitful and the fear of you upon every beast (the re-commissioning)
+    ('canon','genesis',9,1,'canon','genesis',1,28,'free',
+      E'*And Elohim (God) blessed them, and Elohim (God) said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth* (Genesis 1:28). The word over Noah is the word over Adam spoken again: *And Elohim (God) blessed Noah and his sons, and said unto them, Be fruitful, and multiply, and replenish the earth* (Genesis 9:1). The very blessing given at the beginning is renewed over the new world — the same be-fruitful, the same multiply, the same replenish — carried through the flood by the preserved seed-line.'),
+    ('canon','genesis',9,2,'canon','genesis',1,28,'free',
+      E'*And have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth* (Genesis 1:28). The dominion granted at creation is renewed in the fear set upon the beasts: *And the fear of you and the dread of you shall be upon every beast of the earth, and upon every fowl of the air... into your hand are they delivered* (Genesis 9:2). The dominion of Adam is restated over Noah — the creatures *delivered* into man''s hand once more after the world''s reset.'),
+    ('canon','genesis',9,1,'jubilees','jubilees',6,5,'extras',
+      E'*And you, increase you and multiply upon the earth, and become many upon it, and be a blessing upon it. The fear of you and the dread of you I shall inspire in everything that is on earth and in the sea* (Jubilees 6:5). The restored book carries the re-commissioning of Genesis 9:1-2 nearly word for word — *Be fruitful, and multiply, and replenish the earth* and *the fear of you and the dread of you shall be upon every beast* — one testimony that the Adamic blessing and dominion were spoken again over Noah after the flood.'),
+    ('canon','genesis',9,3,'jubilees','jubilees',6,6,'extras',
+      E'*And behold I have given to you all beasts, and all winged things, and everything that moves on the earth, and the fish in the waters, and all things for food; as the green herbs, I have given you all things to eat* (Jubilees 6:6). This unfolds *Every moving thing that liveth shall be meat for you; even as the green herb have I given you all things* (Genesis 9:3): the grant of the moving creatures for food, set beside the green herb of the first creation, is carried in the same words — though the very next clause of Jubilees 6:6 holds back the blood, exactly as Genesis 9:4 does.'),
+
+    -- THREAD 2 (★): the life is in the blood, and the image of Elohim
+    ('canon','genesis',9,4,'canon','leviticus',17,11,'free',
+      E'*For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul* (Leviticus 17:11). The Noahic command *But flesh with the life thereof, which is the blood thereof, shall ye not eat* (Genesis 9:4) is given its reason in the Torah of the altar: the blood is not eaten because *the life of the flesh is in the blood*, and that life-bearing blood is *given... upon the altar to make an atonement*. The blood is reserved — it carries the life, and the life is for atonement.'),
+    ('canon','genesis',9,4,'canon','leviticus',17,14,'free',
+      E'*For it is the life of all flesh; the blood of it is for the life thereof: therefore I said unto the children of Yashar''el (Israel), Ye shall eat the blood of no manner of flesh: for the life of all flesh is the blood thereof: whosoever eateth it shall be cut off* (Leviticus 17:14). Genesis 9:4 — *flesh with the life thereof, which is the blood thereof, shall ye not eat* — stands word-for-word with the statute of Leviticus: *the blood of it is for the life thereof*, therefore *ye shall eat the blood of no manner of flesh*. The blood-prohibition given to Noah for all flesh is the same law later written into the covenant of Yashar''el.'),
+    ('canon','genesis',9,4,'canon','acts',15,20,'free',
+      E'*But that we write unto them, that they abstain from pollutions of idols, and from fornication, and from things strangled, and from blood* (Acts 15:20). When the council at Jerusalem weighs what stands for the gathered from among the nations, it keeps the blood-term — *that they... abstain from... blood* — the very prohibition first given to Noah for all flesh in Genesis 9:4. *Things strangled* (the flesh not drained of its blood) and *blood* are named together: the Noahic blood-law was not abolished; it stands for the gathered.'),
+    ('canon','genesis',9,4,'canon','acts',15,29,'free',
+      E'*That ye abstain from meats offered to idols, and from blood, and from things strangled, and from fornication: from which if ye keep yourselves, ye shall do well. Fare ye well* (Acts 15:29). The decree sent to the assemblies repeats the blood-term of Genesis 9:4: *abstain... from blood, and from things strangled*. The Spirit and the elders lay it as one of the *necessary things* — the blood reserved since Noah still reserved, the standing Noahic blood-law kept for the body gathered out of the nations.'),
+    ('canon','genesis',9,4,'jubilees','jubilees',6,10,'extras',
+      E'*And Noah and his sons swore that they would not eat any blood that was in any flesh, and he made a covenant before Yahuah Elohim (the LORD God) for ever throughout all the generations of the earth in this month* (Jubilees 6:10). The restored witness binds Genesis 9:4 into an oath: *Noah and his sons swore that they would not eat any blood*, a covenant *for ever throughout all the generations of the earth*. The blood-prohibition is no passing rule but a sworn, perpetual covenant from the days of Noah.'),
+    ('canon','genesis',9,6,'canon','genesis',1,27,'free',
+      E'*So Elohim (God) created man in his own image, in the image of Elohim (God) created he him; male and female created he them* (Genesis 1:27). The murder ban rests on the image: *Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man* (Genesis 9:6). The sanctity of human life is grounded not in sentiment but in the image stamped at creation — to shed man''s blood is to assault the image of Elohim borne by every man.'),
+    ('canon','genesis',9,6,'jubilees','jubilees',6,8,'extras',
+      E'*Whoso sheds man''s blood by man shall his blood be shed; for in the image of Elohim (God) made He man* (Jubilees 6:8). Jubilees carries Genesis 9:6 verbatim — *Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man*. The witness preserves the same grounding of the murder-prohibition in the image, one continuous testimony that the life of man is sacred because man bears the image of Elohim.'),
+
+    -- THREAD 3 (★★ CENTERPIECE): the everlasting covenant of the bow in the cloud
+    ('canon','genesis',9,11,'canon','isaiah',54,9,'free',
+      E'*For this is as the waters of Noah unto me: for as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that I would not be wroth with thee, nor rebuke thee* (Isaiah 54:9). The oath of Genesis 9:11 — *neither shall all flesh be cut off any more by the waters of a flood* — becomes the very pattern of Yahuah''s unbreakable word to scattered Yashar''el. As surely as he swore *the waters of Noah should no more go over the earth*, so surely he has sworn *I would not be wroth with thee*: the Noah-covenant is the guarantee-figure of the restoration covenant.'),
+    ('canon','genesis',9,13,'canon','isaiah',54,10,'free',
+      E'*For the mountains shall depart, and the hills be removed; but my kindness shall not depart from thee, neither shall the covenant of my peace be removed, saith Yahuah (LORD) that hath mercy on thee* (Isaiah 54:10). *I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth* (Genesis 9:13) — the bow is the visible token of a covenant that cannot fail. Isaiah reaches back to it: even if the mountains depart, *my kindness shall not depart from thee, neither shall the covenant of my peace be removed*. The covenant-faithfulness sealed by the bow is the same kindness sworn over gathered Yashar''el.'),
+    ('canon','genesis',9,13,'canon','revelation',4,3,'free',
+      E'*And he that sat was to look upon like a jasper and a sardine stone: and there was a rainbow round about the throne, in sight like unto an emerald* (Revelation 4:3). The bow Yahuah set in the cloud as the token of his covenant — *I do set my bow in the cloud* (Genesis 9:13) — encircles the throne itself: *a rainbow round about the throne*. The sign of the flood-covenant, the mercy held over judgement, stands at the very seat of Yahuah at the consummation.'),
+    ('canon','genesis',9,16,'canon','revelation',10,1,'free',
+      E'*And I saw another mighty angel come down from heaven, clothed with a cloud: and a rainbow was upon his head, and his face was as it were the sun, and his feet as pillars of fire* (Revelation 10:1). *And the bow shall be in the cloud; and I will look upon it, that I may remember the everlasting covenant* (Genesis 9:16) — the everlasting bow reappears upon the head of the mighty One *clothed with a cloud*. The cloud and the bow are together again: the Formed One bearing the sign of the flood-covenant, the everlasting covenant remembered, at the end as at the beginning.'),
+    ('canon','genesis',9,15,'jubilees','jubilees',6,15,'extras',
+      E'*And He gave to Noah and his sons a sign that there should not again be a flood on the earth* (Jubilees 6:15). The restored book carries the covenant-sign of Genesis 9:15 — *the waters shall no more become a flood to destroy all flesh* — as the sign *that there should not again be a flood on the earth*. One witness with the Torah that the bow is the pledge against another flood, the mercy sworn over all flesh.'),
+    ('canon','genesis',9,16,'jubilees','jubilees',6,16,'extras',
+      E'*He set His bow in the cloud for a sign of the eternal covenant that there should not again be a flood on the earth to destroy it all the days of the earth* (Jubilees 6:16). Jubilees names the bow exactly as Genesis 9:16 does — *the everlasting covenant between Elohim (God) and every living creature of all flesh* — calling it *a sign of the eternal covenant*. The bow in the cloud is the token of a covenant that runs *all the days of the earth*, the unfailing faithfulness of Yahuah toward all flesh.'),
+
+    -- THREAD 4: blessed be the Elohim of Shem and the enlarging of Japheth
+    ('canon','genesis',9,19,'jasher','jasher',7,1,'extras',
+      E'*And these are the names of the sons of Noah: Japheth, Ham and Shem; and children were born to them after the flood, for they had taken wives before the flood* (Jasher 7:1). *These are the three sons of Noah: and of them was the whole earth overspread* (Genesis 9:19). Jasher opens the table of nations from the same three sons, naming the seed-spread after the flood: *children were born to them after the flood* — the whole earth peopled from the preserved line of Noah, the seed carried forward into the nations.'),
+    ('canon','genesis',9,25,'jubilees','jubilees',7,10,'extras',
+      E'*And Noah awoke from his sleep and knew all that his younger son had done to him, and he cursed his son and said: "Cursed be Canaan; an enslaved servant shall he be to his brethren"* (Jubilees 7:10). Jubilees carries Genesis 9:25 — *Cursed be Canaan; a servant of servants shall he be unto his brethren* — and frames it as the consequence of *what his younger son had done*: the word falls on Canaan for the dishonouring conduct, a judgement of behaviour within the covenant household, never a curse upon a people for their blood.'),
+    ('canon','genesis',9,26,'jubilees','jubilees',7,11,'extras',
+      E'*And he blessed Shem, and said: "Blessed be Yahuah Elohim (the LORD God) of Shem, and Canaan shall be his servant. Elohim (God) shall enlarge Japheth, and Elohim (God) shall dwell in the dwelling of Shem, and Canaan shall be his servant"* (Jubilees 7:11). The blessing of Genesis 9:26-27 runs through Shem — *Blessed be Yahuah Elohim (the LORD God) of Shem... Elohim (God) shall enlarge Japheth, and he shall dwell in the tents of Shem*. The covenant-line is Shem''s, the seed that carries to Abraham; Japheth''s enlargement is the nations coming to dwell in Shem''s tents — a foreshadow of the gathering, not a hierarchy of races.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================== threads ==============================
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-9-be-fruitful-and-the-fear-of-you-upon-every-beast',
+       E'Be fruitful and the fear of you upon every beast',
+       E'The new world opens with the word of the first. *And Elohim (God) blessed Noah and his sons, and said unto them, Be fruitful, and multiply, and replenish the earth* (Genesis 9:1); *And the fear of you and the dread of you shall be upon every beast of the earth... into your hand are they delivered* (Genesis 9:2); *Every moving thing that liveth shall be meat for you; even as the green herb have I given you all things* (Genesis 9:3). This is the blessing spoken over Adam, spoken again over Noah: *Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth* (Genesis 1:28). The same be-fruitful, the same multiply, the same dominion — the Adamic commission carried through the flood by the preserved seed-line and re-spoken over the man Yahuah kept. The restored book carries it in the same words: *And you, increase you and multiply upon the earth... The fear of you and the dread of you I shall inspire in everything that is on earth and in the sea* (Jubilees 6:5); *behold I have given to you all beasts... as the green herbs, I have given you all things to eat* (Jubilees 6:6). The blessing of the beginning is the blessing of the new beginning — one mandate, renewed.',
+       sv.verse_id, ev.verse_id, 'extras', 20200
+  FROM _s301_ge09_lookup sv, _s301_ge09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=9 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-9-the-life-is-in-the-blood-and-the-image-of-elohim',
+       E'The life is in the blood, and the image of Elohim',
+       E'Two commands are given to Noah for all flesh, and both stand. The first reserves the blood: *But flesh with the life thereof, which is the blood thereof, shall ye not eat* (Genesis 9:4). The Torah of the altar gives the reason — *For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul* (Leviticus 17:11); *the blood of it is for the life thereof... Ye shall eat the blood of no manner of flesh* (Leviticus 17:14). The blood is not eaten because it carries the life, and the life is reserved for atonement. This is no abolished rule: when the council at Jerusalem decides what stands for the gathered from the nations, it keeps the blood-term — *that they... abstain from... blood* (Acts 15:20); *abstain... from blood, and from things strangled* (Acts 15:29) — the Noahic blood-law still standing for the body gathered out of the nations. The restored book makes it an oath: *Noah and his sons swore that they would not eat any blood... a covenant before Yahuah Elohim (the LORD God) for ever* (Jubilees 6:10). The second command grounds the sanctity of life in the image: *Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man* (Genesis 9:6) — resting on the creation word, *in the image of Elohim (God) created he him* (Genesis 1:27). To shed man''s blood is to assault the image of Elohim; Jubilees carries it verbatim — *for in the image of Elohim (God) made He man* (Jubilees 6:8). The blood reserved, and the man honoured for the image he bears.',
+       sv.verse_id, ev.verse_id, 'extras', 20203
+  FROM _s301_ge09_lookup sv, _s301_ge09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=9 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★ CENTERPIECE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-9-the-everlasting-covenant-of-the-bow-in-the-cloud',
+       E'The everlasting covenant of the bow in the cloud',
+       E'Yahuah binds himself, and the bond is universal. *And I, behold, I establish my covenant with you, and with your seed after you* (Genesis 9:9), *And with every living creature that is with you* (Genesis 9:10), *neither shall there any more be a flood to destroy the earth* (Genesis 9:11). The token is the bow: *I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth* (Genesis 9:13); *And the bow shall be in the cloud; and I will look upon it, that I may remember the everlasting covenant between Elohim (God) and every living creature of all flesh* (Genesis 9:16) — the sign is for Yahuah himself to look upon, that HE may remember. This covenant is the very oath-pattern of his faithfulness to scattered Yashar''el: *as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that I would not be wroth with thee, nor rebuke thee* (Isaiah 54:9), *but my kindness shall not depart from thee, neither shall the covenant of my peace be removed, saith Yahuah (LORD) that hath mercy on thee* (Isaiah 54:10). The Noah-covenant is the guarantee-figure of the restoration covenant — as unbreakable as the pledge against another flood. And the bow stands at the consummation: *there was a rainbow round about the throne, in sight like unto an emerald* (Revelation 4:3); *a rainbow was upon his head, and his face was as it were the sun* (Revelation 10:1), upon the mighty One *clothed with a cloud*. The cloud and the bow together again. The restored book agrees in every line: *He gave to Noah and his sons a sign that there should not again be a flood on the earth* (Jubilees 6:15); *He set His bow in the cloud for a sign of the eternal covenant... all the days of the earth* (Jubilees 6:16). The bow is the covenant-faithfulness of Yahuah — mercy held over judgement, sworn to all flesh and remembered to the end.',
+       sv.verse_id, ev.verse_id, 'extras', 20206
+  FROM _s301_ge09_lookup sv, _s301_ge09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=9 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-9-blessed-be-the-elohim-of-shem-and-the-enlarging-of-japheth',
+       E'Blessed be the Elohim of Shem and the enlarging of Japheth',
+       E'The whole earth is overspread from three sons, and the covenant runs through one. *These are the three sons of Noah: and of them was the whole earth overspread* (Genesis 9:19) — Jasher opens the table of nations from the same three: *these are the names of the sons of Noah: Japheth, Ham and Shem; and children were born to them after the flood* (Jasher 7:1). Then comes the vineyard, the drunkenness, the dishonouring, and the word of Noah. Read it carefully, for it is no race-curse. The curse falls on CANAAN — Ham''s line — for the conduct, the dishonouring of the father: *And Noah awoke from his sleep and knew all that his younger son had done to him... "Cursed be Canaan; an enslaved servant shall he be to his brethren"* (Jubilees 7:10), carrying *Cursed be Canaan; a servant of servants shall he be unto his brethren* (Genesis 9:25). It is a judgement of behaviour within the covenant household, never a verdict upon a people for their blood. The BLESSING runs through SHEM: *Blessed be Yahuah Elohim (the LORD God) of Shem* (Genesis 9:26) — the seed-line that carries to Abraham, to the promise, to Messiah. And Japheth''s portion is enlargement INTO Shem''s tents: *Elohim (God) shall enlarge Japheth, and he shall dwell in the tents of Shem* (Genesis 9:27); *Elohim (God) shall enlarge Japheth, and Elohim (God) shall dwell in the dwelling of Shem* (Jubilees 7:11). This is the nations coming to dwell in the covenant of Shem — a foreshadow of the ingathering of the peoples into the tents of the seed-line, never a hierarchy of races. The covenant is Shem''s; the nations are welcomed in.',
+       sv.verse_id, ev.verse_id, 'extras', 20209
+  FROM _s301_ge09_lookup sv, _s301_ge09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=9 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================== thread_members ==============================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion* (Genesis 1:28) — the Adamic blessing spoken again over Noah in Genesis 9:1.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=1
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-be-fruitful-and-the-fear-of-you-upon-every-beast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*and have dominion over the fish of the sea, and over the fowl of the air* (Genesis 1:28) — the creation dominion renewed in the fear set on the beasts (Genesis 9:2).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=2
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-be-fruitful-and-the-fear-of-you-upon-every-beast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*increase you and multiply upon the earth... The fear of you and the dread of you I shall inspire* (Jubilees 6:5) — the restored book carries the re-commissioning of Genesis 9:1-2 nearly verbatim.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=1
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-be-fruitful-and-the-fear-of-you-upon-every-beast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*as the green herbs, I have given you all things to eat* (Jubilees 6:6) — the grant of the creatures for food (Genesis 9:3), the very next clause holding back the blood as Genesis 9:4 does.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=3
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-be-fruitful-and-the-fear-of-you-upon-every-beast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the life of the flesh is in the blood; and I have given it to you upon the altar to make an atonement* (Leviticus 17:11) — the reason the Noahic blood is reserved (Genesis 9:4): the life is for atonement.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=4
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-life-is-in-the-blood-and-the-image-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Ye shall eat the blood of no manner of flesh: for the life of all flesh is the blood thereof* (Leviticus 17:14) — the statute stands word-for-word with Genesis 9:4.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=4
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-life-is-in-the-blood-and-the-image-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*that they abstain from... blood* (Acts 15:20) — the Jerusalem council keeps the Noahic blood-term for the gathered from the nations.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=4
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=15 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-life-is-in-the-blood-and-the-image-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*That ye abstain... from blood, and from things strangled* (Acts 15:29) — the decree to the assemblies, the standing Noahic blood-law kept.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=4
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=15 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-life-is-in-the-blood-and-the-image-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Noah and his sons swore that they would not eat any blood... a covenant before Yahuah Elohim (the LORD God) for ever* (Jubilees 6:10) — the blood-prohibition as a sworn, perpetual covenant from Noah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=4
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-life-is-in-the-blood-and-the-image-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*in the image of Elohim (God) created he him* (Genesis 1:27) — the creation word that grounds the murder ban of Genesis 9:6.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=6
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-life-is-in-the-blood-and-the-image-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Whoso sheds man''s blood by man shall his blood be shed; for in the image of Elohim (God) made He man* (Jubilees 6:8) — the restored book carries Genesis 9:6 verbatim.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=6
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-life-is-in-the-blood-and-the-image-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★ centerpiece)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that I would not be wroth with thee* (Isaiah 54:9) — the flood-oath of Genesis 9:11 as the pattern of Yahuah''s unbreakable word to scattered Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=11
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=54 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-everlasting-covenant-of-the-bow-in-the-cloud'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*my kindness shall not depart from thee, neither shall the covenant of my peace be removed* (Isaiah 54:10) — the bow-token of Genesis 9:13 as the covenant-faithfulness sworn over gathered Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=13
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=54 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-everlasting-covenant-of-the-bow-in-the-cloud'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*there was a rainbow round about the throne, in sight like unto an emerald* (Revelation 4:3) — the bow of Genesis 9:13 encircling the throne at the consummation.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=13
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-everlasting-covenant-of-the-bow-in-the-cloud'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a rainbow was upon his head... clothed with a cloud* (Revelation 10:1) — the everlasting bow of Genesis 9:16 upon the cloud-clothed mighty One, cloud and bow together at the end.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=16
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-everlasting-covenant-of-the-bow-in-the-cloud'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*He gave to Noah and his sons a sign that there should not again be a flood on the earth* (Jubilees 6:15) — the covenant-sign of Genesis 9:15, the pledge against another flood.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=15
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-everlasting-covenant-of-the-bow-in-the-cloud'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*He set His bow in the cloud for a sign of the eternal covenant... all the days of the earth* (Jubilees 6:16) — the bow of Genesis 9:16 named as the sign of the eternal covenant to all flesh.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=16
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-the-everlasting-covenant-of-the-bow-in-the-cloud'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*these are the names of the sons of Noah: Japheth, Ham and Shem; and children were born to them after the flood* (Jasher 7:1) — the table of nations opening from the three sons of Genesis 9:19, the seed-spread into the earth.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=19
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=7 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-blessed-be-the-elohim-of-shem-and-the-enlarging-of-japheth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he cursed his son and said: "Cursed be Canaan; an enslaved servant shall he be to his brethren"* (Jubilees 7:10) — the curse on Canaan for the conduct (Genesis 9:25), a judgement of behaviour, never a race-curse.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=25
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=7 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-blessed-be-the-elohim-of-shem-and-the-enlarging-of-japheth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Blessed be Yahuah Elohim (the LORD God) of Shem... Elohim (God) shall enlarge Japheth, and Elohim (God) shall dwell in the dwelling of Shem* (Jubilees 7:11) — the covenant-line through Shem and Japheth''s enlargement into Shem''s tents (Genesis 9:26-27), the nations gathered in.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=9 AND sv.verse_number=26
+  JOIN _s301_ge09_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=7 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-9-blessed-be-the-elohim-of-shem-and-the-enlarging-of-japheth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_10.sql (Genesis 10) -----
+-- Chapter: Genesis 10 (The Table of Nations — the seventy nations from Shem, Ham, and Japheth divided after the flood)
+-- Tag: ge10   Temp view: _s301_ge10_lookup
+-- Sort band: base 20225, step 3 -> threads at 20225, 20228, 20231 (3 threads)
+-- Source of EVERY row: 'canon','genesis',10,v
+--
+-- This is a genealogical/table chapter — CURATED to 3 framework-bearing threads, NOT name-by-name.
+--
+-- Genesis 10 coverage:
+--   v.1   (the generations of the sons of Noah — Shem, Ham, Japheth — sons born after the flood)
+--        NT:     none warranted (the heading; the seed-line forward is carried elsewhere)
+--        Extras: Jasher 7:1 / Jubilees 8 retell the same roster (recorded; their distinct witness is the DIVISION, THREAD 3)
+--        Tanakh: 1 Chronicles 1:4 (Noah, Shem, Ham, and Japheth) — folded into THREAD 1's 1 Chron mirror
+--   ★ v.2-5  (sons of Japheth; the isles of the Gentiles divided in their lands, every one after his tongue, after their families, in their nations)
+--        NT:     Acts 17:26 (made of one blood all nations... determined the times... and the bounds of their habitation) — THREAD 1
+--        Extras: Jubilees 9 (Japheth's portion divided by lot) — held at THREAD 3 (the division)
+--        Tanakh: Deuteronomy 32:8 (divided to the nations their inheritance... set the bounds... by the number of Israel); 1 Chronicles 1:5-7 — THREAD 1
+--   v.6-7  (sons of Ham; Cush, Mizraim, Phut, Canaan)
+--        NT:     none warranted distinct
+--        Extras: none warranted as MEMBER (rosters; THREAD 3 carries the division)
+--        Tanakh: 1 Chronicles 1:8-9 (the same Ham line) — folded into THREAD 1's 1 Chron mirror
+--   ★ v.8-12 (Cush begat Nimrod, a mighty one / mighty hunter before Yahuah; the beginning of his kingdom was Babel... in the land of Shinar; Nineveh built)
+--        NT:     none warranted (the rebel-kingdom archetype runs through the Tanakh prophets)
+--        Extras: none warranted as MEMBER (kept text-bound, no over-speculation)
+--        Tanakh: Genesis 11:4 (let us build us a city and a tower... and a name); Micah 5:6 (the land of Nimrod) — THREAD 2
+--   v.13-20 (Mizraim's and Canaan's lines; the border of the Canaanites; sons of Ham after their tongues, in their nations)
+--        NT:     none warranted
+--        Extras: none warranted distinct
+--        Tanakh: 1 Chronicles 1:11-16 — folded into THREAD 1's 1 Chron mirror (v.20 refrain anchored in THREAD 1)
+--   v.21-24 (Shem, father of all the children of Eber; Shem's line to Eber)
+--        NT:     none warranted distinct
+--        Extras: none warranted as MEMBER
+--        Tanakh: 1 Chronicles 1:17-18 — folded into THREAD 1's 1 Chron mirror
+--   ★ v.25   (unto Eber two sons: Peleg, for in his days was the earth divided; and Joktan)
+--        NT:     none warranted
+--        Extras: Jubilees 8:8 (Peleg, for in his days the children of Noah began to divide the earth); Jubilees 8:10 (divided the earth into three parts for Shem, Ham, Japheth) — THREAD 3
+--        Tanakh: 1 Chronicles 1:19 (Peleg; because in his days the earth was divided) — THREAD 3
+--   v.26-30 (the sons of Joktan; their dwelling)
+--        NT:     none warranted
+--        Extras: none warranted distinct (Jubilees 9 division held at THREAD 3 via the Peleg anchor)
+--        Tanakh: 1 Chronicles 1:20-23 (the same Joktan line) — folded into THREAD 1's 1 Chron mirror
+--   v.31-32 (these are the sons of Shem after their tongues, in their nations; the families of the sons of Noah... and by these were the nations divided in the earth after the flood)
+--        NT:     Acts 17:26 — THREAD 1 (the summary refrain; the nations divided)
+--        Extras: none warranted distinct
+--        Tanakh: Deuteronomy 32:8 — THREAD 1; 1 Chronicles 1 (the whole mirror) — THREAD 1
+--
+-- Threads (slug — target libraries):
+--   1. genesis-10-the-table-of-nations-divided-after-their-tongues-in-their-nations — NT (Acts) + Tanakh (Deuteronomy, 1 Chronicles) [free]
+--   2. genesis-10-nimrod-the-mighty-hunter-and-the-beginning-of-his-kingdom-was-babel — Tanakh (Genesis, Micah) [free]
+--   3. genesis-10-in-the-days-of-peleg-was-the-earth-divided — Tanakh (1 Chronicles) + Extras (Jubilees) [extras]
+--
+-- Framing note (nations vs seed; Deuteronomy 32:8): Genesis 10 is THE NATIONS — the Genesis-1 peoples
+-- (Category 3), the world enumerated and divided "after their tongues... in their nations" (10:5,20,31,32).
+-- Israel is NOT yet called; the seed of promise is not separated out until Genesis 12. So the lateral weight
+-- is Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he
+-- separated the sons of Adam, he set the bounds of the people according to the number of the children of
+-- Yashar''el (Israel)* — the dividing of THESE nations is Yahuah''s own ordering, with Israel-yet-to-come as the
+-- MEASURE of the bounds. Forward, Acts 17:26 names the same: one blood, the times appointed, the bounds of
+-- their habitation. Nimrod is framed as the rebel-kingdom archetype (Babel begun -> Genesis 11 -> the "land of
+-- Nimrod" of Micah), kept text-bound, no over-speculation. Peleg''s "earth divided" is the dispersion the
+-- restored Jubilees expands as the division of the three portions by lot. Jubilees double-written
+-- 'jubilees','jubilees'. 1 Chronicles 1 is the lateral Tanakh mirror of the whole table.
+
+CREATE TEMP VIEW _s301_ge10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the Table of Nations divided after their tongues, in their nations
+    ('canon','genesis',10,5,'canon','deuteronomy',32,8,'free',
+      E'*When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8). The first dividing of the nations is recorded here: *By these were the isles of the Gentiles divided in their lands; every one after his tongue, after their families, in their nations* (Genesis 10:5). The scattering after their tongues is no accident of history — it is the El Elyon apportioning the inheritance of the nations, and the measure he sets the bounds by is the children of Yashar''el (Israel), the people not yet even called. Israel is the ruler laid across the whole Table of Nations before Israel is born.'),
+    ('canon','genesis',10,32,'canon','deuteronomy',32,8,'free',
+      E'*When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8). The chapter''s closing word is exactly this dividing: *These are the families of the sons of Noah, after their generations, in their nations: and by these were the nations divided in the earth after the flood* (Genesis 10:32). Mosheh''s (Moses'') song reaches back and names the hand behind it — the El Elyon separating the sons of Adam, setting the bounds by the number of Israel — so the whole Table is read as Yahuah''s deliberate ordering, not mere genealogy.'),
+    ('canon','genesis',10,32,'canon','acts',17,26,'free',
+      E'*And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26). Sha''ul (Paul) at Athens preaches the Table of Nations: *by these were the nations divided in the earth after the flood* (Genesis 10:32). All the nations enumerated from Shem, Ham, and Japheth are *of one blood* — one stock from Noah, from Adam — and their dividing into their lands was Yahuah determining *the times before appointed, and the bounds of their habitation*. The dispersion of Genesis 10 is the appointed ordering Acts 17 declares.'),
+    ('canon','genesis',10,5,'canon','acts',17,26,'free',
+      E'*And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26). The isles of the nations *divided in their lands; every one after his tongue, after their families, in their nations* (Genesis 10:5) are the very *bounds of their habitation* Sha''ul (Paul) names — one blood scattered to appointed places, each in its land and tongue, by the determining of Yahuah.'),
+    ('canon','genesis',10,5,'canon','1-chronicles',1,5,'free',
+      E'*The sons of Japheth; Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras* (1 Chronicles 1:5). The chronicler opens the whole genealogy of the covenant people by reciting the Table of Nations exactly as it stands here: *The sons of Japheth; Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras* (Genesis 10:2). The nations *divided in their lands... after their families, in their nations* (Genesis 10:5) are carried forward as the trunk on which the line of Yashar''el (Israel) will be numbered.'),
+    ('canon','genesis',10,32,'canon','1-chronicles',1,4,'free',
+      E'*Noah, Shem, Ham, and Japheth* (1 Chronicles 1:4). The chronicler sets the three fathers of all the nations at the head of his record, just as this chapter does: *These are the families of the sons of Noah... and by these were the nations divided in the earth after the flood* (Genesis 10:32). The whole Table of Nations stands behind the genealogy of the covenant people — the nations of the earth named first, before the seed of promise is drawn out from among them.'),
+
+    -- THREAD 2: Nimrod the mighty hunter and the beginning of his kingdom was Babel
+    ('canon','genesis',10,10,'canon','genesis',11,4,'free',
+      E'*And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth* (Genesis 11:4). The first kingdom of the earth begins here: *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar* (Genesis 10:10). Babel, named as the head of Nimrod''s kingdom, is the city of the next chapter — the tower built to make a name and resist the scattering Yahuah had ordained. The mighty-hunter''s empire and the tower of Shinar are one rebellion told twice.'),
+    ('canon','genesis',10,9,'canon','micah',5,6,'free',
+      E'*And they shall waste the land of Assyria with the sword, and the land of Nimrod in the entrances thereof: thus shall he deliver us from the Assyrian, when he cometh into our land, and when he treadeth within our borders* (Micah 5:6). Nimrod *began to be a mighty one in the earth. He was a mighty hunter before Yahuah (LORD)* (Genesis 10:8-9), and his kingdom went out from Babel into Asshur and Nineveh (Genesis 10:11). Generations later the prophet still calls the empire of the Assyrian *the land of Nimrod* — the rebel-kingdom archetype begun here endures as the name for the oppressor Yahuah will waste, and the Deliverer is the peace against it.'),
+
+    -- THREAD 3: in the days of Peleg was the earth divided
+    ('canon','genesis',10,25,'canon','1-chronicles',1,19,'free',
+      E'*And unto Eber were born two sons: the name of the one was Peleg; because in his days the earth was divided: and his brother''s name was Joktan* (1 Chronicles 1:19). The chronicler preserves the very note this chapter records: *And unto Eber were born two sons: the name of one was Peleg; for in his days was the earth divided* (Genesis 10:25). The name Peleg — division — is set as a marker in the seed-line of Shem at the moment the nations were parted into their lands, the dividing of the whole Table dated by a single birth.'),
+    ('canon','genesis',10,25,'jubilees','jubilees',8,8,'extras',
+      E'*And in the sixth year thereof, she bare him a son, and he called his name Peleg; for in the days when he was born the children of Noah began to divide the earth amongst themselves: for this reason he called his name Peleg* (Jubilees 8:8). The restored witness unfolds *in his days was the earth divided* (Genesis 10:25): the dividing was the sons of Noah parcelling the earth among themselves, and the child born in that hour was named for it. The terse Torah note is given its event.'),
+    ('canon','genesis',10,25,'jubilees','jubilees',8,10,'extras',
+      E'*And it came to pass in the beginning of the thirty-third jubilee that they divided the earth into three parts, for Shem and Ham and Japheth, according to the inheritance of each, in the first year in the first week* (Jubilees 8:10). The earth divided in Peleg''s days — *in his days was the earth divided* (Genesis 10:25) — is the parting of the whole world into three inheritances for the three sons of Noah, the three branches the Table of Nations has just enumerated. The division is by appointed lot, each father to his portion.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-10-the-table-of-nations-divided-after-their-tongues-in-their-nations',
+       E'The Table of Nations — divided after their tongues, in their nations',
+       E'Genesis 10 enumerates the whole world after the flood — the seventy nations born from Shem, Ham, and Japheth — and three times marks them as parted into their lands: *By these were the isles of the Gentiles divided in their lands; every one after his tongue, after their families, in their nations* (Genesis 10:5); and at the close, *These are the families of the sons of Noah, after their generations, in their nations: and by these were the nations divided in the earth after the flood* (Genesis 10:32). These are THE NATIONS — the peoples of the earth — and Israel is not yet called; the seed of promise will not be drawn out from among them until Genesis 12. Yet the dividing is no accident of history. Mosheh''s (Moses'') song names the hand behind it: *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8) — the El Elyon apportioned the nations, and the measure he set their bounds by is the children of Yashar''el (Israel), the people not yet even born. Israel is the ruler laid across the whole Table before Israel exists. Sha''ul (Paul) preaches the same ordering at Athens: *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26) — one blood, from Noah, from Adam, scattered to appointed places and times. And the chronicler of the covenant people opens his whole genealogy by reciting this very table — *Noah, Shem, Ham, and Japheth* (1 Chronicles 1:4); *The sons of Japheth; Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras* (1 Chronicles 1:5) — the nations of the earth named first, the trunk from which the seed of promise will be drawn.',
+       sv.verse_id, ev.verse_id, 'free', 20225
+  FROM _s301_ge10_lookup sv, _s301_ge10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=10 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-10-nimrod-the-mighty-hunter-and-the-beginning-of-his-kingdom-was-babel',
+       E'Nimrod the mighty hunter — and the beginning of his kingdom was Babel',
+       E'Out of the line of Ham comes the first empire-builder: *And Cush begat Nimrod: he began to be a mighty one in the earth. He was a mighty hunter before Yahuah (LORD)* (Genesis 10:8-9). His was the first kingdom of the earth, and its head was Babel: *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar* (Genesis 10:10), and from that land it spread to build Nineveh (Genesis 10:11). Babel here is the city of the very next chapter, where the rebellion is told in full: *let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth* (Genesis 11:4) — a name raised in defiance of the scattering Yahuah had ordained over the nations. The kingdom begun here becomes the type of every rebel-empire after it; generations on, the prophet still calls the land of the Assyrian oppressor by its founder''s name: *And they shall waste the land of Assyria with the sword, and the land of Nimrod in the entrances thereof: thus shall he deliver us from the Assyrian, when he cometh into our land* (Micah 5:6). The mighty hunter''s kingdom of Babel and Shinar is the archetype Yahuah will one day waste — and the Deliverer is the peace against it.',
+       sv.verse_id, ev.verse_id, 'free', 20228
+  FROM _s301_ge10_lookup sv, _s301_ge10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=10 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-10-in-the-days-of-peleg-was-the-earth-divided',
+       E'In the days of Peleg was the earth divided',
+       E'In the line of Shem a child is named for a turning of the whole world: *And unto Eber were born two sons: the name of one was Peleg; for in his days was the earth divided; and his brother''s name was Joktan* (Genesis 10:25). Peleg means division, and his birth dates the parting of the nations into their lands. The chronicler keeps the same note: *And unto Eber were born two sons: the name of the one was Peleg; because in his days the earth was divided* (1 Chronicles 1:19). The restored witness of Jubilees unfolds what the terse Torah line means: *he called his name Peleg; for in the days when he was born the children of Noah began to divide the earth amongst themselves: for this reason he called his name Peleg* (Jubilees 8:8) — the dividing was the sons of Noah parcelling the world among themselves. And it tells the manner of it: *they divided the earth into three parts, for Shem and Ham and Japheth, according to the inheritance of each* (Jubilees 8:10) — the whole earth parted by appointed lot into three inheritances for the three sons the Table of Nations has just enumerated. The dispersion of Genesis 10 is dated by a single name and shown to be a deliberate apportioning, each father to his portion.',
+       sv.verse_id, ev.verse_id, 'extras', 20231
+  FROM _s301_ge10_lookup sv, _s301_ge10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=10 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*When the El Elyon (most High) divided to the nations their inheritance... he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8) — the dividing of 10:5 is Yahuah''s apportioning, measured by Israel-yet-to-come.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=5
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-10-the-table-of-nations-divided-after-their-tongues-in-their-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8) — the closing *by these were the nations divided* (10:32) named as the El Elyon''s deliberate ordering.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=32
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-10-the-table-of-nations-divided-after-their-tongues-in-their-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*hath made of one blood all nations of men... and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26) — Sha''ul (Paul) preaches the dividing of the nations (10:32) as Yahuah''s appointed ordering.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=32
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-10-the-table-of-nations-divided-after-their-tongues-in-their-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26) — the isles divided after their tongues (10:5) are the very bounds of habitation Sha''ul names.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=5
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-10-the-table-of-nations-divided-after-their-tongues-in-their-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*The sons of Japheth; Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras* (1 Chronicles 1:5) — the chronicler opens the covenant genealogy with this Table of Nations (10:2,5).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=5
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-10-the-table-of-nations-divided-after-their-tongues-in-their-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Noah, Shem, Ham, and Japheth* (1 Chronicles 1:4) — the three fathers of all the nations (10:32) set at the head of the covenant record.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=32
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=1 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-10-the-table-of-nations-divided-after-their-tongues-in-their-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*let us build us a city and a tower... and let us make us a name, lest we be scattered* (Genesis 11:4) — Babel, the head of Nimrod''s kingdom (10:10), is the tower-city of the next chapter.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=10
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-10-nimrod-the-mighty-hunter-and-the-beginning-of-his-kingdom-was-babel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they shall waste... the land of Nimrod in the entrances thereof* (Micah 5:6) — the rebel-kingdom of the mighty hunter (10:8-9) endures as the prophet''s name for the oppressor Yahuah will waste.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=9
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=5 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-10-nimrod-the-mighty-hunter-and-the-beginning-of-his-kingdom-was-babel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the name of the one was Peleg; because in his days the earth was divided* (1 Chronicles 1:19) — the chronicler keeps the division-marker of 10:25 in the line of Shem.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=25
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-10-in-the-days-of-peleg-was-the-earth-divided'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the children of Noah began to divide the earth amongst themselves: for this reason he called his name Peleg* (Jubilees 8:8) — the restored witness names the event behind *in his days was the earth divided* (10:25).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=25
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=8 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-10-in-the-days-of-peleg-was-the-earth-divided'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they divided the earth into three parts, for Shem and Ham and Japheth, according to the inheritance of each* (Jubilees 8:10) — the earth divided in Peleg''s days (10:25) parted by lot into three inheritances for the three sons.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=10 AND sv.verse_number=25
+  JOIN _s301_ge10_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=8 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-10-in-the-days-of-peleg-was-the-earth-divided'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_11.sql (Genesis 11) -----
+-- Chapter: Genesis 11 (Babel — the one language, the tower, the scattering; the generations of Shem to Abram; Terah, Abram, Sarai, Ur toward Canaan)
+-- Tag: ge11   Temp view: _s301_ge11_lookup
+-- Sort band: base 20250, step 3 -> threads at 20250, 20253, 20256, 20259 (4 threads)
+-- Source of EVERY row: 'canon','genesis',11,v
+--
+-- Genesis 11 coverage:
+--   ★★ v.1-9 (the whole earth one language; let us build us a city and a tower whose top may reach unto heaven; let us make us a name; Yahuah comes down, confounds the tongue, scatters them; Babel)
+--        NT:     Acts 2:4,6 (Pentecost/Shavuot — every man heard them speak in his own language; the REVERSAL of the Babel-scattering, firstfruits of the regathering) — THREAD 1 (load-bearing)
+--        Extras: Jubilees 10:19 (they built the city and the tower, "let us ascend thereby into heaven"); Jubilees 10:22 (Behold they are one people... let us go down and confound their language); Jubilees 10:25 (called Babel, because Yahuah did there confound the language) — THREAD 1
+--        Tanakh: Zephaniah 3:9 (then will I turn to the people a pure language, that they may all call upon the name of Yahuah) — THREAD 1; Genesis 12:2 (I will... make thy name great — contrast: men make their own name vs Yahuah makes Abram's) — THREAD 1
+--   v.8-9 (Yahuah scattered them abroad upon the face of all the earth; the confusion as judgment-yet-mercy restraining the rebellion; the nations divided)
+--        NT:     none warranted (the scattering's forward weave is the Pentecost reversal at THREAD 1; the calling of one seed-line begins at THREAD 3)
+--        Extras: none warranted distinct as MEMBER (Jubilees scattering carried at THREAD 1; Jasher 9 tower-block is a run-together/mis-numbered parse — AVOIDED)
+--        Tanakh: Deuteronomy 32:8 (when El Elyon divided to the nations their inheritance... according to the number of the children of Yashar'el); Genesis 10:32 (by these were the nations divided in the earth after the flood); Genesis 10:25 (in his days was the earth divided — Peleg) — THREAD 2
+--   ★ v.10-26 (the generations of Shem: Shem, Arphaxad, Salah, Eber, Peleg, Reu, Serug, Nahor, Terah, and Abram — the seed-line NARROWING toward the call of Gen 12)
+--        NT:     Luke 3:34-36 (the genealogy of the Son of Adam through Thara/Saruch/Ragau/Phalec/Heber/Sala/Arphaxad/Sem — the same line, run forward to Messiah) — THREAD 3 (load-bearing)
+--        Extras: none warranted as MEMBER (Jubilees 10:18/11 retell the Peleg/Reu line; their distinctive witness is Abram's idol-rejection, carried at THREAD 4)
+--        Tanakh: Genesis 10:24-25 (Arphaxad begat Salah; Salah begat Eber; Eber's sons Peleg/Joktan) — folded into THREAD 2/3 framing; Genesis 12:1 the line's destination — THREAD 3
+--   v.27-32 (the generations of Terah: Abram, Nahor, Haran; Haran begat Lot, died in Ur of the Chaldees; Abram took Sarai; Sarai barren; Terah took them from Ur toward Canaan, stopped in Haran; Terah died in Haran)
+--        NT:     Acts 7:2-4 (Stephen: the Elohim of glory appeared to Abraham in Mesopotamia, before he dwelt in Charran; came out of the land of the Chaldaeans) — THREAD 4
+--        Extras: Jubilees 11:14 (the child Abram began to understand the errors of the earth... separated himself that he might not worship idols); Jubilees 12:2 (Abram to Terah: what profit from those idols... worship the Elohim of heaven); Jubilees 12:12 (Abram arose by night and burned the house of the idols); Jasher 9:6 (Abram knew Yahuah from three years old... all the sons of the earth served other gods) — THREAD 4
+--        Tanakh: Joshua 24:2 (your fathers dwelt on the other side of the flood... Terah... and they served other gods); Genesis 12:1 (the call: get thee out of thy country, from thy kindred, from thy father's house) — THREAD 4
+--        Note: Sarai's barrenness (v.30) recorded as the promise-against-barrenness setup; framed within THREAD 4 prose (the call comes against an empty womb), no separate barrenness-thread warranted for this chapter.
+--
+-- Threads (slug — target libraries):
+--   1. genesis-11-let-us-make-us-a-name-babel-and-the-pentecost-reversal — NT (Acts) + Tanakh (Zephaniah, Genesis) + Extras (Jubilees) [extras] (CENTERPIECE)
+--   2. genesis-11-yahuah-scattered-them-and-the-nations-were-divided — Tanakh (Deuteronomy, Genesis) [free]
+--   3. genesis-11-the-generations-of-shem-the-seed-line-narrowing-to-abram — NT (Luke) + Tanakh (Genesis) [free]
+--   4. genesis-11-terah-took-abram-from-ur-the-call-out-of-idolatry — NT (Acts) + Tanakh (Joshua, Genesis) + Extras (Jubilees, Jasher) [extras]
+--
+-- Framing notes:
+--   ★★ BABEL -> PENTECOST REVERSAL (THREAD 1, load-bearing): the men of Shinar make themselves ONE in
+--   rebellion and set out to *make us a name* (Genesis 11:4) — unity-in-rebellion, a name seized for self.
+--   Yahuah confounds the one tongue and scatters them. The forward weave is Acts 2: at Shavuot the SAME
+--   scattered nations *heard them speak in his own language* (Acts 2:6) — the Babel-scattering beginning to be
+--   UNDONE, the firstfruits of the regathering of the dispersed (the two-house ingathering in seed form).
+--   Zephaniah 3:9 names the consummation — *a pure language, that they may all call upon the name of Yahuah*.
+--   And the chapter's own answer to the seized name: the very next chapter, Yahuah MAKES a name for Abram
+--   (*make thy name great*, Genesis 12:2) — what man grasps at Babel, Yahuah gives to the one He calls.
+--   ★ THE SEED-LINE NARROWING (THREAD 3, load-bearing): the toledot of Shem funnels down through Eber and
+--   Peleg to Terah and to ABRAM — the whole seed-of-promise line converging on the man Gen 12 will call;
+--   Luke 3:34-36 runs the same names forward to the Son of Adam.
+--   ABRAM CALLED OUT OF IDOLATRY (THREAD 4): Joshua 24:2 and Acts 7:2-4 establish that the fathers beyond
+--   the river served other gods — Abram is called OUT; the restored witnesses (Jubilees 11-12, Jasher 9)
+--   unfold the young Abram rejecting and burning the idols. Sarai's barrenness sets the promise against an
+--   empty womb.
+--   AVOIDED as MEMBER: Jasher 9 tower-block (verse 7 is a run-together/mis-numbered parse swallowing vv.7-39
+--   with embedded verse digits — known-bad-parse rule); used only the clean Jasher 9:6. Jubilees double-written
+--   'jubilees','jubilees'; Jasher double-written 'jasher','jasher'.
+
+CREATE TEMP VIEW _s301_ge11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (CENTERPIECE): let us make us a name — Babel and the Pentecost reversal
+    ('canon','genesis',11,4,'canon','acts',2,6,'free',
+      E'*Now when this was noised abroad, the multitude came together, and were confounded, because that every man heard them speak in his own language* (Acts 2:6). At Babel the men of Shinar said *let us make us a name, lest we be scattered abroad upon the face of the whole earth* (Genesis 11:4) — and were scattered, their one tongue confounded. At Shavuot the scattered nations are gathered to Jerusalem and *every man heard them speak in his own language* — the very confounding of Babel beginning to be undone, the firstfruits of the regathering of the dispersed.'),
+    ('canon','genesis',11,7,'canon','acts',2,4,'free',
+      E'*And they were all filled with the Ruach HaKodesh (Holy Spirit), and began to speak with other tongues, as the Spirit gave them utterance* (Acts 2:4). At Babel Yahuah said *let us go down, and there confound their language, that they may not understand one another''s speech* (Genesis 11:7); at Pentecost the Spirit gives tongues so that men of every nation DO understand — the scattering of the one tongue answered by a Spirit-given hearing across the nations.'),
+    ('canon','genesis',11,9,'canon','acts',2,6,'free',
+      E'*the multitude came together, and were confounded, because that every man heard them speak in his own language* (Acts 2:6). *Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth: and from thence did Yahuah (LORD) scatter them abroad upon the face of all the earth* (Genesis 11:9). The word over Babel is *confound* and *scatter*; the word over Shavuot is the same crowd *confounded* — but now by hearing, not by losing, the tongues. Babel''s scattering and Pentecost''s gathering stand face to face.'),
+    ('canon','genesis',11,9,'canon','zephaniah',3,9,'free',
+      E'*For then will I turn to the people a pure language, that they may all call upon the name of Yahuah (LORD), to serve him with one consent* (Zephaniah 3:9). Babel ends with *the language of all the earth* confounded and the peoples scattered (Genesis 11:9); the prophet names the consummation — not a return to one rebel speech, but a *pure language* given so that *they may all call upon the name of Yahuah* with one consent. The undoing of Babel finishes in worship, not in a tower.'),
+    ('canon','genesis',11,4,'canon','genesis',12,2,'free',
+      E'*And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing* (Genesis 12:2). At Babel men say *let us make us a name* (Genesis 11:4) — a name seized by their own hands, raised on a tower toward heaven. The very next breath of the story is Yahuah''s answer: He will *make thy name great* for Abram. What the builders grasp at, Yahuah gives to the one He calls — the made name comes by the promise, not by the brick.'),
+    ('canon','genesis',11,4,'jubilees','jubilees',10,19,'extras',
+      E'*For they departed from the land of Ararat eastward to Shinar; for in his days they built the city and the tower, saying, "Go to, let us ascend thereby into heaven."* (Jubilees 10:19). The restored witness names the heart of *let us build us a city and a tower, whose top may reach unto heaven* (Genesis 11:4): not a building project but an ascent — men purposing to climb to heaven by their own work.'),
+    ('canon','genesis',11,6,'jubilees','jubilees',10,22,'extras',
+      E'*And Yahuah our Elohim (the LORD our God) said to us: "Behold, they are one people, and (this) they begin to do, and now nothing will be withholden from them. Go to, let us go down and confound their language, that they may not understand one another''s speech..."* (Jubilees 10:22). The same divine deliberation of *Behold, the people is one, and they have all one language... let us go down, and there confound their language* (Genesis 11:6-7) is preserved word for word — the unity-in-rebellion restrained by the confounding of the tongue.'),
+    ('canon','genesis',11,9,'jubilees','jubilees',10,25,'extras',
+      E'*For this reason the whole land of Shinar is called Babel, because Yahuah (God) did there confound all the language of the children of men, and from thence they were dispersed into their cities, each according to his language and his nation* (Jubilees 10:25). The naming of *Babel* and the *confounding* and *scattering* of Genesis 11:9 are carried in the restored witness with the same cause and the same dispersal — each according to his language and his nation.'),
+
+    -- THREAD 2: Yahuah scattered them, and the nations were divided
+    ('canon','genesis',11,8,'canon','deuteronomy',32,8,'free',
+      E'*When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8). The scattering of *Yahuah (LORD) scattered them abroad from thence upon the face of all the earth* (Genesis 11:8) was not chaos but a dividing: the El Elyon set the bounds of the nations — and set them *according to the number of the children of Yashar''el*, the scattering already ordered toward the covenant people who would be called out of it.'),
+    ('canon','genesis',11,9,'canon','genesis',10,32,'free',
+      E'*These are the families of the sons of Noah, after their generations, in their nations: and by these were the nations divided in the earth after the flood* (Genesis 10:32). The table of nations had already said the peoples were *divided in the earth after the flood*; Genesis 11:9 tells how — *from thence did Yahuah (LORD) scatter them abroad upon the face of all the earth*. The dividing of the nations and the scattering at Babel are one event seen from two sides.'),
+    ('canon','genesis',11,8,'canon','genesis',10,25,'free',
+      E'*And unto Eber were born two sons: the name of one was Peleg; for in his days was the earth divided; and his brother''s name was Joktan* (Genesis 10:25). The seed-line itself bears the memorial of the scattering: Peleg is named because *in his days was the earth divided* — the dividing of Genesis 11:8, when *Yahuah (LORD) scattered them abroad*, marked into the very genealogy that runs down to Abram.'),
+
+    -- THREAD 3: the generations of Shem — the seed-line narrowing to Abram
+    ('canon','genesis',11,10,'canon','luke',3,36,'free',
+      E'*Which was the son of Cainan, which was the son of Arphaxad, which was the son of Sem, which was the son of Noe, which was the son of Lamech* (Luke 3:36). *These are the generations of Shem: Shem was an hundred years old, and begat Arphaxad two years after the flood* (Genesis 11:10). The toledot of Shem that opens here — Shem begat Arphaxad — is run forward, in reverse, to the Son of Adam: *the son of Arphaxad, which was the son of Sem*. The line of promise narrowing through Shem is the same line climbing to Messiah.'),
+    ('canon','genesis',11,16,'canon','luke',3,35,'free',
+      E'*Which was the son of Saruch, which was the son of Ragau, which was the son of Phalec, which was the son of Heber, which was the son of Sala* (Luke 3:35). The middle of the Shem toledot — *Salah... begat Eber... Eber... begat Peleg... Peleg... begat Reu... Reu... begat Serug* (Genesis 11:14-22) — is the very stretch the Spirit recites forward to Messiah: Sala, Heber, Phalec, Ragau, Saruch. Every link of the narrowing seed-line is accounted for in the genealogy of the Son of Adam.'),
+    ('canon','genesis',11,26,'canon','luke',3,34,'free',
+      E'*Which was the son of Jacob, which was the son of Isaac, which was the son of Abraham, which was the son of Thara, which was the son of Nachor* (Luke 3:34). The Shem toledot reaches its goal: *And Terah lived seventy years, and begat Abram, Nahor, and Haran* (Genesis 11:26). The line that has been funneling down through Eber and Peleg lands on Terah and Abram — and Luke runs it on: *the son of Abraham, which was the son of Thara* — the whole seed-of-promise converging on the man Gen 12 will call.'),
+
+    -- THREAD 4: Terah took Abram from Ur — the call out of idolatry
+    ('canon','genesis',11,31,'canon','joshua',24,2,'free',
+      E'*Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* (Joshua 24:2). When *Terah took Abram his son... and they went forth with them from Ur of the Chaldees, to go into the land of Canaan* (Genesis 11:31), the house leaving Ur was an idolatrous house — Yahushua (Joshua) names it plainly: Terah *served other gods*. Abram is called out of idolatry, not out of righteousness already kept.'),
+    ('canon','genesis',11,28,'canon','acts',7,2,'free',
+      E'*The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* (Acts 7:2). Genesis 11 leaves Abram *in Ur of the Chaldees* (Genesis 11:28) and then in Haran; Stephen fills in what the chapter only frames — that the *Elohim of glory* had already appeared to Abraham *in Mesopotamia, before he dwelt in Charran*. The call did not begin in Haran; it found Abram in the land of his idolatrous fathers.'),
+    ('canon','genesis',11,31,'canon','acts',7,4,'free',
+      E'*Then came he out of the land of the Chaldaeans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell* (Acts 7:4). The journey of Genesis 11:31 — *from Ur of the Chaldees... and they came unto Haran, and dwelt there* — is read forward by Stephen as the obedience of the call: out of the land of the Chaldaeans to Charran, and from thence, after Terah died (Genesis 11:32), on into the land of promise.'),
+    ('canon','genesis',11,31,'canon','genesis',12,1,'free',
+      E'*Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee* (Genesis 12:1). The setting-out of *Terah took Abram his son... to go into the land of Canaan* (Genesis 11:31) is the leading edge of the word that had already come: *Get thee out of thy country, and from thy kindred, and from thy father''s house*. The move from Ur toward Canaan is the first step of the call that gathers force in the next chapter.'),
+    ('canon','genesis',11,28,'jubilees','jubilees',11,14,'extras',
+      E'*And the child began to understand the errors of the earth that all went astray after graven images and after uncleanness... and he separated himself from his father that he might not worship idols with him* (Jubilees 11:14). While Genesis 11 only names Ur of the Chaldees (Genesis 11:28), the restored witness tells what Abram saw there: a whole earth gone astray after graven images, and the young Abram separating himself from his own father''s idolatry.'),
+    ('canon','genesis',11,28,'jubilees','jubilees',12,2,'extras',
+      E'*"What help and profit have we from those idols which you do worship... For there is no spirit in them, For they are dumb forms, and a misleading of the heart. Worship them not: Worship the Elohim (God) of heaven, Who causes the rain and the dew to descend on the earth..."* (Jubilees 12:2). The Ur that Abram is called out of (Genesis 11:28,31) was a house of idols, and the restored witness puts Abram''s confession in his mouth: the idols are dumb forms; worship instead the Elohim of heaven who made all things.'),
+    ('canon','genesis',11,31,'jubilees','jubilees',12,12,'extras',
+      E'*And in the sixtieth year of the life of Abram... Abram arose by night, and burned the house of the idols, and he burned all that was in the house, and no man knew it* (Jubilees 12:12). Before *they went forth... from Ur of the Chaldees* (Genesis 11:31), the restored witness records Abram''s decisive break with his fathers'' gods — he burned the house of the idols by night. The departure from Ur was a flight from idolatry already renounced.'),
+    ('canon','genesis',11,31,'jasher','jasher',9,6,'extras',
+      E'*And Abram... knew Yahuah (the Lord) from three years old, and he went in the ways of Yahuah (the Lord) until the day of his death... and all the sons of the earth in those days greatly transgressed against Yahuah (the Lord)... and they served other gods, and they forgot Yahuah (the Lord) who had created them* (Jasher 9:6). Against the backdrop of a whole earth serving *gods of wood and stone*, Abram knew Yahuah from his earliest childhood. When Terah''s house leaves Ur (Genesis 11:31), it is Abram — alone in his generation knowing Yahuah — whom the promise will follow.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (CENTERPIECE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-11-let-us-make-us-a-name-babel-and-the-pentecost-reversal',
+       E'Let us make us a name — Babel and the Pentecost reversal',
+       E'The whole earth is *of one language, and of one speech* (Genesis 11:1), and the men of Shinar bend that unity to rebellion: *Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth* (Genesis 11:4). They grasp at a name for themselves and at heaven by their own brick. Yahuah comes down — *Behold, the people is one, and they have all one language... Go to, let us go down, and there confound their language* (Genesis 11:6-7) — and *Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth: and from thence did Yahuah (LORD) scatter them abroad upon the face of all the earth* (Genesis 11:9). The restored witness tells the same event: they built the tower *saying, "Go to, let us ascend thereby into heaven"* (Jubilees 10:19); Yahuah said *"let us go down and confound their language"* (Jubilees 10:22); and *the whole land of Shinar is called Babel, because Yahuah (God) did there confound all the language of the children of men* (Jubilees 10:25). Now weave forward. At Shavuot the SAME scattered nations are gathered to Jerusalem, and *they were all filled with the Ruach HaKodesh (Holy Spirit), and began to speak with other tongues* (Acts 2:4), so that *every man heard them speak in his own language* (Acts 2:6) — the confounding of Babel beginning to be undone, the firstfruits of the regathering of the dispersed. The prophet names the consummation: *then will I turn to the people a pure language, that they may all call upon the name of Yahuah (LORD), to serve him with one consent* (Zephaniah 3:9). And the chapter''s own answer to the seized name comes in the next breath of the story: where the builders said *let us make us a name*, Yahuah says to Abram, *I will... make thy name great* (Genesis 12:2). What man grasps at on a tower, Yahuah gives by promise to the one He calls.',
+       sv.verse_id, ev.verse_id, 'extras', 20250
+  FROM _s301_ge11_lookup sv, _s301_ge11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=11 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-11-yahuah-scattered-them-and-the-nations-were-divided',
+       E'Yahuah scattered them — and the nations were divided',
+       E'*So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city* (Genesis 11:8). The scattering looks like pure judgment, but it is judgment-yet-mercy: it restrains the unity-in-rebellion and sets the bounds of the nations. The table of nations had already said it: *by these were the nations divided in the earth after the flood* (Genesis 10:32) — and the seed-line itself bears the memorial, for Peleg is named *for in his days was the earth divided* (Genesis 10:25). Mosheh (Moses) gives the dividing its deepest frame: *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8). The scattering at Babel is not chaos; the El Elyon orders it — and orders it toward the covenant people who will be called out of the divided nations. The restraining of the tower clears the ground for the calling of one seed-line out of the many.',
+       sv.verse_id, ev.verse_id, 'free', 20253
+  FROM _s301_ge11_lookup sv, _s301_ge11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=11 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-11-the-generations-of-shem-the-seed-line-narrowing-to-abram',
+       E'The generations of Shem — the seed-line narrowing to Abram',
+       E'After the nations are scattered, the camera narrows to one line: *These are the generations of Shem: Shem was an hundred years old, and begat Arphaxad two years after the flood* (Genesis 11:10) — and on through Salah, Eber, Peleg, Reu, Serug, Nahor, until *Terah lived seventy years, and begat Abram, Nahor, and Haran* (Genesis 11:26). Out of the divided nations of Babel, Yahuah funnels the promise down a single seed-line to the man He is about to call. The Spirit runs the same names forward to the Son of Adam: *the son of Sem, which was the son of Noe* (Luke 3:36); *the son of Saruch, which was the son of Ragau, which was the son of Phalec, which was the son of Heber, which was the son of Sala* (Luke 3:35); *the son of Abraham, which was the son of Thara, which was the son of Nachor* (Luke 3:34). Every link of the narrowing in Genesis 11 is a link in the genealogy of Messiah. The toledot of Shem is the trunk of the seed of promise, converging on Abram and running on to the Son of Adam.',
+       sv.verse_id, ev.verse_id, 'free', 20256
+  FROM _s301_ge11_lookup sv, _s301_ge11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=11 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-11-terah-took-abram-from-ur-the-call-out-of-idolatry',
+       E'Terah took Abram from Ur — the call out of idolatry',
+       E'The chapter ends with a journey begun: *And Terah took Abram his son, and Lot the son of Haran his son''s son, and Sarai his daughter in law, his son Abram''s wife; and they went forth with them from Ur of the Chaldees, to go into the land of Canaan; and they came unto Haran, and dwelt there* (Genesis 11:31) — and *Sarai was barren; she had no child* (Genesis 11:30). The promise sets out against an empty womb, from an idolatrous house. Yahushua (Joshua) names the house plainly: *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham... and they served other gods* (Joshua 24:2). Abram is called OUT of idolatry, not out of righteousness already his. Stephen fills in the timing the chapter only frames: *The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* (Acts 7:2), and *Then came he out of the land of the Chaldaeans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land* (Acts 7:4) — the obedience of the word that had already come: *Get thee out of thy country, and from thy kindred, and from thy father''s house* (Genesis 12:1). The restored witnesses unfold the young Abram in that idolatrous Ur: *the child began to understand the errors of the earth that all went astray after graven images... and he separated himself from his father that he might not worship idols with him* (Jubilees 11:14); he pressed his father, *"Worship the Elohim (God) of heaven... Worship them not"* (Jubilees 12:2); and at last *Abram arose by night, and burned the house of the idols* (Jubilees 12:12). Jasher remembers it the same: *Abram... knew Yahuah (the Lord) from three years old... and all the sons of the earth in those days greatly transgressed against Yahuah... and they served other gods* (Jasher 9:6). When Terah''s house leaves Ur, the promise follows the one man who already knew Yahuah.',
+       sv.verse_id, ev.verse_id, 'extras', 20259
+  FROM _s301_ge11_lookup sv, _s301_ge11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=11 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (CENTERPIECE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*every man heard them speak in his own language* (Acts 2:6) — the Babel-scattering of *let us make us a name, lest we be scattered* (11:4) beginning to be undone at Shavuot.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-let-us-make-us-a-name-babel-and-the-pentecost-reversal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*began to speak with other tongues, as the Spirit gave them utterance* (Acts 2:4) — the confounded tongue of *there confound their language* (11:7) answered by a Spirit-given hearing across the nations.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=7
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-let-us-make-us-a-name-babel-and-the-pentecost-reversal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the multitude... were confounded, because that every man heard them speak in his own language* (Acts 2:6) — Babel''s *confound* and *scatter* (11:9) set face to face with Pentecost''s gathering.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=9
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-let-us-make-us-a-name-babel-and-the-pentecost-reversal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will turn to the people a pure language, that they may all call upon the name of Yahuah (LORD)* (Zephaniah 3:9) — the undoing of Babel''s confounded tongue (11:9) finished in one-consent worship.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=9
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=3 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-let-us-make-us-a-name-babel-and-the-pentecost-reversal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will... make thy name great* (Genesis 12:2) — the made name Yahuah gives Abram, against the seized name of *let us make us a name* (11:4).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-let-us-make-us-a-name-babel-and-the-pentecost-reversal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*they built the city and the tower, saying, "Go to, let us ascend thereby into heaven"* (Jubilees 10:19) — the heart of *whose top may reach unto heaven* (11:4): an ascent by men''s own work.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=10 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-let-us-make-us-a-name-babel-and-the-pentecost-reversal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*"Behold, they are one people... let us go down and confound their language"* (Jubilees 10:22) — the divine deliberation of *the people is one... let us go down* (11:6-7) preserved word for word.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=10 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-let-us-make-us-a-name-babel-and-the-pentecost-reversal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*the whole land of Shinar is called Babel, because Yahuah (God) did there confound all the language* (Jubilees 10:25) — the naming and scattering of 11:9 carried with the same cause.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=9
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=10 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-let-us-make-us-a-name-babel-and-the-pentecost-reversal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*When the El Elyon (most High) divided to the nations their inheritance... according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8) — the scattering of 11:8 ordered toward the covenant people.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=8
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-yahuah-scattered-them-and-the-nations-were-divided'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*by these were the nations divided in the earth after the flood* (Genesis 10:32) — the dividing of the nations and the scattering of 11:9 are one event from two sides.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=9
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-yahuah-scattered-them-and-the-nations-were-divided'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the name of one was Peleg; for in his days was the earth divided* (Genesis 10:25) — the dividing of 11:8 marked into the seed-line that runs to Abram.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=8
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-yahuah-scattered-them-and-the-nations-were-divided'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the son of Arphaxad, which was the son of Sem, which was the son of Noe* (Luke 3:36) — the head of the Shem toledot (11:10) run forward to the Son of Adam.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=10
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=3 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-the-generations-of-shem-the-seed-line-narrowing-to-abram'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the son of Ragau, which was the son of Phalec, which was the son of Heber, which was the son of Sala* (Luke 3:35) — the middle of the Shem line (11:14-22) accounted for in Messiah''s genealogy.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=16
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=3 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-the-generations-of-shem-the-seed-line-narrowing-to-abram'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the son of Abraham, which was the son of Thara, which was the son of Nachor* (Luke 3:34) — the seed-line landing on Terah and Abram (11:26), run on to Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=26
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=3 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-the-generations-of-shem-the-seed-line-narrowing-to-abram'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Your fathers dwelt on the other side of the flood... even Terah... and they served other gods* (Joshua 24:2) — the house leaving Ur (11:31) was idolatrous; Abram called OUT of it.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-terah-took-abram-from-ur-the-call-out-of-idolatry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* (Acts 7:2) — the call found Abram in Ur (11:28), not first in Haran.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=28
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-terah-took-abram-from-ur-the-call-out-of-idolatry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Then came he out of the land of the Chaldaeans, and dwelt in Charran: and from thence... he removed him into this land* (Acts 7:4) — the journey of 11:31-32 read as the obedience of the call.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-terah-took-abram-from-ur-the-call-out-of-idolatry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Get thee out of thy country, and from thy kindred, and from thy father''s house* (Genesis 12:1) — the word already given, of which the leaving of Ur (11:31) is the first step.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-terah-took-abram-from-ur-the-call-out-of-idolatry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the child began to understand the errors of the earth... and he separated himself from his father that he might not worship idols with him* (Jubilees 11:14) — the young Abram in idolatrous Ur (11:28).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=28
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=11 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-terah-took-abram-from-ur-the-call-out-of-idolatry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*"Worship the Elohim (God) of heaven... Worship them not"* (Jubilees 12:2) — Abram''s confession against the dumb idols of the Ur he is called out of (11:28,31).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=28
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=12 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-terah-took-abram-from-ur-the-call-out-of-idolatry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Abram arose by night, and burned the house of the idols* (Jubilees 12:12) — the decisive break with his fathers'' gods before the leaving of Ur (11:31).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=12 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-terah-took-abram-from-ur-the-call-out-of-idolatry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Abram... knew Yahuah (the Lord) from three years old... and all the sons of the earth... served other gods* (Jasher 9:6) — the one man in his generation knowing Yahuah, whom the promise follows out of Ur (11:31).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s301_ge11_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=9 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-11-terah-took-abram-from-ur-the-call-out-of-idolatry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session301 — Genesis cross-references complete.'
