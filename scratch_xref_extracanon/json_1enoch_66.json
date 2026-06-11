@@ -1,0 +1,130 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 66,
+  "session": "session250",
+  "tag": "en66",
+  "base_band": 51625,
+  "threads": [
+    {
+      "slug": "1-enoch-66-angels-of-the-waters-held-back",
+      "title": "The angels over the waters, ready to loose the Flood",
+      "summary_md": "Enoch sees the executioners of the deluge poised and restrained: *And after this he showed me the angels of punishment who are prepared to come and release the powers of the waters upon the earth* (1 Enoch 66:1), *And he showed me the angels who are over the powers of the waters, And who release them upon the earth* (1 Enoch 66:4). This is the canon's own Flood, when the restraint was lifted and the deep was unloosed: *In the six hundredth year of Noah’s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened* (Genesis 7:11). Enoch's Parables name the same chambers a few chapters earlier — *And in those days shall punishment come from Yahuah (God) of Spirits, and He will open all the chambers of waters which are above the heavens, and of the fountains which are beneath the earth* (1 Enoch 54:7) — so the deep above and the deep below are the very waters Genesis opens. And the picture of angels appointed over the elements, holding them until the word is given, runs straight to John's vision of judgement held in check: *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree* (Revelation 7:1). It ain't new — the messengers stand ready, and nothing is loosed until the Creator commands.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 66,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 7,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Genesis 7:11 — *In the six hundredth year of Noah’s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* The very unleashing of the deep that Enoch's angels of the waters were prepared to release upon the earth (66:1)."
+        },
+        {
+          "src_ch": 66,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 7,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* The same picture of angels set over the elements, holding judgement back until the word is given (66:4)."
+        },
+        {
+          "src_ch": 66,
+          "src_v": 1,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 54,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "1 Enoch 54:7 — *And in those days shall punishment come from Yahuah (God) of Spirits, and He will open all the chambers of waters which are above the heavens, and of the fountains which are beneath the earth.* Enoch's own Parables name the upper and lower chambers that the angels of 66:1 stand ready to loose."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-66-waters-loosed-on-the-ungodly",
+      "title": "The waters loosed on the sinners — and then restrained",
+      "summary_md": "The angels' commission is judgement upon the covenant-breakers, not upon the earth at large: *These are the angels who are over the powers of the waters, And they shall release them upon the sinners and upon the ungodly, And upon those who have led the world astray* (1 Enoch 66:5). That is precisely how the canon frames the deluge — a flood *upon the world of the ungodly*: *And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly* (2 Peter 2:5). And just as the waters were loosed by command, by command they were stopped: *The fountains also of the deep and the windows of heaven were stopped, and the rain from heaven was restrained* (Genesis 8:2) — the same fountains and windows of Genesis 7:11 shut again. Enoch's Head of Days seals that restraint with the Noahic oath: *And He sware by His great name: ‘Henceforth I will not do so to all who dwell on the earth, and I will set a sign in the heaven: and this shall be a pledge of good faith between Me and them for ever, so long as heaven is above the earth* (1 Enoch 55:2). The judgement falls on those who *led the world astray*, the Watchers' seed-war — and the bound destroyers wait their own day: *And they shall be bound in the valleys of the earth Until the day of their judgment, The great day of consummation* (1 Enoch 66:6).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 66,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "2 Peter 2:5 — *And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly.* The flood released upon the sinners and the ungodly, exactly as Enoch's angels are commissioned (66:5)."
+        },
+        {
+          "src_ch": 66,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 8,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 8:2 — *The fountains also of the deep and the windows of heaven were stopped, and the rain from heaven was restrained.* The same waters that were loosed are shut again by command, as the destroyers are bound to await judgement (66:6)."
+        },
+        {
+          "src_ch": 66,
+          "src_v": 6,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 55,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "1 Enoch 55:2 — *And He sware by His great name: ‘Henceforth I will not do so to all who dwell on the earth, and I will set a sign in the heaven: and this shall be a pledge of good faith between Me and them for ever, so long as heaven is above the earth.* Enoch's Head of Days seals with the Noahic oath and bow the restraint that 66:6 anticipates."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-66-righteous-saved-in-the-light",
+      "title": "The righteous and elect saved, dwelling in the light",
+      "summary_md": "Where the ungodly perish, the elect are kept: *And the righteous and elect shall be saved on that day, And they shall never again see the face of the sinners and the ungodly* (1 Enoch 66:8), *And the Most High shall preserve them, And they shall dwell in the light of Yahuah (God) of Spirits for ever and ever* (1 Enoch 66:9). This is the canon's own division at the Flood — the same Lord who drowns the ungodly delivers His own: *Yahuah (Lord) knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment to be punished* (2 Peter 2:9). The promised dwelling — the elect in unfailing light — is the end Enoch's Parables sing elsewhere: *And the righteous shall be in the light of the sun, And the elect in the light of eternal life: The days of their life shall be unending, And the days of the holy and elect shall be without number* (1 Enoch 58:3); and it is John's New Jerusalem: *And there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light: and they shall reign for ever and ever* (Revelation 22:5). The righteous here are a preserved people, not a self-chosen class — saved because the Most High preserves them, and kept in His light forever.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 66,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "2 Peter 2:9 — *Yahuah (Lord) knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment to be punished.* The same Lord who drowns the ungodly delivers His own, just as Enoch's righteous and elect are saved on that day (66:8)."
+        },
+        {
+          "src_ch": 66,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Revelation 22:5 — *And there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light: and they shall reign for ever and ever.* The everlasting dwelling in the light of God that Enoch promises the elect (66:9)."
+        },
+        {
+          "src_ch": 66,
+          "src_v": 9,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 58,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "1 Enoch 58:3 — *And the righteous shall be in the light of the sun, And the elect in the light of eternal life: The days of their life shall be unending, And the days of the holy and elect shall be without number.* Enoch's own Parables name the unfailing light in which the elect dwell forever (66:9)."
+        }
+      ]
+    }
+  ]
+}
