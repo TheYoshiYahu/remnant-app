@@ -435,3 +435,29 @@ Then Apocrypha (session253 @58000). METHOD: workflow (pack-4 script + per-ch CON
 audit → recon.py jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from
 /tmp/extracanon-xref-wt with keychain unlocked — 23 commits (85b660c..9c9c380) need to land on
 origin/main (still at 47a9e48); prod is authoritative meanwhile.
+
+## RECEIPT — Jasher Pack 5 (ch33–40, Dinah/Esau-wars/Joseph begins) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **220 `jasher-*` threads / 770 members**, band 55000–55987,
+  per-ch(33-40) 5/5/7/6/5/5/6/5, 0 orphans. +44/146. Commit `bb6e261`. Six gates green.
+- Dinah/Shechem + Levi's zeal (33→Gen34/Gen49:5-7/Jub30); the massacre tail + the war of the seven
+  Amorite kings/Yahuah-fights (34→Gen34/Gen35:5/Gen48:22/Exod23:27/Josh2:9/Jub30); the kings' fear/recital
+  of Yahuah's acts for the seed (35→election, Abraham-from-the-fire self-link Jasher12:24, Akedah Jub17:16);
+  Bethel/put-away-strange-gods + Reuben-birthright-to-Joseph (36→Gen35/1Chr5:1-2); JOSEPH's dreams/the coat/
+  the brothers' envy (37→Gen37/Acts7:9); Joseph sold-setup (38-40, authored from the dump).
+- ⚑ FIDELITY-PARSER CAVEAT (new lesson): verify_fidelity's tuple-splitter does NOT skip parentheses inside
+  note STRINGS — an UNBALANCED paren in a quoted verse (e.g. quoting "(for he was the firstborn; but…"
+  without the closing ")") corrupts tuple boundaries and yields a FALSE flag that pairs a tgt with the
+  WRONG note. FIX: balance the paren in the note (quote the closing ")") — the DATA is fine (resolve+anchor+
+  pglast pass). If a fidelity flag shows tgt N but a note quoting verse M≠N, suspect an unbalanced paren in
+  an adjacent note, not a real error. Also fixed jasher12:25→24 + jub17:16 off-by-one self-links this pack.
+- Push blocked. origin/main 47a9e48; local HEAD `bb6e261` (24 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 1 ENOCH + JUBILEES COMPLETE + JASHER ch1-40 all LIVE = 907 threads/3294
+members. NEXT = Jasher Pack 6 ch41-48 (Joseph in Egypt: Potiphar/the wife/prison/Pharaoh's dreams/Joseph
+ruler; the famine; the brothers come to Egypt → Gen39-42 — VERIFY each chapter vs the dump, keep blob-verse
+warning). Then J7 ch49-56 … through ch91 (~6 more packs). Then Apocrypha (session253 @58000). METHOD:
+workflow (pack-5 script + per-ch CONTEXT + blob-verse warning) → render → anchor_check.py jasher jasher +
+pglast + verify_fidelity (watch the paren caveat) + resolve_check jasher jasher → fold → audit → recon.py
+jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from /tmp/extracanon-xref-wt
+with keychain unlocked — 24 commits (85b660c..bb6e261) need to land on origin/main (still at 47a9e48);
+prod is authoritative meanwhile.

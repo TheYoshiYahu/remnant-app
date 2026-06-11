@@ -1,0 +1,86 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 42,
+  "session": "session252",
+  "tag": "ja42",
+  "base_band": 56025,
+  "threads": [
+    {
+      "slug": "jasher-42-judah-counsel-sell-not-slay",
+      "title": "Yahudah's counsel — sell him, lay not our hand upon him",
+      "summary_md": "Jasher gives Yahudah's plea its fuller shape: *And Judah said to them, What gain will it be to us if we slay our brother? peradventure Elohim (God) will require him from us; this then is the counsel proposed concerning him, which you shall do to him: Behold this company of Ishmaelites going down to Egypt,* (Jasher 42:3) and *Now therefore, come let us dispose of him to them, and let not our hand be upon him, and they will lead him along with them, and he will be lost amongst the people of the land, and we will not put him to death with our own hands. And the proposal pleased his brethren and they did according to the word of Judah.* (Jasher 42:4). It ain't new — this is the same counsel Genesis records: *And Yahudah (Judah) said unto his brethren, What profit is it if we slay our brother, and conceal his blood?* (Genesis 37:26) and *Come, and let us sell him to the Ishmeelites, and let not our hand be upon him; for he is our brother and our flesh. And his brethren were content.* (Genesis 37:27). Stephen names the act and its hidden mercy at once: *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him,* (Acts 7:9) — the rejected brother handed off becomes a Messiah-type, for *Elohim (God) meant it unto good* (Genesis 50:20).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 3, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 26, "tier": "free", "note": "Genesis 37:26 — *And Yahudah (Judah) said unto his brethren, What profit is it if we slay our brother, and conceal his blood?* The canon's terse line that Jasher 42:3 expands into Judah's full speech against shedding a brother's blood."},
+        {"src_ch": 42, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 27, "tier": "free", "note": "Genesis 37:27 — *Come, and let us sell him to the Ishmeelites, and let not our hand be upon him; for he is our brother and our flesh. And his brethren were content.* The very 'let not our hand be upon him' counsel that Jasher 42:4 records the brethren accepting at Judah's word."},
+        {"src_ch": 42, "src_v": 3, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 9, "tier": "free", "note": "Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him,* Stephen reads the sale Jasher 42:3 narrates as the brethren's envy overruled by the God who stayed with the rejected one."},
+        {"src_ch": 42, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 20, "tier": "free", "note": "Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The brethren's disposal of Joseph in Jasher 42:4 is later named the means by which much people were kept alive — the Messiah-type who saves those who sold him."}
+      ]
+    },
+    {
+      "slug": "jasher-42-drawn-from-pit-twenty-silver",
+      "title": "Drawn up out of the pit — sold for twenty pieces of silver",
+      "summary_md": "Jasher lingers over the rescue-that-becomes-a-sale: *And these Midianites ran to the pit to drink water, for they thought that it contained water, and on coming before the pit they heard the voice of Joseph crying and weeping in the pit, and they looked down into the pit, and they saw and behold there was a youth of comely appearance and well favored.* (Jasher 42:6), until at last *And they did so, and they reached the Ishmaelites, and the Midianites sold Joseph to the Ishmaelites for twenty pieces of silver which they had given for him to his brethren.* (Jasher 42:24). It ain't new — Genesis compresses the same drawing-up and price: *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt.* (Genesis 37:28). The Psalmist sings the providence under it: *He sent a man before them, even Joseph, who was sold for a servant:* (Psalm 105:17). And the silver-for-a-brother pattern returns at the betrayal of the greater Joseph: *And said unto them, What will ye give me, and I will deliver him unto you? And they covenanted with him for thirty pieces of silver.* (Matthew 26:15).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 24, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 28, "tier": "free", "note": "Genesis 37:28 — *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt.* The single canon verse Jasher 42:5-24 unfolds into the whole Midianite-then-Ishmaelite resale for the same twenty pieces of silver."},
+        {"src_ch": 42, "src_v": 6, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 17, "tier": "free", "note": "Psalm 105:17 — *He sent a man before them, even Joseph, who was sold for a servant:* The pit-cry of Jasher 42:6 read as Yahuah sending Joseph ahead — the affliction is the errand."},
+        {"src_ch": 42, "src_v": 24, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 26, "tgt_v": 15, "tier": "free", "note": "Matthew 26:15 — *And said unto them, What will ye give me, and I will deliver him unto you? And they covenanted with him for thirty pieces of silver.* The brother bartered for silver in Jasher 42:24 prefigures the greater Joseph delivered up for thirty — the Messiah-type sold by his own."}
+      ]
+    },
+    {
+      "slug": "jasher-42-yahuah-with-the-afflicted",
+      "title": "Yahuah with the afflicted — the smiters withered",
+      "summary_md": "Where the canon only hints, Jasher shows Yahuah guarding the sold one on the road: *And Yahuah (the Lord) saw the ambition of Joseph and his trouble, and Yahuah (the Lord) brought down upon those men darkness and confusion, and the hand of every one that smote him became withered.* (Jasher 42:28), and again *And Yahuah (the Lord) saw Joseph's affliction, and Yahuah (the Lord) again smote these men, and chastised them, and Yahuah (the Lord) caused darkness to envelope them upon the earth, and the lightning flashed and the thunder roared, and the earth shook at the voice of the thunder and of the mighty wind, and the men were terrified and knew not where they should go.* (Jasher 42:44). It ain't new — Stephen's verdict on the whole descent is the same: *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him,* (Acts 7:9). The Psalmist keeps the cost in view even as God is present: *Whose feet they hurt with fetters: he was laid in iron:* (Psalm 105:18). The righteous afflicted one is never abandoned by the One who sent him ahead.",
+      "anchor_start_v": 28,
+      "anchor_end_v": 48,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 28, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 9, "tier": "free", "note": "Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him,* The 'but Elohim was with him' that Jasher 42:28 dramatizes as Yahuah withering the hands of Joseph's smiters."},
+        {"src_ch": 42, "src_v": 44, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 18, "tier": "free", "note": "Psalm 105:18 — *Whose feet they hurt with fetters: he was laid in iron:* The road-affliction of Jasher 42:44 — smitten and terrified — answered by the Psalm that holds Joseph's suffering and God's presence together."}
+      ]
+    },
+    {
+      "slug": "jasher-42-rachel-grave-yahuah-with-you",
+      "title": "At Rachel's grave — 'hope to Yahuah, for he is with you'",
+      "summary_md": "Jasher's tenderest scene has Joseph fall on his mother's grave on the road to Egypt: *And Joseph reached his mother's grave, and Joseph hastened and ran to his mother's grave, and fell upon the grave and wept.* (Jasher 42:30), and a voice answers him to send him on in hope: *Now therefore my son, Joseph my son, hope to Yahuah (the Lord), and wait for him and do not fear, for Yahuah (the Lord) is with you, he will deliver you from all trouble.* (Jasher 42:39). It ain't new — the grave Joseph runs to is the one Genesis records on that very road: *And Rachel died, and was buried in the way to Ephrath, which is Beth-lehem.* (Genesis 35:19). And the comfort spoken — Yahuah with the afflicted, who delivers from all trouble — is the same providence the canon confesses over Joseph's whole descent: *He sent a man before them, even Joseph, who was sold for a servant:* (Psalm 105:17).",
+      "anchor_start_v": 30,
+      "anchor_end_v": 40,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 30, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 35, "tgt_v": 19, "tier": "free", "note": "Genesis 35:19 — *And Rachel died, and was buried in the way to Ephrath, which is Beth-lehem.* The grave 'in the way' that Jasher 42:30 has Joseph run to as the Ishmaelites pass along the road of Ephrath."},
+        {"src_ch": 42, "src_v": 39, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 17, "tier": "free", "note": "Psalm 105:17 — *He sent a man before them, even Joseph, who was sold for a servant:* The grave-voice of Jasher 42:39 ('hope to Yahuah... he will deliver you') reads the slave-road as Yahuah sending Joseph ahead to deliver."}
+      ]
+    },
+    {
+      "slug": "jasher-42-meant-for-good-deliverer-type",
+      "title": "Yahuah pleased to spare him — the deliverer meant for good",
+      "summary_md": "Jasher discloses the hidden hand even in the bargaining: *Now therefore sell him to us, and we will give you all that you require for him; and Yahuah (the Lord) was pleased to do this in order that the sons of Jacob should not slay their brother.* (Jasher 42:17). The very transaction that looks like betrayal is Yahuah keeping the brother alive. It ain't new — this is Joseph's own later reading of the sale: *Now therefore be not grieved, nor angry with yourselves, that ye sold me hither: for Elohim (God) did send me before you to preserve life.* (Genesis 45:5), and *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* (Genesis 50:20). The pattern is the gospel's own confidence: *And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose.* (Romans 8:28) — the rejected, sold brother is the deliverer God meant for good.",
+      "anchor_start_v": 17,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 17, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 45, "tgt_v": 5, "tier": "free", "note": "Genesis 45:5 — *Now therefore be not grieved, nor angry with yourselves, that ye sold me hither: for Elohim (God) did send me before you to preserve life.* Joseph's own verdict on the sale that Jasher 42:17 already names Yahuah's doing 'that the sons of Jacob should not slay their brother.'"},
+        {"src_ch": 42, "src_v": 17, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 20, "tier": "free", "note": "Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The God who was 'pleased to do this' in Jasher 42:17 is the God who meant the brethren's evil for good — the deliverer-type."},
+        {"src_ch": 42, "src_v": 17, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 8, "tgt_v": 28, "tier": "free", "note": "Romans 8:28 — *And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose.* The providence Jasher 42:17 names over the sale is the gospel's whole confidence — all things working for good to the called."}
+      ]
+    },
+    {
+      "slug": "jasher-42-jubilees-sale-self-link",
+      "title": "The same sale in Jubilees — the kid, the coat, the Ishmaelites",
+      "summary_md": "Jasher narrates the brethren selling Joseph for twenty pieces of silver: *And the sons of Jacob hearkened to the Midianites and they sold their brother Joseph to them for twenty pieces of silver, and Reuben their brother was not with them, and the Midianites took Joseph and continued their journey to Gilead.* (Jasher 42:19). The Jubilees apparatus already carries the same event from the same patriarchal source: *And they dealt treacherously with him, and formed a plot against him to slay him, but changing their minds, they sold him to Ishmaelite merchants, and they brought him down into Egypt, and they sold him to Potiphar, the eunuch of Pharaoh, the chief of the cooks, priest of the city of 'Êlêw. And the sons of Jacob slaughtered a kid, and dipped the coat of Joseph in the blood, and sent (it) to Jacob their father on the tenth of the seventh month.* (Jubilees 34:11). It ain't new across the witnesses — and the canon holds the same drawing-up and price: *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt.* (Genesis 37:28).",
+      "anchor_start_v": 19,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 19, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 34, "tgt_v": 11, "tier": "extras", "note": "Jubilees 34:11 — *And they dealt treacherously with him, and formed a plot against him to slay him, but changing their minds, they sold him to Ishmaelite merchants, and they brought him down into Egypt, and they sold him to Potiphar, the eunuch of Pharaoh, the chief of the cooks, priest of the city of 'Êlêw. And the sons of Jacob slaughtered a kid, and dipped the coat of Joseph in the blood, and sent (it) to Jacob their father on the tenth of the seventh month.* The same patriarchal sale Jasher 42:19 records — plot, change of mind, sold to the Ishmaelites down into Egypt."},
+        {"src_ch": 42, "src_v": 24, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 28, "tier": "free", "note": "Genesis 37:28 — *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt.* The canon source standing beside both Jasher 42:24 and Jubilees 34:11 — one event, three witnesses."}
+      ]
+    }
+  ]
+}
