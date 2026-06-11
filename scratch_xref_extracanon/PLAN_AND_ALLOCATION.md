@@ -104,3 +104,13 @@ the proven `WITH input(...) VALUES ... INSERT` SQL → gates → fold → commit
 ## ▶️ NEXT = the SIMILITUDES / Book of Parables (ch37-71) — HIGH VALUE (Son of Adam / Elect One).
 Pack 5 ch37-44, Pack 6 ch45-51 (46=Son of Adam beside Head of Days→Dan7 kaph; 48=named before
 creation; 51=resurrection), Pack 7 ch52-62, Pack 8 ch63-71. KAPH discipline now IN PLAY.
+
+## RECEIPT — Pack 5 (1 Enoch ch37–44, Similitudes opens) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **171 threads / 634 members**, band 50000–51087, 0 orphans.
+  per-ch(37-44) 4/5/5/6/4/6/5/5. +40/141. Commit `3c4c785`. Five gates green (fidelity 634/634,
+  FULL-LIBRARY PASS, resolve 0 unresolved). Elect One/Righteous One enthroned (Isa 42:1/53:11/11:2,
+  Matt 25:31); four presences (Isa 6/Dan 7:10/Rev 5); Wisdom-found-no-place→Logos (42, Prov 1/John
+  1:10-11/Sirach 24/Baruch 3). Son-of-Adam NAMED-title kept distinct from Dan 7:13 kaph "like" —
+  minions correctly reserved the cloud-coming kaph for ch46/62; Head-of-Days=Father, Elect-One=Formed
+  Son; four presences framed as created servants (not-a-created-angel boundary guarded).
+- Push still keychain-blocked. origin/main 47a9e48; local HEAD `3c4c785`. Prod authoritative.
