@@ -1,0 +1,84 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 59,
+  "session": "session252",
+  "tag": "ja59",
+  "base_band": 56450,
+  "threads": [
+    {
+      "slug": "jasher-59-seventy-souls",
+      "title": "The seventy souls who came with Jacob — the tribal census",
+      "summary_md": "Jasher opens with the muster of the house of Jacob: *And these are the names of the sons of Israel who dwelt in Egypt, who had come with Jacob, all the sons of Jacob came to Egypt, every man with his household* (Jasher 59:1), totalling *And all the souls that went forth from the loins of Jacob, were seventy souls; these are they who came with Jacob their father to Egypt to dwell there: and Joseph and all his brethren dwelt securely in Egypt, and they ate of the best of Egypt all the days of the life of Joseph* (Jasher 59:19). It ain't new — this is the Genesis census set down word for word: *And all the souls of the house of Jacob, which came into Egypt, were threescore and ten* (Genesis 46:27). Exodus repeats the very roll: *Now these are the names of the children of Yashar'el (Israel), which came into Egypt; every man and his household came with Jacob* (Exodus 1:1) and *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already* (Exodus 1:5). Stephen carries the same count into the Acts of the apostles: *Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls* (Acts 7:14). The seed-line is kept and numbered — the twelve-tribe nation forming in Egypt exactly as the canon recorded.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 59, "src_v": 1, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 1, "tier": "free",
+         "note": "Exodus 1:1 — *Now these are the names of the children of Yashar'el (Israel), which came into Egypt; every man and his household came with Jacob.* Exodus opens its bondage account with the same muster-formula Jasher 59:1 uses to head the chapter."},
+        {"src_ch": 59, "src_v": 19, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 46, "tgt_v": 27, "tier": "free",
+         "note": "Genesis 46:27 — *And the sons of Joseph, which were born him in Egypt, were two souls: all the souls of the house of Jacob, which came into Egypt, were threescore and ten.* The seventy-soul total of Jasher 59:19 is lifted straight from the Genesis census."},
+        {"src_ch": 59, "src_v": 19, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 5, "tier": "free",
+         "note": "Exodus 1:5 — *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already.* Exodus echoes the same seventy-from-the-loins count that closes Jasher's roll in 59:19."},
+        {"src_ch": 59, "src_v": 19, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 14, "tier": "free",
+         "note": "Acts 7:14 — *Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls.* Stephen rehearses the very household-of-Jacob that Jasher 59:19 numbers in Egypt."}
+      ]
+    },
+    {
+      "slug": "jasher-59-josephs-bones-oath",
+      "title": "Elohim will surely visit you — Joseph's bones and the promised visitation",
+      "summary_md": "Dying, Joseph gathers the brethren and swears them to the visitation: *And Joseph said to his brethren and to the whole of his father's household, Behold I die, and Elohim (God) will surely visit you and bring you up from this land to the land which he swore to your fathers to give to them* (Jasher 59:22), *And it shall be when Elohim shall visit you to bring you up from here to the land of your fathers, then bring up my bones with you from here* (Jasher 59:23), *And Joseph made the sons of Israel to swear for their seed after them, saying, Elohim will surely visit you and you shall bring up my bones with you from here* (Jasher 59:24). It ain't new — Genesis carries the same dying charge: *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24) and *And Joseph took an oath of the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25). The oath is kept centuries later: *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you* (Exodus 13:19). The apostle names it faith: *By faith Joseph, when he died, made mention of the departing of the children of Yashar'el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). Jubilees sets down the same swearing: *And he commanded the children of Yashar'el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt* (Jubilees 46:5). The visitation promised to the fathers stands — the seed will be brought up, and the bones go with them.",
+      "anchor_start_v": 22,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 59, "src_v": 22, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 24, "tier": "free",
+         "note": "Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* Joseph's dying declaration of the visitation in Jasher 59:22 reproduces this Genesis charge nearly word for word."},
+        {"src_ch": 59, "src_v": 24, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 25, "tier": "free",
+         "note": "Genesis 50:25 — *And Joseph took an oath of the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* The bones-oath Joseph binds in Jasher 59:24 is the same oath Genesis records."},
+        {"src_ch": 59, "src_v": 23, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 13, "tgt_v": 19, "tier": "free",
+         "note": "Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* The charge Joseph gives in Jasher 59:23 is fulfilled when Moses lifts the bones at the Exodus."},
+        {"src_ch": 59, "src_v": 22, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 22, "tier": "free",
+         "note": "Hebrews 11:22 — *By faith Joseph, when he died, made mention of the departing of the children of Yashar'el (Israel); and gave commandment concerning his bones.* The dying word and bone-commandment of Jasher 59:22 is the faith the writer of Hebrews honours."},
+        {"src_ch": 59, "src_v": 24, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 46, "tgt_v": 5, "tier": "extras",
+         "note": "Jubilees 46:5 — *And he commanded the children of Yashar'el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt.* Jubilees records the very bones-charge Joseph swears the seed to in Jasher 59:24."}
+      ]
+    },
+    {
+      "slug": "jasher-59-joseph-dies",
+      "title": "Joseph died, an hundred and ten years old — embalmed and mourned",
+      "summary_md": "The patriarch passes: *And it came to pass after this that Joseph died in that year, the seventy-first year of the Israelites going down to Egypt* (Jasher 59:25), *And Joseph was one hundred and ten years old when he died in the land of Egypt, and all his brethren and all his servants rose up and they embalmed Joseph, as was their custom, and his brethren and all Egypt mourned over him for seventy days* (Jasher 59:26). It ain't new — Genesis closes the same way: *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt* (Genesis 50:26). Exodus marks the generation's end: *And Joseph died, and all his brethren, and all that generation* (Exodus 1:6). Jubilees gives the matching span of his years: *And Joseph died being a hundred and ten years old; seventeen years he lived in the land of Canaan, and ten years he was a servant, and three years in prison, and eighty years he was under the king, ruling all the land of Egypt* (Jubilees 46:3). The same death, the same hundred-and-ten years, the same coffin in Egypt — the seed carried forward to the bondage that follows.",
+      "anchor_start_v": 25,
+      "anchor_end_v": 27,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 59, "src_v": 26, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 26, "tier": "free",
+         "note": "Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* The hundred-and-ten-year death and embalming of Jasher 59:26 is the closing verse of Genesis itself."},
+        {"src_ch": 59, "src_v": 25, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 6, "tier": "free",
+         "note": "Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Joseph's death in Jasher 59:25 is the hinge Exodus uses to turn from the patriarchs to the bondage."},
+        {"src_ch": 59, "src_v": 26, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 46, "tgt_v": 3, "tier": "extras",
+         "note": "Jubilees 46:3 — *And Joseph died being a hundred and ten years old; seventeen years he lived in the land of Canaan, and ten years he was a servant, and three years in prison, and eighty years he was under the king, ruling all the land of Egypt.* Jubilees gives the same hundred-and-ten-year reckoning of Joseph's life that Jasher 59:26 records at his death."}
+      ]
+    },
+    {
+      "slug": "jasher-59-bondage-begins",
+      "title": "The Egyptians began to rule over Israel — the bondage foretold to Abraham",
+      "summary_md": "With Joseph gone the affliction begins: *And it came to pass after the death of Joseph, all the Egyptians began in those days to rule over the children of Israel, and Pharaoh, king of Egypt, who reigned in his father's stead, took all the laws of Egypt and conducted the whole government of Egypt under his counsel, and he reigned securely over his people* (Jasher 59:28). It ain't new — this is the opening of Exodus' bondage: *And the children of Yashar'el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* (Exodus 1:7), then *Now there arose up a new king over Egypt, which knew not Joseph* (Exodus 1:8) and *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses* (Exodus 1:11). And it ain't even new to Exodus — the bondage was sworn to Abraham generations before: *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). Stephen preaches the same foretelling: *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years* (Acts 7:6). Jubilees opens the same affliction: *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt* (Jubilees 46:14). The kingdom of man rises over the chosen seed — yet the affliction itself was promised and counted, and the visitation already sworn.",
+      "anchor_start_v": 28,
+      "anchor_end_v": 28,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 59, "src_v": 28, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 8, "tier": "free",
+         "note": "Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The Egyptians beginning to rule over Israel in Jasher 59:28 is the same turn Exodus marks with the new king who knew not Joseph."},
+        {"src_ch": 59, "src_v": 28, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 11, "tier": "free",
+         "note": "Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* The rule-over-Israel of Jasher 59:28 hardens into the taskmasters and burdens Exodus names."},
+        {"src_ch": 59, "src_v": 28, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 15, "tgt_v": 13, "tier": "free",
+         "note": "Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The bondage that begins in Jasher 59:28 was sworn to Abraham long before, the affliction foretold and counted."},
+        {"src_ch": 59, "src_v": 28, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 6, "tier": "free",
+         "note": "Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen preaches the very bondage-foretelling that opens in Jasher 59:28."},
+        {"src_ch": 59, "src_v": 28, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 46, "tgt_v": 14, "tier": "extras",
+         "note": "Jubilees 46:14 — *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt.* Jubilees opens the same Egyptian affliction that begins in Jasher 59:28."}
+      ]
+    }
+  ]
+}

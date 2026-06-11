@@ -1,0 +1,66 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 60,
+  "session": "session252",
+  "tag": "ja60",
+  "base_band": 56475,
+  "threads": [
+    {
+      "slug": "jasher-60-zepho-eliphaz-esau-edom",
+      "title": "Zepho son of Eliphaz — the line of Esau set apart",
+      "summary_md": "Jasher names the war-captain who drives this whole chapter, and the canon already knows his pedigree: *And when the year came round, being the seventy-second year from the Israelites going down to Egypt, after the death of Joseph, Zepho, the son of Eliphaz, the son of Esau, fled from Egypt, he and his men, and they went away* (Jasher 60:1). Genesis set this name in Esau's house generations earlier — *And the sons of Eliphaz were Teman, Omar, Zepho, and Gatam, and Kenaz* (Genesis 36:11) — sons of *Eliphaz the son of Adah the wife of Esau* (Genesis 36:10), for *these are the generations of Esau the father of the Edomites in mount Seir* (Genesis 36:9). It ain't new: Zepho is no invention but a son of Edom, and Jasher's legend traces him *enticing Angeas king of Africa to collect all his army to go and fight with the Egyptians, and with the sons of Jacob* (Jasher 60:4) — the ancient grudge of Esau against Jacob carried forward. From that day forward *Zepho the captain of the host of Angeas would go with them* (Jasher 60:30) to spoil. The prophets read this division as election: *Was not Esau Jacob's brother? saith Yahuah (LORD): yet I loved Jacob, And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness* (Malachi 1:2-3), and Edom's violence is judged — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever* (Obadiah 1:10). The seed is kept; the rival line, however great its captains rise, is set outside the covenant.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 30,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 60, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 36, "tgt_v": 11,
+         "tier": "free",
+         "note": "Genesis 36:11 — *And the sons of Eliphaz were Teman, Omar, Zepho, and Gatam, and Kenaz.* Jasher's war-captain Zepho son of Eliphaz son of Esau is named here in the canon's own roll of Edom, so the legend hangs on a genuine genealogy."},
+        {"src_ch": 60, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 36, "tgt_v": 10,
+         "tier": "free",
+         "note": "Genesis 36:10 — *These are the names of Esau's sons; Eliphaz the son of Adah the wife of Esau, Reuel the son of Bashemath the wife of Esau.* Jasher's \"son of Eliphaz, the son of Esau\" matches the canon line: Zepho descends through Eliphaz, Esau's firstborn by Adah."},
+        {"src_ch": 60, "src_v": 4,
+         "tgt_edition": "canon", "tgt_book": "malachi", "tgt_ch": 1, "tgt_v": 2,
+         "tier": "free",
+         "note": "Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob's brother? saith Yahuah (LORD): yet I loved Jacob,* Zepho's enticing Angeas to war against the sons of Jacob is the old Esau-against-Jacob enmity, which the canon reads as election dividing the two brothers."},
+        {"src_ch": 60, "src_v": 30,
+         "tgt_edition": "canon", "tgt_book": "obadiah", "tgt_ch": 1, "tgt_v": 10,
+         "tier": "free",
+         "note": "Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* Jasher's Zepho riding out continually to spoil and to war on Jacob's sons is the very violence of Edom against his brother that the prophet says shall be cut off."}
+      ]
+    },
+    {
+      "slug": "jasher-60-seventy-second-year-after-joseph",
+      "title": "The seventy-second year in Egypt — the sojourn clock running after Joseph's death",
+      "summary_md": "Jasher dates its war-legend by the covenant clock: *And when the year came round, being the seventy-second year from the Israelites going down to Egypt, after the death of Joseph* (Jasher 60:1). The canon marks the same turn — Joseph's death and the generation passing — as the hinge before the bondage: *And Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt* (Genesis 50:26), *And Joseph died, and all his brethren, and all that generation* (Exodus 1:6). This is the appointed window Yahuah foretold to Abraham: *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). Jubilees, narrating the very same years, agrees that after Jacob died the seed multiplied through Joseph's lifetime — *And it came to pass that after Jacob died the children of Yashar'el (Israel) multiplied in the land of Egypt, and they became a great nation* (Jubilees 46:1) — and that *Joseph died being a hundred and ten years old* (Jubilees 46:3), *And he died and all his brethren and all that generation* (Jubilees 46:4). It ain't new: while Jasher's eye wanders off to the wars of Africa and Chittim, the date-line quietly keeps the canon's countdown — the seed kept and growing toward the promised visitation.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 60, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 26,
+         "tier": "free",
+         "note": "Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* Jasher reckons its seventy-second year \"after the death of Joseph,\" dating from the very death the canon records as the close of Genesis."},
+        {"src_ch": 60, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 6,
+         "tier": "free",
+         "note": "Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Jasher's clock begins where Exodus begins — Joseph and his generation gone — the hinge just before the bondage opens."},
+        {"src_ch": 60, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 15, "tgt_v": 13,
+         "tier": "free",
+         "note": "Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* Jasher's counting of the years \"from the Israelites going down to Egypt\" is the running of the very sojourn Yahuah foretold to Abraham."},
+        {"src_ch": 60, "src_v": 1,
+         "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 46, "tgt_v": 1,
+         "tier": "extras",
+         "note": "Jubilees 46:1 — *And it came to pass that after Jacob died the children of Yashar'el (Israel) multiplied in the land of Egypt, and they became a great nation, and they were of one accord in heart, so that brother loved brother and every man helped his brother, and they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph.* Jubilees narrates the very years Jasher dates by, the seed multiplying in Egypt after Joseph — the same window from a parallel hand."},
+        {"src_ch": 60, "src_v": 1,
+         "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 46, "tgt_v": 3,
+         "tier": "extras",
+         "note": "Jubilees 46:3 — *And Joseph died being a hundred and ten years old; seventeen years he lived in the land of Canaan, and ten years he was a servant, and three years in prison, and eighty years he was under the king, ruling all the land of Egypt.* Jasher and Jubilees both reckon \"after the death of Joseph,\" agreeing with Genesis on his hundred and ten years."}
+      ]
+    }
+  ]
+}
