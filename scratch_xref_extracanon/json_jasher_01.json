@@ -1,0 +1,144 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 1,
+  "session": "session252",
+  "tag": "ja01",
+  "base_band": 55000,
+  "threads": [
+    {
+      "slug": "jasher-1-man-and-the-woman-formed",
+      "title": "Let us make man — Adam and Eve formed",
+      "summary_md": "Jasher opens on the sixth day in the very words of the canon: *And Elohim (God) said, Let us make man in our image, after our likeness, and Elohim created man in his own image.* (Jasher 1:1) — *And Elohim formed man from the ground, and he blew into his nostrils the breath of life, and man became a living soul endowed with speech.* (Jasher 1:2). This is Genesis carried, not invented. *And Elohim (God) said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.* (Genesis 1:26); *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* (Genesis 2:7). The making of the woman matches the canon rib for rib: *And the rib, which Yahuah Elohim (the LORD God) had taken from man, made he a woman, and brought her unto the man.* (Genesis 2:22). Jubilees tells the same scene the same way — *And Yahuah our Elohim (the LORD our God) caused a deep sleep to fall upon him, and he slept, and He took for the woman one rib from amongst his ribs... and built the woman.* (Jubilees 3:5) — and Messiah Himself reads this beginning forward into marriage: *And he answered and said unto them, Have ye not read, that he which made them at the beginning made them male and female,* (Matthew 19:4). It ain't new.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 1, "tgt_v": 26, "tier": "free",
+         "note": "Genesis 1:26 — *And Elohim (God) said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.* Jasher 1:1 quotes the canon's own \"let us make man\" word-for-word as the head of its retelling."},
+        {"src_ch": 1, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 2:7 — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* Jasher 1:2's forming from the ground and breath into the nostrils is Genesis 2:7, adding only that the soul was \"endowed with speech.\""},
+        {"src_ch": 1, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 22, "tier": "free",
+         "note": "Genesis 2:22 — *And the rib, which Yahuah Elohim (the LORD God) had taken from man, made he a woman, and brought her unto the man.* Jasher 1:4's deep sleep, the taken rib, the flesh built upon it, and the woman brought to Adam follow Genesis rib for rib."},
+        {"src_ch": 1, "src_v": 4, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 3, "tgt_v": 5, "tier": "extras",
+         "note": "Jubilees 3:5 — *And Yahuah our Elohim (the LORD our God) caused a deep sleep to fall upon him, and he slept, and He took for the woman one rib from amongst his ribs, and this rib was the origin of the woman from amongst his ribs, and He built up the flesh in its stead, and built the woman.* Jubilees narrates the same forming of the woman as Jasher 1:4 — the now-live witness beside it."},
+        {"src_ch": 1, "src_v": 6, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 19, "tgt_v": 4, "tier": "free",
+         "note": "Matthew 19:4 — *And he answered and said unto them, Have ye not read, that he which made them at the beginning made them male and female,* Messiah reads the same beginning Jasher 1:6 records — created male and female, blessed to be fruitful and multiply."}
+      ]
+    },
+    {
+      "slug": "jasher-1-garden-command-and-the-fall",
+      "title": "The garden, the command, and the fall",
+      "summary_md": "Jasher sets Adam and his wife in Eden under the one command exactly as the canon does: *And Yahuah Elohim took Adam and his wife, and he placed them in the garden of Eden to dress it and to keep it; and he commanded them and said to them, From every tree of the garden you may eat, but from the tree of the knowledge of good and evil you shall not eat, for in the day that you eat of it you shall surely die.* (Jasher 1:7). That is Genesis: *And Yahuah Elohim (the LORD God) took the man, and put him into the garden of Eden to dress it and to keep it.* (Genesis 2:15); *But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die.* (Genesis 2:17). The serpent's enticement and the woman's taking match Genesis 3 — *Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made...* (Genesis 3:1); *And when the woman saw that the tree was good for food... she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* (Genesis 3:6). The apocryphal witness names the deceiver behind the serpent: *Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.* (Wisdom of Solomon 2:24). The fall is the canon's fall — it ain't new.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 15, "tier": "free",
+         "note": "Genesis 2:15 — *And Yahuah Elohim (the LORD God) took the man, and put him into the garden of Eden to dress it and to keep it.* Jasher 1:7 places Adam and his wife in Eden \"to dress it and to keep it\" in the canon's own words."},
+        {"src_ch": 1, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 17, "tier": "free",
+         "note": "Genesis 2:17 — *But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die.* The single prohibition Jasher 1:7 records — eat of every tree but this one — is Genesis 2:17 carried verbatim."},
+        {"src_ch": 1, "src_v": 9, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 3:1 — *Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made. And he said unto the woman, Yea, hath Elohim (God) said, Ye shall not eat of every tree of the garden?* Jasher 1:9's serpent who came \"to incite them to transgress\" is the subtil serpent of Genesis 3:1."},
+        {"src_ch": 1, "src_v": 10, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 6, "tier": "free",
+         "note": "Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* Jasher 1:10 — the woman hearkening, taking, eating, and giving to her husband — is Genesis 3:6."},
+        {"src_ch": 1, "src_v": 10, "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 2, "tgt_v": 24, "tier": "extras",
+         "note": "Wisdom of Solomon 2:24 — *Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.* Wisdom names the envy of the devil behind the serpent's enticement that Jasher 1:10 recounts."}
+      ]
+    },
+    {
+      "slug": "jasher-1-expelled-and-the-seed-begun",
+      "title": "Driven from Eden — the seed-line begun",
+      "summary_md": "Jasher's expulsion and the first birth follow the canon's hinge: *And Yahuah Elohim drove them that day from the garden of Eden, to till the ground from which they were taken, and they went and dwelt at the east of the garden of Eden; and Adam knew his wife Eve and she bore two sons and three daughters.* (Jasher 1:12). Genesis tells the same driving-out: *Therefore Yahuah Elohim (the LORD God) sent him forth from the garden of Eden, to till the ground from whence he was taken.* (Genesis 3:23); *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* (Genesis 3:24). The naming of Eve and the first births open the chosen seed-line — *And Adam called his wife's name Eve; because she was the mother of all living.* (Genesis 3:20); *And Adam knew Eve his wife; and she conceived, and bare Cain... And she again bare his brother Abel...* (Genesis 4:1-2). Election precedes confession: the line of Adam is begun here that will run through Seth to Noah to Shem. Jubilees dates the same births in its jubilee-reckoning — *And in the third week in the second jubilee she gave birth to Cain, and in the fourth she gave birth to Abel...* (Jubilees 4:1).",
+      "anchor_start_v": 12,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 12, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 23, "tier": "free",
+         "note": "Genesis 3:23 — *Therefore Yahuah Elohim (the LORD God) sent him forth from the garden of Eden, to till the ground from whence he was taken.* Jasher 1:12 drives them out \"to till the ground from which they were taken\" — Genesis 3:23 word for word."},
+        {"src_ch": 1, "src_v": 12, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 24, "tier": "free",
+         "note": "Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* Jasher 1:12's dwelling \"at the east of the garden of Eden\" is the very ground east of the cherubim-guarded gate of Genesis 3:24."},
+        {"src_ch": 1, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 20, "tier": "free",
+         "note": "Genesis 3:20 — *And Adam called his wife's name Eve; because she was the mother of all living.* Jasher 1:5 names her Eve \"for she was the mother of all living\" — the canon's own etymology of the matriarch through whom the seed comes."},
+        {"src_ch": 1, "src_v": 13, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 4:1 — *And Adam knew Eve his wife; and she conceived, and bare Cain, and said, I have gotten a man from Yahuah (LORD).* Jasher 1:13's \"I have obtained a man from Yahuah\" at Cain's naming is Eve's word in Genesis 4:1 — the first link of the seed-line."},
+        {"src_ch": 1, "src_v": 13, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 4, "tgt_v": 1, "tier": "extras",
+         "note": "Jubilees 4:1 — *And in the third week in the second jubilee she gave birth to Cain, and in the fourth she gave birth to Abel, and in the fifth she gave birth to her daughter 'Âwân.* Jubilees records the same first births Jasher 1:13 names — the now-live patriarchal witness, dated in jubilees."}
+      ]
+    },
+    {
+      "slug": "jasher-1-cain-and-abel-offerings",
+      "title": "The two offerings — Abel's accepted, Cain's refused",
+      "summary_md": "Jasher gives the two brothers their callings and their offerings as Genesis does: *And the boys grew up and their father gave them a possession in the land; and Cain was a tiller of the ground, and Abel a keeper of sheep.* (Jasher 1:14) — *and Cain brought from the fruit of the ground, and Abel brought from the firstlings of his flock from the fat of it, and Elohim turned and inclined to Abel and his offering, and a fire came down from Yahuah (the Lord) from heaven and consumed it.* (Jasher 1:15). This is the canon: *And Abel was a keeper of sheep, but Cain was a tiller of the ground.* (Genesis 4:2); *And Abel, he also brought of the firstlings of his flock and of the fat thereof. And Yahuah (LORD) had respect unto Abel and to his offering:* (Genesis 4:4). Jasher's added detail — fire from heaven consuming the accepted gift — names the sign of a respected sacrifice; the seed-war of the two lines is already drawn at the altar. Hebrews reads Abel's gift as faith: *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous...* (Hebrews 11:4); and Jubilees fixes the same cause of the coming murder — *Cain slew Abel because Elohim (God) accepted the sacrifice of Abel, and did not accept the offering of Cain.* (Jubilees 4:2). The fathers sacrificed before Sinai — it ain't new.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 2, "tier": "free",
+         "note": "Genesis 4:2 — *And she again bare his brother Abel. And Abel was a keeper of sheep, but Cain was a tiller of the ground.* Jasher 1:14 gives the brothers their identical callings — Cain a tiller of the ground, Abel a keeper of sheep."},
+        {"src_ch": 1, "src_v": 15, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 4:4 — *And Abel, he also brought of the firstlings of his flock and of the fat thereof. And Yahuah (LORD) had respect unto Abel and to his offering:* Jasher 1:15's firstlings \"from the fat of it\" and Yahuah's inclining to Abel is Genesis 4:4, with the added sign of heaven's consuming fire."},
+        {"src_ch": 1, "src_v": 16, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 5, "tier": "free",
+         "note": "Genesis 4:5 — *But unto Cain and to his offering he had not respect. And Cain was very wroth, and his countenance fell.* Jasher 1:16's Cain, whose offering was not turned to and who grew jealous \"and sought a pretext to slay him,\" is the wroth Cain of Genesis 4:5."},
+        {"src_ch": 1, "src_v": 15, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 4, "tier": "free",
+         "note": "Hebrews 11:4 — *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts: and by it he being dead yet speaketh.* The heaven-consumed gift of Jasher 1:15 is the more excellent sacrifice Hebrews calls faith and righteousness."},
+        {"src_ch": 1, "src_v": 16, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 4, "tgt_v": 2, "tier": "extras",
+         "note": "Jubilees 4:2 — *And in the first (year) of the third jubilee, Cain slew Abel because Elohim (God) accepted the sacrifice of Abel, and did not accept the offering of Cain.* Jubilees names the rejected offering of Jasher 1:16 as the very cause of the murder to come — the now-live witness beside it."}
+      ]
+    },
+    {
+      "slug": "jasher-1-murder-of-abel",
+      "title": "Cain rose up and slew his brother",
+      "summary_md": "Jasher expands the field-quarrel and then strikes the canon's blow: *And Cain hastened and rose up, and took the iron part of his ploughing instrument, with which he suddenly smote his brother and he slew him, and Cain spilt the blood of his brother Abel upon the earth...* (Jasher 1:25). Genesis tells it bare: *And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him.* (Genesis 4:8). Abel had appealed to the Judge — *Surely Elohim who has made us in the earth, he will avenge my cause, and he will require my blood from you should you slay me, for Yahuah (the Lord) is the judge and arbiter...* (Jasher 1:22). The New Testament reads the murder as the first fruit of the two lines, the wicked seed against the righteous: *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother's righteous.* (1 John 3:12); and Wisdom names it the same way: *But when the unrighteous went away from her in his anger, he perished also in the fury with which he murdered his brother.* (Wisdom of Solomon 10:3). The seed-war is here at the beginning — it ain't new.",
+      "anchor_start_v": 21,
+      "anchor_end_v": 25,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 25, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 8, "tier": "free",
+         "note": "Genesis 4:8 — *And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him.* Jasher 1:25's Cain who \"rose up\" in the field and slew his brother is Genesis 4:8, named down to the instrument."},
+        {"src_ch": 1, "src_v": 22, "tgt_edition": "canon", "tgt_book": "1-john", "tgt_ch": 3, "tgt_v": 12, "tier": "free",
+         "note": "1 John 3:12 — *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother's righteous.* Abel's plea to the Judge in Jasher 1:22 — the wicked requited for his evil, the righteous vindicated — is John's reading of the first murder as the two lines, evil works against righteous."},
+        {"src_ch": 1, "src_v": 25, "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 10, "tgt_v": 3, "tier": "extras",
+         "note": "Wisdom of Solomon 10:3 — *But when the unrighteous went away from her in his anger, he perished also in the fury with which he murdered his brother.* Wisdom names the same fratricidal fury that Jasher 1:25 recounts in the slaying of Abel."},
+        {"src_ch": 1, "src_v": 25, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 4, "tgt_v": 3, "tier": "extras",
+         "note": "Jubilees 4:3 — *And he slew him in the field: and his blood cried from the ground to heaven, complaining because he had slain him.* Jubilees tells the same field-murder of Jasher 1:25, with Abel's blood crying from the ground — the now-live patriarchal witness."}
+      ]
+    },
+    {
+      "slug": "jasher-1-curse-and-the-wandering",
+      "title": "The blood that cries — the curse on Cain",
+      "summary_md": "Yahuah confronts and curses Cain exactly as the canon does: *And Cain dissembled, and said, I do not know, am I my brother's keeper? And Yahuah (the Lord) said to him, What have you done? The voice of your brother's blood cries to me from the ground where you have slain him.* (Jasher 1:29) — *and now, therefore, cursed be you from the ground which opened its mouth to receive your brother's blood from your hand...* (Jasher 1:31) — *and you shall be moving and wandering in the earth until the day of your death.* (Jasher 1:32). Genesis is the source word for word: *And Yahuah (LORD) said unto Cain, Where is Abel thy brother? And he said, I know not: Am I my brother's keeper?* (Genesis 4:9); *And now art thou cursed from the earth, which hath opened her mouth to receive thy brother's blood from thy hand;* (Genesis 4:11); *a fugitive and a vagabond shalt thou be in the earth.* (Genesis 4:12). His going out east of Eden is the canon's land of Nod — *And Cain went out from the presence of Yahuah (LORD), and dwelt in the land of Nod, on the east of Eden.* (Genesis 4:16). Jubilees confirms the same sentence: *...he made him a fugitive on the earth because of the blood of his brother, and he cursed him upon the earth.* (Jubilees 4:4).",
+      "anchor_start_v": 28,
+      "anchor_end_v": 33,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 29, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 9, "tier": "free",
+         "note": "Genesis 4:9 — *And Yahuah (LORD) said unto Cain, Where is Abel thy brother? And he said, I know not: Am I my brother's keeper?* Jasher 1:29's dissembling \"am I my brother's keeper?\" is Cain's word in Genesis 4:9."},
+        {"src_ch": 1, "src_v": 31, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 11, "tier": "free",
+         "note": "Genesis 4:11 — *And now art thou cursed from the earth, which hath opened her mouth to receive thy brother's blood from thy hand;* Jasher 1:31's curse from the ground \"which opened its mouth to receive your brother's blood\" is Genesis 4:11 word for word."},
+        {"src_ch": 1, "src_v": 32, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 12, "tier": "free",
+         "note": "Genesis 4:12 — *When thou tillest the ground, it shall not henceforth yield unto thee her strength; a fugitive and a vagabond shalt thou be in the earth.* Jasher 1:32 — the ground withholding its strength and the moving-and-wandering sentence — is Genesis 4:12."},
+        {"src_ch": 1, "src_v": 33, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 16, "tier": "free",
+         "note": "Genesis 4:16 — *And Cain went out from the presence of Yahuah (LORD), and dwelt in the land of Nod, on the east of Eden.* Jasher 1:33's Cain going out \"from the presence of Yahuah... toward the east of Eden\" is the land of Nod east of Eden in Genesis 4:16."},
+        {"src_ch": 1, "src_v": 31, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 4, "tgt_v": 4, "tier": "extras",
+         "note": "Jubilees 4:4 — *And Yahuah (God) reproved Cain because of Abel, because he had slain him, and he made him a fugitive on the earth because of the blood of his brother, and he cursed him upon the earth...* Jubilees gives the same curse and fugitive-sentence Jasher 1:31 records — the now-live witness, adding the heavenly-tables verdict on treacherous murder."}
+      ]
+    },
+    {
+      "slug": "jasher-1-cain-line-and-the-city",
+      "title": "Cain's line and the city Enoch",
+      "summary_md": "Jasher closes the chapter tracing Cain's line and his city, the first kingdom-of-man raised east of Eden: *And Cain knew his wife in those days, and she conceived and bare a son, and he called his name Enoch...* (Jasher 1:34) — *And at that time Cain also began to build a city: and he built the city and he called the name of the city Enoch, according to the name of his son...* (Jasher 1:35) — *And Irad was born to Enoch, and Irad begat Mechuyael and Mechuyael begat Methusael.* (Jasher 1:36). Genesis records the same line and the same first city: *And Cain knew his wife; and she conceived, and bare Enoch: and he builded a city, and called the name of the city, after the name of his son, Enoch.* (Genesis 4:17); *And unto Enoch was born Irad: and Irad begat Mehujael: and Mehujael begat Methusael...* (Genesis 4:18). This is the line set against the chosen seed — the wandering builder who founds a city, the pattern that will rise again in Nimrod's Babel. Jubilees follows Cain to his stone-struck end in righteous judgment: *...for his house fell upon him and he died in the midst of his house, and he was killed by its stones, for with a stone he had killed Abel, and by a stone was he killed in righteous judgment.* (Jubilees 4:31).",
+      "anchor_start_v": 34,
+      "anchor_end_v": 36,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 34, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 17, "tier": "free",
+         "note": "Genesis 4:17 — *And Cain knew his wife; and she conceived, and bare Enoch: and he builded a city, and called the name of the city, after the name of his son, Enoch.* Jasher 1:34-35's birth of Enoch and the city named for him is Genesis 4:17 — the first city, the kingdom-of-man pattern begun east of Eden."},
+        {"src_ch": 1, "src_v": 36, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 18, "tier": "free",
+         "note": "Genesis 4:18 — *And unto Enoch was born Irad: and Irad begat Mehujael: and Mehujael begat Methusael: and Methusael begat Lamech.* Jasher 1:36's Irad–Mechuyael–Methusael genealogy traces Cain's line exactly as Genesis 4:18 does."},
+        {"src_ch": 1, "src_v": 35, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 4, "tgt_v": 31, "tier": "extras",
+         "note": "Jubilees 4:31 — *At the close of this jubilee Cain was killed after him in the same year; for his house fell upon him and he died in the midst of his house, and he was killed by its stones, for with a stone he had killed Abel, and by a stone was he killed in righteous judgment.* Jubilees follows the same Cain whose city Jasher 1:35 builds to his stone-struck end in righteous judgment — the now-live witness."}
+      ]
+    }
+  ]
+}

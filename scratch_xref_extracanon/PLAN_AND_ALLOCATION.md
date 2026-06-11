@@ -302,3 +302,35 @@ anchor_check.py + pglast + verify_fidelity + resolve_check → fold → audit �
 anchor_check (gapped editions silently drop gap-anchored threads). ⚠️ FIRST NEXT SESSION: retry
 `git push origin HEAD:main` from /tmp/extracanon-xref-wt with keychain unlocked — 17 commits
 (85b660c..bc48bb6) need to land on origin/main (still at 47a9e48); prod is authoritative meanwhile.
+
+## RECEIPT — Jubilees Pack J5 (ch33–40) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **212 threads / 731 members**, band 53000–53984, per-ch(33-40)
+  5/5/5/6/4/4/6/4, 0 orphans, 0 self-equal. +39/125. Commit `014c43a`. Six gates green FIRST PASS
+  (minions now reliably avoid verse-gaps + self-equal links).
+- Reuben/Bilhah + heavenly-tablets law (33→Gen35:22/Gen49:3-4/Lev18:8/Deut27:20/1Cor5:1); Amorite-kings
+  war + JOSEPH SOLD + Yom Kippur grounded in Jacob's mourning (34→Gen37/Acts7:9/Ps105:17/Lev16:29/Lev23:27
+  "it ain't new"); Rebekah's love-charge/death (35→Gen27:41/Lev19:18); Isaac's TESTAMENT/two-great-
+  commandments (36→Deut6:5/Lev19:18/Matt22:39/John13:34/1John4:20); Esau breaks oath/war (37→Obad1:10/
+  Amos1:11); Esau slain/Edom serves Jacob (38→Gen36:31/Num24:18/Mal1:3); JOSEPH+Potiphar's-wife/purity
+  (39→Gen39/1Cor6:18); Pharaoh's dreams/Joseph ruler=Messiah-type (40→Gen41/Ps105:19/Acts7:10).
+- Push blocked. origin/main 47a9e48; local HEAD `014c43a` (18 commits ahead). Prod authoritative.
+
+## ✅✅ RECEIPT — Pack J6 (ch41–50) — JUBILEES COMPLETE-LIVE IN PROD
+- Applied 2026-06-11. FINAL JUBILEES: **264 `jubilees-*` threads / 911 members**, band 53000–54237,
+  all 50 chapters, 0 orphans (912 migration − 1 benign self-equal/dup). Commit `8e9e039`. Six gates
+  green (anchor_check caught jub46 new-king thread anchored on v11-gap → v13).
+- Judah & Tamar→Messianic line (41→Gen38/Matt1:3/Ruth4); famine/brothers (42→Gen42/Acts7:9/Gen50:20);
+  "God meant it for good" (43→Gen45/50:20/Acts3:13/Luke23:34/Rom8:28); the seventy souls (44→Gen46/
+  Exod1:5/Deut10:22/Acts7:14); Goshen/multiplies (45→Gen47/Exod1:7); bondage/Joseph's bones (46→Exod1:6/
+  Gen50:24/Acts7:17); MOSES born (47→Exod2/Acts7:20/Heb11:23); Exodus+MASTEMA/plagues/Red Sea (48→Exod3-14/
+  Rom9:17/Rev15:3); THE PASSOVER eternal + Lamb=Messiah (49→Exod12/Lev23:5/Num9:12/John19:36/1Cor5:7);
+  eternal SABBATH/JUBILEE/proclaim-liberty (50→Exod20:8/31:13/Lev25/Isa58:13 — closes where ch2 began).
+- ⚑ ENV NOTE: a minion hit transient /tmp ENOSPC mid-run (now clear, 737GB free); worked around. Watch
+  for /tmp pressure on long fan-outs.
+- Push blocked. origin/main 47a9e48; local HEAD `8e9e039` (19 commits ahead). Prod authoritative.
+
+## ★ EXTRA-CANON TOTALS LIVE: 1 Enoch 423/1613 + Jubilees 264/911 = 687 threads / 2524 members.
+
+## ▶️ NEXT BOOK = JASHER (session252 @ band 55000; edition 'jasher' book 'jasher', 91 ch / 3828 v —
+the LARGEST book). ch N band = 55000 + (N-1)*25 → ch1=55000 … ch91=57250. Brief = MINION_BRIEF_JASHER.md.
+~12 packs of 8 chapters. Then Apocrypha (@58000), then the smaller books per the allocation table.
