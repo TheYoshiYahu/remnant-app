@@ -57,7 +57,7 @@ def toks(block):
 checked=ok=flagged=0; flags=[]
 for f in sorted(glob.glob(frag_glob)):
     sql=open(f,encoding='utf-8',errors='replace').read()
-    for hm in re.finditer(r"WITH\s+input\([^)]*\)\s+AS\s*\(VALUES(.*?)\)\s*INSERT",sql,re.DOTALL|re.IGNORECASE):
+    for hm in re.finditer(r"\(VALUES(.*?)\)\s*(?:INSERT\b|AS\s+\w+\s*\()",sql,re.DOTALL|re.IGNORECASE):
         region=hm.group(1);depth=0;start=None
         for idx,ch in enumerate(region):
             if ch=='(' and depth==0: depth=1;start=idx+1
@@ -98,7 +98,14 @@ au=subprocess.run([sys.executable, os.path.join(ROOT,'data-schema','migrations',
 line=[l for l in au.stdout.splitlines() if base in l]
 g1=f"GATE1 audit: {line[0].strip() if line else 'migration line not found'}"
 
-allpass = (flagged==0) and ("PARSE OK" in g3) and (not dups) and ("[PASS] FULL-LIBRARY" in g1)
-print(g1); print(fid); print(g3); print(gslug)
+# ---- GATE5 arity (VALUES row column-count consistency; catches apply-time errors) ----
+ar=subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)),'arity_check.py')]
+                  + sorted(glob.glob(frag_glob)), capture_output=True, text=True)
+arity_ok = ar.returncode==0
+g5=f"GATE5 arity: {'OK' if arity_ok else 'BAD ROWS -> '+ar.stdout.strip().splitlines()[-1] if ar.stdout else 'FAIL'}"
+
+allpass = (flagged==0) and ("PARSE OK" in g3) and (not dups) and ("[PASS] FULL-LIBRARY" in g1) and arity_ok
+print(g1); print(fid); print(g3); print(gslug); print(g5)
+if not arity_ok: print(ar.stdout.strip())
 print("ALLGATES:", "PASS" if allpass else "FAIL")
 sys.exit(0 if allpass else 1)

@@ -196,6 +196,15 @@ SELECT t.id, cr.id, <n>, E'<member_note>'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 ```
 
+⚠ **EDITION vs BOOK-SLUG TRAP — read this.** Every VALUES row carries BOTH `tgt_edition` AND
+`tgt_slug` as SEPARATE columns (and member rows the same). For most extras the two differ
+(edition `apocrypha` + book `2-esdras`; edition `enoch` + book `1-enoch`). But for **Jubilees the
+edition slug AND the book slug are BOTH `'jubilees'`** (and Jasher edition+book are both
+`'jasher'`) — you must STILL write it TWICE: `...'jubilees','jubilees',ch,v,'extras',...`. Writing
+it once collapses the row to the wrong arity and the apply dies with *"VALUES lists must all be
+the same length."* Same for the member rows if your member alias carries a `tgt_ed` column. KEEP
+EVERY VALUES ROW THE SAME COLUMN COUNT.
+
 Use `E'...'` literals; escape every apostrophe as `''`. **SLUGS use English book-name
 fragments**, prefixed `<book_slug>-<chapter>-`, naming the weave — e.g.
 `genesis-1-the-formed-spoke-and-the-light-was-good`,
