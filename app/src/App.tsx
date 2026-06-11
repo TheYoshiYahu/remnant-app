@@ -103,6 +103,7 @@ import { useParentheticalsToggle } from "./lib/useParentheticalsToggle";
 import { useSacredNameMask } from "./lib/useSacredNameMask";
 import { bookPillClassName, classifyBookSlug } from "./lib/book-source-class";
 import { useStrongsSuperscriptsToggle } from "./lib/useStrongsSuperscriptsToggle";
+import { useStudyBarCollapsed } from "./lib/useStudyBarCollapsed";
 import {
   isAtCompanionTier,
   useInterlinearToggle,
@@ -665,6 +666,17 @@ function Reader() {
     show: showStrongsSuperscripts,
     toggle: toggleShowStrongsSuperscripts,
   } = useStrongsSuperscriptsToggle();
+
+  // S229 — collapsed/expanded state for the pinned study-options bar
+  // (Yoshi "Option 2"). The display-toggle pills moved from after the
+  // scripture into a slim bar pinned at the TOP of the reading column;
+  // this flag drives whether the bar shows the pills or tucks to its
+  // thin handle. Default collapsed; persists at
+  // localStorage `rop_study_bar_collapsed_v1`.
+  const {
+    collapsed: studyBarCollapsed,
+    toggle: toggleStudyBar,
+  } = useStudyBarCollapsed();
 
   // S168 — §28 Hebrew & Greek interlinear toggle. Default OFF (clean
   // reading surface; partner opts INTO the original-language column-
@@ -2664,6 +2676,302 @@ function Reader() {
           onPointerCancel={onArticlePointerCancel}
           style={{ touchAction: "pan-y" }}
         >
+          {/*
+            S229 — Display-options bar (Yoshi "Option 2"). The study-aid
+            + layer toggles that used to sit AFTER the scripture now live
+            in this slim bar pinned at the TOP of the reading column
+            (.study-bar in index.css is position:sticky; top:0), so they
+            stay one tap away while reading. The bar collapses to a thin
+            labelled handle (chevron) via studyBarCollapsed, persisted at
+            localStorage rop_study_bar_collapsed_v1. Every toggle below is
+            unchanged — only placement + the collapse affordance are new.
+          */}
+          <div
+            className="study-bar"
+            data-collapsed={studyBarCollapsed ? "true" : "false"}
+          >
+            <button
+              type="button"
+              onClick={toggleStudyBar}
+              aria-expanded={!studyBarCollapsed}
+              aria-controls="study-bar-pills"
+              title={
+                studyBarCollapsed
+                  ? "Show display options (English helpers, Strong's, Interlinear, study aids, the Prophesied Kingdom Gospel, the Red-Pill Witness)"
+                  : "Hide display options"
+              }
+              className="study-bar-handle"
+            >
+              <span className="study-bar-handle-label">Display options</span>
+              <span className="study-bar-chevron" aria-hidden="true">
+                {studyBarCollapsed ? "▼" : "▲"}
+              </span>
+            </button>
+            {!studyBarCollapsed && (
+              <div id="study-bar-pills" className="study-bar-pills">
+            {/*
+              S144 — parentheticals-hide toggle. Sits left of the study-
+              aid toggle in the chrome strip. Default OFF (parentheticals
+              visible) per the voice-skill retention-mechanism for first-
+              time Christian readers; the reader who has internalized the
+              restored names opts INTO the strip.
+
+              Copy renamed 2026-05-26 (Yoshi): "Hide / Show English
+              helpers" — friendlier than the prior "name translations"
+              copy, and names what the parentheticals actually are for
+              the reader (training wheels for the Hebrew restorations).
+
+              Styling 2026-05-26 (Yoshi): metallic-emerald gradient per
+              COLOR_PALETTE §3 (the expansion register) — same treatment
+              as the ChapterCommentary "Read the basic walk →" / "Read
+              the deeper dive →" pills. Semantically fits: "metallic
+              green = more is hidden here, click to expand" reads as
+              "metallic green = English helpers can be expanded/collapsed
+              from this control." Sized to match the techelet study-aid
+              toggle to its right (px-4 py-1.5 text-xs uppercase) so the
+              chrome strip stays visually aligned.
+            */}
+            <button
+              type="button"
+              onClick={toggleHideParentheticals}
+              aria-pressed={hideParentheticals}
+              title="Hide or show the English helpers in parentheses after restored Sacred Names (e.g., Yahuah (LORD), Yashar'el (Israel), Mosheh (Moses)). Persists across chapters and reloads."
+              className="rounded-md border border-[#2EFFA1] bg-gradient-to-r from-[#04321E] via-[#15A86A] to-[#04321E] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#E6FFF2] shadow-sm hover:opacity-90"
+            >
+              {hideParentheticals
+                ? "Show English helpers"
+                : "Hide English helpers"}
+            </button>
+            {/*
+              S160 — Strong's superscripts toggle (§27). Metallic argaman
+              gradient per COLOR_PALETTE §1 covenant-body register —
+              each Strong's number ties an English word back to its
+              Hebrew/Greek covenant lexeme, which reads as the
+              covenant-body affordance the argaman register carries.
+              Distinct from the §144 English-helpers metallic-emerald
+              gradient to its left so the partner reads two different
+              functional registers. Same size + chrome-strip placement
+              as the parentheticals toggle. Default OFF; tapping flips
+              state and persists via lib/useStrongsSuperscriptsToggle
+              (localStorage `rop_strongs_superscripts_v1`).
+            */}
+            <button
+              type="button"
+              onClick={toggleShowStrongsSuperscripts}
+              aria-pressed={showStrongsSuperscripts}
+              title="Show or hide Strong's H- and G-numbers as small superscripts after every word in the verse text. Tap any superscript to open the Strong's lookup, same as tapping the word itself. Persists across chapters and reloads."
+              className="rounded-md border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#F5E6FA] shadow-sm hover:opacity-90"
+            >
+              {showStrongsSuperscripts
+                ? "Hide Strong's"
+                : "Show Strong's"}
+            </button>
+            {/*
+              S168 / S169 — §28 Interlinear toggle. S169 repaint per Yoshi
+              live-walk redline 1: moved from metallic argaman to the
+              **existing metallic-gold register** already in use on the
+              §17 NT cross-reference mini-pill in
+              `components/ChapterEndCard.tsx` (deep `#645028` shadow →
+              `#B4A078` bright midtone → `#FCECAF` highlight specular).
+              Snapped to those existing stops verbatim per Yoshi's
+              live-walk call — the cross-refs gold renders prettier
+              against the dark chrome strip than the deeper composed
+              variant tried earlier; the lock is on the cross-refs
+              stops. The §28 chrome pill and the NT cross-reference
+              pill now share the same metallic-gold register;
+              COLOR_PALETTE.md §3b is the register's formal
+              documentation. The original-language layer is the
+              priestly-witness register because the interlinear shows
+              the source-language scripture the translators worked
+              from — the priestly-text witness underneath the English.
+
+              For Companion+ (`partnerAtCompanion`), the button toggles
+              the InterlinearLayer mount per verse and persists via
+              `useInterlinearToggle`. For below-Companion partners, the
+              button still renders in the chrome strip (the gate is
+              visible, not hidden, per the §20 stub-catalog "tier-
+              locked-stub" convention) but tapping routes to /pricing
+              and a small "Companion" chip distinguishes the locked
+              state — chip uses gold-shadow `#645028` to match the
+              locked register's deep stop.
+            */}
+            <button
+              type="button"
+              onClick={() => {
+                if (partnerAtCompanion) {
+                  toggleShowInterlinear();
+                } else {
+                  if (typeof window !== "undefined") {
+                    window.location.href = "/pricing";
+                  }
+                }
+              }}
+              aria-pressed={partnerAtCompanion ? showInterlinear : false}
+              title={
+                partnerAtCompanion
+                  ? "Show or hide the Hebrew/Greek interlinear layer above each English word — lemma, transliteration, morphology, gloss. Long-press the morphology cell to expand the abbreviation. Persists across chapters and reloads."
+                  : "Hebrew/Greek interlinear layer — upgrade to the Companion tier to enable. Tap to view pricing."
+              }
+              className="relative rounded-md border border-[#FCECAF] bg-gradient-to-r from-[#645028] via-[#B4A078] to-[#645028] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#FFF8E1] shadow-sm hover:opacity-90"
+            >
+              {partnerAtCompanion
+                ? showInterlinear
+                  ? "Hide Interlinear"
+                  : "Show Interlinear"
+                : "Interlinear"}
+              {!partnerAtCompanion && (
+                <span
+                  className="ml-2 inline-flex items-center rounded-sm border border-[#FFF8E1]/40 bg-[#645028] px-1.5 py-0.5 text-[0.55rem] font-semibold uppercase tracking-wider text-[#FFF8E1]"
+                  aria-label="Companion tier required"
+                >
+                  Companion
+                </span>
+              )}
+            </button>
+            {/*
+              S169 — Study Aids toggle (hideCommentary under the hood).
+              Upgraded from flat techelet `#1A6FE5` to the metallic-
+              techelet register per Yoshi live-walk redline 1 (now
+              formally defined in COLOR_PALETTE.md §3a — gradient
+              `#0A2D84 → #1A6FE5 → #5A9CF5 → #A8C8F0 → ...` mirroring
+              the §3 bracket-emerald 7-stop structure on the techelet
+              hue family). The chrome strip now reads four metallic
+              pills across the four locked theological registers:
+
+                emerald (§144 English Helpers / expansion register)
+                argaman (§27 Strong's / covenant-body register)
+                gold    (§28 Interlinear / priestly-witness register)
+                techelet(Study Aids / divine-name register)
+
+              "Study Aids" covers the chapter-intro + commentary +
+              cross-reference apparatus — the divine-name lexical
+              witness register fits because the commentary surfaces
+              the framework's reading of the divine name and the
+              theological architecture the names anchor. State +
+              persistence unchanged (toggleHideCommentary).
+            */}
+            <button
+              type="button"
+              onClick={toggleHideCommentary}
+              aria-pressed={hideCommentary}
+              title="Show or hide all study aids (chapter intro, commentary, cross-references). Persists across chapters and reloads."
+              className="rounded-md border border-[#A8C8F0] bg-gradient-to-r from-[#0A2D84] via-[#1A6FE5] to-[#0A2D84] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#E6F0FA] shadow-sm hover:opacity-90"
+            >
+              {hideCommentary ? "Show study aids" : "Hide study aids"}
+            </button>
+            {/*
+              S205 — The Kingdom toggle (working title: Blue Pill).
+              The TWO-TONE register: metallic emerald + metallic gold
+              joined in one pill — the two sticks of Ezekiel 37:15-22
+              made one in his hand ("uniting the old and new
+              testament" — Yoshi). Hard seam, blend border. ON marks
+              every member verse with the two-tone quote pair; tap to
+              unfold the come-and-see card. FREE for every partner —
+              the proclamation surface; no tier chip, ever. No dot
+              glyph (Yoshi, S205 proof). S209: moved ABOVE the Witness
+              (Yoshi) — the Witness sits last in the stack.
+
+              S217 (Yoshi, "option a"): the Kingdom and Witness each own
+              a w-full column group so each feature's style row sits
+              DIRECTLY beneath its OWN pill. Before this, both style rows
+              were full-width siblings below the shared pill strip, so the
+              Kingdom options visually fell under the Witness pill. The
+              w-full wrapper breaks each group onto its own line within
+              the justify-end strip; items-end keeps pill + options right-
+              aligned with the rest of the strip.
+            */}
+            <div className="flex w-full flex-col items-end gap-2">
+              <button
+                type="button"
+                onClick={toggleKingdom}
+                aria-pressed={kingdomOn}
+                title="The Prophesied Kingdom Gospel — nothing in the new testament is new. Marks every teaching, act, and promise beside the scripture it was taught from. Tap a marked verse to see both sides quoted in full."
+                className="chrome-metal chrome-metal-kingdom !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
+              >
+                <span className="flex flex-col items-center leading-tight">
+                  <span>
+                    {kingdomOn ? "Hide" : "Show"} the Prophesied Kingdom Gospel
+                  </span>
+                  <span className="mt-0.5 text-[0.6rem] font-normal normal-case tracking-normal opacity-85">
+                    (nothing new in the new testament)
+                  </span>
+                </span>
+              </button>
+              {/*
+                S214 — the Kingdom style row (Yoshi: "settings also of
+                quotes or underline"). Visible while the Kingdom is ON.
+                Default "underline" (S217 Yoshi). Persists at
+                rop_kingdom_style_v1.
+              */}
+              {kingdomOn && (
+                <div className="flex flex-wrap items-center justify-end gap-1.5 font-sans">
+                  {(["quotes", "underline"] as const).map((s) => (
+                    <button
+                      key={s}
+                      type="button"
+                      className="kingdom-style-chip"
+                      aria-pressed={kingdomStyle === s}
+                      onClick={() => pickKingdomStyle(s)}
+                    >
+                      {KINGDOM_STYLE_LABELS[s]}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            {/*
+              S204 — The Witness toggle (working title: Red Pill), the
+              ninth metallic register (dedicated witness red — proof
+              Option B, Yoshi sign-off). The inverted red-letter
+              overlay: ON marks every member verse with the capsule;
+              tap a capsule to unfold the come-and-see card. FREE for
+              every partner — the proclamation surface; this pill never
+              carries a tier chip. The label follows the Study Aids
+              show/hide convention; the red capsule glyph anchors the
+              card eyebrows + end-card rows as the Witness family mark
+              (S204c — the ◉ glyph was dropped from the pill, Yoshi:
+              "why does it even have the white circle?").
+            */}
+            <div className="flex w-full flex-col items-end gap-2">
+              <button
+                type="button"
+                onClick={toggleWitness}
+                aria-pressed={witnessOn}
+                title="The Red-Pill Witness — marks every verse where the Messiah claims what the Tanakh gives to Yahuah alone. Tap a marked verse to see both sides quoted in full."
+                className="chrome-metal chrome-metal-witness !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
+              >
+                {witnessOn
+                  ? "Hide the Red-Pill Witness"
+                  : "Show the Red-Pill Witness"}
+              </button>
+              {/*
+                S204b — the Witness style row ("red pill options and then
+                they choose" — Yoshi). Visible while the Witness is ON.
+                Default "text" (the inverted red-letter: red used to mean
+                "he speaks," now it means he claims the Name). Persists at
+                rop_witness_style_v1.
+              */}
+              {witnessOn && (
+                <div className="flex flex-wrap items-center justify-end gap-1.5 font-sans">
+                  {(
+                    ["text", "quotes", "highlight", "capsule"] as const
+                  ).map((s) => (
+                    <button
+                      key={s}
+                      type="button"
+                      className="witness-style-chip"
+                      aria-pressed={witnessStyle === s}
+                      onClick={() => pickWitnessStyle(s)}
+                    >
+                      {WITNESS_STYLE_LABELS[s]}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+              </div>
+            )}
+          </div>
           {/* S123 W4 — range-mode banner. Renders whenever the partner
               is in selecting mode (anchor pinned, waiting for end-verse
               tap). The captured state doesn't render this banner — the
@@ -3296,278 +3604,13 @@ function Reader() {
           */}
 
           {/*
-            S130 — single global study-aid toggle (the verse-pills strip).
-            S214 (Yoshi): moved to the TOP of the chapter-end stack, directly
-            below the floral break, so the toggles sit above the cards they
-            control. Order: pills → Kingdom card → Witness card → commentary →
-            cross-reference card. The strip carries the six toggles (English
-            helpers,
-            Strong's, Interlinear, Study Aids, Kingdom, Witness); Study Aids
-            (hideCommentary) gates the chapter_intro + commentary +
-            cross-reference card in one motion.
+            S229 — the study-aid + layer toggle strip that used to render
+            HERE (directly below the botanical break) was moved to the slim
+            collapsible "Display options" bar pinned at the TOP of the
+            reading column (see the .study-bar block just inside <article>).
+            The chapter-end cards (Kingdom / Witness / commentary /
+            cross-references) still render below, gated by the same toggles.
           */}
-          <div className="mt-8 flex flex-wrap items-center justify-end gap-2 border-t border-[var(--reader-rule)] pt-4">
-            {/*
-              S144 — parentheticals-hide toggle. Sits left of the study-
-              aid toggle in the chrome strip. Default OFF (parentheticals
-              visible) per the voice-skill retention-mechanism for first-
-              time Christian readers; the reader who has internalized the
-              restored names opts INTO the strip.
-
-              Copy renamed 2026-05-26 (Yoshi): "Hide / Show English
-              helpers" — friendlier than the prior "name translations"
-              copy, and names what the parentheticals actually are for
-              the reader (training wheels for the Hebrew restorations).
-
-              Styling 2026-05-26 (Yoshi): metallic-emerald gradient per
-              COLOR_PALETTE §3 (the expansion register) — same treatment
-              as the ChapterCommentary "Read the basic walk →" / "Read
-              the deeper dive →" pills. Semantically fits: "metallic
-              green = more is hidden here, click to expand" reads as
-              "metallic green = English helpers can be expanded/collapsed
-              from this control." Sized to match the techelet study-aid
-              toggle to its right (px-4 py-1.5 text-xs uppercase) so the
-              chrome strip stays visually aligned.
-            */}
-            <button
-              type="button"
-              onClick={toggleHideParentheticals}
-              aria-pressed={hideParentheticals}
-              title="Hide or show the English helpers in parentheses after restored Sacred Names (e.g., Yahuah (LORD), Yashar'el (Israel), Mosheh (Moses)). Persists across chapters and reloads."
-              className="rounded-md border border-[#2EFFA1] bg-gradient-to-r from-[#04321E] via-[#15A86A] to-[#04321E] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#E6FFF2] shadow-sm hover:opacity-90"
-            >
-              {hideParentheticals
-                ? "Show English helpers"
-                : "Hide English helpers"}
-            </button>
-            {/*
-              S160 — Strong's superscripts toggle (§27). Metallic argaman
-              gradient per COLOR_PALETTE §1 covenant-body register —
-              each Strong's number ties an English word back to its
-              Hebrew/Greek covenant lexeme, which reads as the
-              covenant-body affordance the argaman register carries.
-              Distinct from the §144 English-helpers metallic-emerald
-              gradient to its left so the partner reads two different
-              functional registers. Same size + chrome-strip placement
-              as the parentheticals toggle. Default OFF; tapping flips
-              state and persists via lib/useStrongsSuperscriptsToggle
-              (localStorage `rop_strongs_superscripts_v1`).
-            */}
-            <button
-              type="button"
-              onClick={toggleShowStrongsSuperscripts}
-              aria-pressed={showStrongsSuperscripts}
-              title="Show or hide Strong's H- and G-numbers as small superscripts after every word in the verse text. Tap any superscript to open the Strong's lookup, same as tapping the word itself. Persists across chapters and reloads."
-              className="rounded-md border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#F5E6FA] shadow-sm hover:opacity-90"
-            >
-              {showStrongsSuperscripts
-                ? "Hide Strong's"
-                : "Show Strong's"}
-            </button>
-            {/*
-              S168 / S169 — §28 Interlinear toggle. S169 repaint per Yoshi
-              live-walk redline 1: moved from metallic argaman to the
-              **existing metallic-gold register** already in use on the
-              §17 NT cross-reference mini-pill in
-              `components/ChapterEndCard.tsx` (deep `#645028` shadow →
-              `#B4A078` bright midtone → `#FCECAF` highlight specular).
-              Snapped to those existing stops verbatim per Yoshi's
-              live-walk call — the cross-refs gold renders prettier
-              against the dark chrome strip than the deeper composed
-              variant tried earlier; the lock is on the cross-refs
-              stops. The §28 chrome pill and the NT cross-reference
-              pill now share the same metallic-gold register;
-              COLOR_PALETTE.md §3b is the register's formal
-              documentation. The original-language layer is the
-              priestly-witness register because the interlinear shows
-              the source-language scripture the translators worked
-              from — the priestly-text witness underneath the English.
-
-              For Companion+ (`partnerAtCompanion`), the button toggles
-              the InterlinearLayer mount per verse and persists via
-              `useInterlinearToggle`. For below-Companion partners, the
-              button still renders in the chrome strip (the gate is
-              visible, not hidden, per the §20 stub-catalog "tier-
-              locked-stub" convention) but tapping routes to /pricing
-              and a small "Companion" chip distinguishes the locked
-              state — chip uses gold-shadow `#645028` to match the
-              locked register's deep stop.
-            */}
-            <button
-              type="button"
-              onClick={() => {
-                if (partnerAtCompanion) {
-                  toggleShowInterlinear();
-                } else {
-                  if (typeof window !== "undefined") {
-                    window.location.href = "/pricing";
-                  }
-                }
-              }}
-              aria-pressed={partnerAtCompanion ? showInterlinear : false}
-              title={
-                partnerAtCompanion
-                  ? "Show or hide the Hebrew/Greek interlinear layer above each English word — lemma, transliteration, morphology, gloss. Long-press the morphology cell to expand the abbreviation. Persists across chapters and reloads."
-                  : "Hebrew/Greek interlinear layer — upgrade to the Companion tier to enable. Tap to view pricing."
-              }
-              className="relative rounded-md border border-[#FCECAF] bg-gradient-to-r from-[#645028] via-[#B4A078] to-[#645028] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#FFF8E1] shadow-sm hover:opacity-90"
-            >
-              {partnerAtCompanion
-                ? showInterlinear
-                  ? "Hide Interlinear"
-                  : "Show Interlinear"
-                : "Interlinear"}
-              {!partnerAtCompanion && (
-                <span
-                  className="ml-2 inline-flex items-center rounded-sm border border-[#FFF8E1]/40 bg-[#645028] px-1.5 py-0.5 text-[0.55rem] font-semibold uppercase tracking-wider text-[#FFF8E1]"
-                  aria-label="Companion tier required"
-                >
-                  Companion
-                </span>
-              )}
-            </button>
-            {/*
-              S169 — Study Aids toggle (hideCommentary under the hood).
-              Upgraded from flat techelet `#1A6FE5` to the metallic-
-              techelet register per Yoshi live-walk redline 1 (now
-              formally defined in COLOR_PALETTE.md §3a — gradient
-              `#0A2D84 → #1A6FE5 → #5A9CF5 → #A8C8F0 → ...` mirroring
-              the §3 bracket-emerald 7-stop structure on the techelet
-              hue family). The chrome strip now reads four metallic
-              pills across the four locked theological registers:
-
-                emerald (§144 English Helpers / expansion register)
-                argaman (§27 Strong's / covenant-body register)
-                gold    (§28 Interlinear / priestly-witness register)
-                techelet(Study Aids / divine-name register)
-
-              "Study Aids" covers the chapter-intro + commentary +
-              cross-reference apparatus — the divine-name lexical
-              witness register fits because the commentary surfaces
-              the framework's reading of the divine name and the
-              theological architecture the names anchor. State +
-              persistence unchanged (toggleHideCommentary).
-            */}
-            <button
-              type="button"
-              onClick={toggleHideCommentary}
-              aria-pressed={hideCommentary}
-              title="Show or hide all study aids (chapter intro, commentary, cross-references). Persists across chapters and reloads."
-              className="rounded-md border border-[#A8C8F0] bg-gradient-to-r from-[#0A2D84] via-[#1A6FE5] to-[#0A2D84] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#E6F0FA] shadow-sm hover:opacity-90"
-            >
-              {hideCommentary ? "Show study aids" : "Hide study aids"}
-            </button>
-            {/*
-              S205 — The Kingdom toggle (working title: Blue Pill).
-              The TWO-TONE register: metallic emerald + metallic gold
-              joined in one pill — the two sticks of Ezekiel 37:15-22
-              made one in his hand ("uniting the old and new
-              testament" — Yoshi). Hard seam, blend border. ON marks
-              every member verse with the two-tone quote pair; tap to
-              unfold the come-and-see card. FREE for every partner —
-              the proclamation surface; no tier chip, ever. No dot
-              glyph (Yoshi, S205 proof). S209: moved ABOVE the Witness
-              (Yoshi) — the Witness sits last in the stack.
-
-              S217 (Yoshi, "option a"): the Kingdom and Witness each own
-              a w-full column group so each feature's style row sits
-              DIRECTLY beneath its OWN pill. Before this, both style rows
-              were full-width siblings below the shared pill strip, so the
-              Kingdom options visually fell under the Witness pill. The
-              w-full wrapper breaks each group onto its own line within
-              the justify-end strip; items-end keeps pill + options right-
-              aligned with the rest of the strip.
-            */}
-            <div className="flex w-full flex-col items-end gap-2">
-              <button
-                type="button"
-                onClick={toggleKingdom}
-                aria-pressed={kingdomOn}
-                title="The Prophesied Kingdom Gospel — nothing in the new testament is new. Marks every teaching, act, and promise beside the scripture it was taught from. Tap a marked verse to see both sides quoted in full."
-                className="chrome-metal chrome-metal-kingdom !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
-              >
-                <span className="flex flex-col items-center leading-tight">
-                  <span>
-                    {kingdomOn ? "Hide" : "Show"} the Prophesied Kingdom Gospel
-                  </span>
-                  <span className="mt-0.5 text-[0.6rem] font-normal normal-case tracking-normal opacity-85">
-                    (nothing new in the new testament)
-                  </span>
-                </span>
-              </button>
-              {/*
-                S214 — the Kingdom style row (Yoshi: "settings also of
-                quotes or underline"). Visible while the Kingdom is ON.
-                Default "underline" (S217 Yoshi). Persists at
-                rop_kingdom_style_v1.
-              */}
-              {kingdomOn && (
-                <div className="flex flex-wrap items-center justify-end gap-1.5 font-sans">
-                  {(["quotes", "underline"] as const).map((s) => (
-                    <button
-                      key={s}
-                      type="button"
-                      className="kingdom-style-chip"
-                      aria-pressed={kingdomStyle === s}
-                      onClick={() => pickKingdomStyle(s)}
-                    >
-                      {KINGDOM_STYLE_LABELS[s]}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-            {/*
-              S204 — The Witness toggle (working title: Red Pill), the
-              ninth metallic register (dedicated witness red — proof
-              Option B, Yoshi sign-off). The inverted red-letter
-              overlay: ON marks every member verse with the capsule;
-              tap a capsule to unfold the come-and-see card. FREE for
-              every partner — the proclamation surface; this pill never
-              carries a tier chip. The label follows the Study Aids
-              show/hide convention; the red capsule glyph anchors the
-              card eyebrows + end-card rows as the Witness family mark
-              (S204c — the ◉ glyph was dropped from the pill, Yoshi:
-              "why does it even have the white circle?").
-            */}
-            <div className="flex w-full flex-col items-end gap-2">
-              <button
-                type="button"
-                onClick={toggleWitness}
-                aria-pressed={witnessOn}
-                title="The Red-Pill Witness — marks every verse where the Messiah claims what the Tanakh gives to Yahuah alone. Tap a marked verse to see both sides quoted in full."
-                className="chrome-metal chrome-metal-witness !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
-              >
-                {witnessOn
-                  ? "Hide the Red-Pill Witness"
-                  : "Show the Red-Pill Witness"}
-              </button>
-              {/*
-                S204b — the Witness style row ("red pill options and then
-                they choose" — Yoshi). Visible while the Witness is ON.
-                Default "text" (the inverted red-letter: red used to mean
-                "he speaks," now it means he claims the Name). Persists at
-                rop_witness_style_v1.
-              */}
-              {witnessOn && (
-                <div className="flex flex-wrap items-center justify-end gap-1.5 font-sans">
-                  {(
-                    ["text", "quotes", "highlight", "capsule"] as const
-                  ).map((s) => (
-                    <button
-                      key={s}
-                      type="button"
-                      className="witness-style-chip"
-                      aria-pressed={witnessStyle === s}
-                      onClick={() => pickWitnessStyle(s)}
-                    >
-                      {WITNESS_STYLE_LABELS[s]}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
 
           {/*
             S205 — the Kingdom chapter-end card: every pairing in this

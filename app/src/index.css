@@ -2466,3 +2466,89 @@ body {
   text-decoration: none;
 }
 .today-dials-more:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ─── S229 — pinned, collapsible "Display options" bar ────────────────
+ *
+ * Yoshi "Option 2": the after-scripture study-aid + layer toggle pills
+ * (English helpers, Strong's, Interlinear, Study Aids, the Prophesied
+ * Kingdom Gospel, the Red-Pill Witness, and their quote-style chips)
+ * moved out of the chapter-end stack into this slim bar pinned at the
+ * TOP of the reading column — always one tap away without scrolling.
+ *
+ * position:sticky; top:0 keeps it glued to the viewport top while the
+ * scripture scrolls underneath (the non-sticky page header scrolls away
+ * above it). It collapses to a thin labelled handle so it never
+ * permanently eats screen space; state persists in localStorage.
+ *
+ * Theme-aware via the --reader-* tokens (works in dark + light). The
+ * accents ride the §5 spectral-blue register — NO grey chrome — so the
+ * bar reads as a native seam, not a slab. z-index 20: above the
+ * scripture body, below every modal / sheet / verse menu (z-40+).
+ */
+.study-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin-bottom: 0.75rem;
+  /* bleed into the page's px-6 (1.5rem) gutters so the sticky background
+     spans the full column width and scripture never peeks up the sides
+     as it scrolls under the bar */
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  /* near-opaque reader bg + a touch of frost for a native pinned feel */
+  background: color-mix(in srgb, var(--reader-bg) 90%, transparent);
+  -webkit-backdrop-filter: saturate(1.25) blur(8px);
+  backdrop-filter: saturate(1.25) blur(8px);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--reader-accent) 35%, transparent);
+  border-radius: 0 0 10px 10px;
+}
+
+/* The always-visible handle: label on the left, chevron on the right.
+   Full-width tap target whether collapsed or expanded. */
+.study-bar-handle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.45rem 0.25rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+.study-bar-handle-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: color-mix(in srgb, var(--reader-accent) 78%, var(--reader-text));
+}
+.study-bar-chevron {
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--reader-accent);
+  transition: transform 0.15s ease;
+}
+.study-bar-handle:hover .study-bar-chevron {
+  transform: translateY(1px);
+}
+
+/* The pill tray. Inherits the original strip's justify-end + flex-wrap
+   so the toggle markup (incl. the Kingdom/Witness w-full style sub-rows)
+   renders identically — only the container moved. On phone the pills
+   wrap; if the expanded toggles get tall the tray scrolls instead of
+   swallowing the screen, keeping the pinned bar slim. */
+.study-bar-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.15rem 0 0.65rem;
+  max-height: 48vh;
+  overflow-y: auto;
+}
