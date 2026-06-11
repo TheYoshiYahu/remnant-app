@@ -1,0 +1,200 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 55,
+  "session": "session250",
+  "tag": "en55",
+  "base_band": 51350,
+  "threads": [
+    {
+      "slug": "1-enoch-55-no-second-flood-of-waters",
+      "title": "The Head of Days repents and swears no second flood of waters",
+      "summary_md": "Enoch hears the Father grieve over the Flood and bind Himself by oath against ever drowning the earth again: *And after that the Head of Days repented and said: 'In vain have I destroyed all who dwell on the earth.'* (1 Enoch 55:1) and *And He sware by His great name: 'Henceforth I will not do so to all who dwell on the earth...'* (1 Enoch 55:2). This is the canon's own post-Flood word, the very heart-speech of Genesis: *And Yahuah (LORD) smelled a sweet savour; and Yahuah (LORD) said in his heart, I will not again curse the ground any more for man's sake; for the imagination of man's heart is evil from his youth; neither will I again smite any more every thing living, as I have done.* (Genesis 8:21), sealed in covenant — *And I will establish my covenant with you; neither shall all flesh be cut off any more by the waters of a flood; neither shall there any more be a flood to destroy the earth.* (Genesis 9:11). The same oath becomes Isaiah's pledge of mercy to scattered Israel: *For this is as the waters of Noah unto me: for as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that I would not be wroth with thee, nor rebuke thee.* (Isaiah 54:9). Jubilees carries the identical scene of the savour and the sworn covenant: *And Yahuah (God) smelt the goodly savour, and He made a covenant with him that there should not be any more a flood to destroy the earth...* (Jubilees 6:4). It ain't new — the Head of Days is the formless Father whose word stands from Genesis to Enoch.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 55,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 8,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Genesis 8:21 — *And Yahuah (LORD) smelled a sweet savour; and Yahuah (LORD) said in his heart, I will not again curse the ground any more for man's sake; for the imagination of man's heart is evil from his youth; neither will I again smite any more every thing living, as I have done.* The Father's inward resolve in Genesis is exactly the Head of Days saying 'In vain have I destroyed all who dwell on the earth' in Enoch 55:1."
+        },
+        {
+          "src_ch": 55,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 9,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Genesis 9:11 — *And I will establish my covenant with you; neither shall all flesh be cut off any more by the waters of a flood; neither shall there any more be a flood to destroy the earth.* The oath the Head of Days swears by His great name in Enoch 55:2 is the very flood-covenant Genesis records."
+        },
+        {
+          "src_ch": 55,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 54,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Isaiah 54:9 — *For this is as the waters of Noah unto me: for as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that I would not be wroth with thee, nor rebuke thee.* Isaiah binds the no-more-flood oath to Yahuah's everlasting mercy on Israel, the same sworn pledge of good faith Enoch 55:2 names."
+        },
+        {
+          "src_ch": 55,
+          "src_v": 2,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 6,
+          "tgt_v": 4,
+          "tier": "extras",
+          "note": "Jubilees 6:4 — *And Yahuah (God) smelt the goodly savour, and He made a covenant with him that there should not be any more a flood to destroy the earth; that all the days of the earth seed-time and harvest should never cease; cold and heat, and summer and winter, and day and night should not change their order, nor cease for ever.* Jubilees retells the same savour-and-oath that the Head of Days speaks in Enoch 55:1-2."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-55-the-bow-set-in-heaven",
+      "title": "A sign set in the heaven — the bow of the covenant",
+      "summary_md": "The oath is given a visible token: *...and I will set a sign in the heaven: and this shall be a pledge of good faith between Me and them for ever, so long as heaven is above the earth.* (1 Enoch 55:2). This is the rainbow of Genesis, the bow set in the cloud as the everlasting sign: *I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth.* (Genesis 9:13), and *And I will remember my covenant, which is between me and you and every living creature of all flesh; and the waters shall no more become a flood to destroy all flesh.* (Genesis 9:15). Jubilees names the same bow precisely: *He set His bow in the cloud for a sign of the eternal covenant that there should not again be a flood on the earth to destroy it all the days of the earth.* (Jubilees 6:16). The lights and signs of heaven keep faith because the Creator's order keeps faith — the sign in Enoch's heaven is the canon's own bow, no new thing.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 55,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 9,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Genesis 9:13 — *I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth.* The 'sign in the heaven' that the Head of Days sets as a pledge of good faith in Enoch 55:2 is the rainbow-bow Genesis appoints."
+        },
+        {
+          "src_ch": 55,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 9,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 9:15 — *And I will remember my covenant, which is between me and you and every living creature of all flesh; and the waters shall no more become a flood to destroy all flesh.* The bow keeps the no-flood pledge 'for ever' just as Enoch 55:2 says, so long as heaven is above the earth."
+        },
+        {
+          "src_ch": 55,
+          "src_v": 2,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 6,
+          "tgt_v": 16,
+          "tier": "extras",
+          "note": "Jubilees 6:16 — *He set His bow in the cloud for a sign of the eternal covenant that there should not again be a flood on the earth to destroy it all the days of the earth.* Jubilees names the same heavenly sign of eternal covenant that Enoch 55:2 calls a pledge of good faith for ever."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-55-day-of-tribulation-chastisement",
+      "title": "The day of tribulation — chastisement on the host",
+      "summary_md": "The mercy toward earth's dwellers does not spare the rebel host: *When I have desired to take hold of them by the hand of the angels on the day of tribulation and pain because of this, I will cause My chastisement and My wrath to abide upon them, saith Elohim (God), Yahuah (God) of Spirits.* (1 Enoch 55:3). The wrath reserved for 'the day of the great judgement' was decreed back in the Watcher-judgment: *And on the day of the great judgement he shall be cast into the fire.* (1 Enoch 10:6), and the bound rebels *shall be led off to the abyss of fire: and to the torment and the prison in which they shall be confined for ever.* (1 Enoch 10:13). Revelation seals the same end for the great deceiver and his hosts: *And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.* (Revelation 20:10). The Father stays His hand toward the earth but His chastisement abides upon the Watchers and their seed — the Creator's order holds.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 55,
+          "src_v": 3,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "1 Enoch 10:6 — *And on the day of the great judgement he shall be cast into the fire.* Azazel's sentence decreed in the Watcher-judgment is the 'day of tribulation and pain' whose chastisement abides in Enoch 55:3."
+        },
+        {
+          "src_ch": 55,
+          "src_v": 3,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 13,
+          "tier": "extras",
+          "note": "1 Enoch 10:13 — *In those days they shall be led off to the abyss of fire: and to the torment and the prison in which they shall be confined for ever.* The wrath that 'will abide upon them' in Enoch 55:3 is this everlasting torment already pronounced on the Watchers."
+        },
+        {
+          "src_ch": 55,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Revelation 20:10 — *And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.* John sees the abiding wrath of Enoch 55:3 consummated on the deceiver and all his host."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-55-elect-one-throne-of-glory-judges-azazel",
+      "title": "Mine Elect One on the throne of glory judges Azazel and all his hosts",
+      "summary_md": "The Father seats the Formed Son to judge: *Ye †mighty kings† who dwell on the earth, ye shall have to behold Mine Elect One, how he sits on the throne of glory and judges Azâzêl, and all his associates, and all his hosts in the name of Yahuah (God) of Spirits.* (1 Enoch 55:4). Enoch NAMES the Elect One enthroned — the Messiah, the Formed who proceeds from the Head of Days and judges in the Father's name, the same scene Enoch repeats elsewhere: *And the Head of Days placed the Elect One on the throne of His glory; And he shall judge all the works of the holy in heaven above...* (1 Enoch 61:8). Yahusha speaks it plainly in flesh: *When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory* (Matthew 25:31). Daniel, by contrast, keeps the kaph — he sees *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him* (Daniel 7:13): the Formed cloud-rider RESEMBLES mortal-man because He took on flesh, yet Enoch NAMES that same One, the Elect One ordered under the Head of Days, worshipped-with yet distinct. His rule is Isaiah's righteous judge — *with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked* (Isaiah 11:4). The kings 'who dwell on the earth' must behold Him; Azazel and his host are sealed for the very pit Revelation shows: *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more...* (Revelation 20:3). The Elect One is no created angel and no mere man — He is the named Son who judges the Watchers in the name of Yahuah of Spirits.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 55,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 25,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "Matthew 25:31 — *When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory:* Yahusha names the same throne of glory on which the Elect One sits to judge in Enoch 55:4."
+        },
+        {
+          "src_ch": 55,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel keeps the kaph — *one like the Son of Adam*, who resembles mortal-man because He took on flesh — while Enoch 55:4 NAMES that same One the Elect One enthroned before the Head of Days."
+        },
+        {
+          "src_ch": 55,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 11,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Isaiah 11:4 — *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* Isaiah's righteous Judge is the Elect One who in Enoch 55:4 judges Azazel and his hosts in the name of Yahuah of Spirits."
+        },
+        {
+          "src_ch": 55,
+          "src_v": 4,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 61,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "1 Enoch 61:8 — *And the Head of Days placed the Elect One on the throne of His glory; And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* Enoch repeats the very enthronement of 55:4 — the Father seats the Formed Son to judge."
+        },
+        {
+          "src_ch": 55,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Revelation 20:3 — *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* John shows the sealing of the deceiver that fulfills the Elect One's judgment of Azazel and all his hosts in Enoch 55:4."
+        }
+      ]
+    }
+  ]
+}

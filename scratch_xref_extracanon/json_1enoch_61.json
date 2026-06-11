@@ -1,0 +1,210 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 61,
+  "session": "session250",
+  "tag": "en61",
+  "base_band": 51500,
+  "threads": [
+    {
+      "slug": "1-enoch-61-measuring-cords-righteous",
+      "title": "The measuring cords for the portion of the righteous",
+      "summary_md": "Enoch watches the angels carry surveyors' cords to mark out the inheritance of the elect: *And I saw in those days how long cords were given to those angels, and they took to themselves wings and flew, and they went towards the north.* (1 Enoch 61:1) — *‘These shall bring the measures of the righteous, And the ropes of the righteous to the righteous, That they may stay themselves on the name of Yahuah (God) of Spirits for ever and ever.* (1 Enoch 61:3) This is no new image. Zechariah saw the same surveyor of the inheritance: *I lifted up mine eyes again, and looked, and behold a man with a measuring line in his hand.* (Zechariah 2:1) — sent *To measure Jerusalem, to see what is the breadth thereof, and what is the length thereof.* (Zechariah 2:2) John, at the end, is handed the same cord to mark off who belongs to the Yahuah (God) of Spirits: *And there was given me a reed like unto a rod: and the angel stood, saying, Rise, and measure the temple of Elohim (God), and the altar, and them that worship therein.* (Revelation 11:1) — and the angel measures the city itself, *And he that talked with me had a golden reed to measure the city, and the gates thereof, and the wall thereof.* (Revelation 21:15) The measuring is election made visible: the elect's portion is staked out and secured before the Father, the Head of Days, never a self-chosen class but a people allotted to His name.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 61,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 2,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Zechariah 2:1 — *I lifted up mine eyes again, and looked, and behold a man with a measuring line in his hand.* The same surveyor with the cord that Enoch's angels carry north to stake out the inheritance."
+        },
+        {
+          "src_ch": 61,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 2,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Zechariah 2:2 — *Then said I, Whither goest thou? And he said unto me, To measure Jerusalem, to see what is the breadth thereof, and what is the length thereof.* Enoch asks the angels the same question — 'Why have those taken these cords?' — and is told 'They have gone to measure.'"
+        },
+        {
+          "src_ch": 61,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 11,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Revelation 11:1 — *And there was given me a reed like unto a rod: and the angel stood, saying, Rise, and measure the temple of Elohim (God), and the altar, and them that worship therein.* John is handed the same measuring rod to mark off the worshippers who belong to the Yahuah (God) of Spirits."
+        },
+        {
+          "src_ch": 61,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Revelation 21:15 — *And he that talked with me had a golden reed to measure the city, and the gates thereof, and the wall thereof.* The measures of the righteous in Enoch become the golden reed that surveys the holy city for the elect."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-61-desert-beasts-sea-give-back-dead",
+      "title": "The desert, the beasts, and the sea give back the righteous dead",
+      "summary_md": "The measuring cords reach even the perished, for nothing of the elect is lost before the Yahuah (God) of Spirits: *And these measures shall reveal all the secrets of the depths of the earth, And those who have been destroyed by the desert, And those who have been devoured by the beasts, And those who have been devoured by the fish of the sea, That they may return and stay themselves On the day of the Elect One; For none shall be destroyed before Yahuah (God) of Spirits, And none can be destroyed.* (1 Enoch 61:5) Daniel saw this same resurrection of the measured ones: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2) Isaiah sang it: *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* (Isaiah 26:19) And John watched the very sea that 'devoured' them surrender its dead: *And the sea gave up the dead which were in it; and death and hell delivered up the dead which were in them: and they were judged every man according to their works.* (Revelation 20:13) Enoch's promise that 'none can be destroyed' is the resurrection hope — the earth, the wilderness, and the deep all give back the elect on the day of the Elect One.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 61,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The 'depths of the earth' Enoch says will give back its dead — the same awakening from the dust on the day of the Elect One."
+        },
+        {
+          "src_ch": 61,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 26,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* Isaiah's 'the earth shall cast out the dead' is Enoch's secret of the depths returning the perished elect."
+        },
+        {
+          "src_ch": 61,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Revelation 20:13 — *And the sea gave up the dead which were in it; and death and hell delivered up the dead which were in them: and they were judged every man according to their works.* The very sea that 'devoured' Enoch's righteous gives them back, for none can be destroyed before the Yahuah (God) of Spirits."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-61-elect-one-throne-of-glory-judges",
+      "title": "The Head of Days seats the Elect One on the throne of glory",
+      "summary_md": "The Father, the Head of Days, enthrones the Formed Son to judge: *And the Head of Days placed the Elect One on the throne of His glory; And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* (1 Enoch 61:8) — *And when he shall lift up his countenance To judge their secret ways according to the word of the name of Yahuah (God) of Spirits ... Then shall they all with one voice speak and bless, And glorify and extol and laud the name of Yahuah (God) of Spirits.* (1 Enoch 61:9) Enoch repeats it in the very next chapter, where the Father *names* the One — never a comparative: *And thus Yahuah (God) of Spirits named the Elect One, And seated him on the throne of His glory, And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* (1 Enoch 62:1) Yahusha (Jesus) claims this enthronement as His own: *When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory:* (Matthew 25:31) Daniel saw the scene with the kaph kept in place — *one like the Son of Adam* — brought before the same Head of Days, here called the Ancient of days: *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* (Daniel 7:13) Daniel sees one *like* the Son of Adam — the Formed cloud-rider resembling mortal-man because He took on flesh; Enoch names that same One the Elect One, ordered under the Head of Days yet seated on His throne, worshipped with Him and distinct from Him.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 61,
+          "src_v": 8,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 62,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "1 Enoch 62:1 — *And thus Yahuah (God) of Spirits named the Elect One, And seated him on the throne of His glory, And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance.* The next chapter repeats the enthronement and adds that the Father NAMES him — a title, not Daniel's comparative."
+        },
+        {
+          "src_ch": 61,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 25,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "Matthew 25:31 — *When the Son of Adam shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory:* Yahusha (Jesus) claims Enoch's throne of glory as His own seat of judgement, the named Son of Adam come in flesh."
+        },
+        {
+          "src_ch": 61,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel keeps the kaph — one *like* the Son of Adam — brought before the Head of Days; Enoch names that same One the Elect One set on the throne of glory."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-61-spirit-of-wisdom-on-elect-one",
+      "title": "The sevenfold Spirit on the Elect One",
+      "summary_md": "The blessing of the host names the Spirit that rests on the Elect One: *And they shall raise one voice and bless and glorify and extol and praise the name of Yahuah (God) of Spirits in faith and in the spirit of faith, and in the spirit of wisdom, and of patience, and in the spirit of mercy, and in the spirit of judgement and of peace, and in the spirit of goodness ...* (1 Enoch 61:11) Isaiah laid this Spirit on the Branch from Jesse long before: *And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD);* (Isaiah 11:2) — and it equips Him to judge as Enoch's Elect One judges: *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* (Isaiah 11:4) — *And righteousness shall be the girdle of his loins, and faithfulness the girdle of his reins.* (Isaiah 11:5) Enoch himself fixes this Spirit on the Elect One: *And in him dwells the spirit of wisdom, And the spirit which gives insight, And the spirit of understanding and of might, And the spirit of those who have fallen asleep in righteousness.* (1 Enoch 49:3) The Formed Son carries the Father's own Spirit to judge with righteousness — it ain't new.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 61,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 11,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Isaiah 11:2 — *And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD);* The 'spirit of wisdom' the host names on the Elect One is the very Spirit Isaiah rests on the Branch."
+        },
+        {
+          "src_ch": 61,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 11,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Isaiah 11:4 — *But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* The Spirit-borne righteous judgement that equips Enoch's Elect One to judge the works of the holy."
+        },
+        {
+          "src_ch": 61,
+          "src_v": 11,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 49,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "1 Enoch 49:3 — *And in him dwells the spirit of wisdom, And the spirit which gives insight, And the spirit of understanding and of might, And the spirit of those who have fallen asleep in righteousness.* Enoch's own parallel fixing the sevenfold Spirit of wisdom and might on the Elect One."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-61-host-of-heaven-bless-one-voice",
+      "title": "The whole host of heaven bless with one voice",
+      "summary_md": "When the Elect One lifts up His countenance to judge, all heaven answers as one: *And He will summon all the host of the heavens, and all the holy ones above, and the host of Elohim (God), the Cherubim, Seraphim and Ophanim, and all the angels of power, and all the angels of principalities, and the Chosen One ...* (1 Enoch 61:10) — *and shall all say with one voice: ‘Blessed is He, and may the name of Yahuah (God) of Spirits be blessed for ever and ever.’* (1 Enoch 61:11) John saw that same ceaseless one-voiced worship of the living creatures around the throne: *And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come.* (Revelation 4:8) Daniel numbered the host that ministers and stands before the Head of Days at the judgement seat: *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* (Daniel 7:10) The Cherubim, Seraphim, and Ophanim of Enoch are the four living creatures and the ten thousand times ten thousand — heaven blessing the name of the Father with one voice.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 61,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 4,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Revelation 4:8 — *And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come.* John's living creatures are Enoch's Cherubim and Seraphim, blessing the name of the Yahuah (God) of Spirits with one voice without ceasing."
+        },
+        {
+          "src_ch": 61,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* Daniel numbers the host that Enoch summons to bless with one voice as the judgement is set before the Head of Days."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 59,
+  "session": "session250",
+  "tag": "en59",
+  "base_band": 51450,
+  "threads": [
+    {
+      "slug": "1-enoch-59-lightnings-for-blessing-or-curse",
+      "title": "The secret of the lightnings — a blessing or a curse",
+      "summary_md": "Enoch is shown the hidden order behind the storm: *In those days mine eyes saw the secrets of the lightning, and of the lights, and the judgements they execute (lit. 'their judgements'): and they lighten for a blessing or a curse as Yahuah (God) of Spirits willeth.* (1 Enoch 59:1). The lightning is not loose power but a servant under decree — exactly the Tanakh's confession that Yahuah appointed *a way for the lightning of the thunder:* (Job 28:26), that *he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* (Jeremiah 10:13), and again *he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* (Psalm 135:7). Enoch had already glimpsed the same chambers earlier in the Parables — *And there mine eyes saw the secrets of the lightning and of the thunder, and the secrets of the winds, how they are divided to blow over the earth* (1 Enoch 41:3) — so this is no novelty but the canon's own doctrine of the lightning that flashes for blessing or curse at the word of the Creator. It ain't new.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 59,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 28,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Job 28:26 — *When he made a decree for the rain, and a way for the lightning of the thunder:* Job names the very decree behind Enoch's lightnings, which flash only as Yahuah of Spirits wills."
+        },
+        {
+          "src_ch": 59,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* Jeremiah binds lightning, rain, and wind to the Creator's stored treasuries, the same chambers Enoch is shown."
+        },
+        {
+          "src_ch": 59,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 135,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The Psalmist's lightnings-for-the-rain are Enoch's secrets of the lightning, executed at Yahuah's command."
+        },
+        {
+          "src_ch": 59,
+          "src_v": 1,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 41,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "1 Enoch 41:3 — *And there mine eyes saw the secrets of the lightning and of the thunder, and the secrets of the winds, how they are divided to blow over the earth, and the secrets of the clouds and dew, and there I saw from whence they proceed in that place and from whence they saturate the dusty earth.* Enoch's earlier sight in the Parables is repeated almost word-for-word here in chapter 59."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-59-thunder-and-the-voice-over-the-waters",
+      "title": "The secrets of the thunder, the winds, and the clouds",
+      "summary_md": "The vision widens from lightning to the whole weather-host: *And there I saw the secrets of the thunder, and he showed me the secrets of the winds, how they are divided to blow over the earth, and the secrets of the clouds and dew, and there I saw from whence they proceed in that place and from whence they saturate the dusty earth.* (1 Enoch 59:2), then *And there I saw closed chambers out of which the winds are divided, the chamber of the hail and winds, the chamber of the mist, and of the clouds* (1 Enoch 59:3). The Tanakh already sings this thunder as the very voice of Yahuah: *The voice of Yahuah (LORD) is upon the waters: the Elohim (God) of glory thundereth: Yahuah (LORD) is upon many waters.* (Psalm 29:3). And Enoch's catalogue of divided spirits — winds, clouds, hail, frost — is the same roster Jubilees assigns to ministering angels at creation: *the angels of the spirit of the winds, and the angels of the spirit of the clouds, and of darkness, and of snow and of hail and of hoar frost, and the angels of the voices and of the thunder and of the lightning* (Jubilees 2:2). The weather is liturgy; the thunder is a voice; the chambers are tended. It ain't new.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 59,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 29,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Psalm 29:3 — *The voice of Yahuah (LORD) is upon the waters: the Elohim (God) of glory thundereth: Yahuah (LORD) is upon many waters.* David hears the thunder as the voice of Yahuah, the secret Enoch is shown behind the storm."
+        },
+        {
+          "src_ch": 59,
+          "src_v": 2,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 2,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "Jubilees 2:2 — *For on the first day He created the heavens which are above and the earth and the waters and all the spirits which serve before Him–the angels of the presence, and the angels of sanctification, and the angels of the spirit of fire and the angels of the spirit of the winds, and the angels of the spirit of the clouds, and of darkness, and of snow and of hail and of hoar frost, and the angels of the voices and of the thunder and of the lightning, and the angels of the spirits of cold and of heat, and of winter and of spring and of autumn and of summer, and of all the spirits of His creatures which are in the heavens and on the earth, (He created) the abysses and the darkness, eventide (and night), and the light, dawn and day, which He has prepared in the knowledge of His heart.* Jubilees stations angels over the very winds, clouds, hail, thunder, and lightning whose divided chambers Enoch is shown."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-59-sun-moon-keep-faith-winds-shake-earth",
+      "title": "The sun and moon keep faith in their orbit; the winds shake the earth",
+      "summary_md": "Enoch sees the luminaries hold their appointed course without straying: *And I saw the chambers of the sun and moon, whence they proceed and whither they come again, and their glorious return, and how one is superior to the other, and their stately orbit, and how they do not leave their orbit, and they add nothing to their orbit and they take nothing from it, and they keep faith with each other* (1 Enoch 59:4), each in his own chariot and in six directions out and six back (1 Enoch 59:5), until *the winds go forth and spread over the earth, and cause the earth and all that is on the earth to shake, and the waters and all that is in the waters to shake.* (1 Enoch 59:6). This is the same weighed, reckoned order the angel later unfolds in the next chapter — *the chamber of the winds, and how the spirits are divided, and how the weighing in the balance is done, and how the fountains of the spirits are reckoned, each according to the power of the spirit, the power of the lights of the moon, and according to the power that is in righteousness.* (1 Enoch 60:11) — and the same treasury the Psalmist names: *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* (Psalm 135:7). The lights that keep faith and the winds that shake the earth are one obedient creation under one Creator. It ain't new.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 59,
+          "src_v": 4,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 60,
+          "tgt_v": 11,
+          "tier": "extras",
+          "note": "1 Enoch 60:11 — *And the other angel who went with me and showed me what was hidden told me what is first and last in the heaven in the height, and beneath the earth in the depth, and at the ends of the heaven, and on the foundation of the heaven, and in the chamber of the winds, and how the spirits are divided, and how the weighing in the balance is done, and how the fountains of the spirits are reckoned, each according to the power of the spirit, the power of the lights of the moon, and according to the power that is in righteousness.* The next chapter unfolds the same weighed order of winds and moon-lights Enoch glimpses here in their faithful orbit."
+        },
+        {
+          "src_ch": 59,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 135,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The wind that goes forth and shakes the earth in Enoch is the wind Yahuah brings from His treasuries."
+        }
+      ]
+    }
+  ]
+}
