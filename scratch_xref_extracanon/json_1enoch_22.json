@@ -1,0 +1,170 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 22,
+  "session": "session250",
+  "tag": "en22",
+  "base_band": 50525,
+  "threads": [
+    {
+      "slug": "1-enoch-22-prison-of-the-angels",
+      "title": "The prison of the angels, reserved unto judgement",
+      "summary_md": "At the ends of the earth Enoch sees the holding-cell of the rebel host: *And there I saw seven stars of the heaven bound together like great mountains and burning with fire* (1 Enoch 22:4), and Uriel tells him, *This place is the prison of the angels, and here they will be imprisoned for ever* (1 Enoch 22:7). This is the same waste place Enoch had just toured a chapter before — *this has become a prison for the stars and the host of heaven* (1 Enoch 21:5) — the Watchers and transgressing stars bound until the reckoning. It ain't new: the apostles carry the very same picture. Peter writes that *Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4), and Jude that *the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 1:6) — even keeping Enoch's image of fallen luminaries, *wandering stars, to whom is reserved the blackness of darkness for ever* (Jude 1:13). The rebel host that broke the Creator's order is bound, not loosed; the binding is custody for the great-day judgement, not annihilation.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 22,
+          "src_v": 7,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 21,
+          "tgt_v": 5,
+          "tier": "extras",
+          "note": "1 Enoch 21:5 — *’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* The chapter-21 cell Enoch toured is the same prison of the angels named in Enoch 22:7."
+        },
+        {
+          "src_ch": 22,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter's chained, reserved angels are Enoch 22:7's imprisoned host held for the great day."
+        },
+        {
+          "src_ch": 22,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude names the same bound rebel angels Enoch sees imprisoned until the judgement."
+        },
+        {
+          "src_ch": 22,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude keeps Enoch's very image of the bound seven stars as fallen luminaries reserved in darkness (Enoch 22:4)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-22-hollow-places-of-the-dead",
+      "title": "The hollow places where the dead are gathered till judgement",
+      "summary_md": "In the great mountain of the West Enoch finds the waiting-place of all the dead: *’These hollow places have been created for this very purpose, that the spirits of the souls of the dead should assemble therein, yea that all the souls of the children of men should assemble here* (1 Enoch 22:10), and they are held *until the day of their judgement and until their appointed period, till the great judgement comes upon them* (1 Enoch 22:11). The dead are not asleep in nothing nor already at the final verdict — they are gathered, conscious, and waiting. It ain't new: Yahusha (Jesus) tells the same story. The beggar dies and *was carried by the angels into Abraham's bosom: the rich man also died, and was buried* (Luke 16:22) — two estates in one holding-place — and between them runs Enoch's very division: *between us and you there is a great gulf fixed: so that they which would pass from hence to you cannot; neither can they pass to us, that would come from thence* (Luke 16:26). Sheol holds the dead apart, each according to his way, until the appointed reckoning; the grave is custody, not the final word.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 22,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 16,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Luke 16:22 — *And it came to pass, that the beggar died, and was carried by the angels into Abraham's bosom: the rich man also died, and was buried;* the two dead men gathered into one waiting-place match Enoch's hollow places where all the souls of the children of men assemble."
+        },
+        {
+          "src_ch": 22,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 16,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Luke 16:26 — *And beside all this, between us and you there is a great gulf fixed: so that they which would pass from hence to you cannot; neither can they pass to us, that would come from thence.* The fixed gulf in Sheol is Enoch's separated hollow places, the righteous parted from the sinners (Enoch 22:9)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-22-abel-makes-his-suit",
+      "title": "Abel's spirit still making suit till judgement",
+      "summary_md": "Among the gathered dead one spirit will not be silent: *I saw (the spirits of) the dead making suit, and their petition went forth to heaven* (1 Enoch 22:12), and Raphael names him — *This is the spirit which went forth from Abel, whom his brother Cain slew, and he makes his suit against him till his seed is destroyed from the face of the earth* (1 Enoch 22:14). It ain't new: this is Genesis pressed open. From the very ground Yahuah (LORD) had already said, *the voice of thy brother's blood crieth unto me from the ground* (Genesis 4:10) — a cry that does not stop at death but goes up as a suit for justice. The whole book of Hebrews knows that crying blood, setting against it a better word: the new covenant brings *the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24). And the cry is not Abel's alone — under the altar the martyrs make the same suit: *the souls of them that were slain for the word of Elohim (God)... cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* (Revelation 6:9-10). The blood of the righteous is held in remembrance and pleads from the holding-place until the great day answers it.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 22,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Genesis 4:10 — *And he said, What hast thou done? the voice of thy brother's blood crieth unto me from the ground.* Enoch 22:14 names the very spirit whose crying blood Genesis records — Abel's suit against Cain, still going up to heaven."
+        },
+        {
+          "src_ch": 22,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 12,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Hebrews 12:24 — *And to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel.* Hebrews knows Abel's blood still speaks — the petition Enoch sees the dead making (Enoch 22:12) — and answers it with a better word."
+        },
+        {
+          "src_ch": 22,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 6,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Revelation 6:10 — *And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* The martyrs' cry for vengeance is Enoch's suit of the dead going forth to heaven (Enoch 22:12), still awaiting the appointed reckoning."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-22-righteous-spring-sinners-apart",
+      "title": "The bright spring for the righteous, the sinners set apart",
+      "summary_md": "The hollows are not one undivided pit — they are sorted by the way each one walked: *These three have been made that the spirits of the dead might be separated. And such a division has been made (for) the spirits of the righteous, in which there is the bright spring of water* (1 Enoch 22:16), while *Here their spirits shall be set apart in this great pain till the great day of judgement* (1 Enoch 22:18) is the lot of the sinners on whom *judgement has not been executed... in their lifetime* (1 Enoch 22:17). It ain't new: Abraham draws the same line for the rich man — *Son, remember that thou in thy lifetime receivedst thy good things, and likewise Lazarus evil things: but now he is comforted, and thou art tormented* (Luke 16:25): the righteous comforted at the spring, the sinner in pain, divided by the way each kept. And the earth itself has swallowed the rebel living before — when Korah's company *go down quick into the pit* (Numbers 16:30), they *went down alive into the pit, and the earth closed upon them: and they perished from among the congregation* (Numbers 16:33). The division is not arbitrary; it follows the covenant — the righteous who kept the way are held at the bright spring, the transgressors set apart in pain, all alike awaiting the great day of judgement.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 22,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 16,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Luke 16:25 — *But Abraham said, Son, remember that thou in thy lifetime receivedst thy good things, and likewise Lazarus evil things: but now he is comforted, and thou art tormented.* Abraham's divided estates — one comforted, one tormented — are Enoch's separated hollows, the righteous at the bright spring and the sinner set apart (Enoch 22:16-17)."
+        },
+        {
+          "src_ch": 22,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 16,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Numbers 16:30 — *But if Yahuah (LORD) make a new thing, and the earth open her mouth, and swallow them up, with all that appertain unto them, and they go down quick into the pit; then ye shall understand that these men have provoked Yahuah (LORD).* The pit that swallows the rebels is the sinners' portion Enoch sees set apart for those who provoked the Creator's order (Enoch 22:17)."
+        },
+        {
+          "src_ch": 22,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 16,
+          "tgt_v": 33,
+          "tier": "free",
+          "note": "Numbers 16:33 — *They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation.* Korah's company going down alive into the pit is the sinners shut away in pain till the great day Enoch describes (Enoch 22:18)."
+        }
+      ]
+    }
+  ]
+}

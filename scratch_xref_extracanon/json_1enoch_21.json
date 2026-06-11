@@ -1,0 +1,150 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 21,
+  "session": "session250",
+  "tag": "en21",
+  "base_band": 50500,
+  "threads": [
+    {
+      "slug": "1-enoch-21-prison-of-the-stars",
+      "title": "The prison for the stars and the host of heaven",
+      "summary_md": "Enoch is carried to the chaotic place at the edge of creation and shown the bound host: *’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* *And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.’* (1 Enoch 21:5-7). It ain't new — Enoch has already seen this very place once before, and the wording is the same: *I saw there seven stars like great burning mountains, and to me, when I inquired regarding them, the angel said: ’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* (1 Enoch 18:12). The prophets carry the identical picture of a rebel host held in custody for the reckoning: *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* (Isaiah 24:21), *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* (Isaiah 24:22). Jude reads the same rebellion onto the false teachers, calling them *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* (Jude 1:13). These are not stray myths but the canon's own order: the Creator's command stands, the rebel powers are bound, and the judgement is fixed.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 21,
+          "src_v": 4,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 18,
+          "tgt_v": 12,
+          "tier": "extras",
+          "note": "1 Enoch 18:12 — *I saw there seven stars like great burning mountains, and to me, when I inquired regarding them, the angel said: ’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* Enoch's earlier journey shows the very same seven bound stars and the same prison-of-the-host that he revisits in 21:4-5."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 24,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* Isaiah names the same rebel host on high that Enoch sees imprisoned at the end of heaven and earth."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 24,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* The transgressing host is shut in the prison and held for a future visitation — exactly Enoch's stars bound till their guilt is consummated."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude's 'wandering stars' are Enoch's stars that did not come forth at their appointed times, reserved for darkness."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-21-stars-out-of-their-appointed-times",
+      "title": "The stars that did not come forth at their appointed times",
+      "summary_md": "The charge against the bound stars is precise — they broke the Creator's appointed order: *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* (1 Enoch 21:6). The lights were set for the order of the seasons from the beginning, and to step out of that order is rebellion against the One who fixed it. So Jude reads the very same transgression onto men who likewise leave their station: *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* (Jude 1:13). The sin here is not law itself but the breaking of the appointed way; the Creator's command over the times stands, and the host that abandoned its place is held for judgement.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 21,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude calls the rebels 'wandering stars' — the same image as Enoch's stars that transgressed the commandment and did not keep their appointed times."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter ties the transgression directly to angels that sinned and are now held in chains till judgement, just as Enoch's stars are bound for their guilt."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-21-prison-of-the-angels-for-ever",
+      "title": "The prison of the angels, kept till the eternal judgement",
+      "summary_md": "Enoch passes to a second, more terrible place and Uriel names it plainly: *’This place is the prison of the angels, and here they will be imprisoned for ever.’* (1 Enoch 21:10), set within *a great fire there which burnt and blazed, and the place was cleft as far as the abyss* (1 Enoch 21:8). This is the canon's own holding-cell for the fallen Watchers. Jude says it of them exactly: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6). Peter says the same: *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* (2 Peter 2:4). Enoch himself has already heard the term of their imprisonment named by the same angel — *here shall they stand, till the day of the great judgement in which they shall be judged till they are made an end of.* (1 Enoch 19:1). And the end of that custody is the lake fixed in Revelation: *And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.* (Revelation 20:10). The bound host is real, held now, and reserved for a fixed reckoning — it ain't new.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 21,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude describes precisely the prison of the angels Uriel shows Enoch — reserved in chains for the judgement."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter calls this same place the holding of the angels that sinned, cast down and reserved unto judgment — Enoch's prison of the angels."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 10,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 19,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "1 Enoch 19:1 — *And Uriel said to me: ’Here shall stand the angels who have connected themselves with women, and their spirits assuming many different forms are defiling mankind and shall lead them astray into sacrificing to demons as gods, here shall they stand, till the day of the great judgement in which they shall be judged till they are made an end of.* The same Uriel who guides Enoch names the term of this prison: the fallen angels stand here till the great judgement."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 24,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* Isaiah's prisoners shut in the pit and held for a later visitation match the angels imprisoned 'for ever' until their reckoning."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Revelation 20:10 — *And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.* Revelation names the final destiny that Enoch's burning, blazing prison foreshadows — the eternal lake at the great judgement."
+        }
+      ]
+    }
+  ]
+}

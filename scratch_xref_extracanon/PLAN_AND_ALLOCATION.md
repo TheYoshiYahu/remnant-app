@@ -51,3 +51,29 @@ the proven `WITH input(...) VALUES ... INSERT` SQL → gates → fold → commit
 ## RECEIPTS (append per pack)
 - (setup) harness built + smoke-tested green: render OK, pglast 5 stmts, fidelity 2/2, resolve 0
   unresolved, greenfield 0 threads. Audit glob `session2*_*_extracanon_cross_references.sql` added.
+
+## RECEIPT — Pack 1 (1 Enoch ch1–8) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT reconciliation: **27 `1-enoch-*` threads / 104 members**, band
+  50000–50184, per-chapter 4/3/3/2/4/3/4/4, 0 orphan members. Migration
+  `session250_1enoch_extracanon_cross_references.sql` (149 stmts, idempotent ON CONFLICT).
+- Five gates green: fidelity 104/104, pglast 149 stmts, resolve_check 0 unresolved,
+  FULL-LIBRARY [PASS], 27 unique slugs / 0 dups.
+- Keystone thread: 1 Enoch 1:9 = the prophecy **Jude 1:14–15 quotes by name** ("It Ain't New").
+- Local commits: harness `85b660c`, Pack 1 `73a87e3`.
+- ⚠️ GIT PUSH BLOCKED: osxkeychain went non-interactive ("Device not configured" /
+  "terminal prompts disabled") — same condition as the S228 1-Corinthians session end.
+  origin/main still at 47a9e48. Commits are LOCAL-ONLY in /tmp/extracanon-xref-wt but PROD
+  HAS THE DATA. TO FINISH PUSH: from the worktree with the GUI keychain unlocked, run
+  `git push origin HEAD:main` and verify origin/main == local HEAD. Prod is authoritative meanwhile.
+
+## RECEIPT — Pack 2 (1 Enoch ch9–16) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **63 `1-enoch-*` threads / 240 members**, band 50000–50384,
+  per-ch (9-16) 5/6/4/4/5/4/4/4, 0 orphans. +36 threads/136 members this pack. Commit `87b3039`.
+- Five gates green (fidelity 240/240, pglast 337 stmts, resolve 0 unresolved, FULL-LIBRARY PASS,
+  63 unique slugs/0 dups). Watchers=Gen 6 woven heavily; Azazel→Lev 16 scapegoat (ch10);
+  origin-of-evil-spirits→Matt 12 (ch10,15-16); ch11 edition-numbering anomaly handled (=std 10:11-22);
+  Isaiah-2/Torah-stands guard on "all nations worship" (ch11).
+- ⚠️ Push still blocked (keychain). origin/main 47a9e48; local HEAD `87b3039`. Prod authoritative.
+- EDITION ANOMALY for later packs (per S232): this parse's ch24 holds the real throne-mountain +
+  tree of life; **ch25 text is a DUPLICATE of ch15 (watchers-intercession), mislabeled** — cross-ref
+  what the text literally says, do NOT build a tree-of-life thread on ch25; ch26 v7-10 another dup.
