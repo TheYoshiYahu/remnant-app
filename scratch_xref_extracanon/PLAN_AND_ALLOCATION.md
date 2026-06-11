@@ -77,3 +77,30 @@ the proven `WITH input(...) VALUES ... INSERT` SQL → gates → fold → commit
 - EDITION ANOMALY for later packs (per S232): this parse's ch24 holds the real throne-mountain +
   tree of life; **ch25 text is a DUPLICATE of ch15 (watchers-intercession), mislabeled** — cross-ref
   what the text literally says, do NOT build a tree-of-life thread on ch25; ch26 v7-10 another dup.
+
+## RECEIPT — Pack 3 (1 Enoch ch17–24) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **94 threads / 355 members**, band 50000–50584,
+  per-ch (17-24) 5/5/3/4/3/4/3/4, 0 orphans. +31/115 this pack. Commit `67b8f7b`. Five gates green
+  (fidelity 355/355, pglast 499 stmts, resolve 0 unresolved, FULL-LIBRARY PASS, 94 slugs/0 dups).
+- Prison-of-stars bound-till-judgement (18-21); demon-sacrifice Deut32/Lev17/1Cor10 (19); seven
+  archangels Tobit12/Dan10/Rev8 (20); Sheol's hollows Luke16/Gen4:10 (22); tree of life Gen2/Ezek47/Rev22 (24).
+- DATA ARTIFACT (pre-existing Enoch parse): ch17/18 verses overlap/duplicate in the source edition
+  (En17:8-21 ≈ En18:1-14). Xrefs anchor to the verses that EXIST in the live DB (resolve 0 unresolved),
+  so the apparatus is valid; the chapter-split misalignment is a separate parse-fix flag for Yoshi.
+- Push still keychain-blocked. origin/main 47a9e48; local HEAD `67b8f7b`. Prod authoritative.
+
+## RECEIPT — Pack 4 (1 Enoch ch25–36) ✅ LIVE — BOOK OF THE WATCHERS (ch1-36) COMPLETE
+- Applied 2026-06-11. EXACT: cumulative **131 threads / 493 members**, band 50000–50881, 0 orphans.
+  per-ch(25-36) all 3 except ch33=4. +37/138 this pack. Commit `ff77ab3`. Five gates green
+  (fidelity 493/493, FULL-LIBRARY PASS, 131 slugs/0 dups, resolve 0 unresolved).
+- ⚑ PARSE-AUDIT FLAG for Yoshi (enoch.json, ch24-28 block): the throne-mountain + TREE-OF-LIFE
+  content is DUPLICATED/SHIFTED across parsed ch24, ch26:7-10, ch27, ch28; parsed **ch25 = a
+  verbatim duplicate of ch15** (Watchers-intercession), mislabeled with a throne/tree title. The
+  xref minions authored honestly on each chapter's LITERAL dumped text and self-linked the
+  duplicates (fidelity-safe, resolve 0 unresolved) — but a data-layer re-chaptering of the 24-28
+  block against standard Charles numbering is warranted (extends the S232 ch25-mislabel finding).
+- Push still keychain-blocked. origin/main 47a9e48; local HEAD `ff77ab3`. Prod authoritative.
+
+## ▶️ NEXT = the SIMILITUDES / Book of Parables (ch37-71) — HIGH VALUE (Son of Adam / Elect One).
+Pack 5 ch37-44, Pack 6 ch45-51 (46=Son of Adam beside Head of Days→Dan7 kaph; 48=named before
+creation; 51=resurrection), Pack 7 ch52-62, Pack 8 ch63-71. KAPH discipline now IN PLAY.
