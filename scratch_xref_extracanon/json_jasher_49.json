@@ -1,0 +1,110 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 49,
+  "session": "session252",
+  "tag": "ja49",
+  "base_band": 56200,
+  "threads": [
+    {
+      "slug": "jasher-49-spirit-of-god-discreet-and-wise",
+      "title": "None So Discreet and Wise — the Spirit of Elohim in Joseph",
+      "summary_md": "Pharaoh sets the elevation in motion on the ground that Elohim has spoken through Joseph: *And the king said to all the officers: I have thought that since Elohim (God) has made known to the Hebrew man all that he has spoken, there is none so discreet and wise in the whole land as he is; if it seem good in your sight I will place him over the land, for he will save the land with his wisdom.* (Jasher 49:8). It ain't new — this is the very word Genesis records: *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* (Genesis 41:38), and to Joseph himself, *Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art* (Genesis 41:39). The book of Jubilees narrates the same scene with the same words: *And Yahuah (God) gave Joseph favour and mercy in the eyes of Pharaoh, and Pharaoh said to his servants: “We shall not find such a wise and discreet man as this man, for the spirit of Yahuah (God) is with him.”* (Jubilees 40:5). And Stephen reads the whole rise as Elohim's own doing: *And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house.* (Acts 7:10). The wisdom is not Egypt's discovery but the chosen seed kept and exalted by his Elohim.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 49, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 38,
+         "tier": "free",
+         "note": "Genesis 41:38 — *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* Pharaoh's reasoning in Jasher 49:8, that Elohim has made all known to the Hebrew, is the canon's own ground for the elevation."},
+        {"src_ch": 49, "src_v": 20,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 39,
+         "tier": "free",
+         "note": "Genesis 41:39 — *And Pharaoh said unto Joseph, Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art:* the king's words to Joseph in Jasher 49:20 echo Genesis verbatim, 'there is not throughout the land a discreet and wise man like to you.'"},
+        {"src_ch": 49, "src_v": 8,
+         "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 40, "tgt_v": 5,
+         "tier": "extras",
+         "note": "Jubilees 40:5 — *And Yahuah (God) gave Joseph favour and mercy in the eyes of Pharaoh, and Pharaoh said to his servants: “We shall not find such a wise and discreet man as this man, for the spirit of Yahuah (God) is with him.”* Jubilees narrates the identical Pharaoh-speech that opens Jasher 49:8."},
+        {"src_ch": 49, "src_v": 20,
+         "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 10,
+         "tier": "free",
+         "note": "Acts 7:10 — *And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house.* Stephen reads Joseph's elevation in Jasher 49 as Elohim's own deliverance and gift of wisdom."}
+      ]
+    },
+    {
+      "slug": "jasher-49-second-to-pharaoh-ring-and-chain",
+      "title": "Second to Pharaoh — the Ring, the Garment, the Gold Chain",
+      "summary_md": "Pharaoh invests Joseph with the marks of the second throne: *And the king took off his ring from his hand and put it upon the hand of Joseph, and the king dressed Joseph in a princely garment, and he put a golden crown upon his head, and he put a golden chain upon his neck.* (Jasher 49:23), and *only in my throne will I be greater than you* (Jasher 49:22). It ain't new — every detail stands in Genesis: *And Pharaoh took off his ring from his hand, and put it upon Joseph’s hand, and arrayed him in vestures of fine linen, and put a gold chain about his neck;* (Genesis 41:42), with the same reserved word, *only in the throne will I be greater than thou* (Genesis 41:40). And the second chariot of Jasher 49:24 is Genesis' own: *And he made him to ride in the second chariot which he had; and they cried before him, Bow the knee: and he made him ruler over all the land of Egypt.* (Genesis 41:43). Jubilees seals the rule with the same uprightness the chosen seed carries: *And Joseph ruled over all the land of Egypt, and all the princes of Pharaoh, and all his servants, and all who did the king’s business loved him, for he walked in uprightness, for he was without pride and arrogance, and he had no respect of persons, and did not accept gifts, but he judged in uprightness all the people of the land.* (Jubilees 40:8).",
+      "anchor_start_v": 21,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 49, "src_v": 23,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 42,
+         "tier": "free",
+         "note": "Genesis 41:42 — *And Pharaoh took off his ring from his hand, and put it upon Joseph’s hand, and arrayed him in vestures of fine linen, and put a gold chain about his neck;* the investiture of Jasher 49:23 (ring, princely garment, gold chain) is Genesis detail for detail."},
+        {"src_ch": 49, "src_v": 22,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 40,
+         "tier": "free",
+         "note": "Genesis 41:40 — *Thou shalt be over my house, and according unto thy word shall all my people be ruled: only in the throne will I be greater than thou.* Pharaoh's reservation in Jasher 49:22, 'only in my throne will I be greater than you,' is the canon's exact word."},
+        {"src_ch": 49, "src_v": 24,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 43,
+         "tier": "free",
+         "note": "Genesis 41:43 — *And he made him to ride in the second chariot which he had; and they cried before him, Bow the knee: and he made him ruler over all the land of Egypt.* The second chariot opposite the king's in Jasher 49:24 retells Genesis' very procession."},
+        {"src_ch": 49, "src_v": 22,
+         "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 40, "tgt_v": 8,
+         "tier": "extras",
+         "note": "Jubilees 40:8 — *And Joseph ruled over all the land of Egypt, and all the princes of Pharaoh, and all his servants, and all who did the king’s business loved him, for he walked in uprightness, for he was without pride and arrogance, and he had no respect of persons, and did not accept gifts, but he judged in uprightness all the people of the land.* Jubilees gives the righteous character of the second-to-Pharaoh that Jasher 49:22 establishes."}
+      ]
+    },
+    {
+      "slug": "jasher-49-zaphnath-paaneah-osnath-thirty-years",
+      "title": "Zaphnath Paaneah — the New Name, the Wife, the Thirty Years",
+      "summary_md": "The king crowns the elevation with a new name: *And your name no more shall be called Joseph, but Zaphnath Paaneah shall be your name; you shall be second to me, and according to your word shall be all the affairs of my government, and at your word shall my people go out and come in.* (Jasher 49:21). Pharaoh then gives him a wife and the years are reckoned: *And the king sent to Potiphera, the son of Ahiram priest of On, and he took his young daughter Osnath and gave her to Joseph for a wife.* (Jasher 49:36), and *And Joseph was thirty years old when he stood before Pharaoh, and Joseph went out from before the king, and he became the king’s second in Egypt.* (Jasher 49:38). It ain't new — Genesis records every part: *And Pharaoh called Joseph’s name Zaphnath-paaneah; and he gave him to wife Asenath the daughter of Poti-pherah priest of On. And Joseph went out over all the land of Egypt.* (Genesis 41:45), and *And Joseph was thirty years old when he stood before Pharaoh king of Egypt. And Joseph went out from the presence of Pharaoh, and went throughout all the land of Egypt.* (Genesis 41:46). Jubilees carries the same name and marriage: *And the king called Joseph’s name Sĕphânṭîphâns, 2 and gave Joseph to wife the daughter of Potiphar, the daughter of the priest of Heliopolis, the chief cook. 3 11. And on the day that Joseph stood before Pharaoh he was thirty years old when he stood before Pharaoh.* (Jubilees 40:10).",
+      "anchor_start_v": 21,
+      "anchor_end_v": 38,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 49, "src_v": 21,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 45,
+         "tier": "free",
+         "note": "Genesis 41:45 — *And Pharaoh called Joseph’s name Zaphnath-paaneah; and he gave him to wife Asenath the daughter of Poti-pherah priest of On. And Joseph went out over all the land of Egypt.* The renaming of Jasher 49:21 and the marriage of 49:36 are Genesis' own record (Zaphnath-paaneah; daughter of the priest of On)."},
+        {"src_ch": 49, "src_v": 38,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 41, "tgt_v": 46,
+         "tier": "free",
+         "note": "Genesis 41:46 — *And Joseph was thirty years old when he stood before Pharaoh king of Egypt. And Joseph went out from the presence of Pharaoh, and went throughout all the land of Egypt.* Jasher 49:38 reckons the identical thirty years at Joseph's standing before Pharaoh."},
+        {"src_ch": 49, "src_v": 21,
+         "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 40, "tgt_v": 10,
+         "tier": "extras",
+         "note": "Jubilees 40:10 — *And the king called Joseph’s name Sĕphânṭîphâns, 2 and gave Joseph to wife the daughter of Potiphar, the daughter of the priest of Heliopolis, the chief cook. 3 11. And on the day that Joseph stood before Pharaoh he was thirty years old when he stood before Pharaoh.* Jubilees gives the same new name, the priest's-daughter wife, and the thirty years that Jasher 49:21,36,38 record."}
+      ]
+    },
+    {
+      "slug": "jasher-49-raised-from-the-dungeon-poor-from-the-dust",
+      "title": "He Raises the Poor from the Dust — from the Dungeon to the Throne",
+      "summary_md": "On the day of his exaltation Joseph lifts his eyes to heaven and ascribes the whole rise to Yahuah: *And Joseph upon his horse lifted up his eyes to heaven, and called out and said, He raises the poor man from the dust, He lifts up the needy from the dunghill. O Yahuah (O Lord) of Hosts, happy is the man who trusts in you.* (Jasher 49:30). The night before, Joseph had still been in the prison: *behold Joseph was lying in the bed at night in his master’s house in the dungeon, for his master had put him back into the dungeon on account of his wife.* (Jasher 49:13). It ain't new — Psalm 105 sings this exact arc, prison to rule: *He sent a man before them, even Joseph, who was sold for a servant:* (Psalm 105:17), *Whose feet they hurt with fetters: he was laid in iron:* (Psalm 105:18), *The king sent and loosed him; even the ruler of the people, and let him go free.* (Psalm 105:20), *He made him lord of his house, and ruler of all his substance:* (Psalm 105:21). And the apostolic record names the same Elohim who was with him from the selling to the rule: *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him,* (Acts 7:9). The chosen seed is kept through the pit and raised from the dust.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 30,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 49, "src_v": 30,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 17,
+         "tier": "free",
+         "note": "Psalm 105:17 — *He sent a man before them, even Joseph, who was sold for a servant:* Joseph's praise in Jasher 49:30, that Yahuah raises the poor from the dust, sings the same providence Psalm 105 ascribes to the whole story."},
+        {"src_ch": 49, "src_v": 13,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 18,
+         "tier": "free",
+         "note": "Psalm 105:18 — *Whose feet they hurt with fetters: he was laid in iron:* the dungeon of Jasher 49:13, where Joseph lay the night before his exaltation, is the iron Psalm 105 remembers."},
+        {"src_ch": 49, "src_v": 30,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 20,
+         "tier": "free",
+         "note": "Psalm 105:20 — *The king sent and loosed him; even the ruler of the people, and let him go free.* The very day Jasher 49:30 celebrates, the king's loosing of Joseph from the prison to the rule, is Psalm 105's word."},
+        {"src_ch": 49, "src_v": 30,
+         "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 9,
+         "tier": "free",
+         "note": "Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him,* Stephen names the Elohim who was with Joseph from the pit, the same Yahuah Joseph praises in Jasher 49:30."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 53,
+  "session": "session252",
+  "tag": "ja53",
+  "base_band": 56300,
+  "threads": [
+    {
+      "slug": "jasher-53-benjamin-brought-down",
+      "title": "The brethren come down with Benjamin and stand before Joseph",
+      "summary_md": "Jasher opens not with legendary war but with the heart of the Joseph story: *And the sons of Jacob rose up and took Benjamin and the whole of the presents, and they went and came to Egypt and they stood before Joseph* (Jasher 53:1). This is Genesis told again. The canon records the same descent — *And the men took that present, and they took double money in their hand, and Benjamin; and rose up, and went down to Egypt, and stood before Joseph* (Genesis 43:15) — and the same bowing of the brethren foretold in Joseph's dreams — *And when Joseph came home, they brought him the present which was in their hand into the house, and bowed themselves to him to the earth* (Genesis 43:26). Jubilees carries the identical scene, naming Benjamin and Joseph's blessing over him — *And they went and stood before Joseph, and he saw Benjamin his brother, and he knew him, and said to them: “Is this your youngest brother?” And they said to him: “It is he.” And he said: “Yahuah (God) be gracious to you, my son!”* (Jubilees 42:21). The seed-line of Israel is kept and carried down into Egypt; it ain't new.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 53, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 43, "tgt_v": 15, "tier": "free",
+         "note": "Genesis 43:15 — *And the men took that present, and they took double money in their hand, and Benjamin; and rose up, and went down to Egypt, and stood before Joseph.* The canon records the very descent Jasher 53:1 retells, Benjamin and the presents carried down to stand before Joseph."},
+        {"src_ch": 53, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 43, "tgt_v": 26, "tier": "free",
+         "note": "Genesis 43:26 — *And when Joseph came home, they brought him the present which was in their hand into the house, and bowed themselves to him to the earth.* Judah leading Benjamin to bow before Joseph in Jasher 53:6 is the same obeisance the canon records, the dream fulfilled."},
+        {"src_ch": 53, "src_v": 1, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 42, "tgt_v": 21, "tier": "extras",
+         "note": "Jubilees 42:21 — *And they went and stood before Joseph, and he saw Benjamin his brother, and he knew him, and said to them: “Is this your youngest brother?” And they said to him: “It is he.” And he said: “Yahuah (God) be gracious to you, my son!”* Jubilees narrates the same arrival with Benjamin that Jasher 53:1 opens, the parallel patriarchal record."}
+      ]
+    },
+    {
+      "slug": "jasher-53-joseph-weeps-over-benjamin",
+      "title": "Joseph beholds Benjamin and weeps in the inner chamber",
+      "summary_md": "Jasher lingers on the brother's bowels yearning: *And he lifted up his eyes and beheld his brother Benjamin, and he said, Is this your brother of whom you spoke to me? And Benjamin approached Joseph, and Joseph placed his hand upon his head and he said to him, May Elohim (God) be gracious to you my son* (Jasher 53:9), and then *And when Joseph saw his brother, the son of his mother, he again wished to weep, and he entered the chamber, and he wept there, and he washed his face, and went out and refrained from weeping, and he said, Prepare food* (Jasher 53:10). Genesis tells it word for word: *And he lifted up his eyes, and saw his brother Benjamin, his mother’s son, and said, Is this your younger brother, of whom ye spake unto me? And he said, Elohim (God) be gracious unto thee, my son* (Genesis 43:29), and *And Joseph made haste; for his bowels did yearn upon his brother: and he sought where to weep; and he entered into his chamber, and wept there* (Genesis 43:30), and *And he washed his face, and went out, and refrained himself, and said, Set on bread* (Genesis 43:31). The retelling adds nothing the canon withholds — it ain't new.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 53, "src_v": 9, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 43, "tgt_v": 29, "tier": "free",
+         "note": "Genesis 43:29 — *And he lifted up his eyes, and saw his brother Benjamin, his mother’s son, and said, Is this your younger brother, of whom ye spake unto me? And he said, Elohim (God) be gracious unto thee, my son.* Joseph's blessing over Benjamin in Jasher 53:9 is the canon's own line restored."},
+        {"src_ch": 53, "src_v": 10, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 43, "tgt_v": 30, "tier": "free",
+         "note": "Genesis 43:30 — *And Joseph made haste; for his bowels did yearn upon his brother: and he sought where to weep; and he entered into his chamber, and wept there.* Jasher 53:10's entering the chamber to weep over Benjamin matches Genesis exactly."},
+        {"src_ch": 53, "src_v": 10, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 43, "tgt_v": 31, "tier": "free",
+         "note": "Genesis 43:31 — *And he washed his face, and went out, and refrained himself, and said, Set on bread.* The washing of the face and refraining from weeping in Jasher 53:10 is the canon's same gesture before the meal."}
+      ]
+    },
+    {
+      "slug": "jasher-53-the-feast-benjamin-portion",
+      "title": "The brethren seated by birth, Benjamin's portion the greatest",
+      "summary_md": "At the meal Joseph seats his brothers as the canon does, and singles out Benjamin: *And he also placed the others according to their births, and he said, I know that this your youngest brother has no brother, and I, like him, have no brother, he shall therefore sit down to eat with me* (Jasher 53:13). Genesis sets the same table — *And they sat before him, the firstborn according to his birthright, and the youngest according to his youth: and the men marvelled one at another* (Genesis 43:33) — and gives Benjamin the larger share — *And he took and sent messes unto them from before him: but Benjamin’s mess was five times so much as any of theirs. And they drank, and were merry with him* (Genesis 43:34). Jubilees keeps the same favored portion — *And they ate before him and he gave them all a portion, but the portion of Benjamin was seven times larger than that of any of theirs* (Jubilees 42:23). The same scene carried by three witnesses; it ain't new.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 53, "src_v": 12, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 43, "tgt_v": 33, "tier": "free",
+         "note": "Genesis 43:33 — *And they sat before him, the firstborn according to his birthright, and the youngest according to his youth: and the men marvelled one at another.* Joseph seating the brethren by their births in Jasher 53:12 is the canon's own astonishing arrangement."},
+        {"src_ch": 53, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 43, "tgt_v": 34, "tier": "free",
+         "note": "Genesis 43:34 — *And he took and sent messes unto them from before him: but Benjamin’s mess was five times so much as any of theirs. And they drank, and were merry with him.* Benjamin's heaped gifts in Jasher 53:14 echo the canon's fivefold portion at the same feast."},
+        {"src_ch": 53, "src_v": 14, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 42, "tgt_v": 23, "tier": "extras",
+         "note": "Jubilees 42:23 — *And they ate before him and he gave them all a portion, but the portion of Benjamin was seven times larger than that of any of theirs.* Jubilees, like Jasher 53:14, marks Benjamin's portion as far greater than his brothers' at Joseph's table."}
+      ]
+    },
+    {
+      "slug": "jasher-53-silver-cup-hidden",
+      "title": "The silver cup hidden in Benjamin's sack",
+      "summary_md": "Joseph's test is set exactly as Genesis frames it: *At that time Joseph commanded his officer to fill their sacks with food, and to put each man’s money into his sack, and to put the cup in the sack of Benjamin, and to give them provision for the road, and they did so to them* (Jasher 53:23), and on pursuit *they looked in their bags and the cup was found in Benjamin’s bag* (Jasher 53:27). The canon commands the same — *And he commanded the steward of his house, saying, Fill the men’s sacks with food, as much as they can carry, and put every man’s money in his sack’s mouth* (Genesis 44:1), and *And put my cup, the silver cup, in the sack’s mouth of the youngest, and his corn money. And he did according to the word that Joseph had spoken* (Genesis 44:2), and the cup is found — *And he searched, and began at the eldest, and left at the youngest: and the cup was found in Benjamin’s sack* (Genesis 44:12). Jubilees carries the identical instruction — *And he did as Joseph had told him, and filled all their sacks for them with food and put their money in their sacks, and put the cup in Benjamin’s sack* (Jubilees 43:1). One scene, three records; it ain't new.",
+      "anchor_start_v": 23,
+      "anchor_end_v": 27,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 53, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 44, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 44:1 — *And he commanded the steward of his house, saying, Fill the men’s sacks with food, as much as they can carry, and put every man’s money in his sack’s mouth.* Joseph's command to fill the sacks and return the money in Jasher 53:23 is the canon's same order to his steward."},
+        {"src_ch": 53, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 44, "tgt_v": 2, "tier": "free",
+         "note": "Genesis 44:2 — *And put my cup, the silver cup, in the sack’s mouth of the youngest, and his corn money. And he did according to the word that Joseph had spoken.* The hiding of the cup in Benjamin's sack in Jasher 53:23 is the canon's silver-cup test verbatim."},
+        {"src_ch": 53, "src_v": 27, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 44, "tgt_v": 12, "tier": "free",
+         "note": "Genesis 44:12 — *And he searched, and began at the eldest, and left at the youngest: and the cup was found in Benjamin’s sack.* The cup found in Benjamin's bag in Jasher 53:27 is the canon's own discovery, eldest to youngest."},
+        {"src_ch": 53, "src_v": 23, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 43, "tgt_v": 1, "tier": "extras",
+         "note": "Jubilees 43:1 — *And he did as Joseph had told him, and filled all their sacks for them with food and put their money in their sacks, and put the cup in Benjamin’s sack.* Jubilees narrates the same hidden cup that Jasher 53:23 sets in Benjamin's sack."}
+      ]
+    },
+    {
+      "slug": "jasher-53-judah-confession",
+      "title": "Judah confesses before Joseph; Elohim has found the iniquity",
+      "summary_md": "Brought back to the house, Judah speaks for them all: *And Judah said, What shall we say to our Lord, what shall we speak and how shall we justify ourselves, Elohim has this day found the iniquity of all your servants, therefore has he done this thing to us this day* (Jasher 53:31). Genesis gives the same confession on Judah's lips — *And Yahudah (Judah) said, What shall we say unto my lord? what shall we speak? or how shall we clear ourselves? Elohim (God) hath found out the iniquity of thy servants: behold, we are my lord’s servants, both we, and he also with whom the cup is found* (Genesis 44:16), preceded by the brethren falling before him — *And Yahudah (Judah) and his brethren came to Joseph’s house; for he was yet there: and they fell before him on the ground* (Genesis 44:14). It is Judah — the sceptre-bearing tribe (Genesis 49:10) — who steps forward as surety and pleads, and Jubilees keeps that same surety-pledge — *Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father, and if I do not bring him back, your servant will bear the blame to our father for ever.* (Jubilees 43:13). Judah's intercession runs straight to the Lion of the tribe of Judah; it ain't new.",
+      "anchor_start_v": 28,
+      "anchor_end_v": 32,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 53, "src_v": 31, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 44, "tgt_v": 16, "tier": "free",
+         "note": "Genesis 44:16 — *And Yahudah (Judah) said, What shall we say unto my lord? what shall we speak? or how shall we clear ourselves? Elohim (God) hath found out the iniquity of thy servants: behold, we are my lord’s servants, both we, and he also with whom the cup is found.* Judah's confession in Jasher 53:31 is the canon's own word, Elohim finding out the iniquity of the servants."},
+        {"src_ch": 53, "src_v": 29, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 44, "tgt_v": 14, "tier": "free",
+         "note": "Genesis 44:14 — *And Yahudah (Judah) and his brethren came to Joseph’s house; for he was yet there: and they fell before him on the ground.* The brethren coming to Joseph's house and standing before his throne in Jasher 53:29 is the canon's same return after the cup was found."},
+        {"src_ch": 53, "src_v": 31, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 10, "tier": "free",
+         "note": "Genesis 49:10 — *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* Judah stepping forward to speak and stand surety for his brethren in Jasher 53:31 foreshadows the sceptre-bearing tribe whose line runs to Shiloh the Messiah."},
+        {"src_ch": 53, "src_v": 31, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 43, "tgt_v": 13, "tier": "extras",
+         "note": "Jubilees 43:13 — *Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father, and if I do not bring him back, your servant will bear the blame to our father for ever.* Jubilees keeps Judah's surety-plea that Jasher 53:31 begins, the same intercession before Joseph."}
+      ]
+    }
+  ]
+}

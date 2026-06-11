@@ -1,0 +1,90 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 51,
+  "session": "session252",
+  "tag": "ja51",
+  "base_band": 56250,
+  "threads": [
+    {
+      "slug": "jasher-51-down-to-egypt-for-corn",
+      "title": "The ten go down to buy corn",
+      "summary_md": "Jasher opens exactly where Genesis 42 opens — the famine drives Jacob to send his sons down to Egypt: *And Jacob afterward heard that there was corn in Egypt, and he called to his sons to go to Egypt to buy corn, for upon them also did the famine prevail* (Jasher 51:1), and ten go while Benjamin is kept back lest *an accident might befall him on the road like his brother* (Jasher 51:5). It ain't new — this is the canon's own scene, retold. Genesis sets it down first: *Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do ye look one upon another?* (Genesis 42:1), and again *And Joseph’s ten brethren went down to buy corn in Egypt* (Genesis 42:3), with *But Benjamin, Joseph’s brother, Jacob sent not with his brethren; for he said, Lest peradventure mischief befall him* (Genesis 42:4). Jubilees narrates the same descent of the covenant seed in famine: *(Now the famine was very sore in the land of Canaan), and Jacob heard that there was food in Egypt, and he sent his ten sons that they should procure food for him in Egypt; but Benjamin he did not send* (Jubilees 42:4).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 51, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 1, "tier": "free", "note": "Genesis 42:1 — *Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do ye look one upon another?* The same famine that opens Jasher 51:1 sends Jacob's sons down in the canon's own account."},
+        {"src_ch": 51, "src_v": 3, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 3, "tier": "free", "note": "Genesis 42:3 — *And Joseph’s ten brethren went down to buy corn in Egypt.* Jasher 51:3-5 numbers the same ten brethren going down to buy corn in Egypt."},
+        {"src_ch": 51, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 4, "tier": "free", "note": "Genesis 42:4 — *But Benjamin, Joseph’s brother, Jacob sent not with his brethren; for he said, Lest peradventure mischief befall him.* Jacob's fear in Jasher 51:5 that Benjamin meet the road-mischief of his brother is the very reason Genesis gives for keeping him home."},
+        {"src_ch": 51, "src_v": 1, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 42, "tgt_v": 4, "tier": "extras", "note": "Jubilees 42:4 — *(Now the famine was very sore in the land of Canaan), and Jacob heard that there was food in Egypt, and he sent his ten sons that they should procure food for him in Egypt; but Benjamin he did not send.* The live Jubilees apparatus carries the identical descent of the ten in famine, Benjamin withheld."}
+      ]
+    },
+    {
+      "slug": "jasher-51-joseph-knew-them-spies",
+      "title": "Joseph knew them; they knew him not — \"ye are spies\"",
+      "summary_md": "Brought before the throne, the brothers bow and Joseph recognizes them while they remain blind to him: *And Joseph saw his brethren, and he knew them, but they knew him not, for Joseph was very great in their eyes, therefore they knew him not* (Jasher 51:20). He presses the same charge the canon records — *That is the thing which I spoke to you, you have come to spy through the land... you have come to see the nakedness of the land* (Jasher 51:24) — and demands the youngest be fetched as proof: *if you will send home one from amongst you to fetch your youngest brother from your father, and to bring him here to me... I will know that you are right* (Jasher 51:33). This is Genesis 42 unfolded. The source: *And Joseph saw his brethren, and he knew them, but made himself strange unto them, and spake roughly unto them* (Genesis 42:7); *And Joseph knew his brethren, but they knew not him* (Genesis 42:8); *And Joseph remembered the dreams which he dreamed of them, and said unto them, Ye are spies; to see the nakedness of the land ye are come* (Genesis 42:9); *Hereby ye shall be proved: By the life of Pharaoh ye shall not go forth hence, except your youngest brother come hither* (Genesis 42:15). Jubilees keeps the same testing: *“Are you not spies, and have you not come to explore the approaches of the land?” And he put them in ward* (Jubilees 42:5).",
+      "anchor_start_v": 20,
+      "anchor_end_v": 33,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 51, "src_v": 20, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 8, "tier": "free", "note": "Genesis 42:8 — *And Joseph knew his brethren, but they knew not him.* Word for word the recognition of Jasher 51:20 — the brother they sold stands ruling, unrecognized."},
+        {"src_ch": 51, "src_v": 24, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 9, "tier": "free", "note": "Genesis 42:9 — *And Joseph remembered the dreams which he dreamed of them, and said unto them, Ye are spies; to see the nakedness of the land ye are come.* Joseph's spy-charge and \"nakedness of the land\" in Jasher 51:24 is the canon's own accusation."},
+        {"src_ch": 51, "src_v": 33, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 15, "tier": "free", "note": "Genesis 42:15 — *Hereby ye shall be proved: By the life of Pharaoh ye shall not go forth hence, except your youngest brother come hither.* The demand that the youngest be brought as proof, sworn by Pharaoh's life, matches Joseph's test in Jasher 51:33."},
+        {"src_ch": 51, "src_v": 20, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 42, "tgt_v": 5, "tier": "extras", "note": "Jubilees 42:5 — *And Joseph recognized them, but they did not recognize him, and he spake to them and questioned them, and he said to them: “Are you not spies, and have you not come to explore the approaches of the land?” And he put them in ward.* The live Jubilees layer carries the same recognition and spy-charge as Jasher 51:20-24."}
+      ]
+    },
+    {
+      "slug": "jasher-51-guilty-concerning-our-brother",
+      "title": "The brothers' guilt: \"we sold our brother, our own flesh\"",
+      "summary_md": "On the road the conscience of Genesis 37 returns upon them. Judah and Reuben name the old sin outright: *Surely we are guilty sinners before Yahuah our Elohim (the Lord our God) in having sold our brother, our own flesh* (Jasher 51:51), and Reuben answers, *Said I not to you, do not sin against the lad, and you would not listen to me? now Elohim requires him from us* (Jasher 51:52). The canon places the very same confession at this moment: *And they said one to another, We are verily guilty concerning our brother, in that we saw the anguish of his soul, when he besought us, and we would not hear; therefore is this distress come upon us* (Genesis 42:21), and Reuben's rebuke — *Spake I not unto you, saying, Do not sin against the child; and ye would not hear? therefore, behold, also his blood is required* (Genesis 42:22). The sin they confess was Judah's own counsel back in Genesis: *And Yahudah (Judah) said unto his brethren, What profit is it if we slay our brother, and conceal his blood?* (Genesis 37:26), the selling itself — *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt* (Genesis 37:28). It ain't new: the seed is chastened but kept, the guilt confessed before the throne it could not see.",
+      "anchor_start_v": 49,
+      "anchor_end_v": 52,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 51, "src_v": 51, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 21, "tier": "free", "note": "Genesis 42:21 — *And they said one to another, We are verily guilty concerning our brother, in that we saw the anguish of his soul, when he besought us, and we would not hear; therefore is this distress come upon us.* Judah's confession in Jasher 51:51 of guilt for selling their own flesh is the canon's own road-side reckoning."},
+        {"src_ch": 51, "src_v": 52, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 22, "tier": "free", "note": "Genesis 42:22 — *And Reuben answered them, saying, Spake I not unto you, saying, Do not sin against the child; and ye would not hear? therefore, behold, also his blood is required.* Reuben's \"said I not... do not sin against the lad\" in Jasher 51:52 is verbatim the canon's Reuben."},
+        {"src_ch": 51, "src_v": 51, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 26, "tier": "free", "note": "Genesis 37:26 — *And Yahudah (Judah) said unto his brethren, What profit is it if we slay our brother, and conceal his blood?* The sin Judah confesses in Jasher 51:51 was his own earlier counsel to sell rather than slay Joseph."},
+        {"src_ch": 51, "src_v": 51, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 28, "tier": "free", "note": "Genesis 37:28 — *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt.* \"Having sold our brother\" (Jasher 51:51) points back to this selling into Egypt that now stands ruling over them."}
+      ]
+    },
+    {
+      "slug": "jasher-51-simeon-bound-joseph-wept",
+      "title": "Simeon bound; Joseph turns aside and weeps",
+      "summary_md": "Joseph keeps one brother behind and slips away to weep before binding Simeon: *And Joseph went out from them and came into the chamber, and wept a great weeping, for his pity was excited for them, and he washed his face, and returned to them again, and he took Simeon from them and ordered him to be bound* (Jasher 51:37); *Seize this man and confine him in prison until his brethren come to him* (Jasher 51:39). Genesis records the same tears and the same detained brother: *And he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes* (Genesis 42:24), the third-day verdict being *If ye be true men, let one of your brethren be bound in the house of your prison: go ye, carry corn for the famine of your houses* (Genesis 42:19). Jasher adds its own legendary color — Simeon too strong to bind until Manasseh subdues him, and Simeon's word *None of you must say that this is the smiting of an Egyptian, but it is the smiting of the house of my father* (Jasher 51:44) — but anchored to the canon's true scene. Jubilees keeps the same detention: *And after that he set them free again, and detained Simeon alone and sent off his nine brothers* (Jubilees 42:6).",
+      "anchor_start_v": 37,
+      "anchor_end_v": 44,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 51, "src_v": 37, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 24, "tier": "free", "note": "Genesis 42:24 — *And he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes.* Joseph's chamber-weeping and the taking of Simeon in Jasher 51:37 is the canon's own turning-aside to weep."},
+        {"src_ch": 51, "src_v": 39, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 19, "tier": "free", "note": "Genesis 42:19 — *If ye be true men, let one of your brethren be bound in the house of your prison: go ye, carry corn for the famine of your houses.* The order to confine one brother in prison while the rest carry corn home (Jasher 51:39, 46) is Joseph's third-day verdict in Genesis."},
+        {"src_ch": 51, "src_v": 37, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 42, "tgt_v": 6, "tier": "extras", "note": "Jubilees 42:6 — *And after that he set them free again, and detained Simeon alone and sent off his nine brothers. And he filled their sacks with corn, and he put their gold in their sacks, and they did not know.* The live Jubilees layer keeps Simeon detained and the gold secretly restored, as Jasher 51:37-45."}
+      ]
+    },
+    {
+      "slug": "jasher-51-smiting-of-shechem",
+      "title": "\"Two of your brethren smote Shechem\" — Simeon and Levi remembered",
+      "summary_md": "Joseph throws their own history at them as ground for the spy-charge: *for we heard that two of your brethren smote all the inhabitants of Shechem, in the land of Canaan, on account of your sister, and you now come to do the like in Egypt on account of your brother* (Jasher 51:32). The deed he names is fixed in Genesis: *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males* (Genesis 34:25), after *every male was circumcised, all that went out of the gate of his city* (Genesis 34:24). Jasher's expansion is honest memory of the canon's own Dinah-vengeance, woven here to sharpen Joseph's pressure on the brothers — it ain't new.",
+      "anchor_start_v": 31,
+      "anchor_end_v": 32,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 51, "src_v": 32, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 34, "tgt_v": 25, "tier": "free", "note": "Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* The \"two of your brethren smote Shechem... on account of your sister\" that Joseph cites in Jasher 51:32 is this Genesis deed."},
+        {"src_ch": 51, "src_v": 32, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 34, "tgt_v": 24, "tier": "free", "note": "Genesis 34:24 — *And unto Hamor and unto Shechem his son hearkened all that went out of the gate of his city; and every male was circumcised, all that went out of the gate of his city.* The circumcision that left Shechem's men \"sore\" sets up the very smiting Joseph recalls in Jasher 51:32."}
+      ]
+    },
+    {
+      "slug": "jasher-51-money-restored-hand-of-god",
+      "title": "The money restored — \"What is this that Elohim has done to us?\"",
+      "summary_md": "At the inn the silver is found back in the sack, and the brothers read the hand of Elohim in it: *My money is restored, and lo, it is even in my sack... What is this that Elohim (God) has done to us?* (Jasher 51:49), and they ask *where is Yahuah (the Lord)’s kindness with our fathers, with Abraham, Isaac, and Jacob* (Jasher 51:50). Genesis records the identical discovery and the identical confession of the divine hand: *And he said unto his brethren, My money is restored; and, lo, it is even in my sack: and their heart failed them, and they were afraid, saying one to another, What is this that Elohim (God) hath done unto us?* (Genesis 42:28). The whole testing is the providence Joseph himself later names — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). The covenant seed is preserved through famine toward the visitation Joseph will promise: *I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24). Election kept; the kindness with the fathers does not fail.",
+      "anchor_start_v": 48,
+      "anchor_end_v": 50,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 51, "src_v": 49, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 28, "tier": "free", "note": "Genesis 42:28 — *And he said unto his brethren, My money is restored; and, lo, it is even in my sack: and their heart failed them, and they were afraid, saying one to another, What is this that Elohim (God) hath done unto us?* The restored silver and the very cry of Jasher 51:49 are the canon's own inn-scene, word for word."},
+        {"src_ch": 51, "src_v": 50, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 20, "tier": "free", "note": "Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The brothers' fearful \"what has Elohim done to us?\" (Jasher 51:49-50) is the providence Joseph will later name as good for the saving of the covenant seed."},
+        {"src_ch": 51, "src_v": 50, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 24, "tier": "free", "note": "Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* The kindness with Abraham, Isaac and Jacob the brothers fear is lost (Jasher 51:50) is the very covenant Joseph confesses Elohim will keep by the visitation."}
+      ]
+    }
+  ]
+}

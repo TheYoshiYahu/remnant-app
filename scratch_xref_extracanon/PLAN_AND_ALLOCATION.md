@@ -461,3 +461,25 @@ pglast + verify_fidelity (watch the paren caveat) + resolve_check jasher jasher 
 jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from /tmp/extracanon-xref-wt
 with keychain unlocked — 24 commits (85b660c..bb6e261) need to land on origin/main (still at 47a9e48);
 prod is authoritative meanwhile.
+
+## RECEIPT — Jasher Pack 6 (ch41–48, the Joseph cycle) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **266 `jasher-*` threads / 927 members**, band 55000–56175,
+  per-ch(41-48) 5/6/6/6/5/7/5/6, 0 orphans. +46/157. Commit `6297fb0`. SIX GATES GREEN FIRST PASS.
+  ★ Jasher now OVER HALF complete (48/91 ch).
+- Joseph's dreams/the coat/the pit (41→Gen37/Acts7:9/Ps105:19/Jub34/36); the SALE/20-pieces=30-pieces type
+  (42→Gen37:28/Matt26:15/Acts7:9/Jub34:11); the brothers' remorse/bloodied coat/mourning + Day-of-Atonement
+  origin (43→Gen37:29-35/Jub34:11/18 Yom-Kippur); the famine/brothers to Egypt (44→Gen42); Joseph reveals
+  himself/"God meant it for good" (45→Gen45:5/50:20/Rom8:28); Jacob's descent/the seventy souls (46→Gen46/
+  Deut10:22/Acts7:14); Ephraim/Manasseh + Judah-sceptre/Shiloh tribal blessings (47→Gen48-49/Gen49:10/
+  Heb11:21); Jacob's burial/"God meant it unto good"/the visitation (48→Gen50:20/24/Heb11:22). Joseph=Messiah-type.
+- Push blocked. origin/main 47a9e48; local HEAD `6297fb0` (25 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 1 ENOCH + JUBILEES COMPLETE + JASHER ch1-48 all LIVE = 953 threads/3451
+members. NEXT = Jasher Pack 7 ch49-56 (Jacob's death/burial aftermath; the bondage in Egypt begins/the
+taskmasters; the sons of Jacob's deaths; Moses' birth setup; OR the Egypt-Chittim wars — VERIFY each
+chapter vs the dump → Gen50/Exod1). Then J8 ch57-64 … through ch91 (~5 more packs). Then Apocrypha
+(session253 @58000). METHOD: workflow (pack-6 script + per-ch CONTEXT + blob-verse warning + paren warning)
+→ render → anchor_check.py jasher jasher + pglast + verify_fidelity + resolve_check jasher jasher → fold →
+audit → recon.py jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from
+/tmp/extracanon-xref-wt with keychain unlocked — 25 commits (85b660c..6297fb0) need to land on origin/main
+(still at 47a9e48); prod is authoritative meanwhile.
