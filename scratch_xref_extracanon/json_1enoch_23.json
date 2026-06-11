@@ -1,0 +1,160 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 23,
+  "session": "session250",
+  "tag": "en23",
+  "base_band": 50550,
+  "threads": [
+    {
+      "slug": "1-enoch-23-fire-that-feeds-the-sun",
+      "title": "The fire that runs without resting — the luminary's flaming course",
+      "summary_md": "At the western ends of the earth Enoch sees *And I saw there a burning fire which ran without resting, and paused not from its course day or night but (ran) regularly.* (1 Enoch 23:2), and the angel Raguel names it: *This course of fire which thou hast seen is the fire which surrounds the sun, and which the sun rolls round upon the whole earth, and which the sun sets.* (1 Enoch 23:4). This is no strange revelation — it is the canon's own ordained sun. Psalm 19 sees the same untiring runner: *In them hath he set a tabernacle for the sun,* (Psalms 19:4), *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* (Psalms 19:5), and *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* (Psalms 19:6) — the very ends-of-the-earth circuit Enoch is shown. Psalm 104 says the flame that surrounds is the servant of Yahuah, who *maketh his angels spirits; his ministers a flaming fire:* (Psalms 104:4) and who *appointed the moon for seasons: the sun knoweth his going down.* (Psalms 104:19). The fire does not burn loose; it serves an appointed course. The Watchers transgressed their order; the sun never does.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 23,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Psalms 19:4 — *Their line is gone out through all the earth, and their words to the end of the world. In them hath he set a tabernacle for the sun,* the same sun for which Yahuah appointed a tabernacle is the one Enoch sees rolled round the whole earth by its surrounding fire."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Psalms 19:5 — *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* the strong man who never tires to run his race is Enoch's fire that ran without resting and paused not day or night."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalms 19:6 — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* the circuit to the ends of heaven is the very course of fire Enoch is shown at the west of the ends of the earth."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Psalms 104:4 — *Who maketh his angels spirits; his ministers a flaming fire:* the fire that surrounds the sun is no rebel flame but a minister of Yahuah, set to its task like His flaming servants."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Psalms 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* the sun knowing its going down is exactly the sun Raguel says the fire causes to set upon the whole earth."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-23-portals-and-chariots-of-the-lights",
+      "title": "The six portals and the chariots of the sun, moon, and stars",
+      "summary_md": "Enoch sees the machinery of the lights: *And I saw chariots in the heaven, running in the world above to the right and to the left of the sun.* (1 Enoch 23:5), and the gates they pass through — *And I saw six portals out of which the sun rises, and six portals in which the sun sets and the moon rises and sets in those portals, and the leaders of the stars and those whom they lead: six in the east and six in the west following them, and also many other chariots and their leaders.* (1 Enoch 23:6). This is not new even within Enoch — the Astronomical Book sets it down word for word as the *first law of the luminaries:* *And I saw six portals out of which the sun rises, and six portals in which the sun sets and the moon rises and sets in those portals, and the leaders of the stars and those whom they lead: six in the east and six in the west following them closely, and also many other when they are added to the six.* (1 Enoch 72:3), and there too the great luminary's *chariot on which it ascends is driven by the wind, and its chariot descends with wind.* (1 Enoch 72:4). The portals and the chariots are the appointed gates through which the lights keep the laws Uriel showed Enoch.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 23,
+          "src_v": 6,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 72,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "1 Enoch 72:3 — *And I saw six portals out of which the sun rises, and six portals in which the sun sets and the moon rises and sets in those portals, and the leaders of the stars and those whom they lead: six in the east and six in the west following them closely, and also many other when they are added to the six.* the Astronomical Book lays down as the first law of the luminaries the very six portals Enoch glimpses here on his journey west."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 5,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 72,
+          "tgt_v": 4,
+          "tier": "extras",
+          "note": "1 Enoch 72:4 — *And the great one is their leader, the great luminary which is named the Sun, and its chariot on which it ascends is driven by the wind, and its chariot descends with wind.* the chariots running to the right and left of the sun are the wind-driven chariots Uriel names in the law of the luminaries."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-23-stars-keep-their-order",
+      "title": "All the stars rise and set in their order — the decree that shall not pass",
+      "summary_md": "The chapter ends on the great witness of the created order: *And all the stars rise and set in their own order, and they do not change their course.* (1 Enoch 23:8). This is the Creator's ordinance from the fourth day — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14) — and Psalm 148 commands these same obedient lights, *Praise ye him, sun and moon: praise him, all ye stars of light.* (Psalms 148:3), because *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* (Psalms 148:6). Within Enoch the closing law of the luminaries says it plainly: *And the sun and the moon and the stars serve Yahuah (God) of Spirits in their appointed places, And they do not transgress their commandments, And they complete their courses according to the law.* (1 Enoch 75:15) — the exact mirror of the stars that do not change their course. And Yahuah binds this unbreakable order to the perpetuity of His people: He *giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night* (Jeremiah 31:35), and swears *If those ordinances depart from before me, saith Yahuah (LORD), then the seed of Yashar'el (Israel) also shall cease from being a nation before me for ever.* (Jeremiah 31:36). The stars keeping their course is the standing pledge that the elect seed of Israel is never cast off — Torah and covenant stand as surely as the lights.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 23,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* the stars that rise and set in their own order keep the appointment Elohim gave the lights on the fourth day, for signs and seasons."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 148,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalms 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* the stars do not change their course because Yahuah established them by a decree that shall not pass."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 31,
+          "tgt_v": 36,
+          "tier": "free",
+          "note": "Jeremiah 31:36 — *If those ordinances depart from before me, saith Yahuah (LORD), then the seed of Yashar'el (Israel) also shall cease from being a nation before me for ever.* the stars never departing from their course is the sworn pledge that the seed of Yashar'el is never cast off before Yahuah."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 8,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 75,
+          "tgt_v": 15,
+          "tier": "extras",
+          "note": "1 Enoch 75:15 — *And the sun and the moon and the stars serve Yahuah (God) of Spirits in their appointed places, And they do not transgress their commandments, And they complete their courses according to the law.* the stars that do not change their course do not transgress their commandments but complete their courses according to the law."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 8,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "Jubilees 2:9 — *And Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years.* the unchanging order of the lights is appointed to mark the sabbaths, feasts, and seasons — the moedim by which the covenant is kept."
+        }
+      ]
+    }
+  ]
+}

@@ -3534,6 +3534,1712 @@ SELECT t.id, x.id, 3, E'Jude 1:15 — *To execute judgment upon all, and to conv
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1enoch_17.sql (session250 1-enoch 17) -----
+-- Source anchor: enoch/1-enoch ch17. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en17 (view _session250_en17_lookup). Sort band base 50400, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-17-place-of-fire-river-of-fire
+  ('enoch', '1-enoch', 17, 1, 'canon', 'psalms', 104, 4, 'free', E'Psalms 104:4 — *Who maketh his angels spirits; his ministers a flaming fire:* The people who appear as flaming fire and then as men (1 Enoch 17:1) are the canon''s own fire-ministers of Yahuah.'),
+  ('enoch', '1-enoch', 17, 4, 'canon', 'deuteronomy', 32, 22, 'free', E'Deuteronomy 32:22 — *For a fire is kindled in mine anger, and shall burn unto the lowest hell, and shall consume the earth with her increase, and set on fire the foundations of the mountains.* The river of fire that flows like water (1 Enoch 17:4) is the same kindled fire Moses says burns to the lowest depths.'),
+  ('enoch', '1-enoch', 17, 3, 'canon', 'psalms', 18, 14, 'free', E'Psalms 18:14 — *Yea, he sent out his arrows, and scattered them; and he shot out lightnings, and discomfited them.* The fiery bow, arrows and lightnings Enoch sees stored in the depths (1 Enoch 17:3) are Yahuah''s own weaponry of judgement.'),
+  -- thread: 1-enoch-17-great-darkness-waters-of-the-deep
+  ('enoch', '1-enoch', 17, 5, 'canon', 'job', 38, 16, 'free', E'Job 38:16 — *Hast thou entered into the springs of the sea? or hast thou walked in the search of the depth?* The place where no flesh walks and the waters of the deep (1 Enoch 17:5-6) are the springs of the sea Yahuah challenges Job to enter.'),
+  ('enoch', '1-enoch', 17, 6, 'canon', 'job', 38, 22, 'free', E'Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* The treasuries of winter''s darkness and the waters of the deep that Enoch sees (1 Enoch 17:6) are the hidden treasures Yahuah keeps from Job.'),
+  ('enoch', '1-enoch', 17, 8, 'canon', 'psalms', 104, 2, 'free', E'Psalms 104:2 — *Who coverest thyself with light as with a garment: who stretchest out the heavens like a curtain:* The wisdom by which He ordered all creation and founded the world (1 Enoch 17:8) is the psalm''s God who stretches out the heavens.'),
+  -- thread: 1-enoch-17-cornerstone-four-winds-pillars
+  ('enoch', '1-enoch', 17, 9, 'canon', 'job', 38, 6, 'free', E'Job 38:6 — *Whereupon are the foundations thereof fastened? or who laid the corner stone thereof;* The cornerstone of the earth Enoch is shown (1 Enoch 17:9) is the very corner stone Yahuah challenges Job to name.'),
+  ('enoch', '1-enoch', 17, 10, 'canon', 'job', 26, 11, 'free', E'Job 26:11 — *The pillars of heaven tremble and are astonished at his reproof.* The winds that stand between heaven and earth as the pillars of the heaven (1 Enoch 17:10) are Job''s pillars of heaven that tremble before Yahuah.'),
+  ('enoch', '1-enoch', 17, 9, 'canon', 'psalms', 104, 5, 'free', E'Psalms 104:5 — *Who laid the foundations of the earth, that it should not be removed for ever.* The four winds that bear the earth (1 Enoch 17:9) uphold the same unmoveable foundation the psalm ascribes to Yahuah.'),
+  -- thread: 1-enoch-17-throne-mountain-of-sapphire
+  ('enoch', '1-enoch', 17, 15, 'canon', 'exodus', 24, 10, 'free', E'Exodus 24:10 — *And they saw the Elohim (God) of Yashar''el (Israel): and there was under his feet as it were a paved work of a sapphire stone, and as it were the body of heaven in his clearness.* The throne-mountain topped with sapphire (1 Enoch 17:15) matches the sapphire pavement the elders saw beneath Yahuah on the mountain.'),
+  ('enoch', '1-enoch', 17, 15, 'canon', 'ezekiel', 1, 26, 'free', E'Ezekiel 1:26 — *And above the firmament that was over their heads was the likeness of a throne, as the appearance of a sapphire stone: and upon the likeness of the throne was the likeness as the appearance of a man above upon it.* The sapphire summit of Enoch''s throne-mountain (1 Enoch 17:15) is the same sapphire throne Ezekiel saw above the firmament.'),
+  -- thread: 1-enoch-17-prison-of-the-stars-bound-till-judgement
+  ('enoch', '1-enoch', 17, 21, 'enoch', '1-enoch', 21, 7, 'extras', E'1 Enoch 21:7 — *And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.* Enoch revisits the same prison of the stars later in the journey, repeating the binding-till-judgement of 1 Enoch 17:21 word for word.'),
+  ('enoch', '1-enoch', 17, 20, 'canon', 'psalms', 148, 6, 'free', E'Psalms 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The stars are bound because they transgressed the commandment and missed their appointed times (1 Enoch 17:20) — they broke the very decree the psalm says shall not pass.'),
+  ('enoch', '1-enoch', 17, 19, 'canon', 'jude', 1, 13, 'free', E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* The prison for the stars and the host of heaven (1 Enoch 17:19) is Jude''s wandering stars reserved to the blackness of darkness.'),
+  ('enoch', '1-enoch', 17, 21, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* The host bound till their guilt is consummated (1 Enoch 17:21) is Peter''s angels reserved in chains of darkness unto judgement.'),
+  ('enoch', '1-enoch', 17, 19, 'canon', 'isaiah', 24, 21, 'free', E'Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* Enoch''s prison for the host of heaven (1 Enoch 17:19) is Isaiah''s host of the high ones shut up and visited after many days.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-17-place-of-fire-river-of-fire',
+       E'The place of fire and the river of fire',
+       E'Enoch''s cosmic journey opens in fire: *And they took me to a place in which people were like flaming fire, and, when they wished, they appeared as men.* (1 Enoch 17:1) — and on to *the river of fire in which the fire flows like water and discharges itself into the great sea towards the west.* (1 Enoch 17:4), with *a fiery bow, arrows and their quiver, a fiery sword and all the lightnings.* (1 Enoch 17:3). It ain''t new. The Tanakh already knows the ministers of Yahuah as fire: *Who maketh his angels spirits; his ministers a flaming fire:* (Psalms 104:4) — the very fire-men Enoch sees. The kindled fire that runs to the depths is Moses'' own warning: *For a fire is kindled in mine anger, and shall burn unto the lowest hell, and shall consume the earth with her increase, and set on fire the foundations of the mountains.* (Deuteronomy 32:22). And the fiery bow and lightnings are the LORD''s arsenal in the psalm: *Yea, he sent out his arrows, and scattered them; and he shot out lightnings, and discomfited them.* (Psalms 18:14). The Watcher-host has rebelled against the Creator''s order, but the fire and the arrows belong to Yahuah, not to them — the weaponry of judgement is His.',
+       sv.verse_id, ev.verse_id, 'extras', 50400
+  FROM _session250_en17_lookup sv, _session250_en17_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=17 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-17-great-darkness-waters-of-the-deep',
+       E'The great darkness and the waters of the deep',
+       E'Enoch passes *to the great darkness, and went to the place where no flesh walks* (1 Enoch 17:5), sees *the place whence all the waters of the deep flow* (1 Enoch 17:6) and *the mouth of the deep* (1 Enoch 17:7), then confesses the design behind it all: *I saw how He has ordered all creation by His wisdom, and how He has founded the world upon them.* (1 Enoch 17:8). It ain''t new — this is the very tour Yahuah gives Job out of the whirlwind. The place no flesh walks is the door Job never entered: *Hast thou entered into the springs of the sea? or hast thou walked in the search of the depth?* (Job 38:16). The treasuries Enoch keeps seeing are Job''s hidden stores: *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* (Job 38:22). And the wisdom that ordered and founded the world is the psalmist''s God who *stretchest out the heavens like a curtain: Who layeth the beams of his chambers in the waters* (Psalms 104:2-3 — quoted of v2). The Creator''s wise ordering stands; the Watchers transgressed it but could not unmake it.',
+       sv.verse_id, ev.verse_id, 'extras', 50403
+  FROM _session250_en17_lookup sv, _session250_en17_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=17 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-17-cornerstone-four-winds-pillars',
+       E'The cornerstone of the earth and the pillars of heaven',
+       E'The journey shows Enoch the structure of the world: *And I saw the cornerstone of the earth: then I saw the four winds which bear the earth and the firmament of the heaven.* (1 Enoch 17:9), how *the winds stretch out the vaults of heaven, and have their station between heaven and earth: these are the pillars of the heaven.* (1 Enoch 17:10). It ain''t new. Job is asked the same questions from the whirlwind: *Where wast thou when I laid the foundations of the earth? declare, if thou hast understanding.* (Job 38:4), and *Whereupon are the foundations thereof fastened? or who laid the corner stone thereof;* (Job 38:6) — Enoch is shown the very cornerstone Job could not name. The pillars are Job''s too: *The pillars of heaven tremble and are astonished at his reproof.* (Job 26:11). And the unmoveable foundation is the psalm''s: *Who laid the foundations of the earth, that it should not be removed for ever.* (Psalms 104:5). The Creator''s architecture holds the cosmos in place — the same wise order the rebel host could not overthrow.',
+       sv.verse_id, ev.verse_id, 'extras', 50406
+  FROM _session250_en17_lookup sv, _session250_en17_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=9
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=17 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-17-throne-mountain-of-sapphire',
+       E'The throne-mountain of sapphire',
+       E'Among the seven mountains of precious stones Enoch sees one that towers above the rest: *But the middle one reached to heaven like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire.* (1 Enoch 17:15). It ain''t new — the sapphire throne is the canon''s own vision of the place of Yahuah. When the elders of Yashar''el went up the mountain they saw it underfoot: *And they saw the Elohim (God) of Yashar''el (Israel): and there was under his feet as it were a paved work of a sapphire stone, and as it were the body of heaven in his clearness.* (Exodus 24:10). And Ezekiel, lifted to the firmament, saw the throne itself: *And above the firmament that was over their heads was the likeness of a throne, as the appearance of a sapphire stone* (Ezekiel 1:26). Enoch''s middle mountain is no pagan peak — it is shaped like the sapphire throne the Tanakh already knows, the seat of the Creator whose order the journey everywhere displays.',
+       sv.verse_id, ev.verse_id, 'extras', 50409
+  FROM _session250_en17_lookup sv, _session250_en17_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=13
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=17 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-17-prison-of-the-stars-bound-till-judgement',
+       E'The prison of the stars bound till judgement',
+       E'Beyond the waste place Enoch sees the prison-house of the rebel host: *I saw there seven stars like great burning mountains... ’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* (1 Enoch 17:19), *the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* (1 Enoch 17:20), and *He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.* (1 Enoch 17:21). It ain''t new — and Enoch himself sees it again, word for word: *And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.* (1 Enoch 21:7). Their crime is breaking the Creator''s fixed order, the decree the psalm says the stars cannot transgress: *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* (Psalms 148:6). The NT carries the binding forward as settled doctrine — these are the *wandering stars, to whom is reserved the blackness of darkness for ever.* (Jude 1:13), the *angels that sinned... cast... down to hell, and delivered... into chains of darkness, to be reserved unto judgment:* (2 Peter 2:4). Isaiah names the same prison and the same delayed reckoning: *Yahuah (LORD) shall punish the host of the high ones that are on high... they shall be shut up in the prison, and after many days shall they be visited.* (Isaiah 24:21 — quoted of v21). The host is not destroyed but held — bound till the reckoning, exactly as Revelation binds the dragon (Revelation 20:2). Torah''s order stands; the rebellion against it awaits judgement.',
+       sv.verse_id, ev.verse_id, 'extras', 50412
+  FROM _session250_en17_lookup sv, _session250_en17_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=19
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=17 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-17-place-of-fire-river-of-fire
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalms 104:4 — *Who maketh his angels spirits; his ministers a flaming fire:* The people who appear as flaming fire and then as men (1 Enoch 17:1) are the canon''s own fire-ministers of Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-place-of-fire-river-of-fire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 32:22 — *For a fire is kindled in mine anger, and shall burn unto the lowest hell, and shall consume the earth with her increase, and set on fire the foundations of the mountains.* The river of fire that flows like water (1 Enoch 17:4) is the same kindled fire Moses says burns to the lowest depths.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-place-of-fire-river-of-fire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 18:14 — *Yea, he sent out his arrows, and scattered them; and he shot out lightnings, and discomfited them.* The fiery bow, arrows and lightnings Enoch sees stored in the depths (1 Enoch 17:3) are Yahuah''s own weaponry of judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-place-of-fire-river-of-fire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-17-great-darkness-waters-of-the-deep
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 38:16 — *Hast thou entered into the springs of the sea? or hast thou walked in the search of the depth?* The place where no flesh walks and the waters of the deep (1 Enoch 17:5-6) are the springs of the sea Yahuah challenges Job to enter.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-great-darkness-waters-of-the-deep'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* The treasuries of winter''s darkness and the waters of the deep that Enoch sees (1 Enoch 17:6) are the hidden treasures Yahuah keeps from Job.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-great-darkness-waters-of-the-deep'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 104:2 — *Who coverest thyself with light as with a garment: who stretchest out the heavens like a curtain:* The wisdom by which He ordered all creation and founded the world (1 Enoch 17:8) is the psalm''s God who stretches out the heavens.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-great-darkness-waters-of-the-deep'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-17-cornerstone-four-winds-pillars
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 38:6 — *Whereupon are the foundations thereof fastened? or who laid the corner stone thereof;* The cornerstone of the earth Enoch is shown (1 Enoch 17:9) is the very corner stone Yahuah challenges Job to name.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-cornerstone-four-winds-pillars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 26:11 — *The pillars of heaven tremble and are astonished at his reproof.* The winds that stand between heaven and earth as the pillars of the heaven (1 Enoch 17:10) are Job''s pillars of heaven that tremble before Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-cornerstone-four-winds-pillars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=26 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 104:5 — *Who laid the foundations of the earth, that it should not be removed for ever.* The four winds that bear the earth (1 Enoch 17:9) uphold the same unmoveable foundation the psalm ascribes to Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-cornerstone-four-winds-pillars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-17-throne-mountain-of-sapphire
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 24:10 — *And they saw the Elohim (God) of Yashar''el (Israel): and there was under his feet as it were a paved work of a sapphire stone, and as it were the body of heaven in his clearness.* The throne-mountain topped with sapphire (1 Enoch 17:15) matches the sapphire pavement the elders saw beneath Yahuah on the mountain.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-throne-mountain-of-sapphire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=24 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 1:26 — *And above the firmament that was over their heads was the likeness of a throne, as the appearance of a sapphire stone: and upon the likeness of the throne was the likeness as the appearance of a man above upon it.* The sapphire summit of Enoch''s throne-mountain (1 Enoch 17:15) is the same sapphire throne Ezekiel saw above the firmament.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-throne-mountain-of-sapphire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-17-prison-of-the-stars-bound-till-judgement
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 21:7 — *And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.* Enoch revisits the same prison of the stars later in the journey, repeating the binding-till-judgement of 1 Enoch 17:21 word for word.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-prison-of-the-stars-bound-till-judgement'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=21
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=21 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The stars are bound because they transgressed the commandment and missed their appointed times (1 Enoch 17:20) — they broke the very decree the psalm says shall not pass.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-prison-of-the-stars-bound-till-judgement'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* The prison for the stars and the host of heaven (1 Enoch 17:19) is Jude''s wandering stars reserved to the blackness of darkness.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-prison-of-the-stars-bound-till-judgement'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* The host bound till their guilt is consummated (1 Enoch 17:21) is Peter''s angels reserved in chains of darkness unto judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-prison-of-the-stars-bound-till-judgement'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* Enoch''s prison for the host of heaven (1 Enoch 17:19) is Isaiah''s host of the high ones shut up and visited after many days.'
+  FROM cross_reference_threads t, cross_references x, _session250_en17_lookup sv, _session250_en17_lookup tv
+ WHERE t.slug='1-enoch-17-prison-of-the-stars-bound-till-judgement'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=17 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_18.sql (session250 1-enoch 18) -----
+-- Source anchor: enoch/1-enoch ch18. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en18 (view _session250_en18_lookup). Sort band base 50425, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-18-treasuries-of-the-winds
+  ('enoch', '1-enoch', 18, 1, 'canon', 'jeremiah', 10, 12, 'free', E'Jeremiah 10:12 — *He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion.* The same founding-of-the-world-by-wisdom Enoch sees at 18:1, where He has ordered all creation by His wisdom.'),
+  ('enoch', '1-enoch', 18, 1, 'canon', 'jeremiah', 10, 13, 'free', E'Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* Jeremiah names the very wind-treasuries Enoch is shown at 18:1.'),
+  ('enoch', '1-enoch', 18, 1, 'canon', 'proverbs', 8, 28, 'free', E'Proverbs 8:28 — *When he established the clouds above: when he strengthened the fountains of the deep:* Wisdom stands at the founding Enoch tours at 18:1, where the world is ordered by His wisdom.'),
+  ('enoch', '1-enoch', 18, 5, 'canon', 'psalms', 104, 3, 'free', E'Psalm 104:3 — *Who layeth the beams of his chambers in the waters: who maketh the clouds his chariot: who walketh upon the wings of the wind:* The same winds that carry the clouds in Enoch 18:5 bear the Creator Himself.'),
+  -- thread: 1-enoch-18-cornerstone-and-pillars
+  ('enoch', '1-enoch', 18, 2, 'canon', 'job', 38, 4, 'free', E'Job 38:4 — *Where wast thou when I laid the foundations of the earth? declare, if thou hast understanding.* The Creator''s question to Job is the very founding of the earth Enoch is permitted to see at 18:2.'),
+  ('enoch', '1-enoch', 18, 2, 'canon', 'job', 38, 6, 'free', E'Job 38:6 — *Whereupon are the foundations thereof fastened? or who laid the corner stone thereof;* The cornerstone of the earth Enoch sees at 18:2 is the one the Creator names to Job.'),
+  ('enoch', '1-enoch', 18, 2, 'canon', 'job', 38, 7, 'free', E'Job 38:7 — *When the morning stars sang together, and all the sons of Elohim (God) shouted for joy?* At the founding Enoch tours, the stars and the sons of Elohim still kept their order — before the stars of 18:13 transgressed it.'),
+  ('enoch', '1-enoch', 18, 3, 'canon', 'proverbs', 8, 29, 'free', E'Proverbs 8:29 — *When he gave to the sea his decree, that the waters should not pass his commandment: when he appointed the foundations of the earth:* The pillars and stations of heaven Enoch sees fixed at 18:3 are the appointed foundations Wisdom witnessed laid.'),
+  -- thread: 1-enoch-18-seven-stars-transgressed-their-times
+  ('enoch', '1-enoch', 18, 13, 'canon', 'job', 38, 31, 'free', E'Job 38:31 — *Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion?* The fixed star-order Job cannot command is the very order the seven stars transgressed in Enoch 18:13.'),
+  ('enoch', '1-enoch', 18, 13, 'canon', 'job', 38, 33, 'free', E'Job 38:33 — *Knowest thou the ordinances of heaven? canst thou set the dominion thereof in the earth?* The ordinances of heaven the stars broke by not coming forth at their appointed times (Enoch 18:13).'),
+  ('enoch', '1-enoch', 18, 13, 'canon', 'jude', 1, 13, 'free', E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude''s wandering stars, with darkness reserved, are Enoch''s stars that strayed from their appointed times and are bound (18:13-14).'),
+  -- thread: 1-enoch-18-prison-of-the-stars-and-host
+  ('enoch', '1-enoch', 18, 12, 'canon', 'isaiah', 24, 21, 'free', E'Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* The host of the high ones Isaiah sees punished is the host of heaven imprisoned in Enoch 18:12.'),
+  ('enoch', '1-enoch', 18, 12, 'canon', 'isaiah', 24, 22, 'free', E'Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* Isaiah''s prison-pit, holding the host until they are visited, is Enoch''s prison for the stars and the host of heaven (18:12), bound till their guilt is consummated (18:14).'),
+  ('enoch', '1-enoch', 18, 14, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter''s angels reserved in chains unto judgment are the host Enoch sees bound till their guilt should be consummated (18:14).'),
+  ('enoch', '1-enoch', 18, 14, 'canon', 'jude', 1, 6, 'free', E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude''s reserved angels are the bound host of Enoch 18:14, kept under darkness unto the great-day reckoning.'),
+  -- thread: 1-enoch-18-prison-of-the-angels-for-ever
+  ('enoch', '1-enoch', 18, 18, 'enoch', '1-enoch', 21, 11, 'extras', E'1 Enoch 21:11 — *And he said unto me: ''This place is the prison of the angels, and here they will be imprisoned for ever.''* Enoch''s second tour names the very same prison of the angels he first reaches at 18:18, fixing it as a station of the cosmic order.'),
+  ('enoch', '1-enoch', 18, 18, 'canon', 'revelation', 20, 3, 'free', E'Revelation 20:3 — *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* The shut-up, sealed pit of John is the prison of the angels Enoch reaches at 18:18 — a holding, kept till the appointed time.'),
+  ('enoch', '1-enoch', 18, 18, 'canon', 'revelation', 20, 12, 'free', E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The great-day reckoning toward which the imprisoned angels of Enoch 18:18 are held — the books opened, judgment by works.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-18-treasuries-of-the-winds',
+       E'The treasuries of the winds — the world founded by wisdom',
+       E'Enoch is shown the storehouses out of which the Creator orders the cosmos: *I saw the treasuries of all the winds: I saw how He has ordered all creation by His wisdom, and how He has founded the world upon them.* (1 Enoch 18:1). The canon keeps the same chambered winds and the same wisdom-founding. Jeremiah names the very storehouses Enoch saw — *He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion.* (Jeremiah 10:12) — *and bringeth forth the wind out of his treasures.* (Jeremiah 10:13). Wisdom herself stands at the founding in *When he established the clouds above: when he strengthened the fountains of the deep:* (Proverbs 8:28), and the winds bear the Creator in *who maketh the clouds his chariot: who walketh upon the wings of the wind:* (Psalm 104:3). This is the Creator''s order, not blind nature: the rebellion of the Watchers and the stars (later in this very chapter) is rebellion against THIS founding wisdom. It ain''t new — the wind-treasuries Enoch toured are the same the prophets and the psalmist confessed.',
+       sv.verse_id, ev.verse_id, 'extras', 50425
+  FROM _session250_en18_lookup sv, _session250_en18_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=18 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-18-cornerstone-and-pillars',
+       E'The cornerstone of the earth and the pillars of heaven',
+       E'Enoch is shown the load-bearing structure of the world: *And I saw the cornerstone of the earth: then I saw the four winds which bear the earth and the firmament of the heaven.* (1 Enoch 18:2), *And I saw how the winds stretch out the vaults of heaven, and have their station between heaven and earth: these are the pillars of the heaven.* (1 Enoch 18:3). This is the Creator''s catechism to Job, point for point. He demands, *Where wast thou when I laid the foundations of the earth? declare, if thou hast understanding.* (Job 38:4), and asks who laid *the corner stone thereof;* (Job 38:6) — the very cornerstone Enoch is shown — *When the morning stars sang together, and all the sons of Elohim (God) shouted for joy?* (Job 38:7). Wisdom set the same bound: *When he gave to the sea his decree, that the waters should not pass his commandment: when he appointed the foundations of the earth:* (Proverbs 8:29), and the psalmist confesses Him *Who laid the foundations of the earth, that it should not be removed for ever.* (Psalm 104:5). The point stands: the cosmos has a fixed, founded order — and the rebellion the chapter turns to next is a crime against this architecture, not a flaw in it.',
+       sv.verse_id, ev.verse_id, 'extras', 50428
+  FROM _session250_en18_lookup sv, _session250_en18_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=18 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-18-seven-stars-transgressed-their-times',
+       E'The stars that did not come forth at their appointed times',
+       E'The angel explains why the seven stars are bound: *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* (1 Enoch 18:13), *And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.* (1 Enoch 18:14). Their sin is breaking the Creator''s fixed order — the very ordinances Job is asked whether he can command: *Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion?* (Job 38:31), *Canst thou bring forth Mazzaroth in his season? or canst thou guide Arcturus with his sons?* (Job 38:32), *Knowest thou the ordinances of heaven? canst thou set the dominion thereof in the earth?* (Job 38:33). The lights were appointed to keep their times (the moedim of Genesis 1:14); these refused, and Jude names their kind: *wandering stars, to whom is reserved the blackness of darkness for ever.* (Jude 1:13). This is the Watcher-pattern carried to the host of heaven — rebellion against the Creator''s order, not a fault in the order — and the ten-thousand-year binding is a held sentence, not annihilation.',
+       sv.verse_id, ev.verse_id, 'extras', 50431
+  FROM _session250_en18_lookup sv, _session250_en18_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=13
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=18 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-18-prison-of-the-stars-and-host',
+       E'A prison for the stars and the host of heaven, held to the reckoning',
+       E'At the end of heaven and earth Enoch is shown the holding-place of the rebel host: *I saw there seven stars like great burning mountains, and to me, when I inquired regarding them, the angel said: This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* (1 Enoch 18:12), and they are bound *till the time when their guilt should be consummated (even) for ten thousand years.* (1 Enoch 18:14). Isaiah sees the same host shut in the same pit and held to a later visitation: *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* (Isaiah 24:21), *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* (Isaiah 24:22). Peter and Jude carry the same chains forward: *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* (2 Peter 2:4), *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6). The framework holds throughout: the rebel host is bound, not destroyed — held till the reckoning, just as Sheol holds the dead till they are visited.',
+       sv.verse_id, ev.verse_id, 'extras', 50434
+  FROM _session250_en18_lookup sv, _session250_en18_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=12
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=18 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-18-prison-of-the-angels-for-ever',
+       E'The prison of the angels — held till the great day',
+       E'Beyond the abyss Enoch comes to a place worse than the first: *And from thence I went to another place, which was still more horrible than the former, and I saw a horrible thing: a great fire there which burnt and blazed, and the place was cleft as far as the abyss, being full of great descending columns of fire* (1 Enoch 18:15), and Uriel names it: *This place is the prison of the angels, and here they will be imprisoned for ever.* (1 Enoch 18:18). Enoch will be shown this same prison again — *And he said unto me: This place is the prison of the angels, and here they will be imprisoned for ever.* (1 Enoch 21:11) — confirming it as a fixed station of the cosmic order. Revelation shows the binding-and-holding pattern at the great reckoning: the rebel is *cast into the bottomless pit, and shut up, and set a seal upon him* (Revelation 20:3), and at last *the books were opened* and *the dead were judged out of those things which were written in the books, according to their works.* (Revelation 20:12). The framework stands: the abyss is a holding-prison, not the final sentence — the bound rebel host is kept until the judgment of the great day, the same reckoning that gives back the dead from Sheol.',
+       sv.verse_id, ev.verse_id, 'extras', 50437
+  FROM _session250_en18_lookup sv, _session250_en18_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=15
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=18 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-18-treasuries-of-the-winds
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 10:12 — *He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion.* The same founding-of-the-world-by-wisdom Enoch sees at 18:1, where He has ordered all creation by His wisdom.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-treasuries-of-the-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* Jeremiah names the very wind-treasuries Enoch is shown at 18:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-treasuries-of-the-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 8:28 — *When he established the clouds above: when he strengthened the fountains of the deep:* Wisdom stands at the founding Enoch tours at 18:1, where the world is ordered by His wisdom.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-treasuries-of-the-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=8 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 104:3 — *Who layeth the beams of his chambers in the waters: who maketh the clouds his chariot: who walketh upon the wings of the wind:* The same winds that carry the clouds in Enoch 18:5 bear the Creator Himself.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-treasuries-of-the-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-18-cornerstone-and-pillars
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 38:4 — *Where wast thou when I laid the foundations of the earth? declare, if thou hast understanding.* The Creator''s question to Job is the very founding of the earth Enoch is permitted to see at 18:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-cornerstone-and-pillars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 38:6 — *Whereupon are the foundations thereof fastened? or who laid the corner stone thereof;* The cornerstone of the earth Enoch sees at 18:2 is the one the Creator names to Job.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-cornerstone-and-pillars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Job 38:7 — *When the morning stars sang together, and all the sons of Elohim (God) shouted for joy?* At the founding Enoch tours, the stars and the sons of Elohim still kept their order — before the stars of 18:13 transgressed it.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-cornerstone-and-pillars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 8:29 — *When he gave to the sea his decree, that the waters should not pass his commandment: when he appointed the foundations of the earth:* The pillars and stations of heaven Enoch sees fixed at 18:3 are the appointed foundations Wisdom witnessed laid.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-cornerstone-and-pillars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=8 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-18-seven-stars-transgressed-their-times
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 38:31 — *Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion?* The fixed star-order Job cannot command is the very order the seven stars transgressed in Enoch 18:13.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-seven-stars-transgressed-their-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 38:33 — *Knowest thou the ordinances of heaven? canst thou set the dominion thereof in the earth?* The ordinances of heaven the stars broke by not coming forth at their appointed times (Enoch 18:13).'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-seven-stars-transgressed-their-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude''s wandering stars, with darkness reserved, are Enoch''s stars that strayed from their appointed times and are bound (18:13-14).'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-seven-stars-transgressed-their-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-18-prison-of-the-stars-and-host
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* The host of the high ones Isaiah sees punished is the host of heaven imprisoned in Enoch 18:12.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-prison-of-the-stars-and-host'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* Isaiah''s prison-pit, holding the host until they are visited, is Enoch''s prison for the stars and the host of heaven (18:12), bound till their guilt is consummated (18:14).'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-prison-of-the-stars-and-host'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter''s angels reserved in chains unto judgment are the host Enoch sees bound till their guilt should be consummated (18:14).'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-prison-of-the-stars-and-host'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude''s reserved angels are the bound host of Enoch 18:14, kept under darkness unto the great-day reckoning.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-prison-of-the-stars-and-host'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-18-prison-of-the-angels-for-ever
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 21:11 — *And he said unto me: ''This place is the prison of the angels, and here they will be imprisoned for ever.''* Enoch''s second tour names the very same prison of the angels he first reaches at 18:18, fixing it as a station of the cosmic order.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-prison-of-the-angels-for-ever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=18
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=21 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 20:3 — *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* The shut-up, sealed pit of John is the prison of the angels Enoch reaches at 18:18 — a holding, kept till the appointed time.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-prison-of-the-angels-for-ever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The great-day reckoning toward which the imprisoned angels of Enoch 18:18 are held — the books opened, judgment by works.'
+  FROM cross_reference_threads t, cross_references x, _session250_en18_lookup sv, _session250_en18_lookup tv
+ WHERE t.slug='1-enoch-18-prison-of-the-angels-for-ever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=18 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_19.sql (session250 1-enoch 19) -----
+-- Source anchor: enoch/1-enoch ch19. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en19 (view _session250_en19_lookup). Sort band base 50450, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-19-sacrificing-to-demons
+  ('enoch', '1-enoch', 19, 1, 'canon', 'deuteronomy', 32, 17, 'free', E'Deuteronomy 32:17 — *They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not.* Moses'' Song already names exactly what Enoch sees: men led astray into sacrificing to demons as gods, the very deception the Watchers planted.'),
+  ('enoch', '1-enoch', 19, 1, 'canon', 'leviticus', 17, 7, 'free', E'Leviticus 17:7 — *And they shall no more offer their sacrifices unto devils, after whom they have gone a whoring. This shall be a statute for ever unto them throughout their generations.* The Torah forbids the demon-sacrifice Enoch 19:1 blames on the fallen Watchers — the covenant stands against the deception, never as a curse.'),
+  ('enoch', '1-enoch', 19, 1, 'canon', 'psalms', 106, 37, 'free', E'Psalms 106:37 — *Yea, they sacrificed their sons and their daughters unto devils,* The Psalmist records how far the spirits'' deception led Yashar''el astray, the same demon-worship Enoch 19:1 traces to the angels who fell.'),
+  ('enoch', '1-enoch', 19, 1, 'canon', '1-corinthians', 10, 20, 'free', E'1 Corinthians 10:20 — *But I say, that the things which the Gentiles sacrifice, they sacrifice to devils, and not to Elohim (God): and I would not that ye should have fellowship with devils.* Sha''ul carries Enoch 19:1''s verdict unbroken into the assembly: the idol is nothing, but a demon stands behind it.'),
+  ('enoch', '1-enoch', 19, 1, 'canon', 'jude', 1, 6, 'free', E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude names the same reserved host standing ''till the day of the great judgement'' that Uriel shows Enoch in 19:1.'),
+  -- thread: 1-enoch-19-spirits-lead-men-astray
+  ('enoch', '1-enoch', 19, 1, 'enoch', '1-enoch', 15, 8, 'extras', E'1 Enoch 15:8 — *As for the spirits of heaven, in heaven shall be their dwelling, but as for the spirits of the earth which were born upon the earth, on the earth shall be their dwelling.* Enoch''s own earlier vision identifies the form-shifting spirits of 19:1 as the earth-bound evil spirits sprung from the dead giants.'),
+  ('enoch', '1-enoch', 19, 1, 'enoch', '1-enoch', 15, 10, 'extras', E'1 Enoch 15:10 — *And these spirits shall rise up against the children of men and against the women, because they have proceeded from them.* This is the defiling and leading-astray of mankind that Uriel shows Enoch in 19:1, the same spirits at work.'),
+  ('enoch', '1-enoch', 19, 1, 'jubilees', 'jubilees', 10, 1, 'extras', E'Jubilees 10:1 — *And in the third week of this jubilee the unclean demons began to lead astray the children of the sons of Noah; and to make to err and destroy them.* Jubilees records the very leading-astray of mankind that Enoch 19:1 foresees, the spirits of the dead giants at their deceiving work.'),
+  ('enoch', '1-enoch', 19, 1, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Kepha confirms Enoch 19:1''s frame: the fallen angels stand bound, reserved unto the day of the great judgement.'),
+  ('enoch', '1-enoch', 19, 1, 'canon', 'revelation', 9, 20, 'free', E'Revelation 9:20 — *And the rest of the men which were not killed by these plagues yet repented not of the works of their hands, that they should not worship devils, and idols of gold, and silver, and brass, and stone, and of wood: which neither can see, nor hear, nor walk:* The demon-worship the Watchers seeded in Enoch 19:1 persists unrepented to the very end, just before the reckoning closes.'),
+  -- thread: 1-enoch-19-women-became-sirens
+  ('enoch', '1-enoch', 19, 2, 'enoch', '1-enoch', 16, 3, 'extras', E'1 Enoch 16:3 — *And these things have ye shown to women, and through these mysteries women and men work much destruction on earth.* Enoch''s own word explains why the women of 19:2 become agents of destruction: the Watchers taught them the forbidden mysteries.'),
+  ('enoch', '1-enoch', 19, 2, 'canon', 'psalms', 106, 28, 'free', E'Psalms 106:28 — *They joined themselves also unto Baal-peor, and ate the sacrifices of the dead.* The seductive snare into demon-sacrifice that Enoch 19:2 pictures as sirens is the same trap that drew Yashar''el to Baal-peor and the sacrifices of the dead.'),
+  ('enoch', '1-enoch', 19, 2, 'canon', '1-corinthians', 10, 21, 'free', E'1 Corinthians 10:21 — *Ye cannot drink the cup of Yahuah (Lord), and the cup of devils: ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils.* Sha''ul draws the line the siren-song of Enoch 19:2 blurs: there is no fellowship between the Lord''s table and the table of devils.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-19-sacrificing-to-demons',
+       E'They sacrificed to demons, not to Elohim',
+       E'Uriel shows Enoch the place of the bound rebel host: *And Uriel said to me: ''Here shall stand the angels who have connected themselves with women, and their spirits assuming many different forms are defiling mankind and shall lead them astray into sacrificing to demons as gods, here shall they stand, till the day of the great judgement in which they shall be judged till they are made an end of.* (1 Enoch 19:1). This is no innovation of Enoch''s — it is the verdict Moses already sang against a forgetful Yashar''el: *They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not.* (Deuteronomy 32:17). The Torah even names the place of the cure, the door of the tabernacle, *And they shall no more offer their sacrifices unto devils, after whom they have gone a whoring. This shall be a statute for ever unto them throughout their generations.* (Leviticus 17:7) — the covenant stands, and the Watchers'' deception is rebellion against the Creator''s own order. The Psalmist records how deep the snare ran: *Yea, they sacrificed their sons and their daughters unto devils,* (Psalms 106:37). Sha''ul carries the same line forward into the assembly, unbroken: *But I say, that the things which the Gentiles sacrifice, they sacrifice to devils, and not to Elohim (God): and I would not that ye should have fellowship with devils.* (1 Corinthians 10:20). And the bound host stand only *till the day of the great judgement* — the same reserving-until-the-reckoning that the apostles preached: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6). It ain''t new: from Sinai to Corinth to the abyss, the demons behind the idols and the day of their end are one testimony.',
+       sv.verse_id, ev.verse_id, 'extras', 50450
+  FROM _session250_en19_lookup sv, _session250_en19_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=19 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-19-spirits-lead-men-astray',
+       E'The spirits that lead men astray, held till the reckoning',
+       E'Enoch sees that the Watchers'' *spirits assuming many different forms are defiling mankind and shall lead them astray* (1 Enoch 19:1), and Enoch has already been told where those spirits came from: *And now, the giants, who are produced from the spirits and flesh, shall be called evil spirits upon the earth, and on the earth shall be their dwelling.* (1 Enoch 15:8) — the disembodied dead of the giants, who *shall rise up against the children of men* (1 Enoch 15:10) until the consummation. Jubilees tells the same history plainly: *And in the third week of this jubilee the unclean demons began to lead astray the children of the sons of Noah; and to make to err and destroy them.* (Jubilees 10:1), a tenth part left under Mastema to work that deception until the judgment. The deceiving spirits and idols persist to the very end, and men still will not turn: *And the rest of the men which were not killed by these plagues yet repented not of the works of their hands, that they should not worship devils, and idols of gold, and silver, and brass, and stone, and of wood: which neither can see, nor hear, nor walk:* (Revelation 9:20). And the same apostolic frame holds them reserved: *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* (2 Peter 2:4). The seed-war that began on Hermon runs through every page — and it ends not in the spirits'' victory but in their being made an end of.',
+       sv.verse_id, ev.verse_id, 'extras', 50453
+  FROM _session250_en19_lookup sv, _session250_en19_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=19 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-19-women-became-sirens',
+       E'The women became sirens — destruction through the mysteries',
+       E'Uriel''s vision closes the matter of the wives: *And the women also of the angels who went astray shall become sirens.''* (1 Enoch 19:2). The judgement falls not only on the Watchers but on the corruption channeled through the women they took — Enoch was already shown that *these things have ye shown to women, and through these mysteries women and men work much destruction on earth.* (1 Enoch 16:3). The pattern is woven through the Tanakh: when Yashar''el *joined themselves also unto Baal-peor, and ate the sacrifices of the dead.* (Psalms 106:28), the seduction into demon-sacrifice ran by exactly this snare. Sha''ul names the spirits behind it for the assembly: *Ye cannot drink the cup of Yahuah (Lord), and the cup of devils: ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils.* (1 Corinthians 10:21). The siren is the lie made beautiful — but its singers, like those who taught them, *shall stand, till the day of the great judgement* (1 Enoch 19:1).',
+       sv.verse_id, ev.verse_id, 'extras', 50456
+  FROM _session250_en19_lookup sv, _session250_en19_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=19 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-19-sacrificing-to-demons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 32:17 — *They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not.* Moses'' Song already names exactly what Enoch sees: men led astray into sacrificing to demons as gods, the very deception the Watchers planted.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-sacrificing-to-demons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 17:7 — *And they shall no more offer their sacrifices unto devils, after whom they have gone a whoring. This shall be a statute for ever unto them throughout their generations.* The Torah forbids the demon-sacrifice Enoch 19:1 blames on the fallen Watchers — the covenant stands against the deception, never as a curse.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-sacrificing-to-demons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 106:37 — *Yea, they sacrificed their sons and their daughters unto devils,* The Psalmist records how far the spirits'' deception led Yashar''el astray, the same demon-worship Enoch 19:1 traces to the angels who fell.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-sacrificing-to-demons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Corinthians 10:20 — *But I say, that the things which the Gentiles sacrifice, they sacrifice to devils, and not to Elohim (God): and I would not that ye should have fellowship with devils.* Sha''ul carries Enoch 19:1''s verdict unbroken into the assembly: the idol is nothing, but a demon stands behind it.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-sacrificing-to-demons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude names the same reserved host standing ''till the day of the great judgement'' that Uriel shows Enoch in 19:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-sacrificing-to-demons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-19-spirits-lead-men-astray
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 15:8 — *As for the spirits of heaven, in heaven shall be their dwelling, but as for the spirits of the earth which were born upon the earth, on the earth shall be their dwelling.* Enoch''s own earlier vision identifies the form-shifting spirits of 19:1 as the earth-bound evil spirits sprung from the dead giants.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-spirits-lead-men-astray'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=15 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 15:10 — *And these spirits shall rise up against the children of men and against the women, because they have proceeded from them.* This is the defiling and leading-astray of mankind that Uriel shows Enoch in 19:1, the same spirits at work.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-spirits-lead-men-astray'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=15 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 10:1 — *And in the third week of this jubilee the unclean demons began to lead astray the children of the sons of Noah; and to make to err and destroy them.* Jubilees records the very leading-astray of mankind that Enoch 19:1 foresees, the spirits of the dead giants at their deceiving work.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-spirits-lead-men-astray'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=10 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Kepha confirms Enoch 19:1''s frame: the fallen angels stand bound, reserved unto the day of the great judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-spirits-lead-men-astray'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 9:20 — *And the rest of the men which were not killed by these plagues yet repented not of the works of their hands, that they should not worship devils, and idols of gold, and silver, and brass, and stone, and of wood: which neither can see, nor hear, nor walk:* The demon-worship the Watchers seeded in Enoch 19:1 persists unrepented to the very end, just before the reckoning closes.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-spirits-lead-men-astray'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=9 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-19-women-became-sirens
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 16:3 — *And these things have ye shown to women, and through these mysteries women and men work much destruction on earth.* Enoch''s own word explains why the women of 19:2 become agents of destruction: the Watchers taught them the forbidden mysteries.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-women-became-sirens'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=16 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 106:28 — *They joined themselves also unto Baal-peor, and ate the sacrifices of the dead.* The seductive snare into demon-sacrifice that Enoch 19:2 pictures as sirens is the same trap that drew Yashar''el to Baal-peor and the sacrifices of the dead.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-women-became-sirens'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Corinthians 10:21 — *Ye cannot drink the cup of Yahuah (Lord), and the cup of devils: ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils.* Sha''ul draws the line the siren-song of Enoch 19:2 blurs: there is no fellowship between the Lord''s table and the table of devils.'
+  FROM cross_reference_threads t, cross_references x, _session250_en19_lookup sv, _session250_en19_lookup tv
+ WHERE t.slug='1-enoch-19-women-became-sirens'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=19 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_20.sql (session250 1-enoch 20) -----
+-- Source anchor: enoch/1-enoch ch20. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en20 (view _session250_en20_lookup). Sort band base 50475, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-20-seven-holy-angels-who-watch
+  ('enoch', '1-enoch', 20, 1, 'apocrypha', 'tobit', 12, 15, 'extras', E'Tobit 12:15 — *I am Raphael, one of the seven holy angels, which present the prayers of the saints, and which go in and out before the glory of the Holy One.* Tobit names the same sevenfold company of holy angels that Enoch lists, and names Raphael among them, exactly as 1 Enoch 20:1 introduces the seven who watch.'),
+  ('enoch', '1-enoch', 20, 1, 'canon', 'revelation', 8, 2, 'free', E'Revelation 8:2 — *And I saw the seven angels which stood before Elohim (God); and to them were given seven trumpets.* John sees the same seven standing before the throne that Enoch enumerates in 1 Enoch 20:1.'),
+  ('enoch', '1-enoch', 20, 1, 'canon', 'revelation', 8, 3, 'free', E'Revelation 8:3 — *And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne.* The office of presenting the saints'' prayers — Raphael''s office among the seven — is shown at the altar, matching the watching host of 1 Enoch 20:1.'),
+  -- thread: 1-enoch-20-michael-the-chief-prince
+  ('enoch', '1-enoch', 20, 5, 'canon', 'daniel', 10, 13, 'free', E'Daniel 10:13 — *But the prince of the kingdom of Persia withstood me one and twenty days: but, lo, Michael, one of the chief princes, came to help me; and I remained there with the kings of Persia.* Daniel''s ''one of the chief princes'' is Enoch''s ''one of the holy and honoured angels'' set over the best part of mankind in 1 Enoch 20:5.'),
+  ('enoch', '1-enoch', 20, 5, 'canon', 'daniel', 10, 21, 'free', E'Daniel 10:21 — *But I will shew thee that which is noted in the scripture of truth: and there is none that holdeth with me in these things, but Michael your prince.* Michael is ''your prince'' — set over the covenant people, the best part of mankind of 1 Enoch 20:5.'),
+  ('enoch', '1-enoch', 20, 5, 'canon', 'daniel', 12, 1, 'free', E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* Michael stands for the elect at the judgement, the very office Enoch assigns him over the best part of mankind in 1 Enoch 20:5.'),
+  ('enoch', '1-enoch', 20, 5, 'canon', 'revelation', 12, 7, 'free', E'Revelation 12:7 — *And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels,* Michael''s office over chaos in 1 Enoch 20:5 is shown as open war against the dragon and the rebel host.'),
+  ('enoch', '1-enoch', 20, 5, 'enoch', '1-enoch', 40, 9, 'extras', E'1 Enoch 40:9 — *And he said unto me: ‘This first is Michael, the merciful and long-suffering: and the second, who is set over all sickness and all wounds, is Raphael: and the third, who is set over all the powers, is Gabriel: and the fourth, who is set over the repentance unto hope of those who inherit eternal life, is named Phanuel.’* Enoch names Michael first again among the archangels, the same honoured prince of 1 Enoch 20:5.'),
+  -- thread: 1-enoch-20-gabriel-stands-in-the-presence
+  ('enoch', '1-enoch', 20, 7, 'canon', 'luke', 1, 19, 'free', E'Luke 1:19 — *And the angel answering said unto him, I am Gabriel, that stand in the presence of Elohim (God); and am sent to speak unto thee, and to shew thee these glad tidings.* Gabriel, named among the holy angels in 1 Enoch 20:7, stands in the divine presence in the Gospel exactly as one of Enoch''s seven who watch.'),
+  ('enoch', '1-enoch', 20, 7, 'canon', 'genesis', 3, 24, 'free', E'Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* The Cherubim over Paradise that Gabriel is set above in 1 Enoch 20:7 are the very Cherubim posted to guard Eden''s tree of life.'),
+  ('enoch', '1-enoch', 20, 7, 'canon', 'revelation', 22, 2, 'free', E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The Paradise Gabriel guards in 1 Enoch 20:7 is restored as the tree of life in the New Jerusalem.'),
+  ('enoch', '1-enoch', 20, 7, 'canon', 'revelation', 2, 7, 'free', E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The ''paradise of Elohim'' the overcomer inherits is the very Paradise Gabriel is set over in 1 Enoch 20:7.'),
+  -- thread: 1-enoch-20-uriel-raguel-over-tartarus-and-the-luminaries
+  ('enoch', '1-enoch', 20, 4, 'enoch', '1-enoch', 21, 5, 'extras', E'1 Enoch 21:5 — *’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* Raguel''s vengeance on the world of the luminaries in 1 Enoch 20:4 is the binding of the transgressing stars Enoch sees imprisoned one chapter later.'),
+  ('enoch', '1-enoch', 20, 4, 'enoch', '1-enoch', 21, 6, 'extras', E'1 Enoch 21:6 — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* The luminaries Raguel takes vengeance on in 1 Enoch 20:4 are these stars that broke their appointed order.'),
+  ('enoch', '1-enoch', 20, 2, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* the ''hell'' here is Tartarus, the very place Uriel is set over in 1 Enoch 20:2 where the rebel angels are held until judgement.'),
+  ('enoch', '1-enoch', 20, 2, 'canon', 'jude', 1, 6, 'free', E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* The chained host reserved for judgement is held in the Tartarus Uriel oversees in 1 Enoch 20:2.'),
+  ('enoch', '1-enoch', 20, 4, 'canon', 'jude', 1, 13, 'free', E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude''s ''wandering stars'' are Enoch''s transgressing luminaries that Raguel takes vengeance on in 1 Enoch 20:4.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-20-seven-holy-angels-who-watch',
+       E'The seven holy angels who watch',
+       E'Enoch''s guide names the heavenly host that attends the throne: *And these are the names of the holy angels who watch.* (1 Enoch 20:1) — seven offices set in order under the Creator. The canon shows the same seven standing before Elohim and bearing the prayers of the saints: when Raphael unveils himself to Tobit he says *I am Raphael, one of the seven holy angels, which present the prayers of the saints, and which go in and out before the glory of the Holy One.* (Tobit 12:15) — the very count Enoch gives, with the very office. John sees that company at the seventh seal: *And I saw the seven angels which stood before Elohim (God); and to them were given seven trumpets.* (Revelation 8:2), and the angel at the altar bears *the prayers of all saints upon the golden altar which was before the throne.* (Revelation 8:3) These are watchers who *kept* their estate — the loyal host serving the Creator''s order — in deliberate contrast to the fallen Watchers of chapters 6–16. It ain''t new: the sevenfold attending host is canon, not invention.',
+       sv.verse_id, ev.verse_id, 'extras', 50475
+  FROM _session250_en20_lookup sv, _session250_en20_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=20 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-20-michael-the-chief-prince',
+       E'Michael, set over the best part of mankind',
+       E'Of the seven, Enoch singles out one: *Michael, one of the holy and honoured angels, who is set over the best part of mankind and over chaos.* (1 Enoch 20:5) Daniel knows him by name and office — the prince who contends for Yahuah''s covenant people: *but, lo, Michael, one of the chief princes, came to help me* (Daniel 10:13), *there is none that holdeth with me in these things, but Michael your prince* (Daniel 10:21), and at the end *at that time shall Michael stand up, the great prince which standeth for the children of thy people* (Daniel 12:1) — set over the elect, the very ''best part of mankind'' Enoch names. Revelation shows that same prince at war against the rebel host: *And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels* (Revelation 12:7). And Enoch himself names Michael again among the four — *This first is Michael, the merciful and long-suffering* (1 Enoch 40:9). This is not a replacement of Israel by another people: Michael stands FOR the children of Daniel''s people, the covenant nation gathered and kept. The honoured prince of the loyal host guards the elect against the dragon''s seed-war until the reckoning. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 50478
+  FROM _session250_en20_lookup sv, _session250_en20_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=20 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-20-gabriel-stands-in-the-presence',
+       E'Gabriel, over Paradise and the Cherubim',
+       E'Enoch sets one angel over the garden and its guardians: *Gabriel, one of the holy angels, who is over Paradise and the serpents and the Cherubim.* (1 Enoch 20:7) The Cherubim over Paradise are no invention — they were posted at Eden''s gate to guard the way to the tree of life: *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* (Genesis 3:24) Gabriel is the same angel who stands in the divine presence and is sent to announce: *And the angel answering said unto him, I am Gabriel, that stand in the presence of Elohim (God); and am sent to speak unto thee, and to shew thee these glad tidings.* (Luke 1:19) Enoch names him a third time among the four: *the third, who is set over all the powers, is Gabriel* (1 Enoch 40:9). The Paradise he guards is not lost but restored — the tree of life returns in the New Jerusalem: *In the midst of the street of it, and on either side of the river, was there the tree of life* (Revelation 22:2); *To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* (Revelation 2:7). Eden barred is Eden restored. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 50481
+  FROM _session250_en20_lookup sv, _session250_en20_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=20 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-20-uriel-raguel-over-tartarus-and-the-luminaries',
+       E'Uriel and Raguel — over Tartarus and the transgressing lights',
+       E'Two of the seven are set over the place of binding and over the order of the lights: *Uriel, one of the holy angels, who is over the world and over Tartarus.* (1 Enoch 20:2) and *Raguel, one of the holy angels who takes vengeance on the world of the luminaries.* (1 Enoch 20:4) Tartarus is the prison Enoch has already shown — the abyss where the rebel host is bound: *This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven* (1 Enoch 21:5), the stars *which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times* (1 Enoch 21:6) — Raguel''s ''vengeance on the world of the luminaries'' is precisely the binding of the lights that broke their appointed order. The canon names this very prison and this very office of guarding it until the reckoning: *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4) — the word rendered ''cast down to hell'' is *tartaroo*, Uriel''s Tartarus — and *the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 1:6), the *wandering stars, to whom is reserved the blackness of darkness for ever* (Jude 1:13). The rebel host is held, not annihilated — bound till judgement, the way Sheol holds the dead till the reckoning. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 50484
+  FROM _session250_en20_lookup sv, _session250_en20_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=20 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-20-seven-holy-angels-who-watch
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Tobit 12:15 — *I am Raphael, one of the seven holy angels, which present the prayers of the saints, and which go in and out before the glory of the Holy One.* Tobit names the same sevenfold company of holy angels that Enoch lists, and names Raphael among them, exactly as 1 Enoch 20:1 introduces the seven who watch.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-seven-holy-angels-who-watch'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=1
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=12 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 8:2 — *And I saw the seven angels which stood before Elohim (God); and to them were given seven trumpets.* John sees the same seven standing before the throne that Enoch enumerates in 1 Enoch 20:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-seven-holy-angels-who-watch'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=8 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 8:3 — *And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne.* The office of presenting the saints'' prayers — Raphael''s office among the seven — is shown at the altar, matching the watching host of 1 Enoch 20:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-seven-holy-angels-who-watch'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=8 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-20-michael-the-chief-prince
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 10:13 — *But the prince of the kingdom of Persia withstood me one and twenty days: but, lo, Michael, one of the chief princes, came to help me; and I remained there with the kings of Persia.* Daniel''s ''one of the chief princes'' is Enoch''s ''one of the holy and honoured angels'' set over the best part of mankind in 1 Enoch 20:5.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-michael-the-chief-prince'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 10:21 — *But I will shew thee that which is noted in the scripture of truth: and there is none that holdeth with me in these things, but Michael your prince.* Michael is ''your prince'' — set over the covenant people, the best part of mankind of 1 Enoch 20:5.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-michael-the-chief-prince'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=10 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* Michael stands for the elect at the judgement, the very office Enoch assigns him over the best part of mankind in 1 Enoch 20:5.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-michael-the-chief-prince'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 12:7 — *And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels,* Michael''s office over chaos in 1 Enoch 20:5 is shown as open war against the dragon and the rebel host.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-michael-the-chief-prince'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 40:9 — *And he said unto me: ‘This first is Michael, the merciful and long-suffering: and the second, who is set over all sickness and all wounds, is Raphael: and the third, who is set over all the powers, is Gabriel: and the fourth, who is set over the repentance unto hope of those who inherit eternal life, is named Phanuel.’* Enoch names Michael first again among the archangels, the same honoured prince of 1 Enoch 20:5.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-michael-the-chief-prince'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=40 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-20-gabriel-stands-in-the-presence
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 1:19 — *And the angel answering said unto him, I am Gabriel, that stand in the presence of Elohim (God); and am sent to speak unto thee, and to shew thee these glad tidings.* Gabriel, named among the holy angels in 1 Enoch 20:7, stands in the divine presence in the Gospel exactly as one of Enoch''s seven who watch.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-gabriel-stands-in-the-presence'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* The Cherubim over Paradise that Gabriel is set above in 1 Enoch 20:7 are the very Cherubim posted to guard Eden''s tree of life.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-gabriel-stands-in-the-presence'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The Paradise Gabriel guards in 1 Enoch 20:7 is restored as the tree of life in the New Jerusalem.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-gabriel-stands-in-the-presence'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The ''paradise of Elohim'' the overcomer inherits is the very Paradise Gabriel is set over in 1 Enoch 20:7.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-gabriel-stands-in-the-presence'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-20-uriel-raguel-over-tartarus-and-the-luminaries
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 21:5 — *’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* Raguel''s vengeance on the world of the luminaries in 1 Enoch 20:4 is the binding of the transgressing stars Enoch sees imprisoned one chapter later.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-uriel-raguel-over-tartarus-and-the-luminaries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=4
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=21 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 21:6 — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* The luminaries Raguel takes vengeance on in 1 Enoch 20:4 are these stars that broke their appointed order.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-uriel-raguel-over-tartarus-and-the-luminaries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=4
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=21 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* the ''hell'' here is Tartarus, the very place Uriel is set over in 1 Enoch 20:2 where the rebel angels are held until judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-uriel-raguel-over-tartarus-and-the-luminaries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* The chained host reserved for judgement is held in the Tartarus Uriel oversees in 1 Enoch 20:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-uriel-raguel-over-tartarus-and-the-luminaries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude''s ''wandering stars'' are Enoch''s transgressing luminaries that Raguel takes vengeance on in 1 Enoch 20:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en20_lookup sv, _session250_en20_lookup tv
+ WHERE t.slug='1-enoch-20-uriel-raguel-over-tartarus-and-the-luminaries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=20 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_21.sql (session250 1-enoch 21) -----
+-- Source anchor: enoch/1-enoch ch21. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en21 (view _session250_en21_lookup). Sort band base 50500, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-21-prison-of-the-stars
+  ('enoch', '1-enoch', 21, 4, 'enoch', '1-enoch', 18, 12, 'extras', E'1 Enoch 18:12 — *I saw there seven stars like great burning mountains, and to me, when I inquired regarding them, the angel said: ’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* Enoch''s earlier journey shows the very same seven bound stars and the same prison-of-the-host that he revisits in 21:4-5.'),
+  ('enoch', '1-enoch', 21, 5, 'canon', 'isaiah', 24, 21, 'free', E'Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* Isaiah names the same rebel host on high that Enoch sees imprisoned at the end of heaven and earth.'),
+  ('enoch', '1-enoch', 21, 6, 'canon', 'isaiah', 24, 22, 'free', E'Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* The transgressing host is shut in the prison and held for a future visitation — exactly Enoch''s stars bound till their guilt is consummated.'),
+  ('enoch', '1-enoch', 21, 6, 'canon', 'jude', 1, 13, 'free', E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude''s ''wandering stars'' are Enoch''s stars that did not come forth at their appointed times, reserved for darkness.'),
+  -- thread: 1-enoch-21-stars-out-of-their-appointed-times
+  ('enoch', '1-enoch', 21, 6, 'canon', 'jude', 1, 13, 'free', E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude calls the rebels ''wandering stars'' — the same image as Enoch''s stars that transgressed the commandment and did not keep their appointed times.'),
+  ('enoch', '1-enoch', 21, 6, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter ties the transgression directly to angels that sinned and are now held in chains till judgement, just as Enoch''s stars are bound for their guilt.'),
+  -- thread: 1-enoch-21-prison-of-the-angels-for-ever
+  ('enoch', '1-enoch', 21, 10, 'canon', 'jude', 1, 6, 'free', E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude describes precisely the prison of the angels Uriel shows Enoch — reserved in chains for the judgement.'),
+  ('enoch', '1-enoch', 21, 10, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter calls this same place the holding of the angels that sinned, cast down and reserved unto judgment — Enoch''s prison of the angels.'),
+  ('enoch', '1-enoch', 21, 10, 'enoch', '1-enoch', 19, 1, 'extras', E'1 Enoch 19:1 — *And Uriel said to me: ’Here shall stand the angels who have connected themselves with women, and their spirits assuming many different forms are defiling mankind and shall lead them astray into sacrificing to demons as gods, here shall they stand, till the day of the great judgement in which they shall be judged till they are made an end of.* The same Uriel who guides Enoch names the term of this prison: the fallen angels stand here till the great judgement.'),
+  ('enoch', '1-enoch', 21, 11, 'canon', 'isaiah', 24, 22, 'free', E'Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* Isaiah''s prisoners shut in the pit and held for a later visitation match the angels imprisoned ''for ever'' until their reckoning.'),
+  ('enoch', '1-enoch', 21, 11, 'canon', 'revelation', 20, 10, 'free', E'Revelation 20:10 — *And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.* Revelation names the final destiny that Enoch''s burning, blazing prison foreshadows — the eternal lake at the great judgement.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-21-prison-of-the-stars',
+       E'The prison for the stars and the host of heaven',
+       E'Enoch is carried to the chaotic place at the edge of creation and shown the bound host: *’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* *And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.’* (1 Enoch 21:5-7). It ain''t new — Enoch has already seen this very place once before, and the wording is the same: *I saw there seven stars like great burning mountains, and to me, when I inquired regarding them, the angel said: ’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* (1 Enoch 18:12). The prophets carry the identical picture of a rebel host held in custody for the reckoning: *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* (Isaiah 24:21), *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* (Isaiah 24:22). Jude reads the same rebellion onto the false teachers, calling them *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* (Jude 1:13). These are not stray myths but the canon''s own order: the Creator''s command stands, the rebel powers are bound, and the judgement is fixed.',
+       sv.verse_id, ev.verse_id, 'extras', 50500
+  FROM _session250_en21_lookup sv, _session250_en21_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=21 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-21-stars-out-of-their-appointed-times',
+       E'The stars that did not come forth at their appointed times',
+       E'The charge against the bound stars is precise — they broke the Creator''s appointed order: *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* (1 Enoch 21:6). The lights were set for the order of the seasons from the beginning, and to step out of that order is rebellion against the One who fixed it. So Jude reads the very same transgression onto men who likewise leave their station: *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* (Jude 1:13). The sin here is not law itself but the breaking of the appointed way; the Creator''s command over the times stands, and the host that abandoned its place is held for judgement.',
+       sv.verse_id, ev.verse_id, 'extras', 50503
+  FROM _session250_en21_lookup sv, _session250_en21_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=21 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-21-prison-of-the-angels-for-ever',
+       E'The prison of the angels, kept till the eternal judgement',
+       E'Enoch passes to a second, more terrible place and Uriel names it plainly: *’This place is the prison of the angels, and here they will be imprisoned for ever.’* (1 Enoch 21:10), set within *a great fire there which burnt and blazed, and the place was cleft as far as the abyss* (1 Enoch 21:8). This is the canon''s own holding-cell for the fallen Watchers. Jude says it of them exactly: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6). Peter says the same: *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* (2 Peter 2:4). Enoch himself has already heard the term of their imprisonment named by the same angel — *here shall they stand, till the day of the great judgement in which they shall be judged till they are made an end of.* (1 Enoch 19:1). And the end of that custody is the lake fixed in Revelation: *And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.* (Revelation 20:10). The bound host is real, held now, and reserved for a fixed reckoning — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 50506
+  FROM _session250_en21_lookup sv, _session250_en21_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=21 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-21-prison-of-the-stars
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 18:12 — *I saw there seven stars like great burning mountains, and to me, when I inquired regarding them, the angel said: ’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* Enoch''s earlier journey shows the very same seven bound stars and the same prison-of-the-host that he revisits in 21:4-5.'
+  FROM cross_reference_threads t, cross_references x, _session250_en21_lookup sv, _session250_en21_lookup tv
+ WHERE t.slug='1-enoch-21-prison-of-the-stars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=4
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=18 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* Isaiah names the same rebel host on high that Enoch sees imprisoned at the end of heaven and earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en21_lookup sv, _session250_en21_lookup tv
+ WHERE t.slug='1-enoch-21-prison-of-the-stars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* The transgressing host is shut in the prison and held for a future visitation — exactly Enoch''s stars bound till their guilt is consummated.'
+  FROM cross_reference_threads t, cross_references x, _session250_en21_lookup sv, _session250_en21_lookup tv
+ WHERE t.slug='1-enoch-21-prison-of-the-stars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude''s ''wandering stars'' are Enoch''s stars that did not come forth at their appointed times, reserved for darkness.'
+  FROM cross_reference_threads t, cross_references x, _session250_en21_lookup sv, _session250_en21_lookup tv
+ WHERE t.slug='1-enoch-21-prison-of-the-stars'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-21-stars-out-of-their-appointed-times
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude calls the rebels ''wandering stars'' — the same image as Enoch''s stars that transgressed the commandment and did not keep their appointed times.'
+  FROM cross_reference_threads t, cross_references x, _session250_en21_lookup sv, _session250_en21_lookup tv
+ WHERE t.slug='1-enoch-21-stars-out-of-their-appointed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter ties the transgression directly to angels that sinned and are now held in chains till judgement, just as Enoch''s stars are bound for their guilt.'
+  FROM cross_reference_threads t, cross_references x, _session250_en21_lookup sv, _session250_en21_lookup tv
+ WHERE t.slug='1-enoch-21-stars-out-of-their-appointed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-21-prison-of-the-angels-for-ever
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude describes precisely the prison of the angels Uriel shows Enoch — reserved in chains for the judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en21_lookup sv, _session250_en21_lookup tv
+ WHERE t.slug='1-enoch-21-prison-of-the-angels-for-ever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter calls this same place the holding of the angels that sinned, cast down and reserved unto judgment — Enoch''s prison of the angels.'
+  FROM cross_reference_threads t, cross_references x, _session250_en21_lookup sv, _session250_en21_lookup tv
+ WHERE t.slug='1-enoch-21-prison-of-the-angels-for-ever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 19:1 — *And Uriel said to me: ’Here shall stand the angels who have connected themselves with women, and their spirits assuming many different forms are defiling mankind and shall lead them astray into sacrificing to demons as gods, here shall they stand, till the day of the great judgement in which they shall be judged till they are made an end of.* The same Uriel who guides Enoch names the term of this prison: the fallen angels stand here till the great judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en21_lookup sv, _session250_en21_lookup tv
+ WHERE t.slug='1-enoch-21-prison-of-the-angels-for-ever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=19 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* Isaiah''s prisoners shut in the pit and held for a later visitation match the angels imprisoned ''for ever'' until their reckoning.'
+  FROM cross_reference_threads t, cross_references x, _session250_en21_lookup sv, _session250_en21_lookup tv
+ WHERE t.slug='1-enoch-21-prison-of-the-angels-for-ever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 20:10 — *And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.* Revelation names the final destiny that Enoch''s burning, blazing prison foreshadows — the eternal lake at the great judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en21_lookup sv, _session250_en21_lookup tv
+ WHERE t.slug='1-enoch-21-prison-of-the-angels-for-ever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=21 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_22.sql (session250 1-enoch 22) -----
+-- Source anchor: enoch/1-enoch ch22. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en22 (view _session250_en22_lookup). Sort band base 50525, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-22-prison-of-the-angels
+  ('enoch', '1-enoch', 22, 7, 'enoch', '1-enoch', 21, 5, 'extras', E'1 Enoch 21:5 — *’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* The chapter-21 cell Enoch toured is the same prison of the angels named in Enoch 22:7.'),
+  ('enoch', '1-enoch', 22, 7, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter''s chained, reserved angels are Enoch 22:7''s imprisoned host held for the great day.'),
+  ('enoch', '1-enoch', 22, 7, 'canon', 'jude', 1, 6, 'free', E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude names the same bound rebel angels Enoch sees imprisoned until the judgement.'),
+  ('enoch', '1-enoch', 22, 4, 'canon', 'jude', 1, 13, 'free', E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude keeps Enoch''s very image of the bound seven stars as fallen luminaries reserved in darkness (Enoch 22:4).'),
+  -- thread: 1-enoch-22-hollow-places-of-the-dead
+  ('enoch', '1-enoch', 22, 10, 'canon', 'luke', 16, 22, 'free', E'Luke 16:22 — *And it came to pass, that the beggar died, and was carried by the angels into Abraham''s bosom: the rich man also died, and was buried;* the two dead men gathered into one waiting-place match Enoch''s hollow places where all the souls of the children of men assemble.'),
+  ('enoch', '1-enoch', 22, 9, 'canon', 'luke', 16, 26, 'free', E'Luke 16:26 — *And beside all this, between us and you there is a great gulf fixed: so that they which would pass from hence to you cannot; neither can they pass to us, that would come from thence.* The fixed gulf in Sheol is Enoch''s separated hollow places, the righteous parted from the sinners (Enoch 22:9).'),
+  -- thread: 1-enoch-22-abel-makes-his-suit
+  ('enoch', '1-enoch', 22, 14, 'canon', 'genesis', 4, 10, 'free', E'Genesis 4:10 — *And he said, What hast thou done? the voice of thy brother''s blood crieth unto me from the ground.* Enoch 22:14 names the very spirit whose crying blood Genesis records — Abel''s suit against Cain, still going up to heaven.'),
+  ('enoch', '1-enoch', 22, 12, 'canon', 'hebrews', 12, 24, 'free', E'Hebrews 12:24 — *And to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel.* Hebrews knows Abel''s blood still speaks — the petition Enoch sees the dead making (Enoch 22:12) — and answers it with a better word.'),
+  ('enoch', '1-enoch', 22, 12, 'canon', 'revelation', 6, 10, 'free', E'Revelation 6:10 — *And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* The martyrs'' cry for vengeance is Enoch''s suit of the dead going forth to heaven (Enoch 22:12), still awaiting the appointed reckoning.'),
+  -- thread: 1-enoch-22-righteous-spring-sinners-apart
+  ('enoch', '1-enoch', 22, 16, 'canon', 'luke', 16, 25, 'free', E'Luke 16:25 — *But Abraham said, Son, remember that thou in thy lifetime receivedst thy good things, and likewise Lazarus evil things: but now he is comforted, and thou art tormented.* Abraham''s divided estates — one comforted, one tormented — are Enoch''s separated hollows, the righteous at the bright spring and the sinner set apart (Enoch 22:16-17).'),
+  ('enoch', '1-enoch', 22, 17, 'canon', 'numbers', 16, 30, 'free', E'Numbers 16:30 — *But if Yahuah (LORD) make a new thing, and the earth open her mouth, and swallow them up, with all that appertain unto them, and they go down quick into the pit; then ye shall understand that these men have provoked Yahuah (LORD).* The pit that swallows the rebels is the sinners'' portion Enoch sees set apart for those who provoked the Creator''s order (Enoch 22:17).'),
+  ('enoch', '1-enoch', 22, 18, 'canon', 'numbers', 16, 33, 'free', E'Numbers 16:33 — *They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation.* Korah''s company going down alive into the pit is the sinners shut away in pain till the great day Enoch describes (Enoch 22:18).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-22-prison-of-the-angels',
+       E'The prison of the angels, reserved unto judgement',
+       E'At the ends of the earth Enoch sees the holding-cell of the rebel host: *And there I saw seven stars of the heaven bound together like great mountains and burning with fire* (1 Enoch 22:4), and Uriel tells him, *This place is the prison of the angels, and here they will be imprisoned for ever* (1 Enoch 22:7). This is the same waste place Enoch had just toured a chapter before — *this has become a prison for the stars and the host of heaven* (1 Enoch 21:5) — the Watchers and transgressing stars bound until the reckoning. It ain''t new: the apostles carry the very same picture. Peter writes that *Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4), and Jude that *the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 1:6) — even keeping Enoch''s image of fallen luminaries, *wandering stars, to whom is reserved the blackness of darkness for ever* (Jude 1:13). The rebel host that broke the Creator''s order is bound, not loosed; the binding is custody for the great-day judgement, not annihilation.',
+       sv.verse_id, ev.verse_id, 'extras', 50525
+  FROM _session250_en22_lookup sv, _session250_en22_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=22 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-22-hollow-places-of-the-dead',
+       E'The hollow places where the dead are gathered till judgement',
+       E'In the great mountain of the West Enoch finds the waiting-place of all the dead: *’These hollow places have been created for this very purpose, that the spirits of the souls of the dead should assemble therein, yea that all the souls of the children of men should assemble here* (1 Enoch 22:10), and they are held *until the day of their judgement and until their appointed period, till the great judgement comes upon them* (1 Enoch 22:11). The dead are not asleep in nothing nor already at the final verdict — they are gathered, conscious, and waiting. It ain''t new: Yahusha (Jesus) tells the same story. The beggar dies and *was carried by the angels into Abraham''s bosom: the rich man also died, and was buried* (Luke 16:22) — two estates in one holding-place — and between them runs Enoch''s very division: *between us and you there is a great gulf fixed: so that they which would pass from hence to you cannot; neither can they pass to us, that would come from thence* (Luke 16:26). Sheol holds the dead apart, each according to his way, until the appointed reckoning; the grave is custody, not the final word.',
+       sv.verse_id, ev.verse_id, 'extras', 50528
+  FROM _session250_en22_lookup sv, _session250_en22_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=22 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-22-abel-makes-his-suit',
+       E'Abel''s spirit still making suit till judgement',
+       E'Among the gathered dead one spirit will not be silent: *I saw (the spirits of) the dead making suit, and their petition went forth to heaven* (1 Enoch 22:12), and Raphael names him — *This is the spirit which went forth from Abel, whom his brother Cain slew, and he makes his suit against him till his seed is destroyed from the face of the earth* (1 Enoch 22:14). It ain''t new: this is Genesis pressed open. From the very ground Yahuah (LORD) had already said, *the voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10) — a cry that does not stop at death but goes up as a suit for justice. The whole book of Hebrews knows that crying blood, setting against it a better word: the new covenant brings *the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24). And the cry is not Abel''s alone — under the altar the martyrs make the same suit: *the souls of them that were slain for the word of Elohim (God)... cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* (Revelation 6:9-10). The blood of the righteous is held in remembrance and pleads from the holding-place until the great day answers it.',
+       sv.verse_id, ev.verse_id, 'extras', 50531
+  FROM _session250_en22_lookup sv, _session250_en22_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=12
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=22 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-22-righteous-spring-sinners-apart',
+       E'The bright spring for the righteous, the sinners set apart',
+       E'The hollows are not one undivided pit — they are sorted by the way each one walked: *These three have been made that the spirits of the dead might be separated. And such a division has been made (for) the spirits of the righteous, in which there is the bright spring of water* (1 Enoch 22:16), while *Here their spirits shall be set apart in this great pain till the great day of judgement* (1 Enoch 22:18) is the lot of the sinners on whom *judgement has not been executed... in their lifetime* (1 Enoch 22:17). It ain''t new: Abraham draws the same line for the rich man — *Son, remember that thou in thy lifetime receivedst thy good things, and likewise Lazarus evil things: but now he is comforted, and thou art tormented* (Luke 16:25): the righteous comforted at the spring, the sinner in pain, divided by the way each kept. And the earth itself has swallowed the rebel living before — when Korah''s company *go down quick into the pit* (Numbers 16:30), they *went down alive into the pit, and the earth closed upon them: and they perished from among the congregation* (Numbers 16:33). The division is not arbitrary; it follows the covenant — the righteous who kept the way are held at the bright spring, the transgressors set apart in pain, all alike awaiting the great day of judgement.',
+       sv.verse_id, ev.verse_id, 'extras', 50534
+  FROM _session250_en22_lookup sv, _session250_en22_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=15
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=22 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-22-prison-of-the-angels
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 21:5 — *’This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* The chapter-21 cell Enoch toured is the same prison of the angels named in Enoch 22:7.'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-prison-of-the-angels'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=7
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=21 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter''s chained, reserved angels are Enoch 22:7''s imprisoned host held for the great day.'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-prison-of-the-angels'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude names the same bound rebel angels Enoch sees imprisoned until the judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-prison-of-the-angels'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude keeps Enoch''s very image of the bound seven stars as fallen luminaries reserved in darkness (Enoch 22:4).'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-prison-of-the-angels'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-22-hollow-places-of-the-dead
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 16:22 — *And it came to pass, that the beggar died, and was carried by the angels into Abraham''s bosom: the rich man also died, and was buried;* the two dead men gathered into one waiting-place match Enoch''s hollow places where all the souls of the children of men assemble.'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-hollow-places-of-the-dead'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=16 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 16:26 — *And beside all this, between us and you there is a great gulf fixed: so that they which would pass from hence to you cannot; neither can they pass to us, that would come from thence.* The fixed gulf in Sheol is Enoch''s separated hollow places, the righteous parted from the sinners (Enoch 22:9).'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-hollow-places-of-the-dead'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=16 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-22-abel-makes-his-suit
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 4:10 — *And he said, What hast thou done? the voice of thy brother''s blood crieth unto me from the ground.* Enoch 22:14 names the very spirit whose crying blood Genesis records — Abel''s suit against Cain, still going up to heaven.'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-abel-makes-his-suit'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 12:24 — *And to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel.* Hebrews knows Abel''s blood still speaks — the petition Enoch sees the dead making (Enoch 22:12) — and answers it with a better word.'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-abel-makes-his-suit'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 6:10 — *And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* The martyrs'' cry for vengeance is Enoch''s suit of the dead going forth to heaven (Enoch 22:12), still awaiting the appointed reckoning.'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-abel-makes-his-suit'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-22-righteous-spring-sinners-apart
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 16:25 — *But Abraham said, Son, remember that thou in thy lifetime receivedst thy good things, and likewise Lazarus evil things: but now he is comforted, and thou art tormented.* Abraham''s divided estates — one comforted, one tormented — are Enoch''s separated hollows, the righteous at the bright spring and the sinner set apart (Enoch 22:16-17).'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-righteous-spring-sinners-apart'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=16 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 16:30 — *But if Yahuah (LORD) make a new thing, and the earth open her mouth, and swallow them up, with all that appertain unto them, and they go down quick into the pit; then ye shall understand that these men have provoked Yahuah (LORD).* The pit that swallows the rebels is the sinners'' portion Enoch sees set apart for those who provoked the Creator''s order (Enoch 22:17).'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-righteous-spring-sinners-apart'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 16:33 — *They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation.* Korah''s company going down alive into the pit is the sinners shut away in pain till the great day Enoch describes (Enoch 22:18).'
+  FROM cross_reference_threads t, cross_references x, _session250_en22_lookup sv, _session250_en22_lookup tv
+ WHERE t.slug='1-enoch-22-righteous-spring-sinners-apart'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=22 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_23.sql (session250 1-enoch 23) -----
+-- Source anchor: enoch/1-enoch ch23. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en23 (view _session250_en23_lookup). Sort band base 50550, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-23-fire-that-feeds-the-sun
+  ('enoch', '1-enoch', 23, 4, 'canon', 'psalms', 19, 4, 'free', E'Psalms 19:4 — *Their line is gone out through all the earth, and their words to the end of the world. In them hath he set a tabernacle for the sun,* the same sun for which Yahuah appointed a tabernacle is the one Enoch sees rolled round the whole earth by its surrounding fire.'),
+  ('enoch', '1-enoch', 23, 2, 'canon', 'psalms', 19, 5, 'free', E'Psalms 19:5 — *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* the strong man who never tires to run his race is Enoch''s fire that ran without resting and paused not day or night.'),
+  ('enoch', '1-enoch', 23, 4, 'canon', 'psalms', 19, 6, 'free', E'Psalms 19:6 — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* the circuit to the ends of heaven is the very course of fire Enoch is shown at the west of the ends of the earth.'),
+  ('enoch', '1-enoch', 23, 4, 'canon', 'psalms', 104, 4, 'free', E'Psalms 104:4 — *Who maketh his angels spirits; his ministers a flaming fire:* the fire that surrounds the sun is no rebel flame but a minister of Yahuah, set to its task like His flaming servants.'),
+  ('enoch', '1-enoch', 23, 4, 'canon', 'psalms', 104, 19, 'free', E'Psalms 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* the sun knowing its going down is exactly the sun Raguel says the fire causes to set upon the whole earth.'),
+  -- thread: 1-enoch-23-portals-and-chariots-of-the-lights
+  ('enoch', '1-enoch', 23, 6, 'enoch', '1-enoch', 72, 3, 'extras', E'1 Enoch 72:3 — *And I saw six portals out of which the sun rises, and six portals in which the sun sets and the moon rises and sets in those portals, and the leaders of the stars and those whom they lead: six in the east and six in the west following them closely, and also many other when they are added to the six.* the Astronomical Book lays down as the first law of the luminaries the very six portals Enoch glimpses here on his journey west.'),
+  ('enoch', '1-enoch', 23, 5, 'enoch', '1-enoch', 72, 4, 'extras', E'1 Enoch 72:4 — *And the great one is their leader, the great luminary which is named the Sun, and its chariot on which it ascends is driven by the wind, and its chariot descends with wind.* the chariots running to the right and left of the sun are the wind-driven chariots Uriel names in the law of the luminaries.'),
+  -- thread: 1-enoch-23-stars-keep-their-order
+  ('enoch', '1-enoch', 23, 8, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* the stars that rise and set in their own order keep the appointment Elohim gave the lights on the fourth day, for signs and seasons.'),
+  ('enoch', '1-enoch', 23, 8, 'canon', 'psalms', 148, 6, 'free', E'Psalms 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* the stars do not change their course because Yahuah established them by a decree that shall not pass.'),
+  ('enoch', '1-enoch', 23, 8, 'canon', 'jeremiah', 31, 36, 'free', E'Jeremiah 31:36 — *If those ordinances depart from before me, saith Yahuah (LORD), then the seed of Yashar''el (Israel) also shall cease from being a nation before me for ever.* the stars never departing from their course is the sworn pledge that the seed of Yashar''el is never cast off before Yahuah.'),
+  ('enoch', '1-enoch', 23, 8, 'enoch', '1-enoch', 75, 15, 'extras', E'1 Enoch 75:15 — *And the sun and the moon and the stars serve Yahuah (God) of Spirits in their appointed places, And they do not transgress their commandments, And they complete their courses according to the law.* the stars that do not change their course do not transgress their commandments but complete their courses according to the law.'),
+  ('enoch', '1-enoch', 23, 8, 'jubilees', 'jubilees', 2, 9, 'extras', E'Jubilees 2:9 — *And Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years.* the unchanging order of the lights is appointed to mark the sabbaths, feasts, and seasons — the moedim by which the covenant is kept.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-23-fire-that-feeds-the-sun',
+       E'The fire that runs without resting — the luminary''s flaming course',
+       E'At the western ends of the earth Enoch sees *And I saw there a burning fire which ran without resting, and paused not from its course day or night but (ran) regularly.* (1 Enoch 23:2), and the angel Raguel names it: *This course of fire which thou hast seen is the fire which surrounds the sun, and which the sun rolls round upon the whole earth, and which the sun sets.* (1 Enoch 23:4). This is no strange revelation — it is the canon''s own ordained sun. Psalm 19 sees the same untiring runner: *In them hath he set a tabernacle for the sun,* (Psalms 19:4), *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* (Psalms 19:5), and *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* (Psalms 19:6) — the very ends-of-the-earth circuit Enoch is shown. Psalm 104 says the flame that surrounds is the servant of Yahuah, who *maketh his angels spirits; his ministers a flaming fire:* (Psalms 104:4) and who *appointed the moon for seasons: the sun knoweth his going down.* (Psalms 104:19). The fire does not burn loose; it serves an appointed course. The Watchers transgressed their order; the sun never does.',
+       sv.verse_id, ev.verse_id, 'extras', 50550
+  FROM _session250_en23_lookup sv, _session250_en23_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=23 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-23-portals-and-chariots-of-the-lights',
+       E'The six portals and the chariots of the sun, moon, and stars',
+       E'Enoch sees the machinery of the lights: *And I saw chariots in the heaven, running in the world above to the right and to the left of the sun.* (1 Enoch 23:5), and the gates they pass through — *And I saw six portals out of which the sun rises, and six portals in which the sun sets and the moon rises and sets in those portals, and the leaders of the stars and those whom they lead: six in the east and six in the west following them, and also many other chariots and their leaders.* (1 Enoch 23:6). This is not new even within Enoch — the Astronomical Book sets it down word for word as the *first law of the luminaries:* *And I saw six portals out of which the sun rises, and six portals in which the sun sets and the moon rises and sets in those portals, and the leaders of the stars and those whom they lead: six in the east and six in the west following them closely, and also many other when they are added to the six.* (1 Enoch 72:3), and there too the great luminary''s *chariot on which it ascends is driven by the wind, and its chariot descends with wind.* (1 Enoch 72:4). The portals and the chariots are the appointed gates through which the lights keep the laws Uriel showed Enoch.',
+       sv.verse_id, ev.verse_id, 'extras', 50553
+  FROM _session250_en23_lookup sv, _session250_en23_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=23 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-23-stars-keep-their-order',
+       E'All the stars rise and set in their order — the decree that shall not pass',
+       E'The chapter ends on the great witness of the created order: *And all the stars rise and set in their own order, and they do not change their course.* (1 Enoch 23:8). This is the Creator''s ordinance from the fourth day — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14) — and Psalm 148 commands these same obedient lights, *Praise ye him, sun and moon: praise him, all ye stars of light.* (Psalms 148:3), because *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* (Psalms 148:6). Within Enoch the closing law of the luminaries says it plainly: *And the sun and the moon and the stars serve Yahuah (God) of Spirits in their appointed places, And they do not transgress their commandments, And they complete their courses according to the law.* (1 Enoch 75:15) — the exact mirror of the stars that do not change their course. And Yahuah binds this unbreakable order to the perpetuity of His people: He *giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night* (Jeremiah 31:35), and swears *If those ordinances depart from before me, saith Yahuah (LORD), then the seed of Yashar''el (Israel) also shall cease from being a nation before me for ever.* (Jeremiah 31:36). The stars keeping their course is the standing pledge that the elect seed of Israel is never cast off — Torah and covenant stand as surely as the lights.',
+       sv.verse_id, ev.verse_id, 'extras', 50556
+  FROM _session250_en23_lookup sv, _session250_en23_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=23 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-23-fire-that-feeds-the-sun
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalms 19:4 — *Their line is gone out through all the earth, and their words to the end of the world. In them hath he set a tabernacle for the sun,* the same sun for which Yahuah appointed a tabernacle is the one Enoch sees rolled round the whole earth by its surrounding fire.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-fire-that-feeds-the-sun'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 19:5 — *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* the strong man who never tires to run his race is Enoch''s fire that ran without resting and paused not day or night.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-fire-that-feeds-the-sun'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 19:6 — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* the circuit to the ends of heaven is the very course of fire Enoch is shown at the west of the ends of the earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-fire-that-feeds-the-sun'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalms 104:4 — *Who maketh his angels spirits; his ministers a flaming fire:* the fire that surrounds the sun is no rebel flame but a minister of Yahuah, set to its task like His flaming servants.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-fire-that-feeds-the-sun'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Psalms 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* the sun knowing its going down is exactly the sun Raguel says the fire causes to set upon the whole earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-fire-that-feeds-the-sun'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-23-portals-and-chariots-of-the-lights
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 72:3 — *And I saw six portals out of which the sun rises, and six portals in which the sun sets and the moon rises and sets in those portals, and the leaders of the stars and those whom they lead: six in the east and six in the west following them closely, and also many other when they are added to the six.* the Astronomical Book lays down as the first law of the luminaries the very six portals Enoch glimpses here on his journey west.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-portals-and-chariots-of-the-lights'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=6
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=72 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 72:4 — *And the great one is their leader, the great luminary which is named the Sun, and its chariot on which it ascends is driven by the wind, and its chariot descends with wind.* the chariots running to the right and left of the sun are the wind-driven chariots Uriel names in the law of the luminaries.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-portals-and-chariots-of-the-lights'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=5
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=72 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-23-stars-keep-their-order
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* the stars that rise and set in their own order keep the appointment Elohim gave the lights on the fourth day, for signs and seasons.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-stars-keep-their-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* the stars do not change their course because Yahuah established them by a decree that shall not pass.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-stars-keep-their-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 31:36 — *If those ordinances depart from before me, saith Yahuah (LORD), then the seed of Yashar''el (Israel) also shall cease from being a nation before me for ever.* the stars never departing from their course is the sworn pledge that the seed of Yashar''el is never cast off before Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-stars-keep-their-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 75:15 — *And the sun and the moon and the stars serve Yahuah (God) of Spirits in their appointed places, And they do not transgress their commandments, And they complete their courses according to the law.* the stars that do not change their course do not transgress their commandments but complete their courses according to the law.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-stars-keep-their-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=8
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=75 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 2:9 — *And Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years.* the unchanging order of the lights is appointed to mark the sabbaths, feasts, and seasons — the moedim by which the covenant is kept.'
+  FROM cross_reference_threads t, cross_references x, _session250_en23_lookup sv, _session250_en23_lookup tv
+ WHERE t.slug='1-enoch-23-stars-keep-their-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=23 AND sv.verse_number=8
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_24.sql (session250 1-enoch 24) -----
+-- Source anchor: enoch/1-enoch ch24. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en24 (view _session250_en24_lookup). Sort band base 50575, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-24-throne-mountain-of-glory
+  ('enoch', '1-enoch', 24, 9, 'canon', 'daniel', 7, 9, 'free', E'Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* Daniel''s fiery seat of the Ancient of days is Enoch''s throne-mountain (24:9), where the Eternal King will sit when He comes down to visit the earth.'),
+  ('enoch', '1-enoch', 24, 9, 'canon', 'ezekiel', 28, 14, 'free', E'Ezekiel 28:14 — *Thou art the anointed cherub that covereth; and I have set thee so: thou wast upon the holy mountain of Elohim (God); thou hast walked up and down in the midst of the stones of fire.* Enoch''s throne-mountain (24:9) is the canon''s own holy mountain of Elohim, the Eden-sanctuary from which the covering cherub fell.'),
+  ('enoch', '1-enoch', 24, 2, 'canon', 'ezekiel', 28, 13, 'free', E'Ezekiel 28:13 — *Thou hast been in Eden the garden of Elohim (God); every precious stone was thy covering, the sardius, topaz, and the diamond, the beryl, the onyx, and the jasper, the sapphire, the emerald, and the carbuncle, and gold: the workmanship of thy tabrets and of thy pipes was prepared in thee in the day that thou wast created.* The precious, glorious stones of Enoch''s mountains (24:2) are the same Eden-stones that covered the holy mountain.'),
+  ('enoch', '1-enoch', 24, 9, 'jubilees', 'jubilees', 4, 25, 'extras', E'Jubilees 4:25 — *For Yahuah (God) has four places on the earth, the Garden of Eden, and the Mount of the East, and this mountain on which you are this day, Mount Sinai, and Mount Zion (which) will be sanctified in the new creation for a sanctification of the earth; through it will the earth be sanctified from all (its) guilt and its uncleanness throughout the generations of the world.* Jubilees counts Enoch''s throne-mountain (24:9) among Yahuah''s holy places on earth, sanctified in the new creation.'),
+  ('enoch', '1-enoch', 24, 3, 'enoch', '1-enoch', 18, 8, 'extras', E'1 Enoch 18:8 — *But the middle one reached to heaven like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire.* Enoch had already seen this central throne-mountain among the seven on his earlier journey, the same height-excelling middle peak resembling the seat of a throne (24:3).'),
+  -- thread: 1-enoch-24-fragrant-tree-of-life
+  ('enoch', '1-enoch', 24, 4, 'canon', 'genesis', 2, 9, 'free', E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The unrivalled fragrant tree Enoch finds (24:4) is Eden''s tree of life, set from the beginning in the midst of the garden.'),
+  ('enoch', '1-enoch', 24, 4, 'canon', 'ezekiel', 47, 12, 'free', E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* The leaf and wood that *wither not for ever* (24:4) are Ezekiel''s sanctuary-trees whose leaf shall not fade and whose fruit feeds and heals.'),
+  ('enoch', '1-enoch', 24, 4, 'canon', 'revelation', 2, 7, 'free', E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The tree Enoch is shown reserved at the holy mountain (24:4) is the tree of life promised to the overcomer in the paradise of Elohim.'),
+  ('enoch', '1-enoch', 24, 4, 'canon', 'revelation', 22, 2, 'free', E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* John sees the same tree of life with its perpetual fruit and healing leaves (24:4) standing at last in the New Jerusalem.'),
+  ('enoch', '1-enoch', 24, 11, 'apocrypha', '2-esdras', 8, 52, 'extras', E'2 Esdras 8:52 — *For to you is paradise opened, the tree of life is planted, the time to come is prepared, plenteousness is made ready, a city is builded, and rest is allowed, yes, perfect goodness and wisdom.* 2 Esdras pairs the planted tree of life with the builded city exactly as Enoch''s tree is transplanted to the holy place, the temple of the Eternal King (24:11).'),
+  -- thread: 1-enoch-24-tree-reserved-for-the-elect
+  ('enoch', '1-enoch', 24, 11, 'canon', 'revelation', 22, 14, 'free', E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The right to Enoch''s reserved tree of life (24:11) belongs to those who do Yahuah''s commandments — Torah standing, the elect keeping the way into the holy place.'),
+  ('enoch', '1-enoch', 24, 11, 'canon', 'isaiah', 65, 22, 'free', E'Isaiah 65:22 — *They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands.* Isaiah measures the elect''s days by a tree, exactly as Enoch''s tree gives *fruit for life to the elect* (24:11).'),
+  ('enoch', '1-enoch', 24, 10, 'apocrypha', '2-esdras', 2, 12, 'extras', E'2 Esdras 2:12 — *They shall have the tree of life for an ointment of sweet savour; they shall neither labour, nor be weary.* The tree''s sweet-savour healing laid up for the righteous matches Enoch''s fragrant tree reserved till the great judgement, whose fragrance shall be in their bones (24:10).'),
+  -- thread: 1-enoch-24-long-life-no-sorrow
+  ('enoch', '1-enoch', 24, 12, 'canon', 'isaiah', 25, 8, 'free', E'Isaiah 25:8 — *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it.* The end of all sorrow and torment Enoch promises the elect (24:12) is Isaiah''s swallowing-up of death and wiping of every tear.'),
+  ('enoch', '1-enoch', 24, 12, 'canon', 'revelation', 21, 4, 'free', E'Revelation 21:4 — *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.* John''s restored creation where no sorrow or pain remains is Enoch''s promise that *no sorrow or plague or torment or calamity* shall touch the elect (24:12).'),
+  ('enoch', '1-enoch', 24, 12, 'canon', 'revelation', 22, 3, 'free', E'Revelation 22:3 — *And there shall be no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him.* The lifted curse and the throne in the holy place answer Enoch''s long restful life entered into the holy place by the tree (24:12).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-24-throne-mountain-of-glory',
+       E'The throne-mountain: the holy mountain of Elohim and the seat of the Eternal King',
+       E'Enoch is led to seven magnificent mountains, and *the seventh mountain was in the midst of them, and it excelled them in height, resembling the seat of a throne: and fragrant trees encircled the mountain* (1 Enoch 24:3) — and Michael unveils what it is: *This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is His throne, where the Holy Great One, Yahuah (God) of Glory, the Eternal King, will sit, when He shall come down to visit the earth with goodness* (1 Enoch 24:9). This is not a new picture. Daniel saw the same fiery seat — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire* (Daniel 7:9). And the throne stands on the holy mountain that was Eden''s first sanctuary: *thou wast upon the holy mountain of Elohim (God); thou hast walked up and down in the midst of the stones of fire* (Ezekiel 28:14) — the same Eden-mountain whose covering was *every precious stone... the workmanship of thy tabrets and of thy pipes was prepared in thee in the day that thou wast created* (Ezekiel 28:13), matching the magnificent stones of Enoch''s mountains. Jubilees names that very mountain among Yahuah''s holy places: *For Yahuah (God) has four places on the earth, the Garden of Eden, and the Mount of the East, and this mountain on which you are this day, Mount Sinai, and Mount Zion (which) will be sanctified in the new creation for a sanctification of the earth* (Jubilees 4:25). And Enoch had already glimpsed this throne-mountain on his journey: *But the middle one reached to heaven like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire* (1 Enoch 18:8). The mountain is the throne; the King who descends to it is the Creator returning to His holy place — Torah''s order standing, not overturned.',
+       sv.verse_id, ev.verse_id, 'extras', 50575
+  FROM _session250_en24_lookup sv, _session250_en24_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=24 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-24-fragrant-tree-of-life',
+       E'The fragrant tree of life: Eden''s tree at the holy mountain',
+       E'At the throne-mountain Enoch finds a tree unlike any other: *And amongst them was a tree such as I had never yet smelt, neither was any amongst them nor were others like it: it had a fragrance beyond all fragrance, and its leaves and blooms and wood wither not for ever: and its fruit is beautiful, and its fruit resembles the dates of a palm* (1 Enoch 24:4). This is Eden''s own tree, planted in the beginning: *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil* (Genesis 2:9). Ezekiel saw it lining the river from the sanctuary, its undying leaf and unfailing fruit: *and by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed... and the leaf thereof for medicine* (Ezekiel 47:12) — the leaves and wood that *wither not for ever.* The Spirit promises the overcomer this very tree at the end: *To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* (Revelation 2:7); and John sees it standing in the restored city: *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations* (Revelation 22:2). The book of 2 Esdras names the same hope — *for to you is paradise opened, the tree of life is planted, the time to come is prepared* (2 Esdras 8:52). One tree, from Eden''s midst to the New Jerusalem; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 50578
+  FROM _session250_en24_lookup sv, _session250_en24_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=24 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-24-tree-reserved-for-the-elect',
+       E'Reserved till the great judgement: the tree given to the righteous and elect',
+       E'The tree is sealed until the reckoning: *And as for this fragrant tree no mortal is permitted to touch it till the great judgement... To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King* (1 Enoch 24:10-11). The same gate stands at the end of Scripture: *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city* (Revelation 22:14) — the right to the tree belongs to those who *do his commandments*, the Torah standing, election issuing in obedience, not obedience earning election. Isaiah measures the elect''s portion by that same tree: *they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands* (Isaiah 65:22) — the fruit that is *for life to the elect.* And 2 Esdras describes its healing virtue laid up for the righteous: *they shall have the tree of life for an ointment of sweet savour; they shall neither labour, nor be weary* (2 Esdras 2:12), the very fragrance Enoch says will be in their bones. The tree is not for the self-selected; it is *given* to a people chosen — the righteous and humble, the elect — after the judgement separates, and transplanted to Yahuah''s holy place.',
+       sv.verse_id, ev.verse_id, 'extras', 50581
+  FROM _session250_en24_lookup sv, _session250_en24_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=24 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-24-long-life-no-sorrow',
+       E'Long life and no sorrow: the days of the fathers restored',
+       E'Enoch closes with the blessing the tree secures for the elect: *Then shall they rejoice with joy and be glad, and into the holy place shall they enter; and its fragrance shall be in their bones, and they shall live a long life on earth, such as thy fathers lived: and in their days shall no sorrow or plague or torment or calamity touch them* (1 Enoch 24:12). The prophets sang the same end of sorrow: *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it* (Isaiah 25:8). John saw it fulfilled in the restored creation: *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4) — Enoch''s *no sorrow or plague or torment or calamity.* And the curse that shortened the patriarchs'' years is lifted at the throne where the tree stands: *And there shall be no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* (Revelation 22:3). The long life *such as thy fathers lived* is Eden''s span restored — the same end the whole canon awaits.',
+       sv.verse_id, ev.verse_id, 'extras', 50584
+  FROM _session250_en24_lookup sv, _session250_en24_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=12
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=24 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-24-throne-mountain-of-glory
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* Daniel''s fiery seat of the Ancient of days is Enoch''s throne-mountain (24:9), where the Eternal King will sit when He comes down to visit the earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-throne-mountain-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 28:14 — *Thou art the anointed cherub that covereth; and I have set thee so: thou wast upon the holy mountain of Elohim (God); thou hast walked up and down in the midst of the stones of fire.* Enoch''s throne-mountain (24:9) is the canon''s own holy mountain of Elohim, the Eden-sanctuary from which the covering cherub fell.'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-throne-mountain-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=28 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 28:13 — *Thou hast been in Eden the garden of Elohim (God); every precious stone was thy covering, the sardius, topaz, and the diamond, the beryl, the onyx, and the jasper, the sapphire, the emerald, and the carbuncle, and gold: the workmanship of thy tabrets and of thy pipes was prepared in thee in the day that thou wast created.* The precious, glorious stones of Enoch''s mountains (24:2) are the same Eden-stones that covered the holy mountain.'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-throne-mountain-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=28 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 4:25 — *For Yahuah (God) has four places on the earth, the Garden of Eden, and the Mount of the East, and this mountain on which you are this day, Mount Sinai, and Mount Zion (which) will be sanctified in the new creation for a sanctification of the earth; through it will the earth be sanctified from all (its) guilt and its uncleanness throughout the generations of the world.* Jubilees counts Enoch''s throne-mountain (24:9) among Yahuah''s holy places on earth, sanctified in the new creation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-throne-mountain-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=9
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 18:8 — *But the middle one reached to heaven like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire.* Enoch had already seen this central throne-mountain among the seven on his earlier journey, the same height-excelling middle peak resembling the seat of a throne (24:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-throne-mountain-of-glory'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=18 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-24-fragrant-tree-of-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The unrivalled fragrant tree Enoch finds (24:4) is Eden''s tree of life, set from the beginning in the midst of the garden.'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-fragrant-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* The leaf and wood that *wither not for ever* (24:4) are Ezekiel''s sanctuary-trees whose leaf shall not fade and whose fruit feeds and heals.'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-fragrant-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The tree Enoch is shown reserved at the holy mountain (24:4) is the tree of life promised to the overcomer in the paradise of Elohim.'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-fragrant-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* John sees the same tree of life with its perpetual fruit and healing leaves (24:4) standing at last in the New Jerusalem.'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-fragrant-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Esdras 8:52 — *For to you is paradise opened, the tree of life is planted, the time to come is prepared, plenteousness is made ready, a city is builded, and rest is allowed, yes, perfect goodness and wisdom.* 2 Esdras pairs the planted tree of life with the builded city exactly as Enoch''s tree is transplanted to the holy place, the temple of the Eternal King (24:11).'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-fragrant-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=11
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=8 AND tv.verse_number=52
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-24-tree-reserved-for-the-elect
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The right to Enoch''s reserved tree of life (24:11) belongs to those who do Yahuah''s commandments — Torah standing, the elect keeping the way into the holy place.'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-tree-reserved-for-the-elect'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 65:22 — *They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands.* Isaiah measures the elect''s days by a tree, exactly as Enoch''s tree gives *fruit for life to the elect* (24:11).'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-tree-reserved-for-the-elect'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Esdras 2:12 — *They shall have the tree of life for an ointment of sweet savour; they shall neither labour, nor be weary.* The tree''s sweet-savour healing laid up for the righteous matches Enoch''s fragrant tree reserved till the great judgement, whose fragrance shall be in their bones (24:10).'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-tree-reserved-for-the-elect'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=10
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=2 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-24-long-life-no-sorrow
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 25:8 — *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it.* The end of all sorrow and torment Enoch promises the elect (24:12) is Isaiah''s swallowing-up of death and wiping of every tear.'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-long-life-no-sorrow'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 21:4 — *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.* John''s restored creation where no sorrow or pain remains is Enoch''s promise that *no sorrow or plague or torment or calamity* shall touch the elect (24:12).'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-long-life-no-sorrow'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:3 — *And there shall be no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him.* The lifted curse and the throne in the holy place answer Enoch''s long restful life entered into the holy place by the tree (24:12).'
+  FROM cross_reference_threads t, cross_references x, _session250_en24_lookup sv, _session250_en24_lookup tv
+ WHERE t.slug='1-enoch-24-long-life-no-sorrow'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=24 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session250 — 1 Enoch cross-references complete.'
