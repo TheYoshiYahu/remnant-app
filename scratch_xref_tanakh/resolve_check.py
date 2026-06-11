@@ -45,7 +45,7 @@ def parse_tuples(frag):
     """Yield (src_ed,src_slug,src_ch,src_v, tgt_ed,tgt_slug,tgt_ch,tgt_v) per input tuple."""
     sql=open(frag,encoding='utf-8',errors='replace').read()
     rows=[]
-    for hm in re.finditer(r"WITH\s+input\([^)]*\)\s+AS\s*\(VALUES(.*?)\)\s*INSERT",sql,re.DOTALL|re.IGNORECASE):
+    for hm in re.finditer(r"\(VALUES(.*?)\)\s*(?:INSERT\b|AS\s+\w+\s*\()",sql,re.DOTALL|re.IGNORECASE):
         region=hm.group(1);depth=0;start=None
         for idx,ch in enumerate(region):
             if ch=='(' and depth==0: depth=1;start=idx+1

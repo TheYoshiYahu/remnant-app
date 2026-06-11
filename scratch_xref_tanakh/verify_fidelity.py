@@ -58,7 +58,7 @@ ok = 0
 total = 0
 for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'minion_*.sql'))):
     sql = open(f, encoding='utf-8', errors='replace').read()
-    for hm in re.finditer(r"WITH\s+input\([^)]*\)\s+AS\s*\(VALUES(.*?)\)\s*INSERT", sql, re.DOTALL|re.IGNORECASE):
+    for hm in re.finditer(r"\(VALUES(.*?)\)\s*(?:INSERT\b|AS\s+\w+\s*\()", sql, re.DOTALL|re.IGNORECASE):
         region = hm.group(1)
         # each tuple starts with ('  ... split on lines beginning optional spaces + ('
         # Walk tuples: find '(' ... ')' top-level groups containing a note.
