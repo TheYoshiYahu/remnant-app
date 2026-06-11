@@ -1,0 +1,160 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 3,
+  "session": "session250",
+  "tag": "en03",
+  "base_band": 50050,
+  "threads": [
+    {
+      "slug": "1-enoch-3-trees-keep-appointed-seasons",
+      "title": "The trees keep their appointed seasons",
+      "summary_md": "Enoch points to the winter forest as a witness that creation obeys the order set for it: *Observe and see how (in the winter) all the trees seem as though they had withered and shed all their leaves, except fourteen trees, which do not lose their foliage but retain the old foliage from two to three years till the new comes.* (1 Enoch 3:1). This is the same lesson he draws from the unchanging luminaries — *Behold ye the earth, and give heed to the things which take place upon it from first to last, how steadfast they are, how none of the things upon earth change, but all the works of Elohim (God) appear to you.* (1 Enoch 2:2) — and again from the green of returning spring: *Observe ye how the trees cover themselves with green leaves and bear fruit: wherefore give ye heed and know with regard to all His works, and recognize how He that liveth for ever hath made them so.* (1 Enoch 5:1). The order itself was fixed at the beginning, when the lights were appointed for the seasons: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14). Yahuah binds that order to His covenant so firmly that to break the seasons would be to break His faithfulness to David: *Thus saith Yahuah (LORD); If ye can break my covenant of the day, and my covenant of the night, and that there should not be day and night in their season;* (Jeremiah 33:20). The Watchers will transgress this Creator's order; the trees never do.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The seasons the trees keep in Enoch 3:1 were ordained at creation, when the lights were set for signs and appointed times."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 33,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Jeremiah 33:20 — *Thus saith Yahuah (LORD); If ye can break my covenant of the day, and my covenant of the night, and that there should not be day and night in their season;* The steadfastness of the winter trees in Enoch 3:1 is Yahuah's own covenant of the seasons, as sure as His promise to David."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 1,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 2,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "1 Enoch 2:2 — *Behold ye the earth, and give heed to the things which take place upon it from first to last, how steadfast they are, how none of the things upon earth change, but all the works of Elohim (God) appear to you.* The same call to observe the steadfast order of creation that frames the trees of Enoch 3:1."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 1,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "1 Enoch 5:1 — *Observe ye how the trees cover themselves with green leaves and bear fruit: wherefore give ye heed and know with regard to all His works, and recognize how He that liveth for ever hath made them so.* The renewal that answers the withered winter trees of Enoch 3:1 — both seasons obey the One who made them so."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-3-the-sun-burns-at-his-command",
+      "title": "The summer sun burns under its appointed dominion",
+      "summary_md": "Enoch turns from winter to the heat of summer, again to show creation under command: *And again, observe the days of summer how the sun is above the earth over against it. And you seek shade and shelter by reason of the heat of the sun, and the earth also is burning with growing heat, and so you cannot tread on the earth, or on a rock by reason of its heat.* (1 Enoch 3:2). The Psalmist sees the same sun ruling its appointed round: *He appointed the moon for seasons: the sun knoweth his going down.* (Psalm 104:19). The wisdom of the apocrypha describes that very midday scorching: *At noon it parcheth the country, and who can abide the burning heat thereof?* (Ecclesiasticus 43:3), and confesses Who set it running: *Great is Yahuah (God) that made it; and at his commandment runs hastily.* (Ecclesiasticus 43:5). Jubilees grounds the sun's dominion in the fourth-day decree, where it is appointed to rule and to mark the feasts: *And Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years.* (Jubilees 2:9). The sun's burning is no terror without order — it keeps the law the Creator gave it, the same law the Watchers will abandon.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The summer sun of Enoch 3:2 burns within its appointed course, knowing its rising and its setting."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 2,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 43,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "Ecclesiasticus 43:3 — *At noon it parcheth the country, and who can abide the burning heat thereof?* The very heat that drives men to shade and shelter in Enoch 3:2, named by the same sapiential witness."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 2,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 43,
+          "tgt_v": 5,
+          "tier": "extras",
+          "note": "Ecclesiasticus 43:5 — *Great is Yahuah (God) that made it; and at his commandment runs hastily.* The burning sun of Enoch 3:2 obeys a command — it runs at the bidding of the One who made it."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 2,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "Jubilees 2:9 — *And Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years.* The sun whose heat Enoch observes in 3:2 was appointed to rule the days and mark the moedim."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-3-creation-obeys-but-you-have-not",
+      "title": "Creation keeps its order — but you have not",
+      "summary_md": "The whole point of the winter trees and the summer sun is an indictment: every part of creation holds to the order given it, so that man's rebellion stands exposed. Enoch lays the charge bare a chapter later: *But ye—ye have not been steadfast, nor done the commandments of Yahuah (God), but ye have turned away and spoken proud and hard words with your impure mouths against His greatness. Oh, ye hard-hearted, ye shall find no peace.* (1 Enoch 5:4). The luminaries he sets beside the trees *transgress not against their appointed order* — *Observe ye everything that takes place in the heaven, how they do not change their orbits, and the luminaries which are in the heaven, how they all rise and set in order each in its season, and transgress not against their appointed order.* (1 Enoch 2:1). The prophet draws the identical contrast from the birds that keep their seasons while the people forsake the way: *Yea, the stork in the heaven knoweth her appointed times; and the turtle and the crane and the swallow observe the time of their coming; but my people know not the judgment of Yahuah (LORD).* (Jeremiah 8:7). And the heavens themselves preach this without a word: *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* (Psalm 19:1). The trees of Enoch 3 testify that the Creator's order — His Torah — stands; the judgement to come falls on those who, unlike the trees, would not keep it.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 8,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Jeremiah 8:7 — *Yea, the stork in the heaven knoweth her appointed times; and the turtle and the crane and the swallow observe the time of their coming; but my people know not the judgment of Yahuah (LORD).* The same indictment Enoch 3 implies: nature keeps its appointed order while the people forsake the way."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The trees and sun of Enoch 3 preach the Creator's glory wordlessly, as the heavens do here."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 1,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 2,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "1 Enoch 2:1 — *Observe ye everything that takes place in the heaven, how they do not change their orbits, and the luminaries which are in the heaven, how they all rise and set in order each in its season, and transgress not against their appointed order.* The heavenly witness paired with the earthly trees of Enoch 3 — both transgress not their appointed order."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 2,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 5,
+          "tgt_v": 4,
+          "tier": "extras",
+          "note": "1 Enoch 5:4 — *But ye—ye have not been steadfast, nor done the commandments of Yahuah (God), but ye have turned away and spoken proud and hard words with your impure mouths against His greatness. Oh, ye hard-hearted, ye shall find no peace.* The indictment toward which the steadfast trees and sun of Enoch 3 are building: creation kept the commandments; you did not."
+        }
+      ]
+    }
+  ]
+}
