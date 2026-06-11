@@ -1,0 +1,230 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 11,
+  "session": "session250",
+  "tag": "en11",
+  "base_band": 50250,
+  "threads": [
+    {
+      "slug": "1-enoch-11-bind-the-watchers",
+      "title": "Bind Semjaza and his associates — the chained Watchers of Genesis 6",
+      "summary_md": "Michael is sent to bind the chief of the rebel Watchers: *And Yahuah (God) said to Michael: 'Go, bind Semjâzâ and his associates who have united themselves with women so as to have defiled themselves with them in all their uncleanness.* *And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation* (1 Enoch 11:1–2). This is not a new story — it is the canon's own Genesis 6 unfolded. There the sin is named: *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose* (Genesis 6:2), and judgement is set: *And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years* (Genesis 6:3). The New Testament knows this exact tradition and treats it as sober history: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 1:6); *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4). Jubilees tells it the same way — *and He bade us to bind them in the depths of the earth, and behold they are bound in the midst of them* (Jubilees 5:6) — and Isaiah lifts it to the last day: *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high* (Isaiah 24:21). The Watchers' sin is rebellion against the Creator's order, and the seed-war runs from here.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* This is the very defilement Michael is sent to punish in Enoch 11:1 — the Watchers who united themselves with women."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Genesis 6:3 — *And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years.* The shortening of days and the coming flood-judgement of Enoch 11 is the same sentence Yahuah pronounces in Genesis 6."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude carries forward the Watchers bound for judgement that Enoch 11:2 describes, chained until the day that is for ever and ever."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment.* Peter and Enoch 11:2 give the same verdict: the sinning angels are bound fast and reserved unto judgement."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 2,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 5,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "Jubilees 5:6 — *And against the angels whom He had sent upon the earth, He was exceedingly wroth, and He gave commandment to root them out of all their dominion, and He bade us to bind them in the depths of the earth, and behold they are bound in the midst of them, and are (kept) separate.* Jubilees tells the same binding Michael is commanded to perform in Enoch 11:2, in the depths of the earth."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 24,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* Isaiah lifts the binding of the Watchers in Enoch 11:2 to the day of judgement, when the host of the high ones is finally visited."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-11-abyss-of-fire-and-the-spirits",
+      "title": "The abyss of fire and the destruction of the reprobate spirits",
+      "summary_md": "The Watchers and all condemned with them are led to the prison of fire: *In those days they shall be led off to the abyss of fire: and to the torment and the prison in which they shall be confined for ever.* *And whosoever shall be condemned and destroyed will from thenceforth be bound together with them to the end of all generations.* *And destroy all the spirits of the reprobate and the children of the Watchers, because they have wronged mankind* (1 Enoch 11:3–5). Revelation paints the same sealed prison and the same final fire: *And I saw an angel come down from heaven, having the key of the bottomless pit and a great chain in his hand. And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years* (Revelation 20:1–2); *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more* (Revelation 20:3). The spirits of the reprobate — the evil spirits that proceeded from the slain giants — are the canon's own unclean powers; Jubilees prays that they be locked away from the righteous: *imprison them and hold them fast in the place of condemnation, and let them not bring destruction on the sons of your servant* (Jubilees 10:5). And Enoch's own command against Gabriel's targets is the twin of this verse: *Proceed against the bastards and the reprobates, and against the children of fornication: and destroy ... the children of the Watchers from amongst men* (1 Enoch 10:9). This is judgement upon rebellion, not upon the keepers of the covenant.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 20:2 — *And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years.* The chaining and sealed prison of the abyss in Enoch 11:3 is the same binding John sees laid upon the dragon."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Revelation 20:3 — *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* The prison in which the rebels are confined in Enoch 11:3 is John's bottomless pit, shut and sealed until the day of judgement."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 5,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 10,
+          "tgt_v": 5,
+          "tier": "extras",
+          "note": "Jubilees 10:5 — *and as for these spirits which are living, imprison them and hold them fast in the place of condemnation, and let them not bring destruction on the sons of your servant, my Elohim (God); for these are malignant, and created in order to destroy.* Noah's prayer asks for exactly what Enoch 11:5 commands — that the reprobate spirits and children of the Watchers be destroyed and bound away from mankind."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 5,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "1 Enoch 10:9 — *And to Gabriel said Yahuah (God): 'Proceed against the bastards and the reprobates, and against the children of fornication: and destroy [the children of fornication and] the children of the Watchers from amongst men.* Enoch's own earlier command to Gabriel is the twin of the order in Enoch 11:5 to destroy the spirits of the reprobate and the children of the Watchers."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-11-plant-of-righteousness-and-abundance",
+      "title": "The plant of righteousness — the earth tilled and full of blessing",
+      "summary_md": "After judgement comes restoration: *Destroy all wrong from the face of the earth and let every evil work come to an end: and let the plant of righteousness and truth appear: and it shall prove a blessing* (1 Enoch 11:6); *And then shall all the righteous escape, and shall live until they beget thousands of children* (1 Enoch 11:7); *And then shall the whole earth be tilled in righteousness, and shall all be planted with trees and be full of blessing* (1 Enoch 11:8); *and the vine which they plant thereon shall yield wine in abundance, and as for all the seed which is sown thereon each measure (of it) shall bear a thousand* (1 Enoch 11:9). This is the kingdom-fruitfulness the prophets foresaw — for the righteous are a people, an elect planting, not a self-chosen class. Isaiah promises the same long-lived, vineyard-keeping seed: *And they shall build houses, and inhabit them; and they shall plant vineyards, and eat the fruit of them* (Isaiah 65:21); *for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands* (Isaiah 65:22); *for they are the seed of the blessed of Yahuah (LORD), and their offspring with them* (Isaiah 65:23). Amos sees the wine overflowing the very mountains: *Behold, the days come, saith Yahuah (LORD), that the plowman shall overtake the reaper, and the treader of grapes him that soweth seed; and the mountains shall drop sweet wine, and all the hills shall melt* (Amos 9:13). Jubilees names the renewal at the root: *And He made for all His works a new and righteous nature, so that they should not sin in their whole nature for ever, but should be all righteous each in his kind alway* (Jubilees 5:11). The plant of righteousness is the regathered, covenant-keeping people whom Yahuah replants in the cleansed land.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 65,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 65:22 — *They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands.* The long life and completed days of the righteous in Enoch 11:7 are Isaiah's elect whose days are as the days of a tree."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 65,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Isaiah 65:21 — *And they shall build houses, and inhabit them; and they shall plant vineyards, and eat the fruit of them.* The vines planted and the wine in abundance of Enoch 11:9 are Isaiah's restored people planting vineyards and eating their fruit."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 9,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Amos 9:13 — *Behold, the days come, saith Yahuah (LORD), that the plowman shall overtake the reaper, and the treader of grapes him that soweth seed; and the mountains shall drop sweet wine, and all the hills shall melt.* The thousandfold seed and overflowing wine of Enoch 11:9 is Amos' day of overtaking harvests and mountains dropping sweet wine."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 6,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 5,
+          "tgt_v": 11,
+          "tier": "extras",
+          "note": "Jubilees 5:11 — *And He made for all His works a new and righteous nature, so that they should not sin in their whole nature for ever, but should be all righteous each in his kind alway.* The plant of righteousness and truth appearing in Enoch 11:6 is Jubilees' new and righteous nature made for all His works after the flood-judgement."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-11-earth-cleansed-all-nations-worship",
+      "title": "The earth cleansed — all nations worship the One Yahuah",
+      "summary_md": "The chapter closes with the whole creation purged and turned to worship: *And cleanse thou the earth from all oppression, and from all unrighteousness, and from all sin: and all the uncleanness that is wrought upon the earth destroy from off the earth* (1 Enoch 11:10); *And all the children of men shall become righteous, and all nations shall offer adoration and shall praise Me, and all shall worship Me* (1 Enoch 11:11); *And the earth shall be cleansed from all defilement, and from all sin, and from all punishment* (1 Enoch 11:12). This is the prophets' end of the matter — Yahuah alone king and all nations turned to Him. Zephaniah: *For then will I turn to the people a pure language, that they may all call upon the name of Yahuah (LORD), to serve him with one consent* (Zephaniah 3:9). Zechariah seals the One Name: *And Yahuah (LORD) shall be king over all the earth: in that day shall there be one Yahuah (LORD), and his name one* (Zechariah 14:9). The Psalm sings the nations bowing: *All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds of the nations shall worship before thee* (Psalm 22:27). And Isaiah shows them flowing up to learn His ways — *and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3): the nations worship by coming under the Torah that goes forth from Zion, not by abolishing it. The cleansing of the earth and the universal worship are one act of the same Yahuah of Spirits.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "zephaniah",
+          "tgt_ch": 3,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Zephaniah 3:9 — *For then will I turn to the people a pure language, that they may all call upon the name of Yahuah (LORD), to serve him with one consent.* The all-nations adoration of Enoch 11:11 is Zephaniah's purified peoples calling on the Name with one consent."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 14,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Zechariah 14:9 — *And Yahuah (LORD) shall be king over all the earth: in that day shall there be one Yahuah (LORD), and his name one.* When all nations worship Me in Enoch 11:11, it is Zechariah's day when Yahuah is king over all the earth and His name is one."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 22,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Psalm 22:27 — *All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds of the nations shall worship before thee.* The universal worship of Enoch 11:11 is the Psalm's ends of the world turning and all the kindreds of the nations worshipping before Him."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 2,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Isaiah 2:3 — *And many people shall go and say, Come ye, and let us go up to the mountain of Yahuah (LORD), to the house of the Elohim (God) of Jacob; and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem.* The nations' worship in Enoch 11:11 is Isaiah's peoples coming to walk in His paths under the Torah that goes forth from Zion."
+        }
+      ]
+    }
+  ]
+}

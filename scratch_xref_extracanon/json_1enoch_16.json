@@ -1,0 +1,180 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 16,
+  "session": "session250",
+  "tag": "en16",
+  "base_band": 50375,
+  "threads": [
+    {
+      "slug": "1-enoch-16-watchers-union-genesis-6",
+      "title": "The union the Watchers should never have made",
+      "summary_md": "Enoch's commission closes by naming the crime once more: *With the spiritual ones have ye had union, with the women have ye defiled yourselves, and with the blood of women have ye lusted, and with the flesh and blood of men have ye drunk wine* (1 Enoch 16:2). This is not a new myth grafted onto Scripture — it is the canon's own Genesis 6 unfolded. Moses wrote it plainly: *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose* (Genesis 6:2), and *There were giants in the earth in those days* (Genesis 6:4). The sin is rebellion against the Creator's ordered boundaries — heaven's spiritual ones leaving their estate to mingle with flesh — which is exactly how Jude reads it: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 1:6). Jubilees keeps the same testimony, that *the Watchers against the law of their ordinances went a whoring after the daughters of men, and took themselves wives of all which they chose: and they made the beginning of uncleanness* (Jubilees 7:21). One descent, one defilement, witnessed across Genesis, Enoch, Jude, and Jubilees alike.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* The Watchers' \"union\" with women in Enoch 16:2 is Moses' sons-of-Elohim taking wives of the daughters of men."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Genesis 6:4 — *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.* The defilement Enoch names in 16:2 is the very union that produced the giants of Genesis 6."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude reads the Watchers' crossing of the heaven-flesh boundary in Enoch 16:2 as angels abandoning their first estate, reserved for judgment."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 2,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 7,
+          "tgt_v": 21,
+          "tier": "extras",
+          "note": "Jubilees 7:21 — *owing to the fornication wherein the Watchers against the law of their ordinances went a whoring after the daughters of men, and took themselves wives of all which they chose: and they made the beginning of uncleanness.* Jubilees names the same union of Enoch 16:2 as the Watchers breaking the law of their ordinances — the beginning of uncleanness on the earth."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-16-forbidden-mysteries-corruption",
+      "title": "The mysteries that work destruction",
+      "summary_md": "The Watchers did not only defile themselves; they handed down forbidden knowledge: *And these things have ye shown to women, and through these mysteries women and men work much destruction on earth* (1 Enoch 16:3). This is the seed-war sown — corrupting arts taught against the Creator's order, multiplying ruin. The Wisdom of Solomon traces the same chain, that *the devising of idols was the beginning of spiritual fornication, and the invention of them the corruption of life* (the Wisdom of Solomon 14:12), and that those who *used secret ceremonies, or made revellings of strange rites* thereby *kept neither lives nor marriages any longer undefiled* (the Wisdom of Solomon 14:23-24). Peter sets the same pattern in the last days: false teachers *who privily shall bring in damnable heresies* (2 Peter 2:1), so that *by reason of whom the way of truth shall be evil spoken of* (2 Peter 2:2). Forbidden mysteries shown to the unguarded are how destruction has always spread — and the Torah still stands as the boundary the rebels crossed.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 14,
+          "tgt_v": 12,
+          "tier": "extras",
+          "note": "the Wisdom of Solomon 14:12 — *For the devising of idols was the beginning of spiritual fornication, and the invention of them the corruption of life.* The mysteries the Watchers showed to women in Enoch 16:3 are this same devised corruption that ruins life on earth."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 14,
+          "tgt_v": 23,
+          "tier": "extras",
+          "note": "the Wisdom of Solomon 14:23 — *For while they slew their children in sacrifices, or used secret ceremonies, or made revellings of strange rites.* The \"secret ceremonies\" of Wisdom mirror the destroying mysteries the Watchers passed to women in Enoch 16:3."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "2 Peter 2:1 — *But there were false prophets also among the people, even as there shall be false teachers among you, who privily shall bring in damnable heresies, even denying Yahuah (Lord) that bought them, and bring upon themselves swift destruction.* The forbidden teaching of Enoch 16:3 is the same privily-brought ruin Peter warns will work destruction in the last days."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-16-origin-evil-spirits-no-rest",
+      "title": "Evil spirits from the giants, seeking rest",
+      "summary_md": "Chapter 16 follows directly from the judgement just declared, that the slain giants leave behind spirits who *destroy without incurring judgement* until the consummation (1 Enoch 15:11) — disembodied, restless, hungering yet without flesh. Yahusha names exactly these wandering spirits: *When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none* (Matthew 12:43). The dry-place wanderer with no body to dwell in is the giant-spirit of Enoch's account — and the warning that *the last state of that man is worse than the first* (Matthew 12:45) shows the same campaign of destruction Enoch describes still running. Peter confirms the binding that holds the fallen Watchers behind these spirits: *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4). The Watchers chained; their giant-offspring's spirits loosed for a time — the origin of the evil spirits is not invented by the Gospels but carried into them.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 12,
+          "tgt_v": 43,
+          "tier": "free",
+          "note": "Matthew 12:43 — *When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none.* The restless, bodiless wanderer Yahusha describes is the giant-spirit Enoch 16 inherits from the slain Watchers' offspring, hungering without flesh of its own."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 12,
+          "tgt_v": 45,
+          "tier": "free",
+          "note": "Matthew 12:45 — *Then goeth he, and taketh with himself seven other spirits more wicked than himself, and they enter in and dwell there: and the last state of that man is worse than the first. Even so shall it be also unto this wicked generation.* The destruction the spirits work in Enoch 16:3 is the same evil-spirit campaign Yahusha says worsens the one it inhabits."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment.* Peter affirms the Watchers' binding that stands behind Enoch 16's loosed evil spirits — the fallen ones chained, reserved unto the great judgment."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-16-no-peace-petition-refused",
+      "title": "\"You have no peace\" — the petition refused",
+      "summary_md": "Enoch's commission ends with a verdict, not a reprieve: *Say to them therefore: \"You have no peace.\"* (1 Enoch 16:4). The Watchers had sent Enoch up to intercede for them; the answer comes back that there is no peace for those who broke heaven's order. Genesis records the same sentence on flesh that has corrupted its way: *And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years* (Genesis 6:3) — a closing door, a fixed term before judgement. Jude, quoting Enoch the seventh from Adam, declares the verdict's full reach: *Behold, Yahuah (Lord) cometh with ten thousands of his saints, To execute judgment upon all, and to convince all that are ungodly among them of all their ungodly deeds which they have ungodly committed* (Jude 1:14-15). The refused petition of the Watchers and the announced coming-with-judgement are one continuous word — no peace for the rebel, while the way of righteousness stands open for those who keep it.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Genesis 6:3 — *And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years.* The \"no peace\" verdict of Enoch 16:4 is the closing door of Genesis 6:3 — a fixed term granted, then judgement, with no reprieve for corrupted flesh."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Jude 1:14 — *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints.* Jude cites Enoch by name; the \"no peace\" of 16:4 is the near edge of the coming-in-judgement Enoch prophesied."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Jude 1:15 — *To execute judgment upon all, and to convince all that are ungodly among them of all their ungodly deeds which they have ungodly committed, and of all their hard speeches which ungodly sinners have spoken against him.* The refused petition of Enoch 16:4 anticipates this executed judgment Jude draws straight from Enoch's own words."
+        }
+      ]
+    }
+  ]
+}

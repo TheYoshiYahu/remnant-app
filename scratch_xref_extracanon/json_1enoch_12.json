@@ -1,0 +1,210 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 12,
+  "session": "session250",
+  "tag": "en12",
+  "base_band": 50275,
+  "threads": [
+    {
+      "slug": "1-enoch-12-enoch-hidden-walked-with-god",
+      "title": "Enoch hidden, his days with the holy ones",
+      "summary_md": "The chapter opens after Enoch is taken out of the company of men: *Before these things Enoch was hidden, and no one of the children of men knew where he was hidden, and where he abode, and what had become of him. And his activities had to do with the Watchers, and his days were with the holy ones* (1 Enoch 12:1-2). Torah records the same removal in a single line — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24) — and Messiah's assembly confesses it as faith: *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God)* (Hebrews 11:5). It ain't new: the canon already says Enoch was hidden and walked among the holy ones; 1 Enoch only tells us what his days among them were for — a scribe of righteousness commissioned to confront the Watchers. The man counted righteous is set apart and kept, election preceding any word he speaks.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 5,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* Torah's terse note that Enoch was taken is exactly the hiddenness 1 Enoch 12:1 describes — no man knew where he abode."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Hebrews 11:5 — *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God).* The New Testament names the translation that put Enoch's days among the holy ones (1 Enoch 12:2)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-12-scribe-sent-to-watchers-genesis-6",
+      "title": "The scribe of righteousness sent to the Watchers who left heaven",
+      "summary_md": "Enoch is given his commission: *’Enoch, thou scribe of righteousness, go, declare to the Watchers of the heaven who have left the high heaven, the holy eternal place, and have defiled themselves with women, and have done as the children of earth do, and have taken unto themselves wives* (1 Enoch 12:3-4). This is the canon's own Genesis 6 unfolded — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose* (Genesis 6:2) — and both apostolic witnesses carry it forward as fact, not myth: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 1:6); *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4). Within Enoch the charge is repeated when Yahuah Himself answers — *Wherefore have ye left the high, holy, and eternal heaven, and lain with women, and defiled yourselves with the daughters of men* (1 Enoch 15:3) — and Jubilees tells the same descent: *the angels of Elohim (God) saw them... and they took themselves wives of all whom they chose, and they bare to them sons and they were giants* (Jubilees 5:1). The Watchers' sin is rebellion against the Creator's order; the seed-war that scatters tares among the wheat runs from this descent.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* This is the very descent and taking-of-wives that Enoch is sent to confront in 1 Enoch 12:4."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude reads the Watchers' leaving the high heaven (1 Enoch 12:4) as settled apostolic doctrine."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment.* Peter likewise grounds his warning in the angels that sinned, the Watchers of 1 Enoch 12:4."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 4,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 15,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "1 Enoch 15:3 — *Wherefore have ye left the high, holy, and eternal heaven, and lain with women, and defiled yourselves with the daughters of men and taken to yourselves wives, and done like the children of earth, and begotten giants (as your) sons?* Yahuah Himself repeats Enoch's indictment of 1 Enoch 12:4 when the Watchers' petition is refused."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 4,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "Jubilees 5:1 — *And it came to pass when the children of men began to multiply on the face of the earth and daughters were born to them, that the angels of Elohim (God) saw them on a certain year of this jubilee, that they were beautiful to look upon; and they took themselves wives of all whom they chose, and they bare to them sons and they were giants.* Jubilees recounts the same descent and taking-of-wives that Enoch is sent to declare in 1 Enoch 12:4."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-12-great-destruction-on-the-earth",
+      "title": "Ye have wrought great destruction on the earth",
+      "summary_md": "Enoch's word to the Watchers names the ruin they have brought: *Ye have wrought great destruction on the earth* (1 Enoch 12:4). Torah measures that destruction in the giants they sired and the violence that filled the world — *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown* (Genesis 6:4); *The earth also was corrupt before Elohim (God), and the earth was filled with violence* (Genesis 6:11). The apocrypha remembers the same giants and the same wrath without softening it: *He was not pacified toward the old giants, who fell away in the strength of their foolishness* (Ecclesiasticus 16:7); *For in the old time also, when the proud giants perished, the hope of the world governed by your hand escaped in a weak vessel, and left to all ages a seed of generation* (the Wisdom of Solomon 14:6). It ain't new — the destruction Enoch charges is the corrupted, violence-filled earth the whole canon mourns, and the seed preserved in the ark is the line through which righteousness survives the war.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Genesis 6:4 — *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.* The giants are the great destruction Enoch lays at the Watchers' feet in 1 Enoch 12:4."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Genesis 6:11 — *The earth also was corrupt before Elohim (God), and the earth was filled with violence.* The filled-with-violence earth is the very ruin Enoch names in 1 Enoch 12:4."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 4,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 16,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "Ecclesiasticus 16:7 — *He was not pacified toward the old giants, who fell away in the strength of their foolishness.* Ben Sira remembers the giants and the destruction of 1 Enoch 12:4 as proof that Elohim does not relent toward the rebellious."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 4,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 14,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "the Wisdom of Solomon 14:6 — *For in the old time also, when the proud giants perished, the hope of the world governed by your hand escaped in a weak vessel, and left to all ages a seed of generation.* Wisdom ties the perishing of the giants of 1 Enoch 12:4 to the seed preserved in the ark."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-12-no-peace-no-forgiveness",
+      "title": "No peace nor forgiveness for the Watchers",
+      "summary_md": "Enoch's sentence on the Watchers is final and without remedy: *And ye shall have no peace nor forgiveness of sin: and inasmuch as they delight themselves in their children, The murder of their beloved ones shall they see, and over the destruction of their children shall they lament, and shall make supplication unto eternity, but mercy and peace shall ye not attain* (1 Enoch 12:5-6). The prophets speak the same verdict over the wicked — *But the wicked are like the troubled sea, when it cannot rest, whose waters cast up mire and dirt. There is no peace, saith my Elohim (God), to the wicked* (Isaiah 57:20-21). Within Enoch the same words fall on Azazel — *’Azâzêl, thou shalt have no peace: a severe sentence has gone forth against thee to put thee in bonds* (1 Enoch 13:1) — and the murder of the beloved children is decreed by Yahuah to Michael: *And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement* (1 Enoch 10:12). Jubilees confirms the petition will not be heard: *and after this they were bound in the depths of the earth for ever, until the day of the great condemnation* (Jubilees 5:10). The covenant order stands — the rebel against the Creator finds no peace, and supplication does not overturn a righteous sentence.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 57,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Isaiah 57:21 — *There is no peace, saith my Elohim (God), to the wicked.* Isaiah's verdict is the very 'no peace' Enoch pronounces over the Watchers in 1 Enoch 12:5."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 57,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Isaiah 57:20 — *But the wicked are like the troubled sea, when it cannot rest, whose waters cast up mire and dirt.* The restless, unforgiven wicked of Isaiah picture the Watchers who attain no peace in 1 Enoch 12:5."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 5,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 13,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "1 Enoch 13:1 — *And Enoch went and said: ’Azâzêl, thou shalt have no peace: a severe sentence has gone forth against thee to put thee in bonds.* Enoch carries the same 'no peace' sentence of 1 Enoch 12:5 to Azazel by name."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 6,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 12,
+          "tier": "extras",
+          "note": "1 Enoch 10:12 — *And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated.* Yahuah's own decree spells out the murder of the beloved children the Watchers must watch in 1 Enoch 12:6."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 6,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 5,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "Jubilees 5:10 — *And their fathers were witnesses (of their destruction), and after this they were bound in the depths of the earth for ever, until the day of the great condemnation when judgment is executed on all those who have corrupted their ways and their works before Yahuah (God).* Jubilees confirms the supplication of 1 Enoch 12:6 wins no mercy — the binding holds until the great judgement."
+        }
+      ]
+    }
+  ]
+}

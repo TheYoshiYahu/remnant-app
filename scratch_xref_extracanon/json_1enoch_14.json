@@ -1,0 +1,200 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 14,
+  "session": "session250",
+  "tag": "en14",
+  "base_band": 50325,
+  "threads": [
+    {
+      "slug": "1-enoch-14-throne-house-of-heaven",
+      "title": "The throne in the house of heaven — sapphire and flaming fire",
+      "summary_md": "Enoch is carried up and sees the throne-room of the Creator: *And I saw the foundations of the house of heaven, and the pillars of fire, and the pillars of light, and the pillars of ice, and the pillars of snow, and the pillars of hail.* (1 Enoch 14:8), and the middle mountain that *reached to heaven, like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire.* (1 Enoch 14:15), beyond which he sees *a flaming fire* (1 Enoch 14:16). It ain't new — the prophets saw the same throne. Ezekiel beheld *the likeness of a throne, as the appearance of a sapphire stone: and upon the likeness of the throne was the likeness as the appearance of a man above upon it.* (Ezekiel 1:26) — the very sapphire of Enoch's vision. Daniel saw the Head of Days enthroned: *his throne was like the fiery flame, and his wheels as burning fire. A fiery stream issued and came forth from before him* (Daniel 7:9-10), the same flaming fire that pours from Enoch's throne. And John's Revelation closes the circle: *a throne was set in heaven, and one sat on the throne... and out of the throne proceeded lightnings and thunderings and voices* (Revelation 4:2,5). One throne, one Creator, one order that stands — not a new vision but the one true vision handed down.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 1,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Ezekiel 1:26 — *And above the firmament that was over their heads was the likeness of a throne, as the appearance of a sapphire stone: and upon the likeness of the throne was the likeness as the appearance of a man above upon it.* Ezekiel sees the same sapphire throne reaching above the firmament that Enoch sees at the summit of the middle mountain in 14:15."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* The throne of fiery flame is the flaming fire Enoch sees blazing before the throne of Yahuah in 14:16."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* The fiery stream from the Head of Days' throne is the same river of heavenly fire Enoch beholds beyond the throne in 14:16-17."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 4,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 4:2 — *And immediately I was in the spirit: and, behold, a throne was set in heaven, and one sat on the throne.* John is carried up in the spirit to the same enthroned glory Enoch is carried up to see in 14:15, the one throne that stands from his vision to John's."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-14-waste-and-horrible-place",
+      "title": "The waste and horrible place — formless, void, no birds",
+      "summary_md": "Beyond the abyss Enoch is shown the undoing of creation itself: *And beyond that abyss I saw a place which had no firmament of the heaven above, and no firmly founded earth beneath it: there was no water upon it, and no birds, but it was a waste and horrible place.* (1 Enoch 14:18). It ain't new — this is the tohu-va-bohu of the first verses of Torah, the un-creation behind the work of the six days: *And the earth was without form, and void; and darkness was upon the face of the deep.* (Genesis 1:2). And it is precisely the picture Jeremiah is given of the land under judgement, creation rolled back: *I beheld the earth, and, lo, it was without form, and void; and the heavens, and they had no light... I beheld, and, lo, there was no man, and all the birds of the heavens were fled.* (Jeremiah 4:23,25) — the very 'no birds' of Enoch's waste place. The Creator who ordered the deep can leave a place outside His order; that emptiness is the prison-ground for what rebelled against the order. Not new — the oldest warning in the Book.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 1:2 — *And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of Elohim (God) moved upon the face of the waters.* The 'waste and horrible place' with no firmament and no founded earth is the tohu-and-bohu of creation's first verse — the un-ordered ground that lies outside the Creator's order in 14:18."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 4,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Jeremiah 4:23 — *I beheld the earth, and, lo, it was without form, and void; and the heavens, and they had no light.* Jeremiah sees creation rolled back to formlessness under judgement — the same waste place with no firmament above that Enoch is shown in 14:18."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 4,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Jeremiah 4:25 — *I beheld, and, lo, there was no man, and all the birds of the heavens were fled.* The fled birds match Enoch's place where 'there was no water upon it, and no birds' (14:18) — the desolation that mirrors the place of imprisonment."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-14-prison-of-the-stars-host-of-heaven",
+      "title": "A prison for the stars and the host of heaven — the bound Watchers",
+      "summary_md": "Enoch sees the prison prepared for the rebels: *I saw there seven stars like great burning mountains, and to me, when I inquired regarding them, the angel said: 'This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* (1 Enoch 14:19), *And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.'* (1 Enoch 14:21). These 'stars' are the fallen Watchers of Genesis 6 — Enoch's own book names this same prison the prison of the angels (1 Enoch 21:11). It ain't new: Isaiah saw it — *Yahuah (LORD) shall punish the host of the high ones that are on high... And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* (Isaiah 24:21-22). Jude carries it into the Gospel age, calling the Watchers *wandering stars, to whom is reserved the blackness of darkness for ever* (Jude 1:13), and naming their crime: *the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6). Peter says it plainly: *Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4). The Watchers' sin is rebellion against the Creator's order, and their binding waits a fixed day of judgement — Torah's order stands, and what broke it is held. The seed-war began here.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 21,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 24,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Isaiah 24:21 — *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* Isaiah's 'host of the high ones' is the very 'host of heaven' Enoch sees imprisoned at the end of heaven and earth in 14:19."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 24,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* The shutting-up in prison until a later visitation is exactly Enoch's binding of the stars 'till the time when their guilt should be consummated' in 14:21."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude's 'wandering stars' reserved in darkness are Enoch's transgressing stars shut up in the prison at the end of heaven and earth in 14:19-21."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude names the prisoners as the rebel angels reserved in chains until the judgment — the same binding 'till the time when their guilt should be consummated' Enoch records in 14:21."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment.* Peter's angels in chains of darkness reserved unto judgment are Enoch's stars bound till their guilt is consummated in 14:21 — the canon's own witness to the bound Watchers of Genesis 6."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 19,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 21,
+          "tgt_v": 11,
+          "tier": "extras",
+          "note": "1 Enoch 21:11 — *And he said unto me: 'This place is the prison of the angels, and here they will be imprisoned for ever.'* Enoch's own book, revisiting this same place, names the prison of the stars plainly as the prison of the angels — confirming the 'stars and the host of heaven' of 14:19 are the fallen Watchers."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-14-stars-transgressed-appointed-times",
+      "title": "Stars that came not at their appointed times — breaking the order of the lights",
+      "summary_md": "The charge against the imprisoned stars is that they broke the Creator's appointed order: *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* (1 Enoch 14:20). It ain't new — the very fourth-day decree of Torah set the lights in their courses with a command: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14), and *he made the stars also.* (Genesis 1:16). The lights were given a commandment — for signs and seasons (moedim), to keep their times. The transgressing stars are those who would not keep the appointed times the Creator set; their sin, like the Watchers', is rebellion against His ordered law. The order of the heavens stands as surely as Torah stands; the rebel is bound, not the law.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years.* The lights were set under a commandment to keep their appointed seasons; Enoch's stars 'transgressed the commandment' by not coming forth at their appointed times (14:20)."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* The stars the Creator made to rule their courses are the very stars that transgressed His commandment in the beginning of their rising in 14:20."
+        }
+      ]
+    }
+  ]
+}
