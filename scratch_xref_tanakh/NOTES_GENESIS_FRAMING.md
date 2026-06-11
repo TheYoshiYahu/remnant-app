@@ -74,3 +74,33 @@ Band base 20000, migration `session301_genesis_cross_references.sql`.
   (Luke 3:34-36), converging on the call of Gen 12; Abram called out of idolatry (Josh 24:2, Acts 7:2).
 - Parse cautions recorded: Jasher 7 runs together from v.18, Jasher 9:7 swallows vv.7-39 (used only
   clean verses); Jubilees parse skips 6:7-16 region (used only present clean verses).
+
+## Pack 4 (Gen 12–15) — LIVE, +18 threads/+108 members (cumulative 69/343) — THE KEYSTONE
+- **★★ Gen 12:1-3 the call / all-families-blessed** — framed STRICTLY as the seed-of-promise
+  (singular→Messiah, Gal 3:16), the nations blessed by being incorporated INTO the one seed
+  (Gal 3:29) and the scattered line gathered home (Jer 31:10) — explicitly NOT the false-inclusion
+  graft of a parallel people by faith-confession. "Make thy name great" = Yahuah MAKES the name,
+  the deliberate answer to Babel's grasped name (11:4).
+- **Gen 13:14-17 land/seed renewed** — seed-as-dust (first of the innumerability figures, with
+  stars 15:5 / sand 22:17 / Rom 4:18); the land "for ever" read PAST this life — the everlasting
+  inheritance held by resurrection-hope, looking for the city with foundations (Heb 11:10), not a
+  deed signed in his own years.
+- **★★ Gen 14:18-20 Melek Tsadiq (Melchizedek)** — the heaviest Christological type (13-member
+  thread): the lone priest-king of Salem with bread and wine and the tithe = the eternal, sworn,
+  priest-AND-king order (Ps 110:4, Heb 7) ABOVE the Levitical (Levi tithing in Abraham's loins),
+  bread-and-wine fulfilled at the Supper, Salem=Zion (Ps 76:2). Melek Tsadiq parenthetical kept
+  on every mention.
+- **★★ Gen 15:6 "he believed… counted for righteousness" — THE most-distorted verse, framed with
+  care.** Abram's covenant-TRUST receiving the promise, reckoned righteous — NOT a sola-fide
+  formula against Torah (RL #5/#10). The framework anchor **Gen 26:5** (*Abraham obeyed my voice,
+  and kept my charge, my commandments, my statutes, and my laws*) woven in as the SAME Abraham
+  completing the sentence; **James 2:21-23** quoted reading 15:6 WITH the offering of Isaac —
+  faith and covenant-faithfulness one walk. The sola-fide-against-Torah reading explicitly
+  overridden, faith never pitted against the commandments.
+- **Gen 15:9-21 the covenant cut** — the smoking furnace + burning lamp = the Formed passing
+  ALONE between the pieces, binding HIMSELF to the self-maledictory oath (Jer 34:18); the 400-year
+  affliction prophesied (Acts 7:6-7, Exod 12:40-41).
+- Gate notes: 2 Peter 2:8 fidelity-flagged = FALSE POSITIVE (KJV wraps the whole verse in parens,
+  which the heuristic strips before shingling); quote verbatim. Same benign class as 1 Chron 1:1.
+  Parse cautions: Jasher 14 is the unrelated Rikayon/Egyptian-tax tale (NOT pulled for Gen 13/14);
+  Jubilees parse skips 14:7/12/17/21 (used only present clean verses).
