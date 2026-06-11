@@ -1,0 +1,290 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 96,
+  "session": "session250",
+  "tag": "en96",
+  "base_band": 52375,
+  "threads": [
+    {
+      "slug": "1-enoch-96-woe-treading-on-the-poor",
+      "title": "Woe to those who tread on the poor with their might",
+      "summary_md": "Enoch's first woe falls on the system of oppression, not on a class of persons: *Woe to you who devour the might of others, And live in wickedness and oppression, And eat the best food and drink wine in large bowls, And tread upon the righteous with your might.* (1 Enoch 96:1) — repeated against those who *drink wine in large bowls, And tread upon the poor with your might.* (1 Enoch 96:4) This is the prophets' own indictment of injustice. Amos names the very crime — *Forasmuch therefore as your treading is upon the poor, and ye take from him burdens of wheat: ye have built houses of hewn stone, but ye shall not dwell in them; ye have planted pleasant vineyards, but ye shall not drink wine of them.* (Amos 5:11) — and *they afflict the just, they take a bribe, and they turn aside the poor in the gate from their right.* (Amos 5:12) Isaiah carries the same word to the rulers who devour the vineyard — *Yahuah (LORD) will enter into judgment with the ancients of his people, and the princes thereof: for ye have eaten up the vineyard; the spoil of the poor is in your houses.* (Isaiah 3:14) — and asks *What mean ye that ye beat my people to pieces, and grind the faces of the poor? saith Adonai Yahuah (the Lord GOD) of hosts.* (Isaiah 3:15) Torah's own protection of the afflicted stands behind every woe — *Rob not the poor, because he is poor: neither oppress the afflicted in the gate:* (Proverbs 22:22) — for *Yahuah (LORD) will plead their cause, and spoil the soul of those that spoiled them.* (Proverbs 22:23) It ain't new: Enoch is reading the same Torah and the same prophets, dismantling the machinery of injustice.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 96,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 5,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Amos 5:11 — *Forasmuch therefore as your treading is upon the poor, and ye take from him burdens of wheat: ye have built houses of hewn stone, but ye shall not dwell in them; ye have planted pleasant vineyards, but ye shall not drink wine of them.* The prophet's word for the very treading-and-feasting Enoch condemns in 96:1, and the houses the oppressors shall not keep."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 5,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Amos 5:12 — *For I know your manifold transgressions and your mighty sins: they afflict the just, they take a bribe, and they turn aside the poor in the gate from their right.* The afflicting of the just stands behind Enoch's repeated charge that they tread upon the poor with their might (96:4)."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 3,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Isaiah 3:14 — *Yahuah (LORD) will enter into judgment with the ancients of his people, and the princes thereof: for ye have eaten up the vineyard; the spoil of the poor is in your houses.* Those who devour the might of others and eat the best food (96:1) are the very princes who have eaten up the vineyard."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 3,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Isaiah 3:15 — *What mean ye that ye beat my people to pieces, and grind the faces of the poor? saith Adonai Yahuah (the Lord GOD) of hosts.* Grinding the faces of the poor is Isaiah's image for the trampling Enoch denounces in 96:4."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 22,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Proverbs 22:23 — *For Yahuah (LORD) will plead their cause, and spoil the soul of those that spoiled them.* Torah's guarantee that Yahuah avenges the oppressed poor is the ground of every woe Enoch pronounces in 96:1-4."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-96-woe-to-the-rich-and-full",
+      "title": "Woe to the mighty and the full — your might shall be cut off",
+      "summary_md": "Enoch turns the woe upon the proud strong and the sated: *Woe to you who are mighty in unrighteousness! For your might shall be cut off.* (1 Enoch 96:2) and *Woe to you who are full of fatness! For you shall be hungry, And you shall thirst.* (1 Enoch 96:3) Yahusha speaks this same reversal almost word for word — *But woe unto you that are rich! for ye have received your consolation.* (Luke 6:24) and *Woe unto you that are full! for ye shall hunger. Woe unto you that laugh now! for ye shall mourn and weep.* (Luke 6:25) James thunders the same against the hoarding rich — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* (James 5:1) — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* (James 5:3) And Wisdom puts the despairing confession of the doomed in their own mouths — *What has pride profited us? or what good has riches with our vaunting brought us?* (Wisdom of Solomon 5:8) — *All those things are passed away like a shadow, and as a post that hasted by;* (Wisdom of Solomon 5:9) the same fading Enoch foretells. It ain't new: the great reversal of the fat and the famished, the proud cut down, runs straight from Enoch into the Beatitudes' woes.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 96,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 6,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Luke 6:24 — *But woe unto you that are rich! for ye have received your consolation.* Yahusha's woe on the rich is the same sentence Enoch pronounces on the mighty in unrighteousness whose might shall be cut off (96:2)."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 6,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Luke 6:25 — *Woe unto you that are full! for ye shall hunger. Woe unto you that laugh now! for ye shall mourn and weep.* Nearly verbatim with Enoch 96:3 — the full shall be hungry and thirst."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James opens his woe on the rich exactly where Enoch does — the mighty in unrighteousness facing the cutting-off of their might (96:2)."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The cankering of hoarded wealth is how James shows the might cut off that Enoch warns of in 96:2."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* Wisdom voices the doomed rich confessing the emptiness of the fatness Enoch says shall turn to hunger (96:3)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-96-granaries-gold-rich-fool",
+      "title": "Gold gotten in unrighteousness — the boast of full granaries",
+      "summary_md": "Enoch mocks the boast of the unjust rich: *Woe to you who acquire gold and silver in unrighteousness And say: 'We have become rich with riches and have possessions; And we have acquired everything that we have desired.* (1 Enoch 96:5) — *And our granaries are (brimful) as with water, And your husbandmen shall be many.* (1 Enoch 96:7) Yahusha's parable of the rich fool answers that very swagger — *And he said, This will I do: I will pull down my barns, and build greater; and there will I bestow all my fruits and my goods.* (Luke 12:18) — *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry.* (Luke 12:19) — yet *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20) Amos exposes how the brimming granaries were filled — by cheating the needy — *Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?* (Amos 8:5) — *That we may buy the poor for silver, and the needy for a pair of shoes; yea, and sell the refuse of the wheat?* (Amos 8:6) It ain't new: full barns built on fraud are condemned from Amos to Enoch to the Gospel.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 96,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 12,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Luke 12:18 — *And he said, This will I do: I will pull down my barns, and build greater; and there will I bestow all my fruits and my goods.* The rich fool's brimming barns are the very granaries Enoch's hoarders boast of in 96:7."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 12,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Luke 12:19 — *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry.* The fool's self-talk matches the boast Enoch puts in the rich man's mouth — we have acquired everything we desired (96:5)."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 12,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* Elohim's verdict on the rich fool is the destruction Enoch foretells for those who gathered gold in unrighteousness (96:5)."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 8,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Amos 8:5 — *Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?* Amos shows the rigged scales by which the gold of 96:5 was acquired in unrighteousness."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 8,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Amos 8:6 — *That we may buy the poor for silver, and the needy for a pair of shoes; yea, and sell the refuse of the wheat?* The wheat hoarded in Enoch's full granaries (96:7) is the same refuse Amos says was sold by defrauding the needy."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-96-labourers-hire-grass-furnace",
+      "title": "The defrauded labourers and the grass cast into the furnace",
+      "summary_md": "Enoch sets the multiplied labourers against the doom of the proud: *And your labourers shall be many, Even though they be few.* (1 Enoch 96:8) — *And they shall exalt you like a king, And they shall call you gods.* (1 Enoch 96:9) — *But you shall be destroyed like grass, And like the young grass that withers, And you shall be cast into the fiery furnace.* (1 Enoch 96:10) James cries out for those very labourers — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* (James 5:4) — and condemns the slaughter of the just — *Ye have condemned and killed the just; and he doth not resist you.* (James 5:6) Ben Sira makes withholding the labourer's wage a capital crime — *He that takes away his neighbour's living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder.* (Ecclesiasticus 34:22) And Wisdom describes the proud who were called gods passing away — *For the hope of the ungodly is like dust that is blown away with the wind; like a thin froth that is driven away with the storm; like as the smoke which is dispersed here and there with a tempest, and passeth away as the remembrance of a guest that tarrieth but a day.* (Wisdom of Solomon 5:14) — the very withering grass of Enoch's furnace. It ain't new: the cry of the cheated reaper and the burning of the proud chaff are one witness from Sirach to Enoch to James.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 96,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The many labourers of Enoch 96:8 are James' reapers whose withheld wages cry to Yahuah of hosts."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "James 5:6 — *Ye have condemned and killed the just; and he doth not resist you.* The proud exalted as gods (96:9) who are then cast into the furnace (96:10) are those James says condemned and killed the just."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 8,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 34,
+          "tgt_v": 22,
+          "tier": "extras",
+          "note": "Ecclesiasticus 34:22 — *He that takes away his neighbour's living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder.* Ben Sira makes defrauding the many labourers of Enoch 96:8 a deed of blood, the very crime drawing the woe."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 10,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 14,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 5:14 — *For the hope of the ungodly is like dust that is blown away with the wind; like a thin froth that is driven away with the storm; like as the smoke which is dispersed here and there with a tempest, and passeth away as the remembrance of a guest that tarrieth but a day.* Wisdom's vanishing chaff is Enoch's withering grass cast into the fiery furnace (96:10)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-96-two-paths-choose-righteousness",
+      "title": "The two paths — choose righteousness, that ye may live",
+      "summary_md": "After the woes Enoch lays the two ways before his sons: *And now, my sons, listen to me, And I will show you the paths of righteousness, And the paths of unrighteousness, And I will show you how the paths of unrighteousness Shall be cut off.* (1 Enoch 96:15) — *And now, my sons, choose for yourselves The paths of righteousness, And walk therein, That ye may live and prosper, And that your seed may be multiplied upon the earth.* (1 Enoch 96:16) This is Moses' covenant charge word for word. Torah is the way of life, never the curse — *See, I have set before thee this day life and good, and death and evil;* (Deuteronomy 30:15) — *In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it.* (Deuteronomy 30:16) — *therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19) Enoch's promise that the seed may be multiplied upon the earth is Moses' that thou and thy seed may live. The Psalter sets the same two roads — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* (Psalms 1:1) — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* (Psalms 1:6) — the path of unrighteousness that Enoch says shall be cut off. It ain't new: the choice between life and death is the heart of the Torah, and Enoch sets it before his sons unchanged.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 96,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Moses' two ways are the paths of righteousness and unrighteousness Enoch sets before his sons in 96:15."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Deuteronomy 30:16 — *In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it.* Walking in Yahuah's ways to live and multiply is the very life-and-prosperity Enoch promises those who walk the path of righteousness (96:16) — Torah is the way of life."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 30:19 — *therefore choose life, that both thou and thy seed may live:* Moses' call to choose life and the seed live is exactly Enoch's call to choose the paths of righteousness that the seed be multiplied (96:16)."
+        },
+        {
+          "src_ch": 96,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalms 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalmist's perishing way of the ungodly is the path of unrighteousness Enoch says shall be cut off (96:17)."
+        }
+      ]
+    }
+  ]
+}

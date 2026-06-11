@@ -1,0 +1,11 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 106,
+  "session": "session250",
+  "tag": "en106",
+  "base_band": 52625,
+  "_blocked": true,
+  "_blocked_reason": "The parsed text under chapter 106 does NOT contain the Epistle's birth-of-Noah narrative (wondrous child, Lamech's fear, Methuselah going to Enoch) expected per Charles ch106. Instead it is misplaced/duplicated Book-of-the-Watchers cosmic-journey material: 'seven mountains of precious stones' (east/south), the middle mountain reaching heaven 'like the throne of Yahuah (God) of Spirits' with a sapphire top, 'seven stars like great burning mountains', and the prison of the stars 'bound till the time when their guilt should be consummated (even) for ten thousand years.' These 11 verses are a near byte-for-byte parallel of this edition's chapter 18:5-14 (verified by dumping ch18). No verse mentions Noah, Lamech, Methuselah, or a wondrous birth. Building Genesis 5:28-29 / Luke 1 / Matthew 1 birth-of-Noah apparatus on this text would be false — the content does not match. Honesty over coverage: blocked pending Track B repair.",
+  "threads": []
+}

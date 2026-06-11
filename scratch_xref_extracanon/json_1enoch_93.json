@@ -1,0 +1,220 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 93,
+  "session": "session250",
+  "tag": "en93",
+  "base_band": 52300,
+  "threads": [
+    {
+      "slug": "1-enoch-93-two-ways-choose-life",
+      "title": "Choose the paths of righteousness — life set before the sons",
+      "summary_md": "Enoch sets the two ways before his sons as a deliberate choice unto life: *And now, my sons, choose for yourselves The paths of righteousness, And walk therein, That ye may live and prosper, And that your seed may be multiplied upon the earth.* (1 Enoch 93:7). This is Moses' own farewell charge, word for word in spirit: *See, I have set before thee this day life and good, and death and evil;* (Deuteronomy 30:15), and the sealing call, *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19). The way of life is the Torah kept, never the curse — life *and* multiplied seed for those who walk it. The Psalter opens on the same fork — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* (Psalms 1:1) — which is why Enoch warns *And seek not the counsel of the ungodly* (1 Enoch 93:2). Yahusha gives the two ways their narrow-gate edge: *Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:* (Matthew 7:13). The extra-canon witnesses speak in one voice — Sirach, *Before man is life and death; and whether him liketh shall be given him.* (Ecclesiasticus 15:17). It ain't new: choose life is the oldest commandment, and the seed that walks it is multiplied upon the earth.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 93,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Moses sets the same two ways Enoch sets before his sons in 93:7."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch's \"choose... that ye may live... and that your seed may be multiplied\" (93:7) is Moses' choose-life-and-thy-seed-may-live verbatim in substance."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalms 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* The Psalter's two ways match Enoch's \"seek not the counsel of the ungodly\" in 93:2."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 7,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Matthew 7:13 — *Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:* Yahusha shows the very two paths Enoch shows in 93:4, the way of unrighteousness \"cut off.\""
+        },
+        {
+          "src_ch": 93,
+          "src_v": 7,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 15,
+          "tgt_v": 17,
+          "tier": "extras",
+          "note": "Ecclesiasticus 15:17 — *Before man is life and death; and whether him liketh shall be given him.* Sirach sets life and death before man exactly as Enoch bids his sons choose in 93:7."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-93-perish-way-of-wicked",
+      "title": "The paths of unrighteousness shall be cut off",
+      "summary_md": "Over and again Enoch names the end of the wicked road: *And I will show you the paths of righteousness, And the paths of unrighteousness, And I will show you how the paths of unrighteousness Shall be cut off.* (1 Enoch 93:4), warning that *all who walk in unrighteousness shall perish* (1 Enoch 93:3). The Psalter's closing line is the same verdict: *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* (Psalms 1:6). Solomon draws the two roads as light against darkness — *But the path of the just is as the shining light, that shineth more and more unto the perfect day.* (Proverbs 4:18), and *The way of the wicked is as darkness: they know not at what they stumble.* (Proverbs 4:19). Yahusha's narrow gate carries the life-end of it: *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* (Matthew 7:14). And the ungodly's own confession at the judgment is in the Wisdom of Solomon — *We wearied ourselves in the way of wickedness and destruction: yes, we have gone through deserts, where there lay no way: but as for the way of Yahuah (God), we have not known it.* (Wisdom of Solomon 5:7). The way of unrighteousness is not punished arbitrarily; it self-destructs — it is *cut off*.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 93,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalms 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalter ends where Enoch begins: all who walk in unrighteousness shall perish (93:3)."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 4,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Proverbs 4:18 — *But the path of the just is as the shining light, that shineth more and more unto the perfect day.* Solomon's path of the just is Enoch's path of righteousness in 93:4."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 4,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Proverbs 4:19 — *The way of the wicked is as darkness: they know not at what they stumble.* The way of the wicked stumbling in the dark is the path of unrighteousness \"cut off\" in 93:4."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 7,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Matthew 7:14 — *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* The narrow way that leadeth unto life is Enoch's path of righteousness chosen in 93:4."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 5:7 — *We wearied ourselves in the way of wickedness and destruction: yes, we have gone through deserts, where there lay no way: but as for the way of Yahuah (God), we have not known it.* The ungodly's own confession that those who walk in unrighteousness perish (93:3)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-93-love-god-love-neighbour",
+      "title": "Fear Yahuah, love Him with all the heart, love your neighbour",
+      "summary_md": "Enoch defines the way of life as the two great commandments themselves: *The paths of righteousness are these: To fear Yahuah (God) of Spirits, To love Him with all your heart, With all your soul, With all your strength, And to love your neighbour as yourself.* (1 Enoch 93:9). This is the Shema and its companion, Torah quoted straight: *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* (Deuteronomy 6:5). Yahusha names these two as the whole law: *Yahusha (Jesus) said unto him, Thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart, and with all thy soul, and with all thy mind.* (Matthew 22:37), and *And the second is like unto it, Thou shalt love thy neighbour as thyself.* (Matthew 22:39). The contrary path Enoch names — *To hate Yahuah (God) of Spirits, To love idols and false gods, To hate your neighbour* (1 Enoch 93:10) — is the precise inversion. The patriarchs carried this same charge: Jubilees has Noah enjoin his sons' sons *to bless their Creator, and honour father and mother, and love their neighbour* (Jubilees 7:20), and Abraham command his house *that they should observe the way of Yahuah (God); that they should work righteousness, and love each his neighbour* (Jubilees 20:2). It ain't new — love of Elohim and neighbour is the eternal Torah, kept from Enoch to Noah to Abraham to Yahusha.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 93,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 6,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Deuteronomy 6:5 — *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* The Shema's love-command is the heart of Enoch's path of righteousness in 93:9."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 22,
+          "tgt_v": 37,
+          "tier": "free",
+          "note": "Matthew 22:37 — *Yahusha (Jesus) said unto him, Thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart, and with all thy soul, and with all thy mind.* Yahusha names the first great commandment Enoch already names in 93:9."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 22,
+          "tgt_v": 39,
+          "tier": "free",
+          "note": "Matthew 22:39 — *And the second is like unto it, Thou shalt love thy neighbour as thyself.* The second commandment is Enoch's \"love your neighbour as yourself\" in 93:9, verbatim in substance."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 9,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 20,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "Jubilees 20:2 — *And he commanded them that they should observe the way of Yahuah (God); that they should work righteousness, and love each his neighbour, and act on this manner amongst all men; that they should each so walk with regard to them as to do judgment and righteousness on the earth.* Abraham charges his house with the same love-neighbour way Enoch sets in 93:9."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 9,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 7,
+          "tgt_v": 20,
+          "tier": "extras",
+          "note": "Jubilees 7:20 — *And in the twenty-eighth jubilee Noah began to enjoin upon his sons' sons the ordinances and commandments, and all the judgments that he knew, and he exhorted his sons to observe righteousness, and to cover the shame of their flesh, and to bless their Creator, and honour father and mother, and love their neighbour, and guard their souls from fornication and uncleanness and all iniquity.* Noah enjoins the love-neighbour way Enoch defines in 93:9."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-93-do-justice-walk-humbly",
+      "title": "Do judgment and righteousness, love mercy, walk humbly",
+      "summary_md": "Enoch's way of life is justice, mercy, and humility before Elohim: *The paths of righteousness are these: To walk in truth and righteousness, To love mercy and truth, To do judgment and righteousness, To walk humbly with Yahuah (God) of Spirits.* (1 Enoch 93:5), against the way *To love violence and oppression, To do injustice and wickedness, To walk proudly and haughtily* (1 Enoch 93:6). This is Micah's summary of all the LORD requires: *He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8) — \"do justly, love mercy, walk humbly\" is Enoch's \"do judgment and righteousness, love mercy and truth, walk humbly\" line for line. The oppressors of Enoch's wicked path are the very rich and violent the woes will sentence in the next chapter — *Woe to you who eat all the best food, And drink wine in large bowls, And tread upon the righteous with your might.* (1 Enoch 94:6) — so the two ways here are not abstract but social: the system of violence and oppression is dismantled, the humble walk preserved.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 93,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "micah",
+          "tgt_ch": 6,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Micah 6:8 — *He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* Micah's do-justly, love-mercy, walk-humbly is Enoch's path of righteousness in 93:5 line for line."
+        },
+        {
+          "src_ch": 93,
+          "src_v": 6,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 94,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "1 Enoch 94:6 — *Woe to you who eat all the best food, And drink wine in large bowls, And tread upon the righteous with your might.* The very violence and oppression of Enoch's wicked path (93:6) is the woe the next chapter sentences."
+        }
+      ]
+    }
+  ]
+}

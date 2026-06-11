@@ -1,0 +1,270 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 94,
+  "session": "session250",
+  "tag": "en94",
+  "base_band": 52325,
+  "threads": [
+    {
+      "slug": "1-enoch-94-two-ways-choose-life",
+      "title": "The two ways — choose the paths of righteousness, that ye may live",
+      "summary_md": "Enoch frames the whole Epistle as a choice between two roads: *And now I say unto you, my sons, love righteousness and walk therein; For the paths of righteousness are worthy of acceptance, But the paths of unrighteousness shall suddenly be destroyed and vanish* (1 Enoch 94:1), closing with the charge *And now, my sons, choose for yourselves The paths of righteousness, And walk therein, That ye may live and prosper, And that your seed may be multiplied upon the earth* (1 Enoch 94:23). It ain't new — this is Moses' covenant summons at the edge of the land: *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15), *therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). The same two roads stand in Jeremiah's mouth: *Thus saith Yahuah (LORD); Behold, I set before you the way of life, and the way of death* (Jeremiah 21:8). Torah is the way of life, never the curse: the Psalter opens on it — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6) — and Proverbs paints the two paths in light and dark: *But the path of the just is as the shining light, that shineth more and more unto the perfect day* (Proverbs 4:18) against *The way of the wicked is as darkness: they know not at what they stumble* (Proverbs 4:19). Yahusha set the same fork before the crowds: *Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat* (Matthew 7:13), *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:14). One ancient summons, from Sinai to Enoch to the Sermon on the Mount: walk the way that leads to life.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 94,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Moses sets the very same two ways before Israel that Enoch sets before his sons in 94:1."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch's closing charge to choose the path of righteousness 'that ye may live... and that your seed may be multiplied' echoes Moses' 'choose life... that thou and thy seed may live' word for word in theme (94:23)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 21,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Jeremiah 21:8 — *And unto this people thou shalt say, Thus saith Yahuah (LORD); Behold, I set before you the way of life, and the way of death.* The prophet names the same fork — the way of life against the path of death revealed to a generation in 94:2."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalter's two-way opening matches Enoch's promise that the paths of righteousness endure while the paths of unrighteousness 'shall suddenly be destroyed and vanish' (94:1)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 4,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Proverbs 4:18 — *But the path of the just is as the shining light, that shineth more and more unto the perfect day.* Solomon's shining path of the just is Enoch's 'paths of righteousness worthy of acceptance' (94:1)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 7,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Matthew 7:13 — *Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:* Yahusha's broad road to destruction is Enoch's 'paths of violence and death' that many hold to instead of righteousness (94:2)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 7,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Matthew 7:14 — *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* The narrow way that leads to life is the path Enoch charges his sons to choose, 'that ye may live' (94:23)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-94-woe-to-the-rich-trust",
+      "title": "Woe to you who trust in your riches — they will not deliver in the day of affliction",
+      "summary_md": "The first woe falls not on persons but on the system of misplaced trust: *Woe to you who are rich! For you have trusted in your riches, And from your riches shall you depart, Because you have not remembered Yahuah (God) of Spirits in the days of your riches* (1 Enoch 94:3), for *in the day of your affliction you shall not be able to save yourselves; And your riches shall not deliver you* (1 Enoch 94:5). The Tanakh already weighed this exact futility: *They that trust in their wealth, and boast themselves in the multitude of their riches* (Psalm 49:6) yet *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him* (Psalm 49:7), for *when he dieth he shall carry nothing away: his glory shall not descend after him* (Psalm 49:17). Yahusha told the parable of just such a man, whose granaries Enoch will picture in the next breath: *Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry* (Luke 12:19) — to whom *Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20). James thunders the same woe over the same departing wealth: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1). And the Wisdom of Solomon puts the lament in the mouths of the rich themselves at the judgement: *What has pride profited us? or what good has riches with our vaunting brought us?* (Wisdom of Solomon 5:8). The wealth does not save — only the God of Spirits, unremembered in the days of plenty, judges in the day of affliction.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 94,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 49,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalm 49:6 — *They that trust in their wealth, and boast themselves in the multitude of their riches;* the very posture Enoch condemns — trusting in riches instead of remembering the God of Spirits (94:3)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 49,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Psalm 49:7 — *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him:* riches cannot ransom a man in the day of affliction, exactly as Enoch says they 'shall not deliver you' (94:5)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 49,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Psalm 49:17 — *For when he dieth he shall carry nothing away: his glory shall not descend after him.* The rich man departs from his riches at death, just as Enoch warns 'from your riches shall you depart' (94:3)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 12,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* Yahusha's rich fool who boasts 'we have become great and glorious' meets the same reckoning Enoch announces (94:4)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James pronounces Enoch's identical woe on the rich whose wealth will fail them (94:3)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 5,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The rich confess at the judgement that their wealth could not save them, the very helplessness Enoch foretells in the day of affliction (94:5)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-94-riches-shall-not-endure-grass",
+      "title": "Your riches shall not endure — you shall wither like grass",
+      "summary_md": "Enoch answers the rich man's boast with its end: he says *We have become rich with riches and have possessions; And we have acquired everything that we have desired* (1 Enoch 94:7) and lays plans, *let us do what we purposed* (1 Enoch 94:8), but the verdict comes — *But you shall be destroyed like grass, And like the young grass that withers, And you shall be cast into the fiery furnace* (1 Enoch 94:12), and again, *Woe to you, O sinners! For your riches shall not endure, And your glory shall not last* (1 Enoch 94:16). The boast and its swift undoing are an old refrain. Ecclesiasticus already mocked the hoarder's plan: *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die* (Ecclesiasticus 11:19). The withering-grass figure is the Psalter's standing image of the wicked's end: *For they shall soon be cut down like the grass, and wither as the green herb* (Psalm 37:2), and *the wicked shall perish... into smoke shall they consume away* (Psalm 37:20). James names the rust on the hoarded wealth as a witness of fire: *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days* (James 5:3). The riches gathered in unrighteousness do not endure; the glory the sinner claims withers like cut grass and is cast into the furnace.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 94,
+          "src_v": 8,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 11,
+          "tgt_v": 19,
+          "tier": "extras",
+          "note": "Ecclesiasticus 11:19 — *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die.* Sirach mocks the hoarder's 'let us do what we purposed' plan with the very ignorance of his end that Enoch exposes (94:8)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 37,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Psalm 37:2 — *For they shall soon be cut down like the grass, and wither as the green herb.* The Psalter's withering-grass image of the wicked is exactly Enoch's 'destroyed like grass... like the young grass that withers' (94:12)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 37,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Psalm 37:20 — *But the wicked shall perish, and the enemies of Yahuah (LORD) shall be as the fat of lambs: they shall consume; into smoke shall they consume away.* The sinner's riches and glory do not last but consume away, the fate Enoch pronounces (94:16)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* James's hoarded gold turned to fire-witness matches Enoch's sinners cast into the fiery furnace (94:12)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-94-woe-luxury-tread-on-poor",
+      "title": "Woe to you who feast in luxury and tread upon the poor",
+      "summary_md": "The woes turn to those who feast on the backs of the oppressed: *Woe to you who eat all the best food, And drink wine in large bowls, And tread upon the righteous with your might* (1 Enoch 94:6), and again *Woe to you who eat the marrow of wheat, And drink the finest wine, And tread upon the poor with your might* (1 Enoch 94:18). This dismantles a system of luxury built on injustice — and Isaiah pronounced the identical woe: *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* (Isaiah 5:8), *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink* (Isaiah 5:22). Amos draws the very picture of bowls of wine and feasting indifferent to the afflicted: *That lie upon beds of ivory, and stretch themselves upon their couches, and eat the lambs out of the flock* (Amos 6:4), *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph* (Amos 6:6). Yahusha sets the same woe over against the Beatitudes: *But woe unto you that are rich! for ye have received your consolation* (Luke 6:24), *Woe unto you that are full! for ye shall hunger* (Luke 6:25) — which is Enoch's own sentence, *Woe to you who are full of fatness! For you shall be hungry, And you shall thirst* (1 Enoch 94:19). And James seals it: *Ye have lived in pleasure on the earth, and been wanton; ye have nourished your hearts, as in a day of slaughter* (James 5:5). The judgement targets the oppression, not the persons; the poor and the righteous trodden under foot are the victims the God of Spirits will vindicate.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 21,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 94,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah's woe on those who seize land and tread out the poor is Enoch's woe on those who 'tread upon the righteous with your might' (94:6)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 5:22 — *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink:* the mighty wine-drinkers Isaiah condemns are Enoch's who 'drink the finest wine, And tread upon the poor with your might' (94:18)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 6,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Amos 6:6 — *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* Amos's 'wine in bowls' indifferent to the afflicted is verbatim the picture Enoch draws — 'drink wine in large bowls, And tread upon the righteous' (94:6)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 6,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Luke 6:25 — *Woe unto you that are full! for ye shall hunger. Woe unto you that laugh now! for ye shall mourn and weep.* Yahusha's woe on the full who shall hunger is word-for-word Enoch's 'Woe to you who are full of fatness! For you shall be hungry' (94:19)."
+        },
+        {
+          "src_ch": 94,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "James 5:5 — *Ye have lived in pleasure on the earth, and been wanton; ye have nourished your hearts, as in a day of slaughter.* James condemns the same self-indulgent feasting on the backs of others that Enoch pronounces woe upon (94:18)."
+        }
+      ]
+    }
+  ]
+}

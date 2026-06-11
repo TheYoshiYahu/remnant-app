@@ -1,0 +1,230 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 102,
+  "session": "session250",
+  "tag": "en102",
+  "base_band": 52525,
+  "threads": [
+    {
+      "slug": "1-enoch-102-souls-in-the-hand-of-elohim",
+      "title": "The souls of the righteous in the hand of Elohim — no torment touches them",
+      "summary_md": "Enoch separates the two ends in the day of judgement: *And the souls of the righteous shall be in the hand of Elohim (God), And no torment shall touch them.* (1 Enoch 102:3), while *the souls of the sinners shall be in Sheol* lamenting (102:4). This is not a new comfort — Wisdom says it almost word for word: *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* (Wisdom of Solomon 3:1), and answers the world's misreading of their death — *In the sight of the unwise they seemed to die: and their departure is taken for misery* (Wisdom of Solomon 3:2) — *but they are in peace* (Wisdom of Solomon 3:3) and *their hope full of immortality* (Wisdom of Solomon 3:4). The righteous keep the way and are kept; Sheol holds only those who broke the covenant. The keeping precedes the deliverance: *every one that shall be found written in the book* (Daniel 12:1) is the one already named among the elect, not added by a deathbed verdict.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 102,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 3,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 3:1 — *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Almost verbatim with Enoch 102:3 — the righteous dead rest in Elohim's hand, untouched by torment, while only the sinners are held in Sheol."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 1,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 3,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 3:2 — *In the sight of the unwise they seemed to die: and their departure is taken for misery,* matching the very taunt Enoch's sinners raise at 102:5-6 — the world reads the righteous death as defeat and cannot see the path that runs through it."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 3,
+          "tgt_v": 4,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 3:4 — *For though they be punished in the sight of men, yet is their hope full of immortality.* The no-torment promise of Enoch 102:3 is the hope of immortality — the righteous suffer in the world's eyes but are kept whole in Elohim's hand."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Daniel 12:1 — *...and at that time thy people shall be delivered, every one that shall be found written in the book.* Enoch's separation of righteous from sinners (102:1-2) is Daniel's deliverance — the deciding line is the name already written, election before any confession."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-102-righteous-shine-sinners-taunt",
+      "title": "Shining like the sun — the dead righteous answered, the sinners' taunt undone",
+      "summary_md": "The sinners in Sheol see the vindicated righteous and recoil: *And they shall see the righteous shining like the sun, And they shall say: “These are they who have walked in righteousness before Yahuah (God) of Spirits.”* (1 Enoch 102:7). This is the resurrection-shining of Daniel — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* (Daniel 12:3) — after *many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2), which Yahusha seals: *Then shall the righteous shine forth as the sun in the kingdom of their Father.* (Matthew 13:43). Wisdom stages the very scene of 102:6-7 — the mockers turned witnesses: *This was he, whom we had sometimes in derision, and a proverb of reproach* (Wisdom of Solomon 5:3), *We fools accounted his life madness, and his end to be without honour* (Wisdom of Solomon 5:4), *How is he numbered among the children of Yahuah (God), and his lot is among the saints!* (Wisdom of Solomon 5:5). And Malachi names the ledger that decides who shines: *a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* (Malachi 3:16) — over against the world's complaint that *It is vain to serve Elohim (God)* (Malachi 3:14). It ain't new: the despised righteous of Enoch 102 are the wise-who-shine, written in the book of remembrance.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 102,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* Enoch's righteous *shining like the sun* (102:7) is Daniel's resurrection-radiance of the wise."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The separation of the righteous dead from the sinners in Enoch 102:2 is the two-fold awakening — life for the one, shame for the other."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 13,
+          "tgt_v": 43,
+          "tier": "free",
+          "note": "Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha's own words for the harvest's end exactly render Enoch 102:7 — the righteous shining like the sun."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 6,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 5:3 — *And they repenting and groaning for anguish of spirit shall say within themselves, This was he, whom we had sometimes in derision, and a proverb of reproach:* the mockers of Enoch 102:6 (“these are they who have despised us”) seen now from the other side — the despisers confessing too late."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 7,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 5,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 5:5 — *How is he numbered among the children of Yahuah (God), and his lot is among the saints!* The sinners' astonishment at the shining righteous in Enoch 102:7 is this very cry — the despised are found among the elect."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-102-woes-on-the-rich-oppressors",
+      "title": "Woe to the strong in unrighteousness who tread the poor — the eternal law unbroken",
+      "summary_md": "Enoch turns the woes against the systems of injustice, not the persons caught in them: *Woe to you who eat the marrow of wheat, And drink the finest wine, And tread upon the poor with your might!* (1 Enoch 102:10) and *Woe to you who acquire gold and silver in unrighteousness* (102:13). This is the prophets' own indictment of luxury wrung from the oppressed. Isaiah: *Woe unto them that join house to house, that lay field to field, till there be no place* (Isaiah 5:8), and *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink* (Isaiah 5:22) — the vineyard owner who *looked for judgment, but behold oppression; for righteousness, but behold a cry* (Isaiah 5:7). Amos names the same banquet: *That drink wine in bowls... but they are not grieved for the affliction of Joseph.* (Amos 6:6). And the apostle Yahaqov carries it whole into the last days: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* (James 5:1), for *the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth* (James 5:4). The woe falls on the fraud, the hoarding, the trampling — the perversion of the eternal law — never on the poor, and never on Torah, which is the way of life the oppressor abandoned.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 102,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Enoch's woe on those who tread the poor and amass possessions (102:10,13) is Isaiah's woe on land-grabbing greed."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 5:22 — *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink:* the strong who drink wine in large bowls while treading the poor (Enoch 102:12) stand under Isaiah's same woe."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 6,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Amos 6:6 — *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* Enoch's drinkers of wine in large bowls (102:12) are Amos's feasters indifferent to the suffering of the people."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The many husbandmen and labourers in the rich man's houses (Enoch 102:14-16) cry out against the fraud that gathered the gold and silver in unrighteousness (102:13)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-102-furnace-riches-do-not-endure",
+      "title": "Cast into the fiery furnace — where are your riches now?",
+      "summary_md": "The flattery that crowned the rich as gods is unmasked: they exalt you *like a king... And they shall call you gods* (1 Enoch 102:17), *But ye shall be destroyed like grass, And like the young grass that withers, And ye shall be cast into the fiery furnace.* (102:18), and the mocking question follows — *Where are your riches now?* (102:19) — answered, *For your riches shall not endure, And your glory shall not last.* (102:22). Yahusha sets the same furnace at the end of the age: *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* (Matthew 13:42). Malachi paints the same withering: *the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble* (Malachi 4:1), while *unto you that fear my name shall the Sun of righteousness arise with healing in his wings* (Malachi 4:2) — the same two ends as Enoch's shining righteous and consumed sinners, sealed with *Remember ye the law of Moses my servant* (Malachi 4:4): Torah stands through the fire. And the Psalmist already answered the boast: *Be not thou afraid when one is made rich, when the glory of his house is increased;* (Psalm 49:16). The riches that do not endure (102:22) are stubble; the path of righteousness alone is not cut off.",
+      "anchor_start_v": 17,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 102,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 13,
+          "tgt_v": 42,
+          "tier": "free",
+          "note": "Matthew 13:42 — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* Yahusha's harvest-end furnace is Enoch's *fiery furnace* (102:18) — the same fate for those whose unrighteous glory withers like grass."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 4,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Malachi 4:1 — *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up...* Enoch's proud destroyed like withering grass and cast into the furnace (102:18) are Malachi's proud burned up as stubble."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 4,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* The righteous shining like the sun in Enoch 102:7 meet the Sun of righteousness who rises for those who fear Yahuah's name — the other end from the furnace."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 3,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Malachi 3:14 — *Ye have said, It is vain to serve Elohim (God): and what profit is it that we have kept his ordinance, and that we have walked mournfully before Yahuah Tseva'ot (LORD of hosts)?* This is the sinners' boast of Enoch 102:13 — that wealth, not service, is gain — answered when Yahuah writes the book of remembrance for them that fear Him (Malachi 3:16)."
+        },
+        {
+          "src_ch": 102,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 49,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Psalm 49:16 — *Be not thou afraid when one is made rich, when the glory of his house is increased;* the Psalmist's counsel answers Enoch 102:22 — the rich man's riches and glory shall not endure, so the righteous need not fear them."
+        }
+      ]
+    }
+  ]
+}

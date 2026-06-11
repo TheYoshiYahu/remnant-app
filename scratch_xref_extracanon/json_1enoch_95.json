@@ -1,0 +1,200 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 95,
+  "session": "session250",
+  "tag": "en95",
+  "base_band": 52350,
+  "threads": [
+    {
+      "slug": "1-enoch-95-woe-pervert-the-words",
+      "title": "Woe to those who alter the words of uprightness",
+      "summary_md": "Enoch's first woes fall not on persons but on the systems of deceit that pervert the eternal law: *Woe to you who work godlessness, And glory in lying and oppression: You are lost, and no good shall you find.* (1 Enoch 95:1), and *Woe to you who alter the words of uprightness, And who write the words of unrighteousness and lying: They write their own judgment* (1 Enoch 95:2). This is the catalogue of Isaiah's woes against those who invert God's order — *Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness; that put bitter for sweet, and sweet for bitter!* (Isaiah 5:20) and *Woe unto them that are wise in their own eyes, and prudent in their own sight!* (Isaiah 5:21). Yahusha (Jesus) turns the very same woe against the self-satisfied: *But woe unto you that are rich! for ye have received your consolation.* (Luke 6:24). Torah is the standard they twist — to rewrite the words of uprightness is to write one's own sentence.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 95,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Isaiah 5:20 — *Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness; that put bitter for sweet, and sweet for bitter!* — Isaiah's woe against inverting the moral order is Enoch's woe on those who alter the words of uprightness and write unrighteousness in 95:2."
+        },
+        {
+          "src_ch": 95,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Isaiah 5:21 — *Woe unto them that are wise in their own eyes, and prudent in their own sight!* — the self-wise who glory in their own lying are the godless of Enoch 95:1 who shall find no good."
+        },
+        {
+          "src_ch": 95,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 6,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Luke 6:24 — *But woe unto you that are rich! for ye have received your consolation.* — Yahusha (Jesus) takes up the same prophetic woe-form Enoch uses, pronouncing loss on those whose consolation is already spent."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-95-woe-to-the-rich-oppressor",
+      "title": "Woe to those who tread upon the poor and acquire gold in unrighteousness",
+      "summary_md": "The heart of the chapter is the woe on the rich oppressor who feasts while crushing the poor: *Woe to you who are full of fatness! For you shall be hungry, And you shall thirst.* (1 Enoch 95:5), *Woe to you who drink wine in large bowls, And tread upon the poor with your might.* (1 Enoch 95:6), *Woe to you who acquire gold and silver in unrighteousness And say: 'We have become rich with riches and have possessions; And we have acquired everything that we have desired.* (1 Enoch 95:7). Amos pronounced the identical sentence on the luxuriating elite of his day: *Woe to them that are at ease in Zion... That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph. Therefore now shall they go captive with the first that go captive* (Amos 6:1,6,7). James carries it into the last days: *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* (James 5:4) — the same gathered silver and many husbandmen of Enoch 95:8-9, indicted. The systems of fraud are dismantled, not the persons; wealth gotten by injustice cannot stand, *for he that getteth riches, and not by right... at his end shall be a fool.* (Jeremiah 17:11).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 95,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 6,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Amos 6:6 — *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* — Amos's woe on those who drink wine in bowls is verbatim Enoch's woe on those who drink wine in large bowls and tread upon the poor in 95:6."
+        },
+        {
+          "src_ch": 95,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 6,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Amos 6:7 — *Therefore now shall they go captive with the first that go captive, and the banquet of them that stretched themselves shall be removed.* — the banquet removed and the feasters led captive is the cutting-off of the rich oppressor's might in Enoch 95:4,7."
+        },
+        {
+          "src_ch": 95,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* — the many husbandmen and labourers of Enoch 95:8-10 are James's defrauded reapers whose cry reaches Yahuah."
+        },
+        {
+          "src_ch": 95,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 17,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Jeremiah 17:11 — *As the partridge sitteth on eggs, and hatcheth them not; so he that getteth riches, and not by right, shall leave them in the midst of his days, and at his end shall be a fool.* — riches acquired in unrighteousness (Enoch 95:7) end in folly and loss."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-95-vanishing-riches-fiery-furnace",
+      "title": "Where are your riches now? — the rich man's wealth perishes",
+      "summary_md": "Enoch stages the reckoning where the hoarded glory evaporates: *But you shall be destroyed like grass, And like the young grass that withers, And you shall be cast into the fiery furnace.* (1 Enoch 95:12), *And they shall say to you: 'Where are your riches now, And where are your possessions, And where is your glory, And where is your power?'* (1 Enoch 95:13). Yahusha (Jesus) tells exactly this scene in the parable of the rich fool: *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry. But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:19-20) — the very boast of Enoch 95:7-8 ('we have gathered silver... let us do what we purposed') answered by the night of demand. And the Wisdom of Solomon puts the same confession in the mouths of the perished proud: *What has pride profited us? or what good has riches with our vaunting brought us? All those things are passed away like a shadow* (Wisdom of Solomon 5:8-9) — the heart full of pride (95:15) seeing too late that the grass withers.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 95,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 12,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Luke 12:19 — *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry.* — the rich fool's boast is the gathered-silver self-talk of Enoch 95:7-8 that the reckoning of 95:13 silences."
+        },
+        {
+          "src_ch": 95,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 12,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* — 'where are your riches now?' (Enoch 95:13) is the night the soul is required and the hoard left behind."
+        },
+        {
+          "src_ch": 95,
+          "src_v": 15,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* — the parallel extra-canon witness puts Enoch's pride-filled heart (95:15) in the perished proud man's own too-late confession."
+        },
+        {
+          "src_ch": 95,
+          "src_v": 12,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 5:9 — *All those things are passed away like a shadow, and as a post that hasted by;* — wealth passing like a shadow matches Enoch's rich man destroyed like withering grass in 95:12."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-95-two-paths-choose-righteousness",
+      "title": "The two paths — choose the way of righteousness and live",
+      "summary_md": "After the woes, Enoch sets the great choice that governs the whole Epistle (the two ways of chs 91 and 94): *And now, my sons, listen to me, And I will show you the paths of righteousness, And the paths of unrighteousness, And I will show you how the paths of unrighteousness Shall be cut off.* (1 Enoch 95:17), *And now, my sons, choose for yourselves The paths of righteousness, And walk therein, That ye may live and prosper, And that your seed may be multiplied upon the earth.* (1 Enoch 95:18). This is Moses' covenant charge word for word — life set against death, with the seed's blessing hanging on the choice: *See, I have set before thee this day life and good, and death and evil;* (Deuteronomy 30:15) and *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19). Torah is the path of life, never the curse. The Psalter opens on the same two ways — *Blessed is the man that walketh not in the counsel of the ungodly... For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* (Psalm 1:1,6) — and Proverbs lights the contrast: *But the path of the just is as the shining light, that shineth more and more unto the perfect day. The way of the wicked is as darkness* (Proverbs 4:18-19). Enoch shows the unrighteous path 'cut off'; the elect walk the way that endures.",
+      "anchor_start_v": 17,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 95,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* — Moses' two-ways charge is precisely Enoch's paths of righteousness and unrighteousness set before the sons in 95:17-18."
+        },
+        {
+          "src_ch": 95,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* — 'choose for yourselves the paths of righteousness... that ye may live and that your seed may be multiplied' (Enoch 95:18) is Moses' choose-life so thy seed may live."
+        },
+        {
+          "src_ch": 95,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* — the Psalter's two ways match Enoch's path of unrighteousness that 'shall be cut off' in 95:17,19."
+        },
+        {
+          "src_ch": 95,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 4,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Proverbs 4:18 — *But the path of the just is as the shining light, that shineth more and more unto the perfect day.* — the path of righteousness Enoch shows his sons (95:17) is wisdom's shining path of the just."
+        }
+      ]
+    }
+  ]
+}

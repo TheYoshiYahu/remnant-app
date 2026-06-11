@@ -1,0 +1,210 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 105,
+  "session": "session250",
+  "tag": "en105",
+  "base_band": 52600,
+  "threads": [
+    {
+      "slug": "1-enoch-105-names-known-memorial",
+      "title": "Your names are known, your memorial is before Him",
+      "summary_md": "Enoch comforts the elect dead and the living righteous: *Fear not, ye righteous, For Yahuah (God) of Spirits knows your names, And your memorial is before Him* (1 Enoch 105:2). Election precedes confession — the righteous are not a self-selected class but a people whose names are already kept. This is the framework's book of remembrance: *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name* (Malachi 3:16) — and the deliverance written in the book, *at that time thy people shall be delivered, every one that shall be found written in the book* (Daniel 12:1). The sinner's opposite is *their memorial is destruction, And their end is the lake of fire* (1 Enoch 105:1), the same furnace the canon names in *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth* (Matthew 13:42). The righteous are remembered; the wicked are forgotten.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 105,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 3,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The Most High knowing the names of the righteous (Enoch 105:2) is the book of remembrance kept for those who fear Him."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* The memorial before Him (Enoch 105:2) is deliverance for every name already written in the book — election before the trouble, not after."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 13,
+          "tgt_v": 42,
+          "tier": "free",
+          "note": "Matthew 13:42 — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* The sinner's end as the lake of fire (Enoch 105:1) is the canon's furnace into which the tares of the seed-war are gathered."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-105-righteous-inherit-the-earth",
+      "title": "The righteous shall inherit the earth forever",
+      "summary_md": "The inheritance of the meek runs straight from Enoch through the Psalter into the Gospel: *And the righteous shall inherit the earth, And they shall dwell therein forever and ever* (1 Enoch 105:3). This is no church-replacing-Israel hope; it is the covenant land-inheritance of the elect seed-line. The Psalter says it twice over: *For evildoers shall be cut off: but those that wait upon Yahuah (LORD), they shall inherit the earth* (Psalm 37:9) and *The righteous shall inherit the land, and dwell therein for ever* (Psalm 37:29). Yahusha sets it as a beatitude — *Blessed are the meek: for they shall inherit the earth* (Matthew 5:5) — and the everlasting kingdom is given to the very people Enoch names: *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him* (Daniel 7:27). Torah's promise of the land stands; the meek do not earn it — they wait on Yahuah and are kept.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 105,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 37,
+          "tgt_v": 29,
+          "tier": "free",
+          "note": "Psalm 37:29 — *The righteous shall inherit the land, and dwell therein for ever.* Word for word the promise of Enoch 105:3 — the righteous inherit and dwell in the land for ever and ever."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 37,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Psalm 37:9 — *For evildoers shall be cut off: but those that wait upon Yahuah (LORD), they shall inherit the earth.* The inheritance of Enoch 105:3 is for those who wait on Yahuah, set against the evildoers who are cut off."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 5,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Matthew 5:5 — *Blessed are the meek: for they shall inherit the earth.* Yahusha's beatitude is Enoch's promise (105:3) spoken from the mount — the same inheritance for the same kept people."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Daniel 7:27 — *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* The forever-and-ever dwelling of Enoch 105:3 is the everlasting kingdom handed to the saints of the Most High."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-105-shine-as-the-lights-of-heaven",
+      "title": "They shall shine as the lights of heaven",
+      "summary_md": "Here is the resurrection-glory of the righteous dead, the Epistle's great hope: *And their glory shall be great, And they shall shine as the lights of heaven, And they shall be companions of the holy ones* (1 Enoch 105:4). Daniel says it of the awakened sleepers: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2), *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever* (Daniel 12:3). Yahusha repeats it exactly — *Then shall the righteous shine forth as the sun in the kingdom of their Father* (Matthew 13:43) — and Isaiah promises the dust will give back its dead: *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead* (Isaiah 26:19). The parallel extra-canon witness shines with the same light: *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble* (the Wisdom of Solomon 3:7). Election precedes confession; the names are written first, then they wake and shine.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 105,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* The righteous shining as the lights of heaven (Enoch 105:4) is Daniel's wise shining as the firmament and the stars."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* Before they shine (Enoch 105:4) the righteous dead must awake from the dust — the resurrection underwriting the glory."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 13,
+          "tgt_v": 43,
+          "tier": "free",
+          "note": "Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha names the same shining the righteous of Enoch 105:4 are promised, in the kingdom of the Father."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 26,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* The glory of Enoch 105:4 rests on the dust giving back its dead, that they who dwell in dust awake and sing."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 4,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 3,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "the Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The parallel extra-canon witness gives the same image as Enoch 105:4 — the righteous shining at their visitation."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-105-most-high-arises-in-wrath",
+      "title": "The Most High arises in wrath against all flesh",
+      "summary_md": "The chapter closes on the day of judgement against the oppressor: *And fear not the sinners, For their day is near, And their destruction is at hand* (1 Enoch 105:5), *And the Most High will arise in His wrath, And execute judgment upon all flesh, And destroy the ungodly from off the earth* (1 Enoch 105:6). The judgement falls not on persons for personhood but on the ungodly systems that pervert the eternal order — and it comes in the fire the prophets foresaw: *For, behold, Yahuah (LORD) will come with fire, and with his chariots like a whirlwind, to render his anger with fury, and his rebuke with flames of fire* (Isaiah 66:15), *For by fire and by his sword will Yahuah (LORD) plead with all flesh: and the slain of Yahuah (LORD) shall be many* (Isaiah 66:16). The New Testament binds it to the revealing of Yahusha: *And to you who are troubled rest with us, when the Lord Yahusha (Lord Jesus) shall be revealed from heaven with his mighty angels* (2 Thessalonians 1:7), *In flaming fire taking vengeance on them that know not Elohim (God), and that obey not the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ)* (2 Thessalonians 1:8). This is the very coming Enoch himself prophesied, quoted in the canon: *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints* (Jude 1:14). It ain't new.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 105,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 66,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Isaiah 66:15 — *For, behold, Yahuah (LORD) will come with fire, and with his chariots like a whirlwind, to render his anger with fury, and his rebuke with flames of fire.* The Most High arising in wrath (Enoch 105:6) is Yahuah coming with fire and the chariots of His fury."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 66,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Isaiah 66:16 — *For by fire and by his sword will Yahuah (LORD) plead with all flesh: and the slain of Yahuah (LORD) shall be many.* Judgement executed upon all flesh (Enoch 105:6) is Yahuah pleading by fire and sword with all flesh."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "2-thessalonians",
+          "tgt_ch": 1,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "2 Thessalonians 1:8 — *In flaming fire taking vengeance on them that know not Elohim (God), and that obey not the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ).* The destruction of the ungodly from off the earth (Enoch 105:6) is the flaming-fire vengeance at the revealing of Yahusha."
+        },
+        {
+          "src_ch": 105,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Jude 1:14 — *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints.* The near day of the sinners (Enoch 105:5) is the coming Enoch himself prophesied, which Jude quotes as Scripture — it ain't new."
+        }
+      ]
+    }
+  ]
+}

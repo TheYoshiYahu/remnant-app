@@ -1,0 +1,11 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 101,
+  "session": "session250",
+  "tag": "en101",
+  "base_band": 52500,
+  "threads": [],
+  "_blocked": true,
+  "_blocked_reason": "Parse corruption. dump_canon returns 100 verses for 1 Enoch 101, but only verses 1-3 are coherent unique content (the ships/winds/watchers fearing before His face). Verses 4-100 are a cyclic byte-for-byte duplication of a fixed 5-line block ('pillars of the heaven moved at His rebuke / luminaries afraid / earth trembles and quakes / sea is troubled and shakes / pillars moved...'), repeating verbatim ~19 times with no new content. The expected Charles chapter 101 (FEAR the Most High; the seas and ships tremble, sinners fear not) is not recoverable from this parse beyond vv.1-3, and the verse-block loop means any anchor_end_v / cited src_v past v3 would point at duplicated garbage. Per the brief's corruption gate, building apparatus on this would create false src_v anchors, so threads=[] and blocked."
+}
