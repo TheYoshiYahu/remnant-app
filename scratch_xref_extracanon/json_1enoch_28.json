@@ -1,0 +1,180 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 28,
+  "session": "session250",
+  "tag": "en28",
+  "base_band": 50675,
+  "threads": [
+    {
+      "slug": "1-enoch-28-watered-wilderness",
+      "title": "The valley full of water in the desert — the wilderness made glad",
+      "summary_md": "Enoch's journey eastward reaches a thirsty land made fertile: *And beyond these trees I proceeded to the east, and I saw another place, a valley full of water.* (1 Enoch 28:4), where *there was a tree which had fragrance such as the mastic tree, and its fruit was like the clusters of the vine, very beautiful; and the fragrance of that tree penetrated far beyond the valley.* (1 Enoch 28:5). It is the prophets' picture of the watered wilderness, the sign that Yahuah comes to save: *The wilderness and the solitary place shall be glad for them; and the desert shall rejoice, and blossom as the rose.* (Isaiah 35:1), *for in the wilderness shall waters break out, and streams in the desert.* (Isaiah 35:6). The same hand that opens the spring also plants the fragrant trees Enoch smells: *I will open rivers in high places, and fountains in the midst of the valleys: I will make the wilderness a pool of water, and the dry land springs of water.* (Isaiah 41:18) — *I will plant in the wilderness the cedar, the shittah tree, and the myrtle, and the oil tree; I will set in the desert the fir tree, and the pine, and the box tree together* (Isaiah 41:19), so that all may *know, and consider, and understand together, that the hand of Yahuah (LORD) hath done this, and the Holy One of Yashar'el (Israel) hath created it.* (Isaiah 41:20). It ain't new: Enoch walks the same renewed desert the prophets sing.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 28,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 35,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 35:1 — *The wilderness and the solitary place shall be glad for them; and the desert shall rejoice, and blossom as the rose.* The valley full of water Enoch finds in the eastern desert is the prophet's wilderness made glad when Yahuah comes."
+        },
+        {
+          "src_ch": 28,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 35,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Isaiah 35:6 — *Then shall the lame man leap as an hart, and the tongue of the dumb sing: for in the wilderness shall waters break out, and streams in the desert.* Enoch's valley full of water in a desert place is exactly this promised breaking-out of waters in the wilderness."
+        },
+        {
+          "src_ch": 28,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 41,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Isaiah 41:18 — *I will open rivers in high places, and fountains in the midst of the valleys: I will make the wilderness a pool of water, and the dry land springs of water.* The same fountains-in-the-valley that Yahuah promises fill the watered valley Enoch sees in the east."
+        },
+        {
+          "src_ch": 28,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 41,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Isaiah 41:19 — *I will plant in the wilderness the cedar, the shittah tree, and the myrtle, and the oil tree; I will set in the desert the fir tree, and the pine, and the box tree together:* the fragrant trees Yahuah plants in the desert are the very trees of beyond-all-fragrance Enoch smells along the watered valley."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-28-tree-of-life-temple",
+      "title": "The tree no mortal may touch — the tree of life kept for the elect",
+      "summary_md": "Michael unfolds the fragrant tree of the valley: *And as for this fragrant tree no mortal is permitted to touch it till the great judgement, when His righteousness and His majesty shall be avenged on the sinners in its fruit to the righteous and humble.* (1 Enoch 28:11) — *To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* (1 Enoch 28:12). This is the tree of life of Eden, planted and then guarded: *the tree of life also in the midst of the garden* (Genesis 2:9), barred from fallen hands *lest he put forth his hand, and take also of the tree of life, and eat, and live for ever* (Genesis 3:22) — so Yahuah *placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* (Genesis 3:24). Enoch sees the same tree kept until the great judgement, then opened to the righteous — which is precisely the promise the risen Messiah holds out: *To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* (Revelation 2:7), and *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* (Revelation 22:14) — note: it is the commandment-keepers, the elect who keep the way, who are given its fruit, never a self-chosen class. Enoch's tree even shares Ezekiel's temple-fed fruit: *and the fruit thereof shall be for meat, and the leaf thereof for medicine.* (Ezekiel 47:12). It ain't new: the tree fenced in Eden and opened again in Revelation is the tree Enoch already saw transplanted to the temple of the Eternal King.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 28,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* Enoch's fragrant tree given to the righteous for food is the tree of life planted in the midst of Eden."
+        },
+        {
+          "src_ch": 28,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:* this is why no mortal is permitted to touch Enoch's tree — fallen hands are barred from the tree of life until the great judgement."
+        },
+        {
+          "src_ch": 28,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* The guarding of the way of the tree of life is the very prohibition Michael names over the fragrant tree until the judgement."
+        },
+        {
+          "src_ch": 28,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 2,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The tree given for food to the righteous and elect in Enoch is the tree of life Yahusha grants the overcomer."
+        },
+        {
+          "src_ch": 28,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The fruit kept for the righteous who keep the way is the right to the tree of life given to the commandment-keepers who enter the holy city."
+        },
+        {
+          "src_ch": 28,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 47,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Enoch's fragrant tree transplanted to the temple, its fruit for food, matches the sanctuary-fed trees whose fruit is meat and leaf medicine."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-28-throne-mountain-self-link",
+      "title": "The high mountain whose summit is the throne — God comes down to visit",
+      "summary_md": "Michael's word over the watered-valley tree repeats, almost verbatim, what Enoch was shown one mountain earlier — the throne-mountain and its fragrant tree: *’This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is His throne, where the Holy Great One, Yahuah (God) of Glory, the Eternal King, will sit, when He shall come down to visit the earth with goodness.* (1 Enoch 28:10). It is the same revelation given at the throne-mountain of the previous vision: *’This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is the throne of Yahuah (God), the Holy Great One, the Eternal King, when He shall come down to visit the earth with goodness.* (1 Enoch 27:6) — *And as for this fragrant tree no mortal is permitted to touch it till the great judgement, when His righteousness and His majesty shall be punished for ever in its fruit to the righteous and humble.* (1 Enoch 27:7) — *To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* (1 Enoch 27:8). And the river of life that flows from this throne to that temple-tree is what Yochanan sees at the end: *And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb.* (Revelation 22:1), *In the midst of the street of it, and on either side of the river, was there the tree of life... and the leaves of the tree were for the healing of the nations.* (Revelation 22:2). It ain't new: the throne-mountain, the tree, and the visiting King are one vision carried from Enoch into the Apocalypse.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 28,
+          "src_v": 10,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 27,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "1 Enoch 27:6 — *’This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is the throne of Yahuah (God), the Holy Great One, the Eternal King, when He shall come down to visit the earth with goodness.* Michael's word over this throne-mountain is the same vision Enoch received at the prior throne-mountain — the Eternal King who comes down to visit the earth."
+        },
+        {
+          "src_ch": 28,
+          "src_v": 11,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 27,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "1 Enoch 27:7 — *And as for this fragrant tree no mortal is permitted to touch it till the great judgement, when His righteousness and His majesty shall be punished for ever in its fruit to the righteous and humble.* The prohibition on the fragrant tree until the great judgement is given in the same words at the parallel throne-mountain vision."
+        },
+        {
+          "src_ch": 28,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Revelation 22:1 — *And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb.* The river of life flows from the very throne whose summit Enoch sees on the high mountain when the Eternal King comes down."
+        },
+        {
+          "src_ch": 28,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* Enoch's tree transplanted to the temple of the Eternal King is the tree of life by the river of the throne in the holy city."
+        }
+      ]
+    }
+  ]
+}

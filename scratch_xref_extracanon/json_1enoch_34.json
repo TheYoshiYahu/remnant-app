@@ -1,0 +1,150 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 34,
+  "session": "session250",
+  "tag": "en34",
+  "base_band": 50825,
+  "threads": [
+    {
+      "slug": "1-enoch-34-wind-out-of-his-treasuries",
+      "title": "The north gates of heaven — the wind out of His treasuries",
+      "summary_md": "Enoch is carried to the ends of the earth and shown the gates from which the winds are loosed: *And from thence I went to the north, to the ends of the earth, and there I saw three portals of the heaven open: through each of them proceed north winds: when they blow there is dew and rain and hoar-frost.* (1 Enoch 34:1). The Tanakh keeps the very same storehouse: the wind, the rain, the frost are not stray weather but provisions Yahuah dispenses from His own treasuries — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* (Psalm 135:7), word for word again in *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* (Jeremiah 10:13). Job names the cold north-quarter Enoch saw first — *Out of the south cometh the whirlwind: and cold out of the north.* (Job 37:9) — and asks whether mortal man has ever entered those stores: *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* (Job 38:22). It ain't new: the gated winds and the stored frost of 1 Enoch 34 are the canon's own doctrine that the Creator orders the weather from sealed treasuries no man controls.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 34,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 135,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The dew, rain, and frost that proceed through Enoch's portals are the wind Yahuah brings out of His own treasuries."
+        },
+        {
+          "src_ch": 34,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* Jeremiah locates the storehouse exactly where Enoch did — at the ends of the earth, the wind brought forth out of His treasures."
+        },
+        {
+          "src_ch": 34,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 37,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Job 37:9 — *Out of the south cometh the whirlwind: and cold out of the north.* Job names the cold north-wind Enoch is shown loosed from the northern portals first."
+        },
+        {
+          "src_ch": 34,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 38,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* Yahuah challenges Job with the very stored frost and hoar-frost that proceed through Enoch's gates."
+        },
+        {
+          "src_ch": 34,
+          "src_v": 1,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 76,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "1 Enoch 76:1 — *And at the ends of the earth I saw twelve portals: out of the east three portals for blessing and prosperity, and three for cursing and destruction.* Enoch's own Luminaries section expands chapter 34's three-per-quarter gates into the full twelve portals of the winds."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-34-four-winds-four-quarters",
+      "title": "The four quarters of the earth and its four winds",
+      "summary_md": "Having walked north, east, south, and west, Enoch sees the whole compass at once: *And I saw the four quarters of the earth, and the winds which divide the earth into four parts.* (1 Enoch 34:6). The fourfold winds are a fixed feature of canon prophecy. Daniel watches them stir the nations: *Daniel spake and said, I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea.* (Daniel 7:2). Revelation sets angels over those same four winds, restrained until the sealing is done: *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* (Revelation 7:1). It ain't new: Enoch's four quarters and dividing winds are the architecture Daniel and John assume — the earth ordered to four corners, the winds held or loosed at the Creator's word.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 34,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 7:2 — *Daniel spake and said, I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea.* Daniel's four winds of heaven are Enoch's winds that divide the earth into four parts, here stirring the sea of the nations."
+        },
+        {
+          "src_ch": 34,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 7,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* John posts angels over Enoch's four quarters, holding back the four winds until the servants of Elohim are sealed."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-34-pillars-stretched-vaults-of-heaven",
+      "title": "The winds that bear the earth — the pillars of heaven",
+      "summary_md": "The chapter closes on the cosmic frame: *And I saw the winds which support the earth and the firmament of the heaven.* (1 Enoch 34:7), and *And I saw how the winds stretch out the vaults of heaven, and have their station between heaven and earth: these are the pillars of the heaven.* (1 Enoch 34:8). The canon speaks the same architecture. Job knows both the hung earth and the trembling pillars: *He stretcheth out the north over the empty place, and hangeth the earth upon nothing.* (Job 26:7), and *The pillars of heaven tremble and are astonished at his reproof.* (Job 26:11). Isaiah sees the heavens stretched as a tent — *It is he that sitteth upon the circle of the earth, and the inhabitants thereof are as grasshoppers; that stretcheth out the heavens as a curtain, and spreadeth them out as a tent to dwell in:* (Isaiah 40:22) — and the Psalm makes the very winds His servants: *Who maketh his angels spirits; his ministers a flaming fire:* (Psalm 104:4). It ain't new: Enoch's pillars and stretched-out vaults are the canon's own picture of a heaven the Creator hangs, spreads, and upholds.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 34,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 26,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Job 26:11 — *The pillars of heaven tremble and are astonished at his reproof.* Job names the same pillars of the heaven Enoch sees the winds raise between heaven and earth."
+        },
+        {
+          "src_ch": 34,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 26,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Job 26:7 — *He stretcheth out the north over the empty place, and hangeth the earth upon nothing.* Job's hung earth matches the winds Enoch sees supporting the earth and the firmament of heaven."
+        },
+        {
+          "src_ch": 34,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 40,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 40:22 — *It is he that sitteth upon the circle of the earth, and the inhabitants thereof are as grasshoppers; that stretcheth out the heavens as a curtain, and spreadeth them out as a tent to dwell in:* Isaiah's stretched-out heavens are the vaults Enoch sees the winds stretch out as the pillars of the heaven."
+        },
+        {
+          "src_ch": 34,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Psalm 104:4 — *Who maketh his angels spirits; his ministers a flaming fire:* The Psalm makes the winds Yahuah's own ministering servants, the same agents Enoch watches support the earth and uphold the firmament."
+        }
+      ]
+    }
+  ]
+}

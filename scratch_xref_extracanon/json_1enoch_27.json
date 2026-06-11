@@ -1,0 +1,170 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 27,
+  "session": "session250",
+  "tag": "en27",
+  "base_band": 50650,
+  "threads": [
+    {
+      "slug": "1-enoch-27-throne-mountain-zion",
+      "title": "The holy mountain whose summit is the throne of Yahuah",
+      "summary_md": "Enoch is led to *a blessed and fertile place... And there was a holy mountain, and under the mountain to the east there was a stream flowing, and to the south another stream* (1 Enoch 27:1-2), and Michael names it: *This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is the throne of Yahuah (God), the Holy Great One, the Eternal King, when He shall come down to visit the earth with goodness* (1 Enoch 27:6). The prophets see the same throne-mountain at the centre of the earth: *Great is Yahuah (LORD), and greatly to be praised in the city of our Elohim (God), in the mountain of his holiness* (Psalm 48:1), the very *mountain of the LORD'S house... established in the top of the mountains... and all nations shall flow unto it* (Isaiah 2:2). From under it the living waters break, *waters issued out from under the threshold of the house eastward... at the south side of the altar* (Ezekiel 47:1) — Enoch's eastward and southward streams are this same sanctuary river, which Zechariah sees split when *his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east* (Zechariah 14:4). This is the Zion-centre of the framework: not a throne the nations reach by their own confession, but the place the Eternal King Himself comes down to, the Creator's order made visible.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 27,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 48,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 48:1 — *Great is Yahuah (LORD), and greatly to be praised in the city of our Elohim (God), in the mountain of his holiness.* The psalmist names the same holy mountain Enoch is shown to be the throne of the Eternal King."
+        },
+        {
+          "src_ch": 27,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 2,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Isaiah 2:2 — *And it shall come to pass in the last days, that the mountain of the LORD'S house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it.* Isaiah's last-days throne-mountain is the high mountain whose summit is the throne of Yahuah that Enoch beholds."
+        },
+        {
+          "src_ch": 27,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 47,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Ezekiel 47:1 — *Afterward he brought me again unto the door of the house; and, behold, waters issued out from under the threshold of the house eastward: for the forefront of the house stood toward the east, and the waters came down from under from the right side of the house, at the south side of the altar.* Ezekiel's eastward and southward sanctuary waters are the very streams Enoch sees flowing east and south from under the holy mountain."
+        },
+        {
+          "src_ch": 27,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 14,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Zechariah 14:4 — *And his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east, and the mount of Olives shall cleave in the midst thereof toward the east and toward the west, and there shall be a very great valley; and half of the mountain shall remove toward the north, and half of it toward the south.* Zechariah's day of the Eternal King descending to the mountain matches the moment He shall come down to visit the earth that Michael describes."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-27-fragrant-tree-of-life",
+      "title": "The fragrant tree no mortal may touch — life for the elect",
+      "summary_md": "On the mountain stands *a tree, the colour of whose fragrance was like the mastic tree* (1 Enoch 27:3), and of it Michael says *as for this fragrant tree no mortal is permitted to touch it till the great judgement... To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King* (1 Enoch 27:7-8). This is the tree of Eden, withheld and then restored: *the tree of life also in the midst of the garden* (Genesis 2:9), guarded after the fall *lest he put forth his hand, and take also of the tree of life, and eat, and live for ever* (Genesis 3:22) — the very fruit no mortal may now touch until judgement. Enoch had already smelt it one chapter on: *amongst them was a tree such as I had never yet smelt... it had a fragrance beyond all fragrance, and its leaves and blooms and wood wither not for ever* (1 Enoch 24:4). Revelation hands it back to the overcomer and transplants it to the holy city: *To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* (Revelation 2:7); *in the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits... and the leaves of the tree were for the healing of the nations* (Revelation 22:2). And who has right to it is no self-selected class but those who keep the way: *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city* (Revelation 22:14) — Torah stands; the elect keep the covenant. Ezekiel sets the same fruit-trees by the sanctuary river, *whose leaf shall not fade, neither shall the fruit thereof be consumed... and the fruit thereof shall be for meat, and the leaf thereof for medicine* (Ezekiel 47:12).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 27,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* Enoch's fragrant tree reserved for life to the elect is Eden's tree of life, the same fruit set in the midst of the garden."
+        },
+        {
+          "src_ch": 27,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever.* This is why no mortal is permitted to touch the tree till the great judgement: access was barred after the fall and is restored only to the righteous."
+        },
+        {
+          "src_ch": 27,
+          "src_v": 3,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 24,
+          "tgt_v": 4,
+          "tier": "extras",
+          "note": "1 Enoch 24:4 — *And amongst them was a tree such as I had never yet smelt, neither was any amongst them nor were others like it: it had a fragrance beyond all fragrance, and its leaves and blooms and wood wither not for ever: and its fruit is beautiful, and its fruit resembles the dates of a palm.* Enoch describes the very fragrant tree one chapter earlier, confirming this is the unfading tree of life."
+        },
+        {
+          "src_ch": 27,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 2,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The fruit Enoch says shall be given to the righteous for food is the tree of life promised to the overcomer."
+        },
+        {
+          "src_ch": 27,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* Right to the tree belongs to those who keep the commandments — Enoch's elect who enter the holy place are the covenant-keepers, not a self-chosen class."
+        },
+        {
+          "src_ch": 27,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 47,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed... and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel's unfading sanctuary trees match the tree transplanted to the temple of the Eternal King, its fruit given for food to the righteous."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-27-righteous-joy-no-sorrow",
+      "title": "The elect enter the holy place — no sorrow, plague, or torment",
+      "summary_md": "When the tree is transplanted to the temple, Enoch sees the end of the righteous: *Then shall they rejoice with joy and be glad, and into the holy place shall they enter; and its fragrance shall be in their bones, and they shall live a long life on earth... and in their days shall no sorrow or plague or torment or calamity touch them* (1 Enoch 27:9). The prophets give the elect the same homecoming: *the ransomed of Yahuah (LORD) shall return, and come to Zion with songs and everlasting joy upon their heads: they shall obtain joy and gladness, and sorrow and sighing shall flee away* (Isaiah 35:10), for *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces* (Isaiah 25:8). It is the servants, the covenant people, who eat in that day: *Behold, my servants shall eat, but ye shall be hungry... behold, my servants shall rejoice, but ye shall be ashamed* (Isaiah 65:13) — election divides those who enter from those who are shut out. Revelation seals the same scene of the holy place where no calamity touches them: *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4).",
+      "anchor_start_v": 9,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 27,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 35,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Isaiah 35:10 — *And the ransomed of Yahuah (LORD) shall return, and come to Zion with songs and everlasting joy upon their heads: they shall obtain joy and gladness, and sorrow and sighing shall flee away.* Enoch's righteous who rejoice and enter the holy place with no sorrow are Isaiah's ransomed coming to Zion with everlasting joy."
+        },
+        {
+          "src_ch": 27,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 65,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Isaiah 65:13 — *Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, my servants shall eat, but ye shall be hungry: behold, my servants shall drink, but ye shall be thirsty: behold, my servants shall rejoice, but ye shall be ashamed.* The fruit given to the elect for food marks out Yahuah's servants who eat and rejoice, dividing them from those shut out."
+        },
+        {
+          "src_ch": 27,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Revelation 21:4 — *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.* Revelation's holy city where no sorrow remains is the same holy place Enoch's elect enter, where no sorrow, plague, or torment touches them."
+        }
+      ]
+    }
+  ]
+}
