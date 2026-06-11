@@ -1,0 +1,150 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 75,
+  "session": "session250",
+  "tag": "en75",
+  "base_band": 51850,
+  "threads": [
+    {
+      "slug": "1-enoch-75-leaders-over-the-seasons",
+      "title": "The leaders set over the seasons — the moedim written into creation",
+      "summary_md": "Enoch sees an ordered hierarchy of luminary-captains set over every division of time: *And the leaders of the heads of the thousands, who are placed over the whole creation and over all the stars, also have their special stations, and they serve Yahuah (God) of Spirits in their appointed places.* (1 Enoch 75:1), down through *the four parts of the year* (75:2), *the seven days* (75:3), *the months* (75:4), *the years* (75:5), and *the seasons* (75:6). This is not invention but the Creator's own order: from the fourth day the lights were appointed to mark out the times — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14) — so the appointed feasts (Leviticus 23) are fixed by the luminaries, not declared by men. The Psalmist names the same governance, *He appointed the moon for seasons: the sun knoweth his going down.* (Psalms 104:19), and earthly Israel mirrored the heavenly ranks in the priestly *courses, which came in and went out month by month throughout all the months of the year* (1 Chronicles 27:1). The stars themselves are summoned to bless the One who set them: *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* (Psalms 148:6). The appointed times are the Creator's covenant order — it ain't new.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 75,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The luminary-captains over creation and the stars in Enoch 75:1 simply administer the order Elohim spoke on the fourth day, the lights set for signs and the appointed seasons."
+        },
+        {
+          "src_ch": 75,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Psalms 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The leaders set over the seasons in Enoch 75:6 keep the very appointment the Psalmist celebrates — the moon for the moedim, the sun for its setting."
+        },
+        {
+          "src_ch": 75,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "1-chronicles",
+          "tgt_ch": 27,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "1 Chronicles 27:1 — *Now the children of Yashar'el (Israel) after their number, to wit, the chief fathers and captains of thousands and hundreds, and their officers that served the king in any matter of the courses, which came in and went out month by month throughout all the months of the year, of every course were twenty and four thousand.* The captains of thousands serving by months in Enoch 75:4 are mirrored on earth by Israel's monthly courses of captains of thousands — the heavenly ranks ordering time as the priestly ranks order service."
+        },
+        {
+          "src_ch": 75,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 148,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalms 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The stars over which Enoch's leaders are placed (75:1) stand by an unbreakable decree, the same fixed order that summons sun, moon and stars to praise their Maker."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-75-the-four-intercalary-days",
+      "title": "The four intercalary days that complete the 364-day year",
+      "summary_md": "Here is the heart of the Enoch reckoning, the whole solar order men so often neglect: *And the leaders of the heads of the thousands who are over the four parts of the year, and over the four intercalary days, serve Yahuah (God) of Spirits in their appointed places.* (1 Enoch 75:2), named as *Melkî'êl... Hel'emmelêk... Nêlê'êl... and Nârêl* (75:11), *And the days of the year are three hundred and sixty-four, and these four intercalary days are added to complete the year.* (75:12), *And because of these four days the seasons are changed, and the year is completed in righteousness.* (75:13). Jubilees gives the very same command and the very same warning that men would drop these days: *And command you the children of Yashar'el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts. But if they do neglect and do not observe them according to His commandment, then they will disturb all their seasons, and the years will be dislodged from this (order), and they will disturb the seasons and the years will be dislodged and they will neglect their ordinances.* (Jubilees 6:32) — the reckoning is set down *lest they forget the feasts of the covenant and walk according to the feasts of the nations* (Jubilees 6:35). The 364-day solar year of whole days, completed by these four added days, is the Creator's calendar; to omit them is to dislodge the feasts. It ain't new — Genesis appointed the lights *for seasons, and for days, and years* (Genesis 1:14), the moedim of Leviticus 23 hang upon this order.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 75,
+          "src_v": 12,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 6,
+          "tgt_v": 32,
+          "tier": "extras",
+          "note": "Jubilees 6:32 — *And command you the children of Yashar'el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts. But if they do neglect and do not observe them according to His commandment, then they will disturb all their seasons, and the years will be dislodged from this (order), and they will disturb the seasons and the years will be dislodged and they will neglect their ordinances.* The three-hundred-and-sixty-four-day year Enoch completes with four intercalary days (75:12) is the exact reckoning Jubilees commands Israel to keep, lest the feasts be dislodged."
+        },
+        {
+          "src_ch": 75,
+          "src_v": 13,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 6,
+          "tgt_v": 35,
+          "tier": "extras",
+          "note": "Jubilees 6:35 — *For I know and from henceforth shall I declare it to you, and it is not of my own devising; for the book (lies) written before me, and on the heavenly tables the division of days is ordained, lest they forget the feasts of the covenant and walk according to the feasts of the nations after their error and after their ignorance.* The year *completed in righteousness* by the four days (Enoch 75:13) is the same division of days written on the heavenly tables, given so the feasts of the covenant are not forgotten for the feasts of the nations."
+        },
+        {
+          "src_ch": 75,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The full count of three hundred and sixty-four days (Enoch 75:12) is the reckoning of the very *days, and years* the lights were appointed to mark — the calendar is the Creator's order, not man's device."
+        },
+        {
+          "src_ch": 75,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 23,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* The seasons completed in righteousness by the four added days (Enoch 75:13) are the very *seasons* in which the feasts of Yahuah are to be proclaimed — keep the reckoning and the moedim fall in their appointed places."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-75-luminaries-keep-their-courses",
+      "title": "The sun, moon and stars transgress not — covenant order in the heavens",
+      "summary_md": "The chapter closes on the obedience of the lights: *And the sun and the moon and the stars serve Yahuah (God) of Spirits in their appointed places, And they do not transgress their commandments, And they complete their courses according to the law.* (1 Enoch 75:15). This is the same testimony Enoch opens with — *Observe ye everything that takes place in the heaven, how they do not change their orbits, and the luminaries which are in the heaven, how they all rise and set in order each in its season, and transgress not against their appointed order.* (1 Enoch 2:1) — and it is the covenant the prophets appeal to as the surest thing in creation: *Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth;* (Jeremiah 33:25), an ordinance so fixed it cannot be broken, *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* (Psalms 148:6). The lights keeping the law is the standing rebuke to men who would change the times: where the luminaries never transgress their commandments, the order they trace out is the Creator's covenant, never law-as-curse. It ain't new — the heavens keep the reckoning faithfully, and men are called to do the same.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 75,
+          "src_v": 15,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 2,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "1 Enoch 2:1 — *Observe ye everything that takes place in the heaven, how they do not change their orbits, and the luminaries which are in the heaven, how they all rise and set in order each in its season, and transgress not against their appointed order.* The sun, moon and stars completing their courses according to the law (75:15) echo Enoch's opening call to behold the luminaries that never transgress their appointed order."
+        },
+        {
+          "src_ch": 75,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 33,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Jeremiah 33:25 — *Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth;* The luminaries that *do not transgress their commandments* (Enoch 75:15) are the very ordinances of heaven Yahuah names as His unbreakable covenant, surety of His promise to His people."
+        },
+        {
+          "src_ch": 75,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 148,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalms 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The lights completing their courses according to the law (Enoch 75:15) stand by the decree that shall not pass, the fixed order of sun, moon and stars established for ever."
+        }
+      ]
+    }
+  ]
+}

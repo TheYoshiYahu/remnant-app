@@ -149,3 +149,19 @@ Then Jubilees (session251 @53000), Jasher (session252 @55000), Apocrypha (@58000
   Leviathan & Behemoth→Job 40-41/Isa 27:1/2Esd 6 (60); measuring cords→Zech 2/Rev 11 (61); kings see
   the Son of Adam too late, righteous eat with him→Isa 53/Rev 1:7/6:15-17/19:9, Dan 7:13 kaph kept (62).
 - Push still keychain-blocked. origin/main 47a9e48; local HEAD `b6c55aa` (8 commits ahead). Prod authoritative.
+
+## RECEIPT — Pack 8 (1 Enoch ch63–71) ✅ LIVE — BOOK OF PARABLES (ch37-71) COMPLETE
+- Applied 2026-06-11. EXACT: cumulative **284 threads / 1072 members**, band 50000–51762, 0 orphans.
+  per-ch(63-71) 4/3/5/3/4/3/5/4/5. +36/142. Commit `340c8c7`. Five gates green (fidelity 1072/1072,
+  FULL-LIBRARY PASS, resolve 0 unresolved).
+- Kings too late (63→Prov1:28/Luke13:25/Wis5); Watchers judged (64,68→Jude6/2Pet2:4); Noah/Flood
+  (65-67→Gen6-8/2Pet2:5/1Pet3:20); hidden oath/creative Word + Son-of-Adam's name (69→Ps33:6/Job38:8/
+  Prov8:27/John1:3/Heb1:3/Phil2:9); Enoch's translation (70→Gen5:24/Heb11:5/2Kgs2); ascent to Head of
+  Days (71→Dan7:9/Isa6/Ezek1).
+- ⚑ ch71 CRUX handled by ABSENCE: this edition OMITS the "thou art the Son of Adam" address (Charles
+  71:14-17). Minion framed Enoch strictly as the translated righteous seer ("carried up to behold the
+  Son of Adam; he is not made into Him"), Son of Adam = the Formed Messiah; kaph kept. If 71:14+ is
+  spliced in later, it needs a dedicated guarded thread.
+- NOTE: concurrent Tanakh fan-out (S301) uses band 20000-49999 / sessions 301+ → NO collision with
+  extra-canon (50000+/session250). Keychain push blocked session-wide (Tanakh worktree too).
+- Push blocked. origin/main 47a9e48; local HEAD `340c8c7` (9 commits ahead). Prod authoritative.

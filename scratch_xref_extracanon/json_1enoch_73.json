@@ -1,0 +1,120 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 73,
+  "session": "session250",
+  "tag": "en73",
+  "base_band": 51800,
+  "threads": [
+    {
+      "slug": "1-enoch-73-lesser-light-for-seasons",
+      "title": "The Moon — the lesser light, set for the appointed times",
+      "summary_md": "Enoch turns from the sun to *the smaller luminary, which is named the Moon* (1 Enoch 73:1), and from the first day of creation this is exactly the office the moon is given: *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* (Genesis 1:16) — the very word *smaller* / *lesser* binds Enoch's second luminary to the fourth day. And the lights were not hung for ornament but for reckoning: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14) — the seasons here are the moedim, the appointed times, written into creation by the lights and not invented by men. The Psalmist says the same of this lesser light: *He appointed the moon for seasons: the sun knoweth his going down.* (Psalm 104:19). It ain't new: when Enoch measures the moon's courses he is reading the Creator's own calendar, the order set on the fourth day.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 73,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* Enoch's \"smaller luminary, which is named the Moon\" is the fourth-day lesser light set to rule the night."
+        },
+        {
+          "src_ch": 73,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The moon Enoch charts is one of the lights ordained for signs and seasons — the moedim are written into creation by the luminaries."
+        },
+        {
+          "src_ch": 73,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* As the moon's light \"waxes and wanes according to the number of days,\" she keeps the seasons she was appointed to mark."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-73-moon-faithful-witness",
+      "title": "Her light waxing and waning — the moon, a faithful witness",
+      "summary_md": "Enoch describes the moon's monthly cycle: *And her form is like a horn when she is new, and when she is fourteen days old her light is full* (1 Enoch 73:3), *and her light waxes and wanes according to the number of days* (1 Enoch 73:4). That very regularity — the horn-thin new moon swelling to fullness and back, month after month without fail — is what makes her in Scripture a guarantor of covenant faithfulness: *It shall be established for ever as the moon, and as a faithful witness in heaven. Selah.* (Psalm 89:37). The moon's unbroken reckoning is the visible pledge that Yahuah's word stands; the apocryphal sage reads the same waxing horn as the appointed sign of the feasts: *He made the moon also to serve in her season for a declaration of times, and a sign of the world.* (Ecclesiasticus 43:6). The order is the Creator's covenant — to keep the reckoning is to keep faith with the One who set the witness in the sky.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 73,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 89,
+          "tgt_v": 37,
+          "tier": "free",
+          "note": "Psalm 89:37 — *It shall be established for ever as the moon, and as a faithful witness in heaven. Selah.* The moon Enoch watches wax from a horn to full is the heaven's faithful witness — her steady cycle pledges the steadiness of the covenant."
+        },
+        {
+          "src_ch": 73,
+          "src_v": 4,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 43,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "Ecclesiasticus 43:6 — *He made the moon also to serve in her season for a declaration of times, and a sign of the world.* The waxing and waning Enoch numbers is the moon serving \"in her season\" as the declared sign of the times."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-73-borrowed-light-solar-order",
+      "title": "Her light borrowed from the sun — the 364-day reckoning",
+      "summary_md": "Enoch shows the moon's light is not her own but received: *And she sets with the sun, and when the sun rises the moon rises with him and receives the half of one part of light* (1 Enoch 73:7) — her brightness is borrowed, measured out in sevenths and fourteenths against the sun's. The Astronomical Book makes the solar year of whole days primary, and the apocryphal sage names exactly the moon's office in that order: *From the moon is the sign of feasts, a light that decreaseth in her perfection.* (Ecclesiasticus 43:7) — a light that *decreaseth*, dependent, marking the feasts but not ruling the count. Jubilees presses the warning that flows from this: where men reckon by the lunar count alone the times slip — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* (Jubilees 6:36) — and so the charge is to hold the solar reckoning: *And command you the children of Yashar'el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days... and they will not leave out any day nor disturb any feasts.* (Jubilees 6:32). It ain't new: Enoch's lunar tables, the sun lending her light, are the same Creator's order Jubilees guards — keep the reckoning, keep the feasts.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 73,
+          "src_v": 7,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 43,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "Ecclesiasticus 43:7 — *From the moon is the sign of feasts, a light that decreaseth in her perfection.* Enoch's moon, receiving \"the half of one part of light\" from the sun, is just such a decreasing, dependent light — the sign of the feasts, not the master of the count."
+        },
+        {
+          "src_ch": 73,
+          "src_v": 7,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 6,
+          "tgt_v": 36,
+          "tier": "extras",
+          "note": "Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* Enoch's careful charting of the moon's lag behind the sun is why Jubilees warns that reckoning by the moon alone disturbs the seasons."
+        },
+        {
+          "src_ch": 73,
+          "src_v": 5,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 6,
+          "tgt_v": 32,
+          "tier": "extras",
+          "note": "Jubilees 6:32 — *And command you the children of Yashar'el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts.* The moon's fractional light Enoch measures is held inside the 364-day solar reckoning Jubilees commands Israel to keep."
+        }
+      ]
+    }
+  ]
+}
