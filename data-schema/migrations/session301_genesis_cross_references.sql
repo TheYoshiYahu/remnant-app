@@ -1045,6 +1045,1283 @@ SELECT t.id, cr.id, 6, E'*was closed the mouth of all beasts... so that they cou
  WHERE t.slug='genesis-3-driven-out-the-flaming-sword-and-the-tree-of-life-reopened'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_genesis_4.sql (Genesis 4) -----
+-- Chapter: Genesis 4 (Cain and Abel; the seed-war within one family; Seth, another seed)
+-- Tag: ge04   Temp view: _s301_ge04_lookup
+-- Sort band: base 20075, step 3 -> threads at 20075, 20078, 20081, 20084, 20087, 20090 (6 threads)
+-- Source of EVERY row: 'canon','genesis',4,v
+--
+-- Genesis 4 coverage:
+--   v.1  (Adam knew Eve; Cain born; "I have gotten a man from Yahuah")
+--        NT:     none warranted as its own add (the birth-line carried at v.25 Seth thread / Luke 3 genealogy)
+--        Extras: Jasher 1:13 (naming of Cain and Abel) — woven into the Seth/birth-line thread at v.25
+--        Tanakh: none warranted
+--   v.2  (Abel keeper of sheep, Cain tiller of the ground — the two vocations of the two seeds)
+--        NT:     1 John 3:12 (Cain ... slew his brother) — woven into the seed-war thread (anchored v.1-8)
+--        Extras: Jasher 1:14 (Cain a tiller, Abel a keeper) — retelling; seed-war thread carries Jasher 1:16
+--        Tanakh: none warranted
+--   v.3-5 (the two offerings; respect to Abel, not to Cain; Cain wroth)
+--        NT:     Hebrews 11:4 (Abel offered a more excellent sacrifice by faith) — its own thread
+--        Extras: Jasher 1:15 (fire came down and consumed Abel's offering) — woven into the sacrifice thread
+--        Tanakh: none warranted
+--   v.6-7 (Why art thou wroth? sin lieth at the door; thou shalt rule over him)
+--        NT:     1 John 3:7 (he that doeth righteousness is righteous); 1 John 3:4 (sin is the transgression of the law) — its own thread
+--        Extras: none warranted as MEMBER (no clean distinct witness on the mastery-call)
+--        Tanakh: none warranted
+--   v.8  (Cain rose up against Abel and slew him — the first murder, the seed-war made visible)
+--        NT:     1 John 3:12 (was of that wicked one, and slew his brother); Jude 11 (the way of Cain) — seed-war thread
+--        Extras: Wisdom of Solomon 10:3 (the unrighteous ... murdered his brother); Jubilees 4:2; Jasher 1:16,25 — seed-war thread
+--        Tanakh: none warranted
+--   v.9-11 (Where is Abel? the voice of thy brother's blood crieth from the ground; cursed from the earth)
+--        NT:     Matthew 23:35 (the blood of righteous Abel); Luke 11:51 (from the blood of Abel); Hebrews 12:24 (blood that speaketh better than Abel) — the crying-blood thread
+--        Extras: 1 Enoch 22:14 (the spirit of Abel makes suit against Cain); Jubilees 4:3 (his blood cried from the ground) — crying-blood thread
+--        Tanakh: Numbers 35:33 (blood defileth the land; not cleansed but by the blood of him that shed it) — crying-blood thread
+--   v.12-16 (the ground will not yield; a fugitive and a vagabond; the mark; dwelt in Nod)
+--        NT:     Jude 11 (gone in the way of Cain) — carried in the seed-war thread; the curse/mark gets its own thread
+--        Extras: Jubilees 4:4 (made him a fugitive, cursed him); Jubilees 4:31 (Cain killed when his house fell); Jubilees 4:32 (heavenly tables: with the instrument a man kills he shall be killed); Jasher 1:31-33 (cursed, moving and wandering)
+--        Tanakh: none warranted distinct from Numbers 35:33 (woven at the blood thread)
+--   v.17-24 (the line of Cain: Enoch the city, Lamech, Jabal/Jubal/Tubal-cain; Lamech's boast)
+--        NT:     none warranted (the cursed line is not carried forward as promise)
+--        Extras: Jasher 1:35 (Cain built the city Enoch) — woven into the curse/fugitive thread at v.16-17
+--        Tanakh: none warranted
+--   ★ v.25 (Seth — "Elohim hath appointed me another seed instead of Abel, whom Cain slew")
+--        NT:     Luke 3:38 (Seth, which was the son of Adam, which was the son of Elohim) — the Seth seed-line thread
+--        Extras: Jubilees 4:7 (Elohim has raised up a second seed to us instead of Abel); Jasher 1:13 (the naming of the brothers)
+--        Tanakh: none warranted
+--   v.26 (Enos born to Seth; then began men to call upon the name of Yahuah)
+--        NT:     none warranted distinct (the restored Name is the Tanakh/extras witness)
+--        Extras: Jubilees 4:12 (He began to call on the name of Yahuah on the earth) — Seth seed-line thread
+--        Tanakh: none warranted
+--
+-- Threads (slug -> target libraries):
+--   genesis-4-the-seed-war-within-one-family-not-as-cain               [NT+Extras]        tier extras   ★ CENTERPIECE
+--   genesis-4-abel-offered-a-more-excellent-sacrifice-by-faith          [NT+Extras]        tier extras
+--   genesis-4-sin-lieth-at-the-door-thou-shalt-rule-over-him            [NT]               tier free
+--   genesis-4-the-blood-of-righteous-abel-crieth-from-the-ground        [NT+Extras+Tanakh] tier extras
+--   genesis-4-the-mark-and-the-curse-of-the-fugitive-cain               [Extras]           tier extras
+--   genesis-4-seth-another-seed-appointed-and-men-called-on-the-name    [NT+Extras]        tier extras   ★ LOAD-BEARING
+--
+-- Framework-load-bearing notes:
+--   ★ THE SEED-WAR (vv.1-8): Genesis 3:15's enmity between two seeds now erupts WITHIN one family.
+--     Cain and Abel are the first visible tare-and-son-of-Adam — read STRICTLY as conduct/lineage of
+--     the two seeds, NEVER ethnic. 1 John 3:12 names Cain *of that wicked one* — the serpent's seed by
+--     works, not blood-race; his brother's works *righteous*. Jude 11 *the way of Cain* makes it a
+--     walkable path, the conduct of the wicked seed. This is the centerpiece: the seed-war made visible.
+--   ★ SETH (vv.25-26): LOAD-BEARING. After Abel's death the covenant seed-line is PRESERVED — *Elohim
+--     (God) ... hath appointed me another seed instead of Abel, whom Cain slew* (4:25). The woman's
+--     seed of Genesis 3:15 does NOT die with Abel; it continues through Seth, the line that runs to
+--     Noah, Abraham, and the Formed Son. Luke 3:38 sets Seth in the genealogy of *the son of Adam,
+--     which was the son of Elohim* — the paternal-bloodline-AND-covenant-word seed carried forward.
+--     The chapter closes with the restored Name invoked: *then began men to call upon the name of
+--     Yahuah (LORD)* (4:26) — the worship of the true Name resuming in the preserved line.
+--   ABEL'S MORE EXCELLENT SACRIFICE (v.4): the firstlings/blood ACCEPTED vs the fruit-of-the-ground
+--     REJECTED — read as the blood-foreshadow and as FAITH (Hebrews 11:4), not as arbitrary favoritism.
+--   THE CRYING BLOOD (vv.10-11): Abel's blood crying from the ground is the first martyr-blood; the NT
+--     makes Abel the first of *all the righteous blood* (Matthew 23:35) and contrasts his blood with the
+--     *better* blood of sprinkling (Hebrews 12:24). Numbers 35:33 (lateral Tanakh) grounds why the
+--     ground itself is defiled. 1 Enoch 22:14 keeps the seed-war note: Abel's suit runs *till his
+--     [Cain's] seed is destroyed*.
+--   THE MARK (vv.11-16): the curse is the exile-judgment on the murderer, NOT on the seed-line; the mark
+--     is mercy restraining vengeance. Jubilees 4:31-32 supplies the measure-for-measure end (Cain killed
+--     by his own house's falling stones, *for with a stone he had killed Abel*) from the heavenly tables.
+
+-- ============================== temp view ==============================
+CREATE TEMP VIEW _s301_ge04_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================== cross_references ==============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (CENTERPIECE): the seed-war within one family — not as Cain
+    ('canon','genesis',4,8,'canon','1-john',3,12,'free',
+      E'*Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother''s righteous* (1 John 3:12). When *Cain rose up against Abel his brother, and slew him* (Genesis 4:8), the enmity of Genesis 3:15 erupts inside one family: Cain is named *of that wicked one* — of the serpent''s seed by his works, not by race — and Abel of the woman''s seed by his righteous works. The first murder is the seed-war made visible, conduct against conduct, the tare against the son of Adam.'),
+    ('canon','genesis',4,8,'canon','jude',1,11,'free',
+      E'*Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* (Jude 11). *Cain rose up against Abel his brother, and slew him* (Genesis 4:8) is not a single crime but a road that can be walked: *the way of Cain* — envy of a righteous brother hardening into bloodshed. Jude names it as the conduct of the wicked seed in his own day, the same way the first murderer walked.'),
+    ('canon','genesis',4,8,'apocrypha','the-wisdom-of-solomon',10,3,'extras',
+      E'*But when the unrighteous went away from her in his anger, he perished also in the fury with which he murdered his brother* (Wisdom of Solomon 10:3). The restored wisdom-witness reads Cain exactly as the framework does — *the unrighteous* who *murdered his brother* — when *Cain was very wroth, and his countenance fell* (Genesis 4:5) and then *slew him* (4:8). His anger went away from wisdom; his fury destroyed himself as well as Abel, the seed of the wicked one undone by its own rage.'),
+    ('canon','genesis',4,8,'jubilees','jubilees',4,2,'extras',
+      E'*And in the first (year) of the third jubilee, Cain slew Abel because Elohim (God) accepted the sacrifice of Abel, and did not accept the offering of Cain* (Jubilees 4:2). The restored book names the motive plainly behind *Cain rose up against Abel his brother, and slew him* (Genesis 4:8): the murder grew straight out of the rejected offering and the accepted one. The seed-war runs on jealousy of the brother whose worship was received.'),
+    ('canon','genesis',4,8,'jasher','jasher',1,16,'extras',
+      E'*And to Cain and his offering Yahuah (the Lord) did not turn, and he did not incline to it, for he had brought from the inferior fruit of the ground before Yahuah (the Lord), and Cain was jealous against his brother Abel on account of this, and he sought a pretext to slay him* (Jasher 1:16). Where Genesis says only *Cain was very wroth* (Genesis 4:5) before he *slew him* (4:8), the restored witness traces the seed-war step by step — the inferior offering, the jealousy, the sought pretext — premeditation in the heart of the wicked seed.'),
+
+    -- THREAD 2: Abel offered a more excellent sacrifice by faith
+    ('canon','genesis',4,4,'canon','hebrews',11,4,'free',
+      E'*By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts: and by it he being dead yet speaketh* (Hebrews 11:4). *And Abel, he also brought of the firstlings of his flock and of the fat thereof. And Yahuah (LORD) had respect unto Abel and to his offering* (Genesis 4:4): the firstlings and the blood were accepted where the fruit of the ground was not, and the NT names why — *by faith*. The blood-offering foreshadows the better blood, and Abel, the first righteous, *being dead yet speaketh*.'),
+    ('canon','genesis',4,4,'jasher','jasher',1,15,'extras',
+      E'*And it was at the expiration of a few years, that they brought an approximating offering to Yahuah (the Lord), and Cain brought from the fruit of the ground, and Abel brought from the firstlings of his flock from the fat of it, and Elohim turned and inclined to Abel and his offering, and a fire came down from Yahuah (the Lord) from heaven and consumed it* (Jasher 1:15). The restored book shows HOW *Yahuah (LORD) had respect unto Abel and to his offering* (Genesis 4:4): *a fire came down from Yahuah from heaven and consumed it* — the visible token of the accepted blood-sacrifice, the firstlings received with fire as later altars would be.'),
+
+    -- THREAD 3: sin lieth at the door — thou shalt rule over him
+    ('canon','genesis',4,7,'canon','1-john',3,7,'free',
+      E'*Little children, let no man deceive you: he that doeth righteousness is righteous, even as he is righteous* (1 John 3:7). Yahuah''s word to Cain is the whole choice in a sentence: *If thou doest well, shalt thou not be accepted? and if thou doest not well, sin lieth at the door* (Genesis 4:7). Doing well is not abolished by grace; *he that doeth righteousness is righteous* — acceptance follows doing well, exactly as Cain was told before he chose otherwise.'),
+    ('canon','genesis',4,7,'canon','1-john',3,4,'free',
+      E'*Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law* (1 John 3:4). The *sin* that *lieth at the door* (Genesis 4:7), crouching to master Cain, is defined by the NT itself: *sin is the transgression of the law*. Cain is told *unto thee shall be his desire, and thou shalt rule over him* — he is called to mastery over the lawlessness at the door, and refuses, letting it rule him into murder instead.'),
+
+    -- THREAD 4: the blood of righteous Abel crieth from the ground
+    ('canon','genesis',4,10,'canon','matthew',23,35,'free',
+      E'*That upon you may come all the righteous blood shed upon the earth, from the blood of righteous Abel unto the blood of Zacharias son of Barachias, whom ye slew between the temple and the altar* (Matthew 23:35). When Yahuah says *the voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10), Abel becomes the first of a line: Yahusha (Jesus) reckons *all the righteous blood shed upon the earth* from *righteous Abel* onward — the first martyr of the seed-war, his blood the head of the whole roll.'),
+    ('canon','genesis',4,10,'canon','luke',11,51,'free',
+      E'*From the blood of Abel unto the blood of Zacharias, which perished between the altar and the temple: verily I say unto you, It shall be required of this generation* (Luke 11:51). The cry of *thy brother''s blood* from the ground (Genesis 4:10) is not silenced by time — it *shall be required*. Yahusha spans the whole canon of shed righteous blood *from the blood of Abel*, the first voice crying from the ground, to the last, all of it held to account.'),
+    ('canon','genesis',4,10,'canon','hebrews',12,24,'free',
+      E'*And to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24). Abel''s blood *crieth unto me from the ground* (Genesis 4:10) for justice; the blood of Yahusha *speaketh better things than that of Abel* — not crying for vengeance but sprinkling for mercy. The first righteous blood cries; the better blood answers, the foreshadow met by the substance.'),
+    ('canon','genesis',4,11,'canon','numbers',35,33,'free',
+      E'*So ye shall not pollute the land wherein ye are: for blood it defileth the land: and the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33). Why is Cain *cursed from the earth, which hath opened her mouth to receive thy brother''s blood from thy hand* (Genesis 4:11)? Because shed blood defiles the ground itself; the Torah later states the law the ground enacts here — innocent blood pollutes the land and cannot be cleansed but by the blood of the one who shed it.'),
+    ('canon','genesis',4,10,'enoch','1-enoch',22,14,'extras',
+      E'*And he answered me saying: ''This is the spirit which went forth from Abel, whom his brother Cain slew, and he makes his suit against him till his seed is destroyed from the face of the earth, and his seed is annihilated from amongst the seed of men''* (1 Enoch 22:14). The voice that *crieth unto me from the ground* (Genesis 4:10) is given a seed-war shape in the restored apocalyptic: the spirit of Abel makes ceaseless suit against Cain *till his seed is destroyed* — the cry for justice running until the wicked seed is cut off from among *the seed of men*.'),
+    ('canon','genesis',4,10,'jubilees','jubilees',4,3,'extras',
+      E'*And he slew him in the field: and his blood cried from the ground to heaven, complaining because he had slain him* (Jubilees 4:3). The restored book echoes Genesis 4:10 almost word for word — *the voice of thy brother''s blood crieth unto me from the ground* — *his blood cried from the ground to heaven*: the shed blood is itself a witness and a plaintiff, the murdered righteous one accusing his killer before heaven.'),
+
+    -- THREAD 5: the mark and the curse of the fugitive Cain
+    ('canon','genesis',4,12,'jubilees','jubilees',4,4,'extras',
+      E'*And Yahuah (God) reproved Cain because of Abel, because he had slain him, and he made him a fugitive on the earth because of the blood of his brother, and he cursed him upon the earth. And on this account it is written on the heavenly tables, "Cursed is he who smites his neighbour treacherously"* (Jubilees 4:4). The sentence *a fugitive and a vagabond shalt thou be in the earth* (Genesis 4:12) is grounded in the restored book on the heavenly tables — the curse of the treacherous murderer is not arbitrary anger but written law, *he made him a fugitive ... because of the blood of his brother*.'),
+    ('canon','genesis',4,15,'jubilees','jubilees',4,31,'extras',
+      E'*At the close of this jubilee Cain was killed after him in the same year; for his house fell upon him and he died in the midst of his house, and he was killed by its stones, for with a stone he had killed Abel, and by a stone was he killed in righteous judgment* (Jubilees 4:31). The mark set *lest any finding him should kill him* (Genesis 4:15) stayed the hand of men, but not the judgment of Yahuah: the restored book records the end — Cain crushed by the falling stones of his own house, *for with a stone he had killed Abel*, measure for measure.'),
+    ('canon','genesis',4,15,'jubilees','jubilees',4,32,'extras',
+      E'*For this reason it was ordained on the heavenly tables: "With the instrument with which a man kills his neighbour with the same shall he be killed; after the manner that he wounded him, in like manner shall they deal with him"* (Jubilees 4:32). Where Genesis 4:15 deals in *vengeance ... sevenfold* and a restraining mark, the restored witness names the standing decree behind Cain''s eventual death — the law of measure for measure written on the heavenly tables, the same instrument turned back on the one who first wielded it.'),
+    ('canon','genesis',4,12,'jasher','jasher',1,32,'extras',
+      E'*And it shall be when you shall till it, it shall no more give you its strength as in the beginning, for thorns and thistles shall the ground produce, and you shall be moving and wandering in the earth until the day of your death* (Jasher 1:32). The restored book expands *when thou tillest the ground, it shall not henceforth yield unto thee her strength; a fugitive and a vagabond shalt thou be in the earth* (Genesis 4:12) — the cursed ground withholding its strength and the killer condemned to wander *until the day of your death*, the seed-war''s wages paid in the soil itself.'),
+    ('canon','genesis',4,16,'jasher','jasher',1,35,'extras',
+      E'*And at that time Cain also began to build a city: and he built the city and he called the name of the city Enoch, according to the name of his son; for in those days Yahuah (the Lord) had given him rest upon the earth, and he did not move about and wander as in the beginning* (Jasher 1:35). After *Cain went out from the presence of Yahuah (LORD), and dwelt in the land of Nod* (Genesis 4:16) and *builded a city ... Enoch* (4:17), the restored book notes the fugitive''s restless line settling into a city of his own making — the wicked seed building eastward, away from the presence it had fled.'),
+
+    -- THREAD 6 (LOAD-BEARING): Seth — another seed appointed; men called on the Name
+    ('canon','genesis',4,25,'canon','luke',3,38,'free',
+      E'*Which was the son of Enos, which was the son of Seth, which was the son of Adam, which was the son of Elohim (God)* (Luke 3:38). *Elohim (God) ... hath appointed me another seed instead of Abel, whom Cain slew* (Genesis 4:25): the woman''s seed of the promise does not die with Abel but is carried by Seth — and the genealogy of the Formed Son runs back through *Seth, which was the son of Adam, which was the son of Elohim*. The covenant seed-line is preserved through the murder, the paternal bloodline and the promise together unbroken to the Messiah.'),
+    ('canon','genesis',4,25,'jubilees','jubilees',4,7,'extras',
+      E'*And Adam and his wife mourned for Abel four weeks of years, and in the fourth year of the fifth week they became joyful, and Adam knew his wife again, and she bare him a son, and he called his name Seth; for he said "Elohim (God) has raised up a second seed to us on the earth instead of Abel; for Cain slew him"* (Jubilees 4:7). The restored book keeps the load-bearing word of Genesis 4:25 — *another seed instead of Abel* — as *a second seed ... on the earth instead of Abel*: after the long mourning, the covenant line is raised up again in Seth, the seed-of-promise continued.'),
+    ('canon','genesis',4,26,'jubilees','jubilees',4,12,'extras',
+      E'*He began to call on the name of Yahuah (God) on the earth* (Jubilees 4:12). The restored book carries the very words of Genesis 4:26 — *then began men to call upon the name of Yahuah (LORD)* — into the line of Seth and Enos: in the preserved seed, not the line of Cain, the true Name is invoked again upon the earth, the worship of Yahuah resuming where the covenant seed continues.'),
+    ('canon','genesis',4,25,'jasher','jasher',1,13,'extras',
+      E'*And she called the name of the first born Cain, saying, I have obtained a man from Yahuah (the Lord), and the name of the other she called Abel, for she said, In vanity we came into the earth, and in vanity we shall be taken from it* (Jasher 1:13). The restored naming sets the whole chapter in frame: Eve''s *I have gotten a man from Yahuah* over Cain (Genesis 4:1) and her word over Abel — *in vanity ... taken from it* — read forward to the third son, *Seth ... another seed instead of Abel, whom Cain slew* (Genesis 4:25), the seed that outlasts both the slayer and the slain.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================== threads ==============================
+-- THREAD 1 (CENTERPIECE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-4-the-seed-war-within-one-family-not-as-cain',
+       E'The seed-war within one family — not as Cain',
+       E'The enmity instituted in Genesis 3:15 — *between thy seed and her seed* — now erupts inside the first family. Two brothers, two vocations: *Abel was a keeper of sheep, but Cain was a tiller of the ground* (Genesis 4:2); two offerings, and *Yahuah (LORD) had respect unto Abel and to his offering: but unto Cain and to his offering he had not respect. And Cain was very wroth* (4:4-5). Then *Cain rose up against Abel his brother, and slew him* (Genesis 4:8) — the first murder, the seed-war made visible. The NT reads it exactly as conduct, never race: *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother''s righteous* (1 John 3:12). Cain belongs to the serpent''s seed by his works; Abel to the woman''s seed by his. And the murder becomes a walkable road — *Woe unto them! for they have gone in the way of Cain* (Jude 11). The restored witnesses fill in the motive and the premeditation: *Cain slew Abel because Elohim (God) accepted the sacrifice of Abel, and did not accept the offering of Cain* (Jubilees 4:2); *Cain was jealous against his brother Abel ... and he sought a pretext to slay him* (Jasher 1:16); and the wisdom-witness names him plainly — *the unrighteous ... perished also in the fury with which he murdered his brother* (Wisdom of Solomon 10:3). The tare and the son of Adam stand in one household: the seed-war is not metaphor, it is a brother''s blood in the field.',
+       sv.verse_id, ev.verse_id, 'extras', 20075
+  FROM _s301_ge04_lookup sv, _s301_ge04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=4 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-4-abel-offered-a-more-excellent-sacrifice-by-faith',
+       E'Abel offered a more excellent sacrifice by faith',
+       E'The difference between the two offerings is not arbitrary favoritism. *Cain brought of the fruit of the ground an offering unto Yahuah (LORD). And Abel, he also brought of the firstlings of his flock and of the fat thereof. And Yahuah (LORD) had respect unto Abel and to his offering* (Genesis 4:3-4). The blood-offering of the firstlings was accepted where the fruit of the ground was not, and the NT names the reason: *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts: and by it he being dead yet speaketh* (Hebrews 11:4). Abel is the first whom the canon calls righteous, and his more excellent sacrifice — life and blood, not fruit of the cursed ground — foreshadows the blood that would be accepted for all. The restored book shows the visible token of that acceptance: *a fire came down from Yahuah (the Lord) from heaven and consumed it* (Jasher 1:15), the firstlings received with fire as the altar-offerings of Yashar''el (Israel) would be received after. The first worship that pleased Yahuah was offered by faith, in blood.',
+       sv.verse_id, ev.verse_id, 'extras', 20078
+  FROM _s301_ge04_lookup sv, _s301_ge04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=4 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-4-sin-lieth-at-the-door-thou-shalt-rule-over-him',
+       E'Sin lieth at the door — thou shalt rule over him',
+       E'Before the murder, Yahuah sets the whole choice before Cain in one breath: *Why art thou wroth? and why is thy countenance fallen? If thou doest well, shalt thou not be accepted? and if thou doest not well, sin lieth at the door. And unto thee shall be his desire, and thou shalt rule over him* (Genesis 4:6-7). Acceptance was never closed to Cain — it hung on doing well; and the sin crouching at the door was his to master, not his master. The NT keeps both halves. Doing well is still the dividing line: *Little children, let no man deceive you: he that doeth righteousness is righteous, even as he is righteous* (1 John 3:7) — acceptance follows doing well exactly as Cain was told. And the sin at the door is given its name: *Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law* (1 John 3:4). Cain was called to *rule over* the lawlessness at his door; refusing the mastery, he let it rule him into his brother''s blood. The call to do well and the warning against transgression of the law stand together at the very first crossroads of the human heart.',
+       sv.verse_id, ev.verse_id, 'free', 20081
+  FROM _s301_ge04_lookup sv, _s301_ge04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=4 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-4-the-blood-of-righteous-abel-crieth-from-the-ground',
+       E'The blood of righteous Abel crieth from the ground',
+       E'The murdered brother is not silent. *And he said, What hast thou done? the voice of thy brother''s blood crieth unto me from the ground. And now art thou cursed from the earth, which hath opened her mouth to receive thy brother''s blood from thy hand* (Genesis 4:10-11). Abel''s blood is the first martyr-blood, and Yahusha (Jesus) makes it the head of the whole roll of shed righteousness: *That upon you may come all the righteous blood shed upon the earth, from the blood of righteous Abel* (Matthew 23:35); *From the blood of Abel unto the blood of Zacharias ... It shall be required of this generation* (Luke 11:51). The cry never falls silent — it *shall be required*. The Torah grounds why the very ground is defiled: *blood it defileth the land: and the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33). The restored apocalyptic gives the cry a seed-war shape — *This is the spirit which went forth from Abel, whom his brother Cain slew, and he makes his suit against him till his seed is destroyed* (1 Enoch 22:14) — and the restored Jubilees echoes the verse itself: *his blood cried from the ground to heaven, complaining because he had slain him* (Jubilees 4:3). And the cry is finally answered, not by more vengeance, but by a better blood: *to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24). The first blood cries for justice; the better blood speaks mercy.',
+       sv.verse_id, ev.verse_id, 'extras', 20084
+  FROM _s301_ge04_lookup sv, _s301_ge04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=4 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-4-the-mark-and-the-curse-of-the-fugitive-cain',
+       E'The mark and the curse of the fugitive Cain',
+       E'The murderer is sentenced and then strangely spared. *When thou tillest the ground, it shall not henceforth yield unto thee her strength; a fugitive and a vagabond shalt thou be in the earth* (Genesis 4:12); and to Cain''s dread of being slain, *Yahuah (LORD) set a mark upon Cain, lest any finding him should kill him* (4:15). The curse falls on the killer — the ground withholding its strength, the wanderer driven east — not on the seed-line; and the mark is mercy restraining vengeance. The restored witnesses fill out both ends. Jubilees grounds the curse in written law: *he made him a fugitive on the earth because of the blood of his brother ... And on this account it is written on the heavenly tables, "Cursed is he who smites his neighbour treacherously"* (Jubilees 4:4); and Jasher expands the sentence — *you shall be moving and wandering in the earth until the day of your death* (Jasher 1:32). The mark stayed the hand of men, but not the judgment of Yahuah: in due time *his house fell upon him and he died in the midst of his house, and he was killed by its stones, for with a stone he had killed Abel, and by a stone was he killed in righteous judgment* (Jubilees 4:31), the very decree of the heavenly tables — *With the instrument with which a man kills his neighbour with the same shall he be killed* (Jubilees 4:32). Meanwhile the fugitive line settles eastward and builds: after *Cain went out from the presence of Yahuah (LORD), and dwelt in the land of Nod* (Genesis 4:16), *he built the city and he called the name of the city Enoch, according to the name of his son* (Jasher 1:35) — the wicked seed building away from the presence it had fled.',
+       sv.verse_id, ev.verse_id, 'extras', 20087
+  FROM _s301_ge04_lookup sv, _s301_ge04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=4 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (LOAD-BEARING)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-4-seth-another-seed-appointed-and-men-called-on-the-name',
+       E'Seth — another seed appointed, and men called on the Name',
+       E'The seed of promise does not die with Abel. After the murder Yahuah preserves the woman''s seed through a third son: *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew* (Genesis 4:25). This is load-bearing for the whole framework — the covenant seed-line that runs to Noah, Abraham, and the Formed Son is carried forward through Seth, not through Cain''s cursed line. The genealogy of the Messiah reaches back through exactly this name: *which was the son of Enos, which was the son of Seth, which was the son of Adam, which was the son of Elohim (God)* (Luke 3:38) — the paternal bloodline and the promise together, unbroken across the murder. The restored book keeps the very word: *he called his name Seth; for he said "Elohim (God) has raised up a second seed to us on the earth instead of Abel; for Cain slew him"* (Jubilees 4:7). And in the preserved line, not the line of Cain, the true worship resumes: *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD)* (Genesis 4:26) — *He began to call on the name of Yahuah (God) on the earth* (Jubilees 4:12). The chapter that opened with a brother''s blood closes with the restored Name invoked in the seed that outlasts both the slayer and the slain.',
+       sv.verse_id, ev.verse_id, 'extras', 20090
+  FROM _s301_ge04_lookup sv, _s301_ge04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=4 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================== thread_members ==============================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Not as Cain, who was of that wicked one, and slew his brother ... Because his own works were evil, and his brother''s righteous* (1 John 3:12) — Cain of the serpent''s seed by works, Abel of the woman''s seed; the seed-war made visible in Genesis 4:8.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=8
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-seed-war-within-one-family-not-as-cain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they have gone in the way of Cain* (Jude 11) — the first murder of Genesis 4:8 is a walkable road, the conduct of the wicked seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=8
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-seed-war-within-one-family-not-as-cain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the unrighteous ... perished also in the fury with which he murdered his brother* (Wisdom of Solomon 10:3) — Cain''s fury (Genesis 4:5,8) destroyed himself as well as Abel.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=8
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=10 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-seed-war-within-one-family-not-as-cain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Cain slew Abel because Elohim (God) accepted the sacrifice of Abel, and did not accept the offering of Cain* (Jubilees 4:2) — the murder of Genesis 4:8 grew straight out of the rejected offering.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=8
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-seed-war-within-one-family-not-as-cain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Cain was jealous against his brother Abel ... and he sought a pretext to slay him* (Jasher 1:16) — the premeditation behind *Cain was very wroth* (Genesis 4:5) and the murder of 4:8.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=8
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-seed-war-within-one-family-not-as-cain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain ... and by it he being dead yet speaketh* (Hebrews 11:4) — the firstlings accepted (Genesis 4:4) were offered by faith, the blood-foreshadow.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-abel-offered-a-more-excellent-sacrifice-by-faith'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*a fire came down from Yahuah (the Lord) from heaven and consumed it* (Jasher 1:15) — the visible token of *Yahuah (LORD) had respect unto Abel and to his offering* (Genesis 4:4).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-abel-offered-a-more-excellent-sacrifice-by-faith'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he that doeth righteousness is righteous, even as he is righteous* (1 John 3:7) — *if thou doest well, shalt thou not be accepted?* (Genesis 4:7); acceptance follows doing well.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=7
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-sin-lieth-at-the-door-thou-shalt-rule-over-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*sin is the transgression of the law* (1 John 3:4) — names the *sin* that *lieth at the door* (Genesis 4:7) which Cain was called to *rule over*.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=7
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=3 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-sin-lieth-at-the-door-thou-shalt-rule-over-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*all the righteous blood shed upon the earth, from the blood of righteous Abel* (Matthew 23:35) — Abel''s crying blood (Genesis 4:10) is the head of the whole roll of martyrs.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=10
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-blood-of-righteous-abel-crieth-from-the-ground'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*From the blood of Abel ... It shall be required of this generation* (Luke 11:51) — the cry from the ground (Genesis 4:10) is not silenced by time.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=10
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=11 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-blood-of-righteous-abel-crieth-from-the-ground'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*blood it defileth the land: and the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33) — why Cain is *cursed from the earth* that received the blood (Genesis 4:11).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=11
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-blood-of-righteous-abel-crieth-from-the-ground'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*This is the spirit which went forth from Abel ... he makes his suit against him till his seed is destroyed* (1 Enoch 22:14) — the cry of Genesis 4:10 given a seed-war shape, running till the wicked seed is cut off.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=10
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=22 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-blood-of-righteous-abel-crieth-from-the-ground'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*his blood cried from the ground to heaven, complaining because he had slain him* (Jubilees 4:3) — the restored echo of *thy brother''s blood crieth unto me from the ground* (Genesis 4:10).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=10
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-blood-of-righteous-abel-crieth-from-the-ground'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24) — Abel''s blood cries for justice (Genesis 4:10); the better blood speaks mercy.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=10
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-blood-of-righteous-abel-crieth-from-the-ground'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he made him a fugitive on the earth because of the blood of his brother ... it is written on the heavenly tables, "Cursed is he who smites his neighbour treacherously"* (Jubilees 4:4) — the curse of *a fugitive and a vagabond* (Genesis 4:12) grounded in written law.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=12
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-mark-and-the-curse-of-the-fugitive-cain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*you shall be moving and wandering in the earth until the day of your death* (Jasher 1:32) — the restored expansion of *a fugitive and a vagabond shalt thou be in the earth* (Genesis 4:12).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=12
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-mark-and-the-curse-of-the-fugitive-cain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*his house fell upon him ... for with a stone he had killed Abel, and by a stone was he killed in righteous judgment* (Jubilees 4:31) — the mark of Genesis 4:15 stayed men, not the measure-for-measure end of Cain.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=15
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-mark-and-the-curse-of-the-fugitive-cain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*With the instrument with which a man kills his neighbour with the same shall he be killed* (Jubilees 4:32) — the heavenly-tables decree behind the *sevenfold* vengeance and mark of Genesis 4:15.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=15
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-mark-and-the-curse-of-the-fugitive-cain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*he built the city and he called the name of the city Enoch, according to the name of his son* (Jasher 1:35) — the fugitive line of Genesis 4:16-17 settling eastward, building away from the presence it fled.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=16
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=1 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-the-mark-and-the-curse-of-the-fugitive-cain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*which was the son of Seth, which was the son of Adam, which was the son of Elohim (God)* (Luke 3:38) — the Messiah''s line runs through *another seed instead of Abel* (Genesis 4:25), the seed of promise preserved.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=25
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=3 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-seth-another-seed-appointed-and-men-called-on-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Elohim (God) has raised up a second seed to us on the earth instead of Abel; for Cain slew him* (Jubilees 4:7) — the restored echo of *another seed instead of Abel* (Genesis 4:25).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=25
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-seth-another-seed-appointed-and-men-called-on-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He began to call on the name of Yahuah (God) on the earth* (Jubilees 4:12) — the restored Name invoked in the line of Seth, echoing Genesis 4:26.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=26
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-seth-another-seed-appointed-and-men-called-on-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*she called the name of the first born Cain ... and the name of the other she called Abel* (Jasher 1:13) — the naming frame of Genesis 4:1, read forward to *Seth ... another seed* (4:25), the seed that outlasts slayer and slain.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=4 AND sv.verse_number=25
+  JOIN _s301_ge04_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=1 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-4-seth-another-seed-appointed-and-men-called-on-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_5.sql (Genesis 5) -----
+-- Chapter: Genesis 5 (The book of the generations of Adam — the seed-line from Adam to Noah; Enoch translated)
+-- Tag: ge05   Temp view: _s301_ge05_lookup
+-- Sort band: base 20100, step 3 -> threads at 20100, 20103, 20106, 20109 (4 threads)
+-- Source of EVERY row: 'canon','genesis',5,v
+--
+-- Genesis 5 coverage:
+--   v.1-2  ("This is the book of the generations of Adam... in the likeness of Elohim made he him; Male and female created he them")
+--        NT:     Luke 3:38 (which was the son of Seth, which was the son of Adam, which was the son of Elohim) — woven into THREAD 1
+--        Extras: none warranted as MEMBER (Jubilees 4 retells the line but its distinctive witness is Enoch, carried in THREAD 2)
+--        Tanakh: Genesis 1:26-27 (let us make man in our image); 1 Chronicles 1:1-4 (the same Adam-to-Noah line) — THREAD 1
+--   v.3   (Adam begat a son in his own likeness, after his image; Seth)
+--        NT:     Luke 3:38 (carried at THREAD 1)
+--        Extras: none warranted distinct
+--        Tanakh: Genesis 1:26 (the image carried down the seed-line) — THREAD 1
+--   v.4-20 (the toledot refrain: Seth/Enos/Cainan/Mahalaleel/Jared — begat... and he died)
+--        NT:     Romans 5:14 (death reigned from Adam to Moses) — THREAD 3, anchored across the refrain
+--        Extras: none warranted (the year-totals are not a distinct framework witness)
+--        Tanakh: Genesis 3:19 (dust to dust); Psalm 90:3 (Thou turnest man to destruction) — THREAD 3
+--   v.5,8,11,14,17,20,27,31 ("and he died" — the refrain of death reigning)
+--        NT:     Romans 5:14 — THREAD 3
+--        Extras: none warranted as MEMBER (Jubilees 4:29-30 reflects on Adam's death lacking 70 of 1000 years; recorded, not quoted — apparatus-laced verse)
+--        Tanakh: Genesis 3:19; Psalm 90:3 — THREAD 3
+--   ★ v.21-24 (Enoch walked with Elohim; he was not, for Elohim took him — translation)
+--        NT:     Hebrews 11:5 (by faith Enoch was translated... he pleased Elohim); Jude 14 (Enoch, the seventh from Adam, prophesied) — THREAD 2
+--        Extras: 1 Enoch 12:1 (Enoch was hidden, no one knew where he abode); 1 Enoch 12:3 (Enoch the scribe of righteousness, the Watchers called me);
+--                Jubilees 4:17 (first to learn writing, set in order the months/Sabbaths — the Appointed Times); Jubilees 4:22 (testified against the Watchers);
+--                Jubilees 4:23 (taken into the Garden of Eden in majesty); Ecclesiasticus 44:16 (Enoch pleased Yahuah and was translated);
+--                Ecclesiasticus 49:14 (no man created like Enoch; he was taken from the earth) — THREAD 2 (CENTERPIECE, extras-rich)
+--        Tanakh: none warranted distinct (the translation is fulfilled FORWARD and OUT) — AVOIDED 1 Enoch ch25 (bad parse)
+--   v.25-27 (Methuselah; the longevity; and he died — the longest-lived man dies the year of the flood by reckoning)
+--        NT:     none warranted as its own thread (folded into the death refrain, THREAD 3)
+--        Extras: none warranted distinct
+--        Tanakh: none warranted distinct
+--   v.28-29 (Lamech begat a son, called Noah: This same shall comfort us... because of the ground which Yahuah hath cursed)
+--        NT:     none warranted (the hope of relief points to Noah/rest within the Tanakh)
+--        Extras: Jubilees 4:28 (This one will comfort me... for the ground which Yahuah has cursed) — THREAD 4
+--        Tanakh: Genesis 3:17 (cursed is the ground for thy sake) — THREAD 4
+--   v.30-32 (Lamech's remaining years; Noah begat Shem, Ham, and Japheth — bridge to the flood)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none warranted (genealogical bridge; the seed-line carried at THREAD 1)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-5-the-book-of-the-generations-of-adam-the-image-down-the-seed-line — NT (Luke) + Tanakh (Genesis, 1 Chronicles) [free]
+--   2. genesis-5-enoch-walked-with-elohim-and-was-translated — NT (Hebrews, Jude) + Extras (1 Enoch, Jubilees, Ecclesiasticus) [extras] (CENTERPIECE)
+--   3. genesis-5-and-he-died-death-reigned-from-adam — NT (Romans) + Tanakh (Genesis, Psalm) [free]
+--   4. genesis-5-lamech-named-him-noah-comfort-from-the-cursed-ground — Tanakh (Genesis) + Extras (Jubilees) [extras]
+--
+-- Framing note: Genesis 5 is a genealogy, so the threads are curated, not name-by-name. The image of
+-- Elohim runs down the toledot seed-line to the Son of Adam (Luke 3:38); the "and he died" refrain is the
+-- wages of sin (Romans 5:14) read back to the ground-curse (Genesis 3:19); Enoch is the single exception
+-- that points beyond death — translated, pleasing Elohim, the witness against the Watchers (Hebrews 11:5,
+-- Jude 14, 1 Enoch, Jubilees 4, Ecclesiasticus 44/49) — and Lamech's hope names Noah as comfort from the
+-- cursed ground. AVOIDED 1 Enoch ch25 (bad parse). Jubilees double-written 'jubilees','jubilees'.
+
+CREATE TEMP VIEW _s301_ge05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the book of the generations of Adam — the image down the seed-line
+    ('canon','genesis',5,1,'canon','luke',3,38,'free',
+      E'*Which was the son of Enos, which was the son of Seth, which was the son of Adam, which was the son of Elohim (God)* (Luke 3:38). *This is the book of the generations of Adam. In the day that Elohim (God) created man, in the likeness of Elohim (God) made he him* (Genesis 5:1). The toledot that opens here — Adam, Seth, Enos, on down — is the very line the Spirit runs forward to the Son of Adam: the same names, in reverse, climbing back through Seth to Adam to *the son of Elohim (God)*. The book of the generations of Adam is the seed-line of promise, and it is running to Messiah.'),
+    ('canon','genesis',5,1,'canon','genesis',1,26,'free',
+      E'*And Elohim (God) said, Let us make man in our image, after our likeness* (Genesis 1:26). The toledot heading repeats the creation word: *in the likeness of Elohim (God) made he him* (Genesis 5:1). What was spoken at the beginning is now carried as a heading over the seed-line — the image of Elohim is not lost at the fall; it is handed down the generations of Adam.'),
+    ('canon','genesis',5,3,'canon','genesis',1,26,'free',
+      E'*And Elohim (God) said, Let us make man in our image, after our likeness* (Genesis 1:26). Adam *begat a son in his own likeness, after his image; and called his name Seth* (Genesis 5:3) — the same words *likeness* and *image* that named the making of man now name the begetting of the son. The image first stamped on Adam is transmitted by paternal bloodline down the line of promise.'),
+    ('canon','genesis',5,3,'canon','1-chronicles',1,1,'free',
+      E'*Adam, Sheth, Enosh* (1 Chronicles 1:1). The chronicler opens the whole genealogy of Yashar''el (Israel) by reciting the very line of Genesis 5 — *And Adam... begat a son... and called his name Seth* (Genesis 5:3) — Adam, Seth, Enos, on down to Noah. The seed-line of Genesis 5 is the trunk from which the covenant people are later numbered.'),
+
+    -- THREAD 2 (CENTERPIECE): Enoch walked with Elohim and was translated
+    ('canon','genesis',5,24,'canon','hebrews',11,5,'free',
+      E'*By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God)* (Hebrews 11:5). *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24). The one man in the whole death-chapter who does not die is read forward as the man of faith: he *was not found* because Elohim *translated him*, and the ground of it was that *he pleased Elohim* — the walk of Genesis 5:24 named as the faith that overcomes death.'),
+    ('canon','genesis',5,22,'canon','hebrews',11,5,'free',
+      E'*By faith Enoch was translated that he should not see death... he had this testimony, that he pleased Elohim (God)* (Hebrews 11:5). The verse that *Enoch walked with Elohim (God) after he begat Methuselah three hundred years* (Genesis 5:22) is the walk the NT calls faith that *pleased Elohim* — three centuries of walking, then taken.'),
+    ('canon','genesis',5,24,'canon','jude',1,14,'free',
+      E'*And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints* (Jude 14). The man who *walked with Elohim (God)* and *was not; for Elohim (God) took him* (Genesis 5:24) is named *the seventh from Adam* — counted right down the Genesis 5 line — and remembered as a prophet whose word stood. His walk was not silent; he testified, and Yahuah is coming as he said.'),
+    ('canon','genesis',5,24,'enoch','1-enoch',12,1,'extras',
+      E'*Before these things Enoch was hidden, and no one of the children of men knew where he was hidden, and where he abode, and what had become of him* (1 Enoch 12:1). This is the inside of *and he was not; for Elohim (God) took him* (Genesis 5:24): not death but hiddenness — none of the children of men could find where he had gone, because he had been taken.'),
+    ('canon','genesis',5,24,'enoch','1-enoch',12,3,'extras',
+      E'*And I Enoch was blessing Yahuah (God) of majesty and the King of the ages, and lo! the Watchers called me—Enoch the scribe—and said to me* (1 Enoch 12:3). The one who *walked with Elohim (God)* (Genesis 5:24) is the scribe of righteousness, set between heaven and the fallen Watchers to carry the word of judgment — the walk was a commission.'),
+    ('canon','genesis',5,22,'jubilees','jubilees',4,17,'extras',
+      E'*And he was the first among men that are born on earth who learnt writing and knowledge and wisdom and who wrote down the signs of heaven according to the order of their months in a book, that men might know the seasons of the years according to the order of their separate months... and set in order the months and recounted the Sabbaths of the years* (Jubilees 4:17). The walk of *Enoch... with Elohim (God)* (Genesis 5:22) included the keeping of the appointed times: he set in order the months and the Sabbaths so men might know the seasons of Yahuah''s calendar.'),
+    ('canon','genesis',5,22,'jubilees','jubilees',4,22,'extras',
+      E'*And he testified to the Watchers, who had sinned with the daughters of men... and Enoch testified against (them) all* (Jubilees 4:22). To *walk with Elohim (God)* (Genesis 5:22) in a generation of corruption was to bear witness against it; Enoch''s walk made him the witness against the Watchers.'),
+    ('canon','genesis',5,24,'jubilees','jubilees',4,23,'extras',
+      E'*And he was taken from amongst the children of men, and we conducted him into the Garden of Eden in majesty and honour, and behold there he writes down the condemnation and judgment of the world* (Jubilees 4:23). *And he was not; for Elohim (God) took him* (Genesis 5:24) — taken not into death but into the Garden, in majesty and honour, to keep writing the testimony.'),
+    ('canon','genesis',5,24,'apocrypha','ecclesiasticus',44,16,'extras',
+      E'*Enoch pleased Yahuah (God), and was translated, being an example of repentance to all generations* (Ecclesiasticus 44:16). The same two words the whole tradition hangs on Genesis 5:24 — *pleased* and *translated* — gathered into one line: *for Elohim (God) took him* is read as an example held up to every generation after.'),
+    ('canon','genesis',5,24,'apocrypha','ecclesiasticus',49,14,'extras',
+      E'*But upon the earth was no man created like Enoch; for he was taken from the earth* (Ecclesiasticus 49:14). In the long roll of the fathers Enoch stands alone — *no man created like* him — because of the single fact of Genesis 5:24: *Elohim (God) took him*, he was taken from the earth.'),
+
+    -- THREAD 3: and he died — death reigned from Adam
+    ('canon','genesis',5,5,'canon','romans',5,14,'free',
+      E'*Nevertheless death reigned from Adam to Moses, even over them that had not sinned after the similitude of Adam''s transgression, who is the figure of him that was to come* (Romans 5:14). *And all the days that Adam lived were nine hundred and thirty years: and he died* (Genesis 5:5). The refrain that tolls through this chapter — *and he died, and he died* — is the reign Sha''ul names: death ruling *from Adam*, the wages of the one transgression passed down the whole line.'),
+    ('canon','genesis',5,5,'canon','genesis',3,19,'free',
+      E'*In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return* (Genesis 3:19). The sentence in the garden is paid out in full in this chapter: *and all the days that Adam lived were nine hundred and thirty years: and he died* (Genesis 5:5). The dust-return spoken to Adam becomes the refrain over every name in his line.'),
+    ('canon','genesis',5,5,'canon','psalms',90,3,'free',
+      E'*Thou turnest man to destruction; and sayest, Return, ye children of men* (Psalm 90:3). Mosheh''s (Moses'') psalm meditates on the very thing Genesis 5 records — man turned back to destruction, the *Return* of dust to dust — the same word of the ground-curse working itself out across the generations: *and he died* (Genesis 5:5).'),
+
+    -- THREAD 4: Lamech named him Noah — comfort from the cursed ground
+    ('canon','genesis',5,29,'canon','genesis',3,17,'free',
+      E'*And unto Adam he said... cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life* (Genesis 3:17). Lamech names his son in the hope of relief from exactly this curse: *This same shall comfort us concerning our work and toil of our hands, because of the ground which Yahuah (LORD) hath cursed* (Genesis 5:29). The toil under the cursed ground of the garden is what Noah is born to comfort — the first reaching toward rest from the fall.'),
+    ('canon','genesis',5,29,'jubilees','jubilees',4,28,'extras',
+      E'*and in this week she bare him a son and he called his name Noah, saying, "This one will comfort me for my trouble and all my work, and for the ground which Yahuah (God) has cursed."* (Jubilees 4:28). The same naming and the same hope are preserved here word for word: Noah named for comfort *for the ground which Yahuah has cursed* — the cry of Genesis 5:29 echoed in the restored witness.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-5-the-book-of-the-generations-of-adam-the-image-down-the-seed-line',
+       E'The book of the generations of Adam — the image down the seed-line',
+       E'The chapter opens as a heading over all that follows: *This is the book of the generations of Adam. In the day that Elohim (God) created man, in the likeness of Elohim (God) made he him* (Genesis 5:1). The making-word of the beginning — *Let us make man in our image, after our likeness* (Genesis 1:26) — is repeated, and then handed on by begetting: *And Adam lived an hundred and thirty years, and begat a son in his own likeness, after his image; and called his name Seth* (Genesis 5:3). The image of Elohim is not erased at the fall; it is carried down the seed-line of promise by paternal bloodline. The chronicler later opens the genealogy of the covenant people with this same trunk — *Adam, Sheth, Enosh* (1 Chronicles 1:1) — and the Spirit runs the line all the way forward to its end: *which was the son of Enos, which was the son of Seth, which was the son of Adam, which was the son of Elohim (God)* (Luke 3:38). The book of the generations of Adam is the line that runs to Messiah.',
+       sv.verse_id, ev.verse_id, 'free', 20100
+  FROM _s301_ge05_lookup sv, _s301_ge05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=5 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (CENTERPIECE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-5-enoch-walked-with-elohim-and-was-translated',
+       E'Enoch walked with Elohim and was translated',
+       E'In a chapter where every name ends *and he died*, one man does not: *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24) — the seventh from Adam, who *walked with Elohim (God) after he begat Methuselah three hundred years* (Genesis 5:22). The NT reads this as the faith that overcomes death: *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God)* (Hebrews 11:5). And his walk was not silent — *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints* (Jude 14). The restored witnesses unfold the same man. He was the scribe whose translation was hiddenness, not death: *Before these things Enoch was hidden, and no one of the children of men knew where he was hidden, and where he abode, and what had become of him* (1 Enoch 12:1); *the Watchers called me—Enoch the scribe* (1 Enoch 12:3). His walk kept the very calendar of Yahuah — *he was the first among men... who wrote down the signs of heaven according to the order of their months... and set in order the months and recounted the Sabbaths of the years* (Jubilees 4:17) — and made him the witness against the fallen ones: *and Enoch testified against (them) all* (Jubilees 4:22). When *Elohim took him* (Genesis 5:24), he was carried into the garden: *we conducted him into the Garden of Eden in majesty and honour* (Jubilees 4:23). The fathers'' praise gathers it into a word: *Enoch pleased Yahuah (God), and was translated, being an example of repentance to all generations* (Ecclesiasticus 44:16); *upon the earth was no man created like Enoch; for he was taken from the earth* (Ecclesiasticus 49:14). Enoch is the exception that points the whole death-chapter beyond death.',
+       sv.verse_id, ev.verse_id, 'extras', 20103
+  FROM _s301_ge05_lookup sv, _s301_ge05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=5 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-5-and-he-died-death-reigned-from-adam',
+       E'And he died — death reigned from Adam',
+       E'The toledot of Genesis 5 tolls one phrase over every patriarch: *and all the days that Adam lived were nine hundred and thirty years: and he died* (Genesis 5:5) — and Seth died, and Enos died, and so down the line. This is the ground-curse paid out in full: *for out of it wast thou taken: for dust thou art, and unto dust shalt thou return* (Genesis 3:19). Mosheh''s (Moses'') psalm names the same turning: *Thou turnest man to destruction; and sayest, Return, ye children of men* (Psalm 90:3). And Sha''ul gathers the whole refrain into a reign: *Nevertheless death reigned from Adam to Moses, even over them that had not sinned after the similitude of Adam''s transgression, who is the figure of him that was to come* (Romans 5:14). Death ruling from Adam down the generations is the wages of the one transgression — and Adam''s very name marks him as *the figure of him that was to come*, the last Adam who would break the reign.',
+       sv.verse_id, ev.verse_id, 'free', 20106
+  FROM _s301_ge05_lookup sv, _s301_ge05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=5 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-5-lamech-named-him-noah-comfort-from-the-cursed-ground',
+       E'Lamech named him Noah — comfort from the cursed ground',
+       E'Into the long refrain of death comes a single note of hope, and it reaches straight back to the garden. Lamech *called his name Noah, saying, This same shall comfort us concerning our work and toil of our hands, because of the ground which Yahuah (LORD) hath cursed* (Genesis 5:29). The ground he names is the ground of Genesis 3: *cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life* (Genesis 3:17). Noah is born under the weight of the curse and named for the comfort of relief from it — the first reaching of the seed-line toward rest. The restored witness preserves the naming word for word: *he called his name Noah, saying, "This one will comfort me for my trouble and all my work, and for the ground which Yahuah (God) has cursed."* (Jubilees 4:28). The hope of comfort from the cursed ground is planted in the line that will carry the promise through the flood.',
+       sv.verse_id, ev.verse_id, 'extras', 20109
+  FROM _s301_ge05_lookup sv, _s301_ge05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=5 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*which was the son of Seth, which was the son of Adam, which was the son of Elohim (God)* (Luke 3:38) — the Genesis 5 line run forward, reverse, to Messiah and the Son of Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=1
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=3 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-the-book-of-the-generations-of-adam-the-image-down-the-seed-line'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Let us make man in our image, after our likeness* (Genesis 1:26) — the making-word repeated as the toledot heading: *in the likeness of Elohim made he him* (5:1).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=1
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-the-book-of-the-generations-of-adam-the-image-down-the-seed-line'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Let us make man in our image, after our likeness* (Genesis 1:26) — the image transmitted by begetting: Adam *begat a son in his own likeness, after his image* (5:3).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=3
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-the-book-of-the-generations-of-adam-the-image-down-the-seed-line'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Adam, Sheth, Enosh* (1 Chronicles 1:1) — the chronicler opens the covenant genealogy with the very Genesis 5 trunk.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=3
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-the-book-of-the-generations-of-adam-the-image-down-the-seed-line'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (CENTERPIECE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*By faith Enoch was translated that he should not see death... he pleased Elohim (God)* (Hebrews 11:5) — the walk of 5:22 named as the faith that pleased Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=22
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-enoch-walked-with-elohim-and-was-translated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him* (Hebrews 11:5) — *he was not; for Elohim took him* (5:24) read as the faith that overcomes death.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=24
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-enoch-walked-with-elohim-and-was-translated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And Enoch also, the seventh from Adam, prophesied* (Jude 14) — counted down the Genesis 5 line, his walk remembered as a standing prophecy.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=24
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-enoch-walked-with-elohim-and-was-translated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Enoch was hidden, and no one of the children of men knew where he was hidden* (1 Enoch 12:1) — the inside of *he was not; for Elohim took him* (5:24): hiddenness, not death.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=24
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=12 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-enoch-walked-with-elohim-and-was-translated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the Watchers called me—Enoch the scribe* (1 Enoch 12:3) — the one who walked with Elohim set as scribe of righteousness between heaven and the fallen.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=24
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-enoch-walked-with-elohim-and-was-translated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the first among men... who wrote down the signs of heaven according to the order of their months... and set in order the months and... the Sabbaths of the years* (Jubilees 4:17) — the walk of 5:22 kept the appointed times of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=22
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-enoch-walked-with-elohim-and-was-translated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*and Enoch testified against (them) all* (Jubilees 4:22) — to walk with Elohim in a corrupt generation was to be the witness against the Watchers.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=22
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-enoch-walked-with-elohim-and-was-translated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*we conducted him into the Garden of Eden in majesty and honour* (Jubilees 4:23) — *Elohim took him* (5:24) into the garden, not into death.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=24
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-enoch-walked-with-elohim-and-was-translated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*Enoch pleased Yahuah (God), and was translated, being an example of repentance to all generations* (Ecclesiasticus 44:16) — *pleased* and *translated* gathered into one line.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=24
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=44 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-enoch-walked-with-elohim-and-was-translated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*upon the earth was no man created like Enoch; for he was taken from the earth* (Ecclesiasticus 49:14) — Enoch stands alone in the roll of the fathers, on the single fact of 5:24.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=24
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=49 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-enoch-walked-with-elohim-and-was-translated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*death reigned from Adam to Moses... who is the figure of him that was to come* (Romans 5:14) — the *and he died* refrain named as the reign of death from Adam.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=5
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=5 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-and-he-died-death-reigned-from-adam'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*dust thou art, and unto dust shalt thou return* (Genesis 3:19) — the ground-curse paid out as *and he died* (5:5).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=5
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-and-he-died-death-reigned-from-adam'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou turnest man to destruction; and sayest, Return, ye children of men* (Psalm 90:3) — Mosheh''s psalm on the same returning to dust that the chapter records.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=5
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=90 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-and-he-died-death-reigned-from-adam'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life* (Genesis 3:17) — the curse Noah is named to comfort (5:29).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=29
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-lamech-named-him-noah-comfort-from-the-cursed-ground'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he called his name Noah, saying, "This one will comfort me... for the ground which Yahuah (God) has cursed"* (Jubilees 4:28) — the naming of 5:29 preserved word for word.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=5 AND sv.verse_number=29
+  JOIN _s301_ge05_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-5-lamech-named-him-noah-comfort-from-the-cursed-ground'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_6.sql (Genesis 6) -----
+-- Chapter: Genesis 6 (The Watcher-rebellion, the Nephilim, the grief of Yahuah, Noah found grace, the ark commanded)
+-- Tag: ge06   Temp view: _s301_ge06_lookup
+-- Sort band: base 20125, step 3 -> threads at 20125, 20128, 20131, 20134, 20137 (5 threads)
+-- Source of EVERY row: 'canon','genesis',6,v
+--
+-- Genesis 6 coverage:
+--   ★★ v.1-4 (the sons of Elohim, the daughters of men, the Nephilim/giants — THE Watcher-rebellion)
+--        NT:     Jude 6 (angels which kept not their first estate, reserved in everlasting chains);
+--                2 Peter 2:4 (angels that sinned cast down to hell, chains of darkness, reserved unto judgment);
+--                1 Peter 3:19 (the spirits in prison, disobedient in the days of Noah)
+--        Extras: 1 Enoch 6:1,6:2 (angels lusted after the daughters of men, chose wives); 1 Enoch 7:1,7:2
+--                (defiled themselves, taught charms, bare great giants); 1 Enoch 10:11,10:12 (Semjaza bound
+--                seventy generations in the valleys until judgment); 1 Enoch 15:8,15:9 (the giants become evil
+--                spirits on the earth); Jubilees 5:1 (the angels took wives, bare giants); Jubilees 5:6
+--                (bound in the depths of the earth, their sons smitten with the sword)
+--                [AVOID 1 Enoch 10:22 run-together/dup parse; ch25 watcher-mislabel]
+--        Tanakh: none warranted as MEMBER (the seed-war institution carried forward to NT + out to Enoch/Jubilees)
+--   v.3 (My spirit shall not always strive with man; his days an hundred and twenty years)
+--        NT:     1 Peter 3:20 (the longsuffering of Elohim waited in the days of Noah, while the ark was a preparing)
+--        Extras: Jubilees 5:8 (Your spirit will not always abide on man... their days shall be one hundred and
+--                twenty years); Jasher 5:8 (I give you a period of one hundred and twenty years; if you will turn)
+--        Tanakh: none warranted
+--   v.5-7 (the wickedness of man great; every imagination evil; it repented Yahuah; it grieved him; the flood decreed)
+--        NT:     Matthew 24:37,24:38,24:39 (as the days of Noe were, so shall the coming of the Son of Adam be);
+--                Luke 17:26,17:27 (as it was in the days of Noe, so shall it be in the days of the Son of Adam)
+--        Extras: Jasher 4:7 (they provoked Yahuah with their evil ways... and repented that he had made man)
+--        Tanakh: none warranted
+--   ★ v.8-9 (Noah found grace; Noah a just man and perfect in his generations, walked with Elohim)
+--        NT:     2 Peter 2:5 (saved Noah the eighth person, a preacher of righteousness); Hebrews 11:7 (by faith
+--                Noah prepared an ark, became heir of the righteousness which is by faith)
+--        Extras: Jubilees 5:19 (no man's person accepted save Noah alone... his heart was righteous in all his ways);
+--                Jasher 4:21 (Noah found grace... Yahuah chose him and his children to raise up seed); Jasher 5:13
+--                (Noah was a just man, perfect in his generation, chosen to raise up seed of his seed)
+--        Tanakh: none warranted
+--   v.10 (Noah begat Shem, Ham, and Japheth)
+--        NT:     none warranted (the seed-line preservation carried in the Noah thread)
+--        Extras: none warranted as MEMBER (covered by Jasher/Jubilees Noah material in the grace thread)
+--        Tanakh: none warranted
+--   v.11-13 (the earth corrupt and filled with violence; the end of all flesh; I will destroy them with the earth)
+--        NT:     none warranted as own thread (the corruption/judgment is carried with the days-of-Noah thread)
+--        Extras: none warranted distinct (Jubilees 5:2-3 / Jasher 4:17-18 are near-verbatim retellings, woven by
+--                reference into the Watcher and days-of-Noah threads, not double-added)
+--        Tanakh: none warranted
+--   v.14-22 (the ark commanded — gopher wood, pitch, dimensions; the first covenant 6:18; two of every sort)
+--        NT:     1 Peter 3:21 (the like figure whereunto even baptism doth also now save us... by the resurrection)
+--        Extras: Wisdom of Solomon 10:4 (the earth drowned with the flood, wisdom preserved the righteous in a
+--                piece of wood of small value); Wisdom of Solomon 14:6 (when the proud giants perished, the hope
+--                of the world escaped in a weak vessel, and left a seed of generation)
+--        Tanakh: none warranted (the covenant 6:18 — first use of "covenant" in the Tanakh — noted in summary)
+--
+-- Threads (slug -> target libraries):
+--   genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound        [NT+Extras]  tier extras  ★★ CENTERPIECE
+--   genesis-6-my-spirit-shall-not-always-strive-the-hundred-and-twenty-years [NT+Extras] tier extras
+--   genesis-6-the-wickedness-of-man-and-the-days-of-noah                     [NT+Extras]  tier extras
+--   genesis-6-noah-found-grace-just-and-perfect-in-his-generations           [NT+Extras]  tier extras  ★
+--   genesis-6-the-ark-the-first-covenant-and-the-water-that-saves            [NT+Extras]  tier extras
+--
+-- Framework-load-bearing notes:
+--   ★★ v.1-4 WATCHER-REBELLION: read as the COSMIC dimension of the seed-war instituted in Genesis 3:15 —
+--     not a euphemism for "Sethites marrying Cainites," but the literal descent of the fallen Watchers who
+--     corrupted the seed and bred the Nephilim (the tares woven in at the Genesis-6 origin). The extras are
+--     LOAD-BEARING, not decorative: 1 Enoch 6-15 is the primary witness (two hundred angels under Shemyaza
+--     descend on Hermon, take wives, beget giants, teach forbidden arts, the giants devour and the earth cries
+--     out, the Watchers bound in the valleys until the great judgement; the giants' spirits become the evil
+--     spirits on the earth). The NT confirms it as historical fact, not myth: Jude 6 and 2 Peter 2:4 set the
+--     bound angels right beside Noah's flood and Sodom; 1 Peter 3:19-20 places "the spirits in prison" in the
+--     days of Noah. The whole thread is tier 'extras' and is the heaviest weave in the chapter. 1 Enoch 10:22
+--     (run-together/duplicated parse) and 1 Enoch ch25 (watcher-mislabel) are AVOIDED.
+--   v.9 "perfect in his generations": read as the SEED-LINE kept uncorrupted by the Watcher-mixing — Noah's
+--     paternal bloodline preserved pure (tamim in his generations) so the seed of promise could carry through
+--     the flood. Tied to Jasher's repeated "chose him... to raise up seed of his seed" and Jubilees' "his
+--     person was accepted in behalf of his sons." This is the seed-war preservation, not a generic moral praise.
+--   v.18 "with thee will I establish my covenant": the FIRST use of "covenant" (berith) in the Tanakh — the
+--     ark-deliverance is covenant deliverance; noted in the ark-thread summary, the type fulfilled in 1 Peter
+--     3:21 where the water that drowned the world saves through the resurrection (baptism as covenant-figure).
+--   Christology: v.3 "My spirit shall not always strive" and the grieving of Yahuah are framed as the
+--     long-suffering of the covenant Yahuah, not a co-equal-persons Spirit; no Trinitarian grammar imported.
+
+CREATE TEMP VIEW _s301_ge06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================== cross_references ==============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★ CENTERPIECE): the sons of Elohim, the Nephilim, the Watchers bound
+    ('canon','genesis',6,2,'enoch','1-enoch',6,1,'extras',
+      E'*And it came to pass when the children of men had multiplied that in those days were born unto them beautiful and comely daughters* (1 Enoch 6:1). The restored witness opens exactly where Genesis 6 does — *when men began to multiply on the face of the earth, and daughters were born unto them* (Genesis 6:1) — and then names what the Torah states in compressed form: the *sons of Elohim (God)* who *saw the daughters of men that they were fair* (6:2) are the angels of heaven. The same multiplying, the same daughters, the same lust: this is the Watcher-rebellion in full.'),
+    ('canon','genesis',6,2,'enoch','1-enoch',6,2,'extras',
+      E'*And the angels, the children of the heaven, saw and lusted after them, and said to one another: ''Come, let us choose us wives from among the children of men and beget us children''* (1 Enoch 6:2). This is the unfolding of *the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose* (Genesis 6:2). The *sons of Elohim* are *the angels, the children of the heaven* — the heavenly ones who left their estate to take earthly wives, the corruption of the seed begun.'),
+    ('canon','genesis',6,4,'enoch','1-enoch',7,1,'extras',
+      E'*And all the others together with them took unto themselves wives, and each chose for himself one, and they began to go in unto them and to defile themselves with them, and they taught them charms and enchantments, and the cutting of roots, and made them acquainted with plants* (1 Enoch 7:1). Genesis 6:4 records only that the sons of Elohim *came in unto the daughters of men, and they bare children to them*; the witness fills in the defilement and the forbidden arts taught — the Watchers did not only mix the seed, they corrupted knowledge itself, the rebellion spreading by teaching.'),
+    ('canon','genesis',6,4,'enoch','1-enoch',7,2,'extras',
+      E'*And they became pregnant, and they bare great giants, whose height was three thousand ells* (1 Enoch 7:2). *There were giants in the earth in those days... the same became mighty men which were of old, men of renown* (Genesis 6:4). The *giants* — the Nephilim — are the offspring of the heaven-earth mixing, the *great giants* born of the Watchers and the daughters of men: the tares bred into the field at the Genesis-6 origin.'),
+    ('canon','genesis',6,4,'enoch','1-enoch',15,8,'extras',
+      E'*As for the spirits of heaven, in heaven shall be their dwelling, but as for the spirits of the earth which were born upon the earth, on the earth shall be their dwelling* (1 Enoch 15:8). The *mighty men which were of old, men of renown* (Genesis 6:4) leave a residue after the flesh perishes: the witness teaches that the spirits of these giants remain on the earth — the corruption of the Watcher-mixing outlasting its bodies, the unclean spirits loosed in the world.'),
+    ('canon','genesis',6,4,'enoch','1-enoch',15,9,'extras',
+      E'*And the spirits of the giants afflict, oppress, destroy, attack, do battle, and work destruction on the earth, and cause trouble: they take no food, but nevertheless hunger and thirst, and cause offences* (1 Enoch 15:9). The *men of renown* of Genesis 6:4 become, in their spirits, the afflicting powers — the demonic legacy of the Nephilim, the seed-war''s cosmic front continuing to *work destruction on the earth* long after the giants'' flesh has fallen.'),
+    ('canon','genesis',6,4,'canon','jude',1,6,'free',
+      E'*And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 6). The *sons of Elohim (God)* who *came in unto the daughters of men* (Genesis 6:4) are named by the apostle as *angels which kept not their first estate* — they *left their own habitation*, exactly the descent of the Watchers, and are now *reserved in everlasting chains* for the great-day judgement. The Torah''s compressed verse and the apostolic witness agree.'),
+    ('canon','genesis',6,4,'canon','2-peter',2,4,'free',
+      E'*For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4). Kepha sets *the angels that sinned* — the sons of Elohim of Genesis 6:4 — immediately beside the flood and Sodom, treating the Watcher-rebellion as historical fact: they were *cast down to hell* and *delivered into chains of darkness*, the binding that 1 Enoch describes, awaiting judgement.'),
+    ('canon','genesis',6,4,'enoch','1-enoch',10,11,'extras',
+      E'*And Yahuah (God) said unto Michael: ''Go, bind Semjâzâ and his associates who have united themselves with women so as to have defiled themselves with them in all their uncleanness''* (1 Enoch 10:11). The binding the apostles report (*everlasting chains*, Jude 6; *chains of darkness*, 2 Peter 2:4) is commanded here by name: *Semjâzâ and his associates who have united themselves with women* — the very *sons of Elohim (God)* who *came in unto the daughters of men* (Genesis 6:4) — are bound for their uncleanness.'),
+    ('canon','genesis',6,4,'enoch','1-enoch',10,12,'extras',
+      E'*And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated* (1 Enoch 10:12). This is the sentence behind *reserved... unto the judgment of the great day* (Jude 6): the Watchers of Genesis 6:4 *bound fast for seventy generations in the valleys of the earth*, their giant-sons made to slay one another, all held *till the day of their judgement*.'),
+    ('canon','genesis',6,2,'jubilees','jubilees',5,1,'extras',
+      E'*And it came to pass when the children of men began to multiply on the face of the earth and daughters were born to them, that the angels of Elohim (God) saw them on a certain year of this jubilee, that they were beautiful to look upon; and they took themselves wives of all whom they chose, and they bare to them sons and they were giants* (Jubilees 5:1). Jubilees reads Genesis 6:2 with no ambiguity: *the sons of Elohim (God)* are *the angels of Elohim*, and their offspring are *giants* — one continuous testimony with the Torah and with 1 Enoch that this was the heavenly rebellion, not a marriage of two human families.'),
+    ('canon','genesis',6,4,'jubilees','jubilees',5,6,'extras',
+      E'*And against the angels whom He had sent upon the earth, He was exceedingly wroth, and He gave commandment to root them out of all their dominion, and He bade us to bind them in the depths of the earth, and behold they are bound in the midst of them, and are (kept) separate. And against their sons went forth a command from before His face that they should be smitten with the sword, and be removed from under heaven* (Jubilees 5:6). The fate of the *sons of Elohim (God)* of Genesis 6:4 is sealed: the rebel angels *bound in the depths of the earth* and their giant *sons... smitten with the sword* — the same binding Jude 6 and 2 Peter 2:4 confirm, the seed-corruption purged from the earth.'),
+    ('canon','genesis',6,4,'canon','1-peter',3,19,'free',
+      E'*By which also he went and preached unto the spirits in prison* (1 Peter 3:19). The *spirits in prison* whom Messiah proclaimed to are, in the very next verse, those *disobedient... in the days of Noah* — the bound powers of the Genesis 6:4 rebellion. The Torah''s *sons of Elohim (God)* who *came in unto the daughters of men*, bound in chains until judgement, are the *spirits in prison* the risen One confronts.'),
+
+    -- THREAD 2: My spirit shall not always strive — the hundred and twenty years
+    ('canon','genesis',6,3,'canon','1-peter',3,20,'free',
+      E'*Which sometime were disobedient, when once the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water* (1 Peter 3:20). *My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years* (Genesis 6:3) is the limit set on the long-suffering: the *hundred and twenty years* are the span in which *the longsuffering of Elohim (God) waited... while the ark was a preparing*, the door of mercy held open before the flood.'),
+    ('canon','genesis',6,3,'jubilees','jubilees',5,8,'extras',
+      E'*And He said “Your spirit will not always abide on man; for they also are flesh and their days shall be one hundred and twenty years”* (Jubilees 5:8). The restored book carries Genesis 6:3 almost word for word — *My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years* — the same decree of the limited span, the long-suffering measured out before the judgement falls.'),
+    ('canon','genesis',6,3,'jasher','jasher',5,8,'extras',
+      E'*For thus says Yahuah (the Lord), Behold I give you a period of one hundred and twenty years; if you will turn to me and forsake your evil ways, then will I also turn away from the evil which I told you, and it shall not exist, says Yahuah (the Lord)* (Jasher 5:8). Jasher reads the *hundred and twenty years* of Genesis 6:3 as Yahuah''s open offer of repentance, not a bare death-clock: the span is *given* so that *if you will turn... forsake your evil ways*, the threatened destruction *shall not exist* — the long-suffering with a door in it.'),
+
+    -- THREAD 3: the wickedness of man and the days of Noah
+    ('canon','genesis',6,5,'canon','matthew',24,37,'free',
+      E'*But as the days of Noe were, so shall also the coming of the Son of Adam be* (Matthew 24:37). *And GOD saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually* (Genesis 6:5). Yahusha (Jesus) makes that pre-flood corruption the very pattern of the last days: *as the days of Noe were* — the same heedless wickedness — *so shall also the coming of the Son of Adam be*.'),
+    ('canon','genesis',6,7,'canon','matthew',24,38,'free',
+      E'*For as in the days that were before the flood they were eating and drinking, marrying and giving in marriage, until the day that Noe entered into the ark* (Matthew 24:38). When Yahuah resolved *I will destroy man whom I have created from the face of the earth* (Genesis 6:7), the world ate and drank in ignorance to the very day. The Son of Adam names that ignorance — *eating and drinking, marrying and giving in marriage, until the day that Noe entered into the ark* — as the mark of his own coming.'),
+    ('canon','genesis',6,7,'canon','matthew',24,39,'free',
+      E'*And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be* (Matthew 24:39). The decree *I will destroy man... both man, and beast, and the creeping thing, and the fowls of the air* (Genesis 6:7) fell on a world that *knew not until the flood came*. The judgement of Noah''s day is the template: sudden, total, upon the unready — *so shall also the coming of the Son of Adam be*.'),
+    ('canon','genesis',6,5,'canon','luke',17,26,'free',
+      E'*And as it was in the days of Noe, so shall it be also in the days of the Son of Adam* (Luke 17:26). *And GOD saw that the wickedness of man was great in the earth* (Genesis 6:5) sets the days of Noe as the figure; Yahusha (Jesus) binds them to his return — *so shall it be also in the days of the Son of Adam* — the same overflowing wickedness met by the same sudden reckoning.'),
+    ('canon','genesis',6,7,'canon','luke',17,27,'free',
+      E'*They did eat, they drank, they married wives, they were given in marriage, until the day that Noe entered into the ark, and the flood came, and destroyed them all* (Luke 17:27). The sentence *it repenteth me that I have made them* (Genesis 6:7) was carried out *until the day that Noe entered into the ark, and the flood came, and destroyed them all* — the heedless ordinary life of the condemned world, ended in a day.'),
+    ('canon','genesis',6,6,'jasher','jasher',4,7,'extras',
+      E'*And still the sons of men did not turn from their evil ways, and their hands were still extended to do evil in the sight of Elohim, and they provoked Yahuah (the Lord) with their evil ways, and Yahuah (the Lord) was very wroth, and repented that he had made man* (Jasher 4:7). Jasher echoes *it repented Yahuah (LORD) that he had made man on the earth, and it grieved him at his heart* (Genesis 6:6), naming the cause the Torah leaves implicit: men *would not turn from their evil ways*, and so *provoked Yahuah... and repented that he had made man* — the grief is over a world that refused the long-suffering.'),
+
+    -- THREAD 4 (★): Noah found grace — just and perfect in his generations
+    ('canon','genesis',6,8,'canon','2-peter',2,5,'free',
+      E'*And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly* (2 Peter 2:5). *But Noah found grace in the eyes of Yahuah (LORD)* (Genesis 6:8). Kepha names what that grace made him — *a preacher of righteousness* — and sets him as the one Yahuah *saved* while he *spared not the old world*: grace received and grace proclaimed, the righteous remnant of one in a drowning generation.'),
+    ('canon','genesis',6,9,'canon','hebrews',11,7,'free',
+      E'*By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* (Hebrews 11:7). *Noah was a just man and perfect in his generations, and Noah walked with Elohim (God)* (Genesis 6:9). His walking with Elohim is read as faith made visible: *by faith Noah... prepared an ark* — the just man''s righteousness and the obedience of building are one, condemning the world and inheriting the righteousness of faith.'),
+    ('canon','genesis',6,9,'jubilees','jubilees',5,19,'extras',
+      E'*And as for all those who corrupted their ways and their thoughts before the flood, no man''s person was accepted save that of Noah alone; for his person was accepted in behalf of his sons, whom Elohim (God) saved from the waters of the flood on his account; for his heart was righteous in all his ways, according as it was commanded regarding him, and he had not departed from aught that was ordained for him* (Jubilees 5:19). *Noah was a just man and perfect in his generations* (Genesis 6:9) is unfolded: his person *accepted in behalf of his sons*, his heart *righteous in all his ways* because *he had not departed from aught that was ordained for him* — the seed-line preserved through the one man who kept the way uncorrupted.'),
+    ('canon','genesis',6,8,'jasher','jasher',4,21,'extras',
+      E'*And Noah found grace in the sight of Yahuah (the Lord), and Yahuah (the Lord) chose him and his children to raise up seed from them upon the face of the whole earth* (Jasher 4:21). Jasher carries Genesis 6:8 — *But Noah found grace in the eyes of Yahuah (LORD)* — and names the purpose of the grace: Yahuah *chose him and his children to raise up seed* upon the earth. The grace is seed-grace, the paternal line kept to carry the promise through the flood.'),
+    ('canon','genesis',6,9,'jasher','jasher',5,13,'extras',
+      E'*And Noah was a just man, he was perfect in his generation, and Yahuah (the Lord) chose him to raise up seed from his seed upon the face of the earth* (Jasher 5:13). Almost verbatim with Genesis 6:9 — *Noah was a just man and perfect in his generations* — Jasher binds the *perfect in his generation* directly to the seed: *chose him to raise up seed from his seed*. Noah''s being uncorrupted in his line is precisely why the seed of promise could pass through him while the Watcher-mixed flesh was swept away.'),
+
+    -- THREAD 5: the ark, the first covenant, and the water that saves
+    ('canon','genesis',6,18,'canon','1-peter',3,21,'free',
+      E'*The like figure whereunto even baptism doth also now save us (not the putting away of the filth of the flesh, but the answer of a good conscience toward Elohim (God),) by the resurrection of Yahusha HaMashiach (Jesus Christ)* (1 Peter 3:21). *But with thee will I establish my covenant; and thou shalt come into the ark* (Genesis 6:18) — the first covenant in the Tanakh joined to the ark of deliverance. Kepha reads the very water that drowned the world as the figure of the water that now saves: the ark passing through the flood is the covenant-figure fulfilled in the resurrection.'),
+    ('canon','genesis',6,14,'apocrypha','the-wisdom-of-solomon',10,4,'extras',
+      E'*For whose cause the earth being drowned with the flood, wisdom again preserved it, and directed the course of the righteous in a piece of wood of small value* (Wisdom of Solomon 10:4). The command *Make thee an ark of gopher wood... and shalt pitch it within and without with pitch* (Genesis 6:14) is read as wisdom''s work of preservation: the righteous steered through the drowning of the earth *in a piece of wood of small value* — the humble ark as the vessel of deliverance through judgement.'),
+    ('canon','genesis',6,17,'apocrypha','the-wisdom-of-solomon',14,6,'extras',
+      E'*For in the old time also, when the proud giants perished, the hope of the world governed by your hand escaped in a weak vessel, and left to all ages a seed of generation* (Wisdom of Solomon 14:6). *I, even I, do bring a flood of waters upon the earth, to destroy all flesh* (Genesis 6:17) — and in that flood *the proud giants perished*, the Nephilim swept away, while *the hope of the world... escaped in a weak vessel*. The ark that carried Noah *left to all ages a seed of generation*: the seed of promise preserved as the corrupted seed of the Watchers was destroyed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================== threads ==============================
+-- THREAD 1 (★★ CENTERPIECE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound',
+       E'The sons of Elohim, the Nephilim, and the Watchers bound',
+       E'Here the seed-war declared in the garden (Genesis 3:15) opens its cosmic front. *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose* (Genesis 6:2), and *There were giants in the earth in those days... the same became mighty men which were of old, men of renown* (Genesis 6:4). The Torah states it in compressed form; the restored witnesses unfold it. *And the angels, the children of the heaven, saw and lusted after them, and said to one another: “Come, let us choose us wives from among the children of men and beget us children”* (1 Enoch 6:2) — two hundred of them descend on Hermon under Shemyaza. They *taught them charms and enchantments* (1 Enoch 7:1) and *they bare great giants* (1 Enoch 7:2), the Nephilim, who *consumed all the acquisitions of men* and devoured mankind until *the earth laid accusation against the lawless ones*. Jubilees reads Genesis 6:2 the same way with no ambiguity: *the angels of Elohim (God) saw them... and they bare to them sons and they were giants* (Jubilees 5:1). This is not a marriage of two human families; it is the heavenly rebellion that corrupted the seed — the tares woven into the field at the Genesis-6 origin. And the judgement on the rebels is precise: *Go, bind Semjâzâ and his associates who have united themselves with women* (1 Enoch 10:11), *bind them fast for seventy generations in the valleys of the earth, till the day of their judgement* (1 Enoch 10:12); *He bade us to bind them in the depths of the earth... and their sons... smitten with the sword* (Jubilees 5:6). The apostles confirm every line as fact, not myth: *the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 6); *Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4) — set there beside the flood and Sodom. Even the giants'' residue is named: *the spirits of the giants afflict, oppress, destroy... and cause trouble* (1 Enoch 15:9), the spirits *of the earth* dwelling *on the earth* (1 Enoch 15:8). And the risen One confronts them: *By which also he went and preached unto the spirits in prison* (1 Peter 3:19), *disobedient... in the days of Noah*. The Watcher-rebellion is the seed-war gone cosmic — and it is bound, awaiting the great-day judgement.',
+       sv.verse_id, ev.verse_id, 'extras', 20125
+  FROM _s301_ge06_lookup sv, _s301_ge06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=6 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-6-my-spirit-shall-not-always-strive-the-hundred-and-twenty-years',
+       E'My spirit shall not always strive — the hundred and twenty years',
+       E'Before the flood Yahuah sets a limit, and the limit is mercy. *And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years* (Genesis 6:3). The restored book carries it almost word for word: *Your spirit will not always abide on man; for they also are flesh and their days shall be one hundred and twenty years* (Jubilees 5:8). Jasher hears the same decree as an open offer of repentance, not a bare death-clock: *Behold I give you a period of one hundred and twenty years; if you will turn to me and forsake your evil ways, then will I also turn away from the evil which I told you, and it shall not exist* (Jasher 5:8) — the span is a door held open. And the New Testament names exactly that long-suffering: *when once the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water* (1 Peter 3:20). The hundred and twenty years are the years the ark was building and the patience of Yahuah waiting — judgement announced, but withheld while the door stood open.',
+       sv.verse_id, ev.verse_id, 'extras', 20128
+  FROM _s301_ge06_lookup sv, _s301_ge06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=6 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-6-the-wickedness-of-man-and-the-days-of-noah',
+       E'The wickedness of man and the days of Noah',
+       E'The corruption is total and the grief is real. *And GOD saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually* (Genesis 6:5); *And it repented Yahuah (LORD) that he had made man on the earth, and it grieved him at his heart* (Genesis 6:6); *And Yahuah (LORD) said, I will destroy man whom I have created from the face of the earth* (Genesis 6:7). Jasher names the cause the Torah leaves implicit: men *would not turn from their evil ways... and they provoked Yahuah (the Lord) with their evil ways, and Yahuah... repented that he had made man* (Jasher 4:7) — the grief is over a world that refused the long-suffering. And Yahusha (Jesus) makes that pre-flood world the very pattern of his return. *But as the days of Noe were, so shall also the coming of the Son of Adam be* (Matthew 24:37); *For as in the days that were before the flood they were eating and drinking, marrying and giving in marriage, until the day that Noe entered into the ark* (Matthew 24:38), *And knew not until the flood came, and took them all away; so shall also the coming of the Son of Adam be* (Matthew 24:39). Luke says it twice over: *as it was in the days of Noe, so shall it be also in the days of the Son of Adam* (Luke 17:26), *until the day that Noe entered into the ark, and the flood came, and destroyed them all* (Luke 17:27). The wickedness of Genesis 6 is not a closed chapter; it is the figure of the last generation, and the reckoning is the same — sudden, total, upon the unready.',
+       sv.verse_id, ev.verse_id, 'extras', 20131
+  FROM _s301_ge06_lookup sv, _s301_ge06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=6 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-6-noah-found-grace-just-and-perfect-in-his-generations',
+       E'Noah found grace — just and perfect in his generations',
+       E'Against a drowning generation, one man is kept. *But Noah found grace in the eyes of Yahuah (LORD)* (Genesis 6:8); *Noah was a just man and perfect in his generations, and Noah walked with Elohim (God)* (Genesis 6:9). The grace and the righteousness belong together: Kepha names him *a preacher of righteousness* whom Yahuah *saved* while he *spared not the old world* (2 Peter 2:5), and the letter to the Hebrews reads his walking with Elohim as faith made visible — *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* (Hebrews 11:7). "Perfect in his generations" is the seed-line kept uncorrupted by the Watcher-mixing: Jubilees says *no man''s person was accepted save that of Noah alone; for his person was accepted in behalf of his sons... for his heart was righteous in all his ways* (Jubilees 5:19), and Jasher twice ties his uncorrupted line straight to the seed — *Noah found grace in the sight of Yahuah (the Lord), and Yahuah... chose him and his children to raise up seed* (Jasher 4:21); *Noah was a just man, he was perfect in his generation, and Yahuah (the Lord) chose him to raise up seed from his seed upon the face of the earth* (Jasher 5:13). The grace is seed-grace: the paternal bloodline of promise kept pure through the one man who had not departed from the way, so the seed could pass through the flood while the corrupted flesh was swept away.',
+       sv.verse_id, ev.verse_id, 'extras', 20134
+  FROM _s301_ge06_lookup sv, _s301_ge06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=6 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-6-the-ark-the-first-covenant-and-the-water-that-saves',
+       E'The ark, the first covenant, and the water that saves',
+       E'The deliverance is built, and it is built on a covenant. *Make thee an ark of gopher wood; rooms shalt thou make in the ark, and shalt pitch it within and without with pitch* (Genesis 6:14), *And, behold, I, even I, do bring a flood of waters upon the earth, to destroy all flesh* (Genesis 6:17), *But with thee will I establish my covenant; and thou shalt come into the ark* (Genesis 6:18) — the first use of "covenant" in the whole Tanakh, joined to the vessel of salvation. The restored wisdom reads the ark as wisdom''s own preserving work: *the earth being drowned with the flood, wisdom again preserved it, and directed the course of the righteous in a piece of wood of small value* (Wisdom of Solomon 10:4); and it ties the ark directly to the destruction of the corrupted seed — *when the proud giants perished, the hope of the world governed by your hand escaped in a weak vessel, and left to all ages a seed of generation* (Wisdom of Solomon 14:6). The same waters that swept away the Nephilim-mixed world bore the seed of promise through. And the New Testament names the figure: *The like figure whereunto even baptism doth also now save us (not the putting away of the filth of the flesh, but the answer of a good conscience toward Elohim (God),) by the resurrection of Yahusha HaMashiach (Jesus Christ)* (1 Peter 3:21). The covenant-ark passing through the flood is the figure fulfilled — deliverance through the water of judgement, by the resurrection.',
+       sv.verse_id, ev.verse_id, 'extras', 20137
+  FROM _s301_ge06_lookup sv, _s301_ge06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=6 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================== thread_members ==============================
+-- THREAD 1 members (★★ centerpiece)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*there were born unto them beautiful and comely daughters* (1 Enoch 6:1) — the witness opens exactly at Genesis 6:1, the multiplying and the daughters the angels lusted after.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=2
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=6 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the angels, the children of the heaven, saw and lusted after them* (1 Enoch 6:2) — the *sons of Elohim* of Genesis 6:2 named as the angels of heaven who took earthly wives.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=2
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=6 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they taught them charms and enchantments, and the cutting of roots* (1 Enoch 7:1) — the Watchers corrupted knowledge as well as the seed, the rebellion spreading by teaching.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=7 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they bare great giants* (1 Enoch 7:2) — the *giants* of Genesis 6:4 named as the offspring of the heaven-earth mixing, the tares bred into the field.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the angels which kept not their first estate... reserved in everlasting chains* (Jude 6) — the apostle confirms the Genesis 6:4 sons of Elohim as fallen angels, bound for judgement.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the angels that sinned... cast them down to hell, and delivered them into chains of darkness* (2 Peter 2:4) — the Watcher-rebellion treated as historical fact, set beside the flood and Sodom.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*By which also he went and preached unto the spirits in prison* (1 Peter 3:19) — the risen One confronts the bound spirits disobedient in the days of Noah, the powers of the Genesis 6 rebellion.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*bind Semjâzâ and his associates who have united themselves with women* (1 Enoch 10:11) — the chains of Jude 6 and 2 Peter 2:4 commanded by name on the Watchers of Genesis 6:4.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*bind them fast for seventy generations in the valleys of the earth, till the day of their judgement* (1 Enoch 10:12) — the sentence behind *the judgment of the great day* (Jude 6).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*the angels of Elohim (God) saw them... and they bare to them sons and they were giants* (Jubilees 5:1) — Genesis 6:2 read with no ambiguity: the sons of Elohim are the angels, their offspring the giants.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=2
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*He bade us to bind them in the depths of the earth... and their sons... smitten with the sword* (Jubilees 5:6) — the rebel angels bound and the giant-sons purged, the seed-corruption swept from the earth.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 12, E'*as for the spirits of the earth which were born upon the earth, on the earth shall be their dwelling* (1 Enoch 15:8) — the residue of the *men of renown* (Genesis 6:4): the giants'' spirits left dwelling on the earth.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=15 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 13, E'*the spirits of the giants afflict, oppress, destroy... and cause trouble* (1 Enoch 15:9) — the demonic legacy of the Nephilim, the seed-war''s cosmic front continuing after the flesh has fallen.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=15 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-sons-of-elohim-the-nephilim-and-the-watchers-bound'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing* (1 Peter 3:20) — the hundred and twenty years of Genesis 6:3 are the years of the waiting patience.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=3
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=3 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-my-spirit-shall-not-always-strive-the-hundred-and-twenty-years'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*their days shall be one hundred and twenty years* (Jubilees 5:8) — the restored book carries Genesis 6:3 almost word for word.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=3
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-my-spirit-shall-not-always-strive-the-hundred-and-twenty-years'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I give you a period of one hundred and twenty years; if you will turn to me... it shall not exist* (Jasher 5:8) — the span read as an open offer of repentance, the long-suffering with a door in it.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=3
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-my-spirit-shall-not-always-strive-the-hundred-and-twenty-years'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*as the days of Noe were, so shall also the coming of the Son of Adam be* (Matthew 24:37) — the wickedness of Genesis 6:5 made the figure of the last generation.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=5
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-wickedness-of-man-and-the-days-of-noah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*eating and drinking, marrying and giving in marriage, until the day that Noe entered into the ark* (Matthew 24:38) — the heedless world the decree of Genesis 6:7 fell upon.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-wickedness-of-man-and-the-days-of-noah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*knew not until the flood came, and took them all away* (Matthew 24:39) — the judgement of Genesis 6:7: sudden, total, upon the unready.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-wickedness-of-man-and-the-days-of-noah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*as it was in the days of Noe, so shall it be also in the days of the Son of Adam* (Luke 17:26) — Genesis 6:5''s overflowing wickedness bound to the return.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=5
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=17 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-wickedness-of-man-and-the-days-of-noah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*until the day that Noe entered into the ark, and the flood came, and destroyed them all* (Luke 17:27) — the sentence *it repenteth me that I have made them* (Genesis 6:7) carried out in a day.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=17 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-wickedness-of-man-and-the-days-of-noah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*they provoked Yahuah (the Lord) with their evil ways... and repented that he had made man* (Jasher 4:7) — names the cause of the grief of Genesis 6:6: a world that refused the long-suffering.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=6
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=4 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-wickedness-of-man-and-the-days-of-noah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*saved Noah the eighth person, a preacher of righteousness* (2 Peter 2:5) — the grace of Genesis 6:8 made Noah a preacher of righteousness, saved while the old world was not spared.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=8
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-noah-found-grace-just-and-perfect-in-his-generations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*By faith Noah... prepared an ark to the saving of his house* (Hebrews 11:7) — Noah''s walking with Elohim (Genesis 6:9) read as faith made visible, heir of the righteousness which is by faith.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=9
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-noah-found-grace-just-and-perfect-in-his-generations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*no man''s person was accepted save that of Noah alone... for his heart was righteous in all his ways* (Jubilees 5:19) — *perfect in his generations* (Genesis 6:9) unfolded: the one man who had not departed from the way.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=9
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-noah-found-grace-just-and-perfect-in-his-generations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah (the Lord) chose him and his children to raise up seed* (Jasher 4:21) — the grace of Genesis 6:8 is seed-grace: the paternal line kept to carry the promise through the flood.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=8
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=4 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-noah-found-grace-just-and-perfect-in-his-generations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*perfect in his generation, and Yahuah (the Lord) chose him to raise up seed from his seed* (Jasher 5:13) — Noah''s uncorrupted line tied straight to the seed of promise, why it could pass through the flood.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=9
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=5 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-noah-found-grace-just-and-perfect-in-his-generations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*even baptism doth also now save us... by the resurrection of Yahusha HaMashiach (Jesus Christ)* (1 Peter 3:21) — the covenant-ark of Genesis 6:18 passing through the flood, the figure fulfilled in the resurrection.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=18
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=3 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-ark-the-first-covenant-and-the-water-that-saves'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*wisdom again preserved it, and directed the course of the righteous in a piece of wood of small value* (Wisdom of Solomon 10:4) — the gopher-wood ark of Genesis 6:14 as the humble vessel of deliverance through judgement.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=14
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-ark-the-first-covenant-and-the-water-that-saves'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*when the proud giants perished, the hope of the world... escaped in a weak vessel, and left to all ages a seed of generation* (Wisdom of Solomon 14:6) — the flood of Genesis 6:17 sweeps away the Nephilim and bears the seed of promise through.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=6 AND sv.verse_number=17
+  JOIN _s301_ge06_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-6-the-ark-the-first-covenant-and-the-water-that-saves'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session301 — Genesis cross-references complete.'
