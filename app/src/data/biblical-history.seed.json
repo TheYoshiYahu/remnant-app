@@ -9,8 +9,9 @@
       "judgment": "judgment / affliction (argaman — purple)",
       "covenant": "covenant landmark / consecration / birth of the seed-line / dated prophetic word (techelet — blue)"
     },
-    "sources": "Mined per-source from the Torah/Tanakh (Masoretic/KJV), the New Testament (feast anchors), and the restored extra-canonical library: Jubilees, 1 Enoch, Jasher, and the Apocrypha (1 & 2 Maccabees, 1 Esdras, Greek Esther). Extra-canonical dates were gated against the local restored-names editions.",
-    "flagged": "Dated only by month, no day (kept, day=null): Shavuot (counted), the months of Solomon's temple (Bul/Ethanim/Ziv), Gedaliah's murder (7th), Zechariah's opening call (8th), Sodom's overthrow (Jubilees, 4th). EXCLUDED for lacking a clear stated month: Ezekiel 26:1 and 32:17 (no month named) and Ezekiel 40:1 ('the beginning of the year' — month contested). Shavuot/Pentecost and the wave-sheaf are feast-counted, not fixed-date; noted as such."
+    "sources": "Mined per-source from the Torah/Tanakh (Masoretic/KJV), the New Testament (feast anchors), and the restored extra-canonical library: Jubilees, 1 Enoch, 2 Enoch, Jasher, and the Apocrypha (1 & 2 Maccabees, 1 Esdras, Greek Esther). A second additive pass mined Jubilees and Jasher exhaustively for every stated month-and-day, added 2 Enoch's dating of Enoch's birth and translation (the month Tsivan = Sivan), and added a small set of DERIVED dates computed from a stated offset against a stated anchor (e.g. the fall of Jericho, the binding of Yitschaq) — each flagged in its note. Extra-canonical dates were gated against the local restored-names editions; nothing is harmonised or invented.",
+    "flagged": "Dated only by month, no day (kept, day=null): Shavuot (counted), the months of Solomon's temple (Bul/Ethanim/Ziv), Gedaliah's murder (7th), Zechariah's opening call (8th), Sodom's overthrow (Jubilees, 4th), Avraham's banquet at Yitschaq's weaning (Jubilees, 3rd), Avraham's first Feast of Tabernacles (Jubilees, 7th), Ya'aqov's coming to Shechem in peace (Jubilees, 4th), and Miriam's death at Kadesh (Jasher/Numbers, 1st of the fortieth year). EXCLUDED for lacking a clear stated month: Ezekiel 26:1 and 32:17 (no month named) and Ezekiel 40:1 ('the beginning of the year' — month contested). The patriarchs' deaths in Jubilees are dated by jubilee/week/year, not by month and day, and so cannot recur on a fixed date; they are not bound here. Shavuot/Pentecost and the wave-sheaf are feast-counted, not fixed-date; noted as such.",
+    "derived": "A few entries carry a DERIVED date: an event the text dates only by an explicit offset from another, explicitly dated event (e.g. 'on the seventh day', 'on the third day'). The anchor and offset are stated in the entry's note. Jericho falls on the seventh of the second month (command on the new moon, Jasher 88:14, + the seven-day march). The binding of Yitschaq falls about the fifteenth of the first month (Mastema's challenge on the twelfth, Jubilees 17:15, + 'the third day', Jubilees 18:3)."
   },
   "events": [
     {
@@ -973,6 +974,252 @@
       "category": "blessing",
       "summary": "On the twenty-seventh of the twelfth month, 2 Kings records, the captive king Jehoiachin was brought out of prison and given a seat above the kings in Babylon — the seed of David preserved through the long exile, the lamp not put out.",
       "note": "2 Kings 25:27 gives the twenty-seventh; the parallel in Jeremiah 52:31 gives the twenty-fifth."
+    },
+    {
+      "id": "noah-enters-ark",
+      "month": 2,
+      "day": 1,
+      "title": "Noah enters the ark",
+      "scripture": "Jubilees 5:23",
+      "category": "blessing",
+      "summary": "On the new moon of the second month Noah and all that breathed went into the ark — beast and bird and creeping thing gathered in — and so they entered until the sixteenth, until Yahuah (the LORD) shut him in from without. The door of mercy stood open a full sixteen days before the deep broke loose."
+    },
+    {
+      "id": "flood-fountains-closed",
+      "month": 4,
+      "day": 1,
+      "title": "The fountains of the deep are closed",
+      "scripture": "Jubilees 5:29; 6:26",
+      "category": "blessing",
+      "summary": "On the new moon of the fourth month the fountains of the great deep were stopped and the flood-gates of the heavens restrained — the waters of judgment held back at last. Noah set this day apart as one of the four days of remembrance, the seasons marked at the turning of the year.",
+      "note": "One of the four season-memorials — the cardinal new moons of months 1, 4, 7 and 10 ordained on the heavenly tablets (Jubilees 6:23-28)."
+    },
+    {
+      "id": "flood-abysses-opened",
+      "month": 7,
+      "day": 1,
+      "title": "The waters begin to drain into the deep",
+      "scripture": "Jubilees 5:29; 6:26-27",
+      "category": "blessing",
+      "summary": "On the new moon of the seventh month the mouths of the abysses of the earth were opened and the waters began to go down into the deep below — the flood draining back, the earth returning. Noah ordained this a day of remembrance, one of the four seasons of the year.",
+      "note": "One of the four season-memorials — the cardinal new moons of months 1, 4, 7 and 10 (Jubilees 6:23-28)."
+    },
+    {
+      "id": "noah-opens-ark",
+      "month": 2,
+      "day": 27,
+      "title": "Noah opens the ark and frees the living things",
+      "scripture": "Jubilees 5:31",
+      "category": "blessing",
+      "summary": "On the twenty-seventh of the second month Noah opened the ark and sent forth from it the beasts and the cattle and the birds and every creeping thing — the saved remnant of creation loosed again upon a cleansed earth, days before Noah himself went forth to build the altar.",
+      "note": "The same date Genesis 8:14 gives for the earth fully dried (see the Flood-drying entry); Jubilees adds the opening of the ark and the release of the creatures."
+    },
+    {
+      "id": "abraham-well-of-oath-settles",
+      "month": 5,
+      "day": 15,
+      "title": "Avraham settles at the Well of the Oath",
+      "scripture": "Jubilees 16:11",
+      "category": "covenant",
+      "summary": "In the middle of the fifth month Avraham (Abraham) moved and dwelt at the Well of the Oath (Beersheba) — the patriarch settling at the place of the sworn covenant, where his sons after him would meet Yahuah (the LORD) and call upon His name."
+    },
+    {
+      "id": "isaac-conceived",
+      "month": 6,
+      "day": 15,
+      "title": "Yitschaq is conceived — Yahuah visits Sarah",
+      "scripture": "Jubilees 16:12",
+      "category": "covenant",
+      "summary": "In the middle of the sixth month Yahuah (the LORD) visited Sarah as He had spoken, and she conceived — the child of promise quickened in the womb of the barren, nine months before Yitschaq (Isaac) would be born on the festival of first-fruits."
+    },
+    {
+      "id": "isaac-weaned-banquet",
+      "month": 3,
+      "day": null,
+      "title": "Avraham's banquet at the weaning of Yitschaq",
+      "scripture": "Jubilees 17:1",
+      "category": "blessing",
+      "summary": "In the third month Avraham (Abraham) made a great banquet on the day his son Yitschaq (Isaac) was weaned — the household of promise rejoicing over the child grown strong, the laughter of Sarah carried into the next generation.",
+      "note": "Dated by month only (the third); kept for the browse-all surface."
+    },
+    {
+      "id": "abraham-first-tabernacles",
+      "month": 7,
+      "day": null,
+      "title": "Avraham keeps the first Feast of Tabernacles",
+      "scripture": "Jubilees 16:20-29",
+      "category": "covenant",
+      "summary": "In the seventh month Avraham (Abraham) kept a festival of joy seven days beside the altar at the Well of the Oath — the first keeping of the Feast of Tabernacles, ordained of old upon the heavenly tablets, that Yashar'el (Israel) should dwell in booths and rejoice before Yahuah (the LORD).",
+      "note": "The seven-day festival is dated to the seventh month; its starting day is not stated (kept for browse-all). Tabernacles itself is fixed on the fifteenth."
+    },
+    {
+      "id": "reuben-born",
+      "month": 9,
+      "day": 14,
+      "title": "Reuben is born",
+      "scripture": "Jubilees 28:11",
+      "category": "covenant",
+      "summary": "On the fourteenth of the ninth month Leah bore Ya'aqov (Jacob) his firstborn, and called his name Reuben — the first of the twelve who would become the tribes of Yashar'el (Israel), the firstfruits of the house of promise."
+    },
+    {
+      "id": "jacob-flees-toward-gilead",
+      "month": 1,
+      "day": 21,
+      "title": "Ya'aqov sets his face toward Gilead",
+      "scripture": "Jubilees 29:5",
+      "category": "covenant",
+      "summary": "On the twenty-first of the first month Ya'aqov (Jacob) turned his face toward Gilead and fled from Laban — the heir of the promise turning home toward the land with his wives, his children and his flocks, the covenant going with him."
+    },
+    {
+      "id": "jacob-crosses-jabbok",
+      "month": 9,
+      "day": 11,
+      "title": "Ya'aqov crosses the Jabbok and is reconciled to Esau",
+      "scripture": "Jubilees 29:11",
+      "category": "blessing",
+      "summary": "On the eleventh of the ninth month Ya'aqov (Jacob) passed over the Jabbok, and on that very day Esau his brother came and was reconciled to him — the dreaded meeting turned to peace, the brother he feared falling on his neck instead of his sword."
+    },
+    {
+      "id": "jacob-goes-to-shechem",
+      "month": 4,
+      "day": null,
+      "title": "Ya'aqov comes up to Shechem in peace",
+      "scripture": "Jubilees 30:1",
+      "category": "covenant",
+      "summary": "In the fourth month Ya'aqov (Jacob) came up to Salem, by Shechem, in peace, and pitched in sight of the city — the wanderer at rest in the land of promise, before the trouble of Dinah came upon his house.",
+      "note": "Dated by month only (the fourth); kept for browse-all."
+    },
+    {
+      "id": "jacob-purifies-house-bethel",
+      "month": 7,
+      "day": 1,
+      "title": "Ya'aqov purifies his house and goes up to Bethel",
+      "scripture": "Jubilees 31:1-3",
+      "category": "covenant",
+      "summary": "On the new moon of the seventh month Ya'aqov (Jacob) put away the strange gods from his house, and his people purified themselves and changed their garments, and he went up to Bethel — keeping the vow he had vowed when he fled the face of Esau, returning to the place of the ladder to build his altar."
+    },
+    {
+      "id": "jacob-resolves-bethel-sanctuary",
+      "month": 7,
+      "day": 22,
+      "title": "Ya'aqov resolves to build the sanctuary at Bethel",
+      "scripture": "Jubilees 32:15",
+      "category": "covenant",
+      "summary": "On the twenty-second of the seventh month Ya'aqov (Jacob) resolved to build up the place at Bethel, to wall its court and sanctify it for ever — the patriarch consecrating the ground where heaven had opened over him, for himself and his children after him."
+    },
+    {
+      "id": "deborah-nurse-dies",
+      "month": 7,
+      "day": 23,
+      "title": "Deborah, Rebecca's nurse, dies at Bethel",
+      "scripture": "Jubilees 32:30",
+      "category": "covenant",
+      "summary": "On the twenty-third of the seventh month Deborah, the nurse of Rebecca, died at Bethel and was buried beneath the oak by the river — the place named the Oak of Mourning, a faithful servant of the house of promise laid to rest."
+    },
+    {
+      "id": "jacob-departs-haran",
+      "month": 3,
+      "day": 1,
+      "title": "Yashar'el sets out from Haran toward Egypt",
+      "scripture": "Jubilees 44:1",
+      "category": "covenant",
+      "summary": "On the new moon of the third month Yashar'el (Israel) set out from Haran by the way of the Well of the Oath — the old man turning at last toward Egypt and his lost son, the seventy souls of the house of Ya'aqov (Jacob) beginning their long descent."
+    },
+    {
+      "id": "jacob-sacrifice-well-oath",
+      "month": 3,
+      "day": 7,
+      "title": "Yashar'el sacrifices at the Well of the Oath",
+      "scripture": "Jubilees 44:1-5",
+      "category": "covenant",
+      "summary": "On the seventh of the third month Yashar'el (Israel) offered a sacrifice at the Well of the Oath to the Elohim (God) of his father Yitschaq (Isaac) — and there Yahuah (the LORD) spoke to him in the visions of the night: Fear not to go down into Egypt, for I will make of you a great nation there."
+    },
+    {
+      "id": "jacob-enters-egypt",
+      "month": 4,
+      "day": 1,
+      "title": "Yashar'el comes into the land of Egypt",
+      "scripture": "Jubilees 45:1",
+      "category": "covenant",
+      "summary": "On the new moon of the fourth month Yashar'el (Israel) came into the land of Egypt, into the land of Goshen — the house of Ya'aqov (Jacob) gathered to Joseph at last, the seed of promise planted in the iron furnace from which Yahuah (the LORD) would one day bring them out."
+    },
+    {
+      "id": "moses-commands-passover",
+      "month": 1,
+      "day": 13,
+      "title": "Mosheh commands Yashar'el to keep the Passover",
+      "scripture": "Jasher 83:15",
+      "category": "covenant",
+      "summary": "On the thirteenth of the first month Mosheh (Moses) commanded the children of Yashar'el (Israel) to keep the Passover — the word going out through the camp on the eve of the appointed day, that every house should stand ready with its lamb for the going-out."
+    },
+    {
+      "id": "jericho-march-begins",
+      "month": 2,
+      "day": 1,
+      "title": "Yahuah commands the march on Jericho",
+      "scripture": "Jasher 88:14",
+      "category": "blessing",
+      "summary": "On the first day of the second month Yahuah (the LORD) said to Yahushua (Joshua): Rise up, I have given Jericho into your hand. Compass the city once each day for six days, and the priests shall blow the trumpets — the strong walled city given over before a single stone was thrown."
+    },
+    {
+      "id": "miriam-dies",
+      "month": 1,
+      "day": null,
+      "title": "Miriam dies at Kadesh",
+      "scripture": "Jasher 84:24; Numbers 20:1",
+      "category": "covenant",
+      "summary": "In the first month of the fortieth year the congregation came to Kadesh in the wilderness of Tsin, and there Miriam died and was buried — the prophetess who watched over the ark of bulrushes and sang at the sea, gathered to her people on the threshold of the land.",
+      "note": "Dated by month only (the first month of the fortieth year); kept for browse-all."
+    },
+    {
+      "id": "jericho-falls",
+      "month": 2,
+      "day": 7,
+      "title": "The walls of Jericho fall",
+      "scripture": "Jasher 88:17-21; Joshua 6:15-20",
+      "category": "blessing",
+      "summary": "On the seventh day of the march the host of Yashar'el (Israel) compassed Jericho seven times, the priests blew, the people shouted, and the walls fell down flat — the first city of the land taken not by the sword but by the trumpet and the shout of faith.",
+      "note": "Derived date: the command came on the new moon of the second month (Jasher 88:14); the walls fell on the seventh day of the march — the seventh of the second month."
+    },
+    {
+      "id": "akedah-isaac-bound",
+      "month": 1,
+      "day": 15,
+      "title": "The binding of Yitschaq on Mount Moriah",
+      "scripture": "Jubilees 18:3, 18-19",
+      "category": "covenant",
+      "summary": "On the third day of his journey Avraham (Abraham) bound Yitschaq (Isaac) upon the altar on Mount Moriah, and Yahuah (the LORD) provided the ram in his stead — the father not withholding his only son, a sign of the Father who would not withhold His. Avraham kept a seven-day festival of joy thereafter, the feast of the going-up and the return in peace.",
+      "note": "Derived date: the voices in heaven and Mastema's challenge came on the twelfth of the first month (Jubilees 17:15); Avraham reached the place 'on the third day' (Jubilees 18:3), placing the binding about the fifteenth — and the seven-day festival he kept (18:18) coincides with the Feast of Unleavened Bread."
+    },
+    {
+      "id": "enoch-born",
+      "month": 3,
+      "day": 6,
+      "title": "Enoch is born",
+      "scripture": "2 Enoch 68",
+      "category": "covenant",
+      "summary": "Enoch was born on the sixth day of the month Tsivan — the seventh from Adam, who walked with Elohim (God) and was not, for Elohim took him. The day of his birth and the day of his taking-up were one and the same.",
+      "note": "The month Tsivan is Sivan, the third biblical month."
+    },
+    {
+      "id": "enoch-ascends-revelation",
+      "month": 3,
+      "day": 1,
+      "title": "Enoch is taken up to receive the heavenly books",
+      "scripture": "2 Enoch 68",
+      "category": "covenant",
+      "summary": "On the first day of the month Tsivan Enoch was taken up into the heavens and remained sixty days, and he wrote down all the signs of creation in three hundred and sixty-six books and brought them back to his sons — the scribe of righteousness shown the courses of the lights and the seasons of the year.",
+      "note": "The month Tsivan is Sivan, the third biblical month."
+    },
+    {
+      "id": "enoch-translated",
+      "month": 3,
+      "day": 6,
+      "title": "Enoch is translated that he should not see death",
+      "scripture": "2 Enoch 68",
+      "category": "covenant",
+      "summary": "On the sixth day of the month Tsivan, the very day and hour he was born, Enoch was taken up to the highest heaven and remained there — translated that he should not taste death, for Elohim (God) received him to Himself.",
+      "note": "The month Tsivan is Sivan, the third biblical month."
     }
   ]
 }
