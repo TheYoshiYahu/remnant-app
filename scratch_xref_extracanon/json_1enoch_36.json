@@ -1,0 +1,150 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 36,
+  "session": "session250",
+  "tag": "en36",
+  "base_band": 50875,
+  "threads": [
+    {
+      "slug": "1-enoch-36-portals-four-winds",
+      "title": "The portals of heaven and the four winds",
+      "summary_md": "Enoch ends his journey at the south, *And from thence I proceeded to the south, to the ends of the earth, and saw there three portals of the heaven open: through each of them proceed south winds: when they blow there is dew and rain and hoar-frost.* (1 Enoch 36:1), and he sees *the four quarters of the earth, and the winds which divide the earth into four parts.* (1 Enoch 36:3). This is not invented machinery — John sees the same four-cornered order in the last days: *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* (Revelation 7:1). Job already knew the winds are weighed and measured by the Creator's hand — *To make the weight for the winds; and he weigheth the waters by measure.* (Job 28:25) — and Enoch within his own Luminaries book names those same quarters: *And the first quarter is called the east, because it is the first... And the west quarter is named the diminished, because there all the luminaries of the heaven wane and go down.* (1 Enoch 77:1). The four winds are the Creator's ordered servants, not free powers.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 36,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 7,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* John sees the same four winds at the four quarters that Enoch sees dividing the earth into four parts."
+        },
+        {
+          "src_ch": 36,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 28,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Job 28:25 — *To make the weight for the winds; and he weigheth the waters by measure.* The very winds that bring Enoch's dew, rain, and hoar-frost are weighed out by the Creator who orders them."
+        },
+        {
+          "src_ch": 36,
+          "src_v": 3,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 77,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "1 Enoch 77:1 — *And the first quarter is called the east, because it is the first: and the second, the south, because the Most High descends there, yea, there in quite a special sense He who is blessed for ever comes down.* Enoch's own Luminaries book names the same four quarters he surveys here, confirming one consistent cosmology across the books."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-36-pillars-of-heaven",
+      "title": "The winds that bear the earth — the pillars of heaven",
+      "summary_md": "Enoch sees *the winds which support the earth and the firmament of the heaven* (1 Enoch 36:4), and *how the winds stretch out the vaults of heaven, and have their station between heaven and earth: these are the pillars of the heaven.* (1 Enoch 36:5). Scripture speaks the same way of the world resting on the Creator's pillars: *He raiseth up the poor out of the dust, and lifteth up the beggar from the dunghill, to set them among princes, and to make them inherit the throne of glory: for the pillars of the earth are the LORD'S, and he hath set the world upon them.* (1 Samuel 2:8). The stretching-out of the heavens is the Creator's own act — *He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion.* (Jeremiah 10:12) — and when Yahuah answers Job He plants this same foundation: *Where wast thou when I laid the foundations of the earth? declare, if thou hast understanding.* (Job 38:4). Enoch is not describing brute pillars but the ordered service of winds upholding what Yahuah has founded.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 36,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "1-samuel",
+          "tgt_ch": 2,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "1 Samuel 2:8 — *He raiseth up the poor out of the dust, and lifteth up the beggar from the dunghill, to set them among princes, and to make them inherit the throne of glory: for the pillars of the earth are the LORD'S, and he hath set the world upon them.* Hannah confesses the pillars of the earth that Enoch beholds, and that they belong to Yahuah who set the world upon them."
+        },
+        {
+          "src_ch": 36,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Jeremiah 10:12 — *He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion.* The stretching-out of the vaults of heaven that Enoch watches is Yahuah's own work of establishing and spreading the heavens."
+        },
+        {
+          "src_ch": 36,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 38,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Job 38:4 — *Where wast thou when I laid the foundations of the earth? declare, if thou hast understanding.* The foundations Enoch sees the winds support are the same foundations Yahuah challenges Job to account for — they are the Creator's, not man's."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-36-ordered-by-wisdom-praise",
+      "title": "All creation ordered by His wisdom — Enoch blesses Yahuah of glory",
+      "summary_md": "The Book of the Watchers closes in a doxology: *And I saw how Yahuah (God) has ordered all creation by His wisdom, and how He has founded the world upon them.* (1 Enoch 36:9). This is the heart of the canon's own confession — *Yahuah (LORD) by wisdom hath founded the earth; by understanding hath he established the heavens.* (Proverbs 3:19) — and the psalmist cries the same wonder Enoch feels: *O Yahuah (LORD), how manifold are thy works! in wisdom hast thou made them all: the earth is full of thy riches.* (Psalm 104:24). The wordless witness of that ordered creation never stops praising — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* (Psalm 19:1), *Day unto day uttereth speech, and night unto night sheweth knowledge.* (Psalm 19:2) — the sun and moon and stars are summoned by name to praise: *Praise ye him, sun and moon: praise him, all ye stars of light.* (Psalm 148:3); and that praise stretches over the whole earth Enoch has just circled: *From the rising of the sun unto the going down of the same the LORD'S name is to be praised.* (Psalm 113:3). Jubilees confesses the same six-day ordering, that even *the angels of the spirit of the winds... and of snow and of hail and of hoar frost* (Jubilees 2:2) were created and set to serve. Enoch ends as every righteous one ends — blessing the Creator whose wisdom holds the world.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 36,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 3,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Proverbs 3:19 — *Yahuah (LORD) by wisdom hath founded the earth; by understanding hath he established the heavens.* This is the canon's exact confession of what Enoch sees: Yahuah ordered and founded all creation by His wisdom."
+        },
+        {
+          "src_ch": 36,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Psalm 104:24 — *O Yahuah (LORD), how manifold are thy works! in wisdom hast thou made them all: the earth is full of thy riches.* The psalmist marvels at the wisdom-made creation that Enoch's closing blessing celebrates."
+        },
+        {
+          "src_ch": 36,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The ordered heavens Enoch surveys are themselves a ceaseless declaration of the Creator's glory."
+        },
+        {
+          "src_ch": 36,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 148,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Psalm 148:3 — *Praise ye him, sun and moon: praise him, all ye stars of light.* The lights of the heaven Enoch journeyed among are called to praise the Creator whose wisdom set them in order."
+        },
+        {
+          "src_ch": 36,
+          "src_v": 9,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 2,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "Jubilees 2:2 — *For on the first day He created the heavens which are above and the earth and the waters and all the spirits which serve before Him–the angels of the presence... and of snow and of hail and of hoar frost...* Jubilees confesses the same created, ordered service — even the winds and hoar-frost of Enoch 36 — set in place by the Creator's wisdom."
+        }
+      ]
+    }
+  ]
+}

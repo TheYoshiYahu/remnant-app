@@ -1,0 +1,140 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 30,
+  "session": "session250",
+  "tag": "en30",
+  "base_band": 50725,
+  "threads": [
+    {
+      "slug": "1-enoch-30-fragrant-spices",
+      "title": "The fragrant trees — the chief spices",
+      "summary_md": "Enoch comes east to a range of spice-bearing trees: *And beyond these, I proceeded to the east, and I saw other mountains, and trees out of which flowed the resin called styrax and the gum called galbanum, and onycha, and the trees which produce stacte, and the balsam tree.* (1 Enoch 30:1), and beyond them an almond-like mountain whose *fragrance was sweet and strong* (1 Enoch 30:2). The same chief spices line the canon's most fragrant places. The bride's garden is an orchard of them: *Spikenard and saffron; calamus and cinnamon, with all trees of frankincense; myrrh and aloes, with all the chief spices:* (Song of Solomon 4:14). And the holy anointing oil is compounded from the very same list: *Take thou also unto thee principal spices, of pure myrrh five hundred shekels, and of sweet cinnamon half so much, even two hundred and fifty shekels, and of sweet calamus two hundred and fifty shekels,* (Exodus 30:23). It ain't new: Enoch's eastern mountain of sweet-smelling trees is the same family of spices Yahuah set apart for His sanctuary and sang over in His garden.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 30,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "song-of-solomon",
+          "tgt_ch": 4,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Song of Solomon 4:14 — *Spikenard and saffron; calamus and cinnamon, with all trees of frankincense; myrrh and aloes, with all the chief spices:* The bride's enclosed garden carries the very orchard of fragrant trees Enoch smells on the eastern mountain (30:2)."
+        },
+        {
+          "src_ch": 30,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 30,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Exodus 30:23 — *Take thou also unto thee principal spices, of pure myrrh five hundred shekels, and of sweet cinnamon half so much, even two hundred and fifty shekels, and of sweet calamus two hundred and fifty shekels,* The same chief spices that flow from Enoch's trees (30:1) are the principal spices Yahuah set apart for the holy anointing oil."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-30-tree-of-wisdom-eden",
+      "title": "The tree of wisdom — Eden's tree of knowledge",
+      "summary_md": "At the centre of the fragrant grove Enoch finds one surpassing tree, and the angel names it: *This is the tree of wisdom, of which thy father old (in years) and thy aged mother, who were before thee, have eaten, and they learnt wisdom, and their eyes were opened, and they knew that they were naked, and they were driven out of the garden.* (1 Enoch 30:7). This is Eden's own tree, the one Genesis sets *in the midst of the garden*: *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* (Genesis 2:9). Enoch's phrase *they learnt wisdom* repeats Eve's reach for it: *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* (Genesis 3:6). And *their eyes were opened, and they knew that they were naked* is lifted straight from the fall: *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* (Genesis 3:7). So is the expulsion: *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* (Genesis 3:24). It ain't new — Enoch is reading Genesis 2-3, naming the tree of knowledge by its fruit and its consequence, with the way back guarded until the appointed day.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 30,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The tree of wisdom in the midst of Enoch's grove (30:7) is Eden's tree of knowledge, set in the midst of the garden."
+        },
+        {
+          "src_ch": 30,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* Enoch's note that the first parents *have eaten, and they learnt wisdom* (30:7) retells Eve's reach for the tree desired to make one wise."
+        },
+        {
+          "src_ch": 30,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* Enoch's *their eyes were opened, and they knew that they were naked* (30:7) is quoted from the moment of the fall."
+        },
+        {
+          "src_ch": 30,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* The driving out of the garden that closes Enoch 30:7 is the same expulsion, with the way to the tree guarded until the appointed time."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-30-tree-transplanted-temple",
+      "title": "The tree transplanted to the temple — fruit for the righteous",
+      "summary_md": "The tree withheld from Adam is not destroyed but reserved: *And from that time forward no one has been permitted to touch it until the great judgment, when His righteousness shall be avenged upon the sinners, and its fruit given to the righteous and humble.* (1 Enoch 30:8); then *its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* (1 Enoch 30:9), and the redeemed *shall live a long life on earth* with *no sorrow or plague or torment or calamity* (1 Enoch 30:10). Enoch himself has already shown the same scene at the throne-mountain: *To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* (1 Enoch 24:11). John sees the tree replanted at the centre of the renewed Zion: *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* (Revelation 22:2), and only the covenant-keepers come to it: *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* (Revelation 22:14). Ezekiel sets the same healing trees flowing from the sanctuary: *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* (Ezekiel 47:12). It ain't new: the Eden-tree denied at the fall is transplanted to the temple-mountain at the judgement, its fruit for the elect who keep the way — Zion at the centre, the righteous regathered, no replacement of the covenant people but their restoration.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 30,
+          "src_v": 9,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 24,
+          "tgt_v": 11,
+          "tier": "extras",
+          "note": "1 Enoch 24:11 — *To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* Enoch had already seen this fragrant tree at the throne-mountain; 30:9 repeats it nearly word for word, binding the two visions."
+        },
+        {
+          "src_ch": 30,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The tree transplanted to the temple of the Eternal King (30:9) is John's tree of life set at the centre of the renewed Zion."
+        },
+        {
+          "src_ch": 30,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The fruit reserved for the righteous and humble at the judgement (30:8) is given to those who keep the commandments — the Torah stands, and the tree is theirs."
+        },
+        {
+          "src_ch": 30,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 47,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel's healing trees flowing from the sanctuary match the temple-tree of Enoch 30:9-10 whose fragrance brings life and ends all plague."
+        }
+      ]
+    }
+  ]
+}

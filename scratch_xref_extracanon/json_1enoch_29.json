@@ -1,0 +1,140 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 29,
+  "session": "session250",
+  "tag": "en29",
+  "base_band": 50700,
+  "threads": [
+    {
+      "slug": "1-enoch-29-throne-mountain-zion",
+      "title": "The throne-mountain where the Eternal King comes down",
+      "summary_md": "Michael answers Enoch's wonder at the fragrant tree by first naming the mountain: *'This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is His throne, where the Holy Great One, Yahuah (God) of Glory, the Eternal King, will sit, when He shall come down to visit the earth with goodness.'* (1 Enoch 29:9). This is the framework's Zion-centre: the place of the throne is the place of the tree, and the King will come down to it. The vision repeats almost word for word the earlier throne-mountain Enoch was shown — *'This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is His throne, where the Holy Great One, Yahuah (God) of Glory, the Eternal King, will sit, when He shall come down to visit the earth with goodness.'* (1 Enoch 24:9) — the same mountain, the same tree, seen again. And the tree of life it guards is the one set in Eden eastward and then fenced from mortal hands: *'And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:'* (Genesis 3:22). What Adam was barred from, the throne-mountain keeps until the King comes down. It ain't new.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 29,
+          "src_v": 9,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 24,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "1 Enoch 24:9 — *This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is His throne, where the Holy Great One, Yahuah (God) of Glory, the Eternal King, will sit, when He shall come down to visit the earth with goodness.* The same throne-mountain and tree Enoch was shown earlier, repeated here almost verbatim."
+        },
+        {
+          "src_ch": 29,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:* The tree the throne-mountain guards is the very tree of life Adam was barred from in Eden."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-29-tree-of-life-reserved",
+      "title": "The tree of life kept until the great judgement, food for the elect",
+      "summary_md": "The fragrant tree is no ordinary tree: *'And as for this fragrant tree no mortal is permitted to touch it till the great judgement, when His righteousness and His majesty shall be avenged on the sinners in its fruit to the righteous and humble. To the righteous it shall be given for food, and its fruit shall be for life to the elect'* (1 Enoch 29:10-11). This is Eden's own tree, the one Yahuah planted *'pleasant to the sight, and good for food; the tree of life also in the midst of the garden'* (Genesis 2:9), and then sealed from mortal reach so that no man should *'take also of the tree of life, and eat, and live for ever'* (Genesis 3:22). Enoch sees the same fruit restored to the elect at the end — exactly the promise Yahusha makes to the overcomer: *'To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).'* (Revelation 2:7), and shows again in the City: *'In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.'* (Revelation 22:2). Ezekiel saw it too, by the water that issues from the sanctuary: *'And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.'* (Ezekiel 47:12). The tree withheld since Eden is the tree given to the righteous after the judgement. It ain't new.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 29,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The fragrant tree no mortal may touch is Eden's tree of life, planted in the garden's midst."
+        },
+        {
+          "src_ch": 29,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 2,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* Enoch's promise that the tree's fruit is given to the elect is the same fruit Yahusha gives the overcomer."
+        },
+        {
+          "src_ch": 29,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The tree given to the righteous for food and life stands again in the City of the end."
+        },
+        {
+          "src_ch": 29,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 47,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel's tree, fed from the sanctuary, is the same tree Enoch sees transplanted to the temple, its fruit for food and its leaf for healing."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-29-transplanted-temple-long-life",
+      "title": "Transplanted to the temple: long life and no more sorrow",
+      "summary_md": "The tree's destiny is the sanctuary, and the elect's destiny is life beside it: *'it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King. Then shall they rejoice with joy and be glad, and into the holy place shall they enter; and its fragrance shall be in their bones, and they shall live a long life on earth, such as thy fathers lived: and in their days shall no sorrow or plague or torment or calamity touch them.'* (1 Enoch 29:11-12). This is the prophets' restored-earth promise, where the days of the people are the days of the tree: *'They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands.'* (Isaiah 65:22). And the end of sorrow, plague, and torment Enoch names is the same comfort the prophets and the Revelation give: *'He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it.'* (Isaiah 25:8), unfolded as *'And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.'* (Revelation 21:4). The right to enter the holy place and eat is kept for those who keep the way: *'Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.'* (Revelation 22:14). It ain't new.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 29,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 65,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 65:22 — *They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands.* Enoch's promise that the elect live a long life on earth is Isaiah's new-earth promise where the people's days are the days of a tree."
+        },
+        {
+          "src_ch": 29,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 25,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Isaiah 25:8 — *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it.* The day when no sorrow or torment touches the elect is the day death is swallowed up and every tear wiped away."
+        },
+        {
+          "src_ch": 29,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Revelation 21:4 — *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.* The end of sorrow, plague, and calamity Enoch names is the end John sees in the restored creation."
+        },
+        {
+          "src_ch": 29,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The right to enter the holy place and eat the tree's fruit belongs to those who keep the commandments — the Torah stands at the door of the temple Enoch sees."
+        }
+      ]
+    }
+  ]
+}

@@ -5240,6 +5240,2106 @@ SELECT t.id, x.id, 3, E'Revelation 22:3 — *And there shall be no more curse: b
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1enoch_25.sql (session250 1-enoch 25) -----
+-- Source anchor: enoch/1-enoch ch25. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en25 (view _session250_en25_lookup). Sort band base 50600, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-25-watchers-petition-refused
+  ('enoch', '1-enoch', 25, 2, 'canon', 'jude', 1, 6, 'free', E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude names the very Watchers whose intercession Enoch is told to refuse — reserved in chains, not pardoned.'),
+  ('enoch', '1-enoch', 25, 2, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter confirms the sentence Enoch delivers: the angels that sinned are held for judgement, their plea denied.'),
+  -- thread: 1-enoch-25-watchers-defiled-with-daughters-of-men
+  ('enoch', '1-enoch', 25, 3, 'canon', 'genesis', 6, 2, 'free', E'Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* Enoch''s charge that the Watchers "lain with women" and "taken to yourselves wives" is the inside account of this verse.'),
+  ('enoch', '1-enoch', 25, 3, 'canon', 'genesis', 6, 4, 'free', E'Genesis 6:4 — *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.* The giants Enoch says the Watchers begot are the giants Genesis records in the same days.'),
+  ('enoch', '1-enoch', 25, 4, 'canon', 'genesis', 6, 3, 'free', E'Genesis 6:3 — *And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years.* The Creator''s limit on flesh answers the Watchers who, though spiritual and living the eternal life, lusted after flesh and blood.'),
+  -- thread: 1-enoch-25-evil-spirits-from-the-giants
+  ('enoch', '1-enoch', 25, 9, 'canon', 'matthew', 12, 43, 'free', E'Matthew 12:43 — *When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none.* Yahusha''s bodiless, restless unclean spirit is exactly Enoch''s evil spirit of the giants, dwelling on the earth, hungering yet taking no food.'),
+  ('enoch', '1-enoch', 25, 7, 'enoch', '1-enoch', 15, 7, 'extras', E'1 Enoch 15:7 — *Evil spirits have proceeded from their bodies; because they are born from men and from the holy Watchers is their beginning and primal origin; evil spirits they will be upon earth and evil spirits will they be called.* Chapter 25 in this parse is a verbatim duplicate of chapter 15; the same word on the origin of evil spirits stands in both places.'),
+  ('enoch', '1-enoch', 25, 6, 'jubilees', 'jubilees', 10, 1, 'extras', E'Jubilees 10:1 — *And in the third week of this jubilee the unclean demons began to lead astray the children of the sons of Noah; and to make to err and destroy them.* Jubilees shows Enoch''s evil spirits at work after the Flood, the giants'' offspring leading the living astray.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-25-watchers-petition-refused',
+       E'Intercede for men, not men for you — the Watchers'' petition refused',
+       E'Enoch is sent back to the fallen ones with a verdict, not a pardon: *And go, say to the Watchers of heaven, who have sent thee to intercede for them: "You should intercede for men, and not men for you* (1 Enoch 25:2). The order of heaven is inverted when the guardians become the guilty — there is no mediator above them to plead their cause, for they kept not the order they were given. Jude carries this same sentence into the canon: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 1:6). Peter seals it the same way: *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4). The Watchers'' sin is rebellion against the Creator''s order, and the judgement is sure; the petition cannot stand.',
+       sv.verse_id, ev.verse_id, 'extras', 50600
+  FROM _session250_en25_lookup sv, _session250_en25_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=25 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=25 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-25-watchers-defiled-with-daughters-of-men',
+       E'Left the holy heaven and lain with women — Genesis 6 named',
+       E'The charge is laid out plainly: *Wherefore have ye left the high, holy, and eternal heaven, and lain with women, and defiled yourselves with the daughters of men and taken to yourselves wives, and done like the children of earth, and begotten giants (as your) sons?* (1 Enoch 25:3); and again, *And though ye were holy, spiritual, living the eternal life, you have defiled yourselves with the blood of women* (1 Enoch 25:4). This is the canon''s own Genesis 6 from the inside: *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose* (Genesis 6:2), and *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown* (Genesis 6:4). The Creator''s own answer follows — *And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years* (Genesis 6:3) — the same boundary on flesh that Enoch presses against the spiritual ones who lusted after it. It ain''t new: the seed-war begins here.',
+       sv.verse_id, ev.verse_id, 'extras', 50603
+  FROM _session250_en25_lookup sv, _session250_en25_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=25 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=25 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-25-evil-spirits-from-the-giants',
+       E'Evil spirits proceed from the giants — the origin of the unclean spirits',
+       E'Here the text gives the genealogy of evil itself: *And now, the giants, who are produced from the spirits and flesh, shall be called evil spirits upon the earth, and on the earth shall be their dwelling* (1 Enoch 25:6); *Evil spirits have proceeded from their bodies; because they are born from men and from the holy Watchers is their beginning and primal origin* (1 Enoch 25:7); and they *afflict, oppress, destroy, attack, do battle, and work destruction on the earth* (1 Enoch 25:9). This is the explanation behind Yahusha''s own words about the unclean spirit who has no body of its own and roams the dry places seeking rest: *When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none* (Matthew 12:43) — the disembodied dead of the giants, hungering yet eating nothing, exactly as Enoch says they *take no food, but nevertheless hunger and thirst* (1 Enoch 25:9). Jubilees tells the same origin from Noah''s side: *And in the third week of this jubilee the unclean demons began to lead astray the children of the sons of Noah; and to make to err and destroy them* (Jubilees 10:1), and Noah pleads against *Your Watchers, the fathers of these spirits* (Jubilees 10:5). Note for Yoshi: in THIS parse the whole of chapter 25 is a verbatim duplicate of chapter 15 (the intercession-refused / origin-of-spirits rebuke), mislabelled with a throne/tree-of-life title; the self-link below makes the duplication visible on the page.',
+       sv.verse_id, ev.verse_id, 'extras', 50606
+  FROM _session250_en25_lookup sv, _session250_en25_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=25 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=25 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-25-watchers-petition-refused
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude names the very Watchers whose intercession Enoch is told to refuse — reserved in chains, not pardoned.'
+  FROM cross_reference_threads t, cross_references x, _session250_en25_lookup sv, _session250_en25_lookup tv
+ WHERE t.slug='1-enoch-25-watchers-petition-refused'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=25 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter confirms the sentence Enoch delivers: the angels that sinned are held for judgement, their plea denied.'
+  FROM cross_reference_threads t, cross_references x, _session250_en25_lookup sv, _session250_en25_lookup tv
+ WHERE t.slug='1-enoch-25-watchers-petition-refused'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=25 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-25-watchers-defiled-with-daughters-of-men
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* Enoch''s charge that the Watchers "lain with women" and "taken to yourselves wives" is the inside account of this verse.'
+  FROM cross_reference_threads t, cross_references x, _session250_en25_lookup sv, _session250_en25_lookup tv
+ WHERE t.slug='1-enoch-25-watchers-defiled-with-daughters-of-men'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=25 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 6:4 — *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.* The giants Enoch says the Watchers begot are the giants Genesis records in the same days.'
+  FROM cross_reference_threads t, cross_references x, _session250_en25_lookup sv, _session250_en25_lookup tv
+ WHERE t.slug='1-enoch-25-watchers-defiled-with-daughters-of-men'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=25 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 6:3 — *And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years.* The Creator''s limit on flesh answers the Watchers who, though spiritual and living the eternal life, lusted after flesh and blood.'
+  FROM cross_reference_threads t, cross_references x, _session250_en25_lookup sv, _session250_en25_lookup tv
+ WHERE t.slug='1-enoch-25-watchers-defiled-with-daughters-of-men'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=25 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-25-evil-spirits-from-the-giants
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 12:43 — *When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none.* Yahusha''s bodiless, restless unclean spirit is exactly Enoch''s evil spirit of the giants, dwelling on the earth, hungering yet taking no food.'
+  FROM cross_reference_threads t, cross_references x, _session250_en25_lookup sv, _session250_en25_lookup tv
+ WHERE t.slug='1-enoch-25-evil-spirits-from-the-giants'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=25 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 15:7 — *Evil spirits have proceeded from their bodies; because they are born from men and from the holy Watchers is their beginning and primal origin; evil spirits they will be upon earth and evil spirits will they be called.* Chapter 25 in this parse is a verbatim duplicate of chapter 15; the same word on the origin of evil spirits stands in both places.'
+  FROM cross_reference_threads t, cross_references x, _session250_en25_lookup sv, _session250_en25_lookup tv
+ WHERE t.slug='1-enoch-25-evil-spirits-from-the-giants'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=25 AND sv.verse_number=7
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=15 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 10:1 — *And in the third week of this jubilee the unclean demons began to lead astray the children of the sons of Noah; and to make to err and destroy them.* Jubilees shows Enoch''s evil spirits at work after the Flood, the giants'' offspring leading the living astray.'
+  FROM cross_reference_threads t, cross_references x, _session250_en25_lookup sv, _session250_en25_lookup tv
+ WHERE t.slug='1-enoch-25-evil-spirits-from-the-giants'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=25 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=10 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_26.sql (session250 1-enoch 26) -----
+-- Source anchor: enoch/1-enoch ch26. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en26 (view _session250_en26_lookup). Sort band base 50625, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en26_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-26-middle-of-the-earth
+  ('enoch', '1-enoch', 26, 1, 'canon', 'ezekiel', 5, 5, 'free', E'Ezekiel 5:5 — *Thus saith Adonai Yahuah (the Lord GOD); This is Jerusalem: I have set it in the midst of the nations and countries that are round about her.* Enoch''s blessed place at the middle of the earth is Jerusalem, set by Yahuah at the centre of the nations.'),
+  ('enoch', '1-enoch', 26, 1, 'canon', 'ezekiel', 38, 12, 'free', E'Ezekiel 38:12 — *To take a spoil, and to take a prey; to turn thine hand upon the desolate places that are now inhabited, and upon the people that are gathered out of the nations, which have gotten cattle and goods, that dwell in the midst of the land.* The regathered people dwell in the midst of the land — the same centred geography Enoch is shown.'),
+  ('enoch', '1-enoch', 26, 2, 'canon', 'psalms', 48, 2, 'free', E'Psalm 48:2 — *Beautiful for situation, the joy of the whole earth, is mount Zion, on the sides of the north, the city of the great King.* Enoch''s holy mountain at the world''s centre is mount Zion, the joy of the whole earth.'),
+  ('enoch', '1-enoch', 26, 1, 'canon', 'psalms', 74, 12, 'free', E'Psalm 74:12 — *For Elohim (God) is my King of old, working salvation in the midst of the earth.* Salvation is worked in the midst of the earth — the very middle to which Enoch is brought.'),
+  ('enoch', '1-enoch', 26, 2, 'jubilees', 'jubilees', 8, 18, 'extras', E'Jubilees 8:18 — *And he knew that the Garden of Eden is the holy of holies, and the dwelling of Yahuah (God), and Mount Sinai the centre of the desert, and Mount Zion–the centre of the navel of the earth: these three were created as holy places facing each other.* Jubilees names Mount Zion the navel of the earth — Enoch''s holy mountain at the middle of the earth.'),
+  -- thread: 1-enoch-26-trees-by-the-streams
+  ('enoch', '1-enoch', 26, 4, 'canon', 'ezekiel', 47, 12, 'free', E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel sees trees lining both sides of the sanctuary-stream — Enoch''s fragrant trees on the sides of the streams of the holy mountain.'),
+  ('enoch', '1-enoch', 26, 3, 'canon', 'psalms', 1, 3, 'free', E'Psalm 1:3 — *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.* The fruitful, never-withering tree by the waters is the righteous one beside the streams of the holy mountain.'),
+  -- thread: 1-enoch-26-throne-mountain-tree-of-life
+  ('enoch', '1-enoch', 26, 8, 'canon', 'genesis', 2, 9, 'free', E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The fragrant tree no mortal may touch is the tree of life set in the midst of the garden at the beginning.'),
+  ('enoch', '1-enoch', 26, 8, 'canon', 'genesis', 3, 22, 'free', E'Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:* Mortal hands were barred from the tree of life after the fall — exactly why no mortal may touch it till the great judgement.'),
+  ('enoch', '1-enoch', 26, 9, 'canon', 'revelation', 22, 2, 'free', E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The tree transplanted to the holy place and given as food to the elect is John''s tree of life restored in the city.'),
+  ('enoch', '1-enoch', 26, 9, 'canon', 'revelation', 22, 14, 'free', E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* Right to the tree and entry into the holy place belong to those who keep the commandments — the righteous and humble Enoch names, Torah standing.'),
+  ('enoch', '1-enoch', 26, 10, 'canon', 'isaiah', 65, 22, 'free', E'Isaiah 65:22 — *They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands.* The long life of the elect with no sorrow is Isaiah''s tree-long days of Yahuah''s elect in the restored land.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-26-middle-of-the-earth',
+       E'The middle of the earth and the holy mountain — Zion at the navel',
+       E'Enoch is carried to the centre of the world: *And I proceeded to the middle of the earth, and saw there a blessed and fertile place, and there were many trees in it. And there was a holy mountain* (1 Enoch 26:1-2). This is not invention — the Tanakh sets Jerusalem at the very midst of the nations: *Thus saith Adonai Yahuah (the Lord GOD); This is Jerusalem: I have set it in the midst of the nations and countries that are round about her.* (Ezekiel 5:5), and names the regathered people as those *that dwell in the midst of the land.* (Ezekiel 38:12). The holy mountain is Zion, of whom the psalmist sings *Beautiful for situation, the joy of the whole earth, is mount Zion, on the sides of the north, the city of the great King.* (Psalm 48:2), the place where *Elohim (God) is my King of old, working salvation in the midst of the earth.* (Psalm 74:12). The parallel extra-canon witness says it most plainly of all: *And he knew that the Garden of Eden is the holy of holies, and the dwelling of Yahuah (God), and Mount Sinai the centre of the desert, and Mount Zion–the centre of the navel of the earth: these three were created as holy places facing each other.* (Jubilees 8:18). The blessed fertile place at the world''s centre is the Zion-centre of the whole framework — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 50625
+  FROM _session250_en26_lookup sv, _session250_en26_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=26 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-26-trees-by-the-streams',
+       E'Fragrant trees by the streams of the holy mountain',
+       E'Two streams flow from the holy mountain, and along them grow fragrant trees: *And on the sides of those streams I saw fragrant trees, and the fragrance of them was beyond all fragrance.* (1 Enoch 26:3-4). Ezekiel''s temple vision sees the same trees lining the same kind of waters: *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* (Ezekiel 47:12). The man of the covenant is himself such a tree: *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither* (Psalm 1:3) — the righteous flourish where the living water of the sanctuary runs out from Zion.',
+       sv.verse_id, ev.verse_id, 'extras', 50628
+  FROM _session250_en26_lookup sv, _session250_en26_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=26 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-26-throne-mountain-tree-of-life',
+       E'The throne-mountain and the tree of life reserved for the great judgement',
+       E'Michael unveils what the mountain and the tree truly are: *This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is the throne of Yahuah (God), the Holy Great One, the Eternal King, when He shall come down to visit the earth with goodness.* (1 Enoch 26:7), and of the fragrant tree, *no mortal is permitted to touch it till the great judgement... To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* (1 Enoch 26:8-9). This is the tree of life of Eden — *the tree of life also in the midst of the garden* (Genesis 2:9) — guarded from mortal hands after the fall *lest he put forth his hand, and take also of the tree of life, and eat, and live for ever* (Genesis 3:22), and restored at the end to the holy city: *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month* (Revelation 22:2), given to those who keep covenant — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* (Revelation 22:14). The long life Enoch promises the elect — *they shall live a long life on earth, such as thy fathers lived: and in their days shall no sorrow or plague or torment or calamity touch them* (1 Enoch 26:10) — is Isaiah''s restored Israel, *for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands* (Isaiah 65:22), and John''s new world where *there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain* (Revelation 21:4). The tree withheld until the great judgement and then given to the elect — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 50631
+  FROM _session250_en26_lookup sv, _session250_en26_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=26 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-26-middle-of-the-earth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 5:5 — *Thus saith Adonai Yahuah (the Lord GOD); This is Jerusalem: I have set it in the midst of the nations and countries that are round about her.* Enoch''s blessed place at the middle of the earth is Jerusalem, set by Yahuah at the centre of the nations.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-middle-of-the-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=5 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 38:12 — *To take a spoil, and to take a prey; to turn thine hand upon the desolate places that are now inhabited, and upon the people that are gathered out of the nations, which have gotten cattle and goods, that dwell in the midst of the land.* The regathered people dwell in the midst of the land — the same centred geography Enoch is shown.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-middle-of-the-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=38 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 48:2 — *Beautiful for situation, the joy of the whole earth, is mount Zion, on the sides of the north, the city of the great King.* Enoch''s holy mountain at the world''s centre is mount Zion, the joy of the whole earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-middle-of-the-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=48 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 74:12 — *For Elohim (God) is my King of old, working salvation in the midst of the earth.* Salvation is worked in the midst of the earth — the very middle to which Enoch is brought.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-middle-of-the-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=74 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 8:18 — *And he knew that the Garden of Eden is the holy of holies, and the dwelling of Yahuah (God), and Mount Sinai the centre of the desert, and Mount Zion–the centre of the navel of the earth: these three were created as holy places facing each other.* Jubilees names Mount Zion the navel of the earth — Enoch''s holy mountain at the middle of the earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-middle-of-the-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=2
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=8 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-26-trees-by-the-streams
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel sees trees lining both sides of the sanctuary-stream — Enoch''s fragrant trees on the sides of the streams of the holy mountain.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-trees-by-the-streams'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 1:3 — *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.* The fruitful, never-withering tree by the waters is the righteous one beside the streams of the holy mountain.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-trees-by-the-streams'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-26-throne-mountain-tree-of-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The fragrant tree no mortal may touch is the tree of life set in the midst of the garden at the beginning.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-throne-mountain-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:* Mortal hands were barred from the tree of life after the fall — exactly why no mortal may touch it till the great judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-throne-mountain-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The tree transplanted to the holy place and given as food to the elect is John''s tree of life restored in the city.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-throne-mountain-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* Right to the tree and entry into the holy place belong to those who keep the commandments — the righteous and humble Enoch names, Torah standing.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-throne-mountain-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 65:22 — *They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands.* The long life of the elect with no sorrow is Isaiah''s tree-long days of Yahuah''s elect in the restored land.'
+  FROM cross_reference_threads t, cross_references x, _session250_en26_lookup sv, _session250_en26_lookup tv
+ WHERE t.slug='1-enoch-26-throne-mountain-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=26 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_27.sql (session250 1-enoch 27) -----
+-- Source anchor: enoch/1-enoch ch27. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en27 (view _session250_en27_lookup). Sort band base 50650, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-27-throne-mountain-zion
+  ('enoch', '1-enoch', 27, 6, 'canon', 'psalms', 48, 1, 'free', E'Psalm 48:1 — *Great is Yahuah (LORD), and greatly to be praised in the city of our Elohim (God), in the mountain of his holiness.* The psalmist names the same holy mountain Enoch is shown to be the throne of the Eternal King.'),
+  ('enoch', '1-enoch', 27, 6, 'canon', 'isaiah', 2, 2, 'free', E'Isaiah 2:2 — *And it shall come to pass in the last days, that the mountain of the LORD''S house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it.* Isaiah''s last-days throne-mountain is the high mountain whose summit is the throne of Yahuah that Enoch beholds.'),
+  ('enoch', '1-enoch', 27, 2, 'canon', 'ezekiel', 47, 1, 'free', E'Ezekiel 47:1 — *Afterward he brought me again unto the door of the house; and, behold, waters issued out from under the threshold of the house eastward: for the forefront of the house stood toward the east, and the waters came down from under from the right side of the house, at the south side of the altar.* Ezekiel''s eastward and southward sanctuary waters are the very streams Enoch sees flowing east and south from under the holy mountain.'),
+  ('enoch', '1-enoch', 27, 2, 'canon', 'zechariah', 14, 4, 'free', E'Zechariah 14:4 — *And his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east, and the mount of Olives shall cleave in the midst thereof toward the east and toward the west, and there shall be a very great valley; and half of the mountain shall remove toward the north, and half of it toward the south.* Zechariah''s day of the Eternal King descending to the mountain matches the moment He shall come down to visit the earth that Michael describes.'),
+  -- thread: 1-enoch-27-fragrant-tree-of-life
+  ('enoch', '1-enoch', 27, 7, 'canon', 'genesis', 2, 9, 'free', E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* Enoch''s fragrant tree reserved for life to the elect is Eden''s tree of life, the same fruit set in the midst of the garden.'),
+  ('enoch', '1-enoch', 27, 7, 'canon', 'genesis', 3, 22, 'free', E'Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever.* This is why no mortal is permitted to touch the tree till the great judgement: access was barred after the fall and is restored only to the righteous.'),
+  ('enoch', '1-enoch', 27, 3, 'enoch', '1-enoch', 24, 4, 'extras', E'1 Enoch 24:4 — *And amongst them was a tree such as I had never yet smelt, neither was any amongst them nor were others like it: it had a fragrance beyond all fragrance, and its leaves and blooms and wood wither not for ever: and its fruit is beautiful, and its fruit resembles the dates of a palm.* Enoch describes the very fragrant tree one chapter earlier, confirming this is the unfading tree of life.'),
+  ('enoch', '1-enoch', 27, 8, 'canon', 'revelation', 2, 7, 'free', E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The fruit Enoch says shall be given to the righteous for food is the tree of life promised to the overcomer.'),
+  ('enoch', '1-enoch', 27, 8, 'canon', 'revelation', 22, 14, 'free', E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* Right to the tree belongs to those who keep the commandments — Enoch''s elect who enter the holy place are the covenant-keepers, not a self-chosen class.'),
+  ('enoch', '1-enoch', 27, 8, 'canon', 'ezekiel', 47, 12, 'free', E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed... and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel''s unfading sanctuary trees match the tree transplanted to the temple of the Eternal King, its fruit given for food to the righteous.'),
+  -- thread: 1-enoch-27-righteous-joy-no-sorrow
+  ('enoch', '1-enoch', 27, 9, 'canon', 'isaiah', 35, 10, 'free', E'Isaiah 35:10 — *And the ransomed of Yahuah (LORD) shall return, and come to Zion with songs and everlasting joy upon their heads: they shall obtain joy and gladness, and sorrow and sighing shall flee away.* Enoch''s righteous who rejoice and enter the holy place with no sorrow are Isaiah''s ransomed coming to Zion with everlasting joy.'),
+  ('enoch', '1-enoch', 27, 9, 'canon', 'isaiah', 65, 13, 'free', E'Isaiah 65:13 — *Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, my servants shall eat, but ye shall be hungry: behold, my servants shall drink, but ye shall be thirsty: behold, my servants shall rejoice, but ye shall be ashamed.* The fruit given to the elect for food marks out Yahuah''s servants who eat and rejoice, dividing them from those shut out.'),
+  ('enoch', '1-enoch', 27, 9, 'canon', 'revelation', 21, 4, 'free', E'Revelation 21:4 — *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.* Revelation''s holy city where no sorrow remains is the same holy place Enoch''s elect enter, where no sorrow, plague, or torment touches them.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-27-throne-mountain-zion',
+       E'The holy mountain whose summit is the throne of Yahuah',
+       E'Enoch is led to *a blessed and fertile place... And there was a holy mountain, and under the mountain to the east there was a stream flowing, and to the south another stream* (1 Enoch 27:1-2), and Michael names it: *This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is the throne of Yahuah (God), the Holy Great One, the Eternal King, when He shall come down to visit the earth with goodness* (1 Enoch 27:6). The prophets see the same throne-mountain at the centre of the earth: *Great is Yahuah (LORD), and greatly to be praised in the city of our Elohim (God), in the mountain of his holiness* (Psalm 48:1), the very *mountain of the LORD''S house... established in the top of the mountains... and all nations shall flow unto it* (Isaiah 2:2). From under it the living waters break, *waters issued out from under the threshold of the house eastward... at the south side of the altar* (Ezekiel 47:1) — Enoch''s eastward and southward streams are this same sanctuary river, which Zechariah sees split when *his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east* (Zechariah 14:4). This is the Zion-centre of the framework: not a throne the nations reach by their own confession, but the place the Eternal King Himself comes down to, the Creator''s order made visible.',
+       sv.verse_id, ev.verse_id, 'extras', 50650
+  FROM _session250_en27_lookup sv, _session250_en27_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=27 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-27-fragrant-tree-of-life',
+       E'The fragrant tree no mortal may touch — life for the elect',
+       E'On the mountain stands *a tree, the colour of whose fragrance was like the mastic tree* (1 Enoch 27:3), and of it Michael says *as for this fragrant tree no mortal is permitted to touch it till the great judgement... To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King* (1 Enoch 27:7-8). This is the tree of Eden, withheld and then restored: *the tree of life also in the midst of the garden* (Genesis 2:9), guarded after the fall *lest he put forth his hand, and take also of the tree of life, and eat, and live for ever* (Genesis 3:22) — the very fruit no mortal may now touch until judgement. Enoch had already smelt it one chapter on: *amongst them was a tree such as I had never yet smelt... it had a fragrance beyond all fragrance, and its leaves and blooms and wood wither not for ever* (1 Enoch 24:4). Revelation hands it back to the overcomer and transplants it to the holy city: *To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* (Revelation 2:7); *in the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits... and the leaves of the tree were for the healing of the nations* (Revelation 22:2). And who has right to it is no self-selected class but those who keep the way: *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city* (Revelation 22:14) — Torah stands; the elect keep the covenant. Ezekiel sets the same fruit-trees by the sanctuary river, *whose leaf shall not fade, neither shall the fruit thereof be consumed... and the fruit thereof shall be for meat, and the leaf thereof for medicine* (Ezekiel 47:12).',
+       sv.verse_id, ev.verse_id, 'extras', 50653
+  FROM _session250_en27_lookup sv, _session250_en27_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=27 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-27-righteous-joy-no-sorrow',
+       E'The elect enter the holy place — no sorrow, plague, or torment',
+       E'When the tree is transplanted to the temple, Enoch sees the end of the righteous: *Then shall they rejoice with joy and be glad, and into the holy place shall they enter; and its fragrance shall be in their bones, and they shall live a long life on earth... and in their days shall no sorrow or plague or torment or calamity touch them* (1 Enoch 27:9). The prophets give the elect the same homecoming: *the ransomed of Yahuah (LORD) shall return, and come to Zion with songs and everlasting joy upon their heads: they shall obtain joy and gladness, and sorrow and sighing shall flee away* (Isaiah 35:10), for *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces* (Isaiah 25:8). It is the servants, the covenant people, who eat in that day: *Behold, my servants shall eat, but ye shall be hungry... behold, my servants shall rejoice, but ye shall be ashamed* (Isaiah 65:13) — election divides those who enter from those who are shut out. Revelation seals the same scene of the holy place where no calamity touches them: *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4).',
+       sv.verse_id, ev.verse_id, 'extras', 50656
+  FROM _session250_en27_lookup sv, _session250_en27_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=9
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=27 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-27-throne-mountain-zion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 48:1 — *Great is Yahuah (LORD), and greatly to be praised in the city of our Elohim (God), in the mountain of his holiness.* The psalmist names the same holy mountain Enoch is shown to be the throne of the Eternal King.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-throne-mountain-zion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=48 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 2:2 — *And it shall come to pass in the last days, that the mountain of the LORD''S house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it.* Isaiah''s last-days throne-mountain is the high mountain whose summit is the throne of Yahuah that Enoch beholds.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-throne-mountain-zion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 47:1 — *Afterward he brought me again unto the door of the house; and, behold, waters issued out from under the threshold of the house eastward: for the forefront of the house stood toward the east, and the waters came down from under from the right side of the house, at the south side of the altar.* Ezekiel''s eastward and southward sanctuary waters are the very streams Enoch sees flowing east and south from under the holy mountain.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-throne-mountain-zion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Zechariah 14:4 — *And his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east, and the mount of Olives shall cleave in the midst thereof toward the east and toward the west, and there shall be a very great valley; and half of the mountain shall remove toward the north, and half of it toward the south.* Zechariah''s day of the Eternal King descending to the mountain matches the moment He shall come down to visit the earth that Michael describes.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-throne-mountain-zion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-27-fragrant-tree-of-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* Enoch''s fragrant tree reserved for life to the elect is Eden''s tree of life, the same fruit set in the midst of the garden.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-fragrant-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever.* This is why no mortal is permitted to touch the tree till the great judgement: access was barred after the fall and is restored only to the righteous.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-fragrant-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 24:4 — *And amongst them was a tree such as I had never yet smelt, neither was any amongst them nor were others like it: it had a fragrance beyond all fragrance, and its leaves and blooms and wood wither not for ever: and its fruit is beautiful, and its fruit resembles the dates of a palm.* Enoch describes the very fragrant tree one chapter earlier, confirming this is the unfading tree of life.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-fragrant-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=24 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The fruit Enoch says shall be given to the righteous for food is the tree of life promised to the overcomer.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-fragrant-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* Right to the tree belongs to those who keep the commandments — Enoch''s elect who enter the holy place are the covenant-keepers, not a self-chosen class.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-fragrant-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed... and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel''s unfading sanctuary trees match the tree transplanted to the temple of the Eternal King, its fruit given for food to the righteous.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-fragrant-tree-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-27-righteous-joy-no-sorrow
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 35:10 — *And the ransomed of Yahuah (LORD) shall return, and come to Zion with songs and everlasting joy upon their heads: they shall obtain joy and gladness, and sorrow and sighing shall flee away.* Enoch''s righteous who rejoice and enter the holy place with no sorrow are Isaiah''s ransomed coming to Zion with everlasting joy.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-righteous-joy-no-sorrow'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 65:13 — *Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, my servants shall eat, but ye shall be hungry: behold, my servants shall drink, but ye shall be thirsty: behold, my servants shall rejoice, but ye shall be ashamed.* The fruit given to the elect for food marks out Yahuah''s servants who eat and rejoice, dividing them from those shut out.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-righteous-joy-no-sorrow'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 21:4 — *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.* Revelation''s holy city where no sorrow remains is the same holy place Enoch''s elect enter, where no sorrow, plague, or torment touches them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en27_lookup sv, _session250_en27_lookup tv
+ WHERE t.slug='1-enoch-27-righteous-joy-no-sorrow'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=27 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_28.sql (session250 1-enoch 28) -----
+-- Source anchor: enoch/1-enoch ch28. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en28 (view _session250_en28_lookup). Sort band base 50675, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en28_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-28-watered-wilderness
+  ('enoch', '1-enoch', 28, 4, 'canon', 'isaiah', 35, 1, 'free', E'Isaiah 35:1 — *The wilderness and the solitary place shall be glad for them; and the desert shall rejoice, and blossom as the rose.* The valley full of water Enoch finds in the eastern desert is the prophet''s wilderness made glad when Yahuah comes.'),
+  ('enoch', '1-enoch', 28, 4, 'canon', 'isaiah', 35, 6, 'free', E'Isaiah 35:6 — *Then shall the lame man leap as an hart, and the tongue of the dumb sing: for in the wilderness shall waters break out, and streams in the desert.* Enoch''s valley full of water in a desert place is exactly this promised breaking-out of waters in the wilderness.'),
+  ('enoch', '1-enoch', 28, 4, 'canon', 'isaiah', 41, 18, 'free', E'Isaiah 41:18 — *I will open rivers in high places, and fountains in the midst of the valleys: I will make the wilderness a pool of water, and the dry land springs of water.* The same fountains-in-the-valley that Yahuah promises fill the watered valley Enoch sees in the east.'),
+  ('enoch', '1-enoch', 28, 5, 'canon', 'isaiah', 41, 19, 'free', E'Isaiah 41:19 — *I will plant in the wilderness the cedar, the shittah tree, and the myrtle, and the oil tree; I will set in the desert the fir tree, and the pine, and the box tree together:* the fragrant trees Yahuah plants in the desert are the very trees of beyond-all-fragrance Enoch smells along the watered valley.'),
+  -- thread: 1-enoch-28-tree-of-life-temple
+  ('enoch', '1-enoch', 28, 11, 'canon', 'genesis', 2, 9, 'free', E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* Enoch''s fragrant tree given to the righteous for food is the tree of life planted in the midst of Eden.'),
+  ('enoch', '1-enoch', 28, 11, 'canon', 'genesis', 3, 22, 'free', E'Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:* this is why no mortal is permitted to touch Enoch''s tree — fallen hands are barred from the tree of life until the great judgement.'),
+  ('enoch', '1-enoch', 28, 11, 'canon', 'genesis', 3, 24, 'free', E'Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* The guarding of the way of the tree of life is the very prohibition Michael names over the fragrant tree until the judgement.'),
+  ('enoch', '1-enoch', 28, 12, 'canon', 'revelation', 2, 7, 'free', E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The tree given for food to the righteous and elect in Enoch is the tree of life Yahusha grants the overcomer.'),
+  ('enoch', '1-enoch', 28, 12, 'canon', 'revelation', 22, 14, 'free', E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The fruit kept for the righteous who keep the way is the right to the tree of life given to the commandment-keepers who enter the holy city.'),
+  ('enoch', '1-enoch', 28, 12, 'canon', 'ezekiel', 47, 12, 'free', E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Enoch''s fragrant tree transplanted to the temple, its fruit for food, matches the sanctuary-fed trees whose fruit is meat and leaf medicine.'),
+  -- thread: 1-enoch-28-throne-mountain-self-link
+  ('enoch', '1-enoch', 28, 10, 'enoch', '1-enoch', 27, 6, 'extras', E'1 Enoch 27:6 — *’This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is the throne of Yahuah (God), the Holy Great One, the Eternal King, when He shall come down to visit the earth with goodness.* Michael''s word over this throne-mountain is the same vision Enoch received at the prior throne-mountain — the Eternal King who comes down to visit the earth.'),
+  ('enoch', '1-enoch', 28, 11, 'enoch', '1-enoch', 27, 7, 'extras', E'1 Enoch 27:7 — *And as for this fragrant tree no mortal is permitted to touch it till the great judgement, when His righteousness and His majesty shall be punished for ever in its fruit to the righteous and humble.* The prohibition on the fragrant tree until the great judgement is given in the same words at the parallel throne-mountain vision.'),
+  ('enoch', '1-enoch', 28, 10, 'canon', 'revelation', 22, 1, 'free', E'Revelation 22:1 — *And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb.* The river of life flows from the very throne whose summit Enoch sees on the high mountain when the Eternal King comes down.'),
+  ('enoch', '1-enoch', 28, 12, 'canon', 'revelation', 22, 2, 'free', E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* Enoch''s tree transplanted to the temple of the Eternal King is the tree of life by the river of the throne in the holy city.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-28-watered-wilderness',
+       E'The valley full of water in the desert — the wilderness made glad',
+       E'Enoch''s journey eastward reaches a thirsty land made fertile: *And beyond these trees I proceeded to the east, and I saw another place, a valley full of water.* (1 Enoch 28:4), where *there was a tree which had fragrance such as the mastic tree, and its fruit was like the clusters of the vine, very beautiful; and the fragrance of that tree penetrated far beyond the valley.* (1 Enoch 28:5). It is the prophets'' picture of the watered wilderness, the sign that Yahuah comes to save: *The wilderness and the solitary place shall be glad for them; and the desert shall rejoice, and blossom as the rose.* (Isaiah 35:1), *for in the wilderness shall waters break out, and streams in the desert.* (Isaiah 35:6). The same hand that opens the spring also plants the fragrant trees Enoch smells: *I will open rivers in high places, and fountains in the midst of the valleys: I will make the wilderness a pool of water, and the dry land springs of water.* (Isaiah 41:18) — *I will plant in the wilderness the cedar, the shittah tree, and the myrtle, and the oil tree; I will set in the desert the fir tree, and the pine, and the box tree together* (Isaiah 41:19), so that all may *know, and consider, and understand together, that the hand of Yahuah (LORD) hath done this, and the Holy One of Yashar''el (Israel) hath created it.* (Isaiah 41:20). It ain''t new: Enoch walks the same renewed desert the prophets sing.',
+       sv.verse_id, ev.verse_id, 'extras', 50675
+  FROM _session250_en28_lookup sv, _session250_en28_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=28 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-28-tree-of-life-temple',
+       E'The tree no mortal may touch — the tree of life kept for the elect',
+       E'Michael unfolds the fragrant tree of the valley: *And as for this fragrant tree no mortal is permitted to touch it till the great judgement, when His righteousness and His majesty shall be avenged on the sinners in its fruit to the righteous and humble.* (1 Enoch 28:11) — *To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* (1 Enoch 28:12). This is the tree of life of Eden, planted and then guarded: *the tree of life also in the midst of the garden* (Genesis 2:9), barred from fallen hands *lest he put forth his hand, and take also of the tree of life, and eat, and live for ever* (Genesis 3:22) — so Yahuah *placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* (Genesis 3:24). Enoch sees the same tree kept until the great judgement, then opened to the righteous — which is precisely the promise the risen Messiah holds out: *To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* (Revelation 2:7), and *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* (Revelation 22:14) — note: it is the commandment-keepers, the elect who keep the way, who are given its fruit, never a self-chosen class. Enoch''s tree even shares Ezekiel''s temple-fed fruit: *and the fruit thereof shall be for meat, and the leaf thereof for medicine.* (Ezekiel 47:12). It ain''t new: the tree fenced in Eden and opened again in Revelation is the tree Enoch already saw transplanted to the temple of the Eternal King.',
+       sv.verse_id, ev.verse_id, 'extras', 50678
+  FROM _session250_en28_lookup sv, _session250_en28_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=11
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=28 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-28-throne-mountain-self-link',
+       E'The high mountain whose summit is the throne — God comes down to visit',
+       E'Michael''s word over the watered-valley tree repeats, almost verbatim, what Enoch was shown one mountain earlier — the throne-mountain and its fragrant tree: *’This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is His throne, where the Holy Great One, Yahuah (God) of Glory, the Eternal King, will sit, when He shall come down to visit the earth with goodness.* (1 Enoch 28:10). It is the same revelation given at the throne-mountain of the previous vision: *’This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is the throne of Yahuah (God), the Holy Great One, the Eternal King, when He shall come down to visit the earth with goodness.* (1 Enoch 27:6) — *And as for this fragrant tree no mortal is permitted to touch it till the great judgement, when His righteousness and His majesty shall be punished for ever in its fruit to the righteous and humble.* (1 Enoch 27:7) — *To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* (1 Enoch 27:8). And the river of life that flows from this throne to that temple-tree is what Yochanan sees at the end: *And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb.* (Revelation 22:1), *In the midst of the street of it, and on either side of the river, was there the tree of life... and the leaves of the tree were for the healing of the nations.* (Revelation 22:2). It ain''t new: the throne-mountain, the tree, and the visiting King are one vision carried from Enoch into the Apocalypse.',
+       sv.verse_id, ev.verse_id, 'extras', 50681
+  FROM _session250_en28_lookup sv, _session250_en28_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=28 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-28-watered-wilderness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 35:1 — *The wilderness and the solitary place shall be glad for them; and the desert shall rejoice, and blossom as the rose.* The valley full of water Enoch finds in the eastern desert is the prophet''s wilderness made glad when Yahuah comes.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-watered-wilderness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 35:6 — *Then shall the lame man leap as an hart, and the tongue of the dumb sing: for in the wilderness shall waters break out, and streams in the desert.* Enoch''s valley full of water in a desert place is exactly this promised breaking-out of waters in the wilderness.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-watered-wilderness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 41:18 — *I will open rivers in high places, and fountains in the midst of the valleys: I will make the wilderness a pool of water, and the dry land springs of water.* The same fountains-in-the-valley that Yahuah promises fill the watered valley Enoch sees in the east.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-watered-wilderness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=41 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 41:19 — *I will plant in the wilderness the cedar, the shittah tree, and the myrtle, and the oil tree; I will set in the desert the fir tree, and the pine, and the box tree together:* the fragrant trees Yahuah plants in the desert are the very trees of beyond-all-fragrance Enoch smells along the watered valley.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-watered-wilderness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=41 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-28-tree-of-life-temple
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* Enoch''s fragrant tree given to the righteous for food is the tree of life planted in the midst of Eden.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-tree-of-life-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:* this is why no mortal is permitted to touch Enoch''s tree — fallen hands are barred from the tree of life until the great judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-tree-of-life-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* The guarding of the way of the tree of life is the very prohibition Michael names over the fragrant tree until the judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-tree-of-life-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The tree given for food to the righteous and elect in Enoch is the tree of life Yahusha grants the overcomer.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-tree-of-life-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The fruit kept for the righteous who keep the way is the right to the tree of life given to the commandment-keepers who enter the holy city.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-tree-of-life-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Enoch''s fragrant tree transplanted to the temple, its fruit for food, matches the sanctuary-fed trees whose fruit is meat and leaf medicine.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-tree-of-life-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-28-throne-mountain-self-link
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 27:6 — *’This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is the throne of Yahuah (God), the Holy Great One, the Eternal King, when He shall come down to visit the earth with goodness.* Michael''s word over this throne-mountain is the same vision Enoch received at the prior throne-mountain — the Eternal King who comes down to visit the earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-throne-mountain-self-link'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=10
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=27 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 27:7 — *And as for this fragrant tree no mortal is permitted to touch it till the great judgement, when His righteousness and His majesty shall be punished for ever in its fruit to the righteous and humble.* The prohibition on the fragrant tree until the great judgement is given in the same words at the parallel throne-mountain vision.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-throne-mountain-self-link'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=11
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=27 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:1 — *And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb.* The river of life flows from the very throne whose summit Enoch sees on the high mountain when the Eternal King comes down.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-throne-mountain-self-link'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* Enoch''s tree transplanted to the temple of the Eternal King is the tree of life by the river of the throne in the holy city.'
+  FROM cross_reference_threads t, cross_references x, _session250_en28_lookup sv, _session250_en28_lookup tv
+ WHERE t.slug='1-enoch-28-throne-mountain-self-link'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=28 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_29.sql (session250 1-enoch 29) -----
+-- Source anchor: enoch/1-enoch ch29. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en29 (view _session250_en29_lookup). Sort band base 50700, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en29_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-29-throne-mountain-zion
+  ('enoch', '1-enoch', 29, 9, 'enoch', '1-enoch', 24, 9, 'extras', E'1 Enoch 24:9 — *This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is His throne, where the Holy Great One, Yahuah (God) of Glory, the Eternal King, will sit, when He shall come down to visit the earth with goodness.* The same throne-mountain and tree Enoch was shown earlier, repeated here almost verbatim.'),
+  ('enoch', '1-enoch', 29, 9, 'canon', 'genesis', 3, 22, 'free', E'Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:* The tree the throne-mountain guards is the very tree of life Adam was barred from in Eden.'),
+  -- thread: 1-enoch-29-tree-of-life-reserved
+  ('enoch', '1-enoch', 29, 10, 'canon', 'genesis', 2, 9, 'free', E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The fragrant tree no mortal may touch is Eden''s tree of life, planted in the garden''s midst.'),
+  ('enoch', '1-enoch', 29, 11, 'canon', 'revelation', 2, 7, 'free', E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* Enoch''s promise that the tree''s fruit is given to the elect is the same fruit Yahusha gives the overcomer.'),
+  ('enoch', '1-enoch', 29, 11, 'canon', 'revelation', 22, 2, 'free', E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The tree given to the righteous for food and life stands again in the City of the end.'),
+  ('enoch', '1-enoch', 29, 11, 'canon', 'ezekiel', 47, 12, 'free', E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel''s tree, fed from the sanctuary, is the same tree Enoch sees transplanted to the temple, its fruit for food and its leaf for healing.'),
+  -- thread: 1-enoch-29-transplanted-temple-long-life
+  ('enoch', '1-enoch', 29, 12, 'canon', 'isaiah', 65, 22, 'free', E'Isaiah 65:22 — *They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands.* Enoch''s promise that the elect live a long life on earth is Isaiah''s new-earth promise where the people''s days are the days of a tree.'),
+  ('enoch', '1-enoch', 29, 12, 'canon', 'isaiah', 25, 8, 'free', E'Isaiah 25:8 — *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it.* The day when no sorrow or torment touches the elect is the day death is swallowed up and every tear wiped away.'),
+  ('enoch', '1-enoch', 29, 12, 'canon', 'revelation', 21, 4, 'free', E'Revelation 21:4 — *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.* The end of sorrow, plague, and calamity Enoch names is the end John sees in the restored creation.'),
+  ('enoch', '1-enoch', 29, 11, 'canon', 'revelation', 22, 14, 'free', E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The right to enter the holy place and eat the tree''s fruit belongs to those who keep the commandments — the Torah stands at the door of the temple Enoch sees.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en29_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en29_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-29-throne-mountain-zion',
+       E'The throne-mountain where the Eternal King comes down',
+       E'Michael answers Enoch''s wonder at the fragrant tree by first naming the mountain: *''This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is His throne, where the Holy Great One, Yahuah (God) of Glory, the Eternal King, will sit, when He shall come down to visit the earth with goodness.''* (1 Enoch 29:9). This is the framework''s Zion-centre: the place of the throne is the place of the tree, and the King will come down to it. The vision repeats almost word for word the earlier throne-mountain Enoch was shown — *''This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is His throne, where the Holy Great One, Yahuah (God) of Glory, the Eternal King, will sit, when He shall come down to visit the earth with goodness.''* (1 Enoch 24:9) — the same mountain, the same tree, seen again. And the tree of life it guards is the one set in Eden eastward and then fenced from mortal hands: *''And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:''* (Genesis 3:22). What Adam was barred from, the throne-mountain keeps until the King comes down. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 50700
+  FROM _session250_en29_lookup sv, _session250_en29_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=9
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=29 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-29-tree-of-life-reserved',
+       E'The tree of life kept until the great judgement, food for the elect',
+       E'The fragrant tree is no ordinary tree: *''And as for this fragrant tree no mortal is permitted to touch it till the great judgement, when His righteousness and His majesty shall be avenged on the sinners in its fruit to the righteous and humble. To the righteous it shall be given for food, and its fruit shall be for life to the elect''* (1 Enoch 29:10-11). This is Eden''s own tree, the one Yahuah planted *''pleasant to the sight, and good for food; the tree of life also in the midst of the garden''* (Genesis 2:9), and then sealed from mortal reach so that no man should *''take also of the tree of life, and eat, and live for ever''* (Genesis 3:22). Enoch sees the same fruit restored to the elect at the end — exactly the promise Yahusha makes to the overcomer: *''To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).''* (Revelation 2:7), and shows again in the City: *''In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.''* (Revelation 22:2). Ezekiel saw it too, by the water that issues from the sanctuary: *''And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.''* (Ezekiel 47:12). The tree withheld since Eden is the tree given to the righteous after the judgement. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 50703
+  FROM _session250_en29_lookup sv, _session250_en29_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=29 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-29-transplanted-temple-long-life',
+       E'Transplanted to the temple: long life and no more sorrow',
+       E'The tree''s destiny is the sanctuary, and the elect''s destiny is life beside it: *''it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King. Then shall they rejoice with joy and be glad, and into the holy place shall they enter; and its fragrance shall be in their bones, and they shall live a long life on earth, such as thy fathers lived: and in their days shall no sorrow or plague or torment or calamity touch them.''* (1 Enoch 29:11-12). This is the prophets'' restored-earth promise, where the days of the people are the days of the tree: *''They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands.''* (Isaiah 65:22). And the end of sorrow, plague, and torment Enoch names is the same comfort the prophets and the Revelation give: *''He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it.''* (Isaiah 25:8), unfolded as *''And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.''* (Revelation 21:4). The right to enter the holy place and eat is kept for those who keep the way: *''Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.''* (Revelation 22:14). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 50706
+  FROM _session250_en29_lookup sv, _session250_en29_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=11
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=29 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-29-throne-mountain-zion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 24:9 — *This high mountain which thou hast seen, whose summit is like the throne of Yahuah (God), is His throne, where the Holy Great One, Yahuah (God) of Glory, the Eternal King, will sit, when He shall come down to visit the earth with goodness.* The same throne-mountain and tree Enoch was shown earlier, repeated here almost verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session250_en29_lookup sv, _session250_en29_lookup tv
+ WHERE t.slug='1-enoch-29-throne-mountain-zion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=9
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=24 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:* The tree the throne-mountain guards is the very tree of life Adam was barred from in Eden.'
+  FROM cross_reference_threads t, cross_references x, _session250_en29_lookup sv, _session250_en29_lookup tv
+ WHERE t.slug='1-enoch-29-throne-mountain-zion'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-29-tree-of-life-reserved
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The fragrant tree no mortal may touch is Eden''s tree of life, planted in the garden''s midst.'
+  FROM cross_reference_threads t, cross_references x, _session250_en29_lookup sv, _session250_en29_lookup tv
+ WHERE t.slug='1-enoch-29-tree-of-life-reserved'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* Enoch''s promise that the tree''s fruit is given to the elect is the same fruit Yahusha gives the overcomer.'
+  FROM cross_reference_threads t, cross_references x, _session250_en29_lookup sv, _session250_en29_lookup tv
+ WHERE t.slug='1-enoch-29-tree-of-life-reserved'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The tree given to the righteous for food and life stands again in the City of the end.'
+  FROM cross_reference_threads t, cross_references x, _session250_en29_lookup sv, _session250_en29_lookup tv
+ WHERE t.slug='1-enoch-29-tree-of-life-reserved'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel''s tree, fed from the sanctuary, is the same tree Enoch sees transplanted to the temple, its fruit for food and its leaf for healing.'
+  FROM cross_reference_threads t, cross_references x, _session250_en29_lookup sv, _session250_en29_lookup tv
+ WHERE t.slug='1-enoch-29-tree-of-life-reserved'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-29-transplanted-temple-long-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 65:22 — *They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands.* Enoch''s promise that the elect live a long life on earth is Isaiah''s new-earth promise where the people''s days are the days of a tree.'
+  FROM cross_reference_threads t, cross_references x, _session250_en29_lookup sv, _session250_en29_lookup tv
+ WHERE t.slug='1-enoch-29-transplanted-temple-long-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 25:8 — *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it.* The day when no sorrow or torment touches the elect is the day death is swallowed up and every tear wiped away.'
+  FROM cross_reference_threads t, cross_references x, _session250_en29_lookup sv, _session250_en29_lookup tv
+ WHERE t.slug='1-enoch-29-transplanted-temple-long-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 21:4 — *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.* The end of sorrow, plague, and calamity Enoch names is the end John sees in the restored creation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en29_lookup sv, _session250_en29_lookup tv
+ WHERE t.slug='1-enoch-29-transplanted-temple-long-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The right to enter the holy place and eat the tree''s fruit belongs to those who keep the commandments — the Torah stands at the door of the temple Enoch sees.'
+  FROM cross_reference_threads t, cross_references x, _session250_en29_lookup sv, _session250_en29_lookup tv
+ WHERE t.slug='1-enoch-29-transplanted-temple-long-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=29 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_30.sql (session250 1-enoch 30) -----
+-- Source anchor: enoch/1-enoch ch30. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en30 (view _session250_en30_lookup). Sort band base 50725, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en30_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-30-fragrant-spices
+  ('enoch', '1-enoch', 30, 2, 'canon', 'song-of-solomon', 4, 14, 'free', E'Song of Solomon 4:14 — *Spikenard and saffron; calamus and cinnamon, with all trees of frankincense; myrrh and aloes, with all the chief spices:* The bride''s enclosed garden carries the very orchard of fragrant trees Enoch smells on the eastern mountain (30:2).'),
+  ('enoch', '1-enoch', 30, 1, 'canon', 'exodus', 30, 23, 'free', E'Exodus 30:23 — *Take thou also unto thee principal spices, of pure myrrh five hundred shekels, and of sweet cinnamon half so much, even two hundred and fifty shekels, and of sweet calamus two hundred and fifty shekels,* The same chief spices that flow from Enoch''s trees (30:1) are the principal spices Yahuah set apart for the holy anointing oil.'),
+  -- thread: 1-enoch-30-tree-of-wisdom-eden
+  ('enoch', '1-enoch', 30, 7, 'canon', 'genesis', 2, 9, 'free', E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The tree of wisdom in the midst of Enoch''s grove (30:7) is Eden''s tree of knowledge, set in the midst of the garden.'),
+  ('enoch', '1-enoch', 30, 7, 'canon', 'genesis', 3, 6, 'free', E'Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* Enoch''s note that the first parents *have eaten, and they learnt wisdom* (30:7) retells Eve''s reach for the tree desired to make one wise.'),
+  ('enoch', '1-enoch', 30, 7, 'canon', 'genesis', 3, 7, 'free', E'Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* Enoch''s *their eyes were opened, and they knew that they were naked* (30:7) is quoted from the moment of the fall.'),
+  ('enoch', '1-enoch', 30, 7, 'canon', 'genesis', 3, 24, 'free', E'Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* The driving out of the garden that closes Enoch 30:7 is the same expulsion, with the way to the tree guarded until the appointed time.'),
+  -- thread: 1-enoch-30-tree-transplanted-temple
+  ('enoch', '1-enoch', 30, 9, 'enoch', '1-enoch', 24, 11, 'extras', E'1 Enoch 24:11 — *To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* Enoch had already seen this fragrant tree at the throne-mountain; 30:9 repeats it nearly word for word, binding the two visions.'),
+  ('enoch', '1-enoch', 30, 9, 'canon', 'revelation', 22, 2, 'free', E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The tree transplanted to the temple of the Eternal King (30:9) is John''s tree of life set at the centre of the renewed Zion.'),
+  ('enoch', '1-enoch', 30, 8, 'canon', 'revelation', 22, 14, 'free', E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The fruit reserved for the righteous and humble at the judgement (30:8) is given to those who keep the commandments — the Torah stands, and the tree is theirs.'),
+  ('enoch', '1-enoch', 30, 10, 'canon', 'ezekiel', 47, 12, 'free', E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel''s healing trees flowing from the sanctuary match the temple-tree of Enoch 30:9-10 whose fragrance brings life and ends all plague.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en30_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en30_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-30-fragrant-spices',
+       E'The fragrant trees — the chief spices',
+       E'Enoch comes east to a range of spice-bearing trees: *And beyond these, I proceeded to the east, and I saw other mountains, and trees out of which flowed the resin called styrax and the gum called galbanum, and onycha, and the trees which produce stacte, and the balsam tree.* (1 Enoch 30:1), and beyond them an almond-like mountain whose *fragrance was sweet and strong* (1 Enoch 30:2). The same chief spices line the canon''s most fragrant places. The bride''s garden is an orchard of them: *Spikenard and saffron; calamus and cinnamon, with all trees of frankincense; myrrh and aloes, with all the chief spices:* (Song of Solomon 4:14). And the holy anointing oil is compounded from the very same list: *Take thou also unto thee principal spices, of pure myrrh five hundred shekels, and of sweet cinnamon half so much, even two hundred and fifty shekels, and of sweet calamus two hundred and fifty shekels,* (Exodus 30:23). It ain''t new: Enoch''s eastern mountain of sweet-smelling trees is the same family of spices Yahuah set apart for His sanctuary and sang over in His garden.',
+       sv.verse_id, ev.verse_id, 'extras', 50725
+  FROM _session250_en30_lookup sv, _session250_en30_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=30 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-30-tree-of-wisdom-eden',
+       E'The tree of wisdom — Eden''s tree of knowledge',
+       E'At the centre of the fragrant grove Enoch finds one surpassing tree, and the angel names it: *This is the tree of wisdom, of which thy father old (in years) and thy aged mother, who were before thee, have eaten, and they learnt wisdom, and their eyes were opened, and they knew that they were naked, and they were driven out of the garden.* (1 Enoch 30:7). This is Eden''s own tree, the one Genesis sets *in the midst of the garden*: *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* (Genesis 2:9). Enoch''s phrase *they learnt wisdom* repeats Eve''s reach for it: *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* (Genesis 3:6). And *their eyes were opened, and they knew that they were naked* is lifted straight from the fall: *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* (Genesis 3:7). So is the expulsion: *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* (Genesis 3:24). It ain''t new — Enoch is reading Genesis 2-3, naming the tree of knowledge by its fruit and its consequence, with the way back guarded until the appointed day.',
+       sv.verse_id, ev.verse_id, 'extras', 50728
+  FROM _session250_en30_lookup sv, _session250_en30_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=30 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-30-tree-transplanted-temple',
+       E'The tree transplanted to the temple — fruit for the righteous',
+       E'The tree withheld from Adam is not destroyed but reserved: *And from that time forward no one has been permitted to touch it until the great judgment, when His righteousness shall be avenged upon the sinners, and its fruit given to the righteous and humble.* (1 Enoch 30:8); then *its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* (1 Enoch 30:9), and the redeemed *shall live a long life on earth* with *no sorrow or plague or torment or calamity* (1 Enoch 30:10). Enoch himself has already shown the same scene at the throne-mountain: *To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* (1 Enoch 24:11). John sees the tree replanted at the centre of the renewed Zion: *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* (Revelation 22:2), and only the covenant-keepers come to it: *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* (Revelation 22:14). Ezekiel sets the same healing trees flowing from the sanctuary: *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* (Ezekiel 47:12). It ain''t new: the Eden-tree denied at the fall is transplanted to the temple-mountain at the judgement, its fruit for the elect who keep the way — Zion at the centre, the righteous regathered, no replacement of the covenant people but their restoration.',
+       sv.verse_id, ev.verse_id, 'extras', 50731
+  FROM _session250_en30_lookup sv, _session250_en30_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=30 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-30-fragrant-spices
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Song of Solomon 4:14 — *Spikenard and saffron; calamus and cinnamon, with all trees of frankincense; myrrh and aloes, with all the chief spices:* The bride''s enclosed garden carries the very orchard of fragrant trees Enoch smells on the eastern mountain (30:2).'
+  FROM cross_reference_threads t, cross_references x, _session250_en30_lookup sv, _session250_en30_lookup tv
+ WHERE t.slug='1-enoch-30-fragrant-spices'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='song-of-solomon' AND tv.chapter_number=4 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 30:23 — *Take thou also unto thee principal spices, of pure myrrh five hundred shekels, and of sweet cinnamon half so much, even two hundred and fifty shekels, and of sweet calamus two hundred and fifty shekels,* The same chief spices that flow from Enoch''s trees (30:1) are the principal spices Yahuah set apart for the holy anointing oil.'
+  FROM cross_reference_threads t, cross_references x, _session250_en30_lookup sv, _session250_en30_lookup tv
+ WHERE t.slug='1-enoch-30-fragrant-spices'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-30-tree-of-wisdom-eden
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The tree of wisdom in the midst of Enoch''s grove (30:7) is Eden''s tree of knowledge, set in the midst of the garden.'
+  FROM cross_reference_threads t, cross_references x, _session250_en30_lookup sv, _session250_en30_lookup tv
+ WHERE t.slug='1-enoch-30-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* Enoch''s note that the first parents *have eaten, and they learnt wisdom* (30:7) retells Eve''s reach for the tree desired to make one wise.'
+  FROM cross_reference_threads t, cross_references x, _session250_en30_lookup sv, _session250_en30_lookup tv
+ WHERE t.slug='1-enoch-30-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* Enoch''s *their eyes were opened, and they knew that they were naked* (30:7) is quoted from the moment of the fall.'
+  FROM cross_reference_threads t, cross_references x, _session250_en30_lookup sv, _session250_en30_lookup tv
+ WHERE t.slug='1-enoch-30-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* The driving out of the garden that closes Enoch 30:7 is the same expulsion, with the way to the tree guarded until the appointed time.'
+  FROM cross_reference_threads t, cross_references x, _session250_en30_lookup sv, _session250_en30_lookup tv
+ WHERE t.slug='1-enoch-30-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-30-tree-transplanted-temple
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 24:11 — *To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* Enoch had already seen this fragrant tree at the throne-mountain; 30:9 repeats it nearly word for word, binding the two visions.'
+  FROM cross_reference_threads t, cross_references x, _session250_en30_lookup sv, _session250_en30_lookup tv
+ WHERE t.slug='1-enoch-30-tree-transplanted-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=9
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=24 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The tree transplanted to the temple of the Eternal King (30:9) is John''s tree of life set at the centre of the renewed Zion.'
+  FROM cross_reference_threads t, cross_references x, _session250_en30_lookup sv, _session250_en30_lookup tv
+ WHERE t.slug='1-enoch-30-tree-transplanted-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The fruit reserved for the righteous and humble at the judgement (30:8) is given to those who keep the commandments — the Torah stands, and the tree is theirs.'
+  FROM cross_reference_threads t, cross_references x, _session250_en30_lookup sv, _session250_en30_lookup tv
+ WHERE t.slug='1-enoch-30-tree-transplanted-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel''s healing trees flowing from the sanctuary match the temple-tree of Enoch 30:9-10 whose fragrance brings life and ends all plague.'
+  FROM cross_reference_threads t, cross_references x, _session250_en30_lookup sv, _session250_en30_lookup tv
+ WHERE t.slug='1-enoch-30-tree-transplanted-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=30 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_31.sql (session250 1-enoch 31) -----
+-- Source anchor: enoch/1-enoch ch31. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en31 (view _session250_en31_lookup). Sort band base 50750, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en31_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-31-frankincense-and-myrrh
+  ('enoch', '1-enoch', 31, 1, 'canon', 'exodus', 30, 34, 'free', E'Exodus 30:34 — *And Yahuah (LORD) said unto Moses, Take unto thee sweet spices, stacte, and onycha, and galbanum; these sweet spices with pure frankincense: of each shall there be a like weight:* The pure frankincense set apart for the holy incense is the same surpassing fragrance Enoch smells flooding the valley at 31:1-3.'),
+  ('enoch', '1-enoch', 31, 1, 'canon', 'song-of-solomon', 3, 6, 'free', E'Song of Solomon 3:6 — *Who is this that cometh out of the wilderness like pillars of smoke, perfumed with myrrh and frankincense, with all powders of the merchant?* The myrrh-and-frankincense fragrance that heralds the Bridegroom is the same holy scent Enoch finds surpassing all fragrance in 31:1-3.'),
+  -- thread: 1-enoch-31-tree-of-wisdom-eden
+  ('enoch', '1-enoch', 31, 4, 'canon', 'genesis', 3, 6, 'free', E'Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* The tree desired to make one wise is exactly the tree of wisdom the angel names in 31:4, eaten by Enoch''s first father and mother.'),
+  ('enoch', '1-enoch', 31, 4, 'canon', 'genesis', 3, 7, 'free', E'Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* The opened eyes and the knowledge of nakedness in 31:4 are word-for-word the aftermath Genesis records.'),
+  ('enoch', '1-enoch', 31, 4, 'canon', 'genesis', 3, 23, 'free', E'Genesis 3:23 — *Therefore Yahuah Elohim (the LORD God) sent him forth from the garden of Eden, to till the ground from whence he was taken.* The driving out of the garden that closes 31:4 is the same expulsion that closes the Eden account.'),
+  -- thread: 1-enoch-31-tree-transplanted-to-the-temple
+  ('enoch', '1-enoch', 31, 6, 'canon', 'ezekiel', 47, 12, 'free', E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* The tree transplanted to the temple in 31:6 is the sanctuary-rooted tree of healing Ezekiel sees by the water that flows from the holy place.'),
+  ('enoch', '1-enoch', 31, 6, 'canon', 'revelation', 22, 2, 'free', E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The fruit-for-life given to the elect in the holy place at 31:6 is the tree of life set at the centre of the restored City.'),
+  ('enoch', '1-enoch', 31, 5, 'canon', 'revelation', 22, 14, 'free', E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The fruit withheld until the great judgement and then granted to the righteous in 31:5 belongs to those who keep the commandments — the covenant-keepers, not a self-selected class.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en31_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en31_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-31-frankincense-and-myrrh',
+       E'The fragrant tree — frankincense and myrrh',
+       E'Enoch comes to a tree whose scent fills the valley: *And I proceeded to another place, and I saw a tree whose fragrance was like the fragrance of the mastic tree* (1 Enoch 31:1), and he marvels, *This tree is beautiful beyond all trees, and its fragrance surpasses all fragrance* (1 Enoch 31:3). The same holy fragrances of his journey are the ones Yahuah (LORD) reserves for the sanctuary — *Take unto thee sweet spices, stacte, and onycha, and galbanum; these sweet spices with pure frankincense: of each shall there be a like weight* (Exodus 30:34) — and the same myrrh-and-frankincense that perfumes the Bridegroom''s ascent out of the wilderness: *Who is this that cometh out of the wilderness like pillars of smoke, perfumed with myrrh and frankincense, with all powders of the merchant?* (Song of Solomon 3:6). It ain''t new: Enoch''s spice-tree breathes the very incense of worship.',
+       sv.verse_id, ev.verse_id, 'extras', 50750
+  FROM _session250_en31_lookup sv, _session250_en31_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=31 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=31 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-31-tree-of-wisdom-eden',
+       E'The tree of wisdom — eyes opened, driven from the garden',
+       E'The angel names the tree for Enoch: *This is the tree of wisdom, of which thy father old (in years) and thy aged mother, who were before thee, have eaten, and they learnt wisdom, and their eyes were opened, and they knew that they were naked, and they were driven out of the garden* (1 Enoch 31:4). This is Eden retold without a seam. Eve saw *a tree to be desired to make one wise, she took of the fruit thereof... and gave also unto her husband with her; and he did eat* (Genesis 3:6); then *the eyes of them both were opened, and they knew that they were naked* (Genesis 3:7); and Yahuah Elohim *sent him forth from the garden of Eden, to till the ground from whence he was taken* (Genesis 3:23). Enoch is shown the very tree Genesis names — the order Yahuah set was good, and the fall was reaching for wisdom apart from the Creator''s way, not the law''s fault.',
+       sv.verse_id, ev.verse_id, 'extras', 50753
+  FROM _session250_en31_lookup sv, _session250_en31_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=31 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=31 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-31-tree-transplanted-to-the-temple',
+       E'The tree reserved for the elect — transplanted to the holy place',
+       E'The wisdom-tree is sealed off until the day of reckoning and then restored to the righteous: *And from that time forward no one has been permitted to touch it until the great judgement, when His righteousness shall be avenged upon the sinners, and its fruit given to the righteous and humble* (1 Enoch 31:5); *Then shall it be given to the righteous and humble, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King* (1 Enoch 31:6). This is the Eden-tree carried home to Zion. Ezekiel sees it rooted by the sanctuary stream: *shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed... because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine* (Ezekiel 47:12); Revelation sets it in the City: *the tree of life, which bare twelve manner of fruits... and the leaves of the tree were for the healing of the nations* (Revelation 22:2); and entry is for those who keep the covenant — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city* (Revelation 22:14). The judgement falls on the sinners, the fruit-for-life goes to the elect and humble, and the tree is replanted at the centre — Eden, Zion, and the age to come are one story.',
+       sv.verse_id, ev.verse_id, 'extras', 50756
+  FROM _session250_en31_lookup sv, _session250_en31_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=31 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=31 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-31-frankincense-and-myrrh
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 30:34 — *And Yahuah (LORD) said unto Moses, Take unto thee sweet spices, stacte, and onycha, and galbanum; these sweet spices with pure frankincense: of each shall there be a like weight:* The pure frankincense set apart for the holy incense is the same surpassing fragrance Enoch smells flooding the valley at 31:1-3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en31_lookup sv, _session250_en31_lookup tv
+ WHERE t.slug='1-enoch-31-frankincense-and-myrrh'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=31 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Song of Solomon 3:6 — *Who is this that cometh out of the wilderness like pillars of smoke, perfumed with myrrh and frankincense, with all powders of the merchant?* The myrrh-and-frankincense fragrance that heralds the Bridegroom is the same holy scent Enoch finds surpassing all fragrance in 31:1-3.'
+  FROM cross_reference_threads t, cross_references x, _session250_en31_lookup sv, _session250_en31_lookup tv
+ WHERE t.slug='1-enoch-31-frankincense-and-myrrh'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=31 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='song-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-31-tree-of-wisdom-eden
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* The tree desired to make one wise is exactly the tree of wisdom the angel names in 31:4, eaten by Enoch''s first father and mother.'
+  FROM cross_reference_threads t, cross_references x, _session250_en31_lookup sv, _session250_en31_lookup tv
+ WHERE t.slug='1-enoch-31-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=31 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* The opened eyes and the knowledge of nakedness in 31:4 are word-for-word the aftermath Genesis records.'
+  FROM cross_reference_threads t, cross_references x, _session250_en31_lookup sv, _session250_en31_lookup tv
+ WHERE t.slug='1-enoch-31-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=31 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 3:23 — *Therefore Yahuah Elohim (the LORD God) sent him forth from the garden of Eden, to till the ground from whence he was taken.* The driving out of the garden that closes 31:4 is the same expulsion that closes the Eden account.'
+  FROM cross_reference_threads t, cross_references x, _session250_en31_lookup sv, _session250_en31_lookup tv
+ WHERE t.slug='1-enoch-31-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=31 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-31-tree-transplanted-to-the-temple
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* The tree transplanted to the temple in 31:6 is the sanctuary-rooted tree of healing Ezekiel sees by the water that flows from the holy place.'
+  FROM cross_reference_threads t, cross_references x, _session250_en31_lookup sv, _session250_en31_lookup tv
+ WHERE t.slug='1-enoch-31-tree-transplanted-to-the-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=31 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The fruit-for-life given to the elect in the holy place at 31:6 is the tree of life set at the centre of the restored City.'
+  FROM cross_reference_threads t, cross_references x, _session250_en31_lookup sv, _session250_en31_lookup tv
+ WHERE t.slug='1-enoch-31-tree-transplanted-to-the-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=31 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The fruit withheld until the great judgement and then granted to the righteous in 31:5 belongs to those who keep the commandments — the covenant-keepers, not a self-selected class.'
+  FROM cross_reference_threads t, cross_references x, _session250_en31_lookup sv, _session250_en31_lookup tv
+ WHERE t.slug='1-enoch-31-tree-transplanted-to-the-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=31 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_32.sql (session250 1-enoch 32) -----
+-- Source anchor: enoch/1-enoch ch32. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en32 (view _session250_en32_lookup). Sort band base 50775, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en32_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-32-tree-of-wisdom-eden
+  ('enoch', '1-enoch', 32, 6, 'canon', 'genesis', 2, 9, 'free', E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The tree of wisdom Enoch is shown is Genesis''s own tree of knowledge of good and evil, standing in the garden in the east.'),
+  ('enoch', '1-enoch', 32, 6, 'canon', 'genesis', 2, 17, 'free', E'Genesis 2:17 — *But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die.* This is the very tree whose fruit Enoch''s ''father old (in years) and aged mother'' ate against the command, and so were driven out.'),
+  ('enoch', '1-enoch', 32, 6, 'canon', 'genesis', 3, 6, 'free', E'Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* Enoch''s ''they learnt wisdom'' is Eve''s reach for the tree ''to make one wise'' — the same eating, the same tree.'),
+  ('enoch', '1-enoch', 32, 6, 'canon', 'genesis', 3, 7, 'free', E'Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* Enoch''s ''their eyes were opened, and they knew that they were naked'' repeats Genesis verbatim — it ain''t new.'),
+  ('enoch', '1-enoch', 32, 6, 'jubilees', 'jubilees', 3, 21, 'extras', E'Jubilees 3:21 — *And when she had first covered her shame with fig-leaves, she gave thereof to Adam and he ate, and his eyes were opened, and he saw that he was naked. And he took fig-leaves and sewed (them) together, and made an apron for himself, and covered his shame.* Jubilees carries the same eyes-opened, naked, fig-leaf account Enoch points back to at the tree of wisdom.'),
+  -- thread: 1-enoch-32-driven-out-tree-barred
+  ('enoch', '1-enoch', 32, 6, 'canon', 'genesis', 3, 22, 'free', E'Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:* This is why Enoch''s tree was barred — man, fallen, must not seize the fruit until the judgement makes him fit.'),
+  ('enoch', '1-enoch', 32, 7, 'canon', 'genesis', 3, 24, 'free', E'Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* Enoch''s ''no one has been permitted to touch it'' is exactly the flaming sword keeping the way at the garden in the east.'),
+  ('enoch', '1-enoch', 32, 7, 'canon', 'proverbs', 3, 18, 'free', E'Proverbs 3:18 — *She is a tree of life to them that lay hold upon her: and happy is every one that retaineth her.* The wisdom the barred tree bears is not cursed but blessed for those who lay hold of her rightly — the fruit reserved for the righteous and humble.'),
+  -- thread: 1-enoch-32-fruit-for-righteous-temple
+  ('enoch', '1-enoch', 32, 8, 'canon', 'ezekiel', 28, 13, 'free', E'Ezekiel 28:13 — *Thou hast been in Eden the garden of Elohim (God); every precious stone was thy covering, the sardius, topaz, and the diamond, the beryl, the onyx, and the jasper, the sapphire, the emerald, and the carbuncle, and gold: the workmanship of thy tabrets and of thy pipes was prepared in thee in the day that thou wast created.* Eden is named ''the garden of Elohim,'' a holy place — matching Enoch''s tree transplanted to the temple of Yahuah.'),
+  ('enoch', '1-enoch', 32, 8, 'canon', 'revelation', 2, 7, 'free', E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* Enoch''s ''its fruit shall be for life to the elect'' is Yahusha''s promise of the tree''s fruit to the overcomer in paradise.'),
+  ('enoch', '1-enoch', 32, 8, 'canon', 'revelation', 22, 2, 'free', E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The Eden tree transplanted to Yahuah''s holy place is Revelation''s tree of life at the throne in the city — Zion at the centre.'),
+  ('enoch', '1-enoch', 32, 8, 'canon', 'revelation', 22, 14, 'free', E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The fruit given ''to the righteous and humble'' is granted to the commandment-keepers — Torah stands; the right to the tree belongs to those who keep the way.'),
+  ('enoch', '1-enoch', 32, 7, 'apocrypha', '2-esdras', 8, 52, 'extras', E'2 Esdras 8:52 — *For to you is paradise opened, the tree of life is planted, the time to come is prepared, plenteousness is made ready, a city is builded, and rest is allowed, yes, perfect goodness and wisdom.* Ezra hears the same opening Enoch foresees: at the time to come the paradise is opened and the tree planted for the righteous.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en32_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en32_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-32-tree-of-wisdom-eden',
+       E'The tree of wisdom — Eden''s tree of knowledge',
+       E'Enoch is carried to the garden of righteousness in the east and shown the very tree of Eden: *And I said: ''Behold this beautiful tree, and what is its name?'' Then answered the angel who was with me, and said unto me: ''This is the tree of wisdom, of which thy father old (in years) and thy aged mother, who were before thee, have eaten, and they learnt wisdom, and their eyes were opened, and they knew that they were naked, and they were driven out of the garden.''* (1 Enoch 32:5-6). This is no new tree — it is the one Genesis planted: *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil* (Genesis 2:9), the same of which Yahuah commanded, *But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die* (Genesis 2:17). Enoch''s ''they learnt wisdom'' is Eve''s reach: *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat* (Genesis 3:6); and Enoch''s ''their eyes were opened, and they knew that they were naked'' is Genesis word for word — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons* (Genesis 3:7). Jubilees tells the same scene the same way: *And when she had first covered her shame with fig-leaves, she gave thereof to Adam and he ate, and his eyes were opened, and he saw that he was naked* (Jubilees 3:21). It ain''t new — Enoch sees the literal Eden tree and names it exactly as Moses did.',
+       sv.verse_id, ev.verse_id, 'extras', 50775
+  FROM _session250_en32_lookup sv, _session250_en32_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=32 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-32-driven-out-tree-barred',
+       E'Driven out — the tree barred until the great judgement',
+       E'Of the eaten tree Enoch is told the sequel: *and they were driven out of the garden. And from that time forward no one has been permitted to touch it until the great judgement, when His righteousness shall be avenged upon the sinners, and its fruit given to the righteous and humble* (1 Enoch 32:6-7). Genesis gives the reason for the barring — lest fallen man seize life forever: *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever* (Genesis 3:22) — and the guard set to keep the way: *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24). Enoch''s ''no one permitted to touch it'' is that flaming sword''s whole purpose. Yet the wisdom the tree bears is never cursed in itself — Solomon names her a tree to be laid hold of: *She is a tree of life to them that lay hold upon her: and happy is every one that retaineth her* (Proverbs 3:18). The bar is not on wisdom but on stolen wisdom; the righteous wait for the great judgement, when the way is opened again. Torah stands: the driving-out was for the breach of the command, not a curse on the tree.',
+       sv.verse_id, ev.verse_id, 'extras', 50778
+  FROM _session250_en32_lookup sv, _session250_en32_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=32 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-32-fruit-for-righteous-temple',
+       E'The fruit given to the righteous — transplanted to the temple',
+       E'At the great judgement Enoch''s tree is opened to the elect and moved to the holy place: *Then shall it be given to the righteous and humble, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King. Then shall they rejoice with joy and be glad, and into the holy place shall they enter; and its fragrance shall be in their bones, and they shall live a long life on earth* (1 Enoch 32:8-9). The Eden tree restored to a holy place is the prophets'' own picture — Eden was always the garden of Elohim: *Thou hast been in Eden the garden of Elohim (God); every precious stone was thy covering, the sardius, topaz, and the diamond, the beryl, the onyx, and the jasper, the sapphire, the emerald, and the carbuncle, and gold: the workmanship of thy tabrets and of thy pipes was prepared in thee in the day that thou wast created* (Ezekiel 28:13). Yahusha gives the same promise to the overcomer: *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* (Revelation 2:7), and Revelation sets the tree at the throne in the holy city: *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations* (Revelation 22:2) — its right reserved for the commandment-keepers: *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city* (Revelation 22:14). And 2 Esdras hears the same opening: *For to you is paradise opened, the tree of life is planted, the time to come is prepared, plenteousness is made ready, a city is builded, and rest is allowed, yes, perfect goodness and wisdom* (2 Esdras 8:52). The fruit is for the elect who keep the way, transplanted to Yahuah''s temple at the centre — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 50781
+  FROM _session250_en32_lookup sv, _session250_en32_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=32 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-32-tree-of-wisdom-eden
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The tree of wisdom Enoch is shown is Genesis''s own tree of knowledge of good and evil, standing in the garden in the east.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 2:17 — *But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die.* This is the very tree whose fruit Enoch''s ''father old (in years) and aged mother'' ate against the command, and so were driven out.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* Enoch''s ''they learnt wisdom'' is Eve''s reach for the tree ''to make one wise'' — the same eating, the same tree.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* Enoch''s ''their eyes were opened, and they knew that they were naked'' repeats Genesis verbatim — it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 3:21 — *And when she had first covered her shame with fig-leaves, she gave thereof to Adam and he ate, and his eyes were opened, and he saw that he was naked. And he took fig-leaves and sewed (them) together, and made an apron for himself, and covered his shame.* Jubilees carries the same eyes-opened, naked, fig-leaf account Enoch points back to at the tree of wisdom.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-tree-of-wisdom-eden'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=3 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-32-driven-out-tree-barred
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:* This is why Enoch''s tree was barred — man, fallen, must not seize the fruit until the judgement makes him fit.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-driven-out-tree-barred'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* Enoch''s ''no one has been permitted to touch it'' is exactly the flaming sword keeping the way at the garden in the east.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-driven-out-tree-barred'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 3:18 — *She is a tree of life to them that lay hold upon her: and happy is every one that retaineth her.* The wisdom the barred tree bears is not cursed but blessed for those who lay hold of her rightly — the fruit reserved for the righteous and humble.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-driven-out-tree-barred'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-32-fruit-for-righteous-temple
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 28:13 — *Thou hast been in Eden the garden of Elohim (God); every precious stone was thy covering, the sardius, topaz, and the diamond, the beryl, the onyx, and the jasper, the sapphire, the emerald, and the carbuncle, and gold: the workmanship of thy tabrets and of thy pipes was prepared in thee in the day that thou wast created.* Eden is named ''the garden of Elohim,'' a holy place — matching Enoch''s tree transplanted to the temple of Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-fruit-for-righteous-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=28 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* Enoch''s ''its fruit shall be for life to the elect'' is Yahusha''s promise of the tree''s fruit to the overcomer in paradise.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-fruit-for-righteous-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The Eden tree transplanted to Yahuah''s holy place is Revelation''s tree of life at the throne in the city — Zion at the centre.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-fruit-for-righteous-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The fruit given ''to the righteous and humble'' is granted to the commandment-keepers — Torah stands; the right to the tree belongs to those who keep the way.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-fruit-for-righteous-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Esdras 8:52 — *For to you is paradise opened, the tree of life is planted, the time to come is prepared, plenteousness is made ready, a city is builded, and rest is allowed, yes, perfect goodness and wisdom.* Ezra hears the same opening Enoch foresees: at the time to come the paradise is opened and the tree planted for the righteous.'
+  FROM cross_reference_threads t, cross_references x, _session250_en32_lookup sv, _session250_en32_lookup tv
+ WHERE t.slug='1-enoch-32-fruit-for-righteous-temple'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=32 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=8 AND tv.verse_number=52
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_33.sql (session250 1-enoch 33) -----
+-- Source anchor: enoch/1-enoch ch33. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en33 (view _session250_en33_lookup). Sort band base 50800, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en33_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-33-portals-sun-moon
+  ('enoch', '1-enoch', 33, 3, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The sun and moon Enoch watches passing through the portals were appointed at creation for signs and seasons — the moedim.'),
+  ('enoch', '1-enoch', 33, 3, 'canon', 'psalms', 19, 5, 'free', E'Psalm 19:5 — *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* The sun that rises from Enoch''s eastern portals is the same sun the psalmist sees set on its joyful, fixed course.'),
+  ('enoch', '1-enoch', 33, 2, 'canon', 'psalms', 19, 6, 'free', E'Psalm 19:6 — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* The sun''s going-forth from the end of heaven and its full circuit is exactly the gate-to-gate transit Enoch witnesses at the ends of the earth.'),
+  ('enoch', '1-enoch', 33, 3, 'enoch', '1-enoch', 72, 3, 'extras', E'1 Enoch 72:3 — *And I saw six portals out of which the sun rises, and six portals in which the sun sets and the moon rises and sets in those portals, and the leaders of the stars and those whom they lead: six in the east and six in the west following them closely, and also many other when they are added to the six.* The Astronomical Book opens by repeating this very vision, confirming the twelve portals Enoch first glimpses here in chapter 33.'),
+  ('enoch', '1-enoch', 33, 3, 'jubilees', 'jubilees', 2, 9, 'extras', E'Jubilees 2:9 — *And Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years.* The same lights that pass through Enoch''s portals are the appointed keepers of the feasts and jubilees — the calendar of Torah set in the heavens.'),
+  -- thread: 1-enoch-33-stars-keep-their-order
+  ('enoch', '1-enoch', 33, 5, 'enoch', '1-enoch', 2, 1, 'extras', E'1 Enoch 2:1 — *Observe ye everything that takes place in the heaven, how they do not change their orbits, and the luminaries which are in the heaven, how they all rise and set in order each in its season, and transgress not against their appointed order.* Enoch''s opening summons to watch the unchanging order of the lights is precisely what he now sees fulfilled at the gates — the stars that do not change their course.'),
+  ('enoch', '1-enoch', 33, 5, 'canon', 'psalms', 104, 19, 'free', E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The sun and moon that keep their order in Enoch''s portals are the appointed timekeepers the psalmist praises — the sun that knows its own setting.'),
+  ('enoch', '1-enoch', 33, 5, 'canon', 'job', 38, 32, 'free', E'Job 38:32 — *Canst thou bring forth Mazzaroth in his season? or canst thou guide Arcturus with his sons?* The fixed courses Enoch marvels at belong to the Creator who alone leads the constellations out in their season.'),
+  -- thread: 1-enoch-33-trees-of-paradise
+  ('enoch', '1-enoch', 33, 10, 'canon', 'genesis', 2, 9, 'free', E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The trees of paradise Enoch sees in the north are the very trees of Eden, the tree of life among them.'),
+  ('enoch', '1-enoch', 33, 10, 'enoch', '1-enoch', 24, 4, 'extras', E'1 Enoch 24:4 — *And amongst them was a tree such as I had never yet smelt, neither was any amongst them nor were others like it: it had a fragrance beyond all fragrance, and its leaves and blooms and wood wither not for ever: and its fruit is beautiful, and its fruit resembles the dates of a palm.* The fragrant trees of paradise here echo the throne-mountain tree of life Enoch had already smelled, the undying tree reserved for the righteous.'),
+  ('enoch', '1-enoch', 33, 10, 'canon', 'revelation', 22, 2, 'free', E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The paradise Enoch sees kept in the north is restored at the centre of the New Jerusalem, the tree of life bearing fruit every month.'),
+  ('enoch', '1-enoch', 33, 10, 'canon', 'ezekiel', 47, 12, 'free', E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel''s ever-fruitful trees beside the sanctuary river are the same paradise trees whose leaves wither not — Eden flowing out from the centre.'),
+  -- thread: 1-enoch-33-treasuries-ordered-by-wisdom
+  ('enoch', '1-enoch', 33, 11, 'canon', 'job', 38, 22, 'free', E'Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* The very treasuries of snow and hail Enoch is shown are the storehouses Yahuah set before Job as proof of His unsearchable order.'),
+  ('enoch', '1-enoch', 33, 12, 'canon', 'psalms', 135, 7, 'free', E'Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The treasuries of all the winds Enoch sees at the ends of the earth are the same storehouses the psalmist says Yahuah draws the wind from.'),
+  ('enoch', '1-enoch', 33, 12, 'canon', 'jeremiah', 10, 13, 'free', E'Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* Jeremiah names the same ends-of-the-earth treasuries of wind and rain Enoch is shown, all ordered by the Creator''s word.'),
+  ('enoch', '1-enoch', 33, 12, 'canon', 'proverbs', 8, 22, 'free', E'Proverbs 8:22 — *Yahuah (LORD) possessed me in the beginning of his way, before his works of old.* Enoch''s confession that He ordered all creation by His wisdom is what Wisdom herself declares — present before the works of old, the principle on which the world is founded.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en33_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en33_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-33-portals-sun-moon',
+       E'The portals of heaven — the lights for signs and seasons',
+       E'Enoch reaches the eastern edge: *And to the east of those beasts I saw the ends of the earth whereon the heaven rests, and the portals of the heaven open.* (1 Enoch 33:2) — *And I saw six portals out of which the sun rises, and six portals in which the sun sets, and the moon rises and sets in those portals, and the leaders of the stars and those whom they lead: six in the east and six in the west following them, and also many other chariots and their leaders.* (1 Enoch 33:3) This is the doorway to the Astronomical Book, and it is not new: the Creator hung the gates and set the lights at the fourth day — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14) — the sun keeping its appointed circuit, *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* (Psalm 19:5) and *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* (Psalm 19:6) Uriel will spell out these same portals: *And I saw six portals out of which the sun rises, and six portals in which the sun sets and the moon rises and sets in those portals, and the leaders of the stars and those whom they lead: six in the east and six in the west following them closely, and also many other when they are added to the six.* (1 Enoch 72:3) And Jubilees reads the lights as the keepers of the moedim — *And Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years.* (Jubilees 2:9) The lights govern the feasts; the Torah''s calendar is written into the sky.',
+       sv.verse_id, ev.verse_id, 'extras', 50800
+  FROM _session250_en33_lookup sv, _session250_en33_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=33 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-33-stars-keep-their-order',
+       E'The stars rise and set in order — they do not change their course',
+       E'Of the host that streams through the gates Enoch testifies: *And all the stars rise and set in their own order, and they do not change their course.* (1 Enoch 33:5) — and the winds *turn the heaven, and cause the disc of the sun and all the stars to set.* (1 Enoch 33:7) This obedient order is the same lesson Enoch opens with: *Observe ye everything that takes place in the heaven, how they do not change their orbits, and the luminaries which are in the heaven, how they all rise and set in order each in its season, and transgress not against their appointed order.* (1 Enoch 2:1) The Tanakh reads the same fidelity: *He appointed the moon for seasons: the sun knoweth his going down.* (Psalm 104:19) and the Creator alone holds the reins of the constellations — *Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion?* (Job 38:31) and *Canst thou bring forth Mazzaroth in his season? or canst thou guide Arcturus with his sons?* (Job 38:32) The stars that never break rank become Enoch''s standing rebuke to the Watchers who did: the heavens keep covenant order; rebellion against the Creator''s appointed courses is the original transgression.',
+       sv.verse_id, ev.verse_id, 'extras', 50803
+  FROM _session250_en33_lookup sv, _session250_en33_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=33 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-33-trees-of-paradise',
+       E'The trees of paradise at the north — the fragrant tree of life',
+       E'Turning northward Enoch sees the holy garden: *And I proceeded to the north, and I saw there the great mountains of precious stones, and the trees of paradise, and the fragrant trees.* (1 Enoch 33:10) The paradise and its fragrant trees are the same Eden the Creator planted — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* (Genesis 2:9) Enoch had already smelled it on the throne-mountain: *And amongst them was a tree such as I had never yet smelt, neither was any amongst them nor were others like it: it had a fragrance beyond all fragrance, and its leaves and blooms and wood wither not for ever: and its fruit is beautiful, and its fruit resembles the dates of a palm.* (1 Enoch 24:4) That same tree of life is restored at the end — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* (Revelation 22:2) — its undying leaves foreseen by Ezekiel — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* (Ezekiel 47:12) Eden lost, kept fragrant at the ends of the earth, and Eden restored at the centre — one tree, one paradise.',
+       sv.verse_id, ev.verse_id, 'extras', 50806
+  FROM _session250_en33_lookup sv, _session250_en33_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=33 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-33-treasuries-ordered-by-wisdom',
+       E'The treasuries of snow and wind — He ordered all creation by His wisdom',
+       E'Enoch''s tour closes on the storehouses of weather and the wisdom that fixed them: *And I saw the treasuries of the snow and the treasuries of the hail, and the treasuries of the clouds, and the treasuries of the dew and the rain.* (1 Enoch 33:11) — *And I saw the treasuries of all the winds: I saw how He has ordered all creation by His wisdom, and how He has founded the world upon them.* (1 Enoch 33:12) These very treasuries are what Yahuah set before Job out of the whirlwind — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* (Job 38:22) — and the prophets confess the wind drawn out of the same store: *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* (Psalm 135:7) and *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* (Jeremiah 10:13) Enoch names the founding principle — He ordered all creation by His wisdom — and Wisdom herself testifies she was there: *Yahuah (LORD) possessed me in the beginning of his way, before his works of old.* (Proverbs 8:22) The world is not chaos but covenant-order, founded on wisdom; the same God who weighs the snow appoints the times.',
+       sv.verse_id, ev.verse_id, 'extras', 50809
+  FROM _session250_en33_lookup sv, _session250_en33_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=11
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=33 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-33-portals-sun-moon
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The sun and moon Enoch watches passing through the portals were appointed at creation for signs and seasons — the moedim.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-portals-sun-moon'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 19:5 — *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* The sun that rises from Enoch''s eastern portals is the same sun the psalmist sees set on its joyful, fixed course.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-portals-sun-moon'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 19:6 — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* The sun''s going-forth from the end of heaven and its full circuit is exactly the gate-to-gate transit Enoch witnesses at the ends of the earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-portals-sun-moon'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 72:3 — *And I saw six portals out of which the sun rises, and six portals in which the sun sets and the moon rises and sets in those portals, and the leaders of the stars and those whom they lead: six in the east and six in the west following them closely, and also many other when they are added to the six.* The Astronomical Book opens by repeating this very vision, confirming the twelve portals Enoch first glimpses here in chapter 33.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-portals-sun-moon'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=72 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 2:9 — *And Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years.* The same lights that pass through Enoch''s portals are the appointed keepers of the feasts and jubilees — the calendar of Torah set in the heavens.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-portals-sun-moon'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=3
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-33-stars-keep-their-order
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 2:1 — *Observe ye everything that takes place in the heaven, how they do not change their orbits, and the luminaries which are in the heaven, how they all rise and set in order each in its season, and transgress not against their appointed order.* Enoch''s opening summons to watch the unchanging order of the lights is precisely what he now sees fulfilled at the gates — the stars that do not change their course.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-stars-keep-their-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=5
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=2 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The sun and moon that keep their order in Enoch''s portals are the appointed timekeepers the psalmist praises — the sun that knows its own setting.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-stars-keep-their-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Job 38:32 — *Canst thou bring forth Mazzaroth in his season? or canst thou guide Arcturus with his sons?* The fixed courses Enoch marvels at belong to the Creator who alone leads the constellations out in their season.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-stars-keep-their-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-33-trees-of-paradise
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The trees of paradise Enoch sees in the north are the very trees of Eden, the tree of life among them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-trees-of-paradise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 24:4 — *And amongst them was a tree such as I had never yet smelt, neither was any amongst them nor were others like it: it had a fragrance beyond all fragrance, and its leaves and blooms and wood wither not for ever: and its fruit is beautiful, and its fruit resembles the dates of a palm.* The fragrant trees of paradise here echo the throne-mountain tree of life Enoch had already smelled, the undying tree reserved for the righteous.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-trees-of-paradise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=10
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=24 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The paradise Enoch sees kept in the north is restored at the centre of the New Jerusalem, the tree of life bearing fruit every month.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-trees-of-paradise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel''s ever-fruitful trees beside the sanctuary river are the same paradise trees whose leaves wither not — Eden flowing out from the centre.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-trees-of-paradise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-33-treasuries-ordered-by-wisdom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* The very treasuries of snow and hail Enoch is shown are the storehouses Yahuah set before Job as proof of His unsearchable order.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-treasuries-ordered-by-wisdom'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The treasuries of all the winds Enoch sees at the ends of the earth are the same storehouses the psalmist says Yahuah draws the wind from.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-treasuries-ordered-by-wisdom'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=135 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* Jeremiah names the same ends-of-the-earth treasuries of wind and rain Enoch is shown, all ordered by the Creator''s word.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-treasuries-ordered-by-wisdom'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 8:22 — *Yahuah (LORD) possessed me in the beginning of his way, before his works of old.* Enoch''s confession that He ordered all creation by His wisdom is what Wisdom herself declares — present before the works of old, the principle on which the world is founded.'
+  FROM cross_reference_threads t, cross_references x, _session250_en33_lookup sv, _session250_en33_lookup tv
+ WHERE t.slug='1-enoch-33-treasuries-ordered-by-wisdom'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=33 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=8 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_34.sql (session250 1-enoch 34) -----
+-- Source anchor: enoch/1-enoch ch34. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en34 (view _session250_en34_lookup). Sort band base 50825, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en34_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-34-wind-out-of-his-treasuries
+  ('enoch', '1-enoch', 34, 1, 'canon', 'psalms', 135, 7, 'free', E'Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The dew, rain, and frost that proceed through Enoch''s portals are the wind Yahuah brings out of His own treasuries.'),
+  ('enoch', '1-enoch', 34, 1, 'canon', 'jeremiah', 10, 13, 'free', E'Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* Jeremiah locates the storehouse exactly where Enoch did — at the ends of the earth, the wind brought forth out of His treasures.'),
+  ('enoch', '1-enoch', 34, 1, 'canon', 'job', 37, 9, 'free', E'Job 37:9 — *Out of the south cometh the whirlwind: and cold out of the north.* Job names the cold north-wind Enoch is shown loosed from the northern portals first.'),
+  ('enoch', '1-enoch', 34, 1, 'canon', 'job', 38, 22, 'free', E'Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* Yahuah challenges Job with the very stored frost and hoar-frost that proceed through Enoch''s gates.'),
+  ('enoch', '1-enoch', 34, 1, 'enoch', '1-enoch', 76, 1, 'extras', E'1 Enoch 76:1 — *And at the ends of the earth I saw twelve portals: out of the east three portals for blessing and prosperity, and three for cursing and destruction.* Enoch''s own Luminaries section expands chapter 34''s three-per-quarter gates into the full twelve portals of the winds.'),
+  -- thread: 1-enoch-34-four-winds-four-quarters
+  ('enoch', '1-enoch', 34, 6, 'canon', 'daniel', 7, 2, 'free', E'Daniel 7:2 — *Daniel spake and said, I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea.* Daniel''s four winds of heaven are Enoch''s winds that divide the earth into four parts, here stirring the sea of the nations.'),
+  ('enoch', '1-enoch', 34, 6, 'canon', 'revelation', 7, 1, 'free', E'Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* John posts angels over Enoch''s four quarters, holding back the four winds until the servants of Elohim are sealed.'),
+  -- thread: 1-enoch-34-pillars-stretched-vaults-of-heaven
+  ('enoch', '1-enoch', 34, 8, 'canon', 'job', 26, 11, 'free', E'Job 26:11 — *The pillars of heaven tremble and are astonished at his reproof.* Job names the same pillars of the heaven Enoch sees the winds raise between heaven and earth.'),
+  ('enoch', '1-enoch', 34, 7, 'canon', 'job', 26, 7, 'free', E'Job 26:7 — *He stretcheth out the north over the empty place, and hangeth the earth upon nothing.* Job''s hung earth matches the winds Enoch sees supporting the earth and the firmament of heaven.'),
+  ('enoch', '1-enoch', 34, 8, 'canon', 'isaiah', 40, 22, 'free', E'Isaiah 40:22 — *It is he that sitteth upon the circle of the earth, and the inhabitants thereof are as grasshoppers; that stretcheth out the heavens as a curtain, and spreadeth them out as a tent to dwell in:* Isaiah''s stretched-out heavens are the vaults Enoch sees the winds stretch out as the pillars of the heaven.'),
+  ('enoch', '1-enoch', 34, 7, 'canon', 'psalms', 104, 4, 'free', E'Psalm 104:4 — *Who maketh his angels spirits; his ministers a flaming fire:* The Psalm makes the winds Yahuah''s own ministering servants, the same agents Enoch watches support the earth and uphold the firmament.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en34_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en34_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-34-wind-out-of-his-treasuries',
+       E'The north gates of heaven — the wind out of His treasuries',
+       E'Enoch is carried to the ends of the earth and shown the gates from which the winds are loosed: *And from thence I went to the north, to the ends of the earth, and there I saw three portals of the heaven open: through each of them proceed north winds: when they blow there is dew and rain and hoar-frost.* (1 Enoch 34:1). The Tanakh keeps the very same storehouse: the wind, the rain, the frost are not stray weather but provisions Yahuah dispenses from His own treasuries — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* (Psalm 135:7), word for word again in *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* (Jeremiah 10:13). Job names the cold north-quarter Enoch saw first — *Out of the south cometh the whirlwind: and cold out of the north.* (Job 37:9) — and asks whether mortal man has ever entered those stores: *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* (Job 38:22). It ain''t new: the gated winds and the stored frost of 1 Enoch 34 are the canon''s own doctrine that the Creator orders the weather from sealed treasuries no man controls.',
+       sv.verse_id, ev.verse_id, 'extras', 50825
+  FROM _session250_en34_lookup sv, _session250_en34_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=34 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-34-four-winds-four-quarters',
+       E'The four quarters of the earth and its four winds',
+       E'Having walked north, east, south, and west, Enoch sees the whole compass at once: *And I saw the four quarters of the earth, and the winds which divide the earth into four parts.* (1 Enoch 34:6). The fourfold winds are a fixed feature of canon prophecy. Daniel watches them stir the nations: *Daniel spake and said, I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea.* (Daniel 7:2). Revelation sets angels over those same four winds, restrained until the sealing is done: *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* (Revelation 7:1). It ain''t new: Enoch''s four quarters and dividing winds are the architecture Daniel and John assume — the earth ordered to four corners, the winds held or loosed at the Creator''s word.',
+       sv.verse_id, ev.verse_id, 'extras', 50828
+  FROM _session250_en34_lookup sv, _session250_en34_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=34 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-34-pillars-stretched-vaults-of-heaven',
+       E'The winds that bear the earth — the pillars of heaven',
+       E'The chapter closes on the cosmic frame: *And I saw the winds which support the earth and the firmament of the heaven.* (1 Enoch 34:7), and *And I saw how the winds stretch out the vaults of heaven, and have their station between heaven and earth: these are the pillars of the heaven.* (1 Enoch 34:8). The canon speaks the same architecture. Job knows both the hung earth and the trembling pillars: *He stretcheth out the north over the empty place, and hangeth the earth upon nothing.* (Job 26:7), and *The pillars of heaven tremble and are astonished at his reproof.* (Job 26:11). Isaiah sees the heavens stretched as a tent — *It is he that sitteth upon the circle of the earth, and the inhabitants thereof are as grasshoppers; that stretcheth out the heavens as a curtain, and spreadeth them out as a tent to dwell in:* (Isaiah 40:22) — and the Psalm makes the very winds His servants: *Who maketh his angels spirits; his ministers a flaming fire:* (Psalm 104:4). It ain''t new: Enoch''s pillars and stretched-out vaults are the canon''s own picture of a heaven the Creator hangs, spreads, and upholds.',
+       sv.verse_id, ev.verse_id, 'extras', 50831
+  FROM _session250_en34_lookup sv, _session250_en34_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=34 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-34-wind-out-of-his-treasuries
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The dew, rain, and frost that proceed through Enoch''s portals are the wind Yahuah brings out of His own treasuries.'
+  FROM cross_reference_threads t, cross_references x, _session250_en34_lookup sv, _session250_en34_lookup tv
+ WHERE t.slug='1-enoch-34-wind-out-of-his-treasuries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=135 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* Jeremiah locates the storehouse exactly where Enoch did — at the ends of the earth, the wind brought forth out of His treasures.'
+  FROM cross_reference_threads t, cross_references x, _session250_en34_lookup sv, _session250_en34_lookup tv
+ WHERE t.slug='1-enoch-34-wind-out-of-his-treasuries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Job 37:9 — *Out of the south cometh the whirlwind: and cold out of the north.* Job names the cold north-wind Enoch is shown loosed from the northern portals first.'
+  FROM cross_reference_threads t, cross_references x, _session250_en34_lookup sv, _session250_en34_lookup tv
+ WHERE t.slug='1-enoch-34-wind-out-of-his-treasuries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=37 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* Yahuah challenges Job with the very stored frost and hoar-frost that proceed through Enoch''s gates.'
+  FROM cross_reference_threads t, cross_references x, _session250_en34_lookup sv, _session250_en34_lookup tv
+ WHERE t.slug='1-enoch-34-wind-out-of-his-treasuries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 76:1 — *And at the ends of the earth I saw twelve portals: out of the east three portals for blessing and prosperity, and three for cursing and destruction.* Enoch''s own Luminaries section expands chapter 34''s three-per-quarter gates into the full twelve portals of the winds.'
+  FROM cross_reference_threads t, cross_references x, _session250_en34_lookup sv, _session250_en34_lookup tv
+ WHERE t.slug='1-enoch-34-wind-out-of-his-treasuries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=1
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=76 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-34-four-winds-four-quarters
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:2 — *Daniel spake and said, I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea.* Daniel''s four winds of heaven are Enoch''s winds that divide the earth into four parts, here stirring the sea of the nations.'
+  FROM cross_reference_threads t, cross_references x, _session250_en34_lookup sv, _session250_en34_lookup tv
+ WHERE t.slug='1-enoch-34-four-winds-four-quarters'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* John posts angels over Enoch''s four quarters, holding back the four winds until the servants of Elohim are sealed.'
+  FROM cross_reference_threads t, cross_references x, _session250_en34_lookup sv, _session250_en34_lookup tv
+ WHERE t.slug='1-enoch-34-four-winds-four-quarters'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-34-pillars-stretched-vaults-of-heaven
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 26:11 — *The pillars of heaven tremble and are astonished at his reproof.* Job names the same pillars of the heaven Enoch sees the winds raise between heaven and earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en34_lookup sv, _session250_en34_lookup tv
+ WHERE t.slug='1-enoch-34-pillars-stretched-vaults-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=26 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 26:7 — *He stretcheth out the north over the empty place, and hangeth the earth upon nothing.* Job''s hung earth matches the winds Enoch sees supporting the earth and the firmament of heaven.'
+  FROM cross_reference_threads t, cross_references x, _session250_en34_lookup sv, _session250_en34_lookup tv
+ WHERE t.slug='1-enoch-34-pillars-stretched-vaults-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=26 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 40:22 — *It is he that sitteth upon the circle of the earth, and the inhabitants thereof are as grasshoppers; that stretcheth out the heavens as a curtain, and spreadeth them out as a tent to dwell in:* Isaiah''s stretched-out heavens are the vaults Enoch sees the winds stretch out as the pillars of the heaven.'
+  FROM cross_reference_threads t, cross_references x, _session250_en34_lookup sv, _session250_en34_lookup tv
+ WHERE t.slug='1-enoch-34-pillars-stretched-vaults-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 104:4 — *Who maketh his angels spirits; his ministers a flaming fire:* The Psalm makes the winds Yahuah''s own ministering servants, the same agents Enoch watches support the earth and uphold the firmament.'
+  FROM cross_reference_threads t, cross_references x, _session250_en34_lookup sv, _session250_en34_lookup tv
+ WHERE t.slug='1-enoch-34-pillars-stretched-vaults-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=34 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_35.sql (session250 1-enoch 35) -----
+-- Source anchor: enoch/1-enoch ch35. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en35 (view _session250_en35_lookup). Sort band base 50850, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en35_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-35-west-gates-storehouses-of-wind
+  ('enoch', '1-enoch', 35, 2, 'canon', 'psalms', 135, 7, 'free', E'Psalms 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The west portals of Enoch 35:2 are these very treasuries from which Yahuah brings out the wind.'),
+  ('enoch', '1-enoch', 35, 2, 'canon', 'jeremiah', 10, 13, 'free', E'Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* Jeremiah locates the wind''s source at the ends of the earth, exactly where Enoch 35:2 sees the portals that send it forth with rain.'),
+  ('enoch', '1-enoch', 35, 2, 'canon', 'job', 38, 22, 'free', E'Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* The hoar-frost coming through Enoch''s west portals (35:2) is drawn from these treasuries no man has entered.'),
+  ('enoch', '1-enoch', 35, 1, 'enoch', '1-enoch', 34, 4, 'extras', E'1 Enoch 34:4 — *And from thence I went to the west, to the ends of the earth, and saw there three portals of the heaven open: through each of them proceed west winds: when they blow there is dew and rain and hoar-frost.* The journey of chapter 34 already met the west portals; chapter 35:1 returns to describe them, marking them small such as he had seen in the east.'),
+  -- thread: 1-enoch-35-four-quarters-and-the-four-winds
+  ('enoch', '1-enoch', 35, 5, 'canon', 'daniel', 7, 2, 'free', E'Daniel 7:2 — *Daniel spake and said, I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea.* Daniel''s four winds of heaven are Enoch''s same winds that divide the earth into four parts (35:5).'),
+  ('enoch', '1-enoch', 35, 5, 'canon', 'zechariah', 6, 5, 'free', E'Zechariah 6:5 — *And the angel answered and said unto me, These are the four spirits of the heavens, which go forth from standing before Yahuah (Lord) of all the earth.* The four winds Enoch sees dividing the earth (35:5) are these four heaven-spirits that go forth at Yahuah''s command.'),
+  ('enoch', '1-enoch', 35, 5, 'canon', 'revelation', 7, 1, 'free', E'Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* John sees the four winds and four corners of Enoch 35:5 held in check until the servants of Elohim are sealed.'),
+  ('enoch', '1-enoch', 35, 5, 'canon', 'matthew', 24, 31, 'free', E'Matthew 24:31 — *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* The four quarters Enoch surveys (35:5) become the compass from which Yahusha gathers the scattered elect of Yashar''el.'),
+  -- thread: 1-enoch-35-pillars-of-heaven-and-the-firmament
+  ('enoch', '1-enoch', 35, 7, 'canon', 'job', 26, 11, 'free', E'Job 26:11 — *The pillars of heaven tremble and are astonished at his reproof.* Enoch names these same pillars of the heaven (35:7) that Job says tremble at Yahuah''s rebuke.'),
+  ('enoch', '1-enoch', 35, 6, 'canon', '1-samuel', 2, 8, 'free', E'1 Samuel 2:8 — *He raiseth up the poor out of the dust, and lifteth up the beggar from the dunghill, to set them among princes, and to make them inherit the throne of glory: for the pillars of the earth are the LORD''S, and he hath set the world upon them.* The supports of the earth Enoch sees (35:6) belong to Yahuah, who set the world upon them.'),
+  ('enoch', '1-enoch', 35, 7, 'canon', 'genesis', 1, 6, 'free', E'Genesis 1:6 — *And Elohim (God) said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.* The firmament Enoch sees stretched out between heaven and earth (35:7) is the firmament Elohim spoke into being on day two.'),
+  ('enoch', '1-enoch', 35, 6, 'enoch', '1-enoch', 36, 9, 'extras', E'1 Enoch 36:9 — *And I saw how Yahuah (God) has ordered all creation by His wisdom, and how He has founded the world upon them.* The next gate-chapter closes by naming the Architect of the supports and pillars Enoch sees here at 35:6, founding the world by His wisdom.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en35_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en35_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-35-west-gates-storehouses-of-wind',
+       E'The west portals and the storehouses of wind, dew, and rain',
+       E'Enoch comes to the western edge and finds the same ordered apparatus he saw in the east: *And from thence I proceeded to the west of the ends of the earth, and saw there three portals of the heaven open such as I had seen in the east, but small, and three portals to the north, small likewise.* (1 Enoch 35:1) — and through them the winds come as gift, not chaos: *And the portals of the west are small, and through them proceed the west winds: when they blow there is dew and rain and hoar-frost.* (1 Enoch 35:2), repeated at the close, *And I saw the portals of the heaven open in the west, and through them proceed the winds which bring dew and rain and hoar-frost.* (1 Enoch 35:8). The Tanakh already keeps wind and weather in named storehouses that Yahuah opens at His word: *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* (Psalms 135:7); *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* (Jeremiah 10:13); and the same storehouses hold the frost Enoch names — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* (Job 38:22). This is the Creator''s order, not the Watchers'' rebellion: the lights and winds keep the way appointed for them, and Enoch is shown it gate by gate.',
+       sv.verse_id, ev.verse_id, 'extras', 50850
+  FROM _session250_en35_lookup sv, _session250_en35_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=35 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-35-four-quarters-and-the-four-winds',
+       E'The four quarters of the earth and the four winds',
+       E'From the western edge Enoch is shown the whole frame of the world divided into its four divisions: *And I saw the four quarters of the earth, and the winds which divide the earth into four parts.* (1 Enoch 35:5). The four winds and four quarters are the standard furniture of canonical vision. Daniel watches them stir the nations: *Daniel spake and said, I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea.* (Daniel 7:2). Zechariah is told the four chariot-spirits are the same: *And the angel answered and said unto me, These are the four spirits of the heavens, which go forth from standing before Yahuah (Lord) of all the earth.* (Zechariah 6:5). John sees them held back at the corners: *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* (Revelation 7:1). And Yahusha gathers the scattered seed from these same four winds at the end — *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* (Matthew 24:31): the four quarters Enoch surveys are the very compass from which the elect of Yashar''el are regathered.',
+       sv.verse_id, ev.verse_id, 'extras', 50853
+  FROM _session250_en35_lookup sv, _session250_en35_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=35 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-35-pillars-of-heaven-and-the-firmament',
+       E'The pillars of heaven and the stretched-out firmament',
+       E'Enoch sees the winds themselves doing the structural work of upholding the cosmos: *And I saw the winds which support the earth and the firmament of the heaven.* (1 Enoch 35:6); *And I saw how the winds stretch out the vaults of heaven, and have their station between heaven and earth: these are the pillars of the heaven.* (1 Enoch 35:7). The Tanakh names these pillars and the firmament they bear. Job knows the heavens rest on trembling pillars: *The pillars of heaven tremble and are astonished at his reproof.* (Job 26:11), and that the earth''s foundations are Yahuah''s own setting: *He raiseth up the poor out of the dust, and lifteth up the beggar from the dunghill, to set them among princes, and to make them inherit the throne of glory: for the pillars of the earth are the LORD''S, and he hath set the world upon them.* (1 Samuel 2:8). The firmament Enoch sees stretched is the firmament of Genesis day two: *And Elohim (God) said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.* (Genesis 1:6). The parallel close of the next gate-chapter names the Architect outright — *And I saw how Yahuah (God) has ordered all creation by His wisdom, and how He has founded the world upon them.* (1 Enoch 36:9) — confirming that this whole survey is creation kept in the Creator''s order, the opposite of the Watchers'' disorder.',
+       sv.verse_id, ev.verse_id, 'extras', 50856
+  FROM _session250_en35_lookup sv, _session250_en35_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=35 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-35-west-gates-storehouses-of-wind
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalms 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The west portals of Enoch 35:2 are these very treasuries from which Yahuah brings out the wind.'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-west-gates-storehouses-of-wind'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=135 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* Jeremiah locates the wind''s source at the ends of the earth, exactly where Enoch 35:2 sees the portals that send it forth with rain.'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-west-gates-storehouses-of-wind'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* The hoar-frost coming through Enoch''s west portals (35:2) is drawn from these treasuries no man has entered.'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-west-gates-storehouses-of-wind'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 34:4 — *And from thence I went to the west, to the ends of the earth, and saw there three portals of the heaven open: through each of them proceed west winds: when they blow there is dew and rain and hoar-frost.* The journey of chapter 34 already met the west portals; chapter 35:1 returns to describe them, marking them small such as he had seen in the east.'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-west-gates-storehouses-of-wind'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=1
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=34 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-35-four-quarters-and-the-four-winds
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:2 — *Daniel spake and said, I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea.* Daniel''s four winds of heaven are Enoch''s same winds that divide the earth into four parts (35:5).'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-four-quarters-and-the-four-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Zechariah 6:5 — *And the angel answered and said unto me, These are the four spirits of the heavens, which go forth from standing before Yahuah (Lord) of all the earth.* The four winds Enoch sees dividing the earth (35:5) are these four heaven-spirits that go forth at Yahuah''s command.'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-four-quarters-and-the-four-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=6 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* John sees the four winds and four corners of Enoch 35:5 held in check until the servants of Elohim are sealed.'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-four-quarters-and-the-four-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 24:31 — *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.* The four quarters Enoch surveys (35:5) become the compass from which Yahusha gathers the scattered elect of Yashar''el.'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-four-quarters-and-the-four-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-35-pillars-of-heaven-and-the-firmament
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 26:11 — *The pillars of heaven tremble and are astonished at his reproof.* Enoch names these same pillars of the heaven (35:7) that Job says tremble at Yahuah''s rebuke.'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-pillars-of-heaven-and-the-firmament'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=26 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Samuel 2:8 — *He raiseth up the poor out of the dust, and lifteth up the beggar from the dunghill, to set them among princes, and to make them inherit the throne of glory: for the pillars of the earth are the LORD''S, and he hath set the world upon them.* The supports of the earth Enoch sees (35:6) belong to Yahuah, who set the world upon them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-pillars-of-heaven-and-the-firmament'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 1:6 — *And Elohim (God) said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.* The firmament Enoch sees stretched out between heaven and earth (35:7) is the firmament Elohim spoke into being on day two.'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-pillars-of-heaven-and-the-firmament'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 36:9 — *And I saw how Yahuah (God) has ordered all creation by His wisdom, and how He has founded the world upon them.* The next gate-chapter closes by naming the Architect of the supports and pillars Enoch sees here at 35:6, founding the world by His wisdom.'
+  FROM cross_reference_threads t, cross_references x, _session250_en35_lookup sv, _session250_en35_lookup tv
+ WHERE t.slug='1-enoch-35-pillars-of-heaven-and-the-firmament'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=35 AND sv.verse_number=6
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=36 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_36.sql (session250 1-enoch 36) -----
+-- Source anchor: enoch/1-enoch ch36. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en36 (view _session250_en36_lookup). Sort band base 50875, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en36_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-36-portals-four-winds
+  ('enoch', '1-enoch', 36, 3, 'canon', 'revelation', 7, 1, 'free', E'Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* John sees the same four winds at the four quarters that Enoch sees dividing the earth into four parts.'),
+  ('enoch', '1-enoch', 36, 1, 'canon', 'job', 28, 25, 'free', E'Job 28:25 — *To make the weight for the winds; and he weigheth the waters by measure.* The very winds that bring Enoch''s dew, rain, and hoar-frost are weighed out by the Creator who orders them.'),
+  ('enoch', '1-enoch', 36, 3, 'enoch', '1-enoch', 77, 1, 'extras', E'1 Enoch 77:1 — *And the first quarter is called the east, because it is the first: and the second, the south, because the Most High descends there, yea, there in quite a special sense He who is blessed for ever comes down.* Enoch''s own Luminaries book names the same four quarters he surveys here, confirming one consistent cosmology across the books.'),
+  -- thread: 1-enoch-36-pillars-of-heaven
+  ('enoch', '1-enoch', 36, 5, 'canon', '1-samuel', 2, 8, 'free', E'1 Samuel 2:8 — *He raiseth up the poor out of the dust, and lifteth up the beggar from the dunghill, to set them among princes, and to make them inherit the throne of glory: for the pillars of the earth are the LORD''S, and he hath set the world upon them.* Hannah confesses the pillars of the earth that Enoch beholds, and that they belong to Yahuah who set the world upon them.'),
+  ('enoch', '1-enoch', 36, 5, 'canon', 'jeremiah', 10, 12, 'free', E'Jeremiah 10:12 — *He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion.* The stretching-out of the vaults of heaven that Enoch watches is Yahuah''s own work of establishing and spreading the heavens.'),
+  ('enoch', '1-enoch', 36, 4, 'canon', 'job', 38, 4, 'free', E'Job 38:4 — *Where wast thou when I laid the foundations of the earth? declare, if thou hast understanding.* The foundations Enoch sees the winds support are the same foundations Yahuah challenges Job to account for — they are the Creator''s, not man''s.'),
+  -- thread: 1-enoch-36-ordered-by-wisdom-praise
+  ('enoch', '1-enoch', 36, 9, 'canon', 'proverbs', 3, 19, 'free', E'Proverbs 3:19 — *Yahuah (LORD) by wisdom hath founded the earth; by understanding hath he established the heavens.* This is the canon''s exact confession of what Enoch sees: Yahuah ordered and founded all creation by His wisdom.'),
+  ('enoch', '1-enoch', 36, 9, 'canon', 'psalms', 104, 24, 'free', E'Psalm 104:24 — *O Yahuah (LORD), how manifold are thy works! in wisdom hast thou made them all: the earth is full of thy riches.* The psalmist marvels at the wisdom-made creation that Enoch''s closing blessing celebrates.'),
+  ('enoch', '1-enoch', 36, 9, 'canon', 'psalms', 19, 1, 'free', E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The ordered heavens Enoch surveys are themselves a ceaseless declaration of the Creator''s glory.'),
+  ('enoch', '1-enoch', 36, 9, 'canon', 'psalms', 148, 3, 'free', E'Psalm 148:3 — *Praise ye him, sun and moon: praise him, all ye stars of light.* The lights of the heaven Enoch journeyed among are called to praise the Creator whose wisdom set them in order.'),
+  ('enoch', '1-enoch', 36, 9, 'jubilees', 'jubilees', 2, 2, 'extras', E'Jubilees 2:2 — *For on the first day He created the heavens which are above and the earth and the waters and all the spirits which serve before Him–the angels of the presence... and of snow and of hail and of hoar frost...* Jubilees confesses the same created, ordered service — even the winds and hoar-frost of Enoch 36 — set in place by the Creator''s wisdom.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en36_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en36_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-36-portals-four-winds',
+       E'The portals of heaven and the four winds',
+       E'Enoch ends his journey at the south, *And from thence I proceeded to the south, to the ends of the earth, and saw there three portals of the heaven open: through each of them proceed south winds: when they blow there is dew and rain and hoar-frost.* (1 Enoch 36:1), and he sees *the four quarters of the earth, and the winds which divide the earth into four parts.* (1 Enoch 36:3). This is not invented machinery — John sees the same four-cornered order in the last days: *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* (Revelation 7:1). Job already knew the winds are weighed and measured by the Creator''s hand — *To make the weight for the winds; and he weigheth the waters by measure.* (Job 28:25) — and Enoch within his own Luminaries book names those same quarters: *And the first quarter is called the east, because it is the first... And the west quarter is named the diminished, because there all the luminaries of the heaven wane and go down.* (1 Enoch 77:1). The four winds are the Creator''s ordered servants, not free powers.',
+       sv.verse_id, ev.verse_id, 'extras', 50875
+  FROM _session250_en36_lookup sv, _session250_en36_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=36 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-36-pillars-of-heaven',
+       E'The winds that bear the earth — the pillars of heaven',
+       E'Enoch sees *the winds which support the earth and the firmament of the heaven* (1 Enoch 36:4), and *how the winds stretch out the vaults of heaven, and have their station between heaven and earth: these are the pillars of the heaven.* (1 Enoch 36:5). Scripture speaks the same way of the world resting on the Creator''s pillars: *He raiseth up the poor out of the dust, and lifteth up the beggar from the dunghill, to set them among princes, and to make them inherit the throne of glory: for the pillars of the earth are the LORD''S, and he hath set the world upon them.* (1 Samuel 2:8). The stretching-out of the heavens is the Creator''s own act — *He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion.* (Jeremiah 10:12) — and when Yahuah answers Job He plants this same foundation: *Where wast thou when I laid the foundations of the earth? declare, if thou hast understanding.* (Job 38:4). Enoch is not describing brute pillars but the ordered service of winds upholding what Yahuah has founded.',
+       sv.verse_id, ev.verse_id, 'extras', 50878
+  FROM _session250_en36_lookup sv, _session250_en36_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=36 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-36-ordered-by-wisdom-praise',
+       E'All creation ordered by His wisdom — Enoch blesses Yahuah of glory',
+       E'The Book of the Watchers closes in a doxology: *And I saw how Yahuah (God) has ordered all creation by His wisdom, and how He has founded the world upon them.* (1 Enoch 36:9). This is the heart of the canon''s own confession — *Yahuah (LORD) by wisdom hath founded the earth; by understanding hath he established the heavens.* (Proverbs 3:19) — and the psalmist cries the same wonder Enoch feels: *O Yahuah (LORD), how manifold are thy works! in wisdom hast thou made them all: the earth is full of thy riches.* (Psalm 104:24). The wordless witness of that ordered creation never stops praising — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* (Psalm 19:1), *Day unto day uttereth speech, and night unto night sheweth knowledge.* (Psalm 19:2) — the sun and moon and stars are summoned by name to praise: *Praise ye him, sun and moon: praise him, all ye stars of light.* (Psalm 148:3); and that praise stretches over the whole earth Enoch has just circled: *From the rising of the sun unto the going down of the same the LORD''S name is to be praised.* (Psalm 113:3). Jubilees confesses the same six-day ordering, that even *the angels of the spirit of the winds... and of snow and of hail and of hoar frost* (Jubilees 2:2) were created and set to serve. Enoch ends as every righteous one ends — blessing the Creator whose wisdom holds the world.',
+       sv.verse_id, ev.verse_id, 'extras', 50881
+  FROM _session250_en36_lookup sv, _session250_en36_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=9
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=36 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-36-portals-four-winds
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* John sees the same four winds at the four quarters that Enoch sees dividing the earth into four parts.'
+  FROM cross_reference_threads t, cross_references x, _session250_en36_lookup sv, _session250_en36_lookup tv
+ WHERE t.slug='1-enoch-36-portals-four-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 28:25 — *To make the weight for the winds; and he weigheth the waters by measure.* The very winds that bring Enoch''s dew, rain, and hoar-frost are weighed out by the Creator who orders them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en36_lookup sv, _session250_en36_lookup tv
+ WHERE t.slug='1-enoch-36-portals-four-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=28 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 77:1 — *And the first quarter is called the east, because it is the first: and the second, the south, because the Most High descends there, yea, there in quite a special sense He who is blessed for ever comes down.* Enoch''s own Luminaries book names the same four quarters he surveys here, confirming one consistent cosmology across the books.'
+  FROM cross_reference_threads t, cross_references x, _session250_en36_lookup sv, _session250_en36_lookup tv
+ WHERE t.slug='1-enoch-36-portals-four-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=77 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-36-pillars-of-heaven
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Samuel 2:8 — *He raiseth up the poor out of the dust, and lifteth up the beggar from the dunghill, to set them among princes, and to make them inherit the throne of glory: for the pillars of the earth are the LORD''S, and he hath set the world upon them.* Hannah confesses the pillars of the earth that Enoch beholds, and that they belong to Yahuah who set the world upon them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en36_lookup sv, _session250_en36_lookup tv
+ WHERE t.slug='1-enoch-36-pillars-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 10:12 — *He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion.* The stretching-out of the vaults of heaven that Enoch watches is Yahuah''s own work of establishing and spreading the heavens.'
+  FROM cross_reference_threads t, cross_references x, _session250_en36_lookup sv, _session250_en36_lookup tv
+ WHERE t.slug='1-enoch-36-pillars-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Job 38:4 — *Where wast thou when I laid the foundations of the earth? declare, if thou hast understanding.* The foundations Enoch sees the winds support are the same foundations Yahuah challenges Job to account for — they are the Creator''s, not man''s.'
+  FROM cross_reference_threads t, cross_references x, _session250_en36_lookup sv, _session250_en36_lookup tv
+ WHERE t.slug='1-enoch-36-pillars-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-36-ordered-by-wisdom-praise
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 3:19 — *Yahuah (LORD) by wisdom hath founded the earth; by understanding hath he established the heavens.* This is the canon''s exact confession of what Enoch sees: Yahuah ordered and founded all creation by His wisdom.'
+  FROM cross_reference_threads t, cross_references x, _session250_en36_lookup sv, _session250_en36_lookup tv
+ WHERE t.slug='1-enoch-36-ordered-by-wisdom-praise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 104:24 — *O Yahuah (LORD), how manifold are thy works! in wisdom hast thou made them all: the earth is full of thy riches.* The psalmist marvels at the wisdom-made creation that Enoch''s closing blessing celebrates.'
+  FROM cross_reference_threads t, cross_references x, _session250_en36_lookup sv, _session250_en36_lookup tv
+ WHERE t.slug='1-enoch-36-ordered-by-wisdom-praise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The ordered heavens Enoch surveys are themselves a ceaseless declaration of the Creator''s glory.'
+  FROM cross_reference_threads t, cross_references x, _session250_en36_lookup sv, _session250_en36_lookup tv
+ WHERE t.slug='1-enoch-36-ordered-by-wisdom-praise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 148:3 — *Praise ye him, sun and moon: praise him, all ye stars of light.* The lights of the heaven Enoch journeyed among are called to praise the Creator whose wisdom set them in order.'
+  FROM cross_reference_threads t, cross_references x, _session250_en36_lookup sv, _session250_en36_lookup tv
+ WHERE t.slug='1-enoch-36-ordered-by-wisdom-praise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 2:2 — *For on the first day He created the heavens which are above and the earth and the waters and all the spirits which serve before Him–the angels of the presence... and of snow and of hail and of hoar frost...* Jubilees confesses the same created, ordered service — even the winds and hoar-frost of Enoch 36 — set in place by the Creator''s wisdom.'
+  FROM cross_reference_threads t, cross_references x, _session250_en36_lookup sv, _session250_en36_lookup tv
+ WHERE t.slug='1-enoch-36-ordered-by-wisdom-praise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=36 AND sv.verse_number=9
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=2 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session250 — 1 Enoch cross-references complete.'
