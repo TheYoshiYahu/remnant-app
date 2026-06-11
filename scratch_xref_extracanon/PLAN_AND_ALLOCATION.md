@@ -414,3 +414,24 @@ render → anchor_check.py jasher jasher + pglast + verify_fidelity + resolve_ch
 audit → recon.py jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from
 /tmp/extracanon-xref-wt with keychain unlocked — 22 commits (85b660c..5cf5108) need to land on
 origin/main (still at 47a9e48); prod is authoritative meanwhile.
+
+## RECEIPT — Jasher Pack 4 (ch25–32, Isaac/Jacob cycle) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **176 `jasher-*` threads / 624 members**, band 55000–55790,
+  per-ch(25-32) 5/5/5/5/6/5/7/6, 0 orphans. +44/155. Commit `9c9c380`. Six gates green FIRST PASS.
+- Keturah/Ishmael genealogy/all-to-Isaac (25→Gen25:1-6/Rom9:11/Jub19-20); Rebecca's twins/two-nations
+  oracle + Abraham's death/charge (26→Gen25:23/Rom9:11-12/Heb12:16/Gen26:5/Jub19/22); ESAU SLAYS NIMROD +
+  sells the BIRTHRIGHT + his Machpelah portion (27→Gen25:23/25:31-32/Heb12:16/Gen10:8/Jub24); the stolen
+  blessing (28→Gen27/Heb11:20/Rom9:12); JACOB FLEES + the BETHEL LADDER→John 1:51 (29→Gen28/John1:51);
+  Jacob & Laban/the tribes begin (30→Gen29-30); flocks/flight/Mizpah (31→Gen30-31); WRESTLING at Peniel/
+  name ISRAEL (32→Gen32/Hos12:3-4).
+- Push blocked. origin/main 47a9e48; local HEAD `9c9c380` (23 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 1 ENOCH + JUBILEES COMPLETE + JASHER ch1-32 all LIVE = 863 threads/3148
+members. NEXT = Jasher Pack 5 ch33-40 (Dinah/Shechem; Jacob at Bethel/Israel; deaths of Deborah/Rachel/
+Isaac; Esau's genealogy + the wars of Esau's sons vs Jacob's sons; Joseph's dreams/sold → Gen34-37 —
+VERIFY each chapter vs the dump, keep blob-verse warning). Then J6 ch41-48 … through ch91 (~7 more packs).
+Then Apocrypha (session253 @58000). METHOD: workflow (pack-4 script + per-ch CONTEXT + blob-verse warning)
+→ render → anchor_check.py jasher jasher + pglast + verify_fidelity + resolve_check jasher jasher → fold →
+audit → recon.py jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from
+/tmp/extracanon-xref-wt with keychain unlocked — 23 commits (85b660c..9c9c380) need to land on
+origin/main (still at 47a9e48); prod is authoritative meanwhile.

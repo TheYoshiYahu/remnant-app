@@ -1,0 +1,90 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 38,
+  "session": "session252",
+  "tag": "ja38",
+  "base_band": 55925,
+  "threads": [
+    {
+      "slug": "jasher-38-jacobs-bow-amorite",
+      "title": "Jacob's bow against the Amorite kings",
+      "summary_md": "Jasher 38 opens mid-battle, the sons of Jacob warring the Amorite kings, and Jacob himself working his bow: *And Ihuri king of Shiloh came up to assist Elon, and he approached Jacob, when Jacob drew his bow that was in his hand and with an arrow struck Ihuri which caused his death* (Jasher 38:1), and again *whilst they were smiting the army of the kings, Jacob was occupied with his bow confining himself to smiting the kings, and he slew them all* (Jasher 38:5). The canon names this very weapon when the dying Jacob deeds Joseph the spoil he took from these same nations: *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow* (Genesis 48:22). Joshua reminds Israel the land was finally won not by their own arm but by Yahuah's hornet: *And I sent the hornet before you, which drave them out from before you, even the two kings of the Amorites; but not with thy sword, nor with thy bow* (Joshua 24:12) — the elect seed kept, the victory the Lord's. Jubilees narrates the identical battle: *And he arose from his housel he and his three sons and all the servants of his father, and his own servants, and he went against them with six thousand men, who carried swords. And he slew them in the pastures of Shechem, and pursued those who fled, and he slew them with the edge of the sword* (Jubilees 34:6). It ain't new.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 38, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 48, "tgt_v": 22, "tier": "free",
+         "note": "Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* The canon's own word for Jacob's sword-and-bow against the Amorite is exactly the bow that drops Ihuri and the kings in Jasher 38:1, 5."},
+        {"src_ch": 38, "src_v": 5, "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 24, "tgt_v": 12, "tier": "free",
+         "note": "Joshua 24:12 — *And I sent the hornet before you, which drave them out from before you, even the two kings of the Amorites; but not with thy sword, nor with thy bow.* Joshua frames the same Amorite-kings warfare of Jasher 38:5 as ultimately Yahuah's deliverance of the elect seed, not the bow's own strength."},
+        {"src_ch": 38, "src_v": 6, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 34, "tgt_v": 6, "tier": "extras",
+         "note": "Jubilees 34:6 — *And he arose from his housel he and his three sons and all the servants of his father, and his own servants, and he went against them with six thousand men, who carried swords. And he slew them in the pastures of Shechem, and pursued those who fled, and he slew them with the edge of the sword.* Jubilees tells the identical war of Jacob slaying the Amorite kings that Jasher 38:6 details king by king."}
+      ]
+    },
+    {
+      "slug": "jasher-38-simeon-levi-zeal",
+      "title": "Simeon and Levi, the two zealous brothers",
+      "summary_md": "Throughout Jasher 38 it is Simeon and Levi who breach the walls and bear the fiercest of the fighting: *And Simeon and Levi slew all the men who ran for safety into the city, and also the inhabitants of the city with their wives and little ones, they slew with the edge of the sword, and the cries of the city ascended up to heaven* (Jasher 38:15), and when the twelve mighty men press them hard, *one of them struck at Levi's head with his sword, when Levi hastily placed his hand to his head, for he was afraid of the sword, and the sword struck Levi's hand* (Jasher 38:38), yet Levi wrests the very blade away — *And Levi seized the sword of the valiant man in his hand, and took it forcibly from the man, and with it he struck at the head of the powerful man, and he severed his head* (Jasher 38:39). This is the same pair the dying Jacob marks in the canon: *Simeon and Levi are brethren; instruments of cruelty are in their habitations* (Genesis 49:5), *for in their anger they slew a man, and in their selfwill they digged down a wall* (Genesis 49:6) — and Jasher's brothers do exactly that, springing the wall and digging the city down — *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar'el (Israel)* (Genesis 49:7). The zeal that defends the seed is the same zeal the canon both honors and disciplines. It ain't new.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 39,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 38, "src_v": 15, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 5, "tier": "free",
+         "note": "Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* Jacob's deathbed word over the very pair who lead the slaughter at Chazar in Jasher 38:15."},
+        {"src_ch": 38, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 6, "tier": "free",
+         "note": "Genesis 49:6 — *O my soul, come not thou into their secret; unto their assembly, mine honour, be not thou united: for in their anger they slew a man, and in their selfwill they digged down a wall.* The brothers spring and breach the wall of Chazar in Jasher 38:14, the very wall-digging Genesis names of Simeon and Levi."},
+        {"src_ch": 38, "src_v": 39, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 49:7 — *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar'el (Israel).* The fierce wrath that lets Levi sever his attacker's head in Jasher 38:39 is the very anger Jacob both rebukes and divides among the tribes."}
+      ]
+    },
+    {
+      "slug": "jasher-38-one-chase-a-thousand",
+      "title": "One chasing a thousand — the covenant defense",
+      "summary_md": "Jasher 38 closes on the prowess of the men of Sarton, and the proportion of the fight rings straight out of the covenant promises: *And all the inhabitants of the city of Sarton were powerful men, one of them would pursue a thousand, and two of them would not flee from ten thousand of the rest of men* (Jasher 38:50). That is the very measure Torah sets for Yahuah's people when they keep His way: *And five of you shall chase an hundred, and an hundred of you shall put ten thousand to flight: and your enemies shall fall before you by the sword* (Leviticus 26:8), the chasing pledged in *And ye shall chase your enemies, and they shall fall before you by the sword* (Leviticus 26:7). The Song of Moses makes plain the arithmetic is never mere muscle but the Rock's hand: *How should one chase a thousand, and two put ten thousand to flight, except their Rock had sold them, and Yahuah (LORD) had shut them up?* (Deuteronomy 32:30). The seed kept and fought for — Torah-before-Sinai, it ain't new.",
+      "anchor_start_v": 50,
+      "anchor_end_v": 52,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 38, "src_v": 50, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 26, "tgt_v": 8, "tier": "free",
+         "note": "Leviticus 26:8 — *And five of you shall chase an hundred, and an hundred of you shall put ten thousand to flight: and your enemies shall fall before you by the sword.* The covenant proportion of Torah underlies the very 'one would pursue a thousand' boast of the men of Sarton in Jasher 38:50."},
+        {"src_ch": 38, "src_v": 50, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 32, "tgt_v": 30, "tier": "free",
+         "note": "Deuteronomy 32:30 — *How should one chase a thousand, and two put ten thousand to flight, except their Rock had sold them, and Yahuah (LORD) had shut them up?* The Song of Moses names the same one-chasing-a-thousand measure of Jasher 38:50 and ties it to the Rock's hand, not mere strength."},
+        {"src_ch": 38, "src_v": 52, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 26, "tgt_v": 7, "tier": "free",
+         "note": "Leviticus 26:7 — *And ye shall chase your enemies, and they shall fall before you by the sword.* The sword-falling of Jasher 38:52, where the sons of Jacob smite Sarton as they did Chazar, is the covenant chase Torah pledges."}
+      ]
+    },
+    {
+      "slug": "jasher-38-amorite-kings-vs-seed",
+      "title": "The kings of the nations against the chosen seed",
+      "summary_md": "The whole of Jasher 38 is the assembled Amorite cities making war on Jacob's house — *the four remaining kings fled from their station with the rest of the captains... saying, We have no more strength with the Hebrews after their having killed the three kings and their captains* (Jasher 38:2), and city by city the inhabitants of Chazar and Sarton rise against them and are broken. Jubilees tells the same gathering of the nations against the seed: *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey* (Jubilees 34:2), naming the very kings — *the kings of Sêlô... and the king of Bêthôrôn* (Jubilees 34:4) — that Jasher carries as Ihuri king of Shiloh and Laban king of Bethchorin. The canon's own register is that no nation finally prevails over the chosen line: *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob* (Genesis 35:5). The seed-war runs through, the wheat kept against the tares — it ain't new.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 22,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 38, "src_v": 2, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 34, "tgt_v": 2, "tier": "extras",
+         "note": "Jubilees 34:2 — *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey.* Jubilees gives the gathering of the Amorite kings against the seed that Jasher 38:2 shows already breaking and fleeing."},
+        {"src_ch": 38, "src_v": 6, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 34, "tgt_v": 4, "tier": "extras",
+         "note": "Jubilees 34:4 — *And there came the kings of Tâphû, and the kings of 'Arêsa, and the kings of Sêragân, and the kings of Sêlô, and the kings of Gâ'as, and the king of Bêthôrôn, and the king of Ma'anîsâkîr, and all those who dwell in these mountains (and) who dwell in the woods in the land of Canaan.* The king-roster of Sêlô and Bêthôrôn matches Jasher 38:6's Ihuri of Shiloh and Laban of Bethchorin slain by the bow."},
+        {"src_ch": 38, "src_v": 22, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 35, "tgt_v": 5, "tier": "free",
+         "note": "Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* The canon's register that the surrounding cities cannot finally prevail against the seed stands behind the terrified, broken Amorites of Jasher 38:22."}
+      ]
+    },
+    {
+      "slug": "jasher-38-jacob-prayed-prevailed",
+      "title": "Jacob prayed to Yahuah and prevailed",
+      "summary_md": "When the eleven mighty men of Sarton cannot be overcome and his sons fight from morning to sunset in vain, Jacob does not trust the bow alone — *And this was told to Jacob, and he was sorely grieved, and he prayed to Yahuah (the Lord), and he and Naphtali his son went against these mighty men* (Jasher 38:45), and only then *Jacob approached and drew his bow, and came nigh to the mighty men, and slew three of their men with the bow* (Jasher 38:46). This is the posture of the covenant Psalm of war: *Through thee will we push down our enemies: through thy name will we tread them under that rise up against us* (Psalm 44:5), *For I will not trust in my bow, neither shall my sword save me* (Psalm 44:6), *But thou hast saved us from our enemies, and hast put them to shame that hated us* (Psalm 44:7). The father calls on the Name before he draws the bow — calling on Yahuah before the sword, Torah-before-Sinai. It ain't new.",
+      "anchor_start_v": 44,
+      "anchor_end_v": 47,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 38, "src_v": 45, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 44, "tgt_v": 5, "tier": "free",
+         "note": "Psalm 44:5 — *Through thee will we push down our enemies: through thy name will we tread them under that rise up against us.* Jacob's prayer to Yahuah before he goes against the mighty men in Jasher 38:45 is the very through-thy-name warfare of the covenant Psalm."},
+        {"src_ch": 38, "src_v": 46, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 44, "tgt_v": 6, "tier": "free",
+         "note": "Psalm 44:6 — *For I will not trust in my bow, neither shall my sword save me.* Jacob draws his bow only after praying in Jasher 38:46, the Psalm's refusal to trust the bow apart from Yahuah."},
+        {"src_ch": 38, "src_v": 47, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 44, "tgt_v": 7, "tier": "free",
+         "note": "Psalm 44:7 — *But thou hast saved us from our enemies, and hast put them to shame that hated us.* The rout and slaughter of the remaining mighty men in Jasher 38:47 is the Psalm's salvation from the enemies who hated the seed."}
+      ]
+    }
+  ]
+}
