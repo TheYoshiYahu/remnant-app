@@ -6836,6 +6836,2268 @@ SELECT t.id, x.id, 4, E'Genesis 25:20 — *And Isaac was forty years old when he
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jasher_25.sql (session252 jasher 25) -----
+-- Source anchor: jasher/jasher ch25. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja25 (view _session252_ja25_lookup). Sort band base 55600, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-25-keturah-six-sons
+  ('jasher', 'jasher', 25, 1, 'canon', 'genesis', 25, 1, 'free', E'Genesis 25:1 — *Then again Abraham took a wife, and her name was Keturah.* The Genesis source Jasher 25:1 is retelling, Abraham taking Keturah in his old age.'),
+  ('jasher', 'jasher', 25, 2, 'canon', 'genesis', 25, 2, 'free', E'Genesis 25:2 — *And she bare him Zimran, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah.* The same six sons of Keturah named in Jasher 25:2.'),
+  ('jasher', 'jasher', 25, 3, 'canon', 'genesis', 25, 4, 'free', E'Genesis 25:4 — *And the sons of Midian; Ephah, and Epher, and Hanoch, and Abidah, and Eldaah. All these were the children of Keturah.* The Midian descendants Jasher 25:3 expands into a fuller genealogy come straight from the Genesis seed-list.'),
+  ('jasher', 'jasher', 25, 2, 'jubilees', 'jubilees', 19, 11, 'extras', E'Jubilees 19:11 — *And Abraham took to himself a third wife, and her name was Keturah, from among the daughters of his household servants, for Hagar had died before Sarah. And she bare him six sons, Zimram, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah, in the two weeks of years.* The same Keturah-and-six-sons scene in the parallel patriarchal record beside Jasher 25:2.'),
+  -- thread: jasher-25-gifts-sent-east-all-to-isaac
+  ('jasher', 'jasher', 25, 6, 'canon', 'genesis', 25, 6, 'free', E'Genesis 25:6 — *But unto the sons of the concubines, which Abraham had, Abraham gave gifts, and sent them away from Isaac his son, while he yet lived, eastward, unto the east country.* The gifts and the eastward sending of Jasher 25:6 are the Genesis original.'),
+  ('jasher', 'jasher', 25, 6, 'canon', 'genesis', 25, 5, 'free', E'Genesis 25:5 — *And Abraham gave all that he had unto Isaac.* The election Jasher dramatizes: the branches are sent off with gifts while the whole inheritance stays with the chosen heir.'),
+  ('jasher', 'jasher', 25, 6, 'jubilees', 'jubilees', 20, 10, 'extras', E'Jubilees 20:10 — *And you will be for a blessing on the earth, And all nations of the earth will desire you, And bless your sons in my name, That they may be blessed as I am.” And he gave to Ishmael and to his sons, and to the sons of Keturah, gifts, and sent them away from Isaac his son, and he gave everything to Isaac his son.* The parallel record gives the same verdict as Jasher 25:6 — gifts to the branches, everything to Isaac.'),
+  -- thread: jasher-25-ishmael-twelve-princes
+  ('jasher', 'jasher', 25, 14, 'canon', 'genesis', 25, 12, 'free', E'Genesis 25:12 — *Now these are the generations of Ishmael, Abraham''s son, whom Hagar the Egyptian, Sarah''s handmaid, bare unto Abraham:* The genealogy heading of Jasher 25:14 is the Genesis original word-for-word.'),
+  ('jasher', 'jasher', 25, 19, 'canon', 'genesis', 25, 16, 'free', E'Genesis 25:16 — *These are the sons of Ishmael, and these are their names, by their towns, and by their castles; twelve princes according to their nations.* The twelve princes summary of Jasher 25:19 matches Genesis exactly.'),
+  ('jasher', 'jasher', 25, 19, 'canon', 'genesis', 17, 20, 'free', E'Genesis 17:20 — *And as for Ishmael, I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation.* The twelve princes Jasher 25:19 records are the keeping of this promise spoken over Ishmael long before.'),
+  -- thread: jasher-25-ishmael-dwelt-havilah-shur
+  ('jasher', 'jasher', 25, 20, 'canon', 'genesis', 25, 18, 'free', E'Genesis 25:18 — *And they dwelt from Havilah unto Shur, that is before Egypt, as thou goest toward Assyria: and he died in the presence of all his brethren.* The exact borders of Ishmael''s dwelling that Jasher 25:20 records.'),
+  ('jasher', 'jasher', 25, 21, 'canon', 'genesis', 16, 10, 'free', E'Genesis 16:10 — *And the angel of Yahuah (LORD) said unto her, I will multiply thy seed exceedingly, that it shall not be numbered for multitude.* The abundant increase of Ishmael''s sons in Jasher 25:21 is this promise to Hagar coming to pass.'),
+  -- thread: jasher-25-rebecca-barren-isaac-election
+  ('jasher', 'jasher', 25, 28, 'canon', 'genesis', 25, 21, 'free', E'Genesis 25:21 — *And Isaac intreated Yahuah (LORD) for his wife, because she was barren: and Yahuah (LORD) was intreated of him, and Rebekah his wife conceived.* The barrenness of Rebecca that Jasher 25:28 names is the Genesis source — the covenant rests on a womb only Yahuah can open.'),
+  ('jasher', 'jasher', 25, 28, 'canon', 'romans', 9, 11, 'free', E'Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* Rebecca''s barrenness in Jasher 25:28 sets up the election Paul reads here — the seed chosen before any work.'),
+  ('jasher', 'jasher', 25, 28, 'jubilees', 'jubilees', 19, 13, 'extras', E'Jubilees 19:13 — *And in the sixth week, in the second year thereof, Rebecca bare to Isaac two sons, Jacob and Esau, and Jacob was a smooth and upright man, and Esau was fierce, a man of the field, and hairy, and Jacob dwelt in tents.* The parallel record carries Rebecca''s barren womb of Jasher 25:28 forward to the elect twins it will bear.'),
+  ('jasher', 'jasher', 25, 28, 'canon', 'genesis', 11, 10, 'free', E'Genesis 11:10 — *These are the generations of Shem: Shem was an hundred years old, and begat Arphaxad two years after the flood:* The Arpachshad whose death Jasher 25:28 records anchors the chosen seed-line from Shem down to Isaac.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-25-keturah-six-sons',
+       E'Keturah and the six sons of Abraham''s old age',
+       E'Jasher opens the chapter where Genesis does: *And it was at that time that Abraham again took a wife in his old age, and her name was Keturah, from the land of Canaan* (Jasher 25:1), *And she bare to him Zimran, Jokshan, Medan, Midian, Ishbak and Shuach, being six sons* (Jasher 25:2). It ain''t new — this is Genesis retold: *Then again Abraham took a wife, and her name was Keturah* (Genesis 25:1), and *And she bare him Zimran, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah* (Genesis 25:2). The same scene stands in the parallel patriarchal record: *And Abraham took to himself a third wife, and her name was Keturah, from among the daughters of his household servants, for Hagar had died before Sarah. And she bare him six sons, Zimram, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah, in the two weeks of years* (Jubilees 19:11). These six are sent out from the seed-line — branches, not the chosen heir.',
+       sv.verse_id, ev.verse_id, 'extras', 55600
+  FROM _session252_ja25_lookup sv, _session252_ja25_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=25 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-25-gifts-sent-east-all-to-isaac',
+       E'The gifts, the sending east, and all given to Isaac',
+       E'*And Abraham sent all these away, and he gave them gifts, and they went away from his son Isaac to dwell wherever they should find a place* (Jasher 25:6), *And all these went to the mountain at the east, and they built themselves six cities in which they dwelt to this day* (Jasher 25:7). This is Genesis exactly: *And Abraham gave all that he had unto Isaac* (Genesis 25:5), *But unto the sons of the concubines, which Abraham had, Abraham gave gifts, and sent them away from Isaac his son, while he yet lived, eastward, unto the east country* (Genesis 25:6). The election is in the structure — the branches receive gifts and the east country, but the covenant inheritance is undivided to Isaac. Jubilees carries the same verdict: *And he gave to Ishmael and to his sons, and to the sons of Keturah, gifts, and sent them away from Isaac his son, and he gave everything to Isaac his son* (Jubilees 20:10). The seed is kept in one line.',
+       sv.verse_id, ev.verse_id, 'extras', 55603
+  FROM _session252_ja25_lookup sv, _session252_ja25_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=25 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-25-ishmael-twelve-princes',
+       E'The generations of Ishmael — twelve princes',
+       E'*And these are the generations of Ishmael the son Abraham, whom Hagar, Sarah''s handmaid, bare to Abraham* (Jasher 25:14), and after the listing, *These are the sons of Ishmael, and these are their names, being twelve princes according to their nations* (Jasher 25:19). Genesis tells it the same way: *Now these are the generations of Ishmael, Abraham''s son, whom Hagar the Egyptian, Sarah''s handmaid, bare unto Abraham* (Genesis 25:12), and *These are the sons of Ishmael, and these are their names, by their towns, and by their castles; twelve princes according to their nations* (Genesis 25:16). The twelve princes are no accident — they are the keeping of a promise spoken long before: *And as for Ishmael, I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation* (Genesis 17:20). Yahuah keeps His word to Hagar''s son even while the covenant line runs through Isaac.',
+       sv.verse_id, ev.verse_id, 'extras', 55606
+  FROM _session252_ja25_lookup sv, _session252_ja25_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=25 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-25-ishmael-dwelt-havilah-shur',
+       E'Ishmael multiplied and dwelt from Havilah to Shur',
+       E'*And they went and dwelt near the wilderness of Paran, and their dwelling was from Havilah to Shur, that is before Egypt as you come toward Assyria* (Jasher 25:20), *And Ishmael and his sons dwelt in the land, and they had children born to them, and they were fruitful and increased abundantly* (Jasher 25:21). Genesis sets the same borders: *And they dwelt from Havilah unto Shur, that is before Egypt, as thou goest toward Assyria: and he died in the presence of all his brethren* (Genesis 25:18). The increase fulfills the word the angel of Yahuah spoke to Hagar in the wilderness: *And the angel of Yahuah (LORD) said unto her, I will multiply thy seed exceedingly, that it shall not be numbered for multitude* (Genesis 16:10). It ain''t new — the fruitfulness Jasher reports is a promise being kept.',
+       sv.verse_id, ev.verse_id, 'extras', 55609
+  FROM _session252_ja25_lookup sv, _session252_ja25_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=20
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=25 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-25-rebecca-barren-isaac-election',
+       E'Rebecca barren, Isaac kept — and the election to come',
+       E'The chapter closes on the chosen line held in tension: *And Rebecca the daughter of Bethuel, the wife of Abraham''s son Isaac, was barren in those days, she had no offspring; and Isaac dwelt with his father in the land of Canaan; and Yahuah (the Lord) was with Isaac; and Arpachshad the son of Shem the son of Noah died in those days, in the forty-eighth year of the life of Isaac* (Jasher 25:28). Genesis tells the barrenness the same way: *And Isaac intreated Yahuah (LORD) for his wife, because she was barren: and Yahuah (LORD) was intreated of him, and Rebekah his wife conceived* (Genesis 25:21). The covenant rests on a barren womb because election precedes confession — the seed is given, not earned: *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* (Romans 9:11). The parallel record presses the same election forward to the twins that womb will bear: *And in the sixth week, in the second year thereof, Rebecca bare to Isaac two sons, Jacob and Esau, and Jacob was a smooth and upright man, and Esau was fierce, a man of the field, and hairy, and Jacob dwelt in tents* (Jubilees 19:13). And the dying Arpachshad anchors Jasher''s seed-line back to Shem: *These are the generations of Shem: Shem was an hundred years old, and begat Arphaxad two years after the flood* (Genesis 11:10) — Adam to Seth to Noah to Shem to Abraham to Isaac, the line kept generation by generation.',
+       sv.verse_id, ev.verse_id, 'extras', 55612
+  FROM _session252_ja25_lookup sv, _session252_ja25_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=28
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=25 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-25-keturah-six-sons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:1 — *Then again Abraham took a wife, and her name was Keturah.* The Genesis source Jasher 25:1 is retelling, Abraham taking Keturah in his old age.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-keturah-six-sons'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:2 — *And she bare him Zimran, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah.* The same six sons of Keturah named in Jasher 25:2.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-keturah-six-sons'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 25:4 — *And the sons of Midian; Ephah, and Epher, and Hanoch, and Abidah, and Eldaah. All these were the children of Keturah.* The Midian descendants Jasher 25:3 expands into a fuller genealogy come straight from the Genesis seed-list.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-keturah-six-sons'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 19:11 — *And Abraham took to himself a third wife, and her name was Keturah, from among the daughters of his household servants, for Hagar had died before Sarah. And she bare him six sons, Zimram, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah, in the two weeks of years.* The same Keturah-and-six-sons scene in the parallel patriarchal record beside Jasher 25:2.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-keturah-six-sons'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=2
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=19 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-25-gifts-sent-east-all-to-isaac
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:6 — *But unto the sons of the concubines, which Abraham had, Abraham gave gifts, and sent them away from Isaac his son, while he yet lived, eastward, unto the east country.* The gifts and the eastward sending of Jasher 25:6 are the Genesis original.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-gifts-sent-east-all-to-isaac'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:5 — *And Abraham gave all that he had unto Isaac.* The election Jasher dramatizes: the branches are sent off with gifts while the whole inheritance stays with the chosen heir.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-gifts-sent-east-all-to-isaac'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 20:10 — *And you will be for a blessing on the earth, And all nations of the earth will desire you, And bless your sons in my name, That they may be blessed as I am.” And he gave to Ishmael and to his sons, and to the sons of Keturah, gifts, and sent them away from Isaac his son, and he gave everything to Isaac his son.* The parallel record gives the same verdict as Jasher 25:6 — gifts to the branches, everything to Isaac.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-gifts-sent-east-all-to-isaac'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=20 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-25-ishmael-twelve-princes
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:12 — *Now these are the generations of Ishmael, Abraham''s son, whom Hagar the Egyptian, Sarah''s handmaid, bare unto Abraham:* The genealogy heading of Jasher 25:14 is the Genesis original word-for-word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-ishmael-twelve-princes'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:16 — *These are the sons of Ishmael, and these are their names, by their towns, and by their castles; twelve princes according to their nations.* The twelve princes summary of Jasher 25:19 matches Genesis exactly.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-ishmael-twelve-princes'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 17:20 — *And as for Ishmael, I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation.* The twelve princes Jasher 25:19 records are the keeping of this promise spoken over Ishmael long before.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-ishmael-twelve-princes'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-25-ishmael-dwelt-havilah-shur
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:18 — *And they dwelt from Havilah unto Shur, that is before Egypt, as thou goest toward Assyria: and he died in the presence of all his brethren.* The exact borders of Ishmael''s dwelling that Jasher 25:20 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-ishmael-dwelt-havilah-shur'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 16:10 — *And the angel of Yahuah (LORD) said unto her, I will multiply thy seed exceedingly, that it shall not be numbered for multitude.* The abundant increase of Ishmael''s sons in Jasher 25:21 is this promise to Hagar coming to pass.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-ishmael-dwelt-havilah-shur'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=16 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-25-rebecca-barren-isaac-election
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:21 — *And Isaac intreated Yahuah (LORD) for his wife, because she was barren: and Yahuah (LORD) was intreated of him, and Rebekah his wife conceived.* The barrenness of Rebecca that Jasher 25:28 names is the Genesis source — the covenant rests on a womb only Yahuah can open.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-rebecca-barren-isaac-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* Rebecca''s barrenness in Jasher 25:28 sets up the election Paul reads here — the seed chosen before any work.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-rebecca-barren-isaac-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 19:13 — *And in the sixth week, in the second year thereof, Rebecca bare to Isaac two sons, Jacob and Esau, and Jacob was a smooth and upright man, and Esau was fierce, a man of the field, and hairy, and Jacob dwelt in tents.* The parallel record carries Rebecca''s barren womb of Jasher 25:28 forward to the elect twins it will bear.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-rebecca-barren-isaac-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=28
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=19 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 11:10 — *These are the generations of Shem: Shem was an hundred years old, and begat Arphaxad two years after the flood:* The Arpachshad whose death Jasher 25:28 records anchors the chosen seed-line from Shem down to Isaac.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja25_lookup sv, _session252_ja25_lookup tv
+ WHERE t.slug='jasher-25-rebecca-barren-isaac-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=25 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_26.sql (session252 jasher 26) -----
+-- Source anchor: jasher/jasher ch26. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja26 (view _session252_ja26_lookup). Sort band base 55625, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja26_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-26-isaac-prays-barren-rebecca
+  ('jasher', 'jasher', 26, 5, 'canon', 'genesis', 25, 21, 'free', E'Genesis 25:21 — *And Isaac intreated Yahuah (LORD) for his wife, because she was barren: and Yahuah (LORD) was intreated of him, and Rebekah his wife conceived.* Jasher 26:5 expands the same prayer at the place of barrenness into Isaac''s full plea, but lands exactly where Genesis does.'),
+  ('jasher', 'jasher', 26, 8, 'canon', 'genesis', 25, 21, 'free', E'Genesis 25:21 — *And Isaac intreated Yahuah (LORD) for his wife, because she was barren: and Yahuah (LORD) was intreated of him, and Rebekah his wife conceived.* Jasher 26:8 — *And Yahuah (the Lord) heard the prayer of Isaac... and Rebecca his wife conceived* — is the same answered prayer, the conception that keeps the line.'),
+  ('jasher', 'jasher', 26, 2, 'canon', 'genesis', 21, 1, 'free', E'Genesis 21:1 — *And Yahuah (LORD) visited Sarah as he had said, and Yahuah (LORD) did unto Sarah as he had spoken.* Rebecca in Jasher 26:2 appeals to Sarah''s own barrenness-then-conception as the precedent for her prayer; the chosen seed comes by Yahuah visiting, twice over.'),
+  ('jasher', 'jasher', 26, 6, 'canon', 'genesis', 12, 7, 'free', E'Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him.* Isaac pleads in Jasher 26:6 on the very promise of seed and land given to his father, asking that the word be verified.'),
+  -- thread: jasher-26-two-nations-elder-serve-younger
+  ('jasher', 'jasher', 26, 12, 'canon', 'genesis', 25, 23, 'free', E'Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* Jasher 26:12 delivers the identical oracle of two nations and the greater serving the younger.'),
+  ('jasher', 'jasher', 26, 12, 'canon', 'romans', 9, 11, 'free', E'Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* Paul reads the very womb of Jasher 26:12 as election before works — the chosen seed kept by Yahuah''s purpose, not human merit.'),
+  ('jasher', 'jasher', 26, 12, 'canon', 'romans', 9, 12, 'free', E'Romans 9:12 — *It was said unto her, The elder shall serve the younger.* The oracle quoted in Jasher 26:12 is the same word Paul cites as the ground of election.'),
+  ('jasher', 'jasher', 26, 9, 'canon', 'genesis', 25, 22, 'free', E'Genesis 25:22 — *And the children struggled together within her; and she said, If it be so, why am I thus? And she went to enquire of Yahuah (LORD).* Jasher 26:9 expands Rebecca''s distress at the struggle and her going to enquire — to Shem, Eber, and Abraham — of Yahuah.'),
+  -- thread: jasher-26-birth-esau-jacob-characters
+  ('jasher', 'jasher', 26, 15, 'canon', 'genesis', 25, 26, 'free', E'Genesis 25:26 — *And after that came his brother out, and his hand took hold on Esau''s heel; and his name was called Jacob: and Isaac was threescore years old when she bare them.* Jasher 26:15 gives the identical heel-grasp and naming of Jacob.'),
+  ('jasher', 'jasher', 26, 17, 'canon', 'genesis', 25, 27, 'free', E'Genesis 25:27 — *And the boys grew: and Esau was a cunning hunter, a man of the field; and Jacob was a plain man, dwelling in tents.* Jasher 26:17 unfolds the same contrast and adds that Jacob was learning the instructions of Yahuah and the commands of his parents.'),
+  ('jasher', 'jasher', 26, 15, 'jubilees', 'jubilees', 19, 13, 'extras', E'Jubilees 19:13 — *And in the sixth week, in the second year thereof, Rebecca bare to Isaac two sons, Jacob and Esau, and Jacob was a smooth and upright man, and Esau was fierce, a man of the field, and hairy, and Jacob dwelt in tents.* The Jubilees apparatus narrates the same birth and the same dividing of the brothers as Jasher 26:14-15.'),
+  ('jasher', 'jasher', 26, 17, 'jubilees', 'jubilees', 19, 14, 'extras', E'Jubilees 19:14 — *And the youths grew, and Jacob learned to write; but Esau did not learn, for he was a man of the field and a hunter, and he learnt war, and all his deeds were fierce. And Abraham loved Jacob, but Isaac loved Esau.* The same growing-up of the twins that Jasher 26:17 frames as Jacob learning the way of Yahuah while Esau hunted.'),
+  -- thread: jasher-26-abraham-charge-keep-commandments
+  ('jasher', 'jasher', 26, 25, 'canon', 'genesis', 18, 19, 'free', E'Genesis 18:19 — *For I know him, that he will command his children and his household after him, and they shall keep the way of Yahuah (LORD), to do justice and judgment; that Yahuah (LORD) may bring upon Abraham that which he hath spoken of him.* Jasher 26:25 shows Abraham doing exactly this — charging Isaac to keep the commandments and turn neither right nor left.'),
+  ('jasher', 'jasher', 26, 27, 'canon', 'deuteronomy', 6, 7, 'free', E'Deuteronomy 6:7 — *And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up.* Abraham''s command in Jasher 26:27 to teach the children the instructions of Yahuah is the Shema obeyed generations before Sinai.'),
+  ('jasher', 'jasher', 26, 24, 'canon', 'genesis', 26, 5, 'free', E'Genesis 26:5 — *Because that Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws.* Jasher 26:24 has Abraham recount that the land is given to a seed who keep the commandments, statutes, and judgments — the same Torah-keeping Genesis credits to Abraham.'),
+  -- thread: jasher-26-death-of-abraham
+  ('jasher', 'jasher', 26, 29, 'canon', 'genesis', 25, 8, 'free', E'Genesis 25:8 — *Then Abraham gave up the ghost, and died in a good old age, an old man, and full of years; and was gathered to his people.* Jasher 26:29 reports the same death — good old age, satisfied with days, gathered to his people, buried by Isaac and Ishmael.'),
+  ('jasher', 'jasher', 26, 29, 'canon', 'genesis', 25, 7, 'free', E'Genesis 25:7 — *And these are the days of the years of Abraham''s life which he lived, an hundred threescore and fifteen years.* Jasher 26:29 gives the identical span of Abraham''s life, one hundred and seventy-five years.'),
+  ('jasher', 'jasher', 26, 31, 'jubilees', 'jubilees', 22, 1, 'extras', E'Jubilees 22:1 — *And it came to pass in the first week in the forty-fourth jubilee, in the second year, that is, the year in which Abraham died, that Isaac and Ishmael came from the Well of the Oath to celebrate the feast of weeks... to Abraham, their father, and Abraham rejoiced because his two sons had come.* The Jubilees apparatus sets the same death of Abraham, with Isaac and Ishmael gathered, that Jasher 26:31 surrounds with the burial.'),
+  ('jasher', 'jasher', 26, 28, 'jubilees', 'jubilees', 19, 17, 'extras', E'Jubilees 19:17 — *My daughter, watch over my son Jacob, For he shall be in my stead on the earth, And for a blessing in the midst of the children of men, And for the glory of the whole seed of Shem. For I know that Yahuah (God) will choose him to be a people for possession to Himself, above all peoples that are upon the face of the earth.* Where Jasher 26:28 has Abraham bless Isaac and teach Jacob the way of Yahuah, Jubilees fixes the election squarely on Jacob as the chosen seed.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-26-isaac-prays-barren-rebecca',
+       E'Isaac entreats Yahuah for barren Rebecca',
+       E'Jasher opens the cycle where Genesis does, with the same barren womb and the same prayer: *And Rebecca said to him, But arise now you also and pray, that Yahuah (the Lord) may hear your prayer and grant me children, and Isaac hearkened to the words of his wife... and Isaac stood up and prayed to Yahuah (the Lord) on account of his wife because she was barren.* (Jasher 26:5). Genesis carries the scene in a single verse — *And Isaac intreated Yahuah (LORD) for his wife, because she was barren: and Yahuah (LORD) was intreated of him, and Rebekah his wife conceived.* (Genesis 25:21). It is the pattern already worked in Sarah, which Rebecca herself names — *And Yahuah (LORD) visited Sarah as he had said, and Yahuah (LORD) did unto Sarah as he had spoken.* (Genesis 21:1). The seed-line is kept not by the strength of the flesh but because Yahuah hears: the chosen line continues by promise and prayer, generation to generation. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55625
+  FROM _session252_ja26_lookup sv, _session252_ja26_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=26 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-26-two-nations-elder-serve-younger',
+       E'Two nations in the womb — the elder shall serve the younger',
+       E'The struggle and the oracle stand at the heart of the chapter: *they brought her word from Yahuah (the Lord) and told her, Two children are in your womb, and two nations shall rise from them; and one nation shall be stronger than the other, and the greater shall serve the younger.* (Jasher 26:12). This is Genesis word for word in substance — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* (Genesis 25:23). Paul reads this exact womb as the proof that election precedes works and confession: *For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth* (Romans 9:11), *It was said unto her, The elder shall serve the younger* (Romans 9:12). The choice is Yahuah''s, made before the twins draw breath; the seed is chosen, not earned. The writer of Hebrews names the cost of despising what was given — *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright.* (Hebrews 12:16). The election is real; the birthright is not to be held cheap.',
+       sv.verse_id, ev.verse_id, 'extras', 55628
+  FROM _session252_ja26_lookup sv, _session252_ja26_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=9
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=26 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-26-birth-esau-jacob-characters',
+       E'Esau the hunter, Jacob perfect in tents',
+       E'The twins are born and grow into their callings: *And the first came out red all over like a hairy garment... they called his name Esau... And after that came his brother, and his hand took hold of Esau''s heel, therefore they called his name Jacob.* (Jasher 26:14-15). Genesis tells it the same — *And the first came out red, all over like an hairy garment; and they called his name Esau. And after that came his brother out, and his hand took hold on Esau''s heel; and his name was called Jacob: and Isaac was threescore years old when she bare them.* (Genesis 25:25-26). Their characters divide along the seed-line: *Esau was a designing and deceitful man, and an expert hunter in the field, and Jacob was a man perfect and wise, dwelling in tents, feeding flocks and learning the instructions of Yahuah (the Lord)* (Jasher 26:17) — Genesis: *and Esau was a cunning hunter, a man of the field; and Jacob was a plain man, dwelling in tents.* (Genesis 25:27). Jubilees, narrating the same birth and the same boys, draws the line still sharper — *Rebecca bare to Isaac two sons, Jacob and Esau, and Jacob was a smooth and upright man, and Esau was fierce, a man of the field... And Jacob dwelt in tents* (Jubilees 19:13), *Jacob learned to write; but Esau did not learn... and he learnt war... And Abraham loved Jacob, but Isaac loved Esau.* (Jubilees 19:14). Jacob is the one learning the way of Yahuah — Torah before Sinai.',
+       sv.verse_id, ev.verse_id, 'extras', 55631
+  FROM _session252_ja26_lookup sv, _session252_ja26_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=26 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-26-abraham-charge-keep-commandments',
+       E'Abraham''s charge: keep the commandments, teach your children',
+       E'Before he dies Abraham hands Isaac the covenant and the Torah-way: *Now therefore my son, hearken to my voice, and keep the commandments of Yahuah your Elohim, which I commanded you, do not turn from the right way either to the right or to the left, in order that it may be well with you and your children after you forever.* (Jasher 26:25), *And teach you your children and your seed the instructions of Yahuah (the Lord) and his commandments, and teach them the upright way in which they should go* (Jasher 26:27). This is the fathers keeping the way before Sinai — exactly what Genesis says of Abraham: *For I know him, that he will command his children and his household after him, and they shall keep the way of Yahuah (LORD), to do justice and judgment* (Genesis 18:19), and why the land-promise rests on him: *Because that Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws.* (Genesis 26:5). The charge to teach the children is the heart of the Shema given later — *And these words, which I command thee this day, shall be in thine heart: And thou shalt teach them diligently unto thy children* (Deuteronomy 6:6-7). Torah stands; it ain''t new, and it was never a curse — it is the upright way handed father to son so it may be well forever.',
+       sv.verse_id, ev.verse_id, 'extras', 55634
+  FROM _session252_ja26_lookup sv, _session252_ja26_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=22
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=26 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-26-death-of-abraham',
+       E'Abraham gathered to his people in good old age',
+       E'The chapter closes the father''s life: *And it was at that time that Abraham died, in the fifteenth year of the life of Jacob and Esau... and all the days of Abraham were one hundred and seventy-five years, and he died and was gathered to his people in good old age, old and satisfied with days, and Isaac and Ishmael his sons buried him.* (Jasher 26:29). Genesis records it in the same numbers and the same words — *And these are the days of the years of Abraham''s life which he lived, an hundred threescore and fifteen years.* (Genesis 25:7), *Then Abraham gave up the ghost, and died in a good old age, an old man, and full of years; and was gathered to his people.* (Genesis 25:8). Jubilees, telling the same death, places it at the feast of weeks with the two sons gathered — *that is, the year in which Abraham died, that Isaac and Ishmael came from the Well of the Oath to celebrate the feast of weeks* (Jubilees 22:1) — and gives the dying blessing that fixes the election on Jacob: *I know that Yahuah (God) will choose him to be a people for possession to Himself, above all peoples that are upon the face of the earth.* (Jubilees 19:17). The seed passes to Isaac, and the chosen line runs on. Abraham dies satisfied, and Yahuah is with Isaac as he was with his father.',
+       sv.verse_id, ev.verse_id, 'extras', 55637
+  FROM _session252_ja26_lookup sv, _session252_ja26_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=29
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=26 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-26-isaac-prays-barren-rebecca
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:21 — *And Isaac intreated Yahuah (LORD) for his wife, because she was barren: and Yahuah (LORD) was intreated of him, and Rebekah his wife conceived.* Jasher 26:5 expands the same prayer at the place of barrenness into Isaac''s full plea, but lands exactly where Genesis does.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-isaac-prays-barren-rebecca'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:21 — *And Isaac intreated Yahuah (LORD) for his wife, because she was barren: and Yahuah (LORD) was intreated of him, and Rebekah his wife conceived.* Jasher 26:8 — *And Yahuah (the Lord) heard the prayer of Isaac... and Rebecca his wife conceived* — is the same answered prayer, the conception that keeps the line.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-isaac-prays-barren-rebecca'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 21:1 — *And Yahuah (LORD) visited Sarah as he had said, and Yahuah (LORD) did unto Sarah as he had spoken.* Rebecca in Jasher 26:2 appeals to Sarah''s own barrenness-then-conception as the precedent for her prayer; the chosen seed comes by Yahuah visiting, twice over.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-isaac-prays-barren-rebecca'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him.* Isaac pleads in Jasher 26:6 on the very promise of seed and land given to his father, asking that the word be verified.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-isaac-prays-barren-rebecca'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-26-two-nations-elder-serve-younger
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* Jasher 26:12 delivers the identical oracle of two nations and the greater serving the younger.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-two-nations-elder-serve-younger'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* Paul reads the very womb of Jasher 26:12 as election before works — the chosen seed kept by Yahuah''s purpose, not human merit.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-two-nations-elder-serve-younger'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 9:12 — *It was said unto her, The elder shall serve the younger.* The oracle quoted in Jasher 26:12 is the same word Paul cites as the ground of election.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-two-nations-elder-serve-younger'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 25:22 — *And the children struggled together within her; and she said, If it be so, why am I thus? And she went to enquire of Yahuah (LORD).* Jasher 26:9 expands Rebecca''s distress at the struggle and her going to enquire — to Shem, Eber, and Abraham — of Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-two-nations-elder-serve-younger'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-26-birth-esau-jacob-characters
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:26 — *And after that came his brother out, and his hand took hold on Esau''s heel; and his name was called Jacob: and Isaac was threescore years old when she bare them.* Jasher 26:15 gives the identical heel-grasp and naming of Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-birth-esau-jacob-characters'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:27 — *And the boys grew: and Esau was a cunning hunter, a man of the field; and Jacob was a plain man, dwelling in tents.* Jasher 26:17 unfolds the same contrast and adds that Jacob was learning the instructions of Yahuah and the commands of his parents.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-birth-esau-jacob-characters'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 19:13 — *And in the sixth week, in the second year thereof, Rebecca bare to Isaac two sons, Jacob and Esau, and Jacob was a smooth and upright man, and Esau was fierce, a man of the field, and hairy, and Jacob dwelt in tents.* The Jubilees apparatus narrates the same birth and the same dividing of the brothers as Jasher 26:14-15.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-birth-esau-jacob-characters'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=15
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=19 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 19:14 — *And the youths grew, and Jacob learned to write; but Esau did not learn, for he was a man of the field and a hunter, and he learnt war, and all his deeds were fierce. And Abraham loved Jacob, but Isaac loved Esau.* The same growing-up of the twins that Jasher 26:17 frames as Jacob learning the way of Yahuah while Esau hunted.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-birth-esau-jacob-characters'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=17
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=19 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-26-abraham-charge-keep-commandments
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 18:19 — *For I know him, that he will command his children and his household after him, and they shall keep the way of Yahuah (LORD), to do justice and judgment; that Yahuah (LORD) may bring upon Abraham that which he hath spoken of him.* Jasher 26:25 shows Abraham doing exactly this — charging Isaac to keep the commandments and turn neither right nor left.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-abraham-charge-keep-commandments'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 6:7 — *And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up.* Abraham''s command in Jasher 26:27 to teach the children the instructions of Yahuah is the Shema obeyed generations before Sinai.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-abraham-charge-keep-commandments'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 26:5 — *Because that Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws.* Jasher 26:24 has Abraham recount that the land is given to a seed who keep the commandments, statutes, and judgments — the same Torah-keeping Genesis credits to Abraham.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-abraham-charge-keep-commandments'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-26-death-of-abraham
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:8 — *Then Abraham gave up the ghost, and died in a good old age, an old man, and full of years; and was gathered to his people.* Jasher 26:29 reports the same death — good old age, satisfied with days, gathered to his people, buried by Isaac and Ishmael.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-death-of-abraham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:7 — *And these are the days of the years of Abraham''s life which he lived, an hundred threescore and fifteen years.* Jasher 26:29 gives the identical span of Abraham''s life, one hundred and seventy-five years.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-death-of-abraham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 22:1 — *And it came to pass in the first week in the forty-fourth jubilee, in the second year, that is, the year in which Abraham died, that Isaac and Ishmael came from the Well of the Oath to celebrate the feast of weeks... to Abraham, their father, and Abraham rejoiced because his two sons had come.* The Jubilees apparatus sets the same death of Abraham, with Isaac and Ishmael gathered, that Jasher 26:31 surrounds with the burial.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-death-of-abraham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=31
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=22 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 19:17 — *My daughter, watch over my son Jacob, For he shall be in my stead on the earth, And for a blessing in the midst of the children of men, And for the glory of the whole seed of Shem. For I know that Yahuah (God) will choose him to be a people for possession to Himself, above all peoples that are upon the face of the earth.* Where Jasher 26:28 has Abraham bless Isaac and teach Jacob the way of Yahuah, Jubilees fixes the election squarely on Jacob as the chosen seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja26_lookup sv, _session252_ja26_lookup tv
+ WHERE t.slug='jasher-26-death-of-abraham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=26 AND sv.verse_number=28
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=19 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_27.sql (session252 jasher 27) -----
+-- Source anchor: jasher/jasher ch27. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja27 (view _session252_ja27_lookup). Sort band base 55650, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-27-esau-slays-nimrod
+  ('jasher', 'jasher', 27, 7, 'canon', 'genesis', 10, 8, 'free', E'Genesis 10:8 — *And Cush begat Nimrod: he began to be a mighty one in the earth.* The Nimrod Esau cuts down in Jasher 27:7 is the canon''s own mighty one, son of Cush.'),
+  ('jasher', 'jasher', 27, 2, 'canon', 'genesis', 10, 9, 'free', E'Genesis 10:9 — *He was a mighty hunter before Yahuah (LORD): wherefore it is said, Even as Nimrod the mighty hunter before Yahuah (LORD).* Jasher 27:2 shows that same Nimrod still hunting in the field — the title the canon gave him.'),
+  ('jasher', 'jasher', 27, 2, 'canon', 'genesis', 10, 10, 'free', E'Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar.* The king Jasher 27:2 calls ''king of Babel'' is the canon''s Nimrod, whose kingdom began at Babel in Shinar.'),
+  ('jasher', 'jasher', 27, 10, 'canon', 'genesis', 11, 4, 'free', E'Genesis 11:4 — *And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth.* The garments by which Nimrod ''prevailed over the whole land'' (Jasher 27:10) belong to the Babel kingdom-of-man that sought a name for itself.'),
+  -- thread: jasher-27-birthright-despised
+  ('jasher', 'jasher', 27, 12, 'canon', 'genesis', 25, 31, 'free', E'Genesis 25:31 — *And Jacob said, Sell me this day thy birthright.* Jasher 27:12''s sale of the birthright to Jacob is the canon''s own bargain at the pottage.'),
+  ('jasher', 'jasher', 27, 12, 'canon', 'genesis', 25, 32, 'free', E'Genesis 25:32 — *And Esau said, Behold, I am at the point to die: and what profit shall this birthright do to me?* Esau''s ''Behold I shall die this day'' in Jasher 27:12 echoes his canon words exactly.'),
+  ('jasher', 'jasher', 27, 12, 'jubilees', 'jubilees', 24, 4, 'extras', E'Jubilees 24:4 — *And Esau said in his heart: “I shall die; of what profit to me is this birthright?” And he said to Jacob: “I give it to you.”* Jubilees narrates the same birthright sale after Abraham''s death that Jasher 27:12 records.'),
+  ('jasher', 'jasher', 27, 12, 'canon', 'hebrews', 12, 16, 'free', E'Hebrews 12:16 — *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright.* The NT names the despising behind Jasher 27:12''s bargain.'),
+  -- thread: jasher-27-election-elder-younger
+  ('jasher', 'jasher', 27, 12, 'canon', 'genesis', 25, 23, 'free', E'Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* Jasher 27:12''s ''brought about by Yahuah'' is the womb-oracle of election at work.'),
+  ('jasher', 'jasher', 27, 12, 'canon', 'romans', 9, 11, 'free', E'Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* Paul grounds the birthright Jasher 27:12 calls Yahuah''s doing in election, not in works.'),
+  ('jasher', 'jasher', 27, 12, 'canon', 'romans', 9, 12, 'free', E'Romans 9:12 — *It was said unto her, The elder shall serve the younger.* The elder Esau yielding the birthright to younger Jacob in Jasher 27:12 is exactly the word Paul quotes.'),
+  -- thread: jasher-27-machpelah-portion
+  ('jasher', 'jasher', 27, 13, 'canon', 'genesis', 23, 17, 'free', E'Genesis 23:17 — *And the field of Ephron, which was in Machpelah, which was before Mamre, the field, and the cave which was therein, and all the trees that were in the field, that were in all the borders round about, were made sure.* The Machpelah portion Esau sells in Jasher 27:13 is the field Abraham deeded from the children of Heth.'),
+  ('jasher', 'jasher', 27, 13, 'canon', 'genesis', 23, 19, 'free', E'Genesis 23:19 — *And after this, Abraham buried Sarah his wife in the cave of the field of Machpelah before Mamre: the same is Hebron in the land of Canaan.* Jasher 27:13''s burial-ground bought from the children of Heth is this cave of Machpelah at Hebron.'),
+  ('jasher', 'jasher', 27, 13, 'canon', 'hebrews', 11, 9, 'free', E'Hebrews 11:9 — *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise.* Jacob gathering Esau''s portion in the fathers'' resting-place (Jasher 27:13) is the heir keeping his hold on the land of promise.'),
+  -- thread: jasher-27-nimrods-kingdom-divided
+  ('jasher', 'jasher', 27, 17, 'canon', 'genesis', 11, 8, 'free', E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city.* Nimrod''s kingdom dividing into many parts in Jasher 27:17 mirrors the scattering of his Babel from the start.'),
+  ('jasher', 'jasher', 27, 16, 'canon', 'genesis', 10, 10, 'free', E'Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar.* The kingdom that falls by Esau''s sword in Jasher 27:16 is the Babel-dominion the canon credits to Nimrod.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-27-esau-slays-nimrod',
+       E'Esau slays Nimrod the mighty hunter',
+       E'Jasher gives the legendary cause of a hatred Genesis only hints at: *And Nimrod and two of his men that were with him came to the place where they were, when Esau started suddenly from his lurking place, and drew his sword, and hastened and ran to Nimrod and cut off his head* (Jasher 27:7). The man Jasher names is the same rebel king-builder the canon already knows: *And Cush begat Nimrod: he began to be a mighty one in the earth* (Genesis 10:8), *He was a mighty hunter before Yahuah (LORD): wherefore it is said, Even as Nimrod the mighty hunter before Yahuah (LORD)* (Genesis 10:9). His kingdom was the Babel-tyranny — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar* (Genesis 10:10) — the kingdom of man that built the tower: *And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth* (Genesis 11:4). It ain''t new — Jasher only puts a sword to the rivalry the seed-line and the kingdom-of-man have carried since Shinar.',
+       sv.verse_id, ev.verse_id, 'extras', 55650
+  FROM _session252_ja27_lookup sv, _session252_ja27_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=27 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-27-birthright-despised',
+       E'Esau sells the birthright; the profane person',
+       E'At the heart of the chapter the canon''s birthright scene appears, Jasher setting it on the very day of Nimrod''s death: *And he said to his brother Jacob, Behold I shall die this day, and therefore then do I want the birthright? And Jacob acted wisely with Esau in this matter, and Esau sold his birthright to Jacob, for it was so brought about by Yahuah (the Lord)* (Jasher 27:12). Genesis tells the same trade: *And Jacob said, Sell me this day thy birthright* (Genesis 25:31) — *And Esau said, Behold, I am at the point to die: and what profit shall this birthright do to me?* (Genesis 25:32). Jubilees narrates it word for word — *And Esau said in his heart: ''I shall die; of what profit to me is this birthright?'' And he said to Jacob: ''I give it to you.''* (Jubilees 24:4) — and names the heart of it: a despising. The NT reads it as the warning it is: *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright* (Hebrews 12:16). It ain''t new — three witnesses lay the same despised birthright on the table.',
+       sv.verse_id, ev.verse_id, 'extras', 55653
+  FROM _session252_ja27_lookup sv, _session252_ja27_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=11
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=27 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-27-election-elder-younger',
+       E'Election — ''brought about by Yahuah''',
+       E'Jasher will not let the trade be mere cunning: *and Esau sold his birthright to Jacob, for it was so brought about by Yahuah (the Lord)* (Jasher 27:12). That is the canon''s election, spoken in the womb: *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger* (Genesis 25:23). The choosing precedes the conduct — Esau''s profanity does not make the election, it serves it. Paul reads it the same way: *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* (Romans 9:11), *It was said unto her, The elder shall serve the younger* (Romans 9:12). The covenant seed is kept and chosen — not a category swapped in, but Jacob over Esau, the line carried.',
+       sv.verse_id, ev.verse_id, 'extras', 55656
+  FROM _session252_ja27_lookup sv, _session252_ja27_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=12
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=27 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-27-machpelah-portion',
+       E'Esau sells his portion in Machpelah',
+       E'Jasher adds a second sale the canon does not record but rhymes with: *And Esau''s portion in the cave of the field of Machpelah, which Abraham had bought from the children of Heth for the possession of a burial ground, Esau also sold to Jacob, and Jacob bought all this from his brother Esau for value given* (Jasher 27:13). The burial ground is the canon''s own deeded inheritance: *And the field of Ephron, which was in Machpelah, which was before Mamre, the field, and the cave which was therein, and all the trees that were in the field, that were in all the borders round about, were made sure* (Genesis 23:17), *And after this, Abraham buried Sarah his wife in the cave of the field of Machpelah before Mamre: the same is Hebron in the land of Canaan* (Genesis 23:19). Esau trades away his share in the resting-place of the fathers; Jacob gathers it — the seed-line keeping its hold on the land of promise: *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise* (Hebrews 11:9).',
+       sv.verse_id, ev.verse_id, 'extras', 55659
+  FROM _session252_ja27_lookup sv, _session252_ja27_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=13
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=27 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-27-nimrods-kingdom-divided',
+       E'Nimrod''s kingdom of man scattered',
+       E'With Nimrod dead, Jasher shows the kingdom of man undone: *And at the death of Nimrod his kingdom became divided into many divisions, and all those parts that Nimrod reigned over were restored to the respective kings of the land, who recovered them after the death of Nimrod, and all the people of the house of Nimrod were for a long time enslaved to all the other kings of the land* (Jasher 27:17). The same Babel-kingdom the canon already saw scattered: *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city* (Genesis 11:8). The tower-builders'' name and dominion do not stand — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar* (Genesis 10:10), but the beginning is also the breaking. The kingdom of man falls; the chosen seed, just handed the birthright, goes on. It ain''t new — the Babel pattern dissolves exactly as Genesis told it.',
+       sv.verse_id, ev.verse_id, 'extras', 55662
+  FROM _session252_ja27_lookup sv, _session252_ja27_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=15
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=27 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-27-esau-slays-nimrod
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 10:8 — *And Cush begat Nimrod: he began to be a mighty one in the earth.* The Nimrod Esau cuts down in Jasher 27:7 is the canon''s own mighty one, son of Cush.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-esau-slays-nimrod'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 10:9 — *He was a mighty hunter before Yahuah (LORD): wherefore it is said, Even as Nimrod the mighty hunter before Yahuah (LORD).* Jasher 27:2 shows that same Nimrod still hunting in the field — the title the canon gave him.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-esau-slays-nimrod'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar.* The king Jasher 27:2 calls ''king of Babel'' is the canon''s Nimrod, whose kingdom began at Babel in Shinar.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-esau-slays-nimrod'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 11:4 — *And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth.* The garments by which Nimrod ''prevailed over the whole land'' (Jasher 27:10) belong to the Babel kingdom-of-man that sought a name for itself.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-esau-slays-nimrod'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-27-birthright-despised
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:31 — *And Jacob said, Sell me this day thy birthright.* Jasher 27:12''s sale of the birthright to Jacob is the canon''s own bargain at the pottage.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-birthright-despised'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:32 — *And Esau said, Behold, I am at the point to die: and what profit shall this birthright do to me?* Esau''s ''Behold I shall die this day'' in Jasher 27:12 echoes his canon words exactly.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-birthright-despised'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 24:4 — *And Esau said in his heart: “I shall die; of what profit to me is this birthright?” And he said to Jacob: “I give it to you.”* Jubilees narrates the same birthright sale after Abraham''s death that Jasher 27:12 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-birthright-despised'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=12
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=24 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 12:16 — *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright.* The NT names the despising behind Jasher 27:12''s bargain.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-birthright-despised'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-27-election-elder-younger
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* Jasher 27:12''s ''brought about by Yahuah'' is the womb-oracle of election at work.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-election-elder-younger'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* Paul grounds the birthright Jasher 27:12 calls Yahuah''s doing in election, not in works.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-election-elder-younger'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 9:12 — *It was said unto her, The elder shall serve the younger.* The elder Esau yielding the birthright to younger Jacob in Jasher 27:12 is exactly the word Paul quotes.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-election-elder-younger'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-27-machpelah-portion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 23:17 — *And the field of Ephron, which was in Machpelah, which was before Mamre, the field, and the cave which was therein, and all the trees that were in the field, that were in all the borders round about, were made sure.* The Machpelah portion Esau sells in Jasher 27:13 is the field Abraham deeded from the children of Heth.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-machpelah-portion'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=23 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 23:19 — *And after this, Abraham buried Sarah his wife in the cave of the field of Machpelah before Mamre: the same is Hebron in the land of Canaan.* Jasher 27:13''s burial-ground bought from the children of Heth is this cave of Machpelah at Hebron.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-machpelah-portion'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=23 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:9 — *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise.* Jacob gathering Esau''s portion in the fathers'' resting-place (Jasher 27:13) is the heir keeping his hold on the land of promise.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-machpelah-portion'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-27-nimrods-kingdom-divided
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city.* Nimrod''s kingdom dividing into many parts in Jasher 27:17 mirrors the scattering of his Babel from the start.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-nimrods-kingdom-divided'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar.* The kingdom that falls by Esau''s sword in Jasher 27:16 is the Babel-dominion the canon credits to Nimrod.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja27_lookup sv, _session252_ja27_lookup tv
+ WHERE t.slug='jasher-27-nimrods-kingdom-divided'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=27 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_28.sql (session252 jasher 28) -----
+-- Source anchor: jasher/jasher ch28. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja28 (view _session252_ja28_lookup). Sort band base 55675, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja28_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-28-isaac-gerar-famine
+  ('jasher', 'jasher', 28, 1, 'canon', 'genesis', 26, 1, 'free', E'Genesis 26:1 — *And there was a famine in the land, beside the first famine that was in the days of Abraham. And Isaac went unto Abimelech king of the Philistines unto Gerar.* The same second famine that opens Jasher 28:1, sending Isaac down the road his father walked.'),
+  ('jasher', 'jasher', 28, 2, 'canon', 'genesis', 26, 2, 'free', E'Genesis 26:2 — *And Yahuah (LORD) appeared unto him, and said, Go not down into Egypt; dwell in the land which I shall tell thee of:* The same night-word turning Isaac aside from Egypt to Gerar that Jasher 28:2 records verbatim in spirit.'),
+  ('jasher', 'jasher', 28, 7, 'canon', 'genesis', 26, 8, 'free', E'Genesis 26:8 — *And it came to pass, when he had been there a long time, that Abimelech king of the Philistines looked out at a window, and saw, and, behold, Isaac was sporting with Rebekah his wife.* The very window-scene Jasher 28:7 retells, Abimelech discovering Rebecca was no sister.'),
+  ('jasher', 'jasher', 28, 11, 'canon', 'genesis', 26, 11, 'free', E'Genesis 26:11 — *And Abimelech charged all his people, saying, He that toucheth this man or his wife shall surely be put to death.* The king''s protective decree that Jasher 28:11 expands into a proclamation through the streets.'),
+  ('jasher', 'jasher', 28, 1, 'jubilees', 'jubilees', 24, 2, 'extras', E'Jubilees 24:2 — *And in the first year of the fourth week a famine began in the land, besides the first famine, which had been in the days of Abraham.* Jubilees narrates the identical post-Abraham famine, a genuine self-link to Jasher 28:1 in the patriarchal record.'),
+  -- thread: jasher-28-hundredfold-blessing
+  ('jasher', 'jasher', 28, 14, 'canon', 'genesis', 26, 12, 'free', E'Genesis 26:12 — *Then Isaac sowed in that land, and received in the same year an hundredfold: and Yahuah (LORD) blessed him.* The exact hundredfold harvest of Jasher 28:14, the blessing outrunning the famine.'),
+  ('jasher', 'jasher', 28, 15, 'canon', 'genesis', 26, 14, 'free', E'Genesis 26:14 — *For he had possession of flocks, and possession of herds, and great store of servants: and the Philistines envied him.* The same flocks, herds, and store of servants Jasher 28:15 lists as Isaac waxes great.'),
+  ('jasher', 'jasher', 28, 14, 'jubilees', 'jubilees', 24, 15, 'extras', E'Jubilees 24:15 — *And he sowed in the land of the Philistines and brought in a hundred-fold, and Isaac became exceedingly great, and the Philistines envied him.* Jubilees records the same hundredfold sowing as Jasher 28:14, the parallel patriarchal witness.'),
+  -- thread: jasher-28-jacob-shem-eber-election
+  ('jasher', 'jasher', 28, 18, 'canon', 'genesis', 11, 14, 'free', E'Genesis 11:14 — *And Salah lived thirty years, and begat Eber:* The seed-line of Shem→Arphaxad→Salah→Eber that Jasher names as Jacob''s teaching-house, the very Eber to whom he is sent in Jasher 28:18.'),
+  ('jasher', 'jasher', 28, 18, 'canon', 'genesis', 25, 23, 'free', E'Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* The election already spoken in the womb, why the younger Jacob — not Esau — is sent to learn the way in Jasher 28:18.'),
+  ('jasher', 'jasher', 28, 18, 'canon', 'romans', 9, 11, 'free', E'Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* The election precedes confession — the same choosing of Jacob that Jasher 28:18 shows in the sending.'),
+  ('jasher', 'jasher', 28, 18, 'canon', 'romans', 9, 12, 'free', E'Romans 9:12 — *It was said unto her, The elder shall serve the younger.* The covenant verdict on Esau and Jacob that frames why only Jacob seeks the instructions of Yahuah in Jasher 28:18.'),
+  ('jasher', 'jasher', 28, 18, 'canon', 'hebrews', 11, 9, 'free', E'Hebrews 11:9 — *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise:* Jacob named heir of the same promise, the faith-line he is schooled in while in the house of Shem and Eber in Jasher 28:18.'),
+  -- thread: jasher-28-esau-hunter-hittite-wife
+  ('jasher', 'jasher', 28, 20, 'canon', 'genesis', 25, 27, 'free', E'Genesis 25:27 — *And the boys grew: and Esau was a cunning hunter, a man of the field; and Jacob was a plain man, dwelling in tents.* The canon''s own portrait of Esau the cunning hunter and man of the field that Jasher 28:20 amplifies into the deceitful inveigler.'),
+  ('jasher', 'jasher', 28, 23, 'canon', 'genesis', 26, 34, 'free', E'Genesis 26:34 — *And Esau was forty years old when he took to wife Judith the daughter of Beeri the Hittite, and Bashemath the daughter of Elon the Hittite:* The forty-year-old Esau wedding Judith the Hittite, the exact marriage Jasher 28:22-23 recounts.'),
+  ('jasher', 'jasher', 28, 23, 'canon', 'genesis', 26, 35, 'free', E'Genesis 26:35 — *Which were a grief of mind unto Isaac and to Rebekah.* The bitterness of Esau''s out-of-covenant marriage in Jasher 28:23, the despised line grieving the chosen house.'),
+  -- thread: jasher-28-shem-dies-leah-rachel-born
+  ('jasher', 'jasher', 28, 24, 'canon', 'genesis', 11, 10, 'free', E'Genesis 11:10 — *These are the generations of Shem: Shem was an hundred years old, and begat Arphaxad two years after the flood:* The Shem of the seed-line whose long life Jasher 28:24 closes at six hundred years, the teacher in whose house Jacob learned.'),
+  ('jasher', 'jasher', 28, 28, 'canon', 'genesis', 29, 16, 'free', E'Genesis 29:16 — *And Laban had two daughters: the name of the elder was Leah, and the name of the younger was Rachel.* The same two daughters of Laban, elder Leah and younger Rachel, whose birth Jasher 28:28 records — Jacob''s wives-to-be and the mothers of the tribes.'),
+  ('jasher', 'jasher', 28, 28, 'canon', 'genesis', 29, 17, 'free', E'Genesis 29:17 — *Leah was tender eyed; but Rachel was beautiful and well favoured.* The two sisters of Jasher 28:28 as the canon describes them, the line through which the twelve tribes will be gathered.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-28-isaac-gerar-famine',
+       E'The famine drives Isaac to Gerar — She is my sister',
+       E'Jasher opens the next generation exactly where Genesis sets it: *And in those days, after the death of Abraham, in that year Yahuah (the Lord) brought a heavy famine in the land, and whilst the famine was raging in the land of Canaan, Isaac rose up to go down to Egypt on account of the famine, as his father Abraham had done* (Jasher 28:1). Yahuah turns him aside — *And Yahuah (the Lord) appeared that night to Isaac and he said to him, Do not go down to Egypt but rise and go to Gerar, to Abimelech king of the Philistines, and remain there till the famine shall cease* (Jasher 28:2). It ain''t new: this is Genesis 26 told over again — the second famine, the same diversion, the same wife-as-sister fear, the same Abimelech at the window. Jubilees carries the very same scene, naming it the death-of-Abraham aftermath. The covenant seed is kept alive through the famine, Yahuah Himself steering the chosen line.',
+       sv.verse_id, ev.verse_id, 'extras', 55675
+  FROM _session252_ja28_lookup sv, _session252_ja28_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=28 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-28-hundredfold-blessing',
+       E'Isaac sows a hundredfold — Yahuah blessed him',
+       E'The famine cannot starve the blessed seed: *And Isaac sowed in that land, and received a hundred-fold in the same year, and Yahuah (the Lord) blessed him. And the man waxed great, and he had possession of flocks and possession of herds and great store of servants* (Jasher 28:14-15). Then the word sends him home — *And when the days of the famine had passed away Yahuah (the Lord) appeared to Isaac and said to him, Rise up, go forth from this place and return to your land, to the land of Canaan* (Jasher 28:16). It ain''t new — Genesis 26 measures the same hundredfold harvest and the same waxing-great, and Jubilees counts the same increase. The Abrahamic blessing flows unbroken into Isaac; the covenant prospers in famine and is summoned back to the land of promise.',
+       sv.verse_id, ev.verse_id, 'extras', 55678
+  FROM _session252_ja28_lookup sv, _session252_ja28_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=28 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-28-jacob-shem-eber-election',
+       E'Jacob sent to Shem and Eber — the elder serve the younger',
+       E'Now the election shows its hand: *At that time Isaac sent his younger son Jacob to the house of Shem and Eber, and he learned the instructions of Yahuah (the Lord), and Jacob remained in the house of Shem and Eber for thirty-two years, and Esau his brother did not go, for he was not willing to go, and he remained in his father''s house in the land of Canaan* (Jasher 28:18). The younger son is sent to the seed-line''s living teachers — Shem and Eber, the very names Genesis 11 carries from Shem down through Arphaxad and Salah to Eber. Jacob seeks the instructions of Yahuah; Esau will not go. This is Torah-before-Sinai kept in the chosen house, and it is the choice the canon already declared in the womb — *the elder shall serve the younger* — and which the apostle reads as election standing before either child had done good or evil. It ain''t new: Jacob is the chosen seed, schooled in the way.',
+       sv.verse_id, ev.verse_id, 'extras', 55681
+  FROM _session252_ja28_lookup sv, _session252_ja28_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=17
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=28 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-28-esau-hunter-hittite-wife',
+       E'Esau the deceitful hunter takes a Canaanite wife',
+       E'Against Jacob set Esau, and the contrast is sharp: *And Esau was a designing and deceitful man, one who hunted after the hearts of men and inveigled them, and Esau was a valiant man in the field, and in the course of time went as usual to hunt; and he came as far as the field of Seir, the same is Edom* (Jasher 28:20). He marries out of the covenant — *And Esau took her for a wife, and he came to her; forty years old was Esau when he took her, and he brought her to Hebron, the land of his father''s dwelling place, and he dwelt there* (Jasher 28:23). It ain''t new: Genesis already names Esau the cunning hunter and the man of the field, and Genesis already records the forty-year-old Esau marrying the Hittite Judith — a grief of mind to Isaac and Rebekah. While Jacob is sent to Shem and Eber, Esau goes to Seir and weds Canaan; the seed-line and the despised line part ways in the very same chapter.',
+       sv.verse_id, ev.verse_id, 'extras', 55684
+  FROM _session252_ja28_lookup sv, _session252_ja28_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=19
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=28 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-28-shem-dies-leah-rachel-born',
+       E'Shem dies; Laban''s twins Leah and Rachel are born',
+       E'The seed-line passes a marker and prepares its next chapter: *And it came to pass in those days, in the hundred and tenth year of the life of Isaac, that is in the fiftieth year of the life of Jacob, in that year died Shem the son of Noah; Shem was six hundred years old at his death* (Jasher 28:24). Then in Haran a barrenness is opened — *And Yahuah (the Lord) afterward remembered Adinah the wife of Laban, and she conceived and bare twin daughters, and Laban called the names of his daughters, the name of the elder Leah, and the name of the younger Rachel* (Jasher 28:28). It ain''t new: Genesis names these same two daughters of Laban, the elder Leah and the younger Rachel — the mothers through whom the twelve tribes will come. The chapter that schooled Jacob in the house of Shem ends by stirring the womb that will bear his wives; the gathering of the twelve tribes is already being set in motion.',
+       sv.verse_id, ev.verse_id, 'extras', 55687
+  FROM _session252_ja28_lookup sv, _session252_ja28_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=24
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=28 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-28-isaac-gerar-famine
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 26:1 — *And there was a famine in the land, beside the first famine that was in the days of Abraham. And Isaac went unto Abimelech king of the Philistines unto Gerar.* The same second famine that opens Jasher 28:1, sending Isaac down the road his father walked.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-isaac-gerar-famine'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 26:2 — *And Yahuah (LORD) appeared unto him, and said, Go not down into Egypt; dwell in the land which I shall tell thee of:* The same night-word turning Isaac aside from Egypt to Gerar that Jasher 28:2 records verbatim in spirit.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-isaac-gerar-famine'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 26:8 — *And it came to pass, when he had been there a long time, that Abimelech king of the Philistines looked out at a window, and saw, and, behold, Isaac was sporting with Rebekah his wife.* The very window-scene Jasher 28:7 retells, Abimelech discovering Rebecca was no sister.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-isaac-gerar-famine'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 26:11 — *And Abimelech charged all his people, saying, He that toucheth this man or his wife shall surely be put to death.* The king''s protective decree that Jasher 28:11 expands into a proclamation through the streets.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-isaac-gerar-famine'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 24:2 — *And in the first year of the fourth week a famine began in the land, besides the first famine, which had been in the days of Abraham.* Jubilees narrates the identical post-Abraham famine, a genuine self-link to Jasher 28:1 in the patriarchal record.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-isaac-gerar-famine'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=24 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-28-hundredfold-blessing
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 26:12 — *Then Isaac sowed in that land, and received in the same year an hundredfold: and Yahuah (LORD) blessed him.* The exact hundredfold harvest of Jasher 28:14, the blessing outrunning the famine.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-hundredfold-blessing'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 26:14 — *For he had possession of flocks, and possession of herds, and great store of servants: and the Philistines envied him.* The same flocks, herds, and store of servants Jasher 28:15 lists as Isaac waxes great.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-hundredfold-blessing'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 24:15 — *And he sowed in the land of the Philistines and brought in a hundred-fold, and Isaac became exceedingly great, and the Philistines envied him.* Jubilees records the same hundredfold sowing as Jasher 28:14, the parallel patriarchal witness.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-hundredfold-blessing'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=14
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=24 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-28-jacob-shem-eber-election
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:14 — *And Salah lived thirty years, and begat Eber:* The seed-line of Shem→Arphaxad→Salah→Eber that Jasher names as Jacob''s teaching-house, the very Eber to whom he is sent in Jasher 28:18.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-jacob-shem-eber-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* The election already spoken in the womb, why the younger Jacob — not Esau — is sent to learn the way in Jasher 28:18.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-jacob-shem-eber-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* The election precedes confession — the same choosing of Jacob that Jasher 28:18 shows in the sending.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-jacob-shem-eber-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Romans 9:12 — *It was said unto her, The elder shall serve the younger.* The covenant verdict on Esau and Jacob that frames why only Jacob seeks the instructions of Yahuah in Jasher 28:18.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-jacob-shem-eber-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Hebrews 11:9 — *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise:* Jacob named heir of the same promise, the faith-line he is schooled in while in the house of Shem and Eber in Jasher 28:18.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-jacob-shem-eber-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-28-esau-hunter-hittite-wife
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:27 — *And the boys grew: and Esau was a cunning hunter, a man of the field; and Jacob was a plain man, dwelling in tents.* The canon''s own portrait of Esau the cunning hunter and man of the field that Jasher 28:20 amplifies into the deceitful inveigler.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-esau-hunter-hittite-wife'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 26:34 — *And Esau was forty years old when he took to wife Judith the daughter of Beeri the Hittite, and Bashemath the daughter of Elon the Hittite:* The forty-year-old Esau wedding Judith the Hittite, the exact marriage Jasher 28:22-23 recounts.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-esau-hunter-hittite-wife'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 26:35 — *Which were a grief of mind unto Isaac and to Rebekah.* The bitterness of Esau''s out-of-covenant marriage in Jasher 28:23, the despised line grieving the chosen house.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-esau-hunter-hittite-wife'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-28-shem-dies-leah-rachel-born
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:10 — *These are the generations of Shem: Shem was an hundred years old, and begat Arphaxad two years after the flood:* The Shem of the seed-line whose long life Jasher 28:24 closes at six hundred years, the teacher in whose house Jacob learned.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-shem-dies-leah-rachel-born'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 29:16 — *And Laban had two daughters: the name of the elder was Leah, and the name of the younger was Rachel.* The same two daughters of Laban, elder Leah and younger Rachel, whose birth Jasher 28:28 records — Jacob''s wives-to-be and the mothers of the tribes.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-shem-dies-leah-rachel-born'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 29:17 — *Leah was tender eyed; but Rachel was beautiful and well favoured.* The two sisters of Jasher 28:28 as the canon describes them, the line through which the twelve tribes will be gathered.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja28_lookup sv, _session252_ja28_lookup tv
+ WHERE t.slug='jasher-28-shem-dies-leah-rachel-born'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=28 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_29.sql (session252 jasher 29) -----
+-- Source anchor: jasher/jasher ch29. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja29 (view _session252_ja29_lookup). Sort band base 55700, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja29_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-29-stolen-blessing
+  ('jasher', 'jasher', 29, 7, 'canon', 'genesis', 27, 19, 'free', E'Genesis 27:19 — *And Jacob said unto his father, I am Esau thy firstborn; I have done according as thou badest me: arise, I pray thee, sit and eat of my venison, that thy soul may bless me.* The Genesis source of Jacob''s claim to the blessing that Jasher 29:7 retells.'),
+  ('jasher', 'jasher', 29, 6, 'canon', 'genesis', 27, 17, 'free', E'Genesis 27:17 — *And she gave the savoury meat and the bread, which she had prepared, into the hand of her son Jacob.* Rebecca''s hand in the savory meat, the same dish Jacob carries to Isaac in Jasher 29:6.'),
+  ('jasher', 'jasher', 29, 7, 'jubilees', 'jubilees', 26, 13, 'extras', E'Jubilees 26:13 — *And Jacob went in to his father and said: “I am your son: I have done according as you bade me: arise and sit and eat of that which I have caught, father, that your soul may bless me.”* The Jubilees telling of the same scene, the third witness to Jasher 29:7.'),
+  -- thread: jasher-29-despised-birthright-election
+  ('jasher', 'jasher', 29, 10, 'canon', 'genesis', 27, 36, 'free', E'Genesis 27:36 — *And he said, Is not he rightly named Jacob? for he hath supplanted me these two times: he took away my birthright; and, behold, now he hath taken away my blessing. And he said, Hast thou not reserved a blessing for me?* The Genesis source of Esau''s "supplanted me twice" cry in Jasher 29:10.'),
+  ('jasher', 'jasher', 29, 10, 'canon', 'genesis', 25, 34, 'free', E'Genesis 25:34 — *Then Jacob gave Esau bread and pottage of lentiles; and he did eat and drink, and rose up, and went his way: thus Esau despised his birthright.* The first of the two supplantings Jasher 29:10 names — Esau himself despised the birthright.'),
+  ('jasher', 'jasher', 29, 10, 'canon', 'hebrews', 12, 16, 'free', E'Hebrews 12:16 — *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright.* The apostle''s verdict on the profane Esau whose loss Jasher 29:10 records.'),
+  ('jasher', 'jasher', 29, 10, 'canon', 'romans', 9, 13, 'free', E'Romans 9:13 — *As it is written, Jacob have I loved, but Esau have I hated.* The election standing behind the blessing Jacob takes in Jasher 29:10 — the seed-line chosen, not earned.'),
+  -- thread: jasher-29-jacob-flees-keeps-the-way
+  ('jasher', 'jasher', 29, 11, 'canon', 'genesis', 27, 43, 'free', E'Genesis 27:43 — *Now therefore, my son, obey my voice; and arise, flee thou to Laban my brother to Haran;* Rebekah''s command that drives Jacob''s flight in Jasher 29:11 and 29:23.'),
+  ('jasher', 'jasher', 29, 23, 'jubilees', 'jubilees', 27, 3, 'extras', E'Jubilees 27:3 — *Now, therefore, my son, obey my voice, and arise and flee you to Laban, my brother, to Haran, and tarry with him a few days until your brother’s anger turns away, and he remove his anger from you, and forget all that you have done; then I will send and fetch you from thence.* The Jubilees telling of Rebecca''s same charge to flee to Haran, paralleling Jasher 29:23.'),
+  -- thread: jasher-29-isaac-charge-abrahamic-blessing
+  ('jasher', 'jasher', 29, 24, 'canon', 'genesis', 28, 1, 'free', E'Genesis 28:1 — *And Isaac called Jacob, and blessed him, and charged him, and said unto him, Thou shalt not take a wife of the daughters of Canaan.* The Genesis charge that Jasher 29:24 retells as Isaac sends Jacob to Haran.'),
+  ('jasher', 'jasher', 29, 29, 'canon', 'genesis', 28, 3, 'free', E'Genesis 28:3 — *And El Shaddai (God Almighty) bless thee, and make thee fruitful, and multiply thee, that thou mayest be a multitude of people;* The El Shaddai blessing of fruitfulness that Jasher 29:29 carries word for word.'),
+  ('jasher', 'jasher', 29, 29, 'canon', 'genesis', 28, 4, 'free', E'Genesis 28:4 — *And give thee the blessing of Abraham, to thee, and to thy seed with thee; that thou mayest inherit the land wherein thou art a stranger, which Elohim (God) gave unto Abraham.* The blessing of Abraham passing to Jacob and his seed, the same words as Jasher 29:29.'),
+  ('jasher', 'jasher', 29, 29, 'jubilees', 'jubilees', 27, 11, 'extras', E'Jubilees 27:11 — *And El Shaddai (God Almighty) bless you and increase and multiply you that you may become a company of nations, and give you the blessings of my father Abraham, to you and to your seed after you, that you may inherit the land of your sojournings and all the land which Elohim (God) gave to Abraham: go, my son, in peace.* The Jubilees telling of the same Abrahamic blessing Isaac gives in Jasher 29:29.'),
+  -- thread: jasher-29-esau-wives-ishmael-dies
+  ('jasher', 'jasher', 29, 17, 'canon', 'genesis', 26, 34, 'free', E'Genesis 26:34 — *And Esau was forty years old when he took to wife Judith the daughter of Beeri the Hittite, and Bashemath the daughter of Elon the Hittite:* The Genesis record of Esau''s Hittite marriages that grieved Isaac, the same daughters-of-Heth Jasher 29:14-17 names.'),
+  ('jasher', 'jasher', 29, 18, 'canon', 'genesis', 25, 17, 'free', E'Genesis 25:17 — *And these are the years of the life of Ishmael, an hundred and thirty and seven years: and he gave up the ghost and died; and was gathered unto his people.* The Genesis notice of Ishmael''s death at 137 years, the very figure Jasher 29:18 records.'),
+  ('jasher', 'jasher', 29, 18, 'canon', 'genesis', 17, 20, 'free', E'Genesis 17:20 — *And as for Ishmael, I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation.* Ishmael, whose death Jasher 29:18 records, was himself kept under Abraham''s blessing — the seed-line''s wider mercy.'),
+  -- thread: jasher-29-eliphaz-robs-jacob
+  ('jasher', 'jasher', 29, 38, 'canon', 'genesis', 28, 15, 'free', E'Genesis 28:15 — *And, behold, I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of.* Yahuah''s keeping of Jacob "in all places" is exactly the favor that spares him from Eliphaz''s sword in Jasher 29:38.'),
+  ('jasher', 'jasher', 29, 43, 'canon', 'genesis', 28, 9, 'free', E'Genesis 28:9 — *Then went Esau unto Ishmael, and took unto the wives which he had Mahalath the daughter of Ishmael Abraham’s son, the sister of Nebajoth, to be his wife.* The Genesis source of Esau''s marriage to Machlath the daughter of Ishmael that closes Jasher 29:43.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja29_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja29_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-29-stolen-blessing',
+       E'Isaac blesses Jacob — the savory meat and the kids of the goats',
+       E'*And Isaac said to Jacob, Who are you, my son? And he said, I am your first born Esau, I have done as you did order me, now therefore rise up I pray you, and eat of my hunt, in order that your soul may bless me as you did speak to me* (Jasher 29:7). Jasher is retelling Genesis 28''s prelude word for word: *And Jacob said unto his father, I am Esau thy firstborn; I have done according as thou badest me: arise, I pray thee, sit and eat of my venison, that thy soul may bless me* (Genesis 27:19), with Rebecca dressing him in the savory meat she prepared — *And he gave the savoury meat and the bread, which she had prepared, into the hand of her son Jacob* (Genesis 27:17). And Jubilees carries the very same scene: *And Jacob went in to his father and said: "I am your son: I have done according as you bade me: arise and sit and eat of that which I have caught, father, that your soul may bless me."* (Jubilees 26:13). It ain''t new — three witnesses to the one blessing passing to the chosen son.',
+       sv.verse_id, ev.verse_id, 'extras', 55700
+  FROM _session252_ja29_lookup sv, _session252_ja29_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=2
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=29 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-29-despised-birthright-election',
+       E'He supplanted me twice — the despised birthright and the election',
+       E'*And Esau said, Is he not rightly called Jacob? for he has supplanted me twice, he took away my birthright and now he has taken away my blessing; and Esau wept greatly* (Jasher 29:10). Genesis frames Esau''s own words the same way: *And he said, Is not he rightly named Jacob? for he hath supplanted me these two times: he took away my birthright; and, behold, now he hath taken away my blessing* (Genesis 27:36). But the birthright was Esau''s own to throw away — *Then Jacob gave Esau bread and pottage of lentiles; and he did eat and drink, and rose up, and went his way: thus Esau despised his birthright* (Genesis 25:34), and the apostle names the man: *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright* (Hebrews 12:16). The deeper word is election — the line was chosen before either son could earn it: *As it is written, Jacob have I loved, but Esau have I hated* (Romans 9:13). Election precedes confession; the covenant seed is kept and chosen, not won.',
+       sv.verse_id, ev.verse_id, 'extras', 55703
+  FROM _session252_ja29_lookup sv, _session252_ja29_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=9
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=29 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-29-jacob-flees-keeps-the-way',
+       E'Jacob flees to Eber''s house and learns the ways of Yahuah',
+       E'*And Jacob was very much afraid of his brother Esau, and he rose up and fled to the house of Eber the son of Shem, and he concealed himself there on account of his brother... and he there continued to learn the ways of Yahuah (the Lord) and his commandments* (Jasher 29:11). Genesis sends him on the same flight at his mother''s word: *Now therefore, my son, obey my voice; and arise, flee thou to Laban my brother to Haran* (Genesis 27:43). Jubilees records Rebecca''s same charge: *Now, therefore, my son, obey my voice, and arise and flee you to Laban, my brother, to Haran, and tarry with him a few days until your brother’s anger turns away* (Jubilees 27:3). Jasher''s added detail — fourteen years hidden in Eber''s house "learning the ways of Yahuah and his commandments" — is Torah-before-Sinai: the chosen seed keeping the way of the fathers. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55706
+  FROM _session252_ja29_lookup sv, _session252_ja29_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=11
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=29 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-29-isaac-charge-abrahamic-blessing',
+       E'Take no wife of Canaan — the blessing of Abraham and El Shaddai',
+       E'*And may the El Shaddai (Almighty God) grant you favor in the sight of the people of the earth... And may Elohim (God) give to you and your seed the blessing of your father Abraham, and make you fruitful and multiply you, and may you become a multitude of people in the land whither you go* (Jasher 29:28-29). This is Genesis 28''s charge nearly word for word: *And El Shaddai (God Almighty) bless thee, and make thee fruitful, and multiply thee, that thou mayest be a multitude of people; And give thee the blessing of Abraham, to thee, and to thy seed with thee* (Genesis 28:3-4), preceded by the command *Thou shalt not take a wife of the daughters of Canaan* (Genesis 28:1). Jubilees seals the same blessing: *And El Shaddai (God Almighty) bless you and increase and multiply you that you may become a company of nations, and give you the blessings of my father Abraham, to you and to your seed after you* (Jubilees 27:11). The Abrahamic covenant — the land, the seed, the multitude — passes intact to Jacob. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55709
+  FROM _session252_ja29_lookup sv, _session252_ja29_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=24
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=29 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-29-esau-wives-ishmael-dies',
+       E'Esau''s Hittite wives and the death of Ishmael',
+       E'*And the wives of Esau vexed and provoked Isaac and Rebecca with their works, for they walked not in the ways of Yahuah (the Lord), but served their father’s gods of wood and stone* (Jasher 29:14). Genesis already marked Esau''s foreign marriages as a grief: *And Esau was forty years old when he took to wife Judith the daughter of Beeri the Hittite, and Bashemath the daughter of Elon the Hittite* (Genesis 26:34). In the same span Jasher records Ishmael''s death — *And Ishmael the son of Abraham died in those days, in the sixty-forth year of the life of Jacob, and all the days that Ishmael lived were one hundred and thirty-seven years* (Jasher 29:18) — exactly Genesis: *And these are the years of the life of Ishmael, an hundred and thirty and seven years: and he gave up the ghost and died; and was gathered unto his people* (Genesis 25:17). Even Ishmael''s line was kept under blessing: *And as for Ishmael, I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation* (Genesis 17:20). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55712
+  FROM _session252_ja29_lookup sv, _session252_ja29_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=29 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-29-eliphaz-robs-jacob',
+       E'Eliphaz pursues Jacob — Yahuah grants favor and spares his life',
+       E'Jasher fills in a scene Genesis only implies: Esau sends his son to ambush the fleeing Jacob. *Behold all that I have and which my father and mother gave to me, that take to you and go from me, and do not slay me, and may this thing be accounted to you a righteousness* (Jasher 29:37), *And Yahuah (the Lord) caused Jacob to find favor in the sight of Eliphaz the son of Esau, and his men, and they hearkened to the voice of Jacob, and they did not put him to death* (Jasher 29:38). This is the seed kept by Yahuah''s own hand even when stripped of silver and gold — the covenant promise "I am with thee, and will keep thee in all places whither thou goest" worked out in the road. Genesis closed the marriage frame the same chapter, *Then went Esau unto Ishmael, and took unto the wives which he had Mahalath the daughter of Ishmael Abraham’s son, the sister of Nebajoth, to be his wife* (Genesis 28:9), which Jasher 29:43 retells as Esau takes Machlath. The chosen line is preserved; the kingdom-of-man''s sword does not prevail.',
+       sv.verse_id, ev.verse_id, 'extras', 55715
+  FROM _session252_ja29_lookup sv, _session252_ja29_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=31
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=29 AND ev.verse_number=43
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-29-stolen-blessing
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 27:19 — *And Jacob said unto his father, I am Esau thy firstborn; I have done according as thou badest me: arise, I pray thee, sit and eat of my venison, that thy soul may bless me.* The Genesis source of Jacob''s claim to the blessing that Jasher 29:7 retells.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-stolen-blessing'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=27 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 27:17 — *And she gave the savoury meat and the bread, which she had prepared, into the hand of her son Jacob.* Rebecca''s hand in the savory meat, the same dish Jacob carries to Isaac in Jasher 29:6.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-stolen-blessing'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=27 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 26:13 — *And Jacob went in to his father and said: “I am your son: I have done according as you bade me: arise and sit and eat of that which I have caught, father, that your soul may bless me.”* The Jubilees telling of the same scene, the third witness to Jasher 29:7.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-stolen-blessing'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=7
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=26 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-29-despised-birthright-election
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 27:36 — *And he said, Is not he rightly named Jacob? for he hath supplanted me these two times: he took away my birthright; and, behold, now he hath taken away my blessing. And he said, Hast thou not reserved a blessing for me?* The Genesis source of Esau''s "supplanted me twice" cry in Jasher 29:10.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-despised-birthright-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=27 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:34 — *Then Jacob gave Esau bread and pottage of lentiles; and he did eat and drink, and rose up, and went his way: thus Esau despised his birthright.* The first of the two supplantings Jasher 29:10 names — Esau himself despised the birthright.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-despised-birthright-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 12:16 — *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright.* The apostle''s verdict on the profane Esau whose loss Jasher 29:10 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-despised-birthright-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Romans 9:13 — *As it is written, Jacob have I loved, but Esau have I hated.* The election standing behind the blessing Jacob takes in Jasher 29:10 — the seed-line chosen, not earned.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-despised-birthright-election'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-29-jacob-flees-keeps-the-way
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 27:43 — *Now therefore, my son, obey my voice; and arise, flee thou to Laban my brother to Haran;* Rebekah''s command that drives Jacob''s flight in Jasher 29:11 and 29:23.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-jacob-flees-keeps-the-way'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=27 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 27:3 — *Now, therefore, my son, obey my voice, and arise and flee you to Laban, my brother, to Haran, and tarry with him a few days until your brother’s anger turns away, and he remove his anger from you, and forget all that you have done; then I will send and fetch you from thence.* The Jubilees telling of Rebecca''s same charge to flee to Haran, paralleling Jasher 29:23.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-jacob-flees-keeps-the-way'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=23
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=27 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-29-isaac-charge-abrahamic-blessing
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 28:1 — *And Isaac called Jacob, and blessed him, and charged him, and said unto him, Thou shalt not take a wife of the daughters of Canaan.* The Genesis charge that Jasher 29:24 retells as Isaac sends Jacob to Haran.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-isaac-charge-abrahamic-blessing'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 28:3 — *And El Shaddai (God Almighty) bless thee, and make thee fruitful, and multiply thee, that thou mayest be a multitude of people;* The El Shaddai blessing of fruitfulness that Jasher 29:29 carries word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-isaac-charge-abrahamic-blessing'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 28:4 — *And give thee the blessing of Abraham, to thee, and to thy seed with thee; that thou mayest inherit the land wherein thou art a stranger, which Elohim (God) gave unto Abraham.* The blessing of Abraham passing to Jacob and his seed, the same words as Jasher 29:29.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-isaac-charge-abrahamic-blessing'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 27:11 — *And El Shaddai (God Almighty) bless you and increase and multiply you that you may become a company of nations, and give you the blessings of my father Abraham, to you and to your seed after you, that you may inherit the land of your sojournings and all the land which Elohim (God) gave to Abraham: go, my son, in peace.* The Jubilees telling of the same Abrahamic blessing Isaac gives in Jasher 29:29.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-isaac-charge-abrahamic-blessing'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=29
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=27 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-29-esau-wives-ishmael-dies
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 26:34 — *And Esau was forty years old when he took to wife Judith the daughter of Beeri the Hittite, and Bashemath the daughter of Elon the Hittite:* The Genesis record of Esau''s Hittite marriages that grieved Isaac, the same daughters-of-Heth Jasher 29:14-17 names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-esau-wives-ishmael-dies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:17 — *And these are the years of the life of Ishmael, an hundred and thirty and seven years: and he gave up the ghost and died; and was gathered unto his people.* The Genesis notice of Ishmael''s death at 137 years, the very figure Jasher 29:18 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-esau-wives-ishmael-dies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 17:20 — *And as for Ishmael, I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation.* Ishmael, whose death Jasher 29:18 records, was himself kept under Abraham''s blessing — the seed-line''s wider mercy.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-esau-wives-ishmael-dies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-29-eliphaz-robs-jacob
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 28:15 — *And, behold, I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of.* Yahuah''s keeping of Jacob "in all places" is exactly the favor that spares him from Eliphaz''s sword in Jasher 29:38.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-eliphaz-robs-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=38
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 28:9 — *Then went Esau unto Ishmael, and took unto the wives which he had Mahalath the daughter of Ishmael Abraham’s son, the sister of Nebajoth, to be his wife.* The Genesis source of Esau''s marriage to Machlath the daughter of Ishmael that closes Jasher 29:43.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja29_lookup sv, _session252_ja29_lookup tv
+ WHERE t.slug='jasher-29-eliphaz-robs-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=29 AND sv.verse_number=43
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_30.sql (session252 jasher 30) -----
+-- Source anchor: jasher/jasher ch30. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja30 (view _session252_ja30_lookup). Sort band base 55725, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja30_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-30-bethel-ladder
+  ('jasher', 'jasher', 30, 1, 'canon', 'genesis', 28, 13, 'free', E'Genesis 28:13 — *And, behold, Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed;* The same covenant word Jasher 30:1 puts in Yahuah''s mouth over Jacob at Luz.'),
+  ('jasher', 'jasher', 30, 1, 'canon', 'genesis', 28, 12, 'free', E'Genesis 28:12 — *And he dreamed, and behold a ladder set up on the earth, and the top of it reached to heaven: and behold the angels of Elohim (God) ascending and descending on it.* The ladder vision Jasher 30:1 compresses into Yahuah appearing to Jacob that night.'),
+  ('jasher', 'jasher', 30, 2, 'canon', 'genesis', 28, 15, 'free', E'Genesis 28:15 — *And, behold, I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of.* The keeping-and-return promise Jasher 30:2 expands with the multiplied seed and victory over enemies.'),
+  ('jasher', 'jasher', 30, 3, 'canon', 'genesis', 28, 19, 'free', E'Genesis 28:19 — *And he called the name of that place Beth-el: but the name of that city was called Luz at the first.* Jasher 30:3 names the place Bethel just as Genesis does, the city formerly Luz.'),
+  ('jasher', 'jasher', 30, 1, 'canon', 'john', 1, 51, 'free', E'John 1:51 — *And he saith unto him, Verily, verily, I say unto you, Hereafter ye shall see heaven open, and the angels of Elohim (God) ascending and descending upon the Son of Adam.* The Messiah is the Bethel ladder of Jasher 30:1 — heaven opened, earth joined, on the Son of Adam.'),
+  ('jasher', 'jasher', 30, 3, 'jubilees', 'jubilees', 27, 21, 'extras', E'Jubilees 27:21 — *And he dreamt that night, and behold a ladder set up on the earth, and the top of it reached to heaven, and behold, the angels of Yahuah (God) ascended and descended on it: and behold, Yahuah (God) stood upon it...* Jubilees narrates the identical Bethel night that Jasher 30:1-3 retells.'),
+  -- thread: jasher-30-well-rachel
+  ('jasher', 'jasher', 30, 4, 'canon', 'genesis', 29, 2, 'free', E'Genesis 29:2 — *And he looked, and behold a well in the field, and, lo, there were three flocks of sheep lying by it; for out of that well they watered the flocks: and a great stone was upon the well''s mouth.* The shepherd''s well of Jasher 30:4 where Jacob waits at Haran.'),
+  ('jasher', 'jasher', 30, 6, 'canon', 'genesis', 29, 6, 'free', E'Genesis 29:6 — *And he said unto them, Is he well? And they said, He is well: and, behold, Rachel his daughter cometh with the sheep.* The shepherds'' answer that Rachel is coming, matched by Jasher 30:6.'),
+  ('jasher', 'jasher', 30, 7, 'canon', 'genesis', 29, 9, 'free', E'Genesis 29:9 — *And while he yet spake with them, Rachel came with her father''s sheep: for she kept them.* Jasher 30:7 has the same — Rachel the shepherdess arriving while Jacob still speaks with the men.'),
+  ('jasher', 'jasher', 30, 8, 'canon', 'genesis', 29, 11, 'free', E'Genesis 29:11 — *And Jacob kissed Rachel, and lifted up his voice, and wept.* The very gesture Jasher 30:8 records as Jacob sees his mother''s brother''s daughter.'),
+  -- thread: jasher-30-laban-leah-rachel-seven-years
+  ('jasher', 'jasher', 30, 10, 'canon', 'genesis', 29, 13, 'free', E'Genesis 29:13 — *And it came to pass, when Laban heard the tidings of Jacob his sister''s son, that he ran to meet him, and embraced him, and kissed him, and brought him to his house. And he told Laban all these things.* The welcome Jasher 30:10 gives — Laban running, kissing, embracing, bringing Jacob in.'),
+  ('jasher', 'jasher', 30, 12, 'canon', 'genesis', 29, 15, 'free', E'Genesis 29:15 — *And Laban said unto Jacob, Because thou art my brother, shouldest thou therefore serve me for nought? tell me, what shall thy wages be?* The wage question Jasher 30:12 puts in Laban''s mouth word for word.'),
+  ('jasher', 'jasher', 30, 13, 'canon', 'genesis', 29, 17, 'free', E'Genesis 29:17 — *Leah was tender eyed; but Rachel was beautiful and well favoured.* The same description of the two daughters carried in Jasher 30:13.'),
+  ('jasher', 'jasher', 30, 14, 'canon', 'genesis', 29, 18, 'free', E'Genesis 29:18 — *And Jacob loved Rachel; and said, I will serve thee seven years for Rachel thy younger daughter.* The seven-year bond for Rachel that Jasher 30:14 records.'),
+  ('jasher', 'jasher', 30, 14, 'jubilees', 'jubilees', 28, 1, 'extras', E'Jubilees 28:1 — *And he went on his journey, and came to the land of the east, to Laban, the brother of Rebecca, and he was with him, and served him for Rachel his daughter one week.* Jubilees narrates the same service-for-Rachel that Jasher 30:14 sets at seven years.'),
+  -- thread: jasher-30-eber-dies-seed-line
+  ('jasher', 'jasher', 30, 15, 'canon', 'genesis', 11, 17, 'free', E'Genesis 11:17 — *And Eber lived after he begat Peleg four hundred and thirty years, and begat sons and daughters.* The same Eber of the seed-line whose death Jasher 30:15 sets in Jacob''s seventy-ninth year.'),
+  ('jasher', 'jasher', 30, 15, 'canon', 'luke', 3, 35, 'free', E'Luke 3:35 — *Which was the son of Saruch, which was the son of Ragau, which was the son of Phalec, which was the son of Heber, which was the son of Sala,* Eber stands in the Messiah''s own genealogy, the kept line Jasher 30:15 pauses to mourn.'),
+  -- thread: jasher-30-esau-wives-seir
+  ('jasher', 'jasher', 30, 25, 'canon', 'genesis', 36, 5, 'free', E'Genesis 36:5 — *And Aholibamah bare Jeush, and Jaalam, and Korah: these are the sons of Esau, which were born unto him in the land of Canaan.* The three sons of Aholibamah that Jasher 30:25 names Yeush, Yaalan, and Korah.'),
+  ('jasher', 'jasher', 30, 27, 'canon', 'genesis', 36, 6, 'free', E'Genesis 36:6 — *And Esau took his wives, and his sons, and his daughters, and all the persons of his house, and his cattle, and all his beasts, and all his substance, which he had got in the land of Canaan; and went into the country from the face of his brother Jacob.* Esau''s departure from Canaan that Jasher 30:27 sends to the land of Seir.'),
+  ('jasher', 'jasher', 30, 26, 'canon', 'genesis', 36, 7, 'free', E'Genesis 36:7 — *For their riches were more than that they might dwell together; and the land wherein they were strangers could not bear them because of their cattle.* The reason for the move Jasher 30:26 gives — Esau''s cattle too abundant for Canaan to bear.'),
+  ('jasher', 'jasher', 30, 27, 'jubilees', 'jubilees', 29, 17, 'extras', E'Jubilees 29:17 — *For in the days when Jacob went to Mesopotamia, Esau took to himself a wife Mahalath, the daughter of Ishmael, and he gathered together all the flocks of his father and his wives, and went up and dwelt on Mount Seir, and left Isaac his father at the Well of the Oath alone.* Jubilees sets Esau''s move to Seir in the same span Jasher 30:27 does — while Jacob serves Laban.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja30_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja30_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-30-bethel-ladder',
+       E'The ladder at Bethel — Yahuah stands above and gives the land to the seed',
+       E'Jacob breaks his journey at Moriah near Luz, and the covenant is spoken over him: *And Yahuah (the Lord) appeared there to Jacob on that night, and he said to him, I am Yahuah Elohim (the Lord God) of Abraham and the Elohim (God) of Isaac your father; the land upon which you lie I will give to you and your seed.* (Jasher 30:1) This is Genesis 28''s dream retold — *And he dreamed, and behold a ladder set up on the earth, and the top of it reached to heaven: and behold the angels of Elohim (God) ascending and descending on it* (Genesis 28:12), and the same word given there, *I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed* (Genesis 28:13). The election runs in the seed-line — the land is promised to the chosen seed, not earned. Jubilees narrates the very same night: *And he dreamt that night, and behold a ladder set up on the earth, and the top of it reached to heaven, and behold, the angels of Yahuah (God) ascended and descended on it* (Jubilees 27:21). And the Messiah names Himself the ladder — heaven joined to earth on the Son of Adam: *And he saith unto him, Verily, verily, I say unto you, Hereafter ye shall see heaven open, and the angels of Elohim (God) ascending and descending upon the Son of Adam* (John 1:51). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55725
+  FROM _session252_ja30_lookup sv, _session252_ja30_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=30 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-30-well-rachel',
+       E'The well at Haran — Rachel the shepherdess',
+       E'Jacob reaches the East and waits where the flocks are watered: *he returned to Haran and he set by the shepherd''s well* (Jasher 30:4), and the shepherds tell him *behold his daughter Rachel is coming along to feed her father''s flock* (Jasher 30:6). This is Genesis 29 scene for scene — *And he looked, and behold a well in the field, and, lo, there were three flocks of sheep lying by it; for out of that well they watered the flocks: and a great stone was upon the well''s mouth* (Genesis 29:2), and the same answer at the well, *And he said unto them, Is he well? And they said, He is well: and, behold, Rachel his daughter cometh with the sheep* (Genesis 29:6). When she comes, Jacob weeps over her: *And when Jacob saw Rachel, the daughter of Laban, his mother''s brother, he ran and kissed her, and lifted up his voice and wept* (Jasher 30:8) — the canon''s own *And Jacob kissed Rachel, and lifted up his voice, and wept* (Genesis 29:11). The seed-line meets its mother at a well; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55728
+  FROM _session252_ja30_lookup sv, _session252_ja30_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=30 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-30-laban-leah-rachel-seven-years',
+       E'Laban''s house — Leah and Rachel, seven years for Rachel',
+       E'Laban welcomes his sister''s son and asks his wage: *afterward Laban said to Jacob, Tell me what shall be your wages, for how can you serve me for nought?* (Jasher 30:12). Genesis frames it identically — *And Laban said unto Jacob, Because thou art my brother, shouldest thou therefore serve me for nought? tell me, what shall thy wages be?* (Genesis 29:15). The two daughters are named, and the heart is set: *the name of the elder was Leah and the name of the younger was Rachel; and Leah was tender-eyed, but Rachel was beautiful and well favored, and Jacob loved her* (Jasher 30:13), the canon''s *Leah was tender eyed; but Rachel was beautiful and well favoured* (Genesis 29:17). Then the bond: *I will serve you seven years for Rachel your younger daughter* (Jasher 30:14) — *And Jacob loved Rachel; and said, I will serve thee seven years for Rachel thy younger daughter* (Genesis 29:18). Jubilees keeps the same account: *And he went on his journey, and came to the land of the east, to Laban, the brother of Rebecca, and he was with him, and served him for Rachel his daughter one week* (Jubilees 28:1). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55731
+  FROM _session252_ja30_lookup sv, _session252_ja30_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=10
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=30 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-30-eber-dies-seed-line',
+       E'The death of Eber — the kept seed-line marks the years',
+       E'Jasher dates Jacob''s exile by a death in the chosen line: *in the seventy ninth year of the life of Jacob, in that year died Eber the son of Shem, he was four hundred and sixty-four years old at his death* (Jasher 30:15), and Jacob mourns him: *And when Jacob heard that Eber was dead he grieved exceedingly, and he lamented and mourned over him many days* (Jasher 30:16). This is Jasher''s legendary expansion, not in Genesis 29''s narrative — but the man is the canon''s own seed-line link Adam→Seth→Noah→Shem→Eber→Abraham. Genesis records him and his years: *And Eber lived after he begat Peleg four hundred and thirty years, and begat sons and daughters* (Genesis 11:17), and Luke threads him into the Messiah''s own line: *Which was the son of Heber, which was the son of Sala, which was the son of Cainan* (Luke 3:35). The seed is kept and counted, generation by generation; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55734
+  FROM _session252_ja30_lookup sv, _session252_ja30_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=15
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=30 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-30-esau-wives-seir',
+       E'Esau''s wives and the move to Seir — the brother parts from the seed',
+       E'While Jacob serves in Haran, Jasher tracks the rejected brother: Ahlibamah *bare to Esau three sons, Yeush, Yaalan, and Korah* (Jasher 30:25), and when his cattle outgrew Canaan, *he rose up and took his wives and his sons and his daughters... and he went away from the inhabitants of the land to the land of Seir, and Esau and all belonging to him dwelt in the land of Seir* (Jasher 30:27). Genesis 36 tells it the same way — *And Aholibamah bare Jeush, and Jaalam, and Korah: these are the sons of Esau, which were born unto him in the land of Canaan* (Genesis 36:5), and *Esau took his wives, and his sons, and his daughters... and went into the country from the face of his brother Jacob. For their riches were more than that they might dwell together; and the land wherein they were strangers could not bear them because of their cattle* (Genesis 36:6-7). The election holds: Jacob keeps the land of promise and Esau departs to Seir. Jubilees records the same parting — *Esau took to himself a wife Mahalath, the daughter of Ishmael, and he gathered together all the flocks of his father and his wives, and went up and dwelt on Mount Seir* (Jubilees 29:17). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55737
+  FROM _session252_ja30_lookup sv, _session252_ja30_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=25
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=30 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-30-bethel-ladder
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 28:13 — *And, behold, Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed;* The same covenant word Jasher 30:1 puts in Yahuah''s mouth over Jacob at Luz.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-bethel-ladder'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 28:12 — *And he dreamed, and behold a ladder set up on the earth, and the top of it reached to heaven: and behold the angels of Elohim (God) ascending and descending on it.* The ladder vision Jasher 30:1 compresses into Yahuah appearing to Jacob that night.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-bethel-ladder'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 28:15 — *And, behold, I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of.* The keeping-and-return promise Jasher 30:2 expands with the multiplied seed and victory over enemies.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-bethel-ladder'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 28:19 — *And he called the name of that place Beth-el: but the name of that city was called Luz at the first.* Jasher 30:3 names the place Bethel just as Genesis does, the city formerly Luz.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-bethel-ladder'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'John 1:51 — *And he saith unto him, Verily, verily, I say unto you, Hereafter ye shall see heaven open, and the angels of Elohim (God) ascending and descending upon the Son of Adam.* The Messiah is the Bethel ladder of Jasher 30:1 — heaven opened, earth joined, on the Son of Adam.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-bethel-ladder'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=51
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Jubilees 27:21 — *And he dreamt that night, and behold a ladder set up on the earth, and the top of it reached to heaven, and behold, the angels of Yahuah (God) ascended and descended on it: and behold, Yahuah (God) stood upon it...* Jubilees narrates the identical Bethel night that Jasher 30:1-3 retells.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-bethel-ladder'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=3
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=27 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-30-well-rachel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 29:2 — *And he looked, and behold a well in the field, and, lo, there were three flocks of sheep lying by it; for out of that well they watered the flocks: and a great stone was upon the well''s mouth.* The shepherd''s well of Jasher 30:4 where Jacob waits at Haran.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-well-rachel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 29:6 — *And he said unto them, Is he well? And they said, He is well: and, behold, Rachel his daughter cometh with the sheep.* The shepherds'' answer that Rachel is coming, matched by Jasher 30:6.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-well-rachel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 29:9 — *And while he yet spake with them, Rachel came with her father''s sheep: for she kept them.* Jasher 30:7 has the same — Rachel the shepherdess arriving while Jacob still speaks with the men.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-well-rachel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 29:11 — *And Jacob kissed Rachel, and lifted up his voice, and wept.* The very gesture Jasher 30:8 records as Jacob sees his mother''s brother''s daughter.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-well-rachel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-30-laban-leah-rachel-seven-years
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 29:13 — *And it came to pass, when Laban heard the tidings of Jacob his sister''s son, that he ran to meet him, and embraced him, and kissed him, and brought him to his house. And he told Laban all these things.* The welcome Jasher 30:10 gives — Laban running, kissing, embracing, bringing Jacob in.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-laban-leah-rachel-seven-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 29:15 — *And Laban said unto Jacob, Because thou art my brother, shouldest thou therefore serve me for nought? tell me, what shall thy wages be?* The wage question Jasher 30:12 puts in Laban''s mouth word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-laban-leah-rachel-seven-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 29:17 — *Leah was tender eyed; but Rachel was beautiful and well favoured.* The same description of the two daughters carried in Jasher 30:13.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-laban-leah-rachel-seven-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 29:18 — *And Jacob loved Rachel; and said, I will serve thee seven years for Rachel thy younger daughter.* The seven-year bond for Rachel that Jasher 30:14 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-laban-leah-rachel-seven-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 28:1 — *And he went on his journey, and came to the land of the east, to Laban, the brother of Rebecca, and he was with him, and served him for Rachel his daughter one week.* Jubilees narrates the same service-for-Rachel that Jasher 30:14 sets at seven years.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-laban-leah-rachel-seven-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=14
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-30-eber-dies-seed-line
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:17 — *And Eber lived after he begat Peleg four hundred and thirty years, and begat sons and daughters.* The same Eber of the seed-line whose death Jasher 30:15 sets in Jacob''s seventy-ninth year.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-eber-dies-seed-line'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 3:35 — *Which was the son of Saruch, which was the son of Ragau, which was the son of Phalec, which was the son of Heber, which was the son of Sala,* Eber stands in the Messiah''s own genealogy, the kept line Jasher 30:15 pauses to mourn.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-eber-dies-seed-line'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=3 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-30-esau-wives-seir
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:5 — *And Aholibamah bare Jeush, and Jaalam, and Korah: these are the sons of Esau, which were born unto him in the land of Canaan.* The three sons of Aholibamah that Jasher 30:25 names Yeush, Yaalan, and Korah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-esau-wives-seir'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:6 — *And Esau took his wives, and his sons, and his daughters, and all the persons of his house, and his cattle, and all his beasts, and all his substance, which he had got in the land of Canaan; and went into the country from the face of his brother Jacob.* Esau''s departure from Canaan that Jasher 30:27 sends to the land of Seir.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-esau-wives-seir'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 36:7 — *For their riches were more than that they might dwell together; and the land wherein they were strangers could not bear them because of their cattle.* The reason for the move Jasher 30:26 gives — Esau''s cattle too abundant for Canaan to bear.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-esau-wives-seir'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 29:17 — *For in the days when Jacob went to Mesopotamia, Esau took to himself a wife Mahalath, the daughter of Ishmael, and he gathered together all the flocks of his father and his wives, and went up and dwelt on Mount Seir, and left Isaac his father at the Well of the Oath alone.* Jubilees sets Esau''s move to Seir in the same span Jasher 30:27 does — while Jacob serves Laban.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja30_lookup sv, _session252_ja30_lookup tv
+ WHERE t.slug='jasher-30-esau-wives-seir'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=30 AND sv.verse_number=27
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=29 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_31.sql (session252 jasher 31) -----
+-- Source anchor: jasher/jasher ch31. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja31 (view _session252_ja31_lookup). Sort band base 55750, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja31_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-31-leah-rachel-wedding-deception
+  ('jasher', 'jasher', 31, 4, 'canon', 'genesis', 29, 23, 'free', E'Genesis 29:23 — *And it came to pass in the evening, that he took Leah his daughter, and brought her to him; and he went in unto her.* The canon''s terse wedding-night line is the scene Jasher 31:4 expands with the extinguished lamps and the unwitting Jacob.'),
+  ('jasher', 'jasher', 31, 11, 'canon', 'genesis', 29, 25, 'free', E'Genesis 29:25 — *And it came to pass, that in the morning, behold, it was Leah: and he said to Laban, What is this thou hast done unto me? did not I serve with thee for Rachel? wherefore then hast thou beguiled me?* Jacob''s morning protest in Jasher 31:11 is the same charge of deceit lodged in Genesis.'),
+  ('jasher', 'jasher', 31, 12, 'canon', 'genesis', 29, 26, 'free', E'Genesis 29:26 — *And Laban said, It must not be so done in our country, to give the younger before the firstborn.* Laban''s elder-before-younger custom in Jasher 31:12 quotes the canon''s defense almost verbatim.'),
+  ('jasher', 'jasher', 31, 4, 'jubilees', 'jubilees', 28, 4, 'extras', E'Jubilees 28:4 — *And he went in to her, and behold, she was Leah; and Jacob was angry with Laban, and said to him: “Why have you dealt thus with me? Did not I serve you for Rachel and not for Leah?* Jubilees narrates the same deceived wedding night that Jasher 31:4 tells, the two extra-canon witnesses agreeing with Genesis.'),
+  -- thread: jasher-31-twelve-tribes-begin
+  ('jasher', 'jasher', 31, 14, 'canon', 'genesis', 29, 31, 'free', E'Genesis 29:31 — *And when Yahuah (LORD) saw that Leah was hated, he opened her womb: but Rachel was barren.* Jasher 31:14 retells this opening of Leah''s womb that begins the tribal births.'),
+  ('jasher', 'jasher', 31, 18, 'canon', 'genesis', 30, 21, 'free', E'Genesis 30:21 — *And afterwards she bare a daughter, and called her name Dinah.* The sister named in Jasher 31:18 alongside Issachar and Zebulon is the canon''s Dinah.'),
+  ('jasher', 'jasher', 31, 15, 'canon', 'exodus', 1, 1, 'free', E'Exodus 1:1 — *Now these are the names of the children of Yashar''el (Israel), which came into Egypt; every man and his household came with Jacob.* The sons Jasher 31:15 begins naming are the very tribes that become the nation in Egypt.'),
+  ('jasher', 'jasher', 31, 15, 'jubilees', 'jubilees', 28, 11, 'extras', E'Jubilees 28:11 — *And Yahuah (God) opened the womb of Leah, and she conceived and bare Jacob a son, and he called his name Reuben, on the fourteenth day of the ninth month, in the first year of the third week.* Jubilees dates the first of the sons Jasher 31:15 lists, the same tribal beginning.'),
+  -- thread: jasher-31-rachel-prayer-joseph
+  ('jasher', 'jasher', 31, 21, 'canon', 'genesis', 30, 22, 'free', E'Genesis 30:22 — *And Elohim (God) remembered Rachel, and Elohim (God) hearkened to her, and opened her womb.* Rachel''s answered supplication in Jasher 31:19-21 is the canon''s remembering of Rachel.'),
+  ('jasher', 'jasher', 31, 21, 'canon', 'genesis', 30, 23, 'free', E'Genesis 30:23 — *And she conceived, and bare a son; and said, Elohim (God) hath taken away my reproach.* The exact words Jasher 31:21 puts in Rachel''s mouth at Joseph''s naming.'),
+  ('jasher', 'jasher', 31, 19, 'jubilees', 'jubilees', 28, 24, 'extras', E'Jubilees 28:24 — *And Yahuah (God) was gracious to Rachel, and opened her womb, and she conceived, and bare a son, and she called his name Joseph, on the new moon of the fourth month, in the sixth year in this fourth week.* Jubilees dates the birth that answers Rachel''s prayer in Jasher 31:19.'),
+  -- thread: jasher-31-speckled-flocks-increase
+  ('jasher', 'jasher', 31, 26, 'canon', 'genesis', 30, 32, 'free', E'Genesis 30:32 — *I will pass through all thy flock to day, removing from thence all the speckled and spotted cattle, and all the brown cattle among the sheep, and the spotted and speckled among the goats: and of such shall be my hire.* The very wage-terms Jacob names in Jasher 31:26.'),
+  ('jasher', 'jasher', 31, 31, 'canon', 'genesis', 30, 43, 'free', E'Genesis 30:43 — *And the man increased exceedingly, and had much cattle, and maidservants, and menservants, and camels, and asses.* Jasher 31:31 closes the flock account with the canon''s identical inventory of Jacob''s increase.'),
+  ('jasher', 'jasher', 31, 35, 'canon', 'genesis', 31, 1, 'free', E'Genesis 31:1 — *And he heard the words of Laban''s sons, saying, Jacob hath taken away all that was our father''s; and of that which was our father''s hath he gotten all this glory.* The envy of Laban''s sons in Jasher 31:35 is quoted nearly word for word from the canon.'),
+  ('jasher', 'jasher', 31, 31, 'jubilees', 'jubilees', 28, 29, 'extras', E'Jubilees 28:29 — *And Jacob''s possessions multiplied exceedingly, and he possessed oxen and sheep and asses and camels, and menservants and maidservants. And Laban and his sons envied Jacob.* Jubilees joins the same multiplying-and-envy Jasher 31:31-35 records.'),
+  -- thread: jasher-31-flight-rachel-teraphim
+  ('jasher', 'jasher', 31, 37, 'canon', 'genesis', 31, 3, 'free', E'Genesis 31:3 — *And Yahuah (LORD) said unto Jacob, Return unto the land of thy fathers, and to thy kindred; and I will be with thee.* The departure command of Jasher 31:37 is the canon''s call to return, with the same “I will be with thee.”'),
+  ('jasher', 'jasher', 31, 40, 'canon', 'genesis', 31, 19, 'free', E'Genesis 31:19 — *And Laban went to shear his sheep: and Rachel had stolen the images that were her father''s.* Rachel''s theft of the teraphim in Jasher 31:40 retells this canon line, sheep-shearing and all.'),
+  ('jasher', 'jasher', 31, 37, 'jubilees', 'jubilees', 29, 2, 'extras', E'Jubilees 29:2 — *And Jacob saw that Laban was going to shear his sheep, and Jacob called Leah and Rachel, and spake kindly to them that they should come with him to the land of Canaan.* Jubilees narrates the same shearing-day flight Jasher 31:37-40 sets up.'),
+  -- thread: jasher-31-laban-pursuit-gilead-heap
+  ('jasher', 'jasher', 31, 51, 'canon', 'genesis', 31, 50, 'free', E'Genesis 31:50 — *If thou shalt afflict my daughters, or if thou shalt take other wives beside my daughters, no man is with us; see, Elohim (God) is witness betwixt me and thee.* The exact covenant condition Laban lays on Jacob in Jasher 31:51.'),
+  ('jasher', 'jasher', 31, 52, 'canon', 'genesis', 31, 44, 'free', E'Genesis 31:44 — *Now therefore come thou, let us make a covenant, I and thou; and let it be for a witness between me and thee.* Jasher 31:52''s heap-as-witness is the canon''s covenant of witness between Laban and Jacob.'),
+  ('jasher', 'jasher', 31, 52, 'jubilees', 'jubilees', 29, 8, 'extras', E'Jubilees 29:8 — *And he made there a heap for a witness; wherefore the name of that place is called: “The Heap of Witness,” after this heap.* Jubilees names the same Gilead heap-of-witness Jacob and Laban raise in Jasher 31:52.'),
+  -- thread: jasher-31-jacob-election-israel
+  ('jasher', 'jasher', 31, 64, 'canon', 'genesis', 25, 23, 'free', E'Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* Esau''s burning hatred in Jasher 31:64 stands against the womb-oracle that chose the younger Jacob.'),
+  ('jasher', 'jasher', 31, 64, 'canon', 'romans', 9, 11, 'free', E'Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* Paul reads Jacob-over-Esau, the very rivalry erupting in Jasher 31:64-65, as election before works.'),
+  ('jasher', 'jasher', 31, 65, 'canon', 'hebrews', 12, 16, 'free', E'Hebrews 12:16 — *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright.* The Esau who arms four hundred men in Jasher 31:65 is the profane brother who despised his birthright.'),
+  ('jasher', 'jasher', 31, 72, 'canon', 'hosea', 12, 3, 'free', E'Hosea 12:3 — *He took his brother by the heel in the womb, and by his strength he had power with Elohim (God):* The prophet recalls the heel-grasping Jacob whose host-of-Elohim camp Jasher 31:72 names Machnayim.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja31_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja31_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-31-leah-rachel-wedding-deception',
+       E'Heleah, Heleah — Laban deceives Jacob with Leah',
+       E'Jasher unfolds the wedding-night deception in detail: *And afterward Laban took his daughter Leah, and he brought her to Jacob, and he came to her and Jacob did not know that she was Leah* (Jasher 31:4), the neighbors crying *Heleah, Heleah* under the extinguished lamps as a hint Jacob does not catch (Jasher 31:7,10). This is the canon scene retold — *And it came to pass in the evening, that he took Leah his daughter, and brought her to him; and he went in unto her* (Genesis 29:23), and at daybreak *in the morning, behold, it was Leah: and he said to Laban, What is this thou hast done unto me? did not I serve with thee for Rachel? wherefore then hast thou beguiled me?* (Genesis 29:25). Laban''s defense in Jasher 31:12 echoes the canon word for word: *And Laban said, It must not be so done in our country, to give the younger before the firstborn* (Genesis 29:26). Jubilees narrates the same week: *And he went in to her, and behold, she was Leah; and Jacob was angry with Laban* (Jubilees 28:4). The deceiver Jacob is here deceived — the heel-grasper meets a cunning equal — yet the covenant seed is not derailed. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55750
+  FROM _session252_ja31_lookup sv, _session252_ja31_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=31 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-31-twelve-tribes-begin',
+       E'The twelve sons and Dinah — the tribes begin',
+       E'Jasher tracks the womb-war that founds the nation: *And these are their names, Reuben Simeon, Levi, and Judah* (Jasher 31:15), then Dan and Naphtali by Bilhah, Gad and Asher by Zilpah, then *Issachar, Zebulon, and their sister Dinah* (Jasher 31:18). This is Genesis told son by son — *And when Yahuah (LORD) saw that Leah was hated, he opened her womb: but Rachel was barren* (Genesis 29:31) opens it, and Jasher 31:14 carries the same line. Jubilees logs each birth by date: *And Yahuah (God) opened the womb of Leah, and she conceived and bare Jacob a son, and he called his name Reuben* (Jubilees 28:11). These twelve are the covenant people in seed-form — the same names that go down into Egypt: *Now these are the names of the children of Yashar''el (Israel), which came into Egypt; every man and his household came with Jacob* (Exodus 1:1). The twelve-tribe nation of Ezekiel''s two sticks begins here in a tent in Haran. The election is kept; the gathering has its root.',
+       sv.verse_id, ev.verse_id, 'extras', 55753
+  FROM _session252_ja31_lookup sv, _session252_ja31_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=31 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-31-rachel-prayer-joseph',
+       E'Rachel''s reproach taken away — the birth of Joseph',
+       E'Jasher gives Rachel a prayer the canon only implies: *O Yahuah Elohim (O Lord God) remember me and visit me, I beseech you, for now my husband will cast me off, for I have borne him no children* (Jasher 31:19), and Elohim answers — *and she said, Yahuah (the Lord) has taken away my reproach, and she called his name Joseph* (Jasher 31:21). Genesis is spare and exact at the same turn: *And Elohim (God) remembered Rachel, and Elohim (God) hearkened to her, and opened her womb* (Genesis 30:22), and *she conceived, and bare a son; and said, Elohim (God) hath taken away my reproach* (Genesis 30:23). Jubilees marks the day: *And Yahuah (God) was gracious to Rachel, and opened her womb, and she conceived, and bare a son, and she called his name Joseph* (Jubilees 28:24). The barren beloved is heard; the seed kept; Joseph — who will carry the whole house into Egypt and out — is given.',
+       sv.verse_id, ev.verse_id, 'extras', 55756
+  FROM _session252_ja31_lookup sv, _session252_ja31_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=19
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=31 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-31-speckled-flocks-increase',
+       E'The speckled wages — Jacob increased exceedingly',
+       E'Jasher sets the wage-bargain plainly: *that I shall this day pass through all your flock and take away from them every lamb that is speckled and spotted and such as are brown amongst the sheep, and amongst the goats* (Jasher 31:26), and the result — *the man increased abundantly and he had cattle and maid servants and men servants, camels, and asses* (Jasher 31:31). This is the speckled-flock account of Genesis: *I will pass through all thy flock to day, removing from thence all the speckled and spotted cattle, and all the brown cattle among the sheep* (Genesis 30:32), closing with the canon''s near-identical summary — *And the man increased exceedingly, and had much cattle, and maidservants, and menservants, and camels, and asses* (Genesis 30:43). Jubilees records the same multiplying and the same envy: *And Jacob''s possessions multiplied exceedingly, and he possessed oxen and sheep and asses and camels, and menservants and maidservants* (Jubilees 28:29). The blessing on the chosen seed outruns the schemer Laban; Yahuah, not the rods, makes him great.',
+       sv.verse_id, ev.verse_id, 'extras', 55759
+  FROM _session252_ja31_lookup sv, _session252_ja31_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=26
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=31 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-31-flight-rachel-teraphim',
+       E'The flight and the stolen teraphim',
+       E'Yahuah commands the return — *Arise, go forth out of this land, and return to the land of your birthplace and I will be with you* (Jasher 31:37) — and Jacob flees while Laban shears, *And Rachel stole her father''s images, and she took them and she concealed them upon the camel upon which she sat* (Jasher 31:40). The canon command is the same — *And Yahuah (LORD) said unto Jacob, Return unto the land of thy fathers, and to thy kindred; and I will be with thee* (Genesis 31:3) — and so is the theft: *And Laban went to shear his sheep: and Rachel had stolen the images that were her father''s* (Genesis 31:19). Jubilees tells it too: *And Jacob saw that Laban was going to shear his sheep, and Jacob called Leah and Rachel, and spake kindly to them that they should come with him to the land of Canaan* (Jubilees 29:2). Jasher 31:41-43 then adds its legendary recipe for the talking teraphim — idols that *speak* by a name and read the stars — exposing them as the dead, oracle-mongering counterfeit the chosen seed must leave behind. The household gods are carried off; the covenant Elohim goes with Jacob.',
+       sv.verse_id, ev.verse_id, 'extras', 55762
+  FROM _session252_ja31_lookup sv, _session252_ja31_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=37
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=31 AND ev.verse_number=44
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-31-laban-pursuit-gilead-heap',
+       E'The pursuit and the heap of witness at Gilead',
+       E'Laban overtakes Jacob and they cut a covenant: *We will make a covenant together and it shall be a testimony between me and you; if you shall afflict my daughters, or shall take other wives besides my daughters, even Elohim shall be a witness between me and you* (Jasher 31:51), and *they took stones and made a heap... therefore he called the name of it Gilead* (Jasher 31:52). The canon is the same covenant and the same heap — *Now therefore come thou, let us make a covenant, I and thou; and let it be for a witness between me and thee* (Genesis 31:44), and *If thou shalt afflict my daughters, or if thou shalt take other wives beside my daughters, no man is with us; see, Elohim (God) is witness betwixt me and thee* (Genesis 31:50). Jubilees names it likewise: *And he made there a heap for a witness; wherefore the name of that place is called: “The Heap of Witness,” after this heap* (Jubilees 29:8). Jacob, the heel-grasper, is delivered from Laban''s hand by oath and altar — the deceiver schemes but cannot keep the chosen seed; the fathers settle disputes with sacrifice and the Name as witness. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55765
+  FROM _session252_ja31_lookup sv, _session252_ja31_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=46
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=31 AND ev.verse_number=53
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-31-jacob-election-israel',
+       E'The supplanter chosen — Jacob, the elder shall serve the younger',
+       E'All of Jasher 31 turns on a man hated by his brother yet held by Elohim: Jacob serves, is cheated, increases, flees, and is delivered. Genesis named the choosing from the womb — *Two nations are in thy womb... and the elder shall serve the younger* (Genesis 25:23) — and Paul reads it as election before works: *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* (Romans 9:11). The despised birthright belongs to the other brother: *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright* (Hebrews 12:16) — and at this chapter''s end (Jasher 31:54-65) it is that same Esau who musters four hundred men against Jacob. The prophets keep the pattern: *He took his brother by the heel in the womb, and by his strength he had power with Elohim* (Hosea 12:3). Election precedes confession; the seed is kept not for Jacob''s merit but by Him that calleth. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55768
+  FROM _session252_ja31_lookup sv, _session252_ja31_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=64
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=31 AND ev.verse_number=77
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-31-leah-rachel-wedding-deception
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 29:23 — *And it came to pass in the evening, that he took Leah his daughter, and brought her to him; and he went in unto her.* The canon''s terse wedding-night line is the scene Jasher 31:4 expands with the extinguished lamps and the unwitting Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-leah-rachel-wedding-deception'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 29:25 — *And it came to pass, that in the morning, behold, it was Leah: and he said to Laban, What is this thou hast done unto me? did not I serve with thee for Rachel? wherefore then hast thou beguiled me?* Jacob''s morning protest in Jasher 31:11 is the same charge of deceit lodged in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-leah-rachel-wedding-deception'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 29:26 — *And Laban said, It must not be so done in our country, to give the younger before the firstborn.* Laban''s elder-before-younger custom in Jasher 31:12 quotes the canon''s defense almost verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-leah-rachel-wedding-deception'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 28:4 — *And he went in to her, and behold, she was Leah; and Jacob was angry with Laban, and said to him: “Why have you dealt thus with me? Did not I serve you for Rachel and not for Leah?* Jubilees narrates the same deceived wedding night that Jasher 31:4 tells, the two extra-canon witnesses agreeing with Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-leah-rachel-wedding-deception'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=4
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-31-twelve-tribes-begin
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 29:31 — *And when Yahuah (LORD) saw that Leah was hated, he opened her womb: but Rachel was barren.* Jasher 31:14 retells this opening of Leah''s womb that begins the tribal births.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-twelve-tribes-begin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 30:21 — *And afterwards she bare a daughter, and called her name Dinah.* The sister named in Jasher 31:18 alongside Issachar and Zebulon is the canon''s Dinah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-twelve-tribes-begin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=30 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:1 — *Now these are the names of the children of Yashar''el (Israel), which came into Egypt; every man and his household came with Jacob.* The sons Jasher 31:15 begins naming are the very tribes that become the nation in Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-twelve-tribes-begin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 28:11 — *And Yahuah (God) opened the womb of Leah, and she conceived and bare Jacob a son, and he called his name Reuben, on the fourteenth day of the ninth month, in the first year of the third week.* Jubilees dates the first of the sons Jasher 31:15 lists, the same tribal beginning.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-twelve-tribes-begin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=15
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-31-rachel-prayer-joseph
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 30:22 — *And Elohim (God) remembered Rachel, and Elohim (God) hearkened to her, and opened her womb.* Rachel''s answered supplication in Jasher 31:19-21 is the canon''s remembering of Rachel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-rachel-prayer-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=30 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 30:23 — *And she conceived, and bare a son; and said, Elohim (God) hath taken away my reproach.* The exact words Jasher 31:21 puts in Rachel''s mouth at Joseph''s naming.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-rachel-prayer-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=30 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 28:24 — *And Yahuah (God) was gracious to Rachel, and opened her womb, and she conceived, and bare a son, and she called his name Joseph, on the new moon of the fourth month, in the sixth year in this fourth week.* Jubilees dates the birth that answers Rachel''s prayer in Jasher 31:19.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-rachel-prayer-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=19
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-31-speckled-flocks-increase
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 30:32 — *I will pass through all thy flock to day, removing from thence all the speckled and spotted cattle, and all the brown cattle among the sheep, and the spotted and speckled among the goats: and of such shall be my hire.* The very wage-terms Jacob names in Jasher 31:26.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-speckled-flocks-increase'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=30 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 30:43 — *And the man increased exceedingly, and had much cattle, and maidservants, and menservants, and camels, and asses.* Jasher 31:31 closes the flock account with the canon''s identical inventory of Jacob''s increase.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-speckled-flocks-increase'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=30 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 31:1 — *And he heard the words of Laban''s sons, saying, Jacob hath taken away all that was our father''s; and of that which was our father''s hath he gotten all this glory.* The envy of Laban''s sons in Jasher 31:35 is quoted nearly word for word from the canon.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-speckled-flocks-increase'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=31 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 28:29 — *And Jacob''s possessions multiplied exceedingly, and he possessed oxen and sheep and asses and camels, and menservants and maidservants. And Laban and his sons envied Jacob.* Jubilees joins the same multiplying-and-envy Jasher 31:31-35 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-speckled-flocks-increase'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=31
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-31-flight-rachel-teraphim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 31:3 — *And Yahuah (LORD) said unto Jacob, Return unto the land of thy fathers, and to thy kindred; and I will be with thee.* The departure command of Jasher 31:37 is the canon''s call to return, with the same “I will be with thee.”'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-flight-rachel-teraphim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=31 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 31:19 — *And Laban went to shear his sheep: and Rachel had stolen the images that were her father''s.* Rachel''s theft of the teraphim in Jasher 31:40 retells this canon line, sheep-shearing and all.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-flight-rachel-teraphim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=40
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=31 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 29:2 — *And Jacob saw that Laban was going to shear his sheep, and Jacob called Leah and Rachel, and spake kindly to them that they should come with him to the land of Canaan.* Jubilees narrates the same shearing-day flight Jasher 31:37-40 sets up.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-flight-rachel-teraphim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=37
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=29 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-31-laban-pursuit-gilead-heap
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 31:50 — *If thou shalt afflict my daughters, or if thou shalt take other wives beside my daughters, no man is with us; see, Elohim (God) is witness betwixt me and thee.* The exact covenant condition Laban lays on Jacob in Jasher 31:51.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-laban-pursuit-gilead-heap'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=51
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=31 AND tv.verse_number=50
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 31:44 — *Now therefore come thou, let us make a covenant, I and thou; and let it be for a witness between me and thee.* Jasher 31:52''s heap-as-witness is the canon''s covenant of witness between Laban and Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-laban-pursuit-gilead-heap'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=52
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=31 AND tv.verse_number=44
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 29:8 — *And he made there a heap for a witness; wherefore the name of that place is called: “The Heap of Witness,” after this heap.* Jubilees names the same Gilead heap-of-witness Jacob and Laban raise in Jasher 31:52.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-laban-pursuit-gilead-heap'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=52
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=29 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-31-jacob-election-israel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* Esau''s burning hatred in Jasher 31:64 stands against the womb-oracle that chose the younger Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-jacob-election-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=64
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* Paul reads Jacob-over-Esau, the very rivalry erupting in Jasher 31:64-65, as election before works.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-jacob-election-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=64
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 12:16 — *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright.* The Esau who arms four hundred men in Jasher 31:65 is the profane brother who despised his birthright.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-jacob-election-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=65
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hosea 12:3 — *He took his brother by the heel in the womb, and by his strength he had power with Elohim (God):* The prophet recalls the heel-grasping Jacob whose host-of-Elohim camp Jasher 31:72 names Machnayim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja31_lookup sv, _session252_ja31_lookup tv
+ WHERE t.slug='jasher-31-jacob-election-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=31 AND sv.verse_number=72
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_32.sql (session252 jasher 32) -----
+-- Source anchor: jasher/jasher ch32. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja32 (view _session252_ja32_lookup). Sort band base 55775, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja32_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-32-messengers-to-esau
+  ('jasher', 'jasher', 32, 1, 'canon', 'genesis', 32, 3, 'free', E'Genesis 32:3 — *And Jacob sent messengers before him to Esau his brother unto the land of Seir, the country of Edom.* Jasher 32:1''s embassy ''toward the land of Seir'' is the same canon sending to Esau in Edom.'),
+  ('jasher', 'jasher', 32, 5, 'canon', 'genesis', 32, 5, 'free', E'Genesis 32:5 — *And I have oxen, and asses, flocks, and menservants, and womenservants: and I have sent to tell my lord, that I may find grace in thy sight.* Jasher 32:5''s list of oxen, asses, cattle and servants ''to find favor in the sight of my Lord'' is the same message Genesis records verbatim.'),
+  ('jasher', 'jasher', 32, 13, 'canon', 'genesis', 32, 6, 'free', E'Genesis 32:6 — *And the messengers returned to Jacob, saying, We came to thy brother Esau, and also he cometh to meet thee, and four hundred men with him.* Jasher 32:13''s returning messengers reporting Esau ''comes to meet you with four hundred men'' is the canon''s dread report unchanged.'),
+  -- thread: jasher-32-prayer-of-jacob
+  ('jasher', 'jasher', 32, 15, 'canon', 'genesis', 32, 7, 'free', E'Genesis 32:7 — *Then Jacob was greatly afraid and distressed: and he divided the people that was with him, and the flocks, and herds, and the camels, into two bands.* Jasher 32:15''s ''Jacob was greatly afraid and he was distressed'' and the two-camp division (Jasher 32:24) are the canon''s same fear and division.'),
+  ('jasher', 'jasher', 32, 16, 'canon', 'genesis', 32, 9, 'free', E'Genesis 32:9 — *And Jacob said, O Elohim (God) of my father Abraham, and Elohim (God) of my father Isaac, Yahuah (LORD) which saidst unto me, Return unto thy country, and to thy kindred, and I will deal well with thee.* Jasher 32:16''s invocation of ''the Elohim of my fathers, Abraham and Isaac'' is the canon prayer Jasher unfolds at length.'),
+  ('jasher', 'jasher', 32, 21, 'canon', 'genesis', 32, 11, 'free', E'Genesis 32:11 — *Deliver me, I pray thee, from the hand of my brother, from the hand of Esau: for I fear him, lest he will come and smite me, and the mother with the children.* Jasher 32:21''s ''deliver me from the hands of my brother Esau, for I am greatly afraid of him'' is the canon plea word for word.'),
+  ('jasher', 'jasher', 32, 17, 'canon', 'genesis', 32, 12, 'free', E'Genesis 32:12 — *And thou saidst, I will surely do thee good, and make thy seed as the sand of the sea, which cannot be numbered for multitude.* Jasher 32:17''s ''I will make your seed as the stars of heaven... in your seed shall all the families of the earth be blessed'' is the covenant-seed oath the canon prayer leans on.'),
+  -- thread: jasher-32-angel-camps-mahanaim
+  ('jasher', 'jasher', 32, 28, 'canon', 'genesis', 32, 1, 'free', E'Genesis 32:1 — *And Jacob went on his way, and the angels of Elohim (God) met him.* Jasher 32:28''s ''Yahuah sent three angels of the angels of heaven'' to go before Esau expands the canon''s bare meeting of the angels of Elohim.'),
+  ('jasher', 'jasher', 32, 29, 'canon', 'genesis', 32, 2, 'free', E'Genesis 32:2 — *And when Jacob saw them, he said, This is Elohim''s (God''s) host: and he called the name of that place Mahanaim.* Jasher 32:29''s angel camps ''divided into four camps'' carry the ''host of Elohim'' and the Mahanaim (''two camps'') the canon names.'),
+  ('jasher', 'jasher', 32, 27, 'canon', 'genesis', 32, 8, 'free', E'Genesis 32:8 — *And said, If Esau come to the one company, and smite it, then the other company which is left shall escape.* Jasher 32:25''s two-camp safeguard (''if Esau come to one camp and slay it, the other camp... will escape'') matches the canon plan exactly, the deliverance of Jasher 32:27 answering it.'),
+  -- thread: jasher-32-present-to-esau
+  ('jasher', 'jasher', 32, 43, 'canon', 'genesis', 32, 16, 'free', E'Genesis 32:16 — *And he delivered them into the hand of his servants, every drove by themselves; and said unto his servants, Pass over before me, and put a space betwixt drove and drove.* Jasher 32:43-44''s ten droves ''each sort by itself'' with ''a space between the droves'' is the canon staging verbatim.'),
+  ('jasher', 'jasher', 32, 44, 'canon', 'genesis', 32, 17, 'free', E'Genesis 32:17 — *And he commanded the foremost, saying, When Esau my brother meeteth thee, and asketh thee, saying, Whose art thou? and whither goest thou? and whose are these before thee?* Jasher 32:44''s instruction for when Esau asks ''Whose are you, and whither do you go'' matches the canon''s commanded answer.'),
+  ('jasher', 'jasher', 32, 46, 'canon', 'genesis', 32, 20, 'free', E'Genesis 32:20 — *And say ye moreover, Behold, thy servant Jacob is behind us. For he said, I will appease him with the present that goeth before me, and afterward I will see his face; peradventure he will accept of me.* Jasher 32:46''s ''I will appease him with the present... and after this I will see his face, peradventure he will accept of me'' is the canon''s reasoning nearly word for word.'),
+  -- thread: jasher-32-wrestling-peniel-israel
+  ('jasher', 'jasher', 32, 48, 'canon', 'genesis', 32, 24, 'free', E'Genesis 32:24 — *And Jacob was left alone; and there wrestled a man with him until the breaking of the day.* Jasher 32:48''s ''Jacob was left by himself, and a man met him, and he wrestled with him that night until the breaking of the day'' is the canon scene verbatim.'),
+  ('jasher', 'jasher', 32, 49, 'canon', 'genesis', 32, 28, 'free', E'Genesis 32:28 — *And he said, Thy name shall be called no more Jacob, but Yashar''el (Israel): for as a prince hast thou power with Elohim (God) and with men, and hast prevailed.* Jasher 32:49''s blessing at the break of day is the canon''s renaming — the name Israel born of this wrestling.'),
+  ('jasher', 'jasher', 32, 50, 'canon', 'genesis', 32, 30, 'free', E'Genesis 32:30 — *And Jacob called the name of the place Peniel: for I have seen Elohim (God) face to face, and my life is preserved.* Jasher 32:50''s sun rising as he passed the brook follows the canon''s Peniel — ''I have seen Elohim face to face.'''),
+  ('jasher', 'jasher', 32, 48, 'canon', 'hosea', 12, 4, 'free', E'Hosea 12:4 — *Yea, he had power over the angel, and prevailed: he wept, and made supplication unto him: he found him in Beth-el, and there he spake with us.* The prophet reads Jasher 32:48''s all-night wrestling as Israel''s defining ''power over the angel,'' the nation''s own name carried in the grip.'),
+  -- thread: jasher-32-esau-met-and-parted
+  ('jasher', 'jasher', 32, 56, 'canon', 'genesis', 33, 4, 'free', E'Genesis 33:4 — *And Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept.* Jasher 32:56''s ''he ran toward him and he embraced him, and he fell upon his neck, and they kissed and they wept'' is the canon reunion verbatim.'),
+  ('jasher', 'jasher', 32, 54, 'canon', 'genesis', 33, 3, 'free', E'Genesis 33:3 — *And he passed over before them, and bowed himself to the ground seven times, until he came near to his brother.* Jasher 32:54''s ''he bowed down seven times until he approached his brother'' matches the canon''s sevenfold bowing.'),
+  ('jasher', 'jasher', 32, 64, 'canon', 'genesis', 33, 10, 'free', E'Genesis 33:10 — *And Jacob said, Nay, I pray thee, if now I have found grace in thy sight, then receive my present at my hand: for therefore I have seen thy face, as though I had seen the face of Elohim (God), and thou wast pleased with me.* Jasher 32:64''s ''as though I had seen a god-like face, because you were pleased with me'' is the canon''s face-of-Elohim word.'),
+  ('jasher', 'jasher', 32, 73, 'jubilees', 'jubilees', 29, 11, 'extras', E'Jubilees 29:11 — *And on that day Esau, his brother, came to him, and he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents.* Jasher 32:73''s parting — Esau back to Seir, Jacob on to Canaan — is the same reconciliation and departure the Jubilees apparatus records.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja32_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja32_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-messengers-to-esau',
+       E'Jacob sends word to Esau in Seir — the messengers and the blessing',
+       E'Jasher opens the return-home reckoning: *And at that time Jacob sent messengers to his brother Esau toward the land of Seir, and he spoke to him words of supplication* (Jasher 32:1), the servant pleading *Let not my Lord imagine that my father''s blessing with which he did bless me has proved beneficial to me* (Jasher 32:2). This is Genesis told fuller. The canon carries the same embassy and the same Seir address: *And Jacob sent messengers before him to Esau his brother unto the land of Seir, the country of Edom* (Genesis 32:3). Jasher''s long catalogue of oxen, asses, cattle and servants is Genesis compressed: *And I have oxen, and asses, flocks, and menservants, and womenservants: and I have sent to tell my lord, that I may find grace in thy sight* (Genesis 32:5). And the dread report comes back word for word — four hundred men: *And the messengers returned to Jacob, saying, We came to thy brother Esau, and also he cometh to meet thee, and four hundred men with him* (Genesis 32:6). It ain''t new — the despised-birthright brothers (election precedes confession) close their twenty-year breach exactly as the Torah records it.',
+       sv.verse_id, ev.verse_id, 'extras', 55775
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-prayer-of-jacob',
+       E'Jacob''s prayer — the covenant seed pleaded back to Yahuah',
+       E'Afraid and distressed, Jacob prays the covenant back to its Giver: *And Jacob prayed to Yahuah his Elohim (the Lord his God), and he said, O Yahuah Elohim (O Lord God) of my fathers, Abraham and Isaac, you did say to me when I went away from my father''s house, saying* (Jasher 32:16). He rehearses the promise — *I will make your seed as the stars of heaven... and in you and in your seed shall all the families of the earth be blessed* (Jasher 32:17) — and pleads *deliver me, I pray you, also from the hands of my brother Esau, for I am greatly afraid of him* (Jasher 32:21). The Torah holds the same fear and the same prayer, the chosen seed clinging to the word given: *Then Jacob was greatly afraid and distressed* (Genesis 32:7); *And Jacob said, O Elohim (God) of my father Abraham, and Elohim (God) of my father Isaac, Yahuah (LORD) which saidst unto me, Return unto thy country, and to thy kindred, and I will deal well with thee* (Genesis 32:9); *Deliver me, I pray thee, from the hand of my brother, from the hand of Esau: for I fear him* (Genesis 32:11). The seed-as-stars promise Jasher quotes is the canon''s own oath kept: *And thou saidst, I will surely do thee good, and make thy seed as the sand of the sea, which cannot be numbered for multitude* (Genesis 32:12). Torah-before-Sinai: the father calls on the Name and is heard.',
+       sv.verse_id, ev.verse_id, 'extras', 55778
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-angel-camps-mahanaim',
+       E'The angel host turns Esau back — Mahanaim, two camps',
+       E'Where the canon names the place where the angels met Jacob, Jasher tells the deliverance the name was given for: *And Yahuah (the Lord) heard the prayer of Jacob on that day, and Yahuah (the Lord) then delivered Jacob from the hands of his brother Esau* (Jasher 32:27). Heaven''s host rides out — *And Yahuah (the Lord) sent three angels of the angels of heaven, and they went before Esau and came to him* (Jasher 32:28) — appearing as four terrifying camps that throw Esau from his horse, the warriors crying *Surely we are the servants of Jacob, who is the servant of Elohim, and who then can stand against us?* (Jasher 32:32). The Torah opens this very chapter with that meeting and the place-name it leaves behind: *And Jacob went on his way, and the angels of Elohim (God) met him* (Genesis 32:1); *And when Jacob saw them, he said, This is Elohim''s (God''s) host: and he called the name of that place Mahanaim* (Genesis 32:2) — Mahanaim, ''two camps,'' the very doubling Jasher fills with four angel hosts. The chosen seed is kept by heaven''s own armies; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55781
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=27
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=40
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-present-to-esau',
+       E'The present sent ahead — droves with a space between',
+       E'Jacob appeases his brother with a graded gift: *And this is the amount of the present which Jacob chose from his flock to give to his brother Esau... two hundred and forty head from the flocks... thirty each... of the herds he chose fifty kine* (Jasher 32:42), set in droves with his servants charged *Keep yourselves at a distance from each other, and put a space between the droves* (Jasher 32:44), the word to carry being *We are the servants of Jacob... and behold Jacob comes behind us* (Jasher 32:44). The Torah gives the same livestock present and the same staging: *And he delivered them into the hand of his servants, every drove by themselves; and said unto his servants, Pass over before me, and put a space betwixt drove and drove* (Genesis 32:16); *And he commanded the foremost, saying, When Esau my brother meeteth thee, and asketh thee, saying, Whose art thou? and whither goest thou? and whose are these before thee?* (Genesis 32:17). And Jacob''s stated strategy is the canon''s own reasoning: *For he said, I will appease him with the present that goeth before me, and afterward I will see his face; peradventure he will accept of me* (Genesis 32:20) — which Jasher echoes as *I will appease him with the present that goes to him, and after this I will see his face, peradventure he will accept of me* (Jasher 32:46).',
+       sv.verse_id, ev.verse_id, 'extras', 55784
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=41
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=47
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-wrestling-peniel-israel',
+       E'Wrestling at Jabbok — thy name shall be Israel, I have seen Elohim face to face',
+       E'The high scene: alone at the ford, Jacob is gripped till dawn — *And when he passed all belonging to him over the brook, Jacob was left by himself, and a man met him, and he wrestled with him that night until the breaking of the day, and the hollow of Jacob''s thigh was out of joint through wrestling with him* (Jasher 32:48); *And at the break of day the man left Jacob there, and he blessed him and went away, and Jacob passed the brook at the break of day, and he halted upon his thigh* (Jasher 32:49). The Torah carries the wrestling, the new name, and the face-to-face: *And Jacob was left alone; and there wrestled a man with him until the breaking of the day* (Genesis 32:24); *Thy name shall be called no more Jacob, but Yashar''el (Israel): for as a prince hast thou power with Elohim (God) and with men, and hast prevailed* (Genesis 32:28); *And Jacob called the name of the place Peniel: for I have seen Elohim (God) face to face, and my life is preserved* (Genesis 32:30). The prophet seals it as the nation''s own birth-mark: *He took his brother by the heel in the womb, and by his strength he had power with Elohim (God)* (Hosea 12:3); *Yea, he had power over the angel, and prevailed: he wept, and made supplication unto him* (Hosea 12:4). Israel is the name borne out of this grip — the man named for prevailing with Elohim. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55787
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=47
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=50
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-32-esau-met-and-parted',
+       E'Esau met in peace — they part, Jacob toward Canaan',
+       E'The dreaded meeting turns to embrace: *And Jacob hastened and divided his children to his wives and his handmaids... And he passed before his children and wives to meet his brother, and he bowed down to the ground, yea he bowed down seven times until he approached his brother* (Jasher 32:53-54); *And when Esau saw Jacob running toward him, he also ran toward him and he embraced him, and he fell upon his neck, and they kissed and they wept* (Jasher 32:56). Jacob presses the gift with the face-of-Elohim word: *if now I have found favor in your sight, then receive my present at my hand, for I have therefore seen your face, as though I had seen a god-like face* (Jasher 32:64), and they part, Esau to Seir, *Jacob and all belonging to him went that day as far as the extremity of the land of Canaan* (Jasher 32:73). Genesis 33 holds the very same reunion: *And Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept* (Genesis 33:4); *for therefore I have seen thy face, as though I had seen the face of Elohim (God), and thou wast pleased with me* (Genesis 33:10); *So Esau returned that day on his way unto Seir* (Genesis 33:16). And Jubilees, narrating the same days, seals the parting: *And on that day Esau, his brother, came to him, and he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents* (Jubilees 29:11). Three witnesses, one event — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55790
+  FROM _session252_ja32_lookup sv, _session252_ja32_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=51
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=32 AND ev.verse_number=73
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-32-messengers-to-esau
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:3 — *And Jacob sent messengers before him to Esau his brother unto the land of Seir, the country of Edom.* Jasher 32:1''s embassy ''toward the land of Seir'' is the same canon sending to Esau in Edom.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-messengers-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 32:5 — *And I have oxen, and asses, flocks, and menservants, and womenservants: and I have sent to tell my lord, that I may find grace in thy sight.* Jasher 32:5''s list of oxen, asses, cattle and servants ''to find favor in the sight of my Lord'' is the same message Genesis records verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-messengers-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 32:6 — *And the messengers returned to Jacob, saying, We came to thy brother Esau, and also he cometh to meet thee, and four hundred men with him.* Jasher 32:13''s returning messengers reporting Esau ''comes to meet you with four hundred men'' is the canon''s dread report unchanged.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-messengers-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-32-prayer-of-jacob
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:7 — *Then Jacob was greatly afraid and distressed: and he divided the people that was with him, and the flocks, and herds, and the camels, into two bands.* Jasher 32:15''s ''Jacob was greatly afraid and he was distressed'' and the two-camp division (Jasher 32:24) are the canon''s same fear and division.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-prayer-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 32:9 — *And Jacob said, O Elohim (God) of my father Abraham, and Elohim (God) of my father Isaac, Yahuah (LORD) which saidst unto me, Return unto thy country, and to thy kindred, and I will deal well with thee.* Jasher 32:16''s invocation of ''the Elohim of my fathers, Abraham and Isaac'' is the canon prayer Jasher unfolds at length.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-prayer-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 32:11 — *Deliver me, I pray thee, from the hand of my brother, from the hand of Esau: for I fear him, lest he will come and smite me, and the mother with the children.* Jasher 32:21''s ''deliver me from the hands of my brother Esau, for I am greatly afraid of him'' is the canon plea word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-prayer-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 32:12 — *And thou saidst, I will surely do thee good, and make thy seed as the sand of the sea, which cannot be numbered for multitude.* Jasher 32:17''s ''I will make your seed as the stars of heaven... in your seed shall all the families of the earth be blessed'' is the covenant-seed oath the canon prayer leans on.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-prayer-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-32-angel-camps-mahanaim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:1 — *And Jacob went on his way, and the angels of Elohim (God) met him.* Jasher 32:28''s ''Yahuah sent three angels of the angels of heaven'' to go before Esau expands the canon''s bare meeting of the angels of Elohim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-angel-camps-mahanaim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 32:2 — *And when Jacob saw them, he said, This is Elohim''s (God''s) host: and he called the name of that place Mahanaim.* Jasher 32:29''s angel camps ''divided into four camps'' carry the ''host of Elohim'' and the Mahanaim (''two camps'') the canon names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-angel-camps-mahanaim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 32:8 — *And said, If Esau come to the one company, and smite it, then the other company which is left shall escape.* Jasher 32:25''s two-camp safeguard (''if Esau come to one camp and slay it, the other camp... will escape'') matches the canon plan exactly, the deliverance of Jasher 32:27 answering it.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-angel-camps-mahanaim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-32-present-to-esau
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:16 — *And he delivered them into the hand of his servants, every drove by themselves; and said unto his servants, Pass over before me, and put a space betwixt drove and drove.* Jasher 32:43-44''s ten droves ''each sort by itself'' with ''a space between the droves'' is the canon staging verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-present-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=43
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 32:17 — *And he commanded the foremost, saying, When Esau my brother meeteth thee, and asketh thee, saying, Whose art thou? and whither goest thou? and whose are these before thee?* Jasher 32:44''s instruction for when Esau asks ''Whose are you, and whither do you go'' matches the canon''s commanded answer.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-present-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=44
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 32:20 — *And say ye moreover, Behold, thy servant Jacob is behind us. For he said, I will appease him with the present that goeth before me, and afterward I will see his face; peradventure he will accept of me.* Jasher 32:46''s ''I will appease him with the present... and after this I will see his face, peradventure he will accept of me'' is the canon''s reasoning nearly word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-present-to-esau'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=46
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-32-wrestling-peniel-israel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:24 — *And Jacob was left alone; and there wrestled a man with him until the breaking of the day.* Jasher 32:48''s ''Jacob was left by himself, and a man met him, and he wrestled with him that night until the breaking of the day'' is the canon scene verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-wrestling-peniel-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=48
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 32:28 — *And he said, Thy name shall be called no more Jacob, but Yashar''el (Israel): for as a prince hast thou power with Elohim (God) and with men, and hast prevailed.* Jasher 32:49''s blessing at the break of day is the canon''s renaming — the name Israel born of this wrestling.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-wrestling-peniel-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=49
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 32:30 — *And Jacob called the name of the place Peniel: for I have seen Elohim (God) face to face, and my life is preserved.* Jasher 32:50''s sun rising as he passed the brook follows the canon''s Peniel — ''I have seen Elohim face to face.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-wrestling-peniel-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hosea 12:4 — *Yea, he had power over the angel, and prevailed: he wept, and made supplication unto him: he found him in Beth-el, and there he spake with us.* The prophet reads Jasher 32:48''s all-night wrestling as Israel''s defining ''power over the angel,'' the nation''s own name carried in the grip.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-wrestling-peniel-israel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=48
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=12 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-32-esau-met-and-parted
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 33:4 — *And Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept.* Jasher 32:56''s ''he ran toward him and he embraced him, and he fell upon his neck, and they kissed and they wept'' is the canon reunion verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-esau-met-and-parted'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=56
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 33:3 — *And he passed over before them, and bowed himself to the ground seven times, until he came near to his brother.* Jasher 32:54''s ''he bowed down seven times until he approached his brother'' matches the canon''s sevenfold bowing.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-esau-met-and-parted'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=54
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 33:10 — *And Jacob said, Nay, I pray thee, if now I have found grace in thy sight, then receive my present at my hand: for therefore I have seen thy face, as though I had seen the face of Elohim (God), and thou wast pleased with me.* Jasher 32:64''s ''as though I had seen a god-like face, because you were pleased with me'' is the canon''s face-of-Elohim word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-esau-met-and-parted'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=64
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 29:11 — *And on that day Esau, his brother, came to him, and he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents.* Jasher 32:73''s parting — Esau back to Seir, Jacob on to Canaan — is the same reconciliation and departure the Jubilees apparatus records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja32_lookup sv, _session252_ja32_lookup tv
+ WHERE t.slug='jasher-32-esau-met-and-parted'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=32 AND sv.verse_number=73
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=29 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session252 — Jasher cross-references complete.'

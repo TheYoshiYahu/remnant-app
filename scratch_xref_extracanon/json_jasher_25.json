@@ -1,0 +1,76 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 25,
+  "session": "session252",
+  "tag": "ja25",
+  "base_band": 55600,
+  "threads": [
+    {
+      "slug": "jasher-25-keturah-six-sons",
+      "title": "Keturah and the six sons of Abraham's old age",
+      "summary_md": "Jasher opens the chapter where Genesis does: *And it was at that time that Abraham again took a wife in his old age, and her name was Keturah, from the land of Canaan* (Jasher 25:1), *And she bare to him Zimran, Jokshan, Medan, Midian, Ishbak and Shuach, being six sons* (Jasher 25:2). It ain't new — this is Genesis retold: *Then again Abraham took a wife, and her name was Keturah* (Genesis 25:1), and *And she bare him Zimran, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah* (Genesis 25:2). The same scene stands in the parallel patriarchal record: *And Abraham took to himself a third wife, and her name was Keturah, from among the daughters of his household servants, for Hagar had died before Sarah. And she bare him six sons, Zimram, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah, in the two weeks of years* (Jubilees 19:11). These six are sent out from the seed-line — branches, not the chosen heir.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 25, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 1, "tier": "free", "note": "Genesis 25:1 — *Then again Abraham took a wife, and her name was Keturah.* The Genesis source Jasher 25:1 is retelling, Abraham taking Keturah in his old age."},
+        {"src_ch": 25, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 2, "tier": "free", "note": "Genesis 25:2 — *And she bare him Zimran, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah.* The same six sons of Keturah named in Jasher 25:2."},
+        {"src_ch": 25, "src_v": 3, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 4, "tier": "free", "note": "Genesis 25:4 — *And the sons of Midian; Ephah, and Epher, and Hanoch, and Abidah, and Eldaah. All these were the children of Keturah.* The Midian descendants Jasher 25:3 expands into a fuller genealogy come straight from the Genesis seed-list."},
+        {"src_ch": 25, "src_v": 2, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 19, "tgt_v": 11, "tier": "extras", "note": "Jubilees 19:11 — *And Abraham took to himself a third wife, and her name was Keturah, from among the daughters of his household servants, for Hagar had died before Sarah. And she bare him six sons, Zimram, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah, in the two weeks of years.* The same Keturah-and-six-sons scene in the parallel patriarchal record beside Jasher 25:2."}
+      ]
+    },
+    {
+      "slug": "jasher-25-gifts-sent-east-all-to-isaac",
+      "title": "The gifts, the sending east, and all given to Isaac",
+      "summary_md": "*And Abraham sent all these away, and he gave them gifts, and they went away from his son Isaac to dwell wherever they should find a place* (Jasher 25:6), *And all these went to the mountain at the east, and they built themselves six cities in which they dwelt to this day* (Jasher 25:7). This is Genesis exactly: *And Abraham gave all that he had unto Isaac* (Genesis 25:5), *But unto the sons of the concubines, which Abraham had, Abraham gave gifts, and sent them away from Isaac his son, while he yet lived, eastward, unto the east country* (Genesis 25:6). The election is in the structure — the branches receive gifts and the east country, but the covenant inheritance is undivided to Isaac. Jubilees carries the same verdict: *And he gave to Ishmael and to his sons, and to the sons of Keturah, gifts, and sent them away from Isaac his son, and he gave everything to Isaac his son* (Jubilees 20:10). The seed is kept in one line.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 25, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 6, "tier": "free", "note": "Genesis 25:6 — *But unto the sons of the concubines, which Abraham had, Abraham gave gifts, and sent them away from Isaac his son, while he yet lived, eastward, unto the east country.* The gifts and the eastward sending of Jasher 25:6 are the Genesis original."},
+        {"src_ch": 25, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 5, "tier": "free", "note": "Genesis 25:5 — *And Abraham gave all that he had unto Isaac.* The election Jasher dramatizes: the branches are sent off with gifts while the whole inheritance stays with the chosen heir."},
+        {"src_ch": 25, "src_v": 6, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 20, "tgt_v": 10, "tier": "extras", "note": "Jubilees 20:10 — *And you will be for a blessing on the earth, And all nations of the earth will desire you, And bless your sons in my name, That they may be blessed as I am.” And he gave to Ishmael and to his sons, and to the sons of Keturah, gifts, and sent them away from Isaac his son, and he gave everything to Isaac his son.* The parallel record gives the same verdict as Jasher 25:6 — gifts to the branches, everything to Isaac."}
+      ]
+    },
+    {
+      "slug": "jasher-25-ishmael-twelve-princes",
+      "title": "The generations of Ishmael — twelve princes",
+      "summary_md": "*And these are the generations of Ishmael the son Abraham, whom Hagar, Sarah's handmaid, bare to Abraham* (Jasher 25:14), and after the listing, *These are the sons of Ishmael, and these are their names, being twelve princes according to their nations* (Jasher 25:19). Genesis tells it the same way: *Now these are the generations of Ishmael, Abraham's son, whom Hagar the Egyptian, Sarah's handmaid, bare unto Abraham* (Genesis 25:12), and *These are the sons of Ishmael, and these are their names, by their towns, and by their castles; twelve princes according to their nations* (Genesis 25:16). The twelve princes are no accident — they are the keeping of a promise spoken long before: *And as for Ishmael, I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation* (Genesis 17:20). Yahuah keeps His word to Hagar's son even while the covenant line runs through Isaac.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 25, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 12, "tier": "free", "note": "Genesis 25:12 — *Now these are the generations of Ishmael, Abraham's son, whom Hagar the Egyptian, Sarah's handmaid, bare unto Abraham:* The genealogy heading of Jasher 25:14 is the Genesis original word-for-word."},
+        {"src_ch": 25, "src_v": 19, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 16, "tier": "free", "note": "Genesis 25:16 — *These are the sons of Ishmael, and these are their names, by their towns, and by their castles; twelve princes according to their nations.* The twelve princes summary of Jasher 25:19 matches Genesis exactly."},
+        {"src_ch": 25, "src_v": 19, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 17, "tgt_v": 20, "tier": "free", "note": "Genesis 17:20 — *And as for Ishmael, I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation.* The twelve princes Jasher 25:19 records are the keeping of this promise spoken over Ishmael long before."}
+      ]
+    },
+    {
+      "slug": "jasher-25-ishmael-dwelt-havilah-shur",
+      "title": "Ishmael multiplied and dwelt from Havilah to Shur",
+      "summary_md": "*And they went and dwelt near the wilderness of Paran, and their dwelling was from Havilah to Shur, that is before Egypt as you come toward Assyria* (Jasher 25:20), *And Ishmael and his sons dwelt in the land, and they had children born to them, and they were fruitful and increased abundantly* (Jasher 25:21). Genesis sets the same borders: *And they dwelt from Havilah unto Shur, that is before Egypt, as thou goest toward Assyria: and he died in the presence of all his brethren* (Genesis 25:18). The increase fulfills the word the angel of Yahuah spoke to Hagar in the wilderness: *And the angel of Yahuah (LORD) said unto her, I will multiply thy seed exceedingly, that it shall not be numbered for multitude* (Genesis 16:10). It ain't new — the fruitfulness Jasher reports is a promise being kept.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 27,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 25, "src_v": 20, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 18, "tier": "free", "note": "Genesis 25:18 — *And they dwelt from Havilah unto Shur, that is before Egypt, as thou goest toward Assyria: and he died in the presence of all his brethren.* The exact borders of Ishmael's dwelling that Jasher 25:20 records."},
+        {"src_ch": 25, "src_v": 21, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 16, "tgt_v": 10, "tier": "free", "note": "Genesis 16:10 — *And the angel of Yahuah (LORD) said unto her, I will multiply thy seed exceedingly, that it shall not be numbered for multitude.* The abundant increase of Ishmael's sons in Jasher 25:21 is this promise to Hagar coming to pass."}
+      ]
+    },
+    {
+      "slug": "jasher-25-rebecca-barren-isaac-election",
+      "title": "Rebecca barren, Isaac kept — and the election to come",
+      "summary_md": "The chapter closes on the chosen line held in tension: *And Rebecca the daughter of Bethuel, the wife of Abraham's son Isaac, was barren in those days, she had no offspring; and Isaac dwelt with his father in the land of Canaan; and Yahuah (the Lord) was with Isaac; and Arpachshad the son of Shem the son of Noah died in those days, in the forty-eighth year of the life of Isaac* (Jasher 25:28). Genesis tells the barrenness the same way: *And Isaac intreated Yahuah (LORD) for his wife, because she was barren: and Yahuah (LORD) was intreated of him, and Rebekah his wife conceived* (Genesis 25:21). The covenant rests on a barren womb because election precedes confession — the seed is given, not earned: *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* (Romans 9:11). The parallel record presses the same election forward to the twins that womb will bear: *And in the sixth week, in the second year thereof, Rebecca bare to Isaac two sons, Jacob and Esau, and Jacob was a smooth and upright man, and Esau was fierce, a man of the field, and hairy, and Jacob dwelt in tents* (Jubilees 19:13). And the dying Arpachshad anchors Jasher's seed-line back to Shem: *These are the generations of Shem: Shem was an hundred years old, and begat Arphaxad two years after the flood* (Genesis 11:10) — Adam to Seth to Noah to Shem to Abraham to Isaac, the line kept generation by generation.",
+      "anchor_start_v": 28,
+      "anchor_end_v": 28,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 25, "src_v": 28, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 21, "tier": "free", "note": "Genesis 25:21 — *And Isaac intreated Yahuah (LORD) for his wife, because she was barren: and Yahuah (LORD) was intreated of him, and Rebekah his wife conceived.* The barrenness of Rebecca that Jasher 25:28 names is the Genesis source — the covenant rests on a womb only Yahuah can open."},
+        {"src_ch": 25, "src_v": 28, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 9, "tgt_v": 11, "tier": "free", "note": "Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* Rebecca's barrenness in Jasher 25:28 sets up the election Paul reads here — the seed chosen before any work."},
+        {"src_ch": 25, "src_v": 28, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 19, "tgt_v": 13, "tier": "extras", "note": "Jubilees 19:13 — *And in the sixth week, in the second year thereof, Rebecca bare to Isaac two sons, Jacob and Esau, and Jacob was a smooth and upright man, and Esau was fierce, a man of the field, and hairy, and Jacob dwelt in tents.* The parallel record carries Rebecca's barren womb of Jasher 25:28 forward to the elect twins it will bear."},
+        {"src_ch": 25, "src_v": 28, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 11, "tgt_v": 10, "tier": "free", "note": "Genesis 11:10 — *These are the generations of Shem: Shem was an hundred years old, and begat Arphaxad two years after the flood:* The Arpachshad whose death Jasher 25:28 records anchors the chosen seed-line from Shem down to Isaac."}
+      ]
+    }
+  ]
+}
