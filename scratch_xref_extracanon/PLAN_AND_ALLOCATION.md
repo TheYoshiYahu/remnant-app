@@ -263,3 +263,15 @@ with keychain unlocked — 13 commits (85b660c..f94f71e) need to land on origin/
   parse — RUN IT EVERY PACK before folding (esp. for editions with merged/gapped verse numbers like this
   Jubilees parse). Also fixed jub13:25→13:26 (member src gap, caught by resolve_check) this pack.
 - Push blocked. origin/main 47a9e48; local HEAD `f450132` (15 commits ahead). Prod authoritative.
+
+## RECEIPT — Jubilees Pack J3 (ch17–24) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **130 threads / 450 members**, band 53000–53590, per-ch(17-24)
+  4/6/6/6/6/6/5/6, 0 orphans. +45/139. Commit `f793b98`. SIX gates green (incl. anchor_check, which
+  caught jub19 thread anchored on v10 gap → re-anchored v9 BEFORE apply — no silent drop).
+- Ishmael/two-covenants (17→Gen21/Gal4); THE AKEDAH w/ Mastema=the-satan-provoker (18→Gen22/Job1/
+  Heb11:17/James2:21 faith-and-works) + Sukkot ordained; Sarah/Rebekah/election Jacob-over-Esau
+  (19→Gen23-25/Rom9:11-13); Abraham's charge + seed-kept-separate (20→Gen18:19/Deut6/2Cor6:14);
+  Abraham keeps the Torah of offerings BEFORE Sinai (21→Lev1/17/Gen26:5 "it ain't new"); blessing of
+  Jacob/against intermarriage (22→Gen28:3/Deut7); the RESTORATION/return-to-the-way=THE AWAKENING
+  (23→Deut30/Mal4/Isa65/Dan12 — highest framework value); Isaac's wells/birthright (24→Gen26/Heb12:16).
+- Push blocked. origin/main 47a9e48; local HEAD `f793b98` (16 commits ahead). Prod authoritative.
