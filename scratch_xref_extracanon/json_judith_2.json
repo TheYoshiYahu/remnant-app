@@ -1,0 +1,230 @@
+{
+  "edition": "apocrypha",
+  "book": "judith",
+  "chapter": 2,
+  "session": "session253",
+  "tag": "jdt2",
+  "base_band": 60025,
+  "threads": [
+    {
+      "slug": "judith-2-one-mouth-all-flesh",
+      "title": "The decree of one mouth over all flesh",
+      "summary_md": "Nabuchodonosor takes counsel to bend the whole earth to a single will: *So he called to him all his officers, and all his nobles, and communicated with them his secret counsel, and concluded the afflicting of the whole earth out of his own mouth* (Judith 2:2), *Then they decreed to destroy all flesh, that did not obey the commandment of his mouth* (Judith 2:3). It is the kingdom-of-man pattern: the throne of one man arrogating the worship and obedience owed only to Yahuah. On the plain of Dura the same tyranny is made law — *Then an herald cried aloud, To you it is commanded, O people, nations, and languages* (Daniel 3:4), *And whoso falleth not down and worshippeth shall the same hour be cast into the midst of a burning fiery furnace* (Daniel 3:6) — and John sees its end in the beast — *And it was given unto him to make war with the saints, and to overcome them: and power was given him over all kindreds, and tongues, and nations* (Revelation 13:7). One mouth demanding universal submission; it ain't new.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 3,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Daniel 3:4 — *Then an herald cried aloud, To you it is commanded, O people, nations, and languages,* the same Babylonian decree binding all peoples to one man's mouth that Judith 2:3 frames as the command none may disobey."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 3,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Daniel 3:6 — *And whoso falleth not down and worshippeth shall the same hour be cast into the midst of a burning fiery furnace,* death for disobedience exactly as Judith 2:3 decrees the destruction of all flesh that obeys not the king's mouth."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 13,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Revelation 13:7 — *And it was given unto him to make war with the saints, and to overcome them: and power was given him over all kindreds, and tongues, and nations,* the beast's universal dominion that Nabuchodonosor's afflicting of the whole earth in Judith 2:2 foreshadows."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 13,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Revelation 13:8 — *And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world,* the demand for total compliance that Judith 2:3 issues as a decree against all flesh."
+        }
+      ]
+    },
+    {
+      "slug": "judith-2-lord-of-whole-earth",
+      "title": "Lord of the whole earth — the stolen title",
+      "summary_md": "Holofernes is sent with the king's own boast in his mouth: *Thus says the great king, the lord of the whole earth, Behold, you shall go forth from my presence* (Judith 2:5), and the king seals it with a self-deifying oath — *For as I live, and by the power of my kingdom, whatsoever I have spoken, that will I do by my hand* (Judith 2:12). 'Lord of the whole earth' and 'as I live' are titles and oaths that belong to Yahuah alone, seized by a man. Isaiah heard the same swollen heart in Assyria — *For he saith, By the strength of my hand I have done it, and by my wisdom; for I am prudent* (Isaiah 10:13) — and traces it back to the fall that birthed it — *For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God)* (Isaiah 14:13), *I will ascend above the heights of the clouds; I will be like the El Elyon (most High)* (Isaiah 14:14). The kings of the earth still take counsel against the Anointed — *The kings of the earth set themselves, and the rulers take counsel together, against Yahuah (LORD), and against his anointed, saying,* (Psalm 2:2).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 10,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Isaiah 10:13 — *For he saith, By the strength of my hand I have done it, and by my wisdom; for I am prudent: and I have removed the bounds of the people, and have robbed their treasures, and I have put down the inhabitants like a valiant man:* the Assyrian's self-crediting boast matching the 'great king, the lord of the whole earth' of Judith 2:5."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 14,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Isaiah 14:13 — *For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God): I will sit also upon the mount of the congregation, in the sides of the north:* the self-exalting heart whose oath 'as I live, and by the power of my kingdom' Nabuchodonosor swears in Judith 2:12."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 14,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Isaiah 14:14 — *I will ascend above the heights of the clouds; I will be like the El Elyon (most High).* the ambition to seize the place of Yahuah behind the king's claim in Judith 2:12 to do all by his own hand."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 2,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Psalm 2:2 — *The kings of the earth set themselves, and the rulers take counsel together, against Yahuah (LORD), and against his anointed, saying,* the gathering of earthly power against heaven that the 'lord of the whole earth' of Judith 2:5 embodies."
+        }
+      ]
+    },
+    {
+      "slug": "judith-2-rod-of-anger",
+      "title": "The rod in Yahuah's hand",
+      "summary_md": "The king dispatches his captain to drown the west in blood: *And you shall go against all the west country, because they disobeyed my commandment* (Judith 2:6), *So that their slain shall fill their valleys and brooks and the river shall be filled with their dead, till it overflow* (Judith 2:8). Holofernes imagines himself the master of this slaughter, but Isaiah names what such a conqueror really is — only an instrument in another's hand — *O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation* (Isaiah 10:5), and the rod that exalts itself is rebuked — *Shall the axe boast itself against him that heweth therewith? or shall the saw magnify itself against him that shaketh it?* (Isaiah 10:15). Habakkuk watched the same bitter horsemen sweep through — *For, lo, I raise up the Chaldeans, that bitter and hasty nation, which shall march through the breadth of the land, to possess the dwellingplaces that are not theirs* (Habakkuk 1:6). The tyrant is permitted, never sovereign.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 10,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Isaiah 10:5 — *O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation.* the conqueror unmasked as a mere rod in Yahuah's hand, the truth behind Holofernes' campaign against the west in Judith 2:6."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 10,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Isaiah 10:15 — *Shall the axe boast itself against him that heweth therewith? or shall the saw magnify itself against him that shaketh it? as if the rod should shake itself against them that lift it up, or as if the staff should lift up itself, as if it were no wood.* the rebuke of the boasting instrument that exposes the pride of the army filling valleys with the slain in Judith 2:8."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "habakkuk",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Habakkuk 1:6 — *For, lo, I raise up the Chaldeans, that bitter and hasty nation, which shall march through the breadth of the land, to possess the dwellingplaces that are not theirs.* the raised-up conqueror seizing lands not his own, mirroring the captivity to the utmost parts of the earth threatened in Judith 2:9."
+        }
+      ]
+    },
+    {
+      "slug": "judith-2-locusts-without-number",
+      "title": "Like locusts, like the sand — the innumerable host",
+      "summary_md": "The army that goes out to cover the earth is past counting: *A great number also sundry countries came with them like locusts, and like the sand of the earth: for the multitude was without number* (Judith 2:20), and they go *to cover all the face of the earth westward with their chariots, and horsemen, and their chosen footmen* (Judith 2:19). Joel saw such a host march, a people great and strong like a devouring fire — *A fire devoureth before them; and behind them a flame burneth: the land is as the garden of Eden before them, and behind them a desolate wilderness; yea, and nothing shall escape them* (Joel 2:3), *The appearance of them is as the appearance of horses; and as horsemen, so shall they run* (Joel 2:4). Habakkuk too watched the swift horsemen come from far — *Their horses also are swifter than the leopards, and are more fierce than the evening wolves: and their horsemen shall spread themselves, and their horsemen shall come from far; they shall fly as the eagle that hasteth to eat* (Habakkuk 1:8). The numberless multitude is the kingdom of man's terror; the deliverance to come will be by one woman's hand.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "joel",
+          "tgt_ch": 2,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Joel 2:3 — *A fire devoureth before them; and behind them a flame burneth: the land is as the garden of Eden before them, and behind them a desolate wilderness; yea, and nothing shall escape them.* the all-consuming locust-army of the day of Yahuah, image of the multitude 'like locusts' that comes with Holofernes in Judith 2:20."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "joel",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Joel 2:4 — *The appearance of them is as the appearance of horses; and as horsemen, so shall they run.* the horse-host overspreading the land, matching the chariots and horsemen Holofernes leads to cover the face of the earth in Judith 2:19."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "habakkuk",
+          "tgt_ch": 1,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Habakkuk 1:8 — *Their horses also are swifter than the leopards, and are more fierce than the evening wolves: and their horsemen shall spread themselves, and their horsemen shall come from far; they shall fly as the eagle that hasteth to eat.* the swift, far-spreading horsemen that picture the innumerable host gathered to Holofernes in Judith 2:20."
+        }
+      ]
+    },
+    {
+      "slug": "judith-2-fear-and-dread",
+      "title": "Pride before the fall — the fear that goes before",
+      "summary_md": "Holofernes leaves a wasteland and the nations melt with terror: *and utterly wasted their countries, and struck all their young men with the edge of the sword* (Judith 2:27), *Therefore the fear and dread of him fell upon all the inhabitants of the sea coasts... and they that dwelt in Azotus and Ascalon feared him greatly* (Judith 2:28). The dread is real, but the proverb has already pronounced his doom — *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18) — and Babylon's own greatest king learned it from a voice out of heaven, swallowed mid-boast — *The king spake, and said, Is not this great Babylon, that I have built for the house of the kingdom by the might of my power, and for the honour of my majesty?* (Daniel 4:30), *until thou know that the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will* (Daniel 4:32). The terror Holofernes spreads will recoil; the haughty is humbled, and Yahuah rules the kingdom of men.",
+      "anchor_start_v": 27,
+      "anchor_end_v": 28,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 28,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 16,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Proverbs 16:18 — *Pride goeth before destruction, and an haughty spirit before a fall.* the verdict already pronounced over the dread Holofernes spreads through the sea coasts in Judith 2:28."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 27,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 4,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Daniel 4:30 — *The king spake, and said, Is not this great Babylon, that I have built for the house of the kingdom by the might of my power, and for the honour of my majesty?* the very boast of conquering majesty that precedes humiliation, the spirit driving the devastation Holofernes works in Judith 2:27."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 28,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 4,
+          "tgt_v": 32,
+          "tier": "free",
+          "note": "Daniel 4:32 — *And they shall drive thee from men, and thy dwelling shall be with the beasts of the field: they shall make thee to eat grass as oxen, and seven times shall pass over thee, until thou know that the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will.* the humbling that awaits the tyrant whose fear and dread fall on all the coasts in Judith 2:28."
+        }
+      ]
+    }
+  ]
+}
