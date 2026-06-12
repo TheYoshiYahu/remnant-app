@@ -1,0 +1,210 @@
+{
+  "edition": "apocrypha",
+  "book": "baruch-with-the-letter-of-jeremiah",
+  "chapter": 1,
+  "session": "session253",
+  "tag": "bar1",
+  "base_band": 60700,
+  "threads": [
+    {
+      "slug": "baruch-1-read-wept-fasted",
+      "title": "The book read by the river — they wept, fasted, and prayed",
+      "summary_md": "By the waters of Babylon the exiles gather to hear the scroll: *And in the hearing of the nobles, and of the king’s sons, and in the hearing of the elders, and of all the people, from the lowest to the highest, even of all them that dwelt at Babylon by the river Sud.* (Baruch 1:4) — *Whereupon they wept, fasted, and prayed before Yahuah (God).* (Baruch 1:5) It ain't new: this is the Daniel posture, the man of Babylon who turned his face homeward. *And I set my face unto Yahuah Elohim (the Lord God), to seek by prayer and supplications, with fasting, and sackcloth, and ashes:* (Daniel 9:3) The whole scene is Jeremiah's letter answered in the flesh — the prophet wrote to *the residue of the elders which were carried away captives*, and here they read and weep, the Torah-shaped repentance of the captivity made visible.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Daniel 9:3 — *And I set my face unto Yahuah Elohim (the Lord God), to seek by prayer and supplications, with fasting, and sackcloth, and ashes:* Daniel in the same Babylon sets the exact pattern of fasting-and-prayer that the river-Sud exiles enact in Baruch 1:5."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 29,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Jeremiah 29:7 — *And seek the peace of the city whither I have caused you to be carried away captives, and pray unto Yahuah (LORD) for it: for in the peace thereof shall ye have peace.* Jeremiah's letter to the captives commands the very praying-and-seeking that Baruch reads aloud in Baruch 1:3."
+        }
+      ]
+    },
+    {
+      "slug": "baruch-1-silver-for-offerings",
+      "title": "Silver sent up to Jerusalem — burnt offerings on the altar",
+      "summary_md": "The exiles take up a collection and send it home for the altar: *And they said, Behold, we have sent you money to buy you burnt offerings, and sin offerings, and incense, and prepare you manna, and offer upon the altar of Yahuah (God), our Elohim (God);* (Baruch 1:10) It ain't new: this is the Persian-era decree made an exile's own offering — *That they may offer sacrifices of sweet savours unto the Elohim (God) of heaven, and pray for the life of the king, and of his sons.* (Ezra 6:10) Even the vessels carried back match the canon's record: *And also let the golden and silver vessels of the house of Elohim (God), which Nebuchadnezzar took forth out of the temple which is at Jerusalem, and brought unto Babylon, be restored, and brought again unto the temple which is at Jerusalem* (Ezra 6:5). The house is not abandoned; the seed keeps the worship alive across the river.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 6,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Ezra 6:10 — *That they may offer sacrifices of sweet savours unto the Elohim (God) of heaven, and pray for the life of the king, and of his sons.* The Ezra decree binds offerings to prayer-for-the-king exactly as Baruch 1:10 sends silver for burnt offerings while v.11 prays for Nebuchadnezzar."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 6,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Ezra 6:5 — *And also let the golden and silver vessels of the house of Elohim (God), which Nebuchadnezzar took forth out of the temple which is at Jerusalem, and brought unto Babylon, be restored, and brought again unto the temple which is at Jerusalem, every one to his place, and place them in the house of Elohim (God).* The silver temple-vessels returned to Judah in Baruch 1:8 are the same vessels Ezra's decree orders restored."
+        }
+      ]
+    },
+    {
+      "slug": "baruch-1-pray-for-the-king",
+      "title": "Pray for the life of Nebuchadnezzar — under the shadow of Babylon",
+      "summary_md": "Astonishingly, the captives pray for their captor: *And pray for the life of Nabuchodonosor king of Babylon, and for the life of Balthasar his son, that their days may be upon earth as the days of heaven:* (Baruch 1:11) — *and we shall live under the shadow of Nabuchodonosor king of Babylon... and find favour in their sight.* (Baruch 1:12) It ain't new: Yahuah Himself had named the king His instrument — *And now have I given all these lands into the hand of Nebuchadnezzar the king of Babylon, my servant; and the beasts of the field have I given him also to serve him.* (Jeremiah 27:6) So Jeremiah's command to seek the city's peace becomes intercession for the throne, and the same posture is carried into the assembly: *I exhort therefore, that, first of all, supplications, prayers, intercessions, and giving of thanks, be made for all men;* (1 Timothy 2:1) — *For kings, and for all that are in authority; that we may lead a quiet and peaceable life in all godliness and honesty.* (1 Timothy 2:2) Not collaboration but covenant patience: the seed serves out its appointed seventy years.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 27,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jeremiah 27:6 — *And now have I given all these lands into the hand of Nebuchadnezzar the king of Babylon, my servant; and the beasts of the field have I given him also to serve him.* Living under Babylon's shadow and serving the king in Baruch 1:12 is obedience to Yahuah's own word that He gave the lands into Nebuchadnezzar's hand."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "1-timothy",
+          "tgt_ch": 2,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "1 Timothy 2:1 — *I exhort therefore, that, first of all, supplications, prayers, intercessions, and giving of thanks, be made for all men;* The apostolic call to intercede for all men is the same Spirit as Baruch 1:11's prayer for the life of the pagan king."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "1-timothy",
+          "tgt_ch": 2,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "1 Timothy 2:2 — *For kings, and for all that are in authority; that we may lead a quiet and peaceable life in all godliness and honesty.* Praying for kings so the people may live quietly is precisely Baruch 1:11-12's plea that the king's days endure and the exiles find favour."
+        }
+      ]
+    },
+    {
+      "slug": "baruch-1-righteousness-confusion-of-faces",
+      "title": "To Yahuah belongeth righteousness, to us confusion of faces",
+      "summary_md": "The confession opens with words almost identical to Daniel's: *And you shall say, To Yahuah (God), our Elohim (God) belongeth righteousness, but to us the confusion of faces, as it is come to pass this day, to them of Juda, and to the inhabitants of Jerusalem,* (Baruch 1:15) — *And to our kings, and to our princes, and to our priests, and to our prophets, and to our fathers:* (Baruch 1:16) It ain't new — it is Daniel's prayer, word for word: *O Yahuah (Lord), righteousness belongeth unto thee, but unto us confusion of faces, as at this day; to the men of Yahudah (Judah), and to the inhabitants of Jerusalem* (Daniel 9:7), and the same roll-call of the guilty: *Neither have we hearkened unto thy servants the prophets, which spake in thy name to our kings, our princes, and our fathers, and to all the people of the land.* (Daniel 9:6) Nehemiah's Levites confess in the same court: *Howbeit thou art just in all that is brought upon us; for thou hast done right, but we have done wickedly:* (Nehemiah 9:33) Ezra too names the *confusion of face*: *Since the days of our fathers have we been in a great trespass unto this day; and for our iniquities have we, our kings, and our priests, been delivered into the hand of the kings of the lands, to the sword, to captivity, and to a spoil, and to confusion of face, as it is this day.* (Ezra 9:7) One confession, four witnesses — Yahuah is righteous, the people justly ashamed.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Daniel 9:7 — *O Yahuah (Lord), righteousness belongeth unto thee, but unto us confusion of faces, as at this day; to the men of Yahudah (Judah), and to the inhabitants of Jerusalem, and unto all Yashar'el (Israel), that are near, and that are far off, through all the countries whither thou hast driven them, because of their trespass that they have trespassed against thee.* Baruch 1:15 quotes Daniel's confession nearly verbatim — righteousness to Yahuah, confusion of faces to Judah and Jerusalem."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Daniel 9:6 — *Neither have we hearkened unto thy servants the prophets, which spake in thy name to our kings, our princes, and our fathers, and to all the people of the land.* Baruch 1:16's list — kings, princes, priests, prophets, fathers — is Daniel's same enumeration of those who would not hearken."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "nehemiah",
+          "tgt_ch": 9,
+          "tgt_v": 33,
+          "tier": "free",
+          "note": "Nehemiah 9:33 — *Howbeit thou art just in all that is brought upon us; for thou hast done right, but we have done wickedly:* Nehemiah's Levites make the identical division of Baruch 1:15 — Yahuah is just, the people have done wickedly."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 9,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Ezra 9:7 — *Since the days of our fathers have we been in a great trespass unto this day; and for our iniquities have we, our kings, and our priests, been delivered into the hand of the kings of the lands, to the sword, to captivity, and to a spoil, and to confusion of face, as it is this day.* Ezra's prayer names the same *confusion of face* upon kings and priests that Baruch 1:15 lays upon Judah."
+        }
+      ]
+    },
+    {
+      "slug": "baruch-1-disobeyed-since-egypt",
+      "title": "Disobedient since Egypt — the curse appointed by Moses",
+      "summary_md": "The confession traces the sin back to the Exodus and owns the covenant curse: *Since the day that Yahuah (God) brought our forefathers out of the land of Egypt, to this present day, we have been disobedient to Yahuah (God), our Elohim (God), and we have been negligent in not hearing his voice.* (Baruch 1:19) — *Wherefore the evils cleaved to us, and the curse, which Yahuah (God) appointed by Moses his servant at the time that he brought our fathers out of the land of Egypt, to give us a land that floweth with milk and honey* (Baruch 1:20) — *But every man followed the imagination of his own wicked heart, to serve strange gods* (Baruch 1:22). It ain't new: Jeremiah preached this very indictment — *But they hearkened not, nor inclined their ear, but walked in the counsels and in the imagination of their evil heart, and went backward, and not forward.* (Jeremiah 7:24) — *Since the day that your fathers came forth out of the land of Egypt unto this day I have even sent unto you all my servants the prophets* (Jeremiah 7:25). The curse is no arbitrary wrath but the very oath Torah set forth: *But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes which I command thee this day; that all these curses shall come upon thee, and overtake thee:* (Deuteronomy 28:15) And the land they forfeited is the land first promised: *And I am come down to deliver them out of the hand of the Egyptians... unto a land flowing with milk and honey* (Exodus 3:8). Torah stands; the exile is its honest seal, never law-as-curse but covenant kept by Yahuah even in the people's breaking.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 22,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 7,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Jeremiah 7:24 — *But they hearkened not, nor inclined their ear, but walked in the counsels and in the imagination of their evil heart, and went backward, and not forward.* Jeremiah's *imagination of their evil heart* is the exact charge Baruch 1:22 confesses — every man followed his own wicked heart to serve strange gods."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 7,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Jeremiah 7:25 — *Since the day that your fathers came forth out of the land of Egypt unto this day I have even sent unto you all my servants the prophets, daily rising up early and sending them:* Jeremiah measures the disobedience from the Exodus *unto this day* just as Baruch 1:19 dates it from the bringing-out of Egypt to the present."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 28,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Deuteronomy 28:15 — *But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes which I command thee this day; that all these curses shall come upon thee, and overtake thee:* The curse Baruch 1:20 says Moses appointed is this Deuteronomic oath — disobedience to Yahuah's voice brings the very curses that overtook the exiles."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 3,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Exodus 3:8 — *And I am come down to deliver them out of the hand of the Egyptians, and to bring them up out of that land unto a good land and a large, unto a land flowing with milk and honey; unto the place of the Canaanites, and the Hittites, and the Amorites, and the Perizzites, and the Hivites, and the Jebusites.* The *land that floweth with milk and honey* mourned in Baruch 1:20 is the very land Yahuah promised at the bush when He came down to redeem from Egypt."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "edition": "apocrypha",
+  "book": "the-rest-of-esther",
+  "chapter": 14,
+  "session": "session253",
+  "tag": "roe14",
+  "base_band": 60500,
+  "threads": [
+    {
+      "slug": "rest-of-esther-14-sackcloth-and-ashes",
+      "title": "She laid away her glorious apparel and covered her head with ashes",
+      "summary_md": "Before she dares the king's gate, the queen strips off the crown's splendour and goes down into mourning: *And laid away her glorious apparel, and put on the garments of anguish and mourning: and instead of precious ointments, she covered her head with ashes and dung, and she humbled her body greatly, and all the places of her joy she filled with her torn hair.* (the-rest-of-esther 14:2). It ain't new — this is the prophets' own liturgy of repentance, *Therefore also now, saith Yahuah (LORD), turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning* (Joel 2:12), the heart rent and not the garment. Her sister-deliverer Judith does the same before her own peril: *Judith fell upon her face, and put ashes upon her head, and uncovered the sackcloth with which she was clothed* (Judith 9:1). And the Messiah seals that the fast is for the Father and not for show: *But thou, when thou fastest, anoint thine head, and wash thy face* (Matthew 6:17).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "joel",
+          "tgt_ch": 2,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Joel 2:12 — *Therefore also now, saith Yahuah (LORD), turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning:* The prophet's call to fasting-and-mourning is the very rite Esther enacts in ashes and torn hair."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "joel",
+          "tgt_ch": 2,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Joel 2:13 — *And rend your heart, and not your garments, and turn unto Yahuah Elohaychem (the LORD your God): for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil.* Esther's humbled body and laid-away glory is the outward sign of the inward rending Joel demands."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 1,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "judith",
+          "tgt_ch": 9,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "Judith 9:1 — *Judith fell upon her face, and put ashes upon her head, and uncovered the sackcloth with which she was clothed; and about the time that the incense of that evening was offered in Jerusalem in the house of Yahuah (God) Judith cried with a loud voice, and said,* Esther's deliverer-sister begins her own intercession in the same ashes, fear of death turned into prayer."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 6,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Matthew 6:17 — *But thou, when thou fastest, anoint thine head, and wash thy face;* Esther's secret, ash-strewn fast — joy laid aside for the Father alone — is the very hiddenness the Messiah commands."
+        }
+      ]
+    },
+    {
+      "slug": "rest-of-esther-14-no-helper-but-thee",
+      "title": "Help me, desolate woman, which have no helper but thee",
+      "summary_md": "She names herself by her need: *And she prayed to Yahuah (God) of Yashar'el (Israel), saying, O my Elohim (God), you only art our King: help me, desolate woman, which have no helper but you* (the-rest-of-esther 14:3), and again *help me that am desolate, and which have no other help but you* (the-rest-of-esther 14:14). This is the cry of the forsaken Psalter — *Be not far from me; for trouble is near; for there is none to help* (Psalm 22:11) — and *Turn thee unto me, and have mercy upon me; for I am desolate and afflicted* (Psalm 25:16). Judith names the same God: *you are a Yahuah (God) of the afflicted, an helper of the oppressed, an upholder of the weak, a protector of the forlorn, a saviour of them that are without hope* (Judith 9:11).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 22,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Psalm 22:11 — *Be not far from me; for trouble is near; for there is none to help.* Esther's 'no helper but thee' is the Passion-psalm's own none-to-help, the righteous left utterly alone with God."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 25,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Psalm 25:16 — *Turn thee unto me, and have mercy upon me; for I am desolate and afflicted.* David's desolate-and-afflicted plea is the same word Esther twice calls herself, the helpless turned wholly toward Yahuah."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 14,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "judith",
+          "tgt_ch": 9,
+          "tgt_v": 11,
+          "tier": "extras",
+          "note": "Judith 9:11 — *For your power stands not in multitude nor your might in strong men: for you are a Yahuah (God) of the afflicted, an helper of the oppressed, an upholder of the weak, a protector of the forlorn, a saviour of them that are without hope.* Judith confesses the very Helper-of-the-forlorn that Esther leans on, two women with no help but Him."
+        }
+      ]
+    },
+    {
+      "slug": "rest-of-esther-14-chosen-inheritance",
+      "title": "Thou tookest Israel for a perpetual inheritance",
+      "summary_md": "Her plea is grounded in election: *From my youth up I have heard in the tribe of my family that you, O Yahuah (God), tookest Yashar'el (Israel) from among all people, and our fathers from all their predecessors, for a perpetual inheritance, and you have performed whatsoever you did promise them* (the-rest-of-esther 14:5). It ain't new — this is Sinai's own word, *if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people* (Exodus 19:5), and *Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth* (Deuteronomy 7:6). The election stands; the seed is kept.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 19,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Exodus 19:5 — *Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine:* The peculiar-treasure of Sinai is the 'perpetual inheritance' Esther was taught from her youth."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 7,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Deuteronomy 7:6 — *For thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth.* Israel taken 'from among all people' is Moses' chosen-above-all-people, the ground of Esther's confidence."
+        }
+      ]
+    },
+    {
+      "slug": "rest-of-esther-14-we-have-sinned",
+      "title": "We have sinned before thee — thou art righteous",
+      "summary_md": "Like every true intercessor she confesses for her people before she asks: *And now we have sinned before you: therefore have you given us into the hands of our enemies, Because we worshipped their gods: O Yahuah (God), you are righteous* (the-rest-of-esther 14:6-7). This is Daniel's prayer breath for breath — *We have sinned, and have committed iniquity, and have done wickedly, and have rebelled, even by departing from thy precepts and from thy judgments* (Daniel 9:5) — and Nehemiah's, *Howbeit thou art just in all that is brought upon us; for thou hast done right, but we have done wickedly* (Nehemiah 9:33). The Torah named the captivity beforehand, healed by the humbled heart: *if then their uncircumcised hearts be humbled, and they then accept of the punishment of their iniquity* (Leviticus 26:41). Mercy is real, never cheap.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Daniel 9:5 — *We have sinned, and have committed iniquity, and have done wickedly, and have rebelled, even by departing from thy precepts and from thy judgments:* Daniel's confession in exile is Esther's 'we have sinned before thee,' the captive owning the covenant's justice."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "nehemiah",
+          "tgt_ch": 9,
+          "tgt_v": 33,
+          "tier": "free",
+          "note": "Nehemiah 9:33 — *Howbeit thou art just in all that is brought upon us; for thou hast done right, but we have done wickedly:* Esther's 'O Yahuah, you are righteous' echoes the post-exile confession that God is just even in the hand of the enemy."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 26,
+          "tgt_v": 41,
+          "tier": "free",
+          "note": "Leviticus 26:41 — *And that I also have walked contrary unto them, and have brought them into the land of their enemies; if then their uncircumcised hearts be humbled, and they then accept of the punishment of their iniquity:* The Torah foretold the giving-into-enemy-hands and the humbled heart that turns it back, the frame Esther prays inside."
+        }
+      ]
+    },
+    {
+      "slug": "rest-of-esther-14-sceptre-and-the-king-of-nations",
+      "title": "Give not thy sceptre to them that be nothing",
+      "summary_md": "She wars not against flesh but against the system of dead gods: *O Yahuah (God), give not your sceptre to them that be nothing, and let them not laugh at our fall* (the-rest-of-esther 14:11), pleading to the *King of the nations, and Yahuah (God) of all power* (14:12) and asking that the king's heart be turned: *Give me eloquent speech in my mouth before the lion: turn his heart to hate him that fighteth against us* (14:13). The idols 'that be nothing' are the mouthless, eyeless work of hands — *Their idols are silver and gold, the work of men's hands. They have mouths, but they speak not* (Psalm 115:4-5) — over against *Yahuah (LORD) is the true Elohim (God), he is the living Elohim (God), and an everlasting king* (Jeremiah 10:10). And the heathen lion's heart is His to turn: *The king's heart is in the hand of Yahuah (LORD), as the rivers of water: he turneth it whithersoever he will* (Proverbs 21:1).",
+      "anchor_start_v": 11,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Psalm 115:4 — *Their idols are silver and gold, the work of men's hands.* The 'them that be nothing' Esther begs God not to crown are the lifeless hand-made idols the psalm exposes."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Jeremiah 10:10 — *But Yahuah (LORD) is the true Elohim (God), he is the living Elohim (God), and an everlasting king: at his wrath the earth shall tremble, and the nations shall not be able to abide his indignation.* The living everlasting King stands against the nothing-idols, the 'King of the nations' Esther invokes."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 21,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Proverbs 21:1 — *The king's heart is in the hand of Yahuah (LORD), as the rivers of water: he turneth it whithersoever he will.* Esther asks God to 'turn his heart' before the lion-king — the very thing Proverbs says is wholly in Yahuah's hand."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 13,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "judith",
+          "tgt_ch": 9,
+          "tgt_v": 13,
+          "tier": "extras",
+          "note": "Judith 9:13 — *And make my speech and deceit to be their wound and stripe, who have purposed cruel things against your covenant, and your hallowed house, and against the top of Sion, and against the house of the possession of your children.* Judith too asks God to arm her speech against the enemy of the covenant, the sister-prayer to Esther's 'eloquent speech before the lion.'"
+        }
+      ]
+    },
+    {
+      "slug": "rest-of-esther-14-abhor-the-crown-and-the-table",
+      "title": "I abhor the crown and the table of the uncircumcised",
+      "summary_md": "Her hidden Torah-faithfulness is laid bare: *you know that I hate the glory of the unrighteous, and abhor the bed of the uncircumcised, and of all the heathen* (the-rest-of-esther 14:15); she abhors the diadem itself, *I abhor it as a menstruous rag* (14:16), and she keeps the dietary line in the heart of the palace — *yours handmaid has not eaten at Aman's table, and that I have not greatly esteemed the king's feast, nor drunk the wine of the drink offerings* (14:17). This is Daniel in Babylon: *Daniel purposed in his heart that he would not defile himself with the portion of the king's meat, nor with the wine which he drank* (Daniel 1:8). And it is the unashamed confession before kings, *I will speak of thy testimonies also before kings, and will not be ashamed* (Psalm 119:46). The crown abhorred, the heart's joy only in *Yahuah (God) of Abraham* (14:18).",
+      "anchor_start_v": 15,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 1,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Daniel 1:8 — *But Daniel purposed in his heart that he would not defile himself with the portion of the king's meat, nor with the wine which he drank: therefore he requested of the prince of the eunuchs that he might not defile himself.* Esther's refusal of Aman's table and the king's wine is Daniel's same purposed-heart refusal of the king's defiling meat."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 119,
+          "tgt_v": 46,
+          "tier": "free",
+          "note": "Psalm 119:46 — *I will speak of thy testimonies also before kings, and will not be ashamed.* Esther's abhorrence of heathen glory before a heathen throne is the psalmist's unashamed witness of the testimonies before kings."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 25,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Psalm 25:16 — *Turn thee unto me, and have mercy upon me; for I am desolate and afflicted.* Esther's joy 'only in Yahuah God of Abraham' amid the king's feast is the desolate one's single turning toward Him."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "edition": "apocrypha",
+  "book": "baruch-with-the-letter-of-jeremiah",
+  "chapter": 6,
+  "session": "session253",
+  "tag": "bar6",
+  "base_band": 60825,
+  "threads": [
+    {
+      "slug": "baruch-6-borne-cannot-walk",
+      "title": "Borne on shoulders, having no feet",
+      "summary_md": "The Epistle of Jeremy strips the idol of its last pretence — it cannot even stand: *They are borne upon shoulders, having no feet by which they declare to men that they be nothing worth* (Baruch 6:26), and *They also that serve them are ashamed: for if they fall to the ground at any time, they cannot rise up again of themselves: neither, if one set them upright, can they move of themselves* (Baruch 6:27). It ain't new: Jeremiah said the same of the carved tree — *They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also is it in them to do good* (Jeremiah 10:5). Isaiah mocks Bel and Nebo loaded on the cattle — *They bear him upon the shoulder, they carry him, and set him in his place, and he standeth; from his place shall he not remove: yea, one shall cry unto him, yet can he not answer, nor save him out of his trouble* (Isaiah 46:7) — and over against the dead god sets the living Elohim who carries Israel: *and even to your old age I am he; and even to hoar hairs will I carry you: I have made, and I will bear; even I will carry, and will deliver you* (Isaiah 46:4). The whole contrast of the chapter: the idol must be carried; Yahuah carries His people.",
+      "anchor_start_v": 26,
+      "anchor_end_v": 27,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 26,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Jeremiah 10:5 — *They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also is it in them to do good.* The very source of the Epistle: the idol must be carried because it cannot walk, exactly as Baruch 6:26."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 26,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 46,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Isaiah 46:7 — *They bear him upon the shoulder, they carry him, and set him in his place, and he standeth; from his place shall he not remove: yea, one shall cry unto him, yet can he not answer, nor save him out of his trouble.* Isaiah's Bel-and-Nebo taunt matches Baruch 6:26 word for word in scorn — the god borne and immovable."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 27,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 46,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Isaiah 46:4 — *and even to your old age I am he; and even to hoar hairs will I carry you: I have made, and I will bear; even I will carry, and will deliver you.* The living Elohim carries His people; the idol of Baruch 6:27 cannot even lift itself off the ground."
+        }
+      ]
+    },
+    {
+      "slug": "baruch-6-cannot-speak-see",
+      "title": "False, and cannot speak",
+      "summary_md": "The mouths are gilded but mute: *As for their tongue, it is polished by the workman, and they themselves are gilded and laid over with silver; yet are they but false, and cannot speak* (Baruch 6:8); their eyes fill with dust — *when they be set up in the temple, their eyes be full of dust through the feet of them that come in* (Baruch 6:17); and the worshippers light them candles *of which they cannot see one* (Baruch 6:19). This is the Psalmist's catalogue verbatim in spirit: *They have mouths, but they speak not: eyes have they, but they see not* (Psalm 115:5), with the verdict that the maker becomes as the made — *They that make them are like unto them; so is every one that trusteth in them* (Psalm 115:8). Habakkuk closes the case: *Woe unto him that saith to the wood, Awake; to the dumb stone, Arise, it shall teach! Behold, it is laid over with gold and silver, and there is no breath at all in the midst of it* (Habakkuk 2:19). Dead gods of silver and gold against the One who is in His holy temple.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Psalm 115:5 — *They have mouths, but they speak not: eyes have they, but they see not.* The Psalm's idol-catalogue is the very charge of Baruch 6:8 — gilded tongues that cannot speak."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Psalm 115:8 — *They that make them are like unto them; so is every one that trusteth in them.* The dust-blind eyes of Baruch 6:17 blind also the worshipper, who becomes as lifeless as the thing he trusts."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "habakkuk",
+          "tgt_ch": 2,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Habakkuk 2:19 — *Woe unto him that saith to the wood, Awake; to the dumb stone, Arise, it shall teach! Behold, it is laid over with gold and silver, and there is no breath at all in the midst of it.* Candles before eyes that cannot see one (Baruch 6:19) is Habakkuk's woe — wood and stone overlaid with metal, with no breath in it."
+        }
+      ]
+    },
+    {
+      "slug": "baruch-6-work-of-mens-hands",
+      "title": "The works of men's hands, no gods",
+      "summary_md": "The refrain returns again and again — *fear them not* — because the thing has a maker: *They are made of carpenters and goldsmiths: they can be nothing else than the workmen will have them to be* (Baruch 6:45), and the proof at last shall *manifestly appear to all nations and kings that they are no gods, but the works of men's hands, and that there is no work of Yahuah (God) in them* (Baruch 6:51). This is Isaiah's residue-god, half burned for fuel and half worshipped — *And the residue thereof he maketh a god, even his graven image: he falleth down unto it, and worshippeth it, and prayeth unto it, and saith, Deliver me; for thou art my god* (Isaiah 44:17). Moses foresaw it as the curse of exile — *And there ye shall serve gods, the work of men's hands, wood and stone, which neither see, nor hear, nor eat, nor smell* (Deuteronomy 4:28) — the very scattering into Babylon that frames the whole Epistle (Baruch 6:2). And Paul gathers the witness: the idol is nothing, *we know that an idol is nothing in the world, and that there is none other Elohim (God) but one* (1 Corinthians 8:4). It ain't new.",
+      "anchor_start_v": 45,
+      "anchor_end_v": 51,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 45,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Isaiah 44:17 — *And the residue thereof he maketh a god, even his graven image: he falleth down unto it, and worshippeth it, and prayeth unto it, and saith, Deliver me; for thou art my god.* Isaiah's residue-god is Baruch 6:45's carpenter-made thing — it can be nothing but what the workman wills."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 51,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 4,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "Deuteronomy 4:28 — *And there ye shall serve gods, the work of men's hands, wood and stone, which neither see, nor hear, nor eat, nor smell.* Moses named the work-of-men's-hands curse of exile that Baruch 6:51 watches play out among the Babylonian gods."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 51,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 8,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "1 Corinthians 8:4 — *As concerning therefore the eating of those things that are offered in sacrifice unto idols, we know that an idol is nothing in the world, and that there is none other Elohim (God) but one.* Paul speaks the same verdict as Baruch 6:51 — no work of Yahuah is in them; the idol is nothing, and Elohim is one."
+        }
+      ]
+    },
+    {
+      "slug": "baruch-6-cannot-save",
+      "title": "They can save no man from death",
+      "summary_md": "The heart of the polemic: the dead god is useless precisely where help is needed — *They can save no man from death, neither deliver the weak from the mighty* (Baruch 6:36), *They cannot restore a blind man to his sight, nor help any man in his distress* (Baruch 6:37), *They can shew no mercy to the widow, nor do good to the fatherless* (Baruch 6:38). Over against this stands Yahuah alone the King of nations — *But Yahuah (LORD) is the true Elohim (God), he is the living Elohim (God), and an everlasting king: at his wrath the earth shall tremble, and the nations shall not be able to abide his indignation* (Jeremiah 10:10) — and the redeemer who is first and last beside whom there is no Elohim — *Thus saith Yahuah (LORD) the King of Yashar'el (Israel), and his redeemer Yahuah Tseva'ot (LORD of hosts); I am the first, and I am the last; and beside me there is no Elohim (God)* (Isaiah 44:6). The idol cannot save; only the living Elohim saves.",
+      "anchor_start_v": 36,
+      "anchor_end_v": 38,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 36,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Jeremiah 10:10 — *But Yahuah (LORD) is the true Elohim (God), he is the living Elohim (God), and an everlasting king: at his wrath the earth shall tremble, and the nations shall not be able to abide his indignation.* The living Elohim of Jeremiah saves and judges where the idol of Baruch 6:36 can deliver no one from death."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 36,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Isaiah 44:6 — *Thus saith Yahuah (LORD) the King of Yashar'el (Israel), and his redeemer Yahuah Tseva'ot (LORD of hosts); I am the first, and I am the last; and beside me there is no Elohim (God).* The redeemer who is first and last is the answer to Baruch 6:36 — beside Him there is no god to save."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 38,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Psalm 115:9 — *O Yashar'el (Israel), trust thou in Yahuah (LORD): he is their help and their shield.* The idol shows no mercy to widow or fatherless (Baruch 6:38); Yahuah alone is the help and shield Israel is to trust."
+        }
+      ]
+    },
+    {
+      "slug": "baruch-6-bel-chaldeans-dishonour",
+      "title": "Even the Chaldeans dishonour them; intreat Bel",
+      "summary_md": "The Epistle turns the heathen's own conduct into testimony — *How should a man then think and say that they are gods, when even the Chaldeans themselves dishonour them?* (Baruch 6:40) — and pictures them bringing a dumb man to *intreat Bel that he may speak, as though he were able to understand* (Baruch 6:41). The name Bel is no abstraction in this library: Daniel faced that very idol — *Now the Babylons had an idol, called Bel, and there were spent upon him every day twelve great measures of fine flour, and forty sheep, and six vessels of wine* (Bel and the Dragon 1:3) — and gave the Epistle's own confession: *Because I may not worship idols made with hands, but the living Yahuah (God), who has created the heaven and the earth, and has sovereignty over all flesh* (Bel and the Dragon 1:5). Isaiah had already prophesied Bel's fall: *Bel boweth down, Nebo stoopeth, their idols were upon the beasts, and upon the cattle: your carriages were heavy loaden; they are a burden to the weary beast* (Isaiah 46:1). And Paul names the root sin: men *changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man* (Romans 1:23).",
+      "anchor_start_v": 40,
+      "anchor_end_v": 41,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 41,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "bel-and-the-dragon",
+          "tgt_ch": 1,
+          "tgt_v": 5,
+          "tier": "extras",
+          "note": "Bel and the Dragon 1:5 — *Because I may not worship idols made with hands, but the living Yahuah (God), who has created the heaven and the earth, and has sovereignty over all flesh.* Daniel's confession before the very Bel that Baruch 6:41 says the Babylonians intreat — the living Creator against the dumb idol."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 41,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 46,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 46:1 — *Bel boweth down, Nebo stoopeth, their idols were upon the beasts, and upon the cattle: your carriages were heavy loaden; they are a burden to the weary beast.* Isaiah names Bel's collapse; Baruch 6:41 shows the same Bel intreated in vain to make a dumb man speak."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 1,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Romans 1:23 — *And changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things.* Paul names the exchange that Baruch 6:40 marvels at — even the Chaldeans dishonour the images they have set in Elohim's place."
+        }
+      ]
+    }
+  ]
+}
