@@ -1,0 +1,150 @@
+{
+  "edition": "apocalypse-of-abraham",
+  "book": "apocalypse-of-abraham",
+  "chapter": 3,
+  "session": "session253",
+  "tag": "aoa3",
+  "base_band": 67050,
+  "threads": [
+    {
+      "slug": "apocalypse-of-abraham-3-fathers-served-other-gods",
+      "title": "The fathers served other gods — Terah the idol-maker",
+      "summary_md": "The boy Abraham walks perplexed, his heart troubled at his father's trade: *And I said in my heart: \"What evil deed is this that my father is doing? Is not he, rather, the god of his gods, since they come into existence through his chisels and lathes, and his wisdom, and is it not rather fitting that they should worship my father, since they are his work?\"* (Apocalypse of Abraham 3:2-3). It ain't new — the Tanakh names this very house. *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* (Joshua 24:2) — Terah is named, the idol-house Abraham is being called out of. And the Apocrypha turns the same lathe: *For being mortal, he works a dead thing with wicked hands: for he himself is better than the things which he worshippeth: whereas he lived once, but they never* (Wisdom of Solomon 15:17) — the maker is greater than the made, which is Abraham's own riddle on the page.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 24,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Joshua names Terah by name as the idol-server, the very father whose evil deed Abraham questions in his heart at 3:2."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 15,
+          "tgt_v": 17,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 15:17 — *For being mortal, he works a dead thing with wicked hands: for he himself is better than the things which he worshippeth: whereas he lived once, but they never.* Wisdom states Abraham's own riddle at 3:3 — the maker is greater than the made, so it is the gods who ought to worship Terah, not Terah them."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-3-the-idol-that-cannot-rise",
+      "title": "Merumath fell and could not rise — the god that needs help",
+      "summary_md": "Abraham watches the stone god collapse: *Behold, Merumath fell and could not rise in his own temple, nor could I, by myself, move him until my father came, and the two of us moved him; and as we were thus too weak, his head fell from him, and he set it upon another stone of another god, which he had made without head* (Apocalypse of Abraham 3:5). The prophets mocked this exact helplessness. *They bear him upon the shoulder, they carry him, and set him in his place, and he standeth; from his place shall he not remove: yea, one shall cry unto him, yet can he not answer, nor save him out of his trouble* (Isaiah 46:7) — the god must be carried, cannot move itself. And the Apocrypha names the absurdity straight: *For he provided for it that it might not fall, knowing that it was unable to help itself; for it is an image, and has need of help* (Wisdom of Solomon 13:16) — the maker must prop up the god that cannot prop up itself, which is Merumath fallen and headless in his own temple.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 46,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Isaiah 46:7 — *They bear him upon the shoulder, they carry him, and set him in his place, and he standeth; from his place shall he not remove: yea, one shall cry unto him, yet can he not answer, nor save him out of his trouble.* Isaiah's god that cannot move from its place is Merumath who fell and could not rise until Abraham and Terah lifted him (3:5)."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 5,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 13,
+          "tgt_v": 16,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 13:16 — *For he provided for it that it might not fall, knowing that it was unable to help itself; for it is an image, and has need of help.* The maker must keep the idol from falling because it cannot help itself — exactly Terah propping the headless Merumath at 3:5."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-3-broken-gods-cannot-save",
+      "title": "Broken gods that cannot help themselves nor hurt the ass",
+      "summary_md": "The five gods shatter and the ass walks free: *And the other five gods were broken in pieces down from the ass, which were able neither to help themselves, nor to hurt the ass, because it had broken them to pieces; nor did their broken fragments come up out of the river* (Apocalypse of Abraham 3:6). This is the prophets' whole indictment. *They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed* (Isaiah 44:9); *Who hath formed a god, or molten a graven image that is profitable for nothing?* (Isaiah 44:10). The psalm seals it: *They that make them are like unto them; so is every one that trusteth in them* (Psalm 115:8) — a beast of burden out-survives the gods it carries, for they could neither help themselves nor rise from the river.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Isaiah 44:9 — *They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed.* The graven image is vanity and cannot profit — the five broken gods of 3:6 that could neither help themselves nor hurt the ass."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Isaiah 44:10 — *Who hath formed a god, or molten a graven image that is profitable for nothing?* Isaiah asks why a man would form a god profitable for nothing — the very gods broken to pieces from the ass and helpless in the river at 3:6."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Psalm 115:8 — *They that make them are like unto them; so is every one that trusteth in them.* The makers become as lifeless as the broken fragments of 3:6 that could not even rise from the river."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-3-can-a-stone-hear-prayer",
+      "title": "Can a stone god rescue a man or hear his prayer?",
+      "summary_md": "Abraham reasons to the root: *And I said in my heart: \"If this be so, how can Merumath, my father's god, having the head of another stone, and himself being made of another stone, rescue a man, or hear a man's prayer and reward him?\"* (Apocalypse of Abraham 3:7). Isaiah had already exposed the prayer that goes nowhere. *And the residue thereof he maketh a god, even his graven image: he falleth down unto it, and worshippeth it, and prayeth unto it, and saith, Deliver me; for thou art my god* (Isaiah 44:17) — a man prays \"Deliver me\" to wood he carved. *They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also is it in them to do good* (Jeremiah 10:5) — they cannot answer, cannot save, cannot reward. The Apocrypha joins the verdict: *But miserable are they, and in dead things is their hope, who call them gods, which are the works of men's hands, gold and silver, to shew art in, and resemblances of beasts, or a stone good for nothing, the work of an ancient hand* (Wisdom of Solomon 13:10) — \"a stone good for nothing,\" which is the stone Merumath Abraham now refuses.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Isaiah 44:17 — *And the residue thereof he maketh a god, even his graven image: he falleth down unto it, and worshippeth it, and prayeth unto it, and saith, Deliver me; for thou art my god.* A man prays \"Deliver me\" to carved wood — the empty prayer Abraham exposes when he asks how a stone could hear a man's prayer at 3:7."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Jeremiah 10:5 — *They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also is it in them to do good.* The idol cannot do good or evil and must be carried — so it cannot rescue a man or reward him, the very thing Abraham concludes at 3:7."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 7,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 13,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 13:10 — *But miserable are they, and in dead things is their hope, who call them gods, which are the works of men's hands, gold and silver, to shew art in, and resemblances of beasts, or a stone good for nothing, the work of an ancient hand.* \"A stone good for nothing\" is precisely the stone Merumath whose prayer-hearing power Abraham denies at 3:7."
+        }
+      ]
+    }
+  ]
+}

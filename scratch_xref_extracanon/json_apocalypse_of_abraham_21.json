@@ -1,0 +1,180 @@
+{
+  "edition": "apocalypse-of-abraham",
+  "book": "apocalypse-of-abraham",
+  "chapter": 21,
+  "session": "session253",
+  "tag": "aoa21",
+  "base_band": 67500,
+  "threads": [
+    {
+      "slug": "apocalypse-of-abraham-21-creation-foreshadowed",
+      "title": "The creation foreshadowed in the expanse",
+      "summary_md": "Abraham is shown the whole work of the Maker laid out beneath him: *And He said to me: \"Look, now, beneath thy feet at the firmaments, and understand the creation foreshadowed in this expanse, the creatures existing on it, and the age prepared according to it.\"* (Apocalypse of Abraham 21:1). It ain't new — this is the opening of Genesis, the heavens and the earth and the dividing firmament: *In the beginning Elohim (God) created the heaven and the earth.* (Genesis 1:1) and *And Elohim (God) said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.* (Genesis 1:6). The patriarch beholds the very expanse and its teeming life: *And Elohim (God) said, Let the waters bring forth abundantly the moving creature that hath life, and fowl that may fly above the earth in the open firmament of heaven.* (Genesis 1:20). And the psalmist, gazing on the same world, cries the same wonder: *O Yahuah (LORD), how manifold are thy works! in wisdom hast thou made them all: the earth is full of thy riches.* (Psalms 104:24). The God who called Abram out of Ur is the God who made it all.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 21,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Genesis 1:1 — *In the beginning Elohim (God) created the heaven and the earth.* The creation Abraham is shown foreshadowed in the expanse is the very work of the first day of Genesis."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Genesis 1:6 — *And Elohim (God) said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.* The \"firmaments\" beneath Abraham's feet are the dividing firmament Elohim set in place."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Genesis 1:20 — *And Elohim (God) said, Let the waters bring forth abundantly the moving creature that hath life, and fowl that may fly above the earth in the open firmament of heaven.* The creatures and animate beings Abraham sees moving on the earth are the swarming life Elohim called forth."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Psalms 104:24 — *O Yahuah (LORD), how manifold are thy works! in wisdom hast thou made them all: the earth is full of thy riches.* Abraham's overview of all the creatures and their works is the psalmist's wonder at the wisdom by which they were made."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-21-leviathan-the-deep",
+      "title": "Leviathan in the abyss of the waters",
+      "summary_md": "From the height Abraham looks down on the sea and its master: *I saw there the sea and its islands, and its monsters and its fishes, and Leviathan and his dominion, and his camping-ground, and his caves, and the world which lay upon him, and his movements, and the destructions of the world on his account.* (Apocalypse of Abraham 21:3). It ain't new — Leviathan is no invention here; he is the great creature of the deep that no man can master: *Canst thou draw out leviathan with an hook? or his tongue with a cord which thou lettest down?* (Job 41:1), and the playing monster of the wide sea: *There go the ships: there is that leviathan, whom thou hast made to play therein.* (Psalms 104:26). And the now-live witness of Enoch sets him in the very same abyss of the waters at the end: *And on that day were two monsters parted, a female monster whose name is Leviathan, dwelling in the abysses of the ocean over the fountains of the waters.* (1 Enoch 60:7). The chaos-beast is real, but he is a made thing, under the dominion of the One Abraham beholds.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 21,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 41,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Job 41:1 — *Canst thou draw out leviathan with an hook? or his tongue with a cord which thou lettest down?* The Leviathan with his dominion and his caves that Abraham sees is the unmasterable sea-monster Yahuah sets before Job."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Psalms 104:26 — *There go the ships: there is that leviathan, whom thou hast made to play therein.* The sea with its islands and its monster in Abraham's vision is the wide sea where the made Leviathan plays."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 3,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 60,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "1 Enoch 60:7 — *And on that day were two monsters parted, a female monster whose name is Leviathan, dwelling in the abysses of the ocean over the fountains of the waters.* The Leviathan in his deep camping-ground that Abraham beholds is Enoch's Leviathan dwelling in the abysses of the waters."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-21-garden-of-eden",
+      "title": "The Garden of Eden and its river",
+      "summary_md": "Abraham's eye is led to the place of beginnings: *And I saw there the Garden of Eden and its fruits, the source of the stream issuing from it, and its trees and their bloom, and those who behaved righteously.* (Apocalypse of Abraham 21:5), and *And I saw therein their foods and blessedness.* (Apocalypse of Abraham 21:6). It ain't new — this is the garden Yahuah planted in the east, with its trees and its single rising river: *And Yahuah Elohim (the LORD God) planted a garden eastward in Eden; and there he put the man whom he had formed.* (Genesis 2:8), and *And a river went out of Eden to water the garden; and from thence it was parted, and became into four heads.* (Genesis 2:10), and *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* (Genesis 2:9). The blessedness Abraham sees reserved for the righteous is the garden's foods, the same Eden — paradise is not a new promise but the first home kept for those who behave righteously.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 21,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Genesis 2:8 — *And Yahuah Elohim (the LORD God) planted a garden eastward in Eden; and there he put the man whom he had formed.* The Garden of Eden Abraham is shown is the very garden Yahuah planted eastward and set the man within."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Genesis 2:10 — *And a river went out of Eden to water the garden; and from thence it was parted, and became into four heads.* The source of the stream issuing from Eden that Abraham sees is the river that went out to water the garden."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The trees and their bloom and fruits Abraham beholds are the garden's trees pleasant to the sight and good for food."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-21-two-peoples-right-left",
+      "title": "The two peoples — the right and the left",
+      "summary_md": "At the last Abraham sees the multitude divided in two: *And I saw there a great multitude — men and women and children, half of them on the right side of the picture, and half of them on the left side of the picture.* (Apocalypse of Abraham 21:7). It ain't new — election runs back to Rebekah's womb, two peoples sundered before they had done good or ill: *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* (Genesis 25:23). And the same dividing stands at the end, when the Son of Adam separates the gathered nations: *And before him shall be gathered all nations: and he shall separate them one from another, as a shepherd divideth his sheep from the goats:* (Matthew 25:32), *And he shall set the sheep on his right hand, but the goats on the left.* (Matthew 25:33). The right hand is the elect of Abraham's seed and the left the heathen — election precedes confession, and it is not a church replacing Yashar'el but the dividing the Maker fixed from the womb to the judgment.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 21,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 25,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* The multitude halved on the right and the left in Abraham's vision is the two peoples Yahuah separated from the womb."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 25,
+          "tgt_v": 32,
+          "tier": "free",
+          "note": "Matthew 25:32 — *And before him shall be gathered all nations: and he shall separate them one from another, as a shepherd divideth his sheep from the goats:* The two halves of the great multitude Abraham beholds are the nations the Son of Adam gathers and divides at the end."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 25,
+          "tgt_v": 33,
+          "tier": "free",
+          "note": "Matthew 25:33 — *And he shall set the sheep on his right hand, but the goats on the left.* The right side and the left side of Abraham's picture are the sheep on the right hand and the goats on the left at the judgment."
+        }
+      ]
+    }
+  ]
+}

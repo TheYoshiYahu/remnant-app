@@ -1,0 +1,230 @@
+{
+  "edition": "apocalypse-of-abraham",
+  "book": "apocalypse-of-abraham",
+  "chapter": 18,
+  "session": "session253",
+  "tag": "aoa18",
+  "base_band": 67425,
+  "threads": [
+    {
+      "slug": "apocalypse-of-abraham-18-throne-of-fire",
+      "title": "The throne of fire above the host",
+      "summary_md": "Abraham, led up by Yahoel, beholds what Ezekiel and Isaiah and John beheld — *And as the fire raised itself up, ascending into the height, I saw under the fire a throne of fire, and, round about it, all-seeing ones, reciting the song* (Apocalypse of Abraham 18:3). It ain't new: the prophet by the river Chebar saw the same — *And above the firmament that was over their heads was the likeness of a throne, as the appearance of a sapphire stone: and upon the likeness of the throne was the likeness as the appearance of a man above upon it* (Ezekiel 1:26), and *I saw also Yahuah (Lord) sitting upon a throne, high and lifted up, and his train filled the temple* (Isaiah 6:1). The Ancient of days sits on the same fiery seat — *his throne was like the fiery flame, and his wheels as burning fire* (Daniel 7:9) — and the seer of Patmos was carried up to it: *a throne was set in heaven, and one sat on the throne* (Revelation 4:2). One throne, one vision, across the witnesses.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 18,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 1,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Ezekiel 1:26 — *And above the firmament that was over their heads was the likeness of a throne, as the appearance of a sapphire stone: and upon the likeness of the throne was the likeness as the appearance of a man above upon it.* The same throne of fire Abraham sees above the living creatures is what Ezekiel saw above the firmament over the cherubim."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 6,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 6:1 — *In the year that king Uzziah died I saw also Yahuah (Lord) sitting upon a throne, high and lifted up, and his train filled the temple.* Isaiah's high and lifted-up throne is the throne of fire Abraham beholds the all-seeing ones encircling with song."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* The throne of fire with its fiery wheels is exactly what Daniel saw the Ancient of days seated upon."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 4,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 4:2 — *And immediately I was in the spirit: and, behold, a throne was set in heaven, and one sat on the throne.* John, like Abraham, is carried up in the spirit to behold the one enthroned amid fire."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-18-four-living-creatures",
+      "title": "The four living creatures: lion, man, ox, eagle",
+      "summary_md": "Under the throne Abraham sees *four fiery living creatures... each one of them with four faces* — *of a lion, of a man, of an ox, of an eagle* (Apocalypse of Abraham 18:3-4). It ain't new: this is the merkabah of Ezekiel, whose creatures *had the face of a man, and the face of a lion, on the right side: and they four had the face of an ox on the left side; they four also had the face of an eagle* (Ezekiel 1:10), the same creatures he names cherubim — *the first face was the face of a cherub, and the second face was the face of a man, and the third the face of a lion, and the fourth the face of an eagle* (Ezekiel 10:14). And the four beasts before the throne in heaven are these very four — *the first beast was like a lion, and the second beast like a calf, and the third beast had a face as a man, and the fourth beast was like a flying eagle* (Revelation 4:7). One company of living creatures bears the throne in every seeing.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 18,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 1,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Ezekiel 1:10 — *As for the likeness of their faces, they four had the face of a man, and the face of a lion, on the right side: and they four had the face of an ox on the left side; they four also had the face of an eagle.* Abraham's living creatures with the four faces of lion, man, ox, and eagle are Ezekiel's four-faced creatures by the river Chebar."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 10,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Ezekiel 10:14 — *And every one had four faces: the first face was the face of a cherub, and the second face was the face of a man, and the third the face of a lion, and the fourth the face of an eagle.* Ezekiel names these same four-faced creatures the cherubim, the living beings that bear the throne Abraham now beholds."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 4,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Revelation 4:7 — *And the first beast was like a lion, and the second beast like a calf, and the third beast had a face as a man, and the fourth beast was like a flying eagle.* The four beasts round the heavenly throne in John's vision are the same lion, ox, man, and eagle Abraham sees under the throne of fire."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 4,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 39,
+          "tgt_v": 11,
+          "tier": "extras",
+          "note": "1 Enoch 39:11 — *And I saw the four presences which surround the throne of glory, and they praise Yahuah (God) of Spirits, and they intercede for the children of men.* Enoch too saw four presences encircling the throne of glory, the same fourfold company Abraham beholds round the throne of fire."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-18-six-wings-covered",
+      "title": "Six wings: covering face and feet, spread to fly",
+      "summary_md": "Each creature has *six wings from their shoulders* — *with the two wings from their shoulders they covered their faces, and with the two wings which sprang from their loins they covered their feet, while the two middle wings they spread out for flying* (Apocalypse of Abraham 18:4-5). It ain't new: this is precisely the seraphim of Isaiah — *each one had six wings; with twain he covered his face, and with twain he covered his feet, and with twain he did fly* (Isaiah 6:2) — and the four beasts of the throne — *the four beasts had each of them six wings about him; and they were full of eyes within* (Revelation 4:8). The same reverent posture before the same throne: the face veiled, the feet veiled, the wings spread to serve.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 18,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Isaiah 6:2 — *Above it stood the seraphims: each one had six wings; with twain he covered his face, and with twain he covered his feet, and with twain he did fly.* Abraham's creatures cover face and feet and spread wings to fly exactly as Isaiah's six-winged seraphim do before the throne."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 4,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Revelation 4:8 — *And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come.* The six-winged creatures Abraham sees are the four six-winged beasts John saw, ceaselessly singing the holy before the throne."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-18-chariot-wheels-of-eyes",
+      "title": "The chariot of fiery wheels full of eyes",
+      "summary_md": "Behind the living creatures Abraham sees *a chariot with fiery wheels, each wheel full of eyes round about; and over the wheels was a throne... covered with fire* (Apocalypse of Abraham 18:9). It ain't new: Ezekiel's merkabah is this very wheelwork — *their rings were full of eyes round about them four* (Ezekiel 1:18), the wheel within the wheel — *and their whole body, and their backs, and their hands, and their wings, and the wheels, were full of eyes round about, even the wheels that they four had* (Ezekiel 10:12). Daniel saw the Ancient of days with these same flaming wheels — *his throne was like the fiery flame, and his wheels as burning fire* (Daniel 7:9). And Enoch was borne to the throne in this very chariot — *I Enoch was carried off in a whirlwind, with a chariot of fire* (1 Enoch 14:3). One fiery chariot bears the throne in every ascent.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 18,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 1,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Ezekiel 1:18 — *As for their rings, they were so high that they were dreadful; and their rings were full of eyes round about them four.* Abraham's fiery wheels full of eyes round about are Ezekiel's dreadful wheel-rings full of eyes."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 10,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Ezekiel 10:12 — *And their whole body, and their backs, and their hands, and their wings, and the wheels, were full of eyes round about, even the wheels that they four had.* The chariot-wheels covered with eyes that Abraham sees are the eye-covered wheels of the cherubim in Ezekiel's temple vision."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* The throne over fiery wheels encircled with fire that Abraham beholds is the fiery-wheeled throne of the Ancient of days."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 9,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 14,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "1 Enoch 14:3 — *And I Enoch was carried off in a whirlwind, with a chariot of fire, and the wind lifted me up and bore me into the ends of heaven.* Enoch too was carried up by a chariot of fire to behold the throne, the same fiery chariot Abraham sees bearing the throne of the Eternal."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-18-the-song",
+      "title": "The unceasing song before the throne",
+      "summary_md": "The all-seeing ones and the living creatures are *reciting the song* without ceasing, and Yahoel *taught them the song of peace which hath its origin in the Eternal One* (Apocalypse of Abraham 18:3,8). It ain't new: before the throne the seraphim cry the everlasting Holy — *And one cried unto another, and said, Holy, holy, holy, is Yahuah Tseva'ot (LORD of hosts): the whole earth is full of his glory* (Isaiah 6:3) — and the four beasts take it up day and night — *they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come* (Revelation 4:8). Enoch too heard the four presences before the throne — *I heard the voices of those four presences as they uttered praises before Yahuah (God) of glory* (1 Enoch 39:12). The same song of peace, sung from the foundation, surrounds the throne in every heaven.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 18,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 6,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Isaiah 6:3 — *And one cried unto another, and said, Holy, holy, holy, is Yahuah Tseva'ot (LORD of hosts): the whole earth is full of his glory.* The song of peace the living creatures recite is the seraphim's antiphonal Holy, holy, holy before the throne."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 4,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Revelation 4:8 — *And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come.* The unceasing song Abraham hears the creatures recite is the unresting Holy of the four beasts before the heavenly throne."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 8,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 39,
+          "tgt_v": 12,
+          "tier": "extras",
+          "note": "1 Enoch 39:12 — *And I heard the voices of those four presences as they uttered praises before Yahuah (God) of glory.* Enoch likewise heard the four presences uttering praise before the throne of glory, the same song of peace Abraham hears taught by Yahoel."
+        }
+      ]
+    }
+  ]
+}

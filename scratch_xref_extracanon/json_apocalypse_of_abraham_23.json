@@ -1,0 +1,160 @@
+{
+  "edition": "apocalypse-of-abraham",
+  "book": "apocalypse-of-abraham",
+  "chapter": 23,
+  "session": "session253",
+  "tag": "aoa23",
+  "base_band": 67550,
+  "threads": [
+    {
+      "slug": "apocalypse-of-abraham-23-tree-eve-serpent",
+      "title": "The Man, the Woman, and the Serpent Under the Tree",
+      "summary_md": "Abraham is shown the fall as a living picture: *And I saw there a man very great in height and fearful in breadth, incomparable in aspect, embracing a woman, who likewise approximated to the aspect and shape of the man.* (Apocalypse of Abraham 23:3) — *And they were standing under a tree of the Garden of Eden, and the fruit of this tree was like the appearance of a bunch of grapes of the vine, and behind the tree was standing as it were a serpent in form... and both were eating it whom I had seen embracing.* (Apocalypse of Abraham 23:4) It ain't new — this is Eden retold. *Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made. And he said unto the woman, Yea, hath Elohim (God) said, Ye shall not eat of every tree of the garden?* (Genesis 3:1) The eating that undid the pair: *And when the woman saw that the tree was good for food... she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* (Genesis 3:6) Sha'ul reads the same scene as a present peril: *But I fear, lest by any means, as the serpent beguiled Eve through his subtilty, so your minds should be corrupted from the simplicity that is in Messiah (Christ).* (2 Corinthians 11:3)",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 23,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Genesis 3:1 — *Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made. And he said unto the woman, Yea, hath Elohim (God) said, Ye shall not eat of every tree of the garden?* The serpent in form behind the tree in Abraham's vision is this same subtil beast that questioned the woman in the Garden."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* Abraham sees the very eating Moses recorded — both the man and the woman taking the fruit of the tree."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "2-corinthians",
+          "tgt_ch": 11,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "2 Corinthians 11:3 — *But I fear, lest by any means, as the serpent beguiled Eve through his subtilty, so your minds should be corrupted from the simplicity that is in Messiah (Christ).* The serpent beguiling Eve under the tree is the same deception Sha'ul warns is still at work on the mind."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-23-azazel-between-them",
+      "title": "Azazel Between Them — the Old Serpent, the Fallen Watcher",
+      "summary_md": "The figure between the embracing pair is named: *but he who is between them representeth ungodliness, their beginning on the way to perdition, even Azazel.* (Apocalypse of Abraham 23:6) The serpent of Eden is unmasked as the rebel spirit — *And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him.* (Revelation 12:9) This Azazel is no new villain; the Watchers' chief is bound by the very name in the live witness of Enoch: *And again Yahuah (God) said to Raphael: 'Bind Azâzêl hand and foot, and cast him into the darkness... and let him abide there for ever.* (1 Enoch 10:4) *And the whole earth has been corrupted through the works that were taught by Azâzêl: to him ascribe all sin.* (1 Enoch 10:8) Torah already set his name and his lot apart: *And Aaron shall cast lots upon the two goats; one lot for Yahuah (LORD), and the other lot for the scapegoat.* (Leviticus 16:8) And the apostate angels await the same judgment: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6)",
+      "anchor_start_v": 6,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 23,
+          "src_v": 6,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 4,
+          "tier": "extras",
+          "note": "1 Enoch 10:4 — *And again Yahuah (God) said to Raphael: 'Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dûdâêl, and cast him therein.* The Azazel standing between Adam and Eve in Abraham's vision is the same fallen Watcher whom Enoch saw bound and cast into the darkness."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 6,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "1 Enoch 10:8 — *And the whole earth has been corrupted through the works that were taught by Azâzêl: to him ascribe all sin.'* Abraham's word that Azazel is 'the beginning on the way to perdition' matches Enoch's verdict that to Azazel is ascribed all the corruption of the earth."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 12,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Revelation 12:9 — *And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him.* The serpent-formed Azazel between the pair is unveiled by John as that old serpent who deceiveth the whole world."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 16,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Leviticus 16:8 — *And Aaron shall cast lots upon the two goats; one lot for Yahuah (LORD), and the other lot for the scapegoat.* The name Azazel is no invention of Abraham's vision — Torah set it as the lot opposed to Yahuah on the Day of Atonement."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Azazel the ungodly one belongs to the fallen angels Jude says are reserved in chains under darkness for the judgment."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-23-evil-chosen-not-forced",
+      "title": "Power Over Them That Will to Do Evil",
+      "summary_md": "Abraham presses the hard question of why such power was given, and the answer guards the freedom of the will: *And He said to me: \"They who will to do evil — and how much I hated it in those who do it! — over them I gave him power, and to be beloved of them.\"* (Apocalypse of Abraham 23:9) Evil is not laid upon a man from above but is chosen by his own desire — it ain't new. *Let no man say when he is tempted, I am tempted of Elohim (God): for Elohim (God) cannot be tempted with evil, neither tempteth he any man:* (James 1:13) *But every man is tempted, when he is drawn away of his own lust, and enticed.* (James 1:14) And Moses set the same choice before the seed at the threshold of the land: *See, I have set before thee this day life and good, and death and evil;* (Deuteronomy 30:15) *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19)",
+      "anchor_start_v": 8,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 23,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 1,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "James 1:13 — *Let no man say when he is tempted, I am tempted of Elohim (God): for Elohim (God) cannot be tempted with evil, neither tempteth he any man:* The Eternal's word that He gives the tempter power only over them who will to do evil keeps the same line Ya'akov draws — Elohim tempts no man."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "James 1:14 — *But every man is tempted, when he is drawn away of his own lust, and enticed.* Abraham hears that the power falls upon those who will the evil — the man drawn away of his own lust, just as Ya'akov teaches."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Abraham's struggle over why evil should be desired meets Moses' charge that life and death, good and evil, are set before man to choose."
+        },
+        {
+          "src_ch": 23,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* The desire of evil that angers the Eternal is answered by the covenant call to choose life, that the seed may live."
+        }
+      ]
+    }
+  ]
+}
