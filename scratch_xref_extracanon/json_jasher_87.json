@@ -1,0 +1,106 @@
+{
+  "edition": "jasher", "book": "jasher", "chapter": 87,
+  "session": "session252", "tag": "ja87", "base_band": 57150,
+  "threads": [
+    {
+      "slug": "jasher-87-joshua-commissioned",
+      "title": "Joshua charged in the tabernacle — be strong and courageous",
+      "summary_md": "Jasher's final chapter carries the canon's own handing-over of the staff. *At that time Yahuah (the Lord) said to Moses, Behold your days are approaching to an end, take now Joshua the son of Nun your servant and place him in the tabernacle, and I will command him, and Moses did so* (Jasher 87:1) — word for word the scene Moses recorded: *And Yahuah (LORD) said unto Moses, Behold, thy days approach that thou must die: call Joshua, and present yourselves in the tabernacle of the congregation, that I may give him a charge. And Moses and Joshua went, and presented themselves in the tabernacle of the congregation* (Deuteronomy 31:14). The glory comes down exactly as written — *And Yahuah (the Lord) appeared in the tabernacle in a pillar of cloud, and the pillar of cloud stood at the entrance of the tabernacle* (Jasher 87:2) beside *And Yahuah (LORD) appeared in the tabernacle in a pillar of a cloud: and the pillar of the cloud stood over the door of the tabernacle* (Deuteronomy 31:15). The charge itself — *Be strong and courageous, for you shall bring the children of Israel to the land which I swore to give them, and I will be with you* (Jasher 87:3) — is the LORD's own commission of Joshua: *Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee* (Joshua 1:7). The succession runs back to Numbers, where the man-in-whom-is-the-spirit is named and laid hands upon, that the congregation be not as sheep without a shepherd. It ain't new — the covenant seed is led into the inheritance Yahuah swore to the fathers.",
+      "anchor_start_v": 1, "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 87, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 31, "tgt_v": 14,
+         "tier": "free",
+         "note": "Deuteronomy 31:14 — *And Yahuah (LORD) said unto Moses, Behold, thy days approach that thou must die: call Joshua, and present yourselves in the tabernacle of the congregation, that I may give him a charge. And Moses and Joshua went, and presented themselves in the tabernacle of the congregation.* Jasher 87:1 retells the same end-of-days summons of Joshua into the tabernacle verbatim."},
+        {"src_ch": 87, "src_v": 2,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 31, "tgt_v": 15,
+         "tier": "free",
+         "note": "Deuteronomy 31:15 — *And Yahuah (LORD) appeared in the tabernacle in a pillar of a cloud: and the pillar of the cloud stood over the door of the tabernacle.* Jasher 87:2 carries the identical theophany at the tabernacle door."},
+        {"src_ch": 87, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 1, "tgt_v": 6,
+         "tier": "free",
+         "note": "Joshua 1:6 — *Be strong and of a good courage: for unto this people shalt thou divide for an inheritance the land, which I sware unto their fathers to give them.* Yahuah's charge in Jasher 87:3 is the LORD's own commissioning of Joshua to bring Israel into the sworn inheritance."},
+        {"src_ch": 87, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 27, "tgt_v": 18,
+         "tier": "free",
+         "note": "Numbers 27:18 — *And Yahuah (LORD) said unto Moses, Take thee Joshua the son of Nun, a man in whom is the spirit, and lay thine hand upon him.* Jasher 87:1-3 follows the Numbers naming of Joshua son of Nun as Moses' appointed successor."}
+      ]
+    },
+    {
+      "slug": "jasher-87-moses-charges-joshua",
+      "title": "Moses to Joshua — he will not leave you nor forsake you",
+      "summary_md": "Now Moses repeats the charge in his own mouth: *And Moses said to Joshua, Be strong and courageous, for you will make the children of Israel inherit the land, and Yahuah (the Lord) will be with you, he will not leave you nor forsake you, be not afraid nor disheartened* (Jasher 87:4). This is Deuteronomy's farewell word, kept down to the promise of presence — *And Moses called unto Joshua, and said unto him in the sight of all Yashar'el (Israel), Be strong and of a good courage: for thou must go with this people unto the land which Yahuah (LORD) hath sworn unto their fathers to give them; and thou shalt cause them to inherit it* (Deuteronomy 31:7), and *And Yahuah (LORD), he it is that doth go before thee; he will be with thee, he will not fail thee, neither forsake thee: fear not, neither be dismayed* (Deuteronomy 31:8). The same unbroken pledge — *he will not fail thee, nor forsake thee* — is set on Joshua himself by Yahuah: *as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee* (Joshua 1:5). The New Covenant carries the very promise forward to every heir of the seed: *for he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5). It ain't new — the faithfulness that led Israel into the land is the faithfulness held out still.",
+      "anchor_start_v": 4, "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 87, "src_v": 4,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 31, "tgt_v": 7,
+         "tier": "free",
+         "note": "Deuteronomy 31:7 — *And Moses called unto Joshua, and said unto him in the sight of all Yashar'el (Israel), Be strong and of a good courage: for thou must go with this people unto the land which Yahuah (LORD) hath sworn unto their fathers to give them; and thou shalt cause them to inherit it.* Jasher 87:4 is Moses' same spoken charge that Joshua will make Israel inherit the land."},
+        {"src_ch": 87, "src_v": 4,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 31, "tgt_v": 8,
+         "tier": "free",
+         "note": "Deuteronomy 31:8 — *And Yahuah (LORD), he it is that doth go before thee; he will be with thee, he will not fail thee, neither forsake thee: fear not, neither be dismayed.* Jasher 87:4 keeps the very pledge — he will not leave nor forsake — set on Joshua."},
+        {"src_ch": 87, "src_v": 4,
+         "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 1, "tgt_v": 5,
+         "tier": "free",
+         "note": "Joshua 1:5 — *There shall not any man be able to stand before thee all the days of thy life: as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee.* Yahuah confirms to Joshua the same unfailing presence Moses promised in Jasher 87:4."},
+        {"src_ch": 87, "src_v": 4,
+         "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 13, "tgt_v": 5,
+         "tier": "free",
+         "note": "Hebrews 13:5 — *Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.* The New Covenant carries forward the very I-will-not-forsake-thee promise spoken in Jasher 87:4."}
+      ]
+    },
+    {
+      "slug": "jasher-87-torah-stands",
+      "title": "Observe all the words of this law — Torah stands, written by Moses' hand",
+      "summary_md": "Moses' last work is to fix the Torah on the nation. *And Moses called to all the children of Israel and said to them, You have seen all the good which Yahuah your Elohim (the Lord your God) has done for you in the wilderness* (Jasher 87:5); *Now therefore observe all the words of this law, and walk in the way of Yahuah your Elohim, turn not from the way which Yahuah (the Lord) has commanded you, either to the right or to the left* (Jasher 87:6). This is Deuteronomy's own posture — the law is the way of life, neither added to nor taken from: *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you* (Deuteronomy 4:2), and the not-turning-aside refrain, *Ye shall observe to do therefore as Yahuah Elohaychem (the LORD your God) hath commanded you: ye shall not turn aside to the right hand or to the left* (Deuteronomy 5:32). Moses then teaches and writes it: *And Moses taught the children of Israel statutes and judgments and laws to do in the land as Yahuah (the Lord) had commanded him* (Jasher 87:7); *behold they are written upon the book of the law of Elohim (God) which he gave to the children of Israel by the hand of Moses* (Jasher 87:8) — the very book the LORD charges Joshua to keep in his mouth: *This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night* (Joshua 1:8). It ain't new, and it does not pass — the Torah given before the land is the Torah that abides.",
+      "anchor_start_v": 5, "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 87, "src_v": 6,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 4, "tgt_v": 2,
+         "tier": "free",
+         "note": "Deuteronomy 4:2 — *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* Jasher 87:6's command to observe all the words of this law carries the Torah-stands posture — neither added to nor diminished."},
+        {"src_ch": 87, "src_v": 6,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 5, "tgt_v": 32,
+         "tier": "free",
+         "note": "Deuteronomy 5:32 — *Ye shall observe to do therefore as Yahuah Elohaychem (the LORD your God) hath commanded you: ye shall not turn aside to the right hand or to the left.* Jasher 87:6 repeats the very turn-not-to-the-right-or-left refrain of Moses' charge to keep the way."},
+        {"src_ch": 87, "src_v": 7,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 6, "tgt_v": 1,
+         "tier": "free",
+         "note": "Deuteronomy 6:1 — *Now these are the commandments, the statutes, and the judgments, which Yahuah Elohaychem (the LORD your God) commanded to teach you, that ye might do them in the land whither ye go to possess it.* Jasher 87:7's teaching of statutes and judgments to do in the land is Moses' Deuteronomic instruction itself."},
+        {"src_ch": 87, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 1, "tgt_v": 8,
+         "tier": "free",
+         "note": "Joshua 1:8 — *This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night, that thou mayest observe to do according to all that is written therein: for then thou shalt make thy way prosperous, and then thou shalt have good success.* Jasher 87:8 names the same written book of the law given by Moses' hand that Joshua is charged to keep."}
+      ]
+    },
+    {
+      "slug": "jasher-87-death-of-moses",
+      "title": "Up to Mount Abarim — the death of Moses, gathered to his people",
+      "summary_md": "The book of Jasher closes on the death of the servant of Yahuah. *And Moses finished commanding the children of Israel, and Yahuah (the Lord) said to him, saying, Go up to the Mount Abarim and die there, and be gathered to your people as Aaron your brother was gathered* (Jasher 87:9) — the very word of Deuteronomy: *Get thee up into this mountain Abarim, unto mount Nebo, which is in the land of Moab, that is over against Jericho; and behold the land of Canaan, which I give unto the children of Yashar'el (Israel) for a possession* (Deuteronomy 32:49), *And die in the mount whither thou goest up, and be gathered unto thy people; as Aaron thy brother died in mount Hor, and was gathered unto his people* (Deuteronomy 32:50). Then the passing: *And Moses went up as Yahuah (the Lord) had commanded him, and he died there in the land of Moab by the order of Yahuah (the Lord), in the fortieth year from the Israelites going forth from the land of Egypt* (Jasher 87:10) beside *So Moses the servant of Yahuah (LORD) died there in the land of Moab, according to the word of Yahuah (LORD)* (Deuteronomy 34:5). And the nation mourns — *And the children of Israel wept for Moses in the plains of Moab for thirty days, and the days of weeping and mourning for Moses were completed* (Jasher 87:11) — word for word with *And the children of Yashar'el (Israel) wept for Moses in the plains of Moab thirty days: so the days of weeping and mourning for Moses were ended* (Deuteronomy 34:8). It ain't new — Jasher ends exactly where the Torah ends, the faithful servant gathered to his people, the seed kept and brought to the border of the land.",
+      "anchor_start_v": 9, "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 87, "src_v": 9,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 32, "tgt_v": 49,
+         "tier": "free",
+         "note": "Deuteronomy 32:49 — *Get thee up into this mountain Abarim, unto mount Nebo, which is in the land of Moab, that is over against Jericho; and behold the land of Canaan, which I give unto the children of Yashar'el (Israel) for a possession.* Jasher 87:9 carries Yahuah's same command to go up to Mount Abarim and die there."},
+        {"src_ch": 87, "src_v": 9,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 32, "tgt_v": 50,
+         "tier": "free",
+         "note": "Deuteronomy 32:50 — *And die in the mount whither thou goest up, and be gathered unto thy people; as Aaron thy brother died in mount Hor, and was gathered unto his people.* Jasher 87:9 keeps the very gathered-to-your-people-as-Aaron wording."},
+        {"src_ch": 87, "src_v": 10,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 34, "tgt_v": 5,
+         "tier": "free",
+         "note": "Deuteronomy 34:5 — *So Moses the servant of Yahuah (LORD) died there in the land of Moab, according to the word of Yahuah (LORD).* Jasher 87:10 retells the death of Moses in Moab by the order of Yahuah."},
+        {"src_ch": 87, "src_v": 11,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 34, "tgt_v": 8,
+         "tier": "free",
+         "note": "Deuteronomy 34:8 — *And the children of Yashar'el (Israel) wept for Moses in the plains of Moab thirty days: so the days of weeping and mourning for Moses were ended.* Jasher 87:11 carries the identical thirty-days mourning that closes the Torah."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 85,
+  "session": "session252",
+  "tag": "ja85",
+  "base_band": 57100,
+  "threads": [
+    {
+      "slug": "jasher-85-arad-hormah",
+      "title": "King Arad and the vow at Hormah",
+      "summary_md": "Jasher opens its last chapter with the southern king who barred the seed: *And king Arad the Canaanite, who dwelt in the south, heard that the Israelites had come by the way of the spies, and he arranged his forces to fight against the Israelites* (Jasher 85:1). Numbers tells the same scene — *And when king Arad the Canaanite, which dwelt in the south, heard tell that Yashar'el (Israel) came by the way of the spies; then he fought against Yashar'el (Israel), and took some of them prisoners* (Numbers 21:1). And Yashar'el answers with a vow that Yahuah honors: *And Yahuah (LORD) hearkened to the voice of Yashar'el (Israel), and delivered up the Canaanites; and they utterly destroyed them and their cities: and he called the name of the place Hormah* (Numbers 21:3) — the very Hormah Jasher names. It ain't new: the chosen seed is given the land it was promised, the kingdom-of-Canaan broken before the called people.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 85, "src_v": 1, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 21, "tgt_v": 1, "tier": "free",
+         "note": "Numbers 21:1 — *And when king Arad the Canaanite, which dwelt in the south, heard tell that Yashar'el (Israel) came by the way of the spies; then he fought against Yashar'el (Israel), and took some of them prisoners.* The same Arad who 'dwelt in the south' and arranged his host against Israel in Jasher 85:1."},
+        {"src_ch": 85, "src_v": 8, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 21, "tgt_v": 3, "tier": "free",
+         "note": "Numbers 21:3 — *And Yahuah (LORD) hearkened to the voice of Yashar'el (Israel), and delivered up the Canaanites; and they utterly destroyed them and their cities: and he called the name of the place Hormah.* The canon names the same Hormah Jasher 85:8 calls 'the name of the place.'"}
+      ]
+    },
+    {
+      "slug": "jasher-85-sihon-amorites",
+      "title": "Sihon king of the Amorites refuses passage",
+      "summary_md": "Jasher narrates the embassy and the war: *And the children of Israel sent messengers to Sihon, king of the Amorites, saying, Let us pass through your land* (Jasher 85:13-14), and when *Sihon would not suffer the Israelites to pass* he mustered the Amorites and *fought against Israel in Jahaz* (Jasher 85:14-15). Numbers carries the identical message and refusal — *Let me pass through thy land: we will not turn into the fields, or into the vineyards... but we will go along by the king's high way* (Numbers 21:22) — and the identical battle at Jahaz: *And Sihon would not suffer Yashar'el (Israel) to pass through his border: but Sihon gathered all his people together, and went out against Yashar'el (Israel) into the wilderness: and he came to Jahaz, and fought against Yashar'el (Israel)* (Numbers 21:23). The land taken 'from Arnon to Jabuk' (Jasher 85:17) is the canon's own inheritance line (Numbers 21:24). The seed delivered with a high hand.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 85, "src_v": 14, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 21, "tgt_v": 22, "tier": "free",
+         "note": "Numbers 21:22 — *Let me pass through thy land: we will not turn into the fields, or into the vineyards; we will not drink of the waters of the well: but we will go along by the king’s high way, until we be past thy borders.* The same plea to Sihon that Jasher 85:14 puts on Israel's lips."},
+        {"src_ch": 85, "src_v": 15, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 21, "tgt_v": 23, "tier": "free",
+         "note": "Numbers 21:23 — *And Sihon would not suffer Yashar'el (Israel) to pass through his border: but Sihon gathered all his people together, and went out against Yashar'el (Israel) into the wilderness: and he came to Jahaz, and fought against Yashar'el (Israel).* The very battle at Jahaz that Jasher 85:15 recounts."},
+        {"src_ch": 85, "src_v": 17, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 21, "tgt_v": 24, "tier": "free",
+         "note": "Numbers 21:24 — *And Yashar'el (Israel) smote him with the edge of the sword, and possessed his land from Arnon unto Jabbok, even unto the children of Ammon: for the border of the children of Ammon was strong.* The same Arnon-to-Jabbok inheritance Jasher 85:17 says Israel took possession of."}
+      ]
+    },
+    {
+      "slug": "jasher-85-og-bashan-giant",
+      "title": "Og the giant of Bashan",
+      "summary_md": "Jasher expands the conquest of Og with legend — *And Og king of Bashan was a very powerful man* who lifts a stone 'the length of three parsa' to crush the camp, until *the angel of Yahuah (the Lord) came and pierced the stone upon the head of Og* (Jasher 85:22-25). The canon scene it amplifies is plain: *And they turned and went up by the way of Bashan: and Og the king of Bashan went out against them, he, and all his people, to the battle at Edrei* (Numbers 21:33), with Yahuah's word of assurance — *Fear him not: for I have delivered him into thy hand* (Numbers 21:34). Where Jasher's stone-and-angel is legend, the canon still preserves Og as the last of the giants: *For only Og king of Bashan remained of the remnant of giants; behold, his bedstead was a bedstead of iron* (Deuteronomy 3:11). Anchor the legend to the scene it expands; do not force the marvel.",
+      "anchor_start_v": 21,
+      "anchor_end_v": 28,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 85, "src_v": 21, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 21, "tgt_v": 33, "tier": "free",
+         "note": "Numbers 21:33 — *And they turned and went up by the way of Bashan: and Og the king of Bashan went out against them, he, and all his people, to the battle at Edrei.* The same march 'by the way of Bashan' against Og that Jasher 85:21 opens with."},
+        {"src_ch": 85, "src_v": 26, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 21, "tgt_v": 34, "tier": "free",
+         "note": "Numbers 21:34 — *And Yahuah (LORD) said unto Moses, Fear him not: for I have delivered him into thy hand, and all his people, and his land; and thou shalt do to him as thou didst unto Sihon king of the Amorites, which dwelt at Heshbon.* The very 'Be not afraid of him... as you did to Sihon' Yahuah speaks in Jasher 85:26."},
+        {"src_ch": 85, "src_v": 22, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 3, "tgt_v": 11, "tier": "free",
+         "note": "Deuteronomy 3:11 — *For only Og king of Bashan remained of the remnant of giants; behold, his bedstead was a bedstead of iron; is it not in Rabbath of the children of Ammon? nine cubits was the length thereof, and four cubits the breadth of it, after the cubit of a man.* The canon's own memory of Og as a giant, which Jasher 85:22 magnifies into the 'very powerful man.'"}
+      ]
+    },
+    {
+      "slug": "jasher-85-balak-balaam",
+      "title": "Balak hires Balaam, but the seed is blessed",
+      "summary_md": "Moab, terrified, makes Balak king and sends for the prophet-for-hire: *Behold there is a people come out from Egypt, behold they cover the face of the earth... Now therefore come and curse this people for me* (Jasher 85:45-46). Word for word the canon: *Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me* (Numbers 22:5) and *curse me this people; for they are too mighty for me... for I wot that he whom thou blessest is blessed, and he whom thou cursest is cursed* (Numbers 22:6). But the election stands — Yahuah forbids the curse, *And Elohim (God) said unto Balaam, Thou shalt not go with them; thou shalt not curse the people: for they are blessed* (Numbers 22:12), exactly Jasher's *Curse not this people for it is blessed* (Jasher 85:48). The chosen seed cannot be cursed; the way of Balaam (the wages of unrighteousness) is named for warning in the NT — *following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15). It ain't new: the blessing on the seed is irrevocable.",
+      "anchor_start_v": 44,
+      "anchor_end_v": 50,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 85, "src_v": 45, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 22, "tgt_v": 5, "tier": "free",
+         "note": "Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* The same words Balak sends in Jasher 85:45."},
+        {"src_ch": 85, "src_v": 46, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 22, "tgt_v": 6, "tier": "free",
+         "note": "Numbers 22:6 — *Come now therefore, I pray thee, curse me this people; for they are too mighty for me: peradventure I shall prevail, that we may smite them, and that I may drive them out of the land: for I wot that he whom thou blessest is blessed, and he whom thou cursest is cursed.* The verbatim 'whom you bless is blessed, and whom you curse is cursed' of Jasher 85:46."},
+        {"src_ch": 85, "src_v": 48, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 22, "tgt_v": 12, "tier": "free",
+         "note": "Numbers 22:12 — *And Elohim (God) said unto Balaam, Thou shalt not go with them; thou shalt not curse the people: for they are blessed.* Yahuah's 'Curse not this people for it is blessed' in Jasher 85:48 — the election the curse cannot touch."},
+        {"src_ch": 85, "src_v": 49, "tgt_edition": "canon", "tgt_book": "2-peter", "tgt_ch": 2, "tgt_v": 15, "tier": "free",
+         "note": "2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* The NT names the very 'way of Balaam' — the hire-seeking prophet of Jasher 85:49 — as a pattern of warning."}
+      ]
+    },
+    {
+      "slug": "jasher-85-baal-peor-phinehas",
+      "title": "Baal-Peor, the plague, and the zeal of Phinehas",
+      "summary_md": "Failing to curse, Moab corrupts instead: *And when the children of Israel abode in the plain of Shittim, they began to commit whoredom with the daughters of Moab* (Jasher 85:52), seated and feasted them to *eat of their sacrifice* (Jasher 85:59). The canon is identical — *And Yashar'el (Israel) abode in Shittim, and the people began to commit whoredom with the daughters of Moab* (Numbers 25:1), *And Yashar'el (Israel) joined himself unto Baal-peor* (Numbers 25:3). The plague that 'there died of the Israelites twenty-four thousand men' (Jasher 85:61) is the canon's *And those that died in the plague were twenty and four thousand* (Numbers 25:9), stayed by Phinehas: *And he went after the man of Yashar'el (Israel) into the tent, and thrust both of them through... So the plague was stayed from the children of Yashar'el (Israel)* (Numbers 25:8) — Jasher's last named act (Jasher 85:63). The Psalm seals the verdict: *They joined themselves also unto Baal-peor, and ate the sacrifices of the dead* (Psalm 106:28). The seed is kept by the zeal of the priest; the way of Balaam (the snare of fornication and idol-food) is named again in Revelation. So ends the book of Jasher.",
+      "anchor_start_v": 52,
+      "anchor_end_v": 63,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 85, "src_v": 52, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 25, "tgt_v": 1, "tier": "free",
+         "note": "Numbers 25:1 — *And Yashar'el (Israel) abode in Shittim, and the people began to commit whoredom with the daughters of Moab.* The same Shittim whoredom that opens Jasher 85:52."},
+        {"src_ch": 85, "src_v": 59, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 25, "tgt_v": 3, "tier": "free",
+         "note": "Numbers 25:3 — *And Yashar'el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar'el (Israel).* The eating of Moab's sacrifice in Jasher 85:59 is the canon's joining to Baal-peor."},
+        {"src_ch": 85, "src_v": 61, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 25, "tgt_v": 9, "tier": "free",
+         "note": "Numbers 25:9 — *And those that died in the plague were twenty and four thousand.* The exact 'twenty-four thousand men' the pestilence slew in Jasher 85:61."},
+        {"src_ch": 85, "src_v": 63, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 25, "tgt_v": 8, "tier": "free",
+         "note": "Numbers 25:8 — *And he went after the man of Yashar'el (Israel) into the tent, and thrust both of them through, the man of Yashar'el (Israel), and the woman through her belly. So the plague was stayed from the children of Yashar'el (Israel).* The very spear of Phineas and the staying of the plague that ends Jasher 85:63 — and the book."},
+        {"src_ch": 85, "src_v": 59, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 106, "tgt_v": 28, "tier": "free",
+         "note": "Psalm 106:28 — *They joined themselves also unto Baal-peor, and ate the sacrifices of the dead.* The Psalm's verdict on the eating of Moab's sacrifices in Jasher 85:59."}
+      ]
+    }
+  ]
+}
