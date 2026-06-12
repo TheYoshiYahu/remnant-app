@@ -527,3 +527,26 @@ render → anchor_check.py jasher jasher + pglast + verify_fidelity + resolve_ch
 audit → recon.py jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from
 /tmp/extracanon-xref-wt with keychain unlocked — 27 commits (85b660c..83b70a1) need to land on origin/main
 (still at 47a9e48); prod is authoritative meanwhile.
+
+## RECEIPT — Jasher Pack 9 (ch65–72, the bondage / Moses) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **375 `jasher-*` threads / 1327 members**, band 55000–56775,
+  per-ch(65-72) 4/6/5/5/4/6/5/2, 0 orphans. +37/139. Commit `6079795`. SIX GATES GREEN FIRST PASS.
+  ★ Jasher ~79% (72/91 ch).
+- The council against the seed/Pithom & Rameses/rigour (65→Exod1:9-14/Gen15:13/Acts7:6/Jub46); Job-counsellor
+  + the midwives feared Elohim (66→Exod1:8-22/Gen36/Matt2:16/Rev12:4/Jub46-47); Amram & Jochebed/Miriam &
+  Aaron + BALAAM son of Beor counsels the river-decree=way-of-Balaam (67→Exod1:22/Num22:5/2Pet2:15/Jude11/
+  Jub47); Moses' birth/ark/drawn-out + early life (68-71→Exod2/Acts7:20/Heb11:23-27); the Cush/Midian
+  transition (72). Pharaoh=kingdom-of-man = same seed-war as Nimrod/Herod/dragon. Genuine Balaam (Num22:5
+  'son of Beor') correctly distinguished from the earlier Bela-son-of-Beor (Edom king, Gen36).
+- Push blocked. origin/main 47a9e48; local HEAD `6079795` (28 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 1 ENOCH + JUBILEES COMPLETE + JASHER ch1-72 all LIVE = 1062 threads/3851
+members. NEXT = Jasher Pack 10 ch73-80 (Moses in Cush (the 40-year reign legend)/Midian/Zipporah; the
+BURNING BUSH; return to Egypt; Aaron; the first audience with Pharaoh; the plagues begin → Exod2-8 — VERIFY
+vs dump). Then FINAL Pack 11 ch81-91 (the plagues/the Passover/the EXODUS/the Red Sea/the song/Amalek/the
+wilderness/Sinai approaches → Exod8-19) FINISHES JASHER (~11 ch — may split into 81-88 + 89-91, or do all
+11). Then Apocrypha (session253 @58000). METHOD: workflow (pack-9 script + broad HINT + blob-verse + paren +
+legend-caution) → render → anchor_check.py jasher jasher + pglast + verify_fidelity + resolve_check jasher
+jasher → fold → audit → recon.py jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main`
+from /tmp/extracanon-xref-wt with keychain unlocked — 28 commits (85b660c..6079795) need to land on
+origin/main (still at 47a9e48); prod is authoritative meanwhile.

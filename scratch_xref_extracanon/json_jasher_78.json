@@ -1,0 +1,63 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 78,
+  "session": "session252",
+  "tag": "ja78",
+  "base_band": 56925,
+  "threads": [
+    {
+      "slug": "jasher-78-zipporah-gershom-eliezer",
+      "title": "Moses in Midian — Zipporah, Gershom and Eliezer",
+      "summary_md": "Jasher carries the Exodus scene at the well's end forward into Moses' household in Midian: *In those days Moses, the son of Amram, in Midian, took Zipporah, the daughter of Reuel the Midianite, for a wife* (Jasher 78:7), and *Zipporah conceived and bare a son and he called his name Gershom, for he said, I was a stranger in a foreign land; but he circumcised not his foreskin, at the command of Reuel his father-in-law* (Jasher 78:9). It ain't new — Exodus tells the same: *And Moses was content to dwell with the man: and he gave Moses Zipporah his daughter* (Exodus 2:21), and *And she bare him a son, and he called his name Gershom: for he said, I have been a stranger in a strange land* (Exodus 2:22). Stephen's witness counts the two sons as Moses' exile fruit — *Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons* (Acts 7:29). The living Jubilees apparatus dates the same sojourn: *And in the sixth year of the third week of the forty-ninth jubilee you did depart and dwell in the land of Midian five weeks and one year. And you did return into Egypt in the second week in the second year in the fiftieth jubilee* (Jubilees 48:1). The deliverer is being hidden among the Midianites, the covenant seed kept until the appointed return.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 78, "src_v": 7, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 2, "tgt_v": 21, "tier": "free", "note": "Exodus 2:21 — *And Moses was content to dwell with the man: and he gave Moses Zipporah his daughter.* The Exodus source for Jasher 78:7's marriage of Moses to Zipporah, daughter of Reuel/Jethro the Midianite."},
+        {"src_ch": 78, "src_v": 9, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 2, "tgt_v": 22, "tier": "free", "note": "Exodus 2:22 — *And she bare him a son, and he called his name Gershom: for he said, I have been a stranger in a strange land.* The same naming of Gershom that Jasher 78:9 records, the stranger-in-a-foreign-land confession word for word."},
+        {"src_ch": 78, "src_v": 9, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 29, "tier": "free", "note": "Acts 7:29 — *Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons.* Stephen counts the two Midian-born sons (Jasher's Gershom of 78:9 and Eliezer of 78:10), the same exile household."},
+        {"src_ch": 78, "src_v": 7, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 48, "tgt_v": 1, "tier": "extras", "note": "Jubilees 48:1 — *And in the sixth year of the third week of the forty-ninth jubilee you did depart and dwell in the land of Midian five weeks and one year. And you did return into Egypt in the second week in the second year in the fiftieth jubilee.* The live Jubilees apparatus dates the very Midian sojourn Jasher 78:7 opens."}
+      ]
+    },
+    {
+      "slug": "jasher-78-the-elohim-of-thy-fathers-my-help",
+      "title": "Eliezer — the Elohim of the fathers my help",
+      "summary_md": "When the second son is named, Jasher puts the deliverance-confession in Moses' mouth: *And she conceived again and bare a son, but circumcised his foreskin, and called his name Eliezer, for Moses said, Because the Elohim (God) of your fathers was my help, and delivered me from the sword of Pharaoh* (Jasher 78:10). The naming reaches back to the covenant Elohim of Abraham, Isaac and Jacob — the same Name the bush will speak: *Saying, I am the Elohim (God) of thy fathers, the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob. Then Moses trembled, and durst not behold* (Acts 7:32). And the deliverance from Pharaoh's sword that Eliezer's name memorializes is the rescue Stephen records: *This Moses whom they refused, saying, Who made thee a ruler and a judge? the same did Elohim (God) send to be a ruler and a deliverer by the hand of the angel which appeared to him in the bush* (Acts 7:35). It ain't new — the Elohim of the fathers is the help and the deliverer, named in a child before the plagues ever begin.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 78, "src_v": 10, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 32, "tier": "free", "note": "Acts 7:32 — *Saying, I am the Elohim (God) of thy fathers, the Elohim (God) of Abraham, and the Elohim (God) of Isaac, and the Elohim (God) of Jacob. Then Moses trembled, and durst not behold.* The Elohim of the fathers whom Jasher 78:10 names Eliezer to honor is the same who speaks from the bush."},
+        {"src_ch": 78, "src_v": 10, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 35, "tier": "free", "note": "Acts 7:35 — *This Moses whom they refused, saying, Who made thee a ruler and a judge? the same did Elohim (God) send to be a ruler and a deliverer by the hand of the angel which appeared to him in the bush.* The deliverer-from-Pharaoh's-sword that Eliezer's name marks in Jasher 78:10."}
+      ]
+    },
+    {
+      "slug": "jasher-78-no-straw-the-tale-of-bricks",
+      "title": "Give no more straw — the tale of bricks unchanged",
+      "summary_md": "Jasher tells the burden made heavier exactly as Exodus does: *And Pharaoh king of Egypt greatly increased the labor of the children of Israel in those days, and continued to make his yoke heavier upon the children of Israel* (Jasher 78:11), and *he ordered a proclamation to be made in Egypt, saying, Give no more straw to the people to make bricks with, let them go and gather themselves straw as they can find it* (Jasher 78:12), with *the tale of bricks which they shall make let them give each day, and diminish nothing from them, for they are idle in their work* (Jasher 78:13). It ain't new — Pharaoh's own decree in Exodus runs the same: *Ye shall no more give the people straw to make brick, as heretofore: let them go and gather straw for themselves* (Exodus 5:7), and *the tale of the bricks, which they did make heretofore, ye shall lay upon them; ye shall not diminish ought thereof: for they be idle; therefore they cry, saying, Let us go and sacrifice to our Elohim (God)* (Exodus 5:8). This is the kingdom-of-man system grinding the covenant people — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour* (Exodus 1:14). The burden is on Pharaoh's order, not on the people; Yahuah will dismantle the system.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 78, "src_v": 12, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 5, "tgt_v": 7, "tier": "free", "note": "Exodus 5:7 — *Ye shall no more give the people straw to make brick, as heretofore: let them go and gather straw for themselves.* Pharaoh's no-straw decree, the source of Jasher 78:12's proclamation word for word."},
+        {"src_ch": 78, "src_v": 13, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 5, "tgt_v": 8, "tier": "free", "note": "Exodus 5:8 — *And the tale of the bricks, which they did make heretofore, ye shall lay upon them; ye shall not diminish ought thereof: for they be idle; therefore they cry, saying, Let us go and sacrifice to our Elohim (God).* The undiminished tale of bricks and the idle-charge that Jasher 78:13 records."},
+        {"src_ch": 78, "src_v": 11, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 14, "tier": "free", "note": "Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* The bitter brick-bondage and heavier yoke Jasher 78:11 says Pharaoh increased."}
+      ]
+    },
+    {
+      "slug": "jasher-78-the-cry-and-the-covenant-remembered",
+      "title": "The cry heard — Yahuah jealous for his inheritance",
+      "summary_md": "Jasher narrates the cry that turns the Exodus: *And the children of Israel heard this, and they mourned and sighed, and they cried to Yahuah (the Lord) on account of the bitterness of their souls* (Jasher 78:14); *And Yahuah (the Lord) heard the cries of the children of Israel, and saw the oppression with which the Egyptians oppressed them* (Jasher 78:15); *And Yahuah (the Lord) was jealous of his people and his inheritance, and heard their voice, and he resolved to take them out of the affliction of Egypt, to give them the land of Canaan for a possession* (Jasher 78:16). It ain't new — Exodus says the cry came up and the covenant was remembered: *And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob* (Exodus 2:24). The bush confirms the coming-down to deliver: *And I am come down to deliver them out of the hand of the Egyptians, and to bring them up out of that land unto a good land and a large, unto a land flowing with milk and honey* (Exodus 3:8). And the land-for-a-possession that Jasher 78:16 promises is the oath remembered: *And I will bring you in unto the land, concerning the which I did swear to give it to Abraham, to Isaac, and to Jacob; and I will give it you for an heritage: I am Yahuah (LORD)* (Exodus 6:8). The live Jubilees apparatus reads the deliverance as covenant-keeping: *And Yahuah (God) did everything for Yashar'el's (Israel's) sake, and according to His covenant, which He had ordained with Abraham* (Jubilees 48:7, in part). Election precedes the confession; the inheritance is kept.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 78, "src_v": 14, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 2, "tgt_v": 24, "tier": "free", "note": "Exodus 2:24 — *And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob.* The cry of Jasher 78:14 heard and answered by the remembered covenant."},
+        {"src_ch": 78, "src_v": 16, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 3, "tgt_v": 8, "tier": "free", "note": "Exodus 3:8 — *And I am come down to deliver them out of the hand of the Egyptians, and to bring them up out of that land unto a good land and a large, unto a land flowing with milk and honey; unto the place of the Canaanites, and the Hittites, and the Amorites, and the Perizzites, and the Hivites, and the Jebusites.* Yahuah's resolve to take them out and give them Canaan, the same purpose Jasher 78:16 declares."},
+        {"src_ch": 78, "src_v": 16, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 6, "tgt_v": 8, "tier": "free", "note": "Exodus 6:8 — *And I will bring you in unto the land, concerning the which I did swear to give it to Abraham, to Isaac, and to Jacob; and I will give it you for an heritage: I am Yahuah (LORD).* The land of Canaan for a possession that Jasher 78:16 names is the sworn inheritance."},
+        {"src_ch": 78, "src_v": 15, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 48, "tgt_v": 7, "tier": "extras", "note": "Jubilees 48:7 — *And everything took place according to your words; ten great and terrible judgments came on the land of Egypt that you might execute vengeance on it for Yashar'el (Israel). And Yahuah (God) did everything for Yashar'el's (Israel's) sake, and according to His covenant, which He had ordained with Abraham that He would take vengeance on them as they had brought them by force into bondage.* The live Jubilees apparatus reads Yahuah seeing the oppression (Jasher 78:15) as covenant-keeping vengeance for Israel's sake."}
+      ]
+    }
+  ]
+}
