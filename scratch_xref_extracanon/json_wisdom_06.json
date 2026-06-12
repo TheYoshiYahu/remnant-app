@@ -1,0 +1,124 @@
+{
+  "edition": "apocrypha",
+  "book": "the-wisdom-of-solomon",
+  "chapter": 6,
+  "session": "session253",
+  "tag": "wis06",
+  "base_band": 58125,
+  "threads": [
+    {
+      "slug": "wisdom-6-powers-ordained",
+      "title": "Power is given you of Yahuah — the rulers who must answer",
+      "summary_md": "Solomon turns to the thrones of the earth: *For power is given you of Yahuah (God), and sovereignty from the Highest, who shall try your works, and search out your counsels.* (Wisdom of Solomon 6:3). Every crown is a delegated crown, held in trust and audited from above. Sha'ul says the same to Rome: *Let every soul be subject unto the higher powers. For there is no power but of God: the powers that be are ordained of God.* (Romans 13:1) — authority is real, but it is derived, never sovereign in itself. Daniel had already announced the Giver who is also the Remover: *And he changeth the times and the seasons: he removeth kings, and setteth up kings: he giveth wisdom unto the wise, and knowledge to them that know understanding.* (Daniel 2:21). And the same hand that grants the throne measures the king who *kept not the law*: *He ruleth by his power for ever; his eyes behold the nations: let not the rebellious exalt themselves.* (Psalm 66:7). The deuterocanon carries the covenant order: power is loaned, and the lender keeps account.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 13, "tgt_v": 1,
+         "tier": "free",
+         "note": "Romans 13:1 — *Let every soul be subject unto the higher powers. For there is no power but of God: the powers that be are ordained of God.* Sha'ul echoes Wisdom of Solomon 6:3 — every authority is a delegated stewardship granted of Yahuah, never self-owned."},
+        {"src_ch": 6, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 2, "tgt_v": 21,
+         "tier": "free",
+         "note": "Daniel 2:21 — *And he changeth the times and the seasons: he removeth kings, and setteth up kings: he giveth wisdom unto the wise, and knowledge to them that know understanding.* The same Giver of sovereignty in Wisdom of Solomon 6:3 is the One who removes kings and bestows wisdom on the ruler who seeks it."},
+        {"src_ch": 6, "src_v": 4,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 66, "tgt_v": 7,
+         "tier": "free",
+         "note": "Psalm 66:7 — *He ruleth by his power for ever; his eyes behold the nations: let not the rebellious exalt themselves. Selah.* The ministers of His kingdom in Wisdom of Solomon 6:4 who kept not the law are the rebellious whom the all-beholding King will not let exalt themselves."}
+      ]
+    },
+    {
+      "slug": "wisdom-6-mighty-mightily-tormented",
+      "title": "The mighty shall be mightily tormented — no respecter of persons",
+      "summary_md": "The judgment falls heaviest on the high: *For mercy will soon pardon the meanest: but mighty men shall be mightily tormented.* (Wisdom of Solomon 6:6) — *For he which is Yahuah (God) over all shall fear no man's person, neither shall he stand in awe of any man's greatness: for he has made the small and great, and careth for all alike.* (Wisdom of Solomon 6:7). The Torah already wrote this impartiality into the bench: *Ye shall not respect persons in judgment; but ye shall hear the small as well as the great; ye shall not be afraid of the face of man: for the judgment is God's.* (Deuteronomy 1:17). Kepha carries it into the assembly: *And if ye call on the Father, who without respect of persons judgeth according to every man's work, pass the time of your sojourning here in fear.* (1 Peter 1:17). And Sha'ul seals it: *For there is no respect of persons with God.* (Romans 2:11). It ain't new — the King who made small and great alike judges them by one weight.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 7,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 1, "tgt_v": 17,
+         "tier": "free",
+         "note": "Deuteronomy 1:17 — *Ye shall not respect persons in judgment; but ye shall hear the small as well as the great; ye shall not be afraid of the face of man: for the judgment is God's: and the cause that is too hard for you, bring it unto me, and I will hear it.* Wisdom of Solomon 6:7 voices the Torah's own rule that the Judge who made small and great fears no man's greatness."},
+        {"src_ch": 6, "src_v": 7,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 2, "tgt_v": 11,
+         "tier": "free",
+         "note": "Romans 2:11 — *For there is no respect of persons with God.* Sha'ul states plainly what Wisdom of Solomon 6:7 declares — the God over all stands in awe of no man's greatness."},
+        {"src_ch": 6, "src_v": 6,
+         "tgt_edition": "canon", "tgt_book": "1-peter", "tgt_ch": 1, "tgt_v": 17,
+         "tier": "free",
+         "note": "1 Peter 1:17 — *And if ye call on the Father, who without respect of persons judgeth according to every man's work, pass the time of your sojourning here in fear.* The strict reckoning of the mighty in Wisdom of Solomon 6:6 is Kepha's impartial Father judging every man's work."}
+      ]
+    },
+    {
+      "slug": "wisdom-6-be-wise-o-kings",
+      "title": "To you, O kings — be wise and fall not away",
+      "summary_md": "The address to the throne is an altar call to power itself: *To you therefore, O kings, do I speak, that you may learn wisdom, and not fall away.* (Wisdom of Solomon 6:9) — *If your delight be then in thrones and sceptres, O you kings of the people, honour wisdom, that you may reign for evermore.* (Wisdom of Solomon 6:21). This is the second Psalm preached to the rulers: *Be wise now therefore, O ye kings: be instructed, ye judges of the earth.* (Psalm 2:10) — *Kiss the Son, lest he be angry, and ye perish from the way, when his wrath is kindled but a little. Blessed are all they that put their trust in him.* (Psalm 2:12). Solomon's own throne came of this very asking: *Behold, I have done according to thy words: lo, I have given thee a wise and an understanding heart; so that there was none like thee before thee.* (1 Kings 3:12). The crown that delights in wisdom is the crown that reigns for evermore.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 9,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 2, "tgt_v": 10,
+         "tier": "free",
+         "note": "Psalm 2:10 — *Be wise now therefore, O ye kings: be instructed, ye judges of the earth.* Wisdom of Solomon 6:9 speaks the second Psalm's very summons — the kings and judges of the earth called to learn wisdom and not fall away."},
+        {"src_ch": 6, "src_v": 21,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 2, "tgt_v": 12,
+         "tier": "free",
+         "note": "Psalm 2:12 — *Kiss the Son, lest he be angry, and ye perish from the way, when his wrath is kindled but a little. Blessed are all they that put their trust in him.* Honouring wisdom that the kings may reign for evermore (Wisdom of Solomon 6:21) is the Psalm's homage to the Son that the rulers perish not."},
+        {"src_ch": 6, "src_v": 9,
+         "tgt_edition": "canon", "tgt_book": "1-kings", "tgt_ch": 3, "tgt_v": 12,
+         "tier": "free",
+         "note": "1 Kings 3:12 — *Behold, I have done according to thy words: lo, I have given thee a wise and an understanding heart; so that there was none like thee before thee, neither after thee shall any arise like unto thee.* Solomon's charge to kings in Wisdom of Solomon 6:9 flows from his own throne, granted because he asked for wisdom and not power."}
+      ]
+    },
+    {
+      "slug": "wisdom-6-she-is-found-of-them-that-seek",
+      "title": "Found of such as seek her — wisdom meets the early seeker",
+      "summary_md": "Wisdom is not hidden from the heart that wants her: *Wisdom is glorious, and never fadeth away: yes, she is easily seen of them that love her, and found of such as seek her.* (Wisdom of Solomon 6:12) — *Whoso seeks her early shall have no great travail: for he shall find her sitting at his doors.* (Wisdom of Solomon 6:14). The Formed Wisdom of Proverbs says it of herself: *I love them that love me; and those that seek me early shall find me.* (Proverbs 8:17). The Messiah confirms the promise to every seeker: *Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you.* (Matthew 7:7). And the covenant terms hold across the testaments: *And ye shall seek me, and find me, when ye shall search for me with all your heart.* (Jeremiah 29:13). She sits at the door of the one who rises early to look — it ain't new.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 14,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 8, "tgt_v": 17,
+         "tier": "free",
+         "note": "Proverbs 8:17 — *I love them that love me; and those that seek me early shall find me.* The Formed Wisdom of Proverbs speaks in her own voice the promise of Wisdom of Solomon 6:14 — she is found by them that seek her early."},
+        {"src_ch": 6, "src_v": 12,
+         "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 7, "tgt_v": 7,
+         "tier": "free",
+         "note": "Matthew 7:7 — *Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you.* The Messiah confirms what Wisdom of Solomon 6:12 declares — wisdom is found of such as seek her."},
+        {"src_ch": 6, "src_v": 12,
+         "tgt_edition": "canon", "tgt_book": "jeremiah", "tgt_ch": 29, "tgt_v": 13,
+         "tier": "free",
+         "note": "Jeremiah 29:13 — *And ye shall seek me, and find me, when ye shall search for me with all your heart.* The covenant promise that wisdom is found of such as seek her (Wisdom of Solomon 6:12) is Yahuah's own pledge to the whole-hearted searcher."}
+      ]
+    },
+    {
+      "slug": "wisdom-6-beginning-of-wisdom-keeping-laws",
+      "title": "The desire of discipline — love is the keeping of her laws",
+      "summary_md": "Solomon traces wisdom back to her root, and the root is obedience: *For the very true beginning of her is the desire of discipline; and the care of discipline is love; And love is the keeping of her laws; and the giving heed to her laws is the assurance of incorruption; And incorruption makes us near to Yahuah (God).* (Wisdom of Solomon 6:17-19). The fear of Yahuah opens that whole chain: *The fear of the LORD is the beginning of knowledge: but fools despise wisdom and instruction.* (Proverbs 1:7) — *The fear of the LORD is the beginning of wisdom: and the knowledge of the holy is understanding.* (Proverbs 9:10). And the Messiah defines love exactly as Solomon does — not feeling but keeping: *If ye love me, keep my commandments.* (John 14:15). Torah stands: love IS the keeping of her laws, and that keeping draws us near to Elohim and toward incorruption.",
+      "anchor_start_v": 17,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 18,
+         "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 14, "tgt_v": 15,
+         "tier": "free",
+         "note": "John 14:15 — *If ye love me, keep my commandments.* The Messiah defines love precisely as Wisdom of Solomon 6:18 does — *love is the keeping of her laws* — obedience, not mere affection."},
+        {"src_ch": 6, "src_v": 17,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 9, "tgt_v": 10,
+         "tier": "free",
+         "note": "Proverbs 9:10 — *The fear of the LORD is the beginning of wisdom: and the knowledge of the holy is understanding.* The desire of discipline that is the *very true beginning* of wisdom in Wisdom of Solomon 6:17 is the fear of Yahuah that Proverbs names as wisdom's start."},
+        {"src_ch": 6, "src_v": 17,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 1, "tgt_v": 7,
+         "tier": "free",
+         "note": "Proverbs 1:7 — *The fear of the LORD is the beginning of knowledge: but fools despise wisdom and instruction.* Wisdom's beginning in the desire of discipline (Wisdom of Solomon 6:17) answers Proverbs' opening axiom — the fear of Yahuah is where knowledge begins."},
+        {"src_ch": 6, "src_v": 19,
+         "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 15, "tgt_v": 53,
+         "tier": "free",
+         "note": "1 Corinthians 15:53 — *For this corruptible must put on incorruption, and this mortal must put on immortality.* The *assurance of incorruption* that draws us near to Elohim in Wisdom of Solomon 6:19 is Sha'ul's promise that the corruptible puts on incorruption."}
+      ]
+    }
+  ]
+}
