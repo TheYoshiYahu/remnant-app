@@ -1,0 +1,128 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 49,
+  "session": "session253",
+  "tag": "sir49",
+  "base_band": 59500,
+  "threads": [
+    {
+      "slug": "sirach-49-josiah-passover-whole-heart",
+      "title": "Josiah — who kept the passover and turned with all his heart",
+      "summary_md": "Ben Sira crowns the praise of the fathers with the last good king: *The remembrance of Josias is like the composition of the perfume that is made by the art of the apothecary: it is sweet as honey in all mouths, and as musick at a banquet of wine* (Sirach 49:1), for *He behaved himself uprightly in the conversion of the people, and took away the abominations of iniquity* (Sirach 49:2) and *He directed his heart to Yahuah (God), and in the time of the ungodly he established the worship of Yahuah (God)* (Sirach 49:3). The Tanakh tells the same story: the king who *commanded all the people, saying, Keep the passover unto Yahuah Elohaychem (the LORD your God), as it is written in the book of this covenant* (2 Kings 23:21), of whom it is written *And like unto him was there no king before him, that turned to Yahuah (LORD) with all his heart, and with all his soul, and with all his might, according to all the law of Moses; neither after him arose there any like him* (2 Kings 23:25). The Chronicler records the feast itself: *Moreover Josiah kept a passover unto Yahuah (LORD) in Jerusalem: and they killed the passover on the fourteenth day of the first month* (2 Chronicles 35:1). Torah stands, the feast is kept, and a heart turned wholly to Yahuah is the sweetest memorial of all.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 49, "src_v": 1, "tgt_edition": "canon", "tgt_book": "2-chronicles", "tgt_ch": 35, "tgt_v": 1, "tier": "free",
+         "note": "2 Chronicles 35:1 — *Moreover Josiah kept a passover unto Yahuah (LORD) in Jerusalem: and they killed the passover on the fourteenth day of the first month.* The sweet remembrance Sirach 49:1 sings is the passover Josiah restored on its appointed day."},
+        {"src_ch": 49, "src_v": 2, "tgt_edition": "canon", "tgt_book": "2-kings", "tgt_ch": 23, "tgt_v": 21, "tier": "free",
+         "note": "2 Kings 23:21 — *And the king commanded all the people, saying, Keep the passover unto Yahuah Elohaychem (the LORD your God), as it is written in the book of this covenant.* Josiah's taking away the abominations of iniquity in Sirach 49:2 is his command to keep the covenant-feast as it is written."},
+        {"src_ch": 49, "src_v": 3, "tgt_edition": "canon", "tgt_book": "2-kings", "tgt_ch": 23, "tgt_v": 25, "tier": "free",
+         "note": "2 Kings 23:25 — *And like unto him was there no king before him, that turned to Yahuah (LORD) with all his heart, and with all his soul, and with all his might, according to all the law of Moses; neither after him arose there any like him.* Sirach 49:3's king who directed his heart to Yahuah is the one who turned with all his heart according to all the law of Moses."}
+      ]
+    },
+    {
+      "slug": "sirach-49-jeremiah-sanctified-in-the-womb",
+      "title": "Jeremiah — sanctified in his mother's womb to root out and to plant",
+      "summary_md": "Of the prophet who saw the holy city burn, Ben Sira writes: *They burnt the chosen city of the sanctuary, and made the streets desolate, according to the prophecy of Jeremias* (Sirach 49:6), *For they entreated him evil, who nevertheless was a prophet, sanctified in his mother's womb, that he might root out, and afflict, and destroy; and that he might build up also, and plant* (Sirach 49:7). This is no embellishment — it is Jeremiah's own commissioning, word for word in substance: *Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee, and I ordained thee a prophet unto the nations* (Jeremiah 1:5), and the very fourfold charge Sirach echoes: *See, I have this day set thee over the nations and over the kingdoms, to root out, and to pull down, and to destroy, and to throw down, to build, and to plant* (Jeremiah 1:10). The deuterocanon carries the same prophetic witness it received from the Tanakh.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 49, "src_v": 7, "tgt_edition": "canon", "tgt_book": "jeremiah", "tgt_ch": 1, "tgt_v": 5, "tier": "free",
+         "note": "Jeremiah 1:5 — *Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee, and I ordained thee a prophet unto the nations.* Sirach 49:7's prophet sanctified in his mother's womb is Jeremiah, known and set apart before birth."},
+        {"src_ch": 49, "src_v": 7, "tgt_edition": "canon", "tgt_book": "jeremiah", "tgt_ch": 1, "tgt_v": 10, "tier": "free",
+         "note": "Jeremiah 1:10 — *See, I have this day set thee over the nations and over the kingdoms, to root out, and to pull down, and to destroy, and to throw down, to build, and to plant.* Sirach 49:7's charge to root out, afflict, destroy, build and plant is Jeremiah's own commission quoted almost exactly."},
+        {"src_ch": 49, "src_v": 6, "tgt_edition": "canon", "tgt_book": "jeremiah", "tgt_ch": 1, "tgt_v": 2, "tier": "free",
+         "note": "Jeremiah 1:2 — *To whom the word of Yahuah (LORD) came in the days of Josiah the son of Amon king of Yahudah (Judah), in the thirteenth year of his reign.* The prophet by whose word Sirach 49:6 says the city was burnt began to prophesy under Josiah, binding this thread to the praise of Josiah just before."}
+      ]
+    },
+    {
+      "slug": "sirach-49-ezekiel-glory-chariot-cherubim",
+      "title": "Ezekiel — who saw the glory upon the chariot of the cherubim",
+      "summary_md": "*It was Ezekiel who saw the glorious vision, which was shewed him upon the chariot of the cherubims* (Sirach 49:8). Ben Sira points straight to the opening of Ezekiel's book — the whirlwind, the living creatures, and the wheel within the wheel: *And I looked, and, behold, a whirlwind came out of the north, a great cloud, and a fire infolding itself, and a brightness was about it, and out of the midst thereof as the colour of amber, out of the midst of the fire* (Ezekiel 1:4); the four-faced living creatures whose *appearance and their work was as it were a wheel in the middle of a wheel* (Ezekiel 1:16); and over it all the throne and the glory: *As the appearance of the bow that is in the cloud in the day of rain, so was the appearance of the brightness round about. This was the appearance of the likeness of the glory of Yahuah (LORD). And when I saw it, I fell upon my face, and I heard a voice of one that spake* (Ezekiel 1:28). The glory upon the cherubim that the prophet beheld is the same glory the apocrypha remembers.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 49, "src_v": 8, "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 1, "tgt_v": 4, "tier": "free",
+         "note": "Ezekiel 1:4 — *And I looked, and, behold, a whirlwind came out of the north, a great cloud, and a fire infolding itself, and a brightness was about it, and out of the midst thereof as the colour of amber, out of the midst of the fire.* This is the opening of the glorious vision Sirach 49:8 says Ezekiel saw."},
+        {"src_ch": 49, "src_v": 8, "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 1, "tgt_v": 16, "tier": "free",
+         "note": "Ezekiel 1:16 — *The appearance of the wheels and their work was like unto the colour of a beryl: and they four had one likeness: and their appearance and their work was as it were a wheel in the middle of a wheel.* The chariot of the cherubim in Sirach 49:8 is this wheel within a wheel beneath the living creatures."},
+        {"src_ch": 49, "src_v": 8, "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 1, "tgt_v": 28, "tier": "free",
+         "note": "Ezekiel 1:28 — *As the appearance of the bow that is in the cloud in the day of rain, so was the appearance of the brightness round about. This was the appearance of the likeness of the glory of Yahuah (LORD). And when I saw it, I fell upon my face, and I heard a voice of one that spake.* The glorious vision Ezekiel saw in Sirach 49:8 is the very likeness of the glory of Yahuah enthroned above the chariot."}
+      ]
+    },
+    {
+      "slug": "sirach-49-twelve-prophets-comforted-jacob",
+      "title": "The twelve prophets — whose bones flourish, who comforted Jacob",
+      "summary_md": "*And of the twelve prophets let the memorial be blessed, and let their bones flourish again out of their place: for they comforted Jacob, and delivered them by assured hope* (Sirach 49:10). The minor prophets are remembered as one company whose word is comfort and whose hope is resurrection. Their books open exactly so: *The word of Yahuah (LORD) that came unto Hosea, the son of Beeri, in the days of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Yahudah (Judah), and in the days of Jeroboam the son of Joash, king of Yashar'el (Israel)* (Hosea 1:1) — the prophet sent to a scattered house; and Zechariah's first word is the turning that comforts Jacob: *Therefore say thou unto them, Thus saith Yahuah Tseva'ot (LORD of hosts); Turn ye unto me, saith Yahuah Tseva'ot (LORD of hosts), and I will turn unto you, saith Yahuah Tseva'ot (LORD of hosts)* (Zechariah 1:3), with the promise *and Yahuah (LORD) shall yet comfort Zion, and shall yet choose Jerusalem* (Zechariah 1:17). The comfort of Jacob and the flourishing of dead bones is the gathering hope — never a church supplanting Israel, but Jacob restored.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 49, "src_v": 10, "tgt_edition": "canon", "tgt_book": "hosea", "tgt_ch": 1, "tgt_v": 1, "tier": "free",
+         "note": "Hosea 1:1 — *The word of Yahuah (LORD) that came unto Hosea, the son of Beeri, in the days of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Yahudah (Judah), and in the days of Jeroboam the son of Joash, king of Yashar'el (Israel).* Hosea heads the twelve prophets Sirach 49:10 blesses, the first of the company sent to comfort and regather scattered Jacob."},
+        {"src_ch": 49, "src_v": 10, "tgt_edition": "canon", "tgt_book": "zechariah", "tgt_ch": 1, "tgt_v": 3, "tier": "free",
+         "note": "Zechariah 1:3 — *Therefore say thou unto them, Thus saith Yahuah Tseva'ot (LORD of hosts); Turn ye unto me, saith Yahuah Tseva'ot (LORD of hosts), and I will turn unto you, saith Yahuah Tseva'ot (LORD of hosts).* The twelve who comforted Jacob in Sirach 49:10 spoke this turning-and-return that is the heart of the gathering."},
+        {"src_ch": 49, "src_v": 10, "tgt_edition": "canon", "tgt_book": "zechariah", "tgt_ch": 1, "tgt_v": 17, "tier": "free",
+         "note": "Zechariah 1:17 — *Cry yet, saying, Thus saith Yahuah Tseva'ot (LORD of hosts); My cities through prosperity shall yet be spread abroad; and Yahuah (LORD) shall yet comfort Zion, and shall yet choose Jerusalem.* The assured hope by which the twelve delivered Jacob in Sirach 49:10 is this promise that Yahuah will yet comfort Zion and choose Jerusalem."}
+      ]
+    },
+    {
+      "slug": "sirach-49-builders-zerubbabel-jeshua-nehemiah",
+      "title": "The builders — Zerubbabel the signet, Jeshua the high priest, Nehemiah of the walls",
+      "summary_md": "After exile, Ben Sira honours those who rebuilt: *How shall we magnify Zorobabel? even he was as a signet on the right hand* (Sirach 49:11); *So was Jesus the son of Josedec: who in their time builded the house, and set up an holy temple to Yahuah (God), which was prepared for everlasting glory* (Sirach 49:12) — and this *Jesus the son of Josedec* is Jeshua the high priest, NOT the Messiah; *And among the elect was Neemias, whose renown is great, who raised up for us the walls that were fallen, and set up the gates and the bars, and raised up our ruins again* (Sirach 49:13). The Tanakh names each: Zerubbabel the signet — *In that day, saith Yahuah Tseva'ot (LORD of hosts), will I take thee, O Zerubbabel, my servant, the son of Shealtiel, saith Yahuah (LORD), and will make thee as a signet: for I have chosen thee, saith Yahuah Tseva'ot (LORD of hosts)* (Haggai 2:23), who laid and finished the house — *The hands of Zerubbabel have laid the foundation of this house; his hands shall also finish it; and thou shalt know that Yahuah Tseva'ot (LORD of hosts) hath sent me unto you* (Zechariah 4:9); Jeshua at his side — *Now in the second year of their coming unto the house of Elohim (God) at Jerusalem... began Zerubbabel the son of Shealtiel, and Jeshua the son of Jozadak, and the remnant of their brethren the priests and the Levites* (Ezra 3:8); and Nehemiah of the walls — *Then said I unto them, Ye see the distress that we are in, how Jerusalem lieth waste, and the gates thereof are burned with fire: come, and let us build up the wall of Jerusalem, that we be no more a reproach* (Nehemiah 2:17).",
+      "anchor_start_v": 11,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 49, "src_v": 11, "tgt_edition": "canon", "tgt_book": "haggai", "tgt_ch": 2, "tgt_v": 23, "tier": "free",
+         "note": "Haggai 2:23 — *In that day, saith Yahuah Tseva'ot (LORD of hosts), will I take thee, O Zerubbabel, my servant, the son of Shealtiel, saith Yahuah (LORD), and will make thee as a signet: for I have chosen thee, saith Yahuah Tseva'ot (LORD of hosts).* Sirach 49:11's Zerubbabel \"as a signet on the right hand\" quotes Yahuah's own word making him a signet."},
+        {"src_ch": 49, "src_v": 12, "tgt_edition": "canon", "tgt_book": "zechariah", "tgt_ch": 4, "tgt_v": 9, "tier": "free",
+         "note": "Zechariah 4:9 — *The hands of Zerubbabel have laid the foundation of this house; his hands shall also finish it; and thou shalt know that Yahuah Tseva'ot (LORD of hosts) hath sent me unto you.* The house builded in Sirach 49:12 by Zerubbabel and Jeshua is this temple whose foundation and finishing Zechariah foretold."},
+        {"src_ch": 49, "src_v": 12, "tgt_edition": "canon", "tgt_book": "ezra", "tgt_ch": 3, "tgt_v": 8, "tier": "free",
+         "note": "Ezra 3:8 — *Now in the second year of their coming unto the house of Elohim (God) at Jerusalem, in the second month, began Zerubbabel the son of Shealtiel, and Jeshua the son of Jozadak, and the remnant of their brethren the priests and the Levites, and all they that were come out of the captivity unto Jerusalem; and appointed the Levites, from twenty years old and upward, to set forward the work of the house of Yahuah (LORD).* The \"Jesus the son of Josedec\" of Sirach 49:12 is Jeshua son of Jozadak the high priest here — not the Messiah — who with Zerubbabel began the house."},
+        {"src_ch": 49, "src_v": 13, "tgt_edition": "canon", "tgt_book": "nehemiah", "tgt_ch": 2, "tgt_v": 17, "tier": "free",
+         "note": "Nehemiah 2:17 — *Then said I unto them, Ye see the distress that we are in, how Jerusalem lieth waste, and the gates thereof are burned with fire: come, and let us build up the wall of Jerusalem, that we be no more a reproach.* Nehemiah, who in Sirach 49:13 raised up the fallen walls and set up the gates, calls Israel to rebuild Jerusalem's wall and gates."}
+      ]
+    },
+    {
+      "slug": "sirach-49-enoch-translated-from-the-earth",
+      "title": "Enoch — than whom no man on earth was created like, taken from the earth",
+      "summary_md": "Ben Sira reaches back past the prophets to the first fathers: *But upon the earth was no man created like Enoch; for he was taken from the earth* (Sirach 49:14). Genesis says it in a breath: *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24). The now-restored books unfold the same translation: in his own vision Enoch testifies, *And he translated my spirit into the heaven of heavens, And I saw there a structure built of crystals, And between those crystals tongues of living fire* (1 Enoch 71:5), where *there I saw the first fathers and the righteous who from the beginning of the world Dwell in that place* (1 Enoch 71:7); and Jubilees records, *And he was taken from amongst the children of men, and we conducted him into the Garden of Eden in majesty and honour, and behold there he writes down the condemnation and judgment of the world, and all the wickedness of the children of men* (Jubilees 4:23). The one taken from the earth is no new idea — the whole library bears the same witness.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 49, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 5, "tgt_v": 24, "tier": "free",
+         "note": "Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* This is the taking from the earth Sirach 49:14 says no other man was like."},
+        {"src_ch": 49, "src_v": 14, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 71, "tgt_v": 5, "tier": "extras",
+         "note": "1 Enoch 71:5 — *And he translated my spirit into the heaven of heavens, And I saw there a structure built of crystals, And between those crystals tongues of living fire.* Enoch's own book unfolds the translation Sirach 49:14 remembers, his spirit carried up to the heaven of heavens."},
+        {"src_ch": 49, "src_v": 14, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 4, "tgt_v": 23, "tier": "extras",
+         "note": "Jubilees 4:23 — *And he was taken from amongst the children of men, and we conducted him into the Garden of Eden in majesty and honour, and behold there he writes down the condemnation and judgment of the world, and all the wickedness of the children of men.* Jubilees tells where Enoch went when, as Sirach 49:14 says, he was taken from the earth — into Eden in majesty and honour."}
+      ]
+    },
+    {
+      "slug": "sirach-49-joseph-shem-seth-adam-the-seed",
+      "title": "Joseph's bones — and Shem, Seth, Adam, the honoured seed-line",
+      "summary_md": "The praise of the fathers closes where the seed-line began: *Neither was there a young man born like Joseph, a governor of his brothers, a stay of the people, whose bones were regarded of Yahuah (God)* (Sirach 49:15), and *Sem and Seth were in great honour among men, and so was Adam above every living thing in creation* (Sirach 49:16). Joseph's bones were regarded because he bound Israel by oath: *And Joseph took an oath of the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25) — an oath kept at the Exodus: *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you* (Exodus 13:19); and Jubilees preserves the same charge: *And he commanded the children of Yashar'el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt* (Jubilees 46:5). And the seed-line Sirach honours runs back through Seth: *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew* (Genesis 4:25) — Adam, above every living thing in creation, the first father of them all (Jubilees 4:29).",
+      "anchor_start_v": 15,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 49, "src_v": 15, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 25, "tier": "free",
+         "note": "Genesis 50:25 — *And Joseph took an oath of the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* Joseph's bones were regarded of Yahuah in Sirach 49:15 because of this dying oath laid on Israel."},
+        {"src_ch": 49, "src_v": 15, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 13, "tgt_v": 19, "tier": "free",
+         "note": "Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* The bones Sirach 49:15 says were regarded of Yahuah were carried up at the Exodus exactly as Joseph had sworn."},
+        {"src_ch": 49, "src_v": 15, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 46, "tgt_v": 5, "tier": "extras",
+         "note": "Jubilees 46:5 — *And he commanded the children of Yashar'el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt.* Jubilees carries the same charge regarding Joseph's bones that Sirach 49:15 honours."},
+        {"src_ch": 49, "src_v": 16, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 25, "tier": "free",
+         "note": "Genesis 4:25 — *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew.* Seth, honoured among men in Sirach 49:16, is the appointed seed through whom the line was kept."},
+        {"src_ch": 49, "src_v": 16, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 4, "tgt_v": 29, "tier": "extras",
+         "note": "Jubilees 4:29 — *And at the close of the nineteenth jubilee, in the seventh week in the sixth year thereof, Adam died, and all his sons buried him in the land of his creation, and he was the first to be buried in the earth.* Adam, set above every living thing in creation in Sirach 49:16, is here the first father of all, buried in the land of his own creation."}
+      ]
+    }
+  ]
+}
