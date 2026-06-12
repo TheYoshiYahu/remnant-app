@@ -618,3 +618,33 @@ apocrypha <book> → fold (name session2NN_<book>_extracanon_cross_references.sq
 Brief MINION_BRIEF_APOCRYPHA.md ("Jesus"=Joshua note). ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main`
 from /tmp/extracanon-xref-wt with keychain unlocked — 33 commits (85b660c..60f3793) need to land on origin/main
 (still 47a9e48); prod authoritative meanwhile.
+
+## ✅✅ RECEIPT — Apocrypha Pack 2: Wisdom of Solomon ch9–19 — WISDOM OF SOLOMON COMPLETE-LIVE
+- Applied 2026-06-11. AUTHORITATIVE (anchored on apocrypha/the-wisdom-of-solomon): **94 threads / 299
+  members**, band 58000–58465, all 19 ch, 0 orphans. Migration
+  `session253_wisdomofsolomon_extracanon_cross_references.sql`. Commits `60f3793`+`b568a1c`. Five gates
+  green (fidelity 299/299, FULL-LIBRARY PASS, resolve 0 after fixing 1 tgt_edition 'extras'→'apocrypha').
+- Solomon's prayer (9→1Kgs3:9/James1:5); WISDOM IN HISTORY Adam→Red Sea (10→Gen/Exod + Jubilees self-links
+  5:22/16:6/39:3/48:14); the Rock=Messiah + measured-judgment + mercy (11→Exod17:6/1Cor10:4/Ps145:9 + Sirach18
+  self-links); 'by little and little' mercy (12→Exod23:29/Rom2:4/2Pet3:9); ★the IDOLATRY POLEMIC ROMANS 1
+  QUOTES (13-15→Rom1:20-21/1:24-32/Ps115/Isa44/Rom9:20 — loop closed); brazen-serpent + manna=bread-of-life
+  (16→Num21:8/John3:14/John6:31); the plague of darkness (17→Exod10:21/Jude6); the Passover + the WORD as
+  warrior (18→Exod12:29/John1:14/Rev19:11/Heb4:12); the Red Sea/creation re-fashioned (19→Exod14/Isa43:19/
+  Rom8:19/Rev21:1).
+- ⚑ GATE LESSON: a Wisdom self-link used tgt_edition `extras` (the TIER value) instead of the edition slug
+  `apocrypha` — resolve_check caught it. Edition slug must be the real edition ('apocrypha'/'enoch'/etc.),
+  never the tier. (Also the earlier 'the-book-of-jubilees'→'jubilees' fix.) Watch extra-canon target slugs.
+- Push blocked. origin/main 47a9e48; local HEAD `b568a1c` (35 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 3 PSEUDEPIGRAPHA COMPLETE + Wisdom of Solomon COMPLETE = 1256 threads/4513
+members. NEXT = SIRACH / Ecclesiasticus (edition 'apocrypha', book 'ecclesiasticus', 51 ch, band 58300, ch N
+= 58300+(N-1)*25). Migration `session253_ecclesiasticus_extracanon_cross_references.sql`. Spine: wisdom
+literature → James/the Sermon on the Mount/Proverbs; Sirach 24 (wisdom from the mouth of the Most High, dwells
+in Jacob → John 1/Prov 8); Sirach 44-50 ('let us now praise famous men' / the fathers → Hebrews 11); the
+fear-of-Yahuah, almsgiving, the tongue → James. Launch Sirach Pack 1 = ch1-8 (wisdom-pack2 script pattern +
+per-ch CONTEXT; brief MINION_BRIEF_APOCRYPHA.md covers it). 51 ch = ~7 packs. Then Tobit/Judith/Maccabees/
+Baruch/Esdras/Susanna/Bel/Manasseh/Song-of-Three/rest-of-Esther (per allocation @59000+), then the smaller
+restored books (adam-eve-conflict@62000 etc.). Gates: anchor_check + resolve_check `apocrypha ecclesiasticus`;
+reconcile by ANCHOR (the slug-prefix is ambiguous). ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main`
+from /tmp/extracanon-xref-wt with keychain unlocked — 35 commits (85b660c..b568a1c) need to land (origin/main
+still 47a9e48); prod authoritative meanwhile.
