@@ -4542,6 +4542,2222 @@ SELECT t.id, x.id, 3, E'Deuteronomy 32:8 — *When the El Elyon (most High) divi
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ecclesiasticus_17.sql (session253 ecclesiasticus 17) -----
+-- Source anchor: apocrypha/ecclesiasticus ch17. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir17 (view _session253_sir17_lookup). Sort band base 58700, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: ecclesiasticus-17-man-in-the-image
+  ('apocrypha', 'ecclesiasticus', 17, 3, 'canon', 'genesis', 1, 26, 'free', E'Genesis 1:26 — *And Elohim (God) said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.* Sirach 17:3-4 names the very image-and-dominion grant of the sixth day.'),
+  ('apocrypha', 'ecclesiasticus', 17, 1, 'canon', 'genesis', 2, 7, 'free', E'Genesis 2:7 — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* Sirach 17:1 ''created man of the earth, and turned him into it again'' is Genesis 2:7 read with Genesis 3:19.'),
+  ('apocrypha', 'ecclesiasticus', 17, 4, 'canon', 'genesis', 9, 2, 'free', E'Genesis 9:2 — *And the fear of you and the dread of you shall be upon every beast of the earth, and upon every fowl of the air, upon all that moveth upon the earth, and upon all the fishes of the sea; into your hand are they delivered.* Sirach 17:4 ''put the fear of man upon all flesh'' is the Noahic dominion-grant verbatim.'),
+  ('apocrypha', 'ecclesiasticus', 17, 4, 'canon', 'psalms', 8, 6, 'free', E'Psalms 8:6 — *Thou madest him to have dominion over the works of thy hands; thou hast put all things under his feet:* the dominion Sirach 17:4 gives over beasts and fowls is the dominion David sings.'),
+  ('apocrypha', 'ecclesiasticus', 17, 3, 'canon', 'psalms', 8, 5, 'free', E'Psalms 8:5 — *For thou hast made him a little lower than the angels, and hast crowned him with glory and honour.* The man made ''according to his image'' (Sirach 17:3) is the man crowned with glory and honour.'),
+  -- thread: ecclesiasticus-17-the-law-of-life-everlasting-covenant
+  ('apocrypha', 'ecclesiasticus', 17, 12, 'canon', 'exodus', 19, 5, 'free', E'Exodus 19:5 — *Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine:* the ''everlasting covenant'' of Sirach 17:12 is the Sinai covenant offered to Israel.'),
+  ('apocrypha', 'ecclesiasticus', 17, 12, 'canon', 'exodus', 24, 8, 'free', E'Exodus 24:8 — *And Moses took the blood, and sprinkled it on the people, and said, Behold the blood of the covenant, which Yahuah (LORD) hath made with you concerning all these words.* The covenant Sirach 17:12 calls everlasting is the blood-ratified covenant of Sinai.'),
+  ('apocrypha', 'ecclesiasticus', 17, 11, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* the ''law of life'' of Sirach 17:11 is Moses'' choose-life Torah.'),
+  ('apocrypha', 'ecclesiasticus', 17, 12, 'canon', 'jeremiah', 31, 33, 'free', E'Jeremiah 31:33 — *But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* The everlasting covenant of Sirach 17:12 is the law written on the heart — same Torah, kept inwardly.'),
+  ('apocrypha', 'ecclesiasticus', 17, 11, 'apocrypha', 'ecclesiasticus', 24, 23, 'extras', E'Ecclesiasticus 24:23 — *All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.* Ben Sira''s own crown-chapter identifies the ''law of life for an heritage'' (Sirach 17:11) as the Torah and the book of the covenant.'),
+  -- thread: ecclesiasticus-17-law-written-in-the-heart
+  ('apocrypha', 'ecclesiasticus', 17, 7, 'canon', 'romans', 2, 14, 'free', E'Romans 2:14 — *For when the Gentiles, which have not the law, do by nature the things contained in the law, these, having not the law, are a law unto themselves:* the heart ''shewed... good and evil'' in Sirach 17:7 is Paul''s law written in the conscience.'),
+  ('apocrypha', 'ecclesiasticus', 17, 11, 'apocrypha', 'baruch-with-the-letter-of-jeremiah', 4, 1, 'extras', E'Baruch 4:1 — *This is the book of the commandments of Yahuah (God), and the law that endureth for ever: all they that keep it shall come to life; but such as leave it shall die.* Baruch names the ''law of life for an heritage'' (Sirach 17:11) the enduring commandment by which one lives.'),
+  ('apocrypha', 'ecclesiasticus', 17, 6, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* the heart and counsel given to understand good and evil (Sirach 17:6) equip man for Moses'' life-and-death choice.'),
+  -- thread: ecclesiasticus-17-israel-the-portion-bounds-of-nations
+  ('apocrypha', 'ecclesiasticus', 17, 17, 'canon', 'deuteronomy', 32, 8, 'free', E'Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel).* Sirach 17:17''s division of the nations with Israel kept apart is the Song of Moses verbatim.'),
+  ('apocrypha', 'ecclesiasticus', 17, 17, 'canon', 'deuteronomy', 32, 9, 'free', E'Deuteronomy 32:9 — *For the LORD''S portion is his people; Jacob is the lot of his inheritance.* ''Israel is the portion of Yahuah'' (Sirach 17:17) repeats Moses'' word for word.'),
+  ('apocrypha', 'ecclesiasticus', 17, 17, 'canon', 'acts', 17, 26, 'free', E'Acts 17:26 — *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation;* Paul preaches the same set bounds of the nations Sirach 17:17 names.'),
+  -- thread: ecclesiasticus-17-all-works-before-him-recompense
+  ('apocrypha', 'ecclesiasticus', 17, 15, 'canon', 'hebrews', 4, 13, 'free', E'Hebrews 4:13 — *Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do.* Sirach 17:15 ''their ways... shall not be hid from his eyes'' is the same all-seeing scrutiny.'),
+  ('apocrypha', 'ecclesiasticus', 17, 23, 'canon', 'matthew', 16, 27, 'free', E'Matthew 16:27 — *For the Son of Adam shall come in the glory of his Father with his angels; and then he shall reward every man according to his works.* The Messiah''s coming recompense matches Sirach 17:23, ''render their recompence upon their heads.'''),
+  ('apocrypha', 'ecclesiasticus', 17, 23, 'canon', 'revelation', 22, 12, 'free', E'Revelation 22:12 — *And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be.* The reward rendered upon every head in Sirach 17:23 is the reward carried at the Coming.'),
+  -- thread: ecclesiasticus-17-call-to-repentance-turn-and-live
+  ('apocrypha', 'ecclesiasticus', 17, 26, 'canon', 'ezekiel', 18, 30, 'free', E'Ezekiel 18:30 — *Therefore I will judge you, O house of Yashar''el (Israel), every one according to his ways, saith Adonai Yahuah (the Lord GOD). Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin.* Sirach 17:26 ''turn away from iniquity'' is Ezekiel''s turn-and-be-saved call.'),
+  ('apocrypha', 'ecclesiasticus', 17, 24, 'canon', 'ezekiel', 18, 32, 'free', E'Ezekiel 18:32 — *For I have no pleasure in the death of him that dieth, saith Adonai Yahuah (the Lord GOD): wherefore turn yourselves, and live ye.* The mercy granting return in Sirach 17:24 is Yahuah''s no-pleasure-in-death heart.'),
+  ('apocrypha', 'ecclesiasticus', 17, 29, 'canon', '2-peter', 3, 9, 'free', E'2 Peter 3:9 — *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.* The great lovingkindness toward those that turn (Sirach 17:29) is Peter''s longsuffering unto repentance.'),
+  ('apocrypha', 'ecclesiasticus', 17, 25, 'canon', 'james', 4, 8, 'free', E'James 4:8 — *Draw nigh to Elohim (God), and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded.* ''Make your prayer before his face, and offend less'' (Sirach 17:25) is James'' draw-nigh-and-cleanse summons.'),
+  ('apocrypha', 'ecclesiasticus', 17, 24, 'canon', 'luke', 15, 7, 'free', E'Luke 15:7 — *I say unto you, that likewise joy shall be in heaven over one sinner that repenteth, more than over ninety and nine just persons, which need no repentance.* The return granted to them that repent (Sirach 17:24) is the heaven-joy over one sinner turning.'),
+  -- thread: ecclesiasticus-17-no-praise-in-the-grave
+  ('apocrypha', 'ecclesiasticus', 17, 27, 'canon', 'psalms', 6, 5, 'free', E'Psalms 6:5 — *For in death there is no remembrance of thee: in the grave who shall give thee thanks?* Sirach 17:27 ''who shall praise the Most High in the grave'' is David''s question word for word.'),
+  ('apocrypha', 'ecclesiasticus', 17, 28, 'canon', 'psalms', 115, 17, 'free', E'Psalms 115:17 — *The dead praise not Yahuah (LORD), neither any that go down into silence.* Sirach 17:28 ''thanksgiving perishes from the dead'' is the same silence of the grave.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-17-man-in-the-image',
+       E'Man created of the earth, made after his image, given dominion',
+       E'Ben Sira opens with the making of Adam — *Yahuah (God) created man of the earth, and turned him into it again* (Ecclesiasticus 17:1), *and made them according to his image* (Ecclesiasticus 17:3), and *put the fear of man upon all flesh, and gave him dominion over beasts and fowls* (Ecclesiasticus 17:4). It ain''t new: he is retelling Genesis. *And Elohim (God) said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air* (Genesis 1:26); *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul* (Genesis 2:7). The fear set upon the beasts is the Noahic grant — *And the fear of you and the dread of you shall be upon every beast of the earth* (Genesis 9:2), *Every moving thing that liveth shall be meat for you* (Genesis 9:3). And the crown of dominion is sung in Psalm 8: *For thou hast made him a little lower than the angels, and hast crowned him with glory and honour* (Psalms 8:5); *Thou madest him to have dominion over the works of thy hands; thou hast put all things under his feet* (Psalms 8:6).',
+       sv.verse_id, ev.verse_id, 'extras', 58700
+  FROM _session253_sir17_lookup sv, _session253_sir17_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=17 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-17-the-law-of-life-everlasting-covenant',
+       E'The law of life for an heritage, the everlasting covenant',
+       E'The heart of the chapter: *Beside this he gave them knowledge, and the law of life for an heritage* (Ecclesiasticus 17:11); *He made an everlasting covenant with them, and shewed them his judgments* (Ecclesiasticus 17:12); *Their eyes saw the majesty of his glory, and their ears heard his glorious voice* (Ecclesiasticus 17:13). This is Sinai — the law given as life, not as curse. *Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine* (Exodus 19:5); the covenant ratified in blood, *Behold the blood of the covenant, which Yahuah (LORD) hath made with you concerning all these words* (Exodus 24:8). Moses set the same choice Ben Sira sets: *I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). And the everlasting covenant is the law written within — *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33). Ben Sira''s own crown-chapter names it plainly: the law that endureth IS Wisdom — *All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob* (Ecclesiasticus 24:23).',
+       sv.verse_id, ev.verse_id, 'extras', 58703
+  FROM _session253_sir17_lookup sv, _session253_sir17_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=11
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=17 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-17-law-written-in-the-heart',
+       E'Counsel, a heart to understand, good and evil shewn — the law in the heart',
+       E'Before Sinai''s tablets, Yahuah wrote on the man himself: *Counsel, and a tongue, and eyes, ears, and a heart, gave he them to understand* (Ecclesiasticus 17:6); *Withal he filled them with the knowledge of understanding, and shewed them good and evil* (Ecclesiasticus 17:7). The faculty to know good and evil and the heart that discerns is the law written within — exactly Paul''s argument: *For when the Gentiles, which have not the law, do by nature the things contained in the law, these, having not the law, are a law unto themselves* (Romans 2:14). This is why even the heathen are without excuse — the law of life (Sirach 17:11) is first inscribed in the conscience. Ben Sira''s Wisdom-chapter and Baruch both seal it: Wisdom is the enduring law — *This is the book of the commandments of Yahuah (God), and the law that endureth for ever: all they that keep it shall come to life; but such as leave it shall die* (Baruch 4:1).',
+       sv.verse_id, ev.verse_id, 'extras', 58706
+  FROM _session253_sir17_lookup sv, _session253_sir17_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=6
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=17 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-17-israel-the-portion-bounds-of-nations',
+       E'Israel the portion of Yahuah, the bounds of the nations set',
+       E'*For in the division of the nations of the whole earth he set a ruler over every people; but Yashar''el (Israel) is the portion of Yahuah (God)* (Ecclesiasticus 17:17). It ain''t new — this is the Song of Moses: *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8); *For the LORD''S portion is his people; Jacob is the lot of his inheritance* (Deuteronomy 32:9). Paul preaches the same allotment on Mars'' Hill — *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26). The nations get rulers; Israel is kept as Yahuah''s own portion. Election stands.',
+       sv.verse_id, ev.verse_id, 'extras', 58709
+  FROM _session253_sir17_lookup sv, _session253_sir17_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=17
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=17 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-17-all-works-before-him-recompense',
+       E'Their ways ever before him; he renders recompence upon their heads',
+       E'Nothing is hidden, and every work is repaid: *Their ways are ever before him, and shall not be hid from his eyes* (Ecclesiasticus 17:15); *Therefore all their works are as the sun before him, and his eyes are continually upon their ways* (Ecclesiasticus 17:19); *Afterwards he will rise up and reward them, and render their recompence upon their heads* (Ecclesiasticus 17:23). The all-seeing eye is Hebrews'' word — *Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do* (Hebrews 4:13). And the recompense is the Messiah''s own promise: *For the Son of Adam shall come in the glory of his Father with his angels; and then he shall reward every man according to his works* (Matthew 16:27); *And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be* (Revelation 22:12).',
+       sv.verse_id, ev.verse_id, 'extras', 58712
+  FROM _session253_sir17_lookup sv, _session253_sir17_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=15
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=17 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-17-call-to-repentance-turn-and-live',
+       E'Return to Yahuah, forsake your sins, turn and live',
+       E'The chapter turns to the altar call: *But to them that repent, he granted them return, and comforted those that failed in patience* (Ecclesiasticus 17:24); *Return to Yahuah (God), and forsake your sins, make your prayer before his face, and offend less* (Ecclesiasticus 17:25); *Turn again to the Most High, and turn away from iniquity* (Ecclesiasticus 17:26); *How great is the lovingkindness of Yahuah (God), our Elohim (God), and his compassion to such as turn to him in holiness!* (Ecclesiasticus 17:29). This is Ezekiel''s plea — *Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin* (Ezekiel 18:30); *For I have no pleasure in the death of him that dieth, saith Adonai Yahuah (the Lord GOD): wherefore turn yourselves, and live ye* (Ezekiel 18:32). Peter carries the same patience — *is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance* (2 Peter 3:9) — James the same nearness — *Draw nigh to Elohim (God), and he will draw nigh to you* (James 4:8) — and heaven the same joy — *joy shall be in heaven over one sinner that repenteth* (Luke 15:7).',
+       sv.verse_id, ev.verse_id, 'extras', 58715
+  FROM _session253_sir17_lookup sv, _session253_sir17_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=24
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=17 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-17-no-praise-in-the-grave',
+       E'The dead praise not; the living and sound in heart give thanks',
+       E'Ben Sira presses repentance now, for the grave is silent: *Who shall praise the Most High in the grave, instead of them which live and give thanks?* (Ecclesiasticus 17:27); *Thanksgiving perishes from the dead, as from one that is not: the living and sound in heart shall praise Yahuah (God)* (Ecclesiasticus 17:28). This is David''s plea verbatim — *For in death there is no remembrance of thee: in the grave who shall give thee thanks?* (Psalms 6:5); *The dead praise not Yahuah (LORD), neither any that go down into silence* (Psalms 115:17). The urgency is the same: turn while you live, for praise belongs to the living.',
+       sv.verse_id, ev.verse_id, 'extras', 58718
+  FROM _session253_sir17_lookup sv, _session253_sir17_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=27
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=17 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: ecclesiasticus-17-man-in-the-image
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:26 — *And Elohim (God) said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.* Sirach 17:3-4 names the very image-and-dominion grant of the sixth day.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-man-in-the-image'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 2:7 — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* Sirach 17:1 ''created man of the earth, and turned him into it again'' is Genesis 2:7 read with Genesis 3:19.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-man-in-the-image'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 9:2 — *And the fear of you and the dread of you shall be upon every beast of the earth, and upon every fowl of the air, upon all that moveth upon the earth, and upon all the fishes of the sea; into your hand are they delivered.* Sirach 17:4 ''put the fear of man upon all flesh'' is the Noahic dominion-grant verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-man-in-the-image'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalms 8:6 — *Thou madest him to have dominion over the works of thy hands; thou hast put all things under his feet:* the dominion Sirach 17:4 gives over beasts and fowls is the dominion David sings.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-man-in-the-image'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=8 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Psalms 8:5 — *For thou hast made him a little lower than the angels, and hast crowned him with glory and honour.* The man made ''according to his image'' (Sirach 17:3) is the man crowned with glory and honour.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-man-in-the-image'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=8 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-17-the-law-of-life-everlasting-covenant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 19:5 — *Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine:* the ''everlasting covenant'' of Sirach 17:12 is the Sinai covenant offered to Israel.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-the-law-of-life-everlasting-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 24:8 — *And Moses took the blood, and sprinkled it on the people, and said, Behold the blood of the covenant, which Yahuah (LORD) hath made with you concerning all these words.* The covenant Sirach 17:12 calls everlasting is the blood-ratified covenant of Sinai.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-the-law-of-life-everlasting-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=24 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* the ''law of life'' of Sirach 17:11 is Moses'' choose-life Torah.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-the-law-of-life-everlasting-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 31:33 — *But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* The everlasting covenant of Sirach 17:12 is the law written on the heart — same Torah, kept inwardly.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-the-law-of-life-everlasting-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Ecclesiasticus 24:23 — *All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.* Ben Sira''s own crown-chapter identifies the ''law of life for an heritage'' (Sirach 17:11) as the Torah and the book of the covenant.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-the-law-of-life-everlasting-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=11
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=24 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-17-law-written-in-the-heart
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Romans 2:14 — *For when the Gentiles, which have not the law, do by nature the things contained in the law, these, having not the law, are a law unto themselves:* the heart ''shewed... good and evil'' in Sirach 17:7 is Paul''s law written in the conscience.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-law-written-in-the-heart'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Baruch 4:1 — *This is the book of the commandments of Yahuah (God), and the law that endureth for ever: all they that keep it shall come to life; but such as leave it shall die.* Baruch names the ''law of life for an heritage'' (Sirach 17:11) the enduring commandment by which one lives.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-law-written-in-the-heart'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=11
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=4 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* the heart and counsel given to understand good and evil (Sirach 17:6) equip man for Moses'' life-and-death choice.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-law-written-in-the-heart'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-17-israel-the-portion-bounds-of-nations
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel).* Sirach 17:17''s division of the nations with Israel kept apart is the Song of Moses verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-israel-the-portion-bounds-of-nations'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 32:9 — *For the LORD''S portion is his people; Jacob is the lot of his inheritance.* ''Israel is the portion of Yahuah'' (Sirach 17:17) repeats Moses'' word for word.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-israel-the-portion-bounds-of-nations'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 17:26 — *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation;* Paul preaches the same set bounds of the nations Sirach 17:17 names.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-israel-the-portion-bounds-of-nations'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-17-all-works-before-him-recompense
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hebrews 4:13 — *Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do.* Sirach 17:15 ''their ways... shall not be hid from his eyes'' is the same all-seeing scrutiny.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-all-works-before-him-recompense'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 16:27 — *For the Son of Adam shall come in the glory of his Father with his angels; and then he shall reward every man according to his works.* The Messiah''s coming recompense matches Sirach 17:23, ''render their recompence upon their heads.'''
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-all-works-before-him-recompense'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=16 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:12 — *And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be.* The reward rendered upon every head in Sirach 17:23 is the reward carried at the Coming.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-all-works-before-him-recompense'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-17-call-to-repentance-turn-and-live
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 18:30 — *Therefore I will judge you, O house of Yashar''el (Israel), every one according to his ways, saith Adonai Yahuah (the Lord GOD). Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin.* Sirach 17:26 ''turn away from iniquity'' is Ezekiel''s turn-and-be-saved call.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-call-to-repentance-turn-and-live'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 18:32 — *For I have no pleasure in the death of him that dieth, saith Adonai Yahuah (the Lord GOD): wherefore turn yourselves, and live ye.* The mercy granting return in Sirach 17:24 is Yahuah''s no-pleasure-in-death heart.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-call-to-repentance-turn-and-live'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Peter 3:9 — *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.* The great lovingkindness toward those that turn (Sirach 17:29) is Peter''s longsuffering unto repentance.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-call-to-repentance-turn-and-live'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'James 4:8 — *Draw nigh to Elohim (God), and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded.* ''Make your prayer before his face, and offend less'' (Sirach 17:25) is James'' draw-nigh-and-cleanse summons.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-call-to-repentance-turn-and-live'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Luke 15:7 — *I say unto you, that likewise joy shall be in heaven over one sinner that repenteth, more than over ninety and nine just persons, which need no repentance.* The return granted to them that repent (Sirach 17:24) is the heaven-joy over one sinner turning.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-call-to-repentance-turn-and-live'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-17-no-praise-in-the-grave
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalms 6:5 — *For in death there is no remembrance of thee: in the grave who shall give thee thanks?* Sirach 17:27 ''who shall praise the Most High in the grave'' is David''s question word for word.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-no-praise-in-the-grave'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=6 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 115:17 — *The dead praise not Yahuah (LORD), neither any that go down into silence.* Sirach 17:28 ''thanksgiving perishes from the dead'' is the same silence of the grave.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir17_lookup sv, _session253_sir17_lookup tv
+ WHERE t.slug='ecclesiasticus-17-no-praise-in-the-grave'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=17 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=115 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_18.sql (session253 ecclesiasticus 18) -----
+-- Source anchor: apocrypha/ecclesiasticus ch18. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir18 (view _session253_sir18_lookup). Sort band base 58725, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: ecclesiasticus-18-a-thousand-years
+  ('apocrypha', 'ecclesiasticus', 18, 10, 'canon', 'psalms', 90, 4, 'free', E'Psalm 90:4 — *For a thousand years in thy sight are but as yesterday when it is past, and as a watch in the night.* The Psalmist measures a thousand years against the Eternal exactly as Sirach 18:10 measures it a drop to the sea.'),
+  ('apocrypha', 'ecclesiasticus', 18, 10, 'canon', '2-peter', 3, 8, 'free', E'2 Peter 3:8 — *But, beloved, be not ignorant of this one thing, that one day is with Yahuah (Lord) as a thousand years, and a thousand years as one day.* Kepha carries Sirach 18:10''s eternity-scale into the patience of the LORD before the day of judgment.'),
+  ('apocrypha', 'ecclesiasticus', 18, 9, 'canon', 'psalms', 103, 15, 'free', E'Psalm 103:15 — *As for man, his days are as grass: as a flower of the field, so he flourisheth.* The hundred-year span of Sirach 18:9 is the same flower-of-the-field brevity the Psalmist sings.'),
+  ('apocrypha', 'ecclesiasticus', 18, 9, 'canon', 'psalms', 103, 16, 'free', E'Psalm 103:16 — *For the wind passeth over it, and it is gone; and the place thereof shall know it no more.* Man''s few days in Sirach 18:9 pass like grass over which the wind blows and is gone.'),
+  -- thread: ecclesiasticus-18-mercy-on-all-flesh
+  ('apocrypha', 'ecclesiasticus', 18, 13, 'canon', 'psalms', 145, 9, 'free', E'Psalm 145:9 — *Yahuah (LORD) is good to all: and his tender mercies are over all his works.* This is the mercy-upon-all-flesh of Sirach 18:13 word for word — tender mercies over all His works.'),
+  ('apocrypha', 'ecclesiasticus', 18, 13, 'canon', 'psalms', 103, 13, 'free', E'Psalm 103:13 — *Like as a father pitieth his children, so Yahuah (LORD) pitieth them that fear him.* The shepherd-mercy of Sirach 18:13 is the Father''s pity the Psalmist sings.'),
+  ('apocrypha', 'ecclesiasticus', 18, 14, 'canon', 'hebrews', 12, 6, 'free', E'Hebrews 12:6 — *For whom Yahuah (Lord) loveth he chasteneth, and scourgeth every son whom he receiveth.* The discipline received in Sirach 18:14 is the Father''s loving chastening, not curse — He has mercy on them that receive it.'),
+  ('apocrypha', 'ecclesiasticus', 18, 14, 'canon', 'proverbs', 3, 12, 'free', E'Proverbs 3:12 — *For whom Yahuah (LORD) loveth he correcteth; even as a father the son in whom he delighteth.* Mishle is the wellspring of Sirach 18:14''s mercy on them that receive discipline.'),
+  ('apocrypha', 'ecclesiasticus', 18, 13, 'canon', 'lamentations', 3, 22, 'free', E'Lamentations 3:22 — *It is of the LORD’S mercies that we are not consumed, because his compassions fail not.* The mercy upon all flesh in Sirach 18:13 is the unfailing compassion that keeps Yashar''el from being consumed.'),
+  -- thread: ecclesiasticus-18-word-better-than-gift
+  ('apocrypha', 'ecclesiasticus', 18, 15, 'canon', 'matthew', 6, 2, 'free', E'Matthew 6:2 — *Therefore when thou doest thine alms, do not sound a trumpet before thee, as the hypocrites do in the synagogues and in the streets, that they may have glory of men.* The trumpeted alms is the blemished good deed Sirach 18:15 warns against.'),
+  ('apocrypha', 'ecclesiasticus', 18, 15, 'canon', 'matthew', 6, 3, 'free', E'Matthew 6:3 — *But when thou doest alms, let not thy left hand know what thy right hand doeth.* Yahusha''s hidden alms is Sirach 18:15''s unblemished giving without uncomfortable words.'),
+  ('apocrypha', 'ecclesiasticus', 18, 17, 'canon', 'proverbs', 18, 21, 'free', E'Proverbs 18:21 — *Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof.* A gracious word better than a gift in Sirach 18:17 trades on the tongue''s life-and-death power Mishle weighs.'),
+  ('apocrypha', 'ecclesiasticus', 18, 15, 'apocrypha', 'tobit', 4, 7, 'extras', E'Tobit 4:7 — *Give alms of your substance; and when you give alms, let not your eye be envious, neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you.* The same restored-library wisdom: give without the envious eye that blemishes the deed in Sirach 18:15.'),
+  -- thread: ecclesiasticus-18-vow-prayer
+  ('apocrypha', 'ecclesiasticus', 18, 22, 'canon', 'ecclesiastes', 5, 4, 'free', E'Ecclesiastes 5:4 — *When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed.* Qoheleth''s defer-not-thy-vow is the very law Sirach 18:22 echoes — pay in due time, defer not till death.'),
+  ('apocrypha', 'ecclesiasticus', 18, 22, 'canon', 'ecclesiastes', 5, 5, 'free', E'Ecclesiastes 5:5 — *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay.* The unpaid vow Sirach 18:22 forbids is the very fault Qoheleth names worse than never vowing.'),
+  ('apocrypha', 'ecclesiasticus', 18, 19, 'canon', 'james', 1, 19, 'free', E'James 1:19 — *Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath.* Ya''akov''s swift-to-hear is Sirach 18:19''s learn-before-you-speak in the same wisdom stream.'),
+  ('apocrypha', 'ecclesiasticus', 18, 19, 'canon', 'proverbs', 18, 13, 'free', E'Proverbs 18:13 — *He that answereth a matter before he heareth it, it is folly and shame unto him.* Mishle is the source of Sirach 18:19''s counsel to learn before you speak.'),
+  ('apocrypha', 'ecclesiasticus', 18, 23, 'canon', 'matthew', 26, 41, 'free', E'Matthew 26:41 — *Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak.* Preparing before prayer in Sirach 18:23 is Yahusha''s watch-and-pray, not the presumption that tempts the LORD.'),
+  -- thread: ecclesiasticus-18-remember-hunger-refrain-lusts
+  ('apocrypha', 'ecclesiasticus', 18, 25, 'canon', 'luke', 12, 19, 'free', E'Luke 12:19 — *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry.* The rich fool''s ease is the very forgetfulness Sirach 18:25 warns against — when full, remember the time of hunger.'),
+  ('apocrypha', 'ecclesiasticus', 18, 25, 'canon', 'luke', 12, 21, 'free', E'Luke 12:21 — *So is he that layeth up treasure for himself, and is not rich toward Elohim (God).* Yahusha''s verdict on the fool is Sirach 18:25''s counsel: in riches think upon poverty and need.'),
+  ('apocrypha', 'ecclesiasticus', 18, 30, 'canon', 'galatians', 5, 16, 'free', E'Galatians 5:16 — *This I say then, Walk in the Spirit, and ye shall not fulfil the lust of the flesh.* Sha''ul''s Spirit-walk is Sirach 18:30''s refrain-thyself-from-thy-appetites.'),
+  ('apocrypha', 'ecclesiasticus', 18, 33, 'canon', 'romans', 13, 14, 'free', E'Romans 13:14 — *But put ye on the Lord Yahusha HaMashiach (Lord Jesus Christ), and make not provision for the flesh, to fulfil the lusts thereof.* The borrowed banqueting that ensnares the soul in Sirach 18:33 is the flesh-provision Sha''ul forbids.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-18-a-thousand-years',
+       E'A drop to the sea — a thousand years to eternity',
+       E'Yeshua ben Sira measures man against the Everlasting: *He that lives for ever Has created all things in general* (Ecclesiasticus 18:1), and *The number of a man’s days at the most are an hundred years* (Ecclesiasticus 18:9), so that *As a drop of water to the sea, and a gravelstone in comparison of the sand; so are a thousand years to the days of eternity* (Ecclesiasticus 18:10). It ain''t new — the Psalmist sang it first: *For a thousand years in thy sight are but as yesterday when it is past, and as a watch in the night* (Psalm 90:4), and Kepha carries the same scale into the day of the LORD: *But, beloved, be not ignorant of this one thing, that one day is with Yahuah (Lord) as a thousand years, and a thousand years as one day* (2 Peter 3:8). Against eternity our days are grass: *As for man, his days are as grass: as a flower of the field, so he flourisheth* (Psalm 103:15) — *For the wind passeth over it, and it is gone; and the place thereof shall know it no more* (Psalm 103:16). The same Wisdom that frames creation here frames time.',
+       sv.verse_id, ev.verse_id, 'extras', 58725
+  FROM _session253_sir18_lookup sv, _session253_sir18_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=18 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-18-mercy-on-all-flesh',
+       E'The mercy of Yahuah is upon all flesh',
+       E'The crown of the chapter: *The mercy of man is toward his neighbour; but the mercy of Yahuah (God) is upon all flesh: he reproveth, and nurtureth, and teaches and brings again, as a shepherd his flock* (Ecclesiasticus 18:13) — *He has mercy on them that receive discipline, and that diligently seek after his judgments* (Ecclesiasticus 18:14). This is the measureless mercy of the Psalms: *Yahuah (LORD) is good to all: and his tender mercies are over all his works* (Psalm 145:9), and *Like as a father pitieth his children, so Yahuah (LORD) pitieth them that fear him* (Psalm 103:13). And the reproof Sira names is no curse but a Father''s love — *For whom Yahuah (Lord) loveth he chasteneth, and scourgeth every son whom he receiveth* (Hebrews 12:6), the very word Mishle gave: *For whom Yahuah (LORD) loveth he correcteth; even as a father the son in whom he delighteth* (Proverbs 3:12). The same shepherd who reproveth gathers His flock again.',
+       sv.verse_id, ev.verse_id, 'extras', 58728
+  FROM _session253_sir18_lookup sv, _session253_sir18_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=13
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=18 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-18-word-better-than-gift',
+       E'A word better than a gift — alms without blemish',
+       E'Sira''s wisdom on giving anticipates the Sermon: *My son, blemish not your good deeds, neither use uncomfortable words when you give any thing* (Ecclesiasticus 18:15), for *Lo, is not a word better than a gift? but both are with a gracious man* (Ecclesiasticus 18:17). Yahusha would say the alms that is trumpeted is blemished: *Therefore when thou doest thine alms, do not sound a trumpet before thee, as the hypocrites do in the synagogues and in the streets, that they may have glory of men* (Matthew 6:2) — *But when thou doest alms, let not thy left hand know what thy right hand doeth* (Matthew 6:3). And a word better than a gift is the tongue''s life-power Mishle weighs: *Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof* (Proverbs 18:21). The same almsgiving-wisdom runs through the restored library — Tobit teaches his son: *Give alms of your substance; and when you give alms, let not your eye be envious, neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you* (Tobit 4:7).',
+       sv.verse_id, ev.verse_id, 'extras', 58731
+  FROM _session253_sir18_lookup sv, _session253_sir18_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=15
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=18 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-18-vow-prayer',
+       E'Pay thy vow, prepare before prayer',
+       E'Sira binds the vow and the prayer: *Let nothing hinder you to pay your vow in due time, and defer not until death to be justified* (Ecclesiasticus 18:22), and *Before you prayest, prepare thyself; and be not as one that tempteth Yahuah (God)* (Ecclesiasticus 18:23). Qoheleth gave the law of the vow first: *When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed* (Ecclesiastes 5:4) — *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5). And to learn before you speak (18:19) and prepare before prayer is the Sermon''s caution and Ya''akov''s word: *Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath* (James 1:19); *He that answereth a matter before he heareth it, it is folly and shame unto him* (Proverbs 18:13). Watchfulness, not presumption, comes before the throne — *Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak* (Matthew 26:41).',
+       sv.verse_id, ev.verse_id, 'extras', 58734
+  FROM _session253_sir18_lookup sv, _session253_sir18_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=19
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=18 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-18-remember-hunger-refrain-lusts',
+       E'Remember the time of hunger; refrain thy lusts',
+       E'Sira closes against the fool''s false security and the flesh''s appetite: *When you have enough, remember the time of hunger: and when you are rich, think upon poverty and need* (Ecclesiasticus 18:25), and *Go not after your lusts, but refrain thyself from your appetites* (Ecclesiasticus 18:30). This is the rich fool whom Yahusha unmasked, who said to his soul, *take thine ease, eat, drink, and be merry* (Luke 12:19), of whom Elohim said, *Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20) — *So is he that layeth up treasure for himself, and is not rich toward Elohim (God)* (Luke 12:21). And to refrain the appetite is the Spirit-walk Sha''ul names: *This I say then, Walk in the Spirit, and ye shall not fulfil the lust of the flesh* (Galatians 5:16). The wise man fears in every thing (18:27) and remembers that all his goods are soon spent before the LORD.',
+       sv.verse_id, ev.verse_id, 'extras', 58737
+  FROM _session253_sir18_lookup sv, _session253_sir18_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=25
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=18 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: ecclesiasticus-18-a-thousand-years
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 90:4 — *For a thousand years in thy sight are but as yesterday when it is past, and as a watch in the night.* The Psalmist measures a thousand years against the Eternal exactly as Sirach 18:10 measures it a drop to the sea.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-a-thousand-years'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=90 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 3:8 — *But, beloved, be not ignorant of this one thing, that one day is with Yahuah (Lord) as a thousand years, and a thousand years as one day.* Kepha carries Sirach 18:10''s eternity-scale into the patience of the LORD before the day of judgment.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-a-thousand-years'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 103:15 — *As for man, his days are as grass: as a flower of the field, so he flourisheth.* The hundred-year span of Sirach 18:9 is the same flower-of-the-field brevity the Psalmist sings.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-a-thousand-years'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=103 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 103:16 — *For the wind passeth over it, and it is gone; and the place thereof shall know it no more.* Man''s few days in Sirach 18:9 pass like grass over which the wind blows and is gone.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-a-thousand-years'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=103 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-18-mercy-on-all-flesh
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 145:9 — *Yahuah (LORD) is good to all: and his tender mercies are over all his works.* This is the mercy-upon-all-flesh of Sirach 18:13 word for word — tender mercies over all His works.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-mercy-on-all-flesh'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=145 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 103:13 — *Like as a father pitieth his children, so Yahuah (LORD) pitieth them that fear him.* The shepherd-mercy of Sirach 18:13 is the Father''s pity the Psalmist sings.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-mercy-on-all-flesh'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=103 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 12:6 — *For whom Yahuah (Lord) loveth he chasteneth, and scourgeth every son whom he receiveth.* The discipline received in Sirach 18:14 is the Father''s loving chastening, not curse — He has mercy on them that receive it.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-mercy-on-all-flesh'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 3:12 — *For whom Yahuah (LORD) loveth he correcteth; even as a father the son in whom he delighteth.* Mishle is the wellspring of Sirach 18:14''s mercy on them that receive discipline.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-mercy-on-all-flesh'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Lamentations 3:22 — *It is of the LORD’S mercies that we are not consumed, because his compassions fail not.* The mercy upon all flesh in Sirach 18:13 is the unfailing compassion that keeps Yashar''el from being consumed.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-mercy-on-all-flesh'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=3 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-18-word-better-than-gift
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 6:2 — *Therefore when thou doest thine alms, do not sound a trumpet before thee, as the hypocrites do in the synagogues and in the streets, that they may have glory of men.* The trumpeted alms is the blemished good deed Sirach 18:15 warns against.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-word-better-than-gift'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 6:3 — *But when thou doest alms, let not thy left hand know what thy right hand doeth.* Yahusha''s hidden alms is Sirach 18:15''s unblemished giving without uncomfortable words.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-word-better-than-gift'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 18:21 — *Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof.* A gracious word better than a gift in Sirach 18:17 trades on the tongue''s life-and-death power Mishle weighs.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-word-better-than-gift'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Tobit 4:7 — *Give alms of your substance; and when you give alms, let not your eye be envious, neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you.* The same restored-library wisdom: give without the envious eye that blemishes the deed in Sirach 18:15.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-word-better-than-gift'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=4 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-18-vow-prayer
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ecclesiastes 5:4 — *When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed.* Qoheleth''s defer-not-thy-vow is the very law Sirach 18:22 echoes — pay in due time, defer not till death.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-vow-prayer'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ecclesiastes 5:5 — *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay.* The unpaid vow Sirach 18:22 forbids is the very fault Qoheleth names worse than never vowing.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-vow-prayer'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 1:19 — *Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath.* Ya''akov''s swift-to-hear is Sirach 18:19''s learn-before-you-speak in the same wisdom stream.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-vow-prayer'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 18:13 — *He that answereth a matter before he heareth it, it is folly and shame unto him.* Mishle is the source of Sirach 18:19''s counsel to learn before you speak.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-vow-prayer'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Matthew 26:41 — *Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak.* Preparing before prayer in Sirach 18:23 is Yahusha''s watch-and-pray, not the presumption that tempts the LORD.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-vow-prayer'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=41
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-18-remember-hunger-refrain-lusts
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 12:19 — *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry.* The rich fool''s ease is the very forgetfulness Sirach 18:25 warns against — when full, remember the time of hunger.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-remember-hunger-refrain-lusts'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 12:21 — *So is he that layeth up treasure for himself, and is not rich toward Elohim (God).* Yahusha''s verdict on the fool is Sirach 18:25''s counsel: in riches think upon poverty and need.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-remember-hunger-refrain-lusts'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Galatians 5:16 — *This I say then, Walk in the Spirit, and ye shall not fulfil the lust of the flesh.* Sha''ul''s Spirit-walk is Sirach 18:30''s refrain-thyself-from-thy-appetites.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-remember-hunger-refrain-lusts'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=5 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Romans 13:14 — *But put ye on the Lord Yahusha HaMashiach (Lord Jesus Christ), and make not provision for the flesh, to fulfil the lusts thereof.* The borrowed banqueting that ensnares the soul in Sirach 18:33 is the flesh-provision Sha''ul forbids.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir18_lookup sv, _session253_sir18_lookup tv
+ WHERE t.slug='ecclesiasticus-18-remember-hunger-refrain-lusts'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=18 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=13 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_19.sql (session253 ecclesiasticus 19) -----
+-- Source anchor: apocrypha/ecclesiasticus ch19. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir19 (view _session253_sir19_lookup). Sort band base 58750, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: sirach-19-rule-the-tongue
+  ('apocrypha', 'ecclesiasticus', 19, 6, 'canon', 'proverbs', 18, 21, 'free', E'Proverbs 18:21 — *Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof.* The same weight Sira puts on ruling the tongue, Solomon hangs life and death upon.'),
+  ('apocrypha', 'ecclesiasticus', 19, 6, 'canon', 'ecclesiastes', 10, 12, 'free', E'Ecclesiastes 10:12 — *The words of a wise man’s mouth are gracious; but the lips of a fool will swallow up himself.* Babbling devours its own speaker, exactly the ''less evil'' Sira promises the man who hates it.'),
+  ('apocrypha', 'ecclesiasticus', 19, 10, 'canon', 'matthew', 12, 36, 'free', E'Matthew 12:36 — *But I say unto you, That every idle word that men shall speak, they shall give account thereof in the day of judgment.* Why let a word die with you? Because each idle one is answered for — Yeshua raises Sira''s discretion to a day of reckoning.'),
+  ('apocrypha', 'ecclesiasticus', 19, 6, 'canon', 'james', 1, 26, 'free', E'James 1:26 — *If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man’s religion is vain.* James names the unbridled tongue as Sira does, making rule of the mouth the test of true religion.'),
+  -- thread: sirach-19-whisperer-separates-friends
+  ('apocrypha', 'ecclesiasticus', 19, 7, 'canon', 'proverbs', 16, 28, 'free', E'Proverbs 16:28 — *A froward man soweth strife: and a whisperer separateth chief friends.* The very harm Sira heads off by ''rehearse not'' — the rehearsed tale that cleaves friend from friend.'),
+  ('apocrypha', 'ecclesiasticus', 19, 8, 'canon', 'proverbs', 11, 13, 'free', E'Proverbs 11:13 — *A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter.* Sira''s ''reveal them not'' is Solomon''s faithful spirit that conceals.'),
+  ('apocrypha', 'ecclesiasticus', 19, 8, 'canon', 'leviticus', 19, 16, 'free', E'Leviticus 19:16 — *Thou shalt not go up and down as a talebearer among thy people: neither shalt thou stand against the blood of thy neighbour: I am Yahuah (LORD).* The Torah-command behind Sira''s counsel not to talk of other men''s lives.'),
+  ('apocrypha', 'ecclesiasticus', 19, 9, 'canon', 'ecclesiastes', 10, 20, 'free', E'Ecclesiastes 10:20 — *Curse not the king, no not in thy thought; and curse not the rich in thy bedchamber: for a bird of the air shall carry the voice, and that which hath wings shall tell the matter.* As Sira warns ''he heard and observed you,'' Qoheleth warns that even secret speech is carried back.'),
+  -- thread: sirach-19-admonish-friend-first
+  ('apocrypha', 'ecclesiasticus', 19, 17, 'canon', 'leviticus', 19, 17, 'free', E'Leviticus 19:17 — *Thou shalt not hate thy brother in thine heart: thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him.* The ''law of the Most High'' Sira sends you back to: rebuke the neighbour rather than harbour the grudge.'),
+  ('apocrypha', 'ecclesiasticus', 19, 13, 'canon', 'matthew', 18, 15, 'free', E'Matthew 18:15 — *Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother.* Yeshua''s order of reproof is Sira''s ''admonish a friend'' — go to him first, privately.'),
+  ('apocrypha', 'ecclesiasticus', 19, 15, 'canon', 'proverbs', 17, 9, 'free', E'Proverbs 17:9 — *He that covereth a transgression seeketh love; but he that repeateth a matter separateth very friends.* Sira''s ''believe not every tale'' and private admonition is Solomon''s covering, not repeating, of a matter.'),
+  -- thread: sirach-19-fear-of-yahuah-doctrine-of-life
+  ('apocrypha', 'ecclesiasticus', 19, 18, 'canon', 'proverbs', 1, 7, 'free', E'Proverbs 1:7 — *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction.* Sira''s ''first step to be accepted of him'' is Solomon''s ''beginning of knowledge'' — the fear of Yahuah as the door.'),
+  ('apocrypha', 'ecclesiasticus', 19, 20, 'canon', 'proverbs', 9, 10, 'free', E'Proverbs 9:10 — *The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding.* Word for word the maxim Sira states as ''the fear of Yahuah (God) is all wisdom.'''),
+  ('apocrypha', 'ecclesiasticus', 19, 19, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* Sira''s ''doctrine of life'' and ''tree of immortality'' are Moses'' choose-life: keeping the commandments IS choosing life.'),
+  ('apocrypha', 'ecclesiasticus', 19, 18, 'apocrypha', 'ecclesiasticus', 1, 14, 'extras', E'Ecclesiasticus 1:14 — *To fear Yahuah (God) is the beginning of wisdom: and it was created with the faithful in the womb.* Sira''s own prologue self-witnesses the maxim he repeats here in chapter 19.'),
+  ('apocrypha', 'ecclesiasticus', 19, 20, 'apocrypha', 'baruch-with-the-letter-of-jeremiah', 4, 1, 'extras', E'Baruch 4:1 — *This is the book of the commandments of Yahuah (God), and the law that endureth for ever: all they that keep it shall come to life; but such as leave it shall die.* Sira''s ''performance of the law'' as all wisdom is Baruch''s enduring law that brings life to all who keep it.'),
+  -- thread: sirach-19-exquisite-subtilty-known-by-fruit
+  ('apocrypha', 'ecclesiasticus', 19, 29, 'canon', 'matthew', 7, 16, 'free', E'Matthew 7:16 — *Ye shall know them by their fruits. Do men gather grapes of thorns, or figs of thistles?* Sira''s ''a man may be known by his look'' is Yeshua''s know-them-by-fruits: the inward deceit shows itself outwardly.'),
+  ('apocrypha', 'ecclesiasticus', 19, 25, 'canon', 'james', 3, 6, 'free', E'James 3:6 — *And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell.* James names the ''exquisite subtilty that is unjust'' for what it is — the unbridled tongue set on fire of hell, not wisdom.'),
+  ('apocrypha', 'ecclesiasticus', 19, 22, 'canon', 'matthew', 12, 34, 'free', E'Matthew 12:34 — *O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh.* Sira''s ''knowledge of wickedness is not wisdom'' meets Yeshua''s verdict: the evil heart cannot counterfeit good speech for long.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-19-rule-the-tongue',
+       E'He that can rule his tongue shall live without strife',
+       E'Ben Sira sets the bridled tongue at the head of wisdom: *He that can rule his tongue shall live without strife; and he that hates babbling shall have less evil* (Ecclesiasticus 19:6), and *If you have heard a word, let it die with you; and be bold, it will not burst you* (Ecclesiasticus 19:10). It ain''t new — the Tanakh already weighed every word: *Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof* (Proverbs 18:21), and *The words of a wise man’s mouth are gracious; but the lips of a fool will swallow up himself* (Ecclesiastes 10:12). The Messiah seals the doctrine: *But I say unto you, That every idle word that men shall speak, they shall give account thereof in the day of judgment* (Matthew 12:36). And James takes up Sira''s very theme of the unbridled mouth: *If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man’s religion is vain* (James 1:26). One witness, one tongue, one law.',
+       sv.verse_id, ev.verse_id, 'extras', 58750
+  FROM _session253_sir19_lookup sv, _session253_sir19_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=6
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=19 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-19-whisperer-separates-friends',
+       E'Rehearse not a tale: the whisperer separates chief friends',
+       E'Sira warns against carrying speech abroad: *Rehearse not to another that which is told to you, and you shall fare never the worse* (Ecclesiasticus 19:7), *Whether it be to friend or foe, talk not of other men’s lives; and if you can without offence, reveal them not* (Ecclesiasticus 19:8), *For he heard and observed you, and when time comes he will hate you* (Ecclesiasticus 19:9). It ain''t new — the proverb-fathers said the same: *A froward man soweth strife: and a whisperer separateth chief friends* (Proverbs 16:28); *A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter* (Proverbs 11:13). And Torah set the wall first: *Thou shalt not go up and down as a talebearer among thy people: neither shalt thou stand against the blood of thy neighbour: I am Yahuah (LORD)* (Leviticus 19:16). Even the king is not safe from a carried word: *for a bird of the air shall carry the voice, and that which hath wings shall tell the matter* (Ecclesiastes 10:20). Torah stands; the tongue is governed by it.',
+       sv.verse_id, ev.verse_id, 'extras', 58753
+  FROM _session253_sir19_lookup sv, _session253_sir19_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=7
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=19 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-19-admonish-friend-first',
+       E'Admonish your neighbour before you threaten him',
+       E'Sira lays out the discipline of correction before condemnation: *Admonish a friend, it may be he has not done it: and if he have done it, that he do it no more* (Ecclesiasticus 19:13), *Admonish a friend: for many times it is a slander, and believe not every tale* (Ecclesiasticus 19:15), and the hinge — *Admonish your neighbour before you threaten him; and not being angry, give place to the law of the Most High* (Ecclesiasticus 19:17). It ain''t new — Torah commanded exactly this order: *Thou shalt not hate thy brother in thine heart: thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him* (Leviticus 19:17). The Messiah gives the procedure word for word: *Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother* (Matthew 18:15). And the proverb names the fruit of the private word: *He that covereth a transgression seeketh love; but he that repeateth a matter separateth very friends* (Proverbs 17:9). Sira''s ''law of the Most High'' is the same Torah Yeshua administered.',
+       sv.verse_id, ev.verse_id, 'extras', 58756
+  FROM _session253_sir19_lookup sv, _session253_sir19_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=13
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=19 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-19-fear-of-yahuah-doctrine-of-life',
+       E'The commandments of Yahuah are the doctrine of life',
+       E'Sira anchors all wisdom in the fear of Yahuah and the keeping of His commandments: *The fear of Yahuah (God) is the first step to be accepted of him, and wisdom obtaineth his love* (Ecclesiasticus 19:18); *The knowledge of the commandments of Yahuah (God) is the doctrine of life: and they that do things that please him shall receive the fruit of the tree of immortality* (Ecclesiasticus 19:19); *The fear of Yahuah (God) is all wisdom; and in all wisdom is the performance of the law, and the knowledge of his omnipotency* (Ecclesiasticus 19:20). It ain''t new — this is the bone of the whole wisdom tradition: *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction* (Proverbs 1:7), *The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding* (Proverbs 9:10). And the commandments as the ''doctrine of life'' is Moses'' own choice set before Israel: *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). Sira self-witnesses from his own opening — *To fear Yahuah (God) is the beginning of wisdom: and it was created with the faithful in the womb* (Ecclesiasticus 1:14) — and Baruch crowns it: the commandments ARE the law that endureth. The performance of the law IS wisdom; Torah stands.',
+       sv.verse_id, ev.verse_id, 'extras', 58759
+  FROM _session253_sir19_lookup sv, _session253_sir19_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=18
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=19 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-19-exquisite-subtilty-known-by-fruit',
+       E'An exquisite subtilty that is unjust — known by his look',
+       E'Sira unmasks counterfeit wisdom: *The knowledge of wickedness is not wisdom, neither at any time the counsel of sinners prudence* (Ecclesiasticus 19:22); *There is an exquisite subtilty, and the same is unjust; and there is one that turns aside to make judgment appear; and there is a wise man that justifies in judgment* (Ecclesiasticus 19:25); and the discernment of it — *A man may be known by his look, and one that has understanding by his countenance, when you meetest him* (Ecclesiasticus 19:29). It ain''t new — Yeshua taught the same test for false prophets: *Ye shall know them by their fruits. Do men gather grapes of thorns, or figs of thistles?* (Matthew 7:16), *Wherefore by their fruits ye shall know them* (Matthew 7:20). And James draws the very line Sira draws between true and counterfeit wisdom, naming the unjust subtilty as earthly: *And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell* (James 3:6). And the heart betrays itself through the mouth: *O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh* (Matthew 12:34). Crafty subtilty is not wisdom; it is known by its fruit.',
+       sv.verse_id, ev.verse_id, 'extras', 58762
+  FROM _session253_sir19_lookup sv, _session253_sir19_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=22
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=19 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: sirach-19-rule-the-tongue
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 18:21 — *Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof.* The same weight Sira puts on ruling the tongue, Solomon hangs life and death upon.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-rule-the-tongue'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ecclesiastes 10:12 — *The words of a wise man’s mouth are gracious; but the lips of a fool will swallow up himself.* Babbling devours its own speaker, exactly the ''less evil'' Sira promises the man who hates it.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-rule-the-tongue'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 12:36 — *But I say unto you, That every idle word that men shall speak, they shall give account thereof in the day of judgment.* Why let a word die with you? Because each idle one is answered for — Yeshua raises Sira''s discretion to a day of reckoning.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-rule-the-tongue'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'James 1:26 — *If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man’s religion is vain.* James names the unbridled tongue as Sira does, making rule of the mouth the test of true religion.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-rule-the-tongue'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-19-whisperer-separates-friends
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 16:28 — *A froward man soweth strife: and a whisperer separateth chief friends.* The very harm Sira heads off by ''rehearse not'' — the rehearsed tale that cleaves friend from friend.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-whisperer-separates-friends'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 11:13 — *A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter.* Sira''s ''reveal them not'' is Solomon''s faithful spirit that conceals.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-whisperer-separates-friends'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=11 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 19:16 — *Thou shalt not go up and down as a talebearer among thy people: neither shalt thou stand against the blood of thy neighbour: I am Yahuah (LORD).* The Torah-command behind Sira''s counsel not to talk of other men''s lives.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-whisperer-separates-friends'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ecclesiastes 10:20 — *Curse not the king, no not in thy thought; and curse not the rich in thy bedchamber: for a bird of the air shall carry the voice, and that which hath wings shall tell the matter.* As Sira warns ''he heard and observed you,'' Qoheleth warns that even secret speech is carried back.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-whisperer-separates-friends'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=10 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-19-admonish-friend-first
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 19:17 — *Thou shalt not hate thy brother in thine heart: thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him.* The ''law of the Most High'' Sira sends you back to: rebuke the neighbour rather than harbour the grudge.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-admonish-friend-first'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 18:15 — *Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother.* Yeshua''s order of reproof is Sira''s ''admonish a friend'' — go to him first, privately.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-admonish-friend-first'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=18 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 17:9 — *He that covereth a transgression seeketh love; but he that repeateth a matter separateth very friends.* Sira''s ''believe not every tale'' and private admonition is Solomon''s covering, not repeating, of a matter.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-admonish-friend-first'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-19-fear-of-yahuah-doctrine-of-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 1:7 — *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction.* Sira''s ''first step to be accepted of him'' is Solomon''s ''beginning of knowledge'' — the fear of Yahuah as the door.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-fear-of-yahuah-doctrine-of-life'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 9:10 — *The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding.* Word for word the maxim Sira states as ''the fear of Yahuah (God) is all wisdom.'''
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-fear-of-yahuah-doctrine-of-life'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=9 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* Sira''s ''doctrine of life'' and ''tree of immortality'' are Moses'' choose-life: keeping the commandments IS choosing life.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-fear-of-yahuah-doctrine-of-life'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ecclesiasticus 1:14 — *To fear Yahuah (God) is the beginning of wisdom: and it was created with the faithful in the womb.* Sira''s own prologue self-witnesses the maxim he repeats here in chapter 19.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-fear-of-yahuah-doctrine-of-life'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=18
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Baruch 4:1 — *This is the book of the commandments of Yahuah (God), and the law that endureth for ever: all they that keep it shall come to life; but such as leave it shall die.* Sira''s ''performance of the law'' as all wisdom is Baruch''s enduring law that brings life to all who keep it.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-fear-of-yahuah-doctrine-of-life'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=20
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=4 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-19-exquisite-subtilty-known-by-fruit
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 7:16 — *Ye shall know them by their fruits. Do men gather grapes of thorns, or figs of thistles?* Sira''s ''a man may be known by his look'' is Yeshua''s know-them-by-fruits: the inward deceit shows itself outwardly.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-exquisite-subtilty-known-by-fruit'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'James 3:6 — *And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell.* James names the ''exquisite subtilty that is unjust'' for what it is — the unbridled tongue set on fire of hell, not wisdom.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-exquisite-subtilty-known-by-fruit'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 12:34 — *O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh.* Sira''s ''knowledge of wickedness is not wisdom'' meets Yeshua''s verdict: the evil heart cannot counterfeit good speech for long.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir19_lookup sv, _session253_sir19_lookup tv
+ WHERE t.slug='sirach-19-exquisite-subtilty-known-by-fruit'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=19 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_20.sql (session253 ecclesiasticus 20) -----
+-- Source anchor: apocrypha/ecclesiasticus ch20. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir20 (view _session253_sir20_lookup). Sort band base 58775, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: ecclesiasticus-20-silence-found-wise
+  ('apocrypha', 'ecclesiasticus', 20, 5, 'canon', 'proverbs', 17, 28, 'free', E'Proverbs 17:28 — *Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding.* The same paradox Ben Sira sets down in Sirach 20:5 — silence itself confers the appearance, and the substance, of wisdom.'),
+  ('apocrypha', 'ecclesiasticus', 20, 6, 'canon', 'ecclesiastes', 3, 7, 'free', E'Ecclesiastes 3:7 — *A time to rend, and a time to sew; a time to keep silence, and a time to speak;* the Preacher''s appointed season for silence is exactly the man who in Sirach 20:6 keepeth silence, knowing his time.'),
+  ('apocrypha', 'ecclesiasticus', 20, 5, 'canon', 'james', 1, 19, 'free', E'James 1:19 — *Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:* James inherits Ben Sira''s wisdom of the bridled tongue against the much babbling that becometh hateful in Sirach 20:5.'),
+  -- thread: ecclesiasticus-20-word-in-season
+  ('apocrypha', 'ecclesiasticus', 20, 7, 'canon', 'proverbs', 15, 23, 'free', E'Proverbs 15:23 — *A man hath joy by the answer of his mouth: and a word spoken in due season, how good is it!* Solomon''s praise of the timely word is Ben Sira''s wise man of Sirach 20:7 who holds his tongue till he see opportunity.'),
+  ('apocrypha', 'ecclesiasticus', 20, 20, 'canon', 'proverbs', 25, 11, 'free', E'Proverbs 25:11 — *A word fitly spoken is like apples of gold in pictures of silver.* The fitness of speech that Solomon prizes is the due season Ben Sira''s fool fails in Sirach 20:20, rejecting even a wise sentence by speaking it untimely.'),
+  ('apocrypha', 'ecclesiasticus', 20, 8, 'canon', 'proverbs', 10, 19, 'free', E'Proverbs 10:19 — *In the multitude of words there wanteth not sin: but he that refraineth his lips is wise.* The man who useth many words and is abhorred in Sirach 20:8 is the multitude-of-words wherein sin is not wanting.'),
+  -- thread: ecclesiasticus-20-lie-foul-blot
+  ('apocrypha', 'ecclesiasticus', 20, 24, 'canon', 'leviticus', 19, 11, 'free', E'Leviticus 19:11 — *Ye shall not steal, neither deal falsely, neither lie one to another.* The foul blot of the lie in Sirach 20:24 is forbidden in the same Holiness Code that frames Ben Sira''s whole ethic of the tongue.'),
+  ('apocrypha', 'ecclesiasticus', 20, 26, 'canon', 'proverbs', 12, 22, 'free', E'Proverbs 12:22 — *Lying lips are abomination to Yahuah (LORD): but they that deal truly are his delight.* The liar''s dishonourable disposition and ever-present shame in Sirach 20:26 is the abomination Solomon sets against Yahuah''s delight in the truthful.'),
+  ('apocrypha', 'ecclesiasticus', 20, 25, 'canon', 'revelation', 21, 27, 'free', E'Revelation 21:27 — *And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb’s book of life.* The thief and the liar who in Sirach 20:25 have destruction to heritage are barred from the New Jerusalem, where no maker of a lie enters.'),
+  -- thread: ecclesiasticus-20-gift-of-a-fool
+  ('apocrypha', 'ecclesiasticus', 20, 14, 'canon', 'proverbs', 23, 6, 'free', E'Proverbs 23:6 — *Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats:* the envious giver of Sirach 20:14, who looketh to receive many things for one, is Solomon''s man of the evil eye whose gift profits nothing.'),
+  ('apocrypha', 'ecclesiasticus', 20, 15, 'canon', '2-corinthians', 9, 7, 'free', E'2 Corinthians 9:7 — *Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver.* Against the grudging giver of Sirach 20:15 who gives little and upbraideth much, Paul sets the cheerful giver Yahuah loves.'),
+  -- thread: ecclesiasticus-20-wisdom-hid-treasure-hoarded
+  ('apocrypha', 'ecclesiasticus', 20, 30, 'canon', 'matthew', 5, 15, 'free', E'Matthew 5:15 — *Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house.* The hidden wisdom that yields no profit in Sirach 20:30 is the Messiah''s candle that must not be put under a bushel.'),
+  ('apocrypha', 'ecclesiasticus', 20, 30, 'canon', 'matthew', 25, 18, 'free', E'Matthew 25:18 — *But he that had received one went and digged in the earth, and hid his lord’s money.* The treasure hoarded up to no profit in Sirach 20:30 is the buried talent of the slothful servant in the Messiah''s parable.'),
+  ('apocrypha', 'ecclesiasticus', 20, 32, 'canon', 'proverbs', 3, 5, 'free', E'Proverbs 3:5 — *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding.* The necessary patience in seeking Yahuah that Ben Sira commends in Sirach 20:32, over the man without a guide, is Solomon''s trust in Yahuah rather than one''s own understanding.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-20-silence-found-wise',
+       E'He that holdeth his tongue, and is found wise',
+       E'Ben Sira opens the chapter on the discipline of the closed mouth: *There is one that keepeth silence, and is found wise: and another by much babbling becometh hateful.* (Ecclesiasticus 20:5), and again, *Some man holdeth his tongue, because he has not to answer: and some keepeth silence, knowing his time.* (Ecclesiasticus 20:6). This is the very proverb of Solomon: *Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding.* (Proverbs 17:28). The Preacher knew the season of it — *A time to keep silence, and a time to speak* (Ecclesiastes 3:7) — and James gathered the whole wisdom stream into one command: *let every man be swift to hear, slow to speak, slow to wrath* (James 1:19). It ain''t new: the restraint of the tongue is the old covenant wisdom unbroken.',
+       sv.verse_id, ev.verse_id, 'extras', 58775
+  FROM _session253_sir20_lookup sv, _session253_sir20_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=20 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-20-word-in-season',
+       E'A wise man will hold his tongue till he see opportunity',
+       E'The wise man waits for the fit moment to speak: *A wise man will hold his tongue till he see opportunity: but a babbler and a fool will regard no time.* (Ecclesiasticus 20:7), for *A wise sentence shall be rejected when it comes out of a fool''s mouth; for he will not speak it in due season.* (Ecclesiasticus 20:20). Solomon weighed the same scale: *A man hath joy by the answer of his mouth: and a word spoken in due season, how good is it!* (Proverbs 15:23), and *A word fitly spoken is like apples of gold in pictures of silver.* (Proverbs 25:11). The worth of speech is not in its quantity but in its timing — the gold set in its proper silver. It ain''t new: seasonable speech is the wisdom of the Tanakh.',
+       sv.verse_id, ev.verse_id, 'extras', 58778
+  FROM _session253_sir20_lookup sv, _session253_sir20_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=7
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=20 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-20-lie-foul-blot',
+       E'A lie is a foul blot in a man',
+       E'Ben Sira marks the liar''s shame: *A lie is a foul blot in a man, yet it is continually in the mouth of the untaught.* (Ecclesiasticus 20:24), and *The disposition of a liar is dishonourable, and his shame is ever with him.* (Ecclesiasticus 20:26). The Torah forbids it at the root — *Ye shall not steal, neither deal falsely, neither lie one to another.* (Leviticus 19:11) — and Solomon names it an abomination: *Lying lips are abomination to Yahuah (LORD): but they that deal truly are his delight.* (Proverbs 12:22). The deceitful tongue is no light thing but a blot upon the man and a thing abhorred of Yahuah. It ain''t new: truth-telling is the old commandment kept.',
+       sv.verse_id, ev.verse_id, 'extras', 58781
+  FROM _session253_sir20_lookup sv, _session253_sir20_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=24
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=20 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-20-gift-of-a-fool',
+       E'The gift of a fool shall do you no good',
+       E'Ben Sira weighs giving by the heart behind it: *The gift of a fool shall do you no good when you have it; neither yet of the envious for his necessity: for he looketh to receive many things for one.* (Ecclesiasticus 20:14), and the grudging giver *gives little, and upbraideth much* (Ecclesiasticus 20:15). Solomon warns of the same begrudged bread: *Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats* (Proverbs 23:6). Paul gathers the wisdom to its head — *God loveth a cheerful giver* (2 Corinthians 9:7) — for the worth of a gift is the eye that gives it, not the thing given. It ain''t new: the cheerful, single eye in giving is the old wisdom.',
+       sv.verse_id, ev.verse_id, 'extras', 58784
+  FROM _session253_sir20_lookup sv, _session253_sir20_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=14
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=20 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-20-wisdom-hid-treasure-hoarded',
+       E'Wisdom that is hid — what profit is in it?',
+       E'Ben Sira closes the chapter on hidden wisdom and necessary patience: *Wisdom that is hid, and treasure that is hoarded up, what profit is in them both?* (Ecclesiasticus 20:30), and *Necessary patience in seeking Yahuah (God) is better than he that leadeth his life without a guide.* (Ecclesiasticus 20:32). The Messiah taught the same in His parables of the light not to be hid and the talent not to be buried: *Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house.* (Matthew 5:15), and the wicked servant who *went and digged in the earth, and hid his lord’s money* (Matthew 25:18) is condemned for the hoarding Ben Sira names unprofitable. Wisdom is given to be spent in the seeking of Yahuah. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 58787
+  FROM _session253_sir20_lookup sv, _session253_sir20_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=30
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=20 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: ecclesiasticus-20-silence-found-wise
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 17:28 — *Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding.* The same paradox Ben Sira sets down in Sirach 20:5 — silence itself confers the appearance, and the substance, of wisdom.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-silence-found-wise'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ecclesiastes 3:7 — *A time to rend, and a time to sew; a time to keep silence, and a time to speak;* the Preacher''s appointed season for silence is exactly the man who in Sirach 20:6 keepeth silence, knowing his time.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-silence-found-wise'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 1:19 — *Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:* James inherits Ben Sira''s wisdom of the bridled tongue against the much babbling that becometh hateful in Sirach 20:5.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-silence-found-wise'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-20-word-in-season
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 15:23 — *A man hath joy by the answer of his mouth: and a word spoken in due season, how good is it!* Solomon''s praise of the timely word is Ben Sira''s wise man of Sirach 20:7 who holds his tongue till he see opportunity.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-word-in-season'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 25:11 — *A word fitly spoken is like apples of gold in pictures of silver.* The fitness of speech that Solomon prizes is the due season Ben Sira''s fool fails in Sirach 20:20, rejecting even a wise sentence by speaking it untimely.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-word-in-season'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=25 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 10:19 — *In the multitude of words there wanteth not sin: but he that refraineth his lips is wise.* The man who useth many words and is abhorred in Sirach 20:8 is the multitude-of-words wherein sin is not wanting.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-word-in-season'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=10 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-20-lie-foul-blot
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 19:11 — *Ye shall not steal, neither deal falsely, neither lie one to another.* The foul blot of the lie in Sirach 20:24 is forbidden in the same Holiness Code that frames Ben Sira''s whole ethic of the tongue.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-lie-foul-blot'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 12:22 — *Lying lips are abomination to Yahuah (LORD): but they that deal truly are his delight.* The liar''s dishonourable disposition and ever-present shame in Sirach 20:26 is the abomination Solomon sets against Yahuah''s delight in the truthful.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-lie-foul-blot'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=12 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 21:27 — *And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb’s book of life.* The thief and the liar who in Sirach 20:25 have destruction to heritage are barred from the New Jerusalem, where no maker of a lie enters.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-lie-foul-blot'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-20-gift-of-a-fool
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 23:6 — *Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats:* the envious giver of Sirach 20:14, who looketh to receive many things for one, is Solomon''s man of the evil eye whose gift profits nothing.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-gift-of-a-fool'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=23 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Corinthians 9:7 — *Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver.* Against the grudging giver of Sirach 20:15 who gives little and upbraideth much, Paul sets the cheerful giver Yahuah loves.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-gift-of-a-fool'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=9 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-20-wisdom-hid-treasure-hoarded
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 5:15 — *Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house.* The hidden wisdom that yields no profit in Sirach 20:30 is the Messiah''s candle that must not be put under a bushel.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-wisdom-hid-treasure-hoarded'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 25:18 — *But he that had received one went and digged in the earth, and hid his lord’s money.* The treasure hoarded up to no profit in Sirach 20:30 is the buried talent of the slothful servant in the Messiah''s parable.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-wisdom-hid-treasure-hoarded'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 3:5 — *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding.* The necessary patience in seeking Yahuah that Ben Sira commends in Sirach 20:32, over the man without a guide, is Solomon''s trust in Yahuah rather than one''s own understanding.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir20_lookup sv, _session253_sir20_lookup tv
+ WHERE t.slug='ecclesiasticus-20-wisdom-hid-treasure-hoarded'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=20 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_21.sql (session253 ecclesiasticus 21) -----
+-- Source anchor: apocrypha/ecclesiasticus ch21. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir21 (view _session253_sir21_lookup). Sort band base 58800, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: ecclesiasticus-21-flee-sin-as-a-serpent
+  ('apocrypha', 'ecclesiasticus', 21, 2, 'canon', 'proverbs', 23, 32, 'free', E'Proverbs 23:32 — *At the last it biteth like a serpent, and stingeth like an adder.* The same serpent-bite figure Ben Sira uses for sin (Ecclesiasticus 21:2).'),
+  ('apocrypha', 'ecclesiasticus', 21, 2, 'canon', 'genesis', 4, 7, 'free', E'Genesis 4:7 — *If thou doest well, shalt thou not be accepted? and if thou doest not well, sin lieth at the door. And unto thee shall be his desire, and thou shalt rule over him.* The crouching sin Ben Sira bids us flee is the very beast the LORD set Cain to master (Ecclesiasticus 21:2).'),
+  ('apocrypha', 'ecclesiasticus', 21, 2, 'canon', 'james', 4, 7, 'free', E'James 4:7 — *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you.* The way to flee the serpent Ben Sira describes (Ecclesiasticus 21:2).'),
+  ('apocrypha', 'ecclesiasticus', 21, 1, 'canon', 'proverbs', 9, 6, 'free', E'Proverbs 9:6 — *Forsake the foolish, and live; and go in the way of understanding.* The turn-and-sin-no-more wisdom of Ben Sira''s opening call (Ecclesiasticus 21:1).'),
+  -- thread: ecclesiasticus-21-fear-of-the-lord-is-wisdom
+  ('apocrypha', 'ecclesiasticus', 21, 11, 'canon', 'proverbs', 9, 10, 'free', E'Proverbs 9:10 — *The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding.* The fear-of-Yahuah-is-wisdom refrain Ben Sira makes the crown of law-keeping (Ecclesiasticus 21:11).'),
+  ('apocrypha', 'ecclesiasticus', 21, 11, 'canon', 'psalms', 111, 10, 'free', E'Psalm 111:10 — *The fear of Yahuah (LORD) is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever.* Wisdom bound to doing the commandments, exactly as Ben Sira binds it to keeping the law (Ecclesiasticus 21:11).'),
+  ('apocrypha', 'ecclesiasticus', 21, 11, 'canon', 'proverbs', 1, 7, 'free', E'Proverbs 1:7 — *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction.* The fear-of-Yahuah foundation Ben Sira sets under understanding (Ecclesiasticus 21:11).'),
+  ('apocrypha', 'ecclesiasticus', 21, 11, 'apocrypha', 'ecclesiasticus', 24, 23, 'extras', E'Ecclesiasticus 24:23 — *All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.* Ben Sira''s own crown chapter names Wisdom as the Torah of Moses — the very law whose keeping is wisdom in 21:11.'),
+  -- thread: ecclesiasticus-21-the-two-ways-pit-of-hell
+  ('apocrypha', 'ecclesiasticus', 21, 10, 'canon', 'deuteronomy', 30, 15, 'free', E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil.* The two ways Moses set before Yashar''el, which Ben Sira draws as the smooth road to the pit versus the fountain of life (Ecclesiasticus 21:10,13).'),
+  ('apocrypha', 'ecclesiasticus', 21, 10, 'canon', 'psalms', 1, 1, 'free', E'Psalm 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* The way of sinners Ben Sira says ends in the pit of hell (Ecclesiasticus 21:10).'),
+  ('apocrypha', 'ecclesiasticus', 21, 10, 'canon', 'proverbs', 15, 24, 'free', E'Proverbs 15:24 — *The way of life is above to the wise, that he may depart from hell beneath.* The wise man''s upward road against the sinner''s pit, the same contrast Ben Sira draws (Ecclesiasticus 21:10).'),
+  -- thread: ecclesiasticus-21-heart-of-fools-in-their-mouth
+  ('apocrypha', 'ecclesiasticus', 21, 26, 'canon', 'matthew', 12, 34, 'free', E'Matthew 12:34 — *O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh.* Yahusha''s word that the mouth pours out the heart, the very turn of Ben Sira''s proverb (Ecclesiasticus 21:26).'),
+  ('apocrypha', 'ecclesiasticus', 21, 26, 'canon', 'proverbs', 29, 11, 'free', E'Proverbs 29:11 — *A fool uttereth all his mind: but a wise man keepeth it in till afterwards.* The fool whose heart is all in his mouth, where the wise keeps it in his heart (Ecclesiasticus 21:26).'),
+  ('apocrypha', 'ecclesiasticus', 21, 26, 'canon', 'proverbs', 16, 23, 'free', E'Proverbs 16:23 — *The heart of the wise teacheth his mouth, and addeth learning to his lips.* The wise man whose mouth is governed from within his heart, as Ben Sira frames it (Ecclesiasticus 21:26).'),
+  ('apocrypha', 'ecclesiasticus', 21, 16, 'canon', 'proverbs', 10, 14, 'free', E'Proverbs 10:14 — *Wise men lay up knowledge: but the mouth of the foolish is near destruction.* The laid-up wisdom against the fool''s burdensome talk Ben Sira contrasts (Ecclesiasticus 21:16).'),
+  ('apocrypha', 'ecclesiasticus', 21, 17, 'canon', 'proverbs', 17, 28, 'free', E'Proverbs 17:28 — *Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding.* The weighed restraint that makes men seek the wise man''s words in the congregation (Ecclesiasticus 21:17).'),
+  -- thread: ecclesiasticus-21-the-whisperer-and-the-tongue
+  ('apocrypha', 'ecclesiasticus', 21, 28, 'canon', 'leviticus', 19, 16, 'free', E'Leviticus 19:16 — *Thou shalt not go up and down as a talebearer among thy people: neither shalt thou stand against the blood of thy neighbour: I am Yahuah (LORD).* The Torah command against the very whisperer Ben Sira condemns (Ecclesiasticus 21:28).'),
+  ('apocrypha', 'ecclesiasticus', 21, 28, 'canon', 'proverbs', 26, 22, 'free', E'Proverbs 26:22 — *The words of a talebearer are as wounds, and they go down into the innermost parts of the belly.* The whisperer whose words wound, as Ben Sira says he defiles his own soul (Ecclesiasticus 21:28).'),
+  ('apocrypha', 'ecclesiasticus', 21, 28, 'canon', 'james', 3, 6, 'free', E'James 3:6 — *And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell.* The defiling fire of the tongue, the same self-defilement Ben Sira warns of (Ecclesiasticus 21:28).'),
+  ('apocrypha', 'ecclesiasticus', 21, 25, 'canon', 'proverbs', 11, 13, 'free', E'Proverbs 11:13 — *A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter.* The babbling lips against the weighed words of the understanding (Ecclesiasticus 21:25).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-21-flee-sin-as-a-serpent',
+       E'Flee from sin as from a serpent',
+       E'Ben Sira opens with the call to turn: *My son, have you sinned? do so no more, but ask pardon for your former sins* (Ecclesiasticus 21:1), and then paints sin as a venomous beast — *Flee from sin as from the face of a serpent: for if you come too near it, it will bite you: the teeth thereof are as the teeth of a lion, slaying the souls of men* (Ecclesiasticus 21:2). It ain''t new: the same serpent-bite warns off the cup of folly in Proverbs — *At the last it biteth like a serpent, and stingeth like an adder* (Proverbs 23:32) — and the figure goes back to the door of the heart where the LORD told Cain *sin lieth at the door. And unto thee shall be his desire, and thou shalt rule over him* (Genesis 4:7). The wound is mortal because *All iniquity is as a two edged sword, the wounds of which cannot be healed* (Ecclesiasticus 21:3); but the way of escape is the way the brother James commands — *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you* (James 4:7). Flee the serpent; the LORD set the rule over it from the beginning.',
+       sv.verse_id, ev.verse_id, 'extras', 58800
+  FROM _session253_sir21_lookup sv, _session253_sir21_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=21 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-21-fear-of-the-lord-is-wisdom',
+       E'Keep the law, fear Yahuah, get wisdom',
+       E'The poor man''s prayer is heard above the proud — *A prayer out of a poor man’s mouth reacheth to the ears of Yahuah (God), and his judgment comes speedily* (Ecclesiasticus 21:5) — and the one who *fears Yahuah (God) will repent from his heart* (Ecclesiasticus 21:6). Then Ben Sira gives the whole sum of the matter: *He that keepeth the law of Yahuah (God) getteth the understanding thereof: and the perfection of the fear of Yahuah (God) is wisdom* (Ecclesiasticus 21:11). This is the refrain of all the wisdom books — *The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding* (Proverbs 9:10); *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction* (Proverbs 1:7); *The fear of Yahuah (LORD) is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever* (Psalm 111:10). Wisdom is not a feeling but Torah-keeping: it ain''t new, and the law stands.',
+       sv.verse_id, ev.verse_id, 'extras', 58803
+  FROM _session253_sir21_lookup sv, _session253_sir21_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=5
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=21 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-21-the-two-ways-pit-of-hell',
+       E'The two ways: the pit of hell or the way of life',
+       E'Ben Sira lays the road of the wicked and the road of the wise side by side. *The way of sinners is made plain with stones, but at the end thereof is the pit of hell* (Ecclesiasticus 21:10), while the wise man''s *counsel is like a pure fountain of life* (Ecclesiasticus 21:13). It ain''t new — this is the two-ways teaching of the Torah and the Psalter: *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15); *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful* (Psalm 1:1); *The way of life is above to the wise, that he may depart from hell beneath* (Proverbs 15:24). The smooth-paved road and the fountain of life are the two ends Moses set before Yashar''el.',
+       sv.verse_id, ev.verse_id, 'extras', 58806
+  FROM _session253_sir21_lookup sv, _session253_sir21_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=21 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-21-heart-of-fools-in-their-mouth',
+       E'The heart of fools is in their mouth',
+       E'Ben Sira''s sharpest proverb turns the inward man inside out: *The heart of fools is in their mouth: but the mouth of the wise is in their heart* (Ecclesiasticus 21:26). The fool blurts all he is; the wise keeps counsel and *grace shall be found in the lips of the wise* (Ecclesiasticus 21:16). It ain''t new: *A fool uttereth all his mind: but a wise man keepeth it in till afterwards* (Proverbs 29:11); *Wise men lay up knowledge: but the mouth of the foolish is near destruction* (Proverbs 10:14); *The heart of the wise teacheth his mouth, and addeth learning to his lips* (Proverbs 16:23). And the Messiah Yahusha sealed the whole figure — the mouth is the heart''s overflow: *O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh* (Matthew 12:34). The tongue tells what the heart is.',
+       sv.verse_id, ev.verse_id, 'extras', 58809
+  FROM _session253_sir21_lookup sv, _session253_sir21_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=16
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=21 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-21-the-whisperer-and-the-tongue',
+       E'The whisperer defiles his own soul',
+       E'The chapter ends on the sin of the tongue: *The lips of talkers will be telling such things as pertain not to them: but the words of such as have understanding are weighed in the balance* (Ecclesiasticus 21:25), and last of all the slanderer — *A whisperer defiles his own soul, and is hated wherever he dwells* (Ecclesiasticus 21:28). It ain''t new: the Torah forbids it outright — *Thou shalt not go up and down as a talebearer among thy people: neither shalt thou stand against the blood of thy neighbour: I am Yahuah (LORD)* (Leviticus 19:16); the wisdom of the fathers warns *A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter* (Proverbs 11:13), and *The words of a talebearer are as wounds, and they go down into the innermost parts of the belly* (Proverbs 26:22). The brother James names the fire of it: *And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell* (James 3:6). The whisperer''s poison defiles the whisperer first.',
+       sv.verse_id, ev.verse_id, 'extras', 58812
+  FROM _session253_sir21_lookup sv, _session253_sir21_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=25
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=21 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: ecclesiasticus-21-flee-sin-as-a-serpent
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 23:32 — *At the last it biteth like a serpent, and stingeth like an adder.* The same serpent-bite figure Ben Sira uses for sin (Ecclesiasticus 21:2).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-flee-sin-as-a-serpent'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=23 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 4:7 — *If thou doest well, shalt thou not be accepted? and if thou doest not well, sin lieth at the door. And unto thee shall be his desire, and thou shalt rule over him.* The crouching sin Ben Sira bids us flee is the very beast the LORD set Cain to master (Ecclesiasticus 21:2).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-flee-sin-as-a-serpent'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 4:7 — *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you.* The way to flee the serpent Ben Sira describes (Ecclesiasticus 21:2).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-flee-sin-as-a-serpent'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 9:6 — *Forsake the foolish, and live; and go in the way of understanding.* The turn-and-sin-no-more wisdom of Ben Sira''s opening call (Ecclesiasticus 21:1).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-flee-sin-as-a-serpent'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=9 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-21-fear-of-the-lord-is-wisdom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 9:10 — *The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding.* The fear-of-Yahuah-is-wisdom refrain Ben Sira makes the crown of law-keeping (Ecclesiasticus 21:11).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-fear-of-the-lord-is-wisdom'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=9 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 111:10 — *The fear of Yahuah (LORD) is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever.* Wisdom bound to doing the commandments, exactly as Ben Sira binds it to keeping the law (Ecclesiasticus 21:11).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-fear-of-the-lord-is-wisdom'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=111 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 1:7 — *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction.* The fear-of-Yahuah foundation Ben Sira sets under understanding (Ecclesiasticus 21:11).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-fear-of-the-lord-is-wisdom'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ecclesiasticus 24:23 — *All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob.* Ben Sira''s own crown chapter names Wisdom as the Torah of Moses — the very law whose keeping is wisdom in 21:11.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-fear-of-the-lord-is-wisdom'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=11
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=24 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-21-the-two-ways-pit-of-hell
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil.* The two ways Moses set before Yashar''el, which Ben Sira draws as the smooth road to the pit versus the fountain of life (Ecclesiasticus 21:10,13).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-the-two-ways-pit-of-hell'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* The way of sinners Ben Sira says ends in the pit of hell (Ecclesiasticus 21:10).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-the-two-ways-pit-of-hell'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 15:24 — *The way of life is above to the wise, that he may depart from hell beneath.* The wise man''s upward road against the sinner''s pit, the same contrast Ben Sira draws (Ecclesiasticus 21:10).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-the-two-ways-pit-of-hell'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-21-heart-of-fools-in-their-mouth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 12:34 — *O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh.* Yahusha''s word that the mouth pours out the heart, the very turn of Ben Sira''s proverb (Ecclesiasticus 21:26).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-heart-of-fools-in-their-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 29:11 — *A fool uttereth all his mind: but a wise man keepeth it in till afterwards.* The fool whose heart is all in his mouth, where the wise keeps it in his heart (Ecclesiasticus 21:26).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-heart-of-fools-in-their-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=29 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 16:23 — *The heart of the wise teacheth his mouth, and addeth learning to his lips.* The wise man whose mouth is governed from within his heart, as Ben Sira frames it (Ecclesiasticus 21:26).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-heart-of-fools-in-their-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 10:14 — *Wise men lay up knowledge: but the mouth of the foolish is near destruction.* The laid-up wisdom against the fool''s burdensome talk Ben Sira contrasts (Ecclesiasticus 21:16).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-heart-of-fools-in-their-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=10 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Proverbs 17:28 — *Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding.* The weighed restraint that makes men seek the wise man''s words in the congregation (Ecclesiasticus 21:17).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-heart-of-fools-in-their-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-21-the-whisperer-and-the-tongue
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 19:16 — *Thou shalt not go up and down as a talebearer among thy people: neither shalt thou stand against the blood of thy neighbour: I am Yahuah (LORD).* The Torah command against the very whisperer Ben Sira condemns (Ecclesiasticus 21:28).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-the-whisperer-and-the-tongue'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 26:22 — *The words of a talebearer are as wounds, and they go down into the innermost parts of the belly.* The whisperer whose words wound, as Ben Sira says he defiles his own soul (Ecclesiasticus 21:28).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-the-whisperer-and-the-tongue'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=26 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 3:6 — *And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell.* The defiling fire of the tongue, the same self-defilement Ben Sira warns of (Ecclesiasticus 21:28).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-the-whisperer-and-the-tongue'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 11:13 — *A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter.* The babbling lips against the weighed words of the understanding (Ecclesiasticus 21:25).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir21_lookup sv, _session253_sir21_lookup tv
+ WHERE t.slug='ecclesiasticus-21-the-whisperer-and-the-tongue'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=21 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=11 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_22.sql (session253 ecclesiasticus 22) -----
+-- Source anchor: apocrypha/ecclesiasticus ch22. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir22 (view _session253_sir22_lookup). Sort band base 58825, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: ecclesiasticus-22-the-fool
+  ('apocrypha', 'ecclesiasticus', 22, 11, 'canon', 'proverbs', 26, 1, 'free', E'Proverbs 26:1 — *As snow in summer, and as rain in harvest, so honour is not seemly for a fool.* Solomon and Ben Sira agree that the fool is past honour, his life worse than death (Sirach 22:11).'),
+  ('apocrypha', 'ecclesiasticus', 22, 13, 'canon', 'proverbs', 26, 11, 'free', E'Proverbs 26:11 — *As a dog returneth to his vomit, so a fool returneth to his folly.* The fool is incorrigible, so Sirach 22:13 counsels: talk not much with him and depart from him.'),
+  ('apocrypha', 'ecclesiasticus', 22, 13, 'canon', 'proverbs', 26, 12, 'free', E'Proverbs 26:12 — *Seest thou a man wise in his own conceit? there is more hope of a fool than of him.* The same wisdom that bids Sirach 22:13 beware of the fool measures the deeper folly of self-conceit.'),
+  ('apocrypha', 'ecclesiasticus', 22, 15, 'canon', 'proverbs', 27, 3, 'free', E'Proverbs 27:3 — *A stone is heavy, and the sand weighty; but a fool''s wrath is heavier than them both.* The same scales of stone and sand weigh the unbearable fool of Sirach 22:15.'),
+  -- thread: ecclesiasticus-22-the-slothful
+  ('apocrypha', 'ecclesiasticus', 22, 1, 'canon', 'proverbs', 6, 6, 'free', E'Proverbs 6:6 — *Go to the ant, thou sluggard; consider her ways, and be wise.* The slothful man hissed out as a filthy stone (Sirach 22:1) is sent to the ant to learn diligence.'),
+  ('apocrypha', 'ecclesiasticus', 22, 2, 'canon', 'proverbs', 6, 11, 'free', E'Proverbs 6:11 — *So shall thy poverty come as one that travelleth, and thy want as an armed man.* The dunghill-filth of the sluggard in Sirach 22:2 ends in this ambush of want.'),
+  ('apocrypha', 'ecclesiasticus', 22, 1, 'canon', 'proverbs', 26, 14, 'free', E'Proverbs 26:14 — *As the door turneth upon his hinges, so doth the slothful upon his bed.* The same disgraced sluggard of Sirach 22:1 turns idly on his bed in Solomon''s proverb.'),
+  -- thread: ecclesiasticus-22-the-wounded-friend
+  ('apocrypha', 'ecclesiasticus', 22, 20, 'canon', 'proverbs', 27, 6, 'free', E'Proverbs 27:6 — *Faithful are the wounds of a friend; but the kisses of an enemy are deceitful.* Where Sirach 22:20 warns that upbraiding breaks friendship, Solomon distinguishes the faithful wound from the treacherous kiss.'),
+  ('apocrypha', 'ecclesiasticus', 22, 22, 'canon', 'proverbs', 18, 19, 'free', E'Proverbs 18:19 — *A brother offended is harder to be won than a strong city: and their contentions are like the bars of a castle.* The treacherous wound past which every friend departs (Sirach 22:22) is Solomon''s offended brother, harder to win than a walled city.'),
+  ('apocrypha', 'ecclesiasticus', 22, 21, 'canon', 'matthew', 5, 24, 'free', E'Matthew 5:24 — *Leave there thy gift before the altar, and go thy way; first be reconciled to thy brother, and then come and offer thy gift.* The returning to favour Ben Sira urges in Sirach 22:21 the Master sets before the very altar.'),
+  ('apocrypha', 'ecclesiasticus', 22, 20, 'apocrypha', 'ecclesiasticus', 6, 14, 'extras', E'Ecclesiasticus 6:14 — *A faithfull friend is a strong defence: and he that has found such an one has found a treasure.* Ben Sira had already named the treasure that the upbraiding of Sirach 22:20 puts at risk.'),
+  -- thread: ecclesiasticus-22-watch-the-mouth
+  ('apocrypha', 'ecclesiasticus', 22, 27, 'canon', 'psalms', 141, 3, 'free', E'Psalm 141:3 — *Set a watch, O Yahuah (LORD), before my mouth; keep the door of my lips.* Ben Sira''s prayer in Sirach 22:27 is David''s same plea for a guard set over the mouth.'),
+  ('apocrypha', 'ecclesiasticus', 22, 27, 'canon', 'james', 3, 5, 'free', E'James 3:5 — *Even so the tongue is a little member, and boasteth great things. Behold, how great a matter a little fire kindleth!* The tongue Ben Sira fears will destroy him (Sirach 22:27) is James''s little member that kindles a great fire.'),
+  ('apocrypha', 'ecclesiasticus', 22, 27, 'canon', 'james', 3, 8, 'free', E'James 3:8 — *But the tongue can no man tame; it is an unruly evil, full of deadly poison.* Because no man can tame the tongue, Sirach 22:27 prays for a watch and a seal of wisdom from above.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-22-the-fool',
+       E'The fool that wanteth understanding',
+       E'Ben Sira draws the fool to the life: *Weep for the dead, for he has lost the light: and weep for the fool, for he wanteth understanding: make little weeping for the dead, for he is at rest: but the life of the fool is worse than death* (Ecclesiasticus 22:11), and *Sand, and salt, and a mass of iron, is easier to bear, than a man without understanding* (Ecclesiasticus 22:15). It ain''t new — this is the whole gallery of Proverbs 26, where honour fits the fool as poorly as snow in summer: *As snow in summer, and as rain in harvest, so honour is not seemly for a fool* (Proverbs 26:1), and the fool cannot be cured of his folly, *As a dog returneth to his vomit, so a fool returneth to his folly* (Proverbs 26:11). Solomon''s counsel to give the fool a wide berth — *there is more hope of a fool than of him* (Proverbs 26:12) — is Ben Sira''s same wisdom: *Talk not much with a fool* (Ecclesiasticus 22:13). The two books speak with one tongue.',
+       sv.verse_id, ev.verse_id, 'extras', 58825
+  FROM _session253_sir22_lookup sv, _session253_sir22_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=11
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=22 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-22-the-slothful',
+       E'The slothful man and the filthy stone',
+       E'The chapter opens on the sluggard: *A slothful man is compared to a filthy stone, and every one will hiss him out to his disgrace* (Ecclesiasticus 22:1), and *A slothful man is compared to the filth of a dunghill: every man that takes it up will shake his hand* (Ecclesiasticus 22:2). It ain''t new — Solomon sends the sluggard to the ant: *Go to the ant, thou sluggard; consider her ways, and be wise* (Proverbs 6:6), warning that *Yet a little sleep, a little slumber, a little folding of the hands to sleep* (Proverbs 6:10) ends in ruin: *So shall thy poverty come as one that travelleth, and thy want as an armed man* (Proverbs 6:11). In Proverbs 26 the same sluggard rolls upon his bed and is disgraced — *As the door turneth upon his hinges, so doth the slothful upon his bed* (Proverbs 26:14). The filthy stone of Sirach 22 is the door-hinge sluggard of the canon.',
+       sv.verse_id, ev.verse_id, 'extras', 58828
+  FROM _session253_sir22_lookup sv, _session253_sir22_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=22 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-22-the-wounded-friend',
+       E'A friend wounded, yet a returning to favour',
+       E'Ben Sira measures the breaking and the mending of friendship: *Whoso casteth a stone at the birds frayeth them away: and he that upbraideth his friend breaks friendship* (Ecclesiasticus 22:20); yet *Though you drewest a sword at your friend, yet despair not: for there may be a returning to favour* (Ecclesiasticus 22:21) — *except for upbraiding, or pride, or disclosing of secrets, or a treacherous wound: for for these things every friend will depart* (Ecclesiasticus 22:22). It ain''t new — Solomon honours the open wound of a true friend, *Faithful are the wounds of a friend; but the kisses of an enemy are deceitful* (Proverbs 27:6), and grieves the harder breach: *A brother offended is harder to be won than a strong city* (Proverbs 18:19). The Master folds the same counsel into the altar itself: *first be reconciled to thy brother, and then come and offer thy gift* (Matthew 5:24). And Ben Sira had already weighed the treasure being risked — *A faithfull friend is a strong defence: and he that has found such an one has found a treasure* (Ecclesiasticus 6:14). The returning to favour is the heart of Torah-wisdom, fulfilled at the altar.',
+       sv.verse_id, ev.verse_id, 'extras', 58831
+  FROM _session253_sir22_lookup sv, _session253_sir22_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=20
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=22 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-22-watch-the-mouth',
+       E'A watch before my mouth, a seal upon my lips',
+       E'The chapter closes with a prayer that crowns the whole tongue-discourse of Sirach 19-23: *Who shall set a watch before my mouth, and a seal of wisdom upon my lips, that I fall not suddenly by them, and that my tongue destroy me not?* (Ecclesiasticus 22:27). It ain''t new — this is David''s own evening cry: *Set a watch, O Yahuah (LORD), before my mouth; keep the door of my lips* (Psalm 141:3). And it is the doctrine James unfolds, that the tongue is the untameable fire — *Even so the tongue is a little member, and boasteth great things. Behold, how great a matter a little fire kindleth!* (James 3:5) — *But the tongue can no man tame; it is an unruly evil, full of deadly poison* (James 3:8). Ben Sira knows what David and James know: only a watch from Yahuah seals the lips that no man can tame. Torah stands, and the bridled tongue is its fruit.',
+       sv.verse_id, ev.verse_id, 'extras', 58834
+  FROM _session253_sir22_lookup sv, _session253_sir22_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=27
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=22 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: ecclesiasticus-22-the-fool
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 26:1 — *As snow in summer, and as rain in harvest, so honour is not seemly for a fool.* Solomon and Ben Sira agree that the fool is past honour, his life worse than death (Sirach 22:11).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-the-fool'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=26 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 26:11 — *As a dog returneth to his vomit, so a fool returneth to his folly.* The fool is incorrigible, so Sirach 22:13 counsels: talk not much with him and depart from him.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-the-fool'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=26 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 26:12 — *Seest thou a man wise in his own conceit? there is more hope of a fool than of him.* The same wisdom that bids Sirach 22:13 beware of the fool measures the deeper folly of self-conceit.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-the-fool'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=26 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 27:3 — *A stone is heavy, and the sand weighty; but a fool''s wrath is heavier than them both.* The same scales of stone and sand weigh the unbearable fool of Sirach 22:15.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-the-fool'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=27 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-22-the-slothful
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 6:6 — *Go to the ant, thou sluggard; consider her ways, and be wise.* The slothful man hissed out as a filthy stone (Sirach 22:1) is sent to the ant to learn diligence.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-the-slothful'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=6 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 6:11 — *So shall thy poverty come as one that travelleth, and thy want as an armed man.* The dunghill-filth of the sluggard in Sirach 22:2 ends in this ambush of want.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-the-slothful'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=6 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 26:14 — *As the door turneth upon his hinges, so doth the slothful upon his bed.* The same disgraced sluggard of Sirach 22:1 turns idly on his bed in Solomon''s proverb.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-the-slothful'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=26 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-22-the-wounded-friend
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 27:6 — *Faithful are the wounds of a friend; but the kisses of an enemy are deceitful.* Where Sirach 22:20 warns that upbraiding breaks friendship, Solomon distinguishes the faithful wound from the treacherous kiss.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-the-wounded-friend'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=27 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 18:19 — *A brother offended is harder to be won than a strong city: and their contentions are like the bars of a castle.* The treacherous wound past which every friend departs (Sirach 22:22) is Solomon''s offended brother, harder to win than a walled city.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-the-wounded-friend'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 5:24 — *Leave there thy gift before the altar, and go thy way; first be reconciled to thy brother, and then come and offer thy gift.* The returning to favour Ben Sira urges in Sirach 22:21 the Master sets before the very altar.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-the-wounded-friend'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ecclesiasticus 6:14 — *A faithfull friend is a strong defence: and he that has found such an one has found a treasure.* Ben Sira had already named the treasure that the upbraiding of Sirach 22:20 puts at risk.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-the-wounded-friend'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=20
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=6 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-22-watch-the-mouth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 141:3 — *Set a watch, O Yahuah (LORD), before my mouth; keep the door of my lips.* Ben Sira''s prayer in Sirach 22:27 is David''s same plea for a guard set over the mouth.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-watch-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=141 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'James 3:5 — *Even so the tongue is a little member, and boasteth great things. Behold, how great a matter a little fire kindleth!* The tongue Ben Sira fears will destroy him (Sirach 22:27) is James''s little member that kindles a great fire.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-watch-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=3 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 3:8 — *But the tongue can no man tame; it is an unruly evil, full of deadly poison.* Because no man can tame the tongue, Sirach 22:27 prays for a watch and a seal of wisdom from above.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir22_lookup sv, _session253_sir22_lookup tv
+ WHERE t.slug='ecclesiasticus-22-watch-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=22 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=3 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_23.sql (session253 ecclesiasticus 23) -----
+-- Source anchor: apocrypha/ecclesiasticus ch23. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir23 (view _session253_sir23_lookup). Sort band base 58850, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: sirach-23-set-a-watch-before-my-mouth
+  ('apocrypha', 'ecclesiasticus', 23, 2, 'apocrypha', 'ecclesiasticus', 22, 27, 'extras', E'Ecclesiasticus 22:27 — *Who shall set a watch before my mouth, and a seal of wisdom upon my lips, that I fall not suddenly by them, and that my tongue destroy me not?* The chapter before voices the very prayer Sirach 23:2 opens with — a seal upon the lips.'),
+  ('apocrypha', 'ecclesiasticus', 23, 2, 'canon', 'psalms', 139, 4, 'free', E'Psalm 139:4 — *For there is not a word in my tongue, but, lo, O Yahuah (LORD), thou knowest it altogether.* David''s psalm answers the plea of Sirach 23:2: the One who would discipline the heart already knows the word before it is uttered.'),
+  ('apocrypha', 'ecclesiasticus', 23, 1, 'canon', 'james', 1, 26, 'free', E'James 1:26 — *If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man''s religion is vain.* James echoes Sirach 23:1''s prayer not to be left to one''s own counsels — the unbridled tongue undoes all religion.'),
+  -- thread: sirach-23-accustom-not-thy-mouth-to-swearing
+  ('apocrypha', 'ecclesiasticus', 23, 9, 'canon', 'exodus', 20, 7, 'free', E'Exodus 20:7 — *Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain; for Yahuah (LORD) will not hold him guiltless that taketh his name in vain.* Sinai''s third word stands behind Sirach 23:9''s charge not to accustom the mouth to naming the Holy One.'),
+  ('apocrypha', 'ecclesiasticus', 23, 9, 'canon', 'leviticus', 19, 12, 'free', E'Leviticus 19:12 — *And ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD).* The holiness code names the false oath as a profaning of the Name — exactly the swearing Sirach 23:9 forbids.'),
+  ('apocrypha', 'ecclesiasticus', 23, 9, 'canon', 'matthew', 5, 34, 'free', E'Matthew 5:34 — *But I say unto you, Swear not at all; neither by heaven; for it is Elohim''s (God''s) throne.* On the mount Yahusha presses Sirach 23:9 to its root: not careless swearing tempered, but the oath forsworn altogether.'),
+  ('apocrypha', 'ecclesiasticus', 23, 9, 'canon', 'matthew', 5, 37, 'free', E'Matthew 5:37 — *But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil.* The plain speech that needs no oath is the mouth Sirach 23:9 sought to discipline.'),
+  ('apocrypha', 'ecclesiasticus', 23, 11, 'canon', 'james', 5, 12, 'free', E'James 5:12 — *But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation.* James warns of the condemnation that Sirach 23:11 calls the plague that never departs the swearer''s house.'),
+  -- thread: sirach-23-discipline-of-the-mouth
+  ('apocrypha', 'ecclesiasticus', 23, 7, 'canon', 'proverbs', 13, 3, 'free', E'Proverbs 13:3 — *He that keepeth his mouth keepeth his life: but he that openeth wide his lips shall have destruction.* Proverbs says in a line what Sirach 23:7 names the discipline of the mouth — to keep it is to keep one''s life.'),
+  ('apocrypha', 'ecclesiasticus', 23, 7, 'canon', 'proverbs', 18, 21, 'free', E'Proverbs 18:21 — *Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof.* The stakes of Sirach 23:7''s discipline: the tongue holds death and life.'),
+  ('apocrypha', 'ecclesiasticus', 23, 15, 'apocrypha', 'ecclesiasticus', 28, 17, 'extras', E'Ecclesiasticus 28:17 — *The stroke of the whip makes marks in the flesh: but the stroke of the tongue breaks the bones.* Ben Sira''s own later word measures the ruin of the opprobrious mouth of Sirach 23:15 — the tongue wounds deeper than the whip.'),
+  ('apocrypha', 'ecclesiasticus', 23, 7, 'canon', 'james', 3, 2, 'free', E'James 3:2 — *For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body.* James makes Sirach 23:7''s kept mouth the measure of the perfect man.'),
+  ('apocrypha', 'ecclesiasticus', 23, 8, 'canon', 'matthew', 12, 36, 'free', E'Matthew 12:36 — *But I say unto you, That every idle word that men shall speak, they shall give account thereof in the day of judgment.* The sinner taken in his own speech of Sirach 23:8 stands before the reckoning Yahusha names for every idle word.'),
+  -- thread: sirach-23-who-seeth-me-all-seeing-eyes
+  ('apocrypha', 'ecclesiasticus', 23, 19, 'canon', 'proverbs', 5, 21, 'free', E'Proverbs 5:21 — *For the ways of man are before the eyes of Yahuah (LORD), and he pondereth all his goings.* Solomon sets the all-seeing eye in his own chapter against the strange woman — the very ground of Sirach 23:19.'),
+  ('apocrypha', 'ecclesiasticus', 23, 19, 'canon', 'proverbs', 15, 3, 'free', E'Proverbs 15:3 — *The eyes of Yahuah (LORD) are in every place, beholding the evil and the good.* No wall hides from the eye that Sirach 23:19 calls brighter than the sun.'),
+  ('apocrypha', 'ecclesiasticus', 23, 18, 'canon', 'psalms', 139, 7, 'free', E'Psalm 139:7 — *Whither shall I go from thy spirit? or whither shall I flee from thy presence?* David knows there is no darkness to compass oneself about, against the adulterer''s boast of Sirach 23:18.'),
+  ('apocrypha', 'ecclesiasticus', 23, 18, 'canon', 'matthew', 5, 28, 'free', E'Matthew 5:28 — *But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.* Yahusha sees the secret thought of Sirach 23:18 itself as the act — the heart is never hidden.'),
+  ('apocrypha', 'ecclesiasticus', 23, 18, 'canon', 'job', 31, 1, 'free', E'Job 31:1 — *I made a covenant with mine eyes; why then should I think upon a maid?* Job is the man who refuses the adulterer''s reasoning of Sirach 23:18 — guarding the eye before the heart ever thinks.'),
+  -- thread: sirach-23-fear-of-yahuah-the-commandments
+  ('apocrypha', 'ecclesiasticus', 23, 23, 'canon', 'job', 34, 21, 'free', E'Job 34:21 — *For his eyes are upon the ways of man, and he seeth all his goings.* The same beholding eye brings the secret adulteress of Sirach 23:23, who disobeyed the law of the Most High, into the congregation for inquisition.'),
+  ('apocrypha', 'ecclesiasticus', 23, 25, 'canon', 'proverbs', 12, 3, 'free', E'Proverbs 12:3 — *A man shall not be established by wickedness: but the root of the righteous shall not be moved.* Solomon names the very contrast of Sirach 23:25: the wicked take no root, but the righteous cannot be moved.'),
+  ('apocrypha', 'ecclesiasticus', 23, 28, 'canon', 'deuteronomy', 30, 20, 'free', E'Deuteronomy 30:20 — *That thou mayest love Yahuah Elohayka (the LORD thy God), and that thou mayest obey his voice, and that thou mayest cleave unto him: for he is thy life, and the length of thy days: that thou mayest dwell in the land which Yahuah (LORD) sware unto thy fathers, to Abraham, to Isaac, and to Jacob, to give them.* Moses names the obedient cleaving as life and length of days — the same long life Sirach 23:28 promises the one received of Yahuah.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-23-set-a-watch-before-my-mouth',
+       E'Set scourges over my thoughts: the prayer to govern the heart',
+       E'Ben Sira opens with a prayer for the governance of the inner man — that the discipline of wisdom would stand guard over both heart and tongue: *Who will set scourges over my thoughts, and the discipline of wisdom over my heart? that they spare me not for my ignorances, and it pass not by my sins* (Ecclesiasticus 23:2). It is the same cry he raised a chapter earlier: *Who shall set a watch before my mouth, and a seal of wisdom upon my lips, that I fall not suddenly by them, and that my tongue destroy me not?* (Ecclesiasticus 22:27) — the live deuterocanon answering itself. David prayed it in the Psalter: *For there is not a word in my tongue, but, lo, O Yahuah (LORD), thou knowest it altogether* (Psalm 139:4) — the all-knowing One who searches the thought before it is spoken. And James names the man who never learned this watch: *If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man''s religion is vain* (James 1:26). It ain''t new — the bridled tongue is the wisdom of the whole covenant.',
+       sv.verse_id, ev.verse_id, 'extras', 58850
+  FROM _session253_sir23_lookup sv, _session253_sir23_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=23 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-23-accustom-not-thy-mouth-to-swearing',
+       E'Swear not at all: the naming of the Holy One',
+       E'Ben Sira warns against the careless oath and the careless use of the divine Name: *Accustom not your mouth to swearing; neither use thyself to the naming of the Holy One* (Ecclesiasticus 23:9), for *A man that useth much swearing shall be filled with iniquity, and the plague shall never depart from his house* (Ecclesiasticus 23:11). This is Sinai''s third word: *Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain; for Yahuah (LORD) will not hold him guiltless that taketh his name in vain* (Exodus 20:7), and the holiness code: *And ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD)* (Leviticus 19:12). On the mountain Yahusha gathers it all into one word: *But I say unto you, Swear not at all; neither by heaven; for it is Elohim''s (God''s) throne* (Matthew 5:34), and *But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil* (Matthew 5:37). James, the Sermon''s truest heir, says it again: *But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation* (James 5:12). The Sermon on the Mount did not invent the guarded oath — it carried the Torah and the wisdom of ben Sira forward whole.',
+       sv.verse_id, ev.verse_id, 'extras', 58853
+  FROM _session253_sir23_lookup sv, _session253_sir23_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=9
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=23 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-23-discipline-of-the-mouth',
+       E'The discipline of the mouth: death and life in the tongue',
+       E'*Hear, O you children, the discipline of the mouth: he that keepeth it shall never be taken in his lips* (Ecclesiasticus 23:7) — and its opposite, *The man that is accustomed to opprobrious words will never be reformed all the days of his life* (Ecclesiasticus 23:15). This is the running theme of Proverbs: *He that keepeth his mouth keepeth his life: but he that openeth wide his lips shall have destruction* (Proverbs 13:3), and *Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof* (Proverbs 18:21). Ben Sira will return to it with a hammer in his own next breath — *The stroke of the whip makes marks in the flesh: but the stroke of the tongue breaks the bones* (Ecclesiasticus 28:17) — and James makes the bridled tongue the measure of the whole man: *For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body* (James 3:2). Yahusha sets the standard at judgment: *every idle word that men shall speak, they shall give account thereof in the day of judgment* (Matthew 12:36). The wisdom of the guarded mouth runs unbroken from Proverbs through ben Sira to the Sermon.',
+       sv.verse_id, ev.verse_id, 'extras', 58856
+  FROM _session253_sir23_lookup sv, _session253_sir23_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=7
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=23 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-23-who-seeth-me-all-seeing-eyes',
+       E'Who seeth me? The eyes of Yahuah brighter than the sun',
+       E'The adulterer hides in the dark and reasons in his heart: *Who seeth me? I am compassed about with darkness, the walls cover me, and no body seeth me; what need I to fear? the Most High will not remember my sins* (Ecclesiasticus 23:18). Ben Sira answers him with the all-seeing eye: *Such a man only fears the eyes of men, and knoweth not that the eyes of Yahuah (God) are ten thousand times brighter than the sun, beholding all the ways of men, and considering the most secret parts* (Ecclesiasticus 23:19). Solomon said it plainly: *For the ways of man are before the eyes of Yahuah (LORD), and he pondereth all his goings* (Proverbs 5:21) — set, as in Sirach, in the very chapter against the strange woman — and *The eyes of Yahuah (LORD) are in every place, beholding the evil and the good* (Proverbs 15:3). David found no darkness to hide in: *Whither shall I go from thy spirit? or whither shall I flee from thy presence?* (Psalm 139:7). And on the mount Yahusha drives the all-seeing eye inward, to the heart that thinks itself unseen: *whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart* (Matthew 5:28). The walls never covered anyone — the secret place was never secret.',
+       sv.verse_id, ev.verse_id, 'extras', 58859
+  FROM _session253_sir23_lookup sv, _session253_sir23_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=18
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=23 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-23-fear-of-yahuah-the-commandments',
+       E'Nothing better than the fear of Yahuah, nothing sweeter than His commandments',
+       E'Ben Sira closes the chapter not on judgment but on the covenant''s sweetest end: *And they that remain shall know that there is nothing better than the fear of Yahuah (God), and that there is nothing sweeter than to take heed to the commandments of Yahuah (God)* (Ecclesiasticus 23:27), and *It is great glory to follow Yahuah (God), and to be received of him is long life* (Ecclesiasticus 23:28). The adulteress had despised exactly this: *first, she has disobeyed the law of the Most High* (Ecclesiasticus 23:23), and so *Her children shall not take root, and her branches shall bring forth no fruit* (Ecclesiasticus 23:25). The covenant''s whole verdict turns on the law kept or spurned. The Psalmist sings the kept commandment as sweetness — and ben Sira ends the tongue-and-heart chapter the same place Torah ends every matter: the fear of Yahuah and His commandments are the long life of the one received. Torah stands; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 58862
+  FROM _session253_sir23_lookup sv, _session253_sir23_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=23
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=23 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: sirach-23-set-a-watch-before-my-mouth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ecclesiasticus 22:27 — *Who shall set a watch before my mouth, and a seal of wisdom upon my lips, that I fall not suddenly by them, and that my tongue destroy me not?* The chapter before voices the very prayer Sirach 23:2 opens with — a seal upon the lips.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-set-a-watch-before-my-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=2
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=22 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 139:4 — *For there is not a word in my tongue, but, lo, O Yahuah (LORD), thou knowest it altogether.* David''s psalm answers the plea of Sirach 23:2: the One who would discipline the heart already knows the word before it is uttered.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-set-a-watch-before-my-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=139 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 1:26 — *If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man''s religion is vain.* James echoes Sirach 23:1''s prayer not to be left to one''s own counsels — the unbridled tongue undoes all religion.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-set-a-watch-before-my-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-23-accustom-not-thy-mouth-to-swearing
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 20:7 — *Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain; for Yahuah (LORD) will not hold him guiltless that taketh his name in vain.* Sinai''s third word stands behind Sirach 23:9''s charge not to accustom the mouth to naming the Holy One.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-accustom-not-thy-mouth-to-swearing'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 19:12 — *And ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD).* The holiness code names the false oath as a profaning of the Name — exactly the swearing Sirach 23:9 forbids.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-accustom-not-thy-mouth-to-swearing'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 5:34 — *But I say unto you, Swear not at all; neither by heaven; for it is Elohim''s (God''s) throne.* On the mount Yahusha presses Sirach 23:9 to its root: not careless swearing tempered, but the oath forsworn altogether.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-accustom-not-thy-mouth-to-swearing'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 5:37 — *But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil.* The plain speech that needs no oath is the mouth Sirach 23:9 sought to discipline.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-accustom-not-thy-mouth-to-swearing'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'James 5:12 — *But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation.* James warns of the condemnation that Sirach 23:11 calls the plague that never departs the swearer''s house.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-accustom-not-thy-mouth-to-swearing'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-23-discipline-of-the-mouth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 13:3 — *He that keepeth his mouth keepeth his life: but he that openeth wide his lips shall have destruction.* Proverbs says in a line what Sirach 23:7 names the discipline of the mouth — to keep it is to keep one''s life.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-discipline-of-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=13 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 18:21 — *Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof.* The stakes of Sirach 23:7''s discipline: the tongue holds death and life.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-discipline-of-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ecclesiasticus 28:17 — *The stroke of the whip makes marks in the flesh: but the stroke of the tongue breaks the bones.* Ben Sira''s own later word measures the ruin of the opprobrious mouth of Sirach 23:15 — the tongue wounds deeper than the whip.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-discipline-of-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=28 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'James 3:2 — *For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body.* James makes Sirach 23:7''s kept mouth the measure of the perfect man.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-discipline-of-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=3 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Matthew 12:36 — *But I say unto you, That every idle word that men shall speak, they shall give account thereof in the day of judgment.* The sinner taken in his own speech of Sirach 23:8 stands before the reckoning Yahusha names for every idle word.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-discipline-of-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-23-who-seeth-me-all-seeing-eyes
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 5:21 — *For the ways of man are before the eyes of Yahuah (LORD), and he pondereth all his goings.* Solomon sets the all-seeing eye in his own chapter against the strange woman — the very ground of Sirach 23:19.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-who-seeth-me-all-seeing-eyes'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=5 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 15:3 — *The eyes of Yahuah (LORD) are in every place, beholding the evil and the good.* No wall hides from the eye that Sirach 23:19 calls brighter than the sun.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-who-seeth-me-all-seeing-eyes'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 139:7 — *Whither shall I go from thy spirit? or whither shall I flee from thy presence?* David knows there is no darkness to compass oneself about, against the adulterer''s boast of Sirach 23:18.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-who-seeth-me-all-seeing-eyes'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=139 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 5:28 — *But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.* Yahusha sees the secret thought of Sirach 23:18 itself as the act — the heart is never hidden.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-who-seeth-me-all-seeing-eyes'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Job 31:1 — *I made a covenant with mine eyes; why then should I think upon a maid?* Job is the man who refuses the adulterer''s reasoning of Sirach 23:18 — guarding the eye before the heart ever thinks.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-who-seeth-me-all-seeing-eyes'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=31 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-23-fear-of-yahuah-the-commandments
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 34:21 — *For his eyes are upon the ways of man, and he seeth all his goings.* The same beholding eye brings the secret adulteress of Sirach 23:23, who disobeyed the law of the Most High, into the congregation for inquisition.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-fear-of-yahuah-the-commandments'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=34 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 12:3 — *A man shall not be established by wickedness: but the root of the righteous shall not be moved.* Solomon names the very contrast of Sirach 23:25: the wicked take no root, but the righteous cannot be moved.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-fear-of-yahuah-the-commandments'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 30:20 — *That thou mayest love Yahuah Elohayka (the LORD thy God), and that thou mayest obey his voice, and that thou mayest cleave unto him: for he is thy life, and the length of thy days: that thou mayest dwell in the land which Yahuah (LORD) sware unto thy fathers, to Abraham, to Isaac, and to Jacob, to give them.* Moses names the obedient cleaving as life and length of days — the same long life Sirach 23:28 promises the one received of Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir23_lookup sv, _session253_sir23_lookup tv
+ WHERE t.slug='sirach-23-fear-of-yahuah-the-commandments'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=23 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_24.sql (session253 ecclesiasticus 24) -----
+-- Source anchor: apocrypha/ecclesiasticus ch24. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir24 (view _session253_sir24_lookup). Sort band base 58875, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: ecclesiasticus-24-wisdom-came-out-of-the-mouth
+  ('apocrypha', 'ecclesiasticus', 24, 3, 'canon', 'john', 1, 1, 'free', E'John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The Word that was with Elohim is the Wisdom that came out of the mouth of the Most High in Sirach 24:3.'),
+  ('apocrypha', 'ecclesiasticus', 24, 4, 'canon', 'john', 1, 14, 'free', E'John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* The Wisdom whose throne is in the cloudy pillar (Sirach 24:4) is the Word that tabernacled among us.'),
+  ('apocrypha', 'ecclesiasticus', 24, 9, 'canon', 'proverbs', 8, 22, 'free', E'Proverbs 8:22 — *Yahuah (LORD) possessed me in the beginning of his way, before his works of old.* Wisdom created from the beginning before the world (Sirach 24:9) is the same Wisdom possessed before his works of old.'),
+  ('apocrypha', 'ecclesiasticus', 24, 9, 'canon', 'proverbs', 8, 30, 'free', E'Proverbs 8:30 — *Then I was by him, as one brought up with him: and I was daily his delight, rejoicing always before him.* Wisdom that shall never fail (Sirach 24:9) is the One brought up with Yahuah before the world was.'),
+  ('apocrypha', 'ecclesiasticus', 24, 5, 'canon', 'colossians', 1, 16, 'free', E'Colossians 1:16 — *For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him.* Wisdom that alone compassed the circuit of heaven (Sirach 24:5) is the One by whom all things were created.'),
+  -- thread: ecclesiasticus-24-the-book-of-the-covenant-the-law
+  ('apocrypha', 'ecclesiasticus', 24, 23, 'canon', 'deuteronomy', 33, 4, 'free', E'Deuteronomy 33:4 — *Moses commanded us a law, even the inheritance of the congregation of Jacob.* This is the very phrase Wisdom claims for herself in Sirach 24:23 — the law which Moses commanded for an heritage to the congregations of Jacob.'),
+  ('apocrypha', 'ecclesiasticus', 24, 23, 'apocrypha', 'baruch-with-the-letter-of-jeremiah', 4, 1, 'extras', E'Baruch 4:1 — *This is the book of the commandments of Yahuah (God), and the law that endureth for ever: all they that keep it shall come to life; but such as leave it shall die.* Baruch matches Sirach 24:23: Wisdom is the book of the covenant, the law that endureth.'),
+  ('apocrypha', 'ecclesiasticus', 24, 23, 'apocrypha', 'baruch-with-the-letter-of-jeremiah', 3, 9, 'extras', E'Baruch 3:9 — *Hear, Yashar''el (Israel), the commandments of life: give ear to understand wisdom.* Baruch equates the commandments of life with wisdom, the same identity Sirach 24:23 makes between Wisdom and the law of Moses.'),
+  ('apocrypha', 'ecclesiasticus', 24, 8, 'apocrypha', 'ecclesiasticus', 1, 1, 'extras', E'Ecclesiasticus 1:1 — *All wisdom comes from Yahuah (God), and is with him for ever.* Sirach''s own opening confession undergirds 24:8, where the Creator commands Wisdom to dwell in Jacob.'),
+  -- thread: ecclesiasticus-24-come-to-me-eat-never-hungry
+  ('apocrypha', 'ecclesiasticus', 24, 21, 'canon', 'john', 6, 35, 'free', E'John 6:35 — *And Yahusha (Jesus) said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst.* Yahusha answers the hunger and thirst Wisdom stirs up in Sirach 24:21 — in him alone is it filled.'),
+  ('apocrypha', 'ecclesiasticus', 24, 19, 'canon', 'matthew', 11, 28, 'free', E'Matthew 11:28 — *Come unto me, all ye that labour and are heavy laden, and I will give you rest.* Yahusha''s call repeats Wisdom''s own — Come to me, all you that be desirous of me (Sirach 24:19).'),
+  ('apocrypha', 'ecclesiasticus', 24, 19, 'canon', 'isaiah', 55, 1, 'free', E'Isaiah 55:1 — *Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat; yea, come, buy wine and milk without money and without price.* Isaiah''s free invitation to eat and drink stands behind Wisdom''s Come to me and fill yourselves in Sirach 24:19.'),
+  ('apocrypha', 'ecclesiasticus', 24, 21, 'canon', 'revelation', 22, 17, 'free', E'Revelation 22:17 — *And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely.* The canon''s last call to the thirsty answers the thirst Wisdom awakens in Sirach 24:21.'),
+  -- thread: ecclesiasticus-24-let-your-dwelling-be-in-jacob
+  ('apocrypha', 'ecclesiasticus', 24, 8, 'canon', 'exodus', 19, 5, 'free', E'Exodus 19:5 — *Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine.* The covenant-election that makes Jacob the peculiar treasure is why Wisdom is told to dwell in Jacob in Sirach 24:8.'),
+  ('apocrypha', 'ecclesiasticus', 24, 12, 'canon', 'deuteronomy', 33, 3, 'free', E'Deuteronomy 33:3 — *Yea, he loved the people; all his saints are in thy hand: and they sat down at thy feet; every one shall receive of thy words.* Wisdom rooting in the honourable people, the portion of Yahuah''s inheritance (Sirach 24:12), is the people Yahuah loved and holds in his hand.'),
+  -- thread: ecclesiasticus-24-covered-the-earth-as-a-cloud
+  ('apocrypha', 'ecclesiasticus', 24, 10, 'canon', 'john', 1, 14, 'free', E'John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* Wisdom serving in the holy tabernacle (Sirach 24:10) is the Word who pitched his tabernacle in flesh and showed his glory.'),
+  ('apocrypha', 'ecclesiasticus', 24, 4, 'canon', 'hebrews', 1, 3, 'free', E'Hebrews 1:3 — *Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high.* The Wisdom enthroned in the cloudy pillar (Sirach 24:4) is the Son who is the brightness of the Father''s glory, upholding all things.'),
+  ('apocrypha', 'ecclesiasticus', 24, 5, 'canon', 'colossians', 1, 15, 'free', E'Colossians 1:15 — *Who is the image of the invisible Elohim (God), the firstborn of every creature.* Wisdom who alone compassed the circuit of heaven (Sirach 24:5) is the image of the invisible Elohim, the firstborn of all creation.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-24-wisdom-came-out-of-the-mouth',
+       E'I came out of the mouth of the Most High — Wisdom the Formed Logos',
+       E'Sirach''s crown: Wisdom herself speaks, *I came out of the mouth of the Most High, and covered the earth as a cloud* (Ecclesiasticus 24:3), and *He created me from the beginning before the world, and I shall never fail* (Ecclesiasticus 24:9). This is no abstraction — it is the Word brought forth out of the Father before all things. John opens with the same eternity: *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God)* (John 1:1), and then makes it flesh that tabernacles among us — *And the Word was made flesh, and dwelt among us... full of grace and truth* (John 1:14), the very dwelling Wisdom seeks. Proverbs personifies the same: *Yahuah (LORD) possessed me in the beginning of his way, before his works of old* (Proverbs 8:22), Wisdom *by him, as one brought up with him* (Proverbs 8:30). Paul names the One in whom this is fulfilled — *Who is the image of the invisible Elohim (God), the firstborn of every creature* (Colossians 1:15), *For by him were all things created* (Colossians 1:16). It ain''t new: the deuterocanon already confessed the Logos by whom all was made.',
+       sv.verse_id, ev.verse_id, 'extras', 58875
+  FROM _session253_sir24_lookup sv, _session253_sir24_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=3
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=24 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-24-the-book-of-the-covenant-the-law',
+       E'The book of the covenant, the law which Moses commanded — Wisdom is the Torah',
+       E'Then Wisdom names herself outright as the Torah: *All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob* (Ecclesiasticus 24:23). The Formed Logos and the Law are one thing — Wisdom is the Torah given to Jacob. Moses said exactly this: *Moses commanded us a law, even the inheritance of the congregation of Jacob* (Deuteronomy 33:4). Baruch confesses the same identity — Wisdom is the commandments, the law that endureth: *Hear, Yashar''el (Israel), the commandments of life: give ear to understand wisdom* (Baruch 3:9), *This is the book of the commandments of Yahuah (God), and the law that endureth for ever: all they that keep it shall come to life; but such as leave it shall die* (Baruch 4:1). Sirach 1 grounds it: *All wisdom comes from Yahuah (God), and is with him for ever* (Ecclesiasticus 1:1). Torah stands — it is not a curse cast off but the very Wisdom of Elohim, the heritage of the congregations of Jacob.',
+       sv.verse_id, ev.verse_id, 'extras', 58878
+  FROM _session253_sir24_lookup sv, _session253_sir24_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=8
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=24 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-24-come-to-me-eat-never-hungry',
+       E'Come to me, fill yourselves — they that eat me shall yet be hungry',
+       E'Wisdom holds out an open invitation and a paradox: *Come to me, all you that be desirous of me, and fill yourselves with my fruits* (Ecclesiasticus 24:19), yet *They that eat me shall yet be hungry, and they that drink me shall yet be thirsty* (Ecclesiasticus 24:21) — the deeper the feeding, the deeper the longing. Yahusha takes up the same self-offer and resolves the hunger in himself: *And Yahusha (Jesus) said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst* (John 6:35). He echoes Wisdom''s very call — *Come unto me, all ye that labour and are heavy laden, and I will give you rest* (Matthew 11:28). Isaiah issued the invitation first: *Ho, every one that thirsteth, come ye to the waters... come, buy wine and milk without money and without price* (Isaiah 55:1), and Revelation closes the canon with it — *And let him that is athirst come. And whosoever will, let him take the water of life freely* (Revelation 22:17). It ain''t new: the gospel call to come and eat is Wisdom''s ancient cry.',
+       sv.verse_id, ev.verse_id, 'extras', 58881
+  FROM _session253_sir24_lookup sv, _session253_sir24_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=19
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=24 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-24-let-your-dwelling-be-in-jacob',
+       E'Let your dwelling be in Jacob — Wisdom takes root in the chosen people',
+       E'The Creator assigns Wisdom a home in the elect nation: *So the Creator of all things gave me a commandment, and he that made me caused my tabernacle to rest, and said, Let your dwelling be in Jacob, and your inheritance in Yashar''el (Israel)* (Ecclesiasticus 24:8); she takes root *even in the portion of the inheritance of Yahuah (God)* (Ecclesiasticus 24:12). This is the same election Yahuah declared at Sinai: *if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine* (Exodus 19:5). Wisdom dwelling in Jacob is Wisdom dwelling where the Torah was given — the people loved and held in the Father''s hand: *Yea, he loved the people; all his saints are in thy hand* (Deuteronomy 33:3). Not a church displacing Israel: Wisdom''s inheritance is Yashar''el, the congregations of Jacob.',
+       sv.verse_id, ev.verse_id, 'extras', 58884
+  FROM _session253_sir24_lookup sv, _session253_sir24_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=8
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=24 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-24-covered-the-earth-as-a-cloud',
+       E'Covered the earth as a cloud — Wisdom in the holy tabernacle',
+       E'Wisdom''s dwelling is glory-cloud and sanctuary: *I dwelt in high places, and my throne is in a cloudy pillar* (Ecclesiasticus 24:4), and *In the holy tabernacle I served before him; and so was I established in Sion* (Ecclesiasticus 24:10). The cloudy pillar and the tabernacle are the Shekinah imagery of the Exodus and the temple — the same glory the Logos carried when he tabernacled in flesh: *And the Word was made flesh, and dwelt among us... full of grace and truth* (John 1:14), the visible glory of the One *being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power* (Hebrews 1:3). Wisdom in the holy tabernacle is the One in whom *all things consist* — *For by him were all things created* (Colossians 1:16). The cloud, the pillar, the tabernacle: Wisdom was never far off; she dwelt where Yahuah''s glory rested.',
+       sv.verse_id, ev.verse_id, 'extras', 58887
+  FROM _session253_sir24_lookup sv, _session253_sir24_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=4
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=24 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: ecclesiasticus-24-wisdom-came-out-of-the-mouth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The Word that was with Elohim is the Wisdom that came out of the mouth of the Most High in Sirach 24:3.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-wisdom-came-out-of-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* The Wisdom whose throne is in the cloudy pillar (Sirach 24:4) is the Word that tabernacled among us.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-wisdom-came-out-of-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 8:22 — *Yahuah (LORD) possessed me in the beginning of his way, before his works of old.* Wisdom created from the beginning before the world (Sirach 24:9) is the same Wisdom possessed before his works of old.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-wisdom-came-out-of-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=8 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 8:30 — *Then I was by him, as one brought up with him: and I was daily his delight, rejoicing always before him.* Wisdom that shall never fail (Sirach 24:9) is the One brought up with Yahuah before the world was.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-wisdom-came-out-of-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=8 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Colossians 1:16 — *For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him.* Wisdom that alone compassed the circuit of heaven (Sirach 24:5) is the One by whom all things were created.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-wisdom-came-out-of-the-mouth'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-24-the-book-of-the-covenant-the-law
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 33:4 — *Moses commanded us a law, even the inheritance of the congregation of Jacob.* This is the very phrase Wisdom claims for herself in Sirach 24:23 — the law which Moses commanded for an heritage to the congregations of Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-the-book-of-the-covenant-the-law'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Baruch 4:1 — *This is the book of the commandments of Yahuah (God), and the law that endureth for ever: all they that keep it shall come to life; but such as leave it shall die.* Baruch matches Sirach 24:23: Wisdom is the book of the covenant, the law that endureth.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-the-book-of-the-covenant-the-law'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=23
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=4 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Baruch 3:9 — *Hear, Yashar''el (Israel), the commandments of life: give ear to understand wisdom.* Baruch equates the commandments of life with wisdom, the same identity Sirach 24:23 makes between Wisdom and the law of Moses.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-the-book-of-the-covenant-the-law'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=23
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=3 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ecclesiasticus 1:1 — *All wisdom comes from Yahuah (God), and is with him for ever.* Sirach''s own opening confession undergirds 24:8, where the Creator commands Wisdom to dwell in Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-the-book-of-the-covenant-the-law'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=8
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-24-come-to-me-eat-never-hungry
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'John 6:35 — *And Yahusha (Jesus) said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst.* Yahusha answers the hunger and thirst Wisdom stirs up in Sirach 24:21 — in him alone is it filled.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-come-to-me-eat-never-hungry'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=6 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 11:28 — *Come unto me, all ye that labour and are heavy laden, and I will give you rest.* Yahusha''s call repeats Wisdom''s own — Come to me, all you that be desirous of me (Sirach 24:19).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-come-to-me-eat-never-hungry'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 55:1 — *Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat; yea, come, buy wine and milk without money and without price.* Isaiah''s free invitation to eat and drink stands behind Wisdom''s Come to me and fill yourselves in Sirach 24:19.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-come-to-me-eat-never-hungry'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 22:17 — *And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely.* The canon''s last call to the thirsty answers the thirst Wisdom awakens in Sirach 24:21.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-come-to-me-eat-never-hungry'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-24-let-your-dwelling-be-in-jacob
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 19:5 — *Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine.* The covenant-election that makes Jacob the peculiar treasure is why Wisdom is told to dwell in Jacob in Sirach 24:8.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-let-your-dwelling-be-in-jacob'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 33:3 — *Yea, he loved the people; all his saints are in thy hand: and they sat down at thy feet; every one shall receive of thy words.* Wisdom rooting in the honourable people, the portion of Yahuah''s inheritance (Sirach 24:12), is the people Yahuah loved and holds in his hand.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-let-your-dwelling-be-in-jacob'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-24-covered-the-earth-as-a-cloud
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* Wisdom serving in the holy tabernacle (Sirach 24:10) is the Word who pitched his tabernacle in flesh and showed his glory.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-covered-the-earth-as-a-cloud'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 1:3 — *Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high.* The Wisdom enthroned in the cloudy pillar (Sirach 24:4) is the Son who is the brightness of the Father''s glory, upholding all things.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-covered-the-earth-as-a-cloud'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Colossians 1:15 — *Who is the image of the invisible Elohim (God), the firstborn of every creature.* Wisdom who alone compassed the circuit of heaven (Sirach 24:5) is the image of the invisible Elohim, the firstborn of all creation.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir24_lookup sv, _session253_sir24_lookup tv
+ WHERE t.slug='ecclesiasticus-24-covered-the-earth-as-a-cloud'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=24 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session253 — Sirach (Ecclesiasticus) cross-references complete.'

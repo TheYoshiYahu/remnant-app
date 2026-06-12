@@ -1,0 +1,102 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 23,
+  "session": "session253",
+  "tag": "sir23",
+  "base_band": 58850,
+  "threads": [
+    {
+      "slug": "sirach-23-set-a-watch-before-my-mouth",
+      "title": "Set scourges over my thoughts: the prayer to govern the heart",
+      "summary_md": "Ben Sira opens with a prayer for the governance of the inner man — that the discipline of wisdom would stand guard over both heart and tongue: *Who will set scourges over my thoughts, and the discipline of wisdom over my heart? that they spare me not for my ignorances, and it pass not by my sins* (Ecclesiasticus 23:2). It is the same cry he raised a chapter earlier: *Who shall set a watch before my mouth, and a seal of wisdom upon my lips, that I fall not suddenly by them, and that my tongue destroy me not?* (Ecclesiasticus 22:27) — the live deuterocanon answering itself. David prayed it in the Psalter: *For there is not a word in my tongue, but, lo, O Yahuah (LORD), thou knowest it altogether* (Psalm 139:4) — the all-knowing One who searches the thought before it is spoken. And James names the man who never learned this watch: *If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man's religion is vain* (James 1:26). It ain't new — the bridled tongue is the wisdom of the whole covenant.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 23, "src_v": 2, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 22, "tgt_v": 27, "tier": "extras",
+         "note": "Ecclesiasticus 22:27 — *Who shall set a watch before my mouth, and a seal of wisdom upon my lips, that I fall not suddenly by them, and that my tongue destroy me not?* The chapter before voices the very prayer Sirach 23:2 opens with — a seal upon the lips."},
+        {"src_ch": 23, "src_v": 2, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 139, "tgt_v": 4, "tier": "free",
+         "note": "Psalm 139:4 — *For there is not a word in my tongue, but, lo, O Yahuah (LORD), thou knowest it altogether.* David's psalm answers the plea of Sirach 23:2: the One who would discipline the heart already knows the word before it is uttered."},
+        {"src_ch": 23, "src_v": 1, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 26, "tier": "free",
+         "note": "James 1:26 — *If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man's religion is vain.* James echoes Sirach 23:1's prayer not to be left to one's own counsels — the unbridled tongue undoes all religion."}
+      ]
+    },
+    {
+      "slug": "sirach-23-accustom-not-thy-mouth-to-swearing",
+      "title": "Swear not at all: the naming of the Holy One",
+      "summary_md": "Ben Sira warns against the careless oath and the careless use of the divine Name: *Accustom not your mouth to swearing; neither use thyself to the naming of the Holy One* (Ecclesiasticus 23:9), for *A man that useth much swearing shall be filled with iniquity, and the plague shall never depart from his house* (Ecclesiasticus 23:11). This is Sinai's third word: *Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain; for Yahuah (LORD) will not hold him guiltless that taketh his name in vain* (Exodus 20:7), and the holiness code: *And ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD)* (Leviticus 19:12). On the mountain Yahusha gathers it all into one word: *But I say unto you, Swear not at all; neither by heaven; for it is Elohim's (God's) throne* (Matthew 5:34), and *But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil* (Matthew 5:37). James, the Sermon's truest heir, says it again: *But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation* (James 5:12). The Sermon on the Mount did not invent the guarded oath — it carried the Torah and the wisdom of ben Sira forward whole.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 23, "src_v": 9, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 20, "tgt_v": 7, "tier": "free",
+         "note": "Exodus 20:7 — *Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain; for Yahuah (LORD) will not hold him guiltless that taketh his name in vain.* Sinai's third word stands behind Sirach 23:9's charge not to accustom the mouth to naming the Holy One."},
+        {"src_ch": 23, "src_v": 9, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 19, "tgt_v": 12, "tier": "free",
+         "note": "Leviticus 19:12 — *And ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD).* The holiness code names the false oath as a profaning of the Name — exactly the swearing Sirach 23:9 forbids."},
+        {"src_ch": 23, "src_v": 9, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 5, "tgt_v": 34, "tier": "free",
+         "note": "Matthew 5:34 — *But I say unto you, Swear not at all; neither by heaven; for it is Elohim's (God's) throne.* On the mount Yahusha presses Sirach 23:9 to its root: not careless swearing tempered, but the oath forsworn altogether."},
+        {"src_ch": 23, "src_v": 9, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 5, "tgt_v": 37, "tier": "free",
+         "note": "Matthew 5:37 — *But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil.* The plain speech that needs no oath is the mouth Sirach 23:9 sought to discipline."},
+        {"src_ch": 23, "src_v": 11, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 5, "tgt_v": 12, "tier": "free",
+         "note": "James 5:12 — *But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation.* James warns of the condemnation that Sirach 23:11 calls the plague that never departs the swearer's house."}
+      ]
+    },
+    {
+      "slug": "sirach-23-discipline-of-the-mouth",
+      "title": "The discipline of the mouth: death and life in the tongue",
+      "summary_md": "*Hear, O you children, the discipline of the mouth: he that keepeth it shall never be taken in his lips* (Ecclesiasticus 23:7) — and its opposite, *The man that is accustomed to opprobrious words will never be reformed all the days of his life* (Ecclesiasticus 23:15). This is the running theme of Proverbs: *He that keepeth his mouth keepeth his life: but he that openeth wide his lips shall have destruction* (Proverbs 13:3), and *Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof* (Proverbs 18:21). Ben Sira will return to it with a hammer in his own next breath — *The stroke of the whip makes marks in the flesh: but the stroke of the tongue breaks the bones* (Ecclesiasticus 28:17) — and James makes the bridled tongue the measure of the whole man: *For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body* (James 3:2). Yahusha sets the standard at judgment: *every idle word that men shall speak, they shall give account thereof in the day of judgment* (Matthew 12:36). The wisdom of the guarded mouth runs unbroken from Proverbs through ben Sira to the Sermon.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 23, "src_v": 7, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 13, "tgt_v": 3, "tier": "free",
+         "note": "Proverbs 13:3 — *He that keepeth his mouth keepeth his life: but he that openeth wide his lips shall have destruction.* Proverbs says in a line what Sirach 23:7 names the discipline of the mouth — to keep it is to keep one's life."},
+        {"src_ch": 23, "src_v": 7, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 18, "tgt_v": 21, "tier": "free",
+         "note": "Proverbs 18:21 — *Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof.* The stakes of Sirach 23:7's discipline: the tongue holds death and life."},
+        {"src_ch": 23, "src_v": 15, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 28, "tgt_v": 17, "tier": "extras",
+         "note": "Ecclesiasticus 28:17 — *The stroke of the whip makes marks in the flesh: but the stroke of the tongue breaks the bones.* Ben Sira's own later word measures the ruin of the opprobrious mouth of Sirach 23:15 — the tongue wounds deeper than the whip."},
+        {"src_ch": 23, "src_v": 7, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 3, "tgt_v": 2, "tier": "free",
+         "note": "James 3:2 — *For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body.* James makes Sirach 23:7's kept mouth the measure of the perfect man."},
+        {"src_ch": 23, "src_v": 8, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 12, "tgt_v": 36, "tier": "free",
+         "note": "Matthew 12:36 — *But I say unto you, That every idle word that men shall speak, they shall give account thereof in the day of judgment.* The sinner taken in his own speech of Sirach 23:8 stands before the reckoning Yahusha names for every idle word."}
+      ]
+    },
+    {
+      "slug": "sirach-23-who-seeth-me-all-seeing-eyes",
+      "title": "Who seeth me? The eyes of Yahuah brighter than the sun",
+      "summary_md": "The adulterer hides in the dark and reasons in his heart: *Who seeth me? I am compassed about with darkness, the walls cover me, and no body seeth me; what need I to fear? the Most High will not remember my sins* (Ecclesiasticus 23:18). Ben Sira answers him with the all-seeing eye: *Such a man only fears the eyes of men, and knoweth not that the eyes of Yahuah (God) are ten thousand times brighter than the sun, beholding all the ways of men, and considering the most secret parts* (Ecclesiasticus 23:19). Solomon said it plainly: *For the ways of man are before the eyes of Yahuah (LORD), and he pondereth all his goings* (Proverbs 5:21) — set, as in Sirach, in the very chapter against the strange woman — and *The eyes of Yahuah (LORD) are in every place, beholding the evil and the good* (Proverbs 15:3). David found no darkness to hide in: *Whither shall I go from thy spirit? or whither shall I flee from thy presence?* (Psalm 139:7). And on the mount Yahusha drives the all-seeing eye inward, to the heart that thinks itself unseen: *whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart* (Matthew 5:28). The walls never covered anyone — the secret place was never secret.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 23, "src_v": 19, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 5, "tgt_v": 21, "tier": "free",
+         "note": "Proverbs 5:21 — *For the ways of man are before the eyes of Yahuah (LORD), and he pondereth all his goings.* Solomon sets the all-seeing eye in his own chapter against the strange woman — the very ground of Sirach 23:19."},
+        {"src_ch": 23, "src_v": 19, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 15, "tgt_v": 3, "tier": "free",
+         "note": "Proverbs 15:3 — *The eyes of Yahuah (LORD) are in every place, beholding the evil and the good.* No wall hides from the eye that Sirach 23:19 calls brighter than the sun."},
+        {"src_ch": 23, "src_v": 18, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 139, "tgt_v": 7, "tier": "free",
+         "note": "Psalm 139:7 — *Whither shall I go from thy spirit? or whither shall I flee from thy presence?* David knows there is no darkness to compass oneself about, against the adulterer's boast of Sirach 23:18."},
+        {"src_ch": 23, "src_v": 18, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 5, "tgt_v": 28, "tier": "free",
+         "note": "Matthew 5:28 — *But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.* Yahusha sees the secret thought of Sirach 23:18 itself as the act — the heart is never hidden."},
+        {"src_ch": 23, "src_v": 18, "tgt_edition": "canon", "tgt_book": "job", "tgt_ch": 31, "tgt_v": 1, "tier": "free",
+         "note": "Job 31:1 — *I made a covenant with mine eyes; why then should I think upon a maid?* Job is the man who refuses the adulterer's reasoning of Sirach 23:18 — guarding the eye before the heart ever thinks."}
+      ]
+    },
+    {
+      "slug": "sirach-23-fear-of-yahuah-the-commandments",
+      "title": "Nothing better than the fear of Yahuah, nothing sweeter than His commandments",
+      "summary_md": "Ben Sira closes the chapter not on judgment but on the covenant's sweetest end: *And they that remain shall know that there is nothing better than the fear of Yahuah (God), and that there is nothing sweeter than to take heed to the commandments of Yahuah (God)* (Ecclesiasticus 23:27), and *It is great glory to follow Yahuah (God), and to be received of him is long life* (Ecclesiasticus 23:28). The adulteress had despised exactly this: *first, she has disobeyed the law of the Most High* (Ecclesiasticus 23:23), and so *Her children shall not take root, and her branches shall bring forth no fruit* (Ecclesiasticus 23:25). The covenant's whole verdict turns on the law kept or spurned. The Psalmist sings the kept commandment as sweetness — and ben Sira ends the tongue-and-heart chapter the same place Torah ends every matter: the fear of Yahuah and His commandments are the long life of the one received. Torah stands; it ain't new.",
+      "anchor_start_v": 23,
+      "anchor_end_v": 28,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 23, "src_v": 23, "tgt_edition": "canon", "tgt_book": "job", "tgt_ch": 34, "tgt_v": 21, "tier": "free",
+         "note": "Job 34:21 — *For his eyes are upon the ways of man, and he seeth all his goings.* The same beholding eye brings the secret adulteress of Sirach 23:23, who disobeyed the law of the Most High, into the congregation for inquisition."},
+        {"src_ch": 23, "src_v": 25, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 12, "tgt_v": 3, "tier": "free",
+         "note": "Proverbs 12:3 — *A man shall not be established by wickedness: but the root of the righteous shall not be moved.* Solomon names the very contrast of Sirach 23:25: the wicked take no root, but the righteous cannot be moved."},
+        {"src_ch": 23, "src_v": 28, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 20, "tier": "free",
+         "note": "Deuteronomy 30:20 — *That thou mayest love Yahuah Elohayka (the LORD thy God), and that thou mayest obey his voice, and that thou mayest cleave unto him: for he is thy life, and the length of thy days: that thou mayest dwell in the land which Yahuah (LORD) sware unto thy fathers, to Abraham, to Isaac, and to Jacob, to give them.* Moses names the obedient cleaving as life and length of days — the same long life Sirach 23:28 promises the one received of Yahuah."}
+      ]
+    }
+  ]
+}
