@@ -1,0 +1,260 @@
+{
+  "edition": "apocrypha",
+  "book": "1-maccabees",
+  "chapter": 3,
+  "session": "session253",
+  "tag": "1mac3",
+  "base_band": 61550,
+  "threads": [
+    {
+      "slug": "1-maccabees-3-lion-of-judah-rises",
+      "title": "Judas the lion-whelp rises in his father's stead",
+      "summary_md": "Mattathias is gathered to his fathers and his son takes up the zeal: *Then his son Judas, called Maccabeus, rose up in his stead. And all his brothers helped him... and they fought with cheerfulness the battle of Yashar'el (Israel)* (1 Maccabees 3:1-2). Of him the chronicler writes, *In his acts he was like a lion, and like a lion's whelp roaring for his prey* (1 Maccabees 3:4) — and that figure is no accident, for it is the very blessing Jacob laid on the tribe from which the Hasmoneans came: *Yahudah (Judah) is a lion's whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* (Genesis 49:9). The lion of Judah stirs against the kingdom of man, *destroying the ungodly... and turning away wrath from Yashar'el (Israel)* (1 Maccabees 3:8) — the same Lion who at the last *hath prevailed to open the book*: *Behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book* (Revelation 5:5). This is no new thing; the covenant seed is kept, and one whelp of Judah after another roars until the Lion Himself comes.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 49,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Genesis 49:9 — *Yahudah (Judah) is a lion's whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* Jacob's blessing on Judah is the wellspring of the lion-imagery laid on Judas, the whelp of that tribe roaring against Israel's oppressors."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 5,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Revelation 5:5 — *And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof.* The lion-whelp Judas points forward to the Lion of Judah Himself, who alone prevails to deliver His people utterly."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-3-victory-not-in-the-host",
+      "title": "The victory standeth not in the multitude, but strength cometh from heaven",
+      "summary_md": "★ At Bethhoron the few faced the many, faint with fasting, and asked *How shall we be able, being so few, to fight against so great a multitude...?* (1 Maccabees 3:17). Judas answered with the marrow of the whole Scripture: *It is no hard matter for many to be shut up in the hands of a few; and with Yahuah (God) of heaven it is all one, to deliver with a great multitude, or a small company: For the victory of battle stands not in the multitude of an host; but strength comes from heaven* (1 Maccabees 3:18-19). It ain't new. Jonathan said it at the garrison: *there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). Asa cried it before the million of Zerah: *it is nothing with thee to help, whether with many, or with them that have no power... let not man prevail against thee* (2 Chronicles 14:11). The Psalmist sang it: *There is no king saved by the multitude of an host: a mighty man is not delivered by much strength* (Psalm 33:16). And the prophet sealed it as the word of Yahuah: *Not by might, nor by power, but by my spirit, saith Yahuah Tseva'ot (LORD of hosts)* (Zechariah 4:6). The brother-book confesses the same against the kingdom of man: *they trust in their weapons and boldness; but our confidence is in the Almighty* (2 Maccabees 8:18). The arm of flesh fails; strength comes from heaven.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "1-samuel",
+          "tgt_ch": 14,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "1 Samuel 14:6 — *And Jonathan said to the young man that bare his armour, Come, and let us go over unto the garrison of these uncircumcised: it may be that Yahuah (LORD) will work for us: for there is no restraint to Yahuah (LORD) to save by many or by few.* Jonathan's confidence at the garrison is the exact creed Judas preaches to his small company at Bethhoron."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 14,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "2 Chronicles 14:11 — *And Asa cried unto Yahuah Elohav (the LORD his God), and said, Yahuah (LORD), it is nothing with thee to help, whether with many, or with them that have no power: help us, O Yahuah (LORD) our Elohim (God); for we rest on thee, and in thy name we go against this multitude. O Yahuah (LORD), thou art our Elohim (God); let not man prevail against thee.* Asa facing a million is Judas facing Seron's host: the help of Yahuah makes the multitude and the few all one."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 33,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Psalm 33:16 — *There is no king saved by the multitude of an host: a mighty man is not delivered by much strength.* The Psalter states as settled doctrine the truth Judas applies on the field — the host saves no one; deliverance is from heaven."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 4,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Zechariah 4:6 — *Then he answered and spake unto me, saying, This is the word of Yahuah (LORD) unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith Yahuah Tseva'ot (LORD of hosts).* The prophet's word to the rebuilder is the same word in the Maccabee's mouth: strength comes not from the arm of flesh but from the Spirit of Yahuah."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 18,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 8,
+          "tgt_v": 18,
+          "tier": "extras",
+          "note": "2 Maccabees 8:18 — *For they, said he, trust in their weapons and boldness; but our confidence is in the Almighty who at a beck can cast down both them that come against us, and also all the world.* The sister-account preserves Judas confessing the very contrast he draws here — the enemy's multitude against the Almighty who delivers with great host or small."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-3-we-fight-for-our-lives-and-our-laws",
+      "title": "We fight for our lives and our laws — the covenant unto death",
+      "summary_md": "The Maccabean cause is not empire but covenant: *They come against us in much pride and iniquity to destroy us, and our wives and children, and to spoil us: But we fight for our lives and our laws* (1 Maccabees 3:20-21). This is Torah-faithfulness unto death — never law-as-curse, but the law loved as life against the kingdom of man that would abolish it. So Judas resolves the host before Emmaus: *it is better for us to die in battle, than to behold the calamities of our people and our sanctuary* (1 Maccabees 3:59), bowing all to heaven, *as the will of Yahuah (God) is in heaven, so let him do* (1 Maccabees 3:60) — the very prayer the Messiah would pray, *not as I will, but as thou wilt* (Matthew 26:39). They fought for the law because, as Moses charged, *it is not a vain thing for you; because it is your life* (Deuteronomy 32:47). To die rather than see the covenant trodden down is the witness of the seed kept.",
+      "anchor_start_v": 21,
+      "anchor_end_v": 21,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 32,
+          "tgt_v": 47,
+          "tier": "free",
+          "note": "Deuteronomy 32:47 — *For it is not a vain thing for you; because it is your life: and through this thing ye shall prolong your days in the land, whither ye go over Jordan to possess it.* Moses called the law Israel's very life, which is precisely why the Maccabees would die fighting for their laws rather than see them abolished."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 60,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 26,
+          "tgt_v": 39,
+          "tier": "free",
+          "note": "Matthew 26:39 — *And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt.* Judas' surrender of the battle's outcome to heaven's will foreshadows the Messiah's own Gethsemane submission, the same heart that bows to the Father against the kingdom of man."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-3-antiochus-roots-out-the-strength-of-israel",
+      "title": "Antiochus decrees to root out Israel and abolish the law — the abomination",
+      "summary_md": "The kingdom of man shows its true face: Antiochus charges Lysias *that he should send an army against them, to destroy and root out the strength of Yashar'el (Israel), and the remnant of Jerusalem, and to take away their memorial from that place* (1 Maccabees 3:35), the same king who waged war *in taking away the laws which had been of old time* (1 Maccabees 3:29). This is the antichrist pattern Daniel saw long before Antiochus came: *And arms shall stand on his part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate* (Daniel 11:31). The Messiah Himself reaches back through Antiochus to the end: *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place...* (Matthew 24:15). It is the same system in every age — the man of sin who *opposeth and exalteth himself above all that is called Elohim* (2 Thessalonians 2:4). What the Maccabees fought is what the saints will yet overcome: the dismantling of the kingdom of man, not the people of the covenant.",
+      "anchor_start_v": 35,
+      "anchor_end_v": 35,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 35,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 11,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "Daniel 11:31 — *And arms shall stand on his part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate.* Daniel foretold Antiochus' very decree to pollute the sanctuary and abolish the law that Judas now rises to resist."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 35,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Matthew 24:15 — *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* The Messiah reads Antiochus' desolation as the type of the last abomination, the same kingdom-of-man system the Maccabees confronted made manifest again."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 29,
+          "tgt_edition": "canon",
+          "tgt_book": "2-thessalonians",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Thessalonians 2:4 — *Who opposeth and exalteth himself above all that is called Elohim (God), or that is worshipped; so that he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God).* Antiochus' war on the ancient laws is the same self-exalting man-of-sin pattern Paul names — the antichrist system, not merely one tyrant."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-3-fast-sackcloth-and-prayer-at-mizpeh",
+      "title": "Fasting in sackcloth at Mizpeh — the assembly that asks mercy before battle",
+      "summary_md": "★ Before they draw the sword they bow the knee: the congregation gathers *that they might pray, and ask mercy and compassion* (1 Maccabees 3:44), mourning that *Jerusalem lay void as a wilderness... and joy was taken from Jacob, and the pipe with the harp ceased* (1 Maccabees 3:45). At Mizpeh, the old place of prayer, *Then they fasted that day, and put on sackcloth, and cast ashes upon their heads, and rent their clothes* (1 Maccabees 3:47), crying *How shall we be able to stand against them, except you, O Yahuah (God), be our help?* (1 Maccabees 3:53). This is no new liturgy. Jehoshaphat did exactly so against the great company: *And Jehoshaphat feared, and set himself to seek Yahuah (LORD), and proclaimed a fast throughout all Yahudah (Judah)* (2 Chronicles 20:3), pleading *we have no might against this great company that cometh against us; neither know we what to do: but our eyes are upon thee* (2 Chronicles 20:12). And the prophet Joel commanded the very assembly the Maccabees keep: *Blow the trumpet in Zion, sanctify a fast, call a solemn assembly* (Joel 2:15) — the trumpet they then sound (1 Maccabees 3:54). The sanctuary laid waste, the feasts turned to mourning, was already lamented in the first chapter: *Her sanctuary was laid waste like a wilderness, her feasts were turned into mourning, her sabbaths into reproach* (1 Maccabees 1:39). The covenant people seek mercy first; the battle belongs to Yahuah.",
+      "anchor_start_v": 44,
+      "anchor_end_v": 53,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 44,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 20,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "2 Chronicles 20:3 — *And Jehoshaphat feared, and set himself to seek Yahuah (LORD), and proclaimed a fast throughout all Yahudah (Judah).* Jehoshaphat's proclaimed fast before the great company is the very pattern the congregation keeps at Mizpeh before facing Antiochus' host."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 53,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 20,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "2 Chronicles 20:12 — *O our Elohim (God), wilt thou not judge them? for we have no might against this great company that cometh against us; neither know we what to do: but our eyes are upon thee.* Jehoshaphat's plea of helplessness with eyes fixed on Yahuah is the same cry the assembly raises — except thou be our help, how shall we stand?"
+        },
+        {
+          "src_ch": 3,
+          "src_v": 47,
+          "tgt_edition": "canon",
+          "tgt_book": "joel",
+          "tgt_ch": 2,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Joel 2:15 — *Blow the trumpet in Zion, sanctify a fast, call a solemn assembly:* Joel's command for a sanctified fast and solemn assembly is fulfilled to the letter at Mizpeh, where they fast, mourn, and then sound the trumpets."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 45,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "1-maccabees",
+          "tgt_ch": 1,
+          "tgt_v": 39,
+          "tier": "extras",
+          "note": "1 Maccabees 1:39 — *Her sanctuary was laid waste like a wilderness, her feasts were turned into mourning, her sabbaths into reproach her honour into contempt.* The opening lament over the desolated sanctuary and silenced feasts is the grief now driving the congregation to fast and pray for the city laid void as a wilderness."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-3-captains-of-thousands-and-the-war-exemptions",
+      "title": "Captains over thousands and the Torah war-exemptions kept",
+      "summary_md": "Judas orders the host by the pattern Moses set in the wilderness: *Then Judas ordained captains over the people, even captains over thousands, and over hundreds, and over fifties, and over tens* (1 Maccabees 3:55) — the very ranks Jethro counselled and Moses appointed: *and place such over them, to be rulers of thousands, and rulers of hundreds, rulers of fifties, and rulers of tens* (Exodus 18:21). And his muster keeps the law's own mercy, sending home *such as were building houses, or had betrothed wives, or were planting vineyards, or were fearful... every man to his own house, according to the law* (1 Maccabees 3:56). It ain't new — this is Deuteronomy's war-charge word for word: the officers release *what man is there that hath built a new house... that hath planted a vineyard... that hath betrothed a wife... that is fearful and fainthearted* (Deuteronomy 20:5-8). Even in his rising the Maccabee fights *according to the law*, the covenant kept down to the order of the camp.",
+      "anchor_start_v": 55,
+      "anchor_end_v": 56,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 55,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 18,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Exodus 18:21 — *Moreover thou shalt provide out of all the people able men, such as fear Elohim (God), men of truth, hating covetousness; and place such over them, to be rulers of thousands, and rulers of hundreds, rulers of fifties, and rulers of tens:* Jethro's counsel to Moses set the very ranks of thousands, hundreds, fifties, and tens that Judas now ordains over his army."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 56,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 20,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Deuteronomy 20:5 — *And the officers shall speak unto the people, saying, What man is there that hath built a new house, and hath not dedicated it? let him go and return to his house, lest he die in the battle, and another man dedicate it.* The Torah's release of the man with a new house is the first of the exemptions Judas keeps to the letter, sending such men home according to the law."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 56,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 20,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Deuteronomy 20:8 — *And the officers shall speak further unto the people, and they shall say, What man is there that is fearful and fainthearted? let him go and return unto his house, lest his brethren's heart faint as well as his heart.* The dismissal of the fearful in Judas' muster comes straight from this war-statute, the Maccabee ordering his camp according to the law of Moses."
+        }
+      ]
+    }
+  ]
+}

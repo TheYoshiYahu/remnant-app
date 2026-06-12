@@ -1,0 +1,210 @@
+{
+  "edition": "apocrypha",
+  "book": "1-maccabees",
+  "chapter": 13,
+  "session": "session253",
+  "tag": "1mac13",
+  "base_band": 61800,
+  "threads": [
+    {
+      "slug": "1-maccabees-13-simon-chosen-leader",
+      "title": "They chose Simon: be thou our leader",
+      "summary_md": "When Tryphon comes up to destroy Judea and the people quail, Simon stands in the gap and they raise him over them: *And they answered with a loud voice, saying, You shall be our leader instead of Judas and Jonathan your brother.* (1 Maccabees 13:8) — *Fight you our battles, and whatsoever, you commandest us, that will we do.* (1 Maccabees 13:9). This is the same covenant cry the brethren had raised over Jonathan when Judas fell — *Now therefore we have chosen you this day to be our prince and captain in his stead, that you may fight our battles.* (1 Maccabees 9:30): the leadership of the faithful remnant passes brother to brother, never broken, the seed kept against the kingdom-of-man. And Simon does not spare himself — he will spend his own life for the nation, which is the very measure the Messiah names: *Greater love hath no man than this, that a man lay down his life for his friends.* (John 15:13). The little flock of Yahudah is bent like a bow against Greece exactly as the prophet foresaw: *When I have bent Yahudah (Judah) for me, filled the bow with Ephraim, and raised up thy sons, O Zion, against thy sons, O Greece, and made thee as the sword of a mighty man.* (Zechariah 9:13).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 13,
+          "src_v": 8,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "1-maccabees",
+          "tgt_ch": 9,
+          "tgt_v": 30,
+          "tier": "extras",
+          "note": "1 Maccabees 9:30 — *Now therefore we have chosen you this day to be our prince and captain in his stead, that you may fight our battles.* The same acclamation once given to Jonathan now passes to Simon in 1-maccabees 13:8 — the remnant's leadership handed brother to brother, unbroken."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 15,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "John 15:13 — *Greater love hath no man than this, that a man lay down his life for his friends.* Simon's refusal to spare his own life for the nation in 1-maccabees 13:5 is the shape of the love the Messiah names and then perfects."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 9,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Zechariah 9:13 — *When I have bent Yahudah (Judah) for me, filled the bow with Ephraim, and raised up thy sons, O Zion, against thy sons, O Greece, and made thee as the sword of a mighty man.* The people pledging Simon to fight their battles in 1-maccabees 13:9 is the prophet's bow of Judah bent against the sons of Greece."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-13-brothers-slain-better-resurrection",
+      "title": "All my brothers are slain for Israel's sake",
+      "summary_md": "Simon counts the cost his house has paid for the laws and the sanctuary: *By reason of which all my brothers are slain for Yashar'el (Israel)'s sake, and I am left alone.* (1 Maccabees 13:4) — the Torah-faithful giving their lives rather than surrender the covenant, the charge their father laid on them: *Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.* (1 Maccabees 2:50). It is the priestly zeal of Phinehas, who stood for Yahuah and turned wrath away: *Phinehas, the son of Eleazar, the son of Aaron the priest, hath turned my wrath away from the children of Yashar'el (Israel), while he was zealous for my sake among them, that I consumed not the children of Yashar'el (Israel) in my jealousy.* (Numbers 25:11). And the hope under that dying is never the grave but the rising: *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection:* (Hebrews 11:35) — the very faith confessed by the brother under Antiochus' torments, *the King of the world shall raise us up, who have died for his laws, to everlasting life.* (2 Maccabees 7:9), which the prophet Daniel had already sealed: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 13,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "1-maccabees",
+          "tgt_ch": 2,
+          "tgt_v": 50,
+          "tier": "extras",
+          "note": "1 Maccabees 2:50 — *Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.* Simon's reckoning in 1-maccabees 13:3 of all the house has done for the laws and the sanctuary is the fulfilment of Mattathias' dying charge."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 25,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Numbers 25:11 — *Phinehas, the son of Eleazar, the son of Aaron the priest, hath turned my wrath away from the children of Yashar'el (Israel), while he was zealous for my sake among them, that I consumed not the children of Yashar'el (Israel) in my jealousy.* The brothers slain for Israel's sake in 1-maccabees 13:4 carry the priestly zeal of Phinehas, who stood for the covenant."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Hebrews 11:35 — *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection:* The brothers slain in 1-maccabees 13:4 are among those tortured who looked past deliverance to the better resurrection."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 4,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "2 Maccabees 7:9 — *And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life.* The hope behind the brothers' deaths in 1-maccabees 13:4 is voiced plainly by the martyr brother under the same persecution."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* Daniel had already sealed the everlasting life that crowns the brothers fallen for Israel in 1-maccabees 13:4."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-13-yoke-removed-first-year",
+      "title": "The yoke taken away: the first year of Simon",
+      "summary_md": "The deliverance is reckoned not as conquest but as release: *Thus the yoke of the heathen was taken away from Yashar'el (Israel) in the hundred and seventieth year.* (1 Maccabees 13:41) — *Then the people of Yashar'el (Israel) began to write in their instruments and contracts, In the first year of Simon the high priest, the governor and leader of the Yahudim (Jews).* (1 Maccabees 13:42). A new reckoning of years, a first year — this is the language of the jubilee, the year of liberty: *And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family.* (Leviticus 25:10). The breaking of the heathen yoke is the very deliverance Yeshayahu sang of the Messiah's day: *For thou hast broken the yoke of his burden, and the staff of his shoulder, the rod of his oppressor, as in the day of Midian.* (Isaiah 9:4) — *And it shall come to pass in that day, that his burden shall be taken away from off thy shoulder, and his yoke from off thy neck, and the yoke shall be destroyed because of the anointing.* (Isaiah 10:27). The oppressor's kingdom is dismantled and the burden lifted from the shoulder: *That I will break the Assyrian in my land, and upon my mountains tread him under foot: then shall his yoke depart from off them, and his burden depart from off their shoulders.* (Isaiah 14:25).",
+      "anchor_start_v": 41,
+      "anchor_end_v": 42,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 13,
+          "src_v": 42,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 25,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Leviticus 25:10 — *And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family.* Israel's new reckoning from the first year of Simon in 1-maccabees 13:42 is the jubilee proclamation of liberty written into their dating itself."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 41,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 9,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Isaiah 9:4 — *For thou hast broken the yoke of his burden, and the staff of his shoulder, the rod of his oppressor, as in the day of Midian.* The heathen yoke taken away in 1-maccabees 13:41 is the broken yoke Isaiah sang of in the day of the Child to be born."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 41,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 10,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Isaiah 10:27 — *And it shall come to pass in that day, that his burden shall be taken away from off thy shoulder, and his yoke from off thy neck, and the yoke shall be destroyed because of the anointing.* The yoke destroyed because of the anointing answers the heathen yoke lifted from Israel in 1-maccabees 13:41."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 41,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 14,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Isaiah 14:25 — *That I will break the Assyrian in my land, and upon my mountains tread him under foot: then shall his yoke depart from off them, and his burden depart from off their shoulders.* Yahuah's pledge to break the oppressor and lift the burden from the shoulder is realized when the yoke departs from Israel in 1-maccabees 13:41."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-13-cleansed-citadel-feast",
+      "title": "He cleansed the houses of idols and kept the day",
+      "summary_md": "Simon takes Gaza, then at last the citadel that had defiled Jerusalem, and enters not with plunder but with purging: *but put them out of the city, and cleansed the houses in which the idols were, and so entered into it with songs and thanksgiving.* (1 Maccabees 13:47) — *Yea, he put all uncleanness out of it, and placed such men there as would keep the law, and made it stronger than it was before, and built in it a dwellingplace for himself.* (1 Maccabees 13:48). He enters the tower with palm branches and harps and hymns, and *ordained also that that day should be kept every year with gladness* (1 Maccabees 13:52) — a feast born of cleansing the sanctuary, the kind the Messiah Himself would keep: *And it was at Jerusalem the feast of the dedication, and it was winter.* (John 10:22). The casting out of idols is the promised cleansing of the covenant people: *Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you.* (Ezekiel 36:25) — until the holy city holds nothing unclean: *Awake, awake; put on thy strength, O Zion; put on thy beautiful garments, O Jerusalem, the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean.* (Isaiah 52:1), every vessel made holiness to Yahuah: *Yea, every pot in Jerusalem and in Yahudah (Judah) shall be holiness unto Yahuah Tseva'ot (LORD of hosts): and all they that sacrifice shall come and take of them, and seethe therein: and in that day there shall be no more the Canaanite in the house of Yahuah Tseva'ot (LORD of hosts).* (Zechariah 14:21).",
+      "anchor_start_v": 47,
+      "anchor_end_v": 52,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 13,
+          "src_v": 52,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 10,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "John 10:22 — *And it was at Jerusalem the feast of the dedication, and it was winter.* Simon's ordaining the day of the cleansed citadel to be kept every year in 1-maccabees 13:52 belongs to the same feast of dedication the Messiah Himself kept in Jerusalem."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 47,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 36,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Ezekiel 36:25 — *Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you.* Simon cleansing the houses of the idols in 1-maccabees 13:47 enacts the promised cleansing of the covenant people from their idols."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 48,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 52,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 52:1 — *Awake, awake; put on thy strength, O Zion; put on thy beautiful garments, O Jerusalem, the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean.* Simon putting all uncleanness out and setting law-keepers there in 1-maccabees 13:48 is the holy city into which the unclean shall come no more."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 48,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 14,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Zechariah 14:21 — *Yea, every pot in Jerusalem and in Yahudah (Judah) shall be holiness unto Yahuah Tseva'ot (LORD of hosts): and all they that sacrifice shall come and take of them, and seethe therein: and in that day there shall be no more the Canaanite in the house of Yahuah Tseva'ot (LORD of hosts).* Simon's purged stronghold of law-keepers in 1-maccabees 13:48 foreshadows the day when all Jerusalem is holiness and no defiled thing remains."
+        }
+      ]
+    }
+  ]
+}

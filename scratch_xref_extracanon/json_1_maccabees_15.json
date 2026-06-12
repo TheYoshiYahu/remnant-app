@@ -1,0 +1,140 @@
+{
+  "edition": "apocrypha",
+  "book": "1-maccabees",
+  "chapter": 15,
+  "session": "session253",
+  "tag": "1mac15",
+  "base_band": 61850,
+  "threads": [
+    {
+      "slug": "1-maccabees-15-flatteries-of-the-king",
+      "title": "The king who comes in by flatteries",
+      "summary_md": "Antiochus VII, pressing his claim, courts Simon with a sheaf of honours: *Now therefore I confirm to you all the oblations which the kings before me granted you, and whatsoever gifts besides they granted.* (1 Maccabees 15:5), promising *we will honour you, and your nation, and your temple, with great honour, so that your honour shall be known throughout the world.* (1 Maccabees 15:9). It is the kingdom-of-man's old craft — not the sword first but the smooth word, the same way Daniel foresaw the vile one rising: *And in his estate shall stand up a vile person, to whom they shall not give the honour of the kingdom: but he shall come in peaceably, and obtain the kingdom by flatteries.* (Daniel 11:21). Yet the true honour of the nations bowing to the covenant people is no Seleucid grant; it is Yahuah's promise: *And kings shall be thy nursing fathers, and their queens thy nursing mothers: they shall bow down to thee with their face toward the earth, and lick up the dust of thy feet; and thou shalt know that I am Yahuah (LORD): for they shall not be ashamed that wait for me.* (Isaiah 49:23). The system of man flatters to seize; the kingdom of Elohim exalts those who wait for Him.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 15,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 11,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Daniel 11:21 — *And in his estate shall stand up a vile person, to whom they shall not give the honour of the kingdom: but he shall come in peaceably, and obtain the kingdom by flatteries.* The Seleucid honours of 1 Maccabees 15:9 are flatteries of the king-of-man, who gains by smooth words what he cannot hold by right."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 49,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Isaiah 49:23 — *And kings shall be thy nursing fathers, and their queens thy nursing mothers: they shall bow down to thee with their face toward the earth, and lick up the dust of thy feet; and thou shalt know that I am Yahuah (LORD): for they shall not be ashamed that wait for me.* The honour Antiochus dangles in 1 Maccabees 15:9 is a counterfeit of the true exaltation Yahuah gives the people who wait for Him."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-15-nations-acknowledge-the-gathered",
+      "title": "The nations write to spare the regathered people",
+      "summary_md": "Rome's consul sends letters to every king and country on behalf of the Jews: *We thought it good therefore to write to the kings and countries, that they should do them no harm, nor fight against them, their cities, or countries, nor yet aid their enemies against them.* (1 Maccabees 15:19), and the roll of nations is read out — *And to all the countries and to Sampsames, and the Lacedemonians, and to Delus, and Myndus, and Sicyon, and Caria, and Samos, and Pamphylia, and Lycia, and Halicarnassus, and Rhodus, and Aradus, and Cos, and Side, and Aradus, and Gortyna, and Cnidus, and Cyprus, and Cyrene.* (1 Maccabees 15:23) — the dispersed of Israel acknowledged across the isles of the sea. This is the prophets' picture of the ingathering, when the Gentiles themselves carry the covenant people home: *Thus saith Adonai Yahuah (the Lord GOD), Behold, I will lift up mine hand to the Gentiles, and set up my standard to the people: and they shall bring thy sons in their arms, and thy daughters shall be carried upon their shoulders.* (Isaiah 49:22). Isaiah saw the kings drawn to her light — *And the Gentiles shall come to thy light, and kings to the brightness of thy rising.* (Isaiah 60:3) — and Zechariah the strong nations seeking Yahuah in Jerusalem: *Yea, many people and strong nations shall come to seek Yahuah Tseva'ot (LORD of hosts) in Jerusalem, and to pray before Yahuah (LORD).* (Zechariah 8:22). The nations bending toward the gathered remnant is the covenant kept — not a people replaced, but Israel honoured among the kingdoms.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 15,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 49,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 49:22 — *Thus saith Adonai Yahuah (the Lord GOD), Behold, I will lift up mine hand to the Gentiles, and set up my standard to the people: and they shall bring thy sons in their arms, and thy daughters shall be carried upon their shoulders.* The Roman decree of 1 Maccabees 15:19 protecting the Jews among the nations foreshadows the day Yahuah moves the Gentiles to carry His scattered people home."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 60,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Isaiah 60:3 — *And the Gentiles shall come to thy light, and kings to the brightness of thy rising.* The catalogue of nations addressed on Israel's behalf in 1 Maccabees 15:23 anticipates the Gentiles and their kings drawn toward the light of the regathered people."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 8,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Zechariah 8:22 — *Yea, many people and strong nations shall come to seek Yahuah Tseva'ot (LORD of hosts) in Jerusalem, and to pray before Yahuah (LORD).* The ambassadors of the high priest renewing league with the nations in 1 Maccabees 15:17 prefigure the strong nations turning toward Jerusalem and her God."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-15-inheritance-of-the-fathers",
+      "title": "We hold the inheritance of our fathers",
+      "summary_md": "When Athenobius demands Joppa and Gazera back, Simon answers from the covenant: *We have neither taken other men's land, nor holden that which appertaineth to others, but the inheritance of our fathers, which our enemies had wrongfully in possession a certain time.* (1 Maccabees 15:33), and presses it home — *Wherefore we, having opportunity, hold the inheritance of our fathers.* (1 Maccabees 15:34). The land is no spoil of conquest but the grant of Yahuah, who alone owns it and gave it to Israel's fathers: *The land shall not be sold for ever: for the land is mine; for ye are strangers and sojourners with me.* (Leviticus 25:23). And when the inheritance is held in faithfulness, the land itself answers, as it did under Simon: *Then did they till their ground in peace, and the earth gave her increase, and the trees of the field their fruit.* (1 Maccabees 14:8). Simon claims no empire of man; he keeps the portion the covenant assigned.",
+      "anchor_start_v": 33,
+      "anchor_end_v": 34,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 15,
+          "src_v": 33,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 25,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Leviticus 25:23 — *The land shall not be sold for ever: for the land is mine; for ye are strangers and sojourners with me.* Simon's plea in 1 Maccabees 15:33 that they hold only the inheritance of their fathers rests on Yahuah's claim that the land is His gift to Israel, not man's to barter."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 34,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "1-maccabees",
+          "tgt_ch": 14,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "1 Maccabees 14:8 — *Then did they till their ground in peace, and the earth gave her increase, and the trees of the field their fruit.* When the inheritance of the fathers is held in faithfulness as Simon insists in 1 Maccabees 15:34, the covenant land yields its increase in peace."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-15-the-king-breaks-the-covenant",
+      "title": "He brake all the covenants he had made",
+      "summary_md": "Once Tryphon is cornered, Antiochus no longer needs Simon, and his fair words turn: *Nevertheless he would not receive them, but brake all the covenants which he had made with him afore, and became strange to him.* (1 Maccabees 15:27). This is the signature of the kingdom-of-man — the league made only to be broken when the advantage shifts, as Daniel foresaw of the prince to come: *And after threescore and two weeks shall Messiah be cut off, but not for himself: and the people of the prince that shall come shall destroy the city and the sanctuary; and the end thereof shall be with a flood, and unto the end of the war desolations are determined.* (Daniel 9:26). Set against the faithless Antiochus stands the league Israel sought with steadfastness, recorded as a perpetual word: *Good success be to the Romans, and to the people of the Yahudim (Jews), by sea and by land for ever: the sword also and enemy be far from them,* (1 Maccabees 8:23). The system of man swears and forswears; the covenant of Yahuah endures, and His people keep faith though kings do not.",
+      "anchor_start_v": 27,
+      "anchor_end_v": 27,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 15,
+          "src_v": 27,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Daniel 9:26 — *And after threescore and two weeks shall Messiah be cut off, but not for himself: and the people of the prince that shall come shall destroy the city and the sanctuary; and the end thereof shall be with a flood, and unto the end of the war desolations are determined.* Antiochus breaking all his covenants in 1 Maccabees 15:27 is the same treachery of the prince-to-come, whose word lasts only as long as it serves him."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 27,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "1-maccabees",
+          "tgt_ch": 8,
+          "tgt_v": 23,
+          "tier": "extras",
+          "note": "1 Maccabees 8:23 — *Good success be to the Romans, and to the people of the Yahudim (Jews), by sea and by land for ever: the sword also and enemy be far from them,* Against Antiochus, who in 1 Maccabees 15:27 brake every covenant, stands the league Israel sought as a word meant to stand for ever."
+        }
+      ]
+    }
+  ]
+}

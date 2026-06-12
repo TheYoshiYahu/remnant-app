@@ -1,0 +1,250 @@
+{
+  "edition": "apocrypha",
+  "book": "1-maccabees",
+  "chapter": 4,
+  "session": "session253",
+  "tag": "1mac4",
+  "base_band": 61575,
+  "threads": [
+    {
+      "slug": "1-maccabees-4-cry-to-heaven-red-sea",
+      "title": "Cry to heaven — delivered as at the Red Sea",
+      "summary_md": "Outnumbered and ill-armed, Judas turns the men not to their swords but to the covenant: *Remember how our fathers were delivered in the Red sea, when Pharaoh pursued them with an army. Now therefore let us cry to heaven, if perhaps Yahuah (God) will have mercy upon us, and remember the covenant of our fathers, and destroy this host before our face this day* (1 Maccabees 4:9-10). It is the very posture of the deliverance he names: *And Moses said unto the people, Fear ye not, stand still, and see the salvation of Yahuah (LORD), which he will shew to you to day* (Exodus 14:13), for *Yahuah (LORD) shall fight for you, and ye shall hold your peace* (Exodus 14:14). The plea rests on remembered covenant, not on the strength of the camp — *That so all the heathen may know that there is one who delivers and saves Yashar'el (Israel))* (1 Maccabees 4:11), the same confession David carried into the valley: *for the battle is the LORD'S, and he will give you into our hands* (1 Samuel 17:47). It ain't new: the same Elohim who drowned Pharaoh routs the host at Emmaus.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 4,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 14,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Exodus 14:13 — *And Moses said unto the people, Fear ye not, stand still, and see the salvation of Yahuah (LORD), which he will shew to you to day: for the Egyptians whom ye have seen to day, ye shall see them again no more for ever.* Judas names this very Red-Sea deliverance as the ground of his hope in 1 Maccabees 4:9."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 14,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Exodus 14:14 — *Yahuah (LORD) shall fight for you, and ye shall hold your peace.* The fathers stood still while Yahuah fought Pharaoh, the pattern Judas invokes in 1 Maccabees 4:9."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "1-samuel",
+          "tgt_ch": 17,
+          "tgt_v": 47,
+          "tier": "free",
+          "note": "1 Samuel 17:47 — *And all this assembly shall know that Yahuah (LORD) saveth not with sword and spear: for the battle is the LORD'S, and he will give you into our hands.* David's confession that the battle is Yahuah's matches Judas' aim in 1 Maccabees 4:11, that all the heathen may know there is one who saves Yashar'el."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-4-the-war-of-faith",
+      "title": "Turned to flight the armies of the aliens",
+      "summary_md": "Three thousand without armour scatter the harnessed host, and the next year ten thousand break the sixty thousand of Lysias: *So they joined battle; and there were slain of the host of Lysias about five thousand men, even before them were they slain* (1 Maccabees 4:34). This is the war of faith the cloud of witnesses is praised for: *Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions* (Hebrews 11:33), they *escaped the edge of the sword, out of weakness were made strong, waxed valiant in fight, turned to flight the armies of the aliens* (Hebrews 11:34). Before the battle Judas prays to the one who threw down Goliath: *Blessed art you, O Saviour of Yashar'el (Israel), who did quell the violence of the mighty man by the hand of your servant David* (1 Maccabees 4:30) — the same name David carried: *but I come to thee in the name of Yahuah Tseva'ot (LORD of hosts), the Elohim (God) of the armies of Yashar'el (Israel)* (1 Samuel 17:45). Hebrews 11 is not pointing at a church but at this very seed kept through the sword.",
+      "anchor_start_v": 30,
+      "anchor_end_v": 34,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 4,
+          "src_v": 34,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 34,
+          "tier": "free",
+          "note": "Hebrews 11:34 — *Quenched the violence of fire, escaped the edge of the sword, out of weakness were made strong, waxed valiant in fight, turned to flight the armies of the aliens.* The praise of those who turned the armies of the aliens to flight reads as a portrait of the Maccabean victory of 1 Maccabees 4:34."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 30,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 33,
+          "tier": "free",
+          "note": "Hebrews 11:33 — *Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions,* — the faith that subdued kingdoms is the faith of Judas, who prays for the host to be given into his hand in 1 Maccabees 4:30."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 30,
+          "tgt_edition": "canon",
+          "tgt_book": "1-samuel",
+          "tgt_ch": 17,
+          "tgt_v": 45,
+          "tier": "free",
+          "note": "1 Samuel 17:45 — *Then said David to the Philistine, Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of Yahuah Tseva'ot (LORD of hosts), the Elohim (God) of the armies of Yashar'el (Israel), whom thou hast defied.* Judas appeals to this very deliverance by the hand of David in 1 Maccabees 4:30."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-4-song-of-thanksgiving-mercy",
+      "title": "His mercy endureth forever",
+      "summary_md": "Returning from the rout, the people do what Yashar'el has always done after deliverance — they sing: *After this they went home, and sung a song of thanksgiving, and praised Yahuah (God) in heaven: because it is good, because his mercy endureth forever* (1 Maccabees 4:24). The refrain is lifted word for word from the great hallel: *O give thanks unto Yahuah (LORD); for he is good: for his mercy endureth for ever* (Psalm 136:1). And the song itself is the song of the sea Judas had just remembered: *Then sang Moses and the children of Yashar'el (Israel) this song unto Yahuah (LORD)... I will sing unto Yahuah (LORD), for he hath triumphed gloriously* (Exodus 15:1). It ain't new — the song of Moses is still the song in the mouth of the delivered remnant.",
+      "anchor_start_v": 24,
+      "anchor_end_v": 25,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 4,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 136,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 136:1 — *O give thanks unto Yahuah (LORD); for he is good: for his mercy endureth for ever.* The song of thanksgiving in 1 Maccabees 4:24 quotes this hallel refrain exactly — because it is good, because his mercy endureth forever."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 15,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Exodus 15:1 — *Then sang Moses and the children of Yashar'el (Israel) this song unto Yahuah (LORD), and spake, saying, I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.* The delivered army's song in 1 Maccabees 4:24 is the song of the sea sung again after a like deliverance."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-4-cleanse-the-sanctuary",
+      "title": "Let us go up to cleanse the sanctuary",
+      "summary_md": "With the enemy discomfited, Judas turns to the desolated house: *Behold, our enemies are discomfited: let us go up to cleanse and dedicate the sanctuary* (1 Maccabees 4:36). They find it ruined — *the sanctuary desolate, and the altar profaned, and the gates burned up, and shrubs growing in the courts as in a forest* (1 Maccabees 4:38) — the abomination Daniel foresaw: *How long shall be the vision concerning the daily sacrifice, and the transgression of desolation, to give both the sanctuary and the host to be trodden under foot?* with its promised end, *then shall the sanctuary be cleansed* (Daniel 8:13-14). It is the desolation the Messiah named as still to come: *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place* (Matthew 24:15). And the cleansing is no new rite — it is Hezekiah's again: *And they gathered their brethren, and sanctified themselves, and came, according to the commandment of the king, by the words of Yahuah (LORD), to cleanse the house of Yahuah (LORD)* (2 Chronicles 29:15). Antiochus is the man-of-sin's type — the SYSTEM dismantled, the house reclaimed.",
+      "anchor_start_v": 36,
+      "anchor_end_v": 43,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 4,
+          "src_v": 38,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 8,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Daniel 8:14 — *And he said unto me, Unto two thousand and three hundred days; then shall the sanctuary be cleansed.* Daniel's promise that the sanctuary would be cleansed is fulfilled in the cleansing Judas begins at the desolate sanctuary of 1 Maccabees 4:38."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 38,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Matthew 24:15 — *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* The profaned altar and desolate sanctuary of 1 Maccabees 4:38 is the same abomination of desolation the Messiah warns would stand again."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 43,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 29,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "2 Chronicles 29:15 — *And they gathered their brethren, and sanctified themselves, and came, according to the commandment of the king, by the words of Yahuah (LORD), to cleanse the house of Yahuah (LORD).* Hezekiah's gathering of blameless brethren to cleanse the house is the very work the chosen priests do in 1 Maccabees 4:43."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-4-altar-of-whole-stones",
+      "title": "Whole stones according to the law",
+      "summary_md": "The defiled altar of burnt offerings they will not reuse — *they pulled it down, And laid up the stones in the mountain of the temple in a convenient place, until there should come a prophet to shew what should be done with them* (1 Maccabees 4:45-46). Then they build by the book: *Then they took whole stones according to the law, and built a new altar according to the former* (1 Maccabees 4:47). The law they keep is Sinai's: *And if thou wilt make me an altar of stone, thou shalt not build it of hewn stone: for if thou lift up thy tool upon it, thou hast polluted it* (Exodus 20:25), repeated for the land: *Thou shalt build the altar of Yahuah Elohayka (the LORD thy God) of whole stones* (Deuteronomy 27:6). And the hallowing of the new sanctuary and its vessels (1 Maccabees 4:48-49) follows the first hallowing: *And thou shalt anoint the altar of the burnt offering, and all his vessels, and sanctify the altar: and it shall be an altar most holy* (Exodus 40:10). Torah-faithfulness even in the rubble — the seed keeps the commandment, not law-as-curse but law as the very form of the new altar.",
+      "anchor_start_v": 47,
+      "anchor_end_v": 49,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 4,
+          "src_v": 47,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 20,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Exodus 20:25 — *And if thou wilt make me an altar of stone, thou shalt not build it of hewn stone: for if thou lift up thy tool upon it, thou hast polluted it.* The whole, unhewn stones of the new altar in 1 Maccabees 4:47 are built exactly to this Sinai command."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 47,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 27,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Deuteronomy 27:6 — *Thou shalt build the altar of Yahuah Elohayka (the LORD thy God) of whole stones: and thou shalt offer burnt offerings thereon unto Yahuah Elohayka (the LORD thy God):* The Maccabees' new altar of whole stones for burnt offerings in 1 Maccabees 4:47 keeps this Torah ordinance."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 48,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 40,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Exodus 40:10 — *And thou shalt anoint the altar of the burnt offering, and all his vessels, and sanctify the altar: and it shall be an altar most holy.* The hallowing of the sanctuary and its vessels in 1 Maccabees 4:48 repeats the first sanctifying of the altar and its vessels."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-4-feast-of-dedication",
+      "title": "The feast of the dedication — eight days with gladness",
+      "summary_md": "On the very day the heathen had defiled it, the altar is dedicated: *Look, at what time and what day the heathen had profaned it, even in that was it dedicated with songs, and citherns, and harps, and cymbals* (1 Maccabees 4:54), *And so they kept the dedication of the altar eight days and offered burnt offerings with gladness* (1 Maccabees 4:56), and they ordain *that the days of the dedication of the altar should be kept in their season from year to year by the space of eight days* (1 Maccabees 4:59). This is Hanukkah — and the Messiah himself kept it: *And it was at Jerusalem the feast of the dedication, and it was winter. And Yahusha (Jesus) walked in the temple in Solomon's porch* (John 10:22-23). Its sister-book records the same eight days: *And they kept the eight days with gladness, as in the feast of the tabernacles* (2 Maccabees 10:6). And dedicating the house with songs is itself a Davidic title — *a song at the dedication of the house*: *Thou hast turned for me my mourning into dancing: thou hast put off my sackcloth, and girded me with gladness* (Psalm 30:11). The feast kept here is the feast the Messiah walked in — it ain't new.",
+      "anchor_start_v": 54,
+      "anchor_end_v": 59,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 4,
+          "src_v": 59,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 10,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "John 10:22 — *And it was at Jerusalem the feast of the dedication, and it was winter.* The eight-day dedication the Maccabees ordain forever in 1 Maccabees 4:59 is the very feast of the dedication the Messiah is found keeping."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 59,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 10,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "John 10:23 — *And Yahusha (Jesus) walked in the temple in Solomon's porch.* The Messiah himself walks in the temple at the feast 1 Maccabees 4:59 commands to be kept from year to year."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 54,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 30,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Psalm 30:11 — *Thou hast turned for me my mourning into dancing: thou hast put off my sackcloth, and girded me with gladness;* This song at the dedication of the house matches the dedication kept with songs and gladness in 1 Maccabees 4:54."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 56,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 10,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "2 Maccabees 10:6 — *And they kept the eight days with gladness, as in the feast of the tabernacles, remembering that not long afore they had held the feast of the tabernacles, when as they wandered in the mountains and dens like beasts.* The sister-account confirms the same eight days of gladness that 1 Maccabees 4:56 records."
+        }
+      ]
+    }
+  ]
+}

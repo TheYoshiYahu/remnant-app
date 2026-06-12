@@ -1,0 +1,210 @@
+{
+  "edition": "apocrypha",
+  "book": "1-maccabees",
+  "chapter": 14,
+  "session": "session253",
+  "tag": "1mac14",
+  "base_band": 61825,
+  "threads": [
+    {
+      "slug": "1-maccabees-14-vine-and-fig-tree",
+      "title": "Every man under his vine and fig tree",
+      "summary_md": "When Simon's hand held the land, Yashar'el tasted the messianic shalom: *Then did they till their ground in peace, and the earth gave her increase, and the trees of the field their fruit* (1 Maccabees 14:8), and *For every man sat under his vine and his fig tree, and there was none to fray them* (1 Maccabees 14:12). This is no new picture — it is the prophets' very emblem of the kingdom. Micah set it in the last days: *But they shall sit every man under his vine and under his fig tree; and none shall make them afraid: for the mouth of Yahuah Tseva'ot (LORD of hosts) hath spoken it* (Micah 4:4). Zechariah hung it on the day of the BRANCH: *In that day, saith Yahuah Tseva'ot (LORD of hosts), shall ye call every man his neighbour under the vine and under the fig tree* (Zechariah 3:10). It was Solomon's golden reign remembered: *And Yahudah (Judah) and Yashar'el (Israel) dwelt safely, every man under his vine and under his fig tree, from Dan even to Beer-sheba, all the days of Solomon* (1 Kings 4:25). And it is Torah's own covenant promise to the obedient: *Then I will give you rain in due season, and the land shall yield her increase, and the trees of the field shall yield their fruit* (Leviticus 26:4). Simon's peace is a firstfruits foretaste of the rest the Messiah brings — it ain't new.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "micah",
+          "tgt_ch": 4,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Micah 4:4 — *But they shall sit every man under his vine and under his fig tree; and none shall make them afraid: for the mouth of Yahuah Tseva'ot (LORD of hosts) hath spoken it.* The very phrase 1 Maccabees 14:12 uses for Simon's peace is Micah's portrait of the last-days kingdom, none to fray them."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 3,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Zechariah 3:10 — *In that day, saith Yahuah Tseva'ot (LORD of hosts), shall ye call every man his neighbour under the vine and under the fig tree.* Zechariah binds the vine-and-fig-tree rest to the day of the BRANCH, the same shalom Simon's rule briefly foreshadows in 1 Maccabees 14:12."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 4,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "1 Kings 4:25 — *And Yahudah (Judah) and Yashar'el (Israel) dwelt safely, every man under his vine and under his fig tree, from Dan even to Beer-sheba, all the days of Solomon.* Simon's quiet land in 1 Maccabees 14:12 is Solomon's golden peace recovered, a sign of the greater Son of David's reign."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 26,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Leviticus 26:4 — *Then I will give you rain in due season, and the land shall yield her increase, and the trees of the field shall yield their fruit.* The earth giving her increase and the trees their fruit in 1 Maccabees 14:8 is Torah's own covenant blessing on a people who walk in the statutes — never law-as-curse, but obedience answered with fruit."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-14-law-searched-sanctuary",
+      "title": "The law he searched out, the sanctuary he beautified",
+      "summary_md": "Simon's peace was no mere prosperity; it was covenant-keeping made visible: *Moreover he strengthened all those of his people that were brought low: the law he searched out; and every contemner of the law and wicked person he took away* (1 Maccabees 14:14), and *He beautified the sanctuary, and multiplied vessels of the temple* (1 Maccabees 14:15). This is the Torah-faithfulness that the whole Maccabean witness defends unto death. Leviticus tied the land's safety to exactly such walking: *And I will give peace in the land, and ye shall lie down, and none shall make you afraid: and I will rid evil beasts out of the land, neither shall the sword go through your land* (Leviticus 26:6). And the hope of those who searched out the law and would not break it was resurrection — the same hope Hebrews honours: *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection* (Hebrews 11:35). Their own brothers had confessed it: *And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9). The law searched out is the seed kept for the day Daniel foresaw: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2).",
+      "anchor_start_v": 14,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 26,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Leviticus 26:6 — *And I will give peace in the land, and ye shall lie down, and none shall make you afraid: and I will rid evil beasts out of the land, neither shall the sword go through your land.* Simon searching out the law and taking away every contemner in 1 Maccabees 14:14 is the covenant condition under which Yahuah promises this very peace and rest."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Hebrews 11:35 — *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection.* The Torah-faithful Simon strengthened in 1 Maccabees 14:14 are the very people Hebrews crowns, who held the law unto a better resurrection rather than break the covenant."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 14,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "2 Maccabees 7:9 — *And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life.* The law Simon searches out in 1 Maccabees 14:14 is the same law for which the seven brothers died, certain the King of the world would raise them up."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The seed kept faithful to the law in 1 Maccabees 14:14 looks to Daniel's promised awakening, the resurrection that is the true hope of the covenant-keepers."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-14-enduring-priesthood",
+      "title": "The covenant of an enduring priesthood",
+      "summary_md": "The nation cried, *What thanks shall we give to Simon and his sons? For he and his brothers and the house of his father have established Yashar'el (Israel)* (1 Maccabees 14:25-26), and they confirmed the high priesthood to his house: *Also that the Yahudim (Jews) and priests were well pleased that Simon should be their governor and high priest for ever, until there should arise a faithful prophet* (1 Maccabees 14:41), engraving it in brass that *Simon and his sons might have them* (1 Maccabees 14:49). This is the pattern of Phinehas, whose zeal won an enduring house: *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar'el (Israel)* (Numbers 25:13). Their own fathers had named it so: *Phinees our father in being zealous and fervent obtained the covenant of an everlasting priesthood* (1 Maccabees 2:54). Yet the priesthood is held *until there should arise a faithful prophet* — it points beyond itself to Zechariah's vision, where the high priest is reclothed and the true Priest-King is promised: *Hear now, O Joshua the high priest, thou, and thy fellows that sit before thee: for they are men wondered at: for, behold, I will bring forth my servant the BRANCH* (Zechariah 3:8).",
+      "anchor_start_v": 25,
+      "anchor_end_v": 49,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 26,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 25,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Numbers 25:13 — *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar'el (Israel).* The house confirmed to Simon and his sons in 1 Maccabees 14:26 stands in the line of Phinehas, whose zeal won the covenant of an everlasting priesthood for his seed."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 49,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "1-maccabees",
+          "tgt_ch": 2,
+          "tgt_v": 54,
+          "tier": "extras",
+          "note": "1 Maccabees 2:54 — *Phinees our father in being zealous and fervent obtained the covenant of an everlasting priesthood.* Mattathias' own deathbed roll-call names the very pattern fulfilled when Simon and his sons are given the enduring priesthood in 1 Maccabees 14:49."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 41,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 3,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Zechariah 3:8 — *Hear now, O Joshua the high priest, thou, and thy fellows that sit before thee: for they are men wondered at: for, behold, I will bring forth my servant the BRANCH.* Simon holds the high priesthood only until a faithful prophet arise (1 Maccabees 14:41); Zechariah names the One it waits for, the BRANCH who is Priest and King."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-14-house-established",
+      "title": "He established Israel and gathered her low",
+      "summary_md": "The people's thanksgiving was that Simon *established Yashar'el (Israel), and chased away in fight their enemies from them, and confirmed their liberty* (1 Maccabees 14:26), having *strengthened all those of his people that were brought low* (1 Maccabees 14:14). This is the covenant people kept and regathered — never a church replacing Yashar'el, but the very remnant the prophets promised to assemble. Micah set the gathering in the same kingdom-day as the vine and fig tree: *In that day, saith Yahuah (LORD), will I assemble her that halteth, and I will gather her that is driven out, and her that I have afflicted* (Micah 4:6), *And I will make her that halted a remnant, and her that was cast far off a strong nation: and Yahuah (LORD) shall reign over them in mount Zion from henceforth, even for ever* (Micah 4:7). The brought-low strengthened, the driven-out established — Simon's work is a token of the Shepherd-King who gathers the scattered house.",
+      "anchor_start_v": 26,
+      "anchor_end_v": 26,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 26,
+          "tgt_edition": "canon",
+          "tgt_book": "micah",
+          "tgt_ch": 4,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Micah 4:6 — *In that day, saith Yahuah (LORD), will I assemble her that halteth, and I will gather her that is driven out, and her that I have afflicted.* Simon establishing Yashar'el and strengthening the brought-low in 1 Maccabees 14:26 mirrors Yahuah's own promise to assemble the afflicted and driven-out."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 26,
+          "tgt_edition": "canon",
+          "tgt_book": "micah",
+          "tgt_ch": 4,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Micah 4:7 — *And I will make her that halted a remnant, and her that was cast far off a strong nation: and Yahuah (LORD) shall reign over them in mount Zion from henceforth, even for ever.* The liberty Simon confirms to a re-established Israel in 1 Maccabees 14:26 foreshadows the remnant made a strong nation under Yahuah's everlasting reign in Zion."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-14-feast-rededication",
+      "title": "The sanctuary multiplied — the feast the Messiah kept",
+      "summary_md": "Simon *beautified the sanctuary, and multiplied vessels of the temple* (1 Maccabees 14:15) and took charge *over the sanctuary* (1 Maccabees 14:42), guarding the holy place the Maccabees had cleansed and rededicated. That rededication became a feast Yahusha himself kept: *And it was at Jerusalem the feast of the dedication, and it was winter* (John 10:22). The Messiah walked in Solomon's porch at the very feast born of the Maccabean cleansing Simon now defends — it ain't new; the One who fulfils the temple honoured the festival of its restoration.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 42,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 14,
+          "src_v": 15,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "1-maccabees",
+          "tgt_ch": 4,
+          "tgt_v": 59,
+          "tier": "extras",
+          "note": "1 Maccabees 4:59 — *Moreover Judas and his brothers with the whole congregation of Yashar'el (Israel) ordained, that the days of the dedication of the altar should be kept in their season from year to year by the space of eight days, from the five and twentieth day of the month Casleu, with mirth and gladness.* The sanctuary Simon beautifies in 1 Maccabees 14:15 is the one Judas first rededicated, founding the eight-day feast kept year by year."
+        },
+        {
+          "src_ch": 14,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 10,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "John 10:22 — *And it was at Jerusalem the feast of the dedication, and it was winter.* Simon beautifying and guarding the cleansed sanctuary in 1 Maccabees 14:15 stands behind the feast of dedication that the Messiah himself kept in Jerusalem."
+        }
+      ]
+    }
+  ]
+}

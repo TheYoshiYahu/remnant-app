@@ -1,0 +1,210 @@
+{
+  "edition": "apocrypha",
+  "book": "2-maccabees",
+  "chapter": 7,
+  "session": "session253",
+  "tag": "2mac7",
+  "base_band": 62150,
+  "threads": [
+    {
+      "slug": "2-maccabees-7-better-resurrection",
+      "title": "The seven brothers and the better resurrection",
+      "summary_md": "Seven brothers and their mother are tortured for refusing swine's flesh, and one after another they confess the hope no tyrant can touch: *And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9), and the fourth, *It is good, being put to death by men, to look for hope from Yahuah (God) to be raised up again by him* (2 Maccabees 7:14). It ain't new, and it ain't a later church doctrine: when Hebrews names the cloud of witnesses it points straight back to these very martyrs — *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection* (Hebrews 11:35). The Spirit of prophecy long before had laid the foundation: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2), and the Messiah sealed it: *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice* (John 5:28). Come and see — the brothers died for the laws of their fathers in the sure hope of standing again.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Hebrews 11:35 — *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection:* This is the very passage that looks back to the brothers of 2 Maccabees 7:9, who would not accept deliverance for the sake of a better rising."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The fourth brother's hope of being raised up again in 2 Maccabees 7:14 rests on this prophesied awakening to everlasting life."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 5,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "John 5:28 — *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,* The King of the world who shall raise them up in 2 Maccabees 7:9 is the One whose voice the graves will hear."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 5,
+          "tgt_v": 29,
+          "tier": "free",
+          "note": "John 5:29 — *And shall come forth; they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation.* The brother's word that the tyrant shall have no resurrection to life (2 Maccabees 7:14) is this same parting of the two resurrections."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-7-first-resurrection-thrones",
+      "title": "Slain for the witness, reigning in the first resurrection",
+      "summary_md": "These youths are killed for keeping the covenant, and they die looking past the executioner: *but the King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9), and the seventh, *For our brothers, who now have suffered a short pain, are dead under the covenant of Yahuah (God) of everlasting life* (2 Maccabees 7:36). John sees the end of their hope — the souls slain for the witness, raised and enthroned: *and I saw the souls of them that were beheaded for the witness of Yahusha (Jesus), and for the word of Elohim (God)... and they lived and reigned with Messiah (Christ) a thousand years* (Revelation 20:4), *Blessed and holy is he that hath part in the first resurrection: on such the second death hath no power* (Revelation 20:6). Come and see — the death these brothers died is the very martyrdom John crowns, and the resurrection they confessed is the first resurrection.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 36,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 36,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Revelation 20:4 — *And I saw thrones, and they sat upon them, and judgment was given unto them: and I saw the souls of them that were beheaded for the witness of Yahusha (Jesus), and for the word of Elohim (God), and which had not worshipped the beast, neither his image, neither had received his mark upon their foreheads, or in their hands; and they lived and reigned with Messiah (Christ) a thousand years.* The brothers dead under the covenant of everlasting life in 2 Maccabees 7:36 are these enthroned souls slain for the word of Elohim."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Revelation 20:6 — *Blessed and holy is he that hath part in the first resurrection: on such the second death hath no power, but they shall be priests of Elohim (God) and of Messiah (Christ), and shall reign with him a thousand years.* The raising up to everlasting life confessed in 2 Maccabees 7:9 is a share in this first resurrection over which the second death has no power."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-7-mother-gives-life-again",
+      "title": "The mother and the Creator who gives breath again",
+      "summary_md": "The mother, marvellous above all, watches seven sons die in one day and answers torture with the doctrine of creation and resurrection together: *I cannot tell how you came into my womb: for I neither gave you breath nor life, neither was it I that formed the members of every one of you; But doubtless the Creator of the world, who formed the generation of man... will also of his own mercy give you breath and life again* (2 Maccabees 7:22-23). The God who first gave the breath can give it back — *Knowing that he which raised up the Lord Yahusha (Lord Jesus) shall raise up us also by Yahusha (Jesus), and shall present us with you* (2 Corinthians 4:14). And Moses set this Creator's two-handed power in his song: *See now that I, even I, am he, and there is no god with me: I kill, and I make alive; I wound, and I heal: neither is there any that can deliver out of my hand* (Deuteronomy 32:39). Come and see — the same hand that formed the members gives life again.",
+      "anchor_start_v": 22,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "2-corinthians",
+          "tgt_ch": 4,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "2 Corinthians 4:14 — *Knowing that he which raised up the Lord Yahusha (Lord Jesus) shall raise up us also by Yahusha (Jesus), and shall present us with you.* The Creator who gives breath and life again in 2 Maccabees 7:23 is the One who raises and presents His own."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 32,
+          "tgt_v": 39,
+          "tier": "free",
+          "note": "Deuteronomy 32:39 — *See now that I, even I, am he, and there is no god with me: I kill, and I make alive; I wound, and I heal: neither is there any that can deliver out of my hand.* The mother's confession that she neither gave breath nor formed the members (2 Maccabees 7:22) leans on this God who alone kills and makes alive."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-7-ex-nihilo",
+      "title": "Elohim made them of things that were not",
+      "summary_md": "The mother's last word to her youngest is creation out of nothing, set as the very ground of resurrection: *I beseech you, my son, look upon the heaven and the earth, and all that is in it, and consider that Yahuah (God) made them of things that were not; and so was mankind made likewise* (2 Maccabees 7:28). It ain't new — Hebrews speaks the same mystery: *Through faith we understand that the worlds were framed by the word of Elohim (God), so that things which are seen were not made of things which do appear* (Hebrews 11:3), and Paul names the God of resurrection by this very power: *even Elohim (God), who quickeneth the dead, and calleth those things which be not as though they were* (Romans 4:17). The God who made what was not from nothing can raise the dead from the grave. Come and see — ex nihilo and resurrection are one faith.",
+      "anchor_start_v": 28,
+      "anchor_end_v": 29,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 28,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Hebrews 11:3 — *Through faith we understand that the worlds were framed by the word of Elohim (God), so that things which are seen were not made of things which do appear.* The mother's teaching that Elohim made all of things that were not (2 Maccabees 7:28) is this same faith that the seen was not made of what appears."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 28,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 4,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Romans 4:17 — *(As it is written, I have made thee a father of many nations,) before him whom he believed, even Elohim (God), who quickeneth the dead, and calleth those things which be not as though they were.* The God who made all of things that were not in 2 Maccabees 7:28 is the same who quickens the dead and calls the things which be not."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-7-die-for-the-laws",
+      "title": "Torah-faithful unto death; the song of Moses witnessed",
+      "summary_md": "These are not law-cursed men but covenant-keepers who will die before they break the commandment: *we are ready to die, rather than to transgress the laws of our fathers* (2 Maccabees 7:2), and the youngest, *I will not obey the king's commandment: but I will obey the commandment of the law that was given to our fathers by Moses* (2 Maccabees 7:30). They die comforted by Moses' own song: *as Moses in his song, which witnessed to their faces, declared, saying, And he shall be comforted in his servants* (2 Maccabees 7:6) — *For Yahuah (LORD) shall judge his people, and repent himself for his servants* (Deuteronomy 32:36). And their elder Eleazar had gone the same way before them, refusing the same swine: *But he, choosing rather to die gloriously, than to live stained with such an abomination, spit it forth, and came of his own accord to the torment* (2 Maccabees 6:19). Come and see — Torah-faithfulness unto death, never law as curse.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 30,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 32,
+          "tgt_v": 36,
+          "tier": "free",
+          "note": "Deuteronomy 32:36 — *For Yahuah (LORD) shall judge his people, and repent himself for his servants, when he seeth that their power is gone, and there is none shut up, or left.* The brothers cite Moses' song that He shall be comforted in His servants (2 Maccabees 7:6), and this is the verse of that comfort."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 2,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 6,
+          "tgt_v": 19,
+          "tier": "extras",
+          "note": "2 Maccabees 6:19 — *But he, choosing rather to die gloriously, than to live stained with such an abomination, spit it forth, and came of his own accord to the torment,* Eleazar's choice to die rather than taste swine is the same covenant-faithfulness the brothers swear in 2 Maccabees 7:2."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-7-judgment-on-the-tyrant",
+      "title": "Vengeance belongs to Elohim; the tyrant shall not escape",
+      "summary_md": "Antiochus rages as the man of lawlessness, the abomination who would dismantle the covenant — but the dying brothers hand his judgment up to heaven: *abide a while, and behold his great power, how he will torment you and your seed* (2 Maccabees 7:17), and *think not... that you shall escape unpunished* (2 Maccabees 7:19), *For you have not yet escaped the judgment of Almighty Yahuah (God), who seeth all things* (2 Maccabees 7:35). This is no private revenge but the Torah's own verdict: *To me belongeth vengeance, and recompence; their foot shall slide in due time: for the day of their calamity is at hand* (Deuteronomy 32:35), which Paul repeats: *Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). Come and see — the kingdom of man falls under the judgment of Almighty Yahuah who seeth all things.",
+      "anchor_start_v": 17,
+      "anchor_end_v": 35,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 35,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 32,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Deuteronomy 32:35 — *To me belongeth vengeance, and recompence; their foot shall slide in due time: for the day of their calamity is at hand, and the things that shall come upon them make haste.* The judgment of Almighty Yahuah that the tyrant has not escaped in 2 Maccabees 7:35 is the recompense Moses says belongs to God alone."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 12,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Romans 12:19 — *Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord).* The warning that Antiochus shall not escape unpunished (2 Maccabees 7:19) leaves vengeance to the God who says He will repay."
+        }
+      ]
+    }
+  ]
+}
