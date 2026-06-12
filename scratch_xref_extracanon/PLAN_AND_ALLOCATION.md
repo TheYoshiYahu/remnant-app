@@ -550,3 +550,39 @@ legend-caution) → render → anchor_check.py jasher jasher + pglast + verify_f
 jasher → fold → audit → recon.py jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main`
 from /tmp/extracanon-xref-wt with keychain unlocked — 28 commits (85b660c..6079795) need to land on
 origin/main (still at 47a9e48); prod is authoritative meanwhile.
+
+## RECEIPT — Jasher Pack 10 (ch73–80, Moses' Cush years/the Exodus approach) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **411 `jasher-*` threads / 1453 members**, band 55000–56975,
+  per-ch(73-80) 3/2/4/6/4/4/6/7, 0 orphans. +36/126. Commit `469d993`. SIX GATES GREEN FIRST PASS.
+  ★ Jasher 88% (80/91 ch) — final pack ch81-91 next.
+- Cush war-legend + Balaam/magicians flee=Jannes&Jambres (73→Exod7:11/2Tim3:8); Edom king-list (Gen36:35/38)
+  + Chittim/ships-of-Javan (74→Gen10:4/Num24:24); the PREMATURE EPHRAIMITE EXODUS slain at Gath=1Chr7:20-23 +
+  the appointed-time/Gen15:13/Exod13:17 (75 — striking parallel, the genealogy's grief unfolded); Midian/
+  Reuel/Zipporah/the rod + burning bush approaches (76-78→Exod2-3); the burning bush=I-AM/return/Aaron/first
+  audience + the plagues begin (79-80→Exod3-7/Acts7:34/Heb11:27).
+- Push blocked. origin/main 47a9e48; local HEAD `469d993` (29 commits ahead). Prod authoritative.
+
+## ✅✅✅ RECEIPT — Jasher Pack 11 (ch81–91) — JASHER COMPLETE-LIVE IN PROD
+- Applied 2026-06-11. FINAL JASHER: **475 `jasher-*` threads / 1690 members**, band 55000–57250, all
+  91 chapters, 0 orphans. Commit `837bb6d`. Six gates green (fidelity 1680/1680, resolve 0, all 11
+  final chapters' verses resolve → confirms Jasher's full 91 ch; minion "end of book" claims were misreadings).
+- The EXODUS/600k/spoiling + RED SEA + the SONG OF MOSES=song-of-the-Lamb (81→Exod12:36/14/15:1/Num33:4/
+  Rev15:3/Jub48); Jethro/SINAI/the TEN COMMANDMENTS/40-days/the GOLDEN CALF/second tablets/the tabernacle
+  pattern (82→Exod18-34/Acts7:41/Heb8:5/2Cor3:3/Jub1); tabernacle reared/Nadab&Abihu/the princes'
+  dedication/the census/the SPIES & the 40-year sentence (83-91→Exod40/Lev10/Num1-14/Ps78/Heb3).
+- Push blocked. origin/main 47a9e48; local HEAD `837bb6d` (30 commits ahead). Prod authoritative.
+
+## ★★★ ALL THREE PSEUDEPIGRAPHA COMPLETE-LIVE: 1 Enoch 423/1613 + Jubilees 264/911 + Jasher 475/1690
+= **1162 threads / 4214 members** of extra-canonical Come-and-See apparatus.
+
+## ▶️ NEXT BOOK GROUP = THE APOCRYPHA (session253 @ band 58000-59999; edition 'apocrypha' = KJV 1611,
+14 books). Per-book sub-bands: the-wisdom-of-solomon @58000 (19ch), ecclesiasticus @58300 (51ch),
+1-esdras @58700 (9ch), 2-esdras @58800 (16ch), tobit @59000 (14ch), judith @59100 (16ch),
+the-rest-of-esther @59200 (7ch), baruch-with-the-letter-of-jeremiah @59300 (6ch), the-song-of-the-three
+-holy-children @59400 (1ch), the-history-of-susanna @59420 (1ch), bel-and-the-dragon @59440 (1ch),
+the-prayer-of-manasseh @59460 (1ch), 1-maccabees @59600 (16ch), 2-maccabees @59800 (15ch). Brief =
+MINION_BRIEF_APOCRYPHA.md. Gates: resolve_check/anchor_check/recon take `apocrypha <book-slug> <slug-prefix>`.
+START with Wisdom of Solomon Pack 1 = ch1-8. Then Sirach, Tobit, Maccabees, etc. Then adam-eve-conflict
+(@62000), apocalypse-of-abraham (@63000), ascension-isaiah (@64000), sonnini-acts-29 (@65000),
+apostolic-fathers/lightfoot (@70000), mrjames-apocryphal-nt (@75000), josephus (defer @80000).
+SKIP the 6 corrupt pseudepigrapha-charles-vol2 books.
