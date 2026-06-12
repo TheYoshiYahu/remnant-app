@@ -1,0 +1,82 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 29,
+  "session": "session253",
+  "tag": "sir29",
+  "base_band": 59000,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-29-lend-keeps-commandments",
+      "title": "He that is merciful will lend — and keeps the commandments",
+      "summary_md": "Ben Sira opens the chapter binding mercy to Torah: *He that is merciful will lend to his neighbour; and he that strengtheneth his hand keepeth the commandments* (Ecclesiasticus 29:1) — *Lend to your neighbour in time of his need* (Ecclesiasticus 29:2). It ain't new. The Torah already commanded the open hand: *But thou shalt open thine hand wide unto him, and shalt surely lend him sufficient for his need, in that which he wanteth* (Deuteronomy 15:8), promising *Yahuah Elohayka (the LORD thy God) shall bless thee in all thy works* (Deuteronomy 15:10). The Psalmist makes lending the mark of the righteous: *He is ever merciful, and lendeth; and his seed is blessed* (Psalm 37:26), over against *The wicked borroweth, and payeth not again: but the righteous sheweth mercy, and giveth* (Psalm 37:21). And Proverbs reveals who the true creditor is: *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again* (Proverbs 19:17). The Messiah carries the same word to its fullness: *Give to him that asketh thee, and from him that would borrow of thee turn not thou away* (Matthew 5:42), and *do good, and lend, hoping for nothing again* (Luke 6:35). Sirach stands in the one stream of the Sermon on the Mount.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 29, "src_v": 1, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 15, "tgt_v": 8, "tier": "free", "note": "Deuteronomy 15:8 — *But thou shalt open thine hand wide unto him, and shalt surely lend him sufficient for his need, in that which he wanteth.* The Torah command Sirach 29:1 calls keeping the commandments: the merciful man lends."},
+        {"src_ch": 29, "src_v": 1, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 37, "tgt_v": 26, "tier": "free", "note": "Psalm 37:26 — *He is ever merciful, and lendeth; and his seed is blessed.* The Psalmist makes the merciful lender of Sirach 29:1 the very portrait of the blessed righteous."},
+        {"src_ch": 29, "src_v": 1, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 37, "tgt_v": 21, "tier": "free", "note": "Psalm 37:21 — *The wicked borroweth, and payeth not again: but the righteous sheweth mercy, and giveth.* The same righteous/wicked contrast over lending that frames Sirach 29:1-2."},
+        {"src_ch": 29, "src_v": 1, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 19, "tgt_v": 17, "tier": "free", "note": "Proverbs 19:17 — *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again.* Sirach 29:1's lending to a neighbour is, in Wisdom's eyes, lending to Yahuah Himself."},
+        {"src_ch": 29, "src_v": 2, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 5, "tgt_v": 42, "tier": "free", "note": "Matthew 5:42 — *Give to him that asketh thee, and from him that would borrow of thee turn not thou away.* The Messiah's Sermon-on-the-Mount word is Sirach 29:2 made fuller: lend to your neighbour in his need."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-29-lend-hoping-nothing-again",
+      "title": "Lend, hoping for nothing again — bearing the bad debtor",
+      "summary_md": "Ben Sira knows men refuse to lend because debtors default: *Many therefore have refused to lend for other men's ill dealing, fearing to be defrauded* (Ecclesiasticus 29:7). Yet he commands mercy anyway: *Yet have you patience with a man in poor estate, and delay not to shew him mercy* (Ecclesiasticus 29:8), *Help the poor for the commandment's sake, and turn him not away because of his poverty* (Ecclesiasticus 29:9). This is precisely the higher righteousness the Messiah teaches: not the sinner's calculus *if ye lend to them of whom ye hope to receive, what thank have ye? for sinners also lend to sinners, to receive as much again* (Luke 6:34), but *do good, and lend, hoping for nothing again; and your reward shall be great, and ye shall be the children of the Highest: for he is kind unto the unthankful and to the evil* (Luke 6:35). Sirach's 'for the commandment's sake' is the Torah ground beneath the gospel of generous lending.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 29, "src_v": 8, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 6, "tgt_v": 35, "tier": "free", "note": "Luke 6:35 — *But love ye your enemies, and do good, and lend, hoping for nothing again; and your reward shall be great, and ye shall be the children of the Highest: for he is kind unto the unthankful and to the evil.* The Messiah's 'lend hoping for nothing again' is Sirach 29:8's patience with the poor debtor."},
+        {"src_ch": 29, "src_v": 7, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 6, "tgt_v": 34, "tier": "free", "note": "Luke 6:34 — *And if ye lend to them of whom ye hope to receive, what thank have ye? for sinners also lend to sinners, to receive as much again.* The very fear of loss Sirach 29:7 names is the sinner's reckoning the Messiah calls us above."},
+        {"src_ch": 29, "src_v": 9, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 5, "tgt_v": 42, "tier": "free", "note": "Matthew 5:42 — *Give to him that asketh thee, and from him that would borrow of thee turn not thou away.* 'Turn him not away because of his poverty' (Sirach 29:9) is the same refusal to turn the borrower away."},
+        {"src_ch": 29, "src_v": 9, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 15, "tgt_v": 10, "tier": "free", "note": "Deuteronomy 15:10 — *Thou shalt surely give him, and thine heart shall not be grieved when thou givest unto him: because that for this thing Yahuah Elohayka (the LORD thy God) shall bless thee in all thy works, and in all that thou puttest thine hand unto.* 'Help the poor for the commandment's sake' (Sirach 29:9) cites this Torah blessing on the ungrudging giver."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-29-lay-up-treasure-alms",
+      "title": "Lay up treasure by the commandments — alms in the storehouse",
+      "summary_md": "Here is the chapter's crown, and it is the Sermon on the Mount centuries early: *Lose your money for your brother and your friend, and let it not rust under a stone to be lost* (Ecclesiasticus 29:10); *Lay up your treasure according to the commandments of the Most High, and it shall bring you more profit than gold* (Ecclesiasticus 29:11); *Shut up alms in your storehouses: and it shall deliver you from all affliction* (Ecclesiasticus 29:12). The Messiah's word rings the same bell: *Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt* (Matthew 6:19), *But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt* (Matthew 6:20). Sirach's sister-book Tobit teaches the identical mercy-as-treasure: *For you layest up a good treasure for thyself against the day of necessity. Because that alms do deliver from death* (Tobit 4:9-10) — alms laid up that deliver, exactly as Sirach says they *shall deliver you from all affliction*. And Proverbs already knew the paradox: *There is that scattereth, and yet increaseth* (Proverbs 11:24). It ain't new — laying up heavenly treasure by giving is the wisdom of the whole library.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 29, "src_v": 11, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 6, "tgt_v": 20, "tier": "free", "note": "Matthew 6:20 — *But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt, and where thieves do not break through nor steal.* The Messiah's heavenly treasure is Sirach 29:11's 'lay up your treasure according to the commandments of the Most High.'"},
+        {"src_ch": 29, "src_v": 10, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 6, "tgt_v": 19, "tier": "free", "note": "Matthew 6:19 — *Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal.* Sirach 29:10's money that should not 'rust under a stone to be lost' is the earthly treasure the Messiah warns against hoarding."},
+        {"src_ch": 29, "src_v": 12, "tgt_edition": "apocrypha", "tgt_book": "tobit", "tgt_ch": 4, "tgt_v": 10, "tier": "extras", "note": "Tobit 4:10 — *Because that alms do deliver from death, and suffers not to come into darkness.* The live sister-book teaches Sirach 29:12 word for word: alms in store deliver you from affliction."},
+        {"src_ch": 29, "src_v": 12, "tgt_edition": "apocrypha", "tgt_book": "tobit", "tgt_ch": 4, "tgt_v": 9, "tier": "extras", "note": "Tobit 4:9 — *For you layest up a good treasure for thyself against the day of necessity.* Tobit's 'good treasure laid up' is the same storehouse of alms Sirach 29:12 says shall deliver."},
+        {"src_ch": 29, "src_v": 11, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 11, "tgt_v": 24, "tier": "free", "note": "Proverbs 11:24 — *There is that scattereth, and yet increaseth; and there is that withholdeth more than is meet, but it tendeth to poverty.* Wisdom's paradox underwrites Sirach 29:11: giving treasure away brings 'more profit than gold.'"}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-29-surety-life-for-neighbour",
+      "title": "The honest man surety for his neighbour — and its peril",
+      "summary_md": "Ben Sira praises the surety as one who lays down his very life: *An honest man is surety for his neighbour: but he that is impudent will forsake him* (Ecclesiasticus 29:14); *Forget not the friendship of your surety, for he has given his life for you* (Ecclesiasticus 29:15). The Messiah names this the highest love: *Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13) — the standing-surety becomes a shadow of the cross. Yet Sirach is also sober about the danger, just as Proverbs is: *Suretiship has undone many of good estate, and shaken them as a wave of the sea* (Ecclesiasticus 29:18) echoes *My son, if thou be surety for thy friend, if thou hast stricken thy hand with a stranger, Thou art snared with the words of thy mouth* (Proverbs 6:1-2), and *Be not thou one of them that strike hands, or of them that are sureties for debts* (Proverbs 22:26). And he keeps the covenant frame: *A wicked man transgressing the commandments of Yahuah (God) shall fall into suretiship* (Ecclesiasticus 29:19) — even here, the commandments stand.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 29, "src_v": 15, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 15, "tgt_v": 13, "tier": "free", "note": "John 15:13 — *Greater love hath no man than this, that a man lay down his life for his friends.* The surety who 'has given his life for you' (Sirach 29:15) is a shadow of the Messiah's own laid-down life."},
+        {"src_ch": 29, "src_v": 18, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 6, "tgt_v": 1, "tier": "free", "note": "Proverbs 6:1 — *My son, if thou be surety for thy friend, if thou hast stricken thy hand with a stranger,* Proverbs' warning is the same sober counsel as Sirach 29:18, that suretiship has undone many."},
+        {"src_ch": 29, "src_v": 18, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 22, "tgt_v": 26, "tier": "free", "note": "Proverbs 22:26 — *Be not thou one of them that strike hands, or of them that are sureties for debts.* The peril of standing surety in Sirach 29:18 is Wisdom's own caution."},
+        {"src_ch": 29, "src_v": 19, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 19, "tgt_v": 17, "tier": "free", "note": "Proverbs 19:17 — *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again.* Against the wicked who 'transgressing the commandments of Yahuah' falls into suretiship (Sirach 29:19), Wisdom sets the merciful lender repaid by Yahuah."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-29-content-with-little",
+      "title": "Better the poor man's cottage — be content with little",
+      "summary_md": "The chapter closes by naming life's true necessities and commending contentment: *The chief thing for life is water, and bread, and clothing, and an house to cover shame* (Ecclesiasticus 29:21); *Better is the life of a poor man in a mean cottage, than delicate fare in another man's house* (Ecclesiasticus 29:22); *Be it little or much, hold you contented, that you hear not the reproach of your house* (Ecclesiasticus 29:23). Paul says the same to Timothy: *And having food and raiment let us be therewith content* (1 Timothy 6:8) — Sirach's water, bread, clothing and shelter exactly. Proverbs sang it first: *Better is little with the fear of Yahuah (LORD) than great treasure and trouble therewith* (Proverbs 15:16), and *Better is a dry morsel, and quietness therewith, than an house full of sacrifices with strife* (Proverbs 17:1). And Hebrews seals the heart of it: *be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5). Sirach's wisdom on contentment is the Tanakh's and the apostles' one voice.",
+      "anchor_start_v": 21,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 29, "src_v": 21, "tgt_edition": "canon", "tgt_book": "1-timothy", "tgt_ch": 6, "tgt_v": 8, "tier": "free", "note": "1 Timothy 6:8 — *And having food and raiment let us be therewith content.* Paul's 'food and raiment' is Sirach 29:21's water, bread, clothing and house — the chief things for life."},
+        {"src_ch": 29, "src_v": 22, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 15, "tgt_v": 16, "tier": "free", "note": "Proverbs 15:16 — *Better is little with the fear of Yahuah (LORD) than great treasure and trouble therewith.* The 'better-is-little' wisdom of Sirach 29:22's poor cottage is straight from Proverbs."},
+        {"src_ch": 29, "src_v": 22, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 17, "tgt_v": 1, "tier": "free", "note": "Proverbs 17:1 — *Better is a dry morsel, and quietness therewith, than an house full of sacrifices with strife.* Sirach 29:22's poor man's cottage over delicate fare in another's house echoes the dry morsel with peace."},
+        {"src_ch": 29, "src_v": 23, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 13, "tgt_v": 5, "tier": "free", "note": "Hebrews 13:5 — *Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.* 'Hold you contented' (Sirach 29:23) is the apostolic word of contentment grounded in Yahuah's faithfulness."}
+      ]
+    }
+  ]
+}
