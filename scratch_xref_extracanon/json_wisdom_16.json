@@ -1,0 +1,75 @@
+{
+  "edition": "apocrypha",
+  "book": "the-wisdom-of-solomon",
+  "chapter": 16,
+  "session": "session253",
+  "tag": "wis16",
+  "base_band": 58375,
+  "threads": [
+    {
+      "slug": "wisdom-16-brazen-serpent-healing-look",
+      "title": "The sign of salvation — the look that healed",
+      "summary_md": "When the serpents stung Yashar'el in the wilderness, the cure was not the bronze on the pole but the One it pointed to: *But they were troubled for a small season, that they might be admonished, having a sign of salvation, to put them in remembrance of the commandment of thy law* (Wisdom of Solomon 16:6), *For he that turned himself toward it was not saved by the thing that he saw, but by thee, that art the Saviour of all* (Wisdom of Solomon 16:7). Wisdom reads Moses' serpent exactly as the Tanakh sets it — *And the LORD said unto Moses, Make thee a fiery serpent, and set it upon a pole: and it shall come to pass, that every one that is bitten, when he looketh upon it, shall live* (Numbers 21:8) — and Yahusha makes the type explicit: *And as Moses lifted up the serpent in the wilderness, even so must the Son of man be lifted up* (John 3:14). The look of faith toward the lifted-up One is the sign of salvation; it ain't new.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 6, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 21, "tgt_v": 8, "tier": "free", "note": "Numbers 21:8 — *And the LORD said unto Moses, Make thee a fiery serpent, and set it upon a pole: and it shall come to pass, that every one that is bitten, when he looketh upon it, shall live.* This is the very 'sign of salvation' Wisdom of Solomon 16:6 says was set up to put Yashar'el in remembrance of the commandment of the law."},
+        {"src_ch": 16, "src_v": 7, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 21, "tgt_v": 9, "tier": "free", "note": "Numbers 21:9 — *And Moses made a serpent of brass, and put it upon a pole, and it came to pass, that if a serpent had bitten any man, when he beheld the serpent of brass, he lived.* Wisdom of Solomon 16:7 reads this scene precisely: the beholder 'was not saved by the thing that he saw, but by thee, that art the Saviour of all.'"},
+        {"src_ch": 16, "src_v": 7, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 3, "tgt_v": 14, "tier": "free", "note": "John 3:14 — *And as Moses lifted up the serpent in the wilderness, even so must the Son of man be lifted up.* Yahusha names the type Wisdom of Solomon 16:7 already saw — the look toward the lifted-up One, not the bronze, is what saves."},
+        {"src_ch": 16, "src_v": 7, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 3, "tgt_v": 15, "tier": "free", "note": "John 3:15 — *That whosoever believeth in him should not perish, but have eternal life.* The believing look of Wisdom of Solomon 16:7 — saved 'by thee, that art the Saviour of all' — finds its fullness in the lifted-up Messiah."}
+      ]
+    },
+    {
+      "slug": "wisdom-16-word-that-healeth-all-things",
+      "title": "Not herb nor plaister, but thy word",
+      "summary_md": "Wisdom presses past the means to the Healer Himself: *For it was neither herb, nor mollifying plaister, that restored them to health: but thy word, O Yahuah (God), which healeth all things* (Wisdom of Solomon 16:12). This is the Psalmist's confession — *He sent his word, and healed them, and delivered them from their destructions* (Psalm 107:20) — the spoken word of the Maker as the true medicine. And the next breath of Wisdom presses to the deepest power: *For thou hast power of life and death: thou leadest to the gates of hell, and bringest up again* (Wisdom of Solomon 16:13), echoing the song of Moses — *I kill, and I make alive; I wound, and I heal: neither is there any that can deliver out of my hand* (Deuteronomy 32:39) — and Hannah's — *The LORD killeth, and maketh alive: he bringeth down to the grave, and bringeth up* (1 Samuel 2:6). The Word that heals and raises is the same Word made flesh.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 12, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 107, "tgt_v": 20, "tier": "free", "note": "Psalm 107:20 — *He sent his word, and healed them, and delivered them from their destructions.* This is the same confession as Wisdom of Solomon 16:12 — not herb nor plaister but the sent word of Yahuah heals all things."},
+        {"src_ch": 16, "src_v": 13, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 32, "tgt_v": 39, "tier": "free", "note": "Deuteronomy 32:39 — *See now that I, even I, am he, and there is no god with me: I kill, and I make alive; I wound, and I heal: neither is there any that can deliver out of my hand.* The song of Moses says exactly what Wisdom of Solomon 16:13 says — power of life and death, none escaping His hand (Wisdom 16:15)."},
+        {"src_ch": 16, "src_v": 13, "tgt_edition": "canon", "tgt_book": "1-samuel", "tgt_ch": 2, "tgt_v": 6, "tier": "free", "note": "1 Samuel 2:6 — *The LORD killeth, and maketh alive: he bringeth down to the grave, and bringeth up.* Hannah's song is Wisdom of Solomon 16:13 word for word: He 'leadest to the gates of hell, and bringest up again.'"}
+      ]
+    },
+    {
+      "slug": "wisdom-16-angels-food-bread-from-heaven",
+      "title": "Angels' food — the bread from heaven",
+      "summary_md": "Against Egypt's plagued harvest, Yahuah fed His people the bread of heaven: *Instead of which thou feddest thine own people with angels' food, and didst send them from heaven bread prepared without their labour, able to content every man's delight, and agreeing to every taste* (Wisdom of Solomon 16:20); *For thy sustenance declared thy sweetness unto thy children, and serving to the appetite of the eater, tempered itself to every man's liking* (Wisdom of Solomon 16:21). This is the manna of Exodus — *Then said the LORD unto Moses, Behold, I will rain bread from heaven for you* (Exodus 16:4) — sung in the Psalms as *the corn of heaven* and *angels' food* — *And had rained down manna upon them to eat, and had given them of the corn of heaven. Man did eat angels' food: he sent them meat to the full* (Psalm 78:24-25). Yahusha gathers the whole figure: *Moses gave you not that bread from heaven; but my Father giveth you the true bread from heaven* (John 6:32). The manna was a shadow; the Bread of Life is the substance.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 21,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 20, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 16, "tgt_v": 4, "tier": "free", "note": "Exodus 16:4 — *Then said the LORD unto Moses, Behold, I will rain bread from heaven for you; and the people shall go out and gather a certain rate every day, that I may prove them, whether they will walk in my law, or no.* This is the manna Wisdom of Solomon 16:20 calls 'bread prepared without their labour' sent from heaven."},
+        {"src_ch": 16, "src_v": 20, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 78, "tgt_v": 25, "tier": "free", "note": "Psalm 78:25 — *Man did eat angels' food: he sent them meat to the full.* The Psalm and Wisdom of Solomon 16:20 use the same phrase — 'angels' food' — for the manna that filled every taste."},
+        {"src_ch": 16, "src_v": 21, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 6, "tgt_v": 32, "tier": "free", "note": "John 6:32 — *Then Jesus said unto them, Verily, verily, I say unto you, Moses gave you not that bread from heaven; but my Father giveth you the true bread from heaven.* The manna 'tempered itself to every man's liking' (Wisdom of Solomon 16:21) was the shadow; Yahusha is the true bread from heaven."},
+        {"src_ch": 16, "src_v": 21, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 6, "tgt_v": 33, "tier": "free", "note": "John 6:33 — *For the bread of God is he which cometh down from heaven, and giveth life unto the world.* The sweetness of the heavenly sustenance in Wisdom of Solomon 16:21 finds its substance in the Bread that gives life to the world."}
+      ]
+    },
+    {
+      "slug": "wisdom-16-man-lives-by-the-word",
+      "title": "Not fruits but thy word nourisheth man",
+      "summary_md": "Wisdom draws the manna to its lesson: *That thy children, O Yahuah (God), whom thou lovest, might know, that it is not the growing of fruits that nourisheth man: but that it is thy word, which preserveth them that put their trust in thee* (Wisdom of Solomon 16:26). This is Moses' own teaching from the manna — *And he humbled thee, and suffered thee to hunger, and fed thee with manna... that he might make thee know that man doth not live by bread only, but by every word that proceedeth out of the mouth of the LORD doth man live* (Deuteronomy 8:3) — and it is the sword Yahusha drew in the wilderness against the tempter: *But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God* (Matthew 4:4). The bread feeds the body for a day; the word of Yahuah preserves the trusting forever.",
+      "anchor_start_v": 26,
+      "anchor_end_v": 26,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 26, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 8, "tgt_v": 3, "tier": "free", "note": "Deuteronomy 8:3 — *And he humbled thee, and suffered thee to hunger, and fed thee with manna, which thou knewest not, neither did thy fathers know; that he might make thee know that man doth not live by bread only, but by every word that proceedeth out of the mouth of the LORD doth man live.* Wisdom of Solomon 16:26 distils this Torah lesson: not fruits but His word nourisheth and preserveth."},
+        {"src_ch": 16, "src_v": 26, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 4, "tgt_v": 4, "tier": "free", "note": "Matthew 4:4 — *But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God.* Yahusha wields the truth Wisdom of Solomon 16:26 confesses — the word, not the growing of fruits, sustains the children of Yahuah."}
+      ]
+    },
+    {
+      "slug": "wisdom-16-quails-and-the-stinging-serpents",
+      "title": "Quails to the appetite, serpents to the sting",
+      "summary_md": "Wisdom contrasts the two wilderness tables: mercy gave Yashar'el quails, while the venomous creatures that stung them were turned to a discipline, not a death — *Instead of which punishment, dealing graciously with thine own people, thou preparedst for them meat of a strange taste, even quails to stir up their appetite* (Wisdom of Solomon 16:2); *But thy sons not the very teeth of venomous dragons overcame: for thy mercy was ever by them, and healed them* (Wisdom of Solomon 16:10). The quails are from Numbers — *And there went forth a wind from the LORD, and brought quails from the sea, and let them fall by the camp* (Numbers 11:31) — and the serpents from the same wandering — *And the LORD sent fiery serpents among the people, and they bit the people; and much people of Israel died* (Numbers 21:6). The same wilderness held both the gift and the rod; mercy ran through the judgment.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 2, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 11, "tgt_v": 31, "tier": "free", "note": "Numbers 11:31 — *And there went forth a wind from the LORD, and brought quails from the sea, and let them fall by the camp, as it were a day's journey on this side, and as it were a day's journey on the other side, round about the camp, and as it were two cubits high upon the face of the earth.* These are the 'quails to stir up their appetite' of Wisdom of Solomon 16:2."},
+        {"src_ch": 16, "src_v": 10, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 21, "tgt_v": 6, "tier": "free", "note": "Numbers 21:6 — *And the LORD sent fiery serpents among the people, and they bit the people; and much people of Israel died.* These are the 'venomous dragons' Wisdom of Solomon 16:10 says could not overcome Yahuah's sons, for His mercy healed them."}
+      ]
+    }
+  ]
+}
