@@ -2066,6 +2066,830 @@ SELECT t.id, x.id, 4, E'Sirach 35:2 — *he that gives alms sacrificeth praise* 
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_2corinthians_10.sql (S229 2 Corinthians 10) -----
+-- =====================================================================
+-- S229 minion — 2 CORINTHIANS 10 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 2 CORINTHIANS 10 (18 verses) — warfare not carnal / he that glorieth, let him glory in the Lord.
+-- Tag: 2c10 (temp view _s229_2c10_lookup).
+-- Sort band: floor 7225, step 3 (7225, 7228 used; under 7250).
+-- Source is ALWAYS the canon 2 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Paul defends his apostleship before the divided assembly, refusing the
+-- flesh-credential. 10:3-5 — though they walk in the flesh they do not war after it: *the weapons of
+-- our warfare are not carnal, but mighty through Elohim (God) to the pulling down of strong holds*
+-- (10:4), *Casting down imaginations, and every high thing that exalteth itself against the knowledge
+-- of Elohim (God), and bringing into captivity every thought to the obedience of Messiah (Christ)*
+-- (10:5). The lofty thing brought low is the prophets' own picture — Yahuah (LORD) alone exalted, the
+-- high towers and strong holds cast down (Isaiah 2), no wisdom nor counsel standing against Yahuah
+-- (LORD) (Proverbs 21:30-31). Then the boast: *But he that glorieth, let him glory in Yahuah (Lord)*
+-- (10:17) cites Jeremiah 9:23-24 — the SAME boast-only-in-Yahuah as 1 Corinthians 1:31 (*according as
+-- it is written, He that glorieth, let him glory in Yahuah (Lord)*) and the 1 Corinthians 1:26-29
+-- counsel *that no flesh should glory in his presence*. The flesh-credential is excluded — NOT
+-- Torah-keeping; the boast is in knowing Yahuah (LORD), and *not he that commendeth himself is
+-- approved, but whom Yahuah (Lord) commendeth* (10:18). No law-vs-grace antithesis; Messiah (Christ) is
+-- the One whose obedience every thought is brought captive unto.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-2   Paul beseeches by the meekness and gentleness of Messiah; walked according to the flesh
+--           Tanakh: none warranted (pastoral self-defense; no load-bearing root)
+--           Extras: none warranted   NT: none warranted (carried in prose)
+--   v.3-6   the weapons of our warfare not carnal, casting down every high thing, every thought captive
+--           Tanakh: Isaiah 2:11,12,17 (the lofty looks humbled, the high towers and strong holds
+--                   brought low, Yahuah alone exalted), Isaiah 2:3 (out of Zion the law, the knowledge
+--                   of his ways), Isaiah 11:9 (the earth full of the knowledge of Yahuah), Proverbs
+--                   21:30-31 (no wisdom against Yahuah; safety is of Yahuah, not the horse of battle)
+--           Extras: none warranted   NT: none warranted (the Tanakh roots carry the weight)
+--   v.7-16  the measure of the rule, boasting not beyond measure, the gospel preached to you
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted (apostolic apologia)
+--   v.17-18 he that glorieth, let him glory in Yahuah; whom Yahuah commendeth is approved
+--           Tanakh: Jeremiah 9:23-24 (let not the wise/mighty/rich glory; let him glory in knowing me)
+--           Extras: none warranted
+--           NT: 1 Corinthians 1:31 (the same citation), 1 Corinthians 1:29 (no flesh shall glory),
+--               1 Corinthians 1:26-28 (not many wise/mighty/noble; the chosen confound the wise)
+--
+-- THREADS (slug -> target libraries):
+--   7225 2-corinthians-10-the-weapons-of-our-warfare-are-not-carnal-every-high-thing-brought-low-isaiah-2  (Tanakh)
+--   7228 2-corinthians-10-he-that-glorieth-let-him-glory-in-yahuah-jeremiah-9                                (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s229_2c10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 2-corinthians-10-the-weapons-of-our-warfare-are-not-carnal-every-high-thing-brought-low-isaiah-2
+  ('canon', '2-corinthians', 10, 4, 'canon', 'proverbs', 21, 30, 'free', E'*There is no wisdom nor understanding nor counsel against Yahuah (LORD).* (Proverbs 21:30). Paul says *the weapons of our warfare are not carnal, but mighty through Elohim (God) to the pulling down of strong holds* (2 Corinthians 10:4) — and the proverb names why no fortress of the flesh can stand: there is no wisdom, no understanding, no counsel that can be set *against Yahuah (LORD).* The strong holds Paul pulls down are the proud reasonings that imagine they can stand over against the knowledge of Elohim (God); they cannot, for nothing prevails against Yahuah (LORD).'),
+  ('canon', '2-corinthians', 10, 4, 'canon', 'proverbs', 21, 31, 'free', E'*The horse is prepared against the day of battle: but safety is of Yahuah (LORD).* (Proverbs 21:31). The proverb sets the carnal weapon against the true might exactly as Paul does: the war-horse is *prepared against the day of battle,* yet *safety is of Yahuah (LORD)* — not of the horse. So *the weapons of our warfare are not carnal, but mighty through Elohim (God)* (2 Corinthians 10:4); the power is not in the flesh''s armory but in Yahuah (LORD), through whom alone the strong holds come down.'),
+  ('canon', '2-corinthians', 10, 5, 'canon', 'isaiah', 2, 11, 'free', E'*The lofty looks of man shall be humbled, and the haughtiness of men shall be bowed down, and Yahuah (LORD) alone shall be exalted in that day.* (Isaiah 2:11). Paul''s warfare is *Casting down imaginations, and every high thing that exalteth itself against the knowledge of Elohim (God)* (2 Corinthians 10:5) — the very work Isaiah saw: *the lofty looks of man shall be humbled... and Yahuah (LORD) alone shall be exalted.* Every high thing lifting itself up is brought low so that Yahuah (LORD) alone stands exalted; the casting-down of imaginations is the bowing-down of the haughtiness of men.'),
+  ('canon', '2-corinthians', 10, 5, 'canon', 'isaiah', 2, 12, 'free', E'*For the day of Yahuah Tseva''ot (LORD of hosts) shall be upon every one that is proud and lofty, and upon every one that is lifted up; and he shall be brought low:* (Isaiah 2:12). Isaiah''s day of Yahuah (LORD) comes *upon every one that is proud and lofty, and upon every one that is lifted up* — to bring it low; and Paul wars *every high thing that exalteth itself against the knowledge of Elohim (God)* (2 Corinthians 10:5). The high towers and fenced walls and lofty cedars of Isaiah''s vision are the strong holds Paul pulls down: everything lifted up against the knowledge of Elohim (God) is brought low under the obedience of Messiah (Christ).'),
+  ('canon', '2-corinthians', 10, 5, 'canon', 'isaiah', 2, 17, 'free', E'*And the loftiness of man shall be bowed down, and the haughtiness of men shall be made low: and Yahuah (LORD) alone shall be exalted in that day.* (Isaiah 2:17). Isaiah repeats the verdict: *the loftiness of man shall be bowed down... and Yahuah (LORD) alone shall be exalted.* This is the end of Paul''s warfare — *bringing into captivity every thought to the obedience of Messiah (Christ)* (2 Corinthians 10:5). The proud thought is not destroyed but brought captive and bowed, that the One who is exalted alone might be exalted in the heart; the loftiness made low becomes the thought obedient to Messiah (Christ).'),
+  ('canon', '2-corinthians', 10, 5, 'canon', 'isaiah', 11, 9, 'free', E'*They shall not hurt nor destroy in all my holy mountain: for the earth shall be full of the knowledge of Yahuah (LORD), as the waters cover the sea.* (Isaiah 11:9). The aim of Paul''s warfare is *the knowledge of Elohim (God)* against which no high thing may stand (2 Corinthians 10:5) — and Isaiah promises that *the earth shall be full of the knowledge of Yahuah (LORD), as the waters cover the sea.* Every imagination cast down, every thought brought captive, makes room for that flood: the knowledge of Yahuah (LORD) filling the earth, before which the haughtiness of men is bowed.'),
+  ('canon', '2-corinthians', 10, 5, 'canon', 'isaiah', 2, 3, 'free', E'*And many people shall go and say, Come ye, and let us go up to the mountain of Yahuah (LORD), to the house of the Elohim (God) of Jacob; and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem.* (Isaiah 2:3). The same chapter that bows the lofty looks shows where the knowledge of Elohim (God) is found: the nations going up to be taught his ways, *for out of Zion shall go forth the law.* Paul brings *every thought to the obedience of Messiah (Christ)* (2 Corinthians 10:5) — not against the Torah but unto it, the imagination cast down and the heart taught to walk in the paths of Yahuah (LORD) that go forth from Zion.'),
+  -- thread: 2-corinthians-10-he-that-glorieth-let-him-glory-in-yahuah-jeremiah-9
+  ('canon', '2-corinthians', 10, 17, 'canon', 'jeremiah', 9, 23, 'free', E'*Thus saith Yahuah (LORD), Let not the wise man glory in his wisdom, neither let the mighty man glory in his might, let not the rich man glory in his riches:* (Jeremiah 9:23). When Paul writes *But he that glorieth, let him glory in Yahuah (Lord)* (2 Corinthians 10:17), he is speaking the word Yahuah (LORD) gave Jeremiah: *Let not the wise man glory in his wisdom, neither let the mighty man glory in his might, let not the rich man glory in his riches.* Every flesh-credential — wisdom, might, riches — is shut out of the boast; Paul, refusing to commend himself by the flesh, turns the assembly to the only boast Yahuah (LORD) allows.'),
+  ('canon', '2-corinthians', 10, 17, 'canon', 'jeremiah', 9, 24, 'free', E'*But let him that glorieth glory in this, that he understandeth and knoweth me, that I am Yahuah (LORD) which exercise lovingkindness, judgment, and righteousness, in the earth: for in these things I delight, saith Yahuah (LORD).* (Jeremiah 9:24). This is the boast Paul commands: *he that glorieth, let him glory in Yahuah (Lord)* (2 Corinthians 10:17). Jeremiah names its substance — *that he understandeth and knoweth me, that I am Yahuah (LORD) which exercise lovingkindness, judgment, and righteousness.* The glory is not in self but in knowing Yahuah (LORD); and the next word, *not he that commendeth himself is approved, but whom Yahuah (Lord) commendeth* (2 Corinthians 10:18), is the same — approval is from the One who is known, not from the boasting flesh.'),
+  ('canon', '2-corinthians', 10, 17, 'canon', '1-corinthians', 1, 31, 'free', E'*That, according as it is written, He that glorieth, let him glory in Yahuah (Lord).* (1 Corinthians 1:31). Paul gave this same congregation the same word in his first letter — *according as it is written, He that glorieth, let him glory in Yahuah (Lord)* — citing Jeremiah 9:24; and he repeats it here: *he that glorieth, let him glory in Yahuah (Lord)* (2 Corinthians 10:17). Twice over, against the divisions and the boasting of the assembly at Corinth, Paul shuts up every glory into Yahuah (LORD) alone, the boast the prophet wrote down.'),
+  ('canon', '2-corinthians', 10, 17, 'canon', '1-corinthians', 1, 29, 'free', E'*That no flesh should glory in his presence.* (1 Corinthians 1:29). The reason the boast is shut up in Yahuah (LORD) is named in the first letter: Elohim (God) chose the foolish and the weak and the base things *That no flesh should glory in his presence.* So when Paul says *he that glorieth, let him glory in Yahuah (Lord)* (2 Corinthians 10:17), and *not he that commendeth himself is approved, but whom Yahuah (Lord) commendeth* (2 Corinthians 10:18), it is the same exclusion of the flesh-credential — no flesh may glory before him, only the one who glories in Yahuah (LORD).'),
+  ('canon', '2-corinthians', 10, 18, 'canon', '1-corinthians', 1, 26, 'free', E'*For ye see your calling, brethren, how that not many wise men after the flesh, not many mighty, not many noble, are called:* (1 Corinthians 1:26). The self-commendation Paul refuses — *not he that commendeth himself is approved, but whom Yahuah (Lord) commendeth* (2 Corinthians 10:18) — answers the calling he had already set before this assembly: *not many wise men after the flesh, not many mighty, not many noble, are called.* The wise, the mighty, the noble are the very flesh-credentials Jeremiah barred from the boast; approval comes not by measuring oneself against oneself but from the One who calls and commends.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s229_2c10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s229_2c10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-10-the-weapons-of-our-warfare-are-not-carnal-every-high-thing-brought-low-isaiah-2',
+       E'The weapons of our warfare are not carnal, every high thing brought low (Isaiah 2, Proverbs 21)',
+       E'Though Paul and his fellows *walk in the flesh,* they *do not war after the flesh: For the weapons of our warfare are not carnal, but mighty through Elohim (God) to the pulling down of strong holds; Casting down imaginations, and every high thing that exalteth itself against the knowledge of Elohim (God), and bringing into captivity every thought to the obedience of Messiah (Christ)* (2 Corinthians 10:3-5). The might is not in the flesh''s armory, for the proverb is sure: *There is no wisdom nor understanding nor counsel against Yahuah (LORD)* (Proverbs 21:30), and though *The horse is prepared against the day of battle... safety is of Yahuah (LORD)* (Proverbs 21:31) — not of the horse. The strong holds Paul pulls down are the proud reasonings, and their casting-down is the very work Isaiah saw in the day of Yahuah (LORD): *The lofty looks of man shall be humbled, and the haughtiness of men shall be bowed down, and Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:11); the day of Yahuah Tseva''ot (LORD of hosts) comes *upon every one that is proud and lofty, and upon every one that is lifted up; and he shall be brought low* (Isaiah 2:12), so that *the loftiness of man shall be bowed down... and Yahuah (LORD) alone shall be exalted* (Isaiah 2:17). The high towers and fenced walls of that vision are the strong holds; every high thing lifted up against the knowledge of Elohim (God) is brought low. And the aim is the knowledge of Elohim (God) itself, which Isaiah promised would fill the world: *the earth shall be full of the knowledge of Yahuah (LORD), as the waters cover the sea* (Isaiah 11:9). The thought is not destroyed but brought captive *to the obedience of Messiah (Christ)* — and that obedience is no war against the Torah but the way of it, for the same Isaiah-2 vision shows the nations going up to be taught, *for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). The imagination cast down, the heart is taught to walk in the paths of Yahuah (LORD) — every thought bowed and obedient, that Yahuah (LORD) alone might be exalted.',
+       sv.verse_id, ev.verse_id, 'free', 7225
+  FROM _s229_2c10_lookup sv, _s229_2c10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=10 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-10-he-that-glorieth-let-him-glory-in-yahuah-jeremiah-9',
+       E'He that glorieth, let him glory in Yahuah (Jeremiah 9)',
+       E'Paul ends the chapter by shutting up every boast into one: *But he that glorieth, let him glory in Yahuah (Lord). For not he that commendeth himself is approved, but whom Yahuah (Lord) commendeth* (2 Corinthians 10:17-18). The word is Jeremiah''s, given by Yahuah (LORD): *Let not the wise man glory in his wisdom, neither let the mighty man glory in his might, let not the rich man glory in his riches: But let him that glorieth glory in this, that he understandeth and knoweth me, that I am Yahuah (LORD) which exercise lovingkindness, judgment, and righteousness, in the earth: for in these things I delight, saith Yahuah (LORD)* (Jeremiah 9:23-24). Every flesh-credential — wisdom, might, riches — is barred from the boast; the only glory left is the knowing of Yahuah (LORD) himself. This is not Torah-keeping set aside but the flesh''s self-commendation set aside: the boast is in knowing the One who delights in lovingkindness, judgment, and righteousness. Paul gave this same congregation the same citation in his first letter — *according as it is written, He that glorieth, let him glory in Yahuah (Lord)* (1 Corinthians 1:31) — and there named the reason: Elohim (God) chose the foolish and weak and base things *That no flesh should glory in his presence* (1 Corinthians 1:29), for in their calling were *not many wise men after the flesh, not many mighty, not many noble* (1 Corinthians 1:26). So Paul, against an assembly measuring itself by itself and commending its own, refuses to commend himself by the flesh and turns to the one approval that stands: *whom Yahuah (Lord) commendeth.* The boast is in Yahuah (LORD); the approval is from Yahuah (LORD); the glory of the flesh is shut out altogether.',
+       sv.verse_id, ev.verse_id, 'free', 7228
+  FROM _s229_2c10_lookup sv, _s229_2c10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=10 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 2-corinthians-10-the-weapons-of-our-warfare-are-not-carnal-every-high-thing-brought-low-isaiah-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 21:30 — *There is no wisdom nor understanding nor counsel against Yahuah (LORD)* why no fortress of the flesh stands; *the weapons of our warfare are not carnal, but mighty through Elohim (God) to the pulling down of strong holds* (2 Corinthians 10:4).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-the-weapons-of-our-warfare-are-not-carnal-every-high-thing-brought-low-isaiah-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=21 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 21:31 — *The horse is prepared against the day of battle: but safety is of Yahuah (LORD)* the carnal weapon set against the true might; the warfare *mighty through Elohim (God)* not the flesh''s armory (2 Corinthians 10:4).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-the-weapons-of-our-warfare-are-not-carnal-every-high-thing-brought-low-isaiah-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=21 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 2:11 — *The lofty looks of man shall be humbled... and Yahuah (LORD) alone shall be exalted in that day* the casting-down of imaginations; *every high thing that exalteth itself against the knowledge of Elohim (God)* brought low (2 Corinthians 10:5).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-the-weapons-of-our-warfare-are-not-carnal-every-high-thing-brought-low-isaiah-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 2:12 — *the day of Yahuah Tseva''ot (LORD of hosts) shall be upon every one that is proud and lofty... and he shall be brought low* the high towers cast down; *every high thing that exalteth itself against the knowledge of Elohim (God)* (2 Corinthians 10:5).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-the-weapons-of-our-warfare-are-not-carnal-every-high-thing-brought-low-isaiah-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 2:17 — *the loftiness of man shall be bowed down... and Yahuah (LORD) alone shall be exalted* the proud thought bowed, not destroyed; *bringing into captivity every thought to the obedience of Messiah (Christ)* (2 Corinthians 10:5).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-the-weapons-of-our-warfare-are-not-carnal-every-high-thing-brought-low-isaiah-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Isaiah 11:9 — *the earth shall be full of the knowledge of Yahuah (LORD), as the waters cover the sea* the aim of the warfare; *the knowledge of Elohim (God)* against which no high thing may stand (2 Corinthians 10:5).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-the-weapons-of-our-warfare-are-not-carnal-every-high-thing-brought-low-isaiah-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Isaiah 2:3 — *out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* the thought brought captive not against the Torah but unto it; *every thought to the obedience of Messiah (Christ)* (2 Corinthians 10:5).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-the-weapons-of-our-warfare-are-not-carnal-every-high-thing-brought-low-isaiah-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-10-he-that-glorieth-let-him-glory-in-yahuah-jeremiah-9
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 9:23 — *Let not the wise man glory in his wisdom, neither let the mighty man glory in his might, let not the rich man glory in his riches* the flesh-credential barred; *he that glorieth, let him glory in Yahuah (Lord)* (2 Corinthians 10:17).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-he-that-glorieth-let-him-glory-in-yahuah-jeremiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=9 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 9:24 — *let him that glorieth glory in this, that he understandeth and knoweth me, that I am Yahuah (LORD)* the substance of the boast; *whom Yahuah (Lord) commendeth* is approved, not the self-commender (2 Corinthians 10:17-18).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-he-that-glorieth-let-him-glory-in-yahuah-jeremiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=9 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Corinthians 1:31 — *according as it is written, He that glorieth, let him glory in Yahuah (Lord)* the same Jeremiah-9 citation Paul gave this congregation before; repeated here (2 Corinthians 10:17).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-he-that-glorieth-let-him-glory-in-yahuah-jeremiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Corinthians 1:29 — *That no flesh should glory in his presence* the reason the boast is shut into Yahuah (LORD); the flesh-credential excluded (2 Corinthians 10:17-18).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-he-that-glorieth-let-him-glory-in-yahuah-jeremiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Corinthians 1:26 — *not many wise men after the flesh, not many mighty, not many noble, are called* the same flesh-credentials Jeremiah barred; *not he that commendeth himself is approved, but whom Yahuah (Lord) commendeth* (2 Corinthians 10:18).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c10_lookup sv, _s229_2c10_lookup tv
+ WHERE t.slug='2-corinthians-10-he-that-glorieth-let-him-glory-in-yahuah-jeremiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=10 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2corinthians_11.sql (S229 2 Corinthians 11) -----
+-- =====================================================================
+-- S229 minion — 2 CORINTHIANS 11 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 2 CORINTHIANS 11 (33 verses) — espoused to one husband / the serpent
+--   beguiled Eve / Satan as an angel of light / Paul's sufferings / let down in a basket.
+-- Tag: 2c11 (temp view _s229_2c11_lookup).
+-- Sort band: floor 7250, step 3 (7250, 7253, 7256 used; under 7275).
+-- Source is ALWAYS the canon 2 Corinthians verse; targets span Tanakh + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Paul, jealous over the assembly with godly jealousy, has *espoused you to
+-- one husband, that I may present you as a chaste virgin to Messiah* (11:2) — the marriage-covenant
+-- figure of Yahuah (LORD) betrothing Yashar'el (Israel), *I will betroth thee unto me for ever*
+-- (Hosea 2:19), the husband whose covenant they brake (Jeremiah 31:32). His fear is the Eden fear:
+-- *as the serpent beguiled Eve through his subtilty, so your minds should be corrupted* (11:3),
+-- citing the serpent *more subtil than any beast of the field* (Genesis 3:1) and Eve's confession
+-- *The serpent beguiled me, and I did eat* (Genesis 3:13). The false apostles who transform
+-- themselves are the serpent's own craft: *Satan himself is transformed into an angel of light*
+-- (11:14). The sufferings catalogue (11:23-28) and *through a window in a basket was I let down by
+-- the wall* (11:33) are the lived cost of the apostleship, the Damascus escape of Acts 9:25 — the
+-- chosen vessel told *how great things he must suffer for my name's sake* (Acts 9:16).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-4   jealous over you / espoused to one husband / the serpent beguiled Eve
+--           Tanakh: Hosea 2:19-20 (I will betroth thee unto me for ever), Jeremiah 31:32 (I was
+--                   an husband unto them), Exodus 34:14 (Yahuah whose name is Jealous, a jealous
+--                   Elohim); Genesis 3:1,4,13 (the serpent beguiled me, and I did eat)
+--           Extras: 1 Enoch 69:6 weighed (committed fornication, led astray, corrupt) — NOT added;
+--                   the named-Gadreel verse (69:10) carries Charles bracket-apparatus inside the
+--                   verse, so no clean extras witness pulls for the serpent block; none warranted
+--           NT: none warranted (the serpent/betrothal roots are the Tanakh)
+--   v.5-12  the chiefest apostles / preached the gospel freely / robbed other churches
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted (pastoral defense)
+--   v.13-15 false apostles transformed / Satan transformed into an angel of light
+--           Tanakh: carried in the serpent thread (Genesis 3:1, the subtil deceiver) — folded there;
+--                   no distinct load-bearing root   Extras: none warranted   NT: none warranted
+--   v.16-22 boasting as a fool / Hebrews, Israelites, seed of Abraham
+--           Tanakh: none warranted (boast-in-Yahuah carried at ch10:17)   Extras: none   NT: none
+--   v.23-31 the sufferings catalogue / stripes, prisons, perils, the care of the churches
+--           Tanakh: none warranted (a lived catalogue, not a quotation)
+--           Extras: none warranted   NT: Acts 9:16 (how great things he must suffer for my name)
+--   v.32-33 let down by the wall in a basket / escaped the governor under Aretas
+--           Tanakh: none warranted   Extras: none warranted
+--           NT: Acts 9:25 (the disciples let him down by the wall in a basket), Acts 9:23-24
+--   v.33 ties to the sufferings thread via Acts 9
+--
+-- THREADS (slug -> target libraries):
+--   7250 2-corinthians-11-espoused-to-one-husband-the-betrothal-of-yasharel-hosea-2  (Tanakh)
+--   7253 2-corinthians-11-as-the-serpent-beguiled-eve-through-his-subtilty-genesis-3 (Tanakh)
+--   7256 2-corinthians-11-let-down-by-the-wall-in-a-basket-the-sufferings-acts-9      (NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s229_2c11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 2-corinthians-11-espoused-to-one-husband-the-betrothal-of-yasharel-hosea-2
+  ('canon', '2-corinthians', 11, 2, 'canon', 'hosea', 2, 19, 'free', E'*And I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies.* (Hosea 2:19). This is the marriage-covenant Paul has in view when he says *I have espoused you to one husband, that I may present you as a chaste virgin to Messiah (Christ)* (2 Corinthians 11:2). Yahuah (LORD) betroths Yashar''el (Israel) to himself for ever — not for a season, but in righteousness and faithfulness; and Paul, jealous *over you with godly jealousy,* stands as the friend of the bridegroom guarding that one betrothal. The assembly is the bride espoused to one husband, the Messiah; to be drawn after another is to break the betrothal Yahuah (LORD) swore to keep for ever.'),
+  ('canon', '2-corinthians', 11, 2, 'canon', 'hosea', 2, 20, 'free', E'*I will even betroth thee unto me in faithfulness: and thou shalt know Yahuah (LORD).* (Hosea 2:20). The betrothal of Yahuah (LORD) to Yashar''el (Israel) is *in faithfulness,* and its end is that the bride *shalt know Yahuah (LORD).* Paul echoes the same single-hearted bond: *I have espoused you to one husband, that I may present you as a chaste virgin to Messiah (Christ)* (2 Corinthians 11:2). The chaste virgin presented to the one husband is the faithful bride of Hosea, who is not divided among lovers but knows Yahuah (LORD) alone.'),
+  ('canon', '2-corinthians', 11, 2, 'canon', 'jeremiah', 31, 32, 'free', E'*Not according to the covenant that I made with their fathers in the day that I took them by the hand to bring them out of the land of Egypt; which my covenant they brake, although I was an husband unto them, saith Yahuah (LORD):* (Jeremiah 31:32). Yahuah (LORD) names himself *an husband unto them* — the marriage-bond of the covenant, which the fathers brake. Paul takes up that same figure of the husband: *I have espoused you to one husband, that I may present you as a chaste virgin to Messiah (Christ)* (2 Corinthians 11:2). The one husband of the assembly is the same Yahuah (LORD) who was husband to Yashar''el (Israel); the godly jealousy that guards the betrothal is his own, lest the bride again break covenant with the One who took her by the hand.'),
+  ('canon', '2-corinthians', 11, 2, 'canon', 'exodus', 34, 14, 'free', E'*For thou shalt worship no other god: for Yahuah (LORD), whose name is Jealous, is a jealous Elohim (God):* (Exodus 34:14). The very name of Yahuah (LORD) is *Jealous,* and his is *a jealous Elohim (God)* — a jealousy bound up with the marriage-covenant, that the bride worship no other. Paul''s jealousy is that jealousy: *I am jealous over you with godly jealousy: for I have espoused you to one husband* (2 Corinthians 11:2). The apostle''s zeal for the chaste virgin is not his own possessiveness but the godly jealousy of the One whose name is Jealous, guarding his espoused from going after other lovers.'),
+  -- thread: 2-corinthians-11-as-the-serpent-beguiled-eve-through-his-subtilty-genesis-3
+  ('canon', '2-corinthians', 11, 3, 'canon', 'genesis', 3, 13, 'free', E'*And Yahuah Elohim (the LORD God) said unto the woman, What is this that thou hast done? And the woman said, The serpent beguiled me, and I did eat.* (Genesis 3:13). This is the text Paul cites: *I fear, lest by any means, as the serpent beguiled Eve through his subtilty, so your minds should be corrupted from the simplicity that is in Messiah (Christ)* (2 Corinthians 11:3). Eve''s own confession — *the serpent beguiled me, and I did eat* — is the pattern of the danger at Corinth: a beguiling that turns the mind from the single, simple devotion to the one husband. The same craft that drew the first woman from her Maker''s word is at work in the false apostles who would draw the bride from the simplicity that is in Messiah (Christ).'),
+  ('canon', '2-corinthians', 11, 3, 'canon', 'genesis', 3, 1, 'free', E'*Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made. And he said unto the woman, Yea, hath Elohim (God) said, Ye shall not eat of every tree of the garden?* (Genesis 3:1). Paul names the serpent''s *subtilty* (2 Corinthians 11:3), and here is its first stroke: the serpent *more subtil than any beast of the field,* opening with a question that bends the word of Elohim (God) — *Yea, hath Elohim (God) said?* The corruption of the mind begins where the plain word is made to waver. So Paul fears for the assembly''s *minds,* lest the same subtle questioning corrupt them *from the simplicity that is in Messiah (Christ).*'),
+  ('canon', '2-corinthians', 11, 3, 'canon', 'genesis', 3, 4, 'free', E'*And the serpent said unto the woman, Ye shall not surely die:* (Genesis 3:4). The serpent''s subtilty ends in a flat contradiction of Elohim (God) — *Ye shall not surely die* — the lie that overturns the word. This is the beguiling Paul sets before the Corinthians: *as the serpent beguiled Eve through his subtilty, so your minds should be corrupted from the simplicity that is in Messiah (Christ)* (2 Corinthians 11:3). And it is no marvel, for the deceivers serve the deceiver: *Satan himself is transformed into an angel of light* (2 Corinthians 11:14). The serpent who told Eve she would not die wears now the dress of light, and his ministers the dress of righteousness; the same lie, the same craft, against the chaste virgin.'),
+  ('canon', '2-corinthians', 11, 14, 'canon', 'genesis', 3, 1, 'free', E'*Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made.* (Genesis 3:1). The serpent''s mark is disguise — the most subtil beast, wearing craft as its covering. Paul unveils the same disguise in the false apostles: *Satan himself is transformed into an angel of light. Therefore it is no great thing if his ministers also be transformed as the ministers of righteousness* (2 Corinthians 11:14-15). The deceiver who beguiled Eve in the garden has not changed his method; he comes clothed as light, his ministers clothed as righteousness, the same subtil serpent against the espoused bride.'),
+  -- thread: 2-corinthians-11-let-down-by-the-wall-in-a-basket-the-sufferings-acts-9
+  ('canon', '2-corinthians', 11, 33, 'canon', 'acts', 9, 25, 'free', E'*Then the disciples took him by night, and let him down by the wall in a basket.* (Acts 9:25). Paul closes the catalogue of his sufferings with this very escape: *And through a window in a basket was I let down by the wall, and escaped his hands* (2 Corinthians 11:33). The deed Luke records in Damascus — the disciples lowering him by night through the wall — is the deed Paul names as the lowest point of his boasting *of the things which concern mine infirmities* (2 Corinthians 11:30). The chosen vessel, hunted from the start, glories not in strength but in the basket let down by the wall.'),
+  ('canon', '2-corinthians', 11, 32, 'canon', 'acts', 9, 24, 'free', E'*But their laying await was known of Saul. And they watched the gates day and night to kill him.* (Acts 9:24). Luke records the watch set against Saul at Damascus — the gates watched day and night — which Paul recalls: *In Damascus the governor under Aretas the king kept the city of the Damascenes with a garrison, desirous to apprehend me* (2 Corinthians 11:32). The garrison and the watched gates are the same peril; from the first days of his calling the apostle was a hunted man, and the perils he lists — *in perils in the city... in perils among false brethren* (2 Corinthians 11:26) — began at the very wall of Damascus.'),
+  ('canon', '2-corinthians', 11, 23, 'canon', 'acts', 9, 16, 'free', E'*For I will shew him how great things he must suffer for my name''s sake.* (Acts 9:16). At Paul''s calling Yahuah (Lord) declared the shape of his whole ministry — *how great things he must suffer for my name''s sake.* The sufferings catalogue fulfils that word: *in labours more abundant, in stripes above measure, in prisons more frequent, in deaths oft* (2 Corinthians 11:23). The chosen vessel sent to bear the name before the Gentiles and kings and the children of Yashar''el (Israel) was sent to suffer; the stripes and prisons and perils Paul recounts are the *great things* the Master foretold he would bear for that name''s sake.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s229_2c11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s229_2c11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-11-espoused-to-one-husband-the-betrothal-of-yasharel-hosea-2',
+       E'I have espoused you to one husband — the betrothal of Yashar''el (Israel) (Hosea 2)',
+       E'Paul guards the assembly as a bride: *I am jealous over you with godly jealousy: for I have espoused you to one husband, that I may present you as a chaste virgin to Messiah (Christ)* (2 Corinthians 11:2). The figure is the oldest covenant figure of all — Yahuah (LORD) the husband of Yashar''el (Israel). In Hosea, after the harlotry and the wilderness wooing, Yahuah (LORD) renews the marriage-bond: *I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies* (Hosea 2:19), *I will even betroth thee unto me in faithfulness: and thou shalt know Yahuah (LORD)* (Hosea 2:20). The betrothal is for ever, in faithfulness, ending in the bride''s knowing of her husband — and that is the chaste virgin Paul would present to the one husband. Jeremiah names the same bond and its breaking: the covenant *which my covenant they brake, although I was an husband unto them, saith Yahuah (LORD)* (Jeremiah 31:32) — Yahuah (LORD) the husband whose marriage Yashar''el (Israel) violated, now restored. And the jealousy Paul feels is no private possessiveness; it is the divine name itself: *Yahuah (LORD), whose name is Jealous, is a jealous Elohim (God)* (Exodus 34:14) — a jealousy bound to the marriage-covenant, that the bride worship no other. The apostle stands as friend of the bridegroom, watching over the espoused with the very jealousy of the One whose name is Jealous, that the bride not be drawn from the one husband to whom Yahuah (LORD) betrothed her for ever.',
+       sv.verse_id, ev.verse_id, 'free', 7250
+  FROM _s229_2c11_lookup sv, _s229_2c11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=11 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-11-as-the-serpent-beguiled-eve-through-his-subtilty-genesis-3',
+       E'As the serpent beguiled Eve through his subtilty (Genesis 3)',
+       E'Paul''s fear for the assembly is the Eden fear: *I fear, lest by any means, as the serpent beguiled Eve through his subtilty, so your minds should be corrupted from the simplicity that is in Messiah (Christ)* (2 Corinthians 11:3). He cites the garden directly. The serpent was *more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made,* and his first stroke was to bend the word with a question — *Yea, hath Elohim (God) said, Ye shall not eat of every tree of the garden?* (Genesis 3:1) — then to deny it outright: *Ye shall not surely die* (Genesis 3:4). And Eve''s own confession is the word Paul echoes: *The serpent beguiled me, and I did eat* (Genesis 3:13). The corruption began in the mind, where the plain word was made to waver; so Paul fears for the *minds* of the assembly, lest the same subtle craft draw them from the single, simple devotion to the one husband. And he names the serpent''s heir: *Satan himself is transformed into an angel of light. Therefore it is no great thing if his ministers also be transformed as the ministers of righteousness* (2 Corinthians 11:14-15). The deceiver who beguiled Eve has not changed his method — disguise was always his mark, the most subtil beast wearing craft as a covering — and now he comes clothed as light, his false apostles clothed as righteousness. The same lie, the same subtilty, against the chaste virgin espoused to Messiah (Christ).',
+       sv.verse_id, ev.verse_id, 'free', 7253
+  FROM _s229_2c11_lookup sv, _s229_2c11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=11 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-11-let-down-by-the-wall-in-a-basket-the-sufferings-acts-9',
+       E'Let down by the wall in a basket — the sufferings for the name (Acts 9)',
+       E'Paul closes his boasting not in strength but in weakness: *If I must needs glory, I will glory of the things which concern mine infirmities* (2 Corinthians 11:30). The lowest point of the catalogue is the Damascus escape — *In Damascus the governor under Aretas the king kept the city of the Damascenes with a garrison, desirous to apprehend me: And through a window in a basket was I let down by the wall, and escaped his hands* (2 Corinthians 11:32-33). Luke records the same flight: *And they watched the gates day and night to kill him. Then the disciples took him by night, and let him down by the wall in a basket* (Acts 9:24-25). The watched gates and the lowered basket are one and the same peril; from the very first days of his calling the apostle was a hunted man. And the whole catalogue — *in labours more abundant, in stripes above measure, in prisons more frequent, in deaths oft* (2 Corinthians 11:23) — fulfils the word spoken at his calling: *For I will shew him how great things he must suffer for my name''s sake* (Acts 9:16). The chosen vessel sent to bear the name before the Gentiles and kings and the children of Yashar''el (Israel) was sent to suffer; the stripes and prisons and perils he recounts, and the basket let down by the wall, are the *great things* the Master foretold he would bear for that name''s sake.',
+       sv.verse_id, ev.verse_id, 'free', 7256
+  FROM _s229_2c11_lookup sv, _s229_2c11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=11 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 2-corinthians-11-espoused-to-one-husband-the-betrothal-of-yasharel-hosea-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hosea 2:19 — *I will betroth thee unto me for ever... in righteousness, and in judgment, and in lovingkindness, and in mercies* Yahuah (LORD) betrothing Yashar''el (Israel) for ever; the one husband to whom Paul espoused the chaste virgin (2 Corinthians 11:2).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c11_lookup sv, _s229_2c11_lookup tv
+ WHERE t.slug='2-corinthians-11-espoused-to-one-husband-the-betrothal-of-yasharel-hosea-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hosea 2:20 — *I will even betroth thee unto me in faithfulness: and thou shalt know Yahuah (LORD)* the faithful betrothal whose end is knowing Yahuah (LORD); the chaste virgin presented to the one husband (2 Corinthians 11:2).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c11_lookup sv, _s229_2c11_lookup tv
+ WHERE t.slug='2-corinthians-11-espoused-to-one-husband-the-betrothal-of-yasharel-hosea-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 31:32 — *which my covenant they brake, although I was an husband unto them, saith Yahuah (LORD)* Yahuah (LORD) the husband of the covenant; the one husband to whom the assembly is espoused (2 Corinthians 11:2).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c11_lookup sv, _s229_2c11_lookup tv
+ WHERE t.slug='2-corinthians-11-espoused-to-one-husband-the-betrothal-of-yasharel-hosea-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 34:14 — *Yahuah (LORD), whose name is Jealous, is a jealous Elohim (God)* the divine jealousy of the marriage-covenant; Paul''s *godly jealousy* over the espoused bride (2 Corinthians 11:2).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c11_lookup sv, _s229_2c11_lookup tv
+ WHERE t.slug='2-corinthians-11-espoused-to-one-husband-the-betrothal-of-yasharel-hosea-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-11-as-the-serpent-beguiled-eve-through-his-subtilty-genesis-3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 3:13 — *The serpent beguiled me, and I did eat* Eve''s confession, the text Paul cites; *as the serpent beguiled Eve through his subtilty, so your minds should be corrupted* (2 Corinthians 11:3).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c11_lookup sv, _s229_2c11_lookup tv
+ WHERE t.slug='2-corinthians-11-as-the-serpent-beguiled-eve-through-his-subtilty-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:1 — *Now the serpent was more subtil than any beast of the field... Yea, hath Elohim (God) said?* the serpent''s subtilty bending the word; Paul names that *subtilty* corrupting the mind (2 Corinthians 11:3).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c11_lookup sv, _s229_2c11_lookup tv
+ WHERE t.slug='2-corinthians-11-as-the-serpent-beguiled-eve-through-his-subtilty-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 3:4 — *Ye shall not surely die* the serpent''s flat denial of the word; the same lie now dressed as light, *Satan... transformed into an angel of light* (2 Corinthians 11:3,14).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c11_lookup sv, _s229_2c11_lookup tv
+ WHERE t.slug='2-corinthians-11-as-the-serpent-beguiled-eve-through-his-subtilty-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 3:1 — *the serpent was more subtil than any beast of the field* disguise the serpent''s mark; *Satan himself is transformed into an angel of light... his ministers... as the ministers of righteousness* (2 Corinthians 11:14-15).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c11_lookup sv, _s229_2c11_lookup tv
+ WHERE t.slug='2-corinthians-11-as-the-serpent-beguiled-eve-through-his-subtilty-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-11-let-down-by-the-wall-in-a-basket-the-sufferings-acts-9
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 9:25 — *the disciples took him by night, and let him down by the wall in a basket* the Damascus escape; *in a basket was I let down by the wall, and escaped his hands* (2 Corinthians 11:33).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c11_lookup sv, _s229_2c11_lookup tv
+ WHERE t.slug='2-corinthians-11-let-down-by-the-wall-in-a-basket-the-sufferings-acts-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=9 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 9:24 — *they watched the gates day and night to kill him* the watch set against Saul; *the governor under Aretas... kept the city... desirous to apprehend me* (2 Corinthians 11:32).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c11_lookup sv, _s229_2c11_lookup tv
+ WHERE t.slug='2-corinthians-11-let-down-by-the-wall-in-a-basket-the-sufferings-acts-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=9 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 9:16 — *I will shew him how great things he must suffer for my name''s sake* the calling-word fulfilled in the catalogue; *in labours more abundant, in stripes above measure, in prisons more frequent* (2 Corinthians 11:23).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c11_lookup sv, _s229_2c11_lookup tv
+ WHERE t.slug='2-corinthians-11-let-down-by-the-wall-in-a-basket-the-sufferings-acts-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=11 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=9 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2corinthians_12.sql (S229 2 Corinthians 12) -----
+-- =====================================================================
+-- S229 minion — 2 CORINTHIANS 12 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 2 CORINTHIANS 12 (21 verses) — caught up to the third heaven / the thorn
+--   in the flesh / strength made perfect in weakness.
+-- Tag: 2c12 (temp view _s229_2c12_lookup).
+-- Sort band: floor 7275, step 3 (7275, 7278, 7281 used; under 7300).
+-- Source is ALWAYS the canon 2 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME. Paul, pressed to glory by the false apostles, will boast only in what abases the
+-- flesh. He tells of *a man in Messiah* caught up *to the third heaven... into paradise* (12:2-4) — and
+-- will not glory in the ascent but in his infirmities. The thorn in the flesh, *the messenger of Satan
+-- to buffet me* (12:7), is given to keep him low, and Yahuah''s (Lord''s) answer is the heart of the
+-- chapter: *My grace is sufficient for thee: for my strength is made perfect in weakness* (12:9), so that
+-- *when I am weak, then am I strong* (12:10). The paradise/ascent block draws the restored library''s
+-- ascent-witness (the Ascension of Isaiah carried through the heavens, *how far will he ascend that
+-- dwelleth in the flesh?*) and the canon paradise (Luke 23:43, the tree of life in the paradise of Elohim,
+-- Revelation 2:7). The thorn draws Job: Satan permitted to buffet, but bounded by Yahuah (LORD) and
+-- serving Yahuah''s (LORD''s) purpose. The strength-in-weakness block draws the Tanakh root that strength
+-- belongs to Yahuah (LORD), given to the faint, the boast that is in knowing him, not in might.
+--   NOTE ON 2 ENOCH: the brief flags 2 Enoch (pseudepigrapha-charles-vol2) as the natural ascent witness,
+--   but the parsed text of 2 Enoch ch.8/22-24 carries heavy Charles critical-apparatus fragments and OCR
+--   garble INSIDE the verses (line-headers, footnote text, transliterated Greek/Hebrew). Per the brief''s
+--   "do not quote a verse that carries apparatus noise — pick a clean witness instead" rule, 2 Enoch is
+--   recorded NONE WARRANTED for this chapter; the Ascension of Isaiah is the clean ascent witness used.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-6   caught up to the third heaven, into paradise, heard unspeakable words
+--           Tanakh: Genesis 2:8-9 (the garden/tree of life in Eden — the paradise root)
+--           Extras: Ascension of Isaiah 8:11 (no man returning to a body has ascended/seen this),
+--                   9:1 (how far will he ascend that dwelleth in the flesh?), 9:8 (the righteous
+--                   stript of the flesh, in garments of glory) — clean ascent witness
+--                   [2 Enoch: NONE WARRANTED — apparatus noise inside the parsed verses]
+--           NT: Luke 23:43 (to day shalt thou be with me in paradise),
+--               Revelation 2:7 (the tree of life in the midst of the paradise of Elohim)
+--   v.7-9   a thorn in the flesh, the messenger of Satan to buffet me
+--           Tanakh: Job 1:12 (all he hath in thy power; upon himself put not forth thine hand),
+--                   Job 2:6-7 (he is in thine hand, but save his life; Satan smote Job)
+--           Extras: none warranted   NT: none warranted (carried by the Job root)
+--   v.9-10  my grace is sufficient; my strength is made perfect in weakness; when weak, then strong
+--           Tanakh: Isaiah 40:29-31 (power to the faint, they that wait renew their strength),
+--                   Jeremiah 9:23-24 (glory not in might but in knowing Yahuah),
+--                   Zechariah 4:6 (not by might, nor by power, but by my spirit)
+--           Extras: none warranted   NT: none warranted (carried by the Tanakh roots)
+--   v.11-21 chiefest apostles / signs of an apostle / not burdensome / fear of debates and uncleanness
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted
+--                   (pastoral self-defense and the closing warning; no load-bearing parallel)
+--
+-- THREADS (slug -> target libraries):
+--   7275 2-corinthians-12-caught-up-to-the-third-heaven-into-paradise-the-ascension-of-isaiah  (Tanakh + Extras + NT)
+--   7278 2-corinthians-12-a-thorn-in-the-flesh-the-messenger-of-satan-to-buffet-me-job-1-2     (Tanakh)
+--   7281 2-corinthians-12-my-strength-is-made-perfect-in-weakness-isaiah-40-jeremiah-9         (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s229_2c12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 2-corinthians-12-caught-up-to-the-third-heaven-into-paradise-the-ascension-of-isaiah
+  ('canon', '2-corinthians', 12, 4, 'canon', 'luke', 23, 43, 'free', E'*And Yahusha (Jesus) said unto him, Verily I say unto thee, To day shalt thou be with me in paradise.* (Luke 23:43). Paul tells how the man in Messiah (Christ) *was caught up into paradise, and heard unspeakable words, which it is not lawful for a man to utter* (2 Corinthians 12:4). The paradise into which Paul was caught up is the very place Yahusha (Jesus) promised the dying thief — *to day shalt thou be with me in paradise.* It is no abstraction but the garden-dwelling of Yahuah (LORD) where the redeemed are received; what Paul glimpsed and could not lawfully utter is the place the Master himself opened to a thief with a word.'),
+  ('canon', '2-corinthians', 12, 4, 'canon', 'revelation', 2, 7, 'free', E'*He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* (Revelation 2:7). Paul *was caught up into paradise, and heard unspeakable words* (2 Corinthians 12:4); John names what is in that paradise — *the tree of life, which is in the midst of the paradise of Elohim (God).* The paradise of the ascent is the paradise of the overcomer''s reward, the Eden-garden restored, the tree of life that was barred to Adam given again to them that overcome. Paul was caught up to where the gathered are bound.'),
+  ('canon', '2-corinthians', 12, 4, 'canon', 'genesis', 2, 9, 'free', E'*And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* (Genesis 2:9). Before paradise was a thing caught up to, it was a garden planted on the earth: Yahuah Elohim (the LORD God) grew *the tree of life also in the midst of the garden.* The *paradise* into which Paul *was caught up* (2 Corinthians 12:4) is that same garden of Yahuah (LORD), from which man was driven and to which the redeemed are restored — the beginning and the end of the covenant story, the Eden lost in Adam and regained in Messiah (Christ).'),
+  ('canon', '2-corinthians', 12, 2, 'ascension-isaiah', 'ascension-isaiah', 8, 11, 'extras', E'*I indeed say unto thee, Isaiah; No man about to return into a body of that world has ascended or seen what thou seest or perceived what thou hast perceived and what thou wilt see.* (Ascension of Isaiah 8:11). The restored library tells of a seer carried up through the heavens and told that *no man about to return into a body of that world has ascended or seen* such things. Paul, *caught up to the third heaven* (2 Corinthians 12:2), strikes the same note: *whether in the body, I cannot tell; or whether out of the body, I cannot tell: Elohim (God) knoweth.* What is seen in the ascent is shown to one who must yet return to the body, and *heard unspeakable words, which it is not lawful for a man to utter* (2 Corinthians 12:4).'),
+  ('canon', '2-corinthians', 12, 3, 'ascension-isaiah', 'ascension-isaiah', 9, 1, 'extras', E'*AND he took me into the air of the seventh heaven, and moreover I heard a voice saying: "How far will he ascend that dwelleth in the flesh?" And I feared and trembled.* (Ascension of Isaiah 9:1). As Isaiah is raised, a voice asks *how far will he ascend that dwelleth in the flesh?* — the very question Paul cannot answer of his own ascent: *whether in the body, or out of the body, I cannot tell: Elohim (God) knoweth* (2 Corinthians 12:3). The ascent of a man still bound to flesh is a marvel that makes the seer fear and tremble; Paul refuses to glory in it, *lest any man should think of me above that which he seeth me to be* (2 Corinthians 12:6).'),
+  ('canon', '2-corinthians', 12, 4, 'ascension-isaiah', 'ascension-isaiah', 9, 8, 'extras', E'*And there I saw Enoch and all who were with him, stript of the garments of the flesh, and I saw them in their garments of the upper world, and they were like angels, standing there in great glory.* (Ascension of Isaiah 9:8). In the highest heaven the seer beholds the righteous *stript of the garments of the flesh... in their garments of the upper world... in great glory.* This is the company among whom paradise places the redeemed — the place into which Paul *was caught up... and heard unspeakable words, which it is not lawful for a man to utter* (2 Corinthians 12:4). The glory laid up for the righteous is real and bodily-clothed in the garments of the upper world, the hope toward which the whole letter strains.'),
+  -- thread: 2-corinthians-12-a-thorn-in-the-flesh-the-messenger-of-satan-to-buffet-me-job-1-2
+  ('canon', '2-corinthians', 12, 7, 'canon', 'job', 1, 12, 'free', E'*And Yahuah (LORD) said unto Satan, Behold, all that he hath is in thy power; only upon himself put not forth thine hand. So Satan went forth from the presence of Yahuah (LORD).* (Job 1:12). The adversary is no free agent: he afflicts only by Yahuah''s (LORD''s) leave and only within Yahuah''s (LORD''s) bounds — *all that he hath is in thy power; only upon himself put not forth thine hand.* So too Paul''s *thorn in the flesh, the messenger of Satan to buffet me* (2 Corinthians 12:7) is a buffeting Yahuah (LORD) permits and governs, given *lest I should be exalted above measure.* The messenger of Satan serves the purpose of Yahuah (LORD), as Satan''s hand against Job served the proving of a righteous man.'),
+  ('canon', '2-corinthians', 12, 7, 'canon', 'job', 2, 6, 'free', E'*And Yahuah (LORD) said unto Satan, Behold, he is in thine hand; but save his life.* (Job 2:6). A second time Yahuah (LORD) hands Job over with a fixed limit — *he is in thine hand; but save his life.* The bound adversary may buffet but may not destroy. Paul''s *messenger of Satan to buffet me* (2 Corinthians 12:7) operates under the same governing hand: it presses and humbles but cannot undo, for the One who permits it has already spoken the sufficient word over it — *My grace is sufficient for thee* (2 Corinthians 12:9).'),
+  ('canon', '2-corinthians', 12, 7, 'canon', 'job', 2, 7, 'free', E'*So went Satan forth from the presence of Yahuah (LORD), and smote Job with sore boils from the sole of his foot unto his crown.* (Job 2:7). Satan *smote Job with sore boils* in his very flesh — an affliction in the body, sent under heaven''s permission, that Job might be proved and not destroyed. Paul carries his own affliction in the flesh: *there was given to me a thorn in the flesh, the messenger of Satan to buffet me* (2 Corinthians 12:7). The smiting that fell on Job''s flesh and the thorn that pierced Paul''s are the same kind of bounded buffeting, turned by Yahuah (LORD) to keep the servant low and to make his strength perfect in weakness.'),
+  -- thread: 2-corinthians-12-my-strength-is-made-perfect-in-weakness-isaiah-40-jeremiah-9
+  ('canon', '2-corinthians', 12, 9, 'canon', 'isaiah', 40, 29, 'free', E'*He giveth power to the faint; and to them that have no might he increaseth strength.* (Isaiah 40:29). The strength Paul is promised is the strength Isaiah declares belongs to Yahuah (LORD) and is given to the weak: *he giveth power to the faint; and to them that have no might he increaseth strength.* So Yahuah (LORD) answers Paul, *My grace is sufficient for thee: for my strength is made perfect in weakness* (2 Corinthians 12:9). The faint and the might-less are exactly the ones Yahuah (LORD) strengthens; Paul''s infirmity is not the absence of power but the place where the power of Messiah (Christ) comes to rest.'),
+  ('canon', '2-corinthians', 12, 9, 'canon', 'isaiah', 40, 31, 'free', E'*But they that wait upon Yahuah (LORD) shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.* (Isaiah 40:31). Isaiah promises that *they that wait upon Yahuah (LORD) shall renew their strength* — a strength that comes from without, from the One waited upon, not mustered from within. This is the strength *made perfect in weakness* (2 Corinthians 12:9): when Paul takes pleasure *in infirmities* so *that the power of Messiah (Christ) may rest upon me,* and finds that *when I am weak, then am I strong* (2 Corinthians 12:9-10). The renewed strength of the waiting is the strength of the One who is leaned upon.'),
+  ('canon', '2-corinthians', 12, 10, 'canon', 'jeremiah', 9, 23, 'free', E'*Thus saith Yahuah (LORD), Let not the wise man glory in his wisdom, neither let the mighty man glory in his might, let not the rich man glory in his riches:* (Jeremiah 9:23). Yahuah (LORD) forbids the boast in might — *let not the mighty man glory in his might.* Paul lives the prohibition inside out: he glories not in might but *in mine infirmities* (2 Corinthians 12:9), taking pleasure *in infirmities... in distresses for Messiah''s (Christ''s) sake: for when I am weak, then am I strong* (2 Corinthians 12:10). The glory that Jeremiah strips from the mighty Paul finds in weakness, for the strength is not his own.'),
+  ('canon', '2-corinthians', 12, 10, 'canon', 'jeremiah', 9, 24, 'free', E'*But let him that glorieth glory in this, that he understandeth and knoweth me, that I am Yahuah (LORD) which exercise lovingkindness, judgment, and righteousness, in the earth: for in these things I delight, saith Yahuah (LORD).* (Jeremiah 9:24). The one boast Yahuah (LORD) allows is the boast in knowing him — *let him that glorieth glory in this, that he understandeth and knoweth me.* Paul''s glorying in weakness is that very boast, for it casts him wholly upon the One who said *My grace is sufficient for thee* (2 Corinthians 12:9); his strength when weak (2 Corinthians 12:10) is the lovingkindness and power of Yahuah (LORD) made known in him, not a credential of his own.'),
+  ('canon', '2-corinthians', 12, 9, 'canon', 'zechariah', 4, 6, 'free', E'*Then he answered and spake unto me, saying, This is the word of Yahuah (LORD) unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts).* (Zechariah 4:6). The work of Yahuah (LORD) is accomplished *not by might, nor by power, but by my spirit.* That is the law of Paul''s ministry too: the *strength... made perfect in weakness* (2 Corinthians 12:9) is the strength of the Spirit, not of the flesh, so that *the power of Messiah (Christ) may rest upon* him in his infirmity. What Zechariah said of rebuilding the house, Paul knows of his whole labour — the power is Yahuah''s (LORD''s) Spirit, given where human might fails.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s229_2c12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s229_2c12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-12-caught-up-to-the-third-heaven-into-paradise-the-ascension-of-isaiah',
+       E'Caught up to the third heaven, into paradise (the Ascension of Isaiah, Luke 23, Revelation 2)',
+       E'Pressed to glory, Paul will tell one thing and not glory in it: *I knew a man in Messiah (Christ) above fourteen years ago... such an one caught up to the third heaven* (2 Corinthians 12:2), *caught up into paradise, and heard unspeakable words, which it is not lawful for a man to utter* (2 Corinthians 12:4). He cannot even say how it was — *whether in the body, I cannot tell; or whether out of the body, I cannot tell: Elohim (God) knoweth.* The restored library knew this kind of ascent and its wonder. Isaiah, carried up through the heavens, is told *No man about to return into a body of that world has ascended or seen what thou seest or perceived what thou hast perceived* (Ascension of Isaiah 8:11); a voice asks of him *How far will he ascend that dwelleth in the flesh?* (Ascension of Isaiah 9:1) — the very thing Paul cannot answer of himself. And in the highest heaven Isaiah sees the righteous *stript of the garments of the flesh... in their garments of the upper world, and they were like angels, standing there in great glory* (Ascension of Isaiah 9:8) — the company paradise gathers. The paradise Paul was caught up to is no abstraction: it is the garden of Yahuah (LORD). It is the place Yahusha (Jesus) opened to a dying thief with a word — *To day shalt thou be with me in paradise* (Luke 23:43); it is where *the tree of life... is in the midst of the paradise of Elohim (God)* (Revelation 2:7), the reward of the overcomer; and it is the garden of the beginning, where Yahuah Elohim (the LORD God) grew *the tree of life also in the midst of the garden* (Genesis 2:9). The Eden lost in Adam is the paradise regained in Messiah (Christ) — and Paul, having seen it, will glory not in the seeing but in his infirmities, *lest I should be exalted above measure* (2 Corinthians 12:7).',
+       sv.verse_id, ev.verse_id, 'extras', 7275
+  FROM _s229_2c12_lookup sv, _s229_2c12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=12 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-12-a-thorn-in-the-flesh-the-messenger-of-satan-to-buffet-me-job-1-2',
+       E'A thorn in the flesh, the messenger of Satan to buffet me (Job 1-2)',
+       E'Lest the abundance of the revelations lift him up, Paul is given a burden in the body: *there was given to me a thorn in the flesh, the messenger of Satan to buffet me, lest I should be exalted above measure* (2 Corinthians 12:7). Mark the grammar of it — the messenger is Satan''s, yet the thorn *was given,* and given for a holy end. The book of Job shows the same hand at work. When the adversary would strike Job, Yahuah (LORD) sets the bound: *Behold, all that he hath is in thy power; only upon himself put not forth thine hand* (Job 1:12); and again, *Behold, he is in thine hand; but save his life* (Job 2:6). Satan is no free agent; he buffets only by leave and only within the line Yahuah (LORD) draws. So *went Satan forth from the presence of Yahuah (LORD), and smote Job with sore boils from the sole of his foot unto his crown* (Job 2:7) — an affliction in the very flesh, permitted, bounded, and turned to the proving of a righteous man. Paul''s thorn is that same bounded buffeting: a messenger of Satan that Yahuah (LORD) permits and governs to keep his servant low. And over it Paul hears the sufficient word — *My grace is sufficient for thee* (2 Corinthians 12:9) — the answer that the One who permits the buffeting has already spoken its end.',
+       sv.verse_id, ev.verse_id, 'free', 7278
+  FROM _s229_2c12_lookup sv, _s229_2c12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=12 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-12-my-strength-is-made-perfect-in-weakness-isaiah-40-jeremiah-9',
+       E'My strength is made perfect in weakness (Isaiah 40, Jeremiah 9, Zechariah 4)',
+       E'Here is the heart of the chapter and the answer to the thorn: *And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness... for when I am weak, then am I strong* (2 Corinthians 12:9-10). This is no novelty but the settled law of the Tanakh, that strength is Yahuah''s (LORD''s) to give, and he gives it to the weak. Isaiah declares it plainly: *He giveth power to the faint; and to them that have no might he increaseth strength* (Isaiah 40:29), and *they that wait upon Yahuah (LORD) shall renew their strength; they shall mount up with wings as eagles* (Isaiah 40:31) — a strength that comes from without, from the One waited upon, not mustered from within. So Paul takes pleasure in his infirmities, *that the power of Messiah (Christ) may rest upon* him. The boast that goes with it is the boast Jeremiah allows: *Let not the mighty man glory in his might* (Jeremiah 9:23), *but let him that glorieth glory in this, that he understandeth and knoweth me, that I am Yahuah (LORD)* (Jeremiah 9:24). Paul glories not in might but in weakness, and so glories in knowing the One whose strength is made perfect there. And it is the same word Yahuah (LORD) gave Zerubbabel for the rebuilding of his house: *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). The power that finishes the work of Yahuah (LORD) is the Spirit, given exactly where human might fails — which is why the weak servant, leaning wholly on grace, is the strong one.',
+       sv.verse_id, ev.verse_id, 'free', 7281
+  FROM _s229_2c12_lookup sv, _s229_2c12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=12 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 2-corinthians-12-caught-up-to-the-third-heaven-into-paradise-the-ascension-of-isaiah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ascension of Isaiah 8:11 — *No man about to return into a body of that world has ascended or seen what thou seest* the ascent shown to one who must return to the body; Paul *caught up to the third heaven... whether in the body, I cannot tell* (2 Corinthians 12:2).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-caught-up-to-the-third-heaven-into-paradise-the-ascension-of-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND tv.edition_slug='ascension-isaiah' AND tv.book_slug='ascension-isaiah' AND tv.chapter_number=8 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ascension of Isaiah 9:1 — *How far will he ascend that dwelleth in the flesh?* the question Paul cannot answer of his own ascent: *whether in the body, or out of the body, I cannot tell: Elohim (God) knoweth* (2 Corinthians 12:3).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-caught-up-to-the-third-heaven-into-paradise-the-ascension-of-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=3
+   AND tv.edition_slug='ascension-isaiah' AND tv.book_slug='ascension-isaiah' AND tv.chapter_number=9 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ascension of Isaiah 9:8 — *the righteous... stript of the garments of the flesh... in their garments of the upper world... in great glory* the company paradise gathers; the place Paul *was caught up into... and heard unspeakable words* (2 Corinthians 12:4).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-caught-up-to-the-third-heaven-into-paradise-the-ascension-of-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=4
+   AND tv.edition_slug='ascension-isaiah' AND tv.book_slug='ascension-isaiah' AND tv.chapter_number=9 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Luke 23:43 — *To day shalt thou be with me in paradise* the paradise the Master opened to the dying thief; the place into which Paul *was caught up* (2 Corinthians 12:4).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-caught-up-to-the-third-heaven-into-paradise-the-ascension-of-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=23 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 2:7 — *the tree of life, which is in the midst of the paradise of Elohim (God)* the overcomer''s reward in paradise; the paradise into which Paul *was caught up* (2 Corinthians 12:4).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-caught-up-to-the-third-heaven-into-paradise-the-ascension-of-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Genesis 2:9 — *the tree of life also in the midst of the garden* the paradise-garden of the beginning; the Eden lost in Adam and the paradise Paul *was caught up into* in Messiah (Christ) (2 Corinthians 12:4).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-caught-up-to-the-third-heaven-into-paradise-the-ascension-of-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-12-a-thorn-in-the-flesh-the-messenger-of-satan-to-buffet-me-job-1-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 1:12 — *all that he hath is in thy power; only upon himself put not forth thine hand* the adversary bounded by Yahuah (LORD); Paul''s *messenger of Satan to buffet me* permitted and governed (2 Corinthians 12:7).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-a-thorn-in-the-flesh-the-messenger-of-satan-to-buffet-me-job-1-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=1 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 2:6 — *he is in thine hand; but save his life* the fixed limit on the adversary; the thorn that buffets but cannot undo, under the One who said *My grace is sufficient for thee* (2 Corinthians 12:7,9).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-a-thorn-in-the-flesh-the-messenger-of-satan-to-buffet-me-job-1-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=2 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Job 2:7 — *smote Job with sore boils from the sole of his foot unto his crown* the bounded affliction in the flesh; the same kind of buffeting as Paul''s *thorn in the flesh* (2 Corinthians 12:7).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-a-thorn-in-the-flesh-the-messenger-of-satan-to-buffet-me-job-1-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-12-my-strength-is-made-perfect-in-weakness-isaiah-40-jeremiah-9
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 40:29 — *He giveth power to the faint; and to them that have no might he increaseth strength* the strength Yahuah (LORD) gives the weak; *my strength is made perfect in weakness* (2 Corinthians 12:9).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-my-strength-is-made-perfect-in-weakness-isaiah-40-jeremiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 40:31 — *they that wait upon Yahuah (LORD) shall renew their strength* strength from the One waited upon, not from within; the strength *made perfect in weakness* (2 Corinthians 12:9).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-my-strength-is-made-perfect-in-weakness-isaiah-40-jeremiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 9:23 — *let not the mighty man glory in his might* the boast in might forbidden; Paul glories instead *in mine infirmities* (2 Corinthians 12:9-10).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-my-strength-is-made-perfect-in-weakness-isaiah-40-jeremiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=9 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 9:24 — *let him that glorieth glory in this, that he understandeth and knoweth me, that I am Yahuah (LORD)* the one allowed boast; Paul''s glorying in weakness casts him on the One whose grace is sufficient (2 Corinthians 12:9-10).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-my-strength-is-made-perfect-in-weakness-isaiah-40-jeremiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=9 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Zechariah 4:6 — *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* the work done by the Spirit, not the flesh; the strength *made perfect in weakness* (2 Corinthians 12:9).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c12_lookup sv, _s229_2c12_lookup tv
+ WHERE t.slug='2-corinthians-12-my-strength-is-made-perfect-in-weakness-isaiah-40-jeremiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=4 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2corinthians_13.sql (S229 2 Corinthians 13) -----
+-- =====================================================================
+-- S229 minion — 2 CORINTHIANS 13 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 2 CORINTHIANS 13 (14 verses) — the FINAL chapter of the letter
+--   (two or three witnesses / examine yourselves / the closing benediction).
+-- Tag: 2c13 (temp view _s229_2c13_lookup).
+-- Sort band: floor 7300, step 3 (7300, 7303 used; under 7325).
+-- Source is ALWAYS the canon 2 Corinthians verse; targets span Tanakh + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical = 'extras' (none here).
+--
+-- GOVERNING FRAME: Paul closes his second letter to the divided, afflicted assembly of
+-- called-out ones at Corinth. He opens the closing visit on the Torah's own evidentiary
+-- rule — *In the mouth of two or three witnesses shall every word be established* (13:1,
+-- citing Deuteronomy 19:15, the rule Yahusha (Jesus) also re-spoke at Matthew 18:16). The
+-- standard of judgment in the assembly is the Torah's standard, not abolished but carried
+-- into the gathered body. He then turns the test inward — *examine yourselves, whether ye
+-- be in the faith* (13:5) — the prophets' self-searching (Lamentations 3:40, Psalm 139:23)
+-- and the same self-examination he had pressed on this same congregation at the table
+-- (1 Corinthians 11:28). The chapter ends in the benediction *The grace of the Lord Yahusha
+-- HaMashiach (Lord Jesus Christ), and the love of Elohim (God), and the communion of the
+-- Ruach HaKodesh (Holy Spirit)* (13:14) — the Father the One, the Formed Son who bears the
+-- divine name, the Spirit named together; NOT a co-equal-persons grammar and NOT a modalist
+-- collapse. Christology of the Formed preserved.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1     this third time I come; in the mouth of two or three witnesses every word established
+--           Tanakh: Deuteronomy 19:15 (at the mouth of two witnesses, or three, shall the matter be established)
+--           Extras: none warranted   NT: Matthew 18:16 (in the mouth of two or three witnesses every word may be established)
+--   v.2-4   I will not spare; a proof of Messiah; crucified through weakness, liveth by the power of Elohim
+--           Tanakh: none warranted (Christology carried in prose)   Extras: none warranted   NT: none warranted
+--   v.5     examine yourselves, whether ye be in the faith; prove your own selves
+--           Tanakh: Lamentations 3:40 (let us search and try our ways, and turn again to Yahuah),
+--                   Psalm 139:23 (search me, O Elohim, and know my heart: try me, and know my thoughts)
+--           Extras: none warranted   NT: 1 Corinthians 11:28 (let a man examine himself)
+--   v.6-10  not reprobates; we can do nothing against the truth; your perfection; the power for edification
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted
+--   v.11    be perfect, be of one mind, live in peace; the Elohim of love and peace shall be with you
+--           Tanakh: none warranted (pastoral charge; no load-bearing root)   Extras: none warranted   NT: none warranted
+--   v.12-13 greet one another with an holy kiss; all the saints salute you
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted
+--   v.14    the grace of the Lord Yahusha HaMashiach, the love of Elohim, the communion of the Ruach HaKodesh
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted
+--                   (the benediction names Father/Son/Spirit but QUOTES no prior verse; Christology
+--                    carried in the apparatus prose, not bound to a citation — "none warranted")
+--
+-- THREADS (slug -> target libraries):
+--   7300 2-corinthians-13-two-or-three-witnesses-shall-every-word-be-established-deuteronomy-19  (Tanakh + NT)
+--   7303 2-corinthians-13-examine-yourselves-whether-ye-be-in-the-faith-lamentations-3           (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s229_2c13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 2-corinthians-13-two-or-three-witnesses-shall-every-word-be-established-deuteronomy-19
+  ('canon', '2-corinthians', 13, 1, 'canon', 'deuteronomy', 19, 15, 'free', E'*One witness shall not rise up against a man for any iniquity, or for any sin, in any sin that he sinneth: at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established.* (Deuteronomy 19:15). When Paul opens his third visit he reaches for the Torah''s own evidentiary rule: *In the mouth of two or three witnesses shall every word be established* (2 Corinthians 13:1). The standard by which a charge is proven in the assembly is the standard Yahuah (LORD) wrote in Deuteronomy — no single accuser, but a matter weighed at the mouth of two or three. Paul does not set the Torah aside in the gathered body of called-out ones; he carries its righteous procedure into it. His repeated coming to Corinth, his foretelling and his witness, are the established testimony the Torah requires before he acts.'),
+  ('canon', '2-corinthians', 13, 1, 'canon', 'matthew', 18, 16, 'free', E'*But if he will not hear thee, then take with thee one or two more, that in the mouth of two or three witnesses every word may be established.* (Matthew 18:16). Yahusha (Jesus) himself re-spoke the Deuteronomy rule as the order for the assembly: a brother''s fault weighed *in the mouth of two or three witnesses.* Paul speaks the very same words at his coming — *In the mouth of two or three witnesses shall every word be established* (2 Corinthians 13:1). The Master who upheld the Torah''s witness-rule for his gathered ones is the One whose proof Paul says they seek (*ye seek a proof of Messiah (Christ) speaking in me,* 13:3); the apostle judges Corinth by the same Torah-standard his Master confirmed.'),
+  -- thread: 2-corinthians-13-examine-yourselves-whether-ye-be-in-the-faith-lamentations-3
+  ('canon', '2-corinthians', 13, 5, 'canon', 'lamentations', 3, 40, 'free', E'*Let us search and try our ways, and turn again to Yahuah (LORD).* (Lamentations 3:40). The prophet calls the afflicted people to turn the eye of judgment inward — *let us search and try our ways* — and so return to Yahuah (LORD). Paul presses the same searching upon Corinth: *Examine yourselves, whether ye be in the faith; prove your own selves* (2 Corinthians 13:5). Before they demand a proof of Messiah in him, they are to search themselves; the self-trial that turns a people back to Yahuah (LORD) is the self-trial Paul commands, *Know ye not your own selves, how that Yahusha HaMashiach (Jesus Christ) is in you?*'),
+  ('canon', '2-corinthians', 13, 5, 'canon', 'psalms', 139, 23, 'free', E'*Search me, O Elohim (God), and know my heart: try me, and know my thoughts:* (Psalm 139:23). David lays his own heart open to the searching of Elohim (God) — *try me, and know my thoughts.* Paul turns the same searching on the assembly: *Examine yourselves, whether ye be in the faith; prove your own selves* (2 Corinthians 13:5). The proving the psalmist invites from Elohim (God) is the proving Paul bids the Corinthians do upon themselves, that they may know whether *Yahusha HaMashiach (Jesus Christ) is in you, except ye be reprobates.* The faith is tested not by accusing the apostle but by the honest searching of one''s own heart before Elohim (God).'),
+  ('canon', '2-corinthians', 13, 5, 'canon', '1-corinthians', 11, 28, 'free', E'*But let a man examine himself, and so let him eat of that bread, and drink of that cup.* (1 Corinthians 11:28). Paul had already pressed self-examination upon this same congregation at the table — *let a man examine himself.* Now he widens it to the whole standing of the soul: *Examine yourselves, whether ye be in the faith; prove your own selves* (2 Corinthians 13:5). The man who must prove himself before he eats the bread is the man who must prove whether he is in the faith at all; the call to the Lord''s table and the call to examine the heart are one call to the same Corinthian assembly, that they not be found reprobates.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s229_2c13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s229_2c13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-13-two-or-three-witnesses-shall-every-word-be-established-deuteronomy-19',
+       E'In the mouth of two or three witnesses shall every word be established (Deuteronomy 19)',
+       E'Paul opens his final visit on the Torah''s own rule of evidence: *This is the third time I am coming to you. In the mouth of two or three witnesses shall every word be established* (2 Corinthians 13:1). The words are Moses'': *One witness shall not rise up against a man for any iniquity, or for any sin, in any sin that he sinneth: at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established* (Deuteronomy 19:15). The standard by which a charge is proven in the assembly of called-out ones is the standard Yahuah (LORD) wrote in the Torah — no single accuser, but a matter weighed at the mouth of two or three. Paul does not lay the Torah aside in the gathered body; he carries its righteous procedure straight into it. And Yahusha (Jesus) had already re-spoken the same rule as the order for his assembly: *if he will not hear thee, then take with thee one or two more, that in the mouth of two or three witnesses every word may be established* (Matthew 18:16). The Master who upheld the witness-rule for his gathered ones is the One whose proof the Corinthians seek — *ye seek a proof of Messiah (Christ) speaking in me* (2 Corinthians 13:3). Paul''s repeated coming, his foretelling, his solemn warning *that, if I come again, I will not spare* (13:2) are the established testimony the Torah requires before judgment falls; he will judge Corinth by no other standard than the one Moses set and the Messiah confirmed.',
+       sv.verse_id, ev.verse_id, 'free', 7300
+  FROM _s229_2c13_lookup sv, _s229_2c13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=13 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-13-examine-yourselves-whether-ye-be-in-the-faith-lamentations-3',
+       E'Examine yourselves, whether ye be in the faith (Lamentations 3, Psalm 139)',
+       E'Having warned that the Torah weighs a matter at the mouth of two or three witnesses, Paul turns the eye of judgment inward upon the Corinthians themselves: *Examine yourselves, whether ye be in the faith; prove your own selves. Know ye not your own selves, how that Yahusha HaMashiach (Jesus Christ) is in you, except ye be reprobates?* (2 Corinthians 13:5). This searching is the prophets'' own. The afflicted people of Lamentations are called to it: *Let us search and try our ways, and turn again to Yahuah (LORD)* (Lamentations 3:40) — the self-trial that turns a people back to him. David invites it from Elohim (God) himself: *Search me, O Elohim (God), and know my heart: try me, and know my thoughts* (Psalm 139:23). And Paul had already pressed the very word on this same congregation at the table: *But let a man examine himself, and so let him eat of that bread, and drink of that cup* (1 Corinthians 11:28). The man who must prove himself before he eats is the man who must prove whether he is in the faith at all. Before they demand a proof of Messiah speaking in Paul, they are to prove themselves; the test of the faith is not the accusing of the apostle but the honest searching of one''s own heart before Elohim (God), that Yahusha HaMashiach (Jesus Christ) be found dwelling in them and they be no reprobates.',
+       sv.verse_id, ev.verse_id, 'free', 7303
+  FROM _s229_2c13_lookup sv, _s229_2c13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=13 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 2-corinthians-13-two-or-three-witnesses-shall-every-word-be-established-deuteronomy-19
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 19:15 — *at the mouth of two witnesses, or at the mouth of three witnesses, shall the matter be established* the Torah''s evidentiary rule Paul invokes at his coming: *In the mouth of two or three witnesses shall every word be established* (2 Corinthians 13:1).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c13_lookup sv, _s229_2c13_lookup tv
+ WHERE t.slug='2-corinthians-13-two-or-three-witnesses-shall-every-word-be-established-deuteronomy-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=19 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 18:16 — *in the mouth of two or three witnesses every word may be established* Yahusha (Jesus) re-speaking the Deuteronomy rule as the order for the assembly; Paul speaks the same words at his coming (2 Corinthians 13:1).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c13_lookup sv, _s229_2c13_lookup tv
+ WHERE t.slug='2-corinthians-13-two-or-three-witnesses-shall-every-word-be-established-deuteronomy-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=18 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-13-examine-yourselves-whether-ye-be-in-the-faith-lamentations-3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Lamentations 3:40 — *Let us search and try our ways, and turn again to Yahuah (LORD)* the prophet''s inward searching that turns a people back to him; *Examine yourselves, whether ye be in the faith; prove your own selves* (2 Corinthians 13:5).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c13_lookup sv, _s229_2c13_lookup tv
+ WHERE t.slug='2-corinthians-13-examine-yourselves-whether-ye-be-in-the-faith-lamentations-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=3 AND tv.verse_number=40
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 139:23 — *Search me, O Elohim (God), and know my heart: try me, and know my thoughts* David''s heart laid open to the proving of Elohim (God); the proving Paul bids the assembly do upon itself (2 Corinthians 13:5).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c13_lookup sv, _s229_2c13_lookup tv
+ WHERE t.slug='2-corinthians-13-examine-yourselves-whether-ye-be-in-the-faith-lamentations-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=139 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Corinthians 11:28 — *let a man examine himself, and so let him eat of that bread* the self-examination Paul pressed on this same congregation at the table; widened now to the whole standing of the faith (2 Corinthians 13:5).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c13_lookup sv, _s229_2c13_lookup tv
+ WHERE t.slug='2-corinthians-13-examine-yourselves-whether-ye-be-in-the-faith-lamentations-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=11 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session229 — 2 Corinthians cross-references complete.'
