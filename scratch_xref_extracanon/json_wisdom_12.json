@@ -1,0 +1,128 @@
+{
+  "edition": "apocrypha",
+  "book": "the-wisdom-of-solomon",
+  "chapter": 12,
+  "session": "session253",
+  "tag": "wis12",
+  "base_band": 58275,
+  "threads": [
+    {
+      "slug": "wisdom-12-by-little-and-little",
+      "title": "By little and little — judgment that gives place for repentance",
+      "summary_md": "Solomon reads the conquest of Canaan as restrained mercy, not raw conquest: *Nevertheless even those you sparedst as men, and did send wasps, forerunners of yours host, to destroy them by little and little* (Wisdom of Solomon 12:8), *But executing your judgments upon them by little and little, you gavest them place of repentance* (Wisdom of Solomon 12:10). It ain't new — this is the Torah's own cadence. Yahuah told Yashar'el the dispossession would be measured precisely so the land would not run wild: *I will not drive them out from before thee in one year; lest the land become desolate, and the beast of the field multiply against thee* (Exodus 23:29), *By little and little I will drive them out from before thee, until thou be increased, and inherit the land* (Exodus 23:30). And the conquest was never Yashar'el's righteousness but the nations' ripened wickedness: *but for the wickedness of these nations Yahuah (LORD) doth drive them out from before thee* (Deuteronomy 9:4). Paul names the same withheld stroke as kindness aimed at turning: *not knowing that the goodness of Elohim (God) leadeth thee to repentance?* (Romans 2:4). The slowness is the mercy.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 12, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 23, "tgt_v": 29,
+         "tier": "free",
+         "note": "Exodus 23:29 — *I will not drive them out from before thee in one year; lest the land become desolate, and the beast of the field multiply against thee.* The very Torah word Wisdom 12:8 is reading — the dispossession deliberately measured, not total at once."},
+        {"src_ch": 12, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 23, "tgt_v": 30,
+         "tier": "free",
+         "note": "Exodus 23:30 — *By little and little I will drive them out from before thee, until thou be increased, and inherit the land.* Wisdom 12:8-10 lifts Torah's exact phrase \"by little and little\" and reads its restraint as room for repentance."},
+        {"src_ch": 12, "src_v": 10,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 9, "tgt_v": 4,
+         "tier": "free",
+         "note": "Deuteronomy 9:4 — *Speak not thou in thine heart, after that Yahuah Elohayka (the LORD thy God) hath cast them out from before thee, saying, For my righteousness Yahuah (LORD) hath brought me in to possess this land: but for the wickedness of these nations Yahuah (LORD) doth drive them out from before thee.* The judgment in Wisdom 12:10 falls on a \"naughty generation\" for its own wickedness, never as Israel's merit."},
+        {"src_ch": 12, "src_v": 10,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 2, "tgt_v": 4,
+         "tier": "free",
+         "note": "Romans 2:4 — *Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of Elohim (God) leadeth thee to repentance?* Paul names the principle Wisdom 12:10 dramatizes — the withheld stroke is goodness aimed at turning the sinner."}
+      ]
+    },
+    {
+      "slug": "wisdom-12-no-elohim-but-thou",
+      "title": "There is no Elohim but thou that careth for all",
+      "summary_md": "Against any who would arraign the Most High, Solomon plants the bedrock: *For neither is there any Yahuah (God) but you that careth for all, to whom you might shew that your judgment is not unright* (Wisdom of Solomon 12:13), and the astonishing inversion — *For your power is the beginning of righteousness, and because you are Yahuah (God) of all, it makes you to be gracious to all* (Wisdom of Solomon 12:16). It ain't new: this is the Shema's exclusivity. *Unto thee it was shewed, that thou mightest know that Yahuah (LORD) he is Elohim (God); there is none else beside him* (Deuteronomy 4:35); *I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me* (Isaiah 45:5). His care reaches every creature — *Yahuah (LORD) is good to all: and his tender mercies are over all his works* (Psalm 145:9). And the same unanswerable sovereignty Wisdom 12:12 protests (*who shall say, What have you done?*) is Paul's potter: *Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20). The One who alone is Elohim is the One whose power is the wellspring of mercy.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 12, "src_v": 13,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 4, "tgt_v": 35,
+         "tier": "free",
+         "note": "Deuteronomy 4:35 — *Unto thee it was shewed, that thou mightest know that Yahuah (LORD) he is Elohim (God); there is none else beside him.* Wisdom 12:13's \"no Elohim but thou\" is the Shema's exclusivity restated as the ground of righteous judgment."},
+        {"src_ch": 12, "src_v": 13,
+         "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 45, "tgt_v": 5,
+         "tier": "free",
+         "note": "Isaiah 45:5 — *I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me: I girded thee, though thou hast not known me:* The sole-Elohim confession of Wisdom 12:13 echoes Isaiah's repeated \"none else.\""},
+        {"src_ch": 12, "src_v": 16,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 145, "tgt_v": 9,
+         "tier": "free",
+         "note": "Psalm 145:9 — *Yahuah (LORD) is good to all: and his tender mercies are over all his works.* Wisdom 12:16 — being Elohim of all makes him gracious to all — is this Psalm in argument form."},
+        {"src_ch": 12, "src_v": 12,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 9, "tgt_v": 20,
+         "tier": "free",
+         "note": "Romans 9:20 — *Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus?* Paul silences the same protest Wisdom 12:12 forecloses — none may say \"What have you done?\" to the Judge of all."}
+      ]
+    },
+    {
+      "slug": "wisdom-12-place-of-repentance",
+      "title": "Place of repentance — not willing that any should perish",
+      "summary_md": "The heart of Solomon's theodicy is that Yahuah's deliberate delay is gospel: *you gavest them place of repentance* (Wisdom of Solomon 12:10), *and have made your children to be of a good hope that you give repentance for sins* (Wisdom of Solomon 12:19), *giving them time and place, by which they might be delivered from their malice* (Wisdom of Solomon 12:20). This is the same divine longing the prophets and apostles confess. *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance* (2 Peter 3:9). The God of judgment takes no delight in the stroke: *Have I any pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he should return from his ways, and live?* (Ezekiel 18:23); *Who will have all men to be saved, and to come unto the knowledge of the truth* (1 Timothy 2:4). Solomon had already said it plainly a chapter before — *But you have mercy upon all; for you can do all things, and winkest at the sins of men, because they should amend* (Wisdom of Solomon 11:23). It ain't new: the patience is purposed for return.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 12, "src_v": 20,
+         "tgt_edition": "canon", "tgt_book": "2-peter", "tgt_ch": 3, "tgt_v": 9,
+         "tier": "free",
+         "note": "2 Peter 3:9 — *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.* Peter names the very purpose of the \"time and place\" Wisdom 12:20 says God grants the condemned."},
+        {"src_ch": 12, "src_v": 19,
+         "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 18, "tgt_v": 23,
+         "tier": "free",
+         "note": "Ezekiel 18:23 — *Have I any pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he should return from his ways, and live?* The \"good hope\" of repentance in Wisdom 12:19 rests on this — God's pleasure is the sinner's return, not his death."},
+        {"src_ch": 12, "src_v": 19,
+         "tgt_edition": "canon", "tgt_book": "1-timothy", "tgt_ch": 2, "tgt_v": 4,
+         "tier": "free",
+         "note": "1 Timothy 2:4 — *Who will have all men to be saved, and to come unto the knowledge of the truth.* The God who gives repentance for sins in Wisdom 12:19 is the God whose will Paul says reaches toward all."},
+        {"src_ch": 12, "src_v": 19,
+         "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 11, "tgt_v": 23,
+         "tier": "extras",
+         "note": "Wisdom of Solomon 11:23 — *But you have mercy upon all; for you can do all things, and winkest at the sins of men, because they should amend.* Solomon's own prior verse self-links: omnipotence is bent toward amendment, the same hope Wisdom 12:19 gives God's children."}
+      ]
+    },
+    {
+      "slug": "wisdom-12-just-man-merciful",
+      "title": "The just man should be merciful",
+      "summary_md": "Solomon draws the ethic straight out of the theodicy: because Yahuah judges with such restraint, his people must imitate it — *But by such works have you taught your people that the just man should be merciful* (Wisdom of Solomon 12:19), *to the intent that, when we judge, we should carefully think of your goodness, and when we ourselves are judged, we should look for mercy* (Wisdom of Solomon 12:22). It ain't new — Yahusha makes mercy the hinge of judgment in the Sermon: *Blessed are the merciful: for they shall obtain mercy* (Matthew 5:7), and binds it to the Father's own character: *Be ye therefore merciful, as your Father also is merciful* (Luke 6:36). The measure we extend in judging is the measure we plead to receive — Solomon's \"look for mercy\" is the Beatitude in seed.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 22,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 12, "src_v": 19,
+         "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 5, "tgt_v": 7,
+         "tier": "free",
+         "note": "Matthew 5:7 — *Blessed are the merciful: for they shall obtain mercy.* Wisdom 12:19 — God's works teach that \"the just man should be merciful\" — is the Beatitude's exact logic: mercy extended draws mercy received."},
+        {"src_ch": 12, "src_v": 22,
+         "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 6, "tgt_v": 36,
+         "tier": "free",
+         "note": "Luke 6:36 — *Be ye therefore merciful, as your Father also is merciful.* Wisdom 12:22 grounds our mercy in God's goodness so that \"when we ourselves are judged, we should look for mercy\" — imitating the Father's own mercy."}
+      ]
+    },
+    {
+      "slug": "wisdom-12-idols-self-torment",
+      "title": "Tormented by their own abominations — the idolatry that condemns",
+      "summary_md": "The chapter closes on the pagans' self-inflicted ruin: *whereas men have lived dissolutely and unrighteously, you have tormented them with their own abominations* (Wisdom of Solomon 12:23), *For they went astray very far in the ways of error, and held them for gods, which even among the beasts of their enemies were despised* (Wisdom of Solomon 12:24), and at the last *they acknowledged him to be the true Yahuah (God), whom before they denied to know: and therefore came extreme damnation upon them* (Wisdom of Solomon 12:27). This is the very indictment Romans 1 will draw from Wisdom's idolatry-polemic — men who exchange the Creator for the creature: *And changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things* (Romans 1:23). Solomon's own next chapters name it the headwaters of every evil — *For the worshipping of idols not to be named is the beginning, the cause, and the end, of all evil* (Wisdom of Solomon 14:27). It ain't new: the idol is the lie, and the lie is its own torment.",
+      "anchor_start_v": 23,
+      "anchor_end_v": 27,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 12, "src_v": 24,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 1, "tgt_v": 23,
+         "tier": "free",
+         "note": "Romans 1:23 — *And changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things.* Paul's idolatry indictment — exchanging the Creator for beast-images — is exactly the error Wisdom 12:24 names, men holding for gods what is despised among the beasts."},
+        {"src_ch": 12, "src_v": 27,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 1, "tgt_v": 23,
+         "tier": "free",
+         "note": "Romans 1:23 — *And changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things.* Those in Wisdom 12:27 who \"denied to know\" the true Yahuah are Romans 1's people who exchanged his glory — the deliberate refusal that brings damnation."},
+        {"src_ch": 12, "src_v": 23,
+         "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 14, "tgt_v": 27,
+         "tier": "extras",
+         "note": "Wisdom of Solomon 14:27 — *For the worshipping of idols not to be named is the beginning, the cause, and the end, of all evil.* Solomon's coming idolatry-polemic self-links: the \"own abominations\" that torment men in Wisdom 12:23 are idols, named the source and end of all evil."}
+      ]
+    }
+  ]
+}

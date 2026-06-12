@@ -1,0 +1,61 @@
+{
+  "edition": "apocrypha",
+  "book": "the-wisdom-of-solomon",
+  "chapter": 17,
+  "session": "session253",
+  "tag": "wis17",
+  "base_band": 58400,
+  "threads": [
+    {
+      "slug": "wisdom-17-darkness-felt",
+      "title": "The darkness which may be felt",
+      "summary_md": "Wisdom unfolds the ninth plague as a parable of the wicked heart: *For when unrighteous men thought to oppress the holy nation; they being shut up in their houses, the prisoners of darkness, and fettered with the bonds of a long night, lay there exiled from the eternal providence.* (the Wisdom of Solomon 17:2) — and again, *No power of the fire might give them light: neither could the bright flames of the stars endure to lighten that horrible night.* (the Wisdom of Solomon 17:5). This is the very plague of Exodus: *And Yahuah (LORD) said unto Moses, Stretch out thine hand toward heaven, that there may be darkness over the land of Egypt, even darkness which may be felt.* (Exodus 10:21) — a dark so thick it was tangible, *And Moses stretched forth his hand toward heaven; and there was a thick darkness in all the land of Egypt three days* (Exodus 10:22). The Psalmist names the same hand at work: *He sent darkness, and made it dark; and they rebelled not against his word.* (Psalm 105:28). It Ain't New — the deuterocanon is reading Torah, and the judgment is a real, felt thing.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 17, "src_v": 2, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 10, "tgt_v": 21, "tier": "free", "note": "Exodus 10:21 — *And Yahuah (LORD) said unto Moses, Stretch out thine hand toward heaven, that there may be darkness over the land of Egypt, even darkness which may be felt.* The plague Wisdom 17:2 expounds: a darkness so dense it imprisons, the bonds of a long night."},
+        {"src_ch": 17, "src_v": 5, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 10, "tgt_v": 22, "tier": "free", "note": "Exodus 10:22 — *And Moses stretched forth his hand toward heaven; and there was a thick darkness in all the land of Egypt three days* — the thick night against which no fire nor star could give light (Wisdom 17:5)."},
+        {"src_ch": 17, "src_v": 2, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 28, "tier": "free", "note": "Psalm 105:28 — *He sent darkness, and made it dark; and they rebelled not against his word.* The Psalm names Yahuah's own hand behind the night that fettered Egypt in Wisdom 17:2."}
+      ]
+    },
+    {
+      "slug": "wisdom-17-light-in-dwellings",
+      "title": "But the holy nation had light",
+      "summary_md": "Over against the imprisoned Egyptians, Wisdom sets the shining world of the righteous: *For the whole world shined with clear light, and none were hindered in their labour:* (the Wisdom of Solomon 17:20). Torah draws the same line of separation: *They saw not one another, neither rose any from his place for three days: but all the children of Yashar'el (Israel) had light in their dwellings.* (Exodus 10:23). The prophet lifts this election into the age to come — darkness for the nations, but light arising upon the chosen: *For, behold, the darkness shall cover the earth, and gross darkness the people: but Yahuah (LORD) shall arise upon thee, and his glory shall be seen upon thee.* (Isaiah 60:2), and *Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee.* (Isaiah 60:1). The separating mercy in judgment that kept Yashar'el in light is the same that will arise upon her at the end.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 21,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 17, "src_v": 20, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 10, "tgt_v": 23, "tier": "free", "note": "Exodus 10:23 — *They saw not one another, neither rose any from his place for three days: but all the children of Yashar'el (Israel) had light in their dwellings.* The very separation Wisdom 17:20 frames — the whole world shined for the righteous while night held the oppressor."},
+        {"src_ch": 17, "src_v": 20, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 60, "tgt_v": 1, "tier": "free", "note": "Isaiah 60:1 — *Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee.* The clear light over the holy nation (Wisdom 17:20) is the prophetic light risen upon redeemed Yashar'el."},
+        {"src_ch": 17, "src_v": 21, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 60, "tgt_v": 2, "tier": "free", "note": "Isaiah 60:2 — *For, behold, the darkness shall cover the earth, and gross darkness the people: but Yahuah (LORD) shall arise upon thee, and his glory shall be seen upon thee.* The heavy night that received the wicked (Wisdom 17:21) is the gross darkness from which the elect alone are spared."}
+      ]
+    },
+    {
+      "slug": "wisdom-17-chain-of-darkness",
+      "title": "Bound with one chain of darkness",
+      "summary_md": "Wisdom's most haunting image: every Egyptian, whatever his calling, dragged into a shared bondage — *For whether he were husbandman, or shepherd, or a labourer in the field, he was overtaken, and endured that necessity, which could not be avoided: for they were all bound with one chain of darkness.* (the Wisdom of Solomon 17:17), shut up *in a prison without iron bars* (the Wisdom of Solomon 17:16). The apostle Jude takes up the very phrase for the fallen watchers: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6). Jude's source stands now restored and live — the binding of Azâzêl: *And again Yahuah (God) said to Raphael: ’Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dûdâêl, and cast him therein.* (1 Enoch 10:4), *and cover him with darkness, and let him abide there for ever, and cover his face that he may not see light.* (1 Enoch 10:5). One chain of darkness binds the wicked of Egypt, the rebel angels, and the unrighteous still — It Ain't New.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 17, "src_v": 17, "tgt_edition": "canon", "tgt_book": "jude", "tgt_ch": 1, "tgt_v": 6, "tier": "free", "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude's everlasting chains under darkness are Wisdom 17:17's one chain of darkness that bound every man of Egypt."},
+        {"src_ch": 17, "src_v": 16, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 10, "tgt_v": 4, "tier": "extras", "note": "1 Enoch 10:4 — *And again Yahuah (God) said to Raphael: ’Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dûdâêl, and cast him therein.* The bound watcher of Enoch is the prison without iron bars (Wisdom 17:16) that Jude 6 inherits."},
+        {"src_ch": 17, "src_v": 17, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 10, "tgt_v": 5, "tier": "extras", "note": "1 Enoch 10:5 — *And place upon him rough and jagged rocks, and cover him with darkness, and let him abide there for ever, and cover his face that he may not see light.* Azâzêl covered in darkness till the judgment matches the one chain of darkness from which the prisoners of Wisdom 17:17 could not escape."}
+      ]
+    },
+    {
+      "slug": "wisdom-17-loved-darkness",
+      "title": "Wickedness condemned by her own witness",
+      "summary_md": "Wisdom turns the outward plague inward — the darkness is the conscience of the wicked: *For wickedness, condemned by her own witness, is very timorous, and being pressed with conscience, always forecasteth grievous things.* (the Wisdom of Solomon 17:11), and the heavy night is *an image of that darkness which should afterward receive them* (the Wisdom of Solomon 17:21). The Master names the same self-judgment of those who flee the light: *And this is the condemnation, that light is come into the world, and men loved darkness rather than light, because their deeds were evil.* (John 3:19), *For every one that doeth evil hateth the light, neither cometh to the light, lest his deeds should be reproved.* (John 3:20). Conscience condemns before the throne does; the darkness men love becomes the darkness that receives them.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 17, "src_v": 11, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 3, "tgt_v": 19, "tier": "free", "note": "John 3:19 — *And this is the condemnation, that light is come into the world, and men loved darkness rather than light, because their deeds were evil.* The wickedness condemned by her own witness (Wisdom 17:11) is the love of darkness that is its own judgment."},
+        {"src_ch": 17, "src_v": 11, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 3, "tgt_v": 20, "tier": "free", "note": "John 3:20 — *For every one that doeth evil hateth the light, neither cometh to the light, lest his deeds should be reproved.* The conscience pressed and forecasting grievous things (Wisdom 17:11) flees the light lest its deeds be reproved."}
+      ]
+    }
+  ]
+}

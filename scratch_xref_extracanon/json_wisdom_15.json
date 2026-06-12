@@ -1,0 +1,116 @@
+{
+  "edition": "apocrypha",
+  "book": "the-wisdom-of-solomon",
+  "chapter": 15,
+  "session": "session253",
+  "tag": "wis15",
+  "base_band": 58350,
+  "threads": [
+    {
+      "slug": "wisdom-of-solomon-15-to-know-thee-is-immortality",
+      "title": "To know thee is the root of immortality",
+      "summary_md": "The idolatry-polemic closes where Israel begins: *But you, O Yahuah (God), art gracious and true, longsuffering, and in mercy ordering all things* (Wisdom of Solomon 15:1). Over against the dead idol stands the living covenant Elohim — *For to know you is perfect righteousness: yes, to know your power is the root of immortality* (Wisdom of Solomon 15:3). This is no abstract monotheism; it is the eternal life Yahusha names: *And this is life eternal, that they might know thee the only true Elohim (God), and Yahusha HaMashiach (Jesus Christ), whom thou hast sent* (John 17:3). And the assurance that we are his even in our sin echoes the prophet's potter-word — *O house of Yashar'el (Israel), cannot I do with you as this potter? saith Yahuah (LORD). Behold, as the clay is in the potter's hand, so are ye in mine hand, O house of Yashar'el (Israel)* (Jeremiah 18:6). It ain't new: to know the living Elohim is righteousness and life; the idol can give neither.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 17, "tgt_v": 3,
+         "tier": "free",
+         "note": "John 17:3 — *And this is life eternal, that they might know thee the only true Elohim (God), and Yahusha HaMashiach (Jesus Christ), whom thou hast sent.* Wisdom 15:3 names knowing the living Elohim 'the root of immortality'; Yahusha names that same knowing as life eternal itself."},
+        {"src_ch": 15, "src_v": 2,
+         "tgt_edition": "canon", "tgt_book": "jeremiah", "tgt_ch": 18, "tgt_v": 6,
+         "tier": "free",
+         "note": "Jeremiah 18:6 — *O house of Yashar'el (Israel), cannot I do with you as this potter? saith Yahuah (LORD). Behold, as the clay is in the potter's hand, so are ye in mine hand, O house of Yashar'el (Israel).* Wisdom 15:2's 'if we sin, we are yours, knowing your power' rests on the same potter-claim — Israel is clay held in the Maker's own hand."}
+      ]
+    },
+    {
+      "slug": "wisdom-of-solomon-15-potter-makes-a-god-of-clay",
+      "title": "The potter who fashions a god of the same clay",
+      "summary_md": "The book's sharpest mockery: the same craftsman who *of the same clay he makes both the vessels that serve for clean uses, and likewise also all such as serve to the contrary* turns and *makes a vain god of the same clay, even he which a little before was made of earth himself, and within a little while after returns to the same* (Wisdom of Solomon 15:7-8). Isaiah had already cried the woe — *Shall the clay say to him that fashioneth it, What makest thou?* (Isaiah 45:9) — and Jeremiah set Israel as clay in Yahuah's hand. Paul gathers the whole figure into the gospel: *Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:21). The folly is exposed by inversion — the clay-man crowns a clay-thing as Maker. It ain't new: the Potter is Elohim; the pot is never god.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 7,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 9, "tgt_v": 21,
+         "tier": "free",
+         "note": "Romans 9:21 — *Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* Wisdom 15:7's one clay shaped into clean and contrary vessels is exactly Paul's lump made into honour and dishonour — the Potter's sovereign right."},
+        {"src_ch": 15, "src_v": 7,
+         "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 45, "tgt_v": 9,
+         "tier": "free",
+         "note": "Isaiah 45:9 — *Woe unto him that striveth with his Maker! Let the potsherd strive with the potsherds of the earth. Shall the clay say to him that fashioneth it, What makest thou? or thy work, He hath no hands?* The clay declaring itself god in Wisdom 15:8 is the very woe Isaiah pronounces on the potsherd that contends with its Maker."},
+        {"src_ch": 15, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 7,
+         "tier": "free",
+         "note": "Genesis 2:7 — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* Wisdom 15:8's man 'made of earth himself' who 'returns to the same' is the Adam of the dust — the creature presuming to fashion a creator."}
+      ]
+    },
+    {
+      "slug": "wisdom-of-solomon-15-idol-no-breath-no-sight",
+      "title": "The idol has no breath, no sight, no step",
+      "summary_md": "The dead image is catalogued limb by limb: men *desire the form of a dead image, that has no breath* (Wisdom of Solomon 15:5), and the heathen gods *neither have the use of eyes to see, nor noses to draw breath, nor ears to hear, nor fingers of hands to handle; and as for their feet, they are slow to go* (Wisdom of Solomon 15:15). This is the Psalmist's taunt almost word for word — *They have mouths, but they speak not: eyes have they, but they see not... feet have they, but they walk not* — and his verdict falls on the maker: *They that make them are like unto them; so is every one that trusteth in them* (Psalm 115:8). Habakkuk seals it: *What profiteth the graven image that the maker thereof hath graven it... to make dumb idols?* (Habakkuk 2:18). It ain't new: a god that cannot breathe is no god, and its maker shares its deadness.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 15,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 115, "tgt_v": 7,
+         "tier": "free",
+         "note": "Psalm 115:7 — *They have hands, but they handle not: feet have they, but they walk not: neither speak they through their throat.* Wisdom 15:15's idol with fingers that cannot handle and feet 'slow to go' is the Psalmist's catalogue of the silver-and-gold idol that cannot move."},
+        {"src_ch": 15, "src_v": 16,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 115, "tgt_v": 8,
+         "tier": "free",
+         "note": "Psalm 115:8 — *They that make them are like unto them; so is every one that trusteth in them.* Wisdom 15:16's 'no man can make a god like to himself' is the obverse of the Psalm's verdict — the maker sinks to the deadness of the thing he made."},
+        {"src_ch": 15, "src_v": 5,
+         "tgt_edition": "canon", "tgt_book": "habakkuk", "tgt_ch": 2, "tgt_v": 18,
+         "tier": "free",
+         "note": "Habakkuk 2:18 — *What profiteth the graven image that the maker thereof hath graven it; the molten image, and a teacher of lies, that the maker of his work trusteth therein, to make dumb idols?* Wisdom 15:5's 'dead image, that has no breath' is Habakkuk's dumb idol — a teacher of lies that profits nothing."}
+      ]
+    },
+    {
+      "slug": "wisdom-of-solomon-15-romans-1-idolatry-headwaters",
+      "title": "The idolatry that Romans 1 indicts",
+      "summary_md": "Wisdom 15 sits inside the very polemic Paul quarries for Romans 1. The idol-maker *knew not his Maker, and him that inspired into him an active soul, and breathed in a living spirit* (Wisdom of Solomon 15:11) — the creature who, though the Creator gave him breath, will not know him. Paul: *For the invisible things of him from the creation of the world are clearly seen, being understood by the things that are made... so that they are without excuse* (Romans 1:20). And where Wisdom 15:18 has them worshipping the beasts, *those beasts also that are most hateful*, Paul names the same descent — they *changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things* (Romans 1:23). The self-link runs back through the same book: *that which is made with hands is cursed, as well it, as he that made it* (Wisdom of Solomon 14:8). It ain't new: Romans 1 is reading Wisdom — the Creator known, refused, and exchanged for the creature.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 11,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 1, "tgt_v": 20,
+         "tier": "free",
+         "note": "Romans 1:20 — *For the invisible things of him from the creation of the world are clearly seen, being understood by the things that are made, even his eternal power and Godhead; so that they are without excuse.* Wisdom 15:11's idolater who 'knew not his Maker' is the very man Paul leaves without excuse for not knowing the Creator the creation declares."},
+        {"src_ch": 15, "src_v": 18,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 1, "tgt_v": 23,
+         "tier": "free",
+         "note": "Romans 1:23 — *And changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things.* Wisdom 15:18's worship of 'those beasts also that are most hateful' is Paul's exchange of the Creator's glory for the image of beasts."},
+        {"src_ch": 15, "src_v": 17,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 1, "tgt_v": 25,
+         "tier": "free",
+         "note": "Romans 1:25 — *Who changed the truth of Elohim (God) into a lie, and worshipped and served the creature more than the Creator, who is blessed for ever. Amen.* Wisdom 15:17's mortal who 'is better than the things which he worshippeth' yet worships them is Paul's man serving the creature above the Creator."},
+        {"src_ch": 15, "src_v": 13,
+         "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 14, "tgt_v": 8,
+         "tier": "extras",
+         "note": "Wisdom of Solomon 14:8 — *But that which is made with hands is cursed, as well it, as he that made it: he, because he made it; and it, because, being corruptible, it was called god.* Wisdom 15:13's craftsman who 'knoweth himself to offend above all others' is the same self-condemned maker the book has just cursed in chapter 14."}
+      ]
+    },
+    {
+      "slug": "wisdom-of-solomon-15-his-heart-is-ashes",
+      "title": "His heart is ashes, his hope more vile than earth",
+      "summary_md": "The maker's portrait ends in dust: *His heart is ashes, his hope is more vile than earth, and his life of less value than clay* (Wisdom of Solomon 15:10). Isaiah had drawn the same man feeding on ashes — *he hath shut their eyes, that they cannot see; and their hearts, that they cannot understand... shall I fall down to the stock of a tree?* (Isaiah 44:18-19). The covenant warned this would be Israel's lot in exile if she forgot — *And there ye shall serve gods, the work of men's hands, wood and stone, which neither see, nor hear, nor eat, nor smell* (Deuteronomy 4:28) — and the closing word of the chapter is that the idolaters *went without the praise of Yahuah (God) and his blessing* (Wisdom of Solomon 15:19). It ain't new: the heart that cleaves to ashes inherits ashes; only the living Elohim gives blessing.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 10,
+         "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 44, "tgt_v": 19,
+         "tier": "free",
+         "note": "Isaiah 44:19 — *And none considereth in his heart, neither is there knowledge nor understanding to say, I have burned part of it in the fire... and shall I make the residue thereof an abomination? shall I fall down to the stock of a tree?* Wisdom 15:10's idolater whose 'heart is ashes' is Isaiah's man feeding on ashes, unable to consider the folly of bowing to a block of wood."},
+        {"src_ch": 15, "src_v": 15,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 4, "tgt_v": 28,
+         "tier": "free",
+         "note": "Deuteronomy 4:28 — *And there ye shall serve gods, the work of men's hands, wood and stone, which neither see, nor hear, nor eat, nor smell.* Wisdom 15:15's idols that cannot see, breathe, or hear are Moses' wood-and-stone gods that 'neither see, nor hear, nor eat, nor smell' — the curse of forgetting the living Elohim."}
+      ]
+    }
+  ]
+}
