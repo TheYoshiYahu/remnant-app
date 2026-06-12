@@ -1,0 +1,100 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 41,
+  "session": "session253",
+  "tag": "sir41",
+  "base_band": 59300,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-41-sentence-of-death",
+      "title": "The sentence of death over all flesh",
+      "summary_md": "Ben Sira cries, *Fear not the sentence of death, remember them that have been before you, and that come after; for this is the sentence of Yahuah (God) over all flesh* (Ecclesiasticus 41:3) — the bitter remembrance of death (41:1) is acceptable to the weary and the needy (41:2), for none escapes the appointment of the Most High (41:4). It ain't new: the verdict was spoken in the garden, *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return* (Genesis 3:19), and the Preacher closes the circle — *Then shall the dust return to the earth as it was: and the spirit shall return unto Elohim (God) who gave it* (Ecclesiastes 12:7). The same divine ordinance the apostle names: *And as it is appointed unto men once to die, but after this the judgment* (Hebrews 9:27).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 41, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 19,
+         "tier": "free",
+         "note": "Genesis 3:19 — *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return.* The sentence of Yahuah over all flesh that Sirach 41:3 bids us not to fear is the very dust-to-dust decree first spoken over Adam."},
+        {"src_ch": 41, "src_v": 4,
+         "tgt_edition": "canon", "tgt_book": "ecclesiastes", "tgt_ch": 12, "tgt_v": 7,
+         "tier": "free",
+         "note": "Ecclesiastes 12:7 — *Then shall the dust return to the earth as it was: and the spirit shall return unto Elohim (God) who gave it.* As Sirach 41:4 asks why a man strives against the Most High in the grave, the Preacher answers that body returns to dust and spirit to the Elohim who gave it."},
+        {"src_ch": 41, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 9, "tgt_v": 27,
+         "tier": "free",
+         "note": "Hebrews 9:27 — *And as it is appointed unto men once to die, but after this the judgment.* The single sentence of death over all flesh in Sirach 41:3 is the same appointment the apostle sets before the judgment to come."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-41-curse-on-the-ungodly-seed",
+      "title": "From a curse to destruction: the ungodly and their seed",
+      "summary_md": "Sirach turns from death itself to the death the wicked earn: *Woe be to you, ungodly men, which have forsaken the law of the most high Yahuah (God)! for if you increase, it shall be to your destruction* (Ecclesiasticus 41:8), so that *if you be born, you shall be born to a curse: and if you die, a curse shall be your portion* (41:9), and *All that are of the earth shall turn to earth again: so the ungodly shall go from a curse to destruction* (41:10). It ain't new: the apostle weighs the two ends in one breath — *For the wages of sin is death; but the gift of Elohim (God) is eternal life through Yahusha HaMashiach (Jesus Christ) our Lord* (Romans 6:23). And the sister-book traces death itself to its root — *Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it* (Wisdom of Solomon 2:24): the ungodly who forsake the law hold of that side and find the curse.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 41, "src_v": 9,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 6, "tgt_v": 23,
+         "tier": "free",
+         "note": "Romans 6:23 — *For the wages of sin is death; but the gift of Elohim (God) is eternal life through Yahusha HaMashiach (Jesus Christ) our Lord.* The curse that is the ungodly man's portion in Sirach 41:9 is the wages of sin the apostle sets against the free gift of life."},
+        {"src_ch": 41, "src_v": 10,
+         "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 2, "tgt_v": 24,
+         "tier": "extras",
+         "note": "Wisdom of Solomon 2:24 — *Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.* Sirach 41:10's ungodly who go from a curse to destruction are the ones who hold of the devil's side and so find the death he brought into the world."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-41-a-good-name-endureth-for-ever",
+      "title": "A good name endureth for ever",
+      "summary_md": "Against the blotted-out name of sinners (Ecclesiasticus 41:11), Ben Sira counsels, *Have regard to your name; for that shall continue with you above a thousand great treasures of gold* (41:12), for *A good life has but few days: but a good name endureth for ever* (41:13). It ain't new: this is the Proverb's own scale — *A good name is rather to be chosen than great riches, and loving favour rather than silver and gold* (Proverbs 22:1) — and the Preacher weighs it against the day of death itself: *A good name is better than precious ointment; and the day of death than the day of one's birth* (Ecclesiastes 7:1).",
+      "anchor_start_v": 11,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 41, "src_v": 12,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 22, "tgt_v": 1,
+         "tier": "free",
+         "note": "Proverbs 22:1 — *A good name is rather to be chosen than great riches, and loving favour rather than silver and gold.* Sirach 41:12 sets a good name above a thousand treasures of gold exactly as the Proverb prefers it to great riches."},
+        {"src_ch": 41, "src_v": 13,
+         "tgt_edition": "canon", "tgt_book": "ecclesiastes", "tgt_ch": 7, "tgt_v": 1,
+         "tier": "free",
+         "note": "Ecclesiastes 7:1 — *A good name is better than precious ointment; and the day of death than the day of one's birth.* The enduring good name of Sirach 41:13, set over a short life, is the Preacher's name better than ointment, outlasting the day of death."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-41-hidden-wisdom-no-profit",
+      "title": "Hidden wisdom, hidden treasure: where is the profit?",
+      "summary_md": "Ben Sira charges his children, *keep discipline in peace: for wisdom that is hid, and a treasure that is not seen, what profit is in them both?* (Ecclesiasticus 41:14), and rules that *A man that hideth his foolishness is better than a man that hideth his wisdom* (41:15). It ain't new: the Preacher gives the whole matter its end — *Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man* (Ecclesiastes 12:13) — the wisdom not to be hidden is the kept commandment lived out in the fear of Yahuah.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 41, "src_v": 14,
+         "tgt_edition": "canon", "tgt_book": "ecclesiastes", "tgt_ch": 12, "tgt_v": 13,
+         "tier": "free",
+         "note": "Ecclesiastes 12:13 — *Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man.* The wisdom Sirach 41:14 says profits nothing while hidden is the kept commandment the Preacher names as the whole duty of man."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-41-shame-rightly-placed",
+      "title": "Shame rightly placed: before the covenant and the congregation",
+      "summary_md": "Ben Sira lists the things a man ought to be ashamed of: *Of an offence before a judge and ruler; of iniquity before a congregation and people; of unjust dealing before your partner and friend* (Ecclesiasticus 41:18), and *theft in regard of the place where you sojournest, and in regard of the truth of Yahuah (God) and his covenant* (41:19) — so that the rightly-shamefaced man shall *find favour before all men* (41:24). It ain't new: the fear that places shame aright is the fear of Yahuah the Proverb crowns — *By humility and the fear of Yahuah (LORD) are riches, and honour, and life* (Proverbs 22:4) — and the secret dealings that shame us are weighed in the judgment the Preacher foretells: *For Elohim (God) shall bring every work into judgment, with every secret thing, whether it be good, or whether it be evil* (Ecclesiastes 12:14).",
+      "anchor_start_v": 16,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 41, "src_v": 19,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 22, "tgt_v": 4,
+         "tier": "free",
+         "note": "Proverbs 22:4 — *By humility and the fear of Yahuah (LORD) are riches, and honour, and life.* The shame Sirach 41:19 demands before the truth of Yahuah and his covenant is the same fear of Yahuah the Proverb rewards with honour and life."},
+        {"src_ch": 41, "src_v": 18,
+         "tgt_edition": "canon", "tgt_book": "ecclesiastes", "tgt_ch": 12, "tgt_v": 14,
+         "tier": "free",
+         "note": "Ecclesiastes 12:14 — *For Elohim (God) shall bring every work into judgment, with every secret thing, whether it be good, or whether it be evil.* The iniquity before a congregation that shames a man in Sirach 41:18 is among the secret things the Preacher says Elohim will bring into judgment."}
+      ]
+    }
+  ]
+}

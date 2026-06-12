@@ -11170,6 +11170,2224 @@ SELECT t.id, x.id, 4, E'Proverbs 18:22 — *Whoso findeth a wife findeth a good 
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ecclesiasticus_41.sql (session253 ecclesiasticus 41) -----
+-- Source anchor: apocrypha/ecclesiasticus ch41. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir41 (view _session253_sir41_lookup). Sort band base 59300, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir41_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: ecclesiasticus-41-sentence-of-death
+  ('apocrypha', 'ecclesiasticus', 41, 3, 'canon', 'genesis', 3, 19, 'free', E'Genesis 3:19 — *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return.* The sentence of Yahuah over all flesh that Sirach 41:3 bids us not to fear is the very dust-to-dust decree first spoken over Adam.'),
+  ('apocrypha', 'ecclesiasticus', 41, 4, 'canon', 'ecclesiastes', 12, 7, 'free', E'Ecclesiastes 12:7 — *Then shall the dust return to the earth as it was: and the spirit shall return unto Elohim (God) who gave it.* As Sirach 41:4 asks why a man strives against the Most High in the grave, the Preacher answers that body returns to dust and spirit to the Elohim who gave it.'),
+  ('apocrypha', 'ecclesiasticus', 41, 3, 'canon', 'hebrews', 9, 27, 'free', E'Hebrews 9:27 — *And as it is appointed unto men once to die, but after this the judgment.* The single sentence of death over all flesh in Sirach 41:3 is the same appointment the apostle sets before the judgment to come.'),
+  -- thread: ecclesiasticus-41-curse-on-the-ungodly-seed
+  ('apocrypha', 'ecclesiasticus', 41, 9, 'canon', 'romans', 6, 23, 'free', E'Romans 6:23 — *For the wages of sin is death; but the gift of Elohim (God) is eternal life through Yahusha HaMashiach (Jesus Christ) our Lord.* The curse that is the ungodly man''s portion in Sirach 41:9 is the wages of sin the apostle sets against the free gift of life.'),
+  ('apocrypha', 'ecclesiasticus', 41, 10, 'apocrypha', 'the-wisdom-of-solomon', 2, 24, 'extras', E'Wisdom of Solomon 2:24 — *Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.* Sirach 41:10''s ungodly who go from a curse to destruction are the ones who hold of the devil''s side and so find the death he brought into the world.'),
+  -- thread: ecclesiasticus-41-a-good-name-endureth-for-ever
+  ('apocrypha', 'ecclesiasticus', 41, 12, 'canon', 'proverbs', 22, 1, 'free', E'Proverbs 22:1 — *A good name is rather to be chosen than great riches, and loving favour rather than silver and gold.* Sirach 41:12 sets a good name above a thousand treasures of gold exactly as the Proverb prefers it to great riches.'),
+  ('apocrypha', 'ecclesiasticus', 41, 13, 'canon', 'ecclesiastes', 7, 1, 'free', E'Ecclesiastes 7:1 — *A good name is better than precious ointment; and the day of death than the day of one''s birth.* The enduring good name of Sirach 41:13, set over a short life, is the Preacher''s name better than ointment, outlasting the day of death.'),
+  -- thread: ecclesiasticus-41-hidden-wisdom-no-profit
+  ('apocrypha', 'ecclesiasticus', 41, 14, 'canon', 'ecclesiastes', 12, 13, 'free', E'Ecclesiastes 12:13 — *Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man.* The wisdom Sirach 41:14 says profits nothing while hidden is the kept commandment the Preacher names as the whole duty of man.'),
+  -- thread: ecclesiasticus-41-shame-rightly-placed
+  ('apocrypha', 'ecclesiasticus', 41, 19, 'canon', 'proverbs', 22, 4, 'free', E'Proverbs 22:4 — *By humility and the fear of Yahuah (LORD) are riches, and honour, and life.* The shame Sirach 41:19 demands before the truth of Yahuah and his covenant is the same fear of Yahuah the Proverb rewards with honour and life.'),
+  ('apocrypha', 'ecclesiasticus', 41, 18, 'canon', 'ecclesiastes', 12, 14, 'free', E'Ecclesiastes 12:14 — *For Elohim (God) shall bring every work into judgment, with every secret thing, whether it be good, or whether it be evil.* The iniquity before a congregation that shames a man in Sirach 41:18 is among the secret things the Preacher says Elohim will bring into judgment.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir41_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir41_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-41-sentence-of-death',
+       E'The sentence of death over all flesh',
+       E'Ben Sira cries, *Fear not the sentence of death, remember them that have been before you, and that come after; for this is the sentence of Yahuah (God) over all flesh* (Ecclesiasticus 41:3) — the bitter remembrance of death (41:1) is acceptable to the weary and the needy (41:2), for none escapes the appointment of the Most High (41:4). It ain''t new: the verdict was spoken in the garden, *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return* (Genesis 3:19), and the Preacher closes the circle — *Then shall the dust return to the earth as it was: and the spirit shall return unto Elohim (God) who gave it* (Ecclesiastes 12:7). The same divine ordinance the apostle names: *And as it is appointed unto men once to die, but after this the judgment* (Hebrews 9:27).',
+       sv.verse_id, ev.verse_id, 'extras', 59300
+  FROM _session253_sir41_lookup sv, _session253_sir41_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=41 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-41-curse-on-the-ungodly-seed',
+       E'From a curse to destruction: the ungodly and their seed',
+       E'Sirach turns from death itself to the death the wicked earn: *Woe be to you, ungodly men, which have forsaken the law of the most high Yahuah (God)! for if you increase, it shall be to your destruction* (Ecclesiasticus 41:8), so that *if you be born, you shall be born to a curse: and if you die, a curse shall be your portion* (41:9), and *All that are of the earth shall turn to earth again: so the ungodly shall go from a curse to destruction* (41:10). It ain''t new: the apostle weighs the two ends in one breath — *For the wages of sin is death; but the gift of Elohim (God) is eternal life through Yahusha HaMashiach (Jesus Christ) our Lord* (Romans 6:23). And the sister-book traces death itself to its root — *Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it* (Wisdom of Solomon 2:24): the ungodly who forsake the law hold of that side and find the curse.',
+       sv.verse_id, ev.verse_id, 'extras', 59303
+  FROM _session253_sir41_lookup sv, _session253_sir41_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=8
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=41 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-41-a-good-name-endureth-for-ever',
+       E'A good name endureth for ever',
+       E'Against the blotted-out name of sinners (Ecclesiasticus 41:11), Ben Sira counsels, *Have regard to your name; for that shall continue with you above a thousand great treasures of gold* (41:12), for *A good life has but few days: but a good name endureth for ever* (41:13). It ain''t new: this is the Proverb''s own scale — *A good name is rather to be chosen than great riches, and loving favour rather than silver and gold* (Proverbs 22:1) — and the Preacher weighs it against the day of death itself: *A good name is better than precious ointment; and the day of death than the day of one''s birth* (Ecclesiastes 7:1).',
+       sv.verse_id, ev.verse_id, 'extras', 59306
+  FROM _session253_sir41_lookup sv, _session253_sir41_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=11
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=41 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-41-hidden-wisdom-no-profit',
+       E'Hidden wisdom, hidden treasure: where is the profit?',
+       E'Ben Sira charges his children, *keep discipline in peace: for wisdom that is hid, and a treasure that is not seen, what profit is in them both?* (Ecclesiasticus 41:14), and rules that *A man that hideth his foolishness is better than a man that hideth his wisdom* (41:15). It ain''t new: the Preacher gives the whole matter its end — *Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man* (Ecclesiastes 12:13) — the wisdom not to be hidden is the kept commandment lived out in the fear of Yahuah.',
+       sv.verse_id, ev.verse_id, 'extras', 59309
+  FROM _session253_sir41_lookup sv, _session253_sir41_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=14
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=41 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ecclesiasticus-41-shame-rightly-placed',
+       E'Shame rightly placed: before the covenant and the congregation',
+       E'Ben Sira lists the things a man ought to be ashamed of: *Of an offence before a judge and ruler; of iniquity before a congregation and people; of unjust dealing before your partner and friend* (Ecclesiasticus 41:18), and *theft in regard of the place where you sojournest, and in regard of the truth of Yahuah (God) and his covenant* (41:19) — so that the rightly-shamefaced man shall *find favour before all men* (41:24). It ain''t new: the fear that places shame aright is the fear of Yahuah the Proverb crowns — *By humility and the fear of Yahuah (LORD) are riches, and honour, and life* (Proverbs 22:4) — and the secret dealings that shame us are weighed in the judgment the Preacher foretells: *For Elohim (God) shall bring every work into judgment, with every secret thing, whether it be good, or whether it be evil* (Ecclesiastes 12:14).',
+       sv.verse_id, ev.verse_id, 'extras', 59312
+  FROM _session253_sir41_lookup sv, _session253_sir41_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=16
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=41 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: ecclesiasticus-41-sentence-of-death
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 3:19 — *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return.* The sentence of Yahuah over all flesh that Sirach 41:3 bids us not to fear is the very dust-to-dust decree first spoken over Adam.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir41_lookup sv, _session253_sir41_lookup tv
+ WHERE t.slug='ecclesiasticus-41-sentence-of-death'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ecclesiastes 12:7 — *Then shall the dust return to the earth as it was: and the spirit shall return unto Elohim (God) who gave it.* As Sirach 41:4 asks why a man strives against the Most High in the grave, the Preacher answers that body returns to dust and spirit to the Elohim who gave it.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir41_lookup sv, _session253_sir41_lookup tv
+ WHERE t.slug='ecclesiasticus-41-sentence-of-death'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=12 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 9:27 — *And as it is appointed unto men once to die, but after this the judgment.* The single sentence of death over all flesh in Sirach 41:3 is the same appointment the apostle sets before the judgment to come.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir41_lookup sv, _session253_sir41_lookup tv
+ WHERE t.slug='ecclesiasticus-41-sentence-of-death'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-41-curse-on-the-ungodly-seed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Romans 6:23 — *For the wages of sin is death; but the gift of Elohim (God) is eternal life through Yahusha HaMashiach (Jesus Christ) our Lord.* The curse that is the ungodly man''s portion in Sirach 41:9 is the wages of sin the apostle sets against the free gift of life.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir41_lookup sv, _session253_sir41_lookup tv
+ WHERE t.slug='ecclesiasticus-41-curse-on-the-ungodly-seed'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=6 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Wisdom of Solomon 2:24 — *Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.* Sirach 41:10''s ungodly who go from a curse to destruction are the ones who hold of the devil''s side and so find the death he brought into the world.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir41_lookup sv, _session253_sir41_lookup tv
+ WHERE t.slug='ecclesiasticus-41-curse-on-the-ungodly-seed'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=10
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=2 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-41-a-good-name-endureth-for-ever
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 22:1 — *A good name is rather to be chosen than great riches, and loving favour rather than silver and gold.* Sirach 41:12 sets a good name above a thousand treasures of gold exactly as the Proverb prefers it to great riches.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir41_lookup sv, _session253_sir41_lookup tv
+ WHERE t.slug='ecclesiasticus-41-a-good-name-endureth-for-ever'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=22 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ecclesiastes 7:1 — *A good name is better than precious ointment; and the day of death than the day of one''s birth.* The enduring good name of Sirach 41:13, set over a short life, is the Preacher''s name better than ointment, outlasting the day of death.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir41_lookup sv, _session253_sir41_lookup tv
+ WHERE t.slug='ecclesiasticus-41-a-good-name-endureth-for-ever'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=7 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-41-hidden-wisdom-no-profit
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ecclesiastes 12:13 — *Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man.* The wisdom Sirach 41:14 says profits nothing while hidden is the kept commandment the Preacher names as the whole duty of man.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir41_lookup sv, _session253_sir41_lookup tv
+ WHERE t.slug='ecclesiasticus-41-hidden-wisdom-no-profit'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=12 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: ecclesiasticus-41-shame-rightly-placed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 22:4 — *By humility and the fear of Yahuah (LORD) are riches, and honour, and life.* The shame Sirach 41:19 demands before the truth of Yahuah and his covenant is the same fear of Yahuah the Proverb rewards with honour and life.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir41_lookup sv, _session253_sir41_lookup tv
+ WHERE t.slug='ecclesiasticus-41-shame-rightly-placed'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=22 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ecclesiastes 12:14 — *For Elohim (God) shall bring every work into judgment, with every secret thing, whether it be good, or whether it be evil.* The iniquity before a congregation that shames a man in Sirach 41:18 is among the secret things the Preacher says Elohim will bring into judgment.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir41_lookup sv, _session253_sir41_lookup tv
+ WHERE t.slug='ecclesiasticus-41-shame-rightly-placed'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=41 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=12 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_42.sql (session253 ecclesiasticus 42) -----
+-- Source anchor: apocrypha/ecclesiasticus ch42. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir42 (view _session253_sir42_lookup). Sort band base 59325, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir42_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: sirach-42-not-ashamed-of-the-law
+  ('apocrypha', 'ecclesiasticus', 42, 2, 'canon', 'romans', 1, 16, 'free', E'Romans 1:16 — *For I am not ashamed of the gospel of Messiah (Christ): for it is the power of Elohim (God) unto salvation to every one that believeth; to the Yahudi (Jew) first, and also to the Greek.* Paul''s unashamed boast echoes Sirach 42:2''s call to feel no shame for the law of the Most High and his covenant.'),
+  ('apocrypha', 'ecclesiasticus', 42, 2, 'canon', 'mark', 8, 38, 'free', E'Mark 8:38 — *Whosoever therefore shall be ashamed of me and of my words in this adulterous and sinful generation; of him also shall the Son of Adam be ashamed, when he cometh in the glory of his Father with the holy angels.* Messiah turns the shame the other way, confirming Sirach 42:2 that to be ashamed of the covenant is itself the sin.'),
+  ('apocrypha', 'ecclesiasticus', 42, 2, 'canon', 'psalms', 19, 8, 'free', E'Psalms 19:8 — *The statutes of Yahuah (LORD) are right, rejoicing the heart: the commandment of Yahuah (LORD) is pure, enlightening the eyes.* The law that rejoices the heart is precisely the law of the Most High that Sirach 42:2 says is no cause for shame.'),
+  -- thread: sirach-42-works-full-of-glory
+  ('apocrypha', 'ecclesiasticus', 42, 16, 'canon', 'psalms', 19, 1, 'free', E'Psalms 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* David''s declaring heavens match Sirach 42:16''s sun whose work is full of the glory of Yahuah.'),
+  ('apocrypha', 'ecclesiasticus', 42, 16, 'canon', 'psalms', 19, 6, 'free', E'Psalms 19:6 — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* The sun that looketh upon all things in Sirach 42:16 runs the very circuit David traces, missing nothing under heaven.'),
+  -- thread: sirach-42-he-knoweth-all
+  ('apocrypha', 'ecclesiasticus', 42, 18, 'canon', 'psalms', 139, 2, 'free', E'Psalms 139:2 — *Thou knowest my downsitting and mine uprising, thou understandest my thought afar off.* David''s searched-out thought is the same heart that Sirach 42:18 says Yahuah seeks out and fully knows.'),
+  ('apocrypha', 'ecclesiasticus', 42, 20, 'canon', 'hebrews', 4, 13, 'free', E'Hebrews 4:13 — *Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do.* This naked-and-opened sight is exactly Sirach 42:20''s truth that no thought escapes him and no word is hidden.'),
+  -- thread: sirach-42-nothing-added-nor-diminished
+  ('apocrypha', 'ecclesiasticus', 42, 21, 'canon', 'deuteronomy', 4, 2, 'free', E'Deuteronomy 4:2 — *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* Moses'' add-nothing, diminish-nothing law is the same seal Sirach 42:21 sets on the works that admit nothing added nor diminished.'),
+  ('apocrypha', 'ecclesiasticus', 42, 21, 'canon', 'ecclesiastes', 3, 14, 'free', E'Ecclesiastes 3:14 — *I know that, whatsoever Elohim (God) doeth, it shall be for ever: nothing can be put to it, nor any thing taken from it: and Elohim (God) doeth it, that men should fear before him.* Qoheleth''s everlasting, untouchable work is Sirach 42:21''s exact claim that nothing can be added to nor diminished from what Yahuah makes.'),
+  -- thread: sirach-42-works-of-his-wisdom
+  ('apocrypha', 'ecclesiasticus', 42, 21, 'apocrypha', 'ecclesiasticus', 24, 9, 'extras', E'Ecclesiasticus 24:9 — *He created me from the beginning before the world, and I shall never fail.* Ben Sira''s own Wisdom hymn names the pre-created Wisdom whose excellent works Sirach 42:21 says Yahuah has garnished.'),
+  ('apocrypha', 'ecclesiasticus', 42, 21, 'apocrypha', 'the-wisdom-of-solomon', 7, 27, 'extras', E'Wisdom of Solomon 7:27 — *And being but one, she can do all things: and remaining in herself, she makes all things new: and in all ages entering into holy souls, she makes them friends of Yahuah (God), and prophets.* Solomon''s all-working Wisdom is the same wisdom whose works Sirach 42:21 calls excellent and garnished.'),
+  ('apocrypha', 'ecclesiasticus', 42, 15, 'canon', 'proverbs', 8, 22, 'free', E'Proverbs 8:22 — *Yahuah (LORD) possessed me in the beginning of his way, before his works of old.* The Wisdom standing beside the Maker before his works of old is the very Wisdom whose works Sirach 42:15 sets out to remember and declare.'),
+  -- thread: sirach-42-all-things-double
+  ('apocrypha', 'ecclesiasticus', 42, 24, 'apocrypha', 'the-wisdom-of-solomon', 7, 22, 'extras', E'Wisdom of Solomon 7:22 — *For wisdom, which is the worker of all things, taught me: for in her is an understanding spirit holy, one only, manifold, subtil, lively, clear, undefiled, plain, not subject to hurt, loving the thing that is good quick, which cannot be letted, ready to do good,* Solomon''s Wisdom, worker of all things, is the ordering hand behind Sirach 42:24''s paired creation in which nothing is made imperfect.'),
+  ('apocrypha', 'ecclesiasticus', 42, 25, 'canon', 'psalms', 139, 14, 'free', E'Psalms 139:14 — *I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well.* David''s wonder at the perfection of his own making answers Sirach 42:25''s question of who can be filled with beholding so marvellous a glory.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir42_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir42_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-42-not-ashamed-of-the-law',
+       E'Be not ashamed of the law and the covenant',
+       E'Ben Sira draws the line of holy shame: *Of these things be not you ashamed, and accept no person to sin thereby:* (Ecclesiasticus 42:1) — *Of the law of the Most High, and his covenant; and of judgment to justify the ungodly;* (Ecclesiasticus 42:2). The Torah and the covenant are never a thing to blush at; the only shame is to break them. It ain''t new: Paul carries the same boast — *For I am not ashamed of the gospel of Messiah (Christ): for it is the power of Elohim (God) unto salvation to every one that believeth; to the Yahudi (Jew) first, and also to the Greek.* (Romans 1:16). Messiah turns the shame the other way — *Whosoever therefore shall be ashamed of me and of my words in this adulterous and sinful generation; of him also shall the Son of Adam be ashamed, when he cometh in the glory of his Father with the holy angels.* (Mark 8:38) — and the psalmist names why there is nothing to be ashamed of: *The statutes of Yahuah (LORD) are right, rejoicing the heart: the commandment of Yahuah (LORD) is pure, enlightening the eyes.* (Psalms 19:8). The law stands; it is never the curse but the joy of the covenant.',
+       sv.verse_id, ev.verse_id, 'extras', 59325
+  FROM _session253_sir42_lookup sv, _session253_sir42_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=42 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-42-works-full-of-glory',
+       E'The sun looks on all things, full of the glory of Yahuah',
+       E'Ben Sira opens the great creation hymn: *I will now remember the works of Yahuah (God), and declare the things that I have seen: In the words of Yahuah (God) are his works.* (Ecclesiasticus 42:15) — *The sun that gives light looketh upon all things, and the work thereof is full of the glory of Yahuah (God).* (Ecclesiasticus 42:16). The sun is no idol but a witness, brimming with the Maker''s glory. It ain''t new: David sang the same firmament-song — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* (Psalms 19:1) — and traced the sun''s circuit that hides nothing — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* (Psalms 19:6). Creation speaks the word of its Maker.',
+       sv.verse_id, ev.verse_id, 'extras', 59328
+  FROM _session253_sir42_lookup sv, _session253_sir42_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=15
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=42 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-42-he-knoweth-all',
+       E'He seeks out the deep and the heart; no thought escapes him',
+       E'Ben Sira measures the divine omniscience: *He seeks out the deep, and the heart, and considereth their crafty devices: for Yahuah (God) knoweth all that may be known, and he beholds the signs of the world.* (Ecclesiasticus 42:18) — *No thought escapeth him, neither any word is hidden from him.* (Ecclesiasticus 42:20). The deep places and the secret heart lie open before him. It ain''t new: David already knew this searching gaze — *Thou knowest my downsitting and mine uprising, thou understandest my thought afar off.* (Psalms 139:2) — and Hebrews seals it for the day of reckoning — *Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do.* (Hebrews 4:13). The heart is never hidden from its Maker.',
+       sv.verse_id, ev.verse_id, 'extras', 59331
+  FROM _session253_sir42_lookup sv, _session253_sir42_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=18
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=42 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-42-nothing-added-nor-diminished',
+       E'Nothing may be added, neither can he be diminished',
+       E'Ben Sira closes on the perfection and permanence of the works of Yahuah: *He has garnished the excellent works of his wisdom, and he is from everlasting to everlasting: to him may nothing be added, neither can he be diminished, and he has no need of any counsellor.* (Ecclesiasticus 42:21). What the Most High makes is finished, unimprovable, eternal. It ain''t new: Moses set the same seal on the Torah — *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* (Deuteronomy 4:2) — and Qoheleth on the works of Elohim — *I know that, whatsoever Elohim (God) doeth, it shall be for ever: nothing can be put to it, nor any thing taken from it: and Elohim (God) doeth it, that men should fear before him.* (Ecclesiastes 3:14). The word and the work alike are complete; neither admits addition nor subtraction.',
+       sv.verse_id, ev.verse_id, 'extras', 59334
+  FROM _session253_sir42_lookup sv, _session253_sir42_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=21
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=42 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-42-works-of-his-wisdom',
+       E'The excellent works of his wisdom',
+       E'Ben Sira frames the whole creation hymn as the labour of Wisdom: he remembers *the works of Yahuah (God)* (Ecclesiasticus 42:15) and confesses *He has garnished the excellent works of his wisdom* (Ecclesiasticus 42:21). The same Formed Wisdom that ordered creation runs through the deuterocanon''s own witness. It ain''t new even within the library: Ben Sira himself sang her elsewhere — *He created me from the beginning before the world, and I shall never fail.* (Ecclesiasticus 24:9) — and Solomon named her the craftsman of all — *And being but one, she can do all things: and remaining in herself, she makes all things new: and in all ages entering into holy souls, she makes them friends of Yahuah (God), and prophets.* (Wisdom of Solomon 7:27). Proverbs already set her beside the Maker at the founding of the world — *Yahuah (LORD) possessed me in the beginning of his way, before his works of old.* (Proverbs 8:22). The works of his wisdom are no afterthought; Wisdom was there from the beginning.',
+       sv.verse_id, ev.verse_id, 'extras', 59337
+  FROM _session253_sir42_lookup sv, _session253_sir42_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=15
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=42 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-42-all-things-double',
+       E'All things double; nothing imperfect',
+       E'Ben Sira reads the design of creation as paired and perfect: *All these things live and remain for ever for all uses, and they are all obedient.* (Ecclesiasticus 42:23) — *All things are double one against another: and he has made nothing imperfect.* (Ecclesiasticus 42:24) — and ends in worship: *One thing establishes the good or another: and who shall be filled with beholding his glory?* (Ecclesiasticus 42:25). The Maker''s order is complete, paired, and obedient. It ain''t new: Solomon already confessed the obedient harmony of the elements ordered by Wisdom — *For wisdom, which is the worker of all things, taught me: for in her is an understanding spirit holy, one only, manifold, subtil, lively, clear, undefiled, plain, not subject to hurt, loving the thing that is good quick, which cannot be letted, ready to do good,* (Wisdom of Solomon 7:22) — and David, beholding the wonder of his own framing, cried the same unfinished praise — *I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well.* (Psalms 139:14). None can be filled with beholding a glory so perfectly wrought.',
+       sv.verse_id, ev.verse_id, 'extras', 59340
+  FROM _session253_sir42_lookup sv, _session253_sir42_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=23
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=42 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: sirach-42-not-ashamed-of-the-law
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Romans 1:16 — *For I am not ashamed of the gospel of Messiah (Christ): for it is the power of Elohim (God) unto salvation to every one that believeth; to the Yahudi (Jew) first, and also to the Greek.* Paul''s unashamed boast echoes Sirach 42:2''s call to feel no shame for the law of the Most High and his covenant.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-not-ashamed-of-the-law'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Mark 8:38 — *Whosoever therefore shall be ashamed of me and of my words in this adulterous and sinful generation; of him also shall the Son of Adam be ashamed, when he cometh in the glory of his Father with the holy angels.* Messiah turns the shame the other way, confirming Sirach 42:2 that to be ashamed of the covenant is itself the sin.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-not-ashamed-of-the-law'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=8 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 19:8 — *The statutes of Yahuah (LORD) are right, rejoicing the heart: the commandment of Yahuah (LORD) is pure, enlightening the eyes.* The law that rejoices the heart is precisely the law of the Most High that Sirach 42:2 says is no cause for shame.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-not-ashamed-of-the-law'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-42-works-full-of-glory
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalms 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* David''s declaring heavens match Sirach 42:16''s sun whose work is full of the glory of Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-works-full-of-glory'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 19:6 — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* The sun that looketh upon all things in Sirach 42:16 runs the very circuit David traces, missing nothing under heaven.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-works-full-of-glory'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-42-he-knoweth-all
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalms 139:2 — *Thou knowest my downsitting and mine uprising, thou understandest my thought afar off.* David''s searched-out thought is the same heart that Sirach 42:18 says Yahuah seeks out and fully knows.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-he-knoweth-all'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=139 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 4:13 — *Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do.* This naked-and-opened sight is exactly Sirach 42:20''s truth that no thought escapes him and no word is hidden.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-he-knoweth-all'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-42-nothing-added-nor-diminished
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 4:2 — *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* Moses'' add-nothing, diminish-nothing law is the same seal Sirach 42:21 sets on the works that admit nothing added nor diminished.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-nothing-added-nor-diminished'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ecclesiastes 3:14 — *I know that, whatsoever Elohim (God) doeth, it shall be for ever: nothing can be put to it, nor any thing taken from it: and Elohim (God) doeth it, that men should fear before him.* Qoheleth''s everlasting, untouchable work is Sirach 42:21''s exact claim that nothing can be added to nor diminished from what Yahuah makes.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-nothing-added-nor-diminished'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=3 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-42-works-of-his-wisdom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ecclesiasticus 24:9 — *He created me from the beginning before the world, and I shall never fail.* Ben Sira''s own Wisdom hymn names the pre-created Wisdom whose excellent works Sirach 42:21 says Yahuah has garnished.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-works-of-his-wisdom'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=21
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=24 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Wisdom of Solomon 7:27 — *And being but one, she can do all things: and remaining in herself, she makes all things new: and in all ages entering into holy souls, she makes them friends of Yahuah (God), and prophets.* Solomon''s all-working Wisdom is the same wisdom whose works Sirach 42:21 calls excellent and garnished.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-works-of-his-wisdom'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=21
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=7 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 8:22 — *Yahuah (LORD) possessed me in the beginning of his way, before his works of old.* The Wisdom standing beside the Maker before his works of old is the very Wisdom whose works Sirach 42:15 sets out to remember and declare.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-works-of-his-wisdom'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=8 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-42-all-things-double
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Wisdom of Solomon 7:22 — *For wisdom, which is the worker of all things, taught me: for in her is an understanding spirit holy, one only, manifold, subtil, lively, clear, undefiled, plain, not subject to hurt, loving the thing that is good quick, which cannot be letted, ready to do good,* Solomon''s Wisdom, worker of all things, is the ordering hand behind Sirach 42:24''s paired creation in which nothing is made imperfect.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-all-things-double'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=24
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=7 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 139:14 — *I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well.* David''s wonder at the perfection of his own making answers Sirach 42:25''s question of who can be filled with beholding so marvellous a glory.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir42_lookup sv, _session253_sir42_lookup tv
+ WHERE t.slug='sirach-42-all-things-double'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=42 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=139 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_43.sql (session253 ecclesiasticus 43) -----
+-- Source anchor: apocrypha/ecclesiasticus ch43. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir43 (view _session253_sir43_lookup). Sort band base 59350, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir43_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: sirach-43-firmament-declares-glory
+  ('apocrypha', 'ecclesiasticus', 43, 1, 'canon', 'psalms', 19, 1, 'free', E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The clear firmament of Sirach 43:1 is the same silent preacher David heard.'),
+  ('apocrypha', 'ecclesiasticus', 43, 2, 'canon', 'psalms', 19, 5, 'free', E'Psalm 19:5 — *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* Sirach''s sun *declaring at his rising a marvellous instrument* (43:2) runs the very race the bridegroom-sun runs in the psalm.'),
+  ('apocrypha', 'ecclesiasticus', 43, 1, 'canon', 'psalms', 148, 3, 'free', E'Psalm 148:3 — *Praise ye him, sun and moon: praise him, all ye stars of light.* The beauty of heaven that Sirach 43:1 beholds is summoned into open praise here.'),
+  -- thread: sirach-43-moon-sign-of-feasts
+  ('apocrypha', 'ecclesiasticus', 43, 6, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* Sirach''s moon *for a declaration of times* (43:6) is exactly the seasons-marker — the moedim — set on the fourth day.'),
+  ('apocrypha', 'ecclesiasticus', 43, 7, 'canon', 'psalms', 104, 19, 'free', E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The moon as *the sign of feasts* (43:7) is the psalm''s appointed moon-for-seasons word for word.'),
+  ('apocrypha', 'ecclesiasticus', 43, 6, 'canon', 'genesis', 1, 16, 'free', E'Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* The moon Sira watches *increasing wonderfully in her changing* is the lesser light made to rule the night.'),
+  -- thread: sirach-43-stars-in-their-watches
+  ('apocrypha', 'ecclesiasticus', 43, 10, 'canon', 'job', 38, 7, 'free', E'Job 38:7 — *When the morning stars sang together, and all the sons of Elohim (God) shouted for joy?* The stars that *stand in their order* (43:10) are the singing morning-stars of the world''s foundation.'),
+  ('apocrypha', 'ecclesiasticus', 43, 10, 'canon', 'job', 38, 31, 'free', E'Job 38:31 — *Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion?* The host that never faints in their watches (43:10) keeps the very bands no man can bind or loose.'),
+  ('apocrypha', 'ecclesiasticus', 43, 9, 'canon', 'psalms', 148, 6, 'free', E'Psalm 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The stars *never faint in their watches* (43:10) because of this unpassing decree.'),
+  -- thread: sirach-43-rainbow-snow-frost-treasures
+  ('apocrypha', 'ecclesiasticus', 43, 14, 'canon', 'job', 38, 22, 'free', E'Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* The *treasures* opened in Sirach 43:14 are the very snow-treasures Job is asked whether he has entered.'),
+  ('apocrypha', 'ecclesiasticus', 43, 19, 'canon', 'job', 38, 29, 'free', E'Job 38:29 — *Out of whose womb came the ice? and the hoary frost of heaven, who hath gendered it?* Sirach''s hoarfrost *as salt he poureth on the earth* (43:19) answers Job''s question by naming its Maker.'),
+  ('apocrypha', 'ecclesiasticus', 43, 13, 'canon', 'jeremiah', 10, 13, 'free', E'Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* The snow and *lightnings of his judgment* of Sirach 43:13 are Jeremiah''s lightnings-with-rain from the treasure-store.'),
+  ('apocrypha', 'ecclesiasticus', 43, 13, 'canon', 'psalms', 148, 8, 'free', E'Psalm 148:8 — *Fire, and hail; snow, and vapour; stormy wind fulfilling his word.* The snow that falls *by his commandment* (43:13) is the storm fulfilling His word in the psalm.'),
+  -- thread: sirach-43-he-appeaseth-the-deep
+  ('apocrypha', 'ecclesiasticus', 43, 25, 'canon', 'genesis', 1, 21, 'free', E'Genesis 1:21 — *And Elohim (God) created great whales, and every living creature that moveth, which the waters brought forth abundantly, after their kind, and every winged fowl after his kind: and Elohim (God) saw that it was good.* The *whales created* of Sirach 43:25 are the fifth-day great whales of Genesis.'),
+  ('apocrypha', 'ecclesiasticus', 43, 23, 'canon', 'job', 38, 8, 'free', E'Job 38:8 — *Or who shut up the sea with doors, when it brake forth, as if it had issued out of the womb?* He who *appeaseth the deep* (43:23) is the One who shut the sea behind doors in Job.'),
+  ('apocrypha', 'ecclesiasticus', 43, 23, 'canon', 'psalms', 33, 7, 'free', E'Psalm 33:7 — *He gathereth the waters of the sea together as an heap: he layeth up the depth in storehouses.* Sirach''s appeasing of the deep (43:23) is the psalm''s gathering of the sea and storing of the depth.'),
+  -- thread: sirach-43-by-his-word-all-things-consist
+  ('apocrypha', 'ecclesiasticus', 43, 26, 'canon', 'colossians', 1, 17, 'free', E'Colossians 1:17 — *And he is before all things, and by him all things consist.* Paul says of the Son the very thing Sirach 43:26 says of the Maker — *by him all things consist.*'),
+  ('apocrypha', 'ecclesiasticus', 43, 26, 'canon', 'hebrews', 1, 3, 'free', E'Hebrews 1:3 — *Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high;* The word by which all things *consist* (43:26) is the word of power by which the Son upholds all things.'),
+  ('apocrypha', 'ecclesiasticus', 43, 26, 'canon', 'psalms', 33, 6, 'free', E'Psalm 33:6 — *By the word of Yahuah (LORD) were the heavens made; and all the host of them by the breath of his mouth.* The word that holds all things together (43:26) is the word that made the heavens and their host.'),
+  ('apocrypha', 'ecclesiasticus', 43, 27, 'canon', 'psalms', 33, 9, 'free', E'Psalm 33:9 — *For he spake, and it was done; he commanded, and it stood fast.* Sira''s confession that words *come short* before the One who *is all* (43:27) bows to the God whose mere speech makes creation stand fast.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir43_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir43_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-43-firmament-declares-glory',
+       E'The pride of the height — the heavens declare His glory',
+       E'Yeshua ben Sira lifts his eyes and the whole sky preaches: *The pride of the height, the clear firmament, the beauty of heaven, with his glorious shew* (Ecclesiasticus 43:1), and the sun *declaring at his rising a marvellous instrument, the work of the Most High* (Ecclesiasticus 43:2). It ain''t new. David sang the same wordless sermon: *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork* (Psalm 19:1), with the sun *as a bridegroom coming out of his chamber* (Psalm 19:5). The psalmist of Israel calls every register of the cosmos into the choir: *Praise ye him, sun and moon: praise him, all ye stars of light* (Psalm 148:3) — and they obey because *he commanded, and they were created* (Psalm 148:5). The firmament is no idol to fear, but the workman''s witness.',
+       sv.verse_id, ev.verse_id, 'extras', 59350
+  FROM _session253_sir43_lookup sv, _session253_sir43_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=43 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-43-moon-sign-of-feasts',
+       E'The moon — a sign of feasts, the moed-marker',
+       E'Here is the heart of the hymn for the keepers of the Appointed Times: *He made the moon also to serve in her season for a declaration of times, and a sign of the world* (Ecclesiasticus 43:6), for *From the moon is the sign of feasts, a light that decreaseth in her perfection* (Ecclesiasticus 43:7). The lights were never mere decoration — at the fourth day Elohim set them *for signs, and for seasons, and for days, and years* (Genesis 1:14), the lesser light *to rule the night* (Genesis 1:16). The same ordinance the psalmist names: *He appointed the moon for seasons: the sun knoweth his going down* (Psalm 104:19). The moedim hang on the lamp Sira watched wane and return — *the sign of feasts* written in the sky for Israel to read.',
+       sv.verse_id, ev.verse_id, 'extras', 59353
+  FROM _session253_sir43_lookup sv, _session253_sir43_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=6
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=43 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-43-stars-in-their-watches',
+       E'The stars stand in their order — the host that never faints',
+       E'The night sky is a disciplined army: *The beauty of heaven, the glory of the stars, an ornament giving light in the highest places of Yahuah (God)* (Ecclesiasticus 43:9), and *At the commandment of the Holy One they will stand in their order, and never faint in their watches* (Ecclesiasticus 43:10). Job heard them sing at the foundation of the world: *When the morning stars sang together, and all the sons of Elohim (God) shouted for joy* (Job 38:7) — and was asked, *Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion?* (Job 38:31). David calls that same host to praise: *Praise ye him, all his angels: praise ye him, all his hosts* (Psalm 148:2). The stars keep their watch because the Holy One commanded their order, and *he hath made a decree which shall not pass* (Psalm 148:6).',
+       sv.verse_id, ev.verse_id, 'extras', 59356
+  FROM _session253_sir43_lookup sv, _session253_sir43_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=9
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=43 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-43-rainbow-snow-frost-treasures',
+       E'Rainbow, snow, and frost — the treasures of heaven opened',
+       E'Sira reads the weather as theology: *Look upon the rainbow, and praise him that made it... the hands of the Most High have bended it* (Ecclesiasticus 43:11-12); *By his commandment he makes the snow to fall aplace, and sends swiftly the lightnings of his judgment. Through this the treasures are opened* (Ecclesiasticus 43:13-14); *The hoarfrost also as salt he poureth on the earth* (Ecclesiasticus 43:19). Out of the whirlwind Yahuah pressed Job with the same wonders: *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail* (Job 38:22), and *Out of whose womb came the ice? and the hoary frost of heaven, who hath gendered it?* (Job 38:29). Jeremiah binds the lightning and treasure-winds to the Maker who shames every idol: *he maketh lightnings with rain, and bringeth forth the wind out of his treasures* (Jeremiah 10:13). And the whole host obeys at a word: *Fire, and hail; snow, and vapour; stormy wind fulfilling his word* (Psalm 148:8).',
+       sv.verse_id, ev.verse_id, 'extras', 59359
+  FROM _session253_sir43_lookup sv, _session253_sir43_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=13
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=43 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-43-he-appeaseth-the-deep',
+       E'By his counsel he appeaseth the deep',
+       E'Sira turns to the sea: *By his counsel he appeaseth the deep, and planteth islands in it* (Ecclesiasticus 43:23), and there *be strange and wondrous works, variety of all kinds of beasts and whales created* (Ecclesiasticus 43:25). Genesis names that fifth-day act: *And Elohim (God) created great whales, and every living creature that moveth, which the waters brought forth abundantly* (Genesis 1:21). Job hears the deep set behind its barred doors: *Or who shut up the sea with doors, when it brake forth, as if it had issued out of the womb?* (Job 38:8). And David tells how it was tamed: *He gathereth the waters of the sea together as an heap: he layeth up the depth in storehouses* (Psalm 33:7). The deep that drowns the proud is the deep He appeases at a word.',
+       sv.verse_id, ev.verse_id, 'extras', 59362
+  FROM _session253_sir43_lookup sv, _session253_sir43_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=23
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=43 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-43-by-his-word-all-things-consist',
+       E'He is all — and by his word all things consist',
+       E'The hymn closes in confessed limit and overflowing praise: *By him the end of them has prosperous success, and by his word all things consist* (Ecclesiasticus 43:26); *We may speak much, and yet come short: wherefore in sum, he is all* (Ecclesiasticus 43:27); *For Yahuah (God) has made all things; and to the godly has he given wisdom* (Ecclesiasticus 43:33). It ain''t new — and the apostles will say it of the Son through whom the worlds were framed: *For by him were all things created... all things were created by him, and for him: And he is before all things, and by him all things consist* (Colossians 1:16-17). The Son is *upholding all things by the word of his power* (Hebrews 1:3) — the very word by which Sira says all things consist. And it was ever so: *By the word of Yahuah (LORD) were the heavens made; and all the host of them by the breath of his mouth... For he spake, and it was done; he commanded, and it stood fast* (Psalm 33:6,9).',
+       sv.verse_id, ev.verse_id, 'extras', 59365
+  FROM _session253_sir43_lookup sv, _session253_sir43_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=26
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=43 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: sirach-43-firmament-declares-glory
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The clear firmament of Sirach 43:1 is the same silent preacher David heard.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-firmament-declares-glory'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 19:5 — *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* Sirach''s sun *declaring at his rising a marvellous instrument* (43:2) runs the very race the bridegroom-sun runs in the psalm.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-firmament-declares-glory'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 148:3 — *Praise ye him, sun and moon: praise him, all ye stars of light.* The beauty of heaven that Sirach 43:1 beholds is summoned into open praise here.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-firmament-declares-glory'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-43-moon-sign-of-feasts
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* Sirach''s moon *for a declaration of times* (43:6) is exactly the seasons-marker — the moedim — set on the fourth day.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-moon-sign-of-feasts'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The moon as *the sign of feasts* (43:7) is the psalm''s appointed moon-for-seasons word for word.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-moon-sign-of-feasts'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* The moon Sira watches *increasing wonderfully in her changing* is the lesser light made to rule the night.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-moon-sign-of-feasts'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-43-stars-in-their-watches
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 38:7 — *When the morning stars sang together, and all the sons of Elohim (God) shouted for joy?* The stars that *stand in their order* (43:10) are the singing morning-stars of the world''s foundation.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-stars-in-their-watches'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 38:31 — *Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion?* The host that never faints in their watches (43:10) keeps the very bands no man can bind or loose.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-stars-in-their-watches'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The stars *never faint in their watches* (43:10) because of this unpassing decree.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-stars-in-their-watches'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-43-rainbow-snow-frost-treasures
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* The *treasures* opened in Sirach 43:14 are the very snow-treasures Job is asked whether he has entered.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-rainbow-snow-frost-treasures'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 38:29 — *Out of whose womb came the ice? and the hoary frost of heaven, who hath gendered it?* Sirach''s hoarfrost *as salt he poureth on the earth* (43:19) answers Job''s question by naming its Maker.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-rainbow-snow-frost-treasures'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* The snow and *lightnings of his judgment* of Sirach 43:13 are Jeremiah''s lightnings-with-rain from the treasure-store.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-rainbow-snow-frost-treasures'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 148:8 — *Fire, and hail; snow, and vapour; stormy wind fulfilling his word.* The snow that falls *by his commandment* (43:13) is the storm fulfilling His word in the psalm.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-rainbow-snow-frost-treasures'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-43-he-appeaseth-the-deep
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:21 — *And Elohim (God) created great whales, and every living creature that moveth, which the waters brought forth abundantly, after their kind, and every winged fowl after his kind: and Elohim (God) saw that it was good.* The *whales created* of Sirach 43:25 are the fifth-day great whales of Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-he-appeaseth-the-deep'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 38:8 — *Or who shut up the sea with doors, when it brake forth, as if it had issued out of the womb?* He who *appeaseth the deep* (43:23) is the One who shut the sea behind doors in Job.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-he-appeaseth-the-deep'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 33:7 — *He gathereth the waters of the sea together as an heap: he layeth up the depth in storehouses.* Sirach''s appeasing of the deep (43:23) is the psalm''s gathering of the sea and storing of the depth.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-he-appeaseth-the-deep'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-43-by-his-word-all-things-consist
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Colossians 1:17 — *And he is before all things, and by him all things consist.* Paul says of the Son the very thing Sirach 43:26 says of the Maker — *by him all things consist.*'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-by-his-word-all-things-consist'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 1:3 — *Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high;* The word by which all things *consist* (43:26) is the word of power by which the Son upholds all things.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-by-his-word-all-things-consist'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 33:6 — *By the word of Yahuah (LORD) were the heavens made; and all the host of them by the breath of his mouth.* The word that holds all things together (43:26) is the word that made the heavens and their host.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-by-his-word-all-things-consist'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 33:9 — *For he spake, and it was done; he commanded, and it stood fast.* Sira''s confession that words *come short* before the One who *is all* (43:27) bows to the God whose mere speech makes creation stand fast.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir43_lookup sv, _session253_sir43_lookup tv
+ WHERE t.slug='sirach-43-by-his-word-all-things-consist'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=43 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_44.sql (session253 ecclesiasticus 44) -----
+-- Source anchor: apocrypha/ecclesiasticus ch44. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir44 (view _session253_sir44_lookup). Sort band base 59375, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir44_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: sirach-44-praise-famous-men
+  ('apocrypha', 'ecclesiasticus', 44, 1, 'canon', 'hebrews', 11, 2, 'free', E'Hebrews 11:2 — *For by it the elders obtained a good report.* Hebrews echoes Sirach 44:1''s call to praise the fathers, naming the same elders as those who obtained the good report by faith.'),
+  ('apocrypha', 'ecclesiasticus', 44, 7, 'canon', 'hebrews', 11, 1, 'free', E'Hebrews 11:1 — *Now faith is the substance of things hoped for, the evidence of things not seen.* The faith Hebrews defines is the very glory by which the fathers of Sirach 44:7 were honoured in their generations.'),
+  -- thread: sirach-44-seed-within-the-covenant
+  ('apocrypha', 'ecclesiasticus', 44, 11, 'canon', 'genesis', 17, 7, 'free', E'Genesis 17:7 — *And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a Elohim (God) unto thee, and to thy seed after thee.* The children within the covenant of Sirach 44:11 are the seed Yahuah bound to Himself for ever.'),
+  ('apocrypha', 'ecclesiasticus', 44, 13, 'canon', 'galatians', 3, 16, 'free', E'Galatians 3:16 — *Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ).* The seed that remains for ever in Sirach 44:13 finds its one head in Messiah, in whom the fathers'' glory is not blotted out.'),
+  -- thread: sirach-44-enoch-translated
+  ('apocrypha', 'ecclesiasticus', 44, 16, 'canon', 'genesis', 5, 24, 'free', E'Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* This is the translation Sirach 44:16 praises — the man who pleased Yahuah and was taken.'),
+  ('apocrypha', 'ecclesiasticus', 44, 16, 'canon', 'hebrews', 11, 5, 'free', E'Hebrews 11:5 — *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God).* Hebrews names the same pleasing-and-translating that Sirach 44:16 sets first among the fathers.'),
+  ('apocrypha', 'ecclesiasticus', 44, 16, 'jubilees', 'jubilees', 4, 23, 'extras', E'Jubilees 4:23 — *And he was taken from amongst the children of men, and we conducted him into the Garden of Eden in majesty and honour, and behold there he writes down the condemnation and judgment of the world, and all the wickedness of the children of men.* Jubilees self-links the same Enoch of Sirach 44:16, taken away to bear witness to all generations.'),
+  -- thread: sirach-44-noah-perfect-everlasting-covenant
+  ('apocrypha', 'ecclesiasticus', 44, 17, 'canon', 'genesis', 6, 9, 'free', E'Genesis 6:9 — *These are the generations of Noah: Noah was a just man and perfect in his generations, and Noah walked with Elohim (God).* This is the perfect-and-righteous Noah Sirach 44:17 praises as the remnant left to the earth.'),
+  ('apocrypha', 'ecclesiasticus', 44, 18, 'canon', 'genesis', 9, 13, 'free', E'Genesis 9:13 — *I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth.* The everlasting covenant of Sirach 44:18, that flesh should perish no more by flood, is sealed by this bow.'),
+  ('apocrypha', 'ecclesiasticus', 44, 17, 'canon', 'hebrews', 11, 7, 'free', E'Hebrews 11:7 — *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith.* Hebrews makes Noah''s exchange-for-the-world (Sirach 44:17) an act of saving faith.'),
+  ('apocrypha', 'ecclesiasticus', 44, 18, 'jubilees', 'jubilees', 6, 16, 'extras', E'Jubilees 6:16 — *He set His bow in the cloud for a sign of the eternal covenant that there should not again be a flood on the earth to destroy it all the days of the earth.* Jubilees self-links the everlasting covenant Sirach 44:18 names, that all flesh should perish no more by flood.'),
+  -- thread: sirach-44-abraham-law-covenant-flesh
+  ('apocrypha', 'ecclesiasticus', 44, 20, 'canon', 'genesis', 17, 1, 'free', E'Genesis 17:1 — *And when Abram was ninety years old and nine, Yahuah (LORD) appeared to Abram, and said unto him, I am the El Shaddai (Almighty God); walk before me, and be thou perfect.* The walk-before-me-and-be-perfect of this covenant chapter is the law of the Most High Abraham kept in Sirach 44:20.'),
+  ('apocrypha', 'ecclesiasticus', 44, 19, 'canon', 'hebrews', 11, 8, 'free', E'Hebrews 11:8 — *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went.* Hebrews makes the great father of Sirach 44:19 the pattern of obedient, proven faith.'),
+  ('apocrypha', 'ecclesiasticus', 44, 20, 'jubilees', 'jubilees', 15, 11, 'extras', E'Jubilees 15:11 — *And Yahuah (God) said to Abraham: "And as for you, do you keep My Covenant, you and your seed after you, and circumcise you every male among you, and circumcise your foreskins, and it will be a token of an eternal covenant between Me and you."* Jubilees self-links the covenant Abraham established in his flesh (Sirach 44:20).'),
+  ('apocrypha', 'ecclesiasticus', 44, 20, 'jasher', 'jasher', 13, 4, 'extras', E'Jasher 13:4 — *And now therefore if you will hearken to my voice and keep my commandments, my statutes and my laws, then will I cause your enemies to fall before you, and I will multiply your seed like the stars of heaven, and I will send my blessing upon all the works of your hands, and you shall lack nothing.* Jasher self-links the law-keeping Abraham of Sirach 44:20, joining it to the multiplied seed.'),
+  -- thread: sirach-44-abraham-oath-blessing-seed
+  ('apocrypha', 'ecclesiasticus', 44, 21, 'canon', 'genesis', 22, 17, 'free', E'Genesis 22:17 — *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies;* this is the very oath of the stars and the sand that Sirach 44:21 recounts.'),
+  ('apocrypha', 'ecclesiasticus', 44, 21, 'canon', 'galatians', 3, 8, 'free', E'Galatians 3:8 — *And the scripture, foreseeing that Elohim (God) would justify the heathen through faith, preached before the gospel unto Abraham, saying, In thee shall all nations be blessed.* Paul names the blessing of the nations in Abraham''s seed that Sirach 44:21 carries.'),
+  ('apocrypha', 'ecclesiasticus', 44, 21, 'canon', 'romans', 4, 11, 'free', E'Romans 4:11 — *And he received the sign of circumcision, a seal of the righteousness of the faith which he had yet being uncircumcised: that he might be the father of all them that believe, though they be not circumcised; that righteousness might be imputed unto them also:* Paul makes Abraham, sworn to by oath in Sirach 44:21, the father of all the nations who believe.'),
+  -- thread: sirach-44-isaac-jacob-blessing
+  ('apocrypha', 'ecclesiasticus', 44, 22, 'canon', 'genesis', 26, 3, 'free', E'Genesis 26:3 — *Sojourn in this land, and I will be with thee, and will bless thee; for unto thee, and unto thy seed, I will give all these countries, and I will perform the oath which I sware unto Abraham thy father;* the blessing established with Isaac in Sirach 44:22 is Yahuah confirming Abraham''s oath.'),
+  ('apocrypha', 'ecclesiasticus', 44, 23, 'canon', 'genesis', 28, 13, 'free', E'Genesis 28:13 — *And, behold, Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed;* the blessing resting on the head of Jacob in Sirach 44:23 is the inheritance pledged at Bethel.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir44_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir44_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-44-praise-famous-men',
+       E'Let us now praise famous men — the roll-call of the fathers',
+       E'Yeshua ben Sira opens the great hymn of the fathers: *Let us now praise famous men, and our fathers that begat us* (Ecclesiasticus 44:1), *All these were honoured in their generations, and were the glory of their times* (Ecclesiasticus 44:7). This is the forerunner of the cloud of witnesses — the writer to the Hebrews takes up the same roll-call: *Now faith is the substance of things hoped for, the evidence of things not seen* (Hebrews 11:1), *For by it the elders obtained a good report* (Hebrews 11:2). The fathers'' praise is no new thing; the testimony of the elders runs through the whole library.',
+       sv.verse_id, ev.verse_id, 'extras', 59375
+  FROM _session253_sir44_lookup sv, _session253_sir44_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=44 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-44-seed-within-the-covenant',
+       E'Their seed within the covenant — the everlasting inheritance',
+       E'The merciful fathers leave more than a name: *With their seed shall continually remain a good inheritance, and their children are within the covenant* (Ecclesiasticus 44:11), *Their seed shall remain for ever, and their glory shall not be blotted out* (Ecclesiasticus 44:13). This is the covenant kept in the seed — the same everlasting covenant Yahuah swore to Abraham: *And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant* (Genesis 17:7). Paul reads that seed as singular and Messianic: *Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ)* (Galatians 3:16). The children remain within the covenant because the seed is kept.',
+       sv.verse_id, ev.verse_id, 'extras', 59378
+  FROM _session253_sir44_lookup sv, _session253_sir44_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=10
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=44 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-44-enoch-translated',
+       E'Enoch translated — the example of repentance',
+       E'*Enoch pleased Yahuah (God), and was translated, being an example of repentance to all generations* (Ecclesiasticus 44:16). The Tanakh records the taking in a single line: *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24), and Hebrews makes the walk a walk of faith: *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God)* (Hebrews 11:5). Jubilees tells the same translation, that he was *taken from amongst the children of men, and we conducted him into the Garden of Eden in majesty and honour* (Jubilees 4:23) — the same Enoch whose own witness, the live apparatus, testifies to all generations.',
+       sv.verse_id, ev.verse_id, 'extras', 59381
+  FROM _session253_sir44_lookup sv, _session253_sir44_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=16
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=44 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-44-noah-perfect-everlasting-covenant',
+       E'Noah found perfect — the everlasting covenant and the remnant',
+       E'*Noah was found perfect and righteous; in the time of wrath he was taken in exchange for the world; therefore was he left as a remnant to the earth, when the flood came. An everlasting covenant was made with him, that all flesh should perish no more by the flood* (Ecclesiasticus 44:17-18). The Tanakh''s witness: *These are the generations of Noah: Noah was a just man and perfect in his generations, and Noah walked with Elohim (God)* (Genesis 6:9), and the token of the covenant, *I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth* (Genesis 9:13). Hebrews makes him heir of righteousness by faith: *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* (Hebrews 11:7). Jubilees sets the bow in the cloud as the self-same eternal sign: *He set His bow in the cloud for a sign of the eternal covenant that there should not again be a flood on the earth to destroy it all the days of the earth* (Jubilees 6:16).',
+       sv.verse_id, ev.verse_id, 'extras', 59384
+  FROM _session253_sir44_lookup sv, _session253_sir44_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=17
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=44 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-44-abraham-law-covenant-flesh',
+       E'Abraham kept the law — the covenant in his flesh',
+       E'*Abraham was a great father of many people: in glory was there none like to him; Who kept the law of the Most High, and was in covenant with him: he established the covenant in his flesh; and when he was proved, he was found faithful* (Ecclesiasticus 44:19-20). The covenant in the flesh is circumcision, commanded at the call: *And when Abram was ninety years old and nine, Yahuah (LORD) appeared to Abram, and said unto him, I am the El Shaddai (Almighty God); walk before me, and be thou perfect* (Genesis 17:1). Hebrews praises the faith of the call: *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went* (Hebrews 11:8). Jubilees gives the very command to circumcise as the token: *And as for you, do you keep My Covenant, you and your seed after you, and circumcise you every male among you, and circumcise your foreskins, and it will be a token of an eternal covenant between Me and you* (Jubilees 15:11). And Jasher binds the law-keeping to the multiplied seed: *And now therefore if you will hearken to my voice and keep my commandments, my statutes and my laws... I will multiply your seed like the stars of heaven* (Jasher 13:4). Abraham kept the law — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 59387
+  FROM _session253_sir44_lookup sv, _session253_sir44_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=19
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=44 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-44-abraham-oath-blessing-seed',
+       E'The oath to Abraham — blessed in his seed, the stars and the dust',
+       E'*Therefore he assured him by an oath, that he would bless the nations in his seed, and that he would multiply him as the dust of the earth, and exalt his seed as the stars, and cause them to inherit from sea to sea, and from the river to the utmost part of the land* (Ecclesiasticus 44:21). This is the oath sworn at the binding: *By myself have I sworn, saith Yahuah (LORD)... That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore* (Genesis 22:16-17). Paul names the gospel preached aforehand: *And the scripture, foreseeing that Elohim (God) would justify the heathen through faith, preached before the gospel unto Abraham, saying, In thee shall all nations be blessed* (Galatians 3:8). And Romans seals the seal in the flesh by faith: *And he received the sign of circumcision, a seal of the righteousness of the faith which he had yet being uncircumcised: that he might be the father of all them that believe* (Romans 4:11). The nations are blessed in the seed.',
+       sv.verse_id, ev.verse_id, 'extras', 59390
+  FROM _session253_sir44_lookup sv, _session253_sir44_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=21
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=44 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-44-isaac-jacob-blessing',
+       E'Isaac and Jacob — the blessing resting on the head, the twelve tribes',
+       E'The oath passes down the line: *With Isaac did he establish likewise for Abraham his father''s sake the blessing of all men, and the covenant, And made it rest upon the head of Jacob. He acknowledged him in his blessing, and gave him an heritage, and divided his portions; among the twelve tribes did he part them* (Ecclesiasticus 44:22-23). To Isaac the oath was confirmed: *Sojourn in this land, and I will be with thee, and will bless thee; for unto thee, and unto thy seed, I will give all these countries, and I will perform the oath which I sware unto Abraham thy father* (Genesis 26:3). And upon Jacob at Bethel the inheritance rested: *I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed* (Genesis 28:13). The blessing of Abraham came down through Isaac to Jacob, and was parted among the twelve tribes — the whole house of Yashar''el.',
+       sv.verse_id, ev.verse_id, 'extras', 59393
+  FROM _session253_sir44_lookup sv, _session253_sir44_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=22
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=44 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: sirach-44-praise-famous-men
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hebrews 11:2 — *For by it the elders obtained a good report.* Hebrews echoes Sirach 44:1''s call to praise the fathers, naming the same elders as those who obtained the good report by faith.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-praise-famous-men'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 11:1 — *Now faith is the substance of things hoped for, the evidence of things not seen.* The faith Hebrews defines is the very glory by which the fathers of Sirach 44:7 were honoured in their generations.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-praise-famous-men'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-44-seed-within-the-covenant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 17:7 — *And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a Elohim (God) unto thee, and to thy seed after thee.* The children within the covenant of Sirach 44:11 are the seed Yahuah bound to Himself for ever.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-seed-within-the-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Galatians 3:16 — *Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ).* The seed that remains for ever in Sirach 44:13 finds its one head in Messiah, in whom the fathers'' glory is not blotted out.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-seed-within-the-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-44-enoch-translated
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* This is the translation Sirach 44:16 praises — the man who pleased Yahuah and was taken.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-enoch-translated'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=5 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 11:5 — *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God).* Hebrews names the same pleasing-and-translating that Sirach 44:16 sets first among the fathers.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-enoch-translated'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 4:23 — *And he was taken from amongst the children of men, and we conducted him into the Garden of Eden in majesty and honour, and behold there he writes down the condemnation and judgment of the world, and all the wickedness of the children of men.* Jubilees self-links the same Enoch of Sirach 44:16, taken away to bear witness to all generations.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-enoch-translated'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=16
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-44-noah-perfect-everlasting-covenant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 6:9 — *These are the generations of Noah: Noah was a just man and perfect in his generations, and Noah walked with Elohim (God).* This is the perfect-and-righteous Noah Sirach 44:17 praises as the remnant left to the earth.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-noah-perfect-everlasting-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 9:13 — *I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth.* The everlasting covenant of Sirach 44:18, that flesh should perish no more by flood, is sealed by this bow.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-noah-perfect-everlasting-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:7 — *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith.* Hebrews makes Noah''s exchange-for-the-world (Sirach 44:17) an act of saving faith.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-noah-perfect-everlasting-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 6:16 — *He set His bow in the cloud for a sign of the eternal covenant that there should not again be a flood on the earth to destroy it all the days of the earth.* Jubilees self-links the everlasting covenant Sirach 44:18 names, that all flesh should perish no more by flood.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-noah-perfect-everlasting-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=18
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-44-abraham-law-covenant-flesh
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 17:1 — *And when Abram was ninety years old and nine, Yahuah (LORD) appeared to Abram, and said unto him, I am the El Shaddai (Almighty God); walk before me, and be thou perfect.* The walk-before-me-and-be-perfect of this covenant chapter is the law of the Most High Abraham kept in Sirach 44:20.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-abraham-law-covenant-flesh'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 11:8 — *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went.* Hebrews makes the great father of Sirach 44:19 the pattern of obedient, proven faith.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-abraham-law-covenant-flesh'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 15:11 — *And Yahuah (God) said to Abraham: "And as for you, do you keep My Covenant, you and your seed after you, and circumcise you every male among you, and circumcise your foreskins, and it will be a token of an eternal covenant between Me and you."* Jubilees self-links the covenant Abraham established in his flesh (Sirach 44:20).'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-abraham-law-covenant-flesh'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=20
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jasher 13:4 — *And now therefore if you will hearken to my voice and keep my commandments, my statutes and my laws, then will I cause your enemies to fall before you, and I will multiply your seed like the stars of heaven, and I will send my blessing upon all the works of your hands, and you shall lack nothing.* Jasher self-links the law-keeping Abraham of Sirach 44:20, joining it to the multiplied seed.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-abraham-law-covenant-flesh'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=20
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=13 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-44-abraham-oath-blessing-seed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 22:17 — *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies;* this is the very oath of the stars and the sand that Sirach 44:21 recounts.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-abraham-oath-blessing-seed'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Galatians 3:8 — *And the scripture, foreseeing that Elohim (God) would justify the heathen through faith, preached before the gospel unto Abraham, saying, In thee shall all nations be blessed.* Paul names the blessing of the nations in Abraham''s seed that Sirach 44:21 carries.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-abraham-oath-blessing-seed'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 4:11 — *And he received the sign of circumcision, a seal of the righteousness of the faith which he had yet being uncircumcised: that he might be the father of all them that believe, though they be not circumcised; that righteousness might be imputed unto them also:* Paul makes Abraham, sworn to by oath in Sirach 44:21, the father of all the nations who believe.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-abraham-oath-blessing-seed'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-44-isaac-jacob-blessing
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 26:3 — *Sojourn in this land, and I will be with thee, and will bless thee; for unto thee, and unto thy seed, I will give all these countries, and I will perform the oath which I sware unto Abraham thy father;* the blessing established with Isaac in Sirach 44:22 is Yahuah confirming Abraham''s oath.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-isaac-jacob-blessing'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 28:13 — *And, behold, Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed;* the blessing resting on the head of Jacob in Sirach 44:23 is the inheritance pledged at Bethel.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir44_lookup sv, _session253_sir44_lookup tv
+ WHERE t.slug='sirach-44-isaac-jacob-blessing'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=44 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_45.sql (session253 ecclesiasticus 45) -----
+-- Source anchor: apocrypha/ecclesiasticus ch45. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir45 (view _session253_sir45_lookup). Sort band base 59400, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir45_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: sirach-45-moses-beloved
+  ('apocrypha', 'ecclesiasticus', 45, 1, 'canon', 'deuteronomy', 34, 10, 'free', E'Deuteronomy 34:10 — *And there arose not a prophet since in Yashar''el (Israel) like unto Moses, whom Yahuah (LORD) knew face to face,* — Sirach 45:1''s *beloved of Yahuah (God) and men, whose memorial is blessed* is the Torah''s own unmatched testimony of Moses.'),
+  ('apocrypha', 'ecclesiasticus', 45, 1, 'canon', 'hebrews', 11, 23, 'free', E'Hebrews 11:23 — *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment.* — the cloud of witnesses opens Moses'' story where Sirach 45:1 opens its praise, with the merciful man Yahuah brought forth.'),
+  ('apocrypha', 'ecclesiasticus', 45, 2, 'canon', 'hebrews', 11, 27, 'free', E'Hebrews 11:27 — *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible.* — that Moses'' *enemies stood in fear of him* (Sirach 45:2) is the outward face of the faith that did not fear Pharaoh''s wrath.'),
+  -- thread: sirach-45-law-of-life-face-to-face
+  ('apocrypha', 'ecclesiasticus', 45, 5, 'canon', 'exodus', 33, 11, 'free', E'Exodus 33:11 — *And Yahuah (LORD) spake unto Moses face to face, as a man speaketh unto his friend. And he turned again into the camp: but his servant Joshua, the son of Nun, a young man, departed not out of the tabernacle.* — Sirach 45:5''s *gave him commandments before his face* is exactly this face-to-face speaking in the cloud.'),
+  ('apocrypha', 'ecclesiasticus', 45, 5, 'canon', 'exodus', 34, 28, 'free', E'Exodus 34:28 — *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.* — the *law of life and knowledge* of Sirach 45:5 is the very covenant written in the dark cloud.'),
+  ('apocrypha', 'ecclesiasticus', 45, 5, 'canon', 'john', 1, 17, 'free', E'John 1:17 — *For the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ).* — the law that *might teach Jacob his covenants* (Sirach 45:5) is the same law John names as given by Moses.'),
+  ('apocrypha', 'ecclesiasticus', 45, 5, 'jasher', 'jasher', 82, 6, 'extras', E'Jasher 82:6 — *And in the third month from the children of Israel''s departure from Egypt, on the sixth day of it, Yahuah (the Lord) gave to Israel the ten commandments on Mount Sinai.* — the restored chronicle dates the *commandments before his face* that Sirach 45:5 praises.'),
+  -- thread: sirach-45-moses-wonders-chosen
+  ('apocrypha', 'ecclesiasticus', 45, 3, 'jubilees', 'jubilees', 48, 4, 'extras', E'Jubilees 48:4 — *And I delivered you out of his hand, and you did perform the signs and wonders which you were sent to perform in Egypt against Pharaoh, and against all his house, and against his servants and his people.* — Sirach 45:3''s *by his words he caused the wonders to cease... in the sight of kings* is the same plague-witness before Pharaoh.'),
+  ('apocrypha', 'ecclesiasticus', 45, 4, 'canon', 'hebrews', 11, 25, 'free', E'Hebrews 11:25 — *Choosing rather to suffer affliction with the people of Elohim (God), than to enjoy the pleasures of sin for a season;* — that Yahuah *chose him out of all men* in meekness (Sirach 45:4) is the man''s own choosing of the afflicted people over Pharaoh''s house.'),
+  -- thread: sirach-45-aaron-priesthood
+  ('apocrypha', 'ecclesiasticus', 45, 7, 'canon', 'exodus', 28, 2, 'free', E'Exodus 28:2 — *And thou shalt make holy garments for Aaron thy brother for glory and for beauty.* — the *comely ornaments* and *robe of glory* of Sirach 45:7 are the very holy garments commanded for Aaron''s glory and beauty.'),
+  ('apocrypha', 'ecclesiasticus', 45, 6, 'canon', 'numbers', 18, 1, 'free', E'Numbers 18:1 — *And Yahuah (LORD) said unto Aaron, Thou and thy sons and thy father''s house with thee shall bear the iniquity of the sanctuary: and thou and thy sons with thee shall bear the iniquity of your priesthood.* — Aaron *of the tribe of Levi* (Sirach 45:6) is given the priesthood and its charge in this word.'),
+  ('apocrypha', 'ecclesiasticus', 45, 7, 'canon', 'hebrews', 5, 4, 'free', E'Hebrews 5:4 — *And no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron.* — the *everlasting covenant* of priesthood Yahuah *made with him* (Sirach 45:7) is the honour Hebrews says no man may seize but must be called to, as Aaron was.'),
+  -- thread: sirach-45-aaron-garments-urim
+  ('apocrypha', 'ecclesiasticus', 45, 9, 'canon', 'exodus', 28, 33, 'free', E'Exodus 28:33 — *And beneath upon the hem of it thou shalt make pomegranates of blue, and of purple, and of scarlet, round about the hem thereof; and bells of gold between them round about:* — Sirach 45:9''s *pomegranates, and... many golden bells round about* that sound in the temple are these very hem-bells of the robe.'),
+  ('apocrypha', 'ecclesiasticus', 45, 10, 'canon', 'exodus', 28, 30, 'free', E'Exodus 28:30 — *And thou shalt put in the breastplate of judgment the Urim and the Thummim; and they shall be upon Aaron''s heart, when he goeth in before Yahuah (LORD): and Aaron shall bear the judgment of the children of Yashar''el (Israel) upon his heart before Yahuah (LORD) continually.* — the *breastplate of judgment, and with Urim and Thummim* of Sirach 45:10 is named piece for piece here.'),
+  ('apocrypha', 'ecclesiasticus', 45, 12, 'canon', 'exodus', 28, 36, 'free', E'Exodus 28:36 — *And thou shalt make a plate of pure gold, and grave upon it, like the engravings of a signet, HOLINESS TO THE Yahuah (LORD).* — the *crown of gold upon the mitre, in which was engraved Holiness* (Sirach 45:12) is this engraved golden plate of the high priest.'),
+  -- thread: sirach-45-aaron-portion-inheritance
+  ('apocrypha', 'ecclesiasticus', 45, 20, 'canon', 'numbers', 18, 8, 'free', E'Numbers 18:8 — *And Yahuah (LORD) spake unto Aaron, Behold, I also have given thee the charge of mine heave offerings of all the hallowed things of the children of Yashar''el (Israel); unto thee have I given them by reason of the anointing, and to thy sons, by an ordinance for ever.* — Sirach 45:20''s *divided to him the firstfruits of the increase* is this ordinance of the heave offerings given to Aaron and his sons.'),
+  ('apocrypha', 'ecclesiasticus', 45, 22, 'canon', 'numbers', 18, 1, 'free', E'Numbers 18:1 — *And Yahuah (LORD) said unto Aaron, Thou and thy sons and thy father''s house with thee shall bear the iniquity of the sanctuary: and thou and thy sons with thee shall bear the iniquity of your priesthood.* — that Aaron *had no inheritance... for Yahuah (God) himself is his portion* (Sirach 45:22) flows from this charge that set the priesthood, not the land, as Aaron''s lot.'),
+  -- thread: sirach-45-phinehas-zeal-covenant
+  ('apocrypha', 'ecclesiasticus', 45, 24, 'canon', 'numbers', 25, 13, 'free', E'Numbers 25:13 — *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar''el (Israel).* — Sirach 45:24''s *covenant of peace... the dignity of the priesthood for ever* is this very everlasting-priesthood grant for Phinehas''s zeal.'),
+  ('apocrypha', 'ecclesiasticus', 45, 23, 'canon', 'psalms', 106, 31, 'free', E'Psalm 106:31 — *And that was counted unto him for righteousness unto all generations for evermore.* — that Phinehas *had zeal in the fear of Yahuah (God), and stood up with good courage* (Sirach 45:23) is the very act the Psalm reckons as righteousness for ever.'),
+  ('apocrypha', 'ecclesiasticus', 45, 23, 'canon', 'malachi', 2, 5, 'free', E'Malachi 2:5 — *My covenant was with him of life and peace; and I gave them to him for the fear wherewith he feared me, and was afraid before my name.* — the *covenant of peace* of Sirach 45:24 is the covenant of Levi Malachi calls one *of life and peace*, given for the same fear of Yahuah.'),
+  ('apocrypha', 'ecclesiasticus', 45, 23, 'jubilees', 'jubilees', 30, 18, 'extras', E'Jubilees 30:18 — *And the seed of Levi was chosen for the priesthood, and to be Levites, that they might minister before Yahuah (God), as we, continually, and that Levi and his sons may be blessed for ever; for he was zealous to execute righteousness and judgment and vengeance on all those who arose against Yashar''el (Israel).* — the restored record grounds Phinehas''s zeal of Sirach 45:23 in Levi''s whole house being chosen for zeal to execute judgment.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir45_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir45_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-45-moses-beloved',
+       E'Moses, beloved of Yahuah, whose memorial is blessed',
+       E'Ben Sira opens his praise of the fathers'' return to the deliverer: *And he brought out of him a merciful man, which found favour in the sight of all flesh, even Moses, beloved of Yahuah (God) and men, whose memorial is blessed* (Sirach 45:1). It ain''t new — the Torah''s own elegy says no prophet ever stood like him: *And there arose not a prophet since in Yashar''el (Israel) like unto Moses, whom Yahuah (LORD) knew face to face* (Deuteronomy 34:10). The writer to the Hebrews counts that same faith among the cloud of witnesses: *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment* (Hebrews 11:23). The fathers carry one witness.',
+       sv.verse_id, ev.verse_id, 'extras', 59400
+  FROM _session253_sir45_lookup sv, _session253_sir45_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=45 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-45-law-of-life-face-to-face',
+       E'The dark cloud, his voice, the law of life and knowledge',
+       E'Sirach gathers Sinai into one breath: *He made him to hear his voice, and brought him into the dark cloud, and gave him commandments before his face, even the law of life and knowledge, that he might teach Jacob his covenants, and Yashar''el (Israel) his judgments* (Sirach 45:5). The Torah records the very meeting *face to face*: *And Yahuah (LORD) spake unto Moses face to face, as a man speaketh unto his friend* (Exodus 33:11), and the forty days that wrote the covenant: *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments* (Exodus 34:28). The restored Book of Jasher tells the same giving — *Yahuah (the Lord) gave to Israel the ten commandments on Mount Sinai* (Jasher 82:6) — and John names whence that law came: *For the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 59403
+  FROM _session253_sir45_lookup sv, _session253_sir45_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=45 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-45-moses-wonders-chosen',
+       E'By his words the wonders, the chosen and sanctified man',
+       E'The praise turns to the signs in Egypt: *By his words he caused the wonders to cease, and he made him glorious in the sight of kings, and gave him a commandment for his people, and shewed him part of his glory* (Sirach 45:3), and *He sanctified him in his faithfuless and meekness, and chose him out of all men* (Sirach 45:4). The restored Book of Jubilees records the same sending with signs against Pharaoh: *And I delivered you out of his hand, and you did perform the signs and wonders which you were sent to perform in Egypt against Pharaoh, and against all his house, and against his servants and his people* (Jubilees 48:4). Hebrews seals the choosing — Moses preferred reproach with Yahuah''s people to Egypt''s treasures: *Choosing rather to suffer affliction with the people of Elohim (God), than to enjoy the pleasures of sin for a season* (Hebrews 11:25).',
+       sv.verse_id, ev.verse_id, 'extras', 59406
+  FROM _session253_sir45_lookup sv, _session253_sir45_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=45 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-45-aaron-priesthood',
+       E'Aaron exalted, the everlasting covenant of the priesthood',
+       E'Ben Sira lifts the second father: *He exalted Aaron, an holy man like to him, even his brother, of the tribe of Levi* (Sirach 45:6), and *An everlasting covenant he made with him and gave him the priesthood among the people; he beautified him with comely ornaments, and clothed him with a robe of glory* (Sirach 45:7). The Torah''s own commission is the source: *And thou shalt make holy garments for Aaron thy brother for glory and for beauty* (Exodus 28:2), and the charge given to Aaron''s house: *And Yahuah (LORD) said unto Aaron, Thou and thy sons and thy father''s house with thee shall bear the iniquity of the sanctuary: and thou and thy sons with thee shall bear the iniquity of your priesthood* (Numbers 18:1). Hebrews holds the same rule of calling: *And no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron* (Hebrews 5:4).',
+       sv.verse_id, ev.verse_id, 'extras', 59409
+  FROM _session253_sir45_lookup sv, _session253_sir45_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=6
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=45 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-45-aaron-garments-urim',
+       E'The holy garments: bells, breastplate, Urim and Thummim, the crown of gold',
+       E'The vesture is told stone by stone: *And he compassed him with pomegranates, and with many golden bells round about, that as he went there might be a sound, and a noise made that might be heard in the temple, for a memorial to the children of his people* (Sirach 45:9); *With an holy garment, with gold, and blue silk, and purple, the work of the embroiderer, with a breastplate of judgment, and with Urim and Thummim* (Sirach 45:10); *He set a crown of gold upon the mitre, in which was engraved Holiness, an ornament of honour, a costly work, the desires of the eyes, goodly and beautiful* (Sirach 45:12). The Torah dictated every piece: *And beneath upon the hem of it thou shalt make pomegranates of blue, and of purple, and of scarlet, round about the hem thereof; and bells of gold between them round about* (Exodus 28:33); *And thou shalt put in the breastplate of judgment the Urim and the Thummim; and they shall be upon Aaron''s heart, when he goeth in before Yahuah (LORD)* (Exodus 28:30); and the engraved plate: *And thou shalt make a plate of pure gold, and grave upon it, like the engravings of a signet, HOLINESS TO THE Yahuah (LORD)* (Exodus 28:36). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 59412
+  FROM _session253_sir45_lookup sv, _session253_sir45_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=9
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=45 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-45-aaron-portion-inheritance',
+       E'No inheritance in the land: Yahuah himself is his portion',
+       E'The praise closes Aaron''s section with the Levite''s strange wealth: *But he made Aaron more honourable, and gave him an heritage, and divided to him the firstfruits of the increase; especially he prepared bread in abundance* (Sirach 45:20), and *Howbeit in the land of the people he had no inheritance, neither had he any portion among the people: for Yahuah (God) himself is his portion and inheritance* (Sirach 45:22). The Torah set that very lot upon Aaron''s house: *And Yahuah (LORD) spake unto Aaron, Behold, I also have given thee the charge of mine heave offerings of all the hallowed things of the children of Yashar''el (Israel); unto thee have I given them by reason of the anointing, and to thy sons, by an ordinance for ever* (Numbers 18:8). The rebellion of Korah that Sirach 45:18-19 recalls is the dark frame: the strangers who *maligned him in the wilderness* were consumed, but Aaron''s portion stood.',
+       sv.verse_id, ev.verse_id, 'extras', 59415
+  FROM _session253_sir45_lookup sv, _session253_sir45_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=20
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=45 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-45-phinehas-zeal-covenant',
+       E'Phinehas the third in glory: zeal and the everlasting priesthood',
+       E'Ben Sira names the third father: *The third in glory is Phinees the son of Eleazar, because he had zeal in the fear of Yahuah (God), and stood up with good courage of heart: when the people were turned back, and made reconciliation for Yashar''el (Israel)* (Sirach 45:23), and *Therefore was there a covenant of peace made with him, that he should be the chief of the sanctuary and of his people, and that he and his posterity should have the dignity of the priesthood for ever* (Sirach 45:24). The Torah grants it word for word: *Wherefore say, Behold, I give unto him my covenant of peace: And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar''el (Israel)* (Numbers 25:12-13). The Psalm reckons it righteousness — *And that was counted unto him for righteousness unto all generations for evermore* (Psalm 106:31) — and Malachi names it the covenant of Levi: *My covenant was with him of life and peace; and I gave them to him for the fear wherewith he feared me, and was afraid before my name* (Malachi 2:5). The restored Book of Jubilees seals the same: Levi''s seed *was chosen for the priesthood... for he was zealous to execute righteousness and judgment* (Jubilees 30:18). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 59418
+  FROM _session253_sir45_lookup sv, _session253_sir45_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=23
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=45 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: sirach-45-moses-beloved
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 34:10 — *And there arose not a prophet since in Yashar''el (Israel) like unto Moses, whom Yahuah (LORD) knew face to face,* — Sirach 45:1''s *beloved of Yahuah (God) and men, whose memorial is blessed* is the Torah''s own unmatched testimony of Moses.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-moses-beloved'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=34 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 11:23 — *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment.* — the cloud of witnesses opens Moses'' story where Sirach 45:1 opens its praise, with the merciful man Yahuah brought forth.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-moses-beloved'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:27 — *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible.* — that Moses'' *enemies stood in fear of him* (Sirach 45:2) is the outward face of the faith that did not fear Pharaoh''s wrath.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-moses-beloved'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-45-law-of-life-face-to-face
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 33:11 — *And Yahuah (LORD) spake unto Moses face to face, as a man speaketh unto his friend. And he turned again into the camp: but his servant Joshua, the son of Nun, a young man, departed not out of the tabernacle.* — Sirach 45:5''s *gave him commandments before his face* is exactly this face-to-face speaking in the cloud.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-law-of-life-face-to-face'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 34:28 — *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.* — the *law of life and knowledge* of Sirach 45:5 is the very covenant written in the dark cloud.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-law-of-life-face-to-face'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 1:17 — *For the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ).* — the law that *might teach Jacob his covenants* (Sirach 45:5) is the same law John names as given by Moses.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-law-of-life-face-to-face'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jasher 82:6 — *And in the third month from the children of Israel''s departure from Egypt, on the sixth day of it, Yahuah (the Lord) gave to Israel the ten commandments on Mount Sinai.* — the restored chronicle dates the *commandments before his face* that Sirach 45:5 praises.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-law-of-life-face-to-face'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=5
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-45-moses-wonders-chosen
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 48:4 — *And I delivered you out of his hand, and you did perform the signs and wonders which you were sent to perform in Egypt against Pharaoh, and against all his house, and against his servants and his people.* — Sirach 45:3''s *by his words he caused the wonders to cease... in the sight of kings* is the same plague-witness before Pharaoh.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-moses-wonders-chosen'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=48 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 11:25 — *Choosing rather to suffer affliction with the people of Elohim (God), than to enjoy the pleasures of sin for a season;* — that Yahuah *chose him out of all men* in meekness (Sirach 45:4) is the man''s own choosing of the afflicted people over Pharaoh''s house.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-moses-wonders-chosen'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-45-aaron-priesthood
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 28:2 — *And thou shalt make holy garments for Aaron thy brother for glory and for beauty.* — the *comely ornaments* and *robe of glory* of Sirach 45:7 are the very holy garments commanded for Aaron''s glory and beauty.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-aaron-priesthood'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=28 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 18:1 — *And Yahuah (LORD) said unto Aaron, Thou and thy sons and thy father''s house with thee shall bear the iniquity of the sanctuary: and thou and thy sons with thee shall bear the iniquity of your priesthood.* — Aaron *of the tribe of Levi* (Sirach 45:6) is given the priesthood and its charge in this word.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-aaron-priesthood'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 5:4 — *And no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron.* — the *everlasting covenant* of priesthood Yahuah *made with him* (Sirach 45:7) is the honour Hebrews says no man may seize but must be called to, as Aaron was.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-aaron-priesthood'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=5 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-45-aaron-garments-urim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 28:33 — *And beneath upon the hem of it thou shalt make pomegranates of blue, and of purple, and of scarlet, round about the hem thereof; and bells of gold between them round about:* — Sirach 45:9''s *pomegranates, and... many golden bells round about* that sound in the temple are these very hem-bells of the robe.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-aaron-garments-urim'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=28 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 28:30 — *And thou shalt put in the breastplate of judgment the Urim and the Thummim; and they shall be upon Aaron''s heart, when he goeth in before Yahuah (LORD): and Aaron shall bear the judgment of the children of Yashar''el (Israel) upon his heart before Yahuah (LORD) continually.* — the *breastplate of judgment, and with Urim and Thummim* of Sirach 45:10 is named piece for piece here.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-aaron-garments-urim'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=28 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 28:36 — *And thou shalt make a plate of pure gold, and grave upon it, like the engravings of a signet, HOLINESS TO THE Yahuah (LORD).* — the *crown of gold upon the mitre, in which was engraved Holiness* (Sirach 45:12) is this engraved golden plate of the high priest.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-aaron-garments-urim'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=28 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-45-aaron-portion-inheritance
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 18:8 — *And Yahuah (LORD) spake unto Aaron, Behold, I also have given thee the charge of mine heave offerings of all the hallowed things of the children of Yashar''el (Israel); unto thee have I given them by reason of the anointing, and to thy sons, by an ordinance for ever.* — Sirach 45:20''s *divided to him the firstfruits of the increase* is this ordinance of the heave offerings given to Aaron and his sons.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-aaron-portion-inheritance'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 18:1 — *And Yahuah (LORD) said unto Aaron, Thou and thy sons and thy father''s house with thee shall bear the iniquity of the sanctuary: and thou and thy sons with thee shall bear the iniquity of your priesthood.* — that Aaron *had no inheritance... for Yahuah (God) himself is his portion* (Sirach 45:22) flows from this charge that set the priesthood, not the land, as Aaron''s lot.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-aaron-portion-inheritance'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-45-phinehas-zeal-covenant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 25:13 — *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar''el (Israel).* — Sirach 45:24''s *covenant of peace... the dignity of the priesthood for ever* is this very everlasting-priesthood grant for Phinehas''s zeal.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-phinehas-zeal-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 106:31 — *And that was counted unto him for righteousness unto all generations for evermore.* — that Phinehas *had zeal in the fear of Yahuah (God), and stood up with good courage* (Sirach 45:23) is the very act the Psalm reckons as righteousness for ever.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-phinehas-zeal-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 2:5 — *My covenant was with him of life and peace; and I gave them to him for the fear wherewith he feared me, and was afraid before my name.* — the *covenant of peace* of Sirach 45:24 is the covenant of Levi Malachi calls one *of life and peace*, given for the same fear of Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-phinehas-zeal-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 30:18 — *And the seed of Levi was chosen for the priesthood, and to be Levites, that they might minister before Yahuah (God), as we, continually, and that Levi and his sons may be blessed for ever; for he was zealous to execute righteousness and judgment and vengeance on all those who arose against Yashar''el (Israel).* — the restored record grounds Phinehas''s zeal of Sirach 45:23 in Levi''s whole house being chosen for zeal to execute judgment.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir45_lookup sv, _session253_sir45_lookup tv
+ WHERE t.slug='sirach-45-phinehas-zeal-covenant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=45 AND sv.verse_number=23
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_46.sql (session253 ecclesiasticus 46) -----
+-- Source anchor: apocrypha/ecclesiasticus ch46. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir46 (view _session253_sir46_lookup). Sort band base 59425, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir46_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: sirach-46-joshua-successor-of-moses
+  ('apocrypha', 'ecclesiasticus', 46, 1, 'canon', 'joshua', 1, 1, 'free', E'Joshua 1:1 — *Now after the death of Moses the servant of Yahuah (LORD) it came to pass, that Yahuah (LORD) spake unto Joshua the son of Nun, Moses'' minister, saying,* The Tanakh names the same successor of Moses whom Sirach 46:1 praises, Joshua son of Nun, not the Messiah.'),
+  ('apocrypha', 'ecclesiasticus', 46, 1, 'canon', 'joshua', 1, 6, 'free', E'Joshua 1:6 — *Be strong and of a good courage: for unto this people shalt thou divide for an inheritance the land, which I sware unto their fathers to give them.* This is the charge to set Israel in the inheritance that Sirach 46:1 says Joshua was made great to accomplish.'),
+  ('apocrypha', 'ecclesiasticus', 46, 2, 'canon', 'hebrews', 11, 30, 'free', E'Hebrews 11:30 — *By faith the walls of Jericho fell down, after they were compassed about seven days.* The valiant wars and lifted sword of Sirach 46:2 are counted by the apostle as the works of faith under Joshua.'),
+  -- thread: sirach-46-sun-stood-still
+  ('apocrypha', 'ecclesiasticus', 46, 4, 'canon', 'joshua', 10, 12, 'free', E'Joshua 10:12 — *Then spake Joshua to Yahuah (LORD) in the day when Yahuah (LORD) delivered up the Amorites before the children of Yashar''el (Israel), and he said in the sight of Yashar''el (Israel), Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon.* This is the prayer behind Sirach 46:4''s sun going back and one day as long as two.'),
+  ('apocrypha', 'ecclesiasticus', 46, 6, 'canon', 'joshua', 10, 11, 'free', E'Joshua 10:11 — *And it came to pass, as they fled from before Yashar''el (Israel), and were in the going down to Beth-horon, that Yahuah (LORD) cast down great stones from heaven upon them unto Azekah, and they died: they were more which died with hailstones than they whom the children of Yashar''el (Israel) slew with the sword.* The hailstones at the descent of Beth-horon in Sirach 46:6 are the very stones from heaven named here.'),
+  ('apocrypha', 'ecclesiasticus', 46, 4, 'jasher', 'jasher', 88, 63, 'extras', E'Jasher 88:63 — *And when they were smiting, the day was declining toward evening, and Joshua said in the sight of all the people, Sun, stand you still upon Gibeon, and you moon in the valley of Ajalon, until the nation shall have revenged itself upon its enemies.* The book Joshua cites preserves the same stayed sun that Sirach 46:4 marvels over.'),
+  ('apocrypha', 'ecclesiasticus', 46, 6, 'jasher', 'jasher', 88, 61, 'extras', E'Jasher 88:61 — *And whilst they were fleeing, Yahuah (the Lord) sent upon them hailstones from heaven, and more of them died by the hailstones, than by the slaughter of the children of Israel.* Jasher confirms the hailstones of mighty power that Sirach 46:6 sets in the descent of Beth-horon.'),
+  -- thread: sirach-46-he-followed-the-mighty-one
+  ('apocrypha', 'ecclesiasticus', 46, 6, 'canon', 'joshua', 1, 9, 'free', E'Joshua 1:9 — *Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest.* To fight in the sight of Yahuah and follow the Mighty One (Sirach 46:6) is to keep this opening charge.'),
+  ('apocrypha', 'ecclesiasticus', 46, 6, 'jasher', 'jasher', 88, 60, 'extras', E'Jasher 88:60 — *And Yahuah (the Lord) confounded them before the children at Israel, who smote them with a terrible slaughter in Gibeon, and pursued them along the way that goes up to Beth Horon to Makkedah, and they fled from before the children of Israel.* Jasher names the descent of Beth-horon where Sirach 46:6 says Joshua destroyed them that resisted.'),
+  -- thread: sirach-46-joshua-and-caleb-faithful-spies
+  ('apocrypha', 'ecclesiasticus', 46, 7, 'canon', 'numbers', 14, 6, 'free', E'Numbers 14:6 — *And Joshua the son of Nun, and Caleb the son of Jephunneh, which were of them that searched the land, rent their clothes:* These are the two who withstood the congregation in Sirach 46:7, named together as the faithful spies.'),
+  ('apocrypha', 'ecclesiasticus', 46, 8, 'canon', 'numbers', 14, 8, 'free', E'Numbers 14:8 — *If Yahuah (LORD) delight in us, then he will bring us into this land, and give it us; a land which floweth with milk and honey.* This is the very plea to enter the land flowing with milk and honey that Sirach 46:8 says the two were preserved to reach.'),
+  -- thread: sirach-46-caleb-wholly-followed
+  ('apocrypha', 'ecclesiasticus', 46, 9, 'canon', 'numbers', 14, 24, 'free', E'Numbers 14:24 — *But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it.* This is the promise that Caleb''s seed would obtain the heritage, exactly as Sirach 46:9 records.'),
+  ('apocrypha', 'ecclesiasticus', 46, 9, 'canon', 'joshua', 14, 13, 'free', E'Joshua 14:13 — *And Joshua blessed him, and gave unto Caleb the son of Jephunneh Hebron for an inheritance.* Caleb entering the high places of the land in his old age (Sirach 46:9) is fulfilled in the gift of Hebron.'),
+  ('apocrypha', 'ecclesiasticus', 46, 10, 'canon', 'joshua', 14, 14, 'free', E'Joshua 14:14 — *Hebron therefore became the inheritance of Caleb the son of Jephunneh the Kenezite unto this day, because that he wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel).* This names the very reason Sirach 46:10 commends, that it is good to follow Yahuah.'),
+  -- thread: sirach-46-the-judges-hearts-turned-not
+  ('apocrypha', 'ecclesiasticus', 46, 11, 'canon', 'judges', 2, 16, 'free', E'Judges 2:16 — *Nevertheless Yahuah (LORD) raised up judges, which delivered them out of the hand of those that spoiled them.* These are the judges whose memory Sirach 46:11 blesses, the deliverers Yahuah raised up.'),
+  ('apocrypha', 'ecclesiasticus', 46, 11, 'canon', 'hebrews', 11, 32, 'free', E'Hebrews 11:32 — *And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets:* The apostle''s roll of judges and Samuel runs parallel to Ben Sira''s blessing of the judges in Sirach 46:11.'),
+  -- thread: sirach-46-samuel-prophet-established-kingdom
+  ('apocrypha', 'ecclesiasticus', 46, 15, 'canon', '1-samuel', 3, 20, 'free', E'1 Samuel 3:20 — *And all Yashar''el (Israel) from Dan even to Beer-sheba knew that Samuel was established to be a prophet of Yahuah (LORD).* This confirms the true and faithful prophet that Sirach 46:15 says was known to be faithful in vision.'),
+  ('apocrypha', 'ecclesiasticus', 46, 16, 'canon', '1-samuel', 7, 9, 'free', E'1 Samuel 7:9 — *And Samuel took a sucking lamb, and offered it for a burnt offering wholly unto Yahuah (LORD): and Samuel cried unto Yahuah (LORD) for Yashar''el (Israel); and Yahuah (LORD) heard him.* This is the very sucking lamb and the cry to Yahuah that Sirach 46:16 records.'),
+  ('apocrypha', 'ecclesiasticus', 46, 17, 'canon', '1-samuel', 12, 18, 'free', E'1 Samuel 12:18 — *So Samuel called unto Yahuah (LORD); and Yahuah (LORD) sent thunder and rain that day: and all the people greatly feared Yahuah (LORD) and Samuel.* The thunder Yahuah made to be heard from heaven in Sirach 46:17 is this answer to Samuel''s call.'),
+  ('apocrypha', 'ecclesiasticus', 46, 19, 'canon', '1-samuel', 12, 3, 'free', E'1 Samuel 12:3 — *Behold, here I am: witness against me before Yahuah (LORD), and before his anointed: whose ox have I taken? or whose ass have I taken? or whom have I defrauded? whom have I oppressed? or of whose hand have I received any bribe to blind mine eyes therewith? and I will restore it you.* This is Samuel''s protestation of innocence before Yahuah and his anointed that Sirach 46:19 recalls.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir46_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir46_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-46-joshua-successor-of-moses',
+       E'Joshua son of Nun, successor of Moses, made great for the saving of the elect',
+       E'Ben Sira opens the next age with the captain who carried the inheritance over Jordan: *Jesus the son a Nave was valiant in the wars, and was the successor of Moses in prophecies, who according to his name was made great for the saving of the elect of Yahuah (God), and taking vengeance of the enemies that rose up against them, that he might set Yashar''el (Israel) in their inheritance* (Sirach 46:1) — the "Jesus" here is Yehoshua, Joshua son of Nun, NOT the Messiah. The Tanakh hands him the same commission on the very threshold: *Now after the death of Moses the servant of Yahuah (LORD) it came to pass, that Yahuah (LORD) spake unto Joshua the son of Nun, Moses'' minister, saying,* (Joshua 1:1), and the charge *Be strong and of a good courage: for unto this people shalt thou divide for an inheritance the land, which I sware unto their fathers to give them* (Joshua 1:6). When he lifted up his hands and stretched out his sword against the cities (Sirach 46:2), it was no arm of flesh but covenant power — *Who before him so stood to it? for Yahuah (God) himself brought his enemies to him* (Sirach 46:3). The faith-roll names that same conquest: *By faith the walls of Jericho fell down, after they were compassed about seven days* (Hebrews 11:30). It ain''t new — Ben Sira is simply reading the same scroll of the fathers.',
+       sv.verse_id, ev.verse_id, 'extras', 59425
+  FROM _session253_sir46_lookup sv, _session253_sir46_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=46 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-46-sun-stood-still',
+       E'The sun went back, one day as long as two, hailstones at Beth-horon',
+       E'Ben Sira remembers the day the heavens themselves halted for the captain: *Did not the sun go back by his means? and was not one day as long as two?* (Sirach 46:4), *He called upon the most high Yahuah (God), when the enemies pressed upon him on every side; and the great Yahuah (God) heard him* (Sirach 46:5), *And with hailstones of mighty power he made the battle to fall violently upon the nations, and in the descent of Beth-horon he destroyed them that resisted* (Sirach 46:6). The Tanakh records the very prayer: *Then spake Joshua to Yahuah (LORD) in the day when Yahuah (LORD) delivered up the Amorites before the children of Yashar''el (Israel), and he said in the sight of Yashar''el (Israel), Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon* (Joshua 10:12), and the hailstones too: *And it came to pass, as they fled from before Yashar''el (Israel), and were in the going down to Beth-horon, that Yahuah (LORD) cast down great stones from heaven upon them unto Azekah* (Joshua 10:11). And the scroll Joshua himself cited — the book of Jasher — tells the very same wonder: *And when they were smiting, the day was declining toward evening, and Joshua said in the sight of all the people, Sun, stand you still upon Gibeon, and you moon in the valley of Ajalon, until the nation shall have revenged itself upon its enemies* (Jasher 88:63). Three witnesses, one stopped sun — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 59428
+  FROM _session253_sir46_lookup sv, _session253_sir46_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=4
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=46 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-46-he-followed-the-mighty-one',
+       E'He fought in the sight of Yahuah and followed the Mighty One',
+       E'Ben Sira seals the conquest portrait with the secret of Joshua''s strength: *And with hailstones of mighty power he made the battle to fall violently upon the nations, and in the descent of Beth-horon he destroyed them that resisted, that the nations might know all their strength, because he fought in the sight of Yahuah (God), and he followed the Mighty One* (Sirach 46:6). To follow the Mighty One fully is the same charge Joshua received at the start: *Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest* (Joshua 1:9). And the book of Jasher names the rout at Gibeon down the Beth-horon road: *And Yahuah (the Lord) confounded them before the children at Israel, who smote them with a terrible slaughter in Gibeon, and pursued them along the way that goes up to Beth Horon to Makkedah, and they fled from before the children of Israel* (Jasher 88:60). The captain conquered because he followed — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 59431
+  FROM _session253_sir46_lookup sv, _session253_sir46_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=6
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=46 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-46-joshua-and-caleb-faithful-spies',
+       E'Joshua and Caleb withstood the congregation, two of six hundred thousand preserved',
+       E'Before the conquest, Ben Sira recalls the two faithful spies who stood against a faithless camp: *In the time of Moses also he did a work of mercy, he and Caleb the son of Jephunne, in that they withstood the congregation, and withheld the people from sin, and appeased the wicked murmuring* (Sirach 46:7), *And of six hundred thousand people on foot, they two were preserved to bring them in to the heritage, even to the land that floweth with milk and honey* (Sirach 46:8). The Tanakh shows the two rending their clothes before the mob: *And Joshua the son of Nun, and Caleb the son of Jephunneh, which were of them that searched the land, rent their clothes* (Numbers 14:6), pleading *If Yahuah (LORD) delight in us, then he will bring us into this land, and give it us; a land which floweth with milk and honey* (Numbers 14:8). Of all that generation only these two crossed over — the seed kept faithful while the rest fell. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 59434
+  FROM _session253_sir46_lookup sv, _session253_sir46_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=7
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=46 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-46-caleb-wholly-followed',
+       E'Caleb''s strength to old age, his seed obtained the heritage — wholly following Yahuah',
+       E'Ben Sira gives Caleb his own crown for unwavering loyalty: *Yahuah (God) gave strength also to Caleb, which remained with him to his old age: so that he entered upon the high places of the land, and his seed obtained it for an heritage* (Sirach 46:9), *That all the children of Yashar''el (Israel) might see that it is good to follow Yahuah (God)* (Sirach 46:10). The Tanakh''s word over Caleb is the same: *But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it* (Numbers 14:24). And in his old age the inheritance came, just as Ben Sira says: *And Joshua blessed him, and gave unto Caleb the son of Jephunneh Hebron for an inheritance* (Joshua 14:13), *because that he wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Joshua 14:14). To follow Yahuah fully is good and is rewarded with the heritage — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 59437
+  FROM _session253_sir46_lookup sv, _session253_sir46_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=9
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=46 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-46-the-judges-hearts-turned-not',
+       E'The judges whose heart went not a whoring — let their memory be blessed',
+       E'Ben Sira passes a blessing over the deliverers of the next age: *And concerning the judges, every one by name, whose heart went not a whoring, nor departed from Yahuah (God), let their memory be blessed* (Sirach 46:11), *Let their bones flourish out of their place, and let the name of them that were honoured be continued upon their children* (Sirach 46:12). The book of Judges records the raising up of these very deliverers: *Nevertheless Yahuah (LORD) raised up judges, which delivered them out of the hand of those that spoiled them* (Judges 2:16). The apostle gathers them into the cloud of witnesses by name: *And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets* (Hebrews 11:32). The faithful judges are remembered in three scrolls alike — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 59440
+  FROM _session253_sir46_lookup sv, _session253_sir46_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=11
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=46 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-46-samuel-prophet-established-kingdom',
+       E'Samuel the prophet — established the kingdom, called on Yahuah, the sucking lamb and the thunder',
+       E'Ben Sira crowns the chapter with Samuel, prophet and kingmaker: *Samuel, the prophet of Yahuah (God), beloved of his Elohim (God), established a kingdom, and anointed princes over his people* (Sirach 46:13), *By his faithfulness he was found a true prophet, and by his word he was known to be faithful in vision* (Sirach 46:15). The Tanakh confirms the true prophet: *And all Yashar''el (Israel) from Dan even to Beer-sheba knew that Samuel was established to be a prophet of Yahuah (LORD)* (1 Samuel 3:20). Ben Sira''s *He called upon the mighty Yahuah (God), when his enemies pressed upon him on every side, when he offered the sucking lamb* (Sirach 46:16) is the very scene at Mizpeh: *And Samuel took a sucking lamb, and offered it for a burnt offering wholly unto Yahuah (LORD): and Samuel cried unto Yahuah (LORD) for Yashar''el (Israel); and Yahuah (LORD) heard him* (1 Samuel 7:9). And the thunder that answered him (Sirach 46:17) — *So Samuel called unto Yahuah (LORD); and Yahuah (LORD) sent thunder and rain that day: and all the people greatly feared Yahuah (LORD) and Samuel* (1 Samuel 12:18). His farewell witness before Yahuah and his anointed (Sirach 46:19) is the integrity of 1 Samuel 12:3. It ain''t new — the prophet''s whole life is in the scroll.',
+       sv.verse_id, ev.verse_id, 'extras', 59443
+  FROM _session253_sir46_lookup sv, _session253_sir46_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=13
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=46 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: sirach-46-joshua-successor-of-moses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 1:1 — *Now after the death of Moses the servant of Yahuah (LORD) it came to pass, that Yahuah (LORD) spake unto Joshua the son of Nun, Moses'' minister, saying,* The Tanakh names the same successor of Moses whom Sirach 46:1 praises, Joshua son of Nun, not the Messiah.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-joshua-successor-of-moses'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 1:6 — *Be strong and of a good courage: for unto this people shalt thou divide for an inheritance the land, which I sware unto their fathers to give them.* This is the charge to set Israel in the inheritance that Sirach 46:1 says Joshua was made great to accomplish.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-joshua-successor-of-moses'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:30 — *By faith the walls of Jericho fell down, after they were compassed about seven days.* The valiant wars and lifted sword of Sirach 46:2 are counted by the apostle as the works of faith under Joshua.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-joshua-successor-of-moses'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-46-sun-stood-still
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 10:12 — *Then spake Joshua to Yahuah (LORD) in the day when Yahuah (LORD) delivered up the Amorites before the children of Yashar''el (Israel), and he said in the sight of Yashar''el (Israel), Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon.* This is the prayer behind Sirach 46:4''s sun going back and one day as long as two.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-sun-stood-still'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 10:11 — *And it came to pass, as they fled from before Yashar''el (Israel), and were in the going down to Beth-horon, that Yahuah (LORD) cast down great stones from heaven upon them unto Azekah, and they died: they were more which died with hailstones than they whom the children of Yashar''el (Israel) slew with the sword.* The hailstones at the descent of Beth-horon in Sirach 46:6 are the very stones from heaven named here.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-sun-stood-still'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jasher 88:63 — *And when they were smiting, the day was declining toward evening, and Joshua said in the sight of all the people, Sun, stand you still upon Gibeon, and you moon in the valley of Ajalon, until the nation shall have revenged itself upon its enemies.* The book Joshua cites preserves the same stayed sun that Sirach 46:4 marvels over.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-sun-stood-still'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=4
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=88 AND tv.verse_number=63
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jasher 88:61 — *And whilst they were fleeing, Yahuah (the Lord) sent upon them hailstones from heaven, and more of them died by the hailstones, than by the slaughter of the children of Israel.* Jasher confirms the hailstones of mighty power that Sirach 46:6 sets in the descent of Beth-horon.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-sun-stood-still'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=6
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=88 AND tv.verse_number=61
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-46-he-followed-the-mighty-one
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 1:9 — *Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest.* To fight in the sight of Yahuah and follow the Mighty One (Sirach 46:6) is to keep this opening charge.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-he-followed-the-mighty-one'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jasher 88:60 — *And Yahuah (the Lord) confounded them before the children at Israel, who smote them with a terrible slaughter in Gibeon, and pursued them along the way that goes up to Beth Horon to Makkedah, and they fled from before the children of Israel.* Jasher names the descent of Beth-horon where Sirach 46:6 says Joshua destroyed them that resisted.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-he-followed-the-mighty-one'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=6
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=88 AND tv.verse_number=60
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-46-joshua-and-caleb-faithful-spies
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 14:6 — *And Joshua the son of Nun, and Caleb the son of Jephunneh, which were of them that searched the land, rent their clothes:* These are the two who withstood the congregation in Sirach 46:7, named together as the faithful spies.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-joshua-and-caleb-faithful-spies'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 14:8 — *If Yahuah (LORD) delight in us, then he will bring us into this land, and give it us; a land which floweth with milk and honey.* This is the very plea to enter the land flowing with milk and honey that Sirach 46:8 says the two were preserved to reach.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-joshua-and-caleb-faithful-spies'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-46-caleb-wholly-followed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 14:24 — *But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it.* This is the promise that Caleb''s seed would obtain the heritage, exactly as Sirach 46:9 records.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-caleb-wholly-followed'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 14:13 — *And Joshua blessed him, and gave unto Caleb the son of Jephunneh Hebron for an inheritance.* Caleb entering the high places of the land in his old age (Sirach 46:9) is fulfilled in the gift of Hebron.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-caleb-wholly-followed'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=14 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 14:14 — *Hebron therefore became the inheritance of Caleb the son of Jephunneh the Kenezite unto this day, because that he wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel).* This names the very reason Sirach 46:10 commends, that it is good to follow Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-caleb-wholly-followed'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=14 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-46-the-judges-hearts-turned-not
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Judges 2:16 — *Nevertheless Yahuah (LORD) raised up judges, which delivered them out of the hand of those that spoiled them.* These are the judges whose memory Sirach 46:11 blesses, the deliverers Yahuah raised up.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-the-judges-hearts-turned-not'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=2 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 11:32 — *And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets:* The apostle''s roll of judges and Samuel runs parallel to Ben Sira''s blessing of the judges in Sirach 46:11.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-the-judges-hearts-turned-not'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-46-samuel-prophet-established-kingdom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Samuel 3:20 — *And all Yashar''el (Israel) from Dan even to Beer-sheba knew that Samuel was established to be a prophet of Yahuah (LORD).* This confirms the true and faithful prophet that Sirach 46:15 says was known to be faithful in vision.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-samuel-prophet-established-kingdom'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=3 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Samuel 7:9 — *And Samuel took a sucking lamb, and offered it for a burnt offering wholly unto Yahuah (LORD): and Samuel cried unto Yahuah (LORD) for Yashar''el (Israel); and Yahuah (LORD) heard him.* This is the very sucking lamb and the cry to Yahuah that Sirach 46:16 records.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-samuel-prophet-established-kingdom'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=7 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Samuel 12:18 — *So Samuel called unto Yahuah (LORD); and Yahuah (LORD) sent thunder and rain that day: and all the people greatly feared Yahuah (LORD) and Samuel.* The thunder Yahuah made to be heard from heaven in Sirach 46:17 is this answer to Samuel''s call.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-samuel-prophet-established-kingdom'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Samuel 12:3 — *Behold, here I am: witness against me before Yahuah (LORD), and before his anointed: whose ox have I taken? or whose ass have I taken? or whom have I defrauded? whom have I oppressed? or of whose hand have I received any bribe to blind mine eyes therewith? and I will restore it you.* This is Samuel''s protestation of innocence before Yahuah and his anointed that Sirach 46:19 recalls.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir46_lookup sv, _session253_sir46_lookup tv
+ WHERE t.slug='sirach-46-samuel-prophet-established-kingdom'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=46 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_47.sql (session253 ecclesiasticus 47) -----
+-- Source anchor: apocrypha/ecclesiasticus ch47. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir47 (view _session253_sir47_lookup). Sort band base 59450, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir47_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: sirach-47-nathan-the-prophet
+  ('apocrypha', 'ecclesiasticus', 47, 1, 'canon', '2-samuel', 7, 12, 'free', E'2 Samuel 7:12 — *And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.* This is the very promise Nathan carried in the time of David that Sirach 47:1 sets at the head of David''s praise.'),
+  ('apocrypha', 'ecclesiasticus', 47, 1, 'canon', '2-samuel', 12, 7, 'free', E'2 Samuel 12:7 — *And Nathan said to David, Thou art the man. Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), I anointed thee king over Yashar''el (Israel), and I delivered thee out of the hand of Saul.* The prophet of Sirach 47:1 is the same who held even the anointed king to the covenant.'),
+  -- thread: sirach-47-david-slew-the-giant
+  ('apocrypha', 'ecclesiasticus', 47, 4, 'canon', '1-samuel', 17, 45, 'free', E'1 Samuel 17:45 — *Then said David to the Philistine, Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of the armies of Yashar''el (Israel), whom thou hast defied.* The boy who beat down the boasting of Goliath in Sirach 47:4 came not by arms but by the Name.'),
+  ('apocrypha', 'ecclesiasticus', 47, 4, 'canon', '1-samuel', 17, 50, 'free', E'1 Samuel 17:50 — *So David prevailed over the Philistine with a sling and with a stone, and smote the Philistine, and slew him; but there was no sword in the hand of David.* This is the stone in the sling and the slain giant that Sirach 47:4 sets at the head of David''s might.'),
+  ('apocrypha', 'ecclesiasticus', 47, 5, 'canon', 'hebrews', 11, 32, 'free', E'Hebrews 11:32 — *And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets:* the same David whom Sirach 47:5 praises for calling upon the Most High is set among the cloud of faithful witnesses.'),
+  -- thread: sirach-47-the-singer-and-the-feasts
+  ('apocrypha', 'ecclesiasticus', 47, 9, 'canon', '1-chronicles', 16, 4, 'free', E'1 Chronicles 16:4 — *And he appointed certain of the Levites to minister before the ark of Yahuah (LORD), and to record, and to thank and praise Yahuah Elohim (the LORD God) of Yashar''el (Israel):* this is the singing service before the altar that Sirach 47:9 credits to David.'),
+  ('apocrypha', 'ecclesiasticus', 47, 10, 'canon', '1-chronicles', 23, 5, 'free', E'1 Chronicles 23:5 — *Moreover four thousand were porters; and four thousand praised Yahuah (LORD) with the instruments which I made, said David, to praise therewith.* The daily melody and ordered solemn times of Sirach 47:9-10 are David''s own appointment for the praise of the holy Name.'),
+  -- thread: sirach-47-the-horn-and-throne-for-ever
+  ('apocrypha', 'ecclesiasticus', 47, 11, 'canon', '2-samuel', 12, 13, 'free', E'2 Samuel 12:13 — *And David said unto Nathan, I have sinned against Yahuah (LORD). And Nathan said unto David, Yahuah (LORD) also hath put away thy sin; thou shalt not die.* This is the taking-away of David''s sins that Sirach 47:11 names before exalting his horn.'),
+  ('apocrypha', 'ecclesiasticus', 47, 11, 'canon', 'psalms', 89, 4, 'free', E'Psalm 89:4 — *Thy seed will I establish for ever, and build up thy throne to all generations. Selah.* The covenant of kings and throne of glory of Sirach 47:11 is the sworn oath to David''s seed for ever.'),
+  ('apocrypha', 'ecclesiasticus', 47, 11, 'canon', 'luke', 1, 32, 'free', E'Luke 1:32 — *He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David:* the horn exalted for ever in Sirach 47:11 reaches its term in the Son given David''s throne.'),
+  -- thread: sirach-47-solomon-the-wise-built-the-house
+  ('apocrypha', 'ecclesiasticus', 47, 14, 'canon', '1-kings', 3, 12, 'free', E'1 Kings 3:12 — *Behold, I have done according to thy words: lo, I have given thee a wise and an understanding heart; so that there was none like thee before thee, neither after thee shall any arise like unto thee.* This is the youthful, flooding understanding Sirach 47:14 marvels at in Solomon.'),
+  ('apocrypha', 'ecclesiasticus', 47, 13, 'canon', '1-kings', 8, 20, 'free', E'1 Kings 8:20 — *And Yahuah (LORD) hath performed his word that he spake, and I am risen up in the room of David my father, and sit on the throne of Yashar''el (Israel), as Yahuah (LORD) promised, and have built an house for the name of Yahuah Elohim (the LORD God) of Yashar''el (Israel).* The house in Yahuah''s name that Sirach 47:13 says Solomon built is the temple Solomon dedicates here.'),
+  ('apocrypha', 'ecclesiasticus', 47, 14, 'apocrypha', 'the-wisdom-of-solomon', 9, 9, 'extras', E'Wisdom of Solomon 9:9 — *And wisdom was with you: which knoweth your works, and was present when you madest the world, and knew what was acceptable in your sight, and right in your commandments.* In the sister book of this same library Solomon confesses the source of the understanding Sirach 47:14 praises — the Wisdom present at the founding of the world.'),
+  -- thread: sirach-47-solomon-the-women-turned-him
+  ('apocrypha', 'ecclesiasticus', 47, 19, 'canon', '1-kings', 11, 4, 'free', E'1 Kings 11:4 — *For it came to pass, when Solomon was old, that his wives turned away his heart after other gods: and his heart was not perfect with Yahuah Elohav (the LORD his God), as was the heart of David his father.* This is the bowing to women and subjection of body that Sirach 47:19 grieves over in Solomon.'),
+  ('apocrypha', 'ecclesiasticus', 47, 20, 'canon', '1-kings', 11, 11, 'free', E'1 Kings 11:11 — *Wherefore Yahuah (LORD) said unto Solomon, Forasmuch as this is done of thee, and thou hast not kept my covenant and my statutes, which I have commanded thee, I will surely rend the kingdom from thee, and will give it to thy servant.* The wrath upon his children that Sirach 47:20 names is the rending of the kingdom for Solomon''s broken covenant.'),
+  -- thread: sirach-47-the-kingdom-divided-root-kept
+  ('apocrypha', 'ecclesiasticus', 47, 23, 'canon', '1-kings', 11, 31, 'free', E'1 Kings 11:31 — *And he said to Jeroboam, Take thee ten pieces: for thus saith Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee:* this is the rebellious kingdom of Ephraim under Jeroboam that Sirach 47:23 names.'),
+  ('apocrypha', 'ecclesiasticus', 47, 21, 'canon', '1-kings', 12, 19, 'free', E'1 Kings 12:19 — *So Yashar''el (Israel) rebelled against the house of David unto this day.* This is the dividing of the kingdom out of Ephraim that Sirach 47:21 records.'),
+  ('apocrypha', 'ecclesiasticus', 47, 22, 'canon', 'ezekiel', 37, 22, 'free', E'Ezekiel 37:22 — *And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all:* the remnant and root kept for David in Sirach 47:22 is the sworn rejoining of the two houses the schism tore apart.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir47_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir47_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-47-nathan-the-prophet',
+       E'Nathan rose up in the time of David',
+       E'Ben Sira opens the chapter with the prophet who stood at David''s side: *And after him rose up Nathan to prophesy in the time of David* (Sirach 47:1). It was Nathan who carried Yahuah''s word both ways — the everlasting covenant and the searching rebuke. He brought the promise of the seed and the throne: *And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom* (2 Samuel 7:12). And when David fell, the same prophet did not flatter him but named the sin: *And Nathan said to David, Thou art the man. Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), I anointed thee king over Yashar''el (Israel), and I delivered thee out of the hand of Saul* (2 Samuel 12:7). The prophet beside the king is the witness that the throne is held to the covenant, not above it.',
+       sv.verse_id, ev.verse_id, 'extras', 59450
+  FROM _session253_sir47_lookup sv, _session253_sir47_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=47 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-47-david-slew-the-giant',
+       E'He slew the giant when he was yet young',
+       E'Ben Sira remembers the shepherd-boy who feared no beast and no champion: *He played with lions as with kids, and with bears as with lambs* (Sirach 47:3), and *Slew he not a giant, when he was yet but young? and did he not take away reproach from the people, when he lifted up his hand with the stone in the sling, and beat down the boasting of Goliath?* (Sirach 47:4). The Tanakh tells it plainly — David came in no armour but in the Name: *Then said David to the Philistine, Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of the armies of Yashar''el (Israel), whom thou hast defied* (1 Samuel 17:45), and *So David prevailed over the Philistine with a sling and with a stone, and smote the Philistine, and slew him; but there was no sword in the hand of David* (1 Samuel 17:50). Ben Sira names the reason the boy prevailed: *For he called upon the most high Yahuah (God); and he gave him strength in his right hand to slay that mighty warrior, and set up the horn of his people* (Sirach 47:5). David is named again among the faithful who *subdued kingdoms*: *And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets* (Hebrews 11:32).',
+       sv.verse_id, ev.verse_id, 'extras', 59453
+  FROM _session253_sir47_lookup sv, _session253_sir47_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=47 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-47-the-singer-and-the-feasts',
+       E'He set singers before the altar and ordered the feasts',
+       E'Ben Sira praises David not only as warrior but as worshipper, the man after Yahuah''s own heart: *In all his works he praised the Holy One most high with words of glory; with his whole heart he sung songs, and loved him that made him* (Sirach 47:8). He set the Levites to their service: *He set singers also before the altar, that by their voices they might make sweet melody, and daily sing praises in their songs* (Sirach 47:9). The Chronicler records the very ordinance: *And he appointed certain of the Levites to minister before the ark of Yahuah (LORD), and to record, and to thank and praise Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (1 Chronicles 16:4). And Ben Sira binds David to the appointed times: *He beautified their feasts, and set in order the solemn times until the end, that they might praise his holy name, and that the temple might sound from morning* (Sirach 47:10) — the moedim Yahuah set, kept and beautified by the king, *praised Yahuah (LORD) with the instruments which I made, said David, to praise therewith* (1 Chronicles 23:5).',
+       sv.verse_id, ev.verse_id, 'extras', 59456
+  FROM _session253_sir47_lookup sv, _session253_sir47_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=8
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=47 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-47-the-horn-and-throne-for-ever',
+       E'His sins forgiven, his horn exalted for ever',
+       E'Ben Sira ends David''s praise where the covenant stands: *Yahuah (God) took away his sins, and exalted his horn for ever: he gave him a covenant of kings, and a throne of glory in Yashar''el (Israel)* (Sirach 47:11). When the prophet had named his sin, the word came: *And David said unto Nathan, I have sinned against Yahuah (LORD). And Nathan said unto David, Yahuah (LORD) also hath put away thy sin; thou shalt not die* (2 Samuel 12:13). The covenant of kings is the oath sworn in the psalm: *I have made a covenant with my chosen, I have sworn unto David my servant, Thy seed will I establish for ever, and build up thy throne to all generations. Selah* (Psalm 89:3-4). And the throne of glory in Israel is not closed with David — the everlasting throne reaches to the Son: *He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:32-33). The exalted horn that never fails is the seed of David raised up to reign.',
+       sv.verse_id, ev.verse_id, 'extras', 59459
+  FROM _session253_sir47_lookup sv, _session253_sir47_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=11
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=47 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-47-solomon-the-wise-built-the-house',
+       E'The wise son who built the house',
+       E'After David rose his son in peace: *After him rose up a wise son, and for his sake he dwelt at large* (Sirach 47:12), and *Solomon reigned in a peaceable time, and was honoured; for Yahuah (God) made all quiet round about him, that he might build an house in his name, and prepare his sanctuary for ever* (Sirach 47:13). The wisdom Ben Sira marvels at — *How wise were you in your youth and, as a flood, filled with understanding!* (Sirach 47:14) — was the gift Solomon asked and received: *Behold, I have done according to thy words: lo, I have given thee a wise and an understanding heart; so that there was none like thee before thee, neither after thee shall any arise like unto thee* (1 Kings 3:12). The house he built is the temple promised through Nathan: *And Yahuah (LORD) hath performed his word that he spake, and I am risen up in the room of David my father, and sit on the throne of Yashar''el (Israel), as Yahuah (LORD) promised, and have built an house for the name of Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (1 Kings 8:20). Solomon himself confessed whence the wisdom came, in the sister book of this same library: *And wisdom was with you: which knoweth your works, and was present when you madest the world, and knew what was acceptable in your sight, and right in your commandments* (Wisdom of Solomon 9:9).',
+       sv.verse_id, ev.verse_id, 'extras', 59462
+  FROM _session253_sir47_lookup sv, _session253_sir47_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=12
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=47 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-47-solomon-the-women-turned-him',
+       E'Thou didst bow thy loins to women',
+       E'Ben Sira will not flatter even the wisest king. After the gold and the songs comes the fall: *You did bow your loins to women, and by your body you were brought into subjection* (Sirach 47:19), and *You did stain your honour, and pollute your seed: so that you broughtest wrath upon your children, and were grieved for your folly* (Sirach 47:20). The Tanakh tells the same grief: *For it came to pass, when Solomon was old, that his wives turned away his heart after other gods: and his heart was not perfect with Yahuah Elohav (the LORD his God), as was the heart of David his father* (1 Kings 11:4). And the wrath upon his children was the rending of the kingdom: *Wherefore Yahuah (LORD) said unto Solomon, Forasmuch as this is done of thee, and thou hast not kept my covenant and my statutes, which I have commanded thee, I will surely rend the kingdom from thee, and will give it to thy servant* (1 Kings 11:11). The wisest man was brought into subjection because his heart turned from the covenant — Torah stands even over Solomon.',
+       sv.verse_id, ev.verse_id, 'extras', 59465
+  FROM _session253_sir47_lookup sv, _session253_sir47_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=19
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=47 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-47-the-kingdom-divided-root-kept',
+       E'The kingdom divided, yet the root kept for David',
+       E'Here is the schism, and the mercy that outlasts it. Ben Sira anchors the hope before the rupture: *But Yahuah (God) will never leave off his mercy, neither shall any of his works perish, neither will he abolish the posterity of his elect, and the seed of him that loves him he will not take away: wherefore he gave a remnant to Jacob, and out of him a root to David* (Sirach 47:22). Then comes the tearing: *So the kingdom was divided, and out of Ephraim ruled a rebellious kingdom* (Sirach 47:21), and *There was also Jeroboam the son of Nebat, who caused Yashar''el (Israel) to sin, and shewed Ephraim the way of sin* (Sirach 47:23). The Tanakh names the rending: *And he said to Jeroboam, Take thee ten pieces: for thus saith Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31), and the ten tribes broke away — *So Yashar''el (Israel) rebelled against the house of David unto this day* (1 Kings 12:19). Yet the rending was never the end: Yahuah held one tribe *for David my servant''s sake* (the root of Sirach 47:22), and the two divided houses are sworn to be rejoined — *And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The gathering reverses the schism Ben Sira mourns.',
+       sv.verse_id, ev.verse_id, 'extras', 59468
+  FROM _session253_sir47_lookup sv, _session253_sir47_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=21
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=47 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: sirach-47-nathan-the-prophet
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'2 Samuel 7:12 — *And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.* This is the very promise Nathan carried in the time of David that Sirach 47:1 sets at the head of David''s praise.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-nathan-the-prophet'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Samuel 12:7 — *And Nathan said to David, Thou art the man. Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), I anointed thee king over Yashar''el (Israel), and I delivered thee out of the hand of Saul.* The prophet of Sirach 47:1 is the same who held even the anointed king to the covenant.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-nathan-the-prophet'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-47-david-slew-the-giant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Samuel 17:45 — *Then said David to the Philistine, Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of the armies of Yashar''el (Israel), whom thou hast defied.* The boy who beat down the boasting of Goliath in Sirach 47:4 came not by arms but by the Name.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-david-slew-the-giant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=17 AND tv.verse_number=45
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Samuel 17:50 — *So David prevailed over the Philistine with a sling and with a stone, and smote the Philistine, and slew him; but there was no sword in the hand of David.* This is the stone in the sling and the slain giant that Sirach 47:4 sets at the head of David''s might.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-david-slew-the-giant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=17 AND tv.verse_number=50
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:32 — *And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets:* the same David whom Sirach 47:5 praises for calling upon the Most High is set among the cloud of faithful witnesses.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-david-slew-the-giant'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-47-the-singer-and-the-feasts
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Chronicles 16:4 — *And he appointed certain of the Levites to minister before the ark of Yahuah (LORD), and to record, and to thank and praise Yahuah Elohim (the LORD God) of Yashar''el (Israel):* this is the singing service before the altar that Sirach 47:9 credits to David.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-the-singer-and-the-feasts'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=16 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Chronicles 23:5 — *Moreover four thousand were porters; and four thousand praised Yahuah (LORD) with the instruments which I made, said David, to praise therewith.* The daily melody and ordered solemn times of Sirach 47:9-10 are David''s own appointment for the praise of the holy Name.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-the-singer-and-the-feasts'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=23 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-47-the-horn-and-throne-for-ever
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'2 Samuel 12:13 — *And David said unto Nathan, I have sinned against Yahuah (LORD). And Nathan said unto David, Yahuah (LORD) also hath put away thy sin; thou shalt not die.* This is the taking-away of David''s sins that Sirach 47:11 names before exalting his horn.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-the-horn-and-throne-for-ever'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 89:4 — *Thy seed will I establish for ever, and build up thy throne to all generations. Selah.* The covenant of kings and throne of glory of Sirach 47:11 is the sworn oath to David''s seed for ever.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-the-horn-and-throne-for-ever'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Luke 1:32 — *He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David:* the horn exalted for ever in Sirach 47:11 reaches its term in the Son given David''s throne.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-the-horn-and-throne-for-ever'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-47-solomon-the-wise-built-the-house
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Kings 3:12 — *Behold, I have done according to thy words: lo, I have given thee a wise and an understanding heart; so that there was none like thee before thee, neither after thee shall any arise like unto thee.* This is the youthful, flooding understanding Sirach 47:14 marvels at in Solomon.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-solomon-the-wise-built-the-house'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=3 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Kings 8:20 — *And Yahuah (LORD) hath performed his word that he spake, and I am risen up in the room of David my father, and sit on the throne of Yashar''el (Israel), as Yahuah (LORD) promised, and have built an house for the name of Yahuah Elohim (the LORD God) of Yashar''el (Israel).* The house in Yahuah''s name that Sirach 47:13 says Solomon built is the temple Solomon dedicates here.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-solomon-the-wise-built-the-house'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Wisdom of Solomon 9:9 — *And wisdom was with you: which knoweth your works, and was present when you madest the world, and knew what was acceptable in your sight, and right in your commandments.* In the sister book of this same library Solomon confesses the source of the understanding Sirach 47:14 praises — the Wisdom present at the founding of the world.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-solomon-the-wise-built-the-house'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=14
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=9 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-47-solomon-the-women-turned-him
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Kings 11:4 — *For it came to pass, when Solomon was old, that his wives turned away his heart after other gods: and his heart was not perfect with Yahuah Elohav (the LORD his God), as was the heart of David his father.* This is the bowing to women and subjection of body that Sirach 47:19 grieves over in Solomon.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-solomon-the-women-turned-him'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Kings 11:11 — *Wherefore Yahuah (LORD) said unto Solomon, Forasmuch as this is done of thee, and thou hast not kept my covenant and my statutes, which I have commanded thee, I will surely rend the kingdom from thee, and will give it to thy servant.* The wrath upon his children that Sirach 47:20 names is the rending of the kingdom for Solomon''s broken covenant.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-solomon-the-women-turned-him'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-47-the-kingdom-divided-root-kept
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Kings 11:31 — *And he said to Jeroboam, Take thee ten pieces: for thus saith Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee:* this is the rebellious kingdom of Ephraim under Jeroboam that Sirach 47:23 names.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-the-kingdom-divided-root-kept'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Kings 12:19 — *So Yashar''el (Israel) rebelled against the house of David unto this day.* This is the dividing of the kingdom out of Ephraim that Sirach 47:21 records.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-the-kingdom-divided-root-kept'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 37:22 — *And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all:* the remnant and root kept for David in Sirach 47:22 is the sworn rejoining of the two houses the schism tore apart.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir47_lookup sv, _session253_sir47_lookup tv
+ WHERE t.slug='sirach-47-the-kingdom-divided-root-kept'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=47 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ecclesiasticus_48.sql (session253 ecclesiasticus 48) -----
+-- Source anchor: apocrypha/ecclesiasticus ch48. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: sir48 (view _session253_sir48_lookup). Sort band base 59475, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session253_sir48_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: sirach-48-elias-fire-shut-heaven
+  ('apocrypha', 'ecclesiasticus', 48, 3, 'canon', '1-kings', 18, 38, 'free', E'1 Kings 18:38 — *Then the fire of Yahuah (LORD) fell, and consumed the burnt sacrifice, and the wood, and the stones, and the dust, and licked up the water that was in the trench.* This is the fire Ben Sira praises when he says Elias *also three times brought down fire* in Sirach 48:3.'),
+  ('apocrypha', 'ecclesiasticus', 48, 1, 'canon', '1-kings', 18, 37, 'free', E'1 Kings 18:37 — *Hear me, O Yahuah (LORD), hear me, that this people may know that thou art Yahuah Elohim (the LORD God), and that thou hast turned their heart back again.* Elijah''s burning word, the lamp of Sirach 48:1, is the prayer that turns the people''s heart back at Carmel.'),
+  -- thread: sirach-48-elias-raised-the-dead
+  ('apocrypha', 'ecclesiasticus', 48, 5, 'canon', '1-kings', 17, 21, 'free', E'1 Kings 17:21 — *And he stretched himself upon the child three times, and cried unto Yahuah (LORD), and said, O Yahuah (LORD) my Elohim (God), I pray thee, let this child''s soul come into him again.* This is the raising Ben Sira praises in Sirach 48:5, the dead man''s soul called back from the place of the dead.'),
+  ('apocrypha', 'ecclesiasticus', 48, 5, 'canon', 'hebrews', 11, 35, 'free', E'Hebrews 11:35 — *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection:* The widow''s son raised by Elijah in Sirach 48:5 is named among the great cloud of the faith who tasted the resurrection.'),
+  -- thread: sirach-48-elias-whirlwind-restore-tribes
+  ('apocrypha', 'ecclesiasticus', 48, 9, 'canon', '2-kings', 2, 11, 'free', E'2 Kings 2:11 — *And it came to pass, as they still went on, and talked, that, behold, there appeared a chariot of fire, and horses of fire, and parted them both asunder; and Elijah went up by a whirlwind into heaven.* This is the very whirlwind and chariot of fiery horses Ben Sira describes in Sirach 48:9.'),
+  ('apocrypha', 'ecclesiasticus', 48, 10, 'canon', 'malachi', 4, 5, 'free', E'Malachi 4:5 — *Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD):* Sirach 48:10''s Elias ''ordained for reproofs in their times... before it brake forth into fury'' is Malachi''s Elijah sent ahead of the dreadful day.'),
+  ('apocrypha', 'ecclesiasticus', 48, 10, 'canon', 'malachi', 4, 6, 'free', E'Malachi 4:6 — *And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.* Ben Sira quotes this very turning of the heart ''of the father to the son'' in Sirach 48:10.'),
+  ('apocrypha', 'ecclesiasticus', 48, 10, 'canon', 'matthew', 17, 11, 'free', E'Matthew 17:11 — *And Yahusha (Jesus) answered and said unto them, Elias truly shall first come, and restore all things.* The Messiah affirms the Elijah-restoration Sirach 48:10 looks for: to restore the tribes of Jacob.'),
+  ('apocrypha', 'ecclesiasticus', 48, 10, 'canon', 'luke', 1, 17, 'free', E'Luke 1:17 — *And he shall go before him in the spirit and power of Elias, to turn the hearts of the fathers to the children, and the disobedient to the wisdom of the just; to make ready a people prepared for Yahuah (Lord).* The Elias-spirit that turns the fathers'' hearts in Sirach 48:10 rests on the forerunner who prepares the gathered people.'),
+  -- thread: sirach-48-eliseus-double-portion-wonders-in-death
+  ('apocrypha', 'ecclesiasticus', 48, 12, 'canon', '2-kings', 2, 9, 'free', E'2 Kings 2:9 — *And it came to pass, when they were gone over, that Elijah said unto Elisha, Ask what I shall do for thee, before I be taken away from thee. And Elisha said, I pray thee, let a double portion of thy spirit be upon me.* This is the spirit of Elijah that filled Eliseus in Sirach 48:12.'),
+  ('apocrypha', 'ecclesiasticus', 48, 14, 'canon', '2-kings', 13, 21, 'free', E'2 Kings 13:21 — *And it came to pass, as they were burying a man, that, behold, they spied a band of men; and they cast the man into the sepulchre of Elisha: and when the man was let down, and touched the bones of Elisha, he revived, and stood up on his feet.* This is the marvel at his death that Ben Sira praises in Sirach 48:14 — his very bones gave life.'),
+  -- thread: sirach-48-ezekias-fortified-the-city
+  ('apocrypha', 'ecclesiasticus', 48, 22, 'canon', '2-kings', 18, 5, 'free', E'2 Kings 18:5 — *He trusted in Yahuah Elohim (the LORD God) of Yashar''el (Israel); so that after him was none like him among all the kings of Yahudah (Judah), nor any that were before him.* This is the Ezekias who ''had done the thing that pleased Yahuah'' and ''was strong in the ways of David'' in Sirach 48:22.'),
+  ('apocrypha', 'ecclesiasticus', 48, 18, 'canon', '2-kings', 18, 13, 'free', E'2 Kings 18:13 — *Now in the fourteenth year of king Hezekiah did Sennacherib king of Assyria come up against all the fenced cities of Yahudah (Judah), and took them.* This is the Sennacherib who ''came up... and lifted up his hand against Sion'' in Sirach 48:18.'),
+  -- thread: sirach-48-the-angel-smote-the-assyrians
+  ('apocrypha', 'ecclesiasticus', 48, 20, 'canon', '2-kings', 19, 19, 'free', E'2 Kings 19:19 — *Now therefore, O Yahuah (LORD) our Elohim (God), I beseech thee, save thou us out of his hand, that all the kingdoms of the earth may know that thou art Yahuah Elohim (the LORD God), even thou only.* This is the crying out to merciful Yahuah that Sirach 48:20 says the Holy One heard out of heaven.'),
+  ('apocrypha', 'ecclesiasticus', 48, 21, 'canon', '2-kings', 19, 35, 'free', E'2 Kings 19:35 — *And it came to pass that night, that the angel of Yahuah (LORD) went out, and smote in the camp of the Assyrians an hundred fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses.* This is the angel that ''destroyed them'' and ''struck the host of the Assyrians'' in Sirach 48:21.'),
+  -- thread: sirach-48-esay-sun-backward-saw-the-last-things
+  ('apocrypha', 'ecclesiasticus', 48, 23, 'canon', '2-kings', 20, 11, 'free', E'2 Kings 20:11 — *And Isaiah the prophet cried unto Yahuah (LORD): and he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz.* This is the sun going backward and the king''s life lengthened in Sirach 48:23, done at Isaiah''s word.'),
+  ('apocrypha', 'ecclesiasticus', 48, 22, 'canon', 'isaiah', 1, 1, 'free', E'Isaiah 1:1 — *The vision of Isaiah the son of Amoz, which he saw concerning Yahudah (Judah) and Jerusalem in the days of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Yahudah (Judah).* This is the Esay ''great and faithful in his vision'' of Sirach 48:22, the prophet of Hezekiah''s days.'),
+  ('apocrypha', 'ecclesiasticus', 48, 24, 'canon', 'isaiah', 40, 1, 'free', E'Isaiah 40:1 — *Comfort ye, comfort ye my people, saith your Elohim (God).* This is the prophet''s comfort to ''them that mourned in Sion'' that Ben Sira praises in Sirach 48:24.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session253_sir48_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session253_sir48_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-48-elias-fire-shut-heaven',
+       E'Elias stood up as fire — shut the heaven, called down fire',
+       E'Ben Sira lifts up the Tishbite first of all the latter fathers: *Then stood up Elias the prophet as fire, and his word burned like a lamp* (Ecclesiasticus 48:1), *He brought a sore famine upon them, and by his zeal he diminished their number* (Ecclesiasticus 48:2), *By the word of Yahuah (God) he shut up the heaven, and also three times brought down fire* (Ecclesiasticus 48:3). It ain''t new — this is the Carmel man drawn straight from the Tanakh, where Elijah prays and *Then the fire of Yahuah (LORD) fell, and consumed the burnt sacrifice, and the wood, and the stones, and the dust, and licked up the water that was in the trench* (1 Kings 18:38), the same prophet whose word turns the heart of the people, *that thou hast turned their heart back again* (1 Kings 18:37). The same library, the same fire-tongued witness.',
+       sv.verse_id, ev.verse_id, 'extras', 59475
+  FROM _session253_sir48_lookup sv, _session253_sir48_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=1
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=48 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-48-elias-raised-the-dead',
+       E'Who raised a dead man from death',
+       E'*Who did raise up a dead man from death, and his soul from the place of the dead, by the word of the Most High* (Ecclesiasticus 48:5). Ben Sira remembers Zarephath, where Elijah *stretched himself upon the child three times, and cried unto Yahuah (LORD), and said, O Yahuah (LORD) my Elohim (God), I pray thee, let this child''s soul come into him again* (1 Kings 17:21), and the child *revived* (1 Kings 17:22). The deuterocanon and the Tanakh hold one resurrection witness, which the writer to the Hebrews gathers up: *Women received their dead raised to life again* (Hebrews 11:35). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 59478
+  FROM _session253_sir48_lookup sv, _session253_sir48_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=5
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=48 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-48-elias-whirlwind-restore-tribes',
+       E'Taken up in a whirlwind — to come again and restore the tribes',
+       E'*Who was taken up in a whirlwind of fire, and in a chariot of fiery horses* (Ecclesiasticus 48:9), *Who were ordained for reproofs in their times, to pacify the wrath of the judgment of Yahuah (God), before it brake forth into fury, and to turn the heart of the father to the son, and to restore the tribes of Jacob* (Ecclesiasticus 48:10). This is Sinai-grammar at the seam of the ages. The Tanakh records the ascent — *Elijah went up by a whirlwind into heaven* (2 Kings 2:11) — and seals the promise of his return: *Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD)* (Malachi 4:5), *And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse* (Malachi 4:6). Yahusha the Messiah confirms it stands still future — *Elias truly shall first come, and restore all things* (Matthew 17:11) — and the angel says of John, *And he shall go before him in the spirit and power of Elias, to turn the hearts of the fathers to the children, and the disobedient to the wisdom of the just; to make ready a people prepared for Yahuah (Lord)* (Luke 1:17). The restoring of the tribes of Jacob — the gathering — is Ben Sira''s own word.',
+       sv.verse_id, ev.verse_id, 'extras', 59481
+  FROM _session253_sir48_lookup sv, _session253_sir48_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=9
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=48 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-48-eliseus-double-portion-wonders-in-death',
+       E'Eliseus filled with his spirit — wonders even in death',
+       E'*Elias it was, who was covered with a whirlwind: and Eliseus was filled with his spirit* (Ecclesiasticus 48:12); *He did wonders in his life, and at his death were his works marvellous* (Ecclesiasticus 48:14). The double portion is the Tanakh''s own granting: Elisha asks, *let a double portion of thy spirit be upon me* (2 Kings 2:9), and the wonder in death is recorded plainly — a dead man cast into the prophet''s grave *touched the bones of Elisha... revived, and stood up on his feet* (2 Kings 13:21). The marvel after death that Ben Sira praises is no new invention; it stands written.',
+       sv.verse_id, ev.verse_id, 'extras', 59484
+  FROM _session253_sir48_lookup sv, _session253_sir48_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=12
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=48 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-48-ezekias-fortified-the-city',
+       E'Ezekias fortified Sion and trusted in Yahuah',
+       E'*Ezekias fortified his city, and brought in water into the midst thereof: he digged the hard rock with iron, and made wells for waters* (Ecclesiasticus 48:17); *For Ezekias had done the thing that pleased Yahuah (God), and was strong in the ways of David his father* (Ecclesiasticus 48:22). The Tanakh''s testimony of him is identical: *He trusted in Yahuah Elohim (the LORD God) of Yashar''el (Israel); so that after him was none like him among all the kings of Yahudah (Judah)* (2 Kings 18:5), and when Sennacherib came (*Now in the fourteenth year of king Hezekiah did Sennacherib king of Assyria come up against all the fenced cities of Yahudah (Judah), and took them* — 2 Kings 18:13) the king who pleased Yahuah was the king who stood. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 59487
+  FROM _session253_sir48_lookup sv, _session253_sir48_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=17
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=48 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-48-the-angel-smote-the-assyrians',
+       E'They called upon Yahuah — His angel destroyed the host',
+       E'*But they called upon Yahuah (God) which is merciful, and stretched out their hands toward him: and immediately the Holy One heard them out of heaven, and delivered them by the ministry of Esay* (Ecclesiasticus 48:20); *He struck the host of the Assyrians, and his angel destroyed them* (Ecclesiasticus 48:21). The deliverance is the Tanakh''s, word for deed: Hezekiah prayed, *Now therefore, O Yahuah (LORD) our Elohim (God), I beseech thee, save thou us out of his hand* (2 Kings 19:19), and *the angel of Yahuah (LORD) went out, and smote in the camp of the Assyrians an hundred fourscore and five thousand* (2 Kings 19:35). Ben Sira''s angel-deliverance by the ministry of Isaiah is the same night of salvation.',
+       sv.verse_id, ev.verse_id, 'extras', 59490
+  FROM _session253_sir48_lookup sv, _session253_sir48_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=20
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=48 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'sirach-48-esay-sun-backward-saw-the-last-things',
+       E'Esay — the sun went backward, and he saw the last things',
+       E'*In his time the sun went backward, and he lengthened the king''s life* (Ecclesiasticus 48:23); *He saw by an excellent spirit what should come to pass at the last, and he comforted them that mourned in Sion* (Ecclesiasticus 48:24); *He shewed what should come to pass for ever, and secret things or ever they came* (Ecclesiasticus 48:25). The sign of the dial is the Tanakh''s: *And Isaiah the prophet cried unto Yahuah (LORD): and he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz* (2 Kings 20:11), the prophet who said *I will add unto thy days fifteen years* (Isaiah 38:5). And the seer who comforts mourning Sion is the same whose scroll opens, *The vision of Isaiah the son of Amoz, which he saw concerning Yahudah (Judah) and Jerusalem... in the days of... Hezekiah* (Isaiah 1:1), and whose word of comfort is *Comfort ye, comfort ye my people, saith your Elohim (God)* (Isaiah 40:1). It ain''t new — Ben Sira reads the last things in the great prophet''s own scroll.',
+       sv.verse_id, ev.verse_id, 'extras', 59493
+  FROM _session253_sir48_lookup sv, _session253_sir48_lookup ev
+ WHERE sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=23
+   AND ev.edition_slug='apocrypha' AND ev.book_slug='ecclesiasticus' AND ev.chapter_number=48 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: sirach-48-elias-fire-shut-heaven
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Kings 18:38 — *Then the fire of Yahuah (LORD) fell, and consumed the burnt sacrifice, and the wood, and the stones, and the dust, and licked up the water that was in the trench.* This is the fire Ben Sira praises when he says Elias *also three times brought down fire* in Sirach 48:3.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-elias-fire-shut-heaven'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=18 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Kings 18:37 — *Hear me, O Yahuah (LORD), hear me, that this people may know that thou art Yahuah Elohim (the LORD God), and that thou hast turned their heart back again.* Elijah''s burning word, the lamp of Sirach 48:1, is the prayer that turns the people''s heart back at Carmel.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-elias-fire-shut-heaven'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=18 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-48-elias-raised-the-dead
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Kings 17:21 — *And he stretched himself upon the child three times, and cried unto Yahuah (LORD), and said, O Yahuah (LORD) my Elohim (God), I pray thee, let this child''s soul come into him again.* This is the raising Ben Sira praises in Sirach 48:5, the dead man''s soul called back from the place of the dead.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-elias-raised-the-dead'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=17 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 11:35 — *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection:* The widow''s son raised by Elijah in Sirach 48:5 is named among the great cloud of the faith who tasted the resurrection.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-elias-raised-the-dead'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-48-elias-whirlwind-restore-tribes
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'2 Kings 2:11 — *And it came to pass, as they still went on, and talked, that, behold, there appeared a chariot of fire, and horses of fire, and parted them both asunder; and Elijah went up by a whirlwind into heaven.* This is the very whirlwind and chariot of fiery horses Ben Sira describes in Sirach 48:9.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-elias-whirlwind-restore-tribes'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=2 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Malachi 4:5 — *Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD):* Sirach 48:10''s Elias ''ordained for reproofs in their times... before it brake forth into fury'' is Malachi''s Elijah sent ahead of the dreadful day.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-elias-whirlwind-restore-tribes'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 4:6 — *And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.* Ben Sira quotes this very turning of the heart ''of the father to the son'' in Sirach 48:10.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-elias-whirlwind-restore-tribes'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 17:11 — *And Yahusha (Jesus) answered and said unto them, Elias truly shall first come, and restore all things.* The Messiah affirms the Elijah-restoration Sirach 48:10 looks for: to restore the tribes of Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-elias-whirlwind-restore-tribes'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=17 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Luke 1:17 — *And he shall go before him in the spirit and power of Elias, to turn the hearts of the fathers to the children, and the disobedient to the wisdom of the just; to make ready a people prepared for Yahuah (Lord).* The Elias-spirit that turns the fathers'' hearts in Sirach 48:10 rests on the forerunner who prepares the gathered people.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-elias-whirlwind-restore-tribes'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-48-eliseus-double-portion-wonders-in-death
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'2 Kings 2:9 — *And it came to pass, when they were gone over, that Elijah said unto Elisha, Ask what I shall do for thee, before I be taken away from thee. And Elisha said, I pray thee, let a double portion of thy spirit be upon me.* This is the spirit of Elijah that filled Eliseus in Sirach 48:12.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-eliseus-double-portion-wonders-in-death'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Kings 13:21 — *And it came to pass, as they were burying a man, that, behold, they spied a band of men; and they cast the man into the sepulchre of Elisha: and when the man was let down, and touched the bones of Elisha, he revived, and stood up on his feet.* This is the marvel at his death that Ben Sira praises in Sirach 48:14 — his very bones gave life.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-eliseus-double-portion-wonders-in-death'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=13 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-48-ezekias-fortified-the-city
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'2 Kings 18:5 — *He trusted in Yahuah Elohim (the LORD God) of Yashar''el (Israel); so that after him was none like him among all the kings of Yahudah (Judah), nor any that were before him.* This is the Ezekias who ''had done the thing that pleased Yahuah'' and ''was strong in the ways of David'' in Sirach 48:22.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-ezekias-fortified-the-city'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=18 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Kings 18:13 — *Now in the fourteenth year of king Hezekiah did Sennacherib king of Assyria come up against all the fenced cities of Yahudah (Judah), and took them.* This is the Sennacherib who ''came up... and lifted up his hand against Sion'' in Sirach 48:18.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-ezekias-fortified-the-city'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=18 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-48-the-angel-smote-the-assyrians
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'2 Kings 19:19 — *Now therefore, O Yahuah (LORD) our Elohim (God), I beseech thee, save thou us out of his hand, that all the kingdoms of the earth may know that thou art Yahuah Elohim (the LORD God), even thou only.* This is the crying out to merciful Yahuah that Sirach 48:20 says the Holy One heard out of heaven.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-the-angel-smote-the-assyrians'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=19 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Kings 19:35 — *And it came to pass that night, that the angel of Yahuah (LORD) went out, and smote in the camp of the Assyrians an hundred fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses.* This is the angel that ''destroyed them'' and ''struck the host of the Assyrians'' in Sirach 48:21.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-the-angel-smote-the-assyrians'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=19 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: sirach-48-esay-sun-backward-saw-the-last-things
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'2 Kings 20:11 — *And Isaiah the prophet cried unto Yahuah (LORD): and he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz.* This is the sun going backward and the king''s life lengthened in Sirach 48:23, done at Isaiah''s word.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-esay-sun-backward-saw-the-last-things'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=20 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 1:1 — *The vision of Isaiah the son of Amoz, which he saw concerning Yahudah (Judah) and Jerusalem in the days of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Yahudah (Judah).* This is the Esay ''great and faithful in his vision'' of Sirach 48:22, the prophet of Hezekiah''s days.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-esay-sun-backward-saw-the-last-things'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 40:1 — *Comfort ye, comfort ye my people, saith your Elohim (God).* This is the prophet''s comfort to ''them that mourned in Sion'' that Ben Sira praises in Sirach 48:24.'
+  FROM cross_reference_threads t, cross_references x, _session253_sir48_lookup sv, _session253_sir48_lookup tv
+ WHERE t.slug='sirach-48-esay-sun-backward-saw-the-last-things'
+   AND sv.edition_slug='apocrypha' AND sv.book_slug='ecclesiasticus' AND sv.chapter_number=48 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session253 — Sirach (Ecclesiasticus) cross-references complete.'

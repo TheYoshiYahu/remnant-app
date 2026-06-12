@@ -1,0 +1,280 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 46,
+  "session": "session253",
+  "tag": "sir46",
+  "base_band": 59425,
+  "threads": [
+    {
+      "slug": "sirach-46-joshua-successor-of-moses",
+      "title": "Joshua son of Nun, successor of Moses, made great for the saving of the elect",
+      "summary_md": "Ben Sira opens the next age with the captain who carried the inheritance over Jordan: *Jesus the son a Nave was valiant in the wars, and was the successor of Moses in prophecies, who according to his name was made great for the saving of the elect of Yahuah (God), and taking vengeance of the enemies that rose up against them, that he might set Yashar'el (Israel) in their inheritance* (Sirach 46:1) — the \"Jesus\" here is Yehoshua, Joshua son of Nun, NOT the Messiah. The Tanakh hands him the same commission on the very threshold: *Now after the death of Moses the servant of Yahuah (LORD) it came to pass, that Yahuah (LORD) spake unto Joshua the son of Nun, Moses' minister, saying,* (Joshua 1:1), and the charge *Be strong and of a good courage: for unto this people shalt thou divide for an inheritance the land, which I sware unto their fathers to give them* (Joshua 1:6). When he lifted up his hands and stretched out his sword against the cities (Sirach 46:2), it was no arm of flesh but covenant power — *Who before him so stood to it? for Yahuah (God) himself brought his enemies to him* (Sirach 46:3). The faith-roll names that same conquest: *By faith the walls of Jericho fell down, after they were compassed about seven days* (Hebrews 11:30). It ain't new — Ben Sira is simply reading the same scroll of the fathers.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 46,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Joshua 1:1 — *Now after the death of Moses the servant of Yahuah (LORD) it came to pass, that Yahuah (LORD) spake unto Joshua the son of Nun, Moses' minister, saying,* The Tanakh names the same successor of Moses whom Sirach 46:1 praises, Joshua son of Nun, not the Messiah."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Joshua 1:6 — *Be strong and of a good courage: for unto this people shalt thou divide for an inheritance the land, which I sware unto their fathers to give them.* This is the charge to set Israel in the inheritance that Sirach 46:1 says Joshua was made great to accomplish."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Hebrews 11:30 — *By faith the walls of Jericho fell down, after they were compassed about seven days.* The valiant wars and lifted sword of Sirach 46:2 are counted by the apostle as the works of faith under Joshua."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-46-sun-stood-still",
+      "title": "The sun went back, one day as long as two, hailstones at Beth-horon",
+      "summary_md": "Ben Sira remembers the day the heavens themselves halted for the captain: *Did not the sun go back by his means? and was not one day as long as two?* (Sirach 46:4), *He called upon the most high Yahuah (God), when the enemies pressed upon him on every side; and the great Yahuah (God) heard him* (Sirach 46:5), *And with hailstones of mighty power he made the battle to fall violently upon the nations, and in the descent of Beth-horon he destroyed them that resisted* (Sirach 46:6). The Tanakh records the very prayer: *Then spake Joshua to Yahuah (LORD) in the day when Yahuah (LORD) delivered up the Amorites before the children of Yashar'el (Israel), and he said in the sight of Yashar'el (Israel), Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon* (Joshua 10:12), and the hailstones too: *And it came to pass, as they fled from before Yashar'el (Israel), and were in the going down to Beth-horon, that Yahuah (LORD) cast down great stones from heaven upon them unto Azekah* (Joshua 10:11). And the scroll Joshua himself cited — the book of Jasher — tells the very same wonder: *And when they were smiting, the day was declining toward evening, and Joshua said in the sight of all the people, Sun, stand you still upon Gibeon, and you moon in the valley of Ajalon, until the nation shall have revenged itself upon its enemies* (Jasher 88:63). Three witnesses, one stopped sun — it ain't new.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 46,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 10,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Joshua 10:12 — *Then spake Joshua to Yahuah (LORD) in the day when Yahuah (LORD) delivered up the Amorites before the children of Yashar'el (Israel), and he said in the sight of Yashar'el (Israel), Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon.* This is the prayer behind Sirach 46:4's sun going back and one day as long as two."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 10,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Joshua 10:11 — *And it came to pass, as they fled from before Yashar'el (Israel), and were in the going down to Beth-horon, that Yahuah (LORD) cast down great stones from heaven upon them unto Azekah, and they died: they were more which died with hailstones than they whom the children of Yashar'el (Israel) slew with the sword.* The hailstones at the descent of Beth-horon in Sirach 46:6 are the very stones from heaven named here."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 4,
+          "tgt_edition": "jasher",
+          "tgt_book": "jasher",
+          "tgt_ch": 88,
+          "tgt_v": 63,
+          "tier": "extras",
+          "note": "Jasher 88:63 — *And when they were smiting, the day was declining toward evening, and Joshua said in the sight of all the people, Sun, stand you still upon Gibeon, and you moon in the valley of Ajalon, until the nation shall have revenged itself upon its enemies.* The book Joshua cites preserves the same stayed sun that Sirach 46:4 marvels over."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 6,
+          "tgt_edition": "jasher",
+          "tgt_book": "jasher",
+          "tgt_ch": 88,
+          "tgt_v": 61,
+          "tier": "extras",
+          "note": "Jasher 88:61 — *And whilst they were fleeing, Yahuah (the Lord) sent upon them hailstones from heaven, and more of them died by the hailstones, than by the slaughter of the children of Israel.* Jasher confirms the hailstones of mighty power that Sirach 46:6 sets in the descent of Beth-horon."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-46-he-followed-the-mighty-one",
+      "title": "He fought in the sight of Yahuah and followed the Mighty One",
+      "summary_md": "Ben Sira seals the conquest portrait with the secret of Joshua's strength: *And with hailstones of mighty power he made the battle to fall violently upon the nations, and in the descent of Beth-horon he destroyed them that resisted, that the nations might know all their strength, because he fought in the sight of Yahuah (God), and he followed the Mighty One* (Sirach 46:6). To follow the Mighty One fully is the same charge Joshua received at the start: *Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest* (Joshua 1:9). And the book of Jasher names the rout at Gibeon down the Beth-horon road: *And Yahuah (the Lord) confounded them before the children at Israel, who smote them with a terrible slaughter in Gibeon, and pursued them along the way that goes up to Beth Horon to Makkedah, and they fled from before the children of Israel* (Jasher 88:60). The captain conquered because he followed — it ain't new.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 46,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 1,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Joshua 1:9 — *Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest.* To fight in the sight of Yahuah and follow the Mighty One (Sirach 46:6) is to keep this opening charge."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 6,
+          "tgt_edition": "jasher",
+          "tgt_book": "jasher",
+          "tgt_ch": 88,
+          "tgt_v": 60,
+          "tier": "extras",
+          "note": "Jasher 88:60 — *And Yahuah (the Lord) confounded them before the children at Israel, who smote them with a terrible slaughter in Gibeon, and pursued them along the way that goes up to Beth Horon to Makkedah, and they fled from before the children of Israel.* Jasher names the descent of Beth-horon where Sirach 46:6 says Joshua destroyed them that resisted."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-46-joshua-and-caleb-faithful-spies",
+      "title": "Joshua and Caleb withstood the congregation, two of six hundred thousand preserved",
+      "summary_md": "Before the conquest, Ben Sira recalls the two faithful spies who stood against a faithless camp: *In the time of Moses also he did a work of mercy, he and Caleb the son of Jephunne, in that they withstood the congregation, and withheld the people from sin, and appeased the wicked murmuring* (Sirach 46:7), *And of six hundred thousand people on foot, they two were preserved to bring them in to the heritage, even to the land that floweth with milk and honey* (Sirach 46:8). The Tanakh shows the two rending their clothes before the mob: *And Joshua the son of Nun, and Caleb the son of Jephunneh, which were of them that searched the land, rent their clothes* (Numbers 14:6), pleading *If Yahuah (LORD) delight in us, then he will bring us into this land, and give it us; a land which floweth with milk and honey* (Numbers 14:8). Of all that generation only these two crossed over — the seed kept faithful while the rest fell. It ain't new.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 46,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 14,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Numbers 14:6 — *And Joshua the son of Nun, and Caleb the son of Jephunneh, which were of them that searched the land, rent their clothes:* These are the two who withstood the congregation in Sirach 46:7, named together as the faithful spies."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 14,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Numbers 14:8 — *If Yahuah (LORD) delight in us, then he will bring us into this land, and give it us; a land which floweth with milk and honey.* This is the very plea to enter the land flowing with milk and honey that Sirach 46:8 says the two were preserved to reach."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-46-caleb-wholly-followed",
+      "title": "Caleb's strength to old age, his seed obtained the heritage — wholly following Yahuah",
+      "summary_md": "Ben Sira gives Caleb his own crown for unwavering loyalty: *Yahuah (God) gave strength also to Caleb, which remained with him to his old age: so that he entered upon the high places of the land, and his seed obtained it for an heritage* (Sirach 46:9), *That all the children of Yashar'el (Israel) might see that it is good to follow Yahuah (God)* (Sirach 46:10). The Tanakh's word over Caleb is the same: *But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it* (Numbers 14:24). And in his old age the inheritance came, just as Ben Sira says: *And Joshua blessed him, and gave unto Caleb the son of Jephunneh Hebron for an inheritance* (Joshua 14:13), *because that he wholly followed Yahuah Elohim (the LORD God) of Yashar'el (Israel)* (Joshua 14:14). To follow Yahuah fully is good and is rewarded with the heritage — it ain't new.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 46,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 14,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Numbers 14:24 — *But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it.* This is the promise that Caleb's seed would obtain the heritage, exactly as Sirach 46:9 records."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 14,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Joshua 14:13 — *And Joshua blessed him, and gave unto Caleb the son of Jephunneh Hebron for an inheritance.* Caleb entering the high places of the land in his old age (Sirach 46:9) is fulfilled in the gift of Hebron."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 14,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Joshua 14:14 — *Hebron therefore became the inheritance of Caleb the son of Jephunneh the Kenezite unto this day, because that he wholly followed Yahuah Elohim (the LORD God) of Yashar'el (Israel).* This names the very reason Sirach 46:10 commends, that it is good to follow Yahuah."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-46-the-judges-hearts-turned-not",
+      "title": "The judges whose heart went not a whoring — let their memory be blessed",
+      "summary_md": "Ben Sira passes a blessing over the deliverers of the next age: *And concerning the judges, every one by name, whose heart went not a whoring, nor departed from Yahuah (God), let their memory be blessed* (Sirach 46:11), *Let their bones flourish out of their place, and let the name of them that were honoured be continued upon their children* (Sirach 46:12). The book of Judges records the raising up of these very deliverers: *Nevertheless Yahuah (LORD) raised up judges, which delivered them out of the hand of those that spoiled them* (Judges 2:16). The apostle gathers them into the cloud of witnesses by name: *And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets* (Hebrews 11:32). The faithful judges are remembered in three scrolls alike — it ain't new.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 46,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "judges",
+          "tgt_ch": 2,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Judges 2:16 — *Nevertheless Yahuah (LORD) raised up judges, which delivered them out of the hand of those that spoiled them.* These are the judges whose memory Sirach 46:11 blesses, the deliverers Yahuah raised up."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 32,
+          "tier": "free",
+          "note": "Hebrews 11:32 — *And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets:* The apostle's roll of judges and Samuel runs parallel to Ben Sira's blessing of the judges in Sirach 46:11."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-46-samuel-prophet-established-kingdom",
+      "title": "Samuel the prophet — established the kingdom, called on Yahuah, the sucking lamb and the thunder",
+      "summary_md": "Ben Sira crowns the chapter with Samuel, prophet and kingmaker: *Samuel, the prophet of Yahuah (God), beloved of his Elohim (God), established a kingdom, and anointed princes over his people* (Sirach 46:13), *By his faithfulness he was found a true prophet, and by his word he was known to be faithful in vision* (Sirach 46:15). The Tanakh confirms the true prophet: *And all Yashar'el (Israel) from Dan even to Beer-sheba knew that Samuel was established to be a prophet of Yahuah (LORD)* (1 Samuel 3:20). Ben Sira's *He called upon the mighty Yahuah (God), when his enemies pressed upon him on every side, when he offered the sucking lamb* (Sirach 46:16) is the very scene at Mizpeh: *And Samuel took a sucking lamb, and offered it for a burnt offering wholly unto Yahuah (LORD): and Samuel cried unto Yahuah (LORD) for Yashar'el (Israel); and Yahuah (LORD) heard him* (1 Samuel 7:9). And the thunder that answered him (Sirach 46:17) — *So Samuel called unto Yahuah (LORD); and Yahuah (LORD) sent thunder and rain that day: and all the people greatly feared Yahuah (LORD) and Samuel* (1 Samuel 12:18). His farewell witness before Yahuah and his anointed (Sirach 46:19) is the integrity of 1 Samuel 12:3. It ain't new — the prophet's whole life is in the scroll.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 46,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "1-samuel",
+          "tgt_ch": 3,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "1 Samuel 3:20 — *And all Yashar'el (Israel) from Dan even to Beer-sheba knew that Samuel was established to be a prophet of Yahuah (LORD).* This confirms the true and faithful prophet that Sirach 46:15 says was known to be faithful in vision."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "1-samuel",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "1 Samuel 7:9 — *And Samuel took a sucking lamb, and offered it for a burnt offering wholly unto Yahuah (LORD): and Samuel cried unto Yahuah (LORD) for Yashar'el (Israel); and Yahuah (LORD) heard him.* This is the very sucking lamb and the cry to Yahuah that Sirach 46:16 records."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "1-samuel",
+          "tgt_ch": 12,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "1 Samuel 12:18 — *So Samuel called unto Yahuah (LORD); and Yahuah (LORD) sent thunder and rain that day: and all the people greatly feared Yahuah (LORD) and Samuel.* The thunder Yahuah made to be heard from heaven in Sirach 46:17 is this answer to Samuel's call."
+        },
+        {
+          "src_ch": 46,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "1-samuel",
+          "tgt_ch": 12,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "1 Samuel 12:3 — *Behold, here I am: witness against me before Yahuah (LORD), and before his anointed: whose ox have I taken? or whose ass have I taken? or whom have I defrauded? whom have I oppressed? or of whose hand have I received any bribe to blind mine eyes therewith? and I will restore it you.* This is Samuel's protestation of innocence before Yahuah and his anointed that Sirach 46:19 recalls."
+        }
+      ]
+    }
+  ]
+}

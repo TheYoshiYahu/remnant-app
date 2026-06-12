@@ -1,0 +1,260 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 48,
+  "session": "session253",
+  "tag": "sir48",
+  "base_band": 59475,
+  "threads": [
+    {
+      "slug": "sirach-48-elias-fire-shut-heaven",
+      "title": "Elias stood up as fire — shut the heaven, called down fire",
+      "summary_md": "Ben Sira lifts up the Tishbite first of all the latter fathers: *Then stood up Elias the prophet as fire, and his word burned like a lamp* (Ecclesiasticus 48:1), *He brought a sore famine upon them, and by his zeal he diminished their number* (Ecclesiasticus 48:2), *By the word of Yahuah (God) he shut up the heaven, and also three times brought down fire* (Ecclesiasticus 48:3). It ain't new — this is the Carmel man drawn straight from the Tanakh, where Elijah prays and *Then the fire of Yahuah (LORD) fell, and consumed the burnt sacrifice, and the wood, and the stones, and the dust, and licked up the water that was in the trench* (1 Kings 18:38), the same prophet whose word turns the heart of the people, *that thou hast turned their heart back again* (1 Kings 18:37). The same library, the same fire-tongued witness.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 48,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 18,
+          "tgt_v": 38,
+          "tier": "free",
+          "note": "1 Kings 18:38 — *Then the fire of Yahuah (LORD) fell, and consumed the burnt sacrifice, and the wood, and the stones, and the dust, and licked up the water that was in the trench.* This is the fire Ben Sira praises when he says Elias *also three times brought down fire* in Sirach 48:3."
+        },
+        {
+          "src_ch": 48,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 18,
+          "tgt_v": 37,
+          "tier": "free",
+          "note": "1 Kings 18:37 — *Hear me, O Yahuah (LORD), hear me, that this people may know that thou art Yahuah Elohim (the LORD God), and that thou hast turned their heart back again.* Elijah's burning word, the lamp of Sirach 48:1, is the prayer that turns the people's heart back at Carmel."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-48-elias-raised-the-dead",
+      "title": "Who raised a dead man from death",
+      "summary_md": "*Who did raise up a dead man from death, and his soul from the place of the dead, by the word of the Most High* (Ecclesiasticus 48:5). Ben Sira remembers Zarephath, where Elijah *stretched himself upon the child three times, and cried unto Yahuah (LORD), and said, O Yahuah (LORD) my Elohim (God), I pray thee, let this child's soul come into him again* (1 Kings 17:21), and the child *revived* (1 Kings 17:22). The deuterocanon and the Tanakh hold one resurrection witness, which the writer to the Hebrews gathers up: *Women received their dead raised to life again* (Hebrews 11:35). It ain't new.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 48,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 17,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "1 Kings 17:21 — *And he stretched himself upon the child three times, and cried unto Yahuah (LORD), and said, O Yahuah (LORD) my Elohim (God), I pray thee, let this child's soul come into him again.* This is the raising Ben Sira praises in Sirach 48:5, the dead man's soul called back from the place of the dead."
+        },
+        {
+          "src_ch": 48,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Hebrews 11:35 — *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection:* The widow's son raised by Elijah in Sirach 48:5 is named among the great cloud of the faith who tasted the resurrection."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-48-elias-whirlwind-restore-tribes",
+      "title": "Taken up in a whirlwind — to come again and restore the tribes",
+      "summary_md": "*Who was taken up in a whirlwind of fire, and in a chariot of fiery horses* (Ecclesiasticus 48:9), *Who were ordained for reproofs in their times, to pacify the wrath of the judgment of Yahuah (God), before it brake forth into fury, and to turn the heart of the father to the son, and to restore the tribes of Jacob* (Ecclesiasticus 48:10). This is Sinai-grammar at the seam of the ages. The Tanakh records the ascent — *Elijah went up by a whirlwind into heaven* (2 Kings 2:11) — and seals the promise of his return: *Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD)* (Malachi 4:5), *And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse* (Malachi 4:6). Yahusha the Messiah confirms it stands still future — *Elias truly shall first come, and restore all things* (Matthew 17:11) — and the angel says of John, *And he shall go before him in the spirit and power of Elias, to turn the hearts of the fathers to the children, and the disobedient to the wisdom of the just; to make ready a people prepared for Yahuah (Lord)* (Luke 1:17). The restoring of the tribes of Jacob — the gathering — is Ben Sira's own word.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 48,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 2,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "2 Kings 2:11 — *And it came to pass, as they still went on, and talked, that, behold, there appeared a chariot of fire, and horses of fire, and parted them both asunder; and Elijah went up by a whirlwind into heaven.* This is the very whirlwind and chariot of fiery horses Ben Sira describes in Sirach 48:9."
+        },
+        {
+          "src_ch": 48,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 4,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Malachi 4:5 — *Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD):* Sirach 48:10's Elias 'ordained for reproofs in their times... before it brake forth into fury' is Malachi's Elijah sent ahead of the dreadful day."
+        },
+        {
+          "src_ch": 48,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 4,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Malachi 4:6 — *And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.* Ben Sira quotes this very turning of the heart 'of the father to the son' in Sirach 48:10."
+        },
+        {
+          "src_ch": 48,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 17,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Matthew 17:11 — *And Yahusha (Jesus) answered and said unto them, Elias truly shall first come, and restore all things.* The Messiah affirms the Elijah-restoration Sirach 48:10 looks for: to restore the tribes of Jacob."
+        },
+        {
+          "src_ch": 48,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 1,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Luke 1:17 — *And he shall go before him in the spirit and power of Elias, to turn the hearts of the fathers to the children, and the disobedient to the wisdom of the just; to make ready a people prepared for Yahuah (Lord).* The Elias-spirit that turns the fathers' hearts in Sirach 48:10 rests on the forerunner who prepares the gathered people."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-48-eliseus-double-portion-wonders-in-death",
+      "title": "Eliseus filled with his spirit — wonders even in death",
+      "summary_md": "*Elias it was, who was covered with a whirlwind: and Eliseus was filled with his spirit* (Ecclesiasticus 48:12); *He did wonders in his life, and at his death were his works marvellous* (Ecclesiasticus 48:14). The double portion is the Tanakh's own granting: Elisha asks, *let a double portion of thy spirit be upon me* (2 Kings 2:9), and the wonder in death is recorded plainly — a dead man cast into the prophet's grave *touched the bones of Elisha... revived, and stood up on his feet* (2 Kings 13:21). The marvel after death that Ben Sira praises is no new invention; it stands written.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 48,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "2 Kings 2:9 — *And it came to pass, when they were gone over, that Elijah said unto Elisha, Ask what I shall do for thee, before I be taken away from thee. And Elisha said, I pray thee, let a double portion of thy spirit be upon me.* This is the spirit of Elijah that filled Eliseus in Sirach 48:12."
+        },
+        {
+          "src_ch": 48,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 13,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "2 Kings 13:21 — *And it came to pass, as they were burying a man, that, behold, they spied a band of men; and they cast the man into the sepulchre of Elisha: and when the man was let down, and touched the bones of Elisha, he revived, and stood up on his feet.* This is the marvel at his death that Ben Sira praises in Sirach 48:14 — his very bones gave life."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-48-ezekias-fortified-the-city",
+      "title": "Ezekias fortified Sion and trusted in Yahuah",
+      "summary_md": "*Ezekias fortified his city, and brought in water into the midst thereof: he digged the hard rock with iron, and made wells for waters* (Ecclesiasticus 48:17); *For Ezekias had done the thing that pleased Yahuah (God), and was strong in the ways of David his father* (Ecclesiasticus 48:22). The Tanakh's testimony of him is identical: *He trusted in Yahuah Elohim (the LORD God) of Yashar'el (Israel); so that after him was none like him among all the kings of Yahudah (Judah)* (2 Kings 18:5), and when Sennacherib came (*Now in the fourteenth year of king Hezekiah did Sennacherib king of Assyria come up against all the fenced cities of Yahudah (Judah), and took them* — 2 Kings 18:13) the king who pleased Yahuah was the king who stood. It ain't new.",
+      "anchor_start_v": 17,
+      "anchor_end_v": 22,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 48,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 18,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "2 Kings 18:5 — *He trusted in Yahuah Elohim (the LORD God) of Yashar'el (Israel); so that after him was none like him among all the kings of Yahudah (Judah), nor any that were before him.* This is the Ezekias who 'had done the thing that pleased Yahuah' and 'was strong in the ways of David' in Sirach 48:22."
+        },
+        {
+          "src_ch": 48,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 18,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "2 Kings 18:13 — *Now in the fourteenth year of king Hezekiah did Sennacherib king of Assyria come up against all the fenced cities of Yahudah (Judah), and took them.* This is the Sennacherib who 'came up... and lifted up his hand against Sion' in Sirach 48:18."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-48-the-angel-smote-the-assyrians",
+      "title": "They called upon Yahuah — His angel destroyed the host",
+      "summary_md": "*But they called upon Yahuah (God) which is merciful, and stretched out their hands toward him: and immediately the Holy One heard them out of heaven, and delivered them by the ministry of Esay* (Ecclesiasticus 48:20); *He struck the host of the Assyrians, and his angel destroyed them* (Ecclesiasticus 48:21). The deliverance is the Tanakh's, word for deed: Hezekiah prayed, *Now therefore, O Yahuah (LORD) our Elohim (God), I beseech thee, save thou us out of his hand* (2 Kings 19:19), and *the angel of Yahuah (LORD) went out, and smote in the camp of the Assyrians an hundred fourscore and five thousand* (2 Kings 19:35). Ben Sira's angel-deliverance by the ministry of Isaiah is the same night of salvation.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 21,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 48,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 19,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "2 Kings 19:19 — *Now therefore, O Yahuah (LORD) our Elohim (God), I beseech thee, save thou us out of his hand, that all the kingdoms of the earth may know that thou art Yahuah Elohim (the LORD God), even thou only.* This is the crying out to merciful Yahuah that Sirach 48:20 says the Holy One heard out of heaven."
+        },
+        {
+          "src_ch": 48,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 19,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "2 Kings 19:35 — *And it came to pass that night, that the angel of Yahuah (LORD) went out, and smote in the camp of the Assyrians an hundred fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses.* This is the angel that 'destroyed them' and 'struck the host of the Assyrians' in Sirach 48:21."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-48-esay-sun-backward-saw-the-last-things",
+      "title": "Esay — the sun went backward, and he saw the last things",
+      "summary_md": "*In his time the sun went backward, and he lengthened the king's life* (Ecclesiasticus 48:23); *He saw by an excellent spirit what should come to pass at the last, and he comforted them that mourned in Sion* (Ecclesiasticus 48:24); *He shewed what should come to pass for ever, and secret things or ever they came* (Ecclesiasticus 48:25). The sign of the dial is the Tanakh's: *And Isaiah the prophet cried unto Yahuah (LORD): and he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz* (2 Kings 20:11), the prophet who said *I will add unto thy days fifteen years* (Isaiah 38:5). And the seer who comforts mourning Sion is the same whose scroll opens, *The vision of Isaiah the son of Amoz, which he saw concerning Yahudah (Judah) and Jerusalem... in the days of... Hezekiah* (Isaiah 1:1), and whose word of comfort is *Comfort ye, comfort ye my people, saith your Elohim (God)* (Isaiah 40:1). It ain't new — Ben Sira reads the last things in the great prophet's own scroll.",
+      "anchor_start_v": 23,
+      "anchor_end_v": 25,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 48,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 20,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "2 Kings 20:11 — *And Isaiah the prophet cried unto Yahuah (LORD): and he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz.* This is the sun going backward and the king's life lengthened in Sirach 48:23, done at Isaiah's word."
+        },
+        {
+          "src_ch": 48,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 1:1 — *The vision of Isaiah the son of Amoz, which he saw concerning Yahudah (Judah) and Jerusalem in the days of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Yahudah (Judah).* This is the Esay 'great and faithful in his vision' of Sirach 48:22, the prophet of Hezekiah's days."
+        },
+        {
+          "src_ch": 48,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 40,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 40:1 — *Comfort ye, comfort ye my people, saith your Elohim (God).* This is the prophet's comfort to 'them that mourned in Sion' that Ben Sira praises in Sirach 48:24."
+        }
+      ]
+    }
+  ]
+}
