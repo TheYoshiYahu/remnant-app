@@ -104,3 +104,46 @@ Band base 20000, migration `session301_genesis_cross_references.sql`.
   which the heuristic strips before shingling); quote verbatim. Same benign class as 1 Chron 1:1.
   Parse cautions: Jasher 14 is the unrelated Rikayon/Egyptian-tax tale (NOT pulled for Gen 13/14);
   Jubilees parse skips 14:7/12/17/21 (used only present clean verses).
+
+## PACK 5 (ch16-19) — Hagar/El Roi, the circumcision covenant, the Mamre visit, Sodom (23 threads / 110 members, bands 20375-20465)
+- **Gen 16 — the angel of Yahuah = the Formed Son (FIRST appearance).** The very first "angel of
+  Yahuah" in Scripture speaks AS Yahuah (*I will multiply thy seed*) and is named by Hagar *Thou
+  Elohim seest me* (RL #4). Proven from Exodus 3:2 where the same "angel of Yahuah" in the bush is
+  called Yahuah/Elohim. **El Roi** (16:13) = the God who SEES the afflicted outcast (Exod 3:7,
+  Gen 29:32, Ps 139:16). **Ishmael's seed multiplied** (16:10) = a REAL bloodline blessing on
+  Abram's firstborn-by-flesh (Gen 17:20; 21:13,18; 25:16,18) — but the COVENANT line runs through
+  Isaac; the wild-man oracle framed as destiny, never ethnic contempt (Victims-not-enemies).
+  **Gal 4 bondwoman/freewoman** framed STRICTLY as flesh-effort-to-manufacture-the-promise (Sarai
+  giving Hagar) vs. promise-born seed — NOT Law-vs-grace supersession (RL #6); grounded in the
+  Gen 21:10,12 narrative Paul cites.
+- **★★ Gen 17 — circumcision = the everlasting covenant SIGN, NOT abolished (the contested
+  centerpiece).** The token in the flesh (17:11) ordered as sign-SEALING covenant-trust: **Rom
+  4:11** (*a sign... a seal of the righteousness of the faith* — trust→sign→walk, ties to the live
+  15:6 thread); **Acts 7:8** (the covenant of circumcision carried down the bloodline). Heart-
+  circumcision (**Rom 2:28-29**, Col 2:11; Deut 10:16/30:6, Jer 4:4) framed as the INWARD reality
+  the sign always required — fulfills, never cancels. **El Shaddai / walk before me and be perfect**
+  (17:1) = the covenant walked not merely confessed. **Abram→Abraham father of many nations** (Rom
+  4:17) = the seed-multitude / two-house expansion gathered IN the one seed, not false-inclusion.
+  **Covenant with Isaac not Ishmael** (Rom 9:7-9, Gal 4:28) — the elect line narrows; Ishmael
+  blessed in the flesh (twelve princes). Jubilees 15 is the great circumcision chapter (eternal
+  ordinance). PARSE NOTE: Jubilees 15 runs vv.6-9 together into v5 — there is no standalone 15:9;
+  the everlasting-covenant/"Elohim to you and your seed" clause lives in the tail of 15:5 (one row
+  repointed 15:9→15:5 at the resolve gate).
+- **Gen 18 — the theophany at Mamre = the Formed Son.** *Yahuah appeared* — He eats, speaks, is
+  called Yahuah while the two angels go on to Sodom and *Abraham stood yet before Yahuah* (18:22);
+  John 8:56 (*Abraham rejoiced to see my day*), Heb 13:2 (entertained angels). The **set-time
+  promise of Isaac** (Rom 9:9, the word of PROMISE / elect seed by promise not flesh); *Is any
+  thing too hard for Yahuah?* (Jer 32:17,27; Luke 1:37). **Abraham the intercessor** — *Shall not
+  the Judge of all the earth do right?* — standing in the breach for the wicked (Ezek 22:30, Ps
+  106:23), the Friend of Elohim (James 2:23; 2 Chron 20:7, Isa 41:8), the intercession-pattern.
+- **★ Gen 19 — Sodom = the standing TYPE of the judgment, the righteous delivered.** *Brimstone and
+  fire from Yahuah out of heaven* (19:24, the "from Yahuah... from Yahuah" doubling kept light via
+  Formed-and-Formless, no co-equal-persons grammar): Luke 17:28-30 (*the day when the Son of Adam
+  is revealed* — "Son of Adam" kept exact), 2 Pet 2:6-9 (wicked judged AND just Lot delivered),
+  Jude 7 (vengeance of eternal fire), Matt 10:15/11:24. **Remember Lot's wife** (Luke 17:32) =
+  the half-delivered heart looking back. **Elohim remembered Abraham and sent Lot out** (19:29) —
+  ch18's intercession bearing fruit (2 Pet 2:7,9; Wis 10:6). Sodom-the-proverb laterals (Isa 13:19,
+  Isa 1:9, Deut 29:23, Jer 49:18, Amos 4:11). Moab/Ammon origin (19:37-38) recorded but the
+  Moab→Ruth→Messianic-line redemption deliberately NOT forced here (held for Ruth/Matt 1).
+- Gate notes: all 110 quotes fidelity-clean (110/110, 0 flagged); arity 0; 0 unresolved refs. The
+  ONLY gate catch was Jubilees 15:9 (non-existent verse, run-together parse) → repointed to 15:5.

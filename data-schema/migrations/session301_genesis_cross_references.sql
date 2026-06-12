@@ -5810,6 +5810,1938 @@ SELECT t.id, cr.id, 6, E'*the nation... shall I judge, and after that they will 
  WHERE t.slug='genesis-15-thy-seed-a-stranger-four-hundred-years'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_genesis_16.sql (Genesis 16) -----
+-- Chapter: Genesis 16 (Sarai bears Abram no children and gives her Egyptian handmaid Hagar to him to build seed by the flesh; Hagar conceives and despises Sarai, who deals hardly with her so that she flees; THE ANGEL OF YAHUAH — the FIRST appearance of "the angel of Yahuah" in Scripture, the Formed Son who bears the Name — finds her by the fountain in the wilderness, bids her return, and speaks AS Yahuah: "I will multiply thy seed exceedingly"; Ishmael named, "Yahuah hath heard thy affliction"; the wild-man oracle; EL ROI — "Thou Elohim seest me" — and the well Beer-lahai-roi; Ishmael born when Abram is fourscore and six)
+-- Tag: ge16   Temp view: _s301_ge16_lookup
+-- Sort band: base 20375, step 3 -> threads at 20375, 20378, 20381, 20384, 20387 (5 threads)
+-- Source of EVERY row: 'canon','genesis',16,v
+--
+-- Genesis 16 coverage:
+--   v.1-3 (Sarai bare him no children; her Egyptian handmaid Hagar; "go in unto my maid; it may be that I may obtain children by her"; Abram hearkened; Sarai gave Hagar to be his wife after ten years in Canaan)
+--        NT:     Galatians 4:23 (he who was of the bondwoman was born after the flesh; but he of the freewoman was by promise) — held in THREAD 5 (the allegory anchored on vv.1-4)
+--        Extras: Jubilees 14:22-23 (Sarai: "Go in to Hagar, my Egyptian maid: it may be that I shall build up seed to you by her"; Abram hearkened; gave her to be his wife); Jasher 16:24,27-28 (took her handmaid Hagar... gave her to Abram for a wife; the eighty-fifth year; Abram hearkened to the voice of his wife) — THREAD 1
+--        Tanakh: none warranted distinct (the build-seed-by-the-flesh weave is carried at THREAD 1 by the extras narrative parallels and THREAD 5 by the Galatians allegory)
+--   v.4-6 (Hagar conceived; her mistress despised in her eyes; Sarai's wrong; "Yahuah judge between me and thee"; Abram: "thy maid is in thy hand"; Sarai dealt hardly with her; she fled)
+--        NT:     none warranted distinct (folded with vv.1-3 into the flesh-scheme of THREAD 1)
+--        Extras: Jasher 16:29,33 (Hagar despised her mistress... "your handmaid is in your hand, do to her as it may seem good in your eyes"; and Sarai afflicted her, and Hagar fled to the wilderness) — THREAD 1
+--        Tanakh: none warranted distinct
+--   ★ v.7-9 (THE ANGEL OF YAHUAH found her by a fountain of water in the wilderness; "Hagar, Sarai's maid, whence camest thou?"; "Return to thy mistress, and submit thyself under her hands") — FIRST "angel of Yahuah" in Scripture
+--        NT:     none warranted distinct as MEMBER (the Formed-Son theophany is carried by the Tanakh laterals — Exodus 3:2 the SAME angel of Yahuah who is then called Yahuah/Elohim, and Genesis 21:17 the second appearance to Hagar)
+--        Extras: Jasher 16:34 (an angel of Yahuah found her... by a well: "Do not fear, for I will multiply your seed... return to Sarai your mistress, and submit thyself under her hands") — THREAD 2
+--        Tanakh: Exodus 3:2 (the angel of Yahuah appeared unto him in a flame of fire... and Yahuah/Elohim called unto him) — the angel of Yahuah who speaks AS Yahuah; Psalm 34:7 (the angel of Yahuah encampeth round about them that fear him, and delivereth them); Genesis 21:17 (the angel of Elohim called to Hagar out of heaven) — THREAD 2
+--   ★ v.10-12 ("I will multiply thy seed exceedingly, that it shall not be numbered for multitude"; "call his name Ishmael; because Yahuah hath heard thy affliction"; the wild-man oracle — his hand against every man; "he shall dwell in the presence of all his brethren")
+--        NT:     none warranted distinct (the Ishmael blessing is an OT-internal covenant thread; the bondwoman/freewoman contrast belongs to THREAD 5, not the seed-multiply blessing)
+--        Extras: Jubilees 14:24 (she conceived and bare him a son, and he called his name Ishmael... the eighty-sixth year in the life of Abram) — THREAD 4
+--        Tanakh: Genesis 17:20 (as for Ishmael... I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation); Genesis 21:13,18 (of the son of the bondwoman will I make a nation, because he is thy seed; I will make him a great nation); Genesis 25:16,18 (twelve princes according to their nations... he died in the presence of all his brethren — the oracle fulfilled) — THREAD 4
+--   ★★ v.13-14 (she called the name of Yahuah that spake unto her, "Thou Elohim seest me"... "Have I also here looked after him that seeth me?"; the well Beer-lahai-roi) — EL ROI, the God who SEES the afflicted outcast
+--        NT:     none warranted distinct (the seeing-God is woven through the Tanakh witnesses of Yahuah seeing affliction)
+--        Extras: Jasher 16:35 (Hagar called the place of that well Beer-lahai-roi, it is between Kadesh and the wilderness of Bered) — folded at THREAD 2 (Jasher 16:34) framing; not duplicated as a distinct EL-ROI member (Jasher gives the well-naming, not the "Thou Elohim seest me" saying)
+--        Tanakh: Exodus 3:7 (I have surely seen the affliction of my people which are in Egypt, and have heard their cry... for I know their sorrows); Genesis 29:32 (Leah: Surely Yahuah hath looked upon my affliction); Psalm 139:16 (thine eyes did see my substance, yet being unperfect; and in thy book all my members were written) — THREAD 3
+--   v.15-16 (Hagar bare Abram a son; Abram called his name Ishmael; Abram was fourscore and six years old)
+--        NT:     none warranted
+--        Extras: Jubilees 14:24 (he called his name Ishmael... this was the eighty-sixth year in the life of Abram); Jasher 16:36 (Hagar bare a son to Abram, and Abram called his name Ishmael; and Abram was eighty-six years old when he begat him) — THREAD 4
+--        Tanakh: carried into THREAD 4 (the Ishmael blessing/birth)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-16-sarai-gave-hagar-to-build-seed-by-the-flesh — Extras (Jubilees, Jasher) [extras]
+--   2. genesis-16-the-angel-of-yahuah-found-her-the-formed-son-who-bears-the-name — Tanakh (Exodus, Psalm, Genesis) + Extras (Jasher) [extras] (★ FIRST "angel of Yahuah"; Red Line #4 Christology)
+--   3. genesis-16-el-roi-thou-elohim-seest-me — Tanakh (Exodus, Genesis, Psalm) [free] (★★ EL ROI, the God who sees affliction)
+--   4. genesis-16-i-will-multiply-thy-seed-the-blessing-on-ishmael — Tanakh (Genesis) + Extras (Jubilees) [extras]
+--   5. genesis-16-the-bondwoman-and-the-freewoman-flesh-and-promise — NT (Galatians) + Tanakh (Genesis) [free] (★ Galatians 4 allegory; Red Line #6 — flesh-effort vs. promise, NEVER Law-vs-grace)
+--
+-- Framing notes:
+--   ★ THE ANGEL OF YAHUAH (THREAD 2) — Genesis 16:7 is the FIRST "angel of Yahuah" in all of Scripture. He is the
+--   Formed Son, the visible One who bears the Name (Red Line #4 — the Formed and the Formless). He speaks AS Yahuah:
+--   *I will multiply thy seed exceedingly* (16:10) is a first-person divine oath no created angel could swear; and
+--   Hagar names HIM directly — *she called the name of Yahuah that spake unto her, Thou Elohim seest me* (16:13).
+--   The thread proves the identification from the SAME idiom: at the bush *the angel of Yahuah appeared unto him in a
+--   flame of fire... and Yahuah saw... Elohim called unto him* (Exodus 3:2,4) — the angel of Yahuah IS Yahuah who
+--   speaks; *the angel of Yahuah encampeth round about them that fear him* (Psalm 34:7). NOT a created messenger,
+--   NOT a co-equal-persons or modalist grammar — the Formed Son who later took flesh, who appeared to the outcast
+--   bondwoman first of all. Genesis 21:17 is His second appearance to Hagar.
+--   ★★ EL ROI (THREAD 3) — *Thou Elohim seest me... Have I also here looked after him that seeth me?* (16:13). The
+--   afflicted, fleeing, foreign bondwoman names Yahuah by what He DID: He SAW her. The thread gathers the canon's
+--   witness that Yahuah sees the affliction of the lowly — *I have surely seen the affliction of my people... and
+--   have heard their cry* (Exodus 3:7); Leah the unloved wife, *Surely Yahuah hath looked upon my affliction*
+--   (Genesis 29:32); *thine eyes did see my substance* (Psalm 139:16). El Roi is the God who sees the one the
+--   household despised — Victims, not enemies (Red Line #7).
+--   ★ ISHMAEL'S SEED (THREAD 4) — *I will multiply thy seed exceedingly* (16:10). A real blessing rests on Abram's
+--   firstborn by the flesh — the bloodline carries a blessing (*because he is thy seed*, Genesis 21:13) — but the
+--   COVENANT line runs through Isaac, set up at 17:20-21 and 21:12. The wild-man oracle (*his hand will be against
+--   every man... he shall dwell in the presence of all his brethren*, 16:12) is recorded as a DESTINY, not ethnic
+--   contempt (Red Line #7, Victims not enemies); Genesis 25:18 marks its fulfillment — *he died in the presence of
+--   all his brethren*. Twelve princes (Genesis 17:20; 25:16) answer the seed-multiply word.
+--   ★ THE BONDWOMAN AND THE FREEWOMAN (THREAD 5) — Sha'ul (Paul) reads Hagar/Sarai allegorically in Galatians 4.
+--   NON-NEGOTIABLE FRAMING (Red Line #6; 1 John 2:3-4 filter): this is NOT Torah-is-bondage / grace-replaces-Law.
+--   The bondage is the WORKS-OF-THE-FLESH attempt to manufacture the promise by human scheme — Sarai giving Hagar to
+--   PRODUCE the heir by the flesh (*he who was of the bondwoman was born after the flesh; but he of the freewoman was
+--   by promise*, Galatians 4:23). The Hagar-attempt is self-effort trying to seize what only the promise can give;
+--   the freewoman's son comes BY PROMISE. The contrast is flesh-effort vs. promise, never Law vs. grace. Genesis
+--   21:10,12 ground the allegory in the text Sha'ul quotes — *cast out this bondwoman and her son* / *in Isaac shall
+--   thy seed be called*. Framed strictly as the scheme of the flesh set against the promise of Yahuah.
+--   EXTRAS: Jubilees 14:22-24 carries vv.1-3,15-16 verse-for-verse (Sarai building seed, Ishmael born, the
+--   eighty-sixth year) — clean parse, DOUBLE-WRITTEN 'jubilees','jubilees'. Jasher 16:24-36 carries the WHOLE chapter
+--   narrative (the giving of Hagar, the despising, the flight, the angel of Yahuah at the well, Beer-lahai-roi,
+--   Ishmael born at eighty-six) — clean parse, DOUBLE-WRITTEN 'jasher','jasher'. Jasher 16:34 collapses the angel's
+--   words and the Ishmael-naming together and is used at THREAD 2 (the angel of Yahuah). Jubilees 15/17 (circumcision
+--   and the Isaac-weaning casting-out) belong to Genesis 17 and 21, NOT 16, and are deliberately reserved for those
+--   chapters rather than forced here.
+
+CREATE TEMP VIEW _s301_ge16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Sarai gave Hagar to build seed by the flesh (the scheme of the flesh)
+    ('canon','genesis',16,2,'jubilees','jubilees',14,22,'extras',
+      E'*And Sarai advised her husband Abram, and said to him: "Go in to Hagar, my Egyptian maid: it may be that I shall build up seed to you by her."* (Jubilees 14:22). The restored witness names the scheme outright as building seed by the maid — the very word of *go in unto my maid; it may be that I may obtain children by her* (Genesis 16:2). The promised heir is sought not by waiting on Yahuah but by a plan of the flesh, the mistress reaching to manufacture the seed through her handmaid.'),
+    ('canon','genesis',16,3,'jubilees','jubilees',14,23,'extras',
+      E'*And Abram hearkened to the voice of Sarai his wife, and said to her, "Do (so)." And Sarai took Hagar, her maid, the Egyptian, and gave her to Abram, her husband, to be his wife.* (Jubilees 14:23). The restored witness carries the giving verse-for-verse with *Sarai Abram''s wife took Hagar her maid the Egyptian... and gave her to her husband Abram to be his wife* (Genesis 16:3) — and marks that *Abram hearkened to the voice of Sarai*, the same hearkening to the human voice rather than the divine promise.'),
+    ('canon','genesis',16,3,'jasher','jasher',16,24,'extras',
+      E'*And when she saw that she bare no children she took her handmaid Hagar, whom Pharaoh had given her, and she gave her to Abram her husband for a wife.* (Jasher 16:24). The restored chronicle tells the same act — *Sarai Abram''s wife took Hagar her maid the Egyptian... and gave her to her husband Abram to be his wife* (Genesis 16:3) — and remembers that this Egyptian maid was the one *whom Pharaoh had given her*, the spoil of the Egypt-sojourn now turned into the instrument of the flesh-scheme.'),
+    ('canon','genesis',16,4,'jasher','jasher',16,29,'extras',
+      E'*And when Hagar saw that she had conceived she rejoiced greatly, and her mistress was despised in her eyes, and she said within herself, This can only be that I am better before Elohim than Sarai my mistress...* (Jasher 16:29). The restored chronicle opens the heart of *when she saw that she had conceived, her mistress was despised in her eyes* (Genesis 16:4): the maid, made fruitful by the scheme, exalts herself over the barren mistress. The flesh-plan does not produce peace but contempt and rivalry in the house.'),
+    ('canon','genesis',16,6,'jasher','jasher',16,33,'extras',
+      E'*And Abram said to Sarai, Behold your handmaid is in your hand, do to her as it may seem good in your eyes; and Sarai afflicted her, and Hagar fled from her to the wilderness.* (Jasher 16:33). The restored chronicle keeps the scene whole with *thy maid is in thy hand; do to her as it pleaseth thee. And when Sarai dealt hardly with her, she fled from her face* (Genesis 16:6) — the bitter fruit of the flesh-scheme, the mistress afflicting and the maid fleeing into the wilderness.'),
+
+    -- THREAD 2 (★): The angel of Yahuah found her — the Formed Son who bears the Name
+    ('canon','genesis',16,7,'canon','exodus',3,2,'free',
+      E'*And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed.* (Exodus 3:2). The same One who *found her by a fountain of water in the wilderness* (Genesis 16:7) appears to Mosheh (Moses) in the bush — and at once *Yahuah saw... Elohim called unto him out of the midst of the bush* (Exodus 3:4): the angel of Yahuah IS Yahuah who speaks. This is the Formed Son, the visible One who bears the Name, not a created messenger.'),
+    ('canon','genesis',16,10,'canon','exodus',3,2,'free',
+      E'*And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush...* (Exodus 3:2). When the angel of Yahuah tells Hagar *I will multiply thy seed exceedingly, that it shall not be numbered for multitude* (Genesis 16:10), He swears a first-person divine oath no created angel could make — the same One who in the bush is named *Yahuah* and *Elohim*. The Formed Son speaks AS Yahuah because He bears the Name and is drawn from the Formless Source.'),
+    ('canon','genesis',16,7,'canon','psalms',34,7,'free',
+      E'*The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them.* (Psalm 34:7). The first time the angel of Yahuah appears in Scripture, He comes to a fleeing, despised bondwoman — *the angel of Yahuah found her by a fountain of water in the wilderness* (Genesis 16:7). The psalm sings what that finding means: *the angel of Yahuah encampeth round about them that fear him, and delivereth them*. The Formed Son seeks out the lowly and the outcast to deliver.'),
+    ('canon','genesis',16,9,'canon','genesis',21,17,'free',
+      E'*And Elohim (God) heard the voice of the lad; and the angel of Elohim (God) called to Hagar out of heaven, and said unto her, What aileth thee, Hagar? fear not; for Elohim (God) hath heard the voice of the lad where he is.* (Genesis 21:17). Years after the angel of Yahuah first met Hagar and bade her *Return to thy mistress* (Genesis 16:9), the same One meets her a second time in the wilderness — *the angel of Elohim called to Hagar out of heaven* — again hearing the affliction, again the visible One who bears the Name come to the cast-out bondwoman and her son.'),
+    ('canon','genesis',16,7,'jasher','jasher',16,34,'extras',
+      E'*And an angel of Yahuah (the Lord) found her in the place where she had fled, by a well, and he said to her, Do not fear, for I will multiply your seed, for you shall bear a son and you shall call his name Ishmael; now then return to Sarai your mistress, and submit thyself under her hands.* (Jasher 16:34). The restored chronicle gathers the whole encounter — *the angel of Yahuah found her by a fountain of water in the wilderness* (Genesis 16:7), the multiply-seed oath, the naming of Ishmael, and *Return to thy mistress, and submit thyself under her hands* (Genesis 16:9) — the Formed Son speaking the first-person divine promise to the fleeing maid.'),
+
+    -- THREAD 3 (★★): El Roi — Thou Elohim seest me (the God who sees affliction)
+    ('canon','genesis',16,13,'canon','exodus',3,7,'free',
+      E'*And Yahuah (LORD) said, I have surely seen the affliction of my people which are in Egypt, and have heard their cry by reason of their taskmasters; for I know their sorrows* (Exodus 3:7). Hagar names Yahuah by what He did — *Thou Elohim seest me* (Genesis 16:13), El Roi, the God who SEES. The same seeing reaches the whole afflicted people in Egypt: *I have surely seen the affliction of my people... and have heard their cry*. The God who saw one despised bondwoman is the God who sees His people in their bondage.'),
+    ('canon','genesis',16,13,'canon','genesis',29,32,'free',
+      E'*And Leah conceived, and bare a son, and she called his name Reuben: for she said, Surely Yahuah (LORD) hath looked upon my affliction; now therefore my husband will love me.* (Genesis 29:32). As Hagar named the God who saw her — *Thou Elohim seest me* (Genesis 16:13) — so Leah the unloved wife names the God who looked: *Surely Yahuah hath looked upon my affliction*. Twice the despised, lowly woman in the house confesses that Yahuah sees what man overlooks; the seeing-God is the comfort of the afflicted.'),
+    ('canon','genesis',16,13,'canon','psalms',139,16,'free',
+      E'*Thine eyes did see my substance, yet being unperfect; and in thy book all my members were written, which in continuance were fashioned, when as yet there was none of them.* (Psalm 139:16). Hagar''s wonder — *Have I also here looked after him that seeth me?* (Genesis 16:13) — is the psalmist''s confession made song: there is no place to flee from the eyes of Yahuah, *thine eyes did see my substance*. El Roi sees not only the affliction but the very frame of the one He made; the fleeing bondwoman cannot outrun the God who sees.'),
+
+    -- THREAD 4: I will multiply thy seed — the blessing on Ishmael (bloodline blessing, covenant through Isaac)
+    ('canon','genesis',16,10,'canon','genesis',17,20,'free',
+      E'*And as for Ishmael, I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation.* (Genesis 17:20). The angel''s word to Hagar — *I will multiply thy seed exceedingly, that it shall not be numbered for multitude* (Genesis 16:10) — is confirmed to Abraham himself: Ishmael blessed, multiplied, *twelve princes*, a great nation. A true blessing rests on the firstborn by the flesh; yet the very next verse keeps the covenant line distinct — *my covenant will I establish with Isaac* (Genesis 17:21). Bloodline carries a blessing; the covenant runs through Isaac.'),
+    ('canon','genesis',16,11,'canon','genesis',21,13,'free',
+      E'*And also of the son of the bondwoman will I make a nation, because he is thy seed.* (Genesis 21:13). When Hagar is sent away, Yahuah keeps the promise spoken at the fountain — *thou... shalt bear a son, and shalt call his name Ishmael; because Yahuah hath heard thy affliction* (Genesis 16:11): *of the son of the bondwoman will I make a nation, because he is thy seed*. The reason is the bloodline — *because he is thy seed* — the paternal line of Abram carrying a real blessing, even as the covenant heir is Isaac.'),
+    ('canon','genesis',16,11,'canon','genesis',21,18,'free',
+      E'*Arise, lift up the lad, and hold him in thine hand; for I will make him a great nation.* (Genesis 21:18). The name Ishmael means Yahuah heard — *Yahuah hath heard thy affliction* (Genesis 16:11) — and in the wilderness Yahuah hears the lad again and renews the word: *I will make him a great nation*. The seed-multiply promise of the fountain (Genesis 16:10) is not forgotten; the God who heard the mother''s affliction hears the son''s thirst.'),
+    ('canon','genesis',16,12,'canon','genesis',25,18,'free',
+      E'*And they dwelt from Havilah unto Shur, that is before Egypt, as thou goest toward Assyria: and he died in the presence of all his brethren.* (Genesis 25:18). The wild-man oracle — *he shall dwell in the presence of all his brethren* (Genesis 16:12) — comes to pass exactly: *he died in the presence of all his brethren*. The destiny spoken at the fountain is recorded as fulfilled, not as a curse of contempt but as the appointed dwelling of Ishmael''s seed alongside the sons of promise.'),
+    ('canon','genesis',16,12,'canon','genesis',25,16,'free',
+      E'*These are the sons of Ishmael, and these are their names, by their towns, and by their castles; twelve princes according to their nations.* (Genesis 25:16). The multiply-seed promise of the fountain — *I will multiply thy seed exceedingly, that it shall not be numbered for multitude* (Genesis 16:10) — is counted out in twelve princes, the great nation sworn to Hagar made visible in Ishmael''s sons by their towns and castles.'),
+    ('canon','genesis',16,15,'jubilees','jubilees',14,24,'extras',
+      E'*And he went in to her, and she conceived and bare him a son, and he called his name Ishmael, in the fifth year of this week; and this was the eighty-sixth year in the life of Abram.* (Jubilees 14:24). The restored witness carries the birth verse-for-verse with *Hagar bare Abram a son: and Abram called his son''s name... Ishmael* (Genesis 16:15) and *Abram was fourscore and six years old, when Hagar bare Ishmael* (Genesis 16:16) — the same son, the same name, the same eighty-sixth year of Abram''s life.'),
+
+    -- THREAD 5 (★): The bondwoman and the freewoman — flesh and promise (Galatians 4 allegory)
+    ('canon','genesis',16,3,'canon','galatians',4,22,'free',
+      E'*For it is written, that Abraham had two sons, the one by a bondmaid, the other by a freewoman.* (Galatians 4:22). Sha''ul (Paul) reaches back to the giving of Hagar — *Sarai... took Hagar her maid the Egyptian... and gave her to her husband Abram to be his wife* (Genesis 16:3) — to read the two sons as an allegory. The contrast is not Torah against grace; it is the son produced by human scheme set beside the son given by promise.'),
+    ('canon','genesis',16,4,'canon','galatians',4,23,'free',
+      E'*But he who was of the bondwoman was born after the flesh; but he of the freewoman was by promise.* (Galatians 4:23). When *Hagar... conceived* (Genesis 16:4), a son came *after the flesh* — by the scheme of the maid, the works of human effort trying to manufacture the heir. The freewoman''s son comes *by promise*, given by Yahuah. The bondage Sha''ul names is the flesh-effort to seize what only the promise can give — not the keeping of Yahuah''s commandments.'),
+    ('canon','genesis',16,1,'canon','galatians',4,28,'free',
+      E'*Now we, brethren, as Isaac was, are the children of promise.* (Galatians 4:28). Because *Sarai Abram''s wife bare him no children* (Genesis 16:1), the flesh moved to produce an heir by Hagar — but the true heir would come *by promise*, when Yahuah opened the barren womb. Sha''ul names those who belong to the promise *children of promise, as Isaac was*: born not of the scheme of the flesh but of the word Yahuah swore.'),
+    ('canon','genesis',16,15,'canon','galatians',4,30,'free',
+      E'*Nevertheless what saith the scripture? Cast out the bondwoman and her son: for the son of the bondwoman shall not be heir with the son of the freewoman.* (Galatians 4:30). Ishmael, *Hagar''s* son born of the flesh-scheme (Genesis 16:15), is the son of the bondwoman; Sha''ul quotes the casting-out (Genesis 21:10) to say the flesh-born cannot inherit the promise. The point is not that Torah is cast out, but that the self-effort of the flesh cannot stand as heir beside what Yahuah gives by promise.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-16-sarai-gave-hagar-to-build-seed-by-the-flesh',
+       E'Sarai gave Hagar — to build the seed by the flesh',
+       E'*Now Sarai Abram''s wife bare him no children: and she had an handmaid, an Egyptian, whose name was Hagar* (Genesis 16:1). The promise of the innumerable seed had been sworn (Genesis 15:5), but the womb stayed shut — and into the waiting the flesh moves: *Behold now, Yahuah (LORD) hath restrained me from bearing: I pray thee, go in unto my maid; it may be that I may obtain children by her. And Abram hearkened to the voice of Sarai* (Genesis 16:2). The restored witness names the scheme outright — *"Go in to Hagar, my Egyptian maid: it may be that I shall build up seed to you by her."* (Jubilees 14:22) — building seed by the maid rather than waiting on Yahuah. So *Sarai Abram''s wife took Hagar her maid the Egyptian... and gave her to her husband Abram to be his wife* (Genesis 16:3), the giving carried whole in the restored books (Jubilees 14:23; Jasher 16:24, which remembers Hagar was the maid *whom Pharaoh had given her* — the spoil of the Egypt-sojourn turned into the instrument of the plan). And the fruit of the flesh-scheme is not peace but rivalry: *when she saw that she had conceived, her mistress was despised in her eyes* (Genesis 16:4) — the maid exalting herself, *This can only be that I am better before Elohim than Sarai my mistress* (Jasher 16:29) — until *thy maid is in thy hand; do to her as it pleaseth thee. And when Sarai dealt hardly with her, she fled from her face* (Genesis 16:6; Jasher 16:33). The attempt to seize the promise by human effort produces contempt, affliction, and a bondwoman fleeing into the wilderness — the seed of strife, not the seed of promise.',
+       sv.verse_id, ev.verse_id, 'extras', 20375
+  FROM _s301_ge16_lookup sv, _s301_ge16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=16 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★ FIRST "angel of Yahuah" — Red Line #4 Christology)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-16-the-angel-of-yahuah-found-her-the-formed-son-who-bears-the-name',
+       E'The angel of Yahuah found her — the Formed Son who bears the Name',
+       E'*And the angel of Yahuah (LORD) found her by a fountain of water in the wilderness, by the fountain in the way to Shur* (Genesis 16:7). This is the FIRST appearance of "the angel of Yahuah" in all of Scripture — and He comes not to a patriarch or a priest but to a fleeing, despised, foreign bondwoman. He is the Formed Son, the visible One drawn from the Formless Source, the One who bears the Name. The proof is in His own words: *I will multiply thy seed exceedingly, that it shall not be numbered for multitude* (Genesis 16:10) — a first-person divine oath no created messenger could swear; and Hagar names Him directly, *she called the name of Yahuah that spake unto her* (Genesis 16:13). The same idiom unfolds at the bush, where *the angel of Yahuah (LORD) appeared unto him in a flame of fire* (Exodus 3:2) and at once *Yahuah saw... Elohim called unto him* (Exodus 3:4): the angel of Yahuah IS Yahuah who speaks — never a co-equal second person, never a modalist mask, but the Formed Son who appears and bears the Name. The psalm sings what His finding means: *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalm 34:7). The restored chronicle gathers the whole encounter — *an angel of Yahuah (the Lord) found her... by a well, and he said to her, Do not fear, for I will multiply your seed... return to Sarai your mistress, and submit thyself under her hands* (Jasher 16:34) — matching *Return to thy mistress, and submit thyself under her hands* (Genesis 16:9). And He comes to Hagar a second time in her distress: *the angel of Elohim (God) called to Hagar out of heaven... for Elohim (God) hath heard the voice of the lad* (Genesis 21:17). The Formed Son sought out the cast-out woman first of all — the visible One who would one day take flesh.',
+       sv.verse_id, ev.verse_id, 'extras', 20378
+  FROM _s301_ge16_lookup sv, _s301_ge16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=16 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★ EL ROI — the God who sees affliction)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-16-el-roi-thou-elohim-seest-me',
+       E'El Roi — Thou Elohim seest me',
+       E'*And she called the name of Yahuah (LORD) that spake unto her, Thou Elohim (God) seest me: for she said, Have I also here looked after him that seeth me?* (Genesis 16:13). The afflicted, fleeing, foreign bondwoman gives Yahuah a name no one had spoken before — El Roi, the God who SEES — naming Him by what He did for her: He saw her. And she marks the place, *Wherefore the well was called Beer-lahai-roi* (Genesis 16:14), the well of the Living One who sees me. The canon takes up this seeing again and again for the lowliest. At the bush Yahuah declares, *I have surely seen the affliction of my people which are in Egypt, and have heard their cry by reason of their taskmasters; for I know their sorrows* (Exodus 3:7) — the God who saw one despised maid is the God who sees a whole people in bondage. Leah, the unloved wife, names her firstborn out of the same comfort: *Surely Yahuah (LORD) hath looked upon my affliction* (Genesis 29:32). And the psalmist confesses there is no fleeing from those eyes — *Thine eyes did see my substance, yet being unperfect; and in thy book all my members were written* (Psalm 139:16). El Roi sees the affliction of the one the household despised, and sees the very frame of the one He made. The fleeing bondwoman could not outrun the God who sees — and that seeing was her deliverance, not her dread.',
+       sv.verse_id, ev.verse_id, 'free', 20381
+  FROM _s301_ge16_lookup sv, _s301_ge16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=16 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-16-i-will-multiply-thy-seed-the-blessing-on-ishmael',
+       E'I will multiply thy seed — the blessing on Ishmael',
+       E'*And the angel of Yahuah (LORD) said unto her, I will multiply thy seed exceedingly, that it shall not be numbered for multitude* (Genesis 16:10). A true seed-blessing is sworn over Abram''s firstborn by the flesh — and the name seals it: *shalt call his name Ishmael; because Yahuah (LORD) hath heard thy affliction* (Genesis 16:11), Ishmael, Yahuah-hears. Yet the blessing on the firstborn-by-the-flesh is never confused with the covenant line: to Abraham himself Yahuah says, *as for Ishmael, I have heard thee: Behold, I have blessed him... and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation* (Genesis 17:20) — and in the same breath, *my covenant will I establish with Isaac* (Genesis 17:21). Bloodline carries a real blessing — *of the son of the bondwoman will I make a nation, because he is thy seed* (Genesis 21:13) — and Yahuah hears the lad in the wilderness and renews the word, *I will make him a great nation* (Genesis 21:18); but the covenant runs through Isaac. Even the hard wild-man oracle — *he will be a wild man; his hand will be against every man... and he shall dwell in the presence of all his brethren* (Genesis 16:12) — is a destiny appointed, not contempt poured out; it comes to pass exactly, *he died in the presence of all his brethren* (Genesis 25:18), and the multiply-seed promise is counted in *twelve princes according to their nations* (Genesis 25:16). The restored witness keeps the birth whole — *she conceived and bare him a son, and he called his name Ishmael... and this was the eighty-sixth year in the life of Abram* (Jubilees 14:24) — matching *Hagar bare Abram a son... Ishmael* and *Abram was fourscore and six years old* (Genesis 16:15-16). The God who heard the mother''s affliction kept every word He swore over her son.',
+       sv.verse_id, ev.verse_id, 'extras', 20384
+  FROM _s301_ge16_lookup sv, _s301_ge16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=16 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★ Galatians 4 allegory — Red Line #6, flesh-effort vs. promise)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-16-the-bondwoman-and-the-freewoman-flesh-and-promise',
+       E'The bondwoman and the freewoman — flesh and promise',
+       E'*Now Sarai Abram''s wife bare him no children* (Genesis 16:1) — and out of that barrenness the flesh moved to produce an heir, *Sarai... took Hagar her maid the Egyptian... and gave her to her husband Abram to be his wife* (Genesis 16:3), so that *when she saw that she had conceived* (Genesis 16:4) a son came after the flesh. Sha''ul (Paul) reads this allegorically: *Abraham had two sons, the one by a bondmaid, the other by a freewoman* (Galatians 4:22), and *he who was of the bondwoman was born after the flesh; but he of the freewoman was by promise* (Galatians 4:23). Read carefully: the bondage Sha''ul names is NOT the Torah, and the freedom is NOT lawlessness. The slavery is the works-of-the-flesh attempt to MANUFACTURE the promise by human scheme — Sarai giving Hagar to produce the heir by self-effort, seizing what only Yahuah can give. The freewoman''s son comes *by promise*, when Yahuah opens the barren womb in His own time. So *we, brethren, as Isaac was, are the children of promise* (Galatians 4:28) — born not of the flesh-plan but of the word Yahuah swore. And when the flesh-born cannot stand as heir, the scripture says *Cast out the bondwoman and her son: for the son of the bondwoman shall not be heir with the son of the freewoman* (Galatians 4:30) — Sha''ul quoting the casting-out of Ishmael, *Hagar''s* son (Genesis 16:15), grounded in Sarah''s word, *Cast out this bondwoman and her son... the son of this bondwoman shall not be heir with my son, even with Isaac* (Genesis 21:10) and Yahuah''s answer, *in Isaac shall thy seed be called* (Genesis 21:12). The flesh-effort cannot inherit the promise; only what Yahuah gives by His oath stands as heir. The allegory contrasts the scheme of the flesh with the promise of Yahuah — never the commandments against grace.',
+       sv.verse_id, ev.verse_id, 'free', 20387
+  FROM _s301_ge16_lookup sv, _s301_ge16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=16 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*"Go in to Hagar, my Egyptian maid: it may be that I shall build up seed to you by her."* (Jubilees 14:22) — the restored witness names the scheme of 16:2 outright: building seed by the maid instead of waiting on Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=2
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-sarai-gave-hagar-to-build-seed-by-the-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Abram hearkened to the voice of Sarai his wife... And Sarai took Hagar, her maid, the Egyptian, and gave her to Abram... to be his wife* (Jubilees 14:23) — the giving of 16:3 carried verse-for-verse, hearkening to the human voice.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-sarai-gave-hagar-to-build-seed-by-the-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*she took her handmaid Hagar, whom Pharaoh had given her, and she gave her to Abram her husband for a wife* (Jasher 16:24) — the giving of 16:3; the Egypt-spoil maid turned into the instrument of the flesh-scheme.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-sarai-gave-hagar-to-build-seed-by-the-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*her mistress was despised in her eyes... This can only be that I am better before Elohim than Sarai my mistress* (Jasher 16:29) — the contempt of 16:4: the flesh-plan breeds rivalry, not peace.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=4
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-sarai-gave-hagar-to-build-seed-by-the-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Behold your handmaid is in your hand... and Sarai afflicted her, and Hagar fled from her to the wilderness* (Jasher 16:33) — the bitter fruit of 16:6: the mistress afflicting, the maid fleeing.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=6
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-sarai-gave-hagar-to-build-seed-by-the-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★ FIRST "angel of Yahuah")
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush* (Exodus 3:2) — the same angel of Yahuah who found Hagar (16:7) is at once named Yahuah/Elohim who speaks (Exodus 3:4): the Formed Son who bears the Name.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-the-angel-of-yahuah-found-her-the-formed-son-who-bears-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the angel of Yahuah (LORD) appeared unto him in a flame of fire* (Exodus 3:2) — the angel who swears *I will multiply thy seed* (16:10), a first-person divine oath, is the One named Yahuah at the bush: He speaks AS Yahuah because He bears the Name.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=10
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-the-angel-of-yahuah-found-her-the-formed-son-who-bears-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalm 34:7) — the first appearance of the angel of Yahuah (16:7) comes to a despised, fleeing bondwoman; the psalm sings what that finding means.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-the-angel-of-yahuah-found-her-the-formed-son-who-bears-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the angel of Elohim (God) called to Hagar out of heaven... for Elohim (God) hath heard the voice of the lad* (Genesis 21:17) — the same One who bade her *Return to thy mistress* (16:9) meets Hagar a second time, the visible One who bears the Name come again to the cast-out woman.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=9
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-the-angel-of-yahuah-found-her-the-formed-son-who-bears-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*an angel of Yahuah (the Lord) found her... by a well... Do not fear, for I will multiply your seed... return to Sarai your mistress, and submit thyself under her hands* (Jasher 16:34) — the restored chronicle gathers the whole encounter of 16:7-11 in one verse.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-the-angel-of-yahuah-found-her-the-formed-son-who-bears-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★ EL ROI)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I have surely seen the affliction of my people... and have heard their cry... for I know their sorrows* (Exodus 3:7) — the El Roi of 16:13 (*Thou Elohim seest me*) is the God who sees a whole people in bondage as He saw one despised maid.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=13
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-el-roi-thou-elohim-seest-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Surely Yahuah (LORD) hath looked upon my affliction* (Genesis 29:32) — Leah the unloved wife names the same seeing God that Hagar named (*Thou Elohim seest me*, 16:13): twice the lowly woman confesses Yahuah sees what man overlooks.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=13
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=29 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-el-roi-thou-elohim-seest-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thine eyes did see my substance, yet being unperfect; and in thy book all my members were written* (Psalm 139:16) — Hagar''s wonder *Have I also here looked after him that seeth me?* (16:13) made song: there is no fleeing the eyes of El Roi.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=13
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=139 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-el-roi-thou-elohim-seest-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*as for Ishmael... I have blessed him... and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation* (Genesis 17:20) — the multiply-seed word of 16:10 confirmed to Abraham; yet *my covenant will I establish with Isaac* (17:21).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=10
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-i-will-multiply-thy-seed-the-blessing-on-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*of the son of the bondwoman will I make a nation, because he is thy seed* (Genesis 21:13) — the name Ishmael (*Yahuah hath heard thy affliction*, 16:11) carries a bloodline blessing: a nation made *because he is thy seed*.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=11
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-i-will-multiply-thy-seed-the-blessing-on-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Arise, lift up the lad... for I will make him a great nation* (Genesis 21:18) — Yahuah hears the lad as He heard the mother (Ishmael = Yahuah-hears, 16:11) and renews the seed-multiply promise of 16:10.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=11
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-i-will-multiply-thy-seed-the-blessing-on-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*he died in the presence of all his brethren* (Genesis 25:18) — the wild-man oracle *he shall dwell in the presence of all his brethren* (16:12) fulfilled exactly; a destiny appointed, not contempt poured out.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=12
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-i-will-multiply-thy-seed-the-blessing-on-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*twelve princes according to their nations* (Genesis 25:16) — the multiply-seed promise of 16:10 counted out in Ishmael''s twelve princes, the great nation made visible.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=12
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-i-will-multiply-thy-seed-the-blessing-on-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*she conceived and bare him a son, and he called his name Ishmael... this was the eighty-sixth year in the life of Abram* (Jubilees 14:24) — the birth of 16:15-16 carried verse-for-verse in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=15
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-i-will-multiply-thy-seed-the-blessing-on-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★ Galatians 4 allegory)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Abraham had two sons, the one by a bondmaid, the other by a freewoman* (Galatians 4:22) — Sha''ul reads the giving of Hagar (16:3) as allegory: the son by scheme beside the son by promise, NOT Torah against grace.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=4 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-the-bondwoman-and-the-freewoman-flesh-and-promise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he who was of the bondwoman was born after the flesh; but he of the freewoman was by promise* (Galatians 4:23) — Hagar''s conceiving (16:4) is the flesh-effort to manufacture the heir; the bondage is self-effort seizing the promise, never Torah-keeping.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=4
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=4 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-the-bondwoman-and-the-freewoman-flesh-and-promise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Now we, brethren, as Isaac was, are the children of promise* (Galatians 4:28) — Sarai''s barrenness (16:1) drove the flesh-plan; the true heir comes by promise, in Yahuah''s time, not by the scheme.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=1
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=4 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-the-bondwoman-and-the-freewoman-flesh-and-promise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Cast out the bondwoman and her son: for the son of the bondwoman shall not be heir with the son of the freewoman* (Galatians 4:30) — Ishmael, Hagar''s son (16:15), the flesh-born who cannot inherit; the self-effort cannot stand as heir beside the promise.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=16 AND sv.verse_number=15
+  JOIN _s301_ge16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=4 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-16-the-bondwoman-and-the-freewoman-flesh-and-promise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_17.sql (Genesis 17) -----
+-- Chapter: Genesis 17 (Yahuah appears as El Shaddai the Almighty — "walk before me, and be thou perfect"; the everlasting covenant; Abram -> Abraham, a father of many nations; "kings shall come out of thee"; circumcision as the covenant SIGN in the flesh, everlasting — "the uncircumcised... hath broken my covenant"; Sarai -> Sarah, a mother of nations; the promise of Isaac by Sarah at the set time next year; Ishmael blessed with twelve princes but the covenant established with Isaac; Abraham, Ishmael, and the house circumcised that selfsame day)
+-- Tag: ge17   Temp view: _s301_ge17_lookup
+-- Sort band: base 20400, step 3 -> threads at 20400, 20403, 20406, 20409, 20412, 20415 (6 threads)
+-- Source of EVERY row: 'canon','genesis',17,v
+--
+-- Genesis 17 coverage:
+--   v.1-2 (Yahuah appeared to Abram... I am the El Shaddai (Almighty God); walk before me, and be thou perfect; and I will make my covenant... and will multiply thee exceedingly)
+--        NT:     none warranted distinct (the covenant-walk is held in the Tanakh laterals; the seed-multiplying is carried into THREAD 2/3)
+--        Extras: Jubilees 15:3 ("I am El Shaddai; approve yourself before Me and be you perfect"); Jasher 17:16-17 (Abram ninety-nine; "I will make my covenant between me and you, and I will greatly multiply your seed") — THREAD 1
+--        Tanakh: Genesis 6:9 (Noah... perfect in his generations, and Noah walked with Elohim); Genesis 5:24 (Enoch walked with Elohim); Deuteronomy 18:13 (Thou shalt be perfect with Yahuah Elohayka) — THREAD 1
+--   v.4-6 (my covenant is with thee, and thou shalt be a father of many nations; Abram -> Abraham; I will make nations of thee, and kings shall come out of thee)
+--        NT:     Romans 4:17 (As it is written, I have made thee a father of many nations) — THREAD 2 (load-bearing); Romans 4:18 (the father of many nations... So shall thy seed be) — THREAD 2
+--        Extras: Jubilees 15:5 (the name-change and "father of many nations... kings will come forth from you") — THREAD 2; Jasher 17:19-20 (your name... Abraham; kings shall come forth from you) — THREAD 2
+--        Tanakh: Genesis 35:11 (a nation and a company of nations shall be of thee, and kings shall come out of thy loins) — THREAD 2
+--   v.7-8 (I will establish my covenant... for an everlasting covenant, to be a Elohim unto thee, and to thy seed after thee; the land of Canaan for an everlasting possession)
+--        NT:     Romans 9:4 (the covenants... and the promises — to the Israelites) — woven into THREAD 6 framing, not a distinct member here
+--        Extras: Jubilees 15:5-10 (the everlasting covenant, to be a Elohim... the land of Canaan that you may possess it for ever) — folded; THREAD 3 carries Jubilees 15:9-10 via the everlasting-covenant member
+--        Tanakh: Genesis 15:18 (the land-grant cut, river of Egypt to the Euphrates — ties to the live Gen 15 covenant-cut thread); Leviticus 26:12 (I will be your Elohim, and ye shall be my people); Exodus 6:7 (I will take you to me for a people, and I will be to you a Elohim) — THREAD 3
+--   v.9-14 (★ THE CENTERPIECE — Thou shalt keep my covenant; every man child circumcised; the flesh of the foreskin a TOKEN of the covenant; eight days old; my covenant in your flesh for an everlasting covenant; the uncircumcised... cut off; he hath broken my covenant)
+--        NT:     Romans 4:11 (he received the sign of circumcision, a seal of the righteousness of the faith) — THREAD 4 (load-bearing, orders trust->sign->walk); Acts 7:8 (he gave him the covenant of circumcision: and so Abraham begat Isaac, and circumcised him the eighth day) — THREAD 4; Romans 2:28-29 (circumcision is that of the heart, in the spirit) — THREAD 4 (REQUIRED INWARD REALITY the sign pointed to, NOT abolition); Colossians 2:11 (the circumcision made without hands... the circumcision of Messiah) — THREAD 4 (the inward reality, NOT supersession) — see framing note
+--        Extras: Jubilees 15:11-13 (keep My Covenant... circumcise your foreskins, a token of an eternal covenant... cut off, for he has broken My covenant); Jubilees 15:25-26 (an eternal ordinance, ordained and written on the heavenly tables); Jasher 17:18 (eight days old... an everlasting covenant); Jasher 18:1-2 (circumcised them as Yahuah commanded) — THREAD 4
+--        Tanakh: Leviticus 12:3 (in the eighth day the flesh of his foreskin shall be circumcised — the law repeated); Deuteronomy 10:16 (Circumcise therefore the foreskin of your heart); Deuteronomy 30:6 (Yahuah will circumcise thine heart... to love Yahuah); Jeremiah 4:4 (Circumcise yourselves to Yahuah, and take away the foreskins of your heart) — THREAD 4
+--   v.15-17 (Sarai -> Sarah; I will bless her, and give thee a son also of her; she shall be a mother of nations; kings of people shall be of her; Abraham laughed — shall Sarah that is ninety bear?)
+--        NT:     1 Peter 3:6 (Even as Sara obeyed Abraham... whose daughters ye are) — THREAD 5 (frames cleanly: the daughters of Sarah are those who do well within the covenant)
+--        Extras: Jubilees 15:15-17 (the Sarah name-change, the blessing, kings of nations, and Abraham rejoicing/laughing) — THREAD 5; Jasher 17:19 (your wife shall no more be called Sarai but Sarah) — folded into THREAD 5 framing via 15:5/17:19 (member uses Jubilees)
+--        Tanakh: Genesis 18:14 (Is any thing too hard for Yahuah? ... Sarah shall have a son); Genesis 21:1-2 (Yahuah visited Sarah... Sarah conceived, and bare Abraham a son... at the set time) — THREAD 5
+--   v.19-21 (Sarah shall bear thee a son indeed; call his name Isaac: I will establish my covenant with him for an everlasting covenant; Ishmael blessed, twelve princes, a great nation; BUT my covenant will I establish with Isaac... at this set time in the next year)
+--        NT:     Romans 9:7-9 (In Isaac shall thy seed be called... the children of the promise are counted for the seed; Sara shall have a son) — THREAD 6 (load-bearing, the elect line); Galatians 4:28 (we, brethren, as Isaac was, are the children of promise) — THREAD 6
+--        Extras: Jubilees 15:18-21 (Sarah shall bear you a son, call his name Isaac, an everlasting covenant; Ishmael blessed, twelve princes; My covenant established with Isaac in the next year) — THREAD 6
+--        Tanakh: Genesis 21:12 (in Isaac shall thy seed be called — the word that narrows the line) — THREAD 6
+--   v.22-27 (Elohim went up from Abraham; Abraham took Ishmael and all the house and circumcised the flesh of their foreskin in the selfsame day; Abraham ninety-nine, Ishmael thirteen; all the men of his house circumcised with him)
+--        NT:     Acts 7:8 (the covenant of circumcision; circumcised him the eighth day) — already a member at THREAD 4
+--        Extras: Jubilees 15:23 (Abraham did according as Elohim had said... circumcised... on the selfsame day); Jasher 18:1-2 (circumcised them... Abraham and Ishmael... thirteen years old was Ishmael) — Jasher 18:1-2 carried at THREAD 4 (the obedience-fulfilled member)
+--        Tanakh: none warranted distinct (the selfsame-day obedience is the doing of the THREAD 4 command; held there)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-17-el-shaddai-walk-before-me-and-be-thou-perfect — Tanakh (Genesis 5:24, 6:9, Deuteronomy) + Extras (Jubilees, Jasher) [extras]
+--   2. genesis-17-abram-made-abraham-a-father-of-many-nations — NT (Romans) + Tanakh (Genesis 35:11) + Extras (Jubilees, Jasher) [extras]
+--   3. genesis-17-an-everlasting-covenant-to-be-elohim-to-thee-and-thy-seed — Tanakh (Genesis 15:18, Exodus, Leviticus) + Extras (Jubilees) [extras]
+--   4. genesis-17-circumcision-the-token-of-the-covenant-everlasting — NT (Romans 4:11, Acts 7:8, Romans 2:28-29, Colossians 2:11) + Tanakh (Leviticus 12:3, Deuteronomy 10:16/30:6, Jeremiah 4:4) + Extras (Jubilees 15, Jasher) [extras] (★ CENTERPIECE — MOST-CONTESTED)
+--   5. genesis-17-sarai-made-sarah-a-mother-of-nations — NT (1 Peter) + Tanakh (Genesis 18:14, 21:1-2) + Extras (Jubilees) [extras]
+--   6. genesis-17-my-covenant-established-with-isaac-not-ishmael — NT (Romans 9, Galatians) + Tanakh (Genesis 21:12) + Extras (Jubilees) [extras]
+--
+-- Framing notes:
+--   ★ GENESIS 17:9-14 — CIRCUMCISION THE TOKEN OF THE COVENANT, EVERLASTING (THREAD 4, the centerpiece and the
+--   most-contested). NON-NEGOTIABLE FRAMING (Red Line #6 — Torah is inheritance never curse; 1 John 2:3-4 filter):
+--   circumcision is *a token of the covenant betwixt me and you* (17:11) and *my covenant... in your flesh for an
+--   everlasting covenant* (17:13) — NOT abolished, NOT a defunct old-covenant relic. The forward-weave is ordered
+--   precisely so it can NEVER read as supersession:
+--     - Romans 4:11 — *he received the sign of circumcision, a seal of the righteousness of the faith which he had
+--       yet being uncircumcised* — the SIGN follows and SEALS the covenant-trust already reckoned righteous at Gen
+--       15:6 (the live Gen 15 thread). Order: trust -> sign -> walk. Sha'ul is dating the sign relative to the
+--       faith, NOT cancelling the sign.
+--     - Acts 7:8 — *he gave him the covenant of circumcision: and so Abraham begat Isaac, and circumcised him the
+--       eighth day; and Isaac begat Jacob; and Jacob begat the twelve patriarchs* — the SIGN carried down the
+--       bloodline-covenant, patriarch to patriarch. The covenant of circumcision is a thing GIVEN and KEPT, not
+--       abrogated.
+--     - Romans 2:28-29 — *circumcision is that of the heart, in the spirit* — framed as the REQUIRED INWARD REALITY
+--       the outward sign ALWAYS pointed to, the same call Torah itself already made: *Circumcise therefore the
+--       foreskin of your heart* (Deuteronomy 10:16), *Yahuah... will circumcise thine heart* (Deuteronomy 30:6),
+--       *Circumcise yourselves to Yahuah, and take away the foreskins of your heart* (Jeremiah 4:4). Heart-
+--       circumcision FULFILLS and completes the sign; it never cancels the covenant. The inward and the outward
+--       were one demand from Moses forward.
+--     - Colossians 2:11 — *the circumcision made without hands... by the circumcision of Messiah* — handled as the
+--       SAME inward reality (putting off the body of the flesh), NOT a license to despise the covenant sign and NOT
+--       supersession. It is the heart-circumcision Torah commanded, now wrought in Messiah — the deepening of the
+--       sign's meaning, not its abolition.
+--   The default Christian "circumcision is done away" reading is deliberately OVERRIDDEN. Jubilees 15 is the great
+--   circumcision chapter — *a token of an eternal covenant* (15:11), *an eternal ordinance, ordained and written on
+--   the heavenly tables* (15:25), the angels of the presence created circumcised (15:27) — and it is woven in to
+--   weight the SIGN as eternal, never abolished.
+--   ★ EL SHADDAI + WALK PERFECT (THREAD 1): *I am the El Shaddai (Almighty God); walk before me, and be thou
+--   perfect* (17:1) — the covenant is WALKED, not merely confessed; the seed is bloodline AND covenant-word
+--   together. The same walking-perfect-before-Elohim said of Enoch (Genesis 5:24) and Noah (Genesis 6:9) and
+--   commanded of all Yashar'el (Deuteronomy 18:13). The Formed-and-Formless lens (Red Line #4): *Yahuah appeared
+--   to Abram* (17:1) — the visible One who bears the Name, the Formed Son who met Abraham, speaks as El Shaddai.
+--   ★ FATHER OF MANY NATIONS (THREAD 2): *a father of many nations* (17:4-5) — framed as the seed-of-promise
+--   multitude / the two-house expansion gathered IN the one seed (the nations that come of Abraham's loins,
+--   Genesis 35:11 *a nation and a company of nations*), NOT a false-inclusion of the nations apart from the
+--   covenant. Romans 4:17-18 quotes 17:5 forward — the multitude believed before a child was born.
+--   ★ COVENANT WITH ISAAC NOT ISHMAEL (THREAD 6): *my covenant will I establish with Isaac* (17:21) — the line
+--   NARROWS; Ishmael is blessed in the flesh (twelve princes, 17:20) but the covenant-seed runs through Isaac.
+--   Romans 9:7-9 (*In Isaac shall thy seed be called... the children of the promise are counted for the seed*) and
+--   Galatians 4:28 (*children of promise*) weave it forward as the singular/elect covenant line.
+--   EXTRAS: Jubilees 15 parallels Genesis 17 verse-for-verse (clean parse; the great circumcision/eternal-ordinance
+--   chapter — used vv.3,5,11,13,16,18,20,21,25). Jasher 17:16-20 and 18:1-2 carry the appearing, the covenant, the
+--   name-changes, and the selfsame-day obedience (clean). Jubilees DOUBLE-WRITTEN 'jubilees','jubilees'; Jasher
+--   DOUBLE-WRITTEN 'jasher','jasher'.
+
+CREATE TEMP VIEW _s301_ge17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: El Shaddai — walk before me, and be thou perfect
+    ('canon','genesis',17,1,'canon','genesis',5,24,'free',
+      E'*And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24). When the Almighty meets Abram with *walk before me, and be thou perfect* (Genesis 17:1), He calls him into the same path that Enoch already trod — a life lived in the presence of Elohim, the covenant WALKED and not merely confessed. The seed is carried by bloodline and covenant-word together; the word here is *walk*.'),
+    ('canon','genesis',17,1,'canon','genesis',6,9,'free',
+      E'*Noah was a just man and perfect in his generations, and Noah walked with Elohim (God)* (Genesis 6:9). The very two words spoken to Abram — *walk before me, and be thou perfect* (Genesis 17:1) — are the testimony already written of Noah: *perfect in his generations, and Noah walked with Elohim*. To be perfect is to walk before Elohim in covenant faithfulness; El Shaddai sets Abram in that line.'),
+    ('canon','genesis',17,1,'canon','deuteronomy',18,13,'free',
+      E'*Thou shalt be perfect with Yahuah Elohayka (the LORD thy God)* (Deuteronomy 18:13). What the Almighty commands the one man — *walk before me, and be thou perfect* (Genesis 17:1) — Mosheh (Moses) lays on the whole nation that came of his seed: *Thou shalt be perfect with Yahuah Elohayka*. The covenant-walk asked of Abraham is the covenant-walk asked of all Yashar''el; it is inheritance, never abolished.'),
+    ('canon','genesis',17,1,'jubilees','jubilees',15,3,'extras',
+      E'*And Yahuah (God) appeared to Abram, and said to him: "I am El Shaddai (God Almighty); approve yourself before Me and be you perfect."* (Jubilees 15:3). The restored witness carries the appearing and the charge verse-for-verse with Genesis 17:1 — *I am the El Shaddai (Almighty God); walk before me, and be thou perfect* — the same Name of the Almighty and the same call to a perfect walk before Him.'),
+    ('canon','genesis',17,2,'jasher','jasher',17,17,'extras',
+      E'*At that time Yahuah (the Lord) appeared to him and he said to him, I will make my covenant between me and you, and I will greatly multiply your seed* (Jasher 17:17). The restored witness keeps the covenant-word of Genesis 17:2 — *I will make my covenant between me and thee, and will multiply thee exceedingly* — the same establishing of the covenant and multiplying of the seed spoken when Abram was ninety-nine years old (Jasher 17:16).'),
+
+    -- THREAD 2: Abram made Abraham — a father of many nations, kings shall come out of thee
+    ('canon','genesis',17,5,'canon','romans',4,17,'free',
+      E'*(As it is written, I have made thee a father of many nations,) before him whom he believed, even Elohim (God), who quickeneth the dead, and calleth those things which be not as though they were* (Romans 4:17). Sha''ul (Paul) quotes the name-change word directly — *a father of many nations have I made thee* (Genesis 17:5) — to name Abraham the father of the seed of promise. The many nations are the multitude gathered in the one seed, called by the Elohim *who quickeneth the dead*: the promise made real before a single child was born.'),
+    ('canon','genesis',17,4,'canon','romans',4,18,'free',
+      E'*Who against hope believed in hope, that he might become the father of many nations; according to that which was spoken, So shall thy seed be* (Romans 4:18). The covenant-word *thou shalt be a father of many nations* (Genesis 17:4) is the very thing Abram *against hope believed in hope*. The fatherhood of many nations is not a false-inclusion of the nations apart from the covenant; it is the innumerable seed of promise, believed on the word alone, *according to that which was spoken*.'),
+    ('canon','genesis',17,6,'canon','genesis',35,11,'free',
+      E'*And Elohim (God) said unto him, I am El Shaddai (God Almighty): be fruitful and multiply; a nation and a company of nations shall be of thee, and kings shall come out of thy loins* (Genesis 35:11). The promise to Abraham — *I will make nations of thee, and kings shall come out of thee* (Genesis 17:6) — is renewed to Jacob by the same Name, El Shaddai, in the same words: *a company of nations... and kings shall come out of thy loins*. The seed of nations and kings is handed down the covenant line, Abraham to Jacob.'),
+    ('canon','genesis',17,5,'jubilees','jubilees',15,5,'extras',
+      E'*Neither will your name any more be called Abram, But your name from henceforth, even for ever, shall be Abraham. For the father of many nations have I made you... And I shall make you into nations, And kings will come forth from you* (Jubilees 15:5). The restored witness carries the name-change and the promise entire — *your name shall be Abraham; for a father of many nations have I made thee... and kings shall come out of thee* (Genesis 17:5-6) — the same renaming and the same word of nations and kings.'),
+    ('canon','genesis',17,6,'jasher','jasher',17,20,'extras',
+      E'*For I will bless you both, and I will multiply your seed after you that you shall become a great nation, and kings shall come forth from you* (Jasher 17:20). The restored witness keeps the promise of Genesis 17:6 — *I will make nations of thee, and kings shall come out of thee* — the multiplied seed becoming a great nation, and kings coming forth from Abraham''s loins.'),
+
+    -- THREAD 3: An everlasting covenant — to be Elohim to thee and to thy seed; the land for ever
+    ('canon','genesis',17,8,'canon','genesis',15,18,'free',
+      E'*In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18). The land-grant cut between the divided pieces is here sealed as *an everlasting possession* — *the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession* (Genesis 17:8). The covenant of the pieces and the covenant of circumcision are one oath; the land given to the seed is given for ever.'),
+    ('canon','genesis',17,7,'canon','exodus',6,7,'free',
+      E'*And I will take you to me for a people, and I will be to you a Elohim (God): and ye shall know that I am Yahuah Elohaykem (the LORD your God), which bringeth you out from under the burdens of the Egyptians* (Exodus 6:7). The everlasting-covenant word to Abraham — *to be a Elohim unto thee, and to thy seed after thee* (Genesis 17:7) — comes due upon his seed at the exodus: *I will take you to me for a people, and I will be to you a Elohim*. The God-of-the-seed promise sworn to one man becomes the bond of the whole people.'),
+    ('canon','genesis',17,8,'canon','leviticus',26,12,'free',
+      E'*And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12). The covenant formula given to Abraham — *and I will be their Elohim* (Genesis 17:8) — is the standing covenant bond, repeated over Yashar''el: *I will be your Elohim, and ye shall be my people*. To be their Elohim and they His people is the everlasting heart of the covenant established here.'),
+    ('canon','genesis',17,7,'jubilees','jubilees',15,5,'extras',
+      E'*And I shall establish My covenant between Me and you, and your seed after you, throughout their generations, for an eternal covenant, so that I may be a Elohim (God) to you, and to your seed after you* (Jubilees 15:5). The restored witness carries the everlasting-covenant word entire — *I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a Elohim unto thee, and to thy seed after thee* (Genesis 17:7) — the same eternal covenant and the same God-of-the-seed bond.'),
+    ('canon','genesis',17,8,'jubilees','jubilees',15,10,'extras',
+      E'*(And I shall give to you and to your seed after you) the land where you have been a sojourner, the land of Canaan, that you may possess it for ever, and I shall be their Elohim (God)* (Jubilees 15:10). The restored witness keeps the land-grant of Genesis 17:8 — *the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession; and I will be their Elohim* — the same land of the sojourning given as an everlasting possession to the seed.'),
+
+    -- THREAD 4 (★ CENTERPIECE): Circumcision the token of the covenant, everlasting
+    ('canon','genesis',17,11,'canon','romans',4,11,'free',
+      E'*And he received the sign of circumcision, a seal of the righteousness of the faith which he had yet being uncircumcised: that he might be the father of all them that believe* (Romans 4:11). Sha''ul (Paul) names exactly what Genesis 17:11 commands — *it shall be a token of the covenant betwixt me and you* — as *a seal of the righteousness of the faith* Abraham already had at Genesis 15:6. The SIGN follows and seals the covenant-trust; the order is trust, then sign, then walk. This dates the sign relative to the faith — it never cancels the sign.'),
+    ('canon','genesis',17,10,'canon','acts',7,8,'free',
+      E'*And he gave him the covenant of circumcision: and so Abraham begat Isaac, and circumcised him the eighth day; and Isaac begat Jacob; and Jacob begat the twelve patriarchs* (Acts 7:8). Stephen calls the command of Genesis 17:10 — *Every man child among you shall be circumcised* — *the covenant of circumcision*: a thing GIVEN to Abraham and KEPT down the bloodline, Isaac on the eighth day, then Jacob, then the twelve patriarchs. The sign is carried generation to generation, not abrogated.'),
+    ('canon','genesis',17,11,'canon','romans',2,28,'free',
+      E'*For he is not a Yahudi (Jew), which is one outwardly; neither is that circumcision, which is outward in the flesh* (Romans 2:28). The flesh-token of Genesis 17:11 — *ye shall circumcise the flesh of your foreskin; and it shall be a token of the covenant* — was always meant to reach the heart. Sha''ul is not abolishing the sign but naming the inward reality it required: an outward mark without the inward walk is empty. The token points past itself to the heart it seals.'),
+    ('canon','genesis',17,11,'canon','romans',2,29,'free',
+      E'*But he is a Yahudi (Jew), which is one inwardly; and circumcision is that of the heart, in the spirit, and not in the letter; whose praise is not of men, but of Elohim (God)* (Romans 2:29). The *token of the covenant* in the flesh (Genesis 17:11) always pointed to the circumcision of the heart — the very thing Torah itself commanded: *Circumcise therefore the foreskin of your heart* (Deuteronomy 10:16). Heart-circumcision *in the spirit* fulfills and completes the outward sign; it never cancels the everlasting covenant.'),
+    ('canon','genesis',17,11,'canon','colossians',2,11,'free',
+      E'*In whom also ye are circumcised with the circumcision made without hands, in putting off the body of the sins of the flesh by the circumcision of Messiah (Christ)* (Colossians 2:11). The same inward reality the flesh-token of Genesis 17:11 always required — *Yahuah Elohayka will circumcise thine heart* (Deuteronomy 30:6) — is here wrought *without hands... by the circumcision of Messiah*. This is the heart-circumcision Torah commanded, deepened in Messiah; not a despising of the covenant sign, and not its abolition.'),
+    ('canon','genesis',17,12,'canon','leviticus',12,3,'free',
+      E'*And in the eighth day the flesh of his foreskin shall be circumcised* (Leviticus 12:3). The eighth-day command given to Abraham — *he that is eight days old shall be circumcised among you* (Genesis 17:12) — is written again into the standing law of Yashar''el: *in the eighth day the flesh of his foreskin shall be circumcised*. What was commanded to one household becomes the perpetual ordinance of the whole people.'),
+    ('canon','genesis',17,11,'canon','deuteronomy',10,16,'free',
+      E'*Circumcise therefore the foreskin of your heart, and be no more stiffnecked* (Deuteronomy 10:16). The flesh-token of Genesis 17:11 — *a token of the covenant betwixt me and you* — always called for its inward counterpart, and Mosheh (Moses) names it plainly: *Circumcise therefore the foreskin of your heart*. The outward sign and the inward circumcision were one demand from the Torah forward; the heart is what the flesh-mark pointed to.'),
+    ('canon','genesis',17,11,'canon','deuteronomy',30,6,'free',
+      E'*And Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, that thou mayest live* (Deuteronomy 30:6). The covenant sign in the flesh (Genesis 17:11) finds its promised depth here: Yahuah Himself *will circumcise thine heart... to love Yahuah Elohayka*. The heart-circumcision is the covenant''s own promise to the seed, the inward reality the token sealed — never its replacement.'),
+    ('canon','genesis',17,11,'canon','jeremiah',4,4,'free',
+      E'*Circumcise yourselves to Yahuah (LORD), and take away the foreskins of your heart, ye men of Yahudah (Judah) and inhabitants of Jerusalem: lest my fury come forth like fire* (Jeremiah 4:4). The token in the flesh (Genesis 17:11) is matched by the prophet''s call to the deeper circumcision: *take away the foreskins of your heart*. An outward mark with an uncircumcised heart provokes Yahuah''s fury — proof the sign was never the whole, but the seal of a covenant-walk of the heart.'),
+    ('canon','genesis',17,11,'jubilees','jubilees',15,11,'extras',
+      E'*And as for you, do you keep My Covenant, you and your seed after you, and circumcise you every male among you, and circumcise your foreskins, and it will be a token of an eternal covenant between Me and you* (Jubilees 15:11). The restored witness names the sign exactly as Genesis 17:11 does — *it shall be a token of the covenant betwixt me and you* — and weights it *a token of an eternal covenant*: the circumcision of the flesh as the everlasting sign, kept by the seed throughout their generations.'),
+    ('canon','genesis',17,14,'jubilees','jubilees',15,25,'extras',
+      E'*This law is for all the generations for ever, and there is no circumcision of the days, and no omission of one day out of the eight days; for it is an eternal ordinance, ordained and written on the heavenly tables* (Jubilees 15:25). Against the warning of Genesis 17:14 — *the uncircumcised... that soul shall be cut off from his people; he hath broken my covenant* — the restored witness sets the sign as *an eternal ordinance, ordained and written on the heavenly tables*: never abolished, the everlasting covenant in the flesh.'),
+    ('canon','genesis',17,12,'jasher','jasher',17,18,'extras',
+      E'*At eight days old shall it be circumcised, and this covenant shall be in your flesh for an everlasting covenant* (Jasher 17:18). The restored witness carries the eighth-day command and the everlasting word of Genesis 17:12-13 — *he that is eight days old shall be circumcised... and my covenant shall be in your flesh for an everlasting covenant* — the sign in the flesh sworn as everlasting.'),
+    ('canon','genesis',17,23,'jasher','jasher',18,1,'extras',
+      E'*And Abraham rose and did all that Elohim (God) had ordered him, and he took the men of his household and those bought with his money, and he circumcised them as Yahuah (the Lord) had commanded him* (Jasher 18:1). The restored witness keeps the selfsame-day obedience of Genesis 17:23 — *Abraham took Ishmael his son, and all that were born in his house... and circumcised the flesh of their foreskin in the selfsame day, as Elohim had said unto him* — Abraham doing all that he was commanded, the whole household sealed with the sign.'),
+
+    -- THREAD 5: Sarai made Sarah — a mother of nations, kings of people shall be of her
+    ('canon','genesis',17,16,'canon','1-peter',3,6,'free',
+      E'*Even as Sara obeyed Abraham, calling him lord: whose daughters ye are, as long as ye do well, and are not afraid with any amazement* (1 Peter 3:6). The Sarah whom Elohim blesses to be *a mother of nations* — *kings of people shall be of her* (Genesis 17:16) — is named the mother of *her daughters... as long as ye do well*. The motherhood of nations is a covenant motherhood: those who do well within the covenant are reckoned the daughters of Sarah.'),
+    ('canon','genesis',17,17,'canon','genesis',18,14,'free',
+      E'*Is any thing too hard for Yahuah (LORD)? At the time appointed I will return unto thee, according to the time of life, and Sarah shall have a son* (Genesis 18:14). Abraham laughs at the word — *shall Sarah, that is ninety years old, bear?* (Genesis 17:17) — and Yahuah answers the laughter of the aged womb with a question of His own: *Is any thing too hard for Yahuah?* The set-time promise of Sarah''s son stands against every impossibility of the flesh.'),
+    ('canon','genesis',17,16,'canon','genesis',21,1,'free',
+      E'*And Yahuah (LORD) visited Sarah as he had said, and Yahuah (LORD) did unto Sarah as he had spoken. For Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him* (Genesis 21:1-2). The blessing on Sarah — *I will bless her, and give thee a son also of her* (Genesis 17:16) — comes to pass to the day: *Yahuah visited Sarah as he had said... at the set time of which Elohim had spoken*. The mother-of-nations promise is performed in the son of her old age.'),
+    ('canon','genesis',17,15,'jubilees','jubilees',15,15,'extras',
+      E'*And Elohim (God) said to Abraham: "As for Sarai your wife, her name will no more be called Sarai, but Sarah will be her name."* (Jubilees 15:15). The restored witness carries the renaming of Genesis 17:15 word for word — *As for Sarai thy wife, thou shalt not call her name Sarai, but Sarah shall her name be* — the covenant name-change that sets her as the mother of the promised seed.'),
+    ('canon','genesis',17,16,'jubilees','jubilees',15,16,'extras',
+      E'*And I shall bless her, and give you a son by her, and I shall bless him, and he will become a nation, and kings of nations will proceed from him* (Jubilees 15:16). The restored witness keeps the blessing on Sarah of Genesis 17:16 — *I will bless her, and give thee a son also of her... and she shall be a mother of nations; kings of people shall be of her* — the same blessing, the same son, and the kings of nations to come from the line.'),
+
+    -- THREAD 6: My covenant established with Isaac, not Ishmael — the elect line narrows
+    ('canon','genesis',17,19,'canon','romans',9,7,'free',
+      E'*Neither, because they are the seed of Abraham, are they all children: but, In Isaac shall thy seed be called* (Romans 9:7). The narrowing word of Genesis 17:19 — *I will establish my covenant with him for an everlasting covenant, and with his seed after him* — is exactly Sha''ul''s point: not all Abraham''s flesh-seed are the covenant-children, *but, In Isaac shall thy seed be called*. The covenant-seed runs through the son of promise, not by lineage alone.'),
+    ('canon','genesis',17,19,'canon','romans',9,9,'free',
+      E'*For this is the word of promise, At this time will I come, and Sara shall have a son* (Romans 9:9). The set-time word over Sarah — *at this set time in the next year* (Genesis 17:21), *Sarah thy wife shall bear thee a son indeed* (Genesis 17:19) — is *the word of promise* Sha''ul cites: *At this time will I come, and Sara shall have a son*. Isaac is the child of the promise, born by the covenant-word at the appointed time, not of the flesh''s strength.'),
+    ('canon','genesis',17,21,'canon','galatians',4,28,'free',
+      E'*Now we, brethren, as Isaac was, are the children of promise* (Galatians 4:28). The covenant *established with Isaac... at this set time in the next year* (Genesis 17:21) marks Isaac as the child born *by promise* (Galatians 4:23), over against Ishmael born after the flesh. The elect covenant line is the line of promise; those who walk in Abraham''s covenant-faith *as Isaac was, are the children of promise*.'),
+    ('canon','genesis',17,19,'canon','genesis',21,12,'free',
+      E'*And Elohim (God) said unto Abraham, Let it not be grievous in thy sight because of the lad, and because of thy bondwoman; in all that Sarah hath said unto thee, hearken unto her voice; for in Isaac shall thy seed be called* (Genesis 21:12). The word that establishes the covenant with Isaac — *Sarah thy wife shall bear thee a son indeed... I will establish my covenant with him* (Genesis 17:19) — is sealed when the lines part: *for in Isaac shall thy seed be called*. The seed is named through Isaac, the elect covenant line.'),
+    ('canon','genesis',17,21,'jubilees','jubilees',15,21,'extras',
+      E'*But My covenant shall I establish with Isaac, whom Sarah will bear to you, in these days, in the next year* (Jubilees 15:21). The restored witness carries the narrowing of Genesis 17:21 word for word — *my covenant will I establish with Isaac, which Sarah shall bear unto thee at this set time in the next year* — the covenant-seed established with the son of promise, at the appointed time.'),
+    ('canon','genesis',17,20,'jubilees','jubilees',15,20,'extras',
+      E'*And as for Ishmael also have I heard you, and behold I shall bless him, and make him great, and multiply him exceedingly, and he will beget twelve princes, and I shall make him a great nation* (Jubilees 15:20). The restored witness keeps the blessing on Ishmael of Genesis 17:20 — *I have blessed him... twelve princes shall he beget, and I will make him a great nation* — Ishmael blessed in the flesh as a great nation, even as the covenant-seed is reserved for Isaac.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-17-el-shaddai-walk-before-me-and-be-thou-perfect',
+       E'El Shaddai — walk before me, and be thou perfect',
+       E'When Abram is ninety-nine, *Yahuah (LORD) appeared to Abram, and said unto him, I am the El Shaddai (Almighty God); walk before me, and be thou perfect* (Genesis 17:1). This is the Formed appearing and speaking — the visible One who bears the Name, who met Abraham — declaring Himself the Almighty and binding the covenant to a WALK: *and I will make my covenant between me and thee, and will multiply thee exceedingly* (Genesis 17:2). The covenant is walked, not merely confessed; the seed is bloodline AND covenant-word together. And the path El Shaddai sets before Abram is the path already trodden in the line before him: *Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24), and *Noah was a just man and perfect in his generations, and Noah walked with Elohim (God)* (Genesis 6:9). To be perfect is to walk before Elohim in covenant faithfulness. What is asked of the one man is later laid on the whole nation that came of his seed: *Thou shalt be perfect with Yahuah Elohayka (the LORD thy God)* (Deuteronomy 18:13). The restored witnesses carry the appearing entire — *I am El Shaddai (God Almighty); approve yourself before Me and be you perfect* (Jubilees 15:3) — and the covenant-word, *I will make my covenant between me and you, and I will greatly multiply your seed* (Jasher 17:17). The Almighty meets Abram and calls him to walk.',
+       sv.verse_id, ev.verse_id, 'extras', 20400
+  FROM _s301_ge17_lookup sv, _s301_ge17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=17 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-17-abram-made-abraham-a-father-of-many-nations',
+       E'Abram made Abraham — a father of many nations, kings shall come out of thee',
+       E'The covenant comes with a new name. *As for me, behold, my covenant is with thee, and thou shalt be a father of many nations* (Genesis 17:4); *Neither shall thy name any more be called Abram, but thy name shall be Abraham; for a father of many nations have I made thee* (Genesis 17:5); *and I will make nations of thee, and kings shall come out of thee* (Genesis 17:6). The *many nations* are not a false-inclusion of the nations apart from the covenant — they are the seed-of-promise multitude gathered in the one seed, the two-house expansion that comes of Abraham''s loins. The very promise is renewed to Jacob by the same Name: *I am El Shaddai (God Almighty)... a nation and a company of nations shall be of thee, and kings shall come out of thy loins* (Genesis 35:11), the seed of nations and kings handed down the covenant line. Sha''ul (Paul) quotes the name-change word forward: *(As it is written, I have made thee a father of many nations,) before him whom he believed, even Elohim (God), who quickeneth the dead* (Romans 4:17), and *that he might become the father of many nations; according to that which was spoken, So shall thy seed be* (Romans 4:18) — the multitude believed before a single child was born. The restored witnesses keep it whole: *your name from henceforth, even for ever, shall be Abraham. For the father of many nations have I made you... and kings will come forth from you* (Jubilees 15:5), and *I will multiply your seed after you that you shall become a great nation, and kings shall come forth from you* (Jasher 17:20).',
+       sv.verse_id, ev.verse_id, 'extras', 20403
+  FROM _s301_ge17_lookup sv, _s301_ge17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=17 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-17-an-everlasting-covenant-to-be-elohim-to-thee-and-thy-seed',
+       E'An everlasting covenant — to be Elohim to thee and to thy seed',
+       E'The covenant is sworn as everlasting, and its heart is the bond between Yahuah and the seed. *And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a Elohim unto thee, and to thy seed after thee* (Genesis 17:7); *And I will give unto thee, and to thy seed after thee, the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession; and I will be their Elohim (God)* (Genesis 17:8). This is the same land-grant cut between the divided pieces two chapters before — *Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18) — now sealed *for an everlasting possession*. And the God-of-the-seed promise is the standing covenant formula, repeated over Yashar''el down the generations: *I will take you to me for a people, and I will be to you a Elohim (God)* (Exodus 6:7), *I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12). The restored witness carries both halves entire — *for an eternal covenant, so that I may be a Elohim (God) to you, and to your seed after you* (Jubilees 15:5), and the land *that you may possess it for ever, and I shall be their Elohim (God)* (Jubilees 15:10). To be their Elohim and they His people, the land theirs for ever: this is the everlasting covenant established here.',
+       sv.verse_id, ev.verse_id, 'extras', 20406
+  FROM _s301_ge17_lookup sv, _s301_ge17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=17 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★ CENTERPIECE — MOST-CONTESTED)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-17-circumcision-the-token-of-the-covenant-everlasting',
+       E'Circumcision — the token of the covenant in the flesh, everlasting',
+       E'*This is my covenant, which ye shall keep, between me and you and thy seed after thee; Every man child among you shall be circumcised* (Genesis 17:10). *And ye shall circumcise the flesh of your foreskin; and it shall be a token of the covenant betwixt me and you* (Genesis 17:11). *And he that is eight days old shall be circumcised among you* (Genesis 17:12); *and my covenant shall be in your flesh for an everlasting covenant* (Genesis 17:13); *And the uncircumcised man child... that soul shall be cut off from his people; he hath broken my covenant* (Genesis 17:14). Read it as it stands: the circumcision of the flesh is the SIGN of the covenant, sworn *everlasting* — not a defunct old-covenant relic, not abolished. The forward-weave seals this, it does not undo it. Sha''ul (Paul) names the very token: *he received the sign of circumcision, a seal of the righteousness of the faith which he had yet being uncircumcised* (Romans 4:11) — the sign FOLLOWS and SEALS the trust reckoned righteous at Genesis 15:6; the order is trust, then sign, then walk. Stephen calls it *the covenant of circumcision*, given to Abraham and kept down the bloodline: *and so Abraham begat Isaac, and circumcised him the eighth day; and Isaac begat Jacob; and Jacob begat the twelve patriarchs* (Acts 7:8). And the flesh-token always pointed to the heart — the inward reality Torah ITSELF commanded: *Circumcise therefore the foreskin of your heart* (Deuteronomy 10:16), *Yahuah Elohayka (the LORD thy God) will circumcise thine heart... to love Yahuah Elohayka* (Deuteronomy 30:6), *Circumcise yourselves to Yahuah (LORD), and take away the foreskins of your heart* (Jeremiah 4:4). So when Sha''ul says *circumcision is that of the heart, in the spirit* (Romans 2:29), and when he names *the circumcision made without hands... by the circumcision of Messiah (Christ)* (Colossians 2:11), he is naming the inward circumcision the outward sign always required — fulfilling it, never cancelling the everlasting covenant. The eighth-day command becomes the standing law of Yashar''el: *And in the eighth day the flesh of his foreskin shall be circumcised* (Leviticus 12:3). The restored witness is the great circumcision chapter: *circumcise your foreskins, and it will be a token of an eternal covenant between Me and you* (Jubilees 15:11), *for it is an eternal ordinance, ordained and written on the heavenly tables* (Jubilees 15:25); *At eight days old shall it be circumcised, and this covenant shall be in your flesh for an everlasting covenant* (Jasher 17:18). And Abraham obeyed the selfsame day: *Abraham rose and did all that Elohim (God) had ordered him... and he circumcised them as Yahuah (the Lord) had commanded him* (Jasher 18:1). The sign in the flesh and the circumcision of the heart were one demand from the Torah forward; the everlasting covenant is sealed, never abolished.',
+       sv.verse_id, ev.verse_id, 'extras', 20409
+  FROM _s301_ge17_lookup sv, _s301_ge17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=17 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-17-sarai-made-sarah-a-mother-of-nations',
+       E'Sarai made Sarah — a mother of nations, kings of people shall be of her',
+       E'The covenant renames the wife as well as the husband. *And Elohim (God) said unto Abraham, As for Sarai thy wife, thou shalt not call her name Sarai, but Sarah shall her name be* (Genesis 17:15); *And I will bless her, and give thee a son also of her: yea, I will bless her, and she shall be a mother of nations; kings of people shall be of her* (Genesis 17:16). Then *Abraham fell upon his face, and laughed, and said in his heart, Shall a child be born unto him that is an hundred years old? and shall Sarah, that is ninety years old, bear?* (Genesis 17:17). Yahuah answers the laughter of the aged womb with His own question: *Is any thing too hard for Yahuah (LORD)? At the time appointed I will return unto thee, according to the time of life, and Sarah shall have a son* (Genesis 18:14). And the blessing comes to pass to the day: *Yahuah (LORD) visited Sarah as he had said... For Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him* (Genesis 21:1-2). The mother-of-nations promise is performed in the son of her old age. And her motherhood is a covenant motherhood, named forward: *Even as Sara obeyed Abraham, calling him lord: whose daughters ye are, as long as ye do well* (1 Peter 3:6) — those who do well within the covenant are reckoned the daughters of Sarah. The restored witness keeps the renaming and the blessing: *her name will no more be called Sarai, but Sarah will be her name* (Jubilees 15:15), *and kings of nations will proceed from him* (Jubilees 15:16).',
+       sv.verse_id, ev.verse_id, 'extras', 20412
+  FROM _s301_ge17_lookup sv, _s301_ge17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=17 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-17-my-covenant-established-with-isaac-not-ishmael',
+       E'My covenant established with Isaac, not Ishmael — the elect line narrows',
+       E'Abraham pleads for the son he has — *O that Ishmael might live before thee!* (Genesis 17:18) — but the covenant-seed is narrowing to the son not yet born. *And Elohim (God) said, Sarah thy wife shall bear thee a son indeed; and thou shalt call his name Isaac: and I will establish my covenant with him for an everlasting covenant, and with his seed after him* (Genesis 17:19). Ishmael is truly blessed in the flesh — *I have blessed him, and will make him fruitful... twelve princes shall he beget, and I will make him a great nation* (Genesis 17:20) — yet the covenant runs elsewhere: *But my covenant will I establish with Isaac, which Sarah shall bear unto thee at this set time in the next year* (Genesis 17:21). The line narrows to the child of promise. When the two sons part, the word is sealed: *for in Isaac shall thy seed be called* (Genesis 21:12). Sha''ul (Paul) makes this the whole point of the elect seed: *Neither, because they are the seed of Abraham, are they all children: but, In Isaac shall thy seed be called* (Romans 9:7), *the children of the promise are counted for the seed* (Romans 9:8), *For this is the word of promise, At this time will I come, and Sara shall have a son* (Romans 9:9). Isaac is the child born by the covenant-word at the appointed time, not by the strength of the flesh — *Now we, brethren, as Isaac was, are the children of promise* (Galatians 4:28). The restored witness keeps both the blessing and the narrowing: *he will beget twelve princes, and I shall make him a great nation* (Jubilees 15:20), *But My covenant shall I establish with Isaac, whom Sarah will bear to you... in the next year* (Jubilees 15:21). The seed of promise is carried by bloodline AND covenant-word together, through the elect line of Isaac.',
+       sv.verse_id, ev.verse_id, 'extras', 20415
+  FROM _s301_ge17_lookup sv, _s301_ge17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=17 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24) — the same walk El Shaddai calls Abram to in *walk before me, and be thou perfect* (17:1), the path already trodden in the line before him.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=1
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=5 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-el-shaddai-walk-before-me-and-be-thou-perfect'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Noah was a just man and perfect in his generations, and Noah walked with Elohim (God)* (Genesis 6:9) — the two words of 17:1, *perfect* and *walk*, already the testimony of Noah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=1
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-el-shaddai-walk-before-me-and-be-thou-perfect'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou shalt be perfect with Yahuah Elohayka (the LORD thy God)* (Deuteronomy 18:13) — what is asked of Abram (*be thou perfect*, 17:1) is laid on the whole nation of his seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=1
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-el-shaddai-walk-before-me-and-be-thou-perfect'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*"I am El Shaddai (God Almighty); approve yourself before Me and be you perfect."* (Jubilees 15:3) — the appearing and the charge of 17:1 carried verse-for-verse.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=1
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-el-shaddai-walk-before-me-and-be-thou-perfect'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will make my covenant between me and you, and I will greatly multiply your seed* (Jasher 17:17) — the covenant-word of 17:2 spoken when Abram was ninety-nine.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=2
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=17 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-el-shaddai-walk-before-me-and-be-thou-perfect'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*(As it is written, I have made thee a father of many nations,) ... even Elohim (God), who quickeneth the dead* (Romans 4:17) — Sha''ul quotes the name-change word of 17:5; the multitude in the one seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=5
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-abram-made-abraham-a-father-of-many-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*that he might become the father of many nations; according to that which was spoken, So shall thy seed be* (Romans 4:18) — the *father of many nations* of 17:4 believed before a child was born.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=4
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-abram-made-abraham-a-father-of-many-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*a nation and a company of nations shall be of thee, and kings shall come out of thy loins* (Genesis 35:11) — the *nations... and kings* of 17:6 renewed to Jacob by the same Name, El Shaddai.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-abram-made-abraham-a-father-of-many-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*your name from henceforth, even for ever, shall be Abraham. For the father of many nations have I made you... and kings will come forth from you* (Jubilees 15:5) — the renaming and the word of 17:5-6 carried entire.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=5
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-abram-made-abraham-a-father-of-many-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will multiply your seed after you that you shall become a great nation, and kings shall come forth from you* (Jasher 17:20) — the promise of 17:6, the seed a great nation with kings.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=17 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-abram-made-abraham-a-father-of-many-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18) — the land-grant cut at the pieces, here sealed *for an everlasting possession* (17:8).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=8
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-an-everlasting-covenant-to-be-elohim-to-thee-and-thy-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will take you to me for a people, and I will be to you a Elohim (God)* (Exodus 6:7) — the God-of-the-seed promise of 17:7 come due on his seed at the exodus.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=7
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-an-everlasting-covenant-to-be-elohim-to-thee-and-thy-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12) — the covenant formula of 17:8 (*I will be their Elohim*) standing over Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=8
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-an-everlasting-covenant-to-be-elohim-to-thee-and-thy-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*for an eternal covenant, so that I may be a Elohim (God) to you, and to your seed after you* (Jubilees 15:5) — the everlasting-covenant word of 17:7 carried entire.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=7
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-an-everlasting-covenant-to-be-elohim-to-thee-and-thy-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the land of Canaan, that you may possess it for ever, and I shall be their Elohim (God)* (Jubilees 15:10) — the land-grant of 17:8 as an everlasting possession to the seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=8
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-an-everlasting-covenant-to-be-elohim-to-thee-and-thy-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★ CENTERPIECE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he received the sign of circumcision, a seal of the righteousness of the faith which he had yet being uncircumcised* (Romans 4:11) — the *token of the covenant* of 17:11 as the SEAL of the trust reckoned righteous at 15:6; trust, then sign, then walk.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he gave him the covenant of circumcision: and so Abraham begat Isaac, and circumcised him the eighth day... and Jacob begat the twelve patriarchs* (Acts 7:8) — the command of 17:10 named *the covenant of circumcision*, the sign carried down the bloodline.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=10
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*neither is that circumcision, which is outward in the flesh* (Romans 2:28) — the flesh-token of 17:11 was always meant to reach the heart; an outward mark without the inward walk is empty.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*circumcision is that of the heart, in the spirit, and not in the letter* (Romans 2:29) — the inward reality the *token* of 17:11 always required (Deuteronomy 10:16); fulfilling the sign, never abolishing the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*ye are circumcised with the circumcision made without hands... by the circumcision of Messiah (Christ)* (Colossians 2:11) — the heart-circumcision Torah commanded (Deuteronomy 30:6), wrought in Messiah; the deepening of the sign of 17:11, not supersession.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*And in the eighth day the flesh of his foreskin shall be circumcised* (Leviticus 12:3) — the eighth-day command of 17:12 written into the standing law of Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=12
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Circumcise therefore the foreskin of your heart, and be no more stiffnecked* (Deuteronomy 10:16) — the inward counterpart Torah names for the flesh-token of 17:11; the heart is what the sign pointed to.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Yahuah Elohayka (the LORD thy God) will circumcise thine heart... to love Yahuah Elohayka* (Deuteronomy 30:6) — the covenant''s own promise of the heart-circumcision the token of 17:11 sealed, never its replacement.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*Circumcise yourselves to Yahuah (LORD), and take away the foreskins of your heart* (Jeremiah 4:4) — the deeper circumcision matching the flesh-token of 17:11; the sign was never the whole.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*circumcise your foreskins, and it will be a token of an eternal covenant between Me and you* (Jubilees 15:11) — the sign of 17:11 named *a token of an eternal covenant*, kept by the seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=11
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*it is an eternal ordinance, ordained and written on the heavenly tables* (Jubilees 15:25) — against the cut-off warning of 17:14, the sign set as eternal, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 12, E'*At eight days old shall it be circumcised, and this covenant shall be in your flesh for an everlasting covenant* (Jasher 17:18) — the eighth-day and everlasting word of 17:12-13.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=12
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=17 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 13, E'*Abraham rose and did all that Elohim (God) had ordered him... and he circumcised them as Yahuah (the Lord) had commanded him* (Jasher 18:1) — the selfsame-day obedience of 17:23, the whole household sealed with the sign.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=18 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-circumcision-the-token-of-the-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Even as Sara obeyed Abraham, calling him lord: whose daughters ye are, as long as ye do well* (1 Peter 3:6) — the *mother of nations* of 17:16; those who do well within the covenant reckoned her daughters.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=16
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-sarai-made-sarah-a-mother-of-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Is any thing too hard for Yahuah (LORD)? ... and Sarah shall have a son* (Genesis 18:14) — Yahuah answers Abraham''s laughter at the aged womb (17:17) with the set-time promise.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=17
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-sarai-made-sarah-a-mother-of-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) visited Sarah as he had said... For Sarah conceived, and bare Abraham a son in his old age, at the set time* (Genesis 21:1-2) — the blessing on Sarah of 17:16 performed to the day.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=16
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-sarai-made-sarah-a-mother-of-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*"As for Sarai your wife, her name will no more be called Sarai, but Sarah will be her name."* (Jubilees 15:15) — the renaming of 17:15 carried word for word.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=15
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-sarai-made-sarah-a-mother-of-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I shall bless her, and give you a son by her... and kings of nations will proceed from him* (Jubilees 15:16) — the blessing on Sarah of 17:16, the son and the kings of nations.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=16
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-sarai-made-sarah-a-mother-of-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Neither, because they are the seed of Abraham, are they all children: but, In Isaac shall thy seed be called* (Romans 9:7) — the narrowing of 17:19; the covenant-seed runs through the son of promise, not by lineage alone.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=19
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-my-covenant-established-with-isaac-not-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*For this is the word of promise, At this time will I come, and Sara shall have a son* (Romans 9:9) — the set-time word of 17:19,21 as *the word of promise*; Isaac the child of promise.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=19
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-my-covenant-established-with-isaac-not-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Now we, brethren, as Isaac was, are the children of promise* (Galatians 4:28) — the covenant established with Isaac (17:21), the child born by promise, marks the elect line.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=21
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=4 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-my-covenant-established-with-isaac-not-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*in all that Sarah hath said unto thee, hearken unto her voice; for in Isaac shall thy seed be called* (Genesis 21:12) — the covenant with Isaac of 17:19 sealed when the two lines part.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=19
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-my-covenant-established-with-isaac-not-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*But My covenant shall I establish with Isaac, whom Sarah will bear to you... in the next year* (Jubilees 15:21) — the narrowing of 17:21 carried word for word.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=21
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-my-covenant-established-with-isaac-not-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*he will beget twelve princes, and I shall make him a great nation* (Jubilees 15:20) — the blessing on Ishmael of 17:20, blessed in the flesh even as the covenant-seed is reserved for Isaac.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=17 AND sv.verse_number=20
+  JOIN _s301_ge17_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-17-my-covenant-established-with-isaac-not-ishmael'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_18.sql (Genesis 18) -----
+-- Chapter: Genesis 18 (Yahuah appears to Abraham by the oaks of Mamre as three men — the Formed One and two angels; Abraham's hospitality; the promise "Sarah shall have a son" at the set time; Sarah laughs within the tent; "Is any thing too hard for Yahuah?"; the men look toward Sodom; "Shall I hide from Abraham that thing which I do?"; the cry of Sodom and Gomorrah; Abraham's intercession — "Shall not the Judge of all the earth do right?" — the bargaining down from fifty to ten righteous)
+-- Tag: ge18   Temp view: _s301_ge18_lookup
+-- Sort band: base 20425, step 3 -> threads at 20425, 20428, 20431, 20434, 20437, 20440 (6 threads)
+-- Source of EVERY row: 'canon','genesis',18,v
+--
+-- Genesis 18 coverage:
+--   ★ v.1-2,8 (And Yahuah appeared unto him in the plains of Mamre... lo, three men stood by him... he stood by them under the tree, and they did eat)
+--        NT:     John 8:56 (Abraham rejoiced to see my day: and he saw it, and was glad) — the One Abraham met = the Formed Son; Hebrews 13:2 (entertained angels unawares) — the hospitality — THREAD 1 (load-bearing)
+--        Extras: Jubilees 16:1 (on the new moon of the fourth month we appeared to Abraham, at the oak of Mamre... a son would be given to him by Sarah his wife) — THREAD 1
+--        Tanakh: (the theophany frame carried within THREAD 1 via vv.13,17,22 quoted inline; no distinct lateral warranted as a separate member)
+--   v.3-7 (My Lord, if now I have found favour... a little water... wash your feet... a morsel of bread... Abraham hastened... fetcht a calf tender and good)
+--        NT:     Hebrews 13:2 (entertain strangers... entertained angels unawares) — held at THREAD 1 (the hospitality)
+--        Extras: none warranted distinct (the meal is folded into the Mamre-appearance frame, THREAD 1)
+--        Tanakh: none warranted distinct
+--   ★ v.10,14b (I will certainly return unto thee according to the time of life; and, lo, Sarah thy wife shall have a son... At the time appointed... Sarah shall have a son)
+--        NT:     Romans 9:9 (For this is the word of promise, At this time will I come, and Sara shall have a son) — the elect seed by promise — THREAD 2 (load-bearing)
+--        Extras: Jubilees 16:4 (when we returned to her at a set time, she would have conceived a son) — THREAD 2
+--        Tanakh: Genesis 17:21 (my covenant will I establish with Isaac, which Sarah shall bear unto thee at this set time in the next year); Genesis 21:2 (Sarah conceived, and bare Abraham a son... at the set time of which Elohim had spoken) — THREAD 2
+--   ★ v.14a (Is any thing too hard for Yahuah?)
+--        NT:     Luke 1:37 (For with Elohim nothing shall be impossible) — the Annunciation echo — THREAD 3 (load-bearing)
+--        Extras: none warranted distinct (Jubilees carries the set-time return at 16:4, THREAD 2; the "too hard" question itself is not its own Jubilees line)
+--        Tanakh: Jeremiah 32:17 (there is nothing too hard for thee); Jeremiah 32:27 (is there any thing too hard for me?) — THREAD 3
+--   ★ v.11-13,15 (Abraham and Sarah were old... Sarah laughed within herself... Wherefore did Sarah laugh... Then Sarah denied, saying, I laughed not; for she was afraid)
+--        NT:     Hebrews 11:11 (Through faith also Sara herself received strength to conceive seed... because she judged him faithful who had promised) — THREAD 4 (load-bearing)
+--        Extras: Jubilees 16:2 (And Sarah laughed, for she heard that we had spoken these words... and she became afraid, and denied that she had laughed) — THREAD 4
+--        Tanakh: Genesis 21:6 (Elohim hath made me to laugh, so that all that hear will laugh with me) — the laugh turned to joy at Isaac's birth — THREAD 4
+--   v.16,20-22 (the men rose up... looked toward Sodom... Because the cry of Sodom and Gomorrah is great... I will go down now, and see... the men turned their faces from thence, and went toward Sodom: but Abraham stood yet before Yahuah)
+--        NT:     none warranted distinct as MEMBER (the Sodom-going frame is carried at the Genesis 19 sibling; the "Abraham stood yet before Yahuah" intercession-stance is the hinge into THREADS 5/6)
+--        Extras: Jubilees 16:5 (in this month Yahuah executed his judgments on Sodom, and Gomorrah... and He burned them with fire and brimstone) — THREAD 5 (the cry/judgment)
+--        Tanakh: (the descent-to-see and the cry are carried into THREADS 5/6 via the intercession)
+--   ★ v.17-19 (Shall I hide from Abraham that thing which I do... For I know him, that he will command his children and his household after him, and they shall keep the way of Yahuah, to do justice and judgment)
+--        NT:     James 2:23 (Abraham... was called the Friend of Elohim) — the Friend whom Yahuah will not hide from — THREAD 6
+--        Extras: none warranted distinct
+--        Tanakh: 2 Chronicles 20:7 (the seed of Abraham thy friend for ever); Isaiah 41:8 (the seed of Abraham my friend) — THREAD 6
+--   ★★ v.23-25 (Wilt thou also destroy the righteous with the wicked... Shall not the Judge of all the earth do right?)
+--        NT:     none warranted distinct as MEMBER (the intercessor-pattern is woven into the prose; the Friend-frame held at THREAD 6)
+--        Extras: Jubilees 16:5-6 (Yahuah executed his judgments on Sodom... But Lot we saved; for Elohim remembered Abraham) — THREAD 5
+--        Tanakh: Ezekiel 22:30 (I sought for a man... that should make up the hedge, and stand in the gap before me for the land); Psalm 106:23 (Moses his chosen stood before him in the breach, to turn away his wrath) — THREAD 5
+--   v.26-33 (the bargaining from fifty to forty-five to forty to thirty to twenty to ten; Yahuah went his way... and Abraham returned unto his place)
+--        NT:     none warranted distinct (the standing-in-the-gap intercession carried by THREAD 5)
+--        Extras: none warranted distinct
+--        Tanakh: (carried by THREAD 5 via Ezekiel 22:30 / Psalm 106:23)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-18-yahuah-appeared-the-formed-at-the-oaks-of-mamre — NT (John, Hebrews) + Extras (Jubilees) [extras] (★ THEOPHANY — the Formed Son)
+--   2. genesis-18-sarah-shall-have-a-son-at-the-set-time — NT (Romans) + Tanakh (Genesis) + Extras (Jubilees) [extras]
+--   3. genesis-18-is-any-thing-too-hard-for-yahuah — NT (Luke) + Tanakh (Jeremiah) [free]
+--   4. genesis-18-sarah-laughed-and-through-faith-received-strength — NT (Hebrews) + Tanakh (Genesis) + Extras (Jubilees) [extras]
+--   5. genesis-18-shall-not-the-judge-of-all-the-earth-do-right — Tanakh (Ezekiel, Psalm) + Extras (Jubilees) [extras] (★★ INTERCESSION — stand in the gap)
+--   6. genesis-18-abraham-the-friend-stood-in-the-breach — NT (James) + Tanakh (2 Chronicles, Isaiah) [free]
+--
+-- Framing notes:
+--   ★ THE FORMED AT MAMRE (THREAD 1, Red Line #4 — the Formed and the Formless). *And Yahuah (LORD) appeared
+--   unto him in the plains of Mamre* (18:1): the One who appears as three men, who EATS (*they did eat*, 18:8),
+--   who SPEAKS and is named *Yahuah* (18:13,17,22), while two angels go on to Sodom and *Abraham stood yet before
+--   Yahuah* (18:22) — this is the Formed Son, the visible One who bears the Name, NOT a created angel, NOT a
+--   co-equal-persons Trinity, NOT modalism. The two who go on to Sodom ARE the angels (Genesis 19:1); the One who
+--   stays is Yahuah Himself. Yahusha names Him: *Abraham rejoiced to see my day: and he saw it, and was glad*
+--   (John 8:56) — the day Abraham saw was this One. Hebrews 13:2 reads the hospitality forward: *entertained
+--   angels unawares*. NO trinitarian grammar is used; the Father is the Formless Source, the Son the Formed who
+--   appeared and ate.
+--   ★ THE SET-TIME PROMISE (THREAD 2). *At the time appointed I will return... and Sarah shall have a son*
+--   (18:14): the elect seed-line BY PROMISE, not by flesh — Sha'ul reads it exactly so: *the children of the
+--   promise are counted for the seed... At this time will I come, and Sara shall have a son* (Romans 9:8-9). The
+--   set time is named in 17:21 and kept in 21:2. Framed by bloodline-AND-covenant-word together (Red Line #1):
+--   the heir is given by the Formed's own returning word.
+--   ★ IS ANY THING TOO HARD FOR YAHUAH (THREAD 3). *Is any thing too hard for Yahuah?* (18:14) — Jeremiah twice
+--   confesses *there is nothing too hard for thee* (32:17), *is there any thing too hard for me?* (32:27); and the
+--   messenger to Miriam (Mary) echoes it at the second impossible conception: *with Elohim nothing shall be
+--   impossible* (Luke 1:37). The dead womb of Sarah and the virgin womb both answer the same question.
+--   ★ SARAH LAUGHED (THREAD 4). *Sarah laughed within herself* (18:12) — the promise heard against the dead womb;
+--   Hebrews 11:11 frames the faith that followed: *through faith also Sara herself received strength to conceive
+--   seed... because she judged him faithful who had promised*. The unbelieving laugh becomes the believing laugh
+--   of joy at the birth: *Elohim hath made me to laugh* (21:6). Ties to the Gen 15 seed-as-stars / Romans 4
+--   promise-against-deadness already live.
+--   ★★ SHALL NOT THE JUDGE OF ALL THE EARTH DO RIGHT (THREAD 5, the intercession). *Shall not the Judge of all
+--   the earth do right?* (18:25): Yahuah's judgment is never arbitrary — Abraham appeals to His righteousness, not
+--   against it. The intercessor stands in the breach for the wicked — the very pattern Yahuah later seeks in vain:
+--   *I sought for a man... that should... stand in the gap before me for the land, that I should not destroy it*
+--   (Ezekiel 22:30); Mosheh *stood before him in the breach, to turn away his wrath* (Psalm 106:23). The pattern is
+--   fulfilled in the Messiah who makes intercession. Jubilees 16:5-6 records the judgment executed AND Lot spared
+--   *for Elohim remembered Abraham* — the intercession bore fruit (carried to the Gen 19 sibling). NOTE: the
+--   bargaining (vv.26-32) is summarized in the thread prose, not given its own members.
+--   ★ ABRAHAM THE FRIEND (THREAD 6). *Shall I hide from Abraham that thing which I do?* (18:17) — Yahuah will not
+--   hide His counsel from His friend. *The seed of Abraham thy friend for ever* (2 Chronicles 20:7); *the seed of
+--   Abraham my friend* (Isaiah 41:8); *he was called the Friend of Elohim* (James 2:23). And 18:19 names WHY he is
+--   the Friend: *he will command his children... and they shall keep the way of Yahuah, to do justice and judgment*
+--   — the covenant-keeping friend (Red Line #6; 1 John 2:3-4 filter): the friendship is bound to keeping the way.
+--   EXTRAS: Jubilees 16 is a clean parse covering the Mamre visit (16:1), the set-time return (16:4), Sarah's laugh
+--   (16:2), and Sodom's judgment + Lot's deliverance (16:5-6). Jubilees DOUBLE-WRITTEN 'jubilees','jubilees'.
+--   JASHER: NONE WARRANTED — this Jasher parse (ch 22 Beersheba/Abimelech well + open-house hospitality, ch 23 the
+--   Akedah) is the Genesis 21-22 narrative, NOT the Genesis-18 Mamre theophany; no distinct Genesis-18 parallel
+--   exists, so Jasher is deliberately omitted rather than forced. WISDOM OF SOLOMON ch10 (the righteous delivered /
+--   Lot escaping the fire) fits the Genesis 19 SIBLING (the actual deliverance), not a clean Genesis-18 parallel,
+--   so it is held for ch19 rather than forced here.
+
+CREATE TEMP VIEW _s301_ge18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Yahuah appeared — the Formed at the oaks of Mamre
+    ('canon','genesis',18,1,'canon','john',8,56,'free',
+      E'*Your father Abraham rejoiced to see my day: and he saw it, and was glad* (John 8:56). When Yahusha (Jesus) says this, the Yahudim (Jews) are astonished — *Thou art not yet fifty years old, and hast thou seen Abraham?* (John 8:57) — and He answers *Before Abraham was, I am* (John 8:58). The day Abraham saw was THIS One: *And Yahuah (LORD) appeared unto him in the plains of Mamre* (Genesis 18:1). The visible One who came to the tent door, who ate and spoke and bore the Name, is the Formed Son — the One Abraham met and was glad.'),
+    ('canon','genesis',18,1,'canon','hebrews',13,2,'free',
+      E'*Be not forgetful to entertain strangers: for thereby some have entertained angels unawares* (Hebrews 13:2). The pattern is set here: *lo, three men stood by him: and when he saw them, he ran to meet them from the tent door* (Genesis 18:2), and Abraham washed their feet and set a meal before them (Genesis 18:4-8). He did not know at first that Yahuah and His two angels stood at his tent — the welcomed strangers were the Formed One and the messengers bound for Sodom. The hospitality of *they did eat* (Genesis 18:8) is the very entertaining of angels unawares.'),
+    ('canon','genesis',18,2,'jubilees','jubilees',16,1,'extras',
+      E'*And on the new moon of the fourth month we appeared to Abraham, at the oak of Mamre, and we talked with him, and we announced to him that a son would be given to him by Sarah his wife* (Jubilees 16:1). The restored witness keeps the scene — the appearing *at the oak of Mamre* and the announcement of *a son... by Sarah his wife* — matching *Yahuah (LORD) appeared unto him in the plains of Mamre* (Genesis 18:1) and *Sarah thy wife shall have a son* (Genesis 18:10), and dates it to the new moon of the fourth month.'),
+
+    -- THREAD 2: Sarah shall have a son at the set time — the seed by promise
+    ('canon','genesis',18,10,'canon','romans',9,9,'free',
+      E'*For this is the word of promise, At this time will I come, and Sara shall have a son* (Romans 9:9). Sha''ul (Paul) quotes the very word spoken at the tent — *I will certainly return unto thee according to the time of life; and, lo, Sarah thy wife shall have a son* (Genesis 18:10) — to prove that the seed is reckoned by PROMISE, not by flesh: *the children of the promise are counted for the seed* (Romans 9:8). Isaac is the elect heir given by the Formed''s own returning word, not by the strength of an aged body.'),
+    ('canon','genesis',18,14,'canon','genesis',17,21,'free',
+      E'*But my covenant will I establish with Isaac, which Sarah shall bear unto thee at this set time in the next year* (Genesis 17:21). The set time is already named one chapter before: the covenant fixed to Isaac *at this set time in the next year*. So when Yahuah says at Mamre *At the time appointed I will return... and Sarah shall have a son* (Genesis 18:14), it is the same appointed time — the promise is not vague but dated, the heir bound to a season Yahuah set.'),
+    ('canon','genesis',18,14,'canon','genesis',21,2,'free',
+      E'*For Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him* (Genesis 21:2). The word *At the time appointed I will return... and Sarah shall have a son* (Genesis 18:14) comes due exactly: *at the set time of which Elohim had spoken*. Yahuah (LORD) *visited Sarah as he had said* (Genesis 21:1) — the returning One kept His own appointment, and the promised seed was born to the day.'),
+    ('canon','genesis',18,10,'jubilees','jubilees',16,4,'extras',
+      E'*And (that) when we returned to her at a set time, she would have conceived a son* (Jubilees 16:4). The restored witness carries the set-time return — *when we returned to her at a set time, she would have conceived a son* — matching *I will certainly return unto thee according to the time of life; and, lo, Sarah thy wife shall have a son* (Genesis 18:10) and *At the time appointed I will return* (Genesis 18:14).'),
+
+    -- THREAD 3: Is any thing too hard for Yahuah?
+    ('canon','genesis',18,14,'canon','jeremiah',32,17,'free',
+      E'*Ah Yahuah (Lord) GOD! behold, thou hast made the heaven and the earth by thy great power and stretched out arm, and there is nothing too hard for thee* (Jeremiah 32:17). The question Yahuah puts to Abraham — *Is any thing too hard for Yahuah (LORD)?* (Genesis 18:14) — becomes the prophet''s confession: the One who made heaven and earth has *nothing too hard for thee*. The dead womb is no harder to Him than the founding of the world.'),
+    ('canon','genesis',18,14,'canon','jeremiah',32,27,'free',
+      E'*Behold, I am Yahuah (LORD), the Elohim (God) of all flesh: is there any thing too hard for me?* (Jeremiah 32:27). Yahuah turns His own question of Genesis 18:14 — *Is any thing too hard for Yahuah?* — back upon Jeremiah in the same words: *is there any thing too hard for me?* As *the Elohim of all flesh* He opens the barren womb at His set time; the rhetorical question expects one answer — nothing.'),
+    ('canon','genesis',18,14,'canon','luke',1,37,'free',
+      E'*For with Elohim (God) nothing shall be impossible* (Luke 1:37). The messenger speaks this to Miriam (Mary) at the second impossible conception, echoing the word at Mamre: *Is any thing too hard for Yahuah (LORD)?* (Genesis 18:14). The dead womb of Sarah and the virgin womb both answer the same question the same way — with Elohim *nothing shall be impossible*. The set-time son and the promised seed are each given against every barrier of the flesh.'),
+
+    -- THREAD 4: Sarah laughed — through faith received strength
+    ('canon','genesis',18,12,'canon','hebrews',11,11,'free',
+      E'*Through faith also Sara herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised* (Hebrews 11:11). The laugh of the tent — *Therefore Sarah laughed within herself, saying, After I am waxed old shall I have pleasure, my lord being old also?* (Genesis 18:12) — is not the last word. The faith that followed is reckoned: *Sara herself received strength to conceive seed... because she judged him faithful who had promised*. The promise was believed against the dead womb, and the One who promised was found faithful.'),
+    ('canon','genesis',18,12,'canon','genesis',21,6,'free',
+      E'*And Sarah said, Elohim (God) hath made me to laugh, so that all that hear will laugh with me* (Genesis 21:6). The doubting laugh of *Sarah laughed within herself* (Genesis 18:12) — the laugh she then denied for fear (Genesis 18:15) — is turned at last into the laugh of joy. When the set-time son is born she names the laughter Yahuah''s own gift: *Elohim hath made me to laugh*. The unbelief that laughed becomes the wonder that laughs with all who hear.'),
+    ('canon','genesis',18,12,'jubilees','jubilees',16,2,'extras',
+      E'*And Sarah laughed, for she heard that we had spoken these words with Abraham, and we admonished her, and she became afraid, and denied that she had laughed on account of the words* (Jubilees 16:2). The restored witness keeps the whole movement — Sarah hearing, laughing, being admonished, growing afraid, and denying — matching *Sarah laughed within herself* (Genesis 18:12) and *Then Sarah denied, saying, I laughed not; for she was afraid* (Genesis 18:15).'),
+
+    -- THREAD 5 (★★ INTERCESSION): Shall not the Judge of all the earth do right? — stand in the breach
+    ('canon','genesis',18,23,'canon','ezekiel',22,30,'free',
+      E'*And I sought for a man among them, that should make up the hedge, and stand in the gap before me for the land, that I should not destroy it: but I found none* (Ezekiel 22:30). What Abraham DOES here is the very thing Yahuah later seeks and cannot find. Abraham *drew near, and said, Wilt thou also destroy the righteous with the wicked?* (Genesis 18:23) — he stands in the gap for a doomed city, pleading that it be spared. He is the man Ezekiel could not find: the intercessor who stands before Yahuah for the land that it should not be destroyed.'),
+    ('canon','genesis',18,23,'canon','psalms',106,23,'free',
+      E'*Therefore he said that he would destroy them, had not Moses his chosen stood before him in the breach, to turn away his wrath, lest he should destroy them* (Psalm 106:23). The pattern Abraham opens — drawing near to plead *Wilt thou also destroy the righteous with the wicked?* (Genesis 18:23) — is the pattern Mosheh (Moses) takes up at Sinai: *stood before him in the breach, to turn away his wrath*. The friend of Yahuah standing in the breach for the guilty runs from Abraham to Mosheh and finds its fullness in the Messiah who makes intercession.'),
+    ('canon','genesis',18,20,'jubilees','jubilees',16,5,'extras',
+      E'*And in this month Yahuah (God) executed his judgments on Sodom, and Gomorrah, and Zeboim, and all the region of the Jordan, and He burned them with fire and brimstone, and destroyed them until this day... that they are wicked and sinners exceedingly* (Jubilees 16:5). The restored witness names the cause and the sentence — the cities *wicked and sinners exceedingly*, judged with *fire and brimstone* — matching *the cry of Sodom and Gomorrah is great, and... their sin is very grievous* (Genesis 18:20). The Judge of all the earth saw the cry and did right.'),
+    ('canon','genesis',18,23,'jubilees','jubilees',16,6,'extras',
+      E'*And, in like manner, Elohim (God) will execute judgment on the places where they have done according to the uncleanness of the Sodomites, like to the judgment of Sodom. But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow* (Jubilees 16:6). The intercession of *Wilt thou also destroy the righteous with the wicked?* (Genesis 18:23) bore fruit: *Lot we saved; for Elohim remembered Abraham*. The Judge who does right does not slay the righteous with the wicked — He remembers the intercessor and draws the one righteous man out of the fire.'),
+
+    -- THREAD 6: Abraham the Friend — Shall I hide from Abraham that thing which I do?
+    ('canon','genesis',18,17,'canon','james',2,23,'free',
+      E'*And the scripture was fulfilled which saith, Abraham believed Elohim (God), and it was imputed unto him for righteousness: and he was called the Friend of Elohim (God)* (James 2:23). Because Abraham is the Friend of Elohim, Yahuah will not keep His counsel from him: *Shall I hide from Abraham that thing which I do?* (Genesis 18:17). The friendship that James names is the reason the Judge tells His friend before He acts — and Genesis 18:19 names why: Abraham *will command his children... and they shall keep the way of Yahuah*.'),
+    ('canon','genesis',18,17,'canon','2-chronicles',20,7,'free',
+      E'*Art not thou our Elohim (God), who didst drive out the inhabitants of this land before thy people Yashar''el (Israel), and gavest it to the seed of Abraham thy friend for ever?* (2 Chronicles 20:7). Yehoshaphat pleads on the ground of *the seed of Abraham thy friend for ever* — the friendship first shown when Yahuah would not hide His purpose from him: *Shall I hide from Abraham that thing which I do?* (Genesis 18:17). The Friend of Elohim and his seed inherit the land by that very friendship.'),
+    ('canon','genesis',18,17,'canon','isaiah',41,8,'free',
+      E'*But thou, Yashar''el (Israel), art my servant, Jacob whom I have chosen, the seed of Abraham my friend* (Isaiah 41:8). The whole nation is named for the friendship begun here — *the seed of Abraham my friend* — the friend from whom Yahuah would not hide His doing: *Shall I hide from Abraham that thing which I do?* (Genesis 18:17). And the friendship is bound to a walk: Abraham *will command his children and his household after him, and they shall keep the way of Yahuah, to do justice and judgment* (Genesis 18:19).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-18-yahuah-appeared-the-formed-at-the-oaks-of-mamre',
+       E'Yahuah appeared — the Formed at the oaks of Mamre',
+       E'*And Yahuah (LORD) appeared unto him in the plains of Mamre: and he sat in the tent door in the heat of the day* (Genesis 18:1). Then *he lift up his eyes and looked, and, lo, three men stood by him: and when he saw them, he ran to meet them from the tent door, and bowed himself toward the ground* (Genesis 18:2). Abraham washes their feet, sets meal-cakes and a dressed calf before them, *and he stood by them under the tree, and they did eat* (Genesis 18:8). This is the lens of the Formed and the Formless: the One who appears, who EATS, who SPEAKS and is named *Yahuah* (Genesis 18:13,17,22) — while two of the three go on toward Sodom and *Abraham stood yet before Yahuah* (Genesis 18:22). The two who go on are the angels who reach Sodom at evening (Genesis 19:1); the One who stays and bears the Name is the Formed Son, the visible Glory who met Abraham — not a created angel, not a co-equal-persons grammar, not modalism. Yahusha (Jesus) names this very meeting: *Your father Abraham rejoiced to see my day: and he saw it, and was glad* (John 8:56), and when challenged, *Before Abraham was, I am* (John 8:58). The day Abraham saw was the day the Formed stood at his tent. And the hospitality is read forward: *Be not forgetful to entertain strangers: for thereby some have entertained angels unawares* (Hebrews 13:2) — the welcomed strangers were Yahuah and His messengers. The restored witness keeps the scene whole: *on the new moon of the fourth month we appeared to Abraham, at the oak of Mamre, and we talked with him, and we announced to him that a son would be given to him by Sarah his wife* (Jubilees 16:1).',
+       sv.verse_id, ev.verse_id, 'extras', 20425
+  FROM _s301_ge18_lookup sv, _s301_ge18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=18 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-18-sarah-shall-have-a-son-at-the-set-time',
+       E'Sarah shall have a son — at the set time, by promise',
+       E'At the tent door the Formed speaks the heir into the future: *I will certainly return unto thee according to the time of life; and, lo, Sarah thy wife shall have a son* (Genesis 18:10), and again *At the time appointed I will return unto thee, according to the time of life, and Sarah shall have a son* (Genesis 18:14). This is the elect seed BY PROMISE, not by flesh — Sha''ul (Paul) quotes this very word to prove it: *For this is the word of promise, At this time will I come, and Sara shall have a son* (Romans 9:9), for *the children of the promise are counted for the seed* (Romans 9:8). The son is given by the returning word of the Formed, carried by paternal bloodline AND covenant-word together, never by the strength of an aged body. And the time is not vague but FIXED: *my covenant will I establish with Isaac, which Sarah shall bear unto thee at this set time in the next year* (Genesis 17:21). The appointment is kept exactly: *Yahuah (LORD) visited Sarah as he had said* (Genesis 21:1), and *Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him* (Genesis 21:2). The restored witness carries the set-time return: *when we returned to her at a set time, she would have conceived a son* (Jubilees 16:4). The promised seed comes to the day Yahuah set.',
+       sv.verse_id, ev.verse_id, 'extras', 20428
+  FROM _s301_ge18_lookup sv, _s301_ge18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=18 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-18-is-any-thing-too-hard-for-yahuah',
+       E'Is any thing too hard for Yahuah?',
+       E'When Sarah laughs at the promise of a son from a dead womb, the Formed answers her not with proof but with a question: *Is any thing too hard for Yahuah (LORD)? At the time appointed I will return unto thee, according to the time of life, and Sarah shall have a son* (Genesis 18:14). The question runs the length of Scripture as a settled confession. Jeremiah, buying a field while the city falls, prays it back: *Ah Yahuah (Lord) GOD! behold, thou hast made the heaven and the earth by thy great power and stretched out arm, and there is nothing too hard for thee* (Jeremiah 32:17). And Yahuah turns His own Mamre question on the prophet in the same words: *Behold, I am Yahuah (LORD), the Elohim (God) of all flesh: is there any thing too hard for me?* (Jeremiah 32:27). Centuries on, the messenger speaks the same word over the virgin womb of Miriam (Mary): *For with Elohim (God) nothing shall be impossible* (Luke 1:37). The dead womb of Sarah and the virgin womb both answer the one question the one way — nothing is too hard for Yahuah, who keeps His set-time word against every barrier of the flesh.',
+       sv.verse_id, ev.verse_id, 'free', 20431
+  FROM _s301_ge18_lookup sv, _s301_ge18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=18 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-18-sarah-laughed-and-through-faith-received-strength',
+       E'Sarah laughed — and through faith received strength',
+       E'*Now Abraham and Sarah were old and well stricken in age; and it ceased to be with Sarah after the manner of women. Therefore Sarah laughed within herself, saying, After I am waxed old shall I have pleasure, my lord being old also?* (Genesis 18:11-12). The Formed hears the laugh no ear caught — *Wherefore did Sarah laugh...?* (Genesis 18:13) — and when she denies it, *Then Sarah denied, saying, I laughed not; for she was afraid. And he said, Nay; but thou didst laugh* (Genesis 18:15). But the doubting laugh is not the end of her story. The faith that followed is reckoned to her: *Through faith also Sara herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised* (Hebrews 11:11). The promise was believed against the dead womb — the same trust-against-deadness reckoned to Abraham when he believed the seed would be as the stars. And the unbelieving laugh is turned at last to the laugh of joy: when the set-time son is born, *Sarah said, Elohim (God) hath made me to laugh, so that all that hear will laugh with me* (Genesis 21:6). The restored witness keeps the whole movement of hearing, laughing, fearing, denying: *And Sarah laughed, for she heard that we had spoken these words with Abraham, and we admonished her, and she became afraid, and denied that she had laughed on account of the words* (Jubilees 16:2).',
+       sv.verse_id, ev.verse_id, 'extras', 20434
+  FROM _s301_ge18_lookup sv, _s301_ge18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=18 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★ INTERCESSION)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-18-shall-not-the-judge-of-all-the-earth-do-right',
+       E'Shall not the Judge of all the earth do right? — Abraham stands in the breach',
+       E'The men turn toward Sodom, *but Abraham stood yet before Yahuah (LORD)* (Genesis 18:22) — and there he becomes the intercessor. *And Abraham drew near, and said, Wilt thou also destroy the righteous with the wicked?* (Genesis 18:23). He pleads not against Yahuah''s justice but FROM it: *That be far from thee to do after this manner, to slay the righteous with the wicked... Shall not the Judge of all the earth do right?* (Genesis 18:25). The Judge''s judgment is never arbitrary — the cry of Sodom is real, *Because the cry of Sodom and Gomorrah is great, and because their sin is very grievous* (Genesis 18:20) — yet the righteous must not perish with the guilty. So Abraham stands in the gap, bargaining the city down from fifty righteous to forty-five to forty to thirty to twenty, until *Peradventure ten shall be found there. And he said, I will not destroy it for ten''s sake* (Genesis 18:32). This is the pattern Yahuah later seeks and cannot find: *I sought for a man among them, that should make up the hedge, and stand in the gap before me for the land, that I should not destroy it: but I found none* (Ezekiel 22:30). It is the pattern Mosheh (Moses) takes up at Sinai: *Moses his chosen stood before him in the breach, to turn away his wrath, lest he should destroy them* (Psalm 106:23). The friend who stands in the breach for the guilty runs from Abraham to Mosheh and finds its fullness in the Messiah who makes intercession. And the intercession bore fruit: the restored witness records the sentence — *Yahuah (God) executed his judgments on Sodom, and Gomorrah... and He burned them with fire and brimstone* (Jubilees 16:5) — yet *But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow* (Jubilees 16:6). The Judge of all the earth did right: He did not slay the righteous with the wicked, but remembered the intercessor and drew the one righteous man out of the fire.',
+       sv.verse_id, ev.verse_id, 'extras', 20437
+  FROM _s301_ge18_lookup sv, _s301_ge18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=18 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-18-abraham-the-friend-stood-in-the-breach',
+       E'Shall I hide from Abraham? — the Friend of Elohim who keeps the way',
+       E'Before He acts, Yahuah opens His counsel to Abraham: *And Yahuah (LORD) said, Shall I hide from Abraham that thing which I do?* (Genesis 18:17). He will not keep His purpose from His friend — and He names plainly WHY Abraham is the friend He confides in: *For I know him, that he will command his children and his household after him, and they shall keep the way of Yahuah (LORD), to do justice and judgment; that Yahuah (LORD) may bring upon Abraham that which he hath spoken of him* (Genesis 18:19). The friendship is bound to a walk — to commanding his house to keep the way of Yahuah, to do justice and judgment. This is the friend named across the Scriptures: *the seed of Abraham thy friend for ever* (2 Chronicles 20:7), on which ground Yehoshaphat pleads for the land; *thou, Yashar''el (Israel), art my servant, Jacob whom I have chosen, the seed of Abraham my friend* (Isaiah 41:8), the whole nation named for that friendship; and *the scripture was fulfilled which saith, Abraham believed Elohim (God), and it was imputed unto him for righteousness: and he was called the Friend of Elohim (God)* (James 2:23). The Judge does not hide His doing from the friend who keeps His way — the friendship and the keeping of the commandments are one. The very next thing the Friend does with the counsel he is given is to stand in the breach and plead for Sodom.',
+       sv.verse_id, ev.verse_id, 'free', 20440
+  FROM _s301_ge18_lookup sv, _s301_ge18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=18 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Your father Abraham rejoiced to see my day: and he saw it, and was glad* (John 8:56) — Yahusha names the One Abraham met at Mamre (18:1); *Before Abraham was, I am* (John 8:58). The Formed Son is the day Abraham saw.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=1
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=8 AND tv.verse_number=56
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-yahuah-appeared-the-formed-at-the-oaks-of-mamre'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*entertain strangers: for thereby some have entertained angels unawares* (Hebrews 13:2) — the hospitality of the three men at the tent (18:2-8) is the very entertaining of angels unawares: Yahuah and His two messengers.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=1
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-yahuah-appeared-the-formed-at-the-oaks-of-mamre'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*we appeared to Abraham, at the oak of Mamre... a son would be given to him by Sarah his wife* (Jubilees 16:1) — the restored witness keeps the Mamre appearance (18:1) and the announcement (18:10), dated to the new moon of the fourth month.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=2
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=16 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-yahuah-appeared-the-formed-at-the-oaks-of-mamre'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*this is the word of promise, At this time will I come, and Sara shall have a son* (Romans 9:9) — Sha''ul quotes 18:10 to prove the seed is reckoned by PROMISE not flesh: *the children of the promise are counted for the seed* (Romans 9:8).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=10
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-sarah-shall-have-a-son-at-the-set-time'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*my covenant will I establish with Isaac... at this set time in the next year* (Genesis 17:21) — the appointed time of 18:14 is already named one chapter before; the promise is dated, not vague.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=14
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-sarah-shall-have-a-son-at-the-set-time'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim had spoken* (Genesis 21:2) — the word of 18:14 comes due exactly; the returning One kept His own appointment.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=14
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-sarah-shall-have-a-son-at-the-set-time'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*when we returned to her at a set time, she would have conceived a son* (Jubilees 16:4) — the restored witness carries the set-time return of 18:10,14.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=10
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=16 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-sarah-shall-have-a-son-at-the-set-time'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*there is nothing too hard for thee* (Jeremiah 32:17) — the question of 18:14 becomes the prophet''s confession: the Maker of heaven and earth has nothing too hard for Him.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=14
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=32 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-is-any-thing-too-hard-for-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*is there any thing too hard for me?* (Jeremiah 32:27) — Yahuah turns His own Mamre question (18:14) back on the prophet in the same words, as *the Elohim of all flesh*.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=14
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=32 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-is-any-thing-too-hard-for-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*with Elohim nothing shall be impossible* (Luke 1:37) — the Annunciation echo of 18:14: the dead womb of Sarah and the virgin womb both answer the one question the one way.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=14
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-is-any-thing-too-hard-for-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Through faith also Sara herself received strength to conceive seed... because she judged him faithful who had promised* (Hebrews 11:11) — the laugh of 18:12 is not the end; the faith that followed is reckoned, the promise believed against the dead womb.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=12
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-sarah-laughed-and-through-faith-received-strength'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Elohim hath made me to laugh, so that all that hear will laugh with me* (Genesis 21:6) — the doubting laugh of 18:12 (denied for fear, 18:15) is turned at the birth into the laugh of joy.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=12
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-sarah-laughed-and-through-faith-received-strength'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And Sarah laughed... and she became afraid, and denied that she had laughed* (Jubilees 16:2) — the restored witness keeps the whole movement of hearing, laughing, fearing, denying (18:12,15).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=12
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=16 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-sarah-laughed-and-through-faith-received-strength'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★ INTERCESSION)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I sought for a man... that should... stand in the gap before me for the land, that I should not destroy it: but I found none* (Ezekiel 22:30) — what Abraham DOES at 18:23 is the very thing Yahuah later seeks and cannot find: the intercessor in the gap.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=23
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=22 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-shall-not-the-judge-of-all-the-earth-do-right'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Moses his chosen stood before him in the breach, to turn away his wrath* (Psalm 106:23) — the standing-in-the-breach pattern Abraham opens at 18:23, taken up by Mosheh at Sinai, fulfilled in the Messiah who makes intercession.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=23
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-shall-not-the-judge-of-all-the-earth-do-right'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah executed his judgments on Sodom, and Gomorrah... He burned them with fire and brimstone... wicked and sinners exceedingly* (Jubilees 16:5) — the restored witness names the cause and sentence behind the cry of 18:20.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=20
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=16 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-shall-not-the-judge-of-all-the-earth-do-right'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*But Lot we saved; for Elohim remembered Abraham, and sent him out from the midst of the overthrow* (Jubilees 16:6) — the intercession of 18:23 bore fruit: the Judge did not slay the righteous with the wicked but remembered the friend.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=23
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=16 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-shall-not-the-judge-of-all-the-earth-do-right'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Abraham believed Elohim... and he was called the Friend of Elohim* (James 2:23) — because Abraham is the Friend, Yahuah will not hide His doing from him (18:17); the friendship is the reason the Judge confides.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=17
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-abraham-the-friend-stood-in-the-breach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*gavest it to the seed of Abraham thy friend for ever* (2 Chronicles 20:7) — Yehoshaphat pleads on the ground of the friendship first shown when Yahuah would not hide His purpose (18:17).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=17
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-abraham-the-friend-stood-in-the-breach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the seed of Abraham my friend* (Isaiah 41:8) — the whole nation named for the friendship of 18:17, bound to the walk of 18:19: *they shall keep the way of Yahuah, to do justice and judgment*.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=18 AND sv.verse_number=17
+  JOIN _s301_ge18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=41 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-18-abraham-the-friend-stood-in-the-breach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_19.sql (Genesis 19) -----
+-- Chapter: Genesis 19 (the two angels come to Sodom at even; Lot's hospitality in the gate; the men of Sodom compass the house and press at the door, demanding the strangers; Lot pleads, the angels pull him in and smite the men with blindness; the angels haste Lot, his wife, and two daughters out — "Escape for thy life; look not behind thee"; Yahuah rains brimstone and fire upon Sodom and Gomorrah, from Yahuah out of heaven; the cities, the plain, and all the inhabitants overthrown; Lot's wife looks back and becomes a pillar of salt; Abraham looks on the smoke going up as a furnace; Elohim remembered Abraham and sent Lot out of the overthrow; Lot in the cave, and the origin of Moab and Ammon)
+-- Tag: ge19   Temp view: _s301_ge19_lookup
+-- Sort band: base 20450, step 3 -> threads at 20450, 20453, 20456, 20459, 20462, 20465 (6 threads)
+-- Source of EVERY row: 'canon','genesis',19,v
+--
+-- Genesis 19 coverage:
+--   v.1-3 (two angels to Sodom at even; Lot sat in the gate, rose to meet them, bowed; pressed them to turn in, made them a feast, baked unleavened bread)
+--        NT:     none warranted distinct (the hospitality is the foil to Sodom's violence; held in THREAD 1)
+--        Extras: Jasher 19:46-47 (the angels reached Sodom in the evening, Lot sitting in the gate, rose to meet them, bowed, pressed them greatly into his house) — THREAD 1
+--        Tanakh: none warranted distinct (the contrast carried by Ezekiel 16:49 at THREAD 1)
+--   ★ v.4-11 (the men of Sodom, old and young, all the people, compass the house; "bring them out unto us, that we may know them"; Lot pleads "do not so wickedly"; they press sore, near to break the door; the angels pull Lot in and smite the men with blindness)
+--        NT:     none warranted distinct as MEMBER (the sin named by the standing-type weave goes through 2 Pet/Jude at THREAD 2; here the Scripture-named iniquity is the Tanakh anchor)
+--        Extras: none warranted distinct (Jasher's bed-of-cruelty material ch19:1-43 is the inhospitable-violence backdrop, folded into THREAD 1 framing via 19:46-47)
+--        Tanakh: ★ Ezekiel 16:49-50 (this was the iniquity of thy sister Sodom: pride, fulness of bread, abundance of idleness... neither did she strengthen the hand of the poor and needy; haughty, committed abomination) — THE Scripture-named sin; VICTIMS-NOT-ENEMIES anchor — THREAD 1
+--   v.12-14 (the men tell Lot to bring out his kin; "we will destroy this place, because the cry of them is waxen great before the face of Yahuah"; Lot warns his sons in law but seemed as one that mocked)
+--        NT:     none warranted distinct (the mocking-before-judgment / "they did eat, they drank" carried by Luke 17:28 at THREAD 2)
+--        Extras: Jasher 19:48 (the angels said, Arise, go forth from this place, lest you be consumed in the iniquity of this city, for Yahuah will destroy this place) — folded into THREAD 4 framing
+--        Tanakh: none warranted distinct
+--   ★ v.15-22 (the angels haste Lot at morning; "lest thou be consumed in the iniquity of the city"; they laid hold on his hand, Yahuah being merciful, set him without the city; "Escape for thy life; look not behind thee... escape to the mountain"; Lot pleads for Zoar)
+--        NT:     2 Peter 2:7-9 (delivered just Lot... Yahuah knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment) — THREAD 4 (load-bearing)
+--        Extras: Jubilees 16:6 (But Lot we saved; for Elohim remembered Abraham, and sent him out from the midst of the overthrow); Wisdom of Solomon 10:6 (she delivered the righteous man, who fled from the fire which fell down upon the five cities) — THREAD 4
+--        Tanakh: none warranted distinct (the deliverance-before-judgment carried by NT + Extras at THREAD 4)
+--   ★★ v.23-25 (the sun risen; Yahuah rained upon Sodom and Gomorrah brimstone and fire from Yahuah out of heaven; he overthrew the cities, the plain, the inhabitants, that which grew)
+--        NT:     ★ Luke 17:28-30 (as it was in the days of Lot... the same day that Lot went out of Sodom it rained fire and brimstone from heaven... even thus shall it be in the day when the Son of Adam is revealed); 2 Peter 2:6 (turning the cities of Sodom and Gomorrha into ashes... making them an ensample); Jude 7 (Sodom and Gomorrha... set forth for an example, suffering the vengeance of eternal fire); Matthew 10:15 (more tolerable for Sodom in the day of judgment); Matthew 11:24 (more tolerable for the land of Sodom in the day of judgment than for thee) — THREAD 2 (load-bearing, the STANDING TYPE)
+--        Extras: Jasher 19:51 (Then Yahuah rained upon Sodom and upon Gomorrah... brimstone and fire from Yahuah out of heaven); Jubilees 16:5 (in this month Yahuah executed his judgments on Sodom, and Gomorrah... and He burned them with fire and brimstone) — THREAD 2
+--        Tanakh: Isaiah 1:9-10; Isaiah 13:19; Deuteronomy 29:23; Jeremiah 49:18; Amos 4:11 — THREAD 5 (the proverb of overthrow)
+--   ★ v.26 (his wife looked back from behind him, and she became a pillar of salt)
+--        NT:     ★ Luke 17:32 (Remember Lot's wife) — THREAD 3 (load-bearing)
+--        Extras: Wisdom of Solomon 10:7 (a standing pillar of salt is a monument of an unbelieving soul); Jasher 19:53 (when she looked back she became a pillar of salt, and it is yet in that place to this day) — THREAD 3
+--        Tanakh: none warranted distinct (the warning carried forward by Luke 17:32 at THREAD 3)
+--   v.27-29 (Abraham gat up early to the place where he stood before Yahuah; looked toward Sodom, the smoke went up as the smoke of a furnace; Elohim remembered Abraham, and sent Lot out of the midst of the overthrow)
+--        NT:     2 Peter 2:9 (Yahuah knoweth how to deliver the godly) — folded at THREAD 4
+--        Extras: Jubilees 16:6 (Elohim remembered Abraham, and sent him out from the midst of the overthrow) — THREAD 4
+--        Tanakh: none warranted distinct (Abraham's intercession of ch18 bears its fruit here; carried by THREAD 4)
+--   v.30-38 (Lot in the cave with his two daughters; the daughters make their father drink wine to preserve seed; Moab born — father of the Moabites; Ben-ammi born — father of the children of Ammon)
+--        NT:     none warranted (the line of Moab is later gathered into the Messianic line through Ruth the Moabitess — held at Ruth/Matthew 1 packs, not forced here)
+--        Extras: Jasher 19:58-59 (the firstborn called the name of her son Moab... the father of the Moabites; the younger called her son Benami... the father of the children of Ammon) — THREAD 6
+--        Tanakh: Zephaniah 2:9 (Moab shall be as Sodom, and the children of Ammon as Gomorrah... saltpits, and a perpetual desolation) — THREAD 6
+--
+-- Threads (slug — target libraries):
+--   1. genesis-19-the-two-angels-and-lots-hospitality — Extras (Jasher) + Tanakh (Ezekiel) [extras] (VICTIMS-NOT-ENEMIES: Scripture names Sodom's sin)
+--   2. genesis-19-brimstone-and-fire-from-yahuah-out-of-heaven — NT (Luke, 2 Peter, Jude, Matthew x2) + Extras (Jasher, Jubilees) [extras] (★★ STANDING TYPE; "Son of Adam" exact; the "from Yahuah... from Yahuah" doubling)
+--   3. genesis-19-remember-lots-wife — NT (Luke) + Extras (Wisdom of Solomon, Jasher) [extras]
+--   4. genesis-19-elohim-remembered-abraham-and-sent-lot-out — NT (2 Peter) + Extras (Jubilees, Wisdom of Solomon) [extras] (the righteous delivered before judgment)
+--   5. genesis-19-sodom-the-proverb-of-overthrow — Tanakh (Isaiah x2, Deuteronomy, Jeremiah, Amos) [free]
+--   6. genesis-19-the-origin-of-moab-and-ammon — Tanakh (Zephaniah) + Extras (Jasher) [extras]
+--
+-- Framing notes:
+--   ★★ BRIMSTONE FROM YAHUAH OUT OF HEAVEN (THREAD 2, vv.24-25): *Then Yahuah (LORD) rained upon Sodom and upon
+--   Gomorrah brimstone and fire from Yahuah (LORD) out of heaven* (19:24) — the "from Yahuah... from Yahuah" doubling.
+--   FRAMED light (Red Line #4, no co-equal-persons grammar): the One who rains — the Formed, the visible Glory who bears
+--   the Name, who came down to Sodom — rains from the Formless, Yahuah out of heaven. The Son who appeared executes the
+--   judgment of the Father. NOT a Trinitarian two-persons proof; the lens is the Formed-and-the-Formless, kept light.
+--   Sodom is the STANDING TYPE of the day of judgment — the Messiah's own use: Luke 17:28-30 (*as it was in the days of
+--   Lot... even thus shall it be in the day when the Son of Adam is revealed* — "Son of Adam" kept exact as the parse
+--   gives it), 2 Peter 2:6 (an *ensample*), Jude 7 (an *example, suffering the vengeance of eternal fire*), Matthew
+--   10:15 / 11:24 (more tolerable for Sodom in the day of judgment). The wicked judged AND (THREAD 4) the righteous
+--   delivered, both.
+--   ★ REMEMBER LOT'S WIFE (THREAD 3, v.26): *she became a pillar of salt* — Luke 17:32 (*Remember Lot's wife*) makes her
+--   the standing warning against the half-delivered heart that looks back; the keep-walking-forward covenant warning
+--   (Luke 17:33, whosoever shall seek to save his life shall lose it). Wisdom of Solomon 10:7 names the pillar *a
+--   monument of an unbelieving soul* (clean parse). Jasher 19:53 keeps the looking-back becoming-salt.
+--   ★ THE RIGHTEOUS DELIVERED BEFORE JUDGMENT FALLS (THREAD 4, vv.15-22,29): *Elohim (God) remembered Abraham, and sent
+--   Lot out of the midst of the overthrow* (19:29) — the intercession of ch18 bears fruit. 2 Peter 2:7-9 holds both
+--   sides: *delivered just Lot* AND *Yahuah knoweth how to deliver the godly out of temptations, and to reserve the
+--   unjust unto the day of judgment*. Jubilees 16:6 and Wisdom of Solomon 10:6 carry the righteous fleeing the fire.
+--   ★ VICTIMS-NOT-ENEMIES (THREAD 1, vv.1-11): the sin of Sodom is named by Scripture itself — Ezekiel 16:49-50 (pride,
+--   fulness of bread, abundance of idleness, the hand of the poor not strengthened, haughty, abomination) and the
+--   inhospitable violence at Lot's door. The thread dismantles the SYSTEM of wickedness (set against Lot's hospitality,
+--   the gate-stranger welcomed vs the stranger violated), never weaponizing against any people. The Tanakh laterals
+--   (THREAD 5) name Sodom only as the standing PROVERB of overthrow.
+--   EXTRAS: Jasher 19 is a clean, rich Sodom narrative parallel (19:46-59 verbatim-close to Genesis 19); used 19:46-47
+--   (hospitality), 19:51 (brimstone doubling), 19:53 (pillar of salt), 19:58-59 (Moab/Ammon). Jasher DOUBLE-WRITTEN
+--   'jasher','jasher'. Jubilees 16:5-6 (the overthrow; Lot saved, Elohim remembered Abraham). Jubilees DOUBLE-WRITTEN
+--   'jubilees','jubilees'. Wisdom of Solomon edition 'apocrypha' + book slug 'the-wisdom-of-solomon' (DIFFER; both
+--   correct) — 10:6 (delivered the righteous from the fire of the five cities), 10:7 (pillar of salt, unbelieving soul);
+--   clean parse, no apparatus noise. 1 Enoch: NONE WARRANTED (no distinct Sodom parallel in this parse). vv.30-38 the
+--   cave: the Moab line is NOT weaponized; the Ruth/Messianic-line redemption is held for Ruth/Matthew 1, not forced here.
+
+CREATE TEMP VIEW _s301_ge19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: The two angels and Lot's hospitality (the gate-stranger welcomed vs the stranger violated)
+    ('canon','genesis',19,1,'jasher','jasher',19,46,'extras',
+      E'*And the angels rose up from the door of Abraham''s tent, after they had eaten and drunk, and they reached Sodom in the evening, and Lot was then sitting in the gate of Sodom, and when he saw them he rose to meet them, and he bowed down to the ground* (Jasher 19:46). The restored witness keeps the scene whole — the angels reaching Sodom *in the evening*, Lot in the gate, rising and bowing — matching *there came two angels to Sodom at even; and Lot sat in the gate of Sodom: and Lot seeing them rose up to meet them; and he bowed himself with his face toward the ground* (Genesis 19:1). Lot greets the stranger; the city will assault him.'),
+    ('canon','genesis',19,3,'jasher','jasher',19,47,'extras',
+      E'*And he pressed them greatly and brought them into his house, and he gave them victuals which they ate, and they abode all night in his house* (Jasher 19:47). The hospitality of *he pressed upon them greatly; and they turned in unto him, and entered into his house; and he made them a feast, and did bake unleavened bread, and they did eat* (Genesis 19:3) is carried in the restored witness — Lot pressing the strangers in, feeding them, sheltering them through the night, the very opposite of the city''s violence at the door.'),
+    ('canon','genesis',19,5,'canon','ezekiel',16,49,'free',
+      E'*Behold, this was the iniquity of thy sister Sodom, pride, fulness of bread, and abundance of idleness was in her and in her daughters, neither did she strengthen the hand of the poor and needy* (Ezekiel 16:49). When the men of Sodom press at Lot''s door — *bring them out unto us, that we may know them* (Genesis 19:5) — the prophet names the iniquity Scripture itself charges: *pride, fulness of bread, and abundance of idleness*, the hand of the poor not strengthened, the stranger not sheltered but violated. The sin is named by the word of Yahuah, not by the hatred of men.'),
+    ('canon','genesis',19,5,'canon','ezekiel',16,50,'free',
+      E'*And they were haughty, and committed abomination before me: therefore I took them away as I saw good* (Ezekiel 16:50). The pressing crowd that *came near to break the door* (Genesis 19:9) is what the prophet sums as the haughty *abomination before me*. Yahuah names the conduct and judges the system of wickedness — *I took them away as I saw good* — the overthrow falling on the deeds, never weaponized against a people.'),
+
+    -- THREAD 2 (★★ STANDING TYPE): Brimstone and fire from Yahuah out of heaven
+    ('canon','genesis',19,24,'canon','luke',17,29,'free',
+      E'*But the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all* (Luke 17:29). The Messiah takes the very judgment of *Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24) and sets it as the pattern of the last day: the day Lot went out, *it rained fire and brimstone from heaven*. What fell on Sodom is the standing type of what comes.'),
+    ('canon','genesis',19,24,'canon','luke',17,30,'free',
+      E'*Even thus shall it be in the day when the Son of Adam is revealed* (Luke 17:30). The brimstone of *brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24) is the Messiah''s own figure of the day of his appearing: *even thus shall it be in the day when the Son of Adam is revealed*. Sodom''s overthrow is not a closed chapter of history but the warning held over the whole age — the seed-of-Adam Judge revealed as the fire fell on the cities.'),
+    ('canon','genesis',19,25,'canon','luke',17,28,'free',
+      E'*Likewise also as it was in the days of Lot; they did eat, they drank, they bought, they sold, they planted, they builded* (Luke 17:28). Against the sudden overthrow — *he overthrew those cities, and all the plain, and all the inhabitants of the cities, and that which grew upon the ground* (Genesis 19:25) — the Messiah sets the careless feasting of Sodom before the fire: *they did eat, they drank, they bought, they sold, they planted, they builded*. The plain that *grew upon the ground* was swept away in a day; so the days of the Son of Adam.'),
+    ('canon','genesis',19,24,'canon','2-peter',2,6,'free',
+      E'*And turning the cities of Sodom and Gomorrha into ashes condemned them with an overthrow, making them an ensample unto those that after should live ungodly* (2 Peter 2:6). Kepha (Peter) reads *brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24) as the deliberate making of *an ensample*: Sodom and Gomorrah *turned into ashes... with an overthrow*, set up as the standing warning *unto those that after should live ungodly*. The judgment was a sermon written in fire.'),
+    ('canon','genesis',19,25,'canon','jude',1,7,'free',
+      E'*Even as Sodom and Gomorrha, and the cities about them in like manner, giving themselves over to fornication, and going after strange flesh, are set forth for an example, suffering the vengeance of eternal fire* (Jude 7). Jude takes the overthrow of *all the inhabitants of the cities* (Genesis 19:25) as the cities *set forth for an example, suffering the vengeance of eternal fire*. The temporal fire that fell from heaven is read as the figure of the eternal — Sodom the example held before every generation.'),
+    ('canon','genesis',19,25,'canon','matthew',10,15,'free',
+      E'*Verily I say unto you, It shall be more tolerable for the land of Sodom and Gomorrha in the day of judgment, than for that city* (Matthew 10:15). The overthrow of *those cities, and all the plain* (Genesis 19:25) becomes the Messiah''s measure of judgment: the city that rejects his sent ones will fare worse than *the land of Sodom and Gomorrha in the day of judgment*. Sodom is the floor of judgment, and to refuse the word is to sink beneath it.'),
+    ('canon','genesis',19,25,'canon','matthew',11,24,'free',
+      E'*But I say unto you, That it shall be more tolerable for the land of Sodom in the day of judgment, than for thee* (Matthew 11:24). Over Capernaum, which saw mighty works and repented not, the Messiah sets the overthrow of *all the inhabitants of the cities* (Genesis 19:25) as the lighter sentence: *more tolerable for the land of Sodom in the day of judgment, than for thee*. The greater the light refused, the heavier than Sodom the reckoning.'),
+    ('canon','genesis',19,24,'jasher','jasher',19,51,'extras',
+      E'*Then Yahuah (the Lord) rained upon Sodom and upon Gomorrah and upon all these cities brimstone and fire from Yahuah (the Lord) out of heaven* (Jasher 19:51). The restored witness keeps the doubling exact — *brimstone and fire from Yahuah... out of heaven* — matching *Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24): the One who rains, raining from Yahuah out of heaven, the Formed executing the judgment of the Formless.'),
+    ('canon','genesis',19,24,'jubilees','jubilees',16,5,'extras',
+      E'*And in this month Yahuah (God) executed his judgments on Sodom, and Gomorrah, and Zeboim, and all the region of the Jordan, and He burned them with fire and brimstone, and destroyed them until this day* (Jubilees 16:5). The restored witness names the overthrow of *brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24) as Yahuah''s executed judgment — *He burned them with fire and brimstone* — on Sodom, Gomorrah, and all the region of the Jordan, a destruction standing *until this day*.'),
+
+    -- THREAD 3: Remember Lot's wife
+    ('canon','genesis',19,26,'canon','luke',17,32,'free',
+      E'*Remember Lot''s wife* (Luke 17:32). Two words from the Messiah make her the standing warning of the whole age. *But his wife looked back from behind him, and she became a pillar of salt* (Genesis 19:26) — and the Son of Adam, teaching the day of his revealing, says simply *Remember Lot''s wife*: the half-delivered heart that, brought out of the city, turns back toward it and is lost where it looked. *Whosoever shall seek to save his life shall lose it* (Luke 17:33).'),
+    ('canon','genesis',19,26,'apocrypha','the-wisdom-of-solomon',10,7,'extras',
+      E'*Of whose wickedness even to this day the waste land that smoketh is a testimony, and plants bearing fruit that never come to ripeness: and a standing pillar of salt is a monument of an unbelieving soul* (Wisdom of Solomon 10:7). The restored witness reads *she became a pillar of salt* (Genesis 19:26) as a *monument of an unbelieving soul* — the salt-pillar set beside the smoking waste land as the lasting testimony against the heart that did not believe the word *look not behind thee* (Genesis 19:17).'),
+    ('canon','genesis',19,26,'jasher','jasher',19,53,'extras',
+      E'*And when she looked back she became a pillar of salt, and it is yet in that place to this day* (Jasher 19:53). The restored witness keeps the moment whole — the looking back, the becoming salt, the pillar standing *to this day* — matching *his wife looked back from behind him, and she became a pillar of salt* (Genesis 19:26). She was brought out of the overthrow, yet her heart stayed in Sodom, and there she was fixed.'),
+
+    -- THREAD 4: Elohim remembered Abraham, and sent Lot out of the overthrow (the righteous delivered before judgment)
+    ('canon','genesis',19,16,'canon','2-peter',2,7,'free',
+      E'*And delivered just Lot, vexed with the filthy conversation of the wicked* (2 Peter 2:7). When *the men laid hold upon his hand... Yahuah (LORD) being merciful unto him: and they brought him forth, and set him without the city* (Genesis 19:16), Kepha (Peter) names what was done — Yahuah *delivered just Lot* — the righteous man drawn out by the hand before the fire fell. The mercy that laid hold of Lot''s hand is the deliverance of the godly.'),
+    ('canon','genesis',19,29,'canon','2-peter',2,9,'free',
+      E'*Yahuah (Lord) knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment to be punished* (2 Peter 2:9). The hinge of the chapter — *Elohim (God) remembered Abraham, and sent Lot out of the midst of the overthrow* (Genesis 19:29) — is exactly Kepha''s rule: *Yahuah knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment*. Both halves fall in one day: Lot drawn out, the cities overthrown.'),
+    ('canon','genesis',19,29,'jubilees','jubilees',16,6,'extras',
+      E'*But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow* (Jubilees 16:6). The restored witness carries the hinge verse-for-verse — *Elohim remembered Abraham, and sent him out from the midst of the overthrow* — matching *Elohim (God) remembered Abraham, and sent Lot out of the midst of the overthrow* (Genesis 19:29). The intercession of Abraham at the oak (Genesis 18) bears its fruit in the saving of Lot.'),
+    ('canon','genesis',19,16,'apocrypha','the-wisdom-of-solomon',10,6,'extras',
+      E'*When the ungodly perished, she delivered the righteous man, who fled from the fire which fell down upon the five cities* (Wisdom of Solomon 10:6). The restored witness names Lot *the righteous man, who fled from the fire which fell down upon the five cities* — the very deliverance of *they brought him forth, and set him without the city* (Genesis 19:16) and *Escape for thy life... escape to the mountain, lest thou be consumed* (Genesis 19:17). The righteous is drawn out before the fire falls.'),
+
+    -- THREAD 5: Sodom — the proverb of overthrow (the Tanakh laterals)
+    ('canon','genesis',19,24,'canon','isaiah',13,19,'free',
+      E'*And Babylon, the glory of kingdoms, the beauty of the Chaldees'' excellency, shall be as when Elohim (God) overthrew Sodom and Gomorrah* (Isaiah 13:19). The overthrow of *Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire* (Genesis 19:24) becomes the measuring-rod of every later judgment: proud Babylon herself shall fall *as when Elohim overthrew Sodom and Gomorrah*. Sodom is the proverb the prophets reach back to.'),
+    ('canon','genesis',19,25,'canon','isaiah',1,9,'free',
+      E'*Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah* (Isaiah 1:9). The overthrow of *all the inhabitants of the cities* (Genesis 19:25) is the fate Yashar''el escapes only by the remnant: *except Yahuah Tseva''ot had left unto us a very small remnant, we should have been as Sodom*. The cities the next verse calls *ye rulers of Sodom* (Isaiah 1:10) are spared the overthrow only by grace.'),
+    ('canon','genesis',19,25,'canon','deuteronomy',29,23,'free',
+      E'*And that the whole land thereof is brimstone, and salt, and burning, that it is not sown, nor beareth, nor any grass groweth therein, like the overthrow of Sodom, and Gomorrah, Admah, and Zeboim, which Yahuah (LORD) overthrew in his anger, and in his wrath* (Deuteronomy 29:23). Mosheh (Moses) sets the overthrow of *that which grew upon the ground* (Genesis 19:25) — now *brimstone, and salt, and burning... nor any grass groweth therein* — as the covenant warning to Yashar''el: the land that forsakes the covenant becomes *like the overthrow of Sodom*.'),
+    ('canon','genesis',19,25,'canon','jeremiah',49,18,'free',
+      E'*As in the overthrow of Sodom and Gomorrah and the neighbour cities thereof, saith Yahuah (LORD), no man shall abide there, neither shall a son of Adam dwell in it* (Jeremiah 49:18). The desolation of *all the inhabitants of the cities* (Genesis 19:25) becomes the prophet''s figure for Edom''s end: *as in the overthrow of Sodom and Gomorrah... no man shall abide there, neither shall a son of Adam dwell in it*. The overthrow is the standing word of total, uninhabited ruin.'),
+    ('canon','genesis',19,25,'canon','amos',4,11,'free',
+      E'*I have overthrown some of you, as Elohim (God) overthrew Sodom and Gomorrah, and ye were as a firebrand plucked out of the burning: yet have ye not returned unto me, saith Yahuah (LORD)* (Amos 4:11). The overthrow of the cities (Genesis 19:25) is turned by Amos into a mercy-laden warning: Yahuah overthrew *some of you, as Elohim overthrew Sodom and Gomorrah*, yet left them *as a firebrand plucked out of the burning* — spared like Lot, that they might return.'),
+
+    -- THREAD 6: The origin of Moab and Ammon (the cave)
+    ('canon','genesis',19,37,'jasher','jasher',19,58,'extras',
+      E'*And they both lay with their father, and they conceived and bare sons, and the first born called the name of her son Moab, saying, From my father did I conceive him; he is the father of the Moabites to this day* (Jasher 19:58). The restored witness carries the origin of Moab — *the first born called the name of her son Moab... the father of the Moabites to this day* — matching *the firstborn bare a son, and called his name Moab: the same is the father of the Moabites unto this day* (Genesis 19:37).'),
+    ('canon','genesis',19,38,'jasher','jasher',19,59,'extras',
+      E'*And the younger also called her son Benami; he is the father of the children of Ammon to this day* (Jasher 19:59). The restored witness keeps the origin of Ammon — *the younger also called her son Benami; he is the father of the children of Ammon to this day* — matching *the younger, she also bare a son, and called his name Ben-ammi: the same is the father of the children of Ammon unto this day* (Genesis 19:38).'),
+    ('canon','genesis',19,37,'canon','zephaniah',2,9,'free',
+      E'*Therefore as I live, saith Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of Yashar''el (Israel), Surely Moab shall be as Sodom, and the children of Ammon as Gomorrah, even the breeding of nettles, and saltpits, and a perpetual desolation* (Zephaniah 2:9). The two nations born in the cave above the overthrow — Moab and *the children of Ammon* (Genesis 19:37-38) — are sworn by the prophet to the very fate of the cities their fathers fled: *Moab shall be as Sodom, and the children of Ammon as Gomorrah*, with *saltpits* echoing the pillar of salt. What came out of Sodom''s shadow returns to Sodom''s judgment.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-19-the-two-angels-and-lots-hospitality',
+       E'The two angels and Lot''s hospitality — and the iniquity Scripture names',
+       E'*And there came two angels to Sodom at even; and Lot sat in the gate of Sodom: and Lot seeing them rose up to meet them; and he bowed himself with his face toward the ground* (Genesis 19:1). Lot does for the stranger what Sodom will not: he *pressed upon them greatly... and he made them a feast, and did bake unleavened bread, and they did eat* (Genesis 19:3). The restored witness keeps the welcome whole — *Lot was then sitting in the gate of Sodom, and when he saw them he rose to meet them, and he bowed down to the ground* (Jasher 19:46), *and he pressed them greatly and brought them into his house, and he gave them victuals which they ate* (Jasher 19:47). Then the city shows itself: *the men of the city, even the men of Sodom, compassed the house round, both old and young, all the people from every quarter* (Genesis 19:4), demanding *bring them out unto us, that we may know them* (Genesis 19:5). Lot pleads *do not so wickedly* (Genesis 19:7), and they *pressed sore upon the man, even Lot, and came near to break the door* (Genesis 19:9) — until the angels *pulled Lot into the house* and *smote the men that were at the door of the house with blindness, both small and great* (Genesis 19:10-11). The sin here is named not by the hatred of men but by the word of Yahuah: *Behold, this was the iniquity of thy sister Sodom, pride, fulness of bread, and abundance of idleness was in her and in her daughters, neither did she strengthen the hand of the poor and needy* (Ezekiel 16:49), *and they were haughty, and committed abomination before me: therefore I took them away as I saw good* (Ezekiel 16:50). The hospitality of one righteous man at the gate stands against the haughty violence of a whole city — and it is the system of wickedness, the abomination Scripture itself charges, that the overthrow falls upon, never a people to be hated.',
+       sv.verse_id, ev.verse_id, 'extras', 20450
+  FROM _s301_ge19_lookup sv, _s301_ge19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=19 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★ STANDING TYPE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-19-brimstone-and-fire-from-yahuah-out-of-heaven',
+       E'Brimstone and fire from Yahuah out of heaven — the standing type of the judgment',
+       E'*Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven; And he overthrew those cities, and all the plain, and all the inhabitants of the cities, and that which grew upon the ground* (Genesis 19:24-25). Hear the doubling: *from Yahuah... from Yahuah out of heaven*. The One who rains — the Formed, the visible Glory who bears the Name, who came down to the cities — rains from the Formless, Yahuah out of heaven; the Son executes the judgment of the Father. The restored witnesses keep it exact: *Then Yahuah (the Lord) rained upon Sodom and upon Gomorrah and upon all these cities brimstone and fire from Yahuah (the Lord) out of heaven* (Jasher 19:51); *Yahuah (God) executed his judgments on Sodom, and Gomorrah... and He burned them with fire and brimstone* (Jubilees 16:5). And the Messiah makes this overthrow the standing type of the last day. *Likewise also as it was in the days of Lot; they did eat, they drank, they bought, they sold, they planted, they builded* (Luke 17:28) — and *the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all* (Luke 17:29) — *Even thus shall it be in the day when the Son of Adam is revealed* (Luke 17:30). Kepha (Peter) calls it a deliberate sign: Yahuah *turning the cities of Sodom and Gomorrha into ashes condemned them with an overthrow, making them an ensample unto those that after should live ungodly* (2 Peter 2:6). Jude reads the temporal fire as the figure of the eternal: *Sodom and Gomorrha... are set forth for an example, suffering the vengeance of eternal fire* (Jude 7). And the Messiah sets Sodom as the very floor of judgment: *It shall be more tolerable for the land of Sodom and Gomorrha in the day of judgment, than for that city* (Matthew 10:15), *more tolerable for the land of Sodom in the day of judgment, than for thee* (Matthew 11:24). What fell on the cities in a day is the warning held over the whole age — the wicked judged, and (as the next thread shows) the righteous drawn out first.',
+       sv.verse_id, ev.verse_id, 'extras', 20453
+  FROM _s301_ge19_lookup sv, _s301_ge19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=19 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-19-remember-lots-wife',
+       E'Remember Lot''s wife — she became a pillar of salt',
+       E'*But his wife looked back from behind him, and she became a pillar of salt* (Genesis 19:26). She was brought out of the city by the hand of the angels, set without the overthrow — yet her heart stayed in Sodom, and where she looked, there she was fixed. The Messiah makes her the standing warning of his own day in two words: *Remember Lot''s wife* (Luke 17:32). He sets her against the man on the housetop who must not come down for his stuff, and seals it: *Whosoever shall seek to save his life shall lose it; and whosoever shall lose his life shall preserve it* (Luke 17:33). The looking back is the half-delivered heart, the hand on the plough that turns to what it was told to flee — for the word had been plain: *Escape for thy life; look not behind thee* (Genesis 19:17). The restored witnesses keep the monument standing: *a standing pillar of salt is a monument of an unbelieving soul* (Wisdom of Solomon 10:7); *And when she looked back she became a pillar of salt, and it is yet in that place to this day* (Jasher 19:53). The covenant call is to keep walking forward, never to look back at the burning city the Deliverer has brought you out of.',
+       sv.verse_id, ev.verse_id, 'extras', 20456
+  FROM _s301_ge19_lookup sv, _s301_ge19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=19 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-19-elohim-remembered-abraham-and-sent-lot-out',
+       E'Elohim remembered Abraham, and sent Lot out of the overthrow',
+       E'Before the fire fell, the righteous was drawn out. *And while he lingered, the men laid hold upon his hand, and upon the hand of his wife, and upon the hand of his two daughters; Yahuah (LORD) being merciful unto him: and they brought him forth, and set him without the city* (Genesis 19:16), with the word *Escape for thy life... escape to the mountain, lest thou be consumed* (Genesis 19:17). And when the cities were ashes, the chapter names the reason: *And it came to pass, when Elohim (God) destroyed the cities of the plain, that Elohim (God) remembered Abraham, and sent Lot out of the midst of the overthrow* (Genesis 19:29). The intercession of Abraham at the oak — *wilt thou also destroy the righteous with the wicked?* (Genesis 18:23) — bears its fruit here: Lot saved for Abraham''s sake. Kepha (Peter) holds both halves of this in one rule: Yahuah *delivered just Lot, vexed with the filthy conversation of the wicked* (2 Peter 2:7), for *Yahuah (Lord) knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment to be punished* (2 Peter 2:9). The restored witnesses keep the saving whole: *But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow* (Jubilees 16:6); *she delivered the righteous man, who fled from the fire which fell down upon the five cities* (Wisdom of Solomon 10:6). The same day that judged the wicked delivered the righteous — both fall together, and Yahuah knows how to do the two as one work.',
+       sv.verse_id, ev.verse_id, 'extras', 20459
+  FROM _s301_ge19_lookup sv, _s301_ge19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=19 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-19-sodom-the-proverb-of-overthrow',
+       E'Sodom and Gomorrah — the proverb of overthrow',
+       E'*And he overthrew those cities, and all the plain, and all the inhabitants of the cities, and that which grew upon the ground* (Genesis 19:25). The overthrow becomes the measuring-rod the prophets reach back to whenever they would name a total and final ruin. Proud Babylon shall fall *as when Elohim (God) overthrew Sodom and Gomorrah* (Isaiah 13:19). Yashar''el herself is spared the same end only by grace: *Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah* (Isaiah 1:9) — for the rulers Isaiah addresses he calls *ye rulers of Sodom* (Isaiah 1:10). Mosheh (Moses) makes it the covenant warning: the apostate land becomes *brimstone, and salt, and burning... like the overthrow of Sodom, and Gomorrah, Admah, and Zeboim, which Yahuah (LORD) overthrew in his anger* (Deuteronomy 29:23). Jeremiah seals it as the word of uninhabited ruin: *As in the overthrow of Sodom and Gomorrah... no man shall abide there, neither shall a son of Adam dwell in it* (Jeremiah 49:18). And Amos turns it to mercy: *I have overthrown some of you, as Elohim (God) overthrew Sodom and Gomorrah, and ye were as a firebrand plucked out of the burning: yet have ye not returned unto me, saith Yahuah (LORD)* (Amos 4:11) — spared like Lot, that they might return. Sodom is the standing proverb of judgment across the whole Tanakh.',
+       sv.verse_id, ev.verse_id, 'free', 20462
+  FROM _s301_ge19_lookup sv, _s301_ge19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=19 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-19-the-origin-of-moab-and-ammon',
+       E'The origin of Moab and Ammon — out of Sodom''s shadow',
+       E'In the cave above the smoking plain, Lot''s daughters, thinking *there is not a man in the earth to come in unto us* (Genesis 19:31), preserve seed of their father, and two nations are born: *the firstborn bare a son, and called his name Moab: the same is the father of the Moabites unto this day* (Genesis 19:37), and *the younger, she also bare a son, and called his name Ben-ammi: the same is the father of the children of Ammon unto this day* (Genesis 19:38). The restored witness carries both origins: *the first born called the name of her son Moab... he is the father of the Moabites to this day* (Jasher 19:58); *the younger also called her son Benami; he is the father of the children of Ammon to this day* (Jasher 19:59). And the prophet binds these two nations back to the very judgment their fathers fled: *Surely Moab shall be as Sodom, and the children of Ammon as Gomorrah, even the breeding of nettles, and saltpits, and a perpetual desolation* (Zephaniah 2:9) — the *saltpits* echoing the pillar of salt, what came out of Sodom''s shadow returning to Sodom''s judgment. Yet the line of Moab is not abandoned: out of it comes Ruth the Moabitess, gathered by covenant into the seed — but that redemption is sung in its own place, not forced here.',
+       sv.verse_id, ev.verse_id, 'extras', 20465
+  FROM _s301_ge19_lookup sv, _s301_ge19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=19 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Lot was then sitting in the gate of Sodom, and when he saw them he rose to meet them, and he bowed down to the ground* (Jasher 19:46) — the restored witness keeps the welcome of 19:1, the angels reaching Sodom in the evening.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=19 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-the-two-angels-and-lots-hospitality'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he pressed them greatly and brought them into his house, and he gave them victuals which they ate* (Jasher 19:47) — the hospitality of 19:3 in the restored witness, the foil to the city''s violence at the door.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=3
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=19 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-the-two-angels-and-lots-hospitality'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *this was the iniquity of thy sister Sodom, pride, fulness of bread, and abundance of idleness... neither did she strengthen the hand of the poor and needy* (Ezekiel 16:49) — Scripture itself names the sin of 19:5; victims-not-enemies, the deeds charged by Yahuah''s word.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=16 AND tv.verse_number=49
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-the-two-angels-and-lots-hospitality'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they were haughty, and committed abomination before me: therefore I took them away as I saw good* (Ezekiel 16:50) — the pressing crowd of 19:9 summed; the system of wickedness judged, never a people hated.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=16 AND tv.verse_number=50
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-the-two-angels-and-lots-hospitality'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★ STANDING TYPE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all* (Luke 17:29) — the Messiah takes the brimstone of 19:24 as the pattern of the last day.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=24
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=17 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-brimstone-and-fire-from-yahuah-out-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Even thus shall it be in the day when the Son of Adam is revealed* (Luke 17:30) — the overthrow of 19:24 is the Messiah''s figure of his appearing; the seed-of-Adam Judge revealed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=24
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=17 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-brimstone-and-fire-from-yahuah-out-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*as it was in the days of Lot; they did eat, they drank, they bought, they sold, they planted, they builded* (Luke 17:28) — the careless feasting before the overthrow of 19:25.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=17 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-brimstone-and-fire-from-yahuah-out-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*turning the cities of Sodom and Gomorrha into ashes condemned them with an overthrow, making them an ensample* (2 Peter 2:6) — Kepha reads the overthrow of 19:24 as a deliberate sign for the ungodly.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=24
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-brimstone-and-fire-from-yahuah-out-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Sodom and Gomorrha... are set forth for an example, suffering the vengeance of eternal fire* (Jude 7) — the temporal fire of 19:25 read as the figure of the eternal.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-brimstone-and-fire-from-yahuah-out-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*more tolerable for the land of Sodom and Gomorrha in the day of judgment, than for that city* (Matthew 10:15) — the overthrow of 19:25 the Messiah''s floor of judgment for the city that rejects his sent ones.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=10 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-brimstone-and-fire-from-yahuah-out-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*more tolerable for the land of Sodom in the day of judgment, than for thee* (Matthew 11:24) — over Capernaum, the overthrow of 19:25 the lighter sentence; the greater the light refused, the heavier the reckoning.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-brimstone-and-fire-from-yahuah-out-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Then Yahuah (the Lord) rained upon Sodom and upon Gomorrah... brimstone and fire from Yahuah (the Lord) out of heaven* (Jasher 19:51) — the restored witness keeps the "from Yahuah... from Yahuah" doubling of 19:24.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=24
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=19 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-brimstone-and-fire-from-yahuah-out-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*Yahuah (God) executed his judgments on Sodom, and Gomorrah... and He burned them with fire and brimstone* (Jubilees 16:5) — the restored witness names the overthrow of 19:24 as Yahuah''s executed judgment, standing until this day.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=24
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=16 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-brimstone-and-fire-from-yahuah-out-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Remember Lot''s wife* (Luke 17:32) — two words make the salt-pillar of 19:26 the standing warning of the Messiah''s day, against the heart that looks back.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=26
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=17 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-remember-lots-wife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*a standing pillar of salt is a monument of an unbelieving soul* (Wisdom of Solomon 10:7) — the restored witness reads the pillar of 19:26 as the monument of unbelief beside the smoking waste land.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=26
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=10 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-remember-lots-wife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*when she looked back she became a pillar of salt, and it is yet in that place to this day* (Jasher 19:53) — the restored witness keeps the looking-back and becoming-salt of 19:26 whole.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=26
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=19 AND tv.verse_number=53
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-remember-lots-wife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And delivered just Lot, vexed with the filthy conversation of the wicked* (2 Peter 2:7) — the hand laid on Lot in 19:16 named as Yahuah delivering the righteous before the fire fell.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=16
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-elohim-remembered-abraham-and-sent-lot-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (Lord) knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment* (2 Peter 2:9) — Kepha''s rule, exactly the hinge of 19:29: the wicked judged, the righteous delivered, one work.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=29
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-elohim-remembered-abraham-and-sent-lot-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow* (Jubilees 16:6) — the hinge of 19:29 carried verse-for-verse; Abraham''s intercession bearing fruit.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=29
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=16 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-elohim-remembered-abraham-and-sent-lot-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*she delivered the righteous man, who fled from the fire which fell down upon the five cities* (Wisdom of Solomon 10:6) — the restored witness names Lot the righteous fleeing the fire of 19:16-17.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=16
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=10 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-elohim-remembered-abraham-and-sent-lot-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Babylon, the glory of kingdoms... shall be as when Elohim (God) overthrew Sodom and Gomorrah* (Isaiah 13:19) — the overthrow of 19:24 the measuring-rod for proud Babylon''s fall.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=24
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=13 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-sodom-the-proverb-of-overthrow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom* (Isaiah 1:9) — Yashar''el spared the overthrow of 19:25 only by the remnant; the rulers called "ye rulers of Sodom" (Isaiah 1:10).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-sodom-the-proverb-of-overthrow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the whole land thereof is brimstone, and salt, and burning... like the overthrow of Sodom, and Gomorrah, Admah, and Zeboim* (Deuteronomy 29:23) — Mosheh sets the overthrow of 19:25 as the covenant warning to the apostate land.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-sodom-the-proverb-of-overthrow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*As in the overthrow of Sodom and Gomorrah... no man shall abide there, neither shall a son of Adam dwell in it* (Jeremiah 49:18) — the desolation of 19:25 the prophet''s word of uninhabited ruin over Edom.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=49 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-sodom-the-proverb-of-overthrow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I have overthrown some of you, as Elohim (God) overthrew Sodom and Gomorrah, and ye were as a firebrand plucked out of the burning* (Amos 4:11) — the overthrow of 19:25 turned to mercy; spared like Lot, that they might return.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-sodom-the-proverb-of-overthrow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the first born called the name of her son Moab... he is the father of the Moabites to this day* (Jasher 19:58) — the origin of Moab in 19:37 kept in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=37
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=19 AND tv.verse_number=58
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-the-origin-of-moab-and-ammon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the younger also called her son Benami; he is the father of the children of Ammon to this day* (Jasher 19:59) — the origin of Ammon in 19:38 kept in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=38
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=19 AND tv.verse_number=59
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-the-origin-of-moab-and-ammon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Surely Moab shall be as Sodom, and the children of Ammon as Gomorrah... saltpits, and a perpetual desolation* (Zephaniah 2:9) — the two nations born above the overthrow (19:37-38) sworn to the very fate their fathers fled; "saltpits" echoing the pillar of salt.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=19 AND sv.verse_number=37
+  JOIN _s301_ge19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-19-the-origin-of-moab-and-ammon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session301 — Genesis cross-references complete.'
