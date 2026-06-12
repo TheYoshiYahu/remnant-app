@@ -1,0 +1,250 @@
+{
+  "edition": "apocrypha",
+  "book": "2-esdras",
+  "chapter": 6,
+  "session": "session253",
+  "tag": "2esd6",
+  "base_band": 63125,
+  "threads": [
+    {
+      "slug": "2-esdras-6-made-through-me-alone",
+      "title": "Made through me alone, and through none other",
+      "summary_md": "Before paradise, before the angels, before the firmament was named, the Voice declares the sole agency of creation: *Then did I consider these things, and they all were made through me alone, and through none other: by me also they shall be ended, and by none other.* (2 Esdras 6:6). The Beginning and the End in one hand. John names that same Word: *All things were made by him; and without him was not any thing made that was made.* (John 1:3). Paul gathers the whole created order into Him: *For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him:* (Colossians 1:16), and *he is before all things, and by him all things consist.* (Colossians 1:17). And the prophet seals the 'alone' with no other hand beside Him: *Thus saith Yahuah (LORD), thy redeemer, and he that formed thee from the womb, I am Yahuah (LORD) that maketh all things; that stretcheth forth the heavens alone; that spreadeth abroad the earth by myself;* (Isaiah 44:24). It ain't new — the Formed Wisdom by whom all was made, and by whom all shall be ended.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "John 1:3 — *All things were made by him; and without him was not any thing made that was made.* The Word's sole agency in John is the very 'through me alone, and through none other' the Voice claims in 2 Esdras 6:6."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "colossians",
+          "tgt_ch": 1,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Colossians 1:16 — *For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him:* Paul's 'all things created by him, and for him' is the same one-hand creation of 2 Esdras 6:6."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "colossians",
+          "tgt_ch": 1,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Colossians 1:17 — *And he is before all things, and by him all things consist.* He who was before all and holds all together is the 'by me also they shall be ended' of 2 Esdras 6:6 — Beginning and End in one hand."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Isaiah 44:24 — *Thus saith Yahuah (LORD), thy redeemer, and he that formed thee from the womb, I am Yahuah (LORD) that maketh all things; that stretcheth forth the heavens alone; that spreadeth abroad the earth by myself;* The prophet's 'alone... by myself' is exactly the 'through none other' of 2 Esdras 6:6."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-6-jacob-the-heel-of-esau",
+      "title": "Jacob's hand held first the heel of Esau",
+      "summary_md": "Esdras asks the parting of the times, and the answer is a birth: *From Abraham to Isaac, when Jacob and Esau were born of him, Jacob's hand held first the heel of Esau.* (2 Esdras 6:8) — *For Esau is the end of the world, and Jacob is the beginning of it that followeth.* (2 Esdras 6:9). The old age and the age to come hinge on the elder and the younger, the supplanter's hand at the heel. Election precedes confession — *and another shall call himself by the name of Jacob; and another shall subscribe with his hand unto Yahuah (LORD), and surname himself by the name of Yashar'el (Israel).* (Isaiah 44:5). And the Chooser sets His love not on the many but the kept seed: *Yahuah (LORD) did not set his love upon you, nor choose you, because ye were more in number than any people; for ye were the fewest of all people:* (Deuteronomy 7:7). The hand between the heel and the hand is the remnant's hold on the inheritance — not a people that supplants Israel, but the faithful seed grasping the age that follows.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Isaiah 44:5 — *One shall say, I am the LORD'S; and another shall call himself by the name of Jacob; and another shall subscribe with his hand unto Yahuah (LORD), and surname himself by the name of Yashar'el (Israel).* The name of Jacob taken up by the hand answers the heel-grasping hand of Jacob in 2 Esdras 6:8."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 7,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Deuteronomy 7:7 — *Yahuah (LORD) did not set his love upon you, nor choose you, because ye were more in number than any people; for ye were the fewest of all people:* The election of Jacob over Esau in 2 Esdras 6:9 rests on the same sovereign choosing of the few, not the many."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-6-the-books-opened",
+      "title": "The books shall be opened before the firmament",
+      "summary_md": "The token of the end is a courtroom and a resurrection together: *And when the world, that shall begin to vanish away, shall be finished, then will I shew these tokens: the books shall be opened before the firmament, and they shall see all together:* (2 Esdras 6:20). John sees the same scene at the white throne: *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* (Revelation 20:12). Daniel had sealed it for this very hour, the wise written in the book and waking from the dust: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2). The vanishing world and the opened books are the one ledger of the last day.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* John's opened books before the throne are the very 'books opened before the firmament' of 2 Esdras 6:20 — the self-link of the live Revelation apparatus."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The sealed token Daniel kept for the end is shown openly in 2 Esdras 6:20 — the dead seen all together when the books are opened."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-6-the-trumpet-and-the-raised",
+      "title": "The trumpet shall give a sound, and they shall be raised up",
+      "summary_md": "The signs gather to a blast and a waking: *And the children of a year old shall speak with their voices, the women with child shall bring forth untimely children of three or four months old, and they shall live, and be raised up.* (2 Esdras 6:21) — *And the trumpet shall give a sound, which when every man heareth, they shall be suddenly afraid.* (2 Esdras 6:23). Paul sounds the same trump over the same raising of the dead: *For Yahuah (Lord) himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first:* (1 Thessalonians 4:16). And the prophet names the herald before that great and dreadful day, the heart of the fathers turned: *Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD):* (Malachi 4:5) — *And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.* (Malachi 4:6). The trumpet of Esdras is the last trump of the gathering.",
+      "anchor_start_v": 21,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "1-thessalonians",
+          "tgt_ch": 4,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "1 Thessalonians 4:16 — *For Yahuah (Lord) himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first:* Paul's trump that raises the dead is the trumpet that gives a sound in 2 Esdras 6:23."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The dead 'raised up' in 2 Esdras 6:21 is Daniel's awaking from the dust to everlasting life."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 4,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Malachi 4:5 — *Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD):* The trumpet-token of the end in 2 Esdras 6:23 is heralded by Malachi's Elijah before the dreadful day."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 4,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Malachi 4:6 — *And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.* The turned heart of the fathers prepares the very day whose trumpet sounds in 2 Esdras 6:23."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-6-the-word-a-perfect-work",
+      "title": "Your word was a perfect work",
+      "summary_md": "Esdras recites the six days, and the engine of every day is the spoken word: *you spakest from the beginning of the creation, even the first day, and saidst thus; Let heaven and earth be made; and your word was a perfect work.* (2 Esdras 6:38) — *For as soon as your word went forth the work was made.* (2 Esdras 6:43). This is the Logos of the prologue, the Word that was in the beginning and by which all was made: *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* (John 1:1) — *He was in the world, and the world was made by him, and the world knew him not.* (John 1:10). And He who is the image of the invisible holds the first place in that making: *Who is the image of the invisible Elohim (God), the firstborn of every creature:* (Colossians 1:15). The word that went forth and the work that was made are the Formed Wisdom, the perfect work of the first day.",
+      "anchor_start_v": 38,
+      "anchor_end_v": 43,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 38,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The 'word' that was a perfect work in 2 Esdras 6:38 is the Word that was in the beginning."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 43,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "John 1:10 — *He was in the world, and the world was made by him, and the world knew him not.* The world made as soon as the word went forth (2 Esdras 6:43) is the world made by the Word in John's prologue."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 38,
+          "tgt_edition": "canon",
+          "tgt_book": "colossians",
+          "tgt_ch": 1,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Colossians 1:15 — *Who is the image of the invisible Elohim (God), the firstborn of every creature:* The spoken word that perfected the first creation (2 Esdras 6:38) is the firstborn image through whom Paul says all was made."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-6-the-world-for-our-sakes",
+      "title": "You madest the world for our sakes",
+      "summary_md": "The creation-recital lands on a covenant claim, the chosen people the reason for the whole: *All this have I spoken before you, O Yahuah (God), because you madest the world for our sakes* (2 Esdras 6:55) — *But we your people, whom you have called your firstborn, your only begotten, and your fervent lover, are given into their hands.* (2 Esdras 6:58). This is no church displacing Israel; it is the firstborn beloved of the oath. Moses names the same chosen, holy, treasured people: *For thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth.* (Deuteronomy 7:6), loved for the oath's sake, not their number: *But because Yahuah (LORD) loved you, and because he would keep the oath which he had sworn unto your fathers, hath Yahuah (LORD) brought you out with a mighty hand, and redeemed you out of the house of bondmen, from the hand of Pharaoh king of Egypt.* (Deuteronomy 7:8). And the firstborn Yashar'el remembered for the redeemer's sake: *Remember these, O Jacob and Yashar'el (Israel); for thou art my servant: I have formed thee; thou art my servant: O Yashar'el (Israel), thou shalt not be forgotten of me.* (Isaiah 44:21). Election precedes confession; the world is made for the kept seed.",
+      "anchor_start_v": 55,
+      "anchor_end_v": 59,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 55,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 7,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Deuteronomy 7:6 — *For thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth.* The world made 'for our sakes' in 2 Esdras 6:55 is the holy, chosen, treasured people of Moses."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 58,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 7,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Deuteronomy 7:8 — *But because Yahuah (LORD) loved you, and because he would keep the oath which he had sworn unto your fathers, hath Yahuah (LORD) brought you out with a mighty hand, and redeemed you out of the house of bondmen, from the hand of Pharaoh king of Egypt.* The firstborn and fervent-lover of 2 Esdras 6:58 is loved for the oath's sake, as Moses says — election, not merit."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 58,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Isaiah 44:21 — *Remember these, O Jacob and Yashar'el (Israel); for thou art my servant: I have formed thee; thou art my servant: O Yashar'el (Israel), thou shalt not be forgotten of me.* The firstborn people given into hands yet not forgotten (2 Esdras 6:58) is the servant Yashar'el the prophet vows never to forget — Israel is not cast away."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "edition": "apocrypha",
+  "book": "2-esdras",
+  "chapter": 3,
+  "session": "session253",
+  "tag": "2esd3",
+  "base_band": 63050,
+  "threads": [
+    {
+      "slug": "2-esdras-3-wicked-heart-of-adam",
+      "title": "The grain of evil seed sown in the heart of Adam",
+      "summary_md": "Ezra's first complaint reaches behind every sin to a single root in the first man: *For the first Adam bearing a wicked heart transgressed, and was overcome; and so be all they that are born of him* (2 Esdras 3:21), so that *infirmity was made permanent* and *the good departed away, and the evil abode still* (2 Esdras 3:22). It ain't new — this is Sha'ul's whole argument: *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned* (Romans 5:12). The flood-generation, Ezra says, were only watering the same seed, for Yahuah saw from the beginning *that every imagination of the thoughts of his heart was only evil continually* (Genesis 6:5), and even after the waters He owned *the imagination of man's heart is evil from his youth* (Genesis 8:21). The wicked heart is not theory but the diagnosis underneath all of Scripture's mercy.",
+      "anchor_start_v": 21,
+      "anchor_end_v": 22,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 5,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Romans 5:12 — *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:* Sha'ul traces death to the one transgression of Adam exactly as 2 Esdras 3:21 traces our overthrow to the first Adam's wicked heart."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Genesis 6:5 — *And GOD saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually.* The wicked heart Ezra names in 2 Esdras 3:21 is the very imagination Yahuah saw before the flood."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 8,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Genesis 8:21 — *And Yahuah (LORD) smelled a sweet savour; and Yahuah (LORD) said in his heart, I will not again curse the ground any more for man's sake; for the imagination of man's heart is evil from his youth; neither will I again smite any more every thing living, as I have done.* That the evil 'abode still' after the flood (2 Esdras 3:22) is Yahuah's own verdict over Noah's altar."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-3-law-not-take-away-wicked-heart",
+      "title": "The law given, yet the wicked heart not taken away",
+      "summary_md": "Ezra rehearses Sinai — *that you might give the law to the seed of Jacob* (2 Esdras 3:19) — and then sets his finger on the wound: *And yet tookest you not away from them a wicked heart, that your law might bring forth fruit in them* (2 Esdras 3:20). The good law lands on bad soil, *the law (also) in the heart of the people with the malignity of the root* (2 Esdras 3:22). This is precisely Sha'ul's torn cry over the same holy Torah: *For I delight in the law of Elohim (God) after the inward man: But I see another law in my members, warring against the law of my mind, and bringing me into captivity to the law of sin which is in my members* (Romans 7:22-23). The flesh cannot do what the commandment requires — *For I know that in me (that is, in my flesh,) dwelleth no good thing* (Romans 7:18). And the prophet had already exposed why the law brings forth no fruit: *The heart is deceitful above all things, and desperately wicked: who can know it?* (Jeremiah 17:9). The complaint cries for the new heart that only Yahuah Himself can give.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 7,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Romans 7:18 — *For I know that in me (that is, in my flesh,) dwelleth no good thing: for to will is present with me; but how to perform that which is good I find not.* This is Ezra's grief that the law could not bring forth fruit (2 Esdras 3:20) felt in Sha'ul's own members."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 7,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Romans 7:23 — *But I see another law in my members, warring against the law of my mind, and bringing me into captivity to the law of sin which is in my members.* The seed-war Ezra describes between the holy law and the malignant root (2 Esdras 3:20,22) is the very warring Sha'ul names within."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 17,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Jeremiah 17:9 — *The heart is deceitful above all things, and desperately wicked: who can know it?* The wicked heart Yahuah did not yet take away (2 Esdras 3:20) is the unsearchable heart the prophet weighs."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 36,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Ezekiel 36:26 — *A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.* What Ezra laments was withheld (2 Esdras 3:20) Yahuah promises to do — the wicked heart taken away, a new one given."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-3-the-breath-and-the-commandment",
+      "title": "Adam formed, given breath, given the commandment he transgressed",
+      "summary_md": "Before the complaint, Ezra retells the making of the first man: *And gavest a body to Adam without soul, which was the workmanship of yours hands, and did breathe into him the breath of life, and he was made living before you* (2 Esdras 3:5) — a near-quotation of Bereshith: *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul* (Genesis 2:7). Then comes the single charge that loosed death: *And to him you gavest commandment to love your way: which he transgressed, and immediately you appointedst death in him and in his generations* (2 Esdras 3:7). So the LORD pronounced over the man who ate: *cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life* (Genesis 3:17). Ezra is reading Genesis 2-3 straight; it ain't new.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 2:7 — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* Ezra's body given the breath of life and made living (2 Esdras 3:5) is this verse retold."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Genesis 3:17 — *And unto Adam he said, Because thou hast hearkened unto the voice of thy wife, and hast eaten of the tree, of which I commanded thee, saying, Thou shalt not eat of it: cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life;* the transgressed commandment and appointed death of 2 Esdras 3:7 is this sentence over Adam."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 5,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Romans 5:12 — *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:* the death appointed 'in him and in his generations' (2 Esdras 3:7) is Sha'ul's death passing upon all men."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-3-jacob-chosen-everlasting-covenant",
+      "title": "Abraham loved, the everlasting covenant, Jacob chosen",
+      "summary_md": "Against the wreck of Sion, Ezra rests on election that precedes any confession: *And madest an everlasting covenant with him, promising him that you would never forsake his seed* (2 Esdras 3:15), and *As for Jacob, you did choose him to you, and put by Esau: and so Jacob became a great multitude* (2 Esdras 3:16). This is the covenant Yahuah cut with Abraham: *And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant* (Genesis 17:7). And the choosing of Jacob over Esau is the very text Sha'ul presses to show election stands not of works: *As it is written, Jacob have I loved, but Esau have I hated* (Romans 9:13). Because that election precedes confession, the unfaithful generation forfeits but the seed is never cast away: *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). Yahuah will never forsake the seed.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 17,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 17:7 — *And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a Elohim (God) unto thee, and to thy seed after thee.* The everlasting covenant never to forsake Abraham's seed (2 Esdras 3:15) is cut here."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 9,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Romans 9:13 — *As it is written, Jacob have I loved, but Esau have I hated.* Ezra's 'you did choose him to you, and put by Esau' (2 Esdras 3:16) is the same sovereign election Sha'ul cites."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 11,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Romans 11:1 — *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.* Because Yahuah promised never to forsake the seed (2 Esdras 3:15), Israel is not cast away."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-3-israel-by-name-kept-the-precepts",
+      "title": "Israel by name hath kept thy precepts",
+      "summary_md": "Ezra's complaint ends not in despair over the nations but in a confession of the faithful remnant: *Or is there any other people that knoweth you beside Yashar'el (Israel)? or what generation has so believed your covenants as Jacob?* (2 Esdras 3:32), closing with *You shall find that Yashar'el (Israel) by name has kept your precepts; but not the heathen* (2 Esdras 3:36). This is not a people replacing Israel — it is Israel, by name, holding the covenant when the nations 'think not upon your commandments' (2 Esdras 3:33). The prophets answer the grief: though scattered for their own way, Yahuah gathers them home — *For I will take you from among the heathen, and gather you out of all countries, and will bring you into your own land* (Ezekiel 36:24) — and gives the new heart that makes the precept-keeping real: *And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). And Sha'ul guards the floor under it all: *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1). The covenant holds with Israel; election precedes confession.",
+      "anchor_start_v": 32,
+      "anchor_end_v": 36,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 36,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 36,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Ezekiel 36:27 — *And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* The Israel that 'by name has kept your precepts' (2 Esdras 3:36) is the people Yahuah enables to keep His judgments by His Spirit."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 32,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 36,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Ezekiel 36:24 — *For I will take you from among the heathen, and gather you out of all countries, and will bring you into your own land.* Ezra's question of who knows Yahuah beside Israel (2 Esdras 3:32) is answered by the regathering of that very people."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 32,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 11,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Romans 11:1 — *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.* Israel believing the covenants as Jacob did (2 Esdras 3:32) is the people Sha'ul insists is not cast away."
+        }
+      ]
+    }
+  ]
+}

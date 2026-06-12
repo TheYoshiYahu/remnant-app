@@ -1,0 +1,300 @@
+{
+  "edition": "apocrypha",
+  "book": "2-esdras",
+  "chapter": 2,
+  "session": "session253",
+  "tag": "2esd2",
+  "base_band": 63025,
+  "threads": [
+    {
+      "slug": "2-esdras-2-mother-zion-forsaken-comforted",
+      "title": "The forsaken mother bidden to embrace her children again",
+      "summary_md": "Mother Zion grieves her scattered children, then is chosen and comforted: *The mother that bare them says to them, Go your way, you children; for I am a widow and forsaken.* (2 Esdras 2:2) and *Mother, embrace your children, and bring them up with gladness, make their feet as fast as a pillar: for I have chosen you, says Yahuah.* (2 Esdras 2:15). This is the very arc of the Servant-Songs: the forsaken wife of youth gathered with everlasting mercy — *For a small moment have I forsaken thee; but with great mercies will I gather thee.* (Isaiah 54:7) — and the woman who thinks herself abandoned, answered by a mother's compassion — *But Zion said, Yahuah hath forsaken me, and my Lord hath forgotten me.* (Isaiah 49:14). The forfeiting generation does not end the election: the faithful remnant of the houses keeps the inheritance, for *Elohim hath not cast away his people which he foreknew.* (Romans 11:2). It ain't new — the widow-mother of 2 Esdras is the forsaken-then-regathered Zion of the prophets.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 49,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Isaiah 49:14 — *But Zion said, Yahuah (LORD) hath forsaken me, and my Lord hath forgotten me.* Zion's cry that she is a widow and forsaken in 2 Esdras 2:2 is the prophet's own word in the mother's mouth."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 54,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Isaiah 54:7 — *For a small moment have I forsaken thee; but with great mercies will I gather thee.* The forsaking the mother laments in 2 Esdras 2:4 is answered by the great-mercy gathering Isaiah promises the widowed Zion."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 54,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Isaiah 54:5 — *For thy Maker is thine husband; Yahuah Tseva'ot (LORD of hosts) is his name; and thy Redeemer the Holy One of Yashar'el (Israel); The Elohim (God) of the whole earth shall he be called.* The 'I have chosen you' that lifts the widow in 2 Esdras 2:15 names Yahuah himself as the husband of the once-forsaken mother."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 11,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Romans 11:2 — *Elohim (God) hath not cast away his people which he foreknew. Wot ye not what the scripture saith of Elias? how he maketh intercession to Elohim (God) against Yashar'el (Israel), saying,* The 'Fear not... for I have chosen you' of 2 Esdras 2:17 is Paul's own guard against supersession: election stands, the people are not cast away."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-2-kingdom-tree-of-life-tabernacles",
+      "title": "The kingdom prepared, the everlasting tabernacles, the tree of life",
+      "summary_md": "The prepared kingdom is handed to the faithful with the tree of life and the everlasting dwellings: *Thus says Yahuah to Esdras, Tell my people that I will give them the kingdom of Jerusalem, which I would have given to Yashar'el. Their glory also will I take to me, and give these the everlasting tabernacles, which I had prepared for them.* (2 Esdras 2:10-11) and *They shall have the tree of life for an ointment of sweet savour; they shall neither labour, nor be weary.* (2 Esdras 2:12). This is the close of the Apocalypse: the river and the tree restored in the city — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* (Revelation 22:2) — promised to the overcomer — *To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim.* (Revelation 2:7). The Esdras vision and the live Revelation apparatus see the same prepared inheritance.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The tree of life given to Zion's children in 2 Esdras 2:12 is John's restored tree in the holy city."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 2,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The tree of life of 2 Esdras 2:12 is the overcomer's reward in the paradise of Elohim."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Revelation 22:3 — *And there shall be no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him:* The everlasting tabernacles prepared in 2 Esdras 2:11 are the curse-free dwelling of the throne where the servants serve."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-2-raise-the-dead-from-the-graves",
+      "title": "I will raise up the dead from their graves",
+      "summary_md": "The promise that crowns the chapter's comfort is bodily resurrection: *And those that be dead will I raise up again from their places, and bring them out of the graves: for I have known my name in Yashar'el.* (2 Esdras 2:16) and *Wherever you findest the dead, take them and bury them, and I will give you the first place in my resurrection.* (2 Esdras 2:23). This is Daniel's awakening of the dust — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2) — and the Son's voice that empties the graves — *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,* (John 5:28) and *And shall come forth; they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation.* (John 5:29). The resurrection 2 Esdras pledges to mother Zion's children is the resurrection Daniel sealed and Yahusha unsealed.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The raising of the dead from the graves in 2 Esdras 2:16 is Daniel's awakening of those who sleep in the dust."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 5,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "John 5:28 — *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice,* The 'bring them out of the graves' of 2 Esdras 2:16 is the hour when all in the graves hear the voice of the Son."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 5,
+          "tgt_v": 29,
+          "tier": "free",
+          "note": "John 5:29 — *And shall come forth; they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation.* The 'first place in my resurrection' offered in 2 Esdras 2:23 is the resurrection of life Yahusha names for those who have done good."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-2-do-right-to-the-widow-and-poor",
+      "title": "Do right to the widow, clothe the naked, bury the dead",
+      "summary_md": "The comfort is yoked to covenant mercy-works: *Do right to the widow, judge for the fatherless, give to the poor, defend the orphan, clothe the naked, Heal the broken and the weak, laugh not a lame man to scorn, defend the maimed, and let the blind man come into the sight of my clearness.* (2 Esdras 2:20-21). This is the very ledger of the judgment of the nations — *For I was an hungred, and ye gave me meat: I was thirsty, and ye gave me drink: I was a stranger, and ye took me in:* (Matthew 25:35) and *Naked, and ye clothed me: I was sick, and ye visited me: I was in prison, and ye came unto me.* (Matthew 25:36) — reckoned as done to the King himself — *And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me.* (Matthew 25:40). It ain't new: the mercy-Torah of 2 Esdras 2 is the standard of the throne in Matthew 25.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 25,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Matthew 25:35 — *For I was an hungred, and ye gave me meat: I was thirsty, and ye gave me drink: I was a stranger, and ye took me in:* The 'give to the poor, defend the orphan' of 2 Esdras 2:20 is the mercy the King counts at his judgment of the nations."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 25,
+          "tgt_v": 36,
+          "tier": "free",
+          "note": "Matthew 25:36 — *Naked, and ye clothed me: I was sick, and ye visited me: I was in prison, and ye came unto me.* The 'clothe the naked... heal the broken and the weak' of 2 Esdras 2:21 is named verbatim among the works the King receives."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 25,
+          "tgt_v": 40,
+          "tier": "free",
+          "note": "Matthew 25:40 — *And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me.* The mercy-works commanded in 2 Esdras 2:20 are reckoned by the King as done unto himself."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-2-look-for-your-shepherd-everlasting-light",
+      "title": "Look for your Shepherd; the everlasting light shall shine",
+      "summary_md": "The heathen who hear are turned to the coming Shepherd and the unfading light: *And therefore I say to you, O you heathen, that hear and understand, look for your Shepherd, he shall give you everlasting rest; for he is nigh at hand, that shall come in the end of the world.* (2 Esdras 2:34) and *Be ready to the reward of the kingdom, for the everlasting light shall shine upon you for evermore.* (2 Esdras 2:35). The Shepherd nigh at hand is the Good Shepherd who lays down his life — *I am the good shepherd: the good shepherd giveth his life for the sheep.* (John 10:11) — and the everlasting light is the lampless city — *And there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light: and they shall reign for ever and ever.* (Revelation 22:5). Here the Son genuinely in view in 2 Esdras is Yahusha the Shepherd and the Light.",
+      "anchor_start_v": 34,
+      "anchor_end_v": 36,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 34,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 10,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "John 10:11 — *I am the good shepherd: the good shepherd giveth his life for the sheep.* The Shepherd nigh at hand whom the heathen are bidden to look for in 2 Esdras 2:34 is Yahusha the Good Shepherd who gives his life for the sheep."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 35,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Revelation 22:5 — *And there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light: and they shall reign for ever and ever.* The everlasting light promised in 2 Esdras 2:35 is the lampless, sunless light of the city where the redeemed reign for ever."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-2-receive-thy-number-o-sion-sealed-in-white",
+      "title": "Receive thy number, O Sion; the sealed in white robes",
+      "summary_md": "The vision turns to the completed roll of the redeemed, robed and sealed: *Arise up and stand, behold the number of those that be sealed in the feast of Yahuah;* (2 Esdras 2:38) and *Take your number, O Sion, and shut up those of yours that are clothed in white, which have fulfilled the law of Yahuah.* (2 Esdras 2:40). This is the completed number that waits in Revelation — *And white robes were given unto every one of them; and it was said unto them, that they should rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled.* (Revelation 6:11) — robed white through the tribulation — *And I said unto him, Sir, thou knowest. And he said to me, These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb.* (Revelation 7:14) — those who keep Torah and the faith — *Here is the patience of the saints: here are they that keep the commandments of Elohim, and the faith of Yahusha.* (Revelation 14:12). The 'number, O Sion' of Esdras is the sealed remnant of the live Revelation pack — and Torah stands, for these have fulfilled the law of Yahuah.",
+      "anchor_start_v": 38,
+      "anchor_end_v": 41,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 41,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 6,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Revelation 6:11 — *And white robes were given unto every one of them; and it was said unto them, that they should rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled.* The 'receive thy number, O Sion... is fulfilled' of 2 Esdras 2:41 is John's roll completing only when the white-robed are fulfilled."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 7,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Revelation 7:14 — *And I said unto him, Sir, thou knowest. And he said to me, These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb.* Those clothed in white in 2 Esdras 2:40 are John's company robed white through great tribulation."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 14,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Revelation 14:12 — *Here is the patience of the saints: here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus).* Those 'which have fulfilled the law of Yahuah' in 2 Esdras 2:40 are John's saints who keep the commandments and the faith — Torah stands."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-2-great-multitude-crowned-by-the-son-of-elohim",
+      "title": "The great multitude crowned by the Son of Elohim on mount Sion",
+      "summary_md": "Esdras sees the climactic vision — an unnumbered people on mount Sion, crowned and palm-bearing, set by the Son of Elohim himself: *I Esdras saw upon the mount Sion a great people, whom I could not number, and they all praised Yahuah with songs.* (2 Esdras 2:42) and *He answered and said to me, These be they that have put off the mortal clothing, and put on the immortal, and have confessed the name of Yahuah: now are they crowned, and receive palms.* (2 Esdras 2:45) and *So he answered and said to me, It is the Son of Yahuah, whom they have confessed in the world.* (2 Esdras 2:47). This is the throne-vision of the Apocalypse, the very self-link of the live Revelation apparatus: the innumerable palm-bearing multitude — *After this I beheld, and, lo, a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues, stood before the throne, and before the Lamb, clothed with white robes, and palms in their hands;* (Revelation 7:9) — the Lamb on mount Sion with the Name in their foreheads — *And I looked, and, lo, a Lamb stood on the mount Sion, and with him an hundred forty and four thousand, having his Father's name written in their foreheads.* (Revelation 14:1) — and the crown the faithful-unto-death receive — *be thou faithful unto death, and I will give thee a crown of life.* (Revelation 2:10). The messianic Son of Elohim who crowns them is genuinely the Messiah: the Son confessed in the world is Yahusha, and Esdras commends those who stand stiffly for his Name.",
+      "anchor_start_v": 42,
+      "anchor_end_v": 47,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 42,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Revelation 7:9 — *After this I beheld, and, lo, a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues, stood before the throne, and before the Lamb, clothed with white robes, and palms in their hands;* The great people on mount Sion whom Esdras could not number, receiving palms, in 2 Esdras 2:42 is John's innumerable palm-bearing multitude before the throne."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 43,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 14,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Revelation 14:1 — *And I looked, and, lo, a Lamb stood on the mount Sion, and with him an hundred forty and four thousand, having his Father's name written in their foreheads.* The young man of high stature on mount Sion who crowns the people in 2 Esdras 2:43 stands where John sees the Lamb on mount Sion with the Name-bearing company."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 45,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 2,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Revelation 2:10 — *Fear none of those things which thou shalt suffer: behold, the devil shall cast some of you into prison, that ye may be tried; and ye shall have tribulation ten days: be thou faithful unto death, and I will give thee a crown of life.* Those crowned for confessing the Name in 2 Esdras 2:45 are John's faithful-unto-death who receive the crown of life."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 47,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 7,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Revelation 7:17 — *For the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and Elohim (God) shall wipe away all tears from their eyes.* The Son of Elohim standing in the midst of the multitude and crowning them in 2 Esdras 2:47 is the Lamb in the midst of the throne who shepherds them."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "edition": "apocrypha",
+  "book": "2-esdras",
+  "chapter": 10,
+  "session": "session253",
+  "tag": "2esd10",
+  "base_band": 63225,
+  "threads": [
+    {
+      "slug": "2-esdras-10-zion-laid-waste",
+      "title": "Our sanctuary laid waste — the city that sits solitary",
+      "summary_md": "Ezra would have the mourning mother lift her eyes off a single dead son to a grief far greater: *Our psaltery is laid on the ground, our song is put to silence, our rejoicing is at an end, the light of our candlestick is put out, the ark of our covenant is spoiled, our holy things are defiled... and the name that is called upon us is almost profaned* (2 Esdras 10:22), *the seal of Sion has now lost her honour; for she is delivered into the hands of them that hate us* (2 Esdras 10:23). It is the lament of the fallen city that Jeremiah wept before him — *How doth the city sit solitary, that was full of people! how is she become as a widow!* (Lamentations 1:1) — and the silenced feasts of Zion: *Yahuah (LORD) hath caused the solemn feasts and sabbaths to be forgotten in Zion* (Lamentations 2:6). By Babylon's rivers the same harps hung silent: *How shall we sing the LORD’S song in a strange land?* (Psalm 137:4). It ain't new — the daughter of Zion's mourning is one mourning across the whole library.",
+      "anchor_start_v": 21,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "lamentations",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Lamentations 1:1 — *How doth the city sit solitary, that was full of people! how is she become as a widow! she that was great among the nations, and princess among the provinces, how is she become tributary!* The widowed solitary city is the very desolation Ezra catalogues in 2 Esdras 10:22."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "lamentations",
+          "tgt_ch": 2,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Lamentations 2:6 — *And he hath violently taken away his tabernacle, as if it were of a garden: he hath destroyed his places of the assembly: Yahuah (LORD) hath caused the solemn feasts and sabbaths to be forgotten in Zion, and hath despised in the indignation of his anger the king and the priest.* The silenced song and put-out candlestick of 2 Esdras 10:22 is Jeremiah's forgotten feasts and silenced assembly of Zion."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 137,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Psalm 137:4 — *How shall we sing the LORD’S song in a strange land?* Ezra's grounded psaltery and silenced song in 2 Esdras 10:23 is the exile's hung-up harp by the rivers of Babylon."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-10-receive-thy-son-be-comforted",
+      "title": "Keep thy sorrow — thou shalt receive thy son, and be comforted",
+      "summary_md": "To the woman who would die mourning, Ezra speaks the gospel of the resurrection and of comfort: *For if you shall acknowledge the determination of Yahuah (God) to be just, you shall both receive your son in time, and shall be commended among women* (2 Esdras 10:16) — the son is not lost but received again *in time*, the world to come breaking through the grief. *Therefore... the Highest shall give you rest and ease from your labour* (2 Esdras 10:24). This is the Comforter's own promise over Jerusalem: *As one whom his mother comforteth, so will I comfort you; and ye shall be comforted in Jerusalem* (Isaiah 66:13). The grieving mother is herself to be comforted as a mother comforts — sorrow turned, in time, to the receiving back of what death took.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 66,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Isaiah 66:13 — *As one whom his mother comforteth, so will I comfort you; and ye shall be comforted in Jerusalem.* Ezra's counsel that she shall receive her son and be commended (2 Esdras 10:16) is the LORD's own comfort, mother-tender, gathered up in Jerusalem."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Revelation 21:4 — *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.* The rest and ease from labour the Highest gives the mourner in 2 Esdras 10:24 is the final wiping-away of every tear in the New Jerusalem."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-10-woman-becomes-builded-city",
+      "title": "The woman vanishes — a city builded appears",
+      "summary_md": "While Ezra yet speaks comfort, the mourning woman is transfigured before his eyes: *her face upon a sudden shined exceedingly, and her countenance glistered* (2 Esdras 10:25), and then *the woman appeared to me no more, but there was a city builded, and a large place shewed itself from the foundations* (2 Esdras 10:27). The grieving mother becomes the glorified city. So John sees her descend: *I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2) — and the angel names her both bride and city: *I will shew thee the bride, the Lamb’s wife. And he carried me away in the spirit to a great and high mountain, and shewed me that great city, the holy Jerusalem* (Revelation 21:9-10). Paul already knew her: *Jerusalem which is above is free, which is the mother of us all* (Galatians 4:26). The mother IS the city; it ain't new.",
+      "anchor_start_v": 25,
+      "anchor_end_v": 27,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 27,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 21:2 — *And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband.* The city builded that shews itself from the foundations in 2 Esdras 10:27 is John's holy city descending as a bride."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 27,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Revelation 21:9 — *And there came unto me one of the seven angels which had the seven vials full of the seven last plagues, and talked with me, saying, Come hither, I will shew thee the bride, the Lamb’s wife.* The angel-guided vision of the woman-become-city in 2 Esdras 10:27 matches the angel who shews John the bride who is the city."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 4,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Galatians 4:26 — *But Jerusalem which is above is free, which is the mother of us all.* The mourning mother whose face shines and is unveiled as a city (2 Esdras 10:25) is Paul's Jerusalem above, the mother of us all."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-10-this-woman-is-sion",
+      "title": "This woman whom thou sawest is Sion — the glory and beauty of the city",
+      "summary_md": "Uriel gives the solution plainly: *This woman, whom you sawest is Sion* (2 Esdras 10:44), and because Ezra grieved unfeignedly for her, *so has he shewed you the brightness of her glory, and the comeliness of her beauty* (2 Esdras 10:50). The woman whom he saw is the city; her mourning was the destruction of Jerusalem, her builded splendour the Zion to come. John is shewn that same brightness: the holy Jerusalem *Having the glory of Elohim (God): and her light was like unto a stone most precious, even like a jasper stone, clear as crystal* (Revelation 21:11). The deuterocanon's own gathered city sings the same jewels — *Jerusalem shall be built up with sapphires and emeralds, and precious stone: your walls and towers and battlements with pure gold* (Tobit 13:16) — and Hebrews names the destination: *ye are come unto mount Sion, and unto the city of the living Elohim (God), the heavenly Jerusalem* (Hebrews 12:22). The grieving mother is the glorified gathered city.",
+      "anchor_start_v": 44,
+      "anchor_end_v": 50,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 50,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Revelation 21:11 — *Having the glory of Elohim (God): and her light was like unto a stone most precious, even like a jasper stone, clear as crystal;* The brightness of her glory and comeliness of her beauty shewn Ezra in 2 Esdras 10:50 is the jasper-clear glory of John's holy city."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 44,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 12,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Hebrews 12:22 — *But ye are come unto mount Sion, and unto the city of the living Elohim (God), the heavenly Jerusalem, and to an innumerable company of angels,* The woman who is Sion in 2 Esdras 10:44 is the heavenly Jerusalem the faithful are come unto in Hebrews."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 50,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "tobit",
+          "tgt_ch": 13,
+          "tgt_v": 16,
+          "tier": "extras",
+          "note": "Tobit 13:16 — *For Jerusalem shall be built up with sapphires and emeralds, and precious stone: your walls and towers and battlements with pure gold.* The comeliness of the city's beauty shewn Ezra in 2 Esdras 10:50 is Tobit's own jeweled, rebuilt Jerusalem — the deuterocanon self-witnessing the New Jerusalem."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-10-barren-bears-zion-travails",
+      "title": "The barren bare a son — Zion travails and brings forth",
+      "summary_md": "Uriel reads the woman's thirty barren years and the son she bore: *she has been thirty years barren: those are the thirty years in which there was no offering made in her. But after thirty years Solomon builded the city and offered offerings: and then bare the barren a son* (2 Esdras 10:45-46). The barren who bears is the prophets' own song of Zion: *Sing, O barren, thou that didst not bear; break forth into singing, and cry aloud, thou that didst not travail with child: for more are the children of the desolate than the children of the married wife* (Isaiah 54:1), which Paul lifts straight onto the Jerusalem above — *Rejoice, thou barren that bearest not; break forth and cry, thou that travailest not: for the desolate hath many more children than she which hath an husband* (Galatians 4:27). And Zion's bearing is sudden, a whole people at once: *as soon as Zion travailed, she brought forth her children* (Isaiah 66:8). The mourning barren mother brings forth the gathered city full of children.",
+      "anchor_start_v": 45,
+      "anchor_end_v": 46,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 46,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 54,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 54:1 — *Sing, O barren, thou that didst not bear; break forth into singing, and cry aloud, thou that didst not travail with child: for more are the children of the desolate than the children of the married wife, saith Yahuah (LORD).* The barren who at last bare a son in 2 Esdras 10:46 is Isaiah's barren Zion whose children outnumber the married wife's."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 46,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 4,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Galatians 4:27 — *For it is written, Rejoice, thou barren that bearest not; break forth and cry, thou that travailest not: for the desolate hath many more children than she which hath an husband.* Paul reads the barren-who-bears, the same figure as Sion in 2 Esdras 10:46, as the Jerusalem above bringing forth her children."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 45,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 66,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Isaiah 66:8 — *Who hath heard such a thing? who hath seen such things? Shall the earth be made to bring forth in one day? or shall a nation be born at once? for as soon as Zion travailed, she brought forth her children.* The barren Sion who bears in 2 Esdras 10:45 is Isaiah's Zion who travails and brings forth a nation at once."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-10-city-no-mans-building",
+      "title": "Where no foundation was — the city no man's hands can build",
+      "summary_md": "Uriel explains why Ezra was sent to an empty field: *Therefore I commanded you to go into the field, where no foundation of any building was. For in the place in which the Highest begins to shew his city, there can no man’s building be able to stand* (2 Esdras 10:53-54). The true Zion is not raised by man's hands; her foundations are Elohim's. This is Abraham's hope: *For he looked for a city which hath foundations, whose builder and maker is Elohim (God)* (Hebrews 11:10). And her builded glory casts off mourning for the garment of everlasting righteousness: *Put off, O Jerusalem, the garment of mourning and affliction, and put on the comeliness of the glory that comes from Yahuah (God) for ever* (Baruch 5:1). The empty field where no man builds is exactly where the Highest shews the city with foundations.",
+      "anchor_start_v": 53,
+      "anchor_end_v": 54,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 54,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Hebrews 11:10 — *For he looked for a city which hath foundations, whose builder and maker is Elohim (God).* The city no man's building can stand in, shewn only by the Highest (2 Esdras 10:54), is the city with foundations whose builder and maker is Elohim that Abraham awaited."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 53,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "baruch-with-the-letter-of-jeremiah",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "Baruch 5:1 — *Put off, O Jerusalem, the garment of mourning and affliction, and put on the comeliness of the glory that comes from Yahuah (God) for ever.* The empty field where the Highest begins to shew his city (2 Esdras 10:53) is Baruch's Jerusalem stripping off mourning for the glory that comes from Yahuah for ever — the deuterocanon's own grief-to-glory turn."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "edition": "apocrypha",
+  "book": "2-esdras",
+  "chapter": 11,
+  "session": "session253",
+  "tag": "2esd11",
+  "base_band": 63250,
+  "threads": [
+    {
+      "slug": "2-esdras-11-eagle-from-the-sea",
+      "title": "The eagle out of the sea — the fourth beast",
+      "summary_md": "Ezra dreams: *Then saw I a dream, and, behold, there came up from the sea an eagle, which had twelve feathered wings, and three heads.* (2 Esdras 11:1) It ain't new — Daniel had already seen the four beasts rise from the same waters: *And four great beasts came up from the sea, diverse one from another.* (Daniel 7:3) And John stood where Ezra stood: *And I stood upon the sand of the sea, and saw a beast rise up out of the sea, having seven heads and ten horns, and upon his horns ten crowns, and upon his heads the name of blasphemy.* (Revelation 13:1) The sea is the churning of the nations, and out of it comes the kingdom-of-man that wears the wings of empire.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Daniel 7:3 — *And four great beasts came up from the sea, diverse one from another.* The eagle of 2 Esdras 11:1 rises from the same sea as Daniel's four beasts, the same vision of empire reworked for Ezra."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 13,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Revelation 13:1 — *And I stood upon the sand of the sea, and saw a beast rise up out of the sea, having seven heads and ten horns, and upon his horns ten crowns, and upon his heads the name of blasphemy.* John's beast and Ezra's eagle both ascend from the sea, the kingdom-of-man surfacing out of the nations."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-11-reigned-over-all-the-earth",
+      "title": "Subject to her — dominion over all the earth",
+      "summary_md": "The eagle's reach is total: *And I saw that all things under heaven were subject to her, and no man spoke against her, no, not one creature upon earth.* (2 Esdras 11:6) Daniel said it of the fourth kingdom: *the fourth beast shall be the fourth kingdom upon earth, which shall be diverse from all kingdoms, and shall devour the whole earth, and shall tread it down, and break it in pieces.* (Daniel 7:23) And Revelation: *And it was given unto him to make war with the saints, and to overcome them: and power was given him over all kindreds, and tongues, and nations.* (Revelation 13:7) The empire claims the whole compass of the earth — but it is *given*, on a leash, and the Most High will call in the lease.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Daniel 7:23 — *Thus he said, The fourth beast shall be the fourth kingdom upon earth, which shall be diverse from all kingdoms, and shall devour the whole earth, and shall tread it down, and break it in pieces.* The eagle to whom all things under heaven are subject (2 Esdras 11:6) is Daniel's whole-earth-devouring fourth kingdom."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 13,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Revelation 13:7 — *And it was given unto him to make war with the saints, and to overcome them: and power was given him over all kindreds, and tongues, and nations.* The beast's power over all nations matches the eagle whom no creature upon earth dares speak against (2 Esdras 11:6)."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-11-three-heads-seven-kings",
+      "title": "The three heads and the wings — heads, horns, kings",
+      "summary_md": "The structure of the beast is counted out: *And there was no more upon the eagle's body, but three heads that rested, and six little wings.* (2 Esdras 11:23) John's angel decodes the same anatomy: *And here is the mind which hath wisdom. The seven heads are seven mountains, on which the woman sitteth.* (Revelation 17:9) *And the ten horns which thou sawest are ten kings, which have received no kingdom as yet; but receive power as kings one hour with the beast.* (Revelation 17:12) Heads and wings, heads and horns — the apocalyptists count the kings of the kingdom-of-man system, each rising for its hour and passing away.",
+      "anchor_start_v": 22,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 17,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Revelation 17:9 — *And here is the mind which hath wisdom. The seven heads are seven mountains, on which the woman sitteth.* The eagle's three heads (2 Esdras 11:23) belong to the same head-counting apocalyptic that John's angel reads as kings and mountains."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 17,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Revelation 17:12 — *And the ten horns which thou sawest are ten kings, which have received no kingdom as yet; but receive power as kings one hour with the beast.* The eagle's wings that rise and reign and appear no more (2 Esdras 11:23) are the same short-lived kings John numbers as the ten horns."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-11-much-oppression",
+      "title": "Much oppression — the head that put the earth in fear",
+      "summary_md": "The midmost head wakes and devours: *But this head put the whole earth in fear, and bare rule in it over all those that dwelt upon the earth with much oppression; and it had the governance of the world more than all the wings that had been.* (2 Esdras 11:32) Daniel saw this terror exactly: *After this I saw in the night visions, and behold a fourth beast, dreadful and terrible, and strong exceedingly; and it had great iron teeth: it devoured and brake in pieces, and stamped the residue with the feet of it: and it was diverse from all the beasts that were before it; and it had ten horns.* (Daniel 7:7) And the little horn that grows out of it speaks against the Most High: *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws.* (Daniel 7:25) The system rules by fear and oppression — and that is precisely its indictment.",
+      "anchor_start_v": 32,
+      "anchor_end_v": 32,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 32,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Daniel 7:7 — *After this I saw in the night visions, and behold a fourth beast, dreadful and terrible, and strong exceedingly; and it had great iron teeth: it devoured and brake in pieces, and stamped the residue with the feet of it: and it was diverse from all the beasts that were before it; and it had ten horns.* The head that put the whole earth in fear (2 Esdras 11:32) is Daniel's dreadful fourth beast that devours and tramples."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 32,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* The head ruling with much oppression (2 Esdras 11:32) wears the face of Daniel's little horn that grinds the saints and presumes to change the times and law."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-11-lion-out-of-the-wood",
+      "title": "The roaring lion — the Lion of Judah judges the eagle",
+      "summary_md": "Against the eagle a deliverer rises: *And I beheld, and lo, as it were a roaring lion chased out of the wood: and I saw that he sent out a man's voice to the eagle, and said,* (2 Esdras 11:37) *Hear you, I will talk with you, and the Highest shall say to you,* (2 Esdras 11:38) This Lion is the Messiah of 4 Ezra — the same Lion John sees enthroned to open the sealed book and bring the kingdom-of-man to judgment: *behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof.* (Revelation 5:5) These shall make war with the Lamb — and the Lamb wins: *These shall make war with the Lamb, and the Lamb shall overcome them: for he is Lord of lords, and King of kings: and they that are with him are called, and chosen, and faithful.* (Revelation 17:14) The eagle terrifies the earth; the Lion speaks with a man's voice and ends it.",
+      "anchor_start_v": 37,
+      "anchor_end_v": 38,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 37,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 5,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Revelation 5:5 — *And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof.* The roaring lion who sends a man's voice against the eagle (2 Esdras 11:37) is the Messiah-Lion of Judah, Yahusha enthroned to judge the kingdom-of-man."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 37,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 17,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Revelation 17:14 — *These shall make war with the Lamb, and the Lamb shall overcome them: for he is Lord of lords, and King of kings: and they that are with him are called, and chosen, and faithful.* The Lion who confronts the eagle (2 Esdras 11:37) overthrows the beast-system just as the Lamb overcomes the kings who war against him."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-11-fourth-beast-judged",
+      "title": "Art not thou the fourth beast — judgment and refreshing",
+      "summary_md": "The Lion names the eagle plainly and pronounces its end: *Art not you it that remainest of the four beasts, whom I made to reign in my world, that the end of their times might come through them?* (2 Esdras 11:39) Daniel had already seen the dominion stripped and given to the saints: *But the judgment shall sit, and they shall take away his dominion, to consume and to destroy it unto the end.* (Daniel 7:26) The eagle is told to vanish *that all the earth may be refreshed, and may return, being delivered from your violence, and that she may hope for the judgment and mercy of him that made her.* (2 Esdras 11:46) And the kingdom passes to the people of Elohim: *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* (Daniel 7:27) Dismantle the system — and the meek inherit the refreshed earth.",
+      "anchor_start_v": 39,
+      "anchor_end_v": 46,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 39,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Daniel 7:26 — *But the judgment shall sit, and they shall take away his dominion, to consume and to destroy it unto the end.* The Lion's verdict that the fourth beast's time ends through it (2 Esdras 11:39) is Daniel's seated judgment stripping the beast of its dominion."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 46,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Daniel 7:27 — *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* When the eagle vanishes and the earth is refreshed (2 Esdras 11:46), the dominion passes to the saints of the Most High in Daniel's everlasting kingdom."
+        }
+      ]
+    }
+  ]
+}

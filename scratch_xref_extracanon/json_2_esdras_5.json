@@ -1,0 +1,240 @@
+{
+  "edition": "apocrypha",
+  "book": "2-esdras",
+  "chapter": 5,
+  "session": "session253",
+  "tag": "2esd5",
+  "base_band": 63100,
+  "threads": [
+    {
+      "slug": "2-esdras-5-iniquity-faith-cold",
+      "title": "The way of truth hidden — the signs of the end",
+      "summary_md": "Uriel unrolls the tokens of the last days: *Nevertheless as concerning the tokens, behold, the days shall come, that they which dwell upon earth shall be taken in a great number, and the way of truth shall be hidden, and the land shall be barren of faith.* (2 Esdras 5:1) — *But iniquity shall be increased above that which now you see, or that you have heard long ago.* (2 Esdras 5:2) — *then shall unrighteousness and incontinency be multiplied upon earth.* (2 Esdras 5:10). It ain't new: Yahusha unfolds the very same sign upon the Mount of Olives, *And because iniquity shall abound, the love of many shall wax cold.* (Matthew 24:12). Sha'ul writes it to Timothy, *This know also, that in the last days perilous times shall come.* (2 Timothy 3:1). The Master makes faith the question that hangs over the end — *I tell you that he will avenge them speedily. Nevertheless when the Son of Adam cometh, shall he find faith on the earth?* (Luke 18:8) — the land barren of faith. And the hidden way of truth is the prophet's own famine: *Behold, the days come, saith Adonai Yahuah (the Lord GOD), that I will send a famine in the land, not a famine of bread, nor a thirst for water, but of hearing the words of Yahuah (LORD):* (Amos 8:11). The witness is one.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Matthew 24:12 — *And because iniquity shall abound, the love of many shall wax cold.* Yahusha names the same token Uriel gives — iniquity increased and the land barren of faith (2 Esdras 5:1-2)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "2-timothy",
+          "tgt_ch": 3,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "2 Timothy 3:1 — *This know also, that in the last days perilous times shall come.* Sha'ul's last-days warning matches the iniquity multiplied above all that was heard of old (2 Esdras 5:2)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 18,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Luke 18:8 — *I tell you that he will avenge them speedily. Nevertheless when the Son of Adam cometh, shall he find faith on the earth?* The Son of Adam asks at His coming the very thing Esdras foresees — the land barren of faith (2 Esdras 5:1)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 8,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Amos 8:11 — *Behold, the days come, saith Adonai Yahuah (the Lord GOD), that I will send a famine in the land, not a famine of bread, nor a thirst for water, but of hearing the words of Yahuah (LORD):* Amos's famine of hearing IS the way of truth hidden (2 Esdras 5:1)."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-5-sun-by-night-blood-wood",
+      "title": "The sun shining by night, blood from wood — the cosmic tokens",
+      "summary_md": "The tokens turn to the heavens and the deep: *But if the Most High grant you to live, you shall see after the third trumpet that the sun shall suddenly shine again in the night, and the moon thrice in the day:* (2 Esdras 5:4) — *And blood shall drop out of wood, and the stone shall give his voice, and the people shall be troubled:* (2 Esdras 5:5). Yahusha foretells the same upheaval of the lights: *And there shall be signs in the sun, and in the moon, and in the stars; and upon the earth distress of nations, with perplexity; the sea and the waves roaring;* (Luke 21:25). The Revelation opens the sixth seal on the disordered sun and moon — *And I beheld when he had opened the sixth seal, and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood;* (Revelation 6:12). And the lying wonders that trouble the people belong to the man of sin, *Even him, whose coming is after the working of Satan with all power and signs and lying wonders,* (2 Thessalonians 2:9) — the false signs over against the true tokens. Nation against nation completes the list — *For nation shall rise against nation, and kingdom against kingdom: and there shall be famines, and pestilences, and earthquakes, in divers places.* (Matthew 24:7).",
+      "anchor_start_v": 4,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 21,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Luke 21:25 — *And there shall be signs in the sun, and in the moon, and in the stars; and upon the earth distress of nations, with perplexity; the sea and the waves roaring;* Yahusha's signs in sun and moon match the sun shining by night and the moon thrice in the day (2 Esdras 5:4)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 6,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Revelation 6:12 — *And I beheld when he had opened the sixth seal, and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood;* the sixth seal's disordered lights are the same token as the sun shining by night (2 Esdras 5:4)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "2-thessalonians",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "2 Thessalonians 2:9 — *Even him, whose coming is after the working of Satan with all power and signs and lying wonders,* the lying wonders that trouble the people answer to the blood from wood and the crying stone (2 Esdras 5:5)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Matthew 24:7 — *For nation shall rise against nation, and kingdom against kingdom: and there shall be famines, and pestilences, and earthquakes, in divers places.* Yahusha's catalogue of birth-pangs stands with the unlooked-for rule and the scattering flight (2 Esdras 5:6)."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-5-one-vine-one-people",
+      "title": "The one vine, the one dove, the one people",
+      "summary_md": "Esdras pleads from the chosenness of Yashar'el: *And said, O Yahuah (God) that bearest rule, of every wood of the earth, and of all the trees thereof, you have chosen you one only vine:* (2 Esdras 5:23) — *And among all the multitudes of people you have gotten you one people: and to this people, whom you lovedst, you gavest a law that is approved of all.* (2 Esdras 5:27). The one only vine is Isaiah's vineyard: *For the vineyard of Yahuah (the LORD) of hosts is the house of Yashar'el (Israel), and the men of Judah his pleasant plant:* — *Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:* (Isaiah 5:1). The psalmist names the vine brought out of Egypt — *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it.* (Psalm 80:8). And the one people loved and given the law is Moshe's word: *For thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth.* (Deuteronomy 7:6). The law approved of all still stands.",
+      "anchor_start_v": 23,
+      "anchor_end_v": 27,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 5:1 — *Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:* Isaiah's vineyard is Esdras's one only vine, chosen of every wood of the earth (2 Esdras 5:23)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 80,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Psalms 80:8 — *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it.* The vine brought out of Egypt is the one vine Yahuah chose for Himself (2 Esdras 5:23)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 27,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 7,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Deuteronomy 7:6 — *For thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth.* Moshe's chosen special people is the one people whom Yahuah loved and gave the law (2 Esdras 5:27)."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-5-israel-not-cast-away",
+      "title": "Why hast thou scattered thine only one people? — Israel not cast away",
+      "summary_md": "Esdras grieves over the scattering: *And now, O Yahuah (God), why have you given this one people over to many? and upon the one root have you prepared others, and why have you scattered your only one people among many?* (2 Esdras 5:28) — and Uriel turns the grief, *You are sore troubled in mind for Yashar'el (Israel)'s sake: lovest you that people better than he that made them?* (2 Esdras 5:33). The scattering is never a casting-off. Sha'ul answers the very question outright: *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.* (Romans 11:1). The election holds for the fathers' sakes — *As concerning the gospel, they are enemies for your sakes: but as touching the election, they are beloved for the fathers' sakes.* (Romans 11:28) — and it does not fail, *For the gifts and calling of Elohim (God) are without repentance.* (Romans 11:29). The unfaithful generation forfeits; the faithful remnant of both houses keeps the inheritance. No people-that-shall-come replaces Yashar'el — election precedes confession, and the gathering is the two sticks made one.",
+      "anchor_start_v": 28,
+      "anchor_end_v": 33,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 28,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 11,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Romans 11:1 — *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.* Sha'ul flatly denies the casting-off that Esdras's scattering might seem to imply (2 Esdras 5:28)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 28,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 11,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "Romans 11:28 — *As concerning the gospel, they are enemies for your sakes: but as touching the election, they are beloved for the fathers' sakes.* The one people scattered among many remains beloved by election (2 Esdras 5:28)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 33,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 11,
+          "tgt_v": 29,
+          "tier": "free",
+          "note": "Romans 11:29 — *For the gifts and calling of Elohim (God) are without repentance.* The Maker who loves Yashar'el better than Esdras ever could has a calling that cannot be revoked (2 Esdras 5:33)."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-5-womb-of-earth-times-seasons",
+      "title": "The womb of the earth — the times and the seasons in the Maker's hand",
+      "summary_md": "Uriel answers the why-not-all-at-once with the womb and the seasons: *And he said to me, I will liken my judgment to a ring: like as there is no slackness of the last, even so there is no swiftness of the first.* (2 Esdras 5:42) — *And he said to me, Ask the womb of a woman, and say to her, If you bring forth children, why do you it not together, but one after another?* (2 Esdras 5:46) — *Then said he to me, Even so have I given the womb of the earth to those that be sown in it in their times.* (2 Esdras 5:48). The Preacher set it first: *To every thing there is a season, and a time to every purpose under the heaven:* (Ecclesiastes 3:1). The fulness of the time is the Father's own — when the womb of the earth had run its appointed measure, *But when the fulness of the time was come, Elohim (God) sent forth his Son, made of a woman, made under the law,* (Galatians 4:4). The times and seasons are reserved to Him alone — *And he said unto them, It is not for you to know the times or the seasons, which the Father hath put in his own power.* (Acts 1:7) — even the day and hour, *But of that day and that hour knoweth no man, no, not the angels which are in heaven, neither the Son, but the Father.* (Mark 13:32). The creature may not haste above the Maker.",
+      "anchor_start_v": 42,
+      "anchor_end_v": 49,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 48,
+          "tgt_edition": "canon",
+          "tgt_book": "ecclesiastes",
+          "tgt_ch": 3,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Ecclesiastes 3:1 — *To every thing there is a season, and a time to every purpose under the heaven:* the womb of the earth bringing forth its seed in their times is the Preacher's season for every purpose (2 Esdras 5:48)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 48,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 4,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Galatians 4:4 — *But when the fulness of the time was come, Elohim (God) sent forth his Son, made of a woman, made under the law,* the fulness of the time is the appointed measure of the womb of the earth (2 Esdras 5:48)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 42,
+          "tgt_edition": "canon",
+          "tgt_book": "acts",
+          "tgt_ch": 1,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Acts 1:7 — *And he said unto them, It is not for you to know the times or the seasons, which the Father hath put in his own power.* The ring of judgment with no swiftness of the first is the times and seasons kept in the Father's power (2 Esdras 5:42)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 44,
+          "tgt_edition": "canon",
+          "tgt_book": "mark",
+          "tgt_ch": 13,
+          "tgt_v": 32,
+          "tier": "free",
+          "note": "Mark 13:32 — *But of that day and that hour knoweth no man, no, not the angels which are in heaven, neither the Son, but the Father.* The creature that may not haste above the Maker is told that even the day and hour rest with the Father (2 Esdras 5:44)."
+        }
+      ]
+    }
+  ]
+}

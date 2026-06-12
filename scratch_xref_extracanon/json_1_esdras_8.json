@@ -1,0 +1,250 @@
+{
+  "edition": "apocrypha",
+  "book": "1-esdras",
+  "chapter": 8,
+  "session": "session253",
+  "tag": "1esd8",
+  "base_band": 62675,
+  "threads": [
+    {
+      "slug": "1-esdras-8-ready-scribe",
+      "title": "The scribe with the law in his hand",
+      "summary_md": "1 Esdras opens with the scribe who carries the Torah back to Jerusalem: *This Esdras went up from Babylon, as a scribe, being very ready in the law of Moses, that was given by Yahuah (God) of Yashar'el (Israel)* (1 Esdras 8:3), and *For Esdras had very great skill, so that he omitted nothing of the law and commandments of Yahuah (God), but taught all Yashar'el (Israel) the ordinances and judgments* (1 Esdras 8:7). It ain't new — this is the very Ezra of the canon, word for word: *This Ezra went up from Babylon; and he was a ready scribe in the law of Moses, which Yahuah Elohim (the LORD God) of Yashar'el (Israel) had given* (Ezra 7:6), the man who *had prepared his heart to seek the law of Yahuah (LORD), and to do it, and to teach in Yashar'el (Israel) statutes and judgments* (Ezra 7:10). Torah carried home, sought, done, and taught — the threefold pattern stands.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 7,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Ezra 7:6 — *This Ezra went up from Babylon; and he was a ready scribe in the law of Moses, which Yahuah Elohim (the LORD God) of Yashar'el (Israel) had given: and the king granted him all his request, according to the hand of Yahuah Elohav (the LORD his God) upon him.* The canon names the same ready scribe going up from Babylon with the law of Moses that 1 Esdras 8:3 retells."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 7,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Ezra 7:10 — *For Ezra had prepared his heart to seek the law of Yahuah (LORD), and to do it, and to teach in Yashar'el (Israel) statutes and judgments.* The seek-do-teach heart of Ezra 7:10 is exactly the man who omitted nothing of the law in 1 Esdras 8:7."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-8-kings-letter",
+      "title": "The king's freewill decree for the house",
+      "summary_md": "The Persian decree is reproduced almost line for line. 1 Esdras gives *King Artexerxes to Esdras the priest and reader of the law of Yahuah (God) sends greeting* (1 Esdras 8:9), authorizing all who *are willing and desirous* to go up (8:10), the silver and gold *which I and my friends have vowed* carried to Jerusalem (8:13), and the warning *Let all things be performed after the law of Yahuah (God) diligently to the most high Yahuah (God), that wrath come not upon the kingdom of the king and his sons* (1 Esdras 8:21). The canon's letter is the same hand: *I make a decree, that all they of the people of Yashar'el (Israel)... which are minded of their own freewill to go up to Jerusalem, go with thee* (Ezra 7:13), the *freewill offered* silver and gold (Ezra 7:15), and *why should there be wrath against the realm of the king and his sons?* (Ezra 7:23). A pagan king's edict serving the house of Yahuah — election working even through Persia.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 21,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 7,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Ezra 7:13 — *I make a decree, that all they of the people of Yashar'el (Israel), and of his priests and Levites, in my realm, which are minded of their own freewill to go up to Jerusalem, go with thee.* The canon's freewill decree to go up to Jerusalem is the same commission 1 Esdras 8:10 records."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 7,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Ezra 7:15 — *And to carry the silver and gold, which the king and his counsellors have freely offered unto the Elohim (God) of Yashar'el (Israel), whose habitation is in Jerusalem.* The freely-offered silver and gold borne to Jerusalem in Ezra 7:15 is the vowed gold and silver of 1 Esdras 8:13."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 7,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Ezra 7:23 — *Whatsoever is commanded by the Elohim (God) of heaven, let it be diligently done for the house of the Elohim (God) of heaven: for why should there be wrath against the realm of the king and his sons?* The canon's same dread of wrath upon the king and his sons matches 1 Esdras 8:21 word for word."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-8-blessed-be-Yahuah",
+      "title": "Blessed be Yahuah who moved the king's heart",
+      "summary_md": "Ezra's doxology breaks out at the decree: *Then said Esdras the scribe, Blessed be the only Yahuah (God) of my fathers, who has put these things into the heart of the king, to glorify his house that is in Jerusalem* (1 Esdras 8:25), *And has honoured me in the sight of the king, and his counsellors, and all his friends and nobles* (8:26). The canon's blessing is identical: *Blessed be Yahuah Elohim (the LORD God) of our fathers, which hath put such a thing as this in the king's heart, to beautify the house of Yahuah (LORD) which is in Jerusalem* (Ezra 7:27), *And hath extended mercy unto me before the king, and his counsellors, and before all the king's mighty princes* (Ezra 7:28). The King of kings turns the heart of an earthly king — *The king's heart is in the hand of Yahuah, as the rivers of water: he turneth it whithersoever he will* (Proverbs 21:1).",
+      "anchor_start_v": 25,
+      "anchor_end_v": 26,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 7,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Ezra 7:27 — *Blessed be Yahuah Elohim (the LORD God) of our fathers, which hath put such a thing as this in the king's heart, to beautify the house of Yahuah (LORD) which is in Jerusalem.* The canon's blessing for the heart moved to glorify the house is the same doxology as 1 Esdras 8:25."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 26,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 7,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "Ezra 7:28 — *And hath extended mercy unto me before the king, and his counsellors, and before all the king's mighty princes. And I was strengthened as the hand of Yahuah Elohai (the LORD my God) was upon me, and I gathered together out of Yashar'el (Israel) chief men to go up with me.* The mercy shown before king and counsellors in Ezra 7:28 is the very favour 1 Esdras 8:26 records."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 21,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Proverbs 21:1 — *The king's heart is in the hand of Yahuah, as the rivers of water: he turneth it whithersoever he will.* Proverbs gives the principle behind 1 Esdras 8:25 — Yahuah put the matter into the heart of Artaxerxes."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-8-strange-marriages",
+      "title": "The holy seed mingled with the strangers",
+      "summary_md": "The crisis is reported to Ezra: *The nation of Yashar'el (Israel), the princes, the priests and Levites, have not put away from them the strange people of the land* (1 Esdras 8:69), and *the holy seed is mixed with the strange people of the land* (1 Esdras 8:70). The canon reports it in the same words: *The people of Yashar'el (Israel), and the priests, and the Levites, have not separated themselves from the people of the lands* (Ezra 9:1), *so that the holy seed have mingled themselves with the people of those lands* (Ezra 9:2). The Torah command stands behind both — *Neither shalt thou make marriages with them; thy daughter thou shalt not give unto his son, nor his daughter shalt thou take unto thy son* (Deuteronomy 7:3) — and Isaiah names the very phrase, *so the holy seed shall be the substance thereof* (Isaiah 6:13). The covenant seed kept distinct, never dissolved into the nations.",
+      "anchor_start_v": 69,
+      "anchor_end_v": 70,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 69,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 9,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Ezra 9:1 — *Now when these things were done, the princes came to me, saying, The people of Yashar'el (Israel), and the priests, and the Levites, have not separated themselves from the people of the lands, doing according to their abominations, even of the Canaanites, the Hittites, the Perizzites, the Jebusites, the Ammonites, the Moabites, the Egyptians, and the Amorites.* The canon's report of the unseparated people is the same news brought to Ezra in 1 Esdras 8:69."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 70,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 9,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Ezra 9:2 — *For they have taken of their daughters for themselves, and for their sons: so that the holy seed have mingled themselves with the people of those lands: yea, the hand of the princes and rulers hath been chief in this trespass.* The mingled holy seed of Ezra 9:2 is the same trespass named in 1 Esdras 8:70."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 70,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 7,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Deuteronomy 7:3 — *Neither shalt thou make marriages with them; thy daughter thou shalt not give unto his son, nor his daughter shalt thou take unto thy son.* The Torah command broken in 1 Esdras 8:70 is the marriage prohibition Moses gave in Deuteronomy 7:3."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 70,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 6,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Isaiah 6:13 — *But yet in it shall be a tenth, and it shall return, and shall be eaten: as a teil tree, and as an oak, whose substance is in them, when they cast their leaves: so the holy seed shall be the substance thereof.* Isaiah's holy seed that remains as the substance is the very seed 1 Esdras 8:70 mourns as mingled."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-8-confession-remnant",
+      "title": "Ezra's confession and the root left",
+      "summary_md": "Ezra prays the great penitential confession: *I said, O Yahuah (God), I am confounded and ashamed before your face* (1 Esdras 8:74), *For our sins are multiplied above our heads, and our ignorances have reached up to heaven* (8:75), yet *there should be left us a root and a name in the place of your sanctuary* (8:78), closing *O Yahuah (God) of Yashar'el (Israel), you are true: for we are left a root this day* (1 Esdras 8:89). The canon's Ezra prays the same: *O my Elohim (God), I am ashamed and blush to lift up my face to thee... for our iniquities are increased over our head* (Ezra 9:6), pleading the *remnant to escape* (Ezra 9:8) and confessing *thou art righteous: for we remain yet escaped, as it is this day* (Ezra 9:15). Daniel's parallel confession stands beside it: *O Yahuah (Lord), the great and dreadful Elohim (God), keeping the covenant and mercy* (Daniel 9:4). Election precedes confession — the root is left because Yahuah is true, not because the people earned it; the remnant of the covenant is never cast away.",
+      "anchor_start_v": 74,
+      "anchor_end_v": 89,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 75,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 9,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Ezra 9:6 — *And said, O my Elohim (God), I am ashamed and blush to lift up my face to thee, my Elohim (God): for our iniquities are increased over our head, and our trespass is grown up unto the heavens.* The canon's iniquities risen over the head and grown to heaven are the very words of 1 Esdras 8:75."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 78,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 9,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Ezra 9:8 — *And now for a little space grace hath been shewed from Yahuah Eloheinu (the LORD our God), to leave us a remnant to escape, and to give us a nail in his holy place, that our Elohim (God) may lighten our eyes, and give us a little reviving in our bondage.* The remnant left in the holy place in Ezra 9:8 is the root and name 1 Esdras 8:78 confesses."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 89,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 9,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Ezra 9:15 — *O Yahuah Elohim (LORD God) of Yashar'el (Israel), thou art righteous: for we remain yet escaped, as it is this day: behold, we are before thee in our trespasses: for we cannot stand before thee because of this.* The canon's \"thou art righteous, we remain yet escaped\" is exactly the root-left-this-day confession of 1 Esdras 8:89."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 74,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Daniel 9:4 — *And I prayed unto Yahuah Elohai (the LORD my God), and made my confession, and said, O Yahuah (Lord), the great and dreadful Elohim (God), keeping the covenant and mercy to them that love him, and to them that keep his commandments.* Daniel's confessing prayer that pleads the covenant kept is the sibling of Ezra's confession opened in 1 Esdras 8:74."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-8-oath-put-away",
+      "title": "The covenant and the great congregation",
+      "summary_md": "The people answer the prayer with an oath: *And as Esdras in his prayer made his confession, weeping, and lying flat upon the ground before the temple, there gathered to him from Jerusalem a very great multitude of men and women and children: for there was great weeping among the multitude* (1 Esdras 8:91), and Jechonias cries *Let us make an oath to Yahuah (God), that we will put away all our wives, which we have taken of the heathen, with their children* (1 Esdras 8:93). The canon is the same scene: *Now when Ezra had prayed, and when he had confessed, weeping and casting himself down before the house of Elohim (God), there assembled unto him out of Yashar'el (Israel) a very great congregation* (Ezra 10:1), and Shechaniah answers *let us make a covenant with our Elohim (God) to put away all the wives... and let it be done according to the law* (Ezra 10:3). Repentance gathers the congregation; the covenant is renewed by obeying the law of Yahuah — Torah stands, never set aside.",
+      "anchor_start_v": 91,
+      "anchor_end_v": 93,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 91,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 10,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Ezra 10:1 — *Now when Ezra had prayed, and when he had confessed, weeping and casting himself down before the house of Elohim (God), there assembled unto him out of Yashar'el (Israel) a very great congregation of men and women and children: for the people wept very sore.* The canon's weeping congregation gathered before the house is the same multitude 1 Esdras 8:91 describes."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 93,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 10,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Ezra 10:3 — *Now therefore let us make a covenant with our Elohim (God) to put away all the wives, and such as are born of them, according to the counsel of my lord, and of those that tremble at the commandment of our Elohim (God); and let it be done according to the law.* The covenant to put away the wives according to the law is the very oath Jechonias proposes in 1 Esdras 8:93."
+        }
+      ]
+    }
+  ]
+}

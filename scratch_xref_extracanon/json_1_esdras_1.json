@@ -1,0 +1,240 @@
+{
+  "edition": "apocrypha",
+  "book": "1-esdras",
+  "chapter": 1,
+  "session": "session253",
+  "tag": "1esd1",
+  "base_band": 62500,
+  "threads": [
+    {
+      "slug": "1-esdras-1-josiahs-passover",
+      "title": "Josiah holds the Passover — the courses set, the lamb slain the fourteenth day",
+      "summary_md": "First Esdras opens where Chronicles opens its last great festival: *And Josias held the feast of the passover in Jerusalem to his Elohim (God), and offered the passover the fourteenth day of the first month;* (1 Esdras 1:1), with *the priests according to their daily courses, being arrayed in long garments, in the temple of Yahuah (God).* (1 Esdras 1:2). It is the Chronicler's own account retold — *Moreover Josiah kept a passover unto Yahuah (LORD) in Jerusalem: and they killed the passover on the fourteenth day of the first month.* (2 Chronicles 35:1) — and the king's charge in Kings, *And the king commanded all the people, saying, Keep the passover unto Yahuah Elohaychem (the LORD your God), as it is written in the book of this covenant.* (2 Kings 23:21). And the fourteenth-day reckoning is no innovation: it is the Torah ordinance kept, *And ye shall keep it up until the fourteenth day of the same month: and the whole assembly of the congregation of Yashar'el (Israel) shall kill it in the evening.* (Exodus 12:6). It ain't new — Josiah does only what Moses was given.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 35,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "2 Chronicles 35:1 — *Moreover Josiah kept a passover unto Yahuah (LORD) in Jerusalem: and they killed the passover on the fourteenth day of the first month.* The Chronicler's verse is the very source 1 Esdras 1:1 retells, fourteenth-day and all."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 23,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "2 Kings 23:21 — *And the king commanded all the people, saying, Keep the passover unto Yahuah Elohaychem (the LORD your God), as it is written in the book of this covenant.* Kings shows the royal command that 1 Esdras 1:1 carries out, keeping the feast as the covenant was written."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 12,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Exodus 12:6 — *And ye shall keep it up until the fourteenth day of the same month: and the whole assembly of the congregation of Yashar'el (Israel) shall kill it in the evening.* The Torah ordinance fixes the fourteenth day that Josiah keeps in 1 Esdras 1:1."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 35,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "2 Chronicles 35:2 — *And he set the priests in their charges, and encouraged them to the service of the house of Yahuah (LORD),* The priests set in their courses in 1 Esdras 1:2 is the Chronicler's same ordering of the temple service."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-1-ark-and-courses",
+      "title": "Serve now Yahuah — the ark housed, the Levites in their charge",
+      "summary_md": "Josiah speaks to the Levites: *that they should hallow themselves to Yahuah (God), to set the holy ark of Yahuah (God) in the house that king Solomon the son of David had built:* (1 Esdras 1:3), *You shall no more bear the ark upon your shoulders: now therefore serve Yahuah (God), your Elohim (God), and minister to his people Yashar'el (Israel)* (1 Esdras 1:4). It is the Chronicler's charge word for word in substance — *Put the holy ark in the house which Solomon the son of David king of Yashar'el (Israel) did build; it shall not be a burden upon your shoulders: serve now Yahuah Elohaychem (the LORD your God), and his people Yashar'el (Israel),* (2 Chronicles 35:3) — and the keeping done *according to the word of Yahuah (LORD) by the hand of Moses.* (2 Chronicles 35:6). Election and ordinance precede the feast: the courses David set, the law Moses gave, the ark Solomon housed — the same covenant witness, unbroken.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 35,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "2 Chronicles 35:3 — *And said unto the Levites that taught all Yashar'el (Israel), which were holy unto Yahuah (LORD), Put the holy ark in the house which Solomon the son of David king of Yashar'el (Israel) did build; it shall not be a burden upon your shoulders: serve now Yahuah Elohaychem (the LORD your God), and his people Yashar'el (Israel),* The Chronicler's charge to house the ark is the very speech 1 Esdras 1:3 retells."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 35,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "2 Chronicles 35:6 — *So kill the passover, and sanctify yourselves, and prepare your brethren, that they may do according to the word of Yahuah (LORD) by the hand of Moses.* The command kept by Moses' word in 1 Esdras 1:6 is the Chronicler's own grounding of the feast in Torah."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 12,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Exodus 12:24 — *And ye shall observe this thing for an ordinance to thee and to thy sons for ever.* The Passover that 1 Esdras 1:6 keeps by the commandment given to Moses is the everlasting ordinance Exodus fixed for the generations."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-1-no-such-passover",
+      "title": "Such a passover not kept since Samuel — the unleavened bread seven days",
+      "summary_md": "The keeping is total — *So the children of Yashar'el (Israel) which were present held the passover at that time, and the feast of sweet bread seven days.* (1 Esdras 1:19) — and superlative: *And such a passover was not kept in Yashar'el (Israel) since the time of the prophet Samuel.* (1 Esdras 1:20). The Chronicler measures it the same way: *And there was no passover like to that kept in Yashar'el (Israel) from the days of Samuel the prophet* (2 Chronicles 35:18), and the seven-day feast of unleavened bread is the Torah's own command — *Seven days shall ye eat unleavened bread; even the first day ye shall put away leaven out of your houses* (Exodus 12:15). It ain't new: the greatest feast in centuries is simply the oldest ordinance kept whole.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 35,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "2 Chronicles 35:17 — *And the children of Yashar'el (Israel) that were present kept the passover at that time, and the feast of unleavened bread seven days.* The seven-day keeping in 1 Esdras 1:19 is the Chronicler's same record of Israel present at the feast."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 35,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "2 Chronicles 35:18 — *And there was no passover like to that kept in Yashar'el (Israel) from the days of Samuel the prophet; neither did all the kings of Yashar'el (Israel) keep such a passover as Josiah kept, and the priests, and the Levites, and all Yahudah (Judah) and Yashar'el (Israel) that were present, and the inhabitants of Jerusalem.* The Samuel-measure of 1 Esdras 1:20 is the Chronicler's own superlative for Josiah's feast."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 12,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Exodus 12:15 — *Seven days shall ye eat unleavened bread; even the first day ye shall put away leaven out of your houses: for whosoever eateth leavened bread from the first day until the seventh day, that soul shall be cut off from Yashar'el (Israel).* The seven days of sweet bread in 1 Esdras 1:19 keep the Torah's own count for the feast of unleavened bread."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-1-josiah-megiddo-and-fall",
+      "title": "Josiah falls at Megiddo, the messengers mocked, the wrath with no remedy",
+      "summary_md": "Josiah will not turn from Pharaoh: *Howbeit Josias did not turn back his chariot from him, but undertook to fight with him, not regarding the words of the prophet Jeremy spoken by the mouth of Yahuah (God):* (1 Esdras 1:28), and at Megiddo he is brought home to die — and after him the kings do evil till the wrath rises. *But they had his messengers in derision; and, look, when Yahuah (God) spoke to them, they made a sport of his prophets:* (1 Esdras 1:51). The Chronicler tells it the same: Josiah *hearkened not unto the words of Necho from the mouth of Elohim (God), and came to fight in the valley of Megiddo* (2 Chronicles 35:22); and the generation's end is sealed, *But they mocked the messengers of Elohim (God), and despised his words, and misused his prophets, until the wrath of Yahuah (LORD) arose against his people, till there was no remedy.* (2 Chronicles 36:16). The good king kept the feast; the sons who mocked the prophets forfeited the land.",
+      "anchor_start_v": 28,
+      "anchor_end_v": 51,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 28,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 35,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "2 Chronicles 35:22 — *Nevertheless Josiah would not turn his face from him, but disguised himself, that he might fight with him, and hearkened not unto the words of Necho from the mouth of Elohim (God), and came to fight in the valley of Megiddo.* The Chronicler's Megiddo verse is the very fall 1 Esdras 1:28 records, Josiah deaf to the word."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 28,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 23,
+          "tgt_v": 29,
+          "tier": "free",
+          "note": "2 Kings 23:29 — *In his days Pharaoh-nechoh king of Egypt went up against the king of Assyria to the river Euphrates: and king Josiah went against him; and he slew him at Megiddo, when he had seen him.* Kings names the same Megiddo where Josiah is struck down in 1 Esdras 1:28-29."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 51,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 36,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "2 Chronicles 36:16 — *But they mocked the messengers of Elohim (God), and despised his words, and misused his prophets, until the wrath of Yahuah (LORD) arose against his people, till there was no remedy.* The prophets made a sport of in 1 Esdras 1:51 is the Chronicler's same mocking that brought the wrath without remedy."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 50,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 36,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "2 Chronicles 36:15 — *And Yahuah Elohim (the LORD God) of their fathers sent to them by his messengers, rising up betimes, and sending; because he had compassion on his people, and on his dwelling place:* The messenger sent to call them back in 1 Esdras 1:50 is the Chronicler's same compassion warning before the end."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-1-temple-burned-sabbaths-fulfilled",
+      "title": "The house burnt, the captivity to Babylon, till the land enjoyed her sabbaths",
+      "summary_md": "The end comes as the prophets warned: *As for the house of Yahuah (God), they burnt it, and brake down the walls of Jerusalem, and set fire upon her towers:* (1 Esdras 1:55), the people carried to Babylon *to fulfil the word of Yahuah (God) spoken by the mouth of Jeremy:* (1 Esdras 1:57), *Until the land had enjoyed her sabbaths, the whole time of her desolation shall she rest, until the full term of seventy years.* (1 Esdras 1:58). The Chronicler ends his book on the same word — *To fulfil the word of Yahuah (LORD) by the mouth of Jeremiah, until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years.* (2 Chronicles 36:21) — and that word is Jeremiah's own seventy years, *And this whole land shall be a desolation, and an astonishment; and these nations shall serve the king of Babylon seventy years.* (Jeremiah 25:11). And the reckoning reaches back to the Torah's covenant warning, *Then shall the land enjoy her sabbaths, as long as it lieth desolate, and ye be in your enemies' land; even then shall the land rest, and enjoy her sabbaths.* (Leviticus 26:34). The land keeps the rest the people would not — Torah stands, even in exile.",
+      "anchor_start_v": 55,
+      "anchor_end_v": 58,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 55,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 36,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "2 Chronicles 36:19 — *And they burnt the house of Elohim (God), and brake down the wall of Jerusalem, and burnt all the palaces thereof with fire, and destroyed all the goodly vessels thereof.* The burning of the house and breaking of the walls in 1 Esdras 1:55 is the Chronicler's same record of Jerusalem's fall."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 58,
+          "tgt_edition": "canon",
+          "tgt_book": "2-chronicles",
+          "tgt_ch": 36,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "2 Chronicles 36:21 — *To fulfil the word of Yahuah (LORD) by the mouth of Jeremiah, until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years.* The sabbaths and seventy years of 1 Esdras 1:58 are the Chronicler's same close, the land resting by Jeremiah's word."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 57,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 25,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Jeremiah 25:11 — *And this whole land shall be a desolation, and an astonishment; and these nations shall serve the king of Babylon seventy years.* Jeremiah's seventy-year word is the very prophecy 1 Esdras 1:57 says the captivity fulfilled."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 58,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 26,
+          "tgt_v": 34,
+          "tier": "free",
+          "note": "Leviticus 26:34 — *Then shall the land enjoy her sabbaths, as long as it lieth desolate, and ye be in your enemies' land; even then shall the land rest, and enjoy her sabbaths.* The land enjoying her sabbaths in 1 Esdras 1:58 reaches back to the Torah's covenant warning that the desolate land would keep the rest the people withheld."
+        }
+      ]
+    }
+  ]
+}

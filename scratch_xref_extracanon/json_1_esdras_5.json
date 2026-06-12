@@ -1,0 +1,220 @@
+{
+  "edition": "apocrypha",
+  "book": "1-esdras",
+  "chapter": 5,
+  "session": "session253",
+  "tag": "1esd5",
+  "base_band": 62600,
+  "threads": [
+    {
+      "slug": "1-esdras-5-they-came-up-from-the-captivity",
+      "title": "They that came up from the captivity",
+      "summary_md": "1 Esdras carries the same register as the canon's Ezra. *And these are they of Jewry that came up from the captivity, where they dwelt as strangers, whom Nabuchodonosor the king of Babylon had carried away to Babylon* (1 Esdras 5:7), *who came with Zorobabel, with Jesus, Nehemias, and Zacharias* (1 Esdras 5:8). It ain't new — it is the Greek voice of the very return Ezra records: *Now these are the children of the province that went up out of the captivity, of those which had been carried away, whom Nebuchadnezzar the king of Babylon had carried away unto Babylon, and came again unto Jerusalem and Yahudah* (Ezra 2:1), *Which came with Zerubbabel: Jeshua, Nehemiah, Seraiah, Reelaiah, Mordecai* (Ezra 2:2). The whole congregation is the same forty-and-two thousand the remnant numbered, *all Israel in their cities* (Ezra 2:70). The seed Yahuah promised never to cast away (Romans 11) walks home by name and by tribe; election precedes the rebuilding.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 2,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Ezra 2:1 — *Now these are the children of the province that went up out of the captivity, of those which had been carried away, whom Nebuchadnezzar the king of Babylon had carried away unto Babylon, and came again unto Jerusalem and Yahudah (Judah), every one unto his city;* the canon's word-for-word twin of 1 Esdras 5:7, the same return out of Babylon."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 2,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Ezra 2:2 — *Which came with Zerubbabel: Jeshua, Nehemiah, Seraiah, Reelaiah, Mordecai, Bilshan, Mispar, Bigvai, Rehum, Baanah. The number of the men of the people of Yashar'el (Israel):* the same leaders Zorobabel and Jesus (Jeshua) who guide the people home in 1 Esdras 5:8."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 46,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 2,
+          "tgt_v": 70,
+          "tier": "free",
+          "note": "Ezra 2:70 — *So the priests, and the Levites, and some of the people, and the singers, and the porters, and the Nethinims, dwelt in their cities, and all Yashar'el (Israel) in their cities.* the identical resettlement that closes the roster in 1 Esdras 5:46, the remnant home again in their villages."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-5-high-priest-with-doctrine-and-truth",
+      "title": "Till there arose an high priest with doctrine and truth",
+      "summary_md": "The doubtful priests who could not prove their stock were held back from the holy things *till there arose up an high priest clothed with doctrine and truth* (1 Esdras 5:40). Ezra says the same in its own words: the Tirshatha ruled *that they should not eat of the most holy things, till there stood up a priest with Urim and with Thummim* (Ezra 2:63) — the very stones of decision Yahuah set on Aaron's heart: *And thou shalt put in the breastplate of judgment the Urim and the Thummim; and they shall be upon Aaron's heart, when he goeth in before Yahuah (LORD)* (Exodus 28:30). The priest is meant to carry knowledge, *For the priest's lips should keep knowledge, and they should seek the law at his mouth* (Malachi 2:7). The text reaches past Zerubbabel's day to the High Priest who needs no register, *who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens* (Hebrews 7:26) — doctrine and truth made flesh, Torah upheld, never undone.",
+      "anchor_start_v": 39,
+      "anchor_end_v": 40,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 2,
+          "tgt_v": 63,
+          "tier": "free",
+          "note": "Ezra 2:63 — *And the Tirshatha said unto them, that they should not eat of the most holy things, till there stood up a priest with Urim and with Thummim.* the canon's exact parallel to 1 Esdras 5:40, the unproven priests barred until the true priest of decision arises."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 28,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Exodus 28:30 — *And thou shalt put in the breastplate of judgment the Urim and the Thummim; and they shall be upon Aaron's heart, when he goeth in before Yahuah (LORD): and Aaron shall bear the judgment of the children of Yashar'el (Israel) upon his heart before Yahuah (LORD) continually.* the Urim and Thummim are the doctrine-and-truth oracle 1 Esdras 5:40 says the high priest must wear."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 2,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Malachi 2:7 — *For the priest's lips should keep knowledge, and they should seek the law at his mouth: for he is the messenger of Yahuah Tseva'ot (LORD of hosts).* the priest clothed with doctrine of 1 Esdras 5:40 is the one whose lips keep the Torah."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 7,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Hebrews 7:26 — *For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens;* the high priest of doctrine and truth 1 Esdras 5:40 awaits is fulfilled in the spotless High Priest above the heavens."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-5-altar-set-up-feast-of-tabernacles",
+      "title": "The altar set up and the feast of tabernacles kept",
+      "summary_md": "Before a single stone of the house was laid, they raised the altar and kept the appointed time. *Then stood up Jesus the son of Josedec, and his brothers the priests and Zorobabel the son of Salathiel... and made ready the altar of Yahuah (God) of Yashar'el (Israel)* (1 Esdras 5:48), *To offer burnt sacrifices upon it, according as it is expressly commanded in the book of Moses the man of Yahuah (God)* (1 Esdras 5:49), and *Also they held the feast of tabernacles, as it is commanded in the law* (1 Esdras 5:51). Ezra tells it the same: *Then stood up Jeshua the son of Jozadak, and his brethren the priests, and Zerubbabel the son of Shealtiel... and builded the altar of the Elohim (God) of Yashar'el (Israel), to offer burnt offerings thereon, as it is written in the law of Moses the man of Elohim (God)* (Ezra 3:2), *They kept also the feast of tabernacles, as it is written* (Ezra 3:4). And the feast itself stands written in Moses, *The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto Yahuah (LORD)* (Leviticus 23:34). Torah stands: the returned remnant's first act is obedience to the moedim, by the book, never law as a curse.",
+      "anchor_start_v": 48,
+      "anchor_end_v": 51,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 48,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 3,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Ezra 3:2 — *Then stood up Jeshua the son of Jozadak, and his brethren the priests, and Zerubbabel the son of Shealtiel, and his brethren, and builded the altar of the Elohim (God) of Yashar'el (Israel), to offer burnt offerings thereon, as it is written in the law of Moses the man of Elohim (God).* the canon's word-for-word match to 1 Esdras 5:48, Jesus (Jeshua) and Zorobabel raising the altar by the law of Moses."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 51,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 3,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Ezra 3:4 — *They kept also the feast of tabernacles, as it is written, and offered the daily burnt offerings by number, according to the custom, as the duty of every day required;* the same feast of tabernacles 1 Esdras 5:51 says they held as commanded in the law."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 51,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 23,
+          "tgt_v": 34,
+          "tier": "free",
+          "note": "Leviticus 23:34 — *Speak unto the children of Yashar'el (Israel), saying, The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto Yahuah (LORD).* the very statute of Sukkot the returnees keep in 1 Esdras 5:51, the moed written in Moses' book."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-5-foundation-trumpets-weeping-and-joy",
+      "title": "The trumpets and the weeping mingled with the shout of joy",
+      "summary_md": "When the foundation was laid, the old who remembered the first house wept while the rest shouted, and the two sounds became one. *Also of the priests and Levites, and of the chief of their families, the ancients who had seen the former house came to the building of this with weeping and great crying* (1 Esdras 5:63), *Insomuch that the trumpets might not be heard for the weeping of the people: yet the multitude sounded marvellously, so that it was heard afar off* (1 Esdras 5:65). Ezra records the same scene: *And they sang together by course in praising and giving thanks unto Yahuah (LORD); because he is good, for his mercy endureth for ever toward Yashar'el (Israel)... because the foundation of the house of Yahuah (LORD) was laid* (Ezra 3:11), and *So that the people could not discern the noise of the shout of joy from the noise of the weeping of the people... and the noise was heard afar off* (Ezra 3:13). Haggai names the ache: *Who is left among you that saw this house in her first glory? and how do ye see it now?* (Haggai 2:3). And the psalm of the return turns the tears to harvest: *They that sow in tears shall reap in joy* (Psalm 126:5). The lesser house is the same covenant promise, awaiting the glory of the latter house greater than the former.",
+      "anchor_start_v": 62,
+      "anchor_end_v": 65,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 62,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 3,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Ezra 3:11 — *And they sang together by course in praising and giving thanks unto Yahuah (LORD); because he is good, for his mercy endureth for ever toward Yashar'el (Israel). And all the people shouted with a great shout, when they praised Yahuah (LORD), because the foundation of the house of Yahuah (LORD) was laid.* the same thanksgiving and great shout at the foundation that 1 Esdras 5:62 records for the rearing of the house."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 65,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 3,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Ezra 3:13 — *So that the people could not discern the noise of the shout of joy from the noise of the weeping of the people: for the people shouted with a loud shout, and the noise was heard afar off.* the canon's exact twin of 1 Esdras 5:65, the weeping and the shout indistinguishable and heard afar."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 63,
+          "tgt_edition": "canon",
+          "tgt_book": "haggai",
+          "tgt_ch": 2,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Haggai 2:3 — *Who is left among you that saw this house in her first glory? and how do ye see it now? is it not in your eyes in comparison of it as nothing?* this is the grief of the ancients who had seen the former house and wept in 1 Esdras 5:63."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 63,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 126,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Psalm 126:5 — *They that sow in tears shall reap in joy.* the song of the restored captivity answers the weeping of the old men in 1 Esdras 5:63 with the harvest of joy."
+        }
+      ]
+    },
+    {
+      "slug": "1-esdras-5-we-ourselves-alone-will-build",
+      "title": "We ourselves alone will build unto Yahuah",
+      "summary_md": "When the people of the land offered to build alongside them, the remnant refused a mingled house. *So they went to Zorobabel and Jesus, and to the chief of the families, and said to them, We will build together with you* (1 Esdras 5:68), but the answer held the line: *We ourselves alone will build to Yahuah (God) of Yashar'el (Israel), according as Cyrus the king of the Persians has commanded us* (1 Esdras 5:71). Ezra gives the same refusal: *But Zerubbabel, and Jeshua, and the rest of the chief of the fathers of Yashar'el (Israel), said unto them, Ye have nothing to do with us to build an house unto our Elohim (God); but we ourselves together will build unto Yahuah Elohim (the LORD God) of Yashar'el (Israel), as king Cyrus the king of Persia hath commanded us* (Ezra 4:3). And the cost was real: *Then the people of the land weakened the hands of the people of Yahudah (Judah), and troubled them in building* (Ezra 4:4) — the very secret plots and commotions that hindered the work in 1 Esdras 5:73. The covenant house is not built by syncretism; the seed keeps the pattern undiluted.",
+      "anchor_start_v": 70,
+      "anchor_end_v": 73,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 71,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 4,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Ezra 4:3 — *But Zerubbabel, and Jeshua, and the rest of the chief of the fathers of Yashar'el (Israel), said unto them, Ye have nothing to do with us to build an house unto our Elohim (God); but we ourselves together will build unto Yahuah Elohim (the LORD God) of Yashar'el (Israel), as king Cyrus the king of Persia hath commanded us.* the canon's word-for-word twin of 1 Esdras 5:71, the remnant refusing a mingled temple."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 73,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 4,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Ezra 4:4 — *Then the people of the land weakened the hands of the people of Yahudah (Judah), and troubled them in building,* the same adversarial hindrance that stalled the work by secret plots in 1 Esdras 5:73."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "edition": "apocrypha",
+  "book": "2-esdras",
+  "chapter": 15,
+  "session": "session253",
+  "tag": "2esd15",
+  "base_band": 63350,
+  "threads": [
+    {
+      "slug": "2-esdras-15-sword-sent-who-may-turn",
+      "title": "The sword is sent: I will hold my tongue no more",
+      "summary_md": "Yahuah lifts the restraint on judgment: *Behold, says Yahuah (God), I will bring plagues upon the world; the sword, famine, death, and destruction* (2 Esdras 15:5), for *I will hold my tongue no more as touching their wickedness* (2 Esdras 15:8). This is the prophets' controversy with all flesh — *A noise shall come even to the ends of the earth; for Yahuah (LORD) hath a controversy with the nations, he will plead with all flesh; he will give them that are wicked to the sword, saith Yahuah (LORD)* (Jeremiah 25:31). The four scourges of Ezra are the four sore judgments of Ezekiel — *for I will call for a sword upon all the inhabitants of the earth, saith Yahuah Tseva'ot (LORD of hosts)* (Jeremiah 25:29). It ain't new: the same sword that hangs over the nations in the prophets is the sword the seer of Ezra still sees coming.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 15,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 25,
+          "tgt_v": 29,
+          "tier": "free",
+          "note": "Jeremiah 25:29 — *For, lo, I begin to bring evil on the city which is called by my name, and should ye be utterly unpunished? Ye shall not be unpunished: for I will call for a sword upon all the inhabitants of the earth, saith Yahuah Tseva'ot (LORD of hosts).* The plagues Ezra hears decreed on the world are the very sword Jeremiah is told Yahuah will call upon all the inhabitants of the earth."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 25,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "Jeremiah 25:31 — *A noise shall come even to the ends of the earth; for Yahuah (LORD) hath a controversy with the nations, he will plead with all flesh; he will give them that are wicked to the sword, saith Yahuah (LORD).* When Ezra's Yahuah declares He will hold His tongue no more, it is this controversy with the nations breaking its long silence."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 6,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Revelation 6:8 — *And I looked, and behold a pale horse: and his name that sat on him was Death, and Hell followed with him. And power was given unto them over the fourth part of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth.* The sword, famine, death and destruction loosed on Ezra's world ride out under the fourth seal as the pale horse over the earth."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-15-innocent-blood-cries",
+      "title": "The innocent blood cries to me",
+      "summary_md": "The martyrs are not forgotten: *behold, the innocent and righteous blood cries to me, and the souls of the just complain continually* (2 Esdras 15:8), and so *I will surely avenge them, and receive to me all the innocent blood from among them* (2 Esdras 15:9). This is the cry under the altar — *And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* (Revelation 6:10). The blood that cries is the blood Babylon is finally charged with — *And in her was found the blood of prophets, and of saints, and of all that were slain upon the earth* (Revelation 18:24). It ain't new: from Abel onward the righteous blood cries up from the ground, and Yahuah hears.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 15,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 6,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Revelation 6:10 — *And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* The souls of the just that complain continually in Ezra are the souls under the altar crying how long for the avenging of their blood."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 18,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Revelation 18:24 — *And in her was found the blood of prophets, and of saints, and of all that were slain upon the earth.* Yahuah's vow to receive to Himself all the innocent blood is answered when that blood is found in Babylon and she is judged for it."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 25,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "Jeremiah 25:31 — *A noise shall come even to the ends of the earth; for Yahuah (LORD) hath a controversy with the nations, he will plead with all flesh; he will give them that are wicked to the sword, saith Yahuah (LORD).* The avenging Yahuah promises in Ezra is His standing controversy with the nations over the blood of His own."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-15-egypt-plagues-mighty-hand",
+      "title": "I will smite Egypt with plagues as before",
+      "summary_md": "The deliverance is rehearsed in judgment's key: *I will bring them with a mighty hand and a stretched out arm, and smite Egypt with plagues, as before, and will destroy all the land thereof* (2 Esdras 15:11). The mighty-hand-and-stretched-arm is the Exodus formula — *Or hath Elohim (God) assayed to go and take him a nation from the midst of another nation... by a mighty hand, and by a stretched out arm... according to all that Yahuah Elohaychem (the LORD your God) did for you in Egypt before your eyes?* (Deuteronomy 4:34). And the renewed sword upon Egypt is Ezekiel's oracle — *And the sword shall come upon Egypt, and great pain shall be in Ethiopia, when the slain shall fall in Egypt* (Ezekiel 30:4). It ain't new: the Arm that broke Egypt once breaks the proud world-system again.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 15,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 4,
+          "tgt_v": 34,
+          "tier": "free",
+          "note": "Deuteronomy 4:34 — *Or hath Elohim (God) assayed to go and take him a nation from the midst of another nation, by temptations, by signs, and by wonders, and by war, and by a mighty hand, and by a stretched out arm, and by great terrors, according to all that Yahuah Elohaychem (the LORD your God) did for you in Egypt before your eyes?* Ezra's 'mighty hand and stretched out arm' against Egypt is the very Exodus formula of Yahuah's redeeming arm."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 30,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Ezekiel 30:4 — *And the sword shall come upon Egypt, and great pain shall be in Ethiopia, when the slain shall fall in Egypt, and they shall take away her multitude, and her foundations shall be broken down.* The plagues Ezra sees smiting Egypt and its foundations are Ezekiel's day-of-Yahuah sword falling on Egypt's slain and foundations."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 30,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Ezekiel 30:13 — *Thus saith Adonai Yahuah (the Lord GOD); I will also destroy the idols, and I will cause their images to cease out of Noph; and there shall be no more a prince of the land of Egypt: and I will put a fear in the land of Egypt.* Egypt's mourning under the plague in Ezra matches the fear Yahuah puts in the land when He strikes its idols and foundations in Ezekiel."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-15-woe-keep-not-commandments",
+      "title": "Woe to them that keep not my commandments",
+      "summary_md": "The woe falls on the world for covenant-breaking: *Woe to them that sin, and keep not my commandments! says Yahuah (God)* (2 Esdras 15:24), and *defile not my sanctuary* (2 Esdras 15:25). The cup of fury is passed to every nation — *Take the wine cup of this fury at my hand, and cause all the nations, to whom I send thee, to drink it* (Jeremiah 25:15). And the call to come out before the plagues fall is Babylon's own — *Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues* (Revelation 18:4). It ain't new: Torah stands, and the woe is on those who keep not the commandments, never on those who do; the kept seed is called out before wrath.",
+      "anchor_start_v": 24,
+      "anchor_end_v": 27,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 15,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 25,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Jeremiah 25:15 — *For thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel) unto me; Take the wine cup of this fury at my hand, and cause all the nations, to whom I send thee, to drink it.* The woe and plagues poured on the commandment-breakers in Ezra are this cup of fury Yahuah causes all the nations to drink."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 18,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Revelation 18:4 — *And I heard another voice from heaven, saying, Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues.* Yahuah's 'go your way, you children, from the power, defile not my sanctuary' is the same call to come out of Babylon lest His people share her plagues."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 6,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Revelation 6:10 — *And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* The woe on those who keep not the commandments answers the cry of the slain for Yahuah's holy and true judgment on them that dwell on the earth."
+        }
+      ]
+    },
+    {
+      "slug": "2-esdras-15-babylon-fallen-plagues-one-day",
+      "title": "Babylon made afraid: the plagues in one day",
+      "summary_md": "The vision turns on Babylon and her partner Asia: *They shall go stedfastly to Babylon, and make her afraid* (2 Esdras 15:43), and to Asia — *I will send plagues upon you; widowhood, poverty, famine, sword, and pestilence* (2 Esdras 15:49). This is the fall the seer of Patmos saw — *Babylon the great is fallen, is fallen, and is become the habitation of devils* (Revelation 18:2) — her plagues converging in a single day — *Therefore shall her plagues come in one day, death, and mourning, and famine; and she shall be utterly burned with fire* (Revelation 18:8). And the harlot's recompense for slaying the chosen — *Reward her even as she rewarded you, and double unto her double according to her works* (Revelation 18:6) — is Ezra's *Like as you have done to my chosen... even so shall Yahuah (God) do to you* (2 Esdras 15:56). The system is dismantled; the eagle-empire and her glory are burned. It ain't new: the Babylon of the prophets is the Babylon of the seer is the Babylon of Ezra.",
+      "anchor_start_v": 43,
+      "anchor_end_v": 56,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 15,
+          "src_v": 43,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 18,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 18:2 — *And he cried mightily with a strong voice, saying, Babylon the great is fallen, is fallen, and is become the habitation of devils, and the hold of every foul spirit, and a cage of every unclean and hateful bird.* The Babylon Ezra's avengers go stedfastly to make afraid is the Babylon the angel cries is fallen, is fallen."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 49,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 18,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Revelation 18:8 — *Therefore shall her plagues come in one day, death, and mourning, and famine; and she shall be utterly burned with fire: for strong is Yahuah Elohim (the Lord God) who judgeth her.* The widowhood, famine, sword and pestilence Yahuah sends on Asia are the very plagues — death, mourning, famine, burning — that fall on Babylon in one day."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 56,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 18,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Revelation 18:6 — *Reward her even as she rewarded you, and double unto her double according to her works: in the cup which she hath filled fill to her double.* Yahuah's 'like as you have done to my chosen, even so shall Yahuah do to you' is the lex talionis the seer cries over fallen Babylon."
+        },
+        {
+          "src_ch": 15,
+          "src_v": 53,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 18,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Revelation 18:24 — *And in her was found the blood of prophets, and of saints, and of all that were slain upon the earth.* Asia is judged because 'you had always slain my chosen' — the same charge of the blood of saints found in Babylon."
+        }
+      ]
+    }
+  ]
+}
