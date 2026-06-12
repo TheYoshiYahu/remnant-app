@@ -1,0 +1,88 @@
+import json
+
+data = {
+  "edition": "apocrypha",
+  "book": "tobit",
+  "chapter": 6,
+  "session": "session253",
+  "tag": "tob6",
+  "base_band": 59725,
+  "threads": [
+    {
+      "slug": "tobit-6-the-fish-by-the-river",
+      "title": "The Fish Taken from the River",
+      "summary_md": "By the Tigris a fish leaps up to devour the young man, and the angel turns the threat into provision: *And when the young man went down to wash himself, a fish leaped out of the river, and would have devoured him.* (Tobit 6:2) *Then the angel said to him, Take the fish. And the young man laid hold of the fish, and drew it to land.* (Tobit 6:3) What rose up to destroy is laid hold of and made into food and medicine — the same turning Joseph names, *ye thought evil against me; but Elohim (God) meant it unto good* (Genesis 50:20). The waters that menace become the waters that heal in the prophet's vision: *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* (Ezekiel 47:12) It ain't new — the river that healeth runs from Eden to the throne.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 20, "tier": "free",
+         "note": "Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The fish that leaped up to devour is turned, like Joseph's harm, into the means of saving life, in Tobit 6:2."},
+        {"src_ch": 6, "src_v": 3, "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 47, "tgt_v": 12, "tier": "free",
+         "note": "Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* The fish drawn from the river to feed and to heal answers the river whose very waters and fruit are medicine, in Tobit 6:3."}
+      ]
+    },
+    {
+      "slug": "tobit-6-gall-for-healing-eyes",
+      "title": "The Gall That Opens Blind Eyes",
+      "summary_md": "The angel sets aside the inward parts of the fish for healing: *To whom the angel said, Open the fish, and take the heart and the liver and the gall, and put them up safely.* (Tobit 6:4) *As for the gall, it is good to anoint a man that has whiteness in his eyes, and he shall be healed.* (Tobit 6:8) This stored remedy reaches forward to old Tobit, whose blindness it will cure, and it foreshadows the anointing that opens eyes: *He answered and said, A man that is called Yahusha made clay, and anointed mine eyes, and said unto me, Go to the pool of Siloam, and wash: and I went and washed, and I received sight.* (John 9:11) The healing of the body sealed up in the fish is the same mercy the Master pours out, and the same He commits to His own: *They shall take up serpents; and if they drink any deadly thing, it shall not hurt them; they shall lay hands on the sick, and they shall recover.* (Mark 16:18) It ain't new — Yahuah is the One who healeth.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 8, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 9, "tgt_v": 11, "tier": "free",
+         "note": "John 9:11 — *He answered and said, A man that is called Yahusha made clay, and anointed mine eyes, and said unto me, Go to the pool of Siloam, and wash: and I went and washed, and I received sight.* The gall laid up to anoint whitened eyes and give sight prefigures the anointing of clay that opens the blind man's eyes, in Tobit 6:8."},
+        {"src_ch": 6, "src_v": 4, "tgt_edition": "canon", "tgt_book": "mark", "tgt_ch": 16, "tgt_v": 18, "tier": "free",
+         "note": "Mark 16:18 — *They shall take up serpents; and if they drink any deadly thing, it shall not hurt them; they shall lay hands on the sick, and they shall recover.* The heart, liver, and gall kept safely for the recovery of the afflicted answer the laying on of hands by which the sick recover, in Tobit 6:4."}
+      ]
+    },
+    {
+      "slug": "tobit-6-smoke-that-drives-the-demon",
+      "title": "The Smoke That Drives the Demon Away",
+      "summary_md": "The angel teaches that the heart and liver, smoked, expel the tormenting spirit: *And he said to him, Touching the heart and the liver, if a devil or an evil spirit trouble any, we must make a smoke thereof before the man or the woman, and the party shall be no more vexed.* (Tobit 6:7) *And the devil shall smell it, and flee away, and never come again any more* (Tobit 6:17) — yet the smoke is never severed from the prayer that follows it: *but when you shall come to her, rise up both of you, and pray to Yahuah (God) which is merciful* (Tobit 6:17). The fleeing of the demon is the covenant pattern: the unclean spirit cannot stand before submission to Elohim — *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you.* (James 4:7) And the bound and vexed are set free at His word: *(For he had commanded the unclean spirit to come out of the man. For oftentimes it had caught him: and he was kept bound with chains and in fetters; and he brake the bands, and was driven of the devil into the wilderness.)* (Luke 8:29) It ain't new — the powers of darkness flee before Yahuah.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 17, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 4, "tgt_v": 7, "tier": "free",
+         "note": "James 4:7 — *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you.* The devil that smells the smoke and flees, never to return, is the same enemy that flees before submission to Elohim, in Tobit 6:17."},
+        {"src_ch": 6, "src_v": 7, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 8, "tgt_v": 29, "tier": "free",
+         "note": "Luke 8:29 — *(For he had commanded the unclean spirit to come out of the man. For oftentimes it had caught him: and he was kept bound with chains and in fetters; and he brake the bands, and was driven of the devil into the wilderness.)* The evil spirit that troubles and vexes a man or woman until it is driven off answers the unclean spirit cast out at the Master's command, in Tobit 6:7."}
+      ]
+    },
+    {
+      "slug": "tobit-6-kinsmans-right-seed-kept",
+      "title": "The Kinsman's Right — The Seed Kept in the Tribe",
+      "summary_md": "The angel claims Sara for Tobias by the law of inheritance within the kindred: *For to you does the right of her appertain, seeing you only art of her kindred.* (Tobit 6:11) *for I know that Raguel cannot marry her to another according to the law of Moses, but he shall be guilty of death, because the right of inheritance does rather appertain to you than to any other.* (Tobit 6:12) This is no novelty but Torah kept in exile — the daughters of an inheritance married within their own tribe so the lot is not removed: *And every daughter, that possesseth an inheritance in any tribe of the children of Yashar'el (Israel), shall be wife unto one of the family of the tribe of her father, that the children of Yashar'el (Israel) may enjoy every man the inheritance of his fathers.* (Numbers 36:8) It is the kinsman's duty to raise up the name that else were cut off: *her husband's brother shall go in unto her, and take her to him to wife, and perform the duty of an husband's brother unto her.* (Deuteronomy 25:5) The scattered house of Israel keeps the seed-line whole even in Media — the inheritance is not lost. It ain't new.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 12, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 36, "tgt_v": 8, "tier": "free",
+         "note": "Numbers 36:8 — *And every daughter, that possesseth an inheritance in any tribe of the children of Yashar'el (Israel), shall be wife unto one of the family of the tribe of her father, that the children of Yashar'el (Israel) may enjoy every man the inheritance of his fathers.* The right of inheritance that binds Sara to her kinsman Tobias is the very statute keeping a daughter's inheritance within her father's tribe, in Tobit 6:12."},
+        {"src_ch": 6, "src_v": 11, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 25, "tgt_v": 5, "tier": "free",
+         "note": "Deuteronomy 25:5 — *If brethren dwell together, and one of them die, and have no child, the wife of the dead shall not marry without unto a stranger: her husband's brother shall go in unto her, and take her to him to wife, and perform the duty of an husband's brother unto her.* The right of Sara appertaining to Tobias as her near kinsman echoes the kinsman's duty to raise up the dead man's name from his own house, in Tobit 6:11."}
+      ]
+    },
+    {
+      "slug": "tobit-6-bride-appointed-from-the-beginning",
+      "title": "Fear Not — She Is Appointed Unto Thee",
+      "summary_md": "The angel stills Tobias's dread of death and names Sara the bride ordained for him: *fear not, for she is appointed to you from the beginning; and you shall preserve her, and she shall go with you.* (Tobit 6:17) *And the maid is fair and wise* (Tobit 6:12) — the destined wife, like Rebekah at the well, is shown to be the LORD's own choosing: *let the same be she that thou hast appointed for thy servant Isaac; and thereby shall I know that thou hast shewed kindness unto my master.* (Genesis 24:14) The bride appointed is not chance but providence answered before the prayer is finished: *And it came to pass, before he had done speaking, that, behold, Rebekah came out, who was born to Bethuel, son of Milcah, the wife of Nahor, Abraham's brother, with her pitcher upon her shoulder.* (Genesis 24:15) And the wise and fair maid is Yahuah's gift: *House and riches are the inheritance of fathers: and a prudent wife is from Yahuah (LORD).* (Proverbs 19:14) It ain't new — the appointed bride is given of the LORD.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 17, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 24, "tgt_v": 14, "tier": "free",
+         "note": "Genesis 24:14 — *And let it come to pass, that the damsel to whom I shall say, Let down thy pitcher, I pray thee, that I may drink; and she shall say, Drink, and I will give thy camels drink also: let the same be she that thou hast appointed for thy servant Isaac; and thereby shall I know that thou hast shewed kindness unto my master.* Sara appointed to Tobias from the beginning answers the damsel the servant prays Yahuah has appointed for Isaac, in Tobit 6:17."},
+        {"src_ch": 6, "src_v": 17, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 24, "tgt_v": 15, "tier": "free",
+         "note": "Genesis 24:15 — *And it came to pass, before he had done speaking, that, behold, Rebekah came out, who was born to Bethuel, son of Milcah, the wife of Nahor, Abraham's brother, with her pitcher upon her shoulder.* The appointed bride given that same night without fail mirrors Rebekah appearing before the prayer was even finished, in Tobit 6:17."},
+        {"src_ch": 6, "src_v": 12, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 19, "tgt_v": 14, "tier": "free",
+         "note": "Proverbs 19:14 — *House and riches are the inheritance of fathers: and a prudent wife is from Yahuah (LORD).* The fair and wise maid joined to her kinsman by the right of inheritance is the very prudent wife that is the LORD's own gift, in Tobit 6:12."}
+      ]
+    }
+  ]
+}
+
+with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_tobit_6.json", "w") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+print("written")

@@ -1,0 +1,190 @@
+{
+  "edition": "apocrypha",
+  "book": "tobit",
+  "chapter": 2,
+  "session": "session253",
+  "tag": "tob2",
+  "base_band": 59625,
+  "threads": [
+    {
+      "slug": "tobit-2-bury-the-dead",
+      "title": "He Burieth The Dead Again — Kindness To The Slain",
+      "summary_md": "Tobit will not leave a brother's body in the dust, though it costs him his dinner, his cleanness, and nearly his life: *Therefore I wept: and after the going down of the sun I went and made a grave, and buried him.* (Tobit 2:7) — *But my neighbours mocked me, and said, This man is not yet afraid to be put to death for this matter: who fled away; and yet, lo, he burieth the dead again.* (Tobit 2:8) This is no invention of late piety; it is Torah. The hanged man must not be left out overnight, lest the land be defiled: *His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day; (for he that is hanged is accursed of Elohim (God);) that thy land be not defiled* (Deuteronomy 21:23). The fathers bought ground at price to bury their own: *And after this, Abraham buried Sarah his wife in the cave of the field of Machpelah before Mamre* (Genesis 23:19). And when one man would let burial delay his discipleship, the Master answered him: *But Yahusha (Jesus) said unto him, Follow me; and let the dead bury their dead.* (Matthew 8:22) — for Tobit's burying was itself the following. Heaven was watching the whole time: the angel later confessed, *And when you did not delay to rise up, and leave your dinner, to go and cover the dead, your good deed was not hid from me: but I was with you.* (Tobit 12:13) It ain't new.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 21,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Deuteronomy 21:23 — *His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day; (for he that is hanged is accursed of Elohim (God);) that thy land be not defiled, which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance.* Tobit buries before sunset and the same night precisely to keep this command that the land not be defiled by an unburied body."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 23,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Genesis 23:19 — *And after this, Abraham buried Sarah his wife in the cave of the field of Machpelah before Mamre: the same is Hebron in the land of Canaan.* As Abraham labored to bury his own dead in dignity, so Tobit digs a grave for a brother of his nation at his own risk."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 8,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Matthew 8:22 — *But Yahusha (Jesus) said unto him, Follow me; and let the dead bury their dead.* The neighbours mock Tobit's burying as folly, yet the kindness to the dead he renders is the very faithfulness that following requires."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 7,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "tobit",
+          "tgt_ch": 12,
+          "tgt_v": 13,
+          "tier": "extras",
+          "note": "Tobit 12:13 — *And when you did not delay to rise up, and leave your dinner, to go and cover the dead, your good deed was not hid from me: but I was with you.* Raphael reveals that the angel of Yahuah stood beside Tobit in this very burial of chapter 2, his good deed not hid."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-2-feasts-turned-to-mourning",
+      "title": "Your Feasts Shall Be Turned Into Mourning — Amos Fulfilled",
+      "summary_md": "Tobit keeps the feast of weeks in exile — *in the feast of Pentecost, which is the holy feast of the seven weeks* (Tobit 2:1) — the very moed Torah commands: *And thou shalt keep the feast of weeks unto Yahuah Elohayka (the LORD thy God) with a tribute of a freewill offering of thine hand* (Deuteronomy 16:10). The Torah is kept in captivity, not abandoned. Yet the good dinner is broken by the news of the slain, and Tobit eats in heaviness, *Remembering that prophecy of Amos, as he said, Your feasts shall be turned into mourning, and all your mirth into lamentation.* (Tobit 2:6) He names the prophet by name — and there it stands: *And I will turn your feasts into mourning, and all your songs into lamentation; and I will bring up sackcloth upon all loins, and baldness upon every head; and I will make it as the mourning of an only son, and the end thereof as a bitter day.* (Amos 8:10) Exile is the prophecy come true; the feast-keeper feels the word of Amos in his own table.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 8,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Amos 8:10 — *And I will turn your feasts into mourning, and all your songs into lamentation; and I will bring up sackcloth upon all loins, and baldness upon every head; and I will make it as the mourning of an only son, and the end thereof as a bitter day.* Tobit quotes this prophecy by name, watching his feast of Pentecost turn to mourning over the slain brother in fulfilment of Amos."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 16,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Deuteronomy 16:10 — *And thou shalt keep the feast of weeks unto Yahuah Elohayka (the LORD thy God) with a tribute of a freewill offering of thine hand, which thou shalt give unto Yahuah Elohayka (the LORD thy God), according as Yahuah Elohayka (the LORD thy God) hath blessed thee:* Tobit keeps this same feast of weeks even in the captivity of Nineveh, the appointed time held fast in exile."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-2-righteous-struck-blind",
+      "title": "The Just Man Afflicted — Tobit And Job",
+      "summary_md": "The man who feared Yahuah and buried the dead is rewarded with calamity: *and the sparrows muted warm dung into my eyes, and a whiteness came in my eyes: and I went to the physicians, but they helped me not* (Tobit 2:10). Here is the riddle of Job set in a new key — the upright man stripped of sight as Job was stripped of all. For Job too was named perfect: *There was a man in the land of Uz, whose name was Job; and that man was perfect and upright, and one that feared Elohim (God), and eschewed evil.* (Job 1:1) And the affliction fell upon his very body: *So went Satan forth from the presence of Yahuah (LORD), and smote Job with sore boils from the sole of his foot unto his crown.* (Job 2:7) The blindness of Tobit, like the boils of Job, is the suffering of the just — not the wages of sin, but a trial within the hand of Yahuah, who will yet heal by His angel.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Job 1:1 — *There was a man in the land of Uz, whose name was Job; and that man was perfect and upright, and one that feared Elohim (God), and eschewed evil.* Tobit, like Job, is a God-fearing and upright man, so his sudden blindness raises the same question of why the righteous suffer."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 2,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Job 2:7 — *So went Satan forth from the presence of Yahuah (LORD), and smote Job with sore boils from the sole of his foot unto his crown.* As Job's body was smitten head to foot, so Tobit's eyes are struck with whiteness — the just man afflicted in the flesh."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-2-wifes-reproach",
+      "title": "Where Are Thy Righteous Deeds — The Wife's Reproach",
+      "summary_md": "When the kid is brought home and Tobit fears it stolen, his wife turns on him in his blindness and poverty: *But she replied upon me, Where are your alms and your righteous deeds? behold, you and all your works are known.* (Tobit 2:14) The sting is Job's exactly — the afflicted righteous man cut by the one nearest him: *Then said his wife unto him, Dost thou still retain thine integrity? curse Elohim (God), and die.* (Job 2:9) Yet where Job answers and holds fast, *But he said unto her, Thou speakest as one of the foolish women speaketh. What? shall we receive good at the hand of Elohim (God), and shall we not receive evil? In all this did not Job sin with his lips.* (Job 2:10) — Tobit too is abashed but does not curse Yahuah; he holds to his integrity. The wife's reproach is the trial within the trial, and the just man bears it.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Job 2:9 — *Then said his wife unto him, Dost thou still retain thine integrity? curse Elohim (God), and die.* As Job's wife reproached him in his suffering, so Anna reproaches Tobit, taunting the alms and righteous deeds that seem to have gained him nothing."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 2,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Job 2:10 — *But he said unto her, Thou speakest as one of the foolish women speaketh. What? shall we receive good at the hand of Elohim (God), and shall we not receive evil? In all this did not Job sin with his lips.* Tobit, abashed yet not cursing Yahuah, answers his wife's reproach with the same steadfastness Job showed his."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-2-alms-and-righteous-deeds",
+      "title": "Thy Alms And Thy Righteous Deeds — The Treasure Laid Up",
+      "summary_md": "Anna means her words as a taunt — *Where are your alms and your righteous deeds?* (Tobit 2:14) — but they name the very life Tobit has lived and will counsel his son to live: *Give alms of your substance; and when you give alms, let not your eye be envious, neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you.* (Tobit 4:7) The alms are no empty works; they are treasure laid up: *Because that alms do deliver from death, and suffers not to come into darkness.* (Tobit 4:10) The Master taught the same hidden reward, not paraded before men: *That thine alms may be in secret: and thy Father which seeth in secret himself shall reward thee openly.* (Matthew 6:4) Tobit's righteous deeds are known — to Yahuah, and to the angel who stood beside him — and they will not go unrewarded.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 14,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "tobit",
+          "tgt_ch": 4,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "Tobit 4:7 — *Give alms of your substance; and when you give alms, let not your eye be envious, neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you.* The alms his wife throws in his face are the very practice Tobit will charge upon his son as the way of righteousness."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 14,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "tobit",
+          "tgt_ch": 4,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "Tobit 4:10 — *Because that alms do deliver from death, and suffers not to come into darkness.* Though Tobit sits afflicted in darkness, his alms are the treasure that, by the book's own teaching, delivers from death."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 6,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Matthew 6:4 — *That thine alms may be in secret: and thy Father which seeth in secret himself shall reward thee openly.* Tobit's hidden alms and righteous deeds, mocked by his wife, are exactly the secret giving the Father sees and openly rewards."
+        }
+      ]
+    }
+  ]
+}

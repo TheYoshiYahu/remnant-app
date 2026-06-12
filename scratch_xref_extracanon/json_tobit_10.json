@@ -1,0 +1,160 @@
+{
+  "edition": "apocrypha",
+  "book": "tobit",
+  "chapter": 10,
+  "session": "session253",
+  "tag": "tob10",
+  "base_band": 59825,
+  "threads": [
+    {
+      "slug": "tobit-10-mourning-the-delayed-son",
+      "title": "The mother counts the days and bewails her son",
+      "summary_md": "Anna will not be comforted: *Now I care for nothing, my son, since I have let you go, the light of my eyes* (Tobit 10:5), and *she went out every day into the way which they went, and did eat no meat on the daytime, and ceased not whole nights to bewail her son Tobias* (Tobit 10:7). It ain't new — this is Jacob over Joseph, the patriarch refusing all comfort: *And Jacob rent his clothes, and put sackcloth upon his loins, and mourned for his son many days* (Genesis 37:34), and *all his sons and all his daughters rose up to comfort him; but he refused to be comforted; and he said, For I will go down into the grave unto my son mourning* (Genesis 35). The same father grieves again when a son tarries: *Me have ye bereaved of my children: Joseph is not, and Simeon is not, and ye will take Benjamin away* (Genesis 42:36). The seed kept in exile carries Israel's oldest sorrow — and its oldest hope of return.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 37,
+          "tgt_v": 34,
+          "tier": "free",
+          "note": "Genesis 37:34 — *And Jacob rent his clothes, and put sackcloth upon his loins, and mourned for his son many days.* As Jacob mourned the son he thought lost, so Anna in Tobit 10:5 mourns Tobias as good as dead, her own eyes' light gone."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 37,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Genesis 37:35 — *And all his sons and all his daughters rose up to comfort him; but he refused to be comforted; and he said, For I will go down into the grave unto my son mourning. Thus his father wept for him.* Anna's ceaseless nightly weeping in Tobit 10:7 is Jacob's refusal to be comforted — a parent set on going down to the grave for a son not truly lost."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 42,
+          "tgt_v": 36,
+          "tier": "free",
+          "note": "Genesis 42:36 — *And Jacob their father said unto them, Me have ye bereaved of my children: Joseph is not, and Simeon is not, and ye will take Benjamin away: all these things are against me.* When a son delays, the bereaved-feeling father is the same voice that cries in Tobit 10:4, \"My son is dead, seeing he stayeth long.\""
+        }
+      ]
+    },
+    {
+      "slug": "tobit-10-the-father-looking-for-the-son",
+      "title": "Let me go, for my father and mother look no more to see me",
+      "summary_md": "Tobias breaks from the wedding feast for the homeward road: *Then Tobias said to Raguel, Let me go, for my father and my mother look no more to see me* (Tobit 10:7), and again *let me go to my father* (Tobit 10:9). The whole feeling is the watching parent on the road, scanning the horizon — which is exactly the heart Yahusha gives the Father in the parable: *And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him* (Luke 15:20). The son who returns from a far country to a parent who has been watching every day — Tobit's house already keeps that pattern, the scattered child gathered home.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 15,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Luke 15:20 — *And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.* The parents who \"look no more to see\" their son in Tobit 10:7 are the watching father of the parable, eyes fixed on the road for the child's return."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 42,
+          "tgt_v": 38,
+          "tier": "free",
+          "note": "Genesis 42:38 — *And he said, My son shall not go down with you; for his brother is dead, and he is left alone: if mischief befall him by the way in the which ye go, then shall ye bring down my gray hairs with sorrow to the grave.* Jacob's dread of mischief \"by the way\" mirrors the aged parents Tobias hurries home to in Tobit 10:9, lest grief bring down their gray hairs."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-10-blessing-at-the-parting",
+      "title": "Be the mother of thousands — the bride blessed and sent away",
+      "summary_md": "Raguel sends the couple off with a blessing on the journey: *And he blessed them, and sent them away, saying, Yahuah (God) of heaven give you a prosperous journey, my children* (Tobit 10:11), and Edna prays *grant that I may see your children of my daughter Sara before I die* (Tobit 10:12). It ain't new — this is the marriage-blessing spoken over Rebekah as she is sent from her father's house to her bridegroom: *And they blessed Rebekah, and said unto her, Thou art our sister, be thou the mother of thousands of millions, and let thy seed possess the gate of those which hate them* (Genesis 24:60). The same Spirit attends Sara, daughter of the exile: a bride sent forth, blessed for fruitfulness, the seed of Israel kept and multiplied.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 24,
+          "tgt_v": 60,
+          "tier": "free",
+          "note": "Genesis 24:60 — *And they blessed Rebekah, and said unto her, Thou art our sister, be thou the mother of thousands of millions, and let thy seed possess the gate of those which hate them.* As Rebekah was blessed and sent from her father's house to her bridegroom, so Raguel blesses Sara and sends the couple away with a prosperous journey in Tobit 10:11."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 28,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 28:15 — *And, behold, I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of.* Raguel's prayer that the God of heaven give a prosperous journey in Tobit 10:11 echoes the promise spoken over Jacob's road — kept in all his ways and brought home again."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 128,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalms 128:6 — *Yea, thou shalt see thy children’s children, and peace upon Yashar'el (Israel).* Edna's longing in Tobit 10:12 to see her daughter's children before she dies is the very blessing of the Torah-faithful house — to see one's children's children, and peace upon Israel."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-10-honour-father-and-mother",
+      "title": "Honour your father and your mother in law",
+      "summary_md": "Raguel's charge to his daughter is the fifth word of the covenant, spoken straight: *And he said to his daughter, Honour your father and your mother in law, which are now your parents, that I may hear good report of you* (Tobit 10:12). Torah kept in exile is never law-as-curse but the household's living rule: *Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Exodus 20:12). And it is the one commandment Sha'ul names with promise: *Honour thy father and mother; (which is the first commandment with promise;)* (Ephesians 6:2), *that it may be well with thee, and thou mayest live long on the earth* (Ephesians 6:3). The same commandment, the same promise — it ain't new.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 20,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Exodus 20:12 — *Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee.* Raguel's charge to honour her parents in Tobit 10:12 is the fifth commandment itself, the covenant word carried into the household of the dispersion."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Ephesians 6:2 — *Honour thy father and mother; (which is the first commandment with promise;)* Sha'ul names the very commandment Raguel presses upon his daughter in Tobit 10:12 as the first with promise, binding the apocryphal counsel to the apostolic word."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 6,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Ephesians 6:3 — *That it may be well with thee, and thou mayest live long on the earth.* The promise attached to honouring parents — long life, well-being — answers Raguel's hope in Tobit 10:12 to \"hear good report of you,\" the blessing of a household in covenant order."
+        }
+      ]
+    }
+  ]
+}
