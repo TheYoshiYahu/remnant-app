@@ -1,0 +1,89 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 8,
+  "session": "session253",
+  "tag": "sir08",
+  "base_band": 58475,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-8-strive-not-with-the-angry",
+      "title": "Strive not with a mighty or an angry man",
+      "summary_md": "Ben Sira opens the chapter with the wisdom of choosing one's battles: *Strive not with a mighty man’ lest you fall into his hands.* (Ecclesiasticus 8:1), and again, *Strive not with an angry man, and go not with him into a solitary place: for blood is as nothing in his sight, and where there is no help, he will overthrow you.* (Ecclesiasticus 8:16). It ain't new — this is Proverbs' counsel almost word for word: *Make no friendship with an angry man; and with a furious man thou shalt not go:* (Proverbs 22:24), *Lest thou learn his ways, and get a snare to thy soul.* (Proverbs 22:25). The company a man keeps shapes his soul, so the wise weigh whom they walk beside: *He that walketh with wise men shall be wise: but a companion of fools shall be destroyed.* (Proverbs 13:20).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 8, "src_v": 1, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 22, "tgt_v": 24, "tier": "free", "note": "Proverbs 22:24 — *Make no friendship with an angry man; and with a furious man thou shalt not go:* The same charge Ben Sira gives in Sirach 8:1,16 — keep no fellowship with the violent or the powerful who will overpower you."},
+        {"src_ch": 8, "src_v": 16, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 22, "tgt_v": 25, "tier": "free", "note": "Proverbs 22:25 — *Lest thou learn his ways, and get a snare to thy soul.* Why not walk into a solitary place with the angry man of Sirach 8:16 — his ways become a snare and overthrow you where there is no help."},
+        {"src_ch": 8, "src_v": 16, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 13, "tgt_v": 20, "tier": "free", "note": "Proverbs 13:20 — *He that walketh with wise men shall be wise: but a companion of fools shall be destroyed.* The traveling-companion warning of Sirach 8:15-16 is the same: walk with the bold and angry and you perish with them through their folly."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-8-contend-not-with-the-loud",
+      "title": "Heap not wood upon his fire",
+      "summary_md": "Against the loud and the inflaming Ben Sira counsels silence: *Strive not with a man that is full of tongue, and heap not wood upon his fire.* (Ecclesiasticus 8:3), and *Kindle not the coals of a sinner, lest you be burnt with the flame of his fire.* (Ecclesiasticus 8:10). The strife is starved when its fuel is withheld — exactly Solomon's proverb: *Where no wood is, there the fire goeth out: so where there is no talebearer, the strife ceaseth.* (Proverbs 26:20). And the angry man's quarrel is not a place to linger but to leave: *Rise not up in anger at the presence of an injurious person, lest he lie in wait to entrap you in your words* (Ecclesiasticus 8:11) — Yeshua of Nazareth would say it as a kingdom command, *Agree with thine adversary quickly, whiles thou art in the way with him; lest at any time the adversary deliver thee to the judge, and the judge deliver thee to the officer, and thou be cast into prison.* (Matthew 5:25).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 8, "src_v": 3, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 26, "tgt_v": 20, "tier": "free", "note": "Proverbs 26:20 — *Where no wood is, there the fire goeth out: so where there is no talebearer, the strife ceaseth.* The very image of Sirach 8:3,10 — withhold the wood, refuse to kindle the coals, and the sinner's fire dies down."},
+        {"src_ch": 8, "src_v": 11, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 5, "tgt_v": 25, "tier": "free", "note": "Matthew 5:25 — *Agree with thine adversary quickly, whiles thou art in the way with him; lest at any time the adversary deliver thee to the judge, and the judge deliver thee to the officer, and thou be cast into prison.* The Sermon on the Mount carries Sirach 8:11's wisdom — do not rise up to be entrapped in words; settle quickly before judgment falls."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-8-reproach-not-we-are-all-worthy",
+      "title": "Reproach not — we are all worthy of punishment",
+      "summary_md": "Ben Sira tempers every rebuke with a mirror: *Reproach not a man that turns from sin, but remember that we are all worthy of punishment.* (Ecclesiasticus 8:5). None stands clean enough to despise the penitent — *For there is not a just man upon earth, that doeth good, and sinneth not.* (Ecclesiastes 7:20), and Sha'ul gathers it into the gospel: *For all have sinned, and come short of the glory of Elohim (God);* (Romans 3:23). The Messiah forbids the contemptuous judgment that forgets its own debt — *Judge not, that ye be not judged.* (Matthew 7:1) — and Sha'ul shows the gentle way to restore the one who turns: *Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.* (Galatians 6:1).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 8, "src_v": 5, "tgt_edition": "canon", "tgt_book": "ecclesiastes", "tgt_ch": 7, "tgt_v": 20, "tier": "free", "note": "Ecclesiastes 7:20 — *For there is not a just man upon earth, that doeth good, and sinneth not.* The ground of Sirach 8:5 — do not reproach the one turning from sin, for there is no sinless man to cast the stone."},
+        {"src_ch": 8, "src_v": 5, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 3, "tgt_v": 23, "tier": "free", "note": "Romans 3:23 — *For all have sinned, and come short of the glory of Elohim (God);* Sha'ul states Sirach 8:5's \"we are all worthy of punishment\" as the gospel premise — all alike need mercy, so none may despise the penitent."},
+        {"src_ch": 8, "src_v": 5, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 7, "tgt_v": 1, "tier": "free", "note": "Matthew 7:1 — *Judge not, that ye be not judged.* The Messiah commands what Sirach 8:5 counsels — refuse the reproach that forgets you too stand under judgment."},
+        {"src_ch": 8, "src_v": 5, "tgt_edition": "canon", "tgt_book": "galatians", "tgt_ch": 6, "tgt_v": 1, "tier": "free", "note": "Galatians 6:1 — *Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.* The restoring meekness of Sirach 8:5 — handle the one who turns from sin gently, remembering your own frailty."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-8-honour-the-old-and-the-dead",
+      "title": "Dishonour not old age; rejoice not over the dead",
+      "summary_md": "The fear of Yahuah teaches reverence for grey hairs and restraint at a fallen enemy: *Dishonour not a man in his old age: for even some of us wax old.* (Ecclesiasticus 8:6), and *Rejoice not over your greatest enemy being dead, but remember that we die all.* (Ecclesiasticus 8:7). Torah wrote the honour of age into the covenant: *Thou shalt rise up before the hoary head, and honour the face of the old man, and fear thy Elohim (God): I am Yahuah (LORD).* (Leviticus 19:32), and the proverb crowns it — *The hoary head is a crown of glory, if it be found in the way of righteousness.* (Proverbs 16:31). As for the dead foe, Solomon forbids the glad heart that Ben Sira forbids: *Rejoice not when thine enemy falleth, and let not thine heart be glad when he stumbleth:* (Proverbs 24:17).",
+      "anchor_start_v": 6,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 8, "src_v": 6, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 19, "tgt_v": 32, "tier": "free", "note": "Leviticus 19:32 — *Thou shalt rise up before the hoary head, and honour the face of the old man, and fear thy Elohim (God): I am Yahuah (LORD).* Torah itself underwrites Sirach 8:6 — honour the aged, for the fear of Yahuah binds it."},
+        {"src_ch": 8, "src_v": 6, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 16, "tgt_v": 31, "tier": "free", "note": "Proverbs 16:31 — *The hoary head is a crown of glory, if it be found in the way of righteousness.* Why dishonour not old age (Sirach 8:6) — the grey head is a crown, not a thing to be despised."},
+        {"src_ch": 8, "src_v": 7, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 24, "tgt_v": 17, "tier": "free", "note": "Proverbs 24:17 — *Rejoice not when thine enemy falleth, and let not thine heart be glad when he stumbleth:* The exact restraint of Sirach 8:7 — no gloating over the fallen foe, for we die all."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-8-despise-not-the-wise-and-the-elders",
+      "title": "Despise not the discourse of the wise and the elders",
+      "summary_md": "The heart of the chapter is the counsel to sit and learn: *Despise not the discourse of the wise, but acquaint thyself with their proverbs: for of them you shall learn instruction, and how to serve great men with ease.* (Ecclesiasticus 8:8), and *Miss not the discourse of the elders: for they also learned of their fathers, and of them you shall learn understanding, and to give answer as need requires.* (Ecclesiasticus 8:9). It ain't new — Proverbs makes the teachable man wise: *A wise man will hear, and will increase learning; and a man of understanding shall attain unto wise counsels:* (Proverbs 1:5), and Job sets wisdom with the aged: *With the ancient is wisdom; and in length of days understanding.* (Job 12:12). Ben Sira had already pressed it in his own book — *Stand in the multitude of the elders; and cleave to him that is wise.* (Ecclesiasticus 6:34) — and Wisdom of Solomon answers with the same affection: *Wherefore set your affection upon my words; desire them, and you shall be instructed.* (Wisdom of Solomon 6:11).",
+      "anchor_start_v": 8,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 8, "src_v": 8, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 1, "tgt_v": 5, "tier": "free", "note": "Proverbs 1:5 — *A wise man will hear, and will increase learning; and a man of understanding shall attain unto wise counsels:* The teachableness Sirach 8:8 commands — acquaint yourself with the proverbs of the wise and your learning increases."},
+        {"src_ch": 8, "src_v": 9, "tgt_edition": "canon", "tgt_book": "job", "tgt_ch": 12, "tgt_v": 12, "tier": "free", "note": "Job 12:12 — *With the ancient is wisdom; and in length of days understanding.* Why miss not the discourse of the elders (Sirach 8:9) — they learned of their fathers, and length of days carries understanding."},
+        {"src_ch": 8, "src_v": 8, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 6, "tgt_v": 34, "tier": "extras", "note": "Ecclesiasticus 6:34 — *Stand in the multitude of the elders; and cleave to him that is wise.* Ben Sira's own earlier charge, repeated here in Sirach 8:8-9 — keep company with the wise and the elders and learn."},
+        {"src_ch": 8, "src_v": 8, "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 6, "tgt_v": 11, "tier": "extras", "note": "Wisdom of Solomon 6:11 — *Wherefore set your affection upon my words; desire them, and you shall be instructed.* The sister wisdom-book echoes Sirach 8:8 — do not despise the discourse of the wise but set your affection on it and be instructed."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-8-keep-counsel-and-secrets",
+      "title": "Open not your heart to every man",
+      "summary_md": "Ben Sira closes with prudence in speech and trust: *Consult not with a fool; for he cannot keep counsel.* (Ecclesiasticus 8:17), *Do no secret thing before a stranger; for you know not what he will bring forth.* (Ecclesiasticus 8:18), and *Open not yours heart to every man, lest he requite you with a shrewd turn.* (Ecclesiasticus 8:19). Solomon's wisdom is the same — guard the matter, and keep the dispute close: *A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter.* (Proverbs 11:13), *Debate thy cause with thy neighbour himself; and discover not a secret to another:* (Proverbs 25:9). Yet counsel itself is not abandoned, only rightly placed: *Where no counsel is, the people fall: but in the multitude of counsellors there is safety.* (Proverbs 11:14).",
+      "anchor_start_v": 17,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 8, "src_v": 19, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 11, "tgt_v": 13, "tier": "free", "note": "Proverbs 11:13 — *A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter.* Why open not your heart to every man (Sirach 8:19) — the talebearer reveals what the faithful conceal."},
+        {"src_ch": 8, "src_v": 18, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 25, "tgt_v": 9, "tier": "free", "note": "Proverbs 25:9 — *Debate thy cause with thy neighbour himself; and discover not a secret to another:* The exact caution of Sirach 8:18 — do no secret thing before a stranger; keep the matter between the two concerned."},
+        {"src_ch": 8, "src_v": 17, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 11, "tgt_v": 14, "tier": "free", "note": "Proverbs 11:14 — *Where no counsel is, the people fall: but in the multitude of counsellors there is safety.* Sirach 8:17 says consult not with a fool who cannot keep counsel — but Proverbs keeps the door open to the safety found in many wise counsellors."}
+      ]
+    }
+  ]
+}
