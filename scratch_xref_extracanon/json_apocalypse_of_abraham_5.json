@@ -1,0 +1,130 @@
+{
+  "edition": "apocalypse-of-abraham",
+  "book": "apocalypse-of-abraham",
+  "chapter": 5,
+  "session": "session253",
+  "tag": "aoa5",
+  "base_band": 67100,
+  "threads": [
+    {
+      "slug": "apocalypse-of-abraham-5-the-god-of-wood-burns",
+      "title": "The god of wood burned to ashes",
+      "summary_md": "*And it came to pass, when I had laid the splinters in the fire, in order that I might make ready food for my father — on going out to ask a question regarding the food, I placed Barisat before the kindled fire... And on returning I found Barisat fallen backwards, and his feet surrounded by fire and horribly burnt... he was gradually burnt up by the fire and reduced to ashes* (Apocalypse of Abraham 5:6,8,11). The young Abraham sees the lie with his own eyes: the same fire that was meant to cook the meal devours the god. It ain't new — the prophets say exactly this. *He burneth part thereof in the fire... yea, he maketh a god, and worshippeth it; he maketh it a graven image, and falleth down thereto* (Isaiah 44:16,15) — the selfsame wood that warms the man is called a god. *He feedeth on ashes: a deceived heart hath turned him aside, that he cannot deliver his soul, nor say, Is there not a lie in my right hand?* (Isaiah 44:20) — Barisat reduced to ashes is the prophet's verdict made visible. And the apocrypha says it of one piece: *a crooked piece of wood, and full of knots, has carved it diligently... and fashioned it to the image of a man... For he provided for it that it might not fall, knowing that it was unable to help itself* (Wisdom of Solomon 13:13,16) — the carpenter props up what cannot stand, and Barisat fell backward into the flame.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Isaiah 44:15 — *Then shall it be for a man to burn: for he will take thereof, and warm himself; yea, he kindleth it, and baketh bread; yea, he maketh a god, and worshippeth it; he maketh it a graven image, and falleth down thereto.* The wood-god of Apocalypse of Abraham 5:8 is the very thing Isaiah names — fuel called a god, kindled by the same hand that bows to it."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Isaiah 44:20 — *He feedeth on ashes: a deceived heart hath turned him aside, that he cannot deliver his soul, nor say, Is there not a lie in my right hand?* Barisat reduced to ashes in Apocalypse of Abraham 5:11 is Isaiah's deceived heart unmasked — the god is the lie in the idol-maker's hand."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 8,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 13,
+          "tgt_v": 16,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 13:16 — *For he provided for it that it might not fall, knowing that it was unable to help itself; for it is an image, and has need of help.* The carpenter must fasten the idol lest it topple; in Apocalypse of Abraham 5:8 Barisat does fall backward into the fire, helpless to save even itself."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-5-it-cannot-save-itself",
+      "title": "It cannot save — not even itself",
+      "summary_md": "Abraham's mocking taunt cuts to the root: *Truly, Barisat, thou canst kindle the fire and cook food!* (Apocalypse of Abraham 5:9) — and *He is burnt to ashes in the violence of the fire and is reduced to dust* (5:16). A god that cannot deliver itself from the flame can deliver no one. It ain't new — the psalm and the prophet say the same of every idol of men's hands. *They have mouths, but they speak not... They that make them are like unto them; so is every one that trusteth in them* (Psalm 115:5,8). *They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also is it in them to do good* (Jeremiah 10:5). And Isaiah's word lands precisely: *one shall cry unto him, yet can he not answer, nor save him out of his trouble* (Isaiah 46:7) — Barisat could not so much as keep its own feet from the fire.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Psalm 115:8 — *They that make them are like unto them; so is every one that trusteth in them.* Terah the idol-maker and the ashen Barisat of Apocalypse of Abraham 5:16 are bound as one — the maker is as lifeless as what his hands have made."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Jeremiah 10:5 — *They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also is it in them to do good.* Abraham's taunt in Apocalypse of Abraham 5:9 exposes exactly this — a god that must be carried and cannot move cannot kindle a fire or cook a meal."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 46,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Isaiah 46:7 — *They bear him upon the shoulder, they carry him, and set him in his place, and he standeth; from his place shall he not remove: yea, one shall cry unto him, yet can he not answer, nor save him out of his trouble.* Barisat, burnt to dust in Apocalypse of Abraham 5:16, could not answer or save itself from the flame, let alone its worshipper."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-5-fathers-served-other-gods",
+      "title": "Terah the idol-maker — your fathers served other gods",
+      "summary_md": "Terah blesses his god Merumath, and is content to *make another to-day* when Barisat is gone: *Great is the power of Barisat! I will make another to-day, and to-morrow he will prepare my food* (Apocalypse of Abraham 5:17-18). The father who carves gods cannot grieve their death — he simply carves more. It ain't new — the LORD names Terah by name as the idolater out of whom Abraham was called. *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* (Joshua 24:2). And the calling-out follows: *The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* (Acts 7:2) — the One living Elohim breaks into the idol-maker's house. The apocrypha frames the whole tragedy: *miserable are they, and in dead things is their hope, who call them gods, which are the works of men's hands* (Wisdom of Solomon 13:10).",
+      "anchor_start_v": 13,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 24,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Scripture names Terah the very idolater whose endless wood-gods Abraham mocks in Apocalypse of Abraham 5:18."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "acts",
+          "tgt_ch": 7,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran.* While Terah blesses Merumath in Apocalypse of Abraham 5:13, the God of glory is already moving to call Abraham out of that idol-house."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 17,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 13,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 13:10 — *But miserable are they, and in dead things is their hope, who call them gods, which are the works of men's hands, gold and silver, to shew art in, and resemblances of beasts, or a stone good for nothing, the work of an ancient hand.* Terah's boast in Apocalypse of Abraham 5:17 — *Great is the power of Barisat!* — is the misery the apocrypha names: hope set in dead things, the work of a maker's hand."
+        }
+      ]
+    }
+  ]
+}

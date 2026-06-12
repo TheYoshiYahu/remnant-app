@@ -1,0 +1,84 @@
+import json
+
+data = {
+  "edition": "apocalypse-of-abraham",
+  "book": "apocalypse-of-abraham",
+  "chapter": 2,
+  "session": "session253",
+  "tag": "aoa2",
+  "base_band": 67025,
+  "threads": [
+    {
+      "slug": "apocalypse-of-abraham-2-idol-makers-trade",
+      "title": "The idol-maker's wares: gods made to be sold",
+      "summary_md": "Terah the idol-maker hands the boy his stock to peddle: *And he made five other gods, and gave them to me, and commanded me to sell them outside in the street of the town.* (Apocalypse of Abraham 2:1) — gods that a man manufactures and sets out for trade. It ain't new: the prophets already knew the house Abraham was called out of. *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* (Joshua 24:2) — Terah is named by name. Isaiah strips the trade bare: *They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed.* (Isaiah 44:9). And the apostle carries the same word into the streets of Asia: *Moreover ye see and hear, that not alone at Ephesus, but almost throughout all Asia, this Paul hath persuaded and turned away much people, saying that they be no gods, which are made with hands:* (Acts 19:26). The system that makes gods for the market is the same system in every age; Abraham was called to walk out of it.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 2, "src_v": 1, "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 24, "tgt_v": 2, "tier": "free",
+         "note": "Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Terah, who hands the boy the gods to sell here, is named by Joshua as an idol-server — the very house Abraham is called out of."},
+        {"src_ch": 2, "src_v": 1, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 44, "tgt_v": 9, "tier": "free",
+         "note": "Isaiah 44:9 — *They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed.* The made gods Terah peddles are exactly the manufactured vanity Isaiah exposes."},
+        {"src_ch": 2, "src_v": 1, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 19, "tgt_v": 26, "tier": "free",
+         "note": "Acts 19:26 — *Moreover ye see and hear, that not alone at Ephesus, but almost throughout all Asia, this Paul hath persuaded and turned away much people, saying that they be no gods, which are made with hands:* What Abraham learns selling his father's wares, the apostle preaches openly — gods made with hands are no gods."},
+        {"src_ch": 2, "src_v": 1, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 12, "tgt_v": 2, "tier": "extras",
+         "note": "Jubilees 12:2 — *And he said, \"What help and profit have we from those idols which you do worship, And before which you do bow yourself? For there is no spirit in them, For they are dumb forms, and a misleading of the heart...\"* Jubilees gives the same young Abraham pleading with the same idol-keeping father over the same lifeless wares."}
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-2-gods-that-break",
+      "title": "Gods that fall and break at a camel's groan",
+      "summary_md": "A camel groans, a startled ass bolts, and the gods go over: *And one of their camels uttered a groan, and the ass took fright and sprang away and upset the gods, and three of them were smashed, and two were preserved.* (Apocalypse of Abraham 2:5) — gods so helpless they cannot keep their footing on an ass's back. The Tanakh has watched idols topple before. *For from Yashar'el (Israel) was it also: the workman made it; therefore it is not Elohim (God): but the calf of Samaria shall be broken in pieces.* (Hosea 8:6). Dagon fell on his own threshold: *And when they arose early on the morrow morning, behold, Dagon was fallen upon his face to the ground before the ark of Yahuah (LORD); and the head of Dagon and both the palms of his hands were cut off upon the threshold; only the stump of Dagon was left to him.* (1 Samuel 5:4). And when the carved gods are loaded on the beasts, *They stoop, they bow down together; they could not deliver the burden, but themselves are gone into captivity.* (Isaiah 46:2). It ain't new — Abraham's own son's hatchet does to Terah's gods what the camel's groan begins here: *And Terah entered the room and found all the idols fallen down and broken...* (Jasher 11:36).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 2, "src_v": 5, "tgt_edition": "canon", "tgt_book": "hosea", "tgt_ch": 8, "tgt_v": 6, "tier": "free",
+         "note": "Hosea 8:6 — *For from Yashar'el (Israel) was it also: the workman made it; therefore it is not Elohim (God): but the calf of Samaria shall be broken in pieces.* What a workman made is no Elohim and shall be broken — exactly the fate of the three gods smashed when the ass bolts."},
+        {"src_ch": 2, "src_v": 5, "tgt_edition": "canon", "tgt_book": "1-samuel", "tgt_ch": 5, "tgt_v": 4, "tier": "free",
+         "note": "1 Samuel 5:4 — *And when they arose early on the morrow morning, behold, Dagon was fallen upon his face to the ground before the ark of Yahuah (LORD); and the head of Dagon and both the palms of his hands were cut off upon the threshold; only the stump of Dagon was left to him.* Dagon shatters on his own threshold as these gods shatter at a startled ass — a god that cannot stand is no god."},
+        {"src_ch": 2, "src_v": 5, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 46, "tgt_v": 2, "tier": "free",
+         "note": "Isaiah 46:2 — *They stoop, they bow down together; they could not deliver the burden, but themselves are gone into captivity.* The carried gods cannot even deliver themselves off the beast — Isaiah names the helplessness the camel's groan exposes."},
+        {"src_ch": 2, "src_v": 5, "tgt_edition": "jasher", "tgt_book": "jasher", "tgt_ch": 11, "tgt_v": 36, "tier": "extras",
+         "note": "Jasher 11:36 — *And Terah entered the room and found all the idols fallen down and broken, and the hatchet in the hand of the largest, which was not broken, and the savory meat which Abram his son had made was still before them.* Jasher's Abraham deliberately does what the camel's groan begins — fells and breaks Terah's gods to prove they cannot save themselves."}
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-2-pricing-the-broken-gods",
+      "title": "Haggling over broken gods: dead things they call gods",
+      "summary_md": "The Syrian merchants want to settle the loss and buy what is left: *Give us, at any rate, the gods that remain, and we will give thee the proper price for the broken gods, also for the gods that have been preserved.* (Apocalypse of Abraham 2:8) — men setting a market-price on gods, mourning the loss of shards. The Wisdom of the fathers pities exactly this: *But miserable are they, and in dead things is their hope, who call them gods, which are the works of men's hands, gold and silver, to shew art in, and resemblances of beasts, or a stone good for nothing, the work of an ancient hand.* (Wisdom of Solomon 13:10). Jeremiah shows the trade — silver, gold, nails, hammers: *They deck it with silver and with gold; they fasten it with nails and with hammers, that it move not.* (Jeremiah 10:4). And the apostle on Mars' hill closes the case: *Forasmuch then as we are the offspring of Elohim (God), we ought not to think that the Godhead is like unto gold, or silver, or stone, graven by art and man's device.* (Acts 17:29). A god you can price, break, and replace is no god at all.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 2, "src_v": 8, "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 13, "tgt_v": 10, "tier": "extras",
+         "note": "Wisdom of Solomon 13:10 — *But miserable are they, and in dead things is their hope, who call them gods, which are the works of men's hands, gold and silver, to shew art in, and resemblances of beasts, or a stone good for nothing, the work of an ancient hand.* The merchants pricing broken gods are the miserable men who set their hope in dead works of men's hands."},
+        {"src_ch": 2, "src_v": 8, "tgt_edition": "canon", "tgt_book": "jeremiah", "tgt_ch": 10, "tgt_v": 4, "tier": "free",
+         "note": "Jeremiah 10:4 — *They deck it with silver and with gold; they fasten it with nails and with hammers, that it move not.* The very craft and material of the gods being haggled over — fastened so they will not move, yet they fell anyway."},
+        {"src_ch": 2, "src_v": 6, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 17, "tgt_v": 29, "tier": "free",
+         "note": "Acts 17:29 — *Forasmuch then as we are the offspring of Elohim (God), we ought not to think that the Godhead is like unto gold, or silver, or stone, graven by art and man's device.* The Syrians treat gold-and-stone gods as if real; the apostle declares the offspring of Elohim must not — settling what the boy is beginning to see."}
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-2-gods-that-sink",
+      "title": "Gods cast into the river that cannot save themselves",
+      "summary_md": "The boy disposes of the wreckage in the only way fit for it: *and the three broken ones I cast into the water of the river Gur, which was at that place, and they sank into the depths, and there was nothing more of them.* (Apocalypse of Abraham 2:9) — gods that sink like stones and leave no trace, unable to lift themselves out of the water. The Wisdom of the fathers names the absurdity exactly: *For he provided for it that it might not fall, knowing that it was unable to help itself; for it is an image, and has need of help:* (Wisdom of Solomon 13:16). Isaiah weighs the same drowning helplessness: *He feedeth on ashes: a deceived heart hath turned him aside, that he cannot deliver his soul, nor say, Is there not a lie in my right hand?* (Isaiah 44:20). And Habakkuk cries woe over the breathless wood and stone: *Woe unto him that saith to the wood, Awake; to the dumb stone, Arise, it shall teach! Behold, it is laid over with gold and silver, and there is no breath at all in the midst of it.* (Habakkuk 2:19). It ain't new — a god that cannot save itself from a river was never going to save the man. So the system is dismantled and the living Elohim is found.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 2, "src_v": 9, "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 13, "tgt_v": 16, "tier": "extras",
+         "note": "Wisdom of Solomon 13:16 — *For he provided for it that it might not fall, knowing that it was unable to help itself; for it is an image, and has need of help:* The image that cannot help itself sinks into the river and is gone — proof in the boy's own hands that it never could save."},
+        {"src_ch": 2, "src_v": 9, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 44, "tgt_v": 20, "tier": "free",
+         "note": "Isaiah 44:20 — *He feedeth on ashes: a deceived heart hath turned him aside, that he cannot deliver his soul, nor say, Is there not a lie in my right hand?* The idolater cannot deliver his soul, and his god cannot deliver itself from the depths of the river Gur."},
+        {"src_ch": 2, "src_v": 9, "tgt_edition": "canon", "tgt_book": "habakkuk", "tgt_ch": 2, "tgt_v": 19, "tier": "free",
+         "note": "Habakkuk 2:19 — *Woe unto him that saith to the wood, Awake; to the dumb stone, Arise, it shall teach! Behold, it is laid over with gold and silver, and there is no breath at all in the midst of it.* No breath is in the gods that sink into the depths and leave nothing — the woe Habakkuk pronounces, dramatized in the water."}
+      ]
+    }
+  ]
+}
+
+with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_apocalypse_of_abraham_2.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+print("written")

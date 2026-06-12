@@ -1,0 +1,170 @@
+{
+  "edition": "apocalypse-of-abraham",
+  "book": "apocalypse-of-abraham",
+  "chapter": 25,
+  "session": "session253",
+  "tag": "aoa25",
+  "base_band": 67600,
+  "threads": [
+    {
+      "slug": "apocalypse-of-abraham-25-idol-of-jealousy",
+      "title": "The idol of jealousy in the holy place",
+      "summary_md": "Abraham, borne up to the throne, is shown what his own seed will do: *I saw there the likeness of the idol of jealousy, having the likeness of woodwork such as my father was wont to make, and its statue was of glittering bronze; and before it a man, and he worshipped it; and in front of him an altar, and upon it a boy slain in the presence of the idol.* (Apocalypse of Abraham 25:1). It ain't new — Ezekiel sees the very same thing set in the LORD's house: *And he put forth the form of an hand, and took me by a lock of mine head; and the spirit lifted me up between the earth and the heaven, and brought me in the visions of Elohim (God) to Jerusalem, to the door of the inner gate that looketh toward the north; where was the seat of the image of jealousy, which provoketh to jealousy.* (Ezekiel 8:3), the great abominations *that I should go far off from my sanctuary* (Ezekiel 8:6). And the idol of jealousy is jealousy against the second word given at Sinai: *Thou shalt not make unto thee any graven image* (Exodus 20:4), *for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)* (Exodus 20:5). The statue is the anger of a covenant people who break the covenant.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 25,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 8,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Ezekiel 8:3 — *And he put forth the form of an hand, and took me by a lock of mine head; and the spirit lifted me up between the earth and the heaven, and brought me in the visions of Elohim (God) to Jerusalem, to the door of the inner gate that looketh toward the north; where was the seat of the image of jealousy, which provoketh to jealousy.* Ezekiel, like Abraham, is carried up in vision to behold the very idol of jealousy set within the sanctuary."
+        },
+        {
+          "src_ch": 25,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 8,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Ezekiel 8:6 — *He said furthermore unto me, Son of Adam, seest thou what they do? even the great abominations that the house of Yashar'el (Israel) committeth here, that I should go far off from my sanctuary? but turn thee yet again, and thou shalt see greater abominations.* The idol is the anger whereby the people, proceeding from Abraham's own generation, drive the glory far off — the statue that is His anger (25:6)."
+        },
+        {
+          "src_ch": 25,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 20,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Exodus 20:4 — *Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth:* The bronze statue of woodwork before which a man bows is the broken second word, the graven image forbidden at Sinai."
+        },
+        {
+          "src_ch": 25,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 20,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Exodus 20:5 — *Thou shalt not bow down thyself to them, nor serve them: for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God), visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me;* The very name 'idol of jealousy' names the jealous Elohim provoked by it — the statue is His anger against a people who bow where they should not."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-25-temple-beneath-the-throne",
+      "title": "The Temple, beautiful as the glory beneath the throne",
+      "summary_md": "Abraham marvels at the sanctuary's beauty: *Or what is the Temple which I see that is beautiful in art, and its beauty being like the glory that lieth beneath Thy throne?* (Apocalypse of Abraham 25:3), and is told it is the priesthood of the glorious Name, *in which dwelleth every single prayer of man, and the rise of kings and prophets, and whatever sacrifice I ordain to be offered to me among my people who are to come out of thy generation* (Apocalypse of Abraham 25:5). It ain't new — the earthly house is patterned on the heavenly: the express image of His glory upholds all things, *the brightness of his glory, and the express image of his person* (Hebrews 1:3). At that altar prayer ascends continually as ordained incense, *a perpetual incense before Yahuah (LORD) throughout your generations* (Exodus 30:8). And its desecration is the same Ezekiel saw — backs to the temple, faces to the sun (Ezekiel 8:16) — the inversion of the priesthood of the Name.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 25,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 1,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Hebrews 1:3 — *Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high;* The Temple's beauty 'like the glory that lieth beneath Thy throne' is the earthly shadow of the heavenly glory that sits at the right hand on high."
+        },
+        {
+          "src_ch": 25,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 30,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Exodus 30:8 — *And when Aaron lighteth the lamps at even, he shall burn incense upon it, a perpetual incense before Yahuah (LORD) throughout your generations.* The Temple in which 'dwelleth every single prayer of man' is the altar of perpetual incense, prayer rising before the Name throughout the generations."
+        },
+        {
+          "src_ch": 25,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 8,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Ezekiel 8:16 — *And he brought me into the inner court of the LORD'S house, and, behold, at the door of the temple of Yahuah (LORD), between the porch and the altar, were about five and twenty men, with their backs toward the temple of Yahuah (LORD), and their faces toward the east; and they worshipped the sun toward the east.* The priesthood ordained for the glorious Name is the very thing inverted when men turn their backs on the sanctuary to worship the sun."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-25-desolation-foreseen",
+      "title": "The people's anger and the desolation foreseen",
+      "summary_md": "The statue is named as judgement upon the seed: *But the statue which thou sawest is mine anger, wherewith the people anger me who are to proceed for me from thee* (Apocalypse of Abraham 25:6). This is the abomination that makes desolate, shown to Abraham long before it stood. It ain't new — Daniel sets the same idol in the same place: *and for the overspreading of abominations he shall make it desolate, even until the consummation, and that determined shall be poured upon the desolate* (Daniel 9:27); and Yahusha reads Daniel forward to the last day: *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15). The idol of jealousy, the desolation, the abomination — one witness across Abraham, Ezekiel, Daniel, and the Messiah's own mouth.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 25,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Daniel 9:27 — *And he shall confirm the covenant with many for one week: and in the midst of the week he shall cause the sacrifice and the oblation to cease, and for the overspreading of abominations he shall make it desolate, even until the consummation, and that determined shall be poured upon the desolate.* The statue that is His anger against Abraham's seed is the abomination that brings the sanctuary to desolation."
+        },
+        {
+          "src_ch": 25,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Matthew 24:15 — *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* The idol of jealousy Abraham beheld in the holy place is the abomination of desolation Yahusha warns His disciples to recognize."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-25-blood-witness-final-judgement",
+      "title": "The slain witness and the final judgement at the beginning",
+      "summary_md": "The man slaughtering is interpreted: *But the man whom thou sawest slaughtering — that is he who inciteth murderous sacrifices, which are a witness to me of the final judgement, even at the beginning of creation* (Apocalypse of Abraham 25:7) — the boy slain before the idol (Apocalypse of Abraham 25:1) is innocent blood that cries to heaven. It ain't new — from the beginning the first slain brother's blood is the standing witness: *the voice of thy brother's blood crieth unto me from the ground* (Genesis 4:10). The endurance unto the end is the answer to it: *But he that shall endure unto the end, the same shall be saved* (Matthew 24:13). And the appointed day for the inciter of corruption is already set, as it was set over Azazel — *And on the day of the great judgement he shall be cast into the fire* (1 Enoch 10:6) — the final judgement decreed even at the beginning of creation.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 25,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Genesis 4:10 — *And he said, What hast thou done? the voice of thy brother's blood crieth unto me from the ground.* The boy slain before the idol is innocent blood that, like Abel's from the beginning, cries up to heaven as a witness for judgement."
+        },
+        {
+          "src_ch": 25,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Matthew 24:13 — *But he that shall endure unto the end, the same shall be saved.* The murderous sacrifices witness to the final judgement; the elect who endure unto that end are saved through it."
+        },
+        {
+          "src_ch": 25,
+          "src_v": 7,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "1 Enoch 10:6 — *And on the day of the great judgement he shall be cast into the fire.* As the doom of Azazel the corrupter was decreed from of old, so the inciter of murderous sacrifices is held over for the final judgement appointed even at the beginning of creation."
+        }
+      ]
+    }
+  ]
+}

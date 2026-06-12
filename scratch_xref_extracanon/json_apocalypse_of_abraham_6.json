@@ -1,0 +1,200 @@
+{
+  "edition": "apocalypse-of-abraham",
+  "book": "apocalypse-of-abraham",
+  "chapter": 6,
+  "session": "session253",
+  "tag": "aoa6",
+  "base_band": 67125,
+  "threads": [
+    {
+      "slug": "apocalypse-of-abraham-6-stone-cannot-be-renewed",
+      "title": "The stone-god that cannot be renewed",
+      "summary_md": "Abraham turns to his idol-maker father and names the lie outright: *O father Terah, whichever of these thou praisest as a god, thou art foolish in thy mind* (Apocalypse of Abraham 6:5) — for *if your god Merumath is changed or broken, he will not be renewed, because he is a stone* (6:7). It ain't new. Joshua, generations later, names the very house this came out of: *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* (Joshua 24:2). The Psalm has already weighed Merumath and found him deaf: *Their idols are silver and gold, the work of men's hands. They have mouths, but they speak not: eyes have they, but they see not* (Psalm 115:4-5) — *They that make them are like unto them; so is every one that trusteth in them* (Psalm 115:8). And the prophet calls the stock by its true name: *the stock is a doctrine of vanities* (Jeremiah 10:8). The young Abraham sees what the elders forgot: a god that cannot mend itself cannot mend you.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 24,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Scripture itself records that Abraham's rebuke in 6:5 was aimed at the very idolatry of Terah's house."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Psalm 115:5 — *They have mouths, but they speak not: eyes have they, but they see not:* The stone Merumath of 6:7 is the Psalm's dumb, blind idol, unable to renew even itself."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Psalm 115:8 — *They that make them are like unto them; so is every one that trusteth in them.* Terah is made foolish (6:5) by the lifeless thing he trusts, exactly as the Psalm warns."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Jeremiah 10:8 — *But they are altogether brutish and foolish: the stock is a doctrine of vanities.* The broken stone that cannot be renewed (6:7) is Jeremiah's vain stock, a doctrine of nothing."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-6-barisat-hewn-from-the-tree",
+      "title": "Barisat, the god hewn out of the living tree",
+      "summary_md": "Abraham traces Barisat back to the forest he came from: *But thy god Barisat, while he was still, before he had been prepared, rooted up upon the earth and was great and wonderful with the glory of branches and blossom, thou didst hew out with the axe, and by means of thy art he hath been made into a god* (Apocalypse of Abraham 6:10). This is Isaiah's mockery of the idol-maker drawn to the life: *He heweth him down cedars, and taketh the cypress and the oak... he maketh a god, and worshippeth it; he maketh it a graven image, and falleth down thereto* (Isaiah 44:14-15). Jeremiah saw the same axe: *one cutteth a tree out of the forest, the work of the hands of the workman, with the axe* (Jeremiah 10:3). And the deuterocanon tells Barisat's story almost word for word — the carpenter who *taking the very refuse among those which served to no use, being a crooked piece of wood... formed it by the skill of his understanding, and fashioned it to the image of a man* (Wisdom of Solomon 13:13). It ain't new: a thing of branches and blossom, alive in the field, is killed by the axe and called a god.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Isaiah 44:14 — *He heweth him down cedars, and taketh the cypress and the oak, which he strengtheneth for himself among the trees of the forest: he planteth an ash, and the rain doth nourish it.* The living tree Abraham mourns in 6:10 is Isaiah's forest cedar, nourished by rain before the axe."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Isaiah 44:15 — *Then shall it be for a man to burn: for he will take thereof, and warm himself; yea, he kindleth it, and baketh bread; yea, he maketh a god, and worshippeth it; he maketh it a graven image, and falleth down thereto.* The same wood that warms and bakes is hewn into Barisat the god (6:10), the prophet's exact absurdity."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Jeremiah 10:3 — *For the customs of the people are vain: for one cutteth a tree out of the forest, the work of the hands of the workman, with the axe.* Abraham's axe in 6:10 is Jeremiah's axe; the custom of cutting a god from a tree is one and the same vanity."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 10,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 13,
+          "tgt_v": 13,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 13:13 — *And taking the very refuse among those which served to no use, being a crooked piece of wood, and full of knots, has carved it diligently, when he had nothing else to do, and formed it by the skill of his understanding, and fashioned it to the image of a man;* Barisat made into a god by Terah's art (6:10) is the carpenter's refuse-wood shaped into a deity, the same witness in the deuterocanon."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-6-burnt-to-ashes-no-helper",
+      "title": "Burnt to ashes, and no more — the god who cannot save",
+      "summary_md": "The speech ends where every idol ends: *he, Barisat himself, is burnt up by fire and reduced to ashes and is no more* (Apocalypse of Abraham 6:11) — and Abraham had already asked the question this answers: *How then can that which is made by him — manufactured statues — be a helper of my father?* (6:1). Isaiah feeds the same fire and weighs the same ash-heart: *He feedeth on ashes: a deceived heart hath turned him aside, that he cannot deliver his soul, nor say, Is there not a lie in my right hand?* (Isaiah 44:20). Habakkuk pronounces the woe: *What profiteth the graven image that the maker thereof hath graven it... to make dumb idols?* (Habakkuk 2:18). And the deuterocanon says plainly what Barisat could never do — the idol *was unable to help itself; for it is an image, and has need of help* (Wisdom of Solomon 13:16). It ain't new: the made thing burns, but the One who *made thee, and formed thee from the womb* (Isaiah 44:2) is the living Elohim who alone can help.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Isaiah 44:20 — *He feedeth on ashes: a deceived heart hath turned him aside, that he cannot deliver his soul, nor say, Is there not a lie in my right hand?* Barisat reduced to ashes (6:11) is the very ash the deceived heart feeds on, unable to deliver a single soul."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "habakkuk",
+          "tgt_ch": 2,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Habakkuk 2:18 — *What profiteth the graven image that the maker thereof hath graven it; the molten image, and a teacher of lies, that the maker of his work trusteth therein, to make dumb idols?* Abraham's burnt and profitless Barisat (6:11) is the prophet's dumb idol that profits the maker nothing."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Isaiah 44:2 — *Thus saith Yahuah (LORD) that made thee, and formed thee from the womb, which will help thee; Fear not, O Jacob, my servant; and thou, Jesurun, whom I have chosen.* Against the statue that cannot help his father (6:1), Isaiah sets the Maker who forms from the womb and truly helps."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 13,
+          "tgt_v": 16,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 13:16 — *For he provided for it that it might not fall, knowing that it was unable to help itself; for it is an image, and has need of help:* Abraham's question whether the statue can help his father (6:1) is answered in the deuterocanon: the image cannot help itself, let alone anyone."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-6-the-foolish-mind-of-the-idolater",
+      "title": "Professing wisdom, the idolater becomes a fool",
+      "summary_md": "Abraham's whole charge rests on one diagnosis of the mind: *whichever of these thou praisest as a god, thou art foolish in thy mind* (Apocalypse of Abraham 6:5), grieving that *the body then be subject to its soul, and the soul to the spirit, and the spirit to folly and ignorance* (6:2). Paul names this same descent of the heathen mind: *Professing themselves to be wise, they became fools* (Romans 1:22), who *changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man* (Romans 1:23). The prophet diagnoses the blinded craftsman: *They have not known nor understood: for he hath shut their eyes, that they cannot see; and their hearts, that they cannot understand* (Isaiah 44:18). It ain't new: idolatry is first a darkening of the mind — the spirit handed over to folly — and Abraham, the youngest in the house, is the only one who has not been blinded.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 1,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Romans 1:22 — *Professing themselves to be wise, they became fools,* Terah, foolish in his mind for praising a god he carved (6:5), is Paul's wise man turned fool by his own idols."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 1,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Romans 1:23 — *And changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things.* The folly Abraham exposes in 6:5 is the exchange of the living glory for a corruptible carved image."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Isaiah 44:18 — *They have not known nor understood: for he hath shut their eyes, that they cannot see; and their hearts, that they cannot understand.* The spirit handed over to folly and ignorance (6:2) is Isaiah's shut-eyed, uncomprehending heart of the idolater."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "edition": "apocalypse-of-abraham",
+  "book": "apocalypse-of-abraham",
+  "chapter": 19,
+  "session": "session253",
+  "tag": "aoa19",
+  "base_band": 67450,
+  "threads": [
+    {
+      "slug": "apocalypse-of-abraham-19-here-am-i-out-of-the-fire",
+      "title": "The Voice Out of the Fire — \"Abraham, Abraham!\"",
+      "summary_md": "Out of the burning the Name calls the patriarch by his doubled name, and he answers as the elect always answer: *And a voice came to me out of the midst of the fire, saying: \"Abraham, Abraham!\"* (Apocalypse of Abraham 19:1) — *I said: \"Here am I!\"* (Apocalypse of Abraham 19:2). It ain't new. This is the same doubled call that stayed the knife on Moriah: *And the angel of Yahuah (LORD) called unto him out of heaven, and said, Abraham, Abraham: and he said, Here am I* (Genesis 22:11). It is the voice from the unconsumed fire on Horeb: *And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed* (Exodus 3:2). And when the prophet stands in the throne-room and the same voice asks who will go, the elect answer in Abraham's own words: *Also I heard the voice of Yahuah (Lord), saying, Whom shall I send, and who will go for us? Then said I, Here am I; send me* (Isaiah 6:8). The call comes out of the fire; the man says *Here am I*.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 19,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 22,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Genesis 22:11 — *And the angel of Yahuah (LORD) called unto him out of heaven, and said, Abraham, Abraham: and he said, Here am I.* The same doubled name from heaven that the patriarch heard on Moriah is the voice out of the fire in Apocalypse of Abraham 19:1."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 3,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Exodus 3:2 — *And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed.* The voice that speaks to Abraham from the midst of the fire is the same fire-that-does-not-consume that called Moses at Horeb (Apocalypse of Abraham 19:1)."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 6,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Isaiah 6:8 — *Also I heard the voice of Yahuah (Lord), saying, Whom shall I send, and who will go for us? Then said I, Here am I; send me.* Abraham's answer in the throne-room — *Here am I!* — is the standing reply of the elect, the very words Isaiah gives before the throne (Apocalypse of Abraham 19:2)."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-19-fire-living-creatures-throne",
+      "title": "The Fire, the Living Creatures, and the Glory on the Highest Firmament",
+      "summary_md": "Lifted to the seventh firmament, Abraham sees the throne-fire and the living creatures wrapped in invisible glory: *And I saw upon the seventh firmament upon which I stood a fire widely extended, and light, and dew, and a multitude of angels, and a power of invisible glory over the living creatures which I saw; but no other being did I see there* (Apocalypse of Abraham 19:5). It ain't new — this is the merkabah Ezekiel saw by the Chebar: *Also out of the midst thereof came the likeness of four living creatures... As for the likeness of the living creatures, their appearance was like burning coals of fire, and like the appearance of lamps* (Ezekiel 1:5, 13), and over them the throne: *and upon the likeness of the throne was the likeness as the appearance of a man above upon it* (Ezekiel 1:26). It is the fiery throne Daniel beheld: *his throne was like the fiery flame, and his wheels as burning fire* (Daniel 7:9). And it is the throne John saw, with the living creatures full of fire and the glory: *And before the throne there was a sea of glass like unto crystal: and in the midst of the throne, and round about the throne, were four beasts full of eyes before and behind* (Revelation 4:6). One throne, one fire, one company of living creatures — seen by Abraham, Ezekiel, Daniel, and John alike.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 19,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 1,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Ezekiel 1:13 — *As for the likeness of the living creatures, their appearance was like burning coals of fire, and like the appearance of lamps: it went up and down among the living creatures; and the fire was bright, and out of the fire went forth lightning.* The fire widely extended over the living creatures on Abraham's seventh firmament is the burning-coal fire of Ezekiel's living creatures (Apocalypse of Abraham 19:5)."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* The widely-extended fire and the power of invisible glory Abraham sees is the fiery-flame throne of the Ancient of days (Apocalypse of Abraham 19:5)."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 4,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Revelation 4:6 — *And before the throne there was a sea of glass like unto crystal: and in the midst of the throne, and round about the throne, were four beasts full of eyes before and behind.* The living creatures over which Abraham sees the power of invisible glory are the four living creatures round John's throne (Apocalypse of Abraham 19:5)."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-19-angels-pure-spirit-carry-commands",
+      "title": "Angels of Pure Spirit Who Carry Out the Commands",
+      "summary_md": "Below the highest heaven Abraham sees rank upon rank of bodiless ministers doing the bidding of the fiery angels: *And I looked from the mountain in which I stood downwards to the sixth firmament, and saw there a multitude of angels, of pure spirit, without bodies, who carried out the commands of the fiery angels who were upon the eighth firmament* (Apocalypse of Abraham 19:6). It ain't new. The Psalm names them exactly so — spirit and flame: *Who maketh his angels spirits; his ministers a flaming fire* (Psalm 104:4). Daniel numbers the same host attending the fiery throne: *thousand thousands ministered unto him, and ten thousand times ten thousand stood before him* (Daniel 7:10). And Ezekiel's living creatures move only at command, each one going straight on the errand of the Spirit: *And they went every one straight forward: whither the spirit was to go, they went; and they turned not when they went* (Ezekiel 1:12). The angels do not act of themselves; they carry out the commands.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 19,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Psalm 104:4 — *Who maketh his angels spirits; his ministers a flaming fire.* Abraham's angels of pure spirit without bodies, serving the fiery angels, are the very spirits-and-flaming-ministers of the Psalm (Apocalypse of Abraham 19:6)."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* The multitude of angels who carry out the commands of the fiery angels is the thousand-thousand host ministering before the fiery throne (Apocalypse of Abraham 19:6)."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 1,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Ezekiel 1:12 — *And they went every one straight forward: whither the spirit was to go, they went; and they turned not when they went.* That the angels are powers only of pure spirit carrying out commands answers Ezekiel's creatures who move solely where the Spirit sends them (Apocalypse of Abraham 19:7)."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-19-powers-of-the-stars-obey",
+      "title": "The Powers of the Stars That Carry Out the Commands",
+      "summary_md": "On the fifth firmament Abraham sees the host of heaven under orders, and the very elements obeying them: *And I saw there, on the fifth firmament, the powers of the stars which carry out the commands laid upon them, and the elements of the earth obeyed them* (Apocalypse of Abraham 19:9). It ain't new — the lights were set in the firmament under appointment from the first day: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14). And the live witness of Enoch shows the same: the stars are a host bound to their commandment, judged when they keep it not — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times* (1 Enoch 18:13), the winds themselves turning *the circumference of the sun and all the stars to their setting* (1 Enoch 18:4). The powers of heaven are servants under command, not gods to be feared — the very lesson Abraham learned when he forsook Terah's idols.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 19,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years.* The powers of the stars that carry out the commands laid upon them are the appointed lights set in the firmament from creation (Apocalypse of Abraham 19:9)."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 9,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 18,
+          "tgt_v": 13,
+          "tier": "extras",
+          "note": "1 Enoch 18:13 — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* Abraham's powers of the stars under command match Enoch's host bound to their commandment and judged when they fail to keep it (Apocalypse of Abraham 19:9)."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 9,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 18,
+          "tgt_v": 4,
+          "tier": "extras",
+          "note": "1 Enoch 18:4 — *I saw the winds of heaven which turn and bring the circumference of the sun and all the stars to their setting.* The elements of the earth obeying the powers of the stars echoes Enoch's winds that govern the sun and all the stars in their courses (Apocalypse of Abraham 19:9)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "edition": "apocalypse-of-abraham",
+  "book": "apocalypse-of-abraham",
+  "chapter": 7,
+  "session": "session253",
+  "tag": "aoa7",
+  "base_band": 67150,
+  "threads": [
+    {
+      "slug": "apocalypse-of-abraham-7-fire-water-no-god",
+      "title": "Fire and water are not gods — the elements are subjected",
+      "summary_md": "Young Abraham reasons his way up the ladder of the elements and finds every one of them subject to another: *Behold, the fire is more worthy of honour than all things formed, because even that which is not subjected is subjected unto it, and things easily perishable are mocked by its flames.* (Apocalypse of Abraham 7:1) — *But even more worthy of honour is the water, because it conquereth the fire and satisfieth the earth.* (Apocalypse of Abraham 7:2) — *But even it I do not call Elohim (God), because it is subjected to the earth under which the water inclineth.* (Apocalypse of Abraham 7:3). It ain't new: the same dismantling stands in the Apocrypha, where the men who mistook the elements for the powers that rule the world are answered — *But deemed either fire, or wind, or the swift air, or the circle of the stars, or the violent water, or the lights of heaven, to be the gods which govern the world.* (Wisdom of Solomon 13:2) — *But if they were astonished at their power and virtue, let them understand by them, how much mightier he is that made them.* (Wisdom of Solomon 13:4). A thing that can be conquered cannot save: *They have mouths, but they speak not: eyes have they, but they see not* (Psalm 115:5). The system of carved and elemental gods is taken apart; only the Maker stands.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 2,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 13,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 13:2 — *But deemed either fire, or wind, or the swift air, or the circle of the stars, or the violent water, or the lights of heaven, to be the gods which govern the world.* The Apocrypha names the very ladder Abraham climbs in 7:2 — fire, water, the stars — and calls it the error of those who mistook creature for Creator."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 13,
+          "tgt_v": 4,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 13:4 — *But if they were astonished at their power and virtue, let them understand by them, how much mightier he is that made them.* Abraham's refusal to call water 'Elohim' because it is subject to the earth (7:3) is the same reasoning: the power of a thing points past it to the One who made it mightier still."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Psalm 115:5 — *They have mouths, but they speak not: eyes have they, but they see not:* What is subjected and perishable, as Abraham says of fire in 7:1, cannot answer or save — the same indictment the Psalm lays on every idol."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-7-sun-moon-stars-not-god",
+      "title": "Nor sun, nor moon, nor stars — the host of heaven obscured",
+      "summary_md": "Abraham climbs past the earth to the lights of the sky, and finds even these fail: *I call the sun more worthy of honour than the earth, because it with its rays illumineth the whole world and the different atmospheres.* (Apocalypse of Abraham 7:6) — *But even it I do not call god, because at night and by clouds its course is obscured.* (Apocalypse of Abraham 7:7) — *Nor, again, do I call the moon or the stars god, because they also in their season obscure their light at night.* (Apocalypse of Abraham 7:8). The Torah set this same fence: *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* (Deuteronomy 4:19). For the lights were made — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* (Genesis 1:16) — and a made thing is no god. It ain't new: Abraham reaches by reason what Moses commands by covenant.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 4,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* Abraham's refusal to call moon or stars god (7:8) is the very fence Moses sets — the host of heaven serves, it is not served."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* The sun Abraham honours but will not worship (7:6) is a made thing, ruled and set in place by the One who made it."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Isaiah 44:9 — *They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed.* The sun whose course is obscured by night and cloud (7:7) profits no more than the carved idol — both are vanity beside the Maker."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-7-terah-other-gods",
+      "title": "Hear, Terah my father — the call out of the fathers' gods",
+      "summary_md": "Abraham turns from the elements to address the idol-maker himself: *But hear this, Terah my father; for I will make known to thee the Elohim (God) who hath made everything, not these we consider as gods.* (Apocalypse of Abraham 7:9). This is the household of Joshua's witness — *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* (Joshua 24:2) — and the scene Stephen preaches — *The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* (Acts 7:2). The living Elohim is the One who makes and is not made: *But Yahuah (LORD) is the true Elohim (God), he is the living Elohim (God), and an everlasting king* (Jeremiah 10:10). The system of the fathers' gods is left behind; the call out of Ur begins in this very rebuke.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 24,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Abraham's address to Terah in 7:9 stands at the exact hinge Joshua names — the father served other gods; the son will make known the One who made everything."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "acts",
+          "tgt_ch": 7,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,* Stephen sets the call where this chapter sets it — in Abraham's homeland among the idols, before the going out, the same Elohim Abraham proclaims to Terah in 7:9."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Jeremiah 10:10 — *But Yahuah (LORD) is the true Elohim (God), he is the living Elohim (God), and an everlasting king: at his wrath the earth shall tremble, and the nations shall not be able to abide his indignation.* The 'Elohim who hath made everything' that Abraham names in 7:9 is Jeremiah's living and true Elohim, set against the gods that did not make the heavens."
+        }
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-7-maker-of-all",
+      "title": "Who hath crimsoned the heavens — the Maker of everything revealed",
+      "summary_md": "Abraham's argument arrives at its end: only the Maker is worthy, and only He can reveal Himself. *Who hath crimsoned the heavens, and made the sun golden, and the moon lustrous, and with it the stars; and hath made the earth dry in the midst of many waters, and set thee in the world.* (Apocalypse of Abraham 7:12) — *Yet may Elohim (God) reveal Himself to us through Himself!* (Apocalypse of Abraham 7:13). This is Genesis' own order of creation — the lights set, the dry land drawn out of the waters: *And Elohim (God) said, Let the waters under the heaven be gathered together unto one place, and let the dry land appear: and it was so.* (Genesis 1:9). The heavens themselves preach the Maker — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* (Psalm 19:1) — and Paul says the witness is plain — *For the invisible things of him from the creation of the world are clearly seen, being understood by the things that are made* (Romans 1:20). It ain't new: from the made things Abraham reasons to the One who must reveal Himself, through Himself.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Genesis 1:9 — *And Elohim (God) said, Let the waters under the heaven be gathered together unto one place, and let the dry land appear: and it was so.* Abraham's praise that the Maker 'hath made the earth dry in the midst of many waters' (7:12) recites the third day of Genesis word for deed."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The crimsoned heavens and golden sun Abraham points to in 7:12 are the very handywork the Psalm says declares the Maker's glory."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 1,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Romans 1:20 — *For the invisible things of him from the creation of the world are clearly seen, being understood by the things that are made, even his eternal power and Godhead; so that they are without excuse:* Abraham's plea that Elohim reveal Himself through Himself (7:13) meets Paul's word that the made things already make Him clearly seen."
+        }
+      ]
+    }
+  ]
+}

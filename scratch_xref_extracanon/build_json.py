@@ -1,72 +1,126 @@
 import json
 
 data = {
-  "edition": "adam-eve-conflict", "book": "1-adam-eve", "chapter": 42,
-  "session": "session253", "tag": "1ae42", "base_band": 65025,
-  "threads": [
-    {
-      "slug": "1-adam-eve-42-word-promises-messiah",
-      "title": "The Word who comes to Adam foretells His own coming",
-      "summary_md": "It is the **Word of Elohim** Himself who comes down to the grieving Adam and speaks the first gospel outside the garden: *\"Then came the Word of Elohim (God) to Adam, and said to him\"* (1 Adam & Eve 42:1) — and the rest Adam longs for is not another patch of ground but *\"the kingdom of heaven where alone there is rest\"* (1 Adam & Eve 42:2), opened *\"after your judgment is past and fulfilled\"* (42:3). This is the Logos, the same Word who was *In the beginning... with Elohim (God), and the Word was Elohim (God)* (John 1:1) and who *was made flesh, and dwelt among us* (John 1:14). From the very first day east of Eden the One who walked with Adam is already promising to descend and save — *it ain't new*.",
-      "anchor_start_v": 1, "anchor_end_v": 4, "tier": "extras",
-      "members": [
-        {"src_ch": 42, "src_v": 1, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 1, "tgt_v": 1, "tier": "free",
-         "note": "John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The Word who comes down and speaks to Adam in 1 Adam & Eve 42:1 is this same eternal Logos, not a created messenger."},
-        {"src_ch": 42, "src_v": 4, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 1, "tgt_v": 14, "tier": "free",
-         "note": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* The Word who promises in 1 Adam & Eve 42:4 to bring Adam up into the kingdom will Himself take flesh to do it."},
-        {"src_ch": 42, "src_v": 2, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 4, "tgt_v": 9, "tier": "free",
-         "note": "Hebrews 4:9 — *There remaineth therefore a rest to the people of Elohim (God).* The true rest the Word names in 1 Adam & Eve 42:2 is the Sabbath-rest of the kingdom, still kept in store for the faithful."}
-      ]
-    },
-    {
-      "slug": "1-adam-eve-42-water-of-life-golgotha-blood",
-      "title": "The Water of Life is His blood shed at Golgotha",
-      "summary_md": "Adam begged for the Water of Life, and the Word answers that it will be given — but as His own blood poured out on the cross: *\"on the day that I shall shed My blood on your head in the land of Golgotha. For My blood shall be the Water of Life to you at that time, and not to just you alone, but to all your descendants who shall believe in Me\"* (1 Adam & Eve 42:7-8). This is the very water the Messiah offered at the feast — *If any man thirst, let him come unto me, and drink* (John 7:37), promising *out of his belly shall flow rivers of living water* (John 7:38) — and the *pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1). The believing-in-Me of Adam's seed is the same drink offered freely to whosoever will: *let him take the water of life freely* (Revelation 22:17).",
-      "anchor_start_v": 5, "anchor_end_v": 8, "tier": "extras",
-      "members": [
-        {"src_ch": 42, "src_v": 7, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 7, "tgt_v": 37, "tier": "free",
-         "note": "John 7:37 — *In the last day, that great day of the feast, Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink.* The Water of Life withheld from Adam in 1 Adam & Eve 42:7 is the very drink the Messiah later cries out to give."},
-        {"src_ch": 42, "src_v": 8, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 7, "tgt_v": 38, "tier": "free",
-         "note": "John 7:38 — *He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water.* The blood-as-living-water given to all Adam's seed who believe in 1 Adam & Eve 42:8 is exactly the rivers promised to the believer."},
-        {"src_ch": 42, "src_v": 7, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 6, "tgt_v": 54, "tier": "free",
-         "note": "John 6:54 — *Whoso eateth my flesh, and drinketh my blood, hath eternal life; and I will raise him up at the last day.* The blood the Word promises to shed in 1 Adam & Eve 42:7 is the drink that gives the eternal life and resurrection Adam was barred from."},
-        {"src_ch": 42, "src_v": 8, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 22, "tgt_v": 17, "tier": "free",
-         "note": "Revelation 22:17 — *And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely.* The Water of Life promised to all believing descendants in 1 Adam & Eve 42:8 is offered freely to the end of the world."}
-      ]
-    },
-    {
-      "slug": "1-adam-eve-42-descent-breaks-gates-of-brass",
-      "title": "He descends into hell and breaks the gates of brass",
-      "summary_md": "The Word foretells the harrowing of hell to ransom Adam: *\"on the day that I shall descend into hell, and break the gates of brass, and bruise in pieces the kingdoms of iron. Then will I in mercy save your soul and the souls of the righteous\"* (1 Adam & Eve 42:5-6). This is the bruising of the serpent's head sworn from the first — *it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15) — accomplished when the Messiah *suffered for sins, the just for the unjust... being put to death in the flesh, but quickened by the Spirit* (1 Peter 3:18) and *went and preached unto the spirits in prison* (1 Peter 3:19). Through death He destroyed *him that had the power of death, that is, the devil* (Hebrews 2:14), spoiling *principalities and powers... triumphing over them in it* (Colossians 2:15), and now holds *the keys of hell and of death* (Revelation 1:18). The first-day promise to Adam is the cross-day victory; *it ain't new*.",
-      "anchor_start_v": 5, "anchor_end_v": 6, "tier": "extras",
-      "members": [
-        {"src_ch": 42, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 15, "tier": "free",
-         "note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* The breaking of brass gates and bruising of iron kingdoms in 1 Adam & Eve 42:5 is the head-bruising of the serpent sworn over Adam at the start."},
-        {"src_ch": 42, "src_v": 5, "tgt_edition": "canon", "tgt_book": "1-peter", "tgt_ch": 3, "tgt_v": 19, "tier": "free",
-         "note": "1 Peter 3:19 — *By which also he went and preached unto the spirits in prison.* The descent into hell the Word foretells in 1 Adam & Eve 42:5 is the Messiah's preaching to the imprisoned spirits after the cross."},
-        {"src_ch": 42, "src_v": 5, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 2, "tgt_v": 14, "tier": "free",
-         "note": "Hebrews 2:14 — *Forasmuch then as the children are partakers of flesh and blood, he also himself likewise took part of the same; that through death he might destroy him that had the power of death, that is, the devil.* The shattering of hell's gates in 1 Adam & Eve 42:5 is the destroying of the devil through the Word's own death."},
-        {"src_ch": 42, "src_v": 6, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 1, "tgt_v": 18, "tier": "free",
-         "note": "Revelation 1:18 — *I am he that liveth, and was dead; and, behold, I am alive for evermore, Amen; and have the keys of hell and of death.* The mercy that saves the souls of the righteous in 1 Adam & Eve 42:6 belongs to the One who took the very keys of hell and death."}
-      ]
-    },
-    {
-      "slug": "1-adam-eve-42-eden-lost-rest-at-end",
-      "title": "Eden's trials, and the rest restored when the world is ended",
-      "summary_md": "The Word names plainly why Adam now sweats and thirsts: *\"O Adam, when you were in the garden, these trials did not come to you. But since you transgressed My commandment, all these sufferings have come over you\"* (1 Adam & Eve 42:9-10) — the very curse of toil spoken in Eden: *In the sweat of thy face shalt thou eat bread, till thou return unto the ground* (Genesis 3:19). Yet the saving is set *when the end of the world is come* (1 Adam & Eve 42:6), when the last Adam undoes the first: *as in Adam all die, even so in Messiah (Christ) shall all be made alive* (1 Corinthians 15:22). Then the tree and garden barred to Adam are restored — *To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* (Revelation 2:7).",
-      "anchor_start_v": 9, "anchor_end_v": 11, "tier": "extras",
-      "members": [
-        {"src_ch": 42, "src_v": 10, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 19, "tier": "free",
-         "note": "Genesis 3:19 — *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return.* The sufferings the Word traces to the transgression in 1 Adam & Eve 42:10 are the labour and death decreed at the expulsion."},
-        {"src_ch": 42, "src_v": 6, "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 15, "tgt_v": 22, "tier": "free",
-         "note": "1 Corinthians 15:22 — *For as in Adam all die, even so in Messiah (Christ) shall all be made alive.* The rest promised when the end of the world is come in 1 Adam & Eve 42:6 is the making-alive of all Adam's race in the last Adam."},
-        {"src_ch": 42, "src_v": 4, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 2, "tgt_v": 7, "tier": "free",
-         "note": "Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The kingdom-rest the Word pledges to Adam and his righteous seed in 1 Adam & Eve 42:4 is the restored paradise and tree of life."}
-      ]
-    }
-  ]
+    "edition": "ascension-isaiah",
+    "book": "ascension-isaiah",
+    "chapter": 11,
+    "session": "session253",
+    "tag": "asi11",
+    "base_band": 68250,
+    "threads": [
+        {
+            "slug": "ascension-isaiah-11-virgin-espoused",
+            "title": "The virgin Mary, espoused to Joseph of David's line",
+            "summary_md": "*And I indeed saw a woman of the family of David the prophet, named Mary, and Virgin, and she was espoused to a man named Joseph, a carpenter, and he also was of the seed and family of the righteous David of Bethlehem Yahudah (Judah).* It ain't new: the Ascension sees the very scene the prophet himself had foretold — *Therefore Yahuah (Lord) himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel* (Isaiah 7:14). The Gospel opens the same way: *Now the birth of Yahusha HaMashiach (Jesus Christ) was on this wise: When as his mother Mary was espoused to Joseph, before they came together, she was found with child of the Ruach HaKodesh (Holy Spirit)* (Matthew 1:18), the angel naming the place and tribe — *To a virgin espoused to a man whose name was Joseph, of the house of David; and the virgin's name was Mary* (Luke 1:27). The royal seed of David, kept for the Beloved's descent.",
+            "anchor_start_v": 2,
+            "anchor_end_v": 3,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 11, "src_v": 2, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 7, "tgt_v": 14, "tier": "free",
+                 "note": "Isaiah 7:14 — *Therefore Yahuah (Lord) himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel.* The prophet whose ascension this is had himself spoken the virgin-sign now unveiled in Ascension of Isaiah 11:2."},
+                {"src_ch": 11, "src_v": 2, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 1, "tgt_v": 27, "tier": "free",
+                 "note": "Luke 1:27 — *To a virgin espoused to a man whose name was Joseph, of the house of David; and the virgin's name was Mary.* Luke names the same virgin, the same Joseph, and the same Davidic house as Ascension of Isaiah 11:2."},
+                {"src_ch": 11, "src_v": 3, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 1, "tgt_v": 18, "tier": "free",
+                 "note": "Matthew 1:18 — *Now the birth of Yahusha HaMashiach (Jesus Christ) was on this wise: When as his mother Mary was espoused to Joseph, before they came together, she was found with child of the Ruach HaKodesh (Holy Spirit).* The Gospel's espousal-then-conception is exactly the sequence of Ascension of Isaiah 11:3."}
+            ]
+        },
+        {
+            "slug": "ascension-isaiah-11-joseph-put-away",
+            "title": "Joseph, the just man, minded to put her away",
+            "summary_md": "*And he came into his lot. And when she was espoused, she was found with child, and Joseph the carpenter was desirous to put her away.* The vision's Joseph is the Gospel's Joseph: *Then Joseph her husband, being a just man, and not willing to make her a publick example, was minded to put her away privily* (Matthew 1:19). And as the angel of the Spirit stays his hand in the Ascension — *But the angel of the Spirit appeared in this world, and after that Joseph did not put her away* — so in Matthew, *Then Joseph being raised from sleep did as the angel of Yahuah (Lord) had bidden him, and took unto him his wife* (Matthew 1:24). The whole nativity carried, centuries before, in the seventh heaven's seer.",
+            "anchor_start_v": 3,
+            "anchor_end_v": 5,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 11, "src_v": 3, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 1, "tgt_v": 19, "tier": "free",
+                 "note": "Matthew 1:19 — *Then Joseph her husband, being a just man, and not willing to make her a publick example, was minded to put her away privily.* Joseph's resolve to put Mary away is the very motion of Ascension of Isaiah 11:3."},
+                {"src_ch": 11, "src_v": 4, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 1, "tgt_v": 24, "tier": "free",
+                 "note": "Matthew 1:24 — *Then Joseph being raised from sleep did as the angel of Yahuah (Lord) had bidden him, and took unto him his wife.* The angel turns Joseph from putting her away in both Matthew and Ascension of Isaiah 11:4."},
+                {"src_ch": 11, "src_v": 5, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 1, "tgt_v": 25, "tier": "free",
+                 "note": "Matthew 1:25 — *And knew her not till she had brought forth her firstborn son: and he called his name Yahusha (JESUS).* Joseph keeping Mary a virgin, not approaching her, matches Ascension of Isaiah 11:5."}
+            ]
+        },
+        {
+            "slug": "ascension-isaiah-11-elohim-in-portion",
+            "title": "Into his portion Elohim had come — the Word made flesh",
+            "summary_md": "*And when her husband Joseph said unto her: \"What has astonished thee?\" his eyes were opened and he saw the infant and praised Elohim (God), because into his portion Elohim (God) had come.* The seer says the unsayable: God had come into a man's portion as a babe. It ain't new — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14); *And without controversy great is the mystery of godliness: Elohim (God) was manifest in the flesh, justified in the Spirit, seen of angels, preached unto the Gentiles, believed on in the world, received up into glory* (1 Timothy 3:16); and the sign-name itself, *Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us* (Matthew 1:23).",
+            "anchor_start_v": 10,
+            "anchor_end_v": 10,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 11, "src_v": 10, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 1, "tgt_v": 14, "tier": "free",
+                 "note": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* The Word taking flesh is the very wonder Joseph beholds in Ascension of Isaiah 11:10, that Elohim had come into his portion."},
+                {"src_ch": 11, "src_v": 10, "tgt_edition": "canon", "tgt_book": "1-timothy", "tgt_ch": 3, "tgt_v": 16, "tier": "free",
+                 "note": "1 Timothy 3:16 — *And without controversy great is the mystery of godliness: Elohim (God) was manifest in the flesh, justified in the Spirit, seen of angels, preached unto the Gentiles, believed on in the world, received up into glory.* Elohim manifest in the flesh is precisely Joseph's astonishment in Ascension of Isaiah 11:10."},
+                {"src_ch": 11, "src_v": 10, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 1, "tgt_v": 23, "tier": "free",
+                 "note": "Matthew 1:23 — *Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us.* \"Elohim with us\" names the infant whom Joseph sees in Ascension of Isaiah 11:10."}
+            ]
+        },
+        {
+            "slug": "ascension-isaiah-11-unrecognized-crucified",
+            "title": "Unrecognized, delivered up, crucified on a tree",
+            "summary_md": "*And after this the adversary envied Him and roused the children of Yashar'el (Israel) against Him, not knowing who He was, and they delivered Him to the king, and crucified Him, and He descended to the angel of Sheol.* *In Jerusalem indeed I saw Him being crucified on a tree.* The descent of the Beloved is unrecognized to the end — *He came unto his own, and his own received him not* (John 1:11); the rulers act in ignorance, and after the cross *And being found in fashion as a man, he humbled himself, and became obedient unto death, even the death of the cross* (Philippians 2:8). And the descent to Sheol: *By which also he went and preached unto the spirits in prison* (1 Peter 3:19).",
+            "anchor_start_v": 19,
+            "anchor_end_v": 20,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 11, "src_v": 19, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 1, "tgt_v": 11, "tier": "free",
+                 "note": "John 1:11 — *He came unto his own, and his own received him not.* The children of Israel roused against Him, not knowing who He was, is the same unrecognized rejection of Ascension of Isaiah 11:19."},
+                {"src_ch": 11, "src_v": 20, "tgt_edition": "canon", "tgt_book": "philippians", "tgt_ch": 2, "tgt_v": 8, "tier": "free",
+                 "note": "Philippians 2:8 — *And being found in fashion as a man, he humbled himself, and became obedient unto death, even the death of the cross.* The death of the cross Paul names is the crucifixion on a tree Isaiah saw in Ascension of Isaiah 11:20."},
+                {"src_ch": 11, "src_v": 19, "tgt_edition": "canon", "tgt_book": "1-peter", "tgt_ch": 3, "tgt_v": 19, "tier": "free",
+                 "note": "1 Peter 3:19 — *By which also he went and preached unto the spirits in prison.* The descent to the angel of Sheol in Ascension of Isaiah 11:19 is the descent to the spirits in prison."}
+            ]
+        },
+        {
+            "slug": "ascension-isaiah-11-third-day-ascends",
+            "title": "Risen the third day, and ascended above all heavens",
+            "summary_md": "*And likewise after the third day rise again and remain days.* *And the angel who conducted me said: \"Understand, Isaiah\": and I saw when He sent out the Twelve Apostles and ascended.* The seer foretells the gospel Paul calls first of all: *And that he was buried, and that he rose again the third day according to the scriptures* (1 Corinthians 15:4) — for *For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption* (Psalms 16:10). And the ascent: *He that descended is the same also that ascended up far above all heavens, that he might fill all things* (Ephesians 4:10), to the right hand of that Great Glory.",
+            "anchor_start_v": 21,
+            "anchor_end_v": 22,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 11, "src_v": 21, "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 15, "tgt_v": 4, "tier": "free",
+                 "note": "1 Corinthians 15:4 — *And that he was buried, and that he rose again the third day according to the scriptures.* The third-day rising of Ascension of Isaiah 11:21 is the gospel Paul says is according to the scriptures."},
+                {"src_ch": 11, "src_v": 21, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 16, "tgt_v": 10, "tier": "free",
+                 "note": "Psalms 16:10 — *For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption.* The Holy One not left in Sheol but raised is the third-day rising of Ascension of Isaiah 11:21."},
+                {"src_ch": 11, "src_v": 22, "tgt_edition": "canon", "tgt_book": "ephesians", "tgt_ch": 4, "tgt_v": 10, "tier": "free",
+                 "note": "Ephesians 4:10 — *He that descended is the same also that ascended up far above all heavens, that he might fill all things.* The descent-and-ascent of the Beloved through the heavens in Ascension of Isaiah 11:22 is Paul's ascent far above all heavens."}
+            ]
+        },
+        {
+            "slug": "ascension-isaiah-11-seventh-heaven-worship",
+            "title": "Enthroned at the right hand of the Great Glory",
+            "summary_md": "*And I saw how He ascended into the seventh heaven, and all the righteous and all the angels praised Him. And then I saw Him sit down on the right hand of that Great Glory whose glory I told you that I could not behold.* The seventh-heaven enthronement is the exaltation the whole canon sings — *Wherefore Elohim (God) also hath highly exalted him, and given him a name which is above every name* (Philippians 2:9); *Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high* (Hebrews 1:3); and at His unveiling the heavens worship, *And again, when he bringeth in the firstbegotten into the world, he saith, And let all the angels of Elohim (God) worship him* (Hebrews 1:6) — the very angels who, descending, knew Him not, now adore Him ascended.",
+            "anchor_start_v": 32,
+            "anchor_end_v": 32,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 11, "src_v": 32, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 1, "tgt_v": 3, "tier": "free",
+                 "note": "Hebrews 1:3 — *Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high.* Sitting at the right hand of the Majesty is the seventh-heaven enthronement of Ascension of Isaiah 11:32."},
+                {"src_ch": 11, "src_v": 32, "tgt_edition": "canon", "tgt_book": "philippians", "tgt_ch": 2, "tgt_v": 9, "tier": "free",
+                 "note": "Philippians 2:9 — *Wherefore Elohim (God) also hath highly exalted him, and given him a name which is above every name.* The exaltation after the descent is the ascent to the right hand of the Great Glory in Ascension of Isaiah 11:32."},
+                {"src_ch": 11, "src_v": 32, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 1, "tgt_v": 6, "tier": "free",
+                 "note": "Hebrews 1:6 — *And again, when he bringeth in the firstbegotten into the world, he saith, And let all the angels of Elohim (God) worship him.* All the angels praising Him in Ascension of Isaiah 11:32 is the angelic worship Hebrews commands."}
+            ]
+        },
+        {
+            "slug": "ascension-isaiah-11-sawn-asunder",
+            "title": "Sawed in sunder by the hand of Manasseh",
+            "summary_md": "*On account of these visions and prophecies Sammael Satan sawed in sunder Isaiah the son of Amoz, the prophet, by the hand of Manasseh.* This is the martyrdom the canon remembers without naming: *They were stoned, they were sawn asunder, were tempted, were slain with the sword: they wandered about in sheepskins and goatskins; being destitute, afflicted, tormented* (Hebrews 11:37) — the lone scriptural witness to a prophet sawn in two, long held to be Isaiah himself. The adversary Sammael who envied the Beloved is the same who slew the seer.",
+            "anchor_start_v": 41,
+            "anchor_end_v": 41,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 11, "src_v": 41, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 37, "tier": "free",
+                 "note": "Hebrews 11:37 — *They were stoned, they were sawn asunder, were tempted, were slain with the sword: they wandered about in sheepskins and goatskins; being destitute, afflicted, tormented.* \"Sawn asunder\" is the canon's lone witness to the very martyrdom of Ascension of Isaiah 11:41."}
+            ]
+        }
+    ]
 }
 
-with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_1_adam_eve_42.json", "w") as f:
+with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_ascension_isaiah_11.json", "w", encoding="utf-8") as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
-print("written")
+
+print("threads:", len(data["threads"]))
+print("members:", sum(len(t["members"]) for t in data["threads"]))

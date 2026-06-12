@@ -1,0 +1,96 @@
+{
+  "edition": "apocalypse-of-abraham",
+  "book": "apocalypse-of-abraham",
+  "chapter": 17,
+  "session": "session253",
+  "tag": "aoa17",
+  "base_band": 67400,
+  "threads": [
+    {
+      "slug": "apocalypse-of-abraham-17-voice-in-the-fire",
+      "title": "The fire and the voice of many waters",
+      "summary_md": "As Abraham ascends with the angel, the Presence comes not in the seen idol but in fire and a sound: *And while he yet spake, and lo, fire came against us round about, and a voice was in the fire like a voice of many waters, like the sound of the sea in its uproar* (Apocalypse of Abraham 17:1). It ain't new — this is the merkabah Ezekiel already saw: *And when they went, I heard the noise of their wings, like the noise of great waters, as the voice of the Almighty, the voice of speech, as the noise of an host: when they stood, they let down their wings* (Ezekiel 1:24), and the throne-fire of Daniel: *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire* (Daniel 7:9). David sang the same voice over the waters: *The voice of Yahuah (LORD) is upon the waters: the Elohim (God) of glory thundereth: Yahuah (LORD) is upon many waters* (Psalms 29:3); and the same voice meets John at the end: *His feet like unto fine brass, as if they burned in a furnace; and his voice as the sound of many waters* (Revelation 1:15). One throne, one fire, one voice, from Sinai to the Apocalypse.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 17, "src_v": 1, "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 1, "tgt_v": 24, "tier": "free",
+         "note": "Ezekiel 1:24 — *And when they went, I heard the noise of their wings, like the noise of great waters, as the voice of the Almighty, the voice of speech, as the noise of an host: when they stood, they let down their wings.* Ezekiel's living-creatures roar the same waters-voice Abraham hears coming in the fire."},
+        {"src_ch": 17, "src_v": 1, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 7, "tgt_v": 9, "tier": "free",
+         "note": "Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* The fire that comes round about Abraham is the fiery throne Daniel beholds set in heaven."},
+        {"src_ch": 17, "src_v": 1, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 29, "tgt_v": 3, "tier": "free",
+         "note": "Psalms 29:3 — *The voice of Yahuah (LORD) is upon the waters: the Elohim (God) of glory thundereth: Yahuah (LORD) is upon many waters.* David already named the voice in the fire as the voice of Yahuah upon many waters."},
+        {"src_ch": 17, "src_v": 1, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 1, "tgt_v": 15, "tier": "free",
+         "note": "Revelation 1:15 — *And his feet like unto fine brass, as if they burned in a furnace; and his voice as the sound of many waters.* The selfsame waters-voice that meets Abraham in the fire meets John on Patmos at the end."}
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-17-eternal-mighty-holy",
+      "title": "The song of the One: El, Elohim only, Supreme",
+      "summary_md": "Having forsaken his father's idols, Abraham is taught the song and sings the One: *Eternal, mighty, Holy, El, Elohim (God) only — Supreme!* (Apocalypse of Abraham 17:7) — *Thou who art self-originated, incorruptible, spotless, Uncreate, immaculate, immortal, Self-complete, self-illuminating, Without father, without mother, unbegotten, Exalted, fiery One!* (Apocalypse of Abraham 17:8). It ain't new — it is the Shema: *Hear, O Yashar'el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD):* (Deuteronomy 6:4), and the first-and-last of Isaiah: *Thus saith Yahuah (LORD) the King of Yashar'el (Israel), and his redeemer Yahuah Tseva'ot (LORD of hosts); I am the first, and I am the last; and beside me there is no Elohim (God)* (Isaiah 44:6). The everlasting, unbegotten One is Moses' Rock: *Before the mountains were brought forth, or ever thou hadst formed the earth and the world, even from everlasting to everlasting, thou art Elohim (God)* (Psalms 90:2); whom Paul doxes in Abraham's very words: *Now unto the King eternal, immortal, invisible, the only wise Elohim (God), be honour and glory for ever and ever. Amen* (1 Timothy 1:17). The seraphim's Holy answers the song: *And one cried unto another, and said, Holy, holy, holy, is Yahuah Tseva'ot (LORD of hosts): the whole earth is full of his glory* (Isaiah 6:3).",
+      "anchor_start_v": 7,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 17, "src_v": 7, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 6, "tgt_v": 4, "tier": "free",
+         "note": "Deuteronomy 6:4 — *Hear, O Yashar'el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD):* Abraham's 'El, Elohim only — Supreme!' is the Shema spoken before Sinai — Elohim only, one."},
+        {"src_ch": 17, "src_v": 7, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 44, "tgt_v": 6, "tier": "free",
+         "note": "Isaiah 44:6 — *Thus saith Yahuah (LORD) the King of Yashar'el (Israel), and his redeemer Yahuah Tseva'ot (LORD of hosts); I am the first, and I am the last; and beside me there is no Elohim (God).* The 'Elohim only — Supreme' of the song is Isaiah's first-and-last beside whom there is no other."},
+        {"src_ch": 17, "src_v": 8, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 90, "tgt_v": 2, "tier": "free",
+         "note": "Psalms 90:2 — *Before the mountains were brought forth, or ever thou hadst formed the earth and the world, even from everlasting to everlasting, thou art Elohim (God).* The 'Uncreate, without father, without mother, unbegotten' One is the everlasting-to-everlasting Elohim of Moses."},
+        {"src_ch": 17, "src_v": 8, "tgt_edition": "canon", "tgt_book": "1-timothy", "tgt_ch": 1, "tgt_v": 17, "tier": "free",
+         "note": "1 Timothy 1:17 — *Now unto the King eternal, immortal, invisible, the only wise Elohim (God), be honour and glory for ever and ever. Amen.* Paul's doxology echoes Abraham's song word for word — eternal, immortal, the only Elohim."},
+        {"src_ch": 17, "src_v": 9, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 6, "tgt_v": 3, "tier": "free",
+         "note": "Isaiah 6:3 — *And one cried unto another, and said, Holy, holy, holy, is Yahuah Tseva'ot (LORD of hosts): the whole earth is full of his glory.* Abraham's 'holy Sabaoth, very glorious' is the seraphim's Holy, holy, holy of the LORD of hosts."}
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-17-jaoel-name-bearer",
+      "title": "El, El, El, Jaoel — the angel in whom is the Name",
+      "summary_md": "The climax of the song names the angel-guide by the Name he bears: *El, El, El, El, Jaoel!* (Apocalypse of Abraham 17:10) — *Thou art He whom my soul hath loved!* (Apocalypse of Abraham 17:11). Yahoel is the angel of the Presence in whom the Name dwells. It ain't new — this is the Angel Yahuah sends before Yashar'el: *Behold, I send an Angel before thee, to keep thee in the way, and to bring thee into the place which I have prepared* (Exodus 23:20); *Beware of him, and obey his voice, provoke him not; for he will not pardon your transgressions: for my name is in him* (Exodus 23:21). The ministers of fire that Abraham ascends among are spirits: *Who maketh his angels spirits; his ministers a flaming fire:* (Psalms 104:4) — which Hebrews carries forward: *And of the angels he saith, Who maketh his angels spirits, and his ministers a flame of fire* (Hebrews 1:7).",
+      "anchor_start_v": 10,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 17, "src_v": 10, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 23, "tgt_v": 20, "tier": "free",
+         "note": "Exodus 23:20 — *Behold, I send an Angel before thee, to keep thee in the way, and to bring thee into the place which I have prepared.* Yahoel who leads Abraham up is the Angel sent before to keep the way and bring to the prepared place."},
+        {"src_ch": 17, "src_v": 10, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 23, "tgt_v": 21, "tier": "free",
+         "note": "Exodus 23:21 — *Beware of him, and obey his voice, provoke him not; for he will not pardon your transgressions: for my name is in him.* 'Jaoel' is the very 'my name is in him' — the Name-bearing angel of the Presence."},
+        {"src_ch": 17, "src_v": 10, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 104, "tgt_v": 4, "tier": "free",
+         "note": "Psalms 104:4 — *Who maketh his angels spirits; his ministers a flaming fire:* The fiery angel Yahoel is one of the flaming-fire ministers David sings."}
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-17-the-light-before-the-light",
+      "title": "The Light before the morning light",
+      "summary_md": "The song closes adoring the uncreated Light: *Thou, O Light, shinest before the light of the morning upon Thy creatures, so that it becometh a day upon the earth; and in Thy heavenly dwelling-places there is no need of any other light than that of the unspeakable splendour from the lights of Thy countenance* (Apocalypse of Abraham 17:13). It ain't new — this is the light of the first day before sun or moon, and the message John declares: *This then is the message which we have heard of him, and declare unto you, that Elohim (God) is light, and in him is no darkness at all* (1 John 1:5). Every light flows down from Him: *Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning* (James 1:17) — He *Who only hath immortality, dwelling in the light which no man can approach unto; whom no man hath seen, nor can see: to whom be honour and power everlasting. Amen* (1 Timothy 6:16). It is the city's lamp at the end, where no other light is needed.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 17, "src_v": 13, "tgt_edition": "canon", "tgt_book": "1-john", "tgt_ch": 1, "tgt_v": 5, "tier": "free",
+         "note": "1 John 1:5 — *This then is the message which we have heard of him, and declare unto you, that Elohim (God) is light, and in him is no darkness at all.* The Light that shines before the morning, needing no other light, is the Elohim-is-light John declares."},
+        {"src_ch": 17, "src_v": 13, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 17, "tier": "free",
+         "note": "James 1:17 — *Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning.* The splendour from the lights of His countenance is the Father of lights, with whom is no shadow of turning."},
+        {"src_ch": 17, "src_v": 13, "tgt_edition": "canon", "tgt_book": "1-timothy", "tgt_ch": 6, "tgt_v": 16, "tier": "free",
+         "note": "1 Timothy 6:16 — *Who only hath immortality, dwelling in the light which no man can approach unto; whom no man hath seen, nor can see: to whom be honour and power everlasting. Amen.* The heavenly dwelling-places of unspeakable splendour are the unapproachable light in which He dwells."}
+      ]
+    },
+    {
+      "slug": "apocalypse-of-abraham-17-the-sacrifice-prepared",
+      "title": "The sacrifice prepared through me",
+      "summary_md": "Abraham ends his song pleading the covenant offering: *Accept my prayer, and be well-pleased with it, likewise also the sacrifice which Thou hast prepared Thee through me who sought Thee!* (Apocalypse of Abraham 17:14). It ain't new — this is the very scene of Genesis 15, the cut covenant where the fire of the Presence passes between the pieces: *And it came to pass, that, when the sun went down, and it was dark, behold a smoking furnace, and a burning lamp that passed between those pieces* (Genesis 15:17); *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:* (Genesis 15:18). And the throne-fire he now ascends toward is the seven-lamp fire before the throne: *And out of the throne proceeded lightnings and thunderings and voices: and there were seven lamps of fire burning before the throne, which are the seven Spirits of Elohim (God)* (Revelation 4:5). The fire that received the covenant sacrifice is the fire of the throne.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 17, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 15, "tgt_v": 17, "tier": "free",
+         "note": "Genesis 15:17 — *And it came to pass, that, when the sun went down, and it was dark, behold a smoking furnace, and a burning lamp that passed between those pieces.* The 'sacrifice which Thou hast prepared through me' is the very covenant cutting of Genesis 15, where the fire passed between the pieces."},
+        {"src_ch": 17, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 15, "tgt_v": 18, "tier": "free",
+         "note": "Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:* The accepted sacrifice seals the land-and-seed covenant Yahuah cut with Abram."},
+        {"src_ch": 17, "src_v": 14, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 4, "tgt_v": 5, "tier": "free",
+         "note": "Revelation 4:5 — *And out of the throne proceeded lightnings and thunderings and voices: and there were seven lamps of fire burning before the throne, which are the seven Spirits of Elohim (God).* The fire that received Abraham's offering is the lamp-fire burning before the throne he ascends toward."}
+      ]
+    }
+  ]
+}
