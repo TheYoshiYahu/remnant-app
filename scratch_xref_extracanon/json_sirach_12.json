@@ -1,0 +1,64 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 12,
+  "session": "session253",
+  "tag": "sir12",
+  "base_band": 58575,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-12-do-good-to-the-worthy",
+      "title": "Do good — and to whom: the wisdom of discerning charity",
+      "summary_md": "Ben Sira opens with a wisdom counsel on charity: *When you will do good know to whom you do it; so shall you be thanked for your benefits* (Ecclesiasticus 12:1), *Do good to the godly man, and you shall find a recompence; and if not from him, yet from the Most High* (Ecclesiasticus 12:2). This is the Proverbs ethic of the open hand turned toward the worthy — *Give to the godly man, and help not a sinner* (Ecclesiasticus 12:4). The Sermon on the Mount pushes the same root deeper toward the enemy: *But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;* (Matthew 5:44). And the Tanakh already carried the coal: *If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink:* (Proverbs 25:21), which Sha'ul gathers up — *Therefore if thine enemy hunger, feed him; if he thirst, give him drink: for in so doing thou shalt heap coals of fire on his head.* (Romans 12:20). It ain't new: Sirach is the same covenant ethic, only more guarded — where the Tanakh and the NT press feeding the enemy, ben Sira warns that kindness to the unrepentant sinner can return as harm, *lest you shall receive twice as much evil for all the good you shall have done to him*. The same wisdom stream, weighing mercy against discernment.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 12, "src_v": 1, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 25, "tgt_v": 21, "tier": "free",
+         "note": "Proverbs 25:21 — *If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink:* the Tanakh root of beneficence that Sirach 12:1 frames with discernment of the recipient."},
+        {"src_ch": 12, "src_v": 2, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 5, "tgt_v": 44, "tier": "free",
+         "note": "Matthew 5:44 — *But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;* the Sermon presses doing-good outward to the enemy where Sirach 12:2 anchors the recompence in the Most High."},
+        {"src_ch": 12, "src_v": 4, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 12, "tgt_v": 20, "tier": "free",
+         "note": "Romans 12:20 — *Therefore if thine enemy hunger, feed him; if he thirst, give him drink: for in so doing thou shalt heap coals of fire on his head.* Sha'ul commands feeding the enemy; Sirach 12:4 is the guarded counterpart, 'Give to the godly man, and help not a sinner.'"},
+        {"src_ch": 12, "src_v": 6, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 6, "tgt_v": 7, "tier": "extras",
+         "note": "Ecclesiasticus 6:7 — *If you would get a friend, prove him first and be not hasty to credit him.* the same wisdom prudence ben Sira applies to charity in Sirach 12:6, that the Most High repays the ungodly, calls for proving a man before trusting him."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-12-never-trust-thine-enemy",
+      "title": "Never trust thine enemy, though he speak fair",
+      "summary_md": "The chapter turns to the heart of its warning: *Never trust your enemy: for like as iron rusteth, so is his wickedness* (Ecclesiasticus 12:10), *Though he humble himself, and go crouching, yet take good heed and beware of him... you shall know that his rust has not been altogether wiped away* (Ecclesiasticus 12:11). The smooth speech hides the pit: *An enemy speaks sweetly with his lips, but in his heart he imagineth how to throw you into a pit* (Ecclesiasticus 12:16). This is pure Proverbs: *He that hateth dissembleth with his lips, and layeth up deceit within him;* (Proverbs 26:24), *When he speaketh fair, believe him not: for there are seven abominations in his heart.* (Proverbs 26:25), *Whose hatred is covered by deceit, his wickedness shall be shewed before the whole congregation.* (Proverbs 26:26) — and the famous *Faithful are the wounds of a friend; but the kisses of an enemy are deceitful.* (Proverbs 27:6). The prophet Micah carries the same hard discernment into the last-days remnant: *Trust ye not in a friend, put ye not confidence in a guide: keep the doors of thy mouth from her that lieth in thy bosom.* (Micah 7:5). It ain't new — Sirach's 'beware the crouching enemy' is the wisdom tradition's settled testimony that fair words conceal a covered heart.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 12, "src_v": 16, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 26, "tgt_v": 24, "tier": "free",
+         "note": "Proverbs 26:24 — *He that hateth dissembleth with his lips, and layeth up deceit within him;* the exact portrait of Sirach 12:16's enemy who speaks sweetly while imagining the pit."},
+        {"src_ch": 12, "src_v": 11, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 26, "tgt_v": 25, "tier": "free",
+         "note": "Proverbs 26:25 — *When he speaketh fair, believe him not: for there are seven abominations in his heart.* answers Sirach 12:11's warning that the crouching, humbled enemy's rust 'has not been altogether wiped away.'"},
+        {"src_ch": 12, "src_v": 10, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 27, "tgt_v": 6, "tier": "free",
+         "note": "Proverbs 27:6 — *Faithful are the wounds of a friend; but the kisses of an enemy are deceitful.* the proverbial blade behind Sirach 12:10's 'Never trust your enemy: for like as iron rusteth, so is his wickedness.'"},
+        {"src_ch": 12, "src_v": 12, "tgt_edition": "canon", "tgt_book": "micah", "tgt_ch": 7, "tgt_v": 5, "tier": "free",
+         "note": "Micah 7:5 — *Trust ye not in a friend, put ye not confidence in a guide: keep the doors of thy mouth from her that lieth in thy bosom.* the prophet's last-days discernment matching Sirach 12:12's caution not to seat the enemy at your right hand."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-12-the-feigned-friend-lifts-the-heel",
+      "title": "The feigned friend who departs in adversity and lifts up the heel",
+      "summary_md": "Ben Sira measures friendship by the day of trouble: *A friend cannot be known in prosperity: and an enemy cannot be hidden in adversity* (Ecclesiasticus 12:8), *In the prosperity of a man enemies will be grieved: but in his adversity even a friend will depart* (Ecclesiasticus 12:9), and *For a while he will abide with you, but if you begin to fall, he will not tarry* (Ecclesiasticus 12:15). The feigned helper turns saboteur — *though he pretend to help you, yet shall he undermine you* (Ecclesiasticus 12:17). This is David's lament over the betrayer at his own table: *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me.* (Psalm 41:9) — the very word Yahusha sealed at the Last Supper, fulfilled in the kiss: *And forthwith he came to Yahusha (Jesus), and said, Hail, master; and kissed him.* (Matthew 26:49). Ben Sira's own wisdom-pack on friendship names the same false companion: *For some man is a friend for his own occasion, and will not abide in the day of your trouble* (Ecclesiasticus 6:8), *some friend is a companion at the table, and will not continue in the day of your affliction* (Ecclesiasticus 6:10). It ain't new: the table-fellow who lifts the heel runs from the Psalter through ben Sira to the betrayal of the Messiah.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 12, "src_v": 9, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 41, "tgt_v": 9, "tier": "free",
+         "note": "Psalm 41:9 — *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me.* David's table-betrayer is the archetype of Sirach 12:9's friend who departs in the day of adversity."},
+        {"src_ch": 12, "src_v": 17, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 26, "tgt_v": 49, "tier": "free",
+         "note": "Matthew 26:49 — *And forthwith he came to Yahusha (Jesus), and said, Hail, master; and kissed him.* the feigned friend of Sirach 12:17 who 'pretends to help' yet undermines, fulfilled in the betrayer's kiss."},
+        {"src_ch": 12, "src_v": 15, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 6, "tgt_v": 8, "tier": "extras",
+         "note": "Ecclesiasticus 6:8 — *For some man is a friend for his own occasion, and will not abide in the day of your trouble.* ben Sira's own friendship-pack naming the companion of Sirach 12:15 who will not tarry once you begin to fall."},
+        {"src_ch": 12, "src_v": 8, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 6, "tgt_v": 10, "tier": "extras",
+         "note": "Ecclesiasticus 6:10 — *Again, some friend is a companion at the table, and will not continue in the day of your affliction.* the table-friend exposed by adversity, the very test Sirach 12:8 sets for knowing friend from enemy."}
+      ]
+    }
+  ]
+}
