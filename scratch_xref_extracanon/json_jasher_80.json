@@ -1,0 +1,134 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 80,
+  "session": "session252",
+  "tag": "ja80",
+  "base_band": 56975,
+  "threads": [
+    {
+      "slug": "jasher-80-let-my-people-go",
+      "title": "Let My People Go — Pharaoh Will Not Hearken",
+      "summary_md": "Jasher opens the deliverance with the demand and the hardened heart: *And at the end of two years, Yahuah (the Lord) again sent Moses to Pharaoh to bring forth the children of Israel, and to send them out of the land of Egypt.* (Jasher 80:1) — *And Moses went and came to the house of Pharaoh, and he spoke to him the words of Yahuah (the Lord) who had sent him, but Pharaoh would not hearken to the voice of Yahuah (the Lord), and Elohim (God) roused his might in Egypt upon Pharaoh and his subjects, and Elohim smote Pharaoh and his people with very great and sore plagues.* (Jasher 80:2). It ain't new — Exodus carries the same word and the same refusal: *And thou shalt say unto him, Yahuah Elohim (The LORD God) of the Hebrews hath sent me unto thee, saying, Let my people go, that they may serve me in the wilderness: and, behold, hitherto thou wouldest not hear.* (Exodus 7:16). The Name itself is the issue Pharaoh would not bow to: *Thus saith Yahuah (LORD), In this thou shalt know that I am Yahuah (LORD)* (Exodus 7:17). Jubilees tells the very same sending and signs: *And I delivered you out of his hand, and you did perform the signs and wonders which you were sent to perform in Egypt against Pharaoh, and against all his house, and against his servants and his people.* (Jubilees 48:4).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 80, "src_v": 1, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 7, "tgt_v": 16, "tier": "free",
+         "note": "Exodus 7:16 — *And thou shalt say unto him, Yahuah Elohim (The LORD God) of the Hebrews hath sent me unto thee, saying, Let my people go, that they may serve me in the wilderness: and, behold, hitherto thou wouldest not hear.* The same charge Jasher 80:1 retells — Moses sent again to bring Israel out."},
+        {"src_ch": 80, "src_v": 2, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 7, "tgt_v": 17, "tier": "free",
+         "note": "Exodus 7:17 — *Thus saith Yahuah (LORD), In this thou shalt know that I am Yahuah (LORD): behold, I will smite with the rod that is in mine hand upon the waters which are in the river, and they shall be turned to blood.* Pharaoh's refusal to hearken to the voice of Yahuah in Jasher 80:2 is the refusal to know the Name."},
+        {"src_ch": 80, "src_v": 2, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 48, "tgt_v": 4, "tier": "extras",
+         "note": "Jubilees 48:4 — *And I delivered you out of his hand, and you did perform the signs and wonders which you were sent to perform in Egypt against Pharaoh, and against all his house, and against his servants and his people.* Jubilees names the same sending against Pharaoh and his subjects that Jasher 80:2 records."}
+      ]
+    },
+    {
+      "slug": "jasher-80-blood-frogs-lice",
+      "title": "Blood, Frogs, and Lice — the First Plagues",
+      "summary_md": "Jasher walks the plagues in order. The waters become blood: *And Yahuah (the Lord) sent by the hand of Aaron and turned all the waters of Egypt into blood, with all their streams and rivers.* (Jasher 80:3). Then the frogs: *And Yahuah (the Lord) sent again and caused all their waters to bring forth frogs, and all the frogs came into the houses of the Egyptians.* (Jasher 80:6). Then the lice: *And he sent and smote their dust to lice, and the lice became in Egypt to the height of two cubits upon the earth.* (Jasher 80:10). Each is the Exodus account amplified: *Take thy rod, and stretch out thine hand upon the waters of Egypt... that they may become blood* (Exodus 7:19); *the river shall bring forth frogs abundantly, which shall go up and come into thine house* (Exodus 8:3); *smite the dust of the land, that it may become lice* (Exodus 8:16). The Psalmist sings the same judgments back: *He turned their waters into blood, and slew their fish. Their land brought forth frogs in abundance, in the chambers of their kings.* (Psalm 105:29-30).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 80, "src_v": 3, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 7, "tgt_v": 19, "tier": "free",
+         "note": "Exodus 7:19 — *And Yahuah (LORD) spake unto Moses, Say unto Aaron, Take thy rod, and stretch out thine hand upon the waters of Egypt, upon their streams, upon their rivers, and upon their ponds, and upon all their pools of water, that they may become blood; and that there may be blood throughout all the land of Egypt, both in vessels of wood, and in vessels of stone.* The blood-by-the-hand-of-Aaron of Jasher 80:3 is Exodus' own first plague."},
+        {"src_ch": 80, "src_v": 6, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 8, "tgt_v": 3, "tier": "free",
+         "note": "Exodus 8:3 — *And the river shall bring forth frogs abundantly, which shall go up and come into thine house, and into thy bedchamber, and upon thy bed, and into the house of thy servants, and upon thy people, and into thine ovens, and into thy kneadingtroughs:* The frogs filling the Egyptians' houses in Jasher 80:6 match Exodus' second plague."},
+        {"src_ch": 80, "src_v": 10, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 8, "tgt_v": 16, "tier": "free",
+         "note": "Exodus 8:16 — *And Yahuah (LORD) said unto Moses, Say unto Aaron, Stretch out thy rod, and smite the dust of the land, that it may become lice throughout all the land of Egypt.* The dust turned to lice in Jasher 80:10 is Exodus' third plague."},
+        {"src_ch": 80, "src_v": 6, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 30, "tier": "free",
+         "note": "Psalm 105:30 — *Their land brought forth frogs in abundance, in the chambers of their kings.* The Psalmist recites the same frog-plague Jasher 80:6 narrates."}
+      ]
+    },
+    {
+      "slug": "jasher-80-swarms-pestilence-boils",
+      "title": "Swarms, Pestilence, and Boils — Goshen Severed",
+      "summary_md": "The wild swarms come: *And Yahuah (the Lord) sent all kinds of beasts of the field into Egypt, and they came and destroyed all Egypt, man and beast, and trees, and all things that were in Egypt.* (Jasher 80:13). Then the murrain on the cattle, with Israel's flocks kept whole: *And there remained of the cattle of the Egyptians only one in ten, and of the cattle belonging to Israel in Goshen not one died.* (Jasher 80:26). Then the boils: *And Elohim sent a burning inflammation in the flesh of the Egyptians, which burst their skins, and it became a severe itch in all the Egyptians from the soles of their feet to the crowns of their heads.* (Jasher 80:27). Exodus carries the swarms severed at Goshen — *I will sever in that day the land of Goshen, in which my people dwell, that no swarms of flies shall be there* (Exodus 8:22) — the murrain — *Yahuah (LORD) shall sever between the cattle of Yashar'el (Israel) and the cattle of Egypt* (Exodus 9:4) — and the boil: *a boil breaking forth with blains upon man, and upon beast* (Exodus 9:9). Jubilees lists the whole sequence in one breath: *and smote them through (the plagues of) blood and frogs, lice and dog-flies, and malignant boils breaking forth in blains; and their cattle by death* (Jubilees 48:5).",
+      "anchor_start_v": 13,
+      "anchor_end_v": 28,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 80, "src_v": 13, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 8, "tgt_v": 22, "tier": "free",
+         "note": "Exodus 8:22 — *And I will sever in that day the land of Goshen, in which my people dwell, that no swarms of flies shall be there; to the end thou mayest know that I am Yahuah (LORD) in the midst of the earth.* The swarms loosed on all Egypt in Jasher 80:13 are Exodus' swarm-plague, with Goshen kept apart."},
+        {"src_ch": 80, "src_v": 26, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 9, "tgt_v": 4, "tier": "free",
+         "note": "Exodus 9:4 — *And Yahuah (LORD) shall sever between the cattle of Yashar'el (Israel) and the cattle of Egypt: and there shall nothing die of all that is the children's of Yashar'el (Israel).* Jasher 80:26's Goshen herds untouched while Egypt's perish is Exodus' own severing — election kept."},
+        {"src_ch": 80, "src_v": 27, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 9, "tgt_v": 9, "tier": "free",
+         "note": "Exodus 9:9 — *And it shall become small dust in all the land of Egypt, and shall be a boil breaking forth with blains upon man, and upon beast, throughout all the land of Egypt.* The burning inflammation bursting the Egyptians' skin in Jasher 80:27 is the plague of boils."},
+        {"src_ch": 80, "src_v": 24, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 48, "tgt_v": 5, "tier": "extras",
+         "note": "Jubilees 48:5 — *And Yahuah (God) executed a great vengeance on them for Yashar'el's (Israel's) sake, and smote them through (the plagues of) blood and frogs, lice and dog-flies, and malignant boils breaking forth in blains; and their cattle by death; and by hail-stones, thereby He destroyed everything that grew for them; and by locusts which devoured the residue which had been left by the hail, and by darkness; and (by the death) of the first-born of men and animals, and on all their idols Yahuah (God) took vengeance and burned them with fire.* Jubilees catalogs the same plague-sequence — pestilence on the cattle included — that Jasher 80:24-27 narrates."}
+      ]
+    },
+    {
+      "slug": "jasher-80-hail-locusts-darkness",
+      "title": "Hail, Locusts, and Three Days of Darkness",
+      "summary_md": "The hail with fire mingled: *And Yahuah (the Lord) sent a very heavy hail, which smote their vines and broke their fruit trees and dried them up that they fell upon them.* (Jasher 80:30) — *Also every green herb became dry and perished, for a mingling fire descended amidst the hail, therefore the hail and the fire consumed all things.* (Jasher 80:31). Then the locusts, swept into the Red Sea: *And Yahuah (the Lord) turned a mighty wind of the sea which took away all the locusts, even those that were salted, and thrust them into the Red Sea; not one locust remained within the boundaries of Egypt.* (Jasher 80:35). Then the darkness: *And Elohim sent darkness upon Egypt, that the whole land of Egypt and Pathros became dark for three days, so that a man could not see his hand when he lifted it to his mouth.* (Jasher 80:36). Exodus carries each: *fire mingled with the hail, very grievous* (Exodus 9:24); the west wind *took away the locusts, and cast them into the Red sea; there remained not one locust in all the coasts of Egypt* (Exodus 10:19); and *a thick darkness in all the land of Egypt three days* (Exodus 10:22).",
+      "anchor_start_v": 30,
+      "anchor_end_v": 40,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 80, "src_v": 31, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 9, "tgt_v": 24, "tier": "free",
+         "note": "Exodus 9:24 — *So there was hail, and fire mingled with the hail, very grievous, such as there was none like it in all the land of Egypt since it became a nation.* The mingling fire amidst the hail of Jasher 80:31 is Exodus' seventh plague exactly."},
+        {"src_ch": 80, "src_v": 35, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 10, "tgt_v": 19, "tier": "free",
+         "note": "Exodus 10:19 — *And Yahuah (LORD) turned a mighty strong west wind, which took away the locusts, and cast them into the Red sea; there remained not one locust in all the coasts of Egypt.* The sea-wind thrusting the locusts into the Red Sea in Jasher 80:35 is Exodus' own ending of the locust-plague."},
+        {"src_ch": 80, "src_v": 36, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 10, "tgt_v": 22, "tier": "free",
+         "note": "Exodus 10:22 — *And Moses stretched forth his hand toward heaven; and there was a thick darkness in all the land of Egypt three days:* The three days of darkness over Egypt and Pathros in Jasher 80:36 is the ninth plague."},
+        {"src_ch": 80, "src_v": 30, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 78, "tgt_v": 47, "tier": "free",
+         "note": "Psalm 78:47 — *He destroyed their vines with hail, and their sycomore trees with frost.* The hail smiting the Egyptians' vines and fruit trees in Jasher 80:30 is the judgment Asaph rehearses."}
+      ]
+    },
+    {
+      "slug": "jasher-80-passover-firstborn",
+      "title": "Keep the Passover — the Firstborn Smitten",
+      "summary_md": "Jasher gives the Passover command and the night of the tenth plague: *And the days of darkness passed away, and Yahuah (the Lord) sent Moses and Aaron to the children of Israel, saying, Celebrate your feast and make your Passover, for behold I come in the midst of the night amongst all the Egyptians, and I will smite all their first born, from the first born of a man to the first born of a beast, and when I see your Passover, I will pass over you.* (Jasher 80:41) — then *And it came to pass in the middle of the night, that Yahuah (the Lord) went forth in the midst of Egypt, and smote all the first born of the Egyptians, from the first born of man to the first born of beast.* (Jasher 80:43), and *for there was not a house in which there was not a corpse.* (Jasher 80:44). It ain't new — this is the ordinance kept forever: *when I see the blood, I will pass over you* (Exodus 12:13); *at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt* (Exodus 12:29); *for there was not a house where there was not one dead* (Exodus 12:30). Torah stands — the feast is eternal: *ye shall keep it a feast by an ordinance for ever* (Exodus 12:14). Jubilees keeps the same Passover sign: *Into every house on the lintels of which they saw the blood of a lamb of the first year, into (that) house they should not enter to slay, but should pass by (it)* (Jubilees 49:3).",
+      "anchor_start_v": 41,
+      "anchor_end_v": 44,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 80, "src_v": 41, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 12, "tgt_v": 13, "tier": "free",
+         "note": "Exodus 12:13 — *And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt.* The 'make your Passover... I will pass over you' of Jasher 80:41 is the very ordinance of Exodus 12."},
+        {"src_ch": 80, "src_v": 41, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 12, "tgt_v": 14, "tier": "free",
+         "note": "Exodus 12:14 — *And this day shall be unto you for a memorial; and ye shall keep it a feast to Yahuah (LORD) throughout your generations; ye shall keep it a feast by an ordinance for ever.* Torah stands — the feast Jasher 80:41 commands Israel to celebrate is kept for ever."},
+        {"src_ch": 80, "src_v": 43, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 12, "tgt_v": 29, "tier": "free",
+         "note": "Exodus 12:29 — *And it came to pass, that at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt, from the firstborn of Pharaoh that sat on his throne unto the firstborn of the captive that was in the dungeon; and all the firstborn of cattle.* The midnight smiting of the firstborn in Jasher 80:43 is Exodus' tenth plague word for word."},
+        {"src_ch": 80, "src_v": 44, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 12, "tgt_v": 30, "tier": "free",
+         "note": "Exodus 12:30 — *And Pharaoh rose up in the night, he, and all his servants, and all the Egyptians; and there was a great cry in Egypt; for there was not a house where there was not one dead.* Pharaoh rising and the houseless-of-the-living of Jasher 80:44 is Exodus' great cry."},
+        {"src_ch": 80, "src_v": 41, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 49, "tgt_v": 3, "tier": "extras",
+         "note": "Jubilees 49:3 — *And this is the sign which Yahuah (God) gave them: Into every house on the lintels of which they saw the blood of a lamb of the first year, into (that) house they should not enter to slay, but should pass by (it), that all those should be saved that were in the house because the sign of the blood was on its lintels.* Jubilees keeps the same blood-sign Passover Jasher 80:41 commands."}
+      ]
+    },
+    {
+      "slug": "jasher-80-judgment-on-the-gods",
+      "title": "Judgment on the Gods of Egypt",
+      "summary_md": "Jasher counts the full tally as Moses speaks it to Bathia: *And Moses said to her, Surely ten plagues did Yahuah (the Lord) bring upon Egypt; did any evil accrue to you from any of them? did one of them affect you? and she said, No.* (Jasher 80:51). The plagues were not random calamity but Yahuah's verdict on Egypt's idols and her gods. Exodus names the target: *For I will pass through the land of Egypt this night, and will smite all the firstborn in the land of Egypt, both man and beast; and against all the gods of Egypt I will execute judgment: I am Yahuah (LORD).* (Exodus 12:12). Numbers seals it at the burying of the firstborn: *upon their gods also Yahuah (LORD) executed judgments* (Numbers 33:4). And Jubilees says the same — the idols themselves were burned: *and on all their idols Yahuah (God) took vengeance and burned them with fire.* (Jubilees 48:5). Ten great judgments, Jubilees counts them too: *ten great and terrible judgments came on the land of Egypt* (Jubilees 48:7).",
+      "anchor_start_v": 51,
+      "anchor_end_v": 54,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 80, "src_v": 51, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 12, "tgt_v": 12, "tier": "free",
+         "note": "Exodus 12:12 — *For I will pass through the land of Egypt this night, and will smite all the firstborn in the land of Egypt, both man and beast; and against all the gods of Egypt I will execute judgment: I am Yahuah (LORD).* The ten plagues Moses counts in Jasher 80:51 are Yahuah's judgment on the gods of Egypt."},
+        {"src_ch": 80, "src_v": 51, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 33, "tgt_v": 4, "tier": "free",
+         "note": "Numbers 33:4 — *For the Egyptians buried all their firstborn, which Yahuah (LORD) had smitten among them: upon their gods also Yahuah (LORD) executed judgments.* The same verdict on Egypt's gods stands behind the ten plagues of Jasher 80:51."},
+        {"src_ch": 80, "src_v": 51, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 48, "tgt_v": 7, "tier": "extras",
+         "note": "Jubilees 48:7 — *And everything took place according to your words; ten great and terrible judgments came on the land of Egypt that you might execute vengeance on it for Yashar'el (Israel). And Yahuah (God) did everything for Yashar'el's (Israel's) sake, and according to His covenant, which He had ordained with Abraham that He would take vengeance on them as they had brought them by force into bondage.* Jubilees counts the same ten judgments Moses tallies in Jasher 80:51."}
+      ]
+    },
+    {
+      "slug": "jasher-80-exodus-with-josephs-bones",
+      "title": "The Covenant Oath, the Spoiling, and Joseph's Bones",
+      "summary_md": "Pharaoh at last drives them out, and the riches flow according to the ancient oath: *And all the Egyptians sent the Israelites forth, with great riches, sheep and oxen and precious things, according to the oath of Yahuah (the Lord) between him and our Father Abraham.* (Jasher 80:59) — *And the children of Israel asked of the Egyptians, vessels of silver, and vessels of gold, and garments, and the children of Israel stripped the Egyptians.* (Jasher 80:61). And Moses keeps the deathbed oath of Joseph: *And Moses hastened and rose up and went to the river of Egypt, and brought up from from there the coffin of Joseph and took it with him.* (Jasher 80:62). The covenant kept is the spine — Exodus carries the spoiling — *they borrowed of the Egyptians jewels of silver, and jewels of gold, and raiment... And they spoiled the Egyptians* (Exodus 12:35-36) — and the bones — *And Moses took the bones of Joseph with him* (Exodus 13:19), the oath first sworn in Genesis: *Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25). The seed kept, the promise to Abraham remembered.",
+      "anchor_start_v": 59,
+      "anchor_end_v": 63,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 80, "src_v": 61, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 12, "tgt_v": 36, "tier": "free",
+         "note": "Exodus 12:36 — *And Yahuah (LORD) gave the people favour in the sight of the Egyptians, so that they lent unto them such things as they required. And they spoiled the Egyptians.* The vessels of silver and gold and the stripping of Egypt in Jasher 80:61 is Exodus' spoiling."},
+        {"src_ch": 80, "src_v": 62, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 13, "tgt_v": 19, "tier": "free",
+         "note": "Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* Moses bringing up Joseph's coffin in Jasher 80:62 is the keeping of this oath."},
+        {"src_ch": 80, "src_v": 62, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 25, "tier": "free",
+         "note": "Genesis 50:25 — *And Joseph took an oath of the children of Yashar'el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* The deathbed oath Moses fulfills in Jasher 80:62 was sworn here, generations before."},
+        {"src_ch": 80, "src_v": 59, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 37, "tier": "free",
+         "note": "Psalm 105:37 — *He brought them forth also with silver and gold: and there was not one feeble person among their tribes.* The great riches by which Israel goes forth in Jasher 80:59 is the Psalmist's same departure with silver and gold."}
+      ]
+    }
+  ]
+}
