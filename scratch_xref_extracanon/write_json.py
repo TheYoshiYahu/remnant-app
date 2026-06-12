@@ -1,82 +1,90 @@
 import json
 
 data = {
-    "edition": "apocrypha",
-    "book": "1-maccabees",
-    "chapter": 11,
-    "session": "session253",
-    "tag": "1mac11",
-    "base_band": 61750,
-    "threads": [
-        {
-            "slug": "1-maccabees-11-shifting-crowns",
-            "title": "Two crowns upon one head — the kings of the north and the south",
-            "summary_md": "The chapter opens with Ptolemee marching north through deceit, *And the king of Egypt gathered together a great host, like the sand that lieth upon the sea shore, and many ships, and went about through deceit to get Alexander’s kingdom, and join it to his own* (1 Maccabees 11:1), until *Then Ptolemee entered into Antioch, where he set two crowns upon his head, the crown of Asia, and of Egypt* (1 Maccabees 11:13) — yet within days Alexander is beheaded and Ptolemee himself dies: *King Ptolemee also died the third day after, and they that were in the strong holds were slain one of another* (1 Maccabees 11:18). This is the very wrestle Daniel foresaw two centuries before, the king of the south and the king of the north grinding against each other, *And in the end of years they shall join themselves together; for the king’s daughter of the south shall come to the king of the north to make an agreement: but she shall not retain the power of the arm; neither shall he stand, nor his arm: but she shall be given up, and they that brought her, and he that begat her, and he that strengthened her in these times* (Daniel 11:6) — for here the daughter is taken from Alexander and given to Demetrius. It ain’t new: the kingdom-of-man rises and topples on schedule, and it is Yahuah who governs the turning. *He poureth contempt upon princes, and weakeneth the strength of the mighty* (Job 12:21), and *His breath goeth forth, he returneth to his earth; in that very day his thoughts perish* (Psalm 146:4). The crowns change heads while the King of the world keeps His covenant.",
-            "anchor_start_v": 1,
-            "anchor_end_v": 18,
-            "tier": "extras",
-            "members": [
-                {"src_ch": 11, "src_v": 13, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 11, "tgt_v": 6, "tier": "free",
-                 "note": "Daniel 11:6 — *And in the end of years they shall join themselves together; for the king’s daughter of the south shall come to the king of the north to make an agreement: but she shall not retain the power of the arm; neither shall he stand, nor his arm: but she shall be given up, and they that brought her, and he that begat her, and he that strengthened her in these times.* Daniel had already mapped this very marriage-alliance of the Ptolemaic daughter and the seizing of two crowns in 1 Maccabees 11:13."},
-                {"src_ch": 11, "src_v": 18, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 146, "tgt_v": 4, "tier": "free",
-                 "note": "Psalm 146:4 — *His breath goeth forth, he returneth to his earth; in that very day his thoughts perish.* Ptolemee crowns himself king of two realms and dies the third day after (1 Maccabees 11:18), his thoughts perishing exactly as the psalm warns of every son of Adam."},
-                {"src_ch": 11, "src_v": 17, "tgt_edition": "canon", "tgt_book": "job", "tgt_ch": 12, "tgt_v": 21, "tier": "free",
-                 "note": "Job 12:21 — *He poureth contempt upon princes, and weakeneth the strength of the mighty.* Alexander’s head sent to Ptolemee and Ptolemee’s own swift fall (1 Maccabees 11:17) are Yahuah’s hand emptying the mighty of their strength."},
-                {"src_ch": 11, "src_v": 12, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 21, "tgt_v": 1, "tier": "free",
-                 "note": "Proverbs 21:1 — *The king’s heart is in the hand of Yahuah (LORD), as the rivers of water: he turneth it whithersoever he will.* Ptolemee’s taking back his daughter and forsaking Alexander (1 Maccabees 11:12) only enacts a turning of kings’ hearts already held in Yahuah’s hand."}
-            ]
-        },
-        {
-            "slug": "1-maccabees-11-covenant-kept",
-            "title": "Because they keep covenants with us — the priesthood confirmed",
-            "summary_md": "Demetrius writes to ratify the standing of the remnant, *We are determined to do good to the people of the Yahudim (Jews), who are our friends, and keep covenants with us, because of their good will toward us* (1 Maccabees 11:33), and the king *confirmed him in the high priesthood, and in all the honours that he had before, and gave him preeminence among his chief friends* (1 Maccabees 11:27), even ordering that the decree be *set upon the holy mount in a conspicuous place* (1 Maccabees 11:37). Note the witness the heathen king bears: this people *keep covenants*. That is the whole testimony of the seed Yahuah preserves — the covenant people kept, not a new people replacing them. It ain’t new: the high priesthood confirmed here descends from the everlasting priesthood Yahuah swore at Peor, *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar’el (Israel)* (Numbers 25:13) — the zeal of Phinehas, the zeal of the Maccabean house. And the publishing of the decree on the holy mount is the old command, *And thou shalt write upon the stones all the words of this law very plainly* (Deuteronomy 27:8). The honours rest on the same covenant Yahuah swore to Israel, and the document stands as a perpetual witness, *And nothing of this shall be revoked from this time forth for ever* (1 Maccabees 11:36).",
-            "anchor_start_v": 27,
-            "anchor_end_v": 37,
-            "tier": "extras",
-            "members": [
-                {"src_ch": 11, "src_v": 33, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 21, "tgt_v": 1, "tier": "free",
-                 "note": "Proverbs 21:1 — *The king’s heart is in the hand of Yahuah (LORD), as the rivers of water: he turneth it whithersoever he will.* Demetrius is moved to do good and confirm the covenant-keeping Yahudim (1 Maccabees 11:33) because the heathen king’s heart is itself a river in Yahuah’s hand."},
-                {"src_ch": 11, "src_v": 27, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 25, "tgt_v": 13, "tier": "free",
-                 "note": "Numbers 25:13 — *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar’el (Israel).* The priesthood confirmed to Jonathan (1 Maccabees 11:27) descends from the everlasting priesthood Yahuah covenanted to zealous Phinehas, the same zeal the Maccabean house carries."},
-                {"src_ch": 11, "src_v": 37, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 27, "tgt_v": 8, "tier": "free",
-                 "note": "Deuteronomy 27:8 — *And thou shalt write upon the stones all the words of this law very plainly.* Setting the confirming decree upon the holy mount in a conspicuous place (1 Maccabees 11:37) echoes Israel’s command to publish the covenant words plainly upon the mountain stones."}
-            ]
-        },
-        {
-            "slug": "1-maccabees-11-faithful-deliver-the-king",
-            "title": "The Yahudim came at once and delivered the king",
-            "summary_md": "When Antioch rose against Demetrius, *the king called to the Yahudim (Jews) for help, who came to him all at once, and dispersing themselves through the city slew that day in the city to the number of an hundred thousand* (1 Maccabees 11:47), so that *Also they set fire on the city, and got many spoils that day, and delivered the king* (1 Maccabees 11:48). Three thousand of the faithful (1 Maccabees 11:44) overcome a city of a hundred and twenty thousand — the few against the many, as always with the remnant. It ain’t new: this is the old confidence of Jonathan son of Saul, *Come, and let us go over unto the garrison of these uncircumcised: it may be that Yahuah (LORD) will work for us: for there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). The deliverance is not the strength of three thousand swords but the covenant promise, *One man of you shall chase a thousand: for Yahuah Elohaychem (the LORD your God), he it is that fighteth for you, as he hath promised you* (Joshua 23:10). And the loosing and re-establishing of the king is itself the LORD’s work, *He looseth the bond of kings, and girdeth their loins with a girdle* (Job 12:18).",
-            "anchor_start_v": 44,
-            "anchor_end_v": 51,
-            "tier": "extras",
-            "members": [
-                {"src_ch": 11, "src_v": 47, "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 23, "tgt_v": 10, "tier": "free",
-                 "note": "Joshua 23:10 — *One man of you shall chase a thousand: for Yahuah Elohaychem (the LORD your God), he it is that fighteth for you, as he hath promised you.* The three thousand Yahudim routing the great city (1 Maccabees 11:47) enact the promise that the LORD multiplies the kept seed, one chasing a thousand."},
-                {"src_ch": 11, "src_v": 44, "tgt_edition": "canon", "tgt_book": "1-samuel", "tgt_ch": 14, "tgt_v": 6, "tier": "free",
-                 "note": "1 Samuel 14:6 — *And Jonathan said to the young man that bare his armour, Come, and let us go over unto the garrison of these uncircumcised: it may be that Yahuah (LORD) will work for us: for there is no restraint to Yahuah (LORD) to save by many or by few.* Jonathan sending only three thousand strong men to Antioch (1 Maccabees 11:44) trusts the same truth his namesake spoke, that Yahuah saves by few as easily as by many."},
-                {"src_ch": 11, "src_v": 48, "tgt_edition": "canon", "tgt_book": "job", "tgt_ch": 12, "tgt_v": 18, "tier": "free",
-                 "note": "Job 12:18 — *He looseth the bond of kings, and girdeth their loins with a girdle.* The faithful delivering and re-establishing the king (1 Maccabees 11:48) is Yahuah’s own loosing and girding of kings worked through His covenant people."}
-            ]
-        },
-        {
-            "slug": "1-maccabees-11-rent-clothes-and-prayed",
-            "title": "He rent his clothes, cast earth on his head, and prayed",
-            "summary_md": "At the plain of Nasor the ambush breaks Jonathan’s host so that *Insomuch as there was not one of them left, except Mattathias the son of Absalom, and Judas the son of Calphi, the captains of the host* (1 Maccabees 11:70) — and then the decisive act: *Then Jonathan rent his clothes, and cast earth upon his head, and prayed* (1 Maccabees 11:71). Only after the prayer does the tide turn, *Afterwards turning again to battle, he put them to flight, and so they ran away* (1 Maccabees 11:72). This is the posture of the man of the covenant in the dust before Yahuah, the very image of Joshua before the ark, *And Joshua rent his clothes, and fell to the earth upon his face before the ark of Yahuah (LORD) until the eventide, he and the elders of Yashar’el (Israel), and put dust upon their heads* (Joshua 7:6). It ain’t new: Israel’s victory was never in the sword but in the cry, *And the children of Yashar’el (Israel) said to Samuel, Cease not to cry unto Yahuah Eloheinu (the LORD our God) for us, that he will save us out of the hand of the Philistines* (1 Samuel 7:8). Jonathan prays, and the rout becomes a pursuit, *So there were slain of the heathen that day about three thousand men: but Jonathan returned to Jerusalem* (1 Maccabees 11:74) — the captain back at the holy city by the hand of Yahuah, not his own arm.",
-            "anchor_start_v": 70,
-            "anchor_end_v": 74,
-            "tier": "extras",
-            "members": [
-                {"src_ch": 11, "src_v": 71, "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 7, "tgt_v": 6, "tier": "free",
-                 "note": "Joshua 7:6 — *And Joshua rent his clothes, and fell to the earth upon his face before the ark of Yahuah (LORD) until the eventide, he and the elders of Yashar’el (Israel), and put dust upon their heads.* Jonathan rending his clothes and casting earth on his head when the battle failed (1 Maccabees 11:71) is the very mourning-before-Yahuah of Joshua at Ai."},
-                {"src_ch": 11, "src_v": 71, "tgt_edition": "canon", "tgt_book": "1-samuel", "tgt_ch": 7, "tgt_v": 8, "tier": "free",
-                 "note": "1 Samuel 7:8 — *And the children of Yashar’el (Israel) said to Samuel, Cease not to cry unto Yahuah Eloheinu (the LORD our God) for us, that he will save us out of the hand of the Philistines.* Jonathan’s prayer in the dust (1 Maccabees 11:71) follows Israel’s pattern: deliverance comes through the cry to Yahuah, not the strength of the host."},
-                {"src_ch": 11, "src_v": 72, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 17, "tgt_v": 11, "tier": "free",
-                 "note": "Exodus 17:11 — *And it came to pass, when Moses held up his hand, that Yashar’el (Israel) prevailed: and when he let down his hand, Amalek prevailed.* That Jonathan prevails only after he prays (1 Maccabees 11:72) echoes Amalek’s defeat hanging on uplifted hands of intercession rather than the sword alone."}
-            ]
-        }
-    ]
+  "edition": "apocrypha", "book": "2-esdras", "chapter": 11,
+  "session": "session253", "tag": "2esd11", "base_band": 63250,
+  "threads": [
+    {
+      "slug": "2-esdras-11-eagle-from-the-sea",
+      "title": "The eagle out of the sea — the fourth beast",
+      "summary_md": "Ezra dreams: *Then saw I a dream, and, behold, there came up from the sea an eagle, which had twelve feathered wings, and three heads.* (2 Esdras 11:1) It ain't new — Daniel had already seen the four beasts rise from the same waters: *And four great beasts came up from the sea, diverse one from another.* (Daniel 7:3) And John stood where Ezra stood: *And I stood upon the sand of the sea, and saw a beast rise up out of the sea, having seven heads and ten horns, and upon his horns ten crowns, and upon his heads the name of blasphemy.* (Revelation 13:1) The sea is the churning of the nations, and out of it comes the kingdom-of-man that wears the wings of empire.",
+      "anchor_start_v": 1, "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 1, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 7, "tgt_v": 3, "tier": "free",
+         "note": "Daniel 7:3 — *And four great beasts came up from the sea, diverse one from another.* The eagle of 2 Esdras 11:1 rises from the same sea as Daniel's four beasts, the same vision of empire reworked for Ezra."},
+        {"src_ch": 11, "src_v": 1, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 13, "tgt_v": 1, "tier": "free",
+         "note": "Revelation 13:1 — *And I stood upon the sand of the sea, and saw a beast rise up out of the sea, having seven heads and ten horns, and upon his horns ten crowns, and upon his heads the name of blasphemy.* John's beast and Ezra's eagle both ascend from the sea, the kingdom-of-man surfacing out of the nations."}
+      ]
+    },
+    {
+      "slug": "2-esdras-11-reigned-over-all-the-earth",
+      "title": "Subject to her — dominion over all the earth",
+      "summary_md": "The eagle's reach is total: *And I saw that all things under heaven were subject to her, and no man spoke against her, no, not one creature upon earth.* (2 Esdras 11:6) Daniel said it of the fourth kingdom: *the fourth beast shall be the fourth kingdom upon earth, which shall be diverse from all kingdoms, and shall devour the whole earth, and shall tread it down, and break it in pieces.* (Daniel 7:23) And Revelation: *And it was given unto him to make war with the saints, and to overcome them: and power was given him over all kindreds, and tongues, and nations.* (Revelation 13:7) The empire claims the whole compass of the earth — but it is *given*, on a leash, and the Most High will call in the lease.",
+      "anchor_start_v": 5, "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 6, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 7, "tgt_v": 23, "tier": "free",
+         "note": "Daniel 7:23 — *Thus he said, The fourth beast shall be the fourth kingdom upon earth, which shall be diverse from all kingdoms, and shall devour the whole earth, and shall tread it down, and break it in pieces.* The eagle to whom all things under heaven are subject (2 Esdras 11:6) is Daniel's whole-earth-devouring fourth kingdom."},
+        {"src_ch": 11, "src_v": 6, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 13, "tgt_v": 7, "tier": "free",
+         "note": "Revelation 13:7 — *And it was given unto him to make war with the saints, and to overcome them: and power was given him over all kindreds, and tongues, and nations.* The beast's power over all nations matches the eagle whom no creature upon earth dares speak against (2 Esdras 11:6)."}
+      ]
+    },
+    {
+      "slug": "2-esdras-11-three-heads-seven-kings",
+      "title": "The three heads and the wings — heads, horns, kings",
+      "summary_md": "The structure of the beast is counted out: *And there was no more upon the eagle's body, but three heads that rested, and six little wings.* (2 Esdras 11:23) John's angel decodes the same anatomy: *And here is the mind which hath wisdom. The seven heads are seven mountains, on which the woman sitteth.* (Revelation 17:9) *And the ten horns which thou sawest are ten kings, which have received no kingdom as yet; but receive power as kings one hour with the beast.* (Revelation 17:12) Heads and wings, heads and horns — the apocalyptists count the kings of the kingdom-of-man system, each rising for its hour and passing away.",
+      "anchor_start_v": 22, "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 23, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 17, "tgt_v": 9, "tier": "free",
+         "note": "Revelation 17:9 — *And here is the mind which hath wisdom. The seven heads are seven mountains, on which the woman sitteth.* The eagle's three heads (2 Esdras 11:23) belong to the same head-counting apocalyptic that John's angel reads as kings and mountains."},
+        {"src_ch": 11, "src_v": 23, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 17, "tgt_v": 12, "tier": "free",
+         "note": "Revelation 17:12 — *And the ten horns which thou sawest are ten kings, which have received no kingdom as yet; but receive power as kings one hour with the beast.* The eagle's wings that rise and reign and appear no more (2 Esdras 11:23) are the same short-lived kings John numbers as the ten horns."}
+      ]
+    },
+    {
+      "slug": "2-esdras-11-much-oppression",
+      "title": "Much oppression — the head that put the earth in fear",
+      "summary_md": "The midmost head wakes and devours: *But this head put the whole earth in fear, and bare rule in it over all those that dwelt upon the earth with much oppression; and it had the governance of the world more than all the wings that had been.* (2 Esdras 11:32) Daniel saw this terror exactly: *After this I saw in the night visions, and behold a fourth beast, dreadful and terrible, and strong exceedingly; and it had great iron teeth: it devoured and brake in pieces, and stamped the residue with the feet of it: and it was diverse from all the beasts that were before it; and it had ten horns.* (Daniel 7:7) And the little horn that grows out of it speaks against the Most High: *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws.* (Daniel 7:25) The system rules by fear and oppression — and that is precisely its indictment.",
+      "anchor_start_v": 32, "anchor_end_v": 32,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 32, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 7, "tgt_v": 7, "tier": "free",
+         "note": "Daniel 7:7 — *After this I saw in the night visions, and behold a fourth beast, dreadful and terrible, and strong exceedingly; and it had great iron teeth: it devoured and brake in pieces, and stamped the residue with the feet of it: and it was diverse from all the beasts that were before it; and it had ten horns.* The head that put the whole earth in fear (2 Esdras 11:32) is Daniel's dreadful fourth beast that devours and tramples."},
+        {"src_ch": 11, "src_v": 32, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 7, "tgt_v": 25, "tier": "free",
+         "note": "Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* The head ruling with much oppression (2 Esdras 11:32) wears the face of Daniel's little horn that grinds the saints and presumes to change the times and law."}
+      ]
+    },
+    {
+      "slug": "2-esdras-11-lion-out-of-the-wood",
+      "title": "The roaring lion — the Lion of Judah judges the eagle",
+      "summary_md": "Against the eagle a deliverer rises: *And I beheld, and lo, as it were a roaring lion chased out of the wood: and I saw that he sent out a man's voice to the eagle, and said,* (2 Esdras 11:37) *Hear you, I will talk with you, and the Highest shall say to you,* (2 Esdras 11:38) This Lion is the Messiah of 4 Ezra — the same Lion John sees enthroned to open the sealed book and bring the kingdom-of-man to judgment: *behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof.* (Revelation 5:5) These shall make war with the Lamb — and the Lamb wins: *These shall make war with the Lamb, and the Lamb shall overcome them: for he is Lord of lords, and King of kings: and they that are with him are called, and chosen, and faithful.* (Revelation 17:14) The eagle terrifies the earth; the Lion speaks with a man's voice and ends it.",
+      "anchor_start_v": 37, "anchor_end_v": 38,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 37, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 5, "tgt_v": 5, "tier": "free",
+         "note": "Revelation 5:5 — *And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof.* The roaring lion who sends a man's voice against the eagle (2 Esdras 11:37) is the Messiah-Lion of Judah, Yahusha enthroned to judge the kingdom-of-man."},
+        {"src_ch": 11, "src_v": 37, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 17, "tgt_v": 14, "tier": "free",
+         "note": "Revelation 17:14 — *These shall make war with the Lamb, and the Lamb shall overcome them: for he is Lord of lords, and King of kings: and they that are with him are called, and chosen, and faithful.* The Lion who confronts the eagle (2 Esdras 11:37) overthrows the beast-system just as the Lamb overcomes the kings who war against him."}
+      ]
+    },
+    {
+      "slug": "2-esdras-11-fourth-beast-judged",
+      "title": "Art not thou the fourth beast — judgment and refreshing",
+      "summary_md": "The Lion names the eagle plainly and pronounces its end: *Art not you it that remainest of the four beasts, whom I made to reign in my world, that the end of their times might come through them?* (2 Esdras 11:39) Daniel had already seen the dominion stripped and given to the saints: *But the judgment shall sit, and they shall take away his dominion, to consume and to destroy it unto the end.* (Daniel 7:26) The eagle is told to vanish *that all the earth may be refreshed, and may return, being delivered from your violence, and that she may hope for the judgment and mercy of him that made her.* (2 Esdras 11:46) And the kingdom passes to the people of Elohim: *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* (Daniel 7:27) Dismantle the system — and the meek inherit the refreshed earth.",
+      "anchor_start_v": 39, "anchor_end_v": 46,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 39, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 7, "tgt_v": 26, "tier": "free",
+         "note": "Daniel 7:26 — *But the judgment shall sit, and they shall take away his dominion, to consume and to destroy it unto the end.* The Lion's verdict that the fourth beast's time ends through it (2 Esdras 11:39) is Daniel's seated judgment stripping the beast of its dominion."},
+        {"src_ch": 11, "src_v": 46, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 7, "tgt_v": 27, "tier": "free",
+         "note": "Daniel 7:27 — *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* When the eagle vanishes and the earth is refreshed (2 Esdras 11:46), the dominion passes to the saints of the Most High in Daniel's everlasting kingdom."}
+      ]
+    }
+  ]
 }
 
-with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_1_maccabees_11.json", "w") as f:
+with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_2_esdras_11.json", "w") as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
-print("written", len(data["threads"]), "threads", sum(len(t["members"]) for t in data["threads"]), "members")
+print("OK")
