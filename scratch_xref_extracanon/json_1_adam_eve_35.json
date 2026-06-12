@@ -1,0 +1,150 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 35,
+  "session": "session253",
+  "tag": "1ae35",
+  "base_band": 64850,
+  "threads": [
+    {
+      "slug": "1-adam-eve-35-word-comes-to-adam",
+      "title": "The Word of Elohim comes to the grieving Adam",
+      "summary_md": "*Then Elohim (God) looked again at Adam and his crying and groaning, and the Word of Elohim (God) came to him, and said to him* (1 Adam and Eve 35:1). From the very first day outside the garden it is the **Word** — the Logos — who comes to Adam, hears his groaning, and speaks. This is no created angel but the One of whom John testifies: *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God)* (John 1:1), and *All things were made by him; and without him was not any thing made that was made* (John 1:3). The same Word who walked in Eden in the cool of the day — *And they heard the voice of Yahuah Elohim (the LORD God) walking in the garden in the cool of the day* (Genesis 3:8) — now seeks the fallen man outside it. And the Word that comforts Adam in his exile is the Word that will at last *be made flesh, and dwell among us* (John 1:14) to bear that exile away. It ain't new: the Comforter of Adam is the Saviour of the world.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 35,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The Word who comes to Adam in 35:1 is the eternal Logos, Elohim Himself, not a created messenger."
+        },
+        {
+          "src_ch": 35,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "John 1:3 — *All things were made by him; and without him was not any thing made that was made.* The same Word who made Adam now stoops to comfort him in his crying and groaning."
+        },
+        {
+          "src_ch": 35,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Genesis 3:8 — *And they heard the voice of Yahuah Elohim (the LORD God) walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of Yahuah Elohim (the LORD God) amongst the trees of the garden.* The voice that walked in Eden is the Word who now comes to Adam outside it in 35:1."
+        },
+        {
+          "src_ch": 35,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* The Word who comforts the exiled Adam in 35:1 will one day take flesh to redeem that exile."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-35-garden-no-suffering",
+      "title": "In the garden no suffering; in the strange land the trials came",
+      "summary_md": "*O Adam, when you were in My garden, you knew neither eating nor drinking; neither faintness nor suffering; neither leanness of flesh, nor change; neither did sleep depart from thine eyes* (1 Adam and Eve 35:2). The Word names what Eden was: a place free of want, pain, and decay, where Yahuah had set the man — *And Yahuah Elohim (the LORD God) took the man, and put him into the garden of Eden to dress it and to keep it* (Genesis 2:15). That painless estate is precisely what the prophets promise will be restored at the end: *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4). The first garden and the New Jerusalem bracket the whole story — and at the river of the city stands again *the tree of life... and the leaves of the tree were for the healing of the nations* (Revelation 22:2). It ain't new: redemption is Eden regained.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 35,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 2:15 — *And Yahuah Elohim (the LORD God) took the man, and put him into the garden of Eden to dress it and to keep it.* The garden of 35:2, free of faintness and suffering, is the very Eden Yahuah first gave Adam to keep."
+        },
+        {
+          "src_ch": 35,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Revelation 21:4 — *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.* The no-suffering, no-change estate of the garden in 35:2 is exactly what is restored in the New Jerusalem."
+        },
+        {
+          "src_ch": 35,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The garden's deathless life of 35:2 returns at the tree of life in the city of Elohim."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-35-strange-land-curse",
+      "title": "The strange land: the trials that came by transgression",
+      "summary_md": "*But since you transgressed, and came into this strange land, all these trials are come over you* (1 Adam and Eve 35:2). The Word traces every trial to a single root — transgression. The warning had been plain: *But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die* (Genesis 2:17). When Adam ate, the ground itself was cursed and toil and sorrow became his bread: *cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life* (Genesis 3:17). Paul names the same hinge of history: *as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned* (Romans 5:12). The 'strange land' of exile and its trials are the very curse of Eden's fall — and the seed-war answer is already promised back in the garden: *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). It ain't new.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 35,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Genesis 2:17 — *But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die.* The transgression named in 35:2 is the breaking of this one command, the door to all the trials."
+        },
+        {
+          "src_ch": 35,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Genesis 3:17 — *And unto Adam he said, Because thou hast hearkened unto the voice of thy wife, and hast eaten of the tree, of which I commanded thee, saying, Thou shalt not eat of it: cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life.* The trials of the strange land in 35:2 are the curse pronounced over Adam at the fall."
+        },
+        {
+          "src_ch": 35,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 5,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Romans 5:12 — *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned.* Paul names the same one-man transgression that brought Adam into the strange land of suffering in 35:2."
+        },
+        {
+          "src_ch": 35,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* Even as the trials begin in 35:2, the seed-promise already stands as Yahuah's mercy against the serpent."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 47,
+  "session": "session253",
+  "tag": "1ae47",
+  "base_band": 65150,
+  "threads": [
+    {
+      "slug": "1-adam-eve-47-fear-of-death-and-the-promise",
+      "title": "The fire, the fear of death, and the longing for the promise",
+      "summary_md": "Scorched by the fire, Adam stares past this world into the next and cries for the only deliverance there is — that Elohim should come and keep His word: *\"Look, the fire has burnt our flesh in this world; but how will it be when we are dead, and Satan shall punish our souls? Is not our deliverance long and far off, unless Elohim (God) come, and in mercy to us fulfil His promise?\"* (1 Adam and Eve 47:2). It ain't new: the dread of death and the hope hung on a single Promise is the spine of the whole Book. The promise Adam clings to is the seed-promise spoken over the serpent the day they fell — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15). Death is the reign Adam fears, and Paul names how it came and how it ends — *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:* (Romans 5:12). And the \"unless Elohim come\" is answered in the fulness of time — *But when the fulness of the time was come, Elohim (God) sent forth his Son, made of a woman, made under the law,* (Galatians 4:4) — the very One who came to break the power Adam dreads — *that through death he might destroy him that had the power of death, that is, the devil;* (Hebrews 2:14).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 47,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* The \"promise\" Adam begs Elohim to fulfil is this seed-word, the only deliverance from the Satan he fears in 1 Adam and Eve 47:2."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 5,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Romans 5:12 — *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:* Paul traces the very death Adam dreads in 1 Adam and Eve 47:2 back to the one man's fall outside whose cave this scene is set."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 4,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Galatians 4:4 — *But when the fulness of the time was come, Elohim (God) sent forth his Son, made of a woman, made under the law,* This is the answer to Adam's \"unless Elohim come\" in 1 Adam and Eve 47:2 — the promised coming made flesh in due time."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 2,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Hebrews 2:14 — *Forasmuch then as the children are partakers of flesh and blood, he also himself likewise took part of the same; that through death he might destroy him that had the power of death, that is, the devil;* The deliverance Adam awaits in 1 Adam and Eve 47:2 is the breaking of the death-power he fears Satan will wield over his soul."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-47-prayer-for-forgiveness",
+      "title": "Calling on Elohim under the mountain — the way kept before Sinai",
+      "summary_md": "Driven from the cave by the fire, Adam and Eve go to their accustomed place and do what the holy seed does — they pray: *And they stood and prayed Elohim (God) to forgive them their sins, and then fell asleep under the summit of the mountain.* (1 Adam and Eve 47:6). The repentant calling on the Name is the Torah-way kept long before Sinai; it begins in Seth's line in the very next generation — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* (Genesis 4:26). It is mercy, not law-as-curse — the confidence that Elohim hears the contrite and pardons sin — *He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of Elohim (God) was manifested, that he might destroy the works of the devil.* (1 John 3:8).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 47,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* Adam's praying for forgiveness in 1 Adam and Eve 47:6 is the first keeping of this same calling-on-the-Name that runs down the holy seed-line."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 3,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "1 John 3:8 — *He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of Elohim (God) was manifested, that he might destroy the works of the devil.* Adam's plea for forgiven sin in 1 Adam and Eve 47:6 leans on the manifested Son who undoes the devil's works."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-47-satans-envy-of-the-covenant",
+      "title": "Satan's murderous envy — no covenant for him, so he plots to kill the seed",
+      "summary_md": "Now the chapter shows the seed-war from inside the enemy's heart. Because Adam has a covenant of salvation and a kingdom-inheritance, and Satan has none, the hater of all good resolves on murder to empty the earth of the seed: *\"Whereas Elohim (God) has promised salvation to Adam by covenant... but has not promised me by covenant... no, since He has promised him that He should make him and his descendants live in the kingdom in which I once was--I will kill Adam.\"* (1 Adam and Eve 47:7), *\"so that when he is dead he may not have any descendants left to inherit the kingdom...\"* (1 Adam and Eve 47:8). It ain't new: this is the serpent striking at her seed — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15) — and Messiah unmasks the murderer at the root — *Ye are of your father the devil... He was a murderer from the beginning, and abode not in the truth, because there is no truth in him.* (John 8:44). The first man to do the devil's bidding is the firstborn son, who slays the holy seed — *And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him.* (Genesis 4:8). And the phrase \"the kingdom in which I once was\" names the fallen one's lost estate — *Thou wast perfect in thy ways from the day that thou wast created, till iniquity was found in thee.* (Ezekiel 28:15) — the same envy that struck Eve in the garden — *And the third was named Gâdreêl: he it is who showed the children of men all the blows of death, and he led astray Eve...* (1 Enoch 69:10).",
+      "anchor_start_v": 7,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 47,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* Satan's plot to kill Adam and cut off his descendants in 1 Adam and Eve 47:7-8 is the serpent striking at the seed of the woman, the war declared at the fall."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 8,
+          "tgt_v": 44,
+          "tier": "free",
+          "note": "John 8:44 — *Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it.* Messiah names the very murderous beginning that 1 Adam and Eve 47:7 shows from within — \"I will kill Adam.\""
+        },
+        {
+          "src_ch": 47,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Genesis 4:8 — *And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him.* Satan's design to leave no seed to inherit the kingdom (1 Adam and Eve 47:8) is first carried out through Cain, who murders the righteous brother."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 28,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Ezekiel 28:15 — *Thou wast perfect in thy ways from the day that thou wast created, till iniquity was found in thee.* Satan's grievance over \"the kingdom in which I once was\" in 1 Adam and Eve 47:7 echoes this fall of the once-perfect anointed one."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 7,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 69,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "1 Enoch 69:10 — *And the third was named Gâdreêl: he it is who showed the children of men all the blows of death, and he led astray Eve, and showed [the weapons of death to the sons of men] the shield and the coat of mail, and the sword for battle, and all the weapons of death to the children of men.* The same envy that now plots Adam's death in 1 Adam and Eve 47:7 first led Eve astray and brought the blows of death into the world."
+        }
+      ]
+    }
+  ]
+}

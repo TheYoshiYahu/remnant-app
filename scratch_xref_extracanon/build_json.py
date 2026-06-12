@@ -1,97 +1,72 @@
 import json
 
 data = {
-  "edition": "apocrypha", "book": "1-maccabees", "chapter": 2,
-  "session": "session253", "tag": "1mac2", "base_band": 61525,
+  "edition": "adam-eve-conflict", "book": "1-adam-eve", "chapter": 42,
+  "session": "session253", "tag": "1ae42", "base_band": 65025,
   "threads": [
     {
-      "slug": "1-maccabees-2-sanctuary-profaned",
-      "title": "The sanctuary profaned — the abomination on the altar",
-      "summary_md": "Mattathias takes up the lament over a desecrated house: *And, behold, our sanctuary, even our beauty and our glory, is laid waste, and the Gentiles have profaned it.* (1 Maccabees 2:12). The same defilement is named a chapter before, when Antiochus' men *set up the abomination of desolation upon the altar* (1 Maccabees 1:54) — and that abomination is no new thing under the sun. Daniel had foreseen it: *And arms shall stand on his part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate.* (Daniel 11:31). And the Messiah Himself points to it still standing ahead: *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15). The kingdom of man profaning the holy place is the one antichrist pattern, from Antiochus to the end — the SYSTEM the faithful are called to refuse.",
-      "anchor_start_v": 12, "anchor_end_v": 12, "tier": "extras",
+      "slug": "1-adam-eve-42-word-promises-messiah",
+      "title": "The Word who comes to Adam foretells His own coming",
+      "summary_md": "It is the **Word of Elohim** Himself who comes down to the grieving Adam and speaks the first gospel outside the garden: *\"Then came the Word of Elohim (God) to Adam, and said to him\"* (1 Adam & Eve 42:1) — and the rest Adam longs for is not another patch of ground but *\"the kingdom of heaven where alone there is rest\"* (1 Adam & Eve 42:2), opened *\"after your judgment is past and fulfilled\"* (42:3). This is the Logos, the same Word who was *In the beginning... with Elohim (God), and the Word was Elohim (God)* (John 1:1) and who *was made flesh, and dwelt among us* (John 1:14). From the very first day east of Eden the One who walked with Adam is already promising to descend and save — *it ain't new*.",
+      "anchor_start_v": 1, "anchor_end_v": 4, "tier": "extras",
       "members": [
-        {"src_ch": 2, "src_v": 12, "tgt_edition": "apocrypha", "tgt_book": "1-maccabees", "tgt_ch": 1, "tgt_v": 54, "tier": "extras",
-         "note": "1 Maccabees 1:54 — *Now the fifteenth day of the month Casleu, in the hundred forty and fifth year, they set up the abomination of desolation upon the altar, and builded idol altars throughout the cities of Juda on every side;* This is the very profaning Mattathias mourns when he cries that the sanctuary is laid waste in 1 Maccabees 2:12."},
-        {"src_ch": 2, "src_v": 12, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 11, "tgt_v": 31, "tier": "free",
-         "note": "Daniel 11:31 — *And arms shall stand on his part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate.* Daniel foretold the polluting of the holy place that 1 Maccabees 2:12 sees come to pass under Antiochus."},
-        {"src_ch": 2, "src_v": 12, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 24, "tgt_v": 15, "tier": "free",
-         "note": "Matthew 24:15 — *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* The Messiah names the same desolating abomination as still to come, the antichrist pattern Mattathias already grieves in 1 Maccabees 2:12."}
+        {"src_ch": 42, "src_v": 1, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 1, "tgt_v": 1, "tier": "free",
+         "note": "John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The Word who comes down and speaks to Adam in 1 Adam & Eve 42:1 is this same eternal Logos, not a created messenger."},
+        {"src_ch": 42, "src_v": 4, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 1, "tgt_v": 14, "tier": "free",
+         "note": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* The Word who promises in 1 Adam & Eve 42:4 to bring Adam up into the kingdom will Himself take flesh to do it."},
+        {"src_ch": 42, "src_v": 2, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 4, "tgt_v": 9, "tier": "free",
+         "note": "Hebrews 4:9 — *There remaineth therefore a rest to the people of Elohim (God).* The true rest the Word names in 1 Adam & Eve 42:2 is the Sabbath-rest of the kingdom, still kept in store for the faithful."}
       ]
     },
     {
-      "slug": "1-maccabees-2-zeal-of-phinehas",
-      "title": "Inflamed with zeal — as Phinehas did",
-      "summary_md": "When an apostate steps forward to sacrifice on the heathen altar, Mattathias does not flinch: *Which thing when Mattathias saw, he was inflamed with zeal, and his reins trembled, neither could he forbear to shew his anger according to judgment: wherefore he ran, and slew him upon the altar.* (1 Maccabees 2:24), and the text names the pattern outright — *Thus dealt he zealously for the law of Yahuah (God) like as Phinees did to Zambri the son of Salom.* (1 Maccabees 2:26). The original act is in the Torah: *And when Phinehas, the son of Eleazar, the son of Aaron the priest, saw it, he rose up from among the congregation, and took a javelin in his hand;* (Numbers 25:7), and Yahuah seals it with a covenant — *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar'el (Israel).* (Numbers 25:13). The Psalm preserves it as righteousness for ever: *Then stood up Phinehas, and executed judgment: and so the plague was stayed. And that was counted unto him for righteousness unto all generations for evermore.* (Psalm 106:30-31). It ain't new — Mattathias' zeal is Phinehas' zeal, the same covenant jealousy for a holy people.",
-      "anchor_start_v": 24, "anchor_end_v": 26, "tier": "extras",
+      "slug": "1-adam-eve-42-water-of-life-golgotha-blood",
+      "title": "The Water of Life is His blood shed at Golgotha",
+      "summary_md": "Adam begged for the Water of Life, and the Word answers that it will be given — but as His own blood poured out on the cross: *\"on the day that I shall shed My blood on your head in the land of Golgotha. For My blood shall be the Water of Life to you at that time, and not to just you alone, but to all your descendants who shall believe in Me\"* (1 Adam & Eve 42:7-8). This is the very water the Messiah offered at the feast — *If any man thirst, let him come unto me, and drink* (John 7:37), promising *out of his belly shall flow rivers of living water* (John 7:38) — and the *pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1). The believing-in-Me of Adam's seed is the same drink offered freely to whosoever will: *let him take the water of life freely* (Revelation 22:17).",
+      "anchor_start_v": 5, "anchor_end_v": 8, "tier": "extras",
       "members": [
-        {"src_ch": 2, "src_v": 26, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 25, "tgt_v": 7, "tier": "free",
-         "note": "Numbers 25:7 — *And when Phinehas, the son of Eleazar, the son of Aaron the priest, saw it, he rose up from among the congregation, and took a javelin in his hand;* This is the deed 1 Maccabees 2:26 names as the very pattern of Mattathias' zeal upon the altar."},
-        {"src_ch": 2, "src_v": 26, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 25, "tgt_v": 13, "tier": "free",
-         "note": "Numbers 25:13 — *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar'el (Israel).* The everlasting priesthood granted for Phinehas' zeal is the covenant Mattathias the priest is acting in when he is inflamed with zeal in 1 Maccabees 2:26."},
-        {"src_ch": 2, "src_v": 24, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 106, "tgt_v": 30, "tier": "free",
-         "note": "Psalm 106:30 — *Then stood up Phinehas, and executed judgment: and so the plague was stayed.* As Phinehas rose and executed judgment to stay the plague, so Mattathias rises and slays the apostate at the altar in 1 Maccabees 2:24."},
-        {"src_ch": 2, "src_v": 24, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 106, "tgt_v": 31, "tier": "free",
-         "note": "Psalm 106:31 — *And that was counted unto him for righteousness unto all generations for evermore.* The zeal counted to Phinehas as everlasting righteousness is the same righteousness reckoned to Mattathias when he shows his anger according to judgment in 1 Maccabees 2:24."}
+        {"src_ch": 42, "src_v": 7, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 7, "tgt_v": 37, "tier": "free",
+         "note": "John 7:37 — *In the last day, that great day of the feast, Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink.* The Water of Life withheld from Adam in 1 Adam & Eve 42:7 is the very drink the Messiah later cries out to give."},
+        {"src_ch": 42, "src_v": 8, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 7, "tgt_v": 38, "tier": "free",
+         "note": "John 7:38 — *He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water.* The blood-as-living-water given to all Adam's seed who believe in 1 Adam & Eve 42:8 is exactly the rivers promised to the believer."},
+        {"src_ch": 42, "src_v": 7, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 6, "tgt_v": 54, "tier": "free",
+         "note": "John 6:54 — *Whoso eateth my flesh, and drinketh my blood, hath eternal life; and I will raise him up at the last day.* The blood the Word promises to shed in 1 Adam & Eve 42:7 is the drink that gives the eternal life and resurrection Adam was barred from."},
+        {"src_ch": 42, "src_v": 8, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 22, "tgt_v": 17, "tier": "free",
+         "note": "Revelation 22:17 — *And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely.* The Water of Life promised to all believing descendants in 1 Adam & Eve 42:8 is offered freely to the end of the world."}
       ]
     },
     {
-      "slug": "1-maccabees-2-die-rather-than-profane-sabbath",
-      "title": "Let us die in our innocency — covenant kept unto death",
-      "summary_md": "Hunted into the wilderness and attacked on the sabbath, the faithful will not lift a hand to defile the day: *But they said, We will not come forth, neither will we do the king's commandment, to profane the sabbath day.* (1 Maccabees 2:34); *But said, Let us die all in our innocency: heaven and earth will testify for us, that you put us to death wrongfully.* (1 Maccabees 2:37). This is Torah-faithfulness unto death, never law-as-curse — the same resolve named the chapter before, when the people *chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.* (1 Maccabees 1:63). And it is the cloud Hebrews gathers: *They were stoned, they were sawn asunder, were tempted, were slain with the sword: they wandered about in sheepskins and goatskins; being destitute, afflicted, tormented;* (Hebrews 11:37) — *(Of whom the world was not worthy:) they wandered in deserts, and in mountains, and in dens and caves of the earth.* (Hebrews 11:38). The Maccabean martyrs in the secret places of the wilderness are written into that very roll.",
-      "anchor_start_v": 34, "anchor_end_v": 38, "tier": "extras",
+      "slug": "1-adam-eve-42-descent-breaks-gates-of-brass",
+      "title": "He descends into hell and breaks the gates of brass",
+      "summary_md": "The Word foretells the harrowing of hell to ransom Adam: *\"on the day that I shall descend into hell, and break the gates of brass, and bruise in pieces the kingdoms of iron. Then will I in mercy save your soul and the souls of the righteous\"* (1 Adam & Eve 42:5-6). This is the bruising of the serpent's head sworn from the first — *it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15) — accomplished when the Messiah *suffered for sins, the just for the unjust... being put to death in the flesh, but quickened by the Spirit* (1 Peter 3:18) and *went and preached unto the spirits in prison* (1 Peter 3:19). Through death He destroyed *him that had the power of death, that is, the devil* (Hebrews 2:14), spoiling *principalities and powers... triumphing over them in it* (Colossians 2:15), and now holds *the keys of hell and of death* (Revelation 1:18). The first-day promise to Adam is the cross-day victory; *it ain't new*.",
+      "anchor_start_v": 5, "anchor_end_v": 6, "tier": "extras",
       "members": [
-        {"src_ch": 2, "src_v": 37, "tgt_edition": "apocrypha", "tgt_book": "1-maccabees", "tgt_ch": 1, "tgt_v": 63, "tier": "extras",
-         "note": "1 Maccabees 1:63 — *Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.* The same choosing-to-die-rather-than-defile-the-covenant is the resolve of those who say let us die in our innocency in 1 Maccabees 2:37."},
-        {"src_ch": 2, "src_v": 38, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 37, "tier": "free",
-         "note": "Hebrews 11:37 — *They were stoned, they were sawn asunder, were tempted, were slain with the sword: they wandered about in sheepskins and goatskins; being destitute, afflicted, tormented;* These slain saints of the faith-cloud are the very kind slaughtered with their wives and children on the sabbath in 1 Maccabees 2:38."},
-        {"src_ch": 2, "src_v": 38, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 38, "tier": "free",
-         "note": "Hebrews 11:38 — *(Of whom the world was not worthy:) they wandered in deserts, and in mountains, and in dens and caves of the earth.* The faithful who wandered in deserts and caves are those who went down into the wilderness and were slain there in 1 Maccabees 2:38."}
+        {"src_ch": 42, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 15, "tier": "free",
+         "note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* The breaking of brass gates and bruising of iron kingdoms in 1 Adam & Eve 42:5 is the head-bruising of the serpent sworn over Adam at the start."},
+        {"src_ch": 42, "src_v": 5, "tgt_edition": "canon", "tgt_book": "1-peter", "tgt_ch": 3, "tgt_v": 19, "tier": "free",
+         "note": "1 Peter 3:19 — *By which also he went and preached unto the spirits in prison.* The descent into hell the Word foretells in 1 Adam & Eve 42:5 is the Messiah's preaching to the imprisoned spirits after the cross."},
+        {"src_ch": 42, "src_v": 5, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 2, "tgt_v": 14, "tier": "free",
+         "note": "Hebrews 2:14 — *Forasmuch then as the children are partakers of flesh and blood, he also himself likewise took part of the same; that through death he might destroy him that had the power of death, that is, the devil.* The shattering of hell's gates in 1 Adam & Eve 42:5 is the destroying of the devil through the Word's own death."},
+        {"src_ch": 42, "src_v": 6, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 1, "tgt_v": 18, "tier": "free",
+         "note": "Revelation 1:18 — *I am he that liveth, and was dead; and, behold, I am alive for evermore, Amen; and have the keys of hell and of death.* The mercy that saves the souls of the righteous in 1 Adam & Eve 42:6 belongs to the One who took the very keys of hell and death."}
       ]
     },
     {
-      "slug": "1-maccabees-2-give-your-lives-for-the-covenant",
-      "title": "Be zealous for the law — give your lives for the covenant",
-      "summary_md": "Mattathias' dying charge holds the whole framework in a line: *Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.* (1 Maccabees 2:50) — and he refuses fear of the tyrant: *Fear not then the words of a sinful man: for his glory shall be dung and worms.* (1 Maccabees 2:62); *To day he shall be lifted up and to morrow he shall not be found, because he is returned into his dust, and his thought is come to nothing.* (1 Maccabees 2:63). The Torah stands; the kingdom of man passes. The Messiah's own word seals the charge: *And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell.* (Matthew 10:28). And the better hope behind dying for the covenant is the resurrection his brethren confess — *And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life.* (2 Maccabees 7:9).",
-      "anchor_start_v": 50, "anchor_end_v": 63, "tier": "extras",
+      "slug": "1-adam-eve-42-eden-lost-rest-at-end",
+      "title": "Eden's trials, and the rest restored when the world is ended",
+      "summary_md": "The Word names plainly why Adam now sweats and thirsts: *\"O Adam, when you were in the garden, these trials did not come to you. But since you transgressed My commandment, all these sufferings have come over you\"* (1 Adam & Eve 42:9-10) — the very curse of toil spoken in Eden: *In the sweat of thy face shalt thou eat bread, till thou return unto the ground* (Genesis 3:19). Yet the saving is set *when the end of the world is come* (1 Adam & Eve 42:6), when the last Adam undoes the first: *as in Adam all die, even so in Messiah (Christ) shall all be made alive* (1 Corinthians 15:22). Then the tree and garden barred to Adam are restored — *To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* (Revelation 2:7).",
+      "anchor_start_v": 9, "anchor_end_v": 11, "tier": "extras",
       "members": [
-        {"src_ch": 2, "src_v": 62, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 10, "tgt_v": 28, "tier": "free",
-         "note": "Matthew 10:28 — *And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell.* The Messiah's call not to fear the killer of the body is the very counsel Mattathias gives when he says fear not the words of a sinful man in 1 Maccabees 2:62."},
-        {"src_ch": 2, "src_v": 50, "tgt_edition": "apocrypha", "tgt_book": "2-maccabees", "tgt_ch": 7, "tgt_v": 9, "tier": "extras",
-         "note": "2 Maccabees 7:9 — *And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life.* To give your lives for the covenant in 1 Maccabees 2:50 is to die for his laws in the hope that the King of the world will raise you up."},
-        {"src_ch": 2, "src_v": 63, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 37, "tgt_v": 36, "tier": "free",
-         "note": "Psalm 37:36 — *Yet he passed away, and, lo, he was not: yea, I sought him, but he could not be found.* The wicked who passes away and cannot be found is the very fate Mattathias pronounces over the tyrant who today is lifted up and tomorrow shall not be found in 1 Maccabees 2:63."}
-      ]
-    },
-    {
-      "slug": "1-maccabees-2-rollcall-of-the-faithful",
-      "title": "Call to remembrance the fathers — the same cloud of witnesses",
-      "summary_md": "Mattathias rehearses the fathers who were faithful in trial: *Call to remembrance what acts our fathers did in their time; so shall you receive great honour and an everlasting name.* (1 Maccabees 2:51) — *Was not Abraham found faithful in temptation, and it was imputed to him for righteousness?* (1 Maccabees 2:52). It is the very roll Hebrews unrolls. Abraham reckoned righteous: *And he believed in Yahuah (LORD); and he counted it to him for righteousness.* (Genesis 15:6), tried at the altar — *By faith Abraham, when he was tried, offered up Isaac: and he that had received the promises offered up his only begotten son,* (Hebrews 11:17). David and the prophets: *Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions,* (Hebrews 11:33). It ain't new — the deathbed roll-call of 1 Maccabees and the faith-chapter of Hebrews are the same cloud of witnesses, the same covenant people kept.",
-      "anchor_start_v": 51, "anchor_end_v": 57, "tier": "extras",
-      "members": [
-        {"src_ch": 2, "src_v": 52, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 15, "tgt_v": 6, "tier": "free",
-         "note": "Genesis 15:6 — *And he believed in Yahuah (LORD); and he counted it to him for righteousness.* This is the reckoning Mattathias recalls when he asks whether Abraham was not found faithful and it was imputed to him for righteousness in 1 Maccabees 2:52."},
-        {"src_ch": 2, "src_v": 52, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 17, "tier": "free",
-         "note": "Hebrews 11:17 — *By faith Abraham, when he was tried, offered up Isaac: and he that had received the promises offered up his only begotten son,* The trying of Abraham that Hebrews names is the temptation in which 1 Maccabees 2:52 says he was found faithful."},
-        {"src_ch": 2, "src_v": 57, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 33, "tier": "free",
-         "note": "Hebrews 11:33 — *Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions,* David and the faithful who subdued kingdoms through faith are the same fathers Mattathias rehearses, of whom David possessed the throne of an everlasting kingdom in 1 Maccabees 2:57."}
-      ]
-    },
-    {
-      "slug": "1-maccabees-2-elijah-three-children-daniel",
-      "title": "Elijah, the three children, Daniel — delivered by trust",
-      "summary_md": "The roll-call presses on to those delivered through fire and lions: *Elias for being zealous and fervent for the law was taken up into heaven.* (1 Maccabees 2:58) — *Ananias, Azarias, and Misael, by believing were saved out of the flame.* (1 Maccabees 2:59) — *Daniel for his innocency was delivered from the mouth of lions.* (1 Maccabees 2:60), and the lesson sealed: *And thus consider you throughout all ages, that none that put their trust in him shall be overcome.* (1 Maccabees 2:61). The accounts stand in the canon. Elijah's fervent zeal: *Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months.* (James 5:17). The three saved out of the flame: *If it be so, our Elohim (God) whom we serve is able to deliver us from the burning fiery furnace, and he will deliver us out of thine hand, O king.* (Daniel 3:17). Daniel and the lions: *My Elohim (God) hath sent his angel, and hath shut the lions' mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt.* (Daniel 6:22). None that trust are overcome — the same faithful witness, it ain't new.",
-      "anchor_start_v": 58, "anchor_end_v": 61, "tier": "extras",
-      "members": [
-        {"src_ch": 2, "src_v": 58, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 5, "tgt_v": 17, "tier": "free",
-         "note": "James 5:17 — *Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months.* The zealous and fervent Elias whom Mattathias names in 1 Maccabees 2:58 is the same prophet James holds up as an example of fervent prayer."},
-        {"src_ch": 2, "src_v": 59, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 3, "tgt_v": 17, "tier": "free",
-         "note": "Daniel 3:17 — *If it be so, our Elohim (God) whom we serve is able to deliver us from the burning fiery furnace, and he will deliver us out of thine hand, O king.* The confidence of the three is the believing by which 1 Maccabees 2:59 says Ananias, Azarias, and Misael were saved out of the flame."},
-        {"src_ch": 2, "src_v": 60, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 6, "tgt_v": 22, "tier": "free",
-         "note": "Daniel 6:22 — *My Elohim (God) hath sent his angel, and hath shut the lions' mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt.* The shutting of the lions' mouths for the innocency found in Daniel is exactly the deliverance 1 Maccabees 2:60 recalls."}
+        {"src_ch": 42, "src_v": 10, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 19, "tier": "free",
+         "note": "Genesis 3:19 — *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return.* The sufferings the Word traces to the transgression in 1 Adam & Eve 42:10 are the labour and death decreed at the expulsion."},
+        {"src_ch": 42, "src_v": 6, "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 15, "tgt_v": 22, "tier": "free",
+         "note": "1 Corinthians 15:22 — *For as in Adam all die, even so in Messiah (Christ) shall all be made alive.* The rest promised when the end of the world is come in 1 Adam & Eve 42:6 is the making-alive of all Adam's race in the last Adam."},
+        {"src_ch": 42, "src_v": 4, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 2, "tgt_v": 7, "tier": "free",
+         "note": "Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The kingdom-rest the Word pledges to Adam and his righteous seed in 1 Adam & Eve 42:4 is the restored paradise and tree of life."}
       ]
     }
   ]
 }
 
-json.dump(data, open("json_1_maccabees_2.json","w"), indent=2, ensure_ascii=False)
+with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_1_adam_eve_42.json", "w") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
 print("written")

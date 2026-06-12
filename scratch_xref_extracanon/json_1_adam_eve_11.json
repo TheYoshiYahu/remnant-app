@@ -1,0 +1,170 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 11,
+  "session": "session253",
+  "tag": "1ae11",
+  "base_band": 64250,
+  "threads": [
+    {
+      "slug": "1-adam-eve-11-thirst-and-the-heat",
+      "title": "Burning with thirst and heat - the curse outside the garden",
+      "summary_md": "Driven from Eden, the first man and woman feel the ground's curse in their own flesh: *Then Adam and Eve felt themselves burning with thirst, and heat, and sorrow* (1 Adam and Eve 11:1), yet Adam will not drink lest the water *increase our punishments and that of our descendants* (11:2). This is the very curse Yahuah spoke at the gate - *cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life* (Genesis 3:17) - the seed of the woman now bearing the serpent's bruise (Genesis 3:15). But the same prophets who name the thirst name its end: in the gathering *They shall not hunger nor thirst; neither shall the heat nor sun smite them* (Isaiah 49:10), and the Lamb gives the thirsty *a well of water springing up into everlasting life* (John 4:14).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Genesis 3:17 - *And unto Adam he said, Because thou hast hearkened unto the voice of thy wife, and hast eaten of the tree, of which I commanded thee, saying, Thou shalt not eat of it: cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life;* The burning thirst, heat, and sorrow of 1 Adam and Eve 11:1 is the ground's curse felt in their own bodies the first day outside the gate."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 3:15 - *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* Adam's dread for that of our descendants in 11:2 reaches forward along the seed line on which the serpent will keep striking and the woman's Seed will at last bruise his head."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 49,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Isaiah 49:10 - *They shall not hunger nor thirst; neither shall the heat nor sun smite them: for he that hath mercy on them shall lead them, even by the springs of water shall he guide them.* The thirst and heat that smite Adam in 11:1 are exactly what Yahuah's mercy lifts from the gathered seed."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 4,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "John 4:14 - *But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.* The water Adam refuses in 11:3 lest it deepen the curse is answered by the living water the woman's Seed gives, which ends thirst forever."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-11-the-cave-of-darkness",
+      "title": "The Cave of Treasures - darkness where there was no darkness",
+      "summary_md": "Entering the Cave of Treasures, Adam and Eve are swallowed in a blackness they have never known: *when in it Adam could not see Eve; he only heard the noise she made* (1 Adam and Eve 11:4), and Eve answers from the dark, *Look, I am standing in this darkness* (11:6). This is the far side of the gate that *placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24): the lit garden is shut, the dark cave opened. Yet the darkness is not the last word - *In him was life; and the life was the light of men. And the light shineth in darkness; and the darkness comprehended it not* (John 1:4-5). The Word who will come to comfort Adam is Himself the light the cave lacks: *I am the light of the world* (John 8:12).",
+      "anchor_start_v": 4,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Genesis 3:24 - *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* The blind dark of the Cave in 11:4 is the bitter inside of the gate Yahuah barred with the flaming sword."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "John 1:5 - *And the light shineth in darkness; and the darkness comprehended it not.* Eve standing in this darkness in 11:6 is the very night into which the Logos, the life and light of men, will shine and not be overcome."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 8,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "John 8:12 - *Then spake Yahusha (Jesus) again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.* Adam's cry in the dark cave (11:5) is answered by the Seed who is Himself the light that lifts the walk out of darkness."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 4,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 3,
+          "tgt_v": 32,
+          "tier": "extras",
+          "note": "Jubilees 3:32 - *And on the new moon of the fourth month, Adam and his wife went forth from the Garden of Eden, and they dwelt in the land of ’Eldâ, in the land of their creation.* The same primeval history: cast out of the lit Garden, Adam and Eve now dwell below it, here in the dark Cave of 11:4."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-11-remember-the-light-of-the-garden",
+      "title": "Remember the garden - the lost light, the tree of life, restored",
+      "summary_md": "Adam comforts Eve by memory of the lost glory: *Remember the bright nature in which we lived, when we lived in the garden!* (1 Adam and Eve 11:7); *Think of the Tree of Life, from below which flowed the water, and that shed lustre over us!* (11:9); *Think, oh think of that garden in which was no darkness, while we lived in it* (11:10). That garden's river and tree are no fable - *a river went out of Eden to water the garden* (Genesis 2:10), and in its midst was *the tree of life* (Genesis 2:9). What Adam mourns as lost is what the woman's Seed restores at the end: a city where *there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim... giveth them light* (Revelation 22:5), where the tree of life stands again by the river of life, opened to *they that do his commandments* (Revelation 22:14). The garden Adam lost is the garden kept for the seed.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Genesis 2:9 - *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The Tree of Life Adam bids Eve remember in 11:9 is the very tree Yahuah set in the midst of Eden."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Genesis 2:10 - *And a river went out of Eden to water the garden; and from thence it was parted, and became into four heads.* The water that flowed from below the Tree of Life in 11:9 is the river of Eden that watered the whole garden."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Revelation 22:5 - *And there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light: and they shall reign for ever and ever.* The garden in which was no darkness (11:10) is restored at the end as the city of unfading light for the gathered seed."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 22:2 - *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The Tree of Life and its flowing water Adam mourns in 11:9 stand again in the New Jerusalem, by the river of life, for the healing of the nations."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Revelation 22:14 - *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The bright nature and garden Adam bids Eve remember in 11:7 is reopened to the seed who keep the commandments - election precedes confession, but the way back is kept."
+        }
+      ]
+    }
+  ]
+}

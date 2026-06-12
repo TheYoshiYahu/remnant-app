@@ -1,0 +1,180 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 37,
+  "session": "session253",
+  "tag": "1ae37",
+  "base_band": 64900,
+  "threads": [
+    {
+      "slug": "1-adam-eve-37-fig-leaves-remembered",
+      "title": "The figs and their leaves — the first covering remembered",
+      "summary_md": "Adam looks on the very leaves that first hid the nakedness of the fall: *\"Do you not see these figs and their leaves, with which we covered ourselves when we were stripped of our bright nature? But now, we do not know what misery and suffering may come over us from eating them\"* (1 Adam & Eve 37:1), and he and Eve restrain themselves — *\"let us restrain ourselves and not eat of them, you and I; and let us ask Elohim (God) to give us of the fruit of the Tree of Life\"* (1 Adam & Eve 37:2). It ain't new: the fig leaves are Genesis on the page — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons* (Genesis 3:7) — the self-made covering that could not restore the lost glory. Jubilees tells the same scene the same way: *And when she had first covered her shame with fig-leaves, she gave thereof to Adam and he ate, and his eyes were opened, and he saw that he was naked. And he took fig-leaves and sewed (them) together, and made an apron for himself, and covered his shame* (Jubilees 3:21). Adam knows now that the fig was the badge of his ruin, not his repair, and turns from it to ask the Tree of Life instead.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 37,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* These are the very fig leaves Adam sees and names in 1 Adam & Eve 37:1 — the covering of the fall."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 2,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 3,
+          "tgt_v": 21,
+          "tier": "extras",
+          "note": "Jubilees 3:21 — *And when she had first covered her shame with fig-leaves, she gave thereof to Adam and he ate, and his eyes were opened, and he saw that he was naked. And he took fig-leaves and sewed (them) together, and made an apron for himself, and covered his shame.* The same primeval history records the fig-leaf covering that 1 Adam & Eve 37:2 turns away from to seek the Tree of Life."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-37-transgressed-the-commandment",
+      "title": "One hour's transgression — the commandment broken, the garden lost",
+      "summary_md": "Adam dates his ruin to a single hour: *\"O Elohim (God), when we transgressed Your commandment at the sixth hour of Friday, we were stripped of the bright nature we had, and did not continue in the garden after our transgression, more than three hours\"* (1 Adam & Eve 37:4), *\"But in the evening You made us come out of it\"* (1 Adam & Eve 37:5). The commandment he broke is Genesis: *But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die* (Genesis 2:17), and the eating: *she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat* (Genesis 3:6). The coming-out of the garden he names is the expulsion: *Therefore Yahuah Elohim (the LORD God) sent him forth from the garden of Eden, to till the ground from whence he was taken* (Genesis 3:23). Jubilees carries the same sentence of exile: *And He made for them coats of skin, and clothed them, and sent them forth from the Garden of Eden* (Jubilees 3:26). The forty-three days of sorrow are the lengthening shadow of that one hour outside the gate.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 37,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Genesis 2:17 — *But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die.* This is the commandment Adam confesses he transgressed at the sixth hour in 1 Adam & Eve 37:4."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* The act that stripped the bright nature Adam mourns in 1 Adam & Eve 37:4."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Genesis 3:23 — *Therefore Yahuah Elohim (the LORD God) sent him forth from the garden of Eden, to till the ground from whence he was taken.* This is the coming-out of the garden in the evening that Adam recounts in 1 Adam & Eve 37:5."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 5,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 3,
+          "tgt_v": 26,
+          "tier": "extras",
+          "note": "Jubilees 3:26 — *And He made for them coats of skin, and clothed them, and sent them forth from the Garden of Eden.* The same expulsion from Eden that 1 Adam & Eve 37:5 sets in the evening of the day of the fall."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-37-cherub-keeps-the-tree-of-life",
+      "title": "The cherub keeps the Tree of Life — barred now, restored to the overcomer",
+      "summary_md": "Adam begs for the one fruit set out of his reach: *\"O Elohim (God), give us of the fruit of the Tree of Life, that we may eat of it, and live\"* (1 Adam & Eve 37:8), knowing the way is guarded — *\"You made us come out of the garden, and sent a cherub to keep the Tree of Life, lest we should eat thereof, and live\"* (1 Adam & Eve 37:9). This is Genesis exactly: *And now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever* (Genesis 3:22), *and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24). What Adam cannot reach by his own hand, the Lamb reopens at the end of the book of the war: *To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* (Revelation 2:7), *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city* (Revelation 22:14). The flaming sword stands today; in the city it is sheathed for the seed kept faithful.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 37,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Genesis 3:22 — *And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever.* The very reason the Tree of Life was barred, which Adam grieves in 1 Adam & Eve 37:9."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* This is the cherub Adam names as keeping the Tree of Life in 1 Adam & Eve 37:9."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 2,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* The fruit Adam pleads for in 1 Adam & Eve 37:8 is given at last to the overcomer in the restored paradise."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The barred Tree of Life of 1 Adam & Eve 37:8 is the inheritance reopened to the commandment-keeping seed."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-37-look-with-an-eye-of-pity",
+      "title": "Look on us with an eye of pity — covenant mercy and the seed kept",
+      "summary_md": "Adam does not plead his merit but Yahuah's mercy: *\"O Elohim (God), look at us with an eye of pity, and do not avenge us according to our transgression of Your commandment, in Your presence\"* (1 Adam & Eve 37:7), *\"Make these forty-three days an equivalent for the one hour in which we transgressed\"* (1 Adam & Eve 37:10). The Psalm answers him in the same tongue: *He hath not dealt with us after our sins; nor rewarded us according to our iniquities* (Psalm 103:10), *Like as a father pitieth his children, so Yahuah (LORD) pitieth them that fear him* (Psalm 103:13). And the eye of pity is not bare clemency but the seed-promise already moving against the serpent — the whole purpose of the war this book unfolds: *He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of Elohim (God) was manifested, that he might destroy the works of the devil* (1 John 3:8). The mercy Adam asks on the forty-third day is the mercy that will crush the head of the one who stripped him.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 37,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 103,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Psalm 103:10 — *He hath not dealt with us after our sins; nor rewarded us according to our iniquities.* The very pardon Adam asks for in 1 Adam & Eve 37:7 — not to be avenged according to his transgression."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 103,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Psalm 103:13 — *Like as a father pitieth his children, so Yahuah (LORD) pitieth them that fear him.* The eye of pity Adam appeals to in 1 Adam & Eve 37:7 is the Father's mercy toward those who fear Him."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 3,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "1 John 3:8 — *He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of Elohim (God) was manifested, that he might destroy the works of the devil.* The mercy Adam pleads in 1 Adam & Eve 37:10 is the seed-war's end — the Son manifested to undo the serpent's hour."
+        }
+      ]
+    }
+  ]
+}

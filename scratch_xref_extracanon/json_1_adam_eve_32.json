@@ -1,0 +1,150 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 32,
+  "session": "session253",
+  "tag": "1ae32",
+  "base_band": 64775,
+  "threads": [
+    {
+      "slug": "1-adam-eve-32-penance-in-the-water",
+      "title": "Standing in the water — the cry of the penitent out of the depths",
+      "summary_md": "Cast out of the garden, Adam and Eve go down into the very sea that had nearly drowned them and stand in it praying: *Then Eve went down into the water, as Adam had commanded her. Adam also went down into the water; and they stood praying; and besought Yahuah (Lord) to forgive them their offense, and to restore them to their former state* (1 Adam & Eve 32:7). It ain't new — this is the oldest cry of the contrite heart, sounded the moment the seed of the woman is first hunted. The psalmist takes it up from the same flood: *Out of the depths have I cried unto thee, O Yahuah (LORD)* (Psalm 130:1), and answers it with the mercy Adam besought — *But there is forgiveness with thee, that thou mayest be feared* (Psalm 130:4). The apostle frames the same transaction Adam and Eve enact bodily in the sea: *If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness* (1 John 1:9). And the publican standing afar off, smiting his breast, is the first parents over again: *And the publican, standing afar off, would not lift up so much as his eyes unto heaven, but smote upon his breast, saying, Elohim (God) be merciful to me a sinner* (Luke 18:13).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 32,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 130,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 130:1 — *Out of the depths have I cried unto thee, O Yahuah (LORD).* Adam and Eve standing in the deep waters to plead for pardon are the living image of this cry out of the depths (1 Adam & Eve 32:7)."
+        },
+        {
+          "src_ch": 32,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 130,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Psalm 130:4 — *But there is forgiveness with thee, that thou mayest be feared.* This is the very thing Adam besought when he asked Yahuah to forgive their offense (1 Adam & Eve 32:7)."
+        },
+        {
+          "src_ch": 32,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 1,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "1 John 1:9 — *If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.* The apostle states as covenant promise what the first parents enact bodily in the water, confessing and beseeking forgiveness (1 Adam & Eve 32:7)."
+        },
+        {
+          "src_ch": 32,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 18,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Luke 18:13 — *And the publican, standing afar off, would not lift up so much as his eyes unto heaven, but smote upon his breast, saying, Elohim (God) be merciful to me a sinner.* Adam's charge to pray with burning heart to be forgiven is the publican's posture from the first day outside Eden (1 Adam & Eve 32:5)."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-32-fasting-with-burning-heart",
+      "title": "Seven days without bread — turning with the whole heart, with fasting and weeping",
+      "summary_md": "Before they go down to the water, Adam and Eve keep a fast of repentance in the Cave of Treasures: *And Adam and Eve remained in the Cave of Treasures until the seventh day; they neither ate of the fruit the earth, nor drank water* (1 Adam & Eve 32:1), and Adam bids Eve *pray to Elohim (God) with burning heart and a sweet voice, to forgive us* (1 Adam & Eve 32:5). This is the way of return kept long before Sinai, and the prophets call Yashar'el back to it: *Therefore also now, saith Yahuah (LORD), turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning* (Joel 2:12) — *And rend your heart, and not your garments, and turn unto Yahuah Elohaychem (the LORD your God): for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil* (Joel 2:13). Daniel sought the same mercy the same way: *And I set my face unto Yahuah Elohim (the Lord God), to seek by prayer and supplications, with fasting, and sackcloth, and ashes* (Daniel 9:3). And the offering Adam learns to bring at the garden's edge is no innovation of the law — Jubilees keeps the memory of it: *And on that day on which Adam went forth from the garden, he offered as a sweet savour an offering, frankincense, galbanum, and stacte, and spices in the morning with the rising of the sun from the day when he covered his shame* (Jubilees 3:27).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 32,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "joel",
+          "tgt_ch": 2,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Joel 2:12 — *Therefore also now, saith Yahuah (LORD), turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning:* Adam's charge to pray with burning heart, fasting in the cave, is this prophet's call to turn with the whole heart sounded at the dawn of the world (1 Adam & Eve 32:5)."
+        },
+        {
+          "src_ch": 32,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "joel",
+          "tgt_ch": 2,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Joel 2:13 — *And rend your heart, and not your garments, and turn unto Yahuah Elohaychem (the LORD your God): for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil.* The mercy Adam counts on when he tells Eve to pray for forgiveness is this gracious and merciful Yahuah (1 Adam & Eve 32:5)."
+        },
+        {
+          "src_ch": 32,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Daniel 9:3 — *And I set my face unto Yahuah Elohim (the Lord God), to seek by prayer and supplications, with fasting, and sackcloth, and ashes:* Adam and Eve's seven-day fast without bread or water in the cave is Daniel's penitential fasting kept in the very first generation (1 Adam & Eve 32:1)."
+        },
+        {
+          "src_ch": 32,
+          "src_v": 2,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 3,
+          "tgt_v": 27,
+          "tier": "extras",
+          "note": "Jubilees 3:27 — *And on that day on which Adam went forth from the garden, he offered as a sweet savour an offering, frankincense, galbanum, and stacte, and spices in the morning with the rising of the sun from the day when he covered his shame.* Jubilees keeps the same memory of Adam worshipping at the garden's edge that frames his prayers and offerings here (1 Adam & Eve 32:2)."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-32-restore-us-to-the-garden",
+      "title": "Take us back to the garden — the longing for the tree of life",
+      "summary_md": "The whole burden of their prayer is restoration to the place they lost: *let us go to the sea of water we saw at first, and let us stand in it, praying that Elohim (God) will again be favorable to us and take us back to the garden* (1 Adam & Eve 32:3); they beseech Yahuah *to forgive them their offense, and to restore them to their former state* (1 Adam & Eve 32:7). This is the ache the Scriptures answer — the way back, barred at the fall, reopened to the overcomer: *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* (Revelation 2:7), and at the last, *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city* (Revelation 22:14). The throne Adam approaches from afar by water is the same throne the gospel opens wide: *Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need* (Hebrews 4:16). It ain't new — from Adam's first prayer outside Eden to the New Jerusalem, the cry is one: take us back to the garden.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 32,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 2,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Revelation 2:7 — *He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* Adam's plea to be taken back to the garden is granted to the overcomer in the restored paradise of Elohim (1 Adam & Eve 32:3)."
+        },
+        {
+          "src_ch": 32,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Revelation 22:14 — *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.* The restoration to their former state that Adam and Eve beseech is fulfilled in the right of entry to the tree of life at the end (1 Adam & Eve 32:7)."
+        },
+        {
+          "src_ch": 32,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 4,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Hebrews 4:16 — *Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.* Adam and Eve standing afar off in the water to obtain mercy reach toward the same throne of grace the gospel opens (1 Adam & Eve 32:7)."
+        }
+      ]
+    }
+  ]
+}
