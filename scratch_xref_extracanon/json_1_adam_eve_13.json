@@ -1,0 +1,220 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 13,
+  "session": "session253",
+  "tag": "1ae13",
+  "base_band": 64300,
+  "threads": [
+    {
+      "slug": "1-adam-eve-13-satan-fallen-from-light",
+      "title": "The bright angel turned dark — Satan fallen from light",
+      "summary_md": "Elohim explains to Adam how the darkness came to be: *But when he transgressed My commandment, I deprived him of that bright nature, and he became dark.* (1 Adam & Eve 13:3) — *But he transgressed, and I made him fall from the heaven onto the earth; and it was this darkness that came over him.* (1 Adam & Eve 13:5). It ain't new: the prophets and the Messiah Himself name this same fall. Isaiah taunts the cut-down one: *How art thou fallen from heaven, O Lucifer, son of the morning! how art thou cut down to the ground, which didst weaken the nations!* (Isaiah 14:12). Yahusha saw it: *And he said unto them, I beheld Satan as lightning fall from heaven.* (Luke 10:18). And John sees the casting-down made final: *And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him.* (Revelation 12:9). Jude binds the fallen ones in the very darkness this chapter describes: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6).",
+      "anchor_start_v": 2,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 13,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 14,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Isaiah 14:12 — *How art thou fallen from heaven, O Lucifer, son of the morning! how art thou cut down to the ground, which didst weaken the nations!* The prophet's son-of-the-morning is the very bright one whom Elohim says He deprived of his bright nature so that he became dark."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 10,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Luke 10:18 — *And he said unto them, I beheld Satan as lightning fall from heaven.* The Messiah witnesses the same fall from the heaven onto the earth that Elohim recounts to Adam in the cave."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 12,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Revelation 12:9 — *And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him.* The casting down to earth that Adam hears on his first dark night is shown again at the last as the dragon hurled down."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* The darkness that overtook the transgressing angel is the chains of darkness in which the apostle says such angels are reserved."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-13-coats-of-skin-mercy",
+      "title": "The body of flesh and skin — wrath withheld in mercy",
+      "summary_md": "Elohim tells Adam that the flesh he now wears is not death but mercy: *Yet, of My mercy, I did not turn you into darkness, but I made you your body of flesh, over which I spread this skin, in order that it may bear cold and heat.* (1 Adam & Eve 13:7) — *If I had let My wrath fall heavily on you, I should have destroyed you; and had I turned you into darkness, it would have been as if I had killed you.* (1 Adam & Eve 13:8). This is the Genesis scene unfolded: *Unto Adam also and to his wife did Yahuah Elohim (the LORD God) make coats of skins, and clothed them.* (Genesis 3:21) — the covering of skin is itself the mercy. The flesh is the dust Yahuah first breathed into: *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* (Genesis 2:7), and to which the fall returns him: *for dust thou art, and unto dust shalt thou return.* (Genesis 3:19). Yet Elohim withholds the killing stroke — the seed of the woman is kept alive.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 13,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Genesis 3:21 — *Unto Adam also and to his wife did Yahuah Elohim (the LORD God) make coats of skins, and clothed them.* The skin Elohim says He spread over Adam's body of flesh is the very coat of skins with which He clothed the pair in the garden's aftermath."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 2:7 — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* The body of flesh Elohim made for Adam is the dust-formed frame He first quickened with His own breath."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Genesis 3:19 — *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return.* Elohim's restraint of the destroying wrath leaves Adam only the mortal sentence of return-to-dust, not annihilation into darkness."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-13-night-not-punishment",
+      "title": "This darkness is not a punishment — daylight will return",
+      "summary_md": "The Word comforts terrified Adam, that the night is bounded and the light will come: *Thus, O Adam, has this night deceived you. It is not to last forever; but is only of twelve hours; when it is over, daylight will return.* (1 Adam & Eve 13:10) — *Strengthen your heart, and be not afraid. This darkness is not a punishment.* (1 Adam & Eve 13:12) — *But little of darkness now remains, O Adam, and daylight will soon appear.* (1 Adam & Eve 13:21). This is the order set down at creation: *And Elohim (God) saw the light, that it was good: and Elohim (God) divided the light from the darkness.* (Genesis 1:4). And it is the Logos who speaks here — the Light in whom the darkness cannot prevail: *And the light shineth in darkness; and the darkness comprehended it not.* (John 1:5) — *I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.* (John 8:12). The voice consoling Adam in the cave is the same Light that came into the world.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 21,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 13,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Genesis 1:4 — *And Elohim (God) saw the light, that it was good: and Elohim (God) divided the light from the darkness.* The bounded twelve hours of night that Elohim explains to Adam is the very dividing of light from darkness set down at the first day."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "John 1:5 — *And the light shineth in darkness; and the darkness comprehended it not.* The promise that the night cannot last and daylight will return is the Logos's own nature, the Light the darkness cannot overcome."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 8,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "John 8:12 — *Then spake Yahusha (Jesus) again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.* The One who tells Adam the daylight will soon appear is the Light of the world who keeps His own out of the darkness."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-13-children-of-light",
+      "title": "Children of light — the purpose of Adam's making",
+      "summary_md": "Elohim names the reason He formed Adam and the seed He purposed: *But, O Adam, I have made the day, and have placed the sun in it to give light; in order that you and your children should do your work.* (1 Adam & Eve 13:12) — *For I made you of the light; and I willed to bring out children of light from you and like to you.* (1 Adam & Eve 13:14). This is the Logos's own life, the light of men: *In him was life; and the life was the light of men.* (John 1:4). The apostle declares Adam's race remade into exactly these children of light: *Ye are all the children of light, and the children of the day: we are not of the night, nor of darkness.* (1 Thessalonians 5:5) — *For ye were sometimes darkness, but now are ye light in Yahuah (Lord): walk as children of light.* (Ephesians 5:8). The covenant purpose declared over the first man is the very calling kept for the seed of the woman.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 13,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "John 1:4 — *In him was life; and the life was the light of men.* The children of light Elohim willed to bring forth from Adam draw that light from the Logos in whom the life of men is light."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "1-thessalonians",
+          "tgt_ch": 5,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "1 Thessalonians 5:5 — *Ye are all the children of light, and the children of the day: we are not of the night, nor of darkness.* The very children of light Elohim purposed from Adam are named in the seed kept to the day, not the night."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Ephesians 5:8 — *For ye were sometimes darkness, but now are ye light in Yahuah (Lord): walk as children of light.* Those Elohim made to do their work in the day's light are called to walk as the children of light He willed from the first."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-13-commandment-and-the-deceiver",
+      "title": "The commandment given, and Satan who deceived himself",
+      "summary_md": "Elohim shows that the commandment was given precisely so no blame could fall on Him, and names the deceiver behind the tree: *Then, concerning the tree, I commanded you not to eat of it. Yet I knew that Satan, who deceived himself, would also deceive you.* (1 Adam & Eve 13:16) — *But I commanded you, and warned you, and you fell. So that My creatures cannot blame Me; but the blame rests on them alone.* (1 Adam & Eve 13:19). This is the serpent of the seed-war: *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15). The deceiver who first deceived himself is the same who transforms to deceive: *And no marvel; for Satan himself is transformed into an angel of light.* (2 Corinthians 11:14) — the great serpent *which deceiveth the whole world* (Revelation 12:9). Yet Elohim is light, with no part in the dark: *that Elohim (God) is light, and in him is no darkness at all.* (1 John 1:5) — the blame rests on the deceiver and the deceived, never on the Holy One.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 13,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* The Satan who deceived Adam through the tree is the serpent set at enmity with the seed of the woman — the seed-war from the first day outside the garden."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "2-corinthians",
+          "tgt_ch": 11,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "2 Corinthians 11:14 — *And no marvel; for Satan himself is transformed into an angel of light.* The deceiver who deceived himself and Adam is the same transforming one the apostle warns of, the fallen light counterfeiting the true."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 1,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "1 John 1:5 — *This then is the message which we have heard of him, and declare unto you, that Elohim (God) is light, and in him is no darkness at all.* Elohim's word that the blame rests on His creatures alone rests on this: He is light, with no darkness in Him to charge."
+        }
+      ]
+    }
+  ]
+}

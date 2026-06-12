@@ -1,0 +1,230 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "2-adam-eve",
+  "chapter": 17,
+  "session": "session253",
+  "tag": "2ae17",
+  "base_band": 66400,
+  "threads": [
+    {
+      "slug": "2-adam-eve-17-angel-of-light",
+      "title": "Handsome men full of light — Satan transformed",
+      "summary_md": "Satan does not come against Jared as a monster but as glory: *Satan then appeared to him with thirty men of his hosts, in the form of handsome men; Satan himself being the elder and tallest among them, with a fine beard* (2 Adam and Eve 17:4), and at the cave's mouth Jared *found them looking like fine men, full of light, and of great beauty* (2 Adam and Eve 17:6). It ain't new — this is the oldest disguise: *And no marvel; for Satan himself is transformed into an angel of light* (2 Corinthians 11:14). The light is borrowed and the speech is a lie, for *He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it* (John 8:44). The adversary still prowls the same way: *Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour* (1 Peter 5:8) — and he was cast down from the very light he counterfeits: *And prevailed not; neither was their place found any more in heaven* (Revelation 12:8).",
+      "anchor_start_v": 4,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 17,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "2-corinthians",
+          "tgt_ch": 11,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "2 Corinthians 11:14 — *And no marvel; for Satan himself is transformed into an angel of light.* The thirty beautiful men full of light at the cave's mouth are exactly this transformation, the seed-war's oldest disguise worn against Jared."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 8,
+          "tgt_v": 44,
+          "tier": "free",
+          "note": "John 8:44 — *Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it.* The elder's claim to be Adam comforting his children is the father of lies speaking of his own against the holy line."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "1 Peter 5:8 — *Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour.* The beauty that made Jared wonder is the devouring lion's lure, and Jared who arose 'like a lion over his people' is hunted by the false lion."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 12,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Revelation 12:8 — *And prevailed not; neither was their place found any more in heaven.* The 'great beauty' Satan wears is stolen light from the heaven he was cast out of, the same dragon who counterfeits the patriarchs at the cave."
+        }
+      ]
+    },
+    {
+      "slug": "2-adam-eve-17-false-fathers",
+      "title": "I am Adam — the counterfeit of the holy seed",
+      "summary_md": "The lie is precise and genealogical: *I am Adam whom Elohim (God) made first; and this is Abel my son, who was killed by his brother Cain... Then this is my son Seth, whom I asked of Yahuah (Lord), who gave him to me, to comfort me instead of Abel* (2 Adam and Eve 17:9-10), and the false elder names the whole line down to *Mahalaleel... thy father* (2 Adam and Eve 17:11). Satan counterfeits the very seed Yahuah is keeping. This is the garden lie wearing new robes — there the serpent said *Ye shall not surely die* (Genesis 3:4) and *ye shall be as gods, knowing good and evil* (Genesis 3:5); here he raises the dead fathers as bait. But the Son comes precisely to undo this: *He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of Elohim (God) was manifested, that he might destroy the works of the devil* (1 John 3:8).",
+      "anchor_start_v": 9,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 17,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Genesis 3:4 — *And the serpent said unto the woman, Ye shall not surely die.* The same deceiver who first contradicted Yahuah's word now raises the 'dead' fathers as living glory to contradict death itself and ensnare Jared."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Genesis 3:5 — *For Elohim (God) doth know that in the day ye eat thereof, then your eyes shall be opened, and ye shall be as gods, knowing good and evil.* The false elder's tale of the beautiful land north of the garden is the same promise of a better estate the serpent dangled before Eve."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 3,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "1 John 3:8 — *He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of Elohim (God) was manifested, that he might destroy the works of the devil.* The devil who counterfeits Adam and Abel here is the one the promised Son is manifested to destroy."
+        }
+      ]
+    },
+    {
+      "slug": "2-adam-eve-17-down-to-cain",
+      "title": "Go down to them — the two seed-lines",
+      "summary_md": "The whole aim of the deception is to break the separation of the holy line of Seth on the mountain from the line of Cain in the valley: *Now, therefore, 0 my son, hearken to my counsel, and go down to them, thou and thy children* (2 Adam and Eve 17:18). The Watchers' generation runs the same channel — *And the angels, the children of the heaven, saw and lusted after them, and said to one another: 'Come, let us choose us wives from among the children of men and beget us children'* (1 Enoch 6:2) — angels *which kept not their first estate, but left their own habitation* (Jude 1:6). It is the mingling that Genesis records: *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose* (Genesis 6:2). And it is the very line Jared is warned of, *Not as Cain, who was of that wicked one, and slew his brother* (1 John 3:12) — election precedes confession, the covenant seed kept apart.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 26,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 17,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* Satan's command to 'go down to them' is the mingling of the two seed-lines that Genesis names as the prelude to the flood Mahalaleel foretold."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 3,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "1 John 3:12 — *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother's righteous.* Jared's own reckoning that the children of Cain are no kindred of his marks the covenant separation John names — the line of the wicked one kept distinct from the righteous seed."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 18,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "1 Enoch 6:2 — *And the angels, the children of the heaven, saw and lusted after them, and said to one another: 'Come, let us choose us wives from among the children of men and beget us children.'* The descent to the daughters below is the same primeval crossing the Watchers made — the seed-war told twice in the same first history."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* The thirty hosts of Satan luring Jared down are of that order of angels who left their estate, reserved for the judgment."
+        }
+      ]
+    },
+    {
+      "slug": "2-adam-eve-17-the-infamy",
+      "title": "Working infamy by the fountain — the corruption refused",
+      "summary_md": "At the fountain by the houses of Cain the trap springs: *every one of Cain's sons brought his wife, and another brought his daughter, and so, many women came to them* (2 Adam and Eve 17:38), and the elder *spread his hands and took one of the women, and five of his companions did the same before Jared, that he should do as they did* (2 Adam and Eve 17:41). But Jared *when he saw them working infamy he wept, and said in his mind, - My fathers never did the like* (2 Adam and Eve 17:42). This is the same going *after strange flesh* (Jude 1:7) that the fair daughters of men provoked: *That the sons of Elohim (God) saw the daughters of men that they were fair* (Genesis 6:2). Jared keeps what Paul charges the redeemed to keep: *Know ye not that the unrighteous shall not inherit the kingdom of Elohim (God)? Be not deceived: neither fornicators, nor idolaters, nor adulterers...* (1 Corinthians 6:9).",
+      "anchor_start_v": 38,
+      "anchor_end_v": 42,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 17,
+          "src_v": 38,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* The daughters of Cain brought to the fountain are the very daughters of men whose fairness Genesis says drew the holy line down into corruption."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 41,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Jude 1:7 — *Even as Sodom and Gomorrha, and the cities about them in like manner, giving themselves over to fornication, and going after strange flesh, are set forth for an example, suffering the vengeance of eternal fire.* The 'infamy' the elder works before Jared is the going after strange flesh that Jude sets forth as the example of judgment."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 42,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 6,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "1 Corinthians 6:9 — *Know ye not that the unrighteous shall not inherit the kingdom of Elohim (God)? Be not deceived: neither fornicators, nor idolaters, nor adulterers, nor effeminate, nor abusers of themselves with mankind,* Jared's refusal — 'my fathers never did the like' — keeps the very purity Paul says the deceived forfeit the kingdom by losing."
+        }
+      ]
+    },
+    {
+      "slug": "2-adam-eve-17-prayer-routs-devils",
+      "title": "He prayed, and the devils fled — mercy keeps the seed",
+      "summary_md": "Jared has no power of his own; he has prayer: *He then spread his hands and prayed with a fervent heart, and with much weeping, and entreated Elohim (God) to deliver him from their hands* (2 Adam and Eve 17:43), and at once *No sooner did Jared begin to pray than the elder fled with his companions; for they could not abide in a place of prayer* (2 Adam and Eve 17:44). This is the law of the seed-war: *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you* (James 4:7). The Messiah Himself routed the same elder on a mountain with the word — *Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve* (Matthew 4:10). And the mercy that sends the angel to draw Jared out of the midst of Cain is the standing promise that the seed is kept: *And the Elohim (God) of peace shall bruise Satan under your feet shortly* (Romans 16:20).",
+      "anchor_start_v": 43,
+      "anchor_end_v": 48,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 17,
+          "src_v": 44,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 4,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "James 4:7 — *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you.* That the elder and his companions could not abide in a place of prayer but fled is the very promise James gives — the resisted devil flees."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 43,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 4,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Matthew 4:10 — *Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve.* The Messiah dismisses the same tempter on a mountain by the word, as Jared's fervent prayer dismisses him from the cave-mountain."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 47,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 16,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Romans 16:20 — *And the Elohim (God) of peace shall bruise Satan under your feet shortly. The grace of our Lord Yahusha HaMashiach (Lord Jesus Christ) be with you. Amen.* The angel sent to draw Jared out of the midst of Cain is Yahuah's mercy bruising Satan and keeping the seed, the standing edge of Genesis 3:15."
+        }
+      ]
+    }
+  ]
+}

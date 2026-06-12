@@ -1,0 +1,170 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 16,
+  "session": "session253",
+  "tag": "1ae16",
+  "base_band": 64375,
+  "threads": [
+    {
+      "slug": "1-adam-eve-16-feared-the-sun-as-elohim",
+      "title": "He thought the sun was Elohim",
+      "summary_md": "Coming out of the cave at sunrise, Adam meets the blazing light for the first time outside the garden and mistakes the creature for the Creator: *And when he came to the mouth of it, and stood and turned his face towards the east, and saw the sunrise in glowing rays, and felt the heat thereof on his body, he was afraid of it, and thought in his heart that this flame came forth to plague him* (1 Adam & Eve 16:3) -- *For he thought the sun was Elohim (God)* (1 Adam & Eve 16:6). It ain't new: the worship of the host of heaven, the fire and the lights mistaken for gods, begins on the first morning outside Eden. Moses warns the seed against this very error, *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them* (Deuteronomy 4:19). The Wisdom of the fathers names the snare exactly -- they *deemed either fire, or wind, or the swift air, or the circle of the stars, or the violent water, or the lights of heaven, to be the gods which govern the world* (Wisdom of Solomon 13:2). But the sun is set in its order under Yahuah, *I saw the chambers of the sun and moon, whence they proceed and whither they come again, and their glorious return* (1 Enoch 41:5).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 4,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 4:19 -- *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* The very error Adam falls into at sunrise -- taking the sun for Elohim -- is the host-of-heaven worship Torah forbids the seed."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 6,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 13,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 13:2 -- *But deemed either fire, or wind, or the swift air, or the circle of the stars, or the violent water, or the lights of heaven, to be the gods which govern the world.* Wisdom catalogues the same confusion Adam shows in 16:6, mistaking the lights of heaven for the God who made them."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 3,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 41,
+          "tgt_v": 5,
+          "tier": "extras",
+          "note": "1 Enoch 41:5 -- *And I saw the chambers of the sun and moon, whence they proceed and whither they come again, and their glorious return, and how one is superior to the other, and their stately orbit, and how they do not leave their orbit, and they add nothing to their orbit and they do not take away from it, and they keep faith one with another: and in accordance with an oath they set and they rise.* Enoch shows the sun as an ordered servant kept under oath, not the god Adam dreaded in 16:3."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-16-this-sun-is-not-elohim",
+      "title": "This sun is not Elohim -- but a light to rule the day",
+      "summary_md": "The Word of Elohim raises Adam from his terror and teaches him the difference between the creature and the Creator: *This sun is not Elohim (God); but it has been created to give light by day, of which I spoke to you in the cave saying, 'that the dawn would come, and there would be light by day'* (1 Adam & Eve 16:11). This is Genesis 1 spoken into Adam's fear: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14) -- *the greater light to rule the day, and the lesser light to rule the night* (Genesis 1:16). The heavens are a witness, not a master: *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork* (Psalm 19:1), the sun set as *a bridegroom coming out of his chamber* (Psalm 19:5). The same Word that ordered the lights now interprets them to Adam.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 -- *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The Word's correction in 16:11 simply repeats the creation decree -- the sun is a light made to rule the day, not a god."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Genesis 1:16 -- *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* The greater light Adam feared in the cave's mouth is the very lamp Elohim made and set in order, exactly as the Word tells him in 16:11."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 19:1 -- *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The sun preaches the Maker rather than claiming worship -- the lesson the Word presses on Adam in 16:11."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-16-the-word-came-and-comforted",
+      "title": "The Word of Elohim came and comforted him",
+      "summary_md": "While Adam trembles, it is the Word -- the Logos -- who comes, speaks, and comforts: *But while he was thinking like this in his heart, the Word of Elohim (God) came to him and said* (1 Adam & Eve 16:10) -- *But I am Elohim (God) who comforted you in the night* (1 Adam & Eve 16:12). This is the One John names from the beginning: *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God)* (John 1:1), by whom *All things were made* (John 1:3), in whom *was life; and the life was the light of men* (John 1:4). The voice Adam heard walking in the garden -- *And they heard the voice of Yahuah Elohim (the LORD God) walking in the garden in the cool of the day* (Genesis 3:8) -- is the same Word still seeking and comforting fallen Adam outside the gate.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "John 1:1 -- *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The Word of Elohim who comes to Adam in 16:10 and names Himself Elohim in 16:12 is the eternal Logos John reveals."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "John 1:4 -- *In him was life; and the life was the light of men.* The Word who teaches Adam that the sun is but a created light is Himself the true Light of men, the One greater than the lamp Adam feared in 16:11."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Genesis 3:8 -- *And they heard the voice of Yahuah Elohim (the LORD God) walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of Yahuah Elohim (the LORD God) amongst the trees of the garden.* The Word who comforted Adam in the night (16:12) is the same voice he once hid from in the garden -- now come outside to seek and steady him."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-16-fear-not-the-sun-shall-not-smite-thee",
+      "title": "Fear not -- the sun shall not smite thee",
+      "summary_md": "Adam falls on his face and begs the burning light not to consume him: *O Yahuah (Lord), plague me not, neither consume me, nor yet take away my life from the earth* (1 Adam & Eve 16:5). Into that dread the Word speaks the covenant comfort heard all through Scripture: *Fear thou not; for I am with thee: be not dismayed; for I am thy Elohim (God): I will strengthen thee* (Isaiah 41:10). The keeper of the seed will not let the creature harm him -- *The sun shall not smite thee by day, nor the moon by night* (Psalm 121:6). For the day of true burning is reserved for the proud, not for the redeemed, *the day that cometh shall burn them up* (Malachi 4:1); to Adam the Word brings not a plague but a promise.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 41,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Isaiah 41:10 -- *Fear thou not; for I am with thee: be not dismayed; for I am thy Elohim (God): I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.* Against Adam's cry to be spared in 16:5, Yahuah's word is not destruction but the strengthening 'fear not' He speaks to His own."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 121,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalm 121:6 -- *The sun shall not smite thee by day, nor the moon by night.* The very plague Adam dreads from the sun in 16:5 is the harm the keeper of the seed pledges to hold back from His people."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 4,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Malachi 4:1 -- *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith Yahuah Tseva'ot (LORD of hosts), that it shall leave them neither root nor branch.* The consuming burning Adam fears in 16:5 is appointed for the wicked, not for the seed Yahuah is keeping."
+        }
+      ]
+    }
+  ]
+}

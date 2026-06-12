@@ -1,0 +1,180 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 10,
+  "session": "session253",
+  "tag": "1ae10",
+  "base_band": 64225,
+  "threads": [
+    {
+      "slug": "1-adam-eve-10-word-raises-the-dead",
+      "title": "He Sent His Word and Raised Them",
+      "summary_md": "Adam and Eve lie in the water at the point of death, and the rescue comes by the Word: *Then Elohim (God) sent His Word to Adam and Eve, who raised them from their death* (1 Adam and Eve 10:3). This is no anonymous power but the same Word the psalmist names over every deliverance from the gates of death — *He sent his word, and healed them, and delivered them from their destructions* (Psalm 107:20) — and the same Word that stands over the dry-bones valley, the breath that re-enters the slain that *they may live* (Ezekiel 37:5). It ain't new: from the first day outside the garden, life comes only by Yahuah speaking His Word over the dead.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 107,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Psalm 107:20 — *He sent his word, and healed them, and delivered them from their destructions.* The very pattern of 1 Adam and Eve 10:3, where Elohim sends His Word to raise the dying pair from death."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 107,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalm 107:6 — *Then they cried unto Yahuah (LORD) in their trouble, and he delivered them out of their distresses.* Adam and Eve, sinking in the water and close to death (10:1), are delivered just as the redeemed cried and were brought out."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 37,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Ezekiel 37:5 — *Thus saith Adonai Yahuah (the Lord GOD) unto these bones; Behold, I will cause breath to enter into you, and ye shall live:* The Word that raises Adam and Eve from their death in 10:3 is the same Word that raises the dead in Ezekiel's valley."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-10-the-word-is-the-logos",
+      "title": "The Word Who Comes to Adam",
+      "summary_md": "When the angel reports the creatures have breathed their last, it is the Word Himself who acts: *Then Elohim (God) sent His Word to Adam and Eve, who raised them from their death* (1 Adam and Eve 10:3). John names this Word from the same beginning: *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God)* (John 1:1), the One by whom *All things were made* (John 1:3). The Word that comforts the first man is the Word that *was made flesh, and dwelt among us* (John 1:14) — the same Son by whom Elohim *made the worlds* and who upholds *all things by the word of his power* (Hebrews 1:2-3). The Comforter of Adam in the dust is the Logos who would come and save him.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The Word Elohim sends to raise Adam and Eve in 10:3 is the eternal Logos John names from the beginning."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* The Word who comforts and raises Adam (10:3) is the same Word who would take flesh to save him."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 1,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Hebrews 1:3 — *Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high;* The Word that raises Adam by His own power (10:3) is the Son who upholds all things and purges sin."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-10-bright-angel-to-dust",
+      "title": "Once a Bright Angel, Now in Want of Water",
+      "summary_md": "Elohim explains the change wrought by the fall: *While you were under My command and were a bright angel, you knew not this water* (1 Adam and Eve 10:5), but now the body *is now like that of beasts, and is in want of water* (10:6). The man made *in our image, after our likeness* (Genesis 1:26) and given dominion over the beasts has, by transgression, come to share the beasts' need. This is the sentence of Eden: *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return* (Genesis 3:19). The glory dimmed to dust — yet not abandoned.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Genesis 1:26 — *And Elohim (God) said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.* The bright, beast-ruling estate Adam once held (10:5) is the image-and-dominion of Genesis 1."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Genesis 3:19 — *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return.* The body now beast-like and in want of water (10:6) lives out the dust-sentence of Eden."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Genesis 3:23 — *Therefore Yahuah Elohim (the LORD God) sent him forth from the garden of Eden, to till the ground from whence he was taken.* Adam's new want and toil for water (10:6) flows from his being sent out to till the ground."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-10-the-promise-and-the-seed",
+      "title": "The Promise: Back to the Garden With the Righteous Seed",
+      "summary_md": "Adam begs to see the garden again, and Yahuah answers with the promise that governs the whole book: *I have made you a promise; when that promise is fulfilled, I will bring you back into the garden, you and your righteous descendants* (1 Adam and Eve 10:8). That promise was first spoken to the serpent — *I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15) — the seed who would come *when the fulness of the time was come* (Galatians 4:4), *foreordained before the foundation of the world* (1 Peter 1:20). And its fulfilment is the garden restored: *In the midst of the street of it... was there the tree of life* (Revelation 22:2), where *there shall be no more curse* (Revelation 22:3). It ain't new — the seed-war and the seed-promise stand from the first day outside Eden.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* The promise Adam clings to in 10:8 is the seed-promise spoken at the gate of Eden."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 4,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Galatians 4:4 — *But when the fulness of the time was come, Elohim (God) sent forth his Son, made of a woman, made under the law,* The promise of 10:8, fulfilled in its appointed time when the woman's Seed was sent forth."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 1,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "1 Peter 1:20 — *Who verily was foreordained before the foundation of the world, but was manifest in these last times for you,* The Saviour Adam is promised in 10:8 was foreordained before the world's foundation."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Revelation 22:3 — *And there shall be no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him:* The garden Adam is promised to re-enter (10:8) is the curse-lifted city where the tree of life stands again."
+        }
+      ]
+    }
+  ]
+}

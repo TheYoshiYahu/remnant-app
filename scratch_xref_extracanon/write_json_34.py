@@ -1,0 +1,95 @@
+import json
+
+data = {
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 34,
+  "session": "session253",
+  "tag": "1ae34",
+  "base_band": 64825,
+  "threads": [
+    {
+      "slug": "1-adam-eve-34-formed-of-dust",
+      "title": "Created out of the dust of the earth",
+      "summary_md": "Adam, lean and parched outside the garden, rehearses his own making before Yahuah: *Then You spread Your hand and created me out of one element, that of dust of the earth; and You brought me into the garden at the third hour, on a Friday, and informed me of it in the cave.* This is the Genesis account told back to its Author — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* (Genesis 2:7). Sha'ul sees in that first dust-formed man the figure of the One to come: *And so it is written, The first man Adam was made a living soul; the last Adam was made a quickening spirit.* (1 Corinthians 15:45) — *The first man is of the earth, earthy: the second man is Yahuah (Lord) from heaven.* (1 Corinthians 15:47). The dust that bore the curse waits for the Seed who would raise it. It ain't new.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 34, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 2:7 — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* Adam's prayer that Yahuah \"created me out of one element, that of dust of the earth\" simply hands the Genesis formation back to its Maker."},
+        {"src_ch": 34, "src_v": 5, "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 15, "tgt_v": 45, "tier": "free",
+         "note": "1 Corinthians 15:45 — *And so it is written, The first man Adam was made a living soul; the last Adam was made a quickening spirit.* The dust-formed Adam of 34:5 is named by Sha'ul as the type whose ruin the last Adam undoes."},
+        {"src_ch": 34, "src_v": 5, "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 15, "tgt_v": 47, "tier": "free",
+         "note": "1 Corinthians 15:47 — *The first man is of the earth, earthy: the second man is Yahuah (Lord) from heaven.* Adam's confession of being made from earth's dust sets the very contrast Sha'ul draws against the heavenly Man."}
+      ]
+    },
+    {
+      "slug": "1-adam-eve-34-naming-the-beasts",
+      "title": "He named all the beasts, now estranged from him",
+      "summary_md": "Adam recalls the dominion he held and has lost: *Then, again, O Yahuah (Lord), in that third hour in which You created me, You brought to me all beasts, and lions, and ostriches, and fowls of the air, and all things that move in the earth... And Your will was that I should name them all, one by one, with a suitable name... But now they are all estranged from me.* This is Eden's naming remembered from exile — *And out of the ground Yahuah Elohim (the LORD God) formed every beast of the field, and every fowl of the air; and brought them unto Adam to see what he would call them: and whatsoever Adam called every living creature, that was the name thereof.* (Genesis 2:19). Jubilees keeps the same scene among the restored books — *And Adam named them all by their respective names, and as he called them, so was their name.* (Jubilees 3:2). The dominion forfeited in the garden is the dominion the Seed of the woman comes to restore. It ain't new.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 34, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 19, "tier": "free",
+         "note": "Genesis 2:19 — *And out of the ground Yahuah Elohim (the LORD God) formed every beast of the field, and every fowl of the air; and brought them unto Adam to see what he would call them: and whatsoever Adam called every living creature, that was the name thereof.* Adam's plea that Yahuah \"brought to me all beasts... that I should name them all\" recounts this very bringing."},
+        {"src_ch": 34, "src_v": 9, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 20, "tier": "free",
+         "note": "Genesis 2:20 — *And Adam gave names to all cattle, and to the fowl of the air, and to every beast of the field; but for Adam there was not found an help meet for him.* The dominion Adam mourns as now \"estranged from me\" in 34:9 is the naming-dominion Genesis records him exercising."},
+        {"src_ch": 34, "src_v": 8, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 3, "tgt_v": 2, "tier": "extras",
+         "note": "Jubilees 3:2 — *And Adam named them all by their respective names, and as he called them, so was their name.* The restored Jubilees carries the same naming Adam rehearses in 34:8, the primeval history shared across the library."}
+      ]
+    },
+    {
+      "slug": "1-adam-eve-34-tree-and-death",
+      "title": "The commandment of the tree, and death you shall die",
+      "summary_md": "Adam remembers the single prohibition and the sentence attached to it: *Then it was in that third hour of Friday... and commanded me concerning the tree, to which I was neither to go near, nor to eat thereof; for You said to me in the garden, 'When you eat of it, of death you shall die.'* This is the word of Genesis — *But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die.* (Genesis 2:17). Adam marvels that mercy stayed the stroke: *And if You had punished me as You said, with death, I should have died that very moment.* Sha'ul names the law that bound them all: *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned* (Romans 5:12) — yet death reigning from this very Adam *who is the figure of him that was to come.* (Romans 5:14). The deferred death of 34:11 is already mercy reaching toward the Seed. It ain't new.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 34, "src_v": 10, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 17, "tier": "free",
+         "note": "Genesis 2:17 — *But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die.* Adam's quoted command, \"When you eat of it, of death you shall die,\" is this Genesis word spoken back to Yahuah in 34:10."},
+        {"src_ch": 34, "src_v": 11, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 5, "tgt_v": 12, "tier": "free",
+         "note": "Romans 5:12 — *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:* Adam's wonder that he was not struck dead at once (34:11) is the same death-by-one-man Sha'ul traces from this transgression."},
+        {"src_ch": 34, "src_v": 11, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 5, "tgt_v": 14, "tier": "free",
+         "note": "Romans 5:14 — *Nevertheless death reigned from Adam to Moses, even over them that had not sinned after the similitude of Adam's transgression, who is the figure of him that was to come.* The death Adam expected in 34:11 reigns onward, yet Adam himself is named the figure of the coming Seed."}
+      ]
+    },
+    {
+      "slug": "1-adam-eve-34-rib-and-woman",
+      "title": "The deep sleep, the rib, bone of my bones",
+      "summary_md": "Adam recalls the making of Eve, that she was drawn from him while he slept: *Then, at the end of the third hour of that Friday, O Yahuah (Lord), You caused a slumber and a sleep to come over me, and I slept... Then You drew a rib out of my side, and created it after my own likeness and image. Then I awoke; and when I saw her and knew who she was, I said, 'This is bone of my bones, and flesh of my flesh.'* Genesis tells it the same — *And Yahuah Elohim (the LORD God) caused a deep sleep to fall upon Adam, and he slept: and he took one of his ribs, and closed up the flesh instead thereof* (Genesis 2:21) — *And Adam said, This is now bone of my bones, and flesh of my flesh: she shall be called Woman, because she was taken out of Man.* (Genesis 2:23). Jubilees, among the restored books, keeps the very words — *And He awaked Adam out of his sleep... and said to her: \"This is now bone of my bones and flesh of my flesh.\"* (Jubilees 3:5-6). One witness across the whole library. It ain't new.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 34, "src_v": 13, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 21, "tier": "free",
+         "note": "Genesis 2:21 — *And Yahuah Elohim (the LORD God) caused a deep sleep to fall upon Adam, and he slept: and he took one of his ribs, and closed up the flesh instead thereof;* Adam's memory of the \"slumber and a sleep\" and the rib drawn from his side in 34:13 is this Genesis act recounted."},
+        {"src_ch": 34, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 23, "tier": "free",
+         "note": "Genesis 2:23 — *And Adam said, This is now bone of my bones, and flesh of my flesh: she shall be called Woman, because she was taken out of Man.* Adam's words in 34:14, \"bone of my bones, and flesh of my flesh,\" are this Genesis cry repeated in his prayer."},
+        {"src_ch": 34, "src_v": 14, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 3, "tgt_v": 5, "tier": "extras",
+         "note": "Jubilees 3:5 — *And Yahuah our Elohim (the LORD our God) caused a deep sleep to fall upon him, and he slept, and He took for the woman one rib from amongst his ribs, and this rib was the origin of the woman from amongst his ribs, and He built up the flesh in its stead, and built the woman.* The restored Jubilees keeps the same rib-drawn-in-sleep that Adam rehearses in 34:14."}
+      ]
+    },
+    {
+      "slug": "1-adam-eve-34-bright-nature-lost",
+      "title": "The bright nature and the Spirit, lost by transgression",
+      "summary_md": "Adam contrasts the glory in which they were made with the misery of exile: *And of Your goodwill, O Yahuah (Lord), You made us both with bodies of a bright nature, and You made us two, one; and You gave us Your grace, and filled us with praises of the Ruach HaKodesh (Holy Spirit); that we should be neither hungry nor thirsty... But now, O Elohim (God), since we transgressed Your commandment and broke Your law, You have brought us out into a strange land, and have caused suffering, and faintness, hunger and thirst to come over us.* The breaking of one command threw open all this sorrow — *Therefore Yahuah Elohim (the LORD God) sent him forth from the garden of Eden, to till the ground from whence he was taken.* (Genesis 3:23). Yet where the offence abounded the promise abounds more — *But not as the offence, so also is the free gift. For if through the offence of one many be dead, much more the grace of Elohim (God), and the gift by grace, which is by one man, Yahusha HaMashiach (Jesus Christ), hath abounded unto many.* (Romans 5:15). The grace and Spirit Adam mourns as lost in 34:16-17 are the very grace the Seed restores. It ain't new.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 34, "src_v": 17, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 23, "tier": "free",
+         "note": "Genesis 3:23 — *Therefore Yahuah Elohim (the LORD God) sent him forth from the garden of Eden, to till the ground from whence he was taken.* Adam's lament that \"You have brought us out into a strange land\" in 34:17 is this expulsion remembered from outside the gate."},
+        {"src_ch": 34, "src_v": 17, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 5, "tgt_v": 15, "tier": "free",
+         "note": "Romans 5:15 — *But not as the offence, so also is the free gift. For if through the offence of one many be dead, much more the grace of Elohim (God), and the gift by grace, which is by one man, Yahusha HaMashiach (Jesus Christ), hath abounded unto many.* The transgression that stripped Adam's grace in 34:17 is the one offence Sha'ul sets against the abounding gift of the promised Seed."}
+      ]
+    }
+  ]
+}
+
+path = "/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_1_adam_eve_34.json"
+with open(path, "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+print("WROTE", path)

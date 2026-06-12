@@ -1,0 +1,170 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "2-adam-eve",
+  "chapter": 16,
+  "session": "session253",
+  "tag": "2ae16",
+  "base_band": 66375,
+  "threads": [
+    {
+      "slug": "2-adam-eve-16-two-seed-lines",
+      "title": "Watch over them: the holy seed kept from the children of Cain",
+      "summary_md": "Mahalaleel feeds his people *in righteousness and innocence*, watching *that they held no intercourse with the children of Cain* (2 Adam & Eve 16:1), and charges Jared, *not to let one of them go down from this Holy Mountain to the children of Cain, lest he perish with them* (16:5). It ain't new: this is the seed-war drawn between two paternal lines from the very first generations outside the garden. John names the elder line by its father — *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother's righteous* (1 John 3:12) — and Jude marks the apostate path as *the way of Cain* (Jude 1:11). The whole disaster of Genesis 6 begins here, when the two lines are at last mingled and *the sons of Elohim (God) saw the daughters of men that they were fair* (Genesis 6:2). The Jubilee record sets the very mingling in Mahalaleel and Jared's own days, when in Jared's days *the angels of Yahuah (God) descended on the earth, those who are named the Watchers* (Jubilees 4:15). This is election and the kept seed, not race; the covenant line guarded down toward Noah.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 3,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "1 John 3:12 — *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother’s righteous.* The children of Cain whom Mahalaleel forbids his people to mingle with are named by their father in 2 Adam & Eve 16:1."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* To go down to the children of Cain (2 Adam & Eve 16:5) is to walk “the way of Cain” unto perishing."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* Mahalaleel foresees in 16:7 the very mingling of the two lines that Genesis 6 records as the prelude to the flood."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 5,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 4,
+          "tgt_v": 15,
+          "tier": "extras",
+          "note": "Jubilees 4:15 — *...and he called his name Jared; for in his days the angels of Yahuah (God) descended on the earth, those who are named the Watchers, that they should instruct the children of men...* Jubilees sets the mingling Mahalaleel guards against in 16:5 squarely in the days of his own son Jared."
+        }
+      ]
+    },
+    {
+      "slug": "2-adam-eve-16-flood-foretold",
+      "title": "A great destruction by waters: the flood foretold to Jared",
+      "summary_md": "Mahalaleel prophesies on his deathbed, *hereafter there shall come a great destruction upon this earth on account of them; Elohim (God) will be angry with the world, and will destroy them with waters* (2 Adam & Eve 16:6). The word is Yahuah's own from Genesis: *And Yahuah (LORD) said, I will destroy man whom I have created from the face of the earth* (Genesis 6:7). Peter reads the same flood as the judgment of an ungodly world out of which the righteous seed alone is kept — Elohim *spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly* (2 Peter 2:5). The same warning runs through the restored primeval history: Uriel is sent to Noah with the word *that the whole earth will be destroyed, and a deluge is about to come upon the whole earth, and will destroy all that is on it* (1 Enoch 10:2). It ain't new — the coming of the waters is announced to the holy line generations before it falls.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 6:7 — *And Yahuah (LORD) said, I will destroy man whom I have created from the face of the earth; both man, and beast, and the creeping thing, and the fowls of the air; for it repenteth me that I have made them.* Mahalaleel's foretelling of destruction by waters in 16:6 is Yahuah's own sentence on the corrupted earth."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "2 Peter 2:5 — *And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly.* Peter frames the flood Mahalaleel foresees in 16:6 as judgment on the ungodly out of which the kept seed alone is saved."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 6,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "1 Enoch 10:2 — *And said to him: ’Go to Noah and tell him in My Name “Hide thyself!” and reveal to him the end that is approaching: that the whole earth will be destroyed, and a deluge is about to come upon the whole earth, and will destroy all that is on it.* The same flood Mahalaleel announces in 16:6 is revealed to Noah by the watcher Uriel."
+        }
+      ]
+    },
+    {
+      "slug": "2-adam-eve-16-cave-calling-name",
+      "title": "Praying before the fathers in the Cave of Treasures",
+      "summary_md": "Mahalaleel *continued in the Cave of Treasures praying and ministering before the body of our father Adam, asking Elohim (God) for mercy on himself and on his people* (2 Adam & Eve 16:2), and charges Jared, *stand thou by my body and pray to Elohim (God)... and fulfil thy ministry before them* (16:9). This is the way kept before Sinai — the calling on the Name that begins in Seth's line: *then began men to call upon the name of Yahuah (LORD)* (Genesis 4:26). The cave-ministry is a sanctuary of incense and intercession, the very pattern Jubilees records of Enoch, who *burnt the incense of the sanctuary, (even) sweet spices, acceptable before Yahuah (God) on the Mount* (Jubilees 4:25). The holy seed keeps the Name and the offering generations before the law was written.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* Mahalaleel's praying and ministering before Adam's body in 16:2 is the calling on the Name that began in Seth's holy line."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 2,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 4,
+          "tgt_v": 25,
+          "tier": "extras",
+          "note": "Jubilees 4:25 — *And he burnt the incense of the sanctuary, (even) sweet spices, acceptable before Yahuah (God) on the Mount...* The Cave-of-Treasures ministry of 16:2 mirrors Enoch's sanctuary incense kept on the holy mountain before the flood."
+        }
+      ]
+    },
+    {
+      "slug": "2-adam-eve-16-embalmed-with-fathers",
+      "title": "Laid by the bodies of his fathers: the patriarch's burial",
+      "summary_md": "Mahalaleel charges, *When I die, embalm my body and lay it in the Cave of Treasures, by the bodies of my fathers* (2 Adam & Eve 16:9), and his children *embalmed him carefully, and laid him by the bodies of his fathers. Then they arose, and mourned for him forty days* (16:12). The pattern of the patriarch's death — the embalming, the forty days, the gathering of his children for the blessing — is the same kept at the end of Genesis: *And Joseph commanded his servants the physicians to embalm his father: and the physicians embalmed Yashar'el (Israel)* (Genesis 50:2), and *forty days were fulfilled for him; for so are fulfilled the days of those which are embalmed* (Genesis 50:3). The restored primeval record marks the same continuity of burial in the line, when *Adam died, and all his sons buried him in the land of his creation* (Jubilees 4:29). It ain't new — the deathbed charge and burial with the fathers run unbroken from Adam to Jacob.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 50,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 50:2 — *And Joseph commanded his servants the physicians to embalm his father: and the physicians embalmed Yashar'el (Israel).* Mahalaleel's charge to be embalmed in 16:9 keeps the same patriarchal burial Joseph renders to Jacob."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 50,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Genesis 50:3 — *And forty days were fulfilled for him; for so are fulfilled the days of those which are embalmed: and the Egyptians mourned for him threescore and ten days.* The forty days of mourning over Mahalaleel in 16:12 match the forty days of embalming kept for Israel."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 9,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 4,
+          "tgt_v": 29,
+          "tier": "extras",
+          "note": "Jubilees 4:29 — *And at the close of the nineteenth jubilee, in the seventh week in the sixth year thereof, Adam died, and all his sons buried him in the land of his creation, and he was the first to be buried in the earth.* Laying Mahalaleel by his fathers in 16:9 continues the burial in the holy line that began with Adam."
+        }
+      ]
+    }
+  ]
+}

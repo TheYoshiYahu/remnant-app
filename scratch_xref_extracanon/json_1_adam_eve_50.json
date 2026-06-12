@@ -1,0 +1,170 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 50,
+  "session": "session253",
+  "tag": "1ae50",
+  "base_band": 65225,
+  "threads": [
+    {
+      "slug": "1-adam-eve-50-mercy-day-and-night",
+      "title": "Crying for mercy in the Cave, day and night",
+      "summary_md": "In the Cave of Treasures Adam and Eve keep the watch of prayer: *Then Adam and Eve went forth and came into the Cave of Treasures, and they stood praying in it the whole of that day, until the evening* (1 Adam and Eve 50:1), and *Adam and Eve rose again and prayed to Elohim (God) in the cave the whole of that night, and begged for mercy from Him* (1 Adam and Eve 50:3). This is the cry of the seed of the woman out of the depths — *Out of the depths have I cried unto thee, O Yahuah (LORD)* (Psalm 130:1) — *My soul waiteth for Yahuah (Lord) more than they that watch for the morning* (Psalm 130:6). And the mercy they beg is the very mercy that keeps the covenant seed: *It is of the LORD’S mercies that we are not consumed, because his compassions fail not* (Lamentations 3:22); *They are new every morning: great is thy faithfulness* (Lamentations 3:23). It ain't new: from the first days outside the garden the line is kept by Yahuah's mercy, not by their own strength.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 50,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 130,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 130:1 — *Out of the depths have I cried unto thee, O Yahuah (LORD).* Adam and Eve praying through the whole night and begging for mercy in 1-adam-eve 50:3 is this very cry de profundis from the first generation outside Eden."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 130,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalm 130:6 — *My soul waiteth for Yahuah (Lord) more than they that watch for the morning: I say, more than they that watch for the morning.* They stand praying in the cave the whole day until evening (50:1) — the watch of those who wait on Yahuah more than the morning-watch."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "lamentations",
+          "tgt_ch": 3,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Lamentations 3:22 — *It is of the LORD’S mercies that we are not consumed, because his compassions fail not.* The mercy Adam and Eve beg through the night (50:3) is the unfailing covenant mercy that keeps the seed of the woman from being consumed."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "lamentations",
+          "tgt_ch": 3,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Lamentations 3:23 — *They are new every morning: great is thy faithfulness.* When the day dawns upon their night of prayer (50:3-4), Yahuah's compassions are new with the morning, His faithfulness keeping the holy line."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-50-naked-again-seeking-covering",
+      "title": "Naked again, seeking a covering for the body",
+      "summary_md": "Their fire-singed garments gone, Adam and Eve go out and *looked for something to cover their bodies with. But they found nothing, and knew not how to do the work. Yet their bodies were stained, and they were speechless from cold and heat* (1 Adam and Eve 50:5), and *Adam stood and asked Elohim (God) to show him something with which to cover their bodies* (1 Adam and Eve 50:6). This is the old wound of the garden reopened: *the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons* (Genesis 3:7) — and as fig-leaf aprons could not cover, so now their own hands *knew not how to do the work*. The Master teaches the same lesson: stop the anxious self-effort and ask the Father — *take no thought, saying... Wherewithal shall we be clothed?* (Matthew 6:31); *for your heavenly Father knoweth that ye have need of all these things* (Matthew 6:32). Adam does not despair (Satan's snare) but lifts his eyes for help: *I will lift up mine eyes unto the hills, from whence cometh my help* (Psalm 121:1).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 50,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* Standing stained and naked and unable to do the work in 1-adam-eve 50:5 reopens the garden's first nakedness, where human handiwork could not truly cover."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 6,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "Matthew 6:31 — *Therefore take no thought, saying, What shall we eat? or, What shall we drink? or, Wherewithal shall we be clothed?* Adam ceasing from his own failed effort and asking Elohim to show him a covering (50:6) is the very turning the Master commands against anxious self-provision."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 6,
+          "tgt_v": 32,
+          "tier": "free",
+          "note": "Matthew 6:32 — *(For after all these things do the Gentiles seek:) for your heavenly Father knoweth that ye have need of all these things.* When Adam asks Elohim to show him wherewith to clothe them (50:6), he leans on the Father who already knows their need."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 121,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 121:1 — *I will lift up mine eyes unto the hills, from whence cometh my help.* Adam standing to ask Elohim rather than yielding to Satan's despair (50:6) is the seed lifting his eyes for help from above."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-50-word-clothes-with-skins",
+      "title": "The Word of Elohim comes and clothes them with skins",
+      "summary_md": "Then the Logos answers the cry: *Then came the Word of Elohim (God) and said to him, \"O Adam, take Eve and come to the seashore where you fasted before. There you will find skins of sheep that were left after lions ate the carcasses. Take them and make garments for yourselves, and clothe yourselves with them.\"* (1 Adam and Eve 50:7). The One who comes and speaks is the Word who was from the beginning: *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God)* (John 1:1); *And the Word was made flesh, and dwelt among us* (John 1:14); *Elohim (God), who at sundry times and in divers manners spake in time past unto the fathers by the prophets* (Hebrews 1:1). And the skins of slain sheep repeat the garden's first sacrifice, the covering Yahuah Himself made: *Unto Adam also and to his wife did Yahuah Elohim (the LORD God) make coats of skins, and clothed them* (Genesis 3:21) — a death of the flock to cover the guilty, pointing to the seed who would bruise the serpent's head (Genesis 3:15). It ain't new: from the first day outside Eden, the Word provides, and a lamb's death covers shame.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 50,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The Word of Elohim who comes and speaks to Adam in 1-adam-eve 50:7 is this eternal Logos, Elohim Himself, walking with the first man."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* The same Word who comforts and provides for Adam (50:7) would in the fulness of time be made flesh to dwell among men."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Hebrews 1:1 — *Elohim (God), who at sundry times and in divers manners spake in time past unto the fathers by the prophets,* The Word speaking to Adam at the seashore (50:7) is the first of those sundry times and manners in which Elohim spake to the fathers."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Genesis 3:21 — *Unto Adam also and to his wife did Yahuah Elohim (the LORD God) make coats of skins, and clothed them.* The Word directing them to skins of slain sheep for garments (50:7) repeats the garden's first covering of skins, a lamb's death clothing the guilty."
+        },
+        {
+          "src_ch": 50,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* The covering of sheep-skins (50:7) is mercy toward the seed of the woman, sustaining the line through which the serpent's head would be bruised."
+        }
+      ]
+    }
+  ]
+}

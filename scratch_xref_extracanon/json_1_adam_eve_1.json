@@ -1,0 +1,150 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 1,
+  "session": "session253",
+  "tag": "1ae1",
+  "base_band": 64000,
+  "threads": [
+    {
+      "slug": "1-adam-eve-1-garden-eastward",
+      "title": "The garden eastward, and the way kept",
+      "summary_md": "The Conflict opens where Genesis leaves off - outside the gate, the holy ground walled away to the east. *On the third day, Elohim (God) planted the garden in the east of the earth, on the border of the world eastward, beyond which, towards the sun-rising, one finds nothing but water, that encompasses the whole world, and reaches to the borders of heaven* (1 Adam and Eve 1:1), and *Elohim (God) commanded him to live there in a cave in a rock--the Cave of Treasures below the garden* (1 Adam and Eve 1:9). It ain't new: Moses already set the garden eastward - *And Yahuah Elohim (the LORD God) planted a garden eastward in Eden; and there he put the man whom he had formed* (Genesis 2:8). And when the man transgressed, the way back was kept by fire - *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24). Jubilees, the same primeval history, remembers the bringing-in to till and keep - *we brought him into the Garden of Eden to till and keep it* (Jubilees 3:9). The whole drama outside the gate is the seed-war east of Eden, the same field to which Cain would wander - *And Cain went out from the presence of Yahuah (LORD), and dwelt in the land of Nod, on the east of Eden* (Genesis 4:16).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Genesis 2:8 - *And Yahuah Elohim (the LORD God) planted a garden eastward in Eden; and there he put the man whom he had formed.* The Conflict's garden planted in the east is the very garden of Eden Moses set eastward in 1 Adam and Eve 1:1."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Genesis 3:24 - *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* Adam's appointed cave in the rock below the garden in 1 Adam and Eve 1:9 sits outside the flaming sword that now keeps the way back."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 1,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 3,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "Jubilees 3:9 - *And after Adam had completed forty days in the land where he had been created, we brought him into the Garden of Eden to till and keep it, but his wife they brought in on the eightieth day, and after this she entered into the Garden of Eden.* Jubilees keeps the same memory of the holy garden into which Adam was set, the ground from which 1 Adam and Eve 1:1 measures the world eastward."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Genesis 4:16 - *And Cain went out from the presence of Yahuah (LORD), and dwelt in the land of Nod, on the east of Eden.* The geography Adam is given in 1 Adam and Eve 1:8 is the very stage of the two seed-lines, the field east of Eden where Cain would later wander."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-1-cleansing-sea-last-day",
+      "title": "The sea of cleansing and the raising at the last day",
+      "summary_md": "Elohim makes a sea of pure water for a people not yet born, against the last day. *And Elohim (God) created that sea of his own good pleasure, for He knew what would come of the man He would make; so that after he had left the garden, on account of his transgression, men should be born in the earth. Among them are righteous ones who will die, whose souls Elohim (God) would raise at the last day; when all of them will return to their flesh, bathe in the water of that sea, and repent of their sins* (1 Adam and Eve 1:4). The washing of water for cleansing is the prophets' own promise - *Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you* (Ezekiel 36:25). And the raising of the flesh at the last day is no new doctrine - *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2). The Word who would come to Adam says it plainly in the days of His flesh - *And this is the Father's will which hath sent me, that of all which he hath given me I should lose nothing, but should raise it up again at the last day* (John 6:39). The figure of the saving water Peter names baptism - *The like figure whereunto even baptism doth also now save us... by the resurrection of Yahusha HaMashiach (Jesus Christ)* (1 Peter 3:21).",
+      "anchor_start_v": 2,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 36,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Ezekiel 36:25 - *Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you.* The pure sea that washes the righteous clean of their sins in 1 Adam and Eve 1:4 is the clean water Yahuah promises to sprinkle for cleansing."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 - *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The souls Elohim would raise at the last day to return to their flesh in 1 Adam and Eve 1:4 are the sleepers in the dust whom Daniel sees awake."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 6,
+          "tgt_v": 39,
+          "tier": "free",
+          "note": "John 6:39 - *And this is the Father's will which hath sent me, that of all which he hath given me I should lose nothing, but should raise it up again at the last day.* The very last-day raising promised over Adam's sea in 1 Adam and Eve 1:4 is the Father's will the Messiah declares He came to do."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 3,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "1 Peter 3:21 - *The like figure whereunto even baptism doth also now save us (not the putting away of the filth of the flesh, but the answer of a good conscience toward Elohim (God),) by the resurrection of Yahusha HaMashiach (Jesus Christ):* The saving, repentance-bearing water of 1 Adam and Eve 1:4 is the figure Peter names baptism, joined to the resurrection."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-1-mercy-knows-our-frame",
+      "title": "Mercy withholds the comfort - He knoweth our frame",
+      "summary_md": "Why does Elohim deny Adam the cleansing sea and the sweet smell of the trees? Not cruelty, but mercy that will not let the fallen man cheaply forget his transgression. *But when Elohim (God) made Adam go out of the garden, He did not place him on the border of it northward. This was so that he and Eve would not be able to go near to the sea of water where they could wash themselves in it, be cleansed from their sins, erase the transgression they had committed, and be no longer reminded of it in the thought of their punishment* (1 Adam and Eve 1:5); *Again, also, because Elohim (God) is merciful and of great pity, and governs all things in a way that He alone knows--He made our father Adam live in the western border of the garden, because on that side the earth is very broad* (1 Adam and Eve 1:8). This is the Father who remembers what we are made of - *Like as a father pitieth his children, so Yahuah (LORD) pitieth them that fear him. For he knoweth our frame; he remembereth that we are dust* (Psalm 103:13-14). It is mercy that we are spared at all - *It is of the LORD'S mercies that we are not consumed, because his compassions fail not* (Lamentations 3:22). And the cleansing, when it comes, is by His mercy and not our works - *Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Ruach HaKodesh (Holy Spirit)* (Titus 3:5).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 103,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Psalm 103:14 - *For he knoweth our frame; he remembereth that we are dust.* The Elohim who governs Adam's dwelling in pity in 1 Adam and Eve 1:8 is the Father who knows the frame of the man He made of dust."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "lamentations",
+          "tgt_ch": 3,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Lamentations 3:22 - *It is of the LORD'S mercies that we are not consumed, because his compassions fail not.* That Adam is preserved and provided a dwelling rather than destroyed in 1 Adam and Eve 1:8 is the unfailing mercy that keeps the fallen from being consumed."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "titus",
+          "tgt_ch": 3,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Titus 3:5 - *Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Ruach HaKodesh (Holy Spirit);* The cleansing sea Adam may not reach by his own going in 1 Adam and Eve 1:5 answers to the washing of regeneration granted not by works but by mercy."
+        }
+      ]
+    }
+  ]
+}

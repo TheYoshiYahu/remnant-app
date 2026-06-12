@@ -1,0 +1,190 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "1-adam-eve",
+  "chapter": 41,
+  "session": "session253",
+  "tag": "1ae41",
+  "base_band": 65000,
+  "threads": [
+    {
+      "slug": "1-adam-eve-41-four-headed-river",
+      "title": "To the river parted into four heads",
+      "summary_md": "Adam turns Eve toward the one landmark of the lost garden that still flows in their memory: *\"O Eve, come, let us go to the border of the garden looking south; to the place from where the river flows, and is parted into four heads. There we will pray to Elohim (God), and ask Him to give us some of the Water of Life to drink.\"* (1-adam-eve 41:5). It ain't new — the four-headed river is Eden's own geography from the sixth-day account: *And a river went out of Eden to water the garden; and from thence it was parted, and became into four heads.* (Genesis 2:10). The Water of Life Adam thirsts for is the water that ran beneath the very tree Yahuah barred: *the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* (Genesis 2:9). And the same restored history is told again in Jubilees, where the garden is no ordinary ground: *And when she had completed these eighty days we brought her into the Garden of Eden, for it is holier than all the earth besides, and every tree that is planted in it is holy.* (Jubilees 3:11) — Adam stands now at the border of the holiest place on earth, shut out, and prays toward it.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 41,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Genesis 2:10 — *And a river went out of Eden to water the garden; and from thence it was parted, and became into four heads.* The river Adam names in 1-adam-eve 41:5 is Eden's own four-headed river, remembered from outside the gate."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* The Water of Life Adam seeks in 1-adam-eve 41:5 flows from beside the tree of life he has been barred from."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 5,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 3,
+          "tgt_v": 11,
+          "tier": "extras",
+          "note": "Jubilees 3:11 — *And when she had completed these eighty days we brought her into the Garden of Eden, for it is holier than all the earth besides, and every tree that is planted in it is holy.* The garden Adam now prays toward in 1-adam-eve 41:5 is, by Jubilees' witness, the holiest ground on earth — and he is shut outside it."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-41-water-of-life",
+      "title": "Give me of the Water of Life that I may live",
+      "summary_md": "From the dust outside Eden, Adam cries the thirst of all flesh: *\"But now, O Elohim (God), I am dead; my flesh is parched with thirst. Give me of the Water of Life that I may drink of it and live.\"* (1-adam-eve 41:12). It ain't new — this is the longing the whole of Scripture answers, and answers in One. The Word who comes to comfort Adam is the same who stood at Jacob's well and said, *But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.* (John 4:14), and who cried on the great day of the feast, *If any man thirst, let him come unto me, and drink.* (John 7:37). The seed-promise runs the whole arc: the river Adam mourns will run again unbarred at the end, *And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb.* (Revelation 22:1), and the invitation is laid open to the very thirst Adam feels: *And whosoever will, let him take the water of life freely.* (Revelation 22:17). Even now the psalmist tastes the foretaste: *thou shalt make them drink of the river of thy pleasures.* (Psalms 36:8).",
+      "anchor_start_v": 10,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 41,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 4,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "John 4:14 — *But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.* The Water of Life Adam begs for in 1-adam-eve 41:12 is the gift the Messiah Himself names and gives."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 7,
+          "tgt_v": 37,
+          "tier": "free",
+          "note": "John 7:37 — *In the last day, that great day of the feast, Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink.* Adam's parched cry in 1-adam-eve 41:12 is the very thirst Yahusha answers with Himself."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Revelation 22:1 — *And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb.* The Water of Life Adam mourns in 1-adam-eve 41:12 flows again, unbarred, at the end of the seed-war."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Revelation 22:17 — *And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely.* The freely-given Water Adam asks for in 1-adam-eve 41:6 is held open at last to every thirst."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 36,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Psalms 36:8 — *They shall be abundantly satisfied with the fatness of thy house; and thou shalt make them drink of the river of thy pleasures.* The river of Yahuah's pleasure is the same Water of Life Adam thirsts after in 1-adam-eve 41:12."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-41-parched-flesh-dust",
+      "title": "My flesh is parched: the dust of the curse",
+      "summary_md": "Adam's whole plaint turns on a single sentence of the Genesis judgment made flesh in him: *\"But now, O Elohim (God), I am dead; my flesh is parched with thirst.\"* (1-adam-eve 41:12). It ain't new — this is the sentence spoken over him at the gate: *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return.* (Genesis 3:19). And the barred Tree of Life he longs to be fed from is barred by the Cherubim's flaming sword: *and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* (Genesis 3:24). Yet his plea — *bring me into another land different from this, if You will not let me live in Your garden* — is mercy seeking mercy under the very curse, and the seed-promise is its ground, *And the Elohim (God) of peace shall bruise Satan under your feet shortly* (Romans 16:20).",
+      "anchor_start_v": 12,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 41,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Genesis 3:19 — *In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return.* Adam's parched, dying flesh in 1-adam-eve 41:12 is this very curse worked out in his body."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Genesis 3:24 — *So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* Adam grieves in 1-adam-eve 41:6 that Yahuah has not fed him of the Tree of Life — for the way to it is kept by the flaming sword."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 16,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Romans 16:20 — *And the Elohim (God) of peace shall bruise Satan under your feet shortly. The grace of our Lord Yahusha HaMashiach (Lord Jesus Christ) be with you. Amen.* Adam's cry for mercy under the curse in 1-adam-eve 41:13 rests on the seed-promise that crushes the serpent at last."
+        }
+      ]
+    },
+    {
+      "slug": "1-adam-eve-41-figs-incense-offering",
+      "title": "The figs on the golden rods and the incense",
+      "summary_md": "The chapter opens not with despair but with worship — the first offering Adam and Eve bring outside the garden: *Then Adam took the fig, and laid it on the golden rods. Eve also took her fig, and put it on the incense.* (1-adam-eve 41:1), and *Adam and Eve remained standing and fasting the whole of that night, until the morning dawned.* (1-adam-eve 41:3). It ain't new — the fig is the very leaf of their first covering, *and they sewed fig leaves together, and made themselves aprons* (Genesis 3:7), now lifted up not to hide but to offer. This is the way kept before Sinai: long before the law was law-as-curse, the line of the seed called on the Name, *then began men to call upon the name of Yahuah (LORD)* (Genesis 4:26). The same restored history is told in Jubilees, where Adam in the garden *gathered its fruit, and ate, and put aside the residue for himself and for his wife and put aside that which was being kept* (Jubilees 3:16) — the very garden-fruit he now stands outside of, fasting before Yahuah.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 41,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* The fig Adam and Eve lift onto the rods and incense in 1-adam-eve 41:1 is the very leaf of their first shame, now offered up to Yahuah."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* The praying and calling on Yahuah in 1-adam-eve 41:8 is the first keeping of the way of the seed, before ever the law was given."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 5,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 3,
+          "tgt_v": 16,
+          "tier": "extras",
+          "note": "Jubilees 3:16 — *And he tilled (the garden), and was naked and knew it not, and was not ashamed, and he protected the garden from the birds and beasts and cattle, and gathered its fruit, and ate, and put aside the residue for himself and for his wife and put aside that which was being kept.* The garden-fruit Adam once gathered freely is the same garden he now stands outside of, fasting, in 1-adam-eve 41:5."
+        }
+      ]
+    }
+  ]
+}

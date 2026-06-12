@@ -1,0 +1,230 @@
+{
+  "edition": "adam-eve-conflict",
+  "book": "2-adam-eve",
+  "chapter": 8,
+  "session": "session253",
+  "tag": "2ae8",
+  "base_band": 66175,
+  "threads": [
+    {
+      "slug": "2-adam-eve-8-keep-the-commandment",
+      "title": "Keep the commandment — handed down the holy line",
+      "summary_md": "Dying Adam charges Seth, *\"to keep innocency, to be pure and just, and trusting in Elohim (God); and lean not to the discourses of Satan, nor to the apparitions in which he will show himself to thee\"* (2 Adam and Eve 8:7), and binds the word to the generations: *\"keep the commandments that I give thee this day; then give the same to thy son Enos; and let Enos give it to his son Cainan\"* (2 Adam and Eve 8:8). It ain't new — the way of Yahuah is kept from the first father, before Sinai, by a faithful handing-down. So *\"to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD)\"* (Genesis 4:26), and the line is the very seed-list Adam names: *\"And Adam lived an hundred and thirty years, and begat a son in his own likeness, after his image; and called his name Seth\"* (Genesis 5:3). And the warning against Satan's *apparitions* is the apostle's: *\"And no marvel; for Satan himself is transformed into an angel of light\"* (2 Corinthians 11:14), *\"Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour\"* (1 Peter 5:8).",
+      "anchor_start_v": 7,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* The very names Adam binds the commandment to — Seth, then Enos — are the line on whom the calling on the Name begins."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 5,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Genesis 5:3 — *And Adam lived an hundred and thirty years, and begat a son in his own likeness, after his image; and called his name Seth.* The genealogy of the kept seed begins exactly where Adam hands down the commandment — through Seth, in Adam's own likeness."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "2-corinthians",
+          "tgt_ch": 11,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "2 Corinthians 11:14 — *And no marvel; for Satan himself is transformed into an angel of light.* Adam's warning against Satan's *apparitions in which he will show himself* is the same deceiver who masks himself as light."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "1 Peter 5:8 — *Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour.* Adam's charge not to hearken to Satan is the same sober vigilance against the adversary who prowls to destroy."
+        }
+      ]
+    },
+    {
+      "slug": "2-adam-eve-8-gold-incense-myrrh",
+      "title": "Gold, incense, and myrrh — kept against the Saviour's coming",
+      "summary_md": "Adam commands his body wound *\"with myrrh, aloes, and cassia\"* (2 Adam and Eve 8:9) and charges Seth and Eve, *\"Preserve this gold, this incense, and this myrrh, that Elohim (God) has given us for a sign\"* (2 Adam and Eve 8:17), to be carried through the flood and laid up in the midst of the earth until the Saviour comes. It ain't new — the magi's treasures are the very treasures Adam kept: *\"And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh\"* (Matthew 2:11). The gift was foreordained before the foundation: *\"Who verily was foreordained before the foundation of the world, but was manifest in these last times for you\"* (1 Peter 1:20), kept till *\"when the fulness of the time was come, Elohim (God) sent forth his Son, made of a woman, made under the law\"* (Galatians 4:4).",
+      "anchor_start_v": 9,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 2,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Matthew 2:11 — *And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh.* The three treasures Adam preserved for a sign are the three gifts the magi lay before the child Messiah."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 1,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "1 Peter 1:20 — *Who verily was foreordained before the foundation of the world, but was manifest in these last times for you.* The Saviour for whom Adam kept the gifts was already foreordained, awaiting His manifestation in the fulness of time."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 4,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Galatians 4:4 — *But when the fulness of the time was come, Elohim (God) sent forth his Son, made of a woman, made under the law.* The *days that are coming* when the treasures are offered is the fulness of time when the Son is sent forth."
+        }
+      ]
+    },
+    {
+      "slug": "2-adam-eve-8-flood-eight-souls",
+      "title": "The flood foretold — eight souls and Adam's body in the ark",
+      "summary_md": "Adam prophesies the deluge: *\"hereafter shall a flood come and overwhelm all creatures, and leave out only eight souls\"* (2 Adam and Eve 8:10), and that his body be borne in a ship *\"until the flood has been assuaged, and they come out of the ship\"* (2 Adam and Eve 8:11). It ain't new — the same eight are named at the ark's door: *\"In the selfsame day entered Noah, and Shem, and Ham, and Japheth, the sons of Noah, and Noah's wife, and the three wives of his sons with them, into the ark\"* (Genesis 7:13), and counted by the apostle: *\"the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water\"* (1 Peter 3:20). The judgment Adam sees is Yahuah's: *\"And GOD saw that the wickedness of man was great in the earth... I will destroy man whom I have created from the face of the earth\"* (Genesis 6:5,7) — yet the seed and the promise are carried through the waters.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 3,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "1 Peter 3:20 — *Which sometime were disobedient, when once the longsuffering of Elohim (God) waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water.* Adam's *only eight souls* left out from the flood are the eight the apostle numbers saved in the ark."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 7,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Genesis 7:13 — *In the selfsame day entered Noah, and Shem, and Ham, and Japheth, the sons of Noah, and Noah's wife, and the three wives of his sons with them, into the ark.* The very eight whom the flood would leave out, to bear Adam's body, are named at the door of the ark."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 6:7 — *And Yahuah (LORD) said, I will destroy man whom I have created from the face of the earth; both man, and beast, and the creeping thing, and the fowls of the air; for it repenteth me that I have made them.* The flood Adam foretells overwhelming all creatures is the very judgment Yahuah decrees against the corrupted earth."
+        }
+      ]
+    },
+    {
+      "slug": "2-adam-eve-8-word-made-man",
+      "title": "The Word of Elohim made man — King, Elohim, and His passion",
+      "summary_md": "Adam unveils the mystery of the gifts: they are kept *\"until the Word of Elohim (God), made man shall come; when kings shall take them, and shall offer to Him, gold in token of His being King; incense, in token of His being Elohim (God) of heaven and earth; and myrrh, in token of His passion\"* (2 Adam and Eve 8:18), and again, *\"gold also, as a token of His overcoming Satan... incense as a token that He will rise from the dead... and myrrh, in token that He will drink bitter gall\"* (2 Adam and Eve 8:19). It ain't new — the Word made man is the Logos: *\"In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God)\"* (John 1:1), *\"And the Word was made flesh, and dwelt among us\"* (John 1:14), the Son *\"by whom also he made the worlds\"* (Hebrews 1:2). And the *overcoming of Satan* foretold in the gold is the seed-promise crushing the serpent: *\"And the Elohim (God) of peace shall bruise Satan under your feet shortly\"* (Romans 16:20).",
+      "anchor_start_v": 18,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "John 1:1 — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God).* The *Word of Elohim made man* whom Adam awaits is the eternal Logos who was Elohim from the beginning."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* Adam's *Word of Elohim, made man* is exactly the Word made flesh who dwelt among us."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 1,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Hebrews 1:2 — *Hath in these last days spoken unto us by his Son, whom he hath appointed heir of all things, by whom also he made the worlds.* The incense token of His *being Elohim of heaven and earth* answers the Son by whom the worlds were made."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 16,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Romans 16:20 — *And the Elohim (God) of peace shall bruise Satan under your feet shortly. The grace of our Lord Yahusha HaMashiach (Lord Jesus Christ) be with you. Amen.* The gold's token of *His overcoming Satan, and all our foes* is the promised bruising of Satan under foot."
+        }
+      ]
+    },
+    {
+      "slug": "2-adam-eve-8-sever-seth-from-cain",
+      "title": "Sever Seth's line from Cain's — the two seed-lines",
+      "summary_md": "Adam's last command guards the seed: *\"sever thy children and thy children's children from Cain's children; do not let them ever mix with those, nor come near them either in their words or in their deeds\"* (2 Adam and Eve 8:15). It ain't new — this is the seed-war of the first promise, the two lines kept apart: *\"And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel\"* (Genesis 3:15). Cain is marked of the wicked one — *\"Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother's righteous\"* (1 John 3:12) — and when the lines later mingle the flood follows: *\"That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose\"* (Genesis 6:2). It is not race but the covenant seed kept: election precedes confession.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* The command to sever Seth's seed from Cain's is the keeping of the enmity between the two seeds set from the first promise."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 3,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "1 John 3:12 — *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother's righteous.* Adam keeps his line from *Cain's children* because Cain is of the wicked one — the seed of the serpent."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* The very mingling Adam forbids — Seth's line coming near Cain's — is the corruption that brings on the flood when the lines mix."
+        }
+      ]
+    }
+  ]
+}
