@@ -48,5 +48,26 @@ Threads (all canon Tanakh, tier free):
 
 ## 2 Corinthians 7 — perfecting holiness (Lev 11 be-ye-holy + Sirach fear-of-the-Lord) / godly sorrow (Ps 51, Joel 2, Isa 66 + Sirach)
 
-## ▶ UPCOMING blessing chapters (later packs): ch8 the collection / manna equality (Exod 16:18), ch9
-the cheerful giver (Ps 112:9, Prov 22). Surface their summary_md verbatim when built.
+## ★ 2 Corinthians 8 — THE COLLECTION / the manna equality (BLESSING)
+The collection = the nations ministering material things to Israel (the Jerusalem relief). Threads:
+- `2-corinthians-8-the-equality-of-the-manna-each-according-to-his-eating-exodus-16` (7175) — **CENTERPIECE** — Exodus 16:18,16 (8:15 quotes the manna verbatim); the Formed Son's self-emptying (8:9) woven in prose.
+- `2-corinthians-8-the-collection-for-the-saints-the-nations-minister-to-jerusalem-romans-15` (7178) — Romans 15:25-27, 1 Cor 16:1,3.
+- `2-corinthians-8-providing-honest-things-in-the-sight-of-yahuah-and-of-men-proverbs-3` (7181) — Proverbs 3:3-4.
+- `2-corinthians-8-the-grace-of-giving-with-a-cheerful-eye-and-the-willing-mind-tobit-4-sirach-35` (7184, extras) — Tobit 4:8, Sirach 35:1,9,10.
+
+**Centerpiece summary (manna-equality), as applied to prod:** *He that had gathered much had nothing over; and he that had gathered little had no lack* (2 Cor 8:15) = Exodus 16:18 verbatim — the manna-rule of the camp now binding the gathered seed across the world; the abundance of the nations supplies the want of the saints at Jerusalem *that there may be equality*; patterned on the Formed Son who *though he was rich, yet for your sakes he became poor* (8:9).
+
+## ★ 2 Corinthians 9 — THE CHEERFUL GIVER (BLESSING)
+**Fidelity note:** this canon's Proverbs 22:8 reads *He that soweth iniquity shall reap vanity* (NOT the
+LXX cheerful-giver clause), so 9:7 is built on the verses that actually say it — **Deuteronomy 15:10**
+(*thine heart shall not be grieved when thou givest*) + **Proverbs 22:9** (*bountiful eye*) + Sirach 35:9-10
++ Tobit 4:7-8; 9:6 on **Proverbs 11:24-25** + Hosea 10:12 (not 22:8). Threads:
+- `2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15` (7200) — **CENTERPIECE** — Prov 11:24-25, Hosea 10:12, Deut 15:10, Prov 22:9, Sirach 35:9-10, Tobit 4:7-8.
+- `2-corinthians-9-he-hath-dispersed-and-given-to-the-poor-psalm-112` (7203) — Psalm 112:9,3 (9:9 cites Ps 112:9).
+- `2-corinthians-9-he-that-ministereth-seed-to-the-sower-isaiah-55` (7206) — Isaiah 55:10, Hosea 10:12.
+- `2-corinthians-9-the-ministration-that-supplieth-the-want-of-the-saints-romans-15` (7209, extras+NT) — Romans 15:27, 1 Cor 16:1, Tobit 12:9.
+
+**Centerpiece summary (cheerful giver), as applied to prod:** *Elohim (God) loveth a cheerful giver* (9:7)
+is no new teaching but the very command of the Torah — *thine heart shall not be grieved when thou givest...
+Yahuah Elohayka shall bless thee in all thy works* (Deuteronomy 15:10) — the open-handed Israelite giving
+without a grieved heart; the grafted-in seed ministering to Israel out of the riches it received.

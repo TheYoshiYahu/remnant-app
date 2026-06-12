@@ -1534,6 +1534,538 @@ SELECT t.id, x.id, 5, E'Sirach 18:21 — *Humble thyself before you be sick, and
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_2corinthians_08.sql (S229 2 Corinthians 8) -----
+-- =====================================================================
+-- S229 minion — 2 CORINTHIANS 8 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 2 CORINTHIANS 8 (24 verses) — THE COLLECTION (the grace of giving / the manna equality). BLESSING chapter.
+-- Tag: 2c08 (temp view _s229_2c08_lookup).
+-- Sort band: floor 7175, step 3 (7175, 7178, 7181, 7184, 7187 used; under 7200).
+-- Source is ALWAYS the canon 2 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (the collection for the saints at Jerusalem is the nations ministering material
+-- things to Israel — the same relief of Romans 15:25-27 and 1 Corinthians 16:1-4, NOT charity in the
+-- abstract). 8:9 is Christology — the Formed Son's self-emptying: *though he was rich, yet for your
+-- sakes he became poor, that ye through his poverty might be rich.* 8:15 grounds the whole appeal in
+-- the manna: *He that had gathered much had nothing over; and he that had gathered little had no lack*
+-- (Exodus 16:18) — the equality of the gathering, each according to his eating; the abundance of one
+-- supplying the want of another. 8:21 echoes Proverbs 3:4, providing honest things in the sight of
+-- Yahuah (LORD) and of men. The willing, cheerful, alms-giving heart is witnessed by the restored
+-- library (Tobit 4, Sirach 35). No law-vs-grace antithesis: giving is grace AND the keeping of the
+-- commandment (Sirach 35:1-10), the liberality that flows from a heart given first to Yahuah (8:5).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-5   the grace bestowed on Macedonia; deep poverty abounding to riches of liberality; gave
+--           their own selves first to Yahuah (Lord)
+--           Tanakh: none warranted (the giving roots carried at the cheerful-eye thread, 8:7-12)
+--           Extras: Tobit 4:8 (if thou have but a little, be not afraid to give according to that little)
+--           NT: carried in the collection thread (Romans 15:26 — Macedonia and Achaia's contribution)
+--   v.6-8   abound in this grace also; not by commandment but to prove the sincerity of your love
+--           Tanakh: none warranted   Extras: Sirach 35:8-10 (give... with a cheerful eye)
+--           NT: none warranted
+--   v.9     though he was rich, yet for your sakes he became poor, that ye might be rich [Christology]
+--           Tanakh: none warranted (no single verbatim root; the self-emptying carried in prose)
+--           Extras: none warranted   NT: carried in the grace-of-giving thread (the pattern of the gift)
+--   v.10-12 a willing mind accepted according to that a man hath, not according to that he hath not
+--           Tanakh: none warranted   Extras: Tobit 4:7-8 (give alms... if thou have but a little, be
+--                   not afraid to give according to that little); Sirach 35:10 (as thou hast gotten,
+--                   give with a cheerful eye)   NT: none warranted
+--   v.13-15 by an equality... that there may be equality; He that gathered much had nothing over [MANNA]
+--           Tanakh: Exodus 16:18 (he that gathered much had nothing over, and he that gathered little
+--                   had no lack), Exodus 16:16 (gather... every man according to his eating)
+--           Extras: none warranted   NT: none warranted (the citation is the Tanakh root)
+--   v.16-21 the administration to the glory of Yahuah; providing honest things in the sight of Yahuah
+--           and of men
+--           Tanakh: Proverbs 3:4 (so shalt thou find favour and good understanding in the sight of
+--                   Elohim and man)
+--           Extras: none warranted   NT: none warranted
+--   v.18-24 the brethren sent; the collection administered to Jerusalem; the proof of your love
+--           Tanakh: none warranted
+--           Extras: none warranted   NT: Romans 15:25-27 (I go unto Jerusalem to minister unto the
+--                   saints; their duty is to minister unto them in carnal things), 1 Corinthians 16:1-4
+--                   (the collection for the saints... bring your liberality unto Jerusalem)
+--
+-- THREADS (slug -> target libraries):
+--   7175 2-corinthians-8-the-equality-of-the-manna-each-according-to-his-eating-exodus-16  (Tanakh)  [CENTERPIECE / BLESSING]
+--   7178 2-corinthians-8-the-collection-for-the-saints-the-nations-minister-to-jerusalem-romans-15  (NT)
+--   7181 2-corinthians-8-providing-honest-things-in-the-sight-of-yahuah-and-of-men-proverbs-3  (Tanakh)
+--   7184 2-corinthians-8-the-grace-of-giving-with-a-cheerful-eye-and-the-willing-mind-tobit-4-sirach-35  (Extras)
+-- =====================================================================
+
+CREATE TEMP VIEW _s229_2c08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 2-corinthians-8-the-equality-of-the-manna-each-according-to-his-eating-exodus-16  [CENTERPIECE]
+  ('canon', '2-corinthians', 8, 15, 'canon', 'exodus', 16, 18, 'free', E'*And when they did mete it with an omer, he that gathered much had nothing over, and he that gathered little had no lack; they gathered every man according to his eating.* (Exodus 16:18). This is the verse Paul cites word for word: *As it is written, He that had gathered much had nothing over; and he that had gathered little had no lack* (2 Corinthians 8:15). The manna in the wilderness is the pattern of the collection. Yahuah (LORD) rained the bread from heaven and no man''s gathering left him with surplus or with lack — the abundance of the camp was levelled to the need of every household. So Paul appeals to *an equality, that now at this time your abundance may be a supply for their want... that there may be equality* (2 Corinthians 8:14): the nations'' plenty made a supply for the want of the poor saints at Jerusalem, the same gathering-and-sharing the manna taught Yashar''el (Israel).'),
+  ('canon', '2-corinthians', 8, 14, 'canon', 'exodus', 16, 16, 'free', E'*This is the thing which Yahuah (LORD) hath commanded, Gather of it every man according to his eating, an omer for every man, according to the number of your persons; take ye every man for them which are in his tents.* (Exodus 16:16). The manna was gathered *every man according to his eating* — measured to the need, not to greed. Paul builds the collection on this measure: *by an equality, that now at this time your abundance may be a supply for their want, that their abundance also may be a supply for your want: that there may be equality* (2 Corinthians 8:14). What Yahuah (LORD) commanded in the wilderness — each gathering to his eating, none keeping a private hoard against his brother''s hunger — is the rule of the ministering to the saints.'),
+  -- thread: 2-corinthians-8-the-collection-for-the-saints-the-nations-minister-to-jerusalem-romans-15
+  ('canon', '2-corinthians', 8, 4, 'canon', 'romans', 15, 26, 'free', E'*For it hath pleased them of Macedonia and Achaia to make a certain contribution for the poor saints which are at Jerusalem.* (Romans 15:26). Paul names the very same collection in both letters. To the Romans he writes of *Macedonia and Achaia* making *a certain contribution for the poor saints which are at Jerusalem*; to the Corinthians he tells how the churches of Macedonia, *Praying us with much intreaty that we would receive the gift, and take upon us the fellowship of the ministering to the saints* (2 Corinthians 8:4). The fellowship of the ministering is the Jerusalem relief — the nations gathered at Corinth and in Macedonia ministering material things to the poor of Yashar''el (Israel).'),
+  ('canon', '2-corinthians', 8, 4, 'canon', 'romans', 15, 27, 'free', E'*It hath pleased them verily; and their debtors they are. For if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things.* (Romans 15:27). Paul gives the reason for the collection: the nations are *debtors* to Jerusalem, for *if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things.* This is *the fellowship of the ministering to the saints* the Macedonians begged to share (2 Corinthians 8:4) — not a one-way charity but the grafted-in seed rendering carnal things in return for the spiritual riches that came out of Yashar''el (Israel).'),
+  ('canon', '2-corinthians', 8, 4, 'canon', 'romans', 15, 25, 'free', E'*But now I go unto Jerusalem to minister unto the saints.* (Romans 15:25). Paul''s own errand was *to minister unto the saints* at Jerusalem — the destination of the gift he is gathering. The Macedonians shared in this by *the fellowship of the ministering to the saints* (2 Corinthians 8:4); the brethren of this chapter are sent to administer the same grace to the same city. The whole apparatus of 2 Corinthians 8 is the carrying of that ministry to Jerusalem.'),
+  ('canon', '2-corinthians', 8, 19, 'canon', '1-corinthians', 16, 1, 'free', E'*Now concerning the collection for the saints, as I have given order to the churches of Galatia, even so do ye.* (1 Corinthians 16:1). In his first letter Paul had already set the Corinthians to *the collection for the saints,* ordered to the churches of Galatia and Corinth alike. Now in the second letter the gift is being carried: a brother *was also chosen of the churches to travel with us with this grace, which is administered by us to the glory of the same Yahuah (Lord)* (2 Corinthians 8:19). The *collection for the saints* commanded in the first epistle is the *grace... administered* in the second — one continuous ministry to Jerusalem.'),
+  ('canon', '2-corinthians', 8, 19, 'canon', '1-corinthians', 16, 3, 'free', E'*And when I come, whomsoever ye shall approve by your letters, them will I send to bring your liberality unto Jerusalem.* (1 Corinthians 16:3). Paul had told the Corinthians their own approved men would *bring your liberality unto Jerusalem.* So in this chapter the chosen brother travels *with this grace, which is administered by us to the glory of the same Yahuah (Lord), and declaration of your ready mind* (2 Corinthians 8:19) — the very *liberality* of the first letter, now on its way to the holy city, carried by men the churches trust.'),
+  -- thread: 2-corinthians-8-providing-honest-things-in-the-sight-of-yahuah-and-of-men-proverbs-3
+  ('canon', '2-corinthians', 8, 21, 'canon', 'proverbs', 3, 4, 'free', E'*So shalt thou find favour and good understanding in the sight of Elohim (God) and man.* (Proverbs 3:4). Wisdom promises that mercy and truth bound about the neck bring *favour and good understanding in the sight of Elohim (God) and man.* Paul orders the handling of the collection by the same double sight: *Providing for honest things, not only in the sight of Yahuah (Lord), but also in the sight of men* (2 Corinthians 8:21). The relief is carried by many hands and audited openly so that no man can blame the ministers — honest before Yahuah (LORD) who sees the heart, and honest before men who see the conduct, exactly the favour Proverbs sets in the sight of Elohim (God) and man.'),
+  ('canon', '2-corinthians', 8, 21, 'canon', 'proverbs', 3, 3, 'free', E'*Let not mercy and truth forsake thee: bind them about thy neck; write them upon the table of thine heart:* (Proverbs 3:3). The favour in the sight of Elohim (God) and man flows from *mercy and truth* bound about the neck and written on the heart. Paul''s care to provide *honest things, not only in the sight of Yahuah (Lord), but also in the sight of men* (2 Corinthians 8:21) is that mercy and truth made visible in the handling of the saints'' gift — the inward integrity of the heart shown in the outward transparency of the ministry, that the grace might be administered to the glory of Yahuah (Lord) and blameless before all.'),
+  -- thread: 2-corinthians-8-the-grace-of-giving-with-a-cheerful-eye-and-the-willing-mind-tobit-4-sirach-35
+  ('canon', '2-corinthians', 8, 12, 'apocrypha', 'tobit', 4, 8, 'extras', E'*If you have abundance give alms accordingly: if you have but a little, be not afraid to give according to that little:* (Tobit 4:8). Tobit charges his son to give as he has — *if you have abundance give alms accordingly: if you have but a little, be not afraid to give according to that little.* Paul measures the gift the same way: *For if there be first a willing mind, it is accepted according to that a man hath, and not according to that he hath not* (2 Corinthians 8:12). The willing heart, not the size of the purse, is what is accepted; the Macedonians out of *deep poverty abounded unto the riches of their liberality* (2 Corinthians 8:2), giving according to that little and beyond it.'),
+  ('canon', '2-corinthians', 8, 7, 'apocrypha', 'ecclesiasticus', 35, 9, 'extras', E'*In all your gifts shew a cheerful countenance, and dedicate your tithes with gladness.* (Sirach 35:9). The wisdom of the fathers commands a glad giver: *In all your gifts shew a cheerful countenance, and dedicate your tithes with gladness.* Paul exhorts the Corinthians, who *abound in every thing, in faith, and utterance, and knowledge,* to *abound in this grace also* (2 Corinthians 8:7) — the grace of giving, given gladly and not grudgingly. The cheerful countenance Sirach names is the spirit of the collection.'),
+  ('canon', '2-corinthians', 8, 7, 'apocrypha', 'ecclesiasticus', 35, 10, 'extras', E'*Give to the Most High according as he has enriched you; and as you have gotten, give with a cheerful eye.* (Sirach 35:10). Sirach binds the gift to the riches received: *Give to the Most High according as he has enriched you; and as you have gotten, give with a cheerful eye.* This is the pattern of *the grace of our Lord Yahusha HaMashiach (Lord Jesus Christ), that, though he was rich, yet for your sakes he became poor, that ye through his poverty might be rich* (2 Corinthians 8:9) — and Paul calls the Corinthians, enriched in everything, to abound in the same grace of giving (2 Corinthians 8:7) with the cheerful eye.'),
+  ('canon', '2-corinthians', 8, 5, 'apocrypha', 'ecclesiasticus', 35, 1, 'extras', E'*He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering.* (Sirach 35:1). Sirach refuses the false split between obedience and offering: *He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering.* The Macedonians'' giving was just this keeping of the heart''s law — *first gave their own selves to Yahuah (Lord), and unto us by the will of Elohim (God)* (2 Corinthians 8:5). The gift that pleases is the gift of a heart already given to Yahuah (LORD); the keeping of the commandment and the liberal offering are one, not opposed.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s229_2c08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s229_2c08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-8-the-equality-of-the-manna-each-according-to-his-eating-exodus-16',
+       E'The equality of the manna: he that gathered much had nothing over (Exodus 16)',
+       E'When Paul pleads for the collection, he does not invent a new law of charity — he reaches back to the bread that fell in the wilderness. He asks the Corinthians for *an equality, that now at this time your abundance may be a supply for their want, that their abundance also may be a supply for your want: that there may be equality* (2 Corinthians 8:14), and seals it with Scripture: *As it is written, He that had gathered much had nothing over; and he that had gathered little had no lack* (2 Corinthians 8:15). That is the manna of Exodus 16, quoted word for word: *when they did mete it with an omer, he that gathered much had nothing over, and he that gathered little had no lack; they gathered every man according to his eating* (Exodus 16:18). Yahuah (LORD) had commanded, *Gather of it every man according to his eating, an omer for every man, according to the number of your persons* (Exodus 16:16) — bread *rained from heaven* and measured to need, where no household''s surplus was hoarded against another''s hunger and no household went without. The collection for the poor saints at Jerusalem is that same gathering. The abundance of the nations at Corinth and Macedonia is poured out to supply the want of the saints in the holy city, so *that there may be equality* — the manna-rule of the camp now binding the gathered seed across the world. And the pattern of the gift is the Master himself: *ye know the grace of our Lord Yahusha HaMashiach (Lord Jesus Christ), that, though he was rich, yet for your sakes he became poor, that ye through his poverty might be rich* (2 Corinthians 8:9) — the Formed Son who emptied his own abundance that the lacking might be filled. The willing heart gives *according to that a man hath, and not according to that he hath not* (2 Corinthians 8:12), each according to his eating, until there is no man with too much over and no man with any lack.',
+       sv.verse_id, ev.verse_id, 'free', 7175
+  FROM _s229_2c08_lookup sv, _s229_2c08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=8 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-8-the-collection-for-the-saints-the-nations-minister-to-jerusalem-romans-15',
+       E'The collection for the saints: the nations minister to Jerusalem (Romans 15, 1 Corinthians 16)',
+       E'The grace of this chapter has a name and a destination. The Macedonians begged Paul *that we would receive the gift, and take upon us the fellowship of the ministering to the saints* (2 Corinthians 8:4), and the chosen brother travels *with this grace, which is administered by us to the glory of the same Yahuah (Lord)* (2 Corinthians 8:19). This is the Jerusalem relief — the same collection Paul names in his other letters. To the Romans he wrote, *now I go unto Jerusalem to minister unto the saints. For it hath pleased them of Macedonia and Achaia to make a certain contribution for the poor saints which are at Jerusalem* (Romans 15:25-26), and he gave its rationale: *if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things* (Romans 15:27). To the Corinthians earlier he had set the order: *Now concerning the collection for the saints, as I have given order to the churches of Galatia, even so do ye* (1 Corinthians 16:1), and *whomsoever ye shall approve by your letters, them will I send to bring your liberality unto Jerusalem* (1 Corinthians 16:3). One gathering runs through all three letters: the grafted-in nations, made partakers of the spiritual riches that came out of Yashar''el (Israel), now ministering carnal things back to the poor of Yashar''el (Israel). It is not abstract charity but the debt of the nations to Jerusalem, carried by approved and trusted men to the holy city.',
+       sv.verse_id, ev.verse_id, 'free', 7178
+  FROM _s229_2c08_lookup sv, _s229_2c08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=8 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-8-providing-honest-things-in-the-sight-of-yahuah-and-of-men-proverbs-3',
+       E'Providing honest things in the sight of Yahuah (LORD) and of men (Proverbs 3)',
+       E'Paul is scrupulous about the handling of the saints'' money. He sends the gift by many hands, *Avoiding this, that no man should blame us in this abundance which is administered by us: Providing for honest things, not only in the sight of Yahuah (Lord), but also in the sight of men* (2 Corinthians 8:20-21). That double sight is Solomon''s wisdom: *Let not mercy and truth forsake thee: bind them about thy neck; write them upon the table of thine heart: So shalt thou find favour and good understanding in the sight of Elohim (God) and man* (Proverbs 3:3-4). The favour Proverbs promises comes to the one whose mercy and truth are written on the heart and made visible in conduct. So Paul will not let the grace be carried in a way that any man could blame; it is audited openly, administered by men the churches trust, *to the glory of the same Yahuah (Lord)* (2 Corinthians 8:19). Honest before Yahuah (LORD) who searches the heart, and honest before men who watch the conduct — the inward integrity of Proverbs 3 made plain in the open ministry of the collection.',
+       sv.verse_id, ev.verse_id, 'free', 7181
+  FROM _s229_2c08_lookup sv, _s229_2c08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=8 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-8-the-grace-of-giving-with-a-cheerful-eye-and-the-willing-mind-tobit-4-sirach-35',
+       E'The grace of giving: a cheerful eye and a willing mind (Tobit 4, Sirach 35)',
+       E'Paul calls the Corinthians, who *abound in every thing, in faith, and utterance, and knowledge,* to *abound in this grace also* (2 Corinthians 8:7) — the grace of giving. He measures it not by the size of the purse but by the willingness of the heart: *For if there be first a willing mind, it is accepted according to that a man hath, and not according to that he hath not* (2 Corinthians 8:12). The restored library taught this giving long before. Tobit charged his son, *If you have abundance give alms accordingly: if you have but a little, be not afraid to give according to that little* (Tobit 4:8) — exactly the willing mind accepted according to what a man has. And Sirach commands the glad giver: *In all your gifts shew a cheerful countenance, and dedicate your tithes with gladness* (Sirach 35:9); *Give to the Most High according as he has enriched you; and as you have gotten, give with a cheerful eye* (Sirach 35:10). That is the pattern of the Master himself, *that, though he was rich, yet for your sakes he became poor, that ye through his poverty might be rich* (2 Corinthians 8:9). And the giving is no abandonment of obedience but its very fruit: *He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering* (Sirach 35:1) — the Macedonians *first gave their own selves to Yahuah (Lord)* (2 Corinthians 8:5), and the liberal hand flowed from the heart already given to him. Keeping the commandment and the cheerful offering are one.',
+       sv.verse_id, ev.verse_id, 'extras', 7184
+  FROM _s229_2c08_lookup sv, _s229_2c08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=8 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 2-corinthians-8-the-equality-of-the-manna-each-according-to-his-eating-exodus-16
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 16:18 — *he that gathered much had nothing over, and he that gathered little had no lack; they gathered every man according to his eating* the manna Paul cites word for word; *He that had gathered much had nothing over; and he that had gathered little had no lack* (2 Corinthians 8:15).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-the-equality-of-the-manna-each-according-to-his-eating-exodus-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=16 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 16:16 — *Gather of it every man according to his eating, an omer for every man* the manna measured to need; Paul''s appeal *by an equality... that there may be equality* (2 Corinthians 8:14).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-the-equality-of-the-manna-each-according-to-his-eating-exodus-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=16 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-8-the-collection-for-the-saints-the-nations-minister-to-jerusalem-romans-15
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Romans 15:25 — *now I go unto Jerusalem to minister unto the saints* the errand of the gift; *the fellowship of the ministering to the saints* (2 Corinthians 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-the-collection-for-the-saints-the-nations-minister-to-jerusalem-romans-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 15:26 — *Macedonia and Achaia to make a certain contribution for the poor saints which are at Jerusalem* the same collection named; the Macedonians'' *fellowship of the ministering to the saints* (2 Corinthians 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-the-collection-for-the-saints-the-nations-minister-to-jerusalem-romans-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 15:27 — *if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things* the nations'' debt to Jerusalem; *the fellowship of the ministering to the saints* (2 Corinthians 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-the-collection-for-the-saints-the-nations-minister-to-jerusalem-romans-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Corinthians 16:1 — *Now concerning the collection for the saints... even so do ye* the order Paul first gave; the *grace... administered by us to the glory of the same Yahuah (Lord)* (2 Corinthians 8:19).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-the-collection-for-the-saints-the-nations-minister-to-jerusalem-romans-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=16 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Corinthians 16:3 — *them will I send to bring your liberality unto Jerusalem* the approved men who carry the gift; the brother *chosen of the churches to travel with us with this grace* (2 Corinthians 8:19).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-the-collection-for-the-saints-the-nations-minister-to-jerusalem-romans-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=16 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-8-providing-honest-things-in-the-sight-of-yahuah-and-of-men-proverbs-3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 3:4 — *So shalt thou find favour and good understanding in the sight of Elohim (God) and man* the double sight; Paul provides *honest things, not only in the sight of Yahuah (Lord), but also in the sight of men* (2 Corinthians 8:21).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-providing-honest-things-in-the-sight-of-yahuah-and-of-men-proverbs-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 3:3 — *bind them about thy neck; write them upon the table of thine heart* mercy and truth on the heart; the inward integrity behind *honest things... in the sight of Yahuah (Lord)* and men (2 Corinthians 8:21).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-providing-honest-things-in-the-sight-of-yahuah-and-of-men-proverbs-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-8-the-grace-of-giving-with-a-cheerful-eye-and-the-willing-mind-tobit-4-sirach-35
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Tobit 4:8 — *if you have but a little, be not afraid to give according to that little* the willing heart that gives as it has; *accepted according to that a man hath, and not according to that he hath not* (2 Corinthians 8:12).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-the-grace-of-giving-with-a-cheerful-eye-and-the-willing-mind-tobit-4-sirach-35'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=12
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=4 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Sirach 35:9 — *In all your gifts shew a cheerful countenance, and dedicate your tithes with gladness* the glad giver; the Corinthians called to *abound in this grace also* (2 Corinthians 8:7).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-the-grace-of-giving-with-a-cheerful-eye-and-the-willing-mind-tobit-4-sirach-35'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Sirach 35:10 — *as you have gotten, give with a cheerful eye* giving according as he has enriched you; the grace of him who *though he was rich... became poor, that ye... might be rich* (2 Corinthians 8:9).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-the-grace-of-giving-with-a-cheerful-eye-and-the-willing-mind-tobit-4-sirach-35'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Sirach 35:1 — *He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering* giving as the fruit of obedience; the Macedonians *first gave their own selves to Yahuah (Lord)* (2 Corinthians 8:5).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c08_lookup sv, _s229_2c08_lookup tv
+ WHERE t.slug='2-corinthians-8-the-grace-of-giving-with-a-cheerful-eye-and-the-willing-mind-tobit-4-sirach-35'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=8 AND sv.verse_number=5
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2corinthians_09.sql (S229 2 Corinthians 9) -----
+-- =====================================================================
+-- S229 minion — 2 CORINTHIANS 9 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 2 CORINTHIANS 9 (15 verses) — THE CHEERFUL GIVER / he hath dispersed to the poor.
+-- Tag: 2c09 (temp view _s229_2c09_lookup).
+-- Sort band: floor 7200, step 3 (7200, 7203, 7206, 7209 used; under 7225).
+-- Source is ALWAYS the canon 2 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: This is the Jerusalem relief continued from chapter 8 — the nations ministering
+-- material things to the poor saints at Jerusalem, the grafted-in seed pouring back to Israel out of
+-- the spiritual riches they received. Paul grounds the whole exhortation in the Torah and the
+-- prophets: *Elohim (God) loveth a cheerful giver* is the Torah's *thine heart shall not be grieved
+-- when thou givest* (Deuteronomy 15:10) and Proverbs' *bountiful eye... blessed* (22:9); the
+-- sowing-and-reaping is Proverbs 11:24 *there is that scattereth, and yet increaseth* and Hosea 10:12
+-- *sow to yourselves in righteousness*; and 9:9 is an explicit *as it is written* citation of Psalm
+-- 112:9. The seed for the sower is Isaiah 55:10's rain that gives seed to the sower. The Hebrew
+-- library carries the same righteousness-of-almsgiving: Sirach 35 (*give with a cheerful eye... for
+-- Yahuah recompenseth*) and Tobit 4 and 12 (*alms do deliver from death*). No replacement theology:
+-- the giving is the nations ministering to Israel, not a new people; the righteousness that
+-- *remaineth for ever* is the same covenant righteousness of the man who *delighteth greatly in his
+-- commandments* (Psalm 112:1).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-5   the ministering to the saints, the bounty made ready beforehand
+--           Tanakh: none warranted (the substance is carried in the v.6-12 threads)
+--           Extras: none warranted   NT: carried in the v.12 Jerusalem-relief thread (Rom 15 / 1 Cor 16)
+--   v.6     he which soweth sparingly shall reap sparingly; he which soweth bountifully shall reap bountifully
+--           Tanakh: Proverbs 11:24 (there is that scattereth, and yet increaseth), Proverbs 11:25
+--                   (the liberal soul shall be made fat), Hosea 10:12 (sow to yourselves in righteousness)
+--           Extras: carried in the cheerful-giver thread   NT: none warranted (Gal 6:7 in another book)
+--   v.7     Elohim (God) loveth a cheerful giver
+--           Tanakh: Deuteronomy 15:10 (thine heart shall not be grieved when thou givest),
+--                   Proverbs 22:9 (he that hath a bountiful eye shall be blessed)
+--           Extras: Sirach 35:9-10 (give with a cheerful eye), Tobit 4:7-8 (let not your eye be envious)
+--           NT: none warranted
+--   v.8-9   Elohim able to make all grace abound; as it is written, He hath dispersed... given to the poor
+--           Tanakh: Psalm 112:9 (he hath dispersed, he hath given to the poor; his righteousness
+--                   endureth for ever) [EXPLICIT CITATION], Psalm 112:3 (his righteousness endureth for ever)
+--           Extras: none warranted   NT: none warranted (the citation IS the Tanakh root)
+--   v.10    he that ministereth seed to the sower... multiply your seed sown
+--           Tanakh: Isaiah 55:10 (the rain... that it may give seed to the sower, and bread to the
+--                   eater), Hosea 10:12 (break up your fallow ground... rain righteousness)
+--           Extras: none warranted   NT: none warranted
+--   v.11-15 the administration supplieth the want of the saints; thanksgiving; unspeakable gift
+--           Tanakh: none warranted (the want-of-the-saints is the Jerusalem relief, carried in NT thread)
+--           Extras: Tobit 12:9 (alms do deliver from death), Sirach 35:2 (he that gives alms
+--                   sacrificeth praise)
+--           NT: Romans 15:25-27 (minister to the saints at Jerusalem... in carnal things),
+--                   1 Corinthians 16:1-4 (the collection for the saints... your liberality unto Jerusalem)
+--
+-- THREADS (slug -> target libraries):
+--   7200 2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15   (Tanakh + Extras)  [CENTERPIECE]
+--   7203 2-corinthians-9-he-hath-dispersed-and-given-to-the-poor-psalm-112          (Tanakh)
+--   7206 2-corinthians-9-he-that-ministereth-seed-to-the-sower-isaiah-55            (Tanakh)
+--   7209 2-corinthians-9-the-ministration-that-supplieth-the-want-of-the-saints-romans-15  (Extras + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s229_2c09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15  [CENTERPIECE]
+  ('canon', '2-corinthians', 9, 6, 'canon', 'proverbs', 11, 24, 'free', E'*There is that scattereth, and yet increaseth; and there is that withholdeth more than is meet, but it tendeth to poverty.* (Proverbs 11:24). Paul''s law of the harvest — *He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully* (2 Corinthians 9:6) — is straight out of the proverb: the open hand that *scattereth* is the hand that *increaseth,* and the closed hand that *withholdeth* comes to want. The bountiful sower of the collection for Jerusalem reaps bountifully because Yahuah (LORD) made the giver to flourish, not the hoarder.'),
+  ('canon', '2-corinthians', 9, 6, 'canon', 'proverbs', 11, 25, 'free', E'*The liberal soul shall be made fat: and he that watereth shall be watered also himself.* (Proverbs 11:25). The proverb seals the harvest-law Paul sets down: *he which soweth bountifully shall reap also bountifully* (2 Corinthians 9:6). The *liberal soul* — the one who waters others with his substance — is himself *watered,* *made fat;* the giving that ministers to the poor saints returns upon the giver as the abounding grace of the next verse.'),
+  ('canon', '2-corinthians', 9, 6, 'canon', 'hosea', 10, 12, 'free', E'*Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek Yahuah (LORD), till he come and rain righteousness upon you.* (Hosea 10:12). The prophet''s sowing-and-reaping is the very figure Paul uses for the collection: *he which soweth bountifully shall reap also bountifully* (2 Corinthians 9:6). To *sow... in righteousness* is to *reap in mercy* — and the harvest is Yahuah (LORD) himself raining righteousness on the sower, which Paul names as the *fruits of your righteousness* increased (9:10).'),
+  ('canon', '2-corinthians', 9, 7, 'canon', 'deuteronomy', 15, 10, 'free', E'*Thou shalt surely give him, and thine heart shall not be grieved when thou givest unto him: because that for this thing Yahuah Elohayka (the LORD thy God) shall bless thee in all thy works, and in all that thou puttest thine hand unto.* (Deuteronomy 15:10). Here is the Torah-root of *Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7). The commandment is not merely to give but to give without a grieved heart — *not grudgingly, or of necessity* — and the promise attached is exactly Paul''s promise: Yahuah (LORD) *shall bless thee in all thy works.* The cheerful giver Elohim (God) loves is the open-handed Israelite of Deuteronomy 15, and the grace that abounds to *every good work* (9:8) is the blessing on *all that thou puttest thine hand unto.*'),
+  ('canon', '2-corinthians', 9, 7, 'canon', 'proverbs', 22, 9, 'free', E'*He that hath a bountiful eye shall be blessed; for he giveth of his bread to the poor.* (Proverbs 22:9). The *bountiful eye* of the proverb is the *cheerful giver* of Paul: *Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7). The single-hearted, generous eye that *giveth of his bread to the poor* is the eye Elohim (God) loves; the blessing pronounced on it in Proverbs is the all-sufficiency and abounding grace Paul promises to the Corinthian givers.'),
+  ('canon', '2-corinthians', 9, 7, 'apocrypha', 'ecclesiasticus', 35, 9, 'extras', E'*In all your gifts shew a cheerful countenance, and dedicate your tithes with gladness. Give to the Most High according as he has enriched you; and as you have gotten, give with a cheerful eye.* (Sirach 35:9-10). The Hebrew library says exactly what Paul says: *shew a cheerful countenance... give with a cheerful eye.* This is *Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7) in the wisdom of the fathers — the gift offered with gladness, measured *according as he has enriched you* (the very rule of 1 Corinthians 16:2), to which the next verse promises Yahuah (God) *will give you seven times as much* — Paul''s *able to make all grace abound* (9:8).'),
+  ('canon', '2-corinthians', 9, 7, 'apocrypha', 'tobit', 4, 7, 'extras', E'*Give alms of your substance; and when you give alms, let not your eye be envious, neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you. If you have abundance give alms accordingly: if you have but a little, be not afraid to give according to that little.* (Tobit 4:7-8). Tobit''s charge to his son is the cheerful giver before the letter: give *let not your eye be envious* — the opposite of *grudgingly, or of necessity* — and give *according as he purposeth in his heart,* whether of abundance or of little. This is the heart-posture Paul commands and Elohim (God) loves (2 Corinthians 9:7), with the same promise that the giver''s own face is not turned away from the favour of the Most High.'),
+  -- thread: 2-corinthians-9-he-hath-dispersed-and-given-to-the-poor-psalm-112
+  ('canon', '2-corinthians', 9, 9, 'canon', 'psalms', 112, 9, 'free', E'*He hath dispersed, he hath given to the poor; his righteousness endureth for ever; his horn shall be exalted with honour.* (Psalm 112:9). This is the verse Paul quotes outright — *As it is written, He hath dispersed abroad; he hath given to the poor: his righteousness remaineth for ever* (2 Corinthians 9:9). The man of the psalm who scatters his goods to the poor is the model of the Corinthian giver; and the *righteousness* that *endureth for ever* is not a credit earned but the abiding covenant-righteousness of the one who fears Yahuah (LORD) and gives — the deed that is *in everlasting remembrance* (112:6).'),
+  ('canon', '2-corinthians', 9, 9, 'canon', 'psalms', 112, 3, 'free', E'*Wealth and riches shall be in his house: and his righteousness endureth for ever.* (Psalm 112:3). The psalm twice declares of the giving, God-fearing man that *his righteousness endureth for ever* (112:3, 112:9) — the very clause Paul lifts into *his righteousness remaineth for ever* (2 Corinthians 9:9). The one who *delighteth greatly in his commandments* (112:1) and disperses to the poor is enriched in his house precisely so that he may abound to every good work; the enduring righteousness is the covenant-life of the commandment-keeper, not a wage of merit.'),
+  -- thread: 2-corinthians-9-he-that-ministereth-seed-to-the-sower-isaiah-55
+  ('canon', '2-corinthians', 9, 10, 'canon', 'isaiah', 55, 10, 'free', E'*For as the rain cometh down, and the snow from heaven, and returneth not thither, but watereth the earth, and maketh it bring forth and bud, that it may give seed to the sower, and bread to the eater:* (Isaiah 55:10). Paul''s *Now he that ministereth seed to the sower both minister bread for your food, and multiply your seed sown* (2 Corinthians 9:10) is Isaiah''s rain that *give seed to the sower, and bread to the eater.* Elohim (God) is the one who supplies both the seed to sow and the bread to eat; he multiplies the giver''s seed and increases the *fruits of your righteousness* as surely as the rain from heaven makes the earth bring forth, his word never returning void.'),
+  ('canon', '2-corinthians', 9, 10, 'canon', 'hosea', 10, 12, 'free', E'*Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek Yahuah (LORD), till he come and rain righteousness upon you.* (Hosea 10:12). The prophet joins the seed and the rain and the righteousness exactly as Paul does: the sower who *minister seed to the sower* sees Elohim (God) *increase the fruits of your righteousness* (2 Corinthians 9:10). To sow in righteousness is to have Yahuah (LORD) *rain righteousness upon you* — the harvest of the cheerful giving is a righteousness watered from heaven and multiplied in its fruit.'),
+  -- thread: 2-corinthians-9-the-ministration-that-supplieth-the-want-of-the-saints-romans-15
+  ('canon', '2-corinthians', 9, 12, 'canon', 'romans', 15, 27, 'free', E'*It hath pleased them verily; and their debtors they are. For if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things.* (Romans 15:27). Paul names the same collection in Romans: Macedonia and Achaia making *a certain contribution for the poor saints which are at Jerusalem* (Romans 15:26). This is the *administration of this service* that *supplieth the want of the saints* (2 Corinthians 9:12) — the nations who received Israel''s *spiritual things* now ministering back *in carnal things.* The cheerful giving is the grafted-in seed paying its glad debt to the household from which salvation came, not a new people but the nations brought near, ministering to Israel.'),
+  ('canon', '2-corinthians', 9, 12, 'canon', '1-corinthians', 16, 1, 'free', E'*Now concerning the collection for the saints, as I have given order to the churches of Galatia, even so do ye.* (1 Corinthians 16:1). The same collection stands behind both letters to Corinth: *Upon the first day of the week let every one of you lay by him in store, as Elohim (God) hath prospered him* (1 Corinthians 16:2), the gift carried *unto Jerusalem* (16:3). What the first letter ordered, the second sees ripening into *the administration of this service* that *supplieth the want of the saints* (2 Corinthians 9:12) — each giving *as Elohim (God) hath prospered him,* the same measure Paul commands here (9:7-8).'),
+  ('canon', '2-corinthians', 9, 12, 'apocrypha', 'tobit', 12, 9, 'extras', E'*For alms does deliver from death, and shall purge away all sin. Those that exercise alms and righteousness shall be filled with life:* (Tobit 12:9). The angel Raphael''s word binds alms and righteousness exactly as Paul does — the *liberal distribution* that yields *thanksgivings unto Elohim (God)* (2 Corinthians 9:12-13). In the Hebrew library, *alms do deliver from death* and those who join alms to righteousness *shall be filled with life;* this is the abiding *righteousness* that *remaineth for ever* of the dispersing giver (9:9), the ministration that does far more than relieve want — it abounds in thanksgiving to Elohim (God).'),
+  ('canon', '2-corinthians', 9, 13, 'apocrypha', 'ecclesiasticus', 35, 2, 'extras', E'*He that requiteth a goodturn offers fine flour; and he that gives alms sacrificeth praise.* (Sirach 35:2). The wisdom of the fathers counts almsgiving as a sacrifice of praise — *he that gives alms sacrificeth praise.* Paul sees the same: the Corinthians'' *liberal distribution* makes the saints *glorify Elohim (God)* and is *abundant also by many thanksgivings unto Elohim (God)* (2 Corinthians 9:12-13). The gift to the poor rises as worship; the relief of Jerusalem becomes the praise of Elohim (God) on the lips of those relieved, the alms that *sacrificeth praise.*')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s229_2c09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s229_2c09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15',
+       E'Sowing bountifully and the cheerful giver Elohim (God) loveth (Deuteronomy 15, Proverbs 11 & 22)',
+       E'Paul presses the Corinthians to make good their gift for the poor saints at Jerusalem, and he grounds the whole appeal in the Torah and the proverbs. First the law of the harvest: *He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully* (2 Corinthians 9:6). This is the wisdom of Proverbs, where the open hand and the closed hand are weighed against each other: *There is that scattereth, and yet increaseth; and there is that withholdeth more than is meet, but it tendeth to poverty* (Proverbs 11:24); *The liberal soul shall be made fat: and he that watereth shall be watered also himself* (Proverbs 11:25). It is the prophet''s sowing too: *Sow to yourselves in righteousness, reap in mercy... till he come and rain righteousness upon you* (Hosea 10:12). Then the heart of the matter: *Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7). That is no new teaching but the very command of the Torah — *Thou shalt surely give him, and thine heart shall not be grieved when thou givest unto him: because that for this thing Yahuah Elohayka (the LORD thy God) shall bless thee in all thy works, and in all that thou puttest thine hand unto* (Deuteronomy 15:10). The cheerful giver Elohim (God) loves is the open-handed Israelite who gives without a grieved heart; and the proverb names him too — *He that hath a bountiful eye shall be blessed; for he giveth of his bread to the poor* (Proverbs 22:9). The Hebrew library says the same in the wisdom of the fathers: *In all your gifts shew a cheerful countenance, and dedicate your tithes with gladness. Give to the Most High according as he has enriched you; and as you have gotten, give with a cheerful eye* (Sirach 35:9-10); and Tobit''s charge, *when you give alms, let not your eye be envious, neither turn your face from any poor... If you have abundance give alms accordingly: if you have but a little, be not afraid to give according to that little* (Tobit 4:7-8). The whole counsel converges: give as you have purposed, with a glad and bountiful eye, measured to what Elohim (God) has given you — and the promise of the Torah follows, that Yahuah (LORD) will bless you in all the work of your hands, and *make all grace abound toward you* (9:8). This is the grafted-in seed ministering to Israel out of the riches it received, the cheerful giving that the God of the fathers has always loved.',
+       sv.verse_id, ev.verse_id, 'extras', 7200
+  FROM _s229_2c09_lookup sv, _s229_2c09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=9 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-9-he-hath-dispersed-and-given-to-the-poor-psalm-112',
+       E'As it is written, He hath dispersed and given to the poor (Psalm 112)',
+       E'When Paul promises that Elohim (God) *is able to make all grace abound toward you,* he reaches for the scripture and quotes it by name: *As it is written, He hath dispersed abroad; he hath given to the poor: his righteousness remaineth for ever* (2 Corinthians 9:9). The verse is Psalm 112:9 — *He hath dispersed, he hath given to the poor; his righteousness endureth for ever; his horn shall be exalted with honour* — a portrait of the God-fearing man whose generosity is the mark of his covenant-life. The psalm opens, *Blessed is the man that feareth Yahuah (LORD), that delighteth greatly in his commandments* (112:1), and twice declares of him *his righteousness endureth for ever* (112:3, 112:9). So the *righteousness* that *remaineth for ever* in Paul''s citation is no merit-wage earned by alms; it is the abiding covenant-righteousness of the commandment-keeper who scatters his bread to the poor, the deed that is held *in everlasting remembrance* (112:6). The Corinthian giver, dispersing his goods to the saints at Jerusalem, stands in the line of this man — enriched in his house (112:3) not to hoard but to abound to every good work, his horn exalted with honour because he gave.',
+       sv.verse_id, ev.verse_id, 'free', 7203
+  FROM _s229_2c09_lookup sv, _s229_2c09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=9 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-9-he-that-ministereth-seed-to-the-sower-isaiah-55',
+       E'He that ministereth seed to the sower, and the rain of righteousness (Isaiah 55, Hosea 10)',
+       E'Paul names Elohim (God) as the one who supplies both the seed and the harvest: *Now he that ministereth seed to the sower both minister bread for your food, and multiply your seed sown, and increase the fruits of your righteousness* (2 Corinthians 9:10). The words are Isaiah''s: *For as the rain cometh down, and the snow from heaven, and returneth not thither, but watereth the earth, and maketh it bring forth and bud, that it may give seed to the sower, and bread to the eater* (Isaiah 55:10). The God who sends the rain that *give seed to the sower, and bread to the eater* is the God who multiplies the giver''s seed and increases the fruits of his righteousness; the same heaven-sent supply stands behind the cheerful giving. And the prophet Hosea binds the seed, the rain, and the righteousness into one word: *Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek Yahuah (LORD), till he come and rain righteousness upon you* (Hosea 10:12). To sow in righteousness is to have Yahuah (LORD) rain righteousness upon you — so the harvest of the Corinthians'' liberality is not their own accomplishment but a righteousness watered from heaven, the seed Elohim (God) himself ministers and multiplies, that they may be *enriched in every thing to all bountifulness* (9:11).',
+       sv.verse_id, ev.verse_id, 'free', 7206
+  FROM _s229_2c09_lookup sv, _s229_2c09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=9 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-9-the-ministration-that-supplieth-the-want-of-the-saints-romans-15',
+       E'The ministration that supplieth the want of the saints at Jerusalem (Romans 15, 1 Corinthians 16, Tobit 12)',
+       E'The collection Paul gathers is no abstract charity but a named, concrete relief: *the administration of this service not only supplieth the want of the saints, but is abundant also by many thanksgivings unto Elohim (God)* (2 Corinthians 9:12). The same gathering runs through his other letters. In Romans he writes, *now I go unto Jerusalem to minister unto the saints. For it hath pleased them of Macedonia and Achaia to make a certain contribution for the poor saints which are at Jerusalem* — and he names what it means: *if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things* (Romans 15:25-27). The nations who received Israel''s spiritual riches now minister back to Israel in material things; this is the grafted-in seed paying its glad debt to the household from which salvation came, not a new people replacing the old. In the first Corinthian letter he had already ordered it: *Now concerning the collection for the saints... Upon the first day of the week let every one of you lay by him in store, as Elohim (God) hath prospered him* (1 Corinthians 16:1-2), the gift carried *unto Jerusalem* (16:3) — each giving by the very measure Paul names here, *according as he purposeth in his heart* (9:7). And the Hebrew library knows the worth of such giving: *For alms does deliver from death, and shall purge away all sin. Those that exercise alms and righteousness shall be filled with life* (Tobit 12:9); *he that gives alms sacrificeth praise* (Sirach 35:2). So the relief of Jerusalem rises as worship — the *liberal distribution* makes the saints *glorify Elohim (God)* (9:13), the alms that sacrifices praise, the ministration that supplies want and abounds in thanksgiving to Elohim (God), crowned by Paul''s own praise: *Thanks be unto Elohim (God) for his unspeakable gift* (9:15).',
+       sv.verse_id, ev.verse_id, 'extras', 7209
+  FROM _s229_2c09_lookup sv, _s229_2c09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=9 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 11:24 — *There is that scattereth, and yet increaseth... but it tendeth to poverty* the open hand increaseth, the closed hand wants; *he which soweth bountifully shall reap also bountifully* (2 Corinthians 9:6).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=11 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 11:25 — *The liberal soul shall be made fat: and he that watereth shall be watered also himself* the giver watered in return; *soweth bountifully shall reap also bountifully* (2 Corinthians 9:6).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=11 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hosea 10:12 — *Sow to yourselves in righteousness, reap in mercy... till he come and rain righteousness upon you* the prophet''s sowing-and-reaping; *he which soweth bountifully shall reap also bountifully* (2 Corinthians 9:6).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 15:10 — *thine heart shall not be grieved when thou givest unto him... Yahuah Elohayka (the LORD thy God) shall bless thee in all thy works* the Torah-root of the ungrieved heart; *Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=15 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Proverbs 22:9 — *He that hath a bountiful eye shall be blessed; for he giveth of his bread to the poor* the bountiful eye is the cheerful giver; *Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=22 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Sirach 35:9-10 — *shew a cheerful countenance... give with a cheerful eye* the wisdom of the fathers; *Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Tobit 4:7-8 — *let not your eye be envious, neither turn your face from any poor... be not afraid to give according to that little* give without a grudging eye, of abundance or of little; *not grudgingly, or of necessity* (2 Corinthians 9:7).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-sowing-bountifully-and-the-cheerful-giver-deuteronomy-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=4 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-9-he-hath-dispersed-and-given-to-the-poor-psalm-112
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 112:9 — *He hath dispersed, he hath given to the poor; his righteousness endureth for ever* the verse Paul quotes; *As it is written, He hath dispersed abroad; he hath given to the poor* (2 Corinthians 9:9).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-he-hath-dispersed-and-given-to-the-poor-psalm-112'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=112 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 112:3 — *Wealth and riches shall be in his house: and his righteousness endureth for ever* the enduring covenant-righteousness of the God-fearing giver; *his righteousness remaineth for ever* (2 Corinthians 9:9).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-he-hath-dispersed-and-given-to-the-poor-psalm-112'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=112 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-9-he-that-ministereth-seed-to-the-sower-isaiah-55
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 55:10 — *the rain... that it may give seed to the sower, and bread to the eater* Elohim (God) supplies both seed and bread; *he that ministereth seed to the sower both minister bread for your food* (2 Corinthians 9:10).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-he-that-ministereth-seed-to-the-sower-isaiah-55'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hosea 10:12 — *Sow to yourselves in righteousness... till he come and rain righteousness upon you* seed, rain, and righteousness joined; *increase the fruits of your righteousness* (2 Corinthians 9:10).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-he-that-ministereth-seed-to-the-sower-isaiah-55'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-9-the-ministration-that-supplieth-the-want-of-the-saints-romans-15
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Romans 15:27 — *if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things* the nations ministering back to Israel; *the administration of this service... supplieth the want of the saints* (2 Corinthians 9:12).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-the-ministration-that-supplieth-the-want-of-the-saints-romans-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Corinthians 16:1 — *Now concerning the collection for the saints... even so do ye* the same collection ordered in the first letter, carried unto Jerusalem; *the administration of this service* (2 Corinthians 9:12).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-the-ministration-that-supplieth-the-want-of-the-saints-romans-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=16 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Tobit 12:9 — *alms does deliver from death... Those that exercise alms and righteousness shall be filled with life* alms bound to righteousness; the liberal distribution yielding *thanksgivings unto Elohim (God)* (2 Corinthians 9:12).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-the-ministration-that-supplieth-the-want-of-the-saints-romans-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=12
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=12 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Sirach 35:2 — *he that gives alms sacrificeth praise* the gift to the poor rises as worship; the *liberal distribution* making the saints *glorify Elohim (God)* (2 Corinthians 9:13).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c09_lookup sv, _s229_2c09_lookup tv
+ WHERE t.slug='2-corinthians-9-the-ministration-that-supplieth-the-want-of-the-saints-romans-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=9 AND sv.verse_number=13
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session229 — 2 Corinthians cross-references complete.'
