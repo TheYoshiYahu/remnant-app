@@ -586,3 +586,35 @@ START with Wisdom of Solomon Pack 1 = ch1-8. Then Sirach, Tobit, Maccabees, etc.
 (@62000), apocalypse-of-abraham (@63000), ascension-isaiah (@64000), sonnini-acts-29 (@65000),
 apostolic-fathers/lightfoot (@70000), mrjames-apocryphal-nt (@75000), josephus (defer @80000).
 SKIP the 6 corrupt pseudepigrapha-charles-vol2 books.
+
+## RECEIPT — Apocrypha Pack 1: Wisdom of Solomon ch1–8 ✅ LIVE IN PROD  [NEW book group, session253]
+- Applied 2026-06-11. AUTHORITATIVE (anchored on apocrypha/the-wisdom-of-solomon): **39 threads / 130
+  members**, band 58000–58187, per-ch 5/5/5/5/4/5/5/5, 0 orphans. Migration
+  `session253_wisdomofsolomon_extracanon_cross_references.sql`. Commit `60f3793`. Five gates green
+  (fidelity 130/130, FULL-LIBRARY PASS, resolve 0 after fixing 1 Jubilees book-slug 'the-book-of-jubilees'
+  →'jubilees'). The apocrypha parse is CLEAN (no gaps/blobs).
+- Elohim made not death (1→Gen1:31/Ezek18:32/Rom6:23); ★THE SUFFERING RIGHTEOUS=the Passion (2:12-20→
+  Matt27:43/Ps22:8/John19:7/Isa53:7/Isa3:10); souls of the righteous=resurrection (3→Rev6:9/Dan12/2Macc7/
+  1En103:4); ENOCH translated (4→Gen5:24/Heb11:5/Sir44:16/Jub4:23); the too-late confession (5→Ps2:4/
+  Rev6:15-17/1En62-63); wisdom for kings (6); ★WISDOM=breath/brightness/image=the Formed LOGOS (7→John1/
+  Heb1:3/Col1/Prov8/1Cor1:24); wisdom embraced (8→1Kgs3:9/James1:5). Heavy self-links into the now-live
+  apocrypha/enoch/jubilees editions.
+- ⚑ SLUG-PREFIX LESSON: minions slugged threads `wisdom-N-...` (not `the-wisdom-of-solomon-N-...`), which
+  COLLIDES with 2 pre-existing unrelated `wisdom-` threads (band 265). The slug-prefix recon is noisy;
+  the ANCHOR-BASED recon (count threads by anchor verse's edition+book) is AUTHORITATIVE — use `_wischeck.py`
+  pattern or recon.py's per-chapter group-by. No exact-slug collision occurred (all 39 inserted). For future
+  Apocrypha books, prefer a distinctive full-book slug prefix; always verify via the anchor-based count.
+- Push blocked. origin/main 47a9e48; local HEAD `60f3793` (33 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): ALL 3 PSEUDEPIGRAPHA COMPLETE + Apocrypha Wisdom-of-Solomon ch1-8 LIVE =
+1201 threads/4344 members. NEXT = Wisdom of Solomon Pack 2 ch9-19 (9 Solomon's prayer→1Kgs3; 10-12 wisdom
+in history Adam→Exodus; 13-15 IDOLATRY POLEMIC→Romans 1 [already cited, anchor from it]; 16-19 the Exodus
+plagues/manna/Red Sea retold) FINISHES Wisdom of Solomon. Then Sirach/Ecclesiasticus (@58300, 51ch), then
+Tobit/Judith/Maccabees/Baruch/Esdras/Susanna/Bel/Manasseh/Song-of-Three/rest-of-Esther (per allocation).
+Then adam-eve-conflict@62000, apoc-of-abraham@63000, ascension-isaiah@64000, sonnini@65000, apostolic-
+fathers@70000, mrjames@75000, josephus(defer). SKIP 6 corrupt pseudepigrapha. METHOD: workflow (wisdom-pack1
+script + per-ch CONTEXT) → render → anchor_check.py apocrypha <book> + pglast + verify_fidelity + resolve_check
+apocrypha <book> → fold (name session2NN_<book>_extracanon_cross_references.sql) → audit → ANCHOR-BASED recon.
+Brief MINION_BRIEF_APOCRYPHA.md ("Jesus"=Joshua note). ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main`
+from /tmp/extracanon-xref-wt with keychain unlocked — 33 commits (85b660c..60f3793) need to land on origin/main
+(still 47a9e48); prod authoritative meanwhile.
