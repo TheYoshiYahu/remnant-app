@@ -1,0 +1,128 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 32,
+  "session": "session253",
+  "tag": "sir32",
+  "base_band": 59075,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-32-word-in-season",
+      "title": "A word spoken in due season",
+      "summary_md": "Ben Sira sets the rule of the feast and the table of speech: *Speak, you that are the elder, for it becometh you, but with sound judgment; and hinder not musick* (Ecclesiasticus 32:3), and to the young, *Let your speech be short, comprehending much in few words; be as one that knoweth and yet holdeth his tongue* (Ecclesiasticus 32:8). It ain't new — this is Proverbs' wisdom of timely speech: *A man hath joy by the answer of his mouth: and a word spoken in due season, how good is it!* (Proverbs 15:23), and its rebuke of the hasty tongue, *He that answereth a matter before he heareth it, it is folly and shame unto him* (Proverbs 18:13). The Preacher set every word in its hour — *A time to rend, and a time to sew; a time to keep silence, and a time to speak* (Ecclesiastes 3:7) — and James drew the same wisdom to its end, *be swift to hear, slow to speak.* The seasoned word, not the abundant one.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 32, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 15, "tgt_v": 23,
+         "tier": "free",
+         "note": "Proverbs 15:23 — *A man hath joy by the answer of his mouth: and a word spoken in due season, how good is it!* The elder's seasoned speech in Sirach 32:3 is Proverbs' word in due season."},
+        {"src_ch": 32, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 18, "tgt_v": 13,
+         "tier": "free",
+         "note": "Proverbs 18:13 — *He that answereth a matter before he heareth it, it is folly and shame unto him.* The short, knowing speech that holds its tongue in Sirach 32:8 is the wisdom against the hasty answer."},
+        {"src_ch": 32, "src_v": 4,
+         "tgt_edition": "canon", "tgt_book": "ecclesiastes", "tgt_ch": 3, "tgt_v": 7,
+         "tier": "free",
+         "note": "Ecclesiastes 3:7 — *A time to rend, and a time to sew; a time to keep silence, and a time to speak.* Sirach 32:4's 'shew not forth wisdom out of time' is the Preacher's time to keep silence."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-32-multitude-of-counsel",
+      "title": "Do nothing without advice",
+      "summary_md": "*Do nothing without advice; and when you have once done, repent not* (Ecclesiasticus 32:19), for *A man of counsel will be considerate; but a strange and proud man is not daunted with fear, even when of himself he has done without counsel* (Ecclesiasticus 32:18). This is the plain proverb of safety in counsel: *Where no counsel is, the people fall: but in the multitude of counsellors there is safety* (Proverbs 11:14). And the presumption Ben Sira warns of — the man who plans without seeking — is the very boast James rebukes: *Go to now, ye that say, To day or to morrow we will go into such a city, and continue there a year, and buy and sell, and get gain* (James 4:13), *Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapour* (James 4:14). The wise take counsel; the proud go without.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 32, "src_v": 19,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 11, "tgt_v": 14,
+         "tier": "free",
+         "note": "Proverbs 11:14 — *Where no counsel is, the people fall: but in the multitude of counsellors there is safety.* 'Do nothing without advice' in Sirach 32:19 is the proverb of safety in the multitude of counsellors."},
+        {"src_ch": 32, "src_v": 18,
+         "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 4, "tgt_v": 13,
+         "tier": "free",
+         "note": "James 4:13 — *Go to now, ye that say, To day or to morrow we will go into such a city, and continue there a year, and buy and sell, and get gain.* The proud man who acts without counsel in Sirach 32:18 is James's presumptuous planner."},
+        {"src_ch": 32, "src_v": 18,
+         "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 4, "tgt_v": 14,
+         "tier": "free",
+         "note": "James 4:14 — *Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapour, that appeareth for a little time, and then vanisheth away.* The self-confident man of Sirach 32:18 forgets that his morrow is not his own."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-32-fear-of-yahuah-discipline",
+      "title": "Whoso fears Yahuah will receive his discipline",
+      "summary_md": "The chapter turns from the table to the heart: *Whoso fears Yahuah (God) will receive his discipline; and they that seek him early shall find favour* (Ecclesiasticus 32:14), and *They that fear Yahuah (God) shall find judgment, and shall kindle justice as a light* (Ecclesiasticus 32:16). It ain't new — this is the root proverb, *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction* (Proverbs 1:7), and the seeking that Psalm 119 calls blessed: *Blessed are they that keep his testimonies, and that seek him with the whole heart* (Psalm 119:2). Ben Sira's own book opens on the same fear — *To fear Yahuah (God) is the beginning of wisdom: and it was created with the faithful in the womb* (Ecclesiasticus 1:14) — and binds it to the law itself: *The fear of Yahuah (God) is all wisdom; and in all wisdom is the performance of the law* (Ecclesiasticus 19:20). The fear of Yahuah is the doing of the law.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 32, "src_v": 14,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 1, "tgt_v": 7,
+         "tier": "free",
+         "note": "Proverbs 1:7 — *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction.* The fearing soul that receives discipline in Sirach 32:14 is the proverb's beginning of knowledge."},
+        {"src_ch": 32, "src_v": 14,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 119, "tgt_v": 2,
+         "tier": "free",
+         "note": "Psalm 119:2 — *Blessed are they that keep his testimonies, and that seek him with the whole heart.* 'They that seek him early shall find favour' in Sirach 32:14 is the blessing of those who seek him with the whole heart."},
+        {"src_ch": 32, "src_v": 16,
+         "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 1, "tgt_v": 14,
+         "tier": "extras",
+         "note": "Ecclesiasticus 1:14 — *To fear Yahuah (God) is the beginning of wisdom: and it was created with the faithful in the womb.* Ben Sira's own opening makes the fear of Yahuah that finds judgment in Sirach 32:16 the beginning of wisdom."},
+        {"src_ch": 32, "src_v": 16,
+         "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 19, "tgt_v": 20,
+         "tier": "extras",
+         "note": "Ecclesiasticus 19:20 — *The fear of Yahuah (God) is all wisdom; and in all wisdom is the performance of the law, and the knowledge of his omnipotency.* Sirach binds the fear of 32:16 directly to the performance of the law."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-32-keeping-the-commandments",
+      "title": "This is the keeping of the commandments",
+      "summary_md": "The chapter ends on the doer of the law: *In every good work trust your own soul; for this is the keeping of the commandments* (Ecclesiasticus 32:23), and *He that believes in Yahuah (God) takes heed to the commandment; and he that trusts in him shall fare never the worse* (Ecclesiasticus 32:24). This is no new gospel — it is Moses' word that the commandment is not far off: *For this commandment which I command thee this day, it is not hidden from thee, neither is it far off* (Deuteronomy 30:11), *But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* (Deuteronomy 30:14). Paul preached the very same — not the hearer but *the doers of the law shall be justified.* (Romans 2:13) — and so did James: *But be ye doers of the word, and not hearers only, deceiving your own selves* (James 1:22), *But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed* (James 1:25). Ben Sira's own counsel agrees: *If you desire wisdom, keep the commandments* (Ecclesiasticus 1:26). The Torah stands; the blessing is on the doer.",
+      "anchor_start_v": 23,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 32, "src_v": 23,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 11,
+         "tier": "free",
+         "note": "Deuteronomy 30:11 — *For this commandment which I command thee this day, it is not hidden from thee, neither is it far off.* 'The keeping of the commandments' in Sirach 32:23 is Moses' commandment that is not hidden nor far off."},
+        {"src_ch": 32, "src_v": 23,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 14,
+         "tier": "free",
+         "note": "Deuteronomy 30:14 — *But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it.* Sirach 32:23's trust shown in good work is Moses' word very nigh, that thou mayest do it."},
+        {"src_ch": 32, "src_v": 24,
+         "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 2, "tgt_v": 13,
+         "tier": "free",
+         "note": "Romans 2:13 — *For not the hearers of the law are just before Elohim (God), but the doers of the law shall be justified.* He that takes heed to the commandment in Sirach 32:24 is Paul's doer of the law who shall be justified."},
+        {"src_ch": 32, "src_v": 24,
+         "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 22,
+         "tier": "free",
+         "note": "James 1:22 — *But be ye doers of the word, and not hearers only, deceiving your own selves.* Taking heed to the commandment in Sirach 32:24 is James's call to be a doer, not a hearer only."},
+        {"src_ch": 32, "src_v": 23,
+         "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 25,
+         "tier": "free",
+         "note": "James 1:25 — *But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed.* 'This is the keeping of the commandments' in Sirach 32:23 is the doer of the work, blessed in his deed."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-32-humble-host",
+      "title": "Lift not thyself up, but be among them",
+      "summary_md": "Ben Sira's first word to the master of the feast is humility: *If you be made the master of a feast, lift not thyself up, but be among them as one of the rest; take diligent care for them, and so sit down* (Ecclesiasticus 32:1), and *If you be among great men, make not thyself equal with them; and when ancient men are in place, use not many words* (Ecclesiasticus 32:9). It ain't new — this is the proverb of the lowered seat, *before honour is humility*, the same wisdom the Messiah taught at the table, 'sit not down in the highest room... go and sit down in the lowest room.' Ben Sira even gives its likeness in the natural order: *Before the thunder goes lightning; and before a shamefaced man shall go favour* (Ecclesiasticus 32:10) — favour goes before the modest as light before thunder. The exalted self is abased; the lowly host receives the crown of his well ordering.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 32, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 18, "tgt_v": 12,
+         "tier": "free",
+         "note": "Proverbs 18:12 — *Before destruction the heart of man is haughty, and before honour is humility.* The master of the feast who lifts not himself up in Sirach 32:1 walks the proverb's road where humility goes before honour."},
+        {"src_ch": 32, "src_v": 10,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 15, "tgt_v": 23,
+         "tier": "free",
+         "note": "Proverbs 15:23 — *A man hath joy by the answer of his mouth: and a word spoken in due season, how good is it!* The favour that goes before the shamefaced man in Sirach 32:10 is the joy of the well-timed, well-ordered word."}
+      ]
+    }
+  ]
+}
