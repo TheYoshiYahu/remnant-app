@@ -21312,6 +21312,3397 @@ SELECT t.id, x.id, 4, E'Psalm 105:37 — *He brought them forth also with silver
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jasher_81.sql (session252 jasher 81) -----
+-- Source anchor: jasher/jasher ch81. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja81 (view _session252_ja81_lookup). Sort band base 57000, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja81_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-81-exodus-spoiling
+  ('jasher', 'jasher', 81, 1, 'canon', 'exodus', 12, 37, 'free', E'Exodus 12:37 — *And the children of Yashar''el (Israel) journeyed from Rameses to Succoth, about six hundred thousand on foot that were men, beside children.* The canon gives the identical muster and route that opens Jasher 81:1.'),
+  ('jasher', 'jasher', 81, 2, 'canon', 'exodus', 12, 38, 'free', E'Exodus 12:38 — *And a mixed multitude went up also with them; and flocks, and herds, even very much cattle.* The mixed multitude and the much cattle of Jasher 81:2 are Exodus verbatim.'),
+  ('jasher', 'jasher', 81, 4, 'canon', 'genesis', 15, 14, 'free', E'Genesis 15:14 — *And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance.* The bringing-out with a strong hand in Jasher 81:4 keeps the word sworn to Abraham.'),
+  ('jasher', 'jasher', 81, 2, 'canon', 'exodus', 12, 36, 'free', E'Exodus 12:36 — *And Yahuah (LORD) gave the people favour in the sight of the Egyptians, so that they lent unto them such things as they required. And they spoiled the Egyptians.* The substance carried out with the multitude of Jasher 81:2 is the canon''s spoiling of Egypt.'),
+  ('jasher', 'jasher', 81, 4, 'jubilees', 'jubilees', 48, 19, 'extras', E'Jubilees 48:19 — *And we did not lead forth the children of Yashar''el (Israel) from Egypt empty handed.* The Jubilees apparatus narrates the same delivered seed that Jasher 81:4 brings out with a strong hand.'),
+  -- thread: jasher-81-pharaoh-pursues
+  ('jasher', 'jasher', 81, 6, 'canon', 'numbers', 33, 4, 'free', E'Numbers 33:4 — *For the Egyptians buried all their firstborn, which Yahuah (LORD) had smitten among them: upon their gods also Yahuah (LORD) executed judgments.* The three-day burial of Jasher 81:6 is the canon''s judgment on the gods of Egypt.'),
+  ('jasher', 'jasher', 81, 21, 'canon', 'exodus', 14, 14, 'free', E'Exodus 14:14 — *Yahuah (LORD) shall fight for you, and ye shall hold your peace.* Jasher 81:21 has Yahuah harden Egypt only to overthrow her — the battle the canon promises is His.'),
+  ('jasher', 'jasher', 81, 22, 'canon', 'exodus', 14, 12, 'free', E'Exodus 14:12 — *Is not this the word that we did tell thee in Egypt, saying, Let us alone, that we may serve the Egyptians? For it had been better for us to serve the Egyptians, than that we should die in the wilderness.* The mustered host bearing down on Israel in Jasher 81:22 is the dread the canon records at the sea.'),
+  ('jasher', 'jasher', 81, 24, 'jubilees', 'jubilees', 48, 12, 'extras', E'Jubilees 48:12 — *the prince of the Mastêmâ ... cried to the Egyptians to pursue after you with all the powers of the Egyptians, with their chariots, and with their horses ... And I stood between the Egyptians and Yashar''el (Israel), and we delivered Yashar''el (Israel) out of his hand ... and Yahuah (God) brought them through the midst of the sea as if it were dry land.* Jubilees tells the same pursuit that overtakes Israel at the sea in Jasher 81:24.'),
+  -- thread: jasher-81-red-sea-divided
+  ('jasher', 'jasher', 81, 28, 'canon', 'exodus', 14, 13, 'free', E'Exodus 14:13 — *And Moses said unto the people, Fear ye not, stand still, and see the salvation of Yahuah (LORD), which he will shew to you to day: for the Egyptians whom ye have seen to day, ye shall see them again no more for ever.* Moses'' charge in Jasher 81:28 is the canon''s stand-still word verbatim in substance.'),
+  ('jasher', 'jasher', 81, 37, 'canon', 'exodus', 14, 21, 'free', E'Exodus 14:21 — *And Moses stretched out his hand over the sea; and Yahuah (LORD) caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided.* The rod lifted and the sea divided in Jasher 81:37 is the canon''s parting.'),
+  ('jasher', 'jasher', 81, 40, 'canon', 'exodus', 14, 28, 'free', E'Exodus 14:28 — *And the waters returned, and covered the chariots, and the horsemen, and all the host of Pharaoh that came into the sea after them; there remained not so much as one of them.* The waters resuming on the Egyptians in Jasher 81:40 is the canon''s drowning of the host.'),
+  ('jasher', 'jasher', 81, 42, 'canon', 'exodus', 14, 30, 'free', E'Exodus 14:30 — *Thus Yahuah (LORD) saved Yashar''el (Israel) that day out of the hand of the Egyptians; and Yashar''el (Israel) saw the Egyptians dead upon the sea shore.* Jasher 81:42 has Israel behold the great hand of Yahuah exactly as the canon''s deliverance day.'),
+  ('jasher', 'jasher', 81, 40, 'jubilees', 'jubilees', 48, 14, 'extras', E'Jubilees 48:14 — *And all the peoples whom he brought to pursue after Yashar''el (Israel), Yahuah our Elohim (the LORD our God) cast them into the midst of the sea, into the depths of the abyss beneath the children of Yashar''el (Israel)...* Jubilees narrates the same sinking host that Jasher 81:40 says sank in the water.'),
+  -- thread: jasher-81-song-of-moses
+  ('jasher', 'jasher', 81, 44, 'canon', 'exodus', 15, 1, 'free', E'Exodus 15:1 — *Then sang Moses and the children of Yashar''el (Israel) this song unto Yahuah (LORD), and spake, saying, I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.* Jasher 81:44 sings the canon''s song of the sea word for word.'),
+  ('jasher', 'jasher', 81, 43, 'canon', 'revelation', 15, 3, 'free', E'Revelation 15:3 — *And they sing the song of Moses the servant of Elohim (God), and the song of the Lamb, saying, Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty; just and true are thy ways, thou King of saints.* The song Moses sings in Jasher 81:43 is sung again over the last enemy at the sea of glass.'),
+  -- thread: jasher-81-marah-manna
+  ('jasher', 'jasher', 81, 45, 'canon', 'exodus', 15, 25, 'free', E'Exodus 15:25 — *And he cried unto Yahuah (LORD); and Yahuah (LORD) shewed him a tree, which when he had cast into the waters, the waters were made sweet: there he made for them a statute and an ordinance, and there he proved them,* Jasher 81:45 names the same Marah where Yahuah gave statutes and judgments.'),
+  ('jasher', 'jasher', 81, 48, 'canon', 'exodus', 16, 4, 'free', E'Exodus 16:4 — *Then said Yahuah (LORD) unto Moses, Behold, I will rain bread from heaven for you; and the people shall go out and gather a certain rate every day, that I may prove them, whether they will walk in my law, or no.* The food rained day by day in Jasher 81:48 is the canon''s manna that proves whether Israel will walk in His law.'),
+  -- thread: jasher-81-amalek
+  ('jasher', 'jasher', 81, 52, 'canon', 'exodus', 17, 8, 'free', E'Exodus 17:8 — *Then came Amalek, and fought with Yashar''el (Israel) in Rephidim.* Jasher 81:52 names the same Amalek warring with Israel at Rephidim.'),
+  ('jasher', 'jasher', 81, 56, 'canon', 'exodus', 17, 14, 'free', E'Exodus 17:14 — *And Yahuah (LORD) said unto Moses, Write this for a memorial in a book, and rehearse it in the ears of Joshua: for I will utterly put out the remembrance of Amalek from under heaven.* The memorial book placed in Joshua''s hand in Jasher 81:56 is the canon''s command verbatim.'),
+  ('jasher', 'jasher', 81, 59, 'canon', 'deuteronomy', 25, 18, 'free', E'Deuteronomy 25:18 — *How he met thee by the way, and smote the hindmost of thee, even all that were feeble behind thee, when thou wast faint and weary; and he feared not Elohim (God).* The words Moses writes in Jasher 81:59 are Deuteronomy''s charge about Amalek smiting the feeble behind.'),
+  ('jasher', 'jasher', 81, 60, 'canon', 'deuteronomy', 25, 19, 'free', E'Deuteronomy 25:19 — *Therefore it shall be, when Yahuah Elohayka (the LORD thy God) hath given thee rest from all thine enemies round about, in the land which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance to possess it, that thou shalt blot out the remembrance of Amalek from under heaven; thou shalt not forget it.* Jasher 81:60''s blotting-out in the land of inheritance is Deuteronomy''s charge word for word.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja81_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja81_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-81-exodus-spoiling',
+       E'Out of Egypt with a strong hand — the seed delivered and the Egyptians spoiled',
+       E'Jasher closes the book with the Exodus itself: *And the children of Israel journeyed from Rameses to Succoth, about six hundred thousand men on foot, besides the little ones and their wives.* (Jasher 81:1) *And at the end of two hundred and ten years, Yahuah (the Lord) brought forth the children of Israel from Egypt with a strong hand.* (Jasher 81:4) This is Exodus told beat for beat — *And the children of Yashar''el (Israel) journeyed from Rameses to Succoth, about six hundred thousand on foot that were men, beside children.* (Exodus 12:37) — and the going-out is the keeping of the covenant word given centuries before to Abraham: *And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance.* (Genesis 15:14) The mixed multitude and the great substance match the canon''s own spoiling of Egypt, *And Yahuah (LORD) gave the people favour in the sight of the Egyptians, so that they lent unto them such things as they required. And they spoiled the Egyptians.* (Exodus 12:36) — and Jubilees tells the very same deliverance, *And we did not lead forth the children of Yashar''el (Israel) from Egypt empty handed.* (Jubilees 48:19). It ain''t new: the seed-line is brought out, with a high hand, exactly as Yahuah swore.',
+       sv.verse_id, ev.verse_id, 'extras', 57000
+  FROM _session252_ja81_lookup sv, _session252_ja81_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=81 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-81-pharaoh-pursues',
+       E'Egypt buries her firstborn and Pharaoh musters to pursue',
+       E'Jasher lingers on Egypt''s grief and her renewed hardness: *And the Egyptians buried all their first born whom Yahuah (the Lord) had smitten, and all the Egyptians buried their slain for three days.* (Jasher 81:6) The canon names that burial as Yahuah''s verdict on Egypt''s gods — *For the Egyptians buried all their firstborn, which Yahuah (LORD) had smitten among them: upon their gods also Yahuah (LORD) executed judgments.* (Numbers 33:4) Then Pharaoh hardens and harnesses: *And Pharaoh rose up and harnessed his chariot, and he ordered all the Egyptians to assemble, not one man was left excepting the little ones and the women.* (Jasher 81:22) Jasher even names the divine purpose behind the pursuit — *And Yahuah (the Lord) strengthened the hearts of all the Egyptians to pursue the Israelites, for Yahuah (the Lord) desired to overthrow the Egyptians in the Red Sea.* (Jasher 81:21) Jubilees frames the same chase as the work of the adversary turned to Yahuah''s deliverance: *the prince of the Mastêmâ ... cried to the Egyptians to pursue after you with all the powers of the Egyptians, with their chariots, and with their horses ... And I stood between the Egyptians and Yashar''el (Israel), and we delivered Yashar''el (Israel) out of his hand* (Jubilees 48:12). The plague on the gods of Egypt, the hardened pursuit — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57003
+  FROM _session252_ja81_lookup sv, _session252_ja81_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=81 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-81-red-sea-divided',
+       E'Stand still and see the salvation — the sea divided, Pharaoh''s host drowned',
+       E'At the sea Jasher gives Moses the canon''s own charge: *And Moses said to them, Fear not, stand still and see the salvation of Yahuah (the Lord) which He will effect this day for you.* (Jasher 81:28) — *And Moses said unto the people, Fear ye not, stand still, and see the salvation of Yahuah (LORD), which he will shew to you to day: for the Egyptians whom ye have seen to day, ye shall see them again no more for ever.* (Exodus 14:13) Then the deliverance: *And Moses did so, and he lifted up his rod upon the sea and divided it.* (Jasher 81:37) — *And Moses stretched out his hand over the sea; and Yahuah (LORD) caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided.* (Exodus 14:21) And the host of Egypt is swallowed: *And the waters returned, and covered the chariots, and the horsemen, and all the host of Pharaoh that came into the sea after them; there remained not so much as one of them.* (Exodus 14:28) — so that Israel saw, as Jasher 81:42 says, the great hand of Yahuah: *Thus Yahuah (LORD) saved Yashar''el (Israel) that day out of the hand of the Egyptians; and Yashar''el (Israel) saw the Egyptians dead upon the sea shore.* (Exodus 14:30) Jubilees tells the same drowning, *Yahuah our Elohim (the LORD our God) cast them into the midst of the sea, into the depths of the abyss* (Jubilees 48:14). The seed crosses dry-shod; Egypt''s chariots sink — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57006
+  FROM _session252_ja81_lookup sv, _session252_ja81_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=28
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=81 AND ev.verse_number=42
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-81-song-of-moses',
+       E'Then sang Moses — the song of Moses and the song of the Lamb',
+       E'Jasher records the song at the sea and even names the book it is written in: *Then sang Moses and the children of Israel this song to Yahuah (the Lord), on the day when Yahuah (the Lord) caused the Egyptians to fall before them.* (Jasher 81:43) *And all Israel sang in concert, saying, I will sing to Yahuah (the Lord) for He is greatly exalted, the horse and his rider has he cast into the sea; behold it is written in the book of the law of Elohim.* (Jasher 81:44) That is Exodus word for word: *Then sang Moses and the children of Yashar''el (Israel) this song unto Yahuah (LORD), and spake, saying, I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.* (Exodus 15:1) And the song does not stay at the Red Sea — the Revelation gives it again at the last sea of glass: *And they sing the song of Moses the servant of Elohim (God), and the song of the Lamb, saying, Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty; just and true are thy ways, thou King of saints.* (Revelation 15:3) The deliverance song of the seed at the Red Sea is the same song sung over the last enemy. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57009
+  FROM _session252_ja81_lookup sv, _session252_ja81_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=43
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=81 AND ev.verse_number=44
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-81-marah-manna',
+       E'Marah and the manna — statutes given, bread rained from heaven',
+       E'Past the sea Jasher follows the wilderness stations: *After this the children of Israel proceeded on their journey, and encamped in Marah, and Yahuah (the Lord) gave to the children of Israel statutes and judgments in that place in Marah, and Yahuah (the Lord) commanded the children of Israel to walk in all his ways and to serve him.* (Jasher 81:45) The canon names Marah as the place of the statute: *there he made for them a statute and an ordinance, and there he proved them* (Exodus 15:25). Then the manna: *At that time Yahuah (the Lord) gave the manna to the children of Israel to eat, and Yahuah (the Lord) caused food to rain from heaven for the children of Israel day by day.* (Jasher 81:48) — *Then said Yahuah (LORD) unto Moses, Behold, I will rain bread from heaven for you; and the people shall go out and gather a certain rate every day, that I may prove them, whether they will walk in my law, or no.* (Exodus 16:4) The statute given at Marah and the bread that proves whether Israel will walk in His law are one purpose: Torah is the way of the delivered seed, given before Sinai and standing. It ain''t new — not law-as-curse but the way to walk and live.',
+       sv.verse_id, ev.verse_id, 'extras', 57012
+  FROM _session252_ja81_lookup sv, _session252_ja81_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=45
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=81 AND ev.verse_number=49
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-81-amalek',
+       E'Amalek at Rephidim — the memorial written, the remembrance to be blotted out',
+       E'The book of Jasher ends on Amalek''s war and the memorial Moses writes against him: *And when the children of Israel were in Rephidim, Amalek the son of Eliphaz, the son of Esau, the brother of Zepho, came to fight with Israel.* (Jasher 81:52) — *Then came Amalek, and fought with Yashar''el (Israel) in Rephidim.* (Exodus 17:8) Yahuah delivers Amalek into the hand of Joshua and commands the memorial: *And Yahuah (the Lord) said to Moses, Write this thing as a memorial for you in a book, and place it in the hand of Joshua, the son of Nun, your servant...* (Jasher 81:56) — *And Yahuah (LORD) said unto Moses, Write this for a memorial in a book, and rehearse it in the ears of Joshua: for I will utterly put out the remembrance of Amalek from under heaven.* (Exodus 17:14) The words Jasher has Moses write are Deuteronomy''s own charge: *Remember what Amalek did unto thee by the way, when ye were come forth out of Egypt; How he met thee by the way, and smote the hindmost of thee, even all that were feeble behind thee...* (Deuteronomy 25:17-18) — *that thou shalt blot out the remembrance of Amalek from under heaven; thou shalt not forget it.* (Deuteronomy 25:19) Jasher''s last act is Moses writing the Torah-charge into a book; the conquest it points toward is Joshua''s. It ain''t new — the upright record ends pointing the seed forward to its inheritance.',
+       sv.verse_id, ev.verse_id, 'extras', 57015
+  FROM _session252_ja81_lookup sv, _session252_ja81_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=52
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=81 AND ev.verse_number=62
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-81-exodus-spoiling
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:37 — *And the children of Yashar''el (Israel) journeyed from Rameses to Succoth, about six hundred thousand on foot that were men, beside children.* The canon gives the identical muster and route that opens Jasher 81:1.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-exodus-spoiling'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 12:38 — *And a mixed multitude went up also with them; and flocks, and herds, even very much cattle.* The mixed multitude and the much cattle of Jasher 81:2 are Exodus verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-exodus-spoiling'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:14 — *And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance.* The bringing-out with a strong hand in Jasher 81:4 keeps the word sworn to Abraham.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-exodus-spoiling'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 12:36 — *And Yahuah (LORD) gave the people favour in the sight of the Egyptians, so that they lent unto them such things as they required. And they spoiled the Egyptians.* The substance carried out with the multitude of Jasher 81:2 is the canon''s spoiling of Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-exodus-spoiling'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 48:19 — *And we did not lead forth the children of Yashar''el (Israel) from Egypt empty handed.* The Jubilees apparatus narrates the same delivered seed that Jasher 81:4 brings out with a strong hand.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-exodus-spoiling'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=4
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=48 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-81-pharaoh-pursues
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 33:4 — *For the Egyptians buried all their firstborn, which Yahuah (LORD) had smitten among them: upon their gods also Yahuah (LORD) executed judgments.* The three-day burial of Jasher 81:6 is the canon''s judgment on the gods of Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-pharaoh-pursues'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=33 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 14:14 — *Yahuah (LORD) shall fight for you, and ye shall hold your peace.* Jasher 81:21 has Yahuah harden Egypt only to overthrow her — the battle the canon promises is His.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-pharaoh-pursues'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 14:12 — *Is not this the word that we did tell thee in Egypt, saying, Let us alone, that we may serve the Egyptians? For it had been better for us to serve the Egyptians, than that we should die in the wilderness.* The mustered host bearing down on Israel in Jasher 81:22 is the dread the canon records at the sea.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-pharaoh-pursues'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 48:12 — *the prince of the Mastêmâ ... cried to the Egyptians to pursue after you with all the powers of the Egyptians, with their chariots, and with their horses ... And I stood between the Egyptians and Yashar''el (Israel), and we delivered Yashar''el (Israel) out of his hand ... and Yahuah (God) brought them through the midst of the sea as if it were dry land.* Jubilees tells the same pursuit that overtakes Israel at the sea in Jasher 81:24.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-pharaoh-pursues'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=24
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=48 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-81-red-sea-divided
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 14:13 — *And Moses said unto the people, Fear ye not, stand still, and see the salvation of Yahuah (LORD), which he will shew to you to day: for the Egyptians whom ye have seen to day, ye shall see them again no more for ever.* Moses'' charge in Jasher 81:28 is the canon''s stand-still word verbatim in substance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-red-sea-divided'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 14:21 — *And Moses stretched out his hand over the sea; and Yahuah (LORD) caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided.* The rod lifted and the sea divided in Jasher 81:37 is the canon''s parting.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-red-sea-divided'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 14:28 — *And the waters returned, and covered the chariots, and the horsemen, and all the host of Pharaoh that came into the sea after them; there remained not so much as one of them.* The waters resuming on the Egyptians in Jasher 81:40 is the canon''s drowning of the host.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-red-sea-divided'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=40
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 14:30 — *Thus Yahuah (LORD) saved Yashar''el (Israel) that day out of the hand of the Egyptians; and Yashar''el (Israel) saw the Egyptians dead upon the sea shore.* Jasher 81:42 has Israel behold the great hand of Yahuah exactly as the canon''s deliverance day.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-red-sea-divided'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=42
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 48:14 — *And all the peoples whom he brought to pursue after Yashar''el (Israel), Yahuah our Elohim (the LORD our God) cast them into the midst of the sea, into the depths of the abyss beneath the children of Yashar''el (Israel)...* Jubilees narrates the same sinking host that Jasher 81:40 says sank in the water.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-red-sea-divided'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=40
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=48 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-81-song-of-moses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 15:1 — *Then sang Moses and the children of Yashar''el (Israel) this song unto Yahuah (LORD), and spake, saying, I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.* Jasher 81:44 sings the canon''s song of the sea word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-song-of-moses'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=44
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 15:3 — *And they sing the song of Moses the servant of Elohim (God), and the song of the Lamb, saying, Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty; just and true are thy ways, thou King of saints.* The song Moses sings in Jasher 81:43 is sung again over the last enemy at the sea of glass.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-song-of-moses'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=43
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=15 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-81-marah-manna
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 15:25 — *And he cried unto Yahuah (LORD); and Yahuah (LORD) shewed him a tree, which when he had cast into the waters, the waters were made sweet: there he made for them a statute and an ordinance, and there he proved them,* Jasher 81:45 names the same Marah where Yahuah gave statutes and judgments.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-marah-manna'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=45
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 16:4 — *Then said Yahuah (LORD) unto Moses, Behold, I will rain bread from heaven for you; and the people shall go out and gather a certain rate every day, that I may prove them, whether they will walk in my law, or no.* The food rained day by day in Jasher 81:48 is the canon''s manna that proves whether Israel will walk in His law.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-marah-manna'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=48
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=16 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-81-amalek
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 17:8 — *Then came Amalek, and fought with Yashar''el (Israel) in Rephidim.* Jasher 81:52 names the same Amalek warring with Israel at Rephidim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-amalek'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=52
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 17:14 — *And Yahuah (LORD) said unto Moses, Write this for a memorial in a book, and rehearse it in the ears of Joshua: for I will utterly put out the remembrance of Amalek from under heaven.* The memorial book placed in Joshua''s hand in Jasher 81:56 is the canon''s command verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-amalek'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=56
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 25:18 — *How he met thee by the way, and smote the hindmost of thee, even all that were feeble behind thee, when thou wast faint and weary; and he feared not Elohim (God).* The words Moses writes in Jasher 81:59 are Deuteronomy''s charge about Amalek smiting the feeble behind.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-amalek'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=59
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 25:19 — *Therefore it shall be, when Yahuah Elohayka (the LORD thy God) hath given thee rest from all thine enemies round about, in the land which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance to possess it, that thou shalt blot out the remembrance of Amalek from under heaven; thou shalt not forget it.* Jasher 81:60''s blotting-out in the land of inheritance is Deuteronomy''s charge word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja81_lookup sv, _session252_ja81_lookup tv
+ WHERE t.slug='jasher-81-amalek'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=81 AND sv.verse_number=60
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_82.sql (session252 jasher 82) -----
+-- Source anchor: jasher/jasher ch82. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja82 (view _session252_ja82_lookup). Sort band base 57025, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja82_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-82-jethro-comes-to-sinai
+  ('jasher', 'jasher', 82, 1, 'canon', 'exodus', 18, 5, 'free', E'Exodus 18:5 — *And Jethro, Moses'' father in law, came with his sons and his wife unto Moses into the wilderness, where he encamped at the mount of Elohim (God):* the same encampment at Sinai that Jasher 82:1 dates to the third month from Egypt.'),
+  ('jasher', 'jasher', 82, 2, 'canon', 'exodus', 18, 1, 'free', E'Exodus 18:1 — *When Jethro, the priest of Midian, Moses'' father in law, heard of all that Elohim (God) had done for Moses, and for Yashar''el (Israel) his people, and that Yahuah (LORD) had brought Yashar''el (Israel) out of Egypt;* Jasher''s Reuel comes for the very reason the canon gives — he heard of the wonders of Yahuah.'),
+  ('jasher', 'jasher', 82, 4, 'canon', 'exodus', 18, 7, 'free', E'Exodus 18:7 — *And Moses went out to meet his father in law, and did obeisance, and kissed him; and they asked each other of their welfare; and they came into the tent.* the honored welcome that Jasher 82:4 renders as Moses going forth with great honor and all Israel with him.'),
+  ('jasher', 'jasher', 82, 5, 'canon', 'exodus', 18, 11, 'free', E'Exodus 18:11 — *Now I know that Yahuah (LORD) is greater than all gods: for in the thing wherein they dealt proudly he was above them.* the Midianite''s confession that Jasher 82:5 sums as Reuel knowing Yahuah from that day forward.'),
+  -- thread: jasher-82-ten-commandments-sinai
+  ('jasher', 'jasher', 82, 6, 'canon', 'exodus', 20, 1, 'free', E'Exodus 20:1 — *And Elohim (God) spake all these words, saying,* the very giving of the ten commandments that Jasher 82:6 dates to the sixth day of the third month.'),
+  ('jasher', 'jasher', 82, 6, 'canon', 'exodus', 20, 2, 'free', E'Exodus 20:2 — *I am Yahuah Elohayka (the LORD thy God), which have brought thee out of the land of Egypt, out of the house of bondage.* the first word of the covenant grounding the law in the deliverance Jasher 82:6 names.'),
+  ('jasher', 'jasher', 82, 8, 'canon', 'exodus', 19, 18, 'free', E'Exodus 19:18 — *And mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire: and the smoke thereof ascended as the smoke of a furnace, and the whole mount quaked greatly.* the descent in fire that Jasher 82:8 calls the glory of Yahuah resting upon Mount Sinai.'),
+  ('jasher', 'jasher', 82, 6, 'jubilees', 'jubilees', 1, 1, 'extras', E'Jubilees 1:1 — *...as Yahuah (God) spake to Moses on Mount Sinai when he went up to receive the tables of the law and of the commandment... in the first year of the exodus... in the third month... “Come up to Me on the Mount, and I will give you two tables of stone of the law and of the commandment, which I have written, that you may teach them.”* Jubilees tells the same third-month Sinai giving Jasher 82:6 records.'),
+  -- thread: jasher-82-forty-days-tables-of-stone
+  ('jasher', 'jasher', 82, 9, 'canon', 'exodus', 24, 18, 'free', E'Exodus 24:18 — *And Moses went into the midst of the cloud, and gat him up into the mount: and Moses was in the mount forty days and forty nights.* the same ascent into the cloud and forty-day stay that Jasher 82:8-9 narrates.'),
+  ('jasher', 'jasher', 82, 9, 'canon', 'exodus', 34, 28, 'free', E'Exodus 34:28 — *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.* the same fast Jasher 82:9 records — no bread, no water, forty days.'),
+  ('jasher', 'jasher', 82, 11, 'canon', 'exodus', 31, 18, 'free', E'Exodus 31:18 — *And he gave unto Moses, when he had made an end of communing with him upon mount Sinai, two tables of testimony, tables of stone, written with the finger of Elohim (God).* the tables written by the finger of Elohim that Jasher 82:11 hands to Moses at the forty days'' end.'),
+  ('jasher', 'jasher', 82, 9, 'jubilees', 'jubilees', 1, 4, 'extras', E'Jubilees 1:4 — *And Moses was on the Mount forty days and forty nights, and Elohim (God) taught him the earlier and the later history of the division of all the days of the law and of the testimony.* the same forty days of instruction Jasher 82:9 gives as statutes and judgments to teach Israel.'),
+  -- thread: jasher-82-golden-calf
+  ('jasher', 'jasher', 82, 12, 'canon', 'exodus', 32, 1, 'free', E'Exodus 32:1 — *And when the people saw that Moses delayed to come down out of the mount, the people gathered themselves together unto Aaron, and said unto him, Up, make us gods, which shall go before us; for as for this Moses, the man that brought us up out of the land of Egypt, we wot not what is become of him.* the very demand Jasher 82:12-13 puts in the people''s mouths.'),
+  ('jasher', 'jasher', 82, 15, 'canon', 'exodus', 32, 7, 'free', E'Exodus 32:7 — *And Yahuah (LORD) said unto Moses, Go, get thee down; for thy people, which thou broughtest out of the land of Egypt, have corrupted themselves:* the word from the mount that Jasher 82:15 gives almost word for word.'),
+  ('jasher', 'jasher', 82, 18, 'canon', 'exodus', 32, 19, 'free', E'Exodus 32:19 — *And it came to pass, as soon as he came nigh unto the camp, that he saw the calf, and the dancing: and Moses'' anger waxed hot, and he cast the tables out of his hands, and brake them beneath the mount.* the broken tablets of Jasher 82:18.'),
+  ('jasher', 'jasher', 82, 20, 'canon', 'exodus', 32, 28, 'free', E'Exodus 32:28 — *And the children of Levi did according to the word of Moses: and there fell of the people that day about three thousand men.* the three thousand who fell, matching Jasher 82:20.'),
+  ('jasher', 'jasher', 82, 14, 'canon', 'acts', 7, 41, 'free', E'Acts 7:41 — *And they made a calf in those days, and offered sacrifice unto the idol, and rejoiced in the works of their own hands.* Stephen names the same molten calf Aaron makes in Jasher 82:14 as the camp''s idolatry.'),
+  -- thread: jasher-82-second-tablets-atonement
+  ('jasher', 'jasher', 82, 24, 'canon', 'exodus', 34, 1, 'free', E'Exodus 34:1 — *And Yahuah (LORD) said unto Moses, Hew thee two tables of stone like unto the first: and I will write upon these tables the words that were in the first tables, which thou brakest.* the command to hew the second tablets that Jasher 82:24 records.'),
+  ('jasher', 'jasher', 82, 26, 'canon', 'exodus', 34, 28, 'free', E'Exodus 34:28 — *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.* the second forty days Jasher 82:26 gives as Moses remaining yet with Yahuah.'),
+  ('jasher', 'jasher', 82, 25, 'canon', '2-corinthians', 3, 3, 'free', E'2 Corinthians 3:3 — *Forasmuch as ye are manifestly declared to be the epistle of Messiah (Christ) ministered by us, written not with ink, but with the Spirit of the living Elohim (God); not in tables of stone, but in fleshy tables of the heart.* the same ten-commandment writing of Jasher 82:25 carried to the heart — it ain''t new.'),
+  -- thread: jasher-82-sanctuary-pattern
+  ('jasher', 'jasher', 82, 27, 'canon', 'exodus', 25, 8, 'free', E'Exodus 25:8 — *And let them make me a sanctuary; that I may dwell among them.* the command to build the dwelling that Jasher 82:27 gives, that the Name might rest in it.'),
+  ('jasher', 'jasher', 82, 27, 'canon', 'exodus', 25, 9, 'free', E'Exodus 25:9 — *According to all that I shew thee, after the pattern of the tabernacle, and the pattern of all the instruments thereof, even so shall ye make it.* the likeness of the sanctuary and its vessels that Yahuah shows Moses in Jasher 82:27.'),
+  ('jasher', 'jasher', 82, 32, 'canon', 'exodus', 35, 21, 'free', E'Exodus 35:21 — *And they came, every one whose heart stirred him up, and every one whom his spirit made willing, and they brought the LORD''S offering to the work of the tabernacle of the congregation, and for all his service, and for the holy garments.* the freewill offering Jasher 82:32 gives as the people rising up like one man.'),
+  ('jasher', 'jasher', 82, 37, 'canon', 'exodus', 39, 43, 'free', E'Exodus 39:43 — *And Moses did look upon all the work, and, behold, they had done it as Yahuah (LORD) had commanded, even so had they done it: and Moses blessed them.* Moses'' blessing of the finished work, word for word with Jasher 82:37.'),
+  ('jasher', 'jasher', 82, 27, 'canon', 'hebrews', 8, 5, 'free', E'Hebrews 8:5 — *Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount.* reads the very pattern Yahuah shows Moses in Jasher 82:27 as the shadow of the heavenly.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja82_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja82_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-82-jethro-comes-to-sinai',
+       E'Reuel the Midianite comes to the mount of Elohim',
+       E'Jasher opens the Sinai chapter with the father-in-law''s arrival: *And the children of Israel proceeded from Rephidim and they encamped in the wilderness of Sinai, in the third month from their going forth from Egypt.* (Jasher 82:1), and *At that time came Reuel the Midianite, the father-in-law of Moses, with Zipporah his daughter and her two sons, for he had heard of the wonders of Yahuah (the Lord) which he had done to Israel, that he had delivered them from the hand of Egypt.* (Jasher 82:2). This is Exodus 18 told over — the canon names him Jethro and gives the same cause: *When Jethro, the priest of Midian, Moses'' father in law, heard of all that Elohim (God) had done for Moses, and for Yashar''el (Israel) his people, and that Yahuah (LORD) had brought Yashar''el (Israel) out of Egypt;* (Exodus 18:1). Jasher 82:4 (*And Moses went forth to meet his father-in-law with great honor, and all Israel was with him.*) matches *And Moses went out to meet his father in law, and did obeisance, and kissed him; and they asked each other of their welfare; and they came into the tent.* (Exodus 18:7), and the Midianite''s confession in Jasher 82:5 (*Reuel knew Yahuah (the Lord) from that day forward*) echoes the priest''s own word: *Now I know that Yahuah (LORD) is greater than all gods: for in the thing wherein they dealt proudly he was above them.* (Exodus 18:11). The nations come and see — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57025
+  FROM _session252_ja82_lookup sv, _session252_ja82_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=82 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-82-ten-commandments-sinai',
+       E'The ten commandments on Mount Sinai',
+       E'The covenant is given: *And in the third month from the children of Israel''s departure from Egypt, on the sixth day of it, Yahuah (the Lord) gave to Israel the ten commandments on Mount Sinai.* (Jasher 82:6), heard by the whole nation — *And all Israel heard all these commandments, and all Israel rejoiced exceedingly in Yahuah (the Lord) on that day.* (Jasher 82:7). The canon stands behind it whole: the descent in fire — *And mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire: and the smoke thereof ascended as the smoke of a furnace, and the whole mount quaked greatly.* (Exodus 19:18) — and the words themselves: *And Elohim (God) spake all these words, saying,* (Exodus 20:1) / *I am Yahuah Elohayka (the LORD thy God), which have brought thee out of the land of Egypt, out of the house of bondage.* (Exodus 20:2). Torah is given to a delivered people, not as a curse but as the covenant they rejoiced in — it ain''t new. Jubilees narrates the same Sinai ascent in the same third month, the same two tables: *as Yahuah (God) spake to Moses on Mount Sinai when he went up to receive the tables of the law... in the third month, on the sixteenth day of the month, that Elohim (God) spake to Moses, saying: “Come up to Me on the Mount, and I will give you two tables of stone of the law and of the commandment, which I have written, that you may teach them.”* (Jubilees 1:1).',
+       sv.verse_id, ev.verse_id, 'extras', 57028
+  FROM _session252_ja82_lookup sv, _session252_ja82_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=82 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-82-forty-days-tables-of-stone',
+       E'Moses forty days on the mount; the tables written by the finger of Elohim',
+       E'Moses ascends into the cloud and the glory: *And the glory of Yahuah (the Lord) rested upon Mount Sinai, and he called to Moses, and Moses came in the midst of a cloud and ascended the mountain.* (Jasher 82:8); *And Moses was upon the mount forty days and forty nights; he ate no bread and drank no water, and Yahuah (the Lord) instructed him in the statutes and judgments in order to teach the children of Israel.* (Jasher 82:9); and the tables are inscribed — *And at the end of forty days and forty nights, when Yahuah (the Lord) had finished speaking to Moses on Mount Sinai, then Yahuah (the Lord) gave to Moses the tablets of stone, written with the finger of Elohim.* (Jasher 82:11). The canon gives every beat: the calling out of the cloud — *And Moses went into the midst of the cloud, and gat him up into the mount: and Moses was in the mount forty days and forty nights.* (Exodus 24:18) — the fast — *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water...* (Exodus 34:28) — and the finger of Elohim: *And he gave unto Moses, when he had made an end of communing with him upon mount Sinai, two tables of testimony, tables of stone, written with the finger of Elohim (God).* (Exodus 31:18). Jubilees keeps the same forty days and the cloud of six days: *And Moses was on the Mount forty days and forty nights, and Elohim (God) taught him the earlier and the later history...* (Jubilees 1:4).',
+       sv.verse_id, ev.verse_id, 'extras', 57031
+  FROM _session252_ja82_lookup sv, _session252_ja82_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=82 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-82-golden-calf',
+       E'The golden calf and the broken tablets',
+       E'While Moses tarries, the people fall: *And when the children of Israel saw that Moses tarried to come down from the mount, they gathered round Aaron, and said, As for this man Moses we know not what has become of him.* (Jasher 82:12); *Now therefore rise up, make to us a god who shall go before us, so that you shall not die.* (Jasher 82:13); and Aaron yields — *And Aaron was greatly afraid of the people, and he ordered them to bring him gold and he made it into a molten calf for the people.* (Jasher 82:14). This is Exodus 32 verbatim in motion: *And when the people saw that Moses delayed to come down out of the mount, the people gathered themselves together unto Aaron, and said unto him, Up, make us gods, which shall go before us; for as for this Moses, the man that brought us up out of the land of Egypt, we wot not what is become of him.* (Exodus 32:1). Yahuah''s word to Moses (Jasher 82:15-16) matches *And Yahuah (LORD) said unto Moses, Go, get thee down; for thy people, which thou broughtest out of the land of Egypt, have corrupted themselves:* (Exodus 32:7); Moses breaks the tablets and grinds the calf (Jasher 82:18-19) as in *...he saw the calf, and the dancing: and Moses'' anger waxed hot, and he cast the tables out of his hands, and brake them beneath the mount.* (Exodus 32:19); and the three thousand fall — *And there died of the people by the swords of each other about three thousand men who had made the calf.* (Jasher 82:20) / *And the children of Levi did according to the word of Moses: and there fell of the people that day about three thousand men.* (Exodus 32:28). Stephen names the same sin in the assembly''s own history: *And they made a calf in those days, and offered sacrifice unto the idol, and rejoiced in the works of their own hands.* (Acts 7:41) — the host-of-heaven idolatry of the kingdom of man breaking into the camp; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57034
+  FROM _session252_ja82_lookup sv, _session252_ja82_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=12
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=82 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-82-second-tablets-atonement',
+       E'Moses intercedes; the second tablets hewn and written',
+       E'Moses returns to make atonement: *And on the morrow Moses said to the people, I will go up to Yahuah (the Lord), peradventure I may make atonement for your sins which you have sinned to Yahuah (the Lord).* (Jasher 82:21), and the second tables are commanded — *Then spoke Yahuah (the Lord) to Moses to hew two stone tablets and to bring them up to Yahuah (the Lord), who would write upon them the ten commandments.* (Jasher 82:24) — hewn and inscribed: *Now Moses did so, and he came down and hewed the two tablets and went up to Mount Sinai to Yahuah (the Lord), and Yahuah (the Lord) wrote the ten commandments upon the tablets.* (Jasher 82:25). The canon gives the same command and the same forty-day re-ascent: *And Yahuah (LORD) said unto Moses, Hew thee two tables of stone like unto the first: and I will write upon these tables the words that were in the first tables, which thou brakest.* (Exodus 34:1) / *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.* (Exodus 34:28). The covenant is restored, not replaced — the law endures; and the NT carries the figure forward, the writing now on living tablets: *...written not with ink, but with the Spirit of the living Elohim (God); not in tables of stone, but in fleshy tables of the heart.* (2 Corinthians 3:3).',
+       sv.verse_id, ev.verse_id, 'extras', 57037
+  FROM _session252_ja82_lookup sv, _session252_ja82_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=21
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=82 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-82-sanctuary-pattern',
+       E'The sanctuary made after the pattern shown on the mount',
+       E'The chapter closes building the dwelling: *And Yahuah (the Lord) commanded him respecting the children of Israel that they should make a sanctuary for Yahuah (the Lord), that his name might rest in it, and Yahuah (the Lord) showed him the likeness of the sanctuary and the likeness of all its vessels.* (Jasher 82:27); the people offer freely — *And the people rose up like one man and they made generous offerings to the sanctuary of Yahuah (the Lord), and each man brought the offering of Yahuah (the Lord) for the work of the sanctuary, and for all its service.* (Jasher 82:32) — and Moses blesses the finished work: *And Moses saw the work, and behold they did it as Yahuah (the Lord) had commanded him, so Moses blessed them.* (Jasher 82:37). The canon gives the command and the pattern: *And let them make me a sanctuary; that I may dwell among them.* (Exodus 25:8) / *According to all that I shew thee, after the pattern of the tabernacle, and the pattern of all the instruments thereof, even so shall ye make it.* (Exodus 25:9); the willing-hearted offering — *And they came, every one whose heart stirred him up, and every one whom his spirit made willing, and they brought the LORD''S offering to the work of the tabernacle of the congregation, and for all his service, and for the holy garments.* (Exodus 35:21); and Moses'' blessing of the work: *And Moses did look upon all the work, and, behold, they had done it as Yahuah (LORD) had commanded, even so had they done it: and Moses blessed them.* (Exodus 39:43). The pattern is a shadow of the heavenly, as Hebrews reads it: *...as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount.* (Hebrews 8:5).',
+       sv.verse_id, ev.verse_id, 'extras', 57040
+  FROM _session252_ja82_lookup sv, _session252_ja82_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=27
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=82 AND ev.verse_number=37
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-82-jethro-comes-to-sinai
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 18:5 — *And Jethro, Moses'' father in law, came with his sons and his wife unto Moses into the wilderness, where he encamped at the mount of Elohim (God):* the same encampment at Sinai that Jasher 82:1 dates to the third month from Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-jethro-comes-to-sinai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=18 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 18:1 — *When Jethro, the priest of Midian, Moses'' father in law, heard of all that Elohim (God) had done for Moses, and for Yashar''el (Israel) his people, and that Yahuah (LORD) had brought Yashar''el (Israel) out of Egypt;* Jasher''s Reuel comes for the very reason the canon gives — he heard of the wonders of Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-jethro-comes-to-sinai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=18 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 18:7 — *And Moses went out to meet his father in law, and did obeisance, and kissed him; and they asked each other of their welfare; and they came into the tent.* the honored welcome that Jasher 82:4 renders as Moses going forth with great honor and all Israel with him.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-jethro-comes-to-sinai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=18 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 18:11 — *Now I know that Yahuah (LORD) is greater than all gods: for in the thing wherein they dealt proudly he was above them.* the Midianite''s confession that Jasher 82:5 sums as Reuel knowing Yahuah from that day forward.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-jethro-comes-to-sinai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=18 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-82-ten-commandments-sinai
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 20:1 — *And Elohim (God) spake all these words, saying,* the very giving of the ten commandments that Jasher 82:6 dates to the sixth day of the third month.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-ten-commandments-sinai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 20:2 — *I am Yahuah Elohayka (the LORD thy God), which have brought thee out of the land of Egypt, out of the house of bondage.* the first word of the covenant grounding the law in the deliverance Jasher 82:6 names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-ten-commandments-sinai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 19:18 — *And mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire: and the smoke thereof ascended as the smoke of a furnace, and the whole mount quaked greatly.* the descent in fire that Jasher 82:8 calls the glory of Yahuah resting upon Mount Sinai.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-ten-commandments-sinai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 1:1 — *...as Yahuah (God) spake to Moses on Mount Sinai when he went up to receive the tables of the law and of the commandment... in the first year of the exodus... in the third month... “Come up to Me on the Mount, and I will give you two tables of stone of the law and of the commandment, which I have written, that you may teach them.”* Jubilees tells the same third-month Sinai giving Jasher 82:6 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-ten-commandments-sinai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-82-forty-days-tables-of-stone
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 24:18 — *And Moses went into the midst of the cloud, and gat him up into the mount: and Moses was in the mount forty days and forty nights.* the same ascent into the cloud and forty-day stay that Jasher 82:8-9 narrates.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-forty-days-tables-of-stone'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=24 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 34:28 — *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.* the same fast Jasher 82:9 records — no bread, no water, forty days.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-forty-days-tables-of-stone'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 31:18 — *And he gave unto Moses, when he had made an end of communing with him upon mount Sinai, two tables of testimony, tables of stone, written with the finger of Elohim (God).* the tables written by the finger of Elohim that Jasher 82:11 hands to Moses at the forty days'' end.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-forty-days-tables-of-stone'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=31 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 1:4 — *And Moses was on the Mount forty days and forty nights, and Elohim (God) taught him the earlier and the later history of the division of all the days of the law and of the testimony.* the same forty days of instruction Jasher 82:9 gives as statutes and judgments to teach Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-forty-days-tables-of-stone'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=9
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-82-golden-calf
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 32:1 — *And when the people saw that Moses delayed to come down out of the mount, the people gathered themselves together unto Aaron, and said unto him, Up, make us gods, which shall go before us; for as for this Moses, the man that brought us up out of the land of Egypt, we wot not what is become of him.* the very demand Jasher 82:12-13 puts in the people''s mouths.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-golden-calf'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 32:7 — *And Yahuah (LORD) said unto Moses, Go, get thee down; for thy people, which thou broughtest out of the land of Egypt, have corrupted themselves:* the word from the mount that Jasher 82:15 gives almost word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-golden-calf'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 32:19 — *And it came to pass, as soon as he came nigh unto the camp, that he saw the calf, and the dancing: and Moses'' anger waxed hot, and he cast the tables out of his hands, and brake them beneath the mount.* the broken tablets of Jasher 82:18.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-golden-calf'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 32:28 — *And the children of Levi did according to the word of Moses: and there fell of the people that day about three thousand men.* the three thousand who fell, matching Jasher 82:20.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-golden-calf'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Acts 7:41 — *And they made a calf in those days, and offered sacrifice unto the idol, and rejoiced in the works of their own hands.* Stephen names the same molten calf Aaron makes in Jasher 82:14 as the camp''s idolatry.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-golden-calf'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=41
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-82-second-tablets-atonement
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 34:1 — *And Yahuah (LORD) said unto Moses, Hew thee two tables of stone like unto the first: and I will write upon these tables the words that were in the first tables, which thou brakest.* the command to hew the second tablets that Jasher 82:24 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-second-tablets-atonement'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 34:28 — *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.* the second forty days Jasher 82:26 gives as Moses remaining yet with Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-second-tablets-atonement'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Corinthians 3:3 — *Forasmuch as ye are manifestly declared to be the epistle of Messiah (Christ) ministered by us, written not with ink, but with the Spirit of the living Elohim (God); not in tables of stone, but in fleshy tables of the heart.* the same ten-commandment writing of Jasher 82:25 carried to the heart — it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-second-tablets-atonement'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-82-sanctuary-pattern
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 25:8 — *And let them make me a sanctuary; that I may dwell among them.* the command to build the dwelling that Jasher 82:27 gives, that the Name might rest in it.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-sanctuary-pattern'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 25:9 — *According to all that I shew thee, after the pattern of the tabernacle, and the pattern of all the instruments thereof, even so shall ye make it.* the likeness of the sanctuary and its vessels that Yahuah shows Moses in Jasher 82:27.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-sanctuary-pattern'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 35:21 — *And they came, every one whose heart stirred him up, and every one whom his spirit made willing, and they brought the LORD''S offering to the work of the tabernacle of the congregation, and for all his service, and for the holy garments.* the freewill offering Jasher 82:32 gives as the people rising up like one man.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-sanctuary-pattern'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=35 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 39:43 — *And Moses did look upon all the work, and, behold, they had done it as Yahuah (LORD) had commanded, even so had they done it: and Moses blessed them.* Moses'' blessing of the finished work, word for word with Jasher 82:37.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-sanctuary-pattern'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=39 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Hebrews 8:5 — *Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount.* reads the very pattern Yahuah shows Moses in Jasher 82:27 as the shadow of the heavenly.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja82_lookup sv, _session252_ja82_lookup tv
+ WHERE t.slug='jasher-82-sanctuary-pattern'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=82 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=8 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_83.sql (session252 jasher 83) -----
+-- Source anchor: jasher/jasher ch83. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja83 (view _session252_ja83_lookup). Sort band base 57050, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja83_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-83-tabernacle-reared-eighth-day
+  ('jasher', 'jasher', 83, 4, 'canon', 'exodus', 40, 17, 'free', E'Exodus 40:17 — *And it came to pass in the first month in the second year, on the first day of the month, that the tabernacle was reared up.* Jasher 83:4 dates the rearing of the sanctuary to that very first day of the first month in the second year.'),
+  ('jasher', 'jasher', 83, 1, 'canon', 'exodus', 40, 16, 'free', E'Exodus 40:16 — *Thus did Moses: according to all that Yahuah (LORD) commanded him, so did he.* Jasher 83:1 says Moses anointed Aaron and his sons and did to them as Yahuah had commanded — the same exact obedience Exodus records.'),
+  ('jasher', 'jasher', 83, 5, 'canon', 'leviticus', 9, 24, 'free', E'Leviticus 9:24 — *And there came a fire out from before Yahuah (LORD), and consumed upon the altar the burnt offering and the fat: which when all the people saw, they shouted, and fell on their faces.* When Aaron and his sons brought the burnt and sin offerings in Jasher 83:5, this is the fire that fell to seal the dedication.'),
+  -- thread: jasher-83-nadab-abihu-strange-fire
+  ('jasher', 'jasher', 83, 6, 'canon', 'leviticus', 10, 1, 'free', E'Leviticus 10:1 — *And Nadab and Abihu, the sons of Aaron, took either of them his censer, and put fire therein, and put incense thereon, and offered strange fire before Yahuah (LORD), which he commanded them not.* Jasher 83:6 retells the same strange fire the two sons brought that Yahuah had not commanded.'),
+  ('jasher', 'jasher', 83, 6, 'canon', 'leviticus', 10, 2, 'free', E'Leviticus 10:2 — *And there went out fire from Yahuah (LORD), and devoured them, and they died before Yahuah (LORD).* Jasher 83:6''s fire going forth and consuming Nadab and Abihu is this judgment exactly.'),
+  -- thread: jasher-83-princes-dedication-passover
+  ('jasher', 'jasher', 83, 7, 'canon', 'numbers', 7, 11, 'free', E'Numbers 7:11 — *And Yahuah (LORD) said unto Moses, They shall offer their offering, each prince on his day, for the dedicating of the altar.* Jasher 83:7-8''s prince-a-day dedication of the altar over twelve days is this very ordinance.'),
+  ('jasher', 'jasher', 83, 8, 'canon', 'numbers', 7, 12, 'free', E'Numbers 7:12 — *And he that offered his offering the first day was Nahshon the son of Amminadab, of the tribe of Yahudah (Judah):* the twelve-tribe dedication Jasher 83:8 numbers begins with the prince of Judah, the chosen seed-line leading.'),
+  ('jasher', 'jasher', 83, 16, 'canon', 'exodus', 12, 6, 'free', E'Exodus 12:6 — *And ye shall keep it up until the fourteenth day of the same month: and the whole assembly of the congregation of Yashar''el (Israel) shall kill it in the evening.* Jasher 83:16 keeps the Passover in its season on the fourteenth, exactly as commanded.'),
+  -- thread: jasher-83-numbering-wilderness-sinai
+  ('jasher', 'jasher', 83, 17, 'canon', 'numbers', 1, 1, 'free', E'Numbers 1:1 — *And Yahuah (LORD) spake unto Moses in the wilderness of Sinai, in the tabernacle of the congregation, on the first day of the second month, in the second year after they were come out of the land of Egypt, saying,* Jasher 83:17 dates the command to number to that same first day of the second month.'),
+  ('jasher', 'jasher', 83, 18, 'canon', 'numbers', 1, 3, 'free', E'Numbers 1:3 — *From twenty years old and upward, all that are able to go forth to war in Yashar''el (Israel): thou and Aaron shall number them by their armies.* Jasher 83:18 numbers the males from twenty years old and upward, Moses and Aaron and the twelve princes — the muster for war.'),
+  ('jasher', 'jasher', 83, 20, 'canon', 'numbers', 1, 46, 'free', E'Numbers 1:46 — *Even all they that were numbered were six hundred thousand and three thousand and five hundred and fifty.* Jasher 83:20 reports the identical total, six hundred and three thousand, five hundred and fifty.'),
+  -- thread: jasher-83-cloud-quail-kibroth
+  ('jasher', 'jasher', 83, 25, 'canon', 'numbers', 10, 11, 'free', E'Numbers 10:11 — *And it came to pass on the twentieth day of the second month, in the second year, that the cloud was taken up from off the tabernacle of the testimony.* Jasher 83:25 sets the cloud''s lifting on the twentieth day of the month, the same departure-signal.'),
+  ('jasher', 'jasher', 83, 26, 'canon', 'numbers', 11, 4, 'free', E'Numbers 11:4 — *And the mixt multitude that was among them fell a lusting: and the children of Yashar''el (Israel) also wept again, and said, Who shall give us flesh to eat?* Jasher 83:26 has the people provoke Yahuah by asking for meat to eat — the same craving.'),
+  ('jasher', 'jasher', 83, 28, 'canon', 'numbers', 11, 33, 'free', E'Numbers 11:33 — *And while the flesh was yet between their teeth, ere it was chewed, the wrath of Yahuah (LORD) was kindled against the people, and Yahuah (LORD) smote the people with a very great plague.* Jasher 83:28''s great slaughter after the meat is this very plague.'),
+  ('jasher', 'jasher', 83, 29, 'canon', 'numbers', 11, 34, 'free', E'Numbers 11:34 — *And he called the name of that place Kibroth-hattaavah: because there they buried the people that lusted.* Jasher 83:29 names the place Kebroth Hattaavah for the same cause — there they buried the people that lusted flesh.'),
+  ('jasher', 'jasher', 83, 28, 'canon', 'psalms', 78, 31, 'free', E'Psalms 78:31 — *The wrath of Elohim (God) came upon them, and slew the fattest of them, and smote down the chosen men of Yashar''el (Israel).* The psalmist remembers the same slaughter for the lust that Jasher 83:28 narrates.'),
+  -- thread: jasher-83-miriam-leprous
+  ('jasher', 'jasher', 83, 31, 'canon', 'numbers', 12, 10, 'free', E'Numbers 12:10 — *And the cloud departed from off the tabernacle; and, behold, Miriam became leprous, white as snow: and Aaron looked upon Miriam, and, behold, she was leprous.* Jasher 83:31''s Miriam made leprous, white as snow, on account of Moses is this very judgment.'),
+  -- thread: jasher-83-spies-forty-years
+  ('jasher', 'jasher', 83, 34, 'canon', 'numbers', 13, 2, 'free', E'Numbers 13:2 — *Send thou men, that they may search the land of Canaan, which I give unto the children of Yashar''el (Israel): of every tribe of their fathers shall ye send a man, every one a ruler among them.* Jasher 83:34''s command to send twelve men, one to a tribe, to explore Canaan is this very charge.'),
+  ('jasher', 'jasher', 83, 36, 'canon', 'numbers', 13, 32, 'free', E'Numbers 13:32 — *And they brought up an evil report of the land which they had searched unto the children of Yashar''el (Israel), saying, The land, through which we have gone to search it, is a land that eateth up the inhabitants thereof; and all the people that we saw in it are men of a great stature.* Jasher 83:36''s ten men and their evil report of a land that consumes its inhabitants is the same.'),
+  ('jasher', 'jasher', 83, 38, 'canon', 'numbers', 14, 8, 'free', E'Numbers 14:8 — *If Yahuah (LORD) delight in us, then he will bring us into this land, and give it us; a land which floweth with milk and honey.* Joshua and Caleb''s plea in Jasher 83:38 is word for word the faithful witness Numbers records.'),
+  ('jasher', 'jasher', 83, 41, 'canon', 'numbers', 14, 30, 'free', E'Numbers 14:30 — *Doubtless ye shall not come into the land, concerning which I sware to make you dwell therein, save Caleb the son of Jephunneh, and Joshua the son of Nun.* Jasher 83:41 swears that none of the wicked generation shall see the land excepting Caleb and Joshua — the same oath.'),
+  ('jasher', 'jasher', 83, 42, 'canon', 'numbers', 14, 33, 'free', E'Numbers 14:33 — *And your children shall wander in the wilderness forty years, and bear your whoredoms, until your carcases be wasted in the wilderness.* Jasher 83:42''s forty years of wandering until that wicked generation perishes is this sentence.'),
+  ('jasher', 'jasher', 83, 42, 'canon', 'hebrews', 3, 17, 'free', E'Hebrews 3:17 — *But with whom was he grieved forty years? was it not with them that had sinned, whose carcases fell in the wilderness?* The NT reads the forty-year sentence of Jasher 83:42 as the warning to the gathered seed.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja83_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja83_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-83-tabernacle-reared-eighth-day',
+       E'The sanctuary reared, the priests consecrated, the eighth day',
+       E'Jasher closes the book at the foot of Sinai with the priesthood installed: *And in the twelfth month, in the twenty-third day of the month, Moses took Aaron and his sons, and he dressed them in their garments, and anointed them and did to them as Yahuah (the Lord) had commanded him, and Moses brought up all the offerings which Yahuah (the Lord) had on that day commanded him* (Jasher 83:1), and after the seven-day consecration, *And on the eighth day, being the first day of the first month, in the second year from the Israelites’ departure from Egypt, Moses erected the sanctuary, and Moses put up all the furniture of the tabernacle and all the furniture of the sanctuary, and he did all that Yahuah (the Lord) had commanded him* (Jasher 83:4). It ain''t new — this is Exodus 40 to the letter: *And it came to pass in the first month in the second year, on the first day of the month, that the tabernacle was reared up* (Exodus 40:17), Moses doing *according to all that Yahuah (LORD) commanded him* (Exodus 40:16). And when the offerings were complete the glory broke out as in Leviticus 9 — *And Moses and Aaron went into the tabernacle of the congregation, and came out, and blessed the people: and the glory of Yahuah (LORD) appeared unto all the people* (Leviticus 9:23) — *And there came a fire out from before Yahuah (LORD), and consumed upon the altar the burnt offering and the fat: which when all the people saw, they shouted, and fell on their faces* (Leviticus 9:24). The fathers kept the ordained way; the worship was given, not invented.',
+       sv.verse_id, ev.verse_id, 'extras', 57050
+  FROM _session252_ja83_lookup sv, _session252_ja83_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=83 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-83-nadab-abihu-strange-fire',
+       E'Nadab and Abihu and the strange fire',
+       E'On the very day of glory the judgment falls: *On that day the two sons of Aaron, Nadab and Abihu, took strange fire and brought it before Yahuah (the Lord) who had not commanded them, and a fire went forth from before Yahuah (the Lord), and consumed them, and they died before Yahuah (the Lord) on that day* (Jasher 83:6). Word for word it is Leviticus 10 — *And Nadab and Abihu, the sons of Aaron, took either of them his censer, and put fire therein, and put incense thereon, and offered strange fire before Yahuah (LORD), which he commanded them not* (Leviticus 10:1), and *And there went out fire from Yahuah (LORD), and devoured them, and they died before Yahuah (LORD)* (Leviticus 10:2). The same fire that consumed the offering in acceptance consumes the will-worship that Yahuah did not command. Torah stands: the way of worship is given, not improvised.',
+       sv.verse_id, ev.verse_id, 'extras', 57053
+  FROM _session252_ja83_lookup sv, _session252_ja83_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=83 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-83-princes-dedication-passover',
+       E'The princes'' offerings and the second Passover',
+       E'The twelve tribes dedicate the altar prince by prince: *Then on the day when Moses had completed to erect the sanctuary, the princes of the children of Israel began to bring their offerings before Yahuah (the Lord) for the dedication of the altar* (Jasher 83:7), *a prince each day for twelve days* (Jasher 83:8). This is the twelve-tribe covenant people, each house bringing its inheritance-gift — Numbers 7: *And Yahuah (LORD) said unto Moses, They shall offer their offering, each prince on his day, for the dedicating of the altar* (Numbers 7:11), beginning with Judah''s prince (Numbers 7:12). Then the feast is kept in its season: *And it was after this, in the thirteenth day of the month, that Moses commanded the children of Israel to observe the Passover* (Jasher 83:15), *as Yahuah (the Lord) had commanded Moses* (Jasher 83:16) — the appointed time the fathers kept, *And ye shall keep it up until the fourteenth day of the same month: and the whole assembly of the congregation of Yashar''el (Israel) shall kill it in the evening* (Exodus 12:6). It ain''t new — the feast stands; the seed keeps the way.',
+       sv.verse_id, ev.verse_id, 'extras', 57056
+  FROM _session252_ja83_lookup sv, _session252_ja83_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=7
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=83 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-83-numbering-wilderness-sinai',
+       E'The numbering of the tribes in the wilderness of Sinai',
+       E'Yahuah commands the census of the host: *And in the second month, on the first day of it, Yahuah (the Lord) spoke to Moses, saying, Number the heads of all the males of the children of Israel from twenty years old and upward* (Jasher 83:17-18), and the total was *six hundred and three thousand, five hundred and fifty* (Jasher 83:20), *But the children of Levi were not numbered amongst their brethren the children of Israel* (Jasher 83:21). This is the opening of the book of Numbers — *And Yahuah (LORD) spake unto Moses in the wilderness of Sinai... on the first day of the second month, in the second year after they were come out of the land of Egypt* (Numbers 1:1), the muster *From twenty years old and upward, all that are able to go forth to war* (Numbers 1:3), the very tally *Even all they that were numbered were six hundred thousand and three thousand and five hundred and fifty* (Numbers 1:46). The twelve-tribe army of Yahuah, counted by the houses of their fathers — the covenant nation forming.',
+       sv.verse_id, ev.verse_id, 'extras', 57059
+  FROM _session252_ja83_lookup sv, _session252_ja83_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=17
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=83 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-83-cloud-quail-kibroth',
+       E'The cloud lifts; the lusting and the graves of craving',
+       E'The journey begins when the cloud rises: *And on the twentieth day of the month, the cloud was taken away from the tabernacle of testimony* (Jasher 83:25), and the host moves *and the cloud rested upon the wilderness of Paran* (Jasher 83:26) — Numbers 10: *And it came to pass on the twentieth day of the second month, in the second year, that the cloud was taken up from off the tabernacle of the testimony* (Numbers 10:11), *and the cloud rested in the wilderness of Paran* (Numbers 10:12). But the people lust for flesh, and the anger of Yahuah is kindled — Jasher 83:26-29 — exactly as Numbers records: *And the mixt multitude that was among them fell a lusting: and the children of Yashar''el (Israel) also wept again, and said, Who shall give us flesh to eat?* (Numbers 11:4), and *while the flesh was yet between their teeth... Yahuah (LORD) smote the people with a very great plague* (Numbers 11:33), so *he called the name of that place Kibroth-hattaavah: because there they buried the people that lusted* (Numbers 11:34). Jasher 83:29 names it Kebroth Hattaavah for the same reason. The Spirit later marks it as the warning: *Now these things were our examples, to the intent we should not lust after evil things, as they also lusted* (1 Corinthians 10:6).',
+       sv.verse_id, ev.verse_id, 'extras', 57062
+  FROM _session252_ja83_lookup sv, _session252_ja83_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=25
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=83 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-83-miriam-leprous',
+       E'Miriam struck leprous at Hazeroth',
+       E'At Hazeroth the judgment touches Moses'' own house: *And whilst the children of Israel were in Hazeroth, the anger of Yahuah (the Lord) was kindled against Miriam on account of Moses, and she became leprous, white as snow* (Jasher 83:31), *And she was confined without the camp for seven days, until she had been received again after her leprosy* (Jasher 83:32). It is Numbers 12 unchanged: *And the cloud departed from off the tabernacle; and, behold, Miriam became leprous, white as snow: and Aaron looked upon Miriam, and, behold, she was leprous* (Numbers 12:10). The same scene, the same seven days outside the camp — Jasher carries the canon''s account.',
+       sv.verse_id, ev.verse_id, 'extras', 57065
+  FROM _session252_ja83_lookup sv, _session252_ja83_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=31
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=83 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-83-spies-forty-years',
+       E'The twelve spies, the evil report, and the forty years',
+       E'The book ends with the spies and the sentence of the wilderness: *Yahuah (the Lord) spoke to Moses to send twelve men from the children of Israel, one man to a tribe, to go and explore the land of Canaan* (Jasher 83:34) — Numbers 13: *Send thou men, that they may search the land of Canaan... of every tribe of their fathers shall ye send a man* (Numbers 13:2). Ten bring the evil report, *a land that consumes its inhabitants* (Jasher 83:36) — *a land that eateth up the inhabitants thereof* (Numbers 13:32) — but Joshua and Caleb hold fast: *The land is exceedingly good. If Yahuah (the Lord) delight in us, then he will bring us to this land and give it to us, for it is a land flowing with milk and honey* (Jasher 83:37-38), the very words of Numbers 14:7-8: *If Yahuah (LORD) delight in us, then he will bring us into this land, and give it us; a land which floweth with milk and honey* (Numbers 14:8). So the oath falls — Jasher 83:41-42 — *Doubtless ye shall not come into the land... save Caleb the son of Jephunneh, and Joshua the son of Nun* (Numbers 14:30), *And your children shall wander in the wilderness forty years* (Numbers 14:33). The election holds: the seed is kept even under judgment, the children inherit. The Spirit reads it the same: *But with whom was he grieved forty years? was it not with them that had sinned, whose carcases fell in the wilderness?* (Hebrews 3:17). And Jasher''s last line turns them back toward the sea — *they afterward proceeded to the wilderness by the way of the Red Sea* (Jasher 83:43).',
+       sv.verse_id, ev.verse_id, 'extras', 57068
+  FROM _session252_ja83_lookup sv, _session252_ja83_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=34
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=83 AND ev.verse_number=43
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-83-tabernacle-reared-eighth-day
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 40:17 — *And it came to pass in the first month in the second year, on the first day of the month, that the tabernacle was reared up.* Jasher 83:4 dates the rearing of the sanctuary to that very first day of the first month in the second year.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-tabernacle-reared-eighth-day'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=40 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 40:16 — *Thus did Moses: according to all that Yahuah (LORD) commanded him, so did he.* Jasher 83:1 says Moses anointed Aaron and his sons and did to them as Yahuah had commanded — the same exact obedience Exodus records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-tabernacle-reared-eighth-day'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=40 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 9:24 — *And there came a fire out from before Yahuah (LORD), and consumed upon the altar the burnt offering and the fat: which when all the people saw, they shouted, and fell on their faces.* When Aaron and his sons brought the burnt and sin offerings in Jasher 83:5, this is the fire that fell to seal the dedication.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-tabernacle-reared-eighth-day'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=9 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-83-nadab-abihu-strange-fire
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 10:1 — *And Nadab and Abihu, the sons of Aaron, took either of them his censer, and put fire therein, and put incense thereon, and offered strange fire before Yahuah (LORD), which he commanded them not.* Jasher 83:6 retells the same strange fire the two sons brought that Yahuah had not commanded.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-nadab-abihu-strange-fire'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=10 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 10:2 — *And there went out fire from Yahuah (LORD), and devoured them, and they died before Yahuah (LORD).* Jasher 83:6''s fire going forth and consuming Nadab and Abihu is this judgment exactly.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-nadab-abihu-strange-fire'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=10 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-83-princes-dedication-passover
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 7:11 — *And Yahuah (LORD) said unto Moses, They shall offer their offering, each prince on his day, for the dedicating of the altar.* Jasher 83:7-8''s prince-a-day dedication of the altar over twelve days is this very ordinance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-princes-dedication-passover'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=7 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 7:12 — *And he that offered his offering the first day was Nahshon the son of Amminadab, of the tribe of Yahudah (Judah):* the twelve-tribe dedication Jasher 83:8 numbers begins with the prince of Judah, the chosen seed-line leading.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-princes-dedication-passover'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=7 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 12:6 — *And ye shall keep it up until the fourteenth day of the same month: and the whole assembly of the congregation of Yashar''el (Israel) shall kill it in the evening.* Jasher 83:16 keeps the Passover in its season on the fourteenth, exactly as commanded.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-princes-dedication-passover'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-83-numbering-wilderness-sinai
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 1:1 — *And Yahuah (LORD) spake unto Moses in the wilderness of Sinai, in the tabernacle of the congregation, on the first day of the second month, in the second year after they were come out of the land of Egypt, saying,* Jasher 83:17 dates the command to number to that same first day of the second month.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-numbering-wilderness-sinai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 1:3 — *From twenty years old and upward, all that are able to go forth to war in Yashar''el (Israel): thou and Aaron shall number them by their armies.* Jasher 83:18 numbers the males from twenty years old and upward, Moses and Aaron and the twelve princes — the muster for war.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-numbering-wilderness-sinai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 1:46 — *Even all they that were numbered were six hundred thousand and three thousand and five hundred and fifty.* Jasher 83:20 reports the identical total, six hundred and three thousand, five hundred and fifty.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-numbering-wilderness-sinai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=1 AND tv.verse_number=46
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-83-cloud-quail-kibroth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 10:11 — *And it came to pass on the twentieth day of the second month, in the second year, that the cloud was taken up from off the tabernacle of the testimony.* Jasher 83:25 sets the cloud''s lifting on the twentieth day of the month, the same departure-signal.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-cloud-quail-kibroth'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=10 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 11:4 — *And the mixt multitude that was among them fell a lusting: and the children of Yashar''el (Israel) also wept again, and said, Who shall give us flesh to eat?* Jasher 83:26 has the people provoke Yahuah by asking for meat to eat — the same craving.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-cloud-quail-kibroth'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 11:33 — *And while the flesh was yet between their teeth, ere it was chewed, the wrath of Yahuah (LORD) was kindled against the people, and Yahuah (LORD) smote the people with a very great plague.* Jasher 83:28''s great slaughter after the meat is this very plague.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-cloud-quail-kibroth'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=11 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Numbers 11:34 — *And he called the name of that place Kibroth-hattaavah: because there they buried the people that lusted.* Jasher 83:29 names the place Kebroth Hattaavah for the same cause — there they buried the people that lusted flesh.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-cloud-quail-kibroth'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=11 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Psalms 78:31 — *The wrath of Elohim (God) came upon them, and slew the fattest of them, and smote down the chosen men of Yashar''el (Israel).* The psalmist remembers the same slaughter for the lust that Jasher 83:28 narrates.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-cloud-quail-kibroth'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-83-miriam-leprous
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 12:10 — *And the cloud departed from off the tabernacle; and, behold, Miriam became leprous, white as snow: and Aaron looked upon Miriam, and, behold, she was leprous.* Jasher 83:31''s Miriam made leprous, white as snow, on account of Moses is this very judgment.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-miriam-leprous'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=12 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-83-spies-forty-years
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 13:2 — *Send thou men, that they may search the land of Canaan, which I give unto the children of Yashar''el (Israel): of every tribe of their fathers shall ye send a man, every one a ruler among them.* Jasher 83:34''s command to send twelve men, one to a tribe, to explore Canaan is this very charge.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-spies-forty-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=13 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 13:32 — *And they brought up an evil report of the land which they had searched unto the children of Yashar''el (Israel), saying, The land, through which we have gone to search it, is a land that eateth up the inhabitants thereof; and all the people that we saw in it are men of a great stature.* Jasher 83:36''s ten men and their evil report of a land that consumes its inhabitants is the same.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-spies-forty-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=13 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 14:8 — *If Yahuah (LORD) delight in us, then he will bring us into this land, and give it us; a land which floweth with milk and honey.* Joshua and Caleb''s plea in Jasher 83:38 is word for word the faithful witness Numbers records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-spies-forty-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=38
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Numbers 14:30 — *Doubtless ye shall not come into the land, concerning which I sware to make you dwell therein, save Caleb the son of Jephunneh, and Joshua the son of Nun.* Jasher 83:41 swears that none of the wicked generation shall see the land excepting Caleb and Joshua — the same oath.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-spies-forty-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Numbers 14:33 — *And your children shall wander in the wilderness forty years, and bear your whoredoms, until your carcases be wasted in the wilderness.* Jasher 83:42''s forty years of wandering until that wicked generation perishes is this sentence.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-spies-forty-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=42
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Hebrews 3:17 — *But with whom was he grieved forty years? was it not with them that had sinned, whose carcases fell in the wilderness?* The NT reads the forty-year sentence of Jasher 83:42 as the warning to the gathered seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja83_lookup sv, _session252_ja83_lookup tv
+ WHERE t.slug='jasher-83-spies-forty-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=83 AND sv.verse_number=42
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_84.sql (session252 jasher 84) -----
+-- Source anchor: jasher/jasher ch84. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja84 (view _session252_ja84_lookup). Sort band base 57075, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja84_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-84-korah-swallowed
+  ('jasher', 'jasher', 84, 1, 'canon', 'numbers', 16, 1, 'free', E'Numbers 16:1 — *Now Korah, the son of Izhar, the son of Kohath, the son of Levi, and Dathan and Abiram, the sons of Eliab, and On, the son of Peleth, sons of Reuben, took men:* the canon names the same Korah of the line of Levi who, in Jasher 84:1, rose up and quarreled with Moses and Aaron.'),
+  ('jasher', 'jasher', 84, 2, 'canon', 'numbers', 16, 32, 'free', E'Numbers 16:32 — *And the earth opened her mouth, and swallowed them up, and their houses, and all the men that appertained unto Korah, and all their goods.* the exact judgment Jasher 84:2 retells: the earth opening its mouth to swallow Korah''s men with their houses and all belonging to them.'),
+  ('jasher', 'jasher', 84, 2, 'canon', 'numbers', 16, 33, 'free', E'Numbers 16:33 — *They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation.* completes the swallowing of Jasher 84:2, the earth closing over Korah''s house.'),
+  ('jasher', 'jasher', 84, 1, 'canon', 'jude', 1, 11, 'free', E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* the NT names the gainsaying of Core (Korah) of Jasher 84:1 as the pattern of rebellion, binding it to the very Balaam who appears later in this chapter.'),
+  -- thread: jasher-84-esau-mount-seir
+  ('jasher', 'jasher', 84, 4, 'canon', 'deuteronomy', 2, 5, 'free', E'Deuteronomy 2:5 — *Meddle not with them; for I will not give you of their land, no, not so much as a foot breadth; because I have given mount Seir unto Esau for a possession.* the same command Jasher 84:4 carries: not the sole of a foot of Esau''s land, for Mount Seir is Esau''s inheritance.'),
+  ('jasher', 'jasher', 84, 6, 'canon', 'deuteronomy', 2, 6, 'free', E'Deuteronomy 2:6 — *Ye shall buy meat of them for money, that ye may eat; and ye shall also buy water of them for money, that ye may drink.* the exact provision of Jasher 84:6: buy food and water of Esau for money rather than fight them.'),
+  ('jasher', 'jasher', 84, 4, 'canon', 'deuteronomy', 2, 4, 'free', E'Deuteronomy 2:4 — *And command thou the people, saying, Ye are to pass through the coast of your brethren the children of Esau, which dwell in Seir; and they shall be afraid of you: take ye good heed unto yourselves therefore:* the canon''s framing of Esau as brethren whose coast Israel passes, matching the brotherly restraint of Jasher 84:4-6.'),
+  ('jasher', 'jasher', 84, 4, 'canon', 'joshua', 24, 4, 'free', E'Joshua 24:4 — *And I gave unto Isaac Jacob and Esau: and I gave unto Esau mount Seir, to possess it; but Jacob and his children went down into Egypt.* Joshua''s covenant rehearsal grounds Jasher 84:4 in the election: Esau''s portion is Mount Seir, while Jacob''s seed is the chosen line carried down into Egypt and out.'),
+  -- thread: jasher-84-sihon-moab
+  ('jasher', 'jasher', 84, 14, 'canon', 'deuteronomy', 2, 30, 'free', E'Deuteronomy 2:30 — *But Sihon king of Heshbon would not let us pass by him: for Yahuah Elohayka (the LORD thy God) hardened his spirit, and made his heart obstinate, that he might deliver him into thy hand, as appeareth this day.* the canon''s hardening of Sihon matches Jasher 84:14, where Yahuah smote the heart of Sihon and sent him to war.'),
+  ('jasher', 'jasher', 84, 18, 'canon', 'numbers', 21, 26, 'free', E'Numbers 21:26 — *For Heshbon was the city of Sihon the king of the Amorites, who had fought against the former king of Moab, and taken all his land out of his hand, even unto Arnon.* the same Heshbon Jasher 84:18 says Sihon took from Moab to make his own.'),
+  ('jasher', 'jasher', 84, 19, 'canon', 'numbers', 21, 27, 'free', E'Numbers 21:27 — *Wherefore they that speak in proverbs say, Come into Heshbon, let the city of Sihon be built and prepared:* the very proverb Jasher 84:19 places in the mouths of the parable-speakers Beor and Balaam.'),
+  ('jasher', 'jasher', 84, 20, 'canon', 'numbers', 21, 29, 'free', E'Numbers 21:29 — *Woe to thee, Moab! thou art undone, O people of Chemosh: he hath given his sons that escaped, and his daughters, into captivity unto Sihon king of the Amorites.* the same lament over Moab and the people of Chemosh that Jasher 84:20 utters as ''Woe to you Moab! you are lost, O people of Kemosh!'''),
+  -- thread: jasher-84-balaam-way
+  ('jasher', 'jasher', 84, 16, 'canon', 'numbers', 22, 5, 'free', E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* the canon''s Balaam of Pethor and Mesopotamia, the same diviner Jasher 84:16 brings from Pethor to curse.'),
+  ('jasher', 'jasher', 84, 15, 'canon', '2-peter', 2, 15, 'free', E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* the NT names the very greed Jasher 84:15,22 shows: Balaam hired and paid silver and gold to curse a people.'),
+  ('jasher', 'jasher', 84, 22, 'canon', 'numbers', 31, 8, 'free', E'Numbers 31:8 — *And they slew the kings of Midian, beside the rest of them that were slain; namely, Evi, and Rekem, and Zur, and Hur, and Reba, five kings of Midian: Balaam also the son of Beor they slew with the sword.* the end of the Balaam who took Sihon''s silver and gold in Jasher 84:22 — slain by the sword for his hire.'),
+  -- thread: jasher-84-miriam-edom-refusal
+  ('jasher', 'jasher', 84, 24, 'canon', 'numbers', 20, 1, 'free', E'Numbers 20:1 — *Then came the children of Yashar''el (Israel), even the whole congregation, into the desert of Zin in the first month: and the people abode in Kadesh; and Miriam died there, and was buried there.* the same first-month arrival at Kadesh and the death and burial of Miriam that Jasher 84:24 records.'),
+  ('jasher', 'jasher', 84, 26, 'canon', 'numbers', 20, 18, 'free', E'Numbers 20:18 — *And Edom said unto him, Thou shalt not pass by me, lest I come out against thee with the sword.* Edom''s refusal of passage in Jasher 84:26, the same king going out against Israel.'),
+  ('jasher', 'jasher', 84, 27, 'canon', 'numbers', 20, 21, 'free', E'Numbers 20:21 — *Thus Edom refused to give Yashar''el (Israel) passage through his border: wherefore Yashar''el (Israel) turned away from him.* Israel turning away rather than fighting Esau, exactly as Jasher 84:27 says the Israelites removed from them and fought not against them.'),
+  -- thread: jasher-84-aaron-mount-hor
+  ('jasher', 'jasher', 84, 30, 'canon', 'numbers', 20, 24, 'free', E'Numbers 20:24 — *Aaron shall be gathered unto his people: for he shall not enter into the land which I have given unto the children of Yashar''el (Israel), because ye rebelled against my word at the water of Meribah.* the same word of Yahuah in Jasher 84:30 that Aaron shall die and not come to the land given to Israel.'),
+  ('jasher', 'jasher', 84, 31, 'canon', 'numbers', 33, 38, 'free', E'Numbers 33:38 — *And Aaron the priest went up into mount Hor at the commandment of Yahuah (LORD), and died there, in the fortieth year after the children of Yashar''el (Israel) were come out of the land of Egypt, in the first day of the fifth month.* the itinerary fixes the same fortieth year, fifth month, first day that Jasher 84:31 gives for Aaron''s ascent of Mount Hor.'),
+  ('jasher', 'jasher', 84, 32, 'canon', 'numbers', 33, 39, 'free', E'Numbers 33:39 — *And Aaron was an hundred and twenty and three years old when he died in mount Hor.* the exact age, one hundred and twenty-three, that Jasher 84:32 records for Aaron at his death on Mount Hor.'),
+  ('jasher', 'jasher', 84, 30, 'canon', 'numbers', 20, 28, 'free', E'Numbers 20:28 — *And Moses stripped Aaron of his garments, and put them upon Eleazar his son; and Aaron died there in the top of the mount: and Moses and Eleazar came down from the mount.* the canon adds the passing of the priestly garments to Eleazar at the death Jasher 84:30-32 narrates on Mount Hor.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja84_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja84_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-84-korah-swallowed',
+       E'Korah''s rebellion — the earth opens its mouth',
+       E'Jasher opens the wilderness account with the great gainsaying: *At that time Korah the son of Jetzer the son of Kehath the son of Levi, took many men of the children of Israel, and they rose up and quarreled with Moses and Aaron and the whole congregation* (Jasher 84:1), and *Yahuah (the Lord) was angry with them, and the earth opened its mouth, and swallowed them up, with their houses and all belonging to them, and all the men belonging to Korah* (Jasher 84:2). It ain''t new — this is Numbers told back to us. Numbers names the same Levite: *Now Korah, the son of Izhar, the son of Kohath, the son of Levi, and Dathan and Abiram... took men* (Numbers 16:1), and the ground answers exactly as Jasher says: *And the earth opened her mouth, and swallowed them up, and their houses, and all the men that appertained unto Korah, and all their goods* (Numbers 16:32), *they... went down alive into the pit, and the earth closed upon them: and they perished from among the congregation* (Numbers 16:33). The New Testament keeps the same warning, binding Korah''s revolt to Balaam (who comes later in this very chapter): *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* (Jude 1:11). The rebellion against the appointed mediators is judgment, not a new gospel.',
+       sv.verse_id, ev.verse_id, 'extras', 57075
+  FROM _session252_ja84_lookup sv, _session252_ja84_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=84 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-84-esau-mount-seir',
+       E'Esau spared — Mount Seir given for an inheritance',
+       E'Israel is forbidden to war on Esau: *At that time Yahuah (the Lord) said to Moses, Provoke not a war against the children of Esau, for I will not give to you of any thing belonging to them, as much as the sole of the foot could tread upon, for I have given Mount Seir for an inheritance to Esau* (Jasher 84:4), and *you may buy food of them for money and eat it, and you may buy water of them for money and drink it* (Jasher 84:6). This is Deuteronomy almost word for word: *Meddle not with them; for I will not give you of their land, no, not so much as a foot breadth; because I have given mount Seir unto Esau for a possession* (Deuteronomy 2:5), *Ye shall buy meat of them for money, that ye may eat; and ye shall also buy water of them for money, that ye may drink* (Deuteronomy 2:6). The election runs underneath: the seed-line is Jacob''s, yet Esau too has his given portion, as Joshua rehearses the covenant history — *And I gave unto Isaac Jacob and Esau: and I gave unto Esau mount Seir, to possess it; but Jacob and his children went down into Egypt* (Joshua 24:4). The brother-nation is kept; the chosen seed presses on toward its own inheritance.',
+       sv.verse_id, ev.verse_id, 'extras', 57078
+  FROM _session252_ja84_lookup sv, _session252_ja84_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=84 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-84-sihon-moab',
+       E'Sihon smites Moab — the proverb of Heshbon',
+       E'Yahuah turns Sihon against Moab: *And in the thirty-sixth year of the children of Israel''s departing from Egypt Yahuah (the Lord) smote the heart of Sihon, king of the Amorites, and he waged war, and went forth to fight against the children of Moab* (Jasher 84:14); Sihon takes Heshbon (Jasher 84:18), and *Therefore the parable speakers Beor and Balaam his son uttered these words, saying, Come to Heshbon, the city of Sihon will be built and established* (Jasher 84:19), *Woe to you Moab! you are lost, O people of Kemosh!* (Jasher 84:20). The canon hardens Sihon''s heart the same way: *But Sihon king of Heshbon would not let us pass by him: for Yahuah Elohayka (the LORD thy God) hardened his spirit, and made his heart obstinate, that he might deliver him into thy hand* (Deuteronomy 2:30). And Numbers preserves the very proverb Jasher attributes to Balaam: *Wherefore they that speak in proverbs say, Come into Heshbon, let the city of Sihon be built and prepared:* (Numbers 21:27), *Woe to thee, Moab! thou art undone, O people of Chemosh: he hath given his sons that escaped, and his daughters, into captivity unto Sihon king of the Amorites* (Numbers 21:29). It ain''t new — Jasher only tells us whose mouth the proverb came from.',
+       sv.verse_id, ev.verse_id, 'extras', 57081
+  FROM _session252_ja84_lookup sv, _session252_ja84_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=84 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-84-balaam-way',
+       E'Balaam the curser-for-hire — the way of Balaam',
+       E'Sihon hires the diviners to curse Moab: *And Sihon sent messengers to Beor the son of Janeas, the son of Balaam, counsellor to the king of Egypt, and to Balaam his son, to curse Moab, in order that it might be delivered into the hand of Sihon* (Jasher 84:15), and afterward *Sihon gave numerous presents of silver and gold to Beor and Balaam his son, and he dismissed them, and they went to Mesopotamia to their home and country* (Jasher 84:22). The canon knows this Balaam of Pethor and his hire: *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him... Behold, there is a people come out from Egypt* (Numbers 22:5). The New Testament names his sin precisely as Jasher portrays it — a prophet bought to curse: *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15); and his end is recorded too: *Balaam also the son of Beor they slew with the sword* (Numbers 31:8). The wages of unrighteousness — silver and gold for a curse — is the way that perishes.',
+       sv.verse_id, ev.verse_id, 'extras', 57084
+  FROM _session252_ja84_lookup sv, _session252_ja84_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=15
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=84 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-84-miriam-edom-refusal',
+       E'Miriam dies at Kadesh — Edom refuses passage',
+       E'The fortieth year arrives with a death and a refusal: *So the whole congregation came to the wilderness of Sin in the first month of the fortieth year from their departure from Egypt, and the children of Israel dwelt there in Kadesh, of the wilderness of Sin, and Miriam died there and she was buried there* (Jasher 84:24). Then Edom shuts the road: *And Edom said to him, You shall not pass through my country, and Edom went forth to meet the children of Israel with a mighty people* (Jasher 84:26). Numbers records the same arrival and the same grave: *Then came the children of Yashar''el (Israel), even the whole congregation, into the desert of Zin in the first month: and the people abode in Kadesh; and Miriam died there, and was buried there* (Numbers 20:1). And Edom''s refusal stands word-near: *And Edom said unto him, Thou shalt not pass by me, lest I come out against thee with the sword* (Numbers 20:18), *Thus Edom refused to give Yashar''el (Israel) passage through his border: wherefore Yashar''el (Israel) turned away from him* (Numbers 20:21). Israel turns aside rather than war on the brother-nation — the restraint commanded back in 84:4 still holding.',
+       sv.verse_id, ev.verse_id, 'extras', 57087
+  FROM _session252_ja84_lookup sv, _session252_ja84_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=24
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=84 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-84-aaron-mount-hor',
+       E'Aaron dies on Mount Hor — the priest gathered',
+       E'The book of Jasher closes its wilderness account with the death of the high priest: *At that time Yahuah (the Lord) said to Moses, Tell your brother Aaron that he shall die there, for he shall not come to the land which I have given to the children of Israel* (Jasher 84:30); *And Aaron went up, at the command of Yahuah (the Lord), to Mount Hor, in the fortieth year, in the fifth month, in the first day of the month* (Jasher 84:31); *And Aaron was one hundred and twenty-three years old when he died in Mount Hor* (Jasher 84:32). Numbers gives the command and the stripping of the priestly garments: *Aaron shall be gathered unto his people: for he shall not enter into the land which I have given unto the children of Yashar''el (Israel)* (Numbers 20:24), and *Moses stripped Aaron of his garments, and put them upon Eleazar his son; and Aaron died there in the top of the mount* (Numbers 20:28). And the itinerary of Numbers 33 fixes the very year, month, day, and age Jasher gives: *And Aaron the priest went up into mount Hor at the commandment of Yahuah (LORD), and died there, in the fortieth year after the children of Yashar''el (Israel) were come out of the land of Egypt, in the first day of the fifth month* (Numbers 33:38), *And Aaron was an hundred and twenty and three years old when he died in mount Hor* (Numbers 33:39). It ain''t new — Jasher and the Torah agree to the day and the year.',
+       sv.verse_id, ev.verse_id, 'extras', 57090
+  FROM _session252_ja84_lookup sv, _session252_ja84_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=30
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=84 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-84-korah-swallowed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 16:1 — *Now Korah, the son of Izhar, the son of Kohath, the son of Levi, and Dathan and Abiram, the sons of Eliab, and On, the son of Peleth, sons of Reuben, took men:* the canon names the same Korah of the line of Levi who, in Jasher 84:1, rose up and quarreled with Moses and Aaron.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-korah-swallowed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 16:32 — *And the earth opened her mouth, and swallowed them up, and their houses, and all the men that appertained unto Korah, and all their goods.* the exact judgment Jasher 84:2 retells: the earth opening its mouth to swallow Korah''s men with their houses and all belonging to them.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-korah-swallowed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 16:33 — *They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation.* completes the swallowing of Jasher 84:2, the earth closing over Korah''s house.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-korah-swallowed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* the NT names the gainsaying of Core (Korah) of Jasher 84:1 as the pattern of rebellion, binding it to the very Balaam who appears later in this chapter.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-korah-swallowed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-84-esau-mount-seir
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 2:5 — *Meddle not with them; for I will not give you of their land, no, not so much as a foot breadth; because I have given mount Seir unto Esau for a possession.* the same command Jasher 84:4 carries: not the sole of a foot of Esau''s land, for Mount Seir is Esau''s inheritance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-esau-mount-seir'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=2 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 2:6 — *Ye shall buy meat of them for money, that ye may eat; and ye shall also buy water of them for money, that ye may drink.* the exact provision of Jasher 84:6: buy food and water of Esau for money rather than fight them.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-esau-mount-seir'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=2 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 2:4 — *And command thou the people, saying, Ye are to pass through the coast of your brethren the children of Esau, which dwell in Seir; and they shall be afraid of you: take ye good heed unto yourselves therefore:* the canon''s framing of Esau as brethren whose coast Israel passes, matching the brotherly restraint of Jasher 84:4-6.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-esau-mount-seir'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 24:4 — *And I gave unto Isaac Jacob and Esau: and I gave unto Esau mount Seir, to possess it; but Jacob and his children went down into Egypt.* Joshua''s covenant rehearsal grounds Jasher 84:4 in the election: Esau''s portion is Mount Seir, while Jacob''s seed is the chosen line carried down into Egypt and out.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-esau-mount-seir'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-84-sihon-moab
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 2:30 — *But Sihon king of Heshbon would not let us pass by him: for Yahuah Elohayka (the LORD thy God) hardened his spirit, and made his heart obstinate, that he might deliver him into thy hand, as appeareth this day.* the canon''s hardening of Sihon matches Jasher 84:14, where Yahuah smote the heart of Sihon and sent him to war.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-sihon-moab'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=2 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 21:26 — *For Heshbon was the city of Sihon the king of the Amorites, who had fought against the former king of Moab, and taken all his land out of his hand, even unto Arnon.* the same Heshbon Jasher 84:18 says Sihon took from Moab to make his own.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-sihon-moab'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 21:27 — *Wherefore they that speak in proverbs say, Come into Heshbon, let the city of Sihon be built and prepared:* the very proverb Jasher 84:19 places in the mouths of the parable-speakers Beor and Balaam.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-sihon-moab'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Numbers 21:29 — *Woe to thee, Moab! thou art undone, O people of Chemosh: he hath given his sons that escaped, and his daughters, into captivity unto Sihon king of the Amorites.* the same lament over Moab and the people of Chemosh that Jasher 84:20 utters as ''Woe to you Moab! you are lost, O people of Kemosh!'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-sihon-moab'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-84-balaam-way
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* the canon''s Balaam of Pethor and Mesopotamia, the same diviner Jasher 84:16 brings from Pethor to curse.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-balaam-way'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=22 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* the NT names the very greed Jasher 84:15,22 shows: Balaam hired and paid silver and gold to curse a people.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-balaam-way'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 31:8 — *And they slew the kings of Midian, beside the rest of them that were slain; namely, Evi, and Rekem, and Zur, and Hur, and Reba, five kings of Midian: Balaam also the son of Beor they slew with the sword.* the end of the Balaam who took Sihon''s silver and gold in Jasher 84:22 — slain by the sword for his hire.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-balaam-way'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=31 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-84-miriam-edom-refusal
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 20:1 — *Then came the children of Yashar''el (Israel), even the whole congregation, into the desert of Zin in the first month: and the people abode in Kadesh; and Miriam died there, and was buried there.* the same first-month arrival at Kadesh and the death and burial of Miriam that Jasher 84:24 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-miriam-edom-refusal'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=20 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 20:18 — *And Edom said unto him, Thou shalt not pass by me, lest I come out against thee with the sword.* Edom''s refusal of passage in Jasher 84:26, the same king going out against Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-miriam-edom-refusal'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=20 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 20:21 — *Thus Edom refused to give Yashar''el (Israel) passage through his border: wherefore Yashar''el (Israel) turned away from him.* Israel turning away rather than fighting Esau, exactly as Jasher 84:27 says the Israelites removed from them and fought not against them.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-miriam-edom-refusal'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=20 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-84-aaron-mount-hor
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 20:24 — *Aaron shall be gathered unto his people: for he shall not enter into the land which I have given unto the children of Yashar''el (Israel), because ye rebelled against my word at the water of Meribah.* the same word of Yahuah in Jasher 84:30 that Aaron shall die and not come to the land given to Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-aaron-mount-hor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=20 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 33:38 — *And Aaron the priest went up into mount Hor at the commandment of Yahuah (LORD), and died there, in the fortieth year after the children of Yashar''el (Israel) were come out of the land of Egypt, in the first day of the fifth month.* the itinerary fixes the same fortieth year, fifth month, first day that Jasher 84:31 gives for Aaron''s ascent of Mount Hor.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-aaron-mount-hor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=33 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 33:39 — *And Aaron was an hundred and twenty and three years old when he died in mount Hor.* the exact age, one hundred and twenty-three, that Jasher 84:32 records for Aaron at his death on Mount Hor.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-aaron-mount-hor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=33 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Numbers 20:28 — *And Moses stripped Aaron of his garments, and put them upon Eleazar his son; and Aaron died there in the top of the mount: and Moses and Eleazar came down from the mount.* the canon adds the passing of the priestly garments to Eleazar at the death Jasher 84:30-32 narrates on Mount Hor.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja84_lookup sv, _session252_ja84_lookup tv
+ WHERE t.slug='jasher-84-aaron-mount-hor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=84 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=20 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_85.sql (session252 jasher 85) -----
+-- Source anchor: jasher/jasher ch85. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja85 (view _session252_ja85_lookup). Sort band base 57100, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja85_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-85-arad-hormah
+  ('jasher', 'jasher', 85, 1, 'canon', 'numbers', 21, 1, 'free', E'Numbers 21:1 — *And when king Arad the Canaanite, which dwelt in the south, heard tell that Yashar''el (Israel) came by the way of the spies; then he fought against Yashar''el (Israel), and took some of them prisoners.* The same Arad who ''dwelt in the south'' and arranged his host against Israel in Jasher 85:1.'),
+  ('jasher', 'jasher', 85, 8, 'canon', 'numbers', 21, 3, 'free', E'Numbers 21:3 — *And Yahuah (LORD) hearkened to the voice of Yashar''el (Israel), and delivered up the Canaanites; and they utterly destroyed them and their cities: and he called the name of the place Hormah.* The canon names the same Hormah Jasher 85:8 calls ''the name of the place.'''),
+  -- thread: jasher-85-sihon-amorites
+  ('jasher', 'jasher', 85, 14, 'canon', 'numbers', 21, 22, 'free', E'Numbers 21:22 — *Let me pass through thy land: we will not turn into the fields, or into the vineyards; we will not drink of the waters of the well: but we will go along by the king’s high way, until we be past thy borders.* The same plea to Sihon that Jasher 85:14 puts on Israel''s lips.'),
+  ('jasher', 'jasher', 85, 15, 'canon', 'numbers', 21, 23, 'free', E'Numbers 21:23 — *And Sihon would not suffer Yashar''el (Israel) to pass through his border: but Sihon gathered all his people together, and went out against Yashar''el (Israel) into the wilderness: and he came to Jahaz, and fought against Yashar''el (Israel).* The very battle at Jahaz that Jasher 85:15 recounts.'),
+  ('jasher', 'jasher', 85, 17, 'canon', 'numbers', 21, 24, 'free', E'Numbers 21:24 — *And Yashar''el (Israel) smote him with the edge of the sword, and possessed his land from Arnon unto Jabbok, even unto the children of Ammon: for the border of the children of Ammon was strong.* The same Arnon-to-Jabbok inheritance Jasher 85:17 says Israel took possession of.'),
+  -- thread: jasher-85-og-bashan-giant
+  ('jasher', 'jasher', 85, 21, 'canon', 'numbers', 21, 33, 'free', E'Numbers 21:33 — *And they turned and went up by the way of Bashan: and Og the king of Bashan went out against them, he, and all his people, to the battle at Edrei.* The same march ''by the way of Bashan'' against Og that Jasher 85:21 opens with.'),
+  ('jasher', 'jasher', 85, 26, 'canon', 'numbers', 21, 34, 'free', E'Numbers 21:34 — *And Yahuah (LORD) said unto Moses, Fear him not: for I have delivered him into thy hand, and all his people, and his land; and thou shalt do to him as thou didst unto Sihon king of the Amorites, which dwelt at Heshbon.* The very ''Be not afraid of him... as you did to Sihon'' Yahuah speaks in Jasher 85:26.'),
+  ('jasher', 'jasher', 85, 22, 'canon', 'deuteronomy', 3, 11, 'free', E'Deuteronomy 3:11 — *For only Og king of Bashan remained of the remnant of giants; behold, his bedstead was a bedstead of iron; is it not in Rabbath of the children of Ammon? nine cubits was the length thereof, and four cubits the breadth of it, after the cubit of a man.* The canon''s own memory of Og as a giant, which Jasher 85:22 magnifies into the ''very powerful man.'''),
+  -- thread: jasher-85-balak-balaam
+  ('jasher', 'jasher', 85, 45, 'canon', 'numbers', 22, 5, 'free', E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* The same words Balak sends in Jasher 85:45.'),
+  ('jasher', 'jasher', 85, 46, 'canon', 'numbers', 22, 6, 'free', E'Numbers 22:6 — *Come now therefore, I pray thee, curse me this people; for they are too mighty for me: peradventure I shall prevail, that we may smite them, and that I may drive them out of the land: for I wot that he whom thou blessest is blessed, and he whom thou cursest is cursed.* The verbatim ''whom you bless is blessed, and whom you curse is cursed'' of Jasher 85:46.'),
+  ('jasher', 'jasher', 85, 48, 'canon', 'numbers', 22, 12, 'free', E'Numbers 22:12 — *And Elohim (God) said unto Balaam, Thou shalt not go with them; thou shalt not curse the people: for they are blessed.* Yahuah''s ''Curse not this people for it is blessed'' in Jasher 85:48 — the election the curse cannot touch.'),
+  ('jasher', 'jasher', 85, 49, 'canon', '2-peter', 2, 15, 'free', E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* The NT names the very ''way of Balaam'' — the hire-seeking prophet of Jasher 85:49 — as a pattern of warning.'),
+  -- thread: jasher-85-baal-peor-phinehas
+  ('jasher', 'jasher', 85, 52, 'canon', 'numbers', 25, 1, 'free', E'Numbers 25:1 — *And Yashar''el (Israel) abode in Shittim, and the people began to commit whoredom with the daughters of Moab.* The same Shittim whoredom that opens Jasher 85:52.'),
+  ('jasher', 'jasher', 85, 59, 'canon', 'numbers', 25, 3, 'free', E'Numbers 25:3 — *And Yashar''el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar''el (Israel).* The eating of Moab''s sacrifice in Jasher 85:59 is the canon''s joining to Baal-peor.'),
+  ('jasher', 'jasher', 85, 61, 'canon', 'numbers', 25, 9, 'free', E'Numbers 25:9 — *And those that died in the plague were twenty and four thousand.* The exact ''twenty-four thousand men'' the pestilence slew in Jasher 85:61.'),
+  ('jasher', 'jasher', 85, 63, 'canon', 'numbers', 25, 8, 'free', E'Numbers 25:8 — *And he went after the man of Yashar''el (Israel) into the tent, and thrust both of them through, the man of Yashar''el (Israel), and the woman through her belly. So the plague was stayed from the children of Yashar''el (Israel).* The very spear of Phineas and the staying of the plague that ends Jasher 85:63 — and the book.'),
+  ('jasher', 'jasher', 85, 59, 'canon', 'psalms', 106, 28, 'free', E'Psalm 106:28 — *They joined themselves also unto Baal-peor, and ate the sacrifices of the dead.* The Psalm''s verdict on the eating of Moab''s sacrifices in Jasher 85:59.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja85_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja85_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-85-arad-hormah',
+       E'King Arad and the vow at Hormah',
+       E'Jasher opens its last chapter with the southern king who barred the seed: *And king Arad the Canaanite, who dwelt in the south, heard that the Israelites had come by the way of the spies, and he arranged his forces to fight against the Israelites* (Jasher 85:1). Numbers tells the same scene — *And when king Arad the Canaanite, which dwelt in the south, heard tell that Yashar''el (Israel) came by the way of the spies; then he fought against Yashar''el (Israel), and took some of them prisoners* (Numbers 21:1). And Yashar''el answers with a vow that Yahuah honors: *And Yahuah (LORD) hearkened to the voice of Yashar''el (Israel), and delivered up the Canaanites; and they utterly destroyed them and their cities: and he called the name of the place Hormah* (Numbers 21:3) — the very Hormah Jasher names. It ain''t new: the chosen seed is given the land it was promised, the kingdom-of-Canaan broken before the called people.',
+       sv.verse_id, ev.verse_id, 'extras', 57100
+  FROM _session252_ja85_lookup sv, _session252_ja85_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=85 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-85-sihon-amorites',
+       E'Sihon king of the Amorites refuses passage',
+       E'Jasher narrates the embassy and the war: *And the children of Israel sent messengers to Sihon, king of the Amorites, saying, Let us pass through your land* (Jasher 85:13-14), and when *Sihon would not suffer the Israelites to pass* he mustered the Amorites and *fought against Israel in Jahaz* (Jasher 85:14-15). Numbers carries the identical message and refusal — *Let me pass through thy land: we will not turn into the fields, or into the vineyards... but we will go along by the king''s high way* (Numbers 21:22) — and the identical battle at Jahaz: *And Sihon would not suffer Yashar''el (Israel) to pass through his border: but Sihon gathered all his people together, and went out against Yashar''el (Israel) into the wilderness: and he came to Jahaz, and fought against Yashar''el (Israel)* (Numbers 21:23). The land taken ''from Arnon to Jabuk'' (Jasher 85:17) is the canon''s own inheritance line (Numbers 21:24). The seed delivered with a high hand.',
+       sv.verse_id, ev.verse_id, 'extras', 57103
+  FROM _session252_ja85_lookup sv, _session252_ja85_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=12
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=85 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-85-og-bashan-giant',
+       E'Og the giant of Bashan',
+       E'Jasher expands the conquest of Og with legend — *And Og king of Bashan was a very powerful man* who lifts a stone ''the length of three parsa'' to crush the camp, until *the angel of Yahuah (the Lord) came and pierced the stone upon the head of Og* (Jasher 85:22-25). The canon scene it amplifies is plain: *And they turned and went up by the way of Bashan: and Og the king of Bashan went out against them, he, and all his people, to the battle at Edrei* (Numbers 21:33), with Yahuah''s word of assurance — *Fear him not: for I have delivered him into thy hand* (Numbers 21:34). Where Jasher''s stone-and-angel is legend, the canon still preserves Og as the last of the giants: *For only Og king of Bashan remained of the remnant of giants; behold, his bedstead was a bedstead of iron* (Deuteronomy 3:11). Anchor the legend to the scene it expands; do not force the marvel.',
+       sv.verse_id, ev.verse_id, 'extras', 57106
+  FROM _session252_ja85_lookup sv, _session252_ja85_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=21
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=85 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-85-balak-balaam',
+       E'Balak hires Balaam, but the seed is blessed',
+       E'Moab, terrified, makes Balak king and sends for the prophet-for-hire: *Behold there is a people come out from Egypt, behold they cover the face of the earth... Now therefore come and curse this people for me* (Jasher 85:45-46). Word for word the canon: *Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me* (Numbers 22:5) and *curse me this people; for they are too mighty for me... for I wot that he whom thou blessest is blessed, and he whom thou cursest is cursed* (Numbers 22:6). But the election stands — Yahuah forbids the curse, *And Elohim (God) said unto Balaam, Thou shalt not go with them; thou shalt not curse the people: for they are blessed* (Numbers 22:12), exactly Jasher''s *Curse not this people for it is blessed* (Jasher 85:48). The chosen seed cannot be cursed; the way of Balaam (the wages of unrighteousness) is named for warning in the NT — *following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15). It ain''t new: the blessing on the seed is irrevocable.',
+       sv.verse_id, ev.verse_id, 'extras', 57109
+  FROM _session252_ja85_lookup sv, _session252_ja85_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=44
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=85 AND ev.verse_number=50
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-85-baal-peor-phinehas',
+       E'Baal-Peor, the plague, and the zeal of Phinehas',
+       E'Failing to curse, Moab corrupts instead: *And when the children of Israel abode in the plain of Shittim, they began to commit whoredom with the daughters of Moab* (Jasher 85:52), seated and feasted them to *eat of their sacrifice* (Jasher 85:59). The canon is identical — *And Yashar''el (Israel) abode in Shittim, and the people began to commit whoredom with the daughters of Moab* (Numbers 25:1), *And Yashar''el (Israel) joined himself unto Baal-peor* (Numbers 25:3). The plague that ''there died of the Israelites twenty-four thousand men'' (Jasher 85:61) is the canon''s *And those that died in the plague were twenty and four thousand* (Numbers 25:9), stayed by Phinehas: *And he went after the man of Yashar''el (Israel) into the tent, and thrust both of them through... So the plague was stayed from the children of Yashar''el (Israel)* (Numbers 25:8) — Jasher''s last named act (Jasher 85:63). The Psalm seals the verdict: *They joined themselves also unto Baal-peor, and ate the sacrifices of the dead* (Psalm 106:28). The seed is kept by the zeal of the priest; the way of Balaam (the snare of fornication and idol-food) is named again in Revelation. So ends the book of Jasher.',
+       sv.verse_id, ev.verse_id, 'extras', 57112
+  FROM _session252_ja85_lookup sv, _session252_ja85_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=52
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=85 AND ev.verse_number=63
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-85-arad-hormah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 21:1 — *And when king Arad the Canaanite, which dwelt in the south, heard tell that Yashar''el (Israel) came by the way of the spies; then he fought against Yashar''el (Israel), and took some of them prisoners.* The same Arad who ''dwelt in the south'' and arranged his host against Israel in Jasher 85:1.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-arad-hormah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 21:3 — *And Yahuah (LORD) hearkened to the voice of Yashar''el (Israel), and delivered up the Canaanites; and they utterly destroyed them and their cities: and he called the name of the place Hormah.* The canon names the same Hormah Jasher 85:8 calls ''the name of the place.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-arad-hormah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-85-sihon-amorites
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 21:22 — *Let me pass through thy land: we will not turn into the fields, or into the vineyards; we will not drink of the waters of the well: but we will go along by the king’s high way, until we be past thy borders.* The same plea to Sihon that Jasher 85:14 puts on Israel''s lips.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-sihon-amorites'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 21:23 — *And Sihon would not suffer Yashar''el (Israel) to pass through his border: but Sihon gathered all his people together, and went out against Yashar''el (Israel) into the wilderness: and he came to Jahaz, and fought against Yashar''el (Israel).* The very battle at Jahaz that Jasher 85:15 recounts.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-sihon-amorites'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 21:24 — *And Yashar''el (Israel) smote him with the edge of the sword, and possessed his land from Arnon unto Jabbok, even unto the children of Ammon: for the border of the children of Ammon was strong.* The same Arnon-to-Jabbok inheritance Jasher 85:17 says Israel took possession of.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-sihon-amorites'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-85-og-bashan-giant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 21:33 — *And they turned and went up by the way of Bashan: and Og the king of Bashan went out against them, he, and all his people, to the battle at Edrei.* The same march ''by the way of Bashan'' against Og that Jasher 85:21 opens with.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-og-bashan-giant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 21:34 — *And Yahuah (LORD) said unto Moses, Fear him not: for I have delivered him into thy hand, and all his people, and his land; and thou shalt do to him as thou didst unto Sihon king of the Amorites, which dwelt at Heshbon.* The very ''Be not afraid of him... as you did to Sihon'' Yahuah speaks in Jasher 85:26.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-og-bashan-giant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 3:11 — *For only Og king of Bashan remained of the remnant of giants; behold, his bedstead was a bedstead of iron; is it not in Rabbath of the children of Ammon? nine cubits was the length thereof, and four cubits the breadth of it, after the cubit of a man.* The canon''s own memory of Og as a giant, which Jasher 85:22 magnifies into the ''very powerful man.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-og-bashan-giant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=3 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-85-balak-balaam
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* The same words Balak sends in Jasher 85:45.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-balak-balaam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=45
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=22 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 22:6 — *Come now therefore, I pray thee, curse me this people; for they are too mighty for me: peradventure I shall prevail, that we may smite them, and that I may drive them out of the land: for I wot that he whom thou blessest is blessed, and he whom thou cursest is cursed.* The verbatim ''whom you bless is blessed, and whom you curse is cursed'' of Jasher 85:46.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-balak-balaam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=46
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=22 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 22:12 — *And Elohim (God) said unto Balaam, Thou shalt not go with them; thou shalt not curse the people: for they are blessed.* Yahuah''s ''Curse not this people for it is blessed'' in Jasher 85:48 — the election the curse cannot touch.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-balak-balaam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=48
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=22 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* The NT names the very ''way of Balaam'' — the hire-seeking prophet of Jasher 85:49 — as a pattern of warning.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-balak-balaam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=49
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-85-baal-peor-phinehas
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 25:1 — *And Yashar''el (Israel) abode in Shittim, and the people began to commit whoredom with the daughters of Moab.* The same Shittim whoredom that opens Jasher 85:52.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-baal-peor-phinehas'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=52
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 25:3 — *And Yashar''el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar''el (Israel).* The eating of Moab''s sacrifice in Jasher 85:59 is the canon''s joining to Baal-peor.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-baal-peor-phinehas'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=59
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 25:9 — *And those that died in the plague were twenty and four thousand.* The exact ''twenty-four thousand men'' the pestilence slew in Jasher 85:61.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-baal-peor-phinehas'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=61
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Numbers 25:8 — *And he went after the man of Yashar''el (Israel) into the tent, and thrust both of them through, the man of Yashar''el (Israel), and the woman through her belly. So the plague was stayed from the children of Yashar''el (Israel).* The very spear of Phineas and the staying of the plague that ends Jasher 85:63 — and the book.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-baal-peor-phinehas'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=63
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Psalm 106:28 — *They joined themselves also unto Baal-peor, and ate the sacrifices of the dead.* The Psalm''s verdict on the eating of Moab''s sacrifices in Jasher 85:59.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja85_lookup sv, _session252_ja85_lookup tv
+ WHERE t.slug='jasher-85-baal-peor-phinehas'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=85 AND sv.verse_number=59
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_86.sql (session252 jasher 86) -----
+-- Source anchor: jasher/jasher ch86. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja86 (view _session252_ja86_lookup). Sort band base 57125, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja86_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-86-census-after-the-plague
+  ('jasher', 'jasher', 86, 1, 'canon', 'numbers', 26, 1, 'free', E'Numbers 26:1 — *And it came to pass after the plague, that Yahuah (LORD) spake unto Moses and unto Eleazar the son of Aaron the priest, saying* — the canon sets the same census command after the plague to Moses and Eleazar, exactly as Jasher 86:1.'),
+  ('jasher', 'jasher', 86, 2, 'canon', 'numbers', 26, 64, 'free', E'Numbers 26:64 — *But among these there was not a man of them whom Moses and Aaron the priest numbered, when they numbered the children of Yashar''el (Israel) in the wilderness of Sinai* — the canon''s framing of the new generation numbered from twenty years old, as Jasher 86:2.'),
+  ('jasher', 'jasher', 86, 3, 'canon', 'numbers', 26, 51, 'free', E'Numbers 26:51 — *These were the numbered of the children of Yashar''el (Israel), six hundred thousand and a thousand seven hundred and thirty* — the canon''s mustered total of the covenant seed, the count Jasher 86:3 carries (seven hundred and thirty).'),
+  -- thread: jasher-86-levi-numbered-from-a-month-old
+  ('jasher', 'jasher', 86, 4, 'canon', 'numbers', 26, 62, 'free', E'Numbers 26:62 — *And those that were numbered of them were twenty and three thousand, all males from a month old and upward: for they were not numbered among the children of Yashar''el (Israel), because there was no inheritance given them among the children of Yashar''el (Israel)* — the canon''s identical Levite count from a month old, as Jasher 86:4.'),
+  ('jasher', 'jasher', 86, 4, 'canon', 'numbers', 26, 64, 'free', E'Numbers 26:64 — *But among these there was not a man of them whom Moses and Aaron the priest numbered, when they numbered the children of Yashar''el (Israel) in the wilderness of Sinai* — the canon''s note that none of the Sinai-numbered remained, echoed in Jasher 86:4.'),
+  -- thread: jasher-86-wilderness-generation-fallen
+  ('jasher', 'jasher', 86, 5, 'canon', 'numbers', 26, 65, 'free', E'Numbers 26:65 — *For Yahuah (LORD) had said of them, They shall surely die in the wilderness. And there was not left a man of them, save Caleb the son of Jephunneh, and Joshua the son of Nun* — the canon''s census names the identical survivors and verdict of Jasher 86:5.'),
+  ('jasher', 'jasher', 86, 5, 'canon', 'numbers', 14, 29, 'free', E'Numbers 14:29 — *Your carcases shall fall in this wilderness; and all that were numbered of you, according to your whole number, from twenty years old and upward, which have murmured against me* — the oath that they would die in the wilderness, the sentence Jasher 86:5 reports fulfilled.'),
+  ('jasher', 'jasher', 86, 5, 'canon', 'numbers', 14, 30, 'free', E'Numbers 14:30 — *Doubtless ye shall not come into the land, concerning which I sware to make you dwell therein, save Caleb the son of Jephunneh, and Joshua the son of Nun* — the canon''s reservation of the two faithful, exactly the exception of Jasher 86:5.'),
+  -- thread: jasher-86-war-against-midian
+  ('jasher', 'jasher', 86, 6, 'canon', 'numbers', 31, 2, 'free', E'Numbers 31:2 — *Avenge the children of Yashar''el (Israel) of the Midianites: afterward shalt thou be gathered unto thy people* — the canon''s command to avenge Midian, the word Yahuah gives Moses in Jasher 86:6.'),
+  ('jasher', 'jasher', 86, 7, 'canon', 'numbers', 31, 5, 'free', E'Numbers 31:5 — *So there were delivered out of the thousands of Yashar''el (Israel), a thousand of every tribe, twelve thousand armed for war* — the canon''s muster of a thousand per tribe, the twelve thousand Jasher 86:7 sends to Midian.'),
+  ('jasher', 'jasher', 86, 8, 'canon', 'numbers', 31, 8, 'free', E'Numbers 31:8 — *And they slew the kings of Midian, beside the rest of them that were slain; namely, Evi, and Rekem, and Zur, and Hur, and Reba, five kings of Midian: Balaam also the son of Beor they slew with the sword* — the canon names the five princes and Balaam''s death by the sword, exactly as Jasher 86:8.'),
+  ('jasher', 'jasher', 86, 8, 'canon', 'joshua', 13, 22, 'free', E'Joshua 13:22 — *Balaam also the son of Beor, the soothsayer, did the children of Yashar''el (Israel) slay with the sword among them that were slain by them* — the conquest record keeps the same memorial of Balaam''s fall reported in Jasher 86:8.'),
+  -- thread: jasher-86-the-way-of-balaam
+  ('jasher', 'jasher', 86, 8, 'canon', 'numbers', 25, 3, 'free', E'Numbers 25:3 — *And Yashar''el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar''el (Israel)* — the snare at Peor that Balaam''s counsel set, the sin avenged in the Midian war Jasher 86:8 reports.'),
+  ('jasher', 'jasher', 86, 8, 'canon', '2-peter', 2, 15, 'free', E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* — the apostle reads Balaam, slain in Jasher 86:8, as the type of the teacher who sells truth for reward.'),
+  ('jasher', 'jasher', 86, 8, 'canon', 'jude', 1, 11, 'free', E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* — Jude binds Balaam''s error and ruin, the end Jasher 86:8 records by the sword.'),
+  ('jasher', 'jasher', 86, 8, 'canon', 'revelation', 2, 14, 'free', E'Revelation 2:14 — *But I have a few things against thee, because thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar''el (Israel), to eat things sacrificed unto idols, and to commit fornication* — the risen Messiah names the very counsel of the Balaam slain in Jasher 86:8.'),
+  -- thread: jasher-86-spoil-of-midian-plains-of-moab
+  ('jasher', 'jasher', 86, 9, 'canon', 'numbers', 31, 9, 'free', E'Numbers 31:9 — *And the children of Yashar''el (Israel) took all the women of Midian captives, and their little ones, and took the spoil of all their cattle, and all their flocks, and all their goods* — the canon''s identical list of captives and spoil taken in Jasher 86:9.'),
+  ('jasher', 'jasher', 86, 10, 'canon', 'numbers', 31, 12, 'free', E'Numbers 31:12 — *And they brought the captives, and the prey, and the spoil, unto Moses, and Eleazar the priest, and unto the congregation of the children of Yashar''el (Israel), unto the camp at the plains of Moab, which are by Jordan near Jericho* — the canon brings the spoil to Moses and Eleazar at the plains of Moab, exactly as Jasher 86:10.'),
+  ('jasher', 'jasher', 86, 10, 'canon', 'numbers', 26, 63, 'free', E'Numbers 26:63 — *These are they that were numbered by Moses and Eleazar the priest, who numbered the children of Yashar''el (Israel) in the plains of Moab by Jordan near Jericho* — the same plains of Moab where Jasher 86:10 brings the spoil, the staging-ground of the second census.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja86_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja86_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-86-census-after-the-plague',
+       E'The Second Census — numbered after the plague',
+       E'Jasher opens its retelling of the second wilderness census: *At that time after the pestilence, Yahuah (the Lord) said to Moses, and to Elazer the son of Aaron the priest, saying, Number the heads of the whole community of the children of Israel, from twenty years old and upward, all that went forth in the army* (Jasher 86:1-2). It ain''t new — this is the very command of Numbers 26, set in the same hour after the plague: *And it came to pass after the plague, that Yahuah (LORD) spake unto Moses and unto Eleazar the son of Aaron the priest, saying* (Numbers 26:1). Jasher''s tally — *the number of all Israel was seven hundred thousand, seven hundred and thirty* (Jasher 86:3) — carries the canon''s own count of the covenant seed mustered on the plains of Moab: *These were the numbered of the children of Yashar''el (Israel), six hundred thousand and a thousand seven hundred and thirty* (Numbers 26:51). The twelve-tribe nation is counted and kept, ready to inherit.',
+       sv.verse_id, ev.verse_id, 'extras', 57125
+  FROM _session252_ja86_lookup sv, _session252_ja86_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=86 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-86-levi-numbered-from-a-month-old',
+       E'The Levites numbered from a month old',
+       E'Jasher separately tallies the priestly tribe: *And the number of the children of Levi, from one month old and upward, was twenty-three thousand, and amongst these there was not a man of those numbered by Moses and Aaron in the wilderness of Sinai* (Jasher 86:4). The canon numbers Levi by the same rule and the same sum: *And those that were numbered of them were twenty and three thousand, all males from a month old and upward: for they were not numbered among the children of Yashar''el (Israel), because there was no inheritance given them among the children of Yashar''el (Israel)* (Numbers 26:62). And the canon, like Jasher, marks that none of the first-numbered remained: *But among these there was not a man of them whom Moses and Aaron the priest numbered, when they numbered the children of Yashar''el (Israel) in the wilderness of Sinai* (Numbers 26:64). The tribe set apart for the Name is kept and counted by its own ordinance.',
+       sv.verse_id, ev.verse_id, 'extras', 57128
+  FROM _session252_ja86_lookup sv, _session252_ja86_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=86 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-86-wilderness-generation-fallen',
+       E'The wilderness generation fallen — only Caleb and Joshua left',
+       E'Jasher states the judgment that emptied the first census: *For Yahuah (the Lord) had told them that they would die in the wilderness, so they all died, and not one had been left of them excepting Caleb the son of Jephuneh, and Joshua the son of Nun* (Jasher 86:5). It ain''t new — this is the very sentence of Numbers, the oath that fell on the murmurers: *Your carcases shall fall in this wilderness; and all that were numbered of you, according to your whole number, from twenty years old and upward, which have murmured against me* (Numbers 14:29), *Doubtless ye shall not come into the land, concerning which I sware to make you dwell therein, save Caleb the son of Jephunneh, and Joshua the son of Nun* (Numbers 14:30). And the canon''s census names the same two survivors with the same words: *For Yahuah (LORD) had said of them, They shall surely die in the wilderness. And there was not left a man of them, save Caleb the son of Jephunneh, and Joshua the son of Nun* (Numbers 26:65). Election keeps the faithful seed; the two who believed the promise live to inherit it.',
+       sv.verse_id, ev.verse_id, 'extras', 57131
+  FROM _session252_ja86_lookup sv, _session252_ja86_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=5
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=86 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-86-war-against-midian',
+       E'The war against Midian — twelve thousand, Balaam slain',
+       E'Jasher narrates the avenging of Midian: *And it was after this that Yahuah (the Lord) said to Moses, Say to the children of Israel to avenge upon Midian the cause of their brethren the children of Israel* (Jasher 86:6), and *the children of Israel chose from amongst them twelve thousand men, being one thousand to a tribe, and they went to Midian* (Jasher 86:7). It ain''t new — the canon gives the same command and the same muster: *Avenge the children of Yashar''el (Israel) of the Midianites: afterward shalt thou be gathered unto thy people* (Numbers 31:2), and *there were delivered out of the thousands of Yashar''el (Israel), a thousand of every tribe, twelve thousand armed for war* (Numbers 31:5). Jasher then reports the slaughter — *they slew every male, also the five princes of Midian, and Balaam the son of Beor did they slay with the sword* (Jasher 86:8) — which the canon records in the same terms: *And they slew the kings of Midian, beside the rest of them that were slain; namely, Evi, and Rekem, and Zur, and Hur, and Reba, five kings of Midian: Balaam also the son of Beor they slew with the sword* (Numbers 31:8). The book of Joshua keeps the same memorial: *Balaam also the son of Beor, the soothsayer, did the children of Yashar''el (Israel) slay with the sword among them that were slain by them* (Joshua 13:22). The diviner who sold his counsel falls with the kingdom that hired him.',
+       sv.verse_id, ev.verse_id, 'extras', 57134
+  FROM _session252_ja86_lookup sv, _session252_ja86_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=86 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-86-the-way-of-balaam',
+       E'The way of Balaam — the diviner who taught the stumbling-block',
+       E'When Jasher records that *Balaam the son of Beor did they slay with the sword* (Jasher 86:8), it closes the account of the man the canon names as the one who taught Midian and Moab to seduce Israel into Baal-peor: *And Yashar''el (Israel) abode in Shittim, and the people began to commit whoredom with the daughters of Moab* (Numbers 25:1), *And Yashar''el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar''el (Israel)* (Numbers 25:3). The apostles read his end as the type of every false teacher who sells the truth for reward: *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15); *Woe unto them! ... ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* (Jude 1:11); and the risen Messiah names his very doctrine: *thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar''el (Israel), to eat things sacrificed unto idols, and to commit fornication* (Revelation 2:14). It ain''t new — the seed-war runs through Balaam; the diviner who would corrupt the covenant people perishes with the kingdom that hired him.',
+       sv.verse_id, ev.verse_id, 'extras', 57137
+  FROM _session252_ja86_lookup sv, _session252_ja86_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=86 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-86-spoil-of-midian-plains-of-moab',
+       E'The spoil of Midian brought to the plains of Moab',
+       E'Jasher closes the campaign with the spoil and the captives: *And the children of Israel took the wives of Midian captive, with their little ones and their cattle, and all belonging to them* (Jasher 86:9), *And they took all the spoil and all the prey, and they brought it to Moses and to Elazer to the plains of Moab* (Jasher 86:10). It ain''t new — the canon records the same captives, prey, and destination: *And the children of Yashar''el (Israel) took all the women of Midian captives, and their little ones, and took the spoil of all their cattle, and all their flocks, and all their goods* (Numbers 31:9), and *they brought the captives, and the prey, and the spoil, unto Moses, and Eleazar the priest, and unto the congregation of the children of Yashar''el (Israel), unto the camp at the plains of Moab, which are by Jordan near Jericho* (Numbers 31:12). The whole muster gathers at the plains of Moab — the very staging-ground from which the second census numbered the seed: *These are they that were numbered by Moses and Eleazar the priest, who numbered the children of Yashar''el (Israel) in the plains of Moab by Jordan near Jericho* (Numbers 26:63). The people stand revenged and assembled at the threshold of the land.',
+       sv.verse_id, ev.verse_id, 'extras', 57140
+  FROM _session252_ja86_lookup sv, _session252_ja86_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=9
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=86 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-86-census-after-the-plague
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 26:1 — *And it came to pass after the plague, that Yahuah (LORD) spake unto Moses and unto Eleazar the son of Aaron the priest, saying* — the canon sets the same census command after the plague to Moses and Eleazar, exactly as Jasher 86:1.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-census-after-the-plague'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=26 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 26:64 — *But among these there was not a man of them whom Moses and Aaron the priest numbered, when they numbered the children of Yashar''el (Israel) in the wilderness of Sinai* — the canon''s framing of the new generation numbered from twenty years old, as Jasher 86:2.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-census-after-the-plague'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=26 AND tv.verse_number=64
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 26:51 — *These were the numbered of the children of Yashar''el (Israel), six hundred thousand and a thousand seven hundred and thirty* — the canon''s mustered total of the covenant seed, the count Jasher 86:3 carries (seven hundred and thirty).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-census-after-the-plague'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=26 AND tv.verse_number=51
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-86-levi-numbered-from-a-month-old
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 26:62 — *And those that were numbered of them were twenty and three thousand, all males from a month old and upward: for they were not numbered among the children of Yashar''el (Israel), because there was no inheritance given them among the children of Yashar''el (Israel)* — the canon''s identical Levite count from a month old, as Jasher 86:4.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-levi-numbered-from-a-month-old'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=26 AND tv.verse_number=62
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 26:64 — *But among these there was not a man of them whom Moses and Aaron the priest numbered, when they numbered the children of Yashar''el (Israel) in the wilderness of Sinai* — the canon''s note that none of the Sinai-numbered remained, echoed in Jasher 86:4.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-levi-numbered-from-a-month-old'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=26 AND tv.verse_number=64
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-86-wilderness-generation-fallen
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 26:65 — *For Yahuah (LORD) had said of them, They shall surely die in the wilderness. And there was not left a man of them, save Caleb the son of Jephunneh, and Joshua the son of Nun* — the canon''s census names the identical survivors and verdict of Jasher 86:5.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-wilderness-generation-fallen'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=26 AND tv.verse_number=65
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 14:29 — *Your carcases shall fall in this wilderness; and all that were numbered of you, according to your whole number, from twenty years old and upward, which have murmured against me* — the oath that they would die in the wilderness, the sentence Jasher 86:5 reports fulfilled.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-wilderness-generation-fallen'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 14:30 — *Doubtless ye shall not come into the land, concerning which I sware to make you dwell therein, save Caleb the son of Jephunneh, and Joshua the son of Nun* — the canon''s reservation of the two faithful, exactly the exception of Jasher 86:5.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-wilderness-generation-fallen'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-86-war-against-midian
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 31:2 — *Avenge the children of Yashar''el (Israel) of the Midianites: afterward shalt thou be gathered unto thy people* — the canon''s command to avenge Midian, the word Yahuah gives Moses in Jasher 86:6.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-war-against-midian'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=31 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 31:5 — *So there were delivered out of the thousands of Yashar''el (Israel), a thousand of every tribe, twelve thousand armed for war* — the canon''s muster of a thousand per tribe, the twelve thousand Jasher 86:7 sends to Midian.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-war-against-midian'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=31 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 31:8 — *And they slew the kings of Midian, beside the rest of them that were slain; namely, Evi, and Rekem, and Zur, and Hur, and Reba, five kings of Midian: Balaam also the son of Beor they slew with the sword* — the canon names the five princes and Balaam''s death by the sword, exactly as Jasher 86:8.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-war-against-midian'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=31 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 13:22 — *Balaam also the son of Beor, the soothsayer, did the children of Yashar''el (Israel) slay with the sword among them that were slain by them* — the conquest record keeps the same memorial of Balaam''s fall reported in Jasher 86:8.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-war-against-midian'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=13 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-86-the-way-of-balaam
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 25:3 — *And Yashar''el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar''el (Israel)* — the snare at Peor that Balaam''s counsel set, the sin avenged in the Midian war Jasher 86:8 reports.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-the-way-of-balaam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* — the apostle reads Balaam, slain in Jasher 86:8, as the type of the teacher who sells truth for reward.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-the-way-of-balaam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* — Jude binds Balaam''s error and ruin, the end Jasher 86:8 records by the sword.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-the-way-of-balaam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 2:14 — *But I have a few things against thee, because thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar''el (Israel), to eat things sacrificed unto idols, and to commit fornication* — the risen Messiah names the very counsel of the Balaam slain in Jasher 86:8.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-the-way-of-balaam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-86-spoil-of-midian-plains-of-moab
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 31:9 — *And the children of Yashar''el (Israel) took all the women of Midian captives, and their little ones, and took the spoil of all their cattle, and all their flocks, and all their goods* — the canon''s identical list of captives and spoil taken in Jasher 86:9.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-spoil-of-midian-plains-of-moab'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=31 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 31:12 — *And they brought the captives, and the prey, and the spoil, unto Moses, and Eleazar the priest, and unto the congregation of the children of Yashar''el (Israel), unto the camp at the plains of Moab, which are by Jordan near Jericho* — the canon brings the spoil to Moses and Eleazar at the plains of Moab, exactly as Jasher 86:10.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-spoil-of-midian-plains-of-moab'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=31 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 26:63 — *These are they that were numbered by Moses and Eleazar the priest, who numbered the children of Yashar''el (Israel) in the plains of Moab by Jordan near Jericho* — the same plains of Moab where Jasher 86:10 brings the spoil, the staging-ground of the second census.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja86_lookup sv, _session252_ja86_lookup tv
+ WHERE t.slug='jasher-86-spoil-of-midian-plains-of-moab'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=86 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=26 AND tv.verse_number=63
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_87.sql (session252 jasher 87) -----
+-- Source anchor: jasher/jasher ch87. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja87 (view _session252_ja87_lookup). Sort band base 57150, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja87_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-87-joshua-commissioned
+  ('jasher', 'jasher', 87, 1, 'canon', 'deuteronomy', 31, 14, 'free', E'Deuteronomy 31:14 — *And Yahuah (LORD) said unto Moses, Behold, thy days approach that thou must die: call Joshua, and present yourselves in the tabernacle of the congregation, that I may give him a charge. And Moses and Joshua went, and presented themselves in the tabernacle of the congregation.* Jasher 87:1 retells the same end-of-days summons of Joshua into the tabernacle verbatim.'),
+  ('jasher', 'jasher', 87, 2, 'canon', 'deuteronomy', 31, 15, 'free', E'Deuteronomy 31:15 — *And Yahuah (LORD) appeared in the tabernacle in a pillar of a cloud: and the pillar of the cloud stood over the door of the tabernacle.* Jasher 87:2 carries the identical theophany at the tabernacle door.'),
+  ('jasher', 'jasher', 87, 3, 'canon', 'joshua', 1, 6, 'free', E'Joshua 1:6 — *Be strong and of a good courage: for unto this people shalt thou divide for an inheritance the land, which I sware unto their fathers to give them.* Yahuah''s charge in Jasher 87:3 is the LORD''s own commissioning of Joshua to bring Israel into the sworn inheritance.'),
+  ('jasher', 'jasher', 87, 3, 'canon', 'numbers', 27, 18, 'free', E'Numbers 27:18 — *And Yahuah (LORD) said unto Moses, Take thee Joshua the son of Nun, a man in whom is the spirit, and lay thine hand upon him.* Jasher 87:1-3 follows the Numbers naming of Joshua son of Nun as Moses'' appointed successor.'),
+  -- thread: jasher-87-moses-charges-joshua
+  ('jasher', 'jasher', 87, 4, 'canon', 'deuteronomy', 31, 7, 'free', E'Deuteronomy 31:7 — *And Moses called unto Joshua, and said unto him in the sight of all Yashar''el (Israel), Be strong and of a good courage: for thou must go with this people unto the land which Yahuah (LORD) hath sworn unto their fathers to give them; and thou shalt cause them to inherit it.* Jasher 87:4 is Moses'' same spoken charge that Joshua will make Israel inherit the land.'),
+  ('jasher', 'jasher', 87, 4, 'canon', 'deuteronomy', 31, 8, 'free', E'Deuteronomy 31:8 — *And Yahuah (LORD), he it is that doth go before thee; he will be with thee, he will not fail thee, neither forsake thee: fear not, neither be dismayed.* Jasher 87:4 keeps the very pledge — he will not leave nor forsake — set on Joshua.'),
+  ('jasher', 'jasher', 87, 4, 'canon', 'joshua', 1, 5, 'free', E'Joshua 1:5 — *There shall not any man be able to stand before thee all the days of thy life: as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee.* Yahuah confirms to Joshua the same unfailing presence Moses promised in Jasher 87:4.'),
+  ('jasher', 'jasher', 87, 4, 'canon', 'hebrews', 13, 5, 'free', E'Hebrews 13:5 — *Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.* The New Covenant carries forward the very I-will-not-forsake-thee promise spoken in Jasher 87:4.'),
+  -- thread: jasher-87-torah-stands
+  ('jasher', 'jasher', 87, 6, 'canon', 'deuteronomy', 4, 2, 'free', E'Deuteronomy 4:2 — *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* Jasher 87:6''s command to observe all the words of this law carries the Torah-stands posture — neither added to nor diminished.'),
+  ('jasher', 'jasher', 87, 6, 'canon', 'deuteronomy', 5, 32, 'free', E'Deuteronomy 5:32 — *Ye shall observe to do therefore as Yahuah Elohaychem (the LORD your God) hath commanded you: ye shall not turn aside to the right hand or to the left.* Jasher 87:6 repeats the very turn-not-to-the-right-or-left refrain of Moses'' charge to keep the way.'),
+  ('jasher', 'jasher', 87, 7, 'canon', 'deuteronomy', 6, 1, 'free', E'Deuteronomy 6:1 — *Now these are the commandments, the statutes, and the judgments, which Yahuah Elohaychem (the LORD your God) commanded to teach you, that ye might do them in the land whither ye go to possess it.* Jasher 87:7''s teaching of statutes and judgments to do in the land is Moses'' Deuteronomic instruction itself.'),
+  ('jasher', 'jasher', 87, 8, 'canon', 'joshua', 1, 8, 'free', E'Joshua 1:8 — *This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night, that thou mayest observe to do according to all that is written therein: for then thou shalt make thy way prosperous, and then thou shalt have good success.* Jasher 87:8 names the same written book of the law given by Moses'' hand that Joshua is charged to keep.'),
+  -- thread: jasher-87-death-of-moses
+  ('jasher', 'jasher', 87, 9, 'canon', 'deuteronomy', 32, 49, 'free', E'Deuteronomy 32:49 — *Get thee up into this mountain Abarim, unto mount Nebo, which is in the land of Moab, that is over against Jericho; and behold the land of Canaan, which I give unto the children of Yashar''el (Israel) for a possession.* Jasher 87:9 carries Yahuah''s same command to go up to Mount Abarim and die there.'),
+  ('jasher', 'jasher', 87, 9, 'canon', 'deuteronomy', 32, 50, 'free', E'Deuteronomy 32:50 — *And die in the mount whither thou goest up, and be gathered unto thy people; as Aaron thy brother died in mount Hor, and was gathered unto his people.* Jasher 87:9 keeps the very gathered-to-your-people-as-Aaron wording.'),
+  ('jasher', 'jasher', 87, 10, 'canon', 'deuteronomy', 34, 5, 'free', E'Deuteronomy 34:5 — *So Moses the servant of Yahuah (LORD) died there in the land of Moab, according to the word of Yahuah (LORD).* Jasher 87:10 retells the death of Moses in Moab by the order of Yahuah.'),
+  ('jasher', 'jasher', 87, 11, 'canon', 'deuteronomy', 34, 8, 'free', E'Deuteronomy 34:8 — *And the children of Yashar''el (Israel) wept for Moses in the plains of Moab thirty days: so the days of weeping and mourning for Moses were ended.* Jasher 87:11 carries the identical thirty-days mourning that closes the Torah.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja87_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja87_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-87-joshua-commissioned',
+       E'Joshua charged in the tabernacle — be strong and courageous',
+       E'Jasher''s final chapter carries the canon''s own handing-over of the staff. *At that time Yahuah (the Lord) said to Moses, Behold your days are approaching to an end, take now Joshua the son of Nun your servant and place him in the tabernacle, and I will command him, and Moses did so* (Jasher 87:1) — word for word the scene Moses recorded: *And Yahuah (LORD) said unto Moses, Behold, thy days approach that thou must die: call Joshua, and present yourselves in the tabernacle of the congregation, that I may give him a charge. And Moses and Joshua went, and presented themselves in the tabernacle of the congregation* (Deuteronomy 31:14). The glory comes down exactly as written — *And Yahuah (the Lord) appeared in the tabernacle in a pillar of cloud, and the pillar of cloud stood at the entrance of the tabernacle* (Jasher 87:2) beside *And Yahuah (LORD) appeared in the tabernacle in a pillar of a cloud: and the pillar of the cloud stood over the door of the tabernacle* (Deuteronomy 31:15). The charge itself — *Be strong and courageous, for you shall bring the children of Israel to the land which I swore to give them, and I will be with you* (Jasher 87:3) — is the LORD''s own commission of Joshua: *Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee* (Joshua 1:7). The succession runs back to Numbers, where the man-in-whom-is-the-spirit is named and laid hands upon, that the congregation be not as sheep without a shepherd. It ain''t new — the covenant seed is led into the inheritance Yahuah swore to the fathers.',
+       sv.verse_id, ev.verse_id, 'extras', 57150
+  FROM _session252_ja87_lookup sv, _session252_ja87_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=87 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-87-moses-charges-joshua',
+       E'Moses to Joshua — he will not leave you nor forsake you',
+       E'Now Moses repeats the charge in his own mouth: *And Moses said to Joshua, Be strong and courageous, for you will make the children of Israel inherit the land, and Yahuah (the Lord) will be with you, he will not leave you nor forsake you, be not afraid nor disheartened* (Jasher 87:4). This is Deuteronomy''s farewell word, kept down to the promise of presence — *And Moses called unto Joshua, and said unto him in the sight of all Yashar''el (Israel), Be strong and of a good courage: for thou must go with this people unto the land which Yahuah (LORD) hath sworn unto their fathers to give them; and thou shalt cause them to inherit it* (Deuteronomy 31:7), and *And Yahuah (LORD), he it is that doth go before thee; he will be with thee, he will not fail thee, neither forsake thee: fear not, neither be dismayed* (Deuteronomy 31:8). The same unbroken pledge — *he will not fail thee, nor forsake thee* — is set on Joshua himself by Yahuah: *as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee* (Joshua 1:5). The New Covenant carries the very promise forward to every heir of the seed: *for he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5). It ain''t new — the faithfulness that led Israel into the land is the faithfulness held out still.',
+       sv.verse_id, ev.verse_id, 'extras', 57153
+  FROM _session252_ja87_lookup sv, _session252_ja87_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=87 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-87-torah-stands',
+       E'Observe all the words of this law — Torah stands, written by Moses'' hand',
+       E'Moses'' last work is to fix the Torah on the nation. *And Moses called to all the children of Israel and said to them, You have seen all the good which Yahuah your Elohim (the Lord your God) has done for you in the wilderness* (Jasher 87:5); *Now therefore observe all the words of this law, and walk in the way of Yahuah your Elohim, turn not from the way which Yahuah (the Lord) has commanded you, either to the right or to the left* (Jasher 87:6). This is Deuteronomy''s own posture — the law is the way of life, neither added to nor taken from: *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you* (Deuteronomy 4:2), and the not-turning-aside refrain, *Ye shall observe to do therefore as Yahuah Elohaychem (the LORD your God) hath commanded you: ye shall not turn aside to the right hand or to the left* (Deuteronomy 5:32). Moses then teaches and writes it: *And Moses taught the children of Israel statutes and judgments and laws to do in the land as Yahuah (the Lord) had commanded him* (Jasher 87:7); *behold they are written upon the book of the law of Elohim (God) which he gave to the children of Israel by the hand of Moses* (Jasher 87:8) — the very book the LORD charges Joshua to keep in his mouth: *This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night* (Joshua 1:8). It ain''t new, and it does not pass — the Torah given before the land is the Torah that abides.',
+       sv.verse_id, ev.verse_id, 'extras', 57156
+  FROM _session252_ja87_lookup sv, _session252_ja87_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=5
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=87 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-87-death-of-moses',
+       E'Up to Mount Abarim — the death of Moses, gathered to his people',
+       E'The book of Jasher closes on the death of the servant of Yahuah. *And Moses finished commanding the children of Israel, and Yahuah (the Lord) said to him, saying, Go up to the Mount Abarim and die there, and be gathered to your people as Aaron your brother was gathered* (Jasher 87:9) — the very word of Deuteronomy: *Get thee up into this mountain Abarim, unto mount Nebo, which is in the land of Moab, that is over against Jericho; and behold the land of Canaan, which I give unto the children of Yashar''el (Israel) for a possession* (Deuteronomy 32:49), *And die in the mount whither thou goest up, and be gathered unto thy people; as Aaron thy brother died in mount Hor, and was gathered unto his people* (Deuteronomy 32:50). Then the passing: *And Moses went up as Yahuah (the Lord) had commanded him, and he died there in the land of Moab by the order of Yahuah (the Lord), in the fortieth year from the Israelites going forth from the land of Egypt* (Jasher 87:10) beside *So Moses the servant of Yahuah (LORD) died there in the land of Moab, according to the word of Yahuah (LORD)* (Deuteronomy 34:5). And the nation mourns — *And the children of Israel wept for Moses in the plains of Moab for thirty days, and the days of weeping and mourning for Moses were completed* (Jasher 87:11) — word for word with *And the children of Yashar''el (Israel) wept for Moses in the plains of Moab thirty days: so the days of weeping and mourning for Moses were ended* (Deuteronomy 34:8). It ain''t new — Jasher ends exactly where the Torah ends, the faithful servant gathered to his people, the seed kept and brought to the border of the land.',
+       sv.verse_id, ev.verse_id, 'extras', 57159
+  FROM _session252_ja87_lookup sv, _session252_ja87_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=9
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=87 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-87-joshua-commissioned
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 31:14 — *And Yahuah (LORD) said unto Moses, Behold, thy days approach that thou must die: call Joshua, and present yourselves in the tabernacle of the congregation, that I may give him a charge. And Moses and Joshua went, and presented themselves in the tabernacle of the congregation.* Jasher 87:1 retells the same end-of-days summons of Joshua into the tabernacle verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-joshua-commissioned'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=31 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 31:15 — *And Yahuah (LORD) appeared in the tabernacle in a pillar of a cloud: and the pillar of the cloud stood over the door of the tabernacle.* Jasher 87:2 carries the identical theophany at the tabernacle door.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-joshua-commissioned'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=31 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 1:6 — *Be strong and of a good courage: for unto this people shalt thou divide for an inheritance the land, which I sware unto their fathers to give them.* Yahuah''s charge in Jasher 87:3 is the LORD''s own commissioning of Joshua to bring Israel into the sworn inheritance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-joshua-commissioned'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Numbers 27:18 — *And Yahuah (LORD) said unto Moses, Take thee Joshua the son of Nun, a man in whom is the spirit, and lay thine hand upon him.* Jasher 87:1-3 follows the Numbers naming of Joshua son of Nun as Moses'' appointed successor.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-joshua-commissioned'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-87-moses-charges-joshua
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 31:7 — *And Moses called unto Joshua, and said unto him in the sight of all Yashar''el (Israel), Be strong and of a good courage: for thou must go with this people unto the land which Yahuah (LORD) hath sworn unto their fathers to give them; and thou shalt cause them to inherit it.* Jasher 87:4 is Moses'' same spoken charge that Joshua will make Israel inherit the land.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-moses-charges-joshua'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=31 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 31:8 — *And Yahuah (LORD), he it is that doth go before thee; he will be with thee, he will not fail thee, neither forsake thee: fear not, neither be dismayed.* Jasher 87:4 keeps the very pledge — he will not leave nor forsake — set on Joshua.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-moses-charges-joshua'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=31 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 1:5 — *There shall not any man be able to stand before thee all the days of thy life: as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee.* Yahuah confirms to Joshua the same unfailing presence Moses promised in Jasher 87:4.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-moses-charges-joshua'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 13:5 — *Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.* The New Covenant carries forward the very I-will-not-forsake-thee promise spoken in Jasher 87:4.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-moses-charges-joshua'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-87-torah-stands
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 4:2 — *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* Jasher 87:6''s command to observe all the words of this law carries the Torah-stands posture — neither added to nor diminished.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-torah-stands'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 5:32 — *Ye shall observe to do therefore as Yahuah Elohaychem (the LORD your God) hath commanded you: ye shall not turn aside to the right hand or to the left.* Jasher 87:6 repeats the very turn-not-to-the-right-or-left refrain of Moses'' charge to keep the way.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-torah-stands'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 6:1 — *Now these are the commandments, the statutes, and the judgments, which Yahuah Elohaychem (the LORD your God) commanded to teach you, that ye might do them in the land whither ye go to possess it.* Jasher 87:7''s teaching of statutes and judgments to do in the land is Moses'' Deuteronomic instruction itself.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-torah-stands'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 1:8 — *This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night, that thou mayest observe to do according to all that is written therein: for then thou shalt make thy way prosperous, and then thou shalt have good success.* Jasher 87:8 names the same written book of the law given by Moses'' hand that Joshua is charged to keep.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-torah-stands'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-87-death-of-moses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 32:49 — *Get thee up into this mountain Abarim, unto mount Nebo, which is in the land of Moab, that is over against Jericho; and behold the land of Canaan, which I give unto the children of Yashar''el (Israel) for a possession.* Jasher 87:9 carries Yahuah''s same command to go up to Mount Abarim and die there.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-death-of-moses'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=49
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 32:50 — *And die in the mount whither thou goest up, and be gathered unto thy people; as Aaron thy brother died in mount Hor, and was gathered unto his people.* Jasher 87:9 keeps the very gathered-to-your-people-as-Aaron wording.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-death-of-moses'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=50
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 34:5 — *So Moses the servant of Yahuah (LORD) died there in the land of Moab, according to the word of Yahuah (LORD).* Jasher 87:10 retells the death of Moses in Moab by the order of Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-death-of-moses'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=34 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 34:8 — *And the children of Yashar''el (Israel) wept for Moses in the plains of Moab thirty days: so the days of weeping and mourning for Moses were ended.* Jasher 87:11 carries the identical thirty-days mourning that closes the Torah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja87_lookup sv, _session252_ja87_lookup tv
+ WHERE t.slug='jasher-87-death-of-moses'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=87 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=34 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_88.sql (session252 jasher 88) -----
+-- Source anchor: jasher/jasher ch88. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja88 (view _session252_ja88_lookup). Sort band base 57175, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja88_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-88-joshua-commissioned
+  ('jasher', 'jasher', 88, 1, 'canon', 'joshua', 1, 1, 'free', E'Joshua 1:1 — *Now after the death of Moses the servant of Yahuah (LORD) it came to pass, that Yahuah (LORD) spake unto Joshua the son of Nun, Moses’ minister, saying,* The canon''s Joshua opens on the very line Jasher 88:1 carries — after Moses'' death, Yahuah speaks to Joshua son of Nun.'),
+  ('jasher', 'jasher', 88, 2, 'canon', 'joshua', 1, 2, 'free', E'Joshua 1:2 — *Moses my servant is dead; now therefore arise, go over this Jordan, thou, and all this people, unto the land which I do give to them, even to the children of Yashar''el (Israel).* The command to rise and pass the Jordan to inherit the land in Jasher 88:2 is Joshua 1:2 verbatim in substance.'),
+  ('jasher', 'jasher', 88, 3, 'canon', 'deuteronomy', 11, 24, 'free', E'Deuteronomy 11:24 — *Every place whereon the soles of your feet shall tread shall be yours: from the wilderness and Lebanon, from the river, the river Euphrates, even unto the uttermost sea shall your coast be.* The sole-of-the-foot boundary to Lebanon and the river of Perath in Jasher 88:3 is the inheritance-word Moses already gave.'),
+  ('jasher', 'jasher', 88, 3, 'canon', 'genesis', 15, 18, 'free', E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:* The land Joshua now enters in Jasher 88:3 is the very ground covenanted to Abraham''s seed generations earlier — kept promise, not new.'),
+  ('jasher', 'jasher', 88, 4, 'canon', 'joshua', 1, 7, 'free', E'Joshua 1:7 — *Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee: turn not from it to the right hand or to the left, that thou mayest prosper whithersoever thou goest.* Jasher 88:4''s charge to keep all the law and turn neither right nor left holds the Torah standing under Joshua — it ain''t new.'),
+  -- thread: jasher-88-jordan-passover-manna
+  ('jasher', 'jasher', 88, 9, 'canon', 'joshua', 3, 1, 'free', E'Joshua 3:1 — *And Joshua rose early in the morning; and they removed from Shittim, and came to Jordan, he and all the children of Yashar''el (Israel), and lodged there before they passed over.* The journey from Shittim to the Jordan in Jasher 88:9 is the canon''s own staging of the crossing.'),
+  ('jasher', 'jasher', 88, 10, 'canon', 'joshua', 4, 19, 'free', E'Joshua 4:19 — *And the people came up out of Jordan on the tenth day of the first month, and encamped in Gilgal, in the east border of Jericho.* The tenth-day-of-the-first-month encampment at Gilgal in Jasher 88:10 matches the canon to the day and the place.'),
+  ('jasher', 'jasher', 88, 11, 'canon', 'joshua', 5, 10, 'free', E'Joshua 5:10 — *And the children of Yashar''el (Israel) encamped in Gilgal, and kept the passover on the fourteenth day of the month at even in the plains of Jericho.* Jasher 88:11''s Passover at Gilgal on the fourteenth is the same appointed time the canon records — Torah''s feast kept in the land.'),
+  ('jasher', 'jasher', 88, 11, 'canon', 'exodus', 12, 25, 'free', E'Exodus 12:25 — *And it shall come to pass, when ye be come to the land which Yahuah (LORD) will give you, according as he hath promised, that ye shall keep this service.* The Passover Jasher 88:11 keeps at Gilgal is the very service Moses commanded them to hold once they entered the land — it ain''t new.'),
+  ('jasher', 'jasher', 88, 12, 'canon', 'joshua', 5, 12, 'free', E'Joshua 5:12 — *And the manna ceased on the morrow after they had eaten of the old corn of the land; neither had the children of Yashar''el (Israel) manna any more; but they did eat of the fruit of the land of Canaan that year.* The manna ceasing on the morrow of the Passover in Jasher 88:12 is the canon''s note that the wilderness provision ended as the land''s produce began.'),
+  ('jasher', 'jasher', 88, 12, 'canon', 'exodus', 16, 35, 'free', E'Exodus 16:35 — *And the children of Yashar''el (Israel) did eat manna forty years, until they came to a land inhabited; they did eat manna, until they came unto the borders of the land of Canaan.* The manna that ceases in Jasher 88:12 closes the forty-year provision Exodus 16:35 foretold would last until they reached Canaan''s borders.'),
+  -- thread: jasher-88-jericho-falls
+  ('jasher', 'jasher', 88, 14, 'canon', 'joshua', 6, 2, 'free', E'Joshua 6:2 — *And Yahuah (LORD) said unto Joshua, See, I have given into thine hand Jericho, and the king thereof, and the mighty men of valour.* Jasher 88:14''s word that Jericho is given into Joshua''s hand, compassed six days, is the canon''s own commission for the city''s fall.'),
+  ('jasher', 'jasher', 88, 15, 'canon', 'joshua', 6, 5, 'free', E'Joshua 6:5 — *And it shall come to pass, that when they make a long blast with the ram’s horn, and when ye hear the sound of the trumpet, all the people shall shout with a great shout; and the wall of the city shall fall down flat, and the people shall ascend up every man straight before him.* The trumpet-blast and great shout that topple the wall in Jasher 88:15 are the canon''s exact instruction.'),
+  ('jasher', 'jasher', 88, 20, 'canon', 'joshua', 6, 19, 'free', E'Joshua 6:19 — *But all the silver, and gold, and vessels of brass and iron, are consecrated unto Yahuah (LORD): they shall come into the treasury of Yahuah (LORD).* The silver, gold, brass and iron consecrated to Yahuah''s treasury in Jasher 88:20 is the canon''s ban on Jericho''s spoil.'),
+  ('jasher', 'jasher', 88, 21, 'canon', 'joshua', 6, 20, 'free', E'Joshua 6:20 — *So the people shouted when the priests blew with the trumpets: and it came to pass, when the people heard the sound of the trumpet, and the people shouted with a great shout, that the wall fell down flat, so that the people went up into the city, every man straight before him, and they took the city.* Jasher 88:21''s shout and falling walls are the canon''s deliverance of Jericho, man by man straight before him.'),
+  ('jasher', 'jasher', 88, 23, 'canon', 'joshua', 6, 26, 'free', E'Joshua 6:26 — *And Joshua adjured them at that time, saying, Cursed be the man before Yahuah (LORD), that riseth up and buildeth this city Jericho: he shall lay the foundation thereof in his firstborn, and in his youngest son shall he set up the gates of it.* Joshua''s oath against the rebuilder of Jericho in Jasher 88:23 is the canon''s curse, firstborn-foundation and all.'),
+  -- thread: jasher-88-achan-and-ai
+  ('jasher', 'jasher', 88, 24, 'canon', 'joshua', 7, 1, 'free', E'Joshua 7:1 — *But the children of Yashar''el (Israel) committed a trespass in the accursed thing: for Achan, the son of Carmi, the son of Zabdi, the son of Zerah, of the tribe of Yahudah (Judah), took of the accursed thing: and the anger of Yahuah (LORD) was kindled against the children of Yashar''el (Israel).* Jasher 88:24 names Achan''s whole lineage and the kindled anger exactly as the canon does.'),
+  ('jasher', 'jasher', 88, 28, 'canon', 'joshua', 7, 5, 'free', E'Joshua 7:5 — *And the men of Ai smote of them about thirty and six men: for they chased them from before the gate even unto Shebarim, and smote them in the going down: wherefore the hearts of the people melted, and became as water.* The thirty-six men of Israel slain at Ai in Jasher 88:28 is the canon''s count of the first defeat.'),
+  ('jasher', 'jasher', 88, 33, 'canon', 'joshua', 7, 16, 'free', E'Joshua 7:16 — *So Joshua rose up early in the morning, and brought Yashar''el (Israel) by their tribes; and the tribe of Yahudah (Judah) was taken:* Jasher 88:33''s taking of the tribe of Judah by the Urim matches the canon''s sifting that exposed Achan.'),
+  ('jasher', 'jasher', 88, 34, 'canon', 'joshua', 7, 21, 'free', E'Joshua 7:21 — *When I saw among the spoils a goodly Babylonish garment, and two hundred shekels of silver, and a wedge of gold of fifty shekels weight, then I coveted them, and took them; and, behold, they are hid in the earth in the midst of my tent, and the silver under it.* Achan''s confession of the garment, two hundred shekels, and the fifty-shekel wedge of gold in Jasher 88:34 is the canon''s word for word.'),
+  ('jasher', 'jasher', 88, 37, 'canon', 'joshua', 7, 26, 'free', E'Joshua 7:26 — *And they raised over him a great heap of stones unto this day. So Yahuah (LORD) turned from the fierceness of his anger. Wherefore the name of that place was called, The valley of Achor, unto this day.* The heap of stones, the appeased anger, and the naming of the valley of Achor in Jasher 88:37 are the canon''s close of the Achan account.'),
+  -- thread: jasher-88-gibeon-covenant
+  ('jasher', 'jasher', 88, 50, 'canon', 'joshua', 9, 4, 'free', E'Joshua 9:4 — *They did work wilily, and went and made as if they had been ambassadors, and took old sacks upon their asses, and wine bottles, old, and rent, and bound up;* Gibeon''s cunning approach as men from a distant land in Jasher 88:50 is the canon''s account of their guile.'),
+  ('jasher', 'jasher', 88, 51, 'canon', 'joshua', 9, 15, 'free', E'Joshua 9:15 — *And Joshua made peace with them, and made a league with them, to let them live: and the princes of the congregation sware unto them.* The covenant of peace and the princes'' oath in Jasher 88:51 are the canon''s league with Gibeon.'),
+  ('jasher', 'jasher', 88, 52, 'canon', 'joshua', 9, 18, 'free', E'Joshua 9:18 — *And the children of Yashar''el (Israel) smote them not, because the princes of the congregation had sworn unto them by Yahuah Elohim (the LORD God) of Yashar''el (Israel). And all the congregation murmured against the princes.* Jasher 88:52''s sparing of Gibeon because of the oath by Yahuah holds the sworn Name binding, as the canon does.'),
+  ('jasher', 'jasher', 88, 54, 'canon', 'joshua', 9, 21, 'free', E'Joshua 9:21 — *And the princes said unto them, Let them live; but let them be hewers of wood and drawers of water unto all the congregation; as the princes had promised them.* Gibeon''s appointment to hew wood and draw water for the tribes in Jasher 88:54 is the canon''s sentence on the spared people.'),
+  -- thread: jasher-88-sun-stands-still
+  ('jasher', 'jasher', 88, 55, 'canon', 'joshua', 10, 3, 'free', E'Joshua 10:3 — *Wherefore Adoni-zedek king of Jerusalem sent unto Hoham king of Hebron, and unto Piram king of Jarmuth, and unto Japhia king of Lachish, and unto Debir king of Eglon, saying,* The five Amorite kings Adonizedek gathers in Jasher 88:55 are named exactly as in the canon''s muster against Gibeon.'),
+  ('jasher', 'jasher', 88, 61, 'canon', 'joshua', 10, 11, 'free', E'Joshua 10:11 — *And it came to pass, as they fled from before Yashar''el (Israel), and were in the going down to Beth-horon, that Yahuah (LORD) cast down great stones from heaven upon them unto Azekah, and they died: they were more which died with hailstones than they whom the children of Yashar''el (Israel) slew with the sword.* The hailstones from heaven killing more than the sword in Jasher 88:61 are the canon''s account of Yahuah fighting for Israel.'),
+  ('jasher', 'jasher', 88, 63, 'canon', 'joshua', 10, 12, 'free', E'Joshua 10:12 — *Then spake Joshua to Yahuah (LORD) in the day when Yahuah (LORD) delivered up the Amorites before the children of Yashar''el (Israel), and he said in the sight of Yashar''el (Israel), Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon.* Joshua''s command to the sun over Gibeon and the moon in Ajalon in Jasher 88:63 is the canon''s words spoken in the sight of Israel.'),
+  ('jasher', 'jasher', 88, 64, 'canon', 'joshua', 10, 13, 'free', E'Joshua 10:13 — *And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies. Is not this written in the book of Jasher? So the sun stood still in the midst of heaven, and hasted not to go down about a whole day.* The canon itself credits this very sun-standing-still to the book of Jasher — and Jasher 88:64 records exactly that wonder, the sun and moon halting a whole day.'),
+  ('jasher', 'jasher', 88, 65, 'canon', 'joshua', 10, 14, 'free', E'Joshua 10:14 — *And there was no day like that before it or after it, that Yahuah (LORD) hearkened unto the voice of a man: for Yahuah (LORD) fought for Yashar''el (Israel).* Jasher 88:65 closes the whole book on the canon''s own line — no day like it, for Yahuah fought for Israel.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja88_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja88_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-88-joshua-commissioned',
+       E'After Moses — Joshua charged to cross and inherit the land',
+       E'Jasher closes its whole book where the canon''s Joshua opens: *And it was after the death of Moses that Yahuah (the Lord) said to Joshua the son of Nun, saying,* (Jasher 88:1) — *Rise up and pass the Jordan to the land which I have given to the children of Israel, and you shall make the children of Israel inherit the land.* (Jasher 88:2). The retelling sits word-for-word beside Joshua 1: *Now after the death of Moses the servant of Yahuah (LORD) it came to pass, that Yahuah (LORD) spake unto Joshua the son of Nun, Moses’ minister, saying,* (Joshua 1:1). The boundary Jasher names — *from the wilderness of Lebanon to the great river the river of Perath* (Jasher 88:3) — is the inheritance-word given to Moses (*Every place whereon the soles of your feet shall tread shall be yours: from the wilderness and Lebanon, from the river, the river Euphrates, even unto the uttermost sea shall your coast be.* (Deuteronomy 11:24)) and the covenant cut with Abraham generations before (*In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:* (Genesis 15:18)). The land is not new conquest but kept promise to the chosen seed — it ain''t new. And the charge holds the Torah fast: *only be strong and of good courage to observe all the law which Moses commanded you, turn not from the way either to the right or to the left* (Jasher 88:4), echoing *Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee* (Joshua 1:7).',
+       sv.verse_id, ev.verse_id, 'extras', 57175
+  FROM _session252_ja88_lookup sv, _session252_ja88_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=88 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-88-jordan-passover-manna',
+       E'Jordan crossed, the Passover kept, the manna ceased',
+       E'Jasher narrates the entry: *And Joshua rose up in the morning and all Israel with him, and they journeyed from Shittim, and Joshua and all Israel with him passed the Jordan* (Jasher 88:9) — the same march the canon records: *And Joshua rose early in the morning; and they removed from Shittim, and came to Jordan, he and all the children of Yashar''el (Israel), and lodged there before they passed over.* (Joshua 3:1). The people *went up from Jordan on the tenth day of the first month, and they encamped in Gilgal* (Jasher 88:10) — *And the people came up out of Jordan on the tenth day of the first month, and encamped in Gilgal, in the east border of Jericho.* (Joshua 4:19). At Gilgal they kept the feast: *And the children of Israel kept the Passover in Gilgal, in the plains of Jericho, on the fourteenth day at the month, as it is written in the law of Moses.* (Jasher 88:11) — Torah-keeping in the land, the appointed time held (*And the children of Yashar''el (Israel) encamped in Gilgal, and kept the passover on the fourteenth day of the month at even in the plains of Jericho.* (Joshua 5:10)), the feast Moses had charged them to keep when they came in (*And it shall come to pass, when ye be come to the land which Yahuah (LORD) will give you, according as he hath promised, that ye shall keep this service.* (Exodus 12:25)). Then the wilderness bread stops: *the manna ceased at that time on the morrow of the Passover... and they ate of the produce of the land of Canaan* (Jasher 88:12) — *And the manna ceased on the morrow after they had eaten of the old corn of the land* (Joshua 5:12), closing the forty years of manna (*And the children of Yashar''el (Israel) did eat manna forty years, until they came to a land inhabited* (Exodus 16:35)).',
+       sv.verse_id, ev.verse_id, 'extras', 57178
+  FROM _session252_ja88_lookup sv, _session252_ja88_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=9
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=88 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-88-jericho-falls',
+       E'Jericho compassed — the trumpets, the shout, the walls fall',
+       E'The first city falls by the Name, not the siege-ram: *And it was in the second month, on the first day of the month, that Yahuah (the Lord) said to Joshua, Rise up, behold I have given Jericho into your hand... all your fighting men shall go round the city, once each day, thus shall you do for six days.* (Jasher 88:14) — the canon''s *And Yahuah (LORD) said unto Joshua, See, I have given into thine hand Jericho, and the king thereof, and the mighty men of valour.* (Joshua 6:2) with its six-day compassing. Jasher carries the trumpet-and-shout: *And the priests shall blow upon trumpets, and when you shall hear the sound of the trumpet, all the people shall give a great shouting, that the walls of the city shall fall down* (Jasher 88:15) — *that when they make a long blast with the ram’s horn... all the people shall shout with a great shout; and the wall of the city shall fall down flat* (Joshua 6:5). And the deliverance comes: *And the people blew upon trumpets and made a great shouting, and the walls of Jericho fell down* (Jasher 88:21) — *the wall fell down flat, so that the people went up into the city, every man straight before him, and they took the city.* (Joshua 6:20). The ban on the spoil (*all the silver and gold and brass and iron shall be consecrated to Yahuah (the Lord)* (Jasher 88:20); *But all the silver, and gold, and vessels of brass and iron, are consecrated unto Yahuah (LORD)* (Joshua 6:19)) and Joshua''s curse on the rebuilder (*Cursed be the man who builds Jericho; he shall lay the foundation of it in his first-born* (Jasher 88:23); *Cursed be the man before Yahuah (LORD), that riseth up and buildeth this city Jericho: he shall lay the foundation thereof in his firstborn* (Joshua 6:26)) close the scene — the canon''s account, retold.',
+       sv.verse_id, ev.verse_id, 'extras', 57181
+  FROM _session252_ja88_lookup sv, _session252_ja88_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=13
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=88 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-88-achan-and-ai',
+       E'Achan''s accursed thing and the taking of Ai',
+       E'The sin in the camp follows hard on the victory: *And Achan the son of Carmi, the son of Zabdi, the son of Zerah, son of Judah, dealt treacherously in the accursed thing, and he took of the accursed thing and hid it in the tent, and the anger of Yahuah (the Lord) was kindled against Israel.* (Jasher 88:24) — verbatim the canon: *But the children of Yashar''el (Israel) committed a trespass in the accursed thing: for Achan, the son of Carmi, the son of Zabdi, the son of Zerah, of the tribe of Yahudah (Judah), took of the accursed thing: and the anger of Yahuah (LORD) was kindled against the children of Yashar''el (Israel).* (Joshua 7:1). Ai then routs Israel (*the men of Ai smote thirty-six men of Israel* (Jasher 88:28); *the men of Ai smote of them about thirty and six men* (Joshua 7:5)), Joshua falls on his face (*he tore his garments and fell upon his face to the ground before Yahuah (the Lord)* (Jasher 88:29); *And Joshua rent his clothes, and fell to the earth upon his face before the ark of Yahuah (LORD)* (Joshua 7:6)), the Urim takes Judah and Achan (Jasher 88:33; *the tribe of Yahudah (Judah) was taken* (Joshua 7:16)), Achan confesses the *goodly garment of Shinar and two hundred shekels of silver, and a wedge of gold of fifty shekels weight* (Jasher 88:34; *a goodly Babylonish garment, and two hundred shekels of silver, and a wedge of gold of fifty shekels weight* (Joshua 7:21)), and is stoned in the valley of Achor (Jasher 88:36-37; Joshua 7:24-26). Then Ai is taken by ambush (Jasher 88:38-48; Joshua 8) — the canon''s account carried whole.',
+       sv.verse_id, ev.verse_id, 'extras', 57184
+  FROM _session252_ja88_lookup sv, _session252_ja88_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=24
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=88 AND ev.verse_number=48
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-88-gibeon-covenant',
+       E'Gibeon''s guile — the covenant sworn by Yahuah',
+       E'Where Jericho and Ai were destroyed, Gibeon is spared by an oath: *Only the inhabitants of Gibeon were greatly afraid of fighting against the Israelites lest they should perish, so they acted cunningly, and they came to Joshua and to all Israel, and said to them, We have come from a distant land, now therefore make a covenant with us.* (Jasher 88:50) — the canon''s *And when the inhabitants of Gibeon heard what Joshua had done unto Jericho and to Ai, They did work wilily, and went and made as if they had been ambassadors* (Joshua 9:3-4). Israel is over-reached and swears (*the children of Israel made a covenant with them, and they made peace with them, and the princes of the congregation swore to them* (Jasher 88:51); *And Joshua made peace with them, and made a league with them, to let them live: and the princes of the congregation sware unto them.* (Joshua 9:15)). The oath holds even when the deceit is found — *the children of Israel slew them not; for they had sworn to them by Yahuah (the Lord), and they became hewers of wood and drawers of water* (Jasher 88:52) — *And the children of Yashar''el (Israel) smote them not, because the princes of the congregation had sworn unto them by Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Joshua 9:18). The sworn Name binds Israel; covenant is not lightly broken — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57187
+  FROM _session252_ja88_lookup sv, _session252_ja88_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=50
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=88 AND ev.verse_number=54
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-88-sun-stands-still',
+       E'The five kings, the hailstones, and the sun standing still',
+       E'Jasher''s book ends on the sign the canon itself credits to Jasher. Adonizedek gathers the five Amorite kings against Gibeon (*And when Adonizedek king of Jerusalem heard all that the children of Israel had done... he sent to Hoham king of Hebron and to Piram king at Jarmuth, and to Japhia king of Lachish and to Deber king of Eglon, saying,* (Jasher 88:55)) — *Wherefore Adoni-zedek king of Jerusalem sent unto Hoham king of Hebron, and unto Piram king of Jarmuth, and unto Japhia king of Lachish, and unto Debir king of Eglon, saying,* (Joshua 10:3). Yahuah fights: *whilst they were fleeing, Yahuah (the Lord) sent upon them hailstones from heaven, and more of them died by the hailstones, than by the slaughter of the children of Israel.* (Jasher 88:61) — *that Yahuah (LORD) cast down great stones from heaven upon them unto Azekah, and they died: they were more which died with hailstones than they whom the children of Yashar''el (Israel) slew with the sword.* (Joshua 10:11). Then Joshua''s word halts the heavens: *Sun, stand you still upon Gibeon, and you moon in the valley of Ajalon, until the nation shall have revenged itself upon its enemies.* (Jasher 88:63) — and here the canon names this very book: *Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon... Is not this written in the book of Jasher? So the sun stood still in the midst of heaven, and hasted not to go down about a whole day.* (Joshua 10:12-13). Jasher answers: *Yahuah (the Lord) hearkened to the voice of Joshua, and the sun stood still in the midst of the heavens... and the moon also stood still and hastened not to go down a whole day. And there was no day like that, before it or after it, that Yahuah (the Lord) hearkened to the voice of a man, for Yahuah (the Lord) fought for Israel.* (Jasher 88:64-65) — *And there was no day like that before it or after it, that Yahuah (LORD) hearkened unto the voice of a man: for Yahuah (LORD) fought for Yashar''el (Israel).* (Joshua 10:14). The book of the Upright closes on the line the canon quotes from it — Yahuah fought for Israel, and it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57190
+  FROM _session252_ja88_lookup sv, _session252_ja88_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=55
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=88 AND ev.verse_number=65
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-88-joshua-commissioned
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 1:1 — *Now after the death of Moses the servant of Yahuah (LORD) it came to pass, that Yahuah (LORD) spake unto Joshua the son of Nun, Moses’ minister, saying,* The canon''s Joshua opens on the very line Jasher 88:1 carries — after Moses'' death, Yahuah speaks to Joshua son of Nun.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-joshua-commissioned'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 1:2 — *Moses my servant is dead; now therefore arise, go over this Jordan, thou, and all this people, unto the land which I do give to them, even to the children of Yashar''el (Israel).* The command to rise and pass the Jordan to inherit the land in Jasher 88:2 is Joshua 1:2 verbatim in substance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-joshua-commissioned'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 11:24 — *Every place whereon the soles of your feet shall tread shall be yours: from the wilderness and Lebanon, from the river, the river Euphrates, even unto the uttermost sea shall your coast be.* The sole-of-the-foot boundary to Lebanon and the river of Perath in Jasher 88:3 is the inheritance-word Moses already gave.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-joshua-commissioned'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:* The land Joshua now enters in Jasher 88:3 is the very ground covenanted to Abraham''s seed generations earlier — kept promise, not new.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-joshua-commissioned'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Joshua 1:7 — *Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee: turn not from it to the right hand or to the left, that thou mayest prosper whithersoever thou goest.* Jasher 88:4''s charge to keep all the law and turn neither right nor left holds the Torah standing under Joshua — it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-joshua-commissioned'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-88-jordan-passover-manna
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 3:1 — *And Joshua rose early in the morning; and they removed from Shittim, and came to Jordan, he and all the children of Yashar''el (Israel), and lodged there before they passed over.* The journey from Shittim to the Jordan in Jasher 88:9 is the canon''s own staging of the crossing.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-jordan-passover-manna'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 4:19 — *And the people came up out of Jordan on the tenth day of the first month, and encamped in Gilgal, in the east border of Jericho.* The tenth-day-of-the-first-month encampment at Gilgal in Jasher 88:10 matches the canon to the day and the place.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-jordan-passover-manna'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=4 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 5:10 — *And the children of Yashar''el (Israel) encamped in Gilgal, and kept the passover on the fourteenth day of the month at even in the plains of Jericho.* Jasher 88:11''s Passover at Gilgal on the fourteenth is the same appointed time the canon records — Torah''s feast kept in the land.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-jordan-passover-manna'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=5 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 12:25 — *And it shall come to pass, when ye be come to the land which Yahuah (LORD) will give you, according as he hath promised, that ye shall keep this service.* The Passover Jasher 88:11 keeps at Gilgal is the very service Moses commanded them to hold once they entered the land — it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-jordan-passover-manna'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Joshua 5:12 — *And the manna ceased on the morrow after they had eaten of the old corn of the land; neither had the children of Yashar''el (Israel) manna any more; but they did eat of the fruit of the land of Canaan that year.* The manna ceasing on the morrow of the Passover in Jasher 88:12 is the canon''s note that the wilderness provision ended as the land''s produce began.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-jordan-passover-manna'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=5 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Exodus 16:35 — *And the children of Yashar''el (Israel) did eat manna forty years, until they came to a land inhabited; they did eat manna, until they came unto the borders of the land of Canaan.* The manna that ceases in Jasher 88:12 closes the forty-year provision Exodus 16:35 foretold would last until they reached Canaan''s borders.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-jordan-passover-manna'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=16 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-88-jericho-falls
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 6:2 — *And Yahuah (LORD) said unto Joshua, See, I have given into thine hand Jericho, and the king thereof, and the mighty men of valour.* Jasher 88:14''s word that Jericho is given into Joshua''s hand, compassed six days, is the canon''s own commission for the city''s fall.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-jericho-falls'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=6 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 6:5 — *And it shall come to pass, that when they make a long blast with the ram’s horn, and when ye hear the sound of the trumpet, all the people shall shout with a great shout; and the wall of the city shall fall down flat, and the people shall ascend up every man straight before him.* The trumpet-blast and great shout that topple the wall in Jasher 88:15 are the canon''s exact instruction.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-jericho-falls'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=6 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 6:19 — *But all the silver, and gold, and vessels of brass and iron, are consecrated unto Yahuah (LORD): they shall come into the treasury of Yahuah (LORD).* The silver, gold, brass and iron consecrated to Yahuah''s treasury in Jasher 88:20 is the canon''s ban on Jericho''s spoil.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-jericho-falls'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=6 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 6:20 — *So the people shouted when the priests blew with the trumpets: and it came to pass, when the people heard the sound of the trumpet, and the people shouted with a great shout, that the wall fell down flat, so that the people went up into the city, every man straight before him, and they took the city.* Jasher 88:21''s shout and falling walls are the canon''s deliverance of Jericho, man by man straight before him.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-jericho-falls'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=6 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Joshua 6:26 — *And Joshua adjured them at that time, saying, Cursed be the man before Yahuah (LORD), that riseth up and buildeth this city Jericho: he shall lay the foundation thereof in his firstborn, and in his youngest son shall he set up the gates of it.* Joshua''s oath against the rebuilder of Jericho in Jasher 88:23 is the canon''s curse, firstborn-foundation and all.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-jericho-falls'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=6 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-88-achan-and-ai
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 7:1 — *But the children of Yashar''el (Israel) committed a trespass in the accursed thing: for Achan, the son of Carmi, the son of Zabdi, the son of Zerah, of the tribe of Yahudah (Judah), took of the accursed thing: and the anger of Yahuah (LORD) was kindled against the children of Yashar''el (Israel).* Jasher 88:24 names Achan''s whole lineage and the kindled anger exactly as the canon does.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-achan-and-ai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=7 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 7:5 — *And the men of Ai smote of them about thirty and six men: for they chased them from before the gate even unto Shebarim, and smote them in the going down: wherefore the hearts of the people melted, and became as water.* The thirty-six men of Israel slain at Ai in Jasher 88:28 is the canon''s count of the first defeat.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-achan-and-ai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=7 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 7:16 — *So Joshua rose up early in the morning, and brought Yashar''el (Israel) by their tribes; and the tribe of Yahudah (Judah) was taken:* Jasher 88:33''s taking of the tribe of Judah by the Urim matches the canon''s sifting that exposed Achan.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-achan-and-ai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=7 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 7:21 — *When I saw among the spoils a goodly Babylonish garment, and two hundred shekels of silver, and a wedge of gold of fifty shekels weight, then I coveted them, and took them; and, behold, they are hid in the earth in the midst of my tent, and the silver under it.* Achan''s confession of the garment, two hundred shekels, and the fifty-shekel wedge of gold in Jasher 88:34 is the canon''s word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-achan-and-ai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=7 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Joshua 7:26 — *And they raised over him a great heap of stones unto this day. So Yahuah (LORD) turned from the fierceness of his anger. Wherefore the name of that place was called, The valley of Achor, unto this day.* The heap of stones, the appeased anger, and the naming of the valley of Achor in Jasher 88:37 are the canon''s close of the Achan account.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-achan-and-ai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=7 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-88-gibeon-covenant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 9:4 — *They did work wilily, and went and made as if they had been ambassadors, and took old sacks upon their asses, and wine bottles, old, and rent, and bound up;* Gibeon''s cunning approach as men from a distant land in Jasher 88:50 is the canon''s account of their guile.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-gibeon-covenant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=9 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 9:15 — *And Joshua made peace with them, and made a league with them, to let them live: and the princes of the congregation sware unto them.* The covenant of peace and the princes'' oath in Jasher 88:51 are the canon''s league with Gibeon.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-gibeon-covenant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=51
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=9 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 9:18 — *And the children of Yashar''el (Israel) smote them not, because the princes of the congregation had sworn unto them by Yahuah Elohim (the LORD God) of Yashar''el (Israel). And all the congregation murmured against the princes.* Jasher 88:52''s sparing of Gibeon because of the oath by Yahuah holds the sworn Name binding, as the canon does.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-gibeon-covenant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=52
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=9 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 9:21 — *And the princes said unto them, Let them live; but let them be hewers of wood and drawers of water unto all the congregation; as the princes had promised them.* Gibeon''s appointment to hew wood and draw water for the tribes in Jasher 88:54 is the canon''s sentence on the spared people.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-gibeon-covenant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=54
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=9 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-88-sun-stands-still
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 10:3 — *Wherefore Adoni-zedek king of Jerusalem sent unto Hoham king of Hebron, and unto Piram king of Jarmuth, and unto Japhia king of Lachish, and unto Debir king of Eglon, saying,* The five Amorite kings Adonizedek gathers in Jasher 88:55 are named exactly as in the canon''s muster against Gibeon.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-sun-stands-still'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=55
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 10:11 — *And it came to pass, as they fled from before Yashar''el (Israel), and were in the going down to Beth-horon, that Yahuah (LORD) cast down great stones from heaven upon them unto Azekah, and they died: they were more which died with hailstones than they whom the children of Yashar''el (Israel) slew with the sword.* The hailstones from heaven killing more than the sword in Jasher 88:61 are the canon''s account of Yahuah fighting for Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-sun-stands-still'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=61
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 10:12 — *Then spake Joshua to Yahuah (LORD) in the day when Yahuah (LORD) delivered up the Amorites before the children of Yashar''el (Israel), and he said in the sight of Yashar''el (Israel), Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon.* Joshua''s command to the sun over Gibeon and the moon in Ajalon in Jasher 88:63 is the canon''s words spoken in the sight of Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-sun-stands-still'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=63
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 10:13 — *And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies. Is not this written in the book of Jasher? So the sun stood still in the midst of heaven, and hasted not to go down about a whole day.* The canon itself credits this very sun-standing-still to the book of Jasher — and Jasher 88:64 records exactly that wonder, the sun and moon halting a whole day.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-sun-stands-still'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=64
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Joshua 10:14 — *And there was no day like that before it or after it, that Yahuah (LORD) hearkened unto the voice of a man: for Yahuah (LORD) fought for Yashar''el (Israel).* Jasher 88:65 closes the whole book on the canon''s own line — no day like it, for Yahuah fought for Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja88_lookup sv, _session252_ja88_lookup tv
+ WHERE t.slug='jasher-88-sun-stands-still'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=88 AND sv.verse_number=65
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_89.sql (session252 jasher 89) -----
+-- Source anchor: jasher/jasher ch89. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja89 (view _session252_ja89_lookup). Sort band base 57200, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja89_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-89-sun-and-moon-stood-still
+  ('jasher', 'jasher', 89, 8, 'canon', 'joshua', 10, 12, 'free', E'Joshua 10:12 — *Then spake Joshua to Yahuah (LORD) in the day when Yahuah (LORD) delivered up the Amorites before the children of Yashar''el (Israel), and he said in the sight of Yashar''el (Israel), Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon.* This is the very command behind Jasher 89:8''s ''the sun and moon stood still in heaven.'''),
+  ('jasher', 'jasher', 89, 8, 'canon', 'joshua', 10, 13, 'free', E'Joshua 10:13 — *And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies. Is not this written in the book of Jasher? So the sun stood still in the midst of heaven, and hasted not to go down about a whole day.* The canon names THIS book by name — Jasher 89:8 is the passage Scripture points the reader to find.'),
+  ('jasher', 'jasher', 89, 8, 'canon', 'joshua', 10, 14, 'free', E'Joshua 10:14 — *And there was no day like that before it or after it, that Yahuah (LORD) hearkened unto the voice of a man: for Yahuah (LORD) fought for Yashar''el (Israel).* The standing of the sun confirms what Joshua''s song confesses in Jasher 89:8, that Yahuah Himself stood in wrath against the oppressors.'),
+  ('jasher', 'jasher', 89, 1, 'canon', 'exodus', 15, 1, 'free', E'Exodus 15:1 — *Then sang Moses and the children of Yashar''el (Israel) this song unto Yahuah (LORD), and spake, saying, I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.* The song of Joshua in Jasher 89:1 carries forward the song of Moses at the sea — the deliverance song is the song of the fathers, it ain''t new.'),
+  ('jasher', 'jasher', 89, 5, 'canon', 'exodus', 15, 2, 'free', E'Exodus 15:2 — *Yahuah (LORD) is my strength and song, and he is become my salvation: he is my Elohim (God), and I will prepare him an habitation; my father''s Elohim (God), and I will exalt him.* Joshua''s confession ''we said you are our Elohim (God), for you were our shelter and strong tower'' (Jasher 89:5) is the same praise Moses sang.'),
+  -- thread: jasher-89-trees-by-the-waters-chaff
+  ('jasher', 'jasher', 89, 22, 'canon', 'psalms', 1, 3, 'free', E'Psalm 1:3 — *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.* Joshua''s ''your beloved shall be like trees planted by the waters'' (Jasher 89:22) is the psalm''s image of the kept, planted seed.'),
+  ('jasher', 'jasher', 89, 22, 'canon', 'psalms', 1, 4, 'free', E'Psalm 1:4 — *The ungodly are not so: but are like the chaff which the wind driveth away.* Joshua''s ''the wicked shall be like chaff driven by the wind'' (Jasher 89:22) is word-for-word the psalm''s verdict on the oppressor''s kingdom.'),
+  -- thread: jasher-89-five-kings-cave-feet-on-necks
+  ('jasher', 'jasher', 89, 24, 'canon', 'joshua', 10, 16, 'free', E'Joshua 10:16 — *But these five kings fled, and hid themselves in a cave at Makkedah.* The canon names Makkedah for the very cave Jasher 89:24 reports the five kings fleeing to.'),
+  ('jasher', 'jasher', 89, 27, 'canon', 'joshua', 10, 24, 'free', E'Joshua 10:24 — *that Joshua called for all the men of Yashar''el (Israel), and said unto the captains of the men of war which went with him, Come near, put your feet upon the necks of these kings. And they came near, and put their feet upon the necks of them.* This is the scene Jasher 89:27 retells, the feet on the necks of the conquered kings.'),
+  ('jasher', 'jasher', 89, 27, 'canon', 'joshua', 10, 25, 'free', E'Joshua 10:25 — *And Joshua said unto them, Fear not, nor be dismayed, be strong and of good courage: for thus shall Yahuah (LORD) do to all your enemies against whom ye fight.* Joshua''s word ''So shall Yahuah (the Lord) do to all your enemies'' in Jasher 89:27 is the canon''s own promise.'),
+  ('jasher', 'jasher', 89, 28, 'canon', 'joshua', 10, 27, 'free', E'Joshua 10:27 — *And it came to pass at the time of the going down of the sun, that Joshua commanded, and they took them down off the trees, and cast them into the cave wherein they had been hid, and laid great stones in the cave''s mouth, which remain until this very day.* The great stones at the cave''s mouth in Jasher 89:28 match the canon''s sealing of the cave.'),
+  -- thread: jasher-89-southern-campaign-cities
+  ('jasher', 'jasher', 89, 29, 'canon', 'joshua', 10, 28, 'free', E'Joshua 10:28 — *And that day Joshua took Makkedah, and smote it with the edge of the sword, and the king thereof he utterly destroyed, them, and all the souls that were therein; he let none remain: and he did to the king of Makkedah as he did unto the king of Jericho.* The taking of Makkedah in Jasher 89:29 carries the canon''s southern campaign verse for verse.'),
+  ('jasher', 'jasher', 89, 32, 'canon', 'joshua', 10, 5, 'free', E'Joshua 10:5 — *Therefore the five kings of the Amorites, the king of Jerusalem, the king of Hebron, the king of Jarmuth, the king of Lachish, the king of Eglon, gathered themselves together, and went up, they and all their hosts, and encamped before Gibeon, and made war against it.* Lachish, which Jasher 89:32 has Joshua besiege, is among the Amorite coalition the canon names.'),
+  ('jasher', 'jasher', 89, 37, 'canon', 'joshua', 10, 14, 'free', E'Joshua 10:14 — *And there was no day like that before it or after it, that Yahuah (LORD) hearkened unto the voice of a man: for Yahuah (LORD) fought for Yashar''el (Israel).* Jasher 89:37''s ''for Yahuah (the Lord) had fought for Israel'' is the canon''s own confession over the whole campaign.'),
+  -- thread: jasher-89-northern-campaign-merom-hazor
+  ('jasher', 'jasher', 89, 41, 'canon', 'joshua', 11, 5, 'free', E'Joshua 11:5 — *And when all these kings were met together, they came and pitched together at the waters of Merom, to fight against Yashar''el (Israel).* The gathering at the waters of Merom in Jasher 89:41 is the canon''s northern coalition scene.'),
+  ('jasher', 'jasher', 89, 42, 'canon', 'joshua', 11, 6, 'free', E'Joshua 11:6 — *And Yahuah (LORD) said unto Joshua, Be not afraid because of them: for to morrow about this time will I deliver them up all slain before Yashar''el (Israel): thou shalt hough their horses, and burn their chariots with fire.* Yahuah''s assurance in Jasher 89:42 is the canon''s word almost verbatim, down to the houghing of horses.'),
+  ('jasher', 'jasher', 89, 39, 'canon', 'joshua', 11, 1, 'free', E'Joshua 11:1 — *And it came to pass, when Jabin king of Hazor had heard those things, that he sent to Jobab king of Madon, and to the king of Shimron, and to the king of Achshaph,* Jabin king of Chazor sending out the call in Jasher 89:39 is the canon''s own muster of the northern kings.'),
+  ('jasher', 'jasher', 89, 50, 'canon', 'joshua', 11, 15, 'free', E'Joshua 11:15 — *As Yahuah (LORD) commanded Moses his servant, so did Moses command Joshua, and so did Joshua; he left nothing undone of all that Yahuah (LORD) commanded Moses.* Jasher 89:50''s ''they failed not in anything'' carries the canon''s testimony that the word commanded to Moses was wholly kept.'),
+  -- thread: jasher-89-thirty-one-kings-inheritance-land-rested
+  ('jasher', 'jasher', 89, 51, 'canon', 'joshua', 12, 24, 'free', E'Joshua 12:24 — *The king of Tirzah, one: all the kings thirty and one.* The ''thirty and one kings'' of Jasher 89:51 is the canon''s exact closing tally of the conquered kings.'),
+  ('jasher', 'jasher', 89, 52, 'canon', 'joshua', 12, 6, 'free', E'Joshua 12:6 — *Them did Moses the servant of Yahuah (LORD) and the children of Yashar''el (Israel) smite: and Moses the servant of Yahuah (LORD) gave it for a possession unto the Reubenites, and the Gadites, and the half tribe of Manasseh.* Jasher 89:52''s Transjordan inheritance for Reuben, Gad, and half Manasseh is the canon''s own division by Moses.'),
+  ('jasher', 'jasher', 89, 54, 'canon', 'joshua', 11, 23, 'free', E'Joshua 11:23 — *So Joshua took the whole land, according to all that Yahuah (LORD) said unto Moses; and Joshua gave it for an inheritance unto Yashar''el (Israel) according to their divisions by their tribes. And the land rested from war.* Jasher 89:54''s land grown tranquil from battle is the canon''s ''the land rested from war'' — the seed at rest in its inheritance.'),
+  ('jasher', 'jasher', 89, 52, 'canon', 'deuteronomy', 34, 4, 'free', E'Deuteronomy 34:4 — *And Yahuah (LORD) said unto him, This is the land which I sware unto Abraham, unto Isaac, and unto Jacob, saying, I will give it unto thy seed: I have caused thee to see it with thine eyes, but thou shalt not go over thither.* The inheritance Moses parcels in Jasher 89:52 is the land Yahuah sware to the fathers'' seed — the covenant promise kept.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja89_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja89_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-89-sun-and-moon-stood-still',
+       E'The song of Joshua and the sun and moon stood still — ''is not this written in the book of Jasher?''',
+       E'Jasher opens its final chapter with the song Joshua sang on the day of the great victory: *Then spoke Joshua this song, on the day that Yahuah (the Lord) had given the Amorites into the hand of Joshua and the children of Israel, and he said in the sight of all Israel,* (Jasher 89:1), and at its heart stands the wonder the canon itself names this very book to confirm: *The sun and moon stood still in heaven, and you did stand in your wrath against our oppressors and did command your judgments over them.* (Jasher 89:8). Come and see — this is the scene Scripture sends you HERE to read: *And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies. Is not this written in the book of Jasher? So the sun stood still in the midst of heaven, and hasted not to go down about a whole day.* (Joshua 10:13). The canon''s own naming of ''the book of Jasher'' lands on this chapter. It ain''t new — the deliverance song is the song of the fathers; as Moses sang at the sea, *I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.* (Exodus 15:1), so Joshua sings, *My goodness and my fortress, my high tower, I will sing a new song to you* (Jasher 89:3). Yahuah is the strength of the salvation, the man of war who fights for His seed.',
+       sv.verse_id, ev.verse_id, 'extras', 57200
+  FROM _session252_ja89_lookup sv, _session252_ja89_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=89 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-89-trees-by-the-waters-chaff',
+       E'The wicked like chaff, the beloved like trees planted by the waters',
+       E'Joshua''s song closes on the two ways: *Thus shall all your enemies perish O Yahuah (O Lord), and the wicked shall be like chaff driven by the wind, and your beloved shall be like trees planted by the waters.* (Jasher 89:22). It ain''t new — this is the opening psalm''s own picture of the righteous and the ungodly, the wheat and the tares of the seed-war. Come and see: *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.* (Psalm 1:3), while *The ungodly are not so: but are like the chaff which the wind driveth away.* (Psalm 1:4). The beloved seed is kept and planted; the kingdom of the oppressor is scattered.',
+       sv.verse_id, ev.verse_id, 'extras', 57203
+  FROM _session252_ja89_lookup sv, _session252_ja89_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=22
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=89 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-89-five-kings-cave-feet-on-necks',
+       E'The five kings hidden in the cave and the feet upon their necks',
+       E'Jasher retells, scene for scene, the canon''s account of the five Amorite kings: *And the five kings fled alone on foot from battle, and hid themselves in a cave, and Joshua sought for them in the field of battle, and did not find them.* (Jasher 89:24), and then the charge to the captains: *And Joshua called to all Israel and said to the officers of battle, Place your feet upon the necks of these kings, and Joshua said, So shall Yahuah (the Lord) do to all your enemies.* (Jasher 89:27). Come and see the source it carries: *But these five kings fled, and hid themselves in a cave at Makkedah.* (Joshua 10:16); *that Joshua called for all the men of Yashar''el (Israel), and said unto the captains of the men of war which went with him, Come near, put your feet upon the necks of these kings. And they came near, and put their feet upon the necks of them.* (Joshua 10:24); *for thus shall Yahuah (LORD) do to all your enemies against whom ye fight.* (Joshua 10:25). And the great stones sealed at the cave''s mouth match the canon exactly — *And Joshua commanded afterward that they should slay the kings and cast them into the cave, and to put great stones at the mouth of the cave.* (Jasher 89:28) beside *and laid great stones in the cave''s mouth, which remain until this very day.* (Joshua 10:27). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57206
+  FROM _session252_ja89_lookup sv, _session252_ja89_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=24
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=89 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-89-southern-campaign-cities',
+       E'The southern campaign — Makkedah, Libnah, Lachish, Eglon, Hebron, Debir',
+       E'Jasher marches city by city through the conquest of the south: *And Joshua went afterward with all the people that were with him on that day to Makkedah, and he smote it with the edge of the sword.* (Jasher 89:29); *And from there he passed on to Lachish to fight against it, and Horam king of Gaza went up to assist the men of Lachish, and Joshua smote him and his people until there was none left to him.* (Jasher 89:32); and the summary line, *And Joshua smote all the kings of the Amorites from Kadesh-barnea to Azah, and he took their country at once, for Yahuah (the Lord) had fought for Israel.* (Jasher 89:37). Come and see the canon retold here: *And that day Joshua took Makkedah, and smote it with the edge of the sword, and the king thereof he utterly destroyed, them, and all the souls that were therein; he let none remain: and he did to the king of Makkedah as he did unto the king of Jericho.* (Joshua 10:28). The pattern is one — done to each as to Jericho — for Yahuah fought for His seed. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57209
+  FROM _session252_ja89_lookup sv, _session252_ja89_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=29
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=89 AND ev.verse_number=37
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-89-northern-campaign-merom-hazor',
+       E'The northern coalition at the waters of Merom — Jabin of Hazor',
+       E'Jasher turns north to the great coalition gathered against Israel: *And all these kings hearkened to the words of Jabin, king of Chazor, and they went forth with all their camps, seventeen kings, and their people were as numerous as the sand on the sea shore, together with horses and chariots innumerable, and they came and pitched together at the waters of Merom, and they were met together to fight against Israel.* (Jasher 89:41), and Yahuah''s word of assurance: *And Yahuah (the Lord) said to Joshua, Fear them not, for tomorrow about this time I will deliver them up all slain before you, you shall hough their horses and burn their chariots with fire.* (Jasher 89:42). Come and see the canon retold almost word for word: *And when all these kings were met together, they came and pitched together at the waters of Merom, to fight against Yashar''el (Israel).* (Joshua 11:5); *And Yahuah (LORD) said unto Joshua, Be not afraid because of them: for to morrow about this time will I deliver them up all slain before Yashar''el (Israel): thou shalt hough their horses, and burn their chariots with fire.* (Joshua 11:6). And the obedience that fails not — *As Yahuah (the Lord) had commanded Moses so did Joshua and all Israel, they failed not in anything.* (Jasher 89:50) — matches *he left nothing undone of all that Yahuah (LORD) commanded Moses.* (Joshua 11:15). Torah stands; the word commanded to Moses is kept. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57212
+  FROM _session252_ja89_lookup sv, _session252_ja89_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=39
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=89 AND ev.verse_number=50
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-89-thirty-one-kings-inheritance-land-rested',
+       E'Thirty and one kings smitten, the land divided to the tribes, and rest from war',
+       E'Jasher closes the whole book on the tally and the inheritance: *So Joshua and all the children of Israel smote the whole land of Canaan as Yahuah (the Lord) had commanded them, and smote all their kings, being thirty and one kings, and the children of Israel took their whole country.* (Jasher 89:51), with the Transjordan already given by Moses — *Besides the kingdoms of Sihon and Og which are on the other side Jordan, of which Moses had smitten many cities, and Moses gave them to the Reubenites and the Gadites and to half the tribe of Manasseh.* (Jasher 89:52) — and the west given to the rest of the tribes (Jasher 89:53), and at last the land at rest: *and the land became tranquil from battle throughout the cities of the Amorites and the Canaanites.* (Jasher 89:54). Come and see the canon''s own count and rest: *The king of Tirzah, one: all the kings thirty and one.* (Joshua 12:24); *Them did Moses the servant of Yahuah (LORD) and the children of Yashar''el (Israel) smite: and Moses the servant of Yahuah (LORD) gave it for a possession unto the Reubenites, and the Gadites, and the half tribe of Manasseh.* (Joshua 12:6); *So Joshua took the whole land, according to all that Yahuah (LORD) said unto Moses; and Joshua gave it for an inheritance unto Yashar''el (Israel) according to their divisions by their tribes. And the land rested from war.* (Joshua 11:23). The twelve-tribe covenant people receive their inheritance — the seed kept, the promise to the fathers come to rest. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57215
+  FROM _session252_ja89_lookup sv, _session252_ja89_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=51
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=89 AND ev.verse_number=54
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-89-sun-and-moon-stood-still
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 10:12 — *Then spake Joshua to Yahuah (LORD) in the day when Yahuah (LORD) delivered up the Amorites before the children of Yashar''el (Israel), and he said in the sight of Yashar''el (Israel), Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon.* This is the very command behind Jasher 89:8''s ''the sun and moon stood still in heaven.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-sun-and-moon-stood-still'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 10:13 — *And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies. Is not this written in the book of Jasher? So the sun stood still in the midst of heaven, and hasted not to go down about a whole day.* The canon names THIS book by name — Jasher 89:8 is the passage Scripture points the reader to find.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-sun-and-moon-stood-still'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 10:14 — *And there was no day like that before it or after it, that Yahuah (LORD) hearkened unto the voice of a man: for Yahuah (LORD) fought for Yashar''el (Israel).* The standing of the sun confirms what Joshua''s song confesses in Jasher 89:8, that Yahuah Himself stood in wrath against the oppressors.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-sun-and-moon-stood-still'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 15:1 — *Then sang Moses and the children of Yashar''el (Israel) this song unto Yahuah (LORD), and spake, saying, I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.* The song of Joshua in Jasher 89:1 carries forward the song of Moses at the sea — the deliverance song is the song of the fathers, it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-sun-and-moon-stood-still'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Exodus 15:2 — *Yahuah (LORD) is my strength and song, and he is become my salvation: he is my Elohim (God), and I will prepare him an habitation; my father''s Elohim (God), and I will exalt him.* Joshua''s confession ''we said you are our Elohim (God), for you were our shelter and strong tower'' (Jasher 89:5) is the same praise Moses sang.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-sun-and-moon-stood-still'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-89-trees-by-the-waters-chaff
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 1:3 — *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.* Joshua''s ''your beloved shall be like trees planted by the waters'' (Jasher 89:22) is the psalm''s image of the kept, planted seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-trees-by-the-waters-chaff'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 1:4 — *The ungodly are not so: but are like the chaff which the wind driveth away.* Joshua''s ''the wicked shall be like chaff driven by the wind'' (Jasher 89:22) is word-for-word the psalm''s verdict on the oppressor''s kingdom.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-trees-by-the-waters-chaff'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-89-five-kings-cave-feet-on-necks
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 10:16 — *But these five kings fled, and hid themselves in a cave at Makkedah.* The canon names Makkedah for the very cave Jasher 89:24 reports the five kings fleeing to.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-five-kings-cave-feet-on-necks'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 10:24 — *that Joshua called for all the men of Yashar''el (Israel), and said unto the captains of the men of war which went with him, Come near, put your feet upon the necks of these kings. And they came near, and put their feet upon the necks of them.* This is the scene Jasher 89:27 retells, the feet on the necks of the conquered kings.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-five-kings-cave-feet-on-necks'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 10:25 — *And Joshua said unto them, Fear not, nor be dismayed, be strong and of good courage: for thus shall Yahuah (LORD) do to all your enemies against whom ye fight.* Joshua''s word ''So shall Yahuah (the Lord) do to all your enemies'' in Jasher 89:27 is the canon''s own promise.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-five-kings-cave-feet-on-necks'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 10:27 — *And it came to pass at the time of the going down of the sun, that Joshua commanded, and they took them down off the trees, and cast them into the cave wherein they had been hid, and laid great stones in the cave''s mouth, which remain until this very day.* The great stones at the cave''s mouth in Jasher 89:28 match the canon''s sealing of the cave.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-five-kings-cave-feet-on-necks'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-89-southern-campaign-cities
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 10:28 — *And that day Joshua took Makkedah, and smote it with the edge of the sword, and the king thereof he utterly destroyed, them, and all the souls that were therein; he let none remain: and he did to the king of Makkedah as he did unto the king of Jericho.* The taking of Makkedah in Jasher 89:29 carries the canon''s southern campaign verse for verse.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-southern-campaign-cities'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 10:5 — *Therefore the five kings of the Amorites, the king of Jerusalem, the king of Hebron, the king of Jarmuth, the king of Lachish, the king of Eglon, gathered themselves together, and went up, they and all their hosts, and encamped before Gibeon, and made war against it.* Lachish, which Jasher 89:32 has Joshua besiege, is among the Amorite coalition the canon names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-southern-campaign-cities'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 10:14 — *And there was no day like that before it or after it, that Yahuah (LORD) hearkened unto the voice of a man: for Yahuah (LORD) fought for Yashar''el (Israel).* Jasher 89:37''s ''for Yahuah (the Lord) had fought for Israel'' is the canon''s own confession over the whole campaign.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-southern-campaign-cities'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-89-northern-campaign-merom-hazor
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 11:5 — *And when all these kings were met together, they came and pitched together at the waters of Merom, to fight against Yashar''el (Israel).* The gathering at the waters of Merom in Jasher 89:41 is the canon''s northern coalition scene.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-northern-campaign-merom-hazor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=11 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 11:6 — *And Yahuah (LORD) said unto Joshua, Be not afraid because of them: for to morrow about this time will I deliver them up all slain before Yashar''el (Israel): thou shalt hough their horses, and burn their chariots with fire.* Yahuah''s assurance in Jasher 89:42 is the canon''s word almost verbatim, down to the houghing of horses.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-northern-campaign-merom-hazor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=42
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=11 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 11:1 — *And it came to pass, when Jabin king of Hazor had heard those things, that he sent to Jobab king of Madon, and to the king of Shimron, and to the king of Achshaph,* Jabin king of Chazor sending out the call in Jasher 89:39 is the canon''s own muster of the northern kings.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-northern-campaign-merom-hazor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=39
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=11 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 11:15 — *As Yahuah (LORD) commanded Moses his servant, so did Moses command Joshua, and so did Joshua; he left nothing undone of all that Yahuah (LORD) commanded Moses.* Jasher 89:50''s ''they failed not in anything'' carries the canon''s testimony that the word commanded to Moses was wholly kept.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-northern-campaign-merom-hazor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=11 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-89-thirty-one-kings-inheritance-land-rested
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 12:24 — *The king of Tirzah, one: all the kings thirty and one.* The ''thirty and one kings'' of Jasher 89:51 is the canon''s exact closing tally of the conquered kings.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-thirty-one-kings-inheritance-land-rested'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=51
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=12 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 12:6 — *Them did Moses the servant of Yahuah (LORD) and the children of Yashar''el (Israel) smite: and Moses the servant of Yahuah (LORD) gave it for a possession unto the Reubenites, and the Gadites, and the half tribe of Manasseh.* Jasher 89:52''s Transjordan inheritance for Reuben, Gad, and half Manasseh is the canon''s own division by Moses.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-thirty-one-kings-inheritance-land-rested'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=52
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=12 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 11:23 — *So Joshua took the whole land, according to all that Yahuah (LORD) said unto Moses; and Joshua gave it for an inheritance unto Yashar''el (Israel) according to their divisions by their tribes. And the land rested from war.* Jasher 89:54''s land grown tranquil from battle is the canon''s ''the land rested from war'' — the seed at rest in its inheritance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-thirty-one-kings-inheritance-land-rested'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=54
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=11 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 34:4 — *And Yahuah (LORD) said unto him, This is the land which I sware unto Abraham, unto Isaac, and unto Jacob, saying, I will give it unto thy seed: I have caused thee to see it with thine eyes, but thou shalt not go over thither.* The inheritance Moses parcels in Jasher 89:52 is the land Yahuah sware to the fathers'' seed — the covenant promise kept.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja89_lookup sv, _session252_ja89_lookup tv
+ WHERE t.slug='jasher-89-thirty-one-kings-inheritance-land-rested'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=89 AND sv.verse_number=52
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=34 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_90.sql (session252 jasher 90) -----
+-- Source anchor: jasher/jasher ch90. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja90 (view _session252_ja90_lookup). Sort band base 57225, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja90_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-90-land-divided-by-lot
+  ('jasher', 'jasher', 90, 13, 'canon', 'joshua', 13, 1, 'free', E'Joshua 13:1 — *Now Joshua was old and stricken in years; and Yahuah (LORD) said unto him, Thou art old and stricken in years, and there remaineth yet very much land to be possessed.* The canon''s own opening of the land-division charge that Jasher 90:13 retells verbatim.'),
+  ('jasher', 'jasher', 90, 14, 'canon', 'joshua', 13, 7, 'free', E'Joshua 13:7 — *Now therefore divide this land for an inheritance unto the nine tribes, and the half tribe of Manasseh,* The exact command to divide for the nine tribes and half-Manasseh that Joshua rises to obey in Jasher 90:14.'),
+  ('jasher', 'jasher', 90, 23, 'canon', 'joshua', 14, 1, 'free', E'Joshua 14:1 — *And these are the countries which the children of Yashar''el (Israel) inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Yashar''el (Israel), distributed for inheritance to them.* The same Eleazar-Joshua-tribal-heads portioning by lot that Jasher 90:23 records at Shiloh.'),
+  ('jasher', 'jasher', 90, 19, 'canon', 'joshua', 14, 2, 'free', E'Joshua 14:2 — *By lot was their inheritance, as Yahuah (LORD) commanded by the hand of Moses, for the nine tribes, and for the half tribe.* The lot-divided inheritance commanded by the hand of Moses that Jasher 90:19 echoes.'),
+  -- thread: jasher-90-caleb-hebron
+  ('jasher', 'jasher', 90, 17, 'canon', 'joshua', 14, 13, 'free', E'Joshua 14:13 — *And Joshua blessed him, and gave unto Caleb the son of Jephunneh Hebron for an inheritance.* The same gift of Hebron to Caleb that Jasher 90:17 records as one portion above his brethren.'),
+  ('jasher', 'jasher', 90, 18, 'canon', 'joshua', 14, 14, 'free', E'Joshua 14:14 — *Hebron therefore became the inheritance of Caleb the son of Jephunneh the Kenezite unto this day, because that he wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel).* The canon''s ''unto this day'' that Jasher 90:18 carries word for word, adding the reason: Caleb wholly followed Yahuah.'),
+  -- thread: jasher-90-levi-no-inheritance
+  ('jasher', 'jasher', 90, 16, 'canon', 'joshua', 13, 14, 'free', E'Joshua 13:14 — *Only unto the tribe of Levi he gave none inheritance; the sacrifices of Yahuah Elohim (the LORD God) of Yashar''el (Israel) made by fire are their inheritance, as he said unto them.* The same Levite exception — Yahuah''s offerings as their portion — that Jasher 90:16 carries.'),
+  ('jasher', 'jasher', 90, 16, 'canon', 'numbers', 18, 23, 'free', E'Numbers 18:23 — *But the Levites shall do the service of the tabernacle of the congregation, and they shall bear their iniquity: it shall be a statute for ever throughout your generations, that among the children of Yashar''el (Israel) they have no inheritance.* The Torah statute given by the hand of Moses that Jasher 90:16 says was ''spoken of them by the hand of Moses.'''),
+  -- thread: jasher-90-rest-from-enemies
+  ('jasher', 'jasher', 90, 24, 'canon', 'joshua', 21, 43, 'free', E'Joshua 21:43 — *And Yahuah (LORD) gave unto Yashar''el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein.* The sworn-to-the-fathers land-gift that Jasher 90:24 restates as Yahuah giving and Israel possessing.'),
+  ('jasher', 'jasher', 90, 25, 'canon', 'joshua', 21, 44, 'free', E'Joshua 21:44 — *And Yahuah (LORD) gave them rest round about, according to all that he sware unto their fathers: and there stood not a man of all their enemies before them; Yahuah (LORD) delivered all their enemies into their hand.* The rest-from-enemies, no-man-stood promise that Jasher 90:25 amplifies into ''not one thing failed of all the good.'''),
+  -- thread: jasher-90-joshua-farewell-covenant
+  ('jasher', 'jasher', 90, 34, 'canon', 'joshua', 23, 6, 'free', E'Joshua 23:6 — *Be ye therefore very courageous to keep and to do all that is written in the book of the law of Moses, that ye turn not aside therefrom to the right hand or to the left;* Joshua''s same charge — keep the law of Moses, turn not right or left — that Jasher 90:34 carries.'),
+  ('jasher', 'jasher', 90, 34, 'canon', 'deuteronomy', 5, 32, 'free', E'Deuteronomy 5:32 — *Ye shall observe to do therefore as Yahuah Elohaychem (the LORD your God) hath commanded you: ye shall not turn aside to the right hand or to the left.* Moses'' original ''turn not right or left'' Torah standard that Joshua repeats in Jasher 90:34 — the law standing, not new.'),
+  ('jasher', 'jasher', 90, 36, 'canon', 'joshua', 24, 24, 'free', E'Joshua 24:24 — *And the people said unto Joshua, Yahuah Eloheinu (The LORD our God) will we serve, and his voice will we obey.* The people''s covenant answer that Jasher 90:36 expands to ''all our days ... and our seed for ever.'''),
+  ('jasher', 'jasher', 90, 33, 'canon', 'deuteronomy', 31, 6, 'free', E'Deuteronomy 31:6 — *Be strong and of a good courage, fear not, nor be afraid of them: for Yahuah Elohayka (the LORD thy God), he it is that doth go with thee; he will not fail thee, nor forsake thee.* The ''strengthen yourselves'' charge whose root is Moses'' farewell, echoed in Joshua''s own farewell at Jasher 90:33.'),
+  -- thread: jasher-90-bones-of-the-twelve
+  ('jasher', 'jasher', 90, 45, 'canon', 'joshua', 24, 32, 'free', E'Joshua 24:32 — *And the bones of Joseph, which the children of Yashar''el (Israel) brought up out of Egypt, buried they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor the father of Shechem for an hundred pieces of silver: and it became the inheritance of the children of Joseph.* The exact Shechem burial of Joseph''s bones in Jacob''s purchased field that Jasher 90:45 records.'),
+  ('jasher', 'jasher', 90, 38, 'canon', 'genesis', 50, 25, 'free', E'Genesis 50:25 — *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* The oath that made Israel carry the coffins up from Egypt, fulfilled in the burial of Jasher 90:38.'),
+  ('jasher', 'jasher', 90, 38, 'canon', 'exodus', 13, 19, 'free', E'Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* The Exodus moment Israel took up the bones from Egypt — ''which they had brought up from Egypt'' in Jasher 90:38.'),
+  ('jasher', 'jasher', 90, 38, 'jubilees', 'jubilees', 46, 9, 'extras', E'Jubilees 46:9 — *the children of Yashar''el (Israel) brought forth all the bones of the children of Jacob save the bones of Joseph, and they buried them in the field in the double cave in the mountain.* The same burying of the bones of the twelve sons of Jacob that Jasher 90:38 narrates — the live Jubilees apparatus self-link.'),
+  -- thread: jasher-90-death-of-joshua
+  ('jasher', 'jasher', 90, 47, 'canon', 'joshua', 24, 29, 'free', E'Joshua 24:29 — *And it came to pass after these things, that Joshua the son of Nun, the servant of Yahuah (LORD), died, being an hundred and ten years old.* The death of Joshua at a hundred and ten that Jasher 90:47 records word for word.'),
+  ('jasher', 'jasher', 90, 49, 'canon', 'joshua', 24, 30, 'free', E'Joshua 24:30 — *And they buried him in the border of his inheritance in Timnath-serah, which is in mount Ephraim, on the north side of the hill of Gaash.* The same burial in Timnath-serah in Mount Ephraim that Jasher 90:49 carries.'),
+  ('jasher', 'jasher', 90, 47, 'canon', 'joshua', 24, 31, 'free', E'Joshua 24:31 — *And Yashar''el (Israel) served Yahuah (LORD) all the days of Joshua, and all the days of the elders that overlived Joshua, and which had known all the works of Yahuah (LORD), that he had done for Yashar''el (Israel).* The ''Israel served Yahuah all the days of his life'' note that Jasher 90:47 closes on.'),
+  ('jasher', 'jasher', 90, 47, 'canon', 'judges', 2, 8, 'free', E'Judges 2:8 — *And Joshua the son of Nun, the servant of Yahuah (LORD), died, being an hundred and ten years old.* The canon picking the seed-line up where Jasher 90:47 lays it down — the same servant, the same age.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja90_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja90_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-90-land-divided-by-lot',
+       E'The land divided for an inheritance — Joshua portions it by lot',
+       E'Jasher closes the book with the conquest finished and the land carved out: *And Yahuah (the Lord) said to Joshua, You are old, advanced in life, and a great part of the land remains to be possessed.* (Jasher 90:13). This is the canon''s own scene, word for word — *Now Joshua was old and stricken in years; and Yahuah (LORD) said unto him, Thou art old and stricken in years, and there remaineth yet very much land to be possessed.* (Joshua 13:1). Joshua does as he is told — *Now therefore divide this land for an inheritance to the nine tribes and to the half tribe of Manasseh, and Joshua rose up and did as Yahuah (the Lord) had spoken to him.* (Jasher 90:14) — exactly the charge of *Now therefore divide this land for an inheritance unto the nine tribes, and the half tribe of Manasseh,* (Joshua 13:7). The portioning is done by Eleazar and Joshua and the tribal heads — *These are the inheritances which Elazer the priest and Joshua the son of Nun and the heads of the fathers of the tribes portioned out to the children of Israel by lot in Shiloh* (Jasher 90:23) — the very list of *And these are the countries which the children of Yashar''el (Israel) inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Yashar''el (Israel), distributed for inheritance to them.* (Joshua 14:1). The twelve-tribe covenant people take their tribal inheritance — the gathering kept; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57225
+  FROM _session252_ja90_lookup sv, _session252_ja90_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=13
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=90 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-90-caleb-hebron',
+       E'Hebron given to Caleb — one portion above his brethren',
+       E'Jasher singles out Caleb just as the canon does: *And Joshua gave Mount Hebron to Caleb the son of Jephuneh, one portion above his brethren, as Yahuah (the Lord) had spoken through Moses.* (Jasher 90:17), so that *Therefore Hebron became an inheritance to Caleb and his children to this day.* (Jasher 90:18). The source reads the same — *And Joshua blessed him, and gave unto Caleb the son of Jephunneh Hebron for an inheritance.* (Joshua 14:13) — and gives the reason Jasher leaves implicit: *Hebron therefore became the inheritance of Caleb the son of Jephunneh the Kenezite unto this day, because that he wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel).* (Joshua 14:14). The faithful man inherits the city of the giants — the seed kept by faithfulness, not displaced.',
+       sv.verse_id, ev.verse_id, 'extras', 57228
+  FROM _session252_ja90_lookup sv, _session252_ja90_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=17
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=90 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-90-levi-no-inheritance',
+       E'Levi has no inheritance — Yahuah''s offerings are their portion',
+       E'Jasher keeps the priestly law intact: *But to the tribe at Levi he gave no inheritance, the offerings of Yahuah (the Lord) are their inheritance as Yahuah (the Lord) had spoken of them by the hand of Moses.* (Jasher 90:16), and the people give the Levites cities out of their own portions — *And the children of Israel gave cities to the Levites from their own inheritance, and suburbs for their cattle, and property, as Yahuah (the Lord) had commanded Moses* (Jasher 90:20). The canon says it the same way — *Only unto the tribe of Levi he gave none inheritance; the sacrifices of Yahuah Elohim (the LORD God) of Yashar''el (Israel) made by fire are their inheritance, as he said unto them.* (Joshua 13:14) — grounded in the Torah statute *But the Levites shall do the service of the tabernacle of the congregation, and they shall bear their iniquity: it shall be a statute for ever throughout your generations, that among the children of Yashar''el (Israel) they have no inheritance.* (Numbers 18:23). Torah-before-the-conquest still standing; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57231
+  FROM _session252_ja90_lookup sv, _session252_ja90_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=16
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=90 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-90-rest-from-enemies',
+       E'Yahuah gives rest — not one thing failed of all the good He spoke',
+       E'Jasher seals the conquest with the canon''s oath-keeping refrain: *And Yahuah (the Lord) gave the land to the Israelites, and they possessed it as Yahuah (the Lord) had spoken to them, and as Yahuah (the Lord) had sworn to their ancestors.* (Jasher 90:24), *And Yahuah (the Lord) gave to the Israelites rest from all their enemies around them, and no man stood up against them ... and not one thing failed of all the good which Yahuah (the Lord) had spoken to the children of Israel, yea Yahuah (the Lord) performed every thing.* (Jasher 90:25). The source says it twice over — *And Yahuah (LORD) gave unto Yashar''el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein.* (Joshua 21:43) and *And Yahuah (LORD) gave them rest round about, according to all that he sware unto their fathers: and there stood not a man of all their enemies before them; Yahuah (LORD) delivered all their enemies into their hand.* (Joshua 21:44). The covenant sworn to Abraham, Isaac, and Jacob comes to pass — the seed delivered into the land, election kept.',
+       sv.verse_id, ev.verse_id, 'extras', 57234
+  FROM _session252_ja90_lookup sv, _session252_ja90_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=24
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=90 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-90-joshua-farewell-covenant',
+       E'Joshua''s farewell — keep the law of Moses, cleave to Yahuah',
+       E'Joshua''s last charge in Jasher is the canon''s covenant at Shechem: *Now therefore strengthen yourselves to keep and to do all the words of the law of Moses, not to deviate from it to the right or to the left ... but you shall cleave to Yahuah your Elohim (the Lord your God), as you have done to this day.* (Jasher 90:34); the people answer *We will serve Yahuah our Elohim (the Lord our God) all our days, we and our children, and our children''s children, and our seed for ever.* (Jasher 90:36), and *Joshua made a covenant with the people on that day* (Jasher 90:37). The source reads the same — *Be ye therefore very courageous to keep and to do all that is written in the book of the law of Moses, that ye turn not aside therefrom to the right hand or to the left;* (Joshua 23:6) — and the people''s answer *And the people said unto Joshua, Yahuah Eloheinu (The LORD our God) will we serve, and his voice will we obey.* (Joshua 24:24). The Torah-not-curse standard runs straight from Moses — *Ye shall observe to do therefore as Yahuah Elohaychem (the LORD your God) hath commanded you: ye shall not turn aside to the right hand or to the left.* (Deuteronomy 5:32). Torah stands; the covenant eternal — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57237
+  FROM _session252_ja90_lookup sv, _session252_ja90_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=33
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=90 AND ev.verse_number=37
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-90-bones-of-the-twelve',
+       E'The bones of the twelve sons of Jacob buried in the land',
+       E'Jasher records a burial the canon only names in passing: *they buried the coffins of the tribes of their ancestors, which they had brought up from Egypt ... the twelve sons of Jacob did the children of Israel bury, each man in the possession of his children.* (Jasher 90:38), and *the bones of Joseph they buried in Shechem, in the part of the field which Jacob had purchased from Hamor, and which became to Joseph for an inheritance.* (Jasher 90:45). The canon carries Joseph''s oath that drives it — *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* (Genesis 50:25) — Moses honoring it at the Exodus, *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* (Exodus 13:19) — and the burial itself, *And the bones of Joseph, which the children of Yashar''el (Israel) brought up out of Egypt, buried they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor the father of Shechem for an hundred pieces of silver* (Joshua 24:32). Jubilees narrates the same carrying-up of all twelve — *the children of Yashar''el (Israel) brought forth all the bones of the children of Jacob save the bones of Joseph, and they buried them in the field in the double cave in the mountain.* (Jubilees 46:9). The same scene, three witnesses; the seed gathered home even in death.',
+       sv.verse_id, ev.verse_id, 'extras', 57240
+  FROM _session252_ja90_lookup sv, _session252_ja90_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=38
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=90 AND ev.verse_number=46
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-90-death-of-joshua',
+       E'The death of Joshua — buried in Timnath-serach in Mount Ephraim',
+       E'Jasher ends the book at the grave of the conqueror: *And at the end of two years, Joshua the son of Nun died, one hundred and ten years old ... and Israel served Yahuah (the Lord) all the days of his life.* (Jasher 90:47), and *the children of Israel buried Joshua in the border of his inheritance, in Timnath-serach, which was given to him in Mount Ephraim.* (Jasher 90:49). The canon closes Joshua the same way — *And it came to pass after these things, that Joshua the son of Nun, the servant of Yahuah (LORD), died, being an hundred and ten years old.* (Joshua 24:29), *And they buried him in the border of his inheritance in Timnath-serah, which is in mount Ephraim* (Joshua 24:30), *And Yashar''el (Israel) served Yahuah (LORD) all the days of Joshua* (Joshua 24:31) — and Judges picks the thread up, *And Joshua the son of Nun, the servant of Yahuah (LORD), died, being an hundred and ten years old.* (Judges 2:8). The same servant, the same age, the same hill in Ephraim — Jasher hands the seed-line off to the canon and falls silent; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57243
+  FROM _session252_ja90_lookup sv, _session252_ja90_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=47
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=90 AND ev.verse_number=49
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-90-land-divided-by-lot
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 13:1 — *Now Joshua was old and stricken in years; and Yahuah (LORD) said unto him, Thou art old and stricken in years, and there remaineth yet very much land to be possessed.* The canon''s own opening of the land-division charge that Jasher 90:13 retells verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-land-divided-by-lot'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=13 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 13:7 — *Now therefore divide this land for an inheritance unto the nine tribes, and the half tribe of Manasseh,* The exact command to divide for the nine tribes and half-Manasseh that Joshua rises to obey in Jasher 90:14.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-land-divided-by-lot'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=13 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 14:1 — *And these are the countries which the children of Yashar''el (Israel) inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Yashar''el (Israel), distributed for inheritance to them.* The same Eleazar-Joshua-tribal-heads portioning by lot that Jasher 90:23 records at Shiloh.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-land-divided-by-lot'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=14 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 14:2 — *By lot was their inheritance, as Yahuah (LORD) commanded by the hand of Moses, for the nine tribes, and for the half tribe.* The lot-divided inheritance commanded by the hand of Moses that Jasher 90:19 echoes.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-land-divided-by-lot'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=14 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-90-caleb-hebron
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 14:13 — *And Joshua blessed him, and gave unto Caleb the son of Jephunneh Hebron for an inheritance.* The same gift of Hebron to Caleb that Jasher 90:17 records as one portion above his brethren.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-caleb-hebron'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=14 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 14:14 — *Hebron therefore became the inheritance of Caleb the son of Jephunneh the Kenezite unto this day, because that he wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel).* The canon''s ''unto this day'' that Jasher 90:18 carries word for word, adding the reason: Caleb wholly followed Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-caleb-hebron'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=14 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-90-levi-no-inheritance
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 13:14 — *Only unto the tribe of Levi he gave none inheritance; the sacrifices of Yahuah Elohim (the LORD God) of Yashar''el (Israel) made by fire are their inheritance, as he said unto them.* The same Levite exception — Yahuah''s offerings as their portion — that Jasher 90:16 carries.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-levi-no-inheritance'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=13 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 18:23 — *But the Levites shall do the service of the tabernacle of the congregation, and they shall bear their iniquity: it shall be a statute for ever throughout your generations, that among the children of Yashar''el (Israel) they have no inheritance.* The Torah statute given by the hand of Moses that Jasher 90:16 says was ''spoken of them by the hand of Moses.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-levi-no-inheritance'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-90-rest-from-enemies
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 21:43 — *And Yahuah (LORD) gave unto Yashar''el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein.* The sworn-to-the-fathers land-gift that Jasher 90:24 restates as Yahuah giving and Israel possessing.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-rest-from-enemies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=21 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 21:44 — *And Yahuah (LORD) gave them rest round about, according to all that he sware unto their fathers: and there stood not a man of all their enemies before them; Yahuah (LORD) delivered all their enemies into their hand.* The rest-from-enemies, no-man-stood promise that Jasher 90:25 amplifies into ''not one thing failed of all the good.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-rest-from-enemies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=21 AND tv.verse_number=44
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-90-joshua-farewell-covenant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 23:6 — *Be ye therefore very courageous to keep and to do all that is written in the book of the law of Moses, that ye turn not aside therefrom to the right hand or to the left;* Joshua''s same charge — keep the law of Moses, turn not right or left — that Jasher 90:34 carries.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-joshua-farewell-covenant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=23 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 5:32 — *Ye shall observe to do therefore as Yahuah Elohaychem (the LORD your God) hath commanded you: ye shall not turn aside to the right hand or to the left.* Moses'' original ''turn not right or left'' Torah standard that Joshua repeats in Jasher 90:34 — the law standing, not new.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-joshua-farewell-covenant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 24:24 — *And the people said unto Joshua, Yahuah Eloheinu (The LORD our God) will we serve, and his voice will we obey.* The people''s covenant answer that Jasher 90:36 expands to ''all our days ... and our seed for ever.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-joshua-farewell-covenant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 31:6 — *Be strong and of a good courage, fear not, nor be afraid of them: for Yahuah Elohayka (the LORD thy God), he it is that doth go with thee; he will not fail thee, nor forsake thee.* The ''strengthen yourselves'' charge whose root is Moses'' farewell, echoed in Joshua''s own farewell at Jasher 90:33.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-joshua-farewell-covenant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=31 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-90-bones-of-the-twelve
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 24:32 — *And the bones of Joseph, which the children of Yashar''el (Israel) brought up out of Egypt, buried they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor the father of Shechem for an hundred pieces of silver: and it became the inheritance of the children of Joseph.* The exact Shechem burial of Joseph''s bones in Jacob''s purchased field that Jasher 90:45 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-bones-of-the-twelve'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=45
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 50:25 — *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* The oath that made Israel carry the coffins up from Egypt, fulfilled in the burial of Jasher 90:38.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-bones-of-the-twelve'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=38
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* The Exodus moment Israel took up the bones from Egypt — ''which they had brought up from Egypt'' in Jasher 90:38.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-bones-of-the-twelve'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=38
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:9 — *the children of Yashar''el (Israel) brought forth all the bones of the children of Jacob save the bones of Joseph, and they buried them in the field in the double cave in the mountain.* The same burying of the bones of the twelve sons of Jacob that Jasher 90:38 narrates — the live Jubilees apparatus self-link.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-bones-of-the-twelve'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=38
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-90-death-of-joshua
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 24:29 — *And it came to pass after these things, that Joshua the son of Nun, the servant of Yahuah (LORD), died, being an hundred and ten years old.* The death of Joshua at a hundred and ten that Jasher 90:47 records word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-death-of-joshua'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=47
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 24:30 — *And they buried him in the border of his inheritance in Timnath-serah, which is in mount Ephraim, on the north side of the hill of Gaash.* The same burial in Timnath-serah in Mount Ephraim that Jasher 90:49 carries.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-death-of-joshua'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=49
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 24:31 — *And Yashar''el (Israel) served Yahuah (LORD) all the days of Joshua, and all the days of the elders that overlived Joshua, and which had known all the works of Yahuah (LORD), that he had done for Yashar''el (Israel).* The ''Israel served Yahuah all the days of his life'' note that Jasher 90:47 closes on.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-death-of-joshua'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=47
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Judges 2:8 — *And Joshua the son of Nun, the servant of Yahuah (LORD), died, being an hundred and ten years old.* The canon picking the seed-line up where Jasher 90:47 lays it down — the same servant, the same age.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja90_lookup sv, _session252_ja90_lookup tv
+ WHERE t.slug='jasher-90-death-of-joshua'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=90 AND sv.verse_number=47
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=2 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_91.sql (session252 jasher 91) -----
+-- Source anchor: jasher/jasher ch91. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja91 (view _session252_ja91_lookup). Sort band base 57250, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja91_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-91-judah-goes-up-first
+  ('jasher', 'jasher', 91, 2, 'canon', 'judges', 1, 1, 'free', E'Judges 1:1 — *Now after the death of Joshua it came to pass, that the children of Yashar''el (Israel) asked Yahuah (LORD), saying, Who shall go up for us against the Canaanites first, to fight against them?* Jasher 91:1-2 retells the very opening of Judges, picking up the story after Joshua''s death.'),
+  ('jasher', 'jasher', 91, 2, 'canon', 'judges', 1, 2, 'free', E'Judges 1:2 — *And Yahuah (LORD) said, Yahudah (Judah) shall go up: behold, I have delivered the land into his hand.* Jasher 91:2 carries the same oracle — Judah the lion-tribe leads the conquest of the inheritance.'),
+  ('jasher', 'jasher', 91, 3, 'canon', 'judges', 1, 3, 'free', E'Judges 1:3 — *And Yahudah (Judah) said unto Simeon his brother, Come up with me into my lot, that we may fight against the Canaanites; and I likewise will go with thee into thy lot. So Simeon went with him.* Jasher 91:3 matches the brother-tribes'' alliance verse for verse.'),
+  ('jasher', 'jasher', 91, 4, 'canon', 'judges', 1, 4, 'free', E'Judges 1:4 — *And Yahudah (Judah) went up; and Yahuah (LORD) delivered the Canaanites and the Perizzites into their hand: and they slew of them in Bezek ten thousand men.* Jasher 91:4 names the same ten thousand smitten in Bezek.'),
+  ('jasher', 'jasher', 91, 6, 'canon', 'judges', 1, 7, 'free', E'Judges 1:7 — *And Adoni-bezek said, Threescore and ten kings, having their thumbs and their great toes cut off, gathered their meat under my table: as I have done, so Elohim (God) hath requited me. And they brought him to Jerusalem, and there he died.* Jasher 91:6 carries the king''s own confession that Elohim has requited his cruelty in kind.'),
+  -- thread: jasher-91-joseph-takes-bethel-luz
+  ('jasher', 'jasher', 91, 8, 'canon', 'judges', 1, 22, 'free', E'Judges 1:22 — *And the house of Joseph, they also went up against Beth-el: and Yahuah (LORD) was with them.* Jasher 91:8 carries the same line — Joseph''s house goes up to Bethel and Yahuah is with them.'),
+  ('jasher', 'jasher', 91, 9, 'canon', 'judges', 1, 24, 'free', E'Judges 1:24 — *And the spies saw a man come forth out of the city, and they said unto him, Shew us, we pray thee, the entrance into the city, and we will shew thee mercy.* Jasher 91:9 retells the spies catching the man at the gate and pledging kindness.'),
+  ('jasher', 'jasher', 91, 10, 'canon', 'judges', 1, 25, 'free', E'Judges 1:25 — *And when he shewed them the entrance into the city, they smote the city with the edge of the sword; but they let go the man and all his family.* Jasher 91:10-11 matches it — the city smitten, the man and his family spared.'),
+  ('jasher', 'jasher', 91, 11, 'canon', 'judges', 1, 26, 'free', E'Judges 1:26 — *And the man went into the land of the Hittites, and built a city, and called the name thereof Luz: which is the name thereof unto this day.* Jasher 91:11 carries the spared man building a city among the Hittites and calling its name Luz.'),
+  -- thread: jasher-91-oath-to-the-fathers-fulfilled
+  ('jasher', 'jasher', 91, 14, 'canon', 'joshua', 21, 43, 'free', E'Joshua 21:43 — *And Yahuah (LORD) gave unto Yashar''el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein.* Jasher 91:14-15 declares the same completion — the land sworn to the fathers given and possessed.'),
+  ('jasher', 'jasher', 91, 15, 'canon', 'joshua', 21, 45, 'free', E'Joshua 21:45 — *There failed not ought of any good thing which Yahuah (LORD) had spoken unto the house of Yashar''el (Israel); all came to pass.* Jasher 91:14''s ''he accomplished all the words which he had spoken'' echoes the canon''s tally that none of Yahuah''s good words failed.'),
+  ('jasher', 'jasher', 91, 14, 'canon', 'genesis', 15, 18, 'free', E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates.* Jasher 91:14 names the oath to Abraham, Isaac, and Jacob now accomplished — this is its origin in the cut covenant.'),
+  ('jasher', 'jasher', 91, 14, 'canon', 'genesis', 17, 8, 'free', E'Genesis 17:8 — *And I will give unto thee, and to thy seed after thee, the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession; and I will be their Elohim (God).* Jasher 91:14''s land-oath to the patriarchs is the everlasting possession promised here to Abraham''s seed.'),
+  ('jasher', 'jasher', 91, 15, 'jubilees', 'jubilees', 13, 20, 'extras', E'Jubilees 13:20 — *For all the land which you see I shall give to you and to your seed for ever, and I shall make your seed as the sand of the sea: though a man may number the dust of the earth, yet your seed shall not be numbered.* The live Jubilees apparatus carries the same land-grant to Abraham''s seed that Jasher 91:15 records as given to all Israel.'),
+  -- thread: jasher-91-served-yahuah-all-days-of-joshua
+  ('jasher', 'jasher', 91, 11, 'canon', 'joshua', 24, 31, 'free', E'Joshua 24:31 — *And Yashar''el (Israel) served Yahuah (LORD) all the days of Joshua, and all the days of the elders that overlived Joshua, and which had known all the works of Yahuah (LORD), that he had done for Yashar''el (Israel).* Jasher 91:11 carries the same faithfulness of the generation that outlived Joshua and saw Yahuah''s great work.'),
+  ('jasher', 'jasher', 91, 15, 'canon', 'joshua', 21, 44, 'free', E'Joshua 21:44 — *And Yahuah (LORD) gave them rest round about, according to all that he sware unto their fathers: and there stood not a man of all their enemies before them; Yahuah (LORD) delivered all their enemies into their hand.* Jasher 91:15''s rest from those around them and secure dwelling is the canon''s same sworn rest.'),
+  ('jasher', 'jasher', 91, 15, 'canon', 'joshua', 23, 1, 'free', E'Joshua 23:1 — *And it came to pass a long time after that Yahuah (LORD) had given rest unto Yashar''el (Israel) from all their enemies round about, that Joshua waxed old and stricken in age.* Jasher 91:15 echoes the granted rest from all the surrounding enemies that frames Joshua''s closing days.'),
+  -- thread: jasher-91-the-end-be-of-good-courage
+  ('jasher', 'jasher', 91, 16, 'canon', 'joshua', 10, 13, 'free', E'Joshua 10:13 — *And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies. Is not this written in the book of Jasher? So the sun stood still in the midst of heaven, and hasted not to go down about a whole day.* Jasher 91:16 closes the very Book of Jasher that the canon names by name as its witness to the sun standing still at Gibeon.'),
+  ('jasher', 'jasher', 91, 17, 'canon', 'joshua', 1, 9, 'free', E'Joshua 1:9 — *Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest.* Jasher 91:17''s closing charge to be of good courage echoes the very word given Joshua to begin the conquest the book has just finished telling.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja91_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja91_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-91-judah-goes-up-first',
+       E'Judah goes up first — Adoni-bezek requited',
+       E'Jasher''s last chapter opens after Joshua''s death, exactly where the canon''s book of Judges begins: *And the children of Israel asked of Yahuah (the Lord), saying, Who shall first go up for us to the Canaanites to fight against them? and Yahuah (the Lord) said, Judah shall go up* (Jasher 91:2). The retelling tracks Judges word for word — Judah goes up first, Simeon joins him, and the same king is caught and maimed. **It ain''t new:** the source stands on the page beside it. *Now after the death of Joshua it came to pass, that the children of Yashar''el (Israel) asked Yahuah (LORD), saying, Who shall go up for us against the Canaanites first, to fight against them?* (Judges 1:1). *And Yahuah (LORD) said, Yahudah (Judah) shall go up: behold, I have delivered the land into his hand* (Judges 1:2) — Judah, the lion-tribe of Genesis 49, leads the inheritance. *And Yahudah (Judah) said unto Simeon his brother, Come up with me into my lot, that we may fight against the Canaanites; and I likewise will go with thee into thy lot. So Simeon went with him* (Judges 1:3) — the brother-tribes share the lot. And Adoni-bezek confesses the measure he is measured by: *And Adoni-bezek said, Threescore and ten kings, having their thumbs and their great toes cut off, gathered their meat under my table: as I have done, so Elohim (God) hath requited me. And they brought him to Jerusalem, and there he died* (Judges 1:7).',
+       sv.verse_id, ev.verse_id, 'extras', 57250
+  FROM _session252_ja91_lookup sv, _session252_ja91_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=2
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=91 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-91-joseph-takes-bethel-luz',
+       E'The house of Joseph takes Bethel — the man spared at Luz',
+       E'Jasher next follows Joseph''s house to Bethel exactly as Judges 1 does: *And the children of Joseph went up to Bethel, the same is Luz, and Yahuah (the Lord) was with them* (Jasher 91:8). The spies catch a man, he shows the gate, the city falls, and the man is let go to build a new Luz. The canon retells the identical scene: *And the house of Joseph, they also went up against Beth-el: and Yahuah (LORD) was with them* (Judges 1:22). *And the spies saw a man come forth out of the city, and they said unto him, Shew us, we pray thee, the entrance into the city, and we will shew thee mercy* (Judges 1:24). *And when he shewed them the entrance into the city, they smote the city with the edge of the sword; but they let go the man and all his family* (Judges 1:25). And the spared man rebuilds the name elsewhere: *And the man went into the land of the Hittites, and built a city, and called the name thereof Luz: which is the name thereof unto this day* (Judges 1:26). It ain''t new — Jasher 91:9-11 is Judges 1 unfolded.',
+       sv.verse_id, ev.verse_id, 'extras', 57253
+  FROM _session252_ja91_lookup sv, _session252_ja91_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=91 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-91-oath-to-the-fathers-fulfilled',
+       E'He accomplished His word to Abraham, Isaac, and Jacob — the land oath kept',
+       E'Jasher closes the conquest by declaring the covenant kept to the letter: *And he accomplished all the words which he had spoken to Abraham, Isaac, and Jacob, and the oath which he had sworn, to give to them and to their children, the land of the Canaanites* (Jasher 91:14). This is the seed-line oath of Genesis brought home — election precedes confession, the land given because Yahuah swore it. The canon names the same completion: *And Yahuah (LORD) gave unto Yashar''el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein* (Joshua 21:43), *There failed not ought of any good thing which Yahuah (LORD) had spoken unto the house of Yashar''el (Israel); all came to pass* (Joshua 21:45). The oath itself stood from Abraham: *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18), an everlasting possession — *And I will give unto thee, and to thy seed after thee, the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession; and I will be their Elohim (God)* (Genesis 17:8). The Jubilees apparatus carries the identical promise to the same seed: *For all the land which you see I shall give to you and to your seed for ever* (Jubilees 13:20). It ain''t new — Jasher 91:14-15 is the Genesis oath fulfilled.',
+       sv.verse_id, ev.verse_id, 'extras', 57256
+  FROM _session252_ja91_lookup sv, _session252_ja91_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=91 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-91-served-yahuah-all-days-of-joshua',
+       E'Israel served Yahuah all the days of Joshua and the elders — rest in the land',
+       E'Jasher records the people''s faithfulness and the rest that followed: *the children of Israel served Yahuah (the Lord) all the days of Joshua, and all the days of the elders, who had lengthened their days after Joshua, and saw the great work of Yahuah (the Lord), which he had performed for Israel* (Jasher 91:11), and *Yahuah (the Lord) gave them rest from those around them, and the children of Israel dwelt securely in their cities* (Jasher 91:15). Torah-keeping stands — the generation that saw the works held the way. The canon says it with the same words: *And Yashar''el (Israel) served Yahuah (LORD) all the days of Joshua, and all the days of the elders that overlived Joshua, and which had known all the works of Yahuah (LORD), that he had done for Yashar''el (Israel)* (Joshua 24:31), and the rest is named too: *And Yahuah (LORD) gave them rest round about, according to all that he sware unto their fathers: and there stood not a man of all their enemies before them; Yahuah (LORD) delivered all their enemies into their hand* (Joshua 21:44), *And it came to pass a long time after that Yahuah (LORD) had given rest unto Yashar''el (Israel) from all their enemies round about* (Joshua 23:1). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 57259
+  FROM _session252_ja91_lookup sv, _session252_ja91_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=11
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=91 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-91-the-end-be-of-good-courage',
+       E'THE END — be of good courage, all you that trust in Yahuah',
+       E'Jasher seals the whole book — the Book of the Upright — with a benediction and a charge: *Blessed be Yahuah (the Lord) for ever, amen, and amen* (Jasher 91:16), *Strengthen yourselves, and let the hearts of all you that trust in Yahuah (the Lord) be of good courage. THE END* (Jasher 91:17). This is the very book the canon names by name. When the sun stood still at Gibeon, Joshua''s own scripture pointed here: *And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies. Is not this written in the book of Jasher? So the sun stood still in the midst of heaven, and hasted not to go down about a whole day* (Joshua 10:13) — the canon citing the Upright as witness. The closing charge to be of good courage is the same word given to Joshua at the start of the conquest the book has just narrated to its end: *Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest* (Joshua 1:9). It ain''t new — the Upright closes on the trust and courage Torah commanded from the first.',
+       sv.verse_id, ev.verse_id, 'extras', 57262
+  FROM _session252_ja91_lookup sv, _session252_ja91_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=16
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=91 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-91-judah-goes-up-first
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Judges 1:1 — *Now after the death of Joshua it came to pass, that the children of Yashar''el (Israel) asked Yahuah (LORD), saying, Who shall go up for us against the Canaanites first, to fight against them?* Jasher 91:1-2 retells the very opening of Judges, picking up the story after Joshua''s death.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-judah-goes-up-first'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Judges 1:2 — *And Yahuah (LORD) said, Yahudah (Judah) shall go up: behold, I have delivered the land into his hand.* Jasher 91:2 carries the same oracle — Judah the lion-tribe leads the conquest of the inheritance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-judah-goes-up-first'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Judges 1:3 — *And Yahudah (Judah) said unto Simeon his brother, Come up with me into my lot, that we may fight against the Canaanites; and I likewise will go with thee into thy lot. So Simeon went with him.* Jasher 91:3 matches the brother-tribes'' alliance verse for verse.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-judah-goes-up-first'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Judges 1:4 — *And Yahudah (Judah) went up; and Yahuah (LORD) delivered the Canaanites and the Perizzites into their hand: and they slew of them in Bezek ten thousand men.* Jasher 91:4 names the same ten thousand smitten in Bezek.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-judah-goes-up-first'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Judges 1:7 — *And Adoni-bezek said, Threescore and ten kings, having their thumbs and their great toes cut off, gathered their meat under my table: as I have done, so Elohim (God) hath requited me. And they brought him to Jerusalem, and there he died.* Jasher 91:6 carries the king''s own confession that Elohim has requited his cruelty in kind.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-judah-goes-up-first'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-91-joseph-takes-bethel-luz
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Judges 1:22 — *And the house of Joseph, they also went up against Beth-el: and Yahuah (LORD) was with them.* Jasher 91:8 carries the same line — Joseph''s house goes up to Bethel and Yahuah is with them.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-joseph-takes-bethel-luz'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Judges 1:24 — *And the spies saw a man come forth out of the city, and they said unto him, Shew us, we pray thee, the entrance into the city, and we will shew thee mercy.* Jasher 91:9 retells the spies catching the man at the gate and pledging kindness.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-joseph-takes-bethel-luz'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Judges 1:25 — *And when he shewed them the entrance into the city, they smote the city with the edge of the sword; but they let go the man and all his family.* Jasher 91:10-11 matches it — the city smitten, the man and his family spared.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-joseph-takes-bethel-luz'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Judges 1:26 — *And the man went into the land of the Hittites, and built a city, and called the name thereof Luz: which is the name thereof unto this day.* Jasher 91:11 carries the spared man building a city among the Hittites and calling its name Luz.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-joseph-takes-bethel-luz'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-91-oath-to-the-fathers-fulfilled
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 21:43 — *And Yahuah (LORD) gave unto Yashar''el (Israel) all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein.* Jasher 91:14-15 declares the same completion — the land sworn to the fathers given and possessed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-oath-to-the-fathers-fulfilled'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=21 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 21:45 — *There failed not ought of any good thing which Yahuah (LORD) had spoken unto the house of Yashar''el (Israel); all came to pass.* Jasher 91:14''s ''he accomplished all the words which he had spoken'' echoes the canon''s tally that none of Yahuah''s good words failed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-oath-to-the-fathers-fulfilled'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=21 AND tv.verse_number=45
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates.* Jasher 91:14 names the oath to Abraham, Isaac, and Jacob now accomplished — this is its origin in the cut covenant.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-oath-to-the-fathers-fulfilled'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 17:8 — *And I will give unto thee, and to thy seed after thee, the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession; and I will be their Elohim (God).* Jasher 91:14''s land-oath to the patriarchs is the everlasting possession promised here to Abraham''s seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-oath-to-the-fathers-fulfilled'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 13:20 — *For all the land which you see I shall give to you and to your seed for ever, and I shall make your seed as the sand of the sea: though a man may number the dust of the earth, yet your seed shall not be numbered.* The live Jubilees apparatus carries the same land-grant to Abraham''s seed that Jasher 91:15 records as given to all Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-oath-to-the-fathers-fulfilled'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=15
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-91-served-yahuah-all-days-of-joshua
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 24:31 — *And Yashar''el (Israel) served Yahuah (LORD) all the days of Joshua, and all the days of the elders that overlived Joshua, and which had known all the works of Yahuah (LORD), that he had done for Yashar''el (Israel).* Jasher 91:11 carries the same faithfulness of the generation that outlived Joshua and saw Yahuah''s great work.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-served-yahuah-all-days-of-joshua'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 21:44 — *And Yahuah (LORD) gave them rest round about, according to all that he sware unto their fathers: and there stood not a man of all their enemies before them; Yahuah (LORD) delivered all their enemies into their hand.* Jasher 91:15''s rest from those around them and secure dwelling is the canon''s same sworn rest.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-served-yahuah-all-days-of-joshua'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=21 AND tv.verse_number=44
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 23:1 — *And it came to pass a long time after that Yahuah (LORD) had given rest unto Yashar''el (Israel) from all their enemies round about, that Joshua waxed old and stricken in age.* Jasher 91:15 echoes the granted rest from all the surrounding enemies that frames Joshua''s closing days.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-served-yahuah-all-days-of-joshua'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=23 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-91-the-end-be-of-good-courage
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 10:13 — *And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies. Is not this written in the book of Jasher? So the sun stood still in the midst of heaven, and hasted not to go down about a whole day.* Jasher 91:16 closes the very Book of Jasher that the canon names by name as its witness to the sun standing still at Gibeon.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-the-end-be-of-good-courage'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 1:9 — *Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest.* Jasher 91:17''s closing charge to be of good courage echoes the very word given Joshua to begin the conquest the book has just finished telling.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja91_lookup sv, _session252_ja91_lookup tv
+ WHERE t.slug='jasher-91-the-end-be-of-good-courage'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=91 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session252 — Jasher cross-references complete.'

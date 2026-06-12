@@ -1,0 +1,136 @@
+{
+  "edition": "jasher", "book": "jasher", "chapter": 86,
+  "session": "session252", "tag": "ja86", "base_band": 57125,
+  "threads": [
+    {
+      "slug": "jasher-86-census-after-the-plague",
+      "title": "The Second Census — numbered after the plague",
+      "summary_md": "Jasher opens its retelling of the second wilderness census: *At that time after the pestilence, Yahuah (the Lord) said to Moses, and to Elazer the son of Aaron the priest, saying, Number the heads of the whole community of the children of Israel, from twenty years old and upward, all that went forth in the army* (Jasher 86:1-2). It ain't new — this is the very command of Numbers 26, set in the same hour after the plague: *And it came to pass after the plague, that Yahuah (LORD) spake unto Moses and unto Eleazar the son of Aaron the priest, saying* (Numbers 26:1). Jasher's tally — *the number of all Israel was seven hundred thousand, seven hundred and thirty* (Jasher 86:3) — carries the canon's own count of the covenant seed mustered on the plains of Moab: *These were the numbered of the children of Yashar'el (Israel), six hundred thousand and a thousand seven hundred and thirty* (Numbers 26:51). The twelve-tribe nation is counted and kept, ready to inherit.",
+      "anchor_start_v": 1, "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 86, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 26, "tgt_v": 1,
+         "tier": "free",
+         "note": "Numbers 26:1 — *And it came to pass after the plague, that Yahuah (LORD) spake unto Moses and unto Eleazar the son of Aaron the priest, saying* — the canon sets the same census command after the plague to Moses and Eleazar, exactly as Jasher 86:1."},
+        {"src_ch": 86, "src_v": 2,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 26, "tgt_v": 64,
+         "tier": "free",
+         "note": "Numbers 26:64 — *But among these there was not a man of them whom Moses and Aaron the priest numbered, when they numbered the children of Yashar'el (Israel) in the wilderness of Sinai* — the canon's framing of the new generation numbered from twenty years old, as Jasher 86:2."},
+        {"src_ch": 86, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 26, "tgt_v": 51,
+         "tier": "free",
+         "note": "Numbers 26:51 — *These were the numbered of the children of Yashar'el (Israel), six hundred thousand and a thousand seven hundred and thirty* — the canon's mustered total of the covenant seed, the count Jasher 86:3 carries (seven hundred and thirty)."}
+      ]
+    },
+    {
+      "slug": "jasher-86-levi-numbered-from-a-month-old",
+      "title": "The Levites numbered from a month old",
+      "summary_md": "Jasher separately tallies the priestly tribe: *And the number of the children of Levi, from one month old and upward, was twenty-three thousand, and amongst these there was not a man of those numbered by Moses and Aaron in the wilderness of Sinai* (Jasher 86:4). The canon numbers Levi by the same rule and the same sum: *And those that were numbered of them were twenty and three thousand, all males from a month old and upward: for they were not numbered among the children of Yashar'el (Israel), because there was no inheritance given them among the children of Yashar'el (Israel)* (Numbers 26:62). And the canon, like Jasher, marks that none of the first-numbered remained: *But among these there was not a man of them whom Moses and Aaron the priest numbered, when they numbered the children of Yashar'el (Israel) in the wilderness of Sinai* (Numbers 26:64). The tribe set apart for the Name is kept and counted by its own ordinance.",
+      "anchor_start_v": 4, "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 86, "src_v": 4,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 26, "tgt_v": 62,
+         "tier": "free",
+         "note": "Numbers 26:62 — *And those that were numbered of them were twenty and three thousand, all males from a month old and upward: for they were not numbered among the children of Yashar'el (Israel), because there was no inheritance given them among the children of Yashar'el (Israel)* — the canon's identical Levite count from a month old, as Jasher 86:4."},
+        {"src_ch": 86, "src_v": 4,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 26, "tgt_v": 64,
+         "tier": "free",
+         "note": "Numbers 26:64 — *But among these there was not a man of them whom Moses and Aaron the priest numbered, when they numbered the children of Yashar'el (Israel) in the wilderness of Sinai* — the canon's note that none of the Sinai-numbered remained, echoed in Jasher 86:4."}
+      ]
+    },
+    {
+      "slug": "jasher-86-wilderness-generation-fallen",
+      "title": "The wilderness generation fallen — only Caleb and Joshua left",
+      "summary_md": "Jasher states the judgment that emptied the first census: *For Yahuah (the Lord) had told them that they would die in the wilderness, so they all died, and not one had been left of them excepting Caleb the son of Jephuneh, and Joshua the son of Nun* (Jasher 86:5). It ain't new — this is the very sentence of Numbers, the oath that fell on the murmurers: *Your carcases shall fall in this wilderness; and all that were numbered of you, according to your whole number, from twenty years old and upward, which have murmured against me* (Numbers 14:29), *Doubtless ye shall not come into the land, concerning which I sware to make you dwell therein, save Caleb the son of Jephunneh, and Joshua the son of Nun* (Numbers 14:30). And the canon's census names the same two survivors with the same words: *For Yahuah (LORD) had said of them, They shall surely die in the wilderness. And there was not left a man of them, save Caleb the son of Jephunneh, and Joshua the son of Nun* (Numbers 26:65). Election keeps the faithful seed; the two who believed the promise live to inherit it.",
+      "anchor_start_v": 5, "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 86, "src_v": 5,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 26, "tgt_v": 65,
+         "tier": "free",
+         "note": "Numbers 26:65 — *For Yahuah (LORD) had said of them, They shall surely die in the wilderness. And there was not left a man of them, save Caleb the son of Jephunneh, and Joshua the son of Nun* — the canon's census names the identical survivors and verdict of Jasher 86:5."},
+        {"src_ch": 86, "src_v": 5,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 14, "tgt_v": 29,
+         "tier": "free",
+         "note": "Numbers 14:29 — *Your carcases shall fall in this wilderness; and all that were numbered of you, according to your whole number, from twenty years old and upward, which have murmured against me* — the oath that they would die in the wilderness, the sentence Jasher 86:5 reports fulfilled."},
+        {"src_ch": 86, "src_v": 5,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 14, "tgt_v": 30,
+         "tier": "free",
+         "note": "Numbers 14:30 — *Doubtless ye shall not come into the land, concerning which I sware to make you dwell therein, save Caleb the son of Jephunneh, and Joshua the son of Nun* — the canon's reservation of the two faithful, exactly the exception of Jasher 86:5."}
+      ]
+    },
+    {
+      "slug": "jasher-86-war-against-midian",
+      "title": "The war against Midian — twelve thousand, Balaam slain",
+      "summary_md": "Jasher narrates the avenging of Midian: *And it was after this that Yahuah (the Lord) said to Moses, Say to the children of Israel to avenge upon Midian the cause of their brethren the children of Israel* (Jasher 86:6), and *the children of Israel chose from amongst them twelve thousand men, being one thousand to a tribe, and they went to Midian* (Jasher 86:7). It ain't new — the canon gives the same command and the same muster: *Avenge the children of Yashar'el (Israel) of the Midianites: afterward shalt thou be gathered unto thy people* (Numbers 31:2), and *there were delivered out of the thousands of Yashar'el (Israel), a thousand of every tribe, twelve thousand armed for war* (Numbers 31:5). Jasher then reports the slaughter — *they slew every male, also the five princes of Midian, and Balaam the son of Beor did they slay with the sword* (Jasher 86:8) — which the canon records in the same terms: *And they slew the kings of Midian, beside the rest of them that were slain; namely, Evi, and Rekem, and Zur, and Hur, and Reba, five kings of Midian: Balaam also the son of Beor they slew with the sword* (Numbers 31:8). The book of Joshua keeps the same memorial: *Balaam also the son of Beor, the soothsayer, did the children of Yashar'el (Israel) slay with the sword among them that were slain by them* (Joshua 13:22). The diviner who sold his counsel falls with the kingdom that hired him.",
+      "anchor_start_v": 6, "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 86, "src_v": 6,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 31, "tgt_v": 2,
+         "tier": "free",
+         "note": "Numbers 31:2 — *Avenge the children of Yashar'el (Israel) of the Midianites: afterward shalt thou be gathered unto thy people* — the canon's command to avenge Midian, the word Yahuah gives Moses in Jasher 86:6."},
+        {"src_ch": 86, "src_v": 7,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 31, "tgt_v": 5,
+         "tier": "free",
+         "note": "Numbers 31:5 — *So there were delivered out of the thousands of Yashar'el (Israel), a thousand of every tribe, twelve thousand armed for war* — the canon's muster of a thousand per tribe, the twelve thousand Jasher 86:7 sends to Midian."},
+        {"src_ch": 86, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 31, "tgt_v": 8,
+         "tier": "free",
+         "note": "Numbers 31:8 — *And they slew the kings of Midian, beside the rest of them that were slain; namely, Evi, and Rekem, and Zur, and Hur, and Reba, five kings of Midian: Balaam also the son of Beor they slew with the sword* — the canon names the five princes and Balaam's death by the sword, exactly as Jasher 86:8."},
+        {"src_ch": 86, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 13, "tgt_v": 22,
+         "tier": "free",
+         "note": "Joshua 13:22 — *Balaam also the son of Beor, the soothsayer, did the children of Yashar'el (Israel) slay with the sword among them that were slain by them* — the conquest record keeps the same memorial of Balaam's fall reported in Jasher 86:8."}
+      ]
+    },
+    {
+      "slug": "jasher-86-the-way-of-balaam",
+      "title": "The way of Balaam — the diviner who taught the stumbling-block",
+      "summary_md": "When Jasher records that *Balaam the son of Beor did they slay with the sword* (Jasher 86:8), it closes the account of the man the canon names as the one who taught Midian and Moab to seduce Israel into Baal-peor: *And Yashar'el (Israel) abode in Shittim, and the people began to commit whoredom with the daughters of Moab* (Numbers 25:1), *And Yashar'el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar'el (Israel)* (Numbers 25:3). The apostles read his end as the type of every false teacher who sells the truth for reward: *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15); *Woe unto them! ... ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* (Jude 1:11); and the risen Messiah names his very doctrine: *thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar'el (Israel), to eat things sacrificed unto idols, and to commit fornication* (Revelation 2:14). It ain't new — the seed-war runs through Balaam; the diviner who would corrupt the covenant people perishes with the kingdom that hired him.",
+      "anchor_start_v": 8, "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 86, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 25, "tgt_v": 3,
+         "tier": "free",
+         "note": "Numbers 25:3 — *And Yashar'el (Israel) joined himself unto Baal-peor: and the anger of Yahuah (LORD) was kindled against Yashar'el (Israel)* — the snare at Peor that Balaam's counsel set, the sin avenged in the Midian war Jasher 86:8 reports."},
+        {"src_ch": 86, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "2-peter", "tgt_ch": 2, "tgt_v": 15,
+         "tier": "free",
+         "note": "2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* — the apostle reads Balaam, slain in Jasher 86:8, as the type of the teacher who sells truth for reward."},
+        {"src_ch": 86, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "jude", "tgt_ch": 1, "tgt_v": 11,
+         "tier": "free",
+         "note": "Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* — Jude binds Balaam's error and ruin, the end Jasher 86:8 records by the sword."},
+        {"src_ch": 86, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 2, "tgt_v": 14,
+         "tier": "free",
+         "note": "Revelation 2:14 — *But I have a few things against thee, because thou hast there them that hold the doctrine of Balaam, who taught Balac to cast a stumblingblock before the children of Yashar'el (Israel), to eat things sacrificed unto idols, and to commit fornication* — the risen Messiah names the very counsel of the Balaam slain in Jasher 86:8."}
+      ]
+    },
+    {
+      "slug": "jasher-86-spoil-of-midian-plains-of-moab",
+      "title": "The spoil of Midian brought to the plains of Moab",
+      "summary_md": "Jasher closes the campaign with the spoil and the captives: *And the children of Israel took the wives of Midian captive, with their little ones and their cattle, and all belonging to them* (Jasher 86:9), *And they took all the spoil and all the prey, and they brought it to Moses and to Elazer to the plains of Moab* (Jasher 86:10). It ain't new — the canon records the same captives, prey, and destination: *And the children of Yashar'el (Israel) took all the women of Midian captives, and their little ones, and took the spoil of all their cattle, and all their flocks, and all their goods* (Numbers 31:9), and *they brought the captives, and the prey, and the spoil, unto Moses, and Eleazar the priest, and unto the congregation of the children of Yashar'el (Israel), unto the camp at the plains of Moab, which are by Jordan near Jericho* (Numbers 31:12). The whole muster gathers at the plains of Moab — the very staging-ground from which the second census numbered the seed: *These are they that were numbered by Moses and Eleazar the priest, who numbered the children of Yashar'el (Israel) in the plains of Moab by Jordan near Jericho* (Numbers 26:63). The people stand revenged and assembled at the threshold of the land.",
+      "anchor_start_v": 9, "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 86, "src_v": 9,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 31, "tgt_v": 9,
+         "tier": "free",
+         "note": "Numbers 31:9 — *And the children of Yashar'el (Israel) took all the women of Midian captives, and their little ones, and took the spoil of all their cattle, and all their flocks, and all their goods* — the canon's identical list of captives and spoil taken in Jasher 86:9."},
+        {"src_ch": 86, "src_v": 10,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 31, "tgt_v": 12,
+         "tier": "free",
+         "note": "Numbers 31:12 — *And they brought the captives, and the prey, and the spoil, unto Moses, and Eleazar the priest, and unto the congregation of the children of Yashar'el (Israel), unto the camp at the plains of Moab, which are by Jordan near Jericho* — the canon brings the spoil to Moses and Eleazar at the plains of Moab, exactly as Jasher 86:10."},
+        {"src_ch": 86, "src_v": 10,
+         "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 26, "tgt_v": 63,
+         "tier": "free",
+         "note": "Numbers 26:63 — *These are they that were numbered by Moses and Eleazar the priest, who numbered the children of Yashar'el (Israel) in the plains of Moab by Jordan near Jericho* — the same plains of Moab where Jasher 86:10 brings the spoil, the staging-ground of the second census."}
+      ]
+    }
+  ]
+}
