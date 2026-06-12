@@ -648,3 +648,32 @@ restored books (adam-eve-conflict@62000 etc.). Gates: anchor_check + resolve_che
 reconcile by ANCHOR (the slug-prefix is ambiguous). ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main`
 from /tmp/extracanon-xref-wt with keychain unlocked — 35 commits (85b660c..b568a1c) need to land (origin/main
 still 47a9e48); prod authoritative meanwhile.
+
+## RECEIPT — Apocrypha Pack 3: Sirach/Ecclesiasticus ch1–8 ✅ LIVE IN PROD
+- Applied 2026-06-11. AUTHORITATIVE (anchored on apocrypha/ecclesiasticus): **47 threads / 159 members**,
+  band 58300–58490, per-ch 6/6/5/5/6/6/7/6, 0 orphans. Migration
+  `session253_ecclesiasticus_extracanon_cross_references.sql`. Commit `8e05869`. Gates green (anchor 0,
+  resolve 0, FULL-LIBRARY PASS; 1 benign fidelity false-positive — see lesson).
+- The fear of Yahuah=wisdom's root + wisdom-before-all (1→Prov1:7/8:22/James1:5 + WisSol self-links); the
+  TRIAL/gold-in-the-furnace=James-1 (2→James1:2-12/1Pet1:7/Job23:10/WisSol3:6); the FIFTH COMMANDMENT + the
+  corban rebuke + humility (3→Exod20:12/Eph6:2/Matt15:4/James4:6 + Tobit alms); mercy-to-the-poor (4→Deut15:7/
+  Prov19:17/Matt25:35/James1:27/2:15); presume-not-on-mercy/swift-to-hear (5→Luke12:19/Rom2:4/James1:19/2Cor6:2);
+  the FAITHFUL FRIEND + wisdom's yoke (6→Prov17:17/John15:13/Matt11:29); remember-the-end (7→Deut32:29/Ps90:12);
+  prudence among men (8→Prov22:24/13:20/Matt5:25). James = Sirach's closest NT sibling.
+- ⚑ FIDELITY LESSON: verify_fidelity's norm() STRIPS parenthetical content, so a target verse that is WHOLLY
+  parenthetical in the source (e.g. KJV 2 Cor 6:2 = "(For he saith... salvation.)") norms to EMPTY → a FALSE
+  flag regardless of the note. Verify: if the lone-flagged target verse is fully wrapped in "(...)" and the
+  note quotes it verbatim + resolve_check passes, it's BENIGN — proceed. (Can't be fixed by editing the note.)
+- Push blocked. origin/main 47a9e48; local HEAD `8e05869` (37 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 3 PSEUDEPIGRAPHA + Wisdom of Solomon COMPLETE + Sirach ch1-8 LIVE = 1303
+threads/4672 members. NEXT = Sirach Pack 2 ch9-16, marching through 51 ch (~7 packs). KEY chapters ahead:
+ch24 (wisdom from the mouth of the Most High, dwells in Jacob → John 1/Prov 8/Col 1 — the Logos), ch44-50
+('let us now praise famous men' Enoch→Simon → Heb 11 + self-link the live 1Enoch/Jubilees/Jasher). After
+Sirach: Tobit (@59000, Raphael/Tob13 New-Jerusalem→Rev21), Judith, 1-2 Maccabees (2Macc7 resurrection→Heb11),
+Baruch, 1-2 Esdras (2Esdras→Revelation), Susanna, Bel, Manasseh, Song-of-Three, rest-of-Esther. Then the
+smaller restored books (adam-eve-conflict@62000, apoc-of-abraham@63000, ascension-isaiah@64000, sonnini@65000,
+apostolic-fathers@70000, mrjames@75000, josephus defer). Brief MINION_BRIEF_APOCRYPHA.md. Gates take
+`apocrypha <book> <prefix>`; reconcile by ANCHOR (sed _wischeck.py → _sircheck.py pattern). ⚠️ FIRST NEXT
+SESSION: retry `git push origin HEAD:main` from /tmp/extracanon-xref-wt with keychain unlocked — 37 commits
+(85b660c..8e05869) need to land (origin/main still 47a9e48); prod authoritative meanwhile.
