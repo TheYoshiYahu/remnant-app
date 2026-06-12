@@ -1,0 +1,260 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 47,
+  "session": "session253",
+  "tag": "sir47",
+  "base_band": 59450,
+  "threads": [
+    {
+      "slug": "sirach-47-nathan-the-prophet",
+      "title": "Nathan rose up in the time of David",
+      "summary_md": "Ben Sira opens the chapter with the prophet who stood at David's side: *And after him rose up Nathan to prophesy in the time of David* (Sirach 47:1). It was Nathan who carried Yahuah's word both ways — the everlasting covenant and the searching rebuke. He brought the promise of the seed and the throne: *And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom* (2 Samuel 7:12). And when David fell, the same prophet did not flatter him but named the sin: *And Nathan said to David, Thou art the man. Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), I anointed thee king over Yashar'el (Israel), and I delivered thee out of the hand of Saul* (2 Samuel 12:7). The prophet beside the king is the witness that the throne is held to the covenant, not above it.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 47,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "2-samuel",
+          "tgt_ch": 7,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "2 Samuel 7:12 — *And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.* This is the very promise Nathan carried in the time of David that Sirach 47:1 sets at the head of David's praise."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "2-samuel",
+          "tgt_ch": 12,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "2 Samuel 12:7 — *And Nathan said to David, Thou art the man. Thus saith Yahuah Elohim (the LORD God) of Yashar'el (Israel), I anointed thee king over Yashar'el (Israel), and I delivered thee out of the hand of Saul.* The prophet of Sirach 47:1 is the same who held even the anointed king to the covenant."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-47-david-slew-the-giant",
+      "title": "He slew the giant when he was yet young",
+      "summary_md": "Ben Sira remembers the shepherd-boy who feared no beast and no champion: *He played with lions as with kids, and with bears as with lambs* (Sirach 47:3), and *Slew he not a giant, when he was yet but young? and did he not take away reproach from the people, when he lifted up his hand with the stone in the sling, and beat down the boasting of Goliath?* (Sirach 47:4). The Tanakh tells it plainly — David came in no armour but in the Name: *Then said David to the Philistine, Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of Yahuah Tseva'ot (LORD of hosts), the Elohim (God) of the armies of Yashar'el (Israel), whom thou hast defied* (1 Samuel 17:45), and *So David prevailed over the Philistine with a sling and with a stone, and smote the Philistine, and slew him; but there was no sword in the hand of David* (1 Samuel 17:50). Ben Sira names the reason the boy prevailed: *For he called upon the most high Yahuah (God); and he gave him strength in his right hand to slay that mighty warrior, and set up the horn of his people* (Sirach 47:5). David is named again among the faithful who *subdued kingdoms*: *And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets* (Hebrews 11:32).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 47,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "1-samuel",
+          "tgt_ch": 17,
+          "tgt_v": 45,
+          "tier": "free",
+          "note": "1 Samuel 17:45 — *Then said David to the Philistine, Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of Yahuah Tseva'ot (LORD of hosts), the Elohim (God) of the armies of Yashar'el (Israel), whom thou hast defied.* The boy who beat down the boasting of Goliath in Sirach 47:4 came not by arms but by the Name."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "1-samuel",
+          "tgt_ch": 17,
+          "tgt_v": 50,
+          "tier": "free",
+          "note": "1 Samuel 17:50 — *So David prevailed over the Philistine with a sling and with a stone, and smote the Philistine, and slew him; but there was no sword in the hand of David.* This is the stone in the sling and the slain giant that Sirach 47:4 sets at the head of David's might."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 32,
+          "tier": "free",
+          "note": "Hebrews 11:32 — *And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets:* the same David whom Sirach 47:5 praises for calling upon the Most High is set among the cloud of faithful witnesses."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-47-the-singer-and-the-feasts",
+      "title": "He set singers before the altar and ordered the feasts",
+      "summary_md": "Ben Sira praises David not only as warrior but as worshipper, the man after Yahuah's own heart: *In all his works he praised the Holy One most high with words of glory; with his whole heart he sung songs, and loved him that made him* (Sirach 47:8). He set the Levites to their service: *He set singers also before the altar, that by their voices they might make sweet melody, and daily sing praises in their songs* (Sirach 47:9). The Chronicler records the very ordinance: *And he appointed certain of the Levites to minister before the ark of Yahuah (LORD), and to record, and to thank and praise Yahuah Elohim (the LORD God) of Yashar'el (Israel)* (1 Chronicles 16:4). And Ben Sira binds David to the appointed times: *He beautified their feasts, and set in order the solemn times until the end, that they might praise his holy name, and that the temple might sound from morning* (Sirach 47:10) — the moedim Yahuah set, kept and beautified by the king, *praised Yahuah (LORD) with the instruments which I made, said David, to praise therewith* (1 Chronicles 23:5).",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 47,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "1-chronicles",
+          "tgt_ch": 16,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "1 Chronicles 16:4 — *And he appointed certain of the Levites to minister before the ark of Yahuah (LORD), and to record, and to thank and praise Yahuah Elohim (the LORD God) of Yashar'el (Israel):* this is the singing service before the altar that Sirach 47:9 credits to David."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "1-chronicles",
+          "tgt_ch": 23,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "1 Chronicles 23:5 — *Moreover four thousand were porters; and four thousand praised Yahuah (LORD) with the instruments which I made, said David, to praise therewith.* The daily melody and ordered solemn times of Sirach 47:9-10 are David's own appointment for the praise of the holy Name."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-47-the-horn-and-throne-for-ever",
+      "title": "His sins forgiven, his horn exalted for ever",
+      "summary_md": "Ben Sira ends David's praise where the covenant stands: *Yahuah (God) took away his sins, and exalted his horn for ever: he gave him a covenant of kings, and a throne of glory in Yashar'el (Israel)* (Sirach 47:11). When the prophet had named his sin, the word came: *And David said unto Nathan, I have sinned against Yahuah (LORD). And Nathan said unto David, Yahuah (LORD) also hath put away thy sin; thou shalt not die* (2 Samuel 12:13). The covenant of kings is the oath sworn in the psalm: *I have made a covenant with my chosen, I have sworn unto David my servant, Thy seed will I establish for ever, and build up thy throne to all generations. Selah* (Psalm 89:3-4). And the throne of glory in Israel is not closed with David — the everlasting throne reaches to the Son: *He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:32-33). The exalted horn that never fails is the seed of David raised up to reign.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 47,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "2-samuel",
+          "tgt_ch": 12,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "2 Samuel 12:13 — *And David said unto Nathan, I have sinned against Yahuah (LORD). And Nathan said unto David, Yahuah (LORD) also hath put away thy sin; thou shalt not die.* This is the taking-away of David's sins that Sirach 47:11 names before exalting his horn."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 89,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Psalm 89:4 — *Thy seed will I establish for ever, and build up thy throne to all generations. Selah.* The covenant of kings and throne of glory of Sirach 47:11 is the sworn oath to David's seed for ever."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 1,
+          "tgt_v": 32,
+          "tier": "free",
+          "note": "Luke 1:32 — *He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David:* the horn exalted for ever in Sirach 47:11 reaches its term in the Son given David's throne."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-47-solomon-the-wise-built-the-house",
+      "title": "The wise son who built the house",
+      "summary_md": "After David rose his son in peace: *After him rose up a wise son, and for his sake he dwelt at large* (Sirach 47:12), and *Solomon reigned in a peaceable time, and was honoured; for Yahuah (God) made all quiet round about him, that he might build an house in his name, and prepare his sanctuary for ever* (Sirach 47:13). The wisdom Ben Sira marvels at — *How wise were you in your youth and, as a flood, filled with understanding!* (Sirach 47:14) — was the gift Solomon asked and received: *Behold, I have done according to thy words: lo, I have given thee a wise and an understanding heart; so that there was none like thee before thee, neither after thee shall any arise like unto thee* (1 Kings 3:12). The house he built is the temple promised through Nathan: *And Yahuah (LORD) hath performed his word that he spake, and I am risen up in the room of David my father, and sit on the throne of Yashar'el (Israel), as Yahuah (LORD) promised, and have built an house for the name of Yahuah Elohim (the LORD God) of Yashar'el (Israel)* (1 Kings 8:20). Solomon himself confessed whence the wisdom came, in the sister book of this same library: *And wisdom was with you: which knoweth your works, and was present when you madest the world, and knew what was acceptable in your sight, and right in your commandments* (Wisdom of Solomon 9:9).",
+      "anchor_start_v": 12,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 47,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 3,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "1 Kings 3:12 — *Behold, I have done according to thy words: lo, I have given thee a wise and an understanding heart; so that there was none like thee before thee, neither after thee shall any arise like unto thee.* This is the youthful, flooding understanding Sirach 47:14 marvels at in Solomon."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 8,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "1 Kings 8:20 — *And Yahuah (LORD) hath performed his word that he spake, and I am risen up in the room of David my father, and sit on the throne of Yashar'el (Israel), as Yahuah (LORD) promised, and have built an house for the name of Yahuah Elohim (the LORD God) of Yashar'el (Israel).* The house in Yahuah's name that Sirach 47:13 says Solomon built is the temple Solomon dedicates here."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 14,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 9,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 9:9 — *And wisdom was with you: which knoweth your works, and was present when you madest the world, and knew what was acceptable in your sight, and right in your commandments.* In the sister book of this same library Solomon confesses the source of the understanding Sirach 47:14 praises — the Wisdom present at the founding of the world."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-47-solomon-the-women-turned-him",
+      "title": "Thou didst bow thy loins to women",
+      "summary_md": "Ben Sira will not flatter even the wisest king. After the gold and the songs comes the fall: *You did bow your loins to women, and by your body you were brought into subjection* (Sirach 47:19), and *You did stain your honour, and pollute your seed: so that you broughtest wrath upon your children, and were grieved for your folly* (Sirach 47:20). The Tanakh tells the same grief: *For it came to pass, when Solomon was old, that his wives turned away his heart after other gods: and his heart was not perfect with Yahuah Elohav (the LORD his God), as was the heart of David his father* (1 Kings 11:4). And the wrath upon his children was the rending of the kingdom: *Wherefore Yahuah (LORD) said unto Solomon, Forasmuch as this is done of thee, and thou hast not kept my covenant and my statutes, which I have commanded thee, I will surely rend the kingdom from thee, and will give it to thy servant* (1 Kings 11:11). The wisest man was brought into subjection because his heart turned from the covenant — Torah stands even over Solomon.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 47,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 11,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "1 Kings 11:4 — *For it came to pass, when Solomon was old, that his wives turned away his heart after other gods: and his heart was not perfect with Yahuah Elohav (the LORD his God), as was the heart of David his father.* This is the bowing to women and subjection of body that Sirach 47:19 grieves over in Solomon."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 11,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "1 Kings 11:11 — *Wherefore Yahuah (LORD) said unto Solomon, Forasmuch as this is done of thee, and thou hast not kept my covenant and my statutes, which I have commanded thee, I will surely rend the kingdom from thee, and will give it to thy servant.* The wrath upon his children that Sirach 47:20 names is the rending of the kingdom for Solomon's broken covenant."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-47-the-kingdom-divided-root-kept",
+      "title": "The kingdom divided, yet the root kept for David",
+      "summary_md": "Here is the schism, and the mercy that outlasts it. Ben Sira anchors the hope before the rupture: *But Yahuah (God) will never leave off his mercy, neither shall any of his works perish, neither will he abolish the posterity of his elect, and the seed of him that loves him he will not take away: wherefore he gave a remnant to Jacob, and out of him a root to David* (Sirach 47:22). Then comes the tearing: *So the kingdom was divided, and out of Ephraim ruled a rebellious kingdom* (Sirach 47:21), and *There was also Jeroboam the son of Nebat, who caused Yashar'el (Israel) to sin, and shewed Ephraim the way of sin* (Sirach 47:23). The Tanakh names the rending: *And he said to Jeroboam, Take thee ten pieces: for thus saith Yahuah (LORD), the Elohim (God) of Yashar'el (Israel), Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31), and the ten tribes broke away — *So Yashar'el (Israel) rebelled against the house of David unto this day* (1 Kings 12:19). Yet the rending was never the end: Yahuah held one tribe *for David my servant's sake* (the root of Sirach 47:22), and the two divided houses are sworn to be rejoined — *And I will make them one nation in the land upon the mountains of Yashar'el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The gathering reverses the schism Ben Sira mourns.",
+      "anchor_start_v": 21,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 47,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 11,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "1 Kings 11:31 — *And he said to Jeroboam, Take thee ten pieces: for thus saith Yahuah (LORD), the Elohim (God) of Yashar'el (Israel), Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee:* this is the rebellious kingdom of Ephraim under Jeroboam that Sirach 47:23 names."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 12,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "1 Kings 12:19 — *So Yashar'el (Israel) rebelled against the house of David unto this day.* This is the dividing of the kingdom out of Ephraim that Sirach 47:21 records."
+        },
+        {
+          "src_ch": 47,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 37,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Ezekiel 37:22 — *And I will make them one nation in the land upon the mountains of Yashar'el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all:* the remnant and root kept for David in Sirach 47:22 is the sworn rejoining of the two houses the schism tore apart."
+        }
+      ]
+    }
+  ]
+}
