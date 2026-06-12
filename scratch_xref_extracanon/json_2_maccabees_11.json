@@ -1,0 +1,200 @@
+{
+  "edition": "apocrypha",
+  "book": "2-maccabees",
+  "chapter": 11,
+  "session": "session253",
+  "tag": "2mac11",
+  "base_band": 62250,
+  "threads": [
+    {
+      "slug": "2-maccabees-11-good-angel-deliver",
+      "title": "Send a good angel to deliver Israel",
+      "summary_md": "Besieged by Lysias, Maccabeus and the covenant people do not first reach for the sword but for heaven: *Now when they that were with Maccabeus heard that he besieged the holds, they and all the people with lamentation and tears besought Yahuah (God) that he would send a good angel to deliver Yashar'el (Israel)* (2 Maccabees 11:6). It ain't new — this is the deliverance Yahuah promised from the wilderness: *Behold, I send an Angel before thee, to keep thee in the way, and to bring thee into the place which I have prepared* (Exodus 23:20), the Angel in whom His Name dwells, who fights for the people that obey His voice: *But if thou shalt indeed obey his voice, and do all that I speak; then I will be an enemy unto thine enemies, and an adversary unto thine adversaries* (Exodus 23:22). The Torah-faithful Maccabees stand exactly where Israel stood at the Jordan, and the same Helper answers.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 23,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Exodus 23:20 — *Behold, I send an Angel before thee, to keep thee in the way, and to bring thee into the place which I have prepared.* The good angel the Maccabees beg for in 2-maccabees 11:6 is the very Angel Yahuah pledged to send before His covenant people."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 23,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Exodus 23:22 — *But if thou shalt indeed obey his voice, and do all that I speak; then I will be an enemy unto thine enemies, and an adversary unto thine adversaries.* The condition of that heavenly help is covenant obedience — the very Torah-faithfulness for which the men of 2-maccabees 11:6 are fighting."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-11-horseman-white-gold",
+      "title": "The horseman in white, his armour of gold",
+      "summary_md": "Heaven sends not merely an angel but a captain: *And as they were at Jerusalem, there appeared before them on horseback one in white clothing, shaking his armour of gold* (2 Maccabees 11:8). When Joshua first entered the land he met the same Figure — *behold, there stood a man over against him with his sword drawn in his hand* (Joshua 5:13) — who declared, *Nay; but as captain of the host of Yahuah (LORD) am I now come* (Joshua 5:14). It is no new apparition even within this book: at the temple Heliodorus was struck down by *an horse with a terrible rider upon him... and it seemed that he that sat upon the horse had complete harness of gold* (2 Maccabees 3:25). And the same Rider opens the last book of all: *And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war* (Revelation 19:11) — the Captain of Yahuah's host leading His armies still.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 5,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Joshua 5:13 — *And it came to pass, when Joshua was by Jericho, that he lifted up his eyes and looked, and, behold, there stood a man over against him with his sword drawn in his hand: and Joshua went unto him, and said unto him, Art thou for us, or for our adversaries?* The same drawn-armed Figure that met Joshua at Jericho rides before the Maccabees at Jerusalem in 2-maccabees 11:8."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 5,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Joshua 5:14 — *And he said, Nay; but as captain of the host of Yahuah (LORD) am I now come. And Joshua fell on his face to the earth, and did worship, and said unto him, What saith my lord unto his servant?* The white-clad horseman of 2-maccabees 11:8 is that Captain of the host of Yahuah, come to lead Israel's battle."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 8,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 3,
+          "tgt_v": 25,
+          "tier": "extras",
+          "note": "2 Maccabees 3:25 — *For there appeared to them an horse with a terrible rider upon him, and adorned with a very fair covering, and he ran fiercely, and struck at Heliodorus with his forefeet, and it seemed that he that sat upon the horse had complete harness of gold.* The golden-harnessed rider who smote Heliodorus at the temple is the same heavenly horseman who now leads Israel in 2-maccabees 11:8."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 19,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Revelation 19:11 — *And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war.* The white horseman shaking his golden armour in 2-maccabees 11:8 foreshadows the Rider Faithful and True who leads the armies of heaven."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-11-helper-from-heaven",
+      "title": "Having an helper from heaven",
+      "summary_md": "The whole victory hangs on one confession: *Thus they marched forward in their armour, having an helper from heaven: for Yahuah (God) was merciful to them* (2 Maccabees 11:10), so that the very enemy concluded *that the Hebrews could not be overcome, because the Almighty Yahuah (God) helped them* (2 Maccabees 11:13). This is the open-eyes faith of Elisha's servant at Dothan, who feared the encircling host until *Elisha prayed, and said, Yahuah (LORD), I pray thee, open his eyes, that he may see. And Yahuah (LORD) opened the eyes of the young man; and he saw: and, behold, the mountain was full of horses and chariots of fire round about Elisha* (2 Kings 6:17) — for the word stood, *Fear not: for they that be with us are more than they that be with them* (2 Kings 6:16). The heavenly cavalry the Maccabees saw is the same fiery host that always surrounds the covenant people.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 6,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "2 Kings 6:17 — *And Elisha prayed, and said, Yahuah (LORD), I pray thee, open his eyes, that he may see. And Yahuah (LORD) opened the eyes of the young man; and he saw: and, behold, the mountain was full of horses and chariots of fire round about Elisha.* The helper from heaven seen marching with Israel in 2-maccabees 11:10 is that same unseen host of fiery horses and chariots."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 6,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "2 Kings 6:16 — *And he answered, Fear not: for they that be with us are more than they that be with them.* Lysias' own conclusion in 2-maccabees 11:13 that the Hebrews could not be overcome is the enemy's-eye proof of Elisha's word — heaven's host outnumbers every army of men."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 19,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Revelation 19:14 — *And the armies which were in heaven followed him upon white horses, clothed in fine linen, white and clean.* The Almighty who could not be resisted in 2-maccabees 11:13 is He whose heavenly armies ride behind Him in white at the last."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-11-die-for-his-laws",
+      "title": "Liberty to live after their own laws",
+      "summary_md": "The peace letters confess what the whole war was for — not land but Torah: the Jews *would not consent to our father, for to be brought to the custom of the Gentiles, but had rather keep their own manner of living: for the which cause they require of us, that we should suffer them to live after their own laws* (2 Maccabees 11:24), and so the decree restores them: *the Yahudim (Jews) shall use their own kind of meats and laws, as before* (2 Maccabees 11:31). Even the kingdom of man is forced to grant what the covenant people would sooner die than surrender — the very hope of the brother who, dying for the commandments, cried, *the King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9). This is no law-as-curse: it is the psalmist's vow, *So shall I keep thy law continually for ever and ever* (Psalm 119:44), and the resurrection of the Torah-faithful that Hebrews itself looks back to: *others were tortured, not accepting deliverance; that they might obtain a better resurrection* (Hebrews 11:35).",
+      "anchor_start_v": 24,
+      "anchor_end_v": 31,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 119,
+          "tgt_v": 44,
+          "tier": "free",
+          "note": "Psalm 119:44 — *So shall I keep thy law continually for ever and ever.* The manner of living the Jews would not surrender in 2-maccabees 11:24 is exactly this enduring delight to keep Yahuah's law for ever."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 24,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "2 Maccabees 7:9 — *And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life.* The laws Antiochus is forced to restore in 2-maccabees 11:24 are the very laws the seven brothers died for, in the hope of resurrection."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 31,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Hebrews 11:35 — *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection.* The Maccabean refusal to abandon their own meats and laws in 2-maccabees 11:31 is the very faith Hebrews crowns with the better resurrection."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-11-restore-their-temple",
+      "title": "We have determined to restore them their temple",
+      "summary_md": "Antiochus' own letter is forced to undo the desolation he had wrought: *Wherefore our mind is, that this nation shall be in rest, and we have determined to restore them their temple, that they may live according to the customs of their forefathers* (2 Maccabees 11:25). The kingdom of man that profaned the sanctuary must now grant its restoration — as the Persian decree once charged Ezra to set Yahuah's law again over the regathered people: *set magistrates and judges, which may judge all the people that are beyond the river, all such as know the laws of thy Elohim (God); and teach ye them that know them not* (Ezra 7:25). The temple given back here is the temple Judas will cleanse, the feast the Messiah Himself kept: *And it was at Jerusalem the feast of the dedication, and it was winter* (John 10:22). The covenant people and their house are not replaced but restored.",
+      "anchor_start_v": 25,
+      "anchor_end_v": 25,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "ezra",
+          "tgt_ch": 7,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Ezra 7:25 — *And thou, Ezra, after the wisdom of thy Elohim (God), that is in thine hand, set magistrates and judges, which may judge all the people that are beyond the river, all such as know the laws of thy Elohim (God); and teach ye them that know them not.* As Persia once decreed the restoration of Yahuah's law over His people, so the king's letter in 2-maccabees 11:25 is forced to restore the temple and the customs of the forefathers."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 10,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "John 10:22 — *And it was at Jerusalem the feast of the dedication, and it was winter.* The temple restored to the Jews in 2-maccabees 11:25 is the house whose rededication became the very feast the Messiah Himself kept at Jerusalem."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "edition": "apocrypha",
+  "book": "1-maccabees",
+  "chapter": 8,
+  "session": "session253",
+  "tag": "1mac8",
+  "base_band": 61675,
+  "threads": [
+    {
+      "slug": "1-maccabees-8-fourth-kingdom",
+      "title": "The Fourth Beast: Israel turns from one world-empire to another",
+      "summary_md": "Judas, having driven back the Greek, now hears of a mightier arm to lean upon: *Now Judas had heard of the Romans, that they were mighty and valiant men, and such as would lovingly accept all that joined themselves to them, and make a league of amity with all that came to them;* (1 Maccabees 8:1) — *Also that, whom they would help to a kingdom, those reign; and whom again they would, they displace: finally, that they were greatly exalted:* (1 Maccabees 8:13). The chronicler is honest about Rome's reach, and the reader who knows Daniel hears the warning under the praise: this is the next head of the kingdom-of-man, the iron empire that breaks all. *And the fourth kingdom shall be strong as iron: forasmuch as iron breaketh in pieces and subdueth all things: and as iron that breaketh all these, shall it break in pieces and bruise.* (Daniel 2:40) — Rome is the iron Daniel foresaw, and Judas is reaching to take its yoke upon his neck. *After this I saw in the night visions, and behold a fourth beast, dreadful and terrible, and strong exceedingly; and it had great iron teeth: it devoured and brake in pieces, and stamped the residue with the feet of it: and it was diverse from all the beasts that were before it; and it had ten horns.* (Daniel 7:7) — the very empire whose teeth would one day tread Jerusalem is the friend Israel now seeks. Antiochus was the abomination dismantled; Rome is the dreadful beast rising. *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* (Daniel 7:25) — the spirit that exalts itself and wears out the saints does not die with one tyrant; it changes its dress and offers a league.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 2,
+          "tgt_v": 40,
+          "tier": "free",
+          "note": "Daniel 2:40 — *And the fourth kingdom shall be strong as iron: forasmuch as iron breaketh in pieces and subdueth all things: and as iron that breaketh all these, shall it break in pieces and bruise.* The Rome whose conquests 1 Maccabees 8:4 rehearses is Daniel's iron fourth kingdom that subdues all the earth."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Daniel 7:7 — *After this I saw in the night visions, and behold a fourth beast, dreadful and terrible, and strong exceedingly; and it had great iron teeth: it devoured and brake in pieces, and stamped the residue with the feet of it: and it was diverse from all the beasts that were before it; and it had ten horns.* The empire that 1 Maccabees 8:11 says destroyed and brought under its dominion all kingdoms is Daniel's iron-toothed beast."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* The power of 1 Maccabees 8:13 that sets up and displaces kings at pleasure is the self-exalting horn that wears out the saints."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-8-arm-of-flesh",
+      "title": "Trust not in the arm of flesh: the league as a leaning",
+      "summary_md": "The chapter's pivot is a turning of the eyes — from heaven, which had already given the victories, to a distant arm of flesh: *In consideration of these things, Judas chose Eupolemus the son of John, the son of Accos, and Jason the son of Eleazar, and sent them to Rome, to make a league of amity and confederacy with them,* (1 Maccabees 8:17) — *And to intreat them that they would take the yoke from them; for they saw that the kingdom of the Grecians did oppress Yashar'el (Israel) with servitude.* (1 Maccabees 8:18). The text invites the old caution, and we weave it honestly. *Thus saith Yahuah (LORD); Cursed be the man that trusteth in man, and maketh flesh his arm, and whose heart departeth from Yahuah (LORD).* (Jeremiah 17:5) — to make Rome the arm is the very thing the prophet names. *Put not your trust in princes, nor in the son of Adam, in whom there is no help.* (Psalm 146:3) — the Roman senate is princes, and their help is the help of dust. *There is no king saved by the multitude of an host: a mighty man is not delivered by much strength.* (Psalm 33:16) — Rome's hundred-and-twenty elephants and great army do not save. *Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many; and in horsemen, because they are very strong; but they look not unto the Holy One of Yashar'el (Israel), neither seek Yahuah (LORD)!* (Isaiah 31:1) — the embassy to Rome is the new going-down-to-Egypt. This is not to condemn Judas, whose zeal for the covenant was true; it is the reader's quiet warning, that even the faithful are tempted to lean where they should kneel.",
+      "anchor_start_v": 17,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 17,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Jeremiah 17:5 — *Thus saith Yahuah (LORD); Cursed be the man that trusteth in man, and maketh flesh his arm, and whose heart departeth from Yahuah (LORD).* To send to Rome and make it Israel's arm, as in 1 Maccabees 8:17, is exactly the leaning Jeremiah warns against."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 146,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Psalm 146:3 — *Put not your trust in princes, nor in the son of Adam, in whom there is no help.* The Roman senate Judas courts in 1 Maccabees 8:17 are the princes in whom there is no lasting help."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 33,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Psalm 33:16 — *There is no king saved by the multitude of an host: a mighty man is not delivered by much strength.* The hundred-and-twenty elephants and great army of 1 Maccabees 8:6 are the multitude of an host that cannot save."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 31,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 31:1 — *Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many; and in horsemen, because they are very strong; but they look not unto the Holy One of Yashar'el (Israel), neither seek Yahuah (LORD)!* The plea to Rome to take off the yoke in 1 Maccabees 8:18 is the new going-down-to-Egypt for help."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-8-deliverance-from-heaven",
+      "title": "By whom Israel is delivered: cry to heaven, not to a senate",
+      "summary_md": "Set against the embassy to Rome stands the witness of this very book a few chapters back, where deliverance came not from a league but from the covenant God. The envoys carry Israel's plea to the senate: *Judas Maccabeus with his brothers, and the people of the Yahudim (Jews), have sent us to you, to make a confederacy and peace with you, and that we might be registered your confederates and friends.* (1 Maccabees 8:20). But Judas himself had taught the truer recourse before Emmaus: *Now therefore let us cry to heaven, if perhaps Yahuah (God) will have mercy upon us, and remember the covenant of our fathers, and destroy this host before our face this day:* (1 Maccabees 4:10) — the covenant of the fathers, not a confederacy of brass, was the wall. *And when he saw that mighty army, he prayed and said, Blessed art you, O Saviour of Yashar'el (Israel), who did quell the violence of the mighty man by the hand of your servant David, and gavest the host of strangers into the hands of Jonathan the son of Saul, and his armourbearer;* (1 Maccabees 4:30) — the One who felled Goliath and routed the Philistines is the Saviour of Israel, who needs no senate. The Psalms know the contrast by heart: *Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God).* (Psalm 20:7) — and *It is better to trust in Yahuah (LORD) than to put confidence in man.* (Psalm 118:8). The seed kept is kept by the covenant, not by the kingdom-of-man's friendship.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 20,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "1-maccabees",
+          "tgt_ch": 4,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "1 Maccabees 4:10 — *Now therefore let us cry to heaven, if perhaps Yahuah (God) will have mercy upon us, and remember the covenant of our fathers, and destroy this host before our face this day:* Judas' own counsel before Emmaus shows the truer recourse than the Roman confederacy he seeks in 1 Maccabees 8:20."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 20,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "1-maccabees",
+          "tgt_ch": 4,
+          "tgt_v": 30,
+          "tier": "extras",
+          "note": "1 Maccabees 4:30 — *And when he saw that mighty army, he prayed and said, Blessed art you, O Saviour of Yashar'el (Israel), who did quell the violence of the mighty man by the hand of your servant David, and gavest the host of strangers into the hands of Jonathan the son of Saul, and his armourbearer;* The Saviour of Israel who felled Goliath, not the senate of 1 Maccabees 8:20, is Israel's deliverer."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 20,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Psalm 20:7 — *Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God).* The long journey to Rome in 1 Maccabees 8:19 is a trust in chariots when the name of God is the surer shield."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 118,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Psalm 118:8 — *It is better to trust in Yahuah (LORD) than to put confidence in man.* The confederacy and friendship sought in 1 Maccabees 8:20 is the confidence in man the psalm sets second to trust in Yahuah."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-8-kingdom-that-stands",
+      "title": "No crown, no purple, a senate of brass: the order that cannot stand",
+      "summary_md": "The chronicler marvels at Rome's polity — its restraint, its yearly rule, its tireless council: *Yet for all this none of them wore a crown or was clothed in purple, to be magnified thereby:* (1 Maccabees 8:14) — *Moreover how they had made for themselves a senate house, in which three hundred and twenty men sat in council daily, consulting alway for the people, to the end they might be well ordered:* (1 Maccabees 8:15) — *And that they committed their government to one man every year, who ruled over all their country, and that all were obedient to that one, and that there was neither envy nor emmulation among them.* (1 Maccabees 8:16). It is the kingdom-of-man at its most admirable, ordering itself wisely — and yet it is still the fourth kingdom, mortal as iron mixed with clay. Daniel sets over against every such order the one Kingdom that will not pass: *And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.* (Daniel 2:44) — Rome's brass tables are a memorial of peace, but this Kingdom alone stands for ever. *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* (Daniel 7:27) — the dominion is not Rome's senate but the saints', and all the well-ordered empires of men shall at last serve and obey Him.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 2,
+          "tgt_v": 44,
+          "tier": "free",
+          "note": "Daniel 2:44 — *And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.* The well-ordered Roman senate of 1 Maccabees 8:15 is one of the kingdoms that the everlasting Kingdom will break in pieces."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Daniel 7:27 — *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* The single yearly ruler all obey in 1 Maccabees 8:16 foreshadows by contrast the dominion given to the saints, whom all kingdoms shall serve."
+        }
+      ]
+    }
+  ]
+}

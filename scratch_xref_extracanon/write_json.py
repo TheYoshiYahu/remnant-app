@@ -1,82 +1,82 @@
 import json
 
 data = {
-    "edition": "apocrypha", "book": "tobit", "chapter": 1,
-    "session": "session253", "tag": "tob1", "base_band": 59600,
+    "edition": "apocrypha",
+    "book": "1-maccabees",
+    "chapter": 11,
+    "session": "session253",
+    "tag": "1mac11",
+    "base_band": 61750,
     "threads": [
         {
-            "slug": "tobit-1-naphtali-captive",
-            "title": "Naphtali Carried Away — the Scattered House of Israel",
-            "summary_md": "Tobit names himself at the head of his book: *of the seed of Asael, of the tribe of Nephthali* (Tobit 1:1), and tells how *in the time of Enemessar king of the Assyrians* he *was led captive out of Thisbe... which is called properly Nephthali in Galilee above Aser* (Tobit 1:2). This is the northern ten tribes' exile — the house of Israel scattered. The Kings record is the same hand: *In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar'el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes* (2 Kings 17:6) — the very Medes where Tobit will leave his silver in trust. *So was Yashar'el (Israel) carried away out of their own land to Assyria unto this day* (2 Kings 17:23). Moses had foretold it word for word: *And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other* (Deuteronomy 28:64). Yet the scattering is never the last word — the two sticks are made one: *Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21). Tobit, captive in Nineveh, is the seed of that promised gathering.",
-            "anchor_start_v": 1, "anchor_end_v": 2, "tier": "extras",
+            "slug": "1-maccabees-11-shifting-crowns",
+            "title": "Two crowns upon one head — the kings of the north and the south",
+            "summary_md": "The chapter opens with Ptolemee marching north through deceit, *And the king of Egypt gathered together a great host, like the sand that lieth upon the sea shore, and many ships, and went about through deceit to get Alexander’s kingdom, and join it to his own* (1 Maccabees 11:1), until *Then Ptolemee entered into Antioch, where he set two crowns upon his head, the crown of Asia, and of Egypt* (1 Maccabees 11:13) — yet within days Alexander is beheaded and Ptolemee himself dies: *King Ptolemee also died the third day after, and they that were in the strong holds were slain one of another* (1 Maccabees 11:18). This is the very wrestle Daniel foresaw two centuries before, the king of the south and the king of the north grinding against each other, *And in the end of years they shall join themselves together; for the king’s daughter of the south shall come to the king of the north to make an agreement: but she shall not retain the power of the arm; neither shall he stand, nor his arm: but she shall be given up, and they that brought her, and he that begat her, and he that strengthened her in these times* (Daniel 11:6) — for here the daughter is taken from Alexander and given to Demetrius. It ain’t new: the kingdom-of-man rises and topples on schedule, and it is Yahuah who governs the turning. *He poureth contempt upon princes, and weakeneth the strength of the mighty* (Job 12:21), and *His breath goeth forth, he returneth to his earth; in that very day his thoughts perish* (Psalm 146:4). The crowns change heads while the King of the world keeps His covenant.",
+            "anchor_start_v": 1,
+            "anchor_end_v": 18,
+            "tier": "extras",
             "members": [
-                {"src_ch": 1, "src_v": 2, "tgt_edition": "canon", "tgt_book": "2-kings", "tgt_ch": 17, "tgt_v": 6, "tier": "free",
-                 "note": "2 Kings 17:6 — *In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar'el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes.* This is the same Assyrian deportation that swept Tobit of Naphtali into Nineveh in Tobit 1:2."},
-                {"src_ch": 1, "src_v": 1, "tgt_edition": "canon", "tgt_book": "2-kings", "tgt_ch": 17, "tgt_v": 23, "tier": "free",
-                 "note": "2 Kings 17:23 — *Until Yahuah (LORD) removed Yashar'el (Israel) out of his sight, as he had said by all his servants the prophets. So was Yashar'el (Israel) carried away out of their own land to Assyria unto this day.* Tobit of the tribe of Naphtali in Tobit 1:1 is one of the very exiles this verse buries in the nations."},
-                {"src_ch": 1, "src_v": 2, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 28, "tgt_v": 64, "tier": "free",
-                 "note": "Deuteronomy 28:64 — *And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other; and there thou shalt serve other gods, which neither thou nor thy fathers have known, even wood and stone.* Tobit's captivity in Tobit 1:2 is Moses' covenant warning come to pass upon the house of Israel."},
-                {"src_ch": 1, "src_v": 1, "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 37, "tgt_v": 21, "tier": "free",
-                 "note": "Ezekiel 37:21 — *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* The scattered tribe of Naphtali named in Tobit 1:1 is exactly the people Yahuah promises to regather, not to replace."}
+                {"src_ch": 11, "src_v": 13, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 11, "tgt_v": 6, "tier": "free",
+                 "note": "Daniel 11:6 — *And in the end of years they shall join themselves together; for the king’s daughter of the south shall come to the king of the north to make an agreement: but she shall not retain the power of the arm; neither shall he stand, nor his arm: but she shall be given up, and they that brought her, and he that begat her, and he that strengthened her in these times.* Daniel had already mapped this very marriage-alliance of the Ptolemaic daughter and the seizing of two crowns in 1 Maccabees 11:13."},
+                {"src_ch": 11, "src_v": 18, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 146, "tgt_v": 4, "tier": "free",
+                 "note": "Psalm 146:4 — *His breath goeth forth, he returneth to his earth; in that very day his thoughts perish.* Ptolemee crowns himself king of two realms and dies the third day after (1 Maccabees 11:18), his thoughts perishing exactly as the psalm warns of every son of Adam."},
+                {"src_ch": 11, "src_v": 17, "tgt_edition": "canon", "tgt_book": "job", "tgt_ch": 12, "tgt_v": 21, "tier": "free",
+                 "note": "Job 12:21 — *He poureth contempt upon princes, and weakeneth the strength of the mighty.* Alexander’s head sent to Ptolemee and Ptolemee’s own swift fall (1 Maccabees 11:17) are Yahuah’s hand emptying the mighty of their strength."},
+                {"src_ch": 11, "src_v": 12, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 21, "tgt_v": 1, "tier": "free",
+                 "note": "Proverbs 21:1 — *The king’s heart is in the hand of Yahuah (LORD), as the rivers of water: he turneth it whithersoever he will.* Ptolemee’s taking back his daughter and forsaking Alexander (1 Maccabees 11:12) only enacts a turning of kings’ hearts already held in Yahuah’s hand."}
             ]
         },
         {
-            "slug": "tobit-1-calf-vs-jerusalem",
-            "title": "The Heifer Baal Against the Chosen House",
-            "summary_md": "Tobit grieves that his own tribe broke from the temple: *all the tribe of Nephthali my father fell from the house of Jerusalem, which was chosen out of all the tribes of Yashar'el (Israel), that all the tribes should sacrifice there* (Tobit 1:4), and *all the tribes which together revolted, and the house of my father Nephthali, sacrificed to the heifer Baal* (Tobit 1:5). That heifer is Jeroboam's golden calf, set up to keep the north from going up to worship: *Whereupon the king took counsel, and made two calves of gold, and said unto them, It is too much for you to go up to Jerusalem: behold thy gods, O Yashar'el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28). But the Torah had named one place only: *Then there shall be a place which Yahuah Elohaychem (the LORD your God) shall choose to cause his name to dwell there; thither shall ye bring all that I command you; your burnt offerings, and your sacrifices, your tithes* (Deuteronomy 12:11). Tobit holds to the chosen house while his nation runs to the calf — Torah kept while the house of Israel apostatizes.",
-            "anchor_start_v": 4, "anchor_end_v": 5, "tier": "extras",
+            "slug": "1-maccabees-11-covenant-kept",
+            "title": "Because they keep covenants with us — the priesthood confirmed",
+            "summary_md": "Demetrius writes to ratify the standing of the remnant, *We are determined to do good to the people of the Yahudim (Jews), who are our friends, and keep covenants with us, because of their good will toward us* (1 Maccabees 11:33), and the king *confirmed him in the high priesthood, and in all the honours that he had before, and gave him preeminence among his chief friends* (1 Maccabees 11:27), even ordering that the decree be *set upon the holy mount in a conspicuous place* (1 Maccabees 11:37). Note the witness the heathen king bears: this people *keep covenants*. That is the whole testimony of the seed Yahuah preserves — the covenant people kept, not a new people replacing them. It ain’t new: the high priesthood confirmed here descends from the everlasting priesthood Yahuah swore at Peor, *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar’el (Israel)* (Numbers 25:13) — the zeal of Phinehas, the zeal of the Maccabean house. And the publishing of the decree on the holy mount is the old command, *And thou shalt write upon the stones all the words of this law very plainly* (Deuteronomy 27:8). The honours rest on the same covenant Yahuah swore to Israel, and the document stands as a perpetual witness, *And nothing of this shall be revoked from this time forth for ever* (1 Maccabees 11:36).",
+            "anchor_start_v": 27,
+            "anchor_end_v": 37,
+            "tier": "extras",
             "members": [
-                {"src_ch": 1, "src_v": 5, "tgt_edition": "canon", "tgt_book": "1-kings", "tgt_ch": 12, "tgt_v": 28, "tier": "free",
-                 "note": "1 Kings 12:28 — *Whereupon the king took counsel, and made two calves of gold, and said unto them, It is too much for you to go up to Jerusalem: behold thy gods, O Yashar'el (Israel), which brought thee up out of the land of Egypt.* Jeroboam's calf is the very 'heifer Baal' Tobit's tribe sacrificed to in Tobit 1:5."},
-                {"src_ch": 1, "src_v": 4, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 12, "tgt_v": 11, "tier": "free",
-                 "note": "Deuteronomy 12:11 — *Then there shall be a place which Yahuah Elohaychem (the LORD your God) shall choose to cause his name to dwell there; thither shall ye bring all that I command you; your burnt offerings, and your sacrifices, your tithes, and the heave offering of your hand, and all your choice vows which ye vow unto Yahuah (LORD):* This is the one chosen house of Jerusalem from which Naphtali fell in Tobit 1:4."}
+                {"src_ch": 11, "src_v": 33, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 21, "tgt_v": 1, "tier": "free",
+                 "note": "Proverbs 21:1 — *The king’s heart is in the hand of Yahuah (LORD), as the rivers of water: he turneth it whithersoever he will.* Demetrius is moved to do good and confirm the covenant-keeping Yahudim (1 Maccabees 11:33) because the heathen king’s heart is itself a river in Yahuah’s hand."},
+                {"src_ch": 11, "src_v": 27, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 25, "tgt_v": 13, "tier": "free",
+                 "note": "Numbers 25:13 — *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar’el (Israel).* The priesthood confirmed to Jonathan (1 Maccabees 11:27) descends from the everlasting priesthood Yahuah covenanted to zealous Phinehas, the same zeal the Maccabean house carries."},
+                {"src_ch": 11, "src_v": 37, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 27, "tgt_v": 8, "tier": "free",
+                 "note": "Deuteronomy 27:8 — *And thou shalt write upon the stones all the words of this law very plainly.* Setting the confirming decree upon the holy mount in a conspicuous place (1 Maccabees 11:37) echoes Israel’s command to publish the covenant words plainly upon the mountain stones."}
             ]
         },
         {
-            "slug": "tobit-1-feasts-and-tithes",
-            "title": "The Feasts Kept, the Tithes Paid",
-            "summary_md": "Against the apostasy of his tribe, Tobit alone keeps the Torah: *But I alone went often to Jerusalem at the feasts, as it was ordained to all the people of Yashar'el (Israel) by an everlasting decree, having the firstfruits and tenths of increase, with that which was first shorn; and them gave I at the altar to the priests the children of Aaron* (Tobit 1:6). He keeps the threefold tithe to the letter: *The first tenth part of all increase I gave to the sons of Aaron, who ministered at Jerusalem: another tenth part I sold away, and went, and spent it every year at Jerusalem* (Tobit 1:7), and *the third I gave to them to whom it was meet* (Tobit 1:8). This is pure Torah obedience. The pilgrim-tithe spent at the feast: *Thou shalt truly tithe all the increase of thy seed, that the field bringeth forth year by year* (Deuteronomy 14:22), eaten *before Yahuah Elohayka (the LORD thy God), in the place which he shall choose* (Deuteronomy 14:23). The priests' tenth: *I have given the children of Levi all the tenth in Yashar'el (Israel) for an inheritance* (Numbers 18:21). And the almsgiving Tobit later teaches his son: *Give alms of your substance; and when you give alms, let not your eye be envious* (Tobit 4:7) — the same hand keeping the same law in exile.",
-            "anchor_start_v": 6, "anchor_end_v": 8, "tier": "extras",
+            "slug": "1-maccabees-11-faithful-deliver-the-king",
+            "title": "The Yahudim came at once and delivered the king",
+            "summary_md": "When Antioch rose against Demetrius, *the king called to the Yahudim (Jews) for help, who came to him all at once, and dispersing themselves through the city slew that day in the city to the number of an hundred thousand* (1 Maccabees 11:47), so that *Also they set fire on the city, and got many spoils that day, and delivered the king* (1 Maccabees 11:48). Three thousand of the faithful (1 Maccabees 11:44) overcome a city of a hundred and twenty thousand — the few against the many, as always with the remnant. It ain’t new: this is the old confidence of Jonathan son of Saul, *Come, and let us go over unto the garrison of these uncircumcised: it may be that Yahuah (LORD) will work for us: for there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). The deliverance is not the strength of three thousand swords but the covenant promise, *One man of you shall chase a thousand: for Yahuah Elohaychem (the LORD your God), he it is that fighteth for you, as he hath promised you* (Joshua 23:10). And the loosing and re-establishing of the king is itself the LORD’s work, *He looseth the bond of kings, and girdeth their loins with a girdle* (Job 12:18).",
+            "anchor_start_v": 44,
+            "anchor_end_v": 51,
+            "tier": "extras",
             "members": [
-                {"src_ch": 1, "src_v": 7, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 14, "tgt_v": 22, "tier": "free",
-                 "note": "Deuteronomy 14:22 — *Thou shalt truly tithe all the increase of thy seed, that the field bringeth forth year by year.* This is the very tithe of increase Tobit faithfully renders in Tobit 1:7."},
-                {"src_ch": 1, "src_v": 7, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 14, "tgt_v": 23, "tier": "free",
-                 "note": "Deuteronomy 14:23 — *And thou shalt eat before Yahuah Elohayka (the LORD thy God), in the place which he shall choose to place his name there, the tithe of thy corn, of thy wine, and of thine oil, and the firstlings of thy herds and of thy flocks; that thou mayest learn to fear Yahuah Elohayka (the LORD thy God) always.* This is the second tenth Tobit carries up and spends every year at Jerusalem in Tobit 1:7."},
-                {"src_ch": 1, "src_v": 6, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 18, "tgt_v": 21, "tier": "free",
-                 "note": "Numbers 18:21 — *And, behold, I have given the children of Levi all the tenth in Yashar'el (Israel) for an inheritance, for their service which they serve, even the service of the tabernacle of the congregation.* This is the first tenth Tobit gives to the priests, the children of Aaron, at the altar in Tobit 1:6."},
-                {"src_ch": 1, "src_v": 8, "tgt_edition": "apocrypha", "tgt_book": "tobit", "tgt_ch": 4, "tgt_v": 7, "tier": "extras",
-                 "note": "Tobit 4:7 — *Give alms of your substance; and when you give alms, let not your eye be envious, neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you.* The charity-tithe given 'to them to whom it was meet' in Tobit 1:8 is the same alms-righteousness Tobit later commands his son."}
+                {"src_ch": 11, "src_v": 47, "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 23, "tgt_v": 10, "tier": "free",
+                 "note": "Joshua 23:10 — *One man of you shall chase a thousand: for Yahuah Elohaychem (the LORD your God), he it is that fighteth for you, as he hath promised you.* The three thousand Yahudim routing the great city (1 Maccabees 11:47) enact the promise that the LORD multiplies the kept seed, one chasing a thousand."},
+                {"src_ch": 11, "src_v": 44, "tgt_edition": "canon", "tgt_book": "1-samuel", "tgt_ch": 14, "tgt_v": 6, "tier": "free",
+                 "note": "1 Samuel 14:6 — *And Jonathan said to the young man that bare his armour, Come, and let us go over unto the garrison of these uncircumcised: it may be that Yahuah (LORD) will work for us: for there is no restraint to Yahuah (LORD) to save by many or by few.* Jonathan sending only three thousand strong men to Antioch (1 Maccabees 11:44) trusts the same truth his namesake spoke, that Yahuah saves by few as easily as by many."},
+                {"src_ch": 11, "src_v": 48, "tgt_edition": "canon", "tgt_book": "job", "tgt_ch": 12, "tgt_v": 18, "tier": "free",
+                 "note": "Job 12:18 — *He looseth the bond of kings, and girdeth their loins with a girdle.* The faithful delivering and re-establishing the king (1 Maccabees 11:48) is Yahuah’s own loosing and girding of kings worked through His covenant people."}
             ]
         },
         {
-            "slug": "tobit-1-kept-from-gentile-bread",
-            "title": "Kept From the Bread of the Gentiles",
-            "summary_md": "In Nineveh the kinsmen of the exile compromise, but Tobit will not: *when we were carried away captives to Nineve, all my brothers and those that were of my kindred did eat of the bread of the Gentiles* (Tobit 1:10), *But I kept myself from eating* (Tobit 1:11), *Because I remembered Yahuah (God) with all my heart* (Tobit 1:12). It is the same resolve another captive of the same scattering would make in a foreign king's court: *But Daniel purposed in his heart that he would not defile himself with the portion of the king's meat, nor with the wine which he drank: therefore he requested of the prince of the eunuchs that he might not defile himself* (Daniel 1:8). The covenant table is kept in the heart of the empire — Torah-faithfulness unto exile, never law as curse.",
-            "anchor_start_v": 10, "anchor_end_v": 12, "tier": "extras",
+            "slug": "1-maccabees-11-rent-clothes-and-prayed",
+            "title": "He rent his clothes, cast earth on his head, and prayed",
+            "summary_md": "At the plain of Nasor the ambush breaks Jonathan’s host so that *Insomuch as there was not one of them left, except Mattathias the son of Absalom, and Judas the son of Calphi, the captains of the host* (1 Maccabees 11:70) — and then the decisive act: *Then Jonathan rent his clothes, and cast earth upon his head, and prayed* (1 Maccabees 11:71). Only after the prayer does the tide turn, *Afterwards turning again to battle, he put them to flight, and so they ran away* (1 Maccabees 11:72). This is the posture of the man of the covenant in the dust before Yahuah, the very image of Joshua before the ark, *And Joshua rent his clothes, and fell to the earth upon his face before the ark of Yahuah (LORD) until the eventide, he and the elders of Yashar’el (Israel), and put dust upon their heads* (Joshua 7:6). It ain’t new: Israel’s victory was never in the sword but in the cry, *And the children of Yashar’el (Israel) said to Samuel, Cease not to cry unto Yahuah Eloheinu (the LORD our God) for us, that he will save us out of the hand of the Philistines* (1 Samuel 7:8). Jonathan prays, and the rout becomes a pursuit, *So there were slain of the heathen that day about three thousand men: but Jonathan returned to Jerusalem* (1 Maccabees 11:74) — the captain back at the holy city by the hand of Yahuah, not his own arm.",
+            "anchor_start_v": 70,
+            "anchor_end_v": 74,
+            "tier": "extras",
             "members": [
-                {"src_ch": 1, "src_v": 11, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 1, "tgt_v": 8, "tier": "free",
-                 "note": "Daniel 1:8 — *But Daniel purposed in his heart that he would not defile himself with the portion of the king's meat, nor with the wine which he drank: therefore he requested of the prince of the eunuchs that he might not defile himself.* Daniel's refusal of the king's defiling food in Babylon is the twin of Tobit keeping himself from the bread of the Gentiles in Tobit 1:11."}
-            ]
-        },
-        {
-            "slug": "tobit-1-bread-to-hungry-burial",
-            "title": "Bread to the Hungry, Burial for the Dead",
-            "summary_md": "Tobit's righteousness is mercy made flesh: *in the time of Enemessar I gave many alms to my brothers, and gave my bread to the hungry* (Tobit 1:16), *And my clothes to the naked: and if I saw any of my nation dead, or cast about the walls of Nineve, I buried him* (Tobit 1:17), even risking the king's wrath: *And if the king Sennacherib had slain any... I buried them privily* (Tobit 1:18). The prophet defines the true fast in the very words of Tobit's mercy: *Is it not to deal thy bread to the hungry, and that thou bring the poor that are cast out to thy house? when thou seest the naked, that thou cover him* (Isaiah 58:7). The King at the judgment will own these same deeds: *For I was an hungred, and ye gave me meat: I was thirsty, and ye gave me drink: I was a stranger, and ye took me in* (Matthew 25:35). And Raphael will testify that such alms reach heaven: *For alms does deliver from death, and shall purge away all sin* (Tobit 12:9). Even the burial obeys Torah, which forbids leaving a body exposed: *His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day* (Deuteronomy 21:23).",
-            "anchor_start_v": 16, "anchor_end_v": 18, "tier": "extras",
-            "members": [
-                {"src_ch": 1, "src_v": 16, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 58, "tgt_v": 7, "tier": "free",
-                 "note": "Isaiah 58:7 — *Is it not to deal thy bread to the hungry, and that thou bring the poor that are cast out to thy house? when thou seest the naked, that thou cover him; and that thou hide not thyself from thine own flesh?* This is the fast Yahuah chooses, lived out exactly in Tobit's bread to the hungry and clothes to the naked in Tobit 1:16-17."},
-                {"src_ch": 1, "src_v": 17, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 25, "tgt_v": 35, "tier": "free",
-                 "note": "Matthew 25:35 — *For I was an hungred, and ye gave me meat: I was thirsty, and ye gave me drink: I was a stranger, and ye took me in:* The King's reckoning of mercy at the judgment names the very deeds Tobit does for his nation in Tobit 1:17."},
-                {"src_ch": 1, "src_v": 16, "tgt_edition": "apocrypha", "tgt_book": "tobit", "tgt_ch": 12, "tgt_v": 9, "tier": "extras",
-                 "note": "Tobit 12:9 — *For alms does deliver from death, and shall purge away all sin. Those that exercise alms and righteousness shall be filled with life:* Raphael's word later in the book weighs the worth of the many alms Tobit gives his brothers in Tobit 1:16."},
-                {"src_ch": 1, "src_v": 17, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 21, "tgt_v": 23, "tier": "free",
-                 "note": "Deuteronomy 21:23 — *His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day; (for he that is hanged is accursed of Elohim (God);) that thy land be not defiled, which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance.* Tobit's secret burial of the slain in Tobit 1:17-18 keeps this very Torah command not to leave a body exposed."}
+                {"src_ch": 11, "src_v": 71, "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 7, "tgt_v": 6, "tier": "free",
+                 "note": "Joshua 7:6 — *And Joshua rent his clothes, and fell to the earth upon his face before the ark of Yahuah (LORD) until the eventide, he and the elders of Yashar’el (Israel), and put dust upon their heads.* Jonathan rending his clothes and casting earth on his head when the battle failed (1 Maccabees 11:71) is the very mourning-before-Yahuah of Joshua at Ai."},
+                {"src_ch": 11, "src_v": 71, "tgt_edition": "canon", "tgt_book": "1-samuel", "tgt_ch": 7, "tgt_v": 8, "tier": "free",
+                 "note": "1 Samuel 7:8 — *And the children of Yashar’el (Israel) said to Samuel, Cease not to cry unto Yahuah Eloheinu (the LORD our God) for us, that he will save us out of the hand of the Philistines.* Jonathan’s prayer in the dust (1 Maccabees 11:71) follows Israel’s pattern: deliverance comes through the cry to Yahuah, not the strength of the host."},
+                {"src_ch": 11, "src_v": 72, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 17, "tgt_v": 11, "tier": "free",
+                 "note": "Exodus 17:11 — *And it came to pass, when Moses held up his hand, that Yashar’el (Israel) prevailed: and when he let down his hand, Amalek prevailed.* That Jonathan prevails only after he prays (1 Maccabees 11:72) echoes Amalek’s defeat hanging on uplifted hands of intercession rather than the sword alone."}
             ]
         }
     ]
 }
 
-with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_tobit_1.json", "w") as f:
+with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_1_maccabees_11.json", "w") as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
-print("written")
+print("written", len(data["threads"]), "threads", sum(len(t["members"]) for t in data["threads"]), "members")

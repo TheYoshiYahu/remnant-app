@@ -1,0 +1,170 @@
+{
+  "edition": "apocrypha",
+  "book": "1-maccabees",
+  "chapter": 16,
+  "session": "session253",
+  "tag": "1mac16",
+  "base_band": 61875,
+  "threads": [
+    {
+      "slug": "1-maccabees-16-be-strong-charge",
+      "title": "Be Strong: The Old Captain Hands the War to His Sons",
+      "summary_md": "Simon, last of the warring brothers, lays the charge upon Judas and John: *I, and my brothers, and my father's house, have ever from my youth to this day fought against the enemies of Yashar'el (Israel); and things have prospered so well in our hands, that we have delivered Yashar'el (Israel) often* (1 Maccabees 16:2). *But now I am old, and you, by the mercy of Yahuah (God), are of a sufficient age: be you instead of me and my brother, and go and fight for our nation, and the help from heaven be with you* (1 Maccabees 16:3). It ain't new — this is the Torah handing-on of the covenant fight from one generation to the next. Moses, at the end, gives the same charge to the people and to his successor: *Be strong and of a good courage, fear not, nor be afraid of them: for Yahuah Elohayka (the LORD thy God), he it is that doth go with thee; he will not fail thee, nor forsake thee* (Deuteronomy 31:6). And to Joshua by name: *Be strong and of a good courage: for thou must go with this people unto the land which Yahuah (LORD) hath sworn unto their fathers to give them; and thou shalt cause them to inherit it* (Deuteronomy 31:7). The seed is kept not by a dynasty's strength but by the help from heaven passed down the line.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 31,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Deuteronomy 31:6 — *Be strong and of a good courage, fear not, nor be afraid of them: for Yahuah Elohayka (the LORD thy God), he it is that doth go with thee; he will not fail thee, nor forsake thee.* As aged Simon sends his sons out with *the help from heaven*, it is Moses' own charge — the fight is the LORD's, who does not fail the next generation."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 31,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Deuteronomy 31:7 — *And Moses called unto Joshua, and said unto him in the sight of all Yashar'el (Israel), Be strong and of a good courage: for thou must go with this people unto the land which Yahuah (LORD) hath sworn unto their fathers to give them; and thou shalt cause them to inherit it.* Simon handing the war to Judas and John echoes Moses charging Joshua — the covenant commission passes from the dying captain to the young."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 31,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Deuteronomy 31:23 — *And he gave Joshua the son of Nun a charge, and said, Be strong and of a good courage: for thou shalt bring the children of Yashar'el (Israel) into the land which I sware unto them: and I will be with thee.* Simon's recital of *my father's house* that *delivered Yashar'el (Israel) often* is the same chain of deliverance entrusted, generation to generation, with the promise *I will be with thee*."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-16-holy-trumpets",
+      "title": "The Holy Trumpets and the Help From Heaven",
+      "summary_md": "Outnumbered by the enemy's horsemen, Simon's sons sound the alarm: *Then sounded they with the holy trumpets: whereupon Cendebeus and his host were put to flight, so that many of them were slain, and the remnant got them to the strong hold* (1 Maccabees 16:8). It ain't new — these are the silver trumpets of the Torah, the ordinance that turns a battle into a remembrance before Yahuah: *And if ye go to war in your land against the enemy that oppresseth you, then ye shall blow an alarm with the trumpets; and ye shall be remembered before Yahuah Elohaychem (the LORD your God), and ye shall be saved from your enemies* (Numbers 10:9). They are *holy* trumpets because only the priesthood may sound them: *And the sons of Aaron, the priests, shall blow with the trumpets; and they shall be to you for an ordinance for ever throughout your generations* (Numbers 10:8). The rout of Cendebeus is no chance of war but the covenant ordinance answered from heaven.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 10,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Numbers 10:9 — *And if ye go to war in your land against the enemy that oppresseth you, then ye shall blow an alarm with the trumpets; and ye shall be remembered before Yahuah Elohaychem (the LORD your God), and ye shall be saved from your enemies.* The *holy trumpets* that put Cendebeus to flight are this very Torah ordinance — sounded, the host is remembered before the LORD and saved."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 10,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Numbers 10:8 — *And the sons of Aaron, the priests, shall blow with the trumpets; and they shall be to you for an ordinance for ever throughout your generations.* The trumpets are called *holy* because they are the priests' ordinance for ever — the Maccabean priest-house wages even its wars within the worship of the Torah."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-16-feast-of-betrayal",
+      "title": "The Feast of Betrayal: Evil for Good at the Banquet",
+      "summary_md": "Simon's own son-in-law Ptolemee plots his death, and chooses a feast for the deed: *Where the son of Abubus receiving them deceitfully into a little hold, called Docus, which he had built, made them a great banquet: howbeit he had hid men there* (1 Maccabees 16:15). *So when Simon and his sons had drunk largely, Ptolemee and his men rose up, and took their weapons, and came upon Simon into the banqueting place, and slew him, and his two sons, and certain of his servants* (1 Maccabees 16:16). *In which doing he committed a great treachery, and recompensed evil for good* (1 Maccabees 16:17). It ain't new — the bread-and-table betrayal is the oldest treachery in the covenant. David sang it: *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalm 41:9). Joab worked it with a kinsman's greeting: *And Joab said to Amasa, Art thou in health, my brother? And Joab took Amasa by the beard with the right hand to kiss him* (2 Samuel 20:9) — *But Amasa took no heed to the sword that was in Joab's hand: so he smote him therewith in the fifth rib, and shed out his bowels to the ground* (2 Samuel 20:10). And the Messiah, at His own table, took that same Psalm onto His lips of Judas: *I speak not of you all: I know whom I have chosen: but that the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me* (John 13:18). Over against the treachery stands the covenant way the apostle commands: *Recompense to no man evil for evil. Provide things honest in the sight of all men* (Romans 12:17) — Ptolemee did the opposite, and *recompensed evil for good*.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 41,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Psalm 41:9 — *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me.* Ptolemee was Simon's son-in-law who *made them a great banquet* before he slew them — the familiar friend who shares the bread and then lifts the heel."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "2-samuel",
+          "tgt_ch": 20,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "2 Samuel 20:9 — *And Joab said to Amasa, Art thou in health, my brother? And Joab took Amasa by the beard with the right hand to kiss him.* As Joab drew his kinsman near with a brother's greeting to kill him, Ptolemee received Simon and his sons *deceitfully* with a banquet before the weapons rose."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "2-samuel",
+          "tgt_ch": 20,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "2 Samuel 20:10 — *But Amasa took no heed to the sword that was in Joab's hand: so he smote him therewith in the fifth rib, and shed out his bowels to the ground, and struck him not again; and he died. So Joab and Abishai his brother pursued after Sheba the son of Bichri.* The hidden sword struck Amasa unawares at the greeting, as the hidden men *rose up, and took their weapons* upon Simon when he had drunk largely."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 13,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "John 13:18 — *I speak not of you all: I know whom I have chosen: but that the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me.* At His own table the Messiah names the table-treachery of Psalm 41 — the same betrayal-by-banquet by which Ptolemee committed *a great treachery* against Simon."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 12,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Romans 12:17 — *Recompense to no man evil for evil. Provide things honest in the sight of all men.* The verdict on Ptolemee is its exact inversion — he *recompensed evil for good*, the very thing the covenant people are forbidden to do."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-16-john-hyrcanus-chronicles",
+      "title": "The Rest of the Acts: The Priesthood Passes and the Book Closes",
+      "summary_md": "Warned in time, John escapes the assassins, and the book ends on the regnal-chronicle formula of the kings of old: *As concerning the rest of the acts of John, and his wars, and worthy deeds which he did, and the building of the walls which he made, and his doings, Behold, these are written in the chronicles of his priesthood, from the time he was made high priest after his father* (1 Maccabees 16:23-24). It ain't new — this is the very closing cadence the Scriptures use for the deeds of a leader committed to the record: *And the rest of the acts of Solomon, and all that he did, and his wisdom, are they not written in the book of the acts of Solomon?* (1 Kings 11:41). And the priesthood passing *after his father* is the Torah succession of office — *And Moses called unto Joshua... Be strong and of a good courage: for thou must go with this people unto the land which Yahuah (LORD) hath sworn unto their fathers* (Deuteronomy 31:7). The Maccabean witness closes the way the canon closes its annals — the office handed on, the deeds kept in the chronicles, the covenant line unbroken.",
+      "anchor_start_v": 23,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 16,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 11,
+          "tgt_v": 41,
+          "tier": "free",
+          "note": "1 Kings 11:41 — *And the rest of the acts of Solomon, and all that he did, and his wisdom, are they not written in the book of the acts of Solomon?* The closing line on John — *the rest of the acts of John... are written in the chronicles of his priesthood* — is the same annalist's cadence by which the canon seals the record of its leaders."
+        },
+        {
+          "src_ch": 16,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 31,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Deuteronomy 31:7 — *And Moses called unto Joshua, and said unto him in the sight of all Yashar'el (Israel), Be strong and of a good courage: for thou must go with this people unto the land which Yahuah (LORD) hath sworn unto their fathers to give them; and thou shalt cause them to inherit it.* John made high priest *after his father* is the Torah handing-on of office — the line kept unbroken from Mattathias' house through the treachery to the next high priest."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "edition": "apocrypha",
+  "book": "1-maccabees",
+  "chapter": 2,
+  "session": "session253",
+  "tag": "1mac2",
+  "base_band": 61525,
+  "threads": [
+    {
+      "slug": "1-maccabees-2-sanctuary-profaned",
+      "title": "The sanctuary profaned — the abomination on the altar",
+      "summary_md": "Mattathias takes up the lament over a desecrated house: *And, behold, our sanctuary, even our beauty and our glory, is laid waste, and the Gentiles have profaned it.* (1 Maccabees 2:12). The same defilement is named a chapter before, when Antiochus' men *set up the abomination of desolation upon the altar* (1 Maccabees 1:54) — and that abomination is no new thing under the sun. Daniel had foreseen it: *And arms shall stand on his part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate.* (Daniel 11:31). And the Messiah Himself points to it still standing ahead: *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15). The kingdom of man profaning the holy place is the one antichrist pattern, from Antiochus to the end — the SYSTEM the faithful are called to refuse.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 12,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "1-maccabees",
+          "tgt_ch": 1,
+          "tgt_v": 54,
+          "tier": "extras",
+          "note": "1 Maccabees 1:54 — *Now the fifteenth day of the month Casleu, in the hundred forty and fifth year, they set up the abomination of desolation upon the altar, and builded idol altars throughout the cities of Juda on every side;* This is the very profaning Mattathias mourns when he cries that the sanctuary is laid waste in 1 Maccabees 2:12."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 11,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "Daniel 11:31 — *And arms shall stand on his part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate.* Daniel foretold the polluting of the holy place that 1 Maccabees 2:12 sees come to pass under Antiochus."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Matthew 24:15 — *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* The Messiah names the same desolating abomination as still to come, the antichrist pattern Mattathias already grieves in 1 Maccabees 2:12."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-2-zeal-of-phinehas",
+      "title": "Inflamed with zeal — as Phinehas did",
+      "summary_md": "When an apostate steps forward to sacrifice on the heathen altar, Mattathias does not flinch: *Which thing when Mattathias saw, he was inflamed with zeal, and his reins trembled, neither could he forbear to shew his anger according to judgment: wherefore he ran, and slew him upon the altar.* (1 Maccabees 2:24), and the text names the pattern outright — *Thus dealt he zealously for the law of Yahuah (God) like as Phinees did to Zambri the son of Salom.* (1 Maccabees 2:26). The original act is in the Torah: *And when Phinehas, the son of Eleazar, the son of Aaron the priest, saw it, he rose up from among the congregation, and took a javelin in his hand;* (Numbers 25:7), and Yahuah seals it with a covenant — *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar'el (Israel).* (Numbers 25:13). The Psalm preserves it as righteousness for ever: *Then stood up Phinehas, and executed judgment: and so the plague was stayed. And that was counted unto him for righteousness unto all generations for evermore.* (Psalm 106:30-31). It ain't new — Mattathias' zeal is Phinehas' zeal, the same covenant jealousy for a holy people.",
+      "anchor_start_v": 24,
+      "anchor_end_v": 26,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 26,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 25,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Numbers 25:7 — *And when Phinehas, the son of Eleazar, the son of Aaron the priest, saw it, he rose up from among the congregation, and took a javelin in his hand;* This is the deed 1 Maccabees 2:26 names as the very pattern of Mattathias' zeal upon the altar."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 26,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 25,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Numbers 25:13 — *And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar'el (Israel).* The everlasting priesthood granted for Phinehas' zeal is the covenant Mattathias the priest is acting in when he is inflamed with zeal in 1 Maccabees 2:26."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 106,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Psalm 106:30 — *Then stood up Phinehas, and executed judgment: and so the plague was stayed.* As Phinehas rose and executed judgment to stay the plague, so Mattathias rises and slays the apostate at the altar in 1 Maccabees 2:24."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 106,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "Psalm 106:31 — *And that was counted unto him for righteousness unto all generations for evermore.* The zeal counted to Phinehas as everlasting righteousness is the same righteousness reckoned to Mattathias when he shows his anger according to judgment in 1 Maccabees 2:24."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-2-die-rather-than-profane-sabbath",
+      "title": "Let us die in our innocency — covenant kept unto death",
+      "summary_md": "Hunted into the wilderness and attacked on the sabbath, the faithful will not lift a hand to defile the day: *But they said, We will not come forth, neither will we do the king's commandment, to profane the sabbath day.* (1 Maccabees 2:34); *But said, Let us die all in our innocency: heaven and earth will testify for us, that you put us to death wrongfully.* (1 Maccabees 2:37). This is Torah-faithfulness unto death, never law-as-curse — the same resolve named the chapter before, when the people *chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.* (1 Maccabees 1:63). And it is the cloud Hebrews gathers: *They were stoned, they were sawn asunder, were tempted, were slain with the sword: they wandered about in sheepskins and goatskins; being destitute, afflicted, tormented;* (Hebrews 11:37) — *(Of whom the world was not worthy:) they wandered in deserts, and in mountains, and in dens and caves of the earth.* (Hebrews 11:38). The Maccabean martyrs in the secret places of the wilderness are written into that very roll.",
+      "anchor_start_v": 34,
+      "anchor_end_v": 38,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 37,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "1-maccabees",
+          "tgt_ch": 1,
+          "tgt_v": 63,
+          "tier": "extras",
+          "note": "1 Maccabees 1:63 — *Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.* The same choosing-to-die-rather-than-defile-the-covenant is the resolve of those who say let us die in our innocency in 1 Maccabees 2:37."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 38,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 37,
+          "tier": "free",
+          "note": "Hebrews 11:37 — *They were stoned, they were sawn asunder, were tempted, were slain with the sword: they wandered about in sheepskins and goatskins; being destitute, afflicted, tormented;* These slain saints of the faith-cloud are the very kind slaughtered with their wives and children on the sabbath in 1 Maccabees 2:38."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 38,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 38,
+          "tier": "free",
+          "note": "Hebrews 11:38 — *(Of whom the world was not worthy:) they wandered in deserts, and in mountains, and in dens and caves of the earth.* The faithful who wandered in deserts and caves are those who went down into the wilderness and were slain there in 1 Maccabees 2:38."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-2-give-your-lives-for-the-covenant",
+      "title": "Be zealous for the law — give your lives for the covenant",
+      "summary_md": "Mattathias' dying charge holds the whole framework in a line: *Now therefore, my sons, be you zealous for the law, and give your lives for the covenant of your fathers.* (1 Maccabees 2:50) — and he refuses fear of the tyrant: *Fear not then the words of a sinful man: for his glory shall be dung and worms.* (1 Maccabees 2:62); *To day he shall be lifted up and to morrow he shall not be found, because he is returned into his dust, and his thought is come to nothing.* (1 Maccabees 2:63). The Torah stands; the kingdom of man passes. The Messiah's own word seals the charge: *And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell.* (Matthew 10:28). And the better hope behind dying for the covenant is the resurrection his brethren confess — *And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life.* (2 Maccabees 7:9).",
+      "anchor_start_v": 50,
+      "anchor_end_v": 63,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 62,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 10,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "Matthew 10:28 — *And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell.* The Messiah's call not to fear the killer of the body is the very counsel Mattathias gives when he says fear not the words of a sinful man in 1 Maccabees 2:62."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 50,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "2 Maccabees 7:9 — *And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life.* To give your lives for the covenant in 1 Maccabees 2:50 is to die for his laws in the hope that the King of the world will raise you up."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 63,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 37,
+          "tgt_v": 36,
+          "tier": "free",
+          "note": "Psalm 37:36 — *Yet he passed away, and, lo, he was not: yea, I sought him, but he could not be found.* The wicked who passes away and cannot be found is the very fate Mattathias pronounces over the tyrant who today is lifted up and tomorrow shall not be found in 1 Maccabees 2:63."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-2-rollcall-of-the-faithful",
+      "title": "Call to remembrance the fathers — the same cloud of witnesses",
+      "summary_md": "Mattathias rehearses the fathers who were faithful in trial: *Call to remembrance what acts our fathers did in their time; so shall you receive great honour and an everlasting name.* (1 Maccabees 2:51) — *Was not Abraham found faithful in temptation, and it was imputed to him for righteousness?* (1 Maccabees 2:52). It is the very roll Hebrews unrolls. Abraham reckoned righteous: *And he believed in Yahuah (LORD); and he counted it to him for righteousness.* (Genesis 15:6), tried at the altar — *By faith Abraham, when he was tried, offered up Isaac: and he that had received the promises offered up his only begotten son,* (Hebrews 11:17). David and the prophets: *Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions,* (Hebrews 11:33). It ain't new — the deathbed roll-call of 1 Maccabees and the faith-chapter of Hebrews are the same cloud of witnesses, the same covenant people kept.",
+      "anchor_start_v": 51,
+      "anchor_end_v": 57,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 52,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 15,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Genesis 15:6 — *And he believed in Yahuah (LORD); and he counted it to him for righteousness.* This is the reckoning Mattathias recalls when he asks whether Abraham was not found faithful and it was imputed to him for righteousness in 1 Maccabees 2:52."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 52,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Hebrews 11:17 — *By faith Abraham, when he was tried, offered up Isaac: and he that had received the promises offered up his only begotten son,* The trying of Abraham that Hebrews names is the temptation in which 1 Maccabees 2:52 says he was found faithful."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 57,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 33,
+          "tier": "free",
+          "note": "Hebrews 11:33 — *Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions,* David and the faithful who subdued kingdoms through faith are the same fathers Mattathias rehearses, of whom David possessed the throne of an everlasting kingdom in 1 Maccabees 2:57."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-2-elijah-three-children-daniel",
+      "title": "Elijah, the three children, Daniel — delivered by trust",
+      "summary_md": "The roll-call presses on to those delivered through fire and lions: *Elias for being zealous and fervent for the law was taken up into heaven.* (1 Maccabees 2:58) — *Ananias, Azarias, and Misael, by believing were saved out of the flame.* (1 Maccabees 2:59) — *Daniel for his innocency was delivered from the mouth of lions.* (1 Maccabees 2:60), and the lesson sealed: *And thus consider you throughout all ages, that none that put their trust in him shall be overcome.* (1 Maccabees 2:61). The accounts stand in the canon. Elijah's fervent zeal: *Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months.* (James 5:17). The three saved out of the flame: *If it be so, our Elohim (God) whom we serve is able to deliver us from the burning fiery furnace, and he will deliver us out of thine hand, O king.* (Daniel 3:17). Daniel and the lions: *My Elohim (God) hath sent his angel, and hath shut the lions' mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt.* (Daniel 6:22). None that trust are overcome — the same faithful witness, it ain't new.",
+      "anchor_start_v": 58,
+      "anchor_end_v": 61,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 58,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "James 5:17 — *Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months.* The zealous and fervent Elias whom Mattathias names in 1 Maccabees 2:58 is the same prophet James holds up as an example of fervent prayer."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 59,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 3,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Daniel 3:17 — *If it be so, our Elohim (God) whom we serve is able to deliver us from the burning fiery furnace, and he will deliver us out of thine hand, O king.* The confidence of the three is the believing by which 1 Maccabees 2:59 says Ananias, Azarias, and Misael were saved out of the flame."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 60,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 6,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Daniel 6:22 — *My Elohim (God) hath sent his angel, and hath shut the lions' mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt.* The shutting of the lions' mouths for the innocency found in Daniel is exactly the deliverance 1 Maccabees 2:60 recalls."
+        }
+      ]
+    }
+  ]
+}

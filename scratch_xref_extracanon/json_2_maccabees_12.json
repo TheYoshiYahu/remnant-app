@@ -1,0 +1,210 @@
+{
+  "edition": "apocrypha",
+  "book": "2-maccabees",
+  "chapter": 12,
+  "session": "session253",
+  "tag": "2mac12",
+  "base_band": 62275,
+  "threads": [
+    {
+      "slug": "2-maccabees-12-mindful-of-the-resurrection",
+      "title": "Mindful of the resurrection — the hope laid up for those that died godly",
+      "summary_md": "Judas gathers an offering for the slain and sends it to Jerusalem, *And when he had made a gathering throughout the company to the sum of two thousand drachms of silver, he sent it to Jerusalem to offer a sin offering, doing in it very well and honestly, in that he was mindful of the resurrection* (2 Maccabees 12:43) — and the text says plainly why: *For if he had not hoped that they that were slain should have risen again, it had been superfluous and vain to pray for the dead* (2 Maccabees 12:44). The deed is honest only because the resurrection is real; *he perceived that there was great favour laid up for those that died godly* (2 Maccabees 12:45). This is the same hope the seven brothers held under Antiochus — *the King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9) — and it is the very hope Hebrews names when it points back to *others* who *were tortured, not accepting deliverance; that they might obtain a better resurrection* (Hebrews 11:35). The prophets carried it before them: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life* (Daniel 12:2). Paul reasons exactly as Judas does — that to act for the dead is empty unless the dead rise (1 Corinthians 15:29) — and John sees the day arrive: *And I saw the dead, small and great, stand before Elohim* (Revelation 20:12). It ain't new: the covenant people died godly because they knew the dust would give them back.",
+      "anchor_start_v": 43,
+      "anchor_end_v": 45,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 43,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Hebrews 11:35 — *Women received their dead raised to life again: and others were tortured, not accepting deliverance; that they might obtain a better resurrection:* the Maccabean martyrs are precisely the *others* in view, so when Judas is *mindful of the resurrection* he holds the same better hope Hebrews honours."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 44,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* Judas hopes *they that were slain should have risen again* on the strength of this promised awaking of the dead."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 44,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 15,
+          "tgt_v": 29,
+          "tier": "free",
+          "note": "1 Corinthians 15:29 — *Else what shall they do which are baptized for the dead, if the dead rise not at all? why are they then baptized for the dead?* Paul argues exactly as Judas does — an act on behalf of the dead is *superfluous and vain* unless the dead rise."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 45,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim; and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The *great favour laid up for those that died godly* is the standing-up John witnesses at the throne."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 43,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "2 Maccabees 7:9 — *And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life.* The resurrection Judas is *mindful of* is the same one the seven brothers confessed under torture — those who *died godly* die for the laws."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-12-accursed-thing-under-the-coats",
+      "title": "The accursed thing under their coats — why they were slain",
+      "summary_md": "When the bodies are gathered, the cause of their fall is uncovered: *Now under the coats of every one that was slain they found things consecrated to the idols of the Jamnites, which is forbidden the Yahudim by the law. Then every man saw that this was the cause wherefore they were slain* (2 Maccabees 12:40). This is Achan retold — *Yashar'el hath sinned, and they have also transgressed my covenant which I commanded them: for they have even taken of the accursed thing* (Joshua 7:11) — and as with Achan, the host *could not stand before their enemies* (Joshua 7:12) until the devoted thing was purged. The Torah had warned exactly this concerning the silver and gold of idols: *thou shalt not desire the silver or gold that is on them, nor take it unto thee, lest thou be snared therein: for it is an abomination to Yahuah Elohayka* (Deuteronomy 7:25); the spoil of the herem is *most holy unto Yahuah* and not for private keeping (Leviticus 27:28). So Judas leads the people to *besought him that the sin committed might wholly be put out of remembrance* (2 Maccabees 12:42) — Torah-faithfulness, not law-as-curse: the covenant stands, and the people keep it.",
+      "anchor_start_v": 40,
+      "anchor_end_v": 42,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 7,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Joshua 7:11 — *Yashar'el hath sinned, and they have also transgressed my covenant which I commanded them: for they have even taken of the accursed thing, and have also stolen, and dissembled also, and they have put it even among their own stuff.* The idol-tokens hidden *under the coats* are Achan's accursed thing hidden among the stuff — the same covenant breach by the same concealment."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 7,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Joshua 7:12 — *Therefore the children of Yashar'el could not stand before their enemies, but turned their backs before their enemies, because they were accursed: neither will I be with you any more, except ye destroy the accursed from among you.* This is why the slain fell — like Achan's Israel, they *could not stand* while the accursed thing was carried among them."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 7,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Deuteronomy 7:25 — *The graven images of their gods shall ye burn with fire: thou shalt not desire the silver or gold that is on them, nor take it unto thee, lest thou be snared therein: for it is an abomination to Yahuah Elohayka.* The *things consecrated to the idols* are exactly the snare the law forbade — taking the idol's silver was the abomination that slew them."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 42,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 27,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "Leviticus 27:28 — *Notwithstanding no devoted thing, that a man shall devote unto Yahuah of all that he hath, both of man and beast, and of the field of his possession, shall be sold or redeemed: every devoted thing is most holy unto Yahuah.* The devoted spoil belonged to Yahuah, not the soldier's coat — Judas's call to purge the sin restores the holy thing to its place."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-12-sin-offering-for-reconciliation",
+      "title": "A sin offering sent to Jerusalem — reconciliation for the dead",
+      "summary_md": "Judas *sent it to Jerusalem to offer a sin offering* (2 Maccabees 12:43), and *Whereupon he made a reconciliation for the dead, that they might be delivered from sin* (2 Maccabees 12:45). The pattern is the altar Torah appointed: *the priest shall make an atonement for him as concerning his sin, and it shall be forgiven him* (Leviticus 4:26) — sin is covered by an offering brought to the sanctuary, not invented but commanded. Read honestly, the deliverance from sin is grounded in the resurrection-hope, for the slain are reckoned among those who will rise — and Messiah is the firstfruits of that rising: *But now is Messiah risen from the dead, and become the firstfruits of them that slept* (1 Corinthians 15:20). The sin offering at Jerusalem looks toward the day the dead in the dust are gathered and the godly find favour; the reconciliation is real because the resurrection is sure.",
+      "anchor_start_v": 43,
+      "anchor_end_v": 45,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 43,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 4,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Leviticus 4:26 — *And he shall burn all his fat upon the altar, as the fat of the sacrifice of peace offerings: and the priest shall make an atonement for him as concerning his sin, and it shall be forgiven him.* Judas's *sin offering* at Jerusalem follows the very ordinance Torah gave for atonement — the means of being *delivered from sin*."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 45,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 15,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "1 Corinthians 15:20 — *But now is Messiah risen from the dead, and become the firstfruits of them that slept.* The *reconciliation for the dead* rests on a resurrection that has a firstfruits — the godly slain follow where the firstfruits has gone."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-12-jericho-who-seeth-all-things",
+      "title": "Who cast down Jericho — the warrior who seeth all things",
+      "summary_md": "Before the walls of Caspis, Judas calls *upon the great Yahuah of the world, who without rams or engines of war did cast down Jericho in the time of Joshua* (2 Maccabees 12:15) — pleading the founding deliverance: *the wall fell down flat... and they took the city* (Joshua 6:20), where no siege-engine but the trumpet and the LORD brought the walls down. So too here *they found him not... having left a very strong garrison* is undone, and the enemy flees *through the appearing of him who seeth all things* (2 Maccabees 12:22) — the same Captain who told Israel at the sea, *Fear ye not, stand still, and see the salvation of Yahuah, which he will shew to you to day* (Exodus 14:13). Antiochus's officers are the kingdom of man with all its *engines and darts*; the victory is not in the engines but in the One who sees and fights for His people.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 22,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 6,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Joshua 6:20 — *So the people shouted when the priests blew with the trumpets: and it came to pass, when the people heard the sound of the trumpet, and the people shouted with a great shout, that the wall fell down flat, so that the people went up into the city, every man straight before him, and they took the city.* Judas pleads this very fall — the One who cast down Jericho *without rams or engines* casts down Caspis's walls too."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 14,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Exodus 14:13 — *And Moses said unto the people, Fear ye not, stand still, and see the salvation of Yahuah, which he will shew to you to day: for the Egyptians whom ye have seen to day, ye shall see them again no more for ever.* The enemy *struck with fear and terror through the appearing of him who seeth all things* is routed by the same warrior-God who fought at the sea."
+        }
+      ]
+    },
+    {
+      "slug": "2-maccabees-12-feast-of-weeks-kept",
+      "title": "The feast of weeks approaching — the appointed time kept in war",
+      "summary_md": "Even in the press of campaign the fighters keep the moed: *so they came to Jerusalem, the feast of the weeks approaching* (2 Maccabees 12:31), *And after the feast, called Pentecost, they went forth against Gorgias* (2 Maccabees 12:32). The covenant calendar governs the warriors — the Torah-appointed day stands: *And ye shall proclaim on the selfsame day, that it may be an holy convocation unto you: ye shall do no servile work therein: it shall be a statute for ever* (Leviticus 23:21). It is the feast the faithful kept — and the very day on which, generations on, the people would again be gathered with one accord: *And when the day of Pentecost was fully come, they were all with one accord in one place* (Acts 2:1). The Maccabees keep the feast first, then fight; the appointed times are not abolished but honoured.",
+      "anchor_start_v": 31,
+      "anchor_end_v": 32,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 31,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 23,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Leviticus 23:21 — *And ye shall proclaim on the selfsame day, that it may be an holy convocation unto you: ye shall do no servile work therein: it shall be a statute for ever in all your dwellings throughout your generations.* The *feast of the weeks* the warriors come to Jerusalem to keep is this *statute for ever* — the appointed time honoured even in war."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 32,
+          "tgt_edition": "canon",
+          "tgt_book": "acts",
+          "tgt_ch": 2,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Acts 2:1 — *And when the day of Pentecost was fully come, they were all with one accord in one place.* The same *feast, called Pentecost* the Maccabees keep is the day the gathered people stand together with one accord — one feast across the covenant."
+        }
+      ]
+    }
+  ]
+}

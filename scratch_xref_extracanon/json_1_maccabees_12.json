@@ -1,0 +1,180 @@
+{
+  "edition": "apocrypha",
+  "book": "1-maccabees",
+  "chapter": 12,
+  "session": "session253",
+  "tag": "1mac12",
+  "base_band": 61775,
+  "threads": [
+    {
+      "slug": "1-maccabees-12-stock-of-abraham",
+      "title": "Of the stock of Abraham — the kindred claimed",
+      "summary_md": "When the Lacedemonians write to the high priest, the bond they name is not treaty but blood: *It is found in writing, that the Lacedemonians and Yahudim (Jews) are brothers, and that they are of the stock of Abraham* (1 Maccabees 12:21). It ain't new — the seed of Abraham was promised to spread until *thy seed* could not be numbered: *Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* (Genesis 15:5). The covenant that grew that seed made him *a father of many nations* (Genesis 17:5), the everlasting covenant *between me and thee and thy seed after thee in their generations* (Genesis 17:7). And so the regathered brothers remember one another *both in our feasts, and other convenient days... in the sacrifices which we offer, and in our prayers* (1 Maccabees 12:11) — the covenant people kept, scattered yet still kin, not a stranger-nation replacing them.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 21,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 15,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.* The stock of Abraham the Spartans claim in 1 Maccabees 12:21 is the innumerable seed Yahuah promised to grow until it filled the nations."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 17,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Genesis 17:5 — *Neither shall thy name any more be called Abram, but thy name shall be Abraham; for a father of many nations have I made thee.* Abraham being made a father of many nations is the writing that lets a far people in 1 Maccabees 12:21 still be reckoned brothers of the Yahudim."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 21,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 17,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 17:7 — *And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a Elohim (God) unto thee, and to thy seed after thee.* The everlasting covenant to Abraham's seed is the deeper league standing under the friendship renewed in 1 Maccabees 12:21."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 6,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 1,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "2 Maccabees 1:2 — *Yahuah (God) be gracious to you, and remember his covenant that he made with Abraham, Isaac, and Jacob, his faithful servants;* The brotherhood greeting Jonathan sends in 1 Maccabees 12:6 leans on the same covenant of the fathers that frames the Jerusalem brethren's letter to their kin."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-12-help-from-heaven",
+      "title": "We have help from heaven — and the holy books in our hands",
+      "summary_md": "Jonathan's letter waves away need of foreign aid because the true succour is elsewhere: *we have the holy books of scripture in our hands to comfort us* (1 Maccabees 12:9), and *we have help from heaven that succoureth us, so as we are delivered from our enemies, and our enemies are brought under foot* (1 Maccabees 12:15). It ain't new — this is the unbroken Maccabean confidence: *But Maccabeus had ever sure confidence that Yahuah (God) would help him* (2 Maccabees 15:7), bidding his people *to remember the help which in former times they had received from heaven* (2 Maccabees 15:8). The deliverance is heaven's, and the praise returns there: *So every man praised toward the heaven the glorious Yahuah (God), saying, Blessed be he that has kept his own place undefiled* (2 Maccabees 15:34). Not the arm of Rome but the help from above brings the enemy under foot.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 15,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 15,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "2 Maccabees 15:7 — *But Maccabeus had ever sure confidence that Yahuah (God) would help him:* The help from heaven Jonathan names in 1 Maccabees 12:15 is the same sure confidence in which his brother house fought, trusting deliverance to come from above."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 15,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 15,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "2 Maccabees 15:8 — *Wherefore he exhorted his people not to fear the coming of the heathen against them, but to remember the help which in former times they had received from heaven, and now to expect the victory and aid, which should come to them from the Almighty.* The help from heaven that succoureth in 1 Maccabees 12:15 is exactly the remembered aid the Maccabees set against the dread of the heathen."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 9,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 15,
+          "tgt_v": 34,
+          "tier": "extras",
+          "note": "2 Maccabees 15:34 — *So every man praised toward the heaven the glorious Yahuah (God), saying, Blessed be he that has kept his own place undefiled.* Where 1 Maccabees 12:9 finds comfort in the holy books and heaven's aid, the deliverance ends in praise lifted toward the same heaven that keeps its own place undefiled."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-12-snare-of-the-trusting",
+      "title": "Believing him — the snare of the trusting",
+      "summary_md": "Tryphon cannot break Jonathan in the field, so he breaks him with a kiss of friendship: he *received him honourably, and commended him to all his friends, and gave him gifts* (1 Maccabees 12:43), then said, *seeing there is no war between us... come you with me to Ptolemais, for I will give it you* (1 Maccabees 12:44-45). *So Jonathan believing him did as he told him, and sent away his host* (1 Maccabees 12:46) — and was taken. It ain't new — this is the oldest grief of the righteous, the table-friend who turns: *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalm 41:9). The Messiah will name that same psalm over His own betrayer: *He that eateth bread with me hath lifted up his heel against me* (John 13:18). And the swordless treachery wears a fair face: *When he speaketh fair, believe him not: for there are seven abominations in his heart* (Proverbs 26:25).",
+      "anchor_start_v": 43,
+      "anchor_end_v": 48,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 46,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 41,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Psalm 41:9 — *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me.* Jonathan believing Tryphon and being taken in 1 Maccabees 12:46 is the ancient wound of the trusting betrayed by the friend who shared his table."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 43,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 13,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "John 13:18 — *I speak not of you all: I know whom I have chosen: but that the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me.* The honour and gifts with which Tryphon masks his snare in 1 Maccabees 12:43 foreshadow the betrayal-by-friendship the Messiah names at His own table."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 44,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 26,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Proverbs 26:25 — *When he speaketh fair, believe him not: for there are seven abominations in his heart.* Tryphon's fair words in 1 Maccabees 12:44 — there is no war between us — are the smooth speech the proverb warns hides a heart full of hidden malice."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 46,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 12,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "Sirach 12:10 — *Never trust your enemy: for like as iron rusteth, so is his wickedness.* Jonathan trusting and disarming himself in 1 Maccabees 12:46 is the very thing the wisdom of Sirach forbids — the enemy's wickedness only waits, like rust, for its hour."
+        }
+      ]
+    },
+    {
+      "slug": "1-maccabees-12-lamentation-no-captain",
+      "title": "All Israel made great lamentation — no captain to help",
+      "summary_md": "With Jonathan taken, the heathen smell a leaderless flock: *all Yashar'el (Israel) made great lamentation* (1 Maccabees 12:52), and the nations round about say, *They have no captain, nor any to help them: now therefore let us make war upon them, and take away their memorial from among men* (1 Maccabees 12:53). It ain't new — the cry that goes up is the cry of Psalm 41, the shepherdless people whose enemies wait for the name to perish: *Mine enemies speak evil of me, When shall he die, and his name perish?* (Psalm 41:5). Yet the same psalm answers the threat to take away their memorial: *Yahuah (LORD) will preserve him, and keep him alive; and he shall be blessed upon the earth: and thou wilt not deliver him unto the will of his enemies* (Psalm 41:2). The captain falls, but the help is from heaven (1 Maccabees 12:15) — and the seed of Abraham is not blotted out from among men.",
+      "anchor_start_v": 52,
+      "anchor_end_v": 53,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 53,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 41,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Psalm 41:5 — *Mine enemies speak evil of me, When shall he die, and his name perish?* The heathen plotting in 1 Maccabees 12:53 to take away Israel's memorial speak the very wish of the psalmist's foes — that the righteous die and his name be blotted out."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 52,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 41,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Psalm 41:2 — *Yahuah (LORD) will preserve him, and keep him alive; and he shall be blessed upon the earth: and thou wilt not deliver him unto the will of his enemies.* Against all Israel's lamentation in 1 Maccabees 12:52, the psalm answers that Yahuah will not give the trusting over to the will of their enemies."
+        }
+      ]
+    }
+  ]
+}
