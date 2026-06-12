@@ -1,0 +1,79 @@
+{
+  "edition": "apocrypha",
+  "book": "the-wisdom-of-solomon",
+  "chapter": 2,
+  "session": "session253",
+  "tag": "wis02",
+  "base_band": 58025,
+  "threads": [
+    {
+      "slug": "wisdom-2-suffering-righteous-passion",
+      "title": "The just man who calls himself the child of Yahuah — condemned to a shameful death",
+      "summary_md": "The ungodly resolve against the righteous one: *Therefore let us lie in wait for the righteous; because he is not for our turn, and he is clean contrary to our doings: he upbraideth us with our offending the law, and objecteth to our infamy the transgressings of our education* (Wisdom of Solomon 2:12); *He professeth to have the knowledge of Yahuah (God): and he calls himself the child of Yahuah (God)* (Wisdom of Solomon 2:13); *For if the just man be the son of Yahuah (God), he will help him, and deliver him from the hand of his enemies* (Wisdom of Solomon 2:18); *Let us condemn him with a shameful death: for by his own saying he shall be respected* (Wisdom of Solomon 2:20). It ain't new — this is the script the mockers read aloud at Golgotha. *He trusted in Elohim (God); let him deliver him now, if he will have him: for he said, I am the Son of Elohim (God)* (Matthew 27:43); the same taunt the psalmist heard, *He trusted on Yahuah (LORD) that he would deliver him: let him deliver him, seeing he delighted in him* (Psalm 22:8); and the very charge of the accusers, *We have a law, and by our law he ought to die, because he made himself the Son of Elohim (God)* (John 19:7). The prophet already named the silent Lamb of that shameful death — *He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter* (Isaiah 53:7). The Passion was written into the witness centuries before the cross stood up.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 2, "src_v": 13, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 27, "tgt_v": 43, "tier": "free", "note": "Matthew 27:43 — *He trusted in Elohim (God); let him deliver him now, if he will have him: for he said, I am the Son of Elohim (God).* The mockers at the cross speak the ungodly's reasoning of Wisdom of Solomon 2:13 almost word for word — the righteous one who calls himself the child of Yahuah."},
+        {"src_ch": 2, "src_v": 18, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 22, "tgt_v": 8, "tier": "free", "note": "Psalm 22:8 — *He trusted on Yahuah (LORD) that he would deliver him: let him deliver him, seeing he delighted in him.* The taunt 'if the just man be the son of Yahuah, he will help him' of Wisdom of Solomon 2:18 is the psalmist's scornful 'let him deliver him.'"},
+        {"src_ch": 2, "src_v": 20, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 19, "tgt_v": 7, "tier": "free", "note": "John 19:7 — *The Yahudim (Jews) answered him, We have a law, and by our law he ought to die, because he made himself the Son of Elohim (God).* The shameful-death verdict of Wisdom of Solomon 2:20 is pressed on the exact ground that he made himself the Son of Elohim."},
+        {"src_ch": 2, "src_v": 19, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 53, "tgt_v": 7, "tier": "free", "note": "Isaiah 53:7 — *He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.* The despite, torture, and meekness tested in Wisdom of Solomon 2:19 is the silent Lamb of Isaiah's suffering servant."},
+        {"src_ch": 2, "src_v": 12, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 3, "tgt_v": 10, "tier": "free", "note": "Isaiah 3:10 — *Say ye to the righteous, that it shall be well with him: for they shall eat the fruit of their doings.* The ungodly's lying-in-wait for the righteous in Wisdom of Solomon 2:12 inverts the prophet's promise that it shall be well with the just."}
+      ]
+    },
+    {
+      "slug": "wisdom-2-the-falsely-condemned-just",
+      "title": "Ye have condemned and killed the just — the righteous one slain by false counsel",
+      "summary_md": "The plot is to put the innocent to a violent end: *Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience* (Wisdom of Solomon 2:19); *Let us condemn him with a shameful death: for by his own saying he shall be respected* (Wisdom of Solomon 2:20). The apostle pronounces the verdict over every such tribunal: *Ye have condemned and killed the just; and he doth not resist you* (James 5:6). This is the very pattern judged in Susanna, where the wicked elders *came also full of mischievous imagination against Susanna to put her to death* (The History of Susanna 1:28) — and the righteous one is vindicated when *all the assembly cried out with a loud voice, and praised Yahuah (God), who saves them that trust in him* (The History of Susanna 1:60). The condemnation is real; so is the deliverance.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 2, "src_v": 20, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 5, "tgt_v": 6, "tier": "free", "note": "James 5:6 — *Ye have condemned and killed the just; and he doth not resist you.* James names the very crime the ungodly plot in Wisdom of Solomon 2:20 — condemning the unresisting righteous one to death."},
+        {"src_ch": 2, "src_v": 19, "tgt_edition": "apocrypha", "tgt_book": "the-history-of-susanna", "tgt_ch": 1, "tgt_v": 28, "tier": "extras", "note": "The History of Susanna 1:28 — *And it came to pass the next day, when the people were assembled to her husband Joacim, the two elders came also full of mischievous imagination against Susanna to put her to death.* Susanna's accusers act out the despiteful examination of the righteous in Wisdom of Solomon 2:19."},
+        {"src_ch": 2, "src_v": 18, "tgt_edition": "apocrypha", "tgt_book": "the-history-of-susanna", "tgt_ch": 1, "tgt_v": 60, "tier": "extras", "note": "The History of Susanna 1:60 — *With that all the assembly cried out with a loud voice, and praised Yahuah (God), who saves them that trust in him.* Susanna's deliverance answers the ungodly's wager in Wisdom of Solomon 2:18 — the just man's Elohim does help him."}
+      ]
+    },
+    {
+      "slug": "wisdom-2-let-us-eat-and-drink",
+      "title": "Let us eat and drink, for to morrow we die — the creed of those who deny the resurrection",
+      "summary_md": "Because they say *after our end there is no returning: for it is fast sealed, so that no man comes again* (Wisdom of Solomon 2:5), the ungodly conclude: *Come on therefore, let us enjoy the good things that are present: and let us speedily use the creatures like as in youth* (Wisdom of Solomon 2:6); *Let none of us go without his part of our voluptuousness... for this is our portion, and our lot is this* (Wisdom of Solomon 2:9). It ain't new — this is the carousing the prophet condemned: *let us eat and drink; for to morrow we shall die* (Isaiah 22:13). The apostle quotes the same creed as the fruit of denying the resurrection — *if the dead rise not? let us eat and drink; for to morrow we die* (1 Corinthians 15:32) — and the Master casts it as the rich fool's soul-talk, *Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry* (Luke 12:19). The denial of the world to come always ends at the same table.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 2, "src_v": 6, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 22, "tgt_v": 13, "tier": "free", "note": "Isaiah 22:13 — *And behold joy and gladness, slaying oxen, and killing sheep, eating flesh, and drinking wine: let us eat and drink; for to morrow we shall die.* The 'let us enjoy the good things that are present' of Wisdom of Solomon 2:6 is the very feast the prophet rebukes."},
+        {"src_ch": 2, "src_v": 6, "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 15, "tgt_v": 32, "tier": "free", "note": "1 Corinthians 15:32 — *If after the manner of men I have fought with beasts at Ephesus, what advantageth it me, if the dead rise not? let us eat and drink; for to morrow we die.* Paul ties this creed to denying the resurrection — exactly the 'no returning' reasoning behind Wisdom of Solomon 2:6."},
+        {"src_ch": 2, "src_v": 9, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 12, "tgt_v": 19, "tier": "free", "note": "Luke 12:19 — *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry.* The rich fool's portion echoes 'this is our portion, and our lot is this' of Wisdom of Solomon 2:9."}
+      ]
+    },
+    {
+      "slug": "wisdom-2-oppress-the-poor-righteous",
+      "title": "Let us oppress the poor righteous man — strength made the law of justice",
+      "summary_md": "The ungodly enthrone might over right: *Let us oppress the poor righteous man, let us not spare the widow, nor reverence the ancient gray hairs of the aged* (Wisdom of Solomon 2:10); *Let our strength be the law of justice: for that which is feeble is found to be nothing worth* (Wisdom of Solomon 2:11). This is the very oppression Yahuah swore to judge: *because they sold the righteous for silver, and the poor for a pair of shoes; That pant after the dust of the earth on the head of the poor, and turn aside the way of the meek* (Amos 2:6-7). And it ends where chapter 2 began — in the condemned just one: *Ye have condemned and killed the just; and he doth not resist you* (James 5:6). Torah stands: it is the widow, the poor, and the aged whom the covenant defends.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 2, "src_v": 10, "tgt_edition": "canon", "tgt_book": "amos", "tgt_ch": 2, "tgt_v": 6, "tier": "free", "note": "Amos 2:6 — *Thus saith Yahuah (LORD); For three transgressions of Yashar'el (Israel), and for four, I will not turn away the punishment thereof; because they sold the righteous for silver, and the poor for a pair of shoes.* The oppression of the poor righteous man in Wisdom of Solomon 2:10 is the sin Yahuah swears to judge."},
+        {"src_ch": 2, "src_v": 10, "tgt_edition": "canon", "tgt_book": "amos", "tgt_ch": 2, "tgt_v": 7, "tier": "free", "note": "Amos 2:7 — *That pant after the dust of the earth on the head of the poor, and turn aside the way of the meek: and a man and his father will go in unto the same maid, to profane my holy name.* The trampling of the poor and the meek answers the unsparing cruelty of Wisdom of Solomon 2:10."},
+        {"src_ch": 2, "src_v": 11, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 5, "tgt_v": 6, "tier": "free", "note": "James 5:6 — *Ye have condemned and killed the just; and he doth not resist you.* Making strength 'the law of justice' in Wisdom of Solomon 2:11 ends in the condemned and unresisting just one of James."}
+      ]
+    },
+    {
+      "slug": "wisdom-2-immortal-image-envy-of-devil",
+      "title": "Yahuah created man immortal, the image of his eternity — death by envy of the devil",
+      "summary_md": "The chapter closes by exposing the lie under the ungodly's despair: *For Yahuah (God) created man to be immortal, and made him to be an image of his own eternity* (Wisdom of Solomon 2:23); *Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it* (Wisdom of Solomon 2:24). It ain't new — this is Eden read straight. Man bears the divine image: *So Elohim (God) created man in his own image, in the image of Elohim (God) created he him* (Genesis 1:27). The devil's envy and lie brought death — *And the serpent said unto the woman, Ye shall not surely die* (Genesis 3:4) — for *He was a murderer from the beginning, and abode not in the truth* (John 8:44). The apostle states it plainly: *as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned* (Romans 5:12). And the contrary portion stands — *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom of Solomon 3:1).",
+      "anchor_start_v": 23,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 2, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 1, "tgt_v": 27, "tier": "free", "note": "Genesis 1:27 — *So Elohim (God) created man in his own image, in the image of Elohim (God) created he him; male and female created he them.* The man made 'an image of his own eternity' in Wisdom of Solomon 2:23 is the image of Elohim in the creation account."},
+        {"src_ch": 2, "src_v": 24, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 4, "tier": "free", "note": "Genesis 3:4 — *And the serpent said unto the woman, Ye shall not surely die.* The 'envy of the devil' that brought death in Wisdom of Solomon 2:24 is the serpent's lie that began it."},
+        {"src_ch": 2, "src_v": 24, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 8, "tgt_v": 44, "tier": "free", "note": "John 8:44 — *Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him.* The devil who brought death by envy in Wisdom of Solomon 2:24 is the murderer and liar from the beginning."},
+        {"src_ch": 2, "src_v": 24, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 5, "tgt_v": 12, "tier": "free", "note": "Romans 5:12 — *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned.* Paul's account of death entering the world matches 'through envy of the devil came death into the world' of Wisdom of Solomon 2:24."},
+        {"src_ch": 2, "src_v": 23, "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 3, "tgt_v": 1, "tier": "extras", "note": "The Wisdom of Solomon 3:1 — *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* The immortality for which man was created in Wisdom of Solomon 2:23 is secured for the righteous in the next chapter's hope."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "edition": "apocrypha",
+  "book": "the-wisdom-of-solomon",
+  "chapter": 3,
+  "session": "session253",
+  "tag": "wis03",
+  "base_band": 58050,
+  "threads": [
+    {
+      "slug": "wisdom-of-solomon-3-souls-in-the-hand-of-elohim",
+      "title": "The souls of the righteous in the hand of Elohim",
+      "summary_md": "*But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* (Wisdom of Solomon 3:1) — *In the sight of the unwise they seemed to die: and their departure is taken for misery,* (Wisdom of Solomon 3:2) *And their going from us to be utter destruction: but they are in peace.* (Wisdom of Solomon 3:3). It ain't new: the seer of the seals sees these very souls — *I saw under the altar the souls of them that were slain for the word of Elohim (God), and for the testimony which they held* (Revelation 6:9), and a voice from heaven seals it, *Blessed are the dead which die in Yahuah (Lord) from henceforth... that they may rest from their labours* (Revelation 14:13). And the restored watcher-book already named their portion: *the righteous shall be victorious in the name of Yahuah (God) of Spirits: And He will cause His light to appear on them, And He will make peace for them* (1 Enoch 103:4). The grave is not destruction but peace; the hand that holds them is Yahuah's own.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 1, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 6, "tgt_v": 9, "tier": "free", "note": "Revelation 6:9 — *And when he had opened the fifth seal, I saw under the altar the souls of them that were slain for the word of Elohim (God), and for the testimony which they held:* the souls held in Elohim's hand in Wisdom of Solomon 3:1 are the souls John sees under the altar, kept and awaiting their vindication."},
+        {"src_ch": 3, "src_v": 3, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 14, "tgt_v": 13, "tier": "free", "note": "Revelation 14:13 — *And I heard a voice from heaven saying unto me, Write, Blessed are the dead which die in Yahuah (Lord) from henceforth: Yea, saith the Spirit, that they may rest from their labours; and their works do follow them.* What the unwise call destruction Wisdom of Solomon 3:3 calls peace, and heaven calls the faithful dead blessed and at rest."},
+        {"src_ch": 3, "src_v": 1, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 103, "tgt_v": 4, "tier": "extras", "note": "1 Enoch 103:4 — *And the righteous shall be victorious in the name of Yahuah (God) of Spirits: And He will cause His light to appear on them, And He will make peace for them.* The watcher-book and Wisdom of Solomon 3:1 speak one tongue: the righteous souls are kept, lit, and given peace in Yahuah's hand."}
+      ]
+    },
+    {
+      "slug": "wisdom-of-solomon-3-tried-as-gold-in-the-furnace",
+      "title": "Tried as gold in the furnace, received as a burnt offering",
+      "summary_md": "*And having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself.* (Wisdom of Solomon 3:5) *As gold in the furnace has he tried them, and received them as a burnt offering.* (Wisdom of Solomon 3:6). The chastening is not the curse of the law but the refiner's love. Malachi saw the same fire: *And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3). And ben Sira, in the very next room of the library, sets the proverb beside it: *For gold is tried in the fire, and acceptable men in the furnace of adversity* (Ecclesiasticus 2:5). The furnace is not destruction; it is the assaying of the elect, who come out as gold and go up as a whole burnt offering pleasing to Elohim.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 6, "tgt_edition": "canon", "tgt_book": "malachi", "tgt_ch": 3, "tgt_v": 3, "tier": "free", "note": "Malachi 3:3 — *And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness.* The gold tried in the furnace of Wisdom of Solomon 3:6 is the same refining by which Yahuah purges His own that they may be offered in righteousness."},
+        {"src_ch": 3, "src_v": 6, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 2, "tgt_v": 5, "tier": "extras", "note": "Ecclesiasticus 2:5 — *For gold is tried in the fire, and acceptable men in the furnace of adversity.* Ben Sira's proverb is Wisdom of Solomon 3:6 in miniature: the acceptable are assayed like gold in the furnace and found worthy for Elohim."}
+      ]
+    },
+    {
+      "slug": "wisdom-of-solomon-3-they-shall-shine-and-judge-the-nations",
+      "title": "In their visitation they shall shine and judge the nations",
+      "summary_md": "*And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* (Wisdom of Solomon 3:7) *They shall judge the nations, and have dominion over the people, and their Elohim (God) shall reign for ever.* (Wisdom of Solomon 3:8). This is the resurrection-glory and the rule of the saints. Daniel saw the shining: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life... And they that be wise shall shine as the brightness of the firmament* (Daniel 12:2-3). And the Messiah promised the dominion: *That ye which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel)* (Matthew 19:28). The righteous do not merely escape death — they wake, they shine, and they reign with their Elohim who reigns for ever.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 7, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 12, "tgt_v": 3, "tier": "free", "note": "Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* The shining at the visitation in Wisdom of Solomon 3:7 is Daniel's wise rising from the dust to shine as the firmament."},
+        {"src_ch": 3, "src_v": 8, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 19, "tgt_v": 28, "tier": "free", "note": "Matthew 19:28 — *And Yahusha (Jesus) said unto them, Verily I say unto you, That ye which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel).* That the righteous shall judge the nations in Wisdom of Solomon 3:8 the Messiah seats on twelve thrones in the regeneration."}
+      ]
+    },
+    {
+      "slug": "wisdom-of-solomon-3-faithful-in-love-shall-abide",
+      "title": "The faithful in love abide with Him; the ungodly forsake Yahuah",
+      "summary_md": "*They that put their trust in him shall understand the truth: and such as be faithful in love shall abide with him: for grace and mercy is to his saints, and he has care for his elect.* (Wisdom of Solomon 3:9) — set against *But the ungodly shall be punished according to their own imaginations, which have neglected the righteous, and forsaken Yahuah (God).* (Wisdom of Solomon 3:10). Election is not a church replacing Israel but Yahuah's care for His elect who keep faith. The martyr-mother's sons confessed the same hope under torture: *the King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9), and *to look for hope from Yahuah (God) to be raised up again by him: as for you, you shall have no resurrection to life* (2 Maccabees 7:14) — the very two ends Wisdom sets side by side, abiding with Him or punished for forsaking Him.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 9, "tgt_edition": "apocrypha", "tgt_book": "2-maccabees", "tgt_ch": 7, "tgt_v": 9, "tier": "extras", "note": "2 Maccabees 7:9 — *And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life.* The saints who abide with Him in Wisdom of Solomon 3:9 are the Torah-faithful martyrs whom the King of the world raises to everlasting life."},
+        {"src_ch": 3, "src_v": 10, "tgt_edition": "apocrypha", "tgt_book": "2-maccabees", "tgt_ch": 7, "tgt_v": 14, "tier": "extras", "note": "2 Maccabees 7:14 — *So when he was ready to die he said thus, It is good, being put to death by men, to look for hope from Yahuah (God) to be raised up again by him: as for you, you shall have no resurrection to life.* The two destinies of Wisdom of Solomon 3:9-10 are the martyr's own: resurrection-life for the faithful, no resurrection for those who forsook Yahuah."}
+      ]
+    },
+    {
+      "slug": "wisdom-of-solomon-3-the-barren-and-the-eunuch-blessed",
+      "title": "Blessed the barren and the eunuch who keep the covenant",
+      "summary_md": "*Wherefore blessed is the barren that is undefiled, which has not known the sinful bed: she shall have fruit in the visitation of souls.* (Wisdom of Solomon 3:13) *And blessed is the eunuch, which with his hands has wrought no iniquity, nor imagined wicked things against Yahuah (God): for to him shall be given the special gift of faith, and an inheritance in the temple of Yahuah (God) more acceptable to his mind.* (Wisdom of Solomon 3:14). It ain't new: Isaiah had already overturned the reproach of the dry tree — *Even unto them will I give in mine house and within my walls a place and a name better than of sons and of daughters: I will give them an everlasting name, that shall not be cut off* (Isaiah 56:5). Fruitfulness is reckoned not by the bed but by faithfulness; the covenant-keeper, childless by men, is given an inheritance in Yahuah's house and an everlasting name.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 14, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 56, "tgt_v": 5, "tier": "free", "note": "Isaiah 56:5 — *Even unto them will I give in mine house and within my walls a place and a name better than of sons and of daughters: I will give them an everlasting name, that shall not be cut off.* The eunuch's inheritance in the temple of Yahuah in Wisdom of Solomon 3:14 is Isaiah's place and name better than sons, an everlasting name that shall not be cut off."}
+      ]
+    }
+  ]
+}
