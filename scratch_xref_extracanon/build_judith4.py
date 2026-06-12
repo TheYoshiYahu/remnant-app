@@ -1,0 +1,92 @@
+import json
+
+data = {
+  "edition": "apocrypha", "book": "judith", "chapter": 4,
+  "session": "session253", "tag": "jdt4", "base_band": 60075,
+  "threads": [
+    {
+      "slug": "judith-4-newly-returned-sanctuary",
+      "title": "Newly returned from captivity, the sanctuary sanctified after the profanation",
+      "summary_md": "Judith opens its crisis in the long shadow of exile and rededication: *For they were newly returned from the captivity, and all the people of Judea were lately gathered together: and the vessels, and the altar, and the house, were sanctified after the profanation.* (Judith 4:3) The remnant has just come home and re-hallowed the house — and now a kingdom-of-man tyrant threatens to profane it again. This is the very joy Ezra records of the second house: *And the children of Yashar'el (Israel), the priests, and the Levites, and the rest of the children of the captivity, kept the dedication of this house of Elohim (God) with joy* (Ezra 6:16). The same enemy returns in every age — Antiochus *set up the abomination of desolation upon the altar* and the faithful *chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant* (1 Maccabees 1:54; 1 Maccabees 1:63). Judith 4 is the standing pattern: the altar restored, the System rising again to defile it, and a covenant people who will not bow.",
+      "anchor_start_v": 1, "anchor_end_v": 3, "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 3, "tgt_edition": "canon", "tgt_book": "ezra", "tgt_ch": 6, "tgt_v": 16, "tier": "free",
+         "note": "Ezra 6:16 — *And the children of Yashar'el (Israel), the priests, and the Levites, and the rest of the children of the captivity, kept the dedication of this house of Elohim (God) with joy,* the same return-and-rededication that Judith 4:3 names as 'sanctified after the profanation.'"},
+        {"src_ch": 4, "src_v": 1, "tgt_edition": "apocrypha", "tgt_book": "1-maccabees", "tgt_ch": 1, "tgt_v": 54, "tier": "extras",
+         "note": "1 Maccabees 1:54 — *Now the fifteenth day of the month Casleu, in the hundred forty and fifth year, they set up the abomination of desolation upon the altar, and builded idol altars throughout the cities of Juda on every side;* the recurring profanation that Holofernes' threat in Judith 4:1 prefigures."},
+        {"src_ch": 4, "src_v": 2, "tgt_edition": "apocrypha", "tgt_book": "1-maccabees", "tgt_ch": 1, "tgt_v": 63, "tier": "extras",
+         "note": "1 Maccabees 1:63 — *Wherefore they chose rather to die, that they might not be defiled with meats, and that they might not profane the holy covenant: so then they died.* the Torah-faithfulness unto death behind Judith 4:2's fear 'for Jerusalem, and for the temple.'"}
+      ]
+    },
+    {
+      "slug": "judith-4-keep-the-passes",
+      "title": "Possessing the high mountains, keeping the passes against the tyrant",
+      "summary_md": "Before they pray, the people act in faith — fortifying the narrow ways: *And possessed themselves beforehand of all the tops of the high mountains, and fortified the villages that were in them, and laid up victuals for the provision of war: for their fields were of late reaped.* (Judith 4:5) Holofernes, captain of Nebuchadnezzar, is the kingdom-of-man system marching against the elect, and the strait pass is where the weak will confound the mighty. The Maccabean profile names the same enemy and the same defiance of the holy covenant: *For the ships of Chittim shall come against him: therefore he shall be grieved, and return, and have indignation against the holy covenant* (Daniel 11:30). The hope is never in the wall but in the One who chose this people — the deliverance will be Yahuah's, by election, through a hand none expected.",
+      "anchor_start_v": 5, "anchor_end_v": 7, "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 7, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 11, "tgt_v": 30, "tier": "free",
+         "note": "Daniel 11:30 — *For the ships of Chittim shall come against him: therefore he shall be grieved, and return, and have indignation against the holy covenant: so shall he do; he shall even return, and have intelligence with them that forsake the holy covenant.* the same tyrant-against-the-covenant pattern Judith 4:7 braces for at the passes into Judea."},
+        {"src_ch": 4, "src_v": 5, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 19, "tgt_v": 5, "tier": "free",
+         "note": "Exodus 19:5 — *Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine:* the election that makes the fortified remnant of Judith 4:5 Yahuah's own to defend."}
+      ]
+    },
+    {
+      "slug": "judith-4-cried-to-yahuah-fasting",
+      "title": "Every man of Israel cried to Yahuah with fasting and sackcloth",
+      "summary_md": "The heart of the chapter is a national turning: *Then every man of Yashar'el (Israel) cried to Yahuah (God) with great fervency, and with great vehemency did they humble their souls:* (Judith 4:9) This is the prophet's own summons answered in the act — *Therefore also now, saith Yahuah (LORD), turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning* (Joel 2:12). When Jehoshaphat faced the same overwhelming multitude, *Jehoshaphat feared, and set himself to seek Yahuah (LORD), and proclaimed a fast throughout all Yahudah (Judah)* (2 Chronicles 20:3). Even Nineveh knew the posture: *So the people of Nineveh believed Elohim (God), and proclaimed a fast, and put on sackcloth, from the greatest of them even to the least of them* (Jonah 3:5). The covenant people in the day of trouble do not first reach for the sword — they reach for the One who alone can save.",
+      "anchor_start_v": 9, "anchor_end_v": 11, "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 9, "tgt_edition": "canon", "tgt_book": "joel", "tgt_ch": 2, "tgt_v": 12, "tier": "free",
+         "note": "Joel 2:12 — *Therefore also now, saith Yahuah (LORD), turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning:* the prophetic call that Judith 4:9 enacts as every man cries to Yahuah and humbles his soul."},
+        {"src_ch": 4, "src_v": 9, "tgt_edition": "canon", "tgt_book": "2-chronicles", "tgt_ch": 20, "tgt_v": 3, "tier": "free",
+         "note": "2 Chronicles 20:3 — *And Jehoshaphat feared, and set himself to seek Yahuah (LORD), and proclaimed a fast throughout all Yahudah (Judah).* the identical response to an overwhelming invader that Judith 4:9 records of all Israel."},
+        {"src_ch": 4, "src_v": 11, "tgt_edition": "canon", "tgt_book": "jonah", "tgt_ch": 3, "tgt_v": 5, "tier": "free",
+         "note": "Jonah 3:5 — *So the people of Nineveh believed Elohim (God), and proclaimed a fast, and put on sackcloth, from the greatest of them even to the least of them.* the same fast-and-sackcloth from greatest to least that Judith 4:11 spreads before the temple."}
+      ]
+    },
+    {
+      "slug": "judith-4-give-not-thine-heritage",
+      "title": "Cried with one consent: give not thy heritage to reproach",
+      "summary_md": "Their cry has the exact shape of the priestly intercession Joel commands: *And cried to Yahuah (God) of Yashar'el (Israel) all with one consent earnestly, that he would not give their children for a prey, and their wives for a spoil, and the cities of their inheritance to destruction, and the sanctuary to profanation and reproach, and for the nations to rejoice at.* (Judith 4:12) Joel sets the very words in the mouths of the ministers: *Let the priests, the ministers of Yahuah (LORD), weep between the porch and the altar, and let them say, Spare thy people, O Yahuah (LORD), and give not thine heritage to reproach, that the heathen should rule over them* (Joel 2:17). The plea rests on Yahuah's covenant memory, the same that broke Egypt's grip: *And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob* (Exodus 2:24). They ask not to be spared for their strength but for His name's sake — that the nations not rejoice over His inheritance.",
+      "anchor_start_v": 12, "anchor_end_v": 12, "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 12, "tgt_edition": "canon", "tgt_book": "joel", "tgt_ch": 2, "tgt_v": 17, "tier": "free",
+         "note": "Joel 2:17 — *Let the priests, the ministers of Yahuah (LORD), weep between the porch and the altar, and let them say, Spare thy people, O Yahuah (LORD), and give not thine heritage to reproach, that the heathen should rule over them: wherefore should they say among the people, Where is their Elohim (God)?* nearly the word-for-word plea Judith 4:12 raises that Yahuah not give His inheritance to reproach and the nations' rejoicing."},
+        {"src_ch": 4, "src_v": 12, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 2, "tgt_v": 24, "tier": "free",
+         "note": "Exodus 2:24 — *And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob.* the covenant-memory ground on which Judith 4:12 dares to plead for children, wives, cities, and sanctuary."}
+      ]
+    },
+    {
+      "slug": "judith-4-yahuah-heard-fasted",
+      "title": "So Yahuah heard their prayers and looked upon their afflictions",
+      "summary_md": "The narrator answers the cry before the deliverer ever appears: *So Yahuah (God) heard their prayers, and looked upon their afflictions: for the people fasted many days in all Judea and Jerusalem before the sanctuary of Yahuah (God) Almighty.* (Judith 4:13) Jehoshaphat's fast met the same verdict — *Ye shall not need to fight in this battle: set yourselves, stand ye still, and see the salvation of Yahuah (LORD) with you* (2 Chronicles 20:17). Nineveh's fast met it too: *And Elohim (God) saw their works, that they turned from their evil way; and Elohim (God) repented of the evil, that he had said that he would do unto them; and he did it not* (Jonah 3:10). And the set time for Zion is always Yahuah's to give: *Thou shalt arise, and have mercy upon Zion: for the time to favour her, yea, the set time, is come* (Psalm 102:13). The victory is decided in the hearing, not the army; the weak who cry are confounding the mighty already.",
+      "anchor_start_v": 13, "anchor_end_v": 13, "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 13, "tgt_edition": "canon", "tgt_book": "2-chronicles", "tgt_ch": 20, "tgt_v": 17, "tier": "free",
+         "note": "2 Chronicles 20:17 — *Ye shall not need to fight in this battle: set yourselves, stand ye still, and see the salvation of Yahuah (LORD) with you, O Yahudah (Judah) and Jerusalem: fear not, nor be dismayed; to morrow go out against them: for Yahuah (LORD) will be with you.* the assurance that follows the fast in Judith 4:13 — the deliverance is Yahuah's, not the wall's."},
+        {"src_ch": 4, "src_v": 13, "tgt_edition": "canon", "tgt_book": "jonah", "tgt_ch": 3, "tgt_v": 10, "tier": "free",
+         "note": "Jonah 3:10 — *And Elohim (God) saw their works, that they turned from their evil way; and Elohim (God) repented of the evil, that he had said that he would do unto them; and he did it not.* the same Yahuah who sees and answers a humbled people, as He hears Judith 4:13."},
+        {"src_ch": 4, "src_v": 13, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 102, "tgt_v": 13, "tier": "free",
+         "note": "Psalm 102:13 — *Thou shalt arise, and have mercy upon Zion: for the time to favour her, yea, the set time, is come.* the appointed mercy on Zion that Judith 4:13's heard prayer sets in motion."}
+      ]
+    },
+    {
+      "slug": "judith-4-priests-daily-offering-sackcloth",
+      "title": "The priests, loins girt with sackcloth, offered the daily burnt offering",
+      "summary_md": "The high priest leads the whole house in lamenting intercession while the Torah's continual offering goes up: *And Joacim the high priest, and all the priests that stood before Yahuah (God), and they which ministered to Yahuah (God), had their loins girt with sackcloth, and offered the daily burnt offerings, with the vows and free gifts of the people* (Judith 4:14). The daily offering is the standing Torah ordinance kept even in crisis: *And thou shalt say unto them, This is the offering made by fire which ye shall offer unto Yahuah (LORD); two lambs of the first year without spot day by day, for a continual burnt offering* (Numbers 28:3). Joel had summoned exactly these ministers to mourn: *Gird yourselves, and lament, ye priests: howl, ye ministers of the altar: come, lie all night in sackcloth, ye ministers of my Elohim (God)* (Joel 1:13). And every such high priest stands as a type of the true Intercessor: *For every high priest taken from among men is ordained for men in things pertaining to Elohim (God), that he may offer both gifts and sacrifices for sins* (Hebrews 5:1). The cry closes pleading not for the strong but for the whole house — that Yahuah look upon all the house of Israel graciously (Judith 4:15).",
+      "anchor_start_v": 14, "anchor_end_v": 15, "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 14, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 28, "tgt_v": 3, "tier": "free",
+         "note": "Numbers 28:3 — *And thou shalt say unto them, This is the offering made by fire which ye shall offer unto Yahuah (LORD); two lambs of the first year without spot day by day, for a continual burnt offering.* the Torah's continual burnt offering that the priests keep even amid the sackcloth of Judith 4:14 — the law stands."},
+        {"src_ch": 4, "src_v": 14, "tgt_edition": "canon", "tgt_book": "joel", "tgt_ch": 1, "tgt_v": 13, "tier": "free",
+         "note": "Joel 1:13 — *Gird yourselves, and lament, ye priests: howl, ye ministers of the altar: come, lie all night in sackcloth, ye ministers of my Elohim (God): for the meat offering and the drink offering is withholden from the house of your Elohim (God).* the prophetic summons to the very mourning ministry Judith 4:14 shows, loins girt with sackcloth at the altar."},
+        {"src_ch": 4, "src_v": 14, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 5, "tgt_v": 1, "tier": "free",
+         "note": "Hebrews 5:1 — *For every high priest taken from among men is ordained for men in things pertaining to Elohim (God), that he may offer both gifts and sacrifices for sins:* the office Joacim fills in Judith 4:14, gifts and free offerings before Yahuah, foreshadowing the true Intercessor."}
+      ]
+    }
+  ]
+}
+
+with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_judith_4.json", "w") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+print("threads:", len(data["threads"]), "members:", sum(len(t["members"]) for t in data["threads"]))

@@ -1,0 +1,95 @@
+import json
+
+data = {
+  "edition": "apocrypha", "book": "judith", "chapter": 16,
+  "session": "session253", "tag": "jdt16", "base_band": 60375,
+  "threads": [
+    {
+      "slug": "judith-16-breaketh-the-battles",
+      "title": "Yahuah breaketh the battles — the song of the delivered",
+      "summary_md": "Judith lifts the same victory-song her mothers and fathers sang at the sea and at Kishon: *And Judith said, Begin to my Elohim (God) with timbrels, sing to my Elohim (God) with cymbals: tune to him a new psalm: exalt him, and call upon his name. For Yahuah (God) breaks the battles: for among the camps in the midst of the people he has delivered me out of the hands of them that persecuted me.* (Judith 16:2-3) It ain't new — it is Moses' own song restored to a daughter's mouth: *Then sang Moses and the children of Yashar'el (Israel) this song unto Yahuah (LORD)... I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.* (Exodus 15:1) The Warrior who breaks the battle is named there: *Yahuah (LORD) is a man of war: Yahuah (LORD) is his name.* (Exodus 15:3) And it is Deborah's song again, woman-led: *Then sang Deborah and Barak the son of Abinoam on that day, saying* (Judges 5:1). The deliverance is His, not the army's: *He maketh wars to cease unto the end of the earth; he breaketh the bow, and cutteth the spear in sunder; he burneth the chariot in the fire.* (Psalm 46:9)",
+      "anchor_start_v": 1, "anchor_end_v": 3, "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 1, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 15, "tgt_v": 1, "tier": "free",
+         "note": "Exodus 15:1 — *Then sang Moses and the children of Yashar'el (Israel) this song unto Yahuah (LORD), and spake, saying, I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.* Judith's whole nation sings after her exactly as Israel sang after Moses at the Red Sea — the same redeemed-people chorus."},
+        {"src_ch": 16, "src_v": 3, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 15, "tgt_v": 3, "tier": "free",
+         "note": "Exodus 15:3 — *Yahuah (LORD) is a man of war: Yahuah (LORD) is his name.* The One who 'breaks the battles' in Judith 16:3 is the very Man of War who threw Pharaoh's host into the sea."},
+        {"src_ch": 16, "src_v": 1, "tgt_edition": "canon", "tgt_book": "judges", "tgt_ch": 5, "tgt_v": 1, "tier": "free",
+         "note": "Judges 5:1 — *Then sang Deborah and Barak the son of Abinoam on that day, saying,* Judith 16's woman-led thanksgiving stands in the line of Deborah's song after another tyrant's army was undone."},
+        {"src_ch": 16, "src_v": 3, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 46, "tgt_v": 9, "tier": "free",
+         "note": "Psalm 46:9 — *He maketh wars to cease unto the end of the earth; he breaketh the bow, and cutteth the spear in sunder; he burneth the chariot in the fire.* The Psalm names the same Battle-Breaker Judith praises for delivering her out of the hand of the persecutor."}
+      ]
+    },
+    {
+      "slug": "judith-16-assur-out-of-the-north",
+      "title": "Assur out of the north — the kingdom-of-man tyrant",
+      "summary_md": "The boast of Holofernes is the boast of every empire that demands the earth bow to it: *Assur came out of the mountains from the north, he came with ten thousands of his army, the multitude of which stopped the torrents, and their horsemen have covered the hills. He bragged that he would burn up my borders, and kill my young men with the sword, and dash the sucking children against the ground, and make my infants as a prey, and my virgins as a spoil.* (Judith 16:4-5) This is the same northern menace the prophets indict — the rod that lifts itself against the One who wields it: *O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation.* (Isaiah 10:5) Babylon makes the identical brag against the little ones, and the same vengeance answers: *Happy shall he be, that taketh and dasheth thy little ones against the stones.* (Psalm 137:9) The system that exalts itself is dismantled — the proud overthrown.",
+      "anchor_start_v": 4, "anchor_end_v": 5, "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 4, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 10, "tgt_v": 5, "tier": "free",
+         "note": "Isaiah 10:5 — *O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation.* Assur in Judith 16:4 is the same proud northern instrument that boasts as if it were not a mere rod in Yahuah's hand."},
+        {"src_ch": 16, "src_v": 5, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 137, "tgt_v": 9, "tier": "free",
+         "note": "Psalm 137:9 — *Happy shall he be, that taketh and dasheth thy little ones against the stones.* Holofernes' brag to dash the sucking children (Judith 16:5) is exactly the cruelty the Psalm pronounces back upon Babylon herself."}
+      ]
+    },
+    {
+      "slug": "judith-16-hand-of-a-woman",
+      "title": "By the hand of a woman — the weak confound the mighty",
+      "summary_md": "The decisive line of the whole book: *But the Almighty Yahuah (God) has disappointed them by the hand of a woman. For the mighty one did not fall by the young men, neither did the sons of the Titans smite him, nor high giants set upon him: but Judith the daughter of Merari weakened him with the beauty of her countenance.* (Judith 16:6-7) This is heaven's settled pattern — not many mighty, but the weak chosen to shame the strong: *But Elohim (God) hath chosen the foolish things of the world to confound the wise; and Elohim (God) hath chosen the weak things of the world to confound the things which are mighty;* (1 Corinthians 1:27) Hannah sang it before her: *The bows of the mighty men are broken, and they that stumbled are girded with strength.* (1 Samuel 2:4) And the head taken by a woman's hand reaches back to the first promise — the woman's seed that bruises the head of the enemy: *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15) Honestly read: Judith is no Messiah, but her hand-of-a-woman victory echoes the Edenic word that the proud serpent-head falls.",
+      "anchor_start_v": 6, "anchor_end_v": 7, "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 6, "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 1, "tgt_v": 27, "tier": "free",
+         "note": "1 Corinthians 1:27 — *But Elohim (God) hath chosen the foolish things of the world to confound the wise; and Elohim (God) hath chosen the weak things of the world to confound the things which are mighty;* Yahuah disappointing a vast army by the hand of one widow (Judith 16:6) is the very weak-confound-the-mighty principle Paul preaches."},
+        {"src_ch": 16, "src_v": 7, "tgt_edition": "canon", "tgt_book": "1-samuel", "tgt_ch": 2, "tgt_v": 4, "tier": "free",
+         "note": "1 Samuel 2:4 — *The bows of the mighty men are broken, and they that stumbled are girded with strength.* Hannah's song already declared what Judith 16:7 enacts — the mighty one falls not by young warriors but by Yahuah's reversal."},
+        {"src_ch": 16, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 15, "tier": "free",
+         "note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* The tyrant felled 'by the hand of a woman' (Judith 16:6) is an echo of Eden's first promise that the head of the proud enemy is bruised through the woman."}
+      ]
+    },
+    {
+      "slug": "judith-16-fauchion-through-the-neck",
+      "title": "The fauchion through his neck — Jael and the Magnificat",
+      "summary_md": "The beauty that disarmed the giant and the blade that took his head: *Her sandals ravished his eyes, her beauty took his mind prisoner, and the fauchion passed through his neck.* (Judith 16:9) The afflicted are lifted while the boasters are cast down: *Then my afflicted shouted for joy, and my weak ones cried aloud; but they were astonished: these lifted up their voices, but they were overthrown.* (Judith 16:11) Jael is Judith's elder sister in the song of the women — the captain undone in the tent by a woman's hand: *Blessed above women shall Jael the wife of Heber the Kenite be, blessed shall she be above women in the tent.* (Judges 5:24) And the down-casting of the mighty is the very music Miryam (Mary) takes up, the Magnificat's own ancestor: *He hath put down the mighty from their seats, and exalted them of low degree.* (Luke 1:52) The proud are scattered, the low estate regarded: *For he hath regarded the low estate of his handmaiden: for, behold, from henceforth all generations shall call me blessed.* (Luke 1:48)",
+      "anchor_start_v": 9, "anchor_end_v": 11, "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 9, "tgt_edition": "canon", "tgt_book": "judges", "tgt_ch": 5, "tgt_v": 24, "tier": "free",
+         "note": "Judges 5:24 — *Blessed above women shall Jael the wife of Heber the Kenite be, blessed shall she be above women in the tent.* Jael smiting Sisera in the tent is the nearest kin to Judith 16:9, where the fauchion passes through the enemy's neck by a woman's hand."},
+        {"src_ch": 16, "src_v": 11, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 1, "tgt_v": 52, "tier": "free",
+         "note": "Luke 1:52 — *He hath put down the mighty from their seats, and exalted them of low degree.* Judith's afflicted shouting for joy while the boasters are overthrown (Judith 16:11) is the very reversal Mary sings in the Magnificat."},
+        {"src_ch": 16, "src_v": 11, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 1, "tgt_v": 48, "tier": "free",
+         "note": "Luke 1:48 — *For he hath regarded the low estate of his handmaiden: for, behold, from henceforth all generations shall call me blessed.* The low and weak of Israel lifted up in Judith 16:11 foreshadow the low-estate handmaiden Yahuah regards in the Magnificat."}
+      ]
+    },
+    {
+      "slug": "judith-16-let-all-creatures-serve",
+      "title": "Let all creatures serve thee — He spake, and they were made",
+      "summary_md": "The song turns to a new psalm of the whole creation's obedience to its Maker: *I will sing to Yahuah (God) a new song: O Yahuah (God), you are great and glorious, wonderful in strength, and invincible. Let all creatures serve you: for you spakest, and they were made, you did send forth your spirit, and it created them, and there is none that can resist your voice.* (Judith 16:13-14) It ain't new — it is the new song of the Psalter: *O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the earth.* (Psalm 96:1) And the creation-by-the-word the Psalm of praise declares: *Let them praise the name of Yahuah (LORD): for he commanded, and they were created.* (Psalm 148:5) Yet the same song carries the dread end of those who transgress — fire and the worm that dieth not: *Woe to the nations that rise up against my kindred! Yahuah (God) Almighty will take vengeance of them in the day of judgment, in putting fire and worms in their flesh; and they shall feel them, and weep for ever.* (Judith 16:17) — which Isaiah seals as the abhorring of all flesh: *And they shall go forth, and look upon the carcases of the men that have transgressed against me: for their worm shall not die, neither shall their fire be quenched; and they shall be an abhorring unto all flesh.* (Isaiah 66:24)",
+      "anchor_start_v": 13, "anchor_end_v": 17, "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 13, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 96, "tgt_v": 1, "tier": "free",
+         "note": "Psalm 96:1 — *O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the earth.* Judith's resolve to 'sing to Yahuah a new song' (Judith 16:13) is the Psalter's own summons to the whole earth to sing it."},
+        {"src_ch": 16, "src_v": 14, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 148, "tgt_v": 5, "tier": "free",
+         "note": "Psalm 148:5 — *Let them praise the name of Yahuah (LORD): for he commanded, and they were created.* Judith 16:14 ('you spakest, and they were made') confesses the same creation-by-the-word for which Psalm 148 calls all creatures to praise."},
+        {"src_ch": 16, "src_v": 17, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 66, "tgt_v": 24, "tier": "free",
+         "note": "Isaiah 66:24 — *And they shall go forth, and look upon the carcases of the men that have transgressed against me: for their worm shall not die, neither shall their fire be quenched; and they shall be an abhorring unto all flesh.* Judith's 'fire and worms in their flesh' for the nations that rise up (Judith 16:17) speaks Isaiah's undying worm and unquenchable fire upon the transgressors."}
+      ]
+    },
+    {
+      "slug": "judith-16-up-to-keep-the-feast",
+      "title": "Up to Jerusalem to keep the feast — the appointed times",
+      "summary_md": "Victory ends not in conquest but in worship — the people go up to the sanctuary: *Now as soon as they entered into Jerusalem, they worshipped Yahuah (God); and as soon as the people were purified, they offered their burnt offerings, and their free offerings, and their gifts.* (Judith 16:18) *So the people continued feasting in Jerusalem before the sanctuary for the space of three months and Judith remained with them.* (Judith 16:20) This is Torah's appointed rhythm — all Israel gathering at the chosen place to keep the feast: *Three times in a year shall all thy males appear before Yahuah Elohayka (the LORD thy God) in the place which he shall choose; in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles: and they shall not appear before Yahuah (LORD) empty:* (Deuteronomy 16:16) — and none come empty, as Judith herself dedicates the spoil and the canopy as a gift to Yahuah (Judith 16:19), keeping the solemn feast at the place He chose: *Seven days shalt thou keep a solemn feast unto Yahuah Elohayka (the LORD thy God) in the place which Yahuah (LORD) shall choose... therefore thou shalt surely rejoice.* (Deuteronomy 16:15)",
+      "anchor_start_v": 18, "anchor_end_v": 20, "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 18, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 16, "tgt_v": 16, "tier": "free",
+         "note": "Deuteronomy 16:16 — *Three times in a year shall all thy males appear before Yahuah Elohayka (the LORD thy God) in the place which he shall choose; in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles: and they shall not appear before Yahuah (LORD) empty:* The people going up to worship at Jerusalem in Judith 16:18 keeps the very pilgrimage-feast Torah commands at the chosen place."},
+        {"src_ch": 16, "src_v": 20, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 16, "tgt_v": 15, "tier": "free",
+         "note": "Deuteronomy 16:15 — *Seven days shalt thou keep a solemn feast unto Yahuah Elohayka (the LORD thy God) in the place which Yahuah (LORD) shall choose: because Yahuah Elohayka (the LORD thy God) shall bless thee in all thine increase, and in all the works of thine hands, therefore thou shalt surely rejoice.* The people's joyful feasting before the sanctuary in Judith 16:20 is the appointed solemn feast of rejoicing Torah set at the chosen place."}
+      ]
+    }
+  ]
+}
+
+with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_judith_16.json", "w") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+print("threads:", len(data["threads"]))
+print("members:", sum(len(t["members"]) for t in data["threads"]))
