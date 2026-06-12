@@ -870,6 +870,670 @@ SELECT t.id, x.id, 4, E'1 Corinthians 6:14 — *Elohim (God) hath both raised up
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_2corinthians_05.sql (S229 2 Corinthians 5) -----
+-- =====================================================================
+-- S229 minion — 2 CORINTHIANS 5 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 2 CORINTHIANS 5 (21 verses) — the house not made with hands, the new creature/new
+--   creation, the ministry of reconciliation. WATCHPOINT chapter.
+-- Tag: 2c05 (temp view _s229_2c05_lookup).
+-- Sort band: floor 7100, step 3 (7100, 7103, 7106, 7109 used; under 7125).
+-- Source is ALWAYS the canon 2 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME. The *house not made with hands, eternal in the heavens* (5:1) and the longing
+-- *not for that we would be unclothed, but clothed upon, that mortality might be swallowed up of
+-- life* (5:4) are the BODILY resurrection hope — NOT a disembodied/platonic escape from the body.
+-- Paul does not want to be UNCLOTHED (stripped of the body) but CLOTHED UPON (the mortal swallowed
+-- by life) — the same hope as Isaiah 25:8 (*he will swallow up death in victory*) and 1 Corinthians
+-- 15:53-54 (*this mortal must put on immortality... Death is swallowed up in victory*). Wisdom 9:15
+-- (*the corruptible body presseth down the soul*) names the present groaning that 5:4 answers — it
+-- is weighed as an extras witness to the burden, NOT as a platonic flight from the body; Paul's
+-- answer is resurrection, the mortal clothed upon. The *new creature / new creation* (5:17) is the
+-- prophets' renewal: Isaiah 43:18-19 (*behold, I will do a new thing*) and Isaiah 65:17 (*I create
+-- new heavens and a new earth*); the new creature walks in the renewed obedience the prophets
+-- promised, not a lawless liberty. The *ministry of reconciliation* (5:18-19) is the same
+-- reconciliation Romans names — Elohim reconciling enemies by the death of his Son. *He hath made
+-- him to be sin for us, who knew no sin* (5:21) is the Isaiah 53 servant who *bore their iniquities*
+-- (Christology: the Formed Son who knew no sin, on whom Yahuah laid the iniquity of us all). No
+-- replacement theology, no law-vs-grace antithesis, no platonic hope.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-5   earthly house dissolved / house not made with hands / mortality swallowed up of life /
+--           the earnest of the Spirit
+--           Tanakh: Isaiah 25:8 (he will swallow up death in victory); Ezekiel 36:27 (the earnest of
+--                   the Spirit / I will put my spirit within you) — carried in prose at v.5, the
+--                   load-bearing root is Isaiah 25:8
+--           Extras: Wisdom 9:15 (the corruptible body presseth down the soul — the groaning 5:4
+--                   answers; VERIFIED clean by dump_canon)
+--           NT: 1 Corinthians 15:53-54 (this mortal must put on immortality... Death is swallowed up
+--               in victory — the same Isaiah 25 hope, same congregation)
+--   v.6-10  we walk by faith not by sight / present with the Lord / the judgment seat of Messiah
+--           Tanakh: none warranted (allusive; faith-walk root carried elsewhere in the book)
+--           Extras: none warranted   NT: none warranted (the bodily-hope weight sits at v.1-4)
+--   v.11-16 the love of Messiah constraineth / one died for all / know no man after the flesh
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted (pastoral/allusive)
+--   v.17    if any man be in Messiah he is a new creature: behold all things are become new
+--           Tanakh: Isaiah 43:18-19 (behold, I will do a new thing); Isaiah 65:17 (I create new
+--                   heavens and a new earth)
+--           Extras: none warranted   NT: none warranted (the new-creation root is the Tanakh witness)
+--   v.18-20 the ministry/word of reconciliation / Elohim reconciling the world / ambassadors
+--           Tanakh: none warranted   Extras: none warranted
+--           NT: Romans 5:10-11 (when we were enemies, we were reconciled to Elohim by the death of
+--               his Son... received the atonement)
+--   v.21    he hath made him to be sin for us, who knew no sin
+--           Tanakh: Isaiah 53:6 (Yahuah hath laid on him the iniquity of us all); 53:9 (he had done
+--                   no violence, neither was any deceit in his mouth — who knew no sin); 53:11 (by his
+--                   knowledge shall my righteous servant justify many; for he shall bear their
+--                   iniquities)
+--           Extras: none warranted   NT: none warranted (the servant-Christology root is Isaiah 53)
+--
+-- THREADS (slug -> target libraries):
+--   7100 2-corinthians-5-the-house-not-made-with-hands-and-mortality-swallowed-up-of-life-isaiah-25  (Tanakh + Extras + NT)
+--   7103 2-corinthians-5-the-new-creature-and-the-new-creation-isaiah-43  (Tanakh)
+--   7106 2-corinthians-5-the-ministry-of-reconciliation-elohim-reconciling-the-world-romans-5  (NT)
+--   7109 2-corinthians-5-he-made-him-to-be-sin-who-knew-no-sin-the-servant-of-isaiah-53  (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s229_2c05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 2-corinthians-5-the-house-not-made-with-hands-and-mortality-swallowed-up-of-life-isaiah-25
+  ('canon', '2-corinthians', 5, 4, 'canon', 'isaiah', 25, 8, 'free', E'*He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it.* (Isaiah 25:8). Paul''s groaning is not a wish to be rid of the body but to have it overtaken by life: *not for that we would be unclothed, but clothed upon, that mortality might be swallowed up of life* (2 Corinthians 5:4). The word is Isaiah''s own — Yahuah (LORD) *will swallow up death in victory.* The hope is bodily: the mortal not stripped away but swallowed by the life Yahuah (LORD) gives, the tears wiped from every face. This is resurrection, not escape.'),
+  ('canon', '2-corinthians', 5, 4, 'canon', '1-corinthians', 15, 54, 'free', E'*So when this corruptible shall have put on incorruption, and this mortal shall have put on immortality, then shall be brought to pass the saying that is written, Death is swallowed up in victory.* (1 Corinthians 15:54). To the same assembly Paul had already named the hope in the same words: *this mortal must put on immortality,* and so *Death is swallowed up in victory* — Isaiah 25:8 again. It answers exactly the longing of *that mortality might be swallowed up of life* (2 Corinthians 5:4): not the soul fleeing an evil body, but *this* mortal putting on incorruption, *clothed upon* with the building of Elohim (God) that is *an house not made with hands, eternal in the heavens* (2 Corinthians 5:1).'),
+  ('canon', '2-corinthians', 5, 4, 'apocrypha', 'the-wisdom-of-solomon', 9, 15, 'extras', E'*For the corruptible body presseth down the soul, and the earthy tabernacle weigheth down the mind that museth upon many things.* (Wisdom of Solomon 9:15). The wisdom of Solomon names the present burden of the perishable body — the *corruptible body* that *presseth down,* the *earthy tabernacle* that *weigheth down.* This is the very groaning Paul owns: *we that are in this tabernacle do groan, being burdened* (2 Corinthians 5:4). But Paul does not answer the burden with a platonic flight from the flesh — he answers it with resurrection: *not for that we would be unclothed, but clothed upon, that mortality might be swallowed up of life.* The earthy tabernacle is not despised and abandoned; it is *clothed upon* with the house from heaven.'),
+  -- thread: 2-corinthians-5-the-new-creature-and-the-new-creation-isaiah-43
+  ('canon', '2-corinthians', 5, 17, 'canon', 'isaiah', 43, 19, 'free', E'*Behold, I will do a new thing; now it shall spring forth; shall ye not know it? I will even make a way in the wilderness, and rivers in the desert.* (Isaiah 43:19). When Paul writes *if any man be in Messiah (Christ), he is a new creature: old things are passed away; behold, all things are become new* (2 Corinthians 5:17), he speaks the prophet''s own promise. Yahuah (LORD) said *Behold, I will do a new thing,* and bid Yashar''el (Israel) *Remember ye not the former things, neither consider the things of old* (Isaiah 43:18) — the very pattern of *old things are passed away; behold, all things are become new.* The new creature is the springing-forth of the new thing Yahuah (LORD) promised, the way made in the wilderness for his people.'),
+  ('canon', '2-corinthians', 5, 17, 'canon', 'isaiah', 65, 17, 'free', E'*For, behold, I create new heavens and a new earth: and the former shall not be remembered, nor come into mind.* (Isaiah 65:17). The new creature in Messiah (Christ) is the firstfruit of the whole new creation Yahuah (LORD) promised: *I create new heavens and a new earth: and the former shall not be remembered.* Paul echoes the prophet exactly — *old things are passed away; behold, all things are become new* (2 Corinthians 5:17). The renewal of the man who is in Messiah (Christ) and the renewal of heaven and earth are one work of the one Creator; the former things not remembered, all things become new.'),
+  -- thread: 2-corinthians-5-the-ministry-of-reconciliation-elohim-reconciling-the-world-romans-5
+  ('canon', '2-corinthians', 5, 19, 'canon', 'romans', 5, 10, 'free', E'*For if, when we were enemies, we were reconciled to Elohim (God) by the death of his Son, much more, being reconciled, we shall be saved by his life.* (Romans 5:10). Paul tells the Romans the same reconciliation he ministers to Corinth: *when we were enemies, we were reconciled to Elohim (God) by the death of his Son.* It is the work of *the ministry of reconciliation* (2 Corinthians 5:18) — *that Elohim (God) was in Messiah (Christ), reconciling the world unto himself, not imputing their trespasses unto them* (2 Corinthians 5:19). Reconciliation is from Elohim (God)''s side, while we were yet enemies; the not-imputing of trespasses at Corinth is the being-reconciled-by-his-death at Rome.'),
+  ('canon', '2-corinthians', 5, 20, 'canon', 'romans', 5, 11, 'free', E'*And not only so, but we also joy in Elohim (God) through our Lord Yahusha HaMashiach (Lord Jesus Christ), by whom we have now received the atonement.* (Romans 5:11). The atonement *received* in Romans is the reconciliation Paul pleads in his embassy: *Now then we are ambassadors for Messiah (Christ), as though Elohim (God) did beseech you by us: we pray you in Messiah''s (Christ''s) stead, be ye reconciled to Elohim (God)* (2 Corinthians 5:20). The same atonement, the same Lord Yahusha HaMashiach (Lord Jesus Christ) through whom it comes — at Rome it is joy already received, at Corinth it is the appeal still pressed: be ye reconciled.'),
+  -- thread: 2-corinthians-5-he-made-him-to-be-sin-who-knew-no-sin-the-servant-of-isaiah-53
+  ('canon', '2-corinthians', 5, 21, 'canon', 'isaiah', 53, 6, 'free', E'*All we like sheep have gone astray; we have turned every one to his own way; and Yahuah (LORD) hath laid on him the iniquity of us all.* (Isaiah 53:6). *He hath made him to be sin for us, who knew no sin* (2 Corinthians 5:21) is the servant of Isaiah on whom *Yahuah (LORD) hath laid... the iniquity of us all.* The one *made... to be sin* did not become a sinner — he bore what was laid on him; the iniquity of the straying sheep was set upon the Formed Son who himself *knew no sin,* that *we might be made the righteousness of Elohim (God) in him.*'),
+  ('canon', '2-corinthians', 5, 21, 'canon', 'isaiah', 53, 9, 'free', E'*And he made his grave with the wicked, and with the rich in his death; because he had done no violence, neither was any deceit in his mouth.* (Isaiah 53:9). The one who *knew no sin* (2 Corinthians 5:21) is the servant of whom Isaiah testifies *he had done no violence, neither was any deceit in his mouth.* This is the Christology of the Formed Son: sinless himself, *made... to be sin for us* — numbered with the wicked though guiltless, that the righteousness of Elohim (God) might be ours in him.'),
+  ('canon', '2-corinthians', 5, 21, 'canon', 'isaiah', 53, 11, 'free', E'*He shall see of the travail of his soul, and shall be satisfied: by his knowledge shall my righteous servant justify many; for he shall bear their iniquities.* (Isaiah 53:11). The exchange of 2 Corinthians 5:21 — *made him to be sin for us... that we might be made the righteousness of Elohim (God) in him* — is the work of Isaiah''s righteous servant who *shall justify many; for he shall bear their iniquities.* He bears the iniquities; the many are justified; the righteous servant makes the unrighteous the righteousness of Elohim (God). The bearing and the justifying are the two sides of the one cross.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s229_2c05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s229_2c05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-5-the-house-not-made-with-hands-and-mortality-swallowed-up-of-life-isaiah-25',
+       E'The house not made with hands: mortality swallowed up of life (Isaiah 25)',
+       E'*For we know that if our earthly house of this tabernacle were dissolved, we have a building of Elohim (God), an house not made with hands, eternal in the heavens* (2 Corinthians 5:1). The hope is not a soul escaping an evil body — it is bodily. Paul is careful: *For in this we groan, earnestly desiring to be clothed upon with our house which is from heaven... not for that we would be unclothed, but clothed upon, that mortality might be swallowed up of life* (2 Corinthians 5:2,4). He does not long to be UNCLOTHED, stripped of the body, but CLOTHED UPON — the mortal overtaken by life. The word *swallowed up* is the prophet''s: *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces... for Yahuah (LORD) hath spoken it* (Isaiah 25:8). Death itself is swallowed; the tears are wiped from every face. To the same assembly Paul had already spoken the same hope in the same words: *this corruptible must put on incorruption, and this mortal must put on immortality... then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:53-54). The present burden is real — the Hebrew library names it: *the corruptible body presseth down the soul, and the earthy tabernacle weigheth down the mind* (Wisdom of Solomon 9:15), and Paul owns it, *we that are in this tabernacle do groan, being burdened.* But the answer to the pressing-down body is not flight from it; it is resurrection — the earthy tabernacle *clothed upon* with the building of Elohim (God), the mortal swallowed up of life. And the pledge of it is already given: *he that hath wrought us for the selfsame thing is Elohim (God), who also hath given unto us the earnest of the Spirit* (2 Corinthians 5:5) — the down-payment of the body to come.',
+       sv.verse_id, ev.verse_id, 'extras', 7100
+  FROM _s229_2c05_lookup sv, _s229_2c05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=5 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-5-the-new-creature-and-the-new-creation-isaiah-43',
+       E'A new creature: behold, all things are become new (Isaiah 43, 65)',
+       E'*Therefore if any man be in Messiah (Christ), he is a new creature: old things are passed away; behold, all things are become new* (2 Corinthians 5:17). The new creature is no novelty Paul invented — it is the prophets'' promised renewal breaking into a man. Yahuah (LORD) said through Isaiah, *Remember ye not the former things, neither consider the things of old. Behold, I will do a new thing; now it shall spring forth* (Isaiah 43:18-19) — the very shape of *old things are passed away; behold, all things are become new.* And the new thing is no less than a new creation: *For, behold, I create new heavens and a new earth: and the former shall not be remembered, nor come into mind* (Isaiah 65:17). The renewal of the one who is in Messiah (Christ) is the firstfruit of that whole new creation; the former things not remembered in the man are the former things not remembered in the cosmos. This new creature is not loosed from the renewed obedience the prophets promised — the same Spirit that makes him new writes the law on his heart and causes him to walk in the statutes (Ezekiel 36:26-27). The new creation is the springing-forth of the new thing Yahuah (LORD) spoke; the man in Messiah (Christ) is where it begins.',
+       sv.verse_id, ev.verse_id, 'free', 7103
+  FROM _s229_2c05_lookup sv, _s229_2c05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=5 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-5-the-ministry-of-reconciliation-elohim-reconciling-the-world-romans-5',
+       E'The ministry of reconciliation: be ye reconciled to Elohim (God) (Romans 5)',
+       E'*And all things are of Elohim (God), who hath reconciled us to himself by Yahusha HaMashiach (Jesus Christ), and hath given to us the ministry of reconciliation; To wit, that Elohim (God) was in Messiah (Christ), reconciling the world unto himself, not imputing their trespasses unto them; and hath committed unto us the word of reconciliation* (2 Corinthians 5:18-19). The reconciliation is wholly from Elohim (God)''s side, and Paul names it to the Romans in the same breath: *if, when we were enemies, we were reconciled to Elohim (God) by the death of his Son, much more, being reconciled, we shall be saved by his life* (Romans 5:10). We were enemies; Elohim (God) reconciled us by the death of his Son; the trespasses are not imputed. And the thing the Romans have already received is the thing Paul still pleads at Corinth: *we also joy in Elohim (God) through our Lord Yahusha HaMashiach (Lord Jesus Christ), by whom we have now received the atonement* (Romans 5:11). So the apostle takes up his embassy: *Now then we are ambassadors for Messiah (Christ), as though Elohim (God) did beseech you by us: we pray you in Messiah''s (Christ''s) stead, be ye reconciled to Elohim (God)* (2 Corinthians 5:20). The atonement received at Rome is the reconciliation pressed at Corinth — one work of the one Elohim (God), through the one Lord Yahusha HaMashiach (Lord Jesus Christ), the Formed Son by whose death the enemies are brought near.',
+       sv.verse_id, ev.verse_id, 'free', 7106
+  FROM _s229_2c05_lookup sv, _s229_2c05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=5 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-5-he-made-him-to-be-sin-who-knew-no-sin-the-servant-of-isaiah-53',
+       E'He made him to be sin who knew no sin: the servant of Isaiah 53',
+       E'*For he hath made him to be sin for us, who knew no sin; that we might be made the righteousness of Elohim (God) in him* (2 Corinthians 5:21). The whole verse is the servant-song of Isaiah 53 in a sentence. The one *made... to be sin* did not become a sinner — he bore what was laid upon him: *All we like sheep have gone astray; we have turned every one to his own way; and Yahuah (LORD) hath laid on him the iniquity of us all* (Isaiah 53:6). And the one who bore it *knew no sin,* for of the servant Isaiah testified *he had done no violence, neither was any deceit in his mouth* (Isaiah 53:9). The exchange — our sin laid on him, his righteousness made ours — is the servant''s own work: *by his knowledge shall my righteous servant justify many; for he shall bear their iniquities* (Isaiah 53:11). He bears the iniquities; the many are justified; the sinless one is made sin that the sinners might be made *the righteousness of Elohim (God) in him.* This is the Christology of the Formed Son: not a guilty man, but the spotless servant on whom Yahuah (LORD) laid the iniquity of us all, that we might stand righteous in him.',
+       sv.verse_id, ev.verse_id, 'free', 7109
+  FROM _s229_2c05_lookup sv, _s229_2c05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=5 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 2-corinthians-5-the-house-not-made-with-hands-and-mortality-swallowed-up-of-life-isaiah-25
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 25:8 — *He will swallow up death in victory... will wipe away tears from off all faces* the bodily hope behind *that mortality might be swallowed up of life* (2 Corinthians 5:4); the mortal overtaken by life, not the soul escaping the body.'
+  FROM cross_reference_threads t, cross_references x, _s229_2c05_lookup sv, _s229_2c05_lookup tv
+ WHERE t.slug='2-corinthians-5-the-house-not-made-with-hands-and-mortality-swallowed-up-of-life-isaiah-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Corinthians 15:54 — *this mortal must put on immortality... Death is swallowed up in victory* the same Isaiah 25 hope spoken to the same assembly; this mortal clothed upon, not unclothed (2 Corinthians 5:4).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c05_lookup sv, _s229_2c05_lookup tv
+ WHERE t.slug='2-corinthians-5-the-house-not-made-with-hands-and-mortality-swallowed-up-of-life-isaiah-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=54
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Wisdom of Solomon 9:15 — *the corruptible body presseth down the soul, and the earthy tabernacle weigheth down the mind* names the present groaning of *we that are in this tabernacle do groan, being burdened* (2 Corinthians 5:4) — answered not by escape but by the body clothed upon.'
+  FROM cross_reference_threads t, cross_references x, _s229_2c05_lookup sv, _s229_2c05_lookup tv
+ WHERE t.slug='2-corinthians-5-the-house-not-made-with-hands-and-mortality-swallowed-up-of-life-isaiah-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=4
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=9 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-5-the-new-creature-and-the-new-creation-isaiah-43
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 43:19 — *Behold, I will do a new thing; now it shall spring forth* the prophet''s promise behind *behold, all things are become new* (2 Corinthians 5:17); the new creature is the springing-forth of the new thing Yahuah (LORD) spoke.'
+  FROM cross_reference_threads t, cross_references x, _s229_2c05_lookup sv, _s229_2c05_lookup tv
+ WHERE t.slug='2-corinthians-5-the-new-creature-and-the-new-creation-isaiah-43'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 65:17 — *I create new heavens and a new earth: and the former shall not be remembered* the whole new creation whose firstfruit is the man in Messiah (Christ): *old things are passed away; behold, all things are become new* (2 Corinthians 5:17).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c05_lookup sv, _s229_2c05_lookup tv
+ WHERE t.slug='2-corinthians-5-the-new-creature-and-the-new-creation-isaiah-43'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-5-the-ministry-of-reconciliation-elohim-reconciling-the-world-romans-5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Romans 5:10 — *when we were enemies, we were reconciled to Elohim (God) by the death of his Son* the same reconciliation Paul ministers: *Elohim (God) was in Messiah (Christ), reconciling the world unto himself, not imputing their trespasses* (2 Corinthians 5:19).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c05_lookup sv, _s229_2c05_lookup tv
+ WHERE t.slug='2-corinthians-5-the-ministry-of-reconciliation-elohim-reconciling-the-world-romans-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=5 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 5:11 — *we have now received the atonement* through *our Lord Yahusha HaMashiach (Lord Jesus Christ)*; the atonement received at Rome is the reconciliation pleaded at Corinth: *be ye reconciled to Elohim (God)* (2 Corinthians 5:20).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c05_lookup sv, _s229_2c05_lookup tv
+ WHERE t.slug='2-corinthians-5-the-ministry-of-reconciliation-elohim-reconciling-the-world-romans-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=5 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-5-he-made-him-to-be-sin-who-knew-no-sin-the-servant-of-isaiah-53
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 53:6 — *Yahuah (LORD) hath laid on him the iniquity of us all* the servant bore what was laid on him; *he hath made him to be sin for us, who knew no sin* (2 Corinthians 5:21).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c05_lookup sv, _s229_2c05_lookup tv
+ WHERE t.slug='2-corinthians-5-he-made-him-to-be-sin-who-knew-no-sin-the-servant-of-isaiah-53'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 53:9 — *he had done no violence, neither was any deceit in his mouth* the sinless servant, the One *who knew no sin* yet *made... to be sin for us* (2 Corinthians 5:21).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c05_lookup sv, _s229_2c05_lookup tv
+ WHERE t.slug='2-corinthians-5-he-made-him-to-be-sin-who-knew-no-sin-the-servant-of-isaiah-53'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 53:11 — *by his knowledge shall my righteous servant justify many; for he shall bear their iniquities* the exchange of *that we might be made the righteousness of Elohim (God) in him* (2 Corinthians 5:21); he bears, the many are justified.'
+  FROM cross_reference_threads t, cross_references x, _s229_2c05_lookup sv, _s229_2c05_lookup tv
+ WHERE t.slug='2-corinthians-5-he-made-him-to-be-sin-who-knew-no-sin-the-servant-of-isaiah-53'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=5 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2corinthians_06.sql (S229 2 Corinthians 6) -----
+-- =====================================================================
+-- S229 minion — 2 CORINTHIANS 6 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 2 CORINTHIANS 6 (18 verses) — COME OUT AND BE SEPARATE / the temple of
+--   the living Elohim (God) — a HIGH-WATCHPOINT / BLESSING chapter (the gathering/separation).
+-- Tag: 2c06 (temp view _s229_2c06_lookup).
+-- Sort band: floor 7125, step 3 (7125, 7128, 7131 used; under 7150). One sort_order per thread.
+-- Source is ALWAYS the canon 2 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: 2 Corinthians 6:14-18 is the GATHERING/SEPARATION of the covenant people —
+-- the regathered, separated Yashar'el (Israel) and the grafted-in seed, the temple of the living
+-- Elohim (God) — NOT a new institution replacing Israel. The centerpiece weaves a Tanakh catena:
+-- *I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my
+-- people* (6:16) re-speaks the covenant-presence promise of Leviticus 26:11-12 (*I will set my
+-- tabernacle among you... and I will walk among you, and will be your Elohim*) and Ezekiel 37:27
+-- (*My tabernacle also shall be with them... and they shall be my people*) — the new-covenant
+-- regathering of the two sticks made one. *Come out from among them, and be ye separate... touch
+-- not the unclean thing* (6:17) re-speaks Isaiah 52:11 (*touch no unclean thing; go ye out of the
+-- midst of her... ye that bear the vessels of Yahuah*) and Ezekiel 20:34 (*I will bring you out
+-- from the people, and will gather you out of the countries*). *I will be a Father unto you, and ye
+-- shall be my sons and daughters* (6:18) re-speaks the Davidic adoption of 2 Samuel 7:14 (*I will
+-- be his father, and he shall be my son*) widened to all the regathered by Isaiah 43:6 (*bring my
+-- sons from far, and my daughters from the ends of the earth*). And 6:2 (*now is the accepted time;
+-- behold, now is the day of salvation*) cites Isaiah 49:8 (*In an acceptable time have I heard thee,
+-- and in a day of salvation have I helped thee*). Sacred names are quoted EXACTLY as dump_canon
+-- returns them; in the 6:17-18 catena the pull gives *Yahuah (Lord)* for the cited YHWH text.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-2   now is the accepted time, the day of salvation
+--           Tanakh: Isaiah 49:8 (in an acceptable time have I heard thee, and in a day of salvation)
+--           Extras: none warranted   NT: none warranted (the citation IS the Tanakh root)
+--   v.3-10  the ministers' endurance catalogue (afflictions, stripes, as poor yet making many rich)
+--           Tanakh: none warranted (a pastoral self-commendation, no load-bearing single root)
+--           Extras: none warranted   NT: none warranted
+--   v.11-13 our heart is enlarged, be ye also enlarged
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted
+--   v.14-15 be ye not unequally yoked; what communion hath light with darkness; Messiah with Belial
+--           Tanakh: Leviticus 26:1 (make you no idols... I am Yahuah Elohaychem); Deuteronomy roots
+--                   allusive only — built on the no-idols separation of Leviticus 26:1 with the
+--                   light/darkness contrast as the lead-in to the catena
+--           Extras: none warranted   NT: none warranted (held in the separation thread)
+--   v.16    the temple of the living Elohim; I will dwell in them and walk in them; they my people
+--           Tanakh: Leviticus 26:11-12 (I will set my tabernacle among you... and walk among you),
+--                   Ezekiel 37:27 (my tabernacle also shall be with them; they shall be my people)
+--           Extras: none warranted   NT: none warranted (the citation IS the Tanakh root)
+--   v.17    come out from among them, be ye separate, touch not the unclean thing
+--           Tanakh: Isaiah 52:11 (touch no unclean thing; go ye out of the midst of her),
+--                   Ezekiel 20:34 (I will bring you out from the people, and gather you)
+--           Extras: none warranted   NT: none warranted
+--   v.18    I will be a Father unto you, ye shall be my sons and daughters
+--           Tanakh: 2 Samuel 7:14 (I will be his father, and he shall be my son),
+--                   Isaiah 43:6 (bring my sons from far, and my daughters from the ends of the earth)
+--           Extras: none warranted   NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   7125 2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26  (Tanakh)  [BLESSING CENTERPIECE]
+--   7128 2-corinthians-6-now-is-the-accepted-time-the-day-of-salvation-isaiah-49  (Tanakh)
+--   7131 2-corinthians-6-what-communion-hath-light-with-darkness-the-unequal-yoke-leviticus-26  (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s229_2c06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26  [BLESSING CENTERPIECE]
+  ('canon', '2-corinthians', 6, 16, 'canon', 'leviticus', 26, 11, 'free', E'*And I will set my tabernacle among you: and my soul shall not abhor you.* (Leviticus 26:11). When Paul says *ye are the temple of the living Elohim (God); as Elohim (God) hath said, I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16), he is citing Yahuah''s (LORD''s) own covenant-presence promise to Yashar''el (Israel). The promise *I will set my tabernacle among you* is not retired; it is the very word the apostle hears fulfilled in the gathered, separated people who are now the dwelling-place of the living Elohim (God). The temple is not exchanged for another people — it is the covenant of Sinai brought to its purpose.'),
+  ('canon', '2-corinthians', 6, 16, 'canon', 'leviticus', 26, 12, 'free', E'*And I will walk among you, and will be your Elohim (God), and ye shall be my people.* (Leviticus 26:12). This is the sentence Paul quotes almost word for word: *I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16). The *I will walk among you* of Leviticus becomes *walk in them*; the *ye shall be my people* stands unchanged. The indwelling-and-walking presence promised to Yashar''el (Israel) in the land is the presence dwelling now in the regathered congregation — the same covenant formula, *I will be their Elohim (God), and they shall be my people,* that runs from Sinai to the consummation.'),
+  ('canon', '2-corinthians', 6, 16, 'canon', 'ezekiel', 37, 27, 'free', E'*My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people.* (Ezekiel 37:27). The same promise Paul cites is spoken by Ezekiel over the regathering of the two sticks made one — Yahudah (Judah) and Yashar''el (Israel) joined, *one nation in the land* under *one shepherd.* When Paul names the assembly *the temple of the living Elohim (God)* in whom Yahuah (LORD) says *I will dwell in them... and they shall be my people* (2 Corinthians 6:16), he is announcing that this new-covenant regathering has come: the tabernacle promised to the reunited house is set among the called-out at Corinth — the gathering, not the replacement, of Yashar''el (Israel).'),
+  ('canon', '2-corinthians', 6, 17, 'canon', 'isaiah', 52, 11, 'free', E'*Depart ye, depart ye, go ye out from thence, touch no unclean thing; go ye out of the midst of her; be ye clean, that bear the vessels of Yahuah (LORD).* (Isaiah 52:11). Paul''s *come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17) is this very word to the captives. Isaiah called the people to go out from Babylon clean, *that bear the vessels of Yahuah (LORD)* — set apart to carry the holy things. The apostle hears the same summons sounding over the assembly: the separated people are the ones who bear the vessels, the temple-bearers called out of all uncleanness to be received by Yahuah (LORD).'),
+  ('canon', '2-corinthians', 6, 17, 'canon', 'ezekiel', 20, 34, 'free', E'*And I will bring you out from the people, and will gather you out of the countries wherein ye are scattered, with a mighty hand, and with a stretched out arm, and with fury poured out.* (Ezekiel 20:34). The *come out from among them, and be ye separate* of 2 Corinthians 6:17 is the regathering Yahuah (LORD) promised through Ezekiel: *I will bring you out from the people, and will gather you out of the countries.* The separation Paul commands is not a withdrawal into a new sect but obedience to the gathering hand of Yahuah (LORD) — the scattered brought out from the nations, purged of the rebels, *I will receive you* answering *I will bring you out.*'),
+  ('canon', '2-corinthians', 6, 18, 'canon', '2-samuel', 7, 14, 'free', E'*I will be his father, and he shall be my son. If he commit iniquity, I will chasten him with the rod of men, and with the stripes of the children of men:* (2 Samuel 7:14). Paul''s closing word of the catena, *And will be a Father unto you, and ye shall be my sons and daughters, saith Yahuah (Lord) Almighty* (2 Corinthians 6:18), widens the Davidic adoption Yahuah (LORD) spoke to David''s seed: *I will be his father, and he shall be my son.* The sonship promised to the throne of David is extended to the whole separated people — the regathered made sons and daughters of the Almighty, the household of the One who said he would build David an house for ever.'),
+  ('canon', '2-corinthians', 6, 18, 'canon', 'isaiah', 43, 6, 'free', E'*I will say to the north, Give up; and to the south, Keep not back: bring my sons from far, and my daughters from the ends of the earth;* (Isaiah 43:6). The *sons and daughters* of 2 Corinthians 6:18 are the very sons and daughters Yahuah (LORD) promised to regather: *bring my sons from far, and my daughters from the ends of the earth.* Paul''s *ye shall be my sons and daughters, saith Yahuah (Lord) Almighty* gathers up the scattered children Isaiah saw brought home from the four winds — *every one that is called by my name: for I have created him for my glory.* The Father-and-children promise is the promise of the ingathering, the separated people received as the sons and daughters of the living Elohim (God).'),
+  -- thread: 2-corinthians-6-now-is-the-accepted-time-the-day-of-salvation-isaiah-49
+  ('canon', '2-corinthians', 6, 2, 'canon', 'isaiah', 49, 8, 'free', E'*Thus saith Yahuah (LORD), In an acceptable time have I heard thee, and in a day of salvation have I helped thee: and I will preserve thee, and give thee for a covenant of the people, to establish the earth, to cause to inherit the desolate heritages;* (Isaiah 49:8). Paul cites this verse outright: *(For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.)* (2 Corinthians 6:2). The *acceptable time* and *day of salvation* are the appointed season of Yahuah''s (LORD''s) Servant — the One *given for a covenant of the people* to restore the desolate heritages and bring the prisoners out. Paul announces that the appointed day has dawned: *now is the accepted time,* the season of the covenant-Servant''s saving work, the call not to receive the grace of Elohim (God) in vain.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s229_2c06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s229_2c06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- A second small INSERT for the third thread (Leviticus 26:1 idols; reuses the catena's Isaiah 52:11 row is avoided — distinct target).
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 2-corinthians-6-what-communion-hath-light-with-darkness-the-unequal-yoke-leviticus-26
+  ('canon', '2-corinthians', 6, 14, 'canon', 'leviticus', 26, 1, 'free', E'*Ye shall make you no idols nor graven image, neither rear you up a standing image, neither shall ye set up any image of stone in your land, to bow down unto it: for I am Yahuah Elohaychem (the LORD your God).* (Leviticus 26:1). The chapter whose covenant-presence promise Paul cites at v.16 opens with this very command of separation from idols. Paul''s *Be ye not unequally yoked together with unbelievers... what agreement hath the temple of Elohim (God) with idols?* (2 Corinthians 6:14,16) is the same line drawn at the head of Leviticus 26: the people in whom Yahuah (LORD) sets his tabernacle are the people who set up no idols. The *no concord... with Belial,* *no communion of light with darkness,* is the holiness that flows straight from *I am Yahuah Elohaychem (the LORD your God).*'),
+  ('canon', '2-corinthians', 6, 16, 'canon', 'leviticus', 26, 1, 'free', E'*Ye shall make you no idols nor graven image... for I am Yahuah Elohaychem (the LORD your God).* (Leviticus 26:1). When Paul asks *what agreement hath the temple of Elohim (God) with idols? for ye are the temple of the living Elohim (God)* (2 Corinthians 6:16), he sets the indwelling promise of Leviticus 26:11-12 against the idol-prohibition of Leviticus 26:1 — the two ends of the same chapter. The dwelling of Yahuah (LORD) among his people and the casting-out of every idol are one covenant: the temple of the living Elohim (God) can hold no graven image, and the separated people bow to none but *Yahuah Elohaychem (the LORD your God).*')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s229_2c06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s229_2c06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26',
+       E'I will dwell in them — the temple of the living Elohim (God): come out and be separate (Leviticus 26, Ezekiel 37, Isaiah 52, 2 Samuel 7)',
+       E'At the heart of the chapter Paul gathers a Tanakh catena into one call: *And what agreement hath the temple of Elohim (God) with idols? for ye are the temple of the living Elohim (God); as Elohim (God) hath said, I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people. Wherefore come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you, And will be a Father unto you, and ye shall be my sons and daughters, saith Yahuah (Lord) Almighty* (2 Corinthians 6:16-18). Every clause is a quoted promise to Yashar''el (Israel), and reading them together shows what Paul means: this is the regathered, separated covenant people — the temple of the living Elohim (God) — NOT a new institution replacing Israel. The indwelling word is Yahuah''s (LORD''s) own covenant-presence promise: *And I will set my tabernacle among you... And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:11-12), and again over the regathering of the two sticks made one, *My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27). The *I will walk among you* of Sinai becomes *walk in them*; the covenant formula *they shall be my people* stands unchanged. The come-out word is Isaiah''s summons to the captives: *Depart ye, depart ye, go ye out from thence, touch no unclean thing; go ye out of the midst of her; be ye clean, that bear the vessels of Yahuah (LORD)* (Isaiah 52:11) — the separated people are the temple-bearers, called out clean to carry the holy things — joined to Ezekiel''s regathering, *I will bring you out from the people, and will gather you out of the countries wherein ye are scattered* (Ezekiel 20:34). The *separation* Paul commands is not withdrawal into a sect but obedience to the gathering hand of Yahuah (LORD): *I will bring you out* answered by *I will receive you.* And the closing adoption widens the Davidic promise to the whole people: *I will be his father, and he shall be my son* (2 Samuel 7:14), the sonship of David''s seed, spread to all the regathered as Isaiah foresaw — *bring my sons from far, and my daughters from the ends of the earth* (Isaiah 43:6), *every one that is called by my name.* So the come-out-and-be-separate is the gathering/separation of the one covenant people: dwelt-in by the living Elohim (God), called clean out of the nations, made sons and daughters of *Yahuah (Lord) Almighty.* This is the consummation of Sinai and the prophets, not their abolition; the temple of the living Elohim (God) is Yashar''el (Israel) and the grafted-in seed brought home.',
+       sv.verse_id, ev.verse_id, 'free', 7125
+  FROM _s229_2c06_lookup sv, _s229_2c06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=6 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-6-now-is-the-accepted-time-the-day-of-salvation-isaiah-49',
+       E'Now is the accepted time, now is the day of salvation (Isaiah 49)',
+       E'Paul opens the chapter pleading that the assembly *receive not the grace of Elohim (God) in vain,* and grounds the urgency in a quoted prophecy: *(For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.)* (2 Corinthians 6:2). The verse he cites is Yahuah''s (LORD''s) word to his Servant: *Thus saith Yahuah (LORD), In an acceptable time have I heard thee, and in a day of salvation have I helped thee: and I will preserve thee, and give thee for a covenant of the people, to establish the earth, to cause to inherit the desolate heritages* (Isaiah 49:8). The *acceptable time* and *day of salvation* are the appointed season of the covenant-Servant — the One given *for a covenant of the people,* sent to say to the prisoners *Go forth,* to restore the preserved of Yashar''el (Israel) and be *a light to the Gentiles... my salvation unto the end of the earth.* Paul announces that this appointed day has dawned: *behold, now is the accepted time.* The season Isaiah foretold is present, the Servant''s saving work is at hand, and therefore the grace of Elohim (God) is not to be received in vain.',
+       sv.verse_id, ev.verse_id, 'free', 7128
+  FROM _s229_2c06_lookup sv, _s229_2c06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=6 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-6-what-communion-hath-light-with-darkness-the-unequal-yoke-leviticus-26',
+       E'What communion hath light with darkness — the unequal yoke and the no-idols of the covenant (Leviticus 26)',
+       E'Before the come-out catena Paul draws the line of separation in a string of contrasts: *Be ye not unequally yoked together with unbelievers: for what fellowship hath righteousness with unrighteousness? and what communion hath light with darkness? And what concord hath Messiah (Christ) with Belial?... And what agreement hath the temple of Elohim (God) with idols?* (2 Corinthians 6:14-16). The chapter whose covenant-presence promise he is about to cite opens with this very command: *Ye shall make you no idols nor graven image, neither rear you up a standing image, neither shall ye set up any image of stone in your land, to bow down unto it: for I am Yahuah Elohaychem (the LORD your God)* (Leviticus 26:1). The two ends of Leviticus 26 are the two halves of Paul''s thought: the people in whom Yahuah (LORD) sets his tabernacle (Leviticus 26:11-12) are the people who set up no idols (Leviticus 26:1). The *no concord with Belial,* the *no communion of light with darkness,* is not a new asceticism but the old holiness — the temple of the living Elohim (God) can hold no graven image, and the separated people bow to none but *Yahuah Elohaychem (the LORD your God).* The unequal yoke is forbidden because the dwelling of Yahuah (LORD) among his people and the casting-out of every idol are one and the same covenant.',
+       sv.verse_id, ev.verse_id, 'free', 7131
+  FROM _s229_2c06_lookup sv, _s229_2c06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=6 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 26:11 — *I will set my tabernacle among you: and my soul shall not abhor you* the covenant-presence promise; *ye are the temple of the living Elohim (God)... I will dwell in them* (2 Corinthians 6:16).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c06_lookup sv, _s229_2c06_lookup tv
+ WHERE t.slug='2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 26:12 — *I will walk among you, and will be your Elohim (God), and ye shall be my people* quoted almost word for word: *walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c06_lookup sv, _s229_2c06_lookup tv
+ WHERE t.slug='2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 37:27 — *My tabernacle also shall be with them... and they shall be my people* the same promise over the two sticks made one; the temple-presence in the regathered congregation (2 Corinthians 6:16).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c06_lookup sv, _s229_2c06_lookup tv
+ WHERE t.slug='2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 52:11 — *touch no unclean thing; go ye out of the midst of her; be ye clean, that bear the vessels of Yahuah (LORD)* the summons to the captives; *come out from among them, and be ye separate... touch not the unclean thing* (2 Corinthians 6:17).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c06_lookup sv, _s229_2c06_lookup tv
+ WHERE t.slug='2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Ezekiel 20:34 — *I will bring you out from the people, and will gather you out of the countries wherein ye are scattered* the regathering; *I will receive you* answers *I will bring you out* (2 Corinthians 6:17).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c06_lookup sv, _s229_2c06_lookup tv
+ WHERE t.slug='2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=20 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'2 Samuel 7:14 — *I will be his father, and he shall be my son* the Davidic adoption; widened to the separated people, *I will be a Father unto you, and ye shall be my sons and daughters* (2 Corinthians 6:18).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c06_lookup sv, _s229_2c06_lookup tv
+ WHERE t.slug='2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Isaiah 43:6 — *bring my sons from far, and my daughters from the ends of the earth* the ingathering of the scattered children; *ye shall be my sons and daughters, saith Yahuah (Lord) Almighty* (2 Corinthians 6:18).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c06_lookup sv, _s229_2c06_lookup tv
+ WHERE t.slug='2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-6-now-is-the-accepted-time-the-day-of-salvation-isaiah-49
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 49:8 — *In an acceptable time have I heard thee, and in a day of salvation have I helped thee... give thee for a covenant of the people* the Servant''s appointed season; cited outright, *behold, now is the accepted time; behold, now is the day of salvation* (2 Corinthians 6:2).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c06_lookup sv, _s229_2c06_lookup tv
+ WHERE t.slug='2-corinthians-6-now-is-the-accepted-time-the-day-of-salvation-isaiah-49'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-6-what-communion-hath-light-with-darkness-the-unequal-yoke-leviticus-26
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 26:1 — *Ye shall make you no idols nor graven image... for I am Yahuah Elohaychem (the LORD your God)* the no-idols command opening the chapter; *Be ye not unequally yoked... what communion hath light with darkness?* (2 Corinthians 6:14).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c06_lookup sv, _s229_2c06_lookup tv
+ WHERE t.slug='2-corinthians-6-what-communion-hath-light-with-darkness-the-unequal-yoke-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 26:1 — *Ye shall make you no idols... for I am Yahuah Elohaychem (the LORD your God)* set against the indwelling promise of the same chapter; *what agreement hath the temple of Elohim (God) with idols? for ye are the temple of the living Elohim (God)* (2 Corinthians 6:16).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c06_lookup sv, _s229_2c06_lookup tv
+ WHERE t.slug='2-corinthians-6-what-communion-hath-light-with-darkness-the-unequal-yoke-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2corinthians_07.sql (S229 2 Corinthians 7) -----
+-- =====================================================================
+-- S229 minion — 2 CORINTHIANS 7 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 2 CORINTHIANS 7 (16 verses) — godly sorrow worketh repentance; perfecting holiness.
+-- Tag: 2c07 (temp view _s229_2c07_lookup).
+-- Sort band: floor 7150, step 3 (7150, 7153 used; under 7175). One sort_order per thread.
+-- Source is ALWAYS the canon 2 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME — this is a pastoral chapter, and a thin one for parallels. 7:1 *let us cleanse
+-- ourselves from all filthiness of the flesh and spirit, perfecting holiness in the fear of Elohim
+-- (God)* flows straight out of the 6:16-18 indwelling/separation promises — *I will dwell in them,
+-- and walk in them... be ye separate.* Having those promises, the called-out people answer the
+-- Leviticus holiness call: *ye shall be holy; for I am holy* (Leviticus 11:44-45, 19:2, 20:26). The
+-- fear of Elohim (God) in which holiness is perfected is the very fear of Yahuah (God) the restored
+-- library names as the heart's preparation (Sirach 2:17, 1:14). Then 7:9-11 unfolds the two sorrows:
+-- *godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world
+-- worketh death* (7:10) — the turning-of-the-heart the prophets called Yashar'el (Israel) to: the
+-- broken and contrite heart Elohim (God) will not despise (Psalm 51:17), the rent heart and the
+-- turning unto Yahuah (LORD) (Joel 2:12-13), the contrite spirit that trembleth at his word (Isaiah
+-- 66:2), and the repentance shewn in the time of sins (Sirach 18:21). Two curated threads; the
+-- comfort/Titus narrative (vv.2-8,12-16) is pastoral report with no load-bearing root — none warranted.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1     having these promises, cleanse ourselves... perfecting holiness in the fear of Elohim (God)
+--           Tanakh: Leviticus 11:44, 11:45, 19:2, 20:26 (be ye holy, for I am holy)
+--           Extras: Sirach 2:17 (they that fear Yahuah will prepare their hearts, and humble their
+--                   souls), Sirach 1:14 (to fear Yahuah is the beginning of wisdom)
+--           NT: none warranted (the holiness-call root is the Leviticus catena)
+--   v.2-8   receive us... comforted by the coming of Titus... made you sorry with a letter
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted
+--           (pastoral narrative — Paul's defense and the report of Titus; no load-bearing parallel)
+--   v.9-11  ye sorrowed to repentance; godly sorrow worketh repentance to salvation; the sorrow of
+--           the world worketh death
+--           Tanakh: Psalm 51:17 (a broken and a contrite heart), Joel 2:12 (turn ye even to me with
+--                   all your heart... with weeping, and with mourning), Joel 2:13 (rend your heart...
+--                   and turn unto Yahuah Elohaychem), Isaiah 66:2 (poor and of a contrite spirit, and
+--                   trembleth at my word)
+--           Extras: Sirach 18:21 (in the time of sins shew repentance)
+--           NT: none warranted (the godly-sorrow root is the Tanakh repentance call)
+--   v.12-16 our care for you... comforted in your comfort... the joy of Titus... confidence in you
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted
+--           (pastoral close — Paul's confidence and Titus' refreshment; no parallel)
+--
+-- THREADS (slug -> target libraries):
+--   7150 2-corinthians-7-perfecting-holiness-in-the-fear-of-elohim-be-ye-holy-leviticus-11  (Tanakh + Extras)
+--   7153 2-corinthians-7-godly-sorrow-worketh-repentance-the-broken-and-contrite-heart-psalm-51  (Tanakh + Extras)
+-- =====================================================================
+
+CREATE TEMP VIEW _s229_2c07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 2-corinthians-7-perfecting-holiness-in-the-fear-of-elohim-be-ye-holy-leviticus-11
+  ('canon', '2-corinthians', 7, 1, 'canon', 'leviticus', 11, 44, 'free', E'*For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy: neither shall ye defile yourselves with any manner of creeping thing that creepeth upon the earth.* (Leviticus 11:44). The holiness Paul calls for is the holiness Yahuah (LORD) commanded at Sinai — *ye shall be holy; for I am holy.* Having the indwelling promise of 6:16-18, the called-out people *cleanse ourselves from all filthiness of the flesh and spirit, perfecting holiness in the fear of Elohim (God)* (2 Corinthians 7:1). The cleansing and the holiness are not new commandments but the old call answered: the people in whom Elohim (God) dwells *sanctify yourselves, and ye shall be holy,* for he who walks among them is holy.'),
+  ('canon', '2-corinthians', 7, 1, 'canon', 'leviticus', 11, 45, 'free', E'*For I am Yahuah (LORD) that bringeth you up out of the land of Egypt, to be your Elohim (God): ye shall therefore be holy, for I am holy.* (Leviticus 11:45). The ground of the holiness call is that Yahuah (LORD) made himself their Elohim (God) — *to be your Elohim (God): ye shall therefore be holy.* This is the very promise Paul has just rehearsed, *I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16); so *perfecting holiness in the fear of Elohim (God)* (2 Corinthians 7:1) is the indwelt people becoming what their indwelling God is. Because *I am holy,* his redeemed are to *be holy.*'),
+  ('canon', '2-corinthians', 7, 1, 'canon', 'leviticus', 19, 2, 'free', E'*Speak unto all the congregation of the children of Yashar''el (Israel), and say unto them, Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy.* (Leviticus 19:2). The whole congregation of Yashar''el (Israel) is summoned to holiness on one ground — *for I Yahuah Elohaychem (the LORD your God) am holy.* Paul speaks the same word to the gathered assembly: *let us cleanse ourselves from all filthiness of the flesh and spirit, perfecting holiness in the fear of Elohim (God)* (2 Corinthians 7:1). The Corinthian assembly is that congregation called to *be holy,* the holiness of the covenant people grounded in the holiness of their God.'),
+  ('canon', '2-corinthians', 7, 1, 'canon', 'leviticus', 20, 26, 'free', E'*And ye shall be holy unto me: for I Yahuah (LORD) am holy, and have severed you from other people, that ye should be mine.* (Leviticus 20:26). Holiness and separation are one word: Yahuah (LORD) *severed you from other people, that ye should be mine,* and therefore *ye shall be holy unto me.* This is exactly the movement of Paul''s plea — out of the *come out from among them, and be ye separate* of 6:17 flows *perfecting holiness in the fear of Elohim (God)* (2 Corinthians 7:1). The severed, separated people *that ye should be mine* are the same called-out ones cleansing themselves *from all filthiness of the flesh and spirit,* holy because their God is holy.'),
+  ('canon', '2-corinthians', 7, 1, 'apocrypha', 'ecclesiasticus', 2, 17, 'extras', E'*They that fear Yahuah (God) will prepare their hearts, and humble their souls in his sight,* (Sirach 2:17). The restored library knows the *fear of Elohim (God)* in which holiness is perfected as the heart''s own preparation: *they that fear Yahuah (God) will prepare their hearts, and humble their souls in his sight.* This is the inward work behind Paul''s *perfecting holiness in the fear of Elohim (God)* (2 Corinthians 7:1) — the cleansing *from all filthiness of the flesh and spirit* is a prepared heart and a humbled soul before the One who dwells among his people. The fear of Yahuah (God) is not dread but the reverent self-cleansing of those who would be holy unto him.'),
+  ('canon', '2-corinthians', 7, 1, 'apocrypha', 'ecclesiasticus', 1, 14, 'extras', E'*To fear Yahuah (God) is the beginning of wisdom: and it was created with the faithful in the womb.* (Sirach 1:14). The library roots all true wisdom in the fear Paul names — *to fear Yahuah (God) is the beginning of wisdom.* When Paul bids the assembly *perfecting holiness in the fear of Elohim (God)* (2 Corinthians 7:1), he sets the whole pursuit of holiness in that beginning: the reverence of the indwelling God is the soil in which a clean and sanctified life grows. The fear of Yahuah (God), the first thing and the deepest thing, is the very fear in which the called-out people cleanse themselves and are made holy.'),
+  -- thread: 2-corinthians-7-godly-sorrow-worketh-repentance-the-broken-and-contrite-heart-psalm-51
+  ('canon', '2-corinthians', 7, 10, 'canon', 'psalms', 51, 17, 'free', E'*The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise.* (Psalm 51:17). David''s repentance names the godly sorrow Paul commends: not a sacrifice of beasts but *a broken and a contrite heart,* which *thou wilt not despise.* Paul rejoices that the Corinthians *sorrowed to repentance,* for *godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death* (2 Corinthians 7:9-10). The broken spirit Elohim (God) receives is the godly sorrow that works repentance unto salvation — the heart turned toward him, not the world''s remorse that ends in death.'),
+  ('canon', '2-corinthians', 7, 10, 'canon', 'joel', 2, 12, 'free', E'*Therefore also now, saith Yahuah (LORD), turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning:* (Joel 2:12). Yahuah (LORD) calls his people to the very sorrow that turns: *turn ye even to me with all your heart, and with... weeping, and with mourning.* This is *godly sorrow* — the weeping and mourning that move the heart back to him — and it *worketh repentance to salvation not to be repented of* (2 Corinthians 7:10). Paul saw it in the Corinthians'' *mourning* and *earnest desire* (7:7); the sorrow that turns the whole heart to Yahuah (LORD) is the sorrow unto life, not the sorrow of the world that *worketh death.*'),
+  ('canon', '2-corinthians', 7, 10, 'canon', 'joel', 2, 13, 'free', E'*And rend your heart, and not your garments, and turn unto Yahuah Elohaychem (the LORD your God): for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil.* (Joel 2:13). True repentance is inward — *rend your heart, and not your garments,* and *turn unto Yahuah Elohaychem (the LORD your God).* This is the difference between the two sorrows Paul sets side by side: *godly sorrow worketh repentance to salvation... but the sorrow of the world worketh death* (2 Corinthians 7:10). The rent heart that turns to the gracious and merciful Yahuah (LORD) is the godly sorrow; mere outward grief, the rent garment without the rent heart, is the world''s sorrow that ends in death.'),
+  ('canon', '2-corinthians', 7, 10, 'canon', 'isaiah', 66, 2, 'free', E'*For all those things hath mine hand made, and all those things have been, saith Yahuah (LORD): but to this man will I look, even to him that is poor and of a contrite spirit, and trembleth at my word.* (Isaiah 66:2). Yahuah (LORD) looks upon one man — *him that is poor and of a contrite spirit, and trembleth at my word.* The contrite spirit that trembles at his word is the *godly sorrow* that *worketh repentance to salvation* (2 Corinthians 7:10), and it is of a piece with the *fear of Elohim (God)* in which the same chapter calls the people to perfect holiness (7:1). The trembling, contrite heart upon which Yahuah (LORD) sets his eye is the heart Paul rejoices to see in the Corinthians — sorrow that draws near to God, not the world''s grief that drives toward death.'),
+  ('canon', '2-corinthians', 7, 10, 'apocrypha', 'ecclesiasticus', 18, 21, 'extras', E'*Humble thyself before you be sick, and in the time of sins shew repentance.* (Sirach 18:21). The restored library counsels the very thing Paul commends — *in the time of sins shew repentance,* and *humble thyself.* This is the godly sorrow that does not wait, the turning of the heart in the day of wrongdoing: *godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death* (2 Corinthians 7:10). The humbled soul that shews repentance in the time of its sins is the soul that sorrows unto life; the unhumbled grief of the world is the sorrow that works death.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s229_2c07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s229_2c07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-7-perfecting-holiness-in-the-fear-of-elohim-be-ye-holy-leviticus-11',
+       E'Perfecting holiness in the fear of Elohim (God) — be ye holy, for I am holy (Leviticus 11)',
+       E'*Having therefore these promises, dearly beloved, let us cleanse ourselves from all filthiness of the flesh and spirit, perfecting holiness in the fear of Elohim (God)* (2 Corinthians 7:1). The *promises* are the ones just rehearsed — *I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (6:16), *come out from among them, and be ye separate* (6:17). Out of the indwelling and the separation flows the holiness; and the holiness Paul calls for is not a new commandment but the old Sinai word answered. Four times Yahuah (LORD) grounds the call on his own holiness: *ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44); *I am Yahuah (LORD) that bringeth you up out of the land of Egypt, to be your Elohim (God): ye shall therefore be holy, for I am holy* (Leviticus 11:45); *Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2); and the holiness that is also separation — *ye shall be holy unto me: for I Yahuah (LORD) am holy, and have severed you from other people, that ye should be mine* (Leviticus 20:26). The very logic of 6:16-7:1 is there in Leviticus: he is their Elohim (God), he has severed them to be his own, therefore they are to be holy as he is holy. And the *fear of Elohim (God)* in which holiness is perfected is the fear the restored library names as the heart''s own preparation: *they that fear Yahuah (God) will prepare their hearts, and humble their souls in his sight* (Sirach 2:17), for *to fear Yahuah (God) is the beginning of wisdom* (Sirach 1:14). The cleansing *from all filthiness of the flesh and spirit* is a prepared heart and a humbled soul; the holiness is the indwelt, separated people becoming what their indwelling God is. This is not Torah set aside but Torah''s holiness call brought to its purpose in the people in whom Elohim (God) now dwells.',
+       sv.verse_id, ev.verse_id, 'extras', 7150
+  FROM _s229_2c07_lookup sv, _s229_2c07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=7 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-corinthians-7-godly-sorrow-worketh-repentance-the-broken-and-contrite-heart-psalm-51',
+       E'Godly sorrow worketh repentance — the broken and contrite heart that turns to Yahuah (Psalm 51, Joel 2)',
+       E'Paul rejoices not that the Corinthians grieved but that *ye sorrowed to repentance: for ye were made sorry after a godly manner* (2 Corinthians 7:9), and he draws the line between two sorrows: *For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death* (7:10). The godly sorrow is the broken heart the prophets and the psalmist knew. David, after his sin, learned that *the sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise* (Psalm 51:17) — the sorrow that God receives is the contrite heart, not the spilt blood of beasts. Yahuah (LORD) calls his people into that same sorrow that turns: *turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning* (Joel 2:12), and presses it inward — *rend your heart, and not your garments, and turn unto Yahuah Elohaychem (the LORD your God): for he is gracious and merciful* (Joel 2:13). There is the whole distinction: the rent heart that turns to the merciful Yahuah (LORD) is godly sorrow unto salvation; the rent garment without the rent heart, the mere remorse of the world, *worketh death.* It is the contrite spirit upon whom Yahuah (LORD) sets his eye — *to this man will I look, even to him that is poor and of a contrite spirit, and trembleth at my word* (Isaiah 66:2) — the same trembling reverence as the *fear of Elohim (God)* of 7:1. And the restored library urges the turning without delay: *Humble thyself before you be sick, and in the time of sins shew repentance* (Sirach 18:21). The Corinthians'' *mourning,* their *fear,* their *vehement desire* (7:7,11) are this godly sorrow — the heart broken and turned to God, the sorrow that works life, not the world''s grief that ends in death.',
+       sv.verse_id, ev.verse_id, 'extras', 7153
+  FROM _s229_2c07_lookup sv, _s229_2c07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='2-corinthians' AND ev.chapter_number=7 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 2-corinthians-7-perfecting-holiness-in-the-fear-of-elohim-be-ye-holy-leviticus-11
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 11:44 — *ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* the Sinai holiness call grounded in God''s own holiness; *perfecting holiness in the fear of Elohim (God)* (2 Corinthians 7:1).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c07_lookup sv, _s229_2c07_lookup tv
+ WHERE t.slug='2-corinthians-7-perfecting-holiness-in-the-fear-of-elohim-be-ye-holy-leviticus-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=44
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 11:45 — *to be your Elohim (God): ye shall therefore be holy, for I am holy* the same ground Paul rehearsed (*I will be their Elohim,* 6:16); the indwelt people becoming what their God is (2 Corinthians 7:1).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c07_lookup sv, _s229_2c07_lookup tv
+ WHERE t.slug='2-corinthians-7-perfecting-holiness-in-the-fear-of-elohim-be-ye-holy-leviticus-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=45
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 19:2 — *Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* the whole congregation of Yashar''el (Israel) summoned to holiness; the gathered assembly cleansing itself (2 Corinthians 7:1).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c07_lookup sv, _s229_2c07_lookup tv
+ WHERE t.slug='2-corinthians-7-perfecting-holiness-in-the-fear-of-elohim-be-ye-holy-leviticus-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Leviticus 20:26 — *ye shall be holy unto me... and have severed you from other people, that ye should be mine* holiness as separation, the very movement of 6:17 into 7:1 (2 Corinthians 7:1).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c07_lookup sv, _s229_2c07_lookup tv
+ WHERE t.slug='2-corinthians-7-perfecting-holiness-in-the-fear-of-elohim-be-ye-holy-leviticus-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=20 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Sirach 2:17 — *they that fear Yahuah (God) will prepare their hearts, and humble their souls in his sight* the inward work behind *the fear of Elohim (God)* in which holiness is perfected (2 Corinthians 7:1).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c07_lookup sv, _s229_2c07_lookup tv
+ WHERE t.slug='2-corinthians-7-perfecting-holiness-in-the-fear-of-elohim-be-ye-holy-leviticus-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=2 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Sirach 1:14 — *to fear Yahuah (God) is the beginning of wisdom* the reverence that is the soil of holiness; *perfecting holiness in the fear of Elohim (God)* (2 Corinthians 7:1).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c07_lookup sv, _s229_2c07_lookup tv
+ WHERE t.slug='2-corinthians-7-perfecting-holiness-in-the-fear-of-elohim-be-ye-holy-leviticus-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 2-corinthians-7-godly-sorrow-worketh-repentance-the-broken-and-contrite-heart-psalm-51
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 51:17 — *a broken and a contrite heart, O Elohim (God), thou wilt not despise* the sorrow God receives; *godly sorrow worketh repentance to salvation* (2 Corinthians 7:10).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c07_lookup sv, _s229_2c07_lookup tv
+ WHERE t.slug='2-corinthians-7-godly-sorrow-worketh-repentance-the-broken-and-contrite-heart-psalm-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joel 2:12 — *turn ye even to me with all your heart, and with... weeping, and with mourning* the sorrow that turns; the *mourning* Paul saw working repentance unto salvation (2 Corinthians 7:10).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c07_lookup sv, _s229_2c07_lookup tv
+ WHERE t.slug='2-corinthians-7-godly-sorrow-worketh-repentance-the-broken-and-contrite-heart-psalm-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joel 2:13 — *rend your heart, and not your garments, and turn unto Yahuah Elohaychem* the rent heart that turns is godly sorrow; the rent garment alone is the world''s sorrow that *worketh death* (2 Corinthians 7:10).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c07_lookup sv, _s229_2c07_lookup tv
+ WHERE t.slug='2-corinthians-7-godly-sorrow-worketh-repentance-the-broken-and-contrite-heart-psalm-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 66:2 — *him that is poor and of a contrite spirit, and trembleth at my word* the contrite, trembling heart God looks upon; the same reverence as the *fear of Elohim* of 7:1 (2 Corinthians 7:10).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c07_lookup sv, _s229_2c07_lookup tv
+ WHERE t.slug='2-corinthians-7-godly-sorrow-worketh-repentance-the-broken-and-contrite-heart-psalm-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Sirach 18:21 — *Humble thyself before you be sick, and in the time of sins shew repentance* the turning without delay; the godly sorrow that works life, not the world''s grief unto death (2 Corinthians 7:10).'
+  FROM cross_reference_threads t, cross_references x, _s229_2c07_lookup sv, _s229_2c07_lookup tv
+ WHERE t.slug='2-corinthians-7-godly-sorrow-worketh-repentance-the-broken-and-contrite-heart-psalm-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='2-corinthians' AND sv.chapter_number=7 AND sv.verse_number=10
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=18 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session229 — 2 Corinthians cross-references complete.'

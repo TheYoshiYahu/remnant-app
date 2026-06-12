@@ -29,7 +29,24 @@ Threads built (all canon Tanakh, tier free):
 ## 2 Corinthians 2 — forgiveness of the offender / the sweet savour (allusive; 3 threads, all canon)
 ## 2 Corinthians 4 — light out of darkness (Gen 1:3) / believing speech (Ps 116:10) (3 threads, all canon)
 
-## ▶ UPCOMING blessing chapters (later packs): ch6 come-out-and-be-separate / temple of the living
-Elohim (Lev 26 + Isa 52 + 2 Sam 7 catena — the gathering/separation), ch8 the collection / manna
-equality (Exod 16:18), ch9 the cheerful giver (Ps 112:9, Prov 22). Surface their summary_md verbatim
-when built.
+## ★ 2 Corinthians 6 — COME OUT AND BE SEPARATE / the temple of the living Elohim (BLESSING)
+**Guard honored:** the come-out-and-be-separate is the GATHERING/SEPARATION of the one covenant people
+— dwelt-in by the living Elohim, called clean out of the nations, made sons and daughters — NOT a new
+institution replacing Israel. The whole 6:16–18 is a Tanakh catena.
+
+Threads (all canon Tanakh, tier free):
+- `2-corinthians-6-i-will-dwell-in-them-the-temple-of-the-living-god-come-out-and-be-separate-leviticus-26` (7125) — **CENTERPIECE/BLESSING** — Leviticus 26:11,12, Ezekiel 37:27, Isaiah 52:11, Ezekiel 20:34, 2 Samuel 7:14, Isaiah 43:6
+- `2-corinthians-6-now-is-the-accepted-time-the-day-of-salvation-isaiah-49` (7128) — Isaiah 49:8
+- `2-corinthians-6-what-communion-hath-light-with-darkness-the-unequal-yoke-leviticus-26` (7131) — Leviticus 26:1
+
+**Centerpiece `summary_md` (verbatim, as applied to prod):**
+> At the heart of the chapter Paul gathers a Tanakh catena into one call: *And what agreement hath the temple of Elohim (God) with idols? for ye are the temple of the living Elohim (God); as Elohim (God) hath said, I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people. Wherefore come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you, And will be a Father unto you, and ye shall be my sons and daughters, saith Yahuah (Lord) Almighty* (2 Corinthians 6:16-18). Every clause is a quoted promise to Yashar'el (Israel), and reading them together shows what Paul means: this is the regathered, separated covenant people — the temple of the living Elohim (God) — NOT a new institution replacing Israel. The indwelling word is Yahuah's (LORD's) own covenant-presence promise: *And I will set my tabernacle among you... And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:11-12), and again over the regathering of the two sticks made one, *My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27). The *I will walk among you* of Sinai becomes *walk in them*; the covenant formula *they shall be my people* stands unchanged. The come-out word is Isaiah's summons to the captives: *Depart ye, depart ye, go ye out from thence, touch no unclean thing; go ye out of the midst of her; be ye clean, that bear the vessels of Yahuah (LORD)* (Isaiah 52:11) — the separated people are the temple-bearers, called out clean to carry the holy things — joined to Ezekiel's regathering, *I will bring you out from the people, and will gather you out of the countries wherein ye are scattered* (Ezekiel 20:34). The *separation* Paul commands is not withdrawal into a sect but obedience to the gathering hand of Yahuah (LORD): *I will bring you out* answered by *I will receive you.* And the closing adoption widens the Davidic promise to the whole people: *I will be his father, and he shall be my son* (2 Samuel 7:14), the sonship of David's seed, spread to all the regathered as Isaiah foresaw — *bring my sons from far, and my daughters from the ends of the earth* (Isaiah 43:6), *every one that is called by my name.* So the come-out-and-be-separate is the gathering/separation of the one covenant people: dwelt-in by the living Elohim (God), called clean out of the nations, made sons and daughters of *Yahuah (Lord) Almighty.* This is the consummation of Sinai and the prophets, not their abolition; the temple of the living Elohim (God) is Yashar'el (Israel) and the grafted-in seed brought home.
+
+## 2 Corinthians 5 — house not made with hands / new creation / reconciliation (4 threads)
+- house-not-made-with-hands + mortality-swallowed (Isa 25:8 + 1 Cor 15:54 + Wisdom 9:15) — BODILY hope, not platonic.
+- new-creature/new-creation (Isa 43:18-19, 65:17); ministry-of-reconciliation (Rom 5); he-made-him-sin who-knew-no-sin (Isa 53 servant — Formed Son).
+
+## 2 Corinthians 7 — perfecting holiness (Lev 11 be-ye-holy + Sirach fear-of-the-Lord) / godly sorrow (Ps 51, Joel 2, Isa 66 + Sirach)
+
+## ▶ UPCOMING blessing chapters (later packs): ch8 the collection / manna equality (Exod 16:18), ch9
+the cheerful giver (Ps 112:9, Prov 22). Surface their summary_md verbatim when built.
