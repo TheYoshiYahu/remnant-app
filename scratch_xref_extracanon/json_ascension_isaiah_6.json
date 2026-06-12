@@ -14,9 +14,36 @@
       "anchor_end_v": 9,
       "tier": "extras",
       "members": [
-        {"src_ch": 6, "src_v": 6, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 4, "tgt_v": 1, "tier": "free", "note": "Revelation 4:1 — *After this I looked, and, behold, a door was opened in heaven: and the first voice which I heard was as it were of a trumpet talking with me; which said, Come up hither, and I will shew thee things which must be hereafter.* The same opened door of heaven and the same summoning voice that Isaiah's hearers heard at 6:6."},
-        {"src_ch": 6, "src_v": 6, "tgt_edition": "canon", "tgt_book": "2-corinthians", "tgt_ch": 12, "tgt_v": 2, "tier": "free", "note": "2 Corinthians 12:2 — *I knew a man in Messiah (Christ) above fourteen years ago, (whether in the body, I cannot tell; or whether out of the body, I cannot tell: Elohim (God) knoweth;) such an one caught up to the third heaven.* Paul, like Isaiah, is carried through the opened door into the heavens — body or no body, the Most High knoweth."},
-        {"src_ch": 6, "src_v": 8, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 4, "tgt_v": 8, "tier": "free", "note": "Revelation 4:8 — *And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come.* The worship the prophets render the Most High at 6:8 is the unceasing worship of heaven before the throne."}
+        {
+          "src_ch": 6,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 4,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Revelation 4:1 — *After this I looked, and, behold, a door was opened in heaven: and the first voice which I heard was as it were of a trumpet talking with me; which said, Come up hither, and I will shew thee things which must be hereafter.* The same opened door of heaven and the same summoning voice that Isaiah's hearers heard at 6:6."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "2-corinthians",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "2 Corinthians 12:2 — *I knew a man in Messiah (Christ) above fourteen years ago, (whether in the body, I cannot tell; or whether out of the body, I cannot tell: Elohim (God) knoweth;) such an one caught up to the third heaven.* Paul, like Isaiah, is carried through the opened door into the heavens — body or no body, the Most High knoweth."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 4,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Revelation 4:8 — *And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come.* The worship the prophets render the Most High at 6:8 is the unceasing worship of heaven before the throne."
+        }
       ]
     },
     {
@@ -27,9 +54,36 @@
       "anchor_end_v": 15,
       "tier": "extras",
       "members": [
-        {"src_ch": 6, "src_v": 10, "tgt_edition": "canon", "tgt_book": "2-corinthians", "tgt_ch": 12, "tgt_v": 3, "tier": "free", "note": "2 Corinthians 12:3 — *And I knew such a man, (whether in the body, or out of the body, I cannot tell: Elohim (God) knoweth;)* Paul's not-knowing whether body or spirit matches Isaiah's mind being taken up while his breath remained (6:10, 6:12)."},
-        {"src_ch": 6, "src_v": 12, "tgt_edition": "canon", "tgt_book": "2-corinthians", "tgt_ch": 12, "tgt_v": 4, "tier": "free", "note": "2 Corinthians 12:4 — *How that he was caught up into paradise, and heard unspeakable words, which it is not lawful for a man to utter.* The vision Isaiah saw, hidden from the flesh (6:15), is the same caught-up sight of things unspeakable."},
-        {"src_ch": 6, "src_v": 15, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 12, "tgt_v": 6, "tier": "free", "note": "Numbers 12:6 — *And he said, Hear now my words: If there be a prophet among you, I Yahuah (LORD) will make myself known unto him in a vision, and will speak unto him in a dream.* The vision not from this world but hidden from the flesh (6:15) is Yahuah's own appointed way of making Himself known to a true prophet."}
+        {
+          "src_ch": 6,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "2-corinthians",
+          "tgt_ch": 12,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "2 Corinthians 12:3 — *And I knew such a man, (whether in the body, or out of the body, I cannot tell: Elohim (God) knoweth;)* Paul's not-knowing whether body or spirit matches Isaiah's mind being taken up while his breath remained (6:10, 6:12)."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "2-corinthians",
+          "tgt_ch": 12,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Corinthians 12:4 — *How that he was caught up into paradise, and heard unspeakable words, which it is not lawful for a man to utter.* The vision Isaiah saw, hidden from the flesh (6:15), is the same caught-up sight of things unspeakable."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 12,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Numbers 12:6 — *And he said, Hear now my words: If there be a prophet among you, I Yahuah (LORD) will make myself known unto him in a vision, and will speak unto him in a dream.* The vision not from this world but hidden from the flesh (6:15) is Yahuah's own appointed way of making Himself known to a true prophet."
+        }
       ]
     },
     {
@@ -40,9 +94,36 @@
       "anchor_end_v": 15,
       "tier": "extras",
       "members": [
-        {"src_ch": 6, "src_v": 13, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 7, "tgt_v": 9, "tier": "free", "note": "Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* The seventh-heaven realm the angel comes from (6:13) is the throne-realm of the Ancient of days, the Father most high."},
-        {"src_ch": 6, "src_v": 13, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 14, "tgt_v": 15, "tier": "extras", "note": "1 Enoch 14:15 — *But the middle one reached to heaven, like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire.* Enoch's ascent to the throne reaching to heaven is the elder pattern of Isaiah's angel from the seventh heaven (6:13) — it ain't new."},
-        {"src_ch": 6, "src_v": 13, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 4, "tgt_v": 2, "tier": "free", "note": "Revelation 4:2 — *And immediately I was in the spirit: and, behold, a throne was set in heaven, and one sat on the throne.* John's heavenly guide and throne mirror the seventh-heaven angel who makes Isaiah see (6:13)."}
+        {
+          "src_ch": 6,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* The seventh-heaven realm the angel comes from (6:13) is the throne-realm of the Ancient of days, the Father most high."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 13,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 14,
+          "tgt_v": 15,
+          "tier": "extras",
+          "note": "1 Enoch 14:15 — *But the middle one reached to heaven, like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire.* Enoch's ascent to the throne reaching to heaven is the elder pattern of Isaiah's angel from the seventh heaven (6:13) — it ain't new."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 4,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 4:2 — *And immediately I was in the spirit: and, behold, a throne was set in heaven, and one sat on the throne.* John's heavenly guide and throne mirror the seventh-heaven angel who makes Isaiah see (6:13)."
+        }
       ]
     },
     {
@@ -53,9 +134,36 @@
       "anchor_end_v": 9,
       "tier": "extras",
       "members": [
-        {"src_ch": 6, "src_v": 5, "tgt_edition": "canon", "tgt_book": "1-samuel", "tgt_ch": 10, "tgt_v": 6, "tier": "free", "note": "1 Samuel 10:6 — *And the Spirit of Yahuah (LORD) will come upon thee, and thou shalt prophesy with them, and shalt be turned into another man.* The prophet-band prophesying under Isaiah's hand (6:5) is the same Spirit-borne company Saul met."},
-        {"src_ch": 6, "src_v": 6, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 2, "tgt_v": 17, "tier": "free", "note": "Acts 2:17 — *And it shall come to pass in the last days, saith Elohim (God), I will pour out of my Spirit upon all flesh: and your sons and your daughters shall prophesy, and your young men shall see visions, and your old men shall dream dreams.* The voice of the Ruach HaKodesh through the opened door (6:6) is the outpoured Spirit that makes sons and daughters prophesy."},
-        {"src_ch": 6, "src_v": 9, "tgt_edition": "canon", "tgt_book": "amos", "tgt_ch": 3, "tgt_v": 7, "tier": "free", "note": "Amos 3:7 — *Surely Adonai Yahuah (the Lord GOD) will do nothing, but he revealeth his secret unto his servants the prophets.* The door bestowed in an alien world upon a man (6:9) is the secret Yahuah opens only to His servant-prophets."}
+        {
+          "src_ch": 6,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "1-samuel",
+          "tgt_ch": 10,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "1 Samuel 10:6 — *And the Spirit of Yahuah (LORD) will come upon thee, and thou shalt prophesy with them, and shalt be turned into another man.* The prophet-band prophesying under Isaiah's hand (6:5) is the same Spirit-borne company Saul met."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "acts",
+          "tgt_ch": 2,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Acts 2:17 — *And it shall come to pass in the last days, saith Elohim (God), I will pour out of my Spirit upon all flesh: and your sons and your daughters shall prophesy, and your young men shall see visions, and your old men shall dream dreams.* The voice of the Ruach HaKodesh through the opened door (6:6) is the outpoured Spirit that makes sons and daughters prophesy."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "amos",
+          "tgt_ch": 3,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Amos 3:7 — *Surely Adonai Yahuah (the Lord GOD) will do nothing, but he revealeth his secret unto his servants the prophets.* The door bestowed in an alien world upon a man (6:9) is the secret Yahuah opens only to His servant-prophets."
+        }
       ]
     }
   ]
