@@ -1,0 +1,74 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 20,
+  "session": "session253",
+  "tag": "sir20",
+  "base_band": 58775,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-20-silence-found-wise",
+      "title": "He that holdeth his tongue, and is found wise",
+      "summary_md": "Ben Sira opens the chapter on the discipline of the closed mouth: *There is one that keepeth silence, and is found wise: and another by much babbling becometh hateful.* (Ecclesiasticus 20:5), and again, *Some man holdeth his tongue, because he has not to answer: and some keepeth silence, knowing his time.* (Ecclesiasticus 20:6). This is the very proverb of Solomon: *Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding.* (Proverbs 17:28). The Preacher knew the season of it — *A time to keep silence, and a time to speak* (Ecclesiastes 3:7) — and James gathered the whole wisdom stream into one command: *let every man be swift to hear, slow to speak, slow to wrath* (James 1:19). It ain't new: the restraint of the tongue is the old covenant wisdom unbroken.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 20, "src_v": 5, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 17, "tgt_v": 28, "tier": "free", "note": "Proverbs 17:28 — *Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding.* The same paradox Ben Sira sets down in Sirach 20:5 — silence itself confers the appearance, and the substance, of wisdom."},
+        {"src_ch": 20, "src_v": 6, "tgt_edition": "canon", "tgt_book": "ecclesiastes", "tgt_ch": 3, "tgt_v": 7, "tier": "free", "note": "Ecclesiastes 3:7 — *A time to rend, and a time to sew; a time to keep silence, and a time to speak;* the Preacher's appointed season for silence is exactly the man who in Sirach 20:6 keepeth silence, knowing his time."},
+        {"src_ch": 20, "src_v": 5, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 19, "tier": "free", "note": "James 1:19 — *Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:* James inherits Ben Sira's wisdom of the bridled tongue against the much babbling that becometh hateful in Sirach 20:5."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-20-word-in-season",
+      "title": "A wise man will hold his tongue till he see opportunity",
+      "summary_md": "The wise man waits for the fit moment to speak: *A wise man will hold his tongue till he see opportunity: but a babbler and a fool will regard no time.* (Ecclesiasticus 20:7), for *A wise sentence shall be rejected when it comes out of a fool's mouth; for he will not speak it in due season.* (Ecclesiasticus 20:20). Solomon weighed the same scale: *A man hath joy by the answer of his mouth: and a word spoken in due season, how good is it!* (Proverbs 15:23), and *A word fitly spoken is like apples of gold in pictures of silver.* (Proverbs 25:11). The worth of speech is not in its quantity but in its timing — the gold set in its proper silver. It ain't new: seasonable speech is the wisdom of the Tanakh.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 20, "src_v": 7, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 15, "tgt_v": 23, "tier": "free", "note": "Proverbs 15:23 — *A man hath joy by the answer of his mouth: and a word spoken in due season, how good is it!* Solomon's praise of the timely word is Ben Sira's wise man of Sirach 20:7 who holds his tongue till he see opportunity."},
+        {"src_ch": 20, "src_v": 20, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 25, "tgt_v": 11, "tier": "free", "note": "Proverbs 25:11 — *A word fitly spoken is like apples of gold in pictures of silver.* The fitness of speech that Solomon prizes is the due season Ben Sira's fool fails in Sirach 20:20, rejecting even a wise sentence by speaking it untimely."},
+        {"src_ch": 20, "src_v": 8, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 10, "tgt_v": 19, "tier": "free", "note": "Proverbs 10:19 — *In the multitude of words there wanteth not sin: but he that refraineth his lips is wise.* The man who useth many words and is abhorred in Sirach 20:8 is the multitude-of-words wherein sin is not wanting."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-20-lie-foul-blot",
+      "title": "A lie is a foul blot in a man",
+      "summary_md": "Ben Sira marks the liar's shame: *A lie is a foul blot in a man, yet it is continually in the mouth of the untaught.* (Ecclesiasticus 20:24), and *The disposition of a liar is dishonourable, and his shame is ever with him.* (Ecclesiasticus 20:26). The Torah forbids it at the root — *Ye shall not steal, neither deal falsely, neither lie one to another.* (Leviticus 19:11) — and Solomon names it an abomination: *Lying lips are abomination to Yahuah (LORD): but they that deal truly are his delight.* (Proverbs 12:22). The deceitful tongue is no light thing but a blot upon the man and a thing abhorred of Yahuah. It ain't new: truth-telling is the old commandment kept.",
+      "anchor_start_v": 24,
+      "anchor_end_v": 26,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 20, "src_v": 24, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 19, "tgt_v": 11, "tier": "free", "note": "Leviticus 19:11 — *Ye shall not steal, neither deal falsely, neither lie one to another.* The foul blot of the lie in Sirach 20:24 is forbidden in the same Holiness Code that frames Ben Sira's whole ethic of the tongue."},
+        {"src_ch": 20, "src_v": 26, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 12, "tgt_v": 22, "tier": "free", "note": "Proverbs 12:22 — *Lying lips are abomination to Yahuah (LORD): but they that deal truly are his delight.* The liar's dishonourable disposition and ever-present shame in Sirach 20:26 is the abomination Solomon sets against Yahuah's delight in the truthful."},
+        {"src_ch": 20, "src_v": 25, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 21, "tgt_v": 27, "tier": "free", "note": "Revelation 21:27 — *And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb’s book of life.* The thief and the liar who in Sirach 20:25 have destruction to heritage are barred from the New Jerusalem, where no maker of a lie enters."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-20-gift-of-a-fool",
+      "title": "The gift of a fool shall do you no good",
+      "summary_md": "Ben Sira weighs giving by the heart behind it: *The gift of a fool shall do you no good when you have it; neither yet of the envious for his necessity: for he looketh to receive many things for one.* (Ecclesiasticus 20:14), and the grudging giver *gives little, and upbraideth much* (Ecclesiasticus 20:15). Solomon warns of the same begrudged bread: *Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats* (Proverbs 23:6). Paul gathers the wisdom to its head — *God loveth a cheerful giver* (2 Corinthians 9:7) — for the worth of a gift is the eye that gives it, not the thing given. It ain't new: the cheerful, single eye in giving is the old wisdom.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 20, "src_v": 14, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 23, "tgt_v": 6, "tier": "free", "note": "Proverbs 23:6 — *Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats:* the envious giver of Sirach 20:14, who looketh to receive many things for one, is Solomon's man of the evil eye whose gift profits nothing."},
+        {"src_ch": 20, "src_v": 15, "tgt_edition": "canon", "tgt_book": "2-corinthians", "tgt_ch": 9, "tgt_v": 7, "tier": "free", "note": "2 Corinthians 9:7 — *Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver.* Against the grudging giver of Sirach 20:15 who gives little and upbraideth much, Paul sets the cheerful giver Yahuah loves."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-20-wisdom-hid-treasure-hoarded",
+      "title": "Wisdom that is hid — what profit is in it?",
+      "summary_md": "Ben Sira closes the chapter on hidden wisdom and necessary patience: *Wisdom that is hid, and treasure that is hoarded up, what profit is in them both?* (Ecclesiasticus 20:30), and *Necessary patience in seeking Yahuah (God) is better than he that leadeth his life without a guide.* (Ecclesiasticus 20:32). The Messiah taught the same in His parables of the light not to be hid and the talent not to be buried: *Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house.* (Matthew 5:15), and the wicked servant who *went and digged in the earth, and hid his lord’s money* (Matthew 25:18) is condemned for the hoarding Ben Sira names unprofitable. Wisdom is given to be spent in the seeking of Yahuah. It ain't new.",
+      "anchor_start_v": 30,
+      "anchor_end_v": 32,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 20, "src_v": 30, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 5, "tgt_v": 15, "tier": "free", "note": "Matthew 5:15 — *Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house.* The hidden wisdom that yields no profit in Sirach 20:30 is the Messiah's candle that must not be put under a bushel."},
+        {"src_ch": 20, "src_v": 30, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 25, "tgt_v": 18, "tier": "free", "note": "Matthew 25:18 — *But he that had received one went and digged in the earth, and hid his lord’s money.* The treasure hoarded up to no profit in Sirach 20:30 is the buried talent of the slothful servant in the Messiah's parable."},
+        {"src_ch": 20, "src_v": 32, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 3, "tgt_v": 5, "tier": "free", "note": "Proverbs 3:5 — *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding.* The necessary patience in seeking Yahuah that Ben Sira commends in Sirach 20:32, over the man without a guide, is Solomon's trust in Yahuah rather than one's own understanding."}
+      ]
+    }
+  ]
+}
