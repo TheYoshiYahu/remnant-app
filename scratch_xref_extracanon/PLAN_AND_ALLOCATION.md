@@ -677,3 +677,29 @@ apostolic-fathers@70000, mrjames@75000, josephus defer). Brief MINION_BRIEF_APOC
 `apocrypha <book> <prefix>`; reconcile by ANCHOR (sed _wischeck.py → _sircheck.py pattern). ⚠️ FIRST NEXT
 SESSION: retry `git push origin HEAD:main` from /tmp/extracanon-xref-wt with keychain unlocked — 37 commits
 (85b660c..8e05869) need to land (origin/main still 47a9e48); prod authoritative meanwhile.
+
+## RECEIPT — Apocrypha Pack 4: Sirach/Ecclesiasticus ch9–16 ✅ LIVE IN PROD
+- Applied 2026-06-11. AUTHORITATIVE (anchored on apocrypha/ecclesiasticus): cumulative **87 threads / 312
+  members**, band 58300–58690, per-ch(9-16) 5/5/6/3/5/5/5/6, 0 orphans. +40/153. Commit `da79b16`. Gates
+  green (anchor 0, resolve 0, FULL-LIBRARY PASS; 0 NEW fidelity flags — the lone flag is the known benign
+  ch5 2Cor6:2 wholly-parenthetical false-positive).
+- Women/friendship/strange-woman (9→Prov5-7/Matt5:28); PRIDE=the beginning of sin + thrones-cast-down (10→
+  Prov16:18/Isa14:14/Dan4:37/Luke1:52/James4:6); boast-not/the rich-fool (11→1Sam16:7/Luke12:20/1Tim6:9);
+  discern enemies/the table-betrayer→the Passion (12→Prov26:24/Ps41:9/Matt26:49); touch-pitch/rich-vs-poor
+  (13→1Cor15:33/James2:6); against COVETOUSNESS (14→Eccl5:10/Luke12:20/1Tim6:7); ★the FREEDOM OF THE WILL/
+  no-author-of-evil (15→Deut30:15-19/James1:13-15/Gen4:7/Josh24:15); the judgments of old/the giants→1Enoch
+  self-link (16→Gen6:4/Gen19:24/Ps139:7/Rom1:20). James = Sirach's closest NT sibling throughout.
+- Push blocked. origin/main 47a9e48; local HEAD `da79b16` (39 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 3 PSEUDEPIGRAPHA + Wisdom of Solomon COMPLETE + Sirach ch1-16 LIVE = 1343
+threads/4825 members. NEXT = Sirach Pack 3 ch17-24 (17 creation of man/the law given; 18 mercy of Yahuah
+over all flesh; 19-23 the tongue/discipline/discretion; ★ch24 WISDOM SPEAKS: 'I came out of the mouth of the
+Most High... in Jacob be thine inheritance... I am the mother of fair love' → John 1:1-14/Prov 8:22-31/Col
+1:15-17/Baruch 3:9-4:4 = the LOGOS). Then packs 4-7 to ch51 (★ch44-50 'let us now praise famous men' Enoch→
+Noah→Abraham→...→Simon → Heb 11 + self-link the live 1Enoch/Jubilees/Jasher). After Sirach: Tobit @59000
+(Raphael/Tob13 New-Jerusalem→Rev21), Judith, 1-2 Maccabees (2Macc7 resurrection→Heb11), Baruch, 1-2 Esdras
+(→Revelation), Susanna, Bel, Manasseh, Song-of-Three, rest-of-Esther. Then the smaller restored books. METHOD:
+workflow (sirach-pack2 script + per-ch CONTEXT) → render → anchor_check apocrypha ecclesiasticus + pglast +
+verify_fidelity + resolve_check apocrypha ecclesiasticus → fold → audit → _sircheck.py (anchor recon). ⚠️ FIRST
+NEXT SESSION: retry `git push origin HEAD:main` from /tmp/extracanon-xref-wt with keychain unlocked — 39 commits
+(85b660c..da79b16) need to land (origin/main still 47a9e48); prod authoritative meanwhile.
