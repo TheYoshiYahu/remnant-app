@@ -147,3 +147,43 @@ Band base 20000, migration `session301_genesis_cross_references.sql`.
   Moab→Ruth→Messianic-line redemption deliberately NOT forced here (held for Ruth/Matt 1).
 - Gate notes: all 110 quotes fidelity-clean (110/110, 0 flagged); arity 0; 0 unresolved refs. The
   ONLY gate catch was Jubilees 15:9 (non-existent verse, run-together parse) → repointed to 15:5.
+
+## PACK 6 (ch20-24) — Abimelech, Isaac born, ★★ the Akedah, Sarah's grave, Rebekah (26 threads / 108 members, bands 20475-20587)
+- **Gen 20 — Yahuah guards the seed-line; Abraham the FIRST navi/prophet.** The wife-sister motif a
+  third time (Gen 12 Pharaoh / 20 Abimelech / 26 Isaac) = the seed-bearer kept pure by Yahuah's
+  hand each time. ★ **Psalm 105:14-15** quotes THIS episode (*Touch not mine anointed, and do my
+  prophets no harm* — "prophets" = the patriarchs/Abraham). Elohim restrains sin (20:6 *I withheld
+  thee from sinning*) — sovereign over the king's heart (Prov 21:1). The prophet's office = inter-
+  cession (20:7,17; James 5:16), ties to ch18. PARSE TRAP: Jasher 20 parses only vv.1-13 (vv.14-30
+  collapsed into a run-on v13 w/ "52 14." apparatus) — 3 dangling Jasher members (20:14/29/30)
+  dropped at the resolve gate; threads 4 & 5 thereby all-canon → tier set 'free'.
+- **★ Gen 21 — Isaac born + the bondwoman cast out (Galatians 4 FULFILLED).** The set-time birth
+  (Heb 11:11) at the word Yahuah spoke; ★★ *Cast out the bondwoman and her son* (21:10,12) — Sha'ul
+  quotes it directly (Gal 4:23,29,30), framed STRICTLY as flesh-effort (the son born after the
+  flesh, the ch.16 scheme) vs. the child of PROMISE, NOT Torah-vs-grace (RL #6). *In Isaac shall thy
+  seed be called* (Rom 9:7-8, Heb 11:18) = the elect seed-line BY PROMISE, narrowing toward Messiah.
+  Ishmael heard and made a nation (victims-not-enemies). Beersheba / El Olam the everlasting El.
+- **★★★ Gen 22 — THE AKEDAH, the keystone messianic type (7 threads).** *Thy son, thine only son,
+  whom thou lovest* → the Father and the only-begotten Son (John 3:16, Rom 8:32) — held as TYPE,
+  Formed-and-Formless, no co-equal-persons grammar. Resurrection-faith (*we will come again*; *Elohim
+  will provide himself a lamb*) → Heb 11:17-19 (*received him in a figure*). The substitute ram /
+  **Yahuah-Yireh**; Moriah → the temple mount / Zion (2 Chron 3:1, Ps 132:13). ★ *Because thou hast
+  obeyed my voice* (22:16,18) → James 2:21-22 (*by works was faith made perfect*) — SEALS the Gen
+  15:6 framing: the trust reckoned righteous is the trust that obeyed at the altar. The self-sworn
+  oath (Heb 6:13-14); the seed SINGULAR = Messiah (Gal 3:16), nations blessed IN the one seed, the
+  seed-war "gate of his enemies." NOTE: Jubilees frames the test as prompted by Mastema (Job's-
+  accuser) — recorded in header, clean Akedah-action verses used as members.
+- **Gen 23 — the only land Abraham owned was a grave.** *I am a stranger and a sojourner* (23:4) →
+  Heb 11:9-10,13 (strangers and pilgrims, looking for the city with foundations): the land-promise
+  real but FUTURE, the Machpelah cave a down-payment held by resurrection-hope. The patriarchal
+  burying-place (Gen 25:9, 49:29-31, 50:13). Acts 7:16 OMITTED (conflates Shechem/Hamor with
+  Machpelah/Ephron — mismatched parse, recorded not forced).
+- **Gen 24 — the seed-line kept pure; a bride for the son.** The bride from the kindred not Canaan
+  (covenant-fidelity, not racism). ★★ Rebekah's blessing *let thy seed possess the gate of those
+  which hate them* (24:60) = the Akedah seed-war oath (22:17) carried to the next generation. The
+  servant's mission read gently as a come-and-see bride-for-the-Son type (NT "none warranted" — not
+  forced). PARSE TRAP: Jubilees 19 has no standalone v10 (run-on inside v9) — the one Jub 19:10
+  member dropped at the resolve gate; thread keeps Gen 24:67 + Jasher 24:44 (stays extras).
+- Gate notes: fidelity 108/108 (0 flagged); arity 0; resolve caught 4 run-on-parse refs (Jasher
+  20:14/29/30, Jubilees 19:10) → dropped/repointed, re-gated clean. LESSON: extras chapters with
+  KJV-style run-on verse-merges (Jasher 20, Jubilees 19) silently mis-number — always resolve-gate.
