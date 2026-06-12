@@ -1,112 +1,82 @@
 import json
 
 data = {
-  "edition": "apocrypha",
-  "book": "ecclesiasticus",
-  "chapter": 50,
-  "session": "session253",
-  "tag": "sir50",
-  "base_band": 59525,
+  "edition": "apocrypha", "book": "tobit", "chapter": 8,
+  "session": "session253", "tag": "tob8", "base_band": 59775,
   "threads": [
     {
-      "slug": "sirach-50-simon-repaired-the-house",
-      "title": "Simon repaired the house and fortified the temple",
-      "summary_md": "*Simon the high priest, the son of Onias, who in his life repaired the house again, and in his days fortified the temple: And by him was built from the foundation the double height, the high fortress of the wall about the temple* (Ecclesiasticus 50:1-2). The praise of Simon ben Onias opens the great hymn that closes Sirach: the high priest who restored the house of Yahuah, who *took care of the temple that it should not fall, and fortified the city against besieging* (Ecclesiasticus 50:4). This is the office Aaron was first set into — *And thou shalt make holy garments for Aaron thy brother for glory and for beauty* (Exodus 28:2) — and it stands in the long line of those who repaired the breach of the sanctuary. It ain't new: the better priesthood the writer of Hebrews unfolds is the very office Simon held in shadow, *We have such an high priest, who is set on the right hand of the throne of the Majesty in the heavens* (Hebrews 8:1), the true tabernacle which Yahuah pitched and not man.",
-      "anchor_start_v": 1,
-      "anchor_end_v": 4,
-      "tier": "extras",
+      "slug": "tobit-8-the-binding-of-the-enemy",
+      "title": "The angel bound him — the binding of the enemy",
+      "summary_md": "When the smoke of the heart and liver rose, *The which smell when the evil spirit had smelled, he fled into the utmost parts of Egypt, and the angel bound him.* (Tobit 8:3). It ain't new — the seed-war of Eden runs to its end, and the enemy is not merely cast out but *bound*. John saw the same chain: *And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years,* (Revelation 20:2), and the angel *cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more* (Revelation 20:3). The Messiah teaches that no house is spoiled till the strong man is first tied: *Or else how can one enter into a strong man’s house, and spoil his goods, except he first bind the strong man? and then he will spoil his house.* (Matthew 12:29). And He hands that authority to the gathered: *Behold, I give unto you power to tread on serpents and scorpions, and over all the power of the enemy: and nothing shall by any means hurt you.* (Luke 10:19). Asmodeus fleeing and bound is a sign of the whole — the dragon shut up, the bridal chamber kept.",
+      "anchor_start_v": 3, "anchor_end_v": 3, "tier": "extras",
       "members": [
-        {"src_ch": 50, "src_v": 1, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 28, "tgt_v": 2, "tier": "free",
-         "note": "Exodus 28:2 — *And thou shalt make holy garments for Aaron thy brother for glory and for beauty.* Simon repairing the house and serving in priestly office (Sirach 50:1) stands in the line of Aaron, the first robed for glory and beauty."},
-        {"src_ch": 50, "src_v": 1, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 8, "tgt_v": 1, "tier": "free",
-         "note": "Hebrews 8:1 — *Now of the things which we have spoken this is the sum: We have such an high priest, who is set on the right hand of the throne of the Majesty in the heavens;* the earthly high priest who repaired the temple (Sirach 50:1) is the shadow of the better High Priest enthroned in the true heavens."},
-        {"src_ch": 50, "src_v": 2, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 8, "tgt_v": 2, "tier": "free",
-         "note": "Hebrews 8:2 — *A minister of the sanctuary, and of the true tabernacle, which Yahuah (Lord) pitched, and not man.* Simon building the high fortress of the wall about the temple (Sirach 50:2) is the made-with-hands figure of the true tabernacle pitched by Yahuah Himself."}
+        {"src_ch": 8, "src_v": 3, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 20, "tgt_v": 2, "tier": "free",
+         "note": "Revelation 20:2 — *And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years,* the same word over the enemy that Tobit 8:3 sees in small — the angel bound him."},
+        {"src_ch": 8, "src_v": 3, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 20, "tgt_v": 3, "tier": "free",
+         "note": "Revelation 20:3 — *And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season.* As the demon is driven to the utmost parts and shut away, so the dragon is sealed in the pit (Tobit 8:3)."},
+        {"src_ch": 8, "src_v": 3, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 12, "tgt_v": 29, "tier": "free",
+         "note": "Matthew 12:29 — *Or else how can one enter into a strong man’s house, and spoil his goods, except he first bind the strong man? and then he will spoil his house.* The binding of the enemy must come first before the household is freed — Asmodeus bound, the marriage delivered (Tobit 8:3)."},
+        {"src_ch": 8, "src_v": 3, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 10, "tgt_v": 19, "tier": "free",
+         "note": "Luke 10:19 — *Behold, I give unto you power to tread on serpents and scorpions, and over all the power of the enemy: and nothing shall by any means hurt you.* The authority that binds and treads the enemy is given to the faithful, as the angel exercised it for Tobias (Tobit 8:3)."}
       ]
     },
     {
-      "slug": "sirach-50-morning-star-rainbow-sun",
-      "title": "As the morning star, the rainbow, the sun upon the temple",
-      "summary_md": "*He was as the morning star in the midst of a cloud, and as the moon at the full: As the sun shining upon the temple of the Most High, and as the rainbow giving light in the bright clouds* (Ecclesiasticus 50:6-7). The high priest in his glory at the altar is sung in the light-imagery of heaven — morning star, full moon, sun, rainbow. The rainbow round about glory is the throne-sign of the covenant: *I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth* (Genesis 9:13), and John saw it about the very throne — *there was a rainbow round about the throne, in sight like unto an emerald* (Revelation 4:3). The Sun that shines upon the house of Yahuah points beyond Simon to the One the prophet named, *unto you that fear my name shall the Sun of righteousness arise with healing in his wings* (Malachi 4:2), and the day star Peter says shall *arise in your hearts* (2 Peter 1:19). Do not collapse Simon into the Messiah; the radiance of the priest at the altar is the shadow, and the Sun of righteousness is the substance.",
-      "anchor_start_v": 6,
-      "anchor_end_v": 7,
-      "tier": "extras",
+      "slug": "tobit-8-arise-and-let-us-pray",
+      "title": "Arise, and let us pray — the marriage begun in prayer",
+      "summary_md": "Before the bridal night, Tobias does not turn to lust but to Yahuah: *And after that they were both shut in together, Tobias rose out of the bed, and said, Sister, arise, and let us pray that Yahuah (God) would have pity on us.* (Tobit 8:4). Marriage opened with prayer is the Torah pattern of the holy seed kept clean. Paul gives the same charge to the saints, that uncleanness be not once named among them: *But fornication, and all uncleanness, or covetousness, let it not be once named among you, as becometh saints;* (Ephesians 5:3). And he weds the one-flesh covenant to a higher mystery: *This is a great mystery: but I speak concerning Messiah (Christ) and the church.* (Ephesians 5:32). The chamber of Tobias and Sarah, hallowed by prayer, is a small window onto the marriage of the Lamb.",
+      "anchor_start_v": 4, "anchor_end_v": 4, "tier": "extras",
       "members": [
-        {"src_ch": 50, "src_v": 7, "tgt_edition": "canon", "tgt_book": "malachi", "tgt_ch": 4, "tgt_v": 2, "tier": "free",
-         "note": "Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* Simon as the sun shining upon the temple (Sirach 50:7) is the priestly shadow of the Sun of righteousness the prophet promised to rise over those who fear the Name."},
-        {"src_ch": 50, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 9, "tgt_v": 13, "tier": "free",
-         "note": "Genesis 9:13 — *I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth.* The high priest as the rainbow giving light in the bright clouds (Sirach 50:7) wears the very covenant-sign Yahuah set in the cloud."},
-        {"src_ch": 50, "src_v": 7, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 4, "tgt_v": 3, "tier": "free",
-         "note": "Revelation 4:3 — *And he that sat was to look upon like a jasper and a sardine stone: and there was a rainbow round about the throne, in sight like unto an emerald.* The rainbow about the glory of Simon at the altar (Sirach 50:7) is a glimpse of the rainbow John saw encircling the throne itself."},
-        {"src_ch": 50, "src_v": 6, "tgt_edition": "canon", "tgt_book": "2-peter", "tgt_ch": 1, "tgt_v": 19, "tier": "free",
-         "note": "2 Peter 1:19 — *We have also a more sure word of prophecy; whereunto ye do well that ye take heed, as unto a light that shineth in a dark place, until the day dawn, and the day star arise in your hearts:* the priest as the morning star in the midst of a cloud (Sirach 50:6) foreshadows the day star Peter says will arise in the hearts of the faithful."}
+        {"src_ch": 8, "src_v": 4, "tgt_edition": "canon", "tgt_book": "ephesians", "tgt_ch": 5, "tgt_v": 3, "tier": "free",
+         "note": "Ephesians 5:3 — *But fornication, and all uncleanness, or covetousness, let it not be once named among you, as becometh saints;* the very holiness Tobias guards when he rises to pray rather than to lust (Tobit 8:4)."},
+        {"src_ch": 8, "src_v": 4, "tgt_edition": "canon", "tgt_book": "ephesians", "tgt_ch": 5, "tgt_v": 32, "tier": "free",
+         "note": "Ephesians 5:32 — *This is a great mystery: but I speak concerning Messiah (Christ) and the church.* The prayer-hallowed marriage of Tobias points beyond itself to the covenant union it figures (Tobit 8:4)."}
       ]
     },
     {
-      "slug": "sirach-50-cedar-palm-olive-trees",
-      "title": "Compassed as a cedar of Libanus, the trees of the sanctuary",
-      "summary_md": "*And as a fair olive tree budding forth fruit, and as a cypress tree which grows up to the clouds* (Ecclesiasticus 50:10), and at the altar Simon stood *compassed about, as a young cedar in Libanus; and as palm trees compassed they him round about* (Ecclesiasticus 50:12). The tree-imagery here is drawn straight from Wisdom's own self-praise earlier in this same book, where she says *I was exalted like a cedar in Libanus, and as a cypress tree upon the mountains of Hermon* and *as a fair olive tree in a pleasant field* (Ecclesiasticus 24:13-14). The glory of the priest at the altar is sung in the very words by which Wisdom — that *came out of the mouth of the Most High* — described herself rooted among the people. It ain't new: the cedar, the palm, the olive that adorn the sanctuary are the standing trees of the house of Yahuah.",
-      "anchor_start_v": 10,
-      "anchor_end_v": 12,
-      "tier": "extras",
+      "slug": "tobit-8-thou-madest-adam-and-eve",
+      "title": "Thou madest Adam, and gavest him Eve — marriage as the Edenic covenant",
+      "summary_md": "Tobias’s prayer reaches back past the Law to the garden itself: *You madest Adam, and gavest him Eve his wife for an helper and stay: of them came mankind: you have said, It is not good that man should be alone; let us make to him an aid like to himself.* (Tobit 8:6). He is quoting Genesis from memory in exile — the foundation of marriage in the creation ordinance. *And Yahuah Elohim (the LORD God) said, It is not good that the man should be alone; I will make him an help meet for him.* (Genesis 2:18). And the one-flesh decree: *Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.* (Genesis 2:24). At the first, *So Elohim (God) created man in his own image, in the image of Elohim (God) created he him; male and female created he them.* (Genesis 1:27). It ain’t new — the wedding at Ecbatana is the wedding of Eden renewed, the holy seed continued.",
+      "anchor_start_v": 6, "anchor_end_v": 6, "tier": "extras",
       "members": [
-        {"src_ch": 50, "src_v": 12, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 24, "tgt_v": 13, "tier": "extras",
-         "note": "Ecclesiasticus 24:13 — *I was exalted like a cedar in Libanus, and as a cypress tree upon the mountains of Hermon.* Simon compassed about as a young cedar in Libanus (Sirach 50:12) is robed in the very tree-imagery Wisdom used of herself in this same book."},
-        {"src_ch": 50, "src_v": 10, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 24, "tgt_v": 14, "tier": "extras",
-         "note": "Ecclesiasticus 24:14 — *I was exalted like a palm tree in En-gaddi, and as a rose plant in Jericho, as a fair olive tree in a pleasant field, and grew up as a plane tree by the water.* Simon as a fair olive tree budding forth fruit (Sirach 50:10) echoes Wisdom's self-portrait as the fair olive tree and palm planted by the waters."}
+        {"src_ch": 8, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 18, "tier": "free",
+         "note": "Genesis 2:18 — *And Yahuah Elohim (the LORD God) said, It is not good that the man should be alone; I will make him an help meet for him.* The very word Tobias prays back to Yahuah as the ground of his marriage (Tobit 8:6)."},
+        {"src_ch": 8, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 24, "tier": "free",
+         "note": "Genesis 2:24 — *Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.* The one-flesh covenant Tobias and Sarah enter is the creation ordinance Tobit 8:6 invokes."},
+        {"src_ch": 8, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 1, "tgt_v": 27, "tier": "free",
+         "note": "Genesis 1:27 — *So Elohim (God) created man in his own image, in the image of Elohim (God) created he him; male and female created he them.* The making of Adam and Eve that Tobit 8:6 recalls as the pattern of his own marriage."}
       ]
     },
     {
-      "slug": "sirach-50-blood-of-the-grape-poured-out",
-      "title": "The blood of the grape poured at the foot of the altar",
-      "summary_md": "*And finishing the service at the altar, that he might adorn the offering of the most high Almighty, He stretched out his hand to the cup, and poured of the blood of the grape, he poured out at the foot of the altar a sweetsmelling savour to the most high King of all* (Ecclesiasticus 50:14-15). This is the high priest completing the once-a-year service — the Day of Atonement office of Aaron, *And he shall make an atonement for the holy place, because of the uncleanness of the children of Yashar'el (Israel)* (Leviticus 16:16). The writer of Hebrews names the limit of this very service honestly: *into the second went the high priest alone once every year, not without blood, which he offered for himself, and for the errors of the people* (Hebrews 9:7), a figure that *could not make him that did the service perfect, as pertaining to the conscience* (Hebrews 9:9). Simon's poured-out cup of the grape's blood is the shadow that points to the once-for-all blood — but Simon is not the Messiah; the type ascends to Him who *by his own blood he entered in once into the holy place, having obtained eternal redemption for us* (Hebrews 9:12).",
-      "anchor_start_v": 14,
-      "anchor_end_v": 16,
-      "tier": "extras",
+      "slug": "tobit-8-not-for-lust-but-uprightly",
+      "title": "Not for lust but uprightly — the godly seed",
+      "summary_md": "Tobias names his intent before Yahuah: *And now, O Yahuah (God), I take not this my sister for lust but uprightly: therefore mercifully ordain that we may become aged together.* (Tobit 8:7). This is Malachi’s purpose of marriage exactly — covenant faithfulness for the sake of a holy line. *And did not he make one? Yet had he the residue of the spirit. And wherefore one? That he might seek a godly seed. Therefore take heed to your spirit, and let none deal treacherously against the wife of his youth.* (Malachi 2:15), for *Yahuah (LORD) hath been witness between thee and the wife of thy youth, against whom thou hast dealt treacherously: yet is she thy companion, and the wife of thy covenant.* (Malachi 2:14). Paul charges husbands to that same self-giving love: *Husbands, love your wives, even as Messiah (Christ) also loved the church, and gave himself for it;* (Ephesians 5:25). To grow old together, not for lust but in truth — this is the seed kept faithful.",
+      "anchor_start_v": 7, "anchor_end_v": 7, "tier": "extras",
       "members": [
-        {"src_ch": 50, "src_v": 14, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 16, "tgt_v": 16, "tier": "free",
-         "note": "Leviticus 16:16 — *And he shall make an atonement for the holy place, because of the uncleanness of the children of Yashar'el (Israel), and because of their transgressions in all their sins: and so shall he do for the tabernacle of the congregation, that remaineth among them in the midst of their uncleanness.* Simon finishing the service at the altar (Sirach 50:14) is the high priest performing the atonement Aaron was commanded to make for the holy place."},
-        {"src_ch": 50, "src_v": 15, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 9, "tgt_v": 7, "tier": "free",
-         "note": "Hebrews 9:7 — *But into the second went the high priest alone once every year, not without blood, which he offered for himself, and for the errors of the people:* Simon pouring out the blood of the grape at the foot of the altar (Sirach 50:15) enacts the once-a-year, not-without-blood service Hebrews names as the figure of the true."},
-        {"src_ch": 50, "src_v": 15, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 9, "tgt_v": 12, "tier": "free",
-         "note": "Hebrews 9:12 — *Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us.* The poured-out cup of Simon's offering (Sirach 50:15) is the shadow whose substance is the Messiah entering once with His own blood — the type, not the fulfilment."}
+        {"src_ch": 8, "src_v": 7, "tgt_edition": "canon", "tgt_book": "malachi", "tgt_ch": 2, "tgt_v": 15, "tier": "free",
+         "note": "Malachi 2:15 — *And did not he make one? Yet had he the residue of the spirit. And wherefore one? That he might seek a godly seed. Therefore take heed to your spirit, and let none deal treacherously against the wife of his youth.* The godly-seed purpose of marriage is precisely Tobias’s not-for-lust-but-uprightly (Tobit 8:7)."},
+        {"src_ch": 8, "src_v": 7, "tgt_edition": "canon", "tgt_book": "malachi", "tgt_ch": 2, "tgt_v": 14, "tier": "free",
+         "note": "Malachi 2:14 — *Yet ye say, Wherefore? Because Yahuah (LORD) hath been witness between thee and the wife of thy youth, against whom thou hast dealt treacherously: yet is she thy companion, and the wife of thy covenant.* Yahuah is the witness of the marriage covenant Tobias makes openly before him (Tobit 8:7)."},
+        {"src_ch": 8, "src_v": 7, "tgt_edition": "canon", "tgt_book": "ephesians", "tgt_ch": 5, "tgt_v": 25, "tier": "free",
+         "note": "Ephesians 5:25 — *Husbands, love your wives, even as Messiah (Christ) also loved the church, and gave himself for it;* the sacrificial, lifelong love that Tobias prays to live out, to grow aged together (Tobit 8:7)."}
       ]
     },
     {
-      "slug": "sirach-50-sons-of-aaron-oblations-better-priesthood",
-      "title": "The sons of Aaron in their glory, and the better priesthood",
-      "summary_md": "*So were all the sons of Aaron in their glory, and the oblations of Yahuah (God) in their hands, before all the congregation of Yashar'el (Israel)* (Ecclesiasticus 50:13). The sons of Aaron stand in their glory with the offerings in their hands before the whole assembly — the Levitical priesthood at its height. Yet the writer of Hebrews shows the limit honestly: *If therefore perfection were by the Levitical priesthood, (for under it the people received the law,) what further need was there that another priest should rise after the order of Melek Tsadiq (Melchizedek), and not be called after the order of Aaron?* (Hebrews 7:11). The Aaronic priests *truly were many priests, because they were not suffered to continue by reason of death* (Hebrews 7:23) — Simon and his sons in their glory are the shadow, and the One who *continueth ever, hath an unchangeable priesthood* (Hebrews 7:24) is the substance toward which it all points. It ain't new: the glory of Aaron's sons is real, and it is a shadow.",
-      "anchor_start_v": 13,
-      "anchor_end_v": 13,
-      "tier": "extras",
+      "slug": "tobit-8-let-all-thy-creatures-praise-thee",
+      "title": "Let all thy creatures praise thee — the whole creation blesses Yahuah",
+      "summary_md": "Tobias opens his prayer summoning all creation to bless its Maker: *Then began Tobias to say, Blessed art you, O Yahuah (God) of our fathers, and blessed is your holy and glorious name for ever; let the heavens bless you, and all your creatures.* (Tobit 8:5). Raguel answers in kind: *Then Raguel praised Yahuah (God), and said, O Yahuah (God), you are worthy to be praised with all pure and holy praise; therefore let your saints praise you with all your creatures; and let all your angels and your elect praise you for ever.* (Tobit 8:15). This is the song of Psalm 148 — heaven, hosts, and every creature called to one chorus. *Praise ye him, all his angels: praise ye him, all his hosts.* (Psalms 148:2), *Let them praise the name of Yahuah (LORD): for he commanded, and they were created.* (Psalms 148:5). The same praise rises in Tobit’s own later song, when the scattered house is gathered home: *And all her streets shall say, Alleluia; and they shall praise him, saying, Blessed be Yahuah (God), which has extolled it for ever.* (Tobit 13:18).",
+      "anchor_start_v": 5, "anchor_end_v": 15, "tier": "extras",
       "members": [
-        {"src_ch": 50, "src_v": 13, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 7, "tgt_v": 11, "tier": "free",
-         "note": "Hebrews 7:11 — *If therefore perfection were by the Levitical priesthood, (for under it the people received the law,) what further need was there that another priest should rise after the order of Melek Tsadiq (Melchizedek), and not be called after the order of Aaron?* The sons of Aaron in their glory (Sirach 50:13) are the Levitical priesthood whose very glory Hebrews shows pointed beyond itself to another priest."},
-        {"src_ch": 50, "src_v": 13, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 7, "tgt_v": 24, "tier": "free",
-         "note": "Hebrews 7:24 — *But this man, because he continueth ever, hath an unchangeable priesthood.* The sons of Aaron with the oblations in their hands (Sirach 50:13) were many priests who passed by death, the shadow of the one Priest whose priesthood does not pass."}
-      ]
-    },
-    {
-      "slug": "sirach-50-aaronic-blessing-lifted-over-the-people",
-      "title": "He lifted up his hands to give the blessing of Yahuah",
-      "summary_md": "*Then he went down, and lifted up his hands over the whole congregation of the children of Yashar'el (Israel), to give the blessing of Yahuah (God) with his lips, and to rejoice in his name. And they bowed themselves down to worship the second time, that they might receive a blessing from the Most High* (Ecclesiasticus 50:20-21). This is the priestly blessing of Aaron lifted over the people — the very rite Yahuah gave: *On this wise ye shall bless the children of Yashar'el (Israel)... Yahuah (LORD) bless thee, and keep thee: Yahuah (LORD) make his face shine upon thee, and be gracious unto thee* (Numbers 6:23-25), for *they shall put my name upon the children of Yashar'el (Israel); and I will bless them* (Numbers 6:27). Simon rejoicing in the Name as he blesses is the Aaronic blessing kept alive in the second-temple sanctuary. And the wisdom-call this book closes with — the invitation to take up instruction and find rest — points to the One who would say, *Come unto me, all ye that labour and are heavy laden, and I will give you rest* (Matthew 11:28). It ain't new: the lifted hands of the priest and the open arms of the wisdom-call are the same blessing, sealed in the Name.",
-      "anchor_start_v": 20,
-      "anchor_end_v": 21,
-      "tier": "extras",
-      "members": [
-        {"src_ch": 50, "src_v": 20, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 6, "tgt_v": 23, "tier": "free",
-         "note": "Numbers 6:23 — *Speak unto Aaron and unto his sons, saying, On this wise ye shall bless the children of Yashar'el (Israel), saying unto them,* Simon lifting his hands to give the blessing of Yahuah (Sirach 50:20) is performing the very Aaronic blessing Yahuah commanded the priests to speak over the people."},
-        {"src_ch": 50, "src_v": 20, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 6, "tgt_v": 25, "tier": "free",
-         "note": "Numbers 6:25 — *Yahuah (LORD) make his face shine upon thee, and be gracious unto thee:* the blessing of Yahuah Simon spoke with his lips over the congregation (Sirach 50:20) is the word of the shining face the priests were given to pronounce."},
-        {"src_ch": 50, "src_v": 20, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 6, "tgt_v": 27, "tier": "free",
-         "note": "Numbers 6:27 — *And they shall put my name upon the children of Yashar'el (Israel); and I will bless them.* Simon rejoicing in the Name as he blesses the people (Sirach 50:20) places that very Name upon Israel, as the blessing was ordained to do."},
-        {"src_ch": 50, "src_v": 21, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 11, "tgt_v": 28, "tier": "free",
-         "note": "Matthew 11:28 — *Come unto me, all ye that labour and are heavy laden, and I will give you rest.* The congregation bowing to receive a blessing from the Most High (Sirach 50:21) finds its fulfilment in the wisdom-call of the Messiah, who opens His arms to give rest to all who come."}
+        {"src_ch": 8, "src_v": 5, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 148, "tgt_v": 2, "tier": "free",
+         "note": "Psalms 148:2 — *Praise ye him, all his angels: praise ye him, all his hosts.* The heavens and creatures Tobias bids bless Yahuah are the very hosts Psalm 148 musters (Tobit 8:5)."},
+        {"src_ch": 8, "src_v": 5, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 148, "tgt_v": 5, "tier": "free",
+         "note": "Psalms 148:5 — *Let them praise the name of Yahuah (LORD): for he commanded, and they were created.* All creatures praising their Maker is the ground of Tobias’s blessing of the holy and glorious name (Tobit 8:5)."},
+        {"src_ch": 8, "src_v": 15, "tgt_edition": "apocrypha", "tgt_book": "tobit", "tgt_ch": 13, "tgt_v": 18, "tier": "extras",
+         "note": "Tobit 13:18 — *And all her streets shall say, Alleluia; and they shall praise him, saying, Blessed be Yahuah (God), which has extolled it for ever.* Raguel’s call for saints, angels, and elect to praise forever is taken up in Tobit’s hymn of the regathered Jerusalem (Tobit 8:15)."}
       ]
     }
   ]
 }
 
-with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_sirach_50.json", "w") as f:
+with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_tobit_8.json", "w") as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
 print("written")

@@ -1,0 +1,210 @@
+{
+  "edition": "apocrypha",
+  "book": "tobit",
+  "chapter": 7,
+  "session": "session253",
+  "tag": "tob7",
+  "base_band": 59750,
+  "threads": [
+    {
+      "slug": "tobit-7-kinsman-recognized",
+      "title": "He ran to meet his kinsman: the welcome at the well-house",
+      "summary_md": "Tobias arrives a stranger and is known by his face: *Then said Raguel to Edna his wife, How like is this young man to Tobit my cousin!* (Tobit 7:2), and when the line is confirmed, *Then Raguel leaped up, and kissed him, and wept* (Tobit 7:6). It ain't new — this is the patriarchs' own welcome of the kinsman come from afar. When Jacob comes east to the house of his mother's brother, *And it came to pass, when Laban heard the tidings of Jacob his sister's son, that he ran to meet him, and embraced him, and kissed him, and brought him to his house* (Genesis 29:13), and the bond is named, *Surely thou art my bone and my flesh* (Genesis 29:14). The mutual recognition at the well — *And he said unto them, Know ye Laban the son of Nahor? And they said, We know him* (Genesis 29:5) — is the very shape of Raguel's question after Tobit. The scattered house of Yashar'el, captive in Nineveh, still knows its own across the exile.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 29,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Genesis 29:13 — *And it came to pass, when Laban heard the tidings of Jacob his sister’s son, that he ran to meet him, and embraced him, and kissed him, and brought him to his house. And he told Laban all these things.* Raguel leaping up to kiss and weep over Tobit's son re-enacts Laban running to embrace his sister's son Jacob."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 29,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 29:14 — *And Laban said to him, Surely thou art my bone and my flesh. And he abode with him the space of a month.* Raguel's blessing — *You are the son of an honest and good man* — names the same bone-and-flesh kinship that binds Tobias into Raguel's house."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 29,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Genesis 29:5 — *And he said unto them, Know ye Laban the son of Nahor? And they said, We know him.* Raguel's *Do you know Tobit our kinsman? And they said, We know him* repeats Jacob's well-side recognition of the kindred verbatim in pattern."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-7-wife-of-thine-own-kindred",
+      "title": "A wife of thine own kindred: the seed kept within the tribe",
+      "summary_md": "Raguel gives Sara because the right is Tobias's own: *For it is meet that you should marry my daughter* (Tobit 7:10), *for you are her cousin, and she is yours* (Tobit 7:12). It ain't new — this is the Torah's own guarding of the inheritance within the tribe. Abraham binds his servant by oath, *thou shalt not take a wife unto my son of the daughters of the Canaanites... But thou shalt go unto my country, and to my kindred, and take a wife unto my son Isaac* (Genesis 24:3-4); the daughters of Zelophehad are commanded, *only to the family of the tribe of their father shall they marry* (Numbers 36:6), *that the children of Yashar'el may enjoy every man the inheritance of his fathers* (Numbers 36:8). The exile has not loosed the covenant of the seed-line; in Nineveh the law of Moses still orders the marriage.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 24,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Genesis 24:4 — *But thou shalt go unto my country, and to my kindred, and take a wife unto my son Isaac.* Raguel granting Sara because *you are her cousin* keeps Abraham's charge to seek the bride from his own kindred, not the nations."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 36,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Numbers 36:6 — *This is the thing which Yahuah (LORD) doth command concerning the daughters of Zelophehad, saying, Let them marry to whom they think best; only to the family of the tribe of their father shall they marry.* Raguel's *it is meet that you should marry my daughter* obeys the same statute binding an heiress to a man of her father's tribe."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 36,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Numbers 36:8 — *And every daughter, that possesseth an inheritance in any tribe of the children of Yashar'el (Israel), shall be wife unto one of the family of the tribe of her father, that the children of Yashar'el (Israel) may enjoy every man the inheritance of his fathers.* Sara, the only daughter, is given to her cousin so the inheritance of Nephthalim is not removed from the tribe."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 7,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Deuteronomy 7:3 — *Neither shalt thou make marriages with them; thy daughter thou shalt not give unto his son, nor his daughter shalt thou take unto thy son.* The marriage made within the kindred is the obverse of the marriage forbidden with the nations — Tobias seeks Sara precisely because she is of the covenant seed."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-7-written-sealed-covenant",
+      "title": "Took her after the law of Moses: the written and sealed covenant",
+      "summary_md": "The marriage is no mere feeling but a sworn, written deed: Tobias will not eat *till we agree and swear one to another* (Tobit 7:11); Raguel takes Sara by the hand and gives her, *Behold, take her after the law of Moses, and lead her away to your father* (Tobit 7:13); then *took paper, and did write an instrument of covenants, and sealed it* (Tobit 7:14). It ain't new — this is how Israel binds a marriage covenant. When the bride is asked for, the kindred answer, *The thing proceedeth from Yahuah (LORD)... Behold, Rebekah is before thee, take her, and go* (Genesis 24:50-51). At the gate Boaz makes the kinsman-covenant before witnesses, *to raise up the name of the dead upon his inheritance... ye are witnesses this day* (Ruth 4:10). And the Messiah Himself anchors marriage in the law of Moses and the creation order, *For this cause shall a man leave his father and mother, and cleave to his wife* (Mark 10:7).",
+      "anchor_start_v": 11,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 24,
+          "tgt_v": 51,
+          "tier": "free",
+          "note": "Genesis 24:51 — *Behold, Rebekah is before thee, take her, and go, and let her be thy master’s son’s wife, as Yahuah (LORD) hath spoken.* Raguel taking Sara by the hand and saying *take her after the law of Moses, and lead her away to your father* echoes Bethuel and Laban giving Rebekah to be Isaac's wife."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 24,
+          "tgt_v": 50,
+          "tier": "free",
+          "note": "Genesis 24:50 — *Then Laban and Bethuel answered and said, The thing proceedeth from Yahuah (LORD): we cannot speak unto thee bad or good.* Raguel's *the merciful Yahuah (God) give you good success in all things* reads the betrothal, like Rebekah's, as proceeding from Yahuah Himself."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "ruth",
+          "tgt_ch": 4,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Ruth 4:10 — *Moreover Ruth the Moabitess, the wife of Mahlon, have I purchased to be my wife, to raise up the name of the dead upon his inheritance, that the name of the dead be not cut off from among his brethren, and from the gate of his place: ye are witnesses this day.* The sealed instrument of covenants in Tobit is the same witnessed marriage-deed by which Boaz, the kinsman, secures the bride and the inheritance."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "mark",
+          "tgt_ch": 10,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Mark 10:7 — *For this cause shall a man leave his father and mother, and cleave to his wife;* the bride led away to the bridegroom's father after the law of Moses is the leaving-and-cleaving the Messiah grounds in the creation order."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-7-the-wedding-feast",
+      "title": "Then they began to eat: the kinsman's wedding feast",
+      "summary_md": "Covenant struck, the table is spread: *And the merciful Yahuah (God) give you good success in all things* (Tobit 7:12), and after the deed is sealed, *Then they began to eat* (Tobit 7:15). It ain't new — when Jacob's seven years are fulfilled, *Laban gathered together all the men of the place, and made a feast* (Genesis 29:22); and at the betrothal of Rebekah the kindred *did eat and drink, he and the men that were with him, and tarried all night* (Genesis 24:54). The covenant of the seed is sealed and then celebrated at meat, the same pattern that ripens into the marriage-supper of the Lamb.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 29,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Genesis 29:22 — *And Laban gathered together all the men of the place, and made a feast.* Raguel's table after the sealed covenant — *Then they began to eat* — is the kinsman's wedding feast that Laban makes for Jacob and Rachel."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 24,
+          "tgt_v": 54,
+          "tier": "free",
+          "note": "Genesis 24:54 — *And they did eat and drink, he and the men that were with him, and tarried all night; and they rose up in the morning, and he said, Send me away unto my master.* Raguel's *Eat and drink, and make merry* matches the betrothal meal at Bethuel's house before the bride is led home."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-7-blessing-of-the-bride",
+      "title": "Be of good comfort, my daughter: the blessing sent with the bride",
+      "summary_md": "Edna sends Sara out under a blessing, not a curse: *Be of good comfort, my daughter; Yahuah (God) of heaven and earth give you joy for this your sorrow* (Tobit 7:18), even as she *received the tears of her daughter* (Tobit 7:17). It ain't new — this is the mother's house blessing the bride as she goes. Rebekah is sent with the same word, *Thou art our sister, be thou the mother of thousands of millions* (Genesis 24:60); and at Ruth's marriage the people pray, *Yahuah (LORD) make the woman that is come into thine house like Rachel and like Leah, which two did build the house of Yashar'el* (Ruth 4:11). The daughter of the scattered house goes out to her husband carrying the blessing of the fathers.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 24,
+          "tgt_v": 60,
+          "tier": "free",
+          "note": "Genesis 24:60 — *And they blessed Rebekah, and said unto her, Thou art our sister, be thou the mother of thousands of millions, and let thy seed possess the gate of those which hate them.* Edna's *Yahuah (God) of heaven and earth give you joy* sends Sara out under the same household blessing pronounced over Rebekah as she leaves for Isaac."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "ruth",
+          "tgt_ch": 4,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Ruth 4:11 — *And all the people that were in the gate, and the elders, said, We are witnesses. Yahuah (LORD) make the woman that is come into thine house like Rachel and like Leah, which two did build the house of Yashar'el (Israel): and do thou worthily in Ephratah, and be famous in Beth-lehem:* the blessing turning Sara's sorrow to joy is the same bridal benediction the gate pronounces over Ruth."
+        }
+      ]
+    }
+  ]
+}

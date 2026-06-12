@@ -1,0 +1,210 @@
+{
+  "edition": "apocrypha",
+  "book": "tobit",
+  "chapter": 1,
+  "session": "session253",
+  "tag": "tob1",
+  "base_band": 59600,
+  "threads": [
+    {
+      "slug": "tobit-1-naphtali-captive",
+      "title": "Naphtali Carried Away — the Scattered House of Israel",
+      "summary_md": "Tobit names himself at the head of his book: *of the seed of Asael, of the tribe of Nephthali* (Tobit 1:1), and tells how *in the time of Enemessar king of the Assyrians* he *was led captive out of Thisbe... which is called properly Nephthali in Galilee above Aser* (Tobit 1:2). This is the northern ten tribes' exile — the house of Israel scattered. The Kings record is the same hand: *In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar'el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes* (2 Kings 17:6) — the very Medes where Tobit will leave his silver in trust. *So was Yashar'el (Israel) carried away out of their own land to Assyria unto this day* (2 Kings 17:23). Moses had foretold it word for word: *And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other* (Deuteronomy 28:64). Yet the scattering is never the last word — the two sticks are made one: *Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21). Tobit, captive in Nineveh, is the seed of that promised gathering.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 17,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "2 Kings 17:6 — *In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar'el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes.* This is the same Assyrian deportation that swept Tobit of Naphtali into Nineveh in Tobit 1:2."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 17,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "2 Kings 17:23 — *Until Yahuah (LORD) removed Yashar'el (Israel) out of his sight, as he had said by all his servants the prophets. So was Yashar'el (Israel) carried away out of their own land to Assyria unto this day.* Tobit of the tribe of Naphtali in Tobit 1:1 is one of the very exiles this verse buries in the nations."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 28,
+          "tgt_v": 64,
+          "tier": "free",
+          "note": "Deuteronomy 28:64 — *And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other; and there thou shalt serve other gods, which neither thou nor thy fathers have known, even wood and stone.* Tobit's captivity in Tobit 1:2 is Moses' covenant warning come to pass upon the house of Israel."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 37,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Ezekiel 37:21 — *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* The scattered tribe of Naphtali named in Tobit 1:1 is exactly the people Yahuah promises to regather, not to replace."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-1-calf-vs-jerusalem",
+      "title": "The Heifer Baal Against the Chosen House",
+      "summary_md": "Tobit grieves that his own tribe broke from the temple: *all the tribe of Nephthali my father fell from the house of Jerusalem, which was chosen out of all the tribes of Yashar'el (Israel), that all the tribes should sacrifice there* (Tobit 1:4), and *all the tribes which together revolted, and the house of my father Nephthali, sacrificed to the heifer Baal* (Tobit 1:5). That heifer is Jeroboam's golden calf, set up to keep the north from going up to worship: *Whereupon the king took counsel, and made two calves of gold, and said unto them, It is too much for you to go up to Jerusalem: behold thy gods, O Yashar'el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28). But the Torah had named one place only: *Then there shall be a place which Yahuah Elohaychem (the LORD your God) shall choose to cause his name to dwell there; thither shall ye bring all that I command you; your burnt offerings, and your sacrifices, your tithes* (Deuteronomy 12:11). Tobit holds to the chosen house while his nation runs to the calf — Torah kept while the house of Israel apostatizes.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "1-kings",
+          "tgt_ch": 12,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "1 Kings 12:28 — *Whereupon the king took counsel, and made two calves of gold, and said unto them, It is too much for you to go up to Jerusalem: behold thy gods, O Yashar'el (Israel), which brought thee up out of the land of Egypt.* Jeroboam's calf is the very 'heifer Baal' Tobit's tribe sacrificed to in Tobit 1:5."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 12,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Deuteronomy 12:11 — *Then there shall be a place which Yahuah Elohaychem (the LORD your God) shall choose to cause his name to dwell there; thither shall ye bring all that I command you; your burnt offerings, and your sacrifices, your tithes, and the heave offering of your hand, and all your choice vows which ye vow unto Yahuah (LORD):* This is the one chosen house of Jerusalem from which Naphtali fell in Tobit 1:4."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-1-feasts-and-tithes",
+      "title": "The Feasts Kept, the Tithes Paid",
+      "summary_md": "Against the apostasy of his tribe, Tobit alone keeps the Torah: *But I alone went often to Jerusalem at the feasts, as it was ordained to all the people of Yashar'el (Israel) by an everlasting decree, having the firstfruits and tenths of increase, with that which was first shorn; and them gave I at the altar to the priests the children of Aaron* (Tobit 1:6). He keeps the threefold tithe to the letter: *The first tenth part of all increase I gave to the sons of Aaron, who ministered at Jerusalem: another tenth part I sold away, and went, and spent it every year at Jerusalem* (Tobit 1:7), and *the third I gave to them to whom it was meet* (Tobit 1:8). This is pure Torah obedience. The pilgrim-tithe spent at the feast: *Thou shalt truly tithe all the increase of thy seed, that the field bringeth forth year by year* (Deuteronomy 14:22), eaten *before Yahuah Elohayka (the LORD thy God), in the place which he shall choose* (Deuteronomy 14:23). The priests' tenth: *I have given the children of Levi all the tenth in Yashar'el (Israel) for an inheritance* (Numbers 18:21). And the almsgiving Tobit later teaches his son: *Give alms of your substance; and when you give alms, let not your eye be envious* (Tobit 4:7) — the same hand keeping the same law in exile.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 14,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Deuteronomy 14:22 — *Thou shalt truly tithe all the increase of thy seed, that the field bringeth forth year by year.* This is the very tithe of increase Tobit faithfully renders in Tobit 1:7."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 14,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Deuteronomy 14:23 — *And thou shalt eat before Yahuah Elohayka (the LORD thy God), in the place which he shall choose to place his name there, the tithe of thy corn, of thy wine, and of thine oil, and the firstlings of thy herds and of thy flocks; that thou mayest learn to fear Yahuah Elohayka (the LORD thy God) always.* This is the second tenth Tobit carries up and spends every year at Jerusalem in Tobit 1:7."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 18,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Numbers 18:21 — *And, behold, I have given the children of Levi all the tenth in Yashar'el (Israel) for an inheritance, for their service which they serve, even the service of the tabernacle of the congregation.* This is the first tenth Tobit gives to the priests, the children of Aaron, at the altar in Tobit 1:6."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 8,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "tobit",
+          "tgt_ch": 4,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "Tobit 4:7 — *Give alms of your substance; and when you give alms, let not your eye be envious, neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you.* The charity-tithe given 'to them to whom it was meet' in Tobit 1:8 is the same alms-righteousness Tobit later commands his son."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-1-kept-from-gentile-bread",
+      "title": "Kept From the Bread of the Gentiles",
+      "summary_md": "In Nineveh the kinsmen of the exile compromise, but Tobit will not: *when we were carried away captives to Nineve, all my brothers and those that were of my kindred did eat of the bread of the Gentiles* (Tobit 1:10), *But I kept myself from eating* (Tobit 1:11), *Because I remembered Yahuah (God) with all my heart* (Tobit 1:12). It is the same resolve another captive of the same scattering would make in a foreign king's court: *But Daniel purposed in his heart that he would not defile himself with the portion of the king's meat, nor with the wine which he drank: therefore he requested of the prince of the eunuchs that he might not defile himself* (Daniel 1:8). The covenant table is kept in the heart of the empire — Torah-faithfulness unto exile, never law as curse.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 1,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Daniel 1:8 — *But Daniel purposed in his heart that he would not defile himself with the portion of the king's meat, nor with the wine which he drank: therefore he requested of the prince of the eunuchs that he might not defile himself.* Daniel's refusal of the king's defiling food in Babylon is the twin of Tobit keeping himself from the bread of the Gentiles in Tobit 1:11."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-1-bread-to-hungry-burial",
+      "title": "Bread to the Hungry, Burial for the Dead",
+      "summary_md": "Tobit's righteousness is mercy made flesh: *in the time of Enemessar I gave many alms to my brothers, and gave my bread to the hungry* (Tobit 1:16), *And my clothes to the naked: and if I saw any of my nation dead, or cast about the walls of Nineve, I buried him* (Tobit 1:17), even risking the king's wrath: *And if the king Sennacherib had slain any... I buried them privily* (Tobit 1:18). The prophet defines the true fast in the very words of Tobit's mercy: *Is it not to deal thy bread to the hungry, and that thou bring the poor that are cast out to thy house? when thou seest the naked, that thou cover him* (Isaiah 58:7). The King at the judgment will own these same deeds: *For I was an hungred, and ye gave me meat: I was thirsty, and ye gave me drink: I was a stranger, and ye took me in* (Matthew 25:35). And Raphael will testify that such alms reach heaven: *For alms does deliver from death, and shall purge away all sin* (Tobit 12:9). Even the burial obeys Torah, which forbids leaving a body exposed: *His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day* (Deuteronomy 21:23).",
+      "anchor_start_v": 16,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 58,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Isaiah 58:7 — *Is it not to deal thy bread to the hungry, and that thou bring the poor that are cast out to thy house? when thou seest the naked, that thou cover him; and that thou hide not thyself from thine own flesh?* This is the fast Yahuah chooses, lived out exactly in Tobit's bread to the hungry and clothes to the naked in Tobit 1:16-17."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 25,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Matthew 25:35 — *For I was an hungred, and ye gave me meat: I was thirsty, and ye gave me drink: I was a stranger, and ye took me in:* The King's reckoning of mercy at the judgment names the very deeds Tobit does for his nation in Tobit 1:17."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "tobit",
+          "tgt_ch": 12,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "Tobit 12:9 — *For alms does deliver from death, and shall purge away all sin. Those that exercise alms and righteousness shall be filled with life:* Raphael's word later in the book weighs the worth of the many alms Tobit gives his brothers in Tobit 1:16."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 21,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Deuteronomy 21:23 — *His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day; (for he that is hanged is accursed of Elohim (God);) that thy land be not defiled, which Yahuah Elohayka (the LORD thy God) giveth thee for an inheritance.* Tobit's secret burial of the slain in Tobit 1:17-18 keeps this very Torah command not to leave a body exposed."
+        }
+      ]
+    }
+  ]
+}

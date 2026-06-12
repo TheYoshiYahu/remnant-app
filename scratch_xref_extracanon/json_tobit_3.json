@@ -1,0 +1,250 @@
+{
+  "edition": "apocrypha",
+  "book": "tobit",
+  "chapter": 3,
+  "session": "session253",
+  "tag": "tob3",
+  "base_band": 59650,
+  "threads": [
+    {
+      "slug": "tobit-3-rebuke-me-not",
+      "title": "Rebuke me not in thine anger — the prayer of the afflicted",
+      "summary_md": "Tobit, blind and shamed, weeps and pours out a sufferer's prayer: *Then I being grieved did weep, and in my sorrow prayed, saying* (Tobit 3:1), *Now therefore deal with me as seemeth best to you, and command my spirit to be taken from me, that I may be dissolved, and become earth: for it is profitable for me to die rather than to live, because I have heard false reproaches, and have much sorrow: command therefore that I may now be delivered out of this distress, and go into the everlasting place: turn not your face away from me* (Tobit 3:6). It is the very voice of the penitential psalms. David groans the same: *O Yahuah (LORD), rebuke me not in thine anger, neither chasten me in thy hot displeasure* (Psalm 6:1), and *Return, O Yahuah (LORD), deliver my soul: oh save me for thy mercies' sake* (Psalm 6:4). The cry to be remembered in distress is older still: *Look upon mine affliction and my pain; and forgive all my sins* (Psalm 25:18), *Turn thee unto me, and have mercy upon me; for I am desolate and afflicted* (Psalm 25:16). It ain't new — the exile in Nineveh prays the prayer Israel has always prayed.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 6,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 6:1 — *O Yahuah (LORD), rebuke me not in thine anger, neither chasten me in thy hot displeasure.* Tobit weeping in his sorrow (3:1) takes up David's opening cry of the chastened afflicted."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 6,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Psalm 6:4 — *Return, O Yahuah (LORD), deliver my soul: oh save me for thy mercies' sake.* Tobit's plea to be delivered out of his distress (3:6) is David's plea for deliverance for mercy's sake."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 25,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Psalm 25:16 — *Turn thee unto me, and have mercy upon me; for I am desolate and afflicted.* Tobit's *turn not your face away from me* (3:6) is the obverse of David's prayer that Yahuah turn toward the desolate."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 25,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Psalm 25:18 — *Look upon mine affliction and my pain; and forgive all my sins.* Tobit, weighed by reproach and sin alike (3:6), asks the same: that Yahuah look on his affliction and forgive."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-3-fathers-sins-captivity",
+      "title": "We have not kept your commandments — confession of the fathers' sins",
+      "summary_md": "Tobit owns the covenant breach that scattered the house: *Remember me, and look on me, punish me not for my sins and ignorances, and the sins of my fathers, who have sinned before you* (Tobit 3:3), *For they obeyed not your commandments: wherefore you have delivered us for a spoil, and to captivity, and to death, and for a proverb of reproach to all the nations among whom we are dispersed* (Tobit 3:4), *because we have not kept your commandments, neither have walked in truth before you* (Tobit 3:5). This is Daniel's confession at the same exile: *Yea, all Yashar'el (Israel) have transgressed thy law, even by departing, that they might not obey thy voice; therefore the curse is poured upon us, and the oath that is written in the law of Moses the servant of Elohim (God), because we have sinned against him* (Daniel 9:11). It is Lamentations over the burning city: *Our fathers have sinned, and are not; and we have borne their iniquities* (Lamentations 5:7), *Remember, O Yahuah (LORD), what is come upon us: consider, and behold our reproach* (Lamentations 5:1). And it is Nehemiah's returning remnant: *And the seed of Yashar'el (Israel) separated themselves from all strangers, and stood and confessed their sins, and the iniquities of their fathers* (Nehemiah 9:2). The scattering is the Torah's own oath at work — not law as curse, but covenant kept faithful — and the same Torah-keeping remnant is gathered home again (Ezekiel 37).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Daniel 9:11 — *Yea, all Yashar'el (Israel) have transgressed thy law, even by departing, that they might not obey thy voice; therefore the curse is poured upon us, and the oath that is written in the law of Moses the servant of Elohim (God), because we have sinned against him.* Tobit's *they obeyed not your commandments: wherefore you have delivered us... to captivity* (3:4) is Daniel's identical reckoning of the exile as the law's own sworn oath."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "lamentations",
+          "tgt_ch": 5,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Lamentations 5:7 — *Our fathers have sinned, and are not; and we have borne their iniquities.* Tobit asks not to be punished for *the sins of my fathers, who have sinned before you* (3:3) — the very weight Lamentations names."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "lamentations",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Lamentations 5:1 — *Remember, O Yahuah (LORD), what is come upon us: consider, and behold our reproach.* Tobit dispersed *for a proverb of reproach to all the nations* (3:4) prays Lamentations' own appeal over the reproach of the scattered."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "nehemiah",
+          "tgt_ch": 9,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Nehemiah 9:2 — *And the seed of Yashar'el (Israel) separated themselves from all strangers, and stood and confessed their sins, and the iniquities of their fathers.* Tobit's *we have not kept your commandments* (3:5) is the same confession the returning remnant makes in Nehemiah."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-3-just-and-true-judgments",
+      "title": "Just are thy ways — righteous in all his works",
+      "summary_md": "Even in grief Tobit justifies Yahuah: *O Yahuah (God), you are just, and all your works and all your ways are mercy and truth, and you judgest truly and justly for ever* (Tobit 3:2), *And now your judgments are many and true: deal with me according to my sins* (Tobit 3:5). This is the heart of Daniel's confession — *O Yahuah (LORD), righteousness belongeth unto thee, but unto us confusion of faces* (Daniel 9:7) — and its close: *for Yahuah Eloheinu (the LORD our God) is righteous in all his works which he doeth: for we obeyed not his voice* (Daniel 9:14). It echoes David's creed of the covenant: *All the paths of Yahuah (LORD) are mercy and truth unto such as keep his covenant and his testimonies* (Psalm 25:10). The afflicted man does not accuse Heaven; he vindicates it.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 25,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Psalm 25:10 — *All the paths of Yahuah (LORD) are mercy and truth unto such as keep his covenant and his testimonies.* Tobit's *all your ways are mercy and truth* (3:2) quotes the psalter's verdict on the covenant-keeping God almost word for word."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Daniel 9:7 — *O Yahuah (Lord), righteousness belongeth unto thee, but unto us confusion of faces, as at this day.* Tobit's *your judgments are many and true: deal with me according to my sins* (3:5) is Daniel's same self-condemning vindication of Yahuah."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Daniel 9:14 — *Therefore hath Yahuah (LORD) watched upon the evil, and brought it upon us: for Yahuah Eloheinu (the LORD our God) is righteous in all his works which he doeth: for we obeyed not his voice.* Tobit confessing Yahuah *just... in all your works* (3:2) speaks Daniel's confession that He is righteous in all His works."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-3-sarah-reproach-prayer",
+      "title": "Take me out of the earth — Sarah's prayer at the window",
+      "summary_md": "Far off in Ecbatane, Sarah — whose seven husbands Asmodeus the evil spirit had slain — is taunted to death and prays the same prayer toward heaven: *Then she prayed toward the window, and said, Blessed art you, O Yahuah (God), my Elohim (God), and yours holy and glorious name is blessed and honourable for ever: let all your works praise you for ever* (Tobit 3:11), *And now, O Yahuah (God), I set my eyes and my face toward you* (Tobit 3:12), *And say, Take me out of the earth, that I may hear no more the reproach* (Tobit 3:13). Her lifted face is David's posture: *Unto thee, O Yahuah (LORD), do I lift up my soul* (Psalm 25:1), *Mine eyes are ever toward Yahuah (LORD); for he shall pluck my feet out of the net* (Psalm 25:15). Her plea to be taken out of her reproach is the psalmist's: *The troubles of my heart are enlarged: O bring thou me out of my distresses* (Psalm 25:17). Two prayers, one God — Tobit at Nineveh and Sarah at Ecbatane reach the same throne.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 25,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 25:1 — *Unto thee, O Yahuah (LORD), do I lift up my soul.* Sarah setting *my eyes and my face toward you* (3:12) lifts her soul exactly as the psalmist does in his distress."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 25,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Psalm 25:15 — *Mine eyes are ever toward Yahuah (LORD); for he shall pluck my feet out of the net.* Sarah's eyes fixed toward Yahuah (3:12) trust, like David, to be plucked out of the snare that has taken her seven husbands."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 25,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Psalm 25:17 — *The troubles of my heart are enlarged: O bring thou me out of my distresses.* Sarah's *Take me out of the earth, that I may hear no more the reproach* (3:13) is the same cry to be brought out of an unbearable distress."
+        }
+      ]
+    },
+    {
+      "slug": "tobit-3-prayers-heard-raphael-sent",
+      "title": "The prayers were heard — Raphael sent, the demon bound",
+      "summary_md": "Both prayers ascend together and are answered: *So the prayers of them both were heard before the majesty of the great Yahuah (God)* (Tobit 3:16), *And Raphael was sent to heal them both, that is, to scale away the whiteness of Tobit's eyes, and to give Sara the daughter of Raguel for a wife to Tobias the son of Tobit; and to bind Asmodeus the evil spirit* (Tobit 3:17). The eyes of Yahuah were upon these afflicted righteous all along: *The eyes of Yahuah (LORD) are upon the righteous, and his ears are open unto their cry* (Psalm 34:15), *The righteous cry, and Yahuah (LORD) heareth, and delivereth them out of all their troubles* (Psalm 34:17). An angel is dispatched at the prayer just as Gabriel comes to Daniel: *Yea, whiles I was speaking in prayer, even the man Gabriel... touched me about the time of the evening oblation* (Daniel 9:21), *At the beginning of thy supplications the commandment came forth, and I am come to shew thee; for thou art greatly beloved* (Daniel 9:23). And the angel's word to Zacharias is the very tidings of this chapter: *Fear not, Zacharias: for thy prayer is heard* (Luke 1:13). The binding of Asmodeus is the seed-war's outcome written small — the angel laying hold on the evil spirit prefigures the angel who *bound him a thousand years* (Revelation 20:2).",
+      "anchor_start_v": 16,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 3,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 34,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Psalm 34:15 — *The eyes of Yahuah (LORD) are upon the righteous, and his ears are open unto their cry.* Both prayers *heard before the majesty of the great Yahuah* (3:16) prove the psalm true: His ears are open to the afflicted righteous."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 34,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Psalm 34:17 — *The righteous cry, and Yahuah (LORD) heareth, and delivereth them out of all their troubles.* Tobit and Sarah cry and are heard (3:16) — delivered out of their troubles exactly as the psalm promises."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Daniel 9:21 — *Yea, whiles I was speaking in prayer, even the man Gabriel, whom I had seen in the vision at the beginning, being caused to fly swiftly, touched me about the time of the evening oblation.* Raphael sent in answer to the prayers (3:17) matches Gabriel dispatched to Daniel in the very act of praying."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 1,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Luke 1:13 — *But the angel said unto him, Fear not, Zacharias: for thy prayer is heard; and thy wife Elisabeth shall bear thee a son, and thou shalt call his name John.* The angel sent because the prayer is heard (3:16-17) is the same word Gabriel brings Zacharias at the altar of incense."
+        },
+        {
+          "src_ch": 3,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 20:2 — *And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years.* Raphael sent *to bind Asmodeus the evil spirit* (3:17) is the seed-war in miniature — the angel laying hold on and binding the adversary."
+        }
+      ]
+    }
+  ]
+}
