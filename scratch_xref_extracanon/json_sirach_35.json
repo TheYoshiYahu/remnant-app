@@ -1,0 +1,77 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 35,
+  "session": "session253",
+  "tag": "sir35",
+  "base_band": 59150,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-35-obedience-above-sacrifice",
+      "title": "He that keepeth the law brings offerings enough",
+      "summary_md": "Sirach opens this chapter by collapsing the whole sacrificial system into Torah-obedience: *He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering.* (Ecclesiasticus 35:1) — and *To depart from wickedness is a thing pleasing to Yahuah (God); and to forsake unrighteousness is a propitiation.* (Ecclesiasticus 35:3). This is the oldest word in the prophets, not a new ethic. Samuel says it to Saul: *Behold, to obey is better than sacrifice, and to hearken than the fat of rams.* (1 Samuel 15:22). Yahuah Himself frames it through Hosea — *For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings.* (Hosea 6:6) — and through Solomon — *To do justice and judgment is more acceptable to Yahuah (LORD) than sacrifice.* (Proverbs 21:3). David, having no animal to bring, names the true altar: *The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise.* (Psalm 51:17). It ain't new: the deuterocanon carries the same covenant witness — obedience is the offering Yahuah was always after.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 35, "src_v": 1, "tgt_edition": "canon", "tgt_book": "1-samuel", "tgt_ch": 15, "tgt_v": 22, "tier": "free", "note": "1 Samuel 15:22 — *And Samuel said, Hath Yahuah (LORD) as great delight in burnt offerings and sacrifices, as in obeying the voice of Yahuah (LORD)? Behold, to obey is better than sacrifice, and to hearken than the fat of rams.* Samuel's verdict to Saul is the seed of Sirach 35:1 — keeping the commandment already offers the peace offering."},
+        {"src_ch": 35, "src_v": 1, "tgt_edition": "canon", "tgt_book": "hosea", "tgt_ch": 6, "tgt_v": 6, "tier": "free", "note": "Hosea 6:6 — *For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings.* Yahuah's own preference ranks obedience and mercy above the altar, exactly as Sirach 35:1 frames law-keeping as offering enough."},
+        {"src_ch": 35, "src_v": 1, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 21, "tgt_v": 3, "tier": "free", "note": "Proverbs 21:3 — *To do justice and judgment is more acceptable to Yahuah (LORD) than sacrifice.* Solomon's proverb is the wisdom-twin of Sirach 35:1, justice weighed heavier than the offering itself."},
+        {"src_ch": 35, "src_v": 3, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 51, "tgt_v": 17, "tier": "free", "note": "Psalm 51:17 — *The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise.* David names the contrite heart as the true sacrifice, matching Sirach 35:3 that forsaking unrighteousness is itself a propitiation."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-35-appear-not-empty-firstfruits-feasts",
+      "title": "You shall not appear empty before Yahuah",
+      "summary_md": "*You shall not appear empty before Yahuah (God).* (Ecclesiasticus 35:4) — Sirach is quoting Torah directly. The pilgrimage law commands: *Three times in a year shall all thy males appear before Yahuah Elohayka (the LORD thy God)... in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles: and they shall not appear before Yahuah (LORD) empty.* (Deuteronomy 16:16), and the very next breath sets the measure — *Every man shall give as he is able, according to the blessing of Yahuah Elohayka (the LORD thy God) which he hath given thee.* (Deuteronomy 16:17). So when Sirach adds *diminish not the firstfruits of yours hands* (Ecclesiasticus 35:8), he is restating the appointed-times offering of the law, not inventing a piety. The feast calendar stands, and the firstfruit is brought to it.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 35, "src_v": 4, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 16, "tgt_v": 16, "tier": "free", "note": "Deuteronomy 16:16 — *Three times in a year shall all thy males appear before Yahuah Elohayka (the LORD thy God) in the place which he shall choose; in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles: and they shall not appear before Yahuah (LORD) empty:* Sirach 35:4 lifts this pilgrimage-feast command nearly word for word — none appears empty at the appointed times."},
+        {"src_ch": 35, "src_v": 4, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 16, "tgt_v": 17, "tier": "free", "note": "Deuteronomy 16:17 — *Every man shall give as he is able, according to the blessing of Yahuah Elohayka (the LORD thy God) which he hath given thee.* The Torah measure of giving — according to the blessing received — undergirds Sirach 35:4-8 and anticipates 35:10's give as he has enriched you."},
+        {"src_ch": 35, "src_v": 8, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 7, "tgt_v": 31, "tier": "extras", "note": "Ecclesiasticus 7:31 — *Fear Yahuah (God), and honor the priest; and give him his portion, as it is commanded you; the firstfruits, and the trespass offering, and the gift of the shoulders, and the sacrifice of sanctification, and the firstfruits of the holy things.* Sirach self-links: the firstfruits not to be diminished in 35:8 are the same firstfruits commanded earlier in the book."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-35-cheerful-giver-yahuah-recompenseth",
+      "title": "Give with a cheerful eye, for Yahuah recompenseth",
+      "summary_md": "*In all your gifts shew a cheerful countenance, and dedicate your tithes with gladness.* (Ecclesiasticus 35:9), *Give to the Most High according as he has enriched you; and as you have gotten, give with a cheerful eye.* (Ecclesiasticus 35:10), *For Yahuah (God) recompenseth, and will give you seven times as much.* (Ecclesiasticus 35:11). Paul preaches this same cheerfulness almost verbatim two centuries later: *Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver.* (2 Corinthians 9:7). And the recompense is the oldest promise — *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again.* (Proverbs 19:17). Tobit teaches his son the same hand: *If you have abundance give alms accordingly: if you have but a little, be not afraid to give according to that little.* (Tobit 4:8). It ain't new: the cheerful giver of the gospel is the cheerful eye of the wisdom books.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 35, "src_v": 10, "tgt_edition": "canon", "tgt_book": "2-corinthians", "tgt_ch": 9, "tgt_v": 7, "tier": "free", "note": "2 Corinthians 9:7 — *Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver.* Paul's cheerful giver is the cheerful eye of Sirach 35:10, the heart's gladness making the gift acceptable."},
+        {"src_ch": 35, "src_v": 11, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 19, "tgt_v": 17, "tier": "free", "note": "Proverbs 19:17 — *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again.* The repayment Sirach 35:11 names — Yahuah recompenseth seven times — is Solomon's proverb that giving to the poor is a loan Yahuah repays."},
+        {"src_ch": 35, "src_v": 10, "tgt_edition": "apocrypha", "tgt_book": "tobit", "tgt_ch": 4, "tgt_v": 8, "tier": "extras", "note": "Tobit 4:8 — *If you have abundance give alms accordingly: if you have but a little, be not afraid to give according to that little:* Tobit's counsel to give in proportion to what one has is the sister-wisdom of Sirach 35:10's give according as he has enriched you."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-35-no-respect-of-persons-prayer-of-the-poor",
+      "title": "No respect of persons; the prayer of the oppressed pierceth the clouds",
+      "summary_md": "Sirach forbids buying off the Judge and lifts up the cry of the powerless: *Do not think to corrupt with gifts; for such he will not receive... for Yahuah (God) is judge, and with him is no respect of persons.* (Ecclesiasticus 35:12), *He will not accept any person against a poor man, but will hear the prayer of the oppressed.* (Ecclesiasticus 35:13), *He will not despise the supplication of the fatherless; nor the widow, when she poureth out her complaint.* (Ecclesiasticus 35:14), and *The prayer of the humble pierces the clouds.* (Ecclesiasticus 35:17). The prophets carry the same charge — empty sacrifice rejected, the oppressed defended: *To what purpose is the multitude of your sacrifices unto me? saith Yahuah (LORD)...* (Isaiah 1:11), *Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow.* (Isaiah 1:17). James hears the same cry against fraud: *the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* (James 5:4). And the Refuge stands over the crushed — *Yahuah (LORD) also will be a refuge for the oppressed, a refuge in times of trouble.* (Psalm 9:9). The God who takes no bribe hears the widow's tears.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 35, "src_v": 13, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 1, "tgt_v": 17, "tier": "free", "note": "Isaiah 1:17 — *Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow.* Isaiah's charge to defend the fatherless and widow is exactly the company Sirach 35:13-14 says Yahuah will not despise."},
+        {"src_ch": 35, "src_v": 12, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 1, "tgt_v": 11, "tier": "free", "note": "Isaiah 1:11 — *To what purpose is the multitude of your sacrifices unto me? saith Yahuah (LORD): I am full of the burnt offerings of rams, and the fat of fed beasts; and I delight not in the blood of bullocks, or of lambs, or of he goats.* Yahuah rejects the multiplied unjust sacrifice, the very corrupting gift Sirach 35:12 warns He will not receive."},
+        {"src_ch": 35, "src_v": 14, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 5, "tgt_v": 4, "tier": "free", "note": "James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* James echoes Sirach 35:14 — the cry of the wronged reaches the ears of Yahuah, no respecter of persons."},
+        {"src_ch": 35, "src_v": 13, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 9, "tgt_v": 9, "tier": "free", "note": "Psalm 9:9 — *Yahuah (LORD) also will be a refuge for the oppressed, a refuge in times of trouble.* David's refuge for the oppressed is the same hearing ear Sirach 35:13 promises to the poor man's prayer."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-35-vengeance-to-the-heathen-judge-his-people",
+      "title": "He will repay vengeance, and judge the cause of his people",
+      "summary_md": "The chapter closes in apocalyptic judgment: Yahuah *will not be slack... till he have struck in sunder the loins of the unmerciful, and repayed vengeance to the heathen; till he have taken away the multitude of the proud, and broken the sceptre of the unrighteous* (Ecclesiasticus 35:18), *Till he have rendered to every man according to his deeds... till he have judged the cause of his people, and made them to rejoice in his mercy* (Ecclesiasticus 35:19). This is the unjust-judge parable's resolution before its time: *And shall not Elohim (God) avenge his own elect, which cry day and night unto him, though he bear long with them?* (Luke 18:7) — *I tell you that he will avenge them speedily.* (Luke 18:8). The righteous Judge of all the earth will not stay slack — *And he shall judge the world in righteousness, he shall minister judgment to the people in uprightness.* (Psalm 9:8). The humble prayer that pierced the clouds (35:17) is answered when Yahuah arises to judge His people's cause.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 35, "src_v": 19, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 18, "tgt_v": 7, "tier": "free", "note": "Luke 18:7 — *And shall not Elohim (God) avenge his own elect, which cry day and night unto him, though he bear long with them?* The Messiah's parable of the persistent widow resolves Sirach 35:19 — Yahuah will judge the cause of His people who cry to Him."},
+        {"src_ch": 35, "src_v": 18, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 18, "tgt_v": 8, "tier": "free", "note": "Luke 18:8 — *I tell you that he will avenge them speedily. Nevertheless when the Son of Adam cometh, shall he find faith on the earth?* The speedy avenging answers Sirach 35:18's promise that Yahuah will not be slack to repay vengeance and break the sceptre of the unrighteous."},
+        {"src_ch": 35, "src_v": 18, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 9, "tgt_v": 8, "tier": "free", "note": "Psalm 9:8 — *And he shall judge the world in righteousness, he shall minister judgment to the people in uprightness.* David's righteous Judge of the world is the One Sirach 35:18-19 waits on to render to every man according to his deeds."}
+      ]
+    }
+  ]
+}

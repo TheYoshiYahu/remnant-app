@@ -1,0 +1,106 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 33,
+  "session": "session253",
+  "tag": "sir33",
+  "base_band": 59100,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-33-the-faithful-law",
+      "title": "The law is faithful — he that fears Yahuah",
+      "summary_md": "Ben Sira opens with the man whose trust is anchored in Torah: *There shall no evil happen to him that fears Yahuah (God); but in temptation even again he will deliver him* (Ecclesiasticus 33:1), and *A man of understanding trusts in the law; and the law is faithful to him, as an oracle* (Ecclesiasticus 33:3). The law is not a curse but an oracle, a perfect testimony — exactly as the Psalmist sang, *The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple* (Psalm 19:7), and Paul confessed, *Wherefore the law is holy, and the commandment holy, and just, and good* (Romans 7:12). It begins where all wisdom begins, in the fear of Yahuah — *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction* (Proverbs 1:7) — and it ends in unoffended peace: *Great peace have they which love thy law: and nothing shall offend them* (Psalm 119:165). It ain't new.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 33, "src_v": 3, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 19, "tgt_v": 7, "tier": "free",
+         "note": "Psalm 19:7 — *The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple.* The same trust Sirach 33:3 places in the faithful law that stands sure as an oracle."},
+        {"src_ch": 33, "src_v": 3, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 7, "tgt_v": 12, "tier": "free",
+         "note": "Romans 7:12 — *Wherefore the law is holy, and the commandment holy, and just, and good.* Paul confirms Sirach 33:2-3 that the wise man hates not the law, for the law is holy and faithful."},
+        {"src_ch": 33, "src_v": 1, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 1, "tgt_v": 7, "tier": "free",
+         "note": "Proverbs 1:7 — *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction.* Sirach 33:1 likewise grounds deliverance in the fear of Yahuah, the root of all wisdom."},
+        {"src_ch": 33, "src_v": 2, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 119, "tgt_v": 165, "tier": "free",
+         "note": "Psalm 119:165 — *Great peace have they which love thy law: and nothing shall offend them.* The opposite of Sirach 33:2's hypocrite who is as a ship in a storm — the law-lover rides unoffended."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-33-seasons-feasts-sabbath",
+      "title": "He altered seasons and feasts — the hallowed day",
+      "summary_md": "Why does one day differ from another when the sun lights them all alike? Ben Sira answers from creation: *By the knowledge of Yahuah (God) they were distinguished: and he altered seasons and feasts* (Ecclesiasticus 33:8); *Some of them has he made high days, and hallowed them, and some of them has he made ordinary days* (Ecclesiasticus 33:9). The set-apart times are no human invention — they were appointed when the lights were hung: *Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14). And the chief of the hallowed days, the sabbath, was sanctified by command: *Remember the sabbath day, to keep it holy* (Exodus 20:8). The appointed times stand because Yahuah set them apart.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 33, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 1, "tgt_v": 14, "tier": "free",
+         "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years.* The very distinguishing of seasons and feasts Sirach 33:8 says Yahuah altered, fixed in the lights of creation."},
+        {"src_ch": 33, "src_v": 9, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 20, "tgt_v": 8, "tier": "free",
+         "note": "Exodus 20:8 — *Remember the sabbath day, to keep it holy.* The chief of the high days Sirach 33:9 says Yahuah hallowed above the ordinary days."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-33-the-potter",
+      "title": "As the clay in the potter's hand — Yahuah's sovereign hand",
+      "summary_md": "Here is the headline of the chapter — the Maker's sovereign hand over every man: *As the clay is in the potter's hand, to fashion it at his pleasure: so man is in the hand of him that made him, to render to them as liketh him best* (Ecclesiasticus 33:13). Men exalted and men brought low, the blessed and the cursed, are all the work of one hand — *Some of them has he blessed and exalted... but some of them has he cursed and brought low* (Ecclesiasticus 33:12) — for *all men are from the ground, and Adam was created of earth* (Ecclesiasticus 33:10). This is the prophets' own figure. Yahuah said through Jeremiah, *as the clay is in the potter's hand, so are ye in mine hand, O house of Yashar'el (Israel)* (Jeremiah 18:6); Isaiah warned, *Woe unto him that striveth with his Maker!... Shall the clay say to him that fashioneth it, What makest thou?* (Isaiah 45:9); and Paul gathered them all up — *who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20), *Hath not the potter power over the clay* (Romans 9:21). Man himself was formed from that clay: *Yahuah Elohim (the LORD God) formed man of the dust of the ground* (Genesis 2:7). Sirach's own companion Wisdom presses the same image — *the potter himself is the judge* (Wisdom of Solomon 15:7). It ain't new.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 33, "src_v": 13, "tgt_edition": "canon", "tgt_book": "jeremiah", "tgt_ch": 18, "tgt_v": 6, "tier": "free",
+         "note": "Jeremiah 18:6 — *O house of Yashar'el (Israel), cannot I do with you as this potter? saith Yahuah (LORD). Behold, as the clay is in the potter’s hand, so are ye in mine hand, O house of Yashar'el (Israel).* The exact figure of Sirach 33:13 — clay in the potter's hand, fashioned at his pleasure."},
+        {"src_ch": 33, "src_v": 13, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 9, "tgt_v": 20, "tier": "free",
+         "note": "Romans 9:20 — *Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus?* Paul forbids the vessel to dispute the hand that fashions it, as Sirach 33:13 sets man in the potter's hand."},
+        {"src_ch": 33, "src_v": 12, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 9, "tgt_v": 21, "tier": "free",
+         "note": "Romans 9:21 — *Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* The same sovereign sorting of Sirach 33:12 — some blessed and exalted, some brought low."},
+        {"src_ch": 33, "src_v": 13, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 45, "tgt_v": 9, "tier": "free",
+         "note": "Isaiah 45:9 — *Woe unto him that striveth with his Maker! Let the potsherd strive with the potsherds of the earth. Shall the clay say to him that fashioneth it, What makest thou? or thy work, He hath no hands?* The clay that submits in Sirach 33:13 is the clay that must not strive with its Maker."},
+        {"src_ch": 33, "src_v": 10, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 2, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 2:7 — *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.* The clay itself — Sirach 33:10 says all men are from the ground, and Adam was created of earth."},
+        {"src_ch": 33, "src_v": 13, "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 15, "tgt_v": 7, "tier": "extras",
+         "note": "Wisdom of Solomon 15:7 — *For the potter, tempering soft earth, fashioneth every vessel with much labour for our service: yes, of the same clay he makes both the vessels that serve for clean uses, and likewise also all such as serve to the contrary: but what is the use of either sort, the potter himself is the judge.* Sirach's companion wisdom-book carries the same potter, the same clay, the same sovereign Judge as Sirach 33:13."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-33-two-and-two",
+      "title": "Good against evil, life against death — two and two",
+      "summary_md": "The potter's ordering shows in pairs across all his works: *Good is set against evil, and life against death: so is the godly against the sinner, and the sinner against the godly* (Ecclesiasticus 33:14); *So look upon all the works of the Most High; and there are two and two, one against another* (Ecclesiasticus 33:15). This is Moses setting the covenant choice before the people: *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15) — the very pairing Sirach names. And Ben Sira returns to it himself later in his own book: *All things are double one against another: and he has made nothing imperfect* (Ecclesiasticus 42:24). Nothing in creation is a blunder; every opposite is held in the Maker's balanced design.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 33, "src_v": 14, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 15, "tier": "free",
+         "note": "Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil.* Moses sets before Israel the very pair Sirach 33:14 names — good against evil, life against death."},
+        {"src_ch": 33, "src_v": 15, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 42, "tgt_v": 24, "tier": "extras",
+         "note": "Ecclesiasticus 42:24 — *All things are double one against another: and he has made nothing imperfect.* Ben Sira's own later word echoes Sirach 33:15 — two and two, one against another, all by perfect design."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-33-rule-thy-household",
+      "title": "Keep the preeminence — rule thy own house",
+      "summary_md": "From the Maker's hand over all men, Ben Sira turns to the ordering of the household. The wise man keeps the rule of his own house and does not abdicate it: *Give not your son and wife, your brother and friend, power over you while you livest, and give not your goods to another* (Ecclesiasticus 33:19); *In all your works keep to thyself the preeminence; leave not a stain in yours honour* (Ecclesiasticus 33:22); and only *At the time when you shall end your days, and finish your life, distribute your inheritance* (Ecclesiasticus 33:23). The same prudence runs through Proverbs — *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding* (Proverbs 3:5) — the household kept in order under the fear of Yahuah, governance not surrendered before its time.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 33, "src_v": 19, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 3, "tgt_v": 5, "tier": "free",
+         "note": "Proverbs 3:5 — *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding.* The wisdom behind Sirach 33:19's counsel to keep one's own governance and not surrender it to another."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-33-servant-as-a-brother",
+      "title": "Entreat thy servant as a brother",
+      "summary_md": "The chapter closes on the servant, and Ben Sira's harder counsel about labour turns at the end to mercy: *If you have a servant, let him be to you as thyself, because you have bought him with a price* (Ecclesiasticus 33:30); *If you have a servant, entreat him as a brother: for you have need of him, as of your own soul* (Ecclesiasticus 33:31). The bought servant becomes a brother — the same arc Proverbs traces: *He that delicately bringeth up his servant from a child shall have him become his son at the length* (Proverbs 29:21). Discipline is real — *He that spareth his rod hateth his son: but he that loveth him chasteneth him betimes* (Proverbs 13:24) — yet never cruelty, for Ben Sira himself elsewhere commands, *Let your soul love a good servant, and defraud him not of liberty* (Ecclesiasticus 7:21). Bought with a price, held as a brother.",
+      "anchor_start_v": 30,
+      "anchor_end_v": 31,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 33, "src_v": 31, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 29, "tgt_v": 21, "tier": "free",
+         "note": "Proverbs 29:21 — *He that delicately bringeth up his servant from a child shall have him become his son at the length.* The servant who becomes a son — the very arc of Sirach 33:31's servant entreated as a brother."},
+        {"src_ch": 33, "src_v": 28, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 13, "tgt_v": 24, "tier": "free",
+         "note": "Proverbs 13:24 — *He that spareth his rod hateth his son: but he that loveth him chasteneth him betimes.* The disciplined correction Sirach 33:28 sets to the idle servant — work and chastening as love, not malice."},
+        {"src_ch": 33, "src_v": 30, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 7, "tgt_v": 21, "tier": "extras",
+         "note": "Ecclesiasticus 7:21 — *Let your soul love a good servant, and defraud him not of liberty.* Ben Sira's own command tempers Sirach 33:30 — the bought servant, held as thyself, loved and not defrauded."}
+      ]
+    }
+  ]
+}

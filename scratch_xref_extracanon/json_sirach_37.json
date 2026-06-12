@@ -1,0 +1,320 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 37,
+  "session": "session253",
+  "tag": "sir37",
+  "base_band": 59200,
+  "threads": [
+    {
+      "slug": "sirach-37-friend-in-name-only",
+      "title": "A friend in name only — the friend who fails in trouble",
+      "summary_md": "Ben Sira opens with the test of friendship: *Every friend says, I am his friend also: but there is a friend, which is only a friend in name* (Ecclesiasticus 37:1), and worse, *There is a companion, which rejoices in the prosperity of a friend, but in the time of trouble will be against him* (Ecclesiasticus 37:4). It ain't new — the proverbs already sift the true friend from the flatterer. *A friend loveth at all times, and a brother is born for adversity* (Proverbs 17:17) sets the standard the name-only friend cannot meet, and *A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother* (Proverbs 18:24) names the rare bond Ben Sira prizes. Sirach's own earlier word seals it: *A faithfull friend is a strong defence: and he that has found such an one has found a treasure* (Ecclesiasticus 6:14). And the Messiah Himself sets the seal of the faithful friend who does not turn in the time of trouble but lays His life down: *Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 37,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 17,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Proverbs 17:17 — *A friend loveth at all times, and a brother is born for adversity.* The true friend Sirach 37:4 contrasts with the companion who turns against you in the time of trouble."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 18,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Proverbs 18:24 — *A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother.* The proverb names the friend who is more than the name-only friend of Sirach 37:1."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 1,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 6,
+          "tgt_v": 14,
+          "tier": "extras",
+          "note": "Ecclesiasticus 6:14 — *A faithfull friend is a strong defence: and he that has found such an one has found a treasure.* Ben Sira's own earlier weighing of the faithful friend against the friend in name only of Sirach 37:1."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 15,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "John 15:13 — *Greater love hath no man than this, that a man lay down his life for his friends.* The friend who does not turn in the time of trouble (Sirach 37:4) but lays down His life is the Messiah."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-37-take-counsel-of-the-godly",
+      "title": "Take counsel of the godly, not of the self-serving",
+      "summary_md": "Ben Sira warns against the counsellor who counsels for himself: *Every counsellor extolleth counsel; but there is some that counselleth for himself* (Ecclesiasticus 37:7), and directs you instead to *be continually with a godly man, whom you know to keep the commandments of Yahuah (God), whose, mind is according to your mind* (Ecclesiasticus 37:12). It ain't new — the first Psalm draws the same line: *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful* (Psalm 1:1). Wisdom is found in the multitude of the faithful: *Where no counsel is, the people fall: but in the multitude of counsellors there is safety* (Proverbs 11:14), and *Without counsel purposes are disappointed: but in the multitude of counsellors they are established* (Proverbs 15:22). The mark of the godly counsellor Ben Sira commends is Torah-keeping — *whom you know to keep the commandments of Yahuah* — never law-as-curse but the law that stands. Sirach's neighbour-chapter says the same: *consult with the wise* (Ecclesiasticus 9:14).",
+      "anchor_start_v": 7,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 37,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 1,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* The Psalm's line between godly and ungodly counsel is exactly Ben Sira's choice of the Torah-keeping counsellor in Sirach 37:12."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 11,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Proverbs 11:14 — *Where no counsel is, the people fall: but in the multitude of counsellors there is safety.* The safety Sirach 37:7 seeks past the self-serving counsellor lies in the multitude of faithful counsel."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 15,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Proverbs 15:22 — *Without counsel purposes are disappointed: but in the multitude of counsellors they are established.* The established purpose Sirach 37:7 commends rests on sound, many-voiced counsel."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 12,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 9,
+          "tgt_v": 14,
+          "tier": "extras",
+          "note": "Ecclesiasticus 9:14 — *As near as you can, guess at your neighbour, and consult with the wise.* Ben Sira's own earlier charge to consult the wise, repeated in the godly counsellor of Sirach 37:12."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 8,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "tobit",
+          "tgt_ch": 4,
+          "tgt_v": 18,
+          "tier": "extras",
+          "note": "Tobit 4:18 — *Ask counsel of all that are wise, and despise not any counsel that is profitable.* Tobit's wisdom-ethic matches Ben Sira's warning to weigh the counsellor in Sirach 37:8."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-37-counsel-of-the-heart-pray-most-high",
+      "title": "The counsel of the heart, and pray the Most High direct thy way",
+      "summary_md": "Ben Sira turns inward and upward: *let the counsel of your own heart stand: for there is no man more faithful to you than it* (Ecclesiasticus 37:13), yet — *above all this* — *pray to the Most High, that he will direct your way in truth* (Ecclesiasticus 37:15). It ain't new: the heart deliberates, but Yahuah directs. *Counsel in the heart of man is like deep water; but a man of understanding will draw it out* (Proverbs 20:5) — the faithful counsel of the heart Ben Sira trusts. *A man's heart deviseth his way: but Yahuah (LORD) directeth his steps* (Proverbs 16:9) — the deviser plans, but the Most High orders the way. The whole posture is Proverbs 3: *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding* (Proverbs 3:5); *In all thy ways acknowledge him, and he shall direct thy paths* (Proverbs 3:6). And the New Testament answers Ben Sira's prayer for wisdom directly: *If any of you lack wisdom, let him ask of Elohim (God), that giveth to all men liberally, and upbraideth not; and it shall be given him* (James 1:5).",
+      "anchor_start_v": 13,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 37,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 20,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Proverbs 20:5 — *Counsel in the heart of man is like deep water; but a man of understanding will draw it out.* The faithful counsel of the heart Ben Sira tells you to let stand in Sirach 37:13."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 16,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Proverbs 16:9 — *A man's heart deviseth his way: but Yahuah (LORD) directeth his steps.* The heart counsels, but it is the Most High who directs the way — the prayer of Sirach 37:15."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 3,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Proverbs 3:6 — *In all thy ways acknowledge him, and he shall direct thy paths.* The directing of the way that Sirach 37:15 prays the Most High to grant."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 3,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Proverbs 3:5 — *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding.* The trusting heart set above (Sirach 37:13-15) under Yahuah's direction, not its own understanding."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 1,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "James 1:5 — *If any of you lack wisdom, let him ask of Elohim (God), that giveth to all men liberally, and upbraideth not; and it shall be given him.* The New Testament answer to Ben Sira's charge to pray the Most High in Sirach 37:15."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-37-wise-instructs-his-people",
+      "title": "The wise man who instructs his people is blessed",
+      "summary_md": "Ben Sira praises the wise teacher whose wisdom is not barren: *A wise man instructs his people; and the fruits of his understanding fail not* (Ecclesiasticus 37:23), so that *A wise man shall be filled with blessing; and all they that see him shall count him happy* (Ecclesiasticus 37:24). It ain't new — true wisdom is shown in works, not words. *Who is a wise man and endued with knowledge among you? let him shew out of a good conversation his works with meekness of wisdom* (James 3:13). The fruit that fails not is the wisdom that bears: *out of the abundance of the heart the mouth speaketh* (Matthew 12:34), and *A good man out of the good treasure of the heart bringeth forth good things* (Matthew 12:35). The instructed scribe who brings forth this treasure is the very figure of Sirach's next chapter on the law-meditating scribe — *every scribe which is instructed unto the kingdom of heaven is like unto a man that is an householder, which bringeth forth out of his treasure things new and old* (Matthew 13:52).",
+      "anchor_start_v": 19,
+      "anchor_end_v": 26,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 37,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 3,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "James 3:13 — *Who is a wise man and endued with knowledge among you? let him shew out of a good conversation his works with meekness of wisdom.* The wise man whose fruits fail not (Sirach 37:23) shows wisdom in works, not bare words."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 12,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Matthew 12:35 — *A good man out of the good treasure of the heart bringeth forth good things: and an evil man out of the evil treasure bringeth forth evil things.* The fruitful understanding of the wise teacher in Sirach 37:23 brings forth good treasure."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 23,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 13,
+          "tgt_v": 52,
+          "tier": "free",
+          "note": "Matthew 13:52 — *Then said he unto them, Therefore every scribe which is instructed unto the kingdom of heaven is like unto a man that is an householder, which bringeth forth out of his treasure things new and old.* — the instructed scribe who brings forth treasure new and old, the very figure of the wise man who instructs his people in Sirach 37:23."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 3,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Proverbs 3:5 — *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding.* The blessing that fills the wise man counted happy (Sirach 37:24) flows from trust in Yahuah above his own understanding."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-37-days-of-israel-innumerable",
+      "title": "The days of man are numbered, but the days of Israel are innumerable",
+      "summary_md": "In the midst of the wise-man passage Ben Sira sets a covenant marker: *The days of the life of man may be numbered: but the days of Yashar'el (Israel) are innumerable* (Ecclesiasticus 37:25). It ain't new — this is the Abrahamic promise itself, the seed that cannot be counted. *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore* (Genesis 22:17). At Sinai it is fulfilled in sight: *Yahuah Elohaychem (The LORD your God) hath multiplied you, and, behold, ye are this day as the stars of heaven for multitude* (Deuteronomy 1:10). And the host of David and Levi is bound to the same uncountable seed: *As the host of heaven cannot be numbered, neither the sand of the sea measured: so will I multiply the seed of David my servant, and the Levites that minister unto me* (Jeremiah 33:22). The days of Israel are innumerable because election stands — the covenant seed is kept, never replaced.",
+      "anchor_start_v": 25,
+      "anchor_end_v": 26,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 37,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 22,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Genesis 22:17 — *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies.* The Abrahamic promise behind the innumerable days of Israel in Sirach 37:25."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 1,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Deuteronomy 1:10 — *Yahuah Elohaychem (The LORD your God) hath multiplied you, and, behold, ye are this day as the stars of heaven for multitude.* The promise of Sirach 37:25 seen fulfilled in Israel multiplied at Sinai."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 33,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Jeremiah 33:21 — *Then may also my covenant be broken with David my servant, that he should not have a son to reign upon his throne; and with the Levites the priests, my ministers.* The unbreakable covenant standing behind the innumerable days of Israel in Sirach 37:25 — election kept, not replaced."
+        }
+      ]
+    },
+    {
+      "slug": "sirach-37-temperance-surfeiting-shortens-life",
+      "title": "Temperance — surfeiting shortens life, the heedful prolongs it",
+      "summary_md": "Ben Sira closes with the wisdom of the table: *Be not unsatiable in any dainty thing, nor too greedy upon meats* (Ecclesiasticus 37:29), for *By surfeiting have many perished; but he that takes heed prolongeth his life* (Ecclesiasticus 37:31). It ain't new — the proverbs warn the glutton: *Be not among winebibbers; among riotous eaters of flesh* (Proverbs 23:20). The Messiah Himself gives the same charge against surfeiting, and binds it to watchfulness for the Day: *And take heed to yourselves, lest at any time your hearts be overcharged with surfeiting, and drunkenness, and cares of this life, and so that day come upon you unawares* (Luke 21:34). The portion of meat and drink is good when received in moderation and as Elohim's gift: *it is good and comely for one to eat and to drink, and to enjoy the good of all his labour... for it is his portion* (Ecclesiastes 5:18). Ben Sira's own earlier table-wisdom says it plainly: *Sound sleep comes of moderate eating* (Ecclesiasticus 31:20).",
+      "anchor_start_v": 27,
+      "anchor_end_v": 31,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 37,
+          "src_v": 29,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 23,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Proverbs 23:20 — *Be not among winebibbers; among riotous eaters of flesh.* The proverb's warning against gluttony stands behind Ben Sira's charge not to be greedy upon meats in Sirach 37:29."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 31,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 21,
+          "tgt_v": 34,
+          "tier": "free",
+          "note": "Luke 21:34 — *And take heed to yourselves, lest at any time your hearts be overcharged with surfeiting, and drunkenness, and cares of this life, and so that day come upon you unawares.* The Messiah binds the surfeiting that shortens life (Sirach 37:31) to watchfulness for the Day."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 31,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 31,
+          "tgt_v": 20,
+          "tier": "extras",
+          "note": "Ecclesiasticus 31:20 — *Sound sleep comes of moderate eating: he rises early, and his wits are with him: but the pain of watching, and choler, and pangs of the belly, are with an unsatiable man.* Ben Sira's own earlier temperance teaching, repeated in Sirach 37:31."
+        },
+        {
+          "src_ch": 37,
+          "src_v": 30,
+          "tgt_edition": "canon",
+          "tgt_book": "ecclesiastes",
+          "tgt_ch": 5,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Ecclesiastes 5:18 — *Behold that which I have seen: it is good and comely for one to eat and to drink, and to enjoy the good of all his labour that he taketh under the sun all the days of his life, which Elohim (God) giveth him: for it is his portion.* The good portion received in moderation, the right use of the meats that in excess bring sickness in Sirach 37:30."
+        }
+      ]
+    }
+  ]
+}
