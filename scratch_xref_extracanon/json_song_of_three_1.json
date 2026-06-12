@@ -1,0 +1,330 @@
+{
+  "edition": "apocrypha",
+  "book": "the-song-of-the-three-holy-children",
+  "chapter": 1,
+  "session": "session253",
+  "tag": "sng1",
+  "base_band": 61000,
+  "threads": [
+    {
+      "slug": "song-of-three-1-azariah-confession",
+      "title": "We have sinned — Azariah's confession in the fire",
+      "summary_md": "Azariah's prayer opens not with a plea for rescue but with the LORD's righteousness owned in the flame: *Blessed art you, O Yahuah (God) of our fathers: your name is worthy to be praised and glorified for evermore* (Song of the Three 1:3), *For we have sinned and committed iniquity, departing from you* (Song of the Three 1:6), *In all things have we trespassed, and not obeyed your commandments, nor kept them* (Song of the Three 1:7). It ain't new — this is Daniel's own posture three chapters on, the same confession in the same Babylon: *O Yahuah (Lord), the great and dreadful Elohim (God), keeping the covenant and mercy to them that love him, and to them that keep his commandments* (Daniel 9:4), *We have sinned, and have committed iniquity, and have done wickedly, and have rebelled, even by departing from thy precepts* (Daniel 9:5). The mercy never depends on the worshipper's worth but on the covenant the LORD swore.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Daniel 9:4 — *And I prayed unto Yahuah Elohai (the LORD my God), and made my confession, and said, O Yahuah (Lord), the great and dreadful Elohim (God), keeping the covenant and mercy to them that love him, and to them that keep his commandments;* Azariah blesses the same covenant-keeping LORD that Daniel addresses in his confession (Song of the Three 1:4)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Daniel 9:5 — *We have sinned, and have committed iniquity, and have done wickedly, and have rebelled, even by departing from thy precepts and from thy judgments:* Azariah's confession of sin and departing is word-for-word the burden of Daniel's prayer (Song of the Three 1:6)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Daniel 9:7 — *O Yahuah (Lord), righteousness belongeth unto thee, but unto us confusion of faces, as at this day; to the men of Yahudah (Judah), and to the inhabitants of Jerusalem...* Azariah likewise owns the LORD's true judgment upon Jerusalem because of their sins (Song of the Three 1:5)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Daniel 9:10 — *Neither have we obeyed the voice of Yahuah Eloheinu (the LORD our God), to walk in his laws, which he set before us by his servants the prophets.* The same charge of not obeying the commandments stands at the heart of Azariah's confession (Song of the Three 1:7)."
+        }
+      ]
+    },
+    {
+      "slug": "song-of-three-1-disannul-not-thy-covenant",
+      "title": "Deliver us not up wholly — for thy Name's sake and the covenant",
+      "summary_md": "The hinge of the prayer is not the prisoners' merit but the oath sworn to the fathers: *Yet deliver us not up wholly, for your name's sake, neither disannul you your covenant* (Song of the Three 1:11), *And cause not your mercy to depart from us, for your beloved Abraham's sake, for your servant Issac's sake, and for your holy Yashar'el (Israel)'s sake* (Song of the Three 1:12). This is Torah's own promise that exile is never the end of Israel: *And yet for all that, when they be in the land of their enemies, I will not cast them away... to break my covenant with them* (Leviticus 26:44), *But I will for their sakes remember the covenant of their ancestors* (Leviticus 26:45). And it is Asaph's plea: *Help us, O Elohim (God) of our salvation, for the glory of thy name: and deliver us... for thy name's sake* (Psalm 79:9). The mercy is real and the seed is kept — never disannulled.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 26,
+          "tgt_v": 44,
+          "tier": "free",
+          "note": "Leviticus 26:44 — *And yet for all that, when they be in the land of their enemies, I will not cast them away, neither will I abhor them, to destroy them utterly, and to break my covenant with them: for I am Yahuah (LORD) their Elohim (God).* Azariah pleads exactly this Torah promise that the covenant is not disannulled in exile (Song of the Three 1:11)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 26,
+          "tgt_v": 45,
+          "tier": "free",
+          "note": "Leviticus 26:45 — *But I will for their sakes remember the covenant of their ancestors, whom I brought forth out of the land of Egypt in the sight of the heathen, that I might be their Elohim (God): I am Yahuah (LORD).* Azariah appeals to that same remembered covenant for Abraham, Isaac and Israel's sake (Song of the Three 1:12)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 79,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Psalm 79:9 — *Help us, O Elohim (God) of our salvation, for the glory of thy name: and deliver us, and purge away our sins, for thy name's sake.* Asaph's plea for deliverance \"for thy name's sake\" is the very ground of Azariah's appeal (Song of the Three 1:11)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Daniel 9:4 — *...O Yahuah (Lord), the great and dreadful Elohim (God), keeping the covenant and mercy to them that love him, and to them that keep his commandments;* the multiplied seed of the fathers rests on this covenant-keeping LORD whom Azariah invokes (Song of the Three 1:13)."
+        }
+      ]
+    },
+    {
+      "slug": "song-of-three-1-contrite-heart-sacrifice",
+      "title": "A contrite heart for a sacrifice — no temple, yet accepted",
+      "summary_md": "With no temple, no altar, no offering left, the three offer the only sacrifice exile cannot take: *Neither is there at this time prince, or prophet, or leader, or burnt offering, or sacrifice, or oblation, or incense, or place to sacrifice before you* (Song of the Three 1:15), *Nevertheless in a contrite heart and an humble spirit let us be accepted* (Song of the Three 1:16), *Like as in the burnt offerings of rams and bullocks... so let our sacrifice be in your sight this day* (Song of the Three 1:17). This is David's discovery that the LORD desires the broken heart above the slain bull, and the worship of those who fear Him and seek His face. The Torah-faithful in the furnace bring the sacrifice the heathen king cannot burn away.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 9,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Daniel 9:5 — *We have sinned, and have committed iniquity, and have done wickedly, and have rebelled, even by departing from thy precepts and from thy judgments:* the contrite turning back to follow the LORD with the whole heart answers this confession of rebellion (Song of the Three 1:18)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 79,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Psalm 79:8 — *O remember not against us former iniquities: let thy tender mercies speedily prevent us: for we are brought very low.* The humble and contrite spirit \"brought very low\" is the same posture Azariah brings as his accepted sacrifice (Song of the Three 1:16)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* Even stripped of altar and incense, creation itself offers the praise Azariah longs to bring before the LORD (Song of the Three 1:17)."
+        }
+      ]
+    },
+    {
+      "slug": "song-of-three-1-let-the-enemies-be-confounded",
+      "title": "Let the system of dead gods be confounded — Thou alone art LORD",
+      "summary_md": "The prayer ends turning the fire back on the idol-system itself — not against persons but against the lie that any other god reigns: *Deliver us also according to your marvellous works, and give glory to your name, O Yahuah (God): and let all them that do your servants hurt be ashamed* (Song of the Three 1:20), *And let them be confounded in all their power and might, and let their strength be broken* (Song of the Three 1:21), *And let them know that you are Yahuah (God), the only Yahuah (God), and glorious over the whole world* (Song of the Three 1:22). This is the very confession Nebuchadnezzar is forced to make over the furnace, and the LORD of hosts who alone is God of all the kingdoms of the earth.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 22,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 3,
+          "tgt_v": 29,
+          "tier": "free",
+          "note": "Daniel 3:29 — *Therefore I make a decree, That every people, nation, and language, which speak any thing amiss against the Elohim (God) of Shadrach, Meshach, and Abed-nego, shall be cut in pieces... because there is no other Elohim (God) that can deliver after this sort.* The king is driven to confess what Azariah prayed — that Yahuah alone is God (Song of the Three 1:22)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 37,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Isaiah 37:16 — *O Yahuah Tseva'ot (LORD of hosts), Elohim (God) of Yashar'el (Israel), that dwellest between the cherubims, thou art the Elohim (God), even thou alone, of all the kingdoms of the earth: thou hast made heaven and earth.* Hezekiah's prayer over Assyria confesses the same \"thou alone\" that Azariah prays over Babylon (Song of the Three 1:22)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 20,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 79,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Psalm 79:9 — *Help us, O Elohim (God) of our salvation, for the glory of thy name: and deliver us, and purge away our sins, for thy name's sake.* Azariah's plea to deliver and give glory to the Name echoes Asaph's identical petition (Song of the Three 1:20)."
+        }
+      ]
+    },
+    {
+      "slug": "song-of-three-1-fourth-like-the-son",
+      "title": "The angel in the furnace — the fire as a moist whistling wind",
+      "summary_md": "The narrative seam tells what Daniel 3 saw from outside: *But the angel of Yahuah (God) came down into the oven together with Azarias and his fellows, and struck the flame of the fire out of the oven* (Song of the Three 1:26), *And made the midst of the furnace as it had been a moist whistling wind, so that the fire touched them not at all, neither hurt nor troubled them* (Song of the Three 1:27). Outside the oven Nebuchadnezzar beheld the fourth figure: *Lo, I see four men loose, walking in the midst of the fire... and the form of the fourth is like the Son of Elohim (God)* (Daniel 3:25), and blessed *the Elohim (God) of Shadrach, Meshach, and Abed-nego, who hath sent his angel, and delivered his servants that trusted in him* (Daniel 3:28). It ain't new — the LORD's own promise to Israel: *when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee* (Isaiah 43:2).",
+      "anchor_start_v": 26,
+      "anchor_end_v": 27,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 27,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 3,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Daniel 3:25 — *He answered and said, Lo, I see four men loose, walking in the midst of the fire, and they have no hurt; and the form of the fourth is like the Son of Elohim (God).* What the Song reports from within the oven — the fire touching them not at all — Nebuchadnezzar sees as the unhurt four with the fourth like the Son (Song of the Three 1:27)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 26,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 3,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "Daniel 3:28 — *...Blessed be the Elohim (God) of Shadrach, Meshach, and Abed-nego, who hath sent his angel, and delivered his servants that trusted in him...* The angel of the LORD who came down into the oven in the Song is the very angel Nebuchadnezzar confesses was sent (Song of the Three 1:26)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 27,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 43,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Isaiah 43:2 — *When thou passest through the waters, I will be with thee... when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee.* The LORD's covenant promise to Israel is fulfilled in the moist whistling wind that left the three untouched (Song of the Three 1:27)."
+        }
+      ]
+    },
+    {
+      "slug": "song-of-three-1-benedicite-all-works-bless",
+      "title": "O all ye works of the LORD, bless ye the LORD — the Benedicite",
+      "summary_md": "From within the flame the three turn the furnace into a sanctuary and summon all creation to praise: *O all you works of Yahuah (God), bless you Yahuah (God): praise and exalt him above all for ever* (Song of the Three 1:35), *O you heavens, bless you Yahuah (God)* (Song of the Three 1:36), *O you sun and moon, bless you Yahuah (God)* (Song of the Three 1:40), *O you fire and heat, bless you Yahuah (God): praise and exalt him above all for ever* (Song of the Three 1:44). It ain't new — this is the Hallel's own roll-call of the cosmos: *Praise ye him, sun and moon: praise him, all ye stars of light* (Psalm 148:3), *Fire, and hail; snow, and vapour; stormy wind fulfilling his word* (Psalm 148:8), and David's closing summons: *Bless Yahuah (LORD), all his works in all places of his dominion* (Psalm 103:22). The fire itself is bidden to bless the One who made it.",
+      "anchor_start_v": 35,
+      "anchor_end_v": 51,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 35,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 103,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Psalm 103:22 — *Bless Yahuah (LORD), all his works in all places of his dominion: bless Yahuah (LORD), O my soul.* David's summons of all the LORD's works is the very opening of the Benedicite (Song of the Three 1:35)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 148,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Psalm 148:3 — *Praise ye him, sun and moon: praise him, all ye stars of light.* The Song calls sun, moon and stars to bless the LORD in the same order as the Hallel (Song of the Three 1:40)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 44,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 148,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Psalm 148:8 — *Fire, and hail; snow, and vapour; stormy wind fulfilling his word:* the very fire and heat the three call to bless the LORD is bidden to praise Him in the Psalm (Song of the Three 1:44)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 36,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 148,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 148:1 — *Praise ye Yahuah (LORD). Praise ye Yahuah (LORD) from the heavens: praise him in the heights.* The Benedicite begins its descent from the heavens exactly as the Hallel does (Song of the Three 1:36)."
+        }
+      ]
+    },
+    {
+      "slug": "song-of-three-1-israel-priests-souls-bless",
+      "title": "O Israel, O priests, O souls of the righteous — bless ye the LORD",
+      "summary_md": "The Benedicite descends from the cosmos to the covenant people and the righteous dead: *O Yashar'el (Israel), bless you Yahuah (God): praise and exalt him above all for ever* (Song of the Three 1:61), *O you priests of Yahuah (God), bless you Yahuah (God)* (Song of the Three 1:62), *O you spirits and souls of the righteous, bless you Yahuah (God): praise and exalt him above all for ever* (Song of the Three 1:64). It ends on the refrain that anchors the whole Hallel: *O give thanks to Yahuah (God), because he is gracious: for his mercy endureth for ever* (Song of the Three 1:67). This is the angels and ministers of Psalm 103, the everlasting-mercy refrain of Psalm 136, and the souls of the righteous who, even in death, bless the LORD and rest in His hand.",
+      "anchor_start_v": 61,
+      "anchor_end_v": 68,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 62,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 103,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Psalm 103:21 — *Bless ye Yahuah (LORD), all ye his hosts; ye ministers of his, that do his pleasure.* The priests and servants of the LORD called to bless Him answer David's summons of His ministering hosts (Song of the Three 1:62)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 67,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 136,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 136:1 — *O give thanks unto Yahuah (LORD); for he is good: for his mercy endureth for ever.* The Song's closing refrain is the opening line of the Great Hallel, word for word (Song of the Three 1:67)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 68,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 136,
+          "tgt_v": 26,
+          "tier": "free",
+          "note": "Psalm 136:26 — *O give thanks unto the Elohim (God) of heaven: for his mercy endureth for ever.* The Song bids all that worship the God of gods give thanks with the same enduring-mercy refrain that closes Psalm 136 (Song of the Three 1:68)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 64,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The spirits and souls of the righteous called to bless the LORD are those awaiting the awakening unto everlasting life (Song of the Three 1:64)."
+        }
+      ]
+    }
+  ]
+}

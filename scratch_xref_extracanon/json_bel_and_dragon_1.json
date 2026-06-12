@@ -1,0 +1,270 @@
+{
+  "edition": "apocrypha",
+  "book": "bel-and-the-dragon",
+  "chapter": 1,
+  "session": "session253",
+  "tag": "bel1",
+  "base_band": 61200,
+  "threads": [
+    {
+      "slug": "bel-and-dragon-1-idol-made-with-hands",
+      "title": "I may not worship idols made with hands",
+      "summary_md": "Daniel draws the line of the First Commandment in the heart of Babylon: *Who answered and said, Because I may not worship idols made with hands, but the living Yahuah (God), who has created the heaven and the earth, and has sovereignty over all flesh.* (Bel and the Dragon 1:5) The prophets had already mocked the manufactured god — *They lavish gold out of the bag, and weigh silver in the balance, and hire a goldsmith; and he maketh it a god: they fall down, yea, they worship.* (Isaiah 46:6); *Their idols are silver and gold, the work of men's hands.* (Psalm 115:4) And the apostle carries the same word to Athens: *Elohim (God) that made the world and all things therein, seeing that he is Yahuah (Lord) of heaven and earth, dwelleth not in temples made with hands;* (Acts 17:24) It ain't new — the Maker of heaven and earth is set against everything fashioned by hands.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 46,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Isaiah 46:6 — *They lavish gold out of the bag, and weigh silver in the balance, and hire a goldsmith; and he maketh it a god: they fall down, yea, they worship.* Isaiah's portrait of the hired-out, hand-made god is the very idol Daniel refuses to adore in Bel and the Dragon 1:5."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Psalm 115:4 — *Their idols are silver and gold, the work of men's hands.* The psalmist names exactly what Daniel calls 'idols made with hands' in Bel and the Dragon 1:5."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "acts",
+          "tgt_ch": 17,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Acts 17:24 — *Elohim (God) that made the world and all things therein, seeing that he is Yahuah (Lord) of heaven and earth, dwelleth not in temples made with hands;* Paul preaches the same Maker of heaven and earth, untouched by hands, whom Daniel confesses in Bel and the Dragon 1:5."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Psalm 115:5 — *They have mouths, but they speak not: eyes have they, but they see not:* Daniel's verdict that Bel 'is but clay within, and brass without, and did never eat or drink any thing' (Bel and the Dragon 1:7) echoes the psalm's dead, senseless idol."
+        }
+      ]
+    },
+    {
+      "slug": "bel-and-dragon-1-they-cannot-eat",
+      "title": "The idol that cannot eat",
+      "summary_md": "The king is sure Bel is alive because the food vanishes each night: *Then said the king to him, Thinkest you not that Bel is a living Yahuah (God)? seest you not how much he eats and drinks every day?* (Bel and the Dragon 1:6) But Daniel exposes a lie of priests and a secret door — the idol *did never eat or drink any thing.* (Bel and the Dragon 1:7) Jeremiah had already laughed at the staked, dumb scarecrow: *They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also is it in them to do good.* (Jeremiah 10:5) And the psalm: *They have hands, but they handle not: feet have they, but they walk not: neither speak they through their throat.* (Psalm 115:7) The god that must be fed by men is no god at all.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Jeremiah 10:5 — *They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also is it in them to do good.* Jeremiah's helpless idol cannot move or act — just as Bel cannot truly eat the offerings the king credits to him in Bel and the Dragon 1:6."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 115,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Psalm 115:7 — *They have hands, but they handle not: feet have they, but they walk not: neither speak they through their throat.* The idol with throat that cannot swallow is precisely Daniel's clay-and-brass Bel that 'did never eat or drink any thing' in Bel and the Dragon 1:7."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Isaiah 44:20 — *He feedeth on ashes: a deceived heart hath turned him aside, that he cannot deliver his soul, nor say, Is there not a lie in my right hand?* The deceived heart and the lie at the idol's table match the priests' secret entrance and consumed offerings of Bel and the Dragon 1:13 — fittingly, Daniel exposes them by ashes."
+        }
+      ]
+    },
+    {
+      "slug": "bel-and-dragon-1-bel-boweth-down",
+      "title": "Bel boweth down — the idol destroyed",
+      "summary_md": "When the ashes betray the footsteps of priests, wives and children, the fraud collapses: *Therefore the king slew them, and delivered Bel into Daniel's power, who destroyed him and his temple.* (Bel and the Dragon 1:22) Isaiah named this god by name and saw him fall: *Bel boweth down, Nebo stoopeth, their idols were upon the beasts, and upon the cattle: your carriages were heavy loaden; they are a burden to the weary beast.* (Isaiah 46:1) The molten image is *falsehood, and there is no breath in them.* (Jeremiah 10:14) The Maker frustrates the liars: *That frustrateth the tokens of the liars, and maketh diviners mad; that turneth wise men backward, and maketh their knowledge foolish;* (Isaiah 44:25) The whole SYSTEM of dead gods is overthrown — not a person, but the lie.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 22,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 46,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 46:1 — *Bel boweth down, Nebo stoopeth, their idols were upon the beasts, and upon the cattle: your carriages were heavy loaden; they are a burden to the weary beast.* Isaiah foresaw the very god by name brought low — the Bel that Daniel destroys with his temple in Bel and the Dragon 1:22."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Jeremiah 10:14 — *Every man is brutish in his knowledge: every founder is confounded by the graven image: for his molten image is falsehood, and there is no breath in them.* The king's praise 'Great art you, O Bel, and with you is no deceit at all' (Bel and the Dragon 1:18) is the brutish confidence Jeremiah condemns — the image is breathless falsehood."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 22,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Isaiah 44:25 — *That frustrateth the tokens of the liars, and maketh diviners mad; that turneth wise men backward, and maketh their knowledge foolish;* Yahuah who frustrates the liars is at work as Daniel slays the priests and tears down Bel's temple in Bel and the Dragon 1:22."
+        }
+      ]
+    },
+    {
+      "slug": "bel-and-dragon-1-living-elohim-no-other",
+      "title": "I will worship the living Elohim",
+      "summary_md": "Pressed to bow to the dragon, Daniel confesses the living God: *Then said Daniel to the king, I will worship Yahuah (God), my Elohim (God): for he is the living Yahuah (God).* (Bel and the Dragon 1:25) Jeremiah set the living King against all the perishing gods: *But Yahuah (LORD) is the true Elohim (God), he is the living Elohim (God), and an everlasting king: at his wrath the earth shall tremble, and the nations shall not be able to abide his indignation.* (Jeremiah 10:10) And He alone is first and last: *Thus saith Yahuah (LORD) the King of Yashar'el (Israel), and his redeemer Yahuah Tseva'ot (LORD of hosts); I am the first, and I am the last; and beside me there is no Elohim (God).* (Isaiah 44:6) When the king at last cries it from the den's mouth — *Great art you, O Yahuah (God) of Daniel, and there is none other beside you.* (Bel and the Dragon 1:41) — he speaks the Shema of Deuteronomy: *Know therefore this day, and consider it in thine heart, that Yahuah (LORD) he is Elohim (God) in heaven above, and upon the earth beneath: there is none else.* (Deuteronomy 4:39)",
+      "anchor_start_v": 25,
+      "anchor_end_v": 41,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Jeremiah 10:10 — *But Yahuah (LORD) is the true Elohim (God), he is the living Elohim (God), and an everlasting king: at his wrath the earth shall tremble, and the nations shall not be able to abide his indignation.* Daniel's confession of 'the living Yahuah (God)' in Bel and the Dragon 1:25 is the very title Jeremiah sets against the dead gods."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 44,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Isaiah 44:6 — *Thus saith Yahuah (LORD) the King of Yashar'el (Israel), and his redeemer Yahuah Tseva'ot (LORD of hosts); I am the first, and I am the last; and beside me there is no Elohim (God).* The 'beside me there is no Elohim' that grounds Daniel's worship in Bel and the Dragon 1:25 is Isaiah's first-and-last King."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 41,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 4,
+          "tgt_v": 39,
+          "tier": "free",
+          "note": "Deuteronomy 4:39 — *Know therefore this day, and consider it in thine heart, that Yahuah (LORD) he is Elohim (God) in heaven above, and upon the earth beneath: there is none else.* The king's cry 'there is none other beside you' in Bel and the Dragon 1:41 confesses the very 'there is none else' Moses taught Israel."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "1-thessalonians",
+          "tgt_ch": 1,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "1 Thessalonians 1:9 — *For they themselves shew of us what manner of entering in we had unto you, and how ye turned to Elohim (God) from idols to serve the living and true Elohim (God);* The Thessalonians' turn from idols to 'the living and true Elohim' is the same exchange Daniel makes before the dragon in Bel and the Dragon 1:25 — it ain't new."
+        }
+      ]
+    },
+    {
+      "slug": "bel-and-dragon-1-lions-mouths-shut",
+      "title": "Yahuah shut the lions' mouths",
+      "summary_md": "Cast among seven starving lions, Daniel is unharmed: *Upon the seventh day the king went to bewail Daniel: and when he came to the den, he looked in, and behold, Daniel was sitting.* (Bel and the Dragon 1:40) This is the deliverance of the canonical Daniel: *My Elohim (God) hath sent his angel, and hath shut the lions' mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt.* (Daniel 6:22) The psalm sings the promise: *Thou shalt tread upon the lion and adder: the young lion and the dragon shalt thou trample under feet.* (Psalm 91:13) — both lion AND dragon under foot, the two beasts of this very chapter. The living Elohim does not forsake them that seek Him: *And Daniel said, You have remembered me, O Yahuah (God): neither have you forsaken them that seek you and love you.* (Bel and the Dragon 1:38)",
+      "anchor_start_v": 31,
+      "anchor_end_v": 42,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 40,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 6,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Daniel 6:22 — *My Elohim (God) hath sent his angel, and hath shut the lions' mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt.* The canonical Daniel names the angel who shuts the lions' mouths — the same deliverance the king finds when Daniel sits unharmed in Bel and the Dragon 1:40."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 31,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 91,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Psalm 91:13 — *Thou shalt tread upon the lion and adder: the young lion and the dragon shalt thou trample under feet.* The psalm puts BOTH the lion and the dragon under the righteous man's feet — the two beasts Daniel overcomes in Bel and the Dragon 1:31."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 38,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 6,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Daniel 6:27 — *He delivereth and rescueth, and he worketh signs and wonders in heaven and in earth, who hath delivered Daniel from the power of the lions.* Daniel's trust that Yahuah has 'not forsaken them that seek' Him (Bel and the Dragon 1:38) is the deliverance Darius proclaims in the canonical book."
+        }
+      ]
+    },
+    {
+      "slug": "bel-and-dragon-1-angel-carries-habakkuk",
+      "title": "The angel that carries them that fear Him",
+      "summary_md": "Yahuah feeds His servant in the den by a wonder — the prophet Habbacuc is borne from Jewry to Babylon: *Then the angel of Yahuah (God) took him by the crown, and bare him by the hair of his head, and through the vehemency of his spirit set him in Babylon over the den.* (Bel and the Dragon 1:36) The psalm sings this guarding ministry: *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them.* (Psalm 34:7) And the charge given the angels: *For he shall give his angels charge over thee, to keep thee in all thy ways. They shall bear thee up in their hands, lest thou dash thy foot against a stone.* (Psalm 91:11) The bread carried to Daniel is the table the living Elohim spreads for them that love Him.",
+      "anchor_start_v": 34,
+      "anchor_end_v": 39,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 36,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 34,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Psalm 34:7 — *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them.* The angel who bears Habbacuc by the hair to feed Daniel in Bel and the Dragon 1:36 is the encamping deliverer of the psalm."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 34,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 91,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Psalm 91:11 — *For he shall give his angels charge over thee, to keep thee in all thy ways.* The angel of Yahuah charged to carry Habbacuc's dinner into Babylon in Bel and the Dragon 1:34 fulfills the psalm's promise of angelic keeping."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 39,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 34,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Psalm 34:10 — *The young lions do lack, and suffer hunger: but they that seek Yahuah (LORD) shall not want any good thing.* While the den's lions are kept from their prey, Daniel who seeks Yahuah is fed and lacks no good thing — the angel setting Habbacuc home again in Bel and the Dragon 1:39."
+        }
+      ]
+    }
+  ]
+}

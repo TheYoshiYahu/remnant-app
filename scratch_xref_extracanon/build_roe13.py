@@ -1,0 +1,98 @@
+import json
+
+data = {
+    "edition": "apocrypha",
+    "book": "the-rest-of-esther",
+    "chapter": 13,
+    "session": "session253",
+    "tag": "roe13",
+    "base_band": 60475,
+    "threads": [
+        {
+            "slug": "rest-of-esther-13-the-decree-against-the-nation",
+            "title": "The decree to destroy a people in one day",
+            "summary_md": "Artaxerxes' letter, drafted by Haman, indicts the covenant people as a scattered law-keeping nation to be wiped out: *Declared to us, that in all nations throughout the world there was scattered a certain malicious people, that had laws contrary to all nations, and continually despised the commandments of kings, so as the uniting of our kingdoms, honourably intended by us cannot go forward.* It ain't new — it is the same slander Haman whispered in the Hebrew Esther: *And Haman said unto king Ahasuerus, There is a certain people scattered abroad and dispersed among the people in all the provinces of thy kingdom; and their laws are diverse from all people; neither keep they the king's laws: therefore it is not for the king's profit to suffer them.* (Esther 3:8). The decree dooms them in a single day — *And the letters were sent by posts into all the king's provinces, to destroy, to kill, and to cause to perish, all Yahudim (Jews), both young and old, little children and women, in one day, even upon the thirteenth day of the twelfth month, which is the month Adar, and to take the spoil of them for a prey.* (Esther 3:13). And the conspirators' true aim is older still, the standing oath of the nations against the seed: *They have said, Come, and let us cut them off from being a nation; that the name of Yashar'el (Israel) may be no more in remembrance.* (Psalm 83:4).",
+            "anchor_start_v": 4,
+            "anchor_end_v": 7,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 13, "src_v": 4, "tgt_edition": "canon", "tgt_book": "esther", "tgt_ch": 3, "tgt_v": 8, "tier": "free",
+                 "note": "Esther 3:8 — *And Haman said unto king Ahasuerus, There is a certain people scattered abroad and dispersed among the people in all the provinces of thy kingdom; and their laws are diverse from all people; neither keep they the king's laws: therefore it is not for the king's profit to suffer them.* The Greek letter merely formalizes the very accusation Haman makes in the Hebrew Esther — a scattered people whose Torah-difference is cast as treason."},
+                {"src_ch": 13, "src_v": 6, "tgt_edition": "canon", "tgt_book": "esther", "tgt_ch": 3, "tgt_v": 13, "tier": "free",
+                 "note": "Esther 3:13 — *And the letters were sent by posts into all the king's provinces, to destroy, to kill, and to cause to perish, all Yahudim (Jews), both young and old, little children and women, in one day, even upon the thirteenth day of the twelfth month, which is the month Adar, and to take the spoil of them for a prey.* This is the same sword-without-mercy edict against wives and children that the rest-of-Esther letter publishes against the whole people."},
+                {"src_ch": 13, "src_v": 7, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 83, "tgt_v": 4, "tier": "free",
+                 "note": "Psalm 83:4 — *They have said, Come, and let us cut them off from being a nation; that the name of Yashar'el (Israel) may be no more in remembrance.* Haman's plot to send a people \"in one day\" into the grave is one episode of the recurring confederate vow to erase Israel from the earth."}
+            ]
+        },
+        {
+            "slug": "rest-of-esther-13-i-bowed-not-to-haman",
+            "title": "I bowed not to proud Haman — to no man above Elohim",
+            "summary_md": "Mordecai answers the king's gate at the price of his life, and explains his refusal before Yahuah: *You know all things, and you know, Yahuah (God), that it was neither in contempt nor pride, nor for any desire of glory, that I did not bow down to proud Aman.* He will not give a man the worship owed to Elohim alone: *But I did this, that I might not prefer the glory of man above the glory of Yahuah (God): neither will I worship any but you, O Yahuah (God), neither will I do it in pride.* It ain't new — it is the first word of Sinai: *Thou shalt have no other gods before me.* (Exodus 20:3), *Thou shalt not bow down thyself to them, nor serve them: for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God), visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me;* (Exodus 20:5). Three Hebrew youths take the same stand before another image and another furnace: *But if not, be it known unto thee, O king, that we will not serve thy gods, nor worship the golden image which thou hast set up.* (Daniel 3:18). And the heart of it — glory to the Name, not to man — is the cry of the Psalms: *Not unto us, O Yahuah (LORD), not unto us, but unto thy name give glory, for thy mercy, and for thy truth's sake.* (Psalm 115:1).",
+            "anchor_start_v": 12,
+            "anchor_end_v": 14,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 13, "src_v": 14, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 20, "tgt_v": 3, "tier": "free",
+                 "note": "Exodus 20:3 — *Thou shalt have no other gods before me.* Mordecai's refusal to bow to Haman is simple obedience to the first commandment — no glory of man placed before the glory of Elohim."},
+                {"src_ch": 13, "src_v": 14, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 20, "tgt_v": 5, "tier": "free",
+                 "note": "Exodus 20:5 — *Thou shalt not bow down thyself to them, nor serve them: for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God), visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me;* The very posture Mordecai withholds from Haman — bowing down and serving — is the act Sinai reserves for Yahuah alone."},
+                {"src_ch": 13, "src_v": 12, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 3, "tgt_v": 18, "tier": "free",
+                 "note": "Daniel 3:18 — *But if not, be it known unto thee, O king, that we will not serve thy gods, nor worship the golden image which thou hast set up.* Mordecai in Persia and the three in Babylon make the identical confession: no image, no man, gets the worship due to Elohim, whatever the cost."},
+                {"src_ch": 13, "src_v": 14, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 115, "tgt_v": 1, "tier": "free",
+                 "note": "Psalm 115:1 — *Not unto us, O Yahuah (LORD), not unto us, but unto thy name give glory, for thy mercy, and for thy truth's sake.* Mordecai's refusal \"to prefer the glory of man above the glory of Yahuah\" is this psalm enacted — the Name keeps its glory."}
+            ]
+        },
+        {
+            "slug": "rest-of-esther-13-king-almighty-maker-of-heaven-and-earth",
+            "title": "O Yahuah, the King Almighty, maker of heaven and earth",
+            "summary_md": "Mordecai opens his prayer by confessing the one God over all creation: *Saying, O Yahuah (God), Yahuah (God), the King Almighty: for the whole world is in your power, and if you have appointed to save Yashar'el (Israel), there is no man that can gainsay you.* He grounds the plea in creation and in the uniqueness of Yahuah: *For you have made heaven and earth, and all the wondrous things under the heaven.* — *You are Yahuah (God) of all things, and there is no man that can resist you, which are Yahuah (God).* It ain't new — it is Nehemiah's confession and Israel's creed: *Thou, even thou, art Yahuah (LORD) alone; thou hast made heaven, the heaven of heavens, with all their host, the earth, and all things that are therein, the seas, and all that is therein, and thou preservest them all; and the host of heaven worshippeth thee.* (Nehemiah 9:6). The idols of the nations are dumb and dead — *Their idols are silver and gold, the work of men's hands.* (Psalm 115:4) — but Israel's God is the living Maker who alone fashioned all things and redeems His own: *Sing, O ye heavens; for Yahuah (LORD) hath done it: shout, ye lower parts of the earth: break forth into singing, ye mountains, O forest, and every tree therein: for Yahuah (LORD) hath redeemed Jacob, and glorified himself in Yashar'el (Israel).* (Isaiah 44:23).",
+            "anchor_start_v": 9,
+            "anchor_end_v": 11,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 13, "src_v": 10, "tgt_edition": "canon", "tgt_book": "nehemiah", "tgt_ch": 9, "tgt_v": 6, "tier": "free",
+                 "note": "Nehemiah 9:6 — *Thou, even thou, art Yahuah (LORD) alone; thou hast made heaven, the heaven of heavens, with all their host, the earth, and all things that are therein, the seas, and all that is therein, and thou preservest them all; and the host of heaven worshippeth thee.* Mordecai's \"you have made heaven and earth\" is the same monotheist confession the Levites pray over the returned exiles."},
+                {"src_ch": 13, "src_v": 11, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 115, "tgt_v": 4, "tier": "free",
+                 "note": "Psalm 115:4 — *Their idols are silver and gold, the work of men's hands.* Against the made-by-hands gods of the nations, Mordecai owns the living Yahuah whom no man can resist — the system of dead gods is empty, the Maker is not."},
+                {"src_ch": 13, "src_v": 10, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 44, "tgt_v": 23, "tier": "free",
+                 "note": "Isaiah 44:23 — *Sing, O ye heavens; for Yahuah (LORD) hath done it: shout, ye lower parts of the earth: break forth into singing, ye mountains, O forest, and every tree therein: for Yahuah (LORD) hath redeemed Jacob, and glorified himself in Yashar'el (Israel).* The Maker of heaven and earth in Mordecai's prayer is the same who, having made all things, redeems Jacob — creation and salvation in one hand."}
+            ]
+        },
+        {
+            "slug": "rest-of-esther-13-spare-thine-inheritance-out-of-egypt",
+            "title": "Spare thy people, the portion redeemed out of Egypt",
+            "summary_md": "Mordecai pleads not on Israel's merit but on Yahuah's own claim — they are His portion, His inheritance: *And now, O Yahuah (God) and King, spare your people: for their eyes are upon us to bring us to nought; yes, they desire to destroy the inheritance, that has been yours from the beginning.* He invokes the Exodus as the title-deed: *Despise not the portion, which you have delivered out of Egypt for your own self.* It ain't new — it is the song of Moses naming Israel as Yahuah's own lot: *For the LORD'S portion is his people; Jacob is the lot of his inheritance.* (Deuteronomy 32:9). And it is Moses' own intercession on the mountain, pleading the redeemed inheritance against destruction: *I prayed therefore unto Yahuah (LORD), and said, O Yahuah (Lord) GOD, destroy not thy people and thine inheritance, which thou hast redeemed through thy greatness, which thou hast brought forth out of Egypt with a mighty hand.* (Deuteronomy 9:26). The plea closes in turning and mercy — \"be merciful to your inheritance: turn our sorrow into joy\" — the heart of Joel's call: *And rend your heart, and not your garments, and turn unto Yahuah Elohaychem (the LORD your God): for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil.* (Joel 2:13).",
+            "anchor_start_v": 15,
+            "anchor_end_v": 17,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 13, "src_v": 15, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 32, "tgt_v": 9, "tier": "free",
+                 "note": "Deuteronomy 32:9 — *For the LORD'S portion is his people; Jacob is the lot of his inheritance.* Mordecai's word \"the inheritance, that has been yours from the beginning\" rests on the Song of Moses' claim that Israel is Yahuah's own allotted portion."},
+                {"src_ch": 13, "src_v": 16, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 9, "tgt_v": 26, "tier": "free",
+                 "note": "Deuteronomy 9:26 — *I prayed therefore unto Yahuah (LORD), and said, O Yahuah (Lord) GOD, destroy not thy people and thine inheritance, which thou hast redeemed through thy greatness, which thou hast brought forth out of Egypt with a mighty hand.* Mordecai's \"despise not the portion delivered out of Egypt\" is Moses' very intercession pleading the Exodus-redeemed inheritance against ruin."},
+                {"src_ch": 13, "src_v": 17, "tgt_edition": "canon", "tgt_book": "joel", "tgt_ch": 2, "tgt_v": 13, "tier": "free",
+                 "note": "Joel 2:13 — *And rend your heart, and not your garments, and turn unto Yahuah Elohaychem (the LORD your God): for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil.* Mordecai's appeal to be \"merciful to your inheritance\" and to \"turn our sorrow into joy\" leans on this very mercy that relents from the threatened evil."}
+            ]
+        },
+        {
+            "slug": "rest-of-esther-13-haman-the-agagite-the-seed-of-amalek",
+            "title": "Haman the Agagite — the seed-war with Amalek",
+            "summary_md": "The whole crisis traces to one man's pride, the second in the kingdom: *Now when I asked my counsellors how this might be brought to pass, Aman, that excelled in wisdom among us, and was approved for his constant good will and steadfast fidelity, and had the honour of the second place in the kingdom,* Read his Hebrew name and the war comes into focus — Haman the son of Hammedatha the Agagite, of Agag the Amalekite king — so this decree against \"a certain malicious people\" is the latest assault in an ancient feud. It ain't new — Yahuah swore the war Himself at Rephidim: *For he said, Because Yahuah (LORD) hath sworn that Yahuah (LORD) will have war with Amalek from generation to generation.* (Exodus 17:16). Moses charged Israel never to forget the cowardly assault on the weak: *Remember what Amalek did unto thee by the way, when ye were come forth out of Egypt;* (Deuteronomy 25:17) and *How he met thee by the way, and smote the hindmost of thee, even all that were feeble behind thee, when thou wast faint and weary; and he feared not Elohim (God).* (Deuteronomy 25:18). Haman the Agagite reaches once more for \"little children and women\" — the hindmost — and so the deliverance through Esther and Mordecai is one more chapter of blotting out the remembrance of Amalek.",
+            "anchor_start_v": 3,
+            "anchor_end_v": 6,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 13, "src_v": 3, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 17, "tgt_v": 16, "tier": "free",
+                 "note": "Exodus 17:16 — *For he said, Because Yahuah (LORD) hath sworn that Yahuah (LORD) will have war with Amalek from generation to generation.* Haman the Agagite, of Amalek's royal seed, is exactly the perpetual foe against whom Yahuah swore this generational war."},
+                {"src_ch": 13, "src_v": 6, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 25, "tgt_v": 17, "tier": "free",
+                 "note": "Deuteronomy 25:17 — *Remember what Amalek did unto thee by the way, when ye were come forth out of Egypt;* Haman's edict to slay \"with their wives and children\" is Amalek's old work, the very thing Israel is commanded never to forget."},
+                {"src_ch": 13, "src_v": 6, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 25, "tgt_v": 18, "tier": "free",
+                 "note": "Deuteronomy 25:18 — *How he met thee by the way, and smote the hindmost of thee, even all that were feeble behind thee, when thou wast faint and weary; and he feared not Elohim (God).* As Amalek struck the feeble hindmost, so Haman the Agagite targets the children and women of the scattered people — the same fearless cruelty."}
+            ]
+        }
+    ]
+}
+
+with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_rest_of_esther_13.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+print("written ok")

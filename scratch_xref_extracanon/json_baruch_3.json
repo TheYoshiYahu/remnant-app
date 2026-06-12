@@ -1,0 +1,108 @@
+{
+  "edition": "apocrypha",
+  "book": "baruch-with-the-letter-of-jeremiah",
+  "chapter": 3,
+  "session": "session253",
+  "tag": "bar3",
+  "base_band": 60750,
+  "threads": [
+    {
+      "slug": "baruch-3-fountain-of-wisdom",
+      "title": "Israel forsook the fountain of wisdom",
+      "summary_md": "Baruch turns from the captives' confession to the heart of the matter: *Hear, Yashar'el (Israel), the commandments of life: give ear to understand wisdom* (Baruch 3:9) — *That you are counted with them that go down into the grave?* (Baruch 3:11) — *You have forsaken the fountain of wisdom* (Baruch 3:12) — *For if you had walked in the way of Yahuah (God), you should have dwelled in peace for ever* (Baruch 3:13). The diagnosis is not new. Jeremiah had already named the double crime: *Be astonished, O ye heavens, at this, and be horribly afraid, be ye very desolate, saith Yahuah (LORD)* (Jeremiah 2:12) — for they forsook the fountain of living waters and hewed out broken cisterns. And the fountain still cries aloud in the streets to the simple: *Wisdom crieth without; she uttereth her voice in the streets* (Proverbs 1:20), *How long, ye simple ones, will ye love simplicity? and the scorners delight in their scorning, and fools hate knowledge?* (Proverbs 1:22). Wisdom here is Torah — the commandments of life — and to forsake her is to choose the grave. It ain't new.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 12, "tgt_edition": "canon", "tgt_book": "jeremiah", "tgt_ch": 2, "tgt_v": 12, "tier": "free",
+         "note": "Jeremiah 2:12 — *Be astonished, O ye heavens, at this, and be horribly afraid, be ye very desolate, saith Yahuah (LORD).* Jeremiah's heavens are summoned to be astonished at the very crime Baruch 3:12 confesses — Israel forsaking the fountain."},
+        {"src_ch": 3, "src_v": 9, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 1, "tgt_v": 20, "tier": "free",
+         "note": "Proverbs 1:20 — *Wisdom crieth without; she uttereth her voice in the streets:* the same Wisdom Baruch 3:9 bids Israel hear has been crying aloud all along, never hidden from the one who would listen."},
+        {"src_ch": 3, "src_v": 9, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 1, "tgt_v": 22, "tier": "free",
+         "note": "Proverbs 1:22 — *How long, ye simple ones, will ye love simplicity? and the scorners delight in their scorning, and fools hate knowledge?* Wisdom's reproach in Proverbs is the rebuke beneath Baruch 3:9's summons to give ear and understand."}
+      ]
+    },
+    {
+      "slug": "baruch-3-where-is-wisdom-found",
+      "title": "Where shall wisdom be found",
+      "summary_md": "Baruch asks the oldest question: *Learn where is wisdom, where is strength, where is understanding* (Baruch 3:14) — *Who has found out her place? or who has come into her treasures?* (Baruch 3:15). This is Job's question, word for word in spirit: *But where shall wisdom be found? and where is the place of understanding?* (Job 28:12). Job has already searched the mines and the deep and found that *It cannot be gotten for gold, neither shall silver be weighed for the price thereof* (Job 28:15). The merchants and the princes who *hoarded up silver and gold* (Baruch 3:17) never bought her. It ain't new — Baruch is singing Job's twenty-eighth chapter back to the exiles.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 15, "tgt_edition": "canon", "tgt_book": "job", "tgt_ch": 28, "tgt_v": 12, "tier": "free",
+         "note": "Job 28:12 — *But where shall wisdom be found? and where is the place of understanding?* Job's question is Baruch 3:15's question exactly — who has found out her place."},
+        {"src_ch": 3, "src_v": 17, "tgt_edition": "canon", "tgt_book": "job", "tgt_ch": 28, "tgt_v": 15, "tier": "free",
+         "note": "Job 28:15 — *It cannot be gotten for gold, neither shall silver be weighed for the price thereof.* The silver-hoarders of Baruch 3:17 could never purchase the wisdom Job says no gold can buy."},
+        {"src_ch": 3, "src_v": 14, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 8, "tgt_v": 11, "tier": "free",
+         "note": "Proverbs 8:11 — wisdom is better than rubies; Baruch 3:14 sends Israel to learn where she is, for she is worth more than the strength and length of days men chase without her."}
+      ]
+    },
+    {
+      "slug": "baruch-3-princes-and-giants-perished",
+      "title": "The princes and the giants perished without her",
+      "summary_md": "Baruch surveys the dead who ruled without wisdom: *Where are the princes of the heathen become, and such as ruled the beasts upon the earth* (Baruch 3:16) — *There were the giants famous from the beginning, that were of so great stature, and so expert in war* (Baruch 3:26) — *Those did not Yahuah (God) choose, neither gave he the way of knowledge to them* (Baruch 3:27) — *But they were destroyed, because they had no wisdom, and perished through their own foolishness* (Baruch 3:28). The giants are the Nephilim of the days before the flood, the mighty men of renown — and their end is the same as Paul's verdict on the rulers of this age: *Howbeit we speak wisdom among them that are perfect: yet not the wisdom of this world, nor of the princes of this world, that come to nought* (1 Corinthians 2:6), *Which none of the princes of this world knew: for had they known it, they would not have crucified Yahuah (Lord) of glory* (1 Corinthians 2:8). Power without wisdom always comes to nought. It ain't new.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 28,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 16, "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 2, "tgt_v": 6, "tier": "free",
+         "note": "1 Corinthians 2:6 — *Howbeit we speak wisdom among them that are perfect: yet not the wisdom of this world, nor of the princes of this world, that come to nought:* Paul's princes who come to nought are Baruch 3:16's vanished princes of the heathen, ruling without the way of knowledge."},
+        {"src_ch": 3, "src_v": 28, "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 2, "tgt_v": 8, "tier": "free",
+         "note": "1 Corinthians 2:8 — *Which none of the princes of this world knew: for had they known it, they would not have crucified Yahuah (Lord) of glory.* The mighty perish through their own foolishness in Baruch 3:28 precisely because the hidden Wisdom was never given them to know."},
+        {"src_ch": 3, "src_v": 26, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 6:4 — *There were giants in the earth in those days; and also after that, when the sons of God came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.* The famous giants of Baruch 3:26 are the Nephilim of Genesis, mighty in war yet destroyed for want of wisdom."}
+      ]
+    },
+    {
+      "slug": "baruch-3-not-in-heaven-nor-beyond-the-sea",
+      "title": "Not in heaven, nor beyond the sea",
+      "summary_md": "Baruch asks who can ascend or cross the deep to fetch her: *Who has gone up into heaven, and taken her, and brought her down from the clouds?* (Baruch 3:29) — *Who has gone over the sea, and found her, and will bring her for pure gold?* (Baruch 3:30) — *No man knoweth her way, nor thinketh of her path* (Baruch 3:31). This is Moses' word at the end of Deuteronomy, only flipped to its glory: the commandment is NOT out of reach. *It is not in heaven, that thou shouldest say, Who shall go up for us to heaven, and bring it unto us, that we may hear it, and do it?* (Deuteronomy 30:12) — *Neither is it beyond the sea, that thou shouldest say, Who shall go over the sea for us, and bring it unto us, that we may hear it, and do it?* (Deuteronomy 30:13) — *But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* (Deuteronomy 30:14). No man can climb to wisdom or sail to her — yet Yahuah set her near in the Torah. It ain't new.",
+      "anchor_start_v": 29,
+      "anchor_end_v": 31,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 29, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 12, "tier": "free",
+         "note": "Deuteronomy 30:12 — *It is not in heaven, that thou shouldest say, Who shall go up for us to heaven, and bring it unto us, that we may hear it, and do it?* Baruch 3:29's 'who has gone up into heaven' is Moses' own rhetorical climb, answered: the word need not be fetched down."},
+        {"src_ch": 3, "src_v": 30, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 13, "tier": "free",
+         "note": "Deuteronomy 30:13 — *Neither is it beyond the sea, that thou shouldest say, Who shall go over the sea for us, and bring it unto us, that we may hear it, and do it?* Baruch 3:30's voyage over the sea for wisdom is the very crossing Moses says is unnecessary, for the word is already given."},
+        {"src_ch": 3, "src_v": 31, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 14, "tier": "free",
+         "note": "Deuteronomy 30:14 — *But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it.* Where Baruch 3:31 says no man knows her way, Moses answers that the word-wisdom is set as near as the mouth and the heart."}
+      ]
+    },
+    {
+      "slug": "baruch-3-he-that-knoweth-all-things",
+      "title": "He that knoweth all things found her out",
+      "summary_md": "If no man can reach wisdom, One can: *But he that knoweth all things knoweth her, and has found her out with his understanding: he that prepared the earth for evermore has filled it with fourfooted beasts* (Baruch 3:32) — *He that sends forth light, and it goes, calls it again, and it obeyeth him with fear* (Baruch 3:33) — *The stars shined in their watches, and rejoiced: when he calls them, they say, Here we be; and so with cheerfulness they shewed light to him that made them* (Baruch 3:34). The Maker who possesses Wisdom is the same who possessed her at creation: *Elohim (God) understandeth the way thereof, and he knoweth the place thereof* (Job 28:23). And Wisdom answers from before the world: *Yahuah (LORD) possessed me in the beginning of his way, before his works of old* (Proverbs 8:22) — *When he prepared the heavens, I was there: when he set a compass upon the face of the depth* (Proverbs 8:27). The stars that come at His call in Baruch 3:34 are the same heavens Wisdom watched Him stretch. It ain't new.",
+      "anchor_start_v": 32,
+      "anchor_end_v": 34,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 32, "tgt_edition": "canon", "tgt_book": "job", "tgt_ch": 28, "tgt_v": 23, "tier": "free",
+         "note": "Job 28:23 — *Elohim (God) understandeth the way thereof, and he knoweth the place thereof.* Job's verdict is Baruch 3:32 exactly: the One who knoweth all things alone has found wisdom's way out."},
+        {"src_ch": 3, "src_v": 32, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 8, "tgt_v": 22, "tier": "free",
+         "note": "Proverbs 8:22 — *Yahuah (LORD) possessed me in the beginning of his way, before his works of old.* The Maker who 'prepared the earth' and found out wisdom in Baruch 3:32 is the same who possessed her before the works of old."},
+        {"src_ch": 3, "src_v": 34, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 8, "tgt_v": 27, "tier": "free",
+         "note": "Proverbs 8:27 — *When he prepared the heavens, I was there: when he set a compass upon the face of the depth:* the stars that answer 'Here we be' in Baruch 3:34 were set in heavens Wisdom watched her Maker prepare."}
+      ]
+    },
+    {
+      "slug": "baruch-3-shewed-himself-upon-earth",
+      "title": "Afterward he shewed himself upon earth",
+      "summary_md": "The chapter crowns its hymn to Wisdom with the line the early church could not stop quoting: *This is our Elohim (God), and there shall none other be accounted of in comparison of him* (Baruch 3:35) — *He has found out all the way of knowledge, and has given it to Jacob his servant, and to Yashar'el (Israel) his beloved* (Baruch 3:36) — *Afterward did he shew himself upon earth, and conversed with men* (Baruch 3:37). The Wisdom given to Jacob is Torah, and that same Wisdom came and dwelt: *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). Sirach already heard Wisdom say where she was sent to abide: *So the Creator of all things gave me a commandment, and he that made me caused my tabernacle to rest, and said, Let your dwelling be in Jacob, and your inheritance in Yashar'el (Israel)* (Sirach 24:8). And Paul names the Wisdom by whom all was made: *And he is before all things, and by him all things consist* (Colossians 1:17), the same who *rejoicing in the habitable part of his earth; and my delights were with the sons of men* (Proverbs 8:31). Wisdom = Torah = the Logos who came and conversed with men. It ain't new.",
+      "anchor_start_v": 35,
+      "anchor_end_v": 37,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 37, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 1, "tgt_v": 14, "tier": "free",
+         "note": "John 1:14 — *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.* Baruch 3:37's Wisdom who 'shewed himself upon earth, and conversed with men' is the Word made flesh who dwelt among us."},
+        {"src_ch": 3, "src_v": 36, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 24, "tgt_v": 8, "tier": "extras",
+         "note": "Sirach 24:8 — *So the Creator of all things gave me a commandment, and he that made me caused my tabernacle to rest, and said, Let your dwelling be in Jacob, and your inheritance in Yashar'el (Israel).* Sirach's Wisdom given to dwell in Jacob is the very Wisdom Baruch 3:36 says was given to Jacob his servant."},
+        {"src_ch": 3, "src_v": 36, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 8, "tgt_v": 31, "tier": "free",
+         "note": "Proverbs 8:31 — *Rejoicing in the habitable part of his earth; and my delights were with the sons of men.* The Wisdom given to Israel in Baruch 3:36 is she whose delight was always with the sons of men, foreshadowing the conversing of 3:37."},
+        {"src_ch": 3, "src_v": 37, "tgt_edition": "canon", "tgt_book": "colossians", "tgt_ch": 1, "tgt_v": 17, "tier": "free",
+         "note": "Colossians 1:17 — *And he is before all things, and by him all things consist.* The One who shewed himself upon earth in Baruch 3:37 is the pre-existent Wisdom-Logos by whom all things hold together."}
+      ]
+    }
+  ]
+}
