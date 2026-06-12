@@ -1,0 +1,230 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 5,
+  "session": "session253",
+  "tag": "sir05",
+  "base_band": 58400,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-5-trust-not-in-riches",
+      "title": "Set not thine heart upon goods — thou fool, this night",
+      "summary_md": "Ben Sira opens against the lie of self-sufficiency: *Set your heart upon your goods; and say not, I have enough for my life.* (Ecclesiasticus 5:1) — and warns *Set not yours heart upon goods unjustly gotten, for they shall not profit you in the day of calamity.* (Ecclesiasticus 5:8). It ain't new — this is the rich fool of the Master's parable, the barns torn down to build greater: *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20). The Sermon on the Mount says the same: *Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal:* (Matthew 6:19). And the sibling apocryphal wisdom-book asks the very question over the grave: *What has pride profited us? or what good has riches with our vaunting brought us?* (Wisdom of Solomon 5:8) — for the goods cannot answer in the day of calamity.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 12,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* The rich fool who said \"I have enough for my life\" is the very man Ecclesiasticus 5:1 warns against."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 6,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Matthew 6:19 — *Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal:* The Master forbids the heart set on goods that Ecclesiasticus 5:1 calls vain."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 8,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The companion wisdom-book voices the dead man's regret over the goods that did not profit in the day of calamity (Ecclesiasticus 5:8)."
+        }
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-5-say-not-i-have-sinned-what-harm",
+      "title": "Say not, I have sinned, and what harm — presume not on delayed judgment",
+      "summary_md": "*And say not, I have sinned, and what harm has happened to me? for Yahuah (God) is longsuffering, he will in no wise let you go.* (Ecclesiasticus 5:4) — the sinner reads the silence of God as license. It ain't new: the Preacher diagnosed the same self-deceit, *Because sentence against an evil work is not executed speedily, therefore the heart of the sons of men is fully set in them to do evil.* (Ecclesiastes 8:11). And Sha'ul presses it into a warning — the delay is goodness meant to lead to repentance, not a verdict of acquittal: *Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of Elohim (God) leadeth thee to repentance?* (Romans 2:4), *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God);* (Romans 2:5). The longsuffering Ben Sira names is the same forbearance that the impenitent abuse.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "ecclesiastes",
+          "tgt_ch": 8,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Ecclesiastes 8:11 — *Because sentence against an evil work is not executed speedily, therefore the heart of the sons of men is fully set in them to do evil.* The Preacher names the very self-deceit of \"I have sinned, and what harm\" in Ecclesiasticus 5:4."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Romans 2:4 — *Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of Elohim (God) leadeth thee to repentance?* Sha'ul shows the longsuffering of Ecclesiasticus 5:4 is mercy unto repentance, not permission to add sin."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 2,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Romans 2:5 — *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God);* The man who says \"what harm\" (Ecclesiasticus 5:4) is in fact treasuring up wrath against the day of vengeance."
+        }
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-5-mercy-and-wrath-presume-not",
+      "title": "His mercy is great — yet mercy and wrath both come from him",
+      "summary_md": "Against presumption on grace: *And say not His mercy is great; he will be pacified for the multitude of my sins: for mercy and wrath come from him, and his indignation resteth upon sinners.* (Ecclesiasticus 5:6), *Concerning propitiation, be not without fear to add sin to sin:* (Ecclesiasticus 5:5). The wisdom is held in tension — the sibling apocryphal book affirms the mercy is real, *But you have mercy upon all; for you can do all things, and winkest at the sins of men, because they should amend.* (Wisdom of Solomon 11:23), and that judgment itself opens a door, *But executing your judgments upon them by little and little, you gavest them place of repentance...* (Wisdom of Solomon 12:10) — yet the space is given that they *should amend*, not that they may presume. Hence Sha'ul's verdict on the man who despises that forbearance: *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath...* (Romans 2:5). Mercy and wrath both come from the one hand.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 6,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 11,
+          "tgt_v": 23,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 11:23 — *But you have mercy upon all; for you can do all things, and winkest at the sins of men, because they should amend.* The companion book confirms the mercy of Ecclesiasticus 5:6 is real, but given that men should amend — not that they may add sin to sin."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 5,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 12,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 12:10 — *But executing your judgments upon them by little and little, you gavest them place of repentance, not being ignorant that they were a naughty generation, and that their malice was bred in them, and that their cogitation would never be changed.* The space for repentance is the very propitiation Ecclesiasticus 5:5 says to fear adding sin against."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 2,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Romans 2:5 — *But after thy hardness and impenitent heart treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of Elohim (God);* He who presumes \"His mercy is great\" (Ecclesiasticus 5:6) forgets that wrath also rests on the impenitent."
+        }
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-5-make-no-tarrying-to-turn",
+      "title": "Make no tarrying to turn to Yahuah — now is the accepted time",
+      "summary_md": "The urgency of repentance: *Make no tarrying to turn to Yahuah (God), and put not off from day to day: for suddenly shall the wrath of Yahuah (God) come forth, and in your security you shall be destroyed, and perish in the day of vengeance.* (Ecclesiasticus 5:7). It ain't new — wisdom forbids deferring even a boast: *Boast not thyself of to morrow; for thou knowest not what a day may bring forth.* (Proverbs 27:1). And the gospel seals the hour: *...behold, now is the accepted time; behold, now is the day of salvation.* (2 Corinthians 6:2). The man at ease in his security is the rich fool whose soul is required *this night* — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee...* (Luke 12:20). Turn now; the day of vengeance keeps no appointment with the procrastinator.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 27,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Proverbs 27:1 — *Boast not thyself of to morrow; for thou knowest not what a day may bring forth.* The proverb against presuming on tomorrow undergirds Ben Sira's \"put not off from day to day\" (Ecclesiasticus 5:7)."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "2-corinthians",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "2 Corinthians 6:2 — *For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.* Sha'ul presses the same \"make no tarrying\" of Ecclesiasticus 5:7 — the day to turn is now."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 12,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* He who is at ease \"in your security\" (Ecclesiasticus 5:7) is the fool whose soul is suddenly required."
+        }
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-5-double-tongue-winnow-not",
+      "title": "Winnow not with every wind — the double tongue",
+      "summary_md": "Against duplicity of speech: *Winnow not with every wind, and go not into every way: for so does the sinner that has a double tongue.* (Ecclesiasticus 5:9), and the call to single-minded steadfastness, *Be stedfast in your understanding; and let your word be the same.* (Ecclesiasticus 5:10). It ain't new — wisdom warns of the slander and the betraying tongue: *In the multitude of words there wanteth not sin: but he that refraineth his lips is wise.* (Proverbs 10:19). And Ya'aqov, Sirach's nearest NT sibling, names the divided man and the untamed tongue: *Even so the tongue is a little member, and boasteth great things. Behold, how great a matter a little fire kindleth!* (James 3:5). The sinner who winnows with every wind is the double-minded man, unstable in all his ways.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 3,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "James 3:5 — *Even so the tongue is a little member, and boasteth great things. Behold, how great a matter a little fire kindleth!* Ya'aqov, Sirach's nearest sibling, takes up the same peril of the double tongue named in Ecclesiasticus 5:9."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 10,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Proverbs 10:19 — *In the multitude of words there wanteth not sin: but he that refraineth his lips is wise.* The proverb commends the steadfast, single word Ben Sira urges in Ecclesiasticus 5:10."
+        }
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-5-swift-to-hear-slow-to-answer",
+      "title": "Be swift to hear, slow to answer — lay thy hand on thy mouth",
+      "summary_md": "The chapter's most famous line, all but quoted by Ya'aqov: *Be swift to hear; and let your life be sincere; and with patience give answer.* (Ecclesiasticus 5:11), *If you have understanding, answer your neighbour; if not, lay your hand upon your mouth.* (Ecclesiasticus 5:12). It ain't new — *Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:* (James 1:19) is the same wisdom in NT dress, the Epistle of Ya'aqov leaning on the Wisdom of ben Sira. And the Tanakh wisdom-book commends the very restraint of \"lay thy hand on thy mouth\": *Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding.* (Proverbs 17:28). Swift to hear, slow to answer — and the tongue of man is his fall (Ecclesiasticus 5:13).",
+      "anchor_start_v": 11,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 1,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "James 1:19 — *Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:* Ya'aqov all but quotes Ecclesiasticus 5:11 — \"be swift to hear... with patience give answer\" — the closest NT echo of ben Sira."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 17,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "Proverbs 17:28 — *Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding.* The proverb commends the \"lay thy hand upon thy mouth\" restraint of Ecclesiasticus 5:12."
+        }
+      ]
+    }
+  ]
+}

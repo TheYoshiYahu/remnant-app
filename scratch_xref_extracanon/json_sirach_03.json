@@ -1,0 +1,132 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 3,
+  "session": "session253",
+  "tag": "sir03",
+  "base_band": 58350,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-3-honour-father-mother",
+      "title": "Honour thy father and mother — the fifth commandment unfolded",
+      "summary_md": "Ben Sira opens chapter 3 by taking the fifth word of the Decalogue and unfolding it as wisdom: *For Yahuah (God) has given the father honour over the children, and has confirmed the authority of the mother over the sons.* (Ecclesiasticus 3:2). To honour is no light thing — *Whoso honoureth his father makes an atonement for his sins* (Ecclesiasticus 3:3), and *Whoso honoureth his father shall have joy of his own children; and when he makes his prayer, he shall be heard* (Ecclesiasticus 3:5). This is the very commandment graven at Sinai: *Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee.* (Exodus 20:12), repeated in Moses' rehearsal — *Honour thy father and thy mother, as Yahuah Elohayka (the LORD thy God) hath commanded thee; that thy days may be prolonged, and that it may go well with thee* (Deuteronomy 5:16). Sha'ul knows it as the hinge of the household: *Honour thy father and mother; (which is the first commandment with promise;)* (Ephesians 6:2). It ain't new — the apparatus Ben Sira raises on the commandment is the same covenant honour, the same long-life promise, the same blessing that *establishes the houses of children* (Ecclesiasticus 3:9).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 2,
+         "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 20, "tgt_v": 12,
+         "tier": "free",
+         "note": "Exodus 20:12 — *Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee.* The Sinai command Ben Sira unfolds when he says Yahuah has given the father honour over the children (Ecclesiasticus 3:2)."},
+        {"src_ch": 3, "src_v": 6,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 5, "tgt_v": 16,
+         "tier": "free",
+         "note": "Deuteronomy 5:16 — *Honour thy father and thy mother, as Yahuah Elohayka (the LORD thy God) hath commanded thee; that thy days may be prolonged, and that it may go well with thee, in the land which Yahuah Elohayka (the LORD thy God) giveth thee.* The same long-life promise Ben Sira repeats: he that honoureth his father shall have a long life (Ecclesiasticus 3:6)."},
+        {"src_ch": 3, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "ephesians", "tgt_ch": 6, "tgt_v": 2,
+         "tier": "free",
+         "note": "Ephesians 6:2 — *Honour thy father and mother; (which is the first commandment with promise;)* Sha'ul names as the first commandment with promise the very duty Ben Sira urges in word and deed (Ecclesiasticus 3:8)."},
+        {"src_ch": 3, "src_v": 5,
+         "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 15, "tgt_v": 4,
+         "tier": "free",
+         "note": "Matthew 15:4 — *For Elohim (God) commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death.* The Messiah holds the same commandment Ben Sira presses, rebuking the tradition that voided it (Ecclesiasticus 3:5)."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-3-corban-tradition-rebuked",
+      "title": "Help thy father in his age — against the corban evasion",
+      "summary_md": "Ben Sira presses the commandment into old age, where it costs: *My son, help your father in his age, and grieve him not as long as he lives.* (Ecclesiasticus 3:12), and *if his understanding fail, have patience with him; and despise him not when you are in your full strength* (Ecclesiasticus 3:13). The man who shirks it is no neutral — *He that forsaketh his father is as a blasphemer; and he that angereth his mother is cursed: of Yahuah (God).* (Ecclesiasticus 3:16). Centuries on, the Messiah indicts the scribes for inventing a loophole around this very duty: *For Elohim (God) commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death.* (Matthew 15:4) — *Thus have ye made the commandment of Elohim (God) of none effect by your tradition* (Matthew 15:6). The corban evasion is exactly the forsaking Ben Sira called blasphemy. And the relief of an aged father is not lost: *For the relieving of your father shall not be forgotten: and instead of sins it shall be added to build you up.* (Ecclesiasticus 3:14) — an almsdeed within the house, which Tobit calls deliverance: *For alms does deliver from death, and shall purge away all sin.* (Tobit 12:9).",
+      "anchor_start_v": 12,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 16,
+         "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 15, "tgt_v": 6,
+         "tier": "free",
+         "note": "Matthew 15:6 — *And honour not his father or his mother, he shall be free. Thus have ye made the commandment of Elohim (God) of none effect by your tradition.* The corban loophole is precisely the forsaking of the father Ben Sira likens to blasphemy (Ecclesiasticus 3:16)."},
+        {"src_ch": 3, "src_v": 14,
+         "tgt_edition": "apocrypha", "tgt_book": "tobit", "tgt_ch": 12, "tgt_v": 9,
+         "tier": "extras",
+         "note": "Tobit 12:9 — *For alms does deliver from death, and shall purge away all sin. Those that exercise alms and righteousness shall be filled with life:* The sister wisdom-book confirms that the relief of one's father, counted instead of sins to build a man up, is an almsdeed (Ecclesiasticus 3:14)."},
+        {"src_ch": 3, "src_v": 13,
+         "tgt_edition": "canon", "tgt_book": "ephesians", "tgt_ch": 6, "tgt_v": 3,
+         "tier": "free",
+         "note": "Ephesians 6:3 — *That it may be well with thee, and thou mayest live long on the earth.* The promise attached to honouring parents reaches into their old age, where Ben Sira bids the strong have patience (Ecclesiasticus 3:13)."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-3-humble-thyself-exalted",
+      "title": "The greater thou art, the more humble thyself",
+      "summary_md": "From honour Ben Sira turns to its root, lowliness: *My son, go on with your business in meekness; so shall you be beloved of him that is approved.* (Ecclesiasticus 3:17), and the great wisdom-saying — *The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).* (Ecclesiasticus 3:18). This is the law of the Kingdom the Messiah twice declared: *For whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted.* (Luke 14:11), and again at the temple — *for every one that exalteth himself shall be abased; and he that humbleth himself shall be exalted.* (Luke 18:14). Ben Sira's *the power of Yahuah (God) is great, and he is honoured of the lowly* (Ecclesiasticus 3:20) is the same word Proverbs and Ya'aqob carry: *Surely he scorneth the scorners: but he giveth grace unto the lowly.* (Proverbs 3:34) — *Elohim (God) resisteth the proud, but giveth grace unto the humble.* (James 4:6). It ain't new: the Sermon's blessing on the meek, and James — the closest NT sibling to this whole book — draw the identical line from lowliness to favour.",
+      "anchor_start_v": 17,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 18,
+         "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 14, "tgt_v": 11,
+         "tier": "free",
+         "note": "Luke 14:11 — *For whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted.* The Messiah's law of the Kingdom is Ben Sira's counsel that the greater one is, the more he should humble himself (Ecclesiasticus 3:18)."},
+        {"src_ch": 3, "src_v": 18,
+         "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 18, "tgt_v": 14,
+         "tier": "free",
+         "note": "Luke 18:14 — *I tell you, this man went down to his house justified rather than the other: for every one that exalteth himself shall be abased; and he that humbleth himself shall be exalted.* The publican who humbled himself found the favour before Yahuah that Ben Sira promises the lowly (Ecclesiasticus 3:18)."},
+        {"src_ch": 3, "src_v": 20,
+         "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 4, "tgt_v": 6,
+         "tier": "free",
+         "note": "James 4:6 — *But he giveth more grace. Wherefore he saith, Elohim (God) resisteth the proud, but giveth grace unto the humble.* Ya'aqob, the closest NT sibling of this book, echoes that Yahuah is honoured of the lowly (Ecclesiasticus 3:20)."},
+        {"src_ch": 3, "src_v": 20,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 3, "tgt_v": 34,
+         "tier": "free",
+         "note": "Proverbs 3:34 — *Surely he scorneth the scorners: but he giveth grace unto the lowly.* The Tanakh's wisdom that grace goes to the lowly underwrites Ben Sira's word that the lowly honour the great power of Yahuah (Ecclesiasticus 3:20)."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-3-seek-not-secret-things",
+      "title": "Seek not things too hard — the secret and the revealed",
+      "summary_md": "Humility governs the mind as well as the heart: *Seek not out things that are too hard for you, neither search the things that are above your strength.* (Ecclesiasticus 3:21), but rather — *what is commanded you, think thereupon with reverence, for it is not needful for you to see with your eyes the things that are in secret.* (Ecclesiasticus 3:22). This is Moses' own division of secret and revealed: *The secret things belong unto Yahuah Eloheinu (the LORD our God): but those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law.* (Deuteronomy 29:29) — the revealed thing being the commandment to do. Ben Sira warns *many are deceived by their own vain opinion* (Ecclesiasticus 3:24); the prudent walk modestly, for as Daniel was told, *none of the wicked shall understand; but the wise shall understand* (Daniel 12:10). Micah names the same reverent, modest walk: *to do justly, and to love mercy, and to walk humbly with thy Elohim (God)* (Micah 6:8). It ain't new — wisdom keeps to what is commanded and leaves the secret things with Yahuah.",
+      "anchor_start_v": 21,
+      "anchor_end_v": 25,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 22,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 29, "tgt_v": 29,
+         "tier": "free",
+         "note": "Deuteronomy 29:29 — *The secret things belong unto Yahuah Eloheinu (the LORD our God): but those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law.* Moses' division of secret and revealed is exactly Ben Sira's: think on what is commanded, not on the things in secret (Ecclesiasticus 3:22)."},
+        {"src_ch": 3, "src_v": 22,
+         "tgt_edition": "canon", "tgt_book": "micah", "tgt_ch": 6, "tgt_v": 8,
+         "tier": "free",
+         "note": "Micah 6:8 — *He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* The modest, reverent walk Micah requires is Ben Sira's mind set on what is commanded rather than the hidden (Ecclesiasticus 3:22)."},
+        {"src_ch": 3, "src_v": 24,
+         "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 12, "tgt_v": 10,
+         "tier": "free",
+         "note": "Daniel 12:10 — *Many shall be purified, and made white, and tried; but the wicked shall do wickedly: and none of the wicked shall understand; but the wise shall understand.* As Ben Sira warns that many are deceived by vain opinion, Daniel divides the wise who understand from the wicked who never will (Ecclesiasticus 3:24)."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-3-proud-heart-alms-atones",
+      "title": "The proud heart, and alms that maketh atonement",
+      "summary_md": "Ben Sira ends the chapter on the heart that will not bow: *A stubborn heart shall fare evil at the last; and he that loves danger shall perish in it.* (Ecclesiasticus 3:26), and *In the punishment of the proud there is no remedy; for the plant of wickedness has taken root in him.* (Ecclesiasticus 3:28). The Tanakh says it plainly — *Pride goeth before destruction, and an haughty spirit before a fall.* (Proverbs 16:18) — and Nebuchadnezzar learned it on his knees: *those that walk in pride he is able to abase* (Daniel 4:37). Against the proud heart Ben Sira sets the humble deed: *Water will quench a flaming fire; and alms makes an atonement for sins.* (Ecclesiasticus 3:30). This is Tobit's gospel of mercy — *Give alms of your substance; and when you give alms, let not your eye be envious, neither turn your face from any poor* (Tobit 4:7) — and the Sermon on the Mount, where the Messiah hides the almsdeed from human praise: *That thine alms may be in secret: and thy Father which seeth in secret himself shall reward thee openly.* (Matthew 6:4). It ain't new — the proud heart has no remedy, but the lowly hand that gives finds atonement and a stay.",
+      "anchor_start_v": 26,
+      "anchor_end_v": 30,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 28,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 16, "tgt_v": 18,
+         "tier": "free",
+         "note": "Proverbs 16:18 — *Pride goeth before destruction, and an haughty spirit before a fall.* The wisdom-saying behind Ben Sira's verdict that for the punishment of the proud there is no remedy (Ecclesiasticus 3:28)."},
+        {"src_ch": 3, "src_v": 26,
+         "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 4, "tgt_v": 37,
+         "tier": "free",
+         "note": "Daniel 4:37 — *Now I Nebuchadnezzar praise and extol and honour the King of heaven, all whose works are truth, and his ways judgment: and those that walk in pride he is able to abase.* The king who learned that the stubborn heart fares evil at the last is living proof of Ben Sira's word (Ecclesiasticus 3:26)."},
+        {"src_ch": 3, "src_v": 30,
+         "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 6, "tgt_v": 4,
+         "tier": "free",
+         "note": "Matthew 6:4 — *That thine alms may be in secret: and thy Father which seeth in secret himself shall reward thee openly.* The Sermon takes up Ben Sira's almsdeed that maketh atonement and hides it from man's eye (Ecclesiasticus 3:30)."},
+        {"src_ch": 3, "src_v": 30,
+         "tgt_edition": "apocrypha", "tgt_book": "tobit", "tgt_ch": 4, "tgt_v": 7,
+         "tier": "extras",
+         "note": "Tobit 4:7 — *Give alms of your substance; and when you give alms, let not your eye be envious, neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you.* The sister apocryphal wisdom-book teaches the same: alms quench sin as water quencheth fire (Ecclesiasticus 3:30)."}
+      ]
+    }
+  ]
+}
