@@ -703,3 +703,32 @@ workflow (sirach-pack2 script + per-ch CONTEXT) → render → anchor_check apoc
 verify_fidelity + resolve_check apocrypha ecclesiasticus → fold → audit → _sircheck.py (anchor recon). ⚠️ FIRST
 NEXT SESSION: retry `git push origin HEAD:main` from /tmp/extracanon-xref-wt with keychain unlocked — 39 commits
 (85b660c..da79b16) need to land (origin/main still 47a9e48); prod authoritative meanwhile.
+
+## RECEIPT — Apocrypha Pack 5: Sirach/Ecclesiasticus ch17–24 ✅ LIVE IN PROD
+- Applied 2026-06-11. AUTHORITATIVE (anchored on apocrypha/ecclesiasticus): cumulative **128 threads / 466
+  members**, band 58300–58887, per-ch(17-24) 7/5/5/5/5/4/5/5, 0 orphans. +41/154. Commit `2887d30`. Gates
+  green (anchor 0, resolve 0, FULL-LIBRARY PASS; 0 NEW fidelity flags — the lone flag is the known benign
+  ch5 2Cor6:2). ⚑ reconcile hit a transient DB connection TIMEOUT (3 fan-outs share the DB) — re-apply is
+  idempotent; RETRY the recon (it succeeded on retry).
+- ★★ch24 WISDOM SPEAKS = the Formed LOGOS *and* the Torah ('I came out of the mouth of the Most High...
+  in Jacob be thine inheritance... the book of the covenant, the law which Moses commanded' → John1:1-14
+  tabernacled/Prov8:22-31/Col1:15-17/Baruch3-4/Deut33:4/John6:35 never-hunger). Man-in-the-image + the LAW
+  OF LIFE/everlasting covenant + ISRAEL the portion (17→Gen1:26/Exod19:5/Jer31:33/Deut32:8-9/Rom2:14 +
+  Sir24:23/Baruch4:1 self-links); the MERCY of Yahuah over all flesh + a-thousand-years (18→Ps90:4/2Pet3:8/
+  Heb12:6 + Tobit4:7); the TONGUE/whisperer (19→Prov18:21/Lev19:16/James1:26); seasonable speech (20);
+  flee-sin-as-a-serpent (21→Prov23:32/Matt12:34); the fool & the friend (22); the guarded mouth/swear-not
+  (23→Matt5:33-37/Exod20:7/Matt5:27). ch17 minion defensively avoided Rom 2:15 (stray unbalanced paren in its dump).
+- Push blocked. origin/main 47a9e48; local HEAD `2887d30` (41 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 3 PSEUDEPIGRAPHA + Wisdom of Solomon COMPLETE + Sirach ch1-24 LIVE = 1384
+threads/4979 members. NEXT = Sirach Pack 4 ch25-32 (women/wives/children/discipline; ★ch28 FORGIVE thy
+neighbour → Matt6:14/18:21-35; ch29 alms/lending/suretyship; ch31-32 the rich/wine/feasts → 1Tim6/Prov23).
+Then Pack 5 ch33-40, Pack 6 ch41-48 (★ch44-50 'let us now praise famous men' Enoch→Noah→Abraham→Phinehas→
+David→Simon → Heb 11 + self-link the LIVE 1Enoch/Jubilees/Jasher for each father), Pack 7 ch49-51 FINISHES
+Sirach. After Sirach: Tobit @59000 (Raphael one-of-seven-angels Tob12→Rev8/Luke1:19, Tob13 jeweled New-
+Jerusalem→Rev21/Isa54), Judith, 1-2 Maccabees, Baruch, 1-2 Esdras, Susanna, Bel, Manasseh, Song-of-Three,
+rest-of-Esther; then the smaller restored books. METHOD: workflow (sirach-pack3 script + per-ch CONTEXT) →
+render → anchor_check apocrypha ecclesiasticus + pglast + verify_fidelity + resolve_check apocrypha
+ecclesiasticus → fold → audit → _sircheck.py (RETRY on DB timeout). ⚠️ FIRST NEXT SESSION: retry
+`git push origin HEAD:main` from /tmp/extracanon-xref-wt with keychain unlocked — 41 commits (85b660c..2887d30)
+need to land (origin/main still 47a9e48); prod authoritative meanwhile.
