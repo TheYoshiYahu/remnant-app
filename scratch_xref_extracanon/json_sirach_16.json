@@ -1,0 +1,112 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 16,
+  "session": "session253",
+  "tag": "sir16",
+  "base_band": 58675,
+  "threads": [
+    {
+      "slug": "sirach-16-judgments-of-old",
+      "title": "The judgments of old — giants, Sodom, the wilderness",
+      "summary_md": "Ben Sira rehearses the great judgments to warn the proud: *He was not pacified toward the old giants, who fell away in the strength of their foolishness. Neither spared he the place where Lot sojourned, but abhorred them for their pride. He pitied not the people of perdition, who were taken away in their sins: Nor the six hundred thousand footmen, who were gathered together in the hardness of their hearts.* (Ecclesiasticus 16:7-10). It ain't new — every clause is a Torah memorial. The giants are the antediluvian *mighty men which were of old, men of renown* (Genesis 6:4); the place where Lot sojourned is where *Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire* (Genesis 19:24); the hard-hearted footmen are the carcasses that *fell away* in the wilderness when *the earth opened her mouth, and swallowed them up, and their houses, and all the men that appertained unto Korah* (Numbers 16:32). The whole catalog is Moses' own charge to *Remember the days of old, consider the years of many generations* (Deuteronomy 32:7) — the wisdom teacher simply reads the covenant history back as warning.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 6:4 — *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.* These are the old giants Sirach 16:7 says Yahuah was not pacified toward."},
+        {"src_ch": 16, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 19, "tgt_v": 24, "tier": "free",
+         "note": "Genesis 19:24 — *Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven;* this is the place where Lot sojourned, abhorred for its pride in Sirach 16:8."},
+        {"src_ch": 16, "src_v": 10, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 16, "tgt_v": 32, "tier": "free",
+         "note": "Numbers 16:32 — *And the earth opened her mouth, and swallowed them up, and their houses, and all the men that appertained unto Korah, and all their goods.* The hard-hearted multitude of Sirach 16:10 that perished in the wilderness rebellion."},
+        {"src_ch": 16, "src_v": 7, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 7, "tgt_v": 2, "tier": "extras",
+         "note": "1 Enoch 7:2 — *And they became pregnant, and they bare great giants, whose height was three thousand ells:* the now-live Watchers account naming the very old giants whose foolish strength Sirach 16:7 invokes."},
+        {"src_ch": 16, "src_v": 6, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 32, "tgt_v": 7, "tier": "free",
+         "note": "Deuteronomy 32:7 — *Remember the days of old, consider the years of many generations: ask thy father, and he will shew thee; thy elders, and they will tell thee.* The Mosaic charge to recall the old judgments that Sirach 16:6 puts to use against the ungodly congregation."}
+      ]
+    },
+    {
+      "slug": "sirach-16-old-giants-watchers",
+      "title": "The old giants who fell away — the Watchers self-link",
+      "summary_md": "The hinge of the chapter's first judgment is a single line: *He was not pacified toward the old giants, who fell away in the strength of their foolishness* (Ecclesiasticus 16:7). Ben Sira assumes the reader knows the whole story — and the restored library now holds it intact. The giants are Genesis' *mighty men which were of old, men of renown* (Genesis 6:4), born when *they bare great giants, whose height was three thousand ells* (1 Enoch 7:2), and judged when Yahuah commanded *destroy all the spirits of the reprobate and the children of the Watchers, because they have wronged mankind* (1 Enoch 10:15). The wisdom book, Genesis, and the live Book of the Watchers are one witness: the giants fell away by their own foolish strength, and the Judge was not pacified.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 6:4 — *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.* The canonical root of Sirach 16:7's old giants."},
+        {"src_ch": 16, "src_v": 7, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 7, "tgt_v": 2, "tier": "extras",
+         "note": "1 Enoch 7:2 — *And they became pregnant, and they bare great giants, whose height was three thousand ells:* the live Watchers narrative supplying the begetting of the giants Sirach 16:7 names."},
+        {"src_ch": 16, "src_v": 7, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 10, "tgt_v": 15, "tier": "extras",
+         "note": "1 Enoch 10:15 — *And destroy all the spirits of the reprobate and the children of the Watchers, because they have wronged mankind.* The decree of judgment behind Sirach 16:7's giants who fell away unpacified."}
+      ]
+    },
+    {
+      "slug": "sirach-16-none-can-hide",
+      "title": "Say not I will hide myself — the all-seeing Elohim",
+      "summary_md": "Against the soul that thinks itself lost in the crowd, Ben Sira answers: *Say not you, I will hide myself from Yahuah (God): shall any remember me from above? I shall not be remembered among so many people: for what is my soul among such an infinite number of creatures?* (Ecclesiasticus 16:17). It is David's psalm in prose: *Whither shall I go from thy spirit? or whither shall I flee from thy presence?* (Psalm 139:7), and *If I say, Surely the darkness shall cover me; even the night shall be light about me* (Psalm 139:11). The works of creation themselves leave no man a hiding place, *for the invisible things of him from the creation of the world are clearly seen, being understood by the things that are made, even his eternal power and Godhead; so that they are without excuse* (Romans 1:20). Wisdom of Solomon, the live sibling book, presses the same plea: *who shall withstand your judgment?* (Wisdom of Solomon 12:12).",
+      "anchor_start_v": 17,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 17, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 139, "tgt_v": 7, "tier": "free",
+         "note": "Psalm 139:7 — *Whither shall I go from thy spirit? or whither shall I flee from thy presence?* David's question is exactly the conceit Sirach 16:17 forbids — there is no hiding from Yahuah."},
+        {"src_ch": 16, "src_v": 17, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 139, "tgt_v": 11, "tier": "free",
+         "note": "Psalm 139:11 — *If I say, Surely the darkness shall cover me; even the night shall be light about me.* No darkness conceals the man who imagines himself forgotten in Sirach 16:17."},
+        {"src_ch": 16, "src_v": 17, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 1, "tgt_v": 20, "tier": "free",
+         "note": "Romans 1:20 — *For the invisible things of him from the creation of the world are clearly seen, being understood by the things that are made, even his eternal power and Godhead; so that they are without excuse:* the creation that makes Sirach 16:17's hiding impossible and leaves none excused."},
+        {"src_ch": 16, "src_v": 17, "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 12, "tgt_v": 12, "tier": "extras",
+         "note": "Wisdom of Solomon 12:12 — *For who shall say, What have you done? or who shall withstand your judgment? or who shall accuse you for the nations that perish, whom you made? or who shall come to stand against you, to be revenged for the unrighteous men?* The live wisdom sibling pressing the same inescapable judgment Sirach 16:17 sets before the hidden soul."}
+      ]
+    },
+    {
+      "slug": "sirach-16-pharaoh-hardened-power-known",
+      "title": "Yahuah hardened Pharaoh, that his power be known",
+      "summary_md": "Among the works of judgment Ben Sira numbers the exodus: *Yahuah (God) hardened Pharaoh, that he should not know him, that his powerful works might be known to the world* (Ecclesiasticus 16:15). This is the Torah's own stated purpose — *And in very deed for this cause have I raised thee up, for to shew in thee my power; and that my name may be declared throughout all the earth* (Exodus 9:16) — and Paul cites the very verse: *For the scripture saith unto Pharaoh, Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth* (Romans 9:17), concluding *Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth* (Romans 9:18). The wisdom teacher, Moses, and the apostle agree: the hardening served the revealing of Yahuah's power to the world.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 15, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 9, "tgt_v": 16, "tier": "free",
+         "note": "Exodus 9:16 — *And in very deed for this cause have I raised thee up, for to shew in thee my power; and that my name may be declared throughout all the earth.* The Torah purpose behind Sirach 16:15's hardening of Pharaoh that his works be known."},
+        {"src_ch": 16, "src_v": 15, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 9, "tgt_v": 17, "tier": "free",
+         "note": "Romans 9:17 — *For the scripture saith unto Pharaoh, Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth.* Paul quoting the same purpose Sirach 16:15 reads in the hardening of Pharaoh."},
+        {"src_ch": 16, "src_v": 15, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 9, "tgt_v": 18, "tier": "free",
+         "note": "Romans 9:18 — *Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth.* Paul's conclusion matching Sirach 16:15's claim that Yahuah hardened Pharaoh to make his power known."}
+      ]
+    },
+    {
+      "slug": "sirach-16-every-man-according-to-his-works",
+      "title": "He judges a man according to his works",
+      "summary_md": "Ben Sira sets the just scale at the center of the chapter: *As his mercy is great, so is his correction also: he judges a man according to his works* (Ecclesiasticus 16:12), and *Make way for every work of mercy: for every man shall find according to his works* (Ecclesiasticus 16:14). It ain't new — it is the Torah-ethic the apostles carry whole. *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7); the Son of Adam *shall reward every man according to his works* (Matthew 16:27); and the returning King declares *my reward is with me, to give every man according as his work shall be* (Revelation 22:12). The wisdom of Sirach and the gospel speak one verdict.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 14, "tgt_edition": "canon", "tgt_book": "galatians", "tgt_ch": 6, "tgt_v": 7, "tier": "free",
+         "note": "Galatians 6:7 — *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap.* Paul's sowing-and-reaping matches Sirach 16:14: every man finds according to his works."},
+        {"src_ch": 16, "src_v": 12, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 16, "tgt_v": 27, "tier": "free",
+         "note": "Matthew 16:27 — *For the Son of Adam shall come in the glory of his Father with his angels; and then he shall reward every man according to his works.* Yahusha names the same judgment-by-works that Sirach 16:12 ascribes to Yahuah."},
+        {"src_ch": 16, "src_v": 14, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 22, "tgt_v": 12, "tier": "free",
+         "note": "Revelation 22:12 — *And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be.* The returning King rewards as Sirach 16:14 promises: every man according to his works."}
+      ]
+    },
+    {
+      "slug": "sirach-16-pride-and-the-desolate-kindred",
+      "title": "Abhorred for their pride — the desolate kindred",
+      "summary_md": "The judgment-list turns on a single sin: the cities of the plain were *abhorred... for their pride* (Ecclesiasticus 16:8), even as the wicked household is the one whose *kindred... shall speedily become desolate* (Ecclesiasticus 16:4). Solomon's proverb names the law of it: *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18). Sirach itself elsewhere teaches the same root — *For pride is the beginning of sin, and he that has it shall pour out abomination: and therefore Yahuah (God) brought upon them strange calamities, and overthrew them utterly* (Ecclesiasticus 10:13) — the self-link binding chapter 10's diagnosis to chapter 16's case-law. And the bounds of nations were set from of old, *when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar'el (Israel)* (Deuteronomy 32:8): the proud who break those bounds become desolate.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 8, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 16, "tgt_v": 18, "tier": "free",
+         "note": "Proverbs 16:18 — *Pride goeth before destruction, and an haughty spirit before a fall.* Solomon's law of pride is precisely why Sodom was abhorred for its pride in Sirach 16:8."},
+        {"src_ch": 16, "src_v": 8, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 10, "tgt_v": 13, "tier": "extras",
+         "note": "Ecclesiasticus 10:13 — *For pride is the beginning of sin, and he that has it shall pour out abomination: and therefore Yahuah (God) brought upon them strange calamities, and overthrew them utterly.* Ben Sira's own diagnosis self-linking pride=the-beginning-of-sin to the proud abhorred in Sirach 16:8."},
+        {"src_ch": 16, "src_v": 4, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 32, "tgt_v": 8, "tier": "free",
+         "note": "Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar'el (Israel).* The ancient ordering of peoples whose proud breakers, like the wicked kindred of Sirach 16:4, become desolate."}
+      ]
+    }
+  ]
+}

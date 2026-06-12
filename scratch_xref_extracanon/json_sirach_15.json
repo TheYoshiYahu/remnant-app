@@ -1,0 +1,102 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 15,
+  "session": "session253",
+  "tag": "sir15",
+  "base_band": 58650,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-15-fear-of-yahuah-obtains-wisdom",
+      "title": "The fear of Yahuah, the knowledge of the law, obtains wisdom",
+      "summary_md": "Ben Sira opens the chapter binding wisdom to Torah: *He that fears Yahuah (God) will do good, and he that has the knowledge of the law shall obtain her* (Ecclesiasticus 15:1). Wisdom is not abstract — she comes to the law-keeper as a nursing mother: *And as a mother shall she meet him, and receive him as a wife married of a virgin* (Ecclesiasticus 15:2), feeding him *the bread of understanding* and *the water of wisdom* (Ecclesiasticus 15:3). This is the proverb's own doctrine: *The fear of Yahuah (LORD) is the beginning of knowledge* (Proverbs 1:7) and *The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding* (Proverbs 9:10). Whoso fears Yahuah is *stayed upon her, and shall not be moved* (Ecclesiasticus 15:4) — *Happy is the man that findeth wisdom, and the man that getteth understanding* (Proverbs 3:13). And the door stands open to the one who simply asks: *If any of you lack wisdom, let him ask of Elohim (God), that giveth to all men liberally, and upbraideth not; and it shall be given him* (James 1:5). It ain't new — the same wisdom-out-of-Torah witness.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 1, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 1, "tgt_v": 7, "tier": "free",
+         "note": "Proverbs 1:7 — *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction.* Ben Sira's opening — he that fears Yahuah and knows the law obtains wisdom — is Solomon's own first principle (Sirach 15:1)."},
+        {"src_ch": 15, "src_v": 1, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 9, "tgt_v": 10, "tier": "free",
+         "note": "Proverbs 9:10 — *The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding.* The fear of Yahuah that 'will do good' and obtains wisdom in Sirach 15:1 is the very beginning of wisdom in Proverbs."},
+        {"src_ch": 15, "src_v": 1, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 2, "tgt_v": 5, "tier": "free",
+         "note": "Proverbs 2:5 — *Then shalt thou understand the fear of Yahuah (LORD), and find the knowledge of Elohim (God).* Knowledge of the law in Sirach 15:1 yields the fear of Yahuah and the knowledge of Elohim."},
+        {"src_ch": 15, "src_v": 3, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 3, "tgt_v": 13, "tier": "free",
+         "note": "Proverbs 3:13 — *Happy is the man that findeth wisdom, and the man that getteth understanding.* The man fed *the bread of understanding* in Sirach 15:3 is the happy man who finds wisdom in Proverbs."},
+        {"src_ch": 15, "src_v": 3, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 5, "tier": "free",
+         "note": "James 1:5 — *If any of you lack wisdom, let him ask of Elohim (God), that giveth to all men liberally, and upbraideth not; and it shall be given him.* Sirach's nursing-mother wisdom who feeds the seeker (Sirach 15:3) is James's wisdom freely given to whoever asks — Sirach's closest NT sibling."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-15-wisdom-far-from-pride-and-sinners",
+      "title": "Wisdom is far from pride; praise unseemly in a sinner's mouth",
+      "summary_md": "The flip side of the fear of Yahuah: *But foolish men shall not attain to her, and sinners shall not see her* (Ecclesiasticus 15:7), *For she is far from pride, and men that are liars cannot remember her* (Ecclesiasticus 15:8). Wisdom and pride cannot share a house — and pride is the very root the next chapters call the beginning of sin. The proverb seals it: *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18), and *Only by pride cometh contention: but with the well advised is wisdom* (Proverbs 13:10). Ben Sira adds that worship itself is hollow from an unclean mouth: *Praise is not seemly in the mouth of a sinner, for it was not sent him of Yahuah (God)* (Ecclesiasticus 15:9) — the heart, not the lip, is the offering Yahuah seeks. The Messiah says the same of the Isaiah-quoted hypocrites: *This people draweth nigh unto me with their mouth, and honoureth me with their lips; but their heart is far from me* (Matthew 15:8). It ain't new.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 8, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 16, "tgt_v": 18, "tier": "free",
+         "note": "Proverbs 16:18 — *Pride goeth before destruction, and an haughty spirit before a fall.* Wisdom is *far from pride* in Sirach 15:8 because pride is the very road to ruin Proverbs charts."},
+        {"src_ch": 15, "src_v": 8, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 13, "tgt_v": 10, "tier": "free",
+         "note": "Proverbs 13:10 — *Only by pride cometh contention: but with the well advised is wisdom.* That the proud and the liars cannot remember her (Sirach 15:8) is Solomon's pairing of pride against wisdom."},
+        {"src_ch": 15, "src_v": 9, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 15, "tgt_v": 8, "tier": "free",
+         "note": "Matthew 15:8 — *This people draweth nigh unto me with their mouth, and honoureth me with their lips; but their heart is far from me.* Praise unseemly in a sinner's mouth (Sirach 15:9) is the lip-honour without the heart that the Messiah rebukes."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-15-say-not-yahuah-made-me-fall",
+      "title": "Say not, it is through Yahuah that I fell away",
+      "summary_md": "Here is the heart of the chapter — the ★ no-author-of-evil verse: *Say not you, It is through Yahuah (God) that I fell away: for you oughtest not to do the things that he hates* (Ecclesiasticus 15:11), *Say not you, He has caused me to err: for he has no need of the sinful man* (Ecclesiasticus 15:12). Ben Sira slams the door on every excuse that lays sin at the Creator's feet. James, Sirach's closest NT sibling, repeats it almost verbatim: *Let no man say when he is tempted, I am tempted of Elohim (God): for Elohim (God) cannot be tempted with evil, neither tempteth he any man* (James 1:13) — *But every man is tempted, when he is drawn away of his own lust, and enticed* (James 1:14). Wisdom of Solomon confirms it from the other restored shelf: *For Yahuah (God) made not death: neither has he pleasure in the destruction of the living* (Wisdom of Solomon 1:13). Yahuah *hates all abomination* (Ecclesiasticus 15:13) — he is no tempter, no cause of the fall. It ain't new: the same anti-fatalism, the same clean Elohim.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 11, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 13, "tier": "free",
+         "note": "James 1:13 — *Let no man say when he is tempted, I am tempted of Elohim (God): for Elohim (God) cannot be tempted with evil, neither tempteth he any man.* James's 'let no man say' is Ben Sira's 'Say not... it is through Yahuah that I fell away' (Sirach 15:11) — almost word for word."},
+        {"src_ch": 15, "src_v": 12, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 14, "tier": "free",
+         "note": "James 1:14 — *But every man is tempted, when he is drawn away of his own lust, and enticed.* Against Sirach's 'He has caused me to err' (Sirach 15:12), James names the true cause: a man's own lust, not Elohim."},
+        {"src_ch": 15, "src_v": 11, "tgt_edition": "apocrypha", "tgt_book": "the-wisdom-of-solomon", "tgt_ch": 1, "tgt_v": 13, "tier": "extras",
+         "note": "Wisdom of Solomon 1:13 — *For Yahuah (God) made not death: neither has he pleasure in the destruction of the living.* The companion wisdom book on the same restored shelf seals Sirach 15:11 — Yahuah is no author of the fall or of death."},
+        {"src_ch": 15, "src_v": 13, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 5, "tgt_v": 4, "tier": "free",
+         "note": "Psalms 5:4 — *For thou art not a Elohim (God) that hath pleasure in wickedness: neither shall evil dwell with thee.* Yahuah *hates all abomination* in Sirach 15:13 because no evil can dwell with him."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-15-the-freedom-of-the-will",
+      "title": "He left man in the hand of his counsel — before man is life and death",
+      "summary_md": "The grand free-will declaration: *He himself made man from the beginning, and left him in the hand of his counsel* (Ecclesiasticus 15:14); *He has set fire and water before you: stretch forth your hand to whether you will* (Ecclesiasticus 15:16); *Before man is life and death; and whether him liketh shall be given him* (Ecclesiasticus 15:17). This is Moses' choose-life charge made a doctrine: *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15), and *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). It is Yahuah's word to Cain before the first murder: *if thou doest not well, sin lieth at the door. And unto thee shall be his desire, and thou shalt rule over him* (Genesis 4:7). It is Joshua's altar-call: *choose you this day whom ye will serve... but as for me and my house, we will serve Yahuah (LORD)* (Joshua 24:15). Ben Sira's 'if you will, to keep the commandments' (Sirach 15:15) — the Torah set before the will, life and death in the hand. It ain't new.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 17, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 15, "tier": "free",
+         "note": "Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil.* Sirach's 'Before man is life and death' (Sirach 15:17) is Moses' charge set before Israel verbatim in theme."},
+        {"src_ch": 15, "src_v": 17, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 19, "tier": "free",
+         "note": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* 'whether him liketh shall be given him' (Sirach 15:17) is Moses' 'therefore choose life' — the will set free to choose."},
+        {"src_ch": 15, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 4:7 — *If thou doest well, shalt thou not be accepted? and if thou doest not well, sin lieth at the door. And unto thee shall be his desire, and thou shalt rule over him.* Man left *in the hand of his counsel* (Sirach 15:14) is Cain told he can yet rule over sin — the will is his."},
+        {"src_ch": 15, "src_v": 16, "tgt_edition": "canon", "tgt_book": "joshua", "tgt_ch": 24, "tgt_v": 15, "tier": "free",
+         "note": "Joshua 24:15 — *And if it seem evil unto you to serve Yahuah (LORD), choose you this day whom ye will serve... but as for me and my house, we will serve Yahuah (LORD).* 'stretch forth your hand to whether you will' (Sirach 15:16) is Joshua's 'choose you this day' — fire and water before the will."},
+        {"src_ch": 15, "src_v": 15, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 11, "tgt_v": 26, "tier": "free",
+         "note": "Deuteronomy 11:26 — *Behold, I set before you this day a blessing and a curse.* 'If you will, to keep the commandments' (Sirach 15:15) is the blessing-and-curse Moses sets before the keeper of the law."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-15-all-seeing-elohim-no-licence-to-sin",
+      "title": "The all-seeing Elohim: he commanded no man to do wickedly",
+      "summary_md": "Ben Sira closes by grounding the freedom of the will in the omniscience of the Judge: *For the wisdom of Yahuah (God) is great, and he is mighty in power, and beholds all things* (Ecclesiasticus 15:18); *And his eyes are upon them that fear him, and he knoweth every work of man* (Ecclesiasticus 15:19). The all-seeing Yahuah is David's confession: *O Yahuah (LORD), thou hast searched me, and known me. Thou knowest my downsitting and mine uprising, thou understandest my thought afar off* (Psalms 139:1-2). Because he sees every work, he judges every work: *Who will render to every man according to his deeds* (Romans 2:6). And the final word slams every excuse shut forever: *He has commanded no man to do wickedly, neither has he given any man licence to sin* (Ecclesiasticus 15:20) — there is no decree of Yahuah that authors a single sin. *His eyes are in every place, beholding the evil and the good* (Proverbs 15:3). It ain't new: the seeing Elohim, the righteous render, the clean command.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 18, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 139, "tgt_v": 1, "tier": "free",
+         "note": "Psalms 139:1 — *O Yahuah (LORD), thou hast searched me, and known me.* The Yahuah who *beholds all things* (Sirach 15:18) is David's God who has searched and known him."},
+        {"src_ch": 15, "src_v": 18, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 15, "tgt_v": 3, "tier": "free",
+         "note": "Proverbs 15:3 — *The eyes of Yahuah (LORD) are in every place, beholding the evil and the good.* Sirach's all-beholding Yahuah (Sirach 15:18) is the proverb's eyes-in-every-place."},
+        {"src_ch": 15, "src_v": 19, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 2, "tgt_v": 6, "tier": "free",
+         "note": "Romans 2:6 — *Who will render to every man according to his deeds.* Because Yahuah *knoweth every work of man* (Sirach 15:19), Paul says he renders to every man by those works."},
+        {"src_ch": 15, "src_v": 20, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 15, "tier": "free",
+         "note": "James 1:15 — *Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.* Yahuah gave *no man licence to sin* (Sirach 15:20); sin is born of a man's own conceived lust, not of any divine warrant."}
+      ]
+    }
+  ]
+}

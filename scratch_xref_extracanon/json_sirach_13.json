@@ -1,0 +1,128 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 13,
+  "session": "session253",
+  "tag": "sir13",
+  "base_band": 58600,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-13-touch-pitch",
+      "title": "He that toucheth pitch shall be defiled",
+      "summary_md": "Ben Sira opens chapter 13 with the wisdom-law of contagion: *He that toucheth pitch shall be defiled with it; and he that has fellowship with a proud man shall be like to him.* (Ecclesiasticus 13:1) — the company you keep stamps itself on you. Paul says the same to the Corinthians: *Be not deceived: evil communications corrupt good manners.* (1 Corinthians 15:33) — it ain't new. Proverbs had already laid it down: *He that walketh with wise men shall be wise: but a companion of fools shall be destroyed.* (Proverbs 22:24) is the warning against the angry man's snare, and the psalmist blesses the one who refuses the seat: *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* (Psalms 1:1) Ben Sira's own image returns elsewhere in his book — *The birds will resort to their like; so will truth return to them that practise in her.* (Ecclesiasticus 27:9) — like cleaves to like, for good or ill.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 13, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 15, "tgt_v": 33,
+         "tier": "free",
+         "note": "1 Corinthians 15:33 — *Be not deceived: evil communications corrupt good manners.* Paul's one-line proverb is Ben Sira's pitch by another name — bad fellowship corrupts, so Sirach 13:1 warns it defiles."},
+        {"src_ch": 13, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 22, "tgt_v": 24,
+         "tier": "free",
+         "note": "Proverbs 22:24 — *Make no friendship with an angry man; and with a furious man thou shalt not go:* the Torah-wisdom Ben Sira inherits — avoid the proud and furious man's fellowship lest Sirach 13:1's defilement take hold."},
+        {"src_ch": 13, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 1, "tgt_v": 1,
+         "tier": "free",
+         "note": "Psalms 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* The blessing for the man who keeps clear of the scornful's seat — the positive of Sirach 13:1's warning against fellowship with the proud."},
+        {"src_ch": 13, "src_v": 1,
+         "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 27, "tgt_v": 9,
+         "tier": "extras",
+         "note": "Ecclesiasticus 27:9 — *The birds will resort to their like; so will truth return to them that practise in her.* Ben Sira's own like-to-like principle elsewhere in his book — the same law of company that makes touching pitch (Sirach 13:1) defile."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-13-rich-wrongs-poor",
+      "title": "The rich man hath done wrong, and yet he threateneth",
+      "summary_md": "Ben Sira names the upside-down justice of the powerful: *The rich man has done wrong, and yet he threateneth withal: the poor is wronged, and he must intreat also.* (Ecclesiasticus 13:3) The oppressor wrongs and still threatens; the victim must come begging. The Torah and the prophets thundered this long before. *The rich ruleth over the poor, and the borrower is servant to the lender.* (Proverbs 22:7) James asks the same in the assembly: *But ye have despised the poor. Do not rich men oppress you, and draw you before the judgment seats?* (James 2:6) Amos sees Yahuah's verdict on it: *Forasmuch therefore as your treading is upon the poor, and ye take from him burdens of wheat: ye have built houses of hewn stone, but ye shall not dwell in them...* (Amos 5:11) And Isaiah brings the LORD himself into court: *Yahuah (LORD) will enter into judgment with the ancients of his people, and the princes thereof: for ye have eaten up the vineyard; the spoil of the poor is in your houses.* (Isaiah 3:14) — it ain't new.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 13, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 22, "tgt_v": 7,
+         "tier": "free",
+         "note": "Proverbs 22:7 — *The rich ruleth over the poor, and the borrower is servant to the lender.* The bare wisdom-fact behind Sirach 13:3 — the rich man rules, so he can wrong and still threaten while the poor must entreat."},
+        {"src_ch": 13, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 2, "tgt_v": 6,
+         "tier": "free",
+         "note": "James 2:6 — *But ye have despised the poor. Do not rich men oppress you, and draw you before the judgment seats?* James, the NT's closest sibling to Sirach, indicts the very oppression Sirach 13:3 describes — the rich wrong and drag, the poor must plead."},
+        {"src_ch": 13, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "amos", "tgt_ch": 5, "tgt_v": 11,
+         "tier": "free",
+         "note": "Amos 5:11 — *Forasmuch therefore as your treading is upon the poor, and ye take from him burdens of wheat: ye have built houses of hewn stone, but ye shall not dwell in them; ye have planted pleasant vineyards, but ye shall not drink wine of them.* The prophetic sentence on the rich who tread the poor — the wrong of Sirach 13:3 does not go unjudged."},
+        {"src_ch": 13, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 3, "tgt_v": 14,
+         "tier": "free",
+         "note": "Isaiah 3:14 — *Yahuah (LORD) will enter into judgment with the ancients of his people, and the princes thereof: for ye have eaten up the vineyard; the spoil of the poor is in your houses.* Yahuah himself enters into judgment for the spoil of the poor — the answer to the rich man's wrong in Sirach 13:3."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-13-flattery-snare",
+      "title": "With much communication will he tempt thee",
+      "summary_md": "Ben Sira warns that the great man's friendliness is a baited trap: *Affect not to be made equal to him in talk, and believe not his many words: for with much communication will he tempt you, and smiling upon you will get out your secrets:* (Ecclesiasticus 13:11) — and then *cruelly he will lay up your words, and will not spare to do you hurt, and to put you in prison.* (Ecclesiasticus 13:12) His smile is reconnaissance; his many words are a net. Proverbs gives the rule for such company: *Make no friendship with an angry man; and with a furious man thou shalt not go: Lest thou learn his ways, and get a snare to thy soul.* (Proverbs 22:25) And Habakkuk turns the tables — the day comes when the spoiled raise the proverb against the spoiler: *Shall not all these take up a parable against him, and a taunting proverb against him, and say, Woe to him that increaseth that which is not his! how long?...* (Habakkuk 2:6) The oppressor's words are laid up against the weak; Yahuah lays up a woe against the oppressor.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 13, "src_v": 11,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 22, "tgt_v": 25,
+         "tier": "free",
+         "note": "Proverbs 22:25 — *Lest thou learn his ways, and get a snare to thy soul.* The snare of the powerful man's company in Proverbs is exactly the trap Sirach 13:11 names — his much communication is set to tempt and ensnare."},
+        {"src_ch": 13, "src_v": 12,
+         "tgt_edition": "canon", "tgt_book": "habakkuk", "tgt_ch": 2, "tgt_v": 6,
+         "tier": "free",
+         "note": "Habakkuk 2:6 — *Shall not all these take up a parable against him, and a taunting proverb against him, and say, Woe to him that increaseth that which is not his! how long? and to him that ladeth himself with thick clay!* The oppressor who lays up the poor man's words to hurt him (Sirach 13:12) has a woe laid up against his own increase."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-13-love-yahuah-like-to-like",
+      "title": "Love Yahuah all thy life; like will cleave to like",
+      "summary_md": "Against the seduction of the great, Ben Sira plants the one safe fellowship: *Love Yahuah (God) all your life, and call upon him for your salvation.* (Ecclesiasticus 13:14) — the Shema in wisdom dress: *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* (Deuteronomy 6:5) Then the law of kind: *Every beast loves his like, and every man loves his neighbor.* (Ecclesiasticus 13:15) and *What fellowship has the wolf with the lamb? so the sinner with the godly.* (Ecclesiasticus 13:17) The wolf and the lamb cannot agree — until the mountain is made new. *The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid...* (Isaiah 11:6) and *The wolf and the lamb shall feed together... They shall not hurt nor destroy in all my holy mountain, saith Yahuah (LORD).* (Isaiah 65:25) — the enmity of kinds Ben Sira observes is the very thing the kingdom undoes. It ain't new.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 13, "src_v": 14,
+         "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 6, "tgt_v": 5,
+         "tier": "free",
+         "note": "Deuteronomy 6:5 — *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* The Shema's first commandment stands behind Sirach 13:14 — love Yahuah all thy life, the one bond that never betrays."},
+        {"src_ch": 13, "src_v": 17,
+         "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 11, "tgt_v": 6,
+         "tier": "free",
+         "note": "Isaiah 11:6 — *The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them.* The wolf-and-lamb enmity Sirach 13:17 takes as fixed is exactly what the messianic mountain reverses."},
+        {"src_ch": 13, "src_v": 17,
+         "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 65, "tgt_v": 25,
+         "tier": "free",
+         "note": "Isaiah 65:25 — *The wolf and the lamb shall feed together, and the lion shall eat straw like the bullock: and dust shall be the serpent’s meat. They shall not hurt nor destroy in all my holy mountain, saith Yahuah (LORD).* In the new creation the wolf and lamb of Sirach 13:17 finally have fellowship — Yahuah undoes the law of predatory kind."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-13-rich-poor-favored",
+      "title": "When a rich man is fallen, he hath many helpers",
+      "summary_md": "Ben Sira lays bare the world's partiality: *As the wild ass is the lion’s prey in the wilderness: so the rich eat up the poor.* (Ecclesiasticus 13:19) and *When a rich man is fallen, he has many helpers... the poor man slipped, and yet they rebuked him too; he spoke wisely, and could have no place.* (Ecclesiasticus 13:22) The same wisdom Israel knew: *Wealth maketh many friends; but the poor is separated from his neighbour.* (Proverbs 19:4) and *All the brethren of the poor do hate him: how much more do his friends go far from him?...* (Proverbs 19:7) and *The poor is hated even of his own neighbour: but the rich hath many friends.* (Proverbs 14:20) But Yahuah's court overturns the world's favoritism: *What mean ye that ye beat my people to pieces, and grind the faces of the poor? saith Adonai Yahuah (the Lord GOD) of hosts.* (Isaiah 3:15) — the poor man who could find no place has a Judge who takes up his cause.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 13, "src_v": 22,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 19, "tgt_v": 4,
+         "tier": "free",
+         "note": "Proverbs 19:4 — *Wealth maketh many friends; but the poor is separated from his neighbour.* The proverb behind Sirach 13:22 — the fallen rich man finds many helpers, the poor man is left alone."},
+        {"src_ch": 13, "src_v": 22,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 19, "tgt_v": 7,
+         "tier": "free",
+         "note": "Proverbs 19:7 — *All the brethren of the poor do hate him: how much more do his friends go far from him? he pursueth them with words, yet they are wanting to him.* The poor man rebuked and friendless in Sirach 13:22 is the very figure Proverbs describes — pursued with words, given no place."},
+        {"src_ch": 13, "src_v": 23,
+         "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 14, "tgt_v": 20,
+         "tier": "free",
+         "note": "Proverbs 14:20 — *The poor is hated even of his own neighbour: but the rich hath many friends.* When the rich man speaks all extol it but the poor man is dismissed (Sirach 13:23) — Proverbs already weighed this partiality of wealth."},
+        {"src_ch": 13, "src_v": 19,
+         "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 3, "tgt_v": 15,
+         "tier": "free",
+         "note": "Isaiah 3:15 — *What mean ye that ye beat my people to pieces, and grind the faces of the poor? saith Adonai Yahuah (the Lord GOD) of hosts.* The rich eating up the poor in Sirach 13:19 is what Yahuah of hosts calls grinding the faces of the poor — and he enters judgment for it."}
+      ]
+    }
+  ]
+}

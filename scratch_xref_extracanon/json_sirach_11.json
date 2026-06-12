@@ -1,0 +1,91 @@
+{
+  "edition": "apocrypha",
+  "book": "ecclesiasticus",
+  "chapter": 11,
+  "session": "session253",
+  "tag": "sir11",
+  "base_band": 58550,
+  "threads": [
+    {
+      "slug": "ecclesiasticus-11-judge-not-by-appearance",
+      "title": "Yahuah seeth not as man seeth — judge not by the outward",
+      "summary_md": "Ben Sira opens the wisdom of the lowly head lifted up and warns against the surface of things: *Commend not a man for his beauty; neither abhor a man for his outward appearance.* (Ecclesiasticus 11:2) — *for the works of Yahuah (God) are wonderful, and his works among men are hidden.* (Ecclesiasticus 11:4) This is the very lesson Samuel learns at the anointing of David: *for man looketh on the outward appearance, but Yahuah (LORD) looketh on the heart.* (1 Samuel 16:7) The honour the world reads off clothing and crowns is reversed in the eyes of Yahuah — *Many kings have sat down upon the ground; and one that was never thought of has worn the crown.* (Ecclesiasticus 11:5) James, the closest NT sibling to this wisdom, sets the same paradox: *Let the brother of low degree rejoice in that he is exalted* (James 1:9), *But the rich, in that he is made low.* (James 1:10) It ain't new — the Tanakh, the deuterocanon, and the brother of the Messiah all read the heart, not the raiment.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 2, "tgt_edition": "canon", "tgt_book": "1-samuel", "tgt_ch": 16, "tgt_v": 7, "tier": "free", "note": "1 Samuel 16:7 — *But Yahuah (LORD) said unto Samuel, Look not on his countenance, or on the height of his stature; because I have refused him: for Yahuah (LORD) seeth not as man seeth; for man looketh on the outward appearance, but Yahuah (LORD) looketh on the heart.* The Tanakh's anchor for Sirach 11:2 — abhor not a man by his outward appearance, for Yahuah weighs the heart."},
+        {"src_ch": 11, "src_v": 5, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 9, "tier": "free", "note": "James 1:9 — *Let the brother of low degree rejoice in that he is exalted:* James echoes Sirach 11:5's reversal — the unregarded man wears the crown, the brother of low degree is the one exalted."},
+        {"src_ch": 11, "src_v": 6, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 10, "tier": "free", "note": "James 1:10 — *But the rich, in that he is made low: because as the flower of the grass he shall pass away.* The mighty greatly disgraced and the honourable delivered up (Sirach 11:6) is James's fading flower of the rich."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-11-pride-beginning-of-sin",
+      "title": "Exalt not thyself — pride is the beginning of sin",
+      "summary_md": "*Boast not of your clothing and raiment, and exalt not thyself in the day of honour* (Ecclesiasticus 11:4) — and the partridge in the cage names the danger: *so is the heart of the proud; and like as a spy, watcheth he for your fall.* (Ecclesiasticus 11:30) Ben Sira had already laid the root one chapter back: *For pride is the beginning of sin, and he that has it shall pour out abomination* (Ecclesiasticus 10:13), *The beginning of pride is when one departs from Yahuah (God), and his heart is turned away from his Maker.* (Ecclesiasticus 10:12) The whole library agrees — *Pride goeth before destruction, and an haughty spirit before a fall.* (Proverbs 16:18) Self-link the live apocrypha: Sirach 11 is leaning on Sirach 10's own diagnosis. It ain't new: from Proverbs to ben Sira, the exalted self is the first stumble.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 30,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 4, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 10, "tgt_v": 13, "tier": "extras", "note": "Ecclesiasticus 10:13 — *For pride is the beginning of sin, and he that has it shall pour out abomination: and therefore Yahuah (God) brought upon them strange calamities, and overthrew them utterly.* Ben Sira self-links: the warning not to exalt thyself in the day of honour (11:4) rests on his own root-diagnosis that pride is the beginning of sin."},
+        {"src_ch": 11, "src_v": 30, "tgt_edition": "apocrypha", "tgt_book": "ecclesiasticus", "tgt_ch": 10, "tgt_v": 12, "tier": "extras", "note": "Ecclesiasticus 10:12 — *The beginning of pride is when one departs from Yahuah (God), and his heart is turned away from his Maker.* The proud heart that watcheth for your fall (11:30) is the heart already turned away from its Maker."},
+        {"src_ch": 11, "src_v": 4, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 16, "tgt_v": 18, "tier": "free", "note": "Proverbs 16:18 — *Pride goeth before destruction, and an haughty spirit before a fall.* Proverbs gives the proverb behind Sirach 11:4's warning not to exalt thyself in the day of honour."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-11-answer-not-before-hearing",
+      "title": "Understand first, and then rebuke — answer not before you hear",
+      "summary_md": "Ben Sira's counsel of the tongue: *Blame not before you have examined the truth: understand first, and then rebuke.* (Ecclesiasticus 11:7) — *Answer not before you have heard the cause: neither interrupt men in the midst of their talk.* (Ecclesiasticus 11:8) Proverbs cuts it to the bone: *He that answereth a matter before he heareth it, it is folly and shame unto him.* (Proverbs 18:13) And James, the wisdom-book of the NT, sets the same rule as the mark of a life that hears Elohim: this is the *swift to hear, slow to speak* posture in narrative form. It ain't new — the discipline of hearing before judging runs Proverbs → Sirach → the Epistle of James unbroken.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 8, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 18, "tgt_v": 13, "tier": "free", "note": "Proverbs 18:13 — *He that answereth a matter before he heareth it, it is folly and shame unto him.* The exact proverb Sirach 11:8 expands — answer not before you have heard the cause."},
+        {"src_ch": 11, "src_v": 9, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 12, "tgt_v": 14, "tier": "free", "note": "Luke 12:14 — *And he said unto him, Man, who made me a judge or a divider over you?* Yahusha himself keeps Sirach 11:9's rule — strive not in a matter that concerneth you not, sit not in judgment uninvited."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-11-labour-not-to-be-rich",
+      "title": "Travail not to be rich — the swift do not win the race",
+      "summary_md": "Against the frantic merchant: *There is one that laboureth, and takes pains, and makes haste, and is so much the more behind.* (Ecclesiasticus 11:11) — for *the eye of Yahuah (God) looked upon him for good, and set him up from his low estate.* (Ecclesiasticus 11:12) Proverbs commands it plainly: *Labour not to be rich: cease from thine own wisdom* (Proverbs 23:4), and warns *he that maketh haste to be rich shall not be innocent.* (Proverbs 28:20) Qoheleth saw the same under the sun: *the race is not to the swift, nor the battle to the strong... but time and chance happeneth to them all.* (Ecclesiastes 9:11) And the gathering of the increase is not the strong arm but the building hand of Yahuah: *Except Yahuah (LORD) build the house, they labour in vain that build it.* (Psalm 127:1) It ain't new — the wisdom books refuse the cult of hustle.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 11, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 23, "tgt_v": 4, "tier": "free", "note": "Proverbs 23:4 — *Labour not to be rich: cease from thine own wisdom.* The Tanakh command Sirach 11:11 dramatizes — he that makes haste is the more behind."},
+        {"src_ch": 11, "src_v": 11, "tgt_edition": "canon", "tgt_book": "ecclesiastes", "tgt_ch": 9, "tgt_v": 11, "tier": "free", "note": "Ecclesiastes 9:11 — *I returned, and saw under the sun, that the race is not to the swift, nor the battle to the strong, neither yet bread to the wise, nor yet riches to men of understanding, nor yet favour to men of skill; but time and chance happeneth to them all.* Qoheleth's word for Sirach 11:11 — the one who makes haste is so much the more behind, for the race is not to the swift."},
+        {"src_ch": 11, "src_v": 10, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 28, "tgt_v": 20, "tier": "free", "note": "Proverbs 28:20 — *A faithful man shall abound with blessings: but he that maketh haste to be rich shall not be innocent.* Meddle much and you shall not be innocent (Sirach 11:10) is Proverbs' own verdict on the hasty."},
+        {"src_ch": 11, "src_v": 12, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 127, "tgt_v": 1, "tier": "free", "note": "Psalm 127:1 — *Except Yahuah (LORD) build the house, they labour in vain that build it: except Yahuah (LORD) keep the city, the watchman waketh but in vain.* The eye of Yahuah that sets a man up from low estate (Sirach 11:12) — apart from that building hand all the labour is vain."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-11-promotion-from-yahuah",
+      "title": "Life and death come of Yahuah — promotion is His to give",
+      "summary_md": "The hinge of the chapter: *Prosperity and adversity, life and death, poverty and riches, come of Yahuah (God).* (Ecclesiasticus 11:14) — *for it is an easy thing in the sight of Yahuah (God) on the sudden to make a poor man rich.* (Ecclesiasticus 11:21) The Psalm names the same Judge who alone promotes: *For promotion cometh neither from the east, nor from the west, nor from the south.* (Psalm 75:6), *But Elohim (God) is the judge: he putteth down one, and setteth up another.* (Psalm 75:7) Moses had warned the wealthy heart against forgetting it: *thou shalt remember Yahuah Elohayka (the LORD thy God): for it is he that giveth thee power to get wealth.* (Deuteronomy 8:18) And James, the Sirach of the NT, traces every good thing to the same source: *Every good gift and every perfect gift is from above, and cometh down from the Father of lights.* (James 1:17) It ain't new — the lifting up and casting down is Yahuah's alone.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 22,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 14, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 75, "tgt_v": 7, "tier": "free", "note": "Psalm 75:7 — *But Elohim (God) is the judge: he putteth down one, and setteth up another.* The Psalm's word for Sirach 11:14 — prosperity and adversity, poverty and riches, all come of Yahuah who alone sets up and casts down."},
+        {"src_ch": 11, "src_v": 14, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 75, "tgt_v": 6, "tier": "free", "note": "Psalm 75:6 — *For promotion cometh neither from the east, nor from the west, nor from the south.* Life and death and riches come of Yahuah (Sirach 11:14), not from any quarter of the earth."},
+        {"src_ch": 11, "src_v": 21, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 8, "tgt_v": 18, "tier": "free", "note": "Deuteronomy 8:18 — *But thou shalt remember Yahuah Elohayka (the LORD thy God): for it is he that giveth thee power to get wealth, that he may establish his covenant which he sware unto thy fathers, as it is this day.* Yahuah makes a poor man rich on the sudden (Sirach 11:21) — Moses anchors it: it is He that giveth power to get wealth."},
+        {"src_ch": 11, "src_v": 17, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 1, "tgt_v": 17, "tier": "free", "note": "James 1:17 — *Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning.* The gift and favour of Yahuah (Sirach 11:17) is James's every good and perfect gift from the Father of lights."}
+      ]
+    },
+    {
+      "slug": "ecclesiasticus-11-rich-fool-remember-death",
+      "title": "Say not, I have enough — remember the day of death",
+      "summary_md": "Ben Sira draws the rich man who has stored up and never reckons his end: *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die.* (Ecclesiasticus 11:19) — *Again, say not, I have enough, and possess many things, and what evil shall I have hereafter?* (Ecclesiasticus 11:24) Yahusha tells this exact parable: *Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry* — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee.* (Luke 12:20), *So is he that layeth up treasure for himself, and is not rich toward Elohim (God).* (Luke 12:21) James fires the same warning: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* (James 5:1) For the end is appointed — *it is an easy thing to Yahuah (God) in the day of death to reward a man according to his ways* (Ecclesiasticus 11:26) — *And as it is appointed unto men once to die, but after this the judgment.* (Hebrews 9:27) Judge none blessed before his death. It ain't new — the rich fool of Luke 12 was already standing in Sirach 11.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 28,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 11, "src_v": 19, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 12, "tgt_v": 20, "tier": "free", "note": "Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* Yahusha's rich fool is Sirach 11:19 verbatim — he says he will eat continually of his goods, yet must leave them to others and die."},
+        {"src_ch": 11, "src_v": 24, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 12, "tgt_v": 21, "tier": "free", "note": "Luke 12:21 — *So is he that layeth up treasure for himself, and is not rich toward Elohim (God).* The man who says 'I have enough, and possess many things' (Sirach 11:24) is the one not rich toward Elohim."},
+        {"src_ch": 11, "src_v": 24, "tgt_edition": "canon", "tgt_book": "1-timothy", "tgt_ch": 6, "tgt_v": 9, "tier": "free", "note": "1 Timothy 6:9 — *But they that will be rich fall into temptation and a snare, and into many foolish and hurtful lusts, which drown men in destruction and perdition.* Say not 'I have enough' presuming on the hereafter (Sirach 11:24) — Paul names the snare that swallows those who will be rich."},
+        {"src_ch": 11, "src_v": 26, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 9, "tgt_v": 27, "tier": "free", "note": "Hebrews 9:27 — *And as it is appointed unto men once to die, but after this the judgment:* In the day of death Yahuah rewards a man according to his ways (Sirach 11:26) — appointed once to die, and after, the judgment."},
+        {"src_ch": 11, "src_v": 28, "tgt_edition": "canon", "tgt_book": "ecclesiastes", "tgt_ch": 7, "tgt_v": 1, "tier": "free", "note": "Ecclesiastes 7:1 — *A good name is better than precious ointment; and the day of death than the day of one’s birth.* Judge none blessed before his death (Sirach 11:28) — Qoheleth too weighs a life by its end, not its outward beginning."}
+      ]
+    }
+  ]
+}
