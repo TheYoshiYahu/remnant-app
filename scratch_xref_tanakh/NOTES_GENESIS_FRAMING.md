@@ -244,3 +244,35 @@ Band base 20000, migration `session301_genesis_cross_references.sql`.
   arity 0; resolve 0 unresolved (minions self-avoided Jubilees 28/29 run-on gaps; Jasher 33 actually
   opens at Gen 33:18-20 not the Esau-meeting — that's Jasher 32:52-73; ge33 minion caught & repointed
   pre-author). Exact reconciliation. Both packs PUSHED to origin/main (e8419d6).
+
+## PACK 9 (ch34-37) — applied + reconciled 2026-06-14 (live 163/777 → 186/863, +23 thr/+86 mem)
+- **ch34 Dinah & Shechem** (6 thr/17 mem, band 20825): the defilement; the covenant of circumcision
+  used as a snare; ★★ Simeon & Levi's sword framed as CONDEMNED EXCESS judged by ★ Genesis 49:5-7
+  (*cursed be their anger... I will divide them in Jacob, and scatter them in Yashar'el*); the holy
+  seed not mingled with the nations (Jubilees 30 + 2 Cor 6:14,17 come-out); Levi's zeal reckoned for
+  righteousness (Jubilees 30:18,23) held in explicit tension with the curse. VICTIMS-NOT-ENEMIES
+  (RL#7) handled deliberately — never righteous ethnic violence.
+- **ch35 Bethel revisited** (6 thr/29 mem, band 20850): ★ put away the strange gods / be clean
+  (35:2-4 → 2 Cor 7:1, 1 John 5:21); go up to Bethel, the vow kept, El-beth-el; Jacob→Yashar'el name
+  REAFFIRMED by Elohim (35:10); ★★ I am El Shaddai — *a company of nations* (35:11) = the two-house
+  seed weave (Gen 48:19 Ephraim multitude of nations + Ezek 37:19,22 two sticks + Jer 31:10); Rachel
+  buried on the way to Bethlehem (35:19 → Micah 5:2 / Jer 31:15 / Matt 2:18 weeping Rachel); the
+  twelve sons / sceptre & priesthood (Jubilees 31-32 Isaac blesses Levi & Judah). NOTE: the
+  company-of-nations thread carries NO NT member by design (held in prose + Tanakh prophets).
+- **ch36 Esau/Edom dukes** (3 thr/11 mem, band 20875): LEAN by design (genealogy). ★ Esau IS Edom
+  → Mal 1:2-3 / Rom 9:13 *Jacob have I loved, but Esau have I hated* (covenant-ELECTION, RL#7 not
+  ethnic spite) + Obadiah 1:8,18 + Num 24:18; Amalek the first of the nations out of Esau's seed
+  (Num 24:20); kings reigned in Edom before any king over Yashar'el (36:31 → Gen 17:6/35:11 deferred
+  crown + Jubilees 38:14). Bare genealogy v.2-7,10-30,32-43 honestly recorded "none warranted".
+- **★ ch37 THE JOSEPH CYCLE BEGINS** (8 thr/29 mem, band 20900): Joseph as the suffering-then-exalted
+  Messianic TYPE (RL#4, type never flattening). The beloved son / coat / brethren who received him
+  not (John 1:11); the dreams — sheaves & stars shall bow (Phil 2:9-10 every knee + Rev 12:1 +
+  Gen 42:6 fulfilled); *behold this dreamer cometh, let us slay him* → the husbandmen Matt 21:38;
+  ★ sold for twenty pieces of silver (Matt 26:15 + Zech 11:12-13 the betrayal-for-silver); stripped/
+  cast into the pit/down into sheol; ★★ Acts 7:9-10 (Stephen) *the patriarchs, moved with envy, sold
+  Joseph into Egypt: but Elohim was with him* paired with Gen 50:20 — its own canon-only thread; the
+  two-house weave — the stick of Joseph / birthright / northern house (Ezek 37:16,19 + 1 Chron 5:1-2
+  + Rev 7:8); the kid of the goats → Day of Atonement (Lev 16:5, 23:27). Judah's hand in the sale
+  named as lateral to the betrayer without collapsing the figures.
+- Resolve-gate parser undercounts ge37 by 6 (parens inside note strings) — NOT a data defect; all 29
+  target refs verified resolved via direct DB check; arity 0 bad, fidelity 80/80, pglast 1057 stmts.
