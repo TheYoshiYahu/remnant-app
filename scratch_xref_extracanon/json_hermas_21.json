@@ -1,0 +1,90 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "hermas",
+  "chapter": 21,
+  "session": "session253",
+  "tag": "herm21",
+  "base_band": 72000,
+  "threads": [
+    {
+      "slug": "hermas-21-summer-reveals-the-righteous",
+      "title": "The summer to come — the righteous made manifest and shining forth",
+      "summary_md": "Where the third Similitude showed all trees alike withered in winter, the fourth turns to summer: *He showed me many trees again, some of them sprouting, and others withered... ‘These trees,’ saith he, ‘that are sprouting are the righteous, who shall dwell in the world to come; for the world to come is summer to the righteous, but winter to the sinners. When then the mercy of Yahuah (Lord) shall shine forth, then they that serve Elohim (God) shall be made manifest; yea, and all men shall be made manifest. For as in summer the fruits of each several tree are made manifest, and are recognised of what sort they are, so also the fruits of the righteous shall be manifest...’* (Hermas 21:1) It ain't new — the Master closed His own parable of wheat and tares with the very summer Hermas saw: *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* (Matthew 13:43) And the day that sorts the sprouting from the withered is Malachi's day of discerning: *Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not.* (Malachi 3:18) The age to come does not change who a man is; it reveals it.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 21,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 13,
+          "tgt_v": 43,
+          "tier": "free",
+          "note": "Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Hermas's summer that makes the fruits of the righteous manifest is the Master's own harvest, where the righteous shine forth as the sun (Hermas 21:1)."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 3,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Malachi 3:18 — *Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not.* The summer that reveals who serves Elohim and who does not is Malachi's promised day of discerning — it ain't new (Hermas 21:1)."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-21-tree-by-water-versus-the-chaff",
+      "title": "The sprouting tree and the withered — the green by the water and the chaff",
+      "summary_md": "The Shepherd parts the orchard in two: the sprouting *are the righteous, who shall dwell in the world to come*, while *the Gentiles and the sinners, just as thou sawest the trees which were withered, even such shall they be found, withered and unfruitful in that world, and shall be burnt up as fuel... For the sinners shall be burned, because they sinned and repented not.* (Hermas 21:1) It ain't new — the very first Psalm drew the same two trees. The righteous man: *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.* (Psalm 1:3) And the wicked, the withered and rootless: *The ungodly are not so: but are like the chaff which the wind driveth away.* (Psalm 1:4) The fruit-bearing tree by the water and the chaff that is burned — the Shepherd is reading the orchard the Psalmist planted.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 21,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 1,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Psalm 1:3 — *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.* Hermas's sprouting, fruit-bearing trees of the righteous are the Psalmist's tree by the rivers of water whose leaf does not wither (Hermas 21:1)."
+        },
+        {
+          "src_ch": 21,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 1,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Psalm 1:4 — *The ungodly are not so: but are like the chaff which the wind driveth away.* The withered, unfruitful trees burnt up as fuel are the Psalmist's chaff that the wind drives away — the same two ways, the same two ends (Hermas 21:1)."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-21-bear-fruit-burned-as-fuel",
+      "title": "Bear fruit for that summer — the fruitless burned, the wheat gathered in",
+      "summary_md": "The Shepherd turns the vision into a charge: the withered *shall be burnt up as fuel... For the sinners shall be burned, because they sinned and repented not... Do thou therefore bear fruit, that in that summer thy fruit may be known... If therefore thou doest these things, thou shalt be able to bear fruit unto the world to come.* (Hermas 21:1) It ain't new — the Master's harvest sorts the field exactly so: *Let both grow together until the harvest: and in the time of harvest I will say to the reapers, Gather ye together first the tares, and bind them in bundles to burn them: but gather the wheat into my barn.* (Matthew 13:30) The fruitless are bound and burned; the fruitful are gathered in. The whole call of the Shepherd of repentance is that you be found wheat in that summer, bearing fruit unto the world to come.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 21,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 13,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Matthew 13:30 — *Let both grow together until the harvest: and in the time of harvest I will say to the reapers, Gather ye together first the tares, and bind them in bundles to burn them: but gather the wheat into my barn.* The withered burnt as fuel and the fruitful gathered unto the world to come are the Master's tares bound to burn and wheat gathered into the barn (Hermas 21:1)."
+        }
+      ]
+    }
+  ]
+}

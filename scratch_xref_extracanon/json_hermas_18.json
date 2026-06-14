@@ -1,0 +1,150 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "hermas",
+  "chapter": 18,
+  "session": "session253",
+  "tag": "herm18",
+  "base_band": 71925,
+  "threads": [
+    {
+      "slug": "hermas-18-foreign-land-far-city",
+      "title": "Ye dwell in a foreign land — your city is far off",
+      "summary_md": "The Shepherd lays bare where the faithful truly live: *‘Ye know that ye, who are the servants of Elohim (God), are dwelling in a foreign land; for your city is far from this city. If then ye know your city, in which ye shall dwell, why do ye here prepare fields and expensive displays and buildings and dwelling-chambers which are superfluous?’* (Hermas 18:1) It ain't new — this is the very confession of the patriarchs. They died still looking for home: *These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13), for *they desire a better country, that is, an heavenly: wherefore Elohim (God) is not ashamed to be called their Elohim (God): for he hath prepared for them a city* (Hebrews 11:16). Kepha names the same sojourning estate: *Dearly beloved, I beseech you as strangers and pilgrims, abstain from fleshly lusts, which war against the soul* (1 Peter 2:11). And Sha'ul fixes the citizenship beyond this world: *For our conversation is in heaven; from whence also we look for the Saviour, the Lord Yahusha HaMashiach (Lord Jesus Christ)* (Philippians 3:20). The pilgrim-people did not begin with Hermas; it is Abraham's road, the whole counsel of the faithful.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 18,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Hebrews 11:13 — *These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth.* The Shepherd's word that the servants of Elohim dwell in a foreign land is the patriarchs' own confession — strangers and pilgrims, their city far off (Hermas 18:1)."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Hebrews 11:16 — *But now they desire a better country, that is, an heavenly: wherefore Elohim (God) is not ashamed to be called their Elohim (God): for he hath prepared for them a city.* The far city in which Hermas's people shall yet dwell is the heavenly country the faithful sought — the city Elohim Himself has prepared (Hermas 18:1)."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 2,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "1 Peter 2:11 — *Dearly beloved, I beseech you as strangers and pilgrims, abstain from fleshly lusts, which war against the soul.* Kepha names the servants of Elohim by the same title Hermas gives them — strangers and pilgrims dwelling in a land not their home (Hermas 18:1)."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "philippians",
+          "tgt_ch": 3,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Philippians 3:20 — *For our conversation is in heaven; from whence also we look for the Saviour, the Lord Yahusha HaMashiach (Lord Jesus Christ).* The city far from this city, to which the servants of Elohim belong, is the heavenly citizenship Sha'ul confesses — it ain't new (Hermas 18:1)."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-18-buy-not-estates-lay-up-treasure",
+      "title": "Prepare nothing here but a competency — lay up treasure that travels home",
+      "summary_md": "Because the city is far, the Shepherd forbids the hoarding of estates in a land that is not ours: *‘as dwelling in a strange land prepare nothing more for thyself but a competency which is sufficient for thee’* (Hermas 18:1). It ain't new — the Master in the mountain set the same choice: *Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal: But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt, and where thieves do not break through nor steal* (Matthew 6:19-20). Sha'ul charges the rich to send their wealth on ahead by good works: *That they do good, that they be rich in good works, ready to distribute, willing to communicate; Laying up in store for themselves a good foundation against the time to come, that they may lay hold on eternal life* (1 Timothy 6:18-19). And contentment, not accumulation, is the pilgrim's portion: *And having food and raiment let us be therewith content* (1 Timothy 6:8). The competency Hermas commands is the old wisdom — store the wealth where it travels home.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 18,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 6,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Matthew 6:19 — *Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal:* The Shepherd's ban on preparing superfluous estates in this foreign land is the Master's own warning against hoarding earthly treasure (Hermas 18:1)."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 6,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Matthew 6:20 — *But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt, and where thieves do not break through nor steal:* The wealth Hermas bids us send to our own far city is the treasure in heaven the Master tells us to lay up (Hermas 18:1)."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-timothy",
+          "tgt_ch": 6,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "1 Timothy 6:8 — *And having food and raiment let us be therewith content.* The 'competency sufficient for thee' that Hermas commands the sojourner is Sha'ul's own contentment with food and raiment, not the heaping up of estates (Hermas 18:1)."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-timothy",
+          "tgt_ch": 6,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "1 Timothy 6:19 — *Laying up in store for themselves a good foundation against the time to come, that they may lay hold on eternal life.* The riches Hermas says we shall find waiting in our own city are the good foundation Sha'ul says the generous lay up against the time to come (Hermas 18:1)."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-18-buy-souls-visit-widows-orphans",
+      "title": "Instead of fields buy souls — visit the widow and the orphan",
+      "summary_md": "Then comes the wealth that does travel home — not stone and field but mercy: *‘instead of fields buy ye souls that are in trouble, as each is able, and visit widows and orphans, and neglect them not’* (Hermas 18:1). It ain't new — this is the religion the prophets and apostles named pure: *That they do good, that they be rich in good works, ready to distribute, willing to communicate* (1 Timothy 6:18), and the true and undefiled service is *To visit the fatherless and widows in their affliction* (James 1:27). The riches lent to the poor are lent to Yahuah Himself: *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again* (Proverbs 19:17). The good works Hermas commands are the grace-given purpose of every servant — *for to this end the Master enriched you, that ye might perform these ministrations for Him* — the same standing demand of mercy that runs through the whole counsel.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 18,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-timothy",
+          "tgt_ch": 6,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "1 Timothy 6:18 — *That they do good, that they be rich in good works, ready to distribute, willing to communicate;* The Shepherd's charge to spend riches on souls in trouble rather than fields is Sha'ul's call to the rich to be rich in good works, ready to distribute (Hermas 18:1)."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 1,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "James 1:27 — *Pure religion and undefiled before Elohim (God) and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world.* Hermas's command to visit widows and orphans and neglect them not is the very religion Ya'aqob (James) calls pure and undefiled (Hermas 18:1)."
+        },
+        {
+          "src_ch": 18,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 19,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Proverbs 19:17 — *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again.* The souls in trouble whom Hermas bids us buy with our riches are the poor whom Mishle (Proverbs) says we lend to Yahuah, repaid in our own city (Hermas 18:1)."
+        }
+      ]
+    }
+  ]
+}

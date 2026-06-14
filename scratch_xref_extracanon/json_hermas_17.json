@@ -1,0 +1,180 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "hermas",
+  "chapter": 17,
+  "session": "session253",
+  "tag": "herm17",
+  "base_band": 71900,
+  "threads": [
+    {
+      "slug": "hermas-17-cast-out-evil-desire-put-on-good",
+      "title": "Strip off the evil desire, clothe thyself in the good — flesh against Spirit",
+      "summary_md": "The Shepherd opens the twelfth and last commandment with a stripping and a clothing: *He saith to me; ‘Remove from thyself all evil desire, and clothe thyself in the desire which is good and holy; for clothed with this desire thou shalt hate the evil desire, and shalt bridle and direct it as thou wilt.’* (Hermas 17:1) And the warning that the two desires war: *But do thou clothe thyself in the desire of righteousness... For this evil desire is a daughter of the devil.* (Hermas 17:2) It ain't new — Sha'ul (Paul) names the very same two-fold pull and the very same remedy: *This I say then, Walk in the Spirit, and ye shall not fulfil the lust of the flesh.* (Galatians 5:16) — *For the flesh lusteth against the Spirit, and the Spirit against the flesh: and these are contrary the one to the other: so that ye cannot do the things that ye would.* (Galatians 5:17) The clothing language is his too: *But put ye on the Lord Yahusha HaMashiach (Lord Jesus Christ), and make not provision for the flesh, to fulfil the lusts thereof.* (Romans 13:14) The Shepherd's bridling of the wild desire is the apostle's *Let not sin therefore reign in your mortal body, that ye should obey it in the lusts thereof.* (Romans 6:12) Two desires, one Spirit-clothed walk — the old battle, not a new one.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 17,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 5,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Galatians 5:16 — *This I say then, Walk in the Spirit, and ye shall not fulfil the lust of the flesh.* The Shepherd's charge to put off the evil desire and put on the good is Sha'ul's (Paul's) walk in the Spirit that does not fulfil the flesh."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 5,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Galatians 5:17 — *For the flesh lusteth against the Spirit, and the Spirit against the flesh: and these are contrary the one to the other: so that ye cannot do the things that ye would.* The two warring desires of Hermas — the wild evil desire against the good and holy — are Sha'ul's flesh-against-Spirit, contrary one to the other."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 13,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Romans 13:14 — *But put ye on the Lord Yahusha HaMashiach (Lord Jesus Christ), and make not provision for the flesh, to fulfil the lusts thereof.* The Shepherd's 'clothe thyself in the desire of righteousness' is the apostle's putting-on of the Master and making no provision for the flesh."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 6,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Romans 6:12 — *Let not sin therefore reign in your mortal body, that ye should obey it in the lusts thereof.* Bridling and directing the wild desire so it no longer masters the man is Sha'ul's word that sin must not reign in the body unto its lusts."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-17-armed-with-the-fear-resist-and-it-flees",
+      "title": "Armed with the fear of Yahuah, resist — and the evil desire flees",
+      "summary_md": "The Shepherd hands Hermas his armour: *But do thou clothe thyself in the desire of righteousness, and, having armed thyself with the fear of Yahuah (Lord), resist them. For the fear of Elohim (God) dwelleth in the good desire. If the evil desire shall see thee armed with the fear of Elohim (God) and resisting itself, it shall flee far from thee, and shall no more be seen of thee, being in fear of thine arms.* (Hermas 17:2) It ain't new — this is Ya'aqov's (James's) plain promise word for word in substance: *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you.* (James 4:7) The desire is *a daughter of the devil,* so to resist her is to resist him — and Kepha (Peter) names the same adversary and the same posture: *Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour:* (1 Peter 5:8) — *Whom resist stedfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.* (1 Peter 5:9) Resist, and the enemy flees: the apostles taught nothing the Shepherd does not also lay down.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 17,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 4,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "James 4:7 — *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you.* The Shepherd's word that the evil desire, seen the man armed and resisting, shall flee far from him is Ya'aqov's (James's) own promise: resist the devil and he will flee."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "1 Peter 5:8 — *Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour:* The evil desire that is 'a daughter of the devil' is the very adversary Kepha (Peter) bids us watch — sober and vigilant against the roaring lion."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 5,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "1 Peter 5:9 — *Whom resist stedfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.* The Shepherd's armed resisting that drives the desire away is Kepha's resist-stedfast-in-the-faith against the same adversary."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-17-serve-the-good-desire-walk-in-the-commandments",
+      "title": "Practise righteousness, truth, the fear of Yahuah — the commandments are not too hard",
+      "summary_md": "Asked how to serve the good desire, the Shepherd answers with a life, not a slogan: *‘practise righteousness and virtue, truth and the fear of Yahuah (Lord), faith and gentleness, and as many good deeds as are like these.’* (Hermas 17:3) And when Hermas frets that the commandments are *very hard,* the Shepherd corrects him — the man who sets his heart can keep them: *Aye,’ saith he, ‘the man that hath Yahuah (Lord) in his heart can master [all things and] all these commandments... ye shall perceive that nothing is easier than these commandments, nor sweeter, nor more gentle.* (Hermas 17:4) It ain't new — and the commandments are never named the curse. Moses said the same of the very Torah: *For this commandment which I command thee this day, it is not hidden from thee, neither is it far off.* (Deuteronomy 30:11) — *But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it.* (Deuteronomy 30:14) And the armour the Shepherd hands is Sha'ul's (Paul's): *Put on the whole armour of Elohim (God), that ye may be able to stand against the wiles of the devil.* (Ephesians 6:11) The commandments stand, near and keepable to the heart that holds Yahuah; the Shepherd and Moses speak with one voice.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 17,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Deuteronomy 30:11 — *For this commandment which I command thee this day, it is not hidden from thee, neither is it far off.* The Shepherd's correction — that the commandments are not too hard for the man who sets his heart — is Moses' own word that the commandment is not far off."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Deuteronomy 30:14 — *But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it.* The man who has Yahuah in his heart finds nothing easier than these commandments — Moses said the word is very nigh, in the heart, that thou mayest do it. The commandments are never the curse."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 6,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Ephesians 6:11 — *Put on the whole armour of Elohim (God), that ye may be able to stand against the wiles of the devil.* The armour of the fear of Yahuah the Shepherd bids the servant wear is Sha'ul's (Paul's) whole armour of Elohim, worn to stand against the wiles of the devil."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-17-fear-not-the-devil-resist-and-he-flees",
+      "title": "The angel of repentance: fear not the devil — resist him and he flees",
+      "summary_md": "Here is the heart of the chapter — the angel set over repentance disarms the enemy's terror: *‘fear not the devil, for there is no power in him against you. For I will be with you, I, the angel of repentance, who have the mastery over him. The devil hath fear alone, but his fear hath no force. Fear him not therefore; and he will flee from you.’* (Hermas 17:4) And again: *‘If then ye resist him, he will be vanquished, and will flee from you disgraced.’* (Hermas 17:5) And the closing comfort, that the threatening is empty: *But of the threatening of the devil fear not at all; for he is unstrung, like the sinews of a dead man.* (Hermas 17:6) It ain't new — this is Ya'aqov's (James's) very promise: *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you.* (James 4:7) Kepha (Peter) gives the steadfast posture: *Whom resist stedfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.* (1 Peter 5:9) And the armour that makes the stand sure: *Put on the whole armour of Elohim (God), that ye may be able to stand against the wiles of the devil.* (Ephesians 6:11) The angel of repentance promises no new gospel — only the apostles' own: stand, resist, and the toothless adversary flees.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 17,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 4,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "James 4:7 — *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you.* The angel of repentance's 'fear not the devil... and he will flee from you' is Ya'aqov's (James's) word verbatim in substance — resist the devil and he will flee."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 5,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "1 Peter 5:9 — *Whom resist stedfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.* 'If then ye resist him, he will be vanquished' is Kepha's (Peter's) resist-stedfast-in-the-faith against the same adversary."
+        },
+        {
+          "src_ch": 17,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 6,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Ephesians 6:11 — *Put on the whole armour of Elohim (God), that ye may be able to stand against the wiles of the devil.* The threatening of the devil is empty 'like the sinews of a dead man' because the servant stands in Sha'ul's (Paul's) whole armour of Elohim against his wiles."
+        }
+      ]
+    }
+  ]
+}
