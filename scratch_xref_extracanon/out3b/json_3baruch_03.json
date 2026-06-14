@@ -1,0 +1,36 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 3,
+  "session": "session410",
+  "tag": "3b03",
+  "base_band": 81050,
+  "threads": [
+    {
+      "slug": "3-baruch-3-brick-toil-of-babel",
+      "title": "The brick-toil of Babel — bondage in the making of bricks",
+      "summary_md": "In the second heaven are those who drove the multitudes to the tower's labor: *These are they who gave counsel to build the tower... they whom thou seest drove forth multitudes of both men and women, to make bricks; among whom, a woman making bricks was not allowed to be released in the hour of child-birth, but brought forth while she was making bricks* (3 Baruch 3:5). The brick is the mark of Babel: *And they said one to another, Go to, let us make brick, and burn them throughly. And they had brick for stone* (Genesis 11:3). And the cruelty of forced brick-labor is the very bondage Egypt would later lay on Israel: *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field... was with rigour* (Exodus 1:14). Jubilees records the same brick-making in Shinar: *And they began to build, and in the fourth week they made brick with fire, and the bricks served them for stone* (Jubilees 10:20). The tyrant's brickyard, from Babel to Egypt, is one old story of man oppressing man. It ain't new.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 11, "tgt_v": 3, "tier": "free", "note": "Genesis 11:3 — *And they said one to another, Go to, let us make brick, and burn them throughly. And they had brick for stone, and slime had they for morter.* The brick-making the counsellors of 3 Baruch 3:5 force on the multitudes is the Babel brick of Genesis 11."},
+        {"src_ch": 3, "src_v": 5, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 14, "tier": "free", "note": "Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* The cruel brick-toil that would not release a woman even in childbirth (3 Baruch 3:5) is the same bondage in morter and brick Egypt laid on Israel with rigour."},
+        {"src_ch": 3, "src_v": 5, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 10, "tgt_v": 20, "tier": "extras", "note": "Jubilees 10:20 — *And they began to build, and in the fourth week they made brick with fire, and the bricks served them for stone, and the clay with which they cemented them together was asphalt which comes out of the sea, and out of the fountains of water in the land of Shinar.* Jubilees records the same brick-making in Shinar that 3 Baruch 3:5 says was driven on the multitudes by force."}
+      ]
+    },
+    {
+      "slug": "3-baruch-3-confused-speech-pierce-heaven",
+      "title": "Confounded speech — they sought to pierce the heaven",
+      "summary_md": "The builders' presumption reaches its height: *they took a gimlet, and sought to pierce the heaven, saying, Let us see whether the heaven is made of clay, or of brass, or of iron* (3 Baruch 3:7); and the judgment falls: *When Elohim (God) saw this He did not permit them, but smote them with blindness and confusion of speech* (3 Baruch 3:8). This is Genesis exactly — the LORD coming down to the tower that reached for heaven: *And Yahuah (LORD) said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do* (Genesis 11:6), *Go to, let us go down, and there confound their language, that they may not understand one another's speech* (Genesis 11:7). Jubilees names the same confounding: *And He confounded their language, and they no longer understood one another's speech, and they ceased then to build the city and the tower* (Jubilees 10:24). The presumption that would pierce heaven ends in confusion of tongues. It ain't new.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 3, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 11, "tgt_v": 6, "tier": "free", "note": "Genesis 11:6 — *And Yahuah (LORD) said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do.* The presumption Elohim halts in 3 Baruch 3:8 is the one Yahuah marks at Babel, where the people imagined nothing would be restrained from them."},
+        {"src_ch": 3, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 11, "tgt_v": 7, "tier": "free", "note": "Genesis 11:7 — *Go to, let us go down, and there confound their language, that they may not understand one another's speech.* The \"confusion of speech\" with which Elohim smote the builders in 3 Baruch 3:8 is the confounding of language Yahuah pronounces in Genesis 11:7."},
+        {"src_ch": 3, "src_v": 8, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 10, "tgt_v": 24, "tier": "extras", "note": "Jubilees 10:24 — *And He confounded their language, and they no longer understood one another's speech, and they ceased then to build the city and the tower.* Jubilees records the same confounding of speech and ceasing of the work that 3 Baruch 3:8 describes."}
+      ]
+    }
+  ]
+}

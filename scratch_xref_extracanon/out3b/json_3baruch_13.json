@@ -1,0 +1,90 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 13,
+  "session": "session410",
+  "tag": "3b13",
+  "base_band": 81300,
+  "threads": [
+    {
+      "slug": "3-baruch-13-the-works-of-wicked-men",
+      "title": "Where murder and fornication are, there they are in the midst",
+      "summary_md": "*Where there is murder, there also are they in the midst, and where are fornications, adulteries, thefts, slanders, perjuries, jealousies, drunkenness, strife, envy... idolatry, divination.* It ain't new. The angels who attend wicked men recite the catalogue of their deeds, and it is, almost word for word, the works of the flesh Paul lists — adultery, fornication, idolatry, hatred, wrath, strife, envyings, murders, drunkenness. The apocalypse only confirms the verdict the apostle already gave: they which do such things shall not inherit the kingdom of God.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 13,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 5,
+          "tgt_v": 19,
+          "tier": "extras",
+          "note": "Galatians 5:19 — *Now the works of the flesh are manifest, which are these; Adultery, fornication, uncleanness, lasciviousness.* The deeds the angels recoil from — fornications, adulteries — head Paul's catalogue of the works of the flesh."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 5,
+          "tgt_v": 20,
+          "tier": "extras",
+          "note": "Galatians 5:20 — *Idolatry, witchcraft, hatred, variance, emulations, wrath, strife, seditions, heresies.* The idolatry, divination, jealousies, and strife named in the apocalypse stand in the very list Paul gives of the flesh's works."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 5,
+          "tgt_v": 21,
+          "tier": "extras",
+          "note": "Galatians 5:21 — *Envyings, murders, drunkenness, revellings, and such like... they which do such things shall not inherit the kingdom of Elohim.* The envy, murder, and drunkenness the angels lament are the very deeds Paul says bar a man from the kingdom."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-13-angels-over-evil-men",
+      "title": "The angels grieved to be sent to evil men",
+      "summary_md": "*We were delivered to evil men, and we wish to depart from them.* It ain't new. The weeping angels beg Michael to release them from the wicked, yet are told they cannot, lest the enemy prevail to the end. Scripture knows this guarding ministry — the angel of the LORD encamps round about them that fear him — and Jude remembers the angels who did leave their first estate and were chained for it. The angels who long to depart yet are kept at their post show the same restraint Jude saw in Michael himself: not their own will, but the Lord's.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 13,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 34,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "Psalms 34:7 — *The angel of Yahuah encampeth round about them that fear him, and delivereth them.* The angels stationed over men, kept at their post even among the wicked, are of the same guarding host the psalm sets round about those who fear God."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* The angels who long to depart from evil men but are forbidden stand in contrast to those Jude names — the ones who abandoned their charge and were chained for it."
+        },
+        {
+          "src_ch": 13,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "Jude 1:9 — *Yet Michael the archangel... durst not bring against him a railing accusation, but said, Yahuah rebuke thee.* Michael bidding the angels wait until he learns from the Lord shows the same deference Jude records — Michael acting not on his own authority but the Lord's."
+        }
+      ]
+    }
+  ]
+}

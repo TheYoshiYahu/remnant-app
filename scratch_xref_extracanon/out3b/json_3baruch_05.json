@@ -1,0 +1,40 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 5,
+  "session": "session410",
+  "tag": "3b05",
+  "base_band": 81100,
+  "threads": [
+    {
+      "slug": "3-baruch-5-his-belly-is-hades",
+      "title": "The dragon whose belly is Hades",
+      "summary_md": "*And the angel said, His belly is Hades.* It ain't new. Baruch asks how great is the belly of the devouring dragon, and the answer names it Hades — the grave that is never satisfied. The prophets already measure this same insatiable maw: *Therefore hell hath enlarged herself, and opened her mouth without measure* (Isaiah 5:14); *Hell and destruction are never full; so the eyes of man are never satisfied* (Proverbs 27:20). The apocalypse's monstrous belly is the picture; the prophets give the name and the meaning.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Isaiah 5:14 — *Therefore hell hath enlarged herself, and opened her mouth without measure: and their glory, and their multitude, and their pomp, and he that rejoiceth, shall descend into it.* The dragon's belly that is Hades is the same grave Isaiah sees opening its mouth without measure."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 27,
+          "tgt_v": 20,
+          "tier": "extras",
+          "note": "Proverbs 27:20 — *Hell and destruction are never full; so the eyes of man are never satisfied.* The vast belly that no plummet can sound is the never-full grave the wise already knew."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 17,
+  "session": "session410",
+  "tag": "3b17",
+  "base_band": 81400,
+  "threads": [
+    {
+      "slug": "3-baruch-17-glorify-god-now-and-ever",
+      "title": "Glorify God, who counted me worthy — the closing doxology",
+      "summary_md": "Restored to earth, Baruch closes as every faithful witness closes: *I gave glory to Elohim (God), who counted me worthy of such honour. Wherefore do ye also, brethren ... glorify Elohim (God), so that He also may glorify you, now and ever, and to all eternity. Amen.* (3 Baruch 17:3-4) It ain't new — Paul ends the same way: *To Elohim (God) only wise, be glory through Yahusha HaMashiach (Jesus Christ) for ever. Amen.* (Romans 16:27) And Jude lifts the same blessing to the One *able to keep you from falling, and to present you faultless before the presence of his glory with exceeding joy* (Jude 24). The whole apocalypse lands where all scripture lands: *Let every thing that hath breath praise Yahuah (LORD).* (Psalm 150:6)",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 17, "src_v": 4, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 16, "tgt_v": 27, "tier": "free", "note": "Romans 16:27 — *To Elohim (God) only wise, be glory through Yahusha HaMashiach (Jesus Christ) for ever. Amen.* Baruch's closing call to glorify God now and ever and to all eternity is the same epistolary doxology Paul ends with."},
+        {"src_ch": 17, "src_v": 4, "tgt_edition": "canon", "tgt_book": "jude", "tgt_ch": 1, "tgt_v": 24, "tier": "free", "note": "Jude 24 — *Now unto him that is able to keep you from falling, and to present you faultless before the presence of his glory with exceeding joy,* the mutual glory of 3 Baruch 17:4 — glorify God that He may glorify you — answers to God presenting His own faultless before His glory."},
+        {"src_ch": 17, "src_v": 4, "tgt_edition": "canon", "tgt_book": "jude", "tgt_ch": 1, "tgt_v": 25, "tier": "free", "note": "Jude 25 — *To the only wise Elohim (God) our Saviour, be glory and majesty, dominion and power, both now and ever. Amen.* The closing 'now and ever, and to all eternity. Amen.' of 3 Baruch is this same ascription of glory both now and ever."},
+        {"src_ch": 17, "src_v": 3, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 150, "tgt_v": 6, "tier": "free", "note": "Psalm 150:6 — *Let every thing that hath breath praise Yahuah (LORD). Praise ye Yahuah (LORD).* Baruch giving glory to God for counting him worthy is the creature's whole calling, where the Psalter ends — let everything that hath breath praise the LORD."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 4,
+  "session": "session410",
+  "tag": "3b04",
+  "base_band": 81075,
+  "threads": [
+    {
+      "slug": "3-baruch-4-vine-the-tree-that-led-adam-astray",
+      "title": "The vine — the tree by which the serpent deceived Adam",
+      "summary_md": "Baruch asks to be shown *which is the tree which led Adam astray* (3 Baruch 4:7), and the angel answers that it was the vine, planted by the deceiver: *It is the vine... and therefore the devil being envious deceived him through his vine* (3 Baruch 4:8). The naming of the tree as a vine is this apocalypse's own embellishment, not Torah — but the root it reaches for is the true Eden account: a serpent's cunning, a tree forbidden, and a deception. *Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made* (Genesis 3:1); *And the serpent said unto the woman, Ye shall not surely die* (Genesis 3:4); *she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat* (Genesis 3:6); and the woman confesses, *The serpent beguiled me, and I did eat* (Genesis 3:13). Whatever the tree, the canon is plain: the serpent deceived, the fruit was eaten, and judgment came. 3 Baruch confirms the old account; it does not amend it. It ain't new.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 1, "tier": "free", "note": "Genesis 3:1 — *Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made. And he said unto the woman, Yea, hath Elohim (God) said, Ye shall not eat of every tree of the garden?* The angel's account that the devil deceived Adam through the tree reaches for the subtil serpent of the Eden narrative."},
+        {"src_ch": 4, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 6, "tier": "free", "note": "Genesis 3:6 — *And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat.* That Adam was led astray by the tree, in 3 Baruch 4:7-8, is the eating of the forbidden fruit Genesis records."},
+        {"src_ch": 4, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 13, "tier": "free", "note": "Genesis 3:13 — *And Yahuah Elohim (the LORD God) said unto the woman, What is this that thou hast done? And the woman said, The serpent beguiled me, and I did eat.* The deception \"through his vine\" in 3 Baruch 4:8 is the serpent's beguiling the woman confesses in Eden."}
+      ]
+    },
+    {
+      "slug": "3-baruch-4-deluge-and-the-giants",
+      "title": "The deluge, the giants, and the vine washed from paradise",
+      "summary_md": "The angel recalls the flood that judged a world of violence: *When Elohim (God) caused the deluge upon earth, and destroyed all flesh, and four hundred and nine thousand giants, and the water rose fifteen cubits above the highest mountains, then the water entered into paradise and destroyed every flower; but it removed wholly without the bounds the shoot of the vine and cast it outside* (3 Baruch 4:10). The flood and its measure are Genesis: *Fifteen cubits upward did the waters prevail; and the mountains were covered* (Genesis 7:20). The giants belong to the generation the flood swept away: *There were giants in the earth in those days... the same became mighty men which were of old, men of renown* (Genesis 6:4). The detail of the vine cast from paradise is the apocalypse's own thread, but the deluge it hangs on is the canon's exactly — fifteen cubits, all flesh destroyed, the world of the giants ended. It ain't new.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 10, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 20, "tier": "free", "note": "Genesis 7:20 — *Fifteen cubits upward did the waters prevail; and the mountains were covered.* The angel's measure in 3 Baruch 4:10 — the water rising fifteen cubits above the highest mountains — is the exact depth Genesis gives for the flood."},
+        {"src_ch": 4, "src_v": 10, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 4, "tier": "free", "note": "Genesis 6:4 — *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.* The giants the deluge destroyed in 3 Baruch 4:10 are the giants of the earth Genesis names before the flood."}
+      ]
+    },
+    {
+      "slug": "3-baruch-4-noah-replants-the-vine",
+      "title": "Noah replants the vine — curse turned to blessing in Messiah",
+      "summary_md": "After the flood Noah finds the vine's shoot and dares not plant it until Elohim answers: *Arise, Noah, and plant the shoot of the vine, for thus saith Yahuah (Lord): Its bitterness shall be changed into sweetness, and its curse shall become a blessing... and as through it the human race obtained condemnation, so again through Yahusha HaMashiach (Jesus Christ) the Immanuel will they receive in Him the upward calling, and the entry into paradise* (3 Baruch 4:15). That Noah was a husbandman who planted the vine is Genesis: *And Noah began to be an husbandman, and he planted a vineyard* (Genesis 9:20). And the structure the angel preaches — condemnation by one, life through another — is the apostle's: *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned* (Romans 5:12), *For as in Adam all die, even so in Messiah (Christ) shall all be made alive* (1 Corinthians 15:22). Even the first promise of the bruised serpent stands behind it: *I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head* (Genesis 3:15). The curse turned to blessing through the seed of the woman — it ain't new.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 11, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 9, "tgt_v": 20, "tier": "free", "note": "Genesis 9:20 — *And Noah began to be an husbandman, and he planted a vineyard:* the Noah who comes out of the ark and plants the shoot of the vine in 3 Baruch 4:11-15 is the husbandman who plants a vineyard in Genesis."},
+        {"src_ch": 4, "src_v": 15, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 3, "tgt_v": 15, "tier": "free", "note": "Genesis 3:15 — *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* The angel's word that the curse becomes a blessing through the Immanuel rests on the first promise of the seed who would bruise the serpent's head."},
+        {"src_ch": 4, "src_v": 15, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 5, "tgt_v": 12, "tier": "free", "note": "Romans 5:12 — *Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:* the angel's \"as through it the human race obtained condemnation\" is Paul's one-man entry of sin and death."},
+        {"src_ch": 4, "src_v": 15, "tgt_edition": "canon", "tgt_book": "1-corinthians", "tgt_ch": 15, "tgt_v": 22, "tier": "free", "note": "1 Corinthians 15:22 — *For as in Adam all die, even so in Messiah (Christ) shall all be made alive.* The \"so again through Yahusha HaMashiach\" of 3 Baruch 4:15 is Paul's Adam-to-Messiah pattern: condemnation in the first, life in the last."}
+      ]
+    },
+    {
+      "slug": "3-baruch-4-warning-against-drunkenness",
+      "title": "The wine that begets all evils — the warning against drunkenness",
+      "summary_md": "The angel turns the vine's blessing into a sober warning: those who drink it without measure *transgress worse than Adam, and are far from the glory of Elohim (God), and are surrendering themselves to the eternal fire* (3 Baruch 4:16); for from the drinking of wine *come all evils, such as murders, adulteries, fornications, perjuries, thefts* (3 Baruch 4:17). This is the counsel of the prophets and the apostles. Wisdom warns: *Look not thou upon the wine when it is red, when it giveth his colour in the cup, when it moveth itself aright* (Proverbs 23:31), for *At the last it biteth like a serpent, and stingeth like an adder* (Proverbs 23:32). Isaiah pronounces woe: *Woe unto them that rise up early in the morning, that they may follow strong drink; that continue until night, till wine inflame them!* (Isaiah 5:11). And Paul commands: *And be not drunk with wine, wherein is excess; but be filled with the Spirit* (Ephesians 5:18), warning that *drunkenness, revellings, and such like... they which do such things shall not inherit the kingdom of Elohim (God)* (Galatians 5:21). The serpent first met man at the vine; the warning against its excess is as old as Eden. It ain't new.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 17, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 23, "tgt_v": 31, "tier": "free", "note": "Proverbs 23:31 — *Look not thou upon the wine when it is red, when it giveth his colour in the cup, when it moveth itself aright;* the angel's warning against drinking wine insatiably (3 Baruch 4:16-17) is the wisdom of Proverbs: beware the wine in the cup."},
+        {"src_ch": 4, "src_v": 17, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 23, "tgt_v": 32, "tier": "free", "note": "Proverbs 23:32 — *At the last it biteth like a serpent, and stingeth like an adder.* That the wine of 3 Baruch 4:17 breeds all evils echoes Proverbs, where wine at the last bites like a serpent — fitting, since the serpent met man at the vine."},
+        {"src_ch": 4, "src_v": 16, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 5, "tgt_v": 11, "tier": "free", "note": "Isaiah 5:11 — *Woe unto them that rise up early in the morning, that they may follow strong drink; that continue until night, till wine inflame them!* The insatiable drinkers of 3 Baruch 4:16 stand under the prophet's woe upon those inflamed by strong drink."},
+        {"src_ch": 4, "src_v": 16, "tgt_edition": "canon", "tgt_book": "ephesians", "tgt_ch": 5, "tgt_v": 18, "tier": "free", "note": "Ephesians 5:18 — *And be not drunk with wine, wherein is excess; but be filled with the Spirit;* the angel's caution against drinking wine to surfeit (3 Baruch 4:16) is Paul's command not to be drunk with wine, wherein is excess."},
+        {"src_ch": 4, "src_v": 17, "tgt_edition": "canon", "tgt_book": "galatians", "tgt_ch": 5, "tgt_v": 21, "tier": "free", "note": "Galatians 5:21 — *Envyings, murders, drunkenness, revellings, and such like: of the which I tell you before... that they which do such things shall not inherit the kingdom of Elohim (God).* The murders and evils that the angel says come from wine (3 Baruch 4:17), and surrender to eternal fire, are the works Paul says bar the kingdom."}
+      ]
+    }
+  ]
+}

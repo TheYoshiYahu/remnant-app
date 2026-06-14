@@ -1,0 +1,49 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 15,
+  "session": "session410",
+  "tag": "3b15",
+  "base_band": 81350,
+  "threads": [
+    {
+      "slug": "3-baruch-15-reward-for-good-works",
+      "title": "An hundredfold reward for those who wrought good works",
+      "summary_md": "The full baskets are filled with oil: *Take it away, reward our friends an hundredfold, and those who have laboriously wrought good works.* (3 Baruch 15:2) It ain't new — the Messiah will render the same wage: *For the Son of Adam shall come in the glory of his Father with his angels; and then he shall reward every man according to his works.* (Matthew 16:27) John heard him say it again: *behold, I come quickly; and my reward is with me, to give every man according as his work shall be.* (Revelation 22:12) The labour is not forgotten — *their works do follow them.* (Revelation 14:13)",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 2, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 16, "tgt_v": 27, "tier": "free", "note": "Matthew 16:27 — *For the Son of Adam shall come in the glory of his Father with his angels; and then he shall reward every man according to his works.* The hundredfold reward poured out on those who wrought good works is the Messiah rewarding every man according to his works."},
+        {"src_ch": 15, "src_v": 2, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 22, "tgt_v": 12, "tier": "free", "note": "Revelation 22:12 — *And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be.* The angels carrying up the laborious good works to be rewarded answer to the reward the returning Messiah brings with him."},
+        {"src_ch": 15, "src_v": 2, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 14, "tgt_v": 13, "tier": "free", "note": "Revelation 14:13 — *Blessed are the dead which die in Yahuah (Lord) from henceforth: Yea, saith the Spirit, that they may rest from their labours; and their works do follow them.* The good works gathered into the full baskets are the works that follow the righteous and are rewarded."},
+        {"src_ch": 15, "src_v": 2, "tgt_edition": "canon", "tgt_book": "2-corinthians", "tgt_ch": 5, "tgt_v": 10, "tier": "free", "note": "2 Corinthians 5:10 — *For we must all appear before the judgment seat of Messiah (Christ); that every one may receive the things done in his body, according to that he hath done, whether it be good or bad.* The sorting of full from half-empty baskets is the appearing before the judgment seat where each receives according to what he has done."}
+      ]
+    },
+    {
+      "slug": "3-baruch-15-sowed-virtuously-reap-virtuously",
+      "title": "They that sowed virtuously also reap virtuously",
+      "summary_md": "Of the reward Michael says: *For those who sowed virtuously, also reap virtuously.* (3 Baruch 15:3) It ain't new — Paul states the law of the harvest exactly: *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap.* (Galatians 6:7) And the half-empty baskets warn against weariness: *let us not be weary in well doing: for in due season we shall reap, if we faint not.* (Galatians 6:9)",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 3, "tgt_edition": "canon", "tgt_book": "galatians", "tgt_ch": 6, "tgt_v": 7, "tier": "free", "note": "Galatians 6:7 — *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap.* That those who sowed virtuously reap virtuously is the law of the harvest Paul spells out: a man reaps what he sows."},
+        {"src_ch": 15, "src_v": 3, "tgt_edition": "canon", "tgt_book": "galatians", "tgt_ch": 6, "tgt_v": 8, "tier": "free", "note": "Galatians 6:8 — *For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting.* The full versus the half-empty baskets divide along this same sowing — to the Spirit unto life, or to the flesh unto corruption."},
+        {"src_ch": 15, "src_v": 3, "tgt_edition": "canon", "tgt_book": "galatians", "tgt_ch": 6, "tgt_v": 9, "tier": "free", "note": "Galatians 6:9 — *And let us not be weary in well doing: for in due season we shall reap, if we faint not.* The half-empty baskets, brought by those who flagged, are the warning against being weary in well doing before the due-season reaping."}
+      ]
+    },
+    {
+      "slug": "3-baruch-15-faithful-over-a-few-things",
+      "title": "Faithful over a few things — enter into the joy of your Lord",
+      "summary_md": "To the faithful Michael sends the word: *Ye are faithful over a few things, I will set you over many things; enter into the joy of your Lord.* (3 Baruch 15:4) It ain't new — this is the master's word to the good servants in the parable of the talents: *Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.* (Matthew 25:21) The baskets that came back full are the servants who traded with what they were given.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 4, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 25, "tgt_v": 21, "tier": "free", "note": "Matthew 25:21 — *Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.* Michael's blessing on the faithful is this verse almost word for word — faithful over a few things, set over many, entering the joy of the Lord."},
+        {"src_ch": 15, "src_v": 4, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 25, "tgt_v": 23, "tier": "free", "note": "Matthew 25:23 — *Well done, good and faithful servant; thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.* The same commendation is given the second faithful servant; the full baskets are the servants who multiplied their trust."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 12,
+  "session": "session410",
+  "tag": "3b12",
+  "base_band": 81275,
+  "threads": [
+    {
+      "slug": "3-baruch-12-baskets-of-flowers",
+      "title": "Baskets of flowers — the merits of the righteous",
+      "summary_md": "*These flowers are the merits of the righteous.* It ain't new. The angels set over the righteous bring baskets full of flowers and cast them into Michael's vessel, and the angel names the flowers plainly: they are the good works of the saints. The Revelation says the same thing of those who die in the Lord — their works do follow them; and the Messiah taught it in the talents: well done, thou good and faithful servant. The baskets are the picture; the reward of works is the doctrine already given.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 14,
+          "tgt_v": 13,
+          "tier": "extras",
+          "note": "Revelation 14:13 — *Blessed are the dead which die in Yahuah from henceforth: Yea, saith the Spirit, that they may rest from their labours; and their works do follow them.* The flowers that are the merits of the righteous, carried up to God, are the works John says follow the saints who die in the Lord."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 16,
+          "tgt_v": 27,
+          "tier": "extras",
+          "note": "Matthew 16:27 — *then he shall reward every man according to his works.* The baskets of flowers named as the merits of the righteous are the works the Son of man comes to reward."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 25,
+          "tgt_v": 21,
+          "tier": "extras",
+          "note": "Matthew 25:21 — *Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.* The flowers gathered from the righteous are the faithful works the Messiah commends in the parable of the talents."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-12-empty-baskets",
+      "title": "The baskets neither empty nor full",
+      "summary_md": "*I saw other angels bearing baskets which were neither empty nor full... because they had not the prizes complete.* It ain't new. Some angels come with half-full baskets and some grieve that they fill nothing of the vessel — a sober reckoning that a man reaps what he sows, and that the slothful bring no harvest. Paul warns it outright: be not deceived, God is not mocked; whatsoever a man soweth, that shall he also reap. The half-empty baskets are the picture of a sowing that fell short.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 6,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "Galatians 6:7 — *Be not deceived; Elohim is not mocked: for whatsoever a man soweth, that shall he also reap.* The baskets that come neither empty nor full are the measured harvest of what each man has sown."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 6,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "Galatians 6:9 — *And let us not be weary in well doing: for in due season we shall reap, if we faint not.* The grief over baskets not filled is the loss Paul guards against — the reaping forfeited by those who faint in well doing."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "2-corinthians",
+          "tgt_ch": 5,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "2 Corinthians 5:10 — *that every one may receive the things done in his body, according to that he hath done, whether it be good or bad.* That some baskets fill the vessel and some do not echoes Paul's reckoning where each receives according to what he has done, good or bad."
+        }
+      ]
+    }
+  ]
+}

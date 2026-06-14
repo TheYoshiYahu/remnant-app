@@ -1,0 +1,36 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 2,
+  "session": "session410",
+  "tag": "3b02",
+  "base_band": 81025,
+  "threads": [
+    {
+      "slug": "3-baruch-2-builders-of-the-tower",
+      "title": "The first heaven — the builders of the tower banished",
+      "summary_md": "In the first heaven Baruch is shown a plain of men, and the angel names them: *These are they who built the tower of strife against Elohim (God), and Yahuah (Lord) banished them* (3 Baruch 2:7). This is Babel, and it ain't new: *And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth* (Genesis 11:4). The banishing the angel speaks of is the scattering Genesis records: *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city* (Genesis 11:8), and *Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth* (Genesis 11:9). Jubilees tells the same overthrow: *And Yahuah (God) sent a mighty wind against the tower and overthrew it upon the earth... and they called its name \"Overthrow\"* (Jubilees 10:26). The tower of strife against Elohim is the oldest pattern of the city of man, judged and scattered.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 2, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 11, "tgt_v": 4, "tier": "free", "note": "Genesis 11:4 — *And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth.* The men of the first heaven who \"built the tower of strife against Elohim\" are the Babel builders of this verse."},
+        {"src_ch": 2, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 11, "tgt_v": 8, "tier": "free", "note": "Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city.* That Yahuah \"banished them\" in 3 Baruch 2:7 is the scattering from Babel Genesis records."},
+        {"src_ch": 2, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 11, "tgt_v": 9, "tier": "free", "note": "Genesis 11:9 — *Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth: and from thence did Yahuah (LORD) scatter them abroad upon the face of all the earth.* The judgment behind the angel's word in 3 Baruch 2:7 is Babel, where the speech was confounded and the builders scattered."},
+        {"src_ch": 2, "src_v": 7, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 10, "tgt_v": 26, "tier": "extras", "note": "Jubilees 10:26 — *And Yahuah (God) sent a mighty wind against the tower and overthrew it upon the earth, and behold it was between Asshur and Babylon in the land of Shinar, and they called its name \"Overthrow.\"* Jubilees records the same tower of strife overthrown and its builders judged that 3 Baruch 2:7 places in the first heaven."}
+      ]
+    },
+    {
+      "slug": "3-baruch-2-beast-faces-lost-image",
+      "title": "Faces of oxen and goats — those who lost the image",
+      "summary_md": "The builders of the tower no longer wear the face of man: *there were men dwelling thereon, with the faces of oxen, and the horns of stags, and the feet of goats, and the haunches of lambs* (3 Baruch 2:3). The picture is a parable of judgment, not a doctrine — yet its root is real: man was made in the image of Elohim, and pride that builds against heaven is pride that sinks toward the beast. Isaiah names the same ambition and the same fall: *For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God)* (Isaiah 14:13), *I will ascend above the heights of the clouds; I will be like the El Elyon (most High)* (Isaiah 14:14), *Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15). The men who reached for heaven by the tower are brought low — the lifting up of self ends in the loss of the face. It ain't new.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 2, "src_v": 3, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 14, "tgt_v": 13, "tier": "free", "note": "Isaiah 14:13 — *For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God): I will sit also upon the mount of the congregation, in the sides of the north:* the beast-faced builders of 3 Baruch 2:3 share the pride that says \"I will ascend into heaven\" — the same reach against Elohim as the tower."},
+        {"src_ch": 2, "src_v": 3, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 14, "tgt_v": 15, "tier": "free", "note": "Isaiah 14:15 — *Yet thou shalt be brought down to hell, to the sides of the pit.* The men disfigured to beasts' faces in the first heaven are the proud brought low; pride that climbs against Elohim is cast down to the pit."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 9,
+  "session": "session410",
+  "tag": "3b09",
+  "base_band": 81200,
+  "threads": [
+    {
+      "slug": "3-baruch-9-the-moon-the-lesser-light",
+      "title": "The chariot of the moon, the lesser light for the night",
+      "summary_md": "*And at the same time came the chariot of the moon, along with the stars.* It ain't new. The moon coming forth with the stars when night falls is the fourth-day appointment: *And Elohim made two great lights... the lesser light to rule the night: he made the stars also* (Genesis 1:16). It keeps its set times — *He appointed the moon for seasons* (Psalm 104:19) — by the ordinance the LORD gave: *the ordinances of the moon and of the stars for a light by night* (Jeremiah 31:35). The chariot is the picture; the ordinance is God's.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 9,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* The moon coming with the stars at nightfall is the lesser light God made on the fourth day to rule the night."
+        },
+        {
+          "src_ch": 9,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 19,
+          "tier": "extras",
+          "note": "Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The moon's appointed coming-forth is the seasons-keeping office God gave it."
+        },
+        {
+          "src_ch": 9,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 31,
+          "tgt_v": 35,
+          "tier": "extras",
+          "note": "Jeremiah 31:35 — *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night.* The moon and stars travel by the fixed ordinances the LORD gave, not by chariot of their own."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-9-moon-afflicted-for-the-transgression",
+      "title": "The moon shortened for shining on the transgression",
+      "summary_md": "*At the transgression of the first Adam, it was near to Sammael when he took the serpent as a garment... and Elohim was angry with it, and afflicted it, and shortened its days.* It ain't new. The apocalypse traces the moon's waning to the first transgression — when the serpent deceived in Eden. *Now the serpent was more subtil than any beast of the field which Yahuah Elohim had made* (Genesis 3:1). The embellishment of Sammael and the garment is the book's own; the root is the fall, the moment all creation was put under the curse. We do not endorse the legend, only the fall it points back to.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 9,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Genesis 3:1 — *Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made. And he said unto the woman, Yea, hath Elohim (God) said, Ye shall not eat of every tree of the garden?* The transgression the moon is said to have shone upon is the serpent's deception of Adam and Eve in the garden."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-9-shining-on-the-watchers-transgression",
+      "title": "The lights and the transgression of the Watchers",
+      "summary_md": "*Why is it that it at one time increases, but at another time decreases?... Elohim was angry with it, and afflicted it.* It ain't new. The waning moon, marked by transgression, is the same lament the older witness raises over the heavenly transgression in the days before the flood, when the sons of heaven corrupted their way and even the courses of sun and moon were defiled in men's reckoning. *And the angels, the children of the heaven, saw and lusted after them* (1 Enoch 6:2); and Moses sets the same generation: *the sons of Elohim saw the daughters of men that they were fair; and they took them wives* (Genesis 6:2). The transgression that grieves the lights is no novelty — it is the ancient fall the Watchers' record already weeps.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 9,
+          "src_v": 7,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "1 Enoch 6:2 — *And the angels, the children of the heaven, saw and lusted after them, and said to one another: 'Come, let us choose us wives from among the children of men and beget us children.'* The transgression that grieves the heavenly lights is the same descent of the Watchers that the older witness records."
+        },
+        {
+          "src_ch": 9,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* Moses sets the same transgression the apocalypse ties to the afflicting of the moon."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-9-stars-screened-by-the-sun",
+      "title": "Moon and stars screened in the presence of the sun",
+      "summary_md": "*As in the presence of a king, the courtiers cannot speak freely, so the moon and the stars cannot shine in the presence of the sun.* It ain't new. The night-lights yielding to the greater light is the order God set on the fourth day — the greater to rule the day, the lesser the night. *The greater light to rule the day, and the lesser light to rule the night* (Genesis 1:16); *the sun knoweth his going down* (Psalm 104:19), and the stars keep their courses by the ordinances the LORD gives (Jeremiah 31:35). The moon does not contend with the sun; it keeps the rank God assigned.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 9,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 16,
+          "tier": "extras",
+          "note": "Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night.* The moon and stars yielding before the sun keep the very order of greater and lesser light God set at creation."
+        },
+        {
+          "src_ch": 9,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 19,
+          "tier": "extras",
+          "note": "Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The lights keep their ranks and times by God's appointment, the sun and moon each to its office."
+        }
+      ]
+    }
+  ]
+}

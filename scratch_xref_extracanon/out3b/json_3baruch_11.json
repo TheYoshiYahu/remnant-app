@@ -1,0 +1,180 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 11,
+  "session": "session410",
+  "tag": "3b11",
+  "base_band": 81250,
+  "threads": [
+    {
+      "slug": "3-baruch-11-michael-the-commander",
+      "title": "Michael, the commander of the angels",
+      "summary_md": "*Even now Michael, the commander of the angels, comes down to receive the prayers of men.* It ain't new. The fifth heaven opens only when Michael comes, who holds the keys; the angel calls him commander of all their order. Daniel already named this same archangel — *one of the chief princes*, *Michael your prince*, the great prince who stands for God's people — and Jude calls him the archangel who would not rail even against the devil. The apocalypse's commander is the prince the prophet and the apostle already knew.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 10,
+          "tgt_v": 13,
+          "tier": "extras",
+          "note": "Daniel 10:13 — *but, lo, Michael, one of the chief princes, came to help me.* The commander of the angels who descends in the fifth heaven is the chief prince Daniel saw come to help."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 10,
+          "tgt_v": 21,
+          "tier": "extras",
+          "note": "Daniel 10:21 — *there is none that holdeth with me in these things, but Michael your prince.* The one hailed as commander of all their order is the prince Daniel was told stands with the messengers of God."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people.* The archangel who comes down for the prayers of men is the great prince who stands for God's people."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "Jude 1:9 — *Yet Michael the archangel, when contending with the devil he disputed about the body of Moses, durst not bring against him a railing accusation, but said, Yahuah rebuke thee.* The commander Michael of this vision is the archangel Jude names by the same office."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-11-receive-the-prayers",
+      "title": "He comes down to receive the prayers of men",
+      "summary_md": "*Michael, the commander of the angels, comes down to receive the prayers of men.* It ain't new. The keystone of the fifth heaven is an angel who gathers up the prayers of the righteous and carries them before God. Tobit already met this ministry — Raphael, who presents the prayers of the saints and goes in before the glory of the Holy One — and John saw it twice in the Revelation: golden vials full of odours which are the prayers of saints, and the angel with the golden censer who offers the incense with the prayers of all saints. David sang it long before: let my prayer be set forth before thee as incense.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 8,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "Revelation 8:3 — *And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne.* Michael coming down to receive the prayers of men is the angel John saw offering the prayers of all the saints before the throne."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 8,
+          "tgt_v": 4,
+          "tier": "extras",
+          "note": "Revelation 8:4 — *And the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim out of the angel's hand.* The prayers Michael receives are carried up before God just as John saw them ascend from the angel's hand."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "Revelation 5:8 — *the four beasts and four and twenty elders fell down before the Lamb, having every one of them harps, and golden vials full of odours, which are the prayers of saints.* The prayers gathered by the commander are the odours John was told are the prayers of saints."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 141,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "Psalms 141:2 — *Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice.* The prayers received and carried up are the very prayer David asks be set before God as incense."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 4,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "tobit",
+          "tgt_ch": 12,
+          "tgt_v": 15,
+          "tier": "extras",
+          "note": "Tobit 12:15 — *I am Raphael, one of the seven holy angels, which present the prayers of the saints, and which go in and out before the glory of the Holy One.* Michael's office of receiving the prayers of men is the same ministry Raphael declares — presenting the prayers of the saints before God."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 4,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "tobit",
+          "tgt_ch": 12,
+          "tgt_v": 12,
+          "tier": "extras",
+          "note": "Tobit 12:12 — *Now therefore, when you did pray... I did bring the remembrance of your prayers before the Holy One.* The angel carrying the prayers of men before God is doing exactly what Raphael testifies he did with Tobit's prayers."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-11-vessel-of-merits",
+      "title": "The great vessel for the merits of the righteous",
+      "summary_md": "*This is where the merits of the righteous enter, and such good works as they do, which are escorted before the heavenly Elohim.* It ain't new. Michael holds a vessel of immeasurable depth and breadth into which the good works of the righteous are gathered and brought before God. Scripture already keeps this account: the Son of man comes to reward every man according to his works; behold, I come quickly, and my reward is with me. The vessel is the picture of a reckoning the Messiah himself promised.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 11,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 16,
+          "tgt_v": 27,
+          "tier": "extras",
+          "note": "Matthew 16:27 — *For the Son of Adam shall come in the glory of his Father with his angels; and then he shall reward every man according to his works.* The vessel into which the merits and good works of the righteous are gathered serves the reckoning the Messiah promised — reward according to works."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 12,
+          "tier": "extras",
+          "note": "Revelation 22:12 — *And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be.* The good works escorted before God in Michael's vessel are the works the returning Messiah says he will reward."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "2-corinthians",
+          "tgt_ch": 5,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "2 Corinthians 5:10 — *For we must all appear before the judgment seat of Messiah; that every one may receive the things done in his body, according to that he hath done, whether it be good or bad.* The merits carried before the heavenly God are the deeds Paul says must appear before the judgment seat of Messiah."
+        },
+        {
+          "src_ch": 11,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "extras",
+          "note": "Hebrews 1:14 — *Are they not all ministering spirits, sent forth to minister for them who shall be heirs of salvation?* The commander who serves the prayers and merits of the righteous is just such a ministering spirit sent forth for the heirs of salvation."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 6,
+  "session": "session410",
+  "tag": "3b06",
+  "base_band": 81125,
+  "threads": [
+    {
+      "slug": "3-baruch-6-the-sun-set-in-the-heavens",
+      "title": "The sun set in the firmament to give light",
+      "summary_md": "*And he took me and led me where the sun goes forth.* It ain't new. Baruch is brought to the sun's gate; whatever the chariot and the crown of fire embellish, the root is the fourth day, when Elohim set the great light to rule. *And Elohim made two great lights; the greater light to rule the day* (Genesis 1:16); the psalmist watches it keep its appointed round — *the sun knoweth his going down* (Psalm 104:19), *the sun ariseth... man goeth forth unto his work and to his labour until the evening* (Psalm 104:22-23). The sun does not go forth of itself; God appointed it, and it obeys.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* The fiery sun Baruch sees go forth is the greater light God made on the fourth day to rule the day."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 22,
+          "tier": "extras",
+          "note": "Psalm 104:22 — *The sun ariseth, they gather themselves together, and lay them down in their dens.* The sun's daily going-forth orders the whole creation's day, exactly as Baruch is shown."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-6-guardian-bird-preserves-the-living",
+      "title": "The bird appointed to shield the living creatures",
+      "summary_md": "*This bird flies alongside of the sun, and expanding his wings receives its fiery rays. For if he were not receiving them, the human race would not be preserved... But Elohim appointed this bird thereto.* It ain't new. The phoenix is the apocalypse's embellishment, but the truth it reaches for is sound: it is God, not the creature, who tempers the heat so that life is preserved. The same God measures the sun's heat so *there is nothing hid from the heat thereof* (Psalm 19:6), and it is by His wisdom — not a guardian bird's — that *the earth is full of thy riches* (Psalm 104:24). The preserving of all flesh is God's appointment.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 24,
+          "tier": "extras",
+          "note": "Psalm 104:24 — *O Yahuah (LORD), how manifold are thy works! in wisdom hast thou made them all: the earth is full of thy riches.* That any living creature is preserved under the sun is the wisdom of God, who appointed every means, not the merit of the bird."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "Psalm 19:6 — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* The fiery rays the bird is said to receive are the same heat God set over all the earth's circuit."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-6-manna-of-heaven-and-dew",
+      "title": "Fed with the manna of heaven and the dew of earth",
+      "summary_md": "*And what does he eat? ... The manna of heaven and the dew of earth.* It ain't new. The bird's food names the very provision God rained on Israel in the wilderness — bread from heaven that came with the dew. *I will rain bread from heaven for you* (Exodus 16:4); *when the dew that lay was gone up... they said one to another, It is manna* (Exodus 16:14-15). The apocalypse borrows the wilderness words; the original gift is God feeding His people by hand each morning.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 16,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Exodus 16:4 — *Then said Yahuah (LORD) unto Moses, Behold, I will rain bread from heaven for you; and the people shall go out and gather a certain rate every day, that I may prove them.* The manna of heaven the bird is said to eat is the bread God rained on Israel."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 16,
+          "tgt_v": 14,
+          "tier": "extras",
+          "note": "Exodus 16:14 — *And when the dew that lay was gone up, behold, upon the face of the wilderness there lay a small round thing, as small as the hoar frost on the ground.* Manna and dew came together in the wilderness, the same pairing the apocalypse names."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-6-light-separated-from-darkness",
+      "title": "The light separated from the darkness at the gates of heaven",
+      "summary_md": "*The angels are opening the three hundred and sixty-five gates of heaven, and the light is being separated from the darkness. And a voice came which said, Light-giver, give to the world radiance.* It ain't new. The daily dividing of light from darkness is no new wonder — it is the first day's word repeated every dawn. *And Elohim divided the light from the darkness. And Elohim called the light Day, and the darkness he called Night* (Genesis 1:4-5). What God spoke once He upholds without ceasing.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Genesis 1:4 — *And Elohim (God) saw the light, that it was good: and Elohim (God) divided the light from the darkness.* The daily separating of light from darkness at the gates is the first-day work of God, repeated every morning."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 5,
+          "tier": "extras",
+          "note": "Genesis 1:5 — *And Elohim (God) called the light Day, and the darkness he called Night. And the evening and the morning were the first day.* The voice calling for radiance to be given the world echoes God naming Day and Night at creation."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 7,
+  "session": "session410",
+  "tag": "3b07",
+  "base_band": 81150,
+  "threads": [
+    {
+      "slug": "3-baruch-7-the-sun-third-heaven-gives-light",
+      "title": "The sun passing through to give light to the world",
+      "summary_md": "*In the third heaven the sun passes through and gives light to the world.* It ain't new. Strip away the named heavens and the truth remains the sun's appointed task — to give light upon the earth, just as God made it on the fourth day. *And let them be for lights in the firmament of the heaven to give light upon the earth* (Genesis 1:15). The sun is a servant on its circuit, not a thing to be marvelled at for its own sake.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 1:15 — *And let them be for lights in the firmament of the heaven to give light upon the earth: and it was so.* The sun passing through to give light to the world is doing the very work God set it for on the fourth day."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-7-crowned-sun-glory-too-great-to-behold",
+      "title": "The crowned sun, a glory too great to gaze upon",
+      "summary_md": "*And behind him I saw the shining sun, and the angels which draw it, and a crown upon its head, the sight of which we were not able to gaze upon... when I beheld such great glory, I was brought low with great fear.* It ain't new. The sun's overwhelming brightness is the psalmist's own picture: *In them hath he set a tabernacle for the sun, which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race* (Psalm 19:4-5). And the crowned sun points past itself, for the prophet names the true crowned Light: *unto you that fear my name shall the Sun of righteousness arise with healing in his wings* (Malachi 4:2). The dread Baruch feels before the lesser light prepares the eye for the greater.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 7,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Psalm 19:5 — *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* The shining sun drawn forth in such glory that Baruch cannot gaze on it is the psalmist's bridegroom and strong man coming out of his chamber."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 4,
+          "tier": "extras",
+          "note": "Psalm 19:4 — *In them hath he set a tabernacle for the sun.* The sun's appointed chamber in the heavens is the tabernacle God set for it, which Baruch is shown."
+        },
+        {
+          "src_ch": 7,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 4,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings.* The crowned sun whose glory cannot be gazed upon points beyond itself to the true Sun of righteousness the prophet promised."
+        }
+      ]
+    }
+  ]
+}

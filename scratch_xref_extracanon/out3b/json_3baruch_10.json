@@ -1,0 +1,90 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 10,
+  "session": "session410",
+  "tag": "3b10",
+  "base_band": 81225,
+  "threads": [
+    {
+      "slug": "3-baruch-10-birds-that-praise",
+      "title": "The birds that continually sing praise",
+      "summary_md": "*They are those which continually sing praise to Yahuah.* It ain't new. In the fourth heaven Baruch sees a plain and a pool teeming with birds whose whole office is to praise — and the souls of the righteous dwell there in choirs. The psalms already enroll the whole creation, the flying fowl among them, in that same chorus, and the Revelation hears every creature join it. The apocalypse only shows the choir Moses and the prophets and the apostles already heard.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 148,
+          "tgt_v": 10,
+          "tier": "extras",
+          "note": "Psalms 148:10 — *Beasts, and all cattle; creeping things, and flying fowl.* The birds whose work is unceasing praise are the very flying fowl the psalm summons to praise the LORD."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 148,
+          "tgt_v": 13,
+          "tier": "extras",
+          "note": "Psalms 148:13 — *Let them praise the name of Yahuah: for his name alone is excellent; his glory is above the earth and heaven.* The praise rising from the fourth heaven is the praise the psalm decrees from earth and the heavens alike."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 5,
+          "tgt_v": 13,
+          "tier": "extras",
+          "note": "Revelation 5:13 — *And every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever.* The ceaselessly praising birds belong to the every-creature chorus John heard before the throne."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 43,
+          "tgt_v": 20,
+          "tier": "extras",
+          "note": "Isaiah 43:20 — *The beast of the field shall honour me, the dragons and the owls: because I give waters in the wilderness, and rivers in the desert, to give drink to my people, my chosen.* The plain with its pool, where God's creatures honour him and the righteous (his chosen) dwell, echoes the prophet's watered wilderness where even birds honour their Maker."
+        }
+      ]
+    },
+    {
+      "slug": "3-baruch-10-rain-and-dew",
+      "title": "The pool, the rain, and the dew of heaven",
+      "summary_md": "*But the water is that which the clouds receive, and rain upon the earth, and the fruits increase... the dew of heaven.* It ain't new. The angel teaches Baruch that the heavenly waters are drawn up to clouds and returned as rain and dew to swell the fruits of the earth. That is exactly the providence the psalmist sang: God who waters the hills from his chambers and satisfies the earth with the fruit of his works.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 13,
+          "tier": "extras",
+          "note": "Psalms 104:13 — *He watereth the hills from his chambers: the earth is satisfied with the fruit of thy works.* The clouds that receive the water and rain it down so the fruits increase are the same chambers from which the psalm says God waters the earth."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 14,
+          "tier": "extras",
+          "note": "Psalms 104:14 — *He causeth the grass to grow for the cattle, and herb for the service of man: that he may bring forth food out of the earth.* The dew of heaven that stimulates the fruits is the same heavenly provision that brings forth food out of the earth."
+        }
+      ]
+    }
+  ]
+}

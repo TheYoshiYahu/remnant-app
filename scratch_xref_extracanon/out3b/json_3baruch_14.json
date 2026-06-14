@@ -1,0 +1,23 @@
+{
+  "edition": "pseudepigrapha",
+  "book": "3-baruch",
+  "chapter": 14,
+  "session": "session410",
+  "tag": "3b14",
+  "base_band": 81325,
+  "threads": [
+    {
+      "slug": "3-baruch-14-michael-presents-the-merits",
+      "title": "Michael presents the merits of men before God",
+      "summary_md": "Baruch asks about the sound like thunder: *Michael is even now presenting the merits of men to Elohim (God).* (3 Baruch 14:2) It ain't new — Revelation shows the same angelic office at the altar: *And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne.* (Revelation 8:3) The bringing-up of the saints' merits and prayers before the throne is the ministry of spirits sent to serve the heirs of salvation, and behind every such angel stands the one Mediator who *ever liveth to make intercession for them.* (Hebrews 7:25)",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 14, "src_v": 2, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 8, "tgt_v": 3, "tier": "free", "note": "Revelation 8:3 — *And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne.* Michael presenting the merits of men before God is the same heavenly office as the angel offering the prayers of the saints at the golden altar."},
+        {"src_ch": 14, "src_v": 2, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 5, "tgt_v": 8, "tier": "free", "note": "Revelation 5:8 — *And when he had taken the book, the four beasts and four and twenty elders fell down before the Lamb, having every one of them harps, and golden vials full of odours, which are the prayers of saints.* The merits of men carried up by Michael answer to the golden vials full of odours that are the prayers of saints."},
+        {"src_ch": 14, "src_v": 2, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 7, "tgt_v": 25, "tier": "free", "note": "Hebrews 7:25 — *Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them.* The archangel's presenting of men's merits foreshadows the abiding intercession that belongs finally to the High Priest who ever liveth."}
+      ]
+    }
+  ]
+}
