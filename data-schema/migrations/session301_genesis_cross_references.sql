@@ -15796,6 +15796,1512 @@ SELECT t.id, cr.id, 4, E'*Joseph''s wife Osnath... bare him two sons, Manasseh a
  WHERE t.slug='genesis-41-manasseh-and-ephraim-the-fruitful-one-the-two-house-seed'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_genesis_42.sql (Genesis 42) -----
+-- Chapter: Genesis 42 — ★ THE FIRST VISIT: the brothers bow to the rejected one unrecognized. Jacob sends ten sons down to Egypt to buy corn (Benjamin kept back, "Lest peradventure mischief befall him"); they bow before Joseph with their faces to the earth (★ 42:6,9 — "Joseph remembered the dreams which he dreamed of them" — the ch37 dreams fulfilled). Joseph makes himself strange, speaks roughly, charges them as spies; "Joseph knew his brethren, but they knew not him" (42:8); the demand for Benjamin as proof; "I fear Elohim" (42:18); the conscience awakened — "We are verily guilty concerning our brother... we saw the anguish of his soul... and we would not hear" (42:21), Reuben's "his blood is required" (42:22); Simeon bound before their eyes; the money returned in the sacks; "What is this that Elohim hath done unto us?" (42:28); Jacob's grief "all these things are against me" (42:36).
+-- Tag: ge42   Temp view: _s301_ge42_lookup
+-- Sort band: base 21025, step 3 -> threads at 21025, 21028, 21031, 21034 (4 threads — curated)
+-- Source of EVERY row: 'canon','genesis',42,v
+--
+-- Genesis 42 coverage:
+--   v.1-5 (Jacob sends ten sons to Egypt to buy corn; Benjamin kept back; the famine in Canaan drives the family down)
+--        NT:     ★ Acts 7:11-12 (there came a dearth over all the land of Egypt and Chanaan... when Jacob heard that there was corn in Egypt, he sent out our fathers first) — THREAD 3 (Stephen's reading: the scattered covenant family driven by the famine to the saviour-brother)
+--        Extras: Jubilees 42:4 (Jacob heard that there was food in Egypt, and he sent his ten sons... but Benjamin he did not send) — THREAD 3
+--        Tanakh: none warranted distinct (the gathering-to-the-brother forward-weave carried by Acts 7; no closer Tanakh lateral than the Joseph-as-deliverer of the ch41/45/50 packs)
+--   ★ v.6,8,9 (Joseph's brethren came and bowed down themselves before him with their faces to the earth; Joseph knew his brethren, but they knew not him; Joseph remembered the dreams which he dreamed of them)
+--        NT:     ★★ John 1:11 (He came unto his own, and his own received him not) — THREAD 1 (the messianic-rejection type: the unrecognized rejected one); ★★ Acts 7:9-10,13 (the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim was with him... at the second time Joseph was made known to his brethren) — THREAD 1 (Stephen's two-visits reading: the first visit where the brethren do NOT yet know him)
+--        Extras: Jasher 51:20 (Joseph saw his brethren, and he knew them, but they knew him not, for Joseph was very great in their eyes); Jubilees 42:5 (Joseph recognized them, but they did not recognize him) — THREAD 1
+--        Tanakh: ★★ Genesis 37:7,9 (my sheaf arose... your sheaves stood round about, and made obeisance to my sheaf; the sun and the moon and the eleven stars made obeisance to me) — THREAD 1 (the ch37 dreams Joseph remembers, fulfilled in the bowing)
+--   ★ v.21-22 (We are verily guilty concerning our brother, in that we saw the anguish of his soul... and we would not hear; Reuben: also his blood is required)
+--        NT:     ★ Matthew 27:25 (His blood be on us, and on our children) — THREAD 2 (the brother's blood-guilt, the seed-war guilt owned by the rejecters)
+--        Extras: Jasher 51:6 (whilst the sons of Jacob were going on the road, they repented of what they had done to Joseph) — THREAD 2 (the awakened conscience on the road)
+--        Tanakh: ★★ Genesis 4:10 (the voice of thy brother's blood crieth unto me from the ground) — THREAD 2 (Abel's blood — the first brother's-blood-crying, the seed-war guilt)
+--   v.18-20 (This do, and live; for I fear Elohim; bound brother; bring the youngest)
+--        NT: none warranted   Extras: Jubilees 42:5-6 / Jasher 51:33-36 (narrative parallel — carried into THREAD 4)   Tanakh: none warranted
+--        — the "I fear Elohim" (42:18) and the proving are narrative connective tissue, carried into the bounding threads' summaries.
+--   v.24,25,28,35 (Simeon bound before their eyes; the money restored into the sacks; their heart failed; What is this that Elohim hath done unto us?)
+--        NT:     none warranted distinct (the Elohim-at-work-behind-the-fear is the providence the ch45/50 "ye thought evil... Elohim meant it unto good" lateral interprets, held to its own packs)
+--        Extras: ★ Jubilees 42:6 (he... detained Simeon alone and sent off his nine brothers. And he filled their sacks with corn, and he put their gold in their sacks, and they did not know); Jasher 51:49 (My money is restored, and lo, it is even in my sack... What is this that Elohim has done to us?) — THREAD 4
+--        Tanakh: none warranted distinct (the returned-money/awe is narrative within the visit; the providence weave belongs to the ch45/50 packs)
+--   v.36-38 (Jacob's grief: all these things are against me; Reuben's pledge of his two sons; "bring down my gray hairs with sorrow to the grave")
+--        NT: none warranted   Extras: Jubilees 42:10-11 / Jasher 52:3-5 (narrative parallel)   Tanakh: none warranted
+--        — Jacob's lament is narrative; the grief-turned-to-joy belongs to ch45-46; carried into THREAD 4's summary, no distinct framework-bearing target forced.
+--
+-- Threads (slug — target libraries):
+--   1. genesis-42-they-bowed-down-but-knew-him-not-the-rejected-one-unrecognized — NT (John, Acts) + Tanakh (Genesis 37) + Extras (Jubilees, Jasher) [extras] (★★ the dreams remembered and fulfilled; the brethren bow to the unrecognized rejected one — the first visit, the messianic-rejection type)
+--   2. genesis-42-we-are-verily-guilty-his-blood-is-required — NT (Matthew) + Tanakh (Genesis 4) + Extras (Jasher) [extras] (★ the awakened conscience, the brother's blood required — Abel's blood crying, the seed-war guilt)
+--   3. genesis-42-the-famine-drove-the-scattered-family-to-the-brother — NT (Acts) + Extras (Jubilees) [extras] (the famine drives the covenant family down to the saviour-brother — the gathering type)
+--   4. genesis-42-simeon-bound-the-money-returned-what-hath-elohim-done — Extras (Jubilees, Jasher) [extras] (Simeon bound, the money restored in the sacks, the dawning awe — what is this that Elohim hath done?)
+--
+-- Framing notes:
+--   ★★ THE DREAMS FULFILLED / THE REJECTED ONE UNRECOGNIZED (THREAD 1): the keystone of the chapter. *Joseph's brethren came, and bowed down themselves before him with their faces to the earth* (42:6); *Joseph knew his brethren, but they knew not him* (42:8); *And Joseph remembered the dreams which he dreamed of them* (42:9). The ch37 dreams — *my sheaf arose... and your sheaves... made obeisance to my sheaf* (Genesis 37:7), *the sun and the moon and the eleven stars made obeisance to me* (37:9) — are fulfilled before Joseph's eyes by the very brothers who hated him for them. Read through the Formed-and-Formless lens (Red Line #4/#5) strictly as TYPE: the rejected, sold brother stands exalted and unknown before his own, who bow without recognizing him — *He came unto his own, and his own received him not* (John 1:11). Stephen frames it as TWO visits: *the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9), and only *at the second time Joseph was made known to his brethren* (Acts 7:13) — THIS chapter is the first visit, where they do not yet know the one they rejected. NEVER a flattening of Joseph into the Messiah; the shape — the rejected one standing unrecognized before his own — is the type the rejection of the Formed Son fills.
+--   ★ THE AWAKENED CONSCIENCE / THE BROTHER'S BLOOD (THREAD 2): *We are verily guilty concerning our brother, in that we saw the anguish of his soul, when he besought us, and we would not hear; therefore is this distress come upon us* (42:21); *Spake I not unto you, saying, Do not sin against the child; and ye would not hear? therefore, behold, also his blood is required* (42:22). The brother's blood crying for reckoning runs back to the first murder — *the voice of thy brother's blood crieth unto me from the ground* (Genesis 4:10) — the seed-war guilt (Red Line #1): brother against brother, the innocent one's blood required at the hand of those who would not hear. And it runs forward to the rejecters' own owning of the blood-guilt: *His blood be on us, and on our children* (Matthew 27:25). The restored witness keeps the conscience awakening on the road: *they repented of what they had done to Joseph* (Jasher 51:6). NOT ethnic guilt — conduct-within-the-covenant (Red Line #7): the lost sheep convicted of the wrong done the brother.
+--   THE FAMINE DRIVES THE FAMILY DOWN (THREAD 3): *the famine was in the land of Canaan* (42:5), and so *Joseph's ten brethren went down to buy corn in Egypt* (42:3) — the scattered covenant family driven by the dearth to the saviour-brother set in place beforehand. Stephen reads it whole: *there came a dearth over all the land of Egypt and Chanaan... when Jacob heard that there was corn in Egypt, he sent out our fathers first* (Acts 7:11-12). The gathering type in seed: the family will be drawn to the exalted brother and at the last made one before him. Jubilees keeps the sending plain — *he sent his ten sons... but Benjamin he did not send* (Jubilees 42:4).
+--   SIMEON / THE MONEY (THREAD 4): *took from them Simeon, and bound him before their eyes* (42:24); *to restore every man's money into his sack* (42:25); *What is this that Elohim (God) hath done unto us?* (42:28). The dawning awe — the hand of Elohim moving behind the fear, the providence the brothers cannot yet read. EXTRAS-ONLY thread (Jubilees 42:6 / Jasher 51:49 keep the binding and the returned money whole); the deeper providence weave (*Elohim meant it unto good* — 45/50) belongs to its own packs, named here only in the summary.
+--   EXTRAS: Jubilees 42 carries the first visit clean and verse-parallel (42:4 the sending/Benjamin held back, 42:5 recognized-them-but-they-did-not-recognize-him + spies + ward, 42:6 Simeon detained + money returned, 42:10 Jacob's bereavement) — DOUBLE-WRITTEN 'jubilees','jubilees'. Jasher 51 is the first-visit chapter (51:6 the repentance on the road, 51:20 knew-them-but-they-knew-him-not, 51:49 the returned money + "What is this that Elohim has done to us") — DOUBLE-WRITTEN 'jasher','jasher'. Jasher's extended legend (the ten gates 51:7-11, the search in the harlots' walls 51:13-17, Manasseh subduing Simeon 51:41-43) is NOT forced as a member; only verses matching the canon used.
+--   VERSES WITH NO ADD: v.10-17 (the spies dialogue, the proving, the three days' ward — narrative within the encounter, carried into THREAD 1's summary); v.18-20 ("I fear Elohim," the terms — narrative); v.23 (the interpreter); v.26-27,29-34 (the journey home, the report to Jacob — narrative report); v.37-38 (Reuben's pledge, Jacob's grief — narrative lament, carried into THREAD 4's summary). Connective narrative; no distinct framework-bearing target warranted in this pack.
+
+CREATE TEMP VIEW _s301_ge42_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): They bowed down, but knew him not — the rejected one unrecognized, the dreams fulfilled
+    ('canon','genesis',42,9,'canon','genesis',37,7,'free',
+      E'*For, behold, we were binding sheaves in the field, and, lo, my sheaf arose, and also stood upright; and, behold, your sheaves stood round about, and made obeisance to my sheaf* (Genesis 37:7). When *Joseph remembered the dreams which he dreamed of them* (Genesis 42:9), this is the dream he remembers: the sheaves of his brethren bowing to his. Now the brethren *bowed down themselves before him with their faces to the earth* (42:6) — the boyhood dream they hated him for, fulfilled before his eyes by the very men who sold him.'),
+    ('canon','genesis',42,9,'canon','genesis',37,9,'free',
+      E'*And he dreamed yet another dream... and said, Behold, I have dreamed a dream more; and, behold, the sun and the moon and the eleven stars made obeisance to me* (Genesis 37:9). The second dream sealed the first, and the brethren *hated him yet the more for his dreams* (37:8). When *Joseph remembered the dreams which he dreamed of them* (Genesis 42:9) and saw his brethren bowed before him, the obeisance the dreams foretold had begun — the rejected dreamer exalted, the haters bending the knee unknowing.'),
+    ('canon','genesis',42,8,'canon','john',1,11,'free',
+      E'*He came unto his own, and his own received him not* (John 1:11). *Joseph knew his brethren, but they knew not him* (Genesis 42:8) — the rejected, sold brother stands exalted and unrecognized before his own, who bow without knowing the one they cast out. Read strictly as TYPE: the shape of the brethren who *received him not* foreshadows the One who came unto his own and was not received — the rejected one standing unknown before the people of his own blood.'),
+    ('canon','genesis',42,6,'canon','acts',7,9,'free',
+      E'*And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9). Stephen names the envy that drove the brethren now bowing before Joseph — *sold Joseph into Egypt: but Elohim (God) was with him* — the very ones who *bowed down themselves before him with their faces to the earth* (Genesis 42:6) are the patriarchs who sold him. The rejected one, kept by Elohim through the selling, is the one they now bow to unknowing.'),
+    ('canon','genesis',42,8,'canon','acts',7,13,'free',
+      E'*And at the second time Joseph was made known to his brethren; and Joseph''s kindred was made known unto Pharaoh* (Acts 7:13). Stephen reads two visits: at the FIRST, the one before us, *Joseph knew his brethren, but they knew not him* (Genesis 42:8); only *at the second time Joseph was made known to his brethren*. This chapter is the first visit — the rejected one stands unrecognized before his own, the knowing held back until the gathering is complete.'),
+    ('canon','genesis',42,8,'jubilees','jubilees',42,5,'extras',
+      E'*And Joseph recognized them, but they did not recognize him, and he spake to them and questioned them, and he said to them: "Are you not spies, and have you not come to explore the approaches of the land?" And he put them in ward* (Jubilees 42:5). The restored witness keeps the unrecognized rejected one whole — *he recognized them, but they did not recognize him* — matching *Joseph knew his brethren, but they knew not him* (Genesis 42:8); the spies-charge and the ward kept in the same breath.'),
+    ('canon','genesis',42,8,'jasher','jasher',51,20,'extras',
+      E'*And Joseph saw his brethren, and he knew them, but they knew him not, for Joseph was very great in their eyes, therefore they knew him not* (Jasher 51:20). The extended witness gives the reason the canon leaves unspoken — *Joseph was very great in their eyes, therefore they knew him not* — filling out *Joseph knew his brethren, but they knew not him* (Genesis 42:8): the lowered brother now so exalted that his own cannot recognize him in his glory.'),
+
+    -- THREAD 2 (★): We are verily guilty — his blood is required (the awakened conscience, the brother's blood)
+    ('canon','genesis',42,22,'canon','genesis',4,10,'free',
+      E'*And he said, What hast thou done? the voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10). Reuben''s *behold, also his blood is required* (Genesis 42:22) reaches back to the first murder, where the blood of the slain brother *crieth unto me from the ground*. From Cain and Abel onward the seed-war is brother against brother, and the innocent one''s blood cries for reckoning — the guilt the sons of Jacob now feel pressing upon them for what they did to Joseph.'),
+    ('canon','genesis',42,22,'canon','matthew',27,25,'free',
+      E'*Then answered all the people, and said, His blood be on us, and on our children* (Matthew 27:25). Reuben says of Joseph *also his blood is required* (Genesis 42:22), and the conscience-stricken brothers own *We are verily guilty concerning our brother* (42:21) — the same dreadful owning of a rejected one''s blood. Read as the recurring shape of the seed-war (Red Line #1): the blood of the cast-out brother required at the hand of those who would not hear; the lost sheep convicted, never an ethnic guilt, but conduct within the covenant come home to roost.'),
+    ('canon','genesis',42,21,'jasher','jasher',51,6,'extras',
+      E'*And whilst the sons of Jacob were going on the road, they repented of what they had done to Joseph, and they spoke to each other, saying, We know that our brother Joseph went down to Egypt* (Jasher 51:6). The extended witness sets the conscience stirring even before they reach Egypt — *they repented of what they had done to Joseph* — and in the ward it breaks open: *We are verily guilty concerning our brother... we would not hear* (Genesis 42:21). The guilt for the brother, long buried, surfacing as the famine drives them to him.'),
+
+    -- THREAD 3: The famine drove the scattered family to the brother (the gathering type)
+    ('canon','genesis',42,3,'canon','acts',7,11,'free',
+      E'*Now there came a dearth over all the land of Egypt and Chanaan, and great affliction: and our fathers found no sustenance* (Acts 7:11). When *the famine was in the land of Canaan* (Genesis 42:5) and *Joseph''s ten brethren went down to buy corn in Egypt* (42:3), it is the dearth Stephen names — *over all the land of Egypt and Chanaan... our fathers found no sustenance* — that drives the covenant family down to the brother who has bread.'),
+    ('canon','genesis',42,3,'canon','acts',7,12,'free',
+      E'*But when Jacob heard that there was corn in Egypt, he sent out our fathers first* (Acts 7:12). Stephen''s words are the very scene of this chapter — *Jacob heard that there was corn in Egypt, he sent out our fathers first* — *Now when Jacob saw that there was corn in Egypt... And Joseph''s ten brethren went down to buy corn in Egypt* (Genesis 42:1,3). The first sending, the family drawn by hunger toward the saviour-brother set in place before them.'),
+    ('canon','genesis',42,4,'jubilees','jubilees',42,4,'extras',
+      E'*And Jacob heard that there was food in Egypt, and he sent his ten sons that they should procure food for him in Egypt; but Benjamin he did not send, and (the ten sons of Jacob) arrived (in Egypt) among those that went (there)* (Jubilees 42:4). The restored witness keeps the sending plain — *he sent his ten sons... but Benjamin he did not send* — matching *Joseph''s brother, Jacob sent not with his brethren; for he said, Lest peradventure mischief befall him* (Genesis 42:4); the ten go down, the youngest kept back at the father''s side.'),
+
+    -- THREAD 4: Simeon bound, the money returned — what is this that Elohim hath done?
+    ('canon','genesis',42,24,'jubilees','jubilees',42,6,'extras',
+      E'*And after that he set them free again, and detained Simeon alone and sent off his nine brothers. And he filled their sacks with corn, and he put their gold in their sacks, and they did not know* (Jubilees 42:6). The restored witness keeps the binding and the secret restoring together — *detained Simeon alone... filled their sacks with corn... put their gold in their sacks, and they did not know* — matching *took from them Simeon, and bound him before their eyes* (Genesis 42:24) and the money restored into the sack (42:25); the brother held, the gold returned unknown, the hand of Elohim moving behind the fear.'),
+    ('canon','genesis',42,28,'jasher','jasher',51,49,'extras',
+      E'*And the man was greatly afraid, and he said to his brethren, My money is restored, and lo, it is even in my sack, and the men were greatly afraid, and they said, What is this that Elohim (God) has done to us?* (Jasher 51:49). The extended witness gives the dawning awe word-for-word — *My money is restored... What is this that Elohim (God) has done to us?* — as *their heart failed them, and they were afraid, saying one to another, What is this that Elohim (God) hath done unto us?* (Genesis 42:28). The brothers feel the providence they cannot yet read, the hand of the Most High bending all toward a gathering they do not foresee.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-42-they-bowed-down-but-knew-him-not-the-rejected-one-unrecognized',
+       E'They bowed down, but knew him not — the rejected one unrecognized, the dreams fulfilled',
+       E'The ten brothers who sold Joseph come down to Egypt for bread, and stand before the governor of the land: *And Joseph''s brethren came, and bowed down themselves before him with their faces to the earth* (Genesis 42:6). They do not know him — *And Joseph knew his brethren, but they knew not him* (Genesis 42:8) — but he knows them, and in their bowing he sees the thing they hated him for: *And Joseph remembered the dreams which he dreamed of them* (Genesis 42:9). The boyhood dreams are fulfilled before his eyes — *my sheaf arose... and your sheaves stood round about, and made obeisance to my sheaf* (Genesis 37:7), *the sun and the moon and the eleven stars made obeisance to me* (37:9) — the very brethren who said *Shalt thou indeed reign over us?* now bend to the earth before him. Read strictly as TYPE through the Formed-and-Formless lens: the rejected, sold one stands exalted and unrecognized before his own who bow without knowing him — *He came unto his own, and his own received him not* (John 1:11). Stephen frames it as two visits: *the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9), and only *at the second time Joseph was made known to his brethren* (Acts 7:13). THIS is the first visit, where the knowing is held back until the gathering is complete. The restored witnesses keep the unrecognized one whole: *he recognized them, but they did not recognize him* (Jubilees 42:5); *he knew them, but they knew him not, for Joseph was very great in their eyes* (Jasher 51:20). Never a flattening of Joseph into the Messiah — the shape, the rejected one standing unknown before his own, is the type the rejection of the Formed Son fills.',
+       sv.verse_id, ev.verse_id, 'extras', 21025
+  FROM _s301_ge42_lookup sv, _s301_ge42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=42 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-42-we-are-verily-guilty-his-blood-is-required',
+       E'We are verily guilty — his blood is required (the awakened conscience, the brother''s blood)',
+       E'Pressed in the ward, with their brother demanded as proof, the long-buried guilt at last breaks open: *And they said one to another, We are verily guilty concerning our brother, in that we saw the anguish of his soul, when he besought us, and we would not hear; therefore is this distress come upon us* (Genesis 42:21). And Reuben names what they fear is now reckoned: *Spake I not unto you, saying, Do not sin against the child; and ye would not hear? therefore, behold, also his blood is required* (Genesis 42:22). The brother''s blood crying for reckoning runs back to the very first murder — *the voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10) — for from Cain and Abel the seed-war is brother against brother, the innocent one''s blood required at the hand of those who would not hear. And it runs forward to the rejecters'' own dreadful owning of a rejected one''s blood: *His blood be on us, and on our children* (Matthew 27:25). The restored witness sets the conscience stirring even on the road: *whilst the sons of Jacob were going on the road, they repented of what they had done to Joseph* (Jasher 51:6). This is not ethnic guilt but conduct within the covenant come home — the lost sheep convicted of the wrong done the brother, the guilt the famine has driven them back to face.',
+       sv.verse_id, ev.verse_id, 'extras', 21028
+  FROM _s301_ge42_lookup sv, _s301_ge42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=42 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-42-the-famine-drove-the-scattered-family-to-the-brother',
+       E'The famine drove the scattered family to the brother — the gathering in seed',
+       E'The dearth that filled all lands at last reaches the covenant household: *Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do ye look one upon another?* (Genesis 42:1); *get you down thither, and buy for us from thence; that we may live, and not die* (42:2). And so *Joseph''s ten brethren went down to buy corn in Egypt* (Genesis 42:3) — Benjamin kept back, *Lest peradventure mischief befall him* (42:4) — *for the famine was in the land of Canaan* (42:5). The hunger drives the scattered family down toward the brother they cast out, the saviour set in place before them by the hand of Yahuah (the Lord). Stephen reads the scene whole: *Now there came a dearth over all the land of Egypt and Chanaan, and great affliction: and our fathers found no sustenance* (Acts 7:11); *But when Jacob heard that there was corn in Egypt, he sent out our fathers first* (Acts 7:12). The restored witness keeps the first sending plain: *he sent his ten sons... but Benjamin he did not send* (Jubilees 42:4). This is the gathering type in its first motion — the family drawn by need to the exalted brother, who will at the last make himself known and gather them all before him.',
+       sv.verse_id, ev.verse_id, 'extras', 21031
+  FROM _s301_ge42_lookup sv, _s301_ge42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=42 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-42-simeon-bound-the-money-returned-what-hath-elohim-done',
+       E'Simeon bound, the money returned — what is this that Elohim hath done?',
+       E'Joseph proves his brethren and holds one back: *he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes* (Genesis 42:24). Then he does a strange mercy in secret: *Joseph commanded to fill their sacks with corn, and to restore every man''s money into his sack, and to give them provision for the way* (Genesis 42:25). On the road one opens his sack and finds the silver, *and their heart failed them, and they were afraid, saying one to another, What is this that Elohim (God) hath done unto us?* (Genesis 42:28). They feel a hand moving behind their fear — the providence of the Most High bending all toward a gathering they cannot yet read, the same hand that *meant it unto good* (Genesis 50:20) though they do not know it. The restored witnesses keep the scene whole: *he... detained Simeon alone and sent off his nine brothers. And he filled their sacks with corn, and he put their gold in their sacks, and they did not know* (Jubilees 42:6); *My money is restored, and lo, it is even in my sack... What is this that Elohim (God) has done to us?* (Jasher 51:49). And at home the grief deepens — *Me have ye bereaved of my children: Joseph is not, and Simeon is not, and ye will take Benjamin away: all these things are against me* (Genesis 42:36) — Jacob naming as loss what Elohim is even then turning to gain.',
+       sv.verse_id, ev.verse_id, 'extras', 21034
+  FROM _s301_ge42_lookup sv, _s301_ge42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=42 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *my sheaf arose... and your sheaves stood round about, and made obeisance to my sheaf* (Genesis 37:7) — the first dream Joseph remembers (42:9), fulfilled by the brethren bowing (42:6).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=9
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=37 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-they-bowed-down-but-knew-him-not-the-rejected-one-unrecognized'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the sun and the moon and the eleven stars made obeisance to me* (Genesis 37:9) — the second dream sealing the first; the obeisance foretold begun in the bowing of 42:6.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=9
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=37 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-they-bowed-down-but-knew-him-not-the-rejected-one-unrecognized'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *He came unto his own, and his own received him not* (John 1:11) — the rejected one unrecognized before his own (42:8); the type the rejection of the Formed Son fills.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=8
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-they-bowed-down-but-knew-him-not-the-rejected-one-unrecognized'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9) — Stephen names the envy of the brethren now bowing (42:6); the sold one kept by Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=6
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-they-bowed-down-but-knew-him-not-the-rejected-one-unrecognized'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *at the second time Joseph was made known to his brethren* (Acts 7:13) — Stephen''s two-visits reading; THIS chapter is the first, where *they knew not him* (42:8).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=8
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-they-bowed-down-but-knew-him-not-the-rejected-one-unrecognized'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*he recognized them, but they did not recognize him... "Are you not spies?"... And he put them in ward* (Jubilees 42:5) — the unrecognized rejected one of 42:8 kept whole in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=8
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-they-bowed-down-but-knew-him-not-the-rejected-one-unrecognized'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*he knew them, but they knew him not, for Joseph was very great in their eyes* (Jasher 51:20) — the reason the canon leaves unspoken behind *they knew not him* (42:8): so exalted his own cannot know him.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=8
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=51 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-they-bowed-down-but-knew-him-not-the-rejected-one-unrecognized'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10) — Abel''s blood, the first brother''s-blood-crying; Reuben''s *his blood is required* (42:22) reaches back to it.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=22
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-we-are-verily-guilty-his-blood-is-required'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *His blood be on us, and on our children* (Matthew 27:25) — the rejecters'' own owning of a rejected one''s blood; the same shape as *We are verily guilty... his blood is required* (42:21-22).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=22
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-we-are-verily-guilty-his-blood-is-required'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*whilst the sons of Jacob were going on the road, they repented of what they had done to Joseph* (Jasher 51:6) — the conscience stirring even before Egypt; in the ward it breaks open (42:21).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=21
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=51 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-we-are-verily-guilty-his-blood-is-required'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*there came a dearth over all the land of Egypt and Chanaan... our fathers found no sustenance* (Acts 7:11) — Stephen names the famine of 42:5 that drives the family down.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=3
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-the-famine-drove-the-scattered-family-to-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*when Jacob heard that there was corn in Egypt, he sent out our fathers first* (Acts 7:12) — the very scene of 42:1,3; the first sending toward the saviour-brother.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=3
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-the-famine-drove-the-scattered-family-to-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he sent his ten sons... but Benjamin he did not send* (Jubilees 42:4) — the sending of 42:3-4 kept plain; the ten go down, the youngest kept back.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=4
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-the-famine-drove-the-scattered-family-to-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*detained Simeon alone... filled their sacks with corn, and he put their gold in their sacks, and they did not know* (Jubilees 42:6) — Simeon bound (42:24) and the money secretly restored (42:25), kept whole.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=24
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-simeon-bound-the-money-returned-what-hath-elohim-done'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*My money is restored... What is this that Elohim (God) has done to us?* (Jasher 51:49) — the dawning awe of 42:28 word-for-word; the providence they cannot yet read.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=42 AND sv.verse_number=28
+  JOIN _s301_ge42_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=51 AND tv.verse_number=49
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-42-simeon-bound-the-money-returned-what-hath-elohim-done'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_43.sql (Genesis 43) -----
+-- Chapter: Genesis 43 — ★ JUDAH THE SURETY: the famine grows sore again; Jacob must at last send Benjamin; ★ Judah stands pledge — *I will be surety for him; of my hand shalt thou require him* (43:9) — the royal tribe standing as guarantor for the beloved son, forward to the Messianic surety of a better testament (Heb 7:22). Jacob's surrender — *El Shaddai (God Almighty) give you mercy before the man... If I be bereaved of my children, I am bereaved* (43:11,14). The brothers brought into Joseph's house, afraid over the returned money; the steward's *Peace be to you, fear not: your Elohim (God)... hath given you treasure in your sacks* (43:23) — unmerited provision. Joseph's hidden compassion — *his bowels did yearn upon his brother... he sought where to weep... and wept there* (43:30) — the rejected/unrecognized brother's yearning love for his own. The feast set apart from the Egyptians; Benjamin's portion five times as much; *the men marvelled one at another* (43:33).
+-- Tag: ge43   Temp view: _s301_ge43_lookup
+-- Sort band: base 21050, step 3 -> threads at 21050, 21053, 21056, 21059, 21062 (5 threads — curated)
+-- Source of EVERY row: 'canon','genesis',43,v
+--
+-- Genesis 43 coverage:
+--   ★ v.8-9 (Judah: Send the lad with me... I will be surety for him; of my hand shalt thou require him; let me bear the blame for ever)
+--        NT:     ★★ Hebrews 7:22 (By so much was Yahusha made a surety of a better testament); Hebrews 7:25 (he is able also to save them to the uttermost... seeing he ever liveth to make intercession) — THREAD 1 (the surety/intercessor type, the scepter-tribe standing in the breach)
+--        Extras: Jubilees 42:19 (Judah came near and said: Send him with me, and if I do not bring him back to you, let me bear the blame); Jasher 52:19 (Give the lad into my care... if the lad be not with us, then let me bear your blame forever) — THREAD 1
+--        Tanakh: ★★ Genesis 44:32-33 (thy servant became surety for the lad... let thy servant abide instead of the lad a bondman); ★ Genesis 49:8-10 (Yahudah, thou art he whom thy brethren shall praise... the scepter shall not depart) — THREAD 1 (the surety fulfilled in substitution; the royal/scepter tribe)
+--   v.11-14 (Jacob: take a present... double money... El Shaddai give you mercy before the man... If I be bereaved of my children, I am bereaved)
+--        NT:     none warranted distinct (the surrender-of-the-beloved-son weight is the Judah-surety type of THREAD 1; no closer NT type than the surety apparatus held there)
+--        Extras: ★ Jubilees 42:10-11 (Me have you bereaved of my children!... If perchance he took a fever on the road, you would bring down my old age with sorrow to death); Jasher 52:23 (may the El Shaddai give you mercy before him that he may send Benjamin and Simeon); Jasher 52:26 (Jacob prayed... O Yahuah Elohim... remember your covenant with our father Abraham) — THREAD 2
+--        Tanakh: none warranted distinct (Jacob's grief-then-trust carried by the extras witnesses of THREAD 2; the covenant-remembrance is Jasher's own prayer, no Tanakh lateral forced)
+--   ★ v.23 (Peace be to you, fear not: your Elohim, and the Elohim of your father, hath given you treasure in your sacks: I had your money)
+--        NT:     none warranted distinct (the "fear not / unmerited treasure" weave is filled by the Tanakh "fear not... I have redeemed thee" laterals of THREAD 3; no closer NT type forced)
+--        Extras: Jasher 53:4 (the men told the superintendent... concerning the silver... and he said to them, It will be well with you, fear not, and he brought their brother Simeon to them) — THREAD 3
+--        Tanakh: ★ Isaiah 41:10 (Fear thou not; for I am with thee... I will uphold thee with the right hand of my righteousness); ★ Isaiah 43:1 (Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine) — THREAD 3 (the steward's "fear not... treasure given" is the gospel-shape of unearned grace within the house)
+--   ★ v.30-31 (Joseph made haste; for his bowels did yearn upon his brother: and he sought where to weep; and he entered into his chamber, and wept there)
+--        NT:     ★ Romans 5:8 (while we were yet sinners, Messiah died for us); ★ John 15:13 (Greater love hath no man than this, that a man lay down his life for his friends) — THREAD 4 (the rejected/unrecognized brother's yearning love for the very ones who wronged him)
+--        Extras: Jasher 53:8 (he wished to weep and he went into an inner room and he wept a great weeping); Jasher 53:10 (he again wished to weep, and he entered the chamber, and he wept there) — THREAD 4
+--        Tanakh: none warranted distinct (the yearning-compassion forward-weave is the NT love-of-Messiah of THREAD 4; no Tanakh lateral closer than the ch45 reveal, held to its own pack)
+--   v.32-34 (set on for him by himself... the Egyptians might not eat bread with the Hebrews; the firstborn according to his birthright; Benjamin's mess five times; they drank, and were merry)
+--        NT:     none warranted (table-fellowship/separation narrative; no framework-bearing NT type forced here)
+--        Extras: Jubilees 42:23 (they ate before him and he gave them all a portion, but the portion of Benjamin was seven times larger than that of any of theirs); Jasher 53:14 (Joseph gave one gift to Benjamin... and they were five presents in the hand of Benjamin) — THREAD 5
+--        Tanakh: none warranted distinct (the favoured-portion/marvelling-brothers narrative carried by the extras of THREAD 5)
+--   v.1-2 (the famine sore; Go again, buy us a little food); v.3-7 (the man did solemnly protest... ye shall not see my face except your brother be with you); v.15-22 (down to Egypt, brought to the house, afraid, the steward at the door); v.24-29 (water, washed feet, the present, the obeisance, Is your father well?, Elohim be gracious unto thee my son)
+--        NT: none warranted   Extras: Jubilees 42:4,15-16 narrative; Jasher 52:7-18 narrative; Jasher 53:1-7 narrative   Tanakh: none warranted
+--        — connective narrative tissue (the renewed errand, the demand for Benjamin, the journey, the fear at the door, the obeisance fulfilling 37:7) carried into the bounding threads' summaries; no distinct framework-bearing target forced.
+--
+-- Threads (slug — target libraries):
+--   1. genesis-43-judah-the-surety-of-the-better-testament — NT (Hebrews 7) + Tanakh (Genesis 44, Genesis 49) + Extras (Jubilees, Jasher) [extras] (★ Judah pledges himself for Benjamin; the scepter-tribe standing as guarantor, forward to the Messianic surety/intercessor)
+--   2. genesis-43-if-i-be-bereaved-el-shaddai-give-you-mercy — Extras (Jubilees, Jasher) [extras] (Jacob surrenders the beloved son and casts himself on El Shaddai's mercy and the covenant)
+--   3. genesis-43-peace-be-to-you-fear-not-treasure-in-your-sacks — Tanakh (Isaiah 41, Isaiah 43) + Extras (Jasher) [extras] (★ unmerited provision within the house — fear not, the treasure was given you)
+--   4. genesis-43-he-sought-where-to-weep-the-hidden-compassion — NT (Romans 5, John 15) + Extras (Jasher) [extras] (★ the rejected/unrecognized brother's yearning love for the ones who wronged him)
+--   5. genesis-43-benjamins-fivefold-portion-the-men-marvelled — Extras (Jubilees, Jasher) [extras] (the favoured portion at the set-apart table; the brothers marvel)
+--
+-- Framing notes:
+--   ★ JUDAH THE SURETY (THREAD 1) — the load-bearing thread of the chapter. *And Yahudah (Judah) said unto Yashar'el (Israel) his father, Send the lad with me... I will be surety for him; of my hand shalt thou require him: if I bring him not unto thee, and set him before thee, then let me bear the blame for ever* (43:8-9). Judah, the royal tribe, stands pledge with his own person for the beloved son — the guarantor standing in the breach. The surety is made good in ch44 when Judah offers himself in Benjamin's place — *thy servant became surety for the lad unto my father* (44:32), *let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren* (44:33): substitution, the surety bearing the bondage himself. This is the scepter-tribe shape — *Yahudah (Judah), thou art he whom thy brethren shall praise... the sceptre shall not depart from Yahudah* (49:8,10) — and it weaves FORWARD to the Messianic surety of the royal line: *By so much was Yahusha (Jesus) made a surety of a better testament* (Hebrews 7:22), the One who *ever liveth to make intercession for them* (Hebrews 7:25). Read as TYPE (Red Line #4-5): Judah the guarantor foreshadows the Surety drawn from the same tribe (*it is evident that our Lord sprang out of Juda* — Heb 7:14); never a flattening of Judah into the Messiah, but the shape the better-testament Surety fills. Extras tier (Jubilees 42:19, Jasher 52:19 keep Judah's pledge whole).
+--   JACOB'S SURRENDER (THREAD 2): *And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved* (43:14). The father who clung to Benjamin lets him go, casting himself on El Shaddai's mercy. The restored witnesses carry the grief and the covenant-plea: *Me have you bereaved of my children!* (Jubilees 42:10), and Jacob's prayer *remember your covenant with our father Abraham... deliver them not into the hands of the king of Egypt* (Jasher 52:26). EXTRAS-only thread.
+--   ★ PEACE BE TO YOU, FEAR NOT (THREAD 3): *And he said, Peace be to you, fear not: your Elohim (God), and the Elohim (God) of your father, hath given you treasure in your sacks: I had your money* (43:23). The brothers stand terrified over money they cannot account for, and the word that meets them is grace: the treasure was GIVEN, the debt already covered. It is the gospel-shape Yahuah (the Lord) speaks to scattered Yashar'el — *Fear thou not; for I am with thee... I will uphold thee with the right hand of my righteousness* (Isaiah 41:10), *Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine* (Isaiah 43:1). Unmerited provision within the saviour's house. Extras tier (Jasher 53:4 keeps the steward's "fear not").
+--   ★ THE HIDDEN COMPASSION (THREAD 4): *And Joseph made haste; for his bowels did yearn upon his brother: and he sought where to weep; and he entered into his chamber, and wept there* (43:30). The unrecognized brother — sold, hated, given up for dead — burns with love for the very ones who wronged him, hiding his tears until the time to reveal himself comes (ch45). It foreshadows the love of the rejected Saviour: *while we were yet sinners, Messiah (Christ) died for us* (Romans 5:8), *Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13). The yearning of the unrecognized brother is the yearning of the One his own received not. Extras tier (Jasher 53:8,10 keep the weeping).
+--   THE FEAST (THREAD 5): *And he took and sent messes unto them from before him: but Benjamin's mess was five times so much as any of theirs* (43:34); *the men marvelled one at another* (43:33). The set-apart table (the Egyptians might not eat with the Hebrews) and the favoured portion. Narrative; threaded lightly — the witnesses differ on the count (Jubilees 42:23 seven times, Jasher 53:14 five presents), quoted exactly as each gives it. EXTRAS-only thread.
+--   EXTRAS: Jubilees 42 carries the chapter clean — DOUBLE-WRITTEN 'jubilees','jubilees' (42:10-11 the bereaved father, 42:19 Judah's pledge, 42:21 the feast/Elohim be gracious, 42:23 Benjamin's portion). ⚠ Jubilees 42 has numbering gaps in this parse (no v.7, v.12, v.17, v.22) — only clean verses used as members. Jasher 52-53 carry it at length — DOUBLE-WRITTEN 'jasher','jasher' (52:19 the surety, 52:23/26 El Shaddai mercy + the covenant-prayer, 53:4 the steward's "fear not", 53:8/10 Joseph's weeping, 53:14 the five presents). Jasher's star-map/Benjamin-divination legend (53:18-22) is extended legend, NOT forced as a member.
+--   VERSES WITH NO ADD: v.1-2 (the renewed errand), v.3-7 (the man's protest, ye shall not see my face), v.15-22 (the journey, the fear at the door), v.24-29 (the water and feet-washing, the present, the obeisance, Is your father well?, Elohim be gracious unto thee my son), v.32 (the separated tables) — connective narrative carried into the bounding threads' summaries; no distinct framework-bearing target warranted in this pack.
+
+CREATE TEMP VIEW _s301_ge43_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Judah the surety of the better testament (the scepter-tribe guarantor)
+    ('canon','genesis',43,9,'canon','hebrews',7,22,'free',
+      E'*By so much was Yahusha (Jesus) made a surety of a better testament* (Hebrews 7:22). When Yahudah (Judah) says *I will be surety for him; of my hand shalt thou require him: if I bring him not unto thee... then let me bear the blame for ever* (Genesis 43:9), the royal tribe binds his own person as guarantor for the beloved son. It is the very word the writer takes up for the One sprung out of Judah — *Yahusha (Jesus) made a surety* — the guarantor who stands pledge with himself; Judah''s pledge is the type the better-testament Surety fills.'),
+    ('canon','genesis',43,9,'canon','hebrews',7,25,'free',
+      E'*Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:25). Judah''s *of my hand shalt thou require him* (Genesis 43:9) puts the brother''s life into the surety''s own keeping; so the priest after Melek Tsadiq (Melchizedek), drawn from Judah''s line, keeps his people to the uttermost — *he ever liveth to make intercession for them*. The tribe that stood surety for one son foreshadows the Surety who stands and pleads for the many.'),
+    ('canon','genesis',43,9,'canon','genesis',44,32,'free',
+      E'*For thy servant became surety for the lad unto my father, saying, If I bring him not unto thee, then I shall bear the blame to my father for ever* (Genesis 44:32). The pledge of *I will be surety for him... let me bear the blame for ever* (Genesis 43:9) is made good when Judah recalls it before Joseph and offers himself in the lad''s place: *Now therefore... let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren* (Genesis 44:33). The surety bears the bondage himself — substitution, the guarantor stepping into the place of the one he pledged.'),
+    ('canon','genesis',43,9,'canon','genesis',49,10,'free',
+      E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The one who stands surety for his brother — *I will be surety for him* (Genesis 43:9) — is the tribe of the sceptre, the royal line in whom *the gathering of the people* is promised. Judah''s standing in the breach for Benjamin is the kingly shape: the scepter-tribe is the tribe that guarantees, the tribe out of whom the Surety and Gatherer would come.'),
+    ('canon','genesis',43,8,'jubilees','jubilees',42,19,'extras',
+      E'*And Yahudah (Judah) came near and said: "Send him with me, and if I do not bring him back to you, let me bear the blame before you all the days of my life."* (Jubilees 42:19). The restored witness keeps Judah''s surety whole — *Send him with me, and if I do not bring him back to you, let me bear the blame* — matching *Send the lad with me... I will be surety for him* (Genesis 43:8-9); after Reuben''s lesser pledge fails, it is Judah, the royal tribe, who steps forward to guarantee the son with his own name.'),
+    ('canon','genesis',43,9,'jasher','jasher',52,19,'extras',
+      E'*And Judah said to Jacob his father, Give the lad into my care and we will rise up and go down to Egypt and buy corn, and then return, and it shall be when we return if the lad be not with us, then let me bear your blame forever* (Jasher 52:19). The extended witness carries the surety in full — *Give the lad into my care... if the lad be not with us, then let me bear your blame forever* — the same pledge as *of my hand shalt thou require him... then let me bear the blame for ever* (Genesis 43:9); the guarantor takes the son into his own hand and binds his name to the bringing-back.'),
+
+    -- THREAD 2: If I be bereaved — El Shaddai give you mercy (Jacob's surrender)
+    ('canon','genesis',43,11,'jubilees','jubilees',42,10,'extras',
+      E'*And Jacob said: "Me have you bereaved of my children! Joseph is not and Simeon also is not, and you will take Benjamin away. On me has your wickedness come."* (Jubilees 42:10). The grief behind *If I be bereaved of my children, I am bereaved* (Genesis 43:14) is laid bare in the restored witness — *Me have you bereaved of my children!* — the father who has lost Joseph and Simeon and now must risk Benjamin, the surrender wrung out of a heart already torn.'),
+    ('canon','genesis',43,14,'jasher','jasher',52,23,'extras',
+      E'*Now therefore rise up and go to the man, and take for him in your hands a present from what can be obtained in the land and bring it before him, and may the El Shaddai (Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you* (Jasher 52:23). The extended witness keeps Jacob''s blessing word-for-heart with the canon — *may the El Shaddai (Almighty God) give you mercy before him* — echoing *And El Shaddai (God Almighty) give you mercy before the man* (Genesis 43:14); the father gives up the son and casts the outcome upon the mercy of El Shaddai.'),
+    ('canon','genesis',43,14,'jasher','jasher',52,26,'extras',
+      E'*And Jacob rose up from his sons and spread forth his hands and he prayed to Yahuah (the Lord) on account of his sons, saying, O Yahuah Elohim (O Lord God) of heaven and earth, remember your covenant with our father Abraham, remember it with my father Isaac and deal kindly with my sons and deliver them not into the hands of the king of Egypt* (Jasher 52:26). Behind the bare resignation *If I be bereaved of my children, I am bereaved* (Genesis 43:14) the witness sets a prayer of covenant-faith — *remember your covenant with our father Abraham* — the surrender is not despair but a casting of the seed upon the covenant Yahuah (the Lord) swore to the fathers.'),
+
+    -- THREAD 3 (★): Peace be to you, fear not — treasure in your sacks (unmerited provision)
+    ('canon','genesis',43,23,'canon','isaiah',41,10,'free',
+      E'*Fear thou not; for I am with thee: be not dismayed; for I am thy Elohim (God): I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness* (Isaiah 41:10). The steward''s word to the terrified brothers — *Peace be to you, fear not: your Elohim (God)... hath given you treasure in your sacks* (Genesis 43:23) — is the very comfort Yahuah (the Lord) speaks to His own: *Fear thou not; for I am with thee*. The dread of an unpayable debt is met with the word that the provision was given, the help already at hand.'),
+    ('canon','genesis',43,23,'canon','isaiah',43,1,'free',
+      E'*But now thus saith Yahuah (LORD) that created thee, O Jacob, and he that formed thee, O Yashar''el (Israel), Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine* (Isaiah 43:1). The sons of Yashar''el (Israel) hear at the saviour''s door what Yahuah (the Lord) speaks to the whole house — *Fear not: for I have redeemed thee*. *Your Elohim (God), and the Elohim (God) of your father, hath given you treasure in your sacks: I had your money* (Genesis 43:23): the debt is covered, the money is the saviour''s own gift; fear not, for thou art mine.'),
+    ('canon','genesis',43,23,'jasher','jasher',53,4,'extras',
+      E'*And at noon time Joseph sent for the men to come before him with Benjamin, and the men told the superintendent of Joseph''s house concerning the silver that was returned in their sacks, and he said to them, It will be well with you, fear not, and he brought their brother Simeon to them* (Jasher 53:4). The extended witness keeps the steward''s grace — *It will be well with you, fear not* — matching *Peace be to you, fear not... I had your money* (Genesis 43:23); the brothers'' anxious confession over the silver is answered with peace, and Simeon is restored to them as a token of the house''s goodwill.'),
+
+    -- THREAD 4 (★): He sought where to weep — the hidden compassion (the rejected brother's yearning love)
+    ('canon','genesis',43,30,'canon','romans',5,8,'free',
+      E'*But Elohim (God) commendeth his love toward us, in that, while we were yet sinners, Messiah (Christ) died for us* (Romans 5:8). The brother they sold and hated stands unrecognized before them, and *his bowels did yearn upon his brother... and he sought where to weep* (Genesis 43:30): love burning toward the very ones who wronged him, while they know him not. It is the shape of the love that Romans names — *while we were yet sinners, Messiah (Christ) died for us* — the rejected One yearning over the people who would not own him.'),
+    ('canon','genesis',43,30,'canon','john',15,13,'free',
+      E'*Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13). Joseph hides his face to weep — *he entered into his chamber, and wept there* (Genesis 43:30) — the love of the unrecognized brother is greater than the wrong done him; he has already, in his heart, laid down the grievance and sought their good. It foreshadows the *greater love* of the One who laid down his life for those who knew him not, the rejected brother whose compassion outran the rejection.'),
+    ('canon','genesis',43,30,'jasher','jasher',53,8,'extras',
+      E'*And Joseph read the letter and knew his father''s writing, and he wished to weep and he went into an inner room and he wept a great weeping; and he went out* (Jasher 53:8). The extended witness sets the first hidden weeping at his father''s handwriting, then the second at the sight of Benjamin — matching *his bowels did yearn upon his brother: and he sought where to weep; and he entered into his chamber, and wept there* (Genesis 43:30); the ruler of all Egypt slips away to weep over his own, the compassion he must hide until the time to reveal himself.'),
+    ('canon','genesis',43,30,'jasher','jasher',53,10,'extras',
+      E'*And when Joseph saw his brother, the son of his mother, he again wished to weep, and he entered the chamber, and he wept there, and he washed his face, and went out and refrained from weeping, and he said, Prepare food* (Jasher 53:10). The extended witness mirrors the canon almost word for word — *he entered the chamber, and he wept there, and he washed his face, and went out and refrained* — as *he washed his face, and went out, and refrained himself, and said, Set on bread* (Genesis 43:31); the yearning love mastered, the tears washed away, the saviour holding back the revelation a little longer.'),
+
+    -- THREAD 5: Benjamin's fivefold portion — the men marvelled (the favoured portion at the set-apart table)
+    ('canon','genesis',43,34,'jubilees','jubilees',42,23,'extras',
+      E'*And they ate before him and he gave them all a portion, but the portion of Benjamin was seven times larger than that of any of theirs* (Jubilees 42:23). The restored witness keeps the favoured portion — *the portion of Benjamin was seven times larger* — alongside the canon''s *Benjamin''s mess was five times so much as any of theirs* (Genesis 43:34); the beloved younger son singled out at the table, the saviour''s open-handed favour toward the one his brothers once envied.'),
+    ('canon','genesis',43,33,'jasher','jasher',53,14,'extras',
+      E'*And Benjamin went up before Joseph and sat upon the throne, and the men beheld the acts of Joseph, and they were astonished at them... and Joseph gave one gift to Benjamin, and Manasseh and Ephraim... gave presents to him, and Osnath gave him one present, and they were five presents in the hand of Benjamin* (Jasher 53:14). The extended witness fills out *the men marvelled one at another* (Genesis 43:33) — *the men beheld the acts of Joseph, and they were astonished* — and names the fivefold favour as five presents heaped in Benjamin''s hand; the brothers marvel at a favour they cannot yet explain.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-43-judah-the-surety-of-the-better-testament',
+       E'Judah the surety — of my hand shalt thou require him (the scepter-tribe guarantor)',
+       E'The famine drives the brothers back to Egypt, but the ruler''s word stands: they shall not see his face without Benjamin. Reuben''s reckless offer of his own sons has already failed (Genesis 42:37); now the royal tribe steps forward. *And Yahudah (Judah) said unto Yashar''el (Israel) his father, Send the lad with me, and we will arise and go; that we may live, and not die* (Genesis 43:8); *I will be surety for him; of my hand shalt thou require him: if I bring him not unto thee, and set him before thee, then let me bear the blame for ever* (Genesis 43:9). Judah binds his own person as guarantor for the beloved son — the man standing in the breach. And he makes the pledge good: when the cup is found and Benjamin is taken, Judah recalls it — *thy servant became surety for the lad unto my father* (Genesis 44:32) — and offers himself in the lad''s place: *let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren* (Genesis 44:33). The surety bears the bondage himself; substitution. This is the scepter-tribe shape: *Yahudah (Judah), thou art he whom thy brethren shall praise... the sceptre shall not depart from Yahudah... and unto him shall the gathering of the people be* (Genesis 49:8,10). And it weaves FORWARD to the Surety of the same tribe — *it is evident that our Lord sprang out of Juda* (Hebrews 7:14) — *By so much was Yahusha (Jesus) made a surety of a better testament* (Hebrews 7:22), the One who *ever liveth to make intercession for them* (Hebrews 7:25). Read as TYPE through the Formed-and-the-Formless lens: Judah the guarantor foreshadows the better-testament Surety drawn from his line — never a flattening of Judah into the Messiah, but the very shape the royal Surety fills. The restored witnesses keep the pledge whole: *Send him with me, and if I do not bring him back to you, let me bear the blame* (Jubilees 42:19); *Give the lad into my care... if the lad be not with us, then let me bear your blame forever* (Jasher 52:19).',
+       sv.verse_id, ev.verse_id, 'extras', 21050
+  FROM _s301_ge43_lookup sv, _s301_ge43_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=43 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-43-if-i-be-bereaved-el-shaddai-give-you-mercy',
+       E'If I be bereaved — El Shaddai give you mercy (Jacob surrenders the beloved son)',
+       E'The father who lost Joseph and gave up Simeon to ward must now risk Benjamin, the last son of Rachel. He resists, then yields, and the yielding is wrung out of a heart already torn: *And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved* (Genesis 43:14). It is surrender, not despair — he sends the lad and casts the outcome upon the mercy of El Shaddai. The restored witnesses lay the grief bare: *Me have you bereaved of my children! Joseph is not and Simeon also is not, and you will take Benjamin away* (Jubilees 42:10). And they show the surrender as covenant-faith: Jacob blesses them with the same word the canon keeps — *may the El Shaddai (Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you* (Jasher 52:23) — then spreads his hands and prays, *O Yahuah Elohim (O Lord God) of heaven and earth, remember your covenant with our father Abraham... deliver them not into the hands of the king of Egypt* (Jasher 52:26). The father gives up the son not into the void but onto the covenant Yahuah (the Lord) swore to the fathers; *if I be bereaved, I am bereaved* is the prayer of a man who has handed his seed back to the One who gave it.',
+       sv.verse_id, ev.verse_id, 'extras', 21053
+  FROM _s301_ge43_lookup sv, _s301_ge43_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=43 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-43-peace-be-to-you-fear-not-treasure-in-your-sacks',
+       E'Peace be to you, fear not — your Elohim hath given you treasure in your sacks',
+       E'Brought into the ruler''s house, the brothers are sure they are trapped: *the men were afraid... Because of the money that was returned in our sacks at the first time are we brought in; that he may seek occasion against us, and fall upon us, and take us for bondmen* (Genesis 43:18). They press their case at the door, protesting the unaccountable silver. And the answer is pure grace: *And he said, Peace be to you, fear not: your Elohim (God), and the Elohim (God) of your father, hath given you treasure in your sacks: I had your money. And he brought Simeon out unto them* (Genesis 43:23). The debt is no debt — the money was a gift, the provision given, and the lost brother is restored. This is the word Yahuah (the Lord) speaks to His own scattered house: *Fear thou not; for I am with thee... I will uphold thee with the right hand of my righteousness* (Isaiah 41:10); *Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine* (Isaiah 43:1). The dread of an unpayable account is met with unmerited provision within the saviour''s house — peace, the treasure freely given, the brother returned. The restored witness keeps the steward''s word: *It will be well with you, fear not, and he brought their brother Simeon to them* (Jasher 53:4).',
+       sv.verse_id, ev.verse_id, 'extras', 21056
+  FROM _s301_ge43_lookup sv, _s301_ge43_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=43 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-43-he-sought-where-to-weep-the-hidden-compassion',
+       E'He sought where to weep — the hidden compassion of the unrecognized brother',
+       E'When Joseph lifts his eyes and sees Benjamin, his mother''s son, the love he has carried through all the years of exile breaks over him: *And Joseph made haste; for his bowels did yearn upon his brother: and he sought where to weep; and he entered into his chamber, and wept there* (Genesis 43:30). Then he masters it — *he washed his face, and went out, and refrained himself, and said, Set on bread* (Genesis 43:31). The brother they sold, hated, stripped, and gave up for dead stands unrecognized before them, ruler of all Egypt, and his heart yearns over the very ones who wronged him; he hides his tears because the time to reveal himself has not yet come. It is the shape of the love of the rejected Saviour: *Elohim (God) commendeth his love toward us, in that, while we were yet sinners, Messiah (Christ) died for us* (Romans 5:8); *Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13). The compassion of the unrecognized brother outran the rejection — he had already, in his heart, laid down the wrong and sought their good, the love of the One his own received not. The restored witness keeps the weeping doubled: *he wished to weep and he went into an inner room and he wept a great weeping* (Jasher 53:8); *he entered the chamber, and he wept there, and he washed his face, and went out and refrained from weeping* (Jasher 53:10).',
+       sv.verse_id, ev.verse_id, 'extras', 21059
+  FROM _s301_ge43_lookup sv, _s301_ge43_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=43 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-43-benjamins-fivefold-portion-the-men-marvelled',
+       E'Benjamin''s fivefold portion — the men marvelled one at another',
+       E'The feast is set, and even the seating is a wonder: *they sat before him, the firstborn according to his birthright, and the youngest according to his youth: and the men marvelled one at another* (Genesis 43:33) — the unknown ruler has somehow ranked them in the exact order of their births. And the favour falls on the beloved son: *he took and sent messes unto them from before him: but Benjamin''s mess was five times so much as any of theirs. And they drank, and were merry with him* (Genesis 43:34). The table is set apart — the Egyptians might not eat bread with the Hebrews — yet within the saviour''s house the brothers are received and the youngest singled out for open-handed favour, the very one they had once envied honoured before their eyes. The restored witnesses keep the favoured portion, though they tell the measure differently — quoted exactly as each gives it: *the portion of Benjamin was seven times larger than that of any of theirs* (Jubilees 42:23); *the men beheld the acts of Joseph, and they were astonished... and they were five presents in the hand of Benjamin* (Jasher 53:14). The brothers marvel at a favour they cannot yet explain — the kindness of the brother they do not know.',
+       sv.verse_id, ev.verse_id, 'extras', 21062
+  FROM _s301_ge43_lookup sv, _s301_ge43_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=33
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=43 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *By so much was Yahusha (Jesus) made a surety of a better testament* (Hebrews 7:22) — Judah''s *I will be surety for him* (43:9) is the type of the royal-line Surety sprung out of Juda.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=9
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-judah-the-surety-of-the-better-testament'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he is able also to save them to the uttermost... seeing he ever liveth to make intercession for them* (Hebrews 7:25) — Judah''s *of my hand shalt thou require him* (43:9) foreshadows the Surety who keeps his own to the uttermost.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=9
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-judah-the-surety-of-the-better-testament'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *thy servant became surety for the lad unto my father... let thy servant abide instead of the lad a bondman* (Genesis 44:32-33) — the surety of 43:9 made good in substitution; Judah offers himself in Benjamin''s place.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=9
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-judah-the-surety-of-the-better-testament'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*The sceptre shall not depart from Yahudah (Judah)... and unto him shall the gathering of the people be* (Genesis 49:10) — the surety of 43:9 is the scepter-tribe shape: the royal line that guarantees and gathers.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=9
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-judah-the-surety-of-the-better-testament'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Send him with me, and if I do not bring him back to you, let me bear the blame* (Jubilees 42:19) — Judah''s pledge of 43:8 kept whole; the royal tribe steps forward after Reuben''s offer fails.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=8
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-judah-the-surety-of-the-better-testament'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Give the lad into my care... if the lad be not with us, then let me bear your blame forever* (Jasher 52:19) — the surety of 43:9 in full; the guarantor takes the son into his own hand.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=9
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=52 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-judah-the-surety-of-the-better-testament'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Me have you bereaved of my children! Joseph is not and Simeon also is not, and you will take Benjamin away* (Jubilees 42:10) — the grief behind *If I be bereaved... I am bereaved* (43:14) laid bare.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=11
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-if-i-be-bereaved-el-shaddai-give-you-mercy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*may the El Shaddai (Almighty God) give you mercy before him that he may send Benjamin and Simeon* (Jasher 52:23) — Jacob''s blessing of 43:14 kept word-for-heart; the surrender cast on El Shaddai''s mercy.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=14
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=52 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-if-i-be-bereaved-el-shaddai-give-you-mercy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*spread forth his hands and he prayed... remember your covenant with our father Abraham... deliver them not into the hands of the king of Egypt* (Jasher 52:26) — the surrender of 43:14 shown as covenant-faith, not despair.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=14
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=52 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-if-i-be-bereaved-el-shaddai-give-you-mercy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Fear thou not; for I am with thee... I will uphold thee with the right hand of my righteousness* (Isaiah 41:10) — the steward''s *fear not... treasure given you* (43:23) is the comfort Yahuah speaks to His own.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=23
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=41 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-peace-be-to-you-fear-not-treasure-in-your-sacks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine* (Isaiah 43:1) — the debt covered, the treasure given (43:23): unmerited grace to the house of Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=23
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-peace-be-to-you-fear-not-treasure-in-your-sacks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*It will be well with you, fear not, and he brought their brother Simeon to them* (Jasher 53:4) — the steward''s grace of 43:23 kept; the lost brother restored as a token of goodwill.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=23
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=53 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-peace-be-to-you-fear-not-treasure-in-your-sacks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *while we were yet sinners, Messiah (Christ) died for us* (Romans 5:8) — Joseph''s bowels yearning over the brothers who wronged him (43:30) is the shape of the rejected One''s love.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=30
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-he-sought-where-to-weep-the-hidden-compassion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Greater love hath no man than this, that a man lay down his life for his friends* (John 15:13) — the unrecognized brother''s love (43:30) outran the wrong done him.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=30
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-he-sought-where-to-weep-the-hidden-compassion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he wished to weep and he went into an inner room and he wept a great weeping* (Jasher 53:8) — the first hidden weeping (43:30), at his father''s handwriting.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=30
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=53 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-he-sought-where-to-weep-the-hidden-compassion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*he entered the chamber, and he wept there, and he washed his face, and went out and refrained from weeping* (Jasher 53:10) — mirrors 43:30-31 almost word for word; the love mastered, the revelation held back.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=30
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=53 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-he-sought-where-to-weep-the-hidden-compassion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the portion of Benjamin was seven times larger than that of any of theirs* (Jubilees 42:23) — the favoured portion of 43:34 (the witness tells the measure as seven; quoted as given).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=34
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-benjamins-fivefold-portion-the-men-marvelled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the men beheld the acts of Joseph, and they were astonished... and they were five presents in the hand of Benjamin* (Jasher 53:14) — fills out *the men marvelled one at another* (43:33) and the fivefold favour.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=43 AND sv.verse_number=33
+  JOIN _s301_ge43_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=53 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-43-benjamins-fivefold-portion-the-men-marvelled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_44.sql (Genesis 44) -----
+-- Chapter: Genesis 44 — ★★ JUDAH'S INTERCESSION AND SELF-SUBSTITUTION. Joseph's last test of his brethren's heart: the silver cup planted in Benjamin's sack; the brothers overtaken and charged, "Wherefore have ye rewarded evil for good?"; the divination-cup; "With whomsoever of thy servants it be found, both let him die" (44:9); the cup found in Benjamin's sack, the brothers rend their clothes (44:13). Then ★★ JUDAH DRAWS NEAR (44:18) — the scepter-tribe (Gen 49:10) comes near and pleads; the bond of Jacob's life with the lad's, "his life is bound up in the lad's life" (44:30); "For thy servant became surety for the lad unto my father" (44:32); ★★ the SUBSTITUTE/SURETY offer — "Now therefore, I pray thee, let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren" (44:33) — the royal tribe standing in the breach, offering himself a bondman in his brother's place, that he not see his father's grief.
+-- Tag: ge44   Temp view: _s301_ge44_lookup
+-- Sort band: base 21075, step 3 -> threads at 21075, 21078, 21081, 21084, 21087 (5 threads — keystone Judah-intercession pack, curated)
+-- Source of EVERY row: 'canon','genesis',44,v
+--
+-- Genesis 44 coverage:
+--   v.1-13 (the silver cup planted in Benjamin's sack; the brothers overtaken and charged; the divination cup; "with whomsoever... it be found, both let him die"; the cup found, the brothers rend their clothes)
+--        NT:     none warranted distinct (the cup/testing is narrative stratagem; the framework weight is the intercession that follows, held to THREADS 2-5)
+--        Extras: ★ Jubilees 43:1-2,5 (filled the sacks, put the cup in Benjamin's sack; "let him be slain, and we... will serve your lord"); Jasher 53:23,26 (put the cup in the sack of Benjamin; "He with whom your master's cup shall be found shall die") — THREAD 1
+--        Tanakh: none warranted distinct (no Tanakh lateral closer than the narrative; the cup-test carried in THREAD 1's summary)
+--   ★★ v.14,16,18 (Yahudah and his brethren fell before him; Yahudah said, What shall we say... Elohim hath found out the iniquity; THEN Yahudah CAME NEAR unto him, Oh my lord, let thy servant speak a word in my lord's ears)
+--        NT:     none warranted distinct (the drawing-near intercessor is the type completed in THREAD 4's surety-of-a-better-testament; the "came near to plead" shape held to THREAD 2/4)
+--        Extras: ★ Jubilees 43:9,11 (What shall we say and how shall we defend ourselves; "O my lord, let your servant... speak a word in my lord's ear"); Jasher 53:31 + Jasher 54:2 (What shall we say to our Lord; Judah approached... "may your servant speak a word before you?") — THREAD 2
+--        Tanakh: none warranted distinct here (the lateral that opens the intercession is the scepter of Gen 49, held to THREAD 5)
+--   ★★ v.27-30 (my wife bare me two sons; the one went out and was torn; "his life is bound up in the lad's life"; if the lad be not with us he will die)
+--        NT:     none warranted distinct (the father-son knit-soul is a Tanakh-internal bond; the forward-weave is the substitution of THREAD 4)
+--        Extras: ★ Jubilees 43:11 ("his life also is bound up with the life of this (lad)... when... the lad is not with us, that he will die") — THREAD 3
+--        Tanakh: ★ 1 Samuel 18:1 (the soul of Jonathan was knit with the soul of David) — THREAD 3 (the same idiom of a soul bound to a soul; the love that cannot survive the other's loss)
+--   ★★ v.32-33 (thy servant became SURETY for the lad; "let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren")
+--        NT:     ★★ Hebrews 7:22 (Yahusha made a surety of a better testament); Hebrews 7:25 (he ever liveth to make intercession); Romans 8:34 (Messiah... maketh intercession for us); Isaiah 53:12 is TANAKH below — THREAD 4
+--        Extras: ★ Jubilees 43:13 ("let me, your servant, abide instead of the boy as a bondsman... for I became surety for him") — THREAD 4
+--        Tanakh: ★★ Isaiah 53:12 (he... made intercession for the transgressors); Isaiah 53:6 (Yahuah hath laid on him the iniquity of us all) — THREAD 4 (the suffering Servant who stands in the transgressor's place, the surety-substitution Judah's offer foreshadows)
+--   ★★ v.18,33 (Yahudah, the royal tribe, draws near and stands in the breach for his brother — the destiny the scepter reveals)
+--        NT:     none warranted distinct here (the kingly-intercessor weave is carried by THREAD 4's surety; THREAD 5 is the Tanakh scepter-lateral that names Judah's destiny)
+--        Extras: none warranted distinct (Jubilees/Jasher Judah-speeches carried in THREADS 1-4; Jasher 54's lion-strength threat-speech is extended legend, not forced)
+--        Tanakh: ★★ Genesis 49:8 (Yahudah, thou art he whom thy brethren shall praise); Genesis 49:9 (Yahudah is a lion's whelp); ★★ Genesis 49:10 (the sceptre shall not depart from Yahudah... until Shiloh come) — THREAD 5 (the tribe that here steps forward to stand surety is the scepter-tribe; the intercession reveals the royal destiny)
+--   v.3-12 narrative (the morning, the overtaking, the search from eldest to youngest); v.19-26 (Judah's rehearsal of the prior dealings); v.34 (lest I see the evil that shall come on my father)
+--        NT: none warranted   Extras: carried in the bounding summaries   Tanakh: none warranted
+--        — connective narrative folded into THREADS 1,2,4 summaries; no distinct framework-bearing target forced.
+--
+-- Threads (slug — target libraries):
+--   1. genesis-44-the-silver-cup-planted-the-brothers-tested — Extras (Jubilees, Jasher) [extras] (the last test: the cup in Benjamin's sack, the death-oath, the rent clothes)
+--   2. genesis-44-yahudah-came-near-and-pleaded — Extras (Jubilees, Jasher) [extras] (★★ the scepter-tribe draws near to intercede: "let thy servant speak a word in my lord's ears")
+--   3. genesis-44-his-life-is-bound-up-in-the-lads-life — Tanakh (1 Samuel 18) + Extras (Jubilees) [extras] (★★ the father's soul knit to the lad's — the bond that cannot survive the loss)
+--   4. genesis-44-yahudah-became-surety-abide-instead-of-the-lad — NT (Hebrews 7, Romans 8) + Tanakh (Isaiah 53) + Extras (Jubilees) [extras] (★★ THE load-bearing thread: surety/self-substitution — the bondman in his brother's place, foreshadow of the surety of a better testament and the Servant who made intercession for the transgressors)
+--   5. genesis-44-the-scepter-tribe-stood-in-the-breach — Tanakh (Genesis 49) [free] (★★ the tribe that steps forward to stand surety is the scepter-tribe of Gen 49:10; the intercession reveals the royal destiny)
+--
+-- Framing notes:
+--   ★★ JUDAH'S SELF-SUBSTITUTION AS TYPE (THREAD 4): the load-bearing weave of the chapter. *For thy servant became surety for the lad unto my father* (44:32); *Now therefore, I pray thee, let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren* (44:33). Judah offers himself a bondman in his innocent brother's place — the surety standing under the bond, the one taking the other's bondage that the other go free. Read STRICTLY as TYPE through the Formed-and-the-Formless lens (Red Line #4,#5): Judah foreshadows — never IS, never is flattened into — the Formed Son who *was made a surety of a better testament* (Hebrews 7:22), who *ever liveth to make intercession* (Hebrews 7:25), the Servant who *was numbered with the transgressors... and made intercession for the transgressors* (Isaiah 53:12). The shape — the royal-line one stepping under the bond so the brother goes free — is the type the surety of the better covenant fills. NEVER a collapse of Judah into the Messiah.
+--   ★★ THE SCEPTER REVEALED IN THE INTERCESSION (THREAD 5): it is YAHUDAH (Judah) who draws near (44:18) and stands surety (44:32-33) — the very tribe of whom Jacob will say *the sceptre shall not depart from Yahudah (Judah)... until Shiloh come* (Genesis 49:10). The royal destiny is foreshadowed in the act: the king-tribe is the one who stands in the breach for his brother. CANON-ONLY Tanakh lateral (Genesis 49 — tier 'free'); bound here at the source where the kingly character first shows.
+--   ★★ HIS LIFE BOUND UP IN THE LAD'S LIFE (THREAD 3): *seeing that his life is bound up in the lad's life* (44:30) — Jacob's soul knit to Benjamin, the bond that the father cannot outlive. The same idiom of soul-bound-to-soul is *the soul of Jonathan was knit with the soul of David* (1 Samuel 18:1). The love so deep the one's loss is the other's death — the very thing Judah's substitution exists to spare the father.
+--   EXTRAS: Jubilees 43 carries the whole episode CLEAN and is the strongest extra-canonical witness here — 43:1 (the cup in Benjamin's sack), 43:9 (What shall we say... how defend ourselves), 43:11 (the plea + *his life also is bound up with the life of this (lad)*), 43:13 (*let me, your servant, abide instead of the boy as a bondsman... for I became surety for him*) — DOUBLE-WRITTEN 'jubilees','jubilees'. Jasher carries the cup-test (53:23 the cup planted, 53:26 the death-oath, 53:31 Judah's "What shall we say") and Judah's drawing-near (54:2 *Judah approached... may your servant speak a word before you?*) — DOUBLE-WRITTEN 'jasher','jasher'. ⚠ Jasher 54 is mostly the extended LION-STRENGTH THREAT speech (Judah threatening to destroy Egypt) — that legend is NOT the clean surety/substitution self-offer the canon and Jubilees carry, so only the clean drawing-near verse (54:2) is used as a member; the threat-speech is NOT forced. Jubilees 43:6-7,12,17,22 have numbering gaps in this parse (missing v.7,12,17,22) — only clean verses 43:1,9,11,13 used as members.
+--   VERSES WITH NO ADD: v.3-12 (the morning, the overtaking, the search from eldest to youngest — narrative pivot, carried into THREAD 1 summary); v.19-26 (Judah's rehearsal of the prior dealings with Joseph — connective recap, carried into THREAD 2/4 summaries); v.34 (*lest peradventure I see the evil that shall come on my father* — the heart of the plea, carried into THREAD 4 summary) — connective narrative, no distinct framework-bearing target warranted.
+
+CREATE TEMP VIEW _s301_ge44_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: The silver cup planted — the brothers tested (the last test of their heart)
+    ('canon','genesis',44,2,'jubilees','jubilees',43,1,'extras',
+      E'*And he did as Joseph had told him, and filled all their sacks for them with food and put their money in their sacks, and put the cup in Benjamin''s sack* (Jubilees 43:1). The restored witness keeps the planting of the cup whole — *put the cup in Benjamin''s sack* — exactly as *put my cup, the silver cup, in the sack''s mouth of the youngest* (Genesis 44:2); the silver cup set in the youngest''s sack is the snare laid to test whether the brothers will abandon Benjamin as they once abandoned Joseph.'),
+    ('canon','genesis',44,9,'jubilees','jubilees',43,5,'extras',
+      E'*How then should we steal any utensil? Behold here are we and our sacks; search, and wherever you find the cup in the sack of any man amongst us, let him be slain, and we and our asses will serve your lord* (Jubilees 43:5). The restored witness keeps the brothers'' rash death-oath — *let him be slain, and we... will serve your lord* — matching *With whomsoever of thy servants it be found, both let him die, and we also will be my lord''s bondmen* (Genesis 44:9); confident of their innocence, they bind themselves to a sentence they do not yet know will fall on Benjamin.'),
+    ('canon','genesis',44,2,'jasher','jasher',53,23,'extras',
+      E'*At that time Joseph commanded his officer to fill their sacks with food, and to put each man''s money into his sack, and to put the cup in the sack of Benjamin, and to give them provision for the road, and they did so to them* (Jasher 53:23). The extended witness keeps the same planting — *to put the cup in the sack of Benjamin* — as *put my cup, the silver cup, in the sack''s mouth of the youngest* (Genesis 44:2); the stratagem laid to draw out whether the brothers'' hearts are changed toward the son of Rachel.'),
+    ('canon','genesis',44,9,'jasher','jasher',53,26,'extras',
+      E'*And Joseph''s officer rose up and he reached them, and he spoke to them all the words of Joseph; and when they heard this thing they became exceedingly wroth, and they said, He with whom your master''s cup shall be found shall die, and we will also become slaves* (Jasher 53:26). The extended witness keeps the brothers'' own death-oath — *He with whom your master''s cup shall be found shall die* — as *With whomsoever of thy servants it be found, both let him die* (Genesis 44:9); the very words that will hang over Benjamin when the cup is drawn from his sack.'),
+
+    -- THREAD 2 (★★): Yahudah came near and pleaded (the scepter-tribe draws near to intercede)
+    ('canon','genesis',44,18,'jubilees','jubilees',43,11,'extras',
+      E'*And Yahudah (Judah) said: "O my lord, let your servant, I pray you, speak a word in my lord''s ear; two brothers did your servant''s mother bear to our father; one went away and was lost, and has not been found, and he alone is left of his mother, and your servant our father loves him, and his life also is bound up with the life of this (lad)..."* (Jubilees 43:11). The restored witness keeps Judah''s drawing-near whole — *let your servant... speak a word in my lord''s ear* — matching *Then Yahudah (Judah) came near unto him, and said, Oh my lord, let thy servant, I pray thee, speak a word in my lord''s ears* (Genesis 44:18); the one who once sold his brother now steps forward to plead for a brother, the intercessor coming near.'),
+    ('canon','genesis',44,16,'jubilees','jubilees',43,9,'extras',
+      E'*And Joseph said to them: "You have done evil." And they said: "What shall we say and how shall we defend ourselves? Our lord has discovered the transgression of his servants; behold we are the servants of our lord, and our asses also."* (Jubilees 43:9). The restored witness keeps the brothers'' broken confession — *What shall we say and how shall we defend ourselves? Our lord has discovered the transgression of his servants* — as *What shall we say unto my lord? what shall we speak? or how shall we clear ourselves? Elohim (God) hath found out the iniquity of thy servants* (Genesis 44:16); the old guilt for Joseph surfacing as judgment overtakes them.'),
+    ('canon','genesis',44,18,'jasher','jasher',54,2,'extras',
+      E'*And Judah said to Joseph, Let it not seem grievous in the sight of my Lord, may your servant I pray you speak a word before you? and Joseph said to him, Speak* (Jasher 54:2). The extended witness keeps Judah''s approach — *may your servant I pray you speak a word before you?* — as *Then Yahudah (Judah) came near unto him, and said, Oh my lord, let thy servant, I pray thee, speak a word in my lord''s ears* (Genesis 44:18); Judah draws near and asks leave to plead, the one stepping into the breach for his brother.'),
+
+    -- THREAD 3 (★★): His life is bound up in the lad's life (the father's soul knit to the lad's)
+    ('canon','genesis',44,30,'canon','1-samuel',18,1,'free',
+      E'*And it came to pass, when he had made an end of speaking unto Saul, that the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul* (1 Samuel 18:1). The bond Judah names — *seeing that his life is bound up in the lad''s life* (Genesis 44:30) — is the same idiom of soul-knit-to-soul: *the soul of Jonathan was knit with the soul of David*. Jacob''s very life is so bound to Benjamin that the loss of the lad would be the father''s death — the love so deep the one cannot outlive the other.'),
+    ('canon','genesis',44,30,'jubilees','jubilees',43,11,'extras',
+      E'*...and your servant our father loves him, and his life also is bound up with the life of this (lad). And it will come to pass, when we go to your servant our father, and the lad is not with us, that he will die, and we shall bring down our father with sorrow to death* (Jubilees 43:11). The restored witness keeps the bond word-for-word — *his life also is bound up with the life of this (lad)* — exactly as *his life is bound up in the lad''s life* (Genesis 44:30); the father''s soul knit to the youngest so that the lad''s loss is the old man''s grave.'),
+
+    -- THREAD 4 (★★): Yahudah became surety — abide instead of the lad a bondman (the surety/self-substitution type)
+    ('canon','genesis',44,33,'canon','hebrews',7,22,'free',
+      E'*By so much was Yahusha (Jesus) made a surety of a better testament* (Hebrews 7:22). Judah''s offer — *let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren* (Genesis 44:33), having said *thy servant became surety for the lad unto my father* (44:32) — is the shape of the surety: the one who steps under the bond so the other may go free. Read through the Formed-and-the-Formless lens, Judah the surety foreshadows the One *made a surety of a better testament*, who stands under the covenant-bond in the place of his brethren — the type, never the flattening of Judah into the Messiah.'),
+    ('canon','genesis',44,33,'canon','hebrews',7,25,'free',
+      E'*Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:25). Judah comes near to intercede and offers himself a bondman in his brother''s place — *let thy servant abide instead of the lad a bondman to my lord* (Genesis 44:33). The intercession that here would buy one brother''s freedom foreshadows the One who *ever liveth to make intercession*, the surety whose pleading saves to the uttermost; the picture is the type, never a collapse of Judah into the Formed Son.'),
+    ('canon','genesis',44,33,'canon','isaiah',53,12,'free',
+      E'*Therefore will I divide him a portion with the great, and he shall divide the spoil with the strong; because he hath poured out his soul unto death: and he was numbered with the transgressors; and he bare the sin of many, and made intercession for the transgressors* (Isaiah 53:12). Judah, standing among brothers reckoned guilty, offers to bear the bondage in the innocent one''s stead — *let thy servant abide instead of the lad a bondman to my lord* (Genesis 44:33). The Servant of Isaiah is *numbered with the transgressors* and *made intercession for the transgressors*; the one who takes the place of those under sentence. Judah''s self-substitution is the foreshadow; the suffering Servant is the fulness.'),
+    ('canon','genesis',44,32,'canon','romans',8,34,'free',
+      E'*Who is he that condemneth? It is Messiah (Christ) that died, yea rather, that is risen again, who is even at the right hand of Elohim (God), who also maketh intercession for us* (Romans 8:34). When Judah says *thy servant became surety for the lad unto my father* (Genesis 44:32) and steps forward to plead, he stands as the surety-intercessor for his brother. The One who *maketh intercession for us* at the right hand fills the type: the surety who pleads and stands in the place of those he intercedes for — Judah the figure, the risen Messiah the substance.'),
+    ('canon','genesis',44,33,'jubilees','jubilees',43,13,'extras',
+      E'*Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father, and if I do not bring him back, your servant will bear the blame to our father for ever* (Jubilees 43:13). The restored witness keeps the self-substitution word-for-word — *let me, your servant, abide instead of the boy as a bondsman... for I became surety for him* — exactly as *let thy servant abide instead of the lad a bondman to my lord... For thy servant became surety for the lad* (Genesis 44:33,32); the one offering to take the other''s bondage that the innocent go free.'),
+
+    -- THREAD 5 (★★): The scepter-tribe stood in the breach (the royal destiny revealed in the intercession)
+    ('canon','genesis',44,18,'canon','genesis',49,8,'free',
+      E'*Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee* (Genesis 49:8). It is YAHUDAH (Judah) who *came near unto him, and said, Oh my lord, let thy servant... speak a word* (Genesis 44:18) — the very son Jacob will bless as the one *whom thy brethren shall praise*, before whom *thy father''s children shall bow down*. The leadership that steps forward here to plead for the brethren is the kingly character the blessing names; the destiny shows itself in the act.'),
+    ('canon','genesis',44,33,'canon','genesis',49,9,'free',
+      E'*Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* (Genesis 49:9). The Judah who *stooped* to offer himself a bondman — *let thy servant abide instead of the lad a bondman to my lord* (Genesis 44:33) — is the lion''s whelp of Jacob''s blessing. The tribe that here bends to take the lowest place for his brother''s sake is the same lion-tribe Jacob crowns; the royal strength shows first as the strength to stand surety.'),
+    ('canon','genesis',44,33,'canon','genesis',49,10,'free',
+      E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The tribe that steps into the breach to stand surety for his brother — *let thy servant abide instead of the lad a bondman to my lord* (Genesis 44:33) — is the tribe of whom Jacob will say *the sceptre shall not depart from Yahudah (Judah)... until Shiloh come*. The royal line runs through Judah, and the intercession reveals the destiny: the scepter-tribe is the one who stands in the breach for his brethren, and *unto him shall the gathering of the people be*.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-44-the-silver-cup-planted-the-brothers-tested',
+       E'The silver cup planted — the brothers tested',
+       E'Before he will reveal himself, Joseph lays one last snare to test his brothers'' hearts: *put my cup, the silver cup, in the sack''s mouth of the youngest* (Genesis 44:2). The men are sent away, then overtaken and charged — *Wherefore have ye rewarded evil for good? Is not this it in which my lord drinketh, and whereby indeed he divineth?* (44:4-5). Confident of their innocence, they bind themselves to a rash oath: *With whomsoever of thy servants it be found, both let him die, and we also will be my lord''s bondmen* (Genesis 44:9). The search runs *at the eldest, and left at the youngest: and the cup was found in Benjamin''s sack* (44:12) — and *then they rent their clothes, and laded every man his ass, and returned to the city* (44:13). The test is whether they will abandon the son of Rachel to his fate, as once they abandoned Joseph, or stand with him. The restored witnesses keep the episode whole: *put the cup in Benjamin''s sack* (Jubilees 43:1); *let him be slain, and we... will serve your lord* (Jubilees 43:5); *to put the cup in the sack of Benjamin* (Jasher 53:23); *He with whom your master''s cup shall be found shall die* (Jasher 53:26). The snare is set, and the brothers'' own words now hang over Benjamin.',
+       sv.verse_id, ev.verse_id, 'extras', 21075
+  FROM _s301_ge44_lookup sv, _s301_ge44_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=44 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-44-yahudah-came-near-and-pleaded',
+       E'Yahudah came near and pleaded — the scepter-tribe draws near to intercede',
+       E'The cup is found, and the brothers fall before Joseph on the ground (Genesis 44:14). Their first word is the surfacing of an old guilt: *What shall we say unto my lord? what shall we speak? or how shall we clear ourselves? Elohim (God) hath found out the iniquity of thy servants* (44:16) — the iniquity for Joseph, long buried, named at last as judgment overtakes them. Then one steps forward: *Then Yahudah (Judah) came near unto him, and said, Oh my lord, let thy servant, I pray thee, speak a word in my lord''s ears, and let not thine anger burn against thy servant* (Genesis 44:18). The same Judah who once said *let us sell him to the Ishmeelites* now DRAWS NEAR to plead for a brother — the intercessor coming close, asking leave to speak for the lad. The restored witnesses keep the scene whole: *What shall we say and how shall we defend ourselves? Our lord has discovered the transgression of his servants* (Jubilees 43:9); *let your servant... speak a word in my lord''s ear* (Jubilees 43:11); *may your servant I pray you speak a word before you?* (Jasher 54:2). The one who broke the father''s heart now steps into the breach to spare it — the drawing-near that the whole intercession turns upon.',
+       sv.verse_id, ev.verse_id, 'extras', 21078
+  FROM _s301_ge44_lookup sv, _s301_ge44_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=44 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-44-his-life-is-bound-up-in-the-lads-life',
+       E'His life is bound up in the lad''s life — the father''s soul knit to the lad''s',
+       E'At the heart of Judah''s plea is the father''s love: *thy servant my father said unto us, Ye know that my wife bare me two sons: And the one went out from me, and I said, Surely he is torn in pieces; and I saw him not since* (Genesis 44:27-28). One son of Rachel is gone — torn, as the brothers themselves had made it seem — and only Benjamin is left of his mother. And so Judah names the bond that makes the lad untouchable: *Now therefore when I come to thy servant my father, and the lad be not with us; seeing that his life is bound up in the lad''s life; It shall come to pass, when he seeth that the lad is not with us, that he will die* (Genesis 44:30-31). Jacob''s very soul is knit to Benjamin''s, so that the loss of the lad would be the old man''s grave. It is the same idiom of soul-bound-to-soul that the Scriptures use of the deepest love: *the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul* (1 Samuel 18:1). The restored witness keeps the bond word-for-word: *his life also is bound up with the life of this (lad)... when... the lad is not with us, that he will die* (Jubilees 43:11). It is this bond — the father''s life hanging on the lad''s — that Judah''s substitution exists to protect.',
+       sv.verse_id, ev.verse_id, 'extras', 21081
+  FROM _s301_ge44_lookup sv, _s301_ge44_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=44 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-44-yahudah-became-surety-abide-instead-of-the-lad',
+       E'Yahudah became surety — abide instead of the lad a bondman',
+       E'The plea reaches its height in an offer of self-substitution. Judah has bound himself to the father for the lad''s safety: *For thy servant became surety for the lad unto my father, saying, If I bring him not unto thee, then I shall bear the blame to my father for ever* (Genesis 44:32). And now he makes good the bond in his own body: *Now therefore, I pray thee, let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren. For how shall I go up to my father, and the lad be not with me? lest peradventure I see the evil that shall come on my father* (Genesis 44:33-34). The surety steps under the bond he pledged — the one offering to take the bondage so the innocent brother goes free. Read STRICTLY as TYPE through the Formed-and-the-Formless lens: Judah the surety foreshadows the One *made a surety of a better testament* (Hebrews 7:22), who *ever liveth to make intercession* (Hebrews 7:25). It is the shape of the suffering Servant who *was numbered with the transgressors... and made intercession for the transgressors* (Isaiah 53:12), and of the risen One *who also maketh intercession for us* at the right hand (Romans 8:34). The restored witness keeps the offer word-for-word: *let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him* (Jubilees 43:13). Judah is never flattened into the Messiah — but the royal-line one stepping under the bond so the brother goes free is the type the surety of the better covenant fills.',
+       sv.verse_id, ev.verse_id, 'extras', 21084
+  FROM _s301_ge44_lookup sv, _s301_ge44_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=44 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-44-the-scepter-tribe-stood-in-the-breach',
+       E'The scepter-tribe stood in the breach — the royal destiny revealed in the intercession',
+       E'It is no accident which brother steps forward. Of all the twelve, it is YAHUDAH (Judah) who *came near unto him, and said, Oh my lord, let thy servant... speak a word* (Genesis 44:18), and YAHUDAH who offers himself: *let thy servant abide instead of the lad a bondman to my lord* (44:33). This is the very son Jacob will crown with the royal blessing a few chapters on: *Yahudah (Judah), thou art he whom thy brethren shall praise... thy father''s children shall bow down before thee* (Genesis 49:8); *Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up* (49:9); *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The kingly character shows itself before the crown is named: the scepter-tribe is the one who stands in the breach for his brethren, who stoops to take the lowest place that the innocent go free. The lion-strength is first the strength to stand surety; the royal line is the line that intercedes. The destiny Jacob will speak over Judah is foreshadowed in this very act — and *unto him shall the gathering of the people be*.',
+       sv.verse_id, ev.verse_id, 'free', 21087
+  FROM _s301_ge44_lookup sv, _s301_ge44_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=44 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*put the cup in Benjamin''s sack* (Jubilees 43:1) — the planting of the silver cup of 44:2 kept whole in the restored witness; the snare laid to test the brothers'' hearts.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=2
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-the-silver-cup-planted-the-brothers-tested'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*let him be slain, and we... will serve your lord* (Jubilees 43:5) — the brothers'' rash death-oath of 44:9 kept whole; the sentence they do not yet know will fall on Benjamin.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=9
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-the-silver-cup-planted-the-brothers-tested'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*to put the cup in the sack of Benjamin* (Jasher 53:23) — the same planting of the cup (44:2) in the extended witness; the stratagem to draw out the brothers'' hearts.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=2
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=53 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-the-silver-cup-planted-the-brothers-tested'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*He with whom your master''s cup shall be found shall die* (Jasher 53:26) — the brothers'' death-oath of 44:9 in the extended witness; the very words that will hang over Benjamin.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=9
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=53 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-the-silver-cup-planted-the-brothers-tested'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *let your servant... speak a word in my lord''s ear* (Jubilees 43:11) — Judah''s drawing-near of 44:18 kept whole; the one who once sold his brother now pleads for one.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=18
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-yahudah-came-near-and-pleaded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*What shall we say and how shall we defend ourselves? Our lord has discovered the transgression of his servants* (Jubilees 43:9) — the brothers'' confession of 44:16; the old guilt for Joseph surfacing as judgment overtakes them.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=16
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-yahudah-came-near-and-pleaded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*may your servant I pray you speak a word before you?* (Jasher 54:2) — Judah''s approach of 44:18 in the extended witness; he draws near and asks leave to plead for the lad.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=18
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=54 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-yahudah-came-near-and-pleaded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul* (1 Samuel 18:1) — the same soul-bound-to-soul idiom as *his life is bound up in the lad''s life* (44:30); the love the one cannot outlive.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=30
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=18 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-his-life-is-bound-up-in-the-lads-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*his life also is bound up with the life of this (lad)... when... the lad is not with us, that he will die* (Jubilees 43:11) — the father''s knit soul of 44:30 kept word-for-word in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=30
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-his-life-is-bound-up-in-the-lads-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *By so much was Yahusha (Jesus) made a surety of a better testament* (Hebrews 7:22) — Judah''s *thy servant became surety for the lad* and *abide instead of the lad a bondman* (44:32-33) foreshadows the surety of the better covenant; TYPE, never the flattening of Judah into the Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=33
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-yahudah-became-surety-abide-instead-of-the-lad'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he ever liveth to make intercession for them* (Hebrews 7:25) — Judah''s intercession-and-self-offer (44:33) foreshadows the One whose pleading saves to the uttermost.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=33
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-yahudah-became-surety-abide-instead-of-the-lad'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *he was numbered with the transgressors; and he bare the sin of many, and made intercession for the transgressors* (Isaiah 53:12) — the Servant who takes the place of those under sentence; Judah''s self-substitution (44:33) is the foreshadow, the Servant the fulness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=33
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-yahudah-became-surety-abide-instead-of-the-lad'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *It is Messiah (Christ) that died... who also maketh intercession for us* (Romans 8:34) — the surety who pleads at the right hand fills the type of Judah''s *thy servant became surety for the lad* (44:32).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=32
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-yahudah-became-surety-abide-instead-of-the-lad'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*let me, your servant, abide instead of the boy as a bondsman to my lord... for I became surety for him* (Jubilees 43:13) — the self-substitution of 44:33 kept word-for-word in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=33
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-yahudah-became-surety-abide-instead-of-the-lad'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahudah (Judah), thou art he whom thy brethren shall praise... thy father''s children shall bow down before thee* (Genesis 49:8) — the son who steps forward to plead (44:18) is the one Jacob crowns; the kingly character shows before the crown is named.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=18
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-the-scepter-tribe-stood-in-the-breach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up* (Genesis 49:9) — the Judah who stoops to offer himself a bondman (44:33) is the lion''s whelp; the royal strength shows first as the strength to stand surety.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=33
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-the-scepter-tribe-stood-in-the-breach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *The sceptre shall not depart from Yahudah (Judah)... until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10) — the tribe that stands in the breach for his brother (44:33) is the scepter-tribe; the intercession reveals the royal destiny.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=44 AND sv.verse_number=33
+  JOIN _s301_ge44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-44-the-scepter-tribe-stood-in-the-breach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_45.sql (Genesis 45) -----
+-- Chapter: Genesis 45 — ★★ JOSEPH MAKES HIMSELF KNOWN (the keystone of the Joseph type): the sold, rejected brother can refrain himself no longer and reveals himself to the very brethren who sold him — *I am Joseph; doth my father yet live?* (45:3); *I am Joseph your brother, whom ye sold into Egypt* (45:4). The reconciliation: *be not grieved, nor angry with yourselves, that ye sold me hither: for Elohim did send me before you to preserve life* (45:5); *Elohim sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance* (45:7); *So now it was not you that sent me hither, but Elohim... a ruler throughout all the land of Egypt* (45:8). He falls on Benjamin's neck and weeps; *he kissed all his brethren, and wept upon them* (45:15). Pharaoh's welcome, the wagons, *the good of all the land of Egypt is yours* (45:20). And Jacob from mourning to life: *the spirit of Jacob their father revived... It is enough; Joseph my son is yet alive* (45:26-28).
+-- Tag: ge45   Temp view: _s301_ge45_lookup
+-- Sort band: base 21100, step 3 -> threads at 21100, 21103, 21106, 21109, 21112 (5 threads — KEYSTONE, curated not dumped)
+-- Source of EVERY row: 'canon','genesis',45,v
+--
+-- Genesis 45 coverage:
+--   ★★ v.1-4 (Joseph could not refrain himself... made himself known unto his brethren; I am Joseph; doth my father yet live; I am Joseph your brother, whom ye sold into Egypt; they were troubled at his presence)
+--        NT:     ★★ Acts 7:13 (at the second time Joseph was made known to his brethren) — THREAD 1 (Stephen's explicit reading: the FIRST visit unrecognized, the SECOND made known — the two-visits pattern); ★★ Zechariah 12:10 is Tanakh — see below; Romans held to THREAD 2
+--        Extras: ★★ Jasher 54:69 (I am Joseph whom you sold to Egypt, now therefore let it not grieve you that you sold me) — carries BOTH the reveal and the "Elohim sent me" providence; used in THREAD 1 (reveal) and the providence held to THREAD 2; Jubilees 43:14 (he could not refrain himself, and he told them that he was Joseph) — THREAD 1
+--        Tanakh: ★★ Zechariah 12:10 (they shall look upon me whom they have pierced, and they shall mourn for him... as one mourneth for his only son) — THREAD 1 (the rejected One revealed to his own who at last look on him and mourn — the reconciliation type strictly as TYPE through the Formed-Son lens)
+--   ★★ v.5,7,8 (be not grieved... for Elohim did send me before you to preserve life; Elohim sent me before you to preserve you a posterity... to save your lives by a great deliverance; it was not you that sent me hither, but Elohim)
+--        NT:     ★★ Romans 8:28 (all things work together for good to them that love Elohim... the called according to his purpose) — THREAD 2 (the sovereign meaning over the brothers' evil)
+--        Extras: ★★ Jubilees 43:18 (do not be grieved... for Yahuah sent me before you to set things in order that many people might live) — THREAD 2; Jasher 54:69 (for as a support during the famine did Elohim send me before you) — THREAD 2
+--        Tanakh: ★★ Genesis 50:20 (ye thought evil against me; but Elohim meant it unto good... to save much people alive) — THREAD 2 (Joseph seals the same type at the book's end; the bracketing word); Isaiah 1:9 (except Yahuah... had left unto us a very small remnant) — THREAD 3 (the posterity/remnant preserved)
+--   v.6 (these two years hath the famine been... yet there are five years) — narrative, carried into THREAD 2 summary; no distinct add
+--   ★ v.7b "to save your lives by a great deliverance" / "a posterity in the earth"
+--        NT:     none warranted distinct (the remnant-preservation is the Tanakh remnant lateral; held to THREAD 3)
+--        Extras: none warranted distinct (Jubilees 43:18 "that many people might live" already bound in THREAD 2)
+--        Tanakh: ★ Isaiah 1:9 (except Yahuah Tseva'ot had left unto us a very small remnant, we should have been as Sodom) — THREAD 3 (the great deliverance = the seed kept alive, the remnant preserved through the furnace)
+--   v.9-13 (Haste ye... say unto my father... Elohim hath made me lord of all Egypt; thou shalt dwell in Goshen; tell my father of all my glory) — narrative summons, carried into THREAD 5 summary; no distinct framework add
+--   ★★ v.14-15 (he fell upon his brother Benjamin's neck, and wept; Benjamin wept upon his neck; he kissed all his brethren, and wept upon them)
+--        NT:     ★★ John 11:52 (that also he should gather together in one the children of Elohim that were scattered abroad) — THREAD 4 (the scattered/estranged brethren gathered into one before the saviour-brother)
+--        Extras: ★ Jubilees 43:15 (he conversed with them in the Hebrew tongue and fell on their neck and wept) — THREAD 4
+--        Tanakh: ★★ Ezekiel 37:17 (And join them one to another into one stick; and they shall become one in thine hand) — THREAD 4 (the two-house family made one — the estranged brethren reconciled, forward to the two sticks joined)
+--   v.16-24 (Pharaoh's welcome; wagons for the little ones; the good of all the land of Egypt is yours; changes of raiment; provision; see that ye fall not out by the way) — Pharaoh's bounty + the sending; narrative, no distinct framework add (the bounty carried into THREAD 5 summary)
+--        NT: none warranted   Extras: none warranted   Tanakh: none warranted
+--   ★ v.26-28 (Joseph is yet alive... Jacob's heart fainted, for he believed them not; the spirit of Jacob their father revived; It is enough; Joseph my son is yet alive: I will go and see him before I die)
+--        NT:     ★ Luke 15:24 (this my son was dead, and is alive again; he was lost, and is found) — THREAD 5 (the son mourned as dead is alive — resurrection-shaped joy, strictly as the figure)
+--        Extras: ★ Jubilees 43:24 (when he saw the wagons which Joseph had sent, the life of his spirit revived, and he said: It is enough for me if Joseph lives; I will go down and see him before I die) — THREAD 5
+--        Tanakh: none warranted distinct (the dead-and-alive figure carried by the Luke 15 forward-weave)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-45-i-am-joseph-the-second-time-made-known — NT (Acts 7) + Tanakh (Zechariah 12) + Extras (Jubilees, Jasher) [extras] (★★ the rejected/sold brother reveals himself the second time; his own at last look on him and mourn)
+--   2. genesis-45-elohim-did-send-me-before-you-to-preserve-life — NT (Romans 8) + Tanakh (Genesis 50) + Extras (Jubilees, Jasher) [extras] (★★ the sovereign good over the brothers' evil; the savior-providence Joseph himself names)
+--   3. genesis-45-a-posterity-preserved-by-a-great-deliverance — Tanakh (Isaiah 1) [free] (★ the seed kept alive, the remnant preserved through the furnace of Egypt)
+--   4. genesis-45-he-kissed-all-his-brethren-the-family-made-one — NT (John 11) + Tanakh (Ezekiel 37) + Extras (Jubilees) [extras] (★★ the estranged brethren reconciled before the saviour-brother; the two-house family made one)
+--   5. genesis-45-the-spirit-of-jacob-revived-joseph-is-yet-alive — NT (Luke 15) + Extras (Jubilees) [extras] (★ from mourning-as-dead to alive; the son thought dead is alive again)
+--
+-- Framing notes:
+--   ★★ THE REVELATION / RECONCILIATION (THREAD 1): *I am Joseph your brother, whom ye sold into Egypt* (45:4). The rejected, sold brother reveals himself to his own — and at the FIRST visit they did not know him; only at the SECOND is he made known. Stephen reads exactly this: *at the second time Joseph was made known to his brethren* (Acts 7:13) — the two-visits pattern. The brethren *were troubled at his presence* (45:3), then reconciled in weeping. Framed STRICTLY as TYPE through the Formed-and-the-Formless lens (Red Line #4,#5): the shape — the rejected One who saves the very brethren who rejected him, revealed to his own who at last *look upon me whom they have pierced, and... mourn* (Zechariah 12:10) — is the type the Formed Son fills; NEVER a flattening of Joseph into the Messiah, NEVER co-equal-persons grammar. Zechariah 12:10 is canon Tanakh but THREAD 1 carries extras members (Jasher/Jubilees) so the thread tier is 'extras'.
+--   ★★ ELOHIM DID SEND ME / IT WAS NOT YOU BUT ELOHIM (THREAD 2): *be not grieved, nor angry with yourselves, that ye sold me hither: for Elohim (God) did send me before you to preserve life* (45:5); *it was not you that sent me hither, but Elohim (God)* (45:8). Joseph names the type himself — the sovereign meaning bent over the brothers' evil — and seals it at the book's close: *ye thought evil against me; but Elohim (God) meant it unto good... to save much people alive* (50:20). Forward: *all things work together for good to them that love Elohim (God)* (Romans 8:28). This is the SAME savior-of-life movement begun at ch41:57 — but anchored HERE, where Joseph speaks the words (NOT a duplicate of ch41's genesis-41-the-savior-raised-to-preserve-life-through-the-famine; that thread anchored the famine/exaltation, THIS anchors Joseph's own confession of providence). The restored witnesses keep it: *Yahuah (God) sent me before you to set things in order that many people might live* (Jubilees 43:18); *for as a support during the famine did Elohim send me before you* (Jasher 54:69).
+--   ★ A POSTERITY / GREAT DELIVERANCE (THREAD 3): *Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance* (45:7). The posterity preserved through the furnace of Egypt is the seed kept — the remnant-preservation: *except Yahuah Tseva'ot (the LORD of hosts) had left unto us a very small remnant, we should have been as Sodom* (Isaiah 1:9). CANON-ONLY thread (Isaiah is canon Tanakh — tier 'free').
+--   ★★ THE FAMILY MADE ONE (THREAD 4): *he kissed all his brethren, and wept upon them: and after that his brethren talked with him* (45:15). The scattered, estranged brethren — Joseph long lost, the family torn — are reconciled before the saviour-brother and made one. Forward (Red Line #2, two-house): *that also he should gather together in one the children of Elohim (God) that were scattered abroad* (John 11:52); and the two sticks: *join them one to another into one stick; and they shall become one in thine hand* (Ezekiel 37:17). The reconciled family of Jacob foreshadows the two houses gathered into one.
+--   ★ JACOB'S SPIRIT REVIVED (THREAD 5): *the spirit of Jacob their father revived: And Yashar'el (Israel) said, It is enough; Joseph my son is yet alive* (45:27-28). The father mourned the son as dead (37:35, *I will go down into the grave unto my son mourning*); now from mourning to life. The figure the prodigal-father names: *this my son was dead, and is alive again; he was lost, and is found* (Luke 15:24) — resurrection-shaped joy, framed strictly as the figure. The restored witness keeps it: *the life of his spirit revived, and he said: It is enough for me if Joseph lives* (Jubilees 43:24).
+--   EXTRAS: Jubilees 43 carries the whole reveal/reconciliation clean — 43:14 (he could not refrain himself, told them he was Joseph), 43:15 (fell on their neck and wept), 43:18 (Yahuah sent me... that many people might live), 43:24 (the life of his spirit revived; It is enough) — DOUBLE-WRITTEN 'jubilees','jubilees'. Jasher 54:69 carries the explicit reveal + providence in one verse (*I am Joseph whom you sold... for as a support during the famine did Elohim send me before you*) — DOUBLE-WRITTEN 'jasher','jasher'. Jasher 54's long Judah-vs-Joseph strife legend (54:1-68) is extended midrash, NOT framework-load-bearing; only the clean reveal verse 54:69 used.
+--   VERSES WITH NO ADD: v.6 (the two/five years of famine — narrative, into THREAD 2 summary); v.9-13 (the summons to bring Jacob down — narrative, into THREAD 5 summary); v.16-24 (Pharaoh's welcome, the wagons, the good of the land, the changes of raiment, "fall not out by the way" — Pharaoh's bounty and the sending, narrative connective tissue, no distinct framework-bearing target warranted in this pack).
+
+CREATE TEMP VIEW _s301_ge45_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): I am Joseph — the second time made known (the reveal/reconciliation type)
+    ('canon','genesis',45,4,'canon','acts',7,13,'free',
+      E'*And at the second time Joseph was made known to his brethren; and Joseph''s kindred was made known unto Pharaoh* (Acts 7:13). Stephen marks the pattern the canon shows: at the first visit the brothers stood before Joseph and *knew not their brother* (Genesis 42:8); only now, *at the second time*, does the rejected one make himself known — *I am Joseph your brother, whom ye sold into Egypt* (Genesis 45:4). The brother sold away is revealed to his own at the second coming, not the first — the two-visits shape the exalted brother''s self-disclosure carries.'),
+    ('canon','genesis',45,3,'canon','zechariah',12,10,'free',
+      E'*And I will pour upon the house of David, and upon the inhabitants of Jerusalem, the spirit of grace and of supplications: and they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son, and shall be in bitterness for him, as one that is in bitterness for his firstborn* (Zechariah 12:10). When Joseph says *I am Joseph; doth my father yet live?* his brethren *could not answer him; for they were troubled at his presence* (Genesis 45:3) — the very ones who sold him stand before the one they wronged, undone. So the prophet sees the day his own *look upon me whom they have pierced, and... mourn*. The rejected one revealed to his own who at last grieve is the type — read strictly as TYPE through the Formed-Son lens, never a flattening of Joseph into the Messiah, but the shape the One they pierced fills.'),
+    ('canon','genesis',45,4,'jubilees','jubilees',43,14,'extras',
+      E'*And Joseph saw that they were all accordant in goodness one with another, and he could not refrain himself, and he told them that he was Joseph* (Jubilees 43:14). The restored witness keeps the breaking-open whole — *he could not refrain himself, and he told them that he was Joseph* — matching *Then Joseph could not refrain himself... while Joseph made himself known unto his brethren* (Genesis 45:1) and *I am Joseph your brother, whom ye sold into Egypt* (45:4). The held-back love that can be held no longer; the brother revealed at last.'),
+    ('canon','genesis',45,4,'jasher','jasher',54,69,'extras',
+      E'*And Joseph observed all their acts, and said to them, Why do you look here and there? I am Joseph whom you sold to Egypt, now therefore let it not grieve you that you sold me, for as a support during the famine did Elohim (God) send me before you* (Jasher 54:69). The extended witness carries the reveal in one breath with the comfort — *I am Joseph whom you sold to Egypt... let it not grieve you* — exactly as *I am Joseph your brother, whom ye sold into Egypt* (Genesis 45:4) and *be not grieved... that ye sold me hither* (45:5). The sold brother names himself and in the same word lifts the guilt of the selling.'),
+
+    -- THREAD 2 (★★): Elohim did send me before you to preserve life (the savior-providence over the brothers' evil)
+    ('canon','genesis',45,5,'canon','romans',8,28,'free',
+      E'*And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose* (Romans 8:28). Joseph reads the whole of his betrayal through this very truth: *be not grieved, nor angry with yourselves, that ye sold me hither: for Elohim (God) did send me before you to preserve life* (Genesis 45:5). The pit, the slavery, the prison — *all things* the Most High wove together for good, *the called according to his purpose*. What the brothers meant for harm Yahuah (the Lord) had bent toward the preserving of life before ever they raised a hand.'),
+    ('canon','genesis',45,8,'canon','genesis',50,20,'free',
+      E'*But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). At the reveal Joseph says *it was not you that sent me hither, but Elohim (God)* (Genesis 45:8); at his father''s death he seals the same word — *ye thought evil against me; but Elohim (God) meant it unto good... to save much people alive*. The two confessions bracket the saving: the brothers'' evil was real, and over it the Most High set His own meaning, that a multitude might live. The deed was theirs to answer for; the deliverance was Elohim''s to work through it.'),
+    ('canon','genesis',45,5,'jubilees','jubilees',43,18,'extras',
+      E'*Come down quickly you and your households, so that you perish not through the famine, and do not be grieved for your possessions, for Yahuah (God) sent me before you to set things in order that many people might live* (Jubilees 43:18). The restored witness keeps Joseph''s providence-word whole — *Yahuah (God) sent me before you... that many people might live* — matching *Elohim (God) did send me before you to preserve life* (Genesis 45:5). The sending was Yahuah''s, the purpose the preserving of many; the comfort to the brothers is that a hand greater than theirs has been at work.'),
+    ('canon','genesis',45,5,'jasher','jasher',54,69,'extras',
+      E'*I am Joseph whom you sold to Egypt, now therefore let it not grieve you that you sold me, for as a support during the famine did Elohim (God) send me before you* (Jasher 54:69). The extended witness joins the comfort to the cause exactly as the canon does — *let it not grieve you that you sold me, for as a support during the famine did Elohim send me before you* — echoing *be not grieved... for Elohim (God) did send me before you to preserve life* (Genesis 45:5). The selling and the sending are the same event read two ways: the brothers'' deed and Yahuah''s (the Lord''s) purpose, the support set in place against the famine.'),
+
+    -- THREAD 3 (★): A posterity preserved by a great deliverance (the seed kept, the remnant preserved)
+    ('canon','genesis',45,7,'canon','isaiah',1,9,'free',
+      E'*Except Yahuah Tseva''ot (the LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah* (Isaiah 1:9). Joseph names the purpose of his exaltation: *Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance* (Genesis 45:7). The posterity kept through the famine is the remnant kept through every judgment — *except Yahuah Tseva''ot had left unto us a very small remnant*, the seed would have perished. The great deliverance in Egypt is the same mercy that always leaves a remnant alive that the promise might not fail.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 4 (★★): He kissed all his brethren — the family made one (the two-house reconciliation)
+    ('canon','genesis',45,15,'canon','john',11,52,'free',
+      E'*And not for that nation only, but that also he should gather together in one the children of Elohim (God) that were scattered abroad* (John 11:52). The torn family of Jacob — Joseph sold, the brothers estranged in their guilt — is made whole in the weeping reconciliation: *he kissed all his brethren, and wept upon them: and after that his brethren talked with him* (Genesis 45:15). It is the picture of the gathering: the scattered children of Elohim brought *together in one* before the saviour-brother. The family broken by the selling is the family reconciled by the saviour; the type of all the scattered gathered home.'),
+    ('canon','genesis',45,15,'canon','ezekiel',37,17,'free',
+      E'*And join them one to another into one stick; and they shall become one in thine hand* (Ezekiel 37:17). The estranged brethren reconciled — *he kissed all his brethren, and wept upon them* (Genesis 45:15) — foreshadow the two sticks joined: the stick of Joseph and the stick of Yahudah (Judah) *join''d one to another into one stick* in the hand of Yahuah (the Lord). The house of Jacob torn by Joseph''s selling and now made one again is the seed of the two-house people, the divided houses gathered and made one in His hand (Red Line #2).'),
+    ('canon','genesis',45,14,'jubilees','jubilees',43,15,'extras',
+      E'*And he conversed with them in the Hebrew tongue and fell on their neck and wept. But they knew him not and they began to weep* (Jubilees 43:15). The restored witness keeps the falling-on-the-neck whole — *he... fell on their neck and wept* — matching *he fell upon his brother Benjamin''s neck, and wept... Moreover he kissed all his brethren, and wept upon them* (Genesis 45:14-15). The weeping reconciliation of the brethren, the broken family knit again in tears.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 5 (★): The spirit of Jacob revived — Joseph is yet alive (dead-and-alive joy)
+    ('canon','genesis',45,26,'canon','luke',15,24,'free',
+      E'*For this my son was dead, and is alive again; he was lost, and is found. And they began to be merry* (Luke 15:24). Jacob had mourned Joseph as dead, refusing to be comforted; now the word comes — *Joseph is yet alive, and he is governor over all the land of Egypt. And Jacob''s heart fainted, for he believed them not* (Genesis 45:26) — and the mourning turns to life. It is the joy the father names over the returning son: *this my son was dead, and is alive again; he was lost, and is found*. The son grieved as lost is alive — resurrection-shaped joy, the figure of the dead made alive again.'),
+    ('canon','genesis',45,27,'jubilees','jubilees',43,24,'extras',
+      E'*And their father did not believe it, for he was beside himself in his mind; but when he saw the wagons which Joseph had sent, the life of his spirit revived, and he said: "It is enough for me if Joseph lives; I will go down and see him before I die."* (Jubilees 43:24). The restored witness keeps the reviving whole — *the life of his spirit revived... It is enough for me if Joseph lives* — matching *the spirit of Jacob their father revived: And Yashar''el (Israel) said, It is enough; Joseph my son is yet alive: I will go and see him before I die* (Genesis 45:27-28). From unbelief and mourning to the leap of life at the sight of the wagons; the father''s spirit raised at the news that the son is alive.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-45-i-am-joseph-the-second-time-made-known',
+       E'I am Joseph — the second time made known (the rejected brother reveals himself to his own)',
+       E'The strain breaks at last: *Then Joseph could not refrain himself before all them that stood by him... And there stood no man with him, while Joseph made himself known unto his brethren. And he wept aloud* (Genesis 45:1-2). And the word that undoes them: *And Joseph said unto his brethren, I am Joseph; doth my father yet live? And his brethren could not answer him; for they were troubled at his presence* (Genesis 45:3); *I am Joseph your brother, whom ye sold into Egypt* (Genesis 45:4). At the first visit they had stood before him and *knew not their brother* (42:8); only now, the second time, is he made known. Stephen reads the pattern: *And at the second time Joseph was made known to his brethren* (Acts 7:13) — the rejected one revealed to his own not at the first coming but the second. And the prophet sees the day the same is true for the One they wronged: *they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son* (Zechariah 12:10) — the pierced One revealed to his own, who at last look on him and grieve. The restored witnesses keep the breaking-open whole: *he could not refrain himself, and he told them that he was Joseph* (Jubilees 43:14); *I am Joseph whom you sold to Egypt, now therefore let it not grieve you that you sold me* (Jasher 54:69). Read strictly as TYPE through the Formed-and-the-Formless lens: the shape — the rejected, sold brother who saves the very brethren who rejected him, revealed to his own the second time — is the type the Formed Son fills, never a flattening of Joseph into the Messiah.',
+       sv.verse_id, ev.verse_id, 'extras', 21100
+  FROM _s301_ge45_lookup sv, _s301_ge45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=45 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-45-elohim-did-send-me-before-you-to-preserve-life',
+       E'Elohim did send me before you to preserve life — it was not you, but Elohim',
+       E'No sooner has Joseph named himself than he lifts the guilt of the selling clean off his brothers: *Now therefore be not grieved, nor angry with yourselves, that ye sold me hither: for Elohim (God) did send me before you to preserve life* (Genesis 45:5); *And Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance* (Genesis 45:7); *So now it was not you that sent me hither, but Elohim (God): and he hath made me a father to Pharaoh, and lord of all his house, and a ruler throughout all the land of Egypt* (Genesis 45:8). He names the type himself — the brothers'' evil was real, and over it the Most High had set His own meaning. He seals the same word at his father''s death: *ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). It is the truth the apostle would write: *all things work together for good to them that love Elohim (God), to them who are the called according to his purpose* (Romans 8:28). The pit, the slavery, the prison — all of it Yahuah (the Lord) wove toward the preserving of life. The restored witnesses keep it whole: *Yahuah (God) sent me before you to set things in order that many people might live* (Jubilees 43:18); *for as a support during the famine did Elohim send me before you* (Jasher 54:69). The deed was the brothers'' to answer for; the deliverance was Elohim''s to work through it.',
+       sv.verse_id, ev.verse_id, 'extras', 21103
+  FROM _s301_ge45_lookup sv, _s301_ge45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=45 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-45-a-posterity-preserved-by-a-great-deliverance',
+       E'A posterity preserved by a great deliverance — the remnant kept alive',
+       E'Within the saving-word Joseph names the seed: *And Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance* (Genesis 45:7). The exaltation was not for Joseph''s sake but for the keeping of the family-seed alive through the furnace of Egypt — *a posterity in the earth*, the promise to Abraham not allowed to perish in the famine. This is the mercy that runs the whole canon: Yahuah (the Lord) always leaves a remnant alive that the seed may not fail — *Except Yahuah Tseva''ot (the LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah* (Isaiah 1:9). The great deliverance in Egypt is the same hand that always preserves the remnant; the posterity kept through the seven years of death is the seed kept through every judgment, that the promise might stand.',
+       sv.verse_id, ev.verse_id, 'free', 21106
+  FROM _s301_ge45_lookup sv, _s301_ge45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=45 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-45-he-kissed-all-his-brethren-the-family-made-one',
+       E'He kissed all his brethren — the family made one (the scattered gathered before the saviour-brother)',
+       E'The reconciliation is sealed in weeping: *And he fell upon his brother Benjamin''s neck, and wept; and Benjamin wept upon his neck. Moreover he kissed all his brethren, and wept upon them: and after that his brethren talked with him* (Genesis 45:14-15). The family torn apart by the selling — Joseph long lost, the brothers estranged in their guilt — is knit whole again before the saviour-brother. It is the very figure of the gathering: the high priest unwittingly prophesied that Yahusha (Jesus) should die *not for that nation only, but that also he should gather together in one the children of Elohim (God) that were scattered abroad* (John 11:52). And it is the shape of the two sticks made one: *And join them one to another into one stick; and they shall become one in thine hand* (Ezekiel 37:17) — the stick of Joseph and the stick of Yahudah (Judah) gathered into one. The house of Jacob broken by Joseph''s selling and now reconciled is the seed of the two-house people, the divided houses to be gathered and made one in the hand of Yahuah (the Lord) (Red Line #2). The restored witness keeps the falling-on-the-neck: *he... fell on their neck and wept* (Jubilees 43:15). The family made one before the brother they had wronged.',
+       sv.verse_id, ev.verse_id, 'extras', 21109
+  FROM _s301_ge45_lookup sv, _s301_ge45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=45 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-45-the-spirit-of-jacob-revived-joseph-is-yet-alive',
+       E'The spirit of Jacob revived — Joseph is yet alive (from mourning-as-dead to life)',
+       E'The brothers carry the impossible news home: *And told him, saying, Joseph is yet alive, and he is governor over all the land of Egypt. And Jacob''s heart fainted, for he believed them not* (Genesis 45:26). The old man had mourned Joseph as torn and dead, refusing to be comforted; the word that he lives is too great to hold. Then *they told him all the words of Joseph... and when he saw the wagons which Joseph had sent to carry him, the spirit of Jacob their father revived: And Yashar''el (Israel) said, It is enough; Joseph my son is yet alive: I will go and see him before I die* (Genesis 45:27-28). From mourning to life, from unbelief to the leap of the spirit at the sight of the wagons. It is the joy the father names over the son come home: *this my son was dead, and is alive again; he was lost, and is found* (Luke 15:24) — the son grieved as lost found alive, resurrection-shaped joy, the figure of the dead made alive. The restored witness keeps the reviving: *when he saw the wagons which Joseph had sent, the life of his spirit revived, and he said: "It is enough for me if Joseph lives; I will go down and see him before I die"* (Jubilees 43:24).',
+       sv.verse_id, ev.verse_id, 'extras', 21112
+  FROM _s301_ge45_lookup sv, _s301_ge45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=45 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *at the second time Joseph was made known to his brethren* (Acts 7:13) — Stephen reads the two-visits pattern of 45:4: not known the first time (42:8), revealed the second.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=4
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-i-am-joseph-the-second-time-made-known'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *they shall look upon me whom they have pierced, and they shall mourn for him* (Zechariah 12:10) — the rejected One revealed to his own who at last grieve, as the brethren *troubled at his presence* (45:3); the type, framed strictly as TYPE.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=3
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-i-am-joseph-the-second-time-made-known'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he could not refrain himself, and he told them that he was Joseph* (Jubilees 43:14) — the breaking-open of 45:1,4 kept whole in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=4
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-i-am-joseph-the-second-time-made-known'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I am Joseph whom you sold to Egypt... let it not grieve you that you sold me* (Jasher 54:69) — the reveal and the comfort in one breath, as *I am Joseph your brother, whom ye sold into Egypt* (45:4).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=4
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=54 AND tv.verse_number=69
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-i-am-joseph-the-second-time-made-known'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *all things work together for good to them that love Elohim (God)... the called according to his purpose* (Romans 8:28) — the truth Joseph reads over his betrayal: *Elohim did send me before you to preserve life* (45:5).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-elohim-did-send-me-before-you-to-preserve-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *ye thought evil against me; but Elohim (God) meant it unto good... to save much people alive* (Genesis 50:20) — Joseph seals the same word as *it was not you that sent me hither, but Elohim* (45:8); the brackets of the saving.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=8
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-elohim-did-send-me-before-you-to-preserve-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (God) sent me before you... that many people might live* (Jubilees 43:18) — the providence-word of 45:5 kept whole in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-elohim-did-send-me-before-you-to-preserve-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*let it not grieve you that you sold me, for as a support during the famine did Elohim send me before you* (Jasher 54:69) — the selling and the sending read as one event, as *be not grieved... for Elohim did send me* (45:5).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=54 AND tv.verse_number=69
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-elohim-did-send-me-before-you-to-preserve-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *except Yahuah Tseva''ot (the LORD of hosts) had left unto us a very small remnant, we should have been as Sodom* (Isaiah 1:9) — the *posterity... saved by a great deliverance* (45:7) is the remnant always kept alive that the seed not fail.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=7
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-a-posterity-preserved-by-a-great-deliverance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *that also he should gather together in one the children of Elohim (God) that were scattered abroad* (John 11:52) — the estranged brethren of 45:15 made one before the saviour-brother; the figure of the gathering.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=15
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=11 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-he-kissed-all-his-brethren-the-family-made-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *join them one to another into one stick; and they shall become one in thine hand* (Ezekiel 37:17) — the reconciled brethren of 45:15 foreshadow the two sticks (Joseph + Yahudah) made one (Red Line #2).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=15
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-he-kissed-all-his-brethren-the-family-made-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he... fell on their neck and wept* (Jubilees 43:15) — the falling-on-the-neck of 45:14-15 kept whole in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=14
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-he-kissed-all-his-brethren-the-family-made-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *this my son was dead, and is alive again; he was lost, and is found* (Luke 15:24) — the figure of Jacob''s joy at 45:26: the son mourned as dead is alive.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=26
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-the-spirit-of-jacob-revived-joseph-is-yet-alive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the life of his spirit revived... It is enough for me if Joseph lives* (Jubilees 43:24) — the reviving of 45:27-28 kept whole in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=45 AND sv.verse_number=27
+  JOIN _s301_ge45_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-45-the-spirit-of-jacob-revived-joseph-is-yet-alive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_46.sql (Genesis 46) -----
+-- Chapter: Genesis 46 — ★ THE DESCENT INTO EGYPT (the furnace entered within Yahuah's plan): Yashar'el journeys to Beer-sheba and offers sacrifices to the Elohim of his father Isaac; ★ the vision in the night — "Jacob, Jacob... I am Elohim, the Elohim of thy father: fear not to go down into Egypt; for I will there make of thee a great nation: I will go down with thee into Egypt; and I will also surely bring thee up again" (46:2-4) — the going-down (the furnace) sworn to be Yahuah's doing and the bringing-up (the Exodus) promised before the descent; ★ the seventy souls of the house of Jacob that came into Egypt — "all the souls of the house of Jacob, which came into Egypt, were threescore and ten" (46:27); Judah sent before to direct the face unto Goshen (46:28); ★ the reunion — Joseph falls on his father's neck and weeps a good while, and Israel says "Now let me die, since I have seen thy face, because thou art yet alive" (46:29-30); the settling in Goshen.
+-- Tag: ge46   Temp view: _s301_ge46_lookup
+-- Sort band: base 21125, step 3 -> threads at 21125, 21128, 21131, 21134 (4 threads — curated)
+-- Source of EVERY row: 'canon','genesis',46,v
+--
+-- Genesis 46 coverage:
+--   v.1 (Yashar'el came to Beer-sheba, and offered sacrifices unto the Elohim of his father Isaac)
+--        NT:     none warranted (the altar at Beer-sheba carried into THREAD 1's summary; no NT type closer than the descent-covenant held there)
+--        Extras: Jubilees 44:1 (offered a sacrifice to the Elohim of his father Isaac at the Well of the Oath); Jasher 55:1 (Jacob's resolve to go see his son) — narrative anchor for THREAD 1
+--        Tanakh: none warranted distinct (the patriarchal altar; carried in THREAD 1)
+--   ★★ v.2-4 (Elohim spake unto Yashar'el in the visions of the night... I am Elohim, the Elohim of thy father: fear not to go down into Egypt; for I will there make of thee a great nation: I will go down with thee into Egypt; and I will also surely bring thee up again)
+--        NT:     none warranted distinct (the "I will go down with thee" descent-presence is the Formed-Son weave held in the framing; no closer NT type than the Exodus deliverance carried by the Tanakh laterals)
+--        Extras: ★ Jubilees 44:5 (Yahuah appeared to him... "I am the Elohim of your fathers... fear not to go down into Egypt, for I will there make of you a great nation"); Jubilees 44:6 (I shall go down with you, and I shall bring you up again... and Joseph will put his hands upon your eyes); ★ Jasher 55:2 (the word of Yahuah came to him... Go down to Egypt... fear not to go down to Egypt for I will there make you a great nation) — THREAD 1
+--        Tanakh: ★★ Genesis 15:13 (thy seed shall be a stranger in a land that is not theirs... they shall afflict them four hundred years); Genesis 15:14 (also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance) — THREAD 1 (the descent and the bringing-up already sworn to Abram); ★★ Exodus 3:6 (I am the Elohim of thy father, the Elohim of Abraham...); Exodus 3:8 (I am come down to deliver them... and to bring them up out of that land) — THREAD 1 (the bringing-up kept: "I will also surely bring thee up again" fulfilled in the Exodus)
+--   v.5-7 (Jacob rose up from Beer-sheba; the sons carried Jacob, the little ones, the wives, in Pharaoh's wagons; all his seed into Egypt)
+--        NT: none warranted   Extras: Jubilees 44:6 (his sons rose up... placed their father and their possessions upon wagons); Jasher 55:5 (Jacob rose up with his sons... went out from Canaan from Beersheba)   Tanakh: none warranted — narrative connective, carried into THREAD 1's summary.
+--   ★★ v.8-27 (the names of the children of Yashar'el which came into Egypt... all the souls of the house of Jacob, which came into Egypt, were threescore and ten — v.27)
+--        NT:     ★★ Acts 7:14 (Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls) — THREAD 2 (Stephen's count, the NT witness to the same descent of the small seed into the furnace; 70 vs the LXX/Stephen 75 — see framing)
+--        Extras: ★ Jubilees 44:33 (all the souls of Jacob which went into Egypt were seventy souls... in all seventy) — THREAD 2
+--        Tanakh: ★★ Exodus 1:5 (all the souls that came out of the loins of Jacob were seventy souls); ★★ Deuteronomy 10:22 (Thy fathers went down into Egypt with threescore and ten persons; and now Yahuah Elohayka hath made thee as the stars of heaven for multitude) — THREAD 2 (the seventy that went down, multiplied to the stars of heaven — the seed-multiplication promise)
+--   v.28 (he sent Yahudah before him unto Joseph, to direct his face unto Goshen)
+--        NT: none warranted   Extras: Jubilees 44:9 (Yashar'el sent Yahudah before him to his son Joseph to examine the Land of Goshen); Jasher 55:6 (Jacob sent Judah before him to Joseph... a place in the land of Goshen) — THREAD 3
+--        Tanakh: none warranted distinct — THREAD 3 (Judah sent first, the seed of the scepter-tribe going before; the restored witnesses keep it)
+--   ★ v.29-30 (Joseph fell on his neck, and wept on his neck a good while; Yashar'el said, Now let me die, since I have seen thy face, because thou art yet alive)
+--        NT:     none warranted distinct (the reunion-joy is the chapter's human heart; no NT type forced — held to the restored witness)
+--        Extras: ★ Jasher 55:15 (Jacob ran and hastened to his son Joseph and fell upon his neck and kissed him, and they wept); ★ Jasher 55:16 (Now I will die cheerfully after I have seen your face, that you are still living and with glory) — THREAD 4
+--        Tanakh: none warranted distinct — THREAD 4 (the long-mourned son alive, the face seen; the restored witness fills the reunion)
+--   v.31-34 (Joseph's plan to present his brethren to Pharaoh; the shepherds, the abomination unto the Egyptians; dwell in Goshen)
+--        NT: none warranted   Extras: Jasher 55:19-25 (the presentation to Pharaoh, the settling in Goshen)   Tanakh: none warranted — narrative connective tissue, no distinct framework-bearing target warranted in this pack.
+--
+-- Threads (slug — target libraries):
+--   1. genesis-46-fear-not-to-go-down-i-will-bring-thee-up-again — Tanakh (Genesis 15, Exodus 3) + Extras (Jubilees, Jasher) [extras] (★★ the descent-into-Egypt covenant: the furnace within Yahuah's plan, the bringing-up sworn before the going-down)
+--   2. genesis-46-the-threescore-and-ten-souls-that-went-down — NT (Acts 7) + Tanakh (Exodus 1, Deuteronomy 10) + Extras (Jubilees) [extras] (★★ the seventy-soul seed entering the furnace, multiplied to the stars of heaven)
+--   3. genesis-46-judah-sent-before-to-goshen — Extras (Jubilees, Jasher) [extras] (Judah, the scepter-tribe, sent before to prepare the place)
+--   4. genesis-46-joseph-fell-on-his-neck-now-let-me-die — Extras (Jasher) [extras] (★ the long-mourned son alive, the face seen; the joy of the reunion)
+--
+-- Framing notes:
+--   ★★ THE DESCENT-COVENANT (THREAD 1): the vision at Beer-sheba is THE descent-into-Egypt covenant — *fear not to go down into Egypt; for I will there make of thee a great nation: I will go down with thee into Egypt; and I will also surely bring thee up again* (46:3-4). Read through the Formed-and-Formless lens (Red Line #4): *I will go down with thee* is the presence of the Formed One who goes with Yashar'el (Israel) into the furnace and leads them out — *the Elohim (God) of thy father*, the same One who met Abraham and Isaac. The going-down (the affliction) and the bringing-up (the Exodus) are BOTH within Yahuah's (the Lord's) plan, already sworn to Abram: *thy seed shall be a stranger in a land that is not theirs... and afterward shall they come out with great substance* (Genesis 15:13-14). The bringing-up is kept word-for-word at the bush: *I am come down to deliver them... and to bring them up out of that land* (Exodus 3:8). The furnace is not abandonment; it is covenant. CANON-bearing thread with restored witnesses — tier 'extras' (Jubilees, Jasher members).
+--   ★★ THE SEVENTY SOULS (THREAD 2): the house that went down numbered *threescore and ten* (46:27) — the small seed entering the furnace that Yahuah multiplies to a nation. The Tanakh keeps the count: *all the souls that came out of the loins of Jacob were seventy souls* (Exodus 1:5), and Deuteronomy names the multiplication: *thy fathers went down into Egypt with threescore and ten persons; and now Yahuah Elohayka (the LORD thy God) hath made thee as the stars of heaven for multitude* (Deuteronomy 10:22) — the seed-promise (Red Line #1) carried from the seventy to the stars. The NT witness is Stephen's count: *called his father Jacob to him, and all his kindred, threescore and fifteen souls* (Acts 7:14). ⚠ TEXTUAL NOTE: the canon parse here reads SEVENTY (46:27; Exodus 1:5; Deut 10:22 all 70); Acts 7:14 reads SEVENTY-FIVE — Stephen follows the LXX count (which adds Joseph's grandsons). Both are quoted EXACTLY as dump_canon returns; Acts is framed in the member/note as Stephen's witness to the same descent, NOT a contradiction harmonized away. The point bound here is the descent of the seed into the furnace, not the arithmetic.
+--   THE SCEPTER-TRIBE SENT BEFORE (THREAD 3): *he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen* (46:28). Judah — the tribe of the scepter (Genesis 49:10) — is sent first to prepare the place; the restored witnesses keep it (Jubilees 44:9; Jasher 55:6). A quiet thread, framework-light but faithful to the seed-line: the scepter-tribe goes before to ready the dwelling.
+--   ★ THE REUNION (THREAD 4): *he fell on his neck, and wept on his neck a good while... Now let me die, since I have seen thy face, because thou art yet alive* (46:29-30). The long-mourned son — wept for as dead (Genesis 37:35) — is alive, and the father's face-to-face joy is the human heart of the chapter (cf. the joy of the gathered). Jasher fills it: *Jacob ran and hastened to his son Joseph and fell upon his neck and kissed him, and they wept* (Jasher 55:15); *Now I will die cheerfully after I have seen your face, that you are still living and with glory* (Jasher 55:16). No NT type forced — the come-and-see witness is the restored apocrypha keeping the scene whole.
+--   EXTRAS: Jubilees 44 is a CLEAN parse — the Beer-sheba/Well-of-the-Oath sacrifice and the night-vision (44:1,5,6), Judah sent to Goshen (44:9), and the seventy souls (44:33) — DOUBLE-WRITTEN 'jubilees','jubilees'. Jasher 55 is CLEAN — the descent-promise (55:2), the going from Beersheba (55:5), Judah sent to Goshen (55:6), and the reunion (55:15-16) — DOUBLE-WRITTEN 'jasher','jasher'. (Jubilees 44 has numbering gaps in this parse — no v.7,12,17,22,27,32 — but the verses USED, 44:1/5/6/9/33, are clean and whole.)
+--   VERSES WITH NO ADD: v.9-25 (the genealogy of the sons — the names, carried into THREAD 2's seventy-soul summary); v.5-7 (the wagons, the journey — narrative, into THREAD 1); v.31-34 (the plan to present the brethren to Pharaoh, the shepherds-abomination, the settling — connective narrative, no distinct framework-bearing target warranted in this pack).
+
+CREATE TEMP VIEW _s301_ge46_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Fear not to go down — I will bring thee up again (the descent-covenant)
+    ('canon','genesis',46,3,'canon','genesis',15,13,'free',
+      E'*And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). The night-vision tells Jacob *fear not to go down into Egypt; for I will there make of thee a great nation* (Genesis 46:3) — but the going-down was already sworn to his grandfather: *thy seed shall be a stranger in a land that is not theirs... and shall afflict them*. The descent into the furnace is no accident of famine; it is the covenant-word kept, the affliction foretold before ever a son was sold.'),
+    ('canon','genesis',46,4,'canon','genesis',15,14,'free',
+      E'*And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance* (Genesis 15:14). The promise to Jacob — *I will go down with thee into Egypt; and I will also surely bring thee up again* (Genesis 46:4) — is the bringing-up half of the word to Abram: *afterward shall they come out with great substance*. The going-down is sworn and the coming-out is sworn in the same breath; the furnace has an appointed door on the far side, and Yahuah (the Lord) named it before Israel ever entered.'),
+    ('canon','genesis',46,4,'canon','exodus',3,6,'free',
+      E'*Moreover he said, I am the Elohim (God) of thy father, the Elohim (God) of Abraham, the Elohim (God) of Isaac, and the Elohim (God) of Jacob. And Moses hid his face; for he was afraid to look upon Elohim (God)* (Exodus 3:6). The One who says to Jacob *I am Elohim (God), the Elohim (God) of thy father* (Genesis 46:3) is the same One who speaks from the bush to Moses generations later — *I am the Elohim (God) of thy father... of Abraham... of Isaac... of Jacob*. The Formed One who went down with Israel into Egypt is the One who comes to bring them up; the descent-promise and the deliverance-call carry the same Name.'),
+    ('canon','genesis',46,4,'canon','exodus',3,8,'free',
+      E'*And I am come down to deliver them out of the hand of the Egyptians, and to bring them up out of that land unto a good land and a large, unto a land flowing with milk and honey* (Exodus 3:8). The sworn word *I will also surely bring thee up again* (Genesis 46:4) is fulfilled to the letter at the bush: *I am come down to deliver them... and to bring them up out of that land*. The bringing-up Yahuah (the Lord) promised before the descent is the bringing-up He performs in the Exodus — the same *I will go down with thee* presence that entered the furnace leads the great nation out.'),
+    ('canon','genesis',46,3,'jubilees','jubilees',44,5,'extras',
+      E'*And on the sixteenth Yahuah (God) appeared to him, and said to him, "Jacob, Jacob"; and he said, "Here am I." And He said to him: "I am the Elohim (God) of your fathers, the Elohim (God) of Abraham and Isaac; fear not to go down into Egypt, for I will there make of you a great nation."* (Jubilees 44:5). The restored witness keeps the Beer-sheba theophany whole — *"Jacob, Jacob"... "Here am I"... fear not to go down into Egypt, for I will there make of you a great nation"* — matching *And Elohim (God) spake unto Yashar''el (Israel) in the visions of the night... fear not to go down into Egypt; for I will there make of thee a great nation* (Genesis 46:2-3). The same vision, the same descent-covenant, doubly testified.'),
+    ('canon','genesis',46,4,'jubilees','jubilees',44,6,'extras',
+      E'*I shall go down with you, and I shall bring you up (again), and in this land will you be buried, and Joseph will put his hands upon your eyes. Fear not; go down into Egypt* (Jubilees 44:6). The restored witness keeps the bringing-up promise entire — *I shall go down with you, and I shall bring you up... and Joseph will put his hands upon your eyes* — matching *I will go down with thee into Egypt; and I will also surely bring thee up again: and Joseph shall put his hand upon thine eyes* (Genesis 46:4). The presence that goes down, the bringing-up sworn, the son''s hand on the closing eyes — all three kept.'),
+    ('canon','genesis',46,3,'jasher','jasher',55,2,'extras',
+      E'*Behold the word of Yahuah (the Lord) came to him, saying, Go down to Egypt with all your household and remain there, fear not to go down to Egypt for I will there make you a great nation* (Jasher 55:2). The extended witness carries the descent-word plainly — *fear not to go down to Egypt for I will there make you a great nation* — echoing *fear not to go down into Egypt; for I will there make of thee a great nation* (Genesis 46:3). The command and the promise are one: go down, and the going-down itself becomes the making of the great nation.'),
+
+    -- THREAD 2 (★★): The threescore and ten souls that went down (the small seed multiplied to the stars)
+    ('canon','genesis',46,27,'canon','exodus',1,5,'free',
+      E'*And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already* (Exodus 1:5). The tally that closes the descent — *all the souls of the house of Jacob, which came into Egypt, were threescore and ten* (Genesis 46:27) — is taken up word-for-word at the opening of the bondage: *all the souls that came out of the loins of Jacob were seventy souls*. The seventy that went down are the seed about to be afflicted and about to multiply; Exodus counts them at the door of the furnace before the increase begins.'),
+    ('canon','genesis',46,27,'canon','deuteronomy',10,22,'free',
+      E'*Thy fathers went down into Egypt with threescore and ten persons; and now Yahuah Elohayka (the LORD thy God) hath made thee as the stars of heaven for multitude* (Deuteronomy 10:22). Here the seventy of *threescore and ten* (Genesis 46:27) are set against what Yahuah (the Lord) made of them: *went down into Egypt with threescore and ten persons; and now... as the stars of heaven for multitude*. The small seed entering the furnace is the seed-promise to Abraham fulfilled through the affliction — seventy souls multiplied to a nation numberless as the stars.'),
+    ('canon','genesis',46,27,'canon','acts',7,14,'free',
+      E'*Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls* (Acts 7:14). Stephen, rehearsing the descent, gives his count of the house that went down: *all his kindred, threescore and fifteen souls* (the Greek follows the Septuagint, which reckons seventy-five). The canon here reads *all the souls of the house of Jacob, which came into Egypt, were threescore and ten* (Genesis 46:27); Stephen witnesses to the same going-down of the small seed into Egypt — the kindred carried into the furnace from which the nation would come.'),
+    ('canon','genesis',46,27,'jubilees','jubilees',44,33,'extras',
+      E'*And all the souls of Jacob which went into Egypt were seventy souls. These are his children and his children''s children, in all seventy; but five died in Egypt before Joseph, and had no children* (Jubilees 44:33). The restored witness keeps the count whole — *all the souls of Jacob which went into Egypt were seventy souls... in all seventy* — matching *all the souls of the house of Jacob, which came into Egypt, were threescore and ten* (Genesis 46:27). The seventy-soul seed of the house of Jacob, named again, that went down into the land of the long affliction.'),
+
+    -- THREAD 3: Judah sent before to Goshen (the scepter-tribe sent before)
+    ('canon','genesis',46,28,'jubilees','jubilees',44,9,'extras',
+      E'*And Yashar''el (Israel) sent Yahudah (Judah) before him to his son Joseph to examine the Land of Goshen, for Joseph had told his brothers that they should come and dwell there that they might be near him* (Jubilees 44:9). The restored witness keeps the sending — *sent Yahudah (Judah) before him to his son Joseph to examine the Land of Goshen* — matching *he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen* (Genesis 46:28). Judah, the tribe of the scepter, is sent ahead to ready the dwelling-place for the house.'),
+    ('canon','genesis',46,28,'jasher','jasher',55,6,'extras',
+      E'*And it came to pass when they came near Egypt, Jacob sent Judah before him to Joseph that he might show him a situation in Egypt... and they assigned for them a place in the land of Goshen for all his household* (Jasher 55:6). The extended witness fills out *he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen* (Genesis 46:28): Judah runs ahead and *they assigned... a place in the land of Goshen for all his household*. The scepter-tribe goes first to prepare the place where the seed will dwell.'),
+
+    -- THREAD 4 (★): Joseph fell on his neck — Now let me die (the long-mourned son alive)
+    ('canon','genesis',46,29,'jasher','jasher',55,15,'extras',
+      E'*And behold Jacob ran and hastened to his son Joseph and fell upon his neck and kissed him, and they wept, and Joseph also embraced his father and kissed him, and they wept and all the people of Egypt wept with them* (Jasher 55:15). The restored witness keeps the reunion whole — *Jacob... fell upon his neck and kissed him, and they wept* — matching *he fell on his neck, and wept on his neck a good while* (Genesis 46:29). The son wept for as dead is alive, and father and son weep upon each other''s neck, and a whole land weeps with them.'),
+    ('canon','genesis',46,30,'jasher','jasher',55,16,'extras',
+      E'*And Jacob said to Joseph, Now I will die cheerfully after I have seen your face, that you are still living and with glory* (Jasher 55:16). The restored witness carries Israel''s word entire — *Now I will die cheerfully after I have seen your face, that you are still living and with glory* — matching *Now let me die, since I have seen thy face, because thou art yet alive* (Genesis 46:30). The long-mourned face seen at last; the father can die in peace, for the son he gave up for lost stands alive before him.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-46-fear-not-to-go-down-i-will-bring-thee-up-again',
+       E'Fear not to go down — I will bring thee up again (the descent-into-Egypt covenant)',
+       E'On his way down to Egypt, Yashar''el (Israel) stops at Beer-sheba and *offered sacrifices unto the Elohim (God) of his father Isaac* (Genesis 46:1) — and in the night the word comes: *And Elohim (God) spake unto Yashar''el (Israel) in the visions of the night, and said, Jacob, Jacob. And he said, Here am I* (46:2). What follows is THE descent-covenant: *I am Elohim (God), the Elohim (God) of thy father: fear not to go down into Egypt; for I will there make of thee a great nation: I will go down with thee into Egypt; and I will also surely bring thee up again: and Joseph shall put his hand upon thine eyes* (46:3-4). The going-down into the furnace is not abandonment — it is covenant. The descent and the deliverance were both sworn to Abram a lifetime before: *thy seed shall be a stranger in a land that is not theirs... and shall afflict them four hundred years* (Genesis 15:13), and *afterward shall they come out with great substance* (15:14). And the bringing-up is kept word-for-word at the burning bush, where the same Name speaks — *I am the Elohim (God) of thy father, the Elohim (God) of Abraham, the Elohim (God) of Isaac, and the Elohim (God) of Jacob* (Exodus 3:6) — and declares *I am come down to deliver them out of the hand of the Egyptians, and to bring them up out of that land* (Exodus 3:8). Read through the Formed-and-Formless lens, *I will go down with thee* is the presence of the Formed One who goes with Israel into the furnace and leads them out; the same One who met Abraham and Isaac goes down with their seed. The restored witnesses keep the vision whole: *fear not to go down into Egypt, for I will there make of you a great nation* (Jubilees 44:5), *I shall go down with you, and I shall bring you up... and Joseph will put his hands upon your eyes* (Jubilees 44:6), *fear not to go down to Egypt for I will there make you a great nation* (Jasher 55:2). The furnace has an appointed door on the far side, named before Israel ever entered.',
+       sv.verse_id, ev.verse_id, 'extras', 21125
+  FROM _s301_ge46_lookup sv, _s301_ge46_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=46 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-46-the-threescore-and-ten-souls-that-went-down',
+       E'The threescore and ten souls that went down — the small seed multiplied to the stars',
+       E'The long roll of names closes with a number: *And the sons of Joseph, which were born him in Egypt, were two souls: all the souls of the house of Jacob, which came into Egypt, were threescore and ten* (Genesis 46:27). Seventy souls — that is the whole house that goes down into the furnace. The Tanakh takes the count up again at the very door of the bondage: *all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already* (Exodus 1:5), and then the increase begins, *the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty*. Moses sets the seventy against what Yahuah (the Lord) made of them: *Thy fathers went down into Egypt with threescore and ten persons; and now Yahuah Elohayka (the LORD thy God) hath made thee as the stars of heaven for multitude* (Deuteronomy 10:22) — the seed-promise to Abraham fulfilled through the affliction itself, seventy souls multiplied to a nation numberless as the stars. The NT witness is Stephen''s: *Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls* (Acts 7:14) — his count follows the Septuagint reckoning of seventy-five; whether seventy or seventy-five, the testimony is one, the small kindred carried into Egypt from which the great nation came. The restored witness names the seventy again: *all the souls of Jacob which went into Egypt were seventy souls... in all seventy* (Jubilees 44:33). The seed enters the furnace small, and comes out a multitude.',
+       sv.verse_id, ev.verse_id, 'extras', 21128
+  FROM _s301_ge46_lookup sv, _s301_ge46_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=46 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-46-judah-sent-before-to-goshen',
+       E'Judah sent before to Goshen — the scepter-tribe sent before',
+       E'As the house draws near Egypt, one son is sent ahead of all the rest: *And he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen; and they came into the land of Goshen* (Genesis 46:28). It is Judah — the tribe through whom the scepter and the seed-line run — who goes first to ready the dwelling-place for the whole house. The restored witnesses keep the sending plainly: *And Yashar''el (Israel) sent Yahudah (Judah) before him to his son Joseph to examine the Land of Goshen, for Joseph had told his brothers that they should come and dwell there that they might be near him* (Jubilees 44:9); and *Jacob sent Judah before him to Joseph that he might show him a situation in Egypt... and they assigned for them a place in the land of Goshen for all his household* (Jasher 55:6). A quiet thread, but faithful to the line: the scepter-tribe goes before, to prepare the place where the seed will dwell and be kept apart through the years in Egypt.',
+       sv.verse_id, ev.verse_id, 'extras', 21131
+  FROM _s301_ge46_lookup sv, _s301_ge46_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=46 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-46-joseph-fell-on-his-neck-now-let-me-die',
+       E'Joseph fell on his neck — Now let me die, since I have seen thy face',
+       E'The chariot is made ready and the son goes up to meet the father he was torn from a lifetime ago: *And Joseph made ready his chariot, and went up to meet Yashar''el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while* (Genesis 46:29). And the father — who had said over the bloodied coat *I will go down into the grave unto my son mourning* (Genesis 37:35) — speaks the word of a man whose grief is undone: *And Yashar''el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive* (Genesis 46:30). The long-mourned son, given up for dead, stands alive; the face is seen, and the father can die in peace. The restored witness fills the scene whole: *And behold Jacob ran and hastened to his son Joseph and fell upon his neck and kissed him, and they wept... and all the people of Egypt wept with them* (Jasher 55:15); *Now I will die cheerfully after I have seen your face, that you are still living and with glory* (Jasher 55:16). This is the human heart of the descent — the gathering of father and son, the dead-and-alive joy that foreshadows every long-scattered one brought home and seen face to face.',
+       sv.verse_id, ev.verse_id, 'extras', 21134
+  FROM _s301_ge46_lookup sv, _s301_ge46_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=46 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *thy seed shall be a stranger in a land that is not theirs... and shall afflict them four hundred years* (Genesis 15:13) — the going-down of 46:3 was sworn to Abram before ever a son was sold; the furnace is covenant, not accident.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=3
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-fear-not-to-go-down-i-will-bring-thee-up-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *afterward shall they come out with great substance* (Genesis 15:14) — the bringing-up half of *I will also surely bring thee up again* (46:4); the coming-out sworn in the same breath as the going-down.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=4
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-fear-not-to-go-down-i-will-bring-thee-up-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I am the Elohim (God) of thy father, the Elohim (God) of Abraham, the Elohim (God) of Isaac, and the Elohim (God) of Jacob* (Exodus 3:6) — the same Name that says *I am Elohim, the Elohim of thy father* in 46:3; the Formed One who goes down is the One who comes to bring up.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=4
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-fear-not-to-go-down-i-will-bring-thee-up-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *I am come down to deliver them... and to bring them up out of that land* (Exodus 3:8) — the sworn *I will also surely bring thee up again* (46:4) fulfilled to the letter in the Exodus.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=4
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-fear-not-to-go-down-i-will-bring-thee-up-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*"Jacob, Jacob"... fear not to go down into Egypt, for I will there make of you a great nation* (Jubilees 44:5) — the Beer-sheba theophany of 46:2-3 kept whole in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=3
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=44 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-fear-not-to-go-down-i-will-bring-thee-up-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I shall go down with you, and I shall bring you up... and Joseph will put his hands upon your eyes* (Jubilees 44:6) — the bringing-up promise and the son''s hand on the eyes of 46:4 kept entire.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=4
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=44 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-fear-not-to-go-down-i-will-bring-thee-up-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*fear not to go down to Egypt for I will there make you a great nation* (Jasher 55:2) — the descent-word of 46:3 carried plainly; the command and the promise are one.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=3
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=55 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-fear-not-to-go-down-i-will-bring-thee-up-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *all the souls that came out of the loins of Jacob were seventy souls* (Exodus 1:5) — the seventy of 46:27 counted again at the door of the bondage, before the increase begins.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=27
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-the-threescore-and-ten-souls-that-went-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *threescore and ten persons; and now Yahuah Elohayka (the LORD thy God) hath made thee as the stars of heaven for multitude* (Deuteronomy 10:22) — the seventy of 46:27 multiplied to the stars: the seed-promise fulfilled through the affliction.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=27
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-the-threescore-and-ten-souls-that-went-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *called his father Jacob to him, and all his kindred, threescore and fifteen souls* (Acts 7:14) — Stephen''s count (the LXX seventy-five) of the descent of 46:27; the same small kindred carried into the furnace.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=27
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-the-threescore-and-ten-souls-that-went-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*all the souls of Jacob which went into Egypt were seventy souls... in all seventy* (Jubilees 44:33) — the seventy-soul seed of 46:27 named again in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=27
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=44 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-the-threescore-and-ten-souls-that-went-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*sent Yahudah (Judah) before him to his son Joseph to examine the Land of Goshen* (Jubilees 44:9) — Judah sent before in 46:28, kept in the restored witness; the scepter-tribe readies the dwelling.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=28
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=44 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-judah-sent-before-to-goshen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Jacob sent Judah before him to Joseph... they assigned for them a place in the land of Goshen for all his household* (Jasher 55:6) — the sending of 46:28 filled out; the place prepared for the seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=28
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=55 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-judah-sent-before-to-goshen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Jacob ran and hastened to his son Joseph and fell upon his neck and kissed him, and they wept* (Jasher 55:15) — the reunion of 46:29 kept whole; the son wept for as dead is alive.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=29
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=55 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-joseph-fell-on-his-neck-now-let-me-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Now I will die cheerfully after I have seen your face, that you are still living and with glory* (Jasher 55:16) — Israel''s word of 46:30 carried entire; the long-mourned face seen, the father may die in peace.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=46 AND sv.verse_number=30
+  JOIN _s301_ge46_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=55 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-46-joseph-fell-on-his-neck-now-let-me-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session301 — Genesis cross-references complete.'
