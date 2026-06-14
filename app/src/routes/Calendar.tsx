@@ -19,6 +19,7 @@ import {
   fmtFull,
   moedTheme,
   moonArt,
+  moonVisible,
   moonLitPath,
   monthDisplayName,
   MOED_SHORT,
@@ -279,6 +280,7 @@ export default function Calendar() {
             <ReckoningControls reck={reck} setReck={setReck} notes={todayResult.notes} />
             <HeroToday
               reck={reck}
+              setReck={setReck}
               result={todayResult}
               isSabbath={todayIsSabbath}
               now={now}
@@ -972,6 +974,7 @@ function NumField({
 
 interface HeroProps {
   reck: ReckoningState;
+  setReck: React.Dispatch<React.SetStateAction<ReckoningState>>;
   result: ReturnType<typeof compute>;
   isSabbath: boolean;
   now: Date;
@@ -979,9 +982,13 @@ interface HeroProps {
   omer: OmerStatus | null;
 }
 
-function HeroToday({ reck, result, isSabbath, now, nextMoed, omer }: HeroProps) {
+function HeroToday({ reck, setReck, result, isSabbath, now, nextMoed, omer }: HeroProps) {
   const bd = result.biblicalDate;
-  const art = moonArt(now, 50);
+  // Moon phase: shown for the lunar reckonings, hidden by default under the
+  // solar Enoch reckoning — but a partner can toggle it back on (some still
+  // watch the moon phase while on Enoch).
+  const showMoon = moonVisible(reck);
+  const art = showMoon ? moonArt(now, 50) : null;
   const sab = isSabbath
     ? { active: true, label: "Sabbath — the seventh day. Rest." }
     : { active: false, label: "A working day" };
@@ -1019,16 +1026,32 @@ function HeroToday({ reck, result, isSabbath, now, nextMoed, omer }: HeroProps) 
           </div>
         </div>
 
-        {/* The moon, as art */}
-        <div className="cal-hero-moon">
-          <MoonArtSvg
-            litPath={art.litPath}
-            waxing={art.waxing}
-            illum={art.illum}
-            size={150}
-          />
-          <div className="cal-moon-phase">{art.phase}</div>
-          <div className="cal-moon-illum">{Math.round(art.illum * 100)}% lit</div>
+        {/* The moon, as art — toggleable; hidden by default under Enoch (solar). */}
+        <div className={"cal-hero-moon" + (showMoon && art ? "" : " cal-hero-moon-off")}>
+          {showMoon && art ? (
+            <>
+              <MoonArtSvg
+                litPath={art.litPath}
+                waxing={art.waxing}
+                illum={art.illum}
+                size={150}
+              />
+              <div className="cal-moon-phase">{art.phase}</div>
+              <div className="cal-moon-illum">{Math.round(art.illum * 100)}% lit</div>
+            </>
+          ) : (
+            <div className="cal-moon-hidden-note">
+              Moon hidden — the Enoch year is reckoned by the sun.
+            </div>
+          )}
+          <button
+            type="button"
+            className="cal-moon-toggle"
+            aria-pressed={showMoon}
+            onClick={() => setReck((r) => ({ ...r, showMoon: !moonVisible(r) }))}
+          >
+            {showMoon ? "Hide moon phase" : "Show moon phase"}
+          </button>
         </div>
 
         {/* Next appointed time + countdown */}

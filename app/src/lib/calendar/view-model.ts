@@ -98,8 +98,20 @@ export interface ReckoningState {
   location: GeoLocation;
   /** manual orientation anchor (the universal escape hatch). */
   orientation?: Orientation;
+  /**
+   * Moon-phase art override. undefined = smart default (shown for the lunar
+   * reckonings, hidden for the solar Enoch reckoning). Set explicitly by the
+   * "Show moon phase" toggle so a partner on Enoch can still bring the moon
+   * back when they want it.
+   */
+  showMoon?: boolean;
   /** evenings the partner has tapped "I sighted it" (local-confirm). */
   confirmedSightings: Date[];
+}
+
+/** Effective moon-phase visibility for a reckoning (toggle wins; else default). */
+export function moonVisible(s: ReckoningState): boolean {
+  return s.showMoon ?? s.month !== "enoch";
 }
 
 /** Midday instant of an ISO `YYYY-MM-DD` — a stable daytime anchor for the day. */
@@ -557,9 +569,35 @@ export function sabbathStatus(todayCell: DayCell | undefined): SabbathStatus {
 
 const JLM_TZ = "Asia/Jerusalem";
 
+/**
+ * The timezone civil dates are displayed in. Defaults to the partner's own
+ * device zone so "today" matches the wall clock in front of them — previously
+ * this was hardcoded to Jerusalem, which made the weekday read a day ahead for
+ * anyone west of Israel (e.g. a US Saturday evening showed as Sunday). A region
+ * picker can override it via setDisplayTimeZone(); falls back to Jerusalem if
+ * the environment can't resolve a zone.
+ */
+let DISPLAY_TZ: string = (() => {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || JLM_TZ;
+  } catch {
+    return JLM_TZ;
+  }
+})();
+
+/** Override the civil-date display timezone (e.g. from a region selector). */
+export function setDisplayTimeZone(tz: string): void {
+  if (tz) DISPLAY_TZ = tz;
+}
+
+/** The currently active civil-date display timezone. */
+export function getDisplayTimeZone(): string {
+  return DISPLAY_TZ;
+}
+
 export function fmtCivil(d: Date, opts?: Intl.DateTimeFormatOptions): string {
   return new Intl.DateTimeFormat("en-US", {
-    timeZone: JLM_TZ,
+    timeZone: DISPLAY_TZ,
     ...opts,
   }).format(d);
 }
