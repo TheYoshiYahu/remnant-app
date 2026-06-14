@@ -1,0 +1,350 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "1-clement",
+  "chapter": 1,
+  "session": "session253",
+  "tag": "1clement1",
+  "base_band": 70000,
+  "threads": [
+    {
+      "slug": "1-clement-1-cain-jealousy-death",
+      "title": "Jealousy slew a brother — it ain't new",
+      "summary_md": "Clement traces the whole ruin of schism back to one root: *Ye see, brethren, jealousy and envy wrought a brother’s murder.* (1 Clement 1:4) He quotes the Torah account nearly whole — *And Cain said unto Abel his brother, Let us go over unto the plain. And it came to pass, while they were in the plain, that Cain rose up against Abel his brother and slew him.* (1 Clement 1:4) The earliest church-elder is simply re-reading Genesis: *And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him.* (Genesis 4:8) John names the same lineage of envy: *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother’s righteous.* (1 John 3:12) The sedition at Corinth is Cain's spirit warmed over.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Genesis 4:8 — *And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him.* Clement quotes this Torah scene almost verbatim as the prototype of the jealousy now splitting Corinth (1 Clement 1:4)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Genesis 4:5 — *But unto Cain and to his offering he had not respect. And Cain was very wroth, and his countenance fell.* The fallen countenance Clement cites is the seedbed of envy he warns the Corinthians against (1 Clement 1:4)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 3,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "1 John 3:12 — *Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother’s righteous.* John, like Clement, makes Cain the type of the brother-hating spirit (1 Clement 1:4)."
+        }
+      ]
+    },
+    {
+      "slug": "1-clement-1-rahab-scarlet-thread",
+      "title": "The scarlet thread of Rahab — redemption by blood",
+      "summary_md": "Clement reads the harlot's window as a gospel sign: *And moreover they gave her a sign, that she should hang out from her house a scarlet thread, thereby showing beforehand that through the blood of Yahuah (Lord) there shall be redemption unto all them that believe and hope on Elohim (God).* (1 Clement 1:12) The Torah records the token itself: *And she said, According unto your words, so be it. And she sent them away, and they departed: and she bound the scarlet line in the window.* (Joshua 2:21) The writer to the Hebrews counts her among the faithful: *By faith the harlot Rahab perished not with them that believed not, when she had received the spies with peace.* (Hebrews 11:31) Clement adds, *not only faith, but prophecy, is found in the woman* — the scarlet cord prefiguring the blood that redeems.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 2,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Joshua 2:21 — *And she said, According unto your words, so be it. And she sent them away, and they departed: and she bound the scarlet line in the window.* Clement quotes Rahab's scarlet token and reads it as the foreshown blood-redemption (1 Clement 1:12)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "joshua",
+          "tgt_ch": 2,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Joshua 2:18 — *Behold, when we come into the land, thou shalt bind this line of scarlet thread in the window which thou didst let us down by: and thou shalt bring thy father, and thy mother, and thy brethren, and all thy father’s household, home unto thee.* The household saved under the scarlet line is the sign Clement calls prophecy of redemption (1 Clement 1:12)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "Hebrews 11:31 — *By faith the harlot Rahab perished not with them that believed not, when she had received the spies with peace.* Hebrews and Clement both honour Rahab's faith-and-hospitality as the cause of her deliverance (1 Clement 1:12)."
+        }
+      ]
+    },
+    {
+      "slug": "1-clement-1-mercy-measure-yahusha",
+      "title": "As ye mete, so measured — the Master's own words",
+      "summary_md": "Clement appeals to the dominical sayings as already-written authority: *most of all remembering the words of Yahuah (Lord) Yahusha (Jesus) which He spake, teaching forbearance and long-suffering: for thus He spake; Have mercy, that ye may receive mercy: forgive, that it may be forgiven to you... With what measure ye mete, it shall be measured withal to you.* (1 Clement 1:12) This is the Sermon on the Mount: *Blessed are the merciful: for they shall obtain mercy.* (Matthew 5:7) And the measure-for-measure law: *For with what judgment ye judge, ye shall be judged: and with what measure ye mete, it shall be measured to you again.* (Matthew 7:2) The elder at Rome holds the Messiah's teaching as binding rule — it ain't new.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 7,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Matthew 7:2 — *For with what judgment ye judge, ye shall be judged: and with what measure ye mete, it shall be measured to you again.* Clement quotes this measure-for-measure word of the Master almost verbatim to summon the Corinthians to forbearance (1 Clement 1:12)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 12,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 5,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Matthew 5:7 — *Blessed are the merciful: for they shall obtain mercy.* The beatitude is the very 'have mercy, that ye may receive mercy' Clement cites as the Master's command (1 Clement 1:12)."
+        }
+      ]
+    },
+    {
+      "slug": "1-clement-1-isaiah53-messiah-humility",
+      "title": "He was wounded for our sins — Isaiah 53 of the Messiah",
+      "summary_md": "At the heart of the epistle Clement quotes Isaiah 53 in full of the Messiah, against all pride of the schismatics: *The sceptre of the majesty of Elohim (God), even our Yahuah (Lord) Yahusha HaMashiach (Jesus Christ), came not in the pomp of arrogance or of pride... but in lowliness of mind* — then, *And He was wounded for our sins and hath been afflicted for our iniquities. The chastisement of our peace is upon Him. With His bruises we were healed.* (1 Clement 1:16) He is reading the prophet straight: *But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.* (Isaiah 53:5) The Messiah truly came in the flesh and truly suffered: *As a sheep He was led to slaughter* (1 Clement 1:16) — *he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.* (Isaiah 53:7) Paul sounds the same self-emptying: *he humbled himself, and became obedient unto death, even the death of the cross.* (Philippians 2:8) — and the Master Himself: *to give his life a ransom for many.* (Matthew 20:28)",
+      "anchor_start_v": 16,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 53,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Isaiah 53:5 — *But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.* Clement quotes this verse of Isaiah's Suffering Servant verbatim as the pattern of the Messiah's lowliness (1 Clement 1:16)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 53,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Isaiah 53:7 — *He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.* Clement's 'as a lamb before his shearer is dumb' is this prophet's line, applied to the Messiah's silent suffering (1 Clement 1:16)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "philippians",
+          "tgt_ch": 2,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Philippians 2:8 — *And being found in fashion as a man, he humbled himself, and became obedient unto death, even the death of the cross.* Paul's self-emptying Messiah is the same lowliness Clement urges against the arrogant schismatics (1 Clement 1:16)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 20,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "Matthew 20:28 — *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many.* The Master's own definition of his ransom-mission undergirds Clement's portrait of him who came not in pomp but in service (1 Clement 1:16)."
+        }
+      ]
+    },
+    {
+      "slug": "1-clement-1-david-contrite-heart",
+      "title": "A broken and contrite heart — David's repentance",
+      "summary_md": "Clement holds up the anointed king as a pattern of humility: *of whom Elohim (God) said, I have found a man after My heart, David the son of Jesse... Yet he too saith unto Elohim (God); Have mercy upon me, O Elohim (God), according to Thy great mercy; and according to the multitude of Thy compassions, blot out mine iniquity.* (1 Clement 1:18) He is quoting the penitential Psalm whole: *Have mercy upon me, O Elohim (God), according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions.* (Psalms 51:1) And he closes with its heart: *A sacrifice unto Elohim (God) is a contrite spirit; a contrite and humbled heart Elohim (God) will not despise.* (1 Clement 1:18) The greatest king bows lowest — a rebuke to the self-willed at Corinth.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 51,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalms 51:1 — *Have mercy upon me, O Elohim (God), according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions.* Clement quotes David's penitential psalm to show that even the man after Elohim's heart pleads for mercy in lowliness (1 Clement 1:18)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 18,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 51,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Psalms 51:3 — *For I acknowledge my transgressions: and my sin is ever before me.* Clement's 'I acknowledge mine iniquity, and my sin is ever before me' is this very line, his pattern of humble confession (1 Clement 1:18)."
+        }
+      ]
+    },
+    {
+      "slug": "1-clement-1-creation-order-host",
+      "title": "Heaven and earth keep their order in peace",
+      "summary_md": "Against sedition Clement points to the harmony of creation: *The heavens are moved by His direction and obey Him in peace. Day and night accomplish the course assigned to them by Him, without hindrance one to another. The sun and the moon and the dancing stars according to His appointment circle in harmony within the bounds assigned to them, without any swerving aside.* (1 Clement 1:17) This is the Psalmist's witness: *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork. Day unto day uttereth speech, and night unto night sheweth knowledge.* (Psalms 19:1-2) It is Job's challenge of the founded earth: *When the morning stars sang together, and all the sons of Elohim (God) shouted for joy?* (Job 38:7) And the same ordered cosmos in which the heavenly host cries holy: *and they cried aloud, Holy, holy, holy is Yahuah (Lord) of Sabaoth; all creation is full of His glory.* (1 Clement 1:34) If the stars keep rank, how much more should brethren.",
+      "anchor_start_v": 17,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalms 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* Clement's ordered, obedient heavens echo this psalm of the firmament proclaiming its Maker (1 Clement 1:17)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Psalms 19:2 — *Day unto day uttereth speech, and night unto night sheweth knowledge.* The day-and-night that 'accomplish the course assigned to them' in Clement is this psalm's ceaseless witness (1 Clement 1:17)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 38,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Job 38:7 — *When the morning stars sang together, and all the sons of Elohim (God) shouted for joy?* The harmony of the dancing stars Clement describes is the founded-creation order of Job's whirlwind speech (1 Clement 1:17)."
+        }
+      ]
+    },
+    {
+      "slug": "1-clement-1-resurrection-seed-firstfruit",
+      "title": "The grain that dies and rises — the resurrection",
+      "summary_md": "Clement preaches the resurrection from the seasons and the seed: *the Master continually showeth unto us the resurrection that shall be hereafter; whereof He made Yahuah (Lord) Yahusha HaMashiach (Jesus Christ) the firstfruit, when He raised Him from the dead... The sower goeth forth and casteth into the earth each of the seeds; and these falling into the earth dry and bare decay: then out of their decay the mightiness of the Master’s providence raiseth them up.* (1 Clement 1:24) This is Paul's grain-of-resurrection: *Thou fool, that which thou sowest is not quickened, except it die.* (1 Corinthians 15:36) — *But Elohim (God) giveth it a body as it hath pleased him, and to every seed his own body.* (1 Corinthians 15:38) And the Master's own parable: *Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit.* (John 12:24) The hope is one — the firstfruit raised, then they that are His.",
+      "anchor_start_v": 24,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 15,
+          "tgt_v": 36,
+          "tier": "free",
+          "note": "1 Corinthians 15:36 — *Thou fool, that which thou sowest is not quickened, except it die.* Paul's seed-that-must-die is exactly Clement's image of the buried grain decaying before it is raised (1 Clement 1:24)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 15,
+          "tgt_v": 38,
+          "tier": "free",
+          "note": "1 Corinthians 15:38 — *But Elohim (God) giveth it a body as it hath pleased him, and to every seed his own body.* The 'out of their decay... raiseth them up, and from being one they increase manifold' in Clement is Paul's seed-to-body resurrection (1 Clement 1:24)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 24,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 12,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "John 12:24 — *Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit.* The Master's own grain-parable is the seed-resurrection Clement draws from the sowing (1 Clement 1:24)."
+        }
+      ]
+    },
+    {
+      "slug": "1-clement-1-aaron-rod-priesthood",
+      "title": "Aaron's budding rod — the appointed priestly order",
+      "summary_md": "Clement defends ordered ministry from the Torah's own settling of the priesthood: *when jealousy arose concerning the priesthood... he commanded the twelve chiefs of the tribes to bring to him rods... And the rod of Aaron was found not only with buds, but also bearing fruit... that disorder might not arise in Yashar'el (Israel).* (1 Clement 1:38) This is Numbers: *And it came to pass, that on the morrow Moses went into the tabernacle of witness; and, behold, the rod of Aaron for the house of Levi was budded, and brought forth buds, and bloomed blossoms, and yielded almonds.* (Numbers 17:8) And the principle that no man seizes the office unsent: *And no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron.* (Hebrews 5:4) Clement upholds the ordained order against the schismatics who thrust out their presbyters — the appointed seasons and ministrations stand.",
+      "anchor_start_v": 38,
+      "anchor_end_v": 38,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 38,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 17,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Numbers 17:8 — *And it came to pass, that on the morrow Moses went into the tabernacle of witness; and, behold, the rod of Aaron for the house of Levi was budded, and brought forth buds, and bloomed blossoms, and yielded almonds.* Clement recounts this Torah sign of the budding rod to prove that Elohim, not man, appoints the priestly order (1 Clement 1:38)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 38,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 5,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Hebrews 5:4 — *And no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron.* Hebrews and Clement share the rule that priestly honour is not self-seized but divinely called, the very lesson of Aaron's rod (1 Clement 1:38)."
+        }
+      ]
+    },
+    {
+      "slug": "1-clement-1-love-covereth-sins",
+      "title": "Love covereth a multitude of sins",
+      "summary_md": "Clement crowns his appeal with a hymn to love: *Love joineth us unto Elohim (God); love covereth a multitude of sins; love endureth all things, is long-suffering in all things. There is nothing coarse, nothing arrogant in love. Love hath no divisions, love maketh no seditions, love doeth all things in concord.* (1 Clement 1:49) This is Paul's anthem: *Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up.* (1 Corinthians 13:4) — *Beareth all things, believeth all things, hopeth all things, endureth all things.* (1 Corinthians 13:7) And Peter's word: *And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins.* (1 Peter 4:8) The remedy for schism is the love that makes no sedition.",
+      "anchor_start_v": 49,
+      "anchor_end_v": 49,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 49,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 13,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "1 Corinthians 13:4 — *Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up.* Clement's 'love is long-suffering... nothing arrogant in love' is Paul's love-chapter, the cure he offers the envious Corinthians (1 Clement 1:49)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 49,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 13,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "1 Corinthians 13:7 — *Beareth all things, believeth all things, hopeth all things, endureth all things.* Clement's 'love endureth all things' quotes Paul nearly word for word (1 Clement 1:49)."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 49,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 4,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "1 Peter 4:8 — *And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins.* Peter's 'charity shall cover the multitude of sins' is precisely Clement's 'love covereth a multitude of sins' (1 Clement 1:49)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "didache",
+  "chapter": 1,
+  "session": "session253",
+  "tag": "didache1",
+  "base_band": 71000,
+  "threads": [
+    {
+      "slug": "didache-1-two-ways-life-death",
+      "title": "The Two Ways — of Life and of Death",
+      "summary_md": "The Teaching opens upon the oldest fork in all of Scripture: *And this is the second commandment of the teaching... This is the way of life.* (Didache 1:4), and over against it, *But the way of death is this. First of all, it is evil and full of a curse* (Didache 1:5). It ain't new. Moses set this very choice in the plains of Moab — *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15) — and pressed it home: *therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). Jeremiah preached the same two roads — *Behold, I set before you the way of life, and the way of death* (Jeremiah 21:8) — and the Master gave it its sharpest edge: *Enter ye in at the strait gate... narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:14). The first Psalm is the whole Two Ways in miniature, for the man whose delight is in the Torah stands while *the way of the ungodly shall perish* (Psalm 1:6). The Didache is not inventing a new ethic; it is handing on the choice Yahuah set before His people from the beginning.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* the Didache's \"way of life\" and \"way of death\" simply re-utter the choice Moses set before Yashar'el."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* the curse-laden \"way of death\" of Didache 1:5 is the very death Moses bids us refuse."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 21,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Jeremiah 21:8 — *And unto this people thou shalt say, Thus saith Yahuah (LORD); Behold, I set before you the way of life, and the way of death.* Jeremiah names the two ways word-for-word with the Teaching."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 7,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Matthew 7:14 — *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* The Messiah Himself frames the Two Ways the Didache now teaches the nations."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The first Psalm is the Two Ways entire, the way of life set against the way that perishes."
+        }
+      ]
+    },
+    {
+      "slug": "didache-1-love-god-and-neighbour",
+      "title": "Love Elohim, Love Thy Neighbour, the Golden Rule",
+      "summary_md": "The Way of Life is summed in two loves and a golden rule: the soul is to *honour him as Yahuah... for whencesoever the Lordship speaketh, there is Yahuah* (Didache 1:4), and the Teaching commands that *some thou shalt reprove, and for others thou shalt pray, and others thou shalt love more than thy life* (Didache 1:2). It ain't new. The Shema set the first love — *thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:5) — and the Holiness Code the second: *thou shalt love thy neighbour as thyself: I am Yahuah* (Leviticus 19:18). The Messiah bound the two into one yoke — *Thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart... And the second is like unto it, Thou shalt love thy neighbour as thyself* (Matthew 22:37, 39) — and gave the golden rule as the sum of Torah: *all things whatsoever ye would that men should do to you, do ye even so to them: for this is the law and the prophets* (Matthew 7:12). The Didache opens its hand to Moses' two great commandments.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 6,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Deuteronomy 6:5 — *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* The Teaching's call to honour Yahuah above all is the Shema it inherits."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 19,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Leviticus 19:18 — *Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* The Didache's \"cherish no grudge\" and love-thy-neighbour-more-than-life draws straight from this verse."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 22,
+          "tgt_v": 39,
+          "tier": "free",
+          "note": "Matthew 22:39 — *And the second is like unto it, Thou shalt love thy neighbour as thyself.* The Messiah names neighbour-love the second great commandment, the very love the Teaching commands."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 7,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Matthew 7:12 — *Therefore all things whatsoever ye would that men should do to you, do ye even so to them: for this is the law and the prophets.* The golden rule of the Sermon is the Didache's rule of the Way of Life."
+        }
+      ]
+    },
+    {
+      "slug": "didache-1-second-commandment-decalogue",
+      "title": "The Second Commandment of the Teaching — the Ten Words",
+      "summary_md": "The Way of Life is spelled out in the plain commandments of Sinai: *thou shalt do no murder, thou shalt not commit adultery... thou shalt not steal... thou shalt not covet thy neighbour's goods... thou shalt not bear false witness* (Didache 1:2). It ain't new — this is the Decalogue itself, repeated almost in order. *Thou shalt not kill.* (Exodus 20:13); *Thou shalt not commit adultery.* (Exodus 20:14); *Thou shalt not steal.* (Exodus 20:15); *Thou shalt not bear false witness against thy neighbour.* (Exodus 20:16); and the tenth word the Teaching keeps last — *Thou shalt not covet thy neighbour's house, thou shalt not covet thy neighbour's wife... nor any thing that is thy neighbour's* (Exodus 20:17). The Apostolic Teaching does not abolish the Ten Words; it catechizes the nations in them.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 20,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Exodus 20:13 — *Thou shalt not kill.* The Teaching's \"thou shalt do no murder\" is the sixth word of Sinai."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 20,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Exodus 20:14 — *Thou shalt not commit adultery.* The Didache repeats the seventh word verbatim."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 20,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Exodus 20:15 — *Thou shalt not steal.* The eighth word stands at the heart of the Teaching's catalogue."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 20,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Exodus 20:17 — *Thou shalt not covet thy neighbour's house, thou shalt not covet thy neighbour's wife, nor his manservant, nor his maidservant, nor his ox, nor his ass, nor any thing that is thy neighbour's.* The tenth word grounds the Didache's \"thou shalt not covet thy neighbour's goods.\""
+        }
+      ]
+    },
+    {
+      "slug": "didache-1-whole-yoke-perfect",
+      "title": "Bear the Whole Yoke and Thou Shalt Be Perfect",
+      "summary_md": "The Teaching frames the commandments not as a burden but as the road to perfection: *if thou art able to bear the whole yoke of Yahuah (Lord), thou shalt be perfect; but if thou art not able, do that which thou art able* (Didache 1:6). It also charges the disciple to *never forsake the commandments of Yahuah; but shalt keep those things which thou hast received, neither adding to them nor taking away from them* (Didache 1:4). It ain't new. The Messiah's yoke is the same yoke, and it is not heavy — *Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light* (Matthew 11:29-30). For the Torah is not a chain but a healing — *The law of Yahuah (LORD) is perfect, converting the soul* (Psalm 19:7) — and the charge to add nothing and take nothing away is Moses' own fence: *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it* (Deuteronomy 4:2). The whole yoke is life.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 11,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Matthew 11:30 — *For my yoke is easy, and my burden is light.* The \"whole yoke\" the Didache bids us bear is the Messiah's own light yoke, not a burden."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 11,
+          "tgt_v": 29,
+          "tier": "free",
+          "note": "Matthew 11:29 — *Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls.* The yoke that makes the disciple \"perfect\" gives rest to the soul."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Psalm 19:7 — *The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple.* The Torah is \"perfect,\" so to bear its whole yoke is to be made perfect."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 4,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Deuteronomy 4:2 — *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* The Didache's \"neither adding nor taking away\" is Moses' own guard upon the commandments."
+        }
+      ]
+    },
+    {
+      "slug": "didache-1-firstfruits-pure-sacrifice",
+      "title": "Firstfruits to the Prophets, a Pure Sacrifice in Every Place",
+      "summary_md": "The Teaching keeps the firstfruits-law alive among the nations: *Every firstfruit then of the produce of the wine-vat and of the threshing-floor, of thy oxen and of thy sheep, thou shalt take and give as the firstfruit to the prophets; for they are your chief-priests* (Didache 1:13). And it grounds the assembly's thanksgiving in Malachi: gather and break bread *that your sacrifice may be pure; for this sacrifice it is that was spoken of by Yahuah; In every place... offer Me a pure sacrifice* (Didache 1:14). It ain't new. The firstfruits belong to the priest by Sinai's own ordinance — *The firstfruit also of thy corn, of thy wine, and of thine oil, and the first of the fleece of thy sheep, shalt thou give him* (Deuteronomy 18:4) — and Wisdom seals it: *Honour Yahuah (LORD) with thy substance, and with the firstfruits of all thine increase* (Proverbs 3:9). And the \"pure sacrifice in every place\" the Didache quotes is Malachi word for word — *in every place incense shall be offered unto my name, and a pure offering: for my name shall be great among the heathen* (Malachi 1:11). The Teaching hands on Torah's offering, not abolishes it.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 18,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Deuteronomy 18:4 — *The firstfruit also of thy corn, of thy wine, and of thine oil, and the first of the fleece of thy sheep, shalt thou give him.* The Didache's firstfruit of wine-vat, threshing-floor, oxen and sheep is Moses' priestly due."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "numbers",
+          "tgt_ch": 18,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Numbers 18:12 — *All the best of the oil, and all the best of the wine, and of the wheat, the firstfruits of them which they shall offer unto Yahuah (LORD), them have I given thee.* The firstfruits the Teaching gives \"to the prophets\" are the priest's portion of Sinai."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 3,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Proverbs 3:9 — *Honour Yahuah (LORD) with thy substance, and with the firstfruits of all thine increase:* the wisdom-charge to honour Yahuah with firstfruits stands behind the Didache's command."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 1,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Malachi 1:11 — *For from the rising of the sun even unto the going down of the same my name shall be great among the Gentiles; and in every place incense shall be offered unto my name, and a pure offering: for my name shall be great among the heathen, saith Yahuah Tseva'ot (LORD of hosts).* The Didache cites this very prophecy of the pure offering \"in every place.\""
+        }
+      ]
+    },
+    {
+      "slug": "didache-1-watch-for-the-coming",
+      "title": "Be Watchful — the Lord Cometh, the Trumpet and the Resurrection",
+      "summary_md": "The Teaching ends as the Master taught, gazing toward the last season: *Be watchful for your life; let your lamps not be quenched and your loins not ungirded, but be ye ready; for ye know not the hour in which our Lord cometh* (Didache 1:16). It looks for *a sign of a voice of a trumpet, and thirdly a resurrection of the dead*, and warns that *the world-deceiver shall appear as a son of Elohim* before the end (Didache 1:16). It ain't new. The Messiah commanded the same vigilance — *Watch therefore: for ye know not what hour your Lord doth come* (Matthew 24:42) — and *Therefore be ye also ready: for in such an hour as ye think not the Son of Adam cometh* (Matthew 24:44). His coming on the clouds with the trumpet-gathering is the Didache's hope — *they shall see the Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30) — and the trumpet that raises the dead is Paul's same shout: *For Yahuah himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of Elohim: and the dead in Messiah shall rise first* (1 Thessalonians 4:16). The Teaching's last word is the Master's: watch, and be ready.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 42,
+          "tier": "free",
+          "note": "Matthew 24:42 — *Watch therefore: for ye know not what hour your Lord doth come.* The Didache's \"be watchful... for ye know not the hour in which our Lord cometh\" is this command nearly verbatim."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 44,
+          "tier": "free",
+          "note": "Matthew 24:44 — *Therefore be ye also ready: for in such an hour as ye think not the Son of Adam cometh.* The charge to keep lamps lit and loins girded \"ready\" echoes the Master's call to readiness."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Matthew 24:30 — *And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* The \"signs of the truth\" the Didache awaits are the Messiah's appearing on the clouds."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "1-thessalonians",
+          "tgt_ch": 4,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "1 Thessalonians 4:16 — *For Yahuah (Lord) himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first:* the trumpet and resurrection the Didache lists as signs of the end are Paul's same hope."
+        }
+      ]
+    }
+  ]
+}
