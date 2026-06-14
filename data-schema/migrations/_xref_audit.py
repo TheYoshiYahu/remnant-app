@@ -238,6 +238,8 @@ COVERAGE_GLOBS = ['session1*matt*extras_cross_references.sql',
     'session2*_galatians_cross_references.sql',
     'session2*_revelation_cross_references.sql',
     'session2*_1corinthians_cross_references.sql',
+    'session2*_2corinthians_cross_references.sql',
+    'session2*_ephesians_cross_references.sql',
     'session3*_cross_references.sql']
 cov_files = []
 for gpat in COVERAGE_GLOBS:

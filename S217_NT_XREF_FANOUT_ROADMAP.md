@@ -57,9 +57,9 @@ in the sandbox).
 | **Romans** | 16 | ✅ | ✅ | ✅ | **complete** — 1–16 full library, 91 threads/285 members live (S219, band 6000–6381). 9–11 ON BLESSING LIST. |
 | **Galatians** | 6 | ✅ | ✅ | ✅ | **complete (S223)** — 1–6 full library, **31 threads/119 members LIVE** in prod (band 7200–7337, applied 2026-06-10, exact reconciliation). WHOLE BOOK ON BLESSING LIST. |
 | **Revelation** | 22 | ✅ | ✅ | ✅ | **complete (S224)** — 1–22 full library, **149 threads/637 members LIVE** in prod (band 9000–9546, migration session224 + session225 two-house frame fix, applied 2026-06-10). KAPH 1:13/14:14 + 144k two-house + keep-commandments 12:17/14:12/22:14 + New Jerusalem ON BLESSING LIST. **S225 (Yoshi's frame):** the TWO WITNESSES (Rev 11) = House of Judah + House of Israel (Ezekiel 37 two sticks / Zech 4 two olive trees), NOT two returned prophets; white-throne judgment AFTER the millennium (11:18→Rev 20). Whole eschatology block on blessing list. |
-| 1 Corinthians | 16 | ⬜ | ⬜ | ⬜ | greenfield |
-| 2 Corinthians | 13 | ⬜ | ⬜ | ⬜ | greenfield |
-| Ephesians | 6 | ⬜ | ⬜ | ⬜ | greenfield — ch2 voice-risk |
+| **1 Corinthians** | 16 | ✅ | ✅ | ✅ | **complete (S228)** — 56 threads/202 members live (band 6600–6981). |
+| **2 Corinthians** | 13 | ✅ | ✅ | ✅ | **complete (S229)** — 40 threads/141 members live (band 7000–7303). ch3 letter/spirit + ch6 come-out + ch8/9 collection ON BLESSING LIST. |
+| **Ephesians** | 6 | ✅ | ✅ | ✅ | **complete (S230)** — 1–6 full library, **21 threads/94 members LIVE** in prod (band 7400–7531, migration session230, applied 2026-06-14, exact reconciliation 0 orphans). ★ ch2 two-houses/middle-wall + grace-through-faith-unto-works, ch5 bridegroom-&-bride=Israel-restored, ch6 honour-father-mother=Torah-affirmed + whole-armour-of-Yahuah ON BLESSING LIST. |
 | Philippians | 4 | ⬜ | ⬜ | ⬜ | greenfield |
 | Colossians | 4 | ⬜ | ⬜ | ⬜ | greenfield |
 | 1 Thessalonians | 5 | ⬜ | ⬜ | ⬜ | greenfield |
@@ -114,7 +114,7 @@ Acts 5000s).
 | 1 Corinthians (16) | 6600 | 1–4 · 5–7 · 8–10 · 11–12 · 13–14 · 15–16 (resurrection) | 6 |
 | 2 Corinthians (13) | 7000 | 1–4 · 5–7 · 8–9 · 10–13 | 4 |
 | Galatians (6) | 7200 | **1–2 · 3–4 · 5–6** (HIGH risk — *The Galatians Lie* terrain; works-of-law, curse=Deut 28) | 3 |
-| Ephesians (6) | 7400 | 1–3 · 4–6 (ch2 afar-off/middle-wall = two houses, RL #7) | 2 |
+| ~~Ephesians (6)~~ | 7400 | ✅ COMPLETE (S230) — per-chapter minions; 21 threads/94 members live (band 7400–7531). ch2 two-houses/middle-wall + grace-unto-works, ch5 bride=Israel-restored, ch6 Torah-affirmed + whole-armour ON BLESSING LIST. | ✅ |
 | Philippians (4) | 7500 | 1–4 | 1 |
 | Colossians (4) | 7550 | 1–4 | 1 |
 | 1 Thessalonians (5) | 7600 | 1–3 · 4–5 (the gathering/resurrection) | 2 |
