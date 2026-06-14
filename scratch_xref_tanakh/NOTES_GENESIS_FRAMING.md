@@ -276,3 +276,32 @@ Band base 20000, migration `session301_genesis_cross_references.sql`.
   named as lateral to the betrayer without collapsing the figures.
 - Resolve-gate parser undercounts ge37 by 6 (parens inside note strings) — NOT a data defect; all 29
   target refs verified resolved via direct DB check; arity 0 bad, fidelity 80/80, pglast 1057 stmts.
+
+## PACK 10 (ch38-41) — applied + reconciled 2026-06-14 (live 186/863 → 205/927, +19 thr/+64 mem)
+- **★ ch38 Judah & Tamar — the Messianic line** (5 thr/19 mem, band 20925): raise-up-seed/levirate
+  duty + Onan's sin (Deut 25:5-6 + Ruth 4:10 + Jubilees 41); the pledge — signet, bracelets, staff;
+  ★★ *she hath been more righteous than I* (38:26) + Judah's repentance (Jubilees 41); Pharez & Zarah
+  the breach & scarlet thread (Ruth 4:12,18-22 → David); ★★ Tamar in the line of the Messiah
+  (Matt 1:3) + the sceptre to Judah (Gen 49:10) — canon-only [free] thread. Seed-of-promise (RL#1)
+  carried through a scandal-marked, grace-kept passage, never bloodline-purity-alone.
+- **ch39 Joseph in Potiphar's house** (5 thr/17 mem, band 20950): ★ Yahuah was with Joseph (Acts 7:9
+  *but Elohim was with him*); ★★ *how can I do this great wickedness and sin against Elohim* (39:9 →
+  Ps 51:4 sin-against-God-first); he left his garment and fled → flee fornication (1 Cor 6:18 +
+  Heb 13:4); the false accusation, the innocent cast into prison (the righteous-sufferer TYPE, held
+  sober — Joseph a type, not the Servant Himself); Yahuah with him in the prison (Acts 7:10). Jasher 44
+  (Zelicah) + Jubilees 39 extras.
+- **ch40 butler & baker dreams** (3 thr/6 mem, band 20975 — quieter chapter, restraint): ★★ *do not
+  interpretations belong to Elohim?* (40:8 → Daniel 2:28,47 — the same captive-interpreter confession
+  before a pagan court); the three days / butler restored / baker hanged-on-a-tree (sober diverging-
+  judgment, NOT forced into resurrection/two-thieves); *yet did not the chief butler remember Joseph*
+  (40:23 — vindication deferred to Yahuah's hour). Jasher 44/45 carry NO clean butler/baker dream
+  witness (44=Zelicah, 45=genealogy+Tamar) → Jasher honestly "none warranted"; Jubilees 39 only.
+- **★ ch41 Joseph's EXALTATION (the type completed)** (6 thr/22 mem, band 21000): Pharaoh's dreams
+  none could interpret (Daniel 2); ★★ *it is not in me: Elohim shall give the answer* (41:16) — canon-
+  only [free] keystone confession thread (Daniel 2); *a man in whom the Spirit of Elohim is* (41:38 →
+  Acts 7:10); ★★ the ring/fine-linen/gold-chain/*bow the knee* (41:42-43 → Phil 2:9-11 every-knee, the
+  rejected-then-exalted TYPE completed, RL#4 type-never-flattening); the savior raised to preserve life
+  through the famine (Gen 45:5,7 / 50:20); ★ Manasseh & Ephraim born (41:51-52) → the two-house seed
+  (Gen 48:19 multitude of nations + Ezek 37:16,19 stick of Joseph + Jer 31:9 *Ephraim is my firstborn*).
+- Extras parse cautions this pack: Jubilees 39 skips v.7 (6→8); Jubilees 40 has no v.7 + v.10-11 run
+  together; minions self-avoided. All resolve/arity/fidelity green (64/64).

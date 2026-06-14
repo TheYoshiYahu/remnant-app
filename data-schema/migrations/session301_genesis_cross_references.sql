@@ -14588,6 +14588,1214 @@ SELECT t.id, cr.id, 3, E'*a day of atonement... ye shall afflict your souls* (Le
  WHERE t.slug='genesis-37-the-kid-of-the-goats-and-the-day-of-atonement'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_genesis_38.sql (Genesis 38) -----
+-- Chapter: Genesis 38 — JUDAH & TAMAR, THE MESSIANIC ROYAL LINE (★ KEYSTONE of the seed-of-promise carried through Yahudah, the southern/royal house). Judah goes down from his brethren, marries the Canaanite daughter of Shuah; sons Er, Onan, Shelah. Er is wicked and Yahuah slays him; ★ Onan refuses the levirate duty — spilling the seed lest he raise up seed to his brother — and "the thing which he did displeased Yahuah," who slew him also (38:9-10). Tamar, twice-widowed daughter-in-law, is withheld from Shelah. ★ Tamar veils herself and sits by the way to Timnath; the pledge — Judah's signet, bracelets, and staff (38:18); she conceives by Judah. ★★ "She hath been more righteous than I" (38:26) — Judah's confession; he had withheld the levirate right. ★ The twins: Pharez and Zarah — the scarlet thread bound on the hand, the breach broken forth ("How hast thou broken forth? this breach be upon thee," 38:29) — Pharez breaks out first. FORWARD: Matthew 1:3 names Thamar in the line of the Messiah; Ruth 4:12 + 4:18-22 run the Pharez line down to David and the throne; Genesis 49:10 the sceptre to Yahudah.
+-- Tag: ge38   Temp view: _s301_ge38_lookup
+-- Sort band: base 20925, step 3 -> threads at 20925, 20928, 20931, 20934, 20937, 20940 (6 threads)
+-- Source of EVERY row: 'canon','genesis',38,v
+--
+-- Genesis 38 coverage:
+--   v.1-5 (Judah went down from his brethren; the Canaanite daughter of Shuah; Er, Onan, Shelah)
+--        NT:     none warranted (the genealogy-into-the-Messiah weight is carried by THREAD 5/6 from the twins and the line, not the descent-to-Adullam notice)
+--        Extras: Jubilees 41:1-2 + Jasher 45:4 carry the narrative parallel (Judah's marriage, the three sons) — narrative-parallel only, NOT framework-load-bearing here; held to prose, not forced as members
+--        Tanakh: none warranted
+--   ★ v.6-10 (Er wicked, Yahuah slew him; Onan and the LEVIRATE duty — raise up seed to thy brother; he spilled it; the thing displeased Yahuah, He slew him also)
+--        NT:     none warranted distinct (the NT levirate text, Matthew 22:24 / Mark 12:19, is the Sadducees' test-case citing Deut 25; not the framework weave for Tamar's line — held in prose, not forced)
+--        Extras: ★ Jubilees 41:3-5 (Er wicked and Yahuah slew him; Onan knew the seed would not be his... spilt the seed on the ground... He slew him) — THREAD 1 (load-bearing: the levirate duty and Onan's sin verse-for-verse)
+--        Tanakh: ★ Deuteronomy 25:5-6 (If brethren dwell together... her husband's brother shall... raise up seed to his brother) — THREAD 1 (the levirate law named); Ruth 4:5,10 (to raise up the name of the dead upon his inheritance) — THREAD 1 (the levirate kept, the redeemed line — forward to the same Pharez house)
+--   ★ v.11-19 (Tamar withheld from Shelah; the veil by the way to Timnath; the pledge — the signet, bracelets, and staff; she conceived by him)
+--        NT:     none warranted distinct
+--        Extras: ★ Jubilees 41:9-11 (she put off her widow's clothes, put on a veil... she said, Give me my hire... my ring... my necklace... my staff... and she conceived by him) — THREAD 2 (load-bearing: the pledge); Jasher 45:31 (put off the garments of her widowhood... a vail upon her... sat in the public thoroughfare upon the road to Timnah) — THREAD 2
+--        Tanakh: none warranted distinct
+--   ★★ v.24-26 (Tamar with child by whoredom, Judah: let her be burnt; she sends the signet, bracelets, staff — Discern whose are these; ★★ She hath been more righteous than I, because I gave her not to Shelah)
+--        NT:     none warranted distinct (Judah's confession is the Tanakh/extras weight; the righteousness-by-covenant-faithfulness reading is unfolded in prose)
+--        Extras: ★★ Jubilees 41:18-19 (she sent... the ring and the necklace, and the staff... Discern whose are these... Tamar is more righteous than I am) — THREAD 3 (load-bearing: the confession); ★ Jubilees 41:23 (Judah acknowledged that the deed... was evil... and he began to lament and to supplicate before Yahuah because of his transgression) — THREAD 3 (Judah's repentance, the heart of the extras account)
+--        Tanakh: none warranted distinct
+--   ★ v.27-30 (the twins; the scarlet thread bound on the hand; Pharez breaks forth — How hast thou broken forth? this breach be upon thee; Zarah with the scarlet thread)
+--        NT:     ★★ Matthew 1:3 (Judas begat Phares and Zara of Thamar; and Phares begat Esrom) — THREAD 4 + THREAD 5 (load-bearing: Tamar and Pharez named in the line of the Messiah)
+--        Extras: Jubilees 41:21 (she bare two sons, Perez and Zerah) — THREAD 4
+--        Tanakh: ★★ Ruth 4:12 (let thy house be like the house of Pharez, whom Tamar bare unto Yahudah) — THREAD 4; ★★ Ruth 4:18-22 (the generations of Pharez... Obed begat Jesse, and Jesse begat David) — THREAD 4/5 (the Pharez line to David and the throne)
+--   ★ (chapter-wide: Yahudah the royal/southern house, the sceptre)
+--        Tanakh: ★★ Genesis 49:10 (The sceptre shall not depart from Yahudah... until Shiloh come; and unto him shall the gathering of the people be) — THREAD 5 (load-bearing lateral: the royal line out of Judah, the King from the unlikely seed)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-38-raise-up-seed-to-thy-brother-the-levirate-duty — Tanakh (Deuteronomy 25, Ruth 4) + Extras (Jubilees) [extras] (★ the levirate law; Onan's sin; the duty kept later in the Pharez line)
+--   2. genesis-38-the-pledge-the-signet-and-the-bracelets-and-the-staff — Extras (Jubilees, Jasher) [extras] (the veil by the way, the pledge — the tokens that will convict and redeem)
+--   3. genesis-38-she-hath-been-more-righteous-than-i — Extras (Jubilees) [extras] (★★ Judah's confession and repentance — the seed kept by covenant-purpose, not bloodline-purity)
+--   4. genesis-38-pharez-and-zarah-the-breach-and-the-scarlet-thread — NT (Matthew) + Tanakh (Ruth 4:12, Ruth 4:18-22) + Extras (Jubilees) [extras] (★ the twins, the breach; the Pharez line to David)
+--   5. genesis-38-tamar-in-the-line-of-the-messiah-the-sceptre-to-judah — NT (Matthew) + Tanakh (Genesis 49:10, Ruth 4:18-22) [free] (★★ the harlot-by-the-way woven into the royal genealogy; the sceptre to Judah)
+--
+-- Framing notes:
+--   ★ THE LEVIRATE (THREAD 1): *Go in unto thy brother's wife, and marry her, and raise up seed to thy brother* (38:8). The duty named here is the Torah's: *her husband's brother shall go in unto her, and take her to him to wife... and it shall be, that the firstborn... shall succeed in the name of his brother which is dead* (Deuteronomy 25:5-6). Onan's sin — *he spilled it on the ground, lest that he should give seed to his brother* (38:9) — is the refusal of the covenant duty to preserve a brother's name and seed; *the thing which he did displeased Yahuah (LORD)* (38:10). The same levirate principle is kept honourably in Ruth 4 — *to raise up the name of the dead upon his inheritance* (Ruth 4:10) — and the redeemed line there is the SAME Pharez house (Ruth 4:12,18-22). The seed of promise is guarded by covenant-faithfulness, never spilled.
+--   ★★ MORE RIGHTEOUS THAN I (THREAD 3): *She hath been more righteous than I; because that I gave her not to Shelah my son* (38:26). Tamar, withheld from her levirate right, took the only road left to raise up seed in Judah's house — and Judah confesses she was in the right. The restored witness deepens it to repentance: *Judah acknowledged that the deed which he had done was evil... and he began to lament and to supplicate before Yahuah (God) because of his transgression* (Jubilees 41:23), and *we told him in a dream that it was forgiven him* (Jubilees 41:24). Read through the framework (Red Line #1): the seed is carried by paternal bloodline AND covenant-purpose together, never bloodline-purity-alone — the Messianic line runs through this scandal-marked, grace-kept passage, the seed preserved by Yahuah's purpose in spite of the failures of the men who bore it.
+--   ★★ TAMAR IN THE ROYAL LINE (THREADS 4,5): *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom* (Matthew 1:3) — Tamar herself, the harlot-by-the-way, is NAMED in the genealogy of the Messiah; the levirate breach is woven into the royal line. *Let thy house be like the house of Pharez, whom Tamar bare unto Yahudah (Judah)* (Ruth 4:12); *Pharez begat Hezron... and Obed begat Jesse, and Jesse begat David* (Ruth 4:18-22) — the Pharez line runs straight to David and the throne. And the lateral that frames the whole: *The sceptre shall not depart from Yahudah (Judah)... until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10) — Yahudah is the southern, royal house out of which the King comes (two-house framework, Red Line #2): the King from the unlikely seed, the gathering of the people to Him.
+--   EXTRAS: Jubilees 41 carries the whole account verse-for-verse (clean parse) with heavy weight on Judah's REPENTANCE (41:23-25) and Tamar's righteousness (41:19) — the richest extras witness. Jubilees DOUBLE-WRITTEN 'jubilees','jubilees'. Jasher 45 carries it too but uses plain "Judah" (not Yahudah) and "Shiloh" for Shelah, and folds it into the wives-of-the-twelve genealogy; the clean Tamar-action verses (45:31) are quoted exactly as the parse returns. Jasher DOUBLE-WRITTEN 'jasher','jasher'.
+--   VERSES WITH NO ADD: v.1-5 (Judah's descent to Adullam, the Canaanite marriage, the three sons) — a narrative setup; the framework weight begins at the levirate (v.8). v.20-23 (Hirah seeking the harlot to redeem the pledge) — narrative bridge, no framework-bearing target warranted. v.27-28 the scarlet-thread/midwife detail is carried within THREAD 4's anchor span and prose.
+
+CREATE TEMP VIEW _s301_ge38_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Raise up seed to thy brother — the levirate duty (Onan's sin)
+    ('canon','genesis',38,8,'canon','deuteronomy',25,5,'free',
+      E'*If brethren dwell together, and one of them die, and have no child, the wife of the dead shall not marry without unto a stranger: her husband''s brother shall go in unto her, and take her to him to wife, and perform the duty of an husband''s brother unto her* (Deuteronomy 25:5). The word of Judah to Onan — *Go in unto thy brother''s wife, and marry her, and raise up seed to thy brother* (Genesis 38:8) — is this very levirate duty of the Torah: when a brother dies childless, his name and seed are preserved through his brother. The duty is no private custom but the covenant''s guard over the seed-line.'),
+    ('canon','genesis',38,9,'canon','deuteronomy',25,6,'free',
+      E'*And it shall be, that the firstborn which she beareth shall succeed in the name of his brother which is dead, that his name be not put out of Yashar''el (Israel)* (Deuteronomy 25:6). Onan''s sin is measured against this: *Onan knew that the seed should not be his... that he spilled it on the ground, lest that he should give seed to his brother* (Genesis 38:9). The firstborn of the levirate was to carry the dead brother''s name *that his name be not put out*; Onan withheld exactly that — refusing to raise up the name and seed he owed his brother, and *the thing which he did displeased Yahuah (LORD)*.'),
+    ('canon','genesis',38,8,'canon','ruth',4,10,'free',
+      E'*Moreover Ruth the Moabitess, the wife of Mahlon, have I purchased to be my wife, to raise up the name of the dead upon his inheritance, that the name of the dead be not cut off from among his brethren, and from the gate of his place: ye are witnesses this day* (Ruth 4:10). Where Onan refused the levirate, Boaz keeps it gladly — *to raise up the name of the dead upon his inheritance* — the same duty named in *raise up seed to thy brother* (Genesis 38:8). And the line redeemed in Ruth is the very house of Pharez whom Tamar bare unto Judah; the duty Onan spilled is honoured, and the seed-line preserved, in the same royal lineage.'),
+    ('canon','genesis',38,9,'jubilees','jubilees',41,5,'extras',
+      E'*And Onan knew that the seed would not be his, (but) his brother''s only, and he went into the house of his brother''s wife, and spilt the seed on the ground, and he was wicked in the eyes of Yahuah (God), and He slew him* (Jubilees 41:5). The restored witness keeps Onan''s sin verse-for-verse with *Onan knew that the seed should not be his... he spilled it on the ground, lest that he should give seed to his brother... and the thing which he did displeased Yahuah (LORD): wherefore he slew him also* (Genesis 38:9-10) — the refusal of the brother''s seed counted wicked in the eyes of Yahuah.'),
+    ('canon','genesis',38,8,'jubilees','jubilees',41,4,'extras',
+      E'*And Yahudah (Judah) said to Onan, his brother: "Go in to your brother''s wife and perform the duty of a husband''s brother to her, and raise up seed to your brother."* (Jubilees 41:4). The restored witness carries the levirate charge whole — *perform the duty of a husband''s brother... and raise up seed to your brother* — matching *Go in unto thy brother''s wife, and marry her, and raise up seed to thy brother* (Genesis 38:8): the covenant duty laid plainly upon Onan to preserve his brother''s seed.'),
+
+    -- THREAD 2: The pledge — the signet, the bracelets, the staff
+    ('canon','genesis',38,18,'jubilees','jubilees',41,11,'extras',
+      E'*And she said to him: "Give me my hire"; and he said to her: "I have nothing in my hand save my ring that is on my finger, and my necklace, and my staff which is in my hand."... and he gave them to her, (and he went in to her,) and she conceived by him* (Jubilees 41:11). The restored witness keeps the pledge entire — *my ring... my necklace... my staff* given for the hire — matching *Thy signet, and thy bracelets, and thy staff that is in thine hand. And he gave it her, and came in unto her, and she conceived by him* (Genesis 38:18). The tokens handed over in the dark will become the very witnesses that convict and acquit.'),
+    ('canon','genesis',38,14,'jubilees','jubilees',41,9,'extras',
+      E'*And she put off her widow''s clothes, and put on a veil, and adorned herself, and sat in the gate adjoining the way to Timnah* (Jubilees 41:9). The restored witness carries Tamar''s act whole — *put off her widow''s clothes... put on a veil... sat in the gate adjoining the way to Timnah* — matching *she put her widow''s garments off from her, and covered her with a vail, and wrapped herself, and sat in an open place, which is by the way to Timnath* (Genesis 38:14): withheld from her levirate right, she takes the only road left to raise up seed in Judah''s house.'),
+    ('canon','genesis',38,14,'jasher','jasher',45,31,'extras',
+      E'*And Tamar rose up and put off the garments of her widowhood, and she put a vail upon her, and she entirely covered herself, and she went and sat in the public thoroughfare, which is upon the road to Timnah* (Jasher 45:31). The extended witness keeps the same act — *put off the garments of her widowhood... a vail upon her... sat in the public thoroughfare, which is upon the road to Timnah* — as *she put her widow''s garments off from her, and covered her with a vail... and sat in an open place, which is by the way to Timnath* (Genesis 38:14).'),
+
+    -- THREAD 3 (★★): She hath been more righteous than I (Judah's confession and repentance)
+    ('canon','genesis',38,25,'jubilees','jubilees',41,18,'extras',
+      E'*And it came to pass when they brought her forth to bum her that she sent to her father-in-law the ring and the necklace, and the staff, saying: "Discern whose are these, for by him am I with child."* (Jubilees 41:18). The restored witness keeps Tamar''s appeal entire — *she sent... the ring and the necklace, and the staff, saying: "Discern whose are these, for by him am I with child"* — matching *she sent to her father in law, saying, By the man, whose these are, am I with child: and she said, Discern, I pray thee, whose are these, the signet, and bracelets, and staff* (Genesis 38:25). The pledge given in the dark is brought to light, and the tokens speak.'),
+    ('canon','genesis',38,26,'jubilees','jubilees',41,19,'extras',
+      E'*And Yahudah (Judah) acknowledged, and said: "Tamar is more righteous than I am. And therefore let them burn her not."* (Jubilees 41:19). The restored witness keeps Judah''s confession verse-for-verse with *Yahudah (Judah) acknowledged them, and said, She hath been more righteous than I; because that I gave her not to Shelah my son* (Genesis 38:26). The man who would have burned her owns that the withheld levirate right was his fault, not hers — *more righteous than I*.'),
+    ('canon','genesis',38,26,'jubilees','jubilees',41,23,'extras',
+      E'*And Yahudah (Judah) acknowledged that the deed which he had done was evil, for he had lain with his daughter-in-law... and he acknowledged that he had transgressed and gone astray... and he began to lament and to supplicate before Yahuah (God) because of his transgression* (Jubilees 41:23). The restored witness opens the heart behind *She hath been more righteous than I* (Genesis 38:26): Judah''s acknowledgment is no mere admission but repentance — he *began to lament and to supplicate before Yahuah* — and the seed of promise is carried on through a man broken and turned, never through bloodline-purity alone.'),
+
+    -- THREAD 4: Pharez and Zarah — the breach and the scarlet thread (the Pharez line to David)
+    ('canon','genesis',38,29,'canon','matthew',1,3,'free',
+      E'*And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram* (Matthew 1:3). The twins of the breach — *his name was called Pharez... his name was called Zarah* (Genesis 38:29-30) — stand named in the very genealogy of the Messiah: *Judas begat Phares and Zara of Thamar*. Tamar herself is named in the royal line; the levirate breach and the harlot-by-the-way are woven, by Yahuah''s purpose, straight into the line of the King.'),
+    ('canon','genesis',38,29,'canon','ruth',4,12,'free',
+      E'*And let thy house be like the house of Pharez, whom Tamar bare unto Yahudah (Judah), of the seed which Yahuah (LORD) shall give thee of this young woman* (Ruth 4:12). The elders of Bethlehem bless Boaz by the house Pharez founded — *the house of Pharez, whom Tamar bare unto Yahudah* — the very Pharez born of the breach in *How hast thou broken forth? this breach be upon thee: therefore his name was called Pharez* (Genesis 38:29). The scandal-marked birth becomes the byword of a blessed and fruitful house.'),
+    ('canon','genesis',38,29,'canon','ruth',4,18,'free',
+      E'*Now these are the generations of Pharez: Pharez begat Hezron* (Ruth 4:18). The book of Ruth seals the line from the breach: the generations of *Pharez* — born when *his brother came out: and she said, How hast thou broken forth?... therefore his name was called Pharez* (Genesis 38:29) — are traced forward, the firstborn of the breach heading the genealogy that runs to the throne.'),
+    ('canon','genesis',38,29,'canon','ruth',4,22,'free',
+      E'*And Obed begat Jesse, and Jesse begat David* (Ruth 4:22). The Pharez line of Genesis 38:29 runs straight to the king: *Obed begat Jesse, and Jesse begat David*. From the breach broken forth in Tamar''s womb to David on the throne — the royal seed carried through the unlikely, covenant-kept line of Yahudah.'),
+    ('canon','genesis',38,29,'jubilees','jubilees',41,21,'extras',
+      E'*And after that she bare two sons, Perez and Zerah, in the seventh year of this second week* (Jubilees 41:21). The restored witness names the twins — *Perez and Zerah* — born of Tamar, as *behold, twins were in her womb... his name was called Pharez... his name was called Zarah* (Genesis 38:27,29-30): the two sons through whom the line of Judah is established and goes on.'),
+
+    -- THREAD 5 (★★): Tamar in the line of the Messiah — the sceptre to Judah
+    ('canon','genesis',38,26,'canon','matthew',1,3,'free',
+      E'*And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram* (Matthew 1:3). The woman Judah confessed *more righteous than I* (Genesis 38:26) is named, alone among the mothers at the head of the line, in the genealogy of the Messiah: *of Thamar*. The seed of promise is carried by paternal bloodline AND covenant-purpose together — and here Yahuah''s purpose runs it through Tamar, the withheld daughter-in-law made righteous, into the royal line.'),
+    ('canon','genesis',38,30,'canon','genesis',49,10,'free',
+      E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The line of Judah established through the twins — *his name was called Zarah* (Genesis 38:30), and Pharez before him — is the royal house Jacob blesses with the sceptre: *The sceptre shall not depart from Yahudah... until Shiloh come*. Yahudah is the southern, kingly house out of which the King comes; the scandal-marked seed of Genesis 38 carries the very throne and the gathering of the people.'),
+    ('canon','genesis',38,30,'canon','ruth',4,22,'free',
+      E'*And Obed begat Jesse, and Jesse begat David* (Ruth 4:22). The twins of Genesis 38:30 head the line that the book of Ruth runs down to the king: *Jesse begat David*. The sceptre promised to Yahudah descends through Pharez to David — the royal seed kept through Tamar''s sons and carried to the throne of Yashar''el (Israel).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-38-raise-up-seed-to-thy-brother-the-levirate-duty',
+       E'Raise up seed to thy brother — the levirate duty and Onan''s sin',
+       E'Er, Judah''s firstborn, *was wicked in the sight of Yahuah (LORD); and Yahuah (LORD) slew him* (Genesis 38:7), and the levirate duty falls to the next brother: *And Yahudah (Judah) said unto Onan, Go in unto thy brother''s wife, and marry her, and raise up seed to thy brother* (Genesis 38:8). This is no private custom but the Torah''s own guard over the seed-line: *her husband''s brother shall go in unto her, and take her to him to wife, and perform the duty of an husband''s brother unto her* (Deuteronomy 25:5), *that his name be not put out of Yashar''el (Israel)* (Deuteronomy 25:6). But Onan refuses the duty he owes: *Onan knew that the seed should not be his... that he spilled it on the ground, lest that he should give seed to his brother* (Genesis 38:9) — and *the thing which he did displeased Yahuah (LORD): wherefore he slew him also* (Genesis 38:10). The restored witness keeps it verse-for-verse: *he went into the house of his brother''s wife, and spilt the seed on the ground, and he was wicked in the eyes of Yahuah (God), and He slew him* (Jubilees 41:5). The same levirate principle is kept honourably in the same royal lineage: Boaz redeems Ruth *to raise up the name of the dead upon his inheritance, that the name of the dead be not cut off* (Ruth 4:10) — the duty Onan spilled, gladly fulfilled in the house of Pharez. The seed of promise is guarded by covenant-faithfulness, never spilled upon the ground.',
+       sv.verse_id, ev.verse_id, 'extras', 20925
+  FROM _s301_ge38_lookup sv, _s301_ge38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=38 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-38-the-pledge-the-signet-and-the-bracelets-and-the-staff',
+       E'The pledge — the signet, and the bracelets, and the staff',
+       E'Withheld from Shelah though he was grown — *for she saw that Shelah was grown, and she was not given unto him to wife* (Genesis 38:14) — Tamar takes the only road left to raise up seed in Judah''s house: *she put her widow''s garments off from her, and covered her with a vail, and wrapped herself, and sat in an open place, which is by the way to Timnath* (Genesis 38:14). And when Judah turns aside and asks his price, she asks a pledge: *And he said, What pledge shall I give thee? And she said, Thy signet, and thy bracelets, and thy staff that is in thine hand. And he gave it her, and came in unto her, and she conceived by him* (Genesis 38:18). The signet, the cord, the staff — a man''s very identity handed over in the dark. The restored witness keeps both the veil and the pledge: *she put off her widow''s clothes, and put on a veil... and sat in the gate adjoining the way to Timnah* (Jubilees 41:9), and *I have nothing in my hand save my ring that is on my finger, and my necklace, and my staff which is in my hand... and he gave them to her... and she conceived by him* (Jubilees 41:11). The extended witness carries the same act: *Tamar rose up and put off the garments of her widowhood, and she put a vail upon her... and she went and sat in the public thoroughfare, which is upon the road to Timnah* (Jasher 45:31). The tokens taken for a pledge will become the very witnesses that convict and redeem.',
+       sv.verse_id, ev.verse_id, 'extras', 20928
+  FROM _s301_ge38_lookup sv, _s301_ge38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=38 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-38-she-hath-been-more-righteous-than-i',
+       E'She hath been more righteous than I — Judah''s confession and repentance',
+       E'When word comes that Tamar *hath played the harlot* and *is with child by whoredom*, Judah''s first word is death: *Bring her forth, and let her be burnt* (Genesis 38:24). But Tamar sends back the pledge: *Discern, I pray thee, whose are these, the signet, and bracelets, and staff* (Genesis 38:25) — and the tokens speak. *And Yahudah (Judah) acknowledged them, and said, She hath been more righteous than I; because that I gave her not to Shelah my son* (Genesis 38:26). The man who would have burned her owns that the withheld levirate right was his own fault, not hers. The restored witness keeps the appeal and the confession entire: *she sent to her father-in-law the ring and the necklace, and the staff, saying: "Discern whose are these, for by him am I with child"* (Jubilees 41:18), and *Yahudah (Judah) acknowledged, and said: "Tamar is more righteous than I am. And therefore let them burn her not."* (Jubilees 41:19). And it opens the heart behind the words to full repentance: *Yahudah (Judah) acknowledged that the deed which he had done was evil... and he began to lament and to supplicate before Yahuah (God) because of his transgression* (Jubilees 41:23), *and we told him in a dream that it was forgiven him because he supplicated earnestly* (Jubilees 41:24). The seed of promise is carried by paternal bloodline AND covenant-purpose together, never by bloodline-purity alone — the Messianic line runs through this scandal-marked, grace-kept passage, the seed preserved by Yahuah''s purpose through a man broken and turned.',
+       sv.verse_id, ev.verse_id, 'extras', 20931
+  FROM _s301_ge38_lookup sv, _s301_ge38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=38 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-38-pharez-and-zarah-the-breach-and-the-scarlet-thread',
+       E'Pharez and Zarah — the breach and the scarlet thread (the Pharez line to David)',
+       E'*And it came to pass in the time of her travail, that, behold, twins were in her womb* (Genesis 38:27). The one puts out his hand and the midwife binds *a scarlet thread, saying, This came out first* (Genesis 38:28) — but he draws it back and his brother breaks out before him: *behold, his brother came out: and she said, How hast thou broken forth? this breach be upon thee: therefore his name was called Pharez* (Genesis 38:29), and *afterward came out his brother, that had the scarlet thread upon his hand: and his name was called Zarah* (Genesis 38:30). The restored witness names the twins: *she bare two sons, Perez and Zerah* (Jubilees 41:21). And the breach-born son heads the royal line. The book of Ruth seals it: *let thy house be like the house of Pharez, whom Tamar bare unto Yahudah (Judah)* (Ruth 4:12); *Now these are the generations of Pharez: Pharez begat Hezron* (Ruth 4:18); *And Obed begat Jesse, and Jesse begat David* (Ruth 4:22). And the New Testament names both Tamar and Pharez in the genealogy of the Messiah: *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom* (Matthew 1:3). From the breach broken forth in Tamar''s womb to David on the throne to the King Himself — the royal seed carried through the unlikely, covenant-kept line of Yahudah.',
+       sv.verse_id, ev.verse_id, 'extras', 20934
+  FROM _s301_ge38_lookup sv, _s301_ge38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=38 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-38-tamar-in-the-line-of-the-messiah-the-sceptre-to-judah',
+       E'Tamar in the line of the Messiah — the sceptre to Judah',
+       E'The whole scandal-marked chapter is, in the end, the carrying of the royal seed. The woman Judah confessed *more righteous than I* (Genesis 38:26), and the twins born of the breach — *his name was called Pharez... his name was called Zarah* (Genesis 38:29-30) — stand in the line of the King. *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom* (Matthew 1:3): Tamar herself, the harlot-by-the-way, is named — alone among the mothers at the head of the genealogy — in the line of the Messiah. The seed of promise is carried by paternal bloodline AND covenant-purpose together (never bloodline-purity-alone): Yahuah''s purpose runs the line through the withheld daughter-in-law made righteous. And the lateral that frames it all is Jacob''s blessing on his fourth son: *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10) — Yahudah is the southern, kingly house out of which the King comes (the two-house framework: Yahudah the royal house in the south). The Pharez line runs straight to the throne: *And Obed begat Jesse, and Jesse begat David* (Ruth 4:22). From Tamar''s sons to David to Shiloh Himself, the scandal-marked seed of Genesis 38 carries the sceptre and the gathering of the people.',
+       sv.verse_id, ev.verse_id, 'free', 20937
+  FROM _s301_ge38_lookup sv, _s301_ge38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=38 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*her husband''s brother shall go in unto her... and perform the duty of an husband''s brother unto her* (Deuteronomy 25:5) — the levirate law behind *raise up seed to thy brother* (38:8); the Torah''s guard over the seed-line.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-raise-up-seed-to-thy-brother-the-levirate-duty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the firstborn which she beareth shall succeed in the name of his brother... that his name be not put out of Yashar''el (Israel)* (Deuteronomy 25:6) — what Onan refused (38:9): to raise up the dead brother''s name and seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=9
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-raise-up-seed-to-thy-brother-the-levirate-duty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*to raise up the name of the dead upon his inheritance, that the name of the dead be not cut off* (Ruth 4:10) — Boaz keeps the levirate Onan spilled (38:8), in the same Pharez lineage; the duty gladly fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-raise-up-seed-to-thy-brother-the-levirate-duty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Go in to your brother''s wife and perform the duty of a husband''s brother... and raise up seed to your brother* (Jubilees 41:4) — the levirate charge of 38:8 carried whole in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=41 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-raise-up-seed-to-thy-brother-the-levirate-duty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*he... spilt the seed on the ground, and he was wicked in the eyes of Yahuah (God), and He slew him* (Jubilees 41:5) — Onan''s sin of 38:9-10 verse-for-verse: the refusal of the brother''s seed counted wicked.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=9
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=41 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-raise-up-seed-to-thy-brother-the-levirate-duty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*she put off her widow''s clothes, and put on a veil... and sat in the gate adjoining the way to Timnah* (Jubilees 41:9) — Tamar''s act of 38:14 carried whole in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=14
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=41 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-the-pledge-the-signet-and-the-bracelets-and-the-staff'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*my ring... and my necklace, and my staff... and he gave them to her... and she conceived by him* (Jubilees 41:11) — the pledge of 38:18: the tokens that will convict and redeem.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=18
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=41 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-the-pledge-the-signet-and-the-bracelets-and-the-staff'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Tamar... put off the garments of her widowhood, and she put a vail upon her... and sat in the public thoroughfare, which is upon the road to Timnah* (Jasher 45:31) — the same act as 38:14 in the extended witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=14
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=45 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-the-pledge-the-signet-and-the-bracelets-and-the-staff'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*she sent... the ring and the necklace, and the staff, saying: "Discern whose are these, for by him am I with child"* (Jubilees 41:18) — Tamar''s appeal of 38:25; the pledge brought to light.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=25
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=41 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-she-hath-been-more-righteous-than-i'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*"Tamar is more righteous than I am. And therefore let them burn her not."* (Jubilees 41:19) — Judah''s confession of 38:26 verse-for-verse; the withheld levirate right was his fault.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=26
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=41 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-she-hath-been-more-righteous-than-i'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Yahudah (Judah) acknowledged that the deed... was evil... and he began to lament and to supplicate before Yahuah (God)* (Jubilees 41:23) — the repentance behind *more righteous than I* (38:26); the seed kept through a man broken and turned.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=26
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=41 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-she-hath-been-more-righteous-than-i'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom* (Matthew 1:3) — the twins of the breach (38:29-30) named in the genealogy of the Messiah; Tamar herself in the royal line.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=29
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-pharez-and-zarah-the-breach-and-the-scarlet-thread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*let thy house be like the house of Pharez, whom Tamar bare unto Yahudah (Judah)* (Ruth 4:12) — the Pharez of the breach (38:29) become the byword of a blessed house.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=29
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-pharez-and-zarah-the-breach-and-the-scarlet-thread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Now these are the generations of Pharez: Pharez begat Hezron* (Ruth 4:18) — the line from the breach of 38:29 traced forward toward the throne.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=29
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-pharez-and-zarah-the-breach-and-the-scarlet-thread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*And Obed begat Jesse, and Jesse begat David* (Ruth 4:22) — the Pharez line of 38:29 runs straight to the king.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=29
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-pharez-and-zarah-the-breach-and-the-scarlet-thread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*she bare two sons, Perez and Zerah* (Jubilees 41:21) — the twins of 38:27,29-30 named in the restored witness; the line of Judah established.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=29
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=41 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-pharez-and-zarah-the-breach-and-the-scarlet-thread'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *And Judas begat Phares and Zara of Thamar* (Matthew 1:3) — the woman confessed *more righteous than I* (38:26) named in the line of the Messiah; the seed run through covenant-purpose.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=26
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-tamar-in-the-line-of-the-messiah-the-sceptre-to-judah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *The sceptre shall not depart from Yahudah (Judah)... until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10) — the line established by the twins (38:30) is the royal house of the sceptre; the King from the unlikely seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=30
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-tamar-in-the-line-of-the-messiah-the-sceptre-to-judah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And Obed begat Jesse, and Jesse begat David* (Ruth 4:22) — the sceptre promised to Yahudah descends through Pharez (38:30) to David and the throne.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=38 AND sv.verse_number=30
+  JOIN _s301_ge38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-38-tamar-in-the-line-of-the-messiah-the-sceptre-to-judah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_39.sql (Genesis 39) -----
+-- Chapter: Genesis 39 — JOSEPH IN POTIPHAR'S HOUSE, THE RIGHTEOUS SUFFERER (the Joseph-type continues): Joseph brought down to Egypt, sold to Potiphar; "Yahuah (LORD) was with Joseph, and he was a prosperous man"; the master sees "that Yahuah (LORD) was with him, and that Yahuah (LORD) made all that he did to prosper," makes him overseer, and "Yahuah (LORD) blessed the Egyptian's house for Joseph's sake." The temptation: Potiphar's wife day by day, "Lie with me"; Joseph refuses — "how then can I do this great wickedness, and sin against Elohim (God)?" The garment left in her hand, the flight, the false accusation, Joseph cast into the prison where the king's prisoners were bound. And still: "But Yahuah (LORD) was with Joseph, and shewed him mercy, and gave him favour in the sight of the keeper of the prison." The blessed presence that does not abandon the lowered one — the righteous one kept under temptation, falsely accused, brought low before the exaltation.
+-- Tag: ge39   Temp view: _s301_ge39_lookup
+-- Sort band: base 20950, step 3 -> threads at 20950, 20953, 20956, 20959, 20962 (5 threads)
+-- Source of EVERY row: 'canon','genesis',39,v
+--
+-- Genesis 39 coverage:
+--   ★ v.1-6 (Yahuah was with Joseph, and he was a prosperous man... his master saw that Yahuah was with him, and that Yahuah made all that he did to prosper; made him overseer; Yahuah blessed the Egyptian's house for Joseph's sake)
+--        NT:     ★ Acts 7:9 (the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him); Acts 7:10 (delivered him out of all his afflictions, and gave him favour and wisdom) — THREAD 1 (load-bearing: "Elohim was with him" the same word over Joseph)
+--        Extras: Jubilees 39:3-4 (the blessing of Yahuah came upon the house of the Egyptian on account of Joseph... for he saw that Yahuah was with him); Jasher 44:12 (Yahuah was with Joseph and he became a prosperous man, and Yahuah blessed the house of Potiphar for the sake of Joseph) — THREAD 1
+--        Tanakh: none warranted distinct (the with-Joseph presence is carried forward by Acts 7 and the extras; no closer Tanakh lateral than the prison-presence at THREAD 5)
+--   ★★ v.7-10 (his master's wife cast her eyes upon Joseph; Lie with me; he refused... how then can I do this great wickedness, and sin against Elohim (God)? day by day, he hearkened not)
+--        NT:     none warranted as a distinct member at v.9 itself (the sin-against-Elohim-FIRST register is carried by Psalm 51:4 in the Tanakh, the cleanest witness; the flee-fornication NT register belongs to v.11-12 and is held to THREAD 3) — see note
+--        Extras: Jubilees 39:6 (he did not surrender his soul, and he remembered Yahuah and the words... that no man should commit fornication with a woman who has a husband; that for him the punishment of death has been ordained... and the sin will be recorded against him... before Yahuah); Jasher 44:45 (how then can I do this great evil and sin to Elohim and to your husband?) — THREAD 2
+--        Tanakh: ★ Psalm 51:4 (Against thee, thee only, have I sinned, and done this evil in thy sight) — the sin is FIRST against Elohim; the same conscience as "sin against Elohim" (39:9) — THREAD 2
+--   ★★ v.11-12 (none of the men of the house there within; she caught him by his garment, Lie with me: and he left his garment in her hand, and fled, and got him out)
+--        NT:     ★ 1 Corinthians 6:18 (Flee fornication. Every sin that a man doeth is without the body; but he that committeth fornication sinneth against his own body); Hebrews 13:4 (Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge) — THREAD 3 (load-bearing: the literal FLEE; the bed undefiled)
+--        Extras: Jubilees 39:9 (she embraced him and held him fast... but he left his garment in her hands and broke through the door and fled); Jasher 44:54 (Joseph left the garment in the hand of Zelicah, and he fled and got out, for he was in fear) — THREAD 3
+--        Tanakh: none warranted distinct (the flee-the-garment movement is carried by 1 Corinthians/Hebrews forward and the extras; the conscience-root is at THREAD 2)
+--   ★ v.13-20 (the false accusation: See, he hath brought in an Hebrew unto us to mock us; the garment laid up; his wrath kindled; Joseph put into the prison, a place where the king's prisoners were bound — the innocent condemned, the righteous sufferer)
+--        NT:     none warranted as a distinct member (Joseph is a TYPE — the suffering servant who did no wrong; the NT fulfillment of the falsely-accused-righteous-one is the Messiah's own silence before accusers, outside the assigned target set; framed strictly as type in prose, not forced) — see note
+--        Extras: Jasher 44:63 (O Yahuah Elohim, you know that I am innocent of all these things, and why shall I die this day through falsehood... whom you know?); Jubilees 39:11 (the Egyptian... cast Joseph into prison into the place where the prisoners were kept whom the king imprisoned... and Yahuah gave Joseph favour) — THREAD 4
+--        Tanakh: none warranted distinct (the innocent-condemned is carried by the extras' witness; the vindicating presence follows at THREAD 5)
+--   ★ v.21-23 (But Yahuah was with Joseph, and shewed him mercy, and gave him favour in the sight of the keeper of the prison; committed to Joseph's hand all the prisoners; Yahuah made it to prosper)
+--        NT:     ★ Acts 7:9 (but Elohim (God) was with him); Acts 7:10 (delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh) — THREAD 5 (load-bearing: the presence that does not abandon the lowered one, the favour given, the deliverance ahead)
+--        Extras: Jubilees 39:11 (Yahuah gave Joseph favour in the sight of the chief of the prison guards and compassion before him, for he saw that Yahuah was with him); Jasher 44:79 (Behold the Elohim of the whole earth is able to deliver me from all that you can do to me, for he opens the eyes of the blind, and looses those that are bound) — THREAD 5
+--        Tanakh: none warranted distinct (the prison-presence is the with-Joseph refrain of THREAD 1 carried into the depth; bound forward by Acts 7)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-39-yahuah-was-with-joseph-the-blessed-presence-in-slavery — NT (Acts 7:9,10) + Extras (Jubilees 39, Jasher 44) [extras] (★ "Elohim was with him" — the favoured presence even in slavery)
+--   2. genesis-39-how-can-i-do-this-great-wickedness-and-sin-against-elohim — Tanakh (Psalm 51:4) + Extras (Jubilees 39, Jasher 44) [extras] (★★ the sin is FIRST against Elohim; the way kept under temptation)
+--   3. genesis-39-he-left-his-garment-and-fled-flee-fornication — NT (1 Corinthians 6:18, Hebrews 13:4) + Extras (Jubilees 39, Jasher 44) [extras] (★★ the literal FLEE; the bed undefiled)
+--   4. genesis-39-the-false-accusation-the-innocent-cast-into-prison — Extras (Jasher 44, Jubilees 39) [extras] (★ the innocent condemned, the righteous sufferer; NT suffering-servant fulfillment framed in prose, not forced)
+--   5. genesis-39-yahuah-was-with-joseph-in-the-prison — NT (Acts 7:9,10) + Extras (Jubilees 39, Jasher 44) [extras] (★ the presence that does not abandon the lowered one — forward to the one brought low then raised)
+--
+-- Framing notes:
+--   ★ YAHUAH WAS WITH JOSEPH (THREAD 1): *And Yahuah (LORD) was with Joseph, and he was a prosperous man* (39:2); *his master saw that Yahuah (LORD) was with him, and that Yahuah (LORD) made all that he did to prosper* (39:3). Stephen names the very word over Joseph in his survey of the fathers: *the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9), *And delivered him out of all his afflictions, and gave him favour and wisdom* (Acts 7:10). The blessed, favoured presence of Yahuah does not depend on Joseph's station — the slave in a foreign house carries the same with-him presence that will lift him to govern Egypt. The extras keep it word-for-word (Jubilees 39:3-4; Jasher 44:12).
+--   ★★ THE TEMPTATION REFUSED (THREAD 2): *how then can I do this great wickedness, and sin against Elohim (God)?* (39:9). The sin is named FIRST against Elohim — before it is a wrong to Potiphar it is a wrong to Yahuah. Psalm 51:4 sings the same conscience: *Against thee, thee only, have I sinned, and done this evil in thy sight* — the righteous one knows sin is first vertical. This is Torah-faithfulness, the way kept under temptation day by day (39:10), NOT legalism: Joseph keeps the way because he walks before Yahuah. The extras name the death-penalty Torah-weight of adultery (Jubilees 39:6 — *no man should commit fornication with a woman who has a husband... the punishment of death has been ordained... before Yahuah*) and Joseph's own answer (Jasher 44:45 — *how can I do this great evil and sin to Elohim and to your husband?*).
+--   ★★ FLEE FORNICATION (THREAD 3): *he left his garment in her hand, and fled, and got him out* (39:12). Joseph does the thing Sha''ul (Paul) commands: *Flee fornication... he that committeth fornication sinneth against his own body* (1 Corinthians 6:18). The garment left behind is the literal flight; better to lose the coat than the conscience. Hebrews 13:4 keeps the standard Joseph kept: *Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge*. The extras keep the flight entire (Jubilees 39:9; Jasher 44:54).
+--   ★ THE INNOCENT CAST INTO PRISON (THREAD 4): the false accusation (39:14-18), the kindled wrath, and *Joseph''s master took him, and put him into the prison, a place where the king''s prisoners were bound* (39:20). The innocent is condemned on a lie — the Joseph-type continues: rejected by his brothers, now falsely accused and brought low before the exaltation. He is read carefully as a TYPE of the suffering servant who did no wrong (Jasher 44:63 — *O Yahuah Elohim, you know that I am innocent of all these things... through falsehood*); the framework does not overreach Joseph into the Messiah Himself, but lets the pattern stand — the righteous one falsely accused and lowered, kept by Yahuah even in the pit. Jubilees 39:11 holds both the casting-in AND the favour that meets him there.
+--   ★ YAHUAH WITH HIM IN THE PRISON (THREAD 5): *But Yahuah (LORD) was with Joseph, and shewed him mercy, and gave him favour in the sight of the keeper of the prison* (39:21); *because Yahuah (LORD) was with him, and that which he did, Yahuah (LORD) made it to prosper* (39:23). The same with-Joseph refrain of THREAD 1 follows him down into the dungeon — the presence that does not abandon the lowered one. Acts 7:9-10 names the whole arc: *Elohim was with him, And delivered him out of all his afflictions, and gave him favour* — the deliverance and the exaltation are ahead, the one brought low then raised. The extras keep the prison-favour (Jubilees 39:11) and Joseph''s faith in the Deliverer who *opens the eyes of the blind, and looses those that are bound* (Jasher 44:79).
+--   EXTRAS: Jubilees 39 carries the chapter clean (note its parse skips a v.7 number, jumping 6->8; verses 3,4,6,9,11 are the clean members used). Jasher 44 carries the extended Zelicah episode at great length (the women cutting their hands at his beauty, the speaking infant who vindicates him, the twelve years confined) — quoted only at clean framework-bearing verses (44:12,45,54,63,79). Both DOUBLE-WRITTEN: 'jubilees','jubilees' and 'jasher','jasher'.
+--   VERSES WITH NO ADD beyond their thread: v.1 (the bare notice of the sale to Potiphar — a narrative hinge folded into THREAD 1's frame, no distinct target); v.13-19 (the false-witness speeches) are carried as a block by THREAD 4's anchor span, no per-verse add warranted.
+
+CREATE TEMP VIEW _s301_ge39_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Yahuah was with Joseph — the blessed presence in slavery
+    ('canon','genesis',39,2,'canon','acts',7,9,'free',
+      E'*And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9). Stephen, telling over the fathers, names the very word that runs through this chapter — *And Yahuah (LORD) was with Joseph, and he was a prosperous man* (Genesis 39:2). The brothers'' envy sold him down, *but Elohim was with him*: the presence of Yahuah went down into Egypt with the slave, unbroken by his lowered station.'),
+    ('canon','genesis',39,3,'canon','acts',7,10,'free',
+      E'*And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house* (Acts 7:10). What Potiphar first saw — *his master saw that Yahuah (LORD) was with him, and that Yahuah (LORD) made all that he did to prosper in his hand* (Genesis 39:3) — Stephen carries to its end: the with-Joseph presence that prospered him in the house becomes the favour that lifts him to govern Egypt. The blessing in the small house is the same hand that will raise him over the kingdom.'),
+    ('canon','genesis',39,3,'jubilees','jubilees',39,4,'extras',
+      E'*And the Egyptian committed everything into the hands of Joseph; for he saw that Yahuah (God) was with him, and that Yahuah (God) prospered him in all that he did* (Jubilees 39:4). The restored witness keeps the master''s seeing entire — *he saw that Yahuah was with him, and that Yahuah prospered him in all that he did* — verse-for-verse with *his master saw that Yahuah (LORD) was with him, and that Yahuah (LORD) made all that he did to prosper in his hand* (Genesis 39:3).'),
+    ('canon','genesis',39,5,'jasher','jasher',44,12,'extras',
+      E'*And Yahuah (the Lord) was with Joseph and he became a prosperous man, and Yahuah (the Lord) blessed the house of Potiphar for the sake of Joseph* (Jasher 44:12). The extended witness keeps the blessing-for-his-sake whole — *Yahuah blessed the house of Potiphar for the sake of Joseph* — matching *Yahuah (LORD) blessed the Egyptian''s house for Joseph''s sake; and the blessing of Yahuah (LORD) was upon all that he had* (Genesis 39:5). Where the favoured of Yahuah dwells, the blessing overflows onto the house that holds him.'),
+
+    -- THREAD 2 (★★): How can I do this great wickedness, and sin against Elohim
+    ('canon','genesis',39,9,'canon','psalms',51,4,'free',
+      E'*Against thee, thee only, have I sinned, and done this evil in thy sight: that thou mightest be justified when thou speakest, and be clear when thou judgest* (Psalm 51:4). Joseph''s refusal carries the same conscience the psalm sings — the sin is FIRST against Elohim: *how then can I do this great wickedness, and sin against Elohim (God)?* (Genesis 39:9). Before it is a wrong against Potiphar it is a wrong against Yahuah; the righteous one knows that *this evil* is done *in thy sight*, and so will not do it.'),
+    ('canon','genesis',39,9,'jubilees','jubilees',39,6,'extras',
+      E'*But he did not surrender his soul, and he remembered Yahuah (God) and the words which Jacob, his father, used to read from amongst the words of Abraham, that no man should commit fornication with a woman who has a husband; that for him the punishment of death has been ordained in the heavens before the El Elyon (Most High) Elohim (God), and the sin will be recorded against him in the eternal books continually before Yahuah (God)* (Jubilees 39:6). The restored witness names what stayed Joseph''s hand — the remembered word of the fathers, the Torah-weight that adultery is *sin... before Yahuah* — the same conscience as *sin against Elohim (God)* (Genesis 39:9): he keeps the way because he walks before the Most High.'),
+    ('canon','genesis',39,8,'jasher','jasher',44,45,'extras',
+      E'*For he has also greatly honored me in his house, and he has also made me overseer over his house... and my master has refrained nothing from me, excepting you who are his wife, how then can you speak these words to me, and how can I do this great evil and sin to Elohim and to your husband?* (Jasher 44:45). The extended witness keeps Joseph''s reasoning whole — the trust committed, the wife withheld, *how can I do this great evil and sin to Elohim* — the same refusal as *he refused, and said unto his master''s wife, Behold, my master... hath committed all that he hath to my hand* (Genesis 39:8): to betray the trust is to sin against Elohim first.'),
+
+    -- THREAD 3 (★★): He left his garment and fled — flee fornication
+    ('canon','genesis',39,12,'canon','1-corinthians',6,18,'free',
+      E'*Flee fornication. Every sin that a man doeth is without the body; but he that committeth fornication sinneth against his own body* (1 Corinthians 6:18). Joseph does the very thing Sha''ul (Paul) commands — he flees: *he left his garment in her hand, and fled, and got him out* (Genesis 39:12). Better to lose the coat than the conscience; the garment left behind is the literal *flee fornication*, the righteous one running from the sin rather than reasoning with it.'),
+    ('canon','genesis',39,12,'canon','hebrews',13,4,'free',
+      E'*Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge* (Hebrews 13:4). The standard Joseph kept when *he left his garment in her hand, and fled* (Genesis 39:12) is the standard the letter names: *the bed undefiled... whoremongers and adulterers Elohim will judge*. Joseph guards the marriage that is not even his own — Potiphar''s bed — because he fears the Elohim who will judge the matter.'),
+    ('canon','genesis',39,12,'jubilees','jubilees',39,9,'extras',
+      E'*But she embraced him and held him fast in the house in order to force him to lie with her, and closed the doors of the house and held him fast; but he left his garment in her hands and broke through the door and fled without from her presence* (Jubilees 39:9). The restored witness keeps the flight entire — *he left his garment in her hands and broke through the door and fled* — matching *she caught him by his garment, saying, Lie with me: and he left his garment in her hand, and fled, and got him out* (Genesis 39:12). Held fast and the doors shut, he leaves the garment and breaks out rather than yield.'),
+    ('canon','genesis',39,12,'jasher','jasher',44,54,'extras',
+      E'*And Joseph was afraid of her at her doing this thing, and he rose up to flee from her, and she seized the front of his garments, and in the terror of his flight the garment which Zelicah seized was torn, and Joseph left the garment in the hand of Zelicah, and he fled and got out, for he was in fear* (Jasher 44:54). The extended witness keeps the flight whole — *Joseph left the garment in the hand of Zelicah, and he fled and got out* — the same escape as *he left his garment in her hand, and fled, and got him out* (Genesis 39:12): the fear of doing the evil drives him out the door.'),
+
+    -- THREAD 4 (★): The false accusation — the innocent cast into prison (the righteous sufferer)
+    ('canon','genesis',39,20,'jasher','jasher',44,63,'extras',
+      E'*And whilst they were smiting him, Joseph called out with a loud voice, and he lifted up his eyes to heaven, and he said, O Yahuah Elohim (O Lord God), you know that I am innocent of all these things, and why shall I die this day through falsehood, by the hand of these uncircumcised wicked men, whom you know?* (Jasher 44:63). The extended witness gives voice to the silence of *Joseph''s master took him, and put him into the prison* (Genesis 39:20): the innocent condemned on a lie cries to the One who *knows* — *I am innocent of all these things... through falsehood*. The righteous sufferer is brought low on a false word, yet appeals to Yahuah who sees the truth.'),
+    ('canon','genesis',39,20,'jubilees','jubilees',39,11,'extras',
+      E'*And the Egyptian saw the garment of Joseph and the broken door, and heard the words of his wife, and cast Joseph into prison into the place where the prisoners were kept whom the king imprisoned. And he was there in the prison; and Yahuah (God) gave Joseph favour in the sight of the chief of the prison guards and compassion before him, for he saw that Yahuah (God) was with him* (Jubilees 39:11). The restored witness keeps both the condemning and the comfort — *cast Joseph into prison... and Yahuah gave Joseph favour* — matching *put him into the prison, a place where the king''s prisoners were bound* (Genesis 39:20), and already turning toward the mercy that meets him there: the innocent lowered, but not abandoned.'),
+
+    -- THREAD 5 (★): Yahuah was with Joseph in the prison — the presence that does not abandon the lowered one
+    ('canon','genesis',39,21,'canon','acts',7,9,'free',
+      E'*And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9). The with-Joseph word that opened the chapter follows him to its lowest place — *But Yahuah (LORD) was with Joseph, and shewed him mercy, and gave him favour in the sight of the keeper of the prison* (Genesis 39:21). Stephen''s *but Elohim was with him* covers the slavery AND the dungeon alike: the presence of Yahuah does not abandon the lowered one, even when the lie has done its worst.'),
+    ('canon','genesis',39,21,'canon','acts',7,10,'free',
+      E'*And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house* (Acts 7:10). The favour given in the prison — *gave him favour in the sight of the keeper of the prison* (Genesis 39:21) — is the first step of the deliverance Stephen names: *delivered him out of all his afflictions, and gave him favour*. The one brought low is on the road to being raised; the keeper''s favour foreshadows Pharaoh''s, the pit before the throne.'),
+    ('canon','genesis',39,21,'jubilees','jubilees',39,11,'extras',
+      E'*And he was there in the prison; and Yahuah (God) gave Joseph favour in the sight of the chief of the prison guards and compassion before him, for he saw that Yahuah (God) was with him, and that Yahuah (God) made all that he did to prosper* (Jubilees 39:11). The restored witness keeps the prison-favour entire — *Yahuah gave Joseph favour in the sight of the chief of the prison guards... for he saw that Yahuah was with him* — matching *Yahuah (LORD) was with Joseph, and shewed him mercy, and gave him favour in the sight of the keeper of the prison* (Genesis 39:21). The same with-him presence prospers him even in the place of the bound.'),
+    ('canon','genesis',39,23,'jasher','jasher',44,79,'extras',
+      E'*And Joseph answered her and said, Behold the Elohim of the whole earth is able to deliver me from all that you can do to me, for he opens the eyes of the blind, and looses those that are bound, and preserves all strangers who are unacquainted with the land* (Jasher 44:79). The extended witness gives Joseph''s own faith in the One whose presence held him — *the Elohim of the whole earth is able to deliver me... he opens the eyes of the blind, and looses those that are bound* — the very confidence behind *Yahuah (LORD) was with him, and that which he did, Yahuah (LORD) made it to prosper* (Genesis 39:23): the bound man trusts the Deliverer who looses the bound.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-39-yahuah-was-with-joseph-the-blessed-presence-in-slavery',
+       E'Yahuah was with Joseph — the blessed presence in slavery',
+       E'Joseph is dragged to the bottom of the world — sold by his brothers, carried into Egypt, bought as a slave: *And Joseph was brought down to Egypt; and Potiphar, an officer of Pharaoh... bought him of the hands of the Ishmeelites* (Genesis 39:1). And right there, in the slave-house of a foreign master, the chapter sounds its refrain: *And Yahuah (LORD) was with Joseph, and he was a prosperous man; and he was in the house of his master the Egyptian* (Genesis 39:2). The master himself sees it — *his master saw that Yahuah (LORD) was with him, and that Yahuah (LORD) made all that he did to prosper in his hand* (Genesis 39:3) — and the blessing overflows the slave onto the house: *Yahuah (LORD) blessed the Egyptian''s house for Joseph''s sake; and the blessing of Yahuah (LORD) was upon all that he had in the house, and in the field* (Genesis 39:5). The favoured presence of Yahuah does not wait for a better station; it goes down into bondage with him. Stephen, telling over the fathers, names the very word: *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him, And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house* (Acts 7:9-10) — the with-Joseph presence in the slave-house is the same hand that will lift him over the kingdom. The restored witnesses keep it word-for-word: *the Egyptian committed everything into the hands of Joseph; for he saw that Yahuah (God) was with him, and that Yahuah (God) prospered him in all that he did* (Jubilees 39:4), and *Yahuah (the Lord) was with Joseph and he became a prosperous man, and Yahuah (the Lord) blessed the house of Potiphar for the sake of Joseph* (Jasher 44:12).',
+       sv.verse_id, ev.verse_id, 'extras', 20950
+  FROM _s301_ge39_lookup sv, _s301_ge39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=39 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-39-how-can-i-do-this-great-wickedness-and-sin-against-elohim',
+       E'How can I do this great wickedness, and sin against Elohim — the temptation refused',
+       E'The favoured slave becomes the tempted slave: *his master''s wife cast her eyes upon Joseph; and she said, Lie with me* (Genesis 39:7). Joseph refuses, and his reason cuts to the root: his master has trusted him with everything, kept back nothing but his wife — *how then can I do this great wickedness, and sin against Elohim (God)?* (Genesis 39:9). The sin is named FIRST against Elohim. Before it is a betrayal of Potiphar it is a wrong against Yahuah; the righteous one knows sin is first vertical. David sings the same conscience from the other side of a fall: *Against thee, thee only, have I sinned, and done this evil in thy sight: that thou mightest be justified when thou speakest, and be clear when thou judgest* (Psalm 51:4) — *this evil* done *in thy sight*. And the temptation is not a single hour but a siege: *as she spake to Joseph day by day... he hearkened not unto her* (Genesis 39:10). This is the way kept under pressure — Torah-faithfulness, not legalism: Joseph keeps the path because he walks before Yahuah. The restored witnesses name the remembered word that held him: *he remembered Yahuah (God) and the words which Jacob, his father, used to read from amongst the words of Abraham, that no man should commit fornication with a woman who has a husband; that for him the punishment of death has been ordained... before the El Elyon (Most High)* (Jubilees 39:6), and Joseph''s own answer, *how can I do this great evil and sin to Elohim and to your husband?* (Jasher 44:45) — to betray the trust is to sin against Elohim first.',
+       sv.verse_id, ev.verse_id, 'extras', 20953
+  FROM _s301_ge39_lookup sv, _s301_ge39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=39 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-39-he-left-his-garment-and-fled-flee-fornication',
+       E'He left his garment and fled — flee fornication',
+       E'The siege comes to its crisis on a day when the house is empty: *there was none of the men of the house there within. And she caught him by his garment, saying, Lie with me: and he left his garment in her hand, and fled, and got him out* (Genesis 39:11-12). Joseph does not stay to argue; he runs, and counts the loss of his coat as nothing against the keeping of his conscience. This is the very thing Sha''ul (Paul) commands: *Flee fornication. Every sin that a man doeth is without the body; but he that committeth fornication sinneth against his own body* (1 Corinthians 6:18). The garment left behind is the literal flight — the righteous one does not reason with the sin, he flees it. And the standard Joseph guards is the standard the letter to the Hebrews names: *Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge* (Hebrews 13:4) — Joseph keeps undefiled a bed that is not even his own, because he fears the Elohim who will judge the matter. The restored witnesses keep the flight entire: held fast and the doors shut, *he left his garment in her hands and broke through the door and fled without from her presence* (Jubilees 39:9), and *in the terror of his flight the garment which Zelicah seized was torn, and Joseph left the garment in the hand of Zelicah, and he fled and got out, for he was in fear* (Jasher 44:54). The fear of doing the evil drives him out the door.',
+       sv.verse_id, ev.verse_id, 'extras', 20956
+  FROM _s301_ge39_lookup sv, _s301_ge39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=39 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-39-the-false-accusation-the-innocent-cast-into-prison',
+       E'The false accusation — the innocent cast into prison',
+       E'The garment that proved Joseph''s flight becomes, in her hand, the false witness against him: *she called unto the men of her house... saying, See, he hath brought in an Hebrew unto us to mock us; he came in unto me to lie with me, and I cried with a loud voice* (Genesis 39:14). She tells the same lie to Potiphar, and *his wrath was kindled. And Joseph''s master took him, and put him into the prison, a place where the king''s prisoners were bound* (Genesis 39:19-20). The innocent is condemned on a lie. The Joseph-type continues its long shape: rejected by his brothers, sold, and now falsely accused and brought low — the righteous sufferer lowered before the exaltation, who did no wrong and is punished as though he did. Read carefully as a TYPE — Joseph is not the suffering Servant Himself, but the pattern stands, and one day the falsely-accused-righteous-One would stand silent before His accusers and be brought low before He was raised. The extended witness gives voice to Joseph''s appeal under the lash: *O Yahuah Elohim (O Lord God), you know that I am innocent of all these things, and why shall I die this day through falsehood, by the hand of these uncircumcised wicked men, whom you know?* (Jasher 44:63) — the innocent cries to the One who sees the truth. And the restored witness keeps both the condemning and the comfort in one breath: *cast Joseph into prison into the place where the prisoners were kept whom the king imprisoned... and Yahuah (God) gave Joseph favour in the sight of the chief of the prison guards and compassion before him, for he saw that Yahuah (God) was with him* (Jubilees 39:11) — the innocent lowered, but never abandoned.',
+       sv.verse_id, ev.verse_id, 'extras', 20959
+  FROM _s301_ge39_lookup sv, _s301_ge39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=39 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-39-yahuah-was-with-joseph-in-the-prison',
+       E'Yahuah was with Joseph in the prison — the presence that does not abandon the lowered one',
+       E'The lie has done its worst; Joseph is in the dungeon, the place where the king''s prisoners are bound. And the chapter sounds its refrain again, now at the very bottom: *But Yahuah (LORD) was with Joseph, and shewed him mercy, and gave him favour in the sight of the keeper of the prison* (Genesis 39:21). The same with-Joseph presence that prospered him in the slave-house follows him down into the pit — *the keeper of the prison committed to Joseph''s hand all the prisoners* (Genesis 39:22), *because Yahuah (LORD) was with him, and that which he did, Yahuah (LORD) made it to prosper* (Genesis 39:23). The presence of Yahuah does not abandon the lowered one. Stephen names the whole arc as one deliverance: *but Elohim (God) was with him, And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh* (Acts 7:9-10) — the favour in the prison is the first step toward the throne; the one brought low is on the road to being raised, the pit before the governorship. The restored witness keeps the prison-favour entire — *Yahuah (God) gave Joseph favour in the sight of the chief of the prison guards and compassion before him, for he saw that Yahuah (God) was with him* (Jubilees 39:11) — and the extended witness gives Joseph''s own faith in the Deliverer who held him: *Behold the Elohim of the whole earth is able to deliver me from all that you can do to me, for he opens the eyes of the blind, and looses those that are bound* (Jasher 44:79). The bound man trusts the One who looses the bound.',
+       sv.verse_id, ev.verse_id, 'extras', 20962
+  FROM _s301_ge39_lookup sv, _s301_ge39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=39 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9) — the same with-Joseph word of 39:2; the presence went down into Egypt with the slave.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=2
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-yahuah-was-with-joseph-the-blessed-presence-in-slavery'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*delivered him out of all his afflictions, and gave him favour and wisdom... and he made him governor over Egypt* (Acts 7:10) — the prospering hand of 39:3 carried to its end: the slave-house favour becomes the kingdom''s governance.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=3
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-yahuah-was-with-joseph-the-blessed-presence-in-slavery'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he saw that Yahuah (God) was with him, and that Yahuah (God) prospered him in all that he did* (Jubilees 39:4) — the master''s seeing of 39:3 kept verse-for-verse in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=3
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=39 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-yahuah-was-with-joseph-the-blessed-presence-in-slavery'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah (the Lord) blessed the house of Potiphar for the sake of Joseph* (Jasher 44:12) — the blessing-for-his-sake of 39:5 kept whole; where the favoured dwells, the blessing overflows.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=5
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=44 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-yahuah-was-with-joseph-the-blessed-presence-in-slavery'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Against thee, thee only, have I sinned, and done this evil in thy sight* (Psalm 51:4) — the same conscience as *sin against Elohim (God)* (39:9): the sin is FIRST against Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=9
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-how-can-i-do-this-great-wickedness-and-sin-against-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he remembered Yahuah (God) and the words... that no man should commit fornication with a woman who has a husband... the sin will be recorded... before Yahuah (God)* (Jubilees 39:6) — the Torah-weight behind *sin against Elohim* (39:9); the remembered word of the fathers stayed his hand.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=9
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=39 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-how-can-i-do-this-great-wickedness-and-sin-against-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*how can I do this great evil and sin to Elohim and to your husband?* (Jasher 44:45) — Joseph''s reasoning of 39:8 kept whole: to betray the trust committed to his hand is to sin against Elohim first.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=8
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=44 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-how-can-i-do-this-great-wickedness-and-sin-against-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Flee fornication... he that committeth fornication sinneth against his own body* (1 Corinthians 6:18) — Joseph does the literal command of 39:12: he leaves the coat and runs.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=12
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=6 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-he-left-his-garment-and-fled-flee-fornication'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge* (Hebrews 13:4) — the standard Joseph kept when he fled (39:12): he guards a bed not his own, fearing the Elohim who judges.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=12
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-he-left-his-garment-and-fled-flee-fornication'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he left his garment in her hands and broke through the door and fled* (Jubilees 39:9) — the flight of 39:12 kept entire; held fast and the doors shut, he leaves the garment and breaks out.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=12
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=39 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-he-left-his-garment-and-fled-flee-fornication'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Joseph left the garment in the hand of Zelicah, and he fled and got out, for he was in fear* (Jasher 44:54) — the escape of 39:12 in the extended witness; the fear of doing the evil drives him out the door.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=12
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=44 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-he-left-his-garment-and-fled-flee-fornication'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*O Yahuah Elohim (O Lord God), you know that I am innocent of all these things... why shall I die this day through falsehood* (Jasher 44:63) — the innocent of 39:20 cries to the One who knows; the righteous sufferer condemned on a lie.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=20
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=44 AND tv.verse_number=63
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-the-false-accusation-the-innocent-cast-into-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*cast Joseph into prison... and Yahuah (God) gave Joseph favour... for he saw that Yahuah (God) was with him* (Jubilees 39:11) — the casting-in of 39:20 with the mercy already turning toward him: lowered, but never abandoned.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=20
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=39 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-the-false-accusation-the-innocent-cast-into-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the patriarchs... sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9) — the with-Joseph word of 39:21 follows him to the dungeon; the presence does not abandon the lowered one.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=21
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-yahuah-was-with-joseph-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh* (Acts 7:10) — the prison-favour of 39:21 is the first step of the deliverance; the pit before the throne.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=21
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-yahuah-was-with-joseph-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (God) gave Joseph favour in the sight of the chief of the prison guards... for he saw that Yahuah (God) was with him* (Jubilees 39:11) — the prison-favour of 39:21 kept entire; the with-him presence prospers him even among the bound.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=21
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=39 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-yahuah-was-with-joseph-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the Elohim of the whole earth is able to deliver me... he opens the eyes of the blind, and looses those that are bound* (Jasher 44:79) — Joseph''s faith behind *Yahuah (LORD) made it to prosper* (39:23): the bound man trusts the One who looses the bound.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=39 AND sv.verse_number=23
+  JOIN _s301_ge39_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=44 AND tv.verse_number=79
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-39-yahuah-was-with-joseph-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_40.sql (Genesis 40) -----
+-- Chapter: Genesis 40 — THE BUTLER AND THE BAKER DREAM IN PRISON: Pharaoh's chief butler and chief baker offend their lord and are put in ward in the prison where Joseph is bound; both dream in one night; Joseph, finding them sad, asks "Wherefore look ye so sadly to day?" and confesses "Do not interpretations belong to Elohim (God)? tell me them, I pray you" (40:8) — the gift of reading the dream is from the Most High alone, not from the man. The three branches and the three white baskets are each three days (40:12,18); within three days the butler is lifted up and restored, but the baker is lifted up and hanged on a tree, the birds eating his flesh (40:13,19) — a sober diverging-judgment picture. It comes to pass on Pharaoh's birthday exactly as Joseph interpreted (40:20-22); "Yet did not the chief butler remember Joseph, but forgat him" (40:23) — the righteous one forgotten, the deliverance deferred to Yahuah's time, not man's gratitude.
+-- Tag: ge40   Temp view: _s301_ge40_lookup
+-- Sort band: base 20975, step 3 -> threads at 20975, 20978, 20981 (3 threads)
+-- Source of EVERY row: 'canon','genesis',40,v
+--
+-- This is a quieter chapter; restraint is correct (3 threads). The load-bearing thread is the confession of 40:8.
+--
+-- Genesis 40 coverage:
+--   v.1-7 (the butler and baker offend; put in ward where Joseph is bound; dream both in one night; Joseph finds them sad)
+--        NT:     none warranted (narrative setting; the framework-bearing weave begins at the confession of v.8)
+--        Extras: Jubilees 39:15-16 (the chief of the prison guards appointed Joseph to serve them... they both dreamed a dream, the chief butler and the chief baker, and they told it to Joseph) — narrative parallel; v.16 carried as a member at THREAD 1 (the dream brought to Joseph). NOTE: Jubilees 39:13/14 are a RUN-ON merged parse ("...remained there two years. And in those days Pharaoh... was wroth against his two eunuchs..."), so NOT quoted as members — clean discrete lines 39:15,16,17,18 used instead. Jasher 44 = the Potiphar/Zelicah episode ending in Joseph's imprisonment (44:75-80), NOT the butler/baker dreams; Jasher 45 = the genealogy of Jacob's sons + Tamar, also NOT the dreams. Jasher carries NO clean butler/baker dream witness here — recorded "none warranted" honestly.
+--        Tanakh: none warranted (setting)
+--   ★★ v.8 (We have dreamed a dream, and there is no interpreter of it. And Joseph said unto them, Do not interpretations belong to Elohim (God)? tell me them, I pray you)
+--        NT:     none warranted distinct (the captive-interpreter-before-the-pagan-court confession is carried LATERALLY/forward within the Tanakh by Daniel 2; the clean NT analogue is not in scope and not forced)
+--        Extras: Jubilees 39:16 (and they told it to Joseph) — the dream brought to the one who confesses the gift is God's — THREAD 1
+--        Tanakh: ★ Daniel 2:28 (But there is a Elohim (God) in heaven that revealeth secrets... maketh known to the king Nebuchadnezzar what shall be in the latter days); ★ Daniel 2:47 (Of a truth it is, that your Elohim (God) is a Elohim (God) of gods... and a revealer of secrets, seeing thou couldest reveal this secret) — THE LOAD-BEARING WEAVE: the same confession the captive-interpreter makes before the pagan court; the revelation is the Most High's, never the man's — THREAD 1
+--   v.9-19 (the chief butler's dream: vine, three branches = three days, restored; the chief baker's dream: three white baskets = three days, hanged on a tree, birds eat his flesh)
+--        NT:     none warranted (the lifting-up of one and the hanging-on-a-tree of the other is a sober diverging-judgment picture; deliberately NOT overreached into a forced resurrection type or the two-thieves register — restraint per the brief)
+--        Extras: Jubilees 39:17 (as he interpreted to them so it befell them, and Pharaoh restored the chief butler to his office, and the (chief) baker he slew, as Joseph had interpreted to them) — the word fulfilled exactly, the two destinies diverging — THREAD 2
+--        Tanakh: none warranted distinct (the three-days motif weighed lightly, NOT forced; held in THREAD 2's own prose)
+--   v.20-22 (the third day, Pharaoh's birthday: he lifted up the head of both; restored the butler, hanged the baker, as Joseph had interpreted)
+--        NT:     none warranted
+--        Extras: Jubilees 39:17 (the fulfilment as interpreted) — THREAD 2
+--        Tanakh: none warranted
+--   ★ v.23 (Yet did not the chief butler remember Joseph, but forgat him)
+--        NT:     none warranted distinct (the righteous-one-forgotten, vindication-deferred theme is carried by the extras' own forgetting-then-remembering arc; not forced into a NT member)
+--        Extras: ★ Jubilees 39:18 (But the chief butler forgot Joseph in the prison, although he had informed him what would befall him, and did not remember to inform Pharaoh how Joseph had told him for he forgot); Jubilees 40:2 (And then the chief butler remembered Joseph and spake of him to the king, and he brought him forth from the prison) — the forgetting AND its later remembering in Yahuah's time — THREAD 3
+--        Tanakh: none warranted distinct (the waiting-in-faith forward-weave held in THREAD 3 prose; no closer Tanakh lateral than the general lowly-lifted-in-due-time, not forced)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-40-do-not-interpretations-belong-to-elohim — Tanakh (Daniel 2:28, 2:47) + Extras (Jubilees) [extras] (★★ the captive-interpreter's confession: the revelation is God's, not the man's)
+--   2. genesis-40-the-three-days-the-butler-restored-the-baker-hanged-on-a-tree — Extras (Jubilees) [extras] (the word fulfilled; the sober diverging judgment — restraint, no forced resurrection type)
+--   3. genesis-40-yet-did-not-the-chief-butler-remember-joseph — Extras (Jubilees) [extras] (★ the righteous one forgotten, the deliverance deferred to Yahuah's time)
+--
+-- Framing notes:
+--   ★★ THE CONFESSION (THREAD 1): *Do not interpretations belong to Elohim (God)? tell me them, I pray you* (40:8). Joseph, a Hebrew slave in a foreign prison, will not take the credit a pagan court would heap on a wise man — the reading of the dream belongs to the Most High alone. This is woven LATERALLY forward to Daniel, the other captive-interpreter who makes the identical confession before the pagan court: *there is a Elohim (God) in heaven that revealeth secrets* (Daniel 2:28), and even Nebuchadnezzar is forced to own it — *a revealer of secrets, seeing thou couldest reveal this secret* (Daniel 2:47). Joseph in Egypt and Daniel in Babylon stand in the same posture: the gift is from the Formed/Most High, never from the man, and the man points the king past himself to Elohim. The restored witness keeps the dream brought to the one who confesses the gift: *they told it to Joseph* (Jubilees 39:16).
+--   THE THREE DAYS / DIVERGING JUDGMENT (THREAD 2): *The three branches are three days* (40:12) and *The three baskets are three days* (40:18); within three days the butler is lifted up and restored to his place (40:13), but the baker is lifted up and hanged on a tree, the birds eating his flesh (40:19). Weighed LIGHTLY per the brief — this is a sober two-destinies picture of one lifted to life and one hung on a tree under judgment, NOT forced into a resurrection type or the two-thieves register. The restored witness records the exact fulfilment: *as he interpreted to them so it befell them... Pharaoh restored the chief butler... and the (chief) baker he slew* (Jubilees 39:17) — the interpreter's word proven true because the interpretation was God's.
+--   ★ THE FORGOTTEN ONE (THREAD 3): *Yet did not the chief butler remember Joseph, but forgat him* (40:23). The righteous man who read the butler's deliverance and asked only *think on me when it shall be well with thee* (40:14) is forgotten by the man he helped; the deliverance waits — not on human gratitude but on Yahuah's appointed time. The restored witness keeps both halves of the arc: *the chief butler forgot Joseph in the prison... for he forgot* (Jubilees 39:18), and then, in due time, *the chief butler remembered Joseph and spake of him to the king, and he brought him forth from the prison* (Jubilees 40:2). The lowly one's vindication is not lost — only deferred to the hour the Most High has set.
+--
+-- VERSES WITH NO ADD: v.1-7 (the offence, the imprisonment, the sad faces — narrative setting before the confession of v.8); v.9-11,16-17 (the dream-images themselves — vine, branches, baskets — carried in THREAD 2's fulfilment prose, no distinct cross-library type warranted); v.14-15 (Joseph's plea "think on me" and his protest of innocence — folded into THREAD 3's prose, no forced member). Jasher: NO clean butler/baker dream witness in ch.44 (Potiphar/Zelicah, ending in imprisonment) or ch.45 (Jacob's-sons genealogy + Tamar) — recorded "none warranted" honestly rather than forcing a narrative-only parallel.
+
+CREATE TEMP VIEW _s301_ge40_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Do not interpretations belong to Elohim? (the captive-interpreter's confession before the pagan court)
+    ('canon','genesis',40,8,'canon','daniel',2,28,'free',
+      E'*But there is a Elohim (God) in heaven that revealeth secrets, and maketh known to the king Nebuchadnezzar what shall be in the latter days. Thy dream, and the visions of thy head upon thy bed, are these* (Daniel 2:28). Joseph''s confession in the Egyptian prison — *Do not interpretations belong to Elohim (God)? tell me them, I pray you* (Genesis 40:8) — is the very word Daniel speaks before the Babylonian court: the reading of the dream is not in the wise men nor in the interpreter himself, for *there is a Elohim (God) in heaven that revealeth secrets*. The captive Hebrew points the heathen king past the man to the Most High who alone makes the secret known.'),
+    ('canon','genesis',40,8,'canon','daniel',2,47,'free',
+      E'*The king answered unto Daniel, and said, Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets, seeing thou couldest reveal this secret* (Daniel 2:47). What Joseph confessed — *Do not interpretations belong to Elohim (God)?* (Genesis 40:8) — the pagan king is at last forced to own: the interpreter''s gift drives even Nebuchadnezzar to name Yahuah *a revealer of secrets*. As Joseph would not keep the glory for himself in Egypt, so the revelation in Babylon turns the throne to confess the God in heaven; the interpreter is only the mouth, the secret is the Most High''s.'),
+    ('canon','genesis',40,8,'jubilees','jubilees',39,16,'extras',
+      E'*And they both dreamed a dream, the chief butler and the chief baker, and they told it to Joseph* (Jubilees 39:16). The restored witness keeps the dream brought to the one who would confess the gift is not his own — *they told it to Joseph* — the very moment that draws out *Do not interpretations belong to Elohim (God)? tell me them, I pray you* (Genesis 40:8): the two dreamers bring their trouble to the slave, and the slave hands it on to the Most High to whom interpretations belong.'),
+
+    -- THREAD 2: The three days — the butler restored, the baker hanged on a tree (the word fulfilled; sober diverging judgment)
+    ('canon','genesis',40,18,'jubilees','jubilees',39,17,'extras',
+      E'*And as he interpreted to them so it befell them, and Pharaoh restored the chief butler to his office, and the (chief) baker he slew, as Joseph had interpreted to them* (Jubilees 39:17). The restored witness records the exact outworking of the two interpretations — *The three branches are three days... shall Pharaoh lift up thine head, and restore thee* (Genesis 40:12-13) and *The three baskets are three days... shall Pharaoh lift up thy head from off thee, and shall hang thee on a tree* (Genesis 40:18-19): *as he interpreted to them so it befell them*, the one restored and the other slain. The word stood true because the interpretation was Elohim''s, not the man''s — the two destinies diverging exactly as the gift had read them.'),
+
+    -- THREAD 3 (★): Yet did not the chief butler remember Joseph (the righteous one forgotten, the deliverance deferred)
+    ('canon','genesis',40,23,'jubilees','jubilees',39,18,'extras',
+      E'*But the chief butler forgot Joseph in the prison, although he had informed him what would befall him, and did not remember to inform Pharaoh how Joseph had told him for he forgot* (Jubilees 39:18). The restored witness keeps the ache of *Yet did not the chief butler remember Joseph, but forgat him* (Genesis 40:23): the man whose deliverance Joseph had read clean — and who had been asked only *think on me when it shall be well with thee* (Genesis 40:14) — *forgot Joseph in the prison*. The righteous one is left behind by the man he helped; the deliverance does not come on the wings of human gratitude.'),
+    ('canon','genesis',40,23,'jubilees','jubilees',40,2,'extras',
+      E'*And then the chief butler remembered Joseph and spake of him to the king, and he brought him forth from the prison, and he told his two dreams before him* (Jubilees 40:2). The restored witness carries the other half of *Yet did not the chief butler remember Joseph, but forgat him* (Genesis 40:23): in Yahuah''s appointed hour — when Pharaoh himself dreams and no man can read it — *then the chief butler remembered Joseph... and he brought him forth from the prison*. The forgetting was real, but the vindication of the lowly one was only deferred, not lost; it waited the time the Most High had set, not the time the butler''s thanks might have given.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge40_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge40_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-40-do-not-interpretations-belong-to-elohim',
+       E'Do not interpretations belong to Elohim? — the captive-interpreter''s confession',
+       E'Joseph, a Hebrew slave bound in an Egyptian dungeon, comes in to Pharaoh''s imprisoned butler and baker and finds them downcast: *Wherefore look ye so sadly to day?* (Genesis 40:7). They answer, *We have dreamed a dream, and there is no interpreter of it* — and Joseph''s reply is the heart of the chapter: *And Joseph said unto them, Do not interpretations belong to Elohim (God)? tell me them, I pray you* (Genesis 40:8). He will not take the glory a wise man of Egypt would seize; the reading of the dream is not in him but in the Most High alone, and he is only the mouth. This is the very confession the other great captive-interpreter makes before the other pagan court. Daniel, set before Nebuchadnezzar, says, *there is a Elohim (God) in heaven that revealeth secrets, and maketh known to the king Nebuchadnezzar what shall be in the latter days* (Daniel 2:28) — and presses it home, *this secret is not revealed to me for any wisdom that I have more than any living* (Daniel 2:30). The king is at last driven to own it himself: *Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets, seeing thou couldest reveal this secret* (Daniel 2:47). Joseph in Egypt and Daniel in Babylon stand in one posture — the lowly captive who turns the throne past himself to Yahuah, the revelation belonging to the Formed/Most High and never to the man. The restored witness keeps the dream brought to the one who confesses the gift is God''s: *they both dreamed a dream, the chief butler and the chief baker, and they told it to Joseph* (Jubilees 39:16).',
+       sv.verse_id, ev.verse_id, 'extras', 20975
+  FROM _s301_ge40_lookup sv, _s301_ge40_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=40 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=40 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-40-the-three-days-the-butler-restored-the-baker-hanged-on-a-tree',
+       E'The three days — the butler restored, the baker hanged on a tree',
+       E'Each dream turns on the same number. To the butler: *The three branches are three days: Yet within three days shall Pharaoh lift up thine head, and restore thee unto thy place: and thou shalt deliver Pharaoh''s cup into his hand* (Genesis 40:12-13). To the baker, who hoped for as good a word: *The three baskets are three days: Yet within three days shall Pharaoh lift up thy head from off thee, and shall hang thee on a tree; and the birds shall eat thy flesh from off thee* (Genesis 40:18-19). The same lifting-up runs two ways — one head raised to restoration, the other raised to the gallows-tree. It comes to pass on the third day, Pharaoh''s birthday, exactly so: *he restored the chief butler unto his butlership again... But he hanged the chief baker: as Joseph had interpreted to them* (Genesis 40:21-22). This is a sober picture of two destinies diverging under one true word — read here with restraint, not pressed into more than the text gives. The restored witness sets the seal on it: *as he interpreted to them so it befell them, and Pharaoh restored the chief butler to his office, and the (chief) baker he slew, as Joseph had interpreted to them* (Jubilees 39:17). The interpreter''s word stood because the interpretation was Elohim''s — and what Elohim reveals, comes to pass.',
+       sv.verse_id, ev.verse_id, 'extras', 20978
+  FROM _s301_ge40_lookup sv, _s301_ge40_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=40 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=40 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-40-yet-did-not-the-chief-butler-remember-joseph',
+       E'Yet did not the chief butler remember Joseph — the forgotten one, the deliverance deferred',
+       E'Joseph asks one thing of the man whose freedom he has just foretold: *But think on me when it shall be well with thee, and shew kindness, I pray thee, unto me, and make mention of me unto Pharaoh, and bring me out of this house* (Genesis 40:14), for *indeed I was stolen away out of the land of the Hebrews: and here also have I done nothing that they should put me into the dungeon* (Genesis 40:15). The butler walks free as Joseph read it — and the chapter ends on a quiet wound: *Yet did not the chief butler remember Joseph, but forgat him* (Genesis 40:23). The righteous one, innocent and helpful, is left behind in the pit by the man he served; the deliverance does not ride on human gratitude. The restored witness keeps both halves of the arc. First the forgetting: *the chief butler forgot Joseph in the prison, although he had informed him what would befall him... for he forgot* (Jubilees 39:18). Then, in Yahuah''s own appointed hour — when Pharaoh himself dreams and not one wise man can read it — the remembering: *then the chief butler remembered Joseph and spake of him to the king, and he brought him forth from the prison* (Jubilees 40:2). The vindication of the lowly one was never lost, only deferred; it waited the time the Most High had set, not the time a man''s thanks might have given. Joseph is left to wait in faith, and Yahuah keeps the hour.',
+       sv.verse_id, ev.verse_id, 'extras', 20981
+  FROM _s301_ge40_lookup sv, _s301_ge40_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=40 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=40 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *there is a Elohim (God) in heaven that revealeth secrets, and maketh known to the king Nebuchadnezzar what shall be in the latter days* (Daniel 2:28) — the captive Daniel speaks Joseph''s confession of 40:8 before the Babylonian court; the secret is the Most High''s, not the interpreter''s.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=40 AND sv.verse_number=8
+  JOIN _s301_ge40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-40-do-not-interpretations-belong-to-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*your Elohim (God) is a Elohim (God) of gods... and a revealer of secrets, seeing thou couldest reveal this secret* (Daniel 2:47) — the pagan king forced to own what Joseph confessed in 40:8: interpretations belong to Elohim, the interpreter is only the mouth.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=40 AND sv.verse_number=8
+  JOIN _s301_ge40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-40-do-not-interpretations-belong-to-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they both dreamed a dream, the chief butler and the chief baker, and they told it to Joseph* (Jubilees 39:16) — the dream brought to the one who confesses the gift is God''s (40:8); the dreamers hand their trouble to the slave, the slave to the Most High.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=40 AND sv.verse_number=8
+  JOIN _s301_ge40_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=39 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-40-do-not-interpretations-belong-to-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*as he interpreted to them so it befell them... Pharaoh restored the chief butler... and the (chief) baker he slew* (Jubilees 39:17) — the two interpretations of 40:12-19 fulfilled exactly; the word stood because the interpretation was Elohim''s.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=40 AND sv.verse_number=18
+  JOIN _s301_ge40_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=39 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-40-the-three-days-the-butler-restored-the-baker-hanged-on-a-tree'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the chief butler forgot Joseph in the prison, although he had informed him what would befall him... for he forgot* (Jubilees 39:18) — the wound of 40:23 kept entire; the righteous one left in the pit by the man he helped.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=40 AND sv.verse_number=23
+  JOIN _s301_ge40_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=39 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-40-yet-did-not-the-chief-butler-remember-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*then the chief butler remembered Joseph and spake of him to the king, and he brought him forth from the prison* (Jubilees 40:2) — the other half of 40:23: the vindication only deferred, not lost; it waits Yahuah''s appointed hour.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=40 AND sv.verse_number=23
+  JOIN _s301_ge40_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=40 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-40-yet-did-not-the-chief-butler-remember-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_41.sql (Genesis 41) -----
+-- Chapter: Genesis 41 — ★ JOSEPH'S EXALTATION (the suffering-then-exalted type COMPLETED): Pharaoh's two dreams — the seven fat/lean kine, the seven full/thin ears; the magicians cannot interpret; the butler remembers the Hebrew at last; "It is not in me: Elohim shall give Pharaoh an answer of peace"; "What Elohim is about to do he sheweth unto Pharaoh"; the seven years of plenty, the seven of famine; "a man in whom the Spirit of Elohim is"; the ring, the vesture of fine linen, the gold chain, the second chariot, "Bow the knee" — the rejected/sold/imprisoned one raised to the right hand of power; Zaphnath-paaneah, Asenath; Manasseh and Ephraim born — the fruitful one, the father of the northern house's fulness; the famine over all the earth, all countries come to the exalted brother to buy corn.
+-- Tag: ge41   Temp view: _s301_ge41_lookup
+-- Sort band: base 21000, step 3 -> threads at 21000, 21003, 21006, 21009, 21012, 21015 (6 threads — keystone, curated)
+-- Source of EVERY row: 'canon','genesis',41,v
+--
+-- Genesis 41 coverage:
+--   ★ v.1-8,24 (Pharaoh dreamed two dreams; the magicians and wise men could not interpret; there was none that could declare it)
+--        NT:     none warranted distinct (the dream-given-by-Elohim/interpreter-raised-up movement carried by THREAD 1's Daniel parallel and THREAD 2's "it is not in me"; no NT type closer than the wisdom given the despised servant, held to those threads)
+--        Extras: Jubilees 40:1 (Pharaoh dreamed two dreams in one night concerning a famine... and they were not able to declare them); Jasher 49:2 (the king's confession of the Hebrew man's true interpretation) — THREAD 1
+--        Tanakh: ★★ Daniel 2:1-13 (Nebuchadnezzar dreamed dreams, his spirit was troubled; the magicians, astrologers, sorcerers could not shew it) — THREAD 1 (the SAME pattern: the heathen king's troubling dream, the wise men of the empire silenced, the captive Hebrew alone given the answer by the Elohim of heaven)
+--   ★★ v.16,25,28 (It is not in me: Elohim shall give Pharaoh an answer of peace; Elohim hath shewed Pharaoh what he is about to do; What Elohim is about to do he sheweth unto Pharaoh)
+--        NT:     none warranted distinct (the confession "it is not in me" is foreshadow of the One who said "I can of mine own self do nothing"; the closest framed witness is Daniel's same confession, held to THREAD 2)
+--        Extras: Jasher 49:8 (since Elohim has made known to the Hebrew man all that he has spoken, there is none so discreet and wise in the whole land as he is) — supports THREAD 3; Jubilees 40:3 (he said before Pharaoh that his two dreams were one) narrative parallel only
+--        Tanakh: ★★ Daniel 2:28 (there is a Elohim in heaven that revealeth secrets); Daniel 2:30 (this secret is not revealed to me for any wisdom that I have more than any living) — THREAD 2 (the exact "it is not in me" confession: the revelation is Elohim's, not the man's); Daniel 2:47 (your Elohim is... a revealer of secrets) — THREAD 2
+--   ★★ v.38-41 (Can we find such a one as this is, a man in whom the Spirit of Elohim is? ... thou shalt be over my house... I have set thee over all the land of Egypt)
+--        NT:     ★★ Acts 7:10 (and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house) — THREAD 3 (Stephen's reading of the exaltation: the despised one made governor)
+--        Extras: ★ Jubilees 40:5 (Yahuah gave Joseph favour and mercy in the eyes of Pharaoh... for the spirit of Yahuah is with him); Jasher 49:20 (since Elohim has made all this known to you... there is not throughout the land a discreet and wise man like to you) — THREAD 3
+--        Tanakh: none warranted distinct here (the exaltation forward-weave is the NT Acts 7 / Philippians 2; no closer Tanakh lateral than the Daniel-promotion of THREAD 2)
+--   ★★ v.42-43 (the ring, the vestures of fine linen, the gold chain; the second chariot; they cried before him, Bow the knee; ruler over all the land)
+--        NT:     ★★ Philippians 2:9-11 (Elohim also hath highly exalted him, and given him a name which is above every name: That at the name of Yahusha every knee should bow... every tongue should confess) — THREAD 4 (the "bow the knee" fulfilled in the One every knee bows to; the lowered-then-exalted hymn)
+--        Extras: ★ Jubilees 40:6 (caused him to ride in the second chariot... clothed him with byssus garments... put a gold chain upon his neck... placed a ring on his hand and made him ruler over all his house); Jasher 49:23 (the king took off his ring... dressed Joseph in a princely garment... a golden chain upon his neck); Jasher 49:28-29 (he that does not bow down before him to the ground shall die... all the people of Egypt bowed down before Joseph) — THREAD 4
+--        Tanakh: none warranted distinct (the regalia/bow-the-knee forward-weave is the Philippians exaltation; no Tanakh lateral closer)
+--   ★ v.45-49,53-57 (Zaphnath-paaneah; Asenath; the plenty then the famine over all the face of the earth; all countries came to Joseph for to buy corn)
+--        NT:     none warranted distinct here (the savior-of-life forward-weave is the Gen 45/50 lateral; held to THREAD 5)
+--        Extras: Jasher 50:30 (all the inhabitants of Canaan and the Philistines... and all the cities of the lands far and nigh heard that there was corn in Egypt, and they all came to Egypt to buy corn) — THREAD 5
+--        Tanakh: ★★ Genesis 45:5 (Elohim did send me before you to preserve life); Genesis 45:7 (Elohim sent me before you to preserve you a posterity... to save your lives by a great deliverance); Genesis 50:20 (ye thought evil against me; but Elohim meant it unto good... to save much people alive) — THREAD 5 (the exalted brother is the savior of the nations through the famine — Joseph himself names the type)
+--   ★★ v.50-52 (Manasseh: Elohim hath made me forget all my toil; Ephraim: Elohim hath caused me to be fruitful in the land of my affliction)
+--        NT:     none warranted distinct (the two-house/Ephraim weave is carried wholly by the Tanakh laterals; the NT regathering belongs to its own packs)
+--        Extras: Jasher 50:15 (Joseph's wife Osnath bare him two sons, Manasseh and Ephraim) — THREAD 6 (narrative anchor for the births)
+--        Tanakh: ★★ Genesis 48:19 (his younger brother shall be greater than he, and his seed shall become a multitude of nations); ★★ Ezekiel 37:16 (For Joseph, the stick of Ephraim, and for all the house of Yashar'el his companions); Ezekiel 37:19 (the stick of Joseph, which is in the hand of Ephraim... and make them one stick); ★★ Jeremiah 31:9 (I am a father to Yashar'el, and Ephraim is my firstborn) — THREAD 6 (the two-house seed: Ephraim the fruitful one becomes the father of the northern house's fulness, gathered to one stick with Yahudah)
+--   v.9-14 (the chief butler remembers his faults; Joseph brought hastily out of the dungeon, shaved, changed raiment); v.33-37 (the counsel of the discreet and wise man); v.46-49 (gathered corn as the sand of the sea); v.54 narrative
+--        NT: none warranted   Extras: Jasher 49:13-17 (the angel teaches Joseph all languages overnight — extended legend, not framework-load-bearing); Jasher 50:7-14 (the gathering, narrative parallel)   Tanakh: none warranted
+--        — narrative connective tissue carried into the bounding threads' summaries; no distinct framework-bearing target forced.
+--
+-- Threads (slug — target libraries):
+--   1. genesis-41-pharaoh-dreamed-and-none-could-interpret — Tanakh (Daniel 2) + Extras (Jubilees, Jasher) [extras] (★ the heathen king's troubling dream, the wise men silenced, the Hebrew alone given the answer)
+--   2. genesis-41-it-is-not-in-me-elohim-shall-give-the-answer — Tanakh (Daniel 2) [free] (★★ the interpretation is Elohim's, not the man's; the "it is not in me" confession)
+--   3. genesis-41-a-man-in-whom-the-spirit-of-elohim-is — NT (Acts 7) + Extras (Jubilees, Jasher) [extras] (★★ the despised servant made governor — Stephen's reading of the exaltation)
+--   4. genesis-41-the-ring-the-fine-linen-the-gold-chain-bow-the-knee — NT (Philippians) + Extras (Jubilees, Jasher) [extras] (★★ the regalia and "Bow the knee" — the lowered-then-exalted One every knee bows to)
+--   5. genesis-41-the-savior-raised-to-preserve-life-through-the-famine — Tanakh (Genesis 45, Genesis 50) + Extras (Jasher) [extras] (★★ the exalted brother is the savior of the nations; Joseph names the type)
+--   6. genesis-41-manasseh-and-ephraim-the-fruitful-one-the-two-house-seed — Tanakh (Genesis 48, Ezekiel 37, Jeremiah 31) + Extras (Jasher) [extras] (★★ Ephraim the fruitful one, father of the northern house's fulness, gathered to one stick)
+--
+-- Framing notes:
+--   ★★ THE EXALTATION TYPE COMPLETED (THREADS 3,4): this chapter closes the Joseph type begun in ch37. The rejected, sold, falsely-accused, imprisoned one is raised to the right hand of power: *a man in whom the Spirit of Elohim (God) is* (41:38), *I have set thee over all the land of Egypt* (41:41), the ring and fine linen and gold chain (41:42), *Bow the knee* (41:43). Read strictly as TYPE through the Formed-and-Formless lens (Red Line #4): Joseph foreshadows the Formed Son — the lowered One the Most High highly exalted, *that at the name of Yahusha (Jesus) every knee should bow* (Philippians 2:10). NEVER a flattening of Joseph into the Messiah, NEVER co-equal-persons grammar; the shape — the despised one raised to glory, every knee bowing — is the type the exaltation of the Formed Son fills. Stephen reads the same exaltation: *he made him governor over Egypt and all his house* (Acts 7:10).
+--   ★★ IT IS NOT IN ME (THREAD 2): *It is not in me: Elohim (God) shall give Pharaoh an answer of peace* (41:16). The revelation is the Most High's, not the man's — the same confession Daniel makes before Nebuchadnezzar: *there is a Elohim (God) in heaven that revealeth secrets* (Daniel 2:28), *this secret is not revealed to me for any wisdom that I have more than any living* (Daniel 2:30). Two captive Hebrews before two world-emperors; both refuse the glory and hand it to Yahuah. CANON-ONLY thread (Daniel is canon Tanakh — tier 'free').
+--   ★★ THE DREAMS DOUBLED (THREAD 1): the heathen king's troubling dream, the wise men of the empire silenced, the captive alone given the answer (41:1-8,24) is the same pattern Daniel 2 carries verse-for-shape. Jubilees 40:1 and Jasher 49:2 keep the dreams and the failed interpreters.
+--   ★★ THE SAVIOR OF LIFE (THREAD 5): the famine *was over all the face of the earth... and all countries came into Egypt to Joseph for to buy corn* (41:56-57). Joseph himself names the type when his brothers come: *Elohim (God) did send me before you to preserve life* (Genesis 45:5), *to save your lives by a great deliverance* (45:7), *Elohim (God) meant it unto good... to save much people alive* (50:20). The exalted brother is the deliverer who preserves the seed and feeds the nations through the famine — the lateral that interprets the chapter's close.
+--   ★★ THE TWO-HOUSE SEED (THREAD 6): *Ephraim: For Elohim (God) hath caused me to be fruitful in the land of my affliction* (41:52). Ephraim, the fruitful one, becomes the father of the northern house's fulness (Red Line #2): *his seed shall become a multitude of nations* (Genesis 48:19); *the stick of Joseph, which is in the hand of Ephraim... and make them one stick* (Ezekiel 37:19); *I am a father to Yashar'el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9). The fruitfulness named at Ephraim's birth is the seed of the scattered-then-gathered northern house, made one stick with Yahudah (Judah). Bound here at the source.
+--   EXTRAS: Jubilees 40 carries the exaltation clean (40:1 dreams, 40:5 the spirit of Yahuah/favour, 40:6 the regalia and ruler) — DOUBLE-WRITTEN 'jubilees','jubilees'. ⚠ Jubilees 40 has a numbering gap in this parse (no v.7; v.6 runs into the regalia; v.10-11 run together) — only the clean verses 40:1,5,6 used as members. Jasher 49 carries the exaltation at length (49:2 the king's confession, 49:8/20 the discreet-and-wise, 49:23 ring/garment/golden-chain, 49:28-29 the herald's "bow down" and the people bowing) and Jasher 50 the two sons (50:15) and the famine (50:30) — DOUBLE-WRITTEN 'jasher','jasher'. Jasher's angel-teaches-all-languages overnight (49:13-17) and golden-crown (49:23) are extended legend, used only where the regalia/bowing matches the canon; the language-legend is NOT forced as a member.
+--   VERSES WITH NO ADD: v.9-14 (the butler's remembrance, Joseph brought from the dungeon — narrative pivot, carried into THREAD 1/3 summaries); v.33-37 (the counsel of the wise man); v.46-49 (the corn as the sand of the sea); v.54-55 (narrative famine onset) — connective narrative, no distinct framework-bearing target warranted in this pack.
+
+CREATE TEMP VIEW _s301_ge41_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Pharaoh dreamed, and none could interpret (the king's troubling dream, the wise men silenced)
+    ('canon','genesis',41,8,'canon','daniel',2,2,'free',
+      E'*Then the king commanded to call the magicians, and the astrologers, and the sorcerers, and the Chaldeans, for to shew the king his dreams. So they came and stood before the king* (Daniel 2:2). When Pharaoh''s *spirit was troubled... he sent and called for all the magicians of Egypt, and all the wise men thereof... but there was none that could interpret them unto Pharaoh* (Genesis 41:8), it is the same scene played again in Babylon: the troubled heathen king summons the whole apparatus of his empire''s wisdom, and the wisdom of the kingdoms of men stands speechless before the dream Yahuah (the Lord) has sent.'),
+    ('canon','genesis',41,8,'canon','daniel',2,10,'free',
+      E'*The Chaldeans answered before the king, and said, There is not a man upon the earth that can shew the king''s matter: therefore there is no king, lord, nor ruler, that asked such things at any magician, or astrologer, or Chaldean* (Daniel 2:10). The magicians of Egypt fail exactly as the Chaldeans fail — *there was none that could interpret them unto Pharaoh* (Genesis 41:8); *there is not a man upon the earth that can shew the king''s matter*. The empires'' diviners cannot reach the thing Yahuah alone reveals; the stage is cleared for the captive Hebrew He has prepared.'),
+    ('canon','genesis',41,8,'jubilees','jubilees',40,1,'extras',
+      E'*And in those days Pharaoh dreamed two dreams in one night concerning a famine which was to be in all the land, and he awoke from his sleep and called all the interpreters of dreams that were in Egypt, and magicians, and told them his two dreams, and they were not able to declare (them)* (Jubilees 40:1). The restored witness keeps the doubled dream and the failed interpreters whole — *two dreams in one night concerning a famine... they were not able to declare them* — matching *Pharaoh dreamed... none that could interpret them unto Pharaoh* (Genesis 41:8); the dream is Elohim''s to give and Elohim''s to read.'),
+    ('canon','genesis',41,24,'jasher','jasher',49,2,'extras',
+      E'*And the king said to them, Behold you have seen and heard all the words of this Hebrew man, and all the signs which he declared would come to pass, and not any of his words have fallen to the ground* (Jasher 49:2). Where the canon says *I told this unto the magicians; but there was none that could declare it to me* (Genesis 41:24), the extended witness lets Pharaoh weigh the contrast aloud: the magicians declared nothing, but the Hebrew''s words *have not fallen to the ground* — the empire''s wise men silenced, the captive''s word proven true.'),
+
+    -- THREAD 2 (★★): It is not in me — Elohim shall give the answer (the revelation is Elohim's, not the man's)
+    ('canon','genesis',41,16,'canon','daniel',2,28,'free',
+      E'*But there is a Elohim (God) in heaven that revealeth secrets, and maketh known to the king Nebuchadnezzar what shall be in the latter days* (Daniel 2:28). Joseph''s confession — *It is not in me: Elohim (God) shall give Pharaoh an answer of peace* (Genesis 41:16) — is Daniel''s confession word-for-heart before another world-emperor: *there is a Elohim (God) in heaven that revealeth secrets*. The interpretation belongs to the Most High; the captive Hebrew refuses the glory and hands it to Yahuah (the Lord).'),
+    ('canon','genesis',41,16,'canon','daniel',2,30,'free',
+      E'*But as for me, this secret is not revealed to me for any wisdom that I have more than any living, but for their sakes that shall make known the interpretation to the king* (Daniel 2:30). This is the very grammar of *It is not in me* (Genesis 41:16): *this secret is not revealed to me for any wisdom that I have*. Neither Joseph nor Daniel claims the gift as his own; both are vessels through whom Elohim (God) speaks to the throne, the wisdom passing through them and never resting in them.'),
+    ('canon','genesis',41,25,'canon','daniel',2,47,'free',
+      E'*The king answered unto Daniel, and said, Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets, seeing thou couldest reveal this secret* (Daniel 2:47). Joseph tells Pharaoh *Elohim (God) hath shewed Pharaoh what he is about to do* (Genesis 41:25); the Babylonian king reaches the same confession — *your Elohim (God) is... a revealer of secrets*. The heathen throne is made to own that the dream came from Yahuah (the Lord) and was read by His servant, the glory driven home to its true Source.'),
+
+    -- THREAD 3 (★★): A man in whom the Spirit of Elohim is — the despised servant made governor
+    ('canon','genesis',41,38,'canon','acts',7,10,'free',
+      E'*And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house* (Acts 7:10). Stephen reads the exaltation entire: the one of whom Pharaoh asks *Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* (Genesis 41:38) is the one *delivered... out of all his afflictions* and *made... governor over Egypt and all his house*. The despised, sold, imprisoned brother is raised to rule — the suffering-then-exalted shape that the Formed Son would fill.'),
+    ('canon','genesis',41,38,'jubilees','jubilees',40,5,'extras',
+      E'*And Yahuah (God) gave Joseph favour and mercy in the eyes of Pharaoh, and Pharaoh said to his servants: "We shall not find such a wise and discreet man as this man, for the spirit of Yahuah (God) is with him."* (Jubilees 40:5). The restored witness keeps Pharaoh''s wonder whole — *the spirit of Yahuah (God) is with him* — matching *a man in whom the Spirit of Elohim (God) is* (Genesis 41:38); the favour given is Yahuah''s doing, the Spirit upon the lowered one the thing the throne cannot help but see.'),
+    ('canon','genesis',41,39,'jasher','jasher',49,20,'extras',
+      E'*Now therefore, since Elohim has made all this known to you, and all the words which you have spoken, there is not throughout the land a discreet and wise man like to you* (Jasher 49:20). The extended witness carries Pharaoh''s decree of exaltation — *there is not throughout the land a discreet and wise man like to you* — echoing *Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art* (Genesis 41:39); the wisdom that is Elohim''s gift becomes the ground of the man''s lifting up.'),
+
+    -- THREAD 4 (★★): The ring, the fine linen, the gold chain, Bow the knee (the lowered-then-exalted One)
+    ('canon','genesis',41,43,'canon','philippians',2,9,'free',
+      E'*Wherefore Elohim (God) also hath highly exalted him, and given him a name which is above every name* (Philippians 2:9). The cry before the second chariot — *they cried before him, Bow the knee* (Genesis 41:43) — is the type of the great exaltation: the lowered one *highly exalted*, given the name above every name. As Joseph was raised from the dungeon to the chariot, so the Most High raised the Formed Son who *humbled himself, and became obedient unto death* (Philippians 2:8); the bowing knee at Joseph''s wheel foreshadows the knee that bows to the exalted One.'),
+    ('canon','genesis',41,43,'canon','philippians',2,10,'free',
+      E'*That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:10). The herald''s *Bow the knee* before Joseph (Genesis 41:43) is filled to the uttermost here: *at the name of Yahusha (Jesus) every knee should bow*. The picture of a whole nation bending the knee to the once-despised brother is the type; the One the Most High exalted is the One to whom every knee in heaven and earth and under the earth at last bows.'),
+    ('canon','genesis',41,42,'jubilees','jubilees',40,6,'extras',
+      E'*And he appointed him the second in all his kingdom and gave him authority over all Egypt, and caused him to ride in the second chariot of Pharaoh. And he clothed him with byssus garments, and he put a gold chain upon his neck... and he placed a ring on his hand and made him ruler over all his house, and magnified him, and said to him: "Only on the throne shall I be greater than you."* (Jubilees 40:6). The restored witness keeps the regalia entire — *the second chariot... byssus garments... a gold chain upon his neck... a ring on his hand... ruler over all his house* — matching *Pharaoh took off his ring... and arrayed him in vestures of fine linen, and put a gold chain about his neck* (Genesis 41:42) and *only in the throne will I be greater than thou* (41:40). The lowered one robed and ringed and set over all.'),
+    ('canon','genesis',41,43,'jasher','jasher',49,29,'extras',
+      E'*And when the heralds had ceased proclaiming, all the people of Egypt bowed down to the ground before Joseph and said, May the king live, also may his second live; and all the inhabitants of Egypt bowed down along the road* (Jasher 49:29). The extended witness fills out *they cried before him, Bow the knee* (Genesis 41:43): the heralds proclaim and *all the people of Egypt bowed down to the ground before Joseph*. A whole nation bends the knee to the once-imprisoned Hebrew — the bowing that the exaltation of the Formed Son completes.'),
+
+    -- THREAD 5 (★★): The savior raised to preserve life through the famine (the deliverer of the nations)
+    ('canon','genesis',41,57,'canon','genesis',45,5,'free',
+      E'*Now therefore be not grieved, nor angry with yourselves, that ye sold me hither: for Elohim (God) did send me before you to preserve life* (Genesis 45:5). When *all countries came into Egypt to Joseph for to buy corn; because that the famine was so sore in all lands* (Genesis 41:57), the purpose behind the exaltation is the one Joseph himself will name: *Elohim (God) did send me before you to preserve life*. The brother raised to power is raised to be the savior — the famine over all the earth answered by the deliverer Yahuah (the Lord) set in place beforehand.'),
+    ('canon','genesis',41,57,'canon','genesis',45,7,'free',
+      E'*And Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance* (Genesis 45:7). The corn opened to *all countries* (Genesis 41:57) is the great deliverance of which Joseph speaks: *to preserve you a posterity in the earth, and to save your lives by a great deliverance*. The exaltation is for the saving of the seed and the feeding of the nations; the despised one is lifted up that life might be preserved through the years of death.'),
+    ('canon','genesis',41,57,'canon','genesis',50,20,'free',
+      E'*But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). The whole arc that ends with *all countries came into Egypt to Joseph for to buy corn* (Genesis 41:57) is gathered in Joseph''s last word to his brothers: *Elohim (God) meant it unto good... to save much people alive*. The selling, the prison, the rise, the open storehouses — all of it the Most High bent toward the saving of many; the evil of men turned by Elohim into the deliverance of a multitude.'),
+    ('canon','genesis',41,57,'jasher','jasher',50,30,'extras',
+      E'*And all the inhabitants of the land of Canaan and the Philistines, and those beyond the Jordan, and the children of the east and all the cities of the lands far and nigh heard that there was corn in Egypt, and they all came to Egypt to buy corn, for the famine prevailed over them* (Jasher 50:30). The extended witness widens *all countries came into Egypt to Joseph for to buy corn* (Genesis 41:57) to its full reach — *Canaan... the Philistines... beyond the Jordan... the children of the east... the cities of the lands far and nigh* — the nations of the whole earth streaming to the exalted brother for bread in the day of famine.'),
+
+    -- THREAD 6 (★★): Manasseh and Ephraim — the fruitful one, the two-house seed
+    ('canon','genesis',41,52,'canon','genesis',48,19,'free',
+      E'*And his father refused, and said, I know it, my son, I know it: he also shall become a people, and he also shall be great: but truly his younger brother shall be greater than he, and his seed shall become a multitude of nations* (Genesis 48:19). The name given at Ephraim''s birth — *Ephraim: For Elohim (God) hath caused me to be fruitful in the land of my affliction* (Genesis 41:52) — is opened when Jacob crosses his hands: Ephraim the younger set first, *his seed shall become a multitude of nations*. The fruitfulness named here is the seed of the northern house, the fulness of the nations that would come of Ephraim.'),
+    ('canon','genesis',41,52,'canon','ezekiel',37,19,'free',
+      E'*Say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The fruitful Ephraim of *Elohim (God) hath caused me to be fruitful* (Genesis 41:52) becomes the name of the whole northern house — *the stick of Joseph, which is in the hand of Ephraim* — scattered and to be gathered, made *one stick* with Yahudah (Judah) in the hand of Yahuah (the Lord). The birth-name carries the two-house promise to its end.'),
+    ('canon','genesis',41,52,'canon','jeremiah',31,9,'free',
+      E'*They shall come with weeping, and with supplications will I lead them: I will cause them to walk by the rivers of waters in a straight way, wherein they shall not stumble: for I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9). The fruitful son of *the land of my affliction* (Genesis 41:52) is named Yahuah''s (the Lord''s) own firstborn — *Ephraim is my firstborn* — the scattered northern house gathered home, led by the rivers of waters, the affliction turned to ingathering. The fruitfulness of Ephraim''s birth flowers into the firstborn-love of the gathering God.'),
+    ('canon','genesis',41,50,'jasher','jasher',50,15,'extras',
+      E'*And Joseph''s wife Osnath the daughter of Potiphera bare him two sons, Manasseh and Ephraim, and Joseph was thirty-four years old when he begat them* (Jasher 50:15). The extended witness keeps the births plainly — *two sons, Manasseh and Ephraim* — as *unto Joseph were born two sons before the years of famine came* (Genesis 41:50); the two sons born in Egypt who become the tribes through whom the house of Joseph is carried.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-41-pharaoh-dreamed-and-none-could-interpret',
+       E'Pharaoh dreamed, and none could interpret — the king''s troubling dream, the wise men silenced',
+       E'*And it came to pass in the morning that his spirit was troubled; and he sent and called for all the magicians of Egypt, and all the wise men thereof: and Pharaoh told them his dream; but there was none that could interpret them unto Pharaoh* (Genesis 41:8). The doubled dream — the seven fat kine eaten by the seven lean, the seven full ears devoured by the seven thin — leaves the most learned court in the world speechless: *I told this unto the magicians; but there was none that could declare it to me* (Genesis 41:24). This is a pattern Yahuah (the Lord) repeats: in Babylon another troubled king calls *the magicians, and the astrologers, and the sorcerers, and the Chaldeans* (Daniel 2:2), and they too confess *there is not a man upon the earth that can shew the king''s matter* (Daniel 2:10). The wisdom of the kingdoms of men cannot reach the thing Elohim (God) has sent; the stage is cleared for the captive Hebrew He has prepared in the dungeon. The restored witnesses keep the scene whole: *Pharaoh dreamed two dreams in one night concerning a famine... and they were not able to declare them* (Jubilees 40:1), and Pharaoh''s own verdict on the Hebrew — *all the signs which he declared would come to pass, and not any of his words have fallen to the ground* (Jasher 49:2). The dream is Elohim''s to give and Elohim''s to read.',
+       sv.verse_id, ev.verse_id, 'extras', 21000
+  FROM _s301_ge41_lookup sv, _s301_ge41_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=41 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-41-it-is-not-in-me-elohim-shall-give-the-answer',
+       E'It is not in me — Elohim shall give the answer (the revelation is His, not the man''s)',
+       E'Brought hastily out of the dungeon, shaved and changed, the slave stands before the throne of Egypt — and his first word is not a claim but a confession: *And Joseph answered Pharaoh, saying, It is not in me: Elohim (God) shall give Pharaoh an answer of peace* (Genesis 41:16). He will not take the glory; the interpretation belongs to the Most High. So he reads the dream and says *Elohim (God) hath shewed Pharaoh what he is about to do* (Genesis 41:25) and *What Elohim (God) is about to do he sheweth unto Pharaoh* (Genesis 41:28). The same confession comes from another captive Hebrew before another world-emperor: *there is a Elohim (God) in heaven that revealeth secrets, and maketh known to the king Nebuchadnezzar what shall be in the latter days* (Daniel 2:28), *this secret is not revealed to me for any wisdom that I have more than any living* (Daniel 2:30). Neither Joseph nor Daniel keeps the gift as his own; both are vessels through whom Yahuah (the Lord) speaks to the throne. And both drive the heathen king to own the Source — *your Elohim (God) is... a revealer of secrets, seeing thou couldest reveal this secret* (Daniel 2:47). The man lifted up is the man who first laid the glory down: *it is not in me*.',
+       sv.verse_id, ev.verse_id, 'free', 21003
+  FROM _s301_ge41_lookup sv, _s301_ge41_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=41 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-41-a-man-in-whom-the-spirit-of-elohim-is',
+       E'A man in whom the Spirit of Elohim is — the despised servant made governor',
+       E'The dream read and the counsel given, Pharaoh looks at the Hebrew slave and sees what only Yahuah (the Lord) could have put there: *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* (Genesis 41:38). And so the lifting up: *Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art* (41:39); *Thou shalt be over my house... only in the throne will I be greater than thou* (41:40); *See, I have set thee over all the land of Egypt* (41:41). The one sold by his brothers, falsely accused, forgotten in prison, is raised to the right hand of the throne. Stephen reads this exaltation as the heart of the story: *and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house* (Acts 7:10) — the despised one *delivered... out of all his afflictions* and made to rule. The restored witnesses keep Pharaoh''s wonder whole: *We shall not find such a wise and discreet man as this man, for the spirit of Yahuah (God) is with him* (Jubilees 40:5), *there is not throughout the land a discreet and wise man like to you* (Jasher 49:20). This is the suffering-then-exalted type completed — read through the Formed-and-the-Formless lens, Joseph foreshadows the lowered Son the Most High would raise, never a flattening of the servant into the Messiah, but the shape the exaltation of the Formed Son fills.',
+       sv.verse_id, ev.verse_id, 'extras', 21006
+  FROM _s301_ge41_lookup sv, _s301_ge41_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=38
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=41 AND ev.verse_number=41
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-41-the-ring-the-fine-linen-the-gold-chain-bow-the-knee',
+       E'The ring, the fine linen, the gold chain, Bow the knee — the lowered-then-exalted One',
+       E'The exaltation is sealed in glory: *And Pharaoh took off his ring from his hand, and put it upon Joseph''s hand, and arrayed him in vestures of fine linen, and put a gold chain about his neck* (Genesis 41:42); *And he made him to ride in the second chariot which he had; and they cried before him, Bow the knee: and he made him ruler over all the land of Egypt* (Genesis 41:43). The ring of authority, the robe of honour, the chain of office, the second chariot, the cry of the herald — the once-imprisoned Hebrew set over all, every knee bending as he passes. This is the type the great exaltation hymn fills: *Wherefore Elohim (God) also hath highly exalted him, and given him a name which is above every name* (Philippians 2:9), *That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:10). As Joseph *humbled* in the pit and the prison is raised to the chariot and the bowing knee, so the Formed Son who *humbled himself, and became obedient unto death* was highly exalted — and the *Bow the knee* of Egypt is filled in the One to whom every knee at last bows. The restored witnesses keep the regalia entire: *the second chariot... byssus garments... a gold chain upon his neck... a ring on his hand... ruler over all his house... "Only on the throne shall I be greater than you"* (Jubilees 40:6); and the whole nation bending — *all the people of Egypt bowed down to the ground before Joseph* (Jasher 49:29). Read strictly as TYPE through the Formed-and-Formless lens: the despised one raised to glory, every knee bowing, never a co-equal-persons collapse, but the foreshadow the exalted Son completes.',
+       sv.verse_id, ev.verse_id, 'extras', 21009
+  FROM _s301_ge41_lookup sv, _s301_ge41_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=42
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=41 AND ev.verse_number=43
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-41-the-savior-raised-to-preserve-life-through-the-famine',
+       E'The savior raised to preserve life through the famine — the deliverer of the nations',
+       E'The plenty ends and the dearth comes *in all lands; but in all the land of Egypt there was bread* (Genesis 41:54), for the exalted brother had gathered *corn as the sand of the sea, very much, until he left numbering* (41:49). Then the world turns to him: *And the famine was over all the face of the earth: and Joseph opened all the storehouses, and sold unto the Egyptians* (41:56); *And all countries came into Egypt to Joseph for to buy corn; because that the famine was so sore in all lands* (Genesis 41:57). The purpose of the whole arc — the pit, the prison, the throne — is the one Joseph himself will name when his brothers stand before him: *be not grieved, nor angry with yourselves, that ye sold me hither: for Elohim (God) did send me before you to preserve life* (Genesis 45:5), *to preserve you a posterity in the earth, and to save your lives by a great deliverance* (45:7). And at the last, over his father''s death: *ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). The despised one was lifted up that life might be preserved through the years of death — the seed kept, the nations fed. The restored witness widens the reach: *all the inhabitants of the land of Canaan and the Philistines... and the children of the east and all the cities of the lands far and nigh... all came to Egypt to buy corn* (Jasher 50:30). The savior set in place beforehand by Yahuah (the Lord), the evil of men bent unto the deliverance of a multitude.',
+       sv.verse_id, ev.verse_id, 'extras', 21012
+  FROM _s301_ge41_lookup sv, _s301_ge41_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=53
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=41 AND ev.verse_number=57
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-41-manasseh-and-ephraim-the-fruitful-one-the-two-house-seed',
+       E'Manasseh and Ephraim — the fruitful one, the two-house seed',
+       E'Before the famine comes, two sons are born to Joseph in Egypt, and the names he gives them carry the whole arc of his suffering turned to mercy: *And Joseph called the name of the firstborn Manasseh: For Elohim (God), said he, hath made me forget all my toil, and all my father''s house* (Genesis 41:51); *And the name of the second called he Ephraim: For Elohim (God) hath caused me to be fruitful in the land of my affliction* (Genesis 41:52). Ephraim — the fruitful one, named for fruitfulness in the land of affliction — becomes the father of the northern house''s fulness. When Jacob crosses his hands he sets the younger first: *his younger brother shall be greater than he, and his seed shall become a multitude of nations* (Genesis 48:19). The prophets carry the name to its end: the whole northern house is called by it — *the stick of Joseph, which is in the hand of Ephraim... and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19) — the divorced and scattered house to be gathered and joined to Yahudah (Judah). And Yahuah (the Lord) names Ephraim His own dearest: *I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9), the scattered son led home by the rivers of waters, the affliction turned to ingathering. The restored witness keeps the births plainly — *two sons, Manasseh and Ephraim* (Jasher 50:15). The fruitfulness named at Ephraim''s birth is the seed of the two-house people, made one again in the hand of Elohim (God).',
+       sv.verse_id, ev.verse_id, 'extras', 21015
+  FROM _s301_ge41_lookup sv, _s301_ge41_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=50
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=41 AND ev.verse_number=52
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the king commanded to call the magicians, and the astrologers, and the sorcerers, and the Chaldeans* (Daniel 2:2) — the same troubled-king scene as 41:8: the empire''s wisdom summoned to the dream.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=8
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-pharaoh-dreamed-and-none-could-interpret'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*There is not a man upon the earth that can shew the king''s matter* (Daniel 2:10) — the Chaldeans fail as Egypt''s magicians fail (41:8); the empires'' diviners cannot reach the dream Yahuah sends.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=8
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-pharaoh-dreamed-and-none-could-interpret'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Pharaoh dreamed two dreams in one night concerning a famine... and they were not able to declare them* (Jubilees 40:1) — the doubled dream and failed interpreters of 41:8 kept whole in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=8
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=40 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-pharaoh-dreamed-and-none-could-interpret'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*all the signs which he declared would come to pass, and not any of his words have fallen to the ground* (Jasher 49:2) — the contrast of 41:24: the magicians declared nothing, the Hebrew''s word proven true.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=24
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=49 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-pharaoh-dreamed-and-none-could-interpret'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*there is a Elohim (God) in heaven that revealeth secrets* (Daniel 2:28) — Daniel''s confession before Nebuchadnezzar is Joseph''s *It is not in me: Elohim shall give... an answer* (41:16): the revelation is the Most High''s.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=16
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-it-is-not-in-me-elohim-shall-give-the-answer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*this secret is not revealed to me for any wisdom that I have more than any living* (Daniel 2:30) — the very grammar of *It is not in me* (41:16); both Hebrews refuse the glory, vessels not owners of the gift.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=16
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-it-is-not-in-me-elohim-shall-give-the-answer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*your Elohim (God) is... a revealer of secrets, seeing thou couldest reveal this secret* (Daniel 2:47) — the heathen throne made to own the Source, as Joseph tells Pharaoh *Elohim hath shewed Pharaoh what he is about to do* (41:25).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=25
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-it-is-not-in-me-elohim-shall-give-the-answer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *gave him favour and wisdom in the sight of Pharaoh... and he made him governor over Egypt and all his house* (Acts 7:10) — Stephen reads the exaltation of 41:38-41: the despised one delivered and made governor.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=38
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-a-man-in-whom-the-spirit-of-elohim-is'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*We shall not find such a wise and discreet man as this man, for the spirit of Yahuah (God) is with him* (Jubilees 40:5) — Pharaoh''s wonder of 41:38 kept whole; the Spirit upon the lowered one the throne cannot help but see.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=38
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=40 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-a-man-in-whom-the-spirit-of-elohim-is'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*there is not throughout the land a discreet and wise man like to you* (Jasher 49:20) — Pharaoh''s decree of exaltation echoing *there is none so discreet and wise as thou art* (41:39); the wisdom Elohim gave becomes the ground of the lifting up.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=39
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=49 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-a-man-in-whom-the-spirit-of-elohim-is'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Elohim (God) also hath highly exalted him, and given him a name which is above every name* (Philippians 2:9) — the *Bow the knee* of 41:43 is the type of the great exaltation of the lowered One.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=43
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-the-ring-the-fine-linen-the-gold-chain-bow-the-knee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:10) — the herald''s *Bow the knee* (41:43) filled in the One every knee bows to.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=43
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-the-ring-the-fine-linen-the-gold-chain-bow-the-knee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the second chariot... byssus garments... a gold chain upon his neck... a ring on his hand... ruler over all his house* (Jubilees 40:6) — the regalia of 41:42 kept entire in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=42
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=40 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-the-ring-the-fine-linen-the-gold-chain-bow-the-knee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*all the people of Egypt bowed down to the ground before Joseph* (Jasher 49:29) — the whole nation fills out *they cried before him, Bow the knee* (41:43).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=43
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=49 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-the-ring-the-fine-linen-the-gold-chain-bow-the-knee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Elohim (God) did send me before you to preserve life* (Genesis 45:5) — Joseph names the purpose behind *all countries came... to buy corn* (41:57): the exaltation is for the saving of life.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=57
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-the-savior-raised-to-preserve-life-through-the-famine'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*to preserve you a posterity in the earth, and to save your lives by a great deliverance* (Genesis 45:7) — the corn opened to all countries (41:57) is the great deliverance: the seed preserved through the years of death.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=57
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-the-savior-raised-to-preserve-life-through-the-famine'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *ye thought evil against me; but Elohim (God) meant it unto good... to save much people alive* (Genesis 50:20) — the whole arc that ends in 41:57 gathered: the evil of men bent unto the deliverance of a multitude.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=57
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-the-savior-raised-to-preserve-life-through-the-famine'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*all the inhabitants of... Canaan and the Philistines... and all the cities of the lands far and nigh... came to Egypt to buy corn* (Jasher 50:30) — the full reach of *all countries came into Egypt to Joseph for to buy corn* (41:57).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=57
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=50 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-the-savior-raised-to-preserve-life-through-the-famine'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *his younger brother shall be greater than he, and his seed shall become a multitude of nations* (Genesis 48:19) — the fruitful Ephraim of 41:52 set first; his seed the fulness of the nations.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=52
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=48 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-manasseh-and-ephraim-the-fruitful-one-the-two-house-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the stick of Joseph, which is in the hand of Ephraim... and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19) — fruitful Ephraim (41:52) becomes the whole northern house, gathered to one stick with Yahudah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=52
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-manasseh-and-ephraim-the-fruitful-one-the-two-house-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9) — the fruitful son of *the land of my affliction* (41:52) named Yahuah''s firstborn, the scattered house led home.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=52
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-manasseh-and-ephraim-the-fruitful-one-the-two-house-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Joseph''s wife Osnath... bare him two sons, Manasseh and Ephraim* (Jasher 50:15) — the births of 41:50 kept plainly in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=41 AND sv.verse_number=50
+  JOIN _s301_ge41_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=50 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-41-manasseh-and-ephraim-the-fruitful-one-the-two-house-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session301 — Genesis cross-references complete.'
