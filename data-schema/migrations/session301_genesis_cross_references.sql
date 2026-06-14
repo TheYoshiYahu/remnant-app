@@ -17302,6 +17302,1481 @@ SELECT t.id, cr.id, 2, E'★ *Now I will die cheerfully after I have seen your f
  WHERE t.slug='genesis-46-joseph-fell-on-his-neck-now-let-me-die'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_genesis_47.sql (Genesis 47) -----
+-- Chapter: Genesis 47 — Joseph presents five of his brethren and his father Jacob to Pharaoh; Israel settled in the best of the land, Goshen / the land of Rameses. ★ Jacob blesses Pharaoh (47:7,10 — *Jacob blessed Pharaoh* — the landless sojourner blessing the king of the earth's greatest empire, the lesser blessed of the greater inverted, the covenant-bearer carrying the greater blessing). ★ Jacob's pilgrimage confession (47:9 — *The days of the years of my pilgrimage are an hundred and thirty years; few and evil have the days of the years of my life been* — the patriarch as stranger and pilgrim, seeking a better country). The famine administration: Joseph gathers all the money, then the cattle, then the land and the Egyptians themselves to Pharaoh in exchange for bread, then gives them seed (the bread-for-life stewardship; *Thou hast saved our lives... we will be Pharaoh's servants*). ★ Israel grew and multiplied exceedingly in Goshen (47:27 — the seed multiplying in the furnace before the Exodus). ★ Jacob's charge to Joseph under oath (47:29-31 — *put... thy hand under my thigh... bury me not... in Egypt... but I will lie with my fathers* — the burial-oath, the hope fixed on the land of promise, not Egypt).
+-- Tag: ge47   Temp view: _s301_ge47_lookup
+-- Sort band: base 21150, step 3 -> threads at 21150, 21153, 21156, 21159 (4 threads — curated)
+-- Source of EVERY row: 'canon','genesis',47,v
+--
+-- Genesis 47 coverage:
+--   v.1-6 (Joseph presents five of his brethren; Pharaoh grants Goshen / the best of the land)
+--        NT:     none warranted (narrative presentation; the settling-in-Goshen weight carried into THREAD 3's multiplying-seed summary)
+--        Extras: Jubilees 45:6 (the right of dwelling in Goshen and Rameses); Jasher 55:18-23 (the placing in Goshen) — narrative parallels, folded into THREAD 3 summary, not forced as distinct members here
+--        Tanakh: none warranted distinct (the dwelling-in-Goshen is the ground THREAD 3 builds on)
+--   ★ v.7,10 (Joseph brought in Jacob... and Jacob blessed Pharaoh; And Jacob blessed Pharaoh, and went out from before Pharaoh)
+--        NT:     ★★ Hebrews 7:7 (without all contradiction the less is blessed of the better); Hebrews 7:6 (blessed him that had the promises) — THREAD 1 (the lesser-blessed-of-the-greater principle: the landless covenant-bearer blesses the king of Egypt)
+--        Extras: Jasher 55:25 (Jacob came and bowed down to Pharaoh, and Jacob blessed Pharaoh, and he then went out) — THREAD 1 (the restored witness keeps the blessing whole)
+--        Tanakh: ★ Genesis 12:3 (in thee shall all families of the earth be blessed) — THREAD 1 (the Abrahamic blessing-to-the-nations working out: the covenant-bearer carries the greater blessing to the king of the earth)
+--   ★★ v.9 (The days of the years of my pilgrimage are an hundred and thirty years: few and evil have the days of the years of my life been)
+--        NT:     ★★ Hebrews 11:13 (these all died in faith... confessed that they were strangers and pilgrims on the earth); Hebrews 11:16 (they desire a better country, that is, an heavenly) — THREAD 2 (the patriarch's pilgrimage confession; the strangers-and-pilgrims seeking a better country)
+--        Extras: none warranted as a clean member (Jubilees 45:6 carries the age "one hundred and thirty years old when he came into Egypt" but as narrative chronology, not the pilgrimage-confession; folded into THREAD 3 where the age/dwelling sits, not forced here)
+--        Tanakh: ★★ Psalm 39:12 (I am a stranger with thee, and a sojourner, as all my fathers were); ★ 1 Chronicles 29:15 (we are strangers before thee, and sojourners, as were all our fathers: our days on the earth are as a shadow) — THREAD 2 (David sings the same sojourner-confession; the not-of-this-world covenant hope)
+--   v.11-12 (the possession in Rameses; Joseph nourished his father and brethren with bread)
+--        NT: none warranted   Extras: Jubilees 45:6 (folded into THREAD 3)   Tanakh: none warranted — narrative connective, carried into THREAD 3 summary
+--   v.13-26 (the famine administration: the money, then the cattle, then the land and the people gathered to Pharaoh for bread; then seed given; *Thou hast saved our lives... we will be Pharaoh's servants*)
+--        NT:     none warranted (the savior-preserving-life type was bound at Genesis 41/45 in the prior packs; here it is chiefly the economic administration — the deliverer's stewardship, not a fresh framework-bearing type; recorded NONE WARRANTED for a distinct thread)
+--        Extras: Jubilees 45:8-9 (Joseph acquired all the land of Egypt for Pharaoh... gave to the people seed); Jasher 55:29-30 (all Egypt ate bread from the house of Joseph... Joseph purchased all the lands) — narrative parallels only, NOT forced as members (no distinct framework thread warranted)
+--        Tanakh: none warranted distinct
+--        — DELIBERATE NO-ADD: the bread-for-life administration is read in the framework as the outworking of the savior-of-life type already bound at Genesis 41:57/45:5-7; a fresh thread here would be a TSK-style economic dump. None warranted.
+--   ★ v.27 (And Yashar'el (Israel) dwelt in the land of Egypt, in the country of Goshen; and they had possessions therein, and grew, and multiplied exceedingly)
+--        NT:     none warranted distinct (the multiplying-seed forward-weave is the Exodus-furnace lateral; the NT regathering belongs to its own packs)
+--        Extras: ★ Jubilees 45:6 (Yashar'el and his sons dwelt in the land of Goshen, the best part of the land of Egypt; and Yashar'el was one hundred and thirty years old when he came into Egypt); Jasher 55:36 (they dwelt in the land of Goshen... and they were fruitful and multiplied in it) — THREAD 3 (the seed multiplying in Goshen kept whole)
+--        Tanakh: ★★ Exodus 1:7 (the children of Yashar'el were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty); ★ Genesis 15:5 (tell the stars... so shall thy seed be) — THREAD 3 (the seed-promise advancing in the furnace before the Exodus; the Gen 15:5 stars-promise advancing)
+--   v.28 (Jacob lived in Egypt seventeen years; the whole age of Jacob was an hundred forty and seven years)
+--        NT: none warranted   Extras: Jubilees 45:13 / Jasher 56:1 (the 147 years) — narrative chronology, folded into THREAD 4 summary   Tanakh: none warranted — connective, carried into THREAD 4
+--   ★ v.29-31 (If now I have found grace... put thy hand under my thigh... bury me not in Egypt: But I will lie with my fathers... Swear unto me. And he sware unto him. And Yashar'el bowed himself upon the bed's head)
+--        NT:     ★★ Hebrews 11:22 (By faith Joseph, when he died, made mention of the departing of the children of Yashar'el; and gave commandment concerning his bones) — THREAD 4 (the patriarchs' eyes fixed past Egypt on the land of promise; the burial-hope of faith)
+--        Extras: ★ Jasher 56:3 (when I am dead, bury me in the cave which is in Machpelah in Hebron in the land of Canaan, near my ancestors); Jasher 56:4 (Jacob made his sons swear to bury him in Machpelah) — THREAD 4 (the restored witness keeps the burial-oath and the land-hope whole)
+--        Tanakh: ★ Genesis 49:29 (bury me with my fathers in the cave that is in the field of Ephron the Hittite); ★★ Genesis 50:24 (Elohim will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob); Genesis 50:25 (ye shall carry up my bones from hence) — THREAD 4 (the hope fixed on the promised land, not Egypt; Joseph takes up the same oath)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-47-jacob-blessed-pharaoh-the-lesser-blessed-of-the-greater — NT (Hebrews 7) + Tanakh (Genesis 12) + Extras (Jasher) [extras] (★ the landless covenant-bearer blesses the king of Egypt; the less is blessed of the better; the Abrahamic blessing-to-the-nations)
+--   2. genesis-47-the-days-of-my-pilgrimage-strangers-and-pilgrims — NT (Hebrews 11) + Tanakh (Psalm 39, 1 Chronicles 29) [free] (★★ the pilgrimage confession; strangers and pilgrims seeking a better country — pure canon, free tier)
+--   3. genesis-47-israel-grew-and-multiplied-exceedingly-the-seed-in-the-furnace — Tanakh (Exodus 1, Genesis 15) + Extras (Jubilees, Jasher) [extras] (★ the seed multiplying in Goshen before the Exodus; the stars-promise advancing)
+--   4. genesis-47-bury-me-not-in-egypt-the-hope-fixed-on-the-land — NT (Hebrews 11) + Tanakh (Genesis 49, Genesis 50) + Extras (Jasher) [extras] (★ the burial-oath; the patriarch's eyes fixed past Egypt on the land of promise)
+--
+-- Framing notes:
+--   ★ JACOB BLESSED PHARAOH (THREAD 1): *And Joseph brought in Jacob his father, and set him before Pharaoh: and Jacob blessed Pharaoh* (47:7); *And Jacob blessed Pharaoh, and went out from before Pharaoh* (47:10). The landless, famine-driven sojourner — a shepherd, an abomination to the Egyptians — stands before the king of the earth's greatest empire and BLESSES him. The writer of Hebrews names the principle exactly: *without all contradiction the less is blessed of the better* (Hebrews 7:7); the one who blesses is the greater. By the world's reckoning Pharaoh is the greater and Jacob the supplicant; by the covenant's reckoning the order is inverted — the covenant-bearer, *him that had the promises* (Hebrews 7:6), carries the greater blessing, and the Abrahamic word works out: *in thee shall all families of the earth be blessed* (Genesis 12:3). The restored witness keeps the scene plain: *Jacob came and bowed down to Pharaoh, and Jacob blessed Pharaoh* (Jasher 55:25).
+--   ★★ THE DAYS OF MY PILGRIMAGE (THREAD 2): *The days of the years of my pilgrimage are an hundred and thirty years: few and evil have the days of the years of my life been, and have not attained unto the days of the years of the life of my fathers in the days of their pilgrimage* (47:9). Jacob names his whole life a PILGRIMAGE — a sojourning, not a settling. Hebrews gathers all the patriarchs into this confession: *these all died in faith, not having received the promises... and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13), *they desire a better country, that is, an heavenly* (Hebrews 11:16). David sings the same: *I am a stranger with thee, and a sojourner, as all my fathers were* (Psalm 39:12); *we are strangers before thee, and sojourners, as were all our fathers: our days on the earth are as a shadow* (1 Chronicles 29:15). The not-of-this-world covenant hope: the seed-bearers hold the land of promise by faith and confess themselves pilgrims to the end. PURE CANON — tier 'free'.
+--   ★ THE SEED IN THE FURNACE (THREAD 3): *And Yashar'el (Israel) dwelt in the land of Egypt, in the country of Goshen; and they had possessions therein, and grew, and multiplied exceedingly* (47:27). The seed-promise advances inside Egypt, the furnace, before ever the Exodus comes: *the children of Yashar'el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* (Exodus 1:7) — the very verse that opens the bondage is the flowering of the Genesis 15 word: *tell the stars, if thou be able to number them... So shall thy seed be* (Genesis 15:5). The stars-promise advances in the land of affliction. The restored witnesses keep it: *Yashar'el and his sons dwelt in the land of Goshen, the best part of the land of Egypt* (Jubilees 45:6); *they were fruitful and multiplied in it* (Jasher 55:36).
+--   ★ BURY ME NOT IN EGYPT (THREAD 4): *put, I pray thee, thy hand under my thigh, and deal kindly and truly with me; bury me not, I pray thee, in Egypt: But I will lie with my fathers, and thou shalt carry me out of Egypt, and bury me in their buryingplace* (47:29-30). The dying patriarch fixes his eyes PAST Egypt — the place of plenty and refuge — onto the land of promise where his fathers lie. He binds Joseph by oath: *Swear unto me. And he sware unto him* (47:31). It is the same hope Joseph himself takes up at his own death: *Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24); *ye shall carry up my bones from hence* (Genesis 50:25) — which Hebrews reads as faith: *By faith Joseph, when he died, made mention of the departing of the children of Yashar'el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). Jacob points to the cave of Machpelah named in the charge (Genesis 49:29). The restored witness keeps the oath whole: *bury me in the cave which is in Machpelah in Hebron in the land of Canaan, near my ancestors* (Jasher 56:3). Egypt fed them; the land of promise held their hope.
+--   EXTRAS: Jubilees 45 carries the settling (45:6 dwelling in Goshen/Rameses, the age 130) and the famine administration (45:8-9) clean — DOUBLE-WRITTEN 'jubilees','jubilees'. ⚠ Jubilees 45:1 carries an apparatus year-note "2172 A M." inside the verse — NOT quoted as a member; only the clean 45:6 used. Jasher 55-56 carries the blessing (55:25), the multiplying (55:36), and the burial-oath (56:3) — DOUBLE-WRITTEN 'jasher','jasher'. The bread-for-life famine administration (Jubilees 45:8-9, Jasher 55:29-30) was weighed and folded into the savior-of-life type already bound at Genesis 41/45 — no fresh thread, NONE WARRANTED.
+--   VERSES WITH NO ADD: v.1-6 (the presentation of the five brethren, the grant of Goshen — narrative, ground for THREAD 3); v.11-12 (the possession in Rameses, the nourishing with bread); ★ v.13-26 (the whole famine administration — the money, cattle, land, and people gathered to Pharaoh, then seed given — DELIBERATELY no distinct thread: read in the framework as the outworking of the savior-of-life type bound at Genesis 41:57/45:5-7, not a fresh framework-bearing type; a thread here would be a TSK-style economic dump); v.28 (the 147 years — chronology, folded into THREAD 4). All weighed across NT/Extras/Tanakh; the choices are deliberate.
+
+CREATE TEMP VIEW _s301_ge47_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Jacob blessed Pharaoh — the lesser blessed of the greater
+    ('canon','genesis',47,7,'canon','hebrews',7,7,'free',
+      E'*And without all contradiction the less is blessed of the better* (Hebrews 7:7). When *Joseph brought in Jacob his father, and set him before Pharaoh: and Jacob blessed Pharaoh* (Genesis 47:7), the order of the world is inverted. By Egypt''s reckoning the king is the greater and the famine-driven shepherd the supplicant; but *the less is blessed of the better* — and it is Jacob, the covenant-bearer, who blesses. The landless sojourner carries the greater blessing, and the king of the earth''s greatest empire receives it from his hand.'),
+    ('canon','genesis',47,7,'canon','hebrews',7,6,'free',
+      E'*But he whose descent is not counted from them received tithes of Abraham, and blessed him that had the promises* (Hebrews 7:6). The writer marks the one *that had the promises* as the one blessed — the covenant-line is the place where the blessing flows. So Jacob, the heir of the promises to Abraham and Isaac, is the one who *blessed Pharaoh* (Genesis 47:7); the blessing moves outward from the seed-bearer to the throne of the nations, never the reverse.'),
+    ('canon','genesis',47,10,'canon','genesis',12,3,'free',
+      E'*And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). The Abrahamic word works itself out in the throne-room: *And Jacob blessed Pharaoh, and went out from before Pharaoh* (Genesis 47:10). The promise that *in thee shall all families of the earth be blessed* runs through the seed — Abraham, Isaac, Jacob — and here the grandson stands before the greatest family of the earth and blesses its king. The covenant-bearer is the channel of blessing to the nations.'),
+    ('canon','genesis',47,10,'jasher','jasher',55,25,'extras',
+      E'*And Jacob came and bowed down to Pharaoh, and Jacob blessed Pharaoh, and he then went out; and Jacob and all his sons, and all his household dwelt in the land of Goshen* (Jasher 55:25). The restored witness keeps the blessing whole — *Jacob blessed Pharaoh, and he then went out* — matching *And Jacob blessed Pharaoh, and went out from before Pharaoh* (Genesis 47:10). The patriarch comes, blesses the king, and withdraws to Goshen: the lesser by the world''s measure, the greater by the covenant''s.'),
+
+    -- THREAD 2 (★★): The days of my pilgrimage — strangers and pilgrims (PURE CANON, free)
+    ('canon','genesis',47,9,'canon','hebrews',11,13,'free',
+      E'*These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). Jacob names his whole life a sojourning — *The days of the years of my pilgrimage are an hundred and thirty years* (Genesis 47:9) — and Hebrews gathers all the patriarchs into that very word: they *confessed that they were strangers and pilgrims on the earth*. The pilgrimage confession before Pharaoh is the faith that holds the promise afar off and calls itself a stranger to the end.'),
+    ('canon','genesis',47,9,'canon','hebrews',11,16,'free',
+      E'*But now they desire a better country, that is, an heavenly: wherefore Elohim (God) is not ashamed to be called their Elohim (God): for he hath prepared for them a city* (Hebrews 11:16). The *few and evil* days of the *pilgrimage* (Genesis 47:9) are the days of a man who has not arrived — and Hebrews names what such pilgrims are reaching toward: *a better country, that is, an heavenly*. Jacob''s confession that his life is a pilgrimage is the confession of one who *desires a better country*; the not-of-this-world hope of the seed.'),
+    ('canon','genesis',47,9,'canon','psalms',39,12,'free',
+      E'*Hear my prayer, O Yahuah (LORD), and give ear unto my cry; hold not thy peace at my tears: for I am a stranger with thee, and a sojourner, as all my fathers were* (Psalm 39:12). David sings the very confession Jacob makes before Pharaoh — *the days of the years of my pilgrimage* (Genesis 47:9) — naming himself *a stranger with thee, and a sojourner, as all my fathers were*. The seed-bearers, generation after generation, hold the same posture: pilgrims in the earth, their true dwelling not yet come.'),
+    ('canon','genesis',47,9,'canon','1-chronicles',29,15,'free',
+      E'*For we are strangers before thee, and sojourners, as were all our fathers: our days on the earth are as a shadow, and there is none abiding* (1 Chronicles 29:15). David, gathered at the height of the kingdom, owns the same pilgrimage Jacob confessed in his old age before Pharaoh — *the days of the years of my pilgrimage... few and evil* (Genesis 47:9). *Our days on the earth are as a shadow, and there is none abiding*: the covenant-people, even crowned and settled, remain strangers and sojourners whose hope is fixed beyond the land they hold.'),
+
+    -- THREAD 3 (★): Israel grew and multiplied exceedingly — the seed in the furnace
+    ('canon','genesis',47,27,'canon','exodus',1,7,'free',
+      E'*And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* (Exodus 1:7). The word that opens the book of bondage is the flowering of what begins here: *Yashar''el (Israel) dwelt in the land of Egypt, in the country of Goshen... and grew, and multiplied exceedingly* (Genesis 47:27). The seed multiplies in the furnace before ever the Exodus comes — *fruitful, and increased abundantly, and multiplied* — the promise advancing inside the land of affliction.'),
+    ('canon','genesis',47,27,'canon','genesis',15,5,'free',
+      E'*And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* (Genesis 15:5). The multiplying in Goshen — *they had possessions therein, and grew, and multiplied exceedingly* (Genesis 47:27) — is the stars-promise advancing. What Yahuah (the LORD) swore to Abram in the night, *tell the stars... So shall thy seed be*, begins to flower in the land of Egypt: the innumerable seed taking root in the furnace before the deliverance.'),
+    ('canon','genesis',47,27,'jubilees','jubilees',45,6,'extras',
+      E'*And Yashar''el (Israel) and his sons dwelt in the land of Goshen, the best part of the land of Egypt; and Yashar''el (Israel) was one hundred and thirty years old when he came into Egypt* (Jubilees 45:6). The restored witness keeps the settling whole — *dwelt in the land of Goshen, the best part of the land of Egypt* — matching *Yashar''el (Israel) dwelt in the land of Egypt, in the country of Goshen* (Genesis 47:27), and keeps the pilgrimage-age of 47:9 in the same breath: *one hundred and thirty years old when he came into Egypt*. The seed planted in the best of the land to grow.'),
+    ('canon','genesis',47,27,'jasher','jasher',55,36,'extras',
+      E'*And Jacob and his sons dwelt in the land of Egypt in the land of Goshen, and they took possession in it, and they were fruitful and multiplied in it* (Jasher 55:36). The extended witness names the multiplying plainly — *they took possession in it, and they were fruitful and multiplied in it* — the very movement of *they had possessions therein, and grew, and multiplied exceedingly* (Genesis 47:27). The house of Jacob, settled in Goshen, becomes a multitude in the land before the bondage.'),
+
+    -- THREAD 4 (★): Bury me not in Egypt — the hope fixed on the land
+    ('canon','genesis',47,29,'canon','genesis',49,29,'free',
+      E'*And he charged them, and said unto them, I am to be gathered unto my people: bury me with my fathers in the cave that is in the field of Ephron the Hittite* (Genesis 49:29). The oath sworn to Joseph — *bury me not, I pray thee, in Egypt: But I will lie with my fathers* (Genesis 47:29-30) — is sealed at the end with the place named: *bury me with my fathers in the cave that is in the field of Ephron the Hittite*, the cave of Machpelah where Abraham, Isaac, Sarah, Rebekah, and Leah lie. The dying patriarch fixes his rest not in Egypt''s plenty but in the land of promise.'),
+    ('canon','genesis',47,30,'canon','genesis',50,24,'free',
+      E'*And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24). Jacob''s charge — *thou shalt carry me out of Egypt, and bury me in their buryingplace* (Genesis 47:30) — is the same hope Joseph takes up at his own death: *Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob*. Father and son alike fix their eyes past Egypt on the sworn land; Egypt is the sojourn, never the home.'),
+    ('canon','genesis',47,31,'canon','genesis',50,25,'free',
+      E'*And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25). As Jacob bound Joseph by oath — *And he said, Swear unto me. And he sware unto him* (Genesis 47:31) — so Joseph binds the children of Yashar''el (Israel): *ye shall carry up my bones from hence*. The burial-oath passes down the seed: each patriarch refuses to let his bones rest in Egypt, the hope of the land carried forward by sworn word from generation to generation.'),
+    ('canon','genesis',47,29,'canon','hebrews',11,22,'free',
+      E'*By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). Hebrews reads the burial-oath as FAITH — the same faith Jacob shows in *bury me not, I pray thee, in Egypt: But I will lie with my fathers* (Genesis 47:29-30). Joseph''s *commandment concerning his bones* is the son''s echo of the father''s charge: both believe the departing out of Egypt is sure, the land of promise the certain inheritance, and order their very burial by that hope.'),
+    ('canon','genesis',47,29,'jasher','jasher',56,3,'extras',
+      E'*And Jacob said to Joseph and to his sons, Behold I die, and the Elohim (God) of your ancestors will visit you, and bring you back to the land, which Yahuah (the Lord) sware to give to you and to your children after you, now therefore when I am dead, bury me in the cave which is in Machpelah in Hebron in the land of Canaan, near my ancestors* (Jasher 56:3). The restored witness keeps the charge and the hope together — *will visit you, and bring you back to the land... bury me in the cave which is in Machpelah* — the very heart of *bury me not, I pray thee, in Egypt: But I will lie with my fathers* (Genesis 47:29-30). The land-hope and the burial-oath are one.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-47-jacob-blessed-pharaoh-the-lesser-blessed-of-the-greater',
+       E'Jacob blessed Pharaoh — the lesser blessed of the greater',
+       E'The famine has driven the house of Jacob out of Canaan, and now the old shepherd — a man whose trade is *an abomination unto the Egyptians* — is brought before the throne of the world''s greatest empire: *And Joseph brought in Jacob his father, and set him before Pharaoh: and Jacob blessed Pharaoh* (Genesis 47:7). And again at the leaving: *And Jacob blessed Pharaoh, and went out from before Pharaoh* (Genesis 47:10). By every measure of the world the order is upside down — the landless supplicant blessing the king who feeds him. But the writer of Hebrews names the principle exactly: *without all contradiction the less is blessed of the better* (Hebrews 7:7); the one who blesses is the greater. And the greater here is the covenant-bearer — *him that had the promises* (Hebrews 7:6) — for in the seed of Abraham the blessing of the nations is carried: *in thee shall all families of the earth be blessed* (Genesis 12:3). Jacob, heir of that word, stands before the greatest family of the earth and blesses its king; the channel of blessing runs from the seed-line outward to the throne, never the reverse. The restored witness keeps the scene plain: *Jacob came and bowed down to Pharaoh, and Jacob blessed Pharaoh, and he then went out* (Jasher 55:25). The lesser by Egypt''s reckoning; the greater by the covenant''s.',
+       sv.verse_id, ev.verse_id, 'extras', 21150
+  FROM _s301_ge47_lookup sv, _s301_ge47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=47 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★) — PURE CANON
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-47-the-days-of-my-pilgrimage-strangers-and-pilgrims',
+       E'The days of my pilgrimage — strangers and pilgrims seeking a better country',
+       E'Pharaoh asks the old man his age, and Jacob answers not with a number alone but with a confession about the whole shape of a life: *The days of the years of my pilgrimage are an hundred and thirty years: few and evil have the days of the years of my life been, and have not attained unto the days of the years of the life of my fathers in the days of their pilgrimage* (Genesis 47:9). His life is a PILGRIMAGE — a sojourning through, not a settling in. Hebrews gathers all the fathers into that one word: *these all died in faith, not having received the promises, but having seen them afar off... and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13), and names what such pilgrims reach toward — *they desire a better country, that is, an heavenly: wherefore Elohim (God) is not ashamed to be called their Elohim (God): for he hath prepared for them a city* (Hebrews 11:16). David sings the same posture from the height of the kingdom: *I am a stranger with thee, and a sojourner, as all my fathers were* (Psalm 39:12); *we are strangers before thee, and sojourners, as were all our fathers: our days on the earth are as a shadow, and there is none abiding* (1 Chronicles 29:15). This is the not-of-this-world hope of the seed: even fed in Goshen, even crowned in Jerusalem, the covenant-people confess themselves pilgrims, their true dwelling not yet come.',
+       sv.verse_id, ev.verse_id, 'free', 21153
+  FROM _s301_ge47_lookup sv, _s301_ge47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=47 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-47-israel-grew-and-multiplied-exceedingly-the-seed-in-the-furnace',
+       E'Israel grew and multiplied exceedingly — the seed in the furnace',
+       E'The chapter closes with a quiet sentence that carries the whole future of the nation: *And Yashar''el (Israel) dwelt in the land of Egypt, in the country of Goshen; and they had possessions therein, and grew, and multiplied exceedingly* (Genesis 47:27). The seed-promise advances inside Egypt — the furnace — long before the Exodus comes. The very word that opens the book of bondage is the flowering of this: *the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* (Exodus 1:7). And that multiplying is the keeping of the oldest promise: *Look now toward heaven, and tell the stars, if thou be able to number them... So shall thy seed be* (Genesis 15:5). What Yahuah (the LORD) swore to Abram in the night begins to flower in the land of affliction — the innumerable seed taking root in Goshen, in the best of the land, before ever the deliverance is called for. The restored witnesses keep it: *Yashar''el (Israel) and his sons dwelt in the land of Goshen, the best part of the land of Egypt* (Jubilees 45:6); *they took possession in it, and they were fruitful and multiplied in it* (Jasher 55:36). The furnace is where the stars begin to be numbered.',
+       sv.verse_id, ev.verse_id, 'extras', 21156
+  FROM _s301_ge47_lookup sv, _s301_ge47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=47 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-47-bury-me-not-in-egypt-the-hope-fixed-on-the-land',
+       E'Bury me not in Egypt — the hope fixed on the land of promise',
+       E'When the time draws near for Jacob to die, he calls Joseph and binds him by the most solemn oath: *put, I pray thee, thy hand under my thigh, and deal kindly and truly with me; bury me not, I pray thee, in Egypt: But I will lie with my fathers, and thou shalt carry me out of Egypt, and bury me in their buryingplace* (Genesis 47:29-30); *And he said, Swear unto me. And he sware unto him* (Genesis 47:31). Egypt has fed him, sheltered him, honoured him — and he will not let his bones rest there. His eyes are fixed past the land of plenty on the land of promise where his fathers lie. He names the place in his last charge: *bury me with my fathers in the cave that is in the field of Ephron the Hittite* (Genesis 49:29), the cave of Machpelah. And the same hope passes to Joseph, who takes up his own oath at the end: *Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24); *ye shall carry up my bones from hence* (Genesis 50:25). Hebrews reads this as faith itself: *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). The restored witness keeps the charge and its hope together: *the Elohim (God) of your ancestors will visit you, and bring you back to the land... bury me in the cave which is in Machpelah* (Jasher 56:3). Egypt was the sojourn; the land sworn to the fathers was the home, and the burial-oath carried that hope, by sworn word, from generation to generation.',
+       sv.verse_id, ev.verse_id, 'extras', 21159
+  FROM _s301_ge47_lookup sv, _s301_ge47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=47 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *without all contradiction the less is blessed of the better* (Hebrews 7:7) — the principle behind 47:7: the landless covenant-bearer blesses the king of Egypt; the greater is the one who blesses.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=7
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-jacob-blessed-pharaoh-the-lesser-blessed-of-the-greater'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*blessed him that had the promises* (Hebrews 7:6) — the blessing flows from the covenant-line; Jacob, heir of the promises, is the one who blesses Pharaoh (47:7).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=7
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-jacob-blessed-pharaoh-the-lesser-blessed-of-the-greater'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *in thee shall all families of the earth be blessed* (Genesis 12:3) — the Abrahamic blessing-to-the-nations working out: the covenant-bearer blesses the king of the earth (47:10).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=10
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-jacob-blessed-pharaoh-the-lesser-blessed-of-the-greater'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Jacob blessed Pharaoh, and he then went out* (Jasher 55:25) — the restored witness keeps the blessing of 47:10 whole.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=10
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=55 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-jacob-blessed-pharaoh-the-lesser-blessed-of-the-greater'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13) — Hebrews gathers all the fathers into Jacob''s *days of the years of my pilgrimage* (47:9).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=9
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-the-days-of-my-pilgrimage-strangers-and-pilgrims'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they desire a better country, that is, an heavenly... he hath prepared for them a city* (Hebrews 11:16) — what the pilgrim of 47:9 reaches toward; the not-of-this-world hope.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=9
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-the-days-of-my-pilgrimage-strangers-and-pilgrims'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I am a stranger with thee, and a sojourner, as all my fathers were* (Psalm 39:12) — David sings the same sojourner-confession Jacob makes before Pharaoh (47:9).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=9
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=39 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-the-days-of-my-pilgrimage-strangers-and-pilgrims'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*we are strangers before thee, and sojourners... our days on the earth are as a shadow* (1 Chronicles 29:15) — David, crowned and settled, owns the same pilgrimage as 47:9.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=9
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=29 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-the-days-of-my-pilgrimage-strangers-and-pilgrims'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied* (Exodus 1:7) — the multiplying of 47:27 flowering into the book of bondage; the seed advancing in the furnace.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=27
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-israel-grew-and-multiplied-exceedingly-the-seed-in-the-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*tell the stars, if thou be able to number them... So shall thy seed be* (Genesis 15:5) — the stars-promise advancing; the multiplying in Goshen (47:27) is the Abrahamic word flowering.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=27
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-israel-grew-and-multiplied-exceedingly-the-seed-in-the-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*dwelt in the land of Goshen, the best part of the land of Egypt* (Jubilees 45:6) — the settling of 47:27 kept whole, with the pilgrimage-age 130 in the same breath.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=27
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=45 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-israel-grew-and-multiplied-exceedingly-the-seed-in-the-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they took possession in it, and they were fruitful and multiplied in it* (Jasher 55:36) — the extended witness names the multiplying of 47:27 plainly.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=27
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=55 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-israel-grew-and-multiplied-exceedingly-the-seed-in-the-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*bury me with my fathers in the cave that is in the field of Ephron the Hittite* (Genesis 49:29) — the place named at the end of the oath of 47:29-30; the cave of Machpelah, not Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=29
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-bury-me-not-in-egypt-the-hope-fixed-on-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware* (Genesis 50:24) — Joseph takes up Jacob''s hope of 47:30; the eyes fixed past Egypt on the sworn land.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=30
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-bury-me-not-in-egypt-the-hope-fixed-on-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*ye shall carry up my bones from hence* (Genesis 50:25) — Joseph binds Yashar''el by the same oath Jacob bound him with (47:31); the burial-hope passing down the seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=31
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-bury-me-not-in-egypt-the-hope-fixed-on-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *By faith Joseph, when he died... gave commandment concerning his bones* (Hebrews 11:22) — Hebrews reads the burial-oath of 47:29-30 as faith; the certain hope of the land.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=29
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-bury-me-not-in-egypt-the-hope-fixed-on-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*will visit you, and bring you back to the land... bury me in the cave which is in Machpelah* (Jasher 56:3) — the restored witness keeps the land-hope and the burial-oath of 47:29-30 together.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=47 AND sv.verse_number=29
+  JOIN _s301_ge47_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=56 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-47-bury-me-not-in-egypt-the-hope-fixed-on-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_48.sql (Genesis 48) -----
+-- Chapter: Genesis 48 — ★★ THE TWO-HOUSE KEYSTONE (Ephraim & Manasseh, the crossed hands): Jacob near death blesses Joseph's two sons. ★ He claims them as his own — *thy two sons... are mine; as Reuben and Simeon, they shall be mine* (48:5), the adoption into full tribal sonship, the double-portion birthright to Joseph; ★ the El Shaddai / Bethel covenant recited — *El Shaddai appeared unto me at Luz... I will make of thee a multitude of people* (48:3-4); ★ the Angel-Redeemer blessing — *the Angel which redeemed me from all evil, bless the lads* (48:16, the Formed-Son theophany, the redeeming Angel who bears the Name, set in apposition with Elohim); ★★ the CROSSED HANDS — Jacob lays his right hand on Ephraim the younger, *guiding his hands wittingly* (48:14,17-19) — and ★★ *his younger brother shall be greater than he, and his seed shall become a multitude of nations* (48:19, melo ha-goyim, the fulness of the nations) — the scattered northern house (Ephraim/Joseph) becoming the fulness of the nations, to be gathered again to Yahudah; ★ the dying faith — *Elohim shall be with you, and bring you again unto the land of your fathers* (48:21).
+-- Tag: ge48   Temp view: _s301_ge48_lookup
+-- Sort band: base 21175, step 3 -> threads at 21175, 21178, 21181, 21184, 21187 (5 threads — keystone, curated)
+-- Source of EVERY row: 'canon','genesis',48,v
+--
+-- Genesis 48 coverage:
+--   ★ v.3-4 (El Shaddai appeared unto me at Luz... I will make of thee a multitude of people; and will give this land to thy seed for an everlasting possession)
+--        NT:     none warranted distinct (the multitude/company-of-nations forward-weave is the two-house regathering, carried by THREAD 1's Romans 11; the covenant-recital here is the TANAKH self-quotation of Gen 28/35)
+--        Extras: Jubilees 45:4 (true is the vision which I saw at Bethel; blessed be Yahuah my Elohim for ever) — THREAD 4 (the deathbed recital of the Bethel/Luz vision kept in the restored witness)
+--        Tanakh: ★★ Genesis 28:3 (El Shaddai bless thee... that thou mayest be a multitude of people) + Genesis 28:19 (he called the name of that place Beth-el: but the name of that city was called Luz at the first); ★★ Genesis 35:11 (I am El Shaddai... a nation and a company of nations shall be of thee) — THREAD 4 (the very promise Jacob recites at the deathbed, the company-of-nations two-house seed reaffirmed)
+--   ★ v.5-6 (thy two sons, Ephraim and Manasseh... are mine; as Reuben and Simeon, they shall be mine — the adoption into full tribal sonship, the double portion to Joseph)
+--        NT:     none warranted distinct (the adoption/double-portion is carried by the Tanakh birthright lateral + the stick-of-Ephraim; no closer NT type)
+--        Extras: Jubilees 45:13 (Yashar'el blessed his sons before he died... and gave to Joseph two portions in the land) — THREAD 2 (the double portion to Joseph kept in the restored witness)
+--        Tanakh: ★★ 1 Chronicles 5:1 (his birthright was given unto the sons of Joseph the son of Yashar'el) + 1 Chronicles 5:2 (the birthright was Joseph's); ★ Ezekiel 37:16 (For Joseph, the stick of Ephraim, and for all the house of Yashar'el his companions) — THREAD 2 (the two sons raised to tribal heads; the birthright/double-portion to Joseph is the seed of the two-house naming)
+--   ★ v.13-14 (Joseph set Ephraim toward Yashar'el's left, Manasseh toward his right; Yashar'el stretched out his right hand and laid it upon Ephraim's head, who was the younger... guiding his hands wittingly)
+--        — the crossing itself; bound into THREAD 1 (the crossed-hands keystone) as its load-bearing anchor.
+--   ★ v.15-16 (Elohim... which fed me all my life long unto this day, The Angel which redeemed me from all evil, bless the lads; let my name be named on them)
+--        NT:     ★ Titus 2:14 (Who gave himself for us, that he might redeem us from all iniquity) — THREAD 3 (the redeeming Angel = the Formed Son who took flesh, the Goel who redeems from all evil)
+--        Extras: none warranted clean (Jubilees/Jasher carry the deathbed blessing as narrative but not the redeeming-Angel apposition; held to the Tanakh theophany laterals)
+--        Tanakh: ★★ Genesis 32:24 (there wrestled a man with him) + Genesis 32:28 (no more Jacob, but Yashar'el) + Genesis 32:30 (I have seen Elohim face to face, and my life is preserved); ★ Genesis 16:10 (the angel of Yahuah said, I will multiply thy seed) + Genesis 16:13 (she called the name of Yahuah that spake unto her, Thou Elohim seest me); ★ Exodus 3:2 (the angel of Yahuah appeared... in a flame of fire) — THREAD 3 (the redeeming Angel who bears the Name, set in apposition with Elohim — the Formed Son, the One who wrestled, appeared, redeemed)
+--   ★★ v.17-19 (it displeased Joseph; Not so, my father, this is the firstborn; his father refused — his younger brother shall be greater than he, and his seed shall become a multitude of nations)
+--        NT:     ★★ Romans 11:25 (blindness in part is happened to Yashar'el, until the fulness of the Gentiles be come in) — THREAD 1 (the melo ha-goyim = the fulness of the nations = scattered Ephraim returning; NEVER replacement, both olive branches Yashar'el)
+--        Extras: none warranted distinct (the crossed-hands prophecy is the canon weave; extras carry the births/blessing narrative only)
+--        Tanakh: ★★ Ezekiel 37:19 (the stick of Joseph, which is in the hand of Ephraim... and make them one stick); ★★ Hosea 1:10 (in the place where it was said, Ye are not my people, there it shall be said, Ye are the sons of the living Elohim); ★ Jeremiah 31:9 (I am a father to Yashar'el, and Ephraim is my firstborn) — THREAD 1 (Ephraim the younger/northern house exalted, the fulness of the nations, scattered and to be gathered to Yahudah)
+--   ★ v.20 (Elohim make thee as Ephraim and as Manasseh: and he set Ephraim before Manasseh)
+--        — the formal setting of Ephraim before Manasseh; bound into THREAD 1's anchor span and summary.
+--   ★ v.21 (Behold, I die: but Elohim shall be with you, and bring you again unto the land of your fathers)
+--        NT:     ★★ Hebrews 11:21 (By faith Jacob, when he was a dying, blessed both the sons of Joseph; and worshipped, leaning upon the top of his staff) — THREAD 5 (the NT's explicit reading of THIS chapter: the dying blessing an act of faith fixed on the promised land)
+--        Extras: Jasher 56:3 (the Elohim of your ancestors will visit you, and bring you back to the land which Yahuah sware to give to you); Jasher 56:21 (bring you out of Egypt and bring you back to the land of your fathers to inherit it) — THREAD 5 (the deathbed hope on the land kept in the restored witness)
+--        Tanakh: none warranted distinct (the dying-faith forward-weave is the Hebrews 11 reading; no closer Tanakh lateral than the covenant-land promise already in THREAD 4)
+--   v.1-2 (Joseph told his father is sick; Yashar'el strengthened himself); v.7 (Rachel died... Beth-lehem); v.8-12 (Who are these? the eyes dim, kissed and embraced, bowed to the earth); v.22 (one portion above thy brethren, the Amorite, sword and bow)
+--        NT: none warranted   Extras: Jasher 55:35 (Ephraim and Manasseh remained constantly in the house of Jacob... to learn the ways of Yahuah and his law) — narrative connective, folded into THREAD 2/5 summaries   Tanakh: none warranted
+--        — narrative connective tissue carried into the bounding threads' summaries; no distinct framework-bearing target forced.
+--
+-- Threads (slug — target libraries):
+--   1. genesis-48-the-crossed-hands-and-a-multitude-of-nations-the-two-house-fulness — NT (Romans 11) + Tanakh (Ezekiel 37, Hosea 1, Jeremiah 31) [free] (★★ Ephraim the younger set first; his seed the fulness of the nations, scattered then gathered to Yahudah) — anchored at the crossing/blessing 48:14-19, NOT the ch41 birth slug
+--   2. genesis-48-thy-two-sons-are-mine-the-adoption-and-the-double-portion — Tanakh (1 Chronicles 5, Ezekiel 37) + Extras (Jubilees) [extras] (★ Ephraim and Manasseh raised to full tribal sonship; the birthright/double-portion to Joseph)
+--   3. genesis-48-the-angel-which-redeemed-me-from-all-evil-the-formed-son — NT (Titus 2) + Tanakh (Genesis 32, Genesis 16, Exodus 3) [free] (★ the redeeming Angel in apposition with Elohim — the Formed Son who bears the Name, wrestled, appeared, redeems)
+--   4. genesis-48-el-shaddai-at-luz-the-company-of-nations — Tanakh (Genesis 28, Genesis 35) + Extras (Jubilees) [extras] (★ the Bethel/Luz covenant recited at the deathbed: I will make of thee a multitude of people)
+--   5. genesis-48-by-faith-jacob-dying-blessed-the-sons-of-joseph — NT (Hebrews 11) + Extras (Jasher) [extras] (★★ the NT's explicit reading of this chapter: the dying blessing an act of faith fixed on the land)
+--
+-- Framing notes:
+--   ★★ THE CROSSED HANDS / A MULTITUDE OF NATIONS (THREAD 1, the load-bearing thread): Jacob *stretched out his right hand, and laid it upon Ephraim's head, who was the younger... guiding his hands wittingly* (48:14), refusing Joseph's correction: *his younger brother shall be greater than he, and his seed shall become a multitude of nations* (48:19). The Hebrew melo ha-goyim — the FULNESS of the nations — is read strictly per Red Line #2: the scattered northern house (Ephraim/Joseph) becoming the multitude/fulness of the nations, to be gathered AGAIN to Yahudah, NEVER replacement-theology "Gentiles instead of Israel." Paul names the same fulness: *blindness in part is happened to Yashar'el (Israel), until the fulness of the Gentiles be come in* (Romans 11:25) — the same scattered Ephraim returning. Ezekiel keeps the stick of Joseph/Ephraim joined to Judah (37:19); Hosea names the scattered as *the sons of the living Elohim* (1:10); Jeremiah names *Ephraim my firstborn* (31:9). Anchored at the crossing (48:14-19), coordinated with — NOT duplicating — the ch41 birth slug genesis-41-manasseh-and-ephraim-the-fruitful-one-the-two-house-seed.
+--   ★ THE ADOPTION / DOUBLE PORTION (THREAD 2): *thy two sons, Ephraim and Manasseh... are mine; as Reuben and Simeon, they shall be mine* (48:5). Joseph's two sons raised to full tribal status — the double-portion birthright forfeited by Reuben and given to Joseph: *his birthright was given unto the sons of Joseph... the birthright was Joseph's* (1 Chronicles 5:1-2). The restored witness keeps it: *gave to Joseph two portions in the land* (Jubilees 45:13). This is the mechanism by which Ephraim becomes a tribal name — the two-house naming begins here.
+--   ★ THE REDEEMING ANGEL (THREAD 3, the Christology load-bearing thread): *The Angel which redeemed me from all evil, bless the lads* (48:16), set in apposition with *the Elohim (God) which fed me all my life long* (48:15). Read through Red Line #4 — the Formed and the Formless: the redeeming Angel who bears the Name, who is invoked to bless as Elohim is invoked, is the Formed Son, the One who wrestled with Jacob (*I have seen Elohim face to face*, Genesis 32:30), who multiplied Hagar's seed (Genesis 16:10), who appeared in the flame (Exodus 3:2) — the Goel who later took flesh and *gave himself for us, that he might redeem us from all iniquity* (Titus 2:14). NEVER a created angel; NEVER co-equal-persons grammar; the Angel-who-redeems is Yahuah's expressed Word, who has a Father.
+--   ★ EL SHADDAI AT LUZ (THREAD 4): *El Shaddai (God Almighty) appeared unto me at Luz in the land of Canaan, and blessed me... I will make of thee a multitude of people* (48:3-4). Jacob recites at the deathbed the very Bethel promise: *El Shaddai (God Almighty) bless thee... that thou mayest be a multitude of people* (Genesis 28:3), at the place *called Luz at the first* (28:19); *I am El Shaddai (God Almighty)... a nation and a company of nations shall be of thee* (Genesis 35:11). The company-of-nations two-house seed reaffirmed; the restored witness keeps the recital — *true is the vision which I saw at Bethel* (Jubilees 45:4).
+--   ★★ BY FAITH JACOB DYING (THREAD 5): the NT reads THIS chapter explicitly — *By faith Jacob, when he was a dying, blessed both the sons of Joseph; and worshipped, leaning upon the top of his staff* (Hebrews 11:21). The dying blessing of 48 is an act of faith, the hope fixed on *Elohim (God) shall be with you, and bring you again unto the land of your fathers* (48:21). The restored witness keeps the deathbed charge on the land: *bring you back to the land which Yahuah (the Lord) sware to give to you* (Jasher 56:3), *bring you back to the land of your fathers to inherit it* (Jasher 56:21).
+--   EXTRAS: Jubilees 45 carries the Jacob-in-Egypt/deathbed clean (45:4 the Bethel vision recited, 45:13 the two portions to Joseph) — DOUBLE-WRITTEN 'jubilees','jubilees'. ⚠ Jubilees 45 has numbering gaps in this parse (no v.7, v.12, v.14; v.6/v.11/v.13 run long) — only the clean discrete verses 45:4 and 45:13 used as members. Jasher 56 carries the deathbed charge on the land (56:3, 56:21) and Jasher 55:35 the two sons learning Torah — DOUBLE-WRITTEN 'jasher','jasher'. The crossed-hands blessing scene itself is NOT carried as a clean discrete witness in Jubilees/Jasher; the keystone weave (THREAD 1) is canon-only by design.
+--   VERSES WITH NO ADD: v.1-2 (Joseph told, Yashar'el strengthened himself — narrative pivot); v.7 (Rachel's death and burial at Beth-lehem — biographical aside, no framework target warranted here); v.8-12 (Who are these? the dim eyes, the kiss, the bowing — narrative); v.22 (the one portion, the Amorite, sword and bow — the Shechem land-parcel, biographical) — connective narrative carried into the bounding threads' summaries, no distinct framework-bearing target forced.
+
+CREATE TEMP VIEW _s301_ge48_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The crossed hands and a multitude of nations — the two-house fulness
+    ('canon','genesis',48,19,'canon','romans',11,25,'free',
+      E'*For I would not, brethren, that ye should be ignorant of this mystery, lest ye should be wise in your own conceits; that blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in* (Romans 11:25). When Jacob refuses Joseph''s hand and says *his younger brother shall be greater than he, and his seed shall become a multitude of nations* (Genesis 48:19), the Hebrew is melo ha-goyim — the fulness of the nations. Paul names that same fulness: not a new people put in place of Yashar''el (Israel), but the scattered northern house — Ephraim grown wild among the Gentiles — coming in, *until the fulness of the Gentiles be come in*; both olive branches are Yashar''el (Israel), the seed of the crossed-hands blessing returning home.'),
+    ('canon','genesis',48,19,'canon','ezekiel',37,19,'free',
+      E'*Say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The younger son set first — *his seed shall become a multitude of nations* (Genesis 48:19) — is the stick of Joseph that is *in the hand of Ephraim*, the scattered northern house. The crossing of Jacob''s hands plants the seed that Ezekiel sees gathered: the two sticks, Joseph and Yahudah (Judah), *made... one stick* in the hand of Yahuah (the Lord).'),
+    ('canon','genesis',48,19,'canon','hosea',1,10,'free',
+      E'*Yet the number of the children of Yashar''el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10). The *multitude of nations* promised to Ephraim''s seed (Genesis 48:19) is the same scattered northern house Hosea names *Lo-ammi* — *not my people* — and then promises restored: *Ye are the sons of the living Elohim (God)*. The fulness of the nations is not strangers grafted in but the divorced house of Ephraim, numberless as the sand, called back to the covenant they were cast out of.'),
+    ('canon','genesis',48,19,'canon','jeremiah',31,9,'free',
+      E'*They shall come with weeping, and with supplications will I lead them: I will cause them to walk by the rivers of waters in a straight way, wherein they shall not stumble: for I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9). Jacob sets Ephraim the younger above Manasseh the firstborn — *his younger brother shall be greater than he* (Genesis 48:19) — and Yahuah (the Lord) seals the reversal: *Ephraim is my firstborn*. The crossed hands name the scattered northern house Yahuah''s own dearest son, led home by the rivers of waters, the multitude of nations gathered back from the coasts of the earth.'),
+
+    -- THREAD 2 (★): Thy two sons are mine — the adoption and the double portion
+    ('canon','genesis',48,5,'canon','1-chronicles',5,1,'free',
+      E'*Now the sons of Reuben the firstborn of Yashar''el (Israel), (for he was the firstborn; but, forasmuch as he defiled his father''s bed, his birthright was given unto the sons of Joseph the son of Yashar''el (Israel): and the genealogy is not to be reckoned after the birthright* (1 Chronicles 5:1). When Jacob says *thy two sons, Ephraim and Manasseh... are mine; as Reuben and Simeon, they shall be mine* (Genesis 48:5), he is moving the birthright: the firstborn Reuben, who *defiled his father''s bed*, loses it, and *his birthright was given unto the sons of Joseph*. The adoption of Joseph''s two sons into full tribal sonship IS the transfer of the double portion of the firstborn to the house of Joseph.'),
+    ('canon','genesis',48,5,'canon','1-chronicles',5,2,'free',
+      E'*For Yahudah (Judah) prevailed above his brethren, and of him came the chief ruler; but the birthright was Joseph''s:)* (1 Chronicles 5:2). The chronicler states plainly what Genesis 48 enacts — *the birthright was Joseph''s* — while *of Yahudah (Judah)... came the chief ruler*. The two houses are set here: the sceptre to Yahudah (Judah), the birthright/double-portion to Joseph, whose two sons *are mine; as Reuben and Simeon* (Genesis 48:5) become two tribes in Joseph''s place. The crossed-hands chapter is the seed of the two-house people.'),
+    ('canon','genesis',48,5,'canon','ezekiel',37,16,'free',
+      E'*Moreover, thou son of Adam, take thee one stick, and write upon it, For Yahudah (Judah), and for the children of Yashar''el (Israel) his companions: then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16). The two sons claimed as Jacob''s own — *are mine; as Reuben and Simeon, they shall be mine* (Genesis 48:5) — become the name of the whole northern house: *Joseph, the stick of Ephraim*. The adoption that makes Ephraim a tribal head is what lets the prophet write a whole nation upon the one stick of Joseph.'),
+    ('canon','genesis',48,5,'jubilees','jubilees',45,13,'extras',
+      E'*And Yashar''el (Israel) blessed his sons before he died and told them everything that would befall them in the land of Egypt; and he made known to them what would come upon them in the last days, and blessed them and gave to Joseph two portions in the land* (Jubilees 45:13). The restored witness keeps the double portion whole — *gave to Joseph two portions in the land* — the very thing Jacob enacts when he claims *thy two sons, Ephraim and Manasseh... are mine; as Reuben and Simeon* (Genesis 48:5). The two portions are the two sons made two tribes: the birthright of the firstborn lodged in the house of Joseph.'),
+
+    -- THREAD 3 (★): The Angel which redeemed me from all evil — the Formed Son
+    ('canon','genesis',48,16,'canon','genesis',32,24,'free',
+      E'*And Jacob was left alone; and there wrestled a man with him until the breaking of the day* (Genesis 32:24). The Angel Jacob invokes to bless the lads — *the Angel which redeemed me from all evil* (Genesis 48:16) — is the Man who wrestled him at Peniel, the One he would not let go *except thou bless me* (32:26). The redeeming Angel of the deathbed is no created messenger but the One who met Jacob face to face and prevailed not against him, the Formed Son who appeared and blessed.'),
+    ('canon','genesis',48,16,'canon','genesis',32,30,'free',
+      E'*And Jacob called the name of the place Peniel: for I have seen Elohim (God) face to face, and my life is preserved* (Genesis 32:30). Jacob names the wrestling Man as Elohim (God) seen *face to face* — and at the deathbed sets *the Angel which redeemed me from all evil* (Genesis 48:16) in the same breath as *the Elohim (God) which fed me all my life long* (48:15). The redeeming Angel and the Elohim are named together because they are the Formed and the Formless: the Angel who bears the Name, whom Jacob saw and lived, is Yahuah''s (the Lord''s) own expressed Word, who has a Father.'),
+    ('canon','genesis',48,16,'canon','genesis',16,10,'free',
+      E'*And the angel of Yahuah (LORD) said unto her, I will multiply thy seed exceedingly, that it shall not be numbered for multitude* (Genesis 16:10). The Angel who *redeemed me from all evil* and over whom Jacob prays *let them grow into a multitude in the midst of the earth* (Genesis 48:16) is the same Angel of Yahuah (the Lord) who speaks to Hagar as Yahuah Himself — *I will multiply thy seed* — the word only Elohim (God) can speak, spoken by the Angel who bears the Name. She *called the name of Yahuah (LORD) that spake unto her* (16:13): the messenger is the One sending.'),
+    ('canon','genesis',48,16,'canon','exodus',3,2,'free',
+      E'*And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed* (Exodus 3:2). The redeeming Angel of Jacob''s blessing (Genesis 48:16) is the same Angel of Yahuah (the Lord) in the flame, who speaks from the bush as *the Elohim (God) of Abraham... of Isaac... of Jacob* (Exodus 3:6) and bears the Name *I AM* (3:14). One Angel runs through the fathers'' story — the One who redeems, who appears, who carries the Name — the Formed Son who would at last take flesh.'),
+    ('canon','genesis',48,16,'canon','titus',2,14,'free',
+      E'*Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works* (Titus 2:14). The Angel Jacob blesses by — *the Angel which redeemed me from all evil* (Genesis 48:16) — is the Goel, the Redeemer, who at the last *gave himself for us, that he might redeem us from all iniquity*. The redeeming Angel of the Tanakh and the One who gave Himself are one: the Formed Son who bore the Name through the fathers'' generations and then took on flesh to redeem a peculiar people from all evil.'),
+
+    -- THREAD 4 (★): El Shaddai at Luz — the company of nations
+    ('canon','genesis',48,4,'canon','genesis',28,3,'free',
+      E'*And El Shaddai (God Almighty) bless thee, and make thee fruitful, and multiply thee, that thou mayest be a multitude of people* (Genesis 28:3). At the deathbed Jacob recites the very blessing he was sent away with — *El Shaddai (God Almighty) appeared unto me at Luz... I will make of thee a multitude of people* (Genesis 48:3-4) — the words Isaac spoke over him: *make thee fruitful, and multiply thee, that thou mayest be a multitude of people*. The company-of-nations promise carried from the leaving to the dying, now poured upon Joseph''s sons.'),
+    ('canon','genesis',48,3,'canon','genesis',28,19,'free',
+      E'*And he called the name of that place Beth-el: but the name of that city was called Luz at the first* (Genesis 28:19). When Jacob says *El Shaddai (God Almighty) appeared unto me at Luz in the land of Canaan, and blessed me* (Genesis 48:3), he names the place of the ladder and the stone — *Luz at the first*, which he called Beth-el, the house of Elohim (God). The deathbed recital reaches back to that night, the covenant given at the gate of heaven now spoken over the lads.'),
+    ('canon','genesis',48,4,'canon','genesis',35,11,'free',
+      E'*And Elohim (God) said unto him, I am El Shaddai (God Almighty): be fruitful and multiply; a nation and a company of nations shall be of thee, and kings shall come out of thy loins* (Genesis 35:11). The multitude Jacob recites — *I will make of thee a multitude of people* (Genesis 48:4) — was spoken again at Bethel as *a nation and a company of nations shall be of thee*. The company-of-nations is the two-house seed: the one nation that would become a multitude, the fulness of the nations the crossed hands set in Ephraim.'),
+    ('canon','genesis',48,3,'jubilees','jubilees',45,4,'extras',
+      E'*It is enough for me that I have seen your face whilst I am yet alive; yea, true is the vision which I saw at Bethel. Blessed be Yahuah my Elohim (the LORD my God) for ever and ever, and blessed be His name* (Jubilees 45:4). The restored witness keeps the deathbed recital of the Bethel vision — *true is the vision which I saw at Bethel* — the same vision Jacob names when he says *El Shaddai (God Almighty) appeared unto me at Luz... and blessed me* (Genesis 48:3). The Luz/Bethel covenant is the ground Jacob stands his dying blessing upon.'),
+
+    -- THREAD 5 (★★): By faith Jacob, dying, blessed the sons of Joseph
+    ('canon','genesis',48,21,'canon','hebrews',11,21,'free',
+      E'*By faith Jacob, when he was a dying, blessed both the sons of Joseph; and worshipped, leaning upon the top of his staff* (Hebrews 11:21). The NT reads this very chapter and names it faith: the dying Jacob who blesses Ephraim and Manasseh and says *Behold, I die: but Elohim (God) shall be with you, and bring you again unto the land of your fathers* (Genesis 48:21) is *Jacob, when he was a dying* who *blessed both the sons of Joseph*. The crossed hands and the promise of the land are an act of faith — the patriarch worshipping over his staff, sure of a homeland he will not see.'),
+    ('canon','genesis',48,21,'jasher','jasher',56,3,'extras',
+      E'*And Jacob said to Joseph and to his sons, Behold I die, and the Elohim (God) of your ancestors will visit you, and bring you back to the land, which Yahuah (the Lord) sware to give to you and to your children after you* (Jasher 56:3). The restored witness keeps the dying charge whole — *Behold I die... bring you back to the land which Yahuah (the Lord) sware to give to you* — the same hope Jacob speaks in *Behold, I die: but Elohim (God) shall be with you, and bring you again unto the land of your fathers* (Genesis 48:21). The deathbed faith is fixed on the land of the covenant, the seed brought home.'),
+    ('canon','genesis',48,21,'jasher','jasher',56,21,'extras',
+      E'*then will Yahuah (the Lord) raise up to you and your children a servant from amongst your children, and Yahuah (the Lord) will deliver you through his hand from all affliction, and bring you out of Egypt and bring you back to the land of your fathers to inherit it securely* (Jasher 56:21). The extended deathbed witness carries Jacob''s hope past Egypt to the deliverer and the inheritance — *bring you back to the land of your fathers to inherit it* — opening the bare promise of *Elohim (God) shall be with you, and bring you again unto the land of your fathers* (Genesis 48:21). The dying blessing looks through the bondage to the redemption and the land.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-48-the-crossed-hands-and-a-multitude-of-nations-the-two-house-fulness',
+       E'The crossed hands and a multitude of nations — the two-house fulness',
+       E'Dim-eyed and near death, Jacob does a deliberate thing: *Yashar''el (Israel) stretched out his right hand, and laid it upon Ephraim''s head, who was the younger, and his left hand upon Manasseh''s head, guiding his hands wittingly; for Manasseh was the firstborn* (Genesis 48:14). When Joseph tries to correct him — *Not so, my father: for this is the firstborn* (48:18) — the old man refuses: *I know it, my son, I know it: he also shall become a people, and he also shall be great: but truly his younger brother shall be greater than he, and his seed shall become a multitude of nations* (Genesis 48:19); *and he set Ephraim before Manasseh* (48:20). The Hebrew of that promise is melo ha-goyim — the FULNESS of the nations. This is the two-house seed planted: Ephraim, the younger, the northern house, set above his brother and made the multitude of the nations. Paul names that same fulness as a mystery: *blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in* (Romans 11:25) — not a new people put in Israel''s place, but the scattered house of Ephraim, grown wild among the nations, coming home; *both olive branches are Yashar''el (Israel)*. The prophets carry the crossing to its end. Ezekiel sees the two sticks: *the stick of Joseph, which is in the hand of Ephraim... and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). Hosea names the scattered northern house *Lo-ammi*, not my people, and then restored: *in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10). And Yahuah (the Lord) seals the reversal of the crossed hands — the younger above the firstborn: *I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9). The fulness of the nations is not strangers grafted in but the divorced house of Joseph, numberless as the sand, gathered back to Yahudah (Judah) and made one. The seed is in Jacob''s crossed hands.',
+       sv.verse_id, ev.verse_id, 'free', 21175
+  FROM _s301_ge48_lookup sv, _s301_ge48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=48 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-48-thy-two-sons-are-mine-the-adoption-and-the-double-portion',
+       E'Thy two sons are mine — the adoption and the double portion',
+       E'Before he blesses them, Jacob does something no grandfather does: he adopts his son''s two boys as his own sons. *And now thy two sons, Ephraim and Manasseh, which were born unto thee in the land of Egypt before I came unto thee into Egypt, are mine; as Reuben and Simeon, they shall be mine* (Genesis 48:5). Ephraim and Manasseh are lifted from grandsons to tribal heads, ranked beside Jacob''s own firstborn and second-born. This is the moving of the birthright — the double portion of the firstborn, forfeited by Reuben and given to Joseph. The chronicler states it plainly: *forasmuch as he defiled his father''s bed, his birthright was given unto the sons of Joseph the son of Yashar''el (Israel)* (1 Chronicles 5:1); *but the birthright was Joseph''s* (5:2) — even as *Yahudah (Judah) prevailed above his brethren, and of him came the chief ruler*. Here the two houses are set: the sceptre to Yahudah (Judah), the birthright and double portion to Joseph, whose two sons become two tribes in his place. The restored witness keeps it whole: *blessed them and gave to Joseph two portions in the land* (Jubilees 45:13). And this adoption is what lets the prophet, generations later, write a whole nation upon a single stick: *For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16). The two sons claimed as Jacob''s own (48:5) are the seed of the two-house people; Ephraim is a tribal name because Jacob made it one.',
+       sv.verse_id, ev.verse_id, 'extras', 21178
+  FROM _s301_ge48_lookup sv, _s301_ge48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=48 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-48-the-angel-which-redeemed-me-from-all-evil-the-formed-son',
+       E'The Angel which redeemed me from all evil — the Formed Son',
+       E'When Jacob lays his hands on the lads, he names the One he blesses by — and he names Him twice, as Elohim (God) and as the Angel, in a single breath: *Elohim (God), before whom my fathers Abraham and Isaac did walk, the Elohim (God) which fed me all my life long unto this day, The Angel which redeemed me from all evil, bless the lads* (Genesis 48:15-16). The Angel who redeems is invoked to bless exactly as Elohim (God) is invoked — the Formed and the Formless named together, for they are one and the redeeming Angel bears the Name. This is the Man who wrestled Jacob at Peniel: *there wrestled a man with him until the breaking of the day* (Genesis 32:24), of whom Jacob said *I have seen Elohim (God) face to face, and my life is preserved* (Genesis 32:30). It is the Angel of Yahuah (the Lord) who spoke to Hagar as Yahuah Himself — *I will multiply thy seed exceedingly* (Genesis 16:10), so that *she called the name of Yahuah (LORD) that spake unto her* (16:13) — the messenger who is the One sending. It is the Angel in the flame who carried the Name *I AM*: *the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush* (Exodus 3:2). One redeeming Angel runs through the fathers'' generations, who appears, who blesses, who bears the Name — the Goel who at the last *gave himself for us, that he might redeem us from all iniquity* (Titus 2:14). The Angel which redeemed Jacob from all evil and the One who gave Himself are one: the Formed Son, Yahuah''s (the Lord''s) expressed Word, who has a Father, and who would take on flesh to redeem.',
+       sv.verse_id, ev.verse_id, 'free', 21181
+  FROM _s301_ge48_lookup sv, _s301_ge48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=48 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-48-el-shaddai-at-luz-the-company-of-nations',
+       E'El Shaddai at Luz — the company of nations',
+       E'Jacob grounds the whole deathbed blessing on a covenant given decades before, and he recites it word for word: *El Shaddai (God Almighty) appeared unto me at Luz in the land of Canaan, and blessed me, And said unto me, Behold, I will make thee fruitful, and multiply thee, and I will make of thee a multitude of people; and will give this land to thy seed after thee for an everlasting possession* (Genesis 48:3-4). This is the promise of the ladder-night. The very words were spoken over him by Isaac as he was sent away: *And El Shaddai (God Almighty) bless thee, and make thee fruitful, and multiply thee, that thou mayest be a multitude of people* (Genesis 28:3) — at the place *called Luz at the first*, which Jacob named Beth-el (28:19). And Elohim (God) spoke it again at that same Bethel: *I am El Shaddai (God Almighty): be fruitful and multiply; a nation and a company of nations shall be of thee, and kings shall come out of thy loins* (Genesis 35:11). The multitude, the *company of nations*, is the two-house seed — the one nation that becomes a fulness of nations, the very thing the crossed hands will set in Ephraim a few verses later. The restored witness keeps the deathbed recital of the vision: *true is the vision which I saw at Bethel. Blessed be Yahuah my Elohim (the LORD my God) for ever and ever* (Jubilees 45:4). The Luz/Bethel covenant of El Shaddai is the ground Jacob stands his dying blessing upon: the land for an everlasting possession, the seed made a multitude of nations.',
+       sv.verse_id, ev.verse_id, 'extras', 21184
+  FROM _s301_ge48_lookup sv, _s301_ge48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=48 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-48-by-faith-jacob-dying-blessed-the-sons-of-joseph',
+       E'By faith Jacob, dying, blessed the sons of Joseph',
+       E'The whole chapter has a name in the New Testament, and the name is faith. Of the long roll of the faithful, the Spirit picks out this exact deathbed scene: *By faith Jacob, when he was a dying, blessed both the sons of Joseph; and worshipped, leaning upon the top of his staff* (Hebrews 11:21). The blessing of Ephraim and Manasseh, the crossed hands, the promise of the land — all of it is read as the act of a man trusting a homeland he will never enter. For Jacob ends the blessing fixed on that hope: *And Yashar''el (Israel) said unto Joseph, Behold, I die: but Elohim (God) shall be with you, and bring you again unto the land of your fathers* (Genesis 48:21). He will die in Egypt, but his confidence is on the land of the covenant and the seed brought home. The restored witness keeps the dying charge whole: *Behold I die, and the Elohim (God) of your ancestors will visit you, and bring you back to the land, which Yahuah (the Lord) sware to give to you and to your children after you* (Jasher 56:3); and it looks through the coming bondage to the deliverer — *bring you out of Egypt and bring you back to the land of your fathers to inherit it securely* (Jasher 56:21). The patriarch worshipping over his staff sees past his own death to the visitation, the exodus, and the inheritance: the dying blessing is faith with its eyes on the promise.',
+       sv.verse_id, ev.verse_id, 'extras', 21187
+  FROM _s301_ge48_lookup sv, _s301_ge48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=48 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in* (Romans 11:25) — the melo ha-goyim of 48:19: scattered Ephraim, not a new people, coming home; both olive branches Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=19
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-the-crossed-hands-and-a-multitude-of-nations-the-two-house-fulness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the stick of Joseph, which is in the hand of Ephraim... and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19) — the seed of 48:19 gathered: the two sticks, Joseph and Yahudah, made one.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=19
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-the-crossed-hands-and-a-multitude-of-nations-the-two-house-fulness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*in the place where it was said... Ye are not my people, there it shall be said... Ye are the sons of the living Elohim (God)* (Hosea 1:10) — the multitude of 48:19 is scattered Ephraim (Lo-ammi) restored, numberless as the sand.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=19
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-the-crossed-hands-and-a-multitude-of-nations-the-two-house-fulness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9) — Yahuah seals the crossed-hands reversal of 48:19: the younger above the firstborn, Ephraim made the dearest son.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=19
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-the-crossed-hands-and-a-multitude-of-nations-the-two-house-fulness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *his birthright was given unto the sons of Joseph the son of Yashar''el (Israel)* (1 Chronicles 5:1) — the adoption of 48:5 is the moving of the firstborn''s double portion: Reuben forfeits, Joseph receives.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=5
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-thy-two-sons-are-mine-the-adoption-and-the-double-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahudah (Judah) prevailed above his brethren... but the birthright was Joseph''s* (1 Chronicles 5:2) — the two houses set: the sceptre to Yahudah, the double-portion birthright to Joseph (48:5).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=5
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-thy-two-sons-are-mine-the-adoption-and-the-double-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16) — the adoption that makes Ephraim a tribal head (48:5) lets a whole nation be written upon Joseph''s stick.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=5
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-thy-two-sons-are-mine-the-adoption-and-the-double-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*blessed them and gave to Joseph two portions in the land* (Jubilees 45:13) — the double portion of 48:5 kept whole in the restored witness: two sons made two tribes.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=5
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=45 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-thy-two-sons-are-mine-the-adoption-and-the-double-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*there wrestled a man with him until the breaking of the day* (Genesis 32:24) — the redeeming Angel of 48:16 is the Man Jacob would not let go except he bless him.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=16
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-the-angel-which-redeemed-me-from-all-evil-the-formed-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I have seen Elohim (God) face to face, and my life is preserved* (Genesis 32:30) — Jacob named the wrestling Man as Elohim; the Angel and the Elohim of 48:15-16 are the Formed and the Formless, named together.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=16
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-the-angel-which-redeemed-me-from-all-evil-the-formed-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the angel of Yahuah (LORD) said... I will multiply thy seed exceedingly* (Genesis 16:10) — the Angel speaks as Yahuah Himself, as the redeeming Angel of 48:16 is invoked to make the lads a multitude; she called His name Yahuah (16:13).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=16
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=16 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-the-angel-which-redeemed-me-from-all-evil-the-formed-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush* (Exodus 3:2) — the same Angel who bears the Name I AM, the One who redeems (48:16) running through the fathers'' story.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=16
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-the-angel-which-redeemed-me-from-all-evil-the-formed-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Who gave himself for us, that he might redeem us from all iniquity* (Titus 2:14) — the Angel which redeemed Jacob from all evil (48:16) is the Goel who at the last gave himself: the Formed Son who took flesh to redeem.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=16
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='titus' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-the-angel-which-redeemed-me-from-all-evil-the-formed-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*El Shaddai (God Almighty) bless thee... that thou mayest be a multitude of people* (Genesis 28:3) — the very blessing Jacob recites at the deathbed (48:3-4), the words Isaac sent him away with.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=4
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-el-shaddai-at-luz-the-company-of-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he called the name of that place Beth-el: but the name of that city was called Luz at the first* (Genesis 28:19) — the Luz Jacob names in 48:3 is the place of the ladder, the house of Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=3
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-el-shaddai-at-luz-the-company-of-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I am El Shaddai (God Almighty)... a nation and a company of nations shall be of thee* (Genesis 35:11) — the multitude of 48:4 is the company of nations, the two-house seed the crossed hands set in Ephraim.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=4
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-el-shaddai-at-luz-the-company-of-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*true is the vision which I saw at Bethel. Blessed be Yahuah my Elohim (the LORD my God) for ever* (Jubilees 45:4) — the deathbed recital of the Bethel/Luz vision (48:3) kept in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=3
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=45 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-el-shaddai-at-luz-the-company-of-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *By faith Jacob, when he was a dying, blessed both the sons of Joseph; and worshipped, leaning upon the top of his staff* (Hebrews 11:21) — the NT''s explicit reading of THIS chapter: the dying blessing (48:15,21) an act of faith fixed on the land.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=21
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-by-faith-jacob-dying-blessed-the-sons-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Behold I die... the Elohim of your ancestors will visit you, and bring you back to the land, which Yahuah sware to give to you* (Jasher 56:3) — the dying charge of 48:21 kept whole, fixed on the covenant land.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=21
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=56 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-by-faith-jacob-dying-blessed-the-sons-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*bring you out of Egypt and bring you back to the land of your fathers to inherit it securely* (Jasher 56:21) — the deathbed hope of 48:21 looking through the bondage to the deliverer and the inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=48 AND sv.verse_number=21
+  JOIN _s301_ge48_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=56 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-48-by-faith-jacob-dying-blessed-the-sons-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_49.sql (Genesis 49) -----
+-- Chapter: Genesis 49 — ★★★ THE TRIBAL-BLESSINGS KEYSTONE: Jacob gathers his twelve sons to tell them *that which shall befall you in the last days* (49:1) and prophesies over each tribe — the whole two-house tribal map and the Messianic scepter are here. Reuben loses the birthright (defiled the bed); Simeon and Levi are scattered (the Shechem vengeance judged); ★★★ JUDAH receives the scepter — *the sceptre shall not depart from Yahudah... until Shiloh come; and unto him shall the gathering of the people be* (49:10), the lion of the tribe (49:9), the foal bound to the vine, the garments washed in the blood of grapes (49:11); the lesser tribes (Zebulun, Issachar, Dan, Gad, Asher, Naphtali, Benjamin) each receive their word; ★ Jacob's interjection *I have waited for thy salvation, O Yahuah* (49:18); ★ JOSEPH the fruitful bough whose branches run over the wall, his bow made strong by El Gibbor — *from thence is the shepherd, the stone of Yashar'el* (49:24), the blessings of heaven above on the head of him that was separate from his brethren (49:25-26); the charge to bury him in Machpelah (49:29-32); Jacob yields up the ghost (49:33).
+-- Tag: ge49   Temp view: _s301_ge49_lookup
+-- Sort band: base 21200, step 3 -> threads at 21200, 21203, 21206, 21209, 21212, 21215, 21218 (7 threads — ★★★ keystone, curated)
+-- Source of EVERY row: 'canon','genesis',49,v
+--
+-- Genesis 49 coverage:
+--   ★ v.1,28 (Gather... that I may tell you that which shall befall you in the last days; All these are the twelve tribes of Yashar'el)
+--        NT:     ★ Revelation 7:4 (sealed an hundred and forty and four thousand of all the tribes of the children of Yashar'el); James 1:1 (to the twelve tribes which are scattered abroad) — THREAD 7
+--        Extras: Jubilees 45:13 (blessed his sons... made known to them what would come upon them in the last days, and gave to Joseph two portions); Jasher 56:20 (many and grievous troubles will befall you in the latter days) — THREAD 7
+--        Tanakh: carried by the per-tribe threads; the twelve-tribe frame held to THREAD 7
+--   v.3-4 (Reuben... Unstable as water, thou shalt not excel; because thou wentest up to thy father's bed)
+--        NT:     none warranted (the forfeiture/birthright-transfer is a Tanakh structural matter; carried to THREAD 3)
+--        Extras: none warranted distinct (Jasher/Jubilees narrate the death-bed but add no framework weight on Reuben's forfeit)
+--        Tanakh: ★★ 1 Chronicles 5:1 (his birthright was given unto the sons of Joseph); 1 Chronicles 5:2 (Yahudah prevailed... of him came the chief ruler; but the birthright was Joseph's) — THREAD 3 (the two-house split named: birthright north to Joseph, scepter south to Judah)
+--   v.5-7 (Simeon and Levi... instruments of cruelty... Cursed be their anger... I will divide them in Jacob, and scatter them in Yashar'el)
+--        NT:     none warranted (the conduct-judged-not-the-blood is a Tanakh matter; held to THREAD 4)
+--        Extras: none warranted distinct
+--        Tanakh: ★ Deuteronomy 33:9-10 (Levi... observed thy word, and kept thy covenant... shall teach Jacob thy judgments); Numbers 25:11-12 (Phinehas... zealous for my sake... I give unto him my covenant of peace) — THREAD 4 (the scattering is conduct judged; Levi's later zeal redeems the same house to the priesthood — the curse on the anger, not on the blood)
+--   ★★★ v.8-12 (Yahudah, thou art he whom thy brethren shall praise; a lion's whelp; the sceptre shall not depart from Yahudah... until Shiloh come; the foal bound to the vine, the garments washed in the blood of grapes)
+--        NT:     ★★★ Revelation 5:5 (the Lion of the tribe of Juda, the Root of David, hath prevailed); Hebrews 7:14 (our Lord sprang out of Juda); Matthew 1:2 (Jacob begat Judas and his brethren) — THREAD 1
+--        Extras: ★★ Numbers 24:17 (there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar'el) is CANON Tanakh; Jasher 56:8 (Jacob said to Judah... reign over them, and your sons shall reign over their sons forever) — THREAD 1
+--        Tanakh: ★★ Numbers 24:9 (He couched, he lay down as a lion... who shall stir him up?) — the lion of Judah read forward by Balaam — THREAD 1; Numbers 24:17 the Sceptre out of Jacob — THREAD 1
+--   ★★★ v.10b (and unto him shall the gathering of the people be) — the ingathering to Shiloh
+--        NT:     ★★ John 11:52 (gather together in one the children of Elohim that were scattered abroad); Matthew 1:2 carried to THREAD 1
+--        Extras: none warranted distinct (the gathering weave is the canon Isaiah/John)
+--        Tanakh: ★★ Isaiah 11:10 (a root of Jesse... an ensign of the people; to it shall the Gentiles seek); Isaiah 11:12 (assemble the outcasts of Yashar'el, and gather together the dispersed of Yahudah) — THREAD 2 (the gathering to Shiloh = the two-house regathering, both houses to the One whose right it is)
+--   v.13-17,19-21,27 (Zebulun; Issachar; Dan; Gad, Asher, Naphtali; Benjamin)
+--        NT: none warranted distinct (the lesser tribes' words carry no separate framework node closer than the twelve-tribe frame)   Extras: none   Tanakh: none warranted distinct
+--        — the lesser-tribe oracles are bundled into THREAD 7's twelve-tribe frame summary; no thread per minor tribe, per the brief's curation rule.
+--   ★ v.18 (I have waited for thy salvation, O Yahuah)
+--        NT:     ★ Luke 2:30 (For mine eyes have seen thy salvation) — THREAD 5
+--        Extras: ★ Jasher 56:21 (then will Yahuah raise up to you and your children a servant... and Yahuah will deliver you through his hand from all affliction) — THREAD 5
+--        Tanakh: carried in the source/summary (the yeshuah-hope breaking into the oracle); the forward weave is Luke 2
+--   ★ v.22-26 (Joseph is a fruitful bough... whose branches run over the wall; his bow abode in strength... from thence is the shepherd, the stone of Yashar'el; blessings of heaven above... on the head of him that was separate from his brethren)
+--        NT:     ★★ 1 Peter 2:6 (Behold, I lay in Sion a chief corner stone, elect, precious); 1 Peter 2:7 (the stone which the builders disallowed, the same is made the head of the corner); 1 Peter 2:25 (now returned unto the Shepherd and Bishop of your souls) — THREAD 6
+--        Extras: none warranted distinct (the Shepherd/Stone forward weave is the canon Psalms + 1 Peter)
+--        Tanakh: ★★ Psalms 80:1 (O Shepherd of Yashar'el, thou that leadest Joseph like a flock); Psalms 118:22 (The stone which the builders refused is become the head stone of the corner); 1 Chronicles 5:1 (the birthright was given unto the sons of Joseph) — THREAD 6 (the Shepherd, the Stone of Yashar'el; Joseph the fruitful bough = the scattered northern house, double-portion firstborn)
+--   v.29-33 (the charge to bury in Machpelah; Jacob yielded up the ghost, and was gathered unto his people)
+--        NT: none warranted   Extras: Jasher 56:3-4,10 (bury me in the cave of Machpelah); Jubilees 45:15 (buried in the double cave in the land of Canaan) — narrative, carried into THREAD 7's summary, no distinct framework node forced   Tanakh: none warranted distinct
+--
+-- Threads (slug — target libraries):
+--   1. genesis-49-the-sceptre-shall-not-depart-from-judah-until-shiloh-come — NT (Revelation 5, Hebrews 7, Matthew 1) + Tanakh (Numbers 24) + Extras (Jasher) [extras] (★★★ THE keystone: the kingship fixed in Judah until Shiloh comes; the Lion, the Star/Sceptre out of Jacob)
+--   2. genesis-49-and-unto-him-shall-the-gathering-of-the-people-be — Tanakh (Isaiah 11) + NT (John 11, Matthew 1) [free] (★★ the gathering to Shiloh = the two-house ingathering, both houses to the One whose right it is)
+--   3. genesis-49-reubens-forfeit-the-birthright-to-joseph-the-scepter-to-judah — Tanakh (1 Chronicles 5) [free] (★★ the two-house split: birthright north to Joseph, scepter south to Judah — the structure of the whole oracle)
+--   4. genesis-49-simeon-and-levi-scattered-the-conduct-judged-not-the-blood — Tanakh (Deuteronomy 33, Numbers 25) [free] (★ the scattering is conduct judged; Levi's later zeal redeems the house to the priesthood)
+--   5. genesis-49-i-have-waited-for-thy-salvation-o-yahuah — NT (Luke 2) + Extras (Jasher) [extras] (★ the patriarch's cry for Yahuah's yeshuah breaking into the tribal oracle)
+--   6. genesis-49-joseph-the-fruitful-bough-the-shepherd-the-stone-of-yasharel — NT (1 Peter 2) + Tanakh (Psalms 80, Psalms 118, 1 Chronicles 5) [free] (★ the northern-house firstborn-blessing; the Shepherd, the Stone of Yashar'el)
+--   7. genesis-49-the-twelve-tribes-and-that-which-shall-befall-in-the-last-days — NT (Revelation 7, James 1) + Extras (Jubilees, Jasher) [extras] (the whole oracle as the two-house tribal destiny map; the twelve tribes sealed and scattered, gathered in the last days)
+--
+-- Framing notes:
+--   ★★★ THE SCEPTER & SHILOH (THREAD 1): *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (49:10). The kingship is fixed in Judah's line until Shiloh — the One whose right it is, the peacebringer — comes. Read forward strictly through the Formed-and-Formless lens (Red Line #4,#5): the Formed Son took flesh of the tribe of Judah, *our Lord sprang out of Juda* (Hebrews 7:14); He is *the Lion of the tribe of Juda, the Root of David, hath prevailed* (Revelation 5:5); the lion's whelp of 49:9 read by Balaam — *He couched, he lay down as a lion... who shall stir him up?* (Numbers 24:9) — and the Sceptre itself — *there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar'el* (Numbers 24:17). NEVER a co-equal-persons collapse; the scepter is the kingship of Judah's bloodline-and-covenant carried to the One the Most High raised. Jasher keeps Jacob's word to Judah whole: *reign over them, and your sons shall reign over their sons forever* (Jasher 56:8).
+--   ★★ THE GATHERING TO SHILOH (THREAD 2): *and unto him shall the gathering of the people be* (49:10b) is the two-house ingathering (Red Line #2). Isaiah names both houses gathered to the root of Jesse: *a root of Jesse, which shall stand for an ensign of the people* (Isaiah 11:10), *assemble the outcasts of Yashar'el (Israel), and gather together the dispersed of Yahudah (Judah)* (Isaiah 11:12). John reads the same gathering: *that also he should gather together in one the children of Elohim (God) that were scattered abroad* (John 11:52). The gathering of the people to Shiloh is the scattered two-house people made one. CANON-ONLY thread (tier 'free').
+--   ★★ REUBEN'S FORFEIT / THE TWO-HOUSE SPLIT (THREAD 3): *Reuben... Unstable as water, thou shalt not excel; because thou wentest up to thy father's bed* (49:3-4). The Chronicler names exactly what this forfeiture sets in motion — the two-house structure of the whole oracle: *his birthright was given unto the sons of Joseph* (1 Chronicles 5:1); *For Yahudah (Judah) prevailed above his brethren, and of him came the chief ruler; but the birthright was Joseph's* (1 Chronicles 5:2). The birthright (the double-portion, the firstborn-blessing) goes north to Joseph; the scepter (the chief ruler) goes south to Judah. This IS the two-house map: why Joseph=fruitful-bough-north and Judah=scepter-south. CANON-ONLY thread.
+--   ★ SIMEON & LEVI SCATTERED (THREAD 4): *Cursed be their anger, for it was fierce... I will divide them in Jacob, and scatter them in Yashar'el (Israel)* (49:7). The curse is on the ANGER, the conduct — the Dinah/Shechem vengeance (Genesis 34) — never on the blood (Red Line #7). And the same house of Levi, scattered here, is later redeemed by zeal: *Phinehas... was zealous for my sake among them... I give unto him my covenant of peace* (Numbers 25:11-12), and Levi *observed thy word, and kept thy covenant... shall teach Jacob thy judgments, and Yashar'el (Israel) thy law* (Deuteronomy 33:9-10). The scattering becomes the priesthood distributed through the land — judgment turned to service. CANON-ONLY thread.
+--   ★ I HAVE WAITED FOR THY SALVATION (THREAD 5): *I have waited for thy salvation, O Yahuah (LORD)* (49:18) — the patriarch's cry for Yahuah's yeshuah breaks into the tribal oracle at Dan. Simeon's *mine eyes have seen thy salvation* (Luke 2:30) is the same hope at last beheld; and Jasher keeps Jacob's confidence whole — *then will Yahuah (the Lord) raise up to you and your children a servant... and Yahuah (the Lord) will deliver you through his hand from all affliction* (Jasher 56:21). A short jewel: the salvation/Yeshuah hope amid the tribal future.
+--   ★ JOSEPH — THE FRUITFUL BOUGH, THE SHEPHERD, THE STONE (THREAD 6): *Joseph is a fruitful bough... whose branches run over the wall* (49:22) — the scattered northern house overrunning the wall into the nations (Red Line #2). *from thence is the shepherd, the stone of Yashar'el (Israel)* (49:24): the Shepherd — *O Shepherd of Yashar'el (Israel), thou that leadest Joseph like a flock* (Psalms 80:1), fulfilled in the returning to *the Shepherd and Bishop of your souls* (1 Peter 2:25); the Stone — *The stone which the builders refused is become the head stone of the corner* (Psalms 118:22), *Behold, I lay in Sion a chief corner stone, elect, precious* (1 Peter 2:6). The northern-house firstborn-blessing (the birthright of 1 Chronicles 5:1) crowns *him that was separate from his brethren* (49:26). CANON-ONLY thread.
+--   THE TWELVE TRIBES / THE LAST DAYS (THREAD 7): *that which shall befall you in the last days* (49:1); *All these are the twelve tribes of Yashar'el (Israel)* (49:28). The whole oracle is the two-house tribal destiny map, carried to the end: the twelve tribes sealed — *there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar'el (Israel)* (Revelation 7:4) — and scattered — *to the twelve tribes which are scattered abroad* (James 1:1). The restored witnesses keep the death-bed last-days frame: *made known to them what would come upon them in the last days, and gave to Joseph two portions* (Jubilees 45:13), *many and grievous troubles will befall you in the latter days* (Jasher 56:20). EXTRAS DOUBLE-WRITTEN 'jubilees','jubilees' and 'jasher','jasher'. The lesser-tribe oracles (Zebulun, Issachar, Dan, Gad, Asher, Naphtali, Benjamin) and the Machpelah burial charge (49:29-33) are carried into this frame, no thread per minor tribe.
+--   VERSES WITH NO DISTINCT ADD: v.13-17,19-21,27 (the lesser tribes — Zebulun's haven, Issachar's burden, Dan's serpent, Gad/Asher/Naphtali, Benjamin's wolf — no framework node closer than the twelve-tribe frame, bundled into THREAD 7); v.29-33 (the Machpelah burial charge and Jacob's death — narrative, carried into THREAD 7's summary with Jasher 56 / Jubilees 45 as connective tissue, no distinct framework-bearing target forced).
+
+CREATE TEMP VIEW _s301_ge49_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): The sceptre shall not depart from Judah, until Shiloh come
+    ('canon','genesis',49,10,'canon','revelation',5,5,'free',
+      E'*And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof* (Revelation 5:5). The scepter fixed in Judah — *The sceptre shall not depart from Yahudah (Judah)... until Shiloh come* (Genesis 49:10) — and the lion of the tribe — *Yahudah (Judah) is a lion''s whelp... who shall rouse him up?* (49:9) — are gathered into the One who *hath prevailed*: the Lion of the tribe of Juda, the Root of David. The kingship of Judah''s line is carried to the Formed Son who took flesh of that tribe; the scepter does not depart, it comes to rest in Shiloh.'),
+    ('canon','genesis',49,9,'canon','numbers',24,9,'free',
+      E'*He couched, he lay down as a lion, and as a great lion: who shall stir him up? Blessed is he that blesseth thee, and cursed is he that curseth thee* (Numbers 24:9). Balaam, compelled to bless, takes up Jacob''s own image of Judah — *he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* (Genesis 49:9). The lion of the tribe is read forward by the prophet on the hill of Moab: the couched lion none dares stir, the kingly strength of the seed Yahuah (the Lord) will not let be cursed.'),
+    ('canon','genesis',49,10,'canon','numbers',24,17,'free',
+      E'*I shall see him, but not now: I shall behold him, but not nigh: there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar''el (Israel), and shall smite the corners of Moab, and destroy all the children of Sheth* (Numbers 24:17). The very Sceptre of *The sceptre shall not depart from Yahudah (Judah)* (Genesis 49:10) rises again in Balaam''s last oracle — *a Star out of Jacob, and a Sceptre shall rise out of Yashar''el (Israel)*. The kingly rod fixed in Judah at the death-bed is seen from afar by the prophet: the One whose right it is, the ruler out of Jacob, the same scepter the patriarch named.'),
+    ('canon','genesis',49,10,'canon','hebrews',7,14,'free',
+      E'*For it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood* (Hebrews 7:14). The scepter that *shall not depart from Yahudah (Judah)* (Genesis 49:10) is fulfilled in the One of whom it is *evident that our Lord sprang out of Juda*. The Formed Son took flesh of the very tribe the patriarch crowned; the kingly line of Judah is no abstraction but the bloodline-and-covenant through which the Shiloh came.'),
+    ('canon','genesis',49,8,'canon','matthew',1,2,'free',
+      E'*Abraham begat Isaac; and Isaac begat Jacob; and Jacob begat Judas and his brethren* (Matthew 1:2). The genealogy of the Messiah runs straight through the son Jacob praises — *Yahudah (Judah), thou art he whom thy brethren shall praise... thy father''s children shall bow down before thee* (Genesis 49:8). The first generations of the book of the generation set Judah at the head among the brethren, the tribe the scepter would never leave until Shiloh came.'),
+    ('canon','genesis',49,10,'jasher','jasher',56,8,'extras',
+      E'*And Jacob said to Judah, I know my son that you are a mighty man for your brethren; reign over them, and your sons shall reign over their sons forever* (Jasher 56:8). The extended witness lets Jacob speak the scepter plainly to Judah''s face — *reign over them, and your sons shall reign over their sons forever* — the same fixing of the kingship the canon gives as *The sceptre shall not depart from Yahudah (Judah)* (Genesis 49:10). The rule set in Judah''s house forever, until the One whose right it is comes to it.'),
+
+    -- THREAD 2 (★★): And unto him shall the gathering of the people be (the two-house ingathering)
+    ('canon','genesis',49,10,'canon','isaiah',11,10,'free',
+      E'*And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious* (Isaiah 11:10). The promise *unto him shall the gathering of the people be* (Genesis 49:10) is opened by Isaiah: the root of Jesse — of Judah''s royal house — set up *for an ensign of the people*, to which the nations gather. The gathering to Shiloh is the standard lifted up to draw the scattered home.'),
+    ('canon','genesis',49,10,'canon','isaiah',11,12,'free',
+      E'*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). *The gathering of the people* unto Shiloh (Genesis 49:10) is named here in its two-house fulness: not one house but both — *the outcasts of Yashar''el (Israel)* and *the dispersed of Yahudah (Judah)* — assembled from the four corners. The One whose right it is gathers the divorced northern house and the scattered southern house into one.'),
+    ('canon','genesis',49,10,'canon','john',11,52,'free',
+      E'*And not for that nation only, but that also he should gather together in one the children of Elohim (God) that were scattered abroad* (John 11:52). Caiaphas prophesies more than he knows: the death of the One out of Judah is *that also he should gather together in one the children of Elohim (God) that were scattered abroad* — the very *gathering of the people* unto Shiloh (Genesis 49:10). The scattered of both houses gathered into one in the One whose right it is.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3 (★★): Reuben's forfeit — the birthright to Joseph, the scepter to Judah
+    ('canon','genesis',49,4,'canon','1-chronicles',5,1,'free',
+      E'*Now the sons of Reuben the firstborn of Yashar''el (Israel), (for he was the firstborn; but, forasmuch as he defiled his father''s bed, his birthright was given unto the sons of Joseph the son of Yashar''el (Israel): and the genealogy is not to be reckoned after the birthright* (1 Chronicles 5:1). The Chronicler names exactly the forfeiture Jacob pronounces — *Unstable as water, thou shalt not excel; because thou wentest up to thy father''s bed* (Genesis 49:4). Reuben *defiled his father''s bed*, and so *his birthright was given unto the sons of Joseph*: the double-portion, the firstborn-blessing, passes north to the house of Joseph.'),
+    ('canon','genesis',49,4,'canon','1-chronicles',5,2,'free',
+      E'*For Yahudah (Judah) prevailed above his brethren, and of him came the chief ruler; but the birthright was Joseph''s)* (1 Chronicles 5:2). Here is the whole two-house map in one verse, set in motion by Reuben''s forfeit (Genesis 49:4): *Yahudah (Judah) prevailed above his brethren, and of him came the chief ruler* — the scepter, going south to Judah — *but the birthright was Joseph''s* — the double-portion, going north. The firstborn''s loss splits the inheritance into the two houses the rest of the oracle maps.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 4 (★): Simeon and Levi scattered — the conduct judged, not the blood
+    ('canon','genesis',49,7,'canon','deuteronomy',33,9,'free',
+      E'*Who said unto his father and to his mother, I have not seen him; neither did he acknowledge his brethren, nor knew his own children: for they have observed thy word, and kept thy covenant* (Deuteronomy 33:9). The anger cursed at the death-bed — *Cursed be their anger... I will divide them in Jacob, and scatter them in Yashar''el (Israel)* (Genesis 49:7) — falls on the conduct, not the blood. The very house of Levi, scattered here, is blessed by Moses for the opposite spirit: *they have observed thy word, and kept thy covenant*. The fierce self-will of Shechem is turned, in the redeemed house, to zeal for Yahuah (the Lord).'),
+    ('canon','genesis',49,7,'canon','deuteronomy',33,10,'free',
+      E'*They shall teach Jacob thy judgments, and Yashar''el (Israel) thy law: they shall put incense before thee, and whole burnt sacrifice upon thine altar* (Deuteronomy 33:10). The scattering of Levi — *I will divide them in Jacob, and scatter them in Yashar''el (Israel)* (Genesis 49:7) — becomes, in Moses'' blessing, the priesthood distributed through every tribe: *They shall teach Jacob thy judgments, and Yashar''el (Israel) thy law*. The judgment on the anger is bent to service; the scattered house carries the Torah and the altar into all Israel.'),
+    ('canon','genesis',49,5,'canon','numbers',25,11,'free',
+      E'*Phinehas, the son of Eleazar, the son of Aaron the priest, hath turned my wrath away from the children of Yashar''el (Israel), while he was zealous for my sake among them, that I consumed not the children of Yashar''el (Israel) in my jealousy* (Numbers 25:11). *Simeon and Levi are brethren; instruments of cruelty are in their habitations* (Genesis 49:5) — yet the same Levitical zeal that slew at Shechem is, when turned for Yahuah (the Lord), counted righteousness: *while he was zealous for my sake*. The wrath of 49:7 is the conduct judged; the zeal redirected wins *my covenant of peace* (Numbers 25:12). The curse is on the cruelty, never on the seed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 5 (★): I have waited for thy salvation, O Yahuah
+    ('canon','genesis',49,18,'canon','luke',2,30,'free',
+      E'*For mine eyes have seen thy salvation* (Luke 2:30). The patriarch''s cry breaking into the tribal oracle — *I have waited for thy salvation, O Yahuah (LORD)* (Genesis 49:18) — is at last answered in old Simeon''s arms: *mine eyes have seen thy salvation*. Jacob waited; Simeon beheld. The yeshuah-hope spoken amid the future of the tribes is the very salvation of Yahuah (the Lord) the watching ones longed to see.'),
+    ('canon','genesis',49,18,'jasher','jasher',56,21,'extras',
+      E'*then will Yahuah (the Lord) raise up to you and your children a servant from amongst your children, and Yahuah (the Lord) will deliver you through his hand from all affliction, and bring you out of Egypt and bring you back to the land of your fathers to inherit it securely* (Jasher 56:21). The extended witness gives Jacob''s death-bed hope its fuller voice, the same waiting as *I have waited for thy salvation, O Yahuah (LORD)* (Genesis 49:18): Yahuah (the Lord) *will raise up... a servant* and *deliver you... from all affliction*. The cry for salvation amid the tribal future rests on the Deliverer Yahuah promises to raise.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 6 (★): Joseph — the fruitful bough, the Shepherd, the Stone of Yashar'el
+    ('canon','genesis',49,24,'canon','psalms',80,1,'free',
+      E'*Give ear, O Shepherd of Yashar''el (Israel), thou that leadest Joseph like a flock; thou that dwellest between the cherubims, shine forth* (Psalms 80:1). The blessing on Joseph names the Shepherd — *from thence is the shepherd, the stone of Yashar''el (Israel)* (Genesis 49:24) — and the psalm prays to that very Shepherd as the One who *leadest Joseph like a flock*. The house of Joseph, the fruitful bough, is the flock the Shepherd of Yashar''el leads; the Shepherd named at the death-bed is the keeper of the scattered northern house.'),
+    ('canon','genesis',49,24,'canon','psalms',118,22,'free',
+      E'*The stone which the builders refused is become the head stone of the corner* (Psalms 118:22). Joseph''s blessing names the Stone — *from thence is the shepherd, the stone of Yashar''el (Israel)* (Genesis 49:24) — and the once-rejected one, *the archers have sorely grieved him, and shot at him, and hated him* (49:23), is the very pattern of *the stone which the builders refused* become *the head stone of the corner*. The despised brother whose bow abode in strength is the type of the Stone the builders cast away and Yahuah (the Lord) set at the head.'),
+    ('canon','genesis',49,24,'canon','1-peter',2,6,'free',
+      E'*Wherefore also it is contained in the scripture, Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded* (1 Peter 2:6). The Stone of Yashar''el (Israel) named in Joseph''s blessing (Genesis 49:24) is set forth here as *a chief corner stone, elect, precious* laid in Sion. The stone-of-Israel type that rises through the grieved-but-strengthened Joseph comes to rest in the chosen corner stone on whom faith is built.'),
+    ('canon','genesis',49,24,'canon','1-peter',2,25,'free',
+      E'*For ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls* (1 Peter 2:25). The Shepherd of Yashar''el (Israel) — *from thence is the shepherd, the stone of Yashar''el (Israel)* (Genesis 49:24) — is the One unto whom the straying sheep are *returned*: the Shepherd and Bishop of souls. The scattered flock, the house of Joseph and all the going-astray, gathered back to the Shepherd named at Jacob''s death-bed.'),
+    ('canon','genesis',49,26,'canon','1-chronicles',5,1,'free',
+      E'*his birthright was given unto the sons of Joseph the son of Yashar''el (Israel)* (1 Chronicles 5:1). The crown of blessing set *on the head of Joseph, and on the crown of the head of him that was separate from his brethren* (Genesis 49:26) is the firstborn-blessing the Chronicler records: *his birthright was given unto the sons of Joseph*. The double-portion that fell from Reuben crowns the fruitful bough; the blessings that *prevailed above the blessings of my progenitors* are the birthright of the northern house.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 7: The twelve tribes and that which shall befall in the last days
+    ('canon','genesis',49,28,'canon','revelation',7,4,'extras',
+      E'*And I heard the number of them which were sealed: and there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4). The roll Jacob closes — *All these are the twelve tribes of Yashar''el (Israel)* (Genesis 49:28) — is the same roll sealed at the end: *all the tribes of the children of Yashar''el (Israel)*, twelve thousand of every tribe. The twelve sons blessed at the death-bed are the twelve tribes sealed in the last days; the tribal map is carried whole to its sealing.'),
+    ('canon','genesis',49,1,'canon','james',1,1,'extras',
+      E'*James, a servant of Elohim (God) and of the Lord Yahusha HaMashiach (Lord Jesus Christ), to the twelve tribes which are scattered abroad, greeting* (James 1:1). Jacob gathers his sons to tell them *that which shall befall you in the last days* (Genesis 49:1); the letter is addressed to those same heirs in their scattering — *the twelve tribes which are scattered abroad*. The last-days word over the tribes finds them dispersed among the nations, the two-house people awaiting the gathering.'),
+    ('canon','genesis',49,1,'jubilees','jubilees',45,13,'extras',
+      E'*And Yashar''el (Israel) blessed his sons before he died and told them everything that would befall them in the land of Egypt; and he made known to them what would come upon them in the last days, and blessed them and gave to Joseph two portions in the land* (Jubilees 45:13). The restored witness keeps the death-bed frame whole: *made known to them what would come upon them in the last days* — the same *that which shall befall you in the last days* (Genesis 49:1) — and names the double-portion plainly, *gave to Joseph two portions*. The last-days oracle and the firstborn-blessing to the northern house held together.'),
+    ('canon','genesis',49,1,'jasher','jasher',56,20,'extras',
+      E'*For I know that many and grievous troubles will befall you in the latter days in the land, yea your children and children''s children, only serve Yahuah (the Lord) and he will save you from all trouble* (Jasher 56:20). The extended witness carries the death-bed''s last-days word — *many and grievous troubles will befall you in the latter days* — the same horizon as *that which shall befall you in the last days* (Genesis 49:1). The troubles foreseen over the scattered tribes are met by the charge to serve Yahuah (the Lord), who will save from all trouble.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-49-the-sceptre-shall-not-depart-from-judah-until-shiloh-come',
+       E'The sceptre shall not depart from Yahudah, until Shiloh come — the Lion, the Star, the King out of Judah',
+       E'At the death-bed Jacob comes to the son the scepter would never leave: *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee* (Genesis 49:8). He is the lion of the tribe — *Yahudah (Judah) is a lion''s whelp... he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* (49:9) — and the kingship is fixed in his line until the One whose right it is comes: *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (49:10). The foal bound to the vine, the garments washed *in the blood of grapes* (49:11), crown the picture of the kingly Judah. The same lion is read forward by Balaam on the hill of Moab — *He couched, he lay down as a lion, and as a great lion: who shall stir him up?* (Numbers 24:9) — and the same scepter rises in his last oracle: *there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar''el (Israel)* (Numbers 24:17). Read forward through the Formed-and-Formless lens, the scepter does not depart but comes to rest in Shiloh: *it is evident that our Lord sprang out of Juda* (Hebrews 7:14), the very tribe at the head of the generation — *Jacob begat Judas and his brethren* (Matthew 1:2) — and *the Lion of the tribe of Juda, the Root of David, hath prevailed* (Revelation 5:5). This is no co-equal-persons abstraction but the kingly bloodline-and-covenant of Judah carried to the One the Most High raised. The restored witness lets Jacob say it to Judah''s face: *reign over them, and your sons shall reign over their sons forever* (Jasher 56:8).',
+       sv.verse_id, ev.verse_id, 'extras', 21200
+  FROM _s301_ge49_lookup sv, _s301_ge49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=49 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-49-and-unto-him-shall-the-gathering-of-the-people-be',
+       E'And unto him shall the gathering of the people be — the two-house ingathering to Shiloh',
+       E'The scepter-word does not end with the king; it ends with the gathering: *until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The One whose right it is comes, and to him the people are gathered — and the prophets name that gathering as the regathering of both scattered houses. Isaiah lifts the standard: *in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious* (Isaiah 11:10), and the ensign draws home not one house but two — *he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). The northern house divorced and scattered through Assyria, the southern house dispersed — both assembled to the root of Jesse, the Shiloh of Judah''s line. And the gathering is read again at the cross: Caiaphas, prophesying beyond his knowing, says the One out of Judah should die *not for that nation only, but that also he should gather together in one the children of Elohim (God) that were scattered abroad* (John 11:52). The gathering of the people unto Shiloh is the two-house people made one in the One whose right it is — never a new people grafted in by confession, but the same Yashar''el (Israel), both branches, brought home.',
+       sv.verse_id, ev.verse_id, 'free', 21203
+  FROM _s301_ge49_lookup sv, _s301_ge49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=49 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-49-reubens-forfeit-the-birthright-to-joseph-the-scepter-to-judah',
+       E'Reuben''s forfeit — the birthright to Joseph, the scepter to Judah (the two-house split)',
+       E'The oracle opens with a loss that sets the whole two-house structure in motion. Reuben is the firstborn — *Reuben, thou art my firstborn, my might, and the beginning of my strength, the excellency of dignity, and the excellency of power* (Genesis 49:3) — but he forfeits it: *Unstable as water, thou shalt not excel; because thou wentest up to thy father''s bed; then defiledst thou it* (49:4). The Chronicler tells exactly what that forfeit did to the inheritance: *for he was the firstborn; but, forasmuch as he defiled his father''s bed, his birthright was given unto the sons of Joseph the son of Yashar''el (Israel)* (1 Chronicles 5:1); *For Yahudah (Judah) prevailed above his brethren, and of him came the chief ruler; but the birthright was Joseph''s* (1 Chronicles 5:2). Here, in two verses, is the map the rest of Genesis 49 unfolds: the birthright — the double-portion, the firstborn-blessing — passes north to the house of Joseph, while the scepter — the chief ruler — passes south to Judah. This is why Joseph is the fruitful bough whose branches run over the wall and why the scepter shall not depart from Judah: the firstborn''s instability split the inheritance into the two houses, Ephraim/Joseph in the north and Yahudah (Judah) in the south, to be gathered into one again in the latter days.',
+       sv.verse_id, ev.verse_id, 'free', 21206
+  FROM _s301_ge49_lookup sv, _s301_ge49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=49 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-49-simeon-and-levi-scattered-the-conduct-judged-not-the-blood',
+       E'Simeon and Levi scattered — the conduct judged, not the blood; Levi''s zeal redeemed',
+       E'Jacob turns to the two who avenged Dinah at Shechem: *Simeon and Levi are brethren; instruments of cruelty are in their habitations* (Genesis 49:5); *for in their anger they slew a man, and in their selfwill they digged down a wall* (49:6). And the sentence falls — but mark precisely where: *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel)* (49:7). The curse is on the anger and the wrath — the conduct — never on the blood, never on the sons themselves. And the proof is in what becomes of Levi: the same house scattered here is, in Moses'' blessing, the house that *observed thy word, and kept thy covenant* (Deuteronomy 33:9) and is set to *teach Jacob thy judgments, and Yashar''el (Israel) thy law* (Deuteronomy 33:10) — the scattering turned to the priesthood distributed through every tribe. The very zeal that slew at Shechem, when turned for Yahuah (the Lord), is counted righteousness in Phinehas: *while he was zealous for my sake among them, that I consumed not the children of Yashar''el (Israel) in my jealousy* (Numbers 25:11), and he is given *my covenant of peace* (25:12). The wrath is judged; the zeal redirected is crowned. Dismantle the cruelty, never the people — the curse on the anger, not on the seed.',
+       sv.verse_id, ev.verse_id, 'free', 21209
+  FROM _s301_ge49_lookup sv, _s301_ge49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=49 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-49-i-have-waited-for-thy-salvation-o-yahuah',
+       E'I have waited for thy salvation, O Yahuah — the yeshuah-hope breaking into the oracle',
+       E'In the midst of the tribal oracle, at the word over Dan, the old man''s voice breaks off from the tribes and turns to Yahuah (the Lord) himself: *I have waited for thy salvation, O Yahuah (LORD)* (Genesis 49:18). It is a sudden cry of the heart — the patriarch, naming what shall befall his sons in the last days, looks past all of it to the salvation, the yeshuah, of Yahuah. That waiting is answered generations on in old Simeon, who took the child up in the temple and said, *Yahuah (Lord), now lettest thou thy servant depart in peace, according to thy word: For mine eyes have seen thy salvation* (Luke 2:30). Jacob waited and did not see; Simeon waited and beheld. And the restored witness keeps Jacob''s confidence whole: the same death-bed hope is that *Yahuah (the Lord) raise up to you and your children a servant from amongst your children, and Yahuah (the Lord) will deliver you through his hand from all affliction* (Jasher 56:21). The cry for salvation amid the tribal future is not a sigh of despair but a resting on the Deliverer Yahuah promised to raise — the salvation the watching ones longed to see, at last beheld.',
+       sv.verse_id, ev.verse_id, 'extras', 21212
+  FROM _s301_ge49_lookup sv, _s301_ge49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=49 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-49-joseph-the-fruitful-bough-the-shepherd-the-stone-of-yasharel',
+       E'Joseph the fruitful bough — the Shepherd, the Stone of Yashar''el, the northern-house blessing',
+       E'The longest blessing falls on Joseph, and it carries the whole weight of the northern house: *Joseph is a fruitful bough, even a fruitful bough by a well; whose branches run over the wall* (Genesis 49:22) — the fruitful one overrunning the wall into the nations, the scattered house grown wild abroad. He was hated and shot at — *The archers have sorely grieved him, and shot at him, and hated him* (49:23) — but his bow was made strong *by the hands of El Gibbor (the mighty God) of Jacob*, and then the parenthesis names two titles: *from thence is the shepherd, the stone of Yashar''el (Israel)* (49:24). The Shepherd: *Give ear, O Shepherd of Yashar''el (Israel), thou that leadest Joseph like a flock* (Psalms 80:1) — Joseph''s house is the very flock the Shepherd leads — fulfilled when the straying are *returned unto the Shepherd and Bishop of your souls* (1 Peter 2:25). The Stone: the grieved-and-rejected one is the pattern of *The stone which the builders refused is become the head stone of the corner* (Psalms 118:22), *a chief corner stone, elect, precious* laid in Sion (1 Peter 2:6). And the crown of it all is the firstborn-blessing on *him that was separate from his brethren* (49:26) — the birthright that fell from Reuben and was *given unto the sons of Joseph* (1 Chronicles 5:1), the double-portion of the northern house. The fruitful bough is the scattered house of Joseph; the Shepherd and the Stone are the One who keeps and gathers it.',
+       sv.verse_id, ev.verse_id, 'free', 21215
+  FROM _s301_ge49_lookup sv, _s301_ge49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=49 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-49-the-twelve-tribes-and-that-which-shall-befall-in-the-last-days',
+       E'The twelve tribes and that which shall befall in the last days — the two-house destiny map',
+       E'The whole chapter is framed as a last-days oracle over the twelve: *Gather yourselves together, that I may tell you that which shall befall you in the last days* (Genesis 49:1), and it closes, *All these are the twelve tribes of Yashar''el (Israel): and this is it that their father spake unto them, and blessed them; every one according to his blessing he blessed them* (49:28). Between those bookends every son receives his word — Reuben''s forfeit, Simeon and Levi scattered, Judah''s scepter, Zebulun at the haven of ships, Issachar the strong ass under burden, Dan judging his people as a serpent by the way, Gad overcome yet overcoming at the last, Asher''s royal dainties, Naphtali the hind let loose, Joseph the fruitful bough, Benjamin ravening as a wolf. This roll is the two-house destiny map, and it is carried to the very end of the canon: the twelve tribes sealed — *there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4) — and the twelve tribes scattered abroad and addressed in their dispersion — *to the twelve tribes which are scattered abroad* (James 1:1). The restored witnesses keep the death-bed last-days frame whole: *he made known to them what would come upon them in the last days, and blessed them and gave to Joseph two portions in the land* (Jubilees 45:13), and *many and grievous troubles will befall you in the latter days... only serve Yahuah (the Lord) and he will save you from all trouble* (Jasher 56:20). Then Jacob *charged them* to bury him in the cave of Machpelah with Abraham and Isaac, *gathered up his feet into the bed, and yielded up the ghost, and was gathered unto his people* (49:33) — the father laid with the fathers, the tribal destiny set, awaiting the gathering of the people to Shiloh.',
+       sv.verse_id, ev.verse_id, 'extras', 21218
+  FROM _s301_ge49_lookup sv, _s301_ge49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=49 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *the Lion of the tribe of Juda, the Root of David, hath prevailed* (Revelation 5:5) — the lion (49:9) and the scepter (49:10) gathered in the One who prevailed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=10
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-the-sceptre-shall-not-depart-from-judah-until-shiloh-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He couched, he lay down as a lion, and as a great lion: who shall stir him up?* (Numbers 24:9) — Balaam reads Judah''s lion (49:9) forward: the couched lion none dares rouse.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=9
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=24 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-the-sceptre-shall-not-depart-from-judah-until-shiloh-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar''el (Israel)* (Numbers 24:17) — the very Sceptre of 49:10 seen from afar in Balaam''s last oracle.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=10
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=24 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-the-sceptre-shall-not-depart-from-judah-until-shiloh-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *it is evident that our Lord sprang out of Juda* (Hebrews 7:14) — the scepter that shall not depart (49:10) fulfilled: the Formed Son took flesh of Judah''s tribe.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=10
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-the-sceptre-shall-not-depart-from-judah-until-shiloh-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Jacob begat Judas and his brethren* (Matthew 1:2) — the Messiah''s genealogy runs through the son Jacob praises (49:8), Judah at the head of the brethren.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=8
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-the-sceptre-shall-not-depart-from-judah-until-shiloh-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*reign over them, and your sons shall reign over their sons forever* (Jasher 56:8) — Jacob speaks the scepter to Judah''s face; the kingship of 49:10 fixed forever.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=10
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=56 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-the-sceptre-shall-not-depart-from-judah-until-shiloh-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek* (Isaiah 11:10) — the gathering of the people (49:10) = the ensign to which the nations gather.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=10
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-and-unto-him-shall-the-gathering-of-the-people-be'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah)* (Isaiah 11:12) — the gathering to Shiloh (49:10) in its two-house fulness: both houses home.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=10
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-and-unto-him-shall-the-gathering-of-the-people-be'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*gather together in one the children of Elohim (God) that were scattered abroad* (John 11:52) — Caiaphas prophesies the gathering of 49:10: the scattered of both houses made one.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=10
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=11 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-and-unto-him-shall-the-gathering-of-the-people-be'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *because he defiled his father''s bed, his birthright was given unto the sons of Joseph* (1 Chronicles 5:1) — Reuben''s forfeit of 49:4 names the birthright passing north to Joseph.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=4
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-reubens-forfeit-the-birthright-to-joseph-the-scepter-to-judah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Yahudah (Judah) prevailed... of him came the chief ruler; but the birthright was Joseph''s* (1 Chronicles 5:2) — the two-house split in one verse: scepter south to Judah, birthright north to Joseph.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=4
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-reubens-forfeit-the-birthright-to-joseph-the-scepter-to-judah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*they have observed thy word, and kept thy covenant* (Deuteronomy 33:9) — the same house of Levi scattered in 49:7, blessed by Moses for the opposite spirit; the conduct judged, not the blood.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=7
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-simeon-and-levi-scattered-the-conduct-judged-not-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*shall teach Jacob thy judgments, and Yashar''el (Israel) thy law* (Deuteronomy 33:10) — the scattering of Levi (49:7) turned to the priesthood distributed through every tribe.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=7
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-simeon-and-levi-scattered-the-conduct-judged-not-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Phinehas... was zealous for my sake... that I consumed not the children of Yashar''el (Israel)* (Numbers 25:11) — the cruelty of 49:5 turned, when zealous for Yahuah, to the covenant of peace; the curse on the anger, not the seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=5
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-simeon-and-levi-scattered-the-conduct-judged-not-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *For mine eyes have seen thy salvation* (Luke 2:30) — Jacob''s *I have waited for thy salvation* (49:18) answered in old Simeon''s arms: the yeshuah-hope beheld.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=18
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-i-have-waited-for-thy-salvation-o-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah will raise up to you and your children a servant... and deliver you... from all affliction* (Jasher 56:21) — Jacob''s death-bed hope (49:18) rests on the Deliverer Yahuah promised to raise.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=18
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=56 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-i-have-waited-for-thy-salvation-o-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*O Shepherd of Yashar''el (Israel), thou that leadest Joseph like a flock* (Psalms 80:1) — the Shepherd of 49:24; Joseph''s house is the flock the Shepherd of Yashar''el leads.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=24
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-joseph-the-fruitful-bough-the-shepherd-the-stone-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The stone which the builders refused is become the head stone of the corner* (Psalms 118:22) — the grieved-and-rejected Joseph (49:23) the pattern of the Stone of Yashar''el (49:24).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=24
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=118 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-joseph-the-fruitful-bough-the-shepherd-the-stone-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Behold, I lay in Sion a chief corner stone, elect, precious* (1 Peter 2:6) — the Stone of Yashar''el (49:24) set forth as the chosen corner stone laid in Sion.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=24
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-joseph-the-fruitful-bough-the-shepherd-the-stone-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*now returned unto the Shepherd and Bishop of your souls* (1 Peter 2:25) — the straying sheep returned to the Shepherd of 49:24; the scattered flock of Joseph gathered home.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=24
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-joseph-the-fruitful-bough-the-shepherd-the-stone-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*his birthright was given unto the sons of Joseph* (1 Chronicles 5:1) — the crown of blessing on him that was separate from his brethren (49:26) is the firstborn-birthright of the northern house.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=26
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-joseph-the-fruitful-bough-the-shepherd-the-stone-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4) — the twelve tribes of 49:28 carried to their sealing in the last days.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=28
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-the-twelve-tribes-and-that-which-shall-befall-in-the-last-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*to the twelve tribes which are scattered abroad* (James 1:1) — the last-days oracle of 49:1 finds the tribes dispersed among the nations, awaiting the gathering.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=1
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-the-twelve-tribes-and-that-which-shall-befall-in-the-last-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*made known to them what would come upon them in the last days... and gave to Joseph two portions* (Jubilees 45:13) — the death-bed last-days frame of 49:1 with the double-portion to the northern house.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=1
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=45 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-the-twelve-tribes-and-that-which-shall-befall-in-the-last-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*many and grievous troubles will befall you in the latter days... only serve Yahuah and he will save you* (Jasher 56:20) — the latter-days word of 49:1 met by the charge to serve Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=49 AND sv.verse_number=1
+  JOIN _s301_ge49_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=56 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-49-the-twelve-tribes-and-that-which-shall-befall-in-the-last-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_50.sql (Genesis 50) -----
+-- Chapter: Genesis 50 — ★★ THE TYPE SEALED (the FINAL chapter of Genesis): Joseph falls on his father's face and weeps; the physicians embalm Yashar'el (Israel); the great mourning seventy days; Joseph carries his father up to Canaan with all the elders of Egypt and buries him in the cave of Machpelah (the oath of 47:29-31 / 49:29-32 kept); the brothers fear Joseph will now requite the evil — and Joseph speaks the word that seals the whole type: *Fear not: for am I in the place of Elohim? ... ye thought evil against me; but Elohim meant it unto good, to bring to pass, as it is this day, to save much people alive* (50:19-20), *I will nourish you, and your little ones* (50:21); Joseph's dying faith — *I die: and Elohim will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (50:24); the oath over his bones — *Elohim will surely visit you, and ye shall carry up my bones from hence* (50:25); Joseph dies, embalmed, put in a coffin in Egypt.
+-- Tag: ge50   Temp view: _s301_ge50_lookup
+-- Sort band: base 21225, step 3 -> threads at 21225, 21228, 21231, 21234 (4 threads — Genesis sealed, curated)
+-- Source of EVERY row: 'canon','genesis',50,v
+--
+-- Genesis 50 coverage:
+--   v.1-3 (Joseph weeps; the physicians embalm Yashar'el; forty days; the Egyptians mourned threescore and ten days)
+--        NT:     none warranted (narrative; the embalming/mourning carried into THREAD 4's burial summary)
+--        Extras: Jasher 56:29 (Joseph commanded his servants the doctors to embalm his father) / 56:28 (wept for him in Egypt seventy days) — narrative parallel, folded into THREAD 4 summary, not forced as a distinct member
+--        Tanakh: none warranted
+--   v.4-13 (the oath kept — Joseph carries his father up; the great company; the mourning at Atad/Abel-mizraim; buried in the cave of Machpelah which Abraham bought before Mamre)
+--        NT:     ★ Hebrews 11:13 (these all died in faith... confessed that they were strangers and pilgrims on the earth) — THREAD 4 (the only land the patriarchs owned was a grave; strangers and pilgrims)
+--        Extras: ★ Jubilees 45:15 (he slept with his fathers, and he was buried in the double cave in the land of Canaan, near Abraham his father); Jasher 56:66 (Jacob was buried in Hebron, in the cave of Machpelah which Abraham had bought... for the possession of a burial place) — THREAD 4 (the oath of burial kept; the patriarchs gathered to the one purchased plot in the land); Jasher 56:43-65 Esau-battle-at-the-cave = extended legend, SKIPPED
+--        Tanakh: none warranted distinct (the Machpelah purchase is Gen 23/49:29-32 — gathered into THREAD 4's summary; no separate lateral forced)
+--   ★★ v.15-21 (the brothers fear; "Forgive, I pray thee, the trespass of thy brethren"; ★★ Fear not: for am I in the place of Elohim? ... ye thought evil against me; but Elohim meant it unto good... to save much people alive; I will nourish you, and your little ones)
+--        NT:     ★★ Romans 8:28 (all things work together for good to them that love Elohim) — THREAD 1 (the sovereign meaning over the brothers' evil); ★ Romans 12:19 (avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah) — THREAD 1 (Joseph refuses the avenger's seat: am I in the place of Elohim?); Acts 7:9-10 (the patriarchs, moved with envy, sold Joseph... but Elohim was with him, and delivered him out of all his afflictions) — THREAD 1 (Stephen names the evil bent to deliverance); ★ Luke 23:34 (Father, forgive them; for they know not what they do) — THREAD 1 (the type completed: the rejected-then-exalted One forgives from the throne — framed strictly as TYPE through the Formed-Son lens)
+--        Extras: ★ Jasher 56:17 (forgive I pray you the prongs of your brethren and all their misdeeds... for Elohim intended it for your and your children's benefit) — THREAD 1 (Jacob's pre-death charge to forgive, the very theology Joseph speaks: Elohim meant it unto good)
+--        Tanakh: ★ Deuteronomy 32:35 (To me belongeth vengeance, and recompence) — THREAD 1 (the ground of "am I in the place of Elohim?" — vengeance is Yahuah's, not the brother's); Genesis 45:5/45:7 = the same savior word already bound at ch41/ch45, NOT duplicated here (THREAD 1 anchors at 50:19-21, the final word; cross-checked against genesis-41-the-savior-raised-to-preserve-life-through-the-famine — distinct slug)
+--   ★ v.22-26 (Joseph dwelt in Egypt 110 years, saw Ephraim's children of the third generation; ★ I die: and Elohim will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob; ★ Elohim will surely visit you, and ye shall carry up my bones from hence; Joseph died, embalmed, put in a coffin in Egypt)
+--        NT:     ★★ Hebrews 11:22 (By faith Joseph, when he died, made mention of the departing of the children of Yashar'el; and gave commandment concerning his bones) — THREAD 3 (the NT's explicit reading of the oath over the bones — load-bearing)
+--        Extras: ★ Jubilees 46:5 (he commanded the children of Yashar'el before he died that they should carry his bones with them when they went forth from the land of Egypt); Jubilees 46:3 (Joseph died being a hundred and ten years old) — THREAD 3 (the oath over the bones kept whole) — DOUBLE-WRITTEN 'jubilees','jubilees'
+--        Tanakh: ★★ Exodus 13:19 (Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el... ye shall carry up my bones away hence) — THREAD 3 (the oath fulfilled at the Exodus); ★ Joshua 24:32 (the bones of Joseph... buried they in Shechem... it became the inheritance of the children of Joseph) — THREAD 3 (the bones at rest in the northern house's inheritance — the two-house note); ★ Exodus 3:16 (I have surely visited you), Exodus 3:17 (I will bring you up out of the affliction of Egypt unto the land), Genesis 15:13/15:14 (thy seed shall be a stranger... afterward shall they come out with great substance) — THREAD 2 (the "Elohim will surely visit you" foretold, the land-oath remembered)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-50-elohim-meant-it-unto-good-the-type-sealed — NT (Romans 8, Romans 12, Acts 7, Luke 23) + Tanakh (Deuteronomy 32) + Extras (Jasher) [extras] (★★ THE load-bearing thread: the evil of men bent by Yahuah to deliverance; the rejected-then-exalted brother forgives and saves; "am I in the place of Elohim?" leaves vengeance to Yahuah)
+--   2. genesis-50-elohim-will-surely-visit-you-the-exodus-foretold — Tanakh (Exodus 3, Genesis 15) + Extras (Jasher) [extras] (★ Joseph's dying faith: the Exodus foretold, the land-oath remembered)
+--   3. genesis-50-ye-shall-carry-up-my-bones-the-oath-of-the-resurrection-land — NT (Hebrews 11) + Tanakh (Exodus 13, Joshua 24) + Extras (Jubilees) [extras] (★ the oath over the bones: faith fixed on the resurrection-land, the bones carried out at the Exodus and buried in Shechem in the northern house's inheritance)
+--   4. genesis-50-buried-in-the-cave-of-machpelah-strangers-and-pilgrims — NT (Hebrews 11) + Extras (Jubilees, Jasher) [extras] (the oath of burial kept; the only land owned = a grave; the patriarchs gathered to the one purchased plot, strangers and pilgrims)
+--
+-- Framing notes:
+--   ★★ THE TYPE SEALED (THREAD 1): Genesis closes with the load-bearing word. The brothers fear the avenger now their father is dead — *Joseph will peradventure hate us, and will certainly requite us all the evil which we did unto him* (50:15) — and Joseph weeps and answers: *Fear not: for am I in the place of Elohim (God)?* (50:19), *ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (50:20), *I will nourish you, and your little ones* (50:21). The sovereign meaning over the brothers' evil is the very shape Paul names — *all things work together for good to them that love Elohim (God)* (Romans 8:28); Stephen names the evil bent to deliverance — *the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him, and delivered him out of all his afflictions* (Acts 7:9-10). The rejected-then-exalted brother forgives and feeds the very brethren who sold him: this is the messianic-reconciliation type COMPLETED — read strictly as TYPE through the Formed-and-Formless lens (Red Line #4), Joseph foreshadows the Formed Son who forgave his executioners — *Father, forgive them; for they know not what they do* (Luke 23:34) — NEVER a flattening of Joseph into the Messiah, but the shape the forgiveness-from-the-throne fills. And *am I in the place of Elohim?* refuses the avenger's seat: vengeance belongs to Yahuah — *To me belongeth vengeance, and recompence* (Deuteronomy 32:35), *avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). ⚠ The ch41/ch45 savior word (Gen 45:5/45:7) is NOT duplicated; this thread anchors at 50:19-21, Joseph's final word, and is a distinct slug from genesis-41-the-savior-raised-to-preserve-life-through-the-famine. Jasher 56:17 keeps Jacob's pre-death charge that Joseph forgive — *Elohim intended it for your and your children's benefit* — the very theology of 50:20.
+--   ★ ELOHIM WILL SURELY VISIT YOU (THREAD 2): Joseph's dying faith looks past Egypt — *I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (50:24). This is the land-oath remembered (Genesis 15) reaching forward to the Exodus: *Know of a surety that thy seed shall be a stranger in a land that is not theirs... and afterward shall they come out with great substance* (Genesis 15:13-14); and the same word Yahuah speaks to Moses at the bush — *I have surely visited you, and seen that which is done to you in Egypt* (Exodus 3:16), *I will bring you up out of the affliction of Egypt unto the land* (3:17). The covenant hope outlives the patriarch; the visitation is sworn. Jasher 56:3 keeps the charge whole — *the Elohim of your ancestors will visit you, and bring you back to the land*.
+--   ★ THE OATH OVER THE BONES (THREAD 3): *Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (50:25). Joseph's faith is fixed on the resurrection-land, not Egypt; the bones are carried out at the Exodus — *Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el (Israel)* (Exodus 13:19) — and buried in the inheritance — *the bones of Joseph... buried they in Shechem... it became the inheritance of the children of Joseph* (Joshua 24:32). The two-house note: the bones come to rest in Shechem, in the heart of the northern house's inheritance. The NT reads it explicitly: *By faith Joseph, when he died, made mention of the departing of the children of Yashar'el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). Jubilees 46:5 keeps the command whole.
+--   THE BURIAL IN MACHPELAH (THREAD 4): the oath of 47:29-31/49:29-32 kept — *his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah, which Abraham bought... for a possession of a buryingplace* (50:13). The patriarchs are gathered to the ONE purchased plot in the land — the only land they owned was a grave, the mark of *strangers and pilgrims on the earth* (Hebrews 11:13). Jubilees 45:15 and Jasher 56:66 keep the double-cave burial near Abraham. ⚠ Jasher 56:43-65 (the thirty-one kings, the Esau battle at the cave, Chushim beheading Esau) = extended legend, SKIPPED as a member; only the clean burial verse 56:66 used.
+--   EXTRAS: Jubilees 46:3,5 (Joseph dies at 110; the command over the bones) — DOUBLE-WRITTEN 'jubilees','jubilees'. Jubilees 45:15 (Jacob buried in the double cave) — DOUBLE-WRITTEN 'jubilees','jubilees'. Jasher 56:3 (the visitation charge), 56:17 (the forgive-thy-brethren charge), 56:66 (Machpelah burial) — DOUBLE-WRITTEN 'jasher','jasher'. SKIPPED: Jasher 56:43-65 Esau-battle legend; Jubilees 46:6 (Mâkamârôn king of Canaan — apparatus-noisy run-on, not used).
+--   VERSES WITH NO ADD: v.4-12 (the journey up, the elders of Egypt, the mourning at Atad/Abel-mizraim — narrative, carried into THREAD 4's summary); v.14 (Joseph returned into Egypt); v.18 (the brethren fall down — narrative pivot into THREAD 1); v.22-23 (Joseph 110 years, Ephraim's third generation, Machir on Joseph's knees — narrative); v.26 (Joseph died, embalmed, coffin in Egypt — folds into THREAD 3's bones summary). Connective narrative, no distinct framework-bearing target forced.
+
+CREATE TEMP VIEW _s301_ge50_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Elohim meant it unto good — the type sealed (the evil of men bent to deliverance; the brother forgives from the throne; vengeance left to Yahuah)
+    ('canon','genesis',50,20,'canon','romans',8,28,'free',
+      E'*And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose* (Romans 8:28). Joseph''s sealing word — *ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20) — is the seed of the whole doctrine: the evil intended against him was not undone but bent, *meant unto good* by the Most High. What the brothers aimed at his ruin Yahuah (the Lord) aimed at the saving of many; *all things work together for good* is the Genesis type read forward into the gospel.'),
+    ('canon','genesis',50,19,'canon','romans',12,19,'free',
+      E'*Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). When Joseph says *Fear not: for am I in the place of Elohim (God)?* (Genesis 50:19), he refuses the avenger''s seat — the right to requite his brothers belongs not to him but to Yahuah. Paul names the very posture: *avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah*. The exalted brother who could destroy them leaves the recompence in the hand of the Most High.'),
+    ('canon','genesis',50,19,'canon','deuteronomy',32,35,'free',
+      E'*To me belongeth vengeance, and recompence; their foot shall slide in due time: for the day of their calamity is at hand, and the things that shall come upon them make haste* (Deuteronomy 32:35). The ground of *am I in the place of Elohim (God)?* (Genesis 50:19) is the song of Moses: vengeance is Yahuah''s alone — *To me belongeth vengeance, and recompence*. Joseph will not seize what is the Most High''s; he steps out of the judgment-seat and leaves the recompence where it belongs, in the hand that holds it.'),
+    ('canon','genesis',50,20,'canon','acts',7,9,'free',
+      E'*And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9). Stephen reads the whole arc in a breath: the brothers'' envy and the selling are the *ye thought evil against me* of Genesis 50:20, and the *but Elohim (God) was with him* is the *Elohim meant it unto good*. The same hinge — the evil of men and the presence of Yahuah (the Lord) over it — turns the selling into the saving.'),
+    ('canon','genesis',50,20,'canon','acts',7,10,'free',
+      E'*And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house* (Acts 7:10). The evil *meant unto good... to save much people alive* (Genesis 50:20) flowers in the exaltation Stephen names: the sold one *delivered... out of all his afflictions* and made *governor over Egypt*. The rise to power was the means of the saving — the despised brother lifted up that a multitude might live.'),
+    ('canon','genesis',50,17,'canon','luke',23,34,'free',
+      E'*Then said Yahusha (Jesus), Father, forgive them; for they know not what they do. And they parted his raiment, and cast lots* (Luke 23:34). When the brothers plead *Forgive, I pray thee now, the trespass of thy brethren... for they did unto thee evil* (Genesis 50:17), and Joseph weeps and forgives the very men who sold him, the type reaches its completion in the One who forgave his executioners from the tree — *Father, forgive them; for they know not what they do*. Read strictly as foreshadow through the Formed-and-the-Formless lens: the rejected-then-exalted brother who forgives is the shape the Formed Son fills, never a flattening of Joseph into the Messiah.'),
+    ('canon','genesis',50,20,'jasher','jasher',56,17,'extras',
+      E'*And you, Joseph my son, forgive I pray you the prongs of your brethren and all their misdeeds in the injury that they heaped upon you, for Elohim intended it for your and your children''s benefit* (Jasher 56:17). The restored witness puts the very theology of Genesis 50:20 in Jacob''s mouth before his death — *Elohim intended it for your... benefit* — which is *Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). The forgiveness Joseph extends is the father''s charge and the Most High''s design: the injury bent to blessing.'),
+
+    -- THREAD 2 (★): Elohim will surely visit you — the Exodus foretold, the land-oath remembered
+    ('canon','genesis',50,24,'canon','exodus',3,16,'free',
+      E'*Go, and gather the elders of Yashar''el (Israel) together, and say unto them, Yahuah Elohim (The LORD God) of your fathers, the Elohim (God) of Abraham, of Isaac, and of Jacob, appeared unto me, saying, I have surely visited you, and seen that which is done to you in Egypt* (Exodus 3:16). Joseph''s dying word — *Elohim (God) will surely visit you, and bring you out of this land* (Genesis 50:24) — is answered at the bush generations later in the very same phrase: *I have surely visited you*. The visitation Joseph swore by faith Yahuah (the Lord) declares fulfilled; the covenant-word outlived the patriarch and came to pass.'),
+    ('canon','genesis',50,24,'canon','exodus',3,17,'free',
+      E'*And I have said, I will bring you up out of the affliction of Egypt unto the land of the Canaanites, and the Hittites, and the Amorites, and the Perizzites, and the Hivites, and the Jebusites, unto a land flowing with milk and honey* (Exodus 3:17). Joseph promised *bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24); Yahuah (the Lord) at the bush takes up the same oath — *I will bring you up out of the affliction of Egypt unto the land*. The land-oath to the fathers is the thread that runs from Joseph''s deathbed to the deliverance of Moses.'),
+    ('canon','genesis',50,24,'canon','genesis',15,13,'free',
+      E'*And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). Joseph''s faith that *Elohim (God) will surely visit you, and bring you out of this land* (Genesis 50:24) rests on the word given to Abram in the horror of great darkness: the seed would sojourn and be afflicted in a strange land. Joseph dies inside that prophecy, certain the visitation foretold to Abraham would come — the covenant clock already set.'),
+    ('canon','genesis',50,24,'canon','genesis',15,14,'free',
+      E'*And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance* (Genesis 15:14). The *bring you out of this land* of Joseph''s dying charge (Genesis 50:24) is the *afterward shall they come out with great substance* sworn to Abram. Joseph looks down the four hundred years to the appointed exodus and stakes his bones on it; the coming-out was promised before Egypt was ever entered.'),
+    ('canon','genesis',50,24,'jasher','jasher',56,3,'extras',
+      E'*Behold I die, and the Elohim (God) of your ancestors will visit you, and bring you back to the land, which Yahuah (the Lord) sware to give to you and to your children after you* (Jasher 56:3). The restored witness gives Jacob the very words Joseph will echo at his own death — *the Elohim of your ancestors will visit you, and bring you back to the land* — which is *Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware* (Genesis 50:24). Father and son die in the same faith: the visitation and the land-oath sure.'),
+
+    -- THREAD 3 (★): Ye shall carry up my bones — the oath of the resurrection-land
+    ('canon','genesis',50,25,'canon','exodus',13,19,'free',
+      E'*And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you* (Exodus 13:19). The oath Joseph laid on the children of Yashar''el — *Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25) — is kept to the letter at the Exodus: *Moses took the bones of Joseph with him*. The faith fixed on the land outlasted four hundred years; the bones went up when the visitation came.'),
+    ('canon','genesis',50,25,'canon','joshua',24,32,'free',
+      E'*And the bones of Joseph, which the children of Yashar''el (Israel) brought up out of Egypt, buried they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor the father of Shechem for an hundred pieces of silver: and it became the inheritance of the children of Joseph* (Joshua 24:32). The oath of Genesis 50:25 — *ye shall carry up my bones from hence* — reaches its rest here: the bones *buried they in Shechem... the inheritance of the children of Joseph*. The bones of the northern father come to lie in the heart of the northern house''s inheritance, the faith of the deathbed planted in the promised ground.'),
+    ('canon','genesis',50,25,'canon','hebrews',11,22,'free',
+      E'*By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). The NT reads the oath of Genesis 50:25 as the act of faith it was: *by faith Joseph, when he died... gave commandment concerning his bones*. He did not bind them to Egypt where he was embalmed and coffined, but to the land of the promise — the dying man''s certainty that the departing would come, the bones a pledge laid on the resurrection-land.'),
+    ('canon','genesis',50,25,'jubilees','jubilees',46,5,'extras',
+      E'*And he commanded the children of Yashar''el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt* (Jubilees 46:5). The restored witness keeps the command whole — *carry his bones with them when they went forth from the land of Egypt* — matching *ye shall carry up my bones from hence* (Genesis 50:25); Joseph''s last charge is the going-forth foreseen, the bones to travel with the redeemed out of Egypt to the land.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 4 cross_references (separate INSERT for the burial thread — Heb 11:13 + Jubilees 45:15 + Jasher 56:66)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','genesis',50,13,'canon','hebrews',11,13,'free',
+      E'*These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). Jacob is carried up and buried *in the cave of the field of Machpelah, which Abraham bought... for a possession of a buryingplace* (Genesis 50:13) — the only plot in all the land the patriarchs ever owned was a grave. They *died in faith, not having received the promises*; the purchased tomb is the seal of men who *confessed that they were strangers and pilgrims on the earth*, holding the land by a burial and not yet by an inheritance.'),
+    ('canon','genesis',50,13,'jubilees','jubilees',45,15,'extras',
+      E'*And he slept with his fathers, and he was buried in the double cave in the land of Canaan, near Abraham his father in the grave which he dug for himself in the double cave in the land of Hebron* (Jubilees 45:15). The restored witness keeps the burial whole — *the double cave in the land of Canaan, near Abraham his father* — matching *buried him in the cave of the field of Machpelah, which Abraham bought* (Genesis 50:13). Jacob is gathered to the fathers in the one purchased plot, the oath of his burial kept and the patriarchs laid together in the land of promise.'),
+    ('canon','genesis',50,13,'jasher','jasher',56,66,'extras',
+      E'*And Jacob was buried in Hebron, in the cave of Machpelah which Abraham had bought from the sons of Heth for the possession of a burial place, and he was buried in very costly garments* (Jasher 56:66). The extended witness names the same grave — *the cave of Machpelah which Abraham had bought... for the possession of a burial place* — as *the cave of the field of Machpelah, which Abraham bought* (Genesis 50:13). The oath to bury him in Canaan is kept; Jacob rests where Abraham and Isaac lie, the one possession the strangers and pilgrims held in the land.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-50-elohim-meant-it-unto-good-the-type-sealed',
+       E'Elohim meant it unto good — the type sealed (the evil of men bent to deliverance; the brother forgives, the avenger''s seat refused)',
+       E'Genesis closes on the word that seals the whole Joseph type. Their father dead, the brothers cower — *Joseph will peradventure hate us, and will certainly requite us all the evil which we did unto him* (Genesis 50:15) — and they send pleading *Forgive, I pray thee now, the trespass of thy brethren, and their sin; for they did unto thee evil* (50:17). And Joseph weeps, and gives the answer that has carried the faithful ever since: *Fear not: for am I in the place of Elohim (God)?* (50:19); *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (50:20); *Now therefore fear ye not: I will nourish you, and your little ones* (50:21). The evil was real and it was theirs; but it was *meant unto good* by the Most High, bent to the saving of many — the very doctrine Paul names: *all things work together for good to them that love Elohim (God), to them who are the called according to his purpose* (Romans 8:28). Stephen reads the same hinge: *the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him, and delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh... and he made him governor over Egypt* (Acts 7:9-10) — the selling turned to the saving. And the rejected-then-exalted brother who forgives the very men who sold him is the shape the Formed Son fills from the tree: *Father, forgive them; for they know not what they do* (Luke 23:34) — read strictly as foreshadow through the Formed-and-the-Formless lens, never a flattening of Joseph into the Messiah, but the messianic-reconciliation type completed. And the seat Joseph will not take — *am I in the place of Elohim?* — is the avenger''s seat, for vengeance belongs to Yahuah (the Lord) alone: *To me belongeth vengeance, and recompence* (Deuteronomy 32:35), *avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). The restored witness puts the same theology in Jacob''s dying mouth — *forgive I pray you the prongs of your brethren and all their misdeeds... for Elohim intended it for your and your children''s benefit* (Jasher 56:17). The injury bent to blessing; the despised brother lifted up to feed the very house that betrayed him.',
+       sv.verse_id, ev.verse_id, 'extras', 21225
+  FROM _s301_ge50_lookup sv, _s301_ge50_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=50 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-50-elohim-will-surely-visit-you-the-exodus-foretold',
+       E'Elohim will surely visit you — the Exodus foretold, the land-oath remembered',
+       E'Joseph''s dying faith looks clean past Egypt to the land of the promise: *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24). The man who rose to govern Egypt does not rest his hope in Egypt; he dies inside the covenant-word given to Abram in the horror of great darkness — *Know of a surety that thy seed shall be a stranger in a land that is not theirs... and they shall afflict them four hundred years* (Genesis 15:13), *and afterward shall they come out with great substance* (15:14). Joseph stakes his deathbed on that coming-out. And generations later, at the burning bush, Yahuah (the Lord) takes up the very phrase: *I have surely visited you, and seen that which is done to you in Egypt* (Exodus 3:16), *I will bring you up out of the affliction of Egypt unto the land of the Canaanites... unto a land flowing with milk and honey* (3:17). The visitation Joseph swore by faith Yahuah declares fulfilled; the land-oath runs unbroken from Abraham''s vision to Joseph''s deathbed to the deliverance of Moses. The restored witness gives Jacob the same dying words — *the Elohim (God) of your ancestors will visit you, and bring you back to the land, which Yahuah (the Lord) sware* (Jasher 56:3). Father and son lie down in one faith: the visitation sure, the land kept.',
+       sv.verse_id, ev.verse_id, 'extras', 21228
+  FROM _s301_ge50_lookup sv, _s301_ge50_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=50 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-50-ye-shall-carry-up-my-bones-the-oath-of-the-resurrection-land',
+       E'Ye shall carry up my bones from hence — the oath of the resurrection-land',
+       E'Joseph''s last act is to bind his bones to the promise: *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25). He dies and is *embalmed... and put in a coffin in Egypt* (50:26) — but he will not be left there. His faith is fixed on the resurrection-land, not the land of his glory; the bones are a pledge laid on the ground Yahuah (the Lord) swore. And the oath is kept to the letter. At the Exodus: *Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you* (Exodus 13:19). At the conquest''s end: *the bones of Joseph, which the children of Yashar''el (Israel) brought up out of Egypt, buried they in Shechem... and it became the inheritance of the children of Joseph* (Joshua 24:32) — the bones of the northern father coming to rest in the heart of the northern house''s inheritance. The NT names it the act of faith it was: *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). The restored witness keeps the charge whole — *he commanded the children of Yashar''el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt* (Jubilees 46:5). The dying man''s certainty that the departing would come: the bones travel with the redeemed out of Egypt to the land of the oath.',
+       sv.verse_id, ev.verse_id, 'extras', 21231
+  FROM _s301_ge50_lookup sv, _s301_ge50_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=50 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-50-buried-in-the-cave-of-machpelah-strangers-and-pilgrims',
+       E'Buried in the cave of Machpelah — the oath kept, strangers and pilgrims',
+       E'The oath sworn to the dying Jacob (47:29-31; 49:29-32) is kept: Joseph carries his father up out of Egypt with all the elders of Pharaoh and a very great company, and *his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah, which Abraham bought with the field for a possession of a buryingplace of Ephron the Hittite, before Mamre* (Genesis 50:13). It is a striking thing: the only ground in all the promised land the patriarchs ever owned was a grave — the cave Abraham purchased to bury Sarah, where now Abraham and Isaac and Jacob are gathered together. They held the land by a burial and not yet by an inheritance, and the NT names exactly this: *These all died in faith, not having received the promises, but having seen them afar off... and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). The purchased tomb is the seal of pilgrim-faith — men who died holding the promise afar off, laid to rest in the one plot that was theirs. The restored witnesses keep the burial whole: *he was buried in the double cave in the land of Canaan, near Abraham his father* (Jubilees 45:15); *Jacob was buried in Hebron, in the cave of Machpelah which Abraham had bought from the sons of Heth for the possession of a burial place* (Jasher 56:66). The fathers gathered to the one purchased plot, awaiting the land they would not receive until the visitation came.',
+       sv.verse_id, ev.verse_id, 'extras', 21234
+  FROM _s301_ge50_lookup sv, _s301_ge50_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=50 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *all things work together for good to them that love Elohim (God)* (Romans 8:28) — the seed of the whole doctrine: the evil *meant unto good* (50:20), bent by the Most High to the saving of many.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=20
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-meant-it-unto-good-the-type-sealed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19) — Joseph''s *am I in the place of Elohim?* (50:19) refuses the avenger''s seat; the recompence belongs to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=19
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-meant-it-unto-good-the-type-sealed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*To me belongeth vengeance, and recompence* (Deuteronomy 32:35) — the song of Moses is the ground of *am I in the place of Elohim?* (50:19); vengeance is Yahuah''s alone.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=19
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-meant-it-unto-good-the-type-sealed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9) — Stephen names the same hinge as 50:20: the brothers'' evil and Yahuah''s presence over it.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=20
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-meant-it-unto-good-the-type-sealed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*delivered him out of all his afflictions... and he made him governor over Egypt* (Acts 7:10) — the evil *meant unto good... to save much people alive* (50:20) flowers in the exaltation; the rise was the means of the saving.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=20
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-meant-it-unto-good-the-type-sealed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Father, forgive them; for they know not what they do* (Luke 23:34) — the brethren plead *Forgive... the trespass of thy brethren* (50:17); the rejected-then-exalted One forgives from the tree, the type completed (TYPE, never Joseph flattened into the Messiah).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=17
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=23 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-meant-it-unto-good-the-type-sealed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*forgive I pray you... for Elohim intended it for your and your children''s benefit* (Jasher 56:17) — Jacob''s dying charge carries the very theology of 50:20: the injury bent to blessing.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=20
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=56 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-meant-it-unto-good-the-type-sealed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I have surely visited you, and seen that which is done to you in Egypt* (Exodus 3:16) — the bush answers Joseph''s *Elohim will surely visit you* (50:24) in the very same phrase; the visitation fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=24
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-will-surely-visit-you-the-exodus-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will bring you up out of the affliction of Egypt unto the land* (Exodus 3:17) — Yahuah takes up the same land-oath Joseph swears in 50:24; the bringing-out promised.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=24
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-will-surely-visit-you-the-exodus-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thy seed shall be a stranger in a land that is not theirs... four hundred years* (Genesis 15:13) — Joseph dies inside Abram''s vision; the sojourn and affliction foretold under which 50:24''s hope rests.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=24
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-will-surely-visit-you-the-exodus-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*afterward shall they come out with great substance* (Genesis 15:14) — the *bring you out of this land* of 50:24 is the coming-out sworn to Abram before Egypt was entered.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=24
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-will-surely-visit-you-the-exodus-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the Elohim of your ancestors will visit you, and bring you back to the land, which Yahuah sware* (Jasher 56:3) — Jacob''s dying words mirror Joseph''s 50:24; father and son in one faith.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=24
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=56 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-elohim-will-surely-visit-you-the-exodus-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel)... ye shall carry up my bones away hence* (Exodus 13:19) — the oath of 50:25 kept to the letter at the Exodus.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=25
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-ye-shall-carry-up-my-bones-the-oath-of-the-resurrection-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the bones of Joseph... buried they in Shechem... the inheritance of the children of Joseph* (Joshua 24:32) — the oath of 50:25 at rest in the heart of the northern house''s inheritance (the two-house note).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=25
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-ye-shall-carry-up-my-bones-the-oath-of-the-resurrection-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *By faith Joseph, when he died... gave commandment concerning his bones* (Hebrews 11:22) — the NT''s explicit reading of 50:25: the oath was an act of faith fixed on the land, not Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=25
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-ye-shall-carry-up-my-bones-the-oath-of-the-resurrection-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*carry his bones with them when they went forth from the land of Egypt* (Jubilees 46:5) — the restored witness keeps Joseph''s last charge of 50:25 whole: the going-forth foreseen.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=25
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-ye-shall-carry-up-my-bones-the-oath-of-the-resurrection-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *these all died in faith... confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13) — the only land owned was the grave of 50:13; the purchased tomb is the seal of pilgrim-faith.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=13
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-buried-in-the-cave-of-machpelah-strangers-and-pilgrims'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*buried in the double cave in the land of Canaan, near Abraham his father* (Jubilees 45:15) — the restored witness keeps the Machpelah burial of 50:13; the fathers gathered to the one purchased plot.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=13
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=45 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-buried-in-the-cave-of-machpelah-strangers-and-pilgrims'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Jacob was buried in Hebron, in the cave of Machpelah which Abraham had bought... for the possession of a burial place* (Jasher 56:66) — the same grave of 50:13; the oath to bury him in Canaan kept.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=50 AND sv.verse_number=13
+  JOIN _s301_ge50_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=56 AND tv.verse_number=66
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-50-buried-in-the-cave-of-machpelah-strangers-and-pilgrims'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session301 — Genesis cross-references complete.'
