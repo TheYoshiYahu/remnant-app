@@ -11352,6 +11352,1658 @@ SELECT t.id, cr.id, 2, E'*If Yahuah (God) will be with me, and will keep me... t
  WHERE t.slug='genesis-28-jacobs-vow-and-the-tithe'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_genesis_29.sql (Genesis 29) -----
+-- Chapter: Genesis 29 — JACOB AT THE WELL, THE SERVED YEARS, AND THE BIRTH OF THE TRIBAL FATHERS: Jacob comes to the land of the people of the east and meets Rachel at the well, rolls the great stone from the well's mouth, and Laban welcomes him — "Surely thou art my bone and my flesh"; Jacob serves seven years for Rachel, "and they seemed unto him but a few days, for the love he had to her"; Laban deceives him — Leah given for Rachel in the dark, "It must not be so done in our country, to give the younger before the firstborn" (the deceiver Jacob now deceived); seven more years served; ★ "when Yahuah (LORD) saw that Leah was hated, he opened her womb" — Reuben, Simeon, Levi, and Yahudah (Judah) — "Now will I praise Yahuah" — the foundation of the twelve tribes / two houses begins, and the Messianic scepter-line of Judah.
+-- Tag: ge29   Temp view: _s301_ge29_lookup
+-- Sort band: base 20700, step 3 -> threads at 20700, 20703, 20706, 20709, 20712 (5 threads)
+-- Source of EVERY row: 'canon','genesis',29,v
+--
+-- Genesis 29 coverage:
+--   v.1-14 (Jacob at the well meets Rachel; rolls the stone from the well's mouth; kisses Rachel and weeps; Laban: Surely thou art my bone and my flesh)
+--        NT:     John 4:6-7 (Jacob's well was there; Yahusha sat on the well; There cometh a woman of Samaria to draw water: Give me to drink) — THREAD 1 (the well-betrothal motif fulfilled in the Bridegroom at Jacob's own well)
+--        Extras: Jasher 30:8 (when Jacob saw Rachel... he ran and kissed her, and lifted up his voice and wept — narrative parallel; the Bethel theophany 30:1-2 belongs to Genesis 28's pack); NOT forced as a member here (Jasher 30 vv.4-14 mirror the well-meeting but add no framework weight beyond the canon; the Esau/genealogy bulk vv.15-29 is unrelated)
+--        Tanakh: Genesis 24:11-20 (the servant at the well of Nahor; Rebekah comes to draw, gives drink to the camels — the betrothal-at-the-well TYPE for Isaac); Exodus 2:15-21 (Moses fled... sat down by a well... the seven daughters... Moses watered their flock... gave Moses Zipporah) — THREAD 1 (the recurring well-betrothal pattern: the covenant bride met at the well)
+--   ★ v.15-30 (Jacob serves seven years for Rachel, seemed but a few days; Laban's deception — Leah given for Rachel; It must not be so done... to give the younger before the firstborn; seven more years)
+--        NT:     Galatians 6:7 (Be not deceived; Elohim is not mocked: for whatsoever a man soweth, that shall he also reap) — THREAD 2 (load-bearing: the deceiver Jacob now deceived — measure-for-measure)
+--        Extras: Jubilees 28:6 (It is not so done in our country, to give the younger before the elder... thus it is ordained and written in the heavenly tables); Jasher 30:14 (I will serve you seven years for Rachel your younger daughter) — THREAD 2
+--        Tanakh: Genesis 27:35-36 (Thy brother came with subtilty, and hath taken away thy blessing; Is not he rightly named Jacob? for he hath supplanted me these two times) — THREAD 2 (load-bearing: Jacob the supplanter, who deceived his own father for the firstborn's blessing, is now repaid with the firstborn given before the younger)
+--   ★ v.31-35 (the LORD opened Leah's womb — Reuben, Simeon, Levi, Yahudah/Judah; Now will I praise Yahuah)
+--        NT:     ★ Hebrews 7:14 (our Lord sprang out of Juda); Matthew 1:2-3 (Jacob begat Judas and his brethren; Judas begat Phares and Zara of Thamar) — THREAD 4 (load-bearing: Judah = the Messianic line); Revelation 7:4-5 (sealed an hundred and forty and four thousand of all the tribes of the children of Yashar'el; Of the tribe of Juda were sealed twelve thousand) — THREAD 5
+--        Extras: Jubilees 28:11 (Yahuah opened the womb of Leah... she bare Jacob a son, and he called his name Reuben); Jubilees 28:14 (bare him a fourth son, and he called his name Yahudah/Judah) — THREADS 3, 4
+--        Tanakh: ★ Genesis 49:8-10 (Yahudah, thou art he whom thy brethren shall praise... The sceptre shall not depart from Yahudah... until Shiloh come; and unto him shall the gathering of the people be) — THREAD 4 (load-bearing: Judah's name = praise → the scepter and the gathering); Ezekiel 37:16-22 (the two sticks: Yahudah and Joseph/Ephraim made one in mine hand; they shall be no more two nations) — THREAD 5 (load-bearing: the tribal fathers born here are the two-house people gathered at the end)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-29-jacob-at-the-well-the-bride-from-the-kindred — Tanakh (Genesis 24, Exodus 2) + NT (John 4) [free] (the well-betrothal TYPE: the covenant bride met at the well, fulfilled at Jacob's own well by the Bridegroom)
+--   2. genesis-29-the-supplanter-supplanted-the-younger-before-the-firstborn — Tanakh (Genesis 27) + NT (Galatians 6) + Extras (Jubilees 28, Jasher 30) [extras] (★ measure-for-measure: the deceiver Jacob now deceived; the younger before the firstborn)
+--   3. genesis-29-yahuah-opened-leahs-womb-the-fathers-of-the-tribes — Extras (Jubilees 28) [extras] (Yahuah opens the hated wife's womb; Reuben, Simeon, Levi born — the tribal fathers begin)
+--   4. genesis-29-now-will-i-praise-yahuah-judah-and-the-scepter — Tanakh (Genesis 49) + NT (Hebrews 7, Matthew 1) + Extras (Jubilees 28) [extras] (★ Judah=praise → the scepter, Shiloh, the gathering, the Messianic line; our Lord sprang out of Juda)
+--   5. genesis-29-the-twelve-tribes-and-the-gathering-of-the-two-houses — Tanakh (Ezekiel 37) + NT (Revelation 7) [free] (★ the tribal fathers born here are the two-house people: Judah and Joseph/Ephraim made one stick; the 144,000 sealed of all the tribes)
+--
+-- Framing notes:
+--   THE WELL-BETROTHAL TYPE (THREAD 1): *And Jacob went near, and rolled the stone from the well's mouth, and watered the flock of Laban his mother's brother* (29:10), then *Jacob kissed Rachel, and lifted up his voice, and wept* (29:11). This is the third covenant-bride met at a well: Abraham's servant found Rebekah for Isaac at the well of Nahor — *Let down thy pitcher... Drink, and I will give thy camels drink also* (Genesis 24:14-19) — and Moses met Zipporah at the well of Midian — *Moses stood up and helped them, and watered their flock... And Moses was content to dwell with the man: and he gave Moses Zipporah his daughter* (Exodus 2:17,21). The bride of the covenant line is sought and won at the well — and the pattern reaches its fulfillment at Jacob's OWN well, where the Bridegroom Himself sits: *Now Jacob's well was there. Yahusha (Jesus)... sat thus on the well... There cometh a woman of Samaria to draw water: Yahusha (Jesus) saith unto her, Give me to drink* (John 4:6-7), and offers *living water... a well of water springing up into everlasting life* (John 4:14). Framed as the recurring covenant-bride-at-the-well type, NOT replacement — the Samaritan woman is of the scattered northern house ("our father Jacob," "this mountain"), a lost-sheep of Yashar'el (Israel) met at the well of her father Jacob.
+--   ★ MEASURE-FOR-MEASURE (THREAD 2): *in the morning, behold, it was Leah... wherefore then hast thou beguiled me?* (29:25), and Laban's word *It must not be so done in our country, to give the younger before the firstborn* (29:26). The supplanter is supplanted: Jacob, who took the firstborn's blessing by deceit — *Thy brother came with subtilty, and hath taken away thy blessing... he hath supplanted me these two times* (Genesis 27:35-36) — is now himself deceived in the dark, the elder (firstborn) given before the younger he chose. Sha'ul (Paul) names the law of it: *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). This is covenant-discipline within the line, not condemnation of it — the reckoning that shapes Jacob into Yashar'el (Israel). Jubilees adds that the elder-before-younger order is *ordained and written in the heavenly tables* (Jubilees 28:6).
+--   ★★ THE TRIBAL FATHERS / JUDAH = PRAISE (THREADS 3, 4): *when Yahuah (LORD) saw that Leah was hated, he opened her womb* (29:31) — and the hated wife bears Reuben, Simeon, Levi, and *she said, Now will I praise Yahuah (LORD): therefore she called his name Yahudah (Judah)* (29:35). Judah's name IS praise — and from Judah comes the scepter: *The sceptre shall not depart from Yahudah (Judah)... until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The Messianic line begins in this hated wife's fourth son: *it is evident that our Lord sprang out of Juda* (Hebrews 7:14), *Jacob begat Judas and his brethren; And Judas begat Phares...* (Matthew 1:2-3) — the genealogy of *Yahusha HaMashiach (Jesus Christ)*. The foundation of the people is laid here, in a womb Yahuah opened.
+--   ★★ THE TWO HOUSES (THREAD 5): the sons born in this chapter are the fathers of the twelve tribes — Reuben, Simeon, Levi, Judah here; the rest follow. They become the two-house people divided after Solomon and gathered at the end: *take thee one stick, and write upon it, For Yahudah (Judah)... then take another stick... For Joseph, the stick of Ephraim... and make them one stick* (Ezekiel 37:16-19), *they shall be no more two nations* (Ezekiel 37:22); and sealed at the consummation — *there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar'el (Israel). Of the tribe of Juda were sealed twelve thousand...* (Revelation 7:4-5). The tribes whose first fathers cry out at these births are the same people Yahuah swore to gather and make one.
+--   EXTRAS: Jubilees 28 carries the marriages and the births verse-for-verse (clean parse): the deception (28:3-4), the heavenly-tables order (28:6), Yahuah opening Leah's womb (28:11), and the four firstborn sons named with their birth-dates (28:11,13,14). Jubilees DOUBLE-WRITTEN 'jubilees','jubilees'. Jasher 30 mirrors the well-meeting (30:4-14) but its bulk (30:15-29) is Esau/Eber/genealogy material unrelated to Genesis 29's verse-types; only the seven-years-for-Rachel line (30:14) is bound as a member, DOUBLE-WRITTEN 'jasher','jasher'. The Jasher 30:1-3 Bethel theophany belongs to Genesis 28's pack, not here.
+--   VERSES WITH NO ADD: v.1-9 (the journey, the well's stone, the shepherds' talk) carried into THREAD 1 by the well-betrothal frame; no distinct standalone add. The handmaid notices (v.24 Zilpah, v.29 Bilhah) and the wage-question (v.15) are narrative connective tissue preparing chapter 30's births — no framework-bearing target warranted in this pack.
+
+CREATE TEMP VIEW _s301_ge29_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Jacob at the well — the bride from the kindred (the well-betrothal TYPE)
+    ('canon','genesis',29,10,'canon','genesis',24,14,'free',
+      E'*And let it come to pass, that the damsel to whom I shall say, Let down thy pitcher, I pray thee, that I may drink; and she shall say, Drink, and I will give thy camels drink also: let the same be she that thou hast appointed for thy servant Isaac* (Genesis 24:14). When *Jacob went near, and rolled the stone from the well''s mouth, and watered the flock of Laban his mother''s brother* (Genesis 29:10), he stands where his father''s bride was found: the covenant bride of the line is met at the well, the servant''s sign for Isaac answered by Rebekah''s very drawing. The same well-betrothal pattern that won Rebekah for Isaac now brings Jacob to Rachel.'),
+    ('canon','genesis',29,11,'canon','genesis',24,15,'free',
+      E'*And it came to pass, before he had done speaking, that, behold, Rebekah came out, who was born to Bethuel, son of Milcah, the wife of Nahor, Abraham''s brother, with her pitcher upon her shoulder* (Genesis 24:15). As Rebekah of the kindred of Nahor *came out* to the well at the very moment of the servant''s prayer, so *while he yet spake... Rachel came with her father''s sheep* (Genesis 29:9), and *Jacob kissed Rachel, and lifted up his voice, and wept* (Genesis 29:11). The bride is from the same kindred — Nahor''s house — and met at the same kind of well; the covenant line marries within the promise, not into the nations.'),
+    ('canon','genesis',29,10,'canon','exodus',2,17,'free',
+      E'*And the shepherds came and drove them away: but Moses stood up and helped them, and watered their flock* (Exodus 2:17). The same scene marks the next deliverer: Moses at the well of Midian drives off the shepherds and *watered their flock*, just as *Jacob... rolled the stone from the well''s mouth, and watered the flock of Laban his mother''s brother* (Genesis 29:10). The man of the covenant proves himself at the well by watering the flock — and is given the daughter.'),
+    ('canon','genesis',29,28,'canon','exodus',2,21,'free',
+      E'*And Moses was content to dwell with the man: and he gave Moses Zipporah his daughter* (Exodus 2:21). As Jacob abode with Laban and *he gave him Rachel his daughter to wife also* (Genesis 29:28), so the man of Midian gave Moses Zipporah — the well-betrothal carried forward a third time: the covenant bride won by the well, given by her father to the one who watered the flock. Isaac, Jacob, Moses — three brides of the line met at three wells.'),
+    ('canon','genesis',29,9,'canon','john',4,7,'free',
+      E'*There cometh a woman of Samaria to draw water: Yahusha (Jesus) saith unto her, Give me to drink* (John 4:7) — and this is no other well: *Now Jacob''s well was there* (John 4:6). The pattern of *Rachel came with her father''s sheep: for she kept them* (Genesis 29:9), the woman come to the well of Jacob, reaches its fullness when the Bridegroom Himself sits on Jacob''s well and meets a woman of the scattered northern house — *our father Jacob, which gave us the well* (John 4:12). The covenant-bride-at-the-well type opens to *living water... a well of water springing up into everlasting life* (John 4:14), and the lost sheep of Yashar''el (Israel) is sought at her own father''s well.'),
+
+    -- THREAD 2: The supplanter supplanted — the younger before the firstborn (measure-for-measure)
+    ('canon','genesis',29,25,'canon','genesis',27,35,'free',
+      E'*And he said, Thy brother came with subtilty, and hath taken away thy blessing* (Genesis 27:35). The morning cry *behold, it was Leah... wherefore then hast thou beguiled me?* (Genesis 29:25) is the very deceit Jacob himself worked returning upon him: he *came with subtilty* and took the firstborn''s blessing in the dark of his blind father''s tent, and now in the dark of the wedding night he is beguiled and given the firstborn daughter he did not choose. The deceiver is deceived.'),
+    ('canon','genesis',29,26,'canon','genesis',27,36,'free',
+      E'*And he said, Is not he rightly named Jacob? for he hath supplanted me these two times: he took away my birthright; and, behold, now he hath taken away my blessing* (Genesis 27:36). Esau named the supplanter; now Laban answers Jacob with the law of the firstborn — *It must not be so done in our country, to give the younger before the firstborn* (Genesis 29:26). The man who put the younger before the firstborn, seizing birthright and blessing, is held to the rule he overturned: here the firstborn must go before the younger, and Jacob reaps the measure he sowed.'),
+    ('canon','genesis',29,25,'canon','galatians',6,7,'free',
+      E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). The deception Jacob meets — *wherefore then hast thou beguiled me?* (Genesis 29:25) — is the harvest of the deception he sowed for the blessing. Sha''ul (Paul) names the law working in the story: a man reaps what he sows. This is covenant-discipline shaping Jacob into Yashar''el (Israel), not a curse upon the chosen line; the same hand that elected him also corrects him.'),
+    ('canon','genesis',29,26,'jubilees','jubilees',28,6,'extras',
+      E'*And Laban said to Jacob: "It is not so done in our country, to give the younger before the elder." And it is not right to do this; for thus it is ordained and written in the heavenly tables, that no one should give his younger daughter before the elder* (Jubilees 28:6). The restored witness keeps Laban''s rule — *it is not so done in our country, to give the younger before the elder* — and roots it in the heavenly tables, matching *It must not be so done in our country, to give the younger before the firstborn* (Genesis 29:26): the very order Jacob overturned for himself is the ordained order he is now made to keep.'),
+    ('canon','genesis',29,18,'jasher','jasher',30,14,'extras',
+      E'*And Jacob said to Laban, I will serve you seven years for Rachel your younger daughter; and Laban consented to this and Jacob served Laban seven years for his daughter Rachel* (Jasher 30:14). The extended witness carries the bargain whole — *I will serve you seven years for Rachel your younger daughter* — matching *I will serve thee seven years for Rachel thy younger daughter* (Genesis 29:18). The seven years for the younger daughter are the price Jacob willingly pays, and the trap Laban sets around the firstborn the younger.'),
+
+    -- THREAD 3: Yahuah opened Leah's womb — the fathers of the tribes begin (Jubilees witness)
+    ('canon','genesis',29,31,'jubilees','jubilees',28,11,'extras',
+      E'*And Yahuah (God) opened the womb of Leah, and she conceived and bare Jacob a son, and he called his name Reuben... But the womb of Rachel was closed, for Yahuah (God) saw that Leah was hated and Rachel loved* (Jubilees 28:11). The restored witness keeps the turn whole — *Yahuah opened the womb of Leah... for Yahuah saw that Leah was hated* — matching *when Yahuah (LORD) saw that Leah was hated, he opened her womb: but Rachel was barren* (Genesis 29:31). The unloved wife is the one Yahuah visits first; the foundation of the tribes is laid in her affliction.'),
+    ('canon','genesis',29,33,'jubilees','jubilees',28,13,'extras',
+      E'*And again Jacob went in to Leah, and she conceived, and bare Jacob a second son, and he called his name Simeon* (Jubilees 28:13). The restored witness names the second son with Genesis 29:33 — *she conceived again, and bare a son... she called his name Simeon* — the tribal fathers come one after another from the hated wife''s opened womb, each birth a stone laid in the house of Yashar''el (Israel).'),
+    ('canon','genesis',29,34,'jubilees','jubilees',28,14,'extras',
+      E'*And again Jacob went in to Leah, and she conceived, and bare him a third son, and he called his name Levi... And again Jacob went in to her, and she conceived, and bare him a fourth son, and he called his name Yahudah (Judah)* (Jubilees 28:14). The restored witness carries Levi and Judah together — the priestly tribe and the kingly tribe born back to back — matching *she called his name Levi* (Genesis 29:34) and *she called his name Yahudah (Judah)* (Genesis 29:35). The two tribes that will carry the altar and the scepter come from the wife Yahuah remembered.'),
+
+    -- THREAD 4 (★): Now will I praise Yahuah — Judah and the scepter (the Messianic line)
+    ('canon','genesis',29,35,'canon','genesis',49,8,'free',
+      E'*Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee* (Genesis 49:8). Leah''s word at the fourth birth — *Now will I praise Yahuah (LORD): therefore she called his name Yahudah (Judah)* (Genesis 29:35) — is opened by the dying Jacob: Judah, whose name is praise, is *he whom thy brethren shall praise*, before whom the tribes bow. The name cried over the cradle becomes the blessing over the tribe.'),
+    ('canon','genesis',29,35,'canon','genesis',49,10,'free',
+      E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The son named *Now will I praise Yahuah (LORD)... Yahudah (Judah)* (Genesis 29:35) is the tribe of the scepter — the kingly line that holds the rod *until Shiloh come*, the One to whom *the gathering of the people* belongs. The Messianic hope is seeded in this birth: from Judah''s praise comes the King and the ingathering of the two houses.'),
+    ('canon','genesis',29,35,'canon','hebrews',7,14,'free',
+      E'*For it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood* (Hebrews 7:14). The fourth son of Leah — *she called his name Yahudah (Judah)* (Genesis 29:35) — is the tribe from which Messiah comes: *our Lord sprang out of Juda*. The praise cried at this birth runs the whole length of the canon to the One who springs from Judah; the scepter-tribe is the Messiah-tribe.'),
+    ('canon','genesis',29,35,'canon','matthew',1,2,'free',
+      E'*Abraham begat Isaac; and Isaac begat Jacob; and Jacob begat Judas and his brethren* (Matthew 1:2). The genealogy of *Yahusha HaMashiach (Jesus Christ)* (Matthew 1:1) runs straight through the son born here — *Jacob begat Judas and his brethren* — the very Yahudah (Judah) Leah named *Now will I praise Yahuah (LORD)* (Genesis 29:35). The birth in Laban''s house is a link in the line of the Messiah; the hated wife''s fourth son carries the promised seed.'),
+    ('canon','genesis',29,35,'jubilees','jubilees',28,14,'extras',
+      E'*And again Jacob went in to her, and she conceived, and bare him a fourth son, and he called his name Yahudah (Judah), on the fifteenth of the third month, in the first year of the fourth week* (Jubilees 28:14). The restored witness records the fourth son by name and day — *bare him a fourth son, and he called his name Yahudah (Judah)* — matching *Now will I praise Yahuah (LORD): therefore she called his name Yahudah (Judah)* (Genesis 29:35). The tribe of the scepter and the praise is set down in the witness as the fourth-born of Leah.'),
+
+    -- THREAD 5 (★): The twelve tribes and the gathering of the two houses
+    ('canon','genesis',29,34,'canon','ezekiel',37,16,'free',
+      E'*Moreover, thou son of Adam, take thee one stick, and write upon it, For Yahudah (Judah), and for the children of Yashar''el (Israel) his companions: then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16). The fathers born in Laban''s house — Levi, Yahudah (Judah), and the brothers to come — are the two houses of the end: Judah''s stick and Joseph''s stick. The names cried over these cradles (Genesis 29:34-35) become the two sticks Yahuah will join; the family begun here is the people divided and to be gathered.'),
+    ('canon','genesis',29,35,'canon','ezekiel',37,22,'free',
+      E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel)... and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The tribe of *Yahudah (Judah)* named at this birth (Genesis 29:35) heads the southern house; the sons yet to come head the northern; and the end of the matter is that the houses sprung from these births *shall be no more two nations*. The twelve tribes that begin in this chapter are the one nation Yahuah swears to regather.'),
+    ('canon','genesis',29,35,'canon','revelation',7,4,'free',
+      E'*And I heard the number of them which were sealed: and there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4). The tribes whose first fathers are named here — *Reuben... Simeon... Levi... Yahudah (Judah)* (Genesis 29:32-35) — are the tribes sealed at the consummation: *of all the tribes of the children of Yashar''el (Israel)*. The household begun in Laban''s house is the sealed people of the end; the twelve sons become the twelve thousand of every tribe.'),
+    ('canon','genesis',29,35,'canon','revelation',7,5,'free',
+      E'*Of the tribe of Juda were sealed twelve thousand. Of the tribe of Reuben were sealed twelve thousand. Of the tribe of Gad were sealed twelve thousand* (Revelation 7:5). The roll of the sealed opens with *the tribe of Juda* — the very Yahudah (Judah) Leah named *Now will I praise Yahuah (LORD)* (Genesis 29:35) — and *the tribe of Reuben*, her firstborn (Genesis 29:32). The names cried at these births stand at the head of the sealed of Yashar''el (Israel); the foundation laid here is gathered, tribe by tribe, at the last.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-29-jacob-at-the-well-the-bride-from-the-kindred',
+       E'Jacob at the well — the bride from the kindred',
+       E'*And Jacob went on his journey, and came into the land of the people of the east. And he looked, and behold a well in the field* (Genesis 29:1-2) — and at the well the covenant bride is found. *While he yet spake with them, Rachel came with her father''s sheep: for she kept them* (Genesis 29:9), and *Jacob went near, and rolled the stone from the well''s mouth, and watered the flock of Laban his mother''s brother* (Genesis 29:10), and *Jacob kissed Rachel, and lifted up his voice, and wept* (Genesis 29:11). This is the third bride of the line met at a well. Abraham''s servant found Rebekah for Isaac at the well of Nahor: *Let down thy pitcher... and she shall say, Drink, and I will give thy camels drink also* (Genesis 24:14), *behold, Rebekah came out, who was born to Bethuel, son of Milcah, the wife of Nahor, Abraham''s brother, with her pitcher upon her shoulder* (Genesis 24:15) — the bride from the kindred, come out at the very word of prayer. And Moses met Zipporah at the well of Midian: *Moses stood up and helped them, and watered their flock* (Exodus 2:17), *and he gave Moses Zipporah his daughter* (Exodus 2:21). The man of the covenant proves himself at the well by watering the flock, and is given the daughter of the house — Isaac, Jacob, Moses, three brides won at three wells, each from within the promise, never out of the nations. And the pattern reaches its fullness at Jacob''s OWN well, where the Bridegroom Himself sits: *Now Jacob''s well was there. Yahusha (Jesus)... sat thus on the well... There cometh a woman of Samaria to draw water: Yahusha (Jesus) saith unto her, Give me to drink* (John 4:6-7). She is of the scattered northern house — *our father Jacob, which gave us the well* (John 4:12), *this mountain* (John 4:20) — a lost sheep of Yashar''el (Israel) met at her own father''s well, offered *living water... a well of water springing up into everlasting life* (John 4:14). The bride is still sought at the well; the Bridegroom still comes to the kindred to gather His own.',
+       sv.verse_id, ev.verse_id, 'free', 20700
+  FROM _s301_ge29_lookup sv, _s301_ge29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=29 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-29-the-supplanter-supplanted-the-younger-before-the-firstborn',
+       E'The supplanter supplanted — the younger before the firstborn',
+       E'*And Jacob served seven years for Rachel; and they seemed unto him but a few days, for the love he had to her* (Genesis 29:20) — but the love is met with a deceit that mirrors his own. *In the morning, behold, it was Leah: and he said to Laban, What is this thou hast done unto me? did not I serve with thee for Rachel? wherefore then hast thou beguiled me?* (Genesis 29:25). And Laban answers with the law of the firstborn: *It must not be so done in our country, to give the younger before the firstborn* (Genesis 29:26). Here is measure-for-measure. Jacob is the man who put the younger before the firstborn — who took the birthright and then, in the dark of his blind father''s tent, stole the blessing: *Thy brother came with subtilty, and hath taken away thy blessing* (Genesis 27:35), *Is not he rightly named Jacob? for he hath supplanted me these two times: he took away my birthright; and, behold, now he hath taken away my blessing* (Genesis 27:36). Now in the dark of the wedding night the supplanter is supplanted — beguiled, and bound to honor the firstborn before the younger he chose. Sha''ul (Paul) names the law working in the story: *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). This is not a curse upon the chosen line but the discipline that shapes Jacob into Yashar''el (Israel) — the same hand that elected him corrects him. The restored witness keeps Laban''s rule and roots it in the heavenly order: *It is not so done in our country, to give the younger before the elder... for thus it is ordained and written in the heavenly tables* (Jubilees 28:6), and carries the willing price Jacob paid: *I will serve you seven years for Rachel your younger daughter* (Jasher 30:14). The one who overturned the order of the firstborn is made to keep it.',
+       sv.verse_id, ev.verse_id, 'extras', 20703
+  FROM _s301_ge29_lookup sv, _s301_ge29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=29 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-29-yahuah-opened-leahs-womb-the-fathers-of-the-tribes',
+       E'Yahuah opened Leah''s womb — the fathers of the tribes begin',
+       E'*And when Yahuah (LORD) saw that Leah was hated, he opened her womb: but Rachel was barren* (Genesis 29:31). The unloved wife is the one Yahuah visits first — and from her affliction the tribes of Yashar''el (Israel) begin to be born. *Leah conceived, and bare a son, and she called his name Reuben: for she said, Surely Yahuah (LORD) hath looked upon my affliction* (Genesis 29:32); *she conceived again... she called his name Simeon* (Genesis 29:33); *she conceived again... was his name called Levi* (Genesis 29:34). The restored witness keeps the turn whole: *And Yahuah (God) opened the womb of Leah, and she conceived and bare Jacob a son, and he called his name Reuben... for Yahuah (God) saw that Leah was hated and Rachel loved* (Jubilees 28:11), *she conceived, and bare Jacob a second son, and he called his name Simeon* (Jubilees 28:13), *she conceived, and bare him a third son, and he called his name Levi* (Jubilees 28:14). One after another the tribal fathers come from the womb Yahuah opened — the priestly Levi and, next, the kingly Judah — the foundation of the whole house of Yashar''el (Israel) laid not in the loved wife but in the hated one whom Yahuah remembered. He looks upon affliction and builds His people there.',
+       sv.verse_id, ev.verse_id, 'extras', 20706
+  FROM _s301_ge29_lookup sv, _s301_ge29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=29 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-29-now-will-i-praise-yahuah-judah-and-the-scepter',
+       E'Now will I praise Yahuah — Judah and the scepter',
+       E'*And she conceived again, and bare a son: and she said, Now will I praise Yahuah (LORD): therefore she called his name Yahudah (Judah); and left bearing* (Genesis 29:35). Judah''s name IS praise — and this fourth son of the hated wife is the tribe of the scepter and the seed. The dying Jacob opens the name into blessing: *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee* (Genesis 49:8), *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). From Judah''s praise comes the King who holds the rod until Shiloh, and to whom the gathering of the people belongs. The New Testament names the One: *it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood* (Hebrews 7:14) — the scepter-tribe is the Messiah-tribe — and the genealogy of *Yahusha HaMashiach (Jesus Christ)* runs straight through this birth: *Jacob begat Judas and his brethren; And Judas begat Phares and Zara of Thamar* (Matthew 1:2-3). The restored witness sets the fourth son down by name and day: *she conceived, and bare him a fourth son, and he called his name Yahudah (Judah), on the fifteenth of the third month* (Jubilees 28:14). The praise cried over this cradle in Laban''s house runs the whole length of the canon — to the scepter, to Shiloh, to the gathering, to the Messiah who sprang out of Judah.',
+       sv.verse_id, ev.verse_id, 'extras', 20709
+  FROM _s301_ge29_lookup sv, _s301_ge29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=35
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=29 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-29-the-twelve-tribes-and-the-gathering-of-the-two-houses',
+       E'The twelve tribes and the gathering of the two houses',
+       E'The sons born in this chapter — *Reuben* (Genesis 29:32), *Simeon* (Genesis 29:33), *Levi* (Genesis 29:34), *Yahudah (Judah)* (Genesis 29:35) — are the first of the twelve tribal fathers, the household that becomes the people of Yahuah. And that people will be two houses, divided after Solomon, scattered, and gathered again into one. The prophet sees it: *thou son of Adam, take thee one stick, and write upon it, For Yahudah (Judah), and for the children of Yashar''el (Israel) his companions: then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16), *and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19), *they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). Judah''s stick and Joseph''s stick — both sprung from the sons named in Laban''s house — joined into one. And at the consummation the tribes are sealed: *there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel). Of the tribe of Juda were sealed twelve thousand. Of the tribe of Reuben were sealed twelve thousand* (Revelation 7:4-5) — the roll opening with Judah and Reuben, the very names Leah cried at these births. The twelve sons begun here are the one nation Yahuah swears to regather; the foundation laid in this chapter is gathered, tribe by tribe, at the last.',
+       sv.verse_id, ev.verse_id, 'free', 20712
+  FROM _s301_ge29_lookup sv, _s301_ge29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=29 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the damsel... shall say, Drink, and I will give thy camels drink also... let the same be she that thou hast appointed for thy servant Isaac* (Genesis 24:14) — the well-betrothal sign that won Rebekah for Isaac; Jacob now at the same kind of well (29:10).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=10
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=24 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-jacob-at-the-well-the-bride-from-the-kindred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*behold, Rebekah came out, who was born to Bethuel, son of Milcah, the wife of Nahor, Abraham''s brother* (Genesis 24:15) — the bride from the kindred of Nahor, as Rachel of Laban''s house comes to the well (29:9,11).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=11
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=24 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-jacob-at-the-well-the-bride-from-the-kindred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Moses stood up and helped them, and watered their flock* (Exodus 2:17) — the next deliverer proves himself at the well of Midian by watering the flock, as Jacob rolled the stone and watered Laban''s flock (29:10).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=10
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-jacob-at-the-well-the-bride-from-the-kindred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Moses was content to dwell with the man: and he gave Moses Zipporah his daughter* (Exodus 2:21) — the father gives the bride won at the well, as Laban gives Rachel (29:28); Isaac, Jacob, Moses — three brides at three wells.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=28
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-jacob-at-the-well-the-bride-from-the-kindred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*There cometh a woman of Samaria to draw water: Yahusha (Jesus) saith unto her, Give me to drink* (John 4:7) — at *Jacob''s well* (John 4:6) the Bridegroom meets a lost sheep of the northern house; the well-betrothal type fulfilled (29:9).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=9
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-jacob-at-the-well-the-bride-from-the-kindred'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thy brother came with subtilty, and hath taken away thy blessing* (Genesis 27:35) — the deceit Jacob worked on his blind father returns on him in the dark wedding night (29:25); the deceiver deceived.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=27 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-the-supplanter-supplanted-the-younger-before-the-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Is not he rightly named Jacob? for he hath supplanted me these two times: he took away my birthright; and... my blessing* (Genesis 27:36) — the supplanter of the firstborn now held to the rule of the firstborn before the younger (29:26).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=26
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=27 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-the-supplanter-supplanted-the-younger-before-the-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7) — Sha''ul names the law working in the deception Jacob meets (29:25): a man reaps what he sows; covenant-discipline, not a curse.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-the-supplanter-supplanted-the-younger-before-the-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*It is not so done in our country, to give the younger before the elder... thus it is ordained and written in the heavenly tables* (Jubilees 28:6) — the restored witness roots Laban''s rule (29:26) in the heavenly order Jacob overturned.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=26
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-the-supplanter-supplanted-the-younger-before-the-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will serve you seven years for Rachel your younger daughter* (Jasher 30:14) — the extended witness keeps the willing price of 29:18, the seven years for the younger that Laban turns into a trap around the firstborn.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=30 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-the-supplanter-supplanted-the-younger-before-the-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah (God) opened the womb of Leah... and he called his name Reuben... for Yahuah (God) saw that Leah was hated and Rachel loved* (Jubilees 28:11) — the restored witness keeps the turn of 29:31: the hated wife visited first.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=31
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-yahuah-opened-leahs-womb-the-fathers-of-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*she conceived, and bare Jacob a second son, and he called his name Simeon* (Jubilees 28:13) — the second tribal father, with 29:33; the house of Yashar''el built one birth at a time.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=33
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-yahuah-opened-leahs-womb-the-fathers-of-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*she conceived, and bare him a third son, and he called his name Levi... and bare him a fourth son, and he called his name Yahudah (Judah)* (Jubilees 28:14) — the priestly and kingly tribes born back to back, with 29:34.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=34
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-yahuah-opened-leahs-womb-the-fathers-of-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahudah (Judah), thou art he whom thy brethren shall praise... thy father''s children shall bow down before thee* (Genesis 49:8) — Jacob opens the name *Now will I praise Yahuah* (29:35) into the blessing of the tribe.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=35
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-now-will-i-praise-yahuah-judah-and-the-scepter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The sceptre shall not depart from Yahudah (Judah)... until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10) — the son named at 29:35 is the scepter-tribe, the King and the ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=35
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-now-will-i-praise-yahuah-judah-and-the-scepter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*it is evident that our Lord sprang out of Juda* (Hebrews 7:14) — the fourth son of Leah (29:35) is the Messiah-tribe; the scepter-tribe is the tribe Messiah springs from.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=35
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-now-will-i-praise-yahuah-judah-and-the-scepter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Jacob begat Judas and his brethren* (Matthew 1:2) — the genealogy of Yahusha HaMashiach runs through the son born here (29:35); the hated wife''s fourth son carries the promised seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=35
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-now-will-i-praise-yahuah-judah-and-the-scepter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*she conceived, and bare him a fourth son, and he called his name Yahudah (Judah), on the fifteenth of the third month* (Jubilees 28:14) — the restored witness sets the scepter-tribe down by name and day, with 29:35.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=35
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-now-will-i-praise-yahuah-judah-and-the-scepter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*take thee one stick... For Yahudah (Judah)... then take another stick... For Joseph, the stick of Ephraim* (Ezekiel 37:16) — the tribal fathers born here (29:34-35) are the two sticks Yahuah will join.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=34
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-the-twelve-tribes-and-the-gathering-of-the-two-houses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22) — the houses sprung from these births (29:35) made one nation again.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=35
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-the-twelve-tribes-and-the-gathering-of-the-two-houses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4) — the tribes whose fathers are named here (29:32-35) sealed at the consummation.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=35
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-the-twelve-tribes-and-the-gathering-of-the-two-houses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Of the tribe of Juda were sealed twelve thousand. Of the tribe of Reuben were sealed twelve thousand* (Revelation 7:5) — the roll opens with Judah and Reuben, the very names Leah cried at these births (29:32,35).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=29 AND sv.verse_number=35
+  JOIN _s301_ge29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-29-the-twelve-tribes-and-the-gathering-of-the-two-houses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_30.sql (Genesis 30) -----
+-- Chapter: Genesis 30 — THE COMPLETING OF THE TRIBAL FATHERS AND JACOB'S INCREASE: the rest of the twelve
+-- sons are born — Dan and Naphtali (by Bilhah, Rachel's maid), Gad and Asher (by Zilpah, Leah's maid),
+-- Issachar and Zebulun and the daughter Dinah (by Leah), and at last ★ JOSEPH by Rachel, whom Elohim
+-- remembered: "Elohim (God) hath taken away my reproach... Yahuah (LORD) shall add to me another son" (Yosef,
+-- the head of the northern house of Israel/Ephraim/Joseph). Then Laban's confession — "I have learned by
+-- experience that Yahuah (LORD) hath blessed me for thy sake" (30:27) — the covenant-blessing spilling onto
+-- the nations through Jacob; and Jacob's wages, the speckled and spotted flocks, Yahuah prospering the
+-- covenant-bearer despite Laban's changing of the wages (sets up ch31 "Elohim hath taken away the cattle of
+-- your father").
+-- Tag: ge30   Temp view: _s301_ge30_lookup
+-- Sort band: base 20725, step 3 -> threads at 20725, 20728, 20731, 20734 (4 threads)
+-- Source of EVERY row: 'canon','genesis',30,v
+--
+-- Genesis 30 coverage:
+--   ★ v.1 (Rachel envied her sister; Give me children, or else I die)
+--        NT:     none warranted distinct (the barren-cry forward-weave is carried by THREAD 2's Luke 1:25)
+--        Extras: Jubilees 28:16 (Rachel envied Leah... Give me children); Jasher 31:16 (Rachel envied her sister Leah... she bare no children) — THREAD 1 (the births frame) / context for THREAD 2
+--        Tanakh: 1 Samuel 1 barren-cry weighed at THREAD 2 (Hannah) — not forced on v.1 itself
+--   ★ v.2 (Jacob's anger: Am I in Elohim's stead, who hath withheld from thee the fruit of the womb?)
+--        NT:     none warranted   Extras: Jubilees 28:16 (Have I withheld from you the fruits of your womb?) — paralleled in THREAD 2 prose, not forced as a member; the clean barren-remembered members carry it
+--        Tanakh: none warranted distinct
+--   ★ v.3-13 (Bilhah bears Dan + Naphtali; Zilpah bears Gad + Asher — the maid-sons)
+--        NT:     Revelation 7:5-6 (Gad, Aser, Nepthalim sealed) — THREAD 1 (the twelve tribes sealed)
+--        Extras: Jubilees 28:18 (Dan), 28:19 (Naphtali, Gad), 28:21 (Asher); Jasher 31:16-17 (Dan, Naphtali, Gad, Asher) — THREAD 1
+--        Tanakh: Ezekiel 37:19 (the twelve gathered into one stick) — THREAD 1
+--   ★ v.14-21 (the mandrakes; Leah bears Issachar, Zebulun, and the daughter Dinah)
+--        NT:     Revelation 7:7-8 (Issachar, Zabulon sealed) — THREAD 1
+--        Extras: Jubilees 28:22 (Issachar), 28:23 (Zebulon + Dinah); Jasher 31:18 (Issachar, Zebulon, Dinah) — THREAD 1
+--        Tanakh: Ezekiel 37:16 (For Joseph, the stick of Ephraim, and for all the house of Yashar'el) — THREAD 1
+--   ★★ v.22-24 (Elohim REMEMBERED Rachel, opened her womb; she bare JOSEPH — "Elohim hath taken away my reproach... Yahuah shall add to me another son")
+--        NT:     ★ Luke 1:25 (Thus hath Yahuah dealt with me... to take away my reproach among men — Elisabeth, word-for-word Rachel's) — THREAD 2 (load-bearing barren-remembered); Luke 1:48 (all generations shall call me blessed) — woven in THREAD 2 prose; Revelation 7:6,8 (Manasses, Joseph sealed — the northern-house head) — THREAD 1
+--        Extras: Jubilees 28:24 (Yahuah was gracious to Rachel, opened her womb... Joseph); Jasher 31:19-21 (Rachel prayed... give me children... Yahuah has taken away my reproach... Joseph) — THREADS 1/2
+--        Tanakh: ★ 1 Samuel 1:11,20 (Hannah — remember me... bare a son... because I have asked him of Yahuah); Ezekiel 37:16 (the stick of Joseph — the NORTHERN HOUSE HEAD enters) — THREADS 1/2
+--   ★★ v.25-30 (Jacob asks leave; Laban's confession: I have learned by experience that Yahuah hath blessed me for thy sake; Yahuah hath blessed thee since my coming)
+--        NT:     none warranted distinct (the blessing-to-the-nations forward-weave is the Abrahamic promise, held to THREAD 3's Genesis 12 lateral)
+--        Extras: Jasher 31:25 (Laban: appoint me your wages... if I have found favor in your sight do not leave me) — narrative parallel, weighed; the load-bearing "for thy sake" confession has no clean distinct extras verse (Jasher 31:58 "Elohim blessed him on my account" is Laban's later report to Esau, woven in THREAD 3 prose) — THREAD 3
+--        Tanakh: ★ Genesis 12:2-3 (I will bless thee... and in thee shall all families of the earth be blessed); Genesis 39:5 (Yahuah blessed the Egyptian's house for Joseph's sake — the same blessing-for-his-sake on the son) — THREAD 3
+--   ★ v.31-43 (Jacob's wages — the speckled and spotted flocks; the rods; the stronger cattle Jacob's; the man increased exceedingly)
+--        NT:     none warranted   Extras: Jubilees 28:27-29 (the spotted/speckled lambs his wages... Jacob's possessions multiplied exceedingly); Jasher 31:26-32 (the speckled and spotted... the man increased abundantly... two hundred drove of cattle) — THREAD 4
+--        Tanakh: ★ Genesis 31:9 (Thus Elohim hath taken away the cattle of your father, and given them to me — Jacob names the prospering as Elohim's doing) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. genesis-30-the-twelve-sons-completed-the-stick-of-joseph — NT (Revelation 7) + Tanakh (Ezekiel 37) + Extras (Jubilees 28, Jasher 31) [extras] (★ the tribal fathers completed → the two houses / the sealed tribes; Joseph the northern-house head)
+--   2. genesis-30-elohim-hath-taken-away-my-reproach-the-barren-remembered — NT (Luke 1) + Tanakh (1 Samuel 1) + Extras (Jasher 31) [extras] (★★ the barren-woman-remembered motif: Rachel → Hannah → Elisabeth; the LORD remembers)
+--   3. genesis-30-yahuah-hath-blessed-me-for-thy-sake-blessing-to-the-nations — Tanakh (Genesis 12, Genesis 39) [free] (★★ Laban's confession: the covenant-blessing spilling onto the nations through the covenant-bearer)
+--   4. genesis-30-the-speckled-and-spotted-flocks-yahuah-prospered-jacob — Tanakh (Genesis 31) + Extras (Jubilees 28, Jasher 31) [extras] (★ Yahuah prospering the covenant-bearer despite Laban's changing of the wages)
+--
+-- Framing notes:
+--   ★ THE TWELVE COMPLETED / THE STICK OF JOSEPH (THREAD 1): Genesis 30 finishes the roll of the tribal
+--     fathers begun in ch29 — Dan, Naphtali, Gad, Asher, Issachar, Zebulun, Dinah, and at last *Joseph*
+--     (30:24). This is load-bearing for the whole framework: the head of the NORTHERN HOUSE enters. Bound to
+--     Ezekiel 37:16-19 — *take... one stick, and write upon it, For Yahudah (Judah)... then take another
+--     stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar'el
+--     (Israel)... and make them one stick* — the two-house people whose fathers are born here, divided after
+--     Solomon and gathered into one. And to Revelation 7 — the *hundred and forty and four thousand of all
+--     the tribes of the children of Yashar'el (Israel)* sealed, Gad/Aser/Nepthalim/Issachar/Zabulon/Joseph
+--     by name. Read NEVER as replacement: both olive branches are Yashar'el; the tribes sealed at the end are
+--     the same families fathered at Haran. Jubilees 28 and Jasher 31 carry the birth-roll (clean parses).
+--   ★★ THE BARREN REMEMBERED (THREAD 2): *And Elohim (God) remembered Rachel, and Elohim (God) hearkened to
+--     her, and opened her womb* (30:22); *Elohim (God) hath taken away my reproach* (30:23). The barren-woman
+--     -remembered motif runs forward: Hannah — *if thou wilt... remember me... give unto thine handmaid a man
+--     child* (1 Samuel 1:11), *she bare a son, and called his name Samuel... Because I have asked him of
+--     Yahuah* (1:20); and Elisabeth in the words of Rachel almost exactly — *Thus hath Yahuah (Lord) dealt
+--     with me in the days wherein he looked on me, to take away my reproach among men* (Luke 1:25). The LORD
+--     who remembers the barren is the LORD who opens the womb; each remembered woman bears a son load-bearing
+--     for the covenant story (Joseph the northern head; Samuel the kingmaker-prophet; Yochanan the
+--     forerunner). Jasher 31:19-21 keeps Rachel's prayer entire.
+--   ★★ BLESSED FOR THY SAKE (THREAD 3): *I have learned by experience that Yahuah (LORD) hath blessed me for
+--     thy sake* (30:27) — LABAN, the outsider, confesses it. This is the Abrahamic promise working: *I will
+--     bless thee... and in thee shall all families of the earth be blessed* (Genesis 12:2-3). The covenant
+--     -blessing spills onto the nations through the covenant-bearer — not a false-inclusion of the nations
+--     apart from the covenant, but the families of the earth blessed BECAUSE OF the seed in their midst. The
+--     same pattern lands on Joseph in Egypt — *Yahuah (LORD) blessed the Egyptian's house for Joseph's sake*
+--     (Genesis 39:5). All-canon thread (free).
+--   ★ YAHUAH PROSPERED JACOB (THREAD 4): the speckled-and-spotted wages (30:31-43); *the man increased
+--     exceedingly* (30:43). Though it reads like animal-husbandry cunning, Jacob himself names the true cause
+--     in the next chapter: *Thus Elohim (God) hath taken away the cattle of your father, and given them to me*
+--     (Genesis 31:9) — Yahuah prospering the covenant-bearer despite Laban's changing of the wages ten times.
+--     Jubilees 28:27-29 and Jasher 31:26-32 carry the wages-and-increase (clean parses).
+--   EXTRAS: Jubilees 28 DOUBLE-WRITTEN 'jubilees','jubilees'; Jasher 31 DOUBLE-WRITTEN 'jasher','jasher'.
+--     Jubilees 28 parse has run-on gaps (no discrete v.7/12/15/20/25); members use only resolving verses
+--     18,19,21,22,23,24,27,28,29 — all verified in dump_canon. Jasher 31 all verses resolve.
+--   VERSES WITH NO ADD: v.14-16 (the mandrakes bargain) carries no framework-bearing target distinct from the
+--     birth-roll it serves (the Issachar/Zebulun births are bound at THREAD 1); v.2 (Jacob's "Am I in
+--     Elohim's stead") is paralleled in Jubilees 28:16 but woven in THREAD 2 prose, not forced as a member.
+
+CREATE TEMP VIEW _s301_ge30_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: The twelve sons completed — the stick of Joseph, the two houses, the sealed tribes
+    ('canon','genesis',30,6,'canon','ezekiel',37,16,'free',
+      E'*Moreover, thou son of Adam, take thee one stick, and write upon it, For Yahudah (Judah), and for the children of Yashar''el (Israel) his companions: then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16). The sons whose births fill this chapter — beginning with *Dan* (Genesis 30:6) — are the fathers of the twelve tribes that become TWO houses: Yahudah in the south, Joseph/Ephraim heading the north. The prophet takes the two sticks and writes the very names born here at Haran; the family fathered in Laban''s house is the family Yahuah will one day gather into one.'),
+    ('canon','genesis',30,24,'canon','ezekiel',37,19,'free',
+      E'*Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). When Rachel bears Joseph and says *Yahuah (LORD) shall add to me another son* (Genesis 30:24), the head of the northern house is born — *the stick of Joseph, which is in the hand of Ephraim*. The two-house division and the two-house regathering both turn on this son; the stick written *For Joseph* begins in this cradle, to be joined to the stick of Yahudah and *made... one stick* in Yahuah''s hand.'),
+    ('canon','genesis',30,11,'canon','revelation',7,5,'free',
+      E'*Of the tribe of Juda were sealed twelve thousand. Of the tribe of Reuben were sealed twelve thousand. Of the tribe of Gad were sealed twelve thousand* (Revelation 7:5). When Leah''s maid bears the son and Leah says *A troop cometh: and she called his name Gad* (Genesis 30:11), she names a tribe that stands sealed at the very end — *the tribe of Gad... twelve thousand*. The sons fathered at Haran are the *hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4) sealed in the last day; the births here are the roll-call the seal will answer.'),
+    ('canon','genesis',30,18,'canon','revelation',7,7,'free',
+      E'*Of the tribe of Simeon were sealed twelve thousand. Of the tribe of Levi were sealed twelve thousand. Of the tribe of Issachar were sealed twelve thousand* (Revelation 7:7). Leah names her fifth son — *Elohim (God) hath given me my hire... and she called his name Issachar* (Genesis 30:18) — and that tribe stands among the sealed of Yashar''el at the end of the age. The covenant runs unbroken from the cradle at Haran to the seal upon the forehead; the same tribes fathered here are the tribes gathered and sealed in Revelation.'),
+    ('canon','genesis',30,24,'canon','revelation',7,8,'free',
+      E'*Of the tribe of Zabulon were sealed twelve thousand. Of the tribe of Joseph were sealed twelve thousand. Of the tribe of Benjamin were sealed twelve thousand* (Revelation 7:8). Rachel bears *Joseph* (Genesis 30:24), and the tribe of Joseph stands sealed at the last — *the tribe of Joseph... twelve thousand* — the northern-house head whose stick Ezekiel joins to Yahudah''s. The son born here is named among the sealed twelve thousands; the northern house, scattered and divorced, is gathered and sealed, never replaced.'),
+    ('canon','genesis',30,6,'jubilees','jubilees',28,18,'extras',
+      E'*And he went in to her, and she conceived, and bare him a son, and he called his name Dan, on the ninth of the sixth month, in the sixth year of the third week* (Jubilees 28:18). The restored witness keeps the birth of the first maid-son with its very date — *bare him a son, and he called his name Dan* — matching *Elohim (God) hath judged me... and hath given me a son: therefore called she his name Dan* (Genesis 30:6); the tribal roll begun and dated in the heavenly reckoning.'),
+    ('canon','genesis',30,8,'jubilees','jubilees',28,19,'extras',
+      E'*And Jacob went in again to Bilhah a second time, and she conceived, and bare Jacob another son, and Rachel called his name Naphtali, on the fifth of the seventh month, in the second year of the fourth week* (Jubilees 28:19). The restored witness carries the second of Bilhah''s sons — *Rachel called his name Naphtali* — matching *she called his name Naphtali* (Genesis 30:8); another father of a tribe set in the dated roll.'),
+    ('canon','genesis',30,13,'jubilees','jubilees',28,21,'extras',
+      E'*And he went in again to her, and she conceived, and bare him a second son, and Leah called his name Asher, on the second of the eleventh month, in the fifth year of the fourth week* (Jubilees 28:21). The restored witness keeps Zilpah''s second son — *Leah called his name Asher* — matching *she called his name Asher* (Genesis 30:13); the eighth of the twelve fathers entered into the record.'),
+    ('canon','genesis',30,20,'jubilees','jubilees',28,23,'extras',
+      E'*And Jacob went in again to her, and she conceived, and bare two (children), a son and a daughter, and she called the name of the son Zebulon, and the name of the daughter Dinah, in the seventh of the seventh month, in the sixth year of the fourth week* (Jubilees 28:23). The restored witness carries Zebulun and Dinah together — *the name of the son Zebulon, and the name of the daughter Dinah* — matching *she called his name Zebulun... and called her name Dinah* (Genesis 30:20-21); the last of Leah''s children dated in the roll.'),
+    ('canon','genesis',30,24,'jubilees','jubilees',28,24,'extras',
+      E'*And Yahuah (God) was gracious to Rachel, and opened her womb, and she conceived, and bare a son, and she called his name Joseph, on the new moon of the fourth month, in the sixth year in this fourth week* (Jubilees 28:24). The restored witness keeps the birth of the northern-house head — *Yahuah was gracious to Rachel, and opened her womb... she called his name Joseph* — matching *Elohim (God) remembered Rachel... and she called his name Joseph* (Genesis 30:22,24); the twelfth-born son who heads the scattered house that shall be gathered.'),
+    ('canon','genesis',30,6,'jasher','jasher',31,16,'extras',
+      E'*And at that time Rachel was barren, and she had no offspring, and Rachel envied her sister Leah, and when Rachel saw that she bare no children to Jacob, she took her handmaid Bilhah, and she bare Jacob two sons, Dan and Naphtali* (Jasher 31:16). The extended witness sums the births of Bilhah''s sons — *she bare Jacob two sons, Dan and Naphtali* — the same children of *Behold my maid Bilhah, go in unto her; and she shall bear upon my knees* (Genesis 30:3,6,8); the maid-sons reckoned to Rachel.'),
+    ('canon','genesis',30,18,'jasher','jasher',31,18,'extras',
+      E'*And Leah again conceived and bare Jacob in those days two sons and one daughter, and these are their names, Issachar, Zebulon, and their sister Dinah* (Jasher 31:18). The extended witness gathers Leah''s last children — *Issachar, Zebulon, and their sister Dinah* — the same three of *she called his name Issachar... Zebulun... Dinah* (Genesis 30:18,20,21); the tribal roll filling toward twelve.'),
+
+    -- THREAD 2: Elohim hath taken away my reproach — the barren woman remembered
+    ('canon','genesis',30,22,'canon','1-samuel',1,11,'free',
+      E'*And she vowed a vow, and said, O Yahuah Tseva''ot (LORD of hosts), if thou wilt indeed look on the affliction of thine handmaid, and remember me, and not forget thine handmaid, but wilt give unto thine handmaid a man child, then I will give him unto Yahuah (LORD) all the days of his life* (1 Samuel 1:11). When *Elohim (God) remembered Rachel, and Elohim (God) hearkened to her, and opened her womb* (Genesis 30:22), it is the same mercy Hannah pleads — *remember me, and not forget thine handmaid... give unto thine handmaid a man child*. The barren woman cries to be remembered, and the LORD who remembers opens the womb; the motif runs from Rachel to Hannah unbroken.'),
+    ('canon','genesis',30,23,'canon','1-samuel',1,20,'free',
+      E'*Wherefore it came to pass, when the time was come about after Hannah had conceived, that she bare a son, and called his name Samuel, saying, Because I have asked him of Yahuah (LORD)* (1 Samuel 1:20). As Rachel names her son for the reproach lifted — *Elohim (God) hath taken away my reproach... she called his name Joseph* (Genesis 30:23-24) — so Hannah names hers for the asking answered: *called his name Samuel... Because I have asked him of Yahuah*. Each remembered woman bears a son load-bearing for the covenant: Joseph the northern head, Samuel the prophet who anoints the king.'),
+    ('canon','genesis',30,23,'canon','luke',1,25,'free',
+      E'*Thus hath Yahuah (Lord) dealt with me in the days wherein he looked on me, to take away my reproach among men* (Luke 1:25). Elisabeth, barren and old, speaks almost the words of Rachel — *to take away my reproach* answering *Elohim (God) hath taken away my reproach* (Genesis 30:23). The same Yahuah who remembered Rachel and opened her womb looks on Elisabeth, and she bears the forerunner; the barren-woman-remembered motif runs all the way to the threshold of the Messiah''s coming, *all generations* calling the once-reproached woman blessed.'),
+    ('canon','genesis',30,22,'jasher','jasher',31,19,'extras',
+      E'*And Rachel was still barren in those days, and Rachel prayed to Yahuah (the Lord) at that time, and she said, O Yahuah Elohim (O Lord God) remember me and visit me, I beseech you, for now my husband will cast me off, for I have borne him no children* (Jasher 31:19). The extended witness gives Rachel''s prayer behind *Elohim (God) remembered Rachel* (Genesis 30:22) — *remember me and visit me... for I have borne him no children* — the very plea the LORD answers in opening her womb; the barren woman asking to be remembered, and remembered.'),
+    ('canon','genesis',30,23,'jasher','jasher',31,21,'extras',
+      E'*And Elohim (God) heard her and opened her womb, and Rachel conceived and bare a son, and she said, Yahuah (the Lord) has taken away my reproach, and she called his name Joseph, saying, May Yahuah (the Lord) add to me another son; and Jacob was ninety-one years old when she bare him* (Jasher 31:21). The extended witness keeps the naming whole — *Yahuah has taken away my reproach... she called his name Joseph... May Yahuah add to me another son* — matching *Elohim (God) hath taken away my reproach... she called his name Joseph; and said, Yahuah (LORD) shall add to me another son* (Genesis 30:23-24); the reproach lifted and the prayer for one more, which Benjamin will answer.'),
+
+    -- THREAD 3: Yahuah hath blessed me for thy sake — the blessing spilling onto the nations
+    ('canon','genesis',30,27,'canon','genesis',12,2,'free',
+      E'*And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing* (Genesis 12:2). Laban''s confession — *I have learned by experience that Yahuah (LORD) hath blessed me for thy sake* (Genesis 30:27) — is the Abrahamic word coming true in Jacob: *thou shalt be a blessing*. The promise carried in the seed makes the covenant-bearer a fountain of blessing even to the outsider in whose house he serves; Laban prospers because Jacob is among him.'),
+    ('canon','genesis',30,27,'canon','genesis',12,3,'free',
+      E'*And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). When Laban says *Yahuah (LORD) hath blessed me for thy sake* (Genesis 30:27), the word *in thee shall all families of the earth be blessed* is at work — the covenant-blessing spilling onto the nations through the covenant-bearer. Not the nations included apart from the covenant, but the families of the earth blessed BECAUSE OF the seed dwelling in their midst; Laban is the first witness of it.'),
+    ('canon','genesis',30,30,'canon','genesis',39,5,'free',
+      E'*And it came to pass from the time that he had made him overseer in his house, and over all that he had, that Yahuah (LORD) blessed the Egyptian''s house for Joseph''s sake; and the blessing of Yahuah (LORD) was upon all that he had in the house, and in the field* (Genesis 39:5). The very blessing-for-his-sake that Laban confesses of Jacob — *Yahuah (LORD) hath blessed thee since my coming* (Genesis 30:30) — falls again on the son born in this chapter: *Yahuah blessed the Egyptian''s house for Joseph''s sake*. The covenant-bearer carries the blessing into the house of the nations; what was true of the father is true of the son.'),
+
+    -- THREAD 4: The speckled and spotted flocks — Yahuah prospered Jacob
+    ('canon','genesis',30,43,'canon','genesis',31,9,'free',
+      E'*Thus Elohim (God) hath taken away the cattle of your father, and given them to me* (Genesis 31:9). Though Jacob''s wages-getting reads like cunning with rods and watering-troughs, *the man increased exceedingly, and had much cattle* (Genesis 30:43) because Yahuah was prospering him; Jacob says so plainly in the next breath — *Elohim hath taken away the cattle of your father, and given them to me*. The increase is no trick of husbandry but the covenant-keeping Yahuah blessing the covenant-bearer despite Laban changing his wages ten times.'),
+    ('canon','genesis',30,32,'jubilees','jubilees',28,28,'extras',
+      E'*And all the sheep brought forth spotted and speckled and black, variously marked, and they brought forth again lambs like themselves, and all that were spotted were Jacob''s and those which were not were Laban''s* (Jubilees 28:28). The restored witness keeps the wages-arrangement — *all that were spotted were Jacob''s* — matching *removing from thence all the speckled and spotted cattle... and of such shall be my hire* (Genesis 30:32); the flock yielding to Jacob exactly the marked beasts he had named.'),
+    ('canon','genesis',30,43,'jubilees','jubilees',28,29,'extras',
+      E'*And Jacob''s possessions multiplied exceedingly, and he possessed oxen and sheep and asses and camels, and menservants and maidservants. And Laban and his sons envied Jacob, and Laban took back his sheep from him, and he observed him with evil intent* (Jubilees 28:29). The restored witness carries the increase whole — *Jacob''s possessions multiplied exceedingly* — matching *the man increased exceedingly, and had much cattle, and maidservants, and menservants, and camels, and asses* (Genesis 30:43); and it names what follows, Laban''s envy, the strife of ch31 already gathering.'),
+    ('canon','genesis',30,43,'jasher','jasher',31,31,'extras',
+      E'*And Jacob served Laban six years longer, and when the sheep brought forth, Jacob removed from them such as were speckled and spotted, as he had determined with Laban, and Jacob did so at Laban''s for six years, and the man increased abundantly and he had cattle and maid servants and men servants, camels, and asses* (Jasher 31:31). The extended witness keeps the prospering — *the man increased abundantly and he had cattle and maid servants and men servants, camels, and asses* — word-for-word the close of *the man increased exceedingly* (Genesis 30:43); the covenant-bearer made rich through the marked flocks over the six added years.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-30-the-twelve-sons-completed-the-stick-of-joseph',
+       E'The twelve sons completed — the stick of Joseph, the two houses, the sealed tribes',
+       E'Genesis 30 finishes the roll of the tribal fathers begun in the chapter before. Through Bilhah, Rachel''s maid, come *Dan* — *Elohim (God) hath judged me... and hath given me a son: therefore called she his name Dan* (Genesis 30:6) — and *Naphtali* (30:8); through Zilpah, Leah''s maid, come *Gad* (30:11) and *Asher* (30:13); through Leah herself, *Issachar* (30:18), *Zebulun* (30:20), and the daughter *Dinah* (30:21); and at last, when *Elohim (God) remembered Rachel... and opened her womb*, she bears the son who heads the northern house: *she called his name Joseph; and said, Yahuah (LORD) shall add to me another son* (Genesis 30:24). These are the fathers of the twelve tribes that become TWO houses — Yahudah (Judah) in the south, Joseph/Ephraim heading the north — divided after Solomon and scattered, to be gathered into one. Ezekiel takes two sticks and writes the very names born here: *take thee one stick, and write upon it, For Yahudah (Judah)... then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel)* (Ezekiel 37:16), and Yahuah promises *I will take the stick of Joseph... and... make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). And at the end of the age these same tribes stand sealed: *there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* — *the tribe of Gad... Aser... Nepthalim... Issachar... Zabulon... Joseph* by name (Revelation 7:4-8). The family fathered in Laban''s house at Haran is the family Yahuah gathers and seals — never replaced, both olive branches Yashar''el. The restored witnesses keep the dated birth-roll: *bare him a son, and he called his name Dan* (Jubilees 28:18); *Yahuah (God) was gracious to Rachel, and opened her womb... she called his name Joseph* (Jubilees 28:24); *she bare Jacob two sons, Dan and Naphtali* (Jasher 31:16); *Issachar, Zebulon, and their sister Dinah* (Jasher 31:18).',
+       sv.verse_id, ev.verse_id, 'extras', 20725
+  FROM _s301_ge30_lookup sv, _s301_ge30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=30 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-30-elohim-hath-taken-away-my-reproach-the-barren-remembered',
+       E'Elohim hath taken away my reproach — the barren woman remembered',
+       E'Rachel, loved but long barren, had cried *Give me children, or else I die* (Genesis 30:1). The answer does not come by striving but by the LORD: *And Elohim (God) remembered Rachel, and Elohim (God) hearkened to her, and opened her womb. And she conceived, and bare a son; and said, Elohim (God) hath taken away my reproach: and she called his name Joseph* (Genesis 30:22-24). This is the barren-woman-remembered motif, and it runs forward through the whole covenant story. Hannah, barren in Shiloh, pleads the same word — *remember me, and not forget thine handmaid, but wilt give unto thine handmaid a man child* (1 Samuel 1:11) — and *bare a son, and called his name Samuel, saying, Because I have asked him of Yahuah (LORD)* (1 Samuel 1:20). And at the threshold of the Messiah''s coming, Elisabeth, barren and old, speaks almost the very words of Rachel: *Thus hath Yahuah (Lord) dealt with me in the days wherein he looked on me, to take away my reproach among men* (Luke 1:25). The LORD who remembers the barren is the LORD who opens the womb; and each remembered woman bears a son load-bearing for the covenant — Joseph the head of the northern house, Samuel the prophet who anoints the king, Yochanan (John) the forerunner of the Messiah. The restored witness gives Rachel''s own prayer: *O Yahuah Elohim (O Lord God) remember me and visit me, I beseech you... for I have borne him no children* (Jasher 31:19), answered when *Elohim (God) heard her and opened her womb... Yahuah (the Lord) has taken away my reproach... she called his name Joseph, saying, May Yahuah (the Lord) add to me another son* (Jasher 31:21) — the reproach lifted, and the prayer for one more son that Benjamin would answer.',
+       sv.verse_id, ev.verse_id, 'extras', 20728
+  FROM _s301_ge30_lookup sv, _s301_ge30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=30 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-30-yahuah-hath-blessed-me-for-thy-sake-blessing-to-the-nations',
+       E'Yahuah hath blessed me for thy sake — the blessing spilling onto the nations',
+       E'When Jacob asks leave to go, Laban will not let him — and the reason he gives is a confession from the mouth of the outsider: *I pray thee, if I have found favour in thine eyes, tarry: for I have learned by experience that Yahuah (LORD) hath blessed me for thy sake* (Genesis 30:27), *Yahuah (LORD) hath blessed thee since my coming* (Genesis 30:30). This is the Abrahamic promise coming true in the third generation. Yahuah had said to Abram, *I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing* (Genesis 12:2), *and in thee shall all families of the earth be blessed* (Genesis 12:3). The covenant-blessing spills onto the nations THROUGH the covenant-bearer — not the families of the earth blessed apart from the covenant, but blessed because of the seed dwelling in their midst. Laban, the grasping kinsman, is the first witness of it: his house prospers because Jacob is in it. And the same blessing-for-his-sake falls again on the son born in this very chapter: *Yahuah (LORD) blessed the Egyptian''s house for Joseph''s sake; and the blessing of Yahuah (LORD) was upon all that he had in the house, and in the field* (Genesis 39:5). What was true of the father is true of the son — the covenant-bearer carries the blessing into the house of the nations.',
+       sv.verse_id, ev.verse_id, 'free', 20731
+  FROM _s301_ge30_lookup sv, _s301_ge30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=30 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-30-the-speckled-and-spotted-flocks-yahuah-prospered-jacob',
+       E'The speckled and spotted flocks — Yahuah prospered Jacob',
+       E'Jacob sets his wages: *I will pass through all thy flock to day, removing from thence all the speckled and spotted cattle... and of such shall be my hire* (Genesis 30:32). What follows reads on its surface like animal-husbandry cunning — the rods of green poplar pilled white, set in the watering-troughs, the stronger cattle made Jacob''s and the feebler Laban''s — and it ends *And the man increased exceedingly, and had much cattle, and maidservants, and menservants, and camels, and asses* (Genesis 30:43). But Jacob himself names the true cause in the very next chapter, and it is not the rods: *Thus Elohim (God) hath taken away the cattle of your father, and given them to me* (Genesis 31:9). The increase is the covenant-keeping Yahuah prospering the covenant-bearer, even as Laban *changed my wages ten times; but Elohim (God) suffered him not to hurt me* (Genesis 31:7). The blessing-for-thy-sake that Laban confessed is now turning the flocks themselves toward Jacob. The restored witnesses keep the wages and the increase: *all that were spotted were Jacob''s and those which were not were Laban''s* (Jubilees 28:28), *and Jacob''s possessions multiplied exceedingly* (Jubilees 28:29); and *the man increased abundantly and he had cattle and maid servants and men servants, camels, and asses* (Jasher 31:31). The covenant-bearer is made rich not by his own craft but by the hand of Yahuah, despite every changing of the wages.',
+       sv.verse_id, ev.verse_id, 'extras', 20734
+  FROM _s301_ge30_lookup sv, _s301_ge30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=30 AND ev.verse_number=43
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*take thee one stick... For Yahudah (Judah)... then take another stick... For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel)* (Ezekiel 37:16) — the two-house people whose fathers begin to be born here (Dan, 30:6).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will take the stick of Joseph... and... make them one stick, and they shall be one in mine hand* (Ezekiel 37:19) — Joseph born (30:24) is the head of the northern house Yahuah gathers to Yahudah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=24
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Of the tribe of... Gad were sealed twelve thousand* (Revelation 7:5) — Gad named at his birth (30:11) stands among the sealed tribes of Yashar''el at the end.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=11
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Of the tribe of... Issachar were sealed twelve thousand* (Revelation 7:7) — Issachar named at his birth (30:18) is sealed among the twelve thousands.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=18
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Of the tribe of... Joseph were sealed twelve thousand* (Revelation 7:8) — Joseph born here (30:24), the northern-house head, named among the sealed twelve thousands.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=24
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*bare him a son, and he called his name Dan* (Jubilees 28:18) — the first maid-son of 30:6 entered in the dated tribal roll.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Rachel called his name Naphtali* (Jubilees 28:19) — the second of Bilhah''s sons (30:8) in the roll.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=8
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Leah called his name Asher* (Jubilees 28:21) — Zilpah''s second son (30:13), the eighth father in the dated record.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=13
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*the name of the son Zebulon, and the name of the daughter Dinah* (Jubilees 28:23) — Zebulun and Dinah of 30:20-21 carried together in the roll.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=20
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*Yahuah (God) was gracious to Rachel, and opened her womb... she called his name Joseph* (Jubilees 28:24) — the birth of the northern-house head (30:22,24) in the dated roll.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=24
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*she bare Jacob two sons, Dan and Naphtali* (Jasher 31:16) — Bilhah''s sons (30:3,6,8) reckoned to Rachel in the extended witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=6
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=31 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 12, E'*Issachar, Zebulon, and their sister Dinah* (Jasher 31:18) — Leah''s last children (30:18,20,21) gathered in the extended witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=18
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=31 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-twelve-sons-completed-the-stick-of-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*remember me, and not forget thine handmaid, but wilt give unto thine handmaid a man child* (1 Samuel 1:11) — Hannah pleads the mercy that *remembered Rachel... and opened her womb* (30:22).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=22
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-elohim-hath-taken-away-my-reproach-the-barren-remembered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*she bare a son, and called his name Samuel... Because I have asked him of Yahuah (LORD)* (1 Samuel 1:20) — as Rachel named Joseph for the reproach lifted (30:23-24), Hannah names Samuel for the asking answered.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=23
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=1 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-elohim-hath-taken-away-my-reproach-the-barren-remembered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thus hath Yahuah (Lord) dealt with me... to take away my reproach among men* (Luke 1:25) — Elisabeth speaks almost the words of *Elohim hath taken away my reproach* (30:23); the motif runs to the Messiah''s threshold.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=23
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-elohim-hath-taken-away-my-reproach-the-barren-remembered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*O Yahuah Elohim... remember me and visit me... for I have borne him no children* (Jasher 31:19) — Rachel''s prayer behind *Elohim remembered Rachel* (30:22) in the extended witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=22
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=31 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-elohim-hath-taken-away-my-reproach-the-barren-remembered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Yahuah (the Lord) has taken away my reproach... she called his name Joseph, saying, May Yahuah add to me another son* (Jasher 31:21) — the naming of 30:23-24 kept whole; the prayer Benjamin would answer.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=23
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=31 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-elohim-hath-taken-away-my-reproach-the-barren-remembered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will bless thee... and thou shalt be a blessing* (Genesis 12:2) — Laban''s *Yahuah hath blessed me for thy sake* (30:27) is the Abrahamic promise working in Jacob.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=27
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-yahuah-hath-blessed-me-for-thy-sake-blessing-to-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*in thee shall all families of the earth be blessed* (Genesis 12:3) — the covenant-blessing spilling onto the nations through the covenant-bearer; Laban (30:27) is the first witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=27
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-yahuah-hath-blessed-me-for-thy-sake-blessing-to-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) blessed the Egyptian''s house for Joseph''s sake* (Genesis 39:5) — the blessing-for-his-sake of 30:30 falls again on the son born in this chapter.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=30
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=39 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-yahuah-hath-blessed-me-for-thy-sake-blessing-to-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thus Elohim (God) hath taken away the cattle of your father, and given them to me* (Genesis 31:9) — Jacob names the increase of 30:43 as Yahuah''s doing, not the rods.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=43
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=31 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-speckled-and-spotted-flocks-yahuah-prospered-jacob'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*all that were spotted were Jacob''s and those which were not were Laban''s* (Jubilees 28:28) — the wages-arrangement of 30:32 yielding Jacob exactly the marked beasts.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=32
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-speckled-and-spotted-flocks-yahuah-prospered-jacob'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Jacob''s possessions multiplied exceedingly* (Jubilees 28:29) — the increase of 30:43 kept whole, with Laban''s envy already gathering toward ch31.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=43
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=28 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-speckled-and-spotted-flocks-yahuah-prospered-jacob'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the man increased abundantly and he had cattle and maid servants and men servants, camels, and asses* (Jasher 31:31) — word-for-word the close of *the man increased exceedingly* (30:43).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=30 AND sv.verse_number=43
+  JOIN _s301_ge30_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=31 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-30-the-speckled-and-spotted-flocks-yahuah-prospered-jacob'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_31.sql (Genesis 31) -----
+-- Chapter: Genesis 31 — JACOB CALLED HOME, THE FLIGHT FROM LABAN, AND THE HEAP OF WITNESS AT MIZPAH. Yahuah commands Jacob "Return unto the land of thy fathers, and to thy kindred; and I will be with thee" (31:3) — the call HOME to the covenant land, the covenant presence going with him. Jacob recounts how "the Elohim (God) of my father hath been with me" and "Elohim (God) suffered him not to hurt me" (the guarded seed-bearer). Rachel steals Laban's teraphim/household idols (31:19) — the idolatry still clinging to the kindred. Laban pursues; Elohim restrains him in a dream — "Take heed that thou speak not to Jacob either good or bad" (31:24,29). Jacob's defense — "These twenty years have I been with thee" (the faithful servant under an unjust master). And the covenant/heap at Mizpah — Galeed/Mizpah, the pillar and the heap of witness; "Yahuah (LORD) watch between me and thee, when we are absent one from another" (31:49); the boundary oath sworn by "the fear of his father Isaac" (31:53).
+-- Tag: ge31   Temp view: _s301_ge31_lookup
+-- Sort band: base 20750, step 3 -> threads at 20750, 20753, 20756, 20759, 20762 (5 threads)
+-- Source of EVERY row: 'canon','genesis',31,v
+--
+-- Genesis 31 coverage:
+--   ★ v.1-3 (he heard the words of Laban's sons; the countenance not toward him as before; Yahuah said, Return unto the land of thy fathers, and to thy kindred; and I will be with thee)
+--        NT:     none warranted distinct (the return-to-the-land/covenant-presence is carried by the Tanakh gathering laterals at THREAD 1; no clean NT member in assigned target set that is not forced)
+--        Extras: Jubilees 29:3-4 (He had seen everything in a dream... that he should return to his father's house... Jacob blessed the Elohim of Isaac... crossed the river, and came to the land of Gilead); Jasher 31:37 (Yahuah appeared to Jacob... Arise, go forth out of this land, and return to the land of your birthplace and I will be with you) — THREAD 1
+--        Tanakh: ★ Genesis 28:15 (I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land — the vow-promise now claimed); Jeremiah 31:8,10 (I will bring them from the north country, and gather them... He that scattered Yashar'el will gather him — the return-to-the-land motif → the two-house gathering) — THREAD 1
+--   ★ v.4-9 (the Elohim of my father hath been with me; with all my power I have served your father; your father hath deceived me, and changed my wages ten times; but Elohim suffered him not to hurt me; Elohim hath taken away the cattle of your father, and given them to me)
+--        NT:     none warranted distinct (the guarded-servant motif is carried by the Tanakh restrained-adversary laterals at THREAD 2)
+--        Extras: Jubilees 29:6 (And Yahuah did not suffer him to injure Jacob; for He appeared to him in a dream by night) — THREAD 2
+--        Tanakh: ★ Genesis 20:6 (I also withheld thee from sinning against me; therefore suffered I thee not to touch her — Elohim restrains the one who would harm the seed-bearer); ★ Psalm 105:14-15 (He suffered no man to do them wrong... Touch not mine anointed, and do my prophets no harm — the patriarchs guarded) — THREAD 2
+--   v.10-13 (the dream of the rams ringstraked; the angel of Elohim; I am the Elohim of Beth-el, where thou anointedst the pillar, and where thou vowedst a vow unto me; now arise... return unto the land of thy kindred)
+--        NT:     none warranted (the angel-of-Elohim theophany is the Formed who speaks; framed in prose, no distinct NT member forced)
+--        Extras: Jubilees 29:3 (the dream and the word to return) — covered within THREAD 1; not double-added here
+--        Tanakh: ★★ Genesis 28:13-15 (the Bethel vision: I am Yahuah Elohim of Abraham... the land whereon thou liest, to thee will I give it); ★★ Genesis 28:20-22 (Jacob vowed a vow... If Elohim will be with me... So that I come again to my father's house in peace; then shall Yahuah be my Elohim — the very vow 31:13 recalls) — THREAD 4
+--   v.14-18 (Rachel and Leah: is there yet any portion for us... whatsoever Elohim hath said unto thee, do; Jacob rose up... carried away all his cattle... to go to Isaac his father in the land of Canaan)
+--        NT:     none warranted   Extras: Jubilees 29:3 ("To every place whither you go we will go with you" — the wives' assent) — narrative parallel, carried in THREAD 1 prose, not forced as a member
+--        Tanakh: none warranted distinct (the departure is carried forward by THREAD 1's return-to-the-land)
+--   ★ v.19 (Laban went to shear his sheep; and Rachel had stolen the images that were her father's — the teraphim/household idols)
+--        NT:     none warranted distinct
+--        Extras: Jasher 31:40 (Rachel stole her father's images... concealed them upon the camel); Jasher 31:44 (Rachel stole these images which were her father's, in order that Laban might not know... where Jacob had gone) — THREAD 3
+--        Tanakh: ★ Joshua 24:2 (Your fathers dwelt on the other side of the flood... even Terah, the father of Abraham, and the father of Nachor: and they served other gods — the idolatry of the kindred); ★ Genesis 35:2-4 (Put away the strange gods that are among you... and Jacob hid them under the oak — the strange gods put away at Bethel) — THREAD 3
+--   v.20-29 (Jacob stole away unawares; Laban pursued seven days; Elohim came to Laban in a dream by night, Take heed that thou speak not to Jacob either good or bad; Laban repeats it: the Elohim of your father spake unto me yesternight)
+--        NT:     none warranted   Extras: Jubilees 29:5-6 (Laban pursued... overtook Jacob in the mountain of Gilead... Yahuah did not suffer him to injure Jacob; for He appeared to him in a dream by night) — Jubilees 29:6 carried at THREAD 2 (the restrained adversary); Jasher 31:46 (Laban... pursued Jacob, and he overtook him in mount Gilead) — narrative parallel
+--        Tanakh: the dream-restraint of Laban is the SAME guarded-seed motif as v.7 — carried at THREAD 2 (Genesis 20:3-6 the dream-by-night warning; Psalm 105:14-15)
+--   v.30-42 (wherefore hast thou stolen my gods; Jacob's defense: this twenty years have I been with thee; thy ewes have not cast their young; in the day the drought consumed me, and the frost by night; Except the Elohim of my father... the fear of Isaac, had been with me, surely thou hadst sent me away now empty; Elohim hath seen mine affliction)
+--        NT:     none warranted distinct (the faithful-servant-under-an-unjust-master motif framed in prose at THREAD 2)
+--        Extras: Jasher 31:31-34 (Jacob served Laban six years longer... the man increased abundantly) — narrative parallel, not forced
+--        Tanakh: none warranted distinct (the "Elohim hath seen mine affliction" of 31:42 echoes the affliction-seen pattern, carried in THREAD 2 prose)
+--   ★ v.43-55 (let us make a covenant... for a witness between me and thee; Jacob took a stone, and set it up for a pillar; made an heap; Galeed; Jegar-sahadutha; And Mizpah; for he said, Yahuah watch between me and thee, when we are absent one from another; Elohim is witness betwixt me and thee; The Elohim of Abraham, and the Elohim of Nahor... judge betwixt us; Jacob sware by the fear of his father Isaac; offered sacrifice upon the mount)
+--        NT:     none warranted distinct (the witness-heap is a covenant-of-separation, no forced NT member in assigned set)
+--        Extras: ★ Jubilees 29:8 (And he made there a heap for a witness; wherefore the name of that place is called: "The Heap of Witness," after this heap); Jasher 31:51-52 (We will make a covenant together and it shall be a testimony between me and you... they took stones and made a heap... This heap is a witness between me and you) — THREAD 5
+--        Tanakh: none warranted distinct beyond the extras heap-witness parallels (the LORD-as-watching-witness is the load of THREAD 5's own prose)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-31-return-unto-the-land-and-i-will-be-with-thee — Tanakh (Genesis 28:15, Jeremiah 31:8/10) + Extras (Jubilees, Jasher) [extras] (★ the call HOME; covenant presence; the gathering/two-house weave)
+--   2. genesis-31-elohim-suffered-him-not-to-hurt-me — Tanakh (Genesis 20:6, Psalm 105:14/15) + Extras (Jubilees) [extras] (★ the guarded seed-bearer; the restrained adversary, by dream)
+--   3. genesis-31-rachel-stole-the-teraphim — Tanakh (Joshua 24:2, Genesis 35:2/4) + Extras (Jasher) [extras] (★ the idolatry clinging to the kindred; the strange gods put away)
+--   4. genesis-31-the-elohim-of-beth-el-where-thou-vowedst-a-vow — Tanakh (Genesis 28:13/15/20/22) [free] (the Bethel vow remembered and now kept)
+--   5. genesis-31-the-heap-of-witness-yahuah-watch-between-me-and-thee — Extras (Jubilees, Jasher) [extras] (★ Galeed/Mizpah; the LORD as watching witness; the covenant-of-separation)
+--
+-- Framing notes:
+--   ★ THE CALL HOME (THREAD 1): *Return unto the land of thy fathers, and to thy kindred; and I will be with thee* (31:3). The return-to-the-land motif is the seed of the whole gathering — the same *I am with thee... and will bring thee again into this land* sworn at Bethel (Genesis 28:15) now claimed, and the prophetic ingathering it foreshadows: *He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10), *I will bring them from the north country, and gather them from the coasts of the earth* (Jeremiah 31:8). Jacob — whose name becomes Yashar'el — called home to the covenant land is the type of the two-house people called home from the nations. Read through the two-house lens (Red Line #2): the gathering of Jacob is never replacement, always the regathering of the scattered covenant seed.
+--   ★ THE GUARDED SEED-BEARER (THREAD 2): *Elohim (God) suffered him not to hurt me* (31:7); and Elohim comes to Laban *in a dream by night... Take heed that thou speak not to Jacob either good or bad* (31:24). The same hand that restrained Abimelech — *I also withheld thee from sinning against me; therefore suffered I thee not to touch her* (Genesis 20:6) — guards Jacob; the psalmist names the pattern over all the patriarchs: *He suffered no man to do them wrong: yea, he reproved kings for their sakes; Saying, Touch not mine anointed, and do my prophets no harm* (Psalm 105:14-15). The seed-bearer of the promise is shielded; the adversary's hand is stayed (the seed-war of Genesis 3:15, the line preserved). Jubilees keeps it: *Yahuah (God) did not suffer him to injure Jacob; for He appeared to him in a dream by night* (Jubilees 29:6).
+--   ★ THE IDOLATRY OF THE KINDRED (THREAD 3): *Rachel had stolen the images that were her father's* (31:19) — the teraphim, the household idols, still clinging to the kindred Jacob is called away from. Joshua names the root: *Your fathers dwelt on the other side of the flood... and they served other gods* (Joshua 24:2). The contrast with the covenant is sharp — and it is answered in the very next chapters when Jacob purges his house: *Put away the strange gods that are among you, and be clean... and Jacob hid them under the oak which was by Shechem* (Genesis 35:2-4). The covenant household must put away what the kindred kept.
+--   ★★ THE BETHEL VOW (THREAD 4): *I am the Elohim (God) of Beth-el, where thou anointedst the pillar, and where thou vowedst a vow unto me* (31:13). The word that sends Jacob home reaches back to the ladder-vision and the vow: *I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land* (Genesis 28:15); *If Elohim (God) will be with me... So that I come again to my father's house in peace; then shall Yahuah (LORD) be my Elohim* (Genesis 28:20-21). The promise made at the pillar is now being kept; the angel of Elohim who speaks (31:11) is the Formed who appeared on the ladder (Red Line #4) — Yahuah who has a Father, the visible One who met Jacob. (CANON-ONLY thread: every member a Tanakh verse, tier 'free'.)
+--   ★ THE HEAP OF WITNESS / MIZPAH (THREAD 5): *Yahuah (LORD) watch between me and thee, when we are absent one from another* (31:49); *Elohim (God) is witness betwixt me and thee* (31:50). The covenant at Galeed/Mizpah is a covenant-of-separation, the heap of stones the witness, and Yahuah Himself the watching arbiter between the parted parties. Jacob seals it *by the fear of his father Isaac* (31:53) — the covenant Elohim, not the gods of Nahor's house. Jubilees names the place: *he made there a heap for a witness; wherefore the name of that place is called: "The Heap of Witness"* (Jubilees 29:8); Jasher keeps it: *This heap is a witness between me and you* (Jasher 31:52).
+--   EXTRAS PARSE NOTES: Jubilees 29 has the run-on/missing-number trap (verses skip 6→8, 11→14; v.11 is a merged run-on block; v.7,12,13,18 absent in this parse). The clean usable members are Jubilees 29:4 (the crossing/return), 29:6 (Yahuah did not suffer him to injure Jacob — the dream restraint), 29:8 (The Heap of Witness) — all verified to resolve in dump_canon. Jubilees 29:3 (dream/return + wives' assent) carried in THREAD 1 prose, not double-added. Jubilees DOUBLE-WRITTEN 'jubilees','jubilees'. Jasher 31 carries the flight, the teraphim (with an extended idol-making aside 31:41-43, NOT quoted as a member — apparatus-like digression), and the heap (31:51-52); Jasher 31:37 (return... and I will be with you) is the clean call-home witness. Jasher DOUBLE-WRITTEN 'jasher','jasher'. The Esau-war coda (Jasher 31:54-77) belongs to Genesis 32-33's pack, deliberately NOT forced here.
+--   VERSES WITH NO ADD: v.14-18 (the wives' assent and the departure logistics — carried forward by THREAD 1's return-to-the-land); v.30-42 (Jacob's long defense to Laban — the faithful-servant-under-an-unjust-master motif, framed in THREAD 2 prose, no distinct framework-bearing target warranted beyond the guarded-servant weave already held); v.54-55 (the sacrifice on the mount and Laban's departure — closing notice, no distinct target).
+
+CREATE TEMP VIEW _s301_ge31_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Return unto the land of thy fathers, and I will be with thee (the call HOME; covenant presence; the gathering)
+    ('canon','genesis',31,3,'canon','genesis',28,15,'free',
+      E'*And, behold, I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of* (Genesis 28:15). The word that now sends Jacob home — *Return unto the land of thy fathers, and to thy kindred; and I will be with thee* (Genesis 31:3) — is the keeping of the very promise sworn at Bethel: *I am with thee... and will bring thee again into this land*. The covenant presence that went with him into exile is the presence that calls him home; what Yahuah spoke, He is now doing.'),
+    ('canon','genesis',31,3,'canon','jeremiah',31,10,'free',
+      E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). Jacob — who becomes Yashar''el — called *Return unto the land of thy fathers... and I will be with thee* (Genesis 31:3) is the seed of the whole gathering. The One who scattered Yashar''el is the One who gathers him; the patriarch brought home from the far country is the type of the two-house people brought home from the nations.'),
+    ('canon','genesis',31,3,'canon','jeremiah',31,8,'free',
+      E'*Behold, I will bring them from the north country, and gather them from the coasts of the earth, and with them the blind and the lame, the woman with child and her that travaileth with child together: a great company shall return thither* (Jeremiah 31:8). The single man called home — *Return unto the land of thy fathers, and to thy kindred* (Genesis 31:3) — opens into the great ingathering: *I will bring them from the north country, and gather them from the coasts of the earth*. The return of Jacob with his wives and children is the first sketch of the great company that shall return.'),
+    ('canon','genesis',31,3,'jubilees','jubilees',29,4,'extras',
+      E'*And Jacob blessed the Elohim (God) of Isaac his father, and the Elohim (God) of Abraham his father''s father, and he arose and mounted his wives and his children, and took all his possessions and crossed the river, and came to the land of Gilead, and Jacob hid his intention from Laban and told him not* (Jubilees 29:4). The restored witness carries the obedience to *Return unto the land of thy fathers, and to thy kindred* (Genesis 31:3) — Jacob *crossed the river, and came to the land of Gilead*, setting his face homeward as he was bidden, blessing the Elohim of his fathers as he goes.'),
+    ('canon','genesis',31,3,'jasher','jasher',31,37,'extras',
+      E'*And Yahuah (the Lord) appeared to Jacob at the expiration of the six years, and said to him, Arise, go forth out of this land, and return to the land of your birthplace and I will be with you* (Jasher 31:37). The extended witness keeps the call-home entire — *return to the land of your birthplace and I will be with you* — matching *Return unto the land of thy fathers, and to thy kindred; and I will be with thee* (Genesis 31:3): the same command, the same promise of the covenant presence going with him.'),
+
+    -- THREAD 2: Elohim suffered him not to hurt me (the guarded seed-bearer; the adversary restrained by dream)
+    ('canon','genesis',31,7,'canon','genesis',20,6,'free',
+      E'*And Elohim (God) said unto him in a dream, Yea, I know that thou didst this in the integrity of thy heart; for I also withheld thee from sinning against me: therefore suffered I thee not to touch her* (Genesis 20:6). The same guarding hand stands over Jacob — *Elohim (God) suffered him not to hurt me* (Genesis 31:7) — as stood over Sarah: Elohim *suffered I thee not to touch her*, and came *in a dream* to restrain the one who would harm the seed-bearer. The line of promise is shielded; the hand raised against it is stayed.'),
+    ('canon','genesis',31,24,'canon','psalms',105,14,'free',
+      E'*He suffered no man to do them wrong: yea, he reproved kings for their sakes* (Psalm 105:14). When Elohim comes to Laban *in a dream by night, and said unto him, Take heed that thou speak not to Jacob either good or bad* (Genesis 31:24), it is the very thing the psalm sings over the wandering patriarchs: *He suffered no man to do them wrong: yea, he reproved kings for their sakes*. The pursuer is rebuked in the night; the covenant seed passes through untouched.'),
+    ('canon','genesis',31,24,'canon','psalms',105,15,'free',
+      E'*Saying, Touch not mine anointed, and do my prophets no harm* (Psalm 105:15). The dream-warning to Laban — *Take heed that thou speak not to Jacob either good or bad* (Genesis 31:24) — is the guard of *Touch not mine anointed, and do my prophets no harm*. Jacob the seed-bearer is the anointed of the promise; the hand of the one who would harm him is held back by Yahuah''s own warning.'),
+    ('canon','genesis',31,7,'jubilees','jubilees',29,6,'extras',
+      E'*And Yahuah (God) did not suffer him to injure Jacob; for He appeared to him in a dream by night* (Jubilees 29:6). The restored witness names the guard plainly — *Yahuah did not suffer him to injure Jacob; for He appeared to him in a dream by night* — the same shielding of *Elohim (God) suffered him not to hurt me* (Genesis 31:7) and *Take heed that thou speak not to Jacob* (Genesis 31:24): the adversary restrained by the dream, the seed-bearer kept.'),
+
+    -- THREAD 3: Rachel stole the teraphim (the idolatry clinging to the kindred; the strange gods put away)
+    ('canon','genesis',31,19,'canon','joshua',24,2,'free',
+      E'*And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* (Joshua 24:2). That *Rachel had stolen the images that were her father''s* (Genesis 31:19) is the idolatry still clinging to the kindred Jacob is called away from — the house of Nahor and Bethuel from across the river, the fathers who *served other gods*. The teraphim carried out of Laban''s house are the strange gods of the lineage left behind.'),
+    ('canon','genesis',31,19,'canon','genesis',35,2,'free',
+      E'*Then Jacob said unto his household, and to all that were with him, Put away the strange gods that are among you, and be clean, and change your garments* (Genesis 35:2). The images Rachel stole — *Rachel had stolen the images that were her father''s* (Genesis 31:19) — are the very *strange gods* Jacob must soon purge from his house at Bethel: *Put away the strange gods that are among you, and be clean*. The idolatry that came out of Laban''s house cannot dwell in the covenant household.'),
+    ('canon','genesis',31,19,'canon','genesis',35,4,'free',
+      E'*And they gave unto Jacob all the strange gods which were in their hand, and all their earrings which were in their ears; and Jacob hid them under the oak which was by Shechem* (Genesis 35:4). The teraphim taken in flight — *Rachel had stolen the images that were her father''s* (Genesis 31:19) — are answered when the household surrenders them: *they gave unto Jacob all the strange gods... and Jacob hid them under the oak*. What the kindred kept, the covenant house puts away before it goes up to the altar of Elohim.'),
+    ('canon','genesis',31,19,'jasher','jasher',31,44,'extras',
+      E'*And Rachel stole these images which were her father''s, in order that Laban might not know through them where Jacob had gone* (Jasher 31:44). The extended witness keeps the theft — *Rachel stole these images which were her father''s* — matching *Rachel had stolen the images that were her father''s* (Genesis 31:19); the household idols of Laban''s house, carried away from the kindred Jacob is leaving behind.'),
+
+    -- THREAD 4: The Elohim of Beth-el, where thou vowedst a vow (the Bethel vow remembered and kept) [CANON-ONLY]
+    ('canon','genesis',31,13,'canon','genesis',28,13,'free',
+      E'*And, behold, Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed* (Genesis 28:13). The angel''s word — *I am the Elohim (God) of Beth-el, where thou anointedst the pillar, and where thou vowedst a vow unto me* (Genesis 31:13) — reaches back to the ladder-vision, where Yahuah *stood above it* and named Himself *the Elohim of Abraham thy father, and the Elohim of Isaac*. The One who met Jacob at Bethel is the One who now calls him home — the Formed who appears and speaks, Yahuah who has a Father.'),
+    ('canon','genesis',31,13,'canon','genesis',28,15,'free',
+      E'*And, behold, I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of* (Genesis 28:15). *I am the Elohim (God) of Beth-el... now arise, get thee out from this land, and return unto the land of thy kindred* (Genesis 31:13) is the keeping of the Bethel word *I am with thee... and will bring thee again into this land*. The promise spoken at the pillar is now performed; the bringing-again is begun.'),
+    ('canon','genesis',31,13,'canon','genesis',28,20,'free',
+      E'*And Jacob vowed a vow, saying, If Elohim (God) will be with me, and will keep me in this way that I go, and will give me bread to eat, and raiment to put on* (Genesis 28:20). The vow the angel recalls — *where thou vowedst a vow unto me* (Genesis 31:13) — is this one: *If Elohim will be with me, and will keep me in this way that I go*. Now that Elohim has indeed been with him and kept him, the vow comes due, and the way leads home.'),
+    ('canon','genesis',31,13,'canon','genesis',28,22,'free',
+      E'*And this stone, which I have set for a pillar, shall be Elohim (God)''s house: and of all that thou shalt give me I will surely give the tenth unto thee* (Genesis 28:22). The pillar Jacob anointed — *where thou anointedst the pillar, and where thou vowedst a vow unto me* (Genesis 31:13) — is *this stone, which I have set for a pillar... Elohim''s house*. The Elohim of Beth-el holds Jacob to the place of the pillar and the vow, and sends him back to make the vow good.'),
+
+    -- THREAD 5: The Heap of Witness — Yahuah watch between me and thee (Galeed/Mizpah; the covenant-of-separation)
+    ('canon','genesis',31,48,'jubilees','jubilees',29,8,'extras',
+      E'*And he made there a heap for a witness; wherefore the name of that place is called: "The Heap of Witness," after this heap* (Jubilees 29:8). The restored witness names the heap exactly as *This heap is a witness between me and thee this day. Therefore was the name of it called Galeed* (Genesis 31:48) — *he made there a heap for a witness... "The Heap of Witness."* The piled stones stand as the silent testimony of the covenant sworn between the parted parties.'),
+    ('canon','genesis',31,44,'jasher','jasher',31,51,'extras',
+      E'*And Laban said to Jacob, We will make a covenant together and it shall be a testimony between me and you; if you shall afflict my daughters, or shall take other wives besides my daughters, even Elohim shall be a witness between me and you in this matter* (Jasher 31:51). The extended witness keeps the covenant-of-separation — *We will make a covenant together... even Elohim shall be a witness between me and you* — matching *Now therefore come thou, let us make a covenant, I and thou; and let it be for a witness between me and thee* (Genesis 31:44) and the oath that none afflict the daughters (Genesis 31:50). Yahuah is called as the watching arbiter between the parted houses.'),
+    ('canon','genesis',31,48,'jasher','jasher',31,52,'extras',
+      E'*And they took stones and made a heap, and Laban said, This heap is a witness between me and you, therefore he called the name of it Gilead* (Jasher 31:52). The extended witness carries the heap entire — *they took stones and made a heap... This heap is a witness between me and you* — as *they took stones, and made an heap... This heap is a witness between me and thee this day. Therefore was the name of it called Galeed* (Genesis 31:46-48): the piled stones the standing testimony of the boundary oath.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-31-return-unto-the-land-and-i-will-be-with-thee',
+       E'Return unto the land of thy fathers, and I will be with thee — the call home',
+       E'*And Yahuah (LORD) said unto Jacob, Return unto the land of thy fathers, and to thy kindred; and I will be with thee* (Genesis 31:3). After twenty years in exile, the word comes to go home — and it carries the covenant presence with it: *I will be with thee*. This is the keeping of the very promise sworn when Jacob first fled, at the pillar of Bethel: *I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of* (Genesis 28:15). What Yahuah spoke, He now does — the bringing-again is begun. And the return of this one man opens into the whole prophetic ingathering, for Jacob is Yashar''el (Israel): *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10); *I will bring them from the north country, and gather them from the coasts of the earth... a great company shall return thither* (Jeremiah 31:8). The patriarch called home from the far country is the first sketch of the two-house people called home from the nations — never replaced, always regathered. The restored witnesses keep the obedience: Jacob *crossed the river, and came to the land of Gilead* (Jubilees 29:4), for Yahuah had said *Arise, go forth out of this land, and return to the land of your birthplace and I will be with you* (Jasher 31:37).',
+       sv.verse_id, ev.verse_id, 'extras', 20750
+  FROM _s301_ge31_lookup sv, _s301_ge31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=31 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-31-elohim-suffered-him-not-to-hurt-me',
+       E'Elohim suffered him not to hurt me — the guarded seed-bearer',
+       E'Jacob tells his wives how he was kept under an unjust master: *And your father hath deceived me, and changed my wages ten times; but Elohim (God) suffered him not to hurt me* (Genesis 31:7). The same guarding hand comes again when Laban pursues: *And Elohim (God) came to Laban the Syrian in a dream by night, and said unto him, Take heed that thou speak not to Jacob either good or bad* (Genesis 31:24). This is the pattern that shields the whole line of promise. So Elohim guarded Sarah: *for I also withheld thee from sinning against me: therefore suffered I thee not to touch her* (Genesis 20:6) — and came, as to Laban, *in a dream* to restrain the man who would harm the seed-bearer. The psalmist sings the pattern over all the wandering patriarchs: *He suffered no man to do them wrong: yea, he reproved kings for their sakes; Saying, Touch not mine anointed, and do my prophets no harm* (Psalm 105:14-15). The seed-bearer of the promise — the line through whom the seed of Genesis 3:15 runs — is shielded; the hand raised against him is stayed in the night. The restored witness names it plainly: *Yahuah (God) did not suffer him to injure Jacob; for He appeared to him in a dream by night* (Jubilees 29:6).',
+       sv.verse_id, ev.verse_id, 'extras', 20753
+  FROM _s301_ge31_lookup sv, _s301_ge31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=31 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-31-rachel-stole-the-teraphim',
+       E'Rachel stole the teraphim — the idolatry clinging to the kindred',
+       E'*And Laban went to shear his sheep: and Rachel had stolen the images that were her father''s* (Genesis 31:19). The teraphim — Laban''s household idols — go out of Padan-aram hidden in the camel''s furniture (Genesis 31:34): the idolatry still clinging to the kindred Jacob is called away from. Joshua names the root of that lineage: *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* (Joshua 24:2). The house of Nahor and Bethuel, from across the river, served other gods — and the strange gods of that house come along in the flight. But they cannot dwell in the covenant household, and within a few chapters Jacob purges them: *Put away the strange gods that are among you, and be clean, and change your garments* (Genesis 35:2); *And they gave unto Jacob all the strange gods which were in their hand... and Jacob hid them under the oak which was by Shechem* (Genesis 35:4). What the kindred kept, the covenant house must put away before it goes up to the altar of Elohim. The extended witness keeps the theft: *Rachel stole these images which were her father''s, in order that Laban might not know through them where Jacob had gone* (Jasher 31:44).',
+       sv.verse_id, ev.verse_id, 'extras', 20756
+  FROM _s301_ge31_lookup sv, _s301_ge31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=31 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 [CANON-ONLY]
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-31-the-elohim-of-beth-el-where-thou-vowedst-a-vow',
+       E'The Elohim of Beth-el, where thou vowedst a vow — the vow remembered and kept',
+       E'The angel of Elohim speaks to Jacob in the dream and names Himself by the place of the vow: *I am the Elohim (God) of Beth-el, where thou anointedst the pillar, and where thou vowedst a vow unto me: now arise, get thee out from this land, and return unto the land of thy kindred* (Genesis 31:13). This reaches all the way back to the ladder-vision, when Jacob first fled. There Yahuah *stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed* (Genesis 28:13), and promised *I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land* (Genesis 28:15). And Jacob answered with a vow: *If Elohim (God) will be with me, and will keep me in this way that I go... So that I come again to my father''s house in peace; then shall Yahuah (LORD) be my Elohim* (Genesis 28:20-21), and set up the pillar — *this stone, which I have set for a pillar, shall be Elohim (God)''s house* (Genesis 28:22). Now Elohim has indeed been with him and kept him, and the vow comes due: the way leads home. The One who speaks here is the One who stood above the ladder — the Formed who appears and speaks, Yahuah who has a Father, the visible One who met Jacob at Bethel and now calls him back.',
+       sv.verse_id, ev.verse_id, 'free', 20759
+  FROM _s301_ge31_lookup sv, _s301_ge31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=31 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-31-the-heap-of-witness-yahuah-watch-between-me-and-thee',
+       E'The heap of witness — Yahuah watch between me and thee (Galeed/Mizpah)',
+       E'Laban overtakes Jacob, but the pursuit ends not in blood but in a covenant: *Now therefore come thou, let us make a covenant, I and thou; and let it be for a witness between me and thee* (Genesis 31:44). They pile up stones — *And Jacob took a stone, and set it up for a pillar... and they took stones, and made an heap* (Genesis 31:45-46) — and the heap is named in two tongues: *And Laban called it Jegar-sahadutha: but Jacob called it Galeed* (Genesis 31:47), the heap of witness. And the watchword: *And Mizpah; for he said, Yahuah (LORD) watch between me and thee, when we are absent one from another* (Genesis 31:49); *no man is with us; see, Elohim (God) is witness betwixt me and thee* (Genesis 31:50). This is a covenant-of-separation — a boundary neither will cross to harm the other — and the witness who watches the unseen border is Yahuah Himself. Jacob seals it not by the gods of Nahor''s house but *by the fear of his father Isaac* (Genesis 31:53), the covenant Elohim. The restored witnesses keep the heap entire: *he made there a heap for a witness; wherefore the name of that place is called: "The Heap of Witness"* (Jubilees 29:8); *We will make a covenant together... even Elohim shall be a witness between me and you* (Jasher 31:51); *they took stones and made a heap... This heap is a witness between me and you* (Jasher 31:52). The piled stones stand as the silent testimony, and Yahuah is the watching arbiter between the parted houses.',
+       sv.verse_id, ev.verse_id, 'extras', 20762
+  FROM _s301_ge31_lookup sv, _s301_ge31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=43
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=31 AND ev.verse_number=55
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I am with thee... and will bring thee again into this land* (Genesis 28:15) — the call *Return unto the land of thy fathers... and I will be with thee* (31:3) is the keeping of the Bethel promise; the presence that went into exile calls him home.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=3
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-return-unto-the-land-and-i-will-be-with-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10) — Jacob (=Yashar''el) called home (31:3) is the seed of the two-house gathering; the One who scattered is the One who gathers.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=3
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-return-unto-the-land-and-i-will-be-with-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will bring them from the north country, and gather them from the coasts of the earth... a great company shall return thither* (Jeremiah 31:8) — the one man''s return (31:3) opens into the great ingathering of the scattered.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=3
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-return-unto-the-land-and-i-will-be-with-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*he... crossed the river, and came to the land of Gilead* (Jubilees 29:4) — the obedience to *Return unto the land of thy fathers* (31:3) in the restored witness; Jacob sets his face homeward.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=3
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=29 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-return-unto-the-land-and-i-will-be-with-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*return to the land of your birthplace and I will be with you* (Jasher 31:37) — the call-home of 31:3 kept entire in the extended witness: the same command, the same covenant presence.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=3
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=31 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-return-unto-the-land-and-i-will-be-with-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I also withheld thee from sinning against me: therefore suffered I thee not to touch her* (Genesis 20:6) — the same guarding hand that kept Sarah keeps Jacob (*Elohim suffered him not to hurt me*, 31:7); Elohim came *in a dream* to restrain the harmer.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=7
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=20 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-elohim-suffered-him-not-to-hurt-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *He suffered no man to do them wrong: yea, he reproved kings for their sakes* (Psalm 105:14) — the dream-warning to Laban (*speak not to Jacob either good or bad*, 31:24) is the rebuke of the pursuer; the seed passes through untouched.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=24
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-elohim-suffered-him-not-to-hurt-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Touch not mine anointed, and do my prophets no harm* (Psalm 105:15) — Jacob the seed-bearer is the anointed of the promise; the harmer''s hand held back by Yahuah''s warning (31:24).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=24
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-elohim-suffered-him-not-to-hurt-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah (God) did not suffer him to injure Jacob; for He appeared to him in a dream by night* (Jubilees 29:6) — the guard of 31:7,24 named plainly in the restored witness: the adversary restrained by the dream.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=7
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=29 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-elohim-suffered-him-not-to-hurt-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *even Terah, the father of Abraham, and the father of Nachor: and they served other gods* (Joshua 24:2) — the root of the teraphim Rachel stole (31:19): the kindred from across the river served other gods.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=19
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-rachel-stole-the-teraphim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Put away the strange gods that are among you, and be clean* (Genesis 35:2) — the very images Rachel stole (31:19) Jacob must soon purge from his house at Bethel.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=19
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-rachel-stole-the-teraphim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they gave unto Jacob all the strange gods... and Jacob hid them under the oak which was by Shechem* (Genesis 35:4) — the teraphim of 31:19 answered: what the kindred kept, the covenant house puts away before the altar.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=19
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-rachel-stole-the-teraphim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Rachel stole these images which were her father''s, in order that Laban might not know... where Jacob had gone* (Jasher 31:44) — the theft of 31:19 kept in the extended witness; the household idols of Laban''s house carried away.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=19
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=31 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-rachel-stole-the-teraphim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members [CANON-ONLY]
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it* (Genesis 28:13) — *I am the Elohim of Beth-el* (31:13) reaches back to the ladder, where Yahuah stood above it and named Himself; the Formed who appears and speaks.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=13
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-the-elohim-of-beth-el-where-thou-vowedst-a-vow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I am with thee... and will bring thee again into this land* (Genesis 28:15) — *now arise... return unto the land of thy kindred* (31:13) is the keeping of the Bethel word; the bringing-again begun.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=13
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-the-elohim-of-beth-el-where-thou-vowedst-a-vow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And Jacob vowed a vow, saying, If Elohim will be with me, and will keep me in this way that I go* (Genesis 28:20) — the vow the angel recalls (*where thou vowedst a vow unto me*, 31:13); now kept, it comes due.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=13
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-the-elohim-of-beth-el-where-thou-vowedst-a-vow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*this stone, which I have set for a pillar, shall be Elohim (God)''s house* (Genesis 28:22) — the pillar Jacob anointed (*where thou anointedst the pillar*, 31:13); the Elohim of Beth-el holds him to the place of the vow.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=13
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-the-elohim-of-beth-el-where-thou-vowedst-a-vow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *he made there a heap for a witness; wherefore the name of that place is called: "The Heap of Witness"* (Jubilees 29:8) — the heap of *This heap is a witness between me and thee... called Galeed* (31:48) named in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=48
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=29 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-the-heap-of-witness-yahuah-watch-between-me-and-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*We will make a covenant together... even Elohim shall be a witness between me and you* (Jasher 31:51) — the covenant-of-separation of *let us make a covenant... for a witness between me and thee* (31:44); Yahuah the watching arbiter.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=44
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=31 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-the-heap-of-witness-yahuah-watch-between-me-and-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they took stones and made a heap... This heap is a witness between me and you* (Jasher 31:52) — the piled stones of 31:46-48 the standing testimony of the boundary oath.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=31 AND sv.verse_number=48
+  JOIN _s301_ge31_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=31 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-31-the-heap-of-witness-yahuah-watch-between-me-and-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_32.sql (Genesis 32) -----
+-- Chapter: Genesis 32 — JACOB RETURNS TO THE LAND, AND IS RENAMED YASHAR'EL: the angels of Elohim meet him at Mahanaim ("two camps") — Elohim's host attending the covenant-bearer; the messengers sent to Esau and the great fear (four hundred men with him); the PREVAILING PRAYER — "I am not worthy of the least of all the mercies... Deliver me, I pray thee, from the hand of my brother... And thou saidst, I will surely do thee good, and make thy seed as the sand of the sea" (the humbled supplanter pleading the covenant-word back to Yahuah); the present sent ahead to appease Esau; the night-crossing of the Jabbok; ★★ JACOB LEFT ALONE AND THE WRESTLING — "there wrestled a man with him until the breaking of the day... Thy name shall be called no more Jacob, but Yashar'el (Israel): for as a prince hast thou power with Elohim and with men, and hast prevailed"; Peniel ("I have seen Elohim face to face" — PRE-EXISTING THREAD, bound around, NOT over); the sun rose as he passed Penuel and he halted upon his thigh; the children of Yashar'el eat not of the sinew that shrank, unto this day.
+-- Tag: ge32   Temp view: _s301_ge32_lookup
+-- Sort band: base 20775, step 3 -> threads at 20775, 20778, 20781, 20784 (4 threads)
+-- Source of EVERY row: 'canon','genesis',32,v
+-- VERSE NUMBERS CONFIRMED against dump_canon: this parse matches KJV (NO off-by-one here) — Mahanaim 32:1-2, prayer 32:9-12, wrestling+name-change 32:24-28, Peniel face-to-face 32:30 (pre-existing), the halt 32:31, the sinew 32:32.
+--
+-- ⚠ PRE-EXISTING THREADS HANDLED:
+--   * 'the-face-of-yahuah-what-the-formed-shows-of-the-formless-source' [free] is ALREADY LIVE anchored at 32:30 (Peniel / "I have seen Elohim face to face"). I did NOT create any thread on the seeing-Elohim-face-to-face theme, did NOT anchor any new thread at 32:30, and did NOT reuse that slug. My wrestling thread (THREAD 3) anchors at the NAME-CHANGE (32:24-28), a distinct theme; its prose touches Peniel only as the place-name aftermath, never duplicating the face-of-Yahuah thread. No new member targets 32:30.
+--   * 'jasher-32-wrestling-peniel-israel' [extras] is a JASHER-SOURCE thread (different namespace) — no collision. I cite Jasher 32 verses as MEMBERS of my genesis-source threads, which is permitted (different source verse).
+--
+-- Genesis 32 coverage:
+--   ★ v.1-2 (the angels of Elohim met him; This is Elohim's host; called the place Mahanaim "two camps")
+--        NT:     Hebrews 1:14 (Are they not all ministering spirits, sent forth to minister for them who shall be heirs of salvation?) — THREAD 1 (the host as ministering spirits to the covenant-heir)
+--        Extras: none warranted (Jubilees 29 has NO angel-host meeting at the return — it goes from the Jabbok crossing straight to Esau's reconciliation; Jasher 32:28-38 has the FOUR angel-camps that rout Esau, but that is the angels sent against Esau on the road, a different beat than the host that MET Jacob at Mahanaim — not forced as a 32:1-2 member; deliberately held)
+--        Tanakh: ★ 2 Kings 6:17 (the mountain was full of horses and chariots of fire round about Elisha) — the unseen host encamped around the man of Elohim; Psalm 34:7 (The angel of Yahuah encampeth round about them that fear him, and delivereth them) — THREAD 1; Genesis 28:12 (the angels of Elohim ascending and descending) lateral noted in prose (the Bethel ladder host bookends the sojourn) — woven, not a separate member
+--   ★ v.3-8 (messengers to Esau in Seir; Esau comes with four hundred men; Jacob greatly afraid, divides into two bands)
+--        NT:     none warranted (the fear/division is narrative; no framework-bearing NT fulfillment of the two-bands flight)
+--        Extras: Jasher 32:7,13,15 (Esau coming with four hundred men... Jacob was greatly afraid and distressed) — narrative parallel; the load-bearing extras beat is the PRAYER that follows, held to THREAD 2; the four-hundred-men fear notice itself not forced as its own member
+--        Tanakh: none warranted distinct (the two-bands "Mahanaim/two camps" echo is carried by THREAD 1's place-name; the fear sets up the prayer of THREAD 2)
+--   ★★ v.9-12 (O Elohim of my father Abraham... Yahuah which saidst unto me, Return... I will deal well with thee; I am not worthy of the least of all the mercies; Deliver me, I pray thee, from the hand of my brother... And thou saidst, I will surely do thee good, and make thy seed as the sand of the sea — THE PREVAILING PRAYER, pleading the covenant-word back)
+--        NT:     none warranted as distinct member (the covenant-prayer pattern is carried by the Tanakh promise it pleads, Gen 28; no forced NT text in the assigned set)
+--        Extras: ★ Jasher 32:16-23 (Jacob prayed to Yahuah his Elohim... you did say to me... I will make your seed as the stars of heaven... deliver me, I pray you, also from the hands of my brother Esau... if there is no righteousness in me, do it for the sake of Abraham and my father Isaac) — THREAD 2 (the prayer expanded, pleading the promise and the fathers)
+--        Tanakh: ★★ Genesis 28:15 (I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land) — the very word Jacob pleads back: *Return unto thy country... and I will deal well with thee* (32:9); Genesis 28:14 (thy seed shall be as the dust of the earth) — the seed-promise echoed in *make thy seed as the sand of the sea* (32:12) — THREAD 2
+--   v.13-21 (the present for Esau — goats, ewes, camels, kine; I will appease him with the present... afterward I will see his face)
+--        NT:     none warranted   Extras: Jasher 32:41-46 (the present chosen and sent ahead in droves with a space between) — narrative parallel only, not framework-load-bearing, NOT forced
+--        Tanakh: none warranted (the appeasement-present is narrative; no covenant-type)
+--   v.22-23 (rose that night, took his two wives, two womenservants, eleven sons, passed over the ford Jabbok; sent them over the brook)
+--        NT:     none warranted   Extras: Jasher 32:47 (he that night passed them over the ford Jabuk) — the same crossing, set-up for the wrestling; carried in THREAD 3's prose, not a separate member
+--        Tanakh: none warranted
+--   ★★ v.24-28 (Jacob was left alone; there wrestled a man with him until the breaking of the day; touched the hollow of his thigh; I will not let thee go, except thou bless me; Thy name shall be called no more Jacob, but Yashar'el (Israel): for as a prince hast thou power with Elohim and with men, and hast prevailed)
+--        NT:     ★ Revelation 2:17 (To him that overcometh... will give him a white stone, and in the stone a new name written, which no man knoweth saving he that receiveth it); Revelation 3:12 (I will write upon him the name of my Elohim... and I will write upon him my new name) — THREAD 3 (the new-name motif to the overcomer — the night of prevailing renamed)
+--        Extras: Jasher 32:48 (a man met him, and he wrestled with him that night until the breaking of the day, and the hollow of Jacob's thigh was out of joint through wrestling with him) — THREAD 3 (the wrestling witnessed; NOTE Jasher 32 carries NO name-change — thin here — only the wrestling and the joint; quoted only for the wrestling beat); Jubilees 29 = NONE WARRANTED (Jubilees has NO wrestling at all — 29:13 goes from *he passed over the Jabbok* straight to *Esau, his brother, came to him, and he was reconciled* — the night is absent in this parse)
+--        Tanakh: ★★ Hosea 12:3 (He took his brother by the heel in the womb, and by his strength he had power with Elohim); Hosea 12:4 (he had power over the angel, and prevailed: he wept, and made supplication unto him: he found him in Beth-el) — THREAD 3 (the prophet's OWN reading of this night: the heel-catcher who prevailed with El)
+--   v.29 (Tell me thy name... Wherefore is it that thou dost ask after my name? And he blessed him there)
+--        NT/Extras/Tanakh: none warranted distinct (the withheld Name + the blessing is carried in THREAD 3's prose; the parallel "what is thy name" of Judges 13:18 belongs to its own pack)
+--   v.30 (Jacob called the name of the place Peniel: for I have seen Elohim face to face, and my life is preserved)
+--        ★ PRE-EXISTING LIVE THREAD anchored here ('the-face-of-yahuah-...') — NO new thread, NO new member at 32:30, NOT reused. Deliberately left to the existing apparatus.
+--   ★ v.31-32 (as he passed over Penuel the sun rose upon him, and he halted upon his thigh; therefore the children of Yashar'el eat not of the sinew which shrank, unto this day)
+--        NT:     none warranted (no NT text on the sinew/halt in the assigned set)
+--        Extras: Jasher 32:49 (the man left Jacob there, and he blessed him and went away, and Jacob passed the brook at the break of day, and he halted upon his thigh) — THREAD 4 (the same break-of-day halt witnessed)
+--        Tanakh: Hosea 12:4 already in THREAD 3 (the supplication-and-prevailing); the halt itself is the people's memorial — Tanakh lateral none warranted beyond the night already woven; THREAD 4 carries the memorial through the extras witness + prose
+--
+-- Threads (slug — target libraries):
+--   1. genesis-32-the-angels-of-elohim-met-him-mahanaim-the-host-encamped — Tanakh (2 Kings, Psalm) + NT (Hebrews) [free] (★ the angelic host attending the covenant-bearer)
+--   2. genesis-32-i-am-not-worthy-deliver-me-the-prevailing-prayer-pleaded — Tanakh (Genesis 28) + Extras (Jasher) [extras] (★★ the covenant-prayer pleading the promise back)
+--   3. genesis-32-thy-name-shall-be-called-no-more-jacob-but-yasharel — Tanakh (Hosea) + NT (Revelation) + Extras (Jasher) [extras] (★★ the wrestling and the NEW NAME — the man who prevails with El)
+--   4. genesis-32-the-sun-rose-and-he-halted-upon-his-thigh-the-sinew — Extras (Jasher) [extras] (★ strength broken to prevail; the sinew memorial of the people)
+--
+-- Framing notes:
+--   ★ MAHANAIM (THREAD 1): *the angels of Elohim (God) met him... This is Elohim's host: and he called the name of that place Mahanaim* (32:1-2). The covenant-bearer returning to the land is met by the unseen host — the same host Elisha's servant was given eyes to see, *the mountain was full of horses and chariots of fire round about Elisha* (2 Kings 6:17), and the psalmist's *The angel of Yahuah encampeth round about them that fear him, and delivereth them* (Psalm 34:7). Hebrews names what they are: *ministering spirits, sent forth to minister for them who shall be heirs of salvation* (Hebrews 1:14). "Mahanaim" = two camps — Jacob's camp and the camp of Elohim's host together. The Bethel-ladder angels (Genesis 28:12) bookend the sojourn (host on the way out, host on the way home) — woven in prose.
+--   ★★ THE PREVAILING PRAYER (THREAD 2): *I am not worthy of the least of all the mercies... Deliver me, I pray thee, from the hand of my brother* (32:10-11) — and the heart of it: *And thou saidst, I will surely do thee good, and make thy seed as the sand of the sea* (32:12). The humbled supplanter pleads Yahuah's OWN word back to Him — *Yahuah which saidst unto me, Return unto thy country... and I will deal well with thee* (32:9) is the very promise of Bethel, *I am with thee... and will bring thee again into this land* (Genesis 28:15); the seed-as-sand of 32:12 is the seed-as-dust of Genesis 28:14. This is the covenant-prayer pattern: not bare petition but the promise held up to the Promiser. Jasher expands it — *you did say to me... I will make your seed as the stars of heaven... deliver me, I pray you, also from the hands of my brother Esau... if there is no righteousness in me, do it for the sake of Abraham and my father Isaac* (Jasher 32:17,21,22).
+--   ★★ THE NEW NAME (THREAD 3 — the load-bearing thread, DISTINCT from the 32:30 face-of-Yahuah thread): *there wrestled a man with him until the breaking of the day... Thy name shall be called no more Jacob, but Yashar'el (Israel): for as a prince hast thou power with Elohim (God) and with men, and hast prevailed* (32:24,28). The supplanter — Jacob, the heel-catcher — is renamed Yashar'el, the man who strives/prevails with El; this is the naming of the WHOLE PEOPLE, the two houses, every later "Israel" carrying this night. Through the Formed-and-Formless lens (Red Line #4): the "man" who wrestles, blesses, and whom Jacob says is Elohim is the Formed Son who bears the Name — *I have seen Elohim face to face* (the Formed who appears; the pre-existing 32:30 thread carries the face-of-Yahuah theme, NOT duplicated here). The prophet reads this very night: *He took his brother by the heel in the womb, and by his strength he had power with Elohim... he had power over the angel, and prevailed: he wept, and made supplication unto him: he found him in Beth-el* (Hosea 12:3-4) — the heel-catcher who prevailed, the prevailing that was WEEPING and SUPPLICATION, not brute force. The new-name motif runs forward to the overcomer: *a new name written, which no man knoweth saving he that receiveth it* (Revelation 2:17), *I will write upon him my new name* (Revelation 3:12). Jasher 32:48 witnesses the wrestling but carries NO name-change (thin parse), and Jubilees has no wrestling at all — recorded honestly.
+--   ★ THE HALTING THIGH / THE SINEW (THREAD 4): *as he passed over Penuel the sun rose upon him, and he halted upon his thigh* (32:31) — he came through the night as Yashar'el, but halting; the strength of the natural man broken in the very prevailing. *Therefore the children of Yashar'el (Israel) eat not of the sinew which shrank... unto this day* (32:32) — the people's memorial of the night, written into the table of every generation. Jasher 32:49 witnesses the same break-of-day halt: *he blessed him and went away, and Jacob passed the brook at the break of day, and he halted upon his thigh*. The prince who prevailed walks the rest of his life on a touched joint — power with Elohim through brokenness, the supplanter unmade and the Yashar'el made.
+--   VERSES WITH NO ADD: v.3-8 (messengers/Esau's four hundred/the two bands — narrative fear that sets up the prayer; the "two camps" theme is carried by Mahanaim in THREAD 1, the fear by THREAD 2); v.13-21 (the appeasement-present to Esau — narrative, no covenant-type); v.22-23 (the Jabbok night-crossing — set-up carried in THREAD 3 prose); v.29 (the withheld Name and the blessing — carried in THREAD 3 prose); v.30 (Peniel / face to face — DELIBERATELY left to the PRE-EXISTING live thread, no add).
+--   EXTRAS HANDLING: Jasher DOUBLE-WRITTEN 'jasher','jasher' in every row. Jubilees evaluated and found to carry NEITHER the wrestling NOR the name-change in this parse (29:13 jumps the night entirely) — recorded as "none warranted" for THREAD 3, not forced. Jasher's four-angel-camps routing Esau (32:28-38) is a different beat than the Mahanaim host that MET Jacob (32:1-2) and is deliberately NOT bound to THREAD 1.
+
+CREATE TEMP VIEW _s301_ge32_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: The angels of Elohim met him — Mahanaim, the host encamped (★ the host attending the covenant-bearer)
+    ('canon','genesis',32,1,'canon','2-kings',6,17,'free',
+      E'*And Elisha prayed, and said, Yahuah (LORD), I pray thee, open his eyes, that he may see. And Yahuah (LORD) opened the eyes of the young man; and he saw: and, behold, the mountain was full of horses and chariots of fire round about Elisha* (2 Kings 6:17). When *the angels of Elohim (God) met him* and Jacob said *This is Elohim''s (God''s) host* (Genesis 32:1-2), it is the same unseen host that Elisha''s servant was given eyes to see — *the mountain was full of horses and chariots of fire round about Elisha*. The covenant-bearer is never alone on the road; the camp of Elohim is pitched around him though the eye does not see it.'),
+    ('canon','genesis',32,1,'canon','psalms',34,7,'free',
+      E'*The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalm 34:7). The host that *met him* at Mahanaim (Genesis 32:1) is the psalmist''s settled truth: *The angel of Yahuah encampeth round about them that fear him, and delivereth them*. Jacob, returning to the land in fear of Esau, is ringed by the encampment of Yahuah — the deliverance prayed for in the next breath already standing guard around him.'),
+    ('canon','genesis',32,2,'canon','hebrews',1,14,'free',
+      E'*Are they not all ministering spirits, sent forth to minister for them who shall be heirs of salvation?* (Hebrews 1:14). Jacob names the company *Elohim''s (God''s) host... Mahanaim* (Genesis 32:2 — "two camps"); Hebrews names their office: *ministering spirits, sent forth to minister for them who shall be heirs of salvation*. The host that met the heir of the promise is the host sent to serve every heir — Jacob''s camp and the camp of the host together, the two encampments of Mahanaim.'),
+
+    -- THREAD 2 (★★): I am not worthy — deliver me — the prevailing prayer that pleads the covenant-word back
+    ('canon','genesis',32,9,'canon','genesis',28,15,'free',
+      E'*And, behold, I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of* (Genesis 28:15). When Jacob prays *Yahuah (LORD) which saidst unto me, Return unto thy country, and to thy kindred, and I will deal well with thee* (Genesis 32:9), he is pleading the very word spoken at Bethel — *I am with thee... and will bring thee again into this land*. This is the covenant-prayer: not bare petition but Yahuah''s own promise held back up to the Promiser, the word He cannot break.'),
+    ('canon','genesis',32,12,'canon','genesis',28,14,'free',
+      E'*And thy seed shall be as the dust of the earth, and thou shalt spread abroad to the west, and to the east, and to the north, and to the south: and in thee and in thy seed shall all the families of the earth be blessed* (Genesis 28:14). The close of the prayer — *And thou saidst, I will surely do thee good, and make thy seed as the sand of the sea, which cannot be numbered for multitude* (Genesis 32:12) — pleads the seed-promise of Bethel: *thy seed shall be as the dust of the earth*. Jacob will not let go of the word; the seed beyond numbering is the surety he holds against the four hundred men coming to meet him.'),
+    ('canon','genesis',32,11,'jasher','jasher',32,21,'extras',
+      E'*Now therefore, O Yahuah Elohim, deliver me, I pray you, also from the hands of my brother Esau, for I am greatly afraid of him* (Jasher 32:21). The extended witness keeps the cry whole — *deliver me, I pray you, also from the hands of my brother Esau* — matching *Deliver me, I pray thee, from the hand of my brother, from the hand of Esau: for I fear him* (Genesis 32:11). The fear is named plainly, and the deliverance asked of the One who promised the return.'),
+    ('canon','genesis',32,9,'jasher','jasher',32,17,'extras',
+      E'*I am Yahuah Elohim (the Lord God) of your father Abraham and the Elohim of Isaac, to you do I give this land and your seed after you, and I will make your seed as the stars of heaven, and you shall spread forth to the four sides of heaven, and in you and in your seed shall all the families of the earth be blessed* (Jasher 32:17). The extended witness lets Jacob rehearse the whole promise he pleads — *I will make your seed as the stars of heaven... in you and in your seed shall all the families of the earth be blessed* — the covenant-word of *Yahuah which saidst unto me, Return... and I will deal well with thee* (Genesis 32:9) unfolded; the prayer is the promise read back to the One who swore it.'),
+
+    -- THREAD 3 (★★): Thy name shall be called no more Jacob, but Yashar'el — the wrestling and the NEW NAME
+    ('canon','genesis',32,28,'canon','hosea',12,3,'free',
+      E'*He took his brother by the heel in the womb, and by his strength he had power with Elohim (God)* (Hosea 12:3). The prophet reads this very night: the one renamed — *Thy name shall be called no more Jacob, but Yashar''el (Israel): for as a prince hast thou power with Elohim (God) and with men, and hast prevailed* (Genesis 32:28) — is *he* who *took his brother by the heel in the womb* (the meaning of "Jacob") and yet *by his strength he had power with Elohim*. The heel-catcher becomes the prince who prevails with El; the supplanter is unmade and the Yashar''el is made.'),
+    ('canon','genesis',32,26,'canon','hosea',12,4,'free',
+      E'*Yea, he had power over the angel, and prevailed: he wept, and made supplication unto him: he found him in Beth-el, and there he spake with us* (Hosea 12:4). Hosea names HOW Jacob prevailed in *I will not let thee go, except thou bless me* (Genesis 32:26): *he had power over the angel, and prevailed: he wept, and made supplication unto him*. The prevailing was not brute force but weeping and supplication — the same clinging prayer that pleaded the covenant-word; and *he found him in Beth-el*, the place of the ladder and the promise now made good in the man renamed.'),
+    ('canon','genesis',32,28,'canon','revelation',2,17,'free',
+      E'*To him that overcometh will I give to eat of the hidden manna, and will give him a white stone, and in the stone a new name written, which no man knoweth saving he that receiveth it* (Revelation 2:17). The night that ends in *Thy name shall be called no more Jacob, but Yashar''el (Israel)... and hast prevailed* (Genesis 32:28) is the first of the new names: to the one who overcomes, *a new name written, which no man knoweth saving he that receiveth it*. The wrestled-for blessing that renamed the supplanter is the pattern of the overcomer''s hidden new name.'),
+    ('canon','genesis',32,28,'canon','revelation',3,12,'free',
+      E'*Him that overcometh will I make a pillar in the temple of my Elohim (God)... and I will write upon him the name of my Elohim (God), and the name of the city of my Elohim (God)... and I will write upon him my new name* (Revelation 3:12). The renaming of *as a prince hast thou power with Elohim (God) and with men, and hast prevailed* (Genesis 32:28) runs forward to the overcomer marked with the Name: *I will write upon him the name of my Elohim... and I will write upon him my new name*. The one who prevailed in the night and was named Yashar''el is the type of every overcomer to whom the Name is given.'),
+    ('canon','genesis',32,24,'jasher','jasher',32,48,'extras',
+      E'*And when he passed all belonging to him over the brook, Jacob was left by himself, and a man met him, and he wrestled with him that night until the breaking of the day, and the hollow of Jacob''s thigh was out of joint through wrestling with him* (Jasher 32:48). The extended witness keeps the wrestling — *Jacob was left by himself, and a man met him, and he wrestled with him that night until the breaking of the day* — matching *And Jacob was left alone; and there wrestled a man with him until the breaking of the day* (Genesis 32:24). The man who meets the lone covenant-bearer in the dark and contends with him until dawn is witnessed in both records.'),
+
+    -- THREAD 4 (★): The sun rose and he halted upon his thigh — the sinew, the people's memorial
+    ('canon','genesis',32,31,'jasher','jasher',32,49,'extras',
+      E'*And at the break of day the man left Jacob there, and he blessed him and went away, and Jacob passed the brook at the break of day, and he halted upon his thigh* (Jasher 32:49). The extended witness keeps the dawn-halt — *he blessed him and went away... and he halted upon his thigh* — matching *And as he passed over Penuel the sun rose upon him, and he halted upon his thigh* (Genesis 32:31). The prince came through the night blessed and renamed, but walking on a touched joint: power with Elohim carried in a body unmade — strength broken in the very prevailing.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-32-the-angels-of-elohim-met-him-mahanaim-the-host-encamped',
+       E'The angels of Elohim met him — Mahanaim, the host encamped round the covenant-bearer',
+       E'*And Jacob went on his way, and the angels of Elohim (God) met him. And when Jacob saw them, he said, This is Elohim''s (God''s) host: and he called the name of that place Mahanaim* (Genesis 32:1-2). The covenant-bearer, returning to the land after twenty years, is met at the border by the unseen host — and he names the place "Mahanaim," two camps: his own camp and the camp of Elohim''s host together. This is the same encampment Elisha''s servant trembled until his eyes were opened: *Yahuah (LORD), I pray thee, open his eyes, that he may see. And Yahuah (LORD) opened the eyes of the young man; and he saw: and, behold, the mountain was full of horses and chariots of fire round about Elisha* (2 Kings 6:17). It is the psalmist''s settled comfort: *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalm 34:7). And the letter to the Hebrews names their office: *Are they not all ministering spirits, sent forth to minister for them who shall be heirs of salvation?* (Hebrews 1:14). The host that met the heir of the promise is the host sent to serve every heir. Jacob met this same company on the way OUT — *behold the angels of Elohim (God) ascending and descending* on the Bethel ladder (Genesis 28:12); host at the going, host at the returning, the camp of Elohim pitched around the man Yahuah swore to keep. He fears Esau and his four hundred men in the very next breath — yet the deliverance he is about to pray for already stands encamped around him.',
+       sv.verse_id, ev.verse_id, 'free', 20775
+  FROM _s301_ge32_lookup sv, _s301_ge32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=32 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-32-i-am-not-worthy-deliver-me-the-prevailing-prayer-pleaded',
+       E'I am not worthy — deliver me — the prevailing prayer that pleads the covenant-word back',
+       E'Facing Esau and four hundred men, the supplanter does not scheme first — he prays, and the prayer is a model of how a covenant-man pleads: *O Elohim (God) of my father Abraham, and Elohim (God) of my father Isaac, Yahuah (LORD) which saidst unto me, Return unto thy country, and to thy kindred, and I will deal well with thee* (Genesis 32:9). He opens by holding Yahuah to Yahuah''s OWN word — the very promise of Bethel: *I am with thee, and will keep thee in all places whither thou goest, and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of* (Genesis 28:15). Then the humility: *I am not worthy of the least of all the mercies, and of all the truth, which thou hast shewed unto thy servant; for with my staff I passed over this Jordan; and now I am become two bands* (Genesis 32:10). Then the petition: *Deliver me, I pray thee, from the hand of my brother, from the hand of Esau: for I fear him* (Genesis 32:11). And the seal — the promise pleaded back once more: *And thou saidst, I will surely do thee good, and make thy seed as the sand of the sea, which cannot be numbered for multitude* (Genesis 32:12), the seed-as-dust of *thy seed shall be as the dust of the earth* (Genesis 28:14). This is the prevailing prayer: not bare petition but the covenant-word held up to the One who swore it, the word He cannot break without denying Himself. The extended witness expands the same prayer — *I am Yahuah Elohim (the Lord God) of your father Abraham and the Elohim of Isaac... I will make your seed as the stars of heaven... in you and in your seed shall all the families of the earth be blessed* (Jasher 32:17), *deliver me, I pray you, also from the hands of my brother Esau, for I am greatly afraid of him* (Jasher 32:21), *if there is no righteousness in me, do it for the sake of Abraham and my father Isaac* (Jasher 32:22). The man who would wrestle till dawn is already wrestling here, on his knees, holding fast to the promise.',
+       sv.verse_id, ev.verse_id, 'extras', 20778
+  FROM _s301_ge32_lookup sv, _s301_ge32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=32 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-32-thy-name-shall-be-called-no-more-jacob-but-yasharel',
+       E'Thy name shall be called no more Jacob, but Yashar''el — the wrestling and the new name',
+       E'*And Jacob was left alone; and there wrestled a man with him until the breaking of the day* (Genesis 32:24). Alone in the dark at the Jabbok, the covenant-bearer contends with a man who will not be overcome — *when he saw that he prevailed not against him, he touched the hollow of his thigh* (Genesis 32:25) — and Jacob clings: *I will not let thee go, except thou bless me* (Genesis 32:26). Then the blessing is a renaming: *Thy name shall be called no more Jacob, but Yashar''el (Israel): for as a prince hast thou power with Elohim (God) and with men, and hast prevailed* (Genesis 32:28). The supplanter — "Jacob," the heel-catcher — becomes Yashar''el, the one who strives and prevails with El. This is not one man''s private name only; it is the naming of the WHOLE PEOPLE, the two houses, every later "Yashar''el" carrying this night of prevailing. Read through the Formed and the Formless: the "man" who wrestles, blesses, and whom Jacob knows to be Elohim is the Formed Son who bears the Name — the One who appeared and spoke to the fathers (the face-to-face of Peniel is its own beam of this light). The prophet Hosea reads this very night, and tells us HOW Jacob prevailed: *He took his brother by the heel in the womb, and by his strength he had power with Elohim (God): yea, he had power over the angel, and prevailed: he wept, and made supplication unto him: he found him in Beth-el, and there he spake with us* (Hosea 12:3-4). The heel-catcher prevailed — but by *weeping* and *supplication*, the same clinging prayer that pleaded the covenant-word; power with Elohim is not brute strength but the refusal to let go of the One who blesses. And the new-name runs forward to the overcomer: *a new name written, which no man knoweth saving he that receiveth it* (Revelation 2:17), *I will write upon him my new name* (Revelation 3:12). The extended witness keeps the wrestling: *Jacob was left by himself, and a man met him, and he wrestled with him that night until the breaking of the day, and the hollow of Jacob''s thigh was out of joint* (Jasher 32:48). The night that began with a lone, frightened supplanter ends with a prince renamed — and the whole people named in him.',
+       sv.verse_id, ev.verse_id, 'extras', 20781
+  FROM _s301_ge32_lookup sv, _s301_ge32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=32 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-32-the-sun-rose-and-he-halted-upon-his-thigh-the-sinew',
+       E'The sun rose, and he halted upon his thigh — the sinew, the people''s memorial of the night',
+       E'*And as he passed over Penuel the sun rose upon him, and he halted upon his thigh* (Genesis 32:31). The night of wrestling is over; the sun rises on the man renamed Yashar''el — but he walks out of it limping. The strength of the natural man was touched and broken in the very hour of prevailing: he had power with Elohim, and he came through, but halting. The extended witness keeps the same dawn-halt: *And at the break of day the man left Jacob there, and he blessed him and went away, and Jacob passed the brook at the break of day, and he halted upon his thigh* (Jasher 32:49) — blessed and limping in the same breath. And the chapter closes with a memorial written into the people: *Therefore the children of Yashar''el (Israel) eat not of the sinew which shrank, which is upon the hollow of the thigh, unto this day: because he touched the hollow of Jacob''s thigh in the sinew that shrank* (Genesis 32:32). The night Jacob became Yashar''el is remembered at every table, in a thing not eaten — the whole people carrying, generation after generation, the mark of the one who prevailed by being broken. The prince who clung until dawn walks the rest of his life on a touched joint: this is power with Elohim — not the strength of the supplanter, but the supplanter unmade and the Yashar''el made.',
+       sv.verse_id, ev.verse_id, 'extras', 20784
+  FROM _s301_ge32_lookup sv, _s301_ge32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=32 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the mountain was full of horses and chariots of fire round about Elisha* (2 Kings 6:17) — the unseen host that *met him* at Mahanaim (32:1) is the host Elisha''s servant was given eyes to see, encamped around the man of Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=1
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-the-angels-of-elohim-met-him-mahanaim-the-host-encamped'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalm 34:7) — the host of 32:1 is the psalmist''s settled truth: Jacob ringed by Yahuah''s encampment as he returns in fear.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=1
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-the-angels-of-elohim-met-him-mahanaim-the-host-encamped'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*ministering spirits, sent forth to minister for them who shall be heirs of salvation* (Hebrews 1:14) — Hebrews names the office of *Elohim''s host... Mahanaim* (32:2): the host that met the heir is sent to serve every heir.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=2
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-the-angels-of-elohim-met-him-mahanaim-the-host-encamped'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I am with thee... and will bring thee again into this land; for I will not leave thee, until I have done that which I have spoken to thee of* (Genesis 28:15) — the very Bethel word Jacob pleads back in *Return unto thy country... and I will deal well with thee* (32:9); the covenant-prayer holds Yahuah to His own promise.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=9
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-i-am-not-worthy-deliver-me-the-prevailing-prayer-pleaded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thy seed shall be as the dust of the earth... and in thy seed shall all the families of the earth be blessed* (Genesis 28:14) — the seed-promise pleaded in *make thy seed as the sand of the sea* (32:12); the surety Jacob holds against the four hundred men.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=12
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-i-am-not-worthy-deliver-me-the-prevailing-prayer-pleaded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will make your seed as the stars of heaven... in you and in your seed shall all the families of the earth be blessed* (Jasher 32:17) — the extended witness rehearses the whole promise of 32:9 that the prayer reads back to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=9
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=32 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-i-am-not-worthy-deliver-me-the-prevailing-prayer-pleaded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*deliver me, I pray you, also from the hands of my brother Esau, for I am greatly afraid of him* (Jasher 32:21) — the petition of 32:11 kept whole; the fear named, the deliverance asked of the One who promised the return.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=11
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=32 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-i-am-not-worthy-deliver-me-the-prevailing-prayer-pleaded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He took his brother by the heel in the womb, and by his strength he had power with Elohim (God)* (Hosea 12:3) — the prophet''s own reading of 32:28: the heel-catcher ("Jacob") becomes the prince who *had power with Elohim*.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=28
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-thy-name-shall-be-called-no-more-jacob-but-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he had power over the angel, and prevailed: he wept, and made supplication unto him: he found him in Beth-el* (Hosea 12:4) — HOW Jacob prevailed in *I will not let thee go, except thou bless me* (32:26): by weeping and supplication, not brute force.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=26
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=12 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-thy-name-shall-be-called-no-more-jacob-but-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*a white stone, and in the stone a new name written, which no man knoweth saving he that receiveth it* (Revelation 2:17) — the new name of 32:28 (Jacob to Yashar''el) is the pattern of the overcomer''s hidden new name.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=28
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-thy-name-shall-be-called-no-more-jacob-but-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will write upon him the name of my Elohim (God)... and I will write upon him my new name* (Revelation 3:12) — the renaming of *and hast prevailed* (32:28) runs forward to the overcomer marked with the Name.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=28
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-thy-name-shall-be-called-no-more-jacob-but-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Jacob was left by himself, and a man met him, and he wrestled with him that night until the breaking of the day, and the hollow of Jacob''s thigh was out of joint* (Jasher 32:48) — the wrestling of 32:24 witnessed (Jasher carries the contending but not the name-change).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=24
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=32 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-thy-name-shall-be-called-no-more-jacob-but-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he blessed him and went away... and he halted upon his thigh* (Jasher 32:49) — the dawn-halt of 32:31 witnessed: the prince came through blessed and renamed, but limping; strength broken in the very prevailing.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=32 AND sv.verse_number=31
+  JOIN _s301_ge32_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=32 AND tv.verse_number=49
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-32-the-sun-rose-and-he-halted-upon-his-thigh-the-sinew'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_33.sql (Genesis 33) -----
+-- Chapter: Genesis 33 — THE RECONCILIATION OF JACOB AND ESAU, AND THE ALTAR EL-ELOHE-ISRAEL: the feared brother runs to meet Jacob, embraces him, falls on his neck, and they weep; Jacob presses his blessing — "I have seen thy face, as though I had seen the face of Elohim, and thou wast pleased with me" (33:10, the reconciled brother's face echoing the Peniel face-of-Elohim of the night before); the seed-war brothers given a moment of peace, yet the lines stay distinct (Esau to Seir/Edom, Jacob to Succoth); and Jacob comes to Shalem/Shechem in peace, buys the first parcel of ground in the land, and builds an altar under the NEW name just given — El-elohe-Yashar'el (El, the Elohim of Israel).
+-- Tag: ge33   Temp view: _s301_ge33_lookup
+-- Sort band: base 20800, step 3 -> threads at 20800, 20803, 20806, 20809 (4 threads)
+-- Source of EVERY row: 'canon','genesis',33,v
+--
+-- Genesis 33 coverage:
+--   ★ v.1-4 (Jacob lifted up his eyes... Esau came, and with him four hundred men; Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept)
+--        NT:     Luke 15:20 (when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him) — THREAD 1 (★ genuine textual echo: "ran... fell on his neck, and kissed him" verbatim; the estranged met with running grace)
+--        Extras: Jubilees 29:11 (on that day Esau, his brother, came to him, and he was reconciled to him, and departed from him to the land of Seir); Jasher 32:56 (when Esau saw Jacob running toward him, he also ran toward him and he embraced him, and he fell upon his neck, and they kissed and they wept) — THREAD 1
+--        Tanakh: none warranted distinct here (the feared-brother/four-hundred-men dread is carried from Genesis 32:6-11, that pack's concern; the reconciliation itself is carried forward by Luke and the extras)
+--   v.5-9 (Who are those with thee? The children which Elohim hath graciously given thy servant; What meanest thou by all this drove? ... I have enough, my brother)
+--        NT:     none warranted   Extras: Jasher 32:60-62 (narrative parallel of the same exchange, not framework-load-bearing beyond THREAD 1)   Tanakh: none warranted (narrative dialogue of the meeting; the grace-given children echo Gen 30 but not bound here)
+--   ★ v.10-11 (I have seen thy face, as though I had seen the face of Elohim, and thou wast pleased with me; Take, I pray thee, my blessing... because Elohim hath dealt graciously with me)
+--        NT:     none warranted distinct (the face-of-Elohim weave is the Peniel theophany lateral, carried by THREAD 2; no NT member forced)
+--        Extras: Jasher 32:64 (I beseech you my Lord... receive my present at my hand, for I have therefore seen your face, as though I had seen a god-like face, because you were pleased with me) — THREAD 2
+--        Tanakh: ★ Genesis 32:30 (Jacob called the name of the place Peniel: for I have seen Elohim face to face, and my life is preserved) — THREAD 2 (load-bearing: the reconciled brother's face echoes the wrestling-night face-of-Elohim; grace upon grace, the night before and the morning after)
+--   v.12-17 (Let us take our journey... My lord knoweth that the children are tender... until I come unto my lord unto Seir; So Esau returned that day on his way unto Seir; And Jacob journeyed to Succoth, and built him an house, and made booths for his cattle)
+--        NT:     none warranted
+--        Extras: Jubilees 29:11 (he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents); Jasher 33:3 (Jacob there built himself a house, and he pitched his tent there, and he made booths for his cattle, therefore he called the name of that place Succoth) — THREAD 3
+--        Tanakh: none warranted distinct (Esau→Seir/Edom is the line-of-Esau divergence; the Edom/Esau election theme belongs to Genesis 36 and Malachi 1, those packs' concern; here only the parting is bound)
+--   ★ v.18-20 (Jacob came to Shalem, a city of Shechem... when he came from Padan-aram; and pitched his tent before the city; he bought a parcel of a field... for an hundred pieces of money; and he erected there an altar, and called it El-elohe-Yashar'el)
+--        NT:     ★ Hebrews 11:9 (By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise); Hebrews 11:13 (these all died in faith... confessed that they were strangers and pilgrims on the earth) — THREAD 4 (load-bearing: the patriarch buys the down-payment of the inheritance yet dwells as a pilgrim)
+--        Extras: Jasher 33:2 (he bought a parcel of the field which was there, from the children of Hamor the people of the land, for five shekels) — THREAD 4
+--        Tanakh: ★ Joshua 24:32 (the bones of Joseph... buried they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor... and it became the inheritance of the children of Joseph) — THREAD 4 (load-bearing: the very parcel of 33:19 becomes Joseph's burial inheritance, the first land held kept forever)
+--
+-- Threads (slug — target libraries):
+--   1. genesis-33-esau-ran-and-fell-on-his-neck-the-reconciled-brothers — NT (Luke) + Extras (Jubilees, Jasher) [extras] (★ the estranged brother met with running grace; prodigal-father echo)
+--   2. genesis-33-i-have-seen-thy-face-as-the-face-of-elohim — Tanakh (Genesis 32:30 Peniel) + Extras (Jasher) [extras] (★ the reconciled face echoes the Peniel face-of-Elohim)
+--   3. genesis-33-esau-to-seir-jacob-to-succoth-the-lines-diverge — Extras (Jubilees, Jasher) [extras] (the covenant-bearer does not throw in with Edom; the lines part)
+--   4. genesis-33-el-elohe-israel-the-altar-and-the-purchased-inheritance — NT (Hebrews) + Tanakh (Joshua) + Extras (Jasher) [extras] (★ first land bought, altar named with the new name, the pilgrim's down-payment of inheritance)
+--
+-- Framing notes:
+--   ★ THE RECONCILED BROTHERS (THREAD 1): *And Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept* (33:4). The feared enemy — the brother who swore to kill him (Genesis 27:41), advancing with *four hundred men* (33:1) — is met not with the sword but with running grace. The framework reads the Luke 15:20 echo as a GENUINE textual echo, not forced: *when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him* (Luke 15:20) — the same verbatim shape, *ran... fell on his neck, and kissed him*. The estranged one received with running compassion. NOTE the lines stay distinct: this is a moment of peace between the seed-war brothers, not a merging of the houses — Esau remains Esau (to Seir, to Edom), and the covenant runs on through Jacob/Yashar'el. The reconciliation is grace, not election transferred.
+--   ★ THE FACE OF ELOHIM (THREAD 2): *for therefore I have seen thy face, as though I had seen the face of Elohim (God), and thou wast pleased with me* (33:10). This is read against the night just past: *Jacob called the name of the place Peniel: for I have seen Elohim (God) face to face, and my life is preserved* (Genesis 32:30). The morning after wrestling the Formed One at Peniel — the One who bears the Name, who blessed him and renamed him Yashar'el — Jacob sees the reconciled face of his brother and names it the same: the face of Elohim, and life preserved. Grace upon grace: the wrestling-night face that did not destroy him, and the brother's face that did not destroy him. The Formed-and-Formless lens (the One met at Peniel is the Formed Son who appears and speaks) frames the prior night; here the brother's pleased face is read as an echo of that mercy.
+--   THE LINES DIVERGE (THREAD 3): *So Esau returned that day on his way unto Seir. And Jacob journeyed to Succoth* (33:16-17). The peace is real but the paths part — the covenant-bearer does not throw in with Edom. Esau goes up to Seir (the mountain of Edom, his inheritance, Genesis 36:8); Jacob builds booths at Succoth and presses on toward the land of promise. The restored witnesses keep the parting: *he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents* (Jubilees 29:11); *Jacob there built himself a house... and he made booths for his cattle, therefore he called the name of that place Succoth* (Jasher 33:3).
+--   ★ EL-ELOHE-ISRAEL (THREAD 4): *And he erected there an altar, and called it El-elohe-Yashar'el (Israel)* (33:20) — El, the Elohim of Israel, the altar named with the NEW name just given at Peniel (32:28). And the land: *he bought a parcel of a field... for an hundred pieces of money* (33:19) — the first land BOUGHT in the promised land (as Abraham bought Machpelah, Genesis 23), the down-payment of the inheritance, held by purchase though the patriarch dwells as a stranger. Hebrews names the posture: *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise* (Hebrews 11:9); *these all died in faith... confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). And the parcel is not lost: *the bones of Joseph... buried they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor... and it became the inheritance of the children of Joseph* (Joshua 24:32) — the first land bought becomes the burial-inheritance of Joseph, the House of Israel/Ephraim, kept forever.
+--   EXTRAS: Jubilees 29 carries the reconciliation in one merged verse (Jub 29:11 is a run-on verse, the parse cramming several events together, ending *on that day Esau, his brother, came to him, and he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents* — the clean reconciliation+parting clause is at the tail and is quoted whole). Jubilees DOUBLE-WRITTEN 'jubilees','jubilees'. ⚠ JASHER NOTE: Jasher 33 in this parse opens with the arrival at Shalem/Shechem and the parcel (Jasher 33:1-3 = Genesis 33:18-20), then runs into the DINAH account (Genesis 34's concern); the ESAU MEETING is in Jasher 32:52-73 (the running embrace at 32:56, the god-like face at 32:64). So THREADS 1-2 draw the Esau-meeting from Jasher 32, and THREAD 4 draws the parcel from Jasher 33:2. Jasher DOUBLE-WRITTEN 'jasher','jasher'. Both extras verse numbers verified to resolve in dump_canon.
+--   VERSES WITH NO ADD: v.5-9 (the dialogue of the meeting — Who are those with thee?, the drove, I have enough my brother) and v.12-15 dialogue: narrative exchange of the reconciliation, carried by THREADS 1 and 3; no distinct framework-bearing target warranted beyond those threads.
+
+CREATE TEMP VIEW _s301_ge33_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Esau ran, and fell on his neck — the reconciled brothers (the estranged met with running grace)
+    ('canon','genesis',33,4,'canon','luke',15,20,'free',
+      E'*And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him* (Luke 15:20). The reconciliation of the brothers — *And Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept* (Genesis 33:4) — carries the very shape the Master would put in the prodigal''s mouth: *ran, and fell on his neck, and kissed him*. The feared one, advancing with four hundred men, runs not to strike but to embrace; the estranged is received with running grace, the father''s very posture toward the lost son who came home.'),
+    ('canon','genesis',33,4,'jubilees','jubilees',29,11,'extras',
+      E'*And Jacob sent away Laban, and he departed into Mesopotamia, the land of the East, and Jacob returned to the land of Gilead... And on that day Esau, his brother, came to him, and he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents* (Jubilees 29:11). The restored witness names the meeting outright — *Esau, his brother, came to him, and he was reconciled to him* — the dread of the four hundred men of Genesis 33:1 turned to the embrace of *Esau ran to meet him, and embraced him, and fell on his neck* (Genesis 33:4).'),
+    ('canon','genesis',33,4,'jasher','jasher',32,56,'extras',
+      E'*And when Esau saw Jacob running toward him, he also ran toward him and he embraced him, and he fell upon his neck, and they kissed and they wept* (Jasher 32:56). The extended witness keeps the embrace verse-for-verse — *he also ran toward him and he embraced him, and he fell upon his neck, and they kissed and they wept* — matching *Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept* (Genesis 33:4); and it tells why the sword stayed: *Esau''s anger against Jacob was turned into kindness* (Jasher 32:55), Elohim turning the heart of the feared brother.'),
+
+    -- THREAD 2: I have seen thy face, as the face of Elohim (the reconciled face echoes the Peniel theophany)
+    ('canon','genesis',33,10,'canon','genesis',32,30,'free',
+      E'*And Jacob called the name of the place Peniel: for I have seen Elohim (God) face to face, and my life is preserved* (Genesis 32:30). The night before, Jacob wrestled the Formed One at Peniel and named the place for the face that did not destroy him; the morning after, he looks on the reconciled face of his brother and names it the same — *I have seen thy face, as though I had seen the face of Elohim (God), and thou wast pleased with me* (Genesis 33:10). Grace upon grace: the wrestling face that preserved his life, and the brother''s pleased face that spared it. The mercy of the One met at Peniel runs on into the morning.'),
+    ('canon','genesis',33,10,'jasher','jasher',32,64,'extras',
+      E'*And Esau refused to take the present, and Jacob said to him, I beseech you my Lord, if now I have found favor in your sight, then receive my present at my hand, for I have therefore seen your face, as though I had seen a god-like face, because you were pleased with me* (Jasher 32:64). The extended witness keeps the saying whole — *I have therefore seen your face, as though I had seen a god-like face, because you were pleased with me* — the same word as *I have seen thy face, as though I had seen the face of Elohim (God), and thou wast pleased with me* (Genesis 33:10), the reconciled face read as an echo of the divine face met at Peniel.'),
+
+    -- THREAD 3: Esau to Seir, Jacob to Succoth — the lines diverge
+    ('canon','genesis',33,16,'jubilees','jubilees',29,11,'extras',
+      E'*And on that day Esau, his brother, came to him, and he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents* (Jubilees 29:11). The restored witness keeps the parting — *departed from him to the land of Seir, but Jacob dwelt in tents* — matching *So Esau returned that day on his way unto Seir* (Genesis 33:16): the peace is real, but the paths divide; Esau goes up to Edom, and the covenant-bearer pitches his tents toward the land of promise.'),
+    ('canon','genesis',33,17,'jasher','jasher',33,3,'extras',
+      E'*And Jacob there built himself a house, and he pitched his tent there, and he made booths for his cattle, therefore he called the name of that place Succoth* (Jasher 33:3). The extended witness carries the naming whole — *he made booths for his cattle, therefore he called the name of that place Succoth* — matching *And Jacob journeyed to Succoth, and built him an house, and made booths for his cattle: therefore the name of the place is called Succoth* (Genesis 33:17): where Esau turns back to Seir, Jacob builds and presses on, the line of the promise not thrown in with Edom.'),
+
+    -- THREAD 4: El-elohe-Israel — the altar and the purchased inheritance (the pilgrim''s down-payment)
+    ('canon','genesis',33,18,'canon','hebrews',11,9,'free',
+      E'*By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise* (Hebrews 11:9). When *Jacob came to Shalem, a city of Shechem, which is in the land of Canaan... and pitched his tent before the city* (Genesis 33:18), he enters the land of promise yet dwells in it as a sojourner — *dwelling in tabernacles*, an heir who holds the promise by faith and not yet by possession. The patriarch is in the land but tents in it, a stranger in his own inheritance.'),
+    ('canon','genesis',33,19,'canon','joshua',24,32,'free',
+      E'*And the bones of Joseph, which the children of Yashar''el (Israel) brought up out of Egypt, buried they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor the father of Shechem for an hundred pieces of silver: and it became the inheritance of the children of Joseph* (Joshua 24:32). The very field of *he bought a parcel of a field... at the hand of the children of Hamor, Shechem''s father, for an hundred pieces of money* (Genesis 33:19) is kept forever — it becomes Joseph''s burial-place and *the inheritance of the children of Joseph*. The first land bought in the land of promise holds the bones of the House of Joseph; the down-payment of the inheritance is never lost.'),
+    ('canon','genesis',33,19,'canon','hebrews',11,13,'free',
+      E'*These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). Jacob buying *a parcel of a field... for an hundred pieces of money* (Genesis 33:19) is faith''s down-payment: he holds a foothold of the land by purchase while *confessing* himself a stranger in it — *strangers and pilgrims on the earth*, embracing the promise seen afar off, buying the first ground though the full inheritance is not yet given.'),
+    ('canon','genesis',33,19,'jasher','jasher',33,2,'extras',
+      E'*And he bought a parcel of the field which was there, from the children of Hamor the people of the land, for five shekels* (Jasher 33:2). The extended witness keeps the purchase — *he bought a parcel of the field... from the children of Hamor the people of the land* — matching *he bought a parcel of a field... at the hand of the children of Hamor, Shechem''s father* (Genesis 33:19), the first ground bought and held in the land of promise.'),
+    ('canon','genesis',33,20,'canon','genesis',32,28,'free',
+      E'*And he said, Thy name shall be called no more Jacob, but Yashar''el (Israel): for as a prince hast thou power with Elohim (God) and with men, and hast prevailed* (Genesis 32:28). The altar built at Shechem is named with the very name just given at Peniel: *he erected there an altar, and called it El-elohe-Yashar''el (Israel)* (Genesis 33:20) — El, the Elohim of Israel. The new-named man worships under the new name; the first altar he builds in the land bears the name the Formed One gave him in the night of wrestling.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-33-esau-ran-and-fell-on-his-neck-the-reconciled-brothers',
+       E'Esau ran, and fell on his neck — the reconciled brothers',
+       E'Jacob lifts his eyes and sees the thing he most feared: *And Jacob lifted up his eyes, and looked, and, behold, Esau came, and with him four hundred men* (Genesis 33:1) — the brother who once swore *I will slay my brother Jacob* (Genesis 27:41), advancing with a small army. Jacob bows to the ground seven times. And then the moment turns: *And Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept* (Genesis 33:4). The feared enemy runs not to strike but to embrace. The framework hears in this a genuine echo of the great parable of grace: *But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him* (Luke 15:20) — the same verbatim shape, *ran, and fell on his neck, and kissed him*, the estranged received with running compassion. The restored witnesses keep the reconciliation whole: *Esau, his brother, came to him, and he was reconciled to him* (Jubilees 29:11), and *when Esau saw Jacob running toward him, he also ran toward him and he embraced him, and he fell upon his neck, and they kissed and they wept* (Jasher 32:56) — and Jasher tells why: *Esau''s anger against Jacob was turned into kindness* (Jasher 32:55), Elohim (God) turning the heart of the dreaded brother. Yet read the grace rightly: this is a moment of peace between the seed-war brothers, not a merging of the lines. Esau remains Esau — he goes up to Seir, to Edom — and the covenant runs on through Jacob, now Yashar''el (Israel). The mercy is real; the election is not transferred.',
+       sv.verse_id, ev.verse_id, 'extras', 20800
+  FROM _s301_ge33_lookup sv, _s301_ge33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=33 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-33-i-have-seen-thy-face-as-the-face-of-elohim',
+       E'I have seen thy face, as though I had seen the face of Elohim',
+       E'Jacob presses his gift on his brother and names the meeting with a strange and weighty word: *And Jacob said, Nay, I pray thee, if now I have found grace in thy sight, then receive my present at my hand: for therefore I have seen thy face, as though I had seen the face of Elohim (God), and thou wast pleased with me* (Genesis 33:10). To read it, look back one night. At the ford of Jabbok Jacob wrestled the Formed One until the breaking of day, was renamed Yashar''el (Israel), and named the place for the face that did not consume him: *And Jacob called the name of the place Peniel: for I have seen Elohim (God) face to face, and my life is preserved* (Genesis 32:30) — the One met there, who bears the Name and blesses, is the Formed Son who appears and speaks in the Tanakh. Now, the morning after, Jacob looks on the reconciled face of the brother who came to kill him and finds the same mercy written there: *as though I had seen the face of Elohim... and thou wast pleased with me*. Grace upon grace — the wrestling face that preserved his life, and the brother''s pleased face that spared it. The extended witness keeps the saying entire: *I have therefore seen your face, as though I had seen a god-like face, because you were pleased with me* (Jasher 32:64). The face that should have meant death meant life, twice over, in a single turning of the year.',
+       sv.verse_id, ev.verse_id, 'extras', 20803
+  FROM _s301_ge33_lookup sv, _s301_ge33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=33 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-33-esau-to-seir-jacob-to-succoth-the-lines-diverge',
+       E'Esau to Seir, Jacob to Succoth — the lines diverge',
+       E'The reconciliation does not fold the two brothers into one road. Esau presses Jacob to come with him, to dwell together; Jacob demurs — *My lord knoweth that the children are tender, and the flocks and herds with young are with me... I will lead on softly... until I come unto my lord unto Seir* (Genesis 33:13-14) — and the paths part: *So Esau returned that day on his way unto Seir. And Jacob journeyed to Succoth, and built him an house, and made booths for his cattle: therefore the name of the place is called Succoth* (Genesis 33:16-17). Esau goes up to Seir, the mountain of Edom, his own inheritance; Jacob builds booths and turns toward the land of promise. The covenant-bearer does not throw in with Edom — the peace is genuine, but the line of the promise keeps its own way. The restored witnesses hold the parting: *he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents* (Jubilees 29:11), and *Jacob there built himself a house, and he pitched his tent there, and he made booths for his cattle, therefore he called the name of that place Succoth* (Jasher 33:3). Two brothers, two roads — the elder to Edom, the younger, now Yashar''el (Israel), toward the altar he is about to build in the land.',
+       sv.verse_id, ev.verse_id, 'extras', 20806
+  FROM _s301_ge33_lookup sv, _s301_ge33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=33 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-33-el-elohe-israel-the-altar-and-the-purchased-inheritance',
+       E'El-elohe-Israel — the altar and the purchased inheritance',
+       E'Jacob comes home to the land in peace: *And Jacob came to Shalem, a city of Shechem, which is in the land of Canaan, when he came from Padan-aram; and pitched his tent before the city* (Genesis 33:18). And he does two things that mark the man of the covenant. First he buys ground: *And he bought a parcel of a field, where he had spread his tent, at the hand of the children of Hamor, Shechem''s father, for an hundred pieces of money* (Genesis 33:19) — the first land BOUGHT in the land of promise (as Abraham bought the cave of Machpelah, Genesis 23), the down-payment of the inheritance, held by purchase though the patriarch tents in it as a stranger. The letter to the Hebrews names the posture exactly: *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise* (Hebrews 11:9); *these all died in faith, not having received the promises, but having seen them afar off... and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). And the parcel is never lost: *the bones of Joseph... buried they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor the father of Shechem... and it became the inheritance of the children of Joseph* (Joshua 24:32) — the first ground bought becomes the burial-inheritance of the House of Joseph, kept forever. Then he builds: *And he erected there an altar, and called it El-elohe-Yashar''el (Israel)* (Genesis 33:20) — El, the Elohim of Israel, the altar named with the very name the Formed One had just given him at Peniel: *Thy name shall be called no more Jacob, but Yashar''el (Israel)... and hast prevailed* (Genesis 32:28). The new-named man worships under the new name; the first altar in the land bears the name of the covenant, and the restored witness keeps the purchase whole — *he bought a parcel of the field which was there, from the children of Hamor the people of the land* (Jasher 33:2).',
+       sv.verse_id, ev.verse_id, 'extras', 20809
+  FROM _s301_ge33_lookup sv, _s301_ge33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=33 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him* (Luke 15:20) — the very shape of *Esau ran to meet him... and fell on his neck, and kissed him* (33:4): the estranged received with running grace.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=4
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-esau-ran-and-fell-on-his-neck-the-reconciled-brothers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Esau, his brother, came to him, and he was reconciled to him* (Jubilees 29:11) — the dread of the four hundred men (33:1) turned to the embrace of 33:4 in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=4
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=29 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-esau-ran-and-fell-on-his-neck-the-reconciled-brothers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he also ran toward him and he embraced him, and he fell upon his neck, and they kissed and they wept* (Jasher 32:56) — 33:4 verse-for-verse; *Esau''s anger... was turned into kindness* (Jasher 32:55), Elohim turning the feared brother''s heart.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=4
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=32 AND tv.verse_number=56
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-esau-ran-and-fell-on-his-neck-the-reconciled-brothers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Jacob called the name of the place Peniel: for I have seen Elohim (God) face to face, and my life is preserved* (Genesis 32:30) — the wrestling-night face echoed in *I have seen thy face, as the face of Elohim* (33:10): grace upon grace, the night before and the morning after.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=10
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-i-have-seen-thy-face-as-the-face-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I have therefore seen your face, as though I had seen a god-like face, because you were pleased with me* (Jasher 32:64) — the saying of 33:10 kept entire in the extended witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=10
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=32 AND tv.verse_number=64
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-i-have-seen-thy-face-as-the-face-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he was reconciled to him, and departed from him to the land of Seir, but Jacob dwelt in tents* (Jubilees 29:11) — the parting of 33:16: Esau up to Edom, the covenant-bearer toward the land of promise.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=16
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=29 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-esau-to-seir-jacob-to-succoth-the-lines-diverge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he made booths for his cattle, therefore he called the name of that place Succoth* (Jasher 33:3) — the naming of 33:17: where Esau turns back, Jacob builds and presses on.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=17
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=33 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-esau-to-seir-jacob-to-succoth-the-lines-diverge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise* (Hebrews 11:9) — the patriarch tenting before Shechem (33:18) as a sojourner in his own inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=18
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-el-elohe-israel-the-altar-and-the-purchased-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the bones of Joseph... buried they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor... and it became the inheritance of the children of Joseph* (Joshua 24:32) — the very parcel of 33:19 becomes Joseph''s burial-inheritance, the first land held forever.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=19
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-el-elohe-israel-the-altar-and-the-purchased-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*these all died in faith, not having received the promises... and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13) — buying the parcel (33:19) is faith''s down-payment held by a pilgrim, the promise embraced afar off.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=19
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-el-elohe-israel-the-altar-and-the-purchased-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*he bought a parcel of the field which was there, from the children of Hamor the people of the land* (Jasher 33:2) — the purchase of 33:19, the first ground bought in the land of promise, in the extended witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=19
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=33 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-el-elohe-israel-the-altar-and-the-purchased-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Thy name shall be called no more Jacob, but Yashar''el (Israel)... and hast prevailed* (Genesis 32:28) — the altar of 33:20, El-elohe-Yashar''el, is named with the very name given at Peniel; the new-named man worships under the new name.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=33 AND sv.verse_number=20
+  JOIN _s301_ge33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-33-el-elohe-israel-the-altar-and-the-purchased-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session301 — Genesis cross-references complete.'
