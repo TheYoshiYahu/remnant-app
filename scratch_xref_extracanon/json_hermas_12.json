@@ -1,0 +1,140 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "hermas",
+  "chapter": 12,
+  "session": "session253",
+  "tag": "herm12",
+  "base_band": 71775,
+  "threads": [
+    {
+      "slug": "hermas-12-fear-of-yahuah",
+      "title": "Fear Yahuah, and keep His commandments",
+      "summary_md": "Mandate 7 opens with the ancient charge: *'Fear Yahuah (Lord),' saith he, 'and keep His commandments. So keeping the commandments of Elohim (God) thou shalt be powerful in every deed... Therefore the fear of Yahuah (Lord) is powerful and great and glorious.'* It ain't new — the Shepherd is reciting the Tanakh. Solomon set the same yoke at the end of all his searching: *Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man* (Ecclesiastes 12:13). It is the gate of wisdom itself: *The fear of Yahuah (LORD) is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever* (Psalm 111:10), and *The fear of Yahuah (LORD) is the beginning of knowledge* (Proverbs 1:7). And Moses gathered the whole life of the covenant into one demand: *And now, Yashar'el (Israel), what doth Yahuah Elohayka (the LORD thy God) require of thee, but to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways, and to love him* (Deuteronomy 10:12). The fear of Yahuah and the keeping of His commandments are one thread, never law-as-curse.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "ecclesiastes",
+          "tgt_ch": 12,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Ecclesiastes 12:13 — *Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man.* Solomon's conclusion is the Shepherd's whole mandate — fear Yahuah and keep His commandments, the whole duty of man (hermas 12:1)."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 111,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Psalm 111:10 — *The fear of Yahuah (LORD) is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever.* The Mandate's pairing of fear with commandment-keeping is the very wisdom of the Psalm, where to fear and to do are one (hermas 12:1)."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 10,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Deuteronomy 10:12 — *And now, Yashar'el (Israel), what doth Yahuah Elohayka (the LORD thy God) require of thee, but to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways, and to love him, and to serve Yahuah Elohayka (the LORD thy God) with all thy heart and with all thy soul,* Moses' single requirement — fear and walk in His ways — is the soil from which the Shepherd's mandate grows (hermas 12:1)."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 1,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Proverbs 1:7 — *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction.* The Shepherd calls the fear of Yahuah 'powerful and great and glorious' — Proverbs names it the very beginning of knowledge (hermas 12:1)."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-12-keep-commandments-have-life",
+      "title": "They that keep His commandments have life unto Elohim",
+      "summary_md": "The angel presses the distinction: *'every creature feareth Yahuah (Lord), but not every one keepeth His commandments. Those then that fear Him and keep His commandments, they have life unto Elohim (God); but they that keep not His commandments have no life in them.'* This is the Messiah's own test of love. *If ye love me, keep my commandments* (John 14:15); *He that hath my commandments, and keepeth them, he it is that loveth me: and he that loveth me shall be loved of my Father* (John 14:21). The beloved disciple sealed it: *For this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous* (1 John 5:3). The Shepherd's 'life unto Elohim' is no novelty — it is the keeping of the everlasting commandments, which election makes a delight and never a curse.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 14,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "John 14:15 — *If ye love me, keep my commandments.* The Messiah binds love to commandment-keeping exactly as the Shepherd binds life unto Elohim to keeping His commandments (hermas 12:1)."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 14,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "John 14:21 — *He that hath my commandments, and keepeth them, he it is that loveth me: and he that loveth me shall be loved of my Father, and I will love him, and will manifest myself to him.* Those who keep the commandments 'have life unto Elohim' in the Mandate because the Father loves and manifests Himself to the one who keeps them (hermas 12:1)."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 5,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "1 John 5:3 — *For this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous.* John defines the love the Shepherd commends — keeping commandments that are not grievous but life-giving (hermas 12:1)."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-12-master-over-the-devil",
+      "title": "Fear Yahuah, and be master over the devil",
+      "summary_md": "The Mandate turns the disciple's fear away from the enemy: *'But fear not the devil; for, if thou fear Yahuah (Lord), thou shalt be master over the devil, for there is no power in him.'* Yet it teaches a holy fear of evil works: *'But fear thou the works of the devil, for they are evil... thou wilt not do them, but abstain from them.'* The Messiah sets the same order of fear: *And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell* (Matthew 10:28). To fear Yahuah is to be loosed from every lesser fear, and the fear of Yahuah is itself the hatred of evil: *The fear of Yahuah (LORD) is to hate evil: pride, and arrogancy, and the evil way, and the froward mouth, do I hate* (Proverbs 8:13). And Moses had already commanded where alone our fear and cleaving belong: *Thou shalt fear Yahuah Elohayka (the LORD thy God); him shalt thou serve, and to him shalt thou cleave* (Deuteronomy 10:20).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 12,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 10,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "Matthew 10:28 — *And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell.* The Messiah's ordering of fear — not the enemy but Yahuah alone — is exactly the Shepherd's 'fear not the devil... fear Yahuah' (hermas 12:1)."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 8,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Proverbs 8:13 — *The fear of Yahuah (LORD) is to hate evil: pride, and arrogancy, and the evil way, and the froward mouth, do I hate.* The Mandate's call to 'fear the works of the devil, for they are evil' is the fear of Yahuah that Proverbs defines as the hatred of evil (hermas 12:1)."
+        },
+        {
+          "src_ch": 12,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 10,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Deuteronomy 10:20 — *Thou shalt fear Yahuah Elohayka (the LORD thy God); him shalt thou serve, and to him shalt thou cleave, and swear by his name.* The Shepherd's 'fear Yahuah, and thou shalt be master over the devil' rests on Moses' charge to fear and cleave to Yahuah alone (hermas 12:1)."
+        }
+      ]
+    }
+  ]
+}

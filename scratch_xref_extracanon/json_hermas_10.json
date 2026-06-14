@@ -1,0 +1,180 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "hermas",
+  "chapter": 10,
+  "session": "session253",
+  "tag": "herm10",
+  "base_band": 71725,
+  "threads": [
+    {
+      "slug": "hermas-10-longsuffering-fruit-spirit",
+      "title": "Long-suffering, the sweet honey: the fruit of the indwelling Spirit",
+      "summary_md": "Mandate 5 sets long-suffering against angry temper and makes the heart a vessel for the Ruach HaKodesh: *Be thou long-suffering and understanding, he saith, and thou shalt have the mastery over all evil deeds, and shalt work all righteousness. For if thou art long-suffering, the Ruach HaKodesh (Holy Spirit) that abideth in thee shall be pure, not being darkened by another evil spirit... For if you take a little wormwood, and pour it into a jar of honey, is not the whole of the honey spoiled... long-suffering is very sweet, beyond the sweetness of honey, and is useful to Yahuah (Lord), and He dwelleth in it* (Hermas 10:1). It ain't new — this is the apostle's own list: *But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith* (Galatians 5:22); *With all lowliness and meekness, with longsuffering, forbearing one another in love* (Ephesians 4:2); *Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up* (1 Corinthians 13:4). And the proverb already knew it: *He that is slow to wrath is of great understanding: but he that is hasty of spirit exalteth folly* (Proverbs 14:29). The single drop of wormwood that ruins the honey is the angry temper that grieves the gentle Spirit dwelling within.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 5,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Galatians 5:22 — *But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,* the apostle's own list naming the very long-suffering Hermas 10:1 calls the sweet honey of the Spirit who abides pure within."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 4,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Ephesians 4:2 — *With all lowliness and meekness, with longsuffering, forbearing one another in love;* the walk worthy of the calling that matches Hermas 10:1's mastery over evil through long-suffering."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 13,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "1 Corinthians 13:4 — *Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up,* the love that suffers long, sweeter than honey, in which Yahuah dwells per Hermas 10:1."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 14,
+          "tgt_v": 29,
+          "tier": "free",
+          "note": "Proverbs 14:29 — *He that is slow to wrath is of great understanding: but he that is hasty of spirit exalteth folly.* The Tanakh already weds long-suffering to understanding, exactly as Hermas 10:1 opens: be long-suffering and understanding."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-10-angry-temper-double-minded",
+      "title": "Angry temper subverts the double-minded; faith stands firm",
+      "summary_md": "The Shepherd unfolds how the angry temper works ruin: *Hear now, saith he, the working of angry temper, how evil it is, and how it subverteth the servants of Elohim (God)... But it doth not lead astray them that are full in the faith, nor can it work upon them, because the power of Yahuah (Lord) is with them; but them that are empty and double-minded it leadeth astray... then from foolishness is engendered bitterness, and from bitterness wrath, and from wrath anger, and from anger spite* (Hermas 10:2). The same double-minded instability is named by James: *A double minded man is unstable in all his ways* (James 1:8); and the same chain from wrath to ruin: *Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath: For the wrath of man worketh not the righteousness of Elohim (God)* (James 1:19-20). The proverb seals it: *He that is soon angry dealeth foolishly: and a man of wicked devices is hated* (Proverbs 14:17); and the preacher: *Be not hasty in thy spirit to be angry: for anger resteth in the bosom of fools* (Ecclesiastes 7:9). The faithful are kept; the wavering are dragged about — election holds the heart that the temper cannot pry loose.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 1,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "James 1:8 — *A double minded man is unstable in all his ways.* James names the very dipsuchos (double-minded) man whom Hermas 10:2 says the angry temper leads astray, while it cannot move the one full in faith."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 1,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "James 1:19 — *Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:* the apostolic counsel against the wrath that Hermas 10:2 traces from foolishness into bitterness, wrath, anger, and spite."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 1,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "James 1:20 — *For the wrath of man worketh not the righteousness of Elohim (God).* This is precisely why the angry temper leads the servant astray from righteousness in Hermas 10:2."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 14,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Proverbs 14:17 — *He that is soon angry dealeth foolishly: and a man of wicked devices is hated.* The Tanakh already calls anger foolish, the same diagnosis Hermas 10:2 gives: angry temper is in the first place foolish, fickle, and senseless."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "ecclesiastes",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Ecclesiastes 7:9 — *Be not hasty in thy spirit to be angry: for anger resteth in the bosom of fools.* The preacher lodges anger in the fool's bosom, echoing Hermas 10:2's chain of evil elements composing the great and incurable sin."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-10-grieve-not-the-spirit-keep-commandment",
+      "title": "Grieve not the Spirit: the pure vessel, the kept commandment",
+      "summary_md": "The delicate Spirit will not share the vessel with wrath: *if any angry temper approach, forthwith the Ruach HaKodesh (Holy Spirit), being delicate, is straitened, not having the place clear, and seeketh to retire from the place; for he is being choked by the evil spirit* (Hermas 10:1); and the charge to keep this commandment so the rest may be kept: *See then that thou never neglect this commandment; for if thou master this commandment, thou shalt be able likewise to keep the remaining commandments* (Hermas 10:2). Paul says the same of the sealed Spirit and the bitterness that drives Him out: *And grieve not the holy Spirit of Elohim (God), whereby ye are sealed unto the day of redemption. Let all bitterness, and wrath, and anger, and clamour, and evil speaking, be put away from you, with all malice* (Ephesians 4:30-31). The believer is that vessel: *Know ye not that ye are the temple of Elohim (God), and that the Spirit of Elohim (God) dwelleth in you?* (1 Corinthians 3:16). And the Master Himself binds love, the kept commandment, and the abiding Comforter together: *If ye love me, keep my commandments. And I will pray the Father, and he shall give you another Comforter, that he may abide with you for ever* (John 14:15-16). It ain't new — the commandments stand, and the Spirit dwells in the heart that keeps them.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 10,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 4,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Ephesians 4:30 — *And grieve not the holy Spirit of Elohim (God), whereby ye are sealed unto the day of redemption.* The grieved, sealed Spirit is the same delicate Ruach who, in Hermas 10:1, is straitened and seeks to retire when the angry temper approaches."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 4,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "Ephesians 4:31 — *Let all bitterness, and wrath, and anger, and clamour, and evil speaking, be put away from you, with all malice:* the very catalogue of bitterness and wrath Hermas 10:1 says chokes the Spirit out of the vessel."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 3,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "1 Corinthians 3:16 — *Know ye not that ye are the temple of Elohim (God), and that the Spirit of Elohim (God) dwelleth in you?* The believer is the vessel of Hermas 10:1 in which the Ruach HaKodesh abides and must be kept pure."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 14,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "John 14:15 — *If ye love me, keep my commandments.* Hermas 10:2's charge never to neglect this commandment, that one may keep the remaining commandments, is the Master's own word — the commandments stand."
+        },
+        {
+          "src_ch": 10,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 14,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "John 14:16 — *And I will pray the Father, and he shall give you another Comforter, that he may abide with you for ever;* the abiding Comforter is the very Spirit Hermas 10:1-2 says dwells in the kept vessel and departs from the wrathful one."
+        }
+      ]
+    }
+  ]
+}

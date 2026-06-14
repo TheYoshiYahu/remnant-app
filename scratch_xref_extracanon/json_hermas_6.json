@@ -1,0 +1,160 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "hermas",
+  "chapter": 6,
+  "session": "session253",
+  "tag": "herm6",
+  "base_band": 71625,
+  "threads": [
+    {
+      "slug": "hermas-6-elohim-is-one",
+      "title": "Believe that Elohim is One",
+      "summary_md": "The first Mandate opens with the Shema itself: *‘First of all, believe that Elohim (God) is One, even He Who created all things and set them in order... Who comprehendeth all things, being alone incomprehensible.’* (Hermas 6:1). It ain't new — the Shepherd is reciting Moses: *Hear, O Yashar'el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD):* (Deuteronomy 6:4). When the scribe asked the Messiah the first commandment of all, He gave back the same word: *And Yahusha (Jesus) answered him, The first of all the commandments is, Hear, O Yashar'el (Israel); Yahuah Eloheinu (The Lord our God) is one Yahuah (Lord):* (Mark 12:29). Isaiah seals the confession of the One beside whom there is no other: *I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me: I girded thee, though thou hast not known me:* (Isaiah 45:5). And John makes belief the door of the new birth — election before confession: *Whosoever believeth that Yahusha (Jesus) is the Messiah (Christ) is born of Elohim (God): and every one that loveth him that begat loveth him also that is begotten of him.* (1 John 5:1).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 6,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Deuteronomy 6:4 — *Hear, O Yashar'el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD):* The Shepherd's first command to believe Elohim is One is the Shema verbatim behind Hermas 6:1."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "mark",
+          "tgt_ch": 12,
+          "tgt_v": 29,
+          "tier": "free",
+          "note": "Mark 12:29 — *And Yahusha (Jesus) answered him, The first of all the commandments is, Hear, O Yashar'el (Israel); Yahuah Eloheinu (The Lord our God) is one Yahuah (Lord):* The Messiah names the same confession 'first of all,' exactly as Hermas 6:1 sets it 'first of all.'"
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 45,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Isaiah 45:5 — *I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me: I girded thee, though thou hast not known me:* Isaiah's 'none else' undergirds the Mandate's belief that Elohim is One in Hermas 6:1."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "1 John 5:1 — *Whosoever believeth that Yahusha (Jesus) is the Messiah (Christ) is born of Elohim (God): and every one that loveth him that begat loveth him also that is begotten of him.* The new birth springs from this same believing that the Shepherd commands first in Hermas 6:1."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-6-created-from-nothing",
+      "title": "Who created all things from non-existence",
+      "summary_md": "The Mandate confesses the Maker who *created all things and set them in order, and brought all things from non-existence into being* (Hermas 6:1) — the doctrine of creation out of nothing. The mother of the Maccabean martyrs preached the very same to her son before his death: *I beseech you, my son, look upon the heaven and the earth, and all that is in it, and consider that Yahuah (God) made them of things that were not; and so was mankind made likewise.* (2 Maccabees 7:28). Nehemiah's Levites bless the same sole Maker: *Thou, even thou, art Yahuah (LORD) alone; thou hast made heaven, the heaven of heavens, with all their host... and thou preservest them all; and the host of heaven worshippeth thee.* (Nehemiah 9:6). The Psalm names the means — His word and breath: *By the word of Yahuah (LORD) were the heavens made; and all the host of them by the breath of his mouth.* (Psalms 33:6). And Hebrews calls it the very content of faith: *Through faith we understand that the worlds were framed by the word of Elohim (God), so that things which are seen were not made of things which do appear.* (Hebrews 11:3).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-maccabees",
+          "tgt_ch": 7,
+          "tgt_v": 28,
+          "tier": "extras",
+          "note": "2 Maccabees 7:28 — *I beseech you, my son, look upon the heaven and the earth, and all that is in it, and consider that Yahuah (God) made them of things that were not; and so was mankind made likewise.* The martyr-mother's 'made them of things that were not' is the same creation 'from non-existence into being' in Hermas 6:1."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "nehemiah",
+          "tgt_ch": 9,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Nehemiah 9:6 — *Thou, even thou, art Yahuah (LORD) alone; thou hast made heaven, the heaven of heavens, with all their host, the earth, and all things that are therein, the seas, and all that is therein, and thou preservest them all; and the host of heaven worshippeth thee.* The Levites' sole Maker of 'all things' matches the Mandate's One who created and orders all things in Hermas 6:1."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 33,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalms 33:6 — *By the word of Yahuah (LORD) were the heavens made; and all the host of them by the breath of his mouth.* The Psalm gives the means of the Mandate's bringing-into-being, the word and breath behind Hermas 6:1."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 11,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Hebrews 11:3 — *Through faith we understand that the worlds were framed by the word of Elohim (God), so that things which are seen were not made of things which do appear.* Hebrews makes creation from the unseen the content of the very faith the Shepherd commands in Hermas 6:1."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-6-fear-and-keep-the-commandment",
+      "title": "Fear Him and keep the commandment, and live",
+      "summary_md": "The Mandate turns belief into walk: *Believe Him therefore, and fear Him, and in this fear be continent. Keep these things... and shalt clothe thyself with every excellence of righteousness, and shalt live unto Elohim (God), if thou keep this commandment.* (Hermas 6:1). This is Moses' summary of the whole way: *And now, Yashar'el (Israel), what doth Yahuah Elohayka (the LORD thy God) require of thee, but to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways, and to love him, and to serve Yahuah Elohayka (the LORD thy God) with all thy heart and with all thy soul,* (Deuteronomy 10:12). The fear that the Shepherd makes the start of continence the Psalm makes the start of wisdom, joined to doing the commandments: *The fear of Yahuah (LORD) is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever.* (Psalms 111:10). The Messiah bound love and keeping together: *If ye love me, keep my commandments.* (John 14:15) — and John testifies the commandments are no burden: *For this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous.* (1 John 5:3). The commandment stands; to keep it is to live unto Elohim.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 10,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Deuteronomy 10:12 — *And now, Yashar'el (Israel), what doth Yahuah Elohayka (the LORD thy God) require of thee, but to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways, and to love him, and to serve Yahuah Elohayka (the LORD thy God) with all thy heart and with all thy soul,* Moses' 'fear and walk and serve' is the same charge the Shepherd compresses into fear-and-keep-the-commandment in Hermas 6:1."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 111,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Psalms 111:10 — *The fear of Yahuah (LORD) is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever.* The Psalm joins the fear of Yahuah to doing the commandments, the exact pairing of fear-then-keep in Hermas 6:1."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 14,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "John 14:15 — *If ye love me, keep my commandments.* The Messiah ties love to commandment-keeping just as the Mandate makes life unto Elohim hang on 'if thou keep this commandment' in Hermas 6:1."
+        },
+        {
+          "src_ch": 6,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 5,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "1 John 5:3 — *For this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous.* John shows the commandment the Shepherd urges is not a burden but the love that lives unto Elohim in Hermas 6:1."
+        }
+      ]
+    }
+  ]
+}

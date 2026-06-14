@@ -1,0 +1,260 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "ignatius-romans",
+  "chapter": 1,
+  "session": "session253",
+  "tag": "igrom1",
+  "base_band": 70500,
+  "threads": [
+    {
+      "slug": "ignatius-romans-1-wheat-pure-bread",
+      "title": "The wheat of Elohim, ground into pure bread",
+      "summary_md": "Ignatius longs for the arena: *I am Elohim's (God's) wheat, and I am ground by the teeth of wild beasts that I may be found pure bread [of Messiah (Christ)]... that through these instruments I may be found a sacrifice to Elohim (God)* (Ignatius to the Romans 1:4). It ain't new — he is reaching for the Master's own grain-of-wheat parable: *Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit* (John 12:24), and Sha'ul's seed-of-resurrection answer, *But some man will say, How are the dead raised up? and with what body do they come?* (1 Corinthians 15:35). The martyr's body becomes the bread because it is first a living sacrifice — *that ye present your bodies a living sacrifice, holy, acceptable unto Elohim (God), which is your reasonable service* (Romans 12:1) — and a poured-out offering: *For I am now ready to be offered, and the time of my departure is at hand* (2 Timothy 4:6).",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 12,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "John 12:24 — *Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit.* Ignatius's wheat ground to pure bread is the Master's own grain that must die to bear fruit."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 15,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "1 Corinthians 15:35 — *But some man will say, How are the dead raised up? and with what body do they come?* The ground grain looks to the resurrection body, so the teeth of the beasts are not the end but the sowing."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 12,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Romans 12:1 — *I beseech you therefore, brethren, by the mercies of Elohim (God), that ye present your bodies a living sacrifice, holy, acceptable unto Elohim (God), which is your reasonable service.* Ignatius asks to be found a sacrifice, the very living offering Sha'ul commands."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "2-timothy",
+          "tgt_ch": 4,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "2 Timothy 4:6 — *For I am now ready to be offered, and the time of my departure is at hand.* The poured-out libation of v2 and the sacrifice of v4 echo Sha'ul facing his own death as an offering."
+        }
+      ]
+    },
+    {
+      "slug": "ignatius-romans-1-to-die-is-gain",
+      "title": "To attain the Messiah, and to die is gain",
+      "summary_md": "Ignatius will not be robbed of his death: *It is good for me to die for Yahusha HaMashiach (Jesus Christ) rather than to reign over the farthest bounds of the earth. Him I seek, who died on our behalf; Him I desire, who rose again* (Ignatius to the Romans 1:6); *Only be it mine to attain unto Yahusha HaMashiach (Jesus Christ)* (1:5). This is Sha'ul to the letter: *For to me to live is Messiah (Christ), and to die is gain* (Philippians 1:21); *having a desire to depart, and to be with Messiah (Christ); which is far better* (Philippians 1:23); *I count all things but loss... that I may win Messiah (Christ)* (Philippians 3:8). The life he now lives is already a crucified one: *I am crucified with Messiah (Christ): nevertheless I live; yet not I, but Messiah (Christ) liveth in me* (Galatians 2:20). It ain't new.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "philippians",
+          "tgt_ch": 1,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Philippians 1:21 — *For to me to live is Messiah (Christ), and to die is gain.* Ignatius's preference for death over reigning over the earth is Sha'ul's gain-in-dying word for word in spirit."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "philippians",
+          "tgt_ch": 1,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Philippians 1:23 — *For I am in a strait betwixt two, having a desire to depart, and to be with Messiah (Christ); which is far better.* Him I seek, Him I desire — Ignatius's longing to depart and be with the Master mirrors Sha'ul's."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "philippians",
+          "tgt_ch": 3,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Philippians 3:8 — *Yea doubtless, and I count all things but loss for the excellency of the knowledge of HaMashiach Yahusha (Christ Jesus) my Lord: for whom I have suffered the loss of all things, and do count them but dung, that I may win Messiah (Christ).* To attain unto Messiah Ignatius counts the visible and invisible nothing, as Sha'ul counts all loss."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "galatians",
+          "tgt_ch": 2,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Galatians 2:20 — *I am crucified with Messiah (Christ): nevertheless I live; yet not I, but Messiah (Christ) liveth in me: and the life which I now live in the flesh I live by the faith of the Son of Elohim (God), who loved me, and gave himself for me.* Ignatius desires Him who died and rose for us, the same crucified-yet-living life Sha'ul confesses."
+        }
+      ]
+    },
+    {
+      "slug": "ignatius-romans-1-living-water-come-to-the-father",
+      "title": "Living water saying, Come to the Father",
+      "summary_md": "Ignatius's earthly longings are crucified, and another spring rises: *My lust hath been crucified, and there is no fire of material longing in me, but only water living and speaking in me, saying within me, Come to the Father* (Ignatius to the Romans 1:7). This is the well the Master promised the woman at Sychar — *the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14) — and the rivers He cried out at the feast: *If any man thirst, let him come unto me, and drink* (John 7:37); *out of his belly shall flow rivers of living water* (John 7:38). And the Bride's last invitation closes the canon with the same word Ignatius hears within: *And let him that is athirst come. And whosoever will, let him take the water of life freely* (Revelation 22:17). It ain't new.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 4,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "John 4:14 — *But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.* The living water speaking within Ignatius is the springing well the Master gives."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 7,
+          "tgt_v": 37,
+          "tier": "free",
+          "note": "John 7:37 — *In the last day, that great day of the feast, Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink.* Ignatius's inward water that says Come answers the Master's feast-day cry to come and drink."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 7,
+          "tgt_v": 38,
+          "tier": "free",
+          "note": "John 7:38 — *He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water.* The water living and speaking in Ignatius is the river the Master promised would flow from the believer."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Revelation 22:17 — *And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely.* The voice within Ignatius saying Come to the Father is the Spirit and the Bride's closing call."
+        }
+      ]
+    },
+    {
+      "slug": "ignatius-romans-1-flesh-seed-of-david",
+      "title": "The flesh of Messiah, of the seed of David",
+      "summary_md": "Against every spirit that would empty the incarnation, Ignatius confesses a real body and real blood: *I desire the bread of Elohim (God), which is the flesh of Messiah (Christ) who was of the seed of David; and for a draught I desire His blood, which is love incorruptible* (Ignatius to the Romans 1:7). This is the apostolic gospel, not a new one — *Concerning his Son Yahusha HaMashiach (Jesus Christ) our Lord, which was made of the seed of David according to the flesh* (Romans 1:3); *Remember that Yahusha HaMashiach (Jesus Christ) of the seed of David was raised from the dead according to my gospel* (2 Timothy 2:8). The flesh he hungers for is the living bread: *the bread that I will give is my flesh, which I will give for the life of the world* (John 6:51); *For my flesh is meat indeed, and my blood is drink indeed* (John 6:55). The Messiah truly born of David's seed, truly in the flesh — it ain't new.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 1,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Romans 1:3 — *Concerning his Son Yahusha HaMashiach (Jesus Christ) our Lord, which was made of the seed of David according to the flesh.* Ignatius's flesh of Messiah who was of the seed of David is Sha'ul's opening gospel verbatim in substance."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "2-timothy",
+          "tgt_ch": 2,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "2 Timothy 2:8 — *Remember that Yahusha HaMashiach (Jesus Christ) of the seed of David was raised from the dead according to my gospel.* The seed-of-David flesh Ignatius confesses is the same risen Messiah Sha'ul bids Timothy remember."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 6,
+          "tgt_v": 51,
+          "tier": "free",
+          "note": "John 6:51 — *I am the living bread which came down from heaven: if any man eat of this bread, he shall live for ever: and the bread that I will give is my flesh, which I will give for the life of the world.* The bread of Elohim that is the flesh of Messiah is the Master's own living bread."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 6,
+          "tgt_v": 55,
+          "tier": "free",
+          "note": "John 6:55 — *For my flesh is meat indeed, and my blood is drink indeed.* Ignatius desires the flesh for bread and the blood for a draught, the very meat and drink the Master named."
+        }
+      ]
+    },
+    {
+      "slug": "ignatius-romans-1-rise-free-suffer-reign",
+      "title": "If I suffer, I shall rise free in Him",
+      "summary_md": "Ignatius binds suffering to resurrection: *Yet if I shall suffer, then am I a freed-man of Yahusha HaMashiach (Jesus Christ), and I shall rise free in Him* (Ignatius to the Romans 1:4); *Suffer me to receive the pure light. When I am come thither, then shall I be a man* (1:6). This is the buried-and-raised pattern of immersion — *Therefore we are buried with him by baptism into death... even so we also should walk in newness of life* (Romans 6:4); *if we have been planted together in the likeness of his death, we shall be also in the likeness of his resurrection* (Romans 6:5) — and the faithful saying Ignatius lives out: *For if we be dead with him, we shall also live with him: If we suffer, we shall also reign with him* (2 Timothy 2:11-12). The slave becomes a freed-man, the dying becomes reigning — it ain't new.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 6,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Romans 6:5 — *For if we have been planted together in the likeness of his death, we shall be also in the likeness of his resurrection.* Ignatius's promise to rise free in Him is the planting-into-death-and-resurrection Sha'ul lays out."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 6,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Romans 6:4 — *Therefore we are buried with him by baptism into death: that like as Messiah (Christ) was raised up from the dead by the glory of the Father, even so we also should walk in newness of life.* The freed-man who shall rise in Him walks the buried-and-raised path Sha'ul describes."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "2-timothy",
+          "tgt_ch": 2,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "2 Timothy 2:11 — *It is a faithful saying: For if we be dead with him, we shall also live with him.* Ignatius the slave who will rise free leans on the faithful saying that dying with Him is living with Him."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "2-timothy",
+          "tgt_ch": 2,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "2 Timothy 2:12 — *If we suffer, we shall also reign with him: if we deny him, he also will deny us.* If I shall suffer, then am I a freed-man — Ignatius's suffering-unto-freedom is the suffering-unto-reigning Sha'ul names."
+        }
+      ]
+    }
+  ]
+}

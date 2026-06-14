@@ -1,0 +1,190 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "hermas",
+  "chapter": 2,
+  "session": "session253",
+  "tag": "herm2",
+  "base_band": 71525,
+  "threads": [
+    {
+      "slug": "hermas-2-second-repentance",
+      "title": "Repentance offered to the fallen — turn with the whole heart",
+      "summary_md": "The little book given to Hermas pleads with the fallen seed and yet swings wide the door of return: *Thy seed, Hermas, have sinned against Elohim (God), and have blasphemed Yahuah (Lord)... then all their sins which they sinned aforetime are forgiven to them; yea, and to all the saints that have sinned unto this day, if they repent with their whole heart, and remove double-mindedness from their heart.* It ain't new — this is the very heart of Yahuah declared to Yashar'el through Ezekiel, *As I live, saith Adonai Yahuah (the Lord GOD), I have no pleasure in the death of the wicked; but that the wicked turn from his way and live: turn ye, turn ye from your evil ways; for why will ye die, O house of Yashar'el (Israel)?* (Ezekiel 33:11), and *But if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die.* (Ezekiel 18:21). The Master who *is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.* (2 Peter 3:9) is the same who fills heaven with joy over the one who turns: *I say unto you, that likewise joy shall be in heaven over one sinner that repenteth, more than over ninety and nine just persons, which need no repentance.* (Luke 15:7). Repentance bound to keeping the statutes — Torah stands.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 33,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Ezekiel 33:11 — *Say unto them, As I live, saith Adonai Yahuah (the Lord GOD), I have no pleasure in the death of the wicked; but that the wicked turn from his way and live: turn ye, turn ye from your evil ways; for why will ye die, O house of Yashar'el (Israel)?* The forgiveness offered the fallen in Hermas 2:2 is Yahuah's own ancient plea — He desires the turning, not the death, of the sinner."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 18,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Ezekiel 18:21 — *But if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die.* Hermas 2:2 grants the fallen forgiveness if they repent with the whole heart — Ezekiel ties that turning to keeping the statutes, so the commandments stand."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 3,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "2 Peter 3:9 — *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.* The set day and offered mercy of Hermas 2:2 flow from the Master's longsuffering — He delays so that all might turn."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 15,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Luke 15:7 — *I say unto you, that likewise joy shall be in heaven over one sinner that repenteth, more than over ninety and nine just persons, which need no repentance.* The mercy held out to all the saints that have sinned in Hermas 2:2 is the joy of heaven over the one who returns."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-2-double-minded",
+      "title": "Remove double-mindedness — be not double-minded",
+      "summary_md": "The book commands the saints to *remove double-mindedness from their heart*, and again: *Ye therefore that work righteousness be stedfast, and be not double-minded, that ye may have admission with the holy angels.* This is the very burden of Yaaqob (James), who warns that *A double minded man is unstable in all his ways.* (James 1:8) and calls the wavering to repentance: *Draw nigh to Elohim (God), and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded.* (James 4:8). The turning Hermas urges is the whole-hearted return Yahuah sought of old: *Therefore also now, saith Yahuah (LORD), turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning* (Joel 2:12) — and Hermas himself fasted fifteen days before the writing was opened to him.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 1,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "James 1:8 — *A double minded man is unstable in all his ways.* Hermas 2:2 commands the saints to remove double-mindedness from the heart — James names the very instability the steadfast must shed."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 4,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "James 4:8 — *Draw nigh to Elohim (God), and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded.* The whole-hearted repentance of Hermas 2:2 is James's call to the double minded to cleanse and purify and so draw near."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "joel",
+          "tgt_ch": 2,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Joel 2:12 — *Therefore also now, saith Yahuah (LORD), turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning.* Hermas fasted before the writing was opened and urges repentance with the whole heart — Joel sets the pattern of turning to Yahuah with all the heart and with fasting."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-2-endure-not-deny",
+      "title": "Endure the tribulation, deny not — faithful unto death",
+      "summary_md": "The vision blesses the faithful who hold fast through the coming trial: *Blessed are ye, as many as endure patiently the great tribulation that cometh, and as many as shall not deny their life. For Yahuah (Lord) sware concerning His Son, that those who denied their Lord should be rejected from their life.* The same word stands in the Messiah's own mouth — *But whosoever shall deny me before men, him will I also deny before my Father which is in heaven.* (Matthew 10:33) — and in Shaul's faithful saying, *If we suffer, we shall also reign with him: if we deny him, he also will deny us* (2 Timothy 2:12). To the persecuted assembly the call is to faithfulness unto death: *Fear none of those things which thou shalt suffer... be thou faithful unto death, and I will give thee a crown of life.* (Revelation 2:10). The martyr-faithfulness of the fathers is the canon's own — it ain't new.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 10,
+          "tgt_v": 33,
+          "tier": "free",
+          "note": "Matthew 10:33 — *But whosoever shall deny me before men, him will I also deny before my Father which is in heaven.* Hermas 2:2 warns that those who deny their Lord are rejected from their life — the Messiah Himself spoke the same warning against denial."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "2-timothy",
+          "tgt_ch": 2,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "2 Timothy 2:12 — *If we suffer, we shall also reign with him: if we deny him, he also will deny us:* The endurance and the denial-warning of Hermas 2:2 are Shaul's faithful saying — suffering with Him reigns, denying Him is denied."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 2,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Revelation 2:10 — *Fear none of those things which thou shalt suffer: behold, the devil shall cast some of you into prison, that ye may be tried; and ye shall have tribulation ten days: be thou faithful unto death, and I will give thee a crown of life.* The blessing on those who endure the great tribulation in Hermas 2:2 is the Messiah's promise of the crown to the faithful unto death."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-2-church-created-before-all",
+      "title": "The Church the aged woman — created before all things, the elect",
+      "summary_md": "The youth unveils the aged woman: *'The Church,' saith he. I said unto him, 'Wherefore then is she aged?' 'Because,' saith he, 'she was created before all things; therefore is she aged; and for her sake the world was framed.'* The assembly of the called was no afterthought — its foreknown election stands *According as he hath chosen us in him before the foundation of the world, that we should be holy and without blame before him in love* (Ephesians 1:4). The pattern of a chosen one set up before the world was is Wisdom's own song, *Yahuah (LORD) possessed me in the beginning of his way, before his works of old. I was set up from everlasting, from the beginning, or ever the earth was* (Proverbs 8:22-23), the Formed Wisdom by whom *were all things created* (Colossians 1:16). And the elect themselves — the living stones — are *built upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone* (Ephesians 2:20), the holy temple wherein the called are fitted together. Election precedes confession; the gathering is the foreknown remnant, not a church that replaces Yashar'el.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 1,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Ephesians 1:4 — *According as he hath chosen us in him before the foundation of the world, that we should be holy and without blame before him in love:* The Church created before all things in Hermas 2:4 is the assembly chosen in Him before the world's foundation — election precedes confession."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 8,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Proverbs 8:23 — *I was set up from everlasting, from the beginning, or ever the earth was.* For her sake the world was framed (Hermas 2:4) echoes the Formed Wisdom set up from everlasting before the earth was."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 2,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Ephesians 2:20 — *And are built upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone;* The aged-woman Church of Hermas 2:4 is the building of the elect, founded on prophets and apostles with the Messiah as the corner stone."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 2,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "1 Peter 2:5 — *Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to Elohim (God) by Yahusha HaMashiach (Jesus Christ).* The Church for whose sake the world was framed (Hermas 2:4) is built of living stones — the elect fitted into a spiritual house."
+        }
+      ]
+    }
+  ]
+}

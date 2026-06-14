@@ -1,88 +1,159 @@
+# -*- coding: utf-8 -*-
 import json
 
 data = {
-  "edition": "apocrypha",
-  "book": "tobit",
-  "chapter": 6,
-  "session": "session253",
-  "tag": "tob6",
-  "base_band": 59725,
-  "threads": [
-    {
-      "slug": "tobit-6-the-fish-by-the-river",
-      "title": "The Fish Taken from the River",
-      "summary_md": "By the Tigris a fish leaps up to devour the young man, and the angel turns the threat into provision: *And when the young man went down to wash himself, a fish leaped out of the river, and would have devoured him.* (Tobit 6:2) *Then the angel said to him, Take the fish. And the young man laid hold of the fish, and drew it to land.* (Tobit 6:3) What rose up to destroy is laid hold of and made into food and medicine — the same turning Joseph names, *ye thought evil against me; but Elohim (God) meant it unto good* (Genesis 50:20). The waters that menace become the waters that heal in the prophet's vision: *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* (Ezekiel 47:12) It ain't new — the river that healeth runs from Eden to the throne.",
-      "anchor_start_v": 2,
-      "anchor_end_v": 3,
-      "tier": "extras",
-      "members": [
-        {"src_ch": 6, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 20, "tier": "free",
-         "note": "Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The fish that leaped up to devour is turned, like Joseph's harm, into the means of saving life, in Tobit 6:2."},
-        {"src_ch": 6, "src_v": 3, "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 47, "tgt_v": 12, "tier": "free",
-         "note": "Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* The fish drawn from the river to feed and to heal answers the river whose very waters and fruit are medicine, in Tobit 6:3."}
-      ]
-    },
-    {
-      "slug": "tobit-6-gall-for-healing-eyes",
-      "title": "The Gall That Opens Blind Eyes",
-      "summary_md": "The angel sets aside the inward parts of the fish for healing: *To whom the angel said, Open the fish, and take the heart and the liver and the gall, and put them up safely.* (Tobit 6:4) *As for the gall, it is good to anoint a man that has whiteness in his eyes, and he shall be healed.* (Tobit 6:8) This stored remedy reaches forward to old Tobit, whose blindness it will cure, and it foreshadows the anointing that opens eyes: *He answered and said, A man that is called Yahusha made clay, and anointed mine eyes, and said unto me, Go to the pool of Siloam, and wash: and I went and washed, and I received sight.* (John 9:11) The healing of the body sealed up in the fish is the same mercy the Master pours out, and the same He commits to His own: *They shall take up serpents; and if they drink any deadly thing, it shall not hurt them; they shall lay hands on the sick, and they shall recover.* (Mark 16:18) It ain't new — Yahuah is the One who healeth.",
-      "anchor_start_v": 4,
-      "anchor_end_v": 8,
-      "tier": "extras",
-      "members": [
-        {"src_ch": 6, "src_v": 8, "tgt_edition": "canon", "tgt_book": "john", "tgt_ch": 9, "tgt_v": 11, "tier": "free",
-         "note": "John 9:11 — *He answered and said, A man that is called Yahusha made clay, and anointed mine eyes, and said unto me, Go to the pool of Siloam, and wash: and I went and washed, and I received sight.* The gall laid up to anoint whitened eyes and give sight prefigures the anointing of clay that opens the blind man's eyes, in Tobit 6:8."},
-        {"src_ch": 6, "src_v": 4, "tgt_edition": "canon", "tgt_book": "mark", "tgt_ch": 16, "tgt_v": 18, "tier": "free",
-         "note": "Mark 16:18 — *They shall take up serpents; and if they drink any deadly thing, it shall not hurt them; they shall lay hands on the sick, and they shall recover.* The heart, liver, and gall kept safely for the recovery of the afflicted answer the laying on of hands by which the sick recover, in Tobit 6:4."}
-      ]
-    },
-    {
-      "slug": "tobit-6-smoke-that-drives-the-demon",
-      "title": "The Smoke That Drives the Demon Away",
-      "summary_md": "The angel teaches that the heart and liver, smoked, expel the tormenting spirit: *And he said to him, Touching the heart and the liver, if a devil or an evil spirit trouble any, we must make a smoke thereof before the man or the woman, and the party shall be no more vexed.* (Tobit 6:7) *And the devil shall smell it, and flee away, and never come again any more* (Tobit 6:17) — yet the smoke is never severed from the prayer that follows it: *but when you shall come to her, rise up both of you, and pray to Yahuah (God) which is merciful* (Tobit 6:17). The fleeing of the demon is the covenant pattern: the unclean spirit cannot stand before submission to Elohim — *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you.* (James 4:7) And the bound and vexed are set free at His word: *(For he had commanded the unclean spirit to come out of the man. For oftentimes it had caught him: and he was kept bound with chains and in fetters; and he brake the bands, and was driven of the devil into the wilderness.)* (Luke 8:29) It ain't new — the powers of darkness flee before Yahuah.",
-      "anchor_start_v": 7,
-      "anchor_end_v": 17,
-      "tier": "extras",
-      "members": [
-        {"src_ch": 6, "src_v": 17, "tgt_edition": "canon", "tgt_book": "james", "tgt_ch": 4, "tgt_v": 7, "tier": "free",
-         "note": "James 4:7 — *Submit yourselves therefore to Elohim (God). Resist the devil, and he will flee from you.* The devil that smells the smoke and flees, never to return, is the same enemy that flees before submission to Elohim, in Tobit 6:17."},
-        {"src_ch": 6, "src_v": 7, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 8, "tgt_v": 29, "tier": "free",
-         "note": "Luke 8:29 — *(For he had commanded the unclean spirit to come out of the man. For oftentimes it had caught him: and he was kept bound with chains and in fetters; and he brake the bands, and was driven of the devil into the wilderness.)* The evil spirit that troubles and vexes a man or woman until it is driven off answers the unclean spirit cast out at the Master's command, in Tobit 6:7."}
-      ]
-    },
-    {
-      "slug": "tobit-6-kinsmans-right-seed-kept",
-      "title": "The Kinsman's Right — The Seed Kept in the Tribe",
-      "summary_md": "The angel claims Sara for Tobias by the law of inheritance within the kindred: *For to you does the right of her appertain, seeing you only art of her kindred.* (Tobit 6:11) *for I know that Raguel cannot marry her to another according to the law of Moses, but he shall be guilty of death, because the right of inheritance does rather appertain to you than to any other.* (Tobit 6:12) This is no novelty but Torah kept in exile — the daughters of an inheritance married within their own tribe so the lot is not removed: *And every daughter, that possesseth an inheritance in any tribe of the children of Yashar'el (Israel), shall be wife unto one of the family of the tribe of her father, that the children of Yashar'el (Israel) may enjoy every man the inheritance of his fathers.* (Numbers 36:8) It is the kinsman's duty to raise up the name that else were cut off: *her husband's brother shall go in unto her, and take her to him to wife, and perform the duty of an husband's brother unto her.* (Deuteronomy 25:5) The scattered house of Israel keeps the seed-line whole even in Media — the inheritance is not lost. It ain't new.",
-      "anchor_start_v": 11,
-      "anchor_end_v": 15,
-      "tier": "extras",
-      "members": [
-        {"src_ch": 6, "src_v": 12, "tgt_edition": "canon", "tgt_book": "numbers", "tgt_ch": 36, "tgt_v": 8, "tier": "free",
-         "note": "Numbers 36:8 — *And every daughter, that possesseth an inheritance in any tribe of the children of Yashar'el (Israel), shall be wife unto one of the family of the tribe of her father, that the children of Yashar'el (Israel) may enjoy every man the inheritance of his fathers.* The right of inheritance that binds Sara to her kinsman Tobias is the very statute keeping a daughter's inheritance within her father's tribe, in Tobit 6:12."},
-        {"src_ch": 6, "src_v": 11, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 25, "tgt_v": 5, "tier": "free",
-         "note": "Deuteronomy 25:5 — *If brethren dwell together, and one of them die, and have no child, the wife of the dead shall not marry without unto a stranger: her husband's brother shall go in unto her, and take her to him to wife, and perform the duty of an husband's brother unto her.* The right of Sara appertaining to Tobias as her near kinsman echoes the kinsman's duty to raise up the dead man's name from his own house, in Tobit 6:11."}
-      ]
-    },
-    {
-      "slug": "tobit-6-bride-appointed-from-the-beginning",
-      "title": "Fear Not — She Is Appointed Unto Thee",
-      "summary_md": "The angel stills Tobias's dread of death and names Sara the bride ordained for him: *fear not, for she is appointed to you from the beginning; and you shall preserve her, and she shall go with you.* (Tobit 6:17) *And the maid is fair and wise* (Tobit 6:12) — the destined wife, like Rebekah at the well, is shown to be the LORD's own choosing: *let the same be she that thou hast appointed for thy servant Isaac; and thereby shall I know that thou hast shewed kindness unto my master.* (Genesis 24:14) The bride appointed is not chance but providence answered before the prayer is finished: *And it came to pass, before he had done speaking, that, behold, Rebekah came out, who was born to Bethuel, son of Milcah, the wife of Nahor, Abraham's brother, with her pitcher upon her shoulder.* (Genesis 24:15) And the wise and fair maid is Yahuah's gift: *House and riches are the inheritance of fathers: and a prudent wife is from Yahuah (LORD).* (Proverbs 19:14) It ain't new — the appointed bride is given of the LORD.",
-      "anchor_start_v": 12,
-      "anchor_end_v": 17,
-      "tier": "extras",
-      "members": [
-        {"src_ch": 6, "src_v": 17, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 24, "tgt_v": 14, "tier": "free",
-         "note": "Genesis 24:14 — *And let it come to pass, that the damsel to whom I shall say, Let down thy pitcher, I pray thee, that I may drink; and she shall say, Drink, and I will give thy camels drink also: let the same be she that thou hast appointed for thy servant Isaac; and thereby shall I know that thou hast shewed kindness unto my master.* Sara appointed to Tobias from the beginning answers the damsel the servant prays Yahuah has appointed for Isaac, in Tobit 6:17."},
-        {"src_ch": 6, "src_v": 17, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 24, "tgt_v": 15, "tier": "free",
-         "note": "Genesis 24:15 — *And it came to pass, before he had done speaking, that, behold, Rebekah came out, who was born to Bethuel, son of Milcah, the wife of Nahor, Abraham's brother, with her pitcher upon her shoulder.* The appointed bride given that same night without fail mirrors Rebekah appearing before the prayer was even finished, in Tobit 6:17."},
-        {"src_ch": 6, "src_v": 12, "tgt_edition": "canon", "tgt_book": "proverbs", "tgt_ch": 19, "tgt_v": 14, "tier": "free",
-         "note": "Proverbs 19:14 — *House and riches are the inheritance of fathers: and a prudent wife is from Yahuah (LORD).* The fair and wise maid joined to her kinsman by the right of inheritance is the very prudent wife that is the LORD's own gift, in Tobit 6:12."}
-      ]
-    }
-  ]
+    "edition": "lightfoot-apostolic-fathers",
+    "book": "martyrdom-polycarp",
+    "chapter": 1,
+    "session": "session253",
+    "tag": "martyrdo1",
+    "base_band": 70900,
+    "threads": [
+        {
+            "slug": "martyrdom-polycarp-1-conformable-to-the-gospel",
+            "title": "A martyrdom conformable to the Gospel",
+            "summary_md": (
+                "The Smyrnaeans set the whole account under one banner: *For nearly all the foregoing events came "
+                "to pass that Yahuah (Lord) might show us once more an example of martyrdom which is conformable to "
+                "the Gospel. For he lingered that he might be delivered up, even as Yahuah (Lord) did, to the end "
+                "that we too might be imitators of him* (Martyrdom of Polycarp 1:1) -- and they close it the same "
+                "way: *whose martyrdom all desire to imitate, seeing that it was after the pattern of the Gospel of "
+                "Messiah (Christ)* (Martyrdom of Polycarp 1:19). It ain't new -- this is Paul's own longing: *That I "
+                "may know him, and the power of his resurrection, and the fellowship of his sufferings, being made "
+                "conformable unto his death* (Philippians 3:10). Peter had already named the pattern the prophets "
+                "searched out -- *the sufferings of Messiah (Christ), and the glory that should follow* (1 Peter "
+                "1:11) -- and the Master Himself asked whether His own could drink it: *Are ye able to drink of the "
+                "cup that I shall drink of* (Matthew 20:22). The witness is not a new religion; it is the Gospel "
+                "re-enacted in the faithful."
+            ),
+            "anchor_start_v": 1,
+            "anchor_end_v": 19,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 1, "src_v": 1, "tgt_edition": "canon", "tgt_book": "philippians", "tgt_ch": 3, "tgt_v": 10, "tier": "free",
+                 "note": "Philippians 3:10 -- *That I may know him, and the power of his resurrection, and the fellowship of his sufferings, being made conformable unto his death.* Polycarp's death \"conformable to the Gospel\" is Paul's same word for being conformed to the Messiah's death."},
+                {"src_ch": 1, "src_v": 1, "tgt_edition": "canon", "tgt_book": "1-peter", "tgt_ch": 1, "tgt_v": 11, "tier": "free",
+                 "note": "1 Peter 1:11 -- *Searching what, or what manner of time the Spirit of Messiah (Christ) which was in them did signify, when it testified beforehand the sufferings of Messiah (Christ), and the glory that should follow.* The suffering-then-glory pattern Peter names is the very Gospel the martyrdom is said to be conformable to in 1:1."},
+                {"src_ch": 1, "src_v": 19, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 20, "tgt_v": 22, "tier": "free",
+                 "note": "Matthew 20:22 -- *But Yahusha (Jesus) answered and said, Ye know not what ye ask. Are ye able to drink of the cup that I shall drink of, and to be baptized with the baptism that I am baptized with? They say unto him, We are able.* Polycarp's martyrdom \"after the pattern of the Gospel\" (1:19) is the drinking of the cup the Master held out to His own."}
+            ]
+        },
+        {
+            "slug": "martyrdom-polycarp-1-my-king-who-saved-me",
+            "title": "My King who saved me -- faithful unto death",
+            "summary_md": (
+                "Pressed to revile the Messiah and go free, the old bishop answers: *Fourscore and six years have I "
+                "been His servant, and He hath done me no wrong. How then can I blaspheme my King who saved me?* "
+                "(Martyrdom of Polycarp 1:8). It ain't new -- this is the crown the risen Messiah promised Smyrna by "
+                "name: *be thou faithful unto death, and I will give thee a crown of life* (Revelation 2:10). Nothing "
+                "could pry him loose, just as Paul vowed: *Who shall separate us from the love of Messiah (Christ)? "
+                "shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?* "
+                "(Romans 8:35) -- *Nay, in all these things we are more than conquerors through him that loved us* "
+                "(Romans 8:37). And his dying posture is the Master's and Stephen's: where Yahusha prayed *Father, "
+                "forgive them; for they know not what they do* (Luke 23:34), and Stephen *kneeled down, and cried "
+                "with a loud voice, Yahuah (Lord), lay not this sin to their charge* (Acts 7:60), Polycarp too "
+                "remembered and blessed to the end."
+            ),
+            "anchor_start_v": 8,
+            "anchor_end_v": 8,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 1, "src_v": 8, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 2, "tgt_v": 10, "tier": "free",
+                 "note": "Revelation 2:10 -- *Fear none of those things which thou shalt suffer: behold, the devil shall cast some of you into prison, that ye may be tried; and ye shall have tribulation ten days: be thou faithful unto death, and I will give thee a crown of life.* The Messiah spoke this to the church in Smyrna -- Polycarp's own city -- and Polycarp's \"how can I blaspheme my King who saved me?\" (1:8) is that faithfulness unto death."},
+                {"src_ch": 1, "src_v": 8, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 8, "tgt_v": 35, "tier": "free",
+                 "note": "Romans 8:35 -- *Who shall separate us from the love of Messiah (Christ)? shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?* Neither the proconsul's threats nor the fire could separate Polycarp from the King he had served eighty-six years (1:8)."},
+                {"src_ch": 1, "src_v": 8, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 60, "tier": "free",
+                 "note": "Acts 7:60 -- *And he kneeled down, and cried with a loud voice, Yahuah (Lord), lay not this sin to their charge. And when he had said this, he fell asleep.* Stephen the first martyr dies blessing his killers, the same constancy with which Polycarp faced his accusers (1:8)."},
+                {"src_ch": 1, "src_v": 8, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 23, "tgt_v": 34, "tier": "free",
+                 "note": "Luke 23:34 -- *Then said Yahusha (Jesus), Father, forgive them; for they know not what they do. And they parted his raiment, and cast lots.* The Master's own forbearance toward His executioners is the pattern of the witness Polycarp keeps in refusing to blaspheme his King (1:8)."}
+            ]
+        },
+        {
+            "slug": "martyrdom-polycarp-1-the-cup-unto-resurrection",
+            "title": "The cup of the Messiah unto resurrection of eternal life",
+            "summary_md": (
+                "Bound to the stake, Polycarp prays as a willing offering: *like a noble ram out of a great flock for "
+                "an offering, a burnt sacrifice made ready and acceptable to Elohim (God)... that I might receive a "
+                "portion amongst the number of martyrs in the cup of [Thy] Messiah (Christ) unto resurrection of "
+                "eternal life, both of soul and of body* (Martyrdom of Polycarp 1:14). It ain't new -- the cup is the "
+                "Master's: *Ye shall drink indeed of my cup, and be baptized with the baptism that I am baptized "
+                "with* (Matthew 20:23). The hope of body-and-soul resurrection is Daniel's: *And many of them that "
+                "sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and "
+                "everlasting contempt* (Daniel 12:2). And the suffering-then-glory is Paul's inheritance clause: "
+                "*if so be that we suffer with him, that we may be also glorified together* (Romans 8:17)."
+            ),
+            "anchor_start_v": 14,
+            "anchor_end_v": 14,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 1, "src_v": 14, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 20, "tgt_v": 23, "tier": "free",
+                 "note": "Matthew 20:23 -- *And he saith unto them, Ye shall drink indeed of my cup, and be baptized with the baptism that I am baptized with: but to sit on my right hand, and on my left, is not mine to give, but it shall be given to them for whom it is prepared of my Father.* Polycarp's prayer to receive \"a portion... in the cup of [Thy] Messiah\" (1:14) is the very cup the Master said His own would drink."},
+                {"src_ch": 1, "src_v": 14, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 12, "tgt_v": 2, "tier": "free",
+                 "note": "Daniel 12:2 -- *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* Polycarp's hope of \"resurrection of eternal life, both of soul and of body\" (1:14) rests on Daniel's promise of the awakening of the dead."},
+                {"src_ch": 1, "src_v": 14, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 8, "tgt_v": 17, "tier": "free",
+                 "note": "Romans 8:17 -- *And if children, then heirs; heirs of Elohim (God), and joint-heirs with Messiah (Christ); if so be that we suffer with him, that we may be also glorified together.* Polycarp offered as \"a burnt sacrifice acceptable to Elohim\" (1:14) is the suffering-with that Paul says ends in being glorified together."}
+            ]
+        },
+        {
+            "slug": "martyrdom-polycarp-1-gold-refined-in-the-furnace",
+            "title": "Gold and silver refined in a furnace -- the trial of faith",
+            "summary_md": (
+                "The eyewitnesses see no ordinary burning: *it was there in the midst, not like flesh burning, but "
+                "like [a loaf in the oven or like] gold and silver refined in a furnace. For we perceived such a "
+                "fragrant smell, as if it were the wafted odour of frankincense or some other precious spice* "
+                "(Martyrdom of Polycarp 1:15). It ain't new -- Peter named the trial: *That the trial of your faith, "
+                "being much more precious than of gold that perisheth, though it be tried with fire, might be found "
+                "unto praise and honour and glory* (1 Peter 1:7). The prophets had long shown the refining furnace "
+                "of the faithful remnant: *And I will bring the third part through the fire, and will refine them as "
+                "silver is refined, and will try them as gold is tried: they shall call on my name, and I will hear "
+                "them* (Zechariah 13:9); *And he shall sit as a refiner and purifier of silver... that they may "
+                "offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3). The fire that would not "
+                "consume him was a refining, not a destroying."
+            ),
+            "anchor_start_v": 15,
+            "anchor_end_v": 15,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 1, "src_v": 15, "tgt_edition": "canon", "tgt_book": "1-peter", "tgt_ch": 1, "tgt_v": 7, "tier": "free",
+                 "note": "1 Peter 1:7 -- *That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ).* The body in the flame \"like gold and silver refined in a furnace\" (1:15) is Peter's trial-by-fire of faith more precious than gold."},
+                {"src_ch": 1, "src_v": 15, "tgt_edition": "canon", "tgt_book": "zechariah", "tgt_ch": 13, "tgt_v": 9, "tier": "free",
+                 "note": "Zechariah 13:9 -- *And I will bring the third part through the fire, and will refine them as silver is refined, and will try them as gold is tried: they shall call on my name, and I will hear them: I will say, It is my people: and they shall say, Yahuah (LORD) is my Elohim (God).* The refining of the faithful through fire is the same picture the witnesses saw in Polycarp's flame (1:15)."},
+                {"src_ch": 1, "src_v": 15, "tgt_edition": "canon", "tgt_book": "malachi", "tgt_ch": 3, "tgt_v": 3, "tier": "free",
+                 "note": "Malachi 3:3 -- *And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness.* Polycarp refined \"like gold and silver in a furnace\" (1:15) is the offering in righteousness the Refiner purges out."}
+            ]
+        },
+        {
+            "slug": "martyrdom-polycarp-1-precious-bones-crown-of-immortality",
+            "title": "More precious than gold -- the crown of immortality and the elect",
+            "summary_md": (
+                "The Evil One could not keep the saints from honouring him: *crowned with the crown of immortality "
+                "and had won a reward which none could gainsay* (Martyrdom of Polycarp 1:17); and his remains were "
+                "*bones which are more valuable than precious stones and finer than refined gold* (Martyrdom of "
+                "Polycarp 1:18), kept for the day Yahuah *who maketh election from His own servants* (Martyrdom of "
+                "Polycarp 1:20) would gather them. It ain't new -- the death of such a one is no waste to Heaven: "
+                "*Precious in the sight of Yahuah (LORD) is the death of his saints* (Psalm 116:15). The crown of "
+                "immortality is the very crown the Messiah pledged to Smyrna: *be thou faithful unto death, and I "
+                "will give thee a crown of life* (Revelation 2:10). And election precedes confession -- the "
+                "inheritance kept *incorruptible, and undefiled, and that fadeth not away, reserved in heaven for "
+                "you* (1 Peter 1:4)."
+            ),
+            "anchor_start_v": 17,
+            "anchor_end_v": 20,
+            "tier": "extras",
+            "members": [
+                {"src_ch": 1, "src_v": 18, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 116, "tgt_v": 15, "tier": "free",
+                 "note": "Psalms 116:15 -- *Precious in the sight of Yahuah (LORD) is the death of his saints.* The bones \"more valuable than precious stones and finer than refined gold\" (1:18) are precious because the saint's death is precious to Yahuah Himself."},
+                {"src_ch": 1, "src_v": 17, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 2, "tgt_v": 10, "tier": "free",
+                 "note": "Revelation 2:10 -- *Fear none of those things which thou shalt suffer: behold, the devil shall cast some of you into prison, that ye may be tried; and ye shall have tribulation ten days: be thou faithful unto death, and I will give thee a crown of life.* Polycarp \"crowned with the crown of immortality\" (1:17) receives the very crown of life promised to faithful Smyrna."},
+                {"src_ch": 1, "src_v": 20, "tgt_edition": "canon", "tgt_book": "1-peter", "tgt_ch": 1, "tgt_v": 4, "tier": "free",
+                 "note": "1 Peter 1:4 -- *To an inheritance incorruptible, and undefiled, and that fadeth not away, reserved in heaven for you.* The Elohim \"who maketh election from His own servants\" (1:20) keeps for His elect this incorruptible inheritance reserved in heaven."}
+            ]
+        }
+    ]
 }
 
-with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_tobit_6.json", "w") as f:
+with open("/tmp/extracanon-xref-wt/scratch_xref_extracanon/json_martyrdom_polycarp_1.json", "w", encoding="utf-8") as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
-print("written")
+
+print("threads:", len(data["threads"]))
+print("members:", sum(len(t["members"]) for t in data["threads"]))

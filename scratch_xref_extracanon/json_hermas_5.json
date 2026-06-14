@@ -1,0 +1,150 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "hermas",
+  "chapter": 5,
+  "session": "session253",
+  "tag": "herm5",
+  "base_band": 71600,
+  "threads": [
+    {
+      "slug": "hermas-5-shepherd-angel-of-repentance",
+      "title": "The shepherd, the angel of repentance",
+      "summary_md": "Hermas is met by a glorious figure in a shepherd's garb — *‘I,’ saith he, ‘am the shepherd, unto whom thou wast delivered.’* — and at the close he names him plainly: *All these the shepherd, the angel of repentance, commanded me so to write.* The shepherd who guards and gathers the flock, and the call to *turn ye, turn ye*, is no new thing. Yahuah pleads through Ezekiel, *As I live, saith Adonai Yahuah (the Lord GOD), I have no pleasure in the death of the wicked; but that the wicked turn from his way and live: turn ye, turn ye from your evil ways; for why will ye die, O house of Yashar'el (Israel)?* (Ezekiel 33:11). And again, *Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin* (Ezekiel 18:30). The Master is *not willing that any should perish, but that all should come to repentance* (2 Peter 3:9) — election before confession, the seed kept, the wanderer sought.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 33,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Ezekiel 33:11 — *Say unto them, As I live, saith Adonai Yahuah (the Lord GOD), I have no pleasure in the death of the wicked; but that the wicked turn from his way and live: turn ye, turn ye from your evil ways; for why will ye die, O house of Yashar'el (Israel)?* The angel of repentance carries Yahuah's own ancient plea to the fallen in hermas 5:1."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 18,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Ezekiel 18:30 — *Therefore I will judge you, O house of Yashar'el (Israel), every one according to his ways, saith Adonai Yahuah (the Lord GOD). Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin.* The second repentance the shepherd offers in hermas 5:1 is the prophet's call to turn and live."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 3,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "2 Peter 3:9 — *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.* The Master's longsuffering is why the angel of repentance is sent to dwell with Hermas in hermas 5:1."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 15,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Luke 15:7 — *I say unto you, that likewise joy shall be in heaven over one sinner that repenteth, more than over ninety and nine just persons, which need no repentance.* The Good Shepherd's joy over the recovered is the heart of the shepherd of repentance in hermas 5:1."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-5-keep-the-commandments",
+      "title": "Keep the commandments and live",
+      "summary_md": "The shepherd's charge is plain: *‘Be not confounded, but strengthen thyself in my commandments which I am about to command thee’* — and the promise hangs on the keeping: *If then, when ye hear them, ye keep them and walk in them, and do them with a pure heart, ye shall receive from Yahuah (Lord) all things that He promised you; but if, when ye hear them, ye do not repent, but still add to your sins, ye shall receive from Yahuah (Lord) the opposite.* This is the everlasting word, never law-as-curse. The Messiah Himself binds love to obedience: *If ye love me, keep my commandments* (John 14:15), and the beloved disciple confirms, *For this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous* (1 John 5:3). The charge to remember stands from of old: *Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Yashar'el (Israel), with the statutes and judgments* (Malachi 4:4).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "john",
+          "tgt_ch": 14,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "John 14:15 — *If ye love me, keep my commandments.* The shepherd's call to keep and walk in the commandments with a pure heart in hermas 5:1 is the Messiah's own measure of love."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-john",
+          "tgt_ch": 5,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "1 John 5:3 — *For this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous.* The keeping the shepherd commands in hermas 5:1 is love made visible, the yoke that is not a burden."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 4,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Malachi 4:4 — *Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Yashar'el (Israel), with the statutes and judgments.* The commandments Hermas is told to write and keep in hermas 5:1 are the same statutes and judgments that endure."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 15,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Psalm 15:2 — *He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart.* The pure heart that walks in the commandments in hermas 5:1 is the dweller in Yahuah's holy hill."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-5-remember-whence-fallen",
+      "title": "Repent, or receive the opposite",
+      "summary_md": "The shepherd sets the two outcomes before the hearer: keep the commandments and *ye shall receive from Yahuah (Lord) all things that He promised you*, or *if, when ye hear them, ye do not repent, but still add to your sins, ye shall receive from Yahuah (Lord) the opposite.* The risen Messiah speaks the very same warning to His assemblies: *Remember therefore from whence thou art fallen, and repent, and do the first works; or else I will come unto thee quickly, and will remove thy candlestick out of his place, except thou repent* (Revelation 2:5). And the way is narrow, the two ways set before every soul: *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:14). The second repentance is real mercy, but it is a door to be walked through, not a license to *add to your sins*.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 2,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Revelation 2:5 — *Remember therefore from whence thou art fallen, and repent, and do the first works; or else I will come unto thee quickly, and will remove thy candlestick out of his place, except thou repent.* The shepherd's either-or of promise or its opposite in hermas 5:1 is the Messiah's own charge to repent and do the first works."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 7,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Matthew 7:14 — *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* The two outcomes the shepherd lays out in hermas 5:1 are the two ways: the narrow road of keeping, or its opposite."
+        },
+        {
+          "src_ch": 5,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 18,
+          "tgt_v": 32,
+          "tier": "free",
+          "note": "Ezekiel 18:32 — *For I have no pleasure in the death of him that dieth, saith Adonai Yahuah (the Lord GOD): wherefore turn yourselves, and live ye.* The opposite that the unrepentant receive in hermas 5:1 is the death Yahuah takes no pleasure in — turn, and live."
+        }
+      ]
+    }
+  ]
+}

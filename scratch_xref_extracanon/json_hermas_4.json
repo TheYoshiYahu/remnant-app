@@ -1,0 +1,150 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "hermas",
+  "chapter": 4,
+  "session": "session253",
+  "tag": "herm4",
+  "base_band": 71575,
+  "threads": [
+    {
+      "slug": "hermas-4-beast-great-tribulation",
+      "title": "The beast — a type of the great tribulation to come",
+      "summary_md": "Hermas sees the fourth vision *for a type of the impending tribulation* — *a huge beast like some sea-monster, and from its mouth fiery locusts issued forth* — and the word comes, *Be not of doubtful mind, Hermas*. Having *put on the faith of Yahuah (Lord)* he passes through unhurt: the beast *stretcheth itself on the ground... and stirred not at all until I had passed by it*. It ain't new. The Master Himself named the beast's hour: *For then shall be great tribulation, such as was not since the beginning of the world to this time, no, nor ever shall be* (Matthew 24:21) — yet the promise stands for the faithful, *But he that shall endure unto the end, the same shall be saved* (Matthew 24:13). And the trial is not wrath but refining: *That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:7). The doubtful mind is the only enemy; the faith of Yahuah shuts the lion's mouth.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 4,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Matthew 24:21 — *For then shall be great tribulation, such as was not since the beginning of the world to this time, no, nor ever shall be.* The Messiah names the very tribulation the beast of Hermas 4:1 is shown to typify."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 24,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Matthew 24:13 — *But he that shall endure unto the end, the same shall be saved.* Hermas passes the beast by faith and is unhurt, as the Master promises the enduring one in Hermas 4:1."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 1,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "1 Peter 1:7 — *That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ):* The fiery beast is the trial of faith more precious than gold that Hermas 4:1 endures unmoved."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-4-repent-whole-heart-cast-care",
+      "title": "Repent with your whole heart — cast your care upon Yahuah",
+      "summary_md": "The Church charges Hermas: *declare to the elect of Yahuah (Lord) His mighty works*, for *If therefore ye prepare yourselves beforehand, and repent (and turn) unto Yahuah (Lord) with your whole heart, ye shall be able to escape it.* And the counsel that saved him: *thou didst cast thy care upon Elohim (God), and didst open thy heart to Yahuah (Lord)... Cast your cares upon Yahuah (Lord) and He will set them straight.* It ain't new — this is the second repentance offered to the fallen, the everlasting call of the prophets: *Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin* (Ezekiel 18:30); and the patience of Elohim that holds the door, *not willing that any should perish, but that all should come to repentance* (2 Peter 3:9). The casting of care is straight from the Psalter, *Cast thy burden upon Yahuah (LORD), and he shall sustain thee* (Psalm 55:22), echoed by the apostle, *Casting all your care upon him; for he careth for you* (1 Peter 5:7). The elect are charged before they confess; the commandment to turn stands.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 4,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 18,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Ezekiel 18:30 — *Therefore I will judge you, O house of Yashar'el (Israel), every one according to his ways, saith Adonai Yahuah (the Lord GOD). Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin.* The prophet's whole-hearted turning is the very repentance the Church urges in Hermas 4:2."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 3,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "2 Peter 3:9 — *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.* The longsuffering that gives time to prepare and repent is the mercy Hermas 4:2 declares to the elect."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 55,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Psalm 55:22 — *Cast thy burden upon Yahuah (LORD), and he shall sustain thee: he shall never suffer the righteous to be moved.* The Psalmist's casting of the burden is word-for-word the counsel that delivered Hermas in 4:2."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 5,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "1 Peter 5:7 — *Casting all your care upon him; for he careth for you.* Peter repeats the same exhortation the Church gives Hermas, to cast every care upon Yahuah in 4:2."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-4-gold-tried-fire-tower-elect",
+      "title": "Gold tried in the fire — the elect built into the tower",
+      "summary_md": "The four colours are unfolded: *as the gold is tested by the fire and is made useful, so ye also... are being tested in yourselves. Ye then that abide and pass through the fire will be purified by it... and shall be useful for the building of the tower. But the white portion is the coming age, in which the elect of Elohim (God) shall dwell; because the elect of Elohim (God) shall be without spot and pure unto life eternal.* It ain't new. The refining fire is the prophet's: *And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver* (Malachi 3:3); and the remnant passed through it, *And I will bring the third part through the fire, and will refine them as silver is refined, and will try them as gold is tried: they shall call on my name, and I will hear them* (Zechariah 13:9). The tower is the house of living stones, *Ye also, as lively stones, are built up a spiritual house, an holy priesthood* (1 Peter 2:5); and into the white age, the New Jerusalem, *there shall in no wise enter into it any thing that defileth... but they which are written in the Lamb's book of life* (Revelation 21:27) — the elect without spot, tried and fitted before they are placed.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 4,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 3,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Malachi 3:3 — *And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness.* The refiner's fire that purges gold is exactly the testing that makes the saints useful for the tower in Hermas 4:3."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 13,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Zechariah 13:9 — *And I will bring the third part through the fire, and will refine them as silver is refined, and will try them as gold is tried: they shall call on my name, and I will hear them: I will say, It is my people: and they shall say, Yahuah (LORD) is my Elohim (God).* The remnant brought through the fire and tried as gold is the very purifying of the golden ones in Hermas 4:3."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 2,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "1 Peter 2:5 — *Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to Elohim (God) by Yahusha HaMashiach (Jesus Christ).* The living-stone house is the tower the purified are made useful to build in Hermas 4:3."
+        },
+        {
+          "src_ch": 4,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Revelation 21:27 — *And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb's book of life.* The white coming-age where the elect without spot dwell is the New Jerusalem of Hermas 4:3, entered only by the undefiled."
+        }
+      ]
+    }
+  ]
+}

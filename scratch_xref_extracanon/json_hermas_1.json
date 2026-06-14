@@ -1,0 +1,170 @@
+{
+  "edition": "lightfoot-apostolic-fathers",
+  "book": "hermas",
+  "chapter": 1,
+  "session": "session253",
+  "tag": "herm1",
+  "base_band": 71500,
+  "threads": [
+    {
+      "slug": "hermas-1-second-repentance",
+      "title": "Repent with all the heart — written in the books of life",
+      "summary_md": "The aged lady consoles the grieving Hermas: *for I know that if they shall repent with all their heart, they shall be written in the books of life with the saints* — the second repentance offered to the fallen household, that none should perish. It ain't new. The Tanakh already pleads it: *Cast away from you all your transgressions, whereby ye have transgressed; and make you a new heart and a new spirit: for why will ye die, O house of Yashar'el (Israel)?* (Ezekiel 18:31), and *For I have no pleasure in the death of him that dieth, saith Adonai Yahuah (the Lord GOD): wherefore turn yourselves, and live ye* (Ezekiel 18:32). The Messiah unfolds the same heart of the Father: *Likewise, I say unto you, there is joy in the presence of the angels of Elohim (God) over one sinner that repenteth* (Luke 15:10). And Kepha (Peter) names the longsuffering behind the delay: *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance* (2 Peter 3:9). The names written in the books of life stand at the judgment: *and another book was opened, which is the book of life* (Revelation 20:12).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 18,
+          "tgt_v": 31,
+          "tier": "free",
+          "note": "Ezekiel 18:31 — *Cast away from you all your transgressions, whereby ye have transgressed; and make you a new heart and a new spirit: for why will ye die, O house of Yashar'el (Israel)?* The very plea Hermas hears — repent with all the heart and be written among the saints — was Yahuah's plea to His house long before."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 18,
+          "tgt_v": 32,
+          "tier": "free",
+          "note": "Ezekiel 18:32 — *For I have no pleasure in the death of him that dieth, saith Adonai Yahuah (the Lord GOD): wherefore turn yourselves, and live ye.* The lady's mercy toward the corrupted family echoes the Father who delights not in death but in the turning."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 15,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Luke 15:10 — *Likewise, I say unto you, there is joy in the presence of the angels of Elohim (God) over one sinner that repenteth.* Hermas is told his children, if they repent, are written with the saints — the same heaven-joy the Messiah set over one returning sinner."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 3,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "2 Peter 3:9 — *Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.* The space given Hermas to reprove and convert his household is Yahuah's longsuffering, willing that all come to repentance."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The books of life in which the repentant are written are opened at the great white throne."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-1-church-formed-by-wisdom",
+      "title": "By His own wisdom He formed His holy Church",
+      "summary_md": "Hermas hears the glories of Elohim read aloud: *the Elohim (God) of Hosts, Who by His invisible and mighty power and by His great wisdom created the world... and by His own wisdom and providence formed His holy Church, which also He blessed.* It ain't new — the same Wisdom by which the heavens were fixed forms the assembly. The Church appears not as a new thing but as the living temple Scripture had already described: *Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to Elohim (God) by Yahusha HaMashiach (Jesus Christ)* (1 Peter 2:5); *And are built upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone* (Ephesians 2:20); *In whom ye also are builded together for an habitation of Elohim (God) through the Spirit* (Ephesians 2:22). And the building rises to the City that comes down adorned: *And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2) — her twelve gates the twelve tribes of Yashar'el, her twelve foundations the apostles, the two houses gathered as one and not a new people replacing the old.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "1-peter",
+          "tgt_ch": 2,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "1 Peter 2:5 — *Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to Elohim (God) by Yahusha HaMashiach (Jesus Christ).* The holy Church that Elohim formed by His own wisdom is the spiritual house of living stones Kepha describes."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 2,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Ephesians 2:20 — *And are built upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone.* The Church formed in Hermas's vision stands on the same prophet-and-apostle foundation, the Messiah Himself the corner stone."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "ephesians",
+          "tgt_ch": 2,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Ephesians 2:22 — *In whom ye also are builded together for an habitation of Elohim (God) through the Spirit.* What Hermas calls the holy Church that Elohim blessed, Sha'ul calls the habitation of Elohim built together through the Spirit."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 21:2 — *And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband.* The blessed Church of the vision is consummated as the New Jerusalem, the bride adorned — gated by the twelve tribes, founded on the apostles, the gathering of Yashar'el and not its replacement."
+        }
+      ]
+    },
+    {
+      "slug": "hermas-1-keep-the-ordinances-promise",
+      "title": "If they keep the ordinances they received — the promise made level",
+      "summary_md": "The reading closes with the condition of the promise: Elohim *removeth the heavens and the mountains and the hills and the seas, and all things are made level for His elect, that He may fulfil to them the promise which He promised with great glory and rejoicing, if so be that they shall keep the ordinances of Elohim (God), which they received, with great faith.* It ain't new: the promise is kept to the elect who keep the commandments — election precedes confession, and the ordinances stand. The mountains made level for His people is Yeshayahu's (Isaiah's) highway of return, and the everlasting worship is appointed: *For as the new heavens and the new earth, which I will make, shall remain before me, saith Yahuah (LORD), so shall your seed and your name remain* (Isaiah 66:22); *And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23) — the Sabbath and the feasts kept into the world to come. The stones of the holy house are tried and fitted by fire: *And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3); *Every man's work shall be made manifest: for the day shall declare it, because it shall be revealed by fire; and the fire shall try every man's work of what sort it is* (1 Corinthians 3:13).",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 66,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 66:22 — *For as the new heavens and the new earth, which I will make, shall remain before me, saith Yahuah (LORD), so shall your seed and your name remain.* The promise made level for the elect in Hermas is the enduring seed and name Yahuah swears to keep in the new heavens and new earth."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 66,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Isaiah 66:23 — *And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD).* The ordinances the elect must keep are no abolished thing: the Sabbath and new moon endure as all flesh comes to worship."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 3,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Malachi 3:3 — *And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness.* The elect kept for the promise are the silver refined and purged, fitted to offer in righteousness."
+        },
+        {
+          "src_ch": 1,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "1-corinthians",
+          "tgt_ch": 3,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "1 Corinthians 3:13 — *Every man's work shall be made manifest: for the day shall declare it, because it shall be revealed by fire; and the fire shall try every man's work of what sort it is.* The stones built into Elohim's holy house are tried by the fire of the day, even as Hermas's family must be strengthened in faith."
+        }
+      ]
+    }
+  ]
+}
