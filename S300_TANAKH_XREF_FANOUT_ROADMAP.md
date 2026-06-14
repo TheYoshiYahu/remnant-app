@@ -49,7 +49,7 @@ half and the standing minion protocol; this file governs the Tanakh half.
 
 | # | Book | Ch | Verses | Band base | Session | Status |
 |--:|------|---:|-------:|----------:|--------:|--------|
-| 1 | Genesis | 50 | 1533 | 20000 | 301 | 🔄 Packs 1-6 LIVE (ch1-24, 118 threads/592 members +1 pre-existing = 119/592); RESUME Pack 7 (ch25-28, incl ★Gen 26:5 + Bethel ladder) |
+| 1 | Genesis | 50 | 1533 | 20000 | 301 | 🔄 Packs 1-8 LIVE (ch1-33, 162 source threads/746 members; pushed to origin/main); RESUME Pack 9 (ch34-37, Dinah/Shechem, Bethel revisited + put-away-strange-gods, Joseph cycle begins ★37 sold-into-Egypt) |
 | 2 | Exodus | 40 | 1213 | 21500 | 302 | ⬜ |
 | 3 | Leviticus | 27 | 859 | 22700 | 303 | ⬜ (Lev 23 appointed times — load-bearing) |
 | 4 | Numbers | 36 | 1288 | 23500 | 304 | ⬜ |

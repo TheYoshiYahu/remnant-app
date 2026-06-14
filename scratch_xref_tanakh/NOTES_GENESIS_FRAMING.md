@@ -187,3 +187,60 @@ Band base 20000, migration `session301_genesis_cross_references.sql`.
 - Gate notes: fidelity 108/108 (0 flagged); arity 0; resolve caught 4 run-on-parse refs (Jasher
   20:14/29/30, Jubilees 19:10) → dropped/repointed, re-gated clean. LESSON: extras chapters with
   KJV-style run-on verse-merges (Jasher 20, Jubilees 19) silently mis-number — always resolve-gate.
+
+## PACK 7 (Gen 25-28, 22 threads/94 members, band 20600-20690) — Jacob/Esau, wells, ★Gen 26:5, ladder
+- **Gen 25:** Abraham gives all to Isaac (seed-line narrows; the Keturah sons real bloodline but not
+  the conduit); Ishmael's twelve princes = the 17:20 blessing FULFILLED (covenant still via Isaac);
+  ★ two nations / *the elder shall serve the younger* (25:23) → Rom 9:11-13 + Mal 1:2-3 — sovereign
+  election over the PATERNAL line, not works, NOT sola-fide false-inclusion; Jacob=heel-catcher
+  (Hos 12:3); ★ birthright sold for pottage → Heb 12:16-17 (the seed-war by valuation of the
+  promise, never ethnic). Authored fresh alongside the pre-existing hebrews-12-esau thread.
+- **Gen 26:** ★★★ THE KEYSTONE 26:5 *Abraham obeyed my voice, and kept my charge, my commandments,
+  my statutes, and my laws* — now authored AS SOURCE (11-member load-bearing thread): James
+  2:21-24 + Rom 4:3,12 (the reckoned trust is the WALKING/obeying trust, chose 4:12 over the
+  law-vs-faith verses to keep it Torah-affirming) + John 8:39 + 1 John 2:3-4 (the filter) + Gen
+  18:19 + Gen 15:6 + Jubilees 24:11 — sola-fide-against-Torah OVERRIDDEN, faith AND obedience
+  together centuries before Sinai. Oath confirmed to Isaac → Gal 3:8,16 seed SINGULAR. Wells re-dug
+  = the old paths (Jer 6:16). Beer-sheba theophany = the Formed who met Abraham. Esau's Hittite
+  wives = out-marriage.
+- **Gen 27:** the transferred blessing — honest deception OVER sovereign oracle (Rom 9:11-13; Jub
+  26:18 *a dispensation from heaven*); the dew/corn bless-curse = Gen 12:3 carried to Jacob (Num
+  24:9 Balaam compelled); *Hast thou but one blessing?* → Heb 12:17 (no place of repentance, tears);
+  Edom = Mal 1 / Obadiah / Amos 9:12 (the SYSTEM, the lost-sheep remnant gathered, never ethnic).
+- **Gen 28:** the bride-from-the-kindred; blessing of Abraham conferred (28:3-4); ★★ THE BETHEL
+  LADDER (28:12) → John 1:51 — Yahusha IS the ladder, the gate of heaven embodied (Formed/Formless
+  lens, the One atop bearing the Name); seed-as-dust/all-families (Gal 3:8,16); Bethel = house of El;
+  Jacob's vow + tithe (cf Gen 14:20).
+- Gate notes: fidelity 93/93 (0 flagged); arity 0; resolve caught **Jubilees 26:23** (dew-blessing
+  folded into the run-on v21 — no standalone v23) → repointed 26:23→26:21, re-gated clean. Exact
+  reconciliation. ⭐ GIT WALL GONE this session — rebased onto origin/main + PUSHED (Packs 1-7).
+
+## PACK 8 (Gen 29-33, 22 threads/91 members, band 20700-20812) — Laban, the twelve tribes, Peniel
+- **Gen 29:** well-betrothal type (Gen 24 / Exod 2 / John 4 Bridegroom); the supplanter supplanted
+  *the younger before the firstborn* (Gal 6:7 measure-for-measure); Yahuah opens Leah's womb →
+  Reuben/Simeon/Levi + ★ JUDAH=*now will I praise Yahuah* (the scepter Gen 49:10, Heb 7:14) → the
+  twelve tribes / two houses (Ezek 37 / Rev 7).
+- **Gen 30:** the twelve sons completed incl ★ JOSEPH (the northern-house head, the stick of Joseph
+  Ezek 37:16-19 / Rev 7); *Elohim hath taken away my reproach* = barren-remembered (1 Sam 1 Hannah /
+  Luke 1:25 Elisabeth, verbatim); Laban's *Yahuah hath blessed me for thy sake* = Gen 12:2-3
+  blessing spilling onto the nations; the speckled flocks = Yahuah prospering the covenant-bearer.
+- **Gen 31:** *Return... and I will be with thee* (28:15) = the call home / covenant presence →
+  Jer 31:8,10 gathering; *Elohim suffered him not to hurt me* = the guarded seed-bearer (Gen 20:6 /
+  Ps 105:14-15 touch-not-mine-anointed); Rachel's teraphim = idolatry clinging to the kindred (Josh
+  24:2, put-away-strange-gods Gen 35:2); the Bethel-vow remembered (free, all-canon); Mizpah heap of
+  witness *Yahuah watch between me and thee*.
+- **Gen 32:** Mahanaim host (2 Kgs 6:17 / Ps 34:7 / Heb 1:14); the prevailing prayer pleading the
+  Bethel promise back; ★★ the wrestling and THE NEW NAME *no more Jacob, but Yashar'el* (32:24-28) →
+  Hosea 12:3-4 (the prophet's own reading — prevailed by weeping/supplication) + the overcomer's new
+  name (Rev 2:17/3:12); the Formed "man" who bears the Name (Christology); the halting thigh =
+  strength-broken-to-prevail. ⚠ BOUND AROUND the pre-existing live `the-face-of-yahuah-...` thread
+  at 32:30 — NO new thread on the face-theophany, no member at 32:30, distinct name-change thread.
+- **Gen 33:** Esau ran and *fell on his neck* (Luke 15:20 prodigal-father echo) — reconciled but
+  lines stay distinct (Esau→Seir); *I have seen thy face, as the face of Elohim* (33:10, the Peniel
+  echo); ★ El-elohe-Israel altar + the purchased parcel = the down-payment of the inheritance
+  (Heb 11:9,13 strangers-and-pilgrims; Josh 24:32 becomes Joseph's grave), the patriarch worshipping
+  under the NEW name.
+- Gate notes: fidelity 0 new flags (the standing 2 = 1 Chron 1:1 / 2 Pet 2:8 benign in prior packs);
+  arity 0; resolve 0 unresolved (minions self-avoided Jubilees 28/29 run-on gaps; Jasher 33 actually
+  opens at Gen 33:18-20 not the Esau-meeting — that's Jasher 32:52-73; ge33 minion caught & repointed
+  pre-author). Exact reconciliation. Both packs PUSHED to origin/main (e8419d6).
