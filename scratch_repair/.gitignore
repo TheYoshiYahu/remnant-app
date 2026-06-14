@@ -1,0 +1,4 @@
+src/
+backup/
+DB_STATUS.txt
+__pycache__/
