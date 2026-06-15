@@ -7907,6 +7907,972 @@ SELECT t.id, cr.id, m.sort_order, m.member_note
   JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_exodus_7.sql (Exodus 7) -----
+-- Chapter: Exodus 7 — Aaron's rod swallows the magicians' rods; the first plague (the Nile
+--   turned to blood); Pharaoh's heart hardened.
+-- Tag: ex07   Session prefix: s305   Sort band base: 29150 (step 3)
+--
+-- Exodus 7 coverage:
+--   v.3-5  I will harden Pharaoh's heart / that the Egyptians may know that I am Yahuah:
+--          NT:     Romans 9:18 (whom he will he hardeneth) — thread 3. [Rom 9:17 BY-NAME quote
+--                  of Exod 9:16 reserved for ch9; here the hardening-BEGINS principle only.]
+--          Extras: none warranted (Jasher 80:2 narrates the smiting, not the hardening-purpose).
+--          Tanakh: none additional warranted here (Psalm signs-and-wonders sit on the blood plague).
+--   v.6-7  Moses/Aaron obey; ages fourscore: NT/Extras/Tanakh: none warranted (narrative seam).
+--   v.8-13 Aaron's rod a serpent; magicians do in like manner; Aaron's rod swallowed up their rods:
+--          NT:     2 Timothy 3:8-9 (Jannes and Jambres withstood Moses... folly manifest) — thread 1.
+--          Extras: Jasher 79:38, 79:42 (names Jannes & Jambres v.27; rod of Aaron swallowed up
+--                  their rods) — thread 1.
+--          Tanakh: none additional warranted (the sign is self-contained).
+--   v.14   Pharaoh's heart hardened, refuseth to let the people go: folded into thread 3 (hardening).
+--   v.15-18 stand by the river / smite the waters / they shall be turned to blood / fish die:
+--          covered with v.19-25 as the first-plague block (thread 2).
+--   v.19-25 all the waters that were in the river were turned to blood; fish died; blood throughout:
+--          NT:     Revelation 8:8-9 (third part of the sea became blood) + Revelation 16:3-4
+--                  (sea... rivers and fountains of waters became blood) — thread 2.
+--          Extras: Jasher 80:3 (turned all the waters of Egypt into blood) + Wisdom of Solomon
+--                  11:6 (perpetual running river troubled with foul blood = measured recompense) — thread 2.
+--          Tanakh: Psalm 78:44 (turned their rivers into blood) + Psalm 105:29 (turned their
+--                  waters into blood, slew their fish) — thread 2.
+--
+-- Threads (slug → target libraries):
+--   1. exodus-7-aarons-rod-swallowed-up-the-magicians-rods         [extras: NT 2Tim + Jasher]  29150
+--   2. exodus-7-all-the-waters-in-the-river-were-turned-to-blood   [extras: NT Rev + Tanakh Ps + Jasher + Wisdom] 29153
+--   3. exodus-7-i-will-harden-pharaohs-heart-that-they-may-know    [free: NT Romans]           29156
+--
+-- Contested framing notes:
+--   * Thread 3 (Rom 9:18): framed as judgment on a self-hardening oppressor displayed FOR THE
+--     NAME in all the earth — NOT arbitrary reprobation of a people. The by-name Rom 9:17 quote
+--     (of Exod 9:16) is deliberately LEFT for the ch9 thread.
+--   * Thread 1: the TRUE sign swallows the counterfeit; the named magicians (Jannes & Jambres)
+--     come from the very tradition Jasher preserves — Paul reaches back into it (2 Tim 3:8).
+
+CREATE TEMP VIEW _s305_ex07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Aaron's rod swallowed up the magicians' rods (7:8-13)
+    ('canon','exodus',7,12,'canon','2-timothy',3,8,'free',
+     E'*Now as Jannes and Jambres withstood Moses, so do these also resist the truth: men of corrupt minds, reprobate concerning the faith* (2 Timothy 3:8). Paul names the two Egyptian magicians by a name the canon never records — he is reaching back into the same preserved tradition. Their counterfeit met Moses rod-for-rod, yet *Aaron''s rod swallowed up their rods* (Exodus 7:12): the true sign devours the imitation.'),
+    ('canon','exodus',7,12,'canon','2-timothy',3,9,'free',
+     E'*But they shall proceed no further: for their folly shall be manifest unto all men, as theirs also was* (2 Timothy 3:9). The magicians could mimic the serpent but could not undo the swallowing — *Aaron''s rod swallowed up their rods* (Exodus 7:12). Their folly was made manifest the moment the true rod consumed the false, the pattern Paul holds up against every later imitator of the truth.'),
+    ('canon','exodus',7,12,'jasher','jasher',79,38,'extras',
+     E'*And the serpent of Aaron''s rod lifted up its head and opened its mouth to swallow the rods of the magicians* (Jasher 79:38). Jasher preserves the scene Exodus compresses — and names the sorcerers Balaam, Jannes and Jambres (Jasher 79:27), the very names Paul quotes. The mouth that opened to swallow fulfils *Aaron''s rod swallowed up their rods* (Exodus 7:12).'),
+    ('canon','exodus',7,12,'jasher','jasher',79,42,'extras',
+     E'*And when they were restored to rods, the rod of Aaron swallowed up their rods* (Jasher 79:42). The witness has the magicians demand the test on their own terms — restore the rods, then let yours swallow ours — and still the true rod devours the counterfeit, exactly as *Aaron''s rod swallowed up their rods* (Exodus 7:12).'),
+
+    -- Thread 2: all the waters were turned to blood (7:14-25)
+    ('canon','exodus',7,20,'canon','psalms',78,44,'free',
+     E'*And had turned their rivers into blood; and their floods, that they could not drink* (Psalm 78:44). Asaph sings the plague back as covenant memory — the same judgment where *all the waters that were in the river were turned to blood* (Exodus 7:20), so that the Egyptians could not drink. The Psalter keeps the wonders of Egypt before Yashar''el (Israel) as the rehearsal of Yahuah''s (the LORD''s) saving hand.'),
+    ('canon','exodus',7,20,'canon','psalms',105,29,'free',
+     E'*He turned their waters into blood, and slew their fish* (Psalm 105:29). The Hallel-history names both halves of the first plague — the blood and the dead fish — as one act of Yahuah (the LORD): *all the waters that were in the river were turned to blood* (Exodus 7:20), *and the fish that was in the river died* (Exodus 7:21).'),
+    ('canon','exodus',7,20,'canon','revelation',8,8,'free',
+     E'*And the second angel sounded, and as it were a great mountain burning with fire was cast into the sea: and the third part of the sea became blood* (Revelation 8:8). The trumpet-judgment recapitulates the first plague onto the whole earth: as *all the waters that were in the river were turned to blood* (Exodus 7:20) over Egypt, so the sea is struck in the day of the Lamb''s reckoning.'),
+    ('canon','exodus',7,21,'canon','revelation',8,9,'free',
+     E'*And the third part of the creatures which were in the sea, and had life, died; and the third part of the ships were destroyed* (Revelation 8:9). The dying sea-life answers *the fish that was in the river died; and the river stank* (Exodus 7:21). The plague that began in one river is poured out, in the end, on the deep.'),
+    ('canon','exodus',7,20,'canon','revelation',16,3,'free',
+     E'*And the second angel poured out his vial upon the sea; and it became as the blood of a dead man: and every living soul died in the sea* (Revelation 16:3). The bowl-judgment is the first plague at its full measure — *all the waters that were in the river were turned to blood* (Exodus 7:20) becomes the whole sea as the blood of the dead. The pattern of Egypt is the template of the final deliverance.'),
+    ('canon','exodus',7,19,'canon','revelation',16,4,'free',
+     E'*And the third angel poured out his vial upon the rivers and fountains of waters; and they became blood* (Revelation 16:4). Yahuah (the LORD) commanded Moses to strike *the waters of Egypt, upon their streams, upon their rivers, and upon their ponds, and upon all their pools of water, that they may become blood* (Exodus 7:19) — and the last plagues reach every river and fountain in the earth with the same word.'),
+    ('canon','exodus',7,20,'jasher','jasher',80,3,'extras',
+     E'*And Yahuah (the Lord) sent by the hand of Aaron and turned all the waters of Egypt into blood, with all their streams and rivers* (Jasher 80:3). The witness names the same outstretched hand and the same totality — *all the waters that were in the river were turned to blood* (Exodus 7:20) — confirming the plague struck every source of water in the land.'),
+    ('canon','exodus',7,20,'apocrypha','the-wisdom-of-solomon',11,6,'extras',
+     E'*For instead of a perpetual running river troubled with foul blood* (Wisdom of Solomon 11:6). Wisdom reads the first plague as measured recompense — by what things Egypt''s enemies were punished, by the same Yashar''el (Israel) was later benefited (Wisdom 11:5) — so that the river turned to blood, where *all the waters that were in the river were turned to blood* (Exodus 7:20), answers the blood of the Hebrew infants cast into that same Nile.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- Thread 3: hardening + know-Yahuah purpose (7:3-5, 13, 14) — kept separate; Rom 9:18 principle only
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','exodus',7,3,'canon','romans',9,18,'free',
+     E'*Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth* (Romans 9:18). Paul draws the principle straight from Pharaoh, where Yahuah (the LORD) first declared *I will harden Pharaoh''s heart, and multiply my signs and my wonders in the land of Egypt* (Exodus 7:3). This is judgment confirmed upon a self-hardening oppressor — Pharaoh first *refuseth to let the people go* (Exodus 7:14) — displayed for the Name, not the arbitrary reprobation of a people.'),
+    ('canon','exodus',7,5,'canon','romans',9,18,'free',
+     E'*Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth* (Romans 9:18). The hardening serves a stated end: *the Egyptians shall know that I am Yahuah (LORD), when I stretch forth mine hand upon Egypt* (Exodus 7:5). The Name is made known in all the earth through the very oppressor who set himself against it — mercy and hardening alike bent toward Yahuah''s self-revelation and the deliverance of the children of Yashar''el (Israel).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== THREADS =====
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-7-aarons-rod-swallowed-up-the-magicians-rods',
+       E'Aaron''s rod swallowed up the magicians'' rods',
+       E'When Pharaoh demands a miracle, Aaron casts down his rod and *it became a serpent* (Exodus 7:10). The court answers in kind — *now the magicians of Egypt, they also did in like manner with their enchantments* (Exodus 7:11) — and *they cast down every man his rod, and they became serpents: but Aaron''s rod swallowed up their rods* (Exodus 7:12). The counterfeit can imitate the form but cannot survive the encounter: the true sign devours the false.\n\nThe restored witness preserves what Exodus compresses. Jasher names the sorcerers — *Pharaoh sent for Balaam the magician and to Jannes and Jambres his sons* (Jasher 79:27) — and shows the serpent of Aaron''s rod that *lifted up its head and opened its mouth to swallow the rods of the magicians* (Jasher 79:38), so that *when they were restored to rods, the rod of Aaron swallowed up their rods* (Jasher 79:42).\n\nPaul reaches back into that same tradition: *Now as Jannes and Jambres withstood Moses, so do these also resist the truth: men of corrupt minds, reprobate concerning the faith* (2 Timothy 3:8). And he reads the swallowing as the verdict on every imitator of the truth — *but they shall proceed no further: for their folly shall be manifest unto all men, as theirs also was* (2 Timothy 3:9).',
+       sv.verse_id, ev.verse_id, 'extras', 29150
+  FROM _s305_ex07_lookup sv, _s305_ex07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=7 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=7 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-7-all-the-waters-in-the-river-were-turned-to-blood',
+       E'All the waters in the river were turned to blood',
+       E'The first plague strikes the lifeblood of Egypt. Yahuah (the LORD) commands the rod stretched out *upon the waters of Egypt, upon their streams, upon their rivers, and upon their ponds, and upon all their pools of water* (Exodus 7:19), and *all the waters that were in the river were turned to blood* (Exodus 7:20). The river that drank the blood of the Hebrew infants now runs with blood itself: *the fish that was in the river died; and the river stank, and the Egyptians could not drink of the water of the river* (Exodus 7:21).\n\nThe Psalter keeps it as covenant memory — *and had turned their rivers into blood; and their floods, that they could not drink* (Psalm 78:44); *He turned their waters into blood, and slew their fish* (Psalm 105:29). The restored witness confirms the totality: *and Yahuah (the Lord) sent by the hand of Aaron and turned all the waters of Egypt into blood, with all their streams and rivers* (Jasher 80:3); and Wisdom reads it as measured recompense — *for instead of a perpetual running river troubled with foul blood* (Wisdom of Solomon 11:6) — the Nile that swallowed the infants paying back its own crime.\n\nThe plague is no spent relic. It is the template of the final deliverance, poured out on the whole earth: *the third part of the sea became blood* (Revelation 8:8), *and the third part of the creatures which were in the sea, and had life, died* (Revelation 8:9); *the second angel poured out his vial upon the sea; and it became as the blood of a dead man* (Revelation 16:3), *and they became blood* upon *the rivers and fountains of waters* (Revelation 16:4). The same hand that struck one river judges the deep.',
+       sv.verse_id, ev.verse_id, 'extras', 29153
+  FROM _s305_ex07_lookup sv, _s305_ex07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=7 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=7 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-7-i-will-harden-pharaohs-heart-that-they-may-know',
+       E'I will harden Pharaoh''s heart — that they may know that I am Yahuah',
+       E'Before the first sign, Yahuah (the LORD) declares the shape of the whole contest: *I will harden Pharaoh''s heart, and multiply my signs and my wonders in the land of Egypt* (Exodus 7:3), *and the Egyptians shall know that I am Yahuah (LORD), when I stretch forth mine hand upon Egypt, and bring out the children of Yashar''el (Israel) from among them* (Exodus 7:5). The hardening is not arbitrary: Pharaoh is a self-hardening oppressor who *refuseth to let the people go* (Exodus 7:14), and the judgment upon him is bent toward one end — that the Name be known in all the earth.\n\nPaul draws the principle from this very Pharaoh: *Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth* (Romans 9:18). Read in the chapter''s own light, this is judgment displayed for the Name and for the deliverance of Yashar''el (Israel) — not the reprobation of a people, but the unmasking of a tyrant who set himself against Yahuah. The hardening begins here; its by-name declaration awaits the deepening plagues.',
+       sv.verse_id, ev.verse_id, 'free', 29156
+  FROM _s305_ex07_lookup sv, _s305_ex07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=7 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=7 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD MEMBERS =====
+
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',7,12,'canon','2-timothy',3,8, 1, E'*Now as Jannes and Jambres withstood Moses, so do these also resist the truth* (2 Timothy 3:8) — Paul names the magicians from the tradition; their counterfeit met Moses rod-for-rod.'),
+    ('exodus',7,12,'canon','2-timothy',3,9, 2, E'*But they shall proceed no further: for their folly shall be manifest unto all men, as theirs also was* (2 Timothy 3:9) — the swallowing is the verdict on every imitator of the truth.'),
+    ('exodus',7,12,'jasher','jasher',79,38, 3, E'*The serpent of Aaron''s rod... opened its mouth to swallow the rods of the magicians* (Jasher 79:38) — the witness that names Jannes & Jambres (79:27) shows the swallowing in full.'),
+    ('exodus',7,12,'jasher','jasher',79,42, 4, E'*The rod of Aaron swallowed up their rods* (Jasher 79:42) — tested on the magicians'' own terms, the true rod still devours the counterfeit.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-7-aarons-rod-swallowed-up-the-magicians-rods'
+  JOIN _s305_ex07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex07_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',7,20,'canon','psalms',78,44, 1, E'*And had turned their rivers into blood; and their floods, that they could not drink* (Psalm 78:44) — Asaph sings the plague back as covenant memory.'),
+    ('exodus',7,20,'canon','psalms',105,29, 2, E'*He turned their waters into blood, and slew their fish* (Psalm 105:29) — the Hallel-history names both halves of the first plague.'),
+    ('exodus',7,20,'canon','revelation',8,8, 3, E'*The third part of the sea became blood* (Revelation 8:8) — the trumpet recapitulates the first plague onto the whole earth.'),
+    ('exodus',7,21,'canon','revelation',8,9, 4, E'*The third part of the creatures which were in the sea, and had life, died* (Revelation 8:9) — answering the dead fish of the river (Exodus 7:21).'),
+    ('exodus',7,20,'canon','revelation',16,3, 5, E'*The sea... became as the blood of a dead man: and every living soul died in the sea* (Revelation 16:3) — the bowl-judgment at full measure.'),
+    ('exodus',7,19,'canon','revelation',16,4, 6, E'*The rivers and fountains of waters... became blood* (Revelation 16:4) — every stream and pool struck (Exodus 7:19) reaches the whole earth.'),
+    ('exodus',7,20,'jasher','jasher',80,3, 7, E'*Turned all the waters of Egypt into blood, with all their streams and rivers* (Jasher 80:3) — the witness confirms the totality of the plague.'),
+    ('exodus',7,20,'apocrypha','the-wisdom-of-solomon',11,6, 8, E'*Instead of a perpetual running river troubled with foul blood* (Wisdom of Solomon 11:6) — read as measured recompense for the infants cast into the Nile.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-7-all-the-waters-in-the-river-were-turned-to-blood'
+  JOIN _s305_ex07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex07_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',7,3,'canon','romans',9,18, 1, E'*Whom he will he hardeneth* (Romans 9:18) — Paul draws the principle from the hardening first declared in Exodus 7:3, judgment on a self-hardening oppressor.'),
+    ('exodus',7,5,'canon','romans',9,18, 2, E'*He hath mercy on whom he will have mercy, and whom he will he hardeneth* (Romans 9:18) — bent toward the stated end: *the Egyptians shall know that I am Yahuah* (Exodus 7:5), the Name made known in all the earth.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-7-i-will-harden-pharaohs-heart-that-they-may-know'
+  JOIN _s305_ex07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex07_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_8.sql (Exodus 8) -----
+-- Exodus 8 — the plagues of frogs, lice, and flies; "this is the finger of Elohim";
+--   Yahuah sets a division between Egypt and his people. Tag: ex08. Session: s305.
+--   Sort band base 29175 (step 3): 29175, 29178, 29181.
+--
+-- Exodus 8 coverage:
+--   v.1-4 (frogs decreed)  NT:     Revelation 16:13-14 (three unclean spirits like frogs)
+--                          Extras: none warranted
+--                          Tanakh: Psalm 78:45 / Psalm 105:30 (the plague resung)
+--   v.5-7 (frogs come up)  NT:     Revelation 16:13-14 (same thread)
+--                          Extras: none warranted
+--                          Tanakh: Psalm 105:30 (same thread)
+--   v.8-14 (frogs removed) NT:     none warranted (narrative of relief/hardening)
+--                          Extras: none warranted
+--                          Tanakh: none warranted
+--   v.15 (heart hardened)  NT:     none warranted (recurs; framed in thread prose)
+--                          Extras: none warranted
+--                          Tanakh: none warranted
+--   v.16-17 (lice)         NT:     Luke 11:20 (same thread — the finger of Elohim)
+--                          Extras: none warranted
+--                          Tanakh: none warranted
+--   v.18-19 (finger of El) NT:     Luke 11:20 (the finger of Elohim casts out devils)
+--                          Extras: none warranted
+--                          Tanakh: none warranted
+--   v.20-21 (flies sent)   NT:     none warranted (carried into division thread)
+--                          Extras: Wisdom of Solomon 16:9 (flies that killed the enemy)
+--                          Tanakh: Psalm 78:45 (divers sorts of flies devoured them)
+--   v.22-23 (the division) NT:     Romans 9:4 (the adoption pertains to Yashar'el)
+--                          Extras: Wisdom of Solomon 16:9 (the measured recompense)
+--                          Tanakh: Exodus 11:7 / Malachi 3:18 (Yahuah severs his own)
+--   v.24-32 (flies/hardening) NT:  none warranted
+--                          Extras: none warranted
+--                          Tanakh: none warranted
+--
+-- Threads:
+--   exodus-8-the-river-shall-bring-forth-frogs-abundantly (29175, free)
+--     targets: Revelation (NT, forward), Psalms x2 (Tanakh, lateral)
+--   exodus-8-this-is-the-finger-of-elohim (29178, free)
+--     targets: Luke (NT, forward)
+--   exodus-8-i-will-put-a-division-between-my-people-and-thy-people (29181, extras)
+--     targets: Psalms (Tanakh), Exodus 11 (Tanakh), Malachi (Tanakh), Romans (NT),
+--              Wisdom of Solomon (extras)
+--   Contested/load-bearing: 8:22-23 the division is Yahuah's redemptive distinction UPON
+--     his covenant people (the two-house people set apart) — framed as setting-apart, never
+--     replacement; Romans 9:4 keeps the adoption with Yashar'el.
+
+CREATE TEMP VIEW _s305_ex08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the river shall bring forth frogs abundantly
+    ('canon','exodus',8,3,'canon','revelation',16,13,'free',
+     E'*And I saw three unclean spirits like frogs come out of the mouth of the dragon, and out of the mouth of the beast, and out of the mouth of the false prophet* (Revelation 16:13). The frogs Yahuah (LORD) loosed on Egypt — *the river shall bring forth frogs abundantly, which shall go up and come into thine house, and into thy bedchamber* (Exodus 8:3) — are taken up at the last as the very image of the demonic deception that swarms out upon the kings of the earth. The plague that filled Pharaoh''s house becomes the spirits that fill the whole world.'),
+    ('canon','exodus',8,3,'canon','revelation',16,14,'free',
+     E'*For they are the spirits of devils, working miracles, which go forth unto the kings of the earth and of the whole world, to gather them to the battle of that great day of El Shaddai (God Almighty)* (Revelation 16:14). The frog that came up *into thine ovens, and into thy kneadingtroughs* (Exodus 8:3) is no random vermin: the end-time deception wears the frog''s face, and like Pharaoh''s magicians it works counterfeit miracles to harden the rulers against Yahuah (LORD).'),
+    ('canon','exodus',8,6,'canon','psalms',105,30,'free',
+     E'*Their land brought forth frogs in abundance, in the chambers of their kings* (Psalm 105:30). The Psalm resings the very moment — *and the frogs came up, and covered the land of Egypt* (Exodus 8:6) — and presses it into the chambers of their kings, that Yahuah (LORD) reached even the seat of Pharaoh''s power. Yashar''el (Israel) is taught to remember the plagues as the acts of her Redeemer.'),
+    ('canon','exodus',8,3,'canon','psalms',78,45,'free',
+     E'*He sent divers sorts of flies among them, which devoured them; and frogs, which destroyed them* (Psalm 78:45). Asaph''s history-psalm names the frogs alongside the flies as instruments of judgment — *the river shall bring forth frogs abundantly* (Exodus 8:3) — that Yashar''el (Israel) might tell the generations how Yahuah (LORD) brake the power of Egypt.'),
+    -- THREAD 2: this is the finger of Elohim
+    ('canon','exodus',8,19,'canon','luke',11,20,'free',
+     E'*But if I with the finger of Elohim (God) cast out devils, no doubt the kingdom of Elohim (God) is come upon you* (Luke 11:20). The magicians could not bring forth the lice and were forced to confess, *This is the finger of Elohim (God)* (Exodus 8:19) — the one power the counterfeiters could not imitate. That same finger of Elohim, in the Formed Son''s ministry, casts out the unclean; the kingdom presses in where the imitators are shut out.'),
+    ('canon','exodus',8,16,'canon','luke',11,20,'free',
+     E'*But if I with the finger of Elohim (God) cast out devils, no doubt the kingdom of Elohim (God) is come upon you* (Luke 11:20). When Aaron was told, *Stretch out thy rod, and smite the dust of the land, that it may become lice* (Exodus 8:16), the dust itself obeyed the finger of Elohim (God). The Formed Son wields that same finger against the unclean spirits, the kingdom of Yahuah (LORD) breaking in upon the very power Egypt''s wise men could not counterfeit.'),
+    -- THREAD 3: I will put a division between my people and thy people
+    ('canon','exodus',8,21,'canon','psalms',78,45,'free',
+     E'*He sent divers sorts of flies among them, which devoured them; and frogs, which destroyed them* (Psalm 78:45). The threatened swarm — *behold, I will send swarms of flies upon thee, and upon thy servants, and upon thy people* (Exodus 8:21) — is remembered in the Psalm as a devouring judgment, that Yashar''el (Israel) might rehearse to her children how Yahuah (LORD) fought for them against Egypt.'),
+    ('canon','exodus',8,22,'canon','exodus',11,7,'free',
+     E'*But against any of the children of Israel shall not a dog move his tongue, against man or beast: that ye may know how that Yahuah (LORD) doth put a difference between the Egyptians and Israel* (Exodus 11:7). The same severing word runs to the last plague: *I will sever in that day the land of Goshen, in which my people dwell* (Exodus 8:22). Yahuah (LORD) makes a distinction upon his own — covenant people set apart from Egypt, never blended into her.'),
+    ('canon','exodus',8,23,'canon','malachi',3,18,'free',
+     E'*Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not* (Malachi 3:18). The division Yahuah (LORD) set in Egypt — *I will put a division between my people and thy people* (Exodus 8:23) — is the same line the prophets carry to the end: a discerning between those who serve Yahuah (LORD) and those who do not. The flies that found every Egyptian house could not touch Goshen.'),
+    ('canon','exodus',8,23,'canon','romans',9,4,'free',
+     E'*Who are Israelites; to whom pertaineth the adoption, and the glory, and the covenants, and the giving of the law, and the service of Elohim (God), and the promises* (Romans 9:4). The division — *I will put a division between my people and thy people* (Exodus 8:23) — is no abolition of Yashar''el (Israel) but the marking of her: the adoption, the covenants, and the promises pertain to her still. Yahuah''s severing in Goshen is the first picture of a people kept distinct unto himself.'),
+    ('canon','exodus',8,24,'apocrypha','the-wisdom-of-solomon',16,9,'extras',
+     E'*For them the bitings of grasshoppers and flies killed, neither was there found any remedy for their life: for they were worthy to be punished by such* (Wisdom of Solomon 16:9). The restored wisdom-book reads the plague exactly as Yahuah (LORD) framed it: *there came a grievous swarm of flies into the house of Pharaoh... the land was corrupted by reason of the swarm of flies* (Exodus 8:24) — measured recompense on the oppressor, while Yahuah''s own sons the same creatures could not overcome.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-8-the-river-shall-bring-forth-frogs-abundantly',
+       E'The river shall bring forth frogs abundantly',
+       E'The second plague rises out of the very water of the Nile: *And the river shall bring forth frogs abundantly, which shall go up and come into thine house, and into thy bedchamber, and upon thy bed, and into the house of thy servants, and upon thy people, and into thine ovens, and into thy kneadingtroughs* (Exodus 8:3). Pharaoh''s whole household is overrun by the unclean swarm. Yashar''el (Israel) is taught to keep this judgment in memory: *Their land brought forth frogs in abundance, in the chambers of their kings* (Psalm 105:30); *He sent divers sorts of flies among them, which devoured them; and frogs, which destroyed them* (Psalm 78:45). The plague reaches even the chambers of the kings, that none might say Egypt''s gods withstood the hand of Yahuah (LORD). At the end of the age the frog is taken up as the very image of the deception that swarms upon the rulers of the earth: *And I saw three unclean spirits like frogs come out of the mouth of the dragon, and out of the mouth of the beast, and out of the mouth of the false prophet* (Revelation 16:13); *For they are the spirits of devils, working miracles, which go forth unto the kings of the earth and of the whole world, to gather them to the battle of that great day of El Shaddai (God Almighty)* (Revelation 16:14). As the frog filled Pharaoh''s house and his magicians aped the wonder, so the last deception works counterfeit miracles to harden the kings against Yahuah (LORD).',
+       sv.verse_id, ev.verse_id, 'free', 29175
+  FROM _s305_ex08_lookup sv, _s305_ex08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=8 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=8 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-8-this-is-the-finger-of-elohim',
+       E'This is the finger of Elohim',
+       E'At the third plague the counterfeit breaks. *And the magicians did so with their enchantments to bring forth lice, but they could not: so there were lice upon man, and upon beast* (Exodus 8:18). Where the river and the frogs had been mimicked, the dust of the earth obeys only one hand: *Stretch out thy rod, and smite the dust of the land, that it may become lice throughout all the land of Egypt* (Exodus 8:16). And so even Pharaoh''s wise men are forced to confess what they cannot reproduce: *Then the magicians said unto Pharaoh, This is the finger of Elohim (God)* (Exodus 8:19). That finger does not vanish from the story. In the Formed Son''s ministry it is the same power, naming itself by the same Tanakh phrase: *But if I with the finger of Elohim (God) cast out devils, no doubt the kingdom of Elohim (God) is come upon you* (Luke 11:20). The finger the imitators could not match in Egypt is the finger that casts out the unclean spirits and presses the kingdom of Yahuah (LORD) in upon the world.',
+       sv.verse_id, ev.verse_id, 'free', 29178
+  FROM _s305_ex08_lookup sv, _s305_ex08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=8 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=8 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-8-i-will-put-a-division-between-my-people-and-thy-people',
+       E'I will put a division between my people and thy people',
+       E'With the fourth plague Yahuah (LORD) draws a line through Egypt itself. *I will sever in that day the land of Goshen, in which my people dwell, that no swarms of flies shall be there; to the end thou mayest know that I am Yahuah (LORD) in the midst of the earth* (Exodus 8:22); *And I will put a division between my people and thy people: to morrow shall this sign be* (Exodus 8:23). The swarm that filled every Egyptian house — *there came a grievous swarm of flies into the house of Pharaoh... the land was corrupted by reason of the swarm of flies* (Exodus 8:24) — could not cross into Goshen. Yashar''el (Israel) is to remember the judgment: *He sent divers sorts of flies among them, which devoured them* (Psalm 78:45). The restored wisdom-book reads the recompense the same way: *For them the bitings of grasshoppers and flies killed, neither was there found any remedy for their life: for they were worthy to be punished by such* (Wisdom of Solomon 16:9) — measured judgment on the oppressor, while Yahuah''s own sons the creatures could not overcome. This division is the heartbeat of the whole deliverance, carried to the last plague — *that ye may know how that Yahuah (LORD) doth put a difference between the Egyptians and Israel* (Exodus 11:7) — and on to the prophets: *Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not* (Malachi 3:18). It is never the casting-off of Yashar''el (Israel) but the marking of her: *Who are Israelites; to whom pertaineth the adoption, and the glory, and the covenants, and the giving of the law, and the service of Elohim (God), and the promises* (Romans 9:4). The severing in Goshen is the first picture of a covenant people kept distinct unto Yahuah (LORD) himself.',
+       sv.verse_id, ev.verse_id, 'extras', 29181
+  FROM _s305_ex08_lookup sv, _s305_ex08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=8 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=8 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- MEMBERS — THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (8,3,'canon','revelation',16,13,1,E'Revelation 16:13 — *three unclean spirits like frogs* come out of the dragon, beast, and false prophet; the frog-plague taken up as end-time deception.'),
+    (8,3,'canon','revelation',16,14,2,E'Revelation 16:14 — *the spirits of devils, working miracles, which go forth unto the kings of the earth*; counterfeit wonders that harden the rulers, as Pharaoh''s magicians once aped the plague.'),
+    (8,6,'canon','psalms',105,30,3,E'Psalm 105:30 — *Their land brought forth frogs in abundance, in the chambers of their kings*; the plague reached even the seat of Pharaoh''s power.'),
+    (8,3,'canon','psalms',78,45,4,E'Psalm 78:45 — *frogs, which destroyed them*; Asaph rehearses the judgment so Yashar''el (Israel) tells the generations.')
+  ) AS m(src_v,src_v2,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-8-the-river-shall-bring-forth-frogs-abundantly'
+  JOIN _s305_ex08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=8 AND sv.verse_number=m.src_v2
+  JOIN _s305_ex08_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- MEMBERS — THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (8,19,'canon','luke',11,20,1,E'Luke 11:20 — *if I with the finger of Elohim (God) cast out devils*; the power the counterfeiters could not imitate casts out the unclean.'),
+    (8,16,'canon','luke',11,20,2,E'Luke 11:20 — the same finger that made the dust become lice (Exodus 8:16) breaks in upon the unclean spirits in the Formed Son''s ministry.')
+  ) AS m(src_v,src_v2,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-8-this-is-the-finger-of-elohim'
+  JOIN _s305_ex08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=8 AND sv.verse_number=m.src_v2
+  JOIN _s305_ex08_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- MEMBERS — THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (8,21,'canon','psalms',78,45,1,E'Psalm 78:45 — *He sent divers sorts of flies among them, which devoured them*; the threatened swarm remembered as devouring judgment.'),
+    (8,24,'apocrypha','the-wisdom-of-solomon',16,9,2,E'Wisdom of Solomon 16:9 — *the bitings of grasshoppers and flies killed* the enemy; measured recompense on the oppressor while Yahuah''s sons are spared.'),
+    (8,22,'canon','exodus',11,7,3,E'Exodus 11:7 — *Yahuah (LORD) doth put a difference between the Egyptians and Israel*; the same severing word carried to the last plague.'),
+    (8,23,'canon','malachi',3,18,4,E'Malachi 3:18 — *discern... between him that serveth Elohim (God) and him that serveth him not*; the division carried to the prophets'' end.'),
+    (8,23,'canon','romans',9,4,5,E'Romans 9:4 — *to whom pertaineth the adoption... the covenants... and the promises*; the division marks Yashar''el (Israel), never casts her off.')
+  ) AS m(src_v,src_v2,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-8-i-will-put-a-division-between-my-people-and-thy-people'
+  JOIN _s305_ex08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=8 AND sv.verse_number=m.src_v2
+  JOIN _s305_ex08_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_9.sql (Exodus 9) -----
+-- Chapter: Exodus 9 (murrain, boils, hail; "for this cause have I raised thee up")
+-- Tag: ex09   Session: s305   Sort band base: 29200 (step 3)
+--
+-- Exodus 9 coverage:
+--   v.1-2  (Let my people go / refusal)
+--          NT:     none warranted (the demand recurs; framed in keystone)
+--          Extras: none warranted
+--          Tanakh: none warranted (lateral within-Exodus)
+--   v.3-7  (a very grievous murrain on the cattle; Yahuah severs Yashar'el's cattle)
+--          NT:     none warranted
+--          Extras: none warranted (Wisdom retells the broader signs; bound to hail thread)
+--          Tanakh: Psalm 78:48,50 (cattle given to hail / life to pestilence) + Psalm 105:bound to hail -> THREAD 2
+--   v.7    (heart of Pharaoh was hardened)
+--          NT:     Romans 9:18 (whom he will he hardeneth) -> THREAD 1
+--          Extras: none warranted
+--          Tanakh: Exodus 8:15 self-hardening counter-witness -> THREAD 1
+--   v.8-12 (the boil with blains upon man and beast; the boil was upon the magicians)
+--          NT:     Revelation 16:2 (noisome grievous sore on them with the mark of the beast) -> THREAD 3
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 28:27,35 (the botch/boil of Egypt as covenant-sanction) -> THREAD 3
+--   v.13-16 (all my plagues / that thou mayest know there is none like me / FOR THIS CAUSE RAISED THEE UP)
+--          NT:     Romans 9:17 (the scripture saith unto Pharaoh -- quoted BY NAME), Romans 9:18 -> THREAD 1 (KEYSTONE)
+--          Extras: none warranted
+--          Tanakh: Exodus 8:15 (he hardened his heart -- self-hardening) -> THREAD 1
+--   v.18-26 (hail mingled with fire, very grievous; those who feared the word brought servants in; Goshen spared)
+--          NT:     Revelation 8:7 (hail and fire mingled with blood), Revelation 16:21 (the great hail) -> THREAD 4
+--          Extras: Wisdom of Solomon 16:16 (strange rains, hails, fire consumed), 16:22 (fire burning in the hail) -> THREAD 4
+--          Tanakh: Psalm 78:47-48 (vines with hail, cattle to hail), Psalm 105:32 (hail for rain, flaming fire) -> THREAD 4 / THREAD 2
+--   v.27-35 (I have sinned / Yahuah is righteous; he sinned yet more and hardened his heart)
+--          NT:     bound to keystone (self-hardening pattern) -> THREAD 1
+--          Extras: none warranted
+--          Tanakh: none warranted
+--
+-- THREADS (4):
+--   1. exodus-9-for-this-cause-have-i-raised-thee-up   [free]  -> Romans (NT) + Exodus lateral
+--        KEYSTONE. 9:16 quoted BY NAME at Romans 9:17; 9:18 hardening; Exod 8:15 self-hardening counter-witness.
+--        Frame: covenant judgment + glory of the Name, the self-hardening vessel of wrath -- NOT arbitrary reprobation of a people.
+--   2. exodus-9-a-very-grievous-murrain-on-the-cattle  [free]  -> Psalms (Tanakh)
+--   3. exodus-9-the-boil-of-egypt-upon-the-magicians   [free]  -> Deuteronomy (Tanakh) + Revelation (NT)
+--   4. exodus-9-hail-and-fire-mingled-very-grievous    [extras]-> Revelation (NT) + Psalms (Tanakh) + Wisdom of Solomon (apocrypha)
+
+CREATE TEMP VIEW _s305_ex09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: for this cause have I raised thee up (keystone)
+    ('canon','exodus',9,16,'canon','romans',9,17,'free',
+     E'*For the scripture saith unto Pharaoh, Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth* (Romans 9:17). Sha''ul quotes Exodus 9:16 to Pharaoh BY NAME, word for word: *And in very deed for this cause have I raised thee up, for to shew in thee my power; and that my name may be declared throughout all the earth* (Exodus 9:16). Yahuah (LORD) raises up and judges a self-hardening oppressor not to crush him arbitrarily but to *shew in thee my power* and that *my name may be declared throughout all the earth* — the whole plague-cycle is the glory of the Name made known to the nations.'),
+    ('canon','exodus',9,16,'canon','romans',9,18,'free',
+     E'*Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth* (Romans 9:18). The hardening at issue is Pharaoh''s — *And in very deed for this cause have I raised thee up* (Exodus 9:16) — and Pharaoh fitted himself: again and again *the heart of Pharaoh was hardened, and he did not let the people go* (Exodus 9:7) and *he sinned yet more, and hardened his heart* (Exodus 9:34). Yahuah hands the self-hardened man over to his own choosing; this is covenant judgment on a tyrant, not the reprobation of a people — the same passage ends gathering *my people, which were not my people* (Romans 9:25).'),
+    ('canon','exodus',9,7,'canon','romans',9,18,'free',
+     E'*Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth* (Romans 9:18). Where Yahuah (LORD) is said to harden, the text first shows the man hardening himself: *And the heart of Pharaoh was hardened, and he did not let the people go* (Exodus 9:7). The vessel of wrath shapes its own clay by repeated refusal before *Yahuah (LORD) hardened the heart of Pharaoh* (Exodus 9:12).'),
+    ('canon','exodus',9,16,'canon','exodus',8,15,'free',
+     E'*But when Pharaoh saw that there was respite, he hardened his heart, and hearkened not unto them; as Yahuah (LORD) had said* (Exodus 8:15). Before Yahuah is ever said to harden, Pharaoh hardens himself the moment relief comes — the self-hardening counter-witness to *for this cause have I raised thee up* (Exodus 9:16). The vessel of wrath fits itself to destruction by its own repeated choosing.'),
+    -- THREAD 2: a very grievous murrain on the cattle
+    ('canon','exodus',9,3,'canon','psalms',78,48,'free',
+     E'*He gave up their cattle also to the hail, and their flocks to hot thunderbolts* (Psalm 78:48). The psalmist sings the very judgment Exodus 9 narrates — *Behold, the hand of Yahuah (LORD) is upon thy cattle which is in the field... there shall be a very grievous murrain* (Exodus 9:3) — naming Egypt''s cattle struck down as the wondrous works to be told to the children (Psalm 78:4).'),
+    ('canon','exodus',9,6,'canon','psalms',78,50,'free',
+     E'*He made a way to his anger; he spared not their soul from death, but gave their life over to the pestilence* (Psalm 78:50). The grievous murrain that struck Egypt — *all the cattle of Egypt died: but of the cattle of the children of Yashar''el (Israel) died not one* (Exodus 9:6) — is sung as the pestilence by which Yahuah severed his own people from the oppressor.'),
+    -- THREAD 3: the boil of Egypt upon the magicians
+    ('canon','exodus',9,11,'canon','deuteronomy',28,27,'free',
+     E'*Yahuah (LORD) will smite thee with the botch of Egypt, and with the emerods, and with the scab, and with the itch, whereof thou canst not be healed* (Deuteronomy 28:27). The boil that fell on Egypt and silenced its sorcerers — *the magicians could not stand before Moses because of the boils; for the boil was upon the magicians* (Exodus 9:11) — is named *the botch of Egypt* and set as a covenant-sanction: the plague that judged the oppressor will fall on covenant-breaking Yashar''el too if she walks as Egypt walked.'),
+    ('canon','exodus',9,11,'canon','deuteronomy',28,35,'free',
+     E'*Yahuah (LORD) shall smite thee in the knees, and in the legs, with a sore botch that cannot be healed, from the sole of thy foot unto the top of thy head* (Deuteronomy 28:35). The same incurable boil — *a boil breaking forth with blains upon man, and upon beast* (Exodus 9:9) — stands in the Torah''s curse-list as a sanction within the covenant, the Egypt-plague turned witness against unfaithfulness.'),
+    ('canon','exodus',9,9,'canon','revelation',16,2,'free',
+     E'*And the first went, and poured out his vial upon the earth; and there fell a noisome and grievous sore upon the men which had the mark of the beast, and upon them which worshipped his image* (Revelation 16:2). The boil-plague is taken up in the bowls of wrath: as the boil struck Egypt''s counterfeiters — *the boil was upon the magicians* (Exodus 9:11) — so *a noisome and grievous sore* falls on the worshippers of the end-time counterfeit kingdom. *A boil breaking forth with blains upon man, and upon beast* (Exodus 9:9) becomes the pattern for the sore on those marked by the beast.'),
+    -- THREAD 4: hail and fire mingled, very grievous
+    ('canon','exodus',9,24,'canon','revelation',8,7,'free',
+     E'*The first angel sounded, and there followed hail and fire mingled with blood, and they were cast upon the earth: and the third part of trees was burnt up, and all green grass was burnt up* (Revelation 8:7). The Egypt-hail is taken up in the trumpets: *there was hail, and fire mingled with the hail, very grievous, such as there was none like it in all the land of Egypt* (Exodus 9:24). The fire-mingled hail that *brake every tree of the field* (Exodus 9:25) becomes the first trumpet that burns the trees and grass — the plagues of Egypt enlarged onto the whole earth.'),
+    ('canon','exodus',9,24,'canon','revelation',16,21,'free',
+     E'*And there fell upon men a great hail out of heaven, every stone about the weight of a talent: and men blasphemed Elohim (God) because of the plague of the hail; for the plague thereof was exceeding great* (Revelation 16:21). The last bowl is the Egypt-hail come to its full measure — *such as hath not been in Egypt since the foundation thereof even until now* (Exodus 9:18) — and as Pharaoh hardened after the hail ceased (Exodus 9:34), so the men under the great hail *blasphemed Elohim (God)* and repented not.'),
+    ('canon','exodus',9,23,'canon','psalms',78,47,'free',
+     E'*He destroyed their vines with hail, and their sycomore trees with frost* (Psalm 78:47). The psalm rehearses the seventh plague — *Yahuah (LORD) sent thunder and hail, and the fire ran along upon the ground* (Exodus 9:23) — counting the hail among the signs Yahuah wrought in the field of Zoan that the generations might not forget his works.'),
+    ('canon','exodus',9,23,'canon','psalms',105,32,'free',
+     E'*He gave them hail for rain, and flaming fire in their land* (Psalm 105:32). The hail-and-fire of Exodus 9 — *and the fire ran along upon the ground; and Yahuah (LORD) rained hail upon the land of Egypt* (Exodus 9:23) — is sung in the great covenant-psalm as Yahuah remembering *his covenant for ever* (Psalm 105:8) and bringing his people out to *keep his laws* (Psalm 105:45). The wonder serves the seed-promise, not mere wrath.'),
+    ('canon','exodus',9,24,'apocrypha','the-wisdom-of-solomon',16,16,'extras',
+     E'*For the ungodly, that denied to know you, were scourged by the strength of your arm: with strange rains, hails, and showers, were they persecuted, that they could not avoid, and through fire were they consumed* (Wisdom of Solomon 16:16). The sage retells the seventh plague as a measured wonder against *the ungodly, that denied to know you* — Pharaoh''s house — exactly mirroring *hail, and fire mingled with the hail, very grievous* (Exodus 9:24).'),
+    ('canon','exodus',9,24,'apocrypha','the-wisdom-of-solomon',16,22,'extras',
+     E'*But snow and ice endured the fire, and melted not, that they might know that fire burning in the hail, and sparkling in the rain, did destroy the fruits of the enemies* (Wisdom of Solomon 16:22). Wisdom marvels at the paradox Exodus records without comment — *fire mingled with the hail, very grievous* (Exodus 9:24) — fire and ice held together by Yahuah''s command, sparing the righteous and destroying *the fruits of the enemies*, just as Goshen alone had no hail (Exodus 9:26).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-9-for-this-cause-have-i-raised-thee-up',
+       E'For This Cause Have I Raised Thee Up — the Power and the Name Declared',
+       E'At the heart of the plague-cycle Yahuah (LORD) tells Pharaoh why he yet stands: *And in very deed for this cause have I raised thee up, for to shew in thee my power; and that my name may be declared throughout all the earth* (Exodus 9:16). Sha''ul quotes this verse to Pharaoh BY NAME: *For the scripture saith unto Pharaoh, Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth* (Romans 9:17), and draws the lesson, *whom he will he hardeneth* (Romans 9:18). Read through the lens this is covenant judgment and the glory of the Name, not arbitrary reprobation of a people: Yahuah raises up a tyrant-oppressor and judges him so that *there is none like me in all the earth* (Exodus 9:14) is made known to the nations. And the hardening is no riddle — the vessel of wrath fits itself. Before Yahuah is ever said to harden, Pharaoh hardens himself: *when Pharaoh saw that there was respite, he hardened his heart* (Exodus 8:15); *the heart of Pharaoh was hardened, and he did not let the people go* (Exodus 9:7); and even after he confesses *I have sinned this time: Yahuah (LORD) is righteous* (Exodus 9:27), *he sinned yet more, and hardened his heart* (Exodus 9:34). Only then does *Yahuah (LORD) harden* (Exodus 9:12) — handing the self-hardened man over to his own choosing. The same chapter of Romans that quotes this verse ends not in rejection but in ingathering: *I will call them my people, which were not my people* (Romans 9:25) — the two-house mercy that the display of power and Name was always serving.',
+       sv.verse_id, ev.verse_id, 'free', 29200
+  FROM _s305_ex09_lookup sv, _s305_ex09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=9 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-9-a-very-grievous-murrain-on-the-cattle',
+       E'A Very Grievous Murrain — Yahuah Severs the Cattle of Yashar''el',
+       E'The fifth plague falls on Egypt''s livestock: *Behold, the hand of Yahuah (LORD) is upon thy cattle which is in the field... there shall be a very grievous murrain* (Exodus 9:3), and Yahuah draws the line of the covenant straight through it — *Yahuah (LORD) shall sever between the cattle of Yashar''el (Israel) and the cattle of Egypt: and there shall nothing die of all that is the children''s of Yashar''el (Israel)* (Exodus 9:4), so that *all the cattle of Egypt died: but of the cattle of the children of Yashar''el (Israel) died not one* (Exodus 9:6). The Psalms sing this very judgment back to the children that they not forget: *He gave up their cattle also to the hail, and their flocks to hot thunderbolts* (Psalm 78:48), and *He made a way to his anger; he spared not their soul from death, but gave their life over to the pestilence* (Psalm 78:50). The wonder is told as covenant memory — *shewing to the generation to come the praises of Yahuah (LORD)* (Psalm 78:4) — the same Yahuah who severs his people from the oppressor.',
+       sv.verse_id, ev.verse_id, 'free', 29203
+  FROM _s305_ex09_lookup sv, _s305_ex09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=9 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-9-the-boil-of-egypt-upon-the-magicians',
+       E'The Boil of Egypt — the Counterfeiters Struck, the Sore of the Beast',
+       E'The sixth plague strikes the very sorcerers who had aped Yahuah''s signs: ashes of the furnace become *a boil breaking forth with blains upon man, and upon beast, throughout all the land of Egypt* (Exodus 9:9), and now *the magicians could not stand before Moses because of the boils; for the boil was upon the magicians, and upon all the Egyptians* (Exodus 9:11). The counterfeiters are silenced in their own flesh. The Torah names this *the botch of Egypt* and sets it as a covenant-sanction — not the Torah as curse, but the Deuteronomy 28 exile-judgment for covenant-breaking: *Yahuah (LORD) will smite thee with the botch of Egypt, and with the emerods, and with the scab, and with the itch, whereof thou canst not be healed* (Deuteronomy 28:27), *with a sore botch that cannot be healed, from the sole of thy foot unto the top of thy head* (Deuteronomy 28:35). The same plague is taken up at the end in the bowls of wrath, falling now on the worshippers of the last counterfeit kingdom: *there fell a noisome and grievous sore upon the men which had the mark of the beast, and upon them which worshipped his image* (Revelation 16:2). The Egypt-boil that judged the magicians judges every counterfeit power that sets itself against Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 29206
+  FROM _s305_ex09_lookup sv, _s305_ex09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=9 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-9-hail-and-fire-mingled-very-grievous',
+       E'Hail and Fire Mingled — the Wonder Taken Up in the Trumpets and Bowls',
+       E'The seventh plague is the strangest wonder of all: *Yahuah (LORD) sent thunder and hail, and the fire ran along upon the ground; and Yahuah (LORD) rained hail upon the land of Egypt* (Exodus 9:23), so that *there was hail, and fire mingled with the hail, very grievous, such as there was none like it in all the land of Egypt since it became a nation* (Exodus 9:24) — fire and ice held together by Yahuah''s command. Even in Egypt the wonder divides a remnant: *He that feared the word of Yahuah (LORD) among the servants of Pharaoh made his servants and his cattle flee into the houses* (Exodus 9:20), while *Only in the land of Goshen, where the children of Yashar''el (Israel) were, was there no hail* (Exodus 9:26). The Psalms sing it — *He destroyed their vines with hail, and their sycomore trees with frost* (Psalm 78:47); *He gave them hail for rain, and flaming fire in their land* (Psalm 105:32) — bound to the covenant Yahuah *remembered for ever* (Psalm 105:8). The Wisdom of Solomon marvels at the same paradox: *with strange rains, hails, and showers, were they persecuted... and through fire were they consumed* (Wisdom of Solomon 16:16), *fire burning in the hail, and sparkling in the rain, did destroy the fruits of the enemies* (Wisdom of Solomon 16:22) — the measured wonder that struck the ungodly yet spared the righteous. And the apocalypse takes it up onto the whole earth: *there followed hail and fire mingled with blood, and they were cast upon the earth* (Revelation 8:7), and at the last, *there fell upon men a great hail out of heaven, every stone about the weight of a talent* (Revelation 16:21). The plague of Egypt is the rehearsal of the day of Yahuah.',
+       sv.verse_id, ev.verse_id, 'extras', 29209
+  FROM _s305_ex09_lookup sv, _s305_ex09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=9 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Romans 9:17 quotes Exodus 9:16 to Pharaoh BY NAME — the power shewn and the Name declared throughout all the earth.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=16
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-for-this-cause-have-i-raised-thee-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Romans 9:18 — *whom he will he hardeneth*: Yahuah hands the self-hardened vessel over, ending in mercy on *my people, which were not my people* (Romans 9:25).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=16
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-for-this-cause-have-i-raised-thee-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 9:7 — Pharaoh''s own hardening precedes Yahuah''s; Romans 9:18 read against the self-hardening text.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-for-this-cause-have-i-raised-thee-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Exodus 8:15 — the self-hardening counter-witness: Pharaoh hardens himself the moment respite comes, fitting the vessel of wrath to destruction.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=16
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=8 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-for-this-cause-have-i-raised-thee-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 78:48 — *He gave up their cattle also to the hail*: the murrain sung as covenant memory to the generations.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=3
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-a-very-grievous-murrain-on-the-cattle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 78:50 — *gave their life over to the pestilence*: the severing of Yashar''el''s cattle from Egypt''s.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=6
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=50
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-a-very-grievous-murrain-on-the-cattle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 28:27 — *the botch of Egypt*: the boil named in the Torah''s covenant-sanction list.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=11
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-the-boil-of-egypt-upon-the-magicians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 28:35 — *a sore botch that cannot be healed*: the incurable Egypt-boil as covenant witness.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=11
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-the-boil-of-egypt-upon-the-magicians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Revelation 16:2 — the boil-plague poured out in the bowls upon them with the mark of the beast; the counterfeiters struck again.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=9
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=16 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-the-boil-of-egypt-upon-the-magicians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Revelation 8:7 — *hail and fire mingled with blood*: the first trumpet takes up the Egypt-hail onto the whole earth.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=24
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=8 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-hail-and-fire-mingled-very-grievous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Revelation 16:21 — the great hail of the last bowl, the Egypt-hail come to its full measure; men blaspheme and repent not, as Pharaoh hardened.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=24
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=16 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-hail-and-fire-mingled-very-grievous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 78:47 — *He destroyed their vines with hail*: the seventh plague sung among the wonders of Zoan.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=23
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-hail-and-fire-mingled-very-grievous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalm 105:32 — *He gave them hail for rain, and flaming fire in their land*: the hail bound to the covenant Yahuah remembered for ever.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=23
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-hail-and-fire-mingled-very-grievous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Wisdom of Solomon 16:16 — the hail/fire retold as a measured wonder scourging the ungodly that denied to know Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=24
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=16 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-hail-and-fire-mingled-very-grievous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Wisdom of Solomon 16:22 — *fire burning in the hail*: the paradox of fire and ice held together, sparing the righteous (Goshen) and destroying the enemies.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=9 AND sv.verse_number=24
+  JOIN _s305_ex09_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=16 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-9-hail-and-fire-mingled-very-grievous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_10.sql (Exodus 10) -----
+-- Exodus 10 — the plague of locusts and the thick darkness over Egypt.
+-- Tag: ex10   Session: s305   Sort band: 29225 (step 3: 29225, 29228, 29231)
+--
+-- Exodus 10 coverage:
+--   v.1-2  (I have hardened his heart... that thou mayest tell in the ears of thy son... that ye may know how that I am Yahuah)
+--          NT:     none warranted (mandate sung/restated within the Tanakh itself)
+--          Extras: none warranted
+--          Tanakh: Psalm 78:4, Psalm 78:6 (shew to the generation to come); Deuteronomy 6:20-21 (the son's question answered with the Exodus) → THREAD 1
+--   v.3    (let my people go that they may serve me) — covered laterally inside thread 1's frame
+--          NT/Extras/Tanakh: none warranted as separate thread
+--   v.4-6  (the locusts shall cover the face of the earth... eat every tree)
+--          NT:     Revelation 9:3 (locusts upon the earth out of the smoke) → THREAD 2
+--          Extras: none warranted
+--          Tanakh: Joel 1:4, Joel 2:1-2 (the locust army = the day of Yahuah); Psalm 78:46, Psalm 105:34 (he sang the plague) → THREAD 2
+--   v.7-11 (Pharaoh's servants, who shall go, hold a feast unto Yahuah) — narrative; none warranted
+--   v.12-15 (Moses stretched out the rod... the locusts... the land was darkened... no green thing) — joins THREAD 2
+--   v.16-20 (Pharaoh's confession, the west wind, the heart hardened) — narrative; none warranted
+--   v.21-23 ★ (darkness which may be felt... they saw not one another... but all the children of Yashar'el had light in their dwellings)
+--          NT:     Revelation 16:10 (his kingdom was full of darkness) → THREAD 3
+--          Extras: Wisdom of Solomon 17:20, 18:1, 18:4 (Egyptians in darkness, thy saints a very great light) → THREAD 3
+--          Tanakh: Psalm 105:28 (he sent darkness); Isaiah 60:1-2 (darkness covers the earth but Yahuah shall arise upon thee) → THREAD 3
+--   v.24-29 (negotiation, not an hoof left behind, see my face no more) — narrative; none warranted
+--
+-- THREADS:
+--   1. exodus-10-tell-it-in-the-ears-of-thy-son  [free; canon Tanakh] — the plagues as the story retold to the generations (Ps 78, Deut 6)
+--   2. exodus-10-the-locusts-and-the-day-of-yahuah  [free; canon Tanakh + NT] — the locust plague as the prophetic type of the Day of Yahuah's judgment-army (Joel 1-2, Ps 78/105, Rev 9)
+--   3. exodus-10-the-thick-darkness-and-the-light-in-their-dwellings  [extras; canon Tanakh + NT + apocrypha] — the light/darkness division on the two peoples (Ps 105, Isa 60, Rev 16, Wisdom of Solomon 17-18)
+
+CREATE TEMP VIEW _s305_ex10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: tell it in the ears of thy son
+    ('canon','exodus',10,2,'canon','psalms',78,4,'free',
+     E'*We will not hide them from their children, shewing to the generation to come the praises of Yahuah (LORD), and his strength, and his wonderful works that he hath done.* (Psalm 78:4) Asaph sings what Yahuah commands at the locust-plague: *that thou mayest tell in the ears of thy son, and of thy son''s son, what things I have wrought in Egypt* (Exodus 10:2). The signs upon Egypt were never for that hour only — they are the wonderful works handed down the generations so the children might know Yahuah.'),
+    ('canon','exodus',10,2,'canon','psalms',78,6,'free',
+     E'*That the generation to come might know them, even the children which should be born; who should arise and declare them to their children:* (Psalm 78:6) The very purpose Yahuah names at the plague — *that ye may know how that I am Yahuah (LORD)* (Exodus 10:2) — is the purpose Asaph carries forward: the wonders are taught so each generation yet unborn declares them again to its own.'),
+    ('canon','exodus',10,2,'canon','deuteronomy',6,20,'free',
+     E'*And when thy son asketh thee in time to come, saying, What mean the testimonies, and the statutes, and the judgments, which Yahuah Eloheinu (the LORD our God) hath commanded you?* (Deuteronomy 6:20) Moses builds the son''s question into the covenant itself — the same *thy son, and of thy son''s son* (Exodus 10:2) who must be told. The remembrance is not optional memory; it is Torah-bound catechesis.'),
+    ('canon','exodus',10,2,'canon','deuteronomy',6,21,'free',
+     E'*Then thou shalt say unto thy son, We were Pharaoh''s bondmen in Egypt; and Yahuah (LORD) brought us out of Egypt with a mighty hand:* (Deuteronomy 6:21) The answer to the son''s question is the Exodus — exactly *what things I have wrought in Egypt, and my signs which I have done among them* (Exodus 10:2). The deliverance is the family story Yashar''el (Israel) is bound to retell.'),
+
+    -- THREAD 2: the locusts and the day of Yahuah
+    ('canon','exodus',10,4,'canon','joel',1,4,'free',
+     E'*That which the palmerworm hath left hath the locust eaten; and that which the locust hath left hath the cankerworm eaten; and that which the cankerworm hath left hath the caterpiller eaten.* (Joel 1:4) Yahuah''s threat to Pharaoh — *to morrow will I bring the locusts into thy coast* (Exodus 10:4) — becomes Joel''s pattern for the day of Yahuah: wave upon devouring wave, the consuming army that strips the land bare.'),
+    ('canon','exodus',10,5,'canon','joel',2,1,'free',
+     E'*Blow ye the trumpet in Zion, and sound an alarm in my holy mountain: let all the inhabitants of the land tremble: for the day of Yahuah (LORD) cometh, for it is nigh at hand;* (Joel 2:1) The Egyptian locust that *shall cover the face of the earth, that one cannot be able to see the earth* (Exodus 10:5) is the figure Joel lifts into prophecy — the locust-army announcing the day of Yahuah is at hand.'),
+    ('canon','exodus',10,15,'canon','joel',2,2,'free',
+     E'*A day of darkness and of gloominess, a day of clouds and of thick darkness, as the morning spread upon the mountains: a great people and a strong; there hath not been ever the like, neither shall be any more after it, even to the years of many generations.* (Joel 2:2) Moses says of the Egyptian swarm *before them there were no such locusts as they, neither after them shall be such* — and the land *was darkened* (Exodus 10:14-15). Joel''s judgment-host is the same unmatched locust-darkness raised to the eschaton.'),
+    ('canon','exodus',10,15,'canon','psalms',78,46,'free',
+     E'*He gave also their increase unto the caterpiller, and their labour unto the locust.* (Psalm 78:46) Asaph numbers the locust among the plague-signs he is handing to the children: the swarm that *did eat every herb of the land, and all the fruit of the trees* (Exodus 10:15) is sung as Yahuah''s own act of judgment upon Egypt.'),
+    ('canon','exodus',10,15,'canon','psalms',105,34,'free',
+     E'*He spake, and the locusts came, and caterpillers, and that without number,* (Psalm 105:34) The psalmist retells the very plague: at Yahuah''s word the locusts come without number, *and there remained not any green thing in the trees, or in the herbs of the field* (Exodus 10:15). The history is sung as covenant memory.'),
+    ('canon','exodus',10,4,'canon','revelation',9,3,'free',
+     E'*And there came out of the smoke locusts upon the earth: and unto them was given power, as the scorpions of the earth have power.* (Revelation 9:3) The plague Yahuah brought *into thy coast* (Exodus 10:4) returns at the trumpet-judgment — the locust out of the bottomless pit, the Egyptian sign carried forward to the day of Yahuah against the unsealed.'),
+
+    -- THREAD 3: the thick darkness and the light in their dwellings
+    ('canon','exodus',10,21,'canon','psalms',105,28,'free',
+     E'*He sent darkness, and made it dark; and they rebelled not against his word.* (Psalm 105:28) The psalmist sings the ninth plague plainly: Yahuah said *Stretch out thine hand toward heaven, that there may be darkness over the land of Egypt, even darkness which may be felt* (Exodus 10:21), and he sent it and made it dark.'),
+    ('canon','exodus',10,23,'canon','isaiah',60,2,'free',
+     E'*For, behold, the darkness shall cover the earth, and gross darkness the people: but Yahuah (LORD) shall arise upon thee, and his glory shall be seen upon thee.* (Isaiah 60:2) The plague drew the line — *they saw not one another... but all the children of Yashar''el (Israel) had light in their dwellings* (Exodus 10:23). Isaiah prophesies that same set-apart division at the end: darkness over the nations, but Yahuah''s light risen upon his covenant people.'),
+    ('canon','exodus',10,23,'canon','isaiah',60,1,'free',
+     E'*Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee.* (Isaiah 60:1) While Egypt sat in darkness that could be felt, *all the children of Yashar''el (Israel) had light in their dwellings* (Exodus 10:23). Isaiah calls that same people to arise and shine — the light kept in their dwellings becomes the covenant glory that is risen upon them.'),
+    ('canon','exodus',10,21,'canon','revelation',16,10,'free',
+     E'*And the fifth angel poured out his vial upon the seat of the beast; and his kingdom was full of darkness; and they gnawed their tongues for pain,* (Revelation 16:10) The *darkness which may be felt* (Exodus 10:21) over Pharaoh''s throne returns upon the throne of the beast — his kingdom full of darkness, the Egyptian plague-sign poured out at the end on the kingdom that will not let Yahuah''s people go.'),
+    ('canon','exodus',10,23,'apocrypha','the-wisdom-of-solomon',17,20,'extras',
+     E'*For the whole world shined with clear light, and none were hindered in their labour:* (Wisdom of Solomon 17:20) Wisdom retells the ninth plague at length — while the Egyptians lay bound in a long night, the whole world for Yashar''el (Israel) shined with clear light, the very distinction of Exodus 10:23: *all the children of Yashar''el (Israel) had light in their dwellings.*'),
+    ('canon','exodus',10,23,'apocrypha','the-wisdom-of-solomon',18,1,'extras',
+     E'*Nevertheless your saints had a very great light, whose voice they hearing, and not seeing their shape, because they also had not suffered the same things, they counted them happy.* (Wisdom of Solomon 18:1) The set-apart people kept their light when Egypt could not see — *but all the children of Yashar''el (Israel) had light in their dwellings* (Exodus 10:23). Wisdom names them Yahuah''s saints who had a very great light in the same hour of darkness.'),
+    ('canon','exodus',10,23,'apocrypha','the-wisdom-of-solomon',18,4,'extras',
+     E'*For they were worthy to be deprived of light and imprisoned in darkness, who had kept your sons shut up, by whom the uncorrupt light of the law was to be given to the world.* (Wisdom of Solomon 18:4) Wisdom reads the plague as covenant justice: those who imprisoned Yahuah''s sons are themselves imprisoned in darkness, while the people who carry *the uncorrupt light of the law* keep their light — the same light in the dwellings of Exodus 10:23.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-10-tell-it-in-the-ears-of-thy-son',
+       E'Tell It in the Ears of Thy Son: the Plagues Handed to the Generations',
+       E'At the locust-plague Yahuah (LORD) gives the reason the signs are wrought: *And that thou mayest tell in the ears of thy son, and of thy son''s son, what things I have wrought in Egypt, and my signs which I have done among them; that ye may know how that I am Yahuah (LORD).* (Exodus 10:2) The wonders upon Egypt were never spectacle for one hour — they are covenant memory to be retold. Asaph sings exactly this mandate: *We will not hide them from their children, shewing to the generation to come the praises of Yahuah (LORD), and his strength, and his wonderful works that he hath done.* (Psalm 78:4) — *That the generation to come might know them, even the children which should be born; who should arise and declare them to their children:* (Psalm 78:6) And Moses writes the son''s question into the Torah itself: *And when thy son asketh thee in time to come, saying, What mean the testimonies, and the statutes, and the judgments, which Yahuah Eloheinu (the LORD our God) hath commanded you?* (Deuteronomy 6:20) The answer is the Exodus: *Then thou shalt say unto thy son, We were Pharaoh''s bondmen in Egypt; and Yahuah (LORD) brought us out of Egypt with a mighty hand:* (Deuteronomy 6:21) The deliverance is the family story Yashar''el (Israel) is bound to keep telling.',
+       sv.verse_id, ev.verse_id, 'free', 29225
+  FROM _s305_ex10_lookup sv, _s305_ex10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=10 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-10-the-locusts-and-the-day-of-yahuah',
+       E'The Locusts: the Devouring Army and the Day of Yahuah',
+       E'Yahuah (LORD) threatens Pharaoh: *to morrow will I bring the locusts into thy coast: And they shall cover the face of the earth, that one cannot be able to see the earth... and shall eat every tree which groweth for you out of the field* (Exodus 10:4-5), and so it came — *the locusts went up over all the land of Egypt... before them there were no such locusts as they, neither after them shall be such* (Exodus 10:14), until *the land was darkened... and there remained not any green thing* (Exodus 10:15). Asaph and the psalmist hand the plague to the children as covenant memory: *He gave also their increase unto the caterpiller, and their labour unto the locust.* (Psalm 78:46) — *He spake, and the locusts came, and caterpillers, and that without number,* (Psalm 105:34) Then Joel lifts the swarm into prophecy: *That which the palmerworm hath left hath the locust eaten; and that which the locust hath left hath the cankerworm eaten...* (Joel 1:4) — *Blow ye the trumpet in Zion... for the day of Yahuah (LORD) cometh* (Joel 2:1) — *A day of darkness and of gloominess... a great people and a strong; there hath not been ever the like, neither shall be any more after it* (Joel 2:2). The unmatched Egyptian locust becomes the unmatched judgment-army of the day of Yahuah. And it returns at the last trumpet: *And there came out of the smoke locusts upon the earth: and unto them was given power, as the scorpions of the earth have power.* (Revelation 9:3) The plague-sign upon Egypt is the prophetic type of Yahuah''s judgment-host upon the unsealed.',
+       sv.verse_id, ev.verse_id, 'free', 29228
+  FROM _s305_ex10_lookup sv, _s305_ex10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=10 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=10 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-10-the-thick-darkness-and-the-light-in-their-dwellings',
+       E'The Thick Darkness and the Light in Their Dwellings: the Division on Two Peoples',
+       E'The ninth plague draws the line through the land: *Stretch out thine hand toward heaven, that there may be darkness over the land of Egypt, even darkness which may be felt.* (Exodus 10:21) — *and there was a thick darkness in all the land of Egypt three days: They saw not one another, neither rose any from his place for three days: but all the children of Yashar''el (Israel) had light in their dwellings.* (Exodus 10:22-23) The psalmist sings it: *He sent darkness, and made it dark; and they rebelled not against his word.* (Psalm 105:28) Isaiah prophesies the same set-apart division at the end of days: *Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee.* (Isaiah 60:1) — *For, behold, the darkness shall cover the earth, and gross darkness the people: but Yahuah (LORD) shall arise upon thee, and his glory shall be seen upon thee.* (Isaiah 60:2) The felt-darkness over Pharaoh returns upon the throne of the beast: *the fifth angel poured out his vial upon the seat of the beast; and his kingdom was full of darkness* (Revelation 16:10). And the restored library retells the plague at length — *For the whole world shined with clear light, and none were hindered in their labour:* (Wisdom of Solomon 17:20) — *Nevertheless your saints had a very great light* (Wisdom of Solomon 18:1) — naming the reason in covenant terms: *who had kept your sons shut up, by whom the uncorrupt light of the law was to be given to the world.* (Wisdom of Solomon 18:4) The light kept in the dwellings of Yashar''el (Israel) is the light of the covenant people, divided by Yahuah from the darkness of those who will not let them go.',
+       sv.verse_id, ev.verse_id, 'extras', 29231
+  FROM _s305_ex10_lookup sv, _s305_ex10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=10 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=10 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- THREAD 1: tell it in the ears of thy son
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (2,'canon','psalms',78,4,1,E'Psalm 78:4 — *shewing to the generation to come the praises of Yahuah (LORD)*; the plague-signs handed down so the children may know.'),
+    (2,'canon','psalms',78,6,2,E'Psalm 78:6 — *that the generation to come might know them, even the children which should be born*; Yahuah''s named purpose, that ye may know I am Yahuah, carried forward.'),
+    (2,'canon','deuteronomy',6,20,3,E'Deuteronomy 6:20 — *when thy son asketh thee in time to come*; the son''s question built into the Torah, the same son who must be told.'),
+    (2,'canon','deuteronomy',6,21,4,E'Deuteronomy 6:21 — *We were Pharaoh''s bondmen in Egypt; and Yahuah (LORD) brought us out*; the answer is the Exodus itself.')
+  ) AS m(src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=10 AND sv.verse_number=m.src_v
+  JOIN _s305_ex10_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-10-tell-it-in-the-ears-of-thy-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: the locusts and the day of Yahuah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (4,'canon','joel',1,4,1,E'Joel 1:4 — *that which the locust hath left hath the cankerworm eaten*; the devouring wave-on-wave pattern drawn from the Egyptian swarm.'),
+    (5,'canon','joel',2,1,2,E'Joel 2:1 — *the day of Yahuah (LORD) cometh, for it is nigh at hand*; the locust covering the earth becomes the alarm of the day of Yahuah.'),
+    (15,'canon','joel',2,2,3,E'Joel 2:2 — *a great people and a strong; there hath not been ever the like*; the unmatched Egyptian locust raised to the eschatological judgment-host.'),
+    (15,'canon','psalms',78,46,4,E'Psalm 78:46 — *he gave their labour unto the locust*; the swarm sung as Yahuah''s plague-sign upon Egypt.'),
+    (15,'canon','psalms',105,34,5,E'Psalm 105:34 — *the locusts came, and caterpillers, and that without number*; the plague retold as covenant memory.'),
+    (4,'canon','revelation',9,3,6,E'Revelation 9:3 — *there came out of the smoke locusts upon the earth*; the plague-sign returns at the trumpet-judgment against the unsealed.')
+  ) AS m(src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=10 AND sv.verse_number=m.src_v
+  JOIN _s305_ex10_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-10-the-locusts-and-the-day-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: the thick darkness and the light in their dwellings
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (21,'canon','psalms',105,28,1,E'Psalm 105:28 — *He sent darkness, and made it dark*; the psalmist sings the ninth plague plainly.'),
+    (23,'canon','isaiah',60,1,2,E'Isaiah 60:1 — *Arise, shine; for thy light is come*; the light kept in the dwellings becomes the covenant glory risen upon the people.'),
+    (23,'canon','isaiah',60,2,3,E'Isaiah 60:2 — *darkness shall cover the earth... but Yahuah (LORD) shall arise upon thee*; the same set-apart light/darkness division at the end of days.'),
+    (21,'canon','revelation',16,10,4,E'Revelation 16:10 — *his kingdom was full of darkness*; the felt-darkness over Pharaoh returns upon the throne of the beast.'),
+    (23,'apocrypha','the-wisdom-of-solomon',17,20,5,E'Wisdom of Solomon 17:20 — *the whole world shined with clear light*; the restored library retells the plague-distinction of Yashar''el (Israel).'),
+    (23,'apocrypha','the-wisdom-of-solomon',18,1,6,E'Wisdom of Solomon 18:1 — *your saints had a very great light*; the set-apart people keep their light while Egypt cannot see.'),
+    (23,'apocrypha','the-wisdom-of-solomon',18,4,7,E'Wisdom of Solomon 18:4 — *the uncorrupt light of the law was to be given to the world*; the plague read as covenant justice on those who imprisoned Yahuah''s sons.')
+  ) AS m(src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=10 AND sv.verse_number=m.src_v
+  JOIN _s305_ex10_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-10-the-thick-darkness-and-the-light-in-their-dwellings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_11.sql (Exodus 11) -----
+-- Chapter: Exodus 11 — the announcement of the tenth plague (death of the firstborn);
+--          the distinction Yahuah puts between Egypt and Yashar'el; the spoiling of Egypt.
+-- Tag: ex11   Session prefix: s305   Sort band base: 29250 (step 3: 29250, 29253, 29256)
+-- NOTE: the Passover/blood/firstborn-EXECUTION proper is ch12 (already built) — this chapter is
+--       the ANNOUNCEMENT; threads anchor on the announced word, NOT on the ch12 Passover thread.
+--
+-- Exodus 11 coverage:
+--   v.1  (one plague more; thrust you out)        NT: none warranted  Extras: none warranted  Tanakh: none warranted (setup line)
+--   v.2-3 (borrow jewels of silver/gold; favour)  NT: none warranted  Extras: Jasher 80:59 (great riches per the oath to Abraham)
+--                                                  Tanakh: Genesis 15:14 (come out with great substance) / Psalm 105:37 (forth with silver and gold)
+--                                                  -> thread: exodus-11-they-spoiled-the-egyptians-with-jewels-of-silver-and-gold
+--   v.4-6 (about midnight; all the firstborn die; great cry)
+--                                                  NT: Hebrews 11:28 (he that destroyed the firstborn)
+--                                                  Extras: Jubilees 49:2 (Mastema let loose to slay the firstborn) / Wisdom 18:5 (their children taken, measure-for-measure)
+--                                                  Tanakh: Exodus 4:22-23 (Yashar'el my firstborn / I will slay thy firstborn) / Exodus 1:22 (every son into the river) / Psalm 78:51 / Psalm 105:36
+--                                                  -> thread: exodus-11-and-all-the-firstborn-in-egypt-shall-die
+--   v.7  (no dog move his tongue; Yahuah puts a difference between Egypt and Yashar'el)
+--                                                  NT: Romans 9:4 (to whom pertaineth the adoption)
+--                                                  Extras: Jubilees 49:4 (passed by Israel, neither cattle, man, nor dog) / Jasher 80:46 (dogs raked the firstborn of Egypt) / Wisdom 18:13 (acknowledged this people to be the sons of Yahuah)
+--                                                  Tanakh: Exodus 8:23 (a division between my people and thy people) / Exodus 9:4 (sever between the cattle) / Malachi 3:18 (discern between him that serveth Elohim and him that serveth not) / Malachi 3:17 (my jewels; spare his own son that serveth him)
+--                                                  -> thread: exodus-11-yahuah-puts-a-difference-between-egypt-and-yasharel
+--   v.8  (servants bow; get thee out; great anger) NT: none warranted  Extras: none warranted  Tanakh: none warranted (narrative)
+--   v.9-10 (Pharaoh shall not hearken; wonders multiplied; heart hardened)
+--                                                  NT: none warranted  Extras: none warranted  Tanakh: covered by the hardening threads in earlier chapters (do not duplicate)
+--
+-- Threads (slug -> target libraries):
+--   exodus-11-and-all-the-firstborn-in-egypt-shall-die                       [extras] Tanakh + NT + Jubilees + Wisdom of Solomon
+--   exodus-11-yahuah-puts-a-difference-between-egypt-and-yasharel            [extras] Tanakh + NT + Jubilees + Jasher + Wisdom of Solomon
+--   exodus-11-they-spoiled-the-egyptians-with-jewels-of-silver-and-gold     [extras] Tanakh + Jasher
+--
+-- Framework-load-bearing framing:
+--   * v.4-6 framed as MEASURE-FOR-MEASURE against Exodus 4:22-23 (Yashar'el my son, my firstborn)
+--     and Exodus 1:22 (Pharaoh's drowning of the Hebrew sons): Egypt struck at Yahuah's firstborn-son
+--     people, so its own firstborn now fall. Wisdom 18:5 makes the reciprocity explicit. NO ch12 rebuild.
+--   * v.7 framed as the REDEMPTIVE DISTINCTION on the one set-apart people (never replacement) —
+--     Romans 9:4 keeps the adoption with Yashar'el, Malachi 3:18 carries the same dividing line forward.
+
+CREATE TEMP VIEW _s305_ex11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================================
+-- B. cross_references
+-- ============================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: and all the firstborn in Egypt shall die (vv.4-6)
+    ('canon','exodus',11,5,'canon','exodus',4,22,'free',
+     E'*And thou shalt say unto Pharaoh, Thus saith Yahuah (LORD), Yashar''el (Israel) is my son, even my firstborn* (Exodus 4:22). The midnight word — *all the firstborn in the land of Egypt shall die, from the firstborn of Pharaoh that sitteth upon his throne* (Exodus 11:5) — falls as measure-for-measure: Egypt struck at Yahuah''s firstborn-son people, so the firstborn of Egypt are required.'),
+    ('canon','exodus',11,5,'canon','exodus',4,23,'free',
+     E'*And I say unto thee, Let my son go, that he may serve me: and if thou refuse to let him go, behold, I will slay thy son, even thy firstborn* (Exodus 4:23). The threat spoken at the burning-bush commission is now the announced deed: *all the firstborn in the land of Egypt shall die* (Exodus 11:5). The word does not return void.'),
+    ('canon','exodus',11,6,'canon','exodus',1,22,'free',
+     E'*And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive* (Exodus 1:22). Egypt''s genocide of the Hebrew sons is answered in kind: *there shall be a great cry throughout all the land of Egypt, such as there was none like it* (Exodus 11:6). The river of drowned sons returns as the cry over Egypt''s own firstborn.'),
+    ('canon','exodus',11,5,'canon','psalms',78,51,'free',
+     E'*And smote all the firstborn in Egypt; the chief of their strength in the tabernacles of Ham* (Psalm 78:51). Asaph sings the night Moses here announces — *the firstborn of Pharaoh... even unto the firstborn of the maidservant* (Exodus 11:5) — naming the firstborn the very strength of the house of Ham.'),
+    ('canon','exodus',11,5,'canon','psalms',105,36,'free',
+     E'*He smote also all the firstborn in their land, the chief of all their strength* (Psalm 105:36). The Psalm rehearses Yahuah''s covenant-faithfulness through the plagues; the firstborn announced in *all the firstborn in the land of Egypt shall die* (Exodus 11:5) are sung as the chief of Egypt''s strength brought down.'),
+    ('canon','exodus',11,4,'canon','hebrews',11,28,'free',
+     E'*Through faith he kept the passover, and the sprinkling of blood, lest he that destroyed the firstborn should touch them* (Hebrews 11:28). The faith-roll names the destroyer announced in *About midnight will I go out into the midst of Egypt* (Exodus 11:4); the blood is the appointed distinction that holds back his hand from Yashar''el.'),
+    ('canon','exodus',11,5,'jubilees','jubilees',49,2,'extras',
+     E'*For on this night... when all the powers of Mastêmâ had been let loose to slay all the first-born in the land of Egypt, from the firstborn of Pharaoh to the first-born of the captive maidservant in the mill, and to the cattle* (Jubilees 49:2). Jubilees retells the same night, echoing Exodus almost word for word — *from the firstborn of Pharaoh that sitteth upon his throne, even unto the firstborn of the maidservant that is behind the mill; and all the firstborn of beasts* (Exodus 11:5) — and names the executing powers loosed under Mastema.'),
+    ('canon','exodus',11,6,'apocrypha','the-wisdom-of-solomon',18,5,'extras',
+     E'*And when they had determined to slay the babes of the saints, one child being cast forth, and saved, to reprove them, you tookest away the multitude of their children, and destroyedst them altogether in a mighty water* (Wisdom of Solomon 18:5). Wisdom reads the firstborn-cry — *a great cry throughout all the land of Egypt* (Exodus 11:6) — as the just recompense for Egypt''s slaughter of the Hebrew babes, the very measure-for-measure Exodus frames.'),
+
+    -- THREAD 2: Yahuah puts a difference between Egypt and Yashar'el (v.7)
+    ('canon','exodus',11,7,'canon','exodus',8,23,'free',
+     E'*And I will put a division between my people and thy people: to morrow shall this sign be* (Exodus 8:23). The dividing line announced at the swarms is now sealed at the firstborn: *Yahuah (LORD) doth put a difference between the Egyptians and Yashar''el (Israel)* (Exodus 11:7). The same set-apart people, marked off through every plague.'),
+    ('canon','exodus',11,7,'canon','exodus',9,4,'free',
+     E'*And Yahuah (LORD) shall sever between the cattle of Yashar''el (Israel) and the cattle of Egypt: and there shall nothing die of all that is the children''s of Yashar''el (Israel)* (Exodus 9:4). The severing seen at the murrain reaches its sharpest edge here — *not a dog move his tongue, against man or beast* (Exodus 11:7) — the covenant people and even their beasts kept untouched.'),
+    ('canon','exodus',11,7,'canon','malachi',3,18,'free',
+     E'*Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not* (Malachi 3:18). The difference Yahuah puts *between the Egyptians and Yashar''el (Israel)* (Exodus 11:7) is the same dividing line the last prophet sets at the end — the served and the unserving, never erased.'),
+    ('canon','exodus',11,7,'canon','malachi',3,17,'free',
+     E'*And they shall be mine, saith Yahuah Tseva''ot (LORD of hosts), in that day when I make up my jewels; and I will spare them, as a man spareth his own son that serveth him* (Malachi 3:17). The sparing-of-the-firstborn-son distinction of *Yahuah... doth put a difference between the Egyptians and Yashar''el (Israel)* (Exodus 11:7) is gathered up here — Yahuah spares his own son who serves him, the firstborn-people kept as his jewels.'),
+    ('canon','exodus',11,7,'canon','romans',9,4,'free',
+     E'*Who are Israelites; to whom pertaineth the adoption, and the glory, and the covenants, and the giving of the law, and the service of Elohim (God), and the promises* (Romans 9:4). The difference put *between the Egyptians and Yashar''el (Israel)* (Exodus 11:7) is the adoption that still pertains to the same people — never transferred away, the firstborn-son nation kept.'),
+    ('canon','exodus',11,7,'jubilees','jubilees',49,4,'extras',
+     E'*And the powers of Yahuah (God) did everything according as Yahuah (God) commanded them, and they passed by all the children of Yashar’el (Israel), and the plague came not upon them to destroy from amongst them any soul either of cattle, or man, or dog* (Jubilees 49:4). Jubilees names the very distinction of *not a dog move his tongue, against man or beast* (Exodus 11:7) — the plague passing by Israel, sparing man, beast, and dog alike.'),
+    ('canon','exodus',11,7,'jasher','jasher',80,46,'extras',
+     E'*Even the bones of their first born who had died before this and whom they had buried in their houses, were raked up by the dogs of Egypt on that night and dragged before the Egyptians and cast before them* (Jasher 80:46). Jasher dramatizes the dog motif on Egypt''s side of the line; against Yashar''el — *shall not a dog move his tongue* (Exodus 11:7) — the same dogs are silent.'),
+    ('canon','exodus',11,7,'apocrypha','the-wisdom-of-solomon',18,13,'extras',
+     E'*For whereas they would not believe any thing by reason of the enchantments; upon the destruction of the firstborn, they acknowledged this people to be the sons of Yahuah (God)* (Wisdom of Solomon 18:13). Wisdom names the firstborn-night as the moment Egypt itself confessed the distinction — *Yahuah... doth put a difference between the Egyptians and Yashar''el (Israel)* (Exodus 11:7) — that Yashar''el are the sons of Yahuah.'),
+
+    -- THREAD 3: they spoiled the Egyptians — jewels of silver and gold (vv.2-3)
+    ('canon','exodus',11,2,'canon','genesis',15,14,'free',
+     E'*And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance* (Genesis 15:14). The borrowed *jewels of silver, and jewels of gold* (Exodus 11:2) are the promise to Abram coming due — the wages of four hundred years of bondage restored as Yashar''el comes out with great substance.'),
+    ('canon','exodus',11,2,'canon','psalms',105,37,'free',
+     E'*He brought them forth also with silver and gold: and there was not one feeble person among their tribes* (Psalm 105:37). The Psalm sings the fulfillment of the command to *borrow of his neighbour... jewels of silver, and jewels of gold* (Exodus 11:2) — Yashar''el led out laden, not one of them weak.'),
+    ('canon','exodus',11,2,'jasher','jasher',80,59,'extras',
+     E'*And all the Egyptians sent the Israelites forth, with great riches, sheep and oxen and precious things, according to the oath of Yahuah (the Lord) between him and our Father Abraham* (Jasher 80:59). Jasher binds the spoiling — *jewels of silver, and jewels of gold* (Exodus 11:2) — directly to the Abrahamic oath, the riches owed and now paid out at the going-forth.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================================
+-- C. threads
+-- ============================================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-11-and-all-the-firstborn-in-egypt-shall-die',
+       E'And All the Firstborn in Egypt Shall Die — Measure for Measure',
+       E'At midnight the word goes out: *And all the firstborn in the land of Egypt shall die, from the firstborn of Pharaoh that sitteth upon his throne, even unto the firstborn of the maidservant that is behind the mill; and all the firstborn of beasts* (Exodus 11:5), *and there shall be a great cry throughout all the land of Egypt, such as there was none like it, nor shall be like it any more* (Exodus 11:6). This is no arbitrary stroke. It is the measure of Egypt''s own crime returned upon its head. At the burning bush Yahuah had already spoken the charge and the sentence together: *Yashar''el (Israel) is my son, even my firstborn* (Exodus 4:22), *and if thou refuse to let him go, behold, I will slay thy son, even thy firstborn* (Exodus 4:23). Egypt had reached for Yahuah''s firstborn-son people — *Every son that is born ye shall cast into the river* (Exodus 1:22) — and now the river of drowned Hebrew sons returns as the cry over Egypt''s firstborn. The Apocrypha reads the night exactly so: *when they had determined to slay the babes of the saints... you tookest away the multitude of their children* (Wisdom of Solomon 18:5). The Psalms sing the deed — *He smote also all the firstborn in their land, the chief of all their strength* (Psalm 105:36); *And smote all the firstborn in Egypt; the chief of their strength in the tabernacles of Ham* (Psalm 78:51) — Egypt''s very strength struck at its root. Jubilees retells the same midnight in Exodus''s own words: *all the powers of Mastêmâ had been let loose to slay all the first-born in the land of Egypt, from the firstborn of Pharaoh to the first-born of the captive maidservant in the mill, and to the cattle* (Jubilees 49:2). And the faith-roll names the destroyer who walked that night and the blood that turned him aside: *Through faith he kept the passover, and the sprinkling of blood, lest he that destroyed the firstborn should touch them* (Hebrews 11:28). The announcement here is the threat made deed; the blood that distinguishes is unfolded in the next chapter.',
+       sv.verse_id, ev.verse_id, 'extras', 29250
+  FROM _s305_ex11_lookup sv, _s305_ex11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=11 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=11 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-11-yahuah-puts-a-difference-between-egypt-and-yasharel',
+       E'Yahuah Puts a Difference Between Egypt and Yashar''el',
+       E'*But against any of the children of Yashar''el (Israel) shall not a dog move his tongue, against man or beast: that ye may know how that Yahuah (LORD) doth put a difference between the Egyptians and Yashar''el (Israel)* (Exodus 11:7). The same dividing line has been drawn through plague after plague — *I will put a division between my people and thy people* (Exodus 8:23), *Yahuah (LORD) shall sever between the cattle of Yashar''el (Israel) and the cattle of Egypt* (Exodus 9:4) — and at the firstborn it is sealed so finely that not even a dog growls at the covenant people. This is the redemptive distinction set upon one set-apart nation, never a transfer to another. Jubilees names it in the same breath as the dog: *they passed by all the children of Yashar’el (Israel), and the plague came not upon them to destroy from amongst them any soul either of cattle, or man, or dog* (Jubilees 49:4). Jasher dramatizes the other side of the line, where the dogs are loud over Egypt''s dead: *the bones of their first born... were raked up by the dogs of Egypt on that night and dragged before the Egyptians and cast before them* (Jasher 80:46). And the Apocrypha names the moment Egypt itself confessed the difference: *upon the destruction of the firstborn, they acknowledged this people to be the sons of Yahuah (God)* (Wisdom of Solomon 18:13). The last prophet carries the same line to the end of the age — *discern between... him that serveth Elohim (God) and him that serveth him not* (Malachi 3:18) — and gathers the spared firstborn-son people as Yahuah''s own treasure: *they shall be mine... and I will spare them, as a man spareth his own son that serveth him* (Malachi 3:17). When the apostle reaches back, the adoption still belongs to the same people — *Who are Israelites; to whom pertaineth the adoption... and the covenants, and the giving of the law* (Romans 9:4). The difference Yahuah put that night is never undone.',
+       sv.verse_id, ev.verse_id, 'extras', 29253
+  FROM _s305_ex11_lookup sv, _s305_ex11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=11 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=11 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-11-they-spoiled-the-egyptians-with-jewels-of-silver-and-gold',
+       E'Jewels of Silver and Gold — The Promise to Abraham Paid Out',
+       E'*Speak now in the ears of the people, and let every man borrow of his neighbour, and every woman of her neighbour, jewels of silver, and jewels of gold* (Exodus 11:2), *and Yahuah (LORD) gave the people favour in the sight of the Egyptians* (Exodus 11:3). This is no theft and no afterthought — it is a covenant promise coming due. Centuries before, Yahuah had told Abram exactly how the bondage would end: *And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance* (Genesis 15:14). The borrowed silver and gold are the wages of four hundred years of unpaid servitude, restored at the going-forth. The Psalm sings it fulfilled: *He brought them forth also with silver and gold: and there was not one feeble person among their tribes* (Psalm 105:37) — Yashar''el led out laden and whole, not one of them weak. And Jasher binds the spoiling straight to the oath that guaranteed it: *all the Egyptians sent the Israelites forth, with great riches, sheep and oxen and precious things, according to the oath of Yahuah (the Lord) between him and our Father Abraham* (Jasher 80:59). What Egypt withheld in bondage, Yahuah collects in full at the exodus — the word spoken to the fathers does not return void.',
+       sv.verse_id, ev.verse_id, 'extras', 29256
+  FROM _s305_ex11_lookup sv, _s305_ex11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=11 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================================
+-- D. thread_members
+-- ============================================================================
+-- THREAD 1: and all the firstborn in Egypt shall die
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',11,5,'canon','exodus',4,22,1,E'*Yashar''el (Israel) is my son, even my firstborn* (Exodus 4:22) — the burning-bush word that frames the whole stroke: Egypt struck at Yahuah''s firstborn-son people.'),
+    ('exodus',11,5,'canon','exodus',4,23,2,E'*I will slay thy son, even thy firstborn* (Exodus 4:23) — the sentence first threatened at the commission, now announced as deed.'),
+    ('exodus',11,6,'canon','exodus',1,22,3,E'*Every son that is born ye shall cast into the river* (Exodus 1:22) — Egypt''s drowning of the Hebrew sons answered by the great cry over its own firstborn.'),
+    ('exodus',11,5,'canon','psalms',78,51,4,E'*And smote all the firstborn in Egypt; the chief of their strength in the tabernacles of Ham* (Psalm 78:51) — Asaph sings the firstborn as Egypt''s very strength struck down.'),
+    ('exodus',11,5,'canon','psalms',105,36,5,E'*He smote also all the firstborn in their land, the chief of all their strength* (Psalm 105:36) — the Psalm of covenant-faithfulness rehearses the same blow.'),
+    ('exodus',11,4,'canon','hebrews',11,28,6,E'*lest he that destroyed the firstborn should touch them* (Hebrews 11:28) — the destroyer announced at midnight, and the blood that turns him aside from Yashar''el.'),
+    ('exodus',11,5,'jubilees','jubilees',49,2,7,E'*all the powers of Mastêmâ had been let loose to slay all the first-born... from the firstborn of Pharaoh to the first-born of the captive maidservant in the mill* (Jubilees 49:2) — the same night in Exodus''s own words.'),
+    ('exodus',11,6,'apocrypha','the-wisdom-of-solomon',18,5,8,E'*you tookest away the multitude of their children* (Wisdom of Solomon 18:5) — Wisdom reads the firstborn-cry as just recompense for Egypt''s slaughter of the Hebrew babes.')
+  ) AS m(src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-11-and-all-the-firstborn-in-egypt-shall-die'
+  JOIN _s305_ex11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex11_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: Yahuah puts a difference between Egypt and Yashar'el
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',11,7,'canon','exodus',8,23,1,E'*I will put a division between my people and thy people* (Exodus 8:23) — the dividing line drawn at the swarms, now sealed at the firstborn.'),
+    ('exodus',11,7,'canon','exodus',9,4,2,E'*Yahuah (LORD) shall sever between the cattle of Yashar''el (Israel) and the cattle of Egypt* (Exodus 9:4) — the severing seen at the murrain, kept even over the beasts.'),
+    ('exodus',11,7,'canon','malachi',3,18,3,E'*discern between... him that serveth Elohim (God) and him that serveth him not* (Malachi 3:18) — the same dividing line carried to the end of the age.'),
+    ('exodus',11,7,'canon','malachi',3,17,4,E'*I will spare them, as a man spareth his own son that serveth him* (Malachi 3:17) — the spared firstborn-son people gathered as Yahuah''s jewels.'),
+    ('exodus',11,7,'canon','romans',9,4,5,E'*to whom pertaineth the adoption... and the covenants, and the giving of the law* (Romans 9:4) — the adoption still belongs to the same Yashar''el, never transferred.'),
+    ('exodus',11,7,'jubilees','jubilees',49,4,6,E'*the plague came not upon them to destroy... any soul either of cattle, or man, or dog* (Jubilees 49:4) — the dog-distinction named exactly, the plague passing by Israel.'),
+    ('exodus',11,7,'jasher','jasher',80,46,7,E'*the bones of their first born... were raked up by the dogs of Egypt on that night* (Jasher 80:46) — the dogs loud over Egypt''s dead, silent against Yashar''el.'),
+    ('exodus',11,7,'apocrypha','the-wisdom-of-solomon',18,13,8,E'*upon the destruction of the firstborn, they acknowledged this people to be the sons of Yahuah (God)* (Wisdom of Solomon 18:13) — Egypt itself confesses the difference Yahuah put.')
+  ) AS m(src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-11-yahuah-puts-a-difference-between-egypt-and-yasharel'
+  JOIN _s305_ex11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex11_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: jewels of silver and gold — the promise to Abraham paid out
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',11,2,'canon','genesis',15,14,1,E'*afterward shall they come out with great substance* (Genesis 15:14) — the promise to Abram coming due: the wages of the bondage restored.'),
+    ('exodus',11,2,'canon','psalms',105,37,2,E'*He brought them forth also with silver and gold: and there was not one feeble person among their tribes* (Psalm 105:37) — the spoiling sung as fulfilled, Yashar''el led out laden and whole.'),
+    ('exodus',11,2,'jasher','jasher',80,59,3,E'*according to the oath of Yahuah (the Lord) between him and our Father Abraham* (Jasher 80:59) — the riches bound straight to the Abrahamic oath that guaranteed them.')
+  ) AS m(src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-11-they-spoiled-the-egyptians-with-jewels-of-silver-and-gold'
+  JOIN _s305_ex11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex11_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session305 — Exodus cross-references complete.'
