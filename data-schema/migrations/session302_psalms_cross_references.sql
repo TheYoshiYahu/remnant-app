@@ -48832,6 +48832,1239 @@ SELECT t.id, cr.id, m.so, m.member_note
   JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_125.sql (Psalm 125) -----
+-- Chapter: Psalm 125 — Song of Ascents: the immovable, encircled covenant people
+-- Tag: ps125   Session: s302   Slug prefix: psalm-125-   Sort band base: 25100 (25100,25103,25106,25109)
+--
+-- Psalm 125 coverage:
+--   v.1  (trust in Yahuah = mount Zion, cannot be removed, abideth for ever)
+--        NT:     Hebrews 12:28 (kingdom which cannot be moved); Matthew 7:24-25 (house on the rock) — THREAD A
+--        Extras: none warranted (NT + lateral carry the unshakeable-kingdom weight cleanly)
+--        Tanakh: Psalm 46:5 (Elohim in the midst of her; she shall not be moved) — THREAD A
+--   v.2  (mountains round about Jerusalem, so Yahuah round about his people for ever)
+--        NT:     Romans 11:1-2 (Elohim hath not cast away his people which he foreknew — the guard) — THREAD B
+--        Extras: none warranted (theophanic-guard + two-house weight carried by canon prophets)
+--        Tanakh: Zechariah 2:5 (a wall of fire round about); Deuteronomy 33:27 (underneath the everlasting arms);
+--                Ezekiel 37:22 (one nation, no more two — the whole encircled two-house people) — THREAD B
+--   v.3  (rod of the wicked shall not rest upon the lot of the righteous; lest they put forth hands to iniquity)
+--        NT:     1 Corinthians 10:13 (no temptation above what ye are able; a way to escape) — THREAD C
+--        Extras: none warranted
+--        Tanakh: Numbers 26:55 (the land divided by lot, by the names of the tribes — the inheritance/lot preserved) — THREAD C
+--                (Deuteronomy 32:9 Jacob the lot of his inheritance considered but NOT added as member: that parse
+--                 still reads un-restored "the LORD'S portion" — named in prose only, not quoted/threaded)
+--   v.4-5 (do good to the good; the crooked led forth with workers of iniquity; BUT peace upon Yashar'el)
+--        NT:     Matthew 7:23 (depart from me, ye that work iniquity — the two ways' end);
+--                Galatians 6:16 (peace... upon the Yashar'el of Elohim); Romans 11:1-2 (guard against replacement) — THREAD D
+--        Extras: none warranted
+--        Tanakh: Psalm 1:6 (Yahuah knoweth the way of the righteous; the way of the ungodly shall perish — the two ways);
+--                Psalm 128:6 (peace upon Yashar'el — the lateral Ascent benediction) — THREAD D
+--
+-- Threads (4):
+--   A psalm-125-they-that-trust-shall-be-as-mount-zion-the-kingdom-that-cannot-be-moved  [canon NT+Tanakh]  free
+--   B psalm-125-as-the-mountains-round-about-jerusalem-yahuah-round-about-his-people     [canon NT+Tanakh]  free
+--   C psalm-125-the-rod-of-the-wicked-shall-not-rest-upon-the-lot-of-the-righteous       [canon NT+Tanakh]  free
+--   D psalm-125-the-two-ways-but-peace-shall-be-upon-yasharel                            [canon NT+Tanakh]  free
+-- All members canon (Tanakh + NT) → every thread tier_required='free'. No extras members in this chapter.
+
+CREATE TEMP VIEW _s302_ps125_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ B. cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD A — v.1 mount Zion, the kingdom that cannot be moved
+    ('canon','psalms',125,1,'canon','hebrews',12,28,'free',
+     E'*Wherefore we receiving a kingdom which cannot be moved, let us have grace, whereby we may serve Elohim (God) acceptably with reverence and godly fear* (Hebrews 12:28). Psalm 125 opens, *They that trust in Yahuah (LORD) shall be as mount Zion, which cannot be removed, but abideth for ever* (Psalm 125:1) — the same immovability. The trust that fastens to Yahuah is fastened to the one kingdom that the shaking of all made things cannot move; Zion is not real estate but the covenant people set on the unshakeable Rock.'),
+    ('canon','psalms',125,1,'canon','matthew',7,24,'free',
+     E'*Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock* (Matthew 7:24). The Formed Son makes the same point Psalm 125 sings: *They that trust in Yahuah (LORD) shall be as mount Zion, which cannot be removed* (Psalm 125:1) — and the trust that cannot be removed is the trust that *heareth* AND *doeth* (1 John 2:3-4), the doer, not the hearer only, founded on the Rock.'),
+    ('canon','psalms',125,1,'canon','matthew',7,25,'free',
+     E'*And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock* (Matthew 7:25). Every storm strikes and *it fell not* — the very *cannot be removed, but abideth for ever* of *They that trust in Yahuah (LORD) shall be as mount Zion* (Psalm 125:1). The foundation, not the weather, decides who stands.'),
+    ('canon','psalms',125,1,'canon','psalms',46,5,'free',
+     E'*Elohim (God) is in the midst of her; she shall not be moved: Elohim (God) shall help her, and that right early* (Psalm 46:5). The sister psalm names why Zion *cannot be removed* (Psalm 125:1): not her own strength but the Presence in her midst — *she shall not be moved* because *Elohim (God) is in the midst of her*.'),
+    -- THREAD B — v.2 Yahuah round about his people, the encircling guard of the two-house people
+    ('canon','psalms',125,2,'canon','zechariah',2,5,'free',
+     E'*For I, saith Yahuah (LORD), will be unto her a wall of fire round about, and will be the glory in the midst of her* (Zechariah 2:5). Psalm 125 draws the map — *As the mountains are round about Jerusalem, so Yahuah (LORD) is round about his people from henceforth even for ever* (Psalm 125:2) — and Zechariah makes the encircling mountains a *wall of fire round about*: Yahuah himself, the Formed Glory in the midst, is the wall a city without walls (Zechariah 2:4) needs no other.'),
+    ('canon','psalms',125,2,'canon','deuteronomy',33,27,'free',
+     E'*The eternal Elohim (God) is thy refuge, and underneath are the everlasting arms: and he shall thrust out the enemy from before thee; and shall say, Destroy them* (Deuteronomy 33:27). Moses'' blessing on the tribes is the same encirclement Psalm 125 sings — *so Yahuah (LORD) is round about his people from henceforth even for ever* (Psalm 125:2): round about on every side, *underneath* the everlasting arms, the covenant people held within Yahuah on all hands.'),
+    ('canon','psalms',125,2,'canon','ezekiel',37,22,'free',
+     E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The *people* Yahuah is *round about... for ever* (Psalm 125:2) is the whole house — Yahudah and the scattered north made one again on the mountains, the two sticks become one. The encircling guard surrounds the regathered twelve tribes, not a replacement people.'),
+    ('canon','psalms',125,2,'canon','romans',11,1,'free',
+     E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). *From henceforth even for ever* (Psalm 125:2) leaves no room for casting-off: the people Yahuah stands *round about* is the people he never cast away. Paul guards Psalm 125 against the replacement reading — *his people which he foreknew* are kept, not exchanged.'),
+    -- THREAD C — v.3 the rod of the wicked, the lot of the righteous preserved
+    ('canon','psalms',125,3,'canon','numbers',26,55,'free',
+     E'*Notwithstanding the land shall be divided by lot: according to the names of the tribes of their fathers they shall inherit* (Numbers 26:55). The *lot of the righteous* Psalm 125:3 guards is the tribal inheritance itself — *the lot* assigned by name to the fathers'' tribes. The promise of verse 3, *the rod of the wicked shall not rest upon the lot of the righteous*, is that no oppressor''s rule will be allowed to settle permanently on Jacob''s portion.'),
+    ('canon','psalms',125,3,'canon','1-corinthians',10,13,'free',
+     E'*There hath no temptation taken you but such as is common to man: but Elohim (God) is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it* (1 Corinthians 10:13). Psalm 125:3 gives the reason the rod is held back — *lest the righteous put forth their hands unto iniquity*: Yahuah measures the pressure so the upright are not driven past bearing into sin. The faithful Elohim *will not suffer* a testing beyond strength.'),
+    -- THREAD D — v.4-5 the two ways; the crooked led forth with the workers of iniquity; but peace upon Yashar'el
+    ('canon','psalms',125,4,'canon','psalms',1,6,'free',
+     E'*For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6). Psalm 125 ends where Psalm 1 begins — the two ways. *Do good, O Yahuah (LORD), unto those that be good, and to them that are upright in their hearts* (Psalm 125:4) is the way Yahuah *knoweth*; the *crooked ways* of verse 5 are the way that *shall perish*.'),
+    ('canon','psalms',125,5,'canon','matthew',7,23,'free',
+     E'*And then will I profess unto them, I never knew you: depart from me, ye that work iniquity* (Matthew 7:23). The Formed Son speaks Psalm 125''s sentence on the crooked: *As for such as turn aside unto their crooked ways, Yahuah (LORD) shall lead them forth with the workers of iniquity* (Psalm 125:5). To be *led forth with the workers of iniquity* is to hear *depart from me, ye that work iniquity* — the lawless severed from the way Yahuah knows.'),
+    ('canon','psalms',125,5,'canon','galatians',6,16,'free',
+     E'*And as many as walk according to this rule, peace be on them, and mercy, and upon the Yashar''el (Israel) of Elohim (God)* (Galatians 6:16). Paul pronounces the psalm''s closing benediction — *but peace shall be upon Yashar''el (Israel)* (Psalm 125:5) — over the same Israel: the covenant people who walk by the rule, the *Yashar''el (Israel) of Elohim*, not a new nation but the gathered house on whom the *shalom* rests.'),
+    ('canon','psalms',125,5,'canon','psalms',128,6,'free',
+     E'*Yea, thou shalt see thy children''s children, and peace upon Yashar''el (Israel)* (Psalm 128:6). Three Ascents on, the same word closes — *peace upon Yashar''el (Israel)* (Psalm 128:6) answering *but peace shall be upon Yashar''el (Israel)* (Psalm 125:5). The Songs of Ascents end again and again on the one shalom resting on the whole house.'),
+    ('canon','psalms',125,5,'canon','romans',11,2,'free',
+     E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The *peace... upon Yashar''el (Israel)* (Psalm 125:5) rests on a people Yahuah has not abandoned. Paul guards the benediction from the replacement reading: the Israel on whom shalom abides is the foreknown people, kept, never cast off.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ C. threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-125-they-that-trust-shall-be-as-mount-zion-the-kingdom-that-cannot-be-moved',
+       E'They that trust in Yahuah shall be as mount Zion — the kingdom that cannot be moved',
+       E'*They that trust in Yahuah (LORD) shall be as mount Zion, which cannot be removed, but abideth for ever* (Psalm 125:1). The Song of Ascents opens on the one immovable thing: not the trusting one''s strength, but the One trusted. To trust Yahuah is to be set on Zion, and Zion *cannot be removed*.\n\nHebrews names the kingdom by the same mark: *Wherefore we receiving a kingdom which cannot be moved, let us have grace, whereby we may serve Elohim (God) acceptably with reverence and godly fear* (Hebrews 12:28). When all made things are shaken, this remains. The Formed Son builds it: *whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock* (Matthew 7:24), and when the storm beats, *it fell not: for it was founded upon a rock* (Matthew 7:25) — the trust that *doeth*, not hears only (1 John 2:3-4).\n\nThe sister psalm tells why Zion stands: *Elohim (God) is in the midst of her; she shall not be moved: Elohim (God) shall help her, and that right early* (Psalm 46:5). The Presence in her midst, not her own foundation, makes her unmovable for ever.',
+       sv.verse_id, ev.verse_id, 'free', 25100
+  FROM _s302_ps125_lookup sv, _s302_ps125_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=125 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-125-as-the-mountains-round-about-jerusalem-yahuah-round-about-his-people',
+       E'As the mountains round about Jerusalem — Yahuah round about his people for ever',
+       E'*As the mountains are round about Jerusalem, so Yahuah (LORD) is round about his people from henceforth even for ever* (Psalm 125:2). The geography preaches: the ring of hills that hems the city is a picture of Yahuah himself encircling his people on every side, without end.\n\nZechariah turns the ring into fire: *For I, saith Yahuah (LORD), will be unto her a wall of fire round about, and will be the glory in the midst of her* (Zechariah 2:5) — the Formed Glory in the midst, the encircling wall a city without walls needs no other. Moses had already blessed the tribes with the same encirclement: *The eternal Elohim (God) is thy refuge, and underneath are the everlasting arms: and he shall thrust out the enemy from before thee* (Deuteronomy 33:27) — round about, and *underneath* the everlasting arms.\n\nAnd the *people* so surrounded is the whole house: *I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations* (Ezekiel 37:22) — Yahudah and the scattered north, the two sticks made one. *From henceforth even for ever* leaves no room for casting-off: *Hath Elohim (God) cast away his people? Elohim (God) forbid... Elohim (God) hath not cast away his people which he foreknew* (Romans 11:1-2). The encircling guard surrounds the regathered twelve tribes, never a replacement people.',
+       sv.verse_id, ev.verse_id, 'free', 25103
+  FROM _s302_ps125_lookup sv, _s302_ps125_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=125 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-125-the-rod-of-the-wicked-shall-not-rest-upon-the-lot-of-the-righteous',
+       E'The rod of the wicked shall not rest upon the lot of the righteous',
+       E'*For the rod of the wicked shall not rest upon the lot of the righteous; lest the righteous put forth their hands unto iniquity* (Psalm 125:3). Two promises in one breath: the oppressor''s rule is not permitted to settle permanently on the inheritance, and the reason is mercy — lest the pressure drive the upright into sin.\n\nThe *lot* is the tribal inheritance itself: *Notwithstanding the land shall be divided by lot: according to the names of the tribes of their fathers they shall inherit* (Numbers 26:55). Jacob''s portion, assigned by name to the fathers'' tribes, is the very *lot of the righteous* the rod may not rest upon. (*Jacob is the lot of his inheritance* — Deuteronomy 32:9 — sings the same.)\n\nAnd the held-back rod is the faithful measuring of every trial: *There hath no temptation taken you but such as is common to man: but Elohim (God) is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it* (1 Corinthians 10:13). Yahuah weighs the weight *lest the righteous put forth their hands unto iniquity* — never beyond bearing.',
+       sv.verse_id, ev.verse_id, 'free', 25106
+  FROM _s302_ps125_lookup sv, _s302_ps125_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=125 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-125-the-two-ways-but-peace-shall-be-upon-yasharel',
+       E'The two ways — but peace shall be upon Yashar''el',
+       E'*Do good, O Yahuah (LORD), unto those that be good, and to them that are upright in their hearts. As for such as turn aside unto their crooked ways, Yahuah (LORD) shall lead them forth with the workers of iniquity: but peace shall be upon Yashar''el (Israel)* (Psalm 125:4-5). The psalm closes on the two ways and a benediction.\n\nIt is the verdict of Psalm 1: *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6). The upright walk the way Yahuah *knoweth*; the *crooked ways* are the way that *shall perish*. The Formed Son speaks the sentence on the crooked: *And then will I profess unto them, I never knew you: depart from me, ye that work iniquity* (Matthew 7:23) — to be *led forth with the workers of iniquity* is to hear *depart*.\n\nBut the last word is *shalom*: *but peace shall be upon Yashar''el (Israel)* (Psalm 125:5). Paul pronounces it over the same people — *as many as walk according to this rule, peace be on them, and mercy, and upon the Yashar''el (Israel) of Elohim (God)* (Galatians 6:16) — and the Ascents echo it on, *peace upon Yashar''el (Israel)* (Psalm 128:6). And lest any read the Israel of the blessing as exchanged: *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The peace rests on the whole gathered house.',
+       sv.verse_id, ev.verse_id, 'free', 25109
+  FROM _s302_ps125_lookup sv, _s302_ps125_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=125 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ D. thread_members ============================
+-- THREAD A
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Wherefore we receiving a kingdom which cannot be moved* (Hebrews 12:28) — the unshakeable kingdom that *cannot be removed* (Psalm 125:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=1
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-they-that-trust-shall-be-as-mount-zion-the-kingdom-that-cannot-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Built his house upon a rock* (Matthew 7:24) — the doer who *heareth... and doeth* stands immovable as Zion (Psalm 125:1; 1 John 2:3-4).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=1
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-they-that-trust-shall-be-as-mount-zion-the-kingdom-that-cannot-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*It fell not: for it was founded upon a rock* (Matthew 7:25) — the storm strikes and it stands, *cannot be removed, but abideth for ever* (Psalm 125:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=1
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-they-that-trust-shall-be-as-mount-zion-the-kingdom-that-cannot-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Elohim (God) is in the midst of her; she shall not be moved* (Psalm 46:5) — the Presence in her midst is why Zion *cannot be removed* (Psalm 125:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=1
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-they-that-trust-shall-be-as-mount-zion-the-kingdom-that-cannot-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD B
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*A wall of fire round about, and... the glory in the midst of her* (Zechariah 2:5) — the encircling Yahuah of *round about his people* (Psalm 125:2).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=2
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-as-the-mountains-round-about-jerusalem-yahuah-round-about-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Underneath are the everlasting arms* (Deuteronomy 33:27) — Moses'' blessing, the same encirclement *round about his people from henceforth even for ever* (Psalm 125:2).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=2
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-as-the-mountains-round-about-jerusalem-yahuah-round-about-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*One nation... no more two nations* (Ezekiel 37:22) — the *people* Yahuah surrounds is the two-house whole, the two sticks made one (Psalm 125:2).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=2
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-as-the-mountains-round-about-jerusalem-yahuah-round-about-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1) — the guard: *for ever* (Psalm 125:2) means never cast off, never replaced.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=2
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-as-the-mountains-round-about-jerusalem-yahuah-round-about-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD C
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The land shall be divided by lot: according to the names of the tribes* (Numbers 26:55) — the tribal inheritance is the *lot of the righteous* the rod may not rest upon (Psalm 125:3).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=3
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=26 AND tv.verse_number=55
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-the-rod-of-the-wicked-shall-not-rest-upon-the-lot-of-the-righteous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Will not suffer you to be tempted above that ye are able* (1 Corinthians 10:13) — the held-back rod, measured *lest the righteous put forth their hands unto iniquity* (Psalm 125:3).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=3
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-the-rod-of-the-wicked-shall-not-rest-upon-the-lot-of-the-righteous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD D
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6) — the two ways of Psalm 125:4-5.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=4
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-the-two-ways-but-peace-shall-be-upon-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Depart from me, ye that work iniquity* (Matthew 7:23) — the crooked *led forth with the workers of iniquity* (Psalm 125:5).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=5
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-the-two-ways-but-peace-shall-be-upon-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Peace be on them, and mercy, and upon the Yashar''el (Israel) of Elohim* (Galatians 6:16) — Paul''s benediction over the same gathered house, *peace shall be upon Yashar''el* (Psalm 125:5).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=5
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-the-two-ways-but-peace-shall-be-upon-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Peace upon Yashar''el (Israel)* (Psalm 128:6) — the Ascents echo the same shalom three psalms on (Psalm 125:5).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=5
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=128 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-the-two-ways-but-peace-shall-be-upon-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Elohim hath not cast away his people which he foreknew* (Romans 11:2) — the guard: the Israel of the blessing is kept, never exchanged (Psalm 125:5).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps125_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=125 AND sv.verse_number=5
+  JOIN _s302_ps125_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-125-the-two-ways-but-peace-shall-be-upon-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_127.sql (Psalm 127) -----
+-- Chapter: Psalm 127 — A SONG OF ASCENTS OF SOLOMON (5 verses): the house and the heritage.
+-- The pilgrim psalm divides cleanly in two. vv.1-2 declare that nothing stands but what Yahuah
+-- (LORD) builds — *Except Yahuah (LORD) build the house, they labour in vain that build it: except
+-- Yahuah (LORD) keep the city, the watchman waketh but in vain* (v.1) — and that anxious toil is
+-- vain against the rest He gives His beloved (v.2). The Builder and the Keeper are read through the
+-- Formed Son who builds the assembly and keeps Yashar'el (Israel). vv.3-5 turn to the seed of
+-- promise: *Lo, children are an heritage of Yahuah (LORD): and the fruit of the womb is his reward*
+-- (v.3) — the paternal heritage line, the strong seed like arrows in a mighty man's hand (vv.4-5),
+-- the quiver full that shall not be ashamed but speak with the enemies in the gate.
+-- Tag: ps127   Temp view: _s302_ps127_lookup
+-- Sort band: base 25150, step 3 -> threads at 25150,25153,25156,25159 (4 threads)
+-- Source of EVERY row: 'canon','psalms',127,v
+-- ⚠ SLUG PREFIX SINGULAR: psalm-127- (NOT psalms-)
+--
+-- Psalm 127 coverage:
+--   ★★ v.1 (Except Yahuah build the house... except Yahuah keep the city, the watchman waketh in vain)
+--        NT:     ★ Hebrews 3:4 (he that built all things is Elohim), ★ Matthew 16:18 (upon this rock
+--                I will build my church), 1 Corinthians 3:9-11 (ye are Elohim's building... other
+--                foundation can no man lay) — THREAD 1
+--        Extras: none warranted (the Builder/Keeper weave carried by NT + Tanakh through the Formed Son)
+--        Tanakh: ★ Zechariah 4:6 (not by might, nor by power, but by my spirit), ★ Psalm 121:4 (he that
+--                keepeth Yashar'el shall neither slumber nor sleep) — THREAD 1
+--   v.2 (It is vain for you to rise up early... to eat the bread of sorrows: for so he giveth his beloved sleep)
+--        NT:     ★ Matthew 6:25 (Take no thought for your life), Matthew 6:33-34 (seek ye first... take
+--                no thought for the morrow) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 3:5 (I laid me down and slept; I awaked; for Yahuah sustained me),
+--                ★ Proverbs 10:22 (the blessing of Yahuah maketh rich, and he addeth no sorrow) — THREAD 2
+--   ★★ v.3 (Lo, children are an heritage of Yahuah: and the fruit of the womb is his reward)
+--        NT:     none warranted (the heritage/seed-of-promise weave is a Torah/Tanakh covenant line)
+--        Extras: none warranted
+--        Tanakh: ★ Genesis 33:5 (the children which Elohim hath graciously given thy servant),
+--                ★ Psalm 113:9 (he maketh the barren woman... a joyful mother of children),
+--                Psalm 112:2 (his seed shall be mighty upon earth),
+--                Psalm 128:3-4 (thy children like olive plants round about thy table) — THREAD 3
+--   vv.4-5 (As arrows are in the hand of a mighty man... Happy is the man that hath his quiver full of them...
+--          they shall speak with the enemies in the gate)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Genesis 22:17 (thy seed shall possess the gate of his enemies),
+--                ★ Psalm 144:12 (that our sons may be as plants grown up in their youth),
+--                Psalm 128:3 (thy children like olive plants) — THREAD 4
+
+CREATE TEMP VIEW _s302_ps127_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Except Yahuah build the house, except Yahuah keep the city
+    ('canon','psalms',127,1,'canon','hebrews',3,4,'free',
+      E'*For every house is builded by some man; but he that built all things is Elohim (God)* (Hebrews 3:4). *Except Yahuah (LORD) build the house, they labour in vain that build it* (Psalm 127:1): the psalm and the letter speak as one — every house has its builder, but behind every builder stands the One who built all things; the labour of men is vain unless it is Yahuah who builds, the Formed Son through whom all things were made.'),
+    ('canon','psalms',127,1,'canon','matthew',16,18,'free',
+      E'*And I say also unto thee, That thou art Peter, and upon this rock I will build my church; and the gates of hell shall not prevail against it* (Matthew 16:18). *Except Yahuah (LORD) build the house, they labour in vain that build it* (Psalm 127:1): the house that stands is the one Yahusha (Jesus) Himself builds — *I will build* — the Formed Son raising His assembly upon the rock; what He builds the gates of the grave cannot overthrow, while every house built without Him is raised in vain.'),
+    ('canon','psalms',127,1,'canon','1-corinthians',3,9,'free',
+      E'*For we are labourers together with Elohim (God): ye are Elohim''s (God''s) husbandry, ye are Elohim''s (God''s) building* (1 Corinthians 3:9). *Except Yahuah (LORD) build the house, they labour in vain that build it* (Psalm 127:1): the builders are labourers TOGETHER WITH Elohim — the building is His, not theirs; Paul names what the psalm declares, that the work is vain unless Yahuah is the true Builder of the house.'),
+    ('canon','psalms',127,1,'canon','1-corinthians',3,11,'free',
+      E'*For other foundation can no man lay than that is laid, which is Yahusha HaMashiach (Jesus Christ)* (1 Corinthians 3:11). *Except Yahuah (LORD) build the house, they labour in vain that build it* (Psalm 127:1): the only foundation that does not fail is the Formed Son Himself — no man can lay another; the house built on Him stands, and every wall raised on another footing is the vain labour the psalm warns against.'),
+    ('canon','psalms',127,1,'canon','zechariah',4,6,'free',
+      E'*Then he answered and spake unto me, saying, This is the word of Yahuah (LORD) unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). *Except Yahuah (LORD) build the house, they labour in vain that build it* (Psalm 127:1): Zechariah names the same truth over the rebuilding of the temple — the house rises not by human might nor power but by the Spirit of Yahuah; the labour of the watchman and the builder is vain unless His Spirit raises the work.'),
+    ('canon','psalms',127,1,'canon','psalms',121,4,'free',
+      E'*Behold, he that keepeth Yashar''el (Israel) shall neither slumber nor sleep* (Psalm 121:4). *Except Yahuah (LORD) keep the city, the watchman waketh but in vain* (Psalm 127:1): the human watchman keeps watch in vain, for the true Keeper of the city is the Keeper of Yashar''el (Israel) who never slumbers — the sleepless Guardian of His people, beside whom every mortal watch is needless toil.'),
+
+    -- THREAD 2 (★): He giveth his beloved sleep — rest against anxious toil
+    ('canon','psalms',127,2,'canon','matthew',6,25,'free',
+      E'*Therefore I say unto you, Take no thought for your life, what ye shall eat, or what ye shall drink; nor yet for your body, what ye shall put on. Is not the life more than meat, and the body than raiment?* (Matthew 6:25). *It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep* (Psalm 127:2): the anxious toil of the psalm is the very care Yahusha (Jesus) forbids — rising early and sitting late to eat the bread of sorrows is taking thought for the life; the beloved is given rest instead, freed from the worry that gains nothing.'),
+    ('canon','psalms',127,2,'canon','matthew',6,33,'free',
+      E'*But seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto you* (Matthew 6:33). *It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep* (Psalm 127:2): the cure for vain toil is to seek first the kingdom — what the anxious cannot wring from their labour is ADDED to the one who trusts; so the beloved sleeps, his provision the gift of Yahuah, not the wage of his sleepless striving.'),
+    ('canon','psalms',127,2,'canon','psalms',3,5,'free',
+      E'*I laid me down and slept; I awaked; for Yahuah (LORD) sustained me* (Psalm 3:5). *for so he giveth his beloved sleep* (Psalm 127:2): the sleep of the beloved is the sleep of trust — David lies down in the midst of his enemies and wakes, for Yahuah sustains him through the night; the rest that the anxious cannot find is the gift of the One who keeps His own while they sleep.'),
+    ('canon','psalms',127,2,'canon','proverbs',10,22,'free',
+      E'*The blessing of Yahuah (LORD), it maketh rich, and he addeth no sorrow with it* (Proverbs 10:22). *It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep* (Psalm 127:2): the bread of sorrows is the harvest of toil apart from Yahuah; but the blessing of Yahuah makes rich and adds NO sorrow — what He gives carries no anxious grief, so the beloved eats and sleeps in peace.'),
+
+    -- THREAD 3 (★★): Children are an heritage of Yahuah, the fruit of the womb his reward
+    ('canon','psalms',127,3,'canon','genesis',33,5,'free',
+      E'*And he lifted up his eyes, and saw the women and the children; and said, Who are those with thee? And he said, The children which Elohim (God) hath graciously given thy servant* (Genesis 33:5). *Lo, children are an heritage of Yahuah (LORD): and the fruit of the womb is his reward* (Psalm 127:3): Jacob names his children exactly as the psalm does — not his own achievement but *graciously given* by Elohim; the seed of the patriarch, the carriers of the promise, are the heritage and reward of Yahuah, the paternal covenant line bestowed by grace.'),
+    ('canon','psalms',127,3,'canon','psalms',113,9,'free',
+      E'*He maketh the barren woman to keep house, and to be a joyful mother of children. Praise ye Yahuah (LORD)* (Psalm 113:9). *Lo, children are an heritage of Yahuah (LORD): and the fruit of the womb is his reward* (Psalm 127:3): the fruit of the womb is Yahuah''s to give — He opens the barren and makes her a joyful mother, as He did for Sarah and Rachel and Hannah; the heritage of children is His reward, the seed of promise He alone bestows.'),
+    ('canon','psalms',127,3,'canon','psalms',112,2,'free',
+      E'*His seed shall be mighty upon earth: the generation of the upright shall be blessed* (Psalm 112:2). *Lo, children are an heritage of Yahuah (LORD): and the fruit of the womb is his reward* (Psalm 127:3): the heritage of children is the covenant blessing on the seed — the mighty seed of the upright that 112 sings is the very reward 127 names; the line of the righteous, blessed and made strong upon the earth, is Yahuah''s heritage to His servant.'),
+    ('canon','psalms',127,3,'canon','psalms',128,3,'free',
+      E'*Thy wife shall be as a fruitful vine by the sides of thine house: thy children like olive plants round about thy table* (Psalm 128:3). *Lo, children are an heritage of Yahuah (LORD): and the fruit of the womb is his reward* (Psalm 127:3): the next song of ascents continues the same heritage — the fruitful vine and the olive plants round the table are the fruit of the womb of 127; the children Yahuah gives fill the house of the man who fears Him, the heritage made visible at his table.'),
+
+    -- THREAD 4 (★): As arrows in the hand of a mighty man — the strong seed at the gate
+    ('canon','psalms',127,4,'canon','genesis',22,17,'free',
+      E'*That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies* (Genesis 22:17). *As arrows are in the hand of a mighty man; so are children of the youth* (Psalm 127:4): the strong seed of the psalm is the multiplied seed of the Abrahamic oath — children like arrows in the warrior''s hand, the seed that *shall possess the gate of his enemies*; the very gate-victory of v.5 (*they shall speak with the enemies in the gate*) is the promise sworn to Abraham.'),
+    ('canon','psalms',127,5,'canon','genesis',22,17,'free',
+      E'*and thy seed shall possess the gate of his enemies* (Genesis 22:17). *Happy is the man that hath his quiver full of them: they shall not be ashamed, but they shall speak with the enemies in the gate* (Psalm 127:5): the gate where the seed prevails is the gate of Abraham''s oath — the man with a full quiver shall not be put to shame but stands and speaks with the enemies in the gate, for his seed possesses that gate by the covenant promise.'),
+    ('canon','psalms',127,4,'canon','psalms',144,12,'free',
+      E'*That our sons may be as plants grown up in their youth; that our daughters may be as corner stones, polished after the similitude of a palace* (Psalm 144:12). *As arrows are in the hand of a mighty man; so are children of the youth* (Psalm 144:12)... *so are children of the youth* (Psalm 127:4): the children of the youth, the strong seed, are the sons grown up like sturdy plants and the daughters like polished corner stones — the heritage of a flourishing house, the covenant blessing on the next generation that David prays over Yashar''el (Israel).'),
+    ('canon','psalms',127,5,'canon','psalms',128,3,'free',
+      E'*Thy wife shall be as a fruitful vine by the sides of thine house: thy children like olive plants round about thy table* (Psalm 128:3). *Happy is the man that hath his quiver full of them: they shall not be ashamed, but they shall speak with the enemies in the gate* (Psalm 127:5): the happy man with the full quiver is the man whose table is ringed with olive-plant children — the two songs of ascents sing one blessing, the household full of the seed Yahuah gives, unashamed and strong in the gate.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== THREADS =====
+
+-- THREAD 1 (★★): Except Yahuah build the house (v.1)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-127-except-yahuah-build-the-house-they-labour-in-vain',
+       E'Except Yahuah Build the House — the Formed Son Builds and Keeps',
+       E'Solomon''s song of ascents opens with the foundation of everything: *Except Yahuah (LORD) build the house, they labour in vain that build it: except Yahuah (LORD) keep the city, the watchman waketh but in vain* (Psalm 127:1). Nothing stands but what Yahuah builds, and nothing is safe but what Yahuah keeps. Hebrews names the Builder behind every builder: *For every house is builded by some man; but he that built all things is Elohim (God)* (Hebrews 3:4). The house that endures is the one the Formed Son raises Himself — *upon this rock I will build my church; and the gates of hell shall not prevail against it* (Matthew 16:18) — built on the only foundation that cannot fail: *other foundation can no man lay than that is laid, which is Yahusha HaMashiach (Jesus Christ)* (1 Corinthians 3:11), for *ye are Elohim''s (God''s) building* (1 Corinthians 3:9). And the work rises not by human strength: *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). The watchman who keeps the city wakes in vain, for the true Keeper never sleeps: *Behold, he that keepeth Yashar''el (Israel) shall neither slumber nor sleep* (Psalm 121:4). The Builder who builds and the Keeper who guards are the Formed Son, beside whom every labour and every watch apart from Him is vain.',
+       sv.verse_id, ev.verse_id, 'free', 25150
+  FROM _s302_ps127_lookup sv, _s302_ps127_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=127 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★): He giveth his beloved sleep (v.2)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-127-he-giveth-his-beloved-sleep',
+       E'He Giveth His Beloved Sleep — Rest Against Anxious Toil',
+       E'*It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep* (Psalm 127:2). The anxious striving that rises early and sits late, eating the bread of sorrows, is the very care the Formed Son forbids: *Take no thought for your life, what ye shall eat, or what ye shall drink; nor yet for your body, what ye shall put on* (Matthew 6:25). The cure is to trust the Provider — *seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto you* (Matthew 6:33) — what the sleepless cannot wring from their labour is added to the one who rests in Yahuah. So the beloved lies down in peace: *I laid me down and slept; I awaked; for Yahuah (LORD) sustained me* (Psalm 3:5). And the bread he eats carries no grief, for *the blessing of Yahuah (LORD), it maketh rich, and he addeth no sorrow with it* (Proverbs 10:22). The beloved is given sleep — provision that is gift, not the bitter wage of striving.',
+       sv.verse_id, ev.verse_id, 'free', 25153
+  FROM _s302_ps127_lookup sv, _s302_ps127_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=127 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★): Children are an heritage of Yahuah (v.3)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-127-children-are-an-heritage-of-yahuah',
+       E'Children Are an Heritage of Yahuah — the Seed of Promise',
+       E'*Lo, children are an heritage of Yahuah (LORD): and the fruit of the womb is his reward* (Psalm 127:3). The seed is not a man''s achievement but Yahuah''s gift and reward — the paternal covenant line bestowed by grace. Jacob names his children in the same breath: *The children which Elohim (God) hath graciously given thy servant* (Genesis 33:5) — the seed of the patriarch, carriers of the promise, *graciously given*. The fruit of the womb is His to open: *He maketh the barren woman to keep house, and to be a joyful mother of children* (Psalm 113:9), as He did for Sarah and Hannah. This heritage is the covenant blessing on the seed — *His seed shall be mighty upon earth: the generation of the upright shall be blessed* (Psalm 112:2) — made visible at the table of the man who fears Yahuah: *thy children like olive plants round about thy table* (Psalm 128:3). The children are an heritage, the seed of promise, Yahuah''s reward to His servant.',
+       sv.verse_id, ev.verse_id, 'free', 25156
+  FROM _s302_ps127_lookup sv, _s302_ps127_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=127 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★): As arrows in the hand of a mighty man (vv.4-5)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-127-as-arrows-in-the-hand-of-a-mighty-man',
+       E'As Arrows in the Hand of a Mighty Man — the Strong Seed in the Gate',
+       E'*As arrows are in the hand of a mighty man; so are children of the youth. Happy is the man that hath his quiver full of them: they shall not be ashamed, but they shall speak with the enemies in the gate* (Psalm 127:4-5). The strong seed, like arrows in a warrior''s hand, is the multiplied seed of the oath sworn to Abraham: *in multiplying I will multiply thy seed as the stars of the heaven... and thy seed shall possess the gate of his enemies* (Genesis 22:17). The very gate where the full quiver prevails is the gate of that covenant promise — the seed that *shall possess the gate of his enemies*. This is the flourishing household David prays over Yashar''el (Israel): *That our sons may be as plants grown up in their youth; that our daughters may be as corner stones, polished after the similitude of a palace* (Psalm 144:12), the table ringed with the seed: *thy children like olive plants round about thy table* (Psalm 128:3). The man with the quiver full shall not be ashamed, for his seed is the covenant blessing, strong in the gate.',
+       sv.verse_id, ev.verse_id, 'free', 25159
+  FROM _s302_ps127_lookup sv, _s302_ps127_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=127 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD MEMBERS =====
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he that built all things is Elohim (God)* (Hebrews 3:4) — behind every builder stands the One who built all things; the Formed Son through whom all was made.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=1
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-except-yahuah-build-the-house-they-labour-in-vain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*upon this rock I will build my church* (Matthew 16:18) — the Formed Son builds His own assembly; what He builds the gates of the grave cannot prevail against.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=1
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=16 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-except-yahuah-build-the-house-they-labour-in-vain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*ye are Elohim''s (God''s) building* (1 Corinthians 3:9) — the builders are labourers TOGETHER WITH Elohim; the building is His.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=1
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=3 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-except-yahuah-build-the-house-they-labour-in-vain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*other foundation can no man lay than that is laid, which is Yahusha HaMashiach (Jesus Christ)* (1 Corinthians 3:11) — the only foundation that does not fail is the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=1
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=3 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-except-yahuah-build-the-house-they-labour-in-vain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6) — the house rises by His Spirit, not human strength.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=1
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-except-yahuah-build-the-house-they-labour-in-vain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*he that keepeth Yashar''el (Israel) shall neither slumber nor sleep* (Psalm 121:4) — the true Keeper of the city never sleeps; the human watchman wakes in vain.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=1
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=121 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-except-yahuah-build-the-house-they-labour-in-vain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Take no thought for your life, what ye shall eat, or what ye shall drink* (Matthew 6:25) — the anxious toil of the psalm is the very care the Formed Son forbids.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=2
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-he-giveth-his-beloved-sleep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*seek ye first the kingdom of Elohim (God)... and all these things shall be added unto you* (Matthew 6:33) — what the anxious cannot wring from toil is added to the one who trusts.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=2
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-he-giveth-his-beloved-sleep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I laid me down and slept; I awaked; for Yahuah (LORD) sustained me* (Psalm 3:5) — the sleep of the beloved is the sleep of trust, sustained through the night.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=2
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-he-giveth-his-beloved-sleep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the blessing of Yahuah (LORD), it maketh rich, and he addeth no sorrow with it* (Proverbs 10:22) — His blessing carries no grief; the bread of sorrows is toil apart from Him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=2
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=10 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-he-giveth-his-beloved-sleep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The children which Elohim (God) hath graciously given thy servant* (Genesis 33:5) — Jacob names his seed exactly as the psalm does: graciously given, not earned.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=3
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-children-are-an-heritage-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He maketh the barren woman... a joyful mother of children* (Psalm 113:9) — the fruit of the womb is Yahuah''s to open, as for Sarah and Hannah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=3
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=113 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-children-are-an-heritage-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*His seed shall be mighty upon earth: the generation of the upright shall be blessed* (Psalm 112:2) — the heritage of children is the covenant blessing on the seed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=3
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=112 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-children-are-an-heritage-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*thy children like olive plants round about thy table* (Psalm 128:3) — the next song of ascents shows the heritage made visible at the table of the man who fears Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=3
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=128 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-children-are-an-heritage-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thy seed shall possess the gate of his enemies* (Genesis 22:17) — the strong seed like arrows is the multiplied seed of Abraham''s oath.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=4
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-as-arrows-in-the-hand-of-a-mighty-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*and thy seed shall possess the gate of his enemies* (Genesis 22:17) — the gate where the full quiver prevails is the gate of Abraham''s oath; the man shall not be ashamed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=5
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-as-arrows-in-the-hand-of-a-mighty-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*That our sons may be as plants grown up in their youth; that our daughters may be as corner stones* (Psalm 144:12) — the children of the youth, the strong seed of a flourishing house.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=4
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=144 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-as-arrows-in-the-hand-of-a-mighty-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*thy children like olive plants round about thy table* (Psalm 128:3) — the happy man with the full quiver is the man whose table is ringed with olive-plant children.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps127_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=127 AND sv.verse_number=5
+  JOIN _s302_ps127_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=128 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-127-as-arrows-in-the-hand-of-a-mighty-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_128.sql (Psalm 128) -----
+-- Chapter: Psalm 128 — Song of Ascents; the blessing on the one who FEARS Yahuah and WALKS in his ways
+-- Tag: ps128   Session prefix: s302   View: _s302_ps128_lookup
+-- Sort band BASE = 25175 (25175, 25178, 25181, 25184)
+--
+-- THREADS (4):
+--   psalm-128-blessed-is-everyone-that-feareth-Yahuah-that-walketh-in-his-ways  [Tanakh + NT]  band 25175
+--       v1,4 — the Torah-walk itself IS the blessing; the anti-antinomian center
+--   psalm-128-thou-shalt-eat-the-labour-of-thine-hands-it-shall-be-well-with-thee  [extras]  band 25178
+--       v2 — the covenant-blessing of Deut28 (vs the curse) + Isa3:10 + Sirach
+--   psalm-128-thy-wife-a-fruitful-vine-thy-children-like-olive-plants  [extras]  band 25181
+--       v3 — the seed/heritage of promise; two-house olive (Rom11 with the guard)
+--   psalm-128-Yahuah-bless-thee-out-of-Zion-and-peace-upon-Yashar-el  [Tanakh + NT]  band 25184
+--       v5,6 — blessing from Zion, the good of Jerusalem, shalom on the whole house
+--
+-- Psalm 128 coverage:
+--   v.1  NT:     1 John 2:3-6 (walk as he walked = keep his commandments)
+--        Extras: Ecclesiasticus 1:11,14 (the fear of Yahuah = the beginning of wisdom) — placed in thread 1
+--        Tanakh: Psalm 1:1-2; Deuteronomy 10:12-13; Proverbs 1:7; Ecclesiastes 12:13
+--   v.2  NT:     none warranted (Gal6:7 sow/reap weighed; covenant-blessing frame is OT, kept tight)
+--        Extras: Ecclesiasticus 1:13 (it shall go well with him at the last)
+--        Tanakh: Deuteronomy 28:1-6; Isaiah 3:10 (it shall be well with the righteous, vs the curse)
+--   v.3  NT:     Romans 11:17-24 (the olive tree, both branches Yashar'el — with the v.1-2 guard)
+--        Extras: Ecclesiasticus 26:1-3 (a good wife given to them that fear Yahuah)
+--        Tanakh: Psalm 127:3 (children an heritage of Yahuah)
+--   v.4  NT:     (folded into thread 1, the v.1 inclusio)
+--        Extras: (see v.1)
+--        Tanakh: (see v.1)
+--   v.5  NT:     none warranted (kept with v.6 in the Zion/Israel thread)
+--        Extras: none warranted
+--        Tanakh: Psalm 134:3 (Yahuah that made heaven and earth bless thee out of Zion)
+--   v.6  NT:     Galatians 6:16 (peace upon the Yashar'el of Elohim); Romans 11:1-2 (guard)
+--        Extras: none warranted
+--        Tanakh: Psalm 125:5 (peace shall be upon Yashar'el); Deuteronomy 7:9 (covenant to a thousand generations)
+--
+-- Contested/load-bearing framing:
+--   v.1/v.4 — *that walketh in his ways* is read as the Torah-walk = the blessing, NOT a vague piety;
+--     1John2:3-6 supplies the apostolic filter (*hereby we do know that we know him, if we keep his
+--     commandments*), Torah-keeping NEVER abolished.
+--   v.3 — the OLIVE PLANTS draw Rom11's two-house olive, BUT the guard is carried in the member note:
+--     both branches are Yashar'el (Rom11:1-2 *Elohim hath not cast away his people*), never replacement.
+
+CREATE TEMP VIEW _s302_ps128_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: v.1,4 — the Torah-walk IS the blessing
+    ('canon','psalms',128,1,'canon','psalms',1,2,'free',
+      E'*But his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night* (Psalm 1:2). The Psalter opens on the same blessing it sings here in the ascents: *Blessed is every one that feareth Yahuah (LORD); that walketh in his ways* (Psalm 128:1). To walk in his ways is to delight in his Torah — the blessed man of Psalm 1 and the blessed man of Psalm 128 are one and the same, the Torah-keeper, not the antinomian.'),
+    ('canon','psalms',128,1,'canon','deuteronomy',10,12,'free',
+      E'*And now, Yashar''el (Israel), what doth Yahuah Elohayka (the LORD thy God) require of thee, but to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways, and to love him, and to serve Yahuah Elohayka (the LORD thy God) with all thy heart and with all thy soul* (Deuteronomy 10:12). The psalm''s two verbs — *feareth Yahuah* and *walketh in his ways* — are lifted straight from Moses'' charge; the next breath names what the walk is: *To keep the commandments of Yahuah (LORD), and his statutes* (Deuteronomy 10:13).'),
+    ('canon','psalms',128,1,'canon','proverbs',1,7,'free',
+      E'*The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction* (Proverbs 1:7). The fear that opens Psalm 128 is the same fear that opens all wisdom — not dread but covenant reverence that bends the whole life to his instruction.'),
+    ('canon','psalms',128,1,'canon','ecclesiastes',12,13,'free',
+      E'*Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man* (Ecclesiastes 12:13). The Preacher distils the entire pursuit to the very two things Psalm 128 calls blessed — *feareth Yahuah* and *walketh in his ways* — fear and commandment-keeping fused as the whole of man.'),
+    ('canon','psalms',128,1,'canon','1-john',2,3,'free',
+      E'*And hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him* (1 John 2:3-4). The apostle hands us the filter for *walketh in his ways*: the walk is commandment-keeping, and *He that saith he abideth in him ought himself also so to walk, even as he walked* (1 John 2:6). The Torah-walk of Psalm 128 is never abolished — it is the proof one knows him.'),
+    ('canon','psalms',128,4,'canon','psalms',128,1,'free',
+      E'*Blessed is every one that feareth Yahuah (LORD); that walketh in his ways* (Psalm 128:1). Verse 4 seals the psalm''s inclusio — *Behold, that thus shall the man be blessed that feareth Yahuah (LORD)* (Psalm 128:4) — pointing back to verse 1: the whole blessing hangs on the fear of Yahuah and the walk in his ways, the frame around everything between.'),
+    -- THREAD 2: v.2 — the covenant-blessing of the labour of the hands
+    ('canon','psalms',128,2,'canon','deuteronomy',28,2,'free',
+      E'*And all these blessings shall come on thee, and overtake thee, if thou shalt hearken unto the voice of Yahuah Elohayka (the LORD thy God)* (Deuteronomy 28:2). The eating of *the labour of thine hands* is the Deuteronomy blessing for the obedient — *Yahuah (LORD) shall open unto thee his good treasure... and to bless all the work of thine hand* (Deuteronomy 28:12) — the very reversal of the curse, where *a nation which thou knowest not* eats up *the fruit of thy land, and all thy labours* (Deuteronomy 28:33).'),
+    ('canon','psalms',128,2,'canon','deuteronomy',28,33,'free',
+      E'*The fruit of thy land, and all thy labours, shall a nation which thou knowest not eat up; and thou shalt be only oppressed and crushed alway* (Deuteronomy 28:33). This is the curse that *thou shalt eat the labour of thine hands* (Psalm 128:2) overturns: under judgment a stranger devours the harvest; under the blessing of the fear of Yahuah the labourer himself eats and is glad. The Torah-walk decides which side of Deuteronomy 28 a man lives on.'),
+    ('canon','psalms',128,2,'canon','isaiah',3,10,'free',
+      E'*Say ye to the righteous, that it shall be well with him: for they shall eat the fruit of their doings* (Isaiah 3:10). Isaiah pronounces over the righteous exactly what the psalm promises — *happy shalt thou be, and it shall be well with thee* (Psalm 128:2) — while the wicked, by contrast, *it shall be ill with him: for the reward of his hands shall be given him* (Isaiah 3:11). The same two harvests Psalm 128 quietly assumes.'),
+    ('canon','psalms',128,2,'apocrypha','ecclesiasticus',1,13,'extras',
+      E'*Whoso fears Yahuah (God), it shall go well with him at the last, and he shall find favour in the day of his death* (Ecclesiasticus 1:13). Ben Sira sings the psalm''s own promise back — *happy shalt thou be, and it shall be well with thee* (Psalm 128:2) — and stretches the well-being clear to the last day, the fear of Yahuah carrying the blessing past the table to the grave.'),
+    -- THREAD 3: v.3 — the fruitful vine, the olive plants, the seed of promise
+    ('canon','psalms',128,3,'canon','psalms',127,3,'free',
+      E'*Lo, children are an heritage of Yahuah (LORD): and the fruit of the womb is his reward* (Psalm 127:3). The ascent just before this one names what Psalm 128 pictures: *thy children like olive plants round about thy table* (Psalm 128:3) are the heritage and reward of Yahuah, the seed of promise given, never earned.'),
+    ('canon','psalms',128,3,'canon','romans',11,17,'free',
+      E'*And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree* (Romans 11:17). The *olive plants* round the table grow into Paul''s one olive of Yashar''el — but with the guard he himself sets: *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2), and *all Yashar''el (Israel) shall be saved* (Romans 11:26). Both branches, natural and wild, are the one covenant people; never a new people replacing the old, only the scattered seed regathered to the root.'),
+    ('canon','psalms',128,3,'apocrypha','ecclesiasticus',26,3,'extras',
+      E'*A good wife is a good portion, which shall be given in the portion of them that fear Yahuah (God)* (Ecclesiasticus 26:3). Ben Sira binds the *fruitful vine by the sides of thine house* (Psalm 128:3) to the same condition the whole psalm turns on — the wife is the portion *of them that fear Yahuah* — *Blessed is the man that has a virtuous wife, for the number of his days shall be double* (Ecclesiasticus 26:1).'),
+    -- THREAD 4: v.5,6 — blessing out of Zion, peace upon Yashar'el
+    ('canon','psalms',128,5,'canon','psalms',134,3,'free',
+      E'*Yahuah (LORD) that made heaven and earth bless thee out of Zion* (Psalm 134:3). The closing ascent answers Psalm 128''s plea word for word — *Yahuah (LORD) shall bless thee out of Zion* (Psalm 128:5) — the Maker of heaven and earth sending the household''s blessing from the one mountain where his name dwells.'),
+    ('canon','psalms',128,6,'canon','psalms',125,5,'free',
+      E'*As for such as turn aside unto their crooked ways, Yahuah (LORD) shall lead them forth with the workers of iniquity: but peace shall be upon Yashar''el (Israel)* (Psalm 125:5). Psalm 128 ends on the very same benediction — *and peace upon Yashar''el (Israel)* (Psalm 128:6) — the household blessing widening out to shalom on the whole house, both sticks made one.'),
+    ('canon','psalms',128,6,'canon','galatians',6,16,'free',
+      E'*And as many as walk according to this rule, peace be on them, and mercy, and upon the Yashar''el (Israel) of Elohim (God)* (Galatians 6:16). Paul closes Galatians on the psalm''s closing word — *peace... upon the Yashar''el of Elohim* — pronounced not over a replacement people but over those who *walk according to this rule*, the same Torah-walk Psalm 128 opens with (v.1) and ends blessing (v.6).'),
+    ('canon','psalms',128,6,'canon','deuteronomy',7,9,'free',
+      E'*Know therefore that Yahuah Elohayka (the LORD thy God), he is Elohim (God), the faithful Elohim (God), which keepeth covenant and mercy with them that love him and keep his commandments to a thousand generations* (Deuteronomy 7:9). *Thou shalt see thy children''s children* (Psalm 128:6) is this generational covenant in a single household''s view — the faithfulness that runs *to a thousand generations* shown in grandchildren round one table, the covenant kept with *them that... keep his commandments*.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps128_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps128_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-128-blessed-is-everyone-that-feareth-Yahuah-that-walketh-in-his-ways',
+       E'Blessed is every one that feareth Yahuah, that walketh in his ways',
+       E'Psalm 128 opens and closes on one truth: *Blessed is every one that feareth Yahuah (LORD); that walketh in his ways* (Psalm 128:1), sealed at the center — *Behold, that thus shall the man be blessed that feareth Yahuah (LORD)* (Psalm 128:4). The Torah-walk itself is the blessing. This is the anti-antinomian center of the ascents.\n\nThe two verbs are not the psalmist''s invention; they are Moses'' charge: *what doth Yahuah Elohayka (the LORD thy God) require of thee, but to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways... To keep the commandments of Yahuah (LORD), and his statutes* (Deuteronomy 10:12-13). And they are the Psalter''s own first word: *Blessed is the man... his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night* (Psalm 1:1-2). The fear of Yahuah is *the beginning of knowledge* (Proverbs 1:7) and the whole of man: *Fear Elohim (God), and keep his commandments: for this is the whole duty of man* (Ecclesiastes 12:13).\n\nThe apostle hands us the filter so no one can spiritualise the walk into nothing: *hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar* (1 John 2:3-4) — *He that saith he abideth in him ought himself also so to walk, even as he walked* (1 John 2:6). The walk of Psalm 128 is commandment-keeping, and it is never abolished. To walk in his ways is the blessing, not the prelude to it.',
+       sv.verse_id, ev.verse_id, 'free', 25175
+  FROM _s302_ps128_lookup sv, _s302_ps128_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=128 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=128 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-128-thou-shalt-eat-the-labour-of-thine-hands-it-shall-be-well-with-thee',
+       E'Thou shalt eat the labour of thine hands: it shall be well with thee',
+       E'*For thou shalt eat the labour of thine hands: happy shalt thou be, and it shall be well with thee* (Psalm 128:2). This is the covenant-blessing of Deuteronomy 28 in a single line — the harvest the labourer himself eats. The blessing is conditioned exactly as the psalm is: *if thou shalt hearken unto the voice of Yahuah Elohayka (the LORD thy God)... Yahuah (LORD) shall open unto thee his good treasure... and to bless all the work of thine hand* (Deuteronomy 28:2,12).\n\nIts shadow is the curse the psalm silently overturns: *The fruit of thy land, and all thy labours, shall a nation which thou knowest not eat up* (Deuteronomy 28:33). Under judgment a stranger devours what you grow; under the fear of Yahuah you eat your own labour and are glad. Isaiah pronounces the same two harvests: *Say ye to the righteous, that it shall be well with him: for they shall eat the fruit of their doings* (Isaiah 3:10), while *Woe unto the wicked! it shall be ill with him* (Isaiah 3:11).\n\nBen Sira sings the promise on past the table: *Whoso fears Yahuah (God), it shall go well with him at the last, and he shall find favour in the day of his death* (Ecclesiasticus 1:13). The fear of Yahuah carries the *it shall be well with thee* of Psalm 128 clear to the last day.',
+       sv.verse_id, ev.verse_id, 'extras', 25178
+  FROM _s302_ps128_lookup sv, _s302_ps128_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=128 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=128 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-128-thy-wife-a-fruitful-vine-thy-children-like-olive-plants',
+       E'Thy wife a fruitful vine, thy children like olive plants',
+       E'*Thy wife shall be as a fruitful vine by the sides of thine house: thy children like olive plants round about thy table* (Psalm 128:3). The household of the man who fears Yahuah is the seed of promise made visible — and the seed is gift, never wage: *Lo, children are an heritage of Yahuah (LORD): and the fruit of the womb is his reward* (Psalm 127:3), the ascent just before.\n\nThe *olive plants* round the table grow into the one olive of Yashar''el. *And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them... partakest of the root and fatness of the olive tree* (Romans 11:17) — but read with the guard Paul himself nails down: *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2), and *all Yashar''el (Israel) shall be saved* (Romans 11:26). Both branches, natural and wild, are the one covenant people regathered to the root — never a new people replacing the old.\n\nBen Sira ties the fruitful wife to the very fear the psalm turns on: *A good wife is a good portion, which shall be given in the portion of them that fear Yahuah (God)* (Ecclesiasticus 26:3) — *Blessed is the man that has a virtuous wife, for the number of his days shall be double* (Ecclesiasticus 26:1).',
+       sv.verse_id, ev.verse_id, 'extras', 25181
+  FROM _s302_ps128_lookup sv, _s302_ps128_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=128 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=128 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-128-Yahuah-bless-thee-out-of-Zion-and-peace-upon-Yashar-el',
+       E'Yahuah bless thee out of Zion, and peace upon Yashar''el',
+       E'The psalm widens from one table to the whole house: *Yahuah (LORD) shall bless thee out of Zion: and thou shalt see the good of Jerusalem all the days of thy life. Yea, thou shalt see thy children''s children, and peace upon Yashar''el (Israel)* (Psalm 128:5-6). The blessing comes *out of Zion*, the one mountain where his name dwells, answered by the closing ascent: *Yahuah (LORD) that made heaven and earth bless thee out of Zion* (Psalm 134:3).\n\nAnd it ends where Psalm 125 ends: *but peace shall be upon Yashar''el (Israel)* (Psalm 125:5) — shalom on the whole house, both sticks made one. Paul seals Galatians with this same benediction over those who keep the Torah-walk: *as many as walk according to this rule, peace be on them, and mercy, and upon the Yashar''el (Israel) of Elohim (God)* (Galatians 6:16) — not a replacement people but the covenant people, for *Elohim (God) hath not cast away his people* (Romans 11:1-2).\n\n*Thou shalt see thy children''s children* is the generational covenant in one household''s view: *the faithful Elohim (God), which keepeth covenant and mercy with them that love him and keep his commandments to a thousand generations* (Deuteronomy 7:9) — the thousand generations seen in grandchildren round the table.',
+       sv.verse_id, ev.verse_id, 'free', 25184
+  FROM _s302_ps128_lookup sv, _s302_ps128_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=128 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=128 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (128,1,'canon','psalms',1,2,1,E'Psalm 1:2 — *his delight is in the law of Yahuah... in his law doth he meditate day and night*: the Psalter''s first blessed man is the Torah-keeper, identical to the blessed walker of Psalm 128:1.'),
+    (128,1,'canon','deuteronomy',10,12,2,E'Deuteronomy 10:12 — Moses'' charge, *to fear Yahuah... to walk in all his ways*: the psalm''s two verbs lifted from Torah, and v.13 names the walk as keeping the commandments.'),
+    (128,1,'canon','proverbs',1,7,3,E'Proverbs 1:7 — *The fear of Yahuah is the beginning of knowledge*: the fear that opens Psalm 128 is the fear that opens all wisdom.'),
+    (128,1,'canon','ecclesiastes',12,13,4,E'Ecclesiastes 12:13 — *Fear Elohim, and keep his commandments: for this is the whole duty of man*: fear and commandment-keeping fused, the whole of Psalm 128:1.'),
+    (128,1,'canon','1-john',2,3,5,E'1 John 2:3-4 — *if we keep his commandments... He that saith, I know him, and keepeth not his commandments, is a liar*: the apostolic filter that *walketh in his ways* means commandment-keeping, never abolished (v.6, walk as he walked).'),
+    (128,4,'canon','psalms',128,1,6,E'Psalm 128:1 — v.4 (*thus shall the man be blessed that feareth Yahuah*) seals the inclusio back to v.1: the whole blessing hangs on the fear of Yahuah and the walk in his ways.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-128-blessed-is-everyone-that-feareth-Yahuah-that-walketh-in-his-ways'
+  JOIN _s302_ps128_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps128_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (128,2,'canon','deuteronomy',28,2,1,E'Deuteronomy 28:2 — the covenant blessing *if thou shalt hearken*: eating the labour of one''s hands is the Deuteronomy reward for obedience (v.12, bless all the work of thine hand).'),
+    (128,2,'canon','deuteronomy',28,33,2,E'Deuteronomy 28:33 — the curse the psalm overturns: *all thy labours shall a nation which thou knowest not eat up*. The fear of Yahuah decides which side of Deut 28 a man eats on.'),
+    (128,2,'canon','isaiah',3,10,3,E'Isaiah 3:10 — *it shall be well with him: for they shall eat the fruit of their doings*: Isaiah pronounces over the righteous exactly Psalm 128:2''s *it shall be well with thee* (v.11 the wicked''s opposite).'),
+    (128,2,'apocrypha','ecclesiasticus',1,13,4,E'Ecclesiasticus 1:13 — *Whoso fears Yahuah, it shall go well with him at the last*: Ben Sira stretches the psalm''s well-being past the table to the day of death.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-128-thou-shalt-eat-the-labour-of-thine-hands-it-shall-be-well-with-thee'
+  JOIN _s302_ps128_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps128_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (128,3,'canon','psalms',127,3,1,E'Psalm 127:3 — *children are an heritage of Yahuah... the fruit of the womb is his reward*: the seed of promise round the table is gift, never wage.'),
+    (128,3,'canon','romans',11,17,2,E'Romans 11:17 — the olive plants grow into the one olive of Yashar''el; read with Paul''s own guard (11:2 *hath not cast away his people*; 11:26 *all Yashar''el shall be saved*): both branches the one covenant people, never replacement.'),
+    (128,3,'apocrypha','ecclesiasticus',26,3,3,E'Ecclesiasticus 26:3 — *A good wife... given in the portion of them that fear Yahuah*: the fruitful vine bound to the very fear the whole psalm turns on (26:1, days doubled).')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-128-thy-wife-a-fruitful-vine-thy-children-like-olive-plants'
+  JOIN _s302_ps128_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps128_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (128,5,'canon','psalms',134,3,1,E'Psalm 134:3 — *Yahuah that made heaven and earth bless thee out of Zion*: the closing ascent answers Psalm 128:5 word for word, the Maker sending blessing from his mountain.'),
+    (128,6,'canon','psalms',125,5,2,E'Psalm 125:5 — *but peace shall be upon Yashar''el*: the psalm''s closing benediction, shalom on the whole house, both sticks made one.'),
+    (128,6,'canon','galatians',6,16,3,E'Galatians 6:16 — *peace... upon the Yashar''el of Elohim*, pronounced over those who *walk according to this rule*: the Torah-walk of v.1 blessed again at v.6, never a replacement people.'),
+    (128,6,'canon','deuteronomy',7,9,4,E'Deuteronomy 7:9 — *keepeth covenant and mercy... to a thousand generations*: *thy children''s children* is the generational covenant seen in one household, kept with them that keep his commandments.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-128-Yahuah-bless-thee-out-of-Zion-and-peace-upon-Yashar-el'
+  JOIN _s302_ps128_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps128_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_129.sql (Psalm 129) -----
+-- Chapter: Psalm 129 — Song of Ascents — the afflicted-but-unprevailed covenant people
+-- Tag: ps129   Session prefix: s302   Slug prefix: psalm-129-
+-- Sort band base: 25200 (25200, 25203, 25206, 25209)
+--
+-- Psalm 129 coverage:
+--   v.1-2  ("Many a time have they afflicted me from my youth... yet they have not prevailed")
+--          NT:     Romans 8:35-37 (more than conquerors); Romans 11:1-2 (Elohim hath not cast away his people) — WARRANTED
+--          Extras: none warranted (the NT + Tanakh laterals carry the seed-war/two-house frame)
+--          Tanakh: Genesis 3:15 (enmity/seed-war); Hosea 11:1 (Yashar'el a child, called out of Egypt = "from my youth") — WARRANTED
+--   v.3    ("The plowers plowed upon my back: they made long their furrows")
+--          NT:     Matthew 27:26 (Yahusha scourged) — WARRANTED
+--          Extras: none warranted (Isaiah's servant songs carry it)
+--          Tanakh: Isaiah 50:6 (I gave my back to the smiters); Isaiah 53:5 (with his stripes we are healed) — WARRANTED
+--   v.4    ("Yahuah is righteous: he hath cut asunder the cords of the wicked")
+--          NT:     none warranted (the Psalter laterals carry the bonds-broken theme)
+--          Extras: none warranted
+--          Tanakh: Psalm 124:7 (the snare is broken, and we are escaped); Psalm 2:3 (break their bands asunder) — WARRANTED
+--   v.5-8  ("Let them all be confounded... that hate Zion... as the grass upon the housetops, which withereth")
+--          NT:     none warranted (the grass-withers/chaff frame is fully Tanakh)
+--          Extras: none warranted
+--          Tanakh: Psalm 83:4 (let us cut them off from being a nation); Isaiah 37:27 (as the grass on the housetops); Psalm 1:4 (chaff the wind driveth away); Isaiah 40:6-8 (the grass withereth... but the word of our Elohim shall stand) — WARRANTED
+--
+-- Threads (4):
+--   psalm-129-many-a-time-afflicted-from-my-youth-yet-they-have-not-prevailed  [free; Tanakh+NT]
+--       — v1-2; seed-war Gen3:15, "from my youth"=Hos11:1, Rom8:35-37 more-than-conquerors, Rom11:1-2 NOT cast off (guard)
+--   psalm-129-the-plowers-plowed-upon-my-back-the-scourged-suffering-servant   [free; Tanakh+NT]
+--       — v3; Isa50:6 back to the smiters, Isa53:5 with his stripes we are healed, Matt27:26 the scourging (FORWARD to the Formed Son in the flesh)
+--   psalm-129-yahuah-is-righteous-he-hath-cut-asunder-the-cords-of-the-wicked  [free; Tanakh]
+--       — v4; Ps124:7 snare broken (lateral Ascents), Ps2:3 the wicked's own cords cast away
+--   psalm-129-let-them-that-hate-zion-be-as-grass-upon-the-housetops-that-withereth  [free; Tanakh]
+--       — v5-8; Ps83:4 cut-off-from-being-a-nation, Isa37:27 grass on the housetops, Ps1:4 chaff, Isa40:6-8 grass withers but the word stands (victims-not-enemies: the system judged, not a people hated)
+--
+-- Framework notes: Psalm 129 is the persecuted two-house people preserved through history and
+-- never overcome — the seed-war of Gen 3:15 run forward, the dispersion that did NOT cast off
+-- (Rom 11:1-2 guard against any replacement reading). v.3's plowed back is read FORWARD as the
+-- scourged suffering servant / the Formed Son in the flesh (Isa 50/53; Matt 27). v.5-8 is held
+-- under victims-not-enemies: the haters of Zion's SYSTEM withers, no ethnic curse intended.
+
+CREATE TEMP VIEW _s302_ps129_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: many a time afflicted from my youth, yet not prevailed (v1-2)
+    ('canon','psalms',129,1,'canon','genesis',3,15,'free',
+     E'*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15) The whole affliction of *Many a time have they afflicted me from my youth* (Psalm 129:1) is the seed-war first declared in the garden — the serpent''s seed striking at the woman''s seed across all history, yet the heel-bruise never becomes a head-crush of the covenant people.'),
+    ('canon','psalms',129,1,'canon','hosea',11,1,'free',
+     E'*When Yashar''el (Israel) was a child, then I loved him, and called my son out of Egypt.* (Hosea 11:1) The *from my youth* of *Many a time have they afflicted me from my youth* (Psalm 129:1) reaches back to the nation''s very beginning — Egypt, the house of bondage — where the affliction began and Yahuah loved and called his son out of it.'),
+    ('canon','psalms',129,2,'canon','romans',8,35,'free',
+     E'*Who shall separate us from the love of Messiah (Christ)? shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?* (Romans 8:35) The defiant *yet they have not prevailed against me* (Psalm 129:2) is sung forward here: every affliction listed is real, and not one of them severs the covenant people from the love that holds them.'),
+    ('canon','psalms',129,2,'canon','romans',8,37,'free',
+     E'*Nay, in all these things we are more than conquerors through him that loved us.* (Romans 8:37) *Yet they have not prevailed against me* (Psalm 129:2) is the very confession Sha''ul (Paul) makes good — the afflicted are not merely survivors but *more than conquerors*, unprevailed against through the One who loved them.'),
+    ('canon','psalms',129,2,'canon','romans',11,1,'free',
+     E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.* (Romans 11:1) The unprevailed *yet they have not prevailed against me* (Psalm 129:2) is the guard against every replacement reading: the scattered people were afflicted but NOT cast away — Sha''ul stands as living proof of the preserved seed.'),
+    ('canon','psalms',129,2,'canon','romans',11,2,'free',
+     E'*Elohim (God) hath not cast away his people which he foreknew...* (Romans 11:2) *Yet they have not prevailed against me* (Psalm 129:2) — the persecutors could afflict but never undo the foreknown covenant: Yahuah *hath not cast away his people*, the dispersion is preservation, not divorce.'),
+    -- Thread 2: the plowers plowed upon my back — the scourged suffering servant (v3)
+    ('canon','psalms',129,3,'canon','isaiah',50,6,'free',
+     E'*I gave my back to the smiters, and my cheeks to them that plucked off the hair: I hid not my face from shame and spitting.* (Isaiah 50:6) The afflicted people''s *The plowers plowed upon my back: they made long their furrows* (Psalm 129:3) is taken up by the suffering servant who freely *gave my back to the smiters* — the same scourged back, borne willingly.'),
+    ('canon','psalms',129,3,'canon','isaiah',53,5,'free',
+     E'*But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.* (Isaiah 53:5) The long furrows plowed across the back of *The plowers plowed upon my back* (Psalm 129:3) become the very stripes by which *we are healed* — the servant absorbs the affliction of the people into his own scourged flesh.'),
+    ('canon','psalms',129,3,'canon','matthew',27,26,'free',
+     E'*Then released he Barabbas unto them: and when he had scourged Yahusha (Jesus), he delivered him to be crucified.* (Matthew 27:26) The plowers'' long furrows of *The plowers plowed upon my back: they made long their furrows* (Psalm 129:3) are answered FORWARD when the Formed Son in the flesh is scourged — the back of the afflicted people made the back of the Messiah.'),
+    -- Thread 3: Yahuah is righteous, he hath cut asunder the cords of the wicked (v4)
+    ('canon','psalms',129,4,'canon','psalms',124,7,'free',
+     E'*Our soul is escaped as a bird out of the snare of the fowlers: the snare is broken, and we are escaped.* (Psalm 124:7) The same Ascents deliverance: *Yahuah (LORD) is righteous: he hath cut asunder the cords of the wicked* (Psalm 129:4) — the bonds that bound the people are cut, *the snare is broken, and we are escaped*.'),
+    ('canon','psalms',129,4,'canon','psalms',2,3,'free',
+     E'*Let us break their bands asunder, and cast away their cords from us.* (Psalm 2:3) The raging wicked plot to throw off Yahuah''s cords; *Yahuah (LORD) is righteous: he hath cut asunder the cords of the wicked* (Psalm 129:4) turns it back on them — it is the WICKED whose cords the righteous Yahuah cuts asunder.'),
+    -- Thread 4: let them that hate Zion be as grass upon the housetops that withereth (v5-8)
+    ('canon','psalms',129,5,'canon','psalms',83,4,'free',
+     E'*They have said, Come, and let us cut them off from being a nation; that the name of Yashar''el (Israel) may be no more in remembrance.* (Psalm 83:4) This is the hatred of *all... that hate Zion* (Psalm 129:5) named outright — the design to erase Yashar''el from being a nation, the very enmity that *shall be confounded and turned back*.'),
+    ('canon','psalms',129,6,'canon','isaiah',37,27,'free',
+     E'*Therefore their inhabitants were of small power, they were dismayed and confounded: they were as the grass of the field, and as the green herb, as the grass on the housetops, and as corn blasted before it be grown up.* (Isaiah 37:27) The Assyrian haters of Zion are exactly *as the grass upon the housetops, which withereth afore it groweth up* (Psalm 129:6) — rootless growth on a roof, *confounded* and *blasted before it be grown up*.'),
+    ('canon','psalms',129,6,'canon','psalms',1,4,'free',
+     E'*The ungodly are not so: but are like the chaff which the wind driveth away.* (Psalm 1:4) The haters of Zion who are *as the grass upon the housetops, which withereth* (Psalm 129:6) share the end of all the ungodly — rootless *chaff which the wind driveth away*, nothing to gather, nothing that stands.'),
+    ('canon','psalms',129,6,'canon','isaiah',40,7,'free',
+     E'*The grass withereth, the flower fadeth: because the spirit of Yahuah (LORD) bloweth upon it: surely the people is grass.* (Isaiah 40:7) The withering of *the grass upon the housetops, which withereth afore it groweth up* (Psalm 129:6) is the universal verdict on flesh set against Yahuah — *the grass withereth* when his breath blows, and only the word of Elohim stands for ever.'),
+    ('canon','psalms',129,6,'canon','isaiah',40,8,'free',
+     E'*The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever.* (Isaiah 40:8) The housetop grass of *which withereth afore it groweth up* (Psalm 129:6) withers — *but the word of our Elohim shall stand for ever*: the haters of Zion fade, the covenant word and the covenant people endure.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps129_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps129_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-129-many-a-time-afflicted-from-my-youth-yet-they-have-not-prevailed',
+       E'Many a time have they afflicted me from my youth: yet they have not prevailed against me',
+       E'*Many a time have they afflicted me from my youth, may Yashar''el (Israel) now say: Many a time have they afflicted me from my youth: yet they have not prevailed against me.* (Psalm 129:1-2) This Song of Ascents is the persecuted two-house people looking back over the whole history of their affliction — and declaring it never overcame them. The affliction is the seed-war first spoken in the garden: *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15) — the serpent''s seed striking at the woman''s seed across the ages, wounding the heel but never crushing the head of the covenant line. The *from my youth* reaches back to the nation''s very beginning: *When Yashar''el (Israel) was a child, then I loved him, and called my son out of Egypt.* (Hosea 11:1) — the affliction began in the house of bondage, and Yahuah loved and called his son out of it. The defiant *yet they have not prevailed against me* is sung forward by Sha''ul (Paul): *Who shall separate us from the love of Messiah (Christ)? shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?* (Romans 8:35) — and his answer, *Nay, in all these things we are more than conquerors through him that loved us.* (Romans 8:37). And lest any read the long affliction as Yahuah casting off his people, the guard stands: *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.* (Romans 11:1); *Elohim (God) hath not cast away his people which he foreknew...* (Romans 11:2). The dispersion is preservation, not divorce — afflicted many a time, never prevailed against.',
+       sv.verse_id, ev.verse_id, 'free', 25200
+  FROM _s302_ps129_lookup sv, _s302_ps129_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=129 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=129 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-129-the-plowers-plowed-upon-my-back-the-scourged-suffering-servant',
+       E'The plowers plowed upon my back: the scourged suffering servant',
+       E'*The plowers plowed upon my back: they made long their furrows.* (Psalm 129:3) The affliction is made flesh as a scourged back — long furrows torn across the body of the covenant people. This is the back the suffering servant takes as his own: *I gave my back to the smiters, and my cheeks to them that plucked off the hair: I hid not my face from shame and spitting.* (Isaiah 50:6) — given willingly, not taken by force. And those long furrows become the very stripes of healing: *But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.* (Isaiah 53:5). The type is answered FORWARD when the Formed Son — the expressed Word who led Yashar''el, now in the flesh — bears the plowers'' furrows in his own body: *Then released he Barabbas unto them: and when he had scourged Yahusha (Jesus), he delivered him to be crucified.* (Matthew 27:26). The afflicted people''s plowed back and the Messiah''s scourged back are one back; the furrows long since become the stripes by which the people are healed.',
+       sv.verse_id, ev.verse_id, 'free', 25203
+  FROM _s302_ps129_lookup sv, _s302_ps129_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=129 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=129 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-129-yahuah-is-righteous-he-hath-cut-asunder-the-cords-of-the-wicked',
+       E'Yahuah is righteous: he hath cut asunder the cords of the wicked',
+       E'*Yahuah (LORD) is righteous: he hath cut asunder the cords of the wicked.* (Psalm 129:4) The afflicted back is loosed: the righteous Yahuah cuts the very bonds the wicked used to bind his people. It is the same Ascents deliverance sung two psalms before: *Our soul is escaped as a bird out of the snare of the fowlers: the snare is broken, and we are escaped.* (Psalm 124:7) — the snare broken, the bird gone free. And the irony cuts the other way against the rebels who once boasted *Let us break their bands asunder, and cast away their cords from us.* (Psalm 2:3): they plotted to throw off Yahuah''s cords, but it is the cords of *the wicked* that the righteous Yahuah cuts asunder. The bonds of the oppressor do not hold, because the One who breaks them is righteous.',
+       sv.verse_id, ev.verse_id, 'free', 25206
+  FROM _s302_ps129_lookup sv, _s302_ps129_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=129 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=129 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-129-let-them-that-hate-zion-be-as-grass-upon-the-housetops-that-withereth',
+       E'Let them that hate Zion be as the grass upon the housetops, which withereth',
+       E'*Let them all be confounded and turned back that hate Zion. Let them be as the grass upon the housetops, which withereth afore it groweth up.* (Psalm 129:5-6) The psalm closes not in vengeance against a people but in a verdict on a system of hatred — the haters of Zion come to nothing, rootless growth on a roof that dies before it can be reaped. Their hatred is named outright: *They have said, Come, and let us cut them off from being a nation; that the name of Yashar''el (Israel) may be no more in remembrance.* (Psalm 83:4) — the design to erase the covenant people, which is itself *confounded and turned back*. The figure is Isaiah''s of the dismayed Assyrian: *Therefore their inhabitants were of small power, they were dismayed and confounded: they were as the grass of the field... as the grass on the housetops, and as corn blasted before it be grown up.* (Isaiah 37:27). It is the end of all the ungodly: *The ungodly are not so: but are like the chaff which the wind driveth away.* (Psalm 1:4) — nothing to gather, *wherewith the mower filleth not his hand* (Psalm 129:7). And the whole frame is the verdict on flesh that sets itself against Yahuah: *The grass withereth, the flower fadeth: because the spirit of Yahuah (LORD) bloweth upon it: surely the people is grass.* (Isaiah 40:7); *The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever.* (Isaiah 40:8). The haters of Zion wither; the covenant word and the covenant people stand. The system is judged — never a people hated.',
+       sv.verse_id, ev.verse_id, 'free', 25209
+  FROM _s302_ps129_lookup sv, _s302_ps129_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=129 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=129 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (129,1,'canon','genesis',3,15,1,E'*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15) — the seed-war behind *Many a time have they afflicted me from my youth*: the serpent''s seed bruises the heel, never crushes the head.'),
+    (129,1,'canon','hosea',11,1,2,E'*When Yashar''el (Israel) was a child, then I loved him, and called my son out of Egypt.* (Hosea 11:1) — *from my youth* = from Egypt, the nation''s beginning, where the affliction started and Yahuah called his son out.'),
+    (129,2,'canon','romans',8,35,3,E'*Who shall separate us from the love of Messiah (Christ)? shall tribulation, or distress, or persecution...?* (Romans 8:35) — every affliction is real, yet none severs the people from the love that holds *yet they have not prevailed against me*.'),
+    (129,2,'canon','romans',8,37,4,E'*Nay, in all these things we are more than conquerors through him that loved us.* (Romans 8:37) — *yet they have not prevailed against me* made good: not survivors only but more than conquerors.'),
+    (129,2,'canon','romans',11,1,5,E'*Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham...* (Romans 11:1) — the guard: afflicted but NOT cast away; Sha''ul is the living preserved seed.'),
+    (129,2,'canon','romans',11,2,6,E'*Elohim (God) hath not cast away his people which he foreknew...* (Romans 11:2) — the dispersion is preservation, not divorce; *they have not prevailed against me*.')
+  ) AS m(src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-129-many-a-time-afflicted-from-my-youth-yet-they-have-not-prevailed'
+  JOIN _s302_ps129_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=129 AND sv.verse_number=m.src_v
+  JOIN _s302_ps129_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (129,3,'canon','isaiah',50,6,1,E'*I gave my back to the smiters, and my cheeks to them that plucked off the hair...* (Isaiah 50:6) — the suffering servant takes the plowed back of *The plowers plowed upon my back* as his own, given willingly.'),
+    (129,3,'canon','isaiah',53,5,2,E'*...with his stripes we are healed.* (Isaiah 53:5) — the long furrows become the stripes of healing; the servant absorbs the people''s affliction into his flesh.'),
+    (129,3,'canon','matthew',27,26,3,E'*...when he had scourged Yahusha (Jesus), he delivered him to be crucified.* (Matthew 27:26) — answered FORWARD: the Formed Son in the flesh bears the plowers'' long furrows.')
+  ) AS m(src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-129-the-plowers-plowed-upon-my-back-the-scourged-suffering-servant'
+  JOIN _s302_ps129_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=129 AND sv.verse_number=m.src_v
+  JOIN _s302_ps129_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (129,4,'canon','psalms',124,7,1,E'*Our soul is escaped as a bird out of the snare of the fowlers: the snare is broken, and we are escaped.* (Psalm 124:7) — the same Ascents deliverance: *he hath cut asunder the cords of the wicked*, the snare broken.'),
+    (129,4,'canon','psalms',2,3,2,E'*Let us break their bands asunder, and cast away their cords from us.* (Psalm 2:3) — the rebels plotted to throw off Yahuah''s cords; it is the WICKED''s cords the righteous Yahuah cuts asunder.')
+  ) AS m(src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-129-yahuah-is-righteous-he-hath-cut-asunder-the-cords-of-the-wicked'
+  JOIN _s302_ps129_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=129 AND sv.verse_number=m.src_v
+  JOIN _s302_ps129_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (129,5,'canon','psalms',83,4,1,E'*...let us cut them off from being a nation; that the name of Yashar''el (Israel) may be no more in remembrance.* (Psalm 83:4) — the hatred of *all... that hate Zion* named outright, the design to erase Yashar''el, confounded and turned back.'),
+    (129,6,'canon','isaiah',37,27,2,E'*...they were as the grass of the field... as the grass on the housetops, and as corn blasted before it be grown up.* (Isaiah 37:27) — the Assyrian haters are exactly *the grass upon the housetops, which withereth afore it groweth up*.'),
+    (129,6,'canon','psalms',1,4,3,E'*The ungodly are not so: but are like the chaff which the wind driveth away.* (Psalm 1:4) — the housetop grass shares the end of all the ungodly: rootless chaff, nothing to gather.'),
+    (129,6,'canon','isaiah',40,7,4,E'*The grass withereth, the flower fadeth: because the spirit of Yahuah (LORD) bloweth upon it: surely the people is grass.* (Isaiah 40:7) — flesh set against Yahuah withers at his breath.'),
+    (129,6,'canon','isaiah',40,8,5,E'*The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever.* (Isaiah 40:8) — the haters fade; the covenant word and the covenant people stand for ever.')
+  ) AS m(src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-129-let-them-that-hate-zion-be-as-grass-upon-the-housetops-that-withereth'
+  JOIN _s302_ps129_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=129 AND sv.verse_number=m.src_v
+  JOIN _s302_ps129_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_130.sql (Psalm 130) -----
+--
+-- Chapter: Psalm 130 (KEYSTONE — de profundis, the sixth penitential psalm; plenteous redemption)
+-- Tag: ps130   Session prefix: s302   Slug prefix: psalm-130-  (SINGULAR)
+-- Sort band base: 25225  (25225, 25228, 25231, 25234, 25237)
+-- Source rows ALWAYS 'canon','psalms',130,v.   Member table = cross_reference_thread_members.
+--
+-- Per-chapter coverage checklist:
+--   v.1-2  (Out of the depths have I cried unto thee... hear my voice)
+--          NT:     none warranted here (the cry is answered FORWARD via the redemption thread v.7-8)
+--          Extras: none warranted (Manasseh's prayer empty in this parse; Sirach reserved for mercy/wait threads)
+--          Tanakh: Jonah 2:2 (out of the belly of hell cried I); Ps 69:1-2 (the deep waters); Lam 3:55 (out of the low dungeon)  -> THREAD 1
+--   v.3    (If thou shouldest mark iniquities, who shall stand?)
+--          NT:     Rom 3:19-20 (by the deeds of the law no flesh justified); Rev 6:17 (who shall be able to stand?)  -> THREAD 2
+--          Extras: 2 Esdras 8:36 (merciful to them which have not the confidence of good works)  -> THREAD 2
+--          Tanakh: Mal 3:2 (who shall stand when he appeareth?); Ps 143:2 (no man living be justified)  -> THREAD 2
+--   v.4    (But there is forgiveness with thee, that thou mayest be feared)
+--          NT:     1 John 1:9 (faithful and just to forgive)  -> THREAD 3
+--          Extras: none warranted (Sirach's forgiveness verse 2:11 reserved for the keystone mercy thread)
+--          Tanakh: Exod 34:6-7 (the Name proclaimed, forgiving iniquity); Jer 31:34 (I will forgive their iniquity); Deut 10:12-13 (the fear that walks/keeps commandments)  -> THREAD 3
+--   v.5-6  (I wait for Yahuah... in his word do I hope... more than they that watch for the morning)
+--          NT:     Rom 8:24-25 (saved by hope; with patience wait for it)  -> THREAD 4
+--          Extras: Ecclesiasticus 2:7 (you that fear Yahuah, wait for his mercy)  -> THREAD 4
+--          Tanakh: Ps 119:81 (I hope in thy word); Lam 3:24-26 (good that a man should hope and quietly wait); Isa 21:11-12 (Watchman, the morning cometh)  -> THREAD 4
+--   v.7-8  (Let Yashar'el hope... plenteous redemption... he shall redeem Yashar'el from all his iniquities)
+--          NT:     Titus 2:14 (redeem us from all iniquity); Matt 1:21 (save his people from their sins); Rom 11:26-27 (all Yashar'el saved, take away their sins); Rom 11:1-2 (Elohim hath NOT cast away his people — guard); Luke 1:68 (visited and redeemed his people)  -> THREAD 5
+--          Extras: Ecclesiasticus 2:11 (full of compassion and mercy... forgiveth sins)  -> THREAD 5
+--          Tanakh: Ps 103:3-4 (forgiveth all thine iniquities; redeemeth thy life)  -> THREAD 5
+--
+-- Threads (slug -> target libraries):
+--   1. psalm-130-out-of-the-depths-have-i-cried                                  [free]   Tanakh
+--   2. psalm-130-if-thou-shouldest-mark-iniquities-who-shall-stand               [extras] Tanakh + NT + Apocrypha(2 Esdras)
+--   3. psalm-130-there-is-forgiveness-with-thee-that-thou-mayest-be-feared       [free]   Tanakh + NT
+--   4. psalm-130-i-wait-for-yahuah-and-in-his-word-do-i-hope                     [extras] Tanakh + NT + Apocrypha(Ecclesiasticus)
+--   5. psalm-130-with-yahuah-is-plenteous-redemption-he-shall-redeem-israel      [extras] Tanakh + NT + Apocrypha(Ecclesiasticus)
+--
+-- Framework-load-bearing / contested framings:
+--   v.3 who-shall-stand: framed as exclusion of flesh-MERIT / self-righteousness (Rom 3:20 the deeds of the
+--        law = the flesh's bid to be justified BY law-doing; 2 Esdras 8:36 no confidence of good works), NOT
+--        an abolition of Torah. The very next verse (v.4) produces the fear that keeps commandments (Deut 10:12-13).
+--   v.4 forgiveness UNTO fear: pardon that yields reverence/obedience, NOT license. Joined to Exod 34:6-7 (the
+--        Name) and Deut 10:12-13 (fear -> walk -> keep the commandments) so the 1 John 2:3-4 filter is honored.
+--   v.7-8 plenteous redemption: THE keystone. Redemption of the WHOLE house of Yashar'el (two houses, Rom 11:26),
+--        with the Rom 11:1-2 guard wired IN so the regathering is never read as replacement.
+
+CREATE TEMP VIEW _s302_ps130_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+
+  -- THREAD 1 — v.1-2 the cry out of the depths
+  ('canon','psalms',130,1,'canon','jonah',2,2,'free',
+   E'*And said, I cried by reason of mine affliction unto Yahuah (LORD), and he heard me; out of the belly of hell cried I, and thou heardest my voice.* (Jonah 2:2). Psalm 130 opens with the same cry from the lowest place — *Out of the depths have I cried unto thee, O Yahuah (LORD)* (Psalm 130:1). Yonah prays from inside the fish, the psalmist from the depths of guilt; both are heard, for Yahuah hears the voice that rises from the bottom.'),
+  ('canon','psalms',130,1,'canon','psalms',69,2,'free',
+   E'*I sink in deep mire, where there is no standing: I am come into deep waters, where the floods overflow me.* (Psalm 69:2). The deep is the figure of a soul going under in its trouble; *Out of the depths have I cried unto thee, O Yahuah (LORD)* (Psalm 130:1) sings the same descent, and the same upward cry from it.'),
+  ('canon','psalms',130,2,'canon','lamentations',3,55,'free',
+   E'*I called upon thy name, O Yahuah (LORD), out of the low dungeon.* (Lamentations 3:55). The mourner of Yerushalayim calls the Name from the pit; the psalmist begs *Yahuah (Lord), hear my voice: let thine ears be attentive to the voice of my supplications* (Psalm 130:2) — the Name called from the lowest place is the Name that bends to hear.'),
+
+  -- THREAD 2 — v.3 if thou shouldest mark iniquities, who shall stand?
+  ('canon','psalms',130,3,'canon','romans',3,20,'free',
+   E'*Therefore by the deeds of the law there shall no flesh be justified in his sight: for by the law is the knowledge of sin.* (Romans 3:20). *If thou, Yahuah (LORD), shouldest mark iniquities, O Yahuah (Lord), who shall stand?* (Psalm 130:3) is the question Sha''ul answers: under a strict reckoning no flesh can plead its own law-doing as merit. This excludes self-righteousness — the flesh''s bid to be justified BY its works — it does not abolish the Torah, which the very next breath makes the ground of reverent obedience.'),
+  ('canon','psalms',130,3,'canon','malachi',3,2,'free',
+   E'*But who may abide the day of his coming? and who shall stand when he appeareth? for he is like a refiner''s fire, and like fullers'' soap:* (Malachi 3:2). Mal''akhi asks the same question the psalmist asks — *who shall stand?* (Psalm 130:3) — of the coming of the messenger of the covenant. No flesh abides the refiner''s fire on its own account; the standing must be given, not earned.'),
+  ('canon','psalms',130,3,'canon','psalms',143,2,'free',
+   E'*And enter not into judgment with thy servant: for in thy sight shall no man living be justified.* (Psalm 143:2). The companion penitential psalm states plainly what Psalm 130:3 asks — *who shall stand?* — that under bare judgment no man living is justified. The plea is for mercy, not for a verdict on the merits.'),
+  ('canon','psalms',130,3,'canon','revelation',6,17,'free',
+   E'*For the great day of his wrath is come; and who shall be able to stand?* (Revelation 6:17). The seal-vision echoes the psalm''s question forward to the last day — *who shall stand?* (Psalm 130:3). The answer in both is the same: only those covered by the forgiveness of the next verse, never the strength of their own flesh.'),
+  ('canon','psalms',130,3,'apocrypha','2-esdras',8,36,'extras',
+   E'*For in this, O Yahuah (God), your righteousness and your goodness shall be declared, if you be merciful to them which have not the confidence of good works.* (2 Esdras 8:36). Ezra''s prayer says outright what Psalm 130:3 implies — *who shall stand?* — that the standing rests on mercy shown to those who have no store of works to lean on. The flesh''s confidence is excluded; the mercy is the whole ground.'),
+
+  -- THREAD 3 — v.4 but there is forgiveness with thee, that thou mayest be feared
+  ('canon','psalms',130,4,'canon','exodus',34,6,'free',
+   E'*And Yahuah (LORD) passed by before him, and proclaimed, Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth,* (Exodus 34:6). The forgiveness of Psalm 130:4 — *But there is forgiveness with thee* — is the Name Yahuah proclaimed to Moshe: mercy is not a softening of the covenant but the covenant Name itself unfolded before His servant.'),
+  ('canon','psalms',130,4,'canon','exodus',34,7,'free',
+   E'*Keeping mercy for thousands, forgiving iniquity and transgression and sin, and that will by no means clear the guilty; visiting the iniquity of the fathers upon the children...* (Exodus 34:7). *There is forgiveness with thee, that thou mayest be feared* (Psalm 130:4): the Name that forgives iniquity is the same Name that will by no means clear the guilty — so the pardon is no license, it is the very thing that puts the fear of Yahuah in the heart.'),
+  ('canon','psalms',130,4,'canon','jeremiah',31,34,'free',
+   E'*...for I will forgive their iniquity, and I will remember their sin no more.* (Jeremiah 31:34). The new covenant promise is the psalmist''s *there is forgiveness with thee* (Psalm 130:4) written on the heart — and the same passage writes the Torah *in their inward parts* (Jeremiah 31:33). Pardon and the law-on-the-heart come together; the forgiveness produces the obedient fear, never replaces it.'),
+  ('canon','psalms',130,4,'canon','deuteronomy',10,12,'free',
+   E'*And now, Yashar''el (Israel), what doth Yahuah Elohayka (the LORD thy God) require of thee, but to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways, and to love him...* (Deuteronomy 10:12). This names the fear Psalm 130:4 says forgiveness produces — *that thou mayest be feared*. The fear of Yahuah is to walk in His ways; pardon that does not bend the heart to walk is not the pardon the psalm sings.'),
+  ('canon','psalms',130,4,'canon','1-john',1,9,'free',
+   E'*If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.* (1 John 1:9). The forgiveness *with thee* (Psalm 130:4) is named faithful and just — not indulgent, but covenant-true. And by the same writer, the forgiven keep His commandments (1 John 2:3-4); the pardon makes the reverent walker.'),
+
+  -- THREAD 4 — v.5-6 I wait for Yahuah, and in his word do I hope
+  ('canon','psalms',130,5,'canon','psalms',119,81,'free',
+   E'*My soul fainteth for thy salvation: but I hope in thy word.* (Psalm 119:81). Psalm 130:5 — *in his word do I hope* — is the Torah-psalm''s own confession; the hope is not vague longing but hope anchored in the spoken word and covenant of Yahuah.'),
+  ('canon','psalms',130,5,'canon','lamentations',3,26,'free',
+   E'*It is good that a man should both hope and quietly wait for the salvation of Yahuah (LORD).* (Lamentations 3:26). *I wait for Yahuah (LORD), my soul doth wait* (Psalm 130:5) is the same posture the mourner learns in the ashes: hope and quiet waiting for the salvation that comes from Yahuah alone.'),
+  ('canon','psalms',130,6,'canon','isaiah',21,12,'free',
+   E'*The watchman said, The morning cometh, and also the night: if ye will enquire, enquire ye: return, come.* (Isaiah 21:12). The psalmist waits *more than they that watch for the morning* (Psalm 130:6); Yeshayahu''s watchman answers the night-cry with the promise that *the morning cometh* — and with the call to *return*. The waiting is not idle; it turns the heart back.'),
+  ('canon','psalms',130,5,'canon','romans',8,25,'free',
+   E'*But if we hope for that we see not, then do we with patience wait for it.* (Romans 8:25). Sha''ul names the very discipline of Psalm 130:5 — *my soul doth wait* — hope for the unseen carried in patience. The night-watch of the psalm is the patient waiting of the covenant people for the redemption to come.'),
+  ('canon','psalms',130,5,'apocrypha','ecclesiasticus',2,7,'extras',
+   E'*You that fear Yahuah (God), wait for his mercy; and go not aside, lest you fall.* (Ecclesiasticus 2:7). Ben Sira binds the waiting of Psalm 130:5 to the fear of v.4: those who fear Yahuah *wait for his mercy*. The hope in the Word and the wait for mercy are one posture, and the fear keeps the waiter from turning aside.'),
+
+  -- THREAD 5 — v.7-8 with Yahuah is plenteous redemption; he shall redeem Yashar'el from all his iniquities
+  ('canon','psalms',130,7,'canon','titus',2,14,'free',
+   E'*Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works.* (Titus 2:14). The *plenteous redemption* of Psalm 130:7 is fulfilled in the Formed Son who redeems *from all iniquity* — the very ''all'' of *he shall redeem Yashar''el (Israel) from all his iniquities* (Psalm 130:8) — and the redeemed are made a peculiar people zealous of good works, not freed from them.'),
+  ('canon','psalms',130,8,'canon','matthew',1,21,'free',
+   E'*And she shall bring forth a son, and thou shalt call his name Yahusha (JESUS): for he shall save his people from their sins.* (Matthew 1:21). The Name Yahusha means He shall save His people from their sins — the very work of Psalm 130:8, *he shall redeem Yashar''el (Israel) from all his iniquities*. The plenteous redemption takes flesh and bears the Name of the saving it performs.'),
+  ('canon','psalms',130,7,'canon','romans',11,26,'free',
+   E'*And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob:* (Romans 11:26). *Let Yashar''el (Israel) hope in Yahuah* (Psalm 130:7) and *he shall redeem Yashar''el (Israel) from all his iniquities* (Psalm 130:8) are the whole-house promise Sha''ul cites: ALL Yashar''el — the two houses gathered — delivered, ungodliness turned away.'),
+  ('canon','psalms',130,7,'canon','romans',11,27,'free',
+   E'*For this is my covenant unto them, when I shall take away their sins.* (Romans 11:27). The covenant Sha''ul quotes is the redemption *from all his iniquities* (Psalm 130:8): the taking away of the sins of Yashar''el is the everlasting covenant pledge, not a new people put in Yashar''el''s place.'),
+  ('canon','psalms',130,7,'canon','romans',11,1,'free',
+   E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.* (Romans 11:1). The guard on the keystone: *Let Yashar''el (Israel) hope in Yahuah* (Psalm 130:7) presumes Yashar''el is still His people. Elohim has NOT cast them away; the plenteous redemption is FOR them, never a transfer of the promise to another people.'),
+  ('canon','psalms',130,7,'canon','luke',1,68,'free',
+   E'*Blessed be Yahuah Elohim (the Lord God) of Yashar''el (Israel); for he hath visited and redeemed his people,* (Luke 1:68). Zekharyah''s song answers Psalm 130:7''s hope: Yahuah Elohim of Yashar''el *hath visited and redeemed his people* — the plenteous redemption come at last to the house it was always promised to.'),
+  ('canon','psalms',130,7,'canon','psalms',103,3,'free',
+   E'*Who forgiveth all thine iniquities; who healeth all thy diseases;* (Psalm 103:3). The companion psalm sings the same ''all'' — *forgiveth all thine iniquities* answering *he shall redeem Yashar''el (Israel) from all his iniquities* (Psalm 130:8). With Yahuah there is *plenteous redemption* (Psalm 130:7) because His mercy reaches every iniquity, not some.'),
+  ('canon','psalms',130,8,'canon','psalms',103,4,'free',
+   E'*Who redeemeth thy life from destruction; who crowneth thee with lovingkindness and tender mercies;* (Psalm 103:4). *He shall redeem Yashar''el (Israel) from all his iniquities* (Psalm 130:8) is the personal mercy of Psalm 103:4 made the portion of the whole house — life redeemed from destruction, crowned with the lovingkindness in which there is plenteous redemption.'),
+  ('canon','psalms',130,7,'apocrypha','ecclesiasticus',2,11,'extras',
+   E'*For Yahuah (God) is full of compassion and mercy, longsuffering, and very pitiful, and forgiveth sins, and saves in time of affliction.* (Ecclesiasticus 2:11). Ben Sira names the *mercy* and *plenteous redemption* of Psalm 130:7 in the same words: full of compassion, forgiving sins, saving in affliction — the Sinai Name (Exod 34:6) carried into the wisdom of the second-Temple fathers.')
+
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps130_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps130_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== threads =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-130-out-of-the-depths-have-i-cried',
+       E'Out of the depths have I cried unto thee',
+       E'Psalm 130 opens at the bottom: *Out of the depths have I cried unto thee, O Yahuah (LORD). Yahuah (Lord), hear my voice: let thine ears be attentive to the voice of my supplications* (Psalm 130:1-2). It is the cry of a soul gone under, and the canon sings it again and again. Yonah prays from inside the fish — *out of the belly of hell cried I, and thou heardest my voice* (Jonah 2:2). The psalmist of Psalm 69 sinks in the same water — *I sink in deep mire, where there is no standing: I am come into deep waters, where the floods overflow me* (Psalm 69:2). And the mourner of Yerushalayim calls the Name from the pit — *I called upon thy name, O Yahuah (LORD), out of the low dungeon* (Lamentations 3:55). The depths are no barrier to Yahuah; the Name called from the lowest place is the Name that bends to hear.',
+       sv.verse_id, ev.verse_id, 'free', 25225
+  FROM _s302_ps130_lookup sv, _s302_ps130_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=130 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=130 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-130-if-thou-shouldest-mark-iniquities-who-shall-stand',
+       E'If thou shouldest mark iniquities, who shall stand?',
+       E'*If thou, Yahuah (LORD), shouldest mark iniquities, O Yahuah (Lord), who shall stand?* (Psalm 130:3). Under a strict reckoning — every sin marked and held — no one stands. Sha''ul gives the verdict: *by the deeds of the law there shall no flesh be justified in his sight: for by the law is the knowledge of sin* (Romans 3:20). The companion psalm pleads the same — *enter not into judgment with thy servant: for in thy sight shall no man living be justified* (Psalm 143:2). Mal''akhi asks it of the coming One — *who shall stand when he appeareth? for he is like a refiner''s fire* (Malachi 3:2) — and the seal-vision asks it of the last day — *the great day of his wrath is come; and who shall be able to stand?* (Revelation 6:17). Ezra''s prayer lays the ground bare: Yahuah''s goodness is declared *if you be merciful to them which have not the confidence of good works* (2 Esdras 8:36). Read it carefully: what is excluded is flesh-MERIT, the bid to be justified BY one''s own law-doing — not the Torah itself, which the very next verse turns into reverent obedience. No flesh stands on its account; the standing must be given.',
+       sv.verse_id, ev.verse_id, 'extras', 25228
+  FROM _s302_ps130_lookup sv, _s302_ps130_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=130 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=130 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-130-there-is-forgiveness-with-thee-that-thou-mayest-be-feared',
+       E'There is forgiveness with thee, that thou mayest be feared',
+       E'*But there is forgiveness with thee, that thou mayest be feared* (Psalm 130:4). The pardon is not a softening that breeds license — it produces the fear of Yahuah. This forgiveness is the covenant Name itself, proclaimed to Moshe: *Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth, keeping mercy for thousands, forgiving iniquity and transgression and sin, and that will by no means clear the guilty* (Exodus 34:6-7). The same Name that forgives will by no means clear the unrepentant — so the pardon puts reverence in the heart. The new covenant pledges it — *I will forgive their iniquity, and I will remember their sin no more* (Jeremiah 31:34) — in the very breath that writes the Torah *in their inward parts* (Jeremiah 31:33). And the fear it produces is named: *to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways* (Deuteronomy 10:12). The forgiveness is *faithful and just* (1 John 1:9) — covenant-true, making the forgiven a reverent walker who keeps His commandments, never a freed lawless one.',
+       sv.verse_id, ev.verse_id, 'free', 25231
+  FROM _s302_ps130_lookup sv, _s302_ps130_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=130 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=130 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-130-i-wait-for-yahuah-and-in-his-word-do-i-hope',
+       E'I wait for Yahuah, and in his word do I hope',
+       E'*I wait for Yahuah (LORD), my soul doth wait, and in his word do I hope. My soul waiteth for Yahuah (Lord) more than they that watch for the morning: I say, more than they that watch for the morning* (Psalm 130:5-6). The hope is anchored in the WORD, not in vague longing. The Torah-psalm makes the same confession — *My soul fainteth for thy salvation: but I hope in thy word* (Psalm 119:81). The mourner learns it in the ashes — *It is good that a man should both hope and quietly wait for the salvation of Yahuah (LORD)* (Lamentations 3:26). Yeshayahu''s watchman answers the night-cry — *The watchman said, The morning cometh, and also the night... return, come* (Isaiah 21:12) — so the waiting turns the heart back. Sha''ul names the discipline — *if we hope for that we see not, then do we with patience wait for it* (Romans 8:25). And Ben Sira binds the waiting to the fear of the verse before: *You that fear Yahuah (God), wait for his mercy; and go not aside, lest you fall* (Ecclesiasticus 2:7). Hope in the Word and wait for the mercy are one posture, kept by the fear that does not turn aside.',
+       sv.verse_id, ev.verse_id, 'extras', 25234
+  FROM _s302_ps130_lookup sv, _s302_ps130_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=130 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=130 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-130-with-yahuah-is-plenteous-redemption-he-shall-redeem-israel',
+       E'With Yahuah is plenteous redemption — he shall redeem Yashar''el from all his iniquities',
+       E'The keystone: *Let Yashar''el (Israel) hope in Yahuah (LORD): for with Yahuah (LORD) there is mercy, and with him is plenteous redemption. And he shall redeem Yashar''el (Israel) from all his iniquities* (Psalm 130:7-8). The redemption is plenteous and it is for the WHOLE house — *all his iniquities*, the whole people. The Formed Son fulfills the ''all'': *Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works* (Titus 2:14). He bears the Name of the work — *thou shalt call his name Yahusha (JESUS): for he shall save his people from their sins* (Matthew 1:21). Sha''ul reads it of the two houses gathered: *so all Yashar''el (Israel) shall be saved... For this is my covenant unto them, when I shall take away their sins* (Romans 11:26-27). And he guards it against every replacement reading — *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1): the plenteous redemption is FOR Yashar''el, never transferred to another people. Zekharyah sings it come at last — *Blessed be Yahuah Elohim (the Lord God) of Yashar''el (Israel); for he hath visited and redeemed his people* (Luke 1:68). The companion psalm names the mercy — *Who forgiveth all thine iniquities... Who redeemeth thy life from destruction* (Psalm 103:3-4) — and Ben Sira the same: *Yahuah (God) is full of compassion and mercy, longsuffering, and very pitiful, and forgiveth sins, and saves in time of affliction* (Ecclesiasticus 2:11). Out of the depths the cry began; here it is answered — plenteous redemption for all the house of Yashar''el.',
+       sv.verse_id, ev.verse_id, 'extras', 25237
+  FROM _s302_ps130_lookup sv, _s302_ps130_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=130 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=130 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== thread_members =====================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('psalms',130,1,'canon','jonah',2,2,1,E'Jonah 2:2 — *out of the belly of hell cried I, and thou heardest my voice*: Yonah''s cry from the fish answers *out of the depths have I cried unto thee* (Psalm 130:1).'),
+    ('psalms',130,1,'canon','psalms',69,2,2,E'Psalm 69:2 — *I am come into deep waters, where the floods overflow me*: the same descent into the deep behind Psalm 130:1.'),
+    ('psalms',130,2,'canon','lamentations',3,55,3,E'Lamentations 3:55 — *I called upon thy name, O Yahuah (LORD), out of the low dungeon*: the Name called from the pit, as in *hear my voice* (Psalm 130:2).')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-130-out-of-the-depths-have-i-cried'
+  JOIN _s302_ps130_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps130_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('psalms',130,3,'canon','romans',3,20,1,E'Romans 3:20 — *by the deeds of the law there shall no flesh be justified in his sight*: the answer to *who shall stand?* (Psalm 130:3) — flesh-merit excluded, Torah not abolished.'),
+    ('psalms',130,3,'canon','malachi',3,2,2,E'Malachi 3:2 — *who shall stand when he appeareth? for he is like a refiner''s fire*: the same question asked of the coming messenger of the covenant.'),
+    ('psalms',130,3,'canon','psalms',143,2,3,E'Psalm 143:2 — *in thy sight shall no man living be justified*: the companion psalm states plainly what Psalm 130:3 asks.'),
+    ('psalms',130,3,'canon','revelation',6,17,4,E'Revelation 6:17 — *the great day of his wrath is come; and who shall be able to stand?*: the psalm''s question carried to the last day.'),
+    ('psalms',130,3,'apocrypha','2-esdras',8,36,5,E'2 Esdras 8:36 — *if you be merciful to them which have not the confidence of good works*: the standing rests on mercy, not on a store of works.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-130-if-thou-shouldest-mark-iniquities-who-shall-stand'
+  JOIN _s302_ps130_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps130_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('psalms',130,4,'canon','exodus',34,6,1,E'Exodus 34:6 — *Yahuah Elohim (The LORD God), merciful and gracious, longsuffering*: the forgiveness *with thee* (Psalm 130:4) is the covenant Name proclaimed to Moshe.'),
+    ('psalms',130,4,'canon','exodus',34,7,2,E'Exodus 34:7 — *forgiving iniquity and transgression and sin, and that will by no means clear the guilty*: the Name that forgives yet does not clear the unrepentant — pardon that breeds fear, not license.'),
+    ('psalms',130,4,'canon','jeremiah',31,34,3,E'Jeremiah 31:34 — *I will forgive their iniquity, and I will remember their sin no more*: the new-covenant pardon, joined to the Torah written *in their inward parts* (31:33).'),
+    ('psalms',130,4,'canon','deuteronomy',10,12,4,E'Deuteronomy 10:12 — *to fear Yahuah Elohayka (the LORD thy God), to walk in all his ways*: this names the fear Psalm 130:4 says forgiveness produces.'),
+    ('psalms',130,4,'canon','1-john',1,9,5,E'1 John 1:9 — *he is faithful and just to forgive us our sins*: the forgiveness is covenant-true, making the forgiven a commandment-keeper (1 John 2:3-4).')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-130-there-is-forgiveness-with-thee-that-thou-mayest-be-feared'
+  JOIN _s302_ps130_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps130_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('psalms',130,5,'canon','psalms',119,81,1,E'Psalm 119:81 — *I hope in thy word*: the Torah-psalm''s own confession of Psalm 130:5''s *in his word do I hope*.'),
+    ('psalms',130,5,'canon','lamentations',3,26,2,E'Lamentations 3:26 — *that a man should both hope and quietly wait for the salvation of Yahuah*: the same waiting posture as *my soul doth wait* (Psalm 130:5).'),
+    ('psalms',130,6,'canon','isaiah',21,12,3,E'Isaiah 21:12 — *The watchman said, The morning cometh... return, come*: answers the watch *for the morning* (Psalm 130:6) and turns the heart back.'),
+    ('psalms',130,5,'canon','romans',8,25,4,E'Romans 8:25 — *with patience wait for it*: Sha''ul names the discipline of the night-watch of Psalm 130:5.'),
+    ('psalms',130,5,'apocrypha','ecclesiasticus',2,7,5,E'Ecclesiasticus 2:7 — *You that fear Yahuah (God), wait for his mercy*: binds the waiting to the fear of v.4 — one posture kept from turning aside.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-130-i-wait-for-yahuah-and-in-his-word-do-i-hope'
+  JOIN _s302_ps130_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps130_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('psalms',130,7,'canon','titus',2,14,1,E'Titus 2:14 — *that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works*: the Formed Son fulfills the ''all'' of *plenteous redemption* (Psalm 130:7-8).'),
+    ('psalms',130,8,'canon','matthew',1,21,2,E'Matthew 1:21 — *call his name Yahusha (JESUS): for he shall save his people from their sins*: the Name bears the very work of *he shall redeem Yashar''el from all his iniquities* (Psalm 130:8).'),
+    ('psalms',130,7,'canon','romans',11,26,3,E'Romans 11:26 — *so all Yashar''el (Israel) shall be saved*: the whole-house redemption of Psalm 130:7 — the two houses gathered.'),
+    ('psalms',130,7,'canon','romans',11,27,4,E'Romans 11:27 — *this is my covenant unto them, when I shall take away their sins*: the everlasting covenant of taking away Yashar''el''s sins (Psalm 130:8).'),
+    ('psalms',130,7,'canon','romans',11,1,5,E'Romans 11:1 — *Hath Elohim cast away his people? Elohim forbid*: the guard — the plenteous redemption is FOR Yashar''el, never transferred to another people.'),
+    ('psalms',130,7,'canon','luke',1,68,6,E'Luke 1:68 — *he hath visited and redeemed his people*: Zekharyah sings the redemption of Psalm 130:7 come at last to the house it was promised to.'),
+    ('psalms',130,7,'canon','psalms',103,3,7,E'Psalm 103:3 — *Who forgiveth all thine iniquities*: the companion ''all'' answering *plenteous redemption* (Psalm 130:7).'),
+    ('psalms',130,8,'canon','psalms',103,4,8,E'Psalm 103:4 — *Who redeemeth thy life from destruction*: the personal mercy made the portion of the whole house (Psalm 130:8).'),
+    ('psalms',130,7,'apocrypha','ecclesiasticus',2,11,9,E'Ecclesiasticus 2:11 — *full of compassion and mercy... forgiveth sins, and saves in time of affliction*: Ben Sira names the mercy and plenteous redemption of Psalm 130:7 in the Sinai Name''s own words.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-130-with-yahuah-is-plenteous-redemption-he-shall-redeem-israel'
+  JOIN _s302_ps130_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps130_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
