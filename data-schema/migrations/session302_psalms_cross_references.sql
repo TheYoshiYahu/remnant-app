@@ -2406,6 +2406,1349 @@ SELECT t.id, cr.id, 4, E'*Thou hast ascended on high, thou hast led captivity ca
  WHERE t.slug='psalm-24-the-king-of-glory-shall-come-in'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_40.sql (Psalm 40) -----
+-- Chapter: Psalm 40 — LO, I COME: THE BODY PREPARED, THE TORAH WITHIN THE HEART. The deliverance from the horrible pit and the new song put in the mouth (v.1-3); the great messianic confession — Sacrifice and offering thou didst not desire; mine ears hast thou opened... Then said I, Lo, I come: in the volume of the book it is written of me, I delight to do thy will, O my Elohim: yea, thy law is within my heart (v.6-8), which Hebrews 10 reads of the Formed Son entering the world (a body hast thou prepared me); and the proclamation of righteousness in the great congregation (v.9-10).
+-- Tag: ps040   Temp view: _s302_ps040_lookup
+-- Sort band: base 22975, step 3 -> threads at 22975, 22978, 22981 (3 threads)
+-- Source of EVERY row: 'canon','psalms',40,v
+--
+-- Psalm 40 coverage:
+--   v.1-3 (He brought me up also out of an horrible pit, out of the miry clay, and set my feet upon a rock... And he hath put a new song in my mouth — the deliverance and the new song)
+--        NT:     none warranted (the resurrection-vindication lateral is not clean enough to force here; kept light, folded into THREAD 1's own prose around the new song and the rock)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct as a member (the new-song/declared-trust movement runs straight into the great-congregation proclamation of v.9-10 = THREAD 3; bound there, not doubled here) — THREAD 1 carries v.1-3 as anchor prose
+--   ★★ v.6-8 (Sacrifice and offering thou didst not desire; mine ears hast thou opened: burnt offering and sin offering hast thou not required. Then said I, Lo, I come: in the volume of the book it is written of me, I delight to do thy will, O my Elohim: yea, thy law is within my heart)
+--        NT:     ★★ Hebrews 10:5-7 (Wherefore when he cometh into the world, he saith, Sacrifice and offering thou wouldest not, but a body hast thou prepared me... Lo, I come... to do thy will, O Elohim) — THREAD 2 (load-bearing: the Formed Son enters the world to DO the will, the body prepared); Hebrews 10:16 (I will put my laws into their hearts, and in their minds will I write them) — THREAD 2 (the new-covenant Torah-on-the-heart, the SAME law not abolished)
+--        Extras: Sirach 35:1 (He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering) — THREAD 2 (obedience IS the offering; the kept Torah above mere ritual)
+--        Tanakh: ★ 1 Samuel 15:22 (to obey is better than sacrifice, and to hearken than the fat of rams); Psalm 51:16 (thou desirest not sacrifice... thou delightest not in burnt offering); Micah 6:8 (what doth Yahuah require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim); ★ Jeremiah 31:33 (I will put my law in their inward parts, and write it in their hearts) — THREAD 2 (the obedient heart Yahuah always sought above ritual; the law written within = the new covenant, NOT Torah cancelled)
+--   v.9-10 (I have preached righteousness in the great congregation... I have not concealed thy lovingkindness and thy truth from the great congregation)
+--        NT:     none warranted (no clean forced NT member; the great-congregation proclamation is best held by the Tanakh lateral below)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 22:22 (I will declare thy name unto my brethren: in the midst of the congregation will I praise thee); Psalm 22:25 (My praise shall be of thee in the great congregation: I will pay my vows before them that fear him) — THREAD 3 (the declared righteousness in the great congregation, the same proclaiming voice)
+--   v.11-17 (the closing plea — innumerable evils, deliver me, make haste to help me; let them be ashamed that seek my soul; but I am poor and needy)
+--        NT:     none warranted   Extras: none warranted
+--        Tanakh: none warranted distinct (the lament-petition coda repeats Psalm 70 almost verbatim, a Davidic-petition parallel only, not framework-load-bearing for this pack; deliberately NOT forced)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-40-he-brought-me-up-out-of-the-horrible-pit-a-new-song — (anchor-prose thread, v.1-3; the deliverance and the new song) — Tanakh laterals folded into THREAD 3; kept LIGHT per framing
+--   2. psalm-40-lo-i-come-the-body-prepared-thy-law-within-my-heart — NT (Hebrews) + Tanakh (1 Samuel, Psalm 51, Micah, Jeremiah) + Extras (Sirach) [extras] (★★ the keystone: the body prepared, the obedient heart above ritual, the Torah written within = new covenant NOT abolition)
+--   3. psalm-40-i-have-preached-righteousness-in-the-great-congregation — Tanakh (Psalm 22) [free] (the declared righteousness in the great congregation)
+--
+-- Framing notes:
+--   ★★ LO, I COME / THE BODY PREPARED (THREAD 2 — Red Lines #6 + #4): *Sacrifice and offering thou didst not desire; mine ears hast thou opened: burnt offering and sin offering hast thou not required. Then said I, Lo, I come: in the volume of the book it is written of me, I delight to do thy will, O my Elohim (God): yea, thy law is within my heart* (40:6-8). Hebrews 10:5-7 reads this OF the Formed Son entering the world — *when he cometh into the world... a body hast thou prepared me... Lo, I come... to do thy will, O Elohim (God)*. FRAMED STRICTLY: this is NOT sacrifice-abolished-and-Torah-with-it. The whole Tanakh already said the obedient heart was sought ABOVE mere ritual — *to obey is better than sacrifice* (1 Samuel 15:22), *thou desirest not sacrifice* (Psalm 51:16), *what doth Yahuah require... but to do justly, and to love mercy, and to walk humbly* (Micah 6:8). And *thy law is within my heart* is the NEW-COVENANT Torah-on-the-heart — *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33), the very words Hebrews 10:16 quotes back: *I will put my laws into their hearts, and in their minds will I write them*. The Formed Son comes to DO the will, to DELIGHT in the Torah, embodying the obedience; the prepared body is the Formed Son entering the world to keep it, NOT to cancel it. The law is within his heart; the new covenant WRITES it there — it never abolishes it. Sirach 35:1 says the same: *He that keepeth the law brings offerings enough* — obedience IS the offering.
+--   THE FORMED-AND-FORMLESS (THREAD 2): Hebrews puts the psalm in the mouth of the One *when he cometh into the world* — the Formed Son, the expressed Word who took on the prepared body, come to do the Father's will. NO co-equal-persons grammar, NO modalist collapse: the Son delights to do the will of *my Elohim (God)*, His Father, with the Torah within his heart.
+--   THE GREAT CONGREGATION (THREAD 3): *I have preached righteousness in the great congregation... I have not concealed thy lovingkindness and thy truth* (40:9-10) is the same proclaiming voice as the great Messianic psalm — *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee* (Psalm 22:22), *My praise shall be of thee in the great congregation* (Psalm 22:25). The righteousness declared, the truth not concealed, before the gathered assembly.
+--   VERSES WITH NO ADD: v.11-17 (the closing petition — *deliver me... make haste to help me... I am poor and needy*) repeats Psalm 70 nearly verbatim, a Davidic-lament parallel only, not framework-load-bearing for this pack; deliberately not forced as a member.
+
+CREATE TEMP VIEW _s302_ps040_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 2 (★★): Lo, I come — the body prepared, thy law within my heart
+    ('canon','psalms',40,6,'canon','hebrews',10,5,'free',
+      E'*Wherefore when he cometh into the world, he saith, Sacrifice and offering thou wouldest not, but a body hast thou prepared me* (Hebrews 10:5). The letter takes the psalm and sets it in the mouth of the Formed Son as He enters the world — *Sacrifice and offering thou didst not desire; mine ears hast thou opened* (Psalm 40:6) becomes *a body hast thou prepared me*. The opened ear of the obedient servant is read as the whole prepared body given to do the will: not that the offerings are nothing, but that the heart that hears and obeys was always sought above the bare ritual.'),
+    ('canon','psalms',40,7,'canon','hebrews',10,7,'free',
+      E'*Then said I, Lo, I come (in the volume of the book it is written of me,) to do thy will, O Elohim (God)* (Hebrews 10:7). This is *Then said I, Lo, I come: in the volume of the book it is written of me* (Psalm 40:7) carried word-for-word into the mouth of the One who came. The Formed Son enters the world saying *Lo, I come... to do thy will* — the obedience the whole Scripture foretold of Him, written of Him in the volume of the book, now embodied in the One sent to do it.'),
+    ('canon','psalms',40,8,'canon','hebrews',10,16,'free',
+      E'*This is the covenant that I will make with them after those days, saith Yahuah (Lord), I will put my laws into their hearts, and in their minds will I write them* (Hebrews 10:16). The psalm''s *I delight to do thy will, O my Elohim (God): yea, thy law is within my heart* (Psalm 40:8) is the new-covenant promise itself — the SAME law put into the heart, not taken away. Hebrews quotes the new covenant of Jeremiah back to prove it: the Torah is *written* in the inward parts, delighted in, done. The law within the heart is the covenant kept, never the covenant cancelled.'),
+    ('canon','psalms',40,6,'canon','1-samuel',15,22,'free',
+      E'*And Samuel said, Hath Yahuah (LORD) as great delight in burnt offerings and sacrifices, as in obeying the voice of Yahuah (LORD)? Behold, to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22). Long before the psalm, the principle is set: *to obey is better than sacrifice*. So when the psalm sings *Sacrifice and offering thou didst not desire; mine ears hast thou opened* (Psalm 40:6), it is not the abolishing of the offerings but the old word that the heard, obedient ear is what Yahuah sought through them all along.'),
+    ('canon','psalms',40,6,'canon','psalms',51,16,'free',
+      E'*For thou desirest not sacrifice; else would I give it: thou delightest not in burnt offering* (Psalm 51:16). David''s other great confession says the same as *Sacrifice and offering thou didst not desire... burnt offering and sin offering hast thou not required* (Psalm 40:6) — *thou desirest not sacrifice... thou delightest not in burnt offering*. The next breath there is *the sacrifices of Elohim are a broken spirit*: not ritual abolished, but the contrite, obedient heart that the ritual was always meant to carry.'),
+    ('canon','psalms',40,8,'canon','micah',6,8,'free',
+      E'*He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8). Micah weighs *thousands of rams* and *rivers of oil* and finds the requirement is the walk of the obedient heart — to *do justly... love mercy... walk humbly*. That is the very thing of *I delight to do thy will, O my Elohim (God): yea, thy law is within my heart* (Psalm 40:8): the Torah done from within, the will of Yahuah delighted in, above the multiplied offering.'),
+    ('canon','psalms',40,8,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). This is what *thy law is within my heart* (Psalm 40:8) means — the new covenant is the SAME law *put in their inward parts, and written in their hearts*, not a different law and not no law. The delight to do the will and the Torah within are the covenant promise itself: the commandment moved from tablets of stone into the heart, never erased.'),
+    ('canon','psalms',40,8,'apocrypha','ecclesiasticus',35,1,'extras',
+      E'*He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering* (Sirach 35:1). The restored wisdom-witness says outright what the psalm sings: *He that keepeth the law brings offerings enough*. The kept Torah IS the offering. So *thy law is within my heart* (Psalm 40:8) is no setting-aside of the altar but its fulfilment — the obedient heart that takes heed to the commandment has already offered the peace offering Yahuah desires.'),
+
+    -- THREAD 3: I have preached righteousness in the great congregation
+    ('canon','psalms',40,9,'canon','psalms',22,22,'free',
+      E'*I will declare thy name unto my brethren: in the midst of the congregation will I praise thee* (Psalm 22:22). The proclaiming voice of *I have preached righteousness in the great congregation: lo, I have not refrained my lips* (Psalm 40:9) is the same as the great Messianic psalm''s *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee*. The one delivered does not keep the deliverance to himself — he declares the Name and the righteousness before the gathered people.'),
+    ('canon','psalms',40,10,'canon','psalms',22,25,'free',
+      E'*My praise shall be of thee in the great congregation: I will pay my vows before them that fear him* (Psalm 22:25). The vow to proclaim — *I have not hid thy righteousness within my heart; I have declared thy faithfulness and thy salvation... in the great congregation* (Psalm 40:10) — is matched word-for-word by *My praise shall be of thee in the great congregation* (Psalm 22:25). The same great congregation, the same paid vow, the same lovingkindness and truth not concealed but declared before all who fear Yahuah.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps040_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps040_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (anchor-prose; v.1-3 the deliverance and the new song — kept light, no members)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-40-he-brought-me-up-out-of-the-horrible-pit-a-new-song',
+       E'He brought me up out of the horrible pit — a new song in my mouth',
+       E'The psalm opens in the patience of the delivered: *I waited patiently for Yahuah (LORD); and he inclined unto me, and heard my cry* (Psalm 40:1). And the deliverance is a lifting up from the depths — *He brought me up also out of an horrible pit, out of the miry clay, and set my feet upon a rock, and established my goings* (Psalm 40:2). The man sunk in the miry clay is drawn up and set on the rock; his going, once stuck, is made sure. And out of that deliverance comes the song: *And he hath put a new song in my mouth, even praise unto our Elohim (God): many shall see it, and fear, and shall trust in Yahuah (LORD)* (Psalm 40:3). The new song is not self-made — it is *put in my mouth* by the One who lifted him; and the song becomes a witness, for *many shall see it, and fear, and shall trust*. *Blessed is that man that maketh Yahuah (LORD) his trust* (Psalm 40:4). The lifted-up man, set on the rock with a new song, will not keep silent — and the psalm turns straightway to the great confession of the body prepared to do the will, and to the preaching of that righteousness in the great congregation.',
+       sv.verse_id, ev.verse_id, 'free', 22975
+  FROM _s302_ps040_lookup sv, _s302_ps040_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=40 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-40-lo-i-come-the-body-prepared-thy-law-within-my-heart',
+       E'Lo, I come — the body prepared, thy law within my heart',
+       E'Here is the heart of the psalm, and one of the great Messianic confessions of the whole Tanakh: *Sacrifice and offering thou didst not desire; mine ears hast thou opened: burnt offering and sin offering hast thou not required* (Psalm 40:6). *Then said I, Lo, I come: in the volume of the book it is written of me, I delight to do thy will, O my Elohim (God): yea, thy law is within my heart* (Psalm 40:7-8). The letter to the Hebrews sets these very words in the mouth of the Formed Son as He enters the world: *Wherefore when he cometh into the world, he saith, Sacrifice and offering thou wouldest not, but a body hast thou prepared me* (Hebrews 10:5), *Then said I, Lo, I come (in the volume of the book it is written of me,) to do thy will, O Elohim (God)* (Hebrews 10:7). Read carefully through the lens, for the default reading gets it backwards: this is NOT the offerings abolished and the Torah swept away with them. The whole Tanakh already declared that Yahuah sought the obedient heart ABOVE the bare ritual — *Behold, to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22); *For thou desirest not sacrifice... thou delightest not in burnt offering* (Psalm 51:16); *what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8). The opened ear of Psalm 40:6 is the ear that hears and obeys; Hebrews reads it as the whole prepared body given to do the will. And *thy law is within my heart* is the new covenant itself — *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — the very promise Hebrews quotes back in the same chapter: *I will put my laws into their hearts, and in their minds will I write them* (Hebrews 10:16). The Formed Son comes to DO the will, to DELIGHT in the Torah, embodying the obedience — the One who appeared and spoke in the Tanakh, now taking on the prepared body to keep the law from within. Read through the Formed-and-the-Formless: the Son delights to do the will of *my Elohim (God)*, His Father, with the Torah in His heart — no co-equal-persons grammar, no modalist collapse, but the sent Son come to obey. And the restored wisdom-witness says the same plain thing: *He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering* (Sirach 35:1) — the kept Torah IS the offering. The law is within his heart; the new covenant WRITES it there. It never abolishes it.',
+       sv.verse_id, ev.verse_id, 'extras', 22978
+  FROM _s302_ps040_lookup sv, _s302_ps040_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=40 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-40-i-have-preached-righteousness-in-the-great-congregation',
+       E'I have preached righteousness in the great congregation',
+       E'The man lifted from the pit with a new song does not hide what was done for him. *I have preached righteousness in the great congregation: lo, I have not refrained my lips, O Yahuah (LORD), thou knowest* (Psalm 40:9). *I have not hid thy righteousness within my heart; I have declared thy faithfulness and thy salvation: I have not concealed thy lovingkindness and thy truth from the great congregation* (Psalm 40:10). The righteousness is preached, the faithfulness declared, the lovingkindness and truth not concealed — the deliverance becomes proclamation before the gathered people. This is the same proclaiming voice as the great Messianic psalm of the suffering and vindicated one: *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee* (Psalm 22:22), and *My praise shall be of thee in the great congregation: I will pay my vows before them that fear him* (Psalm 22:25). The same great congregation, the same vow paid, the same Name and righteousness sung out before all who fear Yahuah. The one whose ears were opened to do the will is the one who opens his lips to declare the righteousness — obedience within, proclamation without.',
+       sv.verse_id, ev.verse_id, 'free', 22981
+  FROM _s302_ps040_lookup sv, _s302_ps040_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=40 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*when he cometh into the world, he saith, Sacrifice and offering thou wouldest not, but a body hast thou prepared me* (Hebrews 10:5) — *mine ears hast thou opened* (40:6) read as the whole prepared body of the Formed Son, given to do the will.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps040_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=6
+  JOIN _s302_ps040_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-lo-i-come-the-body-prepared-thy-law-within-my-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Then said I, Lo, I come (in the volume of the book it is written of me,) to do thy will, O Elohim (God)* (Hebrews 10:7) — *Lo, I come... in the volume of the book it is written of me* (40:7) put word-for-word into the mouth of the Formed Son entering the world.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps040_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=7
+  JOIN _s302_ps040_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-lo-i-come-the-body-prepared-thy-law-within-my-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will put my laws into their hearts, and in their minds will I write them* (Hebrews 10:16) — *thy law is within my heart* (40:8) IS the new covenant: the SAME law written within, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps040_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=8
+  JOIN _s302_ps040_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-lo-i-come-the-body-prepared-thy-law-within-my-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22) — the old principle behind *sacrifice and offering thou didst not desire; mine ears hast thou opened* (40:6): the obedient ear sought above the ritual.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps040_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=6
+  JOIN _s302_ps040_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-lo-i-come-the-body-prepared-thy-law-within-my-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*thou desirest not sacrifice... thou delightest not in burnt offering* (Psalm 51:16) — David''s other confession echoes *burnt offering and sin offering hast thou not required* (40:6): the contrite, obedient heart the ritual was meant to carry.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps040_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=6
+  JOIN _s302_ps040_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-lo-i-come-the-body-prepared-thy-law-within-my-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8) — the Torah done from within, above multiplied offerings, as *I delight to do thy will... thy law is within my heart* (40:8).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps040_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=8
+  JOIN _s302_ps040_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-lo-i-come-the-body-prepared-thy-law-within-my-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — *thy law is within my heart* (40:8) is the new covenant: the SAME Torah moved into the heart, never erased.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps040_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=8
+  JOIN _s302_ps040_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-lo-i-come-the-body-prepared-thy-law-within-my-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering* (Sirach 35:1) — the kept Torah IS the offering; *thy law is within my heart* (40:8) is the altar fulfilled, not set aside.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps040_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=8
+  JOIN _s302_ps040_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-lo-i-come-the-body-prepared-thy-law-within-my-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will declare thy name unto my brethren: in the midst of the congregation will I praise thee* (Psalm 22:22) — the same proclaiming voice as *I have preached righteousness in the great congregation* (40:9): the delivered one declares before the people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps040_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=9
+  JOIN _s302_ps040_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-i-have-preached-righteousness-in-the-great-congregation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*My praise shall be of thee in the great congregation: I will pay my vows before them that fear him* (Psalm 22:25) — matched word-for-word by *I have declared thy faithfulness... in the great congregation* (40:10): the same congregation, the same vow paid.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps040_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=10
+  JOIN _s302_ps040_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-i-have-preached-righteousness-in-the-great-congregation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_45.sql (Psalm 45) -----
+-- Chapter: Psalm 45 — THE ROYAL WEDDING PSALM (the King's throne, the anointed gladness, the bride): a song of the King — *fairer than the children of men*, grace poured into his lips; *Gird thy sword upon thy thigh, O most mighty* — the warrior-King riding for truth and righteousness, his arrows sharp in the heart of the king's enemies; ★★ *Thy throne, O Elohim, is for ever and ever... therefore Elohim, thy Elohim, hath anointed thee with the oil of gladness above thy fellows* (the Son addressed AS Elohim who yet has *thy Elohim* who anoints him); the queen in gold of Ophir, the king's daughter brought unto the king in raiment of needlework — the bride made ready; *Instead of thy fathers shall be thy children... I will make thy name to be remembered in all generations* — the everlasting name and seed.
+-- Tag: ps045   Temp view: _s302_ps045_lookup
+-- Sort band: base 23100, step 3 -> threads at 23100, 23103, 23106, 23109, 23112 (5 threads)
+-- Source of EVERY row: 'canon','psalms',45,v
+--
+-- Psalm 45 coverage:
+--   v.1-2 (My heart is inditing a good matter... touching the king; Thou art fairer than the children of men: grace is poured into thy lips: therefore Elohim hath blessed thee for ever)
+--        NT:     none warranted distinct (the anointed-speech/blessed-King forward-weave is carried by the anointing of THREAD 1 [Heb 1:9] and the Isaiah-61 anointed mouth of THREAD 2)
+--        Extras: none warranted (no clean restored-library witness to the King's fair speech closer than the messianic anointing; not forced)
+--        Tanakh: Isaiah 61:1-3 (the Spirit... hath anointed me to preach good tidings... the oil of joy) — THREAD 2 (the anointed mouth/the oil)
+--   ★★ v.6-7 (Thy throne, O Elohim, is for ever and ever: the sceptre of thy kingdom is a right sceptre. Thou lovest righteousness, and hatest wickedness: therefore Elohim, thy Elohim, hath anointed thee with the oil of gladness above thy fellows)
+--        NT:     ★★ Hebrews 1:8-9 (But unto the Son he saith, Thy throne, O Elohim, is for ever and ever... therefore Elohim, even thy Elohim, hath anointed thee with the oil of gladness above thy fellows) — THREAD 1 (load-bearing FORMED-AND-FORMLESS keystone: the Son AS Elohim who has thy Elohim above him)
+--        Extras: none warranted (the Hebrews 1 citation is the decisive witness; no extras quote it)
+--        Tanakh: Isaiah 61:1-3 (anointed... oil of joy) — bridges to THREAD 2; Psalm 110:1 sits at THREAD 3 (the enthroned right hand)
+--   v.3-5 (Gird thy sword upon thy thigh, O most mighty... ride prosperously because of truth and meekness and righteousness... Thine arrows are sharp in the heart of the king's enemies)
+--        NT:     ★ Revelation 19:11-15 (a white horse; he that sat upon him... in righteousness he doth judge and make war... out of his mouth goeth a sharp sword) — THREAD 3 (the warrior-King who rides in righteousness, the sword)
+--        Extras: none warranted (the rider-in-righteousness forward-weave is NT apocalyptic; no clean extras lateral closer; not forced)
+--        Tanakh: Psalm 110:1-2 (Sit thou at my right hand, until I make thine enemies thy footstool... rule thou in the midst of thine enemies) — THREAD 3 (the enemies subdued, the rod of strength)
+--   v.9-15 (the queen in gold of Ophir; Hearken, O daughter... forget also thine own people, and thy father's house; the king's daughter is all glorious within... She shall be brought unto the king in raiment of needlework)
+--        NT:     ★ Revelation 19:7-8 (the marriage of the Lamb is come, and his wife hath made herself ready... arrayed in fine linen, clean and white); Revelation 21:2 (the holy city, new Jerusalem... prepared as a bride adorned for her husband); Ephesians 5:25-27 (Messiah loved the church... that he might present it to himself a glorious church) — THREAD 4 (the bride brought to the King = Yashar'el-restored made ready)
+--        Extras: none warranted (the bride-adorned forward-weave is the NT marriage-of-the-Lamb; no clean extras witness; not forced)
+--        Tanakh: Hosea 2:19-20 (I will betroth thee unto me for ever... in righteousness... and thou shalt know Yahuah) + Hosea 2:23 (I will say to them which were not my people, Thou art my people) — THREAD 4 (the betrothed two-house people, Lo-Ammi made Ammi)
+--   v.16-17 (Instead of thy fathers shall be thy children, whom thou mayest make princes in all the earth. I will make thy name to be remembered in all generations)
+--        NT:     none warranted distinct (the everlasting-name forward-weave is held in THREAD 5 prose; no clean assigned NT target quotes it)
+--        Extras: none warranted
+--        Tanakh: Isaiah 61:9 (their seed shall be known among the Gentiles... the seed which Yahuah hath blessed) — THREAD 5 (the remembered seed in all generations)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-45-thy-throne-o-elohim-is-for-ever-the-oil-of-gladness — NT (Hebrews 1) [free] (★★ FORMED-AND-FORMLESS keystone: the Son AS Elohim who has thy Elohim above him who anoints him)
+--   2. psalm-45-fairer-than-the-children-of-men-grace-in-thy-lips — Tanakh (Isaiah 61) [free] (the anointed mouth, the oil of joy)
+--   3. psalm-45-gird-thy-sword-the-king-rides-in-righteousness — NT (Revelation 19) + Tanakh (Psalm 110) [free] (the warrior-King, the sharp sword, the enemies subdued)
+--   4. psalm-45-the-bride-brought-unto-the-king — NT (Revelation 19, Revelation 21, Ephesians 5) + Tanakh (Hosea 2) [free] (the bride made ready = Yashar'el-restored / Lo-Ammi made Ammi)
+--   5. psalm-45-thy-name-remembered-in-all-generations — Tanakh (Isaiah 61) [free] (the everlasting name and seed)
+--
+-- Framing notes:
+--   ★★ THE FORMED-AND-FORMLESS KEYSTONE (THREAD 1): *Thy throne, O Elohim (God), is for ever and ever... therefore Elohim (God), thy Elohim (God), hath anointed thee with the oil of gladness above thy fellows* (45:6-7). Hebrews 1:8-9 quotes this OF THE SON: *But unto the Son he saith, Thy throne, O Elohim, is for ever and ever... therefore Elohim, even thy Elohim, hath anointed thee with the oil of gladness above thy fellows* (Hebrews 1:8-9). This is the exact Formed-and-Formless grammar (Red Line #4): the King is addressed AS Elohim — *Thy throne, O Elohim* — and yet the SAME verse names *thy Elohim* who anoints him. The Formed Son IS Elohim and HAS a Father/Elohim above him who anoints him. NO co-equal-persons collapse (the verse itself sets the Anointer over the Anointed), NO modalism (the verse names two — the One enthroned and the One who anoints). The verse refutes both errors in one breath. A keystone proof-text for the whole framework.
+--   ★ THE WARRIOR-KING (THREAD 3): *Gird thy sword upon thy thigh, O most mighty... ride prosperously because of truth and meekness and righteousness... Thine arrows are sharp in the heart of the king's enemies* (45:3-5). Revelation 19:11 fills it: the rider on the white horse who *in righteousness he doth judge and make war*, with *a sharp sword* out of his mouth — and *on his vesture and on his thigh a name written* (Rev 19:16), the very thigh the sword is girded on. Psalm 110:1-2 supplies the Tanakh lateral: the King set at Yahuah's right hand until his enemies are made his footstool. The sceptre of righteousness (45:6) and the sword for truth (45:3) are one rule.
+--   ★ THE BRIDE = YASHAR'EL-RESTORED (THREAD 4): *She shall be brought unto the king in raiment of needlework... With gladness and rejoicing shall they be brought* (45:14-15). The bride brought to the King is the covenant people made ready, NOT a replacement people. Revelation 19:7-8 (*the marriage of the Lamb is come, and his wife hath made herself ready... arrayed in fine linen*), Revelation 21:2 (*new Jerusalem... prepared as a bride adorned for her husband*, the city with the twelve tribes' names on the gates, Rev 21:12), and Ephesians 5:25-27 (Messiah presenting the assembly *a glorious church*) fill it forward. Hosea 2:19-23 grounds it in the two-house frame: *I will betroth thee unto me for ever... in righteousness*, and *I will say to them which were not my people, Thou art my people* — the scattered, divorced northern house (Lo-Ammi) betrothed and gathered, made Ammi. The call *forget also thine own people, and thy father's house* (45:10) is the leaving-of-the-far-country to be joined to the King, not the abandonment of the covenant.
+--   VERSES WITH NO ADD: v.8 (the garments of myrrh and aloes out of the ivory palaces) — wedding-finery detail woven into THREAD 4's prose, no distinct target warranted; v.11-12 (the king's desire, the daughter of Tyre with a gift) — bride-detail held within THREAD 4, not given its own member.
+--   EXTRAS: none warranted anywhere in this chapter — the decisive witnesses are the NT (Hebrews 1 quotes v.6-7 outright; Revelation/Ephesians fill the bride and the rider) and the Tanakh laterals (Isaiah 61, Psalm 110, Hosea 2). No clean restored-library verse stands closer than these; not forced. Recorded deliberately per the coverage checklist.
+
+CREATE TEMP VIEW _s302_ps045_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Thy throne, O Elohim, is for ever and ever — the oil of gladness (Formed-and-Formless keystone)
+    ('canon','psalms',45,6,'canon','hebrews',1,8,'free',
+      E'*But unto the Son he saith, Thy throne, O Elohim (God), is for ever and ever: a sceptre of righteousness is the sceptre of thy kingdom* (Hebrews 1:8). The letter takes *Thy throne, O Elohim (God), is for ever and ever: the sceptre of thy kingdom is a right sceptre* (Psalm 45:6) and says plainly it is spoken *unto the Son*. The King addressed AS Elohim is the Formed Son — Elohim, with an everlasting throne and a righteous sceptre. The Most High names the Son Elohim; this is no created angel (*unto which of the angels said he at any time...*, Hebrews 1:5) but the Son who bears the Name.'),
+    ('canon','psalms',45,7,'canon','hebrews',1,9,'free',
+      E'*Thou hast loved righteousness, and hated iniquity; therefore Elohim (God), even thy Elohim (God), hath anointed thee with the oil of gladness above thy fellows* (Hebrews 1:9). This is the keystone: *therefore Elohim (God), thy Elohim (God), hath anointed thee with the oil of gladness above thy fellows* (Psalm 45:7) is quoted of the Son — and the verse itself names TWO. The Son is addressed as Elohim (45:6, Hebrews 1:8), yet here has *thy Elohim* who anoints him. The Formed Son IS Elohim and HAS a Father, an Elohim above him, who anoints him. No collapse into one (the Anointer stands over the Anointed), no two co-equal persons (the Son is anointed *above his fellows* by his Elohim) — the Formed drawn from the Formless, Elohim with a Father.'),
+
+    -- THREAD 2: Thou art fairer than the children of men — grace in thy lips (the anointed mouth)
+    ('canon','psalms',45,2,'canon','isaiah',61,1,'free',
+      E'*The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1). The King whose lips overflow — *grace is poured into thy lips* (Psalm 45:2) — is the Anointed sent to speak: *Yahuah hath anointed me to preach good tidings*. The grace poured into the King''s mouth is the Spirit-anointed proclamation; the fair speech of the royal psalm is the good-tidings mouth of the Servant.'),
+    ('canon','psalms',45,7,'canon','isaiah',61,3,'free',
+      E'*To appoint unto them that mourn in Zion, to give unto them beauty for ashes, the oil of joy for mourning, the garment of praise for the spirit of heaviness* (Isaiah 61:3). The King anointed *with the oil of gladness above thy fellows* (Psalm 45:7) pours that same oil out upon his people — *the oil of joy for mourning*. The gladness with which the King is anointed becomes the joy he distributes; the anointed One is anointed to anoint, the oil of his gladness given to them that mourn in Zion.'),
+
+    -- THREAD 3 (★): Gird thy sword — the King rides in righteousness, his arrows in the enemies
+    ('canon','psalms',45,3,'canon','revelation',19,11,'free',
+      E'*And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war* (Revelation 19:11). The royal summons *Gird thy sword upon thy thigh, O most mighty, with thy glory and thy majesty* (Psalm 45:3) is fulfilled in the rider who *in righteousness... doth judge and make war*. The same righteousness the King loves (45:7) is the righteousness in which he goes to war; the girded sword of the wedding-psalm is the war waged in faithfulness and truth.'),
+    ('canon','psalms',45,4,'canon','revelation',19,15,'free',
+      E'*And out of his mouth goeth a sharp sword, that with it he should smite the nations: and he shall rule them with a rod of iron* (Revelation 19:15). The King who rides *because of truth and meekness and righteousness* (Psalm 45:4) is the rider whose *sharp sword* proceeds out of his mouth to smite the nations and rule with a rod of iron. The right hand that *shall teach thee terrible things* (45:4) is the hand of the One whose word itself is the sword; he rules the nations as the sceptre of righteousness decreed.'),
+    ('canon','psalms',45,5,'canon','revelation',19,16,'free',
+      E'*And he hath on his vesture and on his thigh a name written, KING OF KINGS, AND LORD OF LORDS* (Revelation 19:16). *Thine arrows are sharp in the heart of the king''s enemies; whereby the people fall under thee* (Psalm 45:5) — and the rider who treads down the nations bears the name written *on his thigh*, the very thigh upon which the King was bidden gird his sword (45:3). The enemies who fall under the King fall under the KING OF KINGS; the warrior of the psalm and the rider of the Revelation are one.'),
+    ('canon','psalms',45,5,'canon','psalms',110,1,'free',
+      E'*Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool* (Psalm 110:1). The King whose *arrows are sharp in the heart of the king''s enemies* (Psalm 45:5) is the Lord enthroned at Yahuah''s right hand until *thine enemies* are made *thy footstool*. The enemies that fall under the King in the wedding-psalm are the enemies set beneath his feet in the enthronement-psalm; the warrior-King is the seated King, his foes subdued by the Father''s decree.'),
+    ('canon','psalms',45,3,'canon','psalms',110,2,'free',
+      E'*Yahuah (LORD) shall send the rod of thy strength out of Zion: rule thou in the midst of thine enemies* (Psalm 110:2). The sword girded *upon thy thigh, O most mighty* (Psalm 45:3) is the rod of strength sent *out of Zion* — *rule thou in the midst of thine enemies*. The glory and majesty in which the King is bidden ride is the rule established from Zion; the most mighty One is armed by Yahuah and set to reign amid his foes.'),
+
+    -- THREAD 4 (★): The bride brought unto the King (Yashar'el-restored made ready)
+    ('canon','psalms',45,14,'canon','revelation',19,7,'free',
+      E'*Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7). *She shall be brought unto the king in raiment of needlework... With gladness and rejoicing shall they be brought* (Psalm 45:14-15) is the marriage of the Lamb — *his wife hath made herself ready*, the bride brought with gladness and rejoicing. The king''s daughter prepared and led to the King is the covenant people made ready, the wife of the Lamb adorned for the wedding.'),
+    ('canon','psalms',45,13,'canon','revelation',19,8,'free',
+      E'*And to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints* (Revelation 19:8). *The king''s daughter is all glorious within: her clothing is of wrought gold* (Psalm 45:13) — the bride''s glory within and her wrought-gold raiment are the fine linen *granted* her, *the righteousness of saints*. The clothing of the queen is no self-made splendour but the righteousness given to the set-apart ones; the King''s daughter is made glorious by what is granted her to wear.'),
+    ('canon','psalms',45,14,'canon','revelation',21,2,'free',
+      E'*And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2). The bride *brought unto the king in raiment of needlework* (Psalm 45:14) is the new Jerusalem *prepared as a bride adorned for her husband* — the city whose gates bear *the names of the twelve tribes of the children of Yashar''el (Israel)* (Revelation 21:12). The bride is no replacement people but the gathered covenant nation, the twelve tribes made ready, brought adorned to the King.'),
+    ('canon','psalms',45,11,'canon','ephesians',5,27,'free',
+      E'*That he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it should be holy and without blemish* (Ephesians 5:27). *So shall the king greatly desire thy beauty* (Psalm 45:11) — the King desires the beauty of a bride presented *a glorious church... holy and without blemish*. The beauty the King delights in is the beauty Messiah works in his assembly, the bride sanctified and cleansed and presented glorious, holy and without spot.'),
+    ('canon','psalms',45,10,'canon','hosea',2,19,'free',
+      E'*And I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies* (Hosea 2:19). The daughter bidden *forget also thine own people, and thy father''s house* (Psalm 45:10) to be joined to the King is the people Yahuah betroths *unto me for ever... in righteousness*. The bride leaves the far country to be wed; the scattered, divorced house is betrothed anew — not a new people, but the covenant people brought home and married in righteousness.'),
+    ('canon','psalms',45,16,'canon','hosea',2,23,'free',
+      E'*And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23). *Instead of thy fathers shall be thy children, whom thou mayest make princes in all the earth* (Psalm 45:16) — the children who replace the fathers and are made princes are the people *sown... in the earth*, the Lo-Ammi (*not my people*) made Ammi (*Thou art my people*). The King''s children are the gathered two-house people, mercy given to her that had not obtained mercy, set as princes through all the earth.'),
+
+    -- THREAD 5: I will make thy name to be remembered in all generations (the everlasting name and seed)
+    ('canon','psalms',45,17,'canon','isaiah',61,9,'free',
+      E'*And their seed shall be known among the Gentiles, and their offspring among the people: all that see them shall acknowledge them, that they are the seed which Yahuah (LORD) hath blessed* (Isaiah 61:9). *I will make thy name to be remembered in all generations: therefore shall the people praise thee for ever and ever* (Psalm 45:17) — the name remembered through all generations is the seed *known among the Gentiles... the seed which Yahuah hath blessed*. The everlasting name of the King is carried in his blessed offspring, acknowledged among the nations as Yahuah''s own, praised for ever and ever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-45-thy-throne-o-elohim-is-for-ever-the-oil-of-gladness',
+       E'Thy throne, O Elohim, is for ever and ever — the oil of gladness above thy fellows',
+       E'At the heart of the wedding-psalm stands a verse so bold it is quoted of the Son in the New Testament: *Thy throne, O Elohim (God), is for ever and ever: the sceptre of thy kingdom is a right sceptre. Thou lovest righteousness, and hatest wickedness: therefore Elohim (God), thy Elohim (God), hath anointed thee with the oil of gladness above thy fellows* (Psalm 45:6-7). The letter to the Hebrews takes it up word for word and tells us whose throne it is: *But unto the Son he saith, Thy throne, O Elohim (God), is for ever and ever: a sceptre of righteousness is the sceptre of thy kingdom* (Hebrews 1:8), *Thou hast loved righteousness, and hated iniquity; therefore Elohim (God), even thy Elohim (God), hath anointed thee with the oil of gladness above thy fellows* (Hebrews 1:9). This is the keystone of the Formed-and-the-Formless. Read the verse with both eyes open: the King is addressed AS Elohim — *Thy throne, O Elohim* — the Formed Son who bears the Name, no created angel (*unto which of the angels said he at any time...*, Hebrews 1:5), Elohim with an everlasting throne and a righteous sceptre. And in the SAME breath the verse names a second: *therefore Elohim, thy Elohim, hath anointed thee* — the Son has an Elohim above him, a Father who anoints him. The verse refutes two errors at once. It is not modalism, for the One enthroned and the One who anoints are named together, two and not one mask. It is not co-equal-persons, for the Anointer stands over the Anointed, who is lifted *above his fellows* by his Elohim. The Formed Son is Elohim AND has a Father; the expressed Word drawn from the Formless Source, enthroned forever and anointed by the Most High with the oil of gladness. A keystone proof-text — the framework written into the psalm itself.',
+       sv.verse_id, ev.verse_id, 'free', 23100
+  FROM _s302_ps045_lookup sv, _s302_ps045_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=45 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-45-fairer-than-the-children-of-men-grace-in-thy-lips',
+       E'Fairer than the children of men — grace poured into thy lips, the anointed mouth',
+       E'The psalmist looks on the King and cannot keep silent: *My heart is inditing a good matter: I speak of the things which I have made touching the king: my tongue is the pen of a ready writer* (Psalm 45:1). And he sings the King''s glory: *Thou art fairer than the children of men: grace is poured into thy lips: therefore Elohim (God) hath blessed thee for ever* (Psalm 45:2). The King surpasses the sons of men, and grace overflows from his mouth — the anointed speech of one blessed forever. This is the Anointed One who is sent to speak: *The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives* (Isaiah 61:1). The grace poured into the King''s lips is the Spirit-anointed proclamation of good tidings; the fair speech of the royal psalm is the good-news mouth of the Servant. And the oil of his anointing he pours out again upon his people: *To give unto them beauty for ashes, the oil of joy for mourning, the garment of praise for the spirit of heaviness* (Isaiah 61:3). The same oil of gladness with which the King is anointed *above his fellows* (45:7) becomes the oil of joy he distributes to them that mourn in Zion. The Anointed is anointed to anoint; his blessed lips speak liberty, and his gladness is given away.',
+       sv.verse_id, ev.verse_id, 'free', 23103
+  FROM _s302_ps045_lookup sv, _s302_ps045_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=45 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-45-gird-thy-sword-the-king-rides-in-righteousness',
+       E'Gird thy sword upon thy thigh — the King rides in righteousness, his enemies subdued',
+       E'The psalm turns to the King at war: *Gird thy sword upon thy thigh, O most mighty, with thy glory and thy majesty. And in thy majesty ride prosperously because of truth and meekness and righteousness; and thy right hand shall teach thee terrible things. Thine arrows are sharp in the heart of the king''s enemies; whereby the people fall under thee* (Psalm 45:3-5). This is the warrior-King who rides not for conquest but *because of truth and meekness and righteousness* — the same righteousness he loves and by which his sceptre rules (45:6-7). The Revelation shows the rider who fills it: *And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war* (Revelation 19:11), and *out of his mouth goeth a sharp sword, that with it he should smite the nations: and he shall rule them with a rod of iron* (Revelation 19:15). The sword girded on the King''s thigh is the word that goes out to judge the nations; and on the rider''s thigh is written the name *KING OF KINGS, AND LORD OF LORDS* (Revelation 19:16) — the very thigh of the psalm. The enthronement-psalm supplies the ground of the victory: *Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool* (Psalm 110:1), *Yahuah (LORD) shall send the rod of thy strength out of Zion: rule thou in the midst of thine enemies* (Psalm 110:2). The arrows sharp in the enemies'' heart, the foes made a footstool, the rod sent out of Zion — the warrior-King of the wedding-psalm is the seated King at Yahuah''s right hand, armed by the Father to reign amid his enemies until all is put beneath his feet.',
+       sv.verse_id, ev.verse_id, 'free', 23106
+  FROM _s302_ps045_lookup sv, _s302_ps045_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=45 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-45-the-bride-brought-unto-the-king',
+       E'The bride brought unto the King — Yashar''el-restored made ready',
+       E'The psalm turns from the King to his bride: *Hearken, O daughter, and consider, and incline thine ear; forget also thine own people, and thy father''s house; So shall the king greatly desire thy beauty* (Psalm 45:10-11). She is led to him in splendour: *The king''s daughter is all glorious within: her clothing is of wrought gold. She shall be brought unto the king in raiment of needlework... With gladness and rejoicing shall they be brought: they shall enter into the king''s palace* (Psalm 45:13-15). This bride brought to the King is the covenant people made ready — never a replacement people, but Yashar''el (Israel) restored and gathered. The Revelation fills it: *Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready. And to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints* (Revelation 19:7-8) — the wrought-gold glory of the king''s daughter is the fine linen *granted* her, the righteousness given to the set-apart ones. And the bride is named outright as the gathered nation: *I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2) — the city whose gates bear *the names of the twelve tribes of the children of Yashar''el (Israel)* (Revelation 21:12). Sha''ul (Paul) shows the King''s desire for her beauty answered: Messiah loved the assembly *that he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it should be holy and without blemish* (Ephesians 5:27). And the prophets ground the whole wedding in the two-house regathering: *I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness* (Hosea 2:19), *I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23). The bride who forgets her own people and her father''s house is the scattered, divorced house leaving the far country to be wed — the Lo-Ammi (*not my people*) made Ammi (*my people*), betrothed in righteousness, brought home and married to the King.',
+       sv.verse_id, ev.verse_id, 'free', 23109
+  FROM _s302_ps045_lookup sv, _s302_ps045_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=45 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-45-thy-name-remembered-in-all-generations',
+       E'Instead of thy fathers shall be thy children — thy name remembered in all generations',
+       E'The psalm closes with the promise of an everlasting name and an everlasting seed: *Instead of thy fathers shall be thy children, whom thou mayest make princes in all the earth. I will make thy name to be remembered in all generations: therefore shall the people praise thee for ever and ever* (Psalm 45:16-17). The children supplant the fathers and are set as princes through all the earth; the King''s name endures through every generation, praised forever. Isaiah names the blessed seed in whom that name is carried: *And their seed shall be known among the Gentiles, and their offspring among the people: all that see them shall acknowledge them, that they are the seed which Yahuah (LORD) hath blessed* (Isaiah 61:9). The name remembered in all generations lives on in the blessed offspring — the seed known among the nations, acknowledged as Yahuah''s own. The King''s children, made princes in all the earth, are the seed Yahuah hath blessed; his name is carried not in monuments but in a people who praise him for ever and ever.',
+       sv.verse_id, ev.verse_id, 'free', 23112
+  FROM _s302_ps045_lookup sv, _s302_ps045_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=45 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*But unto the Son he saith, Thy throne, O Elohim (God), is for ever and ever* (Hebrews 1:8) — the King addressed AS Elohim (45:6) is the Son; the Formed Son bears the Name and the everlasting throne, no created angel.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=6
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-thy-throne-o-elohim-is-for-ever-the-oil-of-gladness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*therefore Elohim (God), even thy Elohim (God), hath anointed thee with the oil of gladness above thy fellows* (Hebrews 1:9) — the keystone: the Son IS Elohim (45:6) yet HAS thy Elohim who anoints him (45:7). Not modalism, not co-equal persons; the Formed Son, Elohim with a Father above him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=7
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-thy-throne-o-elohim-is-for-ever-the-oil-of-gladness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah (LORD) hath anointed me to preach good tidings unto the meek* (Isaiah 61:1) — *grace is poured into thy lips* (45:2) is the Spirit-anointed mouth; the fair speech of the King is the good-tidings proclamation of the Anointed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=2
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-fairer-than-the-children-of-men-grace-in-thy-lips'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the oil of joy for mourning, the garment of praise for the spirit of heaviness* (Isaiah 61:3) — the King anointed with *the oil of gladness above thy fellows* (45:7) pours the oil of joy upon them that mourn in Zion; anointed to anoint.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=7
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-fairer-than-the-children-of-men-grace-in-thy-lips'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*in righteousness he doth judge and make war* (Revelation 19:11) — *Gird thy sword upon thy thigh, O most mighty* (45:3) fulfilled in the rider Faithful and True who wars in the righteousness the King loves (45:7).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=3
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-gird-thy-sword-the-king-rides-in-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*out of his mouth goeth a sharp sword, that with it he should smite the nations* (Revelation 19:15) — the King who rides *because of truth and meekness and righteousness* (45:4) rules the nations with the rod of iron, his word the sword.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=4
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-gird-thy-sword-the-king-rides-in-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*on his vesture and on his thigh a name written, KING OF KINGS, AND LORD OF LORDS* (Revelation 19:16) — *thine arrows are sharp in the heart of the king''s enemies* (45:5); the foes fall under the rider whose name is on the very thigh the King was bidden gird (45:3).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-gird-thy-sword-the-king-rides-in-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Sit thou at my right hand, until I make thine enemies thy footstool* (Psalm 110:1) — the enemies who fall under the King (45:5) are made his footstool; the warrior-King is the seated King at Yahuah''s right hand.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-gird-thy-sword-the-king-rides-in-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Yahuah (LORD) shall send the rod of thy strength out of Zion: rule thou in the midst of thine enemies* (Psalm 110:2) — the sword girded *upon thy thigh* (45:3) is the rod of strength from Zion; the most mighty One reigns amid his foes.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=3
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-gird-thy-sword-the-king-rides-in-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7) — *she shall be brought unto the king... With gladness and rejoicing* (45:14-15) is the marriage of the Lamb, the bride made ready.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=14
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-the-bride-brought-unto-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints* (Revelation 19:8) — the king''s daughter *all glorious within... clothing of wrought gold* (45:13) wears the righteousness granted to the saints.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=13
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-the-bride-brought-unto-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*new Jerusalem... prepared as a bride adorned for her husband* (Revelation 21:2) — the bride *brought unto the king* (45:14) is the city bearing *the names of the twelve tribes of... Yashar''el* (Rev 21:12); the gathered covenant nation, not a replacement people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=14
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-the-bride-brought-unto-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*that he might present it to himself a glorious church... holy and without blemish* (Ephesians 5:27) — *so shall the king greatly desire thy beauty* (45:11); the King delights in the bride Messiah sanctifies and presents glorious.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=11
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=5 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-the-bride-brought-unto-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness* (Hosea 2:19) — *forget also thine own people, and thy father''s house* (45:10); the divorced house leaves the far country to be betrothed anew, the covenant people brought home.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=10
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-the-bride-brought-unto-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I will say to them which were not my people, Thou art my people* (Hosea 2:23) — *instead of thy fathers shall be thy children... princes in all the earth* (45:16); the King''s children are the Lo-Ammi made Ammi, the gathered two-house people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=16
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-the-bride-brought-unto-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*their seed shall be known among the Gentiles... the seed which Yahuah (LORD) hath blessed* (Isaiah 61:9) — *I will make thy name to be remembered in all generations* (45:17); the everlasting name is carried in the blessed seed, acknowledged among the nations.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps045_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=45 AND sv.verse_number=17
+  JOIN _s302_ps045_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-45-thy-name-remembered-in-all-generations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_110.sql (Psalm 110) -----
+-- Chapter: Psalm 110 — THE PRIEST-KING PSALM, the most-quoted Tanakh chapter in the New Testament: "Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool" (v.1, the Father speaking to the Formed Son enthroned); "Yahuah shall send the rod of thy strength out of Zion" (v.2); the willing people in the day of his power and the dew of his youth (v.3); "Yahuah hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)" (v.4, the sworn, unchangeable priesthood); and the day of wrath — Yahuah at thy right hand striking through kings, judging the heathen, lifting up the head (v.5-7).
+-- Tag: ps110   Temp view: _s302_ps110_lookup
+-- Sort band: base 24725, step 3 -> threads at 24725, 24728, 24731, 24734, 24737, 24740, 24743 (7 threads)
+-- Source of EVERY row: 'canon','psalms',110,v
+--
+-- Psalm 110 coverage:
+--   ★★ v.1 (Yahuah said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool)
+--        NT:     Matthew 22:44 + Matthew 22:45 (Yahusha's own question — if David call him Lord, how is he his son?); Mark 12:36; Luke 20:42-43; Acts 2:34-35 (Kepha/Peter at Pentecost); Hebrews 1:13 — THREAD 1 (load-bearing: the Father speaks to the Formed Son enthroned)
+--        Extras: 1 Enoch 61:8 (the Head of Days placed the Elect One on the throne of His glory); 1 Enoch 62:7 (This is the Son of Adam who is born unto righteousness) — THREAD 1 (the Elect One / Son of Adam seated on the throne of glory to judge)
+--        Tanakh: Psalm 2:6 (Yet have I set my king upon my holy hill of Zion) carried to THREAD 2; the right-hand enthronement is the NT weight of THREAD 1
+--   ★★★ v.4 (Yahuah hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek))
+--        NT:     Hebrews 5:6; Hebrews 5:10; Hebrews 6:20; Hebrews 7:17; Hebrews 7:21 (the whole sworn, unchangeable Melchizedek priesthood) — THREAD 4 (priest) + THREAD 5 (the oath / unchangeable priesthood)
+--        Extras: none warranted clean (2 Enoch Melchizedek-birth narrative is in the flagged pseudepigrapha-charles-vol2 parse and dump_canon returns NOT FOUND / apparatus-uncertain for the relevant chapter — NOT forced, per brief)
+--        Tanakh: ★ Genesis 14:18 (Melek Tsadiq king of Salem brought forth bread and wine: and he was the priest of the El Elyon) — THREAD 4 (the root order of the priest-king who blessed Abraham)
+--   ★ v.2 (Yahuah shall send the rod of thy strength out of Zion: rule thou in the midst of thine enemies)
+--        NT:     none warranted distinct (the rule-in-Zion is carried by THREAD 1's enthronement and THREAD 7's day-of-wrath; not forced)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 2:6 (Yet have I set my king upon my holy hill of Zion); Psalm 2:9 (Thou shalt break them with a rod of iron) — THREAD 2 (the rod out of Zion = the enthroned rule)
+--   v.3 (Thy people shall be willing in the day of thy power, in the beauties of holiness from the womb of the morning: thou hast the dew of thy youth)
+--        NT:     none warranted distinct (the willing people forward-weave is held to THREAD 3 prose)
+--        Extras: none warranted
+--        Tanakh: ★ Judges 5:2 (when the people willingly offered themselves) — THREAD 3 (the willing people in the day of his power; the gathered willing army of Yahuah)
+--   ★★ v.5-7 (Yahuah at thy right hand shall strike through kings in the day of his wrath. He shall judge among the heathen... He shall drink of the brook in the way: therefore shall he lift up the head)
+--        NT:     1 Corinthians 15:25 (For he must reign, till he hath put all enemies under his feet) — THREAD 6 (the reign that subdues every enemy — the footstool of v.1 completed); Revelation 19 day-of-wrath candidate held to THREAD 7 prose only (clean Revelation text out of assigned target set, not forced as a member)
+--        Extras: none warranted clean
+--        Tanakh: ★ Psalm 2:1-2 (the heathen rage... the kings of the earth set themselves) — THREAD 7 (the judgment of the kings and the heathen in the day of wrath; the lifted-up head = the seed-war victory)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool — NT (Matthew, Mark, Luke, Acts, Hebrews) + Extras (1 Enoch) [extras] (★★ the Father speaks to the Formed Son enthroned; Yahusha's own question)
+--   2. psalm-110-the-rod-of-thy-strength-out-of-zion-rule-in-the-midst-of-thine-enemies — Tanakh (Psalm 2) [free] (★ the rod out of Zion = the enthroned rule)
+--   3. psalm-110-thy-people-shall-be-willing-in-the-day-of-thy-power — Tanakh (Judges 5) [free] (the gathered willing people)
+--   4. psalm-110-a-priest-for-ever-after-the-order-of-melek-tsadiq — NT (Hebrews 5, 6, 7) + Tanakh (Genesis 14) [free] (★★★ the priest-king; the order of the one who blessed Abraham)
+--   5. psalm-110-yahuah-hath-sworn-and-will-not-repent-the-oath-and-the-unchangeable-priesthood — NT (Hebrews 7) [free] (★★ the sworn, unchangeable priesthood, never abrogated)
+--   6. psalm-110-he-must-reign-till-he-hath-put-all-enemies-under-his-feet — NT (1 Corinthians 15) [free] (★★ the reign that completes the footstool of v.1)
+--   7. psalm-110-the-day-of-his-wrath-he-shall-judge-among-the-heathen-and-lift-up-the-head — Tanakh (Psalm 2) [free] (★★ the judgment of the kings and the heathen; the lifted-up head = the seed-war victory)
+--
+-- Framing notes:
+--   ★★ THE FORMED AND THE FORMLESS — v.1 (THREAD 1): *Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool* (110:1). Read strictly through Red Line #4: the Father (Yahuah, the formless Source) speaks TO the Formed Son — David's *Lord*, who is also David's son after the flesh — and seats Him at His right hand. The two are NAMED DISTINCTLY in the one verse: *Yahuah* and *my Lord*. Yahusha presses exactly this in His own question: *If David then call him Yahuah (Lord), how is he his son?* (Matthew 22:45) — the Messiah is David's son after the flesh AND David's Lord enthroned at Yahuah's right hand. NO co-equal-persons trinitarian abstraction (the verse gives a speaker and a One spoken to, not one essence in three persons); NO modalist collapse (they are not the same one talking to Himself). The verse itself gives the Father and the Formed Son. Kepha (Peter) preaches it at Pentecost (Acts 2:34-35); Hebrews sets it over the angels (Hebrews 1:13).
+--   ★★★ THE PRIEST-KING — v.4 (THREADS 4-5): *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (110:4). The Formed Son enthroned as king (v.1-3) is ALSO the eternal priest (v.4) — both offices in one person, after the order of the one who met Abraham: *Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God)* (Genesis 14:18). Hebrews builds the whole argument on this psalm: a priesthood sworn by Yahuah's own oath (*Yahuah (Lord) sware and will not repent* — Hebrews 7:21), unchangeable (*this man, because he continueth ever, hath an unchangeable priesthood* — Hebrews 7:24), not after Aaron. This is NOT the Levitical order replaced by lawlessness — it is the older, sworn, royal priesthood the Aaronic always pointed toward; the priesthood that never ends because the Priest never dies.
+--   ★★ THE FOOTSTOOL COMPLETED — v.5-7 (THREADS 6-7): *Yahuah (Lord) at thy right hand shall strike through kings in the day of his wrath. He shall judge among the heathen... therefore shall he lift up the head* (110:5-7). Sha''ul (Paul) names the reign that fulfils the footstool of v.1: *For he must reign, till he hath put all enemies under his feet* (1 Corinthians 15:25) — the *until I make thine enemies thy footstool* worked out to the end, the last enemy death destroyed. The day of wrath and the judgment of the heathen echo *Why do the heathen rage... the kings of the earth set themselves... against Yahuah, and against his anointed* (Psalm 2:1-2) — the same kings, the same anointed, the lifted-up head the seed-war victory of Genesis 3:15.
+--   EXTRAS: 1 Enoch carries the enthronement of the Elect One / Son of Adam: *the Head of Days placed the Elect One on the throne of His glory; and he shall judge all the works of the holy in heaven above* (1 Enoch 61:8) and *This is the Son of Adam who is born unto righteousness* (1 Enoch 62:7) — the same right-hand-enthroned, judging figure of Psalm 110:1, woven into THREAD 1 (edition 'enoch', book '1-enoch'; verses 61:8 and 62:7 are clean parse — 62:5 carries an editorial "(Note:...)" and is deliberately NOT used). 2 Enoch's Melchizedek-birth narrative was weighed for v.4 but is in the flagged pseudepigrapha-charles-vol2 parse and dump_canon returns NOT FOUND for the relevant chapter — recorded "none warranted", NOT forced, per the brief's apparatus-noise rule.
+--   VERSES WITH FRAMING-ONLY / HELD-IN-PROSE: Revelation 19 (the wrath of the Almighty) weighed for v.5-7 but the clean Revelation text is outside the assigned target set — held in THREAD 7's prose, not forced as a member. v.3's *beauties of holiness from the womb of the morning... the dew of thy youth* kept with the willing-people weight (THREAD 3) rather than split into a separate obscure-image thread.
+
+CREATE TEMP VIEW _s302_ps110_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Sit thou at my right hand — the Father speaks to the Formed Son enthroned
+    ('canon','psalms',110,1,'canon','matthew',22,44,'free',
+      E'*Yahuah (LORD) said unto my Lord, Sit thou on my right hand, till I make thine enemies thy footstool?* (Matthew 22:44). Yahusha (Jesus) quotes this very verse against the scribes and turns it into the question that silences them: *What think ye of Messiah (Christ)? whose son is he?* (Matthew 22:42). The psalm names two distinctly — *Yahuah (LORD)* and *my Lord* (Psalm 110:1) — the Father speaking to the One He seats at His right hand. Read through the Formed and the Formless: the Father (Yahuah, the formless Source) speaks to the Formed Son, David''s Lord enthroned, who is also David''s son after the flesh.'),
+    ('canon','psalms',110,1,'canon','matthew',22,45,'free',
+      E'*If David then call him Yahuah (Lord), how is he his son?* (Matthew 22:45). This is Yahusha''s (Jesus'') own reading of *Yahuah (LORD) said unto my Lord* (Psalm 110:1): the Messiah is at once David''s son after the flesh AND David''s *Lord* enthroned at Yahuah''s right hand. The riddle is only answered by the Formed Son — born of David''s line, yet the One the Father seats beside Himself; no flat son-of-David, no co-equal-persons abstraction, but the Son drawn from the Formless given the throne.'),
+    ('canon','psalms',110,1,'canon','mark',12,36,'free',
+      E'*For David himself said by the Ruach HaKodesh (Holy Spirit), Yahuah (LORD) said to my Lord, Sit thou on my right hand, till I make thine enemies thy footstool* (Mark 12:36). Mark keeps the same scene: David, moved by the Ruach HaKodesh (Holy Spirit), speaks *Yahuah (LORD) said to my Lord* (Psalm 110:1) — and so calls his own descendant *Lord*. The Father seats the Formed Son at His right hand; the enemies are made the footstool by the One who speaks, not by the One enthroned.'),
+    ('canon','psalms',110,1,'canon','luke',20,42,'free',
+      E'*And David himself saith in the book of Psalms, Yahuah (LORD) said unto my Lord, Sit thou on my right hand* (Luke 20:42). Luke names the source outright — *the book of Psalms* — and lets David''s own word stand: *Yahuah (LORD) said unto my Lord* (Psalm 110:1). The Father addresses the Son He enthrones; the very grammar of the verse holds the Formed and the Formless apart while seating them in one rule.'),
+    ('canon','psalms',110,1,'canon','luke',20,43,'free',
+      E'*Till I make thine enemies thy footstool* (Luke 20:43). The completing line of the enthronement word — *until I make thine enemies thy footstool* (Psalm 110:1) — is the Father''s pledge to the Son He has seated: the rule is granted, the subduing of the enemies is the Father''s own act on the Son''s behalf, *till I make*. The Formed Son reigns; the Father puts all foes beneath His feet.'),
+    ('canon','psalms',110,1,'canon','acts',2,34,'free',
+      E'*For David is not ascended into the heavens: but he saith himself, Yahuah (LORD) said unto my Lord, Sit thou on my right hand* (Acts 2:34). Kepha (Peter) preaches this psalm at Pentecost: David did not ascend, so the *my Lord* of *Yahuah (LORD) said unto my Lord* (Psalm 110:1) is not David but his greater Son — *Therefore being by the right hand of Elohim (God) exalted* (Acts 2:33). The Formed Son raised and seated at the Father''s right hand is the proof that He is *both Lord and Messiah* (Acts 2:36).'),
+    ('canon','psalms',110,1,'canon','acts',2,35,'free',
+      E'*Until I make thy foes thy footstool* (Acts 2:35). Kepha (Peter) carries the whole enthronement word — *Sit thou on my right hand, until I make thy foes thy footstool* (Acts 2:34-35) — straight from *until I make thine enemies thy footstool* (Psalm 110:1). The exalted Son waits at the right hand while the Father subdues every foe; the footstool is the Father''s pledge, the right hand the Son''s seat.'),
+    ('canon','psalms',110,1,'canon','hebrews',1,13,'free',
+      E'*But to which of the angels said he at any time, Sit on my right hand, until I make thine enemies thy footstool?* (Hebrews 1:13). The letter sets the Formed Son over every angel by this very verse: to no angel was it ever said *Sit on my right hand* — that word is spoken only to the Son of *Yahuah (LORD) said unto my Lord, Sit thou at my right hand* (Psalm 110:1). The enthroned One is not a ministering spirit but the Heir, seated where the Father seats Him alone.'),
+    ('canon','psalms',110,1,'enoch','1-enoch',61,8,'extras',
+      E'*And the Head of Days placed the Elect One on the throne of His glory; And he shall judge all the works of the holy in heaven above, And weigh their deeds in the balance* (1 Enoch 61:8). The restored witness shows the same enthronement as *Sit thou at my right hand* (Psalm 110:1): the Head of Days (the Father) sets the Elect One on the throne of glory to judge — the chosen One seated by the Most High''s own act, the Formed One given the seat of rule and judgement.'),
+    ('canon','psalms',110,1,'enoch','1-enoch',62,7,'extras',
+      E'*And Yahuah (God) of Spirits said: "This is the Son of Adam who is born unto righteousness, And righteousness abides over him, And the righteousness of the Head of Days forsakes him not."* (1 Enoch 62:7). The restored witness names the enthroned One the *Son of Adam* — David''s son after the flesh in the seed-of-Adam line — yet seated to judge by Yahuah (God) of Spirits, the very paradox of *Yahuah (LORD) said unto my Lord* (Psalm 110:1): the One of Adam''s seed who is also the Lord enthroned at the right hand.'),
+
+    -- THREAD 2 (★): The rod of thy strength out of Zion — rule in the midst of thine enemies
+    ('canon','psalms',110,2,'canon','psalms',2,6,'free',
+      E'*Yet have I set my king upon my holy hill of Zion* (Psalm 2:6). The rod sent *out of Zion* — *Yahuah (LORD) shall send the rod of thy strength out of Zion: rule thou in the midst of thine enemies* (Psalm 110:2) — is the same enthroned king Yahuah sets *upon my holy hill of Zion*. The seat of the rule is Zion; from the holy hill the king reigns, and his strength goes out from the place Yahuah has chosen for His anointed.'),
+    ('canon','psalms',110,2,'canon','psalms',2,9,'free',
+      E'*Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel* (Psalm 2:9). The *rod of thy strength* of *rule thou in the midst of thine enemies* (Psalm 110:2) is the same rod given the anointed king — *a rod of iron* to break the raging nations. The rule out of Zion is no gentle suggestion among friends but a sceptre that subdues the enemies in whose very midst the king is enthroned.'),
+
+    -- THREAD 3: Thy people shall be willing in the day of thy power
+    ('canon','psalms',110,3,'canon','judges',5,2,'free',
+      E'*Praise ye Yahuah (LORD) for the avenging of Yashar''el (Israel), when the people willingly offered themselves* (Judges 5:2). The willing host of *Thy people shall be willing in the day of thy power* (Psalm 110:3) sings in Deborah''s song: *when the people willingly offered themselves*. The day of the king''s power is the day his people offer themselves freely — the gathered willing army of Yahuah, not a pressed levy but a people glad to follow the enthroned One into the battle.'),
+
+    -- THREAD 4 (★★★): A priest for ever after the order of Melek Tsadiq (the priest-king)
+    ('canon','psalms',110,4,'canon','genesis',14,18,'free',
+      E'*And Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God)* (Genesis 14:18). The order named in *Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4) reaches back to the one who met Abraham — at once *king of Salem* and *the priest of the El Elyon*. The Formed Son enthroned as king (110:1-3) is priest after this older order: king and priest in one, like the one who blessed Abraham and received his tithes.'),
+    ('canon','psalms',110,4,'canon','hebrews',5,6,'free',
+      E'*As he saith also in another place, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 5:6). The letter quotes the psalm word-for-word: the Messiah did not glorify Himself to be high priest but was named one by the Father — *Thou art a priest for ever after the order of Melek Tsadiq* (Psalm 110:4). The priesthood is conferred, not seized; the same Father who said *Sit thou at my right hand* names the Son an everlasting priest.'),
+    ('canon','psalms',110,4,'canon','hebrews',5,10,'free',
+      E'*Called of Elohim (God) an high priest after the order of Melek Tsadiq (Melchizedek)* (Hebrews 5:10). The Son is *called of Elohim* to the office of *Thou art a priest for ever after the order of Melek Tsadiq* (Psalm 110:4) — high priest not after Aaron but after the order of the priest-king who blessed Abraham. The calling is the Father''s; the order is the older, royal one of Salem.'),
+    ('canon','psalms',110,4,'canon','hebrews',6,20,'free',
+      E'*Whither the forerunner is for us entered, even Yahusha (Jesus), made an high priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 6:20). Yahusha (Jesus) enters within the veil as *an high priest for ever after the order of Melek Tsadiq* — the very title of *Thou art a priest for ever after the order of Melek Tsadiq* (Psalm 110:4). The enthroned king is the forerunner-priest who has gone before His people into the holy place, an anchor sure and stedfast.'),
+    ('canon','psalms',110,4,'canon','hebrews',7,17,'free',
+      E'*For he testifieth, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 7:17). The whole argument rests on this testimony — *Thou art a priest for ever after the order of Melek Tsadiq* (Psalm 110:4) — that another priest should arise *not after the law of a carnal commandment, but after the power of an endless life* (Hebrews 7:16). The Aaronic priests died and were replaced; this Priest *abideth a priest continually* (Hebrews 7:3), for ever, after the order of the one *without beginning of days, nor end of life*.'),
+
+    -- THREAD 5 (★★): Yahuah hath sworn and will not repent — the oath and the unchangeable priesthood
+    ('canon','psalms',110,4,'canon','hebrews',7,21,'free',
+      E'*(For those priests were made without an oath; but this with an oath by him that said unto him, Yahuah (Lord) sware and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek):)* (Hebrews 7:21). The letter seizes on the sworn word of the psalm — *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever* (Psalm 110:4). The Levitical priests were made without an oath; this priest is made *with an oath*, and an oath Yahuah will not repent of binds the priesthood for ever, never to be abrogated.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 6 (★★): He must reign till he hath put all enemies under his feet
+    ('canon','psalms',110,1,'canon','1-corinthians',15,25,'free',
+      E'*For he must reign, till he hath put all enemies under his feet* (1 Corinthians 15:25). Sha''ul (Paul) names the reign that works out the footstool of the psalm — *until I make thine enemies thy footstool* (Psalm 110:1) becomes *he must reign, till he hath put all enemies under his feet*. The enthroned Son rules until every foe is subdued, *the last enemy that shall be destroyed is death* (1 Corinthians 15:26); the right-hand seat is no idle throne but a reign that ends in total victory, the footstool complete.'),
+
+    -- THREAD 7 (★★): The day of his wrath — he shall judge among the heathen, and lift up the head
+    ('canon','psalms',110,5,'canon','psalms',2,1,'free',
+      E'*Why do the heathen rage, and the people imagine a vain thing?* (Psalm 2:1). The raging heathen judged in *He shall judge among the heathen, he shall fill the places with the dead bodies* (Psalm 110:6) are the very nations of *Why do the heathen rage* — the kings who set themselves against Yahuah''s anointed. The day of wrath of *Yahuah (Lord) at thy right hand shall strike through kings in the day of his wrath* (Psalm 110:5) answers the raging of the kings: the enthroned One judges those who imagined the vain thing.'),
+    ('canon','psalms',110,5,'canon','psalms',2,2,'free',
+      E'*The kings of the earth set themselves, and the rulers take counsel together, against Yahuah (LORD), and against his anointed* (Psalm 2:2). The kings struck through in *shall strike through kings in the day of his wrath* (Psalm 110:5) are the *kings of the earth* who *set themselves... against Yahuah, and against his anointed*. The wrath of the priest-king falls on the rulers who took counsel against the anointed One — and the lifted-up head of *therefore shall he lift up the head* (Psalm 110:7) is His triumph over them, the seed-war victory of the One enthroned at the right hand.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool',
+       E'Sit thou at my right hand — the Father speaks to the Formed Son enthroned',
+       E'*Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool* (Psalm 110:1) — the single most-quoted line of the Tanakh in all the New Testament, and one of the deepest. Two are named distinctly in the one verse: *Yahuah (LORD)* who speaks, and *my Lord* who is seated. Read through the Formed and the Formless: the Father (Yahuah, the formless Source) addresses the Formed Son — David''s *Lord*, who is also David''s son after the flesh — and seats Him at His own right hand. Yahusha (Jesus) makes this verse the riddle that silences the scribes: *What think ye of Messiah (Christ)? whose son is he? They say unto him, The Son of David. He saith unto them, How then doth David in spirit call him Yahuah (Lord)... If David then call him Yahuah (Lord), how is he his son?* (Matthew 22:42-45). The answer is the Formed Son alone: born of David''s line, yet the One the Father enthrones beside Himself — no flat son-of-David, no co-equal-persons abstraction collapsing speaker and spoken-to, no modalist one-talking-to-himself; a Father who speaks and a Son who is seated. Mark keeps it: *David himself said by the Ruach HaKodesh (Holy Spirit), Yahuah (LORD) said to my Lord, Sit thou on my right hand* (Mark 12:36); Luke names the book: *David himself saith in the book of Psalms* (Luke 20:42). Kepha (Peter) preaches it at Pentecost: David never ascended, so the *my Lord* is the risen Son — *being by the right hand of Elohim (God) exalted... Yahuah (LORD) said unto my Lord, Sit thou on my right hand, until I make thy foes thy footstool* (Acts 2:33-35). And the letter sets Him over every angel: *to which of the angels said he at any time, Sit on my right hand, until I make thine enemies thy footstool?* (Hebrews 1:13). The restored witness shows the same enthronement — *the Head of Days placed the Elect One on the throne of His glory* (1 Enoch 61:8) — and names the One enthroned: *This is the Son of Adam who is born unto righteousness* (1 Enoch 62:7), the One of Adam''s seed who is also the Lord seated to judge. The footstool of the enemies is the Father''s own pledge: *until I make* — the One enthroned reigns while the Father puts all foes beneath His feet.',
+       sv.verse_id, ev.verse_id, 'extras', 24725
+  FROM _s302_ps110_lookup sv, _s302_ps110_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=110 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-110-the-rod-of-thy-strength-out-of-zion-rule-in-the-midst-of-thine-enemies',
+       E'The rod of thy strength out of Zion — rule in the midst of thine enemies',
+       E'*Yahuah (LORD) shall send the rod of thy strength out of Zion: rule thou in the midst of thine enemies* (Psalm 110:2). The enthroned king of verse 1 now wields a sceptre, and it goes out from a chosen place — Zion. This is the same king and the same hill of the companion royal psalm: *Yet have I set my king upon my holy hill of Zion* (Psalm 2:6). From the holy hill the rule goes out; the seat of the throne is the seat of the sceptre. And the rod is no gentle staff: *Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel* (Psalm 2:9) — the *rod of thy strength* that subdues the raging nations *in the midst of thine enemies*. The king does not wait for the enemies to be cleared before He reigns; He reigns in their very midst, ruling from Zion while His strength goes forth to break the rebellious.',
+       sv.verse_id, ev.verse_id, 'free', 24728
+  FROM _s302_ps110_lookup sv, _s302_ps110_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=110 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-110-thy-people-shall-be-willing-in-the-day-of-thy-power',
+       E'Thy people shall be willing in the day of thy power',
+       E'*Thy people shall be willing in the day of thy power, in the beauties of holiness from the womb of the morning: thou hast the dew of thy youth* (Psalm 110:3). The enthroned priest-king is not a lonely figure; He has a people, and in the day of His power they come to Him willingly — not a pressed levy but a host glad to follow. The same willing-offering rings in Deborah''s ancient song of the day Yahuah delivered His people: *Praise ye Yahuah (LORD) for the avenging of Yashar''el (Israel), when the people willingly offered themselves* (Judges 5:2). The day of the king''s power is the day his people offer themselves freely, *in the beauties of holiness* — arrayed not in armour but in holiness, fresh as the *dew* of the morning, a gathered willing people streaming to the One Yahuah has enthroned.',
+       sv.verse_id, ev.verse_id, 'free', 24731
+  FROM _s302_ps110_lookup sv, _s302_ps110_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=110 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-110-a-priest-for-ever-after-the-order-of-melek-tsadiq',
+       E'A priest for ever after the order of Melek Tsadiq (Melchizedek) — the priest-king',
+       E'*Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4). The One enthroned as king in verses 1-3 is now declared priest — and both offices rest in the one person. The order named reaches back to the only figure in the Tanakh who was at once king and priest: *And Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God)* (Genesis 14:18), the one who met Abraham returning from the slaughter of the kings, blessed him, and received his tithes. The Formed Son is priest-king after THIS order — not after Aaron, but after the older, royal priesthood of Salem. The letter to the Hebrews builds its whole argument on this single verse: *So also Messiah (Christ) glorified not himself to be made an high priest; but he that said unto him, Thou art my Son, to day have I begotten thee. As he saith also in another place, Thou art a priest for ever after the order of Melek Tsadiq* (Hebrews 5:5-6); *Called of Elohim (God) an high priest after the order of Melek Tsadiq* (Hebrews 5:10); *the forerunner is for us entered, even Yahusha (Jesus), made an high priest for ever after the order of Melek Tsadiq* (Hebrews 6:20); *For he testifieth, Thou art a priest for ever after the order of Melek Tsadiq* (Hebrews 7:17). Melek Tsadiq abides *a priest continually* (Hebrews 7:3), and so the One after his order is priest not by a fleshly succession that death cuts off but *after the power of an endless life* (Hebrews 7:16). The enthroned king at the right hand is also the eternal intercessor — king and priest in one, after the order of the one who blessed Abraham.',
+       sv.verse_id, ev.verse_id, 'free', 24734
+  FROM _s302_ps110_lookup sv, _s302_ps110_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=110 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-110-yahuah-hath-sworn-and-will-not-repent-the-oath-and-the-unchangeable-priesthood',
+       E'Yahuah hath sworn, and will not repent — the oath and the unchangeable priesthood',
+       E'*Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4). One word in this verse the letter to the Hebrews will not let pass: *sworn*. The Levitical priesthood was given without an oath, but this priesthood Yahuah binds by His own sworn word, and He *will not repent* of it. The letter seizes the distinction: *And inasmuch as not without an oath he was made priest: (For those priests were made without an oath; but this with an oath by him that said unto him, Yahuah (Lord) sware and will not repent, Thou art a priest for ever after the order of Melek Tsadiq:)* (Hebrews 7:20-21). An oath Yahuah cannot repent of binds the office for ever — and what is sworn for ever cannot be abrogated. So *this man, because he continueth ever, hath an unchangeable priesthood* (Hebrews 7:24), able *to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:25). This is not the Aaronic order cancelled into lawlessness; it is the older, royal, sworn priesthood the Aaronic always pointed toward — the priesthood that never ends because the Priest never dies, sealed by an oath Yahuah will never take back.',
+       sv.verse_id, ev.verse_id, 'free', 24737
+  FROM _s302_ps110_lookup sv, _s302_ps110_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=110 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-110-he-must-reign-till-he-hath-put-all-enemies-under-his-feet',
+       E'He must reign till he hath put all enemies under his feet — the footstool completed',
+       E'*Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool* (Psalm 110:1). The enthronement word carries a promise yet to be worked out — *until I make thine enemies thy footstool* — and Sha''ul (Paul) names exactly the reign that completes it: *For he must reign, till he hath put all enemies under his feet* (1 Corinthians 15:25). The right-hand seat is no idle throne; the Son *must reign* until every foe is subdued. And the last of them is named: *The last enemy that shall be destroyed is death* (1 Corinthians 15:26). The footstool of Psalm 110:1 is filled out to its end — when all things are put under His feet, even death swallowed up in victory, *then shall the Son also himself be subject unto him that put all things under him, that Elohim (God) may be all in all* (1 Corinthians 15:28). The Formed Son reigns at the Father''s right hand until the Father has made every enemy His footstool, and then renders the kingdom up — the right hand, the reign, and the footstool all of one piece.',
+       sv.verse_id, ev.verse_id, 'free', 24740
+  FROM _s302_ps110_lookup sv, _s302_ps110_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=110 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-110-the-day-of-his-wrath-he-shall-judge-among-the-heathen-and-lift-up-the-head',
+       E'The day of his wrath — he shall judge among the heathen, and lift up the head',
+       E'*Yahuah (Lord) at thy right hand shall strike through kings in the day of his wrath. He shall judge among the heathen, he shall fill the places with the dead bodies; he shall wound the heads over many countries. He shall drink of the brook in the way: therefore shall he lift up the head* (Psalm 110:5-7). The psalm closes in the day of wrath: the enthroned One strikes through kings, judges the raging nations, and lifts up His head in triumph. The kings and the heathen are the same the companion royal psalm shows in revolt: *Why do the heathen rage, and the people imagine a vain thing? The kings of the earth set themselves, and the rulers take counsel together, against Yahuah (LORD), and against his anointed* (Psalm 2:1-2). The wrath of Psalm 110:5 is the answer to that raging — the kings who set themselves against the anointed are struck through in the day of His wrath, *the places filled with the dead bodies*, the proud heads wounded *over many countries*. And the last line is victory: *therefore shall he lift up the head* — the head bowed in the toil of the way (*He shall drink of the brook in the way*) raised in triumph. This is the seed-war turned to conquest, the enmity of the serpent and the seed (Genesis 3:15) ended in the lifted-up head of the One enthroned at the right hand: He who waited while the Father made His enemies His footstool now treads them down Himself.',
+       sv.verse_id, ev.verse_id, 'free', 24743
+  FROM _s302_ps110_lookup sv, _s302_ps110_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=110 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah (LORD) said unto my Lord, Sit thou on my right hand, till I make thine enemies thy footstool?* (Matthew 22:44) — Yahusha quotes 110:1 to silence the scribes; the Father speaks to the Formed Son enthroned.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=22 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *If David then call him Yahuah (Lord), how is he his son?* (Matthew 22:45) — Yahusha''s own riddle on 110:1: David''s son after the flesh AND David''s Lord enthroned; answered only by the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=22 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*David himself said by the Ruach HaKodesh (Holy Spirit), Yahuah (LORD) said to my Lord, Sit thou on my right hand* (Mark 12:36) — David, by the Spirit, calls his own descendant Lord (110:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=12 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*David himself saith in the book of Psalms, Yahuah (LORD) said unto my Lord, Sit thou on my right hand* (Luke 20:42) — Luke names the source: David''s own word seats the Son at the right hand (110:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=20 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Till I make thine enemies thy footstool* (Luke 20:43) — the Father''s pledge of 110:1: the enemies made the footstool by the One who speaks, on the Son''s behalf.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=20 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*David is not ascended into the heavens: but he saith himself, Yahuah (LORD) said unto my Lord, Sit thou on my right hand* (Acts 2:34) — Kepha (Peter) at Pentecost: the *my Lord* of 110:1 is the risen, exalted Son, not David.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Until I make thy foes thy footstool* (Acts 2:35) — Kepha carries the whole enthronement word of 110:1; the exalted Son waits while the Father subdues every foe.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*to which of the angels said he at any time, Sit on my right hand, until I make thine enemies thy footstool?* (Hebrews 1:13) — the word of 110:1 spoken to no angel, only to the Son: the Heir over every ministering spirit.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*the Head of Days placed the Elect One on the throne of His glory; And he shall judge all the works of the holy in heaven above* (1 Enoch 61:8) — the same enthronement as 110:1; the Father sets the Elect One on the throne of glory to judge.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=61 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*This is the Son of Adam who is born unto righteousness, And righteousness abides over him* (1 Enoch 62:7) — the enthroned One named the Son of Adam: of Adam''s seed yet seated to judge, the paradox of 110:1.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=62 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-sit-thou-at-my-right-hand-until-i-make-thine-enemies-thy-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yet have I set my king upon my holy hill of Zion* (Psalm 2:6) — the king on Zion; the rod of 110:2 goes out *out of Zion*, from the holy hill where Yahuah sets His anointed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=2
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-the-rod-of-thy-strength-out-of-zion-rule-in-the-midst-of-thine-enemies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Thou shalt break them with a rod of iron* (Psalm 2:9) — the *rod of thy strength* of 110:2 is the rod of iron that subdues the raging nations *in the midst of thine enemies*.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=2
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-the-rod-of-thy-strength-out-of-zion-rule-in-the-midst-of-thine-enemies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Praise ye Yahuah (LORD)... when the people willingly offered themselves* (Judges 5:2) — the willing host of 110:3 in Deborah''s song; the day of the king''s power is the day his people offer themselves freely.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=3
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-thy-people-shall-be-willing-in-the-day-of-thy-power'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God)* (Genesis 14:18) — the Tanakh root of the order of 110:4: the one king-and-priest who blessed Abraham.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=4
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-a-priest-for-ever-after-the-order-of-melek-tsadiq'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 5:6) — the psalm quoted whole: the Messiah named priest by the Father, not self-glorified (110:4).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=4
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=5 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-a-priest-for-ever-after-the-order-of-melek-tsadiq'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Called of Elohim (God) an high priest after the order of Melek Tsadiq (Melchizedek)* (Hebrews 5:10) — high priest after the order of 110:4, not after Aaron; the calling is the Father''s.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=4
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=5 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-a-priest-for-ever-after-the-order-of-melek-tsadiq'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahusha (Jesus), made an high priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 6:20) — the forerunner entered within the veil as the priest-for-ever of 110:4, an anchor sure and stedfast.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=4
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=6 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-a-priest-for-ever-after-the-order-of-melek-tsadiq'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*For he testifieth, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 7:17) — the testimony 110:4 supplies: a priest *after the power of an endless life*, not a fleshly succession death cuts off.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=4
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-a-priest-for-ever-after-the-order-of-melek-tsadiq'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *those priests were made without an oath; but this with an oath by him that said... Yahuah (Lord) sware and will not repent, Thou art a priest for ever* (Hebrews 7:21) — the *sworn* of 110:4 seized: an oath Yahuah will not repent of binds the priesthood for ever, unabrogated.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=4
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-yahuah-hath-sworn-and-will-not-repent-the-oath-and-the-unchangeable-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *For he must reign, till he hath put all enemies under his feet* (1 Corinthians 15:25) — the footstool of 110:1 worked out: the enthroned Son reigns until every foe is subdued, the last enemy death destroyed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=1
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-he-must-reign-till-he-hath-put-all-enemies-under-his-feet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Why do the heathen rage, and the people imagine a vain thing?* (Psalm 2:1) — the raging heathen judged in 110:6 are the nations of Psalm 2; the day of wrath answers their raging.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=5
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-the-day-of-his-wrath-he-shall-judge-among-the-heathen-and-lift-up-the-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The kings of the earth set themselves... against Yahuah (LORD), and against his anointed* (Psalm 2:2) — the kings struck through in 110:5 are those who set themselves against the anointed; the lifted-up head (110:7) is His triumph over them.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps110_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=110 AND sv.verse_number=5
+  JOIN _s302_ps110_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-110-the-day-of-his-wrath-he-shall-judge-among-the-heathen-and-lift-up-the-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_118.sql (Psalm 118) -----
+-- Chapter: Psalm 118 — THE HALLEL KEYSTONE: the last of the Hallel psalms sung at Passover; the
+-- thanksgiving of the one delivered when all nations compassed him about; the gate of righteousness
+-- the righteous enter; ★★ "The stone which the builders refused is become the head stone of the
+-- corner. This is Yahuah's doing; it is marvellous in our eyes" (the rejected-then-exalted stone);
+-- "This is the day which Yahuah hath made"; ★★ "Save now (Hosanna)... Blessed be he that cometh in
+-- the name of Yahuah" (the cry at the triumphal entry AND the future national turning); "bind the
+-- sacrifice with cords, even unto the horns of the altar" (the festal sacrifice of the feast).
+-- Tag: ps118   Temp view: _s302_ps118_lookup
+-- Sort band: base 24925, step 3 -> threads at 24925, 24928, 24931, 24934, 24937, 24940 (6 threads)
+-- Source of EVERY row: 'canon','psalms',118,v
+--
+-- Psalm 118 coverage:
+--   v.5-9 (I called upon Yahuah in distress; Yahuah is on my side, I will not fear: what can man do
+--          unto me?; It is better to trust in Yahuah than to put confidence in man / in princes)
+--        NT:     none warranted distinct (the trust-frame is carried in prose; the load-bearing NT
+--                weave of the psalm is the stone and the Hosanna, THREADS 1/3/4)
+--        Extras: none warranted (Hallel trust-language; no clean restored-witness lateral)
+--        Tanakh: ★ Psalm 146:3 (Put not your trust in princes... in whom there is no help) — the same
+--                trust-frame; the light trust-thread THREAD 5
+--   ★★ v.22-23 (The stone which the builders refused is become the head stone of the corner; this is
+--          Yahuah's doing; it is marvellous in our eyes)
+--        NT:     Matthew 21:42 / Mark 12:10-11 / Luke 20:17 (the parable of the vineyard — the stone
+--                the builders rejected); Acts 4:11 (Kepha: the stone set at nought of you builders);
+--                1 Peter 2:7 (the stone which the builders disallowed); Ephesians 2:20 (the chief
+--                corner stone, the two-house building joined) — THREAD 1 (load-bearing keystone)
+--        Extras: none warranted (no clean restored-witness on the corner-stone; held in prose)
+--        Tanakh: ★ Isaiah 28:16 (a tried stone, a precious corner stone, a sure foundation in Zion);
+--                ★ Daniel 2:34-35,44-45 (the stone cut without hands that fills the whole earth) — THREAD 1
+--   ★ v.24 (This is the day which Yahuah hath made; we will rejoice and be glad in it)
+--        NT:     none warranted distinct (kept tied to the stone's vindication / the appointed day in
+--                THREAD 2 prose; no clean single-verse NT lateral)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 18:43-46 / NO — kept to its own short thread; the day-Yahuah-made bound to the
+--                stone's appointed day of vindication and the feast — THREAD 2 (canon-only, the psalm itself)
+--   ★★ v.25-26 (Save now, I beseech thee, O Yahuah [Hosanna]; Blessed be he that cometh in the name
+--          of Yahuah: we have blessed you out of the house of Yahuah)
+--        NT:     Matthew 21:9 / Mark 11:9-10 / Luke 19:38 / John 12:13 (the Hosanna at the triumphal
+--                entry) — THREAD 3 (load-bearing); Matthew 23:39 / Luke 13:35 (ye shall not see me
+--                until ye shall say, Blessed is he that cometh — the FUTURE national turning) — THREAD 4
+--        Extras: none warranted (the Hallel cry; no clean restored-witness lateral)
+--        Tanakh: none warranted distinct (the cry is the psalm's own; carried FORWARD by the NT)
+--   v.27 (Elohim is Yahuah, which hath shewed us light: bind the sacrifice with cords, even unto the
+--          horns of the altar)
+--        NT:     none warranted distinct (the festal-altar setting held to THREAD 6 prose; the
+--                Passover-Hallel fulfillment is the stone and the Hosanna, already carried)
+--        Extras: none warranted
+--        Tanakh: ★ Exodus 27:2 (the horns of the altar — make the horns of one piece with it); Leviticus
+--                23:5-6 (the Passover and unleavened bread — the feast this Hallel was sung at) — THREAD 6
+--   v.1-4,10-21,28-29 (the thanksgiving frame, the nations compassed me about, I shall not die but live,
+--          open to me the gates of righteousness, thou art my Elohim)
+--        NT/Extras/Tanakh: none forced — the deliverance-frame is the setting the four load-bearing
+--          threads rise from; the gate of righteousness (v.19-20) is gathered into THREAD 1's house-prose,
+--          not a separate add.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner — NT (Matthew, Mark, Luke,
+--      Acts, 1 Peter, Ephesians) + Tanakh (Isaiah 28, Daniel 2) [free] (★★ the rejected-then-exalted stone)
+--   2. psalm-118-this-is-the-day-which-yahuah-hath-made — canon-only, the psalm itself [free] (★ the appointed day)
+--   3. psalm-118-hosanna-blessed-be-he-that-cometh-in-the-name-of-yahuah — NT (Matthew, Mark, Luke, John) [free]
+--      (★★ Save now=Hosanna; the cry at the triumphal entry)
+--   4. psalm-118-ye-shall-not-see-me-until-ye-say-blessed-is-he-that-cometh — NT (Matthew, Luke) [free]
+--      (★★ the FUTURE national turning — the two-house people receiving him)
+--   5. psalm-118-better-to-trust-in-yahuah-than-confidence-in-man — Tanakh (Psalm 146) [free] (the trust-frame, light)
+--   6. psalm-118-bind-the-sacrifice-with-cords-unto-the-horns-of-the-altar — Tanakh (Exodus 27, Leviticus 23) [free]
+--      (the festal sacrifice; the Passover-Hallel altar)
+--
+-- Framing notes:
+--   ★★ THE STONE (THREAD 1): *The stone which the builders refused is become the head stone of the corner.
+--      This is Yahuah's (the LORD'S) doing; it is marvellous in our eyes* (118:22-23). This is the most-cited
+--      Tanakh stone in the NT: Yahusha seals the vineyard parable with it (Matthew 21:42, Mark 12:10-11, Luke
+--      20:17); Kepha (Peter) hurls it at the council — *This is the stone which was set at nought of you
+--      builders* (Acts 4:11) — and writes it to the scattered (1 Peter 2:7). Framed through the
+--      Formed-and-Formless lens: the rejected-then-exalted stone is the Formed Son refused by the builders and
+--      made the head by the Father — *This is Yahuah's doing* — the seed-war rejection-and-vindication. The
+--      corner stone JOINS the building: Ephesians 2:20 makes him the chief corner stone of the one house, woven
+--      to the two-house regathering (the stick of Yosef and the stick of Yahudah made one), never replacement.
+--      The Tanakh laterals stand under it: Isaiah 28:16 (*a tried stone, a precious corner stone, a sure
+--      foundation* laid in Zion) and Daniel 2:34-35,44-45 (the stone *cut out without hands* that breaks the
+--      kingdoms and *filled the whole earth* — the rejected stone become the everlasting kingdom).
+--   ★ THE DAY (THREAD 2): *This is the day which Yahuah (the LORD) hath made; we will rejoice and be glad in
+--      it* (118:24). Kept tied to the stone: the day Yahuah made is the appointed day of the stone's
+--      vindication — *This is Yahuah's doing* (v.23) and *This is the day which Yahuah hath made* (v.24) are
+--      one breath. Canon-only, the psalm reading itself; the rejoicing is the feast-joy of the Hallel.
+--   ★★ HOSANNA (THREAD 3): *Save now, I beseech thee, O Yahuah (LORD)... Blessed be he that cometh in the
+--      name of Yahuah (LORD)* (118:25-26). *Save now* is the Hosanna; the crowds sing this very verse over
+--      Yahusha entering Jerusalem — *Hosanna... Blessed is he that cometh in the name of Yahuah* (Matthew
+--      21:9, Mark 11:9, Luke 19:38, John 12:13). The Hallel sung at the feast is sung over the One who comes.
+--   ★★ THE FUTURE TURNING (THREAD 4): the SAME *Blessed is he that cometh in the name of Yahuah* (118:26)
+--      is put on the lips of the people as a FUTURE cry — *Ye shall not see me henceforth, till ye shall say,
+--      Blessed is he that cometh in the name of Yahuah* (Matthew 23:39, Luke 13:35). Read through the
+--      two-house lens WITHOUT replacement: the cry of the entry becomes the cry of the gathered people of
+--      Yahudah (Judah) and Yashar'el (Israel) when they receive him — the desolate house turned to welcome,
+--      the national turning when the two sticks are made one. Not Israel cast off, but Israel that *shall say*
+--      it at the last.
+--   TRUST (THREAD 5): *It is better to trust in Yahuah (LORD) than to put confidence in man* (118:8) /
+--      *...than to put confidence in princes* (118:9) — woven to *Put not your trust in princes, nor in the
+--      son of man, in whom there is no help* (Psalm 146:3). Kept light, the trust-frame the deliverance rests on.
+--   THE ALTAR (THREAD 6): *bind the sacrifice with cords, even unto the horns of the altar* (118:27) — the
+--      festal sacrifice of the feast, woven to the horns of the altar (Exodus 27:2) and the Passover/Unleavened
+--      Bread this Hallel was sung at (Leviticus 23:5-6); the appointed-times architecture surfaced.
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — a deliberate, recorded answer (per the brief's
+--      note that this Hallel psalm likely carries clean "none warranted" extras). No restored witness was
+--      forced; the four load-bearing weaves are NT (the stone, the Hosanna, the turning) and Tanakh laterals
+--      (Isaiah 28, Daniel 2, Psalm 146, Exodus 27, Leviticus 23).
+--   VERSES WITH NO ADD: v.1-4, v.10-21, v.28-29 — the thanksgiving frame, the nations-compassed deliverance,
+--      "I shall not die, but live," the gate of righteousness, and the closing praise: the setting from which
+--      the keystone threads rise, no separate framework-bearing target warranted beyond the gathered prose.
+
+CREATE TEMP VIEW _s302_ps118_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The stone which the builders refused is become the head of the corner
+    ('canon','psalms',118,22,'canon','matthew',21,42,'free',
+      E'*Yahusha (Jesus) saith unto them, Did ye never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah''s (Lord''s) doing, and it is marvellous in our eyes?* (Matthew 21:42). Yahusha seals the parable of the rejected heir with the psalm word-for-word — *The stone which the builders refused is become the head stone of the corner. This is Yahuah''s (the LORD''S) doing; it is marvellous in our eyes* (Psalm 118:22-23). He is the stone the builders cast aside, made the head by the Father; the rejection is real and the exaltation is Yahuah''s doing.'),
+    ('canon','psalms',118,22,'canon','mark',12,10,'free',
+      E'*And have ye not read this scripture; The stone which the builders rejected is become the head of the corner* (Mark 12:10). After the vineyard given to others, Yahusha reads the psalm against the builders — the same *stone which the builders refused is become the head stone of the corner* (Psalm 118:22). The rejected stone is the rejected Son, set at the head over the very house that refused him.'),
+    ('canon','psalms',118,23,'canon','mark',12,11,'free',
+      E'*This was Yahuah''s (Lord''s) doing, and it is marvellous in our eyes?* (Mark 12:11). The wonder of *This is Yahuah''s (the LORD''S) doing; it is marvellous in our eyes* (Psalm 118:23) is that the builders'' refusal did not undo the stone — Yahuah Himself raised the rejected One to the head of the corner. The Formed Son refused by men is exalted by the Father; the marvel is His own work, not man''s repair.'),
+    ('canon','psalms',118,22,'canon','luke',20,17,'free',
+      E'*And he beheld them, and said, What is this then that is written, The stone which the builders rejected, the same is become the head of the corner?* (Luke 20:17). Yahusha fixes his eyes on the builders and gives them their own Hallel back — *The stone which the builders refused is become the head stone of the corner* (Psalm 118:22). The very psalm they sang at the feast names their refusal of him and his vindication over them.'),
+    ('canon','psalms',118,22,'canon','acts',4,11,'free',
+      E'*This is the stone which was set at nought of you builders, which is become the head of the corner* (Acts 4:11). Kepha (Peter) stands before the council and presses the psalm on the builders themselves — *The stone which the builders refused is become the head stone of the corner* (Psalm 118:22). *Set at nought of you builders*: the rulers who refused him are the builders of the psalm, and the One they crucified is *become the head of the corner*, raised by Yahuah.'),
+    ('canon','psalms',118,22,'canon','1-peter',2,7,'free',
+      E'*Unto you therefore which believe he is precious: but unto them which be disobedient, the stone which the builders disallowed, the same is made the head of the corner* (1 Peter 2:7). Writing to the scattered, Kepha (Peter) sets the psalm at the centre — *the stone which the builders disallowed, the same is made the head of the corner* — the very *stone which the builders refused is become the head stone of the corner* (Psalm 118:22). The disallowed stone is precious to them that believe and the head over them that refuse.'),
+    ('canon','psalms',118,22,'canon','ephesians',2,20,'free',
+      E'*And are built upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone* (Ephesians 2:20). The head stone of the corner JOINS the building: *the head stone of the corner* (Psalm 118:22) is the *chief corner stone* on which the one house is framed. Read through the two houses — the stick of Yosef (Joseph) and the stick of Yahudah (Judah) made one — the rejected stone is the corner that binds the whole regathered house of Yashar''el (Israel) together, never a replacement people but the one building joined in him.'),
+    ('canon','psalms',118,22,'canon','isaiah',28,16,'free',
+      E'*Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16). The prophet lays the foundation the psalm sings of — *a tried stone, a precious corner stone, a sure foundation* in Zion — the same stone that *is become the head stone of the corner* (Psalm 118:22). Yahuah Himself lays it; the builders'' refusal cannot move the stone He has set.'),
+    ('canon','psalms',118,22,'canon','daniel',2,34,'free',
+      E'*Thou sawest till that a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces* (Daniel 2:34). The stone the builders refused is the stone *cut out without hands* that shatters the kingdoms — *the stone which the builders refused is become the head stone of the corner* (Psalm 118:22). Not quarried by men, not set up by man''s hand, but Yahuah''s own stone that breaks every empire that stands against it.'),
+    ('canon','psalms',118,23,'canon','daniel',2,35,'free',
+      E'*and the stone that smote the image became a great mountain, and filled the whole earth* (Daniel 2:35). The marvel of *This is Yahuah''s (the LORD''S) doing; it is marvellous in our eyes* (Psalm 118:23) is the stone''s end: the rejected stone becomes a great mountain that *filled the whole earth* — the everlasting kingdom of the One the builders refused, raised by Yahuah to fill all things.'),
+    ('canon','psalms',118,23,'canon','daniel',2,44,'free',
+      E'*And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed... it shall break in pieces and consume all these kingdoms, and it shall stand for ever* (Daniel 2:44). *This is Yahuah''s (the LORD''S) doing* (Psalm 118:23): the kingdom of the head-stone is set up by Elohim, not by men, and *shall stand for ever* — the rejected stone made the unbreakable head over a kingdom no builder can pull down.'),
+
+    -- THREAD 2 (★): This is the day which Yahuah hath made
+    ('canon','psalms',118,24,'canon','psalms',118,23,'free',
+      E'*This is Yahuah''s (the LORD''S) doing; it is marvellous in our eyes* (Psalm 118:23). The day of rejoicing is bound to the stone''s vindication: *This is Yahuah''s doing* (v.23) and *This is the day which Yahuah (the LORD) hath made; we will rejoice and be glad in it* (v.24) are one breath — the appointed day on which Yahuah raised the rejected stone to the head is the day His people are glad. The feast-joy of the Hallel is joy in His marvellous work.'),
+
+    -- THREAD 3 (★★): Save now (Hosanna) — Blessed be he that cometh in the name of Yahuah (the triumphal entry)
+    ('canon','psalms',118,25,'canon','matthew',21,9,'free',
+      E'*And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that cometh in the name of Yahuah (Lord); Hosanna in the highest* (Matthew 21:9). *Save now, I beseech thee, O Yahuah (LORD)* (Psalm 118:25) IS the Hosanna — *save now* in the tongue of the people. As Yahusha enters Jerusalem the crowds sing this very Hallel over him: *Hosanna... Blessed is he that cometh in the name of Yahuah* (Psalm 118:25-26), the feast-cry put on the One who comes.'),
+    ('canon','psalms',118,26,'canon','mark',11,9,'free',
+      E'*And they that went before, and they that followed, cried, saying, Hosanna; Blessed is he that cometh in the name of Yahuah (Lord)* (Mark 11:9). The crowd hands Yahusha the psalm entire — *Blessed is he that cometh in the name of Yahuah (LORD)* (Psalm 118:26) — as he rides into the city. The Hallel sung at every Passover is now sung over the One who fulfils it; *he that cometh in the name of Yahuah* has come.'),
+    ('canon','psalms',118,26,'canon','luke',19,38,'free',
+      E'*Saying, Blessed be the King that cometh in the name of Yahuah (Lord): peace in heaven, and glory in the highest* (Luke 19:38). Luke names the One who comes as the King — *Blessed be the King that cometh in the name of Yahuah* — the *Blessed be he that cometh in the name of Yahuah (LORD)* of Psalm 118:26 fulfilled in the Davidic king entering his city to the people''s cry.'),
+    ('canon','psalms',118,26,'canon','john',12,13,'free',
+      E'*Took branches of palm trees, and went forth to meet him, and cried, Hosanna: Blessed is the King of Yashar''el (Israel) that cometh in the name of Yahuah (Lord)* (John 12:13). With palm branches the people meet him crying *Hosanna* and *Blessed is the King of Yashar''el (Israel) that cometh in the name of Yahuah* — the *Blessed be he that cometh in the name of Yahuah (LORD)* of Psalm 118:26 sung over the King of Yashar''el at the feast.'),
+
+    -- THREAD 4 (★★): Ye shall not see me until ye shall say, Blessed is he that cometh — the future national turning
+    ('canon','psalms',118,26,'canon','matthew',23,39,'free',
+      E'*For I say unto you, Ye shall not see me henceforth, till ye shall say, Blessed is he that cometh in the name of Yahuah (Lord)* (Matthew 23:39). The same Hallel cry — *Blessed be he that cometh in the name of Yahuah (LORD)* (Psalm 118:26) — is set as a FUTURE turning: the people *shall say* it. Over the house left desolate Yahusha promises a day when his own people will welcome him with the very psalm; the cry of the entry becomes the cry of the gathered house of Yahudah (Judah) and Yashar''el (Israel) at the last — not cast off, but turned to receive him.'),
+    ('canon','psalms',118,26,'canon','luke',13,35,'free',
+      E'*Behold, your house is left unto you desolate: and verily I say unto you, Ye shall not see me, until the time come when ye shall say, Blessed is he that cometh in the name of Yahuah (Lord)* (Luke 13:35). The desolate house is not the end: *until the time come when ye shall say, Blessed is he that cometh in the name of Yahuah* — the *Blessed be he that cometh in the name of Yahuah (LORD)* of Psalm 118:26 is the appointed cry of the national turning, when the scattered two-house people receive the One they refused and the desolation is reversed.'),
+
+    -- THREAD 5: Better to trust in Yahuah than confidence in man (the trust-frame, light)
+    ('canon','psalms',118,8,'canon','psalms',146,3,'free',
+      E'*Put not your trust in princes, nor in the son of man, in whom there is no help* (Psalm 146:3). The deliverance of this Hallel rests on the trust-frame: *It is better to trust in Yahuah (LORD) than to put confidence in man* (Psalm 118:8) / *than to put confidence in princes* (118:9). The psalmist who stood when all nations compassed him trusted not in princes but in Yahuah who *is on my side; I will not fear: what can man do unto me?* (118:6) — the help is in Yahuah alone.'),
+
+    -- THREAD 6: Bind the sacrifice with cords, even unto the horns of the altar (the festal sacrifice)
+    ('canon','psalms',118,27,'canon','exodus',27,2,'free',
+      E'*And thou shalt make the horns of it upon the four corners thereof: his horns shall be of the same: and thou shalt overlay it with brass* (Exodus 27:2). The Hallel ends at the altar: *bind the sacrifice with cords, even unto the horns of the altar* (Psalm 118:27) — the horns Yahuah commanded made of one piece with the altar, where the festal sacrifice is bound and offered. The praise of the delivered one is carried to the altar of the appointed feast.'),
+    ('canon','psalms',118,27,'canon','leviticus',23,5,'free',
+      E'*In the fourteenth day of the first month at even is Yahuah''s (the LORD''S) passover* (Leviticus 23:5). This Hallel was sung at the Passover Yahuah set in the appointed times — *bind the sacrifice with cords, even unto the horns of the altar* (Psalm 118:27) is the festal offering of the feast. The day Yahuah made (v.24) and the bound sacrifice (v.27) sit inside the calendar of Yahuah, the Passover the whole psalm crowns.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner',
+       E'The stone which the builders refused is become the head of the corner',
+       E'In the midst of the Hallel a single line is set that the whole New Testament would seize: *The stone which the builders refused is become the head stone of the corner. This is Yahuah''s (the LORD''S) doing; it is marvellous in our eyes* (Psalm 118:22-23). The builders examined the stone and cast it aside; Yahuah took the rejected stone and made it the head of the corner. Yahusha (Jesus) reads it against the very builders before him, sealing the parable of the rejected heir: *Did ye never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah''s (Lord''s) doing, and it is marvellous in our eyes?* (Matthew 21:42; so Mark 12:10-11, Luke 20:17). Kepha (Peter) hurls it at the council — *This is the stone which was set at nought of you builders, which is become the head of the corner* (Acts 4:11) — and writes it to the scattered: *the stone which the builders disallowed, the same is made the head of the corner* (1 Peter 2:7). Read through the Formed and the Formless: the rejected-then-exalted stone is the Formed Son refused by the builders and raised to the head by the Father — *This is Yahuah''s doing* — the seed-war rejection answered by vindication. And the corner stone JOINS: *Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone* (Ephesians 2:20), the stone that binds the one house — the stick of Yosef (Joseph) and the stick of Yahudah (Judah) made one — never a replacement people but the whole regathered house of Yashar''el (Israel) framed on him. The prophets laid the foundation under it: *Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation* (Isaiah 28:16), and Daniel saw its end — *a stone was cut out without hands* (Daniel 2:34) that *became a great mountain, and filled the whole earth* (Daniel 2:35), the kingdom Elohim sets up that *shall stand for ever* (Daniel 2:44). The stone the builders refused is the everlasting head.',
+       sv.verse_id, ev.verse_id, 'free', 24925
+  FROM _s302_ps118_lookup sv, _s302_ps118_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=118 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-118-this-is-the-day-which-yahuah-hath-made',
+       E'This is the day which Yahuah hath made — the day of the stone''s vindication',
+       E'*This is the day which Yahuah (the LORD) hath made; we will rejoice and be glad in it* (Psalm 118:24). The line does not stand alone — it answers the verse before it. *This is Yahuah''s (the LORD''S) doing; it is marvellous in our eyes* (Psalm 118:23), and then: *This is the day which Yahuah hath made*. The day Yahuah appointed is the day He raised the rejected stone to the head of the corner; the marvellous doing and the made day are one breath. The Hallel''s joy is not a general gladness but the feast-joy of His own work — the appointed day on which the builders'' refusal was overturned and the head-stone set. *We will rejoice and be glad in it* because the day is Yahuah''s making, the day of the stone''s vindication.',
+       sv.verse_id, ev.verse_id, 'free', 24928
+  FROM _s302_ps118_lookup sv, _s302_ps118_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=118 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-118-hosanna-blessed-be-he-that-cometh-in-the-name-of-yahuah',
+       E'Save now (Hosanna) — Blessed be he that cometh in the name of Yahuah',
+       E'*Save now, I beseech thee, O Yahuah (LORD): O Yahuah (LORD), I beseech thee, send now prosperity. Blessed be he that cometh in the name of Yahuah (LORD): we have blessed you out of the house of Yahuah (LORD)* (Psalm 118:25-26). *Save now* is the Hosanna — the very plea in the tongue of the people. This is the climax of the Hallel sung at every Passover, and the day came when the crowds sang it over the One entering Jerusalem: *Hosanna to the Son of David: Blessed is he that cometh in the name of Yahuah (Lord); Hosanna in the highest* (Matthew 21:9); *Hosanna; Blessed is he that cometh in the name of Yahuah (Lord)* (Mark 11:9); *Blessed be the King that cometh in the name of Yahuah (Lord)* (Luke 19:38); and with palm branches, *Blessed is the King of Yashar''el (Israel) that cometh in the name of Yahuah (Lord)* (John 12:13). The feast-cry of the Hallel is placed on the One who comes — *he that cometh in the name of Yahuah* has come, the King of Yashar''el (Israel) riding into his city, and the people''s *Save now* is the prayer the comer answers.',
+       sv.verse_id, ev.verse_id, 'free', 24931
+  FROM _s302_ps118_lookup sv, _s302_ps118_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=118 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-118-ye-shall-not-see-me-until-ye-say-blessed-is-he-that-cometh',
+       E'Ye shall not see me until ye shall say, Blessed is he that cometh — the national turning',
+       E'The cry of the entry is not spent. *Blessed be he that cometh in the name of Yahuah (LORD)* (Psalm 118:26) is set by Yahusha (Jesus) as a FUTURE turning of his own people. Over the house left desolate he says: *Ye shall not see me henceforth, till ye shall say, Blessed is he that cometh in the name of Yahuah (Lord)* (Matthew 23:39), and again: *Behold, your house is left unto you desolate: and verily I say unto you, Ye shall not see me, until the time come when ye shall say, Blessed is he that cometh in the name of Yahuah (Lord)* (Luke 13:35). Read without replacement and through the two houses: the desolation is real but not final — *until the time come when ye shall say*. The Hallel verse the crowds sang at the entry becomes the appointed cry of the gathered people, Yahudah (Judah) and Yashar''el (Israel), when the scattered house turns and receives the One it refused. The stone the builders rejected (v.22) is at last welcomed by the builders'' own children; the seeing of him waits on the saying of the blessing — the national turning, the desolate house turned to welcome, never Israel cast off but Israel that *shall say* it at the last.',
+       sv.verse_id, ev.verse_id, 'free', 24934
+  FROM _s302_ps118_lookup sv, _s302_ps118_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=118 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-118-better-to-trust-in-yahuah-than-confidence-in-man',
+       E'It is better to trust in Yahuah than to put confidence in man',
+       E'The deliverance of the Hallel rests on a single confession: *Yahuah (LORD) is on my side; I will not fear: what can man do unto me?* (Psalm 118:6), and so *It is better to trust in Yahuah (LORD) than to put confidence in man* (Psalm 118:8) — *It is better to trust in Yahuah (LORD) than to put confidence in princes* (Psalm 118:9). The psalmist stood when *all nations compassed me about* (118:10) not by the help of princes but by the name of Yahuah. The psalter says the same plainly: *Put not your trust in princes, nor in the son of man, in whom there is no help* (Psalm 146:3). The help is in Yahuah alone; the trust that delivers is trust in Him, never confidence in man.',
+       sv.verse_id, ev.verse_id, 'free', 24937
+  FROM _s302_ps118_lookup sv, _s302_ps118_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=118 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-118-bind-the-sacrifice-with-cords-unto-the-horns-of-the-altar',
+       E'Bind the sacrifice with cords, even unto the horns of the altar',
+       E'*Elohim (God) is Yahuah (LORD), which hath shewed us light: bind the sacrifice with cords, even unto the horns of the altar* (Psalm 118:27). The Hallel ends where the feast ends — at the altar, with the festal sacrifice bound. The horns are the horns Yahuah commanded made of one piece with the altar: *thou shalt make the horns of it upon the four corners thereof: his horns shall be of the same* (Exodus 27:2). And the feast at which this whole psalm was sung is the Passover set in the appointed times: *In the fourteenth day of the first month at even is Yahuah''s (the LORD''S) passover* (Leviticus 23:5). The day Yahuah made (v.24) and the bound sacrifice (v.27) sit inside Yahuah''s own calendar; the thanksgiving of the delivered one is carried to the altar of the appointed feast, the Passover the Hallel crowns.',
+       sv.verse_id, ev.verse_id, 'free', 24940
+  FROM _s302_ps118_lookup sv, _s302_ps118_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=118 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The stone which the builders rejected, the same is become the head of the corner: this is Yahuah''s (Lord''s) doing* (Matthew 21:42) — Yahusha seals the vineyard parable with 118:22-23 against the very builders before him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=22
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=21 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The stone which the builders rejected is become the head of the corner* (Mark 12:10) — the rejected stone of 118:22 read against the builders after the vineyard is given to others.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=22
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*This was Yahuah''s (Lord''s) doing, and it is marvellous in our eyes?* (Mark 12:11) — the marvel of 118:23: the builders'' refusal did not undo the stone; Yahuah raised it to the head.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=23
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=12 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*The stone which the builders rejected, the same is become the head of the corner?* (Luke 20:17) — Yahusha gives the builders their own Hallel (118:22) back, naming their refusal and his vindication.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=22
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=20 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *This is the stone which was set at nought of you builders, which is become the head of the corner* (Acts 4:11) — Kepha (Peter) presses 118:22 on the council; the rulers who refused him are the builders, and the crucified One is the head.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=22
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the stone which the builders disallowed, the same is made the head of the corner* (1 Peter 2:7) — Kepha writes 118:22 to the scattered: precious to them that believe, the head over them that refuse.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=22
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone* (Ephesians 2:20) — the head stone of 118:22 JOINS the one house; the two sticks (Yosef and Yahudah) made one, never replacement.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=22
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*a tried stone, a precious corner stone, a sure foundation* (Isaiah 28:16) — the prophet lays in Zion the very stone that 118:22 makes the head; Yahuah sets it, the builders cannot move it.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=22
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=28 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*a stone was cut out without hands, which smote the image* (Daniel 2:34) — the rejected stone of 118:22 is cut without human hands; not set up by man, but Yahuah''s own stone breaking the kingdoms.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=22
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*the stone that smote the image became a great mountain, and filled the whole earth* (Daniel 2:35) — the marvel of 118:23: the rejected stone becomes a mountain that fills the earth, the everlasting kingdom.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=23
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed... it shall stand for ever* (Daniel 2:44) — *This is Yahuah''s doing* (118:23): the kingdom of the head-stone is set up by Elohim and stands for ever.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=23
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-the-stone-which-the-builders-refused-the-head-of-the-corner'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*This is Yahuah''s (the LORD''S) doing; it is marvellous in our eyes* (118:23) — the day Yahuah made (v.24) is the appointed day of the stone''s vindication; the doing and the made day are one breath.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=24
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=118 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-this-is-the-day-which-yahuah-hath-made'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Hosanna to the Son of David: Blessed is he that cometh in the name of Yahuah (Lord); Hosanna in the highest* (Matthew 21:9) — *Save now* (118:25) IS the Hosanna; the crowds sing the Hallel over Yahusha entering Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=25
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=21 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-hosanna-blessed-be-he-that-cometh-in-the-name-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Hosanna; Blessed is he that cometh in the name of Yahuah (Lord)* (Mark 11:9) — the Hallel of 118:26 handed to Yahusha entire as he rides into the city; he that cometh in the name of Yahuah has come.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=26
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=11 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-hosanna-blessed-be-he-that-cometh-in-the-name-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Blessed be the King that cometh in the name of Yahuah (Lord)* (Luke 19:38) — Luke names the comer of 118:26 as the King, the Davidic king entering his city to the people''s cry.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=26
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=19 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-hosanna-blessed-be-he-that-cometh-in-the-name-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Blessed is the King of Yashar''el (Israel) that cometh in the name of Yahuah (Lord)* (John 12:13) — with palm branches the people sing 118:26 over the King of Yashar''el at the feast.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=26
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=12 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-hosanna-blessed-be-he-that-cometh-in-the-name-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Ye shall not see me henceforth, till ye shall say, Blessed is he that cometh in the name of Yahuah (Lord)* (Matthew 23:39) — the cry of 118:26 set as a FUTURE turning; the people *shall say* it, the desolate house turned to welcome.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=26
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-ye-shall-not-see-me-until-ye-say-blessed-is-he-that-cometh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *your house is left unto you desolate... until the time come when ye shall say, Blessed is he that cometh in the name of Yahuah (Lord)* (Luke 13:35) — 118:26 as the appointed cry of the national turning; the scattered two-house people receive the One they refused.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=26
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=13 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-ye-shall-not-see-me-until-ye-say-blessed-is-he-that-cometh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Put not your trust in princes, nor in the son of man, in whom there is no help* (Psalm 146:3) — the trust-frame of 118:8-9; the help is in Yahuah alone, never confidence in man or princes.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=8
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=146 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-better-to-trust-in-yahuah-than-confidence-in-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the horns of it upon the four corners thereof: his horns shall be of the same* (Exodus 27:2) — the horns of the altar of 118:27, made of one piece with the altar where the festal sacrifice is bound.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=27
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=27 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-bind-the-sacrifice-with-cords-unto-the-horns-of-the-altar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*In the fourteenth day of the first month at even is Yahuah''s (the LORD''S) passover* (Leviticus 23:5) — the appointed feast this Hallel was sung at; the bound sacrifice of 118:27 sits inside Yahuah''s calendar, the Passover the psalm crowns.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps118_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=118 AND sv.verse_number=27
+  JOIN _s302_ps118_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-118-bind-the-sacrifice-with-cords-unto-the-horns-of-the-altar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
