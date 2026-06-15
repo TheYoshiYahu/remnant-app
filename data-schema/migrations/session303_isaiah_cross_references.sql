@@ -23357,6 +23357,1396 @@ SELECT t.id, cr.id, 5, E'★ *as the clay is in the potter''s hand, so are ye in
  WHERE t.slug='isaiah-64-we-are-the-clay-and-thou-our-potter'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_isaiah_15.sql (Isaiah 15) -----
+-- Chapter: Isaiah 15 — THE BURDEN OF MOAB, a night-lament over a judged nation. *Because in the
+-- night Ar of Moab is laid waste, and brought to silence; because in the night Kir of Moab is laid
+-- waste, and brought to silence* (15:1); the cities howl — Dibon, Nebo, Medeba, Heshbon, Elealeh,
+-- Jahaz (15:2-4); *My heart shall cry out for Moab* (15:5); *the waters of Nimrim shall be desolate*
+-- (15:6); and the doom closes with the remnant-judgment, *the waters of Dimon shall be full of blood:
+-- for I will bring more upon Dimon, lions upon him that escapeth of Moab, and upon the remnant of the
+-- land* (15:9). A THIN oracle — curated to three framework-bearing threads. The lens is
+-- VICTIMS-NOT-ENEMIES: even the burden against the enemy carries lament, and the lament is Yahuah''s
+-- own — *My heart shall cry out for Moab* (15:5). Jeremiah 48 is the great prophetic twin (it echoes
+-- Isaiah''s very phrases — Luhith, Horonaim, the heifer of three years old, the waters of Nimrim, the
+-- mourning heart). Numbers 21:28-29 (the ancient ballad of Heshbon — *Woe to thee, Moab... O people
+-- of Chemosh*) is the Tanakh root the burden reaches back to. Ch16 carries the mercy-throne and the
+-- shelter for the outcast — built by the sibling minion; pointed FORWARD in prose, not duplicated here.
+-- Tag: isa15   Temp view: _s303_isa15_lookup
+-- Sort band: base 26350, step 3 -> threads at 26350, 26353, 26356 (3 threads)
+-- Source of EVERY row: 'canon','isaiah',15,v
+--
+-- Isaiah 15 coverage:
+--   ★★ v.1 (Because in the night Ar of Moab is laid waste... Kir of Moab is laid waste)
+--        NT:     none warranted (no NT verse touches the Moab burden directly; the forward weave is
+--                the mercy-throne of ch16:5, the sibling minion''s, named in prose not duplicated)
+--        Extras: none warranted (no clean extra-canonical Moab-lament witness in the library;
+--                Numbers 21 is the canonical root chosen instead)
+--        Tanakh: ★★ Numbers 21:28-29 (a fire gone out of Heshbon... it hath consumed Ar of Moab...
+--                Woe to thee, Moab! thou art undone, O people of Chemosh) — THREAD 3 (the ancient
+--                ballad root); ★ Jeremiah 48:1 (Woe unto Nebo! for it is spoiled) — THREAD 1
+--   ★ v.2-4 (the cities howl — Dibon, Nebo, Medeba, Heshbon, Elealeh, Jahaz; baldness, sackcloth)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 48:37 (every head shall be bald, and every beard clipped... sackcloth) +
+--                48:34 (From the cry of Heshbon even unto Elealeh... Jahaz) — THREAD 1 (the twin oracle)
+--   ★★★ v.5 (My heart shall cry out for Moab; his fugitives... by the mounting up of Luhith with
+--          weeping... in the way of Horonaim... a cry of destruction)
+--        NT:     none warranted (the divine-pathos forward weave is held in prose)
+--        Extras: none warranted
+--        Tanakh: ★★★ Jeremiah 48:31 (Therefore will I howl for Moab... mine heart shall mourn for
+--                the men of Kir-heres) + 48:36 (mine heart shall sound for Moab like pipes) — THREAD 2
+--                (Yahuah''s own grief over the judged nation; victims-not-enemies); ★ Jeremiah 48:5
+--                (in the going up of Luhith continual weeping... Horonaim... a cry of destruction) —
+--                THREAD 1 (the verbatim phrase-echo)
+--   ★ v.6 (the waters of Nimrim shall be desolate... the grass faileth)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 48:34 (the waters also of Nimrim shall be desolate) — THREAD 1 (the
+--                very phrase repeated; the prophetic twin)
+--   v.7-8 (the abundance... carried away to the brook of the willows; the cry round the borders of Moab)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: woven into THREAD 1''s prose (the encircling cry); no separate add forced
+--   ★ v.9 (the waters of Dimon... full of blood... lions upon him that escapeth of Moab, and upon
+--          the remnant of the land)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 48:44 (He that fleeth from the fear shall fall into the pit; and he that
+--                getteth up out of the pit shall be taken in the snare) — THREAD 1 (the escapee
+--                overtaken — no flight from the visitation); the latter-day mercy *Yet will I bring
+--                again the captivity of Moab in the latter days* (Jer 48:47) named in THREAD 2 prose
+--                (the lament is not the last word — held with the mercy-throne of ch16)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-15-the-burden-of-moab-the-night-lament — Tanakh (Jeremiah 48) [free]
+--      (★★ the prophetic twin; Jeremiah''s Moab oracle echoes Isaiah''s very phrases — Luhith,
+--       Horonaim, the heifer of three years old, the waters of Nimrim, the encircling cry)
+--   2. isaiah-15-my-heart-shall-cry-out-for-moab — Tanakh (Jeremiah 48) [free]
+--      (★★★ Yahuah''s OWN grief over a judged nation; victims-not-enemies — the burden against the
+--       enemy carries lament, and the lament is the Father''s)
+--   3. isaiah-15-ar-of-moab-is-laid-waste-woe-to-thee-moab — Tanakh (Numbers 21) [free]
+--      (★★ the ancient ballad of Heshbon — the Tanakh root the burden reaches back to; Chemosh)
+--
+-- Framing notes:
+--   ★★ THE NIGHT-LAMENT / THE PROPHETIC TWIN (THREAD 1): Isaiah''s burden and Jeremiah''s burden are
+--      one oracle in two prophets'' mouths. *My heart shall cry out for Moab; his fugitives shall flee
+--      unto Zoar, an heifer of three years old: for by the mounting up of Luhith with weeping shall
+--      they go it up; for in the way of Horonaim they shall raise up a cry of destruction* (Isaiah
+--      15:5) is repeated almost verbatim: *For in the going up of Luhith continual weeping shall go up;
+--      for in the going down of Horonaim the enemies have heard a cry of destruction* (Jeremiah 48:5),
+--      *From the cry of Heshbon even unto Elealeh, and even unto Jahaz... from Zoar even unto Horonaim,
+--      as an heifer of three years old: for the waters also of Nimrim shall be desolate* (Jeremiah
+--      48:34). The same cities, the same heifer, the same desolate waters of Nimrim, the same baldness
+--      and sackcloth (Jer 48:37). And the escapee finds no escape: *lions upon him that escapeth of
+--      Moab* (Isaiah 15:9) / *He that fleeth from the fear shall fall into the pit* (Jeremiah 48:44).
+--   ★★★ MY HEART SHALL CRY OUT FOR MOAB (THREAD 2): the verse the whole framework turns on here.
+--      *My heart shall cry out for Moab* (Isaiah 15:5) — the burden against the enemy is spoken in
+--      grief, and the grieving heart is Yahuah''s. Jeremiah makes the speaker unmistakable: *Therefore
+--      will I howl for Moab, and I will cry out for all Moab; mine heart shall mourn for the men of
+--      Kir-heres* (Jeremiah 48:31); *therefore mine heart shall sound for Moab like pipes* (48:36).
+--      VICTIMS, NOT ENEMIES: even in the covenant-lawsuit against a proud nation (Moab magnified
+--      itself against Yahuah, Jer 48:42; mocked Yashar''el, 48:27), the Judge weeps. And the lament is
+--      not the last word — *Yet will I bring again the captivity of Moab in the latter days* (Jeremiah
+--      48:47), the mercy that the throne of ch16:5 will shelter the outcast under. Dismantle the
+--      pride, never hate the people.
+--   ★★ AR OF MOAB / WOE TO THEE MOAB (THREAD 3): the burden reaches back to Israel''s oldest song
+--      about Moab. *Because in the night Ar of Moab is laid waste... Kir of Moab is laid waste*
+--      (Isaiah 15:1) recalls the ballad of Heshbon sung at the conquest: *For there is a fire gone out
+--      of Heshbon, a flame from the city of Sihon: it hath consumed Ar of Moab, and the lords of the
+--      high places of Arnon. Woe to thee, Moab! thou art undone, O people of Chemosh* (Numbers
+--      21:28-29). Ar consumed, Heshbon ablaze, Chemosh''s people undone — Isaiah''s night-ruin of the
+--      same cities (Heshbon, 15:4) is that ancient woe come round again. The false god Chemosh cannot
+--      save (cf. Jeremiah 48:7,13, named in prose); the high places fall.
+--   EXTRAS: none warranted — no clean extra-canonical witness in the library carries the Moab burden;
+--      recorded deliberately, not silently skipped. The whole chapter''s weave is LATERAL (the prophets
+--      and the Torah-ballad) — Jeremiah 48 the twin, Numbers 21 the root.
+--   VERSES WITH NO SEPARATE ADD: v.2-4 and v.6 fold into THREAD 1 (the cities, the mourning, the
+--      desolate Nimrim — all part of the twin-oracle weave); v.7-8 (the salvaged abundance, the
+--      encircling cry) woven into THREAD 1''s prose; all recorded.
+
+CREATE TEMP VIEW _s303_isa15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The night-lament / the prophetic twin — Jeremiah 48 echoes Isaiah''s phrases
+    ('canon','isaiah',15,5,'canon','jeremiah',48,5,'free',
+      E'*For in the going up of Luhith continual weeping shall go up; for in the going down of Horonaim the enemies have heard a cry of destruction* (Jeremiah 48:5). Jeremiah''s Moab oracle repeats Isaiah''s phrase almost word for word: *by the mounting up of Luhith with weeping shall they go it up; for in the way of Horonaim they shall raise up a cry of destruction* (Isaiah 15:5). The same ascent of Luhith, the same way of Horonaim, the same cry of destruction — one burden in two prophets'' mouths.'),
+    ('canon','isaiah',15,6,'canon','jeremiah',48,34,'free',
+      E'*From the cry of Heshbon even unto Elealeh, and even unto Jahaz, have they uttered their voice, from Zoar even unto Horonaim, as an heifer of three years old: for the waters also of Nimrim shall be desolate* (Jeremiah 48:34). Isaiah''s very words return — *the waters of Nimrim shall be desolate* (Isaiah 15:6), the heifer of three years old (15:5), the cry from Heshbon to Elealeh to Jahaz (15:4). Jeremiah gathers Isaiah''s scattered phrases into one verse: the prophetic twin, the same desolate waters.'),
+    ('canon','isaiah',15,2,'canon','jeremiah',48,37,'free',
+      E'*For every head shall be bald, and every beard clipped: upon all the hands shall be cuttings, and upon the loins sackcloth* (Jeremiah 48:37). The mourning of Isaiah 15:2 — *on all their heads shall be baldness, and every beard cut off* — and the sackcloth of 15:3 are the same rites of grief Jeremiah names over the same Moab. Two oracles, one howl of a stricken nation.'),
+    ('canon','isaiah',15,9,'canon','jeremiah',48,44,'free',
+      E'*He that fleeth from the fear shall fall into the pit; and he that getteth up out of the pit shall be taken in the snare: for I will bring upon it, even upon Moab, the year of their visitation, saith Yahuah (LORD)* (Jeremiah 48:44). Isaiah''s close — *lions upon him that escapeth of Moab, and upon the remnant of the land* (Isaiah 15:9) — is the same verdict: there is no flight from the day of visitation; the escapee is overtaken. The twin oracles end alike, the fugitive run down.'),
+
+    -- THREAD 2 (★★★): My heart shall cry out for Moab — Yahuah''s own grief (victims-not-enemies)
+    ('canon','isaiah',15,5,'canon','jeremiah',48,31,'free',
+      E'*Therefore will I howl for Moab, and I will cry out for all Moab; mine heart shall mourn for the men of Kir-heres* (Jeremiah 48:31). Isaiah''s *My heart shall cry out for Moab* (Isaiah 15:5) is no human aside — Jeremiah makes the speaker unmistakable: it is Yahuah who howls and whose *heart shall mourn*. The burden against the enemy is spoken in the Judge''s own grief.'),
+    ('canon','isaiah',15,5,'canon','jeremiah',48,36,'free',
+      E'*Therefore mine heart shall sound for Moab like pipes, and mine heart shall sound like pipes for the men of Kir-heres: because the riches that he hath gotten are perished* (Jeremiah 48:36). The same divine lament that beats in *My heart shall cry out for Moab* (Isaiah 15:5): Yahuah''s *heart shall sound for Moab like pipes* — the mourning-flute over a fallen nation. Victims, not enemies — even the proud foe judged for magnifying himself (Jeremiah 48:42) is wept over by the One who judges.'),
+    ('canon','isaiah',15,9,'canon','jeremiah',48,47,'free',
+      E'*Yet will I bring again the captivity of Moab in the latter days, saith Yahuah (LORD). Thus far is the judgment of Moab* (Jeremiah 48:47). The blood-filled waters of Dimon and the lions on the remnant (Isaiah 15:9) are not the last word for Moab: Yahuah closes the twin oracle with mercy — *Yet will I bring again the captivity of Moab in the latter days*. The lament that opens (My heart shall cry out for Moab) is answered by a latter-day restoring; the throne of mercy of the next chapter (Isaiah 16:5) shelters the very outcast.'),
+
+    -- THREAD 3 (★★): Ar of Moab is laid waste — the ancient ballad of Heshbon (Numbers 21)
+    ('canon','isaiah',15,1,'canon','numbers',21,28,'free',
+      E'*For there is a fire gone out of Heshbon, a flame from the city of Sihon: it hath consumed Ar of Moab, and the lords of the high places of Arnon* (Numbers 21:28). Isaiah''s burden opens on the city this ancient ballad named: *Ar of Moab is laid waste, and brought to silence* (Isaiah 15:1). The fire that *consumed Ar of Moab* at the conquest is the night-ruin come round again upon the same Moab, the same high places.'),
+    ('canon','isaiah',15,1,'canon','numbers',21,29,'free',
+      E'*Woe to thee, Moab! thou art undone, O people of Chemosh: he hath given his sons that escaped, and his daughters, into captivity unto Sihon king of the Amorites* (Numbers 21:29). The oldest song of Israel about Moab is the woe Isaiah''s burden takes up — *Ar of Moab is laid waste... Kir of Moab is laid waste* (Isaiah 15:1). Moab is *the people of Chemosh*, and Chemosh cannot save (his sons into captivity); the false god''s high places fall when the city is laid silent.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-15-the-burden-of-moab-the-night-lament',
+       E'The burden of Moab — the night-lament, and the prophetic twin in Jeremiah',
+       E'Isaiah''s burden falls in the dark: *Because in the night Ar of Moab is laid waste, and brought to silence; because in the night Kir of Moab is laid waste, and brought to silence* (Isaiah 15:1). The cities howl — Dibon, Nebo, Medeba, Heshbon, Elealeh, Jahaz (15:2-4) — and the fugitives flee: *his fugitives shall flee unto Zoar, an heifer of three years old: for by the mounting up of Luhith with weeping shall they go it up; for in the way of Horonaim they shall raise up a cry of destruction* (15:5); *the waters of Nimrim shall be desolate* (15:6). Jeremiah prophesies the SAME burden, in almost the same words — the prophetic twin: *For in the going up of Luhith continual weeping shall go up; for in the going down of Horonaim the enemies have heard a cry of destruction* (Jeremiah 48:5); *From the cry of Heshbon even unto Elealeh, and even unto Jahaz... from Zoar even unto Horonaim, as an heifer of three years old: for the waters also of Nimrim shall be desolate* (Jeremiah 48:34). The same ascent of Luhith, the same way of Horonaim, the same heifer of three years old, the same desolate waters of Nimrim. The mourning is the same — *every head shall be bald, and every beard clipped... and upon the loins sackcloth* (Jeremiah 48:37) matching *on all their heads shall be baldness, and every beard cut off* (Isaiah 15:2). And both oracles end with the fugitive overtaken: *lions upon him that escapeth of Moab* (Isaiah 15:9); *He that fleeth from the fear shall fall into the pit; and he that getteth up out of the pit shall be taken in the snare* (Jeremiah 48:44). One burden, two prophets — the word of Yahuah standing doubly sure over Moab.',
+       sv.verse_id, ev.verse_id, 'free', 26350
+  FROM _s303_isa15_lookup sv, _s303_isa15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=15 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-15-my-heart-shall-cry-out-for-moab',
+       E'My heart shall cry out for Moab — Yahuah''s own grief over a judged nation',
+       E'In the middle of the doom comes a startling word: *My heart shall cry out for Moab* (Isaiah 15:5). The burden against the enemy is not spoken in triumph but in grief — and the grieving heart is Yahuah''s own. Jeremiah, prophesying the same Moab oracle, makes the speaker unmistakable: *Therefore will I howl for Moab, and I will cry out for all Moab; mine heart shall mourn for the men of Kir-heres* (Jeremiah 48:31); *therefore mine heart shall sound for Moab like pipes, and mine heart shall sound like pipes for the men of Kir-heres* (Jeremiah 48:36). The mourning-flute is in the mouth of the Judge. This is the lens the whole apparatus reads through: VICTIMS, NOT ENEMIES. Moab had magnified himself against Yahuah (Jeremiah 48:42) and mocked Yashar''el (Israel) in his fall (48:27) — the lawsuit is just — yet the One who pronounces it weeps over the people undone. And the lament is not the last word: *Yet will I bring again the captivity of Moab in the latter days, saith Yahuah (LORD). Thus far is the judgment of Moab* (Jeremiah 48:47). The blood of Dimon and the lions on the remnant (Isaiah 15:9) give way to a latter-day mercy — the very throne of grace that the next chapter raises, *in mercy shall the throne be established... judging, and seeking judgment, and hasting righteousness* (Isaiah 16:5), a covert for the outcast (16:4). Dismantle the pride; never hate the people. Yahuah''s heart cries even over Moab.',
+       sv.verse_id, ev.verse_id, 'free', 26353
+  FROM _s303_isa15_lookup sv, _s303_isa15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=15 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-15-ar-of-moab-is-laid-waste-woe-to-thee-moab',
+       E'Ar of Moab is laid waste — the ancient ballad of Heshbon come round again',
+       E'The burden opens on a city Israel had sung of since the wilderness: *Because in the night Ar of Moab is laid waste, and brought to silence; because in the night Kir of Moab is laid waste, and brought to silence* (Isaiah 15:1). That very Ar, and Heshbon among the howling cities (15:4), are the names of the oldest song Israel knew about Moab — the ballad sung when Sihon''s Heshbon fell: *For there is a fire gone out of Heshbon, a flame from the city of Sihon: it hath consumed Ar of Moab, and the lords of the high places of Arnon. Woe to thee, Moab! thou art undone, O people of Chemosh: he hath given his sons that escaped, and his daughters, into captivity unto Sihon king of the Amorites* (Numbers 21:28-29). Ar consumed by fire, Heshbon ablaze, the high places of Arnon fallen, and Moab — *the people of Chemosh* — undone, with the false god powerless to keep his own sons from captivity. Isaiah''s night-ruin of those same cities is that ancient *Woe to thee, Moab* come round again. The high places where Moab burned incense to Chemosh (Jeremiah 48:35) cannot shelter the city laid silent; the burden reaches back to Torah and gathers up its oldest lament.',
+       sv.verse_id, ev.verse_id, 'free', 26356
+  FROM _s303_isa15_lookup sv, _s303_isa15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=15 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *For in the going up of Luhith continual weeping shall go up; for in the going down of Horonaim... a cry of destruction* (Jeremiah 48:5) — Jeremiah repeats Isaiah 15:5 almost word for word; the same Luhith, the same Horonaim, the same cry.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s303_isa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=48 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-15-the-burden-of-moab-the-night-lament'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *as an heifer of three years old: for the waters also of Nimrim shall be desolate* (Jeremiah 48:34) — Isaiah''s very phrases gathered into one verse; *the waters of Nimrim shall be desolate* (Isaiah 15:6), the heifer of three years old (15:5).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=6
+  JOIN _s303_isa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=48 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-15-the-burden-of-moab-the-night-lament'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*every head shall be bald, and every beard clipped... upon the loins sackcloth* (Jeremiah 48:37) — the same rites of grief as *on all their heads shall be baldness, and every beard cut off* (Isaiah 15:2) and the sackcloth of 15:3.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=2
+  JOIN _s303_isa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=48 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-15-the-burden-of-moab-the-night-lament'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*He that fleeth from the fear shall fall into the pit; and he that getteth up out of the pit shall be taken in the snare* (Jeremiah 48:44) — no escape, as *lions upon him that escapeth of Moab* (Isaiah 15:9); both oracles run down the fugitive.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=9
+  JOIN _s303_isa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=48 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-15-the-burden-of-moab-the-night-lament'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Therefore will I howl for Moab... mine heart shall mourn for the men of Kir-heres* (Jeremiah 48:31) — Jeremiah names the speaker of *My heart shall cry out for Moab* (Isaiah 15:5): it is Yahuah who howls and mourns.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s303_isa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=48 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-15-my-heart-shall-cry-out-for-moab'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *mine heart shall sound for Moab like pipes... for the men of Kir-heres* (Jeremiah 48:36) — the mourning-flute in the Judge''s own mouth; *My heart shall cry out for Moab* (Isaiah 15:5) is Yahuah''s grief, victims-not-enemies.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s303_isa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=48 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-15-my-heart-shall-cry-out-for-moab'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Yet will I bring again the captivity of Moab in the latter days, saith Yahuah (LORD)* (Jeremiah 48:47) — the lament is not the last word; the blood of Dimon (Isaiah 15:9) gives way to a latter-day mercy, the throne of grace of the next chapter (16:5).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=9
+  JOIN _s303_isa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=48 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-15-my-heart-shall-cry-out-for-moab'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *there is a fire gone out of Heshbon... it hath consumed Ar of Moab, and the lords of the high places of Arnon* (Numbers 21:28) — the ancient ballad''s fire on the very city Isaiah''s burden opens with, *Ar of Moab is laid waste* (Isaiah 15:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=1
+  JOIN _s303_isa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-15-ar-of-moab-is-laid-waste-woe-to-thee-moab'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Woe to thee, Moab! thou art undone, O people of Chemosh* (Numbers 21:29) — Israel''s oldest song of Moab is the woe Isaiah takes up; Chemosh cannot save his own from captivity, the false god''s high places fall.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=15 AND sv.verse_number=1
+  JOIN _s303_isa15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-15-ar-of-moab-is-laid-waste-woe-to-thee-moab'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_16.sql (Isaiah 16) -----
+-- Chapter: Isaiah 16 — THE BURDEN OF MOAB CONTINUED. Moab is counseled to send tribute to Zion's
+-- king (*Send ye the lamb to the ruler of the land*, 16:1) and to shelter Yahuah's outcasts (16:3-4);
+-- and in the heart of the chapter the Davidic mercy-throne is established: *And in mercy shall the
+-- throne be established: and he shall sit upon it in truth in the tabernacle of David, judging, and
+-- seeking judgment, and hasting righteousness* (16:5) — THE keystone, the throne of David's
+-- tabernacle that Gabriel names (Luke 1:32-33), that Amos raises (Amos 9:11), that James quotes
+-- (Acts 15:16), that Nathan swore everlasting (2 Samuel 7:13,16) and the psalmist sang (Psalm 89).
+-- The One who SITS in truth in David's tabernacle is the Formed-Son king who HAS a Father, reigning
+-- over the house of Jacob (Judah + Ephraim restored). The chapter closes in grief over Moab's pride
+-- and her failing harvest (16:6-12) — victims, not enemies; a covenant-lawsuit lament, not ethnic
+-- hatred.
+-- Tag: isa16   Temp view: _s303_isa16_lookup
+-- Sort band: base 26375, step 3 -> threads at 26375, 26378, 26381 (3 threads)
+-- Source of EVERY row: 'canon','isaiah',16,v
+--
+-- Isaiah 16 coverage:
+--   ★ v.1 (Send ye the lamb to the ruler of the land from Sela to the wilderness, unto the mount of
+--          the daughter of Zion)
+--        NT:     none warranted distinct (the literal sense is tribute-lambs; the Lamb-forward weave
+--                is touched only lightly in prose, NOT over-Christologized — homage-to-Zion's-king is
+--                the sound reading) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ 2 Kings 3:4 (Mesha king of Moab was a sheepmaster, and rendered unto the king of
+--                Yashar'el (Israel) an hundred thousand lambs) — THREAD 1 (Moab's literal tribute-lambs),
+--                ★ Isaiah 60:6-7 (they shall bring gold and incense... the rams of Nebaioth shall
+--                minister unto thee... come up with acceptance on mine altar) — THREAD 1 (nations'
+--                homage to Zion)
+--   ★★ v.5 (And in mercy shall the throne be established: and he shall sit upon it in truth in the
+--          tabernacle of David, judging, and seeking judgment, and hasting righteousness)
+--        NT:     ★★★ Luke 1:32-33 (Yahuah Elohim (the Lord God) shall give unto him the throne of his
+--                father David: And he shall reign over the house of Jacob for ever) — THREAD 2,
+--                ★★ Acts 15:16 (After this I will return, and will build again the tabernacle of David,
+--                which is fallen down) — THREAD 2 (James quotes Amos 9:11)
+--        Extras: none warranted (the Davidic-throne weave is carried wholly by the canon witnesses)
+--        Tanakh: ★★ Amos 9:11 (In that day will I raise up the tabernacle of David that is fallen) —
+--                THREAD 2, ★★ 2 Samuel 7:13,16 (I will stablish the throne of his kingdom for ever...
+--                thy throne shall be established for ever) — THREAD 2, ★ Psalm 89:14 (mercy and truth
+--                shall go before thy face), Psalm 89:37 (established for ever... a faithful witness) —
+--                THREAD 2 (mercy-and-truth throne)
+--   v.2-4 (the daughters of Moab at the fords of Arnon... hide the outcasts... let mine outcasts dwell
+--          with thee... be thou a covert to them from the face of the spoiler)
+--        NT:     none warranted distinct (the sheltering-of-outcasts is the preface to the mercy-throne
+--                of v.5 — held in THREAD 2's prose)
+--        Extras: none warranted
+--        Tanakh: held in prose (the outcasts sheltered → the throne established in mercy, v.5)
+--   v.6-12 (We have heard of the pride of Moab... Therefore shall Moab howl for Moab... the vine of
+--          Sibmah... the shouting for thy summer fruits and for thy harvest is fallen)
+--        NT:     none warranted (the lament over Moab has no NT quotation; held as Tanakh lament)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 48:29 (We have heard the pride of Moab, (he is exceeding proud) his
+--                loftiness, and his arrogancy, and his pride), Jeremiah 48:31-32 (Therefore will I howl
+--                for Moab... O vine of Sibmah, I will weep for thee with the weeping of Jazer) —
+--                THREAD 3 (the twin Moab-lament; victims, not enemies)
+--   v.13-14 (This is the word that Yahuah (LORD) hath spoken concerning Moab... Within three years...
+--          the glory of Moab shall be contemned)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held in prose (the dated sentence that closes the burden — woven into THREAD 3's lament)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-16-send-ye-the-lamb-to-the-ruler-of-the-land — Tanakh (2 Kings 3, Isaiah 60) [free]
+--      (★ the tribute-lambs / nations' homage to Zion's king; literal sense, lightly Lamb-forward)
+--   2. isaiah-16-in-mercy-shall-the-throne-be-established — NT (Luke 1, Acts 15) + Tanakh (Amos 9,
+--      2 Samuel 7, Psalm 89) [free]
+--      (★★ THE keystone: the Davidic mercy-throne in the tabernacle of David — the Formed-Son king who
+--      HAS a Father, reigning over the house of Jacob, Judah + Ephraim restored)
+--   3. isaiah-16-therefore-shall-moab-howl-for-moab — Tanakh (Jeremiah 48) [free]
+--      (the grief over Moab's pride and failing harvest; victims-not-enemies, covenant-lawsuit lament)
+--
+-- Framing notes:
+--   ★ THE LAMB TO THE RULER (THREAD 1): *Send ye the lamb to the ruler of the land from Sela to the
+--      wilderness, unto the mount of the daughter of Zion* (16:1). The literal sense is tribute: Moab,
+--      a sheep-rearing land, is counseled to send the lambs of homage to Zion's king — *And Mesha king
+--      of Moab was a sheepmaster, and rendered unto the king of Yashar'el (Israel) an hundred thousand
+--      lambs* (2 Kings 3:4). It belongs to the great motif of the nations bringing their wealth to the
+--      Davidic throne on Zion's mount: *they shall bring gold and incense; and they shall shew forth the
+--      praises of Yahuah (LORD)... the rams of Nebaioth shall minister unto thee: they shall come up
+--      with acceptance on mine altar* (Isaiah 60:6-7). Do NOT over-Christologize the line — the literal
+--      tribute-lamb is the plain sense — but the homage-to-Zion's-king reading is sound, and the
+--      gathering of the nations to the King on the mount is the trajectory.
+--   ★★ THE MERCY-THRONE (THREAD 2): *And in mercy shall the throne be established: and he shall sit upon
+--      it in truth in the tabernacle of David, judging, and seeking judgment, and hasting righteousness*
+--      (16:5). THE keystone of the chapter. The throne is built ON mercy, occupied IN truth, set in
+--      *the tabernacle of David* — the very Davidic house Gabriel names: *Yahuah Elohim (the Lord God)
+--      shall give unto him the throne of his father David: And he shall reign over the house of Jacob
+--      for ever* (Luke 1:32-33). Amos raises that fallen tabernacle — *In that day will I raise up the
+--      tabernacle of David that is fallen* (Amos 9:11) — and James quotes it at the Jerusalem council:
+--      *After this I will return, and will build again the tabernacle of David, which is fallen down*
+--      (Acts 15:16). It is the throne Nathan swore everlasting: *I will stablish the throne of his
+--      kingdom for ever... thy throne shall be established for ever* (2 Samuel 7:13,16), and the psalmist
+--      sang as a throne of mercy and truth: *mercy and truth shall go before thy face* (Psalm 89:14),
+--      *established for ever as the moon, and as a faithful witness in heaven* (Psalm 89:37). FORMED /
+--      FORMLESS: the One who *shall sit upon it in truth in the tabernacle of David* is the Formed-Son
+--      king, the throne GIVEN him by *Yahuah Elohim (the Lord God)* (Luke 1:32) — he reigns, and he has
+--      a Father; not a co-equal trinitarian person, not a modalist collapse. TWO-HOUSE: *he shall reign
+--      over the house of Jacob for ever* (Luke 1:33) — over all Jacob, Judah AND Ephraim/Joseph gathered
+--      and made one (the tabernacle of David rebuilt over both houses).
+--   THE MOAB-LAMENT (THREAD 3): *We have heard of the pride of Moab; he is very proud... Therefore shall
+--      Moab howl for Moab... the shouting for thy summer fruits and for thy harvest is fallen* (16:6,7,9).
+--      Jeremiah carries the same lament almost word for word: *We have heard the pride of Moab, (he is
+--      exceeding proud) his loftiness, and his arrogancy, and his pride* (Jeremiah 48:29), *Therefore
+--      will I howl for Moab... O vine of Sibmah, I will weep for thee with the weeping of Jazer*
+--      (Jeremiah 48:31-32). Read it as victims, not enemies: the lawsuit is against Moab's PRIDE, and
+--      the prophet WEEPS over the fallen harvest — *I will water thee with my tears, O Heshbon* (16:9),
+--      *my bowels shall sound like an harp for Moab* (16:11). Grief, not gloating; the system of pride
+--      is broken, the people are mourned.
+--   VERSES WITH NO SEPARATE ADD: v.2-4 (the daughters of Moab, the sheltered outcasts — preface to the
+--      mercy-throne, woven into THREAD 2), v.10-12 (the silenced vintage, Moab's vain prayer on the high
+--      place — woven into THREAD 3's lament), v.13-14 (the dated sentence closing the burden — woven into
+--      THREAD 3). All recorded, none silently skipped. EXTRAS: none warranted on this chapter — the
+--      tribute-lamb, the Davidic throne, and the Moab-lament are carried fully by the canon witnesses;
+--      no clean extra-canonical parallel forced.
+
+CREATE TEMP VIEW _s303_isa16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Send ye the lamb to the ruler — the tribute-lambs / nations' homage to Zion's king
+    ('canon','isaiah',16,1,'canon','2-kings',3,4,'free',
+      E'*And Mesha king of Moab was a sheepmaster, and rendered unto the king of Yashar''el (Israel) an hundred thousand lambs, and an hundred thousand rams, with the wool* (2 Kings 3:4). The counsel *Send ye the lamb to the ruler of the land from Sela to the wilderness, unto the mount of the daughter of Zion* (Isaiah 16:1) is tribute in the plain sense: Moab is a sheep-rearing land, and *Mesha king of Moab was a sheepmaster* who *rendered* his lambs to Yashar''el''s king. The burden counsels Moab to send the lambs of homage to Zion''s ruler on the daughter-of-Zion''s mount.'),
+    ('canon','isaiah',16,1,'canon','isaiah',60,6,'free',
+      E'*The multitude of camels shall cover thee, the dromedaries of Midian and Ephah; all they from Sheba shall come: they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:6). The tribute-lamb sent *unto the mount of the daughter of Zion* (Isaiah 16:1) belongs to the great motif of the nations bringing their wealth to Zion''s king: *they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)*. Moab''s lamb is one stream of the homage of the nations flowing up to the mount.'),
+    ('canon','isaiah',16,1,'canon','isaiah',60,7,'free',
+      E'*All the flocks of Kedar shall be gathered together unto thee, the rams of Nebaioth shall minister unto thee: they shall come up with acceptance on mine altar, and I will glorify the house of my glory* (Isaiah 60:7). The lamb *sent to the ruler of the land* (Isaiah 16:1) is gathered into this flow of flocks and rams to Zion: *the rams of Nebaioth shall minister unto thee: they shall come up with acceptance on mine altar*. The nations'' herds brought to the mount of the daughter of Zion are the homage of the peoples to the King and His house of glory.'),
+
+    -- THREAD 2 (★★): In mercy shall the throne be established — the Davidic mercy-throne in the tabernacle of David
+    ('canon','isaiah',16,5,'canon','luke',1,32,'free',
+      E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32). The throne *established... in the tabernacle of David* (Isaiah 16:5) is the very throne Gabriel names: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David*. The One who *shall sit upon it in truth in the tabernacle of David* is the Formed-Son king — the throne is GIVEN him by *Yahuah Elohim (the Lord God)*; he reigns, and he has a Father.'),
+    ('canon','isaiah',16,5,'canon','luke',1,33,'free',
+      E'*And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33). The throne *established in mercy... in the tabernacle of David, judging, and seeking judgment, and hasting righteousness* (Isaiah 16:5) is the everlasting reign Gabriel proclaims: *he shall reign over the house of Jacob for ever*. Over the house of Jacob — all Jacob, Yahudah (Judah) and Ephraim/Yosef gathered and made one — the Davidic king rules without end; the tabernacle of David rebuilt over both houses.'),
+    ('canon','isaiah',16,5,'canon','amos',9,11,'free',
+      E'*In that day will I raise up the tabernacle of David that is fallen, and close up the breaches thereof; and I will raise up his ruins, and I will build it as in the days of old* (Amos 9:11). The throne set *in the tabernacle of David* (Isaiah 16:5) is the very tabernacle Amos promises Yahuah will rebuild: *I will raise up the tabernacle of David that is fallen... I will build it as in the days of old*. The mercy-throne stands in the restored house of David, raised from its ruins.'),
+    ('canon','isaiah',16,5,'canon','acts',15,16,'free',
+      E'*After this I will return, and will build again the tabernacle of David, which is fallen down; and I will build again the ruins thereof, and I will set it up* (Acts 15:16). At the Jerusalem council James quotes Amos''s tabernacle-of-David word to seal the gathering of the nations — the same *tabernacle of David* in which Isaiah''s throne is *established in mercy* (Isaiah 16:5). The rebuilt house of David is the throne-room of the King who sits *in truth... judging, and seeking judgment, and hasting righteousness*.'),
+    ('canon','isaiah',16,5,'canon','2-samuel',7,13,'free',
+      E'*He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13). The throne *established in mercy* in *the tabernacle of David* (Isaiah 16:5) is the throne Yahuah swore to David by Nathan: *I will stablish the throne of his kingdom for ever*. Isaiah''s mercy-throne is the standing of that everlasting oath — the Davidic throne that cannot fall.'),
+    ('canon','isaiah',16,5,'canon','2-samuel',7,16,'free',
+      E'*And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). When Isaiah says *in mercy shall the throne be established* (Isaiah 16:5), he speaks the Davidic covenant itself: *thy throne shall be established for ever*. The mercy that builds the throne is the *mercy* Yahuah swore would *not depart away from him* (2 Samuel 7:15) — the unbreakable kindness undergirding David''s seat.'),
+    ('canon','isaiah',16,5,'canon','psalms',89,14,'free',
+      E'*Justice and judgment are the habitation of thy throne: mercy and truth shall go before thy face* (Psalm 89:14). Isaiah''s throne *established in mercy*, where the king *shall sit upon it in truth... judging, and seeking judgment* (Isaiah 16:5), is the very throne the psalmist sings: *Justice and judgment are the habitation of thy throne: mercy and truth shall go before thy face*. Mercy, truth, and judgment — the same four pillars of the Davidic mercy-throne.'),
+    ('canon','isaiah',16,5,'canon','psalms',89,37,'free',
+      E'*It shall be established for ever as the moon, and as a faithful witness in heaven. Selah* (Psalm 89:37). The throne *established in mercy* (Isaiah 16:5) is the throne the psalmist sees *established for ever as the moon, and as a faithful witness in heaven* — David''s seed and throne enduring *as the days of heaven* (Psalm 89:29). The mercy-throne Isaiah names cannot fail, for Yahuah has sworn it by His holiness (Psalm 89:35).'),
+
+    -- THREAD 3: Therefore shall Moab howl for Moab — the grief over Moab's pride and failing harvest
+    ('canon','isaiah',16,6,'canon','jeremiah',48,29,'free',
+      E'*We have heard the pride of Moab, (he is exceeding proud) his loftiness, and his arrogancy, and his pride, and the haughtiness of his heart* (Jeremiah 48:29). Isaiah''s indictment *We have heard of the pride of Moab; he is very proud: even of his haughtiness, and his pride, and his wrath* (Isaiah 16:6) is echoed almost word for word by Jeremiah: *We have heard the pride of Moab... his loftiness, and his arrogancy, and his pride*. The lawsuit is against Moab''s PRIDE — the system of haughtiness broken, not the people hated.'),
+    ('canon','isaiah',16,9,'canon','jeremiah',48,32,'free',
+      E'*O vine of Sibmah, I will weep for thee with the weeping of Jazer: thy plants are gone over the sea, they reach even to the sea of Jazer: the spoiler is fallen upon thy summer fruits and upon thy vintage* (Jeremiah 48:32). Isaiah''s lament *I will bewail with the weeping of Jazer the vine of Sibmah: I will water thee with my tears, O Heshbon* (Isaiah 16:9) is the same grief Jeremiah pours: *O vine of Sibmah, I will weep for thee with the weeping of Jazer*. The prophet WEEPS over Moab''s fallen harvest — victims, not enemies; grief, not gloating.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-16-send-ye-the-lamb-to-the-ruler-of-the-land',
+       E'Send ye the lamb to the ruler — the tribute-lambs and the nations'' homage to Zion''s king',
+       E'The burden of Moab opens with a counsel of homage: *Send ye the lamb to the ruler of the land from Sela to the wilderness, unto the mount of the daughter of Zion* (Isaiah 16:1). The plain sense is tribute. Moab is a sheep-rearing land, and her king was a renderer of lambs to Yashar''el: *And Mesha king of Moab was a sheepmaster, and rendered unto the king of Yashar''el (Israel) an hundred thousand lambs, and an hundred thousand rams, with the wool* (2 Kings 3:4). To *send ye the lamb to the ruler of the land* is to bring that same homage *unto the mount of the daughter of Zion* — to bend the knee to Zion''s king. And it belongs to the great prophetic stream of the nations bearing their wealth up to that mount: *they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:6); *All the flocks of Kedar shall be gathered together unto thee, the rams of Nebaioth shall minister unto thee: they shall come up with acceptance on mine altar, and I will glorify the house of my glory* (Isaiah 60:7). Moab''s lamb is one stream of the homage of the peoples flowing up to the King on the mountain of Zion.',
+       sv.verse_id, ev.verse_id, 'free', 26375
+  FROM _s303_isa16_lookup sv, _s303_isa16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=16 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-16-in-mercy-shall-the-throne-be-established',
+       E'In mercy shall the throne be established — the king in the tabernacle of David',
+       E'Set in the heart of the burden of Moab is the keystone of the whole chapter: *And in mercy shall the throne be established: and he shall sit upon it in truth in the tabernacle of David, judging, and seeking judgment, and hasting righteousness* (Isaiah 16:5). The throne is built ON mercy, occupied IN truth, and set in *the tabernacle of David*. That tabernacle and that throne run through the whole library. Gabriel names them to Mary: *He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:32-33). Amos promises the fallen tabernacle raised: *In that day will I raise up the tabernacle of David that is fallen, and close up the breaches thereof; and I will raise up his ruins, and I will build it as in the days of old* (Amos 9:11) — which James quotes at the Jerusalem council to seal the ingathering of the nations: *After this I will return, and will build again the tabernacle of David, which is fallen down; and I will build again the ruins thereof, and I will set it up* (Acts 15:16). It is the throne Yahuah swore to David through Nathan: *I will stablish the throne of his kingdom for ever* (2 Samuel 7:13); *thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16) — and the psalmist sings its very pillars: *Justice and judgment are the habitation of thy throne: mercy and truth shall go before thy face* (Psalm 89:14), *established for ever as the moon, and as a faithful witness in heaven* (Psalm 89:37). The Formed and the Formless: the One who *shall sit upon it in truth in the tabernacle of David* is the Formed-Son king — the throne is GIVEN him by *Yahuah Elohim (the Lord God)* (Luke 1:32); he reigns, and he HAS a Father; not a co-equal trinitarian person, not a modalist collapse. And the two houses: *he shall reign over the house of Jacob for ever* (Luke 1:33) — over all Jacob, Yahudah (Judah) AND Ephraim/Yosef gathered and made one, the tabernacle of David rebuilt over both houses. Mercy, truth, and righteousness are the throne''s own foundation; the King who sits there cannot fall.',
+       sv.verse_id, ev.verse_id, 'free', 26378
+  FROM _s303_isa16_lookup sv, _s303_isa16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=16 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-16-therefore-shall-moab-howl-for-moab',
+       E'Therefore shall Moab howl for Moab — the lament over Moab''s pride and fallen harvest',
+       E'The burden closes not in triumph but in grief. The lawsuit is against Moab''s PRIDE: *We have heard of the pride of Moab; he is very proud: even of his haughtiness, and his pride, and his wrath: but his lies shall not be so* (Isaiah 16:6). And then the howling and the weeping: *Therefore shall Moab howl for Moab, every one shall howl* (16:7); *I will bewail with the weeping of Jazer the vine of Sibmah: I will water thee with my tears, O Heshbon, and Elealeh: for the shouting for thy summer fruits and for thy harvest is fallen* (16:9); *Wherefore my bowels shall sound like an harp for Moab* (16:11). Jeremiah carries the same lament almost word for word: *We have heard the pride of Moab, (he is exceeding proud) his loftiness, and his arrogancy, and his pride, and the haughtiness of his heart* (Jeremiah 48:29); *O vine of Sibmah, I will weep for thee with the weeping of Jazer: thy plants are gone over the sea... the spoiler is fallen upon thy summer fruits and upon thy vintage* (Jeremiah 48:32). Read it rightly: victims, not enemies. The system of pride and lies is broken — *but his lies shall not be so* — yet the prophet WEEPS over the fallen vintage and waters Moab with his tears. The dated sentence that closes the burden (*Within three years... the glory of Moab shall be contemned... and the remnant shall be very small and feeble*, 16:13-14) is judgment on pride, not hatred of a people; grief, not gloating, even over the proud.',
+       sv.verse_id, ev.verse_id, 'free', 26381
+  FROM _s303_isa16_lookup sv, _s303_isa16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=16 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Mesha king of Moab was a sheepmaster, and rendered unto the king of Yashar''el (Israel) an hundred thousand lambs* (2 Kings 3:4) — Moab''s literal tribute-lambs; *send ye the lamb to the ruler of the land* (Isaiah 16:1) is that homage brought to Zion''s king.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=1
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=3 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-send-ye-the-lamb-to-the-ruler-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:6) — the lamb sent *unto the mount of the daughter of Zion* (Isaiah 16:1) joins the nations'' homage flowing up to Zion''s king.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=1
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-send-ye-the-lamb-to-the-ruler-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the rams of Nebaioth shall minister unto thee: they shall come up with acceptance on mine altar* (Isaiah 60:7) — the nations'' flocks brought to the mount; Moab''s lamb (Isaiah 16:1) is one stream of that homage.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=1
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-send-ye-the-lamb-to-the-ruler-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32) — the throne *in the tabernacle of David* (Isaiah 16:5) is GIVEN the Formed-Son king by his Father.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-in-mercy-shall-the-throne-be-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33) — the mercy-throne (Isaiah 16:5) rules over all Jacob, Judah AND Ephraim made one.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-in-mercy-shall-the-throne-be-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *In that day will I raise up the tabernacle of David that is fallen... I will build it as in the days of old* (Amos 9:11) — the throne *in the tabernacle of David* (Isaiah 16:5) stands in the restored house Amos promises.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=9 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-in-mercy-shall-the-throne-be-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *After this I will return, and will build again the tabernacle of David, which is fallen down* (Acts 15:16) — James quotes Amos at the Jerusalem council; the rebuilt tabernacle is the throne-room of Isaiah 16:5''s King.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=15 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-in-mercy-shall-the-throne-be-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13) — Isaiah 16:5''s throne *established in mercy* is the everlasting throne Yahuah swore to David by Nathan.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-in-mercy-shall-the-throne-be-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *thy throne shall be established for ever* (2 Samuel 7:16) — *in mercy shall the throne be established* (Isaiah 16:5) speaks the Davidic covenant itself, the unbreakable mercy undergirding David''s seat.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-in-mercy-shall-the-throne-be-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Justice and judgment are the habitation of thy throne: mercy and truth shall go before thy face* (Psalm 89:14) — the same four pillars of Isaiah 16:5''s throne: mercy, truth, judging, and seeking judgment.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-in-mercy-shall-the-throne-be-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*established for ever as the moon, and as a faithful witness in heaven* (Psalm 89:37) — the throne *established in mercy* (Isaiah 16:5) cannot fail, for Yahuah swore David''s throne to endure as the days of heaven.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-in-mercy-shall-the-throne-be-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *We have heard the pride of Moab, (he is exceeding proud) his loftiness, and his arrogancy, and his pride* (Jeremiah 48:29) — Isaiah 16:6 echoed almost word for word; the lawsuit is against Moab''s pride, victims not enemies.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=6
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=48 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-therefore-shall-moab-howl-for-moab'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*O vine of Sibmah, I will weep for thee with the weeping of Jazer... the spoiler is fallen upon thy summer fruits* (Jeremiah 48:32) — the same grief as Isaiah 16:9; the prophet WEEPS over Moab''s fallen harvest, not gloats.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=16 AND sv.verse_number=9
+  JOIN _s303_isa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=48 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-16-therefore-shall-moab-howl-for-moab'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_17.sql (Isaiah 17) -----
+-- Chapter: Isaiah 17 — THE BURDEN OF DAMASCUS, joined with Ephraim's fading. Damascus made a
+-- ruinous heap (17:1); the fortress ceases from Ephraim (17:3); *the glory of Jacob shall be made
+-- thin, and the fatness of his flesh shall wax lean* (17:4) — the northern house (Ephraim/Jacob)
+-- stripped in the Assyrian judgment. Yet the judgment is a harvest that leaves a gleaning: *Yet
+-- gleaning grapes shall be left in it... two or three berries in the top of the uppermost bough*
+-- (17:6) — the diminished-but-preserved two-house remnant. In the day of stripping a man turns:
+-- *At that day shall a man look to his Maker... And he shall not look to the altars, the work of his
+-- hands* (17:7-8) — teshuvah from idols to the Maker. The root sin is named: *Because thou hast
+-- forgotten the Elohim (God) of thy salvation, and hast not been mindful of the rock of thy strength*
+-- (17:10) — the Song of Moses' charge, the forgotten Rock. And the raging nations are stilled
+-- (17:12-14) — *the rushing of nations... Elohim (God) shall rebuke them, and they shall flee*.
+-- Framework: two-house remnant (Ephraim/Jacob); Rock=the Formed; victims-not-enemies; Torah never
+-- abolished (the idols, not the covenant, are cast away).
+-- Tag: isa17   Temp view: _s303_isa17_lookup   Prefix: s303
+-- Sort band: base 26400, step 3 -> threads at 26400, 26403, 26406 (3 threads)
+-- Source of EVERY row: 'canon','isaiah',17,v
+--
+-- Isaiah 17 coverage:
+--   v.1-3 (The burden of Damascus... The fortress also shall cease from Ephraim... they shall be
+--          as the glory of the children of Yashar'el (Israel))
+--        NT:     none warranted (the oracle-frame; Ephraim's diminishing is carried into THREAD 1)
+--        Extras: none warranted
+--        Tanakh: woven into THREAD 1 (the glory of Ephraim/Jacob fading is the same motif as 17:4)
+--   ★ v.4-6 (the glory of Jacob shall be made thin... Yet gleaning grapes shall be left in it... two
+--          or three berries in the top of the uppermost bough)
+--        NT:     ★ Romans 11:5 (a remnant according to the election of grace), Romans 11:1 GUARD
+--                (Hath Elohim cast away his people? Elohim forbid) — THREAD 1
+--        Extras: none warranted (the gleaning-remnant motif is canon-internal; no clean extras add)
+--        Tanakh: ★ Isaiah 24:13 (as the shaking of an olive tree, and as the gleaning grapes when
+--                the vintage is done) — THREAD 1 (the same olive/gleaning figure of the remnant)
+--   ★ v.7-8 (At that day shall a man look to his Maker... And he shall not look to the altars, the
+--          work of his hands... either the groves, or the images)
+--        NT:     ★ 1 Thessalonians 1:9 (ye turned to Elohim (God) from idols to serve the living and
+--                true Elohim) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 2:20 (In that day a man shall cast his idols of silver... to the moles and
+--                to the bats), ★ Isaiah 31:7 (in that day every man shall cast away his idols of
+--                silver) — THREAD 2 (the teshuvah-from-idols "in that day" motif)
+--   ★ v.10 (Because thou hast forgotten the Elohim (God) of thy salvation, and hast not been mindful
+--          of the rock of thy strength)
+--        NT:     ★ 1 Corinthians 10:4 (that spiritual Rock that followed them: and that Rock was
+--                Messiah (Christ)) — THREAD 3 (Rock=the Formed)
+--        Extras: none warranted
+--        Tanakh: ★ Deuteronomy 32:15 (lightly esteemed the Rock of his salvation), ★ Deuteronomy
+--                32:18 (Of the Rock that begat thee thou art unmindful, and hast forgotten Elohim
+--                that formed thee) — THREAD 3 (the Song of Moses, the forgotten Rock)
+--   v.11 (In the day shalt thou make thy plant to grow... but the harvest shall be a heap in the day
+--          of grief) — woven into THREAD 3 (the strange-slips planting that ends in grief = the
+--          fruit of forgetting the Rock); no separate add
+--   v.12-14 (Woe to the multitude of many people... the rushing of nations... Elohim (God) shall
+--          rebuke them, and they shall flee far off)
+--        NT:     Revelation 17:15 (The waters which thou sawest... are peoples, and multitudes, and
+--                nations) — FOLDED into THREAD 3 as a closing member (the raging nations = waters,
+--                stilled by the Rock the people forgot)
+--        Extras: none warranted
+--        Tanakh: held in THREAD 3 prose (the spoilers of v.14 are *not* in the morning — the Rock
+--                rebukes the rushing nations)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-17-the-glory-of-jacob-made-thin-yet-gleaning-grapes — Tanakh (Isaiah 24) + NT (Romans 11) [free]
+--      (★ the glory of Ephraim/Jacob stripped, yet a gleaning remnant left — the two-house remnant)
+--   2. isaiah-17-a-man-shall-look-to-his-maker-not-to-the-altars — Tanakh (Isaiah 2, 31) + NT (1 Thess 1) [free]
+--      (★ teshuvah from idols to the Maker in the day of stripping; the idols cast away, not the covenant)
+--   3. isaiah-17-forgotten-the-elohim-of-thy-salvation-the-rock — Tanakh (Deut 32) + NT (1 Cor 10, Rev 17) [free]
+--      (★ the root sin: forgetting the Rock of salvation; the Rock is the Formed; raging nations stilled)
+--
+-- Framing notes:
+--   ★ THE GLEANING REMNANT (THREAD 1): *And in that day it shall come to pass, that the glory of Jacob
+--      shall be made thin, and the fatness of his flesh shall wax lean* (17:4). "The glory of Jacob"
+--      is the northern house — Ephraim, whose fortress ceases (17:3) — wasted in the Assyrian harvest:
+--      *it shall be as when the harvestman gathereth the corn, and reapeth the ears with his arm* (17:5).
+--      But a gleaning is left: *Yet gleaning grapes shall be left in it, as the shaking of an olive tree,
+--      two or three berries in the top of the uppermost bough* (17:6). Isaiah uses the very same figure
+--      for the whole earth's judgment: *there shall be as the shaking of an olive tree, and as the
+--      gleaning grapes when the vintage is done* (24:13). The diminished-but-preserved remnant is the
+--      two-house people kept through the stripping — and Paul confirms the remnant stands: *Even so then
+--      at this present time also there is a remnant according to the election of grace* (Romans 11:5),
+--      with the GUARD against any cast-off reading: *Hath Elohim (God) cast away his people? Elohim
+--      (God) forbid* (Romans 11:1). Victims, not enemies; a thinned glory, never an extinguished one.
+--   ★ LOOK TO THE MAKER, NOT THE ALTARS (THREAD 2): *At that day shall a man look to his Maker, and his
+--      eyes shall have respect to the Holy One of Yashar'el (Israel). And he shall not look to the
+--      altars, the work of his hands, neither shall respect that which his fingers have made, either the
+--      groves, or the images* (17:7-8). The stripping turns the heart back — teshuvah from idols to the
+--      Maker. It is Isaiah's recurring "in that day" cleansing: *In that day a man shall cast his idols
+--      of silver, and his idols of gold... to the moles and to the bats* (2:20); *in that day every man
+--      shall cast away his idols of silver, and his idols of gold, which your own hands have made unto
+--      you for a sin* (31:7). And the gospel records the same turning among the nations: *ye turned to
+--      Elohim (God) from idols to serve the living and true Elohim (God)* (1 Thessalonians 1:9). What is
+--      cast away is the *work of his hands* — the images, never the covenant; the man returns to his
+--      Maker, the Holy One of Yashar'el.
+--   ★ THE FORGOTTEN ROCK (THREAD 3): the root sin named — *Because thou hast forgotten the Elohim (God)
+--      of thy salvation, and hast not been mindful of the rock of thy strength* (17:10). This is the
+--      Song of Moses' charge, almost word for word: *then he forsook Elohim (God) which made him, and
+--      lightly esteemed the Rock of his salvation* (Deuteronomy 32:15); *Of the Rock that begat thee
+--      thou art unmindful, and hast forgotten Elohim (God) that formed thee* (32:18). The Rock is no
+--      metaphor only — the Rock is the Formed Son, who led Yashar'el: *they drank of that spiritual Rock
+--      that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). To forget the Rock
+--      is to forget the very One who *begat* and *formed* the people. The strange-slips planting that
+--      follows (17:11) ends in grief; and the raging nations who spoil her (17:12-14) are themselves but
+--      waters the Rock rebukes — *the rushing of nations... Elohim (God) shall rebuke them, and they
+--      shall flee far off* (17:12-13) — *The waters which thou sawest... are peoples, and multitudes,
+--      and nations* (Revelation 17:15). The Rock the people forgot is the One who stills the seas of
+--      nations; *before the morning he is not* (17:14).
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the oracle-frame, Damascus the ruinous heap — woven into
+--      THREAD 1's Ephraim context), v.9 (the forsaken bough/desolation — the stripping of THREAD 1),
+--      v.11 (the strange-slips harvest of grief — folded into THREAD 3), v.12-14 (the rushing nations
+--      — folded into THREAD 3 with Revelation 17:15, the Rock who rebukes the waters). All recorded,
+--      none silently skipped.
+
+CREATE TEMP VIEW _s303_isa17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): The glory of Jacob made thin, yet gleaning grapes left (the two-house remnant)
+    ('canon','isaiah',17,6,'canon','isaiah',24,13,'free',
+      E'*When thus it shall be in the midst of the land among the people, there shall be as the shaking of an olive tree, and as the gleaning grapes when the vintage is done* (Isaiah 24:13). The same figure governs the burden of Damascus: *Yet gleaning grapes shall be left in it, as the shaking of an olive tree, two or three berries in the top of the uppermost bough* (Isaiah 17:6). The harvest of judgment strips the tree bare, but the *gleaning grapes* and *the shaking of an olive tree* leave a remnant in both passages — the diminished-but-preserved people, never wholly cut off.'),
+    ('canon','isaiah',17,6,'canon','romans',11,5,'free',
+      E'*Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). The *two or three berries in the top of the uppermost bough* that are *left in it* (Isaiah 17:6) is the remnant Paul confirms still stands. The glory of Jacob made thin (17:4) is not a glory extinguished — a gleaning is kept, the two-house remnant according to the election of grace.'),
+    ('canon','isaiah',17,4,'canon','romans',11,1,'free',
+      E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). When *the glory of Jacob shall be made thin, and the fatness of his flesh shall wax lean* (Isaiah 17:4), the thinning is judgment, NOT rejection — *Elohim (God) forbid*. The northern house (Ephraim/Jacob) is stripped, yet kept; the harsh covenant-lawsuit is conduct and judgment within the covenant, never a casting-off of the people.'),
+
+    -- THREAD 2 (★): A man shall look to his Maker, not to the altars (teshuvah from idols)
+    ('canon','isaiah',17,8,'canon','isaiah',2,20,'free',
+      E'*In that day a man shall cast his idols of silver, and his idols of gold, which they made each one for himself to worship, to the moles and to the bats* (Isaiah 2:20). The man who *shall not look to the altars, the work of his hands... either the groves, or the images* (Isaiah 17:8) is doing the very thing Isaiah names for the day of Yahuah''s majesty: casting away *the work of his hands*, the idols his own fingers made, turning his eyes instead to the Maker (17:7).'),
+    ('canon','isaiah',17,8,'canon','isaiah',31,7,'free',
+      E'*For in that day every man shall cast away his idols of silver, and his idols of gold, which your own hands have made unto you for a sin* (Isaiah 31:7). This is the same turning as *neither shall respect that which his fingers have made* (Isaiah 17:8) — the idols *your own hands have made* cast away *for a sin*. The day of stripping becomes the day of teshuvah: the heart returns from the work of its own hands to the Holy One of Yashar''el.'),
+    ('canon','isaiah',17,7,'canon','1-thessalonians',1,9,'free',
+      E'*For they themselves shew of us what manner of entering in we had unto you, and how ye turned to Elohim (God) from idols to serve the living and true Elohim (God)* (1 Thessalonians 1:9). The prophecy *At that day shall a man look to his Maker, and his eyes shall have respect to the Holy One of Yashar''el (Israel)* (Isaiah 17:7) is the very turning the gospel records among the nations — *turned to Elohim (God) from idols to serve the living and true Elohim (God)*. Looking to the Maker is the same as forsaking the lifeless images for the living El.'),
+
+    -- THREAD 3 (★): Forgotten the Elohim of thy salvation, the Rock (the Rock is the Formed)
+    ('canon','isaiah',17,10,'canon','deuteronomy',32,15,'free',
+      E'*But Jeshurun waxed fat, and kicked... then he forsook Elohim (God) which made him, and lightly esteemed the Rock of his salvation* (Deuteronomy 32:15). The charge of Isaiah 17:10 is the Song of Moses brought forward almost word for word: *Because thou hast forgotten the Elohim (God) of thy salvation, and hast not been mindful of the rock of thy strength*. The same forgotten *Rock of his salvation*, the same heart grown fat and turned from the El who made it — the root sin beneath the idols.'),
+    ('canon','isaiah',17,10,'canon','deuteronomy',32,18,'free',
+      E'*Of the Rock that begat thee thou art unmindful, and hast forgotten Elohim (God) that formed thee* (Deuteronomy 32:18). To be *not... mindful of the rock of thy strength* (Isaiah 17:10) is to be *unmindful* of *the Rock that begat thee* — the One who *formed thee*. The Rock is no mere figure of refuge: He is the One who *begat* and *formed* the people, the Maker of 17:7 they have forgotten.'),
+    ('canon','isaiah',17,10,'canon','1-corinthians',10,4,'free',
+      E'*And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). The *rock of thy strength* the people have *not been mindful* of (Isaiah 17:10) is named: the Rock that followed Yashar''el in the wilderness, that *begat* and *formed* them (Deuteronomy 32:18), *was Messiah (Christ)* — the Formed Son, the visible One drawn from the Formless Father. To forget the Rock of salvation is to forget Him.'),
+    ('canon','isaiah',17,13,'canon','revelation',17,15,'free',
+      E'*And he saith unto me, The waters which thou sawest, where the whore sitteth, are peoples, and multitudes, and nations, and tongues* (Revelation 17:15). The *rushing of nations, that make a rushing like the rushing of mighty waters* (Isaiah 17:12) and *The nations shall rush like the rushing of many waters* (17:13) are read by the Revelation: the *waters... are peoples, and multitudes, and nations*. The raging seas of peoples are stilled by the Rock the house forgot — *Elohim (God) shall rebuke them, and they shall flee far off* (17:13).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-17-the-glory-of-jacob-made-thin-yet-gleaning-grapes',
+       E'The glory of Jacob made thin — yet gleaning grapes shall be left',
+       E'The burden of Damascus falls also on the house bound to her — Ephraim, the northern house: *The fortress also shall cease from Ephraim, and the kingdom from Damascus, and the remnant of Syria: they shall be as the glory of the children of Yashar''el (Israel)* (Isaiah 17:3). And so the word comes: *And in that day it shall come to pass, that the glory of Jacob shall be made thin, and the fatness of his flesh shall wax lean* (17:4). "The glory of Jacob" is the northern house stripped in the Assyrian harvest: *it shall be as when the harvestman gathereth the corn, and reapeth the ears with his arm* (17:5). But the harvest is not extinction — it leaves a gleaning: *Yet gleaning grapes shall be left in it, as the shaking of an olive tree, two or three berries in the top of the uppermost bough, four or five in the outmost fruitful branches thereof, saith Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (17:6). Isaiah uses the very same figure for the whole earth''s judgment, and it leaves the same remnant: *there shall be as the shaking of an olive tree, and as the gleaning grapes when the vintage is done* (24:13). The diminished-but-preserved people are the two-house remnant kept through the stripping. And Paul confirms the remnant stands: *Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5) — with the guard set hard against any cast-off reading: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1). The glory of Jacob is thinned, never extinguished; two or three berries are left in the top of the uppermost bough, and the LORD God of Yashar''el keeps them.',
+       sv.verse_id, ev.verse_id, 'free', 26400
+  FROM _s303_isa17_lookup sv, _s303_isa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=17 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-17-a-man-shall-look-to-his-maker-not-to-the-altars',
+       E'A man shall look to his Maker — not to the altars, the work of his hands',
+       E'In the day of stripping the heart is turned back: *At that day shall a man look to his Maker, and his eyes shall have respect to the Holy One of Yashar''el (Israel). And he shall not look to the altars, the work of his hands, neither shall respect that which his fingers have made, either the groves, or the images* (Isaiah 17:7-8). This is teshuvah — the man returns from the idols his own fingers fashioned to the One who made HIM. It is Isaiah''s recurring "in that day" cleansing: *In that day a man shall cast his idols of silver, and his idols of gold, which they made each one for himself to worship, to the moles and to the bats* (2:20); *For in that day every man shall cast away his idols of silver, and his idols of gold, which your own hands have made unto you for a sin* (31:7). And the gospel records the same turning carried out among the nations: *how ye turned to Elohim (God) from idols to serve the living and true Elohim (God)* (1 Thessalonians 1:9). Mark what is cast away and what is not: the *work of his hands*, the *groves*, the *images* — the idols, never the covenant. The Holy One of Yashar''el is no idol of the fingers; He is the Maker, and the returning eye looks to Him. The whole motion of the verse is FROM the lifeless work of hands TO the living El who formed the man.',
+       sv.verse_id, ev.verse_id, 'free', 26403
+  FROM _s303_isa17_lookup sv, _s303_isa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=17 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-17-forgotten-the-elohim-of-thy-salvation-the-rock',
+       E'Forgotten the Elohim of thy salvation — unmindful of the Rock of thy strength',
+       E'Beneath the idols and the fading glory the prophet names the root sin: *Because thou hast forgotten the Elohim (God) of thy salvation, and hast not been mindful of the rock of thy strength, therefore shalt thou plant pleasant plants, and shalt set it with strange slips* (Isaiah 17:10) — and the strange-slips planting ends in grief: *but the harvest shall be a heap in the day of grief and of desperate sorrow* (17:11). This is the Song of Moses brought forward almost word for word. There Jeshurun grew fat and forsook his Maker: *then he forsook Elohim (God) which made him, and lightly esteemed the Rock of his salvation* (Deuteronomy 32:15); *Of the Rock that begat thee thou art unmindful, and hast forgotten Elohim (God) that formed thee* (32:18). The Rock is no metaphor of mere refuge — the Rock *begat* and *formed* the people, and the apostle names Him: *they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). The Rock of thy strength is the Formed Son, the visible One drawn from the Formless Father, who led Yashar''el in the wilderness; to forget the Rock of salvation is to forget Him. And the raging nations who spoil her are themselves but waters He rebukes: *Woe to the multitude of many people, which make a noise like the noise of the seas... The nations shall rush like the rushing of many waters: but Elohim (God) shall rebuke them, and they shall flee far off* (17:12-13) — *The waters which thou sawest... are peoples, and multitudes, and nations, and tongues* (Revelation 17:15). *And behold at eveningtide trouble; and before the morning he is not* (17:14). The Rock the house forgot is the very One who stills the seas of nations and saves the gleaning remnant He kept.',
+       sv.verse_id, ev.verse_id, 'free', 26406
+  FROM _s303_isa17_lookup sv, _s303_isa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=17 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *as the shaking of an olive tree, and as the gleaning grapes when the vintage is done* (Isaiah 24:13) — the same olive/gleaning figure as the *two or three berries in the top of the uppermost bough* of Isaiah 17:6; the remnant left after the harvest of judgment.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s303_isa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-17-the-glory-of-jacob-made-thin-yet-gleaning-grapes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5) — the *gleaning grapes... left in it* (Isaiah 17:6) is the remnant Paul confirms still stands; the glory of Jacob is thinned, not extinguished.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s303_isa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-17-the-glory-of-jacob-made-thin-yet-gleaning-grapes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ GUARD: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1) — *the glory of Jacob... made thin* (Isaiah 17:4) is judgment within the covenant, never a casting-off; victims, not enemies.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=4
+  JOIN _s303_isa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-17-the-glory-of-jacob-made-thin-yet-gleaning-grapes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *In that day a man shall cast his idols of silver, and his idols of gold... to the moles and to the bats* (Isaiah 2:20) — the same "in that day" casting-away of the *work of his hands* as Isaiah 17:8.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=8
+  JOIN _s303_isa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-17-a-man-shall-look-to-his-maker-not-to-the-altars'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *in that day every man shall cast away his idols of silver, and his idols of gold, which your own hands have made unto you for a sin* (Isaiah 31:7) — *that which his fingers have made* (Isaiah 17:8) cast away; the day of stripping becomes the day of teshuvah.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=8
+  JOIN _s303_isa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=31 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-17-a-man-shall-look-to-his-maker-not-to-the-altars'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *how ye turned to Elohim (God) from idols to serve the living and true Elohim (God)* (1 Thessalonians 1:9) — the very turning of *a man look to his Maker* (Isaiah 17:7) carried out among the nations; the idols cast away, not the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=7
+  JOIN _s303_isa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-17-a-man-shall-look-to-his-maker-not-to-the-altars'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *then he forsook Elohim (God) which made him, and lightly esteemed the Rock of his salvation* (Deuteronomy 32:15) — the Song of Moses behind *forgotten the Elohim (God) of thy salvation* (Isaiah 17:10), the same forsaken Rock.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=10
+  JOIN _s303_isa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-17-forgotten-the-elohim-of-thy-salvation-the-rock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Of the Rock that begat thee thou art unmindful, and hast forgotten Elohim (God) that formed thee* (Deuteronomy 32:18) — to be *not... mindful of the rock of thy strength* (Isaiah 17:10) is to be unmindful of the Rock that begat and formed the people.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=10
+  JOIN _s303_isa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-17-forgotten-the-elohim-of-thy-salvation-the-rock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4) — the *rock of thy strength* forgotten (Isaiah 17:10) is the Formed Son, the One who begat and formed Yashar''el; to forget the Rock is to forget Him.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=10
+  JOIN _s303_isa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-17-forgotten-the-elohim-of-thy-salvation-the-rock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*The waters which thou sawest... are peoples, and multitudes, and nations, and tongues* (Revelation 17:15) — *the rushing of nations... like the rushing of many waters* (Isaiah 17:12-13) the Rock rebukes; the raging seas of peoples stilled by the One they forgot.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s303_isa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=17 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-17-forgotten-the-elohim-of-thy-salvation-the-rock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_18.sql (Isaiah 18) -----
+-- Chapter: Isaiah 18 — THE WOE TO THE LAND SHADOWING WITH WINGS, beyond the rivers of Ethiopia
+-- (Cush). The land *that sendeth ambassadors by the sea, even in vessels of bulrushes upon the
+-- waters* (18:2) to *a nation scattered and peeled... meted out and trodden down, whose land the
+-- rivers have spoiled* — and then the summons goes out to the whole world: *when he lifteth up an
+-- ensign on the mountains; and when he bloweth a trumpet, hear ye* (18:3). Yahuah waits in his
+-- dwelling-place (18:4) and at the right hour cuts the sprigs at harvest (18:5-6) — the
+-- judgment-harvest. And it ends not in destruction but in HOMAGE: *In that time shall the present
+-- be brought unto Yahuah Tseva'ot (LORD of hosts)... to the place of the name of Yahuah Tseva'ot
+-- (LORD of hosts), the mount Zion* (18:7) — the nations streaming with tribute to HER mountain, to
+-- the place of the Name. Framework: nations-to-Zion is HOMAGE, never replacement (the two-house
+-- Romans 11 guard — the nations come bending to Israel's restored mountain, not in her place); the
+-- ensign and the trumpet are the two-house ingathering signal (Isa 11:12 / Isa 27:13).
+-- Tag: isa18   Temp view: _s303_isa18_lookup
+-- Sort band: base 26425, step 3 -> threads at 26425, 26428, 26431 (3 threads)
+-- Source of EVERY row: 'canon','isaiah',18,v
+--
+-- Isaiah 18 coverage:
+--   v.1-2 (Woe to the land shadowing with wings... a nation scattered and peeled... whose land
+--          the rivers have spoiled)
+--        NT:     none warranted (the ambassador-summons resolves into the ensign/trumpet of v.3 — THREAD 1)
+--        Extras: none warranted
+--        Tanakh: the scattered/peeled people language recurs at v.7 and is carried in THREAD 3's
+--                Zion-homage frame; the opening woe is the preface to the worldwide summons (THREAD 1)
+--   ★ v.3 (All ye inhabitants of the world... when he lifteth up an ensign on the mountains; and
+--          when he bloweth a trumpet, hear ye)
+--        NT:     none warranted distinct (the gathering-trumpet's NT fill is the last-trump
+--                ingathering, carried in prose; the heaviest weave here is the lateral Isaiah pair)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 11:12 (he shall set up an ensign for the nations, and shall assemble the
+--                outcasts of Yashar'el... gather together the dispersed of Yahudah), ★ Isaiah 27:13
+--                (the great trumpet shall be blown, and they shall come which were ready to perish...
+--                and shall worship Yahuah in the holy mount at Jerusalem) — THREAD 1 (the ensign +
+--                the trumpet = the two-house ingathering signal)
+--   v.4-6 (I will take my rest, and I will consider in my dwelling place... afore the harvest...
+--          he shall both cut off the sprigs with pruning hooks... left together unto the fowls)
+--        NT:     ★ Revelation 14:14-19 (one sat like unto the Son of Adam... a sharp sickle...
+--                Thrust in thy sickle, and reap; for the harvest of the earth is ripe... gather the
+--                clusters of the vine of the earth) — THREAD 2 (the judgment-harvest at the ripe hour)
+--        Extras: none warranted
+--        Tanakh: ★ Joel 3:13 (Put ye in the sickle, for the harvest is ripe... for the press is
+--                full, the fats overflow; for their wickedness is great) — THREAD 2 (the
+--                harvest-of-judgment, the sickle at the appointed time)
+--   ★ v.7 (In that time shall the present be brought unto Yahuah Tseva'ot (LORD of hosts)... to
+--          the place of the name of Yahuah Tseva'ot (LORD of hosts), the mount Zion)
+--        NT:     Acts 8:27 (a man of Ethiopia, an eunuch of great authority under Candace queen of
+--                the Ethiopians... had come to Jerusalem for to worship) — THREAD 3 (a son of Cush
+--                bringing himself to the place of the Name; firstfruit of the homage)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 68:29 (Because of thy temple at Jerusalem shall kings bring presents unto
+--                thee), ★ Psalm 68:31 (Ethiopia shall soon stretch out her hands unto Elohim) +
+--                ★ Isaiah 60:5-7 (the forces of the Gentiles shall come unto thee... they shall
+--                bring gold and incense... they shall come up with acceptance on mine altar) +
+--                ★ Zephaniah 3:10 (From beyond the rivers of Ethiopia my suppliants... shall bring
+--                mine offering) — THREAD 3 (the homage of the nations to the place of the Name)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-18-he-lifteth-up-an-ensign-and-bloweth-a-trumpet — Tanakh (Isaiah 11, Isaiah 27) [free]
+--      (★ the ensign on the mountains + the great trumpet = the two-house ingathering signal)
+--   2. isaiah-18-afore-the-harvest-he-shall-cut-off-the-sprigs — Tanakh (Joel 3) + NT (Revelation 14) [free]
+--      (the judgment-harvest; Yahuah waits, then the sickle at the ripe hour)
+--   3. isaiah-18-the-present-brought-to-the-place-of-the-name — Tanakh (Psalm 68, Isaiah 60,
+--      Zephaniah 3) + NT (Acts 8) [free]
+--      (★ the homage of the nations to Zion, the place of the Name — homage, NOT replacement)
+--
+-- Framing notes:
+--   ★ THE ENSIGN AND THE TRUMPET (THREAD 1): *All ye inhabitants of the world, and dwellers on
+--      the earth, see ye, when he lifteth up an ensign on the mountains; and when he bloweth a
+--      trumpet, hear ye* (18:3). The lifted ensign and the blown trumpet are not a generic alarm —
+--      they are Isaiah's own two-house ingathering signal: *And he shall set up an ensign for the
+--      nations, and shall assemble the outcasts of Yashar'el (Israel), and gather together the
+--      dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12); *And it
+--      shall come to pass in that day, that the great trumpet shall be blown, and they shall come
+--      which were ready to perish in the land of Assyria, and the outcasts in the land of Egypt,
+--      and shall worship Yahuah (LORD) in the holy mount at Jerusalem* (Isaiah 27:13). The world
+--      is summoned to SEE the ensign and HEAR the trumpet because the signal Yahuah raises gathers
+--      the two scattered houses home to His mountain.
+--   THE JUDGMENT-HARVEST (THREAD 2): Yahuah waits at perfect ease — *I will take my rest, and I
+--      will consider in my dwelling place like a clear heat upon herbs, and like a cloud of dew in
+--      the heat of harvest* (18:4) — and then at the ripe hour the sickle falls: *afore the
+--      harvest, when the bud is perfect... he shall both cut off the sprigs with pruning hooks, and
+--      take away and cut down the branches* (18:5). This is the harvest-of-judgment of the
+--      prophets: *Put ye in the sickle, for the harvest is ripe: come, get you down; for the press
+--      is full, the fats overflow; for their wickedness is great* (Joel 3:13). And the Revelation
+--      fills it: *one sat like unto the Son of Adam, having on his head a golden crown, and in his
+--      hand a sharp sickle... Thrust in thy sickle, and reap: for the time is come for thee to
+--      reap; for the harvest of the earth is ripe* (Revelation 14:14-15); *gather the clusters of
+--      the vine of the earth; for her grapes are fully ripe* (14:18). The quiet waiting and the
+--      sudden cutting are the divine timing of judgment.
+--   ★ THE HOMAGE OF THE NATIONS (THREAD 3): the woe ends not in ruin but in tribute brought to
+--      Zion: *In that time shall the present be brought unto Yahuah Tseva'ot (LORD of hosts) of a
+--      people scattered and peeled... to the place of the name of Yahuah Tseva'ot (LORD of hosts),
+--      the mount Zion* (18:7). The nations stream to the place of the NAME bearing their present —
+--      the very thing the Psalm and the prophets foretell: *Because of thy temple at Jerusalem
+--      shall kings bring presents unto thee* (Psalm 68:29), *Ethiopia shall soon stretch out her
+--      hands unto Elohim (God)* (68:31); *the forces of the Gentiles shall come unto thee... all
+--      they from Sheba shall come: they shall bring gold and incense... they shall come up with
+--      acceptance on mine altar* (Isaiah 60:5-7); *From beyond the rivers of Ethiopia my
+--      suppliants, even the daughter of my dispersed, shall bring mine offering* (Zephaniah 3:10).
+--      And the firstfruit walks the page in Acts: *a man of Ethiopia, an eunuch of great authority
+--      under Candace queen of the Ethiopians... had come to Jerusalem for to worship* (Acts 8:27),
+--      reading *Esaias the prophet* (8:28) on his way. This is HOMAGE, never replacement: the
+--      nations come BENDING to Zion, to HER mountain, to the place of the Name — they do not take
+--      Israel's place, they come to it (the two-house Romans 11 guard: the branches are graffed
+--      INTO the cultivated olive, never over it).
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the woe / the ambassadors / the scattered-peeled people —
+--      preface to the summons of THREAD 1, and the same people-description recurs in v.7's
+--      Zion-homage of THREAD 3); v.6 (the fowls and beasts summering and wintering on the cut
+--      branches — the aftermath of the harvest, woven into THREAD 2). All recorded, none silently
+--      skipped.
+
+CREATE TEMP VIEW _s303_isa18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the ensign + the trumpet = the two-house ingathering signal
+    ('canon','isaiah',18,3,'canon','isaiah',11,12,'free',
+      E'*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). The lifted ensign of *when he lifteth up an ensign on the mountains... hear ye* (Isaiah 18:3) is this very signal: the banner Yahuah raises to *assemble the outcasts of Yashar''el (Israel)* and *gather together the dispersed of Yahudah (Judah)*. The world is summoned to see the ensign because it is the standard that gathers the two scattered houses home.'),
+    ('canon','isaiah',18,3,'canon','isaiah',27,13,'free',
+      E'*And it shall come to pass in that day, that the great trumpet shall be blown, and they shall come which were ready to perish in the land of Assyria, and the outcasts in the land of Egypt, and shall worship Yahuah (LORD) in the holy mount at Jerusalem* (Isaiah 27:13). The blown trumpet of *when he bloweth a trumpet, hear ye* (Isaiah 18:3) is *the great trumpet* of the ingathering — the signal that brings home those *ready to perish* and *the outcasts* to *worship Yahuah (LORD) in the holy mount at Jerusalem*. Ensign to see, trumpet to hear: one two-house regathering call.'),
+
+    -- THREAD 2: the judgment-harvest — Yahuah waits, then the sickle at the ripe hour
+    ('canon','isaiah',18,5,'canon','joel',3,13,'free',
+      E'*Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great* (Joel 3:13). The cutting of *afore the harvest... he shall both cut off the sprigs with pruning hooks* (Isaiah 18:5) is Joel''s harvest-of-judgment: *Put ye in the sickle, for the harvest is ripe.* The bud perfected and the sour grape ripening (18:5) is the ripe field; the pruning-hooks cut at the appointed hour, when wickedness is full.'),
+    ('canon','isaiah',18,5,'canon','revelation',14,15,'free',
+      E'*And another angel came out of the temple, crying with a loud voice to him that sat on the cloud, Thrust in thy sickle, and reap: for the time is come for thee to reap; for the harvest of the earth is ripe* (Revelation 14:15). The harvest Isaiah foresees — *afore the harvest, when the bud is perfect... he shall both cut off the sprigs with pruning hooks* (Isaiah 18:5) — is the reaping of *one sat like unto the Son of Adam... having... a sharp sickle* (14:14): *the harvest of the earth is ripe.* Yahuah waits at his rest (18:4) until the hour is full, then the sickle is thrust in.'),
+    ('canon','isaiah',18,5,'canon','revelation',14,18,'free',
+      E'*And another angel came out from the altar, which had power over fire; and cried with a loud cry to him that had the sharp sickle, saying, Thrust in thy sharp sickle, and gather the clusters of the vine of the earth; for her grapes are fully ripe* (Revelation 14:18). The *sour grape... ripening in the flower* that is cut down (Isaiah 18:5) is gathered in the Revelation vintage: *gather the clusters of the vine of the earth; for her grapes are fully ripe.* The same ripening-grape image, the same cutting at the perfected hour — the judgment-harvest of the nations.'),
+
+    -- THREAD 3 (★): the homage of the nations to the place of the Name — homage, NOT replacement
+    ('canon','isaiah',18,7,'canon','psalms',68,29,'free',
+      E'*Because of thy temple at Jerusalem shall kings bring presents unto thee* (Psalm 68:29). The present brought *to the place of the name of Yahuah Tseva''ot (LORD of hosts), the mount Zion* (Isaiah 18:7) is the Psalm''s tribute: *Because of thy temple at Jerusalem shall kings bring presents unto thee.* The nations bear their gift to the place of the Name — homage rendered at Zion, never Zion replaced.'),
+    ('canon','isaiah',18,7,'canon','psalms',68,31,'free',
+      E'*Princes shall come out of Egypt; Ethiopia shall soon stretch out her hands unto Elohim (God)* (Psalm 68:31). Isaiah''s *people scattered and peeled... whose land the rivers have spoiled* — the land *beyond the rivers of Ethiopia* (Isaiah 18:1,7) — is the very Ethiopia the Psalm sees stretching out her hands: *Ethiopia shall soon stretch out her hands unto Elohim (God).* The far land of Cush comes with empty hands lifted to the Name at Zion.'),
+    ('canon','isaiah',18,7,'canon','isaiah',60,6,'free',
+      E'*The multitude of camels shall cover thee, the dromedaries of Midian and Ephah; all they from Sheba shall come: they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:6). The present brought to Zion (Isaiah 18:7) is the nations'' tribute Isaiah elsewhere unfolds: *they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD).* The wealth of the nations streams to the place of the Name to glorify Him there.'),
+    ('canon','isaiah',18,7,'canon','isaiah',60,7,'free',
+      E'*All the flocks of Kedar shall be gathered together unto thee, the rams of Nebaioth shall minister unto thee: they shall come up with acceptance on mine altar, and I will glorify the house of my glory* (Isaiah 60:7). The homage of *the present... brought unto Yahuah Tseva''ot (LORD of hosts)... the mount Zion* (Isaiah 18:7) is accepted at the altar: *they shall come up with acceptance on mine altar, and I will glorify the house of my glory.* The nations'' offering is received at the place of the Name — they come to His mountain, not in Israel''s stead.'),
+    ('canon','isaiah',18,7,'canon','zephaniah',3,10,'free',
+      E'*From beyond the rivers of Ethiopia my suppliants, even the daughter of my dispersed, shall bring mine offering* (Zephaniah 3:10). Isaiah''s land *beyond the rivers of Ethiopia* (Isaiah 18:1) that brings *the present... unto Yahuah Tseva''ot (LORD of hosts)... the mount Zion* (18:7) is Zephaniah''s scene exactly: *From beyond the rivers of Ethiopia my suppliants... shall bring mine offering.* The same far country, the same offering carried to the place of the Name; the dispersed of His people gathered with the homage.'),
+    ('canon','isaiah',18,7,'canon','acts',8,27,'free',
+      E'*And he arose and went: and, behold, a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians, who had the charge of all her treasure, and had come to Jerusalem for to worship* (Acts 8:27). The homage of the land *beyond the rivers of Ethiopia... to the place of the name of Yahuah Tseva''ot (LORD of hosts), the mount Zion* (Isaiah 18:7) walks the page in Acts: *a man of Ethiopia... had come to Jerusalem for to worship*, reading *Esaias the prophet* (8:28) on his way. A son of Cush bringing himself to the place of the Name — a firstfruit of the present brought to Zion.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-18-he-lifteth-up-an-ensign-and-bloweth-a-trumpet',
+       E'He lifteth up an ensign and bloweth a trumpet — the two-house ingathering signal',
+       E'The woe to the far land turns into a summons to the whole world: *All ye inhabitants of the world, and dwellers on the earth, see ye, when he lifteth up an ensign on the mountains; and when he bloweth a trumpet, hear ye* (Isaiah 18:3). The lifted ensign and the blown trumpet are not a generic alarm — they are Isaiah''s own signal for the regathering of the two scattered houses. The ensign is the banner that assembles the exiles: *And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). And the trumpet is *the great trumpet* of the ingathering: *And it shall come to pass in that day, that the great trumpet shall be blown, and they shall come which were ready to perish in the land of Assyria, and the outcasts in the land of Egypt, and shall worship Yahuah (LORD) in the holy mount at Jerusalem* (Isaiah 27:13). The world is called to SEE the ensign and HEAR the trumpet because the signal Yahuah raises gathers His scattered people — Ephraim from the north, Judah from the south — home to His mountain. Ensign to see, trumpet to hear: one two-house regathering call.',
+       sv.verse_id, ev.verse_id, 'free', 26425
+  FROM _s303_isa18_lookup sv, _s303_isa18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=18 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-18-afore-the-harvest-he-shall-cut-off-the-sprigs',
+       E'Afore the harvest he shall cut off the sprigs — the judgment at the ripe hour',
+       E'Yahuah does not act in haste. He waits at perfect ease in His own place: *For so Yahuah (LORD) said unto me, I will take my rest, and I will consider in my dwelling place like a clear heat upon herbs, and like a cloud of dew in the heat of harvest* (Isaiah 18:4). And then, when the hour is exactly ripe, the sickle falls: *For afore the harvest, when the bud is perfect, and the sour grape is ripening in the flower, he shall both cut off the sprigs with pruning hooks, and take away and cut down the branches* (18:5), left for *the fowls of the mountains, and to the beasts of the earth* (18:6). This is the harvest-of-judgment the prophets see: *Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great* (Joel 3:13). And the Revelation fills the figure: *one sat like unto the Son of Adam, having on his head a golden crown, and in his hand a sharp sickle... Thrust in thy sickle, and reap: for the time is come for thee to reap; for the harvest of the earth is ripe* (Revelation 14:14-15); *gather the clusters of the vine of the earth; for her grapes are fully ripe* (14:18). The quiet waiting and the sudden cutting are the divine timing of judgment — He considers in His dwelling-place until the field is ripe, and not one hour before.',
+       sv.verse_id, ev.verse_id, 'free', 26428
+  FROM _s303_isa18_lookup sv, _s303_isa18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=18 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-18-the-present-brought-to-the-place-of-the-name',
+       E'The present brought to the place of the Name — the homage of the nations to Zion',
+       E'The woe to the far land does not end in ruin but in HOMAGE. The very people *scattered and peeled... whose land the rivers have spoiled* come bearing tribute: *In that time shall the present be brought unto Yahuah Tseva''ot (LORD of hosts) of a people scattered and peeled... to the place of the name of Yahuah Tseva''ot (LORD of hosts), the mount Zion* (Isaiah 18:7). The nations stream to the place of the NAME, and the Psalm and the prophets see the same procession. *Because of thy temple at Jerusalem shall kings bring presents unto thee* (Psalm 68:29); and the far land of Cush itself: *Princes shall come out of Egypt; Ethiopia shall soon stretch out her hands unto Elohim (God)* (68:31). Isaiah elsewhere unfolds the tribute: *the forces of the Gentiles shall come unto thee... they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:5-6), *they shall come up with acceptance on mine altar, and I will glorify the house of my glory* (60:7). And Zephaniah names the very country: *From beyond the rivers of Ethiopia my suppliants, even the daughter of my dispersed, shall bring mine offering* (Zephaniah 3:10). The firstfruit even walks the page of Acts: *a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians... had come to Jerusalem for to worship* (Acts 8:27), reading *Esaias the prophet* (8:28) on his way. Read this rightly: it is HOMAGE, never replacement. The nations come BENDING to Zion — to HER mountain, to the place of the Name — they do not take Israel''s place, they come to it. The wild branches are graffed INTO the cultivated olive, never over it; the homage of the nations is the nations streaming to the restored mountain of His two-house people.',
+       sv.verse_id, ev.verse_id, 'free', 26431
+  FROM _s303_isa18_lookup sv, _s303_isa18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=18 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah)* (Isaiah 11:12) — the lifted ensign of Isaiah 18:3 is the banner that gathers the two houses home.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=3
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-18-he-lifteth-up-an-ensign-and-bloweth-a-trumpet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the great trumpet shall be blown, and they shall come which were ready to perish... and shall worship Yahuah (LORD) in the holy mount at Jerusalem* (Isaiah 27:13) — the blown trumpet of Isaiah 18:3 is the great ingathering-trumpet of the regathered exiles.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=3
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=27 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-18-he-lifteth-up-an-ensign-and-bloweth-a-trumpet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Put ye in the sickle, for the harvest is ripe... for their wickedness is great* (Joel 3:13) — the cutting of the sprigs *afore the harvest* (Isaiah 18:5) is the prophets'' harvest-of-judgment at the ripe hour.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-18-afore-the-harvest-he-shall-cut-off-the-sprigs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Thrust in thy sickle, and reap... for the harvest of the earth is ripe* (Revelation 14:15) — the *Son of Adam* with the sharp sickle reaps when the field is ripe, as Yahuah cuts the sprigs *afore the harvest* (Isaiah 18:5).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-18-afore-the-harvest-he-shall-cut-off-the-sprigs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*gather the clusters of the vine of the earth; for her grapes are fully ripe* (Revelation 14:18) — the *sour grape... ripening in the flower* that is cut down (Isaiah 18:5) is gathered in the Revelation vintage when the grapes are fully ripe.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-18-afore-the-harvest-he-shall-cut-off-the-sprigs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Because of thy temple at Jerusalem shall kings bring presents unto thee* (Psalm 68:29) — the present brought *to the place of the name... the mount Zion* (Isaiah 18:7) is the kings'' tribute carried to the Name.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=7
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=68 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-18-the-present-brought-to-the-place-of-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Ethiopia shall soon stretch out her hands unto Elohim (God)* (Psalm 68:31) — the land *beyond the rivers of Ethiopia* (Isaiah 18:1,7) lifts empty hands to the Name at Zion.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=7
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=68 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-18-the-present-brought-to-the-place-of-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:6) — the present brought to Zion (Isaiah 18:7) is the nations'' gold and incense streaming to the place of the Name.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=7
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-18-the-present-brought-to-the-place-of-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *they shall come up with acceptance on mine altar, and I will glorify the house of my glory* (Isaiah 60:7) — the homage of Isaiah 18:7 is received at the altar; the nations come to His mountain, not in Israel''s stead.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=7
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-18-the-present-brought-to-the-place-of-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *From beyond the rivers of Ethiopia my suppliants, even the daughter of my dispersed, shall bring mine offering* (Zephaniah 3:10) — the same far country *beyond the rivers of Ethiopia* (Isaiah 18:1,7) bringing the offering to the place of the Name.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=7
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-18-the-present-brought-to-the-place-of-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians... had come to Jerusalem for to worship* (Acts 8:27) — a son of Cush bringing himself to the place of the Name (Isaiah 18:7), reading *Esaias the prophet* on his way; a firstfruit of the homage.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=18 AND sv.verse_number=7
+  JOIN _s303_isa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=8 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-18-the-present-brought-to-the-place-of-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_20.sql (Isaiah 20) -----
+-- Chapter: Isaiah 20 — THE SIGN-ACT. *Go and loose the sackcloth from off thy loins, and put off thy
+-- shoe from thy foot. And he did so, walking naked and barefoot* (20:2). The prophet's own body becomes
+-- the word: *Like as my servant Isaiah hath walked naked and barefoot three years for a sign and wonder
+-- upon Egypt and upon Ethiopia* (20:3) — so the king of Assyria shall lead Egypt and Cush away stripped
+-- and barefoot (20:4). And the lesson lands on those who leaned on flesh: *they shall be afraid and
+-- ashamed of Ethiopia their expectation, and of Egypt their glory* (20:5); *Behold, such is our
+-- expectation, whither we flee for help to be delivered from the king of Assyria: and how shall we
+-- escape?* (20:6). Framework: trust-in-the-arm-of-flesh vs trust-in-Yahuah; the embodied prophetic
+-- sign-act tradition; victims-not-enemies (Egypt and Cush are not hated peoples but the broken reed
+-- the covenant people foolishly leaned on).
+-- Tag: isa20   Temp view: _s303_isa20_lookup   Prefix: s303
+-- Sort band: base 26475, step 3 -> threads at 26475, 26478 (2 threads)
+-- Source of EVERY row: 'canon','isaiah',20,v
+--
+-- Isaiah 20 coverage:
+--   v.1   (In the year that Tartan came unto Ashdod... and fought against Ashdod, and took it)
+--        NT:     none warranted (historical superscription, the Sargon/Ashdod date-frame)
+--        Extras: none warranted
+--        Tanakh: none warranted (the campaign-date setting; woven into THREAD 1 prose as the occasion)
+--   ★ v.2-4 (Go and loose the sackcloth... walking naked and barefoot... three years for a sign and
+--          wonder upon Egypt and upon Ethiopia... So shall the king of Assyria lead away the Egyptians
+--          prisoners, and the Ethiopians captives... naked and barefoot)
+--        NT:     none warranted (the prophet-as-sign tradition is wholly a Tanakh-prophetic weave;
+--                no NT member forced — the embodied-sign line is Ezekiel/Jeremiah/Isaiah's own)
+--        Extras: none warranted (clean witness exists only in the canon prophets)
+--        Tanakh: ★ Ezekiel 4:3 (set thy face against it... This shall be a sign to the house of
+--                Yashar'el) — THREAD 1; ★ Jeremiah 13:1 (Go and get thee a linen girdle, and put it
+--                upon thy loins) + Jeremiah 13:9 (After this manner will I mar the pride of Yahudah) —
+--                THREAD 1 (the marred-girdle sign); ★ Isaiah 8:18 (Behold, I and the children whom
+--                Yahuah hath given me are for signs and for wonders in Yashar'el) — THREAD 1 (the
+--                prophet's body/household bears the word)
+--   ★ v.5-6 (they shall be afraid and ashamed of Ethiopia their expectation, and of Egypt their glory...
+--          Behold, such is our expectation, whither we flee for help to be delivered from the king of
+--          Assyria: and how shall we escape?)
+--        NT:     none warranted (the flesh-arm-trust rebuke is carried in the Tanakh self-links and the
+--                trust-in-Yahuah counter-witnesses; no NT member forced)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 30:2 (That walk to go down into Egypt... to trust in the shadow of Egypt) +
+--                Isaiah 30:3 (the trust in the shadow of Egypt your confusion) — THREAD 2; ★ Isaiah
+--                31:1 (Woe to them that go down to Egypt for help... but they look not unto the Holy One
+--                of Yashar'el) + Isaiah 31:3 (the Egyptians are men, and not Elohim; and their horses
+--                flesh, and not spirit) — THREAD 2; ★ Isaiah 36:6 (thou trustest in the staff of this
+--                broken reed, on Egypt) — THREAD 2; ★ Psalm 20:7 (Some trust in chariots, and some in
+--                horses: but we will remember the name of Yahuah Eloheinu) — THREAD 2 (the counter-
+--                confession); ★ Jeremiah 17:5 (Cursed be the man that trusteth in man, and maketh flesh
+--                his arm) — THREAD 2 (the root principle)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-20-the-prophet-walked-naked-and-barefoot-for-a-sign — Tanakh (Ezekiel 4, Jeremiah 13,
+--      Isaiah 8) [free]
+--      (★ the embodied prophetic sign-act; the prophet's own body bears the word)
+--   2. isaiah-20-ashamed-of-egypt-their-glory-whither-we-flee-for-help — Tanakh (Isaiah 30, Isaiah 31,
+--      Isaiah 36, Psalm 20, Jeremiah 17) [free]
+--      (★ the shame of trusting the arm of flesh; flesh-trust vs trust in Yahuah; victims-not-enemies)
+--
+-- Framing notes:
+--   ★ THE SIGN-ACT (THREAD 1): *And he did so, walking naked and barefoot* (20:2); *Like as my servant
+--      Isaiah hath walked naked and barefoot three years for a sign and wonder upon Egypt and upon
+--      Ethiopia* (20:3). Isaiah's own body is made the prophecy — three years stripped, the living
+--      picture of Egypt and Cush led away captive (20:4). This is the embodied sign-act tradition of the
+--      prophets: Ezekiel laid siege to a tile — *set thy face against it... This shall be a sign to the
+--      house of Yashar'el (Israel)* (Ezekiel 4:3); Jeremiah wore and ruined a linen girdle — *Go and get
+--      thee a linen girdle, and put it upon thy loins* (Jeremiah 13:1), *After this manner will I mar the
+--      pride of Yahudah (Judah)* (Jeremiah 13:9). And Isaiah had already named the principle: *Behold, I
+--      and the children whom Yahuah (LORD) hath given me are for signs and for wonders in Yashar'el
+--      (Israel) from Yahuah Tseva'ot (LORD of hosts)* (Isaiah 8:18). The prophet's own person and
+--      household are the word made flesh-and-sign.
+--   ★ THE SHAME OF FLESH-TRUST (THREAD 2): *And they shall be afraid and ashamed of Ethiopia their
+--      expectation, and of Egypt their glory* (20:5); *Behold, such is our expectation, whither we flee
+--      for help to be delivered from the king of Assyria: and how shall we escape?* (20:6). The sign-act
+--      indicts the covenant people's reflex to run to Egypt instead of to Yahuah — the recurring rebuke
+--      of the whole book: *That walk to go down into Egypt... to trust in the shadow of Egypt!* (Isaiah
+--      30:2), *the trust in the shadow of Egypt your confusion* (30:3); *Woe to them that go down to
+--      Egypt for help... but they look not unto the Holy One of Yashar'el (Israel)* (31:1), *Now the
+--      Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit* (31:3); and on
+--      Rabshakeh's own lips the verdict: *Lo, thou trustest in the staff of this broken reed, on Egypt;
+--      whereon if a man lean, it will go into his hand, and pierce it* (36:6). Against it stands the
+--      true confession — *Some trust in chariots, and some in horses: but we will remember the name of
+--      Yahuah Eloheinu (the LORD our God)* (Psalm 20:7) — and the root principle — *Cursed be the man
+--      that trusteth in man, and maketh flesh his arm, and whose heart departeth from Yahuah (LORD)*
+--      (Jeremiah 17:5). Egypt and Cush are not the enemy here; they are the broken reed the people
+--      foolishly leaned on — victims and false hope, not objects of hatred.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the Tartan/Ashdod/Sargon date-frame — the historical occasion of
+--      the sign, woven into THREAD 1 prose, no cross-library member warranted). All three libraries
+--      weighed at every block; NT and Extras recorded "none warranted" deliberately (the sign-act and
+--      the flesh-trust rebuke are wholly carried by the canon prophets and Psalms).
+
+CREATE TEMP VIEW _s303_isa20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): The prophet walked naked and barefoot for a sign — the embodied sign-act tradition
+    ('canon','isaiah',20,2,'canon','ezekiel',4,3,'free',
+      E'*Moreover take thou unto thee an iron pan, and set it for a wall of iron between thee and the city: and set thy face against it, and it shall be besieged, and thou shalt lay siege against it. This shall be a sign to the house of Yashar''el (Israel)* (Ezekiel 4:3). As Isaiah was told *Go and loose the sackcloth from off thy loins... And he did so, walking naked and barefoot* (Isaiah 20:2), so Ezekiel''s besieged tile is made *a sign to the house of Yashar''el (Israel)*. The prophet''s own act becomes the word — the embodied sign-act tradition the two prophets share.'),
+    ('canon','isaiah',20,3,'canon','jeremiah',13,1,'free',
+      E'*Thus saith Yahuah (LORD) unto me, Go and get thee a linen girdle, and put it upon thy loins, and put it not in water* (Jeremiah 13:1). Isaiah is made a sign by stripping the loins — *naked and barefoot three years for a sign and wonder upon Egypt and upon Ethiopia* (Isaiah 20:3); Jeremiah is made a sign by girding the loins with linen and then ruining it. The same embodied method: the prophet wears the prophecy on his own body.'),
+    ('canon','isaiah',20,3,'canon','jeremiah',13,9,'free',
+      E'*Thus saith Yahuah (LORD), After this manner will I mar the pride of Yahudah (Judah), and the great pride of Jerusalem* (Jeremiah 13:9). The marred girdle is the meaning of the sign-act, just as Isaiah''s stripped body declares the captivity of Egypt and Cush — *a sign and wonder upon Egypt and upon Ethiopia* (Isaiah 20:3). *After this manner will I mar* — the ruined object in the prophet''s own hands is the verdict made visible.'),
+    ('canon','isaiah',20,3,'canon','isaiah',8,18,'free',
+      E'*Behold, I and the children whom Yahuah (LORD) hath given me are for signs and for wonders in Yashar''el (Israel) from Yahuah Tseva''ot (LORD of hosts), which dwelleth in mount Zion* (Isaiah 8:18). Isaiah had already named the principle his own naked march now enacts: he and his household are *for signs and for wonders*. When he walks *naked and barefoot three years for a sign and wonder upon Egypt and upon Ethiopia* (Isaiah 20:3), the prophet''s very person is the wonder Yahuah set in Yashar''el.'),
+
+    -- THREAD 2 (★): Ashamed of Egypt their glory — the shame of flesh-trust vs trust in Yahuah
+    ('canon','isaiah',20,6,'canon','isaiah',30,2,'free',
+      E'*That walk to go down into Egypt, and have not asked at my mouth; to strengthen themselves in the strength of Pharaoh, and to trust in the shadow of Egypt!* (Isaiah 30:2). The isle''s cry *whither we flee for help to be delivered from the king of Assyria* (Isaiah 20:6) is the very folly Isaiah rebukes again and again: running to *trust in the shadow of Egypt* instead of asking at Yahuah''s mouth.'),
+    ('canon','isaiah',20,5,'canon','isaiah',30,3,'free',
+      E'*Therefore shall the strength of Pharaoh be your shame, and the trust in the shadow of Egypt your confusion* (Isaiah 30:3). The sign-act ends exactly here — *they shall be afraid and ashamed of Ethiopia their expectation, and of Egypt their glory* (Isaiah 20:5). Egypt''s strength becomes the truster''s *shame*; the glory leaned on turns to confusion.'),
+    ('canon','isaiah',20,6,'canon','isaiah',31,1,'free',
+      E'*Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many; and in horsemen, because they are very strong; but they look not unto the Holy One of Yashar''el (Israel), neither seek Yahuah (LORD)!* (Isaiah 31:1). The isle that asks *whither we flee for help... and how shall we escape?* (Isaiah 20:6) is under this woe: it goes *down to Egypt for help* and *look[s] not unto the Holy One of Yashar''el (Israel)*. The help is sought from flesh, not from Yahuah.'),
+    ('canon','isaiah',20,5,'canon','isaiah',31,3,'free',
+      E'*Now the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit. When Yahuah (LORD) shall stretch out his hand, both he that helpeth shall fall, and he that is holpen shall fall down, and they all shall fail together* (Isaiah 31:3). This is why *Egypt their glory* (Isaiah 20:5) ends in shame: the Egyptians are *men, and not Elohim (God)*, their horses *flesh, and not spirit* — the helper and the helped fall together.'),
+    ('canon','isaiah',20,6,'canon','isaiah',36,6,'free',
+      E'*Lo, thou trustest in the staff of this broken reed, on Egypt; whereon if a man lean, it will go into his hand, and pierce it: so is Pharaoh king of Egypt to all that trust in him* (Isaiah 36:6). Even Assyria''s Rabshakeh names the lesson of the sign: Egypt is *the staff of this broken reed* — lean on it and it pierces the hand. The isle that flees to Egypt *for help* (Isaiah 20:6) grasps a reed that wounds the one who trusts it.'),
+    ('canon','isaiah',20,6,'canon','psalms',20,7,'free',
+      E'*Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God)* (Psalm 20:7). Against the isle''s panic — *whither we flee for help... how shall we escape?* (Isaiah 20:6) — stands the true confession: not chariots, not horses, not Egypt, but *the name of Yahuah Eloheinu (the LORD our God)*. The sign-act drives the heart from the arm of flesh to the Name.'),
+    ('canon','isaiah',20,6,'canon','jeremiah',17,5,'free',
+      E'*Thus saith Yahuah (LORD); Cursed be the man that trusteth in man, and maketh flesh his arm, and whose heart departeth from Yahuah (LORD)* (Jeremiah 17:5). Here is the root the whole sign exposes: to *flee for help* to Egypt (Isaiah 20:6) is to *make flesh [the] arm* and let the heart depart from Yahuah. The shame of Egypt their glory is the harvest of trusting man instead of the Holy One.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-20-the-prophet-walked-naked-and-barefoot-for-a-sign',
+       E'The prophet walked naked and barefoot for a sign — the word borne on the body',
+       E'Yahuah makes Isaiah himself into the prophecy: *At the same time spake Yahuah (LORD) by Isaiah the son of Amoz, saying, Go and loose the sackcloth from off thy loins, and put off thy shoe from thy foot. And he did so, walking naked and barefoot* (Isaiah 20:2). Three years he walks it: *Like as my servant Isaiah hath walked naked and barefoot three years for a sign and wonder upon Egypt and upon Ethiopia* (20:3) — a living picture of what is coming, *So shall the king of Assyria lead away the Egyptians prisoners, and the Ethiopians captives, young and old, naked and barefoot* (20:4). This is the embodied sign-act tradition of the prophets, where the man''s own body and household bear the word. Ezekiel is told to besiege a tile: *set thy face against it... This shall be a sign to the house of Yashar''el (Israel)* (Ezekiel 4:3). Jeremiah is told to wear and then ruin a linen girdle: *Go and get thee a linen girdle, and put it upon thy loins* (Jeremiah 13:1) — *Thus saith Yahuah (LORD), After this manner will I mar the pride of Yahudah (Judah), and the great pride of Jerusalem* (Jeremiah 13:9). And Isaiah had already named the principle his naked march now enacts: *Behold, I and the children whom Yahuah (LORD) hath given me are for signs and for wonders in Yashar''el (Israel) from Yahuah Tseva''ot (LORD of hosts), which dwelleth in mount Zion* (Isaiah 8:18). The prophet does not merely speak the word; he wears it, until his own person is the sign and the wonder.',
+       sv.verse_id, ev.verse_id, 'free', 26475
+  FROM _s303_isa20_lookup sv, _s303_isa20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=20 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-20-ashamed-of-egypt-their-glory-whither-we-flee-for-help',
+       E'Ashamed of Egypt their glory — the shame of trusting the arm of flesh',
+       E'The naked sign lands on the heart of the matter: the covenant people''s reflex to run to Egypt instead of to Yahuah. *And they shall be afraid and ashamed of Ethiopia their expectation, and of Egypt their glory. And the inhabitant of this isle shall say in that day, Behold, such is our expectation, whither we flee for help to be delivered from the king of Assyria: and how shall we escape?* (Isaiah 20:5-6). This is the recurring rebuke of the whole book. *That walk to go down into Egypt... to trust in the shadow of Egypt!* (Isaiah 30:2) — *Therefore shall the strength of Pharaoh be your shame, and the trust in the shadow of Egypt your confusion* (30:3). *Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots... but they look not unto the Holy One of Yashar''el (Israel), neither seek Yahuah (LORD)!* (31:1) — for *the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit... they all shall fail together* (31:3). Even the Assyrian''s mouth names the lesson: *Lo, thou trustest in the staff of this broken reed, on Egypt; whereon if a man lean, it will go into his hand, and pierce it* (36:6). Against this stands the true confession — *Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God)* (Psalm 20:7) — and the root principle Jeremiah states plainly: *Cursed be the man that trusteth in man, and maketh flesh his arm, and whose heart departeth from Yahuah (LORD)* (Jeremiah 17:5). Egypt and Cush are not the enemy in this chapter; they are the broken reed and the false hope the people foolishly leaned on — victims of the same Assyrian sword, not objects of hatred. The sign drives the heart off the arm of flesh and back onto the Name.',
+       sv.verse_id, ev.verse_id, 'free', 26478
+  FROM _s303_isa20_lookup sv, _s303_isa20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=20 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *set thy face against it... This shall be a sign to the house of Yashar''el (Israel)* (Ezekiel 4:3) — Ezekiel''s besieged tile, like Isaiah''s naked march (Isaiah 20:2), makes the prophet''s own act the sign.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=2
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-20-the-prophet-walked-naked-and-barefoot-for-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Go and get thee a linen girdle, and put it upon thy loins* (Jeremiah 13:1) — Jeremiah girds the loins to make a sign as Isaiah strips them (Isaiah 20:3); the prophet wears the prophecy.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=13 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-20-the-prophet-walked-naked-and-barefoot-for-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *After this manner will I mar the pride of Yahudah (Judah)* (Jeremiah 13:9) — the ruined girdle is the meaning of the sign, as Isaiah''s stripped body declares Egypt and Cush''s captivity (Isaiah 20:3).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=13 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-20-the-prophet-walked-naked-and-barefoot-for-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Behold, I and the children whom Yahuah (LORD) hath given me are for signs and for wonders in Yashar''el (Israel)* (Isaiah 8:18) — Isaiah''s stated principle, now enacted in his own naked body *for a sign and wonder* (Isaiah 20:3).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-20-the-prophet-walked-naked-and-barefoot-for-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *That walk to go down into Egypt... to trust in the shadow of Egypt!* (Isaiah 30:2) — the isle''s flight *for help* (Isaiah 20:6) is the very folly: trusting Egypt''s shadow instead of asking at Yahuah''s mouth.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-20-ashamed-of-egypt-their-glory-whither-we-flee-for-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the trust in the shadow of Egypt your confusion* (Isaiah 30:3) — *Egypt their glory* (Isaiah 20:5) turns to shame; the strength leaned on becomes confusion.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=5
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-20-ashamed-of-egypt-their-glory-whither-we-flee-for-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Woe to them that go down to Egypt for help... but they look not unto the Holy One of Yashar''el (Israel)* (Isaiah 31:1) — the isle that flees *for help* (Isaiah 20:6) is under this woe: help from flesh, not from Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=31 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-20-ashamed-of-egypt-their-glory-whither-we-flee-for-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit... they all shall fail together* (Isaiah 31:3) — why *Egypt their glory* (Isaiah 20:5) ends in shame: helper and helped fall together, flesh not spirit.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=5
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=31 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-20-ashamed-of-egypt-their-glory-whither-we-flee-for-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Lo, thou trustest in the staff of this broken reed, on Egypt; whereon if a man lean, it will go into his hand, and pierce it* (Isaiah 36:6) — even Rabshakeh names the lesson: Egypt is the broken reed that pierces the hand that flees to it *for help* (Isaiah 20:6).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=36 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-20-ashamed-of-egypt-their-glory-whither-we-flee-for-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God)* (Psalm 20:7) — the true confession against the isle''s panic *how shall we escape?* (Isaiah 20:6): not Egypt, but the Name.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-20-ashamed-of-egypt-their-glory-whither-we-flee-for-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Cursed be the man that trusteth in man, and maketh flesh his arm, and whose heart departeth from Yahuah (LORD)* (Jeremiah 17:5) — the root the sign exposes: to *flee for help* to Egypt (Isaiah 20:6) is to make flesh the arm.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s303_isa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=17 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-20-ashamed-of-egypt-their-glory-whither-we-flee-for-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session303 — Isaiah cross-references complete.'
