@@ -134,3 +134,61 @@ The antithetic-couplet collection. All clustered by THEME (not per-verse). Live 
 ⚑ GATE2 still flags ONLY the known-benign Eph4:9 in ch30 (Pack 2) — fully-parenthetical verse, 4-gram-shingle false
 positive, quote verbatim, ignore. No new flags Packs 3-5. ⚑ EXISTING_SLUGS rebase-conflict recurred every push
 (concurrent Psalms/Isaiah) — union-dedup one-liner resolved clean each time; pushed clean every pack.
+
+## ★★★ Pack 6 (ch 23,24,25,26,27,29) — THE LAST PACK — PROVERBS COMPLETE (all 31 chapters)
+41 threads / 238 members, bands 28550-28718. Per-chapter: ch23=7/30, ch24=7/36, ch25=6/34, ch26=7/39,
+ch27=7/42, ch29=7/57. 0 empty / 0 orphans / 0 unresolved; GATE1 [PASS], pglast OK, arity 0-bad, bug-guard clean.
+GATE2 flagged ONLY proverbs-27 / 2-Corinthians 6:2 = known-benign class (fully-parenthetical verse "(For he
+saith... behold, now is the accepted time; behold, now is the day of salvation.)"; the note quotes the verbatim
+sub-span — same 4-gram false-positive as the ch30 Eph4:9 flag). Headlines:
+- **ch23**: ★★ remove-not-the-old-landmark / their Redeemer (Goel) is mighty, he shall plead their cause (23:10-11
+  = the Torah boundary-stone Deut19:14/27:17 + the kinsman-Redeemer who pleads the fatherless cause Lev25:25/
+  Job19:25/Jer50:34; cross-lat the live Prov22:28 ancient-landmark + 22:23 plead-their-cause threads) + the-rod-
+  that-delivereth-the-soul-from-sheol (23:13-14, chastening cluster Prov22:15/Deut8:5/Heb12:6) + look-not-on-the-
+  wine-when-it-is-red-it-biteth-like-a-serpent (23:29-35 drunkard → Prov20:1/Isa5:11,22/Isa28:7/Eph5:18 + Sirach
+  31:25,30) + labour-not-to-be-rich-riches-fly-as-an-eagle (23:4-5→1Tim6:9-10/Matt6:19) + envy-not-sinners-surely-
+  there-is-an-end (23:17-18) + hearken-to-thy-father-buy-the-truth-give-me-thine-heart (23:22-26→Exod20:12/Deut6:5/
+  Prov4:23) + when-thou-sittest-to-eat-with-a-ruler (23:1-3, Sirach 31:12-17).
+- **ch24**: ★★ HEAVYWEIGHT he-shall-render-to-every-man-according-to-his-works (24:11-12 = judgment-ACCORDING-to-
+  works NOT works-righteousness → Rom2:6/Rev22:12/Matt16:27 + the duty to deliver them drawn-to-death Ps82:4/
+  Isa58:6-7; Ps62:12 cited laterally — the live Psalms thread) + rejoice-not-when-thine-enemy-falleth (24:17-18 =
+  victims-not-enemies → Job31:29/Matt5:44/Rom12:14/Obad12; sibling of 25:21-22) + eat-honey-so-the-knowledge-of-
+  wisdom-the-reward-not-cut-off (24:13-14) + a-just-man-falleth-seven-times-and-riseth (24:15-16→Ps37:24/Mic7:8) +
+  fret-not-the-candle-of-the-wicked-put-out (24:19-20) + no-respect-of-persons-in-judgment (24:23-25 = Torah just-
+  judgment Lev19:15/Deut1:17/John7:24/Jas2:9) + be-not-a-witness-without-cause-recompense-not-evil (24:28-29 =
+  ninth-word Exod20:16 + vengeance-is-Yahuah's Deut32:35/Rom12:17).
+- **ch25** (the Hezekiah collection, 25:1): ★★ HEAVYWEIGHT if-thine-enemy-be-hungry-heap-coals-of-fire-on-his-head
+  (25:21-22 → Rom12:20 quoted VERBATIM = love-of-enemy/overcome-evil-with-good; Exod23:4-5 Torah + 2Kgs6:22 Elisha
+  + Matt5:44 + 1Pet3:9) + ★ better-it-be-said-come-up-hither-than-be-put-lower (25:6-7 → Messiah's parable Luke14:
+  8-10 + Matt23:12/Jas4:10/1Pet5:6 humble-exalted) + a-word-fitly-spoken-apples-of-gold-a-wise-reprover (25:11-12)
+  + good-news-from-a-far-country-as-cold-waters-to-a-thirsty-soul (25:25→Isa52:7/Rom10:15) + the-glory-of-Elohim-to-
+  conceal-the-honour-of-kings-to-search (25:2→Deut29:29/Dan2:22/Rom11:33) + he-that-hath-no-rule-over-his-own-spirit-
+  a-city-without-walls (25:28→Prov16:32/1Cor9:25).
+- **ch26** (the fool/sluggard/talebearer/deceiver portrait): ★★ HEAVYWEIGHT as-a-dog-returneth-to-his-vomit-so-a-fool-
+  returneth-to-his-folly (26:11 → 2Pet2:22 quoted VERBATIM = the apostate who knew the way and turned back; 2Pet2:20-
+  21/Matt12:43-45/Heb6:6/Exod8:15 Pharaoh-respite-relapse) + ★ answer-not-a-fool / answer-a-fool — the discernment-of-
+  WHEN paradox (26:4-5 → Prov23:9/Matt7:6 + Messiah declining-vs-exposing Matt21:27/22:18, Isa36:21 held-their-peace)
+  + honour-is-not-seemly-for-a-fool-and-the-curse-causeless (26:1-3 + 26:2 Balaam Num23:8/Deut23:5) + seest-thou-a-
+  man-wise-in-his-own-conceit (26:12→Prov3:7/Isa5:21/Luke18:11) + the-slothful-saith-there-is-a-lion-in-the-way
+  (26:13-16) + where-no-talebearer-the-strife-ceaseth (26:20-22 + Lev19:16 Torah no-talebearer/Sirach28:13) + burning-
+  lips-and-a-wicked-heart-and-the-pit-that-recoils (26:23-28 + Gal6:7 measure-for-measure Ps7:15).
+- **ch27**: ★ HEAVYWEIGHT boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth (27:1 → Jas4:13-14
+  expands it + Luke12:19-20 the rich fool + Ps39:5-6/Prov16:9 + Sirach11:19) + ★ faithful-are-the-wounds-of-a-friend-
+  the-kisses-of-an-enemy-deceitful (27:5-6 = loving-rebuke Lev19:17 Torah/Ps141:5/Rev3:19 CONTRAST the deceitful kiss
+  2Sam20:9-10/Matt26:48-49 Judas) + iron-sharpeneth-iron-so-a-man-sharpeneth-his-friend (27:17→Eccl4:9/Heb10:24-25) +
+  let-another-praise-thee-not-thine-own-mouth (27:2→2Cor10:18) + a-friend-near-than-a-brother-far-off (27:9-10→Prov
+  17:17/Sirach6:14-16) + as-the-fining-pot-for-silver-so-is-a-man-to-his-praise (27:21→Prov17:3) + be-thou-diligent-to-
+  know-the-state-of-thy-flocks (27:23-27 = the good husbandman → John10:14 Formed-Son the true Shepherd/Ezek34:2-4/
+  1Pet5:2).
+- **ch29**: ★★ KEYSTONE where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy (29:18 = anti-
+  antinomian DOUBLE: no prophetic vision → the people cast-off/unrestrained 1Sam3:1/Amos8:11-12/Hos4:6 AND the Torah-
+  KEEPER is blessed Ps19:7/Ps119:1-2/Jas1:25/Matt5:17-19 — Torah-affirmed never-abolished; 13 members, heaviest of the
+  pack) + ★ the-fear-of-man-bringeth-a-snare-but-trust-in-Yahuah-shall-be-safe (29:25 = son-of-Adam frailty Isa51:12-13
+  /Matt10:28/Acts5:29-obey-Elohim-rather-than-men/John12:42-43) + ★ he-that-hardeneth-his-neck-shall-suddenly-be-
+  destroyed-without-remedy (29:1 = stiffnecked Exod32:9/Deut9:13/2Chr36:15-16-no-remedy/Acts7:51/Heb3:7-8) + the-king-
+  that-faithfully-judgeth-the-poor-his-throne-established (29:12-14 → Ps72:2-4 the Messianic king/Isa11:4/Prov20:28) +
+  a-mans-pride-shall-bring-him-low-but-honour-upholdeth-the-humble (29:22-23→Prov16:18/Isa57:15/Jas4:6/Luke14:11) + an-
+  unjust-man-an-abomination-to-the-just-the-two-ways (29:27→Ps1:6/John3:20/1John3:13) + the-righteous-considereth-the-
+  cause-of-the-poor (29:7,13 = Torah open-hand Deut15:7/Jer22:16-judged-the-cause-of-the-poor-was-not-this-to-know-me).
+★★★ WITH PACK 6 APPLIED, PROVERBS IS COMPLETE — ALL 31 CHAPTERS LIVE (181 proverbs-* threads / 1115 members by slug;
+182/1192 incl. the pre-existing non-prefix effort-over-accomplishment thread). The third reader-demand Tanakh book is DONE.

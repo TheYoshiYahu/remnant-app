@@ -68,7 +68,7 @@ half and the standing minion protocol; this file governs the Tanakh half.
 | 17 | Esther | 10 | 167 | 32500 | 317 | ⬜ |
 | 18 | Job | 42 | 1070 | 32800 | 318 | ⬜ |
 | 19 | Psalms | 150 | 2461 | 22000 | 319 | 🔄 47/150 ch LIVE (202 thr/698 mem, s302, origin ccb9ad0): Ps 1-24 contiguous + keystone/cluster chapters; RESUME numerical at Ps 25 |
-| 20 | Proverbs | 31 | 915 | 38000 | 320 | ⬜ (Wisdom personified → Formed) |
+| 20 | Proverbs | 31 | 915 | 28000 | 304 | ✅ **BOOK COMPLETE-LIVE** (all 31 ch, 181 thr/1115 mem by proverbs-* slug; 182/1192 incl. pre-existing effort thread; band 28000+ NOT 38000 — clears Psalms 22000-25999 + Isaiah 26000+; migration session304_proverbs, 0 orphans/0 empty, all 5 gates green). ★★★ Wisdom=Formed-Son ch8/30:4; ★ch6:23/28:9 Torah-affirmed; Pack 6 final: coals-of-fire 25:21-22→Rom12:20, render-to-works 24:12, dog-to-vomit 26:11→2Pet2:22, boast-not-of-tomorrow 27:1→Jas4:13, no-vision/keep-torah 29:18, old-landmark/Goel 23:10-11. See memory s304-proverbs-xref-progress. |
 | 21 | Ecclesiastes | 12 | 222 | 38900 | 321 | ⬜ |
 | 22 | Song of Solomon | 8 | 117 | 39300 | 322 | ⬜ |
 | 23 | Isaiah | 66 | 1292 | 26000 | 323 | 🔄 session303, band 26000 (NOT 39600 — clears Psalms 22000-25725): Packs 1-2 LIVE+PUSHED — ch 6,7,9,11,40,52,53,54 = 47 thr/157 mem. NEXT heavyweights 61,56,65,66,35,42,49,50,55,58,59 then numerical fill. See memory s303-isaiah-xref-progress. |

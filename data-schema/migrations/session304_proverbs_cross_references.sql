@@ -13451,6 +13451,3668 @@ SELECT t.id, cr.id, 10, E'*earnestly contend for the faith which was once delive
  WHERE t.slug='proverbs-22-remove-not-the-ancient-landmark'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_proverbs_23.sql (Proverbs 23) -----
+-- Chapter: Proverbs 23 — the heart of the second great section of the Sayings of the Wise, carrying a FRAMEWORK KEYSTONE at v.10-11: *Remove not the old landmark; and enter not into the fields of the fatherless: For their redeemer is mighty; he shall plead their cause with thee* (23:10-11). The chapter binds the Torah's boundary-stone law (Deuteronomy 19:14; 27:17) to the kinsman-Redeemer (Goel) who pleads the cause of the fatherless — the same Goel Job confesses (*I know that my redeemer liveth*, 19:25) and Jeremiah names over scattered Yashar'el (*Their Redeemer is strong; Yahuah Tseva'ot (LORD of hosts) is his name: he shall throughly plead their cause*, 50:34). Around it run the rod that delivers the soul from sheol (23:13-14), the riches that fly away as an eagle (23:4-5), the heart that must not envy sinners but trust the expected end (23:17-18), the father's joy in a wise child and *My son, give me thine heart* (23:22-26), and the long red-wine woe of the drunkard (23:29-35), framed by the ruler's deceitful table (23:1-3).
+-- Tag: pr23   Temp view: _s304_pr23_lookup
+-- Sort band: base 28550, step 3 -> threads at 28550, 28553, 28556, 28559, 28562, 28565, 28568 (7 threads)
+-- Source of EVERY row: 'canon','proverbs',23,v
+--
+-- Proverbs 23 coverage:
+--   v.1-3 (When thou sittest to eat with a ruler... put a knife to thy throat, if thou be a man given to appetite... deceitful meat)
+--        NT:     none warranted (the restraint-of-appetite figure carried whole by Sirach 31's table)
+--        Extras: ★ Sirach 31:12-16 (If you sit at a bountiful table, be not greedy... Eat as it becometh a man, those things which are set before you; and devour not) — THREAD 7
+--        Tanakh: none warranted distinct (the appetite-bridle is Proverbs' own; Sirach is the closest parallel)
+--   ★★ v.10-11 (Remove not the old landmark; and enter not into the fields of the fatherless: For their redeemer is mighty; he shall plead their cause with thee) — THE FRAMEWORK KEYSTONE
+--        NT:     none warranted distinct (the Goel motif fills FORWARD across the whole library; carried here Tanakh-internal where it is sharpest)
+--        Extras: none warranted (the Redeemer/landmark figure carried whole by the Torah + Job + Jeremiah)
+--        Tanakh: ★★ Deuteronomy 19:14 (Thou shalt not remove thy neighbour's landmark, which they of old time have set); Deuteronomy 27:17 (Cursed be he that removeth his neighbour's landmark); Leviticus 25:25 (if any of his kin come to redeem it, then shall he redeem that which his brother sold) — the Goel law; Job 19:25 (For I know that my redeemer liveth); Jeremiah 50:34 (Their Redeemer is strong... he shall throughly plead their cause); Proverbs 22:23 (Yahuah will plead their cause — LATERAL, already a live thread, cited in prose) — THREAD 1 (load-bearing keystone; cross-lateral to the live proverbs-22-remove-not-the-ancient-landmark thread)
+--   ★ v.13-14 (Withhold not correction from the child... Thou shalt beat him with the rod, and shalt deliver his soul from hell)
+--        NT:     ★ Hebrews 12:6 (whom Yahuah loveth he chasteneth) — THREAD 2
+--        Extras: none warranted distinct (the chastening figure carried by Proverbs laterals + Deuteronomy + Hebrews)
+--        Tanakh: ★ Proverbs 13:24 (He that spareth his rod hateth his son — LATERAL, live thread, cited in prose); Proverbs 22:15 (Foolishness is bound in the heart of a child; but the rod of correction shall drive it far from him); Deuteronomy 8:5 (as a man chasteneth his son, so Yahuah Elohayka chasteneth thee) — THREAD 2
+--   v.4-5 (Labour not to be rich... riches certainly make themselves wings; they fly away as an eagle toward heaven)
+--        NT:     ★ 1 Timothy 6:9-10 (they that will be rich fall into temptation... the love of money is the root of all evil); Matthew 6:19-21 (Lay not up for yourselves treasures upon earth... where your treasure is, there will your heart be also) — THREAD 3
+--        Extras: Sirach 31:5-6 weighed (He that loves gold shall not be justified... Gold has been the ruin of many) but folded to THREAD 7's table-frame; THREAD 3 carried clean by NT
+--        Tanakh: none warranted distinct (the flying-riches figure is Proverbs' own; NT fills it forward)
+--   v.17-18 (Let not thine heart envy sinners: but be thou in the fear of Yahuah all the day long. For surely there is an end; and thine expectation shall not be cut off)
+--        NT:     none warranted distinct (the envy-not / expected-end figure carried whole by Psalm 37 + Proverbs 24 + Jeremiah 29)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 37:1 (Fret not thyself because of evildoers, neither be thou envious); Proverbs 24:19-20 (Fret not thyself because of evil men... there shall be no reward to the evil man); Proverbs 24:14 (when thou hast found it, then there shall be a reward, and thy expectation shall not be cut off); Jeremiah 29:11 (thoughts of peace, and not of evil, to give you an expected end) — THREAD 4
+--   v.22-26 (Hearken unto thy father that begat thee... Buy the truth, and sell it not... The father of the righteous shall greatly rejoice... My son, give me thine heart)
+--        NT:     none warranted distinct (the honour/heart figure carried whole by Torah + Proverbs)
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 1:8 (My son, hear the instruction of thy father, and forsake not the law of thy mother); Exodus 20:12 (Honour thy father and thy mother); Proverbs 4:7 (Wisdom is the principal thing; therefore get wisdom); Deuteronomy 6:5-6 (thou shalt love Yahuah... with all thine heart... these words... shall be in thine heart); Proverbs 4:23 (Keep thy heart with all diligence; for out of it are the issues of life) — THREAD 5
+--   ★ v.29-35 (Who hath woe?... They that tarry long at the wine... Look not thou upon the wine when it is red... At the last it biteth like a serpent)
+--        NT:     ★ Ephesians 5:18 (be not drunk with wine, wherein is excess; but be filled with the Spirit) — THREAD 6
+--        Extras: ★ Sirach 31:25-30 (Shew not your valiantness in wine; for wine has destroyed many... Drunkenness increaseth the rage of a fool till he offend) — THREAD 6
+--        Tanakh: ★ Proverbs 20:1 (Wine is a mocker, strong drink is raging — LATERAL, live thread, cited in prose); Isaiah 5:11 (Woe unto them that rise up early... that they may follow strong drink); Isaiah 5:22 (Woe unto them that are mighty to drink wine); Isaiah 28:7 (the priest and the prophet have erred through strong drink) — THREAD 6
+--   v.27-28 (For a whore is a deep ditch; and a strange woman is a narrow pit. She also lieth in wait as for a prey)
+--        folded into THREAD 6 prose (the strange-woman the red wine leads the eyes to behold — *Thine eyes shall behold strange women* (23:33) — bracketing the drunkard passage)
+--   PRUDENTIAL / FOLDED, none warranted distinct: v.6-8 (eat not the bread of him that hath an evil eye / the morsel shalt thou vomit up — touched in THREAD 7 prose, the grudging host vs the deceitful ruler's table), v.9 (speak not in the ears of a fool — merely-prudential), v.12 (Apply thine heart unto instruction — touched in THREAD 5 prose), v.15-16 (My son, if thine heart be wise, my heart shall rejoice — touched in THREAD 5 prose, the father's joy), v.19 (Hear thou, my son, and be wise — touched in THREAD 6 prose, the charge before the wine-warning): folded contextually, no separate thread warranted.
+--
+-- Threads (slug — target libraries):
+--   1. proverbs-23-remove-not-the-old-landmark-their-redeemer-is-mighty — Tanakh (Deuteronomy, Leviticus, Job, Jeremiah) [free] (★★ THE KEYSTONE: the Torah boundary-stone + the kinsman-Redeemer (Goel) who pleads the cause of the fatherless; cross-lateral to the live proverbs-22 landmark + plead-their-cause threads)
+--   2. proverbs-23-the-rod-that-delivereth-the-soul-from-sheol — Tanakh (Proverbs, Deuteronomy) + NT (Hebrews) [free] (covenant chastening that delivers the soul, not cruelty)
+--   3. proverbs-23-labour-not-to-be-rich-riches-fly-away-as-an-eagle — NT (1 Timothy, Matthew) [free] (the flying riches; the love of money the root of all evil; treasure and heart together)
+--   4. proverbs-23-envy-not-sinners-but-fear-yahuah-surely-there-is-an-end — Tanakh (Psalm, Proverbs, Jeremiah) [free] (envy not the wicked; the expected end that shall not be cut off)
+--   5. proverbs-23-hearken-to-thy-father-buy-the-truth-give-me-thine-heart — Tanakh (Proverbs, Exodus, Deuteronomy) [free] (honour the father; buy the truth; the heart wholly given — Torah affirmed)
+--   6. proverbs-23-look-not-on-the-wine-when-it-is-red-it-biteth-like-a-serpent — Tanakh (Proverbs, Isaiah) + NT (Ephesians) + Extras (Sirach) [extras] (the drunkard; the red wine that bites like a serpent; be filled with the Spirit)
+--   7. proverbs-23-when-thou-sittest-to-eat-with-a-ruler-put-a-knife-to-thy-throat — Extras (Sirach) [extras] (restraint at the deceitful table; the bridled appetite)
+--
+-- Framing notes:
+--   ★★ THE KEYSTONE (THREAD 1): *Remove not the old landmark; and enter not into the fields of the fatherless: For their redeemer is mighty; he shall plead their cause with thee* (23:10-11). This is the Torah's own boundary-stone law set as a proverb and bound to the kinsman-Redeemer. The Torah forbids the moving of the landmark twice — *Thou shalt not remove thy neighbour's landmark, which they of old time have set* (Deuteronomy 19:14) — and lays the curse on it at Ebal: *Cursed be he that removeth his neighbour's landmark* (Deuteronomy 27:17). The proverb names WHO defends the dispossessed fatherless: their *redeemer* — the Goel, the near-kinsman who buys back the lost inheritance — *if any of his kin come to redeem it, then shall he redeem that which his brother sold* (Leviticus 25:25). That Goel is the One Job confesses from the ash-heap — *I know that my redeemer liveth, and that he shall stand at the latter day upon the earth* (Job 19:25) — and the One Jeremiah names over scattered, oppressed Yashar'el and Yahudah: *Their Redeemer is strong; Yahuah Tseva'ot (LORD of hosts) is his name: he shall throughly plead their cause* (50:34). The proverb's *he shall plead their cause with thee* is the very Goel-verb; the same book has just declared it of the robbed poor — *Yahuah (LORD) will plead their cause, and spoil the soul of those that spoiled them* (22:23) — and the ancient-landmark charge stands a chapter back — *Remove not the ancient landmark, which thy fathers have set* (22:28). To move the orphan's boundary is not to cheat a weak man but to draw the Redeemer Himself into the lawsuit; the mighty Goel takes the fatherless cause as His own.
+--   ★ THE ROD (THREAD 2): *Withhold not correction from the child: for if thou beatest him with the rod, he shall not die. Thou shalt beat him with the rod, and shalt deliver his soul from hell* (23:13-14). This is covenant chastening, not cruelty — the discipline that DELIVERS the soul from sheol. The same book says it plainly — *He that spareth his rod hateth his son: but he that loveth him chasteneth him betimes* (13:24); *Foolishness is bound in the heart of a child; but the rod of correction shall drive it far from him* (22:15). The Torah grounds it in Yahuah's own fatherhood — *as a man chasteneth his son, so Yahuah Elohayka (the LORD thy God) chasteneth thee* (Deuteronomy 8:5) — and the NT keeps the SAME pattern whole: *whom Yahuah (Lord) loveth he chasteneth, and scourgeth every son whom he receiveth* (Hebrews 12:6). The rod that does not let the child die is the love that will not abandon him to his folly.
+--   ★ FLYING RICHES (THREAD 3): *Labour not to be rich: cease from thine own wisdom. Wilt thou set thine eyes upon that which is not? for riches certainly make themselves wings; they fly away as an eagle toward heaven* (23:4-5). The NT fills it forward without softening it: *they that will be rich fall into temptation and a snare... For the love of money is the root of all evil* (1 Timothy 6:9-10); *Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt... For where your treasure is, there will your heart be also* (Matthew 6:19-21). The eagle-winged riches are the treasure that cannot be laid up; the wise labour is for the treasure that does not fly away.
+--   ★ ENVY NOT (THREAD 4): *Let not thine heart envy sinners: but be thou in the fear of Yahuah (LORD) all the day long. For surely there is an end; and thine expectation shall not be cut off* (23:17-18). David sang the same charge — *Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity* (Psalm 37:1) — and the same book repeats it with its ground: *Fret not thyself because of evil men, neither be thou envious at the wicked; For there shall be no reward to the evil man; the candle of the wicked shall be put out* (24:19-20). The promised *expectation shall not be cut off* is twinned a chapter on — *when thou hast found it, then there shall be a reward, and thy expectation shall not be cut off* (24:14) — and Jeremiah names the end Yahuah holds for His own: *thoughts of peace, and not of evil, to give you an expected end* (29:11). The sinner's prosperity has an end; the fearer's expectation has none.
+--   ★ THE HEART GIVEN (THREAD 5): *Hearken unto thy father that begat thee, and despise not thy mother when she is old... Buy the truth, and sell it not... My son, give me thine heart, and let thine eyes observe my ways* (23:22-26). The opening charge of the book is the same — *My son, hear the instruction of thy father, and forsake not the law of thy mother* (1:8) — and it rests on the Fifth Word of the Ten: *Honour thy father and thy mother: that thy days may be long upon the land* (Exodus 20:12), the Torah affirmed, not abolished. The truth to be bought and never sold is wisdom itself — *Wisdom is the principal thing; therefore get wisdom* (4:7). And *give me thine heart* is the Shema's own demand — *thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart... And these words, which I command thee this day, shall be in thine heart* (Deuteronomy 6:5-6) — kept by the charge that closes Proverbs 4: *Keep thy heart with all diligence; for out of it are the issues of life* (4:23).
+--   ★ THE RED WINE (THREAD 6): *Who hath woe? who hath sorrow?... They that tarry long at the wine... Look not thou upon the wine when it is red... At the last it biteth like a serpent, and stingeth like an adder* (23:29-32). The same book opens the matter — *Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise* (20:1) — and Isaiah lays the prophetic woe: *Woe unto them that rise up early in the morning, that they may follow strong drink; that continue until night, till wine inflame them* (5:11); *Woe unto them that are mighty to drink wine* (5:22); *the priest and the prophet have erred through strong drink, they are swallowed up of wine* (28:7). The red wine leads the eyes astray — *Thine eyes shall behold strange women* (23:33), the strange woman of the chapter's own warning (*a strange woman is a narrow pit*, 23:27). The restored witness weighs it the same — *Shew not your valiantness in wine; for wine has destroyed many... Drunkenness increaseth the rage of a fool till he offend* (Sirach 31:25,30) — and the NT names the better filling: *be not drunk with wine, wherein is excess; but be filled with the Spirit* (Ephesians 5:18). The serpent-bite of the cup is set against the Spirit's fullness.
+--   ★ THE RULER'S TABLE (THREAD 7): *When thou sittest to eat with a ruler, consider diligently what is before thee: And put a knife to thy throat, if thou be a man given to appetite. Be not desirous of his dainties: for they are deceitful meat* (23:1-3). The restored witness gives the closest parallel in the whole library — *If you sit at a bountiful table, be not greedy upon it... Eat as it becometh a man, those things which are set before you; and devour not, lest you be hated... Leave off first for manners' sake; and be not unsatiable, lest you offend* (Sirach 31:12-17). The bridled appetite at the great man's table is the same wisdom in both books: the dainties are deceitful meat, and the knife at the throat is the self-restraint that will not be bought by them.
+--   EXTRAS: Sirach (Ecclesiasticus) double-written edition 'apocrypha' + book 'ecclesiasticus'. Clean witnesses pulled: 31:12,13,16,17 (the bountiful table / bridled appetite — THREAD 7), 31:25,27,29,30 (valiantness in wine / drunkenness — THREAD 6). Sirach 31:5-8 (the love of gold) weighed for THREAD 3 but the table-frame kept whole in THREAD 7; NT carries THREAD 3 clean.
+
+CREATE TEMP VIEW _s304_pr23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Remove not the old landmark — their redeemer is mighty (THE KEYSTONE)
+    ('canon','proverbs',23,10,'canon','deuteronomy',19,14,'free',
+      E'*Thou shalt not remove thy neighbour''s landmark, which they of old time have set in thine inheritance, which thou shalt inherit in the land that Yahuah Elohayka (the LORD thy God) giveth thee to possess it* (Deuteronomy 19:14). The proverb''s *Remove not the old landmark* (Proverbs 23:10) is this Torah law spoken as wisdom: the boundary-stone *they of old time have set* marks the inheritance Yahuah Himself gave, and to move it is to plunder what He apportioned. The *old landmark* is no mere fence but the covenant allotment of the land.'),
+    ('canon','proverbs',23,10,'canon','deuteronomy',27,17,'free',
+      E'*Cursed be he that removeth his neighbour''s landmark. And all the people shall say, Amen* (Deuteronomy 27:17). At mount Ebal the moving of the landmark is laid under the covenant curse — the very thing the proverb forbids: *Remove not the old landmark; and enter not into the fields of the fatherless* (Proverbs 23:10). The dispossessing of a neighbour, and most of all of the fatherless, stands among the curses the whole people answered with Amen.'),
+    ('canon','proverbs',23,11,'canon','leviticus',25,25,'free',
+      E'*If thy brother be waxen poor, and hath sold away some of his possession, and if any of his kin come to redeem it, then shall he redeem that which his brother sold* (Leviticus 25:25). The *redeemer* of *their redeemer is mighty; he shall plead their cause with thee* (Proverbs 23:11) is this Goel — the near-kinsman whose office is to buy back the lost inheritance of the poor. The fatherless whose field was seized have a Kinsman with the right and the might to redeem what was taken; the Torah''s redemption-of-the-land law stands behind the proverb''s promise.'),
+    ('canon','proverbs',23,11,'canon','job',19,25,'free',
+      E'*For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth* (Job 19:25). The mighty *redeemer* who *shall plead their cause* (Proverbs 23:11) is the One Job confesses from the ash-heap: *I know that my redeemer liveth*. The Goel who buys back the lost field is the living Redeemer who stands at the last for His own — the kinsman-redemption of the Torah opening upward into the One who will stand upon the earth.'),
+    ('canon','proverbs',23,11,'canon','jeremiah',50,34,'free',
+      E'*Their Redeemer is strong; Yahuah Tseva''ot (LORD of hosts) is his name: he shall throughly plead their cause, that he may give rest to the land, and disquiet the inhabitants of Babylon* (Jeremiah 50:34). Jeremiah names the very Redeemer of *their redeemer is mighty; he shall plead their cause with thee* (Proverbs 23:11): over scattered, oppressed Yashar''el and Yahudah, *Their Redeemer is strong... he shall throughly plead their cause*. The proverb''s pleading-Goel of the fatherless is, on the prophet''s lips, Yahuah Tseva''ot Himself pleading the cause of His dispossessed people — the two houses redeemed by the strong Kinsman.'),
+
+    -- THREAD 2: The rod that delivereth the soul from sheol
+    ('canon','proverbs',23,13,'canon','proverbs',22,15,'free',
+      E'*Foolishness is bound in the heart of a child; but the rod of correction shall drive it far from him* (Proverbs 22:15). The correction not withheld in *Withhold not correction from the child... if thou beatest him with the rod, he shall not die* (Proverbs 23:13) is this driving-out of bound folly: the rod is not cruelty but the loosing of a foolishness bound in the heart. The child is not harmed but healed — the folly driven far from him.'),
+    ('canon','proverbs',23,14,'canon','deuteronomy',8,5,'free',
+      E'*Thou shalt also consider in thine heart, that, as a man chasteneth his son, so Yahuah Elohayka (the LORD thy God) chasteneth thee* (Deuteronomy 8:5). The fatherly rod of *Thou shalt beat him with the rod, and shalt deliver his soul from hell* (Proverbs 23:14) images Yahuah''s own dealing: *as a man chasteneth his son, so Yahuah Elohayka chasteneth thee*. The discipline that delivers the child''s soul from sheol is patterned on the covenant Father who chastens to save, not to destroy.'),
+    ('canon','proverbs',23,14,'canon','hebrews',12,6,'free',
+      E'*For whom Yahuah (Lord) loveth he chasteneth, and scourgeth every son whom he receiveth* (Hebrews 12:6). The NT keeps the rod of *Thou shalt beat him with the rod, and shalt deliver his soul from hell* (Proverbs 23:14) whole: *whom Yahuah (Lord) loveth he chasteneth*. The chastening is the mark of true sonship — *what son is he whom the father chasteneth not?* (12:7) — and it *yieldeth the peaceable fruit of righteousness* (12:11). The rod that does not let the child die is the love that refuses to abandon him.'),
+
+    -- THREAD 3: Labour not to be rich — riches fly away as an eagle
+    ('canon','proverbs',23,4,'canon','1-timothy',6,9,'free',
+      E'*But they that will be rich fall into temptation and a snare, and into many foolish and hurtful lusts, which drown men in destruction and perdition* (1 Timothy 6:9). The charge *Labour not to be rich: cease from thine own wisdom* (Proverbs 23:4) is kept whole in the NT: *they that will be rich fall into temptation and a snare*. The driving labour to be rich is not prudence but a snare; the next verse names the root — *the love of money is the root of all evil* (6:10).'),
+    ('canon','proverbs',23,5,'canon','1-timothy',6,10,'free',
+      E'*For the love of money is the root of all evil: which while some coveted after, they have erred from the faith, and pierced themselves through with many sorrows* (1 Timothy 6:10). The eagle-winged riches of *riches certainly make themselves wings; they fly away as an eagle toward heaven* (Proverbs 23:5) are the very thing the coveting heart pierces itself upon: *the love of money is the root of all evil*. What flies away cannot be clung to without sorrow; the wise eye is not set upon *that which is not*.'),
+    ('canon','proverbs',23,5,'canon','matthew',6,19,'free',
+      E'*Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal* (Matthew 6:19). The flying riches of *they fly away as an eagle toward heaven* (Proverbs 23:5) are the earthly treasure that cannot be laid up: *moth and rust doth corrupt*. The Master draws the proverb to its end — *where your treasure is, there will your heart be also* (6:21) — so the labour is to be for the treasure that does not take wings and fly.'),
+
+    -- THREAD 4: Envy not sinners but fear Yahuah — surely there is an end
+    ('canon','proverbs',23,17,'canon','psalms',37,1,'free',
+      E'*Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity* (Psalm 37:1). The charge *Let not thine heart envy sinners* (Proverbs 23:17) is David''s own song: *neither be thou envious against the workers of iniquity*. The reason follows in the Psalm as in the proverb — *For they shall soon be cut down like the grass* (37:2); the sinner''s flourishing is brief, and the fear of Yahuah, not envy, is the steady ground.'),
+    ('canon','proverbs',23,17,'canon','proverbs',24,19,'free',
+      E'*Fret not thyself because of evil men, neither be thou envious at the wicked; For there shall be no reward to the evil man; the candle of the wicked shall be put out* (Proverbs 24:19-20). The same book repeats the charge of *Let not thine heart envy sinners* (Proverbs 23:17) with its ground spelled out: *there shall be no reward to the evil man; the candle of the wicked shall be put out*. The envy is misplaced because the thing envied has no end but darkness.'),
+    ('canon','proverbs',23,18,'canon','proverbs',24,14,'free',
+      E'*So shall the knowledge of wisdom be unto thy soul: when thou hast found it, then there shall be a reward, and thy expectation shall not be cut off* (Proverbs 24:14). The promise *surely there is an end; and thine expectation shall not be cut off* (Proverbs 23:18) is twinned word-for-word a chapter on: *thy expectation shall not be cut off*. Against the candle of the wicked that is put out stands the wise soul''s reward that endures — the expected end that is not severed.'),
+    ('canon','proverbs',23,18,'canon','jeremiah',29,11,'free',
+      E'*For I know the thoughts that I think toward you, saith Yahuah (LORD), thoughts of peace, and not of evil, to give you an expected end* (Jeremiah 29:11). The *end* and *expectation* of *surely there is an end; and thine expectation shall not be cut off* (Proverbs 23:18) are, on the prophet''s lips, the very *expected end* Yahuah holds for His own: *thoughts of peace, and not of evil*. The fearer of Yahuah does not envy the sinner, because Yahuah Himself has appointed his latter end in peace.'),
+
+    -- THREAD 5: Hearken to thy father — buy the truth — give me thine heart
+    ('canon','proverbs',23,22,'canon','proverbs',1,8,'free',
+      E'*My son, hear the instruction of thy father, and forsake not the law of thy mother* (Proverbs 1:8). The charge *Hearken unto thy father that begat thee, and despise not thy mother when she is old* (Proverbs 23:22) is the book''s own opening word: *hear the instruction of thy father, and forsake not the law of thy mother*. The honour of father and mother is the doorway of wisdom, set down at the start and pressed again here — the parents'' teaching is *the law of thy mother*, the Torah handed on in the home.'),
+    ('canon','proverbs',23,22,'canon','exodus',20,12,'free',
+      E'*Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Exodus 20:12). The proverb''s *Hearken unto thy father that begat thee, and despise not thy mother when she is old* (Proverbs 23:22) rests on the Fifth Word of the Ten: *Honour thy father and thy mother*. The wisdom-saying is the Torah commandment lived out — the honouring that is not abolished but carried into the household, with its promise of long days in the land.'),
+    ('canon','proverbs',23,23,'canon','proverbs',4,7,'free',
+      E'*Wisdom is the principal thing; therefore get wisdom: and with all thy getting get understanding* (Proverbs 4:7). The charge *Buy the truth, and sell it not; also wisdom, and instruction, and understanding* (Proverbs 23:23) is the same getting: *therefore get wisdom: and with all thy getting get understanding*. The truth bought and never sold is wisdom itself, the principal thing, worth more than the riches that fly away as an eagle.'),
+    ('canon','proverbs',23,26,'canon','deuteronomy',6,5,'free',
+      E'*And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:5). The appeal *My son, give me thine heart, and let thine eyes observe my ways* (Proverbs 23:26) is the Shema''s own demand: *thou shalt love Yahuah Elohayka with all thine heart*. The father asking for the whole heart of his son speaks for Yahuah, who asks the whole heart of His people — and adds *these words... shall be in thine heart* (6:6), the heart given being the heart that keeps the words.'),
+    ('canon','proverbs',23,26,'canon','proverbs',4,23,'free',
+      E'*Keep thy heart with all diligence; for out of it are the issues of life* (Proverbs 4:23). The heart asked for in *My son, give me thine heart, and let thine eyes observe my ways* (Proverbs 23:26) is the same heart this charge guards: *Keep thy heart with all diligence; for out of it are the issues of life*. To give the heart to wisdom and to keep it with all diligence are one act — the eyes observing the father''s ways flow from the heart wholly given.'),
+
+    -- THREAD 6: Look not on the wine when it is red — it biteth like a serpent
+    ('canon','proverbs',23,31,'canon','proverbs',20,1,'free',
+      E'*Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise* (Proverbs 20:1). The warning *Look not thou upon the wine when it is red... At the last it biteth like a serpent* (Proverbs 23:31-32) is the same book''s verdict on the cup: *Wine is a mocker, strong drink is raging*. The wine that glistens red in the cup is the mocker that deceives; whoever is taken by it *is not wise*, however bright it looks at first.'),
+    ('canon','proverbs',23,29,'canon','isaiah',5,11,'free',
+      E'*Woe unto them that rise up early in the morning, that they may follow strong drink; that continue until night, till wine inflame them* (Isaiah 5:11). The woe and sorrow of *Who hath woe? who hath sorrow?... They that tarry long at the wine* (Proverbs 23:29-30) is Isaiah''s prophetic woe drawn out: those who *rise up early... that they may follow strong drink; that continue until night*. The tarrying long at the wine is the very thing the prophet names as bringing a whole people into captivity for want of knowledge (5:13).'),
+    ('canon','proverbs',23,30,'canon','isaiah',5,22,'free',
+      E'*Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink* (Isaiah 5:22). The seekers of *they that go to seek mixed wine* (Proverbs 23:30) are Isaiah''s *men of strength to mingle strong drink* — those who boast their prowess at the cup. The prophet lays the woe where the proverb lays the woe: the strength spent on mingling strong drink is strength turned to ruin.'),
+    ('canon','proverbs',23,33,'canon','isaiah',28,7,'free',
+      E'*But they also have erred through wine, and through strong drink are out of the way; the priest and the prophet have erred through strong drink, they are swallowed up of wine, they are out of the way through strong drink; they err in vision, they stumble in judgment* (Isaiah 28:7). The reeling mind of *Thine eyes shall behold strange women, and thine heart shall utter perverse things* (Proverbs 23:33) is what wine works even on priest and prophet: *they err in vision, they stumble in judgment*. The drink that makes the drunkard''s heart utter perverse things is the same that swallows up the very teachers of Yashar''el.'),
+    ('canon','proverbs',23,31,'apocrypha','ecclesiasticus',31,25,'extras',
+      E'*Shew not your valiantness in wine; for wine has destroyed many* (Sirach 31:25). The restored witness sets the same warning beside *Look not thou upon the wine when it is red... At the last it biteth like a serpent* (Proverbs 23:31-32): *wine has destroyed many*. The boast of strength at the cup — the valiantness in wine — is the very thing the proverb says bites like a serpent at the last.'),
+    ('canon','proverbs',23,32,'apocrypha','ecclesiasticus',31,30,'extras',
+      E'*Drunkenness increaseth the rage of a fool till he offend: it diminisheth strength, and makes wounds* (Sirach 31:30). The serpent-bite of *At the last it biteth like a serpent, and stingeth like an adder* (Proverbs 23:32) is here named plain: drunkenness *makes wounds* — the very *wounds without cause* the proverb asks after (23:29). The restored witness measures the cup exactly as Proverbs does: gladness if drunk in season (31:27-28), but rage and wounds in excess.'),
+    ('canon','proverbs',23,35,'canon','ephesians',5,18,'free',
+      E'*And be not drunk with wine, wherein is excess; but be filled with the Spirit* (Ephesians 5:18). The stupefied bondage of *They have stricken me... and I felt it not: when shall I awake? I will seek it yet again* (Proverbs 23:35) is exactly the excess the NT forbids — *be not drunk with wine, wherein is excess* — and it names the better filling against it: *but be filled with the Spirit*. The cup that leaves a man senseless and craving more is set against the Spirit''s fullness that makes him sing (5:19).'),
+
+    -- THREAD 7: When thou sittest to eat with a ruler, put a knife to thy throat
+    ('canon','proverbs',23,1,'apocrypha','ecclesiasticus',31,12,'extras',
+      E'*If you sit at a bountiful table, be not greedy upon it, and say not, There is much meat on it* (Sirach 31:12). The counsel *When thou sittest to eat with a ruler, consider diligently what is before thee* (Proverbs 23:1) finds its closest echo in the restored witness: *If you sit at a bountiful table, be not greedy upon it*. The bountiful table of the great man calls not for appetite but for diligent restraint — the same wisdom in both books.'),
+    ('canon','proverbs',23,2,'apocrypha','ecclesiasticus',31,16,'extras',
+      E'*Eat as it becometh a man, those things which are set before you; and devour not, lest you be hated* (Sirach 31:16). The knife at the throat of *put a knife to thy throat, if thou be a man given to appetite* (Proverbs 23:2) is this same bridle on the greedy eater: *devour not, lest you be hated*. The man given to appetite must rule himself at the table, eating as becometh a man and not as one whose throat needs a knife held to it.'),
+    ('canon','proverbs',23,3,'apocrypha','ecclesiasticus',31,17,'extras',
+      E'*Leave off first for manners'' sake; and be not unsatiable, lest you offend* (Sirach 31:17). The deceitful dainties of *Be not desirous of his dainties: for they are deceitful meat* (Proverbs 23:3) are met with the same restraint the restored witness teaches: *Leave off first... and be not unsatiable*. To desire the ruler''s dainties is to be drawn by deceitful meat; the wise leave off first and are not mastered by the unsatiable craving.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (THE KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-23-remove-not-the-old-landmark-their-redeemer-is-mighty',
+       E'Remove not the old landmark — their Redeemer is mighty',
+       E'The keystone of the chapter sets the Torah''s boundary-stone law beside the kinsman-Redeemer: *Remove not the old landmark; and enter not into the fields of the fatherless: For their redeemer is mighty; he shall plead their cause with thee* (Proverbs 23:10-11). To move a landmark is no small fraud — it is the seizing of an inheritance Yahuah Himself apportioned. The Torah forbids it outright — *Thou shalt not remove thy neighbour''s landmark, which they of old time have set in thine inheritance* (Deuteronomy 19:14) — and lays the covenant curse on it at mount Ebal: *Cursed be he that removeth his neighbour''s landmark. And all the people shall say, Amen* (Deuteronomy 27:17). The proverb singles out the *fields of the fatherless*, the most defenceless, and names their defender: their *redeemer*, the Goel — the near-kinsman whose office in the Torah is to buy back the lost portion of the poor — *if any of his kin come to redeem it, then shall he redeem that which his brother sold* (Leviticus 25:25). That mighty Goel is the One Job confesses from the ash-heap — *I know that my redeemer liveth, and that he shall stand at the latter day upon the earth* (Job 19:25) — and the One Jeremiah names over scattered, oppressed Yashar''el and Yahudah together: *Their Redeemer is strong; Yahuah Tseva''ot (LORD of hosts) is his name: he shall throughly plead their cause* (50:34). The proverb''s *he shall plead their cause with thee* is the Goel''s very work; the same book has just declared it of the robbed poor — *Yahuah (LORD) will plead their cause, and spoil the soul of those that spoiled them* (22:23) — and the ancient-landmark charge stands a chapter back: *Remove not the ancient landmark, which thy fathers have set* (22:28). To move the orphan''s boundary is to draw the strong Redeemer Himself into the lawsuit. The fatherless are not friendless: their Kinsman is mighty, and He pleads their cause.',
+       sv.verse_id, ev.verse_id, 'free', 28550
+  FROM _s304_pr23_lookup sv, _s304_pr23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=23 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-23-the-rod-that-delivereth-the-soul-from-sheol',
+       E'The rod that delivereth the soul from sheol',
+       E'The chapter''s charge on discipline is no licence for cruelty but a promise of deliverance: *Withhold not correction from the child: for if thou beatest him with the rod, he shall not die. Thou shalt beat him with the rod, and shalt deliver his soul from hell* (Proverbs 23:13-14). The rod here SAVES — it delivers the soul from sheol — because it drives out what would destroy the child. The same book says it plainly: *He that spareth his rod hateth his son: but he that loveth him chasteneth him betimes* (13:24); *Foolishness is bound in the heart of a child; but the rod of correction shall drive it far from him* (22:15). The correction is the loosing of a bound folly, not the venting of a parent''s anger. The Torah grounds the whole pattern in Yahuah''s own fatherhood: *as a man chasteneth his son, so Yahuah Elohayka (the LORD thy God) chasteneth thee* (Deuteronomy 8:5). And the NT keeps it whole, the SAME measure, never abolished: *whom Yahuah (Lord) loveth he chasteneth, and scourgeth every son whom he receiveth* (Hebrews 12:6) — *for what son is he whom the father chasteneth not?* (12:7) — and the chastening *afterward... yieldeth the peaceable fruit of righteousness* (12:11). The rod that will not let the child die is the love that refuses to abandon him to his own folly; the Father who chastens does so to save.',
+       sv.verse_id, ev.verse_id, 'free', 28553
+  FROM _s304_pr23_lookup sv, _s304_pr23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=23 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-23-labour-not-to-be-rich-riches-fly-away-as-an-eagle',
+       E'Labour not to be rich — riches fly away as an eagle',
+       E'The chapter sets a bridle on the drive for wealth: *Labour not to be rich: cease from thine own wisdom. Wilt thou set thine eyes upon that which is not? for riches certainly make themselves wings; they fly away as an eagle toward heaven* (Proverbs 23:4-5). Riches are *that which is not* — here for a moment, then gone on eagle''s wings; to spend the strength of life chasing them is to set the eye on a vanishing thing. The NT fills the warning forward without softening it: *they that will be rich fall into temptation and a snare, and into many foolish and hurtful lusts, which drown men in destruction and perdition. For the love of money is the root of all evil: which while some coveted after, they have erred from the faith, and pierced themselves through with many sorrows* (1 Timothy 6:9-10). And the Master draws the proverb to its end: *Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal* (Matthew 6:19) — *for where your treasure is, there will your heart be also* (6:21). The eagle-winged riches are the earthly treasure that cannot be laid up; the wise labour is not for the wealth that takes wings, but for the treasure that does not fly away — and so for the heart that follows it heavenward.',
+       sv.verse_id, ev.verse_id, 'free', 28556
+  FROM _s304_pr23_lookup sv, _s304_pr23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=23 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-23-envy-not-sinners-but-fear-yahuah-surely-there-is-an-end',
+       E'Envy not sinners — but fear Yahuah, for surely there is an end',
+       E'The chapter charges the heart against a common temptation: *Let not thine heart envy sinners: but be thou in the fear of Yahuah (LORD) all the day long. For surely there is an end; and thine expectation shall not be cut off* (Proverbs 23:17-18). The sinner''s present prosperity is not to be envied, because the fear of Yahuah holds a surer end. David sang the same: *Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity. For they shall soon be cut down like the grass* (Psalm 37:1-2). The same book repeats it with its ground laid bare: *Fret not thyself because of evil men, neither be thou envious at the wicked; For there shall be no reward to the evil man; the candle of the wicked shall be put out* (24:19-20). And the proverb''s promise — *surely there is an end; and thine expectation shall not be cut off* — is twinned word-for-word a chapter on: *when thou hast found it, then there shall be a reward, and thy expectation shall not be cut off* (24:14). Jeremiah names the end Yahuah keeps for His own: *thoughts of peace, and not of evil, to give you an expected end* (29:11). The candle of the wicked is put out; the fearer''s expectation is never cut off. Envy is misplaced — what the sinner has ends, and what the fearer awaits does not.',
+       sv.verse_id, ev.verse_id, 'free', 28559
+  FROM _s304_pr23_lookup sv, _s304_pr23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=23 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-23-hearken-to-thy-father-buy-the-truth-give-me-thine-heart',
+       E'Hearken to thy father — buy the truth — give me thine heart',
+       E'The chapter gathers the father''s plea into three movements: *Hearken unto thy father that begat thee, and despise not thy mother when she is old* (23:22); *Buy the truth, and sell it not; also wisdom, and instruction, and understanding* (23:23); *My son, give me thine heart, and let thine eyes observe my ways* (23:26). The honouring of father and mother is the book''s own doorway — *My son, hear the instruction of thy father, and forsake not the law of thy mother* (1:8) — and it rests on the Fifth Word of the Ten, the Torah affirmed and lived in the home: *Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Exodus 20:12). The truth to be bought and never sold is wisdom itself — *Wisdom is the principal thing; therefore get wisdom: and with all thy getting get understanding* (4:7) — worth more than the eagle-winged riches the chapter warned against. And *give me thine heart* is the Shema''s own demand: *thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:5), with the words to be *in thine heart* (6:6) — the heart given being the heart that keeps the words. The charge that closes Proverbs 4 holds the same heart: *Keep thy heart with all diligence; for out of it are the issues of life* (4:23). The father asking the whole heart of his son speaks for the Father who asks the whole heart of His people.',
+       sv.verse_id, ev.verse_id, 'free', 28562
+  FROM _s304_pr23_lookup sv, _s304_pr23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=23 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-23-look-not-on-the-wine-when-it-is-red-it-biteth-like-a-serpent',
+       E'Look not on the wine when it is red — at the last it biteth like a serpent',
+       E'The longest single passage of the chapter is its unsparing portrait of the drunkard: *Who hath woe? who hath sorrow? who hath contentions? who hath babbling? who hath wounds without cause? who hath redness of eyes? They that tarry long at the wine... Look not thou upon the wine when it is red, when it giveth his colour in the cup... At the last it biteth like a serpent, and stingeth like an adder* (Proverbs 23:29-32). The cup that glistens bright at first leaves the man stupefied and craving more — *They have stricken me... and I felt it not... when shall I awake? I will seek it yet again* (23:35). The same book gives the verdict: *Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise* (20:1). Isaiah lays the prophetic woe in the very words of the proverb: *Woe unto them that rise up early in the morning, that they may follow strong drink; that continue until night, till wine inflame them* (5:11); *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink* (5:22); and even priest and prophet are not spared — *they err in vision, they stumble in judgment* (28:7), the same reeling mind that makes the drunkard''s *eyes... behold strange women, and thine heart... utter perverse things* (23:33). The restored witness measures the cup exactly as Proverbs does — gladness in season, but ruin in excess: *Shew not your valiantness in wine; for wine has destroyed many* (Sirach 31:25); *Drunkenness increaseth the rage of a fool till he offend: it diminisheth strength, and makes wounds* (31:30) — the very *wounds without cause* the proverb names. And the NT sets the better filling against the cup: *be not drunk with wine, wherein is excess; but be filled with the Spirit* (Ephesians 5:18). The serpent-bite of the red wine is answered by the Spirit''s fullness.',
+       sv.verse_id, ev.verse_id, 'extras', 28565
+  FROM _s304_pr23_lookup sv, _s304_pr23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=23 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-23-when-thou-sittest-to-eat-with-a-ruler-put-a-knife-to-thy-throat',
+       E'When thou sittest to eat with a ruler — put a knife to thy throat',
+       E'The chapter opens on the discipline of the table: *When thou sittest to eat with a ruler, consider diligently what is before thee: And put a knife to thy throat, if thou be a man given to appetite. Be not desirous of his dainties: for they are deceitful meat* (Proverbs 23:1-3). The great man''s spread is not what it seems — *deceitful meat* — and the man who cannot bridle his appetite is told to hold a knife to his own throat rather than be mastered by it. The restored witness gives the closest parallel in the whole library, the same wisdom drawn out: *If you sit at a bountiful table, be not greedy upon it, and say not, There is much meat on it* (Sirach 31:12); *Eat as it becometh a man, those things which are set before you; and devour not, lest you be hated* (31:16); *Leave off first for manners'' sake; and be not unsatiable, lest you offend* (31:17). The bountiful table calls not for appetite but for restraint; to be drawn by the dainties is to be taken in by deceitful meat. (The chapter presses the same lesson on the grudging host a few verses on — *Eat thou not the bread of him that hath an evil eye... for as he thinketh in his heart, so is he* (23:6-7) — the table that looks generous and is not.) The bridled appetite is the beginning of the chapter''s wisdom, as the bridled cup is its end.',
+       sv.verse_id, ev.verse_id, 'extras', 28568
+  FROM _s304_pr23_lookup sv, _s304_pr23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=23 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt not remove thy neighbour''s landmark, which they of old time have set* (Deuteronomy 19:14) — the proverb''s *Remove not the old landmark* is this Torah law spoken as wisdom; the boundary marks the covenant allotment.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=10
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=19 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-remove-not-the-old-landmark-their-redeemer-is-mighty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Cursed be he that removeth his neighbour''s landmark* (Deuteronomy 27:17) — at mount Ebal the moving of the landmark is laid under the covenant curse the whole people answered with Amen.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=10
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-remove-not-the-old-landmark-their-redeemer-is-mighty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*if any of his kin come to redeem it, then shall he redeem that which his brother sold* (Leviticus 25:25) — the *redeemer* of 23:11 is this Goel, the near-kinsman who buys back the lost inheritance of the poor.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=11
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-remove-not-the-old-landmark-their-redeemer-is-mighty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I know that my redeemer liveth, and that he shall stand at the latter day upon the earth* (Job 19:25) — the mighty Goel who pleads the fatherless cause is the living Redeemer Job confesses from the ash-heap.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=11
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=19 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-remove-not-the-old-landmark-their-redeemer-is-mighty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Their Redeemer is strong; Yahuah Tseva''ot (LORD of hosts) is his name: he shall throughly plead their cause* (Jeremiah 50:34) — the prophet names the proverb''s pleading-Goel: Yahuah Himself pleading the cause of His scattered two-house people.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=11
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=50 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-remove-not-the-old-landmark-their-redeemer-is-mighty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Foolishness is bound in the heart of a child; but the rod of correction shall drive it far from him* (Proverbs 22:15) — the correction of 23:13 is the loosing of a bound folly, not cruelty; the child is healed, the folly driven far.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=13
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=22 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-the-rod-that-delivereth-the-soul-from-sheol'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*as a man chasteneth his son, so Yahuah Elohayka (the LORD thy God) chasteneth thee* (Deuteronomy 8:5) — the fatherly rod of 23:14 images Yahuah''s own dealing: chastening to save, not to destroy.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=14
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-the-rod-that-delivereth-the-soul-from-sheol'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*whom Yahuah (Lord) loveth he chasteneth, and scourgeth every son whom he receiveth* (Hebrews 12:6) — the NT keeps the rod of 23:14 whole: chastening is the mark of true sonship, yielding the peaceable fruit of righteousness.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=14
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-the-rod-that-delivereth-the-soul-from-sheol'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*they that will be rich fall into temptation and a snare* (1 Timothy 6:9) — the charge *Labour not to be rich* (23:4) kept whole; the drive to be rich is not prudence but a snare.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-labour-not-to-be-rich-riches-fly-away-as-an-eagle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*For the love of money is the root of all evil* (1 Timothy 6:10) — the eagle-winged riches of 23:5 are what the coveting heart pierces itself upon; what flies away cannot be clung to without sorrow.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=6 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-labour-not-to-be-rich-riches-fly-away-as-an-eagle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt* (Matthew 6:19) — the flying riches of 23:5 are the earthly treasure that cannot be laid up; *where your treasure is, there will your heart be also* (6:21).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-labour-not-to-be-rich-riches-fly-away-as-an-eagle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity* (Psalm 37:1) — David''s own form of *Let not thine heart envy sinners* (23:17); the sinner''s flourishing is brief.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-envy-not-sinners-but-fear-yahuah-surely-there-is-an-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*there shall be no reward to the evil man; the candle of the wicked shall be put out* (Proverbs 24:19-20) — the same book''s ground for 23:17: the thing envied has no end but darkness.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=24 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-envy-not-sinners-but-fear-yahuah-surely-there-is-an-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*then there shall be a reward, and thy expectation shall not be cut off* (Proverbs 24:14) — the promise of 23:18 twinned word-for-word; the wise soul''s reward endures.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=18
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=24 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-envy-not-sinners-but-fear-yahuah-surely-there-is-an-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*thoughts of peace, and not of evil, to give you an expected end* (Jeremiah 29:11) — the *expected end* of 23:18 on the prophet''s lips: Yahuah Himself has appointed the fearer''s latter end in peace.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=18
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=29 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-envy-not-sinners-but-fear-yahuah-surely-there-is-an-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*My son, hear the instruction of thy father, and forsake not the law of thy mother* (Proverbs 1:8) — the book''s own opening charge behind *Hearken unto thy father* (23:22); the parents'' teaching is the Torah handed on in the home.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=22
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-hearken-to-thy-father-buy-the-truth-give-me-thine-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Honour thy father and thy mother: that thy days may be long upon the land* (Exodus 20:12) — the Fifth Word of the Ten behind 23:22; the Torah commandment lived out in the household, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=22
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-hearken-to-thy-father-buy-the-truth-give-me-thine-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Wisdom is the principal thing; therefore get wisdom* (Proverbs 4:7) — the truth to be bought and never sold (23:23) is wisdom itself, worth more than the riches that fly away.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=23
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=4 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-hearken-to-thy-father-buy-the-truth-give-me-thine-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart* (Deuteronomy 6:5) — *give me thine heart* (23:26) is the Shema''s own demand; the heart given is the heart that keeps the words (6:6).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=26
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-hearken-to-thy-father-buy-the-truth-give-me-thine-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Keep thy heart with all diligence; for out of it are the issues of life* (Proverbs 4:23) — the heart asked for in 23:26 is the heart this charge guards; giving and keeping the heart are one act.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=26
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=4 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-hearken-to-thy-father-buy-the-truth-give-me-thine-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise* (Proverbs 20:1) — the same book''s verdict on the cup of 23:31; the red wine is the mocker that deceives.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=31
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=20 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-look-not-on-the-wine-when-it-is-red-it-biteth-like-a-serpent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Woe unto them that rise up early in the morning, that they may follow strong drink* (Isaiah 5:11) — Isaiah''s prophetic woe on the very tarrying-long-at-the-wine of 23:29-30.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=29
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-look-not-on-the-wine-when-it-is-red-it-biteth-like-a-serpent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink* (Isaiah 5:22) — the seekers of mixed wine (23:30) are Isaiah''s men who boast their prowess at the cup.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=30
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-look-not-on-the-wine-when-it-is-red-it-biteth-like-a-serpent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the priest and the prophet have erred through strong drink... they err in vision, they stumble in judgment* (Isaiah 28:7) — the reeling mind of 23:33 works even on the teachers of Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=33
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=28 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-look-not-on-the-wine-when-it-is-red-it-biteth-like-a-serpent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Shew not your valiantness in wine; for wine has destroyed many* (Sirach 31:25) — the restored witness sets the same warning beside 23:31-32; the boast at the cup is what bites like a serpent at the last.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=31
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=31 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-look-not-on-the-wine-when-it-is-red-it-biteth-like-a-serpent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Drunkenness increaseth the rage of a fool till he offend... and makes wounds* (Sirach 31:30) — the serpent-bite of 23:32 named plain; the *wounds without cause* the proverb asks after (23:29).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=32
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=31 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-look-not-on-the-wine-when-it-is-red-it-biteth-like-a-serpent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*be not drunk with wine, wherein is excess; but be filled with the Spirit* (Ephesians 5:18) — the NT names the better filling against the senseless craving of 23:35; the serpent-cup answered by the Spirit''s fullness.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=35
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=5 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-look-not-on-the-wine-when-it-is-red-it-biteth-like-a-serpent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*If you sit at a bountiful table, be not greedy upon it* (Sirach 31:12) — the closest parallel to *When thou sittest to eat with a ruler* (23:1); the bountiful table calls for restraint, not appetite.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=1
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=31 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-when-thou-sittest-to-eat-with-a-ruler-put-a-knife-to-thy-throat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Eat as it becometh a man... and devour not, lest you be hated* (Sirach 31:16) — the knife at the throat of 23:2: the man given to appetite must rule himself at the table.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=2
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=31 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-when-thou-sittest-to-eat-with-a-ruler-put-a-knife-to-thy-throat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Leave off first for manners'' sake; and be not unsatiable, lest you offend* (Sirach 31:17) — the deceitful dainties of 23:3 met with restraint: the wise leave off first, not mastered by craving.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s304_pr23_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=31 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-23-when-thou-sittest-to-eat-with-a-ruler-put-a-knife-to-thy-throat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_proverbs_24.sql (Proverbs 24) -----
+-- Chapter: Proverbs 24 — the close of the "words of the wise," carrying a FRAMEWORK HEAVYWEIGHT at vv.11-12: *If thou forbear to deliver them that are drawn unto death... doth not he that pondereth the heart consider it?... and shall not he render to every man according to his works?* (24:11-12). The whole library's judgment-by-works principle stands here — judgment ACCORDING TO works (the deeds weighed, never works-righteousness earning) bound to the duty to deliver the innocent drawn to death. Around it run the love-of-enemy / victims-not-enemies charge (*Rejoice not when thine enemy falleth* 24:17), the sweetness of wisdom and its sure reward (*eat thou honey... there shall be a reward* 24:13-14), the rising of the just man who falls seven times (24:16), the fret-not of the put-out candle of the wicked (24:19-20), the Torah's just-judgment against respect of persons (24:23-25), and the ninth-word against the causeless witness with its recompense-not-evil close (24:28-29).
+-- Tag: pr24   Temp view: _s304_pr24_lookup
+-- Sort band: base 28575, step 3 -> threads at 28575, 28578, 28581, 28584, 28587, 28590, 28593 (7 threads)
+-- Source of EVERY row: 'canon','proverbs',24,v
+--
+-- Proverbs 24 coverage:
+--   ★★ v.11-12 (If thou forbear to deliver them that are drawn unto death... shall not he render to every man according to his works) — THE FRAMEWORK HEAVYWEIGHT
+--        NT:     ★ Romans 2:6 (Who will render to every man according to his deeds); Revelation 22:12 (my reward is with me, to give every man according as his work shall be); Matthew 16:27 (he shall reward every man according to his works) — THREAD 1
+--        Extras: none warranted (the render-by-works principle carried whole by Tanakh + NT; no clean apocryphal member adds)
+--        Tanakh: ★ Psalm 62:12 (thou renderest to every man according to his work — LIVE Psalms thread, cited laterally); Job 34:11 (the work of a man shall he render unto him); Jeremiah 17:10 (to give every man according to his ways); ★ Psalm 82:4 (Deliver the poor and needy; rid them out of the hand of the wicked); Isaiah 58:6-7 (loose the bands of wickedness... deal thy bread to the hungry) — THREAD 1; plus 2 Timothy 4:14 (the Lord reward him according to his works) folded in prose
+--   ★ v.17-18 (Rejoice not when thine enemy falleth... Lest Yahuah see it, and it displease him) — victims-not-enemies
+--        NT:     ★ Matthew 5:44 (Love your enemies, bless them that curse you); Romans 12:14 (Bless them which persecute you) — THREAD 2
+--        Extras: none warranted distinct (Job 31:29 + the NT carry the love-of-enemy whole)
+--        Tanakh: ★ Job 31:29 (If I rejoiced at the destruction of him that hated me); Proverbs 25:21 (If thine enemy be hungry, give him bread — lateral, Pack 6 sibling); Obadiah 1:12 (neither shouldest thou have rejoiced over the children of Yahudah in the day of their destruction) — THREAD 2
+--   v.13-14 (eat thou honey... so shall the knowledge of wisdom be unto thy soul: there shall be a reward, and thy expectation shall not be cut off)
+--        NT:     none warranted distinct (the honey-of-wisdom figure carried by Psalm 19/119 + Jeremiah)
+--        Extras: none warranted distinct
+--        Tanakh: ★ Psalm 19:10 (sweeter also than honey and the honeycomb; in keeping of them there is great reward); Psalm 119:103 (How sweet are thy words unto my taste! sweeter than honey); Proverbs 23:18 (there is an end; and thine expectation shall not be cut off — lateral); Jeremiah 29:11 (thoughts of peace... to give you an expected end) — THREAD 3
+--   v.15-16 (a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief)
+--        NT:     2 Corinthians 4:9 (cast down, but not destroyed) — THREAD 4
+--        Extras: none warranted distinct
+--        Tanakh: ★ Psalm 37:24 (Though he fall, he shall not be utterly cast down: for Yahuah upholdeth him); Micah 7:8 (when I fall, I shall arise); Psalm 34:19 (Many are the afflictions of the righteous: but Yahuah delivereth him out of them all) — THREAD 4
+--   v.19-20 (Fret not because of evil men... the candle of the wicked shall be put out)
+--        NT:     none warranted distinct
+--        Extras: none warranted distinct
+--        Tanakh: ★ Psalm 37:1 (Fret not thyself because of evildoers); Psalm 37:38 (the end of the wicked shall be cut off); Proverbs 13:9 (the lamp of the wicked shall be put out — lateral); Job 18:5 (the light of the wicked shall be put out) — THREAD 5
+--   v.21-22 (fear thou Yahuah and the king: and meddle not with them that are given to change)
+--        folded into coverage (civic/prudential): touched in prose; 1 Peter 2:17 / Romans 13:1 weighed but the verse is prudential-civic, no framework-bearing thread forced. The fear-of-Yahuah weight is carried by THREAD 3's fear/reward laterals.
+--   v.23-25 (It is not good to have respect of persons in judgment)
+--        NT:     ★ John 7:24 (Judge not according to the appearance, but judge righteous judgment); James 2:1 (have not the faith... with respect of persons); James 2:9 (if ye have respect to persons... are convinced of the law as transgressors) — THREAD 6
+--        Extras: none warranted distinct
+--        Tanakh: ★ Leviticus 19:15 (thou shalt not respect the person of the poor, nor honour the person of the mighty); Deuteronomy 1:17 (Ye shall not respect persons in judgment... for the judgment is Elohim's); Proverbs 18:5 (It is not good to accept the person of the wicked) — THREAD 6
+--   v.28-29 (Be not a witness against thy neighbour without cause... Say not, I will do so to him as he hath done to me)
+--        NT:     ★ Romans 12:17 (Recompense to no man evil for evil) — THREAD 7
+--        Extras: none warranted distinct
+--        Tanakh: ★ Exodus 20:16 (Thou shalt not bear false witness against thy neighbour); Deuteronomy 5:20 (Neither shalt thou bear false witness against thy neighbour); Deuteronomy 32:35 (To me belongeth vengeance, and recompence); Proverbs 20:22 (Say not thou, I will recompense evil; but wait on Yahuah — lateral) — THREAD 7
+--   PRUDENTIAL/WISDOM COUPLETS, none warranted (folded contextually or merely-prudential, no thread): v.1-2 (be not envious against evil men — touched in THREAD 5 prose), v.3-4 (through wisdom is an house builded), v.5-6 (a wise man is strong / multitude of counsellors), v.7-9 (wisdom too high for a fool / the scorner an abomination), v.10 (if thou faint in the day of adversity — touched in THREAD 1 prose, the forbearing to deliver), v.26 (every man shall kiss his lips that giveth a right answer), v.27 (prepare thy work without... afterwards build thine house — prudential order of labour), v.30-34 (the field of the slothful / poverty as an armed man — lateral to Proverbs 6:10-11, merely-prudential, no framework weave forced).
+--
+-- Threads (slug — target libraries):
+--   1. proverbs-24-he-shall-render-to-every-man-according-to-his-works — Tanakh (Psalm, Job, Jeremiah, Isaiah) + NT (Romans, Revelation, Matthew) [free] (★★ THE HEAVYWEIGHT: judgment ACCORDING TO works, never works-righteousness; bound to the duty to deliver the innocent drawn to death)
+--   2. proverbs-24-rejoice-not-when-thine-enemy-falleth — Tanakh (Job, Proverbs, Obadiah) + NT (Matthew, Romans) [free] (victims-not-enemies / love-of-enemy; no gloating over the fallen)
+--   3. proverbs-24-eat-honey-so-the-knowledge-of-wisdom-the-reward-not-cut-off — Tanakh (Psalm, Proverbs, Jeremiah) [free] (wisdom sweeter than honey; the sure reward and unbroken expectation)
+--   4. proverbs-24-a-just-man-falleth-seven-times-and-riseth-up-again — Tanakh (Psalm, Micah) + NT (2 Corinthians) [free] (the righteous fall and rise; the wicked fall into mischief)
+--   5. proverbs-24-fret-not-the-candle-of-the-wicked-shall-be-put-out — Tanakh (Psalm, Proverbs, Job) [free] (fret not at evil men; their candle put out, their end cut off)
+--   6. proverbs-24-no-respect-of-persons-in-judgment — Tanakh (Leviticus, Deuteronomy, Proverbs) + NT (John, James) [free] (the Torah's just-judgment; impartial weighing affirmed by the apostles)
+--   7. proverbs-24-be-not-a-witness-without-cause-recompense-not-evil — Tanakh (Exodus, Deuteronomy, Proverbs) + NT (Romans) [free] (the ninth word against the causeless witness; vengeance belongs to Yahuah)
+--
+-- Framing notes:
+--   ★★ THE HEAVYWEIGHT (THREAD 1): *If thou forbear to deliver them that are drawn unto death... If thou sayest, Behold, we knew it not; doth not he that pondereth the heart consider it?... and shall not he render to every man according to his works?* (24:11-12). This is the library's judgment-by-works principle in its plainest Tanakh statement — Yahuah renders to every man ACCORDING TO his works (the deeds weighed at the judgment), never works that earn or purchase. The deeds are the evidence read by the One who *pondereth the heart*, who *keepeth thy soul* and so *knoweth it*. The principle is one across the whole canon: *Who will render to every man according to his deeds* (Romans 2:6); *behold, I come quickly; and my reward is with me, to give every man according as his work shall be* (Revelation 22:12); *the Son of Adam shall come in the glory of his Father... and then he shall reward every man according to his works* (Matthew 16:27); *the work of a man shall he render unto him, and cause every man to find according to his ways* (Job 34:11); *I Yahuah (LORD) search the heart, I try the reins, even to give every man according to his ways* (Jeremiah 17:10). The Psalms already sing it — *thou renderest to every man according to his work* (Psalm 62:12) — a live Psalms thread cited here laterally. And the FIRST half of the verse is no mere abstraction: the works weighed include the duty to *deliver them that are drawn unto death*. The Psalm makes it a command — *Deliver the poor and needy: rid them out of the hand of the wicked* (Psalm 82:4) — and Isaiah names the very fast Yahuah chose: *to loose the bands of wickedness, to undo the heavy burdens, and to let the oppressed go free... to deal thy bread to the hungry* (Isaiah 58:6-7). To say *we knew it not* is the excuse the heart-ponderer sees through. (Sha'ul applies the same render-by-works to a personal wrong without taking it into his own hand: *Alexander the coppersmith did me much evil: Yahuah (Lord) reward him according to his works* — 2 Timothy 4:14.) NO works-righteousness here — the deeds are the fruit Yahuah reads, never the wage that buys; but neither is the verse abolished, for the NT keeps the very measure.
+--   ★ VICTIMS NOT ENEMIES (THREAD 2): *Rejoice not when thine enemy falleth, and let not thine heart be glad when he stumbleth: Lest Yahuah (LORD) see it, and it displease him* (24:17-18). The framework's victims-not-enemies posture in the Tanakh's own words: no gloating over the fallen, for Yahuah Himself is displeased by the glad heart at an enemy's ruin. Job swore he never did it: *If I rejoiced at the destruction of him that hated me, or lifted up myself when evil found him* (Job 31:29). The same book commands the opposite — the open hand to the foe: *If thine enemy be hungry, give him bread to eat* (Proverbs 25:21). Edom is judged for exactly the gloating this proverb forbids: *neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction* (Obadiah 1:12). And Yahusha (Jesus) carries it to its height, never abolishing it: *Love your enemies, bless them that curse you, do good to them that hate you* (Matthew 5:44); *Bless them which persecute you: bless, and curse not* (Romans 12:14).
+--   ★ THE SWEET REWARD (THREAD 3): *My son, eat thou honey, because it is good... So shall the knowledge of wisdom be unto thy soul: when thou hast found it, then there shall be a reward, and thy expectation shall not be cut off* (24:13-14). Wisdom is sweet as honey and bears a sure reward — the very thing the Psalms say of the Torah: *More to be desired are they than gold... sweeter also than honey and the honeycomb... and in keeping of them there is great reward* (Psalm 19:10-11); *How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!* (Psalm 119:103). The unbroken expectation echoes the same book's promise — *surely there is an end; and thine expectation shall not be cut off* (Proverbs 23:18) — which Jeremiah names as Yahuah's own purpose: *thoughts of peace, and not of evil, to give you an expected end* (Jeremiah 29:11).
+--   ★ THE JUST MAN RISES (THREAD 4): *For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief* (24:16). The righteous fall and rise; the wicked fall and stay down. David sings it — *Though he fall, he shall not be utterly cast down: for Yahuah (LORD) upholdeth him with his hand* (Psalm 37:24); *Many are the afflictions of the righteous: but Yahuah (LORD) delivereth him out of them all* (Psalm 34:19). Micah voices the very rising against the gloating enemy of THREAD 2: *Rejoice not against me, O mine enemy: when I fall, I shall arise* (Micah 7:8). And Sha'ul keeps it whole: *cast down, but not destroyed* (2 Corinthians 4:9).
+--   ★ FRET NOT (THREAD 5): *Fret not thyself because of evil men, neither be thou envious at the wicked; For there shall be no reward to the evil man; the candle of the wicked shall be put out* (24:19-20). The same charge that opens Psalm 37 — *Fret not thyself because of evildoers* (37:1) — with the same end: *the end of the wicked shall be cut off* (37:38). The same book sets the candle-figure: *the lamp of the wicked shall be put out* (Proverbs 13:9); and Job: *the light of the wicked shall be put out* (Job 18:5). The proverb's *no reward to the evil man* is the dark mirror of THREAD 1's render-by-works: the wicked have no reward laid up.
+--   ★ NO RESPECT OF PERSONS (THREAD 6): *These things also belong to the wise. It is not good to have respect of persons in judgment* (24:23). This is the Torah's own just-judgment command set as a proverb: *Ye shall do no unrighteousness in judgment: thou shalt not respect the person of the poor, nor honour the person of the mighty* (Leviticus 19:15); *Ye shall not respect persons in judgment... for the judgment is Elohim's (God's)* (Deuteronomy 1:17). The same book repeats it — *It is not good to accept the person of the wicked, to overthrow the righteous in judgment* (Proverbs 18:5). Yahusha keeps the measure — *Judge not according to the appearance, but judge righteous judgment* (John 7:24) — and Ya'aqob (James) makes the verdict the proverb hints (*him shall the people curse* 24:24) a charge of Torah-breaking: *if ye have respect to persons, ye commit sin, and are convinced of the law as transgressors* (James 2:9).
+--   ★ THE CAUSELESS WITNESS (THREAD 7): *Be not a witness against thy neighbour without cause; and deceive not with thy lips. Say not, I will do so to him as he hath done to me: I will render to the man according to his work* (24:28-29). The first half is the ninth word: *Thou shalt not bear false witness against thy neighbour* (Exodus 20:16; Deuteronomy 5:20). The second forbids private vengeance even under the language of THREAD 1's render-by-works — for the rendering belongs to Yahuah, not to the wronged man's hand: *To me belongeth vengeance, and recompence* (Deuteronomy 32:35); *Say not thou, I will recompense evil; but wait on Yahuah (LORD), and he shall save thee* (Proverbs 20:22); *Recompense to no man evil for evil* (Romans 12:17). The man renders his testimony; Yahuah renders the reward.
+--   EXTRAS: none forced this chapter — the render-by-works, love-of-enemy, honey-of-wisdom, and just-judgment figures are each carried cleanest by Tanakh + NT witnesses. All seven threads are canon-only [free].
+
+CREATE TEMP VIEW _s304_pr24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: He shall render to every man according to his works (THE HEAVYWEIGHT)
+    ('canon','proverbs',24,12,'canon','romans',2,6,'free',
+      E'*Who will render to every man according to his deeds* (Romans 2:6). Sha''ul states the very principle of *shall not he render to every man according to his works?* (Proverbs 24:12): Elohim (God) *will render to every man according to his deeds*. The deeds are the evidence weighed at the judgment, not the wage that earns it — *the doers of the law shall be justified* (Romans 2:13) — and the One who pondereth the heart reads them all.'),
+    ('canon','proverbs',24,12,'canon','revelation',22,12,'free',
+      E'*And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be* (Revelation 22:12). The render-by-works of *shall not he render to every man according to his works?* (Proverbs 24:12) is kept whole to the last page of the library: *my reward is with me, to give every man according as his work shall be*. The same measure that pondereth the heart in Proverbs comes with the reward at the end.'),
+    ('canon','proverbs',24,12,'canon','matthew',16,27,'free',
+      E'*For the Son of Adam shall come in the glory of his Father with his angels; and then he shall reward every man according to his works* (Matthew 16:27). The Formed Son carries the rule of Proverbs 24:12 to the judgment: *he shall reward every man according to his works*. The works are the deeds the heart-ponderer of the proverb has already considered; the reward answers them.'),
+    ('canon','proverbs',24,12,'canon','job',34,11,'free',
+      E'*For the work of a man shall he render unto him, and cause every man to find according to his ways* (Job 34:11). Elihu states the same justice of Proverbs 24:12: *the work of a man shall he render unto him*. Yahuah does not pervert judgment but renders each according to his ways — the very rendering the proverb says no man escapes by saying *we knew it not*.'),
+    ('canon','proverbs',24,12,'canon','jeremiah',17,10,'free',
+      E'*I Yahuah (LORD) search the heart, I try the reins, even to give every man according to his ways, and according to the fruit of his doings* (Jeremiah 17:10). Jeremiah names the heart-ponderer of Proverbs 24:12: *I Yahuah (LORD) search the heart, I try the reins*, and so He gives *every man according to his ways*. The searched heart and the rendered work are one act of the same Judge.'),
+    ('canon','proverbs',24,12,'canon','psalms',62,12,'free',
+      E'*Also unto thee, O Yahuah (Lord), belongeth mercy: for thou renderest to every man according to his work* (Psalm 62:12). David sings the very line of Proverbs 24:12 — *thou renderest to every man according to his work* — and binds it to mercy: the render-by-works is the act of the One to whom mercy belongs, not a cold ledger. The same Judge who pondereth the heart renders, and renders mercifully.'),
+    ('canon','proverbs',24,11,'canon','psalms',82,4,'free',
+      E'*Deliver the poor and needy: rid them out of the hand of the wicked* (Psalm 82:4). The forbearing-to-deliver of *If thou forbear to deliver them that are drawn unto death* (Proverbs 24:11) is the failure this Psalm commands against: *Deliver the poor and needy: rid them out of the hand of the wicked*. To stand by while the innocent are drawn to death is the very neglect the heart-ponderer weighs.'),
+    ('canon','proverbs',24,11,'canon','isaiah',58,6,'free',
+      E'*Is not this the fast that I have chosen? to loose the bands of wickedness, to undo the heavy burdens, and to let the oppressed go free, and that ye break every yoke?* (Isaiah 58:6). The duty of *deliver them that are drawn unto death* (Proverbs 24:11) is the fast Yahuah actually chose: *to loose the bands of wickedness... and to let the oppressed go free*. The acceptable approach is not ritual but the rescue of those drawn to death.'),
+    ('canon','proverbs',24,11,'canon','isaiah',58,7,'free',
+      E'*Is it not to deal thy bread to the hungry, and that thou bring the poor that are cast out to thy house... and that thou hide not thyself from thine own flesh?* (Isaiah 58:7). Isaiah unfolds the deliverance of Proverbs 24:11 — *that thou hide not thyself from thine own flesh*. The excuse *Behold, we knew it not* (24:12) is the very hiding the prophet forbids; the heart-ponderer sees through it.'),
+
+    -- THREAD 2: Rejoice not when thine enemy falleth (victims not enemies)
+    ('canon','proverbs',24,17,'canon','job',31,29,'free',
+      E'*If I rejoiced at the destruction of him that hated me, or lifted up myself when evil found him* (Job 31:29). Job swears he never did the thing *Rejoice not when thine enemy falleth* (Proverbs 24:17) forbids: he did not rejoice *at the destruction of him that hated me*. The upright heart does not glad itself at a foe''s ruin, knowing Yahuah is displeased by it.'),
+    ('canon','proverbs',24,17,'canon','proverbs',25,21,'free',
+      E'*If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink* (Proverbs 25:21). The same book turns the not-gloating of Proverbs 24:17 into a positive open hand: not merely refrain from rejoicing at his fall, but *give him bread to eat*. The victims-not-enemies posture is the whole counsel — feed the foe, do not gloat over him.'),
+    ('canon','proverbs',24,17,'canon','obadiah',1,12,'free',
+      E'*But thou shouldest not have looked on the day of thy brother... neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction* (Obadiah 1:12). Edom is judged for exactly the gloating Proverbs 24:17 forbids: *neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction*. The displeasure the proverb warns of (*Lest Yahuah see it* 24:18) falls in full on the one who rejoiced at a brother''s fall.'),
+    ('canon','proverbs',24,17,'canon','matthew',5,44,'free',
+      E'*But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you* (Matthew 5:44). Yahusha (Jesus) carries the not-gloating of Proverbs 24:17 to its height: not only refrain from rejoicing at the enemy''s fall, but *Love your enemies, bless them that curse you*. The same posture that forbids glee at a foe''s ruin commands prayer for him.'),
+    ('canon','proverbs',24,17,'canon','romans',12,14,'free',
+      E'*Bless them which persecute you: bless, and curse not* (Romans 12:14). Sha''ul keeps the heart of Proverbs 24:17 whole — *bless, and curse not*. The heart forbidden to be glad at an enemy''s stumbling is the heart commanded to bless him; the library never reverses this charge.'),
+
+    -- THREAD 3: Eat honey, so the knowledge of wisdom — the reward not cut off
+    ('canon','proverbs',24,14,'canon','psalms',19,10,'free',
+      E'*More to be desired are they than gold, yea, than much fine gold: sweeter also than honey and the honeycomb* (Psalm 19:10). The honey of *eat thou honey, because it is good... So shall the knowledge of wisdom be unto thy soul* (Proverbs 24:13-14) is the very figure David uses for the Torah: *sweeter also than honey and the honeycomb*. The sweetness of wisdom is the sweetness of Yahuah''s word, and *in keeping of them there is great reward* (19:11) — the reward the proverb promises.'),
+    ('canon','proverbs',24,14,'canon','psalms',119,103,'free',
+      E'*How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!* (Psalm 119:103). The taste-of-honey of Proverbs 24:13-14 is the Psalmist''s delight in the word: *sweeter than honey to my mouth*. The knowledge of wisdom that is sweet to the soul is the Torah tasted and loved.'),
+    ('canon','proverbs',24,14,'canon','proverbs',23,18,'free',
+      E'*For surely there is an end; and thine expectation shall not be cut off* (Proverbs 23:18). The very promise of *there shall be a reward, and thy expectation shall not be cut off* (Proverbs 24:14) is set a chapter before in the same words: *thine expectation shall not be cut off*. The reward of wisdom is sure; the one who finds it is not disappointed.'),
+    ('canon','proverbs',24,14,'canon','jeremiah',29,11,'free',
+      E'*For I know the thoughts that I think toward you, saith Yahuah (LORD), thoughts of peace, and not of evil, to give you an expected end* (Jeremiah 29:11). The unbroken expectation of Proverbs 24:14 is Yahuah''s own purpose: *thoughts of peace... to give you an expected end*. The reward the proverb promises rests on the One who thinks thoughts of peace toward His people; their expectation is not cut off because His is not.'),
+
+    -- THREAD 4: A just man falleth seven times and riseth up again
+    ('canon','proverbs',24,16,'canon','psalms',37,24,'free',
+      E'*Though he fall, he shall not be utterly cast down: for Yahuah (LORD) upholdeth him with his hand* (Psalm 37:24). The rising of *a just man falleth seven times, and riseth up again* (Proverbs 24:16) is upheld by the hand of Yahuah: *Though he fall, he shall not be utterly cast down*. The just man rises because he is held, not because he is strong — the falling is real, but never final.'),
+    ('canon','proverbs',24,16,'canon','micah',7,8,'free',
+      E'*Rejoice not against me, O mine enemy: when I fall, I shall arise; when I sit in darkness, Yahuah (LORD) shall be a light unto me* (Micah 7:8). Micah voices the very rising of Proverbs 24:16 against the gloating enemy: *when I fall, I shall arise*. The falling-and-rising just man answers the rejoice-not of 24:17 — the foe is told not to gloat, for the fallen will arise.'),
+    ('canon','proverbs',24,16,'canon','psalms',34,19,'free',
+      E'*Many are the afflictions of the righteous: but Yahuah (LORD) delivereth him out of them all* (Psalm 34:19). The seven falls of Proverbs 24:16 are the *many afflictions of the righteous* — but the end is the same: *Yahuah (LORD) delivereth him out of them all*. The just man rises every time because Yahuah delivers him out of every trouble.'),
+    ('canon','proverbs',24,16,'canon','2-corinthians',4,9,'free',
+      E'*Persecuted, but not forsaken; cast down, but not destroyed* (2 Corinthians 4:9). Sha''ul lives the proverb of Proverbs 24:16 — *cast down, but not destroyed*. The just man falls seven times and rises; the apostle is cast down and not destroyed; the same upholding hand keeps both from being utterly cast down.'),
+
+    -- THREAD 5: Fret not — the candle of the wicked shall be put out
+    ('canon','proverbs',24,19,'canon','psalms',37,1,'free',
+      E'*Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity* (Psalm 37:1). The charge of *Fret not thyself because of evil men, neither be thou envious at the wicked* (Proverbs 24:19) is the very opening of Psalm 37, almost word for word: *Fret not thyself because of evildoers*. The envy the proverb forbids is the envy the Psalm answers — the prosperity of the wicked is brief.'),
+    ('canon','proverbs',24,20,'canon','psalms',37,38,'free',
+      E'*But the transgressors shall be destroyed together: the end of the wicked shall be cut off* (Psalm 37:38). The put-out candle of *the candle of the wicked shall be put out* (Proverbs 24:20) is the cut-off end of Psalm 37: *the end of the wicked shall be cut off*. There is *no reward to the evil man* (24:20) because his end is destruction, not reward — the dark mirror of the render-by-works of the heavyweight thread.'),
+    ('canon','proverbs',24,20,'canon','proverbs',13,9,'free',
+      E'*The light of the righteous rejoiceth: but the lamp of the wicked shall be put out* (Proverbs 13:9). The same book sets the candle-figure of Proverbs 24:20 plainly: *the lamp of the wicked shall be put out*. The wicked man''s light is borrowed and brief; it is extinguished, while the light of the righteous rejoices.'),
+    ('canon','proverbs',24,20,'canon','job',18,5,'free',
+      E'*Yea, the light of the wicked shall be put out, and the spark of his fire shall not shine* (Job 18:5). Bildad speaks the figure of Proverbs 24:20 — *the light of the wicked shall be put out*. The candle, the lamp, the spark: the whole library agrees the wicked man''s light does not last; his end has no reward.'),
+
+    -- THREAD 6: No respect of persons in judgment
+    ('canon','proverbs',24,23,'canon','leviticus',19,15,'free',
+      E'*Ye shall do no unrighteousness in judgment: thou shalt not respect the person of the poor, nor honour the person of the mighty: but in righteousness shalt thou judge thy neighbour* (Leviticus 19:15). The proverb *It is not good to have respect of persons in judgment* (Proverbs 24:23) is the Torah''s own just-judgment command: *thou shalt not respect the person of the poor, nor honour the person of the mighty*. The wise repeat the law; the judge weighs the cause, not the face.'),
+    ('canon','proverbs',24,23,'canon','deuteronomy',1,17,'free',
+      E'*Ye shall not respect persons in judgment; but ye shall hear the small as well as the great; ye shall not be afraid of the face of man; for the judgment is Elohim''s (God''s)* (Deuteronomy 1:17). The respect-of-persons forbidden in Proverbs 24:23 is forbidden because the bench belongs to Yahuah: *the judgment is Elohim''s (God''s)*. To respect the face of man in judgment is to usurp a seat that is not the judge''s own.'),
+    ('canon','proverbs',24,23,'canon','proverbs',18,5,'free',
+      E'*It is not good to accept the person of the wicked, to overthrow the righteous in judgment* (Proverbs 18:5). The same book states Proverbs 24:23 again: *It is not good to accept the person of the wicked*. To call the wicked righteous (24:24) is to overthrow the righteous in judgment — the curse the proverb pronounces falls on the partial judge.'),
+    ('canon','proverbs',24,23,'canon','john',7,24,'free',
+      E'*Judge not according to the appearance, but judge righteous judgment* (John 7:24). Yahusha (Jesus) keeps the measure of Proverbs 24:23 — *judge righteous judgment*, not according to the appearance, the face, the person. The just-judgment of the Torah and the proverb is His standing charge, never abolished.'),
+    ('canon','proverbs',24,24,'canon','james',2,9,'free',
+      E'*But if ye have respect to persons, ye commit sin, and are convinced of the law as transgressors* (James 2:9). Ya''aqob (James) makes the verdict the proverb hints — *him shall the people curse* (Proverbs 24:24) — a charge of Torah-breaking: respect of persons *is sin*, and the partial are *convinced of the law as transgressors*. The proverb and the apostle weigh the same scale, and it is the Torah''s.'),
+
+    -- THREAD 7: Be not a witness without cause — recompense not evil
+    ('canon','proverbs',24,28,'canon','exodus',20,16,'free',
+      E'*Thou shalt not bear false witness against thy neighbour* (Exodus 20:16). The proverb *Be not a witness against thy neighbour without cause; and deceive not with thy lips* (Proverbs 24:28) is the ninth word set as wisdom: *Thou shalt not bear false witness against thy neighbour*. The causeless witness and the deceiving lip are the Decalogue''s forbidden testimony.'),
+    ('canon','proverbs',24,28,'canon','deuteronomy',5,20,'free',
+      E'*Neither shalt thou bear false witness against thy neighbour* (Deuteronomy 5:20). The ninth word is repeated in the second giving of the law, the same charge Proverbs 24:28 carries: *Neither shalt thou bear false witness against thy neighbour*. The wise man does not testify against his neighbour without cause, for the Torah forbids it twice over.'),
+    ('canon','proverbs',24,29,'canon','deuteronomy',32,35,'free',
+      E'*To me belongeth vengeance, and recompence; their foot shall slide in due time* (Deuteronomy 32:35). The private vengeance of *Say not, I will do so to him as he hath done to me: I will render to the man according to his work* (Proverbs 24:29) is forbidden because the rendering is Yahuah''s: *To me belongeth vengeance, and recompence*. The man who renders to his neighbour according to his work usurps the seat of the heart-ponderer of 24:12.'),
+    ('canon','proverbs',24,29,'canon','proverbs',20,22,'free',
+      E'*Say not thou, I will recompense evil; but wait on Yahuah (LORD), and he shall save thee* (Proverbs 20:22). The same book forbids the very words of Proverbs 24:29: *Say not thou, I will recompense evil; but wait on Yahuah (LORD)*. The wronged man waits on the One who renders to every man according to his work; he does not take the rendering into his own hand.'),
+    ('canon','proverbs',24,29,'canon','romans',12,17,'free',
+      E'*Recompense to no man evil for evil. Provide things honest in the sight of all men* (Romans 12:17). Sha''ul keeps the charge of Proverbs 24:29 whole — *Recompense to no man evil for evil* — and, like the proverb, leaves the rendering to Yahuah: *Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). The man renders his testimony; Yahuah renders the reward.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (THE HEAVYWEIGHT)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-24-he-shall-render-to-every-man-according-to-his-works',
+       E'He shall render to every man according to his works — and deliver the drawn to death',
+       E'The framework heavyweight of the chapter stands at vv.11-12: *If thou forbear to deliver them that are drawn unto death, and those that are ready to be slain; If thou sayest, Behold, we knew it not; doth not he that pondereth the heart consider it? and he that keepeth thy soul, doth not he know it? and shall not he render to every man according to his works?* (Proverbs 24:11-12). Here is the library''s judgment-by-works principle in its plainest Tanakh statement: Yahuah renders to every man ACCORDING TO his works — the deeds weighed as evidence at the judgment, never works that earn or purchase. The One who renders is *he that pondereth the heart*, who *keepeth thy soul* and so cannot be deceived by the excuse *Behold, we knew it not*. The principle is one across the whole canon: *Who will render to every man according to his deeds* (Romans 2:6) — and Sha''ul guards it from works-righteousness in the same breath, *not the hearers of the law are just before Elohim (God), but the doers of the law shall be justified* (Romans 2:13); *behold, I come quickly; and my reward is with me, to give every man according as his work shall be* (Revelation 22:12); *the Son of Adam shall come in the glory of his Father... and then he shall reward every man according to his works* (Matthew 16:27); *the work of a man shall he render unto him, and cause every man to find according to his ways* (Job 34:11); *I Yahuah (LORD) search the heart, I try the reins, even to give every man according to his ways* (Jeremiah 17:10). The Psalms sing it and bind it to mercy: *Also unto thee, O Yahuah (Lord), belongeth mercy: for thou renderest to every man according to his work* (Psalm 62:12). And the FIRST half of the proverb keeps the principle from abstraction — the works weighed include the duty to deliver the innocent. The Psalm commands it: *Deliver the poor and needy: rid them out of the hand of the wicked* (Psalm 82:4); and Isaiah names the very fast Yahuah chose: *to loose the bands of wickedness, to undo the heavy burdens, and to let the oppressed go free* (Isaiah 58:6); *Is it not to deal thy bread to the hungry... that thou hide not thyself from thine own flesh?* (Isaiah 58:7). To forbear to deliver them drawn to death, and then to plead *we knew it not*, is the very neglect the heart-ponderer sees through and weighs. This is judgment ACCORDING TO works — the deeds are the fruit Yahuah reads, never the wage that buys His favour — and the New Testament keeps the very measure, never abolishing it.',
+       sv.verse_id, ev.verse_id, 'free', 28575
+  FROM _s304_pr24_lookup sv, _s304_pr24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=24 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-24-rejoice-not-when-thine-enemy-falleth',
+       E'Rejoice not when thine enemy falleth',
+       E'The chapter sets the framework''s victims-not-enemies posture in the Tanakh''s own words: *Rejoice not when thine enemy falleth, and let not thine heart be glad when he stumbleth: Lest Yahuah (LORD) see it, and it displease him, and he turn away his wrath from him* (Proverbs 24:17-18). No gloating over the fallen — for Yahuah Himself is displeased by the glad heart at an enemy''s ruin, and may even turn His wrath from the fallen foe rather than reward the gloater. Job swore his innocence of this very thing: *If I rejoiced at the destruction of him that hated me, or lifted up myself when evil found him* (Job 31:29). The same book of Proverbs turns the not-gloating into a positive open hand: *If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink* (Proverbs 25:21). Edom is judged for exactly this gloating: *neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction* (Obadiah 1:12) — the displeasure the proverb warns of, fallen in full. And Yahusha (Jesus) carries it to its height, never abolishing it: *Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you* (Matthew 5:44); *Bless them which persecute you: bless, and curse not* (Romans 12:14). The heart forbidden to be glad at a foe''s fall is the heart commanded to bless him.',
+       sv.verse_id, ev.verse_id, 'free', 28578
+  FROM _s304_pr24_lookup sv, _s304_pr24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=24 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-24-eat-honey-so-the-knowledge-of-wisdom-the-reward-not-cut-off',
+       E'Eat honey — so the knowledge of wisdom; the reward not cut off',
+       E'The chapter likens wisdom to honey and binds it to a sure reward: *My son, eat thou honey, because it is good; and the honeycomb, which is sweet to thy taste: So shall the knowledge of wisdom be unto thy soul: when thou hast found it, then there shall be a reward, and thy expectation shall not be cut off* (Proverbs 24:13-14). This is the very figure the Psalms use for the Torah: *More to be desired are they than gold, yea, than much fine gold: sweeter also than honey and the honeycomb* (Psalm 19:10) — *and in keeping of them there is great reward* (19:11); *How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!* (Psalm 119:103). The knowledge of wisdom that is sweet to the soul is the word of Yahuah tasted and loved. The unbroken expectation echoes the same book a chapter before — *surely there is an end; and thine expectation shall not be cut off* (Proverbs 23:18) — and Jeremiah names it as Yahuah''s own purpose toward His people: *thoughts of peace, and not of evil, to give you an expected end* (Jeremiah 29:11). The reward of wisdom is sure because the One who gives it thinks thoughts of peace; the seeker''s expectation is not cut off.',
+       sv.verse_id, ev.verse_id, 'free', 28581
+  FROM _s304_pr24_lookup sv, _s304_pr24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=24 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-24-a-just-man-falleth-seven-times-and-riseth-up-again',
+       E'A just man falleth seven times, and riseth up again',
+       E'Against the wicked man waiting to spoil the righteous, the chapter sets the resilience of the just: *Lay not wait, O wicked man, against the dwelling of the righteous; spoil not his resting place: For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief* (Proverbs 24:15-16). The just man falls and rises; the wicked falls and stays down. David sings the rising and names its cause — the upholding hand: *Though he fall, he shall not be utterly cast down: for Yahuah (LORD) upholdeth him with his hand* (Psalm 37:24); *Many are the afflictions of the righteous: but Yahuah (LORD) delivereth him out of them all* (Psalm 34:19). Micah voices the very rising against the gloating enemy of the next verses: *Rejoice not against me, O mine enemy: when I fall, I shall arise; when I sit in darkness, Yahuah (LORD) shall be a light unto me* (Micah 7:8). And Sha''ul lives the proverb whole: *cast down, but not destroyed* (2 Corinthians 4:9). The just man rises every time not because he is strong, but because he is held; the falling is real, but never final.',
+       sv.verse_id, ev.verse_id, 'free', 28584
+  FROM _s304_pr24_lookup sv, _s304_pr24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=24 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-24-fret-not-the-candle-of-the-wicked-shall-be-put-out',
+       E'Fret not — the candle of the wicked shall be put out',
+       E'The chapter answers the envy of the prosperous wicked with their certain end: *Fret not thyself because of evil men, neither be thou envious at the wicked; For there shall be no reward to the evil man; the candle of the wicked shall be put out* (Proverbs 24:19-20). This is the very charge that opens Psalm 37, almost word for word: *Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity* (37:1) — with the same end: *the transgressors shall be destroyed together: the end of the wicked shall be cut off* (37:38). The candle-figure runs through the wisdom books and Job: *the lamp of the wicked shall be put out* (Proverbs 13:9); *the light of the wicked shall be put out, and the spark of his fire shall not shine* (Job 18:5). The proverb''s *no reward to the evil man* is the dark mirror of the render-by-works of the heavyweight thread (24:12): where the righteous have a reward laid up that is not cut off, the wicked have none — only a candle put out and an end cut off. The envy is misplaced; the wicked man''s prosperity is a borrowed light, soon extinguished.',
+       sv.verse_id, ev.verse_id, 'free', 28587
+  FROM _s304_pr24_lookup sv, _s304_pr24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=24 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-24-no-respect-of-persons-in-judgment',
+       E'It is not good to have respect of persons in judgment',
+       E'The chapter''s second collection of the wise opens on the bench: *These things also belong to the wise. It is not good to have respect of persons in judgment. He that saith unto the wicked, Thou art righteous; him shall the people curse, nations shall abhor him: But to them that rebuke him shall be delight, and a good blessing shall come upon them* (Proverbs 24:23-25). This is the Torah''s own just-judgment command set as a proverb: *Ye shall do no unrighteousness in judgment: thou shalt not respect the person of the poor, nor honour the person of the mighty: but in righteousness shalt thou judge thy neighbour* (Leviticus 19:15); *Ye shall not respect persons in judgment; but ye shall hear the small as well as the great; ye shall not be afraid of the face of man; for the judgment is Elohim''s (God''s)* (Deuteronomy 1:17). The bench belongs to Yahuah, so to respect the face of man on it is to usurp a seat not one''s own. The same book repeats the charge — *It is not good to accept the person of the wicked, to overthrow the righteous in judgment* (Proverbs 18:5) — and to call the wicked righteous is exactly that overthrow, the thing the people curse. Yahusha (Jesus) keeps the measure: *Judge not according to the appearance, but judge righteous judgment* (John 7:24). And Ya''aqob (James) makes the partiality a charge of Torah-breaking: *if ye have respect to persons, ye commit sin, and are convinced of the law as transgressors* (James 2:9). The proverb, the Torah, the Messiah, and the apostle weigh the same impartial scale.',
+       sv.verse_id, ev.verse_id, 'free', 28590
+  FROM _s304_pr24_lookup sv, _s304_pr24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=24 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-24-be-not-a-witness-without-cause-recompense-not-evil',
+       E'Be not a witness without cause — render not evil, for vengeance is Yahuah''s',
+       E'The chapter closes its wise sayings on testimony and vengeance: *Be not a witness against thy neighbour without cause; and deceive not with thy lips. Say not, I will do so to him as he hath done to me: I will render to the man according to his work* (Proverbs 24:28-29). The first half is the ninth word set as wisdom — *Thou shalt not bear false witness against thy neighbour* (Exodus 20:16; *Neither shalt thou bear false witness against thy neighbour*, Deuteronomy 5:20). The second forbids private vengeance, and forbids it precisely under the language of the heavyweight thread: a man may not *render to the man according to his work*, because that rendering belongs to Yahuah alone. *To me belongeth vengeance, and recompence; their foot shall slide in due time* (Deuteronomy 32:35); *Say not thou, I will recompense evil; but wait on Yahuah (LORD), and he shall save thee* (Proverbs 20:22); *Recompense to no man evil for evil* (Romans 12:17) — for *Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). The man who would render to his neighbour according to his work usurps the seat of the heart-ponderer of 24:12. The wronged man gives his true testimony and waits; Yahuah renders the reward.',
+       sv.verse_id, ev.verse_id, 'free', 28593
+  FROM _s304_pr24_lookup sv, _s304_pr24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=24 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Who will render to every man according to his deeds* (Romans 2:6) — Sha''ul states the very principle of 24:12; the deeds weighed, never the wage that earns, for the doers of the law shall be justified.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-he-shall-render-to-every-man-according-to-his-works'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*my reward is with me, to give every man according as his work shall be* (Revelation 22:12) — the render-by-works of 24:12 kept whole to the last page of the library.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-he-shall-render-to-every-man-according-to-his-works'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he shall reward every man according to his works* (Matthew 16:27) — the Formed Son carries the rule of 24:12 to the judgment.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=16 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-he-shall-render-to-every-man-according-to-his-works'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the work of a man shall he render unto him* (Job 34:11) — Elihu states the same justice; Yahuah renders each according to his ways.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=34 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-he-shall-render-to-every-man-according-to-his-works'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I Yahuah (LORD) search the heart... even to give every man according to his ways* (Jeremiah 17:10) — Jeremiah names the heart-ponderer of 24:12; the searched heart and the rendered work are one act.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=17 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-he-shall-render-to-every-man-according-to-his-works'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*thou renderest to every man according to his work* (Psalm 62:12) — the Psalms sing the line of 24:12 and bind it to mercy (live Psalms thread, cited laterally).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=62 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-he-shall-render-to-every-man-according-to-his-works'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Deliver the poor and needy: rid them out of the hand of the wicked* (Psalm 82:4) — the forbearing-to-deliver of 24:11 is the failure this Psalm commands against.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=11
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=82 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-he-shall-render-to-every-man-according-to-his-works'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*to loose the bands of wickedness... and to let the oppressed go free* (Isaiah 58:6) — the duty of 24:11 is the fast Yahuah actually chose.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=11
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=58 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-he-shall-render-to-every-man-according-to-his-works'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*that thou hide not thyself from thine own flesh* (Isaiah 58:7) — the excuse "we knew it not" (24:12) is the very hiding the prophet forbids.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=11
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=58 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-he-shall-render-to-every-man-according-to-his-works'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*If I rejoiced at the destruction of him that hated me* (Job 31:29) — Job swears he never did the thing 24:17 forbids.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=31 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-rejoice-not-when-thine-enemy-falleth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*If thine enemy be hungry, give him bread to eat* (Proverbs 25:21) — the same book turns the not-gloating of 24:17 into a positive open hand (lateral, Pack 6 sibling).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=25 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-rejoice-not-when-thine-enemy-falleth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction* (Obadiah 1:12) — Edom judged for exactly the gloating 24:17 forbids.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-rejoice-not-when-thine-enemy-falleth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Love your enemies, bless them that curse you* (Matthew 5:44) — Yahusha carries the not-gloating of 24:17 to its height.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-rejoice-not-when-thine-enemy-falleth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Bless them which persecute you: bless, and curse not* (Romans 12:14) — Sha''ul keeps the heart of 24:17 whole; the library never reverses the charge.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-rejoice-not-when-thine-enemy-falleth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*sweeter also than honey and the honeycomb* (Psalm 19:10) — the honey-of-wisdom of 24:13-14 is David''s figure for the Torah; in keeping of them there is great reward.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=14
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-eat-honey-so-the-knowledge-of-wisdom-the-reward-not-cut-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*How sweet are thy words unto my taste! sweeter than honey to my mouth!* (Psalm 119:103) — the taste-of-honey of 24:13-14 is the Psalmist''s delight in the word.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=14
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=103
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-eat-honey-so-the-knowledge-of-wisdom-the-reward-not-cut-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*there is an end; and thine expectation shall not be cut off* (Proverbs 23:18) — the very promise of 24:14 set a chapter before in the same words (lateral).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=14
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=23 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-eat-honey-so-the-knowledge-of-wisdom-the-reward-not-cut-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*thoughts of peace, and not of evil, to give you an expected end* (Jeremiah 29:11) — the unbroken expectation of 24:14 is Yahuah''s own purpose toward His people.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=14
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=29 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-eat-honey-so-the-knowledge-of-wisdom-the-reward-not-cut-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Though he fall, he shall not be utterly cast down: for Yahuah (LORD) upholdeth him* (Psalm 37:24) — the rising of 24:16 is upheld by the hand of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-a-just-man-falleth-seven-times-and-riseth-up-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*when I fall, I shall arise* (Micah 7:8) — Micah voices the very rising of 24:16 against the gloating enemy of 24:17.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-a-just-man-falleth-seven-times-and-riseth-up-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Many are the afflictions of the righteous: but Yahuah (LORD) delivereth him out of them all* (Psalm 34:19) — the seven falls of 24:16 are the many afflictions, and the deliverance is sure.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-a-just-man-falleth-seven-times-and-riseth-up-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*cast down, but not destroyed* (2 Corinthians 4:9) — Sha''ul lives the proverb of 24:16; the same upholding hand keeps him from being utterly cast down.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-a-just-man-falleth-seven-times-and-riseth-up-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Fret not thyself because of evildoers* (Psalm 37:1) — the charge of 24:19 is the very opening of Psalm 37, almost word for word.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=19
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-fret-not-the-candle-of-the-wicked-shall-be-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the end of the wicked shall be cut off* (Psalm 37:38) — the put-out candle of 24:20 is the cut-off end of Psalm 37.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=20
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-fret-not-the-candle-of-the-wicked-shall-be-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the lamp of the wicked shall be put out* (Proverbs 13:9) — the same book sets the candle-figure of 24:20 plainly (lateral).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=20
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=13 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-fret-not-the-candle-of-the-wicked-shall-be-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the light of the wicked shall be put out, and the spark of his fire shall not shine* (Job 18:5) — Bildad speaks the figure of 24:20; the wicked man''s light does not last.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=20
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=18 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-fret-not-the-candle-of-the-wicked-shall-be-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt not respect the person of the poor, nor honour the person of the mighty* (Leviticus 19:15) — 24:23 is the Torah''s own just-judgment command set as a proverb.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=23
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-no-respect-of-persons-in-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Ye shall not respect persons in judgment... for the judgment is Elohim''s (God''s)* (Deuteronomy 1:17) — the bench belongs to Yahuah; to respect the face of man is to usurp His seat.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=23
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-no-respect-of-persons-in-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*It is not good to accept the person of the wicked, to overthrow the righteous in judgment* (Proverbs 18:5) — the same book states 24:23 again; calling the wicked righteous overthrows the righteous.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=23
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-no-respect-of-persons-in-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Judge not according to the appearance, but judge righteous judgment* (John 7:24) — Yahusha keeps the measure of 24:23.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=23
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-no-respect-of-persons-in-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*if ye have respect to persons, ye commit sin, and are convinced of the law as transgressors* (James 2:9) — Ya''aqob makes the verdict of 24:24 a charge of Torah-breaking.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=24
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-no-respect-of-persons-in-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt not bear false witness against thy neighbour* (Exodus 20:16) — 24:28 is the ninth word set as wisdom.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=28
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-be-not-a-witness-without-cause-recompense-not-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Neither shalt thou bear false witness against thy neighbour* (Deuteronomy 5:20) — the ninth word repeated in the second giving of the law; 24:28 forbids the causeless witness.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=28
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-be-not-a-witness-without-cause-recompense-not-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*To me belongeth vengeance, and recompence* (Deuteronomy 32:35) — the private vengeance of 24:29 is forbidden because the rendering is Yahuah''s.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=29
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-be-not-a-witness-without-cause-recompense-not-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Say not thou, I will recompense evil; but wait on Yahuah (LORD)* (Proverbs 20:22) — the same book forbids the very words of 24:29 (lateral).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=29
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=20 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-be-not-a-witness-without-cause-recompense-not-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Recompense to no man evil for evil* (Romans 12:17) — Sha''ul keeps the charge of 24:29 whole; the man renders his testimony, Yahuah renders the reward.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=24 AND sv.verse_number=29
+  JOIN _s304_pr24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-24-be-not-a-witness-without-cause-recompense-not-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_proverbs_25.sql (Proverbs 25) -----
+-- Chapter: Proverbs 25 — the FIRST of the Hezekiah collection: *These are also proverbs of Solomon, which the men of Hezekiah king of Yahudah (Judah) copied out* (25:1) — Solomon's words, transmitted and preserved by Hezekiah's scribes. The chapter carries TWO framework heavyweights the New Testament takes up by name: ★★ the coals-of-fire / love-of-enemy of *If thine enemy be hungry, give him bread to eat... For thou shalt heap coals of fire upon his head* (25:21-22), which Paul quotes verbatim at Romans 12:20 as the crown of overcome-evil-with-good; and ★ the lowest-room humility of *better it is that it be said unto thee, Come up hither; than that thou shouldest be put lower* (25:6-7), which Yahusha (Jesus) turns into a parable at Luke 14:8-11. Around these run the glory of Elohim to conceal (25:2), the word fitly spoken / wise reprover (25:11-12), good news from a far country (25:13,25), and rule over one's own spirit (25:28).
+-- Tag: pr25   Temp view: _s304_pr25_lookup
+-- Sort band: base 28600, step 3 -> threads at 28600, 28603, 28606, 28609, 28612, 28615 (6 threads)
+-- Source of EVERY row: 'canon','proverbs',25,v
+--
+-- Proverbs 25 coverage:
+--   v.1 (the men of Hezekiah king of Yahudah copied out) — header noted in chapter intro; no thread (transmission note, not a doctrinal weave).
+--   ★ v.2-3 (It is the glory of Elohim to conceal a thing: but the honour of kings is to search it out / the heart of kings is unsearchable)
+--        NT:     Romans 11:33 (how unsearchable are his judgments, and his ways past finding out) — THREAD 1
+--        Extras: none warranted (the conceal/reveal figure carried whole by Deuteronomy 29:29 + Daniel + Romans)
+--        Tanakh: ★ Deuteronomy 29:29 (the secret things belong unto Yahuah... but those which are revealed belong unto us); Daniel 2:22 (He revealeth the deep and secret things) — THREAD 1
+--   v.4-5 (Take away the dross from the silver / take away the wicked from before the king) — folded contextually into THREAD 1 prose (the throne established in righteousness); merely-civic refining couplet, no distinct thread.
+--   ★ v.6-7 (Put not forth thyself in the presence of the king... better it is that it be said, Come up hither; than that thou shouldest be put lower)
+--        NT:     ★★ Luke 14:8-10 (sit not down in the highest room... go and sit down in the lowest room... Friend, go up higher); Luke 14:11 / Matthew 23:12 / Luke 18:14 (whosoever exalteth himself shall be abased); James 4:6,10; 1 Peter 5:5,6 — THREAD 2
+--        Extras: none warranted distinct (the humility-exaltation figure carried whole by Proverbs laterals + the Gospels + James/Peter)
+--        Tanakh: ★ Proverbs 15:33 (before honour is humility); Proverbs 18:12 (before destruction the heart is haughty, and before honour is humility) — THREAD 2
+--   v.8-10 (Go not forth hastily to strive / Debate thy cause with thy neighbour himself; discover not a secret) — touched in THREAD 2 prose (do not push to the front / contend hastily); merely-prudential, no distinct thread.
+--   v.11-12 (A word fitly spoken is like apples of gold in pictures of silver / a wise reprover upon an obedient ear)
+--        NT:     Ephesians 4:29 (that which is good to the use of edifying... minister grace unto the hearers); Colossians 4:6 (Let your speech be alway with grace, seasoned with salt) — THREAD 3
+--        Extras: Sirach 20:7 (A wise man will hold his tongue till he see opportunity) — THREAD 3
+--        Tanakh: ★ Proverbs 15:23 (a word spoken in due season, how good is it); Proverbs 27:5-6 (open rebuke is better than secret love; faithful are the wounds of a friend); Isaiah 50:4 (a word in season to him that is weary) — THREAD 3
+--   v.13 / v.25 (As the cold of snow... a faithful messenger / As cold waters to a thirsty soul, so is good news from a far country)
+--        NT:     Romans 10:15 (How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings) — THREAD 4
+--        Extras: none warranted (the good-tidings figure carried whole by Isaiah 52 + Romans 10)
+--        Tanakh: ★ Isaiah 52:7 (How beautiful upon the mountains are the feet of him that bringeth good tidings); Proverbs 15:30 (a good report maketh the bones fat) — THREAD 4
+--   v.14 (Whoso boasteth himself of a false gift is like clouds and wind without rain) — folded into THREAD 4 prose (the false gift = the empty messenger, against the faithful one); no distinct thread.
+--   v.15 (By long forbearing is a prince persuaded, and a soft tongue breaketh the bone) — folded into THREAD 3 prose (the soft word that prevails); Proverbs 15:1 / Ecclesiastes 10:4 touched there; no distinct thread.
+--   v.16 / v.27 (Hast thou found honey? eat so much as is sufficient / It is not good to eat much honey... for men to search their own glory is not glory)
+--        Tanakh: Proverbs 24:13-14 (eat thou honey, because it is good — the lateral honey couplet) — touched in THREAD 2 prose (search own glory is not glory ties to self-exaltation); merely-prudential moderation, no distinct thread.
+--   v.17 (Withdraw thy foot from thy neighbour's house) — merely-prudential, none warranted.
+--   v.18 (A man that beareth false witness against his neighbour is a maul, and a sword, and a sharp arrow) — Decalogue echo (Exodus 20:16) weighed; merely-illustrative simile here, none forced (ninth-word threads belong with the Decalogue chapters).
+--   v.19 (Confidence in an unfaithful man in time of trouble is like a broken tooth) — merely-prudential, none warranted.
+--   v.20 (As vinegar upon nitre, so is he that singeth songs to an heavy heart) — merely-prudential, none warranted.
+--   ★★ v.21-22 (If thine enemy be hungry, give him bread to eat... For thou shalt heap coals of fire upon his head, and Yahuah shall reward thee) — THE FRAMEWORK HEAVYWEIGHT
+--        NT:     ★★ Romans 12:20 (Therefore if thine enemy hunger, feed him... thou shalt heap coals of fire on his head); Romans 12:21 (overcome evil with good); Matthew 5:44 (Love your enemies); 1 Peter 3:9 (not rendering evil for evil... but contrariwise blessing) — THREAD 5
+--        Extras: none warranted distinct (the love-of-enemy figure carried whole by Torah + Gospels + Paul + the Elisha history)
+--        Tanakh: ★ Exodus 23:4-5 (If thou meet thine enemy's ox... thou shalt surely bring it back; the ass of him that hateth thee... thou shalt surely help); 2 Kings 6:22 (set bread and water before them — Elisha and the Syrian host); Proverbs 24:17-18 (Rejoice not when thine enemy falleth — Pack 6 sibling) — THREAD 5
+--   v.23 (The north wind driveth away rain: so doth an angry countenance a backbiting tongue) — merely-prudential, none warranted.
+--   v.24 (better to dwell in the corner of the housetop, than with a brawling woman) — lateral to 21:9; merely-prudential, none warranted (domestic couplet).
+--   v.26 (A righteous man falling down before the wicked is as a troubled fountain) — merely-illustrative, none warranted.
+--   v.28 (He that hath no rule over his own spirit is like a city that is broken down, and without walls)
+--        NT:     1 Corinthians 9:25 (every man that striveth for the mastery is temperate in all things); 1 Corinthians 9:27 (I keep under my body, and bring it into subjection) — THREAD 6
+--        Extras: none warranted (the self-rule figure carried whole by Proverbs laterals + 1 Corinthians)
+--        Tanakh: ★ Proverbs 16:32 (he that ruleth his spirit than he that taketh a city); Proverbs 14:29 (he that is slow to wrath is of great understanding); Ecclesiastes 10:4 (yielding pacifieth great offences) — THREAD 6
+--
+-- Threads (slug — target libraries):
+--   1. proverbs-25-the-glory-of-elohim-to-conceal-the-honour-of-kings-to-search — Tanakh (Deuteronomy, Daniel) + NT (Romans) [free] (the conceal/reveal of Yahuah; the secret things belong to Him, the revealed to us)
+--   2. proverbs-25-better-it-be-said-come-up-hither-than-be-put-lower — Tanakh (Proverbs) + NT (Luke, Matthew, James, 1 Peter) [free] (★ the lowest-room humility Messiah turned into a parable; he that humbleth himself shall be exalted)
+--   3. proverbs-25-a-word-fitly-spoken-apples-of-gold-a-wise-reprover — Tanakh (Proverbs, Isaiah) + NT (Ephesians, Colossians) + Extras (Sirach) [extras] (the fit word in due season; the open rebuke on the obedient ear)
+--   4. proverbs-25-good-news-from-a-far-country-as-cold-waters-to-a-thirsty-soul — Tanakh (Isaiah, Proverbs) + NT (Romans) [free] (the faithful messenger / good tidings; beautiful feet that publish peace)
+--   5. proverbs-25-if-thine-enemy-be-hungry-heap-coals-of-fire-on-his-head — Tanakh (Exodus, 2 Kings, Proverbs) + NT (Romans, Matthew, 1 Peter) [free] (★★ THE HEAVYWEIGHT: love of enemy from Torah to Paul; overcome evil with good)
+--   6. proverbs-25-he-that-hath-no-rule-over-his-own-spirit-a-city-without-walls — Tanakh (Proverbs, Ecclesiastes) + NT (1 Corinthians) [free] (rule over one's own spirit greater than taking a city; temperate in all things)
+--
+-- Framing notes:
+--   ★★ THE HEAVYWEIGHT (THREAD 5): *If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink: For thou shalt heap coals of fire upon his head, and Yahuah (LORD) shall reward thee* (25:21-22). Paul lifts it VERBATIM as the crown of his charge to the renewed mind: *Therefore if thine enemy hunger, feed him; if he thirst, give him drink: for in so doing thou shalt heap coals of fire on his head* (Romans 12:20), sealed by *Be not overcome of evil, but overcome evil with good* (Romans 12:21). This is the framework's victims-not-enemies posture in its sharpest form: the enemy is fed, never struck. The Torah commanded the same long before — *If thou meet thine enemy''s ox or his ass going astray, thou shalt surely bring it back to him again* (Exodus 23:4); *the ass of him that hateth thee... thou shalt surely help with him* (23:5) — the enemy''s beast helped, the enemy''s hunger fed: one love. Elisha showed it in history, setting bread before the very army sent to seize him — *set bread and water before them, that they may eat and drink, and go to their master* (2 Kings 6:22) — and the Syrian bands came no more. The same book guards the heart that would gloat — *Rejoice not when thine enemy falleth* (Proverbs 24:17). Yahusha (Jesus) makes it the new word that is the old word — *Love your enemies, bless them that curse you, do good to them that hate you* (Matthew 5:44) — and Kepha (Peter) seals it: *Not rendering evil for evil, or railing for railing: but contrariwise blessing* (1 Peter 3:9). From Sinai to the apostles the measure is ONE; the coals of fire are the kindness that shames and may melt, never the vengeance the man would take himself — *Yahuah (LORD) shall reward thee*.
+--   ★ HUMILITY / LOWEST ROOM (THREAD 2): *Put not forth thyself in the presence of the king... For better it is that it be said unto thee, Come up hither; than that thou shouldest be put lower* (25:6-7). Yahusha (Jesus) takes the proverb and makes it a living parable: *sit not down in the highest room... But when thou art bidden, go and sit down in the lowest room; that... he may say unto thee, Friend, go up higher* (Luke 14:8-10), and states the law beneath it — *whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 14:11; Matthew 23:12; Luke 18:14). The same book taught it twice — *before honour is humility* (Proverbs 15:33; 18:12) — and the apostles keep it whole: *Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6; 1 Peter 5:5); *Humble yourselves... that he may exalt you in due time* (1 Peter 5:6). The exaltation is Yahuah''s to give; the seat a man seizes is the seat he is put down from.
+--   ★ THE FIT WORD (THREAD 3): *A word fitly spoken is like apples of gold in pictures of silver. As an earring of gold... so is a wise reprover upon an obedient ear* (25:11-12). The word in season is the whole burden — *a word spoken in due season, how good is it!* (Proverbs 15:23) — and the Servant himself was given it: *that I should know how to speak a word in season to him that is weary* (Isaiah 50:4). The wise reprover meets the obedient ear in *Open rebuke is better than secret love. Faithful are the wounds of a friend* (Proverbs 27:5-6); and *By long forbearing is a prince persuaded, and a soft tongue breaketh the bone* (25:15) joins the soft-answer line — *A soft answer turneth away wrath* (15:1). The NT keeps the fit word a duty of grace: *that which is good to the use of edifying, that it may minister grace unto the hearers* (Ephesians 4:29); *Let your speech be alway with grace, seasoned with salt* (Colossians 4:6); and the restored witness adds the timing — *A wise man will hold his tongue till he see opportunity* (Sirach 20:7).
+--   GLORY TO CONCEAL (THREAD 1): *It is the glory of Elohim (God) to conceal a thing: but the honour of kings is to search it out* (25:2). The conceal/reveal is the Torah''s own settled word — *The secret things belong unto Yahuah Eloheinu (the LORD our God): but those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law* (Deuteronomy 29:29). Daniel confesses the Revealer — *He revealeth the deep and secret things: he knoweth what is in the darkness* (Daniel 2:22) — and Paul bows before the unsearchable — *how unsearchable are his judgments, and his ways past finding out!* (Romans 11:33). The king''s honour is to search out what Yahuah has set there to be found; the glory of concealing is His alone.
+--   GOOD TIDINGS (THREAD 4): *As cold waters to a thirsty soul, so is good news from a far country* (25:25; cf. *a faithful messenger to them that send him* 25:13). The good-news figure is the prophet''s beautiful-feet — *How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace... that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7) — which Paul applies to the sent preacher — *How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!* (Romans 10:15). The refreshing report of *a good report maketh the bones fat* (Proverbs 15:30) is the cold water to the thirsty soul; the false gift of *clouds and wind without rain* (25:14) is its opposite.
+--   SELF-RULE (THREAD 6): *He that hath no rule over his own spirit is like a city that is broken down, and without walls* (25:28). The same book sets the unwalled city against the conqueror — *he that is slow to anger is better than the mighty; and he that ruleth his spirit than he that taketh a city* (Proverbs 16:32); *He that is slow to wrath is of great understanding* (14:29) — and Qoheleth adds *yielding pacifieth great offences* (Ecclesiastes 10:4). Paul makes the self-rule the athlete''s discipline: *every man that striveth for the mastery is temperate in all things* (1 Corinthians 9:25); *I keep under my body, and bring it into subjection* (9:27). The man with walls down is taken without a siege; the man who rules his spirit is the stronger city.
+--   EXTRAS: Sirach (Ecclesiasticus) double-written edition 'apocrypha' + book 'ecclesiasticus'. Clean witness pulled: 20:7 (the wise man holds his tongue till he see opportunity — the timing of the fit word). Sirach 28:2 (forgive thy neighbour) weighed for THREAD 5 but the coals thread reads cleanest as Torah-Gospel-Paul; not forced.
+
+CREATE TEMP VIEW _s304_pr25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: The glory of Elohim to conceal, the honour of kings to search
+    ('canon','proverbs',25,2,'canon','deuteronomy',29,29,'free',
+      E'*The secret things belong unto Yahuah Eloheinu (the LORD our God): but those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law* (Deuteronomy 29:29). The two halves of *It is the glory of Elohim (God) to conceal a thing: but the honour of kings is to search it out* (Proverbs 25:2) are the Torah''s own settled word: the secret things are Yahuah''s glory to keep, the revealed things are ours to search and to do. The king''s honour is to seek out what Yahuah has set in the open to be found.'),
+    ('canon','proverbs',25,2,'canon','daniel',2,22,'free',
+      E'*He revealeth the deep and secret things: he knoweth what is in the darkness, and the light dwelleth with him* (Daniel 2:22). The glory to conceal of Proverbs 25:2 is matched by the glory to reveal: *He revealeth the deep and secret things*. What Elohim (God) conceals He alone can uncover; Daniel confesses the Revealer to whom the darkness is light, and so the searching king depends wholly upon the One who hides and shows.'),
+    ('canon','proverbs',25,3,'canon','romans',11,33,'free',
+      E'*O the depth of the riches both of the wisdom and knowledge of Elohim (God)! how unsearchable are his judgments, and his ways past finding out!* (Romans 11:33). The unsearchable heart of kings in *the heart of kings is unsearchable* (Proverbs 25:3) points up to the truly unsearchable One: *how unsearchable are his judgments, and his ways past finding out!* If the depth of an earthly king cannot be sounded, far less the depth of Yahuah, whose to conceal is glory.'),
+
+    -- THREAD 2: Better it be said, Come up hither, than be put lower (humility / lowest room)
+    ('canon','proverbs',25,6,'canon','luke',14,8,'free',
+      E'*When thou art bidden of any man to a wedding, sit not down in the highest room; lest a more honourable man than thou be bidden of him* (Luke 14:8). Yahusha (Jesus) takes up *Put not forth thyself in the presence of the king, and stand not in the place of great men* (Proverbs 25:6) word for deed: *sit not down in the highest room*. The proverb becomes a parable of the kingdom — do not seize the place of honour, lest you be put down before all.'),
+    ('canon','proverbs',25,7,'canon','luke',14,10,'free',
+      E'*But when thou art bidden, go and sit down in the lowest room; that when he that bade thee cometh, he may say unto thee, Friend, go up higher: then shalt thou have worship in the presence of them that sit at meat with thee* (Luke 14:10). This is *better it is that it be said unto thee, Come up hither; than that thou shouldest be put lower* (Proverbs 25:7) made living: *Friend, go up higher*. The lowest seat chosen in humility is the seat from which one is raised; the proverb and the parable speak one mouth.'),
+    ('canon','proverbs',25,7,'canon','luke',14,11,'free',
+      E'*For whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 14:11). The law beneath *better... Come up hither; than that thou shouldest be put lower* (Proverbs 25:7) is stated plain: *whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted*. The exaltation is Yahuah''s to give, never the man''s to grasp.'),
+    ('canon','proverbs',25,7,'canon','matthew',23,12,'free',
+      E'*And whosoever shall exalt himself shall be abased; and he that shall humble himself shall be exalted* (Matthew 23:12). The same measure closes Yahusha''s (Jesus'') rebuke of the seat-seekers, exactly the warning of Proverbs 25:7: the one who puts himself forward is put lower; *he that shall humble himself shall be exalted*. The proverb''s counsel and the Messiah''s verdict are the same word.'),
+    ('canon','proverbs',25,6,'canon','proverbs',15,33,'free',
+      E'*The fear of Yahuah (LORD) is the instruction of wisdom; and before honour is humility* (Proverbs 15:33). The proverb teaches the order of Proverbs 25:6 elsewhere in plain terms: *before honour is humility*. Honour is what follows the lowly heart, not what the proud seat secures; the place of great men is not seized but given.'),
+    ('canon','proverbs',25,6,'canon','proverbs',18,12,'free',
+      E'*Before destruction the heart of man is haughty, and before honour is humility* (Proverbs 18:12). The same antithesis frames Proverbs 25:6: the haughty heart that puts itself forward goes before destruction, while *before honour is humility*. To stand in the place of great men uninvited is the haughtiness that goes before a fall.'),
+    ('canon','proverbs',25,7,'canon','james',4,6,'free',
+      E'*But he giveth more grace. Wherefore he saith, Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6). The reason the self-exalter is *put lower* (Proverbs 25:7) is that *Elohim (God) resisteth the proud, but giveth grace unto the humble*. Yaaqov (James) names the principle the proverb pictures: the one who pushes to the front meets Elohim''s resistance, the lowly His grace.'),
+    ('canon','proverbs',25,7,'canon','1-peter',5,6,'free',
+      E'*Humble yourselves therefore under the mighty hand of Elohim (God), that he may exalt you in due time* (1 Peter 5:6). Kepha (Peter) gives the proverb''s positive command — where Proverbs 25:7 counsels the lowest seat that one may be called up higher, he charges: *Humble yourselves... that he may exalt you in due time*. The exalting is Elohim''s, and it comes in His time to the lowly.'),
+
+    -- THREAD 3: A word fitly spoken, a wise reprover upon an obedient ear
+    ('canon','proverbs',25,11,'canon','proverbs',15,23,'free',
+      E'*A man hath joy by the answer of his mouth: and a word spoken in due season, how good is it!* (Proverbs 15:23). The apples of gold of *A word fitly spoken is like apples of gold in pictures of silver* (Proverbs 25:11) are the word in its season: *a word spoken in due season, how good is it!* The fitness is the timing — the right word, rightly placed, is the rare and precious thing.'),
+    ('canon','proverbs',25,11,'canon','isaiah',50,4,'free',
+      E'*Adonai Yahuah (The Lord GOD) hath given me the tongue of the learned, that I should know how to speak a word in season to him that is weary: he wakeneth morning by morning, he wakeneth mine ear to hear as the learned* (Isaiah 50:4). The fitly-spoken word of Proverbs 25:11 is given the Servant himself: *that I should know how to speak a word in season to him that is weary*. The tongue of the learned and the ear that is wakened to hear are the two sides of the proverb — the fit word and the obedient ear.'),
+    ('canon','proverbs',25,12,'canon','proverbs',27,5,'free',
+      E'*Open rebuke is better than secret love* (Proverbs 27:5). The wise reprover of *so is a wise reprover upon an obedient ear* (Proverbs 25:12) is honoured here: *Open rebuke is better than secret love*. The reproof that loves enough to speak, met by the ear that obeys enough to hear, is the gold ornament the proverb names.'),
+    ('canon','proverbs',25,12,'canon','proverbs',27,6,'free',
+      E'*Faithful are the wounds of a friend; but the kisses of an enemy are deceitful* (Proverbs 27:6). The wise reprover of Proverbs 25:12 wounds in faithfulness: *Faithful are the wounds of a friend*. The obedient ear receives the friend''s wound as the earring of gold, knowing the deceitful kiss of the flatterer is the poorer gift.'),
+    ('canon','proverbs',25,11,'canon','ephesians',4,29,'free',
+      E'*Let no corrupt communication proceed out of your mouth, but that which is good to the use of edifying, that it may minister grace unto the hearers* (Ephesians 4:29). The fit word of Proverbs 25:11 is the apostle''s standard for speech: only *that which is good to the use of edifying, that it may minister grace unto the hearers*. The word fitly spoken is the word that builds up and gives grace; the corrupt word is the dross.'),
+    ('canon','proverbs',25,11,'canon','colossians',4,6,'free',
+      E'*Let your speech be alway with grace, seasoned with salt, that ye may know how ye ought to answer every man* (Colossians 4:6). The apples-of-gold word of Proverbs 25:11 is speech *seasoned with salt* — graced and fit to the hearer. To *answer every man* rightly is to speak the word fitly, each in its due season.'),
+    ('canon','proverbs',25,11,'apocrypha','ecclesiasticus',20,7,'extras',
+      E'*A wise man will hold his tongue till he see opportunity: but a babbler and a fool will regard no time* (Sirach 20:7). The restored witness names the discipline behind *A word fitly spoken* (Proverbs 25:11): *A wise man will hold his tongue till he see opportunity*. The fitness is not only the word but its hour; the fool, regarding no time, never speaks the apples of gold.'),
+
+    -- THREAD 4: Good news from a far country, as cold waters to a thirsty soul
+    ('canon','proverbs',25,25,'canon','isaiah',52,7,'free',
+      E'*How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace; that bringeth good tidings of good, that publisheth salvation; that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7). The good news from a far country of *As cold waters to a thirsty soul, so is good news from a far country* (Proverbs 25:25) is lifted to its height in Isaiah: the messenger of good tidings whose very feet are beautiful, who publishes that *Thy Elohim (God) reigneth!* The thirsty soul refreshed by the report is Zion hearing of her salvation.'),
+    ('canon','proverbs',25,25,'canon','romans',10,15,'free',
+      E'*And how shall they preach, except they be sent? as it is written, How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!* (Romans 10:15). Paul applies the good-tidings of Proverbs 25:25 and Isaiah 52:7 to the sent preacher: *How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!* The good news from the far country is now the gospel carried to the thirsty nations.'),
+    ('canon','proverbs',25,13,'canon','proverbs',15,30,'free',
+      E'*The light of the eyes rejoiceth the heart: and a good report maketh the bones fat* (Proverbs 15:30). The faithful messenger of *so is a faithful messenger to them that send him: for he refresheth the soul of his masters* (Proverbs 25:13) brings the report that *maketh the bones fat*. The good report is the cold water, the refreshing the proverb names; the faithful carrier is as welcome as snow''s cold in harvest heat.'),
+
+    -- THREAD 5: If thine enemy be hungry, heap coals of fire on his head (THE HEAVYWEIGHT)
+    ('canon','proverbs',25,21,'canon','romans',12,20,'free',
+      E'*Therefore if thine enemy hunger, feed him; if he thirst, give him drink: for in so doing thou shalt heap coals of fire on his head* (Romans 12:20). Paul quotes *If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink: For thou shalt heap coals of fire upon his head* (Proverbs 25:21-22) all but verbatim, making the proverb the crown of the renewed mind. The enemy is fed, never struck; the coals are the kindness that shames and may melt the heart, the very opposite of the vengeance a man would take himself.'),
+    ('canon','proverbs',25,22,'canon','romans',12,21,'free',
+      E'*Be not overcome of evil, but overcome evil with good* (Romans 12:21). Paul seals his quotation of Proverbs 25:21-22 with the principle the coals-of-fire serve: *overcome evil with good*. The reward Yahuah (LORD) promises — *and Yahuah (LORD) shall reward thee* (25:22) — is the fruit of meeting the enemy''s hunger with bread; the evil is conquered not by answering it in kind but by the good that disarms it.'),
+    ('canon','proverbs',25,21,'canon','exodus',23,4,'free',
+      E'*If thou meet thine enemy''s ox or his ass going astray, thou shalt surely bring it back to him again* (Exodus 23:4). Long before Paul, the Torah commanded the love of Proverbs 25:21: the enemy''s straying beast is to be brought home. The hand that feeds the hungry enemy is the same hand that returns his lost ox — one love, written first at Sinai.'),
+    ('canon','proverbs',25,21,'canon','exodus',23,5,'free',
+      E'*If thou see the ass of him that hateth thee lying under his burden, and wouldest forbear to help him, thou shalt surely help with him* (Exodus 23:5). The Torah will not let the heart withhold even from the one who hates: *thou shalt surely help with him*. This is the giving of bread and water to the hungry enemy (Proverbs 25:21) in its first form — the burden of him that hates thee lifted, not left.'),
+    ('canon','proverbs',25,21,'canon','2-kings',6,22,'free',
+      E'*And he answered, Thou shalt not smite them: wouldest thou smite those whom thou hast taken captive with thy sword and with thy bow? set bread and water before them, that they may eat and drink, and go to their master* (2 Kings 6:22). Elisha shows the proverb in history: with the Syrian army in his hand he commands *set bread and water before them* — the very bread and water of *give him bread to eat... give him water to drink* (Proverbs 25:21). The enemy fed, not slain; and the bands of Syria came no more into the land of Yashar''el (Israel).'),
+    ('canon','proverbs',25,22,'canon','proverbs',24,17,'free',
+      E'*Rejoice not when thine enemy falleth, and let not thine heart be glad when he stumbleth* (Proverbs 24:17). The same book that commands feeding the enemy guards the heart that would gloat over him: *Rejoice not when thine enemy falleth*. The coals of fire heaped in kindness (Proverbs 25:22) and the gladness forbidden at his fall are one posture — mercy to the enemy, never triumph over him.'),
+    ('canon','proverbs',25,21,'canon','matthew',5,44,'free',
+      E'*But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you* (Matthew 5:44). Yahusha (Jesus) gives the proverb as the new word that is the old word: *Love your enemies... do good to them that hate you*. To feed the hungry enemy of Proverbs 25:21 is exactly this love — the doing of good to the one who hates, commanded from Sinai to the mount.'),
+    ('canon','proverbs',25,21,'canon','1-peter',3,9,'free',
+      E'*Not rendering evil for evil, or railing for railing: but contrariwise blessing; knowing that ye are thereunto called, that ye should inherit a blessing* (1 Peter 3:9). Kepha (Peter) seals the measure of Proverbs 25:21-22: *Not rendering evil for evil... but contrariwise blessing*. The bread set before the hungry enemy is the blessing returned for the wrong; and the one who blesses is the one called to inherit a blessing — *Yahuah (LORD) shall reward thee*.'),
+
+    -- THREAD 6: He that hath no rule over his own spirit is a city without walls
+    ('canon','proverbs',25,28,'canon','proverbs',16,32,'free',
+      E'*He that is slow to anger is better than the mighty; and he that ruleth his spirit than he that taketh a city* (Proverbs 16:32). The unwalled city of *He that hath no rule over his own spirit is like a city that is broken down, and without walls* (Proverbs 25:28) is set against the conqueror: *he that ruleth his spirit than he that taketh a city*. The man who masters his own spirit is the stronger city; the man who cannot is taken without a siege.'),
+    ('canon','proverbs',25,28,'canon','proverbs',14,29,'free',
+      E'*He that is slow to wrath is of great understanding: but he that is hasty of spirit exalteth folly* (Proverbs 14:29). The ruined walls of Proverbs 25:28 are the hasty spirit: *he that is hasty of spirit exalteth folly*. To have no rule over the spirit is to be open to every assault of anger; the slow-to-wrath is the city that stands.'),
+    ('canon','proverbs',25,28,'canon','ecclesiastes',10,4,'free',
+      E'*If the spirit of the ruler rise up against thee, leave not thy place; for yielding pacifieth great offences* (Ecclesiastes 10:4). Qoheleth shows the rule-of-spirit of Proverbs 25:28 in action: the one who governs himself does not bolt under provocation, for *yielding pacifieth great offences*. Composure is the wall; the ungoverned spirit is the breach.'),
+    ('canon','proverbs',25,28,'canon','1-corinthians',9,25,'free',
+      E'*And every man that striveth for the mastery is temperate in all things. Now they do it to obtain a corruptible crown; but we an incorruptible* (1 Corinthians 9:25). Paul makes the self-rule of Proverbs 25:28 the athlete''s discipline: *every man that striveth for the mastery is temperate in all things*. The walls of the city are built by temperance; the runner who cannot govern himself wins no crown.'),
+    ('canon','proverbs',25,28,'canon','1-corinthians',9,27,'free',
+      E'*But I keep under my body, and bring it into subjection: lest that by any means, when I have preached to others, I myself should be a castaway* (1 Corinthians 9:27). Paul names the very rule the proverb commends: *I keep under my body, and bring it into subjection*. To rule one''s own spirit (Proverbs 25:28) is to keep the body subject; the unwalled city is the man whose appetites command him.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-25-the-glory-of-elohim-to-conceal-the-honour-of-kings-to-search',
+       E'The glory of Elohim to conceal — the honour of kings to search it out',
+       E'The Hezekiah collection opens on the boundary between what Yahuah hides and what He shows: *It is the glory of Elohim (God) to conceal a thing: but the honour of kings is to search it out* (Proverbs 25:2), and *the heart of kings is unsearchable* (25:3). This is the Torah''s own settled word: *The secret things belong unto Yahuah Eloheinu (the LORD our God): but those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law* (Deuteronomy 29:29). The concealing is Elohim''s glory; the revealed is given to His people that they may DO it — the search is not idle curiosity but obedience to what is set in the open. And what He conceals He alone can uncover: *He revealeth the deep and secret things: he knoweth what is in the darkness, and the light dwelleth with him* (Daniel 2:22). If even the heart of an earthly king cannot be sounded, far less the depth of Yahuah Himself — *how unsearchable are his judgments, and his ways past finding out!* (Romans 11:33). The king''s honour is to seek out what Yahuah has hidden to be found; the glory of the hiding is His and His alone. (The throne-couplets that follow — *Take away the dross from the silver* and *Take away the wicked from before the king, and his throne shall be established in righteousness* 25:4-5 — set the same searching, refining honour over the king''s rule.)',
+       sv.verse_id, ev.verse_id, 'free', 28600
+  FROM _s304_pr25_lookup sv, _s304_pr25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=25 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-25-better-it-be-said-come-up-hither-than-be-put-lower',
+       E'Better it be said, Come up hither — than that thou shouldest be put lower',
+       E'The proverb counsels the lowly seat: *Put not forth thyself in the presence of the king, and stand not in the place of great men: For better it is that it be said unto thee, Come up hither; than that thou shouldest be put lower in the presence of the prince whom thine eyes have seen* (Proverbs 25:6-7). Yahusha (Jesus) takes it up and makes it a parable of the kingdom, almost word for deed: *sit not down in the highest room... But when thou art bidden, go and sit down in the lowest room; that... he may say unto thee, Friend, go up higher* (Luke 14:8-10) — and states the law that runs beneath it: *whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 14:11; the same in Matthew 23:12). The book of Proverbs taught the order twice over — *before honour is humility* (15:33), *Before destruction the heart of man is haughty, and before honour is humility* (18:12) — honour follows the lowly heart, never the seized seat. And the apostles keep it whole: *Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6); *Humble yourselves... under the mighty hand of Elohim (God), that he may exalt you in due time* (1 Peter 5:6). The exaltation is Yahuah''s to give and comes in His season; the man who puts himself forward is the man put lower before all. (The strife-couplet that follows — *Go not forth hastily to strive* 25:8 — guards the same humility against the proud rush to contend.)',
+       sv.verse_id, ev.verse_id, 'free', 28603
+  FROM _s304_pr25_lookup sv, _s304_pr25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=25 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-25-a-word-fitly-spoken-apples-of-gold-a-wise-reprover',
+       E'A word fitly spoken — apples of gold, a wise reprover upon an obedient ear',
+       E'The proverb prizes the well-placed word and the well-received reproof: *A word fitly spoken is like apples of gold in pictures of silver. As an earring of gold, and an ornament of fine gold, so is a wise reprover upon an obedient ear* (Proverbs 25:11-12). The fitness is the timing — *a word spoken in due season, how good is it!* (Proverbs 15:23) — and the Servant himself was given that tongue: *Adonai Yahuah (The Lord GOD) hath given me the tongue of the learned, that I should know how to speak a word in season to him that is weary; he wakeneth mine ear to hear as the learned* (Isaiah 50:4) — the fit word and the wakened, obedient ear together. The wise reprover meeting the obedient ear is honoured plainly: *Open rebuke is better than secret love. Faithful are the wounds of a friend; but the kisses of an enemy are deceitful* (Proverbs 27:5-6). And *By long forbearing is a prince persuaded, and a soft tongue breaketh the bone* (25:15) joins the soft-answer line — *A soft answer turneth away wrath* (15:1). The NT keeps the fit word a duty of grace: *that which is good to the use of edifying, that it may minister grace unto the hearers* (Ephesians 4:29); *Let your speech be alway with grace, seasoned with salt, that ye may know how ye ought to answer every man* (Colossians 4:6). The restored witness names the discipline of waiting for the hour: *A wise man will hold his tongue till he see opportunity: but a babbler and a fool will regard no time* (Sirach 20:7). The fit word, in its season, on the obedient ear, is the gold ornament; the boast of a false gift is *clouds and wind without rain* (25:14).',
+       sv.verse_id, ev.verse_id, 'extras', 28606
+  FROM _s304_pr25_lookup sv, _s304_pr25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=25 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-25-good-news-from-a-far-country-as-cold-waters-to-a-thirsty-soul',
+       E'Good news from a far country — as cold waters to a thirsty soul',
+       E'The proverb twins the faithful messenger and the welcome report: *As the cold of snow in the time of harvest, so is a faithful messenger to them that send him: for he refresheth the soul of his masters* (Proverbs 25:13), and *As cold waters to a thirsty soul, so is good news from a far country* (25:25). The good tidings is lifted to its height in the prophet: *How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace; that bringeth good tidings of good, that publisheth salvation; that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7). Paul carries it to the sent preacher: *How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!* (Romans 10:15) — the good news from the far country now the gospel borne to the thirsty nations. The same book names the refreshing: *a good report maketh the bones fat* (Proverbs 15:30) — the cold water to the dry soul. Set against it is the empty carrier: *Whoso boasteth himself of a false gift is like clouds and wind without rain* (25:14), the messenger who promises refreshing and brings none.',
+       sv.verse_id, ev.verse_id, 'free', 28609
+  FROM _s304_pr25_lookup sv, _s304_pr25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=25 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (THE HEAVYWEIGHT)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-25-if-thine-enemy-be-hungry-heap-coals-of-fire-on-his-head',
+       E'If thine enemy be hungry give him bread — thou shalt heap coals of fire on his head',
+       E'The framework heavyweight of the chapter is its love-of-enemy command: *If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink: For thou shalt heap coals of fire upon his head, and Yahuah (LORD) shall reward thee* (Proverbs 25:21-22). Paul lifts it all but verbatim as the crown of the renewed mind, the very seal of overcome-evil-with-good: *Therefore if thine enemy hunger, feed him; if he thirst, give him drink: for in so doing thou shalt heap coals of fire on his head* (Romans 12:20), *Be not overcome of evil, but overcome evil with good* (12:21). This is the victims-not-enemies posture in its sharpest edge: the enemy is FED, never struck; the coals are the kindness that shames and may melt the hardened heart, the opposite of the vengeance a man would seize — for vengeance is Yahuah''s, and *Yahuah (LORD) shall reward thee*. The Torah commanded the same long before, at Sinai: *If thou meet thine enemy''s ox or his ass going astray, thou shalt surely bring it back to him again* (Exodus 23:4); *the ass of him that hateth thee lying under his burden... thou shalt surely help with him* (23:5) — the enemy''s beast returned, his burden lifted, his hunger fed: one love. Elisha showed it in history, setting a feast before the very army sent to take him: *set bread and water before them, that they may eat and drink, and go to their master* (2 Kings 6:22) — and the bands of Syria came no more. The same book guards the gloating heart: *Rejoice not when thine enemy falleth, and let not thine heart be glad when he stumbleth* (Proverbs 24:17). And Yahusha (Jesus) gives it as the new word that is the old word: *Love your enemies, bless them that curse you, do good to them that hate you* (Matthew 5:44); Kepha (Peter) seals it: *Not rendering evil for evil, or railing for railing: but contrariwise blessing; knowing that ye are thereunto called, that ye should inherit a blessing* (1 Peter 3:9). From Sinai to the mount to the apostles the measure is ONE — the enemy fed, the evil overcome by good, the reward left to Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 28612
+  FROM _s304_pr25_lookup sv, _s304_pr25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=25 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-25-he-that-hath-no-rule-over-his-own-spirit-a-city-without-walls',
+       E'He that hath no rule over his own spirit — a city broken down, without walls',
+       E'The chapter closes on the man undone from within: *He that hath no rule over his own spirit is like a city that is broken down, and without walls* (Proverbs 25:28). The figure is the same book''s great word on self-mastery set against conquest: *He that is slow to anger is better than the mighty; and he that ruleth his spirit than he that taketh a city* (Proverbs 16:32) — and its companion, *He that is slow to wrath is of great understanding: but he that is hasty of spirit exalteth folly* (14:29). Qoheleth shows the governed spirit in action: *If the spirit of the ruler rise up against thee, leave not thy place; for yielding pacifieth great offences* (Ecclesiastes 10:4) — composure is the wall, the ungoverned temper the breach. Paul makes the self-rule the athlete''s very discipline: *every man that striveth for the mastery is temperate in all things* (1 Corinthians 9:25); *I keep under my body, and bring it into subjection: lest... I myself should be a castaway* (9:27). The man whose appetites command him is the city standing open, taken without a siege; the man who rules his own spirit is the stronger city, walled and whole. (The chapter''s honey-couplet teaches the same restraint — *Hast thou found honey? eat so much as is sufficient for thee* 25:16; *It is not good to eat much honey: so for men to search their own glory is not glory* 25:27 — the ruled appetite and the unsought glory together.)',
+       sv.verse_id, ev.verse_id, 'free', 28615
+  FROM _s304_pr25_lookup sv, _s304_pr25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=25 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The secret things belong unto Yahuah Eloheinu (the LORD our God): but those things which are revealed belong unto us... that we may do all the words of this law* (Deuteronomy 29:29) — the Torah''s own conceal/reveal boundary behind 25:2; the revealed is given that we may DO it.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=2
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-the-glory-of-elohim-to-conceal-the-honour-of-kings-to-search'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He revealeth the deep and secret things: he knoweth what is in the darkness* (Daniel 2:22) — what 25:2 says is Elohim''s glory to conceal, He alone can reveal; the darkness is light to Him.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=2
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-the-glory-of-elohim-to-conceal-the-honour-of-kings-to-search'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*how unsearchable are his judgments, and his ways past finding out!* (Romans 11:33) — if the heart of kings is unsearchable (25:3), far more the depth of Yahuah whose to conceal is glory.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-the-glory-of-elohim-to-conceal-the-honour-of-kings-to-search'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*sit not down in the highest room; lest a more honourable man than thou be bidden of him* (Luke 14:8) — Yahusha (Jesus) takes 25:6 word for deed; do not seize the place of honour.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=6
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=14 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-better-it-be-said-come-up-hither-than-be-put-lower'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*go and sit down in the lowest room... he may say unto thee, Friend, go up higher* (Luke 14:10) — *Come up hither* (25:7) made living; the lowest seat is the seat one is raised from.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=14 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-better-it-be-said-come-up-hither-than-be-put-lower'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 14:11) — the law beneath 25:7 stated plain.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=14 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-better-it-be-said-come-up-hither-than-be-put-lower'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*whosoever shall exalt himself shall be abased; and he that shall humble himself shall be exalted* (Matthew 23:12) — the Messiah''s verdict on the seat-seekers, the same word as 25:7.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-better-it-be-said-come-up-hither-than-be-put-lower'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*before honour is humility* (Proverbs 15:33) — the order of 25:6 taught plainly; honour follows the lowly heart, not the seized seat.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=6
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-better-it-be-said-come-up-hither-than-be-put-lower'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Before destruction the heart of man is haughty, and before honour is humility* (Proverbs 18:12) — the haughty self-promotion of 25:6 goes before a fall.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=6
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-better-it-be-said-come-up-hither-than-be-put-lower'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6) — the principle the proverb pictures; the self-exalter meets resistance, the lowly grace.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-better-it-be-said-come-up-hither-than-be-put-lower'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Humble yourselves... under the mighty hand of Elohim (God), that he may exalt you in due time* (1 Peter 5:6) — the proverb''s positive command; the exalting is Elohim''s, in His time, to the lowly.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=5 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-better-it-be-said-come-up-hither-than-be-put-lower'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*a word spoken in due season, how good is it!* (Proverbs 15:23) — the apples of gold of 25:11 are the word in its season; fitness is timing.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=11
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-a-word-fitly-spoken-apples-of-gold-a-wise-reprover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the tongue of the learned, that I should know how to speak a word in season to him that is weary... he wakeneth mine ear to hear* (Isaiah 50:4) — the Servant given the fit word AND the obedient ear of 25:11-12.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=11
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=50 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-a-word-fitly-spoken-apples-of-gold-a-wise-reprover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Open rebuke is better than secret love* (Proverbs 27:5) — the wise reprover of 25:12 honoured; the reproof that loves enough to speak.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=12
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=27 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-a-word-fitly-spoken-apples-of-gold-a-wise-reprover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Faithful are the wounds of a friend; but the kisses of an enemy are deceitful* (Proverbs 27:6) — the obedient ear of 25:12 receives the friend''s faithful wound, not the flatterer''s kiss.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=12
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=27 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-a-word-fitly-spoken-apples-of-gold-a-wise-reprover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*that which is good to the use of edifying, that it may minister grace unto the hearers* (Ephesians 4:29) — the fit word of 25:11 as the apostle''s standard; only the word that builds up and gives grace.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=11
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=4 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-a-word-fitly-spoken-apples-of-gold-a-wise-reprover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Let your speech be alway with grace, seasoned with salt* (Colossians 4:6) — the apples-of-gold word of 25:11 graced and fit to each hearer.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=11
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-a-word-fitly-spoken-apples-of-gold-a-wise-reprover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*A wise man will hold his tongue till he see opportunity: but a babbler and a fool will regard no time* (Sirach 20:7) — the restored witness names the discipline of waiting for the fit word''s hour.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=11
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-a-word-fitly-spoken-apples-of-gold-a-wise-reprover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*How beautiful upon the mountains are the feet of him that bringeth good tidings... that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7) — the good news from a far country of 25:25 at its prophetic height.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=25
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-good-news-from-a-far-country-as-cold-waters-to-a-thirsty-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!* (Romans 10:15) — Paul carries the good-tidings of 25:25 to the sent preacher among the nations.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=25
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-good-news-from-a-far-country-as-cold-waters-to-a-thirsty-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*a good report maketh the bones fat* (Proverbs 15:30) — the faithful messenger of 25:13 brings the report that refreshes; the cold water to the soul.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=13
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-good-news-from-a-far-country-as-cold-waters-to-a-thirsty-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (THE HEAVYWEIGHT)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Therefore if thine enemy hunger, feed him; if he thirst, give him drink: for in so doing thou shalt heap coals of fire on his head* (Romans 12:20) — Paul quotes 25:21-22 all but verbatim as the crown of the renewed mind.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-if-thine-enemy-be-hungry-heap-coals-of-fire-on-his-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Be not overcome of evil, but overcome evil with good* (Romans 12:21) — the principle the coals-of-fire of 25:22 serve; the reward (*Yahuah shall reward thee*) is left to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=22
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-if-thine-enemy-be-hungry-heap-coals-of-fire-on-his-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*If thou meet thine enemy''s ox or his ass going astray, thou shalt surely bring it back to him again* (Exodus 23:4) — the Torah commanded the love of 25:21 first, at Sinai; the enemy''s lost beast brought home.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-if-thine-enemy-be-hungry-heap-coals-of-fire-on-his-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the ass of him that hateth thee lying under his burden... thou shalt surely help with him* (Exodus 23:5) — the burden of him that hates thee lifted; the giving of bread to the hungry enemy (25:21) in its first form.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-if-thine-enemy-be-hungry-heap-coals-of-fire-on-his-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*set bread and water before them, that they may eat and drink, and go to their master* (2 Kings 6:22) — Elisha shows 25:21 in history; the bread and water set before the enemy army, who came no more.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=6 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-if-thine-enemy-be-hungry-heap-coals-of-fire-on-his-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Rejoice not when thine enemy falleth, and let not thine heart be glad when he stumbleth* (Proverbs 24:17) — the same book guards the gloating heart; mercy to the enemy, never triumph over him.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=22
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=24 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-if-thine-enemy-be-hungry-heap-coals-of-fire-on-his-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Love your enemies, bless them that curse you, do good to them that hate you* (Matthew 5:44) — Yahusha (Jesus) gives 25:21 as the new word that is the old word; the doing of good to the one who hates.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-if-thine-enemy-be-hungry-heap-coals-of-fire-on-his-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Not rendering evil for evil, or railing for railing: but contrariwise blessing... that ye should inherit a blessing* (1 Peter 3:9) — Kepha (Peter) seals 25:21-22; the bread set before the enemy is the blessing returned for the wrong.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=3 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-if-thine-enemy-be-hungry-heap-coals-of-fire-on-his-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he that ruleth his spirit than he that taketh a city* (Proverbs 16:32) — the unwalled city of 25:28 set against the conqueror; self-mastery is the greater conquest.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=28
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-he-that-hath-no-rule-over-his-own-spirit-a-city-without-walls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He that is slow to wrath is of great understanding: but he that is hasty of spirit exalteth folly* (Proverbs 14:29) — the ruined walls of 25:28 are the hasty, ungoverned spirit.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=28
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=14 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-he-that-hath-no-rule-over-his-own-spirit-a-city-without-walls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*yielding pacifieth great offences* (Ecclesiastes 10:4) — the governed spirit of 25:28 does not bolt under provocation; composure is the wall.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=28
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-he-that-hath-no-rule-over-his-own-spirit-a-city-without-walls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*every man that striveth for the mastery is temperate in all things* (1 Corinthians 9:25) — Paul makes the self-rule of 25:28 the athlete''s discipline; temperance builds the walls.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=28
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=9 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-he-that-hath-no-rule-over-his-own-spirit-a-city-without-walls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I keep under my body, and bring it into subjection* (1 Corinthians 9:27) — the very rule the proverb commends; to rule one''s spirit (25:28) is to keep the body subject.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=25 AND sv.verse_number=28
+  JOIN _s304_pr25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=9 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-25-he-that-hath-no-rule-over-his-own-spirit-a-city-without-walls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_proverbs_26.sql (Proverbs 26) -----
+-- Chapter: Proverbs 26 — a cluster-portrait in three panels: the FOOL (vv.1-12), the SLUGGARD (vv.13-16), and the MEDDLER / STRIFE-MAKER / TALEBEARER / DECEIVER (vv.17-28). It carries a FRAMEWORK HEAVYWEIGHT at v.11: *As a dog returneth to his vomit, so a fool returneth to his folly* (26:11) — the proverb Kepha (Peter) quotes verbatim over the apostate who knew the way and turned back (2 Peter 2:22). Around it stand the famous paired paradox of WHEN to answer a fool (26:4-5), the curse-causeless that cannot light where Elohim has not cursed (26:2), the man wise in his own conceit (26:12), the lion-in-the-way sluggard (26:13-16), the dog-by-the-ears meddler and firebrand-deceiver (26:17-19), the talebearer that kindles strife (26:20-22), and the burning lips over a wicked heart whose dug pit recoils on his own head (26:23-28).
+-- Tag: pr26   Temp view: _s304_pr26_lookup
+-- Sort band: base 28625, step 3 -> threads at 28625, 28628, 28631, 28634, 28637, 28640, 28643 (7 threads)
+-- Source of EVERY row: 'canon','proverbs',26,v
+--
+-- Proverbs 26 coverage:
+--   v.1 (As snow in summer... so honour is not seemly for a fool) / v.3 (A whip for the horse, a bridle for the ass, and a rod for the fool's back)
+--        NT:     none warranted (the honour/rod-for-the-fool figure is carried whole by the Proverbs laterals + Psalm 32:9)
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 19:29 (stripes for the back of fools); Proverbs 17:16 (a price in the hand of a fool to get wisdom); Psalm 32:9 (be ye not as the horse... held in with bit and bridle) — THREAD 3
+--   ★ v.2 (the curse causeless shall not come)
+--        NT:     none warranted distinct (carried whole by the Balaam witness)
+--        Extras: none warranted
+--        Tanakh: ★ Numbers 23:8 (How shall I curse, whom Elohim hath not cursed?); Deuteronomy 23:5 (Yahuah turned the curse into a blessing) — THREAD 3 (Balaam: the hired curse that could not light)
+--   v.4-5 (Answer not a fool / Answer a fool according to his folly — the paired paradox of WHEN)
+--        NT:     ★ Matthew 7:6 (cast ye not your pearls before swine); Matthew 21:27 (Neither tell I you by what authority — Messiah declining the trap); Matthew 22:18 (Why tempt ye me, ye hypocrites — Messiah answering the trap to expose it); 2 Timothy 2:23 (foolish and unlearned questions avoid) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 23:9 (Speak not in the ears of a fool); Isaiah 36:21 (they held their peace, and answered him not a word — Answer him not) — THREAD 2 (the discernment of WHEN to answer)
+--   v.6-10 (sendeth a message by a fool / parable in the mouth of fools / bindeth a stone in a sling / thorn in a drunkard's hand / the great Elohim that formed all things rewardeth the fool)
+--        folded into THREAD 1 and THREAD 3 (the unfitness of honour/trust to a fool; v.10 the FORMED-Elohim who rewards fool and transgressor touched in THREAD 3 prose)
+--   ★★ v.11 (As a dog returneth to his vomit, so a fool returneth to his folly) — THE FRAMEWORK HEAVYWEIGHT
+--        NT:     ★★ 2 Peter 2:22 (The dog is turned to his own vomit again — quoted verbatim); 2 Peter 2:20 (the latter end is worse than the beginning); 2 Peter 2:21 (better not to have known the way... than to turn from the holy commandment); ★ Matthew 12:43-45 (the unclean spirit returns... the last state worse than the first); Hebrews 6:4 (those once enlightened); Hebrews 6:6 (if they shall fall away, to renew them again) — THREAD 1
+--        Extras: none warranted (the relapse is carried whole by 2 Peter + Matthew + Hebrews + Exodus)
+--        Tanakh: ★ Exodus 8:15 (when Pharaoh saw that there was respite, he hardened his heart — the relapse pattern) — THREAD 1
+--   v.12 (Seest thou a man wise in his own conceit? there is more hope of a fool than of him)
+--        NT:     ★ Romans 12:16 (Be not wise in your own conceits); Luke 18:11 (the Pharisee... I thank thee, that I am not as other men) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 3:7 (Be not wise in thine own eyes); Isaiah 5:21 (Woe unto them that are wise in their own eyes) — THREAD 4
+--   v.13-16 (the slothful saith There is a lion in the way / the door turneth on hinges, the slothful on his bed / hideth his hand in his bosom / wiser in his own conceit than seven men)
+--        NT:     none warranted (the sluggard portrait is carried by the Proverbs laterals)
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 22:13 (The slothful man saith, There is a lion without); Proverbs 19:24 (A slothful man hideth his hand in his bosom — verbatim twin of 26:15) — THREAD 5
+--   v.17 (meddleth with strife belonging not to him... taketh a dog by the ears)
+--        NT:     ★ 1 Peter 4:15 (a busybody in other men's matters) — THREAD 6
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 17:14 (the beginning of strife is as when one letteth out water; leave off contention) — THREAD 6
+--   v.18-19 (as a mad man casteth firebrands... so is the man that deceiveth and saith, Am not I in sport?)
+--        folded into THREAD 6 (the careless-deceiver's strife; the firebrand neighbour)
+--   v.20-22 (where no wood is the fire goeth out / so where no talebearer the strife ceaseth / the words of a talebearer are as wounds)
+--        NT:     ★ James 3:6 (the tongue is a fire, a world of iniquity) — THREAD 6
+--        Extras: ★ Sirach 28:13 (Curse the whisperer and doubletongued: for such have destroyed many that were at peace) — THREAD 6
+--        Tanakh: ★ Leviticus 19:16 (Thou shalt not go up and down as a talebearer among thy people — Torah); ★ Proverbs 18:8 (the words of a talebearer are as wounds — verbatim twin of 26:22); Proverbs 16:28 (a whisperer separateth chief friends) — THREAD 6
+--   v.23-26 (burning lips and a wicked heart are like a potsherd covered with silver dross / he that hateth dissembleth with his lips / seven abominations in his heart)
+--        NT:     ★ Matthew 23:27-28 (whited sepulchres... within full of hypocrisy and iniquity) — THREAD 7
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 55:21 (smoother than butter, but war was in his heart); Psalm 28:3 (which speak peace to their neighbours, but mischief is in their hearts); Jeremiah 9:8 (one speaketh peaceably... but in heart he layeth his wait) — THREAD 7
+--   v.27 (Whoso diggeth a pit shall fall therein; he that rolleth a stone, it will return upon him)
+--        NT:     ★ Galatians 6:7 (whatsoever a man soweth, that shall he also reap) — THREAD 7
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 7:15 (He made a pit, and digged it, and is fallen into the ditch which he made); Ecclesiastes 10:8 (He that diggeth a pit shall fall into it) — THREAD 7 (the measure-for-measure recoil)
+--   v.28 (a lying tongue hateth those afflicted by it; a flattering mouth worketh ruin)
+--        Tanakh: ★ Proverbs 29:5 (A man that flattereth his neighbour spreadeth a net for his feet) — folded into THREAD 7
+--   PRUDENTIAL / folded, no separate thread: v.6 (sendeth a message by a fool — THREAD 1 prose), v.7/v.9 (a parable in the mouth of fools — THREAD 3 prose), v.8 (bindeth a stone in a sling — THREAD 3 prose), v.10 (the great Elohim that formed all things — THREAD 3 prose, the Formed-Elohim who rewards), v.14 (the door on hinges — THREAD 5 prose), v.16 (sluggard wiser than seven — THREAD 5 prose), v.21 (coals to burning coals — THREAD 6 prose), v.25 (seven abominations — THREAD 7 prose), v.26 (hatred covered by deceit — THREAD 7 prose).
+--
+-- Threads (slug — target libraries):
+--   1. proverbs-26-as-a-dog-returneth-to-his-vomit-so-a-fool-returneth-to-his-folly — Tanakh (Exodus) + NT (2 Peter, Matthew, Hebrews) [free] (★★ THE HEAVYWEIGHT: Kepha quotes 26:11 verbatim over the apostate who knew the way and turned back; the relapse worse than the beginning)
+--   2. proverbs-26-answer-not-a-fool-and-answer-a-fool-the-discernment-of-when — Tanakh (Proverbs, Isaiah) + NT (Matthew, 2 Timothy) [free] (the paired paradox; the wisdom of WHEN to answer, shown in Messiah declining and exposing the tempters)
+--   3. proverbs-26-honour-is-not-seemly-for-a-fool-and-the-curse-causeless — Tanakh (Proverbs, Psalm, Numbers, Deuteronomy) [free] (the rod for the fool's back; the hired Balaam-curse that cannot light where Elohim has not cursed)
+--   4. proverbs-26-seest-thou-a-man-wise-in-his-own-conceit — Tanakh (Proverbs, Isaiah) + NT (Romans, Luke) [free] (more hope of a fool than of the self-conceited; the Pharisee in the temple)
+--   5. proverbs-26-the-slothful-saith-there-is-a-lion-in-the-way — Tanakh (Proverbs) [free] (the sluggard's excuse and his hand hid in his bosom)
+--   6. proverbs-26-where-no-talebearer-the-strife-ceaseth-the-meddler-and-the-whisperer — Tanakh (Proverbs, Leviticus) + NT (1 Peter, James) + Extras (Sirach) [extras] (the dog-by-the-ears meddler, the firebrand-deceiver, the wood-feeding talebearer; Lev 19:16 Torah)
+--   7. proverbs-26-burning-lips-and-a-wicked-heart-and-the-pit-that-recoils — Tanakh (Psalm, Jeremiah, Proverbs, Ecclesiastes) + NT (Matthew, Galatians) [free] (the dross-covered potsherd / dissembling hatred / whited sepulchres; the dug pit that falls on its digger)
+--
+-- Framing notes:
+--   ★★ THE HEAVYWEIGHT (THREAD 1): *As a dog returneth to his vomit, so a fool returneth to his folly* (26:11). Kepha (Peter) lifts this proverb by name and lays it over the apostate: *it is happened unto them according to the true proverb, The dog is turned to his own vomit again; and the sow that was washed to her wallowing in the mire* (2 Peter 2:22). It is not the man who never knew, but the one who knew and turned back: *if after they have escaped the pollutions of the world through the knowledge of Yahuah (Lord) and Saviour Yahusha HaMashiach (Jesus Christ), they are again entangled therein, and overcome, the latter end is worse with them than the beginning* (2:20); *it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them* (2:21) — note the apostasy is a turning FROM the holy commandment, not from a commandment-free grace. Yahusha (Jesus) draws the same relapse: the unclean spirit goes out, finds the house empty, and returns sevenfold — *the last state of that man is worse than the first* (Matthew 12:45). Hebrews names the impossibility of renewing the one who tastes and falls away (Hebrews 6:4-6). And the Tanakh has the living type in Pharaoh: *when Pharaoh saw that there was respite, he hardened his heart, and hearkened not* (Exodus 8:15) — the dog returning to the vomit the moment the pressure lifts.
+--   ★ ANSWER-A-FOOL PARADOX (THREAD 2): *Answer not a fool according to his folly, lest thou also be like unto him. Answer a fool according to his folly, lest he be wise in his own conceit* (26:4-5). Not a contradiction but the discernment of WHEN — and Yahusha (Jesus) is the living demonstration. He declines the temple-trap, refusing to answer on the tempters' terms: *Neither tell I you by what authority I do these things* (Matthew 21:27); yet when an answer will expose the folly, He gives it: *Why tempt ye me, ye hypocrites?* (Matthew 22:18). Proverbs already taught the silence — *Speak not in the ears of a fool: for he will despise the wisdom of thy words* (23:9) — and the holy things are not for the scornful: *neither cast ye your pearls before swine* (Matthew 7:6). Hezekiah's men show the disciplined silence before the mocker: *they held their peace, and answered him not a word: for the king's commandment was, saying, Answer him not* (Isaiah 36:21). Shaul (Paul) keeps the rule: *foolish and unlearned questions avoid, knowing that they do gender strifes* (2 Timothy 2:23).
+--   ★ THE CURSE CAUSELESS (THREAD 3, with the honour/rod cluster): *the curse causeless shall not come* (26:2) — the hired curse that cannot light where Yahuah has not cursed. Balaam is the witness: *How shall I curse, whom Elohim (God) hath not cursed? or how shall I defy, whom Yahuah (LORD) hath not defied?* (Numbers 23:8); *Yahuah Elohayka (the LORD thy God) turned the curse into a blessing unto thee, because Yahuah Elohayka (the LORD thy God) loved thee* (Deuteronomy 23:5). And v.10 names the FORMED-Elohim over the whole panel: *The great Elohim (God) that formed all things both rewardeth the fool, and rewardeth transgressors* (26:10).
+--   ★ WISE IN HIS OWN CONCEIT (THREAD 4): *Seest thou a man wise in his own conceit? there is more hope of a fool than of him* (26:12). The whole book's warning — *Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (Proverbs 3:7) — and Isaiah's woe — *Woe unto them that are wise in their own eyes* (5:21). The NT keeps it: *Be not wise in your own conceits* (Romans 12:16); and the Pharisee in the temple is the portrait — *Elohim (God), I thank thee, that I am not as other men are* (Luke 18:11).
+--   ★ THE TALEBEARER / Torah (THREAD 6): *where there is no talebearer, the strife ceaseth* (26:20); *The words of a talebearer are as wounds* (26:22, verbatim twin of 18:8). The Torah itself forbids it: *Thou shalt not go up and down as a talebearer among thy people... I am Yahuah (LORD)* (Leviticus 19:16). Yaaqov (James) names the kindling — *the tongue is a fire, a world of iniquity* (3:6) — and the restored witness curses the whisperer: *Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Sirach 28:13). The meddler who takes a dog by the ears (26:17) is the busybody Kepha names — *a busybody in other men's matters* (1 Peter 4:15).
+--   ★ THE PIT THAT RECOILS (THREAD 7): *Whoso diggeth a pit shall fall therein: and he that rolleth a stone, it will return upon him* (26:27) — the measure-for-measure recoil sung in *He made a pit, and digged it, and is fallen into the ditch which he made* (Psalm 7:15) and stated in *He that diggeth a pit shall fall into it* (Ecclesiastes 10:8), kept whole in *whatsoever a man soweth, that shall he also reap* (Galatians 6:7). Bound to it is the dissembling heart of vv.23-26 — burning lips over a wicked heart, the *whited sepulchres... within full of hypocrisy* (Matthew 23:27-28), the smooth-as-butter words with *war in his heart* (Psalm 55:21).
+--   EXTRAS: Sirach (Ecclesiasticus) via edition 'apocrypha' + book 'ecclesiasticus'. Clean witness pulled: 28:13 (curse the whisperer and doubletongued). Sirach 28:14-18 weighed (the backbiting tongue) but 28:13 carries the whisperer-strife nexus cleanest as the single member.
+
+CREATE TEMP VIEW _s304_pr26_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: As a dog returneth to his vomit, so a fool returneth to his folly (THE HEAVYWEIGHT)
+    ('canon','proverbs',26,11,'canon','2-peter',2,22,'free',
+      E'*But it is happened unto them according to the true proverb, The dog is turned to his own vomit again; and the sow that was washed to her wallowing in the mire* (2 Peter 2:22). Kepha (Peter) lifts *As a dog returneth to his vomit, so a fool returneth to his folly* (Proverbs 26:11) by name — *according to the true proverb* — and lays it over the apostate. The dog cleansed of nothing, the sow washed and back in the mire: the fool who knew the way and returned to his folly.'),
+    ('canon','proverbs',26,11,'canon','2-peter',2,20,'free',
+      E'*For if after they have escaped the pollutions of the world through the knowledge of Yahuah (Lord) and Saviour Yahusha HaMashiach (Jesus Christ), they are again entangled therein, and overcome, the latter end is worse with them than the beginning* (2 Peter 2:20). This is the very return of *so a fool returneth to his folly* (Proverbs 26:11): the one who had escaped is *again entangled therein*, and — as with the dog and its vomit — *the latter end is worse with them than the beginning*.'),
+    ('canon','proverbs',26,11,'canon','2-peter',2,21,'free',
+      E'*For it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them* (2 Peter 2:21). The fool''s return of Proverbs 26:11 is here named as a turning *from the holy commandment delivered unto them* — the apostasy is a turning FROM the commandment, never a turning from a commandment-free grace. To have known the way and gone back to the vomit is worse than never to have known it.'),
+    ('canon','proverbs',26,11,'canon','matthew',12,43,'free',
+      E'*When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none* (Matthew 12:43). Yahusha (Jesus) draws the same return as *a fool returneth to his folly* (Proverbs 26:11): the spirit goes out, then comes back to the house it left. The emptied man who does not fill the house with the kept word is the dog circling back to its vomit.'),
+    ('canon','proverbs',26,11,'canon','matthew',12,45,'free',
+      E'*Then goeth he, and taketh with himself seven other spirits more wicked than himself, and they enter in and dwell there: and the last state of that man is worse than the first. Even so shall it be also unto this wicked generation* (Matthew 12:45). The relapse of *so a fool returneth to his folly* (Proverbs 26:11) ends exactly as Kepha says — *the last state of that man is worse than the first* — the very *latter end... worse than the beginning* the dog-and-vomit proverb warns.'),
+    ('canon','proverbs',26,11,'canon','hebrews',6,6,'free',
+      E'*If they shall fall away, to renew them again unto repentance; seeing they crucify to themselves the Son of Elohim (God) afresh, and put him to an open shame* (Hebrews 6:6). The hardened return of *a fool returneth to his folly* (Proverbs 26:11) is here at its gravest: those *once enlightened* (6:4) who *fall away*. The fool circling back to his folly is the same dread the writer of Hebrews sets before the one who tasted the good word and turned.'),
+    ('canon','proverbs',26,11,'canon','exodus',8,15,'free',
+      E'*But when Pharaoh saw that there was respite, he hardened his heart, and hearkened not unto them; as Yahuah (LORD) had said* (Exodus 8:15). The Tanakh''s living type of *so a fool returneth to his folly* (Proverbs 26:11) is Pharaoh: the moment the plague lifts and *there was respite*, he returns to his hardness. The fool, like Pharaoh, goes back to the vomit the instant the pressure is gone.'),
+
+    -- THREAD 2: Answer not a fool / Answer a fool — the discernment of WHEN
+    ('canon','proverbs',26,4,'canon','proverbs',23,9,'free',
+      E'*Speak not in the ears of a fool: for he will despise the wisdom of thy words* (Proverbs 23:9). The side of *Answer not a fool according to his folly, lest thou also be like unto him* (26:4) is taught plainly here: there is a fool to whom you do not speak, *for he will despise the wisdom of thy words*. To stoop to his folly is to be dragged down to his level.'),
+    ('canon','proverbs',26,4,'canon','matthew',7,6,'free',
+      E'*Give not that which is holy unto the dogs, neither cast ye your pearls before swine, lest they trample them under their feet, and turn again and rend you* (Matthew 7:6). Yahusha (Jesus) keeps the restraint of *Answer not a fool according to his folly* (Proverbs 26:4): the holy word is not flung where it will only be trampled — *cast ye not your pearls before swine*. There is a folly that wisdom withholds its answer from.'),
+    ('canon','proverbs',26,4,'canon','isaiah',36,21,'free',
+      E'*But they held their peace, and answered him not a word: for the king''s commandment was, saying, Answer him not* (Isaiah 36:21). Hezekiah''s men live out *Answer not a fool according to his folly* (Proverbs 26:4) before the railing of Rabshakeh: *they held their peace, and answered him not a word*. The disciplined silence before the mocker is the very *Answer him not* the king commanded.'),
+    ('canon','proverbs',26,5,'canon','matthew',22,18,'free',
+      E'*But Yahusha (Jesus) perceived their wickedness, and said, Why tempt ye me, ye hypocrites?* (Matthew 22:18). The other side — *Answer a fool according to his folly, lest he be wise in his own conceit* (26:5) — is the Master answering the trap to expose it: *Why tempt ye me, ye hypocrites?* When the answer will strip the conceit, He gives it; the discernment is knowing WHICH folly to meet.'),
+    ('canon','proverbs',26,5,'canon','matthew',21,27,'free',
+      E'*And they answered Yahusha (Jesus), and said, We cannot tell. And he said unto them, Neither tell I you by what authority I do these things* (Matthew 21:27). Here Yahusha (Jesus) shows the FIRST side beside the second of 26:4-5 — He declines to answer the tempters on their terms: *Neither tell I you by what authority I do these things*. The paradox of 26:4-5 is one discernment of WHEN, lived out in the Master''s own answers and silences.'),
+    ('canon','proverbs',26,5,'canon','2-timothy',2,23,'free',
+      E'*But foolish and unlearned questions avoid, knowing that they do gender strifes* (2 Timothy 2:23). Shaul (Paul) keeps both sides of 26:4-5 in one charge: *foolish and unlearned questions avoid, knowing that they do gender strifes*. The wise know which folly to answer and which to walk past, lest the answer only kindle more strife.'),
+
+    -- THREAD 3: Honour not seemly for a fool / the rod / the curse causeless
+    ('canon','proverbs',26,1,'canon','proverbs',19,29,'free',
+      E'*Judgments are prepared for scorners, and stripes for the back of fools* (Proverbs 19:29). The rod of *a rod for the fool''s back* (26:3) and the unfitness of *honour is not seemly for a fool* (26:1) meet here: *stripes for the back of fools*. The fool''s portion is correction, not honour; the whip, not the seat of glory.'),
+    ('canon','proverbs',26,3,'canon','proverbs',17,16,'free',
+      E'*Wherefore is there a price in the hand of a fool to get wisdom, seeing he hath no heart to it?* (Proverbs 17:16). Why is *honour is not seemly for a fool* (26:1)? Because the fool has no heart for the very wisdom honour would adorn: *a price in the hand of a fool to get wisdom, seeing he hath no heart to it*. Honour set on a fool is a stone bound in a sling (26:8) — it cannot hold.'),
+    ('canon','proverbs',26,3,'canon','psalms',32,9,'free',
+      E'*Be ye not as the horse, or as the mule, which have no understanding: whose mouth must be held in with bit and bridle, lest they come near unto thee* (Psalm 32:9). The whip and bridle of *A whip for the horse, a bridle for the ass, and a rod for the fool''s back* (26:3) are the very image the Psalm uses for the understanding-less: the one who will not be led by counsel must be *held in with bit and bridle*. The rod is for the back that will heed nothing else.'),
+    ('canon','proverbs',26,2,'canon','numbers',23,8,'free',
+      E'*How shall I curse, whom Elohim (God) hath not cursed? or how shall I defy, whom Yahuah (LORD) hath not defied?* (Numbers 23:8). The truth of *the curse causeless shall not come* (26:2) is spoken by the hired curser himself: *How shall I curse, whom Elohim (God) hath not cursed?* No curse can light where Yahuah has not appointed it; the causeless curse passes over like the wandering bird that never lands.'),
+    ('canon','proverbs',26,2,'canon','deuteronomy',23,5,'free',
+      E'*Nevertheless Yahuah Elohayka (the LORD thy God) would not hearken unto Balaam; but Yahuah Elohayka (the LORD thy God) turned the curse into a blessing unto thee, because Yahuah Elohayka (the LORD thy God) loved thee* (Deuteronomy 23:5). The causeless curse of 26:2 is the very Balaam hire Yahuah overturned: He *turned the curse into a blessing*. Where Elohim has not cursed, the hired curse not only fails to come — it is turned to blessing on the beloved.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 4: Seest thou a man wise in his own conceit?
+    ('canon','proverbs',26,12,'canon','proverbs',3,7,'free',
+      E'*Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (Proverbs 3:7). The man of *Seest thou a man wise in his own conceit? there is more hope of a fool than of him* (26:12) is the one who breaks the great charge: *Be not wise in thine own eyes*. The self-conceited has shut the door the fool may yet enter — the fear of Yahuah that begins all wisdom.'),
+    ('canon','proverbs',26,12,'canon','isaiah',5,21,'free',
+      E'*Woe unto them that are wise in their own eyes, and prudent in their own sight!* (Isaiah 5:21). Isaiah pronounces the woe that 26:12 weighs: *Woe unto them that are wise in their own eyes*. There is more hope of the open fool than of the man sealed in his own sight, for the woe of Yahuah rests on the latter.'),
+    ('canon','proverbs',26,12,'canon','romans',12,16,'free',
+      E'*Be of the same mind one toward another. Mind not high things, but condescend to men of low estate. Be not wise in your own conceits* (Romans 12:16). Shaul (Paul) keeps the warning of 26:12 word for word: *Be not wise in your own conceits*. The conceit Proverbs says leaves a man worse off than a fool is the very mind the apostle commands the assembly to put away.'),
+    ('canon','proverbs',26,12,'canon','luke',18,11,'free',
+      E'*The Pharisee stood and prayed thus with himself, Elohim (God), I thank thee, that I am not as other men are, extortioners, unjust, adulterers, or even as this publican* (Luke 18:11). The man *wise in his own conceit* of 26:12 stands praying in the temple: *I thank thee, that I am not as other men are*. There was *more hope of a fool* — the publican who smote his breast — *than of him*; the conceited went home unjustified.'),
+
+    -- THREAD 5: The slothful saith there is a lion in the way
+    ('canon','proverbs',26,13,'canon','proverbs',22,13,'free',
+      E'*The slothful man saith, There is a lion without, I shall be slain in the streets* (Proverbs 22:13). The same excuse runs twice through the book: as *The slothful man saith, There is a lion in the way; a lion is in the streets* (26:13), so *There is a lion without, I shall be slain in the streets*. The sluggard manufactures a danger to justify his bed; the lion is in his mouth, not the street.'),
+    ('canon','proverbs',26,15,'canon','proverbs',19,24,'free',
+      E'*A slothful man hideth his hand in his bosom, and will not so much as bring it to his mouth again* (Proverbs 19:24). This is the verbatim twin of *The slothful hideth his hand in his bosom; it grieveth him to bring it again to his mouth* (26:15). The picture is fixed in both places: the sluggard too lazy to feed himself, so that even his own want cannot move his hand.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 6: The meddler, the firebrand-deceiver, the talebearer
+    ('canon','proverbs',26,17,'canon','proverbs',17,14,'free',
+      E'*The beginning of strife is as when one letteth out water: therefore leave off contention, before it be meddled with* (Proverbs 17:14). The meddler of *He that passeth by, and meddleth with strife belonging not to him, is like one that taketh a dog by the ears* (26:17) does the very thing this proverb forbids: he takes up a contention before it is his. Strife is loosed water — *leave off contention, before it be meddled with* — but the meddler grabs the dog by the ears and is bitten for it.'),
+    ('canon','proverbs',26,17,'canon','1-peter',4,15,'free',
+      E'*But let none of you suffer as a murderer, or as a thief, or as an evildoer, or as a busybody in other men''s matters* (1 Peter 4:15). Kepha (Peter) names the meddler of 26:17 in the same breath as the evildoer: *a busybody in other men''s matters*. To meddle with strife belonging not to him is no small folly — it is set beside theft and murder as a thing the set-apart must not suffer for.'),
+    ('canon','proverbs',26,20,'canon','leviticus',19,16,'free',
+      E'*Thou shalt not go up and down as a talebearer among thy people: neither shalt thou stand against the blood of thy neighbour: I am Yahuah (LORD)* (Leviticus 19:16). The talebearer of *where there is no talebearer, the strife ceaseth* (26:20) is forbidden by the Torah itself, sealed with the Name: *Thou shalt not go up and down as a talebearer among thy people... I am Yahuah (LORD)*. The wisdom of Proverbs is the living-out of the commandment; the kindled strife is a broken Torah.'),
+    ('canon','proverbs',26,22,'canon','proverbs',18,8,'free',
+      E'*The words of a talebearer are as wounds, and they go down into the innermost parts of the belly* (Proverbs 18:8). This is the verbatim twin of *The words of a talebearer are as wounds, and they go down into the innermost parts of the belly* (26:22). The book sets the same indictment twice: the whisper is no light thing but a wound that sinks to the inmost parts — relished, and ruinous.'),
+    ('canon','proverbs',26,20,'canon','proverbs',16,28,'free',
+      E'*A froward man soweth strife: and a whisperer separateth chief friends* (Proverbs 16:28). The fuel of *where no wood is, there the fire goeth out* (26:20) is the whisperer of this proverb: *a whisperer separateth chief friends*. Take away the wood — the talebearer — and the fire of strife dies; leave him, and he parts the closest friends.'),
+    ('canon','proverbs',26,21,'canon','james',3,6,'free',
+      E'*And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell* (James 3:6). The contentious man who kindles strife like *coals... to burning coals, and wood to fire* (26:21) is the tongue Yaaqov (James) names: *the tongue is a fire, a world of iniquity*. Where Proverbs sees the wood, James sees the flame — one strife-kindling tongue setting the whole course on fire.'),
+    ('canon','proverbs',26,20,'apocrypha','ecclesiasticus',28,13,'extras',
+      E'*Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Sirach 28:13). The restored witness pronounces over the talebearer of 26:20 the curse the wisdom-tradition reserved for him: *Curse the whisperer and doubletongued: for such have destroyed many that were at peace*. Where there is no such whisperer the strife ceaseth; where he is suffered, the peace of many is destroyed.'),
+
+    -- THREAD 7: Burning lips and a wicked heart / the pit that recoils
+    ('canon','proverbs',26,23,'canon','psalms',55,21,'free',
+      E'*The words of his mouth were smoother than butter, but war was in his heart: his words were softer than oil, yet were they drawn swords* (Psalm 55:21). The dross-glazed potsherd of *Burning lips and a wicked heart are like a potsherd covered with silver dross* (26:23) is sung exactly here: words *smoother than butter, but war was in his heart*. The fair speech is the silver dross; the wicked heart is the common clay beneath.'),
+    ('canon','proverbs',26,24,'canon','psalms',28,3,'free',
+      E'*Draw me not away with the wicked, and with the workers of iniquity, which speak peace to their neighbours, but mischief is in their hearts* (Psalm 28:3). The dissembler of *He that hateth dissembleth with his lips, and layeth up deceit within him* (26:24) is the very man David prays to be kept from: those who *speak peace to their neighbours, but mischief is in their hearts*. The fair word covers the hidden hatred until it is shown before the whole congregation.'),
+    ('canon','proverbs',26,24,'canon','jeremiah',9,8,'free',
+      E'*Their tongue is as an arrow shot out; it speaketh deceit: one speaketh peaceably to his neighbour with his mouth, but in heart he layeth his wait* (Jeremiah 9:8). Jeremiah draws the dissembler of 26:24 to the life: *one speaketh peaceably to his neighbour with his mouth, but in heart he layeth his wait*. The lips speak fair; the heart lays the ambush — *believe him not* (26:25).'),
+    ('canon','proverbs',26,25,'canon','matthew',23,27,'free',
+      E'*Woe unto you, scribes and Pharisees, hypocrites! for ye are like unto whited sepulchres, which indeed appear beautiful outward, but are within full of dead men''s bones, and of all uncleanness* (Matthew 23:27). The fair speech over the *seven abominations in his heart* (26:25) is the whited sepulchre Yahusha (Jesus) unveils: *beautiful outward, but... within full of... uncleanness*. The silver-dross lips and the wicked heart are the hypocrisy He pronounces woe upon.'),
+    ('canon','proverbs',26,27,'canon','psalms',7,15,'free',
+      E'*He made a pit, and digged it, and is fallen into the ditch which he made* (Psalm 7:15). The recoil of *Whoso diggeth a pit shall fall therein* (26:27) is sung word for picture in the Psalm: *He made a pit, and digged it, and is fallen into the ditch which he made*. The schemer''s own device turns upon him; the rolled stone returns on the one who rolled it.'),
+    ('canon','proverbs',26,27,'canon','ecclesiastes',10,8,'free',
+      E'*He that diggeth a pit shall fall into it; and whoso breaketh an hedge, a serpent shall bite him* (Ecclesiastes 10:8). Qoheleth states the law of 26:27 plainly: *He that diggeth a pit shall fall into it*. The measure-for-measure recoil is woven through the whole library — the harm devised against another circles back upon its author.'),
+    ('canon','proverbs',26,27,'canon','galatians',6,7,'free',
+      E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). The recoil of *he that rolleth a stone, it will return upon him* (26:27) is the same harvest Shaul (Paul) names: *whatsoever a man soweth, that shall he also reap*. The dug pit, the rolled stone, the sown deed — each returns its like upon the doer; Elohim is not mocked.'),
+    ('canon','proverbs',26,28,'canon','proverbs',29,5,'free',
+      E'*A man that flattereth his neighbour spreadeth a net for his feet* (Proverbs 29:5). The ruinous flattery of *a flattering mouth worketh ruin* (26:28) is the snare this proverb names: *A man that flattereth his neighbour spreadeth a net for his feet*. The smooth mouth is not kindness but a trap; the flattering tongue works the very ruin it conceals.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (THE HEAVYWEIGHT)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-26-as-a-dog-returneth-to-his-vomit-so-a-fool-returneth-to-his-folly',
+       E'As a dog returneth to his vomit — so a fool returneth to his folly',
+       E'At the heart of the fool-panel stands the proverb the New Testament quotes by name: *As a dog returneth to his vomit, so a fool returneth to his folly* (Proverbs 26:11). Kepha (Peter) lifts it whole and lays it over the apostate: *it is happened unto them according to the true proverb, The dog is turned to his own vomit again; and the sow that was washed to her wallowing in the mire* (2 Peter 2:22). The weight is not on the man who never knew, but on the one who knew the way and turned back: *if after they have escaped the pollutions of the world through the knowledge of Yahuah (Lord) and Saviour Yahusha HaMashiach (Jesus Christ), they are again entangled therein, and overcome, the latter end is worse with them than the beginning* (2:20) — and note carefully what the turning is FROM: *it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them* (2:21). The apostasy is a turning from the holy commandment, never a turning from a commandment-free grace; the dog washed and returning to the vomit is the one who forsakes the way he once walked. Yahusha (Jesus) draws the same relapse with the unclean spirit: it goes out, finds the swept house empty, and returns sevenfold — *the last state of that man is worse than the first* (Matthew 12:43, 45) — the very *latter end... worse than the beginning* of Kepha''s dog. Hebrews sets the gravest warning of all over the one who tasted and fell away: *If they shall fall away, to renew them again unto repentance; seeing they crucify to themselves the Son of Elohim (God) afresh* (Hebrews 6:6). And the Tanakh holds the living type in Pharaoh, the dog returning to the vomit the instant the pressure lifts: *when Pharaoh saw that there was respite, he hardened his heart, and hearkened not* (Exodus 8:15). From Torah to Gospel to epistle, the witness is one: the folly returned to after the way is known is worse than the folly never left.',
+       sv.verse_id, ev.verse_id, 'free', 28625
+  FROM _s304_pr26_lookup sv, _s304_pr26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=26 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-26-answer-not-a-fool-and-answer-a-fool-the-discernment-of-when',
+       E'Answer not a fool — answer a fool: the discernment of when',
+       E'The chapter sets its most famous paradox side by side: *Answer not a fool according to his folly, lest thou also be like unto him. Answer a fool according to his folly, lest he be wise in his own conceit* (Proverbs 26:4-5). Not a contradiction but a single discernment — knowing WHEN. There is a folly you do not stoop to, lest you be dragged to its level: *Speak not in the ears of a fool: for he will despise the wisdom of thy words* (23:9); *Give not that which is holy unto the dogs, neither cast ye your pearls before swine* (Matthew 7:6). And there is a folly you must meet head-on, lest it stand unexposed and wise in its own conceit. Yahusha (Jesus) is the living demonstration of both. He declines the temple-trap, refusing the tempters'' terms — *Neither tell I you by what authority I do these things* (Matthew 21:27) — and yet, when an answer will strip the conceit bare, He gives it: *Why tempt ye me, ye hypocrites?* (Matthew 22:18). Hezekiah''s men show the disciplined silence before the railing mocker: *they held their peace, and answered him not a word: for the king''s commandment was, saying, Answer him not* (Isaiah 36:21). And Shaul (Paul) keeps the whole rule in one charge: *foolish and unlearned questions avoid, knowing that they do gender strifes* (2 Timothy 2:23). The wise neither answer every fool nor leave every folly unanswered; they discern which is which.',
+       sv.verse_id, ev.verse_id, 'free', 28628
+  FROM _s304_pr26_lookup sv, _s304_pr26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=26 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-26-honour-is-not-seemly-for-a-fool-and-the-curse-causeless',
+       E'Honour not seemly for a fool — and the curse causeless shall not come',
+       E'The opening of the fool-panel measures what does and does not fit: *As snow in summer, and as rain in harvest, so honour is not seemly for a fool* (Proverbs 26:1); *A whip for the horse, a bridle for the ass, and a rod for the fool''s back* (26:3). The fool''s portion is correction, not honour — *Judgments are prepared for scorners, and stripes for the back of fools* (19:29) — for he has no heart for the wisdom honour would adorn: *Wherefore is there a price in the hand of a fool to get wisdom, seeing he hath no heart to it?* (17:16). The whip and bridle are the Psalm''s own image for the understanding-less who will heed nothing gentler: *Be ye not as the horse, or as the mule, which have no understanding: whose mouth must be held in with bit and bridle* (Psalm 32:9). And set among these is the wandering-bird proverb of the causeless curse: *As the bird by wandering, as the swallow by flying, so the curse causeless shall not come* (26:2). No curse can light where Yahuah has not appointed it — the very thing the hired curser Balaam confessed: *How shall I curse, whom Elohim (God) hath not cursed? or how shall I defy, whom Yahuah (LORD) hath not defied?* (Numbers 23:8); for *Yahuah Elohayka (the LORD thy God) turned the curse into a blessing unto thee, because Yahuah Elohayka (the LORD thy God) loved thee* (Deuteronomy 23:5). Over the whole panel stands the Formed One who rewards the fool and transgressor: *The great Elohim (God) that formed all things both rewardeth the fool, and rewardeth transgressors* (26:10).',
+       sv.verse_id, ev.verse_id, 'free', 28631
+  FROM _s304_pr26_lookup sv, _s304_pr26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=26 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-26-seest-thou-a-man-wise-in-his-own-conceit',
+       E'Seest thou a man wise in his own conceit? — more hope of a fool',
+       E'The fool-panel closes on the one worse than a fool: *Seest thou a man wise in his own conceit? there is more hope of a fool than of him* (Proverbs 26:12). The open fool may yet be taught; the self-sealed man has shut the only door wisdom enters by. He breaks the great charge of the book — *Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (3:7) — and stands under Isaiah''s woe: *Woe unto them that are wise in their own eyes, and prudent in their own sight!* (5:21). The New Testament keeps the warning word for word: *Be not wise in your own conceits* (Romans 12:16). And Yahusha (Jesus) gives the portrait in the temple — the man wise in his own conceit praying with himself: *Elohim (God), I thank thee, that I am not as other men are, extortioners, unjust, adulterers, or even as this publican* (Luke 18:11). There was indeed *more hope of a fool* — the publican who could only smite his breast — *than of him*; the conceited went down to his house unjustified.',
+       sv.verse_id, ev.verse_id, 'free', 28634
+  FROM _s304_pr26_lookup sv, _s304_pr26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=26 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-26-the-slothful-saith-there-is-a-lion-in-the-way',
+       E'The slothful saith, There is a lion in the way',
+       E'The middle panel turns from the fool to the sluggard: *The slothful man saith, There is a lion in the way; a lion is in the streets* (Proverbs 26:13). The sluggard manufactures a danger to excuse his bed — the same lion he conjures elsewhere: *The slothful man saith, There is a lion without, I shall be slain in the streets* (22:13). The lion is in his mouth, not the road. The portrait fills in: *As the door turneth upon his hinges, so doth the slothful upon his bed* (26:14) — motion without going anywhere; *The slothful hideth his hand in his bosom; it grieveth him to bring it again to his mouth* (26:15), the verbatim twin of *A slothful man hideth his hand in his bosom, and will not so much as bring it to his mouth again* (19:24) — too lazy even to feed himself. And the final stroke names his deepest folly: *The sluggard is wiser in his own conceit than seven men that can render a reason* (26:16) — like the man worse than a fool of v.12, he is wise in his own eyes, and so beyond counsel.',
+       sv.verse_id, ev.verse_id, 'free', 28637
+  FROM _s304_pr26_lookup sv, _s304_pr26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=26 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-26-where-no-talebearer-the-strife-ceaseth-the-meddler-and-the-whisperer',
+       E'Where there is no talebearer, the strife ceaseth — the meddler and the whisperer',
+       E'The last panel turns to the strife-makers: the meddler, the firebrand-deceiver, and the talebearer. *He that passeth by, and meddleth with strife belonging not to him, is like one that taketh a dog by the ears* (Proverbs 26:17) — he seizes a contention that was never his and is bitten for it, doing the very thing the book forbids: *The beginning of strife is as when one letteth out water: therefore leave off contention, before it be meddled with* (17:14). Kepha (Peter) names him beside the evildoer: *a busybody in other men''s matters* (1 Peter 4:15). Then the careless deceiver who calls his harm a game: *As a mad man who casteth firebrands, arrows, and death, So is the man that deceiveth his neighbour, and saith, Am not I in sport?* (26:18-19). And at the center, the talebearer who feeds the fire: *Where no wood is, there the fire goeth out: so where there is no talebearer, the strife ceaseth* (26:20); *As coals are to burning coals, and wood to fire; so is a contentious man to kindle strife* (26:21); *The words of a talebearer are as wounds, and they go down into the innermost parts of the belly* (26:22) — the verbatim twin of 18:8. The Torah itself forbids him, sealed with the Name: *Thou shalt not go up and down as a talebearer among thy people... I am Yahuah (LORD)* (Leviticus 19:16); the book adds that *a whisperer separateth chief friends* (16:28). Yaaqov (James) sees the flame where Proverbs sees the wood: *the tongue is a fire, a world of iniquity... and it is set on fire of hell* (3:6). And the restored witness pronounces the curse the wisdom-tradition kept for him: *Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Sirach 28:13). Take away the wood — the talebearer — and the fire of strife dies of itself.',
+       sv.verse_id, ev.verse_id, 'extras', 28640
+  FROM _s304_pr26_lookup sv, _s304_pr26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=26 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-26-burning-lips-and-a-wicked-heart-and-the-pit-that-recoils',
+       E'Burning lips and a wicked heart — and the pit that recoils',
+       E'The chapter ends on the dissembler whose fair words mask a wicked heart, and the recoil that overtakes him. *Burning lips and a wicked heart are like a potsherd covered with silver dross* (Proverbs 26:23) — common clay glazed to look like silver. *He that hateth dissembleth with his lips, and layeth up deceit within him; When he speaketh fair, believe him not: for there are seven abominations in his heart* (26:24-25). The Psalms sing the very portrait: words *smoother than butter, but war was in his heart... yet were they drawn swords* (Psalm 55:21); those who *speak peace to their neighbours, but mischief is in their hearts* (Psalm 28:3); and Jeremiah seals it — *one speaketh peaceably to his neighbour with his mouth, but in heart he layeth his wait* (9:8). Yahusha (Jesus) unveils the same hypocrisy as whited sepulchres, *beautiful outward, but... within full of... uncleanness* (Matthew 23:27). But the proverb does not leave the dissembler hidden — *Whose hatred is covered by deceit, his wickedness shall be shewed before the whole congregation* (26:26) — for the harm he digs recoils upon him: *Whoso diggeth a pit shall fall therein: and he that rolleth a stone, it will return upon him* (26:27). It is the measure-for-measure of the whole library: *He made a pit, and digged it, and is fallen into the ditch which he made* (Psalm 7:15); *He that diggeth a pit shall fall into it* (Ecclesiastes 10:8); *whatsoever a man soweth, that shall he also reap* (Galatians 6:7). And the closing word names the flatterer''s ruin: *A lying tongue hateth those that are afflicted by it; and a flattering mouth worketh ruin* (26:28) — for *A man that flattereth his neighbour spreadeth a net for his feet* (29:5). The smooth mouth is the net; the dug pit is the grave; Elohim is not mocked.',
+       sv.verse_id, ev.verse_id, 'free', 28643
+  FROM _s304_pr26_lookup sv, _s304_pr26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=26 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The dog is turned to his own vomit again; and the sow that was washed to her wallowing in the mire* (2 Peter 2:22) — Kepha quotes 26:11 by name, *according to the true proverb*, over the apostate.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=11
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-as-a-dog-returneth-to-his-vomit-so-a-fool-returneth-to-his-folly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the latter end is worse with them than the beginning* (2 Peter 2:20) — the escaped one again entangled; the dog returned to its vomit (26:11).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=11
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-as-a-dog-returneth-to-his-vomit-so-a-fool-returneth-to-his-folly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*to turn from the holy commandment delivered unto them* (2 Peter 2:21) — the fool''s return of 26:11 is a turning FROM the commandment, not from a commandment-free grace.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=11
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-as-a-dog-returneth-to-his-vomit-so-a-fool-returneth-to-his-folly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the unclean spirit is gone out of a man... seeking rest, and findeth none* (Matthew 12:43) — the spirit returns to the emptied house; the fool circles back (26:11).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=11
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-as-a-dog-returneth-to-his-vomit-so-a-fool-returneth-to-his-folly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the last state of that man is worse than the first* (Matthew 12:45) — the relapse of 26:11 ends as Kepha says, the latter end worse than the beginning.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=11
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-as-a-dog-returneth-to-his-vomit-so-a-fool-returneth-to-his-folly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*If they shall fall away, to renew them again unto repentance* (Hebrews 6:6) — the gravest warning over the one who tasted and turned; the fool returned to his folly (26:11).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=11
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-as-a-dog-returneth-to-his-vomit-so-a-fool-returneth-to-his-folly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*when Pharaoh saw that there was respite, he hardened his heart* (Exodus 8:15) — the Tanakh''s living type of 26:11: back to the vomit the instant the pressure lifts.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=11
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=8 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-as-a-dog-returneth-to-his-vomit-so-a-fool-returneth-to-his-folly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Speak not in the ears of a fool: for he will despise the wisdom of thy words* (Proverbs 23:9) — the side of 26:4 that withholds the answer; do not stoop to the despiser.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=4
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=23 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-answer-not-a-fool-and-answer-a-fool-the-discernment-of-when'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*neither cast ye your pearls before swine* (Matthew 7:6) — the holy word withheld where it will only be trampled; the restraint of 26:4.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=4
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-answer-not-a-fool-and-answer-a-fool-the-discernment-of-when'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they held their peace, and answered him not a word... Answer him not* (Isaiah 36:21) — Hezekiah''s men live out 26:4''s silence before the mocker Rabshakeh.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=4
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=36 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-answer-not-a-fool-and-answer-a-fool-the-discernment-of-when'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Why tempt ye me, ye hypocrites?* (Matthew 22:18) — the side of 26:5: the Master answers the trap to expose the conceit.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=5
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=22 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-answer-not-a-fool-and-answer-a-fool-the-discernment-of-when'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Neither tell I you by what authority I do these things* (Matthew 21:27) — the Master declining the trap on the tempters'' terms; the first side of 26:4-5 lived out.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=5
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=21 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-answer-not-a-fool-and-answer-a-fool-the-discernment-of-when'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*foolish and unlearned questions avoid, knowing that they do gender strifes* (2 Timothy 2:23) — Shaul keeps the whole rule of 26:4-5 in one charge.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=5
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-answer-not-a-fool-and-answer-a-fool-the-discernment-of-when'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*stripes for the back of fools* (Proverbs 19:29) — the fool''s portion is correction, not the honour 26:1 says is unseemly for him.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=1
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=19 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-honour-is-not-seemly-for-a-fool-and-the-curse-causeless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*a price in the hand of a fool to get wisdom, seeing he hath no heart to it* (Proverbs 17:16) — why honour does not fit the fool (26:1): he has no heart for the wisdom it would adorn.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=3
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-honour-is-not-seemly-for-a-fool-and-the-curse-causeless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Be ye not as the horse, or as the mule... held in with bit and bridle* (Psalm 32:9) — the bridle of 26:3 is the Psalm''s image for the understanding-less.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=3
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=32 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-honour-is-not-seemly-for-a-fool-and-the-curse-causeless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*How shall I curse, whom Elohim (God) hath not cursed?* (Numbers 23:8) — Balaam confesses the truth of 26:2: no curse can light where Yahuah has not cursed.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=2
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=23 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-honour-is-not-seemly-for-a-fool-and-the-curse-causeless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*turned the curse into a blessing unto thee, because... he loved thee* (Deuteronomy 23:5) — the causeless curse of 26:2 not only fails but is turned to blessing on the beloved.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=2
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-honour-is-not-seemly-for-a-fool-and-the-curse-causeless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (Proverbs 3:7) — the great charge the self-conceited of 26:12 breaks.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=12
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-seest-thou-a-man-wise-in-his-own-conceit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Woe unto them that are wise in their own eyes* (Isaiah 5:21) — Isaiah''s woe is the weight 26:12 sets on the self-conceited.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=12
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-seest-thou-a-man-wise-in-his-own-conceit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Be not wise in your own conceits* (Romans 12:16) — the NT keeps 26:12 word for word as a charge to the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=12
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-seest-thou-a-man-wise-in-his-own-conceit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I thank thee, that I am not as other men are* (Luke 18:11) — the Pharisee is the portrait of 26:12; more hope of the publican-fool than of him.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=12
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=18 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-seest-thou-a-man-wise-in-his-own-conceit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The slothful man saith, There is a lion without* (Proverbs 22:13) — the same manufactured lion as 26:13; the danger is in his mouth, not the street.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=13
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=22 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-the-slothful-saith-there-is-a-lion-in-the-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*A slothful man hideth his hand in his bosom, and will not so much as bring it to his mouth again* (Proverbs 19:24) — the verbatim twin of 26:15; too lazy even to feed himself.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=15
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=19 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-the-slothful-saith-there-is-a-lion-in-the-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the beginning of strife is as when one letteth out water... leave off contention, before it be meddled with* (Proverbs 17:14) — the meddler of 26:17 takes up a strife not his.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=17
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-where-no-talebearer-the-strife-ceaseth-the-meddler-and-the-whisperer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*a busybody in other men''s matters* (1 Peter 4:15) — Kepha names the meddler of 26:17 beside the evildoer.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=17
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=4 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-where-no-talebearer-the-strife-ceaseth-the-meddler-and-the-whisperer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou shalt not go up and down as a talebearer among thy people... I am Yahuah (LORD)* (Leviticus 19:16) — the Torah forbids the talebearer of 26:20, sealed with the Name.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=20
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-where-no-talebearer-the-strife-ceaseth-the-meddler-and-the-whisperer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a whisperer separateth chief friends* (Proverbs 16:28) — the wood that feeds the fire of 26:20; remove him and the strife dies.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=20
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-where-no-talebearer-the-strife-ceaseth-the-meddler-and-the-whisperer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the words of a talebearer are as wounds* (Proverbs 18:8) — the verbatim twin of 26:22; the book indicts the whisper twice.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=22
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-where-no-talebearer-the-strife-ceaseth-the-meddler-and-the-whisperer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the tongue is a fire, a world of iniquity... set on fire of hell* (James 3:6) — where 26:21 sees the wood, Yaaqov sees the kindled flame.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=21
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-where-no-talebearer-the-strife-ceaseth-the-meddler-and-the-whisperer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Sirach 28:13) — the restored witness curses the talebearer of 26:20.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=20
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=28 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-where-no-talebearer-the-strife-ceaseth-the-meddler-and-the-whisperer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*smoother than butter, but war was in his heart... yet were they drawn swords* (Psalm 55:21) — the dross-glazed potsherd of 26:23 sung to the life.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=23
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=55 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-burning-lips-and-a-wicked-heart-and-the-pit-that-recoils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*which speak peace to their neighbours, but mischief is in their hearts* (Psalm 28:3) — the dissembler of 26:24, the one David prays to be kept from.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=24
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=28 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-burning-lips-and-a-wicked-heart-and-the-pit-that-recoils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*one speaketh peaceably to his neighbour with his mouth, but in heart he layeth his wait* (Jeremiah 9:8) — the fair lips and the laid ambush of 26:24-25.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=24
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=9 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-burning-lips-and-a-wicked-heart-and-the-pit-that-recoils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*like unto whited sepulchres... within full of... uncleanness* (Matthew 23:27) — the seven abominations behind fair speech (26:25) unveiled as hypocrisy.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=25
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-burning-lips-and-a-wicked-heart-and-the-pit-that-recoils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*He made a pit, and digged it, and is fallen into the ditch which he made* (Psalm 7:15) — the recoil of 26:27 sung word for picture.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=27
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=7 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-burning-lips-and-a-wicked-heart-and-the-pit-that-recoils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*He that diggeth a pit shall fall into it* (Ecclesiastes 10:8) — Qoheleth states the law of 26:27 plainly.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=27
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=10 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-burning-lips-and-a-wicked-heart-and-the-pit-that-recoils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*whatsoever a man soweth, that shall he also reap* (Galatians 6:7) — the rolled stone of 26:27 returning; Elohim is not mocked.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=27
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-burning-lips-and-a-wicked-heart-and-the-pit-that-recoils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*A man that flattereth his neighbour spreadeth a net for his feet* (Proverbs 29:5) — the ruinous flattering mouth of 26:28 is a snare, not kindness.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=26 AND sv.verse_number=28
+  JOIN _s304_pr26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=29 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-26-burning-lips-and-a-wicked-heart-and-the-pit-that-recoils'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_proverbs_27.sql (Proverbs 27) -----
+-- Chapter: Proverbs 27 — the chapter of the faithful friend and the fleeting day. It opens on the FRAMEWORK HEAVYWEIGHT at v.1: *Boast not thyself of to morrow; for thou knowest not what a day may bring forth* (27:1) — the verse James expands whole (Jas 4:13-14, life a vapour) and Yahusha (Jesus) dramatizes in the rich fool (Luke 12:18-20). Its heart is the loving-rebuke / faithful-friend cluster — *Open rebuke is better than secret love. Faithful are the wounds of a friend; but the kisses of an enemy are deceitful* (27:5-6) — bound to the Torah's own rebuke-command (Lev 19:17) and contrasted with the deceitful kiss (Joab, Judas). Its third pillar is *Iron sharpeneth iron; so a man sharpeneth the countenance of his friend* (27:17). The close is the good-husbandman charge — *Be thou diligent to know the state of thy flocks* (27:23) — the pastoral diligence that points to the true Shepherd.
+-- Tag: pr27   Temp view: _s304_pr27_lookup
+-- Sort band: base 28650, step 3 -> threads at 28650, 28653, 28656, 28659, 28662, 28665, 28668 (7 threads)
+-- Source of EVERY row: 'canon','proverbs',27,v
+--
+-- Proverbs 27 coverage:
+--   ★★ v.1 (Boast not thyself of to morrow; for thou knowest not what a day may bring forth) — THE FRAMEWORK HEAVYWEIGHT
+--        NT:     ★ James 4:13-14 (ye know not what shall be on the morrow... your life is even a vapour); ★ Luke 12:18-20 (the rich fool — thou fool, this night thy soul shall be required); 2 Corinthians 6:2 (now is the accepted time) — THREAD 1
+--        Extras: ★ Sirach 11:19 (he says, I have found rest... and yet he knoweth not what time shall come upon him, and... must leave those things to others, and die) — THREAD 1
+--        Tanakh: ★ Psalm 39:5-6 (thou hast made my days as an handbreadth... he heapeth up riches, and knoweth not who shall gather them); Ecclesiastes 9:12 (man knoweth not his time); Proverbs 16:9 (a man's heart deviseth his way: but Yahuah directeth his steps) — THREAD 1
+--   v.2 (Let another man praise thee, and not thine own mouth)
+--        NT:     2 Corinthians 10:18 (not he that commendeth himself is approved, but whom Yahuah commendeth) — THREAD 4
+--        Tanakh: Proverbs 25:27 (for men to search their own glory is not glory) — THREAD 4
+--   v.3-4 (a stone is heavy / wrath is cruel... but who is able to stand before envy?)
+--        NT:     James 3:16 (where envying and strife is, there is confusion and every evil work) — THREAD 4
+--        Tanakh: Song of Solomon 8:6 (jealousy is cruel as the grave); Genesis 37:11 (his brethren envied him) — THREAD 4
+--   ★ v.5-6 (Open rebuke is better than secret love / Faithful are the wounds of a friend; but the kisses of an enemy are deceitful)
+--        NT:     ★ Matthew 18:15 (if thy brother shall trespass, go and tell him his fault); Galatians 6:1 (restore such an one in the spirit of meekness); ★ Revelation 3:19 (As many as I love, I rebuke and chasten); ★ Matthew 26:48-49 (the deceitful kiss — Judas betrayed him with a kiss) — THREAD 2
+--        Extras: ★ Sirach 19:13 (Admonish a friend); Sirach 19:17 (Admonish your neighbour before you threaten him); Sirach 6:16 (A faithful friend is the medicine of life) — THREAD 2
+--        Tanakh: ★ Leviticus 19:17 (thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him); Psalm 141:5 (Let the righteous smite me; it shall be a kindness); Proverbs 28:23 (He that rebuketh a man afterwards shall find more favour); ★ 2 Samuel 20:9-10 (the deceitful kiss — Joab kisses Amasa and slays him) — THREAD 2
+--   v.7-8 (the full soul loatheth an honeycomb / as a bird that wandereth from her nest, so is a man that wandereth from his place)
+--        none warranted distinct (contentment + wandering — merely-prudential; touched in THREAD 5 prose around the friend-and-place couplet)
+--   v.9-10 (Ointment and perfume rejoice the heart: so doth the sweetness of a man's friend / Thine own friend, and thy father's friend, forsake not... better is a neighbour that is near than a brother far off)
+--        Extras: ★ Sirach 6:14 (A faithfull friend is a strong defence); Sirach 6:16 (A faithful friend is the medicine of life) — THREAD 5
+--        Tanakh: ★ Proverbs 17:17 (A friend loveth at all times, and a brother is born for adversity); Proverbs 18:24 (there is a friend that sticketh closer than a brother) — THREAD 5
+--   v.11 (My son, be wise, and make my heart glad, that I may answer him that reproacheth me)
+--        Tanakh: Proverbs 10:1 (A wise son maketh a glad father); Proverbs 23:24-25 (the father of the righteous shall greatly rejoice) — folded into THREAD 5 prose
+--   v.12 (A prudent man foreseeth the evil, and hideth himself) — verbatim twin of 22:3
+--        Tanakh: Proverbs 22:3 (verbatim twin) — THREAD 5 (folded as the prudence-couplet)
+--   v.17 (Iron sharpeneth iron; so a man sharpeneth the countenance of his friend)
+--        NT:     ★ Hebrews 10:24-25 (consider one another to provoke unto love and to good works); 1 Thessalonians 5:11 (edify one another) — THREAD 3
+--        Tanakh: ★ Proverbs 13:20 (He that walketh with wise men shall be wise); Ecclesiastes 4:9-12 (Two are better than one... a threefold cord is not quickly broken) — THREAD 3
+--   v.18-22 (whoso keepeth the fig tree shall eat the fruit / as in water face answereth to face / the fining pot for silver... so is a man to his praise / though thou bray a fool in a mortar)
+--        Tanakh: ★ Proverbs 17:3 (The fining pot is for silver, and the furnace for gold: but Yahuah trieth the hearts); Proverbs 26:11 (the incorrigible fool, ch26 sibling) — THREAD 6
+--   v.13 (Take his garment that is surety for a stranger) — none warranted (civic-prudential surety couplet, twin of 20:16, no framework weave)
+--   v.14-16 (he that blesseth his friend with a loud voice / a continual dropping... and a contentious woman) — none warranted (merely-prudential)
+--   v.19-20 (face answereth to face / Hell and destruction are never full) — none warranted distinct (face-to-face touched in THREAD 6; the never-satisfied eye merely-prudential)
+--   ★ v.23-27 (Be thou diligent to know the state of thy flocks... riches are not for ever / the lambs are for thy clothing)
+--        NT:     ★ John 10:14 (I am the good shepherd, and know my sheep); 1 Peter 5:2 (Feed the flock of Elohim) — THREAD 7
+--        Tanakh: ★ Ezekiel 34:2-4 (Woe to the shepherds of Yashar'el that feed not the flock); Proverbs 12:10 (A righteous man regardeth the life of his beast) — THREAD 7
+--
+-- Threads (slug — target libraries):
+--   1. proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth — Tanakh (Psalm, Ecclesiastes, Proverbs) + NT (James, Luke, 2 Corinthians) + Extras (Sirach) [extras] (★★ THE HEAVYWEIGHT: the fleeting day; James expands it, the rich fool dramatizes it; Yahuah directeth the steps)
+--   2. proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful — Tanakh (Leviticus, Psalm, Proverbs, 2 Samuel) + NT (Matthew, Galatians, Revelation) + Extras (Sirach) [extras] (★ the loving rebuke = the Torah's own command; the deceitful kiss of Joab and Judas)
+--   3. proverbs-27-iron-sharpeneth-iron-so-a-man-sharpeneth-his-friend — Tanakh (Proverbs, Ecclesiastes) + NT (Hebrews, 1 Thessalonians) [free] (the friend who edifies; two are better than one; provoke unto love and good works)
+--   4. proverbs-27-let-another-praise-thee-and-not-thine-own-mouth — Tanakh (Proverbs, Song of Solomon, Genesis) + NT (2 Corinthians, James) [free] (self-praise vs the commendation of Yahuah; envy that none can stand before)
+--   5. proverbs-27-a-friend-that-is-near-than-a-brother-far-off — Tanakh (Proverbs) + Extras (Sirach) [extras] (the faithful friend; better a near neighbour than a far brother)
+--   6. proverbs-27-as-the-fining-pot-for-silver-so-is-a-man-to-his-praise — Tanakh (Proverbs) [free] (the fining pot tries the man; Yahuah trieth the hearts; the incorrigible fool)
+--   7. proverbs-27-be-thou-diligent-to-know-the-state-of-thy-flocks — Tanakh (Ezekiel, Proverbs) + NT (John, 1 Peter) [free] (★ the good husbandman; the true Shepherd who knows His sheep; woe to the shepherds that feed not the flock)
+--
+-- Framing notes:
+--   ★★ THE HEAVYWEIGHT (THREAD 1): *Boast not thyself of to morrow; for thou knowest not what a day may bring forth* (27:1). James lifts the verse whole and names the boasting it forbids: *Go to now, ye that say, To day or to morrow we will go into such a city... whereas ye know not what shall be on the morrow. For what is your life? It is even a vapour, that appeareth for a little time, and then vanisheth away* (Jas 4:13-14) — and gives the only lawful speech: *If Yahuah (Lord) will, we shall live, and do this, or that* (4:15). Yahusha (Jesus) makes it a parable: the rich fool says *Soul, thou hast much goods laid up for many years; take thine ease* — and hears *Thou fool, this night thy soul shall be required of thee* (Luke 12:19-20). David sang it — *thou hast made my days as an handbreadth... he heapeth up riches, and knoweth not who shall gather them* (Ps 39:5-6); Qoheleth confirmed it — *man also knoweth not his time* (Eccl 9:12); and the same book gives the ground of the warning — *A man's heart deviseth his way: but Yahuah (LORD) directeth his steps* (Prov 16:9). The restored witness names the very self-talk James condemns: *he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die* (Sirach 11:19). Hence the apostolic urgency: *behold, now is the accepted time; behold, now is the day of salvation* (2 Cor 6:2). Boast not of a morrow that is not yours.
+--   ★ FAITHFUL WOUNDS (THREAD 2): *Open rebuke is better than secret love. Faithful are the wounds of a friend; but the kisses of an enemy are deceitful* (27:5-6). The loving rebuke is no harshness but the Torah's own command: *thou shalt not hate thy brother in thine heart: thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him* (Lev 19:17) — to withhold rebuke is to hate. David welcomed it — *Let the righteous smite me; it shall be a kindness* (Ps 141:5); the same book repeats it — *He that rebuketh a man afterwards shall find more favour than he that flattereth with the tongue* (Prov 28:23). The NT keeps the wound a kindness: *go and tell him his fault between thee and him alone* (Matt 18:15); *restore such an one in the spirit of meekness* (Gal 6:1); and from the throne — *As many as I love, I rebuke and chasten* (Rev 3:19). Against the faithful wound stands the deceitful kiss: Joab *took Amasa by the beard with the right hand to kiss him* and *smote him therewith in the fifth rib* (2 Sam 20:9-10); and the sign of the betrayer — *Whomsoever I shall kiss, that same is he* (Matt 26:48). The friend wounds to heal; the enemy kisses to slay.
+--   ★ THE SHEPHERD (THREAD 7): *Be thou diligent to know the state of thy flocks, and look well to thy herds* (27:23). The husbandman's diligence is the same care the Torah names — *A righteous man regardeth the life of his beast* (Prov 12:10) — and rises to the office of the shepherd. Yahuah's woe falls on the shepherds who feed only themselves: *Woe be to the shepherds of Yashar'el (Israel) that do feed themselves! should not the shepherds feed the flocks?... but ye feed not the flock* (Ezek 34:2-4). And the true Shepherd answers the woe: *I am the good shepherd, and know my sheep, and am known of mine* (John 10:14) — the very knowing-the-state-of-the-flock of the proverb, fulfilled in the Formed Son; whom Kepha (Peter) echoes to the elders — *Feed the flock of Elohim (God) which is among you, taking the oversight thereof* (1 Pet 5:2).
+--   EXTRAS: Sirach (Ecclesiasticus) double-written edition 'apocrypha' + book 'ecclesiasticus'. Clean witnesses pulled: 11:19 (the man who knows not what time shall come and must leave his goods — the rich-fool figure), 6:14/6:16 (the faithful friend a strong defence / the medicine of life), 19:13/19:17 (admonish a friend / admonish your neighbour). Sirach 6:15 weighed (nothing countervaileth a faithful friend) but 6:14+6:16 carry the cluster cleanest.
+
+CREATE TEMP VIEW _s304_pr27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Boast not thyself of to morrow (THE HEAVYWEIGHT)
+    ('canon','proverbs',27,1,'canon','james',4,13,'free',
+      E'*Go to now, ye that say, To day or to morrow we will go into such a city, and continue there a year, and buy and sell, and get gain* (James 4:13). James lifts *Boast not thyself of to morrow* (Proverbs 27:1) whole and names the boasting it forbids — the man who lays out a year of buying and selling as though to morrow were his to spend. The presumption is the very boast the proverb warns against; the day is not yet given.'),
+    ('canon','proverbs',27,1,'canon','james',4,14,'free',
+      E'*Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapour, that appeareth for a little time, and then vanisheth away* (James 4:14). This is *for thou knowest not what a day may bring forth* (Proverbs 27:1) made plain: *ye know not what shall be on the morrow*. The life that would boast of to morrow is a vapour; James gives the only lawful speech against it — *If Yahuah (Lord) will, we shall live, and do this, or that* (4:15).'),
+    ('canon','proverbs',27,1,'canon','luke',12,19,'free',
+      E'*And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry* (Luke 12:19). The rich fool speaks the exact boast of to morrow that Proverbs 27:1 forbids — many years laid up, ease assumed, the day presumed his own. He boasts of a to morrow he does not hold.'),
+    ('canon','proverbs',27,1,'canon','luke',12,20,'free',
+      E'*But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20). Here is *thou knowest not what a day may bring forth* (Proverbs 27:1) as judgment: the very night the man boasted of his years, *this night thy soul shall be required of thee*. The proverb''s warning is the parable''s verdict — the day brought forth what no boast foresaw.'),
+    ('canon','proverbs',27,1,'canon','psalms',39,5,'free',
+      E'*Behold, thou hast made my days as an handbreadth; and mine age is as nothing before thee: verily every man at his best state is altogether vanity. Selah* (Psalm 39:5). David measures out the reason for *Boast not thyself of to morrow* (Proverbs 27:1): the days are *an handbreadth*, the age *as nothing* — too short and too uncertain to boast upon. The man who would presume on to morrow does not know how frail he is.'),
+    ('canon','proverbs',27,1,'canon','psalms',39,6,'free',
+      E'*Surely every man walketh in a vain shew: surely they are disquieted in vain: he heapeth up riches, and knoweth not who shall gather them* (Psalm 39:6). This is the rich fool of Luke before the letter, and the warning of Proverbs 27:1 sung: the man *heapeth up riches, and knoweth not who shall gather them* — boasting of a morrow whose harvest will fall to another. He knows not what a day may bring forth.'),
+    ('canon','proverbs',27,1,'canon','ecclesiastes',9,12,'free',
+      E'*For man also knoweth not his time: as the fishes that are taken in an evil net, and as the birds that are caught in the snare; so are the sons of men snared in an evil time, when it falleth suddenly upon them* (Ecclesiastes 9:12). Qoheleth states the ground of *thou knowest not what a day may bring forth* (Proverbs 27:1): *man also knoweth not his time*. The day falls suddenly as a snare; the one who boasts of to morrow is the bird that does not see the net.'),
+    ('canon','proverbs',27,1,'canon','proverbs',16,9,'free',
+      E'*A man''s heart deviseth his way: but Yahuah (LORD) directeth his steps* (Proverbs 16:9). The same book gives the reason not to boast of to morrow (Proverbs 27:1): a man may devise, but *Yahuah (LORD) directeth his steps*. The morrow belongs to Yahuah, not to the planner; to boast of it is to seize what He alone directs.'),
+    ('canon','proverbs',27,1,'canon','2-corinthians',6,2,'free',
+      E'*behold, now is the accepted time; behold, now is the day of salvation* (2 Corinthians 6:2). If no man holds to morrow (Proverbs 27:1), then the hour to turn is this one: *now is the accepted time*. The apostolic urgency is the proverb''s positive — since the day may bring forth what you cannot foresee, do not defer to a morrow that is not yours.'),
+    ('canon','proverbs',27,1,'apocrypha','ecclesiasticus',11,19,'extras',
+      E'*Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die* (Sirach 11:19). The restored witness names the very self-talk Proverbs 27:1 forbids and Luke''s rich fool speaks: *I have found rest, and now will eat continually of my goods* — *and yet he knoweth not what time shall come upon him*. He boasts of a morrow he must leave to others, and die.'),
+
+    -- THREAD 2: Faithful are the wounds of a friend; the kisses of an enemy deceitful
+    ('canon','proverbs',27,6,'canon','leviticus',19,17,'free',
+      E'*Thou shalt not hate thy brother in thine heart: thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him* (Leviticus 19:17). The faithful wounds of *Open rebuke is better than secret love* (Proverbs 27:5-6) are the Torah''s own command: *thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him*. The secret love that will not rebuke is the hidden hate the Torah forbids; the faithful wound is the love that obeys.'),
+    ('canon','proverbs',27,5,'canon','psalms',141,5,'free',
+      E'*Let the righteous smite me; it shall be a kindness: and let him reprove me; it shall be an excellent oil, which shall not break my head* (Psalm 141:5). David welcomes the faithful wound of Proverbs 27:5-6: *Let the righteous smite me; it shall be a kindness*. The open rebuke is *an excellent oil*, not an injury — the very friend''s wound the proverb calls faithful.'),
+    ('canon','proverbs',27,5,'canon','proverbs',28,23,'free',
+      E'*He that rebuketh a man afterwards shall find more favour than he that flattereth with the tongue* (Proverbs 28:23). The same book sets the open rebuke above secret love (Proverbs 27:5): *He that rebuketh a man afterwards shall find more favour than he that flattereth with the tongue*. The flatterer''s smooth word is the kiss of the enemy; the rebuke is the wound that wins favour in the end.'),
+    ('canon','proverbs',27,5,'canon','matthew',18,15,'free',
+      E'*Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother* (Matthew 18:15). Yahusha (Jesus) commands the open rebuke of Proverbs 27:5: *go and tell him his fault*. The aim is to *gain thy brother* — the faithful wound that heals, the same love-that-rebukes the Torah and the proverb teach.'),
+    ('canon','proverbs',27,5,'canon','galatians',6,1,'free',
+      E'*Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted* (Galatians 6:1). The faithful wound of Proverbs 27:5-6 is here given its temper: *restore such an one in the spirit of meekness*. The rebuke is faithful when it aims to restore, not to wound for wounding''s sake; the friend smites to heal.'),
+    ('canon','proverbs',27,5,'canon','revelation',3,19,'free',
+      E'*As many as I love, I rebuke and chasten: be zealous therefore, and repent* (Revelation 3:19). From the throne the Formed Son states the proverb as His own way: *As many as I love, I rebuke and chasten*. The rebuke is the proof of love, not its opposite — the faithful wound of the truest Friend (Proverbs 27:5-6); secret love that will not chasten is no love at all.'),
+    ('canon','proverbs',27,6,'canon','2-samuel',20,9,'free',
+      E'*And Joab said to Amasa, Art thou in health, my brother? And Joab took Amasa by the beard with the right hand to kiss him* (2 Samuel 20:9). Here is the deceitful kiss of *the kisses of an enemy are deceitful* (Proverbs 27:6): Joab greets Amasa *my brother* and takes him by the beard *to kiss him* — the gesture of a friend masking the hand of a murderer.'),
+    ('canon','proverbs',27,6,'canon','2-samuel',20,10,'free',
+      E'*But Amasa took no heed to the sword that was in Joab''s hand: so he smote him therewith in the fifth rib, and shed out his bowels to the ground* (2 Samuel 20:10). The kiss of Joab becomes the sword: *he smote him... in the fifth rib*. This is the enemy''s deceitful kiss of Proverbs 27:6 in the flesh — the embrace that hides the blade, the opposite of the faithful friend''s open wound.'),
+    ('canon','proverbs',27,6,'canon','matthew',26,48,'free',
+      E'*Now he that betrayed him gave them a sign, saying, Whomsoever I shall kiss, that same is he: hold him fast* (Matthew 26:48). The deceitful kiss of *the kisses of an enemy are deceitful* (Proverbs 27:6) is made the very sign of the betrayer: *Whomsoever I shall kiss, that same is he*. The sign of friendship is turned into the mark of betrayal — the kiss that hands the Formed Son to His enemies.'),
+    ('canon','proverbs',27,6,'apocrypha','ecclesiasticus',19,13,'extras',
+      E'*Admonish a friend, it may be he has not done it: and if he have done it, that he do it no more* (Sirach 19:13). The restored witness keeps the faithful wound of Proverbs 27:5-6 as a duty to the friend: *Admonish a friend*. The open rebuke is owed in love — to leave a friend in his fault is the secret love the proverb sets below the faithful wound.'),
+    ('canon','proverbs',27,6,'apocrypha','ecclesiasticus',19,17,'extras',
+      E'*Admonish your neighbour before you threaten him; and not being angry, give place to the law of the Most High* (Sirach 19:17). The faithful wound of Proverbs 27:5-6 is here bound to the Torah itself: *Admonish your neighbour... and... give place to the law of the Most High* — the same rebuke-thy-neighbour of Leviticus 19:17. The friend''s wound is faithful because it gives place to the law, not to wrath.'),
+
+    -- THREAD 3: Iron sharpeneth iron
+    ('canon','proverbs',27,17,'canon','proverbs',13,20,'free',
+      E'*He that walketh with wise men shall be wise: but a companion of fools shall be destroyed* (Proverbs 13:20). The sharpening of *Iron sharpeneth iron; so a man sharpeneth the countenance of his friend* (Proverbs 27:17) is this walking-with-the-wise: the company we keep hones or dulls us. Iron meets iron and both are sharpened; the companion of fools is worn down to ruin.'),
+    ('canon','proverbs',27,17,'canon','ecclesiastes',4,9,'free',
+      E'*Two are better than one; because they have a good reward for their labour* (Ecclesiastes 4:9). Qoheleth gives the principle behind *so a man sharpeneth the countenance of his friend* (Proverbs 27:17): *Two are better than one*. The man alone cannot sharpen himself; it takes the friend''s iron — and *a threefold cord is not quickly broken* (4:12).'),
+    ('canon','proverbs',27,17,'canon','hebrews',10,24,'free',
+      E'*And let us consider one another to provoke unto love and to good works* (Hebrews 10:24). The sharpening of Proverbs 27:17 is kept whole in the NT charge: *consider one another to provoke unto love and to good works*. The friend''s iron provokes — sharpens the countenance — not to strife but to love and good works; iron sharpening iron unto obedience.'),
+    ('canon','proverbs',27,17,'canon','hebrews',10,25,'free',
+      E'*Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching* (Hebrews 10:25). The iron of Proverbs 27:17 cannot sharpen at a distance: *Not forsaking the assembling... but exhorting one another*. The friends must meet for the sharpening to happen — the gathered people honing one another the more as the day approaches.'),
+    ('canon','proverbs',27,17,'canon','1-thessalonians',5,11,'free',
+      E'*Wherefore comfort yourselves together, and edify one another, even as also ye do* (1 Thessalonians 5:11). The friend''s sharpening of Proverbs 27:17 is the apostolic *edify one another*. To edify is to build up — the iron that meets iron and leaves it sharper; mutual sharpening is the ordinary work of the covenant people.'),
+
+    -- THREAD 4: Let another praise thee, and not thine own mouth (and envy)
+    ('canon','proverbs',27,2,'canon','proverbs',25,27,'free',
+      E'*It is not good to eat much honey: so for men to search their own glory is not glory* (Proverbs 25:27). The same book twins *Let another man praise thee, and not thine own mouth* (Proverbs 27:2): *for men to search their own glory is not glory*. The mouth that praises itself seeks a glory that is no glory; the praise must come from another to be worth anything.'),
+    ('canon','proverbs',27,2,'canon','2-corinthians',10,18,'free',
+      E'*For not he that commendeth himself is approved, but whom Yahuah (Lord) commendeth* (2 Corinthians 10:18). Paul keeps the proverb whole: *Let another man praise thee, and not thine own mouth* (Proverbs 27:2) is *not he that commendeth himself is approved, but whom Yahuah (Lord) commendeth*. The self-praise the proverb forbids is the self-commendation the apostle counts worthless; only the praise of Yahuah stands.'),
+    ('canon','proverbs',27,4,'canon','song-of-solomon',8,6,'free',
+      E'*for love is strong as death; jealousy is cruel as the grave: the coals thereof are coals of fire, which hath a most vehement flame* (Song of Solomon 8:6). The proverb asks *who is able to stand before envy?* (Proverbs 27:4); the Song answers with its power — *jealousy is cruel as the grave*. Envy burns with a vehement flame none can stand against; it is fiercer than wrath or anger, which the proverb names beside it.'),
+    ('canon','proverbs',27,4,'canon','genesis',37,11,'free',
+      E'*And his brethren envied him; but his father observed the saying* (Genesis 37:11). The envy *who is able to stand before* (Proverbs 27:4) is shown in Yoseph''s (Joseph''s) brethren: *his brethren envied him* — and that envy drove them to the pit and the sale. The proverb''s question is answered by the story: not even a brother stood before it.'),
+    ('canon','proverbs',27,4,'canon','james',3,16,'free',
+      E'*For where envying and strife is, there is confusion and every evil work* (James 3:16). James tells what envy does that none can stand before (Proverbs 27:4): *where envying and strife is, there is confusion and every evil work*. The envy the proverb names as the strongest of the cruel passions is the root James traces to every evil work.'),
+
+    -- THREAD 5: A friend that is near than a brother far off
+    ('canon','proverbs',27,10,'canon','proverbs',17,17,'free',
+      E'*A friend loveth at all times, and a brother is born for adversity* (Proverbs 17:17). The charge *Thine own friend, and thy father''s friend, forsake not... better is a neighbour that is near than a brother far off* (Proverbs 27:10) is grounded here: *A friend loveth at all times*. The near friend who loves at all times is worth more in the day of calamity than a brother whose house is far off.'),
+    ('canon','proverbs',27,10,'canon','proverbs',18,24,'free',
+      E'*A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother* (Proverbs 18:24). The proverb that prefers the near neighbour to the far brother (Proverbs 27:10) is matched by *there is a friend that sticketh closer than a brother*. The bond of the faithful friend can outrun even blood when the day of calamity comes.'),
+    ('canon','proverbs',27,9,'apocrypha','ecclesiasticus',6,14,'extras',
+      E'*A faithfull friend is a strong defence: and he that has found such an one has found a treasure* (Sirach 6:14). The sweetness of *a man''s friend by hearty counsel* (Proverbs 27:9) is the restored witness''s *strong defence... a treasure*. The friend whose counsel rejoices the heart is no small comfort but a found treasure — worth more than the far-off brother of the next verse.'),
+    ('canon','proverbs',27,9,'apocrypha','ecclesiasticus',6,16,'extras',
+      E'*A faithful friend is the medicine of life; and they that fear Yahuah (God) shall find him* (Sirach 6:16). The hearty counsel that rejoices the heart in Proverbs 27:9 is *the medicine of life*. And the restored witness binds the gift to the fear of Yahuah — *they that fear Yahuah (God) shall find him* — the faithful friend is found in the covenant fear, not in the world.'),
+
+    -- THREAD 6: As the fining pot for silver, so is a man to his praise
+    ('canon','proverbs',27,21,'canon','proverbs',17,3,'free',
+      E'*The fining pot is for silver, and the furnace for gold: but Yahuah (LORD) trieth the hearts* (Proverbs 17:3). The same book gives the key to *As the fining pot for silver, and the furnace for gold; so is a man to his praise* (Proverbs 27:21): the fining pot tries the metal, *but Yahuah (LORD) trieth the hearts*. Praise tests a man as the furnace tests gold — it shews whether the heart Yahuah tries is pure or dross.'),
+    ('canon','proverbs',27,22,'canon','proverbs',26,11,'free',
+      E'*As a dog returneth to his vomit, so a fool returneth to his folly* (Proverbs 26:11). The fool who cannot be cured by braying *in a mortar among wheat with a pestle* (Proverbs 27:22) is the incorrigible fool of the sibling chapter: *a fool returneth to his folly*. No grinding will part him from it; the folly is bound in his heart and returns like the dog to its vomit.'),
+
+    -- THREAD 7: Be thou diligent to know the state of thy flocks (the Shepherd)
+    ('canon','proverbs',27,23,'canon','proverbs',12,10,'free',
+      E'*A righteous man regardeth the life of his beast: but the tender mercies of the wicked are cruel* (Proverbs 12:10). The diligence of *Be thou diligent to know the state of thy flocks* (Proverbs 27:23) is the same righteous care: *A righteous man regardeth the life of his beast*. To know the state of the flock is the mark of the righteous husbandman; neglect of the beast is the cruelty of the wicked.'),
+    ('canon','proverbs',27,23,'canon','ezekiel',34,2,'free',
+      E'*Son of Adam, prophesy against the shepherds of Yashar''el (Israel)... Woe be to the shepherds of Yashar''el (Israel) that do feed themselves! should not the shepherds feed the flocks?* (Ezekiel 34:2). The charge to know the state of the flock (Proverbs 27:23) becomes Yahuah''s woe on the shepherds who do not: *Woe be to the shepherds... that do feed themselves... should not the shepherds feed the flocks?* The undiligent shepherd of the proverb is the condemned shepherd of the prophet.'),
+    ('canon','proverbs',27,23,'canon','ezekiel',34,4,'free',
+      E'*The diseased have ye not strengthened, neither have ye healed that which was sick... neither have ye sought that which was lost; but with force and with cruelty have ye ruled them* (Ezekiel 34:4). This is the failure of *Be thou diligent to know the state of thy flocks* (Proverbs 27:23) named in full: the diseased unstrengthened, the lost unsought. The diligent knowing the proverb commands is exactly the care these shepherds withheld.'),
+    ('canon','proverbs',27,23,'canon','john',10,14,'free',
+      E'*I am the good shepherd, and know my sheep, and am known of mine* (John 10:14). The diligence to *know the state of thy flocks* (Proverbs 27:23) is fulfilled in the Formed Son: *I am the good shepherd, and know my sheep*. Where Yahuah''s woe fell on shepherds who knew not their flock, the true Shepherd knows His sheep by name — the proverb''s charge made flesh.'),
+    ('canon','proverbs',27,23,'canon','1-peter',5,2,'free',
+      E'*Feed the flock of Elohim (God) which is among you, taking the oversight thereof, not by constraint, but willingly; not for filthy lucre, but of a ready mind* (1 Peter 5:2). Kepha (Peter) lays the proverb on the elders: *Feed the flock of Elohim (God)... taking the oversight thereof*. To take the oversight is to know the state of the flock (Proverbs 27:23) — willingly, not for gain, in the pattern of the good Shepherd.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (THE HEAVYWEIGHT)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth',
+       E'Boast not thyself of to morrow — thou knowest not what a day may bring forth',
+       E'The chapter opens on the framework heavyweight: *Boast not thyself of to morrow; for thou knowest not what a day may bring forth* (Proverbs 27:1). The morrow is not a man''s to spend; to plan upon it as a possession is the boast the verse forbids. James lifts the proverb whole, naming the very speech it condemns: *Go to now, ye that say, To day or to morrow we will go into such a city, and continue there a year, and buy and sell, and get gain: whereas ye know not what shall be on the morrow. For what is your life? It is even a vapour, that appeareth for a little time, and then vanisheth away* (James 4:13-14) — and gives the only lawful tongue: *If Yahuah (Lord) will, we shall live, and do this, or that* (4:15). Yahusha (Jesus) makes it a parable: the rich fool says, *Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry* — and hears, *Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:19-20). David sang the brevity that makes the boast absurd — *thou hast made my days as an handbreadth; and mine age is as nothing before thee* (Psalm 39:5) — and described the rich fool before the letter: *he heapeth up riches, and knoweth not who shall gather them* (39:6). Qoheleth confirmed it: *man also knoweth not his time... so are the sons of men snared in an evil time, when it falleth suddenly upon them* (Ecclesiastes 9:12). And the same book gives the ground of the whole warning — *A man''s heart deviseth his way: but Yahuah (LORD) directeth his steps* (Proverbs 16:9): the morrow belongs to Yahuah, who directs the steps a man only devises. The restored witness names the rich fool''s self-talk exactly: *I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die* (Sirach 11:19). Therefore the apostolic urgency: *behold, now is the accepted time; behold, now is the day of salvation* (2 Corinthians 6:2). Do not boast of a morrow that is not yours; do this day what this day is given to do.',
+       sv.verse_id, ev.verse_id, 'extras', 28650
+  FROM _s304_pr27_lookup sv, _s304_pr27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=27 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful',
+       E'Faithful are the wounds of a friend — but the kisses of an enemy are deceitful',
+       E'The heart of the chapter is the loving rebuke set against the deceitful caress: *Open rebuke is better than secret love. Faithful are the wounds of a friend; but the kisses of an enemy are deceitful* (Proverbs 27:5-6). The friend''s wound is no harshness but the Torah''s own command — to withhold rebuke is to hate: *Thou shalt not hate thy brother in thine heart: thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him* (Leviticus 19:17). The secret love that says nothing is the hidden hate; the open rebuke is the love that obeys. David welcomed the wound — *Let the righteous smite me; it shall be a kindness: and let him reprove me; it shall be an excellent oil* (Psalm 141:5) — and the same book repeats the lesson: *He that rebuketh a man afterwards shall find more favour than he that flattereth with the tongue* (Proverbs 28:23). The New Testament keeps the faithful wound whole: *go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother* (Matthew 18:15); *restore such an one in the spirit of meekness* (Galatians 6:1); and from the throne the truest Friend declares His way — *As many as I love, I rebuke and chasten* (Revelation 3:19). Against the faithful wound stands the deceitful kiss. Joab greeted Amasa *my brother* and *took Amasa by the beard with the right hand to kiss him* — then *smote him therewith in the fifth rib* (2 Samuel 20:9-10): the embrace that hid the blade. And the sign of the great betrayer was the kiss itself: *Whomsoever I shall kiss, that same is he: hold him fast* (Matthew 26:48) — the kiss that handed the Formed Son to His enemies. The restored witness keeps the duty of the faithful wound: *Admonish a friend* (Sirach 19:13); *Admonish your neighbour before you threaten him; and not being angry, give place to the law of the Most High* (Sirach 19:17) — the rebuke that gives place to the Torah, not to wrath. The friend wounds to heal; the enemy kisses to slay.',
+       sv.verse_id, ev.verse_id, 'extras', 28653
+  FROM _s304_pr27_lookup sv, _s304_pr27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=27 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-27-iron-sharpeneth-iron-so-a-man-sharpeneth-his-friend',
+       E'Iron sharpeneth iron — so a man sharpeneth the countenance of his friend',
+       E'*Iron sharpeneth iron; so a man sharpeneth the countenance of his friend* (Proverbs 27:17). No man hones himself; it takes the meeting of iron with iron — the friend whose company sharpens. The same book names the principle: *He that walketh with wise men shall be wise: but a companion of fools shall be destroyed* (Proverbs 13:20) — the company we keep sharpens us or wears us down. Qoheleth gives the reason: *Two are better than one; because they have a good reward for their labour... a threefold cord is not quickly broken* (Ecclesiastes 4:9,12). The New Testament makes the sharpening the ordinary work of the gathered people: *let us consider one another to provoke unto love and to good works: Not forsaking the assembling of ourselves together... but exhorting one another* (Hebrews 10:24-25) — the iron cannot sharpen at a distance; the friends must meet. *Wherefore comfort yourselves together, and edify one another* (1 Thessalonians 5:11): to edify is to build up, the iron that leaves the other sharper than it found him. The sharpening is mutual and it is for love and good works — not strife, but the honing of one covenant-keeper by another.',
+       sv.verse_id, ev.verse_id, 'free', 28656
+  FROM _s304_pr27_lookup sv, _s304_pr27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=27 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-27-let-another-praise-thee-and-not-thine-own-mouth',
+       E'Let another man praise thee, and not thine own mouth',
+       E'The chapter''s opening couplets weigh self-praise and the cruel passions: *Let another man praise thee, and not thine own mouth; a stranger, and not thine own lips* (Proverbs 27:2); and *Wrath is cruel, and anger is outrageous; but who is able to stand before envy?* (27:4). The same book twins the first — *for men to search their own glory is not glory* (Proverbs 25:27): the mouth that praises itself seeks a glory that is none. Paul keeps it whole: *not he that commendeth himself is approved, but whom Yahuah (Lord) commendeth* (2 Corinthians 10:18) — the only praise worth having comes from another, and finally from Yahuah. As for envy, the proverb asks who can stand before it, and the library answers: it is *cruel as the grave: the coals thereof are coals of fire, which hath a most vehement flame* (Song of Solomon 8:6); it drove Yoseph''s (Joseph''s) brethren — *his brethren envied him* (Genesis 37:11) — to the pit and the sale; and James traces it to the root of ruin — *where envying and strife is, there is confusion and every evil work* (James 3:16). Wrath and anger are fierce, but envy is the passion before which none can stand.',
+       sv.verse_id, ev.verse_id, 'free', 28659
+  FROM _s304_pr27_lookup sv, _s304_pr27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=27 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-27-a-friend-that-is-near-than-a-brother-far-off',
+       E'Better is a neighbour that is near than a brother far off',
+       E'The chapter sets the worth of the faithful friend high: *Ointment and perfume rejoice the heart: so doth the sweetness of a man''s friend by hearty counsel* (Proverbs 27:9); *Thine own friend, and thy father''s friend, forsake not; neither go into thy brother''s house in the day of thy calamity: for better is a neighbour that is near than a brother far off* (27:10). The hearty counsel of a friend is as ointment to the heart, and the near friend who will come in the day of calamity is worth more than a brother whose house is far away. The same book grounds it: *A friend loveth at all times, and a brother is born for adversity* (Proverbs 17:17); *there is a friend that sticketh closer than a brother* (Proverbs 18:24). The restored witness weighs the gift heavier still: *A faithfull friend is a strong defence: and he that has found such an one has found a treasure* (Sirach 6:14); *A faithful friend is the medicine of life; and they that fear Yahuah (God) shall find him* (Sirach 6:16) — and binds the finding to the covenant fear, for it is *they that fear Yahuah* who find such a friend. The near friend, kept and not forsaken, is the treasure and the medicine; do not trade him for a distant tie.',
+       sv.verse_id, ev.verse_id, 'extras', 28662
+  FROM _s304_pr27_lookup sv, _s304_pr27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=27 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-27-as-the-fining-pot-for-silver-so-is-a-man-to-his-praise',
+       E'As the fining pot for silver, so is a man to his praise',
+       E'Near the chapter''s close two figures of testing stand together: *As the fining pot for silver, and the furnace for gold; so is a man to his praise* (Proverbs 27:21); and *Though thou shouldest bray a fool in a mortar among wheat with a pestle, yet will not his foolishness depart from him* (27:22). Praise tries a man as the furnace tries the metal — it shews whether what is in him is pure or dross. The same book gives the key the proverb leans on: *The fining pot is for silver, and the furnace for gold: but Yahuah (LORD) trieth the hearts* (Proverbs 17:3) — the praise that tests a man is finally Yahuah''s assaying of the heart. And the fool of v.22 is the incorrigible fool of the sibling chapter: no grinding parts him from his folly, for *As a dog returneth to his vomit, so a fool returneth to his folly* (Proverbs 26:11). The furnace purifies the silver; it cannot purify a folly that returns. The man is tried by his praise and the fool is shewn by his returning — both laid bare before the Yahuah who trieth the hearts.',
+       sv.verse_id, ev.verse_id, 'free', 28665
+  FROM _s304_pr27_lookup sv, _s304_pr27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=27 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-27-be-thou-diligent-to-know-the-state-of-thy-flocks',
+       E'Be thou diligent to know the state of thy flocks — the good Shepherd',
+       E'The chapter closes on the good husbandman: *Be thou diligent to know the state of thy flocks, and look well to thy herds. For riches are not for ever... The lambs are for thy clothing, and the goats are the price of the field* (Proverbs 27:23-26). The diligence to know the flock is the mark of the righteous, for *A righteous man regardeth the life of his beast: but the tender mercies of the wicked are cruel* (Proverbs 12:10). And this care rises from the field to the office of the shepherd. Yahuah''s woe falls on the shepherds who knew not — and fed not — the flock: *Woe be to the shepherds of Yashar''el (Israel) that do feed themselves! should not the shepherds feed the flocks?* (Ezekiel 34:2); *The diseased have ye not strengthened, neither have ye healed that which was sick... neither have ye sought that which was lost; but with force and with cruelty have ye ruled them* (34:4). The undiligent husbandman of the proverb is the condemned shepherd of the prophet. And the true Shepherd answers the woe in His own flesh: *I am the good shepherd, and know my sheep, and am known of mine* (John 10:14) — the very knowing-the-state-of-the-flock of the proverb, fulfilled in the Formed Son, who knows His sheep where the false shepherds did not. To the elders Kepha (Peter) lays the same charge: *Feed the flock of Elohim (God) which is among you, taking the oversight thereof, not by constraint, but willingly; not for filthy lucre, but of a ready mind* (1 Peter 5:2). To take the oversight is to know the state of the flock — the proverb''s wisdom carried from the sheepfold to the shepherding of Yahuah''s people.',
+       sv.verse_id, ev.verse_id, 'free', 28668
+  FROM _s304_pr27_lookup sv, _s304_pr27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=27 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*ye know not what shall be on the morrow... your life is even a vapour* (James 4:13-14) — James lifts 27:1 whole; the man who would boast of to morrow is a vapour that vanisheth.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*For what is your life? It is even a vapour... and then vanisheth away* (James 4:14) — *thou knowest not what a day may bring forth* (27:1) made plain; the only lawful speech is, If Yahuah will.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Soul, thou hast much goods laid up for many years; take thine ease* (Luke 12:19) — the rich fool speaks the exact boast of to morrow 27:1 forbids.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Thou fool, this night thy soul shall be required of thee* (Luke 12:20) — 27:1''s warning as judgment; the very night he boasted of his years.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*thou hast made my days as an handbreadth; and mine age is as nothing before thee* (Psalm 39:5) — the brevity that makes boasting of to morrow (27:1) absurd.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=39 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*he heapeth up riches, and knoweth not who shall gather them* (Psalm 39:6) — the rich fool before the letter; the morrow''s harvest falls to another (27:1).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=39 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*man also knoweth not his time... snared in an evil time, when it falleth suddenly* (Ecclesiastes 9:12) — the ground of 27:1; the day falls suddenly as a snare.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=9 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*A man''s heart deviseth his way: but Yahuah (LORD) directeth his steps* (Proverbs 16:9) — the morrow belongs to Yahuah, not the planner; the reason not to boast of it (27:1).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*behold, now is the accepted time; behold, now is the day of salvation* (2 Corinthians 6:2) — the positive of 27:1: do not defer to a morrow that is not yours.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*I have found rest... yet he knoweth not what time shall come upon him, and... must leave those things to others, and die* (Sirach 11:19) — the rich-fool self-talk 27:1 forbids, named in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=11 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-boast-not-thyself-of-to-morrow-thou-knowest-not-what-a-day-may-bring-forth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him* (Leviticus 19:17) — the faithful wound of 27:5-6 is the Torah''s command; secret love that will not rebuke is hidden hate.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Let the righteous smite me; it shall be a kindness... an excellent oil* (Psalm 141:5) — David welcomes the friend''s wound of 27:5.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=5
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=141 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He that rebuketh a man afterwards shall find more favour than he that flattereth with the tongue* (Proverbs 28:23) — the open rebuke of 27:5 above secret love; the flatterer''s smooth word is the enemy''s kiss.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=5
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=28 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*go and tell him his fault between thee and him alone... thou hast gained thy brother* (Matthew 18:15) — Yahusha commands the open rebuke of 27:5; the wound that gains the brother.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=5
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=18 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*restore such an one in the spirit of meekness* (Galatians 6:1) — the temper of the faithful wound (27:5-6): the rebuke aims to restore.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=5
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*As many as I love, I rebuke and chasten* (Revelation 3:19) — the truest Friend states 27:5-6 as His own way; the rebuke is the proof of love.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=5
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Joab took Amasa by the beard with the right hand to kiss him* (2 Samuel 20:9) — the deceitful kiss of 27:6 in the flesh; the gesture of a friend masking the murderer.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=20 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*he smote him therewith in the fifth rib* (2 Samuel 20:10) — the kiss becomes the sword; the enemy''s deceitful caress of 27:6.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=20 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*Whomsoever I shall kiss, that same is he* (Matthew 26:48) — the deceitful kiss of 27:6 made the very sign of the betrayer of the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*Admonish a friend* (Sirach 19:13) — the restored witness keeps the faithful wound of 27:5-6 as a duty owed in love.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=19 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*Admonish your neighbour... and... give place to the law of the Most High* (Sirach 19:17) — the faithful wound (27:5-6) bound to the Torah''s rebuke-thy-neighbour, not to wrath.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=19 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-faithful-are-the-wounds-of-a-friend-the-kisses-of-an-enemy-deceitful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He that walketh with wise men shall be wise: but a companion of fools shall be destroyed* (Proverbs 13:20) — the sharpening of 27:17 is the company we keep.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=13 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-iron-sharpeneth-iron-so-a-man-sharpeneth-his-friend'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Two are better than one; because they have a good reward for their labour* (Ecclesiastes 4:9) — the man alone cannot sharpen himself (27:17); a threefold cord is not quickly broken.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-iron-sharpeneth-iron-so-a-man-sharpeneth-his-friend'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*consider one another to provoke unto love and to good works* (Hebrews 10:24) — the friend''s iron provokes (27:17), not to strife but to love and good works.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-iron-sharpeneth-iron-so-a-man-sharpeneth-his-friend'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Not forsaking the assembling of ourselves together... but exhorting one another* (Hebrews 10:25) — the iron of 27:17 cannot sharpen at a distance; the friends must meet.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-iron-sharpeneth-iron-so-a-man-sharpeneth-his-friend'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*comfort yourselves together, and edify one another* (1 Thessalonians 5:11) — to edify is to build up: the iron that leaves the other sharper (27:17).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-iron-sharpeneth-iron-so-a-man-sharpeneth-his-friend'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*for men to search their own glory is not glory* (Proverbs 25:27) — the same book twins 27:2; self-praise seeks a glory that is none.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=2
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=25 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-let-another-praise-thee-and-not-thine-own-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*not he that commendeth himself is approved, but whom Yahuah (Lord) commendeth* (2 Corinthians 10:18) — Paul keeps 27:2 whole; only the praise of Yahuah stands.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=2
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=10 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-let-another-praise-thee-and-not-thine-own-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*jealousy is cruel as the grave: the coals thereof are coals of fire* (Song of Solomon 8:6) — answers 27:4''s question: envy burns with a flame none can stand before.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=4
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='song-of-solomon' AND tv.chapter_number=8 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-let-another-praise-thee-and-not-thine-own-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*And his brethren envied him* (Genesis 37:11) — the envy 27:4 asks who can stand before, shown driving Yoseph''s brethren to the pit.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=4
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=37 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-let-another-praise-thee-and-not-thine-own-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*where envying and strife is, there is confusion and every evil work* (James 3:16) — James traces the envy of 27:4 to the root of ruin.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=4
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-let-another-praise-thee-and-not-thine-own-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*A friend loveth at all times, and a brother is born for adversity* (Proverbs 17:17) — grounds 27:10; the near friend who loves at all times outweighs the far brother.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=10
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-a-friend-that-is-near-than-a-brother-far-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*there is a friend that sticketh closer than a brother* (Proverbs 18:24) — the bond of 27:10 can outrun even blood.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=10
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-a-friend-that-is-near-than-a-brother-far-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*A faithfull friend is a strong defence... has found a treasure* (Sirach 6:14) — the sweetness of a friend''s counsel (27:9) is a found treasure.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=9
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=6 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-a-friend-that-is-near-than-a-brother-far-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*A faithful friend is the medicine of life; and they that fear Yahuah (God) shall find him* (Sirach 6:16) — the hearty counsel of 27:9 as the medicine of life, found in the covenant fear.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=9
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-a-friend-that-is-near-than-a-brother-far-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The fining pot is for silver, and the furnace for gold: but Yahuah (LORD) trieth the hearts* (Proverbs 17:3) — the key to 27:21; praise tests a man as the furnace tests gold, but Yahuah tries the heart.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=21
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-as-the-fining-pot-for-silver-so-is-a-man-to-his-praise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*As a dog returneth to his vomit, so a fool returneth to his folly* (Proverbs 26:11) — the fool braying in the mortar (27:22) is the incorrigible fool of the sibling chapter; no grinding parts him from it.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=22
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=26 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-as-the-fining-pot-for-silver-so-is-a-man-to-his-praise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*A righteous man regardeth the life of his beast* (Proverbs 12:10) — the diligence of 27:23 is the righteous husbandman''s care.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=23
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-be-thou-diligent-to-know-the-state-of-thy-flocks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Woe be to the shepherds of Yashar''el that do feed themselves... should not the shepherds feed the flocks?* (Ezekiel 34:2) — Yahuah''s woe on shepherds who know not the flock 27:23 commands them to know.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=23
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-be-thou-diligent-to-know-the-state-of-thy-flocks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*neither have ye sought that which was lost; but with force and with cruelty have ye ruled them* (Ezekiel 34:4) — the failure of the diligent knowing 27:23 commands.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=23
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-be-thou-diligent-to-know-the-state-of-thy-flocks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I am the good shepherd, and know my sheep, and am known of mine* (John 10:14) — the knowing-the-state-of-the-flock of 27:23 fulfilled in the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=23
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-be-thou-diligent-to-know-the-state-of-thy-flocks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Feed the flock of Elohim (God) which is among you, taking the oversight thereof* (1 Peter 5:2) — to take the oversight is to know the state of the flock (27:23), in the pattern of the good Shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=27 AND sv.verse_number=23
+  JOIN _s304_pr27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-27-be-thou-diligent-to-know-the-state-of-thy-flocks'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_proverbs_29.sql (Proverbs 29) -----
+-- Chapter: Proverbs 29 — the last of the Hezekiah-collected proverbs, carrying THE FRAMEWORK KEYSTONE at v.18: *Where there is no vision, the people perish: but he that keepeth the law, happy is he* (29:18) — an anti-antinomian double, the cast-off people without prophetic vision set against the blessed Torah-keeper. Around it run a cluster of strong threads: the often-reproved who hardeneth his neck and is destroyed without remedy (29:1); the fear of man a snare against trust in Yahuah (29:25); the king that faithfully judgeth the poor whose throne is established (29:12-14); pride brought low and the humble upheld (29:22-23); the two-ways antithesis of the just and the wicked (29:27); and the righteous who considereth the cause of the poor (29:7).
+-- Tag: pr29   Temp view: _s304_pr29_lookup
+-- Sort band: base 28700, step 3 -> threads at 28700, 28703, 28706, 28709, 28712, 28715, 28718 (7 threads)
+-- Source of EVERY row: 'canon','proverbs',29,v
+--
+-- Proverbs 29 coverage:
+--   ★ v.1 (He that being often reproved hardeneth his neck, shall suddenly be destroyed, and that without remedy)
+--        NT:     ★ Acts 7:51 (Ye stiffnecked... ye do always resist the Ruach HaKodesh); Hebrews 3:7-8 (To day if ye will hear his voice, harden not your hearts) — THREAD 3
+--        Extras: none warranted (the stiff-neck/no-remedy figure carried whole by Torah + Chronicles + Proverbs 1)
+--        Tanakh: ★ Exodus 32:9 / Deuteronomy 9:13 (a stiffnecked people); ★ 2 Chronicles 36:15-16 (mocked the messengers... till there was no remedy); Proverbs 1:24,28 (because I have called and ye refused... then shall they call... but I will not answer); Zechariah 7:11-12 (made their hearts as an adamant stone, lest they should hear the law) — THREAD 3
+--   v.2 (When the righteous are in authority the people rejoice) — folded into THREAD 4 prose (the righteous vs wicked rule frames the king-judges-poor thread)
+--   v.7 (The righteous considereth the cause of the poor: but the wicked regardeth not to know it)
+--        NT:     none warranted distinct (the consider-the-poor figure carried by Torah + Jeremiah + Psalm + Job)
+--        Extras: none warranted distinct
+--        Tanakh: ★ Deuteronomy 15:7 (thou shalt not harden thine heart, nor shut thine hand); ★ Jeremiah 22:16 (he judged the cause of the poor and needy... was not this to know me?); Psalm 41:1 (Blessed is he that considereth the poor); Job 29:16 (I was a father to the poor); Proverbs 31:9 (plead the cause of the poor and needy) — THREAD 7
+--   v.12 (If a ruler hearken to lies, all his servants are wicked) — folded into THREAD 4 (the ruler/lies vs the king who judges faithfully)
+--   v.13 (The poor and the deceitful man meet together: Yahuah lighteneth both their eyes) — touched in THREAD 7 prose (Proverbs 22:2 lateral, the rich and poor meet, Yahuah the maker of both); no separate thread warranted
+--   v.14 (The king that faithfully judgeth the poor, his throne shall be established for ever)
+--        NT:     none warranted distinct (the Messianic-king-judges-poor carried by Psalm 72 + Isaiah 11)
+--        Extras: none warranted distinct
+--        Tanakh: ★ Psalm 72:2,4 (He shall judge thy people with righteousness... he shall judge the poor of the people); Isaiah 11:4 (with righteousness shall he judge the poor); Proverbs 16:12 / Proverbs 20:28 (the throne established by righteousness / upholden by mercy); 2 Samuel 23:3 (He that ruleth over men must be just) — THREAD 4
+--   v.15,17 (The rod and reproof give wisdom / Correct thy son and he shall give thee rest) — touched in THREAD 3 prose (reproof received vs reproof refused); the chastening cluster (13:24/22:15/23:13-14) merely-prudential, no separate thread warranted
+--   ★★ v.18 (Where there is no vision, the people perish: but he that keepeth the law, happy is he) — THE KEYSTONE
+--        NT:     ★ James 1:25 (the perfect law of liberty... this man shall be blessed in his deed); ★ Matthew 5:17,19 (Think not I am come to destroy the law) — THREAD 1
+--        Extras: ★ Sirach 32:24 (He that believes in Yahuah takes heed to the commandment); Sirach 1:26 (If you desire wisdom, keep the commandments) — THREAD 1
+--        Tanakh: ★★ 1 Samuel 3:1 (the word of Yahuah was precious; there was no open vision); ★ Amos 8:11-12 (a famine of hearing the words of Yahuah); 2 Chronicles 15:3 (without law); ★ Hosea 4:6 (thou hast forgotten the law); Psalm 19:7 / Psalm 119:1-2 (the law of Yahuah is perfect... blessed are they that keep his testimonies) — THREAD 1 (load-bearing keystone: the anti-antinomian double — no vision = cast-off people, AND the Torah-keeper is blessed)
+--   ★ v.22-23 (An angry man stirreth up strife / A man's pride shall bring him low, but honour shall uphold the humble in spirit)
+--        NT:     ★ Matthew 23:12 / Luke 14:11 (he that humbleth himself shall be exalted); James 4:6 (Elohim resisteth the proud, giveth grace to the humble) — THREAD 5
+--        Extras: none warranted distinct (the pride/humility figure carried whole by Proverbs laterals + Isaiah + NT)
+--        Tanakh: ★ Proverbs 16:18 (Pride goeth before destruction); Proverbs 18:12 (before honour is humility); Proverbs 15:18 (a wrathful man stirreth up strife); Isaiah 57:15 (I dwell... with him that is of a contrite and humble spirit) — THREAD 5
+--   ★ v.25 (The fear of man bringeth a snare: but whoso putteth his trust in Yahuah shall be safe)
+--        NT:     ★ Matthew 10:28 (fear not them which kill the body); John 12:42-43 (loved the praise of men); Acts 5:29 (we ought to obey Elohim rather than men); Galatians 1:10 (if I yet pleased men, I should not be the servant of Messiah) — THREAD 2
+--        Extras: none warranted distinct (the fear-of-man figure carried whole by Isaiah + Psalm + NT)
+--        Tanakh: ★ Isaiah 51:12-13 (who art thou that thou shouldest be afraid of a man that shall die... and forgettest Yahuah thy maker); Proverbs 18:10 (the name of Yahuah is a strong tower); Psalm 56:11 (I will not be afraid what man can do unto me) — THREAD 2
+--   v.24,26 (Whoso is partner with a thief hateth his own soul / Many seek the ruler's favour, but every man's judgment cometh from Yahuah) — touched in THREAD 7 / THREAD 4 prose; Leviticus 5:1 (oath of adjuration) weighed, merely-prudential here, no separate thread warranted
+--   ★ v.27 (An unjust man is an abomination to the just, and he that is upright in the way is abomination to the wicked)
+--        NT:     ★ John 3:20 (every one that doeth evil hateth the light); 1 John 3:12-13 (Cain... slew his brother... if the world hate you) — THREAD 6
+--        Extras: none warranted distinct (the two-ways antithesis carried whole by Psalm 1 + Proverbs 4 + NT)
+--        Tanakh: ★ Psalm 1:6 (Yahuah knoweth the way of the righteous: but the way of the ungodly shall perish); Proverbs 4:18-19 (the path of the just... the way of the wicked is as darkness) — THREAD 6
+--   PRUDENTIAL COUPLETS, none warranted (folded contextually or merely-prudential, no thread): v.3 (whoso loveth wisdom rejoiceth his father), v.4 (the king by judgment establisheth the land — touched THREAD 4), v.5 (a man that flattereth his neighbour), v.6 (in the transgression of an evil man there is a snare), v.8 (scornful men bring a city into a snare), v.9 (if a wise man contendeth with a foolish man), v.10 (the bloodthirsty hate the upright — touched THREAD 6 prose), v.11 (a fool uttereth all his mind), v.16 (when the wicked are multiplied), v.19-21 (a servant will not be corrected / hasty in words / delicately bringeth up his servant): merely-prudential or civic, no framework-bearing weave warranted.
+--
+-- Threads (slug — target libraries):
+--   1. proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy — Tanakh (1 Samuel, Amos, 2 Chronicles, Hosea, Psalm) + NT (Matthew, James) + Extras (Sirach) [extras] (★★ THE KEYSTONE: no vision = cast-off people, AND the Torah-keeper is blessed — the anti-antinomian double)
+--   2. proverbs-29-the-fear-of-man-bringeth-a-snare-but-trust-in-yahuah-shall-be-safe — Tanakh (Isaiah, Proverbs, Psalm) + NT (Matthew, John, Acts, Galatians) [free] (the fear of man a snare vs trust in Yahuah; the son-of-Adam that shall die)
+--   3. proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy — Tanakh (Exodus, Deuteronomy, 2 Chronicles, Proverbs, Zechariah) + NT (Acts, Hebrews) [free] (the often-reproved stiff neck; mocked the messengers till no remedy)
+--   4. proverbs-29-the-king-that-faithfully-judgeth-the-poor-his-throne-established — Tanakh (Psalm, Isaiah, Proverbs, 2 Samuel) [free] (the Messianic king who judges the poor; the throne established by righteousness)
+--   5. proverbs-29-a-mans-pride-shall-bring-him-low-but-honour-upholdeth-the-humble — Tanakh (Proverbs, Isaiah) + NT (Matthew, Luke, James) [free] (pride brought low, the humble in spirit upheld; he that humbleth himself shall be exalted)
+--   6. proverbs-29-an-unjust-man-an-abomination-to-the-just-the-two-ways — Tanakh (Psalm, Proverbs) + NT (John, 1 John) [free] (the two-ways antithesis; every one that doeth evil hateth the light)
+--   7. proverbs-29-the-righteous-considereth-the-cause-of-the-poor — Tanakh (Deuteronomy, Jeremiah, Psalm, Job, Proverbs) [free] (the righteous considers the poor; to judge the cause of the poor IS to know Yahuah)
+--
+-- Framing notes:
+--   ★★ THE KEYSTONE (THREAD 1): *Where there is no vision, the people perish: but he that keepeth the law, happy is he* (29:18). An anti-antinomian double in one breath. The first half: where prophetic vision is absent — where Yahuah's word is not heard — the people are unrestrained and cast off; Samuel's day is named exactly so, *the word of Yahuah (LORD) was precious in those days; there was no open vision* (1 Samuel 3:1), and Amos forewarns the worst famine of all, *not a famine of bread, nor a thirst for water, but of hearing the words of Yahuah (LORD)* (8:11-12), Israel left *without law* (2 Chronicles 15:3). Hosea names the cause and the cost together: *My people are destroyed for lack of knowledge... seeing thou hast forgotten the law of thy Elohim (God)* (4:6). The SECOND half is the framework hinge — *he that keepeth the law, happy is he* — the Torah not abolished but the very ground of blessing: *The law of Yahuah (LORD) is perfect, converting the soul* (Psalm 19:7), *Blessed are the undefiled in the way, who walk in the law of Yahuah (LORD)... Blessed are they that keep his testimonies* (Psalm 119:1-2). The NT keeps the measure whole: *whoso looketh into the perfect law of liberty... this man shall be blessed in his deed* (James 1:25), and the Formed Son Himself: *Think not that I am come to destroy the law, or the prophets... whosoever shall do and teach them, the same shall be called great* (Matthew 5:17,19). The restored witness states the same: *He that believes in Yahuah (God) takes heed to the commandment* (Sirach 32:24); *If you desire wisdom, keep the commandments* (Sirach 1:26). Vision and Torah are not two things — the heard word and the kept law are one blessedness.
+--   ★ FEAR OF MAN (THREAD 2): *The fear of man bringeth a snare: but whoso putteth his trust in Yahuah (LORD) shall be safe* (29:25). Isaiah rebukes the very snare with the son-of-Adam weight: *who art thou, that thou shouldest be afraid of a man that shall die, and of the son of Adam which shall be made as grass; And forgettest Yahuah (LORD) thy maker* (51:12-13) — to fear dying flesh is to forget the living Maker. The safety is the Name: *The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe* (18:10); *In Elohim (God) have I put my trust: I will not be afraid what man can do unto me* (Psalm 56:11). The NT keeps the snare and its cure: *fear not them which kill the body* (Matthew 10:28); the rulers who *loved the praise of men more than the praise of Elohim (God)* (John 12:42-43) are the snared; *We ought to obey Elohim (God) rather than men* (Acts 5:29) and *if I yet pleased men, I should not be the servant of Messiah (Christ)* (Galatians 1:10) are the freed.
+--   ★ HARDENED NECK (THREAD 3): *He, that being often reproved hardeneth his neck, shall suddenly be destroyed, and that without remedy* (29:1). The hardened neck is Israel's own besetting word — *it is a stiffnecked people* (Exodus 32:9; Deuteronomy 9:13) — and the *without remedy* is Chronicles' epitaph on the exile generation: *they mocked the messengers of Elohim (God)... until the wrath of Yahuah (LORD) arose against his people, till there was no remedy* (2 Chronicles 36:15-16). Wisdom warned the refusers from the first chapter — *Because I have called, and ye refused... Then shall they call upon me, but I will not answer* (Proverbs 1:24,28) — and Zechariah names the adamant heart that *should not hear the law* (7:11-12). The NT levels the same charge — *Ye stiffnecked... ye do always resist the Ruach HaKodesh (Holy Spirit)* (Acts 7:51) — and pleads the open door still: *To day if ye will hear his voice, Harden not your hearts* (Hebrews 3:7-8).
+--   ★ THE KING WHO JUDGES THE POOR (THREAD 4): *The king that faithfully judgeth the poor, his throne shall be established for ever* (29:14). The established throne is the Messianic-king psalm: *He shall judge thy people with righteousness, and thy poor with judgment... He shall judge the poor of the people, he shall save the children of the needy* (Psalm 72:2,4); and the Branch: *with righteousness shall he judge the poor* (Isaiah 11:4). The chapter sets the wicked ruler who hearkens to lies (29:12) against this faithful king; the throne stands not on power but on righteousness — *the throne is established by righteousness* (Proverbs 16:12), *his throne is upholden by mercy* (20:28), *He that ruleth over men must be just, ruling in the fear of Elohim (God)* (2 Samuel 23:3).
+--   ★ PRIDE AND HUMILITY (THREAD 5): *A man''s pride shall bring him low: but honour shall uphold the humble in spirit* (29:23). The great Proverbs refrain — *Pride goeth before destruction, and an haughty spirit before a fall* (16:18); *before honour is humility* (18:12) — and the high One who stoops to the low: *I dwell in the high and holy place, with him also that is of a contrite and humble spirit* (Isaiah 57:15). The NT makes it the law of the kingdom: *he that humbleth himself shall be exalted* (Matthew 23:12; Luke 14:11); *Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6). The angry man of 29:22 belongs here too — *a wrathful man stirreth up strife* (Proverbs 15:18).
+--   ★ THE TWO WAYS (THREAD 6): *An unjust man is an abomination to the just: and he that is upright in the way is abomination to the wicked* (29:27). The two-ways antithesis that closes the book of the wise: *Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6); *the path of the just is as the shining light... The way of the wicked is as darkness* (Proverbs 4:18-19). The mutual abomination the NT names as the hatred of the light: *every one that doeth evil hateth the light, neither cometh to the light* (John 3:20); *Marvel not, my brethren, if the world hate you* (1 John 3:12-13) — the Cain-and-Abel enmity, the seed-war, running to the end.
+--   ★ THE CAUSE OF THE POOR (THREAD 7): *The righteous considereth the cause of the poor: but the wicked regardeth not to know it* (29:7). To consider the poor is the Torah''s own open hand — *thou shalt not harden thine heart, nor shut thine hand from thy poor brother* (Deuteronomy 15:7) — and Jeremiah makes it the very knowledge of Yahuah: *He judged the cause of the poor and needy; then it was well with him: was not this to know me? saith Yahuah (LORD)* (22:16). *Blessed is he that considereth the poor* (Psalm 41:1); Job lived it — *I was a father to the poor* (29:16); and the worthy ruler is charged, *plead the cause of the poor and needy* (Proverbs 31:9). The chapter adds that maker and made meet alike — *The poor and the deceitful man meet together: Yahuah (LORD) lighteneth both their eyes* (29:13), as *The rich and poor meet together: Yahuah (LORD) is the maker of them all* (22:2).
+--   EXTRAS: Sirach (Ecclesiasticus) double-written edition 'apocrypha' + book 'ecclesiasticus'. Clean witnesses pulled: 32:24 (he that believes takes heed to the commandment), 1:26 (if you desire wisdom, keep the commandments) — both bound to THREAD 1 (the kept law). No extra-canonical member forced where the Tanakh + NT carry the weave whole.
+
+CREATE TEMP VIEW _s304_pr29_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Where there is no vision the people perish — but he that keepeth the law, happy is he (THE KEYSTONE)
+    ('canon','proverbs',29,18,'canon','1-samuel',3,1,'free',
+      E'*And the child Samuel ministered unto Yahuah (LORD) before Eli. And the word of Yahuah (LORD) was precious in those days; there was no open vision* (1 Samuel 3:1). Samuel''s day is named the very condition of *Where there is no vision, the people perish* (Proverbs 29:18): *the word of Yahuah (LORD) was precious in those days; there was no open vision*. Where the prophetic word fell silent the people were unrestrained — until Yahuah raised up a prophet again. The perishing is the loss of the heard word, not of mere foresight.'),
+    ('canon','proverbs',29,18,'canon','amos',8,11,'free',
+      E'*Behold, the days come, saith Adonai Yahuah (the Lord GOD), that I will send a famine in the land, not a famine of bread, nor a thirst for water, but of hearing the words of Yahuah (LORD)* (Amos 8:11). The no-vision of *Where there is no vision, the people perish* (Proverbs 29:18) is here the worst famine of all — *not a famine of bread... but of hearing the words of Yahuah (LORD)*. The word withdrawn is the people undone; the famine is of the very vision the proverb names.'),
+    ('canon','proverbs',29,18,'canon','amos',8,12,'free',
+      E'*And they shall wander from sea to sea, and from the north even to the east, they shall run to and fro to seek the word of Yahuah (LORD), and shall not find it* (Amos 8:12). The perishing of Proverbs 29:18 is drawn out in full: with no vision the people *run to and fro to seek the word of Yahuah (LORD), and shall not find it*. The unrestrained wandering of a people without the heard word IS the perishing the proverb warns of.'),
+    ('canon','proverbs',29,18,'canon','2-chronicles',15,3,'free',
+      E'*Now for a long season Yashar''el (Israel) hath been without the true Elohim (God), and without a teaching priest, and without law* (2 Chronicles 15:3). The famine-of-vision of Proverbs 29:18 had a name in Israel''s history — a long season *without the true Elohim (God), and without a teaching priest, and without law*. No teaching, no Torah, no vision: that is the perishing of the people.'),
+    ('canon','proverbs',29,18,'canon','hosea',4,6,'free',
+      E'*My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee, that thou shalt be no priest to me: seeing thou hast forgotten the law of thy Elohim (God), I will also forget thy children* (Hosea 4:6). Hosea joins both halves of Proverbs 29:18 — the people destroyed (perish) *for lack of knowledge*, and the cause named exactly: *thou hast forgotten the law of thy Elohim (God)*. To forget the Torah is to be the people that perish; the kept law is the people''s life.'),
+    ('canon','proverbs',29,18,'canon','psalms',19,7,'free',
+      E'*The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple* (Psalm 19:7). The second half of Proverbs 29:18 — *he that keepeth the law, happy is he* — rests on this: *The law of Yahuah (LORD) is perfect, converting the soul*. The Torah is not the people''s burden but the soul''s conversion; the one who keeps the perfect law is the happy man.'),
+    ('canon','proverbs',29,18,'canon','psalms',119,1,'free',
+      E'*Blessed are the undefiled in the way, who walk in the law of Yahuah (LORD)* (Psalm 119:1). The happiness of *he that keepeth the law, happy is he* (Proverbs 29:18) is sung at the head of the great Torah-psalm: *Blessed are the undefiled in the way, who walk in the law of Yahuah (LORD)*. The blessedness is bound to the walked, kept law — never to its abolition.'),
+    ('canon','proverbs',29,18,'canon','psalms',119,2,'free',
+      E'*Blessed are they that keep his testimonies, and that seek him with the whole heart* (Psalm 119:2). The proverb''s blessing — *he that keepeth the law, happy is he* (29:18) — is doubled here: *Blessed are they that keep his testimonies, and that seek him with the whole heart*. Keeping the testimonies and seeking Yahuah are one act; the kept Torah and the sought Yahuah are inseparable.'),
+    ('canon','proverbs',29,18,'canon','matthew',5,17,'free',
+      E'*Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil* (Matthew 5:17). The Formed Son seals the second half of Proverbs 29:18 against every claim that the law is undone: *Think not that I am come to destroy the law... but to fulfil*. The happy man of the proverb keeps the very law Yahusha (Jesus) came not to destroy; vision (the prophets) and Torah (the law) stand together in His own words.'),
+    ('canon','proverbs',29,18,'canon','matthew',5,19,'free',
+      E'*Whosoever therefore shall break one of these least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, the same shall be called great in the kingdom of heaven* (Matthew 5:19). The blessedness of *he that keepeth the law, happy is he* (Proverbs 29:18) is the greatness of *whosoever shall do and teach them*. The kingdom''s honour and the proverb''s happiness fall on the same man — the keeper, not the breaker, of the commandments.'),
+    ('canon','proverbs',29,18,'canon','james',1,25,'free',
+      E'*But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed* (James 1:25). Yaaqov (James) restates Proverbs 29:18 almost word for word: *whoso looketh into the perfect law of liberty... this man shall be blessed in his deed* — the very *he that keepeth the law, happy is he*. The kept Torah is the perfect law of liberty, and its doer is the blessed man.'),
+    ('canon','proverbs',29,18,'apocrypha','ecclesiasticus',32,24,'extras',
+      E'*He that believes in Yahuah (God) takes heed to the commandment; and he that trusts in him shall fare never the worse* (Sirach 32:24). The restored witness binds faith and Torah exactly as Proverbs 29:18 binds vision and law: *He that believes in Yahuah (God) takes heed to the commandment*. To believe is to keep the commandment; the trusting law-keeper is the one who *shall fare never the worse* — the happy man of the proverb.'),
+    ('canon','proverbs',29,18,'apocrypha','ecclesiasticus',1,26,'extras',
+      E'*If you desire wisdom, keep the commandments, and Yahuah (God) shall give her to you* (Sirach 1:26). Where Proverbs 29:18 makes the kept law the people''s happiness, the restored witness makes it the door to wisdom itself: *If you desire wisdom, keep the commandments*. The vision the people lack and the law they must keep are not at odds — the kept commandment is the way wisdom is given.'),
+
+    -- THREAD 2: The fear of man bringeth a snare — but trust in Yahuah shall be safe
+    ('canon','proverbs',29,25,'canon','isaiah',51,12,'free',
+      E'*I, even I, am he that comforteth you: who art thou, that thou shouldest be afraid of a man that shall die, and of the son of Adam which shall be made as grass* (Isaiah 51:12). Isaiah rebukes the snare of *The fear of man bringeth a snare* (Proverbs 29:25) with the son-of-Adam''s frailty: *who art thou, that thou shouldest be afraid of a man that shall die... which shall be made as grass*. To dread dying flesh is to mistake grass for the Maker; the snare is fearing the mortal.'),
+    ('canon','proverbs',29,25,'canon','isaiah',51,13,'free',
+      E'*And forgettest Yahuah (LORD) thy maker, that hath stretched forth the heavens, and laid the foundations of the earth; and hast feared continually every day because of the fury of the oppressor, as if he were ready to destroy? and where is the fury of the oppressor?* (Isaiah 51:13). The snare of the fear of man (Proverbs 29:25) is here exposed as forgetfulness: to fear man continually is to forget *Yahuah (LORD) thy maker*. The trust that *shall be safe* is the remembered Maker against the vanished fury of the oppressor.'),
+    ('canon','proverbs',29,25,'canon','proverbs',18,10,'free',
+      E'*The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe* (Proverbs 18:10). The safety of *whoso putteth his trust in Yahuah (LORD) shall be safe* (29:25) is the same book''s strong tower: *The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe*. The trust that escapes the snare of man runs not to its own nerve but into the Name.'),
+    ('canon','proverbs',29,25,'canon','psalms',56,11,'free',
+      E'*In Elohim (God) have I put my trust: I will not be afraid what man can do unto me* (Psalm 56:11). David sings the cure of Proverbs 29:25: against the fear that snares, *In Elohim (God) have I put my trust: I will not be afraid what man can do unto me*. The trust in Yahuah and the fearlessness of man are one settled heart.'),
+    ('canon','proverbs',29,25,'canon','matthew',10,28,'free',
+      E'*And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell* (Matthew 10:28). The Formed Son draws the very line of Proverbs 29:25 — *fear not them which kill the body... but rather fear him* — moving the fear off the man who can only snare onto the Yahuah in whom is safety.'),
+    ('canon','proverbs',29,25,'canon','john',12,42,'free',
+      E'*Nevertheless among the chief rulers also many believed on him; but because of the Pharisees they did not confess him, lest they should be put out of the synagogue* (John 12:42). Here the snare of *The fear of man bringeth a snare* (Proverbs 29:25) catches the rulers: they believed, *but because of the Pharisees they did not confess him*. The fear of man trapped the very confession they owed; the snare is a mouth shut by dread.'),
+    ('canon','proverbs',29,25,'canon','john',12,43,'free',
+      E'*For they loved the praise of men more than the praise of Elohim (God)* (John 12:43). The snare of Proverbs 29:25 is named at its root: *they loved the praise of men more than the praise of Elohim (God)*. To prize man''s approval above Yahuah''s is the fear-of-man that ensnares; the safe trust loves the praise of Elohim instead.'),
+    ('canon','proverbs',29,25,'canon','acts',5,29,'free',
+      E'*Then Peter and the other apostles answered and said, We ought to obey Elohim (God) rather than men* (Acts 5:29). The escape from the snare of Proverbs 29:25 is Kepha''s (Peter''s) plain word: *We ought to obey Elohim (God) rather than men*. The one who fears Yahuah and not man is freed to obey — the trust that *shall be safe* set against the dread that snares.'),
+    ('canon','proverbs',29,25,'canon','galatians',1,10,'free',
+      E'*For do I now persuade men, or Elohim (God)? or do I seek to please men? for if I yet pleased men, I should not be the servant of Messiah (Christ)* (Galatians 1:10). Sha''ul (Paul) names the snare of Proverbs 29:25 as the bondage it is: *if I yet pleased men, I should not be the servant of Messiah (Christ)*. The fear of man and the service of Messiah cannot share one heart; trust in Yahuah is the freedom from man-pleasing.'),
+
+    -- THREAD 3: He that hardeneth his neck shall suddenly be destroyed, without remedy
+    ('canon','proverbs',29,1,'canon','exodus',32,9,'free',
+      E'*And Yahuah (LORD) said unto Moses, I have seen this people, and, behold, it is a stiffnecked people* (Exodus 32:9). The hardened neck of *He, that being often reproved hardeneth his neck* (Proverbs 29:1) is Israel''s own besetting word: *it is a stiffnecked people*. The proverb takes the nation''s ancient charge and presses it on every man often reproved who will not bend.'),
+    ('canon','proverbs',29,1,'canon','deuteronomy',9,13,'free',
+      E'*Furthermore Yahuah (LORD) spake unto me, saying, I have seen this people, and, behold, it is a stiffnecked people* (Deuteronomy 9:13). Moses repeats the verdict that names the neck of Proverbs 29:1: *it is a stiffnecked people*. The often-reproved who hardeneth his neck stands in the same danger the whole nation stood in — the stiff neck that brings the sudden stroke.'),
+    ('canon','proverbs',29,1,'canon','2-chronicles',36,15,'free',
+      E'*And Yahuah Elohim (the LORD God) of their fathers sent to them by his messengers, rising up betimes, and sending; because he had compassion on his people, and on his dwelling place* (2 Chronicles 36:15). The *often reproved* of Proverbs 29:1 is this long patience: Yahuah *sent to them by his messengers, rising up betimes, and sending*. The reproof came again and again in mercy — making the hardened neck that follows the more without excuse.'),
+    ('canon','proverbs',29,1,'canon','2-chronicles',36,16,'free',
+      E'*But they mocked the messengers of Elohim (God), and despised his words, and misused his prophets, until the wrath of Yahuah (LORD) arose against his people, till there was no remedy* (2 Chronicles 36:16). Here is the exact end of Proverbs 29:1 — *shall suddenly be destroyed, and that without remedy*: they hardened the neck against every reproof *till there was no remedy*. The proverb''s warning is Israel''s own epitaph; the despised word leaves no cure.'),
+    ('canon','proverbs',29,1,'canon','proverbs',1,24,'free',
+      E'*Because I have called, and ye refused; I have stretched out my hand, and no man regarded* (Proverbs 1:24). The often-reproved hardening of 29:1 is Wisdom''s own complaint from the first chapter: *Because I have called, and ye refused*. The repeated call refused is the neck hardened; the book that opens with the refused reproof closes the warning here.'),
+    ('canon','proverbs',29,1,'canon','proverbs',1,28,'free',
+      E'*Then shall they call upon me, but I will not answer; they shall seek me early, but they shall not find me* (Proverbs 1:28). The *without remedy* of 29:1 is Wisdom''s sentence on the long-refused reproof: *Then shall they call upon me, but I will not answer*. The neck hardened past hearing finds, at last, a door shut — the sudden destruction with no recovery.'),
+    ('canon','proverbs',29,1,'canon','zechariah',7,11,'free',
+      E'*But they refused to hearken, and pulled away the shoulder, and stopped their ears, that they should not hear* (Zechariah 7:11). Zechariah paints the hardened neck of Proverbs 29:1 in motion: *they refused to hearken, and pulled away the shoulder, and stopped their ears*. The stiffened neck and the stopped ear are one refusal — the often-reproved who will not turn.'),
+    ('canon','proverbs',29,1,'canon','zechariah',7,12,'free',
+      E'*Yea, they made their hearts as an adamant stone, lest they should hear the law, and the words which Yahuah Tseva''ot (LORD of hosts) hath sent in his spirit by the former prophets: therefore came a great wrath from Yahuah Tseva''ot (LORD of hosts)* (Zechariah 7:12). The sudden destruction of Proverbs 29:1 follows the adamant heart: *they made their hearts as an adamant stone, lest they should hear the law... therefore came a great wrath*. The hardened neck against the Torah draws the wrath the proverb warns is without remedy.'),
+    ('canon','proverbs',29,1,'canon','acts',7,51,'free',
+      E'*Ye stiffnecked and uncircumcised in heart and ears, ye do always resist the Ruach HaKodesh (Holy Spirit): as your fathers did, so do ye* (Acts 7:51). Stephen levels the very charge of Proverbs 29:1 on those who hardened against every reproof: *Ye stiffnecked... ye do always resist the Ruach HaKodesh (Holy Spirit)*. The hardened neck of the proverb is the resisted Spirit; the fathers'' stiff neck lived on in the sons.'),
+    ('canon','proverbs',29,1,'canon','hebrews',3,7,'free',
+      E'*Wherefore (as the Ruach HaKodesh (Holy Spirit) saith, To day if ye will hear his voice* (Hebrews 3:7). Against the hardened neck of Proverbs 29:1 the NT holds the door open: *To day if ye will hear his voice*. The often-reproved still has a today — the warning of sudden destruction is also the call to hear before the neck stiffens past remedy.'),
+    ('canon','proverbs',29,1,'canon','hebrews',3,8,'free',
+      E'*Harden not your hearts, as in the provocation, in the day of temptation in the wilderness* (Hebrews 3:8). The plea answers Proverbs 29:1 directly: *Harden not your hearts*. The hardening neck of the proverb and the hardened heart of the wilderness are the same sin; the destruction without remedy is what this *to day* is given to escape.'),
+
+    -- THREAD 4: The king that faithfully judgeth the poor — his throne established
+    ('canon','proverbs',29,14,'canon','psalms',72,2,'free',
+      E'*He shall judge thy people with righteousness, and thy poor with judgment* (Psalm 72:2). The faithful king of *The king that faithfully judgeth the poor, his throne shall be established for ever* (Proverbs 29:14) is the Messianic king sung here: *He shall judge thy people with righteousness, and thy poor with judgment*. The throne established for ever is the throne that does the poor man justice.'),
+    ('canon','proverbs',29,14,'canon','psalms',72,4,'free',
+      E'*He shall judge the poor of the people, he shall save the children of the needy, and shall break in pieces the oppressor* (Psalm 72:4). The established throne of Proverbs 29:14 is the throne that *shall judge the poor of the people, he shall save the children of the needy*. The king whose rule the proverb makes eternal is the one who saves the needy and breaks the oppressor — the Messiah''s own reign.'),
+    ('canon','proverbs',29,14,'canon','isaiah',11,4,'free',
+      E'*But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked* (Isaiah 11:4). The faithfully-judging king of Proverbs 29:14 is the Branch of Yishai (Jesse): *with righteousness shall he judge the poor, and reprove with equity for the meek of the earth*. The throne established for ever is the everlasting righteousness of the One who judges the poor aright.'),
+    ('canon','proverbs',29,14,'canon','proverbs',16,12,'free',
+      E'*It is an abomination to kings to commit wickedness: for the throne is established by righteousness* (Proverbs 16:12). Why is the faithful king''s throne *established for ever* (29:14)? Because, the same book says, *the throne is established by righteousness*. The just judging of the poor is the righteousness on which the lasting throne stands; wickedness in a king is its own undoing.'),
+    ('canon','proverbs',29,14,'canon','proverbs',20,28,'free',
+      E'*Mercy and truth preserve the king: and his throne is upholden by mercy* (Proverbs 20:28). The established throne of 29:14 is upheld not by force but by mercy: *Mercy and truth preserve the king: and his throne is upholden by mercy*. The king who faithfully judges the poor is the merciful king, and mercy is what preserves him.'),
+    ('canon','proverbs',29,14,'canon','2-samuel',23,3,'free',
+      E'*The Elohim (God) of Yashar''el (Israel) said, the Rock of Yashar''el (Israel) spake to me, He that ruleth over men must be just, ruling in the fear of Elohim (God)* (2 Samuel 23:3). David''s last words name the charter of the faithful king of Proverbs 29:14: *He that ruleth over men must be just, ruling in the fear of Elohim (God)*. The throne established for ever is the throne of the just ruler who fears Yahuah and so judges the poor aright.'),
+
+    -- THREAD 5: A man's pride shall bring him low — honour upholdeth the humble in spirit
+    ('canon','proverbs',29,23,'canon','proverbs',16,18,'free',
+      E'*Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18). The first half of *A man''s pride shall bring him low* (29:23) is the book''s great refrain: *Pride goeth before destruction, and an haughty spirit before a fall*. The pride that lifts a man is the very thing that casts him down; the proverb states twice over that the haughty fall.'),
+    ('canon','proverbs',29,23,'canon','proverbs',18,12,'free',
+      E'*Before destruction the heart of man is haughty, and before honour is humility* (Proverbs 18:12). Both halves of Proverbs 29:23 — pride brought low, honour upholding the humble — are set here: *Before destruction the heart of man is haughty, and before honour is humility*. The way down is pride; the way to honour is the humble spirit the proverb exalts.'),
+    ('canon','proverbs',29,23,'canon','proverbs',15,18,'free',
+      E'*A wrathful man stirreth up strife: but he that is slow to anger appeaseth strife* (Proverbs 15:18). The angry man paired with the proud in this passage — *An angry man stirreth up strife* (29:22) — is met by the same book: *A wrathful man stirreth up strife: but he that is slow to anger appeaseth strife*. Wrath and pride are kin; both are brought low, while the humble and the slow-to-anger are upheld.'),
+    ('canon','proverbs',29,23,'canon','isaiah',57,15,'free',
+      E'*For thus saith the high and lofty One that inhabiteth eternity, whose name is Holy; I dwell in the high and holy place, with him also that is of a contrite and humble spirit, to revive the spirit of the humble, and to revive the heart of the contrite ones* (Isaiah 57:15). The honour that *shall uphold the humble in spirit* (Proverbs 29:23) is the High One''s own dwelling: *I dwell in the high and holy place, with him also that is of a contrite and humble spirit*. The humble are upheld because Yahuah Himself stoops to dwell with them and revive them.'),
+    ('canon','proverbs',29,23,'canon','matthew',23,12,'free',
+      E'*And whosoever shall exalt himself shall be abased; and he that shall humble himself shall be exalted* (Matthew 23:12). The Formed Son makes Proverbs 29:23 the law of the kingdom: *whosoever shall exalt himself shall be abased; and he that shall humble himself shall be exalted*. The pride that brings low and the humility that is upheld are exactly His measure.'),
+    ('canon','proverbs',29,23,'canon','luke',14,11,'free',
+      E'*For whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 14:11). Yahusha (Jesus) repeats the proverb''s verdict at the wedding-feast: *whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted*. The self-lifting is the self-lowering; the honour of Proverbs 29:23 is given, not seized.'),
+    ('canon','proverbs',29,23,'canon','james',4,6,'free',
+      E'*But he giveth more grace. Wherefore he saith, Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6). Yaaqov (James) quotes the very principle of Proverbs 29:23: *Elohim (God) resisteth the proud, but giveth grace unto the humble*. The pride that brings a man low is the pride Yahuah Himself resists; the honour upholding the humble is His grace given to them.'),
+
+    -- THREAD 6: An unjust man an abomination to the just — the two ways
+    ('canon','proverbs',29,27,'canon','psalms',1,6,'free',
+      E'*For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6). The two-ways antithesis of *An unjust man is an abomination to the just: and he that is upright in the way is abomination to the wicked* (29:27) is the close of the first psalm: *Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish*. The mutual abomination of the proverb is the parting of the two ways the whole book of the wise sets before every man.'),
+    ('canon','proverbs',29,27,'canon','proverbs',4,18,'free',
+      E'*But the path of the just is as the shining light, that shineth more and more unto the perfect day* (Proverbs 4:18). The upright way of Proverbs 29:27 is the shining path of the same book: *the path of the just is as the shining light, that shineth more and more unto the perfect day*. The just walk in growing light — the very brightness the wicked find an abomination.'),
+    ('canon','proverbs',29,27,'canon','proverbs',4,19,'free',
+      E'*The way of the wicked is as darkness: they know not at what they stumble* (Proverbs 4:19). The other half of the two ways of 29:27 is here: *The way of the wicked is as darkness: they know not at what they stumble*. The unjust man, an abomination to the just, walks in a darkness that hides even his own fall — light and darkness are the two ways the proverb sets at enmity.'),
+    ('canon','proverbs',29,27,'canon','john',3,20,'free',
+      E'*For every one that doeth evil hateth the light, neither cometh to the light, lest his deeds should be reproved* (John 3:20). The mutual abomination of Proverbs 29:27 — the upright a loathing to the wicked — is the Formed Son''s own word: *every one that doeth evil hateth the light, neither cometh to the light*. The wicked''s hatred of the upright is the hatred of the light that exposes him.'),
+    ('canon','proverbs',29,27,'canon','1-john',3,13,'free',
+      E'*Marvel not, my brethren, if the world hate you* (1 John 3:13). The abomination the wicked bear toward the upright (Proverbs 29:27) is the Cain-enmity Yochanan names: *Marvel not, my brethren, if the world hate you*. The hatred is no surprise but the ancient seed-war — *Not as Cain, who was of that wicked one, and slew his brother... Because his own works were evil, and his brother''s righteous* (1 John 3:12) — the unjust loathing the just to the end.'),
+
+    -- THREAD 7: The righteous considereth the cause of the poor
+    ('canon','proverbs',29,7,'canon','deuteronomy',15,7,'free',
+      E'*If there be among you a poor man of one of thy brethren within any of thy gates in thy land which Yahuah Elohayka (the LORD thy God) giveth thee, thou shalt not harden thine heart, nor shut thine hand from thy poor brother* (Deuteronomy 15:7). To consider the cause of the poor (Proverbs 29:7) is the Torah''s own open hand: *thou shalt not harden thine heart, nor shut thine hand from thy poor brother*. The wicked who *regardeth not to know it* is the man with hardened heart and shut hand the Torah forbids.'),
+    ('canon','proverbs',29,7,'canon','jeremiah',22,16,'free',
+      E'*He judged the cause of the poor and needy; then it was well with him: was not this to know me? saith Yahuah (LORD)* (Jeremiah 22:16). Jeremiah makes the considering of Proverbs 29:7 the very knowledge of Yahuah: *He judged the cause of the poor and needy... was not this to know me?* To regard the poor man''s cause IS to know Yahuah; the wicked who *regardeth not to know it* does not know Him.'),
+    ('canon','proverbs',29,7,'canon','psalms',41,1,'free',
+      E'*Blessed is he that considereth the poor: Yahuah (LORD) will deliver him in time of trouble* (Psalm 41:1). The righteous who *considereth the cause of the poor* (Proverbs 29:7) is the blessed man of the psalm: *Blessed is he that considereth the poor: Yahuah (LORD) will deliver him in time of trouble*. The one who regards the poor is himself regarded in his own day of trouble.'),
+    ('canon','proverbs',29,7,'canon','job',29,16,'free',
+      E'*I was a father to the poor: and the cause which I knew not I searched out* (Job 29:16). Job lived the considering of Proverbs 29:7: *I was a father to the poor: and the cause which I knew not I searched out*. The righteous does not merely glance at the poor but searches out the cause — the very knowing the wicked refuses.'),
+    ('canon','proverbs',29,7,'canon','proverbs',31,9,'free',
+      E'*Open thy mouth, judge righteously, and plead the cause of the poor and needy* (Proverbs 31:9). The same book charges the ruler to do what the righteous does in Proverbs 29:7: *Open thy mouth, judge righteously, and plead the cause of the poor and needy*. To consider the poor''s cause is to plead it; the righteous lends the poor his voice where the wicked will not even know it.'),
+    ('canon','proverbs',29,13,'canon','proverbs',22,2,'free',
+      E'*The rich and poor meet together: Yahuah (LORD) is the maker of them all* (Proverbs 22:2). The meeting of *The poor and the deceitful man meet together: Yahuah (LORD) lighteneth both their eyes* (29:13) is the same book''s great leveler: *The rich and poor meet together: Yahuah (LORD) is the maker of them all*. Because one Maker lightens the eyes of both, the righteous cannot disregard the poor man''s cause — he is Yahuah''s own handiwork.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (THE KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy',
+       E'Where there is no vision the people perish — but he that keepeth the law, happy is he',
+       E'The keystone of the chapter is an anti-antinomian double in a single breath: *Where there is no vision, the people perish: but he that keepeth the law, happy is he* (Proverbs 29:18). The first half measures a people by the heard word: where prophetic vision is absent the people are unrestrained and cast off. Samuel''s day is named exactly so — *the word of Yahuah (LORD) was precious in those days; there was no open vision* (1 Samuel 3:1) — and Amos forewarns the worst famine of all, *not a famine of bread, nor a thirst for water, but of hearing the words of Yahuah (LORD)... they shall run to and fro to seek the word of Yahuah (LORD), and shall not find it* (8:11-12). Chronicles names the season: *without the true Elohim (God), and without a teaching priest, and without law* (2 Chronicles 15:3); and Hosea joins both halves of the proverb — *My people are destroyed for lack of knowledge... seeing thou hast forgotten the law of thy Elohim (God)* (4:6). The SECOND half is the framework hinge — *he that keepeth the law, happy is he* — the Torah not abolished but the very ground of blessing: *The law of Yahuah (LORD) is perfect, converting the soul* (Psalm 19:7); *Blessed are the undefiled in the way, who walk in the law of Yahuah (LORD)... Blessed are they that keep his testimonies* (Psalm 119:1-2). The New Testament keeps the same measure whole, never abolishing it: *whoso looketh into the perfect law of liberty... this man shall be blessed in his deed* (James 1:25) restates the proverb almost word for word; and the Formed Son seals it: *Think not that I am come to destroy the law, or the prophets... whosoever shall do and teach them, the same shall be called great in the kingdom of heaven* (Matthew 5:17,19). The restored witness binds faith to the kept commandment in the same breath: *He that believes in Yahuah (God) takes heed to the commandment* (Sirach 32:24); *If you desire wisdom, keep the commandments* (Sirach 1:26). Vision and Torah are not two things — the heard word and the kept law are one blessedness, and the people that lose the first and forsake the second are the people that perish.',
+       sv.verse_id, ev.verse_id, 'extras', 28700
+  FROM _s304_pr29_lookup sv, _s304_pr29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=29 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-29-the-fear-of-man-bringeth-a-snare-but-trust-in-yahuah-shall-be-safe',
+       E'The fear of man bringeth a snare — but trust in Yahuah shall be safe',
+       E'The chapter sets two fears against each other: *The fear of man bringeth a snare: but whoso putteth his trust in Yahuah (LORD) shall be safe* (Proverbs 29:25). To fear man is to be trapped; to trust Yahuah is to be set on high. Isaiah rebukes the snare with the son-of-Adam''s frailty — *who art thou, that thou shouldest be afraid of a man that shall die, and of the son of Adam which shall be made as grass; And forgettest Yahuah (LORD) thy maker* (51:12-13): to dread dying flesh is to forget the living Maker. The safety is the Name and the trust — *The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe* (Proverbs 18:10); *In Elohim (God) have I put my trust: I will not be afraid what man can do unto me* (Psalm 56:11). The New Testament keeps both the snare and its cure. The Formed Son draws the very line: *fear not them which kill the body, but are not able to kill the soul: but rather fear him* (Matthew 10:28). The snare is shown catching the rulers who *believed on him; but because of the Pharisees they did not confess him... For they loved the praise of men more than the praise of Elohim (God)* (John 12:42-43). And the freed are those who say *We ought to obey Elohim (God) rather than men* (Acts 5:29), who know that *if I yet pleased men, I should not be the servant of Messiah (Christ)* (Galatians 1:10). The fear of man and the trust in Yahuah cannot share one heart; the snared mouth is shut by dread, but the safe man runs into the Name.',
+       sv.verse_id, ev.verse_id, 'free', 28703
+  FROM _s304_pr29_lookup sv, _s304_pr29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=29 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy',
+       E'He that hardeneth his neck shall suddenly be destroyed — and that without remedy',
+       E'The chapter opens on the danger of the refused reproof: *He, that being often reproved hardeneth his neck, shall suddenly be destroyed, and that without remedy* (Proverbs 29:1). The hardened neck is Israel''s own besetting word — *I have seen this people, and, behold, it is a stiffnecked people* (Exodus 32:9; Deuteronomy 9:13) — and the *without remedy* is Chronicles'' epitaph on the exile generation. Yahuah''s patience was the *often reproved*: He *sent to them by his messengers, rising up betimes, and sending; because he had compassion on his people* (2 Chronicles 36:15) — but *they mocked the messengers of Elohim (God), and despised his words... until the wrath of Yahuah (LORD) arose against his people, till there was no remedy* (36:16). Wisdom warned the refusers from the first chapter — *Because I have called, and ye refused* (Proverbs 1:24); *Then shall they call upon me, but I will not answer* (1:28) — and Zechariah paints the neck stiffening in motion: *they refused to hearken, and pulled away the shoulder, and stopped their ears... they made their hearts as an adamant stone, lest they should hear the law... therefore came a great wrath* (7:11-12). The New Testament levels the same charge and yet holds the door open. Stephen: *Ye stiffnecked... ye do always resist the Ruach HaKodesh (Holy Spirit): as your fathers did, so do ye* (Acts 7:51). And the plea: *To day if ye will hear his voice, Harden not your hearts, as in the provocation* (Hebrews 3:7-8). The proverb''s warning of sudden destruction is also the call to bend while there is still a today; the often-reproved who hardens past hearing finds at last a door shut and no cure.',
+       sv.verse_id, ev.verse_id, 'free', 28706
+  FROM _s304_pr29_lookup sv, _s304_pr29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=29 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-29-the-king-that-faithfully-judgeth-the-poor-his-throne-established',
+       E'The king that faithfully judgeth the poor — his throne established for ever',
+       E'The chapter sets the wicked ruler against the faithful king: *If a ruler hearken to lies, all his servants are wicked* (29:12), but *The king that faithfully judgeth the poor, his throne shall be established for ever* (29:14). The established throne is the Messianic-king psalm: *He shall judge thy people with righteousness, and thy poor with judgment... He shall judge the poor of the people, he shall save the children of the needy, and shall break in pieces the oppressor* (Psalm 72:2,4); and the Branch of Yishai (Jesse): *with righteousness shall he judge the poor, and reprove with equity for the meek of the earth* (Isaiah 11:4). The throne stands not on power but on righteousness, as the same book teaches twice: *the throne is established by righteousness* (Proverbs 16:12); *Mercy and truth preserve the king: and his throne is upholden by mercy* (20:28). David''s last words give the charter: *He that ruleth over men must be just, ruling in the fear of Elohim (God)* (2 Samuel 23:3). The king whose rule the proverb makes eternal is the just and merciful one who does the poor man justice — the very reign the Messiah fulfils. (And the chapter''s wider frame: *When the righteous are in authority, the people rejoice: but when the wicked beareth rule, the people mourn* (29:2).)',
+       sv.verse_id, ev.verse_id, 'free', 28709
+  FROM _s304_pr29_lookup sv, _s304_pr29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=29 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-29-a-mans-pride-shall-bring-him-low-but-honour-upholdeth-the-humble',
+       E'A man''s pride shall bring him low — but honour upholdeth the humble in spirit',
+       E'The chapter twins the angry and the proud, then names their end: *An angry man stirreth up strife, and a furious man aboundeth in transgression* (29:22); *A man''s pride shall bring him low: but honour shall uphold the humble in spirit* (29:23). The fall of the proud is the book''s great refrain — *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18); *Before destruction the heart of man is haughty, and before honour is humility* (18:12) — and the wrath that keeps it company: *A wrathful man stirreth up strife: but he that is slow to anger appeaseth strife* (15:18). The honour that upholds the humble is the High One''s own dwelling: *I dwell in the high and holy place, with him also that is of a contrite and humble spirit, to revive the spirit of the humble* (Isaiah 57:15). The New Testament makes the proverb the law of the kingdom: *whosoever shall exalt himself shall be abased; and he that shall humble himself shall be exalted* (Matthew 23:12; Luke 14:11); and Yaaqov (James) quotes the principle outright: *Elohim (God) resisteth the proud, but giveth grace unto the humble* (4:6). The pride that brings a man low is the pride Yahuah Himself resists; the honour upholding the humble is His grace, given and not seized.',
+       sv.verse_id, ev.verse_id, 'free', 28712
+  FROM _s304_pr29_lookup sv, _s304_pr29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=29 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-29-an-unjust-man-an-abomination-to-the-just-the-two-ways',
+       E'An unjust man an abomination to the just — the two ways',
+       E'The chapter closes on the two-ways antithesis that the whole book of the wise has been drawing: *An unjust man is an abomination to the just: and he that is upright in the way is abomination to the wicked* (Proverbs 29:27). The mutual loathing is no small spite but the parting of two ways that the first psalm seals: *Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6). Proverbs itself paints them as light and darkness: *the path of the just is as the shining light, that shineth more and more unto the perfect day* (4:18); *The way of the wicked is as darkness: they know not at what they stumble* (4:19). The Formed Son names the wicked''s abomination of the upright as the hatred of the light: *every one that doeth evil hateth the light, neither cometh to the light, lest his deeds should be reproved* (John 3:20). And Yochanan traces it to the first murder, the seed-war running to the end: *Not as Cain, who was of that wicked one, and slew his brother... Because his own works were evil, and his brother''s righteous* (1 John 3:12); *Marvel not, my brethren, if the world hate you* (3:13). The upright a loathing to the wicked, the unjust a loathing to the just — the two ways cannot mingle, and the world''s hatred of the righteous is no surprise but the ancient enmity.',
+       sv.verse_id, ev.verse_id, 'free', 28715
+  FROM _s304_pr29_lookup sv, _s304_pr29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=29 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-29-the-righteous-considereth-the-cause-of-the-poor',
+       E'The righteous considereth the cause of the poor',
+       E'The chapter marks the righteous and the wicked by their regard for the poor: *The righteous considereth the cause of the poor: but the wicked regardeth not to know it* (Proverbs 29:7). To consider the poor man''s cause is the Torah''s own open hand: *thou shalt not harden thine heart, nor shut thine hand from thy poor brother* (Deuteronomy 15:7) — the wicked who *regardeth not to know it* is the man with hardened heart the Torah forbids. Jeremiah lifts the matter higher still, making the regard of the poor the very knowledge of Yahuah: *He judged the cause of the poor and needy; then it was well with him: was not this to know me? saith Yahuah (LORD)* (22:16). The one who considers the poor is himself regarded — *Blessed is he that considereth the poor: Yahuah (LORD) will deliver him in time of trouble* (Psalm 41:1) — and Job lived it: *I was a father to the poor: and the cause which I knew not I searched out* (29:16). The worthy ruler is charged the same: *Open thy mouth, judge righteously, and plead the cause of the poor and needy* (Proverbs 31:9). And the ground of it all is one Maker: *The poor and the deceitful man meet together: Yahuah (LORD) lighteneth both their eyes* (29:13), as *The rich and poor meet together: Yahuah (LORD) is the maker of them all* (22:2). Because Yahuah lightens the eyes of both, the righteous cannot disregard the poor — he is Yahuah''s own handiwork, and to plead his cause is to know Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 28718
+  FROM _s304_pr29_lookup sv, _s304_pr29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=29 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the word of Yahuah (LORD) was precious in those days; there was no open vision* (1 Samuel 3:1) — Samuel''s day names the very no-vision of 29:18; the silenced word is the people unrestrained.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*not a famine of bread, nor a thirst for water, but of hearing the words of Yahuah (LORD)* (Amos 8:11) — the no-vision of 29:18 as the worst famine of all.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they shall run to and fro to seek the word of Yahuah (LORD), and shall not find it* (Amos 8:12) — the perishing of 29:18 drawn out; the people wander without the heard word.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*without the true Elohim (God), and without a teaching priest, and without law* (2 Chronicles 15:3) — the famine-of-vision named in Israel''s history; no teaching, no Torah.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=15 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*My people are destroyed for lack of knowledge... thou hast forgotten the law of thy Elohim (God)* (Hosea 4:6) — both halves of 29:18: the people perish, the Torah forgotten.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*The law of Yahuah (LORD) is perfect, converting the soul* (Psalm 19:7) — the ground of *he that keepeth the law, happy is he*; the Torah is the soul''s conversion.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Blessed are the undefiled in the way, who walk in the law of Yahuah (LORD)* (Psalm 119:1) — the happiness of 29:18 bound to the walked law.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Blessed are they that keep his testimonies, and that seek him with the whole heart* (Psalm 119:2) — the proverb''s blessing doubled; kept testimonies and sought Yahuah are one.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*Think not that I am come to destroy the law, or the prophets... but to fulfil* (Matthew 5:17) — the Formed Son seals the second half of 29:18; the law not destroyed.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*whosoever shall do and teach them, the same shall be called great* (Matthew 5:19) — the blessedness of the law-keeper is the greatness of the doer.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*whoso looketh into the perfect law of liberty... this man shall be blessed in his deed* (James 1:25) — Yaaqov restates 29:18 almost word for word; the kept Torah is the law of liberty.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 12, E'*He that believes in Yahuah (God) takes heed to the commandment* (Sirach 32:24) — the restored witness binds faith and Torah exactly as 29:18 binds vision and law.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=32 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 13, E'*If you desire wisdom, keep the commandments* (Sirach 1:26) — the kept commandment is the door to the very wisdom the people lack.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=1 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-where-there-is-no-vision-the-people-perish-but-he-that-keepeth-the-law-happy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*who art thou, that thou shouldest be afraid of a man that shall die... which shall be made as grass* (Isaiah 51:12) — the snare of 29:25 rebuked with the son-of-Adam''s frailty.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-fear-of-man-bringeth-a-snare-but-trust-in-yahuah-shall-be-safe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And forgettest Yahuah (LORD) thy maker... and where is the fury of the oppressor?* (Isaiah 51:13) — to fear man is to forget the Maker; the dread vanishes before Him.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-fear-of-man-bringeth-a-snare-but-trust-in-yahuah-shall-be-safe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe* (Proverbs 18:10) — the safety of 29:25 is the Name run into.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-fear-of-man-bringeth-a-snare-but-trust-in-yahuah-shall-be-safe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*In Elohim (God) have I put my trust: I will not be afraid what man can do unto me* (Psalm 56:11) — David sings the cure of 29:25; trust and fearlessness one heart.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=56 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-fear-of-man-bringeth-a-snare-but-trust-in-yahuah-shall-be-safe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*fear not them which kill the body... but rather fear him* (Matthew 10:28) — the Formed Son moves the fear off man onto Yahuah, the very line of 29:25.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=10 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-fear-of-man-bringeth-a-snare-but-trust-in-yahuah-shall-be-safe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*they did not confess him, lest they should be put out of the synagogue* (John 12:42) — the snare of 29:25 catching the rulers; a confession shut by dread.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=12 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-fear-of-man-bringeth-a-snare-but-trust-in-yahuah-shall-be-safe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*they loved the praise of men more than the praise of Elohim (God)* (John 12:43) — the snare of 29:25 named at its root.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=12 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-fear-of-man-bringeth-a-snare-but-trust-in-yahuah-shall-be-safe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*We ought to obey Elohim (God) rather than men* (Acts 5:29) — the escape from the snare of 29:25; the one who fears Yahuah is freed to obey.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=5 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-fear-of-man-bringeth-a-snare-but-trust-in-yahuah-shall-be-safe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*if I yet pleased men, I should not be the servant of Messiah (Christ)* (Galatians 1:10) — Sha''ul names the snare of 29:25 as bondage; man-pleasing and Messiah''s service cannot share one heart.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=25
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-fear-of-man-bringeth-a-snare-but-trust-in-yahuah-shall-be-safe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*it is a stiffnecked people* (Exodus 32:9) — the hardened neck of 29:1 is Israel''s own besetting word.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*it is a stiffnecked people* (Deuteronomy 9:13) — Moses repeats the verdict that names the neck of 29:1.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=9 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*sent to them by his messengers, rising up betimes, and sending; because he had compassion* (2 Chronicles 36:15) — the *often reproved* of 29:1 is Yahuah''s long patience.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they mocked the messengers... till there was no remedy* (2 Chronicles 36:16) — the exact end of 29:1: the despised word leaves no cure.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Because I have called, and ye refused* (Proverbs 1:24) — the often-reproved hardening of 29:1 is Wisdom''s own complaint.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=1 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Then shall they call upon me, but I will not answer* (Proverbs 1:28) — the *without remedy* of 29:1; the neck hardened past hearing finds a door shut.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=1 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*they refused to hearken, and pulled away the shoulder, and stopped their ears* (Zechariah 7:11) — the hardened neck of 29:1 in motion.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=7 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*they made their hearts as an adamant stone, lest they should hear the law... therefore came a great wrath* (Zechariah 7:12) — the adamant heart draws the wrath without remedy.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*Ye stiffnecked... ye do always resist the Ruach HaKodesh (Holy Spirit)* (Acts 7:51) — Stephen levels the charge of 29:1; the hardened neck is the resisted Spirit.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*To day if ye will hear his voice* (Hebrews 3:7) — against the hardened neck of 29:1 the NT holds the door open.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*Harden not your hearts, as in the provocation* (Hebrews 3:8) — the plea answers 29:1 directly; the *to day* is given to escape the destruction without remedy.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=1
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-he-that-hardeneth-his-neck-shall-suddenly-be-destroyed-without-remedy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He shall judge thy people with righteousness, and thy poor with judgment* (Psalm 72:2) — the faithful king of 29:14 is the Messianic king.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-king-that-faithfully-judgeth-the-poor-his-throne-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He shall judge the poor of the people, he shall save the children of the needy* (Psalm 72:4) — the throne established for ever is the throne that saves the needy.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-king-that-faithfully-judgeth-the-poor-his-throne-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*with righteousness shall he judge the poor* (Isaiah 11:4) — the faithfully-judging king of 29:14 is the Branch of Yishai.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-king-that-faithfully-judgeth-the-poor-his-throne-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the throne is established by righteousness* (Proverbs 16:12) — why the throne of 29:14 is established for ever.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-king-that-faithfully-judgeth-the-poor-his-throne-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Mercy and truth preserve the king: and his throne is upholden by mercy* (Proverbs 20:28) — the established throne of 29:14 upheld by mercy, not force.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=20 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-king-that-faithfully-judgeth-the-poor-his-throne-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*He that ruleth over men must be just, ruling in the fear of Elohim (God)* (2 Samuel 23:3) — David''s last words give the charter of the faithful king of 29:14.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=23 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-king-that-faithfully-judgeth-the-poor-his-throne-established'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18) — the first half of 29:23, the book''s great refrain.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=23
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-a-mans-pride-shall-bring-him-low-but-honour-upholdeth-the-humble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Before destruction the heart of man is haughty, and before honour is humility* (Proverbs 18:12) — both halves of 29:23 set together.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=23
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-a-mans-pride-shall-bring-him-low-but-honour-upholdeth-the-humble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*A wrathful man stirreth up strife: but he that is slow to anger appeaseth strife* (Proverbs 15:18) — the angry man of 29:22, kin to the proud.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=23
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-a-mans-pride-shall-bring-him-low-but-honour-upholdeth-the-humble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I dwell in the high and holy place, with him also that is of a contrite and humble spirit* (Isaiah 57:15) — the honour upholding the humble of 29:23 is the High One''s own dwelling.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=23
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=57 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-a-mans-pride-shall-bring-him-low-but-honour-upholdeth-the-humble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*whosoever shall exalt himself shall be abased; and he that shall humble himself shall be exalted* (Matthew 23:12) — the Formed Son makes 29:23 the law of the kingdom.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=23
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-a-mans-pride-shall-bring-him-low-but-honour-upholdeth-the-humble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 14:11) — Yahusha repeats the proverb''s verdict at the feast.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=23
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=14 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-a-mans-pride-shall-bring-him-low-but-honour-upholdeth-the-humble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6) — Yaaqov quotes the very principle of 29:23.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=23
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-a-mans-pride-shall-bring-him-low-but-honour-upholdeth-the-humble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6) — the two-ways antithesis of 29:27 sealed by the first psalm.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=27
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-an-unjust-man-an-abomination-to-the-just-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the path of the just is as the shining light, that shineth more and more unto the perfect day* (Proverbs 4:18) — the upright way of 29:27 as growing light.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=27
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-an-unjust-man-an-abomination-to-the-just-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The way of the wicked is as darkness: they know not at what they stumble* (Proverbs 4:19) — the other way of 29:27, a darkness that hides even the fall.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=27
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=4 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-an-unjust-man-an-abomination-to-the-just-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*every one that doeth evil hateth the light, neither cometh to the light* (John 3:20) — the wicked''s abomination of the upright (29:27) is the hatred of the light.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=27
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=3 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-an-unjust-man-an-abomination-to-the-just-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Marvel not, my brethren, if the world hate you* (1 John 3:13) — the abomination the wicked bear toward the upright (29:27) is the ancient Cain-enmity.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=27
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=3 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-an-unjust-man-an-abomination-to-the-just-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt not harden thine heart, nor shut thine hand from thy poor brother* (Deuteronomy 15:7) — to consider the poor''s cause (29:7) is the Torah''s own open hand.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=15 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-righteous-considereth-the-cause-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He judged the cause of the poor and needy... was not this to know me? saith Yahuah (LORD)* (Jeremiah 22:16) — to regard the poor''s cause IS to know Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=22 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-righteous-considereth-the-cause-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Blessed is he that considereth the poor: Yahuah (LORD) will deliver him in time of trouble* (Psalm 41:1) — the one who regards the poor is himself regarded.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=41 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-righteous-considereth-the-cause-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I was a father to the poor: and the cause which I knew not I searched out* (Job 29:16) — Job lived the considering of 29:7; the righteous searches out the cause.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=29 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-righteous-considereth-the-cause-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Open thy mouth, judge righteously, and plead the cause of the poor and needy* (Proverbs 31:9) — to consider the poor''s cause is to plead it.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=31 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-righteous-considereth-the-cause-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*The rich and poor meet together: Yahuah (LORD) is the maker of them all* (Proverbs 22:2) — the meeting of 29:13; one Maker lightens the eyes of both.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=29 AND sv.verse_number=13
+  JOIN _s304_pr29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=22 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-29-the-righteous-considereth-the-cause-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session304 — Proverbs cross-references complete.'
