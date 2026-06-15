@@ -7782,6 +7782,1546 @@ SELECT t.id, cr.id, 6, E'*the law which Moses commanded for an heritage to the c
  WHERE t.slug='psalm-147-he-sheweth-his-word-unto-jacob-his-statutes-and-his-judgments'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_92.sql (Psalm 92) -----
+-- Chapter: Psalm 92 — THE SABBATH PSALM. Its title in the canon parse is the only superscription of
+-- its kind: *A Psalm or Song for the sabbath day*. The whole psalm is the seventh-day song — thanks
+-- and praise in the morning and the night (v.1-3), the works of Yahuah's hands (v.4-5), the wicked
+-- who spring as grass but are destroyed (v.7-9), the horn exalted and anointed with fresh oil (v.10),
+-- and the righteous who *flourish like the palm tree... grow like a cedar... planted in the house of
+-- Yahuah... bring forth fruit in old age* (v.12-14), closing on the Rock in whom is no unrighteousness
+-- (v.15). The Sabbath frame is the anti-antinomian guard of the chapter: the creation-ordinance
+-- rested-and-hallowed in Eden, commanded at Sinai, kept in the convocations, and affirmed by the NT
+-- as a rest that REMAINS (Hebrews 4:9) — never abolished.
+-- Tag: ps092   Temp view: _s302_ps092_lookup
+-- Sort band: base 24275, step 3 -> threads at 24275, 24278, 24281, 24284 (4 threads)
+-- Source of EVERY row: 'canon','psalms',92,v
+--
+-- Psalm 92 coverage:
+--   ★★ v.1 (the title/frame: *A Psalm or Song for the sabbath day* — the canon parse opens v.1 as
+--          *It is a good thing to give thanks unto Yahuah (LORD)...*; the Sabbath superscription is the
+--          psalm's whole frame, bound to the title at the head-verse anchor)
+--        NT:     ★ Hebrews 4:9 (There remaineth therefore a rest to the people of Elohim), Hebrews 4:4
+--                (Elohim did rest the seventh day from all his works) — THREAD 1 (anti-antinomian guard)
+--        Extras: none warranted (the Sabbath-frame load is carried by Torah + Hebrews; no restored
+--                witness adds a closer Sabbath link here)
+--        Tanakh: ★★ Genesis 2:2-3 (he rested on the seventh day... blessed the seventh day, and
+--                sanctified it — creation-rooted, pre-Sinai), ★★ Exodus 20:8,11 (Remember the sabbath
+--                day, to keep it holy... Yahuah blessed the sabbath day, and hallowed it), ★ Leviticus
+--                23:3 (the seventh day is the sabbath of rest, an holy convocation), ★ Isaiah 58:13-14
+--                (call the sabbath a delight... then shalt thou delight thyself in Yahuah) — THREAD 1
+--   v.2-3 (To shew forth thy lovingkindness in the morning... upon the harp with a solemn sound)
+--        NT/Extras/Tanakh: none warranted — the morning-and-night praise of the Sabbath song; gathered
+--          into the THREAD 1 frame as the seventh-day worship, not a separate add.
+--   v.4-6 (thou hast made me glad through thy work... how great are thy works! a brutish man knoweth not)
+--        NT/Extras/Tanakh: none warranted distinct — the meditation on Yahuah's works/depth; the
+--          brutish man who knows not stands opposite the righteous of v.12-14; carried in prose.
+--   v.7-9 (the wicked spring as the grass... it is that they shall be destroyed for ever... thine
+--          enemies shall perish; all the workers of iniquity shall be scattered)
+--        NT:     none warranted (the tares/grass-burned forward-weave was weighed — Matthew 13 — but the
+--                cleanest contrast is the Tanakh's own two-ways: grass-wicked vs. tree-righteous, kept
+--                in-psalm against v.12-14; not forced)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (the chaff/grass of the wicked is Psalm 1:4's own foil, drawn
+--                into THREAD 3 as the contrast the flourishing righteous answer; no separate add)
+--   ★ v.10 (But my horn shalt thou exalt like the horn of an unicorn: I shall be anointed with fresh oil)
+--        NT:     ★ Luke 1:69 (raised up an horn of salvation for us in the house of his servant David)
+--                — THREAD 2 (the exalted horn = the Davidic horn of salvation)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 132:17 (There will I make the horn of David to bud: I have ordained a lamp for
+--                mine anointed) — THREAD 2
+--   v.11 (Mine eye also shall see my desire on mine enemies)
+--        NT/Extras/Tanakh: none warranted — the vindication-over-enemies couplet; carried in prose.
+--   ★★ v.12-14 (The righteous shall flourish like the palm tree: he shall grow like a cedar in Lebanon.
+--          Those that be planted in the house of Yahuah shall flourish in the courts of our Elohim.
+--          They shall still bring forth fruit in old age)
+--        NT:     none warranted distinct (the planted-tree-bearing-fruit is the Tanakh two-ways motif;
+--                its NT fill is the fruit-bearing branch, but the load-bearing weave is Tanakh + Extras)
+--        Extras: ★ Ecclesiasticus 24:13-14 (Wisdom: I was exalted like a cedar in Libanus... like a
+--                palm tree in En-gaddi... grew up as a plane tree by the water) — THREAD 3
+--        Tanakh: ★★ Psalm 1:3 (like a tree planted by the rivers of water, that bringeth forth his
+--                fruit in his season), ★ Jeremiah 17:7-8 (the blessed man as a tree planted by the
+--                waters... neither shall cease from yielding fruit), ★ Ezekiel 47:12 (trees... whose
+--                leaf shall not fade, neither shall the fruit thereof be consumed... waters issued out
+--                of the sanctuary) — THREAD 3
+--   ★ v.15 (To shew that Yahuah is upright: he is my rock, and there is no unrighteousness in him)
+--        NT/Extras: none warranted
+--        Tanakh: ★ Deuteronomy 32:4 (He is the Rock, his work is perfect... a Elohim of truth and
+--                without iniquity, just and right is he) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. psalm-92-the-sabbath-day-a-rest-that-remaineth — NT (Hebrews 4) + Tanakh (Genesis 2, Exodus 20,
+--      Leviticus 23, Isaiah 58) [free] (★★ the Sabbath frame — creation-rooted, commanded, kept, and
+--      AFFIRMED by the NT as a rest that remains; the anti-antinomian guard)
+--   2. psalm-92-my-horn-shalt-thou-exalt-anointed-with-fresh-oil — NT (Luke 1) + Tanakh (Psalm 132)
+--      [free] (★ the exalted horn anointed with fresh oil = the Davidic horn of salvation, the Anointed)
+--   3. psalm-92-the-righteous-shall-flourish-planted-in-the-house-of-yahuah — Extras (Ecclesiasticus 24)
+--      + Tanakh (Psalm 1, Jeremiah 17, Ezekiel 47) [extras] (★★ the planted-by-water tree bearing fruit;
+--      the two-ways motif — grass-wicked vs. tree-righteous planted in the house of Yahuah)
+--   4. psalm-92-yahuah-is-my-rock-and-there-is-no-unrighteousness-in-him — Tanakh (Deuteronomy 32)
+--      [free] (★ the Rock in whom is no unrighteousness — the Song of Moses' own confession)
+--
+-- Framing notes:
+--   ★★ THE SABBATH (THREAD 1): Psalm 92 is THE Sabbath psalm — *A Psalm or Song for the sabbath day*.
+--      Its frame binds the seventh day to its root and its remaining. The Sabbath is not a Sinai
+--      novelty: it is rested-and-hallowed in Eden before there was an Israel — *And on the seventh day
+--      Elohim (God) ended his work... and he rested... And Elohim (God) blessed the seventh day, and
+--      sanctified it* (Genesis 2:2-3). At Sinai it is COMMANDED, and the command names that very
+--      creation-ground — *Remember the sabbath day, to keep it holy... For in six days Yahuah (LORD)
+--      made heaven and earth... and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath
+--      day, and hallowed it* (Exodus 20:8,11). In the appointed times it stands first, a holy
+--      convocation in every dwelling — *the seventh day is the sabbath of rest, an holy convocation*
+--      (Leviticus 23:3). Isaiah makes it a delight, not a burden — *call the sabbath a delight... then
+--      shalt thou delight thyself in Yahuah (LORD)* (Isaiah 58:13-14). And the NT does NOT abolish it:
+--      *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9), grounded again in
+--      the seventh day — *And Elohim (God) did rest the seventh day from all his works* (Hebrews 4:4).
+--      The Sabbath song of Psalm 92 is the creation-ordinance that abides; this thread is the chapter's
+--      guard against the antinomian reading.
+--   ★ THE HORN (THREAD 2): *my horn shalt thou exalt like the horn of an unicorn: I shall be anointed
+--      with fresh oil* (92:10). The exalted, anointed horn is the Davidic horn of salvation. The psalter
+--      already names it — *There will I make the horn of David to bud: I have ordained a lamp for mine
+--      anointed* (Psalm 132:17) — and Zacharias sings it fulfilled — *raised up an horn of salvation
+--      for us in the house of his servant David* (Luke 1:69). The fresh-oil anointing of the Sabbath
+--      psalm is the budding horn of the Anointed.
+--   ★★ THE PLANTED RIGHTEOUS (THREAD 3): *The righteous shall flourish like the palm tree: he shall
+--      grow like a cedar in Lebanon. Those that be planted in the house of Yahuah (LORD) shall flourish
+--      in the courts of our Elohim (God). They shall still bring forth fruit in old age* (92:12-14).
+--      This is the two-ways motif — the wicked who *spring as the grass... shall be destroyed* (92:7)
+--      against the righteous planted as a tree. Psalm 1 sets it: *like a tree planted by the rivers of
+--      water, that bringeth forth his fruit in his season; his leaf also shall not wither* (Psalm 1:3).
+--      Jeremiah: *Blessed is the man that trusteth in Yahuah (LORD)... as a tree planted by the waters...
+--      her leaf shall be green... neither shall cease from yielding fruit* (Jeremiah 17:7-8). Ezekiel's
+--      sanctuary-waters bring trees whose fruit fails not — *whose leaf shall not fade, neither shall
+--      the fruit thereof be consumed... because their waters they issued out of the sanctuary* (Ezekiel
+--      47:12) — the very *planted in the house of Yahuah* of the psalm. And Wisdom sings herself in the
+--      same imagery: *I was exalted like a cedar in Libanus... I was exalted like a palm tree in
+--      En-gaddi... and grew up as a plane tree by the water* (Ecclesiasticus 24:13-14) — palm, cedar,
+--      and planted-by-water, the flourishing of the righteous rooted in Yahuah's house.
+--   ★ THE ROCK (THREAD 4): the psalm closes — *To shew that Yahuah (LORD) is upright: he is my rock,
+--      and there is no unrighteousness in him* (92:15). This is the Song of Moses' own confession of the
+--      same Rock — *He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God)
+--      of truth and without iniquity, just and right is he* (Deuteronomy 32:4). The Sabbath psalm ends
+--      where Moses' song stands: on the Rock in whom there is no iniquity.
+--   EXTRAS: ONE warranted (Ecclesiasticus 24:13-14, the Wisdom-as-tree palm/cedar/planted-by-water
+--      hymn, in THREAD 3). 1 Enoch/Jubilees/Jasher weighed and recorded NONE WARRANTED — the Sabbath,
+--      horn, and Rock weaves are carried by Torah, the prophets, the psalter, and the NT; no restored
+--      witness was forced.
+--   VERSES WITH NO ADD: v.2-3 (the morning/night Sabbath praise — gathered into the THREAD 1 frame),
+--      v.4-6 (the meditation on Yahuah's works/depth), v.7-9 (the grass-wicked destroyed — the foil the
+--      flourishing righteous of THREAD 3 answer in-psalm, Matthew 13 tares weighed and not forced),
+--      v.11 (vindication over enemies): the connective movement of the psalm, carried in prose; no
+--      separate framework-bearing target warranted.
+
+CREATE TEMP VIEW _s302_ps092_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The sabbath day — a rest that remaineth (creation-rooted, commanded, kept, NT-affirmed)
+    ('canon','psalms',92,1,'canon','genesis',2,2,'free',
+      E'*And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day from all his work which he had made* (Genesis 2:2). *A Psalm or Song for the sabbath day* sings the seventh day Yahuah Himself first kept — the Sabbath is no Sinai novelty but the creation-rest, woven into the world before there was an Israel. The Sabbath song is rooted in the day Elohim rested.'),
+    ('canon','psalms',92,1,'canon','genesis',2,3,'free',
+      E'*And Elohim (God) blessed the seventh day, and sanctified it: because that in it he had rested from all his work which Elohim (God) created and made* (Genesis 2:3). The Sabbath psalm celebrates the day Yahuah *blessed... and sanctified* at creation. *It is a good thing to give thanks unto Yahuah (LORD)* (92:1) on the very day He hallowed — the seventh day set apart from the foundation, the rest the psalm sings.'),
+    ('canon','psalms',92,1,'canon','exodus',20,8,'free',
+      E'*Remember the sabbath day, to keep it holy* (Exodus 20:8). The Sabbath psalm is the song of the day the fourth word commands be kept holy — *Remember the sabbath day*. The thanks and praise of 92:1, *a good thing to give thanks unto Yahuah (LORD)*, is the keeping-holy of the commanded seventh day.'),
+    ('canon','psalms',92,1,'canon','exodus',20,11,'free',
+      E'*For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11). The command grounds the Sabbath in creation itself, the same root the psalm sings — *thou, Yahuah (LORD), hast made me glad through thy work* (92:4). Yahuah *blessed the sabbath day, and hallowed it*; the Sabbath song magnifies the works of His hands on the day He blessed.'),
+    ('canon','psalms',92,1,'canon','leviticus',23,3,'free',
+      E'*Six days shall work be done: but the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of Yahuah (LORD) in all your dwellings* (Leviticus 23:3). In the appointed times the Sabbath stands first, *an holy convocation... in all your dwellings*. *A Psalm or Song for the sabbath day* is the convocation-song of that very rest — the seventh day kept as Yahuah''s own.'),
+    ('canon','psalms',92,1,'canon','isaiah',58,13,'free',
+      E'*If thou turn away thy foot from the sabbath, from doing thy pleasure on my holy day; and call the sabbath a delight, the holy of Yahuah (LORD), honourable... not doing thine own ways, nor finding thine own pleasure, nor speaking thine own words* (Isaiah 58:13). The Sabbath psalm IS the sabbath called *a delight* — *It is a good thing to give thanks unto Yahuah (LORD)... upon the harp with a solemn sound* (92:1,3). The seventh day honoured with praise, not pleasure-seeking, is the delight Isaiah names.'),
+    ('canon','psalms',92,1,'canon','isaiah',58,14,'free',
+      E'*Then shalt thou delight thyself in Yahuah (LORD); and I will cause thee to ride upon the high places of the earth, and feed thee with the heritage of Jacob thy father: for the mouth of Yahuah (LORD) hath spoken it* (Isaiah 58:14). The one who calls the sabbath a delight *shall delight thyself in Yahuah (LORD)* — the very gladness of the Sabbath psalm, *thou, Yahuah (LORD), hast made me glad through thy work* (92:4). The seventh-day delight is the heritage of Jacob promised to the sabbath-keeper.'),
+    ('canon','psalms',92,1,'canon','hebrews',4,9,'free',
+      E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). The Sabbath song of the psalm is not a defunct shadow: the NT declares the seventh-day rest REMAINS — *there remaineth therefore a rest [sabbatismos] to the people of Elohim (God)*. The Sabbath the psalm celebrates is the creation-ordinance the New Testament affirms abides, never abolished.'),
+    ('canon','psalms',92,1,'canon','hebrews',4,4,'free',
+      E'*For he spake in a certain place of the seventh day on this wise, And Elohim (God) did rest the seventh day from all his works* (Hebrews 4:4). The argument for the remaining rest is grounded in the same seventh day the psalm sings — *Elohim (God) did rest the seventh day from all his works*. The Sabbath psalm and the NT stand on one foundation: the day Yahuah rested, blessed, and hallowed.'),
+
+    -- THREAD 2 (★): My horn shalt thou exalt — anointed with fresh oil (the Davidic horn of salvation)
+    ('canon','psalms',92,10,'canon','psalms',132,17,'free',
+      E'*There will I make the horn of David to bud: I have ordained a lamp for mine anointed* (Psalm 132:17). The exalted horn anointed with fresh oil — *my horn shalt thou exalt like the horn of an unicorn: I shall be anointed with fresh oil* (92:10) — is the horn the psalter promises to bud in Zion: *the horn of David to bud... a lamp for mine anointed*. The Sabbath psalm''s fresh-oil anointing is the budding horn of the Davidic Anointed.'),
+    ('canon','psalms',92,10,'canon','luke',1,69,'free',
+      E'*And hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:69). The exalted, fresh-oil-anointed horn of 92:10 is the horn Zacharias sings as raised at last — *an horn of salvation for us in the house of his servant David*. The horn the Sabbath psalm sees exalted is the horn of salvation in David''s house, the Anointed come.'),
+
+    -- THREAD 3 (★★): The righteous shall flourish — planted in the house of Yahuah (the two-ways tree)
+    ('canon','psalms',92,12,'canon','psalms',1,3,'free',
+      E'*And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper* (Psalm 1:3). *The righteous shall flourish like the palm tree* (92:12) is the same two-ways tree the psalter opens with — *a tree planted by the rivers of water, that bringeth forth his fruit*. Against the wicked who *spring as the grass... shall be destroyed* (92:7), the righteous is the planted, fruit-bearing tree whose leaf does not wither.'),
+    ('canon','psalms',92,13,'canon','jeremiah',17,8,'free',
+      E'*For he shall be as a tree planted by the waters, and that spreadeth out her roots by the river... her leaf shall be green; and shall not be careful in the year of drought, neither shall cease from yielding fruit* (Jeremiah 17:8). *Those that be planted in the house of Yahuah (LORD) shall flourish* (92:13) is Jeremiah''s blessed man — *Blessed is the man that trusteth in Yahuah (LORD)* (17:7) — *as a tree planted by the waters... neither shall cease from yielding fruit*. The planted righteous bring forth fruit even in old age (92:14) because their roots are by the river.'),
+    ('canon','psalms',92,13,'canon','ezekiel',47,12,'extras',
+      E'*And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine* (Ezekiel 47:12). *Those that be planted in the house of Yahuah (LORD) shall flourish in the courts of our Elohim (God)* (92:13) — the trees of Ezekiel''s vision are planted by the sanctuary-waters, *whose leaf shall not fade, neither shall the fruit thereof be consumed*, bearing fruit ever-new. The righteous planted in Yahuah''s house and the trees fed from His sanctuary are one image: ever-fruitful because their water flows from the holy place.'),
+    ('canon','psalms',92,12,'apocrypha','ecclesiasticus',24,13,'extras',
+      E'*I was exalted like a cedar in Libanus, and as a cypress tree upon the mountains of Hermon* (Ecclesiasticus 24:13). Wisdom sings herself in the very imagery of the flourishing righteous — *he shall grow like a cedar in Lebanon* (92:12). The cedar exalted in Libanus is the same towering, rooted growth the Sabbath psalm gives the righteous planted in Yahuah''s house.'),
+    ('canon','psalms',92,12,'apocrypha','ecclesiasticus',24,14,'extras',
+      E'*I was exalted like a palm tree in En-gaddi, and as a rose plant in Jericho, as a fair olive tree in a pleasant field, and grew up as a plane tree by the water* (Ecclesiasticus 24:14). *The righteous shall flourish like the palm tree* (92:12) is Wisdom''s own song — *exalted like a palm tree in En-gaddi... and grew up as a plane tree by the water*. Palm, cedar, and planted-by-water: the flourishing of the righteous is the flourishing of Wisdom rooted in the people of Yahuah.'),
+
+    -- THREAD 4 (★): Yahuah is my rock, and there is no unrighteousness in him (the Song of Moses' Rock)
+    ('canon','psalms',92,15,'canon','deuteronomy',32,4,'free',
+      E'*He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God) of truth and without iniquity, just and right is he* (Deuteronomy 32:4). The Sabbath psalm closes on the confession Moses sang first — *he is my rock, and there is no unrighteousness in him* (92:15). *He is the Rock... without iniquity, just and right is he*: the same Rock, the same uprightness, the psalm''s last word standing on the Song of Moses'' first.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-92-the-sabbath-day-a-rest-that-remaineth',
+       E'A Psalm or Song for the sabbath day — the rest that remaineth',
+       E'Psalm 92 is THE Sabbath psalm; in the canon parse it carries the seventh-day frame and opens *It is a good thing to give thanks unto Yahuah (LORD), and to sing praises unto thy name, O El Elyon (most High): To shew forth thy lovingkindness in the morning, and thy faithfulness every night* (Psalm 92:1-2). This thread binds the Sabbath to its root and its remaining — the anti-antinomian guard of the chapter. The Sabbath is no Sinai novelty: it is rested-and-hallowed in Eden before there was an Israel — *And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day... And Elohim (God) blessed the seventh day, and sanctified it* (Genesis 2:2-3). At Sinai it is COMMANDED, and the command names that very creation-ground — *Remember the sabbath day, to keep it holy... For in six days Yahuah (LORD) made heaven and earth... and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:8,11). In the appointed times it stands first, a holy convocation in every dwelling — *the seventh day is the sabbath of rest, an holy convocation... it is the sabbath of Yahuah (LORD) in all your dwellings* (Leviticus 23:3). Isaiah makes it a delight, not a burden, with a promise to the keeper — *call the sabbath a delight, the holy of Yahuah (LORD), honourable... Then shalt thou delight thyself in Yahuah (LORD)... and feed thee with the heritage of Jacob thy father* (Isaiah 58:13-14). And the New Testament does NOT abolish it: *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9), grounded again in the seventh day — *And Elohim (God) did rest the seventh day from all his works* (Hebrews 4:4). The Sabbath song of Psalm 92 is the creation-ordinance that abides — rested-and-hallowed in Eden, commanded at Sinai, kept in the convocations, delighted in by the prophets, and affirmed by the NT as a rest that remains.',
+       sv.verse_id, ev.verse_id, 'free', 24275
+  FROM _s302_ps092_lookup sv, _s302_ps092_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=92 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-92-my-horn-shalt-thou-exalt-anointed-with-fresh-oil',
+       E'My horn shalt thou exalt — the horn of salvation in the house of David',
+       E'In the Sabbath psalm the singer is lifted: *But my horn shalt thou exalt like the horn of an unicorn: I shall be anointed with fresh oil* (Psalm 92:10). The exalted, fresh-oil-anointed horn is the Davidic horn of salvation. The psalter already promises it to bud in Zion: *There will I make the horn of David to bud: I have ordained a lamp for mine anointed* (Psalm 132:17). And Zacharias, filled with the Ruach HaKodesh (Holy Spirit), sings it raised at last in David''s house: *Blessed be Yahuah Elohim (the Lord God) of Yashar''el (Israel); for he hath visited and redeemed his people, And hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:68-69). The horn the Sabbath psalm sees exalted and anointed with fresh oil is the budding horn of David — the Anointed, the horn of salvation come to redeem his people.',
+       sv.verse_id, ev.verse_id, 'free', 24278
+  FROM _s302_ps092_lookup sv, _s302_ps092_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=92 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-92-the-righteous-shall-flourish-planted-in-the-house-of-yahuah',
+       E'The righteous shall flourish like the palm tree — planted in the house of Yahuah',
+       E'Against the wicked who *spring as the grass... it is that they shall be destroyed for ever* (Psalm 92:7), the Sabbath psalm sets the righteous as a planted tree: *The righteous shall flourish like the palm tree: he shall grow like a cedar in Lebanon. Those that be planted in the house of Yahuah (LORD) shall flourish in the courts of our Elohim (God). They shall still bring forth fruit in old age; they shall be fat and flourishing* (Psalm 92:12-14). This is the two-ways motif the psalter opens with — *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither* (Psalm 1:3), where *the ungodly are not so: but are like the chaff which the wind driveth away* (1:4). Jeremiah names the blessed man the same way — *Blessed is the man that trusteth in Yahuah (LORD)... For he shall be as a tree planted by the waters... her leaf shall be green... neither shall cease from yielding fruit* (Jeremiah 17:7-8) — the very *fruit in old age* of the psalm. Ezekiel''s vision gives the trees planted by the sanctuary-waters, ever-fruitful because their source is the holy place — *whose leaf shall not fade, neither shall the fruit thereof be consumed... because their waters they issued out of the sanctuary* (Ezekiel 47:12) — the same *planted in the house of Yahuah (LORD)*. And Wisdom sings herself in this exact imagery — *I was exalted like a cedar in Libanus... I was exalted like a palm tree in En-gaddi... and grew up as a plane tree by the water* (Ecclesiasticus 24:13-14). Palm, cedar, planted-by-water, fruit that fails not: the flourishing of the righteous is the flourishing of the one rooted in Yahuah''s house, watered from the sanctuary, bearing fruit to the end.',
+       sv.verse_id, ev.verse_id, 'extras', 24281
+  FROM _s302_ps092_lookup sv, _s302_ps092_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=92 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-92-yahuah-is-my-rock-and-there-is-no-unrighteousness-in-him',
+       E'Yahuah is my rock, and there is no unrighteousness in him',
+       E'The Sabbath psalm closes on the Rock: *To shew that Yahuah (LORD) is upright: he is my rock, and there is no unrighteousness in him* (Psalm 92:15). This is the confession Moses sang first in his Song — *He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God) of truth and without iniquity, just and right is he* (Deuteronomy 32:4). The same Rock, the same uprightness, the same freedom from iniquity: the psalm''s last word stands on the Song of Moses'' first. After the works of His hands (92:4-5), the destruction of the wicked (92:7-9), the exalted horn (92:10), and the flourishing righteous (92:12-14), the Sabbath song rests where Moses rested — on Yahuah the Rock in whom there is no unrighteousness.',
+       sv.verse_id, ev.verse_id, 'free', 24284
+  FROM _s302_ps092_lookup sv, _s302_ps092_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=92 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he rested on the seventh day from all his work... And Elohim (God) blessed the seventh day* (Genesis 2:2) — the Sabbath psalm sings the creation-rest Yahuah first kept, before there was an Israel.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=1
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-sabbath-day-a-rest-that-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *And Elohim (God) blessed the seventh day, and sanctified it* (Genesis 2:3) — the seventh day Yahuah hallowed at creation is the day the psalm''s thanks and praise are offered.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=1
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-sabbath-day-a-rest-that-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Remember the sabbath day, to keep it holy* (Exodus 20:8) — the Sabbath psalm is the song of the day the fourth word commands be kept holy.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=1
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-sabbath-day-a-rest-that-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11) — the command grounds the Sabbath in creation, the same root the psalm sings in the works of His hands.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=1
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-sabbath-day-a-rest-that-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the seventh day is the sabbath of rest, an holy convocation... the sabbath of Yahuah (LORD) in all your dwellings* (Leviticus 23:3) — the Sabbath stands first in the appointed times; the psalm is its convocation-song.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=1
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-sabbath-day-a-rest-that-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*call the sabbath a delight, the holy of Yahuah (LORD), honourable* (Isaiah 58:13) — the Sabbath psalm IS the seventh day called a delight, honoured with praise.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=1
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=58 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-sabbath-day-a-rest-that-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Then shalt thou delight thyself in Yahuah (LORD)... and feed thee with the heritage of Jacob* (Isaiah 58:14) — the seventh-day delight is the gladness of the psalm, *thou hast made me glad through thy work* (92:4).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=1
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=58 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-sabbath-day-a-rest-that-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9) — the NT declares the seventh-day rest REMAINS; the Sabbath the psalm sings is never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=1
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-sabbath-day-a-rest-that-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*Elohim (God) did rest the seventh day from all his works* (Hebrews 4:4) — the remaining rest is grounded in the same seventh day the psalm celebrates; psalm and NT stand on one foundation.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=1
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-sabbath-day-a-rest-that-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *There will I make the horn of David to bud: I have ordained a lamp for mine anointed* (Psalm 132:17) — the exalted, fresh-oil-anointed horn (92:10) is the horn of David the psalter promises to bud in Zion.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=10
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=132 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-my-horn-shalt-thou-exalt-anointed-with-fresh-oil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *raised up an horn of salvation for us in the house of his servant David* (Luke 1:69) — the horn the Sabbath psalm sees exalted is the horn of salvation come in David''s house, the Anointed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=10
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=69
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-my-horn-shalt-thou-exalt-anointed-with-fresh-oil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither* (Psalm 1:3) — the flourishing righteous (92:12) is the psalter''s own two-ways tree, against the chaff-wicked.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=12
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-righteous-shall-flourish-planted-in-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *as a tree planted by the waters... neither shall cease from yielding fruit* (Jeremiah 17:8) — those planted in Yahuah''s house (92:13) are Jeremiah''s blessed man, bearing fruit even in old age.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=13
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=17 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-righteous-shall-flourish-planted-in-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *trees... whose leaf shall not fade, neither shall the fruit thereof be consumed... because their waters they issued out of the sanctuary* (Ezekiel 47:12) — planted in the house of Yahuah (92:13) = ever-fruitful, watered from the holy place.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=13
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-righteous-shall-flourish-planted-in-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I was exalted like a cedar in Libanus, and as a cypress tree upon the mountains of Hermon* (Ecclesiasticus 24:13) — Wisdom sings the cedar of 92:12, the towering rooted growth of the righteous.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=12
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=24 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-righteous-shall-flourish-planted-in-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I was exalted like a palm tree in En-gaddi... and grew up as a plane tree by the water* (Ecclesiasticus 24:14) — the palm and the planted-by-water of 92:12 sung in Wisdom''s own voice.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=12
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=24 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-the-righteous-shall-flourish-planted-in-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He is the Rock, his work is perfect... a Elohim (God) of truth and without iniquity, just and right is he* (Deuteronomy 32:4) — *he is my rock, and there is no unrighteousness in him* (92:15) is the Song of Moses'' own confession.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps092_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=92 AND sv.verse_number=15
+  JOIN _s302_ps092_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-92-yahuah-is-my-rock-and-there-is-no-unrighteousness-in-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_95.sql (Psalm 95) -----
+-- Chapter: Psalm 95 — THE VENITE: *O come, let us sing unto Yahuah (LORD): let us make a joyful
+-- noise to the rock of our salvation* (v.1), the call to worship that turns, mid-psalm, into the
+-- wilderness warning Hebrews seizes as its keystone: *To day if ye will hear his voice, Harden not
+-- your heart, as in the provocation [Meribah], and as in the day of temptation [Massah] in the
+-- wilderness... Unto whom I sware in my wrath that they should not enter into my rest* (v.7-11).
+-- Hebrews 3:7-11, 3:15, 4:1-11 quote this psalm verbatim and press that THE REST STILL STANDS OPEN
+-- TO DAY — *There remaineth therefore a rest to the people of Elohim (God)* (Heb 4:9). The
+-- Sabbath-rest the wilderness generation forfeited by unbelief is the rest still offered; the
+-- Torah-rest is NOT cancelled — it remains. The Rock of v.1 is the Formed Son who led Yashar'el
+-- (1 Cor 10:4); the sheep of his hand (v.6-7) are the flock the Shepherd gathers and whose voice
+-- they hear (John 10:27).
+-- Tag: ps095   Temp view: _s302_ps095_lookup
+-- Sort band: base 24350, step 3 -> threads at 24350, 24353, 24356 (3 threads)
+-- Source of EVERY row: 'canon','psalms',95,v
+--
+-- Psalm 95 coverage:
+--   v.1 (O come, let us sing unto Yahuah (LORD): let us make a joyful noise to the rock of our
+--        salvation)
+--        NT:     ★ 1 Corinthians 10:4 (that spiritual Rock that followed them: and that Rock was
+--                Messiah) — THREAD 2
+--        Extras: none warranted (no clean restored-witness adds to the Rock-of-salvation here)
+--        Tanakh: ★ Deuteronomy 32:4 (He is the Rock, his work is perfect), ★ Deuteronomy 32:15
+--                (lightly esteemed the Rock of his salvation), Deuteronomy 32:18 (of the Rock that
+--                begat thee thou art unmindful... forgotten Elohim that formed thee) — THREAD 2
+--   v.2 (Let us come before his presence with thanksgiving)
+--        NT/Extras: none warranted (the call-to-worship summons; carried in prose into THREAD 3's
+--                doorway and Psalm 100's twin call)
+--        Tanakh: Psalm 100:2,4 (come before his presence with singing... enter into his gates with
+--                thanksgiving) — gathered in THREAD 3 prose, the twin Venite; not a separate add
+--   v.3 (For Yahuah (LORD) is a great Elohim (God), and a great King above all gods)
+--        NT/Extras/Tanakh: none warranted — the enthronement acclamation; weighed forward (the
+--                King-above-all-gods note) and held as the psalm's own confession of Yahuah's
+--                supremacy; no closer framework-bearing target than the surrounding worship-call,
+--                so recorded none warranted (deliberate, per the framing note)
+--   v.4-5 (In his hand are the deep places of the earth... The sea is his, and he made it: and his
+--        hands formed the dry land)
+--        NT/Extras/Tanakh: none warranted distinct — the creation-doxology grounding the worship;
+--                the Maker-of-all confession folds into THREAD 3 (Yahuah our maker, v.6) and the
+--                enthronement of v.3; carried in prose, no separate add
+--   v.6-7a (O come, let us worship and bow down: let us kneel before Yahuah (LORD) our maker. For he
+--        is our Elohim (God); and we are the people of his pasture, and the sheep of his hand)
+--        NT:     ★ John 10:27 (My sheep hear my voice, and I know them, and they follow me) — the
+--                Shepherd whose voice the flock hears, tying v.7a to v.7b — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 100:3 (we are his people, and the sheep of his pasture), ★ Ezekiel 34:31
+--                (ye my flock, the flock of my pasture, are men, and I am your Elohim) — THREAD 3
+--   ★★★ v.7b-11 (To day if ye will hear his voice, Harden not your heart, as in the provocation,
+--        and as in the day of temptation in the wilderness: When your fathers tempted me, proved me,
+--        and saw my work... I sware in my wrath that they should not enter into my rest)
+--        NT:     ★★★ Hebrews 3:7-8 (To day if ye will hear his voice, Harden not your hearts, as in
+--                the provocation — the psalm quoted verbatim by the Ruach HaKodesh), ★★ Hebrews 3:11
+--                (So I sware in my wrath, They shall not enter into my rest), ★★ Hebrews 3:15 (While
+--                it is said, To day if ye will hear his voice), ★★ Hebrews 4:1 (a promise being left
+--                us of entering into his rest), ★★★ Hebrews 4:9 (There remaineth therefore a rest to
+--                the people of Elohim) — the load-bearing keystone — THREAD 1
+--        Extras: none warranted (the wilderness-rebellion is fully witnessed in canon Torah +
+--                Hebrews; no restored witness forced)
+--        Tanakh: ★ Exodus 17:7 (he called the name of the place Massah, and Meribah... because they
+--                tempted Yahuah, saying, Is Yahuah among us, or not?), ★ Numbers 14:22-23 (tempted me
+--                now these ten times... they shall not see the land which I sware), ★ Numbers 14:28-30
+--                (As truly as I live... Your carcases shall fall in this wilderness... ye shall not
+--                come into the land) — the provocation and the oath of exclusion — THREAD 1
+--
+-- Threads (slug — target libraries):
+--   1. psalm-95-to-day-if-ye-will-hear-his-voice-the-rest-remaineth — NT (Hebrews 3, Hebrews 4) +
+--      Tanakh (Exodus 17, Numbers 14) [free] (★★★ THE keystone: the rest still stands open TO DAY;
+--      Sabbath/Torah-rest never cancelled — it remains)
+--   2. psalm-95-the-rock-of-our-salvation-that-rock-was-messiah — NT (1 Corinthians 10) + Tanakh
+--      (Deuteronomy 32) [free] (★ the Rock of our salvation = the Formed Son who led Yashar'el)
+--   3. psalm-95-we-are-the-sheep-of-his-hand-my-sheep-hear-my-voice — NT (John 10) + Tanakh (Psalm
+--      100, Ezekiel 34) [free] (the Shepherd and the flock; the sheep who hear his voice)
+--
+-- Framing notes:
+--   ★★★ THE REST REMAINS (THREAD 1): the Venite turns from praise to warning — *To day if ye will
+--      hear his voice, Harden not your heart, as in the provocation, and as in the day of temptation
+--      in the wilderness... Unto whom I sware in my wrath that they should not enter into my rest*
+--      (95:7-11). The provocation is Meribah and the temptation is Massah, named at the rock where
+--      *they tempted Yahuah (LORD), saying, Is Yahuah (LORD) among us, or not?* (Exodus 17:7), and
+--      the oath of exclusion is Yahuah's word at Kadesh — *they shall not see the land which I sware
+--      unto their fathers* (Numbers 14:23), *Your carcases shall fall in this wilderness... Doubtless
+--      ye shall not come into the land* (Numbers 14:28-30). Hebrews takes the WHOLE psalm-block as
+--      scripture spoken by the Ruach HaKodesh (Holy Spirit) — *To day if ye will hear his voice,
+--      Harden not your hearts, as in the provocation* (Heb 3:7-8), *So I sware in my wrath, They
+--      shall not enter into my rest* (Heb 3:11), *While it is said, To day if ye will hear his voice*
+--      (Heb 3:15) — and presses the load-bearing point: the rest the wilderness generation forfeited
+--      by UNBELIEF is the rest still offered, *a promise being left us of entering into his rest*
+--      (Heb 4:1), grounded in the seventh-day Sabbath of creation — *Elohim (God) did rest the
+--      seventh day from all his works* (Heb 4:4) — and STILL STANDING OPEN: *There remaineth
+--      therefore a rest to the people of Elohim (God)* (Heb 4:9). This is the anti-antinomian /
+--      Sabbath-still-open keystone: the Torah-rest is NOT cancelled but remains; the only thing that
+--      shut the door was unbelief, and the *To day* of the invitation is still sounding.
+--   ★ THE ROCK OF OUR SALVATION (THREAD 2): *the rock of our salvation* (95:1) is the same Rock Moses
+--      sang — *He is the Rock, his work is perfect* (Deuteronomy 32:4) — the Rock Jeshurun forsook
+--      when he *lightly esteemed the Rock of his salvation* (Deuteronomy 32:15), *the Rock that begat
+--      thee* (32:18). Read through the Formed and the Formless, that Rock is the One who led and fed
+--      Yashar'el (Israel) in the wilderness: *they drank of that spiritual Rock that followed them:
+--      and that Rock was Messiah (Christ)* (1 Corinthians 10:4). The Rock of salvation the psalm
+--      calls Yashar'el to praise is the Formed Son — Yahuah who has a Father, who walked with them in
+--      the wilderness this very psalm warns them not to repeat.
+--   THE SHEEP OF HIS HAND (THREAD 3): the worship-call grounds itself in the covenant bond — *he is
+--      our Elohim (God); and we are the people of his pasture, and the sheep of his hand* (95:7a),
+--      the twin of the other Venite, *we are his people, and the sheep of his pasture* (Psalm 100:3).
+--      Ezekiel names the flock plainly: *ye my flock, the flock of my pasture, are men, and I am your
+--      Elohim (God)* (Ezekiel 34:31) — the scattered sheep the one Shepherd David gathers (34:23). And
+--      the very phrase *if ye will hear his voice* (95:7b) is the Shepherd's mark in the Formed Son:
+--      *My sheep hear my voice, and I know them, and they follow me* (John 10:27). The flock of his
+--      hand are the flock who hear his voice — the bridge into the warning of THREAD 1: TO DAY, hear.
+
+CREATE TEMP VIEW _s302_ps095_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): To day if ye will hear his voice — the rest remaineth
+    ('canon','psalms',95,7,'canon','hebrews',3,7,'free',
+      E'*Wherefore (as the Ruach HaKodesh (Holy Spirit) saith, To day if ye will hear his voice* (Hebrews 3:7). Hebrews takes the psalm''s very words — *To day if ye will hear his voice* (Psalm 95:7) — as scripture spoken by the Ruach HaKodesh (Holy Spirit), the living invitation still sounding. The *To day* of the Venite is the *To day* the writer presses on his hearers: the voice is speaking now.'),
+    ('canon','psalms',95,8,'canon','hebrews',3,8,'free',
+      E'*Harden not your hearts, as in the provocation, in the day of temptation in the wilderness* (Hebrews 3:8). The psalm''s warning — *Harden not your heart, as in the provocation, and as in the day of temptation in the wilderness* (Psalm 95:8) — is quoted verbatim. The provocation is Meribah, the temptation Massah: the wilderness sin Yashar''el (Israel) must not repeat, the hardened heart that shuts the door of rest.'),
+    ('canon','psalms',95,11,'canon','hebrews',3,11,'free',
+      E'*So I sware in my wrath, They shall not enter into my rest.)* (Hebrews 3:11). The oath of the psalm — *Unto whom I sware in my wrath that they should not enter into my rest* (Psalm 95:11) — is taken up word for word. Hebrews reads the exclusion not as Torah-rest abolished but as a rest FORFEITED by unbelief: *they could not enter in because of unbelief* (Hebrews 3:19); the rest itself still stands.'),
+    ('canon','psalms',95,7,'canon','hebrews',3,15,'free',
+      E'*While it is said, To day if ye will hear his voice, harden not your hearts, as in the provocation* (Hebrews 3:15). The psalm is quoted again — *To day if ye will hear his voice* (Psalm 95:7) — to press the urgency: *exhort one another daily, while it is called To day* (Hebrews 3:13). The invitation has not lapsed; the door of rest is open while the *To day* of the psalm still sounds.'),
+    ('canon','psalms',95,11,'canon','hebrews',4,1,'free',
+      E'*Let us therefore fear, lest, a promise being left us of entering into his rest, any of you should seem to come short of it* (Hebrews 4:1). The oath *they should not enter into my rest* (Psalm 95:11) is read by Hebrews as proof that the rest itself REMAINS — *a promise being left us of entering into his rest*. The wilderness generation forfeited it by unbelief, but the promise stands open; the rest is not cancelled, it is offered still.'),
+    ('canon','psalms',95,11,'canon','hebrews',4,9,'free',
+      E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). This is the keystone the whole psalm-block drives to: because the wilderness generation forfeited the rest by unbelief, *There remaineth therefore a rest to the people of Elohim (God)*. The Sabbath-rest grounded in creation — *Elohim (God) did rest the seventh day from all his works* (Hebrews 4:4) — is the rest still offered; the oath *they should not enter into my rest* (Psalm 95:11) shut the door on unbelief, not on the rest itself, which remains TO DAY for the people of Elohim.'),
+    ('canon','psalms',95,8,'canon','exodus',17,7,'free',
+      E'*And he called the name of the place Massah, and Meribah, because of the chiding of the children of Yashar''el (Israel), and because they tempted Yahuah (LORD), saying, Is Yahuah (LORD) among us, or not?* (Exodus 17:7). *Harden not your heart, as in the provocation, and as in the day of temptation in the wilderness* (Psalm 95:8) names this place: the provocation is Meribah and the temptation Massah, where *they tempted Yahuah (LORD), saying, Is Yahuah (LORD) among us, or not?* The psalm warns the worshipper not to repeat the unbelief that gave the place its name.'),
+    ('canon','psalms',95,11,'canon','numbers',14,23,'free',
+      E'*Surely they shall not see the land which I sware unto their fathers, neither shall any of them that provoked me see it* (Numbers 14:23). The oath of the psalm — *I sware in my wrath that they should not enter into my rest* (Psalm 95:11) — is Yahuah''s word at Kadesh: *they shall not see the land which I sware unto their fathers*. The rest forfeited is the inheritance the provoking generation lost, because *they have tempted me now these ten times, and have not hearkened to my voice* (Numbers 14:22) — the very *hear his voice* the psalm presses.'),
+    ('canon','psalms',95,11,'canon','numbers',14,29,'free',
+      E'*Your carcases shall fall in this wilderness; and all that were numbered of you... which have murmured against me* (Numbers 14:29). *They should not enter into my rest* (Psalm 95:11) is fulfilled in the sentence at Kadesh — *Your carcases shall fall in this wilderness*. The generation that hardened its heart did not enter the land; Hebrews reads it as the warning still standing, *whose carcases fell in the wilderness* (Hebrews 3:17), lest any fall *after the same example of unbelief* (Hebrews 4:11).'),
+
+    -- THREAD 2 (★): The rock of our salvation — that Rock was Messiah
+    ('canon','psalms',95,1,'canon','1-corinthians',10,4,'free',
+      E'*And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). *The rock of our salvation* (Psalm 95:1) is the Rock that led and fed Yashar''el (Israel) in the wilderness — *that Rock was Messiah (Christ)*. Read through the Formed and the Formless, the Rock the psalm calls Yashar''el to praise is the Formed Son who walked with them, the One whose voice they are warned not to harden against in this same psalm.'),
+    ('canon','psalms',95,1,'canon','deuteronomy',32,4,'free',
+      E'*He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God) of truth and without iniquity, just and right is he* (Deuteronomy 32:4). *The rock of our salvation* (Psalm 95:1) is the Rock of Moses'' song — *He is the Rock, his work is perfect*. The same Rock Yashar''el (Israel) sang at the edge of the land is the Rock the Venite calls them to come and worship.'),
+    ('canon','psalms',95,1,'canon','deuteronomy',32,15,'free',
+      E'*But Jeshurun waxed fat, and kicked... then he forsook Elohim (God) which made him, and lightly esteemed the Rock of his salvation* (Deuteronomy 32:15). The psalm calls Yashar''el (Israel) to *make a joyful noise to the rock of our salvation* (Psalm 95:1) — the very *Rock of his salvation* that Jeshurun *lightly esteemed*. The Venite is the antidote to the song''s warning: worship the Rock, do not forsake him as the fathers did.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3: We are the sheep of his hand — my sheep hear my voice
+    ('canon','psalms',95,7,'canon','psalms',100,3,'free',
+      E'*Know ye that Yahuah (LORD) he is Elohim (God): it is he that hath made us, and not we ourselves; we are his people, and the sheep of his pasture* (Psalm 100:3). The twin Venite says the same as *we are the people of his pasture, and the sheep of his hand* (Psalm 95:7): *we are his people, and the sheep of his pasture*. The two worship-psalms confess one covenant bond — the flock belongs to the Shepherd who made them.'),
+    ('canon','psalms',95,7,'canon','ezekiel',34,31,'free',
+      E'*And ye my flock, the flock of my pasture, are men, and I am your Elohim (God), saith Adonai Yahuah (the Lord GOD)* (Ezekiel 34:31). *We are the people of his pasture, and the sheep of his hand* (Psalm 95:7) is the bond Ezekiel seals: *ye my flock, the flock of my pasture, are men, and I am your Elohim (God)*. The scattered sheep the one Shepherd David gathers (Ezekiel 34:23) are the same flock the Venite calls to kneel before *Yahuah (LORD) our maker* (Psalm 95:6).'),
+    ('canon','psalms',95,7,'canon','john',10,27,'free',
+      E'*My sheep hear my voice, and I know them, and they follow me* (John 10:27). The psalm joins the flock to the voice — *we are... the sheep of his hand. To day if ye will hear his voice* (Psalm 95:7) — and the Formed Son names the Shepherd''s mark: *My sheep hear my voice, and I know them, and they follow me*. The sheep of his hand are the sheep who hear his voice; this is the doorway into the warning — TO DAY, hear and do not harden.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-95-to-day-if-ye-will-hear-his-voice-the-rest-remaineth',
+       E'To day if ye will hear his voice — the rest remaineth to the people of Elohim',
+       E'The Venite turns from praise to warning: *To day if ye will hear his voice, Harden not your heart, as in the provocation, and as in the day of temptation in the wilderness: When your fathers tempted me, proved me, and saw my work... Unto whom I sware in my wrath that they should not enter into my rest* (Psalm 95:7-11). The provocation is Meribah and the temptation Massah, the rock where *they tempted Yahuah (LORD), saying, Is Yahuah (LORD) among us, or not?* (Exodus 17:7); the oath of exclusion is Yahuah''s word at Kadesh — *Surely they shall not see the land which I sware unto their fathers* (Numbers 14:23), *Your carcases shall fall in this wilderness... which have murmured against me* (Numbers 14:29) — judgment for unbelief: *they have tempted me now these ten times, and have not hearkened to my voice* (Numbers 14:22), the very *hear his voice* the psalm presses. Hebrews seizes the whole psalm-block as scripture spoken by the Ruach HaKodesh (Holy Spirit): *To day if ye will hear his voice, Harden not your hearts, as in the provocation* (Hebrews 3:7-8), *So I sware in my wrath, They shall not enter into my rest* (Hebrews 3:11), *While it is said, To day if ye will hear his voice* (Hebrews 3:15) — and reads the exclusion as a rest FORFEITED by unbelief, not abolished: *they could not enter in because of unbelief* (Hebrews 3:19). Then the load-bearing turn: *Let us therefore fear, lest, a promise being left us of entering into his rest, any of you should seem to come short of it* (Hebrews 4:1) — the rest REMAINS. Grounded in the seventh-day Sabbath of creation — *Elohim (God) did rest the seventh day from all his works* (Hebrews 4:4) — it still stands open: *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). This is the anti-antinomian, Sabbath-still-open keystone: the Torah-rest is not cancelled but remains; the only thing that ever shut the door was the hardened heart, and the *To day* of the invitation is still sounding — *Let us labour therefore to enter into that rest, lest any man fall after the same example of unbelief* (Hebrews 4:11).',
+       sv.verse_id, ev.verse_id, 'free', 24350
+  FROM _s302_ps095_lookup sv, _s302_ps095_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=95 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-95-the-rock-of-our-salvation-that-rock-was-messiah',
+       E'The rock of our salvation — that Rock was Messiah',
+       E'The Venite opens by naming whom Yashar''el (Israel) comes to praise: *O come, let us sing unto Yahuah (LORD): let us make a joyful noise to the rock of our salvation* (Psalm 95:1). That title is Moses'' own from the song at the edge of the land — *He is the Rock, his work is perfect: for all his ways are judgment* (Deuteronomy 32:4) — the Rock Jeshurun forsook when he *lightly esteemed the Rock of his salvation* (Deuteronomy 32:15), *the Rock that begat thee* (32:18). Read through the Formed and the Formless, this Rock is the One who led and fed Yashar''el (Israel) in the wilderness, the One Paul names plainly: *they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). The Rock of salvation the psalm calls the flock to worship is the Formed Son — Yahuah who has a Father, who walked with them through the very wilderness whose unbelief this same psalm warns them not to repeat. The Venite''s call to praise the Rock and its warning not to harden the heart are one: worship the Rock, hear his voice, do not forsake him as the fathers did.',
+       sv.verse_id, ev.verse_id, 'free', 24353
+  FROM _s302_ps095_lookup sv, _s302_ps095_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=95 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-95-we-are-the-sheep-of-his-hand-my-sheep-hear-my-voice',
+       E'We are the sheep of his hand — my sheep hear my voice',
+       E'The worship-call grounds itself in the covenant bond between the Shepherd and his flock: *O come, let us worship and bow down: let us kneel before Yahuah (LORD) our maker. For he is our Elohim (God); and we are the people of his pasture, and the sheep of his hand* (Psalm 95:6-7). The twin Venite confesses the same: *Know ye that Yahuah (LORD) he is Elohim (God): it is he that hath made us... we are his people, and the sheep of his pasture* (Psalm 100:3). Ezekiel seals the bond plainly — *And ye my flock, the flock of my pasture, are men, and I am your Elohim (God)* (Ezekiel 34:31) — the scattered sheep the one Shepherd David gathers and feeds (Ezekiel 34:23). And the psalm joins the flock to the voice in a single breath — *the sheep of his hand. To day if ye will hear his voice* (Psalm 95:7) — which the Formed Son makes the very mark of his own: *My sheep hear my voice, and I know them, and they follow me* (John 10:27). The sheep of his hand are the sheep who hear his voice; the covenant bond of the worship-call is the doorway straight into the warning — TO DAY, hear, and harden not the heart.',
+       sv.verse_id, ev.verse_id, 'free', 24356
+  FROM _s302_ps095_lookup sv, _s302_ps095_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=95 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *To day if ye will hear his voice* (Hebrews 3:7) — the psalm''s words taken as scripture spoken by the Ruach HaKodesh (Holy Spirit); the invitation still sounding TO DAY.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=7
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-to-day-if-ye-will-hear-his-voice-the-rest-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Harden not your hearts, as in the provocation, in the day of temptation in the wilderness* (Hebrews 3:8) — Psalm 95:8 quoted verbatim: the Meribah/Massah unbelief not to be repeated.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=8
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-to-day-if-ye-will-hear-his-voice-the-rest-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *So I sware in my wrath, They shall not enter into my rest* (Hebrews 3:11) — Psalm 95:11 taken word for word; the rest forfeited by unbelief, not abolished (Heb 3:19).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=11
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-to-day-if-ye-will-hear-his-voice-the-rest-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*While it is said, To day if ye will hear his voice* (Hebrews 3:15) — Psalm 95:7 quoted again to press the urgency: *while it is called To day* (Heb 3:13); the door is open while the To day sounds.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=7
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-to-day-if-ye-will-hear-his-voice-the-rest-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *a promise being left us of entering into his rest* (Hebrews 4:1) — the oath of 95:11 read as proof the rest REMAINS; forfeited by unbelief, but the promise stands open.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=11
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-to-day-if-ye-will-hear-his-voice-the-rest-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★★ *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9) — THE keystone: the creation Sabbath-rest (Heb 4:4) still stands open; 95:11 shut the door on unbelief, not on the rest.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=11
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-to-day-if-ye-will-hear-his-voice-the-rest-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *they tempted Yahuah (LORD), saying, Is Yahuah (LORD) among us, or not?* (Exodus 17:7) — Massah and Meribah, the provocation of 95:8 named at the rock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=8
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-to-day-if-ye-will-hear-his-voice-the-rest-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *they shall not see the land which I sware unto their fathers... that provoked me* (Numbers 14:23) — the oath of 95:11 at Kadesh; they *have not hearkened to my voice* (Num 14:22).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=11
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-to-day-if-ye-will-hear-his-voice-the-rest-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*Your carcases shall fall in this wilderness... which have murmured against me* (Numbers 14:29) — 95:11 fulfilled; Hebrews echoes it, *whose carcases fell in the wilderness* (Heb 3:17).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=11
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-to-day-if-ye-will-hear-his-voice-the-rest-remaineth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4) — the rock of our salvation (95:1) = the Formed Son who led Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=1
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-the-rock-of-our-salvation-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He is the Rock, his work is perfect* (Deuteronomy 32:4) — the rock of our salvation (95:1) is the Rock of Moses'' song, sung at the edge of the land.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=1
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-the-rock-of-our-salvation-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*lightly esteemed the Rock of his salvation* (Deuteronomy 32:15) — the Venite calls Yashar''el (Israel) to praise the very *Rock of his salvation* (95:1) that Jeshurun forsook.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=1
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-the-rock-of-our-salvation-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *My sheep hear my voice, and I know them, and they follow me* (John 10:27) — the sheep of his hand (95:7) are the sheep who hear his voice; the doorway into the TO DAY warning.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=7
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-we-are-the-sheep-of-his-hand-my-sheep-hear-my-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*we are his people, and the sheep of his pasture* (Psalm 100:3) — the twin Venite confessing the same covenant bond as 95:7.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=7
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=100 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-we-are-the-sheep-of-his-hand-my-sheep-hear-my-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*ye my flock, the flock of my pasture, are men, and I am your Elohim (God)* (Ezekiel 34:31) — the scattered sheep the one Shepherd David gathers (34:23); the flock of 95:7 named plainly.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps095_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=95 AND sv.verse_number=7
+  JOIN _s302_ps095_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-95-we-are-the-sheep-of-his-hand-my-sheep-hear-my-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_96.sql (Psalm 96) -----
+-- Chapter: Psalm 96 — THE ENTHRONEMENT "NEW SONG" PSALM: *O sing unto Yahuah (LORD) a new song:
+-- sing unto Yahuah (LORD), all the earth* (v.1). The whole earth is summoned to sing the new song,
+-- to declare His glory among the nations, to forsake the idols for the Maker of the heavens, to
+-- proclaim *Yahuah reigneth* among the heathen, and to rejoice that *he cometh... to judge the
+-- world with righteousness* (v.13). The new song of the redeemed from all nations (Revelation 5:9,
+-- 14:3; Isaiah 42:10); the glory declared among the nations and the ingathering of the scattered
+-- seed (Isaiah 66:18-19; Romans 15:9-11 — two-house frame, NOT replacement); the Creator over the
+-- idols (Jeremiah 10; 1 Corinthians 8); the enthronement proclaimed (Revelation 11:15, 19:6); and
+-- the coming Judge = the Formed Son who took flesh (Acts 17:31; Revelation 19:11; 2 Timothy 4:1).
+-- Tag: ps096   Temp view: _s302_ps096_lookup
+-- Sort band: base 24375, step 3 -> threads at 24375, 24378, 24381, 24384, 24387 (5 threads)
+-- Source of EVERY row: 'canon','psalms',96,v
+--
+-- Psalm 96 coverage:
+--   ★ v.1-2 (O sing unto Yahuah a new song; sing unto Yahuah, all the earth... bless his name; shew
+--          forth his salvation from day to day)
+--        NT:     ★ Revelation 5:9 (they sung a new song... hast redeemed us... out of every kindred,
+--                and tongue, and people, and nation), Revelation 14:3 (a new song before the throne...
+--                redeemed from the earth) — THREAD 1 (load-bearing)
+--        Extras: none warranted (no clean restored-witness adds to the new-song summons here)
+--        Tanakh: ★ Isaiah 42:10 (Sing unto Yahuah a new song... from the end of the earth, ye that go
+--                down to the sea) — THREAD 1
+--   v.3 (Declare his glory among the heathen, his wonders among all people)
+--        NT:     ★ Romans 15:9 (the Gentiles might glorify Elohim for his mercy), Romans 15:11 (Praise
+--                Yahuah, all ye Gentiles; and laud him, all ye people) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 66:19 (send those that escape... they shall declare my glory among the
+--                Gentiles), Isaiah 66:18 (I will gather all nations and tongues; they shall come, and
+--                see my glory) — THREAD 2 (two-house ingathering of the scattered seed)
+--   v.4 (For Yahuah is great, and greatly to be praised: he is to be feared above all gods)
+--        NT/Extras/Tanakh: none warranted distinct — carried into THREAD 3 (gathered with v.5 in prose);
+--          the greatness-above-all-gods is the hinge into the idols-vs-Creator weave.
+--   v.5 (For all the gods of the nations are idols: but Yahuah made the heavens)
+--        NT:     ★ 1 Corinthians 8:4 (an idol is nothing in the world... none other Elohim but one),
+--                1 Corinthians 8:6 (to us there is but one Elohim, the Father, of whom are all things) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 10:11 (The gods that have not made the heavens and the earth... shall
+--                perish), Jeremiah 10:12 (He hath made the earth by his power... stretched out the
+--                heavens) — THREAD 3 (the idols vs the Maker of the heavens)
+--   v.6-9 (Honour and majesty are before him... Give unto Yahuah glory and strength... bring an
+--          offering, and come into his courts... worship Yahuah in the beauty of holiness)
+--        NT/Extras/Tanakh: none warranted distinct — the liturgical summons (ascribe glory, bring an
+--          offering, worship in the beauty of holiness); the offering-of-the-nations forward-weave is
+--          carried in THREAD 2's prose (Isaiah 66:20, Romans 15:16); held as the psalm's own call to
+--          worship.
+--   ★★ v.10 (Say among the heathen that Yahuah reigneth: the world also shall be established that it
+--          shall not be moved: he shall judge the people righteously)
+--        NT:     ★★ Revelation 11:15 (The kingdoms of this world are become the kingdoms of our Lord,
+--                and of his Messiah; and he shall reign for ever and ever), ★ Revelation 19:6 (Yahuah
+--                Elohim omnipotent reigneth) — THREAD 4 (the enthronement proclaimed)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (the reign-proclaimed weaves FORWARD to the throne-songs of
+--                Revelation; no closer Tanakh lateral than the enthronement-psalter cluster itself)
+--   v.11-12 (Let the heavens rejoice, and let the earth be glad; let the sea roar... let the field be
+--          joyful... then shall all the trees of the wood rejoice)
+--        NT/Extras/Tanakh: none warranted distinct — the cosmic-rejoicing summons answering the
+--          enthronement; gathered into THREAD 5's prose as the creation's joy at the coming Judge.
+--   ★★ v.13 (Before Yahuah: for he cometh, for he cometh to judge the earth: he shall judge the world
+--          with righteousness, and the people with his truth)
+--        NT:     ★★ Acts 17:31 (he will judge the world in righteousness by that man whom he hath
+--                ordained), ★ Revelation 19:11 (in righteousness he doth judge and make war), 2 Timothy
+--                4:1 (who shall judge the quick and the dead at his appearing) — THREAD 5 (the coming
+--                Judge = the Formed Son who took flesh)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (the coming-to-judge-in-righteousness weaves FORWARD to the
+--                ordained Man; the psalm itself is the Tanakh keystone)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-96-o-sing-unto-yahuah-a-new-song-all-the-earth — NT (Revelation 5, Revelation 14) +
+--      Tanakh (Isaiah 42) [free] (★ the new song of the redeemed from all nations)
+--   2. psalm-96-declare-his-glory-among-the-nations — NT (Romans 15) + Tanakh (Isaiah 66) [free]
+--      (the glory declared among the nations; ingathering of the scattered seed, two-house frame)
+--   3. psalm-96-the-gods-of-the-nations-are-idols-but-yahuah-made-the-heavens — NT (1 Corinthians 8) +
+--      Tanakh (Jeremiah 10) [free] (the idols nothing; Yahuah made the heavens)
+--   4. psalm-96-say-among-the-heathen-that-yahuah-reigneth — NT (Revelation 11, Revelation 19) [free]
+--      (★★ the enthronement proclaimed: Yahuah reigneth, and of his Messiah)
+--   5. psalm-96-he-cometh-to-judge-the-earth-with-righteousness — NT (Acts 17, Revelation 19,
+--      2 Timothy 4) [free] (★★ the coming Judge = the Formed Son ordained, who took flesh)
+--
+-- Framing notes:
+--   ★ THE NEW SONG (THREAD 1): *O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the
+--      earth* (96:1). The whole earth summoned to a NEW song — and the new song is the song of the
+--      redeemed gathered from every nation: *they sung a new song, saying... thou wast slain, and hast
+--      redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and
+--      nation* (Revelation 5:9); *they sung as it were a new song before the throne... which were
+--      redeemed from the earth* (Revelation 14:3). Isaiah takes up the psalm's own opening line for
+--      the ends of the earth: *Sing unto Yahuah (LORD) a new song, and his praise from the end of the
+--      earth* (Isaiah 42:10). The new song of all the earth is the song of the ransomed seed brought
+--      home — redeemed, not replaced.
+--   THE GLORY DECLARED (THREAD 2): *Declare his glory among the heathen, his wonders among all people*
+--      (96:3). The nations are summoned into the praise of Yahuah — the ingathering of the scattered
+--      seed, NOT a replacement people (Romans 11:1-2 guard). Isaiah names the very work: *I will send
+--      those that escape of them unto the nations... and they shall declare my glory among the
+--      Gentiles* (Isaiah 66:19), for *I will gather all nations and tongues; and they shall come, and
+--      see my glory* (Isaiah 66:18). Paul gathers the same: *that the Gentiles might glorify Elohim
+--      (God) for his mercy* (Romans 15:9), *Praise Yahuah (Lord), all ye Gentiles; and laud him, all
+--      ye people* (Romans 15:11) — the scattered among the nations brought back into the praise.
+--   THE IDOLS VS THE MAKER (THREAD 3): *For all the gods of the nations are idols: but Yahuah (LORD)
+--      made the heavens* (96:5). The hinge is creation: the gods of the nations made nothing; Yahuah
+--      made the heavens. Jeremiah draws the same line: *The gods that have not made the heavens and the
+--      earth, even they shall perish from the earth* (Jeremiah 10:11), but *He hath made the earth by
+--      his power, he hath established the world by his wisdom, and hath stretched out the heavens by his
+--      discretion* (Jeremiah 10:12). And Paul affirms it for the assembly: *an idol is nothing in the
+--      world, and... there is none other Elohim (God) but one* (1 Corinthians 8:4); *to us there is but
+--      one Elohim (God), the Father, of whom are all things* (1 Corinthians 8:6).
+--   ★★ THE ENTHRONEMENT PROCLAIMED (THREAD 4): *Say among the heathen that Yahuah (LORD) reigneth*
+--      (96:10) — the proclamation that runs the whole psalm. It is the very cry the seventh trumpet
+--      sounds: *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah
+--      (Christ); and he shall reign for ever and ever* (Revelation 11:15); *Yahuah Elohim (the Lord
+--      God) omnipotent reigneth* (Revelation 19:6). The reign Yahuah holds in the psalm is the reign
+--      proclaimed at the throne — the Father reigns, and the Formed Son reigns at His right hand; he is
+--      Yahuah, and he has a Father.
+--   ★★ THE COMING JUDGE (THREAD 5): *for he cometh, for he cometh to judge the earth: he shall judge
+--      the world with righteousness* (96:13). Read through the Formed and the Formless: the coming
+--      Judge is the Man Yahuah ordained — *he hath appointed a day, in the which he will judge the
+--      world in righteousness by that man whom he hath ordained; whereof he hath given assurance unto
+--      all men, in that he hath raised him from the dead* (Acts 17:31). At his appearing *in
+--      righteousness he doth judge and make war* (Revelation 19:11), *who shall judge the quick and the
+--      dead at his appearing and his kingdom* (2 Timothy 4:1). The One who comes to judge the world
+--      with righteousness is the Formed Son who took flesh — Yahuah come in the appointed Man, and he
+--      has a Father.
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — a deliberate, recorded answer. The
+--      load-bearing weaves are the NT throne-songs and judgment (Revelation 5/11/14/19, Acts 17,
+--      2 Timothy 4, Romans 15, 1 Corinthians 8) and the Tanakh prophets (Isaiah 42/66, Jeremiah 10).
+--      No restored witness was forced.
+--   VERSES WITH NO ADD: v.4 (great above all gods — the hinge into THREAD 3, gathered in prose),
+--      v.6-9 (the liturgical worship-summons; the offering-of-the-nations forward-weave is carried in
+--      THREAD 2's prose), v.11-12 (the cosmic-rejoicing summons answering the enthronement, gathered in
+--      THREAD 5's prose): the frame and answering joy the keystone proclamations rise within; no
+--      separate framework-bearing target warranted beyond the gathered prose.
+
+CREATE TEMP VIEW _s302_ps096_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): O sing unto Yahuah a new song — the new song of the redeemed from all nations
+    ('canon','psalms',96,1,'canon','revelation',5,9,'free',
+      E'*And they sung a new song, saying, Thou art worthy to take the book, and to open the seals thereof: for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9). *O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the earth* (Psalm 96:1): the new song of all the earth is the song of the redeemed — the ransomed gathered *out of every kindred, and tongue, and people, and nation*. The whole earth summoned to a new song in the psalm is heard at the throne as the song of the ransomed seed brought home.'),
+    ('canon','psalms',96,1,'canon','revelation',14,3,'free',
+      E'*And they sung as it were a new song before the throne, and before the four beasts, and the elders: and no man could learn that song but the hundred and forty and four thousand, which were redeemed from the earth* (Revelation 14:3). The *new song* the psalm summons all the earth to sing (Psalm 96:1) is sung *before the throne* by the redeemed — *which were redeemed from the earth*. The new song of all the earth is the song of the ransomed from among men, the firstfruits brought home.'),
+    ('canon','psalms',96,1,'canon','isaiah',42,10,'free',
+      E'*Sing unto Yahuah (LORD) a new song, and his praise from the end of the earth, ye that go down to the sea, and all that is therein; the isles, and the inhabitants thereof* (Isaiah 42:10). Isaiah takes up the psalm''s own opening word for word: *O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the earth* (Psalm 96:1) is *Sing unto Yahuah (LORD) a new song... from the end of the earth*. The same new song, summoned from the same all-the-earth — the isles and the inhabitants thereof drawn into the praise.'),
+
+    -- THREAD 2: Declare his glory among the nations — the ingathering of the scattered seed
+    ('canon','psalms',96,3,'canon','isaiah',66,19,'free',
+      E'*And I will set a sign among them, and I will send those that escape of them unto the nations, to Tarshish, Pul, and Lud, that draw the bow, to Tubal, and Javan, to the isles afar off, that have not heard my fame, neither have seen my glory; and they shall declare my glory among the Gentiles* (Isaiah 66:19). *Declare his glory among the heathen, his wonders among all people* (Psalm 96:3): Isaiah names the very work — the escaped sent out *and they shall declare my glory among the Gentiles*. The glory declared among the nations is the scattered seed carrying His name out to the isles afar off, the ingathering, not a replacement people.'),
+    ('canon','psalms',96,3,'canon','isaiah',66,18,'free',
+      E'*For I know their works and their thoughts: it shall come, that I will gather all nations and tongues; and they shall come, and see my glory* (Isaiah 66:18). To *declare his glory among the heathen* (Psalm 96:3) is the prelude to the gathering: *I will gather all nations and tongues; and they shall come, and see my glory*. The glory declared among the nations draws them in to SEE the glory — the all-nations ingathering Isaiah promises.'),
+    ('canon','psalms',96,3,'canon','romans',15,9,'free',
+      E'*And that the Gentiles might glorify Elohim (God) for his mercy; as it is written, For this cause I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9). *Declare his glory among the heathen* (Psalm 96:3): Paul gathers the promise — *that the Gentiles might glorify Elohim (God) for his mercy... and sing unto thy name*. The glory declared among the nations is the nations brought to glorify Yahuah and sing His name, the scattered seed among the nations regathered into His praise.'),
+    ('canon','psalms',96,3,'canon','romans',15,11,'free',
+      E'*And again, Praise Yahuah (Lord), all ye Gentiles; and laud him, all ye people* (Romans 15:11). The psalm''s summons *Declare his glory among the heathen, his wonders among all people* (Psalm 96:3) is the very call Paul stacks from the Tanakh — *Praise Yahuah (Lord), all ye Gentiles; and laud him, all ye people*. The nations declaring His glory is the nations brought into the praise of Yahuah, the regathering of the scattered into His worship.'),
+
+    -- THREAD 3: The gods of the nations are idols, but Yahuah made the heavens
+    ('canon','psalms',96,5,'canon','jeremiah',10,11,'free',
+      E'*Thus shall ye say unto them, The gods that have not made the heavens and the earth, even they shall perish from the earth, and from under these heavens* (Jeremiah 10:11). *For all the gods of the nations are idols: but Yahuah (LORD) made the heavens* (Psalm 96:5): Jeremiah draws the same line by the same test of creation — *The gods that have not made the heavens and the earth... shall perish*. The idols of the nations made nothing and shall perish; only the Maker of the heavens endures.'),
+    ('canon','psalms',96,5,'canon','jeremiah',10,12,'free',
+      E'*He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion* (Jeremiah 10:12). The hinge of *but Yahuah (LORD) made the heavens* (Psalm 96:5) is Jeremiah''s same confession: *He hath made the earth by his power... and hath stretched out the heavens by his discretion*. The gods of the nations are idols precisely because Yahuah, and Yahuah alone, made the heavens — the world established that it shall not be moved (Psalm 96:10) is His own establishing.'),
+    ('canon','psalms',96,5,'canon','1-corinthians',8,4,'free',
+      E'*As concerning therefore the eating of those things that are offered in sacrifice unto idols, we know that an idol is nothing in the world, and that there is none other Elohim (God) but one* (1 Corinthians 8:4). *For all the gods of the nations are idols* (Psalm 96:5): Paul affirms the psalm for the assembly — *an idol is nothing in the world, and... there is none other Elohim (God) but one*. The gods of the nations are nothing; the Maker of the heavens is the one Elohim.'),
+    ('canon','psalms',96,5,'canon','1-corinthians',8,6,'free',
+      E'*But to us there is but one Elohim (God), the Father, of whom are all things, and we in him; and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things, and we by him* (1 Corinthians 8:6). Over against the idols of *all the gods of the nations* (Psalm 96:5), Paul sets the one Source and His expressed Word: *one Elohim (God), the Father, of whom are all things... and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things*. The Maker of the heavens is the Father, and all things were made by the Formed Son His Word — the Formless Source and the Formed One, never an idol, never a co-equal second God.'),
+
+    -- THREAD 4 (★★): Say among the heathen that Yahuah reigneth — the enthronement proclaimed
+    ('canon','psalms',96,10,'canon','revelation',11,15,'free',
+      E'*And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). *Say among the heathen that Yahuah (LORD) reigneth* (Psalm 96:10): the proclamation of the psalm is the cry of the seventh trumpet — *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever*. The reign declared among the nations is the reign consummated at the throne: the Father reigns, and the Formed Son reigns with Him.'),
+    ('canon','psalms',96,10,'canon','revelation',19,6,'free',
+      E'*And I heard as it were the voice of a great multitude, and as the voice of many waters, and as the voice of mighty thunderings, saying, Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth* (Revelation 19:6). The psalm''s charge *Say among the heathen that Yahuah (LORD) reigneth* (Psalm 96:10) is the great multitude''s very cry — *Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth*. What the psalm summons the nations to say is what heaven thunders: Yahuah reigneth.'),
+
+    -- THREAD 5 (★★): He cometh to judge the earth with righteousness — the coming Judge, the Formed Son ordained
+    ('canon','psalms',96,13,'canon','acts',17,31,'free',
+      E'*Because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained; whereof he hath given assurance unto all men, in that he hath raised him from the dead* (Acts 17:31). *for he cometh, for he cometh to judge the earth: he shall judge the world with righteousness* (Psalm 96:13): the One who comes to judge the world in righteousness is the Man Yahuah ordained — *he will judge the world in righteousness by that man whom he hath ordained*. The coming Judge of the psalm is the Formed Son who took flesh, raised from the dead, the appointed Man through whom Yahuah judges; he is Yahuah come in the ordained Man, and he has a Father.'),
+    ('canon','psalms',96,13,'canon','revelation',19,11,'free',
+      E'*And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war* (Revelation 19:11). *he shall judge the world with righteousness* (Psalm 96:13) is the rider Faithful and True — *in righteousness he doth judge and make war*. The coming One who judges the earth with righteousness is the Word of Elohim on the white horse, the Formed Son who judges in the very righteousness the psalm sings.'),
+    ('canon','psalms',96,13,'canon','2-timothy',4,1,'free',
+      E'*I charge thee therefore before Elohim (God), and the Lord Yahusha HaMashiach (Lord Jesus Christ), who shall judge the quick and the dead at his appearing and his kingdom* (2 Timothy 4:1). *for he cometh, for he cometh to judge the earth* (Psalm 96:13): the coming to judge is the Lord Yahusha *who shall judge the quick and the dead at his appearing and his kingdom*. The Judge who cometh in the psalm is the Formed Son ordained to judge living and dead — and the day of judgment is the day of his appearing.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-96-o-sing-unto-yahuah-a-new-song-all-the-earth',
+       E'O sing unto Yahuah a new song — the new song of the redeemed from all nations',
+       E'The enthronement psalm opens with a summons to the whole earth: *O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the earth. Sing unto Yahuah (LORD), bless his name; shew forth his salvation from day to day* (Psalm 96:1-2). The new song is no mere fresh tune — it is the song of the redeemed gathered from every nation. At the throne the same new song is sung: *they sung a new song, saying... thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9); *they sung as it were a new song before the throne... which were redeemed from the earth* (Revelation 14:3). And Isaiah takes up the psalm''s own opening line, summoning the same all-the-earth: *Sing unto Yahuah (LORD) a new song, and his praise from the end of the earth, ye that go down to the sea, and all that is therein; the isles, and the inhabitants thereof* (Isaiah 42:10). The new song of all the earth is the song of the ransomed seed brought home — redeemed out of every kindred and tongue and people and nation, never a people replaced but the scattered gathered into the praise.',
+       sv.verse_id, ev.verse_id, 'free', 24375
+  FROM _s302_ps096_lookup sv, _s302_ps096_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=96 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-96-declare-his-glory-among-the-nations',
+       E'Declare his glory among the nations — the ingathering of the scattered seed',
+       E'*Declare his glory among the heathen, his wonders among all people* (Psalm 96:3). The nations are summoned into the praise of Yahuah — and this is the ingathering of the scattered seed, never a replacement people grafted in by confession (Romans 11:1-2 guards: Yahuah hath not cast away his people). Isaiah names the very work: *I will set a sign among them, and I will send those that escape of them unto the nations... and they shall declare my glory among the Gentiles* (Isaiah 66:19), and the declaring is the prelude to the gathering — *I will gather all nations and tongues; and they shall come, and see my glory* (Isaiah 66:18), bringing the brethren *for an offering unto Yahuah (LORD) out of all nations* (66:20). Paul gathers the same Tanakh promise: *that the Gentiles might glorify Elohim (God) for his mercy; as it is written, For this cause I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9), *Praise Yahuah (Lord), all ye Gentiles; and laud him, all ye people* (Romans 15:11). The glory declared among the nations is the scattered seed among the nations regathered into the worship of Yahuah — the offering of the nations brought home.',
+       sv.verse_id, ev.verse_id, 'free', 24378
+  FROM _s302_ps096_lookup sv, _s302_ps096_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=96 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-96-the-gods-of-the-nations-are-idols-but-yahuah-made-the-heavens',
+       E'The gods of the nations are idols — but Yahuah made the heavens',
+       E'*For Yahuah (LORD) is great, and greatly to be praised: he is to be feared above all gods. For all the gods of the nations are idols: but Yahuah (LORD) made the heavens* (Psalm 96:4-5). The hinge is creation: the gods of the nations made nothing; Yahuah alone made the heavens. Jeremiah draws the same line by the same test: *The gods that have not made the heavens and the earth, even they shall perish from the earth, and from under these heavens* (Jeremiah 10:11), while *He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion* (Jeremiah 10:12) — the very establishing the psalm sings, *the world also shall be established that it shall not be moved* (96:10). And Paul affirms it for the assembly: *an idol is nothing in the world, and... there is none other Elohim (God) but one* (1 Corinthians 8:4); *to us there is but one Elohim (God), the Father, of whom are all things, and we in him; and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things, and we by him* (1 Corinthians 8:6). The Maker of the heavens is the Father, the Formless Source; all things were made by the Formed Son, His expressed Word — never an idol, never a co-equal second God. The gods of the nations are nothing; Yahuah made the heavens.',
+       sv.verse_id, ev.verse_id, 'free', 24381
+  FROM _s302_ps096_lookup sv, _s302_ps096_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=96 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-96-say-among-the-heathen-that-yahuah-reigneth',
+       E'Say among the heathen that Yahuah reigneth — the enthronement proclaimed',
+       E'The heart of the enthronement psalm: *Say among the heathen that Yahuah (LORD) reigneth: the world also shall be established that it shall not be moved: he shall judge the people righteously* (Psalm 96:10). The reign is to be PROCLAIMED to the nations — and the proclamation is the cry that sounds at the seventh trumpet: *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). It is the great multitude''s thunder: *Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth* (Revelation 19:6). What the psalm summons the nations to say is what heaven proclaims at the consummation — Yahuah reigneth. The reign is the Father''s, *and of his Messiah (Christ)*: the Formed Son reigns at the right hand of the Formless Source; he is Yahuah, and he has a Father, and together the kingdom is established that it shall not be moved.',
+       sv.verse_id, ev.verse_id, 'free', 24384
+  FROM _s302_ps096_lookup sv, _s302_ps096_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=96 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-96-he-cometh-to-judge-the-earth-with-righteousness',
+       E'He cometh to judge the earth with righteousness — the coming Judge, the Formed Son ordained',
+       E'The psalm closes with the whole creation rejoicing before the coming Judge: *Let the heavens rejoice, and let the earth be glad; let the sea roar, and the fulness thereof... then shall all the trees of the wood rejoice Before Yahuah (LORD): for he cometh, for he cometh to judge the earth: he shall judge the world with righteousness, and the people with his truth* (Psalm 96:11-13). Read through the Formed and the Formless: the One who cometh to judge the world with righteousness is the Man Yahuah ordained — *he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained; whereof he hath given assurance unto all men, in that he hath raised him from the dead* (Acts 17:31). At his appearing he is the rider Faithful and True: *in righteousness he doth judge and make war* (Revelation 19:11); he is *the Lord Yahusha HaMashiach (Lord Jesus Christ), who shall judge the quick and the dead at his appearing and his kingdom* (2 Timothy 4:1). The coming Judge of the psalm is the Formed Son who took flesh, raised from the dead, the appointed Man through whom Yahuah judges the world with righteousness — Yahuah come in the ordained Man, and he has a Father. The earth and the sea and the trees rejoice because their Maker comes to set all things right.',
+       sv.verse_id, ev.verse_id, 'free', 24387
+  FROM _s302_ps096_lookup sv, _s302_ps096_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=96 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *they sung a new song... hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9) — the new song of all the earth (96:1) is the song of the ransomed gathered from every nation.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=1
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-o-sing-unto-yahuah-a-new-song-all-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they sung as it were a new song before the throne... which were redeemed from the earth* (Revelation 14:3) — the new song the psalm summons (96:1) is sung at the throne by the redeemed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=1
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-o-sing-unto-yahuah-a-new-song-all-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Sing unto Yahuah (LORD) a new song... from the end of the earth* (Isaiah 42:10) — the psalm''s own opening (96:1) taken up by Isaiah, the same new song from the same all-the-earth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=1
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-o-sing-unto-yahuah-a-new-song-all-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *send those that escape of them unto the nations... and they shall declare my glory among the Gentiles* (Isaiah 66:19) — *Declare his glory among the heathen* (96:3): the scattered seed carrying His name out to the nations.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=3
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-declare-his-glory-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will gather all nations and tongues; and they shall come, and see my glory* (Isaiah 66:18) — the glory declared among the nations (96:3) draws them in to SEE the glory: the all-nations ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=3
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-declare-his-glory-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*that the Gentiles might glorify Elohim (God) for his mercy... and sing unto thy name* (Romans 15:9) — the nations declaring His glory (96:3) brought to glorify Yahuah and sing His name.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=3
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-declare-his-glory-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Praise Yahuah (Lord), all ye Gentiles; and laud him, all ye people* (Romans 15:11) — Paul stacks the very call of 96:3 from the Tanakh: the nations brought into the praise of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=3
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-declare-his-glory-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *The gods that have not made the heavens and the earth... shall perish* (Jeremiah 10:11) — *but Yahuah (LORD) made the heavens* (96:5): the same test of creation; the idols made nothing and perish.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=5
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-the-gods-of-the-nations-are-idols-but-yahuah-made-the-heavens'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He hath made the earth by his power... and hath stretched out the heavens by his discretion* (Jeremiah 10:12) — the hinge of 96:5 (Yahuah made the heavens) is Jeremiah''s same confession; His own establishing of the world.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=5
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-the-gods-of-the-nations-are-idols-but-yahuah-made-the-heavens'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*an idol is nothing in the world, and... there is none other Elohim (God) but one* (1 Corinthians 8:4) — Paul affirms 96:5 for the assembly: the gods of the nations are nothing.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=5
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-the-gods-of-the-nations-are-idols-but-yahuah-made-the-heavens'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*one Elohim (God), the Father, of whom are all things... and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things* (1 Corinthians 8:6) — over against the idols (96:5), the Formless Source and the Formed Word who made all things; never a co-equal second God.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=5
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-the-gods-of-the-nations-are-idols-but-yahuah-made-the-heavens'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15) — *Say among the heathen that Yahuah (LORD) reigneth* (96:10) is the cry of the seventh trumpet.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=10
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-say-among-the-heathen-that-yahuah-reigneth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth* (Revelation 19:6) — what the psalm summons the nations to say (96:10) is what the great multitude thunders.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=10
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-say-among-the-heathen-that-yahuah-reigneth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he will judge the world in righteousness by that man whom he hath ordained... raised him from the dead* (Acts 17:31) — *he cometh... to judge the world with righteousness* (96:13): the coming Judge is the ordained Man, the Formed Son who took flesh.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=13
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-he-cometh-to-judge-the-earth-with-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *in righteousness he doth judge and make war* (Revelation 19:11) — *he shall judge the world with righteousness* (96:13): the rider Faithful and True, the Word of Elohim, judging in the very righteousness the psalm sings.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=13
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-he-cometh-to-judge-the-earth-with-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the Lord Yahusha HaMashiach (Lord Jesus Christ), who shall judge the quick and the dead at his appearing and his kingdom* (2 Timothy 4:1) — *for he cometh... to judge the earth* (96:13): the Formed Son ordained to judge living and dead at his appearing.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps096_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=96 AND sv.verse_number=13
+  JOIN _s302_ps096_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-96-he-cometh-to-judge-the-earth-with-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_97.sql (Psalm 97) -----
+-- Chapter: Psalm 97 — THE ENTHRONEMENT THEOPHANY: *Yahuah (LORD) reigneth; let the earth
+-- rejoice* (v.1). The reigning King appears in cloud and fire and consuming glory — *Clouds and
+-- darkness are round about him... A fire goeth before him... The hills melted like wax at the
+-- presence of Yahuah (LORD)* (v.2-5) — the Sinai theophany re-sung and set forward to the cloud-
+-- coming. The keystone is v.7: *worship him, all ye gods* — the line Hebrews 1:6 quotes (LXX *let
+-- all the angels of Elohim worship him*) and applies straight to the SON. The Father commands all
+-- the heavenly host to worship the Formed Son: he is Yahuah and has a Father — not a created angel
+-- (the angels worship HIM), not a co-equal second person. Zion and the daughters of Yahudah
+-- (Judah) rejoice at his judgments (v.8 — the restored people glad, never replaced); they that
+-- love Yahuah hate evil (v.10).
+-- Tag: ps097   Temp view: _s302_ps097_lookup
+-- Sort band: base 24400, step 3 -> threads at 24400, 24403, 24406, 24409, 24412 (5 threads)
+-- Source of EVERY row: 'canon','psalms',97,v
+--
+-- Psalm 97 coverage:
+--   ★ v.1 (Yahuah reigneth; let the earth rejoice; let the multitude of isles be glad thereof)
+--        NT:     ★ Revelation 19:6 (Yahuah Elohim omnipotent reigneth — the enthronement
+--                proclamation) — THREAD 2
+--        Extras: none warranted (no clean restored-witness adds to the reign-proclamation here)
+--        Tanakh: ★ Isaiah 52:7 (that saith unto Zion, Thy Elohim reigneth! — the announcement of
+--                the very reign), Isaiah 42:10,12 (Sing unto Yahuah a new song... ye that go down
+--                to the sea... the isles; declare his praise in the islands — the isles glad) — THREAD 2
+--   ★★ v.2-5 (Clouds and darkness are round about him... A fire goeth before him, and burneth up
+--                his enemies... His lightnings enlightened the world: the earth saw, and trembled.
+--                The hills melted like wax at the presence of Yahuah)
+--        NT:     ★ Revelation 1:7 (Behold, he cometh with clouds; and every eye shall see him) —
+--                the cloud-coming of the Formed Son; ★ 2 Peter 3:10 (the elements shall melt with
+--                fervent heat... shall be burned up — the hills-melt/fire motif forward) — THREAD 3
+--        Extras: none warranted (the Sinai theophany is best carried by the Torah witnesses; no
+--                restored witness forced)
+--        Tanakh: ★ Exodus 19:16,18 (a thick cloud upon the mount... mount Sinai was altogether on
+--                a smoke, because Yahuah descended upon it in fire... the whole mount quaked), ★
+--                Deuteronomy 4:11 (the mountain burned with fire... with darkness, clouds, and
+--                thick darkness) — THREAD 3
+--   v.6 (The heavens declare his righteousness, and all the people see his glory)
+--        NT/Extras/Tanakh: none warranted distinct — the heralding heavens; gathered into the
+--          theophany prose of THREAD 3 (righteousness/judgment the habitation of his throne, v.2).
+--   ★★★ v.7 (Confounded be all they that serve graven images, that boast themselves of idols:
+--                worship him, all ye gods)
+--        NT:     ★★★ Hebrews 1:6 (And let all the angels of Elohim (God) worship him — quotes this
+--                very line, LXX/Deut 32:43 form, and applies it to the SON) — THREAD 1 (THE keystone)
+--        Extras: none warranted (no restored witness improves the Hebrews 1:6 keystone)
+--        Tanakh: ★★ Deuteronomy 32:43 (the LXX/DSS "worship him, all ye gods/angels" — the Torah
+--                root Hebrews draws from; the Song of Moses summons the host to bow), Isaiah 42:8
+--                (my glory will I not give to another, neither my praise to graven images — the
+--                idol-confounding twin) — THREAD 1
+--   ★ v.8 (Zion heard, and was glad; and the daughters of Yahudah (Judah) rejoiced because of thy
+--                judgments, O Yahuah)
+--        NT:     none warranted distinct (the Zion-glad/Judah-rejoice forward-weave is the prophets'
+--                own restoration; carried by Isaiah 52)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 48:11 (Let mount Zion rejoice, let the daughters of Yahudah (Judah) be
+--                glad, because of thy judgments — near-verbatim twin), ★ Isaiah 52:7-8 (Thy Elohim
+--                reigneth!... when Yahuah shall bring again Zion — Zion's gladness IS the reign) — THREAD 4
+--   v.9 (For thou, Yahuah, art high above all the earth: thou art exalted far above all gods)
+--        NT/Extras/Tanakh: none warranted distinct — the exaltation refrain; gathered into THREAD 1
+--          (exalted above all gods = the One the gods are commanded to worship, v.7).
+--   ★ v.10 (Ye that love Yahuah, hate evil: he preserveth the souls of his saints; he delivereth
+--                them out of the hand of the wicked)
+--        NT:     ★ Romans 12:9 (Abhor that which is evil; cleave to that which is good), ★ 1 John
+--                2:3-4 (hereby we do know that we know him, if we keep his commandments — the
+--                obedience filter) — THREAD 5
+--        Extras: none warranted
+--        Tanakh: ★ Amos 5:15 (Hate the evil, and love the good, and establish judgment in the gate)
+--                — THREAD 5
+--   v.11-12 (Light is sown for the righteous... Rejoice in Yahuah, ye righteous; and give thanks at
+--                the remembrance of his holiness)
+--        NT/Extras/Tanakh: none warranted distinct — the closing call to the righteous; the joy
+--          and thanksgiving the whole psalm rises to, gathered into the THREAD 4 (Zion glad) and
+--          THREAD 5 (the saints preserved) prose, not a separate add.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-97-worship-him-all-ye-gods-let-all-the-angels-worship-the-son — NT (Hebrews 1) +
+--      Tanakh (Deuteronomy 32, Isaiah 42) [free] (★★★ THE keystone: Father commands the host to
+--      worship the Formed Son; Formed/Formless)
+--   2. psalm-97-yahuah-reigneth-let-the-earth-rejoice — NT (Revelation 19) + Tanakh (Isaiah 52,
+--      Isaiah 42) [free] (the enthronement proclamation; the isles glad)
+--   3. psalm-97-clouds-and-darkness-the-fire-and-the-melting-hills — NT (Revelation 1, 2 Peter 3) +
+--      Tanakh (Exodus 19, Deuteronomy 4) [free] (★★ the Sinai theophany = the Formed cloud-rider)
+--   4. psalm-97-zion-heard-and-the-daughters-of-yahudah-rejoiced — Tanakh (Psalm 48, Isaiah 52)
+--      [free] (★ two-house: the restored people glad at His reign, never replaced)
+--   5. psalm-97-ye-that-love-yahuah-hate-evil — NT (Romans 12, 1 John 2) + Tanakh (Amos 5) [free]
+--      (★ love of Yahuah inseparable from hating evil; the obedience filter)
+--
+-- Framing notes:
+--   ★★★ THE KEYSTONE — WORSHIP HIM, ALL YE GODS (THREAD 1): *Confounded be all they that serve
+--      graven images, that boast themselves of idols: worship him, all ye gods* (97:7). Hebrews
+--      takes this very line — in its LXX/Deuteronomy 32:43 form *And let all the angels of Elohim
+--      (God) worship him* (Hebrews 1:6) — and applies it DIRECTLY to the Son: *when he bringeth in
+--      the firstbegotten into the world, he saith, And let all the angels of Elohim (God) worship
+--      him*. Read through the Formed and the Formless: the Father (the formless Most High) commands
+--      the whole heavenly host to bow to the Formed Son. He is Yahuah — the One the psalm says is
+--      *exalted far above all gods* (97:9) — and he has a Father who commands the worship. He is
+--      NOT a created angel (the angels worship HIM, Hebrews 1:6, and *of the angels he saith, Who
+--      maketh his angels spirits*, 1:7), and NOT a co-equal second person (the Father SENDS and
+--      COMMANDS; the Son is *appointed heir*, 1:2, *begotten*, 1:5). The Torah root is the Song of
+--      Moses: *worship him, all ye gods* (Deuteronomy 32:43, the LXX/DSS reading) — the host
+--      summoned to bow. Isaiah names the idol-confounding twin: *I am Yahuah (LORD): that is my
+--      name: and my glory will I not give to another, neither my praise to graven images* (Isaiah
+--      42:8). The graven images are confounded; the gods themselves are commanded to worship the
+--      Son who bears the Name.
+--   THE REIGN PROCLAIMED (THREAD 2): *Yahuah (LORD) reigneth; let the earth rejoice; let the
+--      multitude of isles be glad thereof* (97:1). The Revelation hallelujah is the same shout
+--      consummated: *Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth* (Revelation
+--      19:6). Isaiah names the herald who carries the word to Zion: *How beautiful upon the
+--      mountains are the feet of him that bringeth good tidings... that saith unto Zion, Thy Elohim
+--      (God) reigneth!* (Isaiah 52:7) — and summons the very isles the psalm calls glad: *Sing unto
+--      Yahuah (LORD) a new song... ye that go down to the sea... the isles, and the inhabitants
+--      thereof* (Isaiah 42:10), *declare his praise in the islands* (42:12).
+--   ★★ THE THEOPHANY — CLOUD AND FIRE (THREAD 3): *Clouds and darkness are round about him... A
+--      fire goeth before him, and burneth up his enemies... The hills melted like wax at the
+--      presence of Yahuah (LORD)* (97:2-5). This is Sinai re-sung: *there were thunders and
+--      lightnings, and a thick cloud upon the mount* (Exodus 19:16), *mount Sinai was altogether on
+--      a smoke, because Yahuah (LORD) descended upon it in fire... and the whole mount quaked
+--      greatly* (19:18); *the mountain burned with fire unto the midst of heaven, with darkness,
+--      clouds, and thick darkness* (Deuteronomy 4:11). The One who came in cloud and fire at Sinai
+--      is the Formed Son — and he comes again the same way: *Behold, he cometh with clouds; and
+--      every eye shall see him* (Revelation 1:7). The hills-melt motif is set forward to the day of
+--      fire: *the elements shall melt with fervent heat, the earth also and the works that are
+--      therein shall be burned up* (2 Peter 3:10).
+--   ★ ZION AND JUDAH GLAD (THREAD 4): *Zion heard, and was glad; and the daughters of Yahudah
+--      (Judah) rejoiced because of thy judgments, O Yahuah (LORD)* (97:8) — the restored people
+--      glad at His reign, NEVER a replacement people. The psalter sings the near-verbatim twin:
+--      *Let mount Zion rejoice, let the daughters of Yahudah (Judah) be glad, because of thy
+--      judgments* (Psalm 48:11). And the gladness IS the reign proclaimed: *that saith unto Zion,
+--      Thy Elohim (God) reigneth!... they shall see eye to eye, when Yahuah (LORD) shall bring
+--      again Zion* (Isaiah 52:7-8). The reigning King's judgments are Zion's joy.
+--   ★ LOVE YAHUAH, HATE EVIL (THREAD 5): *Ye that love Yahuah (LORD), hate evil: he preserveth the
+--      souls of his saints* (97:10). The love of Yahuah is inseparable from hating evil — the very
+--      grammar Amos uses: *Hate the evil, and love the good, and establish judgment in the gate*
+--      (Amos 5:15); echoed by Paul: *Abhor that which is evil; cleave to that which is good*
+--      (Romans 12:9). And the obedience filter seals it: *hereby we do know that we know him, if we
+--      keep his commandments. He that saith, I know him, and keepeth not his commandments, is a
+--      liar* (1 John 2:3-4) — to love Yahuah is to keep his word and hate what he hates.
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — a deliberate, recorded answer. The
+--      load-bearing weaves are the NT (Hebrews 1:6 keystone, Revelation 19/1, 2 Peter 3, Romans 12,
+--      1 John 2) and the Tanakh (Deuteronomy 32/4, Exodus 19, Isaiah 42/52, Psalm 48, Amos 5). No
+--      restored witness was forced onto the enthronement theophany.
+--   VERSES WITH NO ADD: v.6 (the heralding heavens — gathered into the theophany prose), v.9 (the
+--      exaltation refrain — gathered into THREAD 1, exalted above all gods = the One the gods bow
+--      to), v.11-12 (the closing call to the righteous — the joy and thanksgiving the whole psalm
+--      rises to, gathered into THREADS 4 and 5): the frame and summing the threads resolve into; no
+--      separate framework-bearing target warranted beyond the gathered prose.
+
+CREATE TEMP VIEW _s302_ps097_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): worship him, all ye gods — the Father commands the host to worship the Formed Son
+    ('canon','psalms',97,7,'canon','hebrews',1,6,'free',
+      E'*And again, when he bringeth in the firstbegotten into the world, he saith, And let all the angels of Elohim (God) worship him* (Hebrews 1:6). This is the keystone: Hebrews takes the very line *worship him, all ye gods* (Psalm 97:7) — in its LXX/Deuteronomy 32:43 form *let all the angels of Elohim (God) worship him* — and applies it straight to the SON. Read through the Formed and the Formless: the Father commands the whole heavenly host to bow to the Formed Son. He is Yahuah, the One *exalted far above all gods* (97:9), and he has a Father who commands the worship — not a created angel (the angels worship HIM), not a co-equal second person (the Father sends and commands).'),
+    ('canon','psalms',97,7,'canon','deuteronomy',32,43,'free',
+      E'*Rejoice, O ye nations, with his people: for he will avenge the blood of his servants, and will render vengeance to his adversaries, and will be merciful unto his land, and to his people* (Deuteronomy 32:43). The Song of Moses is the Torah root of *worship him, all ye gods* (Psalm 97:7): in the older LXX/DSS reading this verse summons the host — *worship him, all ye gods* / *let all the angels of Elohim bow before him* — the very line Hebrews 1:6 lifts and lays upon the Son. The closing song of the Torah commands heaven to bow to the One the Father brings into the world.'),
+    ('canon','psalms',97,7,'canon','isaiah',42,8,'free',
+      E'*I am Yahuah (LORD): that is my name: and my glory will I not give to another, neither my praise to graven images* (Isaiah 42:8). The idol-confounding twin of *Confounded be all they that serve graven images... worship him, all ye gods* (Psalm 97:7): the graven images get no glory, but the One who bears the Name receives the worship of the very gods. Yahuah will not give his glory to another — yet the Son the Father commands the host to worship (Hebrews 1:6) is no "another"; he bears the Name and the glory as the Formed Son.'),
+
+    -- THREAD 2: Yahuah reigneth; let the earth rejoice (the enthronement proclamation)
+    ('canon','psalms',97,1,'canon','revelation',19,6,'free',
+      E'*And I heard as it were the voice of a great multitude... saying, Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth* (Revelation 19:6). *Yahuah (LORD) reigneth; let the earth rejoice* (Psalm 97:1) is the same shout consummated at the end: the heavenly multitude takes up the psalm''s own proclamation — *Yahuah Elohim omnipotent reigneth* — the enthronement declared from creation now thundered at the marriage of the Lamb.'),
+    ('canon','psalms',97,1,'canon','isaiah',52,7,'free',
+      E'*How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace... that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7). The herald carries the psalm''s own word to Zion: *Yahuah (LORD) reigneth* (Psalm 97:1) is the good tidings *Thy Elohim (God) reigneth!* The reign proclaimed to the whole earth is announced first to Zion as the gospel of the returning King.'),
+    ('canon','psalms',97,1,'canon','isaiah',42,10,'free',
+      E'*Sing unto Yahuah (LORD) a new song, and his praise from the end of the earth, ye that go down to the sea, and all that is therein; the isles, and the inhabitants thereof* (Isaiah 42:10). *Let the multitude of isles be glad thereof* (Psalm 97:1) is answered here: the very isles the psalm calls glad are summoned to sing the new song from the end of the earth. The reign of Yahuah reaches the farthest coasts, and the isles rejoice.'),
+    ('canon','psalms',97,1,'canon','isaiah',42,12,'free',
+      E'*Let them give glory unto Yahuah (LORD), and declare his praise in the islands* (Isaiah 42:12). The gladness of *the multitude of isles* (Psalm 97:1) takes voice: *declare his praise in the islands*. The reigning King is praised to the ends of the sea; the isles glad at his reign declare his glory.'),
+
+    -- THREAD 3 (★★): Clouds and darkness, fire, the melting hills (the Sinai theophany = the Formed cloud-rider)
+    ('canon','psalms',97,2,'canon','exodus',19,16,'free',
+      E'*And it came to pass on the third day in the morning, that there were thunders and lightnings, and a thick cloud upon the mount, and the voice of the trumpet exceeding loud; so that all the people that was in the camp trembled* (Exodus 19:16). *Clouds and darkness are round about him* (Psalm 97:2), *His lightnings enlightened the world: the earth saw, and trembled* (97:4) — this is Sinai re-sung: the thick cloud, the lightnings, the people that trembled. The enthroned King of the psalm is the One who descended on the mount.'),
+    ('canon','psalms',97,3,'canon','exodus',19,18,'free',
+      E'*And mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire: and the smoke thereof ascended as the smoke of a furnace, and the whole mount quaked greatly* (Exodus 19:18). *A fire goeth before him, and burneth up his enemies* (Psalm 97:3), *The hills melted like wax at the presence of Yahuah (LORD)* (97:5): the fire of the theophany and the quaking mount are one. The One who *descended upon it in fire* and made the whole mount quake is the Formed Son who came in fire at Sinai.'),
+    ('canon','psalms',97,2,'canon','deuteronomy',4,11,'free',
+      E'*And ye came near and stood under the mountain; and the mountain burned with fire unto the midst of heaven, with darkness, clouds, and thick darkness* (Deuteronomy 4:11). *Clouds and darkness are round about him* (Psalm 97:2) and *A fire goeth before him* (97:3) are Moses'' own memory of Horeb: *the mountain burned with fire... with darkness, clouds, and thick darkness*. The cloud-and-fire of the psalm''s King is the cloud-and-fire of Sinai, where Yahuah spoke out of the midst of the fire.'),
+    ('canon','psalms',97,2,'canon','revelation',1,7,'free',
+      E'*Behold, he cometh with clouds; and every eye shall see him, and they also which pierced him* (Revelation 1:7). *Clouds and darkness are round about him* (Psalm 97:2): the One who came in cloud at Sinai comes again in cloud at the end — *he cometh with clouds*. The cloud-rider of the theophany is the Formed Son, who took flesh and was pierced, and comes again the same way he appeared.'),
+    ('canon','psalms',97,5,'canon','2-peter',3,10,'free',
+      E'*But the day of Yahuah (Lord) will come as a thief in the night; in the which the heavens shall pass away with a great noise, and the elements shall melt with fervent heat, the earth also and the works that are therein shall be burned up* (2 Peter 3:10). *The hills melted like wax at the presence of Yahuah (LORD)* (Psalm 97:5) is set forward to the day of fire: *the elements shall melt with fervent heat*. The melting hills at his presence prefigure the day his presence dissolves the heavens and earth in fire.'),
+
+    -- THREAD 4 (★): Zion heard, and the daughters of Yahudah rejoiced (two-house: the restored people glad)
+    ('canon','psalms',97,8,'canon','psalms',48,11,'free',
+      E'*Let mount Zion rejoice, let the daughters of Yahudah (Judah) be glad, because of thy judgments* (Psalm 48:11). The near-verbatim twin of *Zion heard, and was glad; and the daughters of Yahudah (Judah) rejoiced because of thy judgments* (Psalm 97:8): the same Zion, the same daughters of Yahudah, the same gladness at His judgments. The reigning King''s judgments are the joy of His restored people — never a replacement people, but Zion and Yahudah glad.'),
+    ('canon','psalms',97,8,'canon','isaiah',52,7,'free',
+      E'*How beautiful upon the mountains are the feet of him that bringeth good tidings... that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7). *Zion heard, and was glad* (Psalm 97:8) because of the very word Isaiah proclaims to her — *Thy Elohim (God) reigneth!* — and what follows is the regathering: *they shall see eye to eye, when Yahuah (LORD) shall bring again Zion* (52:8). Zion''s gladness IS the reign announced and the bringing-again of the restored house.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 5 (★) cross_references — kept in a second VALUES block for clarity (love Yahuah, hate evil)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','psalms',97,10,'canon','amos',5,15,'free',
+      E'*Hate the evil, and love the good, and establish judgment in the gate: it may be that Yahuah Elohim (the LORD God) of hosts will be gracious unto the remnant of Joseph* (Amos 5:15). *Ye that love Yahuah (LORD), hate evil* (Psalm 97:10) is the same grammar: the love of Yahuah is inseparable from hating evil — *Hate the evil, and love the good*. The two are one posture, and the promise is to *the remnant of Joseph* (the northern house), gathered into grace as they turn from evil.'),
+    ('canon','psalms',97,10,'canon','romans',12,9,'free',
+      E'*Let love be without dissimulation. Abhor that which is evil; cleave to that which is good* (Romans 12:9). *Ye that love Yahuah (LORD), hate evil* (Psalm 97:10): Paul carries the psalm''s own pairing forward — *Abhor that which is evil; cleave to that which is good*. To love is to abhor evil; the two cannot be severed.'),
+    ('canon','psalms',97,10,'canon','1-john',2,4,'free',
+      E'*He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him* (1 John 2:4). The obedience filter seals *Ye that love Yahuah (LORD), hate evil* (Psalm 97:10): *hereby we do know that we know him, if we keep his commandments* (1 John 2:3). To love Yahuah is to keep his word and hate what he hates; the love that does not keep the commandments is a lie. Any reading that makes commandment-keeping irrelevant is false.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-97-worship-him-all-ye-gods-let-all-the-angels-worship-the-son',
+       E'Worship him, all ye gods — let all the angels of Elohim worship the Son',
+       E'The enthronement psalm reaches its keystone: *Confounded be all they that serve graven images, that boast themselves of idols: worship him, all ye gods* (Psalm 97:7). Hebrews takes this very line — in its older LXX/Deuteronomy 32:43 form *And let all the angels of Elohim (God) worship him* — and applies it directly to the SON: *And again, when he bringeth in the firstbegotten into the world, he saith, And let all the angels of Elohim (God) worship him* (Hebrews 1:6). Read through the Formed and the Formless: the Father (the formless Most High) commands the whole heavenly host to bow to the Formed Son. He is Yahuah — the One the psalm names *exalted far above all gods* (97:9) — and he has a Father who commands the worship. He is NOT a created angel: the angels worship HIM, and *of the angels he saith, Who maketh his angels spirits, and his ministers a flame of fire* (Hebrews 1:7); he is not one of them but the One they adore. And he is NOT a co-equal second person: the Father SENDS and COMMANDS, the Son is *appointed heir of all things* (1:2), *begotten* (1:5). The Torah root is the Song of Moses, where the host is summoned to bow — *worship him, all ye gods* / *let all the angels of Elohim bow before him* (Deuteronomy 32:43, the LXX/DSS reading) — the very line Hebrews lifts. Isaiah names the idol-confounding twin: *I am Yahuah (LORD): that is my name: and my glory will I not give to another, neither my praise to graven images* (Isaiah 42:8). The graven images are confounded and get no glory; yet the Son who bears the Name receives the worship of the very gods. The Father commands it; the host bows; the Formed Son is worshipped, and he has a Father.',
+       sv.verse_id, ev.verse_id, 'free', 24400
+  FROM _s302_ps097_lookup sv, _s302_ps097_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=97 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-97-yahuah-reigneth-let-the-earth-rejoice',
+       E'Yahuah reigneth; let the earth rejoice — the enthronement proclaimed',
+       E'The psalm opens with the proclamation: *Yahuah (LORD) reigneth; let the earth rejoice; let the multitude of isles be glad thereof* (Psalm 97:1). The Revelation hallelujah is the same shout consummated — *And I heard as it were the voice of a great multitude... saying, Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth* (Revelation 19:6) — the enthronement declared from of old now thundered at the marriage of the Lamb. Isaiah names the herald who carries the word first to Zion: *How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace... that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7). And he summons the very isles the psalm calls glad: *Sing unto Yahuah (LORD) a new song, and his praise from the end of the earth, ye that go down to the sea, and all that is therein; the isles, and the inhabitants thereof* (Isaiah 42:10); *Let them give glory unto Yahuah (LORD), and declare his praise in the islands* (Isaiah 42:12). The reign of Yahuah reaches the farthest coasts; the earth rejoices and the isles declare his glory.',
+       sv.verse_id, ev.verse_id, 'free', 24403
+  FROM _s302_ps097_lookup sv, _s302_ps097_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=97 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-97-clouds-and-darkness-the-fire-and-the-melting-hills',
+       E'Clouds and darkness, a fire before him, the hills melted like wax — the theophany',
+       E'The reigning King appears in the storm-glory of Sinai: *Clouds and darkness are round about him: righteousness and judgment are the habitation of his throne. A fire goeth before him, and burneth up his enemies round about. His lightnings enlightened the world: the earth saw, and trembled. The hills melted like wax at the presence of Yahuah (LORD), at the presence of Yahuah (Lord) of the whole earth* (Psalm 97:2-5). This is the Sinai theophany re-sung: *there were thunders and lightnings, and a thick cloud upon the mount... so that all the people that was in the camp trembled* (Exodus 19:16); *mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire: and the smoke thereof ascended as the smoke of a furnace, and the whole mount quaked greatly* (Exodus 19:18); *the mountain burned with fire unto the midst of heaven, with darkness, clouds, and thick darkness* (Deuteronomy 4:11). The One who came in cloud and fire at the mount is the Formed Son — and he comes again the same way: *Behold, he cometh with clouds; and every eye shall see him, and they also which pierced him* (Revelation 1:7). The melting hills are set forward to the day of fire: *the elements shall melt with fervent heat, the earth also and the works that are therein shall be burned up* (2 Peter 3:10). The cloud-rider whose presence melts the hills is the One who descended in fire at Sinai, who took flesh, and who comes again in the clouds.',
+       sv.verse_id, ev.verse_id, 'free', 24406
+  FROM _s302_ps097_lookup sv, _s302_ps097_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=97 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-97-zion-heard-and-the-daughters-of-yahudah-rejoiced',
+       E'Zion heard, and was glad; the daughters of Yahudah rejoiced at his judgments',
+       E'*Zion heard, and was glad; and the daughters of Yahudah (Judah) rejoiced because of thy judgments, O Yahuah (LORD)* (Psalm 97:8) — the restored people glad at the King''s reign, never a replacement people but the covenant house rejoicing. The psalter sings the near-verbatim twin: *Let mount Zion rejoice, let the daughters of Yahudah (Judah) be glad, because of thy judgments* (Psalm 48:11) — the same Zion, the same daughters of Yahudah, the same gladness at His judgments. And the gladness IS the reign proclaimed and the regathering: *How beautiful upon the mountains are the feet of him that bringeth good tidings... that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7); *they shall see eye to eye, when Yahuah (LORD) shall bring again Zion* (Isaiah 52:8). When Zion hears that her Elohim reigns, she is glad; the reigning King''s judgments are the joy of His restored people, and the bringing-again of the house.',
+       sv.verse_id, ev.verse_id, 'free', 24409
+  FROM _s302_ps097_lookup sv, _s302_ps097_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=97 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-97-ye-that-love-yahuah-hate-evil',
+       E'Ye that love Yahuah, hate evil — the love that keeps his commandments',
+       E'*Ye that love Yahuah (LORD), hate evil: he preserveth the souls of his saints; he delivereth them out of the hand of the wicked* (Psalm 97:10). The love of Yahuah is inseparable from hating evil — the very grammar Amos uses in his call to the northern house: *Hate the evil, and love the good, and establish judgment in the gate: it may be that Yahuah Elohim (the LORD God) of hosts will be gracious unto the remnant of Joseph* (Amos 5:15). Paul carries the same pairing forward: *Let love be without dissimulation. Abhor that which is evil; cleave to that which is good* (Romans 12:9). And the obedience filter seals it: *And hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him* (1 John 2:3-4). To love Yahuah is to keep his word and hate what he hates; love that abandons the commandments is a lie. Any reading that makes commandment-keeping irrelevant is false — and the saints who love him and hate evil are the ones he preserves out of the hand of the wicked.',
+       sv.verse_id, ev.verse_id, 'free', 24412
+  FROM _s302_ps097_lookup sv, _s302_ps097_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=97 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *And let all the angels of Elohim (God) worship him* (Hebrews 1:6) — quotes *worship him, all ye gods* (97:7) and applies it to the SON; the Father commands the host to worship the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=7
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-worship-him-all-ye-gods-let-all-the-angels-worship-the-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Rejoice, O ye nations, with his people...* (Deuteronomy 32:43) — the Song of Moses, whose LXX/DSS reading *worship him, all ye gods* is the Torah root of 97:7 and the line Hebrews 1:6 lifts.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=7
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-worship-him-all-ye-gods-let-all-the-angels-worship-the-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*my glory will I not give to another, neither my praise to graven images* (Isaiah 42:8) — the idol-confounding twin of 97:7; the graven images get no glory, but the Son who bears the Name receives the worship of the gods.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=7
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-worship-him-all-ye-gods-let-all-the-angels-worship-the-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth* (Revelation 19:6) — *Yahuah reigneth* (97:1) consummated, the heavenly multitude taking up the psalm''s proclamation.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=1
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-yahuah-reigneth-let-the-earth-rejoice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7) — the herald carries the psalm''s word *Yahuah reigneth* (97:1) to Zion as the good tidings of the returning King.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=1
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-yahuah-reigneth-let-the-earth-rejoice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Sing unto Yahuah (LORD) a new song... the isles, and the inhabitants thereof* (Isaiah 42:10) — the *multitude of isles* (97:1) summoned to sing the new song from the end of the earth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=1
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-yahuah-reigneth-let-the-earth-rejoice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Let them give glory unto Yahuah (LORD), and declare his praise in the islands* (Isaiah 42:12) — the isles glad at his reign (97:1) take voice and declare his glory.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=1
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-yahuah-reigneth-let-the-earth-rejoice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*a thick cloud upon the mount... so that all the people that was in the camp trembled* (Exodus 19:16) — the *clouds and darkness* (97:2) and the trembling earth (97:4) re-sung from Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=2
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-clouds-and-darkness-the-fire-and-the-melting-hills'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah descended upon it in fire... and the whole mount quaked greatly* (Exodus 19:18) — the *fire goeth before him* (97:3) and the hills that *melted like wax* (97:5); the One who came in fire at Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=3
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-clouds-and-darkness-the-fire-and-the-melting-hills'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the mountain burned with fire... with darkness, clouds, and thick darkness* (Deuteronomy 4:11) — Moses'' memory of Horeb, the cloud-and-fire of 97:2-3.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=2
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-clouds-and-darkness-the-fire-and-the-melting-hills'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Behold, he cometh with clouds; and every eye shall see him* (Revelation 1:7) — the cloud-rider of 97:2 comes again the same way; the Formed Son who appeared at Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=2
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-clouds-and-darkness-the-fire-and-the-melting-hills'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the elements shall melt with fervent heat... shall be burned up* (2 Peter 3:10) — *the hills melted like wax at the presence of Yahuah* (97:5) set forward to the day of fire.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=5
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-clouds-and-darkness-the-fire-and-the-melting-hills'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Let mount Zion rejoice, let the daughters of Yahudah (Judah) be glad, because of thy judgments* (Psalm 48:11) — the near-verbatim twin of 97:8; the restored people glad at His judgments.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=8
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=48 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-zion-heard-and-the-daughters-of-yahudah-rejoiced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7) — Zion is glad (97:8) because of the reign announced to her; the bringing-again of the house.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=8
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-zion-heard-and-the-daughters-of-yahudah-rejoiced'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Hate the evil, and love the good, and establish judgment in the gate* (Amos 5:15) — the same grammar as *Ye that love Yahuah, hate evil* (97:10); the promise to the remnant of Joseph.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=10
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=5 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-ye-that-love-yahuah-hate-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Abhor that which is evil; cleave to that which is good* (Romans 12:9) — Paul carries the psalm''s pairing forward; to love is to abhor evil.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=10
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-ye-that-love-yahuah-hate-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *He that saith, I know him, and keepeth not his commandments, is a liar* (1 John 2:4) — the obedience filter on 97:10; the love of Yahuah keeps his commandments and hates what he hates.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps097_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=97 AND sv.verse_number=10
+  JOIN _s302_ps097_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-97-ye-that-love-yahuah-hate-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
