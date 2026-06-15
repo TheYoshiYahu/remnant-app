@@ -644,132 +644,87 @@ export async function executeShare(
 }
 
 /**
- * Render + copy a card. Transports tried in priority order per §24:
+ * Copy clean verse text to the clipboard.
  *
- *   1. navigator.share({ files: [file] })
- *   2. navigator.clipboard.write(ClipboardItem image/png)
- *   3a. clipboard.writeText(textFallback) + <a download> for the PNG
- *   3b. <a download> (bare)
+ * Regression fix (S173 back-edit): the S127 design routed Copy through
+ * the canvas-PNG pipeline (navigator.share → clipboard.write(image) →
+ * writeText), and S173 prepended a Capacitor-native share branch. On
+ * the installed native shells that meant tapping "Copy verse" opened
+ * the OS *share sheet* instead of putting text on the clipboard — and
+ * on mobile web the navigator.share branch did the same — so Copy never
+ * reliably wrote the verse to the clipboard at all.
  *
- * The text-only fallback fires when clipboard.write rejects PNG; the
- * partner gets the verse text on the clipboard + the PNG offered as a
- * manual download.
+ * Copy's contract is simply "clean verse text (with reference) on the
+ * clipboard" — no image, no share sheet, no download. We build the §24
+ * clean-text payload (verse[s] + reference + full product attribution)
+ * and write it straight to the clipboard. The image card stays the job
+ * of executeShare ("Share with watermark"); the two are separate
+ * intents and must not be conflated.
+ *
+ * Transport: navigator.clipboard.writeText (works inside the Capacitor
+ * WebView and every modern browser) with a hidden-textarea +
+ * execCommand('copy') fallback for non-secure-context / legacy WebViews.
  */
 export async function executeCopy(
   input: SharePipelineInput
 ): Promise<TransportResult> {
   const rangeHeader = formatRangeHeader(input.meta);
-  const filename = buildShareFilename(input.meta);
-  const textFallback = buildTextOnlyFallback(input.verses, rangeHeader);
+  const text = buildTextOnlyFallback(input.verses, rangeHeader);
+  return writeTextToClipboard(text);
+}
 
-  let canvas: HTMLCanvasElement;
-  try {
-    canvas = await renderShareCard(input.verses, rangeHeader);
-  } catch (err) {
-    // Canvas itself unavailable — drop straight to text-only clipboard.
-    if (
-      typeof navigator !== "undefined" &&
-      navigator.clipboard &&
-      typeof navigator.clipboard.writeText === "function"
-    ) {
-      try {
-        await navigator.clipboard.writeText(textFallback);
-        return { ok: true, transport: "clipboard-text" };
-      } catch {
-        /* fall through */
-      }
-    }
-    return {
-      ok: false,
-      error: `render failed: ${(err as Error)?.message ?? String(err)}`,
-    };
-  }
-
-  // S173 — Path 0: Capacitor-native share. On native, writes the PNG
-  // to the platform CACHE dir and invokes @capacitor/share. No-op on
-  // web — falls straight through to path 1.
-  try {
-    const native = await tryNativeShare({
-      canvas,
-      filename,
-      text: textFallback,
-      url: `https://bible.remnantofpromise.org`,
-    });
-    if (native.handled) {
-      if (native.aborted) return { ok: false, aborted: true };
-      if (native.ok) return { ok: true, transport: "share" };
-      // native handled but failed — fall through.
-    }
-  } catch {
-    // Dynamic import or unexpected throw — fall through.
-  }
-
-  // Path 1: navigator.share with files.
-  if (typeof navigator !== "undefined" && typeof navigator.share === "function") {
-    try {
-      const file = await shareCardToFile(canvas, filename);
-      const canShareFiles =
-        typeof navigator.canShare === "function"
-          ? navigator.canShare({ files: [file] })
-          : true;
-      if (canShareFiles) {
-        await navigator.share({ files: [file] });
-        return { ok: true, transport: "share" };
-      }
-    } catch (err) {
-      const name = (err as Error)?.name;
-      if (name === "AbortError") {
-        return { ok: false, aborted: true };
-      }
-      // Otherwise: fall through to clipboard.
-    }
-  }
-
-  // Path 2: clipboard.write image (ClipboardItem image/png).
-  const hasClipboardWrite =
-    typeof navigator !== "undefined" &&
-    !!navigator.clipboard &&
-    typeof (navigator.clipboard as unknown as { write?: unknown }).write ===
-      "function" &&
-    typeof (globalThis as unknown as { ClipboardItem?: unknown })
-      .ClipboardItem !== "undefined";
-  if (hasClipboardWrite) {
-    try {
-      const blob = await shareCardToBlob(canvas);
-      const CtorRef = (globalThis as unknown as {
-        ClipboardItem: new (items: Record<string, Blob>) => unknown;
-      }).ClipboardItem;
-      const item = new CtorRef({ "image/png": blob });
-      await (
-        navigator.clipboard as unknown as { write: (items: unknown[]) => Promise<void> }
-      ).write([item]);
-      return { ok: true, transport: "clipboard-image" };
-    } catch {
-      // Fall through to text-only fallback.
-    }
-  }
-
-  // Path 3a: text-only clipboard + manual-download offer.
+/**
+ * Write a plain-text payload to the clipboard, returning a
+ * TransportResult. Primary path is the async Clipboard API
+ * (navigator.clipboard.writeText) — available in secure contexts,
+ * which includes the Capacitor WebView and every modern browser.
+ * Falls back to a hidden-textarea + execCommand('copy') for the rare
+ * non-secure-context / legacy-WebView case where the async API is
+ * absent or rejects.
+ */
+export async function writeTextToClipboard(
+  text: string
+): Promise<TransportResult> {
   if (
     typeof navigator !== "undefined" &&
     navigator.clipboard &&
     typeof navigator.clipboard.writeText === "function"
   ) {
     try {
-      await navigator.clipboard.writeText(textFallback);
-      // Best-effort: offer the PNG as a manual download. If the
-      // download fails (rare — toDataURL works in any browser that
-      // can render to canvas), we still return success on the text
-      // path — partner has the text on their clipboard.
-      void executeDownload(canvas, filename);
+      await navigator.clipboard.writeText(text);
       return { ok: true, transport: "clipboard-text" };
     } catch {
-      /* fall through */
+      // Async API present but rejected (permissions, non-focus, older
+      // WebView quirk) — fall through to the execCommand path.
     }
   }
 
-  // Path 3b: bare download fallback.
-  return executeDownload(canvas, filename);
+  if (typeof document === "undefined") {
+    return { ok: false, error: "clipboard unavailable: no document" };
+  }
+  try {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    // Keep it off-screen + non-disruptive while still selectable.
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    ta.style.top = "0";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    const ok = document.execCommand("copy");
+    document.body.removeChild(ta);
+    if (ok) return { ok: true, transport: "clipboard-text" };
+    return { ok: false, error: "execCommand('copy') returned false" };
+  } catch (err) {
+    return {
+      ok: false,
+      error: `clipboard write failed: ${(err as Error)?.message ?? String(err)}`,
+    };
+  }
 }
 
 /**

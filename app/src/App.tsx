@@ -4879,13 +4879,13 @@ function buildMenuSections(
   }
 
   // ── Share (verse scope) ──────────────────────────────────────────
-  // S127 W7 — Copy verse promoted from text-only clipboard to canvas-
-  // PNG-with-text-fallback (same renderer as Share with watermark).
-  // Share with watermark promoted from Coming-soon stub to Live. Both
-  // route through the shared share-card-render pipeline; the transport
-  // chain (navigator.share → clipboard.write → <a download>) is owned
-  // by the lib, not by App.tsx — App.tsx only assembles the
-  // VerseRender[] + RangeMeta inputs.
+  // Copy verse writes clean verse text (+ reference + attribution) to
+  // the clipboard via executeCopy (text-only — S173 back-edit reverted
+  // the S127 canvas-PNG/share-sheet routing that broke plain copy on
+  // the native shells). Share with watermark renders the canvas PNG and
+  // routes through the share pipeline (native @capacitor/share →
+  // navigator.share → <a download>). Both are owned by the lib; App.tsx
+  // only assembles the VerseRender[] + RangeMeta inputs.
   const share: MenuItem[] = [];
   if (verse) {
     const singleVerseMeta: RangeMeta = {

@@ -217,6 +217,56 @@ export function buildAnchorPermalink(
   return `${ANCHOR_URL_HOST}/${bookSlug}/${chapterNumber}.${verseNumber}`;
 }
 
+/**
+ * Human-readable caption for the share sheet's text slot.
+ *
+ * Regression fix: the S173 native-share path passed the PNG *filename*
+ * (e.g. `thread-kingdom-gospel-rop-study.png`,
+ * `xref-genesis-1.1-rop-study.png`, `H7225-reshith-rop-study.png`) as
+ * the share text. Recipients (and the share sheet's own Copy action)
+ * therefore saw a code-like slug string alongside the image instead of
+ * a clean caption. This builds a short, plain-English caption with the
+ * full product attribution; the share sheet's URL slot already carries
+ * the discovery permalink, so the message reads cleanly on its own.
+ *
+ *   strongs        → "Strong's H7225 — word study from The Remnant of
+ *                     Promise Study Bible"
+ *   xref thread    → "Cross-reference study on Genesis 1:1 — The Remnant
+ *                     of Promise Study Bible"
+ *   xref baseline  → "Cross-references for Genesis 1:1 — The Remnant of
+ *                     Promise Study Bible"
+ */
+export function buildStudyShareText(meta: StudyShareMeta): string {
+  const ATTRIBUTION = "The Remnant of Promise Study Bible";
+  if (meta.kind === "strongs") {
+    return `Strong's ${meta.strongNumber} — word study from ${ATTRIBUTION}`;
+  }
+  const ref = `${titleizeBookSlug(meta.bookSlug)} ${meta.chapterNumber}:${meta.verseNumber}`;
+  if (meta.xrefKind === "thread") {
+    return `Cross-reference study on ${ref} — ${ATTRIBUTION}`;
+  }
+  return `Cross-references for ${ref} — ${ATTRIBUTION}`;
+}
+
+/**
+ * Turn a book slug ("1-thessalonians", "song-of-songs") into a display
+ * title ("1 Thessalonians", "Song of Songs"). Numeric leading segments
+ * stay as-is; word segments are capitalized; lowercase connectives
+ * ("of", "the", "and") in non-initial position stay lowercased for
+ * natural reading.
+ */
+function titleizeBookSlug(slug: string): string {
+  const LOWER = new Set(["of", "the", "and"]);
+  return slug
+    .split("-")
+    .map((part, i) => {
+      if (/^\d+$/.test(part)) return part;
+      if (i > 0 && LOWER.has(part)) return part;
+      return part.charAt(0).toUpperCase() + part.slice(1);
+    })
+    .join(" ");
+}
+
 export function slugifyTransliteration(translit: string): string {
   if (!translit || !translit.trim()) return "entry";
   // Normalize + strip combining marks (diacritics), downcase, strip
@@ -575,7 +625,10 @@ export async function executeStudyShare(
     const native = await tryNativeShare({
       canvas,
       filename,
-      text: filename,
+      // Clean human-readable caption — NOT the PNG filename (which
+      // rendered as code-like slug text in the share sheet / recipient
+      // message before this fix).
+      text: buildStudyShareText(meta),
       url: nativeUrl,
     });
     if (native.handled) {
