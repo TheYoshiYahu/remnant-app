@@ -14108,6 +14108,1395 @@ SELECT t.id, cr.id, 2, E'★ *great Babylon came in remembrance... the cup of th
  WHERE t.slug='isaiah-51-i-have-taken-out-the-cup-of-trembling'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_isaiah_5.sql (Isaiah 5) -----
+-- Chapter: Isaiah 5 — THE SONG OF THE VINEYARD + THE SIX WOES. *Now will I sing to my
+-- wellbeloved a song of my beloved touching his vineyard... and he looked that it should bring
+-- forth grapes, and it brought forth wild grapes* (5:1-2). The riddle is named: *For the vineyard
+-- of Yahuah Tseva'ot (LORD of hosts) is the house of Yashar'el (Israel), and the men of Yahudah
+-- (Judah) his pleasant plant: and he looked for judgment, but behold oppression; for
+-- righteousness, but behold a cry* (5:7). This is a covenant-LAWSUIT on conduct — the Owner asks
+-- *What could have been done more to my vineyard, that I have not done in it?* (5:4) — NOT a
+-- casting-off of the people. Yahusha takes up this exact song as the parable of the wicked
+-- husbandmen who kill the heir (Matthew 21 / Mark 12 / Luke 20): the husbandmen are judged, the
+-- vineyard's OWNER is unchanged, the vineyard let out to render its fruit (Rom 11:1-2 guard:
+-- *Hath Elohim (God) cast away his people? Elohim (God) forbid*). The choicest-vine planting
+-- echoes the vine brought out of Egypt (Ps 80, Jer 2). The six woes indict the conduct within
+-- the covenant: greed (5:8), drunkenness (5:11-12,22), moral inversion (5:20), self-wisdom
+-- (5:21), bribed injustice (5:23) — and the root sin: *they have cast away the law of Yahuah
+-- Tseva'ot (LORD of hosts)* (5:24). The ensign to the nations (5:26) is the gathering signal
+-- (Isaiah 11:10-12).
+-- Tag: isa05   Temp view: _s303_isa05_lookup
+-- Sort band: base 26100, step 3 -> threads at 26100, 26103, 26106, 26109, 26112, 26115 (6 threads)
+-- Source of EVERY row: 'canon','isaiah',5,v
+--
+-- Isaiah 5 coverage:
+--   ★★★ v.1-2,7 (My wellbeloved hath a vineyard... planted it with the choicest vine... it brought
+--          forth wild grapes / For the vineyard of Yahuah Tseva'ot is the house of Yashar'el)
+--        NT:     ★★★ Matthew 21:33,37-39,42-43; Mark 12:1,6-9; Luke 20:9,13-16 (the wicked
+--                husbandmen who kill the heir, the vineyard let out) — THREAD 1
+--        Extras: ★ 2 Esdras 5:23,27-28 (of all the trees you have chosen one only vine... one
+--                people... why have you scattered your only one people) — THREAD 1
+--        Tanakh: Rom 11:1-2 guard woven in prose; the covenant-lawsuit framing
+--   ★ v.1-2 (planted it with the choicest vine, and built a tower... made a winepress therein)
+--        NT:     none separate (the planting forward-weave carried in THREAD 1's husbandmen parable)
+--        Extras: none separate (2 Esdras chosen-vine in THREAD 1)
+--        Tanakh: ★ Psalm 80:8-9,15 (a vine out of Egypt... the vineyard which thy right hand hath
+--                planted), ★ Jeremiah 2:21 (I had planted thee a noble vine, wholly a right seed:
+--                how then art thou turned into the degenerate plant) — THREAD 2
+--   v.8-10 (Woe unto them that join house to house, that lay field to field)
+--        NT:     none warranted (the greed-woe held in THREAD 4's woe-cluster prose)
+--        Extras: none warranted
+--        Tanakh: woven with the woe-cluster (THREAD 4)
+--   ★ v.11-12,22 (Woe unto them that rise up early... follow strong drink... till wine inflame them)
+--        NT:     none warranted distinct
+--        Extras: ★ Ecclesiasticus 31:25-27 (Shew not your valiantness in wine; for wine has
+--                destroyed many... wine the hearts of the proud by drunkeness) — THREAD 3
+--        Tanakh: held with THREAD 3 prose
+--   ★★ v.20-21,23 (Woe unto them that call evil good, and good evil... wise in their own eyes...
+--          Which justify the wicked for reward)
+--        NT:     ★ Romans 12:16 (Be not wise in your own conceits) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 3:7 (Be not wise in thine own eyes), ★ Proverbs 17:15 (He that
+--                justifieth the wicked... abomination to Yahuah) — THREAD 4
+--   ★★ v.24 (because they have cast away the law of Yahuah Tseva'ot... despised the word of the
+--          Holy One of Yashar'el)
+--        NT:     none warranted distinct (Torah-despised root-sin)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 2:8 (they that handle the law knew me not), ★ Jeremiah 2:13 (they
+--                have forsaken me the fountain of living waters) — THREAD 5
+--   v.13-19,25 (Therefore my people are gone into captivity... hell hath enlarged herself...
+--          his anger is not turned away, but his hand is stretched out still)
+--        NT:     none warranted (the judgment-result of the lawsuit; held in prose)
+--        Extras: none warranted
+--        Tanakh: none forced (the exile-judgment is the lawsuit's verdict, woven in THREAD 1/5)
+--   ★ v.26 (he will lift up an ensign to the nations from far... they shall come with speed swiftly)
+--        NT:     none warranted distinct
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 11:10 (a root of Jesse, which shall stand for an ensign of the people),
+--                ★ Isaiah 11:12 (he shall set up an ensign for the nations, and shall assemble the
+--                outcasts of Yashar'el) — THREAD 6
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-5-the-vineyard-of-yahuah-is-the-house-of-yasharel — NT (Matthew 21, Mark 12, Luke 20)
+--      + Extras (2 Esdras 5) [extras]  (★★★ the vineyard lawsuit; the wicked husbandmen kill the
+--      heir; conduct judged, the Owner unchanged, NOT a casting-off)
+--   2. isaiah-5-the-choicest-vine-a-vine-out-of-egypt — Tanakh (Psalm 80, Jeremiah 2) [free]
+--      (★ the planted choicest vine = the vine brought out of Egypt, turned degenerate)
+--   3. isaiah-5-woe-to-them-that-follow-strong-drink — Extras (Ecclesiasticus 31) [extras]
+--      (★ the drunkenness woe; wine has destroyed many)
+--   4. isaiah-5-woe-to-them-that-call-evil-good-and-wise-in-their-own-eyes — NT (Romans 12)
+--      + Tanakh (Proverbs 3, Proverbs 17) [free]  (★★ moral inversion, self-wisdom, bribed injustice)
+--   5. isaiah-5-they-have-cast-away-the-law-of-yahuah — Tanakh (Jeremiah 2) [free]
+--      (★★ the root-sin of the lawsuit: the Torah cast away, the living fountain forsaken)
+--   6. isaiah-5-an-ensign-to-the-nations-from-far — Tanakh (Isaiah 11) [free]
+--      (★ the ensign lifted = the gathering signal, the two-house remnant assembled)
+--
+-- Framing notes:
+--   ★★★ THE VINEYARD (THREAD 1): Isaiah sings a lawsuit. *My wellbeloved hath a vineyard in a very
+--      fruitful hill: And he fenced it, and gathered out the stones thereof, and planted it with the
+--      choicest vine, and built a tower in the midst of it, and also made a winepress therein* (5:1-2)
+--      — and the verdict is named: *For the vineyard of Yahuah Tseva'ot (LORD of hosts) is the house
+--      of Yashar'el (Israel)* (5:7). Yahusha takes up the SAME song: *There was a certain householder,
+--      which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a
+--      tower, and let it out to husbandmen* (Matthew 21:33) — the very fence, tower, winepress of
+--      Isaiah 5:2. The husbandmen beat and kill the servants and at last *This is the heir; come, let
+--      us kill him* (21:38). The judgment falls on the HUSBANDMEN: *He will miserably destroy those
+--      wicked men, and will let out his vineyard unto other husbandmen* (21:41) — the vineyard's OWNER
+--      is unchanged, the vineyard rendered its fruit. This is covenant-lawsuit on CONDUCT, never a
+--      casting-off of the people: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Rom
+--      11:1). The restored witness frames the chosen-vine election and the scattering: *of every wood
+--      of the earth, and of all the trees thereof, you have chosen you one only vine... and to this
+--      people, whom you lovedst, you gavest a law that is approved of all... why have you scattered
+--      your only one people among many?* (2 Esdras 5:23,27-28).
+--   ★ A VINE OUT OF EGYPT (THREAD 2): The *choicest vine* (5:2) is the vine of the Exodus: *Thou hast
+--      brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (Psalm 80:8); *the
+--      vineyard which thy right hand hath planted* (80:15). Jeremiah sings the same planting turned
+--      degenerate: *Yet I had planted thee a noble vine, wholly a right seed: how then art thou turned
+--      into the degenerate plant of a strange vine unto me?* (Jeremiah 2:21) — the wild grapes of Isaiah 5:2.
+--   ★ THE DRUNKENNESS WOE (THREAD 3): *Woe unto them that rise up early in the morning, that they may
+--      follow strong drink; that continue until night, till wine inflame them!* (5:11); *Woe unto them
+--      that are mighty to drink wine* (5:22). The restored wisdom witness: *Shew not your valiantness
+--      in wine; for wine has destroyed many... so does wine the hearts of the proud by drunkeness*
+--      (Ecclesiasticus 31:25-26).
+--   ★★ MORAL INVERSION + SELF-WISDOM (THREAD 4): *Woe unto them that call evil good, and good evil*
+--      (5:20); *Woe unto them that are wise in their own eyes, and prudent in their own sight!* (5:21);
+--      *Which justify the wicked for reward, and take away the righteousness of the righteous from him!*
+--      (5:23). The Torah-wisdom answers each: *Be not wise in thine own eyes: fear Yahuah (LORD), and
+--      depart from evil* (Proverbs 3:7); *Be not wise in your own conceits* (Romans 12:16); *He that
+--      justifieth the wicked, and he that condemneth the just, even they both are abomination to Yahuah
+--      (LORD)* (Proverbs 17:15).
+--   ★★ THE LAW CAST AWAY (THREAD 5): The root-sin under every woe — *because they have cast away the
+--      law of Yahuah Tseva'ot (LORD of hosts), and despised the word of the Holy One of Yashar'el
+--      (Israel)* (5:24). Jeremiah names the same: *they that handle the law knew me not* (Jeremiah 2:8);
+--      *they have forsaken me the fountain of living waters, and hewed them out cisterns, broken
+--      cisterns, that can hold no water* (2:13). The lawsuit is for covenant-breaking — the Torah
+--      forsaken, never the Torah at fault.
+--   ★ THE ENSIGN (THREAD 6): *And he will lift up an ensign to the nations from far, and will hiss
+--      unto them from the end of the earth* (5:26) — here the signal summons the instrument of judgment,
+--      but the same ensign-word turns to gathering in Isaiah 11: *a root of Jesse, which shall stand
+--      for an ensign of the people; to it shall the Gentiles seek* (11:10); *he shall set up an ensign
+--      for the nations, and shall assemble the outcasts of Yashar'el (Israel), and gather together the
+--      dispersed of Yahudah (Judah)* (11:12) — the two-house remnant gathered home.
+--   VERSES WITH NO SEPARATE ADD: v.3-6 (the lawsuit question and the verdict — woven into THREAD 1),
+--      v.8-10 (the greed-woe — recorded, held with the woe-cluster; thinner than the cited woes),
+--      v.13-19 (the captivity, hell enlarged, the lambs feeding — the lawsuit's verdict, woven in
+--      prose), v.25 (his hand stretched out still — the standing judgment, woven). All recorded,
+--      none silently skipped.
+
+CREATE TEMP VIEW _s303_isa05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): The vineyard of Yahuah is the house of Yashar'el — the wicked husbandmen
+    ('canon','isaiah',5,2,'canon','matthew',21,33,'free',
+      E'*Hear another parable: There was a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen, and went into a far country* (Matthew 21:33). Yahusha takes up the very song of Isaiah 5: the same *he fenced it... and planted it with the choicest vine, and built a tower in the midst of it, and also made a winepress therein* (Isaiah 5:2). The Owner''s every provision is repeated word for word — the lawsuit of the vineyard is the parable of the husbandmen.'),
+    ('canon','isaiah',5,7,'canon','matthew',21,38,'free',
+      E'*But when the husbandmen saw the son, they said among themselves, This is the heir; come, let us kill him, and let us seize on his inheritance* (Matthew 21:38). When *the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel)* (Isaiah 5:7) and the Owner *looked for judgment, but behold oppression*, the wild grapes are the conduct of the husbandmen who at last kill the heir. The lawsuit is on conduct within the covenant, not on the vineyard itself.'),
+    ('canon','isaiah',5,7,'canon','matthew',21,43,'free',
+      E'*Therefore say I unto you, The kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof* (Matthew 21:43). The vineyard *looked for judgment, but behold oppression; for righteousness, but behold a cry* (Isaiah 5:7) — so the keeping is taken from the faithless husbandmen and let out to those who render the fruit. The OWNER and the vineyard stand; the wicked stewards are judged — *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1).'),
+    ('canon','isaiah',5,2,'canon','mark',12,1,'free',
+      E'*A certain man planted a vineyard, and set an hedge about it, and digged a place for the winefat, and built a tower, and let it out to husbandmen, and went into a far country* (Mark 12:1). The hedge, the winefat, the tower are Isaiah 5:2 exactly — *he fenced it... and built a tower in the midst of it, and also made a winepress therein*. Mark, like Matthew, hears the vineyard-song as the parable of the husbandmen.'),
+    ('canon','isaiah',5,7,'canon','mark',12,9,'free',
+      E'*What shall therefore the lord of the vineyard do? he will come and destroy the husbandmen, and will give the vineyard unto others* (Mark 12:9). The vineyard is *the house of Yashar''el (Israel)* (Isaiah 5:7); the judgment falls on the HUSBANDMEN, and the vineyard is given to faithful keepers — the people''s Owner unchanged, the wicked stewards removed.'),
+    ('canon','isaiah',5,7,'canon','luke',20,16,'free',
+      E'*He shall come and destroy these husbandmen, and shall give the vineyard to others. And when they heard it, they said, Elohim (God) forbid* (Luke 20:16). The hearers'' own cry — *Elohim (God) forbid* — is Paul''s answer to whether the people are cast off (Romans 11:1). The vineyard *the house of Yashar''el (Israel)* (Isaiah 5:7) is not destroyed; the unfaithful husbandmen are, and the keeping passes to those who bring forth fruit.'),
+    ('canon','isaiah',5,1,'apocrypha','2-esdras',5,23,'extras',
+      E'*And said, O Yahuah (God) that bearest rule, of every wood of the earth, and of all the trees thereof, you have chosen you one only vine* (2 Esdras 5:23). The *vineyard in a very fruitful hill* of *my wellbeloved* (Isaiah 5:1) is the one chosen vine of all the trees of the earth — the restored witness names the election the vineyard-song assumes.'),
+    ('canon','isaiah',5,7,'apocrypha','2-esdras',5,28,'extras',
+      E'*And now, O Yahuah (God), why have you given this one people over to many? and upon the one root have you prepared others, and why have you scattered your only one people among many?* (2 Esdras 5:28). The vineyard that is *the house of Yashar''el (Israel)* (Isaiah 5:7) is the *one people* of the one root — Ezra''s cry mourns the scattering the lawsuit''s judgment brings, the two-house dispersion that awaits the gathering.'),
+
+    -- THREAD 2 (★): The choicest vine — a vine out of Egypt
+    ('canon','isaiah',5,2,'canon','psalms',80,8,'free',
+      E'*Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (Psalm 80:8). The *choicest vine* the wellbeloved *planted* (Isaiah 5:2) is the vine of the Exodus, brought out of Egypt and set in the land. The Psalm sings the same planting that Isaiah''s song laments turning to wild grapes.'),
+    ('canon','isaiah',5,7,'canon','psalms',80,15,'free',
+      E'*And the vineyard which thy right hand hath planted, and the branch that thou madest strong for thyself* (Psalm 80:15). The vineyard that *is the house of Yashar''el (Israel)* (Isaiah 5:7) is the vineyard *thy right hand hath planted* — and the Psalm pleads for its restoration when the hedges are broken (80:12), the very judgment Isaiah 5:5 pronounces.'),
+    ('canon','isaiah',5,2,'canon','jeremiah',2,21,'free',
+      E'*Yet I had planted thee a noble vine, wholly a right seed: how then art thou turned into the degenerate plant of a strange vine unto me?* (Jeremiah 2:21). Jeremiah sings Isaiah''s song: the *choicest vine* (Isaiah 5:2) planted *wholly a right seed*, yet bringing forth *wild grapes* — turned to *the degenerate plant of a strange vine*. The same planted vine, the same grief over its fruit.'),
+
+    -- THREAD 3 (★): Woe to them that follow strong drink (the drunkenness woe)
+    ('canon','isaiah',5,11,'apocrypha','ecclesiasticus',31,25,'extras',
+      E'*Shew not your valiantness in wine; for wine has destroyed many* (Ecclesiasticus 31:25). The *Woe unto them that rise up early in the morning, that they may follow strong drink; that continue until night, till wine inflame them!* (Isaiah 5:11) is met by the restored wisdom-witness: wine pursued as valour *has destroyed many*.'),
+    ('canon','isaiah',5,22,'apocrypha','ecclesiasticus',31,26,'extras',
+      E'*The furnace proves the edge by dipping: so does wine the hearts of the proud by drunkeness* (Ecclesiasticus 31:26). The *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink* (Isaiah 5:22) is the very proving of *the hearts of the proud by drunkeness* — strength boasted in the cup is strength laid bare.'),
+
+    -- THREAD 4 (★★): Woe to them that call evil good and are wise in their own eyes
+    ('canon','isaiah',5,21,'canon','proverbs',3,7,'free',
+      E'*Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (Proverbs 3:7). The *Woe unto them that are wise in their own eyes, and prudent in their own sight!* (Isaiah 5:21) is the inversion of the Torah-wisdom: the fear of Yahuah departs from evil, while self-wisdom calls *evil good, and good evil* (5:20).'),
+    ('canon','isaiah',5,21,'canon','romans',12,16,'free',
+      E'*Be of the same mind one toward another. Mind not high things, but condescend to men of low estate. Be not wise in your own conceits* (Romans 12:16). Paul carries Isaiah''s woe forward: *Be not wise in your own conceits* answers *Woe unto them that are wise in their own eyes* (Isaiah 5:21). The self-exalting mind is the soil of every other woe.'),
+    ('canon','isaiah',5,23,'canon','proverbs',17,15,'free',
+      E'*He that justifieth the wicked, and he that condemneth the just, even they both are abomination to Yahuah (LORD)* (Proverbs 17:15). The *Which justify the wicked for reward, and take away the righteousness of the righteous from him!* (Isaiah 5:23) is named an abomination — the bribed bench that acquits the guilty and robs the righteous is hateful to Yahuah.'),
+
+    -- THREAD 5 (★★): They have cast away the law of Yahuah
+    ('canon','isaiah',5,24,'canon','jeremiah',2,8,'free',
+      E'*The priests said not, Where is Yahuah (LORD)? and they that handle the law knew me not: the pastors also transgressed against me, and the prophets prophesied by Baal* (Jeremiah 2:8). The root of every woe is *because they have cast away the law of Yahuah Tseva''ot (LORD of hosts)* (Isaiah 5:24) — and Jeremiah names the same: *they that handle the law knew me not*. The lawsuit is for forsaking the Torah, never the Torah itself at fault.'),
+    ('canon','isaiah',5,24,'canon','jeremiah',2,13,'free',
+      E'*For my people have committed two evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water* (Jeremiah 2:13). To *despise the word of the Holy One of Yashar''el (Israel)* (Isaiah 5:24) is to forsake *the fountain of living waters* for broken cisterns. The covenant-word cast away leaves a people unable to hold what gives life.'),
+
+    -- THREAD 6 (★): An ensign to the nations from far
+    ('canon','isaiah',5,26,'canon','isaiah',11,10,'free',
+      E'*And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious* (Isaiah 11:10). The ensign Yahuah *will lift up to the nations from far* (Isaiah 5:26) — here to summon the rod of judgment — turns in Isaiah 11 to the gathering ensign: *a root of Jesse... an ensign of the people; to it shall the Gentiles seek*.'),
+    ('canon','isaiah',5,26,'canon','isaiah',11,12,'free',
+      E'*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). The same *ensign to the nations from far* (Isaiah 5:26) becomes the signal of ingathering — *the outcasts of Yashar''el (Israel)* and *the dispersed of Yahudah (Judah)* assembled, the two-house remnant gathered home.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-5-the-vineyard-of-yahuah-is-the-house-of-yasharel',
+       E'The vineyard of Yahuah is the house of Yashar''el — the wicked husbandmen kill the heir',
+       E'Isaiah sings a love-song that turns into a lawsuit: *Now will I sing to my wellbeloved a song of my beloved touching his vineyard... And he fenced it, and gathered out the stones thereof, and planted it with the choicest vine, and built a tower in the midst of it, and also made a winepress therein: and he looked that it should bring forth grapes, and it brought forth wild grapes* (Isaiah 5:1-2). The Owner pleads His case — *What could have been done more to my vineyard, that I have not done in it?* (5:4) — and names the vineyard: *For the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel), and the men of Yahudah (Judah) his pleasant plant: and he looked for judgment, but behold oppression; for righteousness, but behold a cry* (5:7). Yahusha takes up the SAME song as the parable of the wicked husbandmen: *There was a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen* (Matthew 21:33) — the very fence, tower, and winepress of 5:2. The husbandmen beat and kill the servants, and at last *This is the heir; come, let us kill him, and let us seize on his inheritance* (21:38). And the verdict falls on the HUSBANDMEN, not the vineyard: *He will miserably destroy those wicked men, and will let out his vineyard unto other husbandmen, which shall render him the fruits in their seasons* (21:41); *the kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof* (21:43). Mark and Luke tell it the same — *he will come and destroy the husbandmen, and will give the vineyard unto others* (Mark 12:9); and Luke''s hearers cry the very words Paul uses: *Elohim (God) forbid* (Luke 20:16; Romans 11:1). This is covenant-LAWSUIT on conduct — the unfaithful stewards judged, the keeping passed to those who render fruit — NEVER a casting-off of the people: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1). The restored witness frames the chosen-vine election and the scattering the judgment brings: *of every wood of the earth, and of all the trees thereof, you have chosen you one only vine... and to this people, whom you lovedst, you gavest a law that is approved of all... why have you scattered your only one people among many?* (2 Esdras 5:23,27-28).',
+       sv.verse_id, ev.verse_id, 'extras', 26100
+  FROM _s303_isa05_lookup sv, _s303_isa05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=5 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-5-the-choicest-vine-a-vine-out-of-egypt',
+       E'The choicest vine — the vine brought out of Egypt, turned degenerate',
+       E'The wellbeloved *planted it with the choicest vine* (Isaiah 5:2) — and the Tanakh tells whose vine it is and where it was planted. The Psalm sings the Exodus-planting: *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it. Thou preparedst room before it, and didst cause it to take deep root, and it filled the land* (Psalm 80:8-9); *the vineyard which thy right hand hath planted* (80:15). And the Psalm''s lament — *Why hast thou then broken down her hedges?* (80:12) — is the very judgment Isaiah pronounces: *I will take away the hedge thereof, and it shall be eaten up* (Isaiah 5:5). Jeremiah sings the same song over the same vine: *Yet I had planted thee a noble vine, wholly a right seed: how then art thou turned into the degenerate plant of a strange vine unto me?* (Jeremiah 2:21) — the *wild grapes* of Isaiah 5:2. One vine, brought out of Egypt, planted a right seed, grieved over for the fruit it bore.',
+       sv.verse_id, ev.verse_id, 'free', 26103
+  FROM _s303_isa05_lookup sv, _s303_isa05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=5 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-5-woe-to-them-that-follow-strong-drink',
+       E'Woe to them that follow strong drink — wine has destroyed many',
+       E'Two of the six woes fall on drunkenness: *Woe unto them that rise up early in the morning, that they may follow strong drink; that continue until night, till wine inflame them! And the harp, and the viol, the tabret, and pipe, and wine, are in their feasts: but they regard not the work of Yahuah (LORD), neither consider the operation of his hands* (Isaiah 5:11-12); and *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink* (5:22). The restored wisdom-witness names the cost: *Shew not your valiantness in wine; for wine has destroyed many... The furnace proves the edge by dipping: so does wine the hearts of the proud by drunkeness* (Ecclesiasticus 31:25-26). Strength boasted in the cup is the proving and undoing of the proud — feasting that *regards not the work of Yahuah (LORD)*.',
+       sv.verse_id, ev.verse_id, 'extras', 26106
+  FROM _s303_isa05_lookup sv, _s303_isa05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=5 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-5-woe-to-them-that-call-evil-good-and-wise-in-their-own-eyes',
+       E'Woe to them that call evil good — the inverted heart, wise in its own eyes',
+       E'Three woes name the inversion of the moral order: *Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness; that put bitter for sweet, and sweet for bitter!* (Isaiah 5:20); *Woe unto them that are wise in their own eyes, and prudent in their own sight!* (5:21); *Which justify the wicked for reward, and take away the righteousness of the righteous from him!* (5:23). The Torah-wisdom answers each. Against self-wisdom: *Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (Proverbs 3:7) — and Paul carries it forward, *Be not wise in your own conceits* (Romans 12:16). Against the bribed bench: *He that justifieth the wicked, and he that condemneth the just, even they both are abomination to Yahuah (LORD)* (Proverbs 17:15). The heart that crowns itself wise is the soil of every inversion — calling evil good, selling judgment for reward — and Yahuah names it abomination.',
+       sv.verse_id, ev.verse_id, 'free', 26109
+  FROM _s303_isa05_lookup sv, _s303_isa05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=5 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-5-they-have-cast-away-the-law-of-yahuah',
+       E'They have cast away the law of Yahuah — the root-sin under every woe',
+       E'Beneath every woe lies one root-sin, and Isaiah names it as the fire takes the stubble: *because they have cast away the law of Yahuah Tseva''ot (LORD of hosts), and despised the word of the Holy One of Yashar''el (Israel)* (Isaiah 5:24). The whole lawsuit is for COVENANT-BREAKING — the Torah forsaken — never the Torah itself at fault. Jeremiah names the identical failure: *The priests said not, Where is Yahuah (LORD)? and they that handle the law knew me not* (Jeremiah 2:8); *For my people have committed two evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water* (2:13). To despise the covenant-word is to forsake the living fountain for cracked cisterns that hold nothing. The judgment that follows — captivity, desolation, the hand stretched out still (5:13,25) — is the curse of covenant-breaking, not the verdict on the covenant; the Torah cast away is the wound, and its keeping the only healing.',
+       sv.verse_id, ev.verse_id, 'free', 26112
+  FROM _s303_isa05_lookup sv, _s303_isa05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=5 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-5-an-ensign-to-the-nations-from-far',
+       E'An ensign to the nations from far — the signal that turns to ingathering',
+       E'The lawsuit ends with a summons: *And he will lift up an ensign to the nations from far, and will hiss unto them from the end of the earth: and, behold, they shall come with speed swiftly* (Isaiah 5:26) — here the ensign calls the instrument of judgment, the tireless army (5:27-29). But the same ensign-word turns to GATHERING in Isaiah''s own next vision of the root of Jesse: *And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious* (Isaiah 11:10); *And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (11:12). The signal that summoned judgment becomes the signal of ingathering — the two-house remnant, the outcasts of Yashar''el and the dispersed of Yahudah, gathered home around the root of Jesse.',
+       sv.verse_id, ev.verse_id, 'free', 26115
+  FROM _s303_isa05_lookup sv, _s303_isa05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=5 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen* (Matthew 21:33) — the fence, tower, and winepress of Isaiah 5:2 repeated word for word; the vineyard-song becomes the parable of the husbandmen.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=2
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=21 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-the-vineyard-of-yahuah-is-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *This is the heir; come, let us kill him, and let us seize on his inheritance* (Matthew 21:38) — the wild grapes of Isaiah 5:7 are the husbandmen''s conduct; the lawsuit is on conduct, not on the vineyard.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=7
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=21 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-the-vineyard-of-yahuah-is-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the kingdom of Elohim (God) shall be taken from you, and given to a nation bringing forth the fruits thereof* (Matthew 21:43) — the keeping passes from the faithless husbandmen to fruit-bearers; the Owner and the vineyard (Isaiah 5:7) stand, never cast off (Romans 11:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=7
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=21 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-the-vineyard-of-yahuah-is-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*A certain man planted a vineyard, and set an hedge about it, and digged a place for the winefat, and built a tower* (Mark 12:1) — Mark hears the same Isaiah 5:2 hedge, winefat, and tower.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=2
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=12 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-the-vineyard-of-yahuah-is-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*he will come and destroy the husbandmen, and will give the vineyard unto others* (Mark 12:9) — the judgment falls on the stewards, the vineyard that is the house of Yashar''el (Isaiah 5:7) given to faithful keepers.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=7
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-the-vineyard-of-yahuah-is-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*give the vineyard to others. And when they heard it, they said, Elohim (God) forbid* (Luke 20:16) — the hearers'' cry is Paul''s very answer to whether the people are cast off (Romans 11:1); the vineyard (Isaiah 5:7) is not destroyed, the wicked husbandmen are.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=7
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=20 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-the-vineyard-of-yahuah-is-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *of every wood of the earth, and of all the trees thereof, you have chosen you one only vine* (2 Esdras 5:23) — the vineyard of *my wellbeloved* (Isaiah 5:1) is the one chosen vine of all the earth; the restored witness names the election the song assumes.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=1
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=5 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-the-vineyard-of-yahuah-is-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *why have you scattered your only one people among many?* (2 Esdras 5:28) — the vineyard that is the house of Yashar''el (Isaiah 5:7) is the one people scattered; the lawsuit''s judgment is the two-house dispersion awaiting the gathering.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=7
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=5 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-the-vineyard-of-yahuah-is-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (Psalm 80:8) — the choicest vine planted (Isaiah 5:2) is the vine of the Exodus, set in the land.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=2
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-the-choicest-vine-a-vine-out-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the vineyard which thy right hand hath planted* (Psalm 80:15) — the vineyard that is the house of Yashar''el (Isaiah 5:7); the Psalm pleads for it when its hedges are broken (80:12), Isaiah''s very judgment (5:5).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=7
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-the-choicest-vine-a-vine-out-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I had planted thee a noble vine, wholly a right seed: how then art thou turned into the degenerate plant of a strange vine* (Jeremiah 2:21) — the choicest vine (Isaiah 5:2) yielding wild grapes; the same planting, the same grief.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=2
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=2 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-the-choicest-vine-a-vine-out-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Shew not your valiantness in wine; for wine has destroyed many* (Ecclesiasticus 31:25) — the woe on those who follow strong drink (Isaiah 5:11) met by the wisdom-witness: wine pursued as valour destroys.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=11
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=31 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-woe-to-them-that-follow-strong-drink'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*so does wine the hearts of the proud by drunkeness* (Ecclesiasticus 31:26) — the woe on the mighty-to-drink (Isaiah 5:22) is the proving of the proud heart laid bare by the cup.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=22
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=31 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-woe-to-them-that-follow-strong-drink'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (Proverbs 3:7) — the Torah-wisdom answer to *Woe unto them that are wise in their own eyes* (Isaiah 5:21).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=21
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-woe-to-them-that-call-evil-good-and-wise-in-their-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Be not wise in your own conceits* (Romans 12:16) — Paul carries Isaiah 5:21''s woe forward; the self-exalting mind is the soil of every other woe.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=21
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-woe-to-them-that-call-evil-good-and-wise-in-their-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *He that justifieth the wicked, and he that condemneth the just, even they both are abomination to Yahuah (LORD)* (Proverbs 17:15) — the woe on those who *justify the wicked for reward* (Isaiah 5:23) named an abomination.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=23
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-woe-to-them-that-call-evil-good-and-wise-in-their-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *they that handle the law knew me not* (Jeremiah 2:8) — the same root-sin as *they have cast away the law of Yahuah* (Isaiah 5:24); the lawsuit is for forsaking the Torah, never the Torah at fault.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=24
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-they-have-cast-away-the-law-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water* (Jeremiah 2:13) — to despise the word of the Holy One (Isaiah 5:24) is to trade the living fountain for cracked cisterns.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=24
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-they-have-cast-away-the-law-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek* (Isaiah 11:10) — the ensign lifted to the nations (Isaiah 5:26) turns to the gathering ensign of the root of Jesse.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=26
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-an-ensign-to-the-nations-from-far'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah)* (Isaiah 11:12) — the same ensign (Isaiah 5:26) becomes the signal of two-house ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=5 AND sv.verse_number=26
+  JOIN _s303_isa05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-5-an-ensign-to-the-nations-from-far'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_12.sql (Isaiah 12) -----
+-- Chapter: Isaiah 12 — THE TWO-FOLD SONG OF SALVATION that caps the ch7-12 Immanuel cycle. In that
+-- day the redeemed sing: *Behold, Elohim (God) is my salvation; I will trust, and not be afraid: for
+-- Yahuah (LORD) JEHOVAH is my strength and my song; he also is become my salvation* (12:2) — the very
+-- words of the Song of Moses at the Red Sea (Exodus 15:2) and of the Psalter (Psalm 118:14), sung
+-- again in the day of the second-Exodus ingathering. *Therefore with joy shall ye draw water out of
+-- the wells of salvation* (12:3) — the living water Yahusha gives (John 4:14; John 7:37-38; Rev 22:17).
+-- *Praise Yahuah (LORD), call upon his name, declare his doings among the people, make mention that his
+-- name is exalted* (12:4) — the Name proclaimed among the nations. And *Cry out and shout, thou
+-- inhabitant of Zion: for great is the Holy One of Yashar''el (Israel) in the midst of thee* (12:6) —
+-- the Holy One dwelling in the midst of restored Zion (Zephaniah 3:14-17; Rev 21:3).
+-- Tag: isa12   Temp view: _s303_isa12_lookup
+-- Sort band: base 26275, step 3 -> threads at 26275, 26278, 26281, 26284 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',12,v
+--
+-- Isaiah 12 coverage:
+--   v.1  (O Yahuah, I will praise thee: though thou wast angry with me, thine anger is turned away)
+--        NT:     none warranted distinct (the turning-away of anger / comfort is the preface to the
+--                salvation-song of v.2 — woven into THREAD 1's opening)
+--        Extras: none warranted
+--        Tanakh: held in prose (the "in that day" frame of the second-Exodus song; v.2 carries the weave)
+--   ★ v.2  (Behold, Elohim (God) is my salvation... for Yahuah (LORD) JEHOVAH is my strength and my song;
+--          he also is become my salvation)
+--        NT:     none warranted distinct (the salvation-song is fulfilled by name in Yahusha = "Yahuah
+--                saves"; the heaviest weave here is the Tanakh deliverance-song echo, held with the
+--                living-water forward-weave of THREAD 2)
+--        Extras: none warranted
+--        Tanakh: ★ Exodus 15:2 (Yahuah is my strength and song, and he is become my salvation) — THREAD 1
+--                (the Song of Moses at the Red Sea), ★ Psalm 118:14 (Yahuah is my strength and song, and
+--                is become my salvation) — THREAD 1 (the Psalter's deliverance song)
+--   ★★ v.3  (with joy shall ye draw water out of the wells of salvation)
+--        NT:     ★★ John 4:14 (the water that I shall give him shall be in him a well of water springing
+--                up into everlasting life), ★★ John 7:37-38 (If any man thirst, let him come unto me...
+--                out of his belly shall flow rivers of living water), ★ Revelation 22:17 (let him that is
+--                athirst come... take the water of life freely) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: woven in prose (the wells of salvation = the living water; the NT names the well-giver)
+--   ★ v.4-5 (Praise Yahuah, call upon his name, declare his doings among the people, make mention that
+--          his name is exalted; Sing unto Yahuah... this is known in all the earth)
+--        NT:     none warranted distinct (the proclamation of the Name among the nations is the Tanakh's
+--                own missionary refrain; carried by the Psalter laterals of THREAD 3)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 105:1 (O give thanks unto Yahuah; call upon his name: make known his deeds among
+--                the people) — THREAD 3 (near-verbatim), ★ Psalm 9:11 (Sing praises to Yahuah, which
+--                dwelleth in Zion: declare among the people his doings) — THREAD 3
+--   ★ v.6  (Cry out and shout, thou inhabitant of Zion: for great is the Holy One of Yashar''el (Israel)
+--          in the midst of thee)
+--        NT:     ★ Revelation 21:3 (the tabernacle of Elohim (God) is with men, and he will dwell with
+--                them, and they shall be his people) — THREAD 4 (the dwelling in the midst consummated)
+--        Extras: none warranted
+--        Tanakh: ★★ Zephaniah 3:14-17 (Sing, O daughter of Zion; shout, O Yashar''el... the king of
+--                Yashar''el, even Yahuah, is in the midst of thee... Yahuah Elohayka in the midst of thee
+--                is mighty... he will joy over thee with singing) — THREAD 4 (Zion's joy at restoration,
+--                the Holy One in the midst)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-12-yah-is-my-strength-and-song-the-salvation-song — Tanakh (Exodus 15, Psalm 118) [free]
+--      (★ the Song of Moses / Psalter deliverance song sung again in the day of ingathering)
+--   2. isaiah-12-draw-water-out-of-the-wells-of-salvation — NT (John 4, John 7, Revelation 22) [free]
+--      (★★ the wells of salvation = the living water Yahusha gives)
+--   3. isaiah-12-call-upon-his-name-declare-his-doings-among-the-people — Tanakh (Psalm 105, Psalm 9) [free]
+--      (★ the Name proclaimed and exalted among the nations)
+--   4. isaiah-12-the-holy-one-of-yasharel-in-the-midst-of-thee — NT (Revelation 21) + Tanakh (Zephaniah 3) [free]
+--      (★ Zion's joy at restoration; the Holy One dwelling in the midst)
+--
+-- Framing notes:
+--   ★ THE SALVATION-SONG (THREAD 1): *Behold, Elohim (God) is my salvation... for Yahuah (LORD) JEHOVAH
+--      is my strength and my song; he also is become my salvation* (12:2). These are the very words first
+--      sung at the Red Sea — *Yahuah (LORD) is my strength and song, and he is become my salvation*
+--      (Exodus 15:2) — and treasured in the Psalter — *Yahuah (LORD) is my strength and song, and is
+--      become my salvation* (Psalm 118:14). Isaiah sets them on the lips of the redeemed *in that day*:
+--      the second Exodus, the ingathering of the scattered, sings the first Exodus's song. One
+--      deliverance-song across the canon, from the sea to the Psalms to the day of restoration.
+--   ★★ THE WELLS OF SALVATION (THREAD 2): *Therefore with joy shall ye draw water out of the wells of
+--      salvation* (12:3). Yahusha names himself the well-giver: *the water that I shall give him shall be
+--      in him a well of water springing up into everlasting life* (John 4:14), and *If any man thirst,
+--      let him come unto me, and drink. He that believeth on me... out of his belly shall flow rivers of
+--      living water* (John 7:37-38) — *but this spake he of the Spirit* (7:39). The drawing ends where the
+--      whole canon ends: *let him that is athirst come... take the water of life freely* (Revelation
+--      22:17). The wells of salvation are the living water of the Spirit, freely drawn with joy.
+--   ★ THE NAME PROCLAIMED (THREAD 3): *Praise Yahuah (LORD), call upon his name, declare his doings among
+--      the people, make mention that his name is exalted* (12:4); *Sing unto Yahuah (LORD)... this is
+--      known in all the earth* (12:5). The Psalter sings the same missionary refrain near-verbatim:
+--      *O give thanks unto Yahuah (LORD); call upon his name: make known his deeds among the people*
+--      (Psalm 105:1), and *Sing praises to Yahuah (LORD), which dwelleth in Zion: declare among the people
+--      his doings* (Psalm 9:11). The exalted Name is carried out to the nations — the same call to
+--      proclaim Yahuah's doings that runs through the Psalms of the ingathering.
+--   ★ THE HOLY ONE IN THE MIDST (THREAD 4): *Cry out and shout, thou inhabitant of Zion: for great is the
+--      Holy One of Yashar''el (Israel) in the midst of thee* (12:6). Zephaniah sings the same restoration
+--      with the same shout: *Sing, O daughter of Zion; shout, O Yashar''el (Israel)... the king of
+--      Yashar''el (Israel), even Yahuah (LORD), is in the midst of thee... Yahuah Elohayka (The LORD thy
+--      God) in the midst of thee is mighty; he will save... he will joy over thee with singing*
+--      (Zephaniah 3:14-17). And it is consummated when the dwelling is made full: *Behold, the tabernacle
+--      of Elohim (God) is with men, and he will dwell with them, and they shall be his people*
+--      (Revelation 21:3). The Holy One in the midst of Zion is the Formed Son dwelling with his
+--      restored two-house people; Zion's joy is the joy of the King come home to her.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the anger turned away / comfort — the preface to the salvation-song,
+--      woven into THREAD 1), v.5 (Sing unto Yahuah... known in all the earth — joined to v.4 in THREAD 3).
+--      All recorded, none silently skipped. No extras warranted on this short song — the weave is the
+--      Tanakh deliverance-song echo, the NT living-water fulfillment, and the Zion-restoration laterals.
+
+CREATE TEMP VIEW _s303_isa12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Yah is my strength and song — the salvation-song of Moses, the Psalter, the ingathering
+    ('canon','isaiah',12,2,'canon','exodus',15,2,'free',
+      E'*Yahuah (LORD) is my strength and song, and he is become my salvation: he is my Elohim (God), and I will prepare him an habitation; my father''s Elohim (God), and I will exalt him* (Exodus 15:2). The redeemed of Isaiah 12 sing the Red Sea song word for word: *Yahuah (LORD) JEHOVAH is my strength and my song; he also is become my salvation* (Isaiah 12:2). The song Moses and the children of Yashar''el (Israel) sang when Yahuah threw the horse and rider into the sea is set on the lips of the gathered remnant *in that day* — the first Exodus''s song sung again in the second Exodus.'),
+    ('canon','isaiah',12,2,'canon','psalms',118,14,'free',
+      E'*Yahuah (LORD) is my strength and song, and is become my salvation* (Psalm 118:14). The Psalter treasures the very words Isaiah puts in the mouth of the redeemed — *Yahuah (LORD) JEHOVAH is my strength and my song; he also is become my salvation* (Isaiah 12:2). From the sea (Exodus 15) to the Psalms of ascent to the day of ingathering, one deliverance-song: Yahuah himself is become the salvation of his people.'),
+
+    -- THREAD 2 (★★): the wells of salvation — the living water Yahusha gives
+    ('canon','isaiah',12,3,'canon','john',4,14,'free',
+      E'*But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14). The promise *with joy shall ye draw water out of the wells of salvation* (Isaiah 12:3) is named at the well of Yaaqob (Jacob): the water Yahusha gives becomes *a well of water springing up into everlasting life*. The wells of salvation are the living water of the Spirit, drawn with joy and never running dry.'),
+    ('canon','isaiah',12,3,'canon','john',7,37,'free',
+      E'*In the last day, that great day of the feast, Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink* (John 7:37). On the great day of Tabernacles — the very feast at which the water-drawing was poured — Yahusha calls the thirsty to the wells of salvation: *with joy shall ye draw water out of the wells of salvation* (Isaiah 12:3). Come to him, and drink.'),
+    ('canon','isaiah',12,3,'canon','john',7,38,'free',
+      E'*He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water* (John 7:38). Yahusha unfolds the wells of salvation into rivers: the one who drinks himself becomes a spring — *out of his belly shall flow rivers of living water*, *this spake he of the Spirit* (7:39). The joy of *draw water out of the wells of salvation* (Isaiah 12:3) is the indwelling Spirit poured out from within.'),
+    ('canon','isaiah',12,3,'canon','revelation',22,17,'free',
+      E'*And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely* (Revelation 22:17). The canon closes where Isaiah''s song points: the wells of salvation become the water of life freely given — *with joy shall ye draw water out of the wells of salvation* (Isaiah 12:3). The invitation drawn from the wells runs to the last page: come, and take the water of life freely.'),
+
+    -- THREAD 3 (★): call upon his name, declare his doings among the people — the Name proclaimed
+    ('canon','isaiah',12,4,'canon','psalms',105,1,'free',
+      E'*O give thanks unto Yahuah (LORD); call upon his name: make known his deeds among the people* (Psalm 105:1). The command of the salvation-song — *Praise Yahuah (LORD), call upon his name, declare his doings among the people* (Isaiah 12:4) — is the Psalter''s own missionary refrain, near word for word: *call upon his name: make known his deeds among the people*. The redeemed do not hoard the deliverance; they carry the exalted Name out to the nations.'),
+    ('canon','isaiah',12,5,'canon','psalms',9,11,'free',
+      E'*Sing praises to Yahuah (LORD), which dwelleth in Zion: declare among the people his doings* (Psalm 9:11). The call *Sing unto Yahuah (LORD); for he hath done excellent things: this is known in all the earth* (Isaiah 12:5) is sung in the Psalter with the same words — *Sing praises to Yahuah (LORD), which dwelleth in Zion: declare among the people his doings*. The Yahuah who dwells in Zion (the Holy One in the midst, Isaiah 12:6) is the one whose doings are declared among all peoples.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 4 (★): the Holy One in the midst — Zion's joy at restoration, the dwelling consummated
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','isaiah',12,6,'canon','zephaniah',3,14,'free',
+      E'*Sing, O daughter of Zion; shout, O Yashar''el (Israel); be glad and rejoice with all the heart, O daughter of Jerusalem* (Zephaniah 3:14). Zephaniah sings the same shout Isaiah commands: *Cry out and shout, thou inhabitant of Zion: for great is the Holy One of Yashar''el (Israel) in the midst of thee* (Isaiah 12:6). Restored Zion is summoned to sing and shout — the daughter of Zion rejoicing that her judgments are taken away.'),
+    ('canon','isaiah',12,6,'canon','zephaniah',3,15,'free',
+      E'*Yahuah (LORD) hath taken away thy judgments, he hath cast out thine enemy: the king of Yashar''el (Israel), even Yahuah (LORD), is in the midst of thee: thou shalt not see evil any more* (Zephaniah 3:15). This is why Zion cries out and shouts (Isaiah 12:6): *the king of Yashar''el (Israel), even Yahuah (LORD), is in the midst of thee*. The Holy One of Yashar''el *in the midst* is the King come home to his people — the anger turned away (Isaiah 12:1), the enemy cast out, evil seen no more.'),
+    ('canon','isaiah',12,6,'canon','zephaniah',3,17,'free',
+      E'*Yahuah Elohayka (The LORD thy God) in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing* (Zephaniah 3:17). *Great is the Holy One of Yashar''el (Israel) in the midst of thee* (Isaiah 12:6) — and the One in the midst not only is sung to but sings: *he will joy over thee with singing*. Zion''s salvation-song is answered by the King''s own song of joy over his restored people.'),
+    ('canon','isaiah',12,6,'canon','revelation',21,3,'free',
+      E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The Holy One *in the midst of thee* (Isaiah 12:6) is consummated when the dwelling is made full and forever: *the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people*. Isaiah''s "in that day" reaches its end in the city where the Holy One dwells in the midst of his people without end.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-12-yah-is-my-strength-and-song-the-salvation-song',
+       E'Yah is my strength and song — the salvation-song of the second Exodus',
+       E'The ch7-12 Immanuel cycle ends in a song. The redeemed answer the turned-away anger with praise: *And in that day thou shalt say, O Yahuah (LORD), I will praise thee: though thou wast angry with me, thine anger is turned away, and thou comfortedst me* (Isaiah 12:1), and then sing: *Behold, Elohim (God) is my salvation; I will trust, and not be afraid: for Yahuah (LORD) JEHOVAH is my strength and my song; he also is become my salvation* (12:2). These are not new words — they are the Song of Moses at the Red Sea, sung again. When Yahuah threw the horse and his rider into the sea, Moses and the children of Yashar''el (Israel) sang: *Yahuah (LORD) is my strength and song, and he is become my salvation: he is my Elohim (God), and I will prepare him an habitation* (Exodus 15:2). The Psalter kept the song: *Yahuah (LORD) is my strength and song, and is become my salvation* (Psalm 118:14). Now Isaiah sets it on the lips of the gathered remnant *in that day* — the second Exodus, the ingathering of the scattered two-house people, singing the first Exodus''s deliverance. One song from the sea, through the Psalms, to the day of restoration: Yahuah himself is become the salvation of his people.',
+       sv.verse_id, ev.verse_id, 'free', 26275
+  FROM _s303_isa12_lookup sv, _s303_isa12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=12 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-12-draw-water-out-of-the-wells-of-salvation',
+       E'Draw water out of the wells of salvation — the living water Yahusha gives',
+       E'At the heart of the song stands a promise of joy: *Therefore with joy shall ye draw water out of the wells of salvation* (Isaiah 12:3). Yahusha names himself the well-giver. At the well of Yaaqob (Jacob) he says: *whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14). On the great day of the feast of Tabernacles — the very feast at which the water-drawing was poured — *Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink. He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water* (John 7:37-38), *and this spake he of the Spirit* (7:39). The well becomes a spring; the one who drinks becomes a fountain. And the canon closes where Isaiah''s song points: *the Spirit and the bride say, Come... And whosoever will, let him take the water of life freely* (Revelation 22:17). The wells of salvation are the living water of the Ruach HaKodesh (Holy Spirit), drawn with joy, springing up to everlasting life, offered freely to all who thirst.',
+       sv.verse_id, ev.verse_id, 'free', 26278
+  FROM _s303_isa12_lookup sv, _s303_isa12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=12 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-12-call-upon-his-name-declare-his-doings-among-the-people',
+       E'Call upon his name, declare his doings among the people — the Name proclaimed',
+       E'The salvation-song does not stay private. The redeemed are commanded to carry the Name out: *And in that day shall ye say, Praise Yahuah (LORD), call upon his name, declare his doings among the people, make mention that his name is exalted* (Isaiah 12:4); *Sing unto Yahuah (LORD); for he hath done excellent things: this is known in all the earth* (12:5). This is the Psalter''s own missionary refrain, sung near word for word. *O give thanks unto Yahuah (LORD); call upon his name: make known his deeds among the people* (Psalm 105:1) — the same four-fold call: give thanks, call on the Name, declare, make known among the peoples. And *Sing praises to Yahuah (LORD), which dwelleth in Zion: declare among the people his doings* (Psalm 9:11) — the Yahuah who dwells in Zion (the Holy One in the midst, Isaiah 12:6) is the one whose doings are proclaimed among all peoples. The exalted Name is not hoarded by the gathered remnant; the deliverance becomes a witness, *known in all the earth*.',
+       sv.verse_id, ev.verse_id, 'free', 26281
+  FROM _s303_isa12_lookup sv, _s303_isa12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=12 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-12-the-holy-one-of-yasharel-in-the-midst-of-thee',
+       E'The Holy One of Yashar''el in the midst of thee — Zion''s joy at restoration',
+       E'The song ends with a shout of joy from restored Zion: *Cry out and shout, thou inhabitant of Zion: for great is the Holy One of Yashar''el (Israel) in the midst of thee* (Isaiah 12:6). The Holy One is not far off — he is *in the midst*. Zephaniah sings the same shout and names who the One in the midst is: *Sing, O daughter of Zion; shout, O Yashar''el (Israel); be glad and rejoice with all the heart, O daughter of Jerusalem* (Zephaniah 3:14), *for Yahuah (LORD) hath taken away thy judgments, he hath cast out thine enemy: the king of Yashar''el (Israel), even Yahuah (LORD), is in the midst of thee* (3:15). The Holy One in the midst is the King come home — the Formed Son dwelling with his restored two-house people. And the One sung to also sings: *Yahuah Elohayka (The LORD thy God) in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing* (Zephaniah 3:17). The whole canon carries this dwelling to its consummation: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them* (Revelation 21:3). Isaiah''s "in that day" reaches its end in the city where the Holy One dwells in the midst of his people forever; Zion''s joy is the joy of the King who joys over her.',
+       sv.verse_id, ev.verse_id, 'free', 26284
+  FROM _s303_isa12_lookup sv, _s303_isa12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=12 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Yahuah (LORD) is my strength and song, and he is become my salvation* (Exodus 15:2) — the Song of Moses at the Red Sea, sung again by the redeemed of Isaiah 12:2.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-yah-is-my-strength-and-song-the-salvation-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahuah (LORD) is my strength and song, and is become my salvation* (Psalm 118:14) — the Psalter''s deliverance song, the same words Isaiah 12:2 sets on the lips of the gathered remnant.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=118 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-yah-is-my-strength-and-song-the-salvation-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14) — the wells of salvation (Isaiah 12:3) named at the well of Yaaqob (Jacob).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-draw-water-out-of-the-wells-of-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *If any man thirst, let him come unto me, and drink* (John 7:37) — on the great day of Tabernacles, the water-drawing feast, Yahusha calls the thirsty to the wells of salvation (Isaiah 12:3).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-draw-water-out-of-the-wells-of-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *out of his belly shall flow rivers of living water* (John 7:38) — the wells of salvation (Isaiah 12:3) become an indwelling spring, *this spake he of the Spirit* (7:39).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-draw-water-out-of-the-wells-of-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *let him that is athirst come... take the water of life freely* (Revelation 22:17) — the canon closes where the wells of salvation (Isaiah 12:3) point: the water of life freely given.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-draw-water-out-of-the-wells-of-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *O give thanks unto Yahuah (LORD); call upon his name: make known his deeds among the people* (Psalm 105:1) — the Psalter''s near-verbatim echo of the call to proclaim the Name (Isaiah 12:4).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-call-upon-his-name-declare-his-doings-among-the-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Sing praises to Yahuah (LORD), which dwelleth in Zion: declare among the people his doings* (Psalm 9:11) — the Yahuah who dwells in Zion (the Holy One in the midst, Isaiah 12:6) whose doings are declared among all peoples (Isaiah 12:5).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=5
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=9 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-call-upon-his-name-declare-his-doings-among-the-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Sing, O daughter of Zion; shout, O Yashar''el (Israel)... O daughter of Jerusalem* (Zephaniah 3:14) — the same shout of restored Zion as *Cry out and shout, thou inhabitant of Zion* (Isaiah 12:6).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=3 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-the-holy-one-of-yasharel-in-the-midst-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the king of Yashar''el (Israel), even Yahuah (LORD), is in the midst of thee* (Zephaniah 3:15) — names the Holy One *in the midst* (Isaiah 12:6) as the King come home, anger turned away, enemy cast out.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-the-holy-one-of-yasharel-in-the-midst-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Yahuah Elohayka (The LORD thy God) in the midst of thee is mighty... he will joy over thee with singing* (Zephaniah 3:17) — the Holy One in the midst (Isaiah 12:6) not only sung to but singing over his restored people.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-the-holy-one-of-yasharel-in-the-midst-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3) — the Holy One *in the midst* (Isaiah 12:6) consummated, the dwelling made full and forever.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s303_isa12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-12-the-holy-one-of-yasharel-in-the-midst-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_19.sql (Isaiah 19) -----
+-- Chapter: Isaiah 19 — THE BURDEN OF EGYPT, ending in a threefold blessing. Two halves. (a) The
+-- judgment: *Behold, Yahuah (LORD) rideth upon a swift cloud, and shall come into Egypt: and the
+-- idols of Egypt shall be moved at his presence* (19:1) — the Formed coming in judgment, lateral to
+-- the cloud-rider; the Nile dried (19:5-10); Egypt's counsel made foolish (19:11-15). (b) ★★ the
+-- conversion oracle *in that day*: *an altar to Yahuah (LORD) in the midst of the land of Egypt*
+-- (19:19); *they shall cry unto Yahuah (LORD)... and he shall send them a saviour, and a great one*
+-- (19:20); *Yahuah (LORD) shall be known to Egypt* (19:21); *he shall smite and heal it: and they
+-- shall return even to Yahuah (LORD)* (19:22); and ★★ *a highway out of Egypt to Assyria* with the
+-- threefold blessing *Blessed be Egypt my people, and Assyria the work of my hands, and Yashar'el
+-- (Israel) mine inheritance* (19:23-25). FRAMED with the TWO-HOUSE guard and the Romans 11 graft
+-- guard: the nations brought to KNOW Yahuah and JOIN the worship — the ingathering reaching even old
+-- oppressors — but Yashar'el remains the inheritance/the root; the nations are grafted into HER
+-- covenant, NEVER a replacement, NEVER a flattening that erases Israel.
+-- Tag: isa19   Temp view: _s303_isa19_lookup
+-- Sort band: base 26450, step 3 -> threads at 26450, 26453, 26456, 26459 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',19,v
+--
+-- Isaiah 19 coverage:
+--   ★ v.1 (Behold, Yahuah (LORD) rideth upon a swift cloud, and shall come into Egypt: and the idols
+--          of Egypt shall be moved at his presence)
+--        NT:     ★ Matthew 24:30 (they shall see the Son of Adam coming in the clouds of heaven),
+--                ★ Revelation 1:7 (Behold, he cometh with clouds) — THREAD 1 (the cloud-rider = the Formed)
+--        Extras: none warranted (cloud-rider witnesses are canon-strong; no clean extra forced)
+--        Tanakh: ★ Psalm 104:3 (who maketh the clouds his chariot), ★ Exodus 12:12 (against all the
+--                gods of Egypt I will execute judgment), ★ Numbers 33:4 (upon their gods also Yahuah
+--                executed judgments) — THREAD 1 (the chariot of cloud; the idols judged, as at the first Egypt-judgment)
+--   v.2-15 (Egyptians against Egyptians; the Nile dried; Zoan's counsel become brutish; a perverse
+--          spirit mingled) — woven in prose as the judgment half; no separate add forced (the
+--          framework weight is the cloud-rider of v.1 and the conversion oracle of v.19-25)
+--        NT:     none warranted   Extras: none warranted   Tanakh: none warranted (held in prose)
+--   ★★ v.19-21 (an altar to Yahuah (LORD) in the midst of the land of Egypt... for they shall cry
+--          unto Yahuah (LORD)... and he shall send them a saviour... And Yahuah (LORD) shall be known
+--          to Egypt... and shall do sacrifice and oblation)
+--        NT:     ★★ Mark 11:17 (My house shall be called of all nations the house of prayer) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 56:7 (mine house shall be called an house of prayer for all people), ★ Isaiah
+--                56:6-8 (the sons of the stranger that join themselves to Yahuah... I will gather others
+--                to him) — THREAD 2 (the altar/house of prayer among the nations; KNOWING and JOINING the worship)
+--   ★ v.22 (Yahuah (LORD) shall smite Egypt: he shall smite and heal it: and they shall return even to
+--          Yahuah (LORD)... and shall heal them)
+--        NT:     none warranted distinct (the smite-and-heal turning is carried Tanakh-laterally)
+--        Extras: none warranted
+--        Tanakh: ★ Exodus 15:26 (I will put none of these diseases upon thee, which I have brought upon
+--                the Egyptians: for I am Yahuah Rapha), ★ Zechariah 14:18 (the plague, wherewith Yahuah
+--                will smite the heathen that come not up to keep the feast of tabernacles), ★ Zechariah
+--                14:16 (every one that is left of all the nations... shall even go up... to worship the
+--                King) — THREAD 3 (the smiting that heals; Egypt smitten yet brought up to worship)
+--   ★★ v.23-25 (a highway out of Egypt to Assyria... In that day shall Yashar'el (Israel) be the third
+--          with Egypt and with Assyria... Blessed be Egypt my people, and Assyria the work of my hands,
+--          and Yashar'el (Israel) mine inheritance)
+--        NT:     ★ Acts 8:27-28 (a man of Ethiopia... had come to Jerusalem for to worship, Was
+--                returning... read Esaias), ★ Acts 8:39 (he went on his way rejoicing), ★★ Romans 11:17-18
+--                (thou bearest not the root, but the root thee) — THREAD 4 (the nations joined; the GRAFT GUARD)
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 11:11 (recover the remnant of his people... from Assyria, and from Egypt),
+--                ★ Isaiah 11:12 (assemble the outcasts of Yashar'el, and gather... the dispersed of
+--                Yahudah), ★ Isaiah 11:16 (an highway for the remnant of his people... from Assyria),
+--                ★ Psalm 87:4 (Rahab and Babylon... this man was born there) — THREAD 4 (the highway;
+--                the two-house regathering; Egypt/Rahab counted as born in Zion — yet Israel the inheritance)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-19-rideth-upon-a-swift-cloud-the-idols-of-egypt-shall-be-moved — NT (Matthew 24, Revelation 1)
+--      + Tanakh (Psalm 104, Exodus 12, Numbers 33) [free]
+--      (★ the Formed coming on the cloud-chariot in judgment; the idols/gods of Egypt fall, as at the first Egypt-judgment)
+--   2. isaiah-19-an-altar-to-yahuah-in-the-midst-of-the-land-of-egypt — NT (Mark 11) + Tanakh (Isaiah 56) [free]
+--      (★★ the altar among the nations = the house of prayer for ALL nations; Egypt brought to KNOW and JOIN the worship)
+--   3. isaiah-19-he-shall-smite-and-heal-it-and-they-shall-return — Tanakh (Exodus 15, Zechariah 14) [free]
+--      (★ the smiting that heals; Egypt smitten as of old yet brought up to worship the King)
+--   4. isaiah-19-a-highway-out-of-egypt-to-assyria-yashar-el-mine-inheritance — NT (Acts 8, Romans 11)
+--      + Tanakh (Isaiah 11, Psalm 87) [free]
+--      (★★ the highway; the two-house regathering from Assyria/Egypt; the GRAFT GUARD — Israel the root/inheritance, never erased)
+--
+-- Framing notes:
+--   ★ THE SWIFT CLOUD AND THE IDOLS (THREAD 1): *Behold, Yahuah (LORD) rideth upon a swift cloud, and
+--      shall come into Egypt: and the idols of Egypt shall be moved at his presence* (19:1). The cloud is
+--      his chariot — *who maketh the clouds his chariot: who walketh upon the wings of the wind* (Psalm
+--      104:3) — and the One who rides it into judgment is the Formed Son, the visible Glory, the same
+--      cloud-rider the gospel sees coming: *they shall see the Son of Adam coming in the clouds of heaven
+--      with power and great glory* (Matthew 24:30); *Behold, he cometh with clouds* (Revelation 1:7). And
+--      the idols falling at his presence is no new thing — it is the first Egypt-judgment repeated:
+--      *against all the gods of Egypt I will execute judgment: I am Yahuah (LORD)* (Exodus 12:12); *upon
+--      their gods also Yahuah (LORD) executed judgments* (Numbers 33:4). The gods of Egypt fell at the
+--      Passover; they are moved again at his presence.
+--   ★★ THE ALTAR AMONG THE NATIONS (THREAD 2): *In that day shall there be an altar to Yahuah (LORD) in
+--      the midst of the land of Egypt... for they shall cry unto Yahuah (LORD) because of the oppressors,
+--      and he shall send them a saviour, and a great one, and he shall deliver them. And Yahuah (LORD)
+--      shall be known to Egypt* (19:19-21). This is Egypt brought to KNOW and JOIN the worship — an altar
+--      in the heart of the old house of bondage. It is the same word Yahuah speaks over his house: *mine
+--      house shall be called an house of prayer for all people* (Isaiah 56:7), where *the sons of the
+--      stranger, that join themselves to Yahuah (LORD)... every one that keepeth the sabbath... and taketh
+--      hold of my covenant* are brought to the holy mountain (56:6) — JOINING the covenant, keeping the
+--      sabbath, NOT a covenant-less inclusion. Yahusha cites it cleansing the temple: *Is it not written,
+--      My house shall be called of all nations the house of prayer?* (Mark 11:17). The altar in Egypt is
+--      the nations coming in to know him — within the covenant, never replacing it.
+--   ★ THE SMITING THAT HEALS (THREAD 3): *And Yahuah (LORD) shall smite Egypt: he shall smite and heal
+--      it: and they shall return even to Yahuah (LORD), and he shall be intreated of them, and shall heal
+--      them* (19:22). The smiting is the old plague-judgment turned to mercy — the very diseases Yahuah
+--      brought on Egypt are the ones he heals: *I will put none of these diseases upon thee, which I have
+--      brought upon the Egyptians: for I am Yahuah Rapha (the LORD that healeth thee)* (Exodus 15:26). And
+--      Zechariah shows Egypt both smitten and gathered to worship: the plague falls *wherewith Yahuah
+--      (LORD) will smite the heathen that come not up to keep the feast of tabernacles* (Zechariah 14:18),
+--      yet *every one that is left of all the nations which came against Jerusalem shall even go up from
+--      year to year to worship the King, Yahuah Tseva''ot (LORD of hosts), and to keep the feast of
+--      tabernacles* (14:16). The blow drives them home; the healing receives them — they RETURN to Yahuah.
+--   ★★ THE HIGHWAY AND THE THREEFOLD BLESSING (THREAD 4): *In that day shall there be a highway out of
+--      Egypt to Assyria... In that day shall Yashar'el (Israel) be the third with Egypt and with Assyria,
+--      even a blessing in the midst of the land: Whom Yahuah Tseva''ot (LORD of hosts) shall bless, saying,
+--      Blessed be Egypt my people, and Assyria the work of my hands, and Yashar'el (Israel) mine
+--      inheritance* (19:23-25). This is the ingathering reaching even the old oppressors — but read it
+--      through the TWO-HOUSE frame and the graft guard. Isaiah's own highway gathers the scattered house:
+--      *Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which
+--      shall be left, from Assyria, and from Egypt* (Isaiah 11:11); *assemble the outcasts of Yashar'el
+--      (Israel), and gather together the dispersed of Yahudah (Judah)* (11:12); *an highway for the
+--      remnant of his people, which shall be left, from Assyria; like as it was to Yashar'el (Israel)...
+--      out of the land of Egypt* (11:16). The nations born to Zion are counted in — *I will make mention
+--      of Rahab and Babylon to them that know me... this man was born there* (Psalm 87:4) — and the
+--      Ethiopian, returning from Jerusalem Egypt-ward reading Esaias, is the firstfruits of it: *a man of
+--      Ethiopia... had come to Jerusalem for to worship, Was returning, and sitting in his chariot read
+--      Esaias the prophet* (Acts 8:27-28), and *he went on his way rejoicing* (8:39). But Egypt is *my
+--      people* and Assyria *the work of my hands* without erasing the third: *Yashar'el (Israel) mine
+--      INHERITANCE*. Paul holds the guard exact: the wild branch grafted in does not bear the root —
+--      *thou bearest not the root, but the root thee* (Romans 11:18); *Boast not against the branches*
+--      (11:18). The nations are grafted into HER covenant; Yashar'el remains the inheritance, the root,
+--      never replaced, never flattened away.
+--   VERSES WITH NO SEPARATE ADD: v.2-15 (the civil strife, the dried Nile, Zoan's foolish counsel, the
+--      perverse spirit — the judgment half; framework weight carried by the cloud-rider of v.1, woven in
+--      prose), v.16-18 (Egypt afraid of Yahudah's hand; five cities swear to Yahuah; the city of
+--      destruction — the turning-point preface to the altar of v.19, held in THREAD 2's lead-in prose).
+--      All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the swift cloud — the Formed cloud-rider; the idols of Egypt fall
+    ('canon','isaiah',19,1,'canon','psalms',104,3,'free',
+      E'*Who layeth the beams of his chambers in the waters: who maketh the clouds his chariot: who walketh upon the wings of the wind* (Psalm 104:3). When *Yahuah (LORD) rideth upon a swift cloud, and shall come into Egypt* (Isaiah 19:1), the cloud is his chariot — *who maketh the clouds his chariot*. The same Glory who rides the cloud-chariot of the Psalm comes swiftly into Egypt in judgment.'),
+    ('canon','isaiah',19,1,'canon','matthew',24,30,'free',
+      E'*And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30). The One who *rideth upon a swift cloud, and shall come into Egypt* (Isaiah 19:1) is the cloud-rider the gospel sees coming — *the Son of Adam coming in the clouds of heaven with power and great glory*. The Formed Son, the visible Glory, comes on the cloud in judgment then as at the end.'),
+    ('canon','isaiah',19,1,'canon','revelation',1,7,'free',
+      E'*Behold, he cometh with clouds; and every eye shall see him, and they also which pierced him: and all kindreds of the earth shall wail because of him. Even so, Amen* (Revelation 1:7). *Behold, Yahuah (LORD) rideth upon a swift cloud, and shall come into Egypt* (Isaiah 19:1) — *Behold, he cometh with clouds*. The cloud-rider whose presence moves the idols of Egypt is the One every eye shall see; the same Formed Glory, coming with clouds.'),
+    ('canon','isaiah',19,1,'canon','exodus',12,12,'free',
+      E'*For I will pass through the land of Egypt this night, and will smite all the firstborn in the land of Egypt, both man and beast; and against all the gods of Egypt I will execute judgment: I am Yahuah (LORD)* (Exodus 12:12). The *idols of Egypt shall be moved at his presence* (Isaiah 19:1) is the first Egypt-judgment come again — *against all the gods of Egypt I will execute judgment*. The gods that fell at the Passover are moved a second time when he rides into Egypt.'),
+    ('canon','isaiah',19,1,'canon','numbers',33,4,'free',
+      E'*For the Egyptians buried all their firstborn, which Yahuah (LORD) had smitten among them: upon their gods also Yahuah (LORD) executed judgments* (Numbers 33:4). When *the idols of Egypt shall be moved at his presence* (Isaiah 19:1), it is the verdict of the exodus repeated — *upon their gods also Yahuah (LORD) executed judgments*. No idol of Egypt can stand where Yahuah comes.'),
+
+    -- THREAD 2 (★★): an altar to Yahuah in the midst of Egypt — the house of prayer for all nations
+    ('canon','isaiah',19,19,'canon','isaiah',56,7,'free',
+      E'*Even them will I bring to my holy mountain, and make them joyful in my house of prayer: their burnt offerings and their sacrifices shall be accepted upon mine altar; for mine house shall be called an house of prayer for all people* (Isaiah 56:7). *In that day shall there be an altar to Yahuah (LORD) in the midst of the land of Egypt* (Isaiah 19:19) is this same opening — *mine house shall be called an house of prayer for all people*. The altar set in Egypt is the nations brought to the holy mountain to worship; the house of prayer reaches even the old house of bondage.'),
+    ('canon','isaiah',19,21,'canon','isaiah',56,6,'free',
+      E'*Also the sons of the stranger, that join themselves to Yahuah (LORD), to serve him, and to love the name of Yahuah (LORD), to be his servants, every one that keepeth the sabbath from polluting it, and taketh hold of my covenant* (Isaiah 56:6). *And Yahuah (LORD) shall be known to Egypt... and shall do sacrifice and oblation; yea, they shall vow a vow unto Yahuah (LORD), and perform it* (Isaiah 19:21) is the stranger JOINING himself — keeping the sabbath, taking hold of the covenant, serving and vowing. Egypt is brought to KNOW Yahuah and JOIN the worship within the covenant, never a covenant-less inclusion.'),
+    ('canon','isaiah',19,19,'canon','mark',11,17,'free',
+      E'*And he taught, saying unto them, Is it not written, My house shall be called of all nations the house of prayer? but ye have made it a den of thieves* (Mark 11:17). Yahusha cleansing the temple quotes the very promise the altar in Egypt fulfils: *My house shall be called of all nations the house of prayer*. *An altar to Yahuah (LORD) in the midst of the land of Egypt* (Isaiah 19:19) is the house of prayer opened to all nations — the nations coming in to know him.'),
+
+    -- THREAD 3 (★): he shall smite and heal it, and they shall return
+    ('canon','isaiah',19,22,'canon','exodus',15,26,'free',
+      E'*If thou wilt diligently hearken to the voice of Yahuah Elohayka (the LORD thy God), and wilt do that which is right in his sight... I will put none of these diseases upon thee, which I have brought upon the Egyptians: for I am Yahuah Rapha (the LORD that healeth thee)* (Exodus 15:26). *Yahuah (LORD) shall smite Egypt: he shall smite and heal it... and shall heal them* (Isaiah 19:22) is the very diseases of Egypt turned to mercy — the One who *brought upon the Egyptians* the plagues is *Yahuah Rapha (the LORD that healeth thee)*, and now heals Egypt herself when she returns.'),
+    ('canon','isaiah',19,22,'canon','zechariah',14,18,'free',
+      E'*And if the family of Egypt go not up, and come not, that have no rain; there shall be the plague, wherewith Yahuah (LORD) will smite the heathen that come not up to keep the feast of tabernacles* (Zechariah 14:18). The *smite* of *he shall smite and heal it* (Isaiah 19:22) is the blow that drives Egypt home — *the plague, wherewith Yahuah (LORD) will smite the heathen that come not up*. The smiting is unto the keeping of the feast, not unto destruction.'),
+    ('canon','isaiah',19,22,'canon','zechariah',14,16,'free',
+      E'*And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, Yahuah Tseva''ot (LORD of hosts), and to keep the feast of tabernacles* (Zechariah 14:16). *They shall return even to Yahuah (LORD), and he shall be intreated of them, and shall heal them* (Isaiah 19:22) is the healing that ends in worship — Egypt among *every one that is left of all the nations* going up to keep the feast of tabernacles. The blow heals; the healed return to worship the King.'),
+
+    -- THREAD 4 (★★): a highway out of Egypt to Assyria — Yashar'el mine inheritance; the graft guard
+    ('canon','isaiah',19,23,'canon','isaiah',11,16,'free',
+      E'*And there shall be an highway for the remnant of his people, which shall be left, from Assyria; like as it was to Yashar''el (Israel) in the day that he came up out of the land of Egypt* (Isaiah 11:16). *In that day shall there be a highway out of Egypt to Assyria* (Isaiah 19:23) is this same highway — *an highway for the remnant of his people... from Assyria; like as it was... out of the land of Egypt*. The road between the old oppressors is the road home for the scattered house, a second exodus.'),
+    ('canon','isaiah',19,23,'canon','isaiah',11,11,'free',
+      E'*And it shall come to pass in that day, that Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt, and from Pathros, and from Cush* (Isaiah 11:11). The highway *out of Egypt to Assyria* (Isaiah 19:23) gathers from the very nations named — *recover the remnant of his people... from Assyria, and from Egypt*. The ingathering reaches into Egypt and Assyria to bring the scattered remnant home.'),
+    ('canon','isaiah',19,24,'canon','isaiah',11,12,'free',
+      E'*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). *In that day shall Yashar''el (Israel) be the third with Egypt and with Assyria, even a blessing in the midst of the land* (Isaiah 19:24) — the third is the gathered two-house people: *the outcasts of Yashar''el (Israel)* and *the dispersed of Yahudah (Judah)* assembled. Israel set in the midst is the regathered house, both sticks made one.'),
+    ('canon','isaiah',19,25,'canon','psalms',87,4,'free',
+      E'*I will make mention of Rahab and Babylon to them that know me: behold Philistia, and Tyre, with Ethiopia; this man was born there* (Psalm 87:4). When Yahuah blesses *Egypt my people* (Isaiah 19:25), it is the same counting of the nations as born to Zion — Rahab (Egypt) and the rest *born there*, written among the people of the city of Elohim. The old oppressor is named *my people*, yet counted as born in Zion, not above her.'),
+    ('canon','isaiah',19,25,'canon','romans',11,18,'free',
+      E'*Boast not against the branches. But if thou boast, thou bearest not the root, but the root thee* (Romans 11:18). The blessing *Blessed be Egypt my people, and Assyria the work of my hands, and Yashar''el (Israel) mine inheritance* (Isaiah 19:25) keeps the order exact: the nations brought in are grafted into HER covenant — *thou bearest not the root, but the root thee*. Egypt is *my people* and Assyria *the work of my hands*, but Yashar''el remains the INHERITANCE, the root; the nations join her, never replace her.'),
+    ('canon','isaiah',19,23,'canon','acts',8,27,'free',
+      E'*And he arose and went: and, behold, a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians... who had come to Jerusalem for to worship, Was returning, and sitting in his chariot read Esaias the prophet* (Acts 8:27-28). The highway *out of Egypt to Assyria* (Isaiah 19:23) — the road of the nations to worship — is walked already by the Ethiopian, *come to Jerusalem for to worship*, returning Egypt-ward reading Esaias. The firstfruits of the nations on the highway, reading the very prophet who promised it.'),
+    ('canon','isaiah',19,23,'canon','acts',8,39,'free',
+      E'*And when they were come up out of the water, the Spirit of Yahuah (Lord) caught away Philip, that the eunuch saw him no more: and he went on his way rejoicing* (Acts 8:39). The highway of the nations coming to know Yahuah (Isaiah 19:23) bears its first traveller home rejoicing — *he went on his way rejoicing*, baptized, carrying the worship of Yahuah back along the road toward Egypt. The altar in Egypt and the highway out of it begin in one rejoicing eunuch.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-19-rideth-upon-a-swift-cloud-the-idols-of-egypt-shall-be-moved',
+       E'Yahuah rideth upon a swift cloud — the Formed cloud-rider, and the idols of Egypt fall',
+       E'The burden opens with a theophany of judgment: *Behold, Yahuah (LORD) rideth upon a swift cloud, and shall come into Egypt: and the idols of Egypt shall be moved at his presence, and the heart of Egypt shall melt in the midst of it* (Isaiah 19:1). The cloud is his chariot — *who maketh the clouds his chariot: who walketh upon the wings of the wind* (Psalm 104:3) — and the One who rides it is the Formed Son, the visible Glory drawn from the Formless Father, the same cloud-rider the gospel sees coming: *they shall see the Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30); *Behold, he cometh with clouds; and every eye shall see him* (Revelation 1:7). And the idols moved at his presence are no new thing — it is the first Egypt-judgment come again. At the Passover Yahuah declared: *against all the gods of Egypt I will execute judgment: I am Yahuah (LORD)* (Exodus 12:12), and so it was done — *upon their gods also Yahuah (LORD) executed judgments* (Numbers 33:4). The gods of Egypt fell when he passed through to redeem his people; they are moved again at his presence. No idol can stand where the cloud-rider comes.',
+       sv.verse_id, ev.verse_id, 'free', 26450
+  FROM _s303_isa19_lookup sv, _s303_isa19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=19 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-19-an-altar-to-yahuah-in-the-midst-of-the-land-of-egypt',
+       E'An altar to Yahuah in the midst of Egypt — the house of prayer for all nations',
+       E'After the judgment comes the turning: *In that day shall there be an altar to Yahuah (LORD) in the midst of the land of Egypt, and a pillar at the border thereof to Yahuah (LORD)* (Isaiah 19:19); *for they shall cry unto Yahuah (LORD) because of the oppressors, and he shall send them a saviour, and a great one, and he shall deliver them* (19:20); *And Yahuah (LORD) shall be known to Egypt, and the Egyptians shall know Yahuah (LORD) in that day, and shall do sacrifice and oblation; yea, they shall vow a vow unto Yahuah (LORD), and perform it* (19:21). An altar in the heart of the old house of bondage — the nations brought to KNOW Yahuah and JOIN the worship. This is the same opening Yahuah speaks over his house: *mine house shall be called an house of prayer for all people* (Isaiah 56:7), where *the sons of the stranger, that join themselves to Yahuah (LORD), to serve him, and to love the name of Yahuah (LORD)... every one that keepeth the sabbath from polluting it, and taketh hold of my covenant* (Isaiah 56:6) are brought in — JOINING the covenant, keeping the sabbath, vowing and performing. Not a covenant-less inclusion: Egypt comes to know him within the covenant, doing sacrifice and oblation. Yahusha cleansing the temple names the promise: *Is it not written, My house shall be called of all nations the house of prayer?* (Mark 11:17). The altar in Egypt is the door of the nations into the worship of Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 26453
+  FROM _s303_isa19_lookup sv, _s303_isa19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=19 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-19-he-shall-smite-and-heal-it-and-they-shall-return',
+       E'He shall smite and heal it — the blow that drives Egypt home to worship',
+       E'The judgment on Egypt is not its end; it is the road to its healing: *And Yahuah (LORD) shall smite Egypt: he shall smite and heal it: and they shall return even to Yahuah (LORD), and he shall be intreated of them, and shall heal them* (Isaiah 19:22). The smiting is the old plague-judgment turned to mercy — the very diseases Yahuah brought on Egypt are the ones he now heals: *If thou wilt diligently hearken to the voice of Yahuah Elohayka (the LORD thy God)... I will put none of these diseases upon thee, which I have brought upon the Egyptians: for I am Yahuah Rapha (the LORD that healeth thee)* (Exodus 15:26). And Zechariah shows the same blow driving the nations home: the plague falls *wherewith Yahuah (LORD) will smite the heathen that come not up to keep the feast of tabernacles* (Zechariah 14:18), yet *every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, Yahuah Tseva''ot (LORD of hosts), and to keep the feast of tabernacles* (14:16). The smiting is unto worship, not unto destruction; the blow drives Egypt home, the healing receives her, and they RETURN even to Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 26456
+  FROM _s303_isa19_lookup sv, _s303_isa19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=19 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-19-a-highway-out-of-egypt-to-assyria-yashar-el-mine-inheritance',
+       E'A highway out of Egypt to Assyria — the nations joined, yet Yashar''el mine inheritance',
+       E'The burden of Egypt ends in a threefold blessing that reaches the very empires that enslaved and scattered Yahuah''s people: *In that day shall there be a highway out of Egypt to Assyria, and the Assyrian shall come into Egypt, and the Egyptian into Assyria, and the Egyptians shall serve with the Assyrians. In that day shall Yashar''el (Israel) be the third with Egypt and with Assyria, even a blessing in the midst of the land: Whom Yahuah Tseva''ot (LORD of hosts) shall bless, saying, Blessed be Egypt my people, and Assyria the work of my hands, and Yashar''el (Israel) mine inheritance* (Isaiah 19:23-25). Read it through the two-house frame. Isaiah''s own highway is the road home for the scattered house: *Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt* (Isaiah 11:11); *assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah)* (11:12); *an highway for the remnant of his people... from Assyria; like as it was to Yashar''el (Israel)... out of the land of Egypt* (11:16) — a second exodus, both sticks made one. The nations are counted as born to Zion: *I will make mention of Rahab and Babylon to them that know me... this man was born there* (Psalm 87:4) — Rahab is Egypt, named *my people*, yet counted as born IN her, not above her. The Ethiopian is the firstfruits of the highway, *come to Jerusalem for to worship, Was returning, and sitting in his chariot read Esaias the prophet* (Acts 8:27-28), who *went on his way rejoicing* (8:39). But the order is held exact, the graft guard kept: Egypt is *my people* and Assyria *the work of my hands*, yet Yashar''el remains *mine INHERITANCE* — *thou bearest not the root, but the root thee... Boast not against the branches* (Romans 11:18). The nations are grafted into HER covenant; Israel is the inheritance, the root, never replaced, never flattened away.',
+       sv.verse_id, ev.verse_id, 'free', 26459
+  FROM _s303_isa19_lookup sv, _s303_isa19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=19 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*who maketh the clouds his chariot: who walketh upon the wings of the wind* (Psalm 104:3) — the swift cloud Yahuah rides into Egypt (Isaiah 19:1) is his own chariot.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-rideth-upon-a-swift-cloud-the-idols-of-egypt-shall-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they shall see the Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30) — the cloud-rider of Isaiah 19:1 is the Formed Son seen coming.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-rideth-upon-a-swift-cloud-the-idols-of-egypt-shall-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Behold, he cometh with clouds; and every eye shall see him* (Revelation 1:7) — *Behold, Yahuah (LORD) rideth upon a swift cloud* (Isaiah 19:1); the same Formed Glory coming with clouds.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-rideth-upon-a-swift-cloud-the-idols-of-egypt-shall-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *against all the gods of Egypt I will execute judgment: I am Yahuah (LORD)* (Exodus 12:12) — the idols moved at his presence (Isaiah 19:1) is the Passover-judgment on Egypt''s gods come again.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-rideth-upon-a-swift-cloud-the-idols-of-egypt-shall-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*upon their gods also Yahuah (LORD) executed judgments* (Numbers 33:4) — the verdict of the exodus repeated; no idol of Egypt stands where Yahuah comes (Isaiah 19:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=33 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-rideth-upon-a-swift-cloud-the-idols-of-egypt-shall-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *mine house shall be called an house of prayer for all people* (Isaiah 56:7) — the altar in the midst of Egypt (Isaiah 19:19) is the house of prayer opened to the nations.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=19
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-an-altar-to-yahuah-in-the-midst-of-the-land-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the sons of the stranger, that join themselves to Yahuah (LORD)... every one that keepeth the sabbath... and taketh hold of my covenant* (Isaiah 56:6) — Egypt KNOWING Yahuah (Isaiah 19:21) is the stranger JOINING within the covenant, not apart from it.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=21
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-an-altar-to-yahuah-in-the-midst-of-the-land-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *My house shall be called of all nations the house of prayer* (Mark 11:17) — Yahusha names the promise the altar in Egypt (Isaiah 19:19) fulfils.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=19
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=11 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-an-altar-to-yahuah-in-the-midst-of-the-land-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I will put none of these diseases upon thee, which I have brought upon the Egyptians: for I am Yahuah Rapha (the LORD that healeth thee)* (Exodus 15:26) — the diseases of Egypt turned to mercy; *he shall smite and heal it* (Isaiah 19:22).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=22
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-he-shall-smite-and-heal-it-and-they-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the plague, wherewith Yahuah (LORD) will smite the heathen that come not up to keep the feast of tabernacles* (Zechariah 14:18) — the *smite* of Isaiah 19:22 is the blow that drives Egypt home to the feast.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=22
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-he-shall-smite-and-heal-it-and-they-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *every one that is left of all the nations... shall even go up... to worship the King... and to keep the feast of tabernacles* (Zechariah 14:16) — *they shall return even to Yahuah (LORD)* (Isaiah 19:22); the healing ends in worship.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=22
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-he-shall-smite-and-heal-it-and-they-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *an highway for the remnant of his people, which shall be left, from Assyria; like as it was to Yashar''el (Israel)... out of the land of Egypt* (Isaiah 11:16) — the highway *out of Egypt to Assyria* (Isaiah 19:23) is the second exodus, the road home.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=23
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-a-highway-out-of-egypt-to-assyria-yashar-el-mine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *recover the remnant of his people, which shall be left, from Assyria, and from Egypt* (Isaiah 11:11) — the highway gathers the scattered from the very nations Isaiah 19:23 names.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=23
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-a-highway-out-of-egypt-to-assyria-yashar-el-mine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah)* (Isaiah 11:12) — *Yashar''el the third* (Isaiah 19:24) is the regathered two-house people, both sticks made one.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=24
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-a-highway-out-of-egypt-to-assyria-yashar-el-mine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will make mention of Rahab and Babylon to them that know me... this man was born there* (Psalm 87:4) — Egypt (Rahab) named *my people* (Isaiah 19:25), counted as born IN Zion, not above her.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=87 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-a-highway-out-of-egypt-to-assyria-yashar-el-mine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *thou bearest not the root, but the root thee... Boast not against the branches* (Romans 11:18) — the graft GUARD: Egypt *my people*, Assyria *the work of my hands*, yet Yashar''el *mine inheritance* (Isaiah 19:25); the nations join HER, never replace her.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-a-highway-out-of-egypt-to-assyria-yashar-el-mine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *a man of Ethiopia... had come to Jerusalem for to worship, Was returning, and sitting in his chariot read Esaias the prophet* (Acts 8:27-28) — the firstfruits of the highway (Isaiah 19:23), the nations coming to worship, reading the prophet who promised it.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=23
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=8 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-a-highway-out-of-egypt-to-assyria-yashar-el-mine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*he went on his way rejoicing* (Acts 8:39) — the highway out of Egypt (Isaiah 19:23) bears its first traveller home rejoicing, carrying the worship of Yahuah back along the road.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=19 AND sv.verse_number=23
+  JOIN _s303_isa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=8 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-19-a-highway-out-of-egypt-to-assyria-yashar-el-mine-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_22.sql (Isaiah 22) -----
+-- Chapter: Isaiah 22 — THE BURDEN OF THE VALLEY OF VISION, climaxing in the ELIAKIM oracle. The
+-- careless city feasts on the eve of judgment — *let us eat and drink; for to morrow we shall die*
+-- (22:13) — the very words Paul flings at the resurrection-deniers (1 Corinthians 15:32). The self-
+-- glorying steward Shebna, who hews himself a sepulchre on high, is cast out (22:15-19); in his place
+-- Yahuah sets the faithful servant Eliakim, clothed with the robe and girdle, given the government, a
+-- father to Jerusalem and to the house of Yahudah (22:20-21). And upon Eliakim is laid ★★★ *the key of
+-- the house of David... so he shall open, and none shall shut; and he shall shut, and none shall open*
+-- (22:22) — words the risen Messiah takes as His own in Revelation 3:7. Eliakim the faithful steward is
+-- the TYPE; the Formed Son is the antitype who holds true Davidic authority over the household of faith.
+-- ★ He is fastened *as a nail in a sure place* bearing *all the glory of his father's house* (22:23-24),
+-- the government laid on his shoulder as in Isaiah 9:6 — yet even the sure peg, when made a creature's
+-- self-glory, is removed (22:25): the steward serves; only the Son holds the key unremovably.
+-- Tag: isa22   Temp view: _s303_isa22_lookup
+-- Sort band: base 26525, step 3 -> threads at 26525, 26528, 26531 (3 threads)
+-- Source of EVERY row: 'canon','isaiah',22,v
+--
+-- Isaiah 22 coverage:
+--   v.1-7 (The burden of the valley of vision... thy slain men are not slain with the sword... a day of
+--          trouble, and of treading down, and of perplexity by Adonai Yahuah (the Lord GOD) of hosts)
+--        NT:     none warranted (the siege-lament is the local burden; no clean forward weave)
+--        Extras: none warranted
+--        Tanakh: held in prose (the valley-of-vision lawsuit; victims-not-enemies frames the lament)
+--   v.8-11 (ye have not looked unto the maker thereof, neither had respect unto him that fashioned it
+--          long ago)
+--        NT:     none warranted distinct
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (the fortifying-without-faith rebuke woven in prose; the
+--                Maker-not-regarded is the chapter's indictment, not a separate forward thread)
+--   ★ v.12-13 (in that day did Adonai Yahuah (the Lord GOD) of hosts call to weeping... And behold joy
+--          and gladness... let us eat and drink; for to morrow we shall die)
+--        NT:     ★★ 1 Corinthians 15:32 (if the dead rise not? let us eat and drink; for to morrow we
+--                die) — THREAD 3 (Paul quotes the careless-city motto against the resurrection-deniers)
+--        Extras: none warranted (Wisdom 2:1-9 the ungodly's "eat-drink-for-life-is-short" is a near
+--                parallel but a SEPARATE composition, not a quotation of 22:13 — held in prose, not forced)
+--        Tanakh: woven in prose (the call to mourning spurned)
+--   v.14 (Surely this iniquity shall not be purged from you till ye die)
+--        NT:     none warranted (the unpardoned-presumption verdict; held with THREAD 3's prose)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct
+--   v.15-19 (Go, get thee unto this treasurer, even unto Shebna... I will drive thee from thy station)
+--        NT:     none warranted distinct (the cast-out steward is the negative foil; carried in THREAD 1
+--                and THREAD 2 prose as the contrast to the faithful one)
+--        Extras: none warranted
+--        Tanakh: woven in prose (the self-glorying steward removed — the dark mirror of Eliakim)
+--   ★ v.20-21 (I will call my servant Eliakim the son of Hilkiah... he shall be a father to the
+--          inhabitants of Jerusalem, and to the house of Yahudah (Judah))
+--        NT:     held with THREAD 1 (the faithful steward set over the house = type of the Son's
+--                stewardship over the household of faith)
+--        Extras: none warranted
+--        Tanakh: woven in prose (the robe, the girdle, the government committed)
+--   ★★★ v.22 (the key of the house of David will I lay upon his shoulder; so he shall open, and none
+--          shall shut; and he shall shut, and none shall open)
+--        NT:     ★★★ Revelation 3:7 (he that is holy, he that is true, he that hath the key of David, he
+--                that openeth, and no man shutteth; and shutteth, and no man openeth) — THREAD 1 (KEYSTONE;
+--                the Formed Son holds the true Davidic key), ★ Matthew 16:19 (I will give unto thee the
+--                keys of the kingdom of heaven... bind... loose) — THREAD 1 (the delegated keys, the same
+--                open/shut authority entrusted onward)
+--        Extras: none warranted
+--        Tanakh: woven in prose (the house of David; the government of v.21)
+--   ★ v.23-25 (I will fasten him as a nail in a sure place... they shall hang upon him all the glory of
+--          his father's house... shall the nail that is fastened in the sure place be removed)
+--        NT:     held with THREAD 1 (the weight-bearing sure peg; the Son who upholds the house)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 9:6 (the government shall be upon his shoulder) — THREAD 2 (the sure peg
+--                bearing the house, the government on the shoulder — the type weighed; v.25 the removed
+--                nail = the creature-steward's limit, only the Son holds unremovably)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-22-the-key-of-the-house-of-david — NT (Revelation 3, Matthew 16) [free]
+--      (★★★ KEYSTONE; Eliakim the faithful steward is the TYPE, the Formed Son the antitype who holds
+--       the true key of David — open/shut Davidic authority over the household of faith; Matt 16 the keys delegated)
+--   2. isaiah-22-a-nail-in-a-sure-place — Tanakh (Isaiah 9) [free]
+--      (★ the sure peg bearing all the glory of the father's house; the government on the shoulder of
+--       Isaiah 9:6 — the type weighed; v.25 the removed nail marks the steward's creaturely limit)
+--   3. isaiah-22-let-us-eat-and-drink-for-to-morrow-we-shall-die — NT (1 Corinthians 15) [free]
+--      (★★ the careless city's motto on the eve of judgment, quoted by Paul against the resurrection-deniers)
+--
+-- Framing notes:
+--   ★★★ THE KEY OF THE HOUSE OF DAVID (THREAD 1): Shebna the self-glorying steward, who hewed himself a
+--      sepulchre on high (22:16), is driven from his station (22:19); in his place Yahuah calls *my
+--      servant Eliakim* (22:20), clothes him with the robe and girdle, commits the government to his hand,
+--      and makes him *a father to the inhabitants of Jerusalem, and to the house of Yahudah (Judah)*
+--      (22:21). Then the load-bearing word: *And the key of the house of David will I lay upon his
+--      shoulder; so he shall open, and none shall shut; and he shall shut, and none shall open* (22:22).
+--      The risen Messiah takes this exact authority as His own: *These things saith he that is holy, he
+--      that is true, he that hath the key of David, he that openeth, and no man shutteth; and shutteth,
+--      and no man openeth* (Revelation 3:7). Eliakim the faithful steward is the TYPE; the Formed Son is
+--      the antitype who holds true, unshared Davidic authority over the household of faith — the visible
+--      Son drawn from the Formless Father, who opens and shuts the kingdom none can countermand. And the
+--      open/shut authority is entrusted onward as the keys: *I will give unto thee the keys of the kingdom
+--      of heaven... whatsoever thou shalt bind... loosed in heaven* (Matthew 16:19) — the same binding,
+--      loosing, opening, shutting of the household, delegated by the One who holds the key.
+--   ★ A NAIL IN A SURE PLACE (THREAD 2): the faithful steward bears the house's whole weight: *And I will
+--      fasten him as a nail in a sure place; and he shall be for a glorious throne to his father's house.
+--      And they shall hang upon him all the glory of his father's house* (22:23-24). The government rests
+--      on him as on the Child of Isaiah 9:6 — *the government shall be upon his shoulder* (9:6) — the same
+--      shoulder that bears the key (22:22). The type is weighed, not collapsed: v.25 the nail *fastened in
+--      the sure place* is at last *removed, and be cut down, and fall* — the creature-steward has a limit;
+--      Eliakim too is a man whose house-load can break the peg. Only the Son holds the key unremovably,
+--      the sure peg that does not fall.
+--   ★★ LET US EAT AND DRINK (THREAD 3): on the day Yahuah *call[s] to weeping, and to mourning, and to
+--      baldness, and to girding with sackcloth* (22:12), the city does the opposite — *joy and gladness,
+--      slaying oxen, and killing sheep, eating flesh, and drinking wine: let us eat and drink; for to
+--      morrow we shall die* (22:13). Paul lifts that very motto to expose the folly of denying the
+--      resurrection: *if the dead rise not? let us eat and drink; for to morrow we die* (1 Corinthians
+--      15:32). The careless presumption of the valley of vision is the same despair Paul answers with the
+--      risen Messiah — and its verdict here is *Surely this iniquity shall not be purged from you till ye
+--      die* (22:14): conduct-and-judgment within the covenant, the spurned call to mourning.
+--   EXTRAS: weighed Wisdom of Solomon 2:1-9 (the ungodly's "eat-drink-for-life-is-short") as a near
+--      thematic parallel to 22:13, but it is a separate composition, not a quotation of this verse — held
+--      in prose, not forced as a member. No extras warranted on the key, the nail, or the lament.
+--   VERSES WITH NO SEPARATE ADD: v.1-7 (the siege-lament burden — local; victims-not-enemies prose),
+--      v.8-11 (fortifying-without-faith; the Maker not regarded — the chapter's indictment, in prose),
+--      v.14 (the unpardoned presumption — with THREAD 3 prose), v.15-19 (Shebna cast out — the negative
+--      foil in THREAD 1/2 prose), v.20-21 (Eliakim clothed/given the government — with THREAD 1). All
+--      recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★ KEYSTONE): The key of the house of David — Eliakim the type, the Formed Son the antitype
+    ('canon','isaiah',22,22,'canon','revelation',3,7,'free',
+      E'*And to the angel of the church in Philadelphia write; These things saith he that is holy, he that is true, he that hath the key of David, he that openeth, and no man shutteth; and shutteth, and no man openeth* (Revelation 3:7). The risen Messiah takes as His own the very word laid upon faithful Eliakim: *And the key of the house of David will I lay upon his shoulder; so he shall open, and none shall shut; and he shall shut, and none shall open* (Isaiah 22:22). Eliakim the steward is the TYPE; the Formed Son is the antitype who holds the true, unshared Davidic authority over the house — the One *holy* and *true* who opens and shuts the kingdom and none can countermand.'),
+    ('canon','isaiah',22,22,'canon','matthew',16,19,'free',
+      E'*And I will give unto thee the keys of the kingdom of heaven: and whatsoever thou shalt bind on earth shall be bound in heaven: and whatsoever thou shalt loose on earth shall be loosed in heaven* (Matthew 16:19). The open/shut authority laid on the steward''s shoulder — *the key of the house of David... so he shall open, and none shall shut; and he shall shut, and none shall open* (Isaiah 22:22) — is the same binding and loosing entrusted onward: the keys of the household, delegated by the Son who Himself holds the key of David.'),
+
+    -- THREAD 2 (★): A nail in a sure place — the government on the shoulder (Isaiah 9:6)
+    ('canon','isaiah',22,23,'canon','isaiah',9,6,'free',
+      E'*For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, El Gibbor (The mighty God), Avi-ad (The everlasting Father), Sar Shalom (The Prince of Peace)* (Isaiah 9:6). The faithful steward is fastened *as a nail in a sure place* (Isaiah 22:23) to bear the house — the same shoulder that bears *the government* in Isaiah 9:6, and the same shoulder on which the key is laid (22:22). The peg holds the glory of the father''s house as the Son carries the government of the kingdom.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 3 (★★): let us eat and drink — Paul quotes it on the resurrection-deniers
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','isaiah',22,13,'canon','1-corinthians',15,32,'free',
+      E'*If after the manner of men I have fought with beasts at Ephesus, what advantageth it me, if the dead rise not? let us eat and drink; for to morrow we die* (1 Corinthians 15:32). On the day Yahuah called to mourning, the careless city said *let us eat and drink; for to morrow we shall die* (Isaiah 22:13) — and Paul lifts that very motto to expose the despair of denying the resurrection. The presumption of the valley of vision is the same hopelessness the risen Messiah answers; here its verdict is *Surely this iniquity shall not be purged from you till ye die* (Isaiah 22:14).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★ KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-22-the-key-of-the-house-of-david',
+       E'The key of the house of David — Eliakim the type, the Formed Son the antitype',
+       E'The self-glorying steward Shebna, who *hewed thee out a sepulchre here, as he that heweth him out a sepulchre on high* (Isaiah 22:16), is driven from his post: *And I will drive thee from thy station, and from thy state shall he pull thee down* (22:19). In his place Yahuah sets the faithful one: *I will call my servant Eliakim the son of Hilkiah: And I will clothe him with thy robe, and strengthen him with thy girdle, and I will commit thy government into his hand: and he shall be a father to the inhabitants of Jerusalem, and to the house of Yahudah (Judah)* (22:20-21). Then the load-bearing word: *And the key of the house of David will I lay upon his shoulder; so he shall open, and none shall shut; and he shall shut, and none shall open* (22:22). The risen Messiah takes this very authority as His own: *These things saith he that is holy, he that is true, he that hath the key of David, he that openeth, and no man shutteth; and shutteth, and no man openeth* (Revelation 3:7). Eliakim the steward is the TYPE; the Formed Son is the antitype — the visible Son drawn from the Formless Father, who holds the true, unshared Davidic authority over the household of faith, opening and shutting the kingdom where none can countermand. And that open/shut authority is entrusted onward as the keys: *I will give unto thee the keys of the kingdom of heaven: and whatsoever thou shalt bind on earth shall be bound in heaven: and whatsoever thou shalt loose on earth shall be loosed in heaven* (Matthew 16:19) — the same binding and loosing, opening and shutting of the house, delegated by the One who Himself holds the key of David.',
+       sv.verse_id, ev.verse_id, 'free', 26525
+  FROM _s303_isa22_lookup sv, _s303_isa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=22 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=22 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-22-a-nail-in-a-sure-place',
+       E'A nail in a sure place — the glory of the house hung on the shoulder that bears the government',
+       E'The faithful steward is fastened to bear the whole weight of the house: *And I will fasten him as a nail in a sure place; and he shall be for a glorious throne to his father''s house. And they shall hang upon him all the glory of his father''s house, the offspring and the issue, all vessels of small quantity, from the vessels of cups, even to all the vessels of flagons* (Isaiah 22:23-24). The load rests on him as the government rests on the promised Child: *For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder... and his name shall be called Wonderful, Counsellor, El Gibbor (The mighty God), Avi-ad (The everlasting Father), Sar Shalom (The Prince of Peace)* (Isaiah 9:6) — the same shoulder on which the key of David was laid (22:22). The type is weighed, not collapsed into the antitype: *In that day, saith Yahuah Tseva''ot (LORD of hosts), shall the nail that is fastened in the sure place be removed, and be cut down, and fall; and the burden that was upon it shall be cut off* (22:25). Even Eliakim is a man whose house-load can break the peg; the creature-steward has a limit. Only the Son holds the key unremovably — the sure peg that does not fall, the shoulder that bears the government for ever.',
+       sv.verse_id, ev.verse_id, 'free', 26528
+  FROM _s303_isa22_lookup sv, _s303_isa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=22 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=22 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-22-let-us-eat-and-drink-for-to-morrow-we-shall-die',
+       E'Let us eat and drink; for to morrow we shall die — the careless city and the resurrection-deniers',
+       E'On the day Yahuah summoned the city to repentance, it did the opposite: *And in that day did Adonai Yahuah (the Lord GOD) of hosts call to weeping, and to mourning, and to baldness, and to girding with sackcloth: And behold joy and gladness, slaying oxen, and killing sheep, eating flesh, and drinking wine: let us eat and drink; for to morrow we shall die* (Isaiah 22:12-13). Paul lifts that very motto to expose the folly of denying the resurrection: *If after the manner of men I have fought with beasts at Ephesus, what advantageth it me, if the dead rise not? let us eat and drink; for to morrow we die* (1 Corinthians 15:32). The careless presumption of the valley of vision is the same despair Paul answers with the risen Messiah — strip away the resurrection and only the city''s feast on the eve of death remains. And the verdict here is severe: *Surely this iniquity shall not be purged from you till ye die, saith Adonai Yahuah (the Lord GOD) of hosts* (22:14) — conduct and judgment within the covenant, the spurned call to mourning sealed against a people who would not turn.',
+       sv.verse_id, ev.verse_id, 'free', 26531
+  FROM _s303_isa22_lookup sv, _s303_isa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=22 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=22 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★ KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *he that hath the key of David, he that openeth, and no man shutteth; and shutteth, and no man openeth* (Revelation 3:7) — the risen Messiah takes the word laid on Eliakim (Isaiah 22:22) as His own; the steward is the type, the Formed Son the antitype who holds true Davidic authority over the house.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s303_isa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-22-the-key-of-the-house-of-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I will give unto thee the keys of the kingdom of heaven... bound in heaven... loosed in heaven* (Matthew 16:19) — the same open/shut authority of Isaiah 22:22, the binding and loosing of the household delegated by the One who holds the key of David.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s303_isa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=16 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-22-the-key-of-the-house-of-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the government shall be upon his shoulder* (Isaiah 9:6) — the sure peg bearing *all the glory of his father''s house* (Isaiah 22:23-24) rests on the same shoulder that carries the government and on which the key was laid (22:22); the type weighed, v.25 the removed nail marking the steward''s creaturely limit.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=22 AND sv.verse_number=23
+  JOIN _s303_isa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=9 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-22-a-nail-in-a-sure-place'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *if the dead rise not? let us eat and drink; for to morrow we die* (1 Corinthians 15:32) — Paul quotes the careless city''s motto of Isaiah 22:13 against the resurrection-deniers; strip the resurrection and only the feast on the eve of death remains.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=22 AND sv.verse_number=13
+  JOIN _s303_isa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-22-let-us-eat-and-drink-for-to-morrow-we-shall-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session303 — Isaiah cross-references complete.'
