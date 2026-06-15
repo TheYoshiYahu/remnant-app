@@ -5918,6 +5918,1829 @@ SELECT t.id, cr.id, 8, E'★ *hereby we do know that we know him, if we keep his
  WHERE t.slug='isaiah-66-from-one-sabbath-to-another-shall-all-flesh-come-to-worship'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_isaiah_42.sql (Isaiah 42) -----
+-- Chapter: Isaiah 42 — THE FIRST SERVANT SONG. *Behold my servant, whom I uphold; mine elect, in
+-- whom my soul delighteth; I have put my spirit upon him... a bruised reed shall he not break...
+-- he shall bring forth judgment unto truth* (42:1-4). Matthew quotes it verbatim of Yahusha — the
+-- longest OT quotation in Matthew (Matthew 12:18-21). The Servant = the Formed Son, Spirit-endued
+-- BY the Father (Christology: Formed, not co-equal), gentle to the bruised, bringing forth mishpat /
+-- Torah-justice to the nations; *the isles shall wait for his law* (42:4) — the nations awaiting his
+-- TORAH, NOT Torah abolished but the Servant establishing it (Isaiah 2:3 lateral). The Father's voice
+-- at the baptism echoes 42:1 (*This is my beloved Son, in whom I am well pleased*, Matthew 3:17). The
+-- Servant is given *for a covenant of the people, for a light of the Gentiles* (42:6-7 -> Luke 2:32
+-- Simeon; Acts 26:18,23 Paul's commission; Isaiah 49:6 / 61:1 lateral) — two-house + nations, NOT
+-- replacement (Romans 11 guard). *I am Yahuah: that is my name... my glory will I not give to another*
+-- (42:8 -> Exodus 20:3-5; Isaiah 48:11). *Sing unto Yahuah a new song* (42:9-12 -> Revelation 5:9;
+-- Psalm 96:1 / 98:1). Yahuah goes forth *as a man of war* yet *I will bring the blind by a way they
+-- knew not* (42:13-17 -> Revelation 19:11-15 the warrior; Isaiah 49:10 the tender Shepherd-leading).
+-- And the chapter closes with the SECOND servant — the blind, deaf servant-NATION (Israel) contrasted
+-- with the faithful Servant: *Who is blind, but my servant?* (42:18-25); the exile is *because they
+-- would not walk in his ways, neither were they obedient unto his law* (42:24 -> Deuteronomy 28:15;
+-- Nehemiah 9:26) — the curse is Torah-breaking, NOT the Torah's fault; victims-not-enemies; the blind
+-- servant-nation still to be redeemed by the first Servant (Romans 11:11). TWO servants in one chapter.
+-- Tag: isa42   Temp view: _s303_isa42_lookup
+-- Sort band: base 27025, step 3 -> threads at 27025, 27028, 27031, 27034, 27037, 27040, 27043 (7 threads)
+-- Source of EVERY row: 'canon','isaiah',42,v
+--
+-- Isaiah 42 coverage:
+--   ★★★ v.1 (Behold my servant, whom I uphold; mine elect... I have put my spirit upon him: he shall
+--          bring forth judgment to the Gentiles)
+--        NT:     ★★★ Matthew 12:18 (Behold my servant, whom I have chosen; my beloved... I will put my
+--                spirit upon him — quoted verbatim) + ★★ Matthew 3:17 (This is my beloved Son, in whom
+--                I am well pleased — the baptism voice echoes 42:1) — THREAD 1
+--        Extras: ★★ 1 Enoch 49:2 (the Elect One standeth before Yahuah of Spirits) + 1 Enoch 48:4 (he
+--                shall be the light of the Gentiles) — THREAD 1 (the Servant = the Elect/Chosen One, Spirit-endued)
+--        Tanakh: woven (Isaiah's own Servant Songs 49/61 carried in THREAD 3)
+--   ★★★ v.2-4 (A bruised reed shall he not break... he shall bring forth judgment unto truth... the
+--          isles shall wait for his law)
+--        NT:     ★★★ Matthew 12:19 (He shall not strive, nor cry) + Matthew 12:20 (A bruised reed shall
+--                he not break... till he send forth judgment unto victory) + Matthew 12:21 (in his name
+--                shall the Gentiles trust) — THREAD 2 (the verbatim quote continues)
+--        Extras: none warranted (the Matthew quotation is the load-bearing fill; no clean extras add)
+--        Tanakh: ★★ Isaiah 2:3 (out of Zion shall go forth the law... he will teach us of his ways) —
+--                THREAD 2 (the isles wait for his LAW = the nations awaiting his Torah, NOT Torah abolished)
+--   ★★ v.5-7 (I Yahuah have called thee in righteousness... give thee for a covenant of the people, for
+--          a light of the Gentiles; To open the blind eyes, to bring out the prisoners)
+--        NT:     ★★ Luke 2:32 (A light to lighten the Gentiles, and the glory of thy people Yashar'el) +
+--                ★★ Acts 26:18 (To open their eyes, and to turn them from darkness to light) + Acts 26:23
+--                (should shew light unto the people, and to the Gentiles) — THREAD 3
+--        Extras: none warranted (the light-to-nations Elect One is in THREAD 1 via 1 Enoch 48:4)
+--        Tanakh: ★★ Isaiah 49:6 (I will also give thee for a light to the Gentiles) + ★ Isaiah 61:1
+--                (to proclaim liberty to the captives, and the opening of the prison) — THREAD 3
+--   ★ v.8 (I am Yahuah: that is my name: and my glory will I not give to another, neither my praise to
+--          graven images)
+--        NT:     none warranted (the jealousy-over-glory is the Tanakh's own Decalogue weave)
+--        Extras: none warranted
+--        Tanakh: ★ Exodus 20:3 (Thou shalt have no other gods before me) + ★ Exodus 20:5 (I... am a
+--                jealous Elohim) + ★ Isaiah 48:11 (I will not give my glory unto another) — THREAD 4
+--   ★ v.9-12 (Sing unto Yahuah a new song... the isles, and the inhabitants thereof... declare his
+--          praise in the islands)
+--        NT:     ★ Revelation 5:9 (And they sung a new song... out of every kindred, and tongue) — THREAD 5
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 96:1 (O sing unto Yahuah a new song) + ★ Psalm 98:1 (O sing unto Yahuah a new
+--                song; for he hath done marvellous things) — THREAD 5
+--   ★★ v.13-17 (Yahuah shall go forth as a mighty man... a man of war... I will bring the blind by a way
+--          that they knew not... I will make darkness light before them)
+--        NT:     ★★ Revelation 19:11 (in righteousness he doth judge and make war) + Revelation 19:15
+--                (out of his mouth goeth a sharp sword, that with it he should smite the nations) — THREAD 6
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 49:10 (he that hath mercy on them shall lead them, even by the springs of
+--                water shall he guide them) — THREAD 6 (the warrior who yet tenderly leads the blind)
+--   ★★ v.18-25 (Who is blind, but my servant?... a people robbed and spoiled... they would not walk in
+--          his ways, neither were they obedient unto his law)
+--        NT:     ★ Romans 11:11 (Have they stumbled that they should fall? Elohim forbid) — THREAD 7
+--                (the blind servant-nation still to be redeemed; the fall not final)
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 28:15 (if thou wilt not hearken... all these curses shall come upon thee)
+--                + ★★ Nehemiah 9:26 (they... cast thy law behind their backs) — THREAD 7 (the exile is for
+--                TORAH-BREAKING, not the Torah's fault; covenant-lawsuit, victims-not-enemies)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-42-behold-my-servant-the-elect-spirit-endued — NT (Matthew 12, Matthew 3) + Extras (1 Enoch 48/49) [extras]
+--      (★★★ the Servant = the Formed Son / Elect One, Spirit-endued BY the Father; Matthew quotes 42:1 verbatim; baptism voice echoes it; 1 Enoch's Elect/Chosen One)
+--   2. isaiah-42-a-bruised-reed-shall-he-not-break — NT (Matthew 12) + Tanakh (Isaiah 2) [free]
+--      (★★★ gentle to the bruised, bringing forth mishpat/Torah-justice to truth/victory; the isles WAIT FOR HIS LAW = the nations awaiting his Torah, not Torah abolished)
+--   3. isaiah-42-a-covenant-of-the-people-a-light-of-the-gentiles — NT (Luke 2, Acts 26) + Tanakh (Isaiah 49, Isaiah 61) [free]
+--      (★★ the Servant given for a covenant of the people + light to the nations; eyes opened, prisoners freed — two-house + nations, not replacement)
+--   4. isaiah-42-my-glory-will-i-not-give-to-another — Tanakh (Exodus 20, Isaiah 48) [free]
+--      (★ the Name and the jealousy over glory/idols; the Decalogue's no-other-gods, no graven images)
+--   5. isaiah-42-sing-unto-yahuah-a-new-song — NT (Revelation 5) + Tanakh (Psalm 96, Psalm 98) [free]
+--      (★ the new song of the redeemed from the end of the earth, the isles and nations praising)
+--   6. isaiah-42-yahuah-shall-go-forth-as-a-man-of-war — NT (Revelation 19) + Tanakh (Isaiah 49) [free]
+--      (★★ the divine warrior who yet tenderly leads the blind by a way they knew not; the man of war + the shepherd by the springs)
+--   7. isaiah-42-who-is-blind-but-my-servant — NT (Romans 11) + Tanakh (Deuteronomy 28, Nehemiah 9) [free]
+--      (★★ the SECOND servant — the blind, deaf servant-nation; the exile is for Torah-breaking, not the Torah's fault; the fall not final, the nation to be redeemed by the first Servant)
+--
+-- Framing notes:
+--   ★★★ BEHOLD MY SERVANT (THREAD 1): *Behold my servant, whom I uphold; mine elect, in whom my soul
+--      delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles* (42:1).
+--      Matthew quotes it verbatim of Yahusha — the longest OT quotation in the gospel: *Behold my
+--      servant, whom I have chosen; my beloved, in whom my soul is well pleased: I will put my spirit
+--      upon him, and he shall shew judgment to the Gentiles* (Matthew 12:18). The Servant is the Formed
+--      Son, ENDUED with the Spirit BY the Father (Christology: Formed, not co-equal — *I have put my
+--      spirit upon him*, the Father acting upon the Son). The Father's own voice at the baptism echoes
+--      42:1: *This is my beloved Son, in whom I am well pleased* (Matthew 3:17). And the restored
+--      library names him the Elect/Chosen One: *the Elect One standeth before Yahuah (God) of Spirits...
+--      And in him dwells the spirit of wisdom* (1 Enoch 49:2-3), *he shall be... the light of the
+--      Gentiles* (1 Enoch 48:4) — *mine elect, in whom my soul delighteth* read in the apocalyptic
+--      witness as the chosen, Spirit-filled One.
+--   ★★★ A BRUISED REED (THREAD 2): *A bruised reed shall he not break, and the smoking flax shall he
+--      not quench: he shall bring forth judgment unto truth* (42:3); *He shall not fail nor be
+--      discouraged, till he have set judgment in the earth: and the isles shall wait for his law* (42:4).
+--      Matthew continues the verbatim quote: *He shall not strive, nor cry* (Matthew 12:19); *A bruised
+--      reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto
+--      victory* (12:20); *And in his name shall the Gentiles trust* (12:21). The gentle Servant brings
+--      forth mishpat — Torah-justice — and *the isles shall wait for his LAW*: the nations awaiting his
+--      Torah, NOT Torah abolished. Isaiah says it plainly elsewhere: *out of Zion shall go forth the
+--      law... and he will teach us of his ways, and we will walk in his paths* (Isaiah 2:3). The Servant
+--      establishes the Torah among the nations; he does not retire it.
+--   ★★ COVENANT OF THE PEOPLE, LIGHT OF THE GENTILES (THREAD 3): *I Yahuah (LORD) have called thee in
+--      righteousness... and give thee for a covenant of the people, for a light of the Gentiles; To open
+--      the blind eyes, to bring out the prisoners from the prison* (42:6-7). Simeon names the infant
+--      Yahusha with this very word: *A light to lighten the Gentiles, and the glory of thy people
+--      Yashar'el (Israel)* (Luke 2:32) — light to the nations AND glory to Israel, both houses, not one
+--      instead of the other. Paul's commission is the Servant's task handed down: *To open their eyes,
+--      and to turn them from darkness to light* (Acts 26:18); the Messiah *should... shew light unto the
+--      people, and to the Gentiles* (Acts 26:23). Isaiah's parallel Servant Song says it again — *I will
+--      also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the
+--      earth* (Isaiah 49:6) — and 61:1 freed the prisoners: *to proclaim liberty to the captives, and
+--      the opening of the prison to them that are bound* (Isaiah 61:1). Two-house plus nations, never replacement (Romans 11 guard).
+--   ★ MY GLORY WILL I NOT GIVE TO ANOTHER (THREAD 4): *I am Yahuah (LORD): that is my name: and my glory
+--      will I not give to another, neither my praise to graven images* (42:8). The Name and the jealousy
+--      over glory are the Decalogue's first words: *Thou shalt have no other gods before me* (Exodus
+--      20:3); *I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)* (Exodus 20:5). And Isaiah
+--      repeats the refrain: *I will not give my glory unto another* (Isaiah 48:11). The glory withheld
+--      from idols is the same glory the Father puts upon his Servant — never shared with graven images.
+--   ★ SING A NEW SONG (THREAD 5): *Sing unto Yahuah (LORD) a new song, and his praise from the end of
+--      the earth... the isles, and the inhabitants thereof* (42:10). The new song is sung in heaven of
+--      the slain Lamb: *And they sung a new song... for thou wast slain, and hast redeemed us to Elohim
+--      (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9) —
+--      the very nations and isles of 42:10-12 redeemed and singing. The Psalms keep the same refrain:
+--      *O sing unto Yahuah (LORD) a new song* (Psalm 96:1); *O sing unto Yahuah (LORD) a new song; for
+--      he hath done marvellous things* (Psalm 98:1).
+--   ★★ YAHUAH SHALL GO FORTH AS A MAN OF WAR (THREAD 6): *Yahuah (LORD) shall go forth as a mighty man,
+--      he shall stir up jealousy like a man of war: he shall cry, yea, roar; he shall prevail against
+--      his enemies* (42:13). This is the rider on the white horse: *in righteousness he doth judge and
+--      make war* (Revelation 19:11); *out of his mouth goeth a sharp sword, that with it he should smite
+--      the nations* (Revelation 19:15). Yet the same Warrior tenderly leads the helpless: *I will bring
+--      the blind by a way that they knew not... I will make darkness light before them* (42:16) — the
+--      Shepherd of Isaiah 49:10: *he that hath mercy on them shall lead them, even by the springs of
+--      water shall he guide them*. The man of war and the gentle Shepherd are one.
+--   ★★ WHO IS BLIND, BUT MY SERVANT (THREAD 7): the chapter turns to the SECOND servant — the blind,
+--      deaf servant-NATION contrasted with the faithful Servant of vv.1-9: *Who is blind, but my
+--      servant? or deaf, as my messenger that I sent?* (42:19); *this is a people robbed and spoiled...
+--      they are for a prey, and none delivereth* (42:22). And the lawsuit names the cause: *Who gave
+--      Jacob for a spoil, and Yashar'el (Israel) to the robbers? did not Yahuah (LORD), he against whom
+--      we have sinned? for they would not walk in his ways, neither were they obedient unto his law*
+--      (42:24). The exile is for TORAH-BREAKING — exactly the Deuteronomy curse: *if thou wilt not
+--      hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his
+--      commandments... all these curses shall come upon thee* (Deuteronomy 28:15); *they... cast thy law
+--      behind their backs, and slew thy prophets* (Nehemiah 9:26). The curse is the covenant-breaking,
+--      never the Torah itself (note 42:21 — *he will magnify the law, and make it honourable*). And the
+--      fall is not final: *Have they stumbled that they should fall? Elohim (God) forbid* (Romans 11:11)
+--      — the blind servant-nation is still to be redeemed by the first Servant; victims, not enemies.
+--   VERSES WITH NO SEPARATE ADD: v.9 (the former and new things — the prophetic preface, woven into the
+--      new-song THREAD 5), v.14-15 (the travailing-woman cry, the wasted mountains — the man-of-war
+--      coming, bound into THREAD 6), v.17 (idolaters turned back ashamed — the answer to the warrior's
+--      going-forth, in THREAD 6), v.18,20,23,25 (the deaf/blind, the seeing-not, the question, the fury
+--      poured out — all the body of the servant-nation lawsuit, bound into THREAD 7). All recorded, none
+--      silently skipped. Extras: weighed 1 Enoch 48-49 (the Elect/Chosen One) — clean verbatim witness,
+--      ADDED to THREAD 1; SKIPPED 1 Enoch 62:5 apparatus per brief; no other extras add warranted.
+
+CREATE TEMP VIEW _s303_isa42_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): Behold my servant — the Elect One, Spirit-endued by the Father
+    ('canon','isaiah',42,1,'canon','matthew',12,18,'free',
+      E'*Behold my servant, whom I have chosen; my beloved, in whom my soul is well pleased: I will put my spirit upon him, and he shall shew judgment to the Gentiles* (Matthew 12:18). Matthew quotes Isaiah 42:1 verbatim — *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles* — the longest Tanakh quotation in the gospel. The Servant is the Formed Son, ENDUED with the Spirit BY the Father; the Father puts his Spirit upon him, the Son does not seize it as a co-equal.'),
+    ('canon','isaiah',42,1,'canon','matthew',3,17,'free',
+      E'*And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased* (Matthew 3:17). The Father''s voice at the baptism echoes the Servant Song word for word: *mine elect, in whom my soul delighteth; I have put my spirit upon him* (Isaiah 42:1) — at that moment *the Spirit of Elohim (God) descending like a dove, and lighting upon him* (Matthew 3:16). The beloved Son delighted in, the Spirit placed upon him: 42:1 fulfilled at the Jordan.'),
+    ('canon','isaiah',42,1,'enoch','1-enoch',49,2,'extras',
+      E'*Because the Elect One standeth before Yahuah (God) of Spirits, And his glory is for ever and ever, And his might unto all generations* (1 Enoch 49:2). *Mine elect, in whom my soul delighteth* (Isaiah 42:1) is named in the restored apocalyptic witness as the Elect One who stands before Yahuah of Spirits — *And in him dwells the spirit of wisdom, And the spirit which gives insight, And the spirit of understanding and of might* (1 Enoch 49:3): the Servant on whom the Father has *put my spirit*.'),
+    ('canon','isaiah',42,1,'enoch','1-enoch',48,4,'extras',
+      E'*He shall be a staff to the righteous whereon to stay themselves and not fall, And he shall be the light of the Gentiles, And the hope of those who are troubled of heart* (1 Enoch 48:4). The Servant who *shall bring forth judgment to the Gentiles* (Isaiah 42:1) is the Elect One named *the light of the Gentiles* — chosen and hidden before the creation of the world (1 Enoch 48:6), the same light-to-the-nations the Servant Songs sing.'),
+
+    -- THREAD 2 (★★★): A bruised reed — judgment unto truth, the isles wait for his law
+    ('canon','isaiah',42,2,'canon','matthew',12,19,'free',
+      E'*He shall not strive, nor cry; neither shall any man hear his voice in the streets* (Matthew 12:19). Matthew quotes Isaiah 42:2 — *He shall not cry, nor lift up, nor cause his voice to be heard in the street*. The Servant brings forth justice without clamour or self-promotion; the gentleness is part of the prophecy, fulfilled in the One who withdrew rather than strive (Matthew 12:15-16).'),
+    ('canon','isaiah',42,3,'canon','matthew',12,20,'free',
+      E'*A bruised reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto victory* (Matthew 12:20). The verbatim continuation of Isaiah 42:3 — *A bruised reed shall he not break, and the smoking flax shall he not quench: he shall bring forth judgment unto truth*. The Servant is gentle to the bruised and the barely-burning, yet he WILL bring forth mishpat — Torah-justice — to its triumph; tenderness and the establishing of judgment together.'),
+    ('canon','isaiah',42,4,'canon','matthew',12,21,'free',
+      E'*And in his name shall the Gentiles trust* (Matthew 12:21). *He shall not fail nor be discouraged, till he have set judgment in the earth: and the isles shall wait for his law* (Isaiah 42:4) — the isles waiting for his law become the Gentiles trusting in his name. The nations are not freed FROM his law; they wait FOR it and trust in him who establishes it in the earth.'),
+    ('canon','isaiah',42,4,'canon','isaiah',2,3,'free',
+      E'*And many people shall go and say, Come ye, and let us go up to the mountain of Yahuah (LORD)... and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). *The isles shall wait for his law* (Isaiah 42:4) is the same hope: the nations awaiting the Torah that goes forth from Zion. The Servant does not abolish the law; he sets it in the earth, and the isles wait for it.'),
+
+    -- THREAD 3 (★★): A covenant of the people, a light of the Gentiles
+    ('canon','isaiah',42,6,'canon','luke',2,32,'free',
+      E'*A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)* (Luke 2:32). Simeon names the infant Yahusha with Isaiah 42:6 — *give thee for a covenant of the people, for a light of the Gentiles*. Light to the nations AND glory to his people Yashar''el: both houses and the nations, the Servant for a covenant of THE PEOPLE and a light to the rest, never one instead of the other.'),
+    ('canon','isaiah',42,7,'canon','acts',26,18,'free',
+      E'*To open their eyes, and to turn them from darkness to light, and from the power of Satan unto Elohim (God), that they may receive forgiveness of sins* (Acts 26:18). The Servant''s task — *To open the blind eyes, to bring out the prisoners from the prison, and them that sit in darkness* (Isaiah 42:7) — is the very commission the risen Messiah gives Paul: eyes opened, the captive turned from darkness to light. The Servant''s work is carried to the nations.'),
+    ('canon','isaiah',42,6,'canon','acts',26,23,'free',
+      E'*That Messiah (Christ) should suffer, and that he should be the first that should rise from the dead, and should shew light unto the people, and to the Gentiles* (Acts 26:23). The Servant given *for a covenant of the people, for a light of the Gentiles* (Isaiah 42:6) is the Messiah who shews *light unto the people, and to the Gentiles* — Paul testifies *none other things than those which the prophets and Moses did say* (Acts 26:22). The light-to-the-nations is the prophets'' own word fulfilled.'),
+    ('canon','isaiah',42,6,'canon','isaiah',49,6,'free',
+      E'*It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth* (Isaiah 49:6). The parallel Servant Song repeats 42:6 — *give thee... for a light of the Gentiles* — and frames it two-house first: the Servant raises up the tribes of Jacob and restores Yashar''el, AND is light to the nations. Restoration of the houses and light to the Gentiles in one calling.'),
+    ('canon','isaiah',42,7,'canon','isaiah',61,1,'free',
+      E'*The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me... to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1). The Servant who comes *To open the blind eyes, to bring out the prisoners from the prison* (Isaiah 42:7) is the Anointed One of 61:1 — the Spirit upon him (as in 42:1), the prisoners freed, the prison opened. The same Spirit-endued liberator.'),
+
+    -- THREAD 4 (★): My glory will I not give to another (the Name, the jealousy over idols)
+    ('canon','isaiah',42,8,'canon','exodus',20,3,'free',
+      E'*Thou shalt have no other gods before me* (Exodus 20:3). *I am Yahuah (LORD): that is my name: and my glory will I not give to another, neither my praise to graven images* (Isaiah 42:8) — the glory withheld from idols is the Decalogue''s first word. The Name that will not share his glory is the same Yahuah who, having brought Yashar''el out of Egypt, forbids any other gods before him.'),
+    ('canon','isaiah',42,8,'canon','exodus',20,5,'free',
+      E'*Thou shalt not bow down thyself to them, nor serve them: for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)* (Exodus 20:5). *My praise to graven images* withheld (Isaiah 42:8) is the jealousy of the Decalogue: the jealous Elohim who *will not give... my glory unto another* tolerates no bowing to molten or graven images. The same jealousy that stirs *like a man of war* against idolaters in 42:13,17.'),
+    ('canon','isaiah',42,8,'canon','isaiah',48,11,'free',
+      E'*For mine own sake, even for mine own sake, will I do it: for how should my name be polluted? and I will not give my glory unto another* (Isaiah 48:11). Isaiah repeats the refrain word for word — *my glory will I not give to another* (42:8) — guarding the Name from pollution. The glory the Father keeps from idols is the glory he places upon his Servant; it is never surrendered to graven images.'),
+
+    -- THREAD 5 (★): Sing unto Yahuah a new song (the redeemed of the nations and isles)
+    ('canon','isaiah',42,10,'canon','revelation',5,9,'free',
+      E'*And they sung a new song, saying, Thou art worthy to take the book... for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9). *Sing unto Yahuah (LORD) a new song, and his praise from the end of the earth... the isles, and the inhabitants thereof* (Isaiah 42:10) is fulfilled in the new song of the redeemed — every kindred and tongue, the nations and isles of 42:10-12 gathered to praise the slain Lamb.'),
+    ('canon','isaiah',42,10,'canon','psalms',96,1,'free',
+      E'*O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the earth* (Psalm 96:1). The same call as Isaiah 42:10 — *Sing unto Yahuah (LORD) a new song... from the end of the earth*. The new song is sung by all the earth, the nations declaring his glory; the Psalter and the prophet sing the one summons to the peoples.'),
+    ('canon','isaiah',42,10,'canon','psalms',98,1,'free',
+      E'*O sing unto Yahuah (LORD) a new song; for he hath done marvellous things: his right hand, and his holy arm, hath gotten him the victory* (Psalm 98:1). *Sing unto Yahuah (LORD) a new song* (Isaiah 42:10) — the new song of the marvellous salvation, *made known... in the sight of the heathen* (Psalm 98:2), the same isles and nations of 42:10-12 called to give glory unto Yahuah.'),
+
+    -- THREAD 6 (★★): Yahuah shall go forth as a man of war / yet leads the blind
+    ('canon','isaiah',42,13,'canon','revelation',19,11,'free',
+      E'*And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war* (Revelation 19:11). *Yahuah (LORD) shall go forth as a mighty man, he shall stir up jealousy like a man of war... he shall prevail against his enemies* (Isaiah 42:13) — the man of war is the rider on the white horse who *in righteousness... doth judge and make war*. The Formed Son, the Word of Elohim (Revelation 19:13), goes forth to prevail.'),
+    ('canon','isaiah',42,13,'canon','revelation',19,15,'free',
+      E'*And out of his mouth goeth a sharp sword, that with it he should smite the nations... and he treadeth the winepress of the fierceness and wrath of El Shaddai (Almighty God)* (Revelation 19:15). The man of war who *shall cry, yea, roar; he shall prevail against his enemies* (Isaiah 42:13) smites the nations with the sword of his mouth and treads the winepress; the divine Warrior of 42:13-15 going forth at last.'),
+    ('canon','isaiah',42,16,'canon','isaiah',49,10,'free',
+      E'*They shall not hunger nor thirst; neither shall the heat nor sun smite them: for he that hath mercy on them shall lead them, even by the springs of water shall he guide them* (Isaiah 49:10). The same Warrior who goes forth as a man of war tenderly leads the helpless: *I will bring the blind by a way that they knew not; I will lead them in paths that they have not known... and not forsake them* (Isaiah 42:16). The man of war and the Shepherd who guides by the springs are one.'),
+
+    -- THREAD 7 (★★): Who is blind, but my servant? (the blind servant-nation; exile for Torah-breaking)
+    ('canon','isaiah',42,24,'canon','deuteronomy',28,15,'free',
+      E'*But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes which I command thee this day; that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15). The spoiling of Jacob is named: *they would not walk in his ways, neither were they obedient unto his law* (Isaiah 42:24). The exile is the Deuteronomy 28 curse for covenant-breaking — the consequence of NOT keeping the Torah, never the Torah''s fault.'),
+    ('canon','isaiah',42,24,'canon','nehemiah',9,26,'free',
+      E'*Nevertheless they were disobedient, and rebelled against thee, and cast thy law behind their backs, and slew thy prophets which testified against them to turn them to thee* (Nehemiah 9:26). *They would not walk in his ways, neither were they obedient unto his law* (Isaiah 42:24) — they *cast thy law behind their backs*, and so were given for a spoil. The covenant-lawsuit names the sin as Torah-breaking; the people robbed and spoiled are the chastened, not the abandoned.'),
+    ('canon','isaiah',42,22,'canon','romans',11,11,'free',
+      E'*I say then, Have they stumbled that they should fall? Elohim (God) forbid: but rather through their fall salvation is come unto the Gentiles, for to provoke them to jealousy* (Romans 11:11). *This is a people robbed and spoiled... they are for a prey, and none delivereth* (Isaiah 42:22) — the blind servant-nation is chastened, but the stumble is not a final fall. The blind servant of 42:18-25 is still to be redeemed by the faithful Servant of 42:1-9; victims under discipline, not enemies cast off.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-42-behold-my-servant-the-elect-spirit-endued',
+       E'Behold my servant, mine elect — the Spirit-endued Servant, the Chosen One',
+       E'The first Servant Song opens with the Father presenting his Servant: *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles* (Isaiah 42:1). Matthew quotes it VERBATIM of Yahusha — the longest Tanakh quotation in his gospel: *Behold my servant, whom I have chosen; my beloved, in whom my soul is well pleased: I will put my spirit upon him, and he shall shew judgment to the Gentiles* (Matthew 12:18). Read the Christology carefully: the Servant is the Formed Son, ENDUED with the Spirit BY the Father — *I have put my spirit upon him* — the Father acting upon the Son, not a co-equal seizing his own glory. The Father''s own voice at the Jordan echoes the Song: *And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased* (Matthew 3:17), with *the Spirit of Elohim (God) descending like a dove, and lighting upon him* (Matthew 3:16) — *mine elect, in whom my soul delighteth; I have put my spirit upon him* fulfilled at the baptism. And the restored apocalyptic witness names him the Elect/Chosen One: *Because the Elect One standeth before Yahuah (God) of Spirits... And in him dwells the spirit of wisdom, And the spirit which gives insight, And the spirit of understanding and of might* (1 Enoch 49:2-3); *he shall be... the light of the Gentiles, And the hope of those who are troubled of heart* (1 Enoch 48:4), *chosen and hidden before Him, Before the creation of the world* (48:6). The elect Servant on whom the Father puts his Spirit, the Chosen One who brings judgment to the nations.',
+       sv.verse_id, ev.verse_id, 'extras', 27025
+  FROM _s303_isa42_lookup sv, _s303_isa42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=42 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-42-a-bruised-reed-shall-he-not-break',
+       E'A bruised reed shall he not break — judgment unto truth, the isles wait for his law',
+       E'The Servant''s manner and mission unfold: *He shall not cry, nor lift up, nor cause his voice to be heard in the street. A bruised reed shall he not break, and the smoking flax shall he not quench: he shall bring forth judgment unto truth* (Isaiah 42:2-3); *He shall not fail nor be discouraged, till he have set judgment in the earth: and the isles shall wait for his law* (42:4). Matthew continues the verbatim quotation: *He shall not strive, nor cry; neither shall any man hear his voice in the streets* (Matthew 12:19); *A bruised reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto victory* (12:20); *And in his name shall the Gentiles trust* (12:21). The Servant is gentle to the bruised and the barely-burning — he will not snap the cracked reed nor snuff the dying wick — yet he WILL bring forth mishpat, Torah-justice, to its truth and triumph. And mark the close: *the isles shall wait for his law*. The nations are not freed FROM his law; they WAIT FOR it. Isaiah says it plainly elsewhere: *out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem... and he will teach us of his ways, and we will walk in his paths* (Isaiah 2:3). The Servant establishes the Torah in the earth and the isles long for it; the Gentiles trusting in his name are the isles waiting for his law.',
+       sv.verse_id, ev.verse_id, 'free', 27028
+  FROM _s303_isa42_lookup sv, _s303_isa42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=42 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-42-a-covenant-of-the-people-a-light-of-the-gentiles',
+       E'A covenant of the people, a light of the Gentiles — eyes opened, prisoners freed',
+       E'The Creator who *giveth breath unto the people* (Isaiah 42:5) calls and commissions the Servant: *I Yahuah (LORD) have called thee in righteousness, and will hold thine hand, and will keep thee, and give thee for a covenant of the people, for a light of the Gentiles; To open the blind eyes, to bring out the prisoners from the prison, and them that sit in darkness out of the prison house* (42:6-7). Simeon, holding the infant Yahusha, names him with this very word: *A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)* (Luke 2:32) — light to the nations AND glory to Israel, both held together, never one instead of the other. The Servant''s task is handed to Paul as his commission: *To open their eyes, and to turn them from darkness to light, and from the power of Satan unto Elohim (God)* (Acts 26:18); and Paul testifies the Messiah *should... shew light unto the people, and to the Gentiles* (Acts 26:23), *saying none other things than those which the prophets and Moses did say should come* (26:22). Isaiah''s parallel Servant Song frames it two-house first: *It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles* (Isaiah 49:6) — restoration of the houses AND light to the nations in one calling. And the prison opened is the Anointed''s work: *to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1). The covenant of the people and the light of the Gentiles together — two-house plus the nations, never replacement (Romans 11 guard).',
+       sv.verse_id, ev.verse_id, 'free', 27031
+  FROM _s303_isa42_lookup sv, _s303_isa42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=42 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-42-my-glory-will-i-not-give-to-another',
+       E'My glory will I not give to another — the Name, the jealousy over graven images',
+       E'In the midst of the Servant Song the Father guards his Name and his glory: *I am Yahuah (LORD): that is my name: and my glory will I not give to another, neither my praise to graven images* (Isaiah 42:8). This is the jealousy of the Decalogue''s first words: *Thou shalt have no other gods before me* (Exodus 20:3); *Thou shalt not bow down thyself to them, nor serve them: for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)* (Exodus 20:5). The glory withheld from idols is the same refrain Isaiah sounds elsewhere: *For mine own sake, even for mine own sake, will I do it: for how should my name be polluted? and I will not give my glory unto another* (Isaiah 48:11). The Name that shares no glory with graven images is the very Yahuah who, later in this chapter, goes forth *as a man of war* (42:13) so that *they shall be turned back, they shall be greatly ashamed, that trust in graven images* (42:17). The jealousy over the glory and the war on the idols are one — and the glory the Father keeps from idols is the glory he places upon his Servant.',
+       sv.verse_id, ev.verse_id, 'free', 27034
+  FROM _s303_isa42_lookup sv, _s303_isa42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=42 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-42-sing-unto-yahuah-a-new-song',
+       E'Sing unto Yahuah a new song — the redeemed of the nations and the isles',
+       E'The Servant''s work breaks into song from the ends of the earth: *Sing unto Yahuah (LORD) a new song, and his praise from the end of the earth, ye that go down to the sea, and all that is therein; the isles, and the inhabitants thereof* (Isaiah 42:10); *Let them give glory unto Yahuah (LORD), and declare his praise in the islands* (42:12). This new song is sung in heaven of the slain Lamb: *And they sung a new song, saying, Thou art worthy to take the book... for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9) — the very nations and isles of 42:10-12 redeemed and singing. The Psalter sounds the same summons: *O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the earth* (Psalm 96:1); *O sing unto Yahuah (LORD) a new song; for he hath done marvellous things: his right hand, and his holy arm, hath gotten him the victory* (Psalm 98:1), the salvation *made known... in the sight of the heathen* (98:2). The new song is the song of redeemed Israel and the gathered nations together, praise from the end of the earth.',
+       sv.verse_id, ev.verse_id, 'free', 27037
+  FROM _s303_isa42_lookup sv, _s303_isa42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=42 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-42-yahuah-shall-go-forth-as-a-man-of-war',
+       E'Yahuah shall go forth as a man of war — yet he leads the blind by a way they knew not',
+       E'After long silence the divine Warrior goes forth: *Yahuah (LORD) shall go forth as a mighty man, he shall stir up jealousy like a man of war: he shall cry, yea, roar; he shall prevail against his enemies. I have long time holden my peace; I have been still, and refrained myself: now will I cry like a travailing woman; I will destroy and devour at once* (Isaiah 42:13-14). This is the rider on the white horse: *and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war* (Revelation 19:11); *and out of his mouth goeth a sharp sword, that with it he should smite the nations... and he treadeth the winepress of the fierceness and wrath of El Shaddai (Almighty God)* (Revelation 19:15). Yet the same Warrior who lays waste the mountains turns and tenderly leads the helpless: *And I will bring the blind by a way that they knew not; I will lead them in paths that they have not known: I will make darkness light before them, and crooked things straight. These things will I do unto them, and not forsake them* (Isaiah 42:16). It is the Shepherd of the parallel Song: *he that hath mercy on them shall lead them, even by the springs of water shall he guide them* (Isaiah 49:10). The man of war against the idolaters — *they shall be greatly ashamed, that trust in graven images* (42:17) — and the gentle Guide of the blind are one and the same.',
+       sv.verse_id, ev.verse_id, 'free', 27040
+  FROM _s303_isa42_lookup sv, _s303_isa42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=42 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-42-who-is-blind-but-my-servant',
+       E'Who is blind, but my servant? — the blind servant-nation, the exile for Torah-breaking',
+       E'The chapter turns from the faithful Servant of verses 1-9 to a SECOND servant — the blind, deaf servant-NATION, Yashar''el itself: *Hear, ye deaf; and look, ye blind, that ye may see. Who is blind, but my servant? or deaf, as my messenger that I sent? who is blind as he that is perfect, and blind as the Yahuah (LORD)''S servant?* (Isaiah 42:18-19). This people *robbed and spoiled... snared in holes... hid in prison houses... for a prey, and none delivereth* (42:22) — the very prisoners the first Servant was sent to free (42:7). And the lawsuit names the cause without flinching: *Who gave Jacob for a spoil, and Yashar''el (Israel) to the robbers? did not Yahuah (LORD), he against whom we have sinned? for they would not walk in his ways, neither were they obedient unto his law* (42:24). The exile is the Deuteronomy curse for covenant-breaking: *if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments... all these curses shall come upon thee* (Deuteronomy 28:15); *they... cast thy law behind their backs, and slew thy prophets which testified against them* (Nehemiah 9:26). Mark the crucial frame: the curse is for NOT keeping the Torah, never the Torah''s fault — for in the same breath *Yahuah (LORD) is well pleased for his righteousness'' sake; he will magnify the law, and make it honourable* (42:21). The law is magnified; the people are chastened for casting it behind their backs. And the fall is not final: *Have they stumbled that they should fall? Elohim (God) forbid* (Romans 11:11). The blind servant-nation of 42:18-25 is still to be redeemed by the faithful Servant of 42:1-9 — two servants in one chapter, the One sent to open the blind eyes of the other. Victims under discipline, not enemies cast off.',
+       sv.verse_id, ev.verse_id, 'free', 27043
+  FROM _s303_isa42_lookup sv, _s303_isa42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=42 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Behold my servant, whom I have chosen; my beloved... I will put my spirit upon him* (Matthew 12:18) — Matthew quotes Isaiah 42:1 verbatim; the Formed Son endued with the Spirit by the Father.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=1
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-behold-my-servant-the-elect-spirit-endued'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *This is my beloved Son, in whom I am well pleased* (Matthew 3:17) — the baptism voice echoes *mine elect, in whom my soul delighteth; I have put my spirit upon him* (Isaiah 42:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=1
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-behold-my-servant-the-elect-spirit-endued'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the Elect One standeth before Yahuah (God) of Spirits... in him dwells the spirit of wisdom... understanding and of might* (1 Enoch 49:2-3) — *mine elect... I have put my spirit upon him* (Isaiah 42:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=1
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=49 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-behold-my-servant-the-elect-spirit-endued'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*he shall be... the light of the Gentiles, And the hope of those who are troubled of heart* (1 Enoch 48:4) — the Elect One who *shall bring forth judgment to the Gentiles* (Isaiah 42:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=1
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-behold-my-servant-the-elect-spirit-endued'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *He shall not strive, nor cry; neither shall any man hear his voice in the streets* (Matthew 12:19) — quotes Isaiah 42:2; justice brought forth without clamour.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=2
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-a-bruised-reed-shall-he-not-break'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *A bruised reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto victory* (Matthew 12:20) — quotes Isaiah 42:3; gentle to the bruised, yet mishpat to its triumph.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=3
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-a-bruised-reed-shall-he-not-break'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *And in his name shall the Gentiles trust* (Matthew 12:21) — *the isles shall wait for his law* (Isaiah 42:4); the nations wait FOR his law, trusting his name.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=4
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-a-bruised-reed-shall-he-not-break'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *out of Zion shall go forth the law... and we will walk in his paths* (Isaiah 2:3) — *the isles shall wait for his law* (Isaiah 42:4); the nations await the Torah, NOT Torah abolished.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=4
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-a-bruised-reed-shall-he-not-break'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)* (Luke 2:32) — Simeon names the Servant of Isaiah 42:6; light to nations AND glory to Israel.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=6
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-a-covenant-of-the-people-a-light-of-the-gentiles'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *To open their eyes, and to turn them from darkness to light* (Acts 26:18) — *To open the blind eyes, to bring out the prisoners* (Isaiah 42:7); the Servant''s task as Paul''s commission.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=7
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-a-covenant-of-the-people-a-light-of-the-gentiles'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *should shew light unto the people, and to the Gentiles* (Acts 26:23) — the Servant *for a light of the Gentiles* (Isaiah 42:6); Paul says it is the prophets'' and Moses'' own word.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=6
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-a-covenant-of-the-people-a-light-of-the-gentiles'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles* (Isaiah 49:6) — the parallel Song: two-house first, then the nations.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=6
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-a-covenant-of-the-people-a-light-of-the-gentiles'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1) — the Anointed who frees the prisoners of Isaiah 42:7; the Spirit upon him as in 42:1.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=7
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-a-covenant-of-the-people-a-light-of-the-gentiles'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Thou shalt have no other gods before me* (Exodus 20:3) — *my glory will I not give to another, neither my praise to graven images* (Isaiah 42:8); the Decalogue''s first word.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=8
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-my-glory-will-i-not-give-to-another'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)* (Exodus 20:5) — the jealousy behind *my praise to graven images* withheld (Isaiah 42:8); no bowing to images.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=8
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-my-glory-will-i-not-give-to-another'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will not give my glory unto another* (Isaiah 48:11) — the same refrain word for word as Isaiah 42:8; the Name guarded from pollution.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=8
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=48 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-my-glory-will-i-not-give-to-another'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *And they sung a new song... hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue* (Revelation 5:9) — *Sing unto Yahuah a new song... the isles* (Isaiah 42:10); the nations redeemed and singing.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=10
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-sing-unto-yahuah-a-new-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the earth* (Psalm 96:1) — the same call as Isaiah 42:10; all the earth declaring his glory.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=10
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=96 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-sing-unto-yahuah-a-new-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *O sing unto Yahuah (LORD) a new song; for he hath done marvellous things* (Psalm 98:1) — the new song of Isaiah 42:10; the salvation shewn in the sight of the heathen.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=10
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=98 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-sing-unto-yahuah-a-new-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *in righteousness he doth judge and make war* (Revelation 19:11) — *Yahuah shall go forth as a mighty man... like a man of war* (Isaiah 42:13); the rider on the white horse.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=13
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-yahuah-shall-go-forth-as-a-man-of-war'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *out of his mouth goeth a sharp sword, that with it he should smite the nations* (Revelation 19:15) — the man of war who *shall prevail against his enemies* (Isaiah 42:13).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=13
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-yahuah-shall-go-forth-as-a-man-of-war'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he that hath mercy on them shall lead them, even by the springs of water shall he guide them* (Isaiah 49:10) — *I will bring the blind by a way that they knew not* (Isaiah 42:16); the Warrior who tenderly leads.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=16
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-yahuah-shall-go-forth-as-a-man-of-war'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *if thou wilt not hearken... all these curses shall come upon thee* (Deuteronomy 28:15) — *they would not walk in his ways, neither were they obedient unto his law* (Isaiah 42:24); the exile is the Torah-breaking curse.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=24
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-who-is-blind-but-my-servant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *they... cast thy law behind their backs, and slew thy prophets* (Nehemiah 9:26) — *neither were they obedient unto his law* (Isaiah 42:24); the law cast off, the people given for a spoil.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=24
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-who-is-blind-but-my-servant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Have they stumbled that they should fall? Elohim (God) forbid* (Romans 11:11) — the blind servant-nation *robbed and spoiled* (Isaiah 42:22) is chastened, not cast off; still to be redeemed.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=42 AND sv.verse_number=22
+  JOIN _s303_isa42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-42-who-is-blind-but-my-servant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_49.sql (Isaiah 49) -----
+-- Chapter: Isaiah 49 — THE SECOND SERVANT SONG. The Servant speaks: called from the womb, his
+-- mouth made a sharp sword, named *Yashar'el* (49:3) yet SENT to Jacob/Israel (49:5-6) — the one
+-- true faithful Israelite who does for the nation what it could not do for itself: he raises up
+-- the tribes of Jacob, restores the preserved/scattered of Yashar'el, AND is given for a light to
+-- the nations, salvation to the end of the earth (49:6 — Paul & Barnabas quote it verbatim, Acts
+-- 13:47; Simeon, Luke 2:32). The despised Servant is honored by kings (49:7 -> Phil 2:9-10; Isa
+-- 53:3). Given for a covenant of the people in the acceptable time (49:8 -> 2 Cor 6:2; Isa 42:6),
+-- he frees the prisoners and gathers the four-corners ingathering from far, from the north and the
+-- west and the land of Sinim (49:9-13 -> Isa 11:11-12; Matt 8:11/Luke 13:29). Then Zion's despair
+-- is answered with the maternal, unbreakable remembrance: *Can a woman forget her sucking child?...
+-- I have graven thee upon the palms of my hands* (49:14-16 -> Rom 11:1-2, he hath NOT cast away;
+-- the pierced hands). The scattered children are gathered home, nations bringing them as nursing
+-- fathers (49:17-23 -> Isa 60:4; Rom 11 guard), and Yahuah the Redeemer-warrior contends for his
+-- people and delivers the captives from the mighty (49:24-26 -> Luke 11:21-22; Matt 12:29).
+-- Two-house regathering throughout; the nations brought IN, the tribes regathered — NEVER replacement.
+-- Tag: isa49   Temp view: _s303_isa49_lookup
+-- Sort band: base 27200, step 3 -> threads at 27200, 27203, 27206, 27209, 27212, 27215, 27218 (7 threads)
+-- Source of EVERY row: 'canon','isaiah',49,v
+--
+-- Isaiah 49 coverage:
+--   ★★ v.1-3 (Yahuah hath called me from the womb... made my mouth like a sharp sword... Thou art
+--          my servant, O Yashar'el, in whom I will be glorified)
+--        NT:     ★★ Luke 1:31 (conceive in thy womb... call his name Yahusha) + Galatians 1:15 (separated
+--                me from my mother's womb, and called me by his grace — Paul echoes) + Revelation 1:16
+--                (out of his mouth a sharp twoedged sword) + Revelation 19:15 (out of his mouth a sharp
+--                sword to smite the nations) — THREAD 1
+--        Extras: ★ 1 Enoch 48:2-3,6 (that Son of Adam named before the Head of Days... before the
+--                creation of the world — the called/named/hidden one; folded into THREAD 2's light add)
+--        Tanakh: woven (the Servant identity is opened in THREAD 1, gathered to v.5-6 in THREAD 2)
+--   ★★★ v.5-6 (to bring Jacob again to him... It is a light thing that thou shouldest be my servant
+--          to raise up the tribes of Jacob, and to restore the preserved of Yashar'el: I will also
+--          give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of
+--          the earth)
+--        NT:     ★★★ Acts 13:47 (Paul & Barnabas quote v.6 verbatim — I have set thee to be a light of
+--                the Gentiles) + ★★ Luke 2:32 (Simeon — A light to lighten the Gentiles, and the glory
+--                of thy people Yashar'el) — THREAD 2
+--        Extras: ★ 1 Enoch 48:4 (he shall be the light of the Gentiles, and the hope of those who are
+--                troubled of heart — verbatim echo) — THREAD 2
+--        Tanakh: ★★ Isaiah 42:6 (give thee for a covenant of the people, for a light of the Gentiles —
+--                lateral, the first Servant Song) — THREAD 2; ★ Romans 11:1-2 guard woven in THREAD 5
+--   ★ v.7 (to him whom man despiseth, to him whom the nation abhorreth... Kings shall see and arise,
+--          princes also shall worship)
+--        NT:     ★ Philippians 2:9-10 (Elohim hath highly exalted him... that at the name of Yahusha
+--                every knee should bow) — THREAD 3
+--        Extras: none warranted (1 Enoch 48:5-7 worship-of-the-Chosen weighed; held in prose, the
+--                light-of-Gentiles verse 48:4 carries the clean extras add at THREAD 2)
+--        Tanakh: ★ Isaiah 53:3 (He is despised and rejected of men — lateral, the despised Servant) — THREAD 3
+--   ★★ v.8-13 (In an acceptable time have I heard thee... for a covenant of the people... say to the
+--          prisoners, Go forth... these shall come from far... from the north and from the west, and...
+--          from the land of Sinim)
+--        NT:     ★★ 2 Corinthians 6:2 (Paul quotes v.8 — behold, now is the accepted time) + ★ Matthew
+--                8:11 (many shall come from the east and west... with Abraham, Isaac, and Jacob) +
+--                ★ Luke 13:29 (they shall come from the east, and from the west, and from the north,
+--                and from the south) — THREAD 4
+--        Extras: none warranted (the ingathering weave is the prophets' own)
+--        Tanakh: ★★ Isaiah 11:11-12 (recover the remnant the second time... gather the dispersed of
+--                Yahudah from the four corners — the four-corners ingathering) + Isaiah 42:6 (a covenant
+--                of the people — shared with THREAD 2) — THREAD 4
+--   ★★★ v.14-16 (Zion said, Yahuah hath forsaken me... Can a woman forget her sucking child?... I have
+--          graven thee upon the palms of my hands)
+--        NT:     ★★ Romans 11:1 (Hath Elohim cast away his people? Elohim forbid) + ★★ Romans 11:2
+--                (Elohim hath not cast away his people which he foreknew) — THREAD 5
+--        Extras: none warranted
+--        Tanakh: woven (the maternal unforgetting is its own NT-guarded thread; the pierced-hands
+--                framework named in prose)
+--   ★ v.18-23 (thy children... Lift up thine eyes round about... kings shall be thy nursing fathers...
+--          they shall not be ashamed that wait for me)
+--        NT:     none warranted (Romans 11 not-cast-away guard already carried by THREAD 5; held in prose)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 60:4 (Lift up thine eyes round about, and see... thy sons shall come from
+--                far — the scattered children gathered, nations bringing them home) — THREAD 6
+--   ★ v.24-26 (Shall the prey be taken from the mighty?... I will contend with him that contendeth
+--          with thee... I Yahuah am thy Saviour and thy Redeemer, the mighty One of Jacob)
+--        NT:     ★ Luke 11:21-22 (a stronger than the strong man overcomes him and divides his spoils)
+--                + ★ Matthew 12:29 (bind the strong man, then spoil his house) — THREAD 7
+--        Extras: none warranted
+--        Tanakh: woven (the Redeemer-warrior who delivers the captives is the chapter's own close)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-49-called-from-the-womb-my-mouth-a-sharp-sword — NT (Luke 1, Galatians 1, Revelation 1, Revelation 19) [free]
+--      (★★ the Servant called from the womb, mouth made a sharp sword; the Formed Son whose word divides; Paul echoes the prophetic call)
+--   2. isaiah-49-a-light-to-the-gentiles-salvation-to-the-end-of-the-earth — NT (Acts 13, Luke 2) + Extras (1 Enoch 48) + Tanakh (Isaiah 42) [extras]
+--      (★★★ THE two-house keystone — raise the tribes of Jacob + restore the preserved of Yashar'el + light to the nations + salvation to earth's end; quoted verbatim in Acts 13:47)
+--   3. isaiah-49-to-him-whom-man-despiseth-kings-shall-arise — NT (Philippians 2) + Tanakh (Isaiah 53) [free]
+--      (★ the despised, abhorred Servant honored — kings rise and worship; the humbled one highly exalted)
+--   4. isaiah-49-go-forth-the-ingathering-from-the-four-corners — NT (2 Corinthians 6, Matthew 8, Luke 13) + Tanakh (Isaiah 11) [free]
+--      (★★ the acceptable time, the covenant of the people, the prisoners freed, the regathering from far/north/west/Sinim — the four-corners ingathering)
+--   5. isaiah-49-graven-upon-the-palms-of-my-hands-zion-not-forgotten — NT (Romans 11) [free]
+--      (★★★ Yahuah's maternal, unbreakable remembrance of Zion — graven on the palms; he hath NOT cast away his people)
+--   6. isaiah-49-thy-children-gathered-kings-thy-nursing-fathers — Tanakh (Isaiah 60) [free]
+--      (★ the scattered children gathered home, nations bringing them; the two-house regathering, not replacement)
+--   7. isaiah-49-the-redeemer-contends-the-captives-delivered — NT (Luke 11, Matthew 12) [free]
+--      (★ the Redeemer-warrior contends for his people and takes the prey from the mighty; the strong man bound)
+--
+-- Framing notes:
+--   ★★ CALLED FROM THE WOMB (THREAD 1): *Yahuah (LORD) hath called me from the womb; from the bowels
+--      of my mother hath he made mention of my name. And he hath made my mouth like a sharp sword*
+--      (49:1-2). The Servant called and named from the womb is mirrored in *thou shalt conceive in
+--      thy womb... and shalt call his name Yahusha (JESUS)* (Luke 1:31); Paul takes the same call-
+--      language for the prophetic commission — *Elohim (God), who separated me from my mother's womb,
+--      and called me by his grace* (Galatians 1:15). And the mouth made a sharp sword is the Formed
+--      Son whose word divides: *out of his mouth went a sharp twoedged sword* (Revelation 1:16), *out
+--      of his mouth goeth a sharp sword, that with it he should smite the nations* (Revelation 19:15).
+--      Note the Servant is NAMED *Yashar'el* (49:3) yet in v.5-6 is SENT to Jacob/Israel — the one
+--      faithful Israelite, the embodiment-representative who does for the nation what it could not do.
+--   ★★★ A LIGHT TO THE GENTILES (THREAD 2 — the two-house keystone): *It is a light thing that thou
+--      shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of
+--      Yashar'el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my
+--      salvation unto the end of the earth* (49:6). FOUR movements in one verse: raise the tribes of
+--      Jacob + restore the scattered/preserved of Yashar'el + light to the nations + salvation to
+--      earth's end. Paul & Barnabas quote it word for word: *I have set thee to be a light of the
+--      Gentiles, that thou shouldest be for salvation unto the ends of the earth* (Acts 13:47); Simeon
+--      names both pieces: *A light to lighten the Gentiles, and the glory of thy people Yashar'el
+--      (Israel)* (Luke 2:32). The first Servant Song says the same — *give thee for a covenant of the
+--      people, for a light of the Gentiles* (Isaiah 42:6). And the restored library's Elect One bears
+--      the identical title: *he shall be the light of the Gentiles, And the hope of those who are
+--      troubled of heart* (1 Enoch 48:4). Frame hard: the tribes are REGATHERED and the nations
+--      brought IN — never replacement, never the church displacing Israel (Romans 11:1-2 guard).
+--   ★ TO HIM WHOM MAN DESPISETH (THREAD 3): *to him whom man despiseth, to him whom the nation
+--      abhorreth, to a servant of rulers, Kings shall see and arise, princes also shall worship*
+--      (49:7). The despised Servant of the next song already in view — *He is despised and rejected
+--      of men; a man of sorrows* (Isaiah 53:3) — and the reversal Paul sings: *Elohim (God) also hath
+--      highly exalted him, and given him a name which is above every name: That at the name of Yahusha
+--      (Jesus) every knee should bow* (Philippians 2:9-10). The abhorred servant of rulers is the one
+--      before whom kings rise and princes worship.
+--   ★★ GO FORTH — THE INGATHERING (THREAD 4): *In an acceptable time have I heard thee... I will
+--      preserve thee, and give thee for a covenant of the people... That thou mayest say to the
+--      prisoners, Go forth* (49:8-9); *these shall come from far: and, lo, these from the north and
+--      from the west; and these from the land of Sinim* (49:12). Paul lifts the timing verse: *behold,
+--      now is the accepted time; behold, now is the day of salvation* (2 Corinthians 6:2). The
+--      four-corners gathering Isaiah already prophesied — *Yahuah (Lord) shall set his hand again the
+--      second time to recover the remnant of his people... and gather together the dispersed of Yahudah
+--      (Judah) from the four corners of the earth* (Isaiah 11:11-12) — and Yahusha echoes it: *many
+--      shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob*
+--      (Matthew 8:11); *they shall come from the east, and from the west, and from the north, and from
+--      the south* (Luke 13:29). The covenant of the people frees the prisoners and gathers the houses.
+--   ★★★ GRAVEN ON THE PALMS (THREAD 5): *But Zion said, Yahuah (LORD) hath forsaken me, and my Lord
+--      hath forgotten me. Can a woman forget her sucking child... yea, they may forget, yet will I not
+--      forget thee. Behold, I have graven thee upon the palms of my hands* (49:14-16). The maternal,
+--      unbreakable remembrance — and the engraving on the palms reaches toward the pierced hands of
+--      the suffering Servant who bears his people's names. Paul answers Zion's despair directly: *Hath
+--      Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed
+--      of Abraham* (Romans 11:1); *Elohim (God) hath not cast away his people which he foreknew*
+--      (Romans 11:2). The forgetting Zion fears never comes; the names are graven, the walls
+--      continually before him.
+--   ★ THY CHILDREN GATHERED (THREAD 6): *Lift up thine eyes round about, and behold: all these gather
+--      themselves together, and come to thee... kings shall be thy nursing fathers, and their queens
+--      thy nursing mothers... they shall not be ashamed that wait for me* (49:18,23). Isaiah sings the
+--      same regathering later: *Lift up thine eyes round about, and see: all they gather themselves
+--      together, they come to thee: thy sons shall come from far, and thy daughters shall be nursed at
+--      thy side* (Isaiah 60:4). The lost children restored, the nations bringing them home — the
+--      two-house ingathering, never a people replaced.
+--   ★ THE REDEEMER CONTENDS (THREAD 7): *Shall the prey be taken from the mighty?... I will contend
+--      with him that contendeth with thee, and I will save thy children* (49:24-25); *all flesh shall
+--      know that I Yahuah (LORD) am thy Saviour and thy Redeemer, the mighty One of Jacob* (49:26).
+--      The Redeemer-warrior takes the captives from the strong — the very pattern Yahusha names: *when
+--      a stronger than he shall come upon him, and overcome him, he taketh from him all his armour
+--      wherein he trusted, and divideth his spoils* (Luke 11:21-22); *how can one enter into a strong
+--      man's house, and spoil his goods, except he first bind the strong man?* (Matthew 12:29). The
+--      lawful captive is delivered because the mighty One of Jacob contends.
+--   VERSES WITH NO SEPARATE ADD: v.4 (I have laboured in vain... yet my judgment is with Yahuah — the
+--      Servant's lament/vindication, bound into THREAD 1's identity), v.10-11 (they shall not hunger
+--      nor thirst... I will make all my mountains a way — the shepherd-care of the regathered, woven
+--      into THREAD 4), v.13 (Sing, O heavens... Yahuah hath comforted his people — the doxology
+--      closing the ingathering, in THREAD 4), v.17,19-22 (the children make haste, the desolate places
+--      too narrow, who hath begotten me these — the gathering detail of THREAD 6), v.26b (all flesh
+--      shall know... thy Saviour — the close of THREAD 7). All recorded, none silently skipped.
+--      Extras: 1 Enoch 48-49 (the Elect One / Chosen One) weighed across; the clean verbatim witness
+--      is 48:4 (light of the Gentiles) bound at THREAD 2; the worship-of-the-Chosen of 48:5-7 held in
+--      prose. SKIPPED known-bad parses (1 Enoch ch25, 2 Baruch, Testaments XII). No other extras add warranted.
+
+CREATE TEMP VIEW _s303_isa49_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Called from the womb, my mouth a sharp sword (the Servant's call; the Formed Son)
+    ('canon','isaiah',49,1,'canon','luke',1,31,'free',
+      E'*And, behold, thou shalt conceive in thy womb, and bring forth a son, and shalt call his name Yahusha (JESUS)* (Luke 1:31). *Yahuah (LORD) hath called me from the womb; from the bowels of my mother hath he made mention of my name* (Isaiah 49:1) — the Servant called and named from the womb is the one conceived and named at Gabriel''s word, *Yahusha*. The Servant''s name made mention of before birth meets the name given before conception.'),
+    ('canon','isaiah',49,1,'canon','galatians',1,15,'free',
+      E'*But when it pleased Elohim (God), who separated me from my mother''s womb, and called me by his grace* (Galatians 1:15). Paul takes up the Servant''s own call-language — *Yahuah (LORD) hath called me from the womb* (Isaiah 49:1) — for the prophetic commission: separated from the womb, called by grace to bear the light to the nations (the very mission of Isaiah 49:6 that Paul will quote in Acts 13:47). The Servant''s pattern shapes the apostle''s sending.'),
+    ('canon','isaiah',49,2,'canon','revelation',1,16,'free',
+      E'*And he had in his right hand seven stars: and out of his mouth went a sharp twoedged sword: and his countenance was as the sun shineth in his strength* (Revelation 1:16). *And he hath made my mouth like a sharp sword* (Isaiah 49:2) — the Servant''s mouth made a sword is the Formed Son John sees, the sharp twoedged sword proceeding from his mouth; his word itself cuts and divides. The polished shaft hidden in the quiver is loosed as the living word.'),
+    ('canon','isaiah',49,2,'canon','revelation',19,15,'free',
+      E'*And out of his mouth goeth a sharp sword, that with it he should smite the nations: and he shall rule them with a rod of iron* (Revelation 19:15). *He hath made my mouth like a sharp sword... made me a polished shaft; in his quiver hath he hid me* (Isaiah 49:2) — the Servant''s sword-mouth is the rider whose word smites the nations. The hidden shaft, drawn at the appointed hour, is the conquering Word of the Formed Son.'),
+
+    -- THREAD 2 (★★★): A light to the Gentiles, salvation to the end of the earth (the two-house keystone)
+    ('canon','isaiah',49,6,'canon','acts',13,47,'free',
+      E'*For so hath Yahuah (Lord) commanded us, saying, I have set thee to be a light of the Gentiles, that thou shouldest be for salvation unto the ends of the earth* (Acts 13:47). Paul and Barnabas quote Isaiah 49:6 verbatim — *I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth*. The Servant''s fourfold mission — raise the tribes of Jacob, restore the preserved of Yashar''el (Israel), light to the nations, salvation to earth''s end — is carried out: the tribes regathered AND the nations brought in.'),
+    ('canon','isaiah',49,6,'canon','luke',2,32,'free',
+      E'*A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)* (Luke 2:32). Simeon names BOTH halves of Isaiah 49:6 — *a light to the Gentiles* AND the restoration of *the preserved of Yashar''el (Israel)*: the salvation is *A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)*. Not the nations instead of Israel, but the light to the nations and the glory of his people together — the two-house keystone.'),
+    ('canon','isaiah',49,6,'enoch','1-enoch',48,4,'extras',
+      E'*He shall be a staff to the righteous whereon to stay themselves and not fall, And he shall be the light of the Gentiles, And the hope of those who are troubled of heart* (1 Enoch 48:4). The restored library carries the identical title for the Chosen One named before the Head of Days (48:2-3): *the light of the Gentiles* — the very phrase of Isaiah 49:6, *I will also give thee for a light to the Gentiles*. The Servant and the Elect One are one: a light to the nations, the hope of the troubled.'),
+    ('canon','isaiah',49,6,'canon','isaiah',42,6,'free',
+      E'*I Yahuah (LORD) have called thee in righteousness, and will hold thine hand, and will keep thee, and give thee for a covenant of the people, for a light of the Gentiles* (Isaiah 42:6). The first Servant Song says exactly what the second says — *give thee for a covenant of the people, for a light of the Gentiles* (42:6) answering *I will also give thee for a light to the Gentiles* (49:6). The same Servant, the same mission: a covenant for the people and a light to the nations.'),
+
+    -- THREAD 3 (★): To him whom man despiseth, kings shall arise (the despised Servant honored)
+    ('canon','isaiah',49,7,'canon','isaiah',53,3,'free',
+      E'*He is despised and rejected of men; a man of sorrows, and acquainted with grief: and we hid as it were our faces from him; he was despised, and we esteemed him not* (Isaiah 53:3). *To him whom man despiseth, to him whom the nation abhorreth, to a servant of rulers* (Isaiah 49:7) is the same despised Servant the next song unfolds — *despised and rejected of men*. The abhorred one of chapter 49 is the man of sorrows of chapter 53.'),
+    ('canon','isaiah',49,7,'canon','philippians',2,9,'free',
+      E'*Wherefore Elohim (God) also hath highly exalted him, and given him a name which is above every name: That at the name of Yahusha (Jesus) every knee should bow* (Philippians 2:9-10). *To him whom man despiseth... to a servant of rulers, Kings shall see and arise, princes also shall worship* (Isaiah 49:7) is the reversal Paul sings: the despised servant of rulers is *highly exalted*, and before his name every knee bows. The abhorred one is the one kings rise to worship.'),
+
+    -- THREAD 4 (★★): Go forth — the ingathering from the four corners (acceptable time, covenant of the people)
+    ('canon','isaiah',49,8,'canon','2-corinthians',6,2,'free',
+      E'*(For he saith, I have heard thee in a time accepted, and in the day of salvation have I succoured thee: behold, now is the accepted time; behold, now is the day of salvation.)* (2 Corinthians 6:2). Paul quotes Isaiah 49:8 — *In an acceptable time have I heard thee, and in a day of salvation have I helped thee* — and presses it into the present *now*. The Servant given *for a covenant of the people* opens the day of salvation in which the prisoners are told, Go forth.'),
+    ('canon','isaiah',49,12,'canon','isaiah',11,11,'free',
+      E'*And it shall come to pass in that day, that Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people... And he shall... gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:11-12). *Behold, these shall come from far: and, lo, these from the north and from the west; and these from the land of Sinim* (Isaiah 49:12) is that four-corners ingathering — the remnant recovered *the second time*, the outcasts of Yashar''el and the dispersed of Yahudah gathered from every quarter. Both houses brought home.'),
+    ('canon','isaiah',49,12,'canon','matthew',8,11,'free',
+      E'*And I say unto you, That many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob, in the kingdom of heaven* (Matthew 8:11). *These shall come from far... from the north and from the west; and these from the land of Sinim* (Isaiah 49:12) — the gathering from the directions is the very ingathering Yahusha names: *many shall come from the east and west* to sit with the patriarchs. The scattered seed of promise drawn home from afar.'),
+    ('canon','isaiah',49,12,'canon','luke',13,29,'free',
+      E'*And they shall come from the east, and from the west, and from the north, and from the south, and shall sit down in the kingdom of Elohim (God)* (Luke 13:29). The four directions of Isaiah 49:12 — *from far... from the north and from the west... from the land of Sinim* — are Yahusha''s *from the east, and from the west, and from the north, and from the south*: the regathering of the scattered to the kingdom. The covenant-people gathered from the four corners.'),
+
+    -- THREAD 5 (★★★): Graven on the palms of my hands, Zion not forgotten (he hath NOT cast away his people)
+    ('canon','isaiah',49,14,'canon','romans',11,1,'free',
+      E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). *But Zion said, Yahuah (LORD) hath forsaken me, and my Lord hath forgotten me* (Isaiah 49:14) — and Paul answers Zion''s very fear: Elohim has NOT cast away his people. The forsaking Zion dreads is forbidden; the Israelite of the seed of Abraham is proof the calling stands.'),
+    ('canon','isaiah',49,16,'canon','romans',11,2,'free',
+      E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). *Behold, I have graven thee upon the palms of my hands; thy walls are continually before me* (Isaiah 49:16) — the names graven on the palms are the foreknown people who cannot be cast away. *Can a woman forget her sucking child... yet will I not forget thee* (49:15): the maternal, unbreakable remembrance is Paul''s *hath not cast away his people which he foreknew*.'),
+
+    -- THREAD 6 (★): Thy children gathered, kings thy nursing fathers (the two-house regathering)
+    ('canon','isaiah',49,18,'canon','isaiah',60,4,'free',
+      E'*Lift up thine eyes round about, and see: all they gather themselves together, they come to thee: thy sons shall come from far, and thy daughters shall be nursed at thy side* (Isaiah 60:4). *Lift up thine eyes round about, and behold: all these gather themselves together, and come to thee* (Isaiah 49:18) — the identical summons, the lost children restored: sons from far, daughters carried home, kings as nursing fathers (49:22-23). The scattered house regathered, the nations bringing them — restoration, never replacement.'),
+
+    -- THREAD 7 (★): The Redeemer contends, the captives delivered (the strong man bound)
+    ('canon','isaiah',49,24,'canon','luke',11,21,'free',
+      E'*When a strong man armed keepeth his palace, his goods are in peace: But when a stronger than he shall come upon him, and overcome him, he taketh from him all his armour wherein he trusted, and divideth his spoils* (Luke 11:21-22). *Shall the prey be taken from the mighty, or the lawful captive delivered?* (Isaiah 49:24) — yes, for a stronger comes: the Redeemer who *will contend with him that contendeth with thee* (49:25). The prey IS taken from the mighty; the strong man is overcome and his captives freed.'),
+    ('canon','isaiah',49,25,'canon','matthew',12,29,'free',
+      E'*Or else how can one enter into a strong man''s house, and spoil his goods, except he first bind the strong man? and then he will spoil his house* (Matthew 12:29). *Even the captives of the mighty shall be taken away, and the prey of the terrible shall be delivered: for I will contend with him that contendeth with thee* (Isaiah 49:25) — the captives of the mighty are freed because the stronger binds the strong man first. The mighty One of Jacob contends and delivers his children.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-49-called-from-the-womb-my-mouth-a-sharp-sword',
+       E'Called from the womb, my mouth a sharp sword — the Servant''s call',
+       E'The second Servant Song opens with the Servant himself speaking: *Listen, O isles, unto me; and hearken, ye people, from far; Yahuah (LORD) hath called me from the womb; from the bowels of my mother hath he made mention of my name. And he hath made my mouth like a sharp sword; in the shadow of his hand hath he hid me, and made me a polished shaft; in his quiver hath he hid me; And said unto me, Thou art my servant, O Yashar''el (Israel), in whom I will be glorified* (Isaiah 49:1-3). Called and named from the womb, the Servant is the one of whom Gabriel says, *thou shalt conceive in thy womb, and bring forth a son, and shalt call his name Yahusha (JESUS)* (Luke 1:31); and Paul takes the same call-language for his own commission, *Elohim (God), who separated me from my mother''s womb, and called me by his grace* (Galatians 1:15). The mouth made a sharp sword is the Formed Son whose word divides — *out of his mouth went a sharp twoedged sword* (Revelation 1:16); *out of his mouth goeth a sharp sword, that with it he should smite the nations* (Revelation 19:15) — the polished shaft hidden in the quiver, loosed as the living Word. Mark the riddle that the next thread resolves: the Servant is NAMED *Yashar''el* (Israel) in verse 3, yet in verses 5-6 he is SENT to bring Jacob again and restore the preserved of Yashar''el. He is the one faithful Israelite, the embodiment and representative who does for the nation what the nation could not do for itself — and so gathers the rest.',
+       sv.verse_id, ev.verse_id, 'free', 27200
+  FROM _s303_isa49_lookup sv, _s303_isa49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=49 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★) — the two-house keystone (has an extras member -> tier_required extras)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-49-a-light-to-the-gentiles-salvation-to-the-end-of-the-earth',
+       E'A light to the Gentiles, salvation to the end of the earth — the tribes raised, the nations brought in',
+       E'Here is the keystone of the chapter, a single verse with four movements: *And he said, It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth* (Isaiah 49:6). The Servant — distinct from the nation, sent TO it (v.5, *to bring Jacob again to him*) — does four things: raises up the tribes of Jacob, restores the scattered/preserved of Yashar''el, becomes a light to the nations, and carries salvation to earth''s end. Paul and Barnabas quote it word for word as their commission: *For so hath Yahuah (Lord) commanded us, saying, I have set thee to be a light of the Gentiles, that thou shouldest be for salvation unto the ends of the earth* (Acts 13:47). Simeon, holding the infant, names BOTH halves — never the nations instead of Israel: *A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)* (Luke 2:32). The first Servant Song said the same: *give thee for a covenant of the people, for a light of the Gentiles* (Isaiah 42:6). And the restored library carries the identical title for the Chosen One named before the Head of Days: *he shall be... the light of the Gentiles, And the hope of those who are troubled of heart* (1 Enoch 48:4). Read it through the two-house frame: the tribes of Jacob are REGATHERED, the preserved of Yashar''el RESTORED, and the nations brought IN — never the church displacing Israel, never replacement (*Hath Elohim cast away his people? Elohim forbid* — Romans 11:1). The light to the nations and the gathering of the houses are one work of the one Servant.',
+       sv.verse_id, ev.verse_id, 'extras', 27203
+  FROM _s303_isa49_lookup sv, _s303_isa49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=49 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-49-to-him-whom-man-despiseth-kings-shall-arise',
+       E'To him whom man despiseth — kings shall see and arise',
+       E'The Redeemer speaks to a Servant the world has rejected: *Thus saith Yahuah (LORD), the Redeemer of Yashar''el (Israel), and his Holy One, to him whom man despiseth, to him whom the nation abhorreth, to a servant of rulers, Kings shall see and arise, princes also shall worship, because of Yahuah (LORD) that is faithful, and the Holy One of Yashar''el (Israel), and he shall choose thee* (Isaiah 49:7). The despised, abhorred servant of rulers is the very Servant the next song unfolds: *He is despised and rejected of men; a man of sorrows, and acquainted with grief... he was despised, and we esteemed him not* (Isaiah 53:3). And the reversal is the one Paul sings: *Wherefore Elohim (God) also hath highly exalted him, and given him a name which is above every name: That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth* (Philippians 2:9-10). The one whom man despises is the one kings rise to and princes worship — abhorred by the nation, exalted by Yahuah, every knee bowing at last.',
+       sv.verse_id, ev.verse_id, 'free', 27206
+  FROM _s303_isa49_lookup sv, _s303_isa49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=49 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-49-go-forth-the-ingathering-from-the-four-corners',
+       E'Say to the prisoners, Go forth — the ingathering from the four corners',
+       E'The Servant given for a covenant opens the day of salvation and the prison doors: *Thus saith Yahuah (LORD), In an acceptable time have I heard thee, and in a day of salvation have I helped thee: and I will preserve thee, and give thee for a covenant of the people, to establish the earth, to cause to inherit the desolate heritages; That thou mayest say to the prisoners, Go forth; to them that are in darkness, Shew yourselves* (Isaiah 49:8-9). Paul lifts the timing verse and presses it into the present: *behold, now is the accepted time; behold, now is the day of salvation* (2 Corinthians 6:2). Then comes the gathering from every quarter: *Behold, these shall come from far: and, lo, these from the north and from the west; and these from the land of Sinim* (Isaiah 49:12) — the four-corners ingathering Isaiah already prophesied, *Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people... and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:11-12). Yahusha names the same: *many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob, in the kingdom of heaven* (Matthew 8:11); *they shall come from the east, and from the west, and from the north, and from the south, and shall sit down in the kingdom of Elohim (God)* (Luke 13:29). The covenant of the people frees the captives and gathers the scattered houses home; the heavens sing and the earth breaks forth, *for Yahuah (LORD) hath comforted his people* (49:13).',
+       sv.verse_id, ev.verse_id, 'free', 27209
+  FROM _s303_isa49_lookup sv, _s303_isa49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=49 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-49-graven-upon-the-palms-of-my-hands-zion-not-forgotten',
+       E'Graven upon the palms of my hands — Zion is not forgotten, not cast away',
+       E'Zion voices the deepest fear of the scattered house, and Yahuah answers with maternal, unbreakable love: *But Zion said, Yahuah (LORD) hath forsaken me, and my Lord hath forgotten me. Can a woman forget her sucking child, that she should not have compassion on the son of her womb? yea, they may forget, yet will I not forget thee. Behold, I have graven thee upon the palms of my hands; thy walls are continually before me* (Isaiah 49:14-16). Even a nursing mother might forget — yet Yahuah will not; the names are engraved on the very palms of his hands, the walls of the city always before his eyes. (The engraving on the palms reaches toward the pierced hands of the suffering Servant, who bears his people''s names on himself.) Paul answers Zion''s exact fear: *Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1); *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The forsaking Zion dreads never comes. The people graven on the palms are the foreknown people who cannot be cast away — the calling stands, the remembrance unbreakable.',
+       sv.verse_id, ev.verse_id, 'free', 27212
+  FROM _s303_isa49_lookup sv, _s303_isa49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=49 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-49-thy-children-gathered-kings-thy-nursing-fathers',
+       E'Thy children gathered, kings thy nursing fathers — the scattered house brought home',
+       E'The bereaved, captive mother is shown her children streaming home: *Lift up thine eyes round about, and behold: all these gather themselves together, and come to thee. As I live, saith Yahuah (LORD), thou shalt surely clothe thee with them all, as with an ornament... The children which thou shalt have, after thou hast lost the other, shall say again in thine ears, The place is too strait for me* (Isaiah 49:18,20). She marvels: *Who hath begotten me these, seeing I have lost my children... Behold, I was left alone; these, where had they been?* (49:21). And the nations themselves carry them home: *Behold, I will lift up mine hand to the Gentiles... and they shall bring thy sons in their arms, and thy daughters shall be carried upon their shoulders. And kings shall be thy nursing fathers, and their queens thy nursing mothers... they shall not be ashamed that wait for me* (49:22-23). Isaiah sings the same regathering: *Lift up thine eyes round about, and see: all they gather themselves together, they come to thee: thy sons shall come from far, and thy daughters shall be nursed at thy side* (Isaiah 60:4). The lost children of the scattered house are restored, the nations bringing them in their arms — the two-house ingathering, the desolate places now too narrow for the multitude. Restoration, never replacement; the very children once lost, brought home.',
+       sv.verse_id, ev.verse_id, 'free', 27215
+  FROM _s303_isa49_lookup sv, _s303_isa49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=49 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-49-the-redeemer-contends-the-captives-delivered',
+       E'I will contend with him that contendeth with thee — the captives taken from the mighty',
+       E'The chapter closes with the Redeemer as warrior, taking back his people from their captors: *Shall the prey be taken from the mighty, or the lawful captive delivered? But thus saith Yahuah (LORD), Even the captives of the mighty shall be taken away, and the prey of the terrible shall be delivered: for I will contend with him that contendeth with thee, and I will save thy children* (Isaiah 49:24-25). The seemingly impossible — prey wrested from the mighty — is exactly what Yahuah swears to do, and *all flesh shall know that I Yahuah (LORD) am thy Saviour and thy Redeemer, the mighty One of Jacob* (49:26). This is the very pattern Yahusha names: *When a strong man armed keepeth his palace, his goods are in peace: But when a stronger than he shall come upon him, and overcome him, he taketh from him all his armour wherein he trusted, and divideth his spoils* (Luke 11:21-22); *how can one enter into a strong man''s house, and spoil his goods, except he first bind the strong man? and then he will spoil his house* (Matthew 12:29). The captives of the mighty are freed because the Stronger comes and binds the strong man; the mighty One of Jacob contends for his children and delivers them.',
+       sv.verse_id, ev.verse_id, 'free', 27218
+  FROM _s303_isa49_lookup sv, _s303_isa49_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=49 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *thou shalt conceive in thy womb... and shalt call his name Yahusha (JESUS)* (Luke 1:31) — the Servant *called from the womb* and named (Isaiah 49:1) is the one conceived and named at Gabriel''s word.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=1
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-called-from-the-womb-my-mouth-a-sharp-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*who separated me from my mother''s womb, and called me by his grace* (Galatians 1:15) — Paul echoes the Servant''s call (Isaiah 49:1) for his own sending to the nations.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=1
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-called-from-the-womb-my-mouth-a-sharp-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *out of his mouth went a sharp twoedged sword* (Revelation 1:16) — *he hath made my mouth like a sharp sword* (Isaiah 49:2); the Formed Son whose word divides.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=2
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-called-from-the-womb-my-mouth-a-sharp-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*out of his mouth goeth a sharp sword, that with it he should smite the nations* (Revelation 19:15) — the hidden polished shaft (Isaiah 49:2) loosed as the conquering Word.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=2
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-called-from-the-womb-my-mouth-a-sharp-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I have set thee to be a light of the Gentiles, that thou shouldest be for salvation unto the ends of the earth* (Acts 13:47) — Paul & Barnabas quote Isaiah 49:6 verbatim; the tribes raised AND the nations brought in.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=6
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-a-light-to-the-gentiles-salvation-to-the-end-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)* (Luke 2:32) — Simeon names BOTH halves of Isaiah 49:6; never nations instead of Israel.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=6
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-a-light-to-the-gentiles-salvation-to-the-end-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he shall be... the light of the Gentiles, And the hope of those who are troubled of heart* (1 Enoch 48:4) — the Chosen One bears the identical title of Isaiah 49:6; the Servant and the Elect One are one.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=6
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-a-light-to-the-gentiles-salvation-to-the-end-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *give thee for a covenant of the people, for a light of the Gentiles* (Isaiah 42:6) — the first Servant Song says exactly what the second says; the same Servant, the same mission.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=6
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-a-light-to-the-gentiles-salvation-to-the-end-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He is despised and rejected of men; a man of sorrows* (Isaiah 53:3) — the *him whom man despiseth* of Isaiah 49:7 is the man of sorrows the next song unfolds.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=7
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-to-him-whom-man-despiseth-kings-shall-arise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Elohim (God) also hath highly exalted him... that at the name of Yahusha (Jesus) every knee should bow* (Philippians 2:9-10) — the despised servant of rulers (Isaiah 49:7) exalted, kings rising to worship.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=7
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-to-him-whom-man-despiseth-kings-shall-arise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *behold, now is the accepted time; behold, now is the day of salvation* (2 Corinthians 6:2) — Paul quotes Isaiah 49:8; the covenant of the people opens the day of salvation.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=8
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-go-forth-the-ingathering-from-the-four-corners'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *recover the remnant... the second time... gather the dispersed of Yahudah (Judah) from the four corners* (Isaiah 11:11-12) — the *from far... north... west... Sinim* of Isaiah 49:12 is the four-corners ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=12
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-go-forth-the-ingathering-from-the-four-corners'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob* (Matthew 8:11) — the gathering from afar of Isaiah 49:12; the seed of promise drawn home.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=12
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=8 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-go-forth-the-ingathering-from-the-four-corners'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *they shall come from the east, and from the west, and from the north, and from the south* (Luke 13:29) — the four directions of Isaiah 49:12; the scattered gathered to the kingdom.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=12
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=13 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-go-forth-the-ingathering-from-the-four-corners'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Hath Elohim (God) cast away his people? Elohim (God) forbid... I also am an Israelite, of the seed of Abraham* (Romans 11:1) — Paul answers Zion''s fear of being forsaken (Isaiah 49:14) directly.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=14
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-graven-upon-the-palms-of-my-hands-zion-not-forgotten'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2) — the names *graven upon the palms* (Isaiah 49:16), the maternal unforgetting (49:15), are the foreknown people who cannot be cast away.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=16
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-graven-upon-the-palms-of-my-hands-zion-not-forgotten'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Lift up thine eyes round about, and see... thy sons shall come from far, and thy daughters shall be nursed at thy side* (Isaiah 60:4) — the identical summons and regathering of Isaiah 49:18; the lost children restored, never replaced.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=18
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-thy-children-gathered-kings-thy-nursing-fathers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *a stronger than he shall come upon him, and overcome him... and divideth his spoils* (Luke 11:21-22) — *shall the prey be taken from the mighty?* (Isaiah 49:24); yes, the Stronger frees the captives.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=24
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=11 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-the-redeemer-contends-the-captives-delivered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *except he first bind the strong man? and then he will spoil his house* (Matthew 12:29) — *I will contend with him that contendeth with thee* (Isaiah 49:25); the strong man bound, the children saved.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa49_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=49 AND sv.verse_number=25
+  JOIN _s303_isa49_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-49-the-redeemer-contends-the-captives-delivered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_50.sql (Isaiah 50) -----
+-- Chapter: Isaiah 50 — THE THIRD SERVANT SONG. A short chapter (11 verses) in three movements:
+-- (v.1-3) the covenant lawsuit — *Where is the bill of your mother's divorcement, whom I have put
+-- away?... for your iniquities have ye sold yourselves, and for your transgressions is your mother
+-- put away* — the divorce of the house was for THEIR sin, never Yahuah's inability: *Is my hand
+-- shortened at all, that it cannot redeem?* (Jeremiah 3:8 the northern house given a bill of
+-- divorce; Hosea 2:2 the harlot-wife pleaded with; Numbers 11:23 the hand not waxed short; the
+-- two-house separation is judgment-for-sin, REVERSIBLE by the Redeemer, never a final cast-off,
+-- Romans 11 guard held in prose). (v.4-6) the Servant's obedient suffering — *Adonai Yahuah hath
+-- given me the tongue of the learned... he wakeneth morning by morning, he wakeneth mine ear...
+-- I gave my back to the smiters, and my cheeks to them that plucked off the hair: I hid not my
+-- face from shame and spitting* — the scourging and spitting fulfilled in the Passion (Matthew
+-- 26:67 / 27:30; Mark 14:65 / 15:19), the obedient Son who is TAUGHT and TEACHES (Philippians 2:8
+-- obedient unto death; Hebrews 5:8 learned obedience), bound laterally to the suffering Servant of
+-- ch53 and witnessed by Wisdom of Solomon 2:19 (the righteous one examined with torture to prove
+-- his patience) — NOT a sinner suffering but the willing righteous Servant. (v.7-9) the Servant's
+-- vindication — *Adonai Yahuah will help me... I have set my face like a flint... He is near that
+-- justifieth me; who will contend with me?... who is he that shall condemn me?* — Paul echoes it
+-- of the believer in Romans 8:31-34 (the Servant's vindication = the believer's vindication in
+-- him), the set-face-like-flint resolve of Luke 9:51. (v.10-11) the two ways — *Who is among you
+-- that feareth Yahuah, that obeyeth the voice of his servant... let him trust in the name of
+-- Yahuah* vs *all ye that kindle a fire... walk in the light of your fire... ye shall lie down in
+-- sorrow* — trust-and-obey the Servant (John 8:12 the true light; 1 John 2:3 obedience filter;
+-- Proverbs 3:5 trust) vs the self-kindled fire of man's own light that ends in sorrow.
+-- Tag: isa50   Temp view: _s303_isa50_lookup
+-- Sort band: base 27225, step 3 -> threads at 27225, 27228, 27231, 27234 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',50,v
+--
+-- Isaiah 50 coverage:
+--   ★ v.1 (Where is the bill of your mother's divorcement, whom I have put away?... for your
+--          iniquities... is your mother put away)
+--        NT:     none warranted (the divorce-for-sin is named in prose by the Romans 11 guard; no
+--                clean single-verse NT add — Paul's "cast away? Elohim forbid" is anchored on ch54)
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 3:8 (I had put her away, and given her a bill of divorce) + Hosea 2:2
+--                (she is not my wife, neither am I her husband... put away her whoredoms) — THREAD 1
+--   ★ v.2-3 (Is my hand shortened at all, that it cannot redeem?... at my rebuke I dry up the sea)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★★ Numbers 11:23 (Is the LORD'S hand waxed short?) — THREAD 1 (the redeeming hand
+--                not shortened; the same lateral idiom of Yahuah's unfailing power)
+--   ★★★ v.4 (Adonai Yahuah hath given me the tongue of the learned... he wakeneth morning by
+--          morning, he wakeneth mine ear to hear as the learned)
+--        NT:     ★★ Philippians 2:8 (became obedient unto death) + Hebrews 5:8 (learned he
+--                obedience by the things which he suffered) — THREAD 2 (the taught, obedient Servant)
+--        Extras: none warranted
+--        Tanakh: woven (the opened-ear obedience flows into the suffering of v.6; in THREAD 2)
+--   ★★★ v.5-6 (Adonai Yahuah hath opened mine ear, and I was not rebellious... I gave my back to
+--          the smiters, and my cheeks to them that plucked off the hair: I hid not my face from
+--          shame and spitting)
+--        NT:     ★★★ Matthew 26:67 (Then did they spit in his face, and buffeted him) + Matthew
+--                27:30 (they spit upon him... and smote him on the head) + Mark 14:65 (began to
+--                spit on him... and to buffet him) + Mark 15:19 (smote him on the head... and did
+--                spit upon him) — THREAD 2
+--        Extras: ★★ Wisdom of Solomon 2:19 (Let us examine him with despitefulness and torture,
+--                that we may know his meekness, and prove his patience) — THREAD 2 (the righteous
+--                one mocked and tortured; clean verbatim witness; tier extras)
+--        Tanakh: ★★ Isaiah 53:5 (he was wounded for our transgressions... with his stripes we are
+--                healed) — THREAD 2 (the lateral suffering-Servant of the very next song)
+--   ★★ v.7-9 (Adonai Yahuah will help me... I have set my face like a flint... He is near that
+--          justifieth me; who will contend with me?... who is he that shall condemn me?)
+--        NT:     ★★ Romans 8:33 (It is Elohim that justifieth) + Romans 8:34 (Who is he that
+--                condemneth?) + Romans 8:31 (If Elohim be for us, who can be against us?) +
+--                ★ Luke 9:51 (he stedfastly set his face to go to Jerusalem) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: woven (the help-and-vindication flows from the Servant's obedience of THREAD 2)
+--   ★ v.10-11 (Who is among you that feareth Yahuah, that obeyeth the voice of his servant... let
+--          him trust in the name of Yahuah... all ye that kindle a fire... ye shall lie down in sorrow)
+--        NT:     ★ John 8:12 (I am the light of the world... shall not walk in darkness) +
+--                ★ 1 John 2:3 FILTER (we know him, if we keep his commandments) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 3:5 (Trust in Yahuah with all thine heart; lean not unto thine own
+--                understanding) — THREAD 4 (trust the Servant's light vs the self-kindled fire)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-50-the-bill-of-your-mothers-divorcement — Tanakh (Jeremiah 3, Hosea 2, Numbers 11) [free]
+--      (★ the put-away house divorced for THEIR sin, not Yahuah's inability; the redeeming hand not shortened; reversible, not cast off)
+--   2. isaiah-50-i-gave-my-back-to-the-smiters — NT (Matthew 26-27, Mark 14-15, Philippians 2, Hebrews 5) + Extras (Wisdom of Solomon 2) + Tanakh (Isaiah 53) [extras]
+--      (★★★ THE third Servant Song; the taught, obedient Servant who gave his back/cheeks/face to smiting and spitting — fulfilled in the Passion)
+--   3. isaiah-50-i-have-set-my-face-like-a-flint — NT (Romans 8, Luke 9) [free]
+--      (★★ He is near that justifieth me; the Servant's vindication = the believer's in him; set-the-face-like-flint resolve)
+--   4. isaiah-50-the-two-ways-trust-or-the-self-kindled-fire — NT (John 8, 1 John 2) + Tanakh (Proverbs 3) [free]
+--      (★ obey the voice of the Servant and trust Yahuah's light vs the self-kindled fire of man's own sparks that ends in sorrow)
+--
+-- Framing notes:
+--   ★ THE BILL OF DIVORCEMENT (THREAD 1): *Where is the bill of your mother's divorcement, whom I
+--      have put away?... Behold, for your iniquities have ye sold yourselves, and for your
+--      transgressions is your mother put away* (50:1). The divorce of the house was for THEIR sin —
+--      Jeremiah names the same bill given to the northern house: *I had put her away, and given her
+--      a bill of divorce* (Jeremiah 3:8); Hosea pleads with the harlot-wife: *she is not my wife,
+--      neither am I her husband: let her therefore put away her whoredoms* (Hosea 2:2). But the
+--      separation is never Yahuah's inability: *Is my hand shortened at all, that it cannot redeem?*
+--      (50:2) — the same idiom Yahuah gave Moses, *Is the LORD'S hand waxed short?* (Numbers 11:23).
+--      The two-house putting-away is judgment-for-sin, reversible by the Redeemer, NEVER a final
+--      cast-off (Romans 11 guard, held in prose; the restored-wife song of ch54 answers it).
+--   ★★★ I GAVE MY BACK TO THE SMITERS (THREAD 2): the third Servant Song. *Adonai Yahuah (The Lord
+--      GOD) hath given me the tongue of the learned... he wakeneth morning by morning, he wakeneth
+--      mine ear to hear as the learned* (50:4) — the Servant who is TAUGHT and TEACHES, the
+--      opened-ear obedience: *Adonai Yahuah (The Lord GOD) hath opened mine ear, and I was not
+--      rebellious, neither turned away back* (50:5). And the obedience goes to the smiting: *I gave
+--      my back to the smiters, and my cheeks to them that plucked off the hair: I hid not my face
+--      from shame and spitting* (50:6) — fulfilled to the letter in the Passion: *Then did they
+--      spit in his face, and buffeted him* (Matthew 26:67); *they spit upon him... and smote him on
+--      the head* (Matthew 27:30); *some began to spit on him, and to cover his face, and to buffet
+--      him* (Mark 14:65); *they smote him on the head with a reed, and did spit upon him* (Mark
+--      15:19). The willing obedience is the same the NT names: *he humbled himself, and became
+--      obedient unto death* (Philippians 2:8); *though he were a Son, yet learned he obedience by
+--      the things which he suffered* (Hebrews 5:8). The restored library witnesses the righteous one
+--      mocked: *Let us examine him with despitefulness and torture, that we may know his meekness,
+--      and prove his patience* (Wisdom of Solomon 2:19). And the very next song unfolds the same
+--      stripes: *he was wounded for our transgressions... with his stripes we are healed* (Isaiah
+--      53:5). This is no sinner suffering — it is the willing, taught, righteous Servant.
+--   ★★ SET MY FACE LIKE A FLINT (THREAD 3): *For Adonai Yahuah (the Lord GOD) will help me;
+--      therefore... have I set my face like a flint, and I know that I shall not be ashamed. He is
+--      near that justifieth me; who will contend with me?... who is he that shall condemn me?*
+--      (50:7-9). Paul echoes the Servant's vindication and makes it the believer's in him: *If
+--      Elohim (God) be for us, who can be against us?* (Romans 8:31); *Who shall lay any thing to
+--      the charge of Elohim's (God's) elect? It is Elohim (God) that justifieth* (Romans 8:33);
+--      *Who is he that condemneth?* (Romans 8:34) — almost the Servant's own words. The set-face-
+--      like-flint resolve is the same steadfastness: *he stedfastly set his face to go to
+--      Jerusalem* (Luke 9:51). The justifier near is covenant-vindication, not antinomian acquittal.
+--   ★ THE TWO WAYS (THREAD 4): *Who is among you that feareth Yahuah (LORD), that obeyeth the voice
+--      of his servant, that walketh in darkness, and hath no light? let him trust in the name of
+--      Yahuah (LORD), and stay upon his Elohim (God)* (50:10) — versus *Behold, all ye that kindle
+--      a fire, that compass yourselves about with sparks: walk in the light of your fire, and in the
+--      sparks that ye have kindled. This shall ye have of mine hand; ye shall lie down in sorrow*
+--      (50:11). The one way trusts the Servant's light: *I am the light of the world: he that
+--      followeth me shall not walk in darkness, but shall have the light of life* (John 8:12); the
+--      trust is whole-hearted: *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine
+--      own understanding* (Proverbs 3:5). The other way is the self-kindled fire of man's own light,
+--      which ends in sorrow. And to *obey the voice of his servant* is the filter: *hereby we do
+--      know that we know him, if we keep his commandments* (1 John 2:3).
+--   VERSES WITH NO SEPARATE ADD: v.3 (I clothe the heavens with blackness — the second half of the
+--      rebuke-of-the-sea power-display of v.2, bound into THREAD 1). Extras: weighed 1 Enoch on the
+--      Elect/Righteous One suffering (no clean single-verse spitting/smiting witness; the Watcher-
+--      laden ch material avoided) and Wisdom of Solomon 2 (the righteous one mocked) — WisSol 2:19
+--      WARRANTED as a clean verbatim torture/patience witness on THREAD 2; WisSol 2:24 end-marker
+--      avoided. All meaningful verses recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa50_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): The bill of your mother's divorcement — put away for sin, the hand not shortened
+    ('canon','isaiah',50,1,'canon','jeremiah',3,8,'free',
+      E'*And I saw, when for all the causes whereby backsliding Yashar''el (Israel) committed adultery I had put her away, and given her a bill of divorce; yet her treacherous sister Yahudah (Judah) feared not, but went and played the harlot also* (Jeremiah 3:8). *Where is the bill of your mother''s divorcement, whom I have put away?... for your transgressions is your mother put away* (Isaiah 50:1) — the very bill of divorce Jeremiah names, given to the backsliding northern house for HER adultery. The putting-away is judgment for the house''s sin, not Yahuah''s rejection of his people.'),
+    ('canon','isaiah',50,1,'canon','hosea',2,2,'free',
+      E'*Plead with your mother, plead: for she is not my wife, neither am I her husband: let her therefore put away her whoredoms out of her sight, and her adulteries from between her breasts* (Hosea 2:2). The mother *put away* for *your transgressions* (Isaiah 50:1) is Hosea''s harlot-wife — *she is not my wife* — divorced for her whoredoms, yet pleaded with to return. The divorce is for the house''s own sin, and the pleading shows it is meant to be reversed, not final.'),
+    ('canon','isaiah',50,2,'canon','numbers',11,23,'free',
+      E'*And Yahuah (LORD) said unto Moses, Is the LORD''S hand waxed short? thou shalt see now whether my word shall come to pass unto thee or not* (Numbers 11:23). *Is my hand shortened at all, that it cannot redeem? or have I no power to deliver?* (Isaiah 50:2) is the same idiom Yahuah gave Moses — the hand is not waxed short. The house was sold for its iniquities, never because the Redeemer''s hand was too short to deliver; the power to redeem is unfailing.'),
+
+    -- THREAD 2 (★★★): I gave my back to the smiters — the third Servant Song, the obedient suffering
+    ('canon','isaiah',50,6,'canon','matthew',26,67,'free',
+      E'*Then did they spit in his face, and buffeted him; and others smote him with the palms of their hands* (Matthew 26:67). *I gave my back to the smiters, and my cheeks to them that plucked off the hair: I hid not my face from shame and spitting* (Isaiah 50:6) — the Servant''s words fulfilled to the letter: they spit in his face and buffeted him, exactly the shame and spitting the willing Servant did not hide his face from.'),
+    ('canon','isaiah',50,6,'canon','matthew',27,30,'free',
+      E'*And they spit upon him, and took the reed, and smote him on the head* (Matthew 27:30). *I gave my back to the smiters... I hid not my face from shame and spitting* (Isaiah 50:6) — the spitting and the smiting are the Servant Song made flesh, the obedient One who turned not away from the smiters and the spitters.'),
+    ('canon','isaiah',50,6,'canon','mark',14,65,'free',
+      E'*And some began to spit on him, and to cover his face, and to buffet him, and to say unto him, Prophesy: and the servants did strike him with the palms of their hands* (Mark 14:65). The Servant who *gave my back to the smiters... I hid not my face from shame and spitting* (Isaiah 50:6) is the One spat upon and buffeted; the prophecy of the third Servant Song fulfilled in the night of his trial.'),
+    ('canon','isaiah',50,6,'canon','mark',15,19,'free',
+      E'*And they smote him on the head with a reed, and did spit upon him, and bowing their knees worshipped him* (Mark 15:19). *I gave my back to the smiters... I hid not my face from shame and spitting* (Isaiah 50:6) — the smiting on the head and the spitting are the Servant Song''s shame, borne willingly by the obedient Servant who set his face like a flint.'),
+    ('canon','isaiah',50,4,'canon','philippians',2,8,'free',
+      E'*And being found in fashion as a man, he humbled himself, and became obedient unto death, even the death of the cross* (Philippians 2:8). The Servant given *the tongue of the learned* whose *ear* is wakened *morning by morning* (Isaiah 50:4) is the obedient One — *he humbled himself, and became obedient unto death*. The opened, listening ear of the taught Servant is the obedience that goes all the way to the cross.'),
+    ('canon','isaiah',50,5,'canon','hebrews',5,8,'free',
+      E'*Though he were a Son, yet learned he obedience by the things which he suffered* (Hebrews 5:8). *Adonai Yahuah (The Lord GOD) hath opened mine ear, and I was not rebellious, neither turned away back* (Isaiah 50:5) — the Servant''s opened ear and unrebellious obedience is the same: *though he were a Son, yet learned he obedience by the things which he suffered*. The taught Servant learns obedience through the suffering he does not turn back from.'),
+    ('canon','isaiah',50,6,'apocrypha','the-wisdom-of-solomon',2,19,'extras',
+      E'*Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience* (Wisdom of Solomon 2:19). The Servant who *gave my back to the smiters... I hid not my face from shame and spitting* (Isaiah 50:6) is the righteous one the wicked plot to torture — to *prove his patience*. The restored library witnesses the same pattern: the meek, righteous One examined with despite, who does not turn his face away.'),
+    ('canon','isaiah',50,6,'canon','isaiah',53,5,'free',
+      E'*But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed* (Isaiah 53:5). The back *given to the smiters* (Isaiah 50:6) is the back wounded and bruised of the very next Servant Song — *with his stripes we are healed*. The third song''s smiting flows straight into the fourth song''s healing stripes; one suffering Servant across both.'),
+
+    -- THREAD 3 (★★): I have set my face like a flint — He is near that justifieth me
+    ('canon','isaiah',50,8,'canon','romans',8,33,'free',
+      E'*Who shall lay any thing to the charge of Elohim''s (God''s) elect? It is Elohim (God) that justifieth* (Romans 8:33). *He is near that justifieth me; who will contend with me?* (Isaiah 50:8) — the Servant''s vindication becomes the believer''s in him: it is Elohim that justifieth, so no charge against the elect can stand. The justifier is near; the adversary who would contend cannot prevail.'),
+    ('canon','isaiah',50,9,'canon','romans',8,34,'free',
+      E'*Who is he that condemneth? It is Messiah (Christ) that died, yea rather, that is risen again, who is even at the right hand of Elohim (God), who also maketh intercession for us* (Romans 8:34). *Behold, Adonai Yahuah (the Lord GOD) will help me; who is he that shall condemn me?* (Isaiah 50:9) is almost word for word — *who is he that condemneth?* The Servant who could not be condemned is the risen Messiah who makes the elect uncondemnable.'),
+    ('canon','isaiah',50,7,'canon','romans',8,31,'free',
+      E'*What shall we then say to these things? If Elohim (God) be for us, who can be against us?* (Romans 8:31). *For Adonai Yahuah (the Lord GOD) will help me; therefore shall I not be confounded* (Isaiah 50:7) — because Elohim helps the Servant, none can stand against him; Paul makes it the believer''s confidence: *if Elohim be for us, who can be against us?* The help of Yahuah is the ground of the unconfounded face set like a flint.'),
+    ('canon','isaiah',50,7,'canon','luke',9,51,'free',
+      E'*And it came to pass, when the time was come that he should be received up, he stedfastly set his face to go to Jerusalem* (Luke 9:51). *Therefore have I set my face like a flint, and I know that I shall not be ashamed* (Isaiah 50:7) — the Servant''s flint-set face is the same steadfast resolve: he *stedfastly set his face to go to Jerusalem*, to the smiting and the cross, knowing he would not be ashamed.'),
+
+    -- THREAD 4 (★): The two ways — trust the Servant's light vs the self-kindled fire
+    ('canon','isaiah',50,10,'canon','john',8,12,'free',
+      E'*Then spake Yahusha (Jesus) again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life* (John 8:12). *Who is among you that feareth Yahuah (LORD), that obeyeth the voice of his servant, that walketh in darkness, and hath no light? let him trust in the name of Yahuah (LORD)* (Isaiah 50:10) — the one who walks in darkness is told to trust, not to kindle his own fire; the true light is the Servant himself, *I am the light of the world*, and following him is the way out of darkness.'),
+    ('canon','isaiah',50,10,'canon','1-john',2,3,'free',
+      E'*And hereby we do know that we know him, if we keep his commandments* (1 John 2:3). To *obey the voice of his servant* (Isaiah 50:10) is the very filter John names — *we do know that we know him, if we keep his commandments*. The fear of Yahuah and the trust in his name are proven by obedience to the Servant''s voice; faith that does not keep is not the trust commended here.'),
+    ('canon','isaiah',50,11,'canon','proverbs',3,5,'free',
+      E'*Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding* (Proverbs 3:5). *Behold, all ye that kindle a fire, that compass yourselves about with sparks: walk in the light of your fire... ye shall lie down in sorrow* (Isaiah 50:11) — the self-kindled fire is leaning unto one''s own understanding, man''s own light. The way that does not end in sorrow is to *trust in Yahuah with all thine heart*, not to walk in the sparks of one''s own making.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-50-the-bill-of-your-mothers-divorcement',
+       E'Where is the bill of your mother''s divorcement — put away for sin, the hand not shortened',
+       E'The third Servant Song opens with a covenant lawsuit. Yahuah asks where the divorce papers are, and answers his own question: *Thus saith Yahuah (LORD), Where is the bill of your mother''s divorcement, whom I have put away? or which of my creditors is it to whom I have sold you? Behold, for your iniquities have ye sold yourselves, and for your transgressions is your mother put away* (Isaiah 50:1). The putting-away of the house was for THEIR sin — never Yahuah''s rejection. Jeremiah names the same bill, given to the divorced northern house: *I had put her away, and given her a bill of divorce; yet her treacherous sister Yahudah (Judah) feared not, but went and played the harlot also* (Jeremiah 3:8). Hosea pleads with the very same harlot-wife: *she is not my wife, neither am I her husband: let her therefore put away her whoredoms out of her sight, and her adulteries from between her breasts* (Hosea 2:2) — divorced for her sin, yet pleaded with to return. And the separation is never the Redeemer''s inability: *Wherefore, when I came, was there no man?... Is my hand shortened at all, that it cannot redeem? or have I no power to deliver? behold, at my rebuke I dry up the sea* (Isaiah 50:2) — the same idiom Yahuah gave Moses, *Is the LORD''S hand waxed short?* (Numbers 11:23). The house was sold for its own iniquities, by a hand that is in no way too short to redeem. The two-house putting-away is judgment-for-sin, reversible by the Redeemer, NEVER a final casting-off — the restored-wife song that immediately follows (chapter 54) is the answer.',
+       sv.verse_id, ev.verse_id, 'free', 27225
+  FROM _s303_isa50_lookup sv, _s303_isa50_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=50 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-50-i-gave-my-back-to-the-smiters',
+       E'I gave my back to the smiters — the third Servant Song, the obedient suffering',
+       E'The heart of the chapter is the third of Isaiah''s Servant Songs — the taught, obedient Servant who suffers willingly. He is TAUGHT and TEACHES: *Adonai Yahuah (The Lord GOD) hath given me the tongue of the learned, that I should know how to speak a word in season to him that is weary: he wakeneth morning by morning, he wakeneth mine ear to hear as the learned* (Isaiah 50:4). His ear is opened in obedience: *Adonai Yahuah (The Lord GOD) hath opened mine ear, and I was not rebellious, neither turned away back* (50:5). And that obedience goes straight to the smiting: *I gave my back to the smiters, and my cheeks to them that plucked off the hair: I hid not my face from shame and spitting* (50:6). The Gospels fulfill it to the letter: *Then did they spit in his face, and buffeted him* (Matthew 26:67); *they spit upon him, and took the reed, and smote him on the head* (Matthew 27:30); *some began to spit on him, and to cover his face, and to buffet him* (Mark 14:65); *they smote him on the head with a reed, and did spit upon him* (Mark 15:19). The willing obedience is the same the apostles name: *he humbled himself, and became obedient unto death, even the death of the cross* (Philippians 2:8); *though he were a Son, yet learned he obedience by the things which he suffered* (Hebrews 5:8). The restored library carries the same portrait of the righteous one tortured: *Let us examine him with despitefulness and torture, that we may know his meekness, and prove his patience* (Wisdom of Solomon 2:19). And the song flows straight into the fourth Servant Song''s healing stripes: *he was wounded for our transgressions, he was bruised for our iniquities... and with his stripes we are healed* (Isaiah 53:5). This is no sinner suffering for his own sin — it is the willing, taught, righteous Servant, the obedient Son, the Formed One who gave his back and hid not his face.',
+       sv.verse_id, ev.verse_id, 'extras', 27228
+  FROM _s303_isa50_lookup sv, _s303_isa50_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=50 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-50-i-have-set-my-face-like-a-flint',
+       E'I have set my face like a flint — He is near that justifieth me',
+       E'After the smiting comes the Servant''s unshakable confidence in his vindication: *For Adonai Yahuah (the Lord GOD) will help me; therefore shall I not be confounded: therefore have I set my face like a flint, and I know that I shall not be ashamed. He is near that justifieth me; who will contend with me? let us stand together: who is mine adversary?... Behold, Adonai Yahuah (the Lord GOD) will help me; who is he that shall condemn me? lo, they all shall wax old as a garment* (Isaiah 50:7-9). Paul echoes these very words and makes the Servant''s vindication the believer''s in him: *If Elohim (God) be for us, who can be against us?* (Romans 8:31); *Who shall lay any thing to the charge of Elohim''s (God''s) elect? It is Elohim (God) that justifieth* (Romans 8:33); *Who is he that condemneth? It is Messiah (Christ) that died, yea rather, that is risen again... who also maketh intercession for us* (Romans 8:34) — almost the Servant''s own *who is he that shall condemn me?* The flint-set face is the same steadfast resolve of the One who went willingly to the smiting: *he stedfastly set his face to go to Jerusalem* (Luke 9:51). The justifier near is covenant-vindication of the obedient Servant — and of those justified in him — never an antinomian acquittal that leaves the commandments behind.',
+       sv.verse_id, ev.verse_id, 'free', 27231
+  FROM _s303_isa50_lookup sv, _s303_isa50_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=50 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-50-the-two-ways-trust-or-the-self-kindled-fire',
+       E'The two ways — trust the Servant''s light, or the self-kindled fire that ends in sorrow',
+       E'The chapter closes with two ways set before the hearer. The first: *Who is among you that feareth Yahuah (LORD), that obeyeth the voice of his servant, that walketh in darkness, and hath no light? let him trust in the name of Yahuah (LORD), and stay upon his Elohim (God)* (Isaiah 50:10) — the one in darkness is told not to kindle his own light but to trust and obey. The second: *Behold, all ye that kindle a fire, that compass yourselves about with sparks: walk in the light of your fire, and in the sparks that ye have kindled. This shall ye have of mine hand; ye shall lie down in sorrow* (50:11) — the self-made way, man''s own light, ends in sorrow. The true light is the Servant himself: *I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life* (John 8:12) — to walk in darkness and trust the Name is to follow him, not to strike one''s own sparks. The trust is whole-hearted: *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding* (Proverbs 3:5) — the self-kindled fire is precisely leaning unto one''s own understanding. And to *obey the voice of his servant* is the filter that proves the fear of Yahuah is real: *hereby we do know that we know him, if we keep his commandments* (1 John 2:3). Trust-and-obey the Servant''s light, or walk by your own sparks and lie down in sorrow.',
+       sv.verse_id, ev.verse_id, 'free', 27234
+  FROM _s303_isa50_lookup sv, _s303_isa50_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=50 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I had put her away, and given her a bill of divorce* (Jeremiah 3:8) — the very bill of *your mother''s divorcement* (Isaiah 50:1), given to the backsliding northern house for her adultery.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=1
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-the-bill-of-your-mothers-divorcement'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *she is not my wife, neither am I her husband: let her therefore put away her whoredoms* (Hosea 2:2) — the mother *put away* (Isaiah 50:1) is the harlot-wife divorced for her sin, yet pleaded with to return.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=1
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-the-bill-of-your-mothers-divorcement'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Is the LORD''S hand waxed short?* (Numbers 11:23) — *Is my hand shortened at all, that it cannot redeem?* (Isaiah 50:2); the same idiom, the Redeemer''s power unfailing.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=2
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=11 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-the-bill-of-your-mothers-divorcement'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he humbled himself, and became obedient unto death, even the death of the cross* (Philippians 2:8) — the wakened ear, the tongue of the learned (Isaiah 50:4): the taught Servant obedient unto death.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=4
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-gave-my-back-to-the-smiters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *though he were a Son, yet learned he obedience by the things which he suffered* (Hebrews 5:8) — *he hath opened mine ear, and I was not rebellious* (Isaiah 50:5); obedience learned through suffering not turned from.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=5
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-gave-my-back-to-the-smiters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *Then did they spit in his face, and buffeted him* (Matthew 26:67) — *I gave my back to the smiters... I hid not my face from shame and spitting* (Isaiah 50:6) fulfilled to the letter.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=6
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=67
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-gave-my-back-to-the-smiters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *they spit upon him, and took the reed, and smote him on the head* (Matthew 27:30) — the spitting and smiting of the Servant Song (Isaiah 50:6) made flesh.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=6
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-gave-my-back-to-the-smiters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *some began to spit on him, and to cover his face, and to buffet him* (Mark 14:65) — the *shame and spitting* the Servant hid not his face from (Isaiah 50:6).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=6
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=14 AND tv.verse_number=65
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-gave-my-back-to-the-smiters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *they smote him on the head with a reed, and did spit upon him* (Mark 15:19) — the smiters and the spitting of Isaiah 50:6, borne willingly.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=6
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=15 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-gave-my-back-to-the-smiters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *Let us examine him with despitefulness and torture... and prove his patience* (Wisdom of Solomon 2:19) — the righteous one tortured, who *hid not my face from shame and spitting* (Isaiah 50:6); the restored library''s witness. [extras]'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=6
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-gave-my-back-to-the-smiters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *he was wounded for our transgressions... and with his stripes we are healed* (Isaiah 53:5) — the back *given to the smiters* (Isaiah 50:6) is the back bruised of the very next Servant Song.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=6
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-gave-my-back-to-the-smiters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *It is Elohim (God) that justifieth* (Romans 8:33) — *He is near that justifieth me; who will contend with me?* (Isaiah 50:8); the Servant''s vindication, no charge against the elect stands.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=8
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-have-set-my-face-like-a-flint'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Who is he that condemneth? It is Messiah (Christ) that died... who also maketh intercession* (Romans 8:34) — almost the Servant''s own *who is he that shall condemn me?* (Isaiah 50:9).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=9
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-have-set-my-face-like-a-flint'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *If Elohim (God) be for us, who can be against us?* (Romans 8:31) — *Adonai Yahuah will help me; therefore shall I not be confounded* (Isaiah 50:7); the help of Yahuah the ground of confidence.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=7
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-have-set-my-face-like-a-flint'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *he stedfastly set his face to go to Jerusalem* (Luke 9:51) — *I have set my face like a flint* (Isaiah 50:7); the same steadfast resolve toward the smiting and the cross.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=7
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=9 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-i-have-set-my-face-like-a-flint'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I am the light of the world: he that followeth me shall not walk in darkness* (John 8:12) — the one who *walketh in darkness* is told to trust the Name (Isaiah 50:10); the Servant is the true light.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=10
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=8 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-the-two-ways-trust-or-the-self-kindled-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *we do know that we know him, if we keep his commandments* (1 John 2:3) — to *obey the voice of his servant* (Isaiah 50:10) is the filter; the fear of Yahuah proven by obedience.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=10
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-the-two-ways-trust-or-the-self-kindled-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding* (Proverbs 3:5) — the self-kindled fire (Isaiah 50:11) is leaning unto one''s own understanding; the way that ends in sorrow.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=50 AND sv.verse_number=11
+  JOIN _s303_isa50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-50-the-two-ways-trust-or-the-self-kindled-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_35.sql (Isaiah 35) -----
+-- Chapter: Isaiah 35 — THE HIGHWAY OF HOLINESS and the desert in blossom: the joy of the redeemed
+-- return. The wilderness blossoms as the rose and the glory of Yahuah is seen (35:1-2); the weak
+-- hands are strengthened with the promise of the coming Elohim who saves (35:3-4 -> Hebrews 12:12
+-- quoted; the Formed Son who comes); the eyes of the blind opened, the deaf unstopped, the lame
+-- leaping — the messianic-age signs Yahusha names to John the Baptist as proof he is the Coming
+-- One (35:5-6 -> Matthew 11:5 / Luke 7:22); the way of holiness on which the unclean shall not
+-- pass (35:8 -> John 14:6 the Way; Acts the Way that keeps the law and the prophets — NOT
+-- antinomian); and the ransomed of Yahuah returning to Zion with everlasting joy, sorrow fleeing
+-- away (35:9-10 -> Revelation 21:4, the everlasting-joy consummation; Isaiah 51:11 near-verbatim).
+-- Tag: isa35   Temp view: _s303_isa35_lookup
+-- Sort band: base 26850, step 3 -> threads at 26850, 26853, 26856, 26859, 26862 (5 threads)
+-- Source of EVERY row: 'canon','isaiah',35,v
+--
+-- Isaiah 35 coverage:
+--   ★★ v.1-2 (The wilderness and the solitary place shall be glad... blossom as the rose... they
+--          shall see the glory of Yahuah, and the excellency of our Elohim)
+--        NT:     none warranted (the glory-revealed of the second Exodus is sung by the prophets'
+--                own laterals; no clean single-verse NT add beyond the v.4 coming-Elohim of THREAD 2)
+--        Extras: none warranted (weighed 1 Enoch/2 Esdras restored-creation joy; Isaiah's blossoming
+--                weave is the prophets' own, no clean verbatim witness — held in prose, recorded)
+--        Tanakh: ★★ Isaiah 51:3 (he will make her wilderness like Eden, and her desert like the
+--                garden of Yahuah; joy and gladness) + ★★ Isaiah 40:5 (the glory of Yahuah shall be
+--                revealed, and all flesh shall see it together) — THREAD 1
+--   ★★ v.3-4 (Strengthen ye the weak hands, and confirm the feeble knees... behold, your Elohim
+--          will come with vengeance... he will come and save you)
+--        NT:     ★★ Hebrews 12:12 (lift up the hands which hang down, and the feeble knees — quoted)
+--                + Hebrews 12:13 (make straight paths... lest that which is lame be turned out) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: woven (the coming-Elohim-who-saves is filled by the messianic signs of THREAD 3; in prose)
+--   ★★★ v.5-6 (Then the eyes of the blind shall be opened, and the ears of the deaf shall be
+--          unstopped. Then shall the lame man leap as an hart, and the tongue of the dumb sing)
+--        NT:     ★★★ Matthew 11:5 (The blind receive their sight, and the lame walk... the deaf hear
+--                — Yahusha's answer to John that he is the Coming One) + ★★★ Luke 7:22 (the blind see,
+--                the lame walk... the deaf hear, the dead are raised) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 29:18 (in that day shall the deaf hear... the eyes of the blind shall see)
+--                + ★ Isaiah 42:7 (To open the blind eyes, to bring out the prisoners) — THREAD 3
+--   v.7 (the parched ground shall become a pool... habitation of dragons... grass with reeds)
+--        NT/Extras/Tanakh: woven into THREAD 1 (the desert turned to springs is the blossoming-
+--                wilderness motif; the waters break out continues v.6) — recorded, no separate add
+--   ★★ v.8 (an highway shall be there... it shall be called The way of holiness; the unclean shall
+--          not pass over it... the wayfaring men, though fools, shall not err therein)
+--        NT:     ★★ John 14:6 (I am the way, the truth, and the life) + ★★ Acts 24:14 (the way which
+--                they call heresy, so worship I... believing all things which are written in the law
+--                and in the prophets) + Acts 9:2 (any of this way) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 40:3 (Prepare ye the way of Yahuah, make straight in the desert a highway
+--                for our Elohim) — THREAD 4
+--   ★★ v.9-10 (the redeemed shall walk there: And the ransomed of Yahuah shall return, and come to
+--          Zion with songs and everlasting joy... and sorrow and sighing shall flee away)
+--        NT:     ★★ Revelation 21:4 (Elohim shall wipe away all tears... no more death, neither
+--                sorrow, nor crying — the everlasting-joy consummation) — THREAD 5
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 51:11 (the redeemed of Yahuah shall return, and come with singing unto
+--                Zion; and everlasting joy... sorrow and mourning shall flee away — near-verbatim) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-35-the-wilderness-shall-blossom-and-see-the-glory-of-yahuah — Tanakh (Isaiah 51, Isaiah 40) [free]
+--      (★★ the desert blossoming at the redeemed return + the glory of Yahuah revealed; the second-Exodus restoration joy, Eden restored)
+--   2. isaiah-35-strengthen-the-feeble-knees-your-elohim-will-come-and-save — NT (Hebrews 12) [free]
+--      (★★ Hebrews quotes the strengthen-the-feeble-knees endurance exhortation; the coming-Elohim-who-saves = the Formed Son who comes)
+--   3. isaiah-35-the-eyes-of-the-blind-opened-the-lame-shall-leap — NT (Matthew 11, Luke 7) + Tanakh (Isaiah 29, Isaiah 42) [free]
+--      (★★★ Yahusha quotes this to John the Baptist as proof he is the Coming One; the messianic-age signs fulfilled in his ministry)
+--   4. isaiah-35-the-way-of-holiness-the-unclean-shall-not-pass-over-it — NT (John 14, Acts) + Tanakh (Isaiah 40) [free]
+--      (★★ THE highway of holiness for the ransomed return; the Way the unclean cannot tread = holiness kept, NOT antinomian — Acts' Way believes the law and the prophets)
+--   5. isaiah-35-the-ransomed-of-yahuah-shall-return-to-zion-with-everlasting-joy — NT (Revelation 21) + Tanakh (Isaiah 51) [free]
+--      (★★ the ransomed return to Zion with everlasting joy; the two-house regathering; Revelation's no-more-tears consummation)
+--
+-- Framing notes:
+--   ★★ THE WILDERNESS SHALL BLOSSOM (THREAD 1): *The wilderness and the solitary place shall be glad
+--      for them; and the desert shall rejoice, and blossom as the rose... they shall see the glory of
+--      Yahuah (LORD), and the excellency of our Elohim (God)* (35:1-2). This is the second-Exodus
+--      restoration joy — the same wilderness-to-Eden turn Isaiah sings elsewhere: *he will make her
+--      wilderness like Eden, and her desert like the garden of Yahuah (LORD); joy and gladness shall
+--      be found therein* (Isaiah 51:3) — and the glory revealed to all flesh: *the glory of Yahuah
+--      (LORD) shall be revealed, and all flesh shall see it together* (Isaiah 40:5). The blossoming
+--      desert (continued in v.6-7, the waters breaking out, the parched ground a pool) is the land
+--      and the people made glad at the homecoming, the glory of Yahuah seen in the restored creation.
+--   ★★ STRENGTHEN THE FEEBLE KNEES (THREAD 2): *Strengthen ye the weak hands, and confirm the feeble
+--      knees. Say to them that are of a fearful heart, Be strong, fear not: behold, your Elohim (God)
+--      will come with vengeance, even Elohim (God) with a recompence; he will come and save you*
+--      (35:3-4). Hebrews quotes the exhortation as endurance under chastening: *Wherefore lift up the
+--      hands which hang down, and the feeble knees; And make straight paths for your feet, lest that
+--      which is lame be turned out of the way; but let it rather be healed* (Hebrews 12:12-13) — note
+--      the "lame" of Hebrews 12:13 reaches back to the lame man of Isaiah 35:6. And the One who *will
+--      come and save you* is the Formed Son who comes — the coming-Elohim-who-saves, whose advent the
+--      blind-eyes-opened of the next verses confirm.
+--   ★★★ THE EYES OF THE BLIND OPENED (THREAD 3): *Then the eyes of the blind shall be opened, and the
+--      ears of the deaf shall be unstopped. Then shall the lame man leap as an hart, and the tongue of
+--      the dumb sing* (35:5-6). When John the Baptist sends from prison to ask *Art thou he that should
+--      come, or do we look for another?* (Matthew 11:3), Yahusha answers by pointing to THIS chapter:
+--      *Go and shew John again those things which ye do hear and see: The blind receive their sight,
+--      and the lame walk, the lepers are cleansed, and the deaf hear, the dead are raised up* (Matthew
+--      11:4-5); *tell John what things ye have seen and heard; how that the blind see, the lame walk...
+--      the deaf hear, the dead are raised* (Luke 7:22). The signs of Isaiah 35 ARE the proof he is the
+--      Coming One — the messianic age arrived in his ministry. Isaiah says it twice more: *in that day
+--      shall the deaf hear the words of the book, and the eyes of the blind shall see* (Isaiah 29:18);
+--      *To open the blind eyes, to bring out the prisoners from the prison* (Isaiah 42:7, the Servant's
+--      commission). Bind hard: this is the central Christological key of the chapter.
+--   ★★ THE WAY OF HOLINESS (THREAD 4): *And an highway shall be there, and a way, and it shall be called
+--      The way of holiness; the unclean shall not pass over it; but it shall be for those: the wayfaring
+--      men, though fools, shall not err therein* (35:8). This is THE highway of holiness for the ransomed
+--      return — and Yahusha names himself the Way: *I am the way, the truth, and the life: no man cometh
+--      unto the Father, but by me* (John 14:6). The NT then calls the movement itself "the Way" — *if he
+--      found any of this way* (Acts 9:2) — and Paul defines that Way precisely AGAINST antinomianism:
+--      *after the way which they call heresy, so worship I the Elohim (God) of my fathers, believing all
+--      things which are written in the law and in the prophets* (Acts 24:14). Frame it carefully: the
+--      *unclean shall not pass over it* — the way of holiness is the clean, set-apart path, holiness
+--      KEPT, never a license to lawlessness; the same prepared highway of *Prepare ye the way of Yahuah
+--      (LORD), make straight in the desert a highway for our Elohim (God)* (Isaiah 40:3).
+--   ★★ THE RANSOMED RETURN TO ZION (THREAD 5): *the redeemed shall walk there: And the ransomed of
+--      Yahuah (LORD) shall return, and come to Zion with songs and everlasting joy upon their heads:
+--      they shall obtain joy and gladness, and sorrow and sighing shall flee away* (35:9-10). Isaiah
+--      sings it again almost word for word: *the redeemed of Yahuah (LORD) shall return, and come with
+--      singing unto Zion; and everlasting joy shall be upon their head: they shall obtain gladness and
+--      joy; and sorrow and mourning shall flee away* (Isaiah 51:11) — the ransomed two-house people
+--      regathered to Zion. And the everlasting joy reaches its consummation in John's vision: *Elohim
+--      (God) shall wipe away all tears from their eyes; and there shall be no more death, neither
+--      sorrow, nor crying, neither shall there be any more pain: for the former things are passed away*
+--      (Revelation 21:4) — the *sorrow and sighing* that *flee away* gone for ever in the city of the
+--      ransomed.
+--   VERSES WITH NO SEPARATE ADD: v.7 (the parched ground a pool, the habitation of dragons made grass
+--      — the continued desert-blossoming/waters-break-out of v.1-2,6, bound into THREAD 1), v.9a (No
+--      lion... nor ravenous beast — the safety of the holy highway, bound into THREADS 4/5). All
+--      recorded, none silently skipped. Extras: weighed 1 Enoch / 2 Esdras on the restored-creation
+--      joy; no clean verbatim witness warranted — Isaiah's restoration weave is the prophets' own,
+--      held in prose. "None warranted" deliberately for the extras layer of every verse.
+
+CREATE TEMP VIEW _s303_isa35_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The wilderness shall blossom and see the glory of Yahuah
+    ('canon','isaiah',35,1,'canon','isaiah',51,3,'free',
+      E'*For Yahuah (LORD) shall comfort Zion: he will comfort all her waste places; and he will make her wilderness like Eden, and her desert like the garden of Yahuah (LORD); joy and gladness shall be found therein, thanksgiving, and the voice of melody* (Isaiah 51:3). *The wilderness and the solitary place shall be glad for them; and the desert shall rejoice, and blossom as the rose* (Isaiah 35:1) is the same second-Exodus turn — the waste places made Eden, the desert the garden of Yahuah, joy and gladness where there was sorrow. The blossoming wilderness is the restored land and people made glad at the homecoming.'),
+    ('canon','isaiah',35,2,'canon','isaiah',40,5,'free',
+      E'*And the glory of Yahuah (LORD) shall be revealed, and all flesh shall see it together: for the mouth of Yahuah (LORD) hath spoken it* (Isaiah 40:5). *They shall see the glory of Yahuah (LORD), and the excellency of our Elohim (God)* (Isaiah 35:2) — the very glory Isaiah 40 promises will be revealed to all flesh. The blossoming desert is the stage on which the glory of Yahuah is seen; the restored creation displays the excellency of our Elohim.'),
+
+    -- THREAD 2 (★★): Strengthen the feeble knees — your Elohim will come and save
+    ('canon','isaiah',35,3,'canon','hebrews',12,12,'free',
+      E'*Wherefore lift up the hands which hang down, and the feeble knees* (Hebrews 12:12). Hebrews quotes Isaiah 35:3 — *Strengthen ye the weak hands, and confirm the feeble knees* — as the endurance exhortation under chastening: the weary covenant people are to be strengthened, the drooping hands lifted, the failing knees braced, because the coming-Elohim-who-saves is at hand.'),
+    ('canon','isaiah',35,4,'canon','hebrews',12,13,'free',
+      E'*And make straight paths for your feet, lest that which is lame be turned out of the way; but let it rather be healed* (Hebrews 12:13). The *lame* of Hebrews 12:13 reaches straight back to Isaiah 35:6''s lame man made to leap; and the *straight paths* anticipate the way of holiness of 35:8. *Behold, your Elohim (God) will come... he will come and save you* (Isaiah 35:4) — the fearful heart is braced because the coming Elohim heals what is lame and makes the path straight.'),
+
+    -- THREAD 3 (★★★): The eyes of the blind opened, the lame shall leap (Yahusha's answer to John)
+    ('canon','isaiah',35,5,'canon','matthew',11,5,'free',
+      E'*The blind receive their sight, and the lame walk, the lepers are cleansed, and the deaf hear, the dead are raised up, and the poor have the gospel preached to them* (Matthew 11:5). When John the Baptist sends to ask *Art thou he that should come, or do we look for another?* (Matthew 11:3), Yahusha answers by pointing to Isaiah 35:5 — *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped*. The signs of this chapter ARE his proof that he is the Coming One; the messianic age has arrived in his ministry.'),
+    ('canon','isaiah',35,6,'canon','luke',7,22,'free',
+      E'*Then Yahusha (Jesus) answering said unto them, Go your way, and tell John what things ye have seen and heard; how that the blind see, the lame walk, the lepers are cleansed, the deaf hear, the dead are raised, to the poor the gospel is preached* (Luke 7:22). *Then shall the lame man leap as an hart, and the tongue of the dumb sing* (Isaiah 35:6) — the lame walking and the deaf hearing that Yahusha names to John''s messengers are this chapter''s signs fulfilled. He answers the question of the Coming One by doing exactly what Isaiah 35 said the coming Elohim would do.'),
+    ('canon','isaiah',35,5,'canon','isaiah',29,18,'free',
+      E'*And in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity, and out of darkness* (Isaiah 29:18). Isaiah sings the same messianic-age signs as in 35:5 — *the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped*. The opened eyes and unstopped ears of the day of restoration are a recurring Isaianic promise, fulfilled when the Coming One arrives.'),
+    ('canon','isaiah',35,5,'canon','isaiah',42,7,'free',
+      E'*To open the blind eyes, to bring out the prisoners from the prison, and them that sit in darkness out of the prison house* (Isaiah 42:7). The Servant''s very commission is *to open the blind eyes* — the same opening of *the eyes of the blind* promised in Isaiah 35:5. The signs of the chapter are the work given to the Servant, the Formed Son who comes to save.'),
+
+    -- THREAD 4 (★★): The way of holiness — the unclean shall not pass over it
+    ('canon','isaiah',35,8,'canon','john',14,6,'free',
+      E'*Yahusha (Jesus) saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6). *An highway shall be there, and a way, and it shall be called The way of holiness* (Isaiah 35:8) — the highway for the ransomed return is named the Way, and Yahusha names himself the Way to the Father. The road home to Zion is the Formed Son himself, the holy path on which the redeemed walk.'),
+    ('canon','isaiah',35,8,'canon','acts',24,14,'free',
+      E'*But this I confess unto thee, that after the way which they call heresy, so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets* (Acts 24:14). The way of holiness on which *the unclean shall not pass over it* (Isaiah 35:8) is no antinomian path — Paul defines the Way precisely as believing *all things which are written in the law and in the prophets*. The holy highway is holiness KEPT: the unclean cannot tread it, the clean walk it in obedience to the law and the prophets.'),
+    ('canon','isaiah',35,8,'canon','acts',9,2,'free',
+      E'*And desired of him letters to Damascus to the synagogues, that if he found any of this way, whether they were men or women, he might bring them bound unto Jerusalem* (Acts 9:2). The early movement is called simply *this way* — the road named in Isaiah 35:8, *The way of holiness*. The followers of the Coming One walk the very highway the prophet foresaw for the redeemed return.'),
+    ('canon','isaiah',35,8,'canon','isaiah',40,3,'free',
+      E'*The voice of him that crieth in the wilderness, Prepare ye the way of Yahuah (LORD), make straight in the desert a highway for our Elohim (God)* (Isaiah 40:3). The *highway... The way of holiness* of Isaiah 35:8 is the same prepared road — the highway made straight in the desert for our Elohim. The way is prepared in the wilderness and called holy; the ransomed walk where the unclean cannot pass.'),
+
+    -- THREAD 5 (★★): The ransomed of Yahuah shall return to Zion with everlasting joy
+    ('canon','isaiah',35,10,'canon','isaiah',51,11,'free',
+      E'*Therefore the redeemed of Yahuah (LORD) shall return, and come with singing unto Zion; and everlasting joy shall be upon their head: they shall obtain gladness and joy; and sorrow and mourning shall flee away* (Isaiah 51:11). This is Isaiah 35:10 almost word for word — *And the ransomed of Yahuah (LORD) shall return, and come to Zion with songs and everlasting joy upon their heads... and sorrow and sighing shall flee away*. The ransomed two-house people regathered to Zion with everlasting joy; the prophet sings the same homecoming twice.'),
+    ('canon','isaiah',35,10,'canon','revelation',21,4,'free',
+      E'*And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4). *Sorrow and sighing shall flee away* (Isaiah 35:10) reaches its consummation here — every tear wiped away, no more sorrow nor crying for ever in the city of the ransomed. The everlasting joy of the return to Zion is the everlasting joy of the New Jerusalem, where the former things have passed away.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-35-the-wilderness-shall-blossom-and-see-the-glory-of-yahuah',
+       E'The wilderness shall blossom as the rose — and see the glory of Yahuah',
+       E'The chapter opens with the desert made glad at the homecoming of the redeemed: *The wilderness and the solitary place shall be glad for them; and the desert shall rejoice, and blossom as the rose. It shall blossom abundantly, and rejoice even with joy and singing: the glory of Lebanon shall be given unto it, the excellency of Carmel and Sharon, they shall see the glory of Yahuah (LORD), and the excellency of our Elohim (God)* (Isaiah 35:1-2). This is the second-Exodus restoration joy — the same wilderness-to-Eden turn Isaiah sings elsewhere: *he will make her wilderness like Eden, and her desert like the garden of Yahuah (LORD); joy and gladness shall be found therein, thanksgiving, and the voice of melody* (Isaiah 51:3). And the glory promised here is the glory revealed to all flesh: *And the glory of Yahuah (LORD) shall be revealed, and all flesh shall see it together: for the mouth of Yahuah (LORD) hath spoken it* (Isaiah 40:5). The blossoming continues through the chapter — *in the wilderness shall waters break out, and streams in the desert. And the parched ground shall become a pool, and the thirsty land springs of water* (35:6-7) — the dry land turned to springs, the restored creation made glad. The land and the people rejoice together because the glory of Yahuah is seen and the excellency of our Elohim displayed in the homecoming.',
+       sv.verse_id, ev.verse_id, 'free', 26850
+  FROM _s303_isa35_lookup sv, _s303_isa35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=35 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-35-strengthen-the-feeble-knees-your-elohim-will-come-and-save',
+       E'Strengthen the feeble knees — your Elohim will come and save you',
+       E'To the weary covenant people the prophet brings courage: *Strengthen ye the weak hands, and confirm the feeble knees. Say to them that are of a fearful heart, Be strong, fear not: behold, your Elohim (God) will come with vengeance, even Elohim (God) with a recompence; he will come and save you* (Isaiah 35:3-4). The drooping hands are to be lifted and the failing knees braced, for the coming-Elohim-who-saves is at hand. Hebrews quotes the exhortation directly, as endurance under chastening: *Wherefore lift up the hands which hang down, and the feeble knees; And make straight paths for your feet, lest that which is lame be turned out of the way; but let it rather be healed* (Hebrews 12:12-13). The *lame* of Hebrews 12:13 reaches back to the lame man made to leap in Isaiah 35:6, and the *straight paths* anticipate the way of holiness of 35:8. And the One who *will come and save you* is the Formed Son who comes — the coming Elohim whose advent is confirmed by the very signs of the next verses: the blind seeing, the deaf hearing, the lame leaping. Be strong, fear not: he comes, and he saves.',
+       sv.verse_id, ev.verse_id, 'free', 26853
+  FROM _s303_isa35_lookup sv, _s303_isa35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=35 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-35-the-eyes-of-the-blind-opened-the-lame-shall-leap',
+       E'The eyes of the blind opened, the lame shall leap — the proof of the Coming One',
+       E'Here is the Christological key of the chapter: *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped. Then shall the lame man leap as an hart, and the tongue of the dumb sing* (Isaiah 35:5-6). When John the Baptist sends from prison — *Art thou he that should come, or do we look for another?* (Matthew 11:3) — Yahusha answers not with argument but by pointing to THIS chapter: *Go and shew John again those things which ye do hear and see: The blind receive their sight, and the lame walk, the lepers are cleansed, and the deaf hear, the dead are raised up, and the poor have the gospel preached to them* (Matthew 11:5); *tell John what things ye have seen and heard; how that the blind see, the lame walk, the lepers are cleansed, the deaf hear, the dead are raised* (Luke 7:22). The signs of Isaiah 35 ARE the proof that he is the Coming One; the messianic age has arrived in his ministry. Isaiah names the same signs twice more: *in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity, and out of darkness* (Isaiah 29:18); and the Servant''s commission itself — *To open the blind eyes, to bring out the prisoners from the prison, and them that sit in darkness out of the prison house* (Isaiah 42:7). The coming Elohim who *will come and save you* (35:4) is the Formed Son who does exactly what the prophet foretold.',
+       sv.verse_id, ev.verse_id, 'free', 26856
+  FROM _s303_isa35_lookup sv, _s303_isa35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=35 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-35-the-way-of-holiness-the-unclean-shall-not-pass-over-it',
+       E'The way of holiness — the unclean shall not pass over it',
+       E'For the redeemed return there is a road: *And an highway shall be there, and a way, and it shall be called The way of holiness; the unclean shall not pass over it; but it shall be for those: the wayfaring men, though fools, shall not err therein* (Isaiah 35:8). This is the prepared highway of the second Exodus — *Prepare ye the way of Yahuah (LORD), make straight in the desert a highway for our Elohim (God)* (Isaiah 40:3) — and it is named holy. Yahusha names himself that Way: *I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6); and the early movement is called simply *this way* — *if he found any of this way, whether they were men or women* (Acts 9:2). Frame the holiness carefully: *the unclean shall not pass over it*. This is no antinomian road. Paul defines the Way exactly: *after the way which they call heresy, so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets* (Acts 24:14). The way of holiness is holiness KEPT — the clean walk it in obedience to the law and the prophets, the unclean cannot tread it; even *the wayfaring men, though fools, shall not err therein*, for the road itself is set apart unto Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 26859
+  FROM _s303_isa35_lookup sv, _s303_isa35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=35 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-35-the-ransomed-of-yahuah-shall-return-to-zion-with-everlasting-joy',
+       E'The ransomed of Yahuah shall return to Zion with everlasting joy',
+       E'The chapter closes with the homecoming itself: *No lion shall be there, nor any ravenous beast shall go up thereon, it shall not be found there; but the redeemed shall walk there: And the ransomed of Yahuah (LORD) shall return, and come to Zion with songs and everlasting joy upon their heads: they shall obtain joy and gladness, and sorrow and sighing shall flee away* (Isaiah 35:9-10). The holy highway is safe — no lion, no ravenous beast — and on it the ransomed two-house people walk home to Zion. Isaiah sings the same return almost word for word: *Therefore the redeemed of Yahuah (LORD) shall return, and come with singing unto Zion; and everlasting joy shall be upon their head: they shall obtain gladness and joy; and sorrow and mourning shall flee away* (Isaiah 51:11) — the regathered people, the everlasting joy, the sorrow that flees. And that everlasting joy reaches its consummation in the city John sees: *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4). The *sorrow and sighing* that *flee away* on the way home flee away for ever in the New Jerusalem; the ransomed return ends in everlasting joy where the former things have passed.',
+       sv.verse_id, ev.verse_id, 'free', 26862
+  FROM _s303_isa35_lookup sv, _s303_isa35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=35 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he will make her wilderness like Eden, and her desert like the garden of Yahuah (LORD); joy and gladness* (Isaiah 51:3) — the same second-Exodus turn as *the desert shall... blossom as the rose* (Isaiah 35:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=1
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-wilderness-shall-blossom-and-see-the-glory-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the glory of Yahuah (LORD) shall be revealed, and all flesh shall see it together* (Isaiah 40:5) — the very glory *they shall see* of Isaiah 35:2, revealed in the restored creation.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=2
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-wilderness-shall-blossom-and-see-the-glory-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *lift up the hands which hang down, and the feeble knees* (Hebrews 12:12) — Hebrews quotes Isaiah 35:3''s *Strengthen ye the weak hands, and confirm the feeble knees* as the endurance exhortation.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=3
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-strengthen-the-feeble-knees-your-elohim-will-come-and-save'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *make straight paths for your feet, lest that which is lame be turned out of the way* (Hebrews 12:13) — the *lame* reaches back to Isaiah 35:6; *he will come and save you* (35:4) braces the fearful heart.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=4
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-strengthen-the-feeble-knees-your-elohim-will-come-and-save'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *The blind receive their sight, and the lame walk... and the deaf hear* (Matthew 11:5) — Yahusha answers John the Baptist by pointing to Isaiah 35:5; the signs ARE his proof he is the Coming One.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=5
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-eyes-of-the-blind-opened-the-lame-shall-leap'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *the blind see, the lame walk... the deaf hear, the dead are raised* (Luke 7:22) — *the lame man leap as an hart* (Isaiah 35:6) fulfilled; he answers the Coming-One question by doing what the prophet foretold.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=6
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=7 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-eyes-of-the-blind-opened-the-lame-shall-leap'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *in that day shall the deaf hear the words of the book, and the eyes of the blind shall see* (Isaiah 29:18) — the same messianic-age signs as Isaiah 35:5, the recurring Isaianic promise.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=5
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=29 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-eyes-of-the-blind-opened-the-lame-shall-leap'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *To open the blind eyes, to bring out the prisoners from the prison* (Isaiah 42:7) — the Servant''s commission is *to open the blind eyes*, the same opening promised in Isaiah 35:5; the Formed Son''s work.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=5
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-eyes-of-the-blind-opened-the-lame-shall-leap'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6) — the highway *called The way of holiness* (Isaiah 35:8) is the Formed Son himself, the road home to Zion.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=8
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-way-of-holiness-the-unclean-shall-not-pass-over-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the way which they call heresy... believing all things which are written in the law and in the prophets* (Acts 24:14) — the Way is holiness KEPT; *the unclean shall not pass over it* (Isaiah 35:8), NOT antinomian.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=8
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=24 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-way-of-holiness-the-unclean-shall-not-pass-over-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*if he found any of this way* (Acts 9:2) — the early movement called simply *this way*, the very road named *The way of holiness* in Isaiah 35:8.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=8
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=9 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-way-of-holiness-the-unclean-shall-not-pass-over-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Prepare ye the way of Yahuah (LORD), make straight in the desert a highway for our Elohim (God)* (Isaiah 40:3) — the same prepared highway as *an highway shall be there... The way of holiness* (Isaiah 35:8).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=8
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-way-of-holiness-the-unclean-shall-not-pass-over-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the redeemed of Yahuah (LORD) shall return, and come with singing unto Zion; and everlasting joy... sorrow and mourning shall flee away* (Isaiah 51:11) — Isaiah 35:10 near-verbatim; the ransomed two-house regathering.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=10
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-ransomed-of-yahuah-shall-return-to-zion-with-everlasting-joy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Elohim (God) shall wipe away all tears... no more death, neither sorrow, nor crying* (Revelation 21:4) — the *sorrow and sighing* that *flee away* (Isaiah 35:10) gone for ever in the city of the ransomed.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=35 AND sv.verse_number=10
+  JOIN _s303_isa35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-35-the-ransomed-of-yahuah-shall-return-to-zion-with-everlasting-joy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session303 — Isaiah cross-references complete.'
