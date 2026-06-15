@@ -54636,6 +54636,1047 @@ SELECT t.id, cr.id, 2, E'*The kingdoms of this world are become the kingdoms of 
  WHERE t.slug='psalm-146-yahuah-shall-reign-for-ever-o-zion'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_148.sql (Psalm 148) -----
+-- Chapter: Psalm 148 — the cosmic Hallel: all creation summoned to praise (heights, then earth)
+-- Tag: ps148   Session prefix: s302   Sort band base: 25675 (25675, 25678, 25681, 25684)
+-- Source rows ALWAYS 'canon','psalms',148,v.   Thread slug prefix SINGULAR: psalm-148-...
+-- (Authored directly by the orchestrator after two minion socket-deaths; greenfield 0; idempotent.)
+--
+-- THREADS (slug — target libraries):
+--   T1 psalm-148-praise-him-from-the-heights-all-his-angels-and-the-luminaries   [Tanakh]  (free)
+--        vv.1-4 the angelic host + the appointed-times luminaries + the waters above (Ps103:20-21, Job38:7, Gen1:14,16,7)
+--   T2 psalm-148-he-commanded-and-they-were-created-the-decree-that-shall-not-pass [Tanakh + NT] (free)
+--        vv.5-6 creation BY the spoken Word; the fixed decree = the seed of Yashar'el never ceases (Ps33:6,9, John1:3, Col1:16, Heb11:3, Jer31:35-36, Jer33:25)
+--   T3 psalm-148-praise-him-from-the-earth-the-elements-fulfilling-his-word        [Tanakh]  (free)
+--        vv.7-10 fire/hail/snow/wind "fulfilling his word" = the elements obeying his command (Ps147:15,18)
+--   T4 psalm-148-his-name-alone-excellent-and-the-horn-of-his-people-exalted       [Tanakh + NT] (free)
+--        vv.13-14 the Name alone exalted; the horn of his people lifted; the saints/Yashar'el a people NEAR (Rev5:13, 1Sam2:1,10, Luke1:69, Ps132:17, Deut4:7, Eph2:13)
+--
+-- Psalm 148 coverage checklist:
+--   v.1     NT: none warranted   Extras: none warranted   Tanakh: folded into T1 (the summons from the heavens) -- anchor only
+--   v.2     NT: none warranted   Extras: 1 Enoch praising-luminaries weighed -> no clean witness in this parse, held   Tanakh: Ps103:20, Ps103:21, Job38:7  -> T1
+--   v.3     NT: none warranted   Extras: none warranted   Tanakh: Gen1:14 (signs/seasons), Gen1:16 (two great lights)  -> T1
+--   v.4     NT: none warranted   Extras: none warranted   Tanakh: Gen1:7 (waters above the firmament)  -> T1
+--   v.5     NT: John1:3, Col1:16, Heb11:3 (all made by the Word)   Extras: none warranted   Tanakh: Ps33:6, Ps33:9 (he spake and it was done)  -> T2
+--   v.6     NT: none warranted   Extras: none warranted   Tanakh: Jer31:35, Jer31:36 (the ordinances/seed never ceases), Jer33:25 (covenant of day and night)  -> T2
+--   v.7     NT: none warranted   Extras: none warranted   Tanakh: folded into T3 (dragons/deeps) -- anchor only
+--   v.8     NT: none warranted   Extras: none warranted   Tanakh: Ps147:15, Ps147:18 (his word runneth; the elements obey)  -> T3
+--   v.9-10  NT: none warranted   Extras: none warranted   Tanakh: folded into T3 (mountains/trees/beasts) -- carried in prose
+--   v.11-12 NT: none warranted   Extras: none warranted   Tanakh: folded into T4 (kings/peoples/young/old summoned) -- carried in prose
+--   v.13    NT: Rev5:13 (every creature ascribing glory)   Extras: none warranted   Tanakh: carried in T4 prose  -> T4
+--   v.14    NT: Luke1:69 (horn of salvation), Eph2:13 (made nigh)   Extras: none warranted   Tanakh: 1Sam2:1, 1Sam2:10 (horn exalted), Ps132:17 (horn of David), Deut4:7 (a people near)  -> T4
+--
+-- Framework-load-bearing notes:
+--   * vv.3-4 the sun, moon, and stars are the appointed-times luminaries set "for signs, and for seasons" (Gen1:14)
+--     -- the moedim root praising their Maker; the host of heaven keeps his calendar, not abolished.
+--   * vv.5-6 "he commanded, and they were created" = creation by the spoken Word, the Formed Son who is the agent of
+--     all making (John1:3 / Col1:16 / Heb11:3 / Ps33:6,9) and who has a Father -- not a co-equal trinitarian person.
+--     The "decree which shall not pass" (v.6) is the same fixed ordinance Jeremiah binds to Yashar'el's permanence:
+--     while sun/moon keep their courses the seed of Yashar'el shall never cease to be a nation (Jer31:35-36; 33:25)
+--     -- a two-house guard (Rom11:1-2), the covenant people no more cast off than the stars are unmade.
+--   * v.14 "the horn of his people... the children of Yashar'el (Israel), a people near unto him" -- the horn lifted
+--     is the horn of salvation in David's house (1Sam2:1,10; Ps132:17; Luke1:69); the nearness is the covenant
+--     nearness of the Torah-people (Deut4:7) made nigh by the blood (Eph2:13). The saints/Yashar'el restored and
+--     brought near, NOT replaced.
+
+CREATE TEMP VIEW _s302_ps148_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- T1 praise from the heights ------------------------------------------------------------
+    ('canon','psalms',148,2,'canon','psalms',103,20,'free',
+      E'*Bless Yahuah (LORD), ye his angels, that excel in strength, that do his commandments, hearkening unto the voice of his word.* (Psalm 103:20) — when Psalm 148 cries *Praise ye him, all his angels* (Psalm 148:2), it summons the very host that *do his commandments*: the angelic praise is obedience, the strong ones hearkening to the voice of his word.'),
+    ('canon','psalms',148,2,'canon','psalms',103,21,'free',
+      E'*Bless ye Yahuah (LORD), all ye his hosts; ye ministers of his, that do his pleasure.* (Psalm 103:21) — *praise ye him, all his hosts* (Psalm 148:2). The armies of heaven, the ministering spirits that do his pleasure, are called to the same praise; the whole celestial court answers the summons.'),
+    ('canon','psalms',148,2,'canon','job',38,7,'free',
+      E'*When the morning stars sang together, and all the sons of Elohim (God) shouted for joy?* (Job 38:7) — the praise Psalm 148 commands of *all his angels* and *all his hosts* (Psalm 148:2) was sounding at the foundation of the world: the morning stars and the sons of Elohim sang as the earth was laid. The heights have praised him from the first.'),
+    ('canon','psalms',148,3,'canon','genesis',1,14,'free',
+      E'*And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14) — *Praise ye him, sun and moon: praise him, all ye stars of light* (Psalm 148:3). The luminaries summoned to praise are the very lights set *for signs, and for seasons* — the appointed-times (moedim) keeping his calendar; the host of heaven praises its Maker by keeping its courses.'),
+    ('canon','psalms',148,3,'canon','genesis',1,16,'free',
+      E'*And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* (Genesis 1:16) — the *sun and moon* and *all ye stars of light* (Psalm 148:3) called to praise are the two great lights and the stars he made; the creatures praise the One who formed them and gave them their rule.'),
+    ('canon','psalms',148,4,'canon','genesis',1,7,'free',
+      E'*And Elohim (God) made the firmament, and divided the waters which were under the firmament from the waters which were above the firmament: and it was so.* (Genesis 1:7) — *Praise him, ye heavens of heavens, and ye waters that be above the heavens* (Psalm 148:4). The waters above the firmament, parted at creation, are summoned with the highest heavens to praise the One who divided them.'),
+
+    -- T2 he commanded and they were created --------------------------------------------------
+    ('canon','psalms',148,5,'canon','psalms',33,6,'free',
+      E'*By the word of Yahuah (LORD) were the heavens made; and all the host of them by the breath of his mouth.* (Psalm 33:6) — *Let them praise the name of Yahuah (LORD): for he commanded, and they were created* (Psalm 148:5). The host of heaven praise the Name because that Name is their Maker: the heavens and all their host were made *by the word of Yahuah* — the spoken Word that called them into being.'),
+    ('canon','psalms',148,5,'canon','psalms',33,9,'free',
+      E'*For he spake, and it was done; he commanded, and it stood fast.* (Psalm 33:9) — this is the very grammar of Psalm 148:5: *he commanded, and they were created*. Creation answers a word; the command and the coming-to-be are one act. The creatures owe their existence to a spoken decree, and so they owe him praise.'),
+    ('canon','psalms',148,5,'canon','john',1,3,'free',
+      E'*All things were made by him; and without him was not any thing made that was made.* (John 1:3) — the One who *commanded, and they were created* (Psalm 148:5) is the Word by whom all things were made. The Formed Son, the expressed Word drawn from the Formless Father, is the agent of the creation Psalm 148 calls to praise — Yahuah, and having a Father.'),
+    ('canon','psalms',148,5,'canon','colossians',1,16,'free',
+      E'*For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him* (Colossians 1:16) — the heavens and their hosts, the sun and stars and the things of earth that Psalm 148 summons, are the *all things* created *by him, and for him*. They were made for his praise; *he commanded, and they were created* (Psalm 148:5).'),
+    ('canon','psalms',148,5,'canon','hebrews',11,3,'free',
+      E'*Through faith we understand that the worlds were framed by the word of Elohim (God), so that things which are seen were not made of things which do appear.* (Hebrews 11:3) — the worlds *framed by the word* are the same creation Psalm 148:5 grounds in his command: *he commanded, and they were created*. The visible host of heaven and earth came from the unseen Word, and they praise the Name that spoke them.'),
+    ('canon','psalms',148,6,'canon','jeremiah',31,35,'free',
+      E'*Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva''ot (LORD of hosts) is his name* (Jeremiah 31:35) — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass* (Psalm 148:6). The fixed ordinances of sun, moon, and stars are the decree that shall not pass; the luminaries keep their unbroken courses by his appointment.'),
+    ('canon','psalms',148,6,'canon','jeremiah',31,36,'free',
+      E'*If those ordinances depart from before me, saith Yahuah (LORD), then the seed of Yashar''el (Israel) also shall cease from being a nation before me for ever.* (Jeremiah 31:36) — the *decree which shall not pass* (Psalm 148:6) is bound to the permanence of the covenant people: while the sun and stars keep their courses, the seed of Yashar''el shall never cease to be a nation. The fixed heavens are the guarantee that the two-house people are no more cast off than the stars are unmade.'),
+    ('canon','psalms',148,6,'canon','jeremiah',33,25,'free',
+      E'*Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth* (Jeremiah 33:25) — the *decree which shall not pass* (Psalm 148:6) is his covenant with day and night, the appointed ordinances of heaven and earth. The creation he established *for ever and ever* is the standing pledge of his covenant faithfulness.'),
+
+    -- T3 praise from the earth ---------------------------------------------------------------
+    ('canon','psalms',148,8,'canon','psalms',147,15,'free',
+      E'*He sendeth forth his commandment upon earth: his word runneth very swiftly.* (Psalm 147:15) — *Fire, and hail; snow, and vapour; stormy wind fulfilling his word* (Psalm 148:8). The elements praise him by obeying: the stormy wind *fulfilling his word* is the commandment that *runneth very swiftly* upon the earth. Their praise is their obedience to his swift-running word.'),
+    ('canon','psalms',148,8,'canon','psalms',147,18,'free',
+      E'*He sendeth out his word, and melteth them: he causeth his wind to blow, and the waters flow.* (Psalm 147:18) — the *snow* and *stormy wind* of Psalm 148:8 obey the same word: he sends it out and the snow melts, he causes the wind to blow and the waters flow. The weather is his servant, *fulfilling his word*, and so it praises him from the earth.'),
+
+    -- T4 his name alone excellent + the horn of his people -----------------------------------
+    ('canon','psalms',148,13,'canon','revelation',5,13,'free',
+      E'*And every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever.* (Revelation 5:13) — *Let them praise the name of Yahuah (LORD): for his name alone is excellent; his glory is above the earth and heaven* (Psalm 148:13). What Psalm 148 commands of all creation, the Revelation hears fulfilled: every creature in heaven and earth ascribing blessing, honour, and glory — the Name alone exalted above earth and heaven.'),
+    ('canon','psalms',148,14,'canon','1-samuel',2,1,'free',
+      E'*And Hannah prayed, and said, My heart rejoiceth in Yahuah (LORD), mine horn is exalted in Yahuah (LORD): my mouth is enlarged over mine enemies; because I rejoice in thy salvation.* (1 Samuel 2:1) — *He also exalteth the horn of his people* (Psalm 148:14). Hannah''s song is the pattern: the horn exalted in Yahuah, the lifting up of the lowly into his salvation — the same raised horn the whole creation is called to praise.'),
+    ('canon','psalms',148,14,'canon','1-samuel',2,10,'free',
+      E'*…Yahuah (LORD) shall judge the ends of the earth; and he shall give strength unto his king, and exalt the horn of his anointed.* (1 Samuel 2:10) — the *horn of his people* (Psalm 148:14) is exalted in the horn of his anointed: Yahuah gives strength to his king and lifts the horn of his Mashiach. The praise of the saints rises with the exalting of the anointed King.'),
+    ('canon','psalms',148,14,'canon','psalms',132,17,'free',
+      E'*There will I make the horn of David to bud: I have ordained a lamp for mine anointed.* (Psalm 132:17) — the *horn of his people* (Psalm 148:14) buds in David''s house: the horn of David made to bud, the lamp ordained for the anointed. The lifted horn of Psalm 148 is the Davidic horn of salvation, the King in whom his people are exalted.'),
+    ('canon','psalms',148,14,'canon','luke',1,69,'free',
+      E'*And hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:69) — the *horn of his people* (Psalm 148:14) is raised up as the *horn of salvation… in the house of his servant David*. Zechariah names what the psalm foresaw: the exalted horn of his people is the Davidic Saviour in whom the saints are lifted and made near.'),
+    ('canon','psalms',148,14,'canon','deuteronomy',4,7,'free',
+      E'*For what nation is there so great, who hath Elohim (God) so nigh unto them, as Yahuah Eloheinu (the LORD our God) is in all things that we call upon him for?* (Deuteronomy 4:7) — *the children of Yashar''el (Israel), a people near unto him* (Psalm 148:14). The nearness the psalm names is the covenant nearness of the Torah-people: no nation has Elohim so nigh. The praise of the saints rises from a people he has drawn near to himself.'),
+    ('canon','psalms',148,14,'canon','ephesians',2,13,'free',
+      E'*But now in HaMashiach Yahusha (Christ Jesus) ye who sometimes were far off are made nigh by the blood of Messiah (Christ).* (Ephesians 2:13) — *a people near unto him* (Psalm 148:14). The far-off of the scattered house are *made nigh by the blood* — the covenant nearness restored, the two houses brought near, not a new people replacing Yashar''el but the children of Yashar''el drawn back to the One who is near to them.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-148-praise-him-from-the-heights-all-his-angels-and-the-luminaries',
+       E'Praise him from the heights — all his angels and the luminaries',
+       E'*Praise ye Yahuah (LORD) from the heavens: praise him in the heights. Praise ye him, all his angels: praise ye him, all his hosts. Praise ye him, sun and moon: praise him, all ye stars of light. Praise him, ye heavens of heavens, and ye waters that be above the heavens.* (Psalm 148:1-4) — the Hallel begins at the top of creation. The angels summoned are the host that *do his commandments, hearkening unto the voice of his word* (Psalm 103:20) and his *ministers… that do his pleasure* (Psalm 103:21); their praise is obedience. They were singing at the foundation, *when the morning stars sang together, and all the sons of Elohim (God) shouted for joy* (Job 38:7). And the sun, moon, and stars called to praise are the very lights set *for signs, and for seasons* (Genesis 1:14), the *two great lights… he made the stars also* (Genesis 1:16) — the appointed-times luminaries keeping his calendar, praising their Maker by keeping their courses. Even the *waters that be above the heavens* are the waters he divided at creation (Genesis 1:7). The heights have praised him from the first.',
+       sv.verse_id, ev.verse_id, 'free', 25675
+  FROM _s302_ps148_lookup sv, _s302_ps148_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=148 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-148-he-commanded-and-they-were-created-the-decree-that-shall-not-pass',
+       E'He commanded, and they were created — the decree that shall not pass',
+       E'*Let them praise the name of Yahuah (LORD): for he commanded, and they were created. He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* (Psalm 148:5-6) — the creatures praise the Name because that Name made them, and made them by a word. *By the word of Yahuah (LORD) were the heavens made; and all the host of them by the breath of his mouth* (Psalm 33:6); *he spake, and it was done; he commanded, and it stood fast* (Psalm 33:9). That spoken Word is the Formed Son, the One by whom *all things were made* (John 1:3), by whom and for whom *all things created* in heaven and earth came to be (Colossians 1:16), the Word by whom *the worlds were framed* (Hebrews 11:3) — Yahuah, and having a Father. And the *decree which shall not pass* is the fixed ordinance of sun and moon and stars (Jeremiah 31:35), bound to the very permanence of the covenant people: while those ordinances keep their courses *the seed of Yashar''el (Israel) also shall* never *cease from being a nation* (Jeremiah 31:36), for his covenant is *with day and night… the ordinances of heaven and earth* (Jeremiah 33:25). The fixed heavens are the pledge that the two-house people are no more cast off than the stars are unmade.',
+       sv.verse_id, ev.verse_id, 'free', 25678
+  FROM _s302_ps148_lookup sv, _s302_ps148_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=148 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-148-praise-him-from-the-earth-the-elements-fulfilling-his-word',
+       E'Praise him from the earth — the elements fulfilling his word',
+       E'*Praise Yahuah (LORD) from the earth, ye dragons, and all deeps: Fire, and hail; snow, and vapour; stormy wind fulfilling his word* (Psalm 148:7-8) — the summons descends from the heights to the deeps, and the weather itself is named a worshipper. The elements praise him by obeying: the *stormy wind fulfilling his word* is the same commandment that *runneth very swiftly* upon the earth (Psalm 147:15). *He sendeth out his word, and melteth them: he causeth his wind to blow, and the waters flow* (Psalm 147:18) — the snow and the wind of Psalm 148 are his servants, doing his bidding the moment he speaks. Their obedience is their praise; the mountains and trees, the beasts and creeping things and flying fowl, all join the chorus of a creation that answers its Maker''s word.',
+       sv.verse_id, ev.verse_id, 'free', 25681
+  FROM _s302_ps148_lookup sv, _s302_ps148_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=148 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-148-his-name-alone-excellent-and-the-horn-of-his-people-exalted',
+       E'His name alone excellent — and the horn of his people exalted',
+       E'*Let them praise the name of Yahuah (LORD): for his name alone is excellent; his glory is above the earth and heaven. He also exalteth the horn of his people, the praise of all his saints; even of the children of Yashar''el (Israel), a people near unto him. Praise ye Yahuah (LORD).* (Psalm 148:13-14) — the cosmic Hallel closes with the Name alone exalted and the people drawn near. What the psalm commands of all creation, the Revelation hears answered: *every creature which is in heaven, and on the earth… Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb* (Revelation 5:13). And the *horn of his people* lifted is the horn of salvation: Hannah sang *mine horn is exalted in Yahuah (LORD)* (1 Samuel 2:1) and that Yahuah would *exalt the horn of his anointed* (1 Samuel 2:10); *there will I make the horn of David to bud* (Psalm 132:17); raised up at last as *an horn of salvation… in the house of his servant David* (Luke 1:69). The nearness is covenant nearness — no nation has Elohim *so nigh* (Deuteronomy 4:7) — and the far-off of the scattered house are *made nigh by the blood of Messiah (Christ)* (Ephesians 2:13): the children of Yashar''el restored and brought near, not replaced, a people near unto him.',
+       sv.verse_id, ev.verse_id, 'free', 25684
+  FROM _s302_ps148_lookup sv, _s302_ps148_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=148 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread members =====
+-- THREAD 1 MEMBERS
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*…ye his angels, that excel in strength, that do his commandments* (Psalm 103:20) — the angelic praise is obedience to the voice of his word.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=2
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=103 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-praise-him-from-the-heights-all-his-angels-and-the-luminaries'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*…all ye his hosts; ye ministers of his, that do his pleasure* (Psalm 103:21) — the armies of heaven answer the same summons.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=2
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=103 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-praise-him-from-the-heights-all-his-angels-and-the-luminaries'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*When the morning stars sang together…* (Job 38:7) — the heights praised him at the foundation of the world.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=2
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-praise-him-from-the-heights-all-his-angels-and-the-luminaries'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*…let them be for signs, and for seasons* (Genesis 1:14) — the luminaries called to praise are the appointed-times lights.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=3
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-praise-him-from-the-heights-all-his-angels-and-the-luminaries'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*…two great lights… he made the stars also* (Genesis 1:16) — the sun, moon, and stars praise the One who formed them.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=3
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-praise-him-from-the-heights-all-his-angels-and-the-luminaries'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*…the waters which were above the firmament* (Genesis 1:7) — the waters above, parted at creation, summoned to praise.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=4
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-praise-him-from-the-heights-all-his-angels-and-the-luminaries'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 MEMBERS
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*By the word of Yahuah (LORD) were the heavens made* (Psalm 33:6) — the host praise the Name that made them by a word.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=5
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-he-commanded-and-they-were-created-the-decree-that-shall-not-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*For he spake, and it was done; he commanded, and it stood fast* (Psalm 33:9) — the very grammar of "he commanded, and they were created."'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=5
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-he-commanded-and-they-were-created-the-decree-that-shall-not-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*All things were made by him* (John 1:3) — the Word, the Formed Son, is the agent of the creation called to praise.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=5
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-he-commanded-and-they-were-created-the-decree-that-shall-not-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*…all things were created by him, and for him* (Colossians 1:16) — the all things made for his praise.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=5
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-he-commanded-and-they-were-created-the-decree-that-shall-not-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*…the worlds were framed by the word of Elohim (God)* (Hebrews 11:3) — the visible host came from the unseen Word.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=5
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-he-commanded-and-they-were-created-the-decree-that-shall-not-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*…the ordinances of the moon and of the stars* (Jeremiah 31:35) — the fixed courses are the decree that shall not pass.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=6
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-he-commanded-and-they-were-created-the-decree-that-shall-not-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*…then the seed of Yashar''el (Israel) also shall cease from being a nation* (Jeremiah 31:36) — the fixed heavens guarantee the covenant people are not cast off.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=6
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-he-commanded-and-they-were-created-the-decree-that-shall-not-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*If my covenant be not with day and night…* (Jeremiah 33:25) — the decree is his covenant with the ordinances of heaven and earth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=6
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=33 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-he-commanded-and-they-were-created-the-decree-that-shall-not-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 MEMBERS
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He sendeth forth his commandment upon earth: his word runneth very swiftly* (Psalm 147:15) — the stormy wind "fulfilling his word" is the swift-running commandment.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=8
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=147 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-praise-him-from-the-earth-the-elements-fulfilling-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He sendeth out his word, and melteth them: he causeth his wind to blow* (Psalm 147:18) — the snow and wind obey the moment he speaks.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=8
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=147 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-praise-him-from-the-earth-the-elements-fulfilling-his-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 MEMBERS
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And every creature which is in heaven, and on the earth… Blessing, and honour, and glory* (Revelation 5:13) — the cosmic summons answered, the Name alone exalted.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=13
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-his-name-alone-excellent-and-the-horn-of-his-people-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*…mine horn is exalted in Yahuah (LORD)* (1 Samuel 2:1) — Hannah''s song, the pattern of the exalted horn.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=14
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-his-name-alone-excellent-and-the-horn-of-his-people-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*…and exalt the horn of his anointed* (1 Samuel 2:10) — the people''s horn is lifted in the horn of his anointed King.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=14
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-his-name-alone-excellent-and-the-horn-of-his-people-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*There will I make the horn of David to bud* (Psalm 132:17) — the lifted horn is the Davidic horn of salvation.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=14
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=132 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-his-name-alone-excellent-and-the-horn-of-his-people-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*…an horn of salvation for us in the house of his servant David* (Luke 1:69) — the horn foreseen, raised up at last.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=14
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=69
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-his-name-alone-excellent-and-the-horn-of-his-people-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*…who hath Elohim (God) so nigh unto them* (Deuteronomy 4:7) — the covenant nearness of the Torah-people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=14
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-his-name-alone-excellent-and-the-horn-of-his-people-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*…ye who sometimes were far off are made nigh by the blood of Messiah (Christ)* (Ephesians 2:13) — the scattered house brought near, restored not replaced.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps148_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=148 AND sv.verse_number=14
+  JOIN _s302_ps148_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-148-his-name-alone-excellent-and-the-horn-of-his-people-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_149.sql (Psalm 149) -----
+-- Chapter: Psalm 149  | Tag: ps149  | Session: s302  | Sort band base: 25700
+-- Temp view: _s302_ps149_lookup
+--
+-- Psalm 149 coverage:
+--   vv.1-3 (new song / congregation of saints / Zion's children praise with timbrel & harp)
+--        NT:     Rev 5:9 (the Lamb's new song of the redeemed), Rev 14:3 (the 144,000 new song)
+--        Extras: none warranted (the new-song motif is wholly canon-internal; no extras adds weight)
+--        Tanakh: Ps 33:3, Ps 96:1, Ps 98:1 (the new-song psalms), Isa 12:6 (Zion's inhabitant shout)
+--   v.2  (Yashar'el rejoice in him that made him / children of Zion joyful in their King)
+--        NT:     none warranted (Zeph 3:17 carries the Maker-King-rejoices weight more exactly)
+--        Extras: none warranted
+--        Tanakh: Zeph 3:17 (Yahuah in the midst, the King who rejoices over his people with singing)
+--   vv.4-5 (Yahuah taketh pleasure in his people / beautify the meek with salvation / songs on their beds)
+--        NT:     Matt 5:5 (the meek inherit the earth)
+--        Extras: none warranted
+--        Tanakh: Ps 25:9 (the meek guided/taught), Isa 61:1 (good tidings to the meek / beauty for ashes), Job 35:10 (Elohim my maker giveth songs in the night)
+--   vv.6-7 (high praises of El in the mouth + a twoedged sword in their hand / execute vengeance)
+--        NT:     Heb 4:12 (word sharper than a twoedged sword), Eph 6:17 (sword of the Spirit = the word), Rev 1:16 (twoedged sword out of the mouth), Rev 19:13/19:15 (the Word of Elohim, sword out of his mouth)
+--        Extras: none warranted
+--        Tanakh: Isa 11:4 (smite the earth with the rod of his mouth)
+--   vv.7-9 (vengeance on the heathen / bind kings / execute the judgment written / this honour have all his saints)
+--        NT:     1 Cor 6:2 (the saints shall judge the world)
+--        Extras: none warranted
+--        Tanakh: Deut 32:43 (Yahuah avenges the blood of his servants — vengeance is HIS), Dan 7:22 (judgment given to the saints, the saints possess the kingdom)
+--
+-- Threads (slug : target libraries):
+--   1. psalm-149-the-new-song-in-the-congregation-of-saints            : Tanakh + NT (free)
+--   2. psalm-149-rejoice-in-him-that-made-him-the-formed-king          : Tanakh (free)
+--   3. psalm-149-he-will-beautify-the-meek-with-salvation              : Tanakh + NT (free)
+--   4. psalm-149-the-twoedged-sword-is-the-high-praises-of-el-the-word : Tanakh + NT (free)
+--   5. psalm-149-the-judgment-written-this-honour-have-all-his-saints  : Tanakh + NT (free)
+--
+-- FRAMEWORK NOTES (load-bearing / contested):
+--   * The TWOEDGED SWORD (v.6) is framed CAREFULLY per the brief's victims-not-enemies rule.
+--     The saints' weapon is named in the SAME breath as the sword: "the high praises of El in
+--     their mouth, AND a twoedged sword in their hand." The two are one: the WORD is the sword.
+--     Heb 4:12 makes the word itself "sharper than any twoedged sword"; Eph 6:17 names "the
+--     sword of the Spirit, which is the word of Elohim"; Rev 1:16 / 19:15 put the sword OUT OF
+--     THE MOUTH of the Formed Word; Isa 11:4 smites "with the rod of his mouth." This is the
+--     judgment-cry of the seed-war that dismantles the rebel SYSTEMS (kings/nobles bound, the
+--     "judgment written" executed) — NEVER a charter for ethnic violence against peoples.
+--   * v.2 "him that made him" + "their King" = the FORMED King who has a Father (Christology
+--     §4): Yashar'el rejoices in her Maker-King, the visible One; Zeph 3:17 is that King in the
+--     midst rejoicing back over his people. Not a co-equal-persons gloss — a Son who is Yahuah
+--     and has a Father.
+--   * "his people" / "the children of Zion" / "Yashar'el" = the two-house covenant people, the
+--     redeemed congregation, not a replacement body (§2). The new song is sung by the redeemed
+--     out of every kindred (Rev 5:9) = the scattered houses gathered, not Gentiles supplanting.
+
+CREATE TEMP VIEW _s302_ps149_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the new song in the congregation of saints (vv.1-3)
+    ('canon','psalms',149,1,'canon','psalms',33,3,'free',
+     E'*Sing unto him a new song; play skilfully with a loud noise.* (Psalm 33:3). Psalm 149 opens with the same summons — *Sing unto Yahuah (LORD) a new song, and his praise in the congregation of saints* (Psalm 149:1) — the recurring call of the redeemed to a song their old mouths could not sing.'),
+    ('canon','psalms',149,1,'canon','psalms',96,1,'free',
+     E'*O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the earth.* (Psalm 96:1). The new song of Psalm 149 — *Sing unto Yahuah (LORD) a new song* (Psalm 149:1) — is the same new song the whole earth is summoned into when the King reigns.'),
+    ('canon','psalms',149,1,'canon','psalms',98,1,'free',
+     E'*O sing unto Yahuah (LORD) a new song; for he hath done marvellous things: his right hand, and his holy arm, hath gotten him the victory.* (Psalm 98:1). The new song is always the song of a VICTORY already won; Psalm 149''s *new song... in the congregation of saints* (Psalm 149:1) sings the same triumph of Yahuah''s right hand.'),
+    ('canon','psalms',149,2,'canon','isaiah',12,6,'free',
+     E'*Cry out and shout, thou inhabitant of Zion: for great is the Holy One of Yashar''el (Israel) in the midst of thee.* (Isaiah 12:6). When Psalm 149 calls *let the children of Zion be joyful in their King* (Psalm 149:2), it sounds Zion''s own shout in Isaiah — the Holy One of Yashar''el dwelling in the midst of his gathered people.'),
+    ('canon','psalms',149,1,'canon','revelation',5,9,'free',
+     E'*And they sung a new song, saying, Thou art worthy to take the book, and to open the seals thereof: for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation;* (Revelation 5:9). The *new song... in the congregation of saints* (Psalm 149:1) finds its end in heaven''s new song — the song of the redeemed who were bought by the blood of the slain Lamb, the scattered houses gathered out of every nation.'),
+    ('canon','psalms',149,1,'canon','revelation',14,3,'free',
+     E'*And they sung as it were a new song before the throne, and before the four beasts, and the elders: and no man could learn that song but the hundred and forty and four thousand, which were redeemed from the earth.* (Revelation 14:3). Psalm 149''s *new song... in the congregation of saints* (Psalm 149:1) is the song only the redeemed can learn — the 144,000 of the gathered tribes singing what no other mouth can.'),
+
+    -- Thread 2: rejoice in him that made him — the Formed King (v.2)
+    ('canon','psalms',149,2,'canon','zephaniah',3,17,'free',
+     E'*Yahuah Elohayka (The LORD thy God) in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing.* (Zephaniah 3:17). Psalm 149 bids *Yashar''el (Israel) rejoice in him that made him: let the children of Zion be joyful in their King* (Psalm 149:2) — and Zephaniah turns the joy both ways: the Maker-King in the midst of his people rejoices BACK over them with singing. The One they rejoice in is their Maker and their King at once — the Formed King who is Yahuah and has a Father.'),
+
+    -- Thread 3: he will beautify the meek with salvation (vv.4-5)
+    ('canon','psalms',149,4,'canon','psalms',25,9,'free',
+     E'*The meek will he guide in judgment: and the meek will he teach his way.* (Psalm 25:9). The same meek whom Yahuah guides and teaches are the meek whom Psalm 149 sees adorned — *he will beautify the meek with salvation* (Psalm 149:4).'),
+    ('canon','psalms',149,4,'canon','isaiah',61,1,'free',
+     E'*The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound;* (Isaiah 61:1). When Psalm 149 says *he will beautify the meek with salvation* (Psalm 149:4), Isaiah names the Anointed who carries that good tidings TO the meek — beauty for ashes, the captives freed.'),
+    ('canon','psalms',149,4,'canon','matthew',5,5,'free',
+     E'*Blessed are the meek: for they shall inherit the earth.* (Matthew 5:5). The promise that *Yahuah (LORD)... will beautify the meek with salvation* (Psalm 149:4) is the same beatitude the Formed Son pronounces — the lowly, not the violent, are the heirs.'),
+    ('canon','psalms',149,5,'canon','job',35,10,'free',
+     E'*But none saith, Where is Elohim (God) my maker, who giveth songs in the night;* (Job 35:10). Psalm 149''s *let them sing aloud upon their beds* (Psalm 149:5) is exactly the gift Job names — the Maker who gives his saints songs in the night, joy that does not wait for the daylight.'),
+
+    -- Thread 4: the twoedged sword is the high praises of El — the Word (vv.6-7)
+    ('canon','psalms',149,6,'canon','hebrews',4,12,'free',
+     E'*For the word of Elohim (God) is quick, and powerful, and sharper than any twoedged sword, piercing even to the dividing asunder of soul and spirit, and of the joints and marrow, and is a discerner of the thoughts and intents of the heart.* (Hebrews 4:12). Psalm 149 names the saints'' two weapons in one breath — *the high praises of Elohim (God)... in their mouth, and a twoedged sword in their hand* (Psalm 149:6) — and Hebrews shows they are ONE: the word itself IS the twoedged sword.'),
+    ('canon','psalms',149,6,'canon','ephesians',6,17,'free',
+     E'*And take the helmet of salvation, and the sword of the Spirit, which is the word of Elohim (God):* (Ephesians 6:17). The *twoedged sword in their hand* (Psalm 149:6), set beside the high praises of El in their mouth, is the sword Paul names plainly — the sword of the Spirit, which is the word of Elohim. The saints'' warfare is fought with the Word.'),
+    ('canon','psalms',149,6,'canon','revelation',1,16,'free',
+     E'*And he had in his right hand seven stars: and out of his mouth went a sharp twoedged sword: and his countenance was as the sun shineth in his strength.* (Revelation 1:16). The very *twoedged sword* of Psalm 149:6 proceeds OUT OF THE MOUTH of the Formed One — the Word himself wields it as speech, not steel.'),
+    ('canon','psalms',149,6,'canon','revelation',19,15,'free',
+     E'*And out of his mouth goeth a sharp sword, that with it he should smite the nations: and he shall rule them with a rod of iron: and he treadeth the winepress of the fierceness and wrath of El Shaddai (Almighty God).* (Revelation 19:15). He is named two verses before — *his name is called The Word of Elohim (God)* (Revelation 19:13) — and the sword that smites the nations comes out of his mouth. Psalm 149''s sword in the saints'' hand is the Word''s own sword, the vengeance executed by his speech.'),
+    ('canon','psalms',149,7,'canon','isaiah',11,4,'free',
+     E'*But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* (Isaiah 11:4). When Psalm 149 sends the saints *To execute vengeance upon the heathen* (Psalm 149:7), it is the Branch''s mode of judgment — smiting with the ROD OF HIS MOUTH, the word, never the carnal blade.'),
+
+    -- Thread 5: the judgment written — this honour have all his saints (vv.7-9)
+    ('canon','psalms',149,7,'canon','deuteronomy',32,43,'free',
+     E'*Rejoice, O ye nations, with his people: for he will avenge the blood of his servants, and will render vengeance to his adversaries, and will be merciful unto his land, and to his people.* (Deuteronomy 32:43). The *vengeance upon the heathen* of Psalm 149:7 is never the saints'' private grudge — it is HIS vengeance, the avenging of the blood of his servants, the judgment that belongs to Yahuah and is mercy to his people.'),
+    ('canon','psalms',149,9,'canon','daniel',7,22,'free',
+     E'*Until the Ancient of days came, and judgment was given to the saints of the El Elyon (most High); and the time came that the saints possessed the kingdom.* (Daniel 7:22). Psalm 149''s *To execute upon them the judgment written: this honour have all his saints* (Psalm 149:9) is the very honour Daniel sees granted — judgment given to the saints, the kingdom possessed, after the rebel horn is broken.'),
+    ('canon','psalms',149,9,'canon','1-corinthians',6,2,'free',
+     E'*Do ye not know that the saints shall judge the world? and if the world shall be judged by you, are ye unworthy to judge the smallest matters?* (1 Corinthians 6:2). The honour of Psalm 149:9 — *To execute upon them the judgment written: this honour have all his saints* — is the dignity Paul presses on the assembly: the saints shall judge the world, so they must surely judge the small things now.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== THREADS =====
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-149-the-new-song-in-the-congregation-of-saints',
+       E'The new song in the congregation of saints',
+       E'Psalm 149 opens with the summons that runs through the whole Psalter: *Sing unto Yahuah (LORD) a new song, and his praise in the congregation of saints* (Psalm 149:1), *Let them praise his name in the dance: let them sing praises unto him with the timbrel and harp* (Psalm 149:3). The new song is never an old tune relearned — it is the song of a victory already won, the song the redeemed could not sing before. *Sing unto him a new song; play skilfully with a loud noise* (Psalm 33:3); *O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the earth* (Psalm 96:1); *O sing unto Yahuah (LORD) a new song; for he hath done marvellous things: his right hand, and his holy arm, hath gotten him the victory* (Psalm 98:1). Zion herself takes up the shout: *Cry out and shout, thou inhabitant of Zion: for great is the Holy One of Yashar''el (Israel) in the midst of thee* (Isaiah 12:6) — the same children of Zion who *be joyful in their King* (Psalm 149:2). And the new song does not end on earth. In the throne-room the redeemed sing it: *And they sung a new song, saying, Thou art worthy to take the book... for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9) — the scattered houses bought back and gathered. *And they sung as it were a new song before the throne... and no man could learn that song but the hundred and forty and four thousand, which were redeemed from the earth* (Revelation 14:3). The new song belongs to those who have been bought; the congregation of saints is the gathered, redeemed Yashar''el, singing what no other mouth can learn.',
+       sv.verse_id, ev.verse_id, 'free', 25700
+  FROM _s302_ps149_lookup sv, _s302_ps149_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=149 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-149-rejoice-in-him-that-made-him-the-formed-king',
+       E'Rejoice in him that made him — the Formed King',
+       E'*Let Yashar''el (Israel) rejoice in him that made him: let the children of Zion be joyful in their King* (Psalm 149:2). The One Yashar''el rejoices in is named twice over in a single line — he is *him that made him*, the Maker, AND he is *their King*. This is the Formed King who is Yahuah and has a Father: the visible One who made his people and reigns over them. The joy runs both directions. *Yahuah Elohayka (The LORD thy God) in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing* (Zephaniah 3:17). The King in the midst of Zion rejoices BACK over his people with singing — the Maker delighting in the very ones he made and saved. Yashar''el sings to her King; her King sings over her. Not a co-equal-persons gloss laid on the text, but a Son who is the Maker, the King in the midst, who has a Father over him.',
+       sv.verse_id, ev.verse_id, 'free', 25701
+  FROM _s302_ps149_lookup sv, _s302_ps149_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=149 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-149-he-will-beautify-the-meek-with-salvation',
+       E'He will beautify the meek with salvation',
+       E'*For Yahuah (LORD) taketh pleasure in his people: he will beautify the meek with salvation. Let the saints be joyful in glory: let them sing aloud upon their beds* (Psalm 149:4-5). The ones Yahuah adorns are not the mighty but the MEEK — the same meek the whole canon singles out for grace. *The meek will he guide in judgment: and the meek will he teach his way* (Psalm 25:9). The Anointed is sent expressly to them: *the Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives* (Isaiah 61:1) — beauty for ashes, the meek made beautiful with salvation. The Formed Son seals it on the mount: *Blessed are the meek: for they shall inherit the earth* (Matthew 5:5). The lowly, not the violent, are the heirs. And the joy he gives them is not daylight joy only — *let them sing aloud upon their beds* (Psalm 149:5), for *none saith, Where is Elohim (God) my maker, who giveth songs in the night* (Job 35:10). The Maker gives his saints songs in the darkness.',
+       sv.verse_id, ev.verse_id, 'free', 25702
+  FROM _s302_ps149_lookup sv, _s302_ps149_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=149 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-149-the-twoedged-sword-is-the-high-praises-of-el-the-word',
+       E'The twoedged sword is the high praises of El — the Word',
+       E'*Let the high praises of Elohim (God) be in their mouth, and a twoedged sword in their hand; To execute vengeance upon the heathen, and punishments upon the people* (Psalm 149:6-7). Read carelessly this is a charter for ethnic violence. Read in full, the verse names the saints'' two weapons in one breath — the high praises of El in the MOUTH, and the twoedged sword in the HAND — and the rest of the library shows they are ONE thing. The sword IS the Word. *For the word of Elohim (God) is quick, and powerful, and sharper than any twoedged sword, piercing even to the dividing asunder of soul and spirit... and is a discerner of the thoughts and intents of the heart* (Hebrews 4:12). *Take the helmet of salvation, and the sword of the Spirit, which is the word of Elohim (God)* (Ephesians 6:17). The Formed One wields it as speech, not steel: *out of his mouth went a sharp twoedged sword* (Revelation 1:16); and when he rides to judge, *his name is called The Word of Elohim (God)* (Revelation 19:13) and *out of his mouth goeth a sharp sword, that with it he should smite the nations* (Revelation 19:15). It is the Branch''s own mode of judgment: *he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked* (Isaiah 11:4). The saints'' warfare dismantles the rebel SYSTEMS — it is a judgment-cry, the high praises of El sharpened into a sword, never a license to attack peoples.',
+       sv.verse_id, ev.verse_id, 'free', 25703
+  FROM _s302_ps149_lookup sv, _s302_ps149_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=149 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-149-the-judgment-written-this-honour-have-all-his-saints',
+       E'The judgment written — this honour have all his saints',
+       E'*To bind their kings with chains, and their nobles with fetters of iron; To execute upon them the judgment written: this honour have all his saints* (Psalm 149:8-9). The vengeance is not the saints'' private grudge — it is HIS, *the judgment WRITTEN*, executed at his command and on his timing. *Rejoice, O ye nations, with his people: for he will avenge the blood of his servants, and will render vengeance to his adversaries, and will be merciful unto his land, and to his people* (Deuteronomy 32:43) — vengeance belongs to Yahuah, and it ends in mercy to his people. The honour Psalm 149 grants is the very dignity Daniel sees handed down: *Until the Ancient of days came, and judgment was given to the saints of the El Elyon (most High); and the time came that the saints possessed the kingdom* (Daniel 7:22) — judgment given, the kingdom possessed, after the rebel horn is broken. And Paul presses that same honour on the assembly: *Do ye not know that the saints shall judge the world? and if the world shall be judged by you, are ye unworthy to judge the smallest matters?* (1 Corinthians 6:2). This is the saints'' honour — to share in the judgment written against the rebel powers — never a warrant to take vengeance into their own hands.',
+       sv.verse_id, ev.verse_id, 'free', 25704
+  FROM _s302_ps149_lookup sv, _s302_ps149_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=149 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD MEMBERS =====
+
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Sing unto him a new song; play skilfully with a loud noise* (Psalm 33:3) — the same new-song summons.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=1
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-new-song-in-the-congregation-of-saints'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*O sing unto Yahuah (LORD) a new song: sing unto Yahuah (LORD), all the earth* (Psalm 96:1) — the whole earth drawn into the new song.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=1
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=96 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-new-song-in-the-congregation-of-saints'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*O sing unto Yahuah (LORD) a new song; for he hath done marvellous things* (Psalm 98:1) — the new song of a victory already won.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=1
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=98 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-new-song-in-the-congregation-of-saints'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Cry out and shout, thou inhabitant of Zion: for great is the Holy One of Yashar''el (Israel) in the midst of thee* (Isaiah 12:6) — Zion''s children joyful in their King.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=2
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=12 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-new-song-in-the-congregation-of-saints'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*And they sung a new song... for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9) — the gathered houses sing the new song of the Lamb.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=1
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-new-song-in-the-congregation-of-saints'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*And they sung as it were a new song before the throne... and no man could learn that song but the hundred and forty and four thousand, which were redeemed from the earth* (Revelation 14:3) — only the redeemed can learn it.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=1
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-new-song-in-the-congregation-of-saints'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah Elohayka (The LORD thy God) in the midst of thee is mighty... he will joy over thee with singing* (Zephaniah 3:17) — the Maker-King rejoices BACK over his people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=2
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-rejoice-in-him-that-made-him-the-formed-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The meek will he guide in judgment: and the meek will he teach his way* (Psalm 25:9) — the same meek whom Yahuah adorns.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=4
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=25 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-he-will-beautify-the-meek-with-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...he hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted* (Isaiah 61:1) — the Anointed sent to the meek, beauty for ashes.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=4
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-he-will-beautify-the-meek-with-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Blessed are the meek: for they shall inherit the earth* (Matthew 5:5) — the Formed Son seals the meek as heirs.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=4
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-he-will-beautify-the-meek-with-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*...Elohim (God) my maker, who giveth songs in the night* (Job 35:10) — the Maker gives songs aloud upon their beds, joy in the dark.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=5
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=35 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-he-will-beautify-the-meek-with-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*For the word of Elohim (God) is quick, and powerful, and sharper than any twoedged sword* (Hebrews 4:12) — the Word IS the twoedged sword.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=6
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-twoedged-sword-is-the-high-praises-of-el-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...the sword of the Spirit, which is the word of Elohim (God)* (Ephesians 6:17) — the saints'' sword named plainly.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=6
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-twoedged-sword-is-the-high-praises-of-el-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...out of his mouth went a sharp twoedged sword* (Revelation 1:16) — the very sword proceeds from the Formed One''s mouth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=6
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-twoedged-sword-is-the-high-praises-of-el-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*...his name is called The Word of Elohim (God)... and out of his mouth goeth a sharp sword, that with it he should smite the nations* (Revelation 19:13,15) — the Word wields the sword as speech.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=6
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-twoedged-sword-is-the-high-praises-of-el-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*...he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked* (Isaiah 11:4) — the Branch judges with the rod of his mouth, never the carnal blade.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=7
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-twoedged-sword-is-the-high-praises-of-el-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...he will avenge the blood of his servants, and will render vengeance to his adversaries, and will be merciful unto his land, and to his people* (Deuteronomy 32:43) — vengeance is HIS, ending in mercy.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=7
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-judgment-written-this-honour-have-all-his-saints'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...judgment was given to the saints of the El Elyon (most High); and the time came that the saints possessed the kingdom* (Daniel 7:22) — the very honour granted to the saints.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=9
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-judgment-written-this-honour-have-all-his-saints'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Do ye not know that the saints shall judge the world?* (1 Corinthians 6:2) — the saints'' honour pressed on the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps149_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=149 AND sv.verse_number=9
+  JOIN _s302_ps149_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=6 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-149-the-judgment-written-this-honour-have-all-his-saints'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_150.sql (Psalm 150) -----
+-- Chapter: Psalm 150 — the FINAL psalm, the capstone doxology that seals the whole Psalter.
+--   "Let every thing that hath breath praise Yah. Praise ye Yah." (★★★ the telos of the 150)
+-- Tag: ps150   Session prefix: s302   Sort band base: 25725   Temp view: _s302_ps150_lookup
+-- Output: minion_psalms_150.sql
+-- Slug prefix SINGULAR: psalm-150-...  (verse-lookup book_slug stays PLURAL 'psalms')
+--
+-- ============================ COVERAGE CHECKLIST (all 3 libraries per verse-block) ============================
+-- Psalm 150 coverage:
+--   v.1  WHERE — praise El in his sanctuary + the firmament of his power
+--        NT:     Hebrews 8:5 (earthly tabernacle the shadow of heavenly), Hebrews 9:24 (the heavenly holy place) — bound
+--        Extras: none warranted here (the Enoch heavenly-sanctuary praise carried in v.6 capstone thread)
+--        Tanakh: Psalm 134:1-2 (bless Yahuah in the sanctuary, lift hands), Psalm 19:1 (firmament sheweth his handywork),
+--                Genesis 1:6-7 (the firmament made) — bound
+--   v.2  WHY — his mighty acts + his excellent (unsearchable) greatness
+--        NT:     none warranted (the doxological "great is Yahuah" sweeps forward in the v.6 thread)
+--        Extras: none warranted
+--        Tanakh: Psalm 145:3-6 (great is Yahuah... his greatness is unsearchable... his mighty acts — keystone twin),
+--                Deuteronomy 3:24 (thy greatness, thy mighty hand) — bound
+--   vv.3-5  HOW — the full Levitical temple orchestra: trumpet, psaltery, harp, timbrel, dance, strings, organs, cymbals
+--        NT:     Revelation 5:8 (elders with harps before the Lamb), Revelation 15:2-3 (harps of Elohim, the song) — bound
+--        Extras: none warranted (heavenly-praise extras carried in v.6 capstone)
+--        Tanakh: 1 Chronicles 16:4-6 (David appoints Levites: psalteries, harps, cymbals, trumpets),
+--                1 Chronicles 25:1 (sons of Asaph/Heman/Jeduthun prophesy with harps, psalteries, cymbals),
+--                2 Chronicles 5:13 (the trumpeters and singers as one — the glory-cloud fills the house),
+--                Leviticus 23:24 (memorial of blowing of trumpets — the appointed-times call),
+--                Numbers 10:10 (blow the trumpets over your offerings, in your solemn days — a memorial) — bound
+--   v.6  ★★★ THE CONSUMMATION — let every thing that hath breath (kol haneshamah) praise Yahuah
+--        NT:     Revelation 5:13 (every creature in heaven/earth/sea praising), Philippians 2:10 (every knee bow),
+--                Acts 17:25 (he giveth to all life and breath) — bound
+--        Extras: 1 Enoch 61:11 (they shall raise ONE voice and bless... all say with one voice),
+--                1 Enoch 39:12 (the four presences uttering praises before Yahuah of glory),
+--                Jubilees 2:21 (the peculiar people to bless Him who has created all things) — bound
+--        Tanakh: Genesis 2:7 (breathed into his nostrils the breath of life — the breath returns as praise),
+--                Isaiah 42:5 (he that giveth breath unto the people upon it), Isaiah 45:23 (every knee shall bow,
+--                every tongue shall swear), Psalm 145:21 (let all flesh bless his holy name for ever) — bound
+--
+-- ============================ THREADS (4) ============================
+--   1. psalm-150-praise-el-in-his-sanctuary-and-the-firmament-of-his-power
+--        [WHERE] Tanakh(Ps134, Ps19, Gen1) + NT(Heb8:5, Heb9:24) — free
+--   2. psalm-150-his-mighty-acts-and-his-excellent-greatness
+--        [WHY] Tanakh(Ps145:3-6, Deut3:24) — free
+--   3. psalm-150-the-full-levitical-orchestra-of-davids-temple-worship
+--        [HOW] Tanakh(1Chr16, 1Chr25, 2Chr5, Lev23, Num10) + NT(Rev5:8, Rev15:2-3) — free
+--   4. psalm-150-let-every-thing-that-hath-breath-praise-yah  ★★★ CAPSTONE
+--        [CONSUMMATION] Tanakh(Gen2:7, Isa42:5, Isa45:23, Ps145:21) + NT(Rev5:13, Phil2:10, Acts17:25)
+--        + Extras(1En61:11, 1En39:12, Jub2:21) — extras
+--
+-- ============================ FRAMEWORK NOTES ============================
+--  • Psalm 150 is the doxology that seals the five books of the Psalter; the framing follows WHERE/WHY/HOW/WHO.
+--  • vv.3-5 are the Torah-shaped, David-appointed temple liturgy — the appointed-times shofar (Lev23:24/Num10:10),
+--    NOT abolished worship. It crescendos FORWARD to the harps of heaven (Rev5:8 / 15:2-3), the same liturgy
+--    consummated, not replaced.
+--  • Hebrews 8:5 / 9:24 frame the sanctuary of v.1 as the earthly pattern of the heavenly holy place — the praise
+--    below joined to the praise above; Formed-Son mediation (Heb9:24, "to appear in the presence of Elohim for us")
+--    without trinitarian grammar.
+--  • v.6 kol haneshamah = the breath given at creation (Gen2:7) returning as praise — every breathing creature, the
+--    gathered two-house people and all creation in one final Hallelujah; the extras (1En61:11 "with one voice",
+--    Jub2:21 the peculiar people blessing the Creator) and the NT every-knee/every-creature texts complete the telos.
+
+CREATE TEMP VIEW _s302_ps150_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- ---- Thread 1: WHERE — sanctuary + firmament (v.1) ----
+    ('canon','psalms',150,1, 'canon','psalms',134,1, 'free',
+     E'*Behold, bless ye Yahuah (LORD), all ye servants of Yahuah (LORD), which by night stand in the house of Yahuah (LORD)* (Psalm 134:1). The capstone''s WHERE — *Praise Elohim (God) in his sanctuary* — is the night-watch psalm answered: the servants who stand in the house of Yahuah lift the praise the doxology now commands.'),
+    ('canon','psalms',150,1, 'canon','psalms',134,2, 'free',
+     E'*Lift up your hands in the sanctuary, and bless Yahuah (LORD)* (Psalm 134:2). The very posture of *praise Elohim (God) in his sanctuary* — hands lifted in the holy place; the Torah-shaped temple worship the final psalm crowns.'),
+    ('canon','psalms',150,1, 'canon','psalms',19,1, 'free',
+     E'*The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork* (Psalm 19:1). The second WHERE of the capstone — *praise him in the firmament of his power* — is the firmament already preaching; the dome above and the sanctuary below are one house of praise.'),
+    ('canon','psalms',150,1, 'canon','genesis',1,6, 'free',
+     E'*And Elohim (God) said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters* (Genesis 1:6). The *firmament of his power* of the capstone is the firmament the Formed-Son spoke into being on the second day — the same word now summoned to praise.'),
+    ('canon','psalms',150,1, 'canon','genesis',1,7, 'free',
+     E'*And Elohim (God) made the firmament, and divided the waters which were under the firmament from the waters which were above the firmament: and it was so* (Genesis 1:7). The making of the *firmament of his power* — creation''s architecture, the dome of heaven, now called to declare its Maker''s praise.'),
+    ('canon','psalms',150,1, 'canon','hebrews',8,5, 'free',
+     E'*Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5). The *sanctuary* of the capstone is the earthly pattern of the heavenly holy place — the praise below shaped to the worship above; the Torah tabernacle a shadow, never a defunct thing.'),
+    ('canon','psalms',150,1, 'canon','hebrews',9,24, 'free',
+     E'*For Messiah (Christ) is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of Elohim (God) for us* (Hebrews 9:24). The *sanctuary* where El is praised joins the heavenly holy place the Formed-Son has entered — the praise of v.1 carried into the presence of Elohim.'),
+
+    -- ---- Thread 2: WHY — mighty acts + excellent greatness (v.2) ----
+    ('canon','psalms',150,2, 'canon','psalms',145,3, 'free',
+     E'*Great is Yahuah (LORD), and greatly to be praised; and his greatness is unsearchable* (Psalm 145:3). The capstone''s WHY — *praise him according to his excellent greatness* — is the keystone twin: the greatness so excellent it cannot be searched out is the very ground of the praise.'),
+    ('canon','psalms',150,2, 'canon','psalms',145,4, 'free',
+     E'*One generation shall praise thy works to another, and shall declare thy mighty acts* (Psalm 145:4). *Praise him for his mighty acts* — the doxology gathers the generations'' declaring into one final shout.'),
+    ('canon','psalms',150,2, 'canon','psalms',145,5, 'free',
+     E'*I will speak of the glorious honour of thy majesty, and of thy wondrous works* (Psalm 145:5). The *excellent greatness* of the capstone is the majesty and the wondrous works the psalmist resolved to rehearse — now made the whole Psalter''s closing theme.'),
+    ('canon','psalms',150,2, 'canon','psalms',145,6, 'free',
+     E'*And men shall speak of the might of thy terrible acts: and I will declare thy greatness* (Psalm 145:6). *Praise him for his mighty acts... according to his excellent greatness* — the twin verbs of the capstone, the might and the greatness, drawn straight from the keystone hymn.'),
+    ('canon','psalms',150,2, 'canon','deuteronomy',3,24, 'free',
+     E'*O Yahuah (Lord) GOD, thou hast begun to shew thy servant thy greatness, and thy mighty hand: for what Elohim (God) is there in heaven or in earth, that can do according to thy works, and according to thy might?* (Deuteronomy 3:24). Moses'' word frames the capstone''s WHY at the Torah''s root — the *greatness* and the *mighty* works that no other in heaven or earth can match.'),
+
+    -- ---- Thread 3: HOW — the full Levitical orchestra (vv.3-5) ----
+    ('canon','psalms',150,3, 'canon','1-chronicles',16,4, 'free',
+     E'*And he appointed certain of the Levites to minister before the ark of Yahuah (LORD), and to record, and to thank and praise Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (1 Chronicles 16:4). The orchestra of vv.3-5 is no spontaneous flourish but David''s appointed temple order — the Levites set in place to praise.'),
+    ('canon','psalms',150,3, 'canon','1-chronicles',16,5, 'free',
+     E'*Asaph the chief... and Jeiel with psalteries and with harps; but Asaph made a sound with cymbals* (1 Chronicles 16:5). *Praise him with the psaltery and harp... upon the loud cymbals* — the very instruments of the capstone, named in David''s appointment.'),
+    ('canon','psalms',150,3, 'canon','1-chronicles',16,6, 'free',
+     E'*Benaiah also and Jahaziel the priests with trumpets continually before the ark of the covenant of Elohim (God)* (1 Chronicles 16:6). *Praise him with the sound of the trumpet* — the priests'' continual trumpet before the ark, the appointed liturgy the capstone crowns.'),
+    ('canon','psalms',150,3, 'canon','1-chronicles',25,1, 'free',
+     E'*Moreover David and the captains of the host separated to the service of the sons of Asaph, and of Heman, and of Jeduthun, who should prophesy with harps, with psalteries, and with cymbals* (1 Chronicles 25:1). The temple-music of vv.3-5 is a prophetic ministry — *prophesy with harps, with psalteries, and with cymbals* — the worship the Torah-ordained Levites carried.'),
+    ('canon','psalms',150,5, 'canon','2-chronicles',5,13, 'free',
+     E'*It came even to pass, as the trumpeters and singers were as one, to make one sound to be heard in praising and thanking Yahuah (LORD)... that then the house was filled with a cloud, even the house of Yahuah (LORD)* (2 Chronicles 5:13). The crescendo of *loud cymbals... high sounding cymbals* finds its end here: when the temple orchestra became one sound, the glory-cloud filled the house — praise meeting the Presence.'),
+    ('canon','psalms',150,3, 'canon','leviticus',23,24, 'free',
+     E'*Speak unto the children of Yashar''el (Israel), saying, In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24). *Praise him with the sound of the trumpet* — the shofar of the capstone is the appointed-times call of the Torah, the memorial of blowing the feast-calendar commands.'),
+    ('canon','psalms',150,3, 'canon','numbers',10,10, 'free',
+     E'*Also in the day of your gladness, and in your solemn days, and in the beginnings of your months, ye shall blow with the trumpets over your burnt offerings... that they may be to you for a memorial before your Elohim (God): I am Yahuah Elohaychem (the LORD your God)* (Numbers 10:10). The trumpet of v.3 is the Torah''s memorial blast over the appointed offerings — worship Yahuah himself ordained, never abolished.'),
+    ('canon','psalms',150,3, 'canon','revelation',5,8, 'free',
+     E'*And when he had taken the book, the four beasts and four and twenty elders fell down before the Lamb, having every one of them harps, and golden vials full of odours, which are the prayers of saints* (Revelation 5:8). The harps of v.3 crescendo FORWARD to the harps of heaven before the Lamb — the same temple liturgy consummated, not replaced.'),
+    ('canon','psalms',150,5, 'canon','revelation',15,2, 'free',
+     E'*And I saw as it were a sea of glass mingled with fire: and them that had gotten the victory over the beast... stand on the sea of glass, having the harps of Elohim (God)* (Revelation 15:2). The instruments of vv.3-5 reach their telos in the redeemed standing with *the harps of Elohim (God)* — the orchestra of David carried into the new song of the overcomers.'),
+    ('canon','psalms',150,5, 'canon','revelation',15,3, 'free',
+     E'*And they sing the song of Moses the servant of Elohim (God), and the song of the Lamb, saying, Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty; just and true are thy ways, thou King of saints* (Revelation 15:3). The praise of *his mighty acts* set to the harps ends in the song of Moses AND the Lamb — the Torah''s worship and its fulfillment sung as one.'),
+
+    -- ---- Thread 4: ★★★ CONSUMMATION — let every thing that hath breath praise Yah (v.6) ----
+    ('canon','psalms',150,6, 'canon','genesis',2,7, 'free',
+     E'*And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul* (Genesis 2:7). *Let every thing that hath breath praise Yahuah* — the breath the Formed-Son breathed in at creation returns at the Psalter''s end as praise; the gift of breath answered by the use of breath.'),
+    ('canon','psalms',150,6, 'canon','isaiah',42,5, 'free',
+     E'*Thus saith Elohim (God) Yahuah (LORD)... he that giveth breath unto the people upon it, and spirit to them that walk therein* (Isaiah 42:5). He who *giveth breath unto the people* is the one *every thing that hath breath* is now summoned to praise — the Giver claiming the gift back as worship.'),
+    ('canon','psalms',150,6, 'canon','psalms',145,21, 'free',
+     E'*My mouth shall speak the praise of Yahuah (LORD): and let all flesh bless his holy name for ever and ever* (Psalm 145:21). The keystone''s closing vow — *let all flesh bless his holy name* — is widened in the capstone to *every thing that hath breath*; the whole Psalter ends where the great Hallel began.'),
+    ('canon','psalms',150,6, 'canon','isaiah',45,23, 'free',
+     E'*I have sworn by myself, the word is gone out of my mouth in righteousness, and shall not return, That unto me every knee shall bow, every tongue shall swear* (Isaiah 45:23). *Every thing that hath breath* gathered to praise is the sworn oath of Yahuah — every knee, every tongue, no breathing creature withheld.'),
+    ('canon','psalms',150,6, 'canon','acts',17,25, 'free',
+     E'*Neither is worshipped with men''s hands, as though he needed any thing, seeing he giveth to all life, and breath, and all things* (Acts 17:25). He *giveth to all life, and breath* — the very breath the capstone calls back into praise; the Creator who needs nothing, sought by everything that breathes.'),
+    ('canon','psalms',150,6, 'canon','revelation',5,13, 'free',
+     E'*And every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever* (Revelation 5:13). The capstone''s *every thing that hath breath* reaches its consummation here — every creature in every realm joined in one blessing; the Psalter''s final Hallelujah become the song of all creation.'),
+    ('canon','psalms',150,6, 'canon','philippians',2,10, 'free',
+     E'*That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:10). *Every thing that hath breath* — every knee in heaven, earth, and under the earth — the universal homage the kenosis-hymn foretells, the Formed-Son exalted by the Father.'),
+    ('canon','psalms',150,6, 'enoch','1-enoch',61,11, 'extras',
+     E'*And they shall raise one voice and bless and glorify and extol and praise the name of Yahuah (God) of Spirits... and shall all say with one voice: "Blessed is He, and may the name of Yahuah (God) of Spirits be blessed for ever and ever"* (1 Enoch 61:11). The capstone''s summons of *every thing that hath breath* is the host of heaven raising ONE voice — the same final, unanimous Hallelujah the Psalter ends on.'),
+    ('canon','psalms',150,6, 'enoch','1-enoch',39,12, 'extras',
+     E'*And I heard the voices of those four presences as they uttered praises before Yahuah (God) of glory* (1 Enoch 39:12). The praise the capstone commands below is already sounding above — the four presences before the throne uttering the praise *every thing that hath breath* is now gathered into.'),
+    ('canon','psalms',150,6, 'jubilees','jubilees',2,21, 'extras',
+     E'*...to bless Him who has created all things as He has blessed and sanctified to Himself a peculiar people above all peoples* (Jubilees 2:21). The two-house people sanctified as a *peculiar people* are summoned to bless the Creator — the covenant breath gathered into the *every thing that hath breath* of the final Hallelujah.')
+  ) AS i(src_edition,src_slug,src_ch,src_v, tgt_edition,tgt_slug,tgt_ch,tgt_v, tier,note)
+  JOIN _s302_ps150_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps150_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-150-praise-el-in-his-sanctuary-and-the-firmament-of-his-power',
+       E'Praise El in His Sanctuary, and the Firmament of His Power (WHERE)',
+       E'The final psalm opens with the WHERE of praise: *Praise ye Yahuah (LORD). Praise Elohim (God) in his sanctuary: praise him in the firmament of his power* (Psalm 150:1). Two houses of praise are joined — the sanctuary below and the firmament above. The sanctuary is the night-watch psalm answered, *Behold, bless ye Yahuah (LORD), all ye servants of Yahuah (LORD), which by night stand in the house of Yahuah (LORD)* (Psalm 134:1), *Lift up your hands in the sanctuary, and bless Yahuah (LORD)* (Psalm 134:2). The firmament already preaches: *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork* (Psalm 19:1) — the very dome the Formed-Son spoke into being, *Let there be a firmament in the midst of the waters* (Genesis 1:6), *And Elohim (God) made the firmament* (Genesis 1:7). And the earthly sanctuary is no defunct thing but the pattern of the heavenly: *Who serve unto the example and shadow of heavenly things... that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5), into which *Messiah (Christ)... is entered... into heaven itself, now to appear in the presence of Elohim (God) for us* (Hebrews 9:24). The praise below is the praise above.',
+       sv.verse_id, ev.verse_id, 'free', 25725
+  FROM _s302_ps150_lookup sv, _s302_ps150_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=150 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=150 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-150-his-mighty-acts-and-his-excellent-greatness',
+       E'His Mighty Acts and His Excellent Greatness (WHY)',
+       E'The psalm gives the WHY of praise: *Praise him for his mighty acts: praise him according to his excellent greatness* (Psalm 150:2). This is the keystone hymn distilled — *Great is Yahuah (LORD), and greatly to be praised; and his greatness is unsearchable* (Psalm 145:3); *One generation shall praise thy works to another, and shall declare thy mighty acts* (Psalm 145:4); *I will speak of the glorious honour of thy majesty, and of thy wondrous works* (Psalm 145:5); *And men shall speak of the might of thy terrible acts: and I will declare thy greatness* (Psalm 145:6). The twin verbs of the capstone — the *mighty acts* and the *excellent greatness* — are drawn straight from that great acrostic. And the root runs back to Moses at the Torah: *thou hast begun to shew thy servant thy greatness, and thy mighty hand: for what Elohim (God) is there in heaven or in earth, that can do according to thy works, and according to thy might?* (Deuteronomy 3:24). No other in heaven or earth can match the works the final psalm praises.',
+       sv.verse_id, ev.verse_id, 'free', 25733
+  FROM _s302_ps150_lookup sv, _s302_ps150_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=150 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=150 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-150-the-full-levitical-orchestra-of-davids-temple-worship',
+       E'The Full Levitical Orchestra of David''s Temple Worship (HOW)',
+       E'The psalm gives the HOW of praise — the full temple orchestra: *Praise him with the sound of the trumpet: praise him with the psaltery and harp. Praise him with the timbrel and dance: praise him with stringed instruments and organs. Praise him upon the loud cymbals: praise him upon the high sounding cymbals* (Psalm 150:3-5). This is no spontaneous flourish but the worship David appointed at the ark: *And he appointed certain of the Levites to minister before the ark of Yahuah (LORD)... to thank and praise Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (1 Chronicles 16:4), with *Jeiel with psalteries and with harps; but Asaph made a sound with cymbals* (1 Chronicles 16:5) and *Benaiah also and Jahaziel the priests with trumpets continually before the ark* (1 Chronicles 16:6). It was a prophetic ministry — *who should prophesy with harps, with psalteries, and with cymbals* (1 Chronicles 25:1) — and when its sound became one, the Presence came: *as the trumpeters and singers were as one, to make one sound... that then the house was filled with a cloud, even the house of Yahuah (LORD)* (2 Chronicles 5:13). The trumpet itself is the Torah''s appointed-times call: *a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24); *in your solemn days... ye shall blow with the trumpets... that they may be to you for a memorial before your Elohim (God)* (Numbers 10:10). This Torah-shaped liturgy is never abolished — it crescendos FORWARD to the harps of heaven: *the four and twenty elders fell down before the Lamb, having every one of them harps* (Revelation 5:8), the overcomers *having the harps of Elohim (God)* (Revelation 15:2), who *sing the song of Moses the servant of Elohim (God), and the song of the Lamb* (Revelation 15:3). The same worship, consummated.',
+       sv.verse_id, ev.verse_id, 'free', 25741
+  FROM _s302_ps150_lookup sv, _s302_ps150_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=150 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=150 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-150-let-every-thing-that-hath-breath-praise-yah',
+       E'Let Every Thing That Hath Breath Praise Yah — the Consummation of the Psalter',
+       E'The whole Psalter ends on a single, total summons: *Let every thing that hath breath praise Yahuah (LORD). Praise ye Yahuah (LORD)* (Psalm 150:6). Every breathing creature — kol haneshamah — is called, and the breath itself is the clue: it was given at creation, *And Yahuah Elohim (the LORD God) formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul* (Genesis 2:7), and it is held by the One *that giveth breath unto the people upon it, and spirit to them that walk therein* (Isaiah 42:5), who *giveth to all life, and breath, and all things* (Acts 17:25). The gift returns as praise. This widens the keystone''s closing vow — *let all flesh bless his holy name for ever and ever* (Psalm 145:21) — to the very edge of creation, and it is sworn by Yahuah himself: *unto me every knee shall bow, every tongue shall swear* (Isaiah 45:23), *That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:10). The restored library hears it already sounding above and ahead: *And I heard the voices of those four presences as they uttered praises before Yahuah (God) of glory* (1 Enoch 39:12); the host *shall raise one voice and bless and glorify and extol and praise the name of Yahuah (God) of Spirits... and shall all say with one voice: "Blessed is He"* (1 Enoch 61:11); and the *peculiar people above all peoples* are sanctified *to bless Him who has created all things* (Jubilees 2:21). It consummates in John''s vision, where *every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them* cries *Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever* (Revelation 5:13). This is the telos of the whole Psalter: the gathered two-house people and all that breathes, in one final Hallelujah. Praise ye Yah.',
+       sv.verse_id, ev.verse_id, 'extras', 25749
+  FROM _s302_ps150_lookup sv, _s302_ps150_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=150 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=150 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- Thread 1: WHERE — sanctuary + firmament
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','psalms',134,1, 1, E'Psalm 134:1 — the servants who *by night stand in the house of Yahuah* — the sanctuary praise the doxology commands.'),
+    ('canon','psalms',134,2, 2, E'Psalm 134:2 — *Lift up your hands in the sanctuary, and bless Yahuah* — the posture of praise in the holy place.'),
+    ('canon','psalms',19,1, 3, E'Psalm 19:1 — *the firmament sheweth his handywork* — the firmament of his power already preaching.'),
+    ('canon','genesis',1,6, 4, E'Genesis 1:6 — *Let there be a firmament* — the firmament the Formed-Son spoke into being, day two.'),
+    ('canon','genesis',1,7, 5, E'Genesis 1:7 — *Elohim (God) made the firmament* — creation''s dome, now summoned to praise its Maker.'),
+    ('canon','hebrews',8,5, 6, E'Hebrews 8:5 — the earthly tabernacle the *shadow of heavenly things*; the sanctuary praise patterned on the heavenly worship.'),
+    ('canon','hebrews',9,24, 7, E'Hebrews 9:24 — Messiah entered *heaven itself... in the presence of Elohim* — the sanctuary praise carried above.')
+  ) AS m(tgt_ed,tgt_slug,tgt_ch,tgt_v, sort_order, member_note)
+  JOIN _s302_ps150_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=150 AND sv.verse_number=1
+  JOIN _s302_ps150_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-150-praise-el-in-his-sanctuary-and-the-firmament-of-his-power'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: WHY — mighty acts + excellent greatness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','psalms',145,3, 1, E'Psalm 145:3 — *his greatness is unsearchable* — the keystone twin of *his excellent greatness*.'),
+    ('canon','psalms',145,4, 2, E'Psalm 145:4 — *shall declare thy mighty acts* — the generations'' praise the doxology gathers.'),
+    ('canon','psalms',145,5, 3, E'Psalm 145:5 — *thy majesty... thy wondrous works* — the excellent greatness rehearsed.'),
+    ('canon','psalms',145,6, 4, E'Psalm 145:6 — *the might of thy terrible acts... thy greatness* — both verbs of the capstone, side by side.'),
+    ('canon','deuteronomy',3,24, 5, E'Deuteronomy 3:24 — Moses: *thy greatness, and thy mighty hand* — the WHY at the Torah''s root.')
+  ) AS m(tgt_ed,tgt_slug,tgt_ch,tgt_v, sort_order, member_note)
+  JOIN _s302_ps150_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=150 AND sv.verse_number=2
+  JOIN _s302_ps150_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-150-his-mighty-acts-and-his-excellent-greatness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: HOW — the Levitical orchestra (members across src v.3 and v.5)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (3, 'canon','1-chronicles',16,4, 1, E'1 Chronicles 16:4 — David appoints the Levites to praise before the ark — the orchestra ordained.'),
+    (3, 'canon','1-chronicles',16,5, 2, E'1 Chronicles 16:5 — *psalteries... harps... cymbals* — the very instruments of v.3-5, named.'),
+    (3, 'canon','1-chronicles',16,6, 3, E'1 Chronicles 16:6 — the priests *with trumpets continually before the ark* — *the sound of the trumpet*.'),
+    (3, 'canon','1-chronicles',25,1, 4, E'1 Chronicles 25:1 — the temple-music a prophetic ministry: *prophesy with harps, with psalteries, and with cymbals*.'),
+    (5, 'canon','2-chronicles',5,13, 5, E'2 Chronicles 5:13 — the orchestra as *one sound* and the glory-cloud fills the house — praise meeting the Presence.'),
+    (3, 'canon','leviticus',23,24, 6, E'Leviticus 23:24 — *a memorial of blowing of trumpets* — the shofar as the Torah''s appointed-times call.'),
+    (3, 'canon','numbers',10,10, 7, E'Numbers 10:10 — the trumpet *for a memorial before your Elohim* over the offerings — worship Yahuah ordained.'),
+    (3, 'canon','revelation',5,8, 8, E'Revelation 5:8 — the elders before the Lamb *having every one of them harps* — the harps crescendo to heaven.'),
+    (5, 'canon','revelation',15,2, 9, E'Revelation 15:2 — the overcomers *having the harps of Elohim (God)* — the orchestra in the new song.'),
+    (5, 'canon','revelation',15,3, 10, E'Revelation 15:3 — *the song of Moses... and the song of the Lamb* — the Torah''s worship and its fulfillment as one.')
+  ) AS m(src_v, tgt_ed,tgt_slug,tgt_ch,tgt_v, sort_order, member_note)
+  JOIN _s302_ps150_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=150 AND sv.verse_number=m.src_v
+  JOIN _s302_ps150_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-150-the-full-levitical-orchestra-of-davids-temple-worship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: ★★★ CONSUMMATION — every thing that hath breath
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','genesis',2,7, 1, E'Genesis 2:7 — *breathed into his nostrils the breath of life* — the breath given at creation returns as praise.'),
+    ('canon','isaiah',42,5, 2, E'Isaiah 42:5 — *he that giveth breath unto the people* — the Giver claiming the gift back as worship.'),
+    ('canon','psalms',145,21, 3, E'Psalm 145:21 — *let all flesh bless his holy name* — the keystone vow widened to all that breathes.'),
+    ('canon','isaiah',45,23, 4, E'Isaiah 45:23 — *every knee shall bow, every tongue shall swear* — Yahuah''s sworn oath, no creature withheld.'),
+    ('canon','acts',17,25, 5, E'Acts 17:25 — *he giveth to all life, and breath* — the breath the capstone calls back into praise.'),
+    ('canon','revelation',5,13, 6, E'Revelation 5:13 — *every creature... in heaven... earth... sea* blessing the throne and the Lamb — the consummation.'),
+    ('canon','philippians',2,10, 7, E'Philippians 2:10 — *every knee should bow, of things in heaven, and things in earth* — the universal homage.'),
+    ('enoch','1-enoch',61,11, 8, E'1 Enoch 61:11 — the host *shall raise one voice... and all say with one voice: "Blessed is He"* — the unanimous final Hallelujah.'),
+    ('enoch','1-enoch',39,12, 9, E'1 Enoch 39:12 — the four presences *uttered praises before Yahuah (God) of glory* — the praise already sounding above.'),
+    ('jubilees','jubilees',2,21, 10, E'Jubilees 2:21 — the *peculiar people* sanctified *to bless Him who has created all things* — the covenant breath in the Hallelujah.')
+  ) AS m(tgt_ed,tgt_slug,tgt_ch,tgt_v, sort_order, member_note)
+  JOIN _s302_ps150_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=150 AND sv.verse_number=6
+  JOIN _s302_ps150_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-150-let-every-thing-that-hath-breath-praise-yah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_40_newsong_repair.sql (Psalm 40 new-song repair) -----
+-- REPAIR: the thread psalm-40-he-brought-me-up-out-of-the-horrible-pit-a-new-song was created
+-- member-less by a prior minion ("anchor-prose, kept LIGHT"), leaving an empty thread. This adds
+-- 4 members to vv.1-3 (the deliverance from the pit + the new song), sealing Psalms at 0 empty.
+-- Idempotent (ON CONFLICT DO NOTHING). Thread already exists; only cross_references + members added.
+
+CREATE TEMP VIEW _s302_ps40fix_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','psalms',40,2,'canon','psalms',30,3,'free',
+      E'*O Yahuah (LORD), thou hast brought up my soul from the grave: thou hast kept me alive, that I should not go down to the pit.* (Psalm 30:3) — *He brought me up also out of an horrible pit, out of the miry clay* (Psalm 40:2). The same deliverance: lifted out of the pit, kept from going down to the grave — a figure of resurrection, the soul brought up from death itself.'),
+    ('canon','psalms',40,2,'canon','psalms',27,5,'free',
+      E'*…in the secret of his tabernacle shall he hide me; he shall set me up upon a rock.* (Psalm 27:5) — *and set my feet upon a rock, and established my goings* (Psalm 40:2). The one drawn out of the miry clay is set upon the Rock; the unsure footing of the pit is exchanged for the sure standing of the Rock that is the Formed One (the Rock, 1 Corinthians 10:4).'),
+    ('canon','psalms',40,3,'canon','psalms',33,3,'free',
+      E'*Sing unto him a new song; play skilfully with a loud noise.* (Psalm 33:3) — *And he hath put a new song in my mouth, even praise unto our Elohim (God)* (Psalm 40:3). The deliverance gives a new song: the rescued mouth answers with the very song the whole Psalter calls for, the new song of those who have seen his salvation.'),
+    ('canon','psalms',40,3,'canon','revelation',5,9,'free',
+      E'*And they sung a new song, saying, Thou art worthy to take the book, and to open the seals thereof: for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9) — the *new song* (Psalm 40:3) finds its consummation in the song of the redeemed before the throne: the new song of those bought by the blood, the deliverance from the pit fulfilled in the redemption of the slain Lamb.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps40fix_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps40fix_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*…thou hast brought up my soul from the grave* (Psalm 30:3) — the same deliverance from the pit, a resurrection figure.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps40fix_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=2
+  JOIN _s302_ps40fix_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-he-brought-me-up-out-of-the-horrible-pit-a-new-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*…he shall set me up upon a rock* (Psalm 27:5) — the miry clay exchanged for the sure standing of the Rock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps40fix_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=2
+  JOIN _s302_ps40fix_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=27 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-he-brought-me-up-out-of-the-horrible-pit-a-new-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Sing unto him a new song* (Psalm 33:3) — the rescued mouth answers with the song the whole Psalter calls for.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps40fix_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=3
+  JOIN _s302_ps40fix_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-he-brought-me-up-out-of-the-horrible-pit-a-new-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*And they sung a new song… for thou wast slain, and hast redeemed us* (Revelation 5:9) — the new song consummated in the song of the redeemed before the throne.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps40fix_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=40 AND sv.verse_number=3
+  JOIN _s302_ps40fix_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-40-he-brought-me-up-out-of-the-horrible-pit-a-new-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
