@@ -212,7 +212,8 @@ def classify_migration(sql):
     canon_only_view = (not view_editions) and bool(
         re.search(r"e\.slug\s*=\s*'canon'", sql, re.IGNORECASE))
     # 2. Edition-aware tuple schema? (input(... tgt_edition ...))
-    has_edition_cols = bool(re.search(r"input\([^)]*tgt_edition", sql, re.IGNORECASE))
+    # Accept both edition-aware tuple forms: WITH input(...) and FROM (VALUES...) AS i(...)
+    has_edition_cols = bool(re.search(r"\bi(?:nput)?\s*\([^)]*tgt_edition", sql, re.IGNORECASE))
     # 3. Any actual extras-edition target referenced in tuples or joins?
     tokens = set(re.findall(r"'([a-z0-9\-]+)'", sql))
     extras_hit = sorted(tokens & EXTRAS_EDITIONS)
