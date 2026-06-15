@@ -22014,6 +22014,1349 @@ SELECT t.id, cr.id, 2, E'*And the way of peace have they not known* (Romans 3:17
  WHERE t.slug='isaiah-57-there-is-no-peace-to-the-wicked'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_isaiah_3.sql (Isaiah 3) -----
+-- Chapter: Isaiah 3 — THE COVENANT-LAWSUIT ON JUDAH'S LEADERS AND THE PROUD DAUGHTERS OF ZION.
+-- Yahuah takes away the stay and the staff (3:1), gives children for princes (3:4), and a society
+-- collapses on itself (3:5). The chapter's spine is the deed-reward verdict — *Say ye to the
+-- righteous, that it shall be well with him... Woe unto the wicked! it shall be ill with him* (3:10-11)
+-- — and the lawsuit Yahuah brings against the rulers who devoured the poor: *Yahuah (LORD) standeth up
+-- to plead, and standeth to judge the people... ye have eaten up the vineyard; the spoil of the poor is
+-- in your houses* (3:13-14). It closes with the haughty daughters of Zion stripped of their finery and
+-- brought low (3:16-26). Read it as conduct-within-the-covenant — a verdict on oppression and pride,
+-- never an ethnic indictment; the poor and the people are VICTIMS of their own leaders, and Yahuah
+-- *standeth up to plead* their cause.
+-- Tag: isa03   Session prefix: s303   Temp view: _s303_isa03_lookup
+-- Sort band: base 26050, step 3 -> threads at 26050, 26053, 26056 (3 threads)
+-- Source of EVERY row: 'canon','isaiah',3,v
+--
+-- Isaiah 3 coverage:
+--   v.1-7 (the stay and staff taken away; children for princes; society collapses)
+--        NT:     none warranted (the leadership-judgment is the preface to the lawsuit of THREAD 2;
+--                woven in prose, no single NT verse forced)
+--        Extras: none warranted
+--        Tanakh: held in prose (preface to THREAD 2's lawsuit on the rulers)
+--   v.8-9 (Jerusalem ruined, Yahudah fallen; they declare their sin as Sodom)
+--        NT:     none warranted (the open, unhidden sin is the ground of the deed-reward verdict; woven
+--                into THREAD 1's prose)
+--        Extras: none warranted
+--        Tanakh: held in prose
+--   ★ v.10-11 (Say ye to the righteous, that it shall be well with him: for they shall eat the fruit of
+--          their doings. Woe unto the wicked! it shall be ill with him: for the reward of his hands shall
+--          be given him) — THE DEED-REWARD PRINCIPLE
+--        NT:     ★ Romans 2:6-9 (Who will render to every man according to his deeds... Tribulation and
+--                anguish, upon every soul of man that doeth evil... glory, honour, and peace, to every man
+--                that worketh good) — THREAD 1; ★ Galatians 6:7-8 (whatsoever a man soweth, that shall he
+--                also reap) — THREAD 1
+--        Extras: ★ Wisdom of Solomon 3:10 (the ungodly shall be punished according to their own
+--                imaginations, which have neglected the righteous) — THREAD 1 (clean witness)
+--        Tanakh: ★ Ecclesiastes 8:12-13 (it shall be well with them that fear Elohim... it shall not be
+--                well with the wicked) — THREAD 1 (the same two-verdict formula)
+--   ★ v.12-15 (children are their oppressors... Yahuah standeth up to plead... ye have eaten up the
+--          vineyard; the spoil of the poor is in your houses... ye beat my people to pieces, and grind the
+--          faces of the poor) — THE COVENANT-LAWSUIT AGAINST THE RULERS WHO DEVOUR THE POOR
+--        NT:     ★ Matthew 21:13 (My house shall be called the house of prayer; but ye have made it a den
+--                of thieves) — THREAD 2 (the temple-rulers who fleece the people); ★ James 5:4-6 (the hire
+--                of the labourers... kept back by fraud, crieth... Ye have condemned and killed the just)
+--                — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Micah 3:1-3 (O heads of Jacob... who eat the flesh of my people, and flay their skin
+--                from off them) — THREAD 2 (the prophetic twin lawsuit on the rulers)
+--   v.16-26 (the daughters of Zion haughty... brought low; instead of sweet smell there shall be stink)
+--        NT:     none warranted distinct (1 Tim 2:9 / 1 Pet 3:3-4 on adorning held in prose; the chapter's
+--                point is pride abased, not a dress code)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 2:11-12 (The lofty looks of man shall be humbled... the day of Yahuah Tseva'ot
+--                shall be upon every one that is proud and lofty) — THREAD 3 (the day-of-Yahuah leveling,
+--                pride exalted and abased)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-3-say-ye-to-the-righteous-it-shall-be-well — NT (Romans 2, Galatians 6) + Tanakh
+--      (Ecclesiastes 8) + Extras (Wisdom of Solomon 3) [extras]
+--      (★ the deed-reward principle; every man rewarded according to his doings)
+--   2. isaiah-3-ye-have-eaten-up-the-vineyard-the-spoil-of-the-poor — NT (Matthew 21, James 5) + Tanakh
+--      (Micah 3) [free]
+--      (★ the covenant-lawsuit on the rulers who devour the poor; Yahuah standeth up to plead — victims, not enemies)
+--   3. isaiah-3-the-daughters-of-zion-are-haughty-brought-low — Tanakh (Isaiah 2) [free]
+--      (the proud daughters of Zion abased; the day-of-Yahuah leveling, pride exalted and brought low)
+--
+-- Framing notes:
+--   ★ THE DEED-REWARD PRINCIPLE (THREAD 1): *Say ye to the righteous, that it shall be well with him: for
+--      they shall eat the fruit of their doings. Woe unto the wicked! it shall be ill with him: for the
+--      reward of his hands shall be given him* (Isaiah 3:10-11). This two-verdict formula runs straight
+--      through the library. Paul: *Who will render to every man according to his deeds... Tribulation and
+--      anguish, upon every soul of man that doeth evil... but glory, honour, and peace, to every man that
+--      worketh good* (Romans 2:6-9) — and *whatsoever a man soweth, that shall he also reap* (Galatians
+--      6:7). The Preacher says it in the same breath: *it shall be well with them that fear Elohim (God)...
+--      But it shall not be well with the wicked* (Ecclesiastes 8:12-13). The restored wisdom adds the
+--      wicked's portion: *the ungodly shall be punished according to their own imaginations, which have
+--      neglected the righteous, and forsaken Yahuah (God)* (Wisdom of Solomon 3:10). One verdict: the deed
+--      bears its own fruit. NOT works-righteousness against grace — this is Torah's own moral order, the
+--      covenant-conduct standard the whole library affirms.
+--   ★ THE LAWSUIT ON THE RULERS (THREAD 2): *Yahuah (LORD) standeth up to plead, and standeth to judge the
+--      people. Yahuah (LORD) will enter into judgment with the ancients of his people, and the princes
+--      thereof: for ye have eaten up the vineyard; the spoil of the poor is in your houses. What mean ye
+--      that ye beat my people to pieces, and grind the faces of the poor?* (Isaiah 3:13-15). The covenant-
+--      lawsuit is against the LEADERS who devoured their own people — the people are victims, not enemies;
+--      Yahuah *standeth up to plead* their cause. Micah brings the identical charge: *O heads of Jacob...
+--      who eat the flesh of my people, and flay their skin from off them* (Micah 3:1-3). Yahusha enters the
+--      temple and names the same fleecing: *ye have made it a den of thieves* (Matthew 21:13). And James
+--      hears the cry of the defrauded poor reach the throne: *the hire of the labourers... kept back by
+--      fraud, crieth... Ye have condemned and killed the just* (James 5:4-6). The lawsuit is conduct-within-
+--      the-covenant against oppression — never ethnic, never against a people.
+--   THE DAUGHTERS OF ZION ABASED (THREAD 3): *Because the daughters of Zion are haughty, and walk with
+--      stretched forth necks and wanton eyes... Therefore Yahuah (Lord) will smite with a scab the crown of
+--      the head of the daughters of Zion* (Isaiah 3:16-17); the long inventory of finery is stripped, and
+--      *instead of sweet smell there shall be stink* (3:24). This is the day-of-Yahuah leveling Isaiah just
+--      pronounced one chapter before: *The lofty looks of man shall be humbled, and the haughtiness of men
+--      shall be bowed down, and Yahuah (LORD) alone shall be exalted in that day. For the day of Yahuah
+--      Tseva'ot (LORD of hosts) shall be upon every one that is proud and lofty... and he shall be brought
+--      low* (Isaiah 2:11-12). Pride exalted is pride abased. (1 Tim 2:9 / 1 Pet 3:3-4 on outward adorning
+--      held in prose; the chapter's burden is pride humbled, not a dress code.)
+--   VERSES WITH NO SEPARATE ADD: v.1-7 (the stay and staff taken, children for princes — preface to the
+--      lawsuit of THREAD 2), v.8-9 (the open sin as Sodom — ground of THREAD 1's verdict), v.18-26 (the
+--      stripped finery — the body of THREAD 3). All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa03_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the deed-reward principle — every man rewarded according to his doings
+    ('canon','isaiah',3,10,'canon','romans',2,6,'free',
+      E'*Who will render to every man according to his deeds* (Romans 2:6). The verdict *Say ye to the righteous, that it shall be well with him: for they shall eat the fruit of their doings* (Isaiah 3:10) is the same moral order Paul lays down: Elohim *will render to every man according to his deeds*. The deed bears its own fruit; the righteous eat what their doings sowed.'),
+    ('canon','isaiah',3,10,'canon','romans',2,7,'free',
+      E'*To them who by patient continuance in well doing seek for glory and honour and immortality, eternal life* (Romans 2:7). *It shall be well with him: for they shall eat the fruit of their doings* (Isaiah 3:10) is Paul''s portion for the doer of good — *glory and honour and immortality, eternal life*. Well with the righteous, here and at the judgment.'),
+    ('canon','isaiah',3,11,'canon','romans',2,9,'free',
+      E'*Tribulation and anguish, upon every soul of man that doeth evil, of the Yahudi (Jew) first, and also of the Gentile* (Romans 2:9). *Woe unto the wicked! it shall be ill with him: for the reward of his hands shall be given him* (Isaiah 3:11) is Paul''s *tribulation and anguish, upon every soul of man that doeth evil*. The reward of the wicked''s own hands is given back to him — ill with the wicked, no respect of persons.'),
+    ('canon','isaiah',3,11,'canon','galatians',6,7,'free',
+      E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). *The reward of his hands shall be given him* (Isaiah 3:11) is the harvest law Paul states bare: *whatsoever a man soweth, that shall he also reap*. The wicked reaps the deed of his own hands; the principle of Isaiah 3:10-11 in a single line.'),
+    ('canon','isaiah',3,11,'canon','galatians',6,8,'free',
+      E'*For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting* (Galatians 6:8). The two verdicts of Isaiah 3:10-11 — *it shall be well with him* and *it shall be ill with him* — are Paul''s two harvests: *corruption* for flesh-sowing, *life everlasting* for Spirit-sowing. The fruit answers the seed.'),
+    ('canon','isaiah',3,10,'canon','ecclesiastes',8,12,'free',
+      E'*Though a sinner do evil an hundred times, and his days be prolonged, yet surely I know that it shall be well with them that fear Elohim (God), which fear before him* (Ecclesiastes 8:12). The Preacher echoes Isaiah 3:10 word for word — *it shall be well with him* / *it shall be well with them that fear Elohim*. However long the wicked''s prolonging, the righteous portion stands.'),
+    ('canon','isaiah',3,11,'canon','ecclesiastes',8,13,'free',
+      E'*But it shall not be well with the wicked, neither shall he prolong his days, which are as a shadow; because he feareth not before Elohim (God)* (Ecclesiastes 8:13). *Woe unto the wicked! it shall be ill with him* (Isaiah 3:11) is the Preacher''s *it shall not be well with the wicked*. The same two-verdict formula, the same moral order under the sun and over it.'),
+    ('canon','isaiah',3,11,'apocrypha','the-wisdom-of-solomon',3,10,'extras',
+      E'*But the ungodly shall be punished according to their own imaginations, which have neglected the righteous, and forsaken Yahuah (God)* (Wisdom of Solomon 3:10). The restored wisdom names the wicked''s portion: *the reward of his hands shall be given him* (Isaiah 3:11) is *punished according to their own imaginations*. The deed of the ungodly returns upon his own head.'),
+
+    -- THREAD 2 (★): the lawsuit on the rulers who devour the poor — Yahuah standeth up to plead
+    ('canon','isaiah',3,14,'canon','micah',3,1,'free',
+      E'*And I said, Hear, I pray you, O heads of Jacob, and ye princes of the house of Yashar''el (Israel); Is it not for you to know judgment?* (Micah 3:1). The lawsuit *Yahuah (LORD) will enter into judgment with the ancients of his people, and the princes thereof... ye have eaten up the vineyard* (Isaiah 3:14) is Micah''s charge to the same court: *O heads of Jacob... Is it not for you to know judgment?* The rulers who should have guarded the people devoured them instead.'),
+    ('canon','isaiah',3,15,'canon','micah',3,2,'free',
+      E'*Who hate the good, and love the evil; who pluck off their skin from off them, and their flesh from off their bones* (Micah 3:2). *What mean ye that ye beat my people to pieces, and grind the faces of the poor?* (Isaiah 3:15) is Micah''s cannibal-image of the same oppression: rulers who *pluck off their skin* and *flesh from off their bones*. The leaders consume the very people they were set over.'),
+    ('canon','isaiah',3,15,'canon','micah',3,3,'free',
+      E'*Who also eat the flesh of my people, and flay their skin from off them; and they break their bones, and chop them in pieces, as for the pot, and as flesh within the caldron* (Micah 3:3). *Ye beat my people to pieces, and grind the faces of the poor* (Isaiah 3:15) — Micah names it *eat the flesh of my people*. Twin prophetic lawsuits: the rulers devour the poor; the people are victims, not enemies.'),
+    ('canon','isaiah',3,14,'canon','matthew',21,13,'free',
+      E'*And said unto them, It is written, My house shall be called the house of prayer; but ye have made it a den of thieves* (Matthew 21:13). *Ye have eaten up the vineyard; the spoil of the poor is in your houses* (Isaiah 3:14) finds its temple-echo when Yahusha (Jesus) confronts the rulers who fleeced the worshippers: *ye have made it a den of thieves*. The same charge — leaders who turned the place of the people''s care into a place of plunder.'),
+    ('canon','isaiah',3,15,'canon','james',5,4,'free',
+      E'*Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4). *Ye beat my people to pieces, and grind the faces of the poor, saith Adonai Yahuah (the Lord GOD) of hosts* (Isaiah 3:15) — and James hears the same cry of the ground-down poor reach the same Lord of hosts: *the cries... are entered into the ears of Yahuah (Lord) of sabaoth*. The oppressed cry, and Yahuah stands up to plead (3:13).'),
+    ('canon','isaiah',3,15,'canon','james',5,6,'free',
+      E'*Ye have condemned and killed the just; and he doth not resist you* (James 5:6). The grinding of *the faces of the poor* (Isaiah 3:15) is the same rich-against-just oppression James indicts: *ye have condemned and killed the just*. The lawsuit stands across the library against those who devour the helpless — and Yahuah *standeth up to plead* (3:13) for them.'),
+
+    -- THREAD 3: the daughters of Zion haughty, brought low — the day-of-Yahuah leveling
+    ('canon','isaiah',3,16,'canon','isaiah',2,11,'free',
+      E'*The lofty looks of man shall be humbled, and the haughtiness of men shall be bowed down, and Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:11). *Because the daughters of Zion are haughty, and walk with stretched forth necks and wanton eyes* (Isaiah 3:16) is the same haughtiness Isaiah just sentenced one chapter before: *the haughtiness of men shall be bowed down*. The stretched-forth neck is brought low.'),
+    ('canon','isaiah',3,17,'canon','isaiah',2,12,'free',
+      E'*For the day of Yahuah Tseva''ot (LORD of hosts) shall be upon every one that is proud and lofty, and upon every one that is lifted up; and he shall be brought low* (Isaiah 2:12). When *Yahuah (Lord) will smite with a scab the crown of the head of the daughters of Zion* (Isaiah 3:17), it is the day-of-Yahuah leveling at work: *the day of Yahuah Tseva''ot shall be upon every one that is proud and lofty... and he shall be brought low*. Pride exalted is pride abased — the finery stripped, the haughty crown smitten.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-3-say-ye-to-the-righteous-it-shall-be-well',
+       E'Say ye to the righteous, it shall be well — every man rewarded according to his doings',
+       E'In the middle of the lawsuit Yahuah hands down the verdict that the whole library affirms: *Say ye to the righteous, that it shall be well with him: for they shall eat the fruit of their doings. Woe unto the wicked! it shall be ill with him: for the reward of his hands shall be given him* (Isaiah 3:10-11). The deed bears its own fruit — two destinies, set by conduct. Paul states it as the law of the judgment: *Who will render to every man according to his deeds: To them who by patient continuance in well doing seek for glory and honour and immortality, eternal life... Tribulation and anguish, upon every soul of man that doeth evil... but glory, honour, and peace, to every man that worketh good* (Romans 2:6-9). And bare as a harvest: *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap. For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting* (Galatians 6:7-8). The Preacher says it in the same two-verdict words: *surely I know that it shall be well with them that fear Elohim (God)... But it shall not be well with the wicked* (Ecclesiastes 8:12-13). And the restored wisdom names the wicked''s portion: *the ungodly shall be punished according to their own imaginations, which have neglected the righteous, and forsaken Yahuah (God)* (Wisdom of Solomon 3:10). This is not works-against-grace; it is Torah''s own moral order — the deed answers for itself, well with the righteous, ill with the wicked.',
+       sv.verse_id, ev.verse_id, 'extras', 26050
+  FROM _s303_isa03_lookup sv, _s303_isa03_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=3 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-3-ye-have-eaten-up-the-vineyard-the-spoil-of-the-poor',
+       E'Ye have eaten up the vineyard — the lawsuit on the rulers who devour the poor',
+       E'Yahuah convenes a court against the leaders of his own people: *Yahuah (LORD) standeth up to plead, and standeth to judge the people. Yahuah (LORD) will enter into judgment with the ancients of his people, and the princes thereof: for ye have eaten up the vineyard; the spoil of the poor is in your houses. What mean ye that ye beat my people to pieces, and grind the faces of the poor? saith Adonai Yahuah (the Lord GOD) of hosts* (Isaiah 3:14-15). The charge is against the RULERS — the people are victims, and Yahuah *standeth up to plead* their cause. Micah brings the identical lawsuit on the same court: *Hear, I pray you, O heads of Jacob... Who also eat the flesh of my people, and flay their skin from off them; and they break their bones, and chop them in pieces, as for the pot* (Micah 3:1-3) — the leaders cannibalizing the flock they were set to guard. Yahusha (Jesus) enters the temple and names the same fleecing: *My house shall be called the house of prayer; but ye have made it a den of thieves* (Matthew 21:13). And James hears the cry of the defrauded poor reach the very Lord of hosts who is pleading here: *the hire of the labourers... which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth... Ye have condemned and killed the just; and he doth not resist you* (James 5:4-6). One lawsuit across the library — against oppression, never against a people. The spoil of the poor will be required; Yahuah stands up to plead.',
+       sv.verse_id, ev.verse_id, 'free', 26053
+  FROM _s303_isa03_lookup sv, _s303_isa03_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=3 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-3-the-daughters-of-zion-are-haughty-brought-low',
+       E'The daughters of Zion are haughty — pride exalted is pride brought low',
+       E'The chapter closes on the proud women of Zion stripped of their finery: *Because the daughters of Zion are haughty, and walk with stretched forth necks and wanton eyes, walking and mincing as they go... Therefore Yahuah (Lord) will smite with a scab the crown of the head of the daughters of Zion* (Isaiah 3:16-17), and the long inventory of ornaments is taken away until *instead of sweet smell there shall be stink; and instead of a girdle a rent; and instead of well set hair baldness... and burning instead of beauty* (3:24). This is the day-of-Yahuah leveling Isaiah pronounced just one chapter before — pride exalted is pride abased: *The lofty looks of man shall be humbled, and the haughtiness of men shall be bowed down, and Yahuah (LORD) alone shall be exalted in that day. For the day of Yahuah Tseva''ot (LORD of hosts) shall be upon every one that is proud and lofty, and upon every one that is lifted up; and he shall be brought low* (Isaiah 2:11-12). The stretched-forth neck is bowed; the haughty crown is smitten. The burden is not the ornaments themselves but the pride that wore them — and Yahuah alone shall be exalted in that day.',
+       sv.verse_id, ev.verse_id, 'free', 26056
+  FROM _s303_isa03_lookup sv, _s303_isa03_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=3 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Who will render to every man according to his deeds* (Romans 2:6) — the verdict *they shall eat the fruit of their doings* (Isaiah 3:10) stated as the law of the judgment.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=10
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-say-ye-to-the-righteous-it-shall-be-well'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*glory and honour and immortality, eternal life* (Romans 2:7) — the righteous portion of *it shall be well with him* (Isaiah 3:10): well with the doer of good.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=10
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-say-ye-to-the-righteous-it-shall-be-well'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Tribulation and anguish, upon every soul of man that doeth evil* (Romans 2:9) — *the reward of his hands shall be given him* (Isaiah 3:11): ill with the wicked.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=11
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-say-ye-to-the-righteous-it-shall-be-well'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *whatsoever a man soweth, that shall he also reap* (Galatians 6:7) — *the reward of his hands shall be given him* (Isaiah 3:11) as the bare harvest law.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=11
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-say-ye-to-the-righteous-it-shall-be-well'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*soweth to his flesh... reap corruption; but he that soweth to the Spirit shall... reap life everlasting* (Galatians 6:8) — the two verdicts of Isaiah 3:10-11 as two harvests.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=11
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-say-ye-to-the-righteous-it-shall-be-well'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*it shall be well with them that fear Elohim (God)* (Ecclesiastes 8:12) — the Preacher echoes *it shall be well with him* (Isaiah 3:10) word for word.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=10
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=8 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-say-ye-to-the-righteous-it-shall-be-well'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*it shall not be well with the wicked... because he feareth not before Elohim (God)* (Ecclesiastes 8:13) — *it shall be ill with him* (Isaiah 3:11) in the Preacher''s mouth; the same two-verdict formula.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=11
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=8 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-say-ye-to-the-righteous-it-shall-be-well'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *the ungodly shall be punished according to their own imaginations, which have neglected the righteous* (Wisdom of Solomon 3:10) — the deed of the wicked returns on his own head; *the reward of his hands* (Isaiah 3:11).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=11
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-say-ye-to-the-righteous-it-shall-be-well'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Hear, I pray you, O heads of Jacob... Is it not for you to know judgment?* (Micah 3:1) — the twin lawsuit on the rulers of *ye have eaten up the vineyard* (Isaiah 3:14).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=14
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-ye-have-eaten-up-the-vineyard-the-spoil-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*who pluck off their skin from off them, and their flesh from off their bones* (Micah 3:2) — Micah''s cannibal-image of *ye beat my people to pieces* (Isaiah 3:15).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=15
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-ye-have-eaten-up-the-vineyard-the-spoil-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Who also eat the flesh of my people, and flay their skin from off them* (Micah 3:3) — *grind the faces of the poor* (Isaiah 3:15): the rulers devour the flock; victims, not enemies.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=15
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-ye-have-eaten-up-the-vineyard-the-spoil-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *ye have made it a den of thieves* (Matthew 21:13) — Yahusha confronts the temple-rulers who fleeced the people; *the spoil of the poor is in your houses* (Isaiah 3:14).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=14
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=21 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-ye-have-eaten-up-the-vineyard-the-spoil-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the hire of the labourers... kept back by fraud, crieth... entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4) — the cry of the poor reaches the Lord of hosts who *standeth up to plead* (Isaiah 3:13).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=15
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-ye-have-eaten-up-the-vineyard-the-spoil-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Ye have condemned and killed the just; and he doth not resist you* (James 5:6) — the rich-against-just oppression of *grind the faces of the poor* (Isaiah 3:15); the lawsuit stands across the library.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=15
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-ye-have-eaten-up-the-vineyard-the-spoil-of-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The lofty looks of man shall be humbled, and the haughtiness of men shall be bowed down* (Isaiah 2:11) — the *haughty* daughters with *stretched forth necks* (Isaiah 3:16) brought low.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=16
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-the-daughters-of-zion-are-haughty-brought-low'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the day of Yahuah Tseva''ot (LORD of hosts) shall be upon every one that is proud and lofty... and he shall be brought low* (Isaiah 2:12) — the day-of-Yahuah leveling behind the smitten crown of Isaiah 3:17.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=3 AND sv.verse_number=17
+  JOIN _s303_isa03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-3-the-daughters-of-zion-are-haughty-brought-low'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_8.sql (Isaiah 8) -----
+-- Chapter: Isaiah 8 — Maher-shalal-hash-baz; the waters of Shiloah; the STONE of stumbling and rock
+-- of offence to BOTH the houses of Yashar'el; bind up the testimony, seal the Torah among my disciples;
+-- TO THE LAW AND TO THE TESTIMONY. A keystone-ette chapter: the Stone-and-Sanctuary, the two-house
+-- frame ("both the houses of Israel"), and THE anti-antinomian / try-the-spirits measuring line.
+-- Tag: isa08   Temp view: _s303_isa08_lookup
+-- Sort band: base 26175, step 3 -> threads at 26175, 26178, 26181, 26184 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',8,v
+--
+-- Isaiah 8 coverage:
+--   v.1-4 (Maher-shalal-hash-baz; the riches of Damascus and the spoil of Samaria... before the king
+--          of Assyria)
+--        NT:     none warranted (the sign-child name = imminent Assyrian judgment; woven in prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the historical Assyrian threat; preface to the waters of v.6-8)
+--   v.5-8 (this people refuseth the waters of Shiloah that go softly... the waters of the river,
+--          strong and many, even the king of Assyria... O Immanuel)
+--        NT:     none warranted distinct (Immanuel forward-weave belongs to Isaiah 7:14; held there)
+--        Extras: none warranted
+--        Tanakh: none forced (the overflowing-river judgment; the Immanuel land in v.8 woven in prose)
+--   v.9-12 (Associate yourselves... it shall come to nought... for Elohim (God) is with us... Say ye
+--          not, A confederacy... neither fear ye their fear)
+--        NT:     ★ 1 Peter 3:14 (be not afraid of their terror, neither be troubled) quotes 8:12 —
+--                noted in prose of THREAD 1 (the fear-not that precedes the Sanctuary-Stone)
+--        Extras: none warranted
+--        Tanakh: held in prose — *Elohim (God) is with us* (Immanuel, v.10) prefaces THREAD 1
+--   ★★ v.13-15 (Sanctify Yahuah Tseva'ot... let him be your fear... And he shall be for a sanctuary;
+--          but for a stone of stumbling and for a rock of offence to BOTH THE HOUSES OF YASHAR'EL)
+--        NT:     ★★ 1 Peter 2:8 (a stone of stumbling, and a rock of offence — VERBATIM), ★★ Romans
+--                9:32-33 (they stumbled at that stumblingstone... Behold, I lay in Sion a stumblingstone
+--                and rock of offence — Paul FUSES Isa 8:14 with Isa 28:16), ★ Luke 2:34 (this child is
+--                set for the fall and rising again of many in Yashar'el) — THREAD 1
+--        Extras: none warranted (clean canon-NT weave; no extras forced)
+--        Tanakh: the two-house phrase "both the houses of Israel" bound to the two-house frame in prose
+--   ★ v.14 (And he shall be for a SANCTUARY) — the same One is refuge to the remnant and stumbling-stone
+--          to the rebellious
+--        NT:     ★ 1 Peter 2:4-6 (a living stone... I lay in Sion a chief corner stone, elect, precious:
+--                and he that believeth on him shall not be confounded) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 28:16 (Behold, I lay in Zion for a foundation a stone, a tried stone, a
+--                precious corner stone, a sure foundation) — THREAD 2 (the sure foundation = the sanctuary)
+--   ★ v.16-18 (Bind up the testimony, SEAL THE LAW among my disciples... Behold, I and the children
+--          whom Yahuah hath given me are for signs and for wonders in Yashar'el)
+--        NT:     ★ Hebrews 2:13 (I will put my trust in him. And again, Behold I and the children which
+--                Elohim (God) hath given me) — THREAD 3; ★ Hebrews 2:12 (I will declare thy name unto my
+--                brethren) + Hebrews 2:14 (the children are partakers of flesh and blood) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: Torah-affirmed — "seal the Torah among my disciples" woven in prose (the instruction
+--                kept and entrusted, never abolished); leads into THREAD 4
+--   ★★ v.19-20 (Seek unto them that have familiar spirits, and unto wizards that peep... should not a
+--          people seek unto their Elohim? TO THE LAW AND TO THE TESTIMONY: if they speak not according
+--          to this word, it is because there is no light in them)
+--        NT:     ★★ 1 John 4:1 (try the spirits whether they are of Elohim), ★ Acts 17:11 (searched the
+--                scriptures daily, whether those things were so), ★ 1 John 2:3-4 (we do know that we
+--                know him, if we keep his commandments) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 18:10-11 (there shall not be found among you... a consulter with
+--                familiar spirits, or a wizard, or a necromancer) — THREAD 4 (the Torah ban the
+--                testimony measures by)
+--   v.21-22 (hardly bestead and hungry... trouble and darkness, dimness of anguish; driven to darkness)
+--        NT:     none warranted (the darkness of those with no light/dawn; answered by Isaiah 9:1-2,
+--                the great light — held to Isaiah 9, not forced here)
+--        Extras: none warranted
+--        Tanakh: none separate (the no-dawn darkness is the verdict of v.20; woven in THREAD 4 prose)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-8-a-stone-of-stumbling-to-both-the-houses-of-yasharel — NT (1 Peter 2, Romans 9, Luke 2) [free]
+--      (★★ the Sanctuary-Stone; verbatim "stone of stumbling and rock of offence"; two-house frame; Formed Son)
+--   2. isaiah-8-he-shall-be-for-a-sanctuary-the-sure-foundation — NT (1 Peter 2) + Tanakh (Isaiah 28) [free]
+--      (★ the same One is sanctuary/refuge to the remnant AND the precious corner stone, the sure foundation)
+--   3. isaiah-8-behold-i-and-the-children-whom-yahuah-hath-given-me — NT (Hebrews 2) [free]
+--      (★ the sealed Torah among the disciples; the Formed Son and the children Yahuah gave him, his brethren)
+--   4. isaiah-8-to-the-law-and-to-the-testimony — NT (1 John 4, Acts 17, 1 John 2) + Tanakh (Deuteronomy 18) [free]
+--      (★★ THE anti-antinomian measuring line; try the spirits; the Torah-and-testimony exposes what has no dawn)
+--
+-- Framing notes:
+--   ★★ THE SANCTUARY-STONE TO BOTH HOUSES (THREAD 1): *Sanctify Yahuah Tseva''ot (LORD of hosts) himself;
+--      and let him be your fear, and let him be your dread. And he shall be for a sanctuary; but for a
+--      stone of stumbling and for a rock of offence to both the houses of Yashar''el (Israel)* (Isaiah
+--      8:13-14). The SAME One is sanctuary to those who fear him and stumbling-stone to the rebellious.
+--      Peter quotes it VERBATIM — *And a stone of stumbling, and a rock of offence, even to them which
+--      stumble at the word* (1 Peter 2:8). Paul FUSES it with Isaiah 28:16 — *they stumbled at that
+--      stumblingstone; As it is written, Behold, I lay in Sion a stumblingstone and rock of offence* (Rom
+--      9:32-33). Simeon sees the same: *this child is set for the fall and rising again of many in
+--      Yashar''el (Israel)* (Luke 2:34). The Stone is Yahuah himself made a sanctuary — the FORMED Son,
+--      Yahuah who has a Father. And the two-house phrase is LOAD-BEARING: *both the houses of Yashar''el
+--      (Israel)* = Yahudah (Judah) AND Ephraim/Yosef (Israel), the divided people who meet the one Stone.
+--   ★ THE SURE FOUNDATION (THREAD 2): *And he shall be for a sanctuary* (Isaiah 8:14) — refuge to the
+--      remnant. Peter names the Stone the living, chosen corner stone: *To whom coming, as unto a living
+--      stone... Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him
+--      shall not be confounded* (1 Peter 2:4,6), drawing Isaiah 28:16: *Behold, I lay in Zion for a
+--      foundation a stone, a tried stone, a precious corner stone, a sure foundation* (Isaiah 28:16). The
+--      One who is offence to the disobedient is sanctuary and sure foundation to those who trust him.
+--   ★ THE CHILDREN YAHUAH GAVE ME (THREAD 3): *Bind up the testimony, seal the law among my disciples...
+--      Behold, I and the children whom Yahuah (LORD) hath given me are for signs and for wonders in
+--      Yashar''el* (Isaiah 8:16,18). Hebrews puts this in the Messiah''s mouth: *I will put my trust in
+--      him. And again, Behold I and the children which Elohim (God) hath given me* (Hebrews 2:13). The
+--      Formed Son and his brethren — and the Torah is SEALED among the disciples, the instruction kept
+--      and entrusted, NEVER abolished. This leads straight into the measuring line of v.20.
+--   ★★ TO THE LAW AND TO THE TESTIMONY (THREAD 4): against the necromancers and wizards that *peep, and
+--      that mutter* (8:19), the standard is set: *To the law and to the testimony: if they speak not
+--      according to this word, it is because there is no light in them* (Isaiah 8:20). THE anti-antinomian
+--      verse: the Torah-and-testimony is the measuring line; what contradicts it has no dawn. The Torah
+--      itself bans the divination of 8:19 — *There shall not be found among you... a consulter with
+--      familiar spirits, or a wizard, or a necromancer* (Deut 18:11). John gives the same test: *try the
+--      spirits whether they are of Elohim (God)* (1 John 4:1); the Bereans do it — *searched the
+--      scriptures daily, whether those things were so* (Acts 17:11); and the filter stands — *hereby we
+--      do know that we know him, if we keep his commandments* (1 John 2:3). The Word/Torah is the measure;
+--      what has no light in it is exposed by it.
+--   VERSES WITH NO SEPARATE ADD: v.1-4 (the sign-child Maher-shalal-hash-baz = imminent Assyrian spoil),
+--      v.5-8 (the waters of Shiloah refused, the overflowing river; Immanuel land — Immanuel forward-weave
+--      held to Isaiah 7:14), v.9-12 (the broken confederacy, fear-not; 1 Pet 3:14 noted in prose), v.21-22
+--      (the no-dawn darkness — the verdict of v.20, answered by the great light of Isaiah 9). All recorded.
+
+CREATE TEMP VIEW _s303_isa08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): a stone of stumbling and a rock of offence to BOTH the houses of Yashar'el
+    ('canon','isaiah',8,14,'canon','1-peter',2,8,'free',
+      E'*And a stone of stumbling, and a rock of offence, even to them which stumble at the word, being disobedient: whereunto also they were appointed* (1 Peter 2:8). Peter quotes Isaiah word for word: the One who *shall be for a sanctuary; but for a stone of stumbling and for a rock of offence to both the houses of Yashar''el (Israel)* (Isaiah 8:14) is the living Stone, sanctuary to those who trust him and offence to the disobedient. The same Stone — the Formed Son, Yahuah himself made a sanctuary — divides the believing from the stumbling.'),
+    ('canon','isaiah',8,14,'canon','romans',9,33,'free',
+      E'*As it is written, Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed* (Romans 9:33). Paul fuses Isaiah''s *stone of stumbling and... rock of offence* (Isaiah 8:14) with the corner stone of Isaiah 28:16 into one Stone laid in Zion. Yashar''el *stumbled at that stumblingstone* (9:32) by seeking righteousness *as it were by the works of the law* rather than by trusting the One the Torah testified of — yet *whosoever believeth on him shall not be ashamed*.'),
+    ('canon','isaiah',8,14,'canon','romans',9,32,'free',
+      E'*Wherefore? Because they sought it not by faith, but as it were by the works of the law. For they stumbled at that stumblingstone* (Romans 9:32). The *stone of stumbling and... rock of offence* of Isaiah 8:14 is the very stone Paul names: those who would not trust the One the Torah pointed to *stumbled at that stumblingstone*. The stumbling is over the Person, not over the Torah — the Torah testified of him (Isaiah 8:20).'),
+    ('canon','isaiah',8,14,'canon','luke',2,34,'free',
+      E'*And Simeon blessed them, and said unto Mary his mother, Behold, this child is set for the fall and rising again of many in Yashar''el (Israel); and for a sign which shall be spoken against* (Luke 2:34). Simeon names the infant Messiah exactly as Isaiah named the Stone — *for the fall and rising again of many in Yashar''el* answers *a stone of stumbling and... a rock of offence to both the houses of Yashar''el (Israel)* (Isaiah 8:14). The same One is the rising of those who trust him and the fall of those who stumble.'),
+
+    -- THREAD 2 (★): And he shall be for a SANCTUARY — the living stone, the sure foundation
+    ('canon','isaiah',8,14,'canon','1-peter',2,6,'free',
+      E'*Wherefore also it is contained in the scripture, Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded* (1 Peter 2:6). The One who *shall be for a sanctuary* (Isaiah 8:14) is the chosen corner stone: refuge to the remnant who fear him, *and he that believeth on him shall not be confounded*. The same Stone is sanctuary to the believing and offence to the disobedient (1 Peter 2:7-8).'),
+    ('canon','isaiah',8,14,'canon','1-peter',2,4,'free',
+      E'*To whom coming, as unto a living stone, disallowed indeed of men, but chosen of Elohim (God), and precious* (1 Peter 2:4). The sanctuary of Isaiah 8:14 is a living Stone — *disallowed indeed of men, but chosen of Elohim (God)*. To those who come to him he is the refuge promised; the same Stone men disallow is the chosen and precious One who shelters the remnant.'),
+    ('canon','isaiah',8,14,'canon','isaiah',28,16,'free',
+      E'*Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16). Isaiah''s own later word names the Sanctuary-Stone of 8:14 a *sure foundation* — the One who is offence to the scornful (28:14-15) is refuge and ground to those who trust him: *he that believeth shall not make haste*. Paul reads the two stone-oracles as one (Romans 9:33).'),
+
+    -- THREAD 3 (★): Bind up the testimony, seal the Torah... Behold I and the children Yahuah gave me
+    ('canon','isaiah',8,18,'canon','hebrews',2,13,'free',
+      E'*And again, I will put my trust in him. And again, Behold I and the children which Elohim (God) hath given me* (Hebrews 2:13). Hebrews puts Isaiah''s words in the Messiah''s mouth: *Behold, I and the children whom Yahuah (LORD) hath given me are for signs and for wonders in Yashar''el* (Isaiah 8:18). The prophet and his children — signs in Yashar''el — become the Formed Son and the brethren given him; *for which cause he is not ashamed to call them brethren* (Hebrews 2:11).'),
+    ('canon','isaiah',8,18,'canon','hebrews',2,12,'free',
+      E'*Saying, I will declare thy name unto my brethren, in the midst of the church will I sing praise unto thee* (Hebrews 2:12). Just before quoting Isaiah 8:18, Hebrews binds the Son to his brethren — the children of *Behold, I and the children whom Yahuah (LORD) hath given me* (Isaiah 8:18) are the brethren to whom he declares the Name. The signs-and-wonders household of the prophet is the household of the Formed Son.'),
+    ('canon','isaiah',8,18,'canon','hebrews',2,14,'free',
+      E'*Forasmuch then as the children are partakers of flesh and blood, he also himself likewise took part of the same; that through death he might destroy him that had the power of death, that is, the devil* (Hebrews 2:14). *The children whom Yahuah (LORD) hath given me* (Isaiah 8:18) are the *children... partakers of flesh and blood* whom the Formed Son joins by taking flesh. He and the children Yahuah gave him are made one household, that he might deliver them.'),
+
+    -- THREAD 4 (★★): To the Torah and to the testimony — the measuring line that exposes the dark
+    ('canon','isaiah',8,20,'canon','1-john',4,1,'free',
+      E'*Beloved, believe not every spirit, but try the spirits whether they are of Elohim (God): because many false prophets are gone out into the world* (1 John 4:1). This is the New-Covenant echo of *To the law and to the testimony: if they speak not according to this word, it is because there is no light in them* (Isaiah 8:20). The Torah-and-testimony is the measure by which every spirit is tried; what does not speak according to it has no light.'),
+    ('canon','isaiah',8,19,'canon','deuteronomy',18,11,'free',
+      E'*Or a charmer, or a consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:11). Isaiah''s *wizards that peep, and that mutter* and the call to *Seek unto them that have familiar spirits* (Isaiah 8:19) are the very abominations the Torah bans — *a consulter with familiar spirits, or a wizard, or a necromancer*. The testimony of v.20 measures by this word: *should not a people seek unto their Elohim (God)?* — not the dead.'),
+    ('canon','isaiah',8,19,'canon','deuteronomy',18,10,'free',
+      E'*There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch* (Deuteronomy 18:10). The divination Isaiah rebukes — seeking *wizards that peep, and that mutter* (Isaiah 8:19) — is forbidden by the Torah the testimony upholds. Yahuah will *raise up... a Prophet* (Deut 18:15) to hearken to, not the muttering dead.'),
+    ('canon','isaiah',8,20,'canon','acts',17,11,'free',
+      E'*These were more noble than those in Thessalonica, in that they received the word with all readiness of mind, and searched the scriptures daily, whether those things were so* (Acts 17:11). The Bereans do exactly what Isaiah commands — *To the law and to the testimony* (Isaiah 8:20) — measuring every teaching against the written word, *whether those things were so*. The Scriptures are the standard; nothing is believed that does not speak according to this word.'),
+    ('canon','isaiah',8,20,'canon','1-john',2,3,'free',
+      E'*And hereby we do know that we know him, if we keep his commandments* (1 John 2:3). The measuring line of *To the law and to the testimony: if they speak not according to this word, it is because there is no light in them* (Isaiah 8:20) is the same filter John gives: knowing him is bound to keeping his commandments — *He that saith, I know him, and keepeth not his commandments, is a liar* (1 John 2:4). The Torah is not abolished; it is the light by which the false is exposed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-8-a-stone-of-stumbling-to-both-the-houses-of-yasharel',
+       E'A stone of stumbling and a rock of offence to both the houses of Yashar''el',
+       E'Against the dread of the Assyrian confederacy, Isaiah is told whom to fear: *Sanctify Yahuah Tseva''ot (LORD of hosts) himself; and let him be your fear, and let him be your dread. And he shall be for a sanctuary; but for a stone of stumbling and for a rock of offence to both the houses of Yashar''el (Israel), for a gin and for a snare to the inhabitants of Jerusalem. And many among them shall stumble, and fall, and be broken, and be snared, and be taken* (Isaiah 8:13-15). The SAME One is two things at once: sanctuary to those who fear him, and a stone over which the rebellious break themselves. The New Testament quotes it of the Messiah word for word: *And a stone of stumbling, and a rock of offence, even to them which stumble at the word, being disobedient* (1 Peter 2:8). Paul fuses it with the corner stone of Isaiah 28:16 — Yashar''el *stumbled at that stumblingstone* (Romans 9:32), *As it is written, Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed* (Romans 9:33). And Simeon, holding the infant, says the same: *Behold, this child is set for the fall and rising again of many in Yashar''el (Israel); and for a sign which shall be spoken against* (Luke 2:34). The Stone is Yahuah himself made a sanctuary — the FORMED Son, the visible One drawn from the Formless Father, who is Yahuah and has a Father. And mark the phrase: *both the houses of Yashar''el (Israel)* — Yahudah (Judah) in the south AND Ephraim/Yosef (Israel) in the north, the two divided houses who together meet the one Stone, to stumble or to be sheltered.',
+       sv.verse_id, ev.verse_id, 'free', 26175
+  FROM _s303_isa08_lookup sv, _s303_isa08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=8 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-8-he-shall-be-for-a-sanctuary-the-sure-foundation',
+       E'And he shall be for a sanctuary — the living stone, the sure foundation',
+       E'Before the Stone is a stumbling to the rebellious, it is named a refuge: *And he shall be for a sanctuary* (Isaiah 8:14). The same Person who is offence to those who will not trust him is shelter and ground to those who do. Peter names this Stone the chosen, living corner stone: *To whom coming, as unto a living stone, disallowed indeed of men, but chosen of Elohim (God), and precious* (1 Peter 2:4), *Wherefore also it is contained in the scripture, Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded* (1 Peter 2:6). And Isaiah''s own later word makes the sanctuary a sure foundation: *Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16). One Stone — sanctuary and sure foundation to the believing, stumbling-block to the disobedient. *Unto you therefore which believe he is precious* (1 Peter 2:7).',
+       sv.verse_id, ev.verse_id, 'free', 26178
+  FROM _s303_isa08_lookup sv, _s303_isa08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=8 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-8-behold-i-and-the-children-whom-yahuah-hath-given-me',
+       E'Bind up the testimony, seal the Torah — Behold I and the children Yahuah gave me',
+       E'In the midst of the unbelief, the prophet is told to entrust the word to a faithful remnant: *Bind up the testimony, seal the law among my disciples* (Isaiah 8:16) — the Torah and the testimony kept, sealed, and handed to those who will keep it, never abolished but guarded. Then he sets himself and his children as living signs: *And I will wait upon Yahuah (LORD), that hideth his face from the house of Jacob, and I will look for him. Behold, I and the children whom Yahuah (LORD) hath given me are for signs and for wonders in Yashar''el (Israel) from Yahuah Tseva''ot (LORD of hosts), which dwelleth in mount Zion* (Isaiah 8:17-18). Hebrews puts these very words in the Messiah''s mouth, naming him and his brethren one household: *I will declare thy name unto my brethren, in the midst of the church will I sing praise unto thee* (Hebrews 2:12); *And again, I will put my trust in him. And again, Behold I and the children which Elohim (God) hath given me* (Hebrews 2:13). The Formed Son *is not ashamed to call them brethren* (2:11), and *Forasmuch then as the children are partakers of flesh and blood, he also himself likewise took part of the same* (Hebrews 2:14) — joining by flesh the children Yahuah gave him. The sealed Torah among the disciples and the children given to the Son are the same faithful household, signs and wonders in Yashar''el — and this is the remnant that holds to the measuring line of the next verses.',
+       sv.verse_id, ev.verse_id, 'free', 26181
+  FROM _s303_isa08_lookup sv, _s303_isa08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=8 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-8-to-the-law-and-to-the-testimony',
+       E'To the law and to the testimony — if they speak not according to this word, there is no light in them',
+       E'When the people turn to the dead for guidance, Isaiah names the abomination and sets the standard against it: *And when they shall say unto you, Seek unto them that have familiar spirits, and unto wizards that peep, and that mutter: should not a people seek unto their Elohim (God)? for the living to the dead? To the law and to the testimony: if they speak not according to this word, it is because there is no light in them* (Isaiah 8:19-20). This is the measuring line of the whole framework: the Torah and the testimony are the standard, and whatever does not speak according to this word has no dawn in it. The divination they reach for is exactly what the Torah forbade: *There shall not be found among you any one that... useth divination, or an observer of times, or an enchanter, or a witch, Or a charmer, or a consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:10-11). The same test runs through the apostolic word: *Beloved, believe not every spirit, but try the spirits whether they are of Elohim (God): because many false prophets are gone out into the world* (1 John 4:1); the Bereans do it daily — *searched the scriptures daily, whether those things were so* (Acts 17:11); and the filter stands — *hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him* (1 John 2:3-4). The Torah is not abolished; it is the very light by which the false is exposed. What contradicts it — for all its muttering — has no light, and those who follow it are *driven to darkness* (Isaiah 8:22), waiting for the great light of the next chapter.',
+       sv.verse_id, ev.verse_id, 'free', 26184
+  FROM _s303_isa08_lookup sv, _s303_isa08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=8 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *And a stone of stumbling, and a rock of offence, even to them which stumble at the word* (1 Peter 2:8) — Peter quotes Isaiah 8:14 verbatim; the Sanctuary-Stone is offence to the disobedient.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=14
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-a-stone-of-stumbling-to-both-the-houses-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed* (Romans 9:33) — Paul fuses Isaiah 8:14 with Isaiah 28:16 into one Stone laid in Zion.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=14
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-a-stone-of-stumbling-to-both-the-houses-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *they stumbled at that stumblingstone* (Romans 9:32) — the stumbling is over the Person the Torah testified of, not over the Torah; sought by works of merit, not by trusting him.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=14
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-a-stone-of-stumbling-to-both-the-houses-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *this child is set for the fall and rising again of many in Yashar''el (Israel)* (Luke 2:34) — Simeon names the infant Messiah exactly as Isaiah named the Stone: fall and rising in one Person.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=14
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-a-stone-of-stumbling-to-both-the-houses-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded* (1 Peter 2:6) — the *sanctuary* of Isaiah 8:14 is the chosen corner stone, refuge to the believing.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=14
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-he-shall-be-for-a-sanctuary-the-sure-foundation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*as unto a living stone, disallowed indeed of men, but chosen of Elohim (God), and precious* (1 Peter 2:4) — the Stone men disallow is the chosen One who shelters the remnant who come to him.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=14
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-he-shall-be-for-a-sanctuary-the-sure-foundation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation* (Isaiah 28:16) — Isaiah''s own later word makes the sanctuary-Stone of 8:14 the sure foundation.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=14
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=28 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-he-shall-be-for-a-sanctuary-the-sure-foundation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I will put my trust in him. And again, Behold I and the children which Elohim (God) hath given me* (Hebrews 2:13) — Isaiah 8:18 placed in the Messiah''s mouth; the Formed Son and the children Yahuah gave him, his brethren.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=18
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-behold-i-and-the-children-whom-yahuah-hath-given-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will declare thy name unto my brethren* (Hebrews 2:12) — the children of Isaiah 8:18 are the brethren to whom the Son declares the Name; one household.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=18
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=2 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-behold-i-and-the-children-whom-yahuah-hath-given-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the children are partakers of flesh and blood, he also himself likewise took part of the same* (Hebrews 2:14) — the Formed Son joins by flesh the children Yahuah gave him, to deliver them.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=18
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-behold-i-and-the-children-whom-yahuah-hath-given-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *believe not every spirit, but try the spirits whether they are of Elohim (God)* (1 John 4:1) — the New-Covenant echo of *To the law and to the testimony* (Isaiah 8:20); the word is the measure of every spirit.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=20
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-to-the-law-and-to-the-testimony'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *a consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:11) — the Torah bans the very divination Isaiah 8:19 rebukes; the testimony measures by this word.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=19
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-to-the-law-and-to-the-testimony'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *that useth divination, or an observer of times, or an enchanter, or a witch* (Deuteronomy 18:10) — the abominations forbidden by the Torah the testimony upholds; seek Yahuah, not the muttering dead.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=19
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-to-the-law-and-to-the-testimony'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *searched the scriptures daily, whether those things were so* (Acts 17:11) — the Bereans do exactly what *To the law and to the testimony* (Isaiah 8:20) commands; the Scriptures are the standard.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=20
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-to-the-law-and-to-the-testimony'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *hereby we do know that we know him, if we keep his commandments* (1 John 2:3) — the same filter as Isaiah 8:20; the Torah is the light by which the false is exposed, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=8 AND sv.verse_number=20
+  JOIN _s303_isa08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-8-to-the-law-and-to-the-testimony'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_47.sql (Isaiah 47) -----
+-- Chapter: Isaiah 47 — THE FALL OF BABYLON, the virgin daughter brought down. *Come down, and sit in
+-- the dust, O virgin daughter of Babylon, sit on the ground: there is no throne, O daughter of the
+-- Chaldeans* (47:1). The oracle is the twin of the Isaiah 14 Babylon-taunt and the seed of Revelation
+-- 17-18: a SYSTEM judged, not a people attacked (victims-not-enemies). The lady of kingdoms who said
+-- *I shall be a lady for ever* (47:7) is brought to widowhood and bereavement in one day (47:9). At
+-- the dark centre is the blasphemous self-deification — *thou... that sayest in thine heart, I am, and
+-- none else beside me* (47:8,10) — the creature usurping the Creator's own self-existence (*I am Yahuah
+-- (LORD), and there is none else*, 45:5), the archetype of pride exalted and abased (Isaiah 14, Ezekiel
+-- 28, 2 Thessalonians 2), framed STRICTLY typologically — NOT a literalized separate-being narrative.
+-- Her sorceries, enchantments, astrologers and stargazers cannot save her (47:9,12-13) — the same
+-- wise-men-who-cannot-reveal of Daniel 2, the sorceries by which all nations were deceived (Rev 18:23).
+-- And the fire shall burn the counsellors like stubble; none shall save her (47:14-15; Rev 18:8).
+-- Tag: isa47   Temp view: _s303_isa47_lookup
+-- Sort band: base 27150, step 3 -> threads at 27150, 27153, 27156, 27159 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',47,v
+--
+-- Isaiah 47 coverage:
+--   v.1-5 (Come down, and sit in the dust, O virgin daughter of Babylon... there is no throne... thou
+--          shalt no more be called, The lady of kingdoms)
+--        NT:     ★ Revelation 18:2 (Babylon the great is fallen, is fallen), ★ Revelation 18:7 (she
+--                saith in her heart, I sit a queen, and am no widow) — THREAD 1
+--        Extras: none warranted (the canon Babylon-taunt + Revelation carries the weave)
+--        Tanakh: ★ Isaiah 14:11 (Thy pomp is brought down to the grave) — THREAD 1 (the parallel taunt)
+--   v.6-7 (I was wroth with my people... thou saidst, I shall be a lady for ever)
+--        NT:     none warranted distinct (the never-widow boast is held in THREAD 1 via Rev 18:7)
+--        Extras: none warranted
+--        Tanakh: held in prose (the covenant-lawsuit frame: Yahuah's OWN people given into Babylon's
+--                hand for chastening, never abandoned — victims-not-enemies)
+--   ★★ v.8,10 (thou that... sayest in thine heart, I am, and none else beside me; I shall not sit as a
+--          widow... thou hast said, None seeth me... and thou hast said in thine heart, I am, and none
+--          else beside me)
+--        NT:     ★★ 2 Thessalonians 2:4 (he as Elohim (God) sitteth in the temple of Elohim (God),
+--                shewing himself that he is Elohim (God)) — THREAD 2
+--        Extras: none warranted (canon witnesses carry the self-deification archetype fully)
+--        Tanakh: ★★ Isaiah 45:5 (I am Yahuah (LORD), and there is none else) — the title usurped;
+--                ★★ Isaiah 14:13-14 (I will be like the El Elyon (most High)); ★★ Ezekiel 28:2 (I am
+--                a Elohim (God), I sit in the seat of Elohim (God)); ★ Zephaniah 2:15 (I am, and there
+--                is none beside me) — THREAD 2 (the creature usurping the Creator's self-existence)
+--   ★ v.9,12-13 (the multitude of thy sorceries... thine enchantments... Let now the astrologers, the
+--          stargazers, the monthly prognosticators, stand up, and save thee)
+--        NT:     ★ Revelation 18:23 (by thy sorceries were all nations deceived) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Daniel 2:2 (the magicians, and the astrologers, and the sorcerers, and the
+--                Chaldeans), ★ Daniel 2:27 (the secret which the king hath demanded cannot the wise
+--                men, the astrologers, the magicians... shew); ★ Nahum 3:4 (the mistress of witchcrafts,
+--                that selleth nations through her whoredoms) — THREAD 3 (the diviners who cannot save)
+--   v.14-15 (they shall be as stubble; the fire shall burn them... none shall save thee)
+--        NT:     ★ Revelation 18:8 (she shall be utterly burned with fire: for strong is Yahuah Elohim
+--                (the Lord God) who judgeth her) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: held in prose (the stubble/fire judgment is bound to the diviners of v.13 in THREAD 4)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-47-come-down-sit-in-the-dust-o-virgin-daughter-of-babylon
+--        — NT (Revelation 18) + Tanakh (Isaiah 14) [free]
+--        (the queen-city brought to the dust; the never-widow boast quoted back by Revelation)
+--   2. isaiah-47-i-am-and-none-else-beside-me-the-creature-usurping-the-creator
+--        — NT (2 Thessalonians 2) + Tanakh (Isaiah 45, Isaiah 14, Ezekiel 28, Zephaniah 2) [free]
+--        (★★ the blasphemous self-deification; the creature usurping Yahuah's own "I am, none else")
+--   3. isaiah-47-thy-sorceries-and-enchantments-cannot-save-thee
+--        — NT (Revelation 18) + Tanakh (Daniel 2, Nahum 3) [free]
+--        (★ the sorceries/astrologers/stargazers who cannot save; the diviners who cannot reveal)
+--   4. isaiah-47-the-fire-shall-burn-them-none-shall-save-thee
+--        — NT (Revelation 18) [free]
+--        (the counsellors as stubble; the fire judgment; none shall save her)
+--
+-- Framing notes:
+--   THE QUEEN BROUGHT TO THE DUST (THREAD 1): *Come down, and sit in the dust, O virgin daughter of
+--      Babylon, sit on the ground: there is no throne, O daughter of the Chaldeans* (47:1). She had
+--      said *I shall be a lady for ever* (47:7); Isaiah's twin taunt already showed the end: *Thy pomp
+--      is brought down to the grave, and the noise of thy viols: the worm is spread under thee* (Isaiah
+--      14:11). And Revelation takes up the same fall and quotes her very boast back at her: *Babylon
+--      the great is fallen, is fallen* (Revelation 18:2); *for she saith in her heart, I sit a queen,
+--      and am no widow, and shall see no sorrow* (Revelation 18:7) — Babylon's *I shall not sit as a
+--      widow* (47:8) on the lips of the harlot-city. The SYSTEM is judged; the people in her are called
+--      out (Rev 18:4), not destroyed with her — victims-not-enemies.
+--   ★★ I AM, AND NONE ELSE (THREAD 2): the dark centre. *Thou that art given to pleasures... that
+--      sayest in thine heart, I am, and none else beside me* (47:8); *thou hast said in thine heart, I
+--      am, and none else beside me* (47:10). This is the creature seizing the Creator's own self-
+--      existence — the very title Yahuah speaks of Himself a chapter earlier: *I am Yahuah (LORD), and
+--      there is none else, there is no Elohim (God) beside me* (Isaiah 45:5). Frame it STRICTLY as the
+--      archetype of pride exalted and abased, NOT a literalized separate-being narrative: the day-star
+--      who said *I will ascend into heaven... I will be like the El Elyon (most High)* (Isaiah 14:13-14)
+--      and was *brought down to hell* (14:15); the prince of Tyrus *Because thine heart is lifted up,
+--      and thou hast said, I am a Elohim (God), I sit in the seat of Elohim (God)... yet thou art a man,
+--      and not Elohim (God)* (Ezekiel 28:2); Nineveh *that said in her heart, I am, and there is none
+--      beside me* (Zephaniah 2:15) — the SAME boast, the SAME desolation. And the NT names its final
+--      form: the man of sin *as Elohim (God) sitteth in the temple of Elohim (God), shewing himself
+--      that he is Elohim (God)* (2 Thessalonians 2:4). One archetype across the library: the creature
+--      usurping the self-existence of the Creator, exalted, then abased.
+--   ★ SORCERIES THAT CANNOT SAVE (THREAD 3): *for the multitude of thy sorceries, and for the great
+--      abundance of thine enchantments* (47:9); *Let now the astrologers, the stargazers, the monthly
+--      prognosticators, stand up, and save thee from these things* (47:13). Babylon's own court already
+--      failed at this in Daniel: *the magicians, and the astrologers, and the sorcerers, and the
+--      Chaldeans* (Daniel 2:2) who could not, for *the secret which the king hath demanded cannot the
+--      wise men, the astrologers, the magicians, the soothsayers, shew unto the king* (Daniel 2:27) —
+--      only the Elohim of heaven reveals. Nahum names the same craft on Nineveh: *the mistress of
+--      witchcrafts, that selleth nations through her whoredoms* (Nahum 3:4). And Revelation seals the
+--      indictment: *for by thy sorceries were all nations deceived* (Revelation 18:23). The diviners
+--      cannot save the system that trusts them.
+--   THE FIRE SHALL BURN THEM (THREAD 4): *Behold, they shall be as stubble; the fire shall burn them;
+--      they shall not deliver themselves from the power of the flame... none shall save thee* (47:14-15).
+--      The counsellors and merchants she laboured with go up like stubble. Revelation's judgment lands
+--      in the same fire and the same single day: *Therefore shall her plagues come in one day, death,
+--      and mourning, and famine; and she shall be utterly burned with fire: for strong is Yahuah Elohim
+--      (the Lord God) who judgeth her* (Revelation 18:8). The two things in one day (47:9) and the
+--      plagues in one day (Rev 18:8) are one judgment.
+--   VERSES WITH NO SEPARATE ADD: v.2-3 (the millstones/nakedness uncovered — woven into THREAD 1's
+--      humiliation of the queen), v.4 (As for our redeemer, Yahuah Tseva'ot... the Holy One of
+--      Yashar'el — the redeemer-aside held in prose, the counterpoint to Babylon's pride), v.6-7 (the
+--      covenant-lawsuit aside held in prose — Yahuah's own people given into her hand for chastening,
+--      never cast off), v.11 (the evil she cannot foresee — bound to THREAD 3's diviners who cannot
+--      know), v.14b (no coal to warm at — inside THREAD 4's fire-judgment).
+
+CREATE TEMP VIEW _s303_isa47_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: come down, sit in the dust — Revelation 18 + Isaiah 14
+    ('canon','isaiah',47,1,'canon','isaiah',14,11,'free',
+     E'*Thy pomp is brought down to the grave, and the noise of thy viols: the worm is spread under thee, and the worms cover thee* (Isaiah 14:11). Isaiah''s twin Babylon-taunt is the mirror of *Come down, and sit in the dust, O virgin daughter of Babylon... there is no throne* (47:1): the golden city''s pomp brought to the grave, the queen brought to the ground.'),
+    ('canon','isaiah',47,1,'canon','revelation',18,2,'free',
+     E'*And he cried mightily with a strong voice, saying, Babylon the great is fallen, is fallen, and is become the habitation of devils, and the hold of every foul spirit* (Revelation 18:2). The same fall Isaiah commands — *Come down, and sit in the dust, O virgin daughter of Babylon... there is no throne* (47:1) — Revelation declares accomplished. Babylon is the SYSTEM judged, not a people attacked.'),
+    ('canon','isaiah',47,8,'canon','revelation',18,7,'free',
+     E'*How much she hath glorified herself, and lived deliciously, so much torment and sorrow give her: for she saith in her heart, I sit a queen, and am no widow, and shall see no sorrow* (Revelation 18:7). Revelation puts Babylon''s own boast on the harlot-city''s lips — the very words of Isaiah''s queen: *I shall not sit as a widow, neither shall I know the loss of children* (47:8).'),
+
+    -- THREAD 2: I am, and none else beside me — 2 Thess 2 + Isaiah 45/14, Ezekiel 28, Zephaniah 2
+    ('canon','isaiah',47,8,'canon','isaiah',45,5,'free',
+     E'*I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me: I girded thee, though thou hast not known me* (Isaiah 45:5). One chapter earlier Yahuah speaks His own self-existence; Babylon seizes the very title — *thou... that sayest in thine heart, I am, and none else beside me* (47:8) — the creature usurping the Creator''s "I am, none else."'),
+    ('canon','isaiah',47,8,'canon','isaiah',14,13,'free',
+     E'*For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God)... I will be like the El Elyon (most High)* (Isaiah 14:13-14). The same self-exalting boast that drives *thou... that sayest in thine heart, I am, and none else beside me* (47:8) — the archetype of pride exalted, then *brought down to hell* (14:15). Framed typologically, not as a literal separate-being narrative.'),
+    ('canon','isaiah',47,8,'canon','ezekiel',28,2,'free',
+     E'*Because thine heart is lifted up, and thou hast said, I am a Elohim (God), I sit in the seat of Elohim (God), in the midst of the seas; yet thou art a man, and not Elohim (God)* (Ezekiel 28:2). The prince of Tyrus speaks the same usurpation as Babylon''s *I am, and none else beside me* (47:8) — and Yahuah answers the same: thou art but a creature, *yet thou art a man, and not Elohim (God)*.'),
+    ('canon','isaiah',47,8,'canon','zephaniah',2,15,'free',
+     E'*This is the rejoicing city that dwelt carelessly, that said in her heart, I am, and there is none beside me: how is she become a desolation* (Zephaniah 2:15). Nineveh speaks Babylon''s exact boast — the careless dwelling, the *I am, and there is none beside me* (cf. 47:8,10) — and reaps Babylon''s exact desolation. One archetype, one end.'),
+    ('canon','isaiah',47,8,'canon','2-thessalonians',2,4,'free',
+     E'*Who opposeth and exalteth himself above all that is called Elohim (God), or that is worshipped; so that he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4). The man of sin is the final form of Babylon''s *I am, and none else beside me* (47:8) — the creature shewing himself as the Creator. The whole library names one archetype of self-deification exalted and abased.'),
+
+    -- THREAD 3: thy sorceries cannot save — Revelation 18 + Daniel 2, Nahum 3
+    ('canon','isaiah',47,13,'canon','daniel',2,2,'free',
+     E'*Then the king commanded to call the magicians, and the astrologers, and the sorcerers, and the Chaldeans, for to shew the king his dreams* (Daniel 2:2). Babylon''s own court is the very roster Isaiah summons and mocks — *Let now the astrologers, the stargazers, the monthly prognosticators, stand up, and save thee* (47:13) — the diviners who, in Daniel, stand helpless before the secret.'),
+    ('canon','isaiah',47,13,'canon','daniel',2,27,'free',
+     E'*Daniel answered... The secret which the king hath demanded cannot the wise men, the astrologers, the magicians, the soothsayers, shew unto the king* (Daniel 2:27). Isaiah''s taunt is proven in Babylon''s own hall: the astrologers and stargazers cannot *save thee from these things that shall come* (47:13) — only the Elohim of heaven reveals; the craft is empty.'),
+    ('canon','isaiah',47,9,'canon','nahum',3,4,'free',
+     E'*Because of the multitude of the whoredoms of the wellfavoured harlot, the mistress of witchcrafts, that selleth nations through her whoredoms, and families through her witchcrafts* (Nahum 3:4). Nineveh is judged for the same craft as Babylon — *the multitude of thy sorceries, and... the great abundance of thine enchantments* (47:9) — the witchcraft by which a system sells the nations.'),
+    ('canon','isaiah',47,9,'canon','revelation',18,23,'free',
+     E'*for thy merchants were the great men of the earth; for by thy sorceries were all nations deceived* (Revelation 18:23). Revelation seals Isaiah''s indictment of *the multitude of thy sorceries* (47:9): the enchantments are the instrument by which Babylon-the-system deceives all nations, and the instrument of her own fall.'),
+
+    -- THREAD 4: the fire shall burn them, none shall save thee — Revelation 18
+    ('canon','isaiah',47,14,'canon','revelation',18,8,'free',
+     E'*Therefore shall her plagues come in one day, death, and mourning, and famine; and she shall be utterly burned with fire: for strong is Yahuah Elohim (the Lord God) who judgeth her* (Revelation 18:8). Isaiah''s *the fire shall burn them; they shall not deliver themselves from the power of the flame* (47:14) is one judgment with Revelation''s — burned with fire, all in one day (cf. 47:9), strong is the Judge.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-47-come-down-sit-in-the-dust-o-virgin-daughter-of-babylon',
+       E'Come down, sit in the dust, O virgin daughter of Babylon',
+       E'*Come down, and sit in the dust, O virgin daughter of Babylon, sit on the ground: there is no throne, O daughter of the Chaldeans: for thou shalt no more be called tender and delicate* (47:1). The queen-city who said *I shall be a lady for ever* (47:7) and *I shall not sit as a widow* (47:8) is brought to the ground. Isaiah''s twin Babylon-taunt already showed the end: *Thy pomp is brought down to the grave, and the noise of thy viols: the worm is spread under thee, and the worms cover thee* (Isaiah 14:11). And Revelation takes up the same fall and quotes her boast back to her: *Babylon the great is fallen, is fallen* (Revelation 18:2); *for she saith in her heart, I sit a queen, and am no widow, and shall see no sorrow* (Revelation 18:7). One Babylon across the library — the SYSTEM judged, the people within her called out (Rev 18:4), never a people attacked. Victims, not enemies.',
+       sv.verse_id, ev.verse_id, 'free', 27150
+  FROM _s303_isa47_lookup sv, _s303_isa47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=47 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-47-i-am-and-none-else-beside-me-the-creature-usurping-the-creator',
+       E'I am, and none else beside me — the creature usurping the Creator',
+       E'At the dark centre of the oracle is a blasphemy: *thou that art given to pleasures, that dwellest carelessly, that sayest in thine heart, I am, and none else beside me* (47:8), repeated — *thou hast said in thine heart, I am, and none else beside me* (47:10). It is the creature seizing the Creator''s own self-existence, the very title Yahuah speaks of Himself one chapter before: *I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me* (Isaiah 45:5). Read it STRICTLY as the archetype of pride exalted and abased — not a literalized separate-being narrative. The day-star said *I will ascend into heaven... I will be like the El Elyon (most High)* (Isaiah 14:13-14) and was *brought down to hell* (14:15). The prince of Tyrus said *I am a Elohim (God), I sit in the seat of Elohim (God)... yet thou art a man, and not Elohim (God)* (Ezekiel 28:2). Nineveh *said in her heart, I am, and there is none beside me* (Zephaniah 2:15) — and became a desolation. And the NT names the final form: the man of sin *as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4). One archetype across the whole library: the creature usurping the self-existence of the Creator, lifted up, then cast down.',
+       sv.verse_id, ev.verse_id, 'free', 27153
+  FROM _s303_isa47_lookup sv, _s303_isa47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=47 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-47-thy-sorceries-and-enchantments-cannot-save-thee',
+       E'Thy sorceries and enchantments cannot save thee',
+       E'Babylon trusted her diviners: *these two things shall come to thee in a moment in one day, the loss of children, and widowhood... for the multitude of thy sorceries, and for the great abundance of thine enchantments* (47:9), and Isaiah mocks the whole court — *Let now the astrologers, the stargazers, the monthly prognosticators, stand up, and save thee from these things that shall come upon thee* (47:13). They cannot. Babylon''s own hall proves it in Daniel: *Then the king commanded to call the magicians, and the astrologers, and the sorcerers, and the Chaldeans* (Daniel 2:2), yet *the secret which the king hath demanded cannot the wise men, the astrologers, the magicians, the soothsayers, shew unto the king* (Daniel 2:27) — only the Elohim of heaven reveals. Nahum indicts the same craft on Nineveh: *the mistress of witchcrafts, that selleth nations through her whoredoms* (Nahum 3:4). And Revelation seals it: *for by thy sorceries were all nations deceived* (Revelation 18:23). The enchantments that deceive the nations cannot save the system that trusts them.',
+       sv.verse_id, ev.verse_id, 'free', 27156
+  FROM _s303_isa47_lookup sv, _s303_isa47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=47 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-47-the-fire-shall-burn-them-none-shall-save-thee',
+       E'The fire shall burn them, none shall save thee',
+       E'The counsellors Babylon laboured with go up like stubble: *Behold, they shall be as stubble; the fire shall burn them; they shall not deliver themselves from the power of the flame; there shall not be a coal to warm at, nor fire to sit before it* (47:14); *they shall wander every one to his quarter; none shall save thee* (47:15). The two things came in one day (47:9); the fire falls the same way in Revelation: *Therefore shall her plagues come in one day, death, and mourning, and famine; and she shall be utterly burned with fire: for strong is Yahuah Elohim (the Lord God) who judgeth her* (Revelation 18:8). Babylon-the-system burns, and no merchant, no sorcerer, no stargazer can save her — strong is the Judge.',
+       sv.verse_id, ev.verse_id, 'free', 27159
+  FROM _s303_isa47_lookup sv, _s303_isa47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=47 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1: come down, sit in the dust
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thy pomp is brought down to the grave... the worm is spread under thee* (Isaiah 14:11) — Isaiah''s twin Babylon-taunt, the queen brought to the grave.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=1
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-come-down-sit-in-the-dust-o-virgin-daughter-of-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Babylon the great is fallen, is fallen* (Revelation 18:2) — the fall Isaiah commands declared accomplished; the SYSTEM judged.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=1
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-come-down-sit-in-the-dust-o-virgin-daughter-of-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*she saith in her heart, I sit a queen, and am no widow* (Revelation 18:7) — Babylon''s own boast (*I shall not sit as a widow*, 47:8) quoted back to her.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=8
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-come-down-sit-in-the-dust-o-virgin-daughter-of-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: I am, and none else beside me
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me* (Isaiah 45:5) — the very title Babylon usurps, spoken by Yahuah one chapter earlier.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=8
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=45 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-i-am-and-none-else-beside-me-the-creature-usurping-the-creator'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will be like the El Elyon (most High)* (Isaiah 14:13-14) — the same self-exalting boast, *brought down to hell* (14:15); typological, not a separate-being narrative.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=8
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-i-am-and-none-else-beside-me-the-creature-usurping-the-creator'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I am a Elohim (God), I sit in the seat of Elohim (God)... yet thou art a man, and not Elohim (God)* (Ezekiel 28:2) — the prince of Tyrus, the same usurpation, the same answer: thou art a creature.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=8
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=28 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-i-am-and-none-else-beside-me-the-creature-usurping-the-creator'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*that said in her heart, I am, and there is none beside me: how is she become a desolation* (Zephaniah 2:15) — Nineveh speaks Babylon''s exact boast and reaps Babylon''s exact end.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=8
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=2 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-i-am-and-none-else-beside-me-the-creature-usurping-the-creator'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4) — the man of sin, the final form of Babylon''s self-deification.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=8
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-i-am-and-none-else-beside-me-the-creature-usurping-the-creator'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: thy sorceries cannot save
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the magicians, and the astrologers, and the sorcerers, and the Chaldeans* (Daniel 2:2) — Babylon''s own court, the very roster Isaiah summons and mocks.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=13
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-thy-sorceries-and-enchantments-cannot-save-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*cannot the wise men, the astrologers, the magicians, the soothsayers, shew unto the king* (Daniel 2:27) — the diviners helpless before the secret; only the Elohim of heaven reveals.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=13
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-thy-sorceries-and-enchantments-cannot-save-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the mistress of witchcrafts, that selleth nations through her whoredoms* (Nahum 3:4) — Nineveh judged for the same craft, the multitude of Babylon''s sorceries.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=9
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nahum' AND tv.chapter_number=3 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-thy-sorceries-and-enchantments-cannot-save-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*by thy sorceries were all nations deceived* (Revelation 18:23) — Revelation seals the indictment of *the multitude of thy sorceries* (47:9): the enchantments deceive the nations and bring her own fall.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=9
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-thy-sorceries-and-enchantments-cannot-save-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: the fire shall burn them, none shall save thee
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*she shall be utterly burned with fire: for strong is Yahuah Elohim (the Lord God) who judgeth her* (Revelation 18:8) — the same fire, the same one day; strong is the Judge.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=47 AND sv.verse_number=14
+  JOIN _s303_isa47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-47-the-fire-shall-burn-them-none-shall-save-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_64.sql (Isaiah 64) -----
+-- Chapter: Isaiah 64 — the prophet's intercession: REND THE HEAVENS AND COME DOWN (a theophany),
+-- FILTHY RAGS (self-righteousness apart from atonement, NEVER the Torah), and THE CLAY AND THE
+-- POTTER (thou art our father; we are the work of thy hand). *Oh that thou wouldest rend the heavens,
+-- that thou wouldest come down, that the mountains might flow down at thy presence* (64:1) — the One
+-- who rends the heavens and descends is the Formed Son, the visible Glory drawn from the Formless
+-- Father; David sings him bowing the heavens (Ps 18:9, Ps 144:5), and at the Jordan the heavens are
+-- literally *rent* as the Spirit descends on Yahusha (Mark 1:10). *Since the beginning of the world men
+-- have not heard... what he hath prepared for him that waiteth for him* (64:4) is quoted verbatim by
+-- Paul (1 Cor 2:9). ★★ *All our righteousnesses are as filthy rags* (64:6) is THE careful one: this is
+-- flesh-merit / self-righteousness presented APART FROM mercy and atonement that is excluded — NEVER
+-- the commandments of Yahuah, which are *holy, and just, and good* (Rom 7:12); the Torah is never the
+-- filthy rags. Joshua the high priest's literal filthy garments are TAKEN AWAY and he is clothed by
+-- mercy (Zech 3:3-4). And the chapter ends in surrender: *thou art our father; we are the clay, and
+-- thou our potter; and we all are the work of thy hand* (64:8) — Paul's potter (Rom 9:20-21), Isaiah's
+-- own woe to the strivers (45:9; 29:16), Jeremiah's potter's house (18:6).
+-- Tag: isa64   Temp view: _s303_isa64_lookup
+-- Sort band: base 27575, step 3 -> threads at 27575, 27578, 27581, 27584 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',64,v
+--
+-- Isaiah 64 coverage:
+--   ★ v.1-3 (Oh that thou wouldest rend the heavens, that thou wouldest come down, that the mountains
+--          might flow down at thy presence... thou camest down, the mountains flowed down at thy presence)
+--        NT:     ★ Mark 1:10 (coming up out of the water, he saw the heavens opened — lit. "rent" —
+--                and the Spirit like a dove descending upon him) — THREAD 1 (the heavens rent at the immersion)
+--        Extras: none warranted (no clean theophany-descent witness adds over the Psalms pair)
+--        Tanakh: ★ Psalm 18:9 (He bowed the heavens also, and came down: and darkness was under his feet),
+--                ★ Psalm 144:5 (Bow thy heavens, O Yahuah (LORD), and come down: touch the mountains, and
+--                they shall smoke) — THREAD 1 (the bowed-heavens descent of the Formed Son)
+--   ★ v.4 (since the beginning of the world men have not heard... neither hath the eye seen, O Elohim
+--          (God), beside thee, what he hath prepared for him that waiteth for him)
+--        NT:     ★ 1 Corinthians 2:9 (Eye hath not seen, nor ear heard... the things which Elohim (God)
+--                hath prepared for them that love him) — THREAD 2 (Paul quotes Isaiah 64:4 verbatim)
+--        Extras: none warranted
+--        Tanakh: held in prose (Isaiah's own word is the source Paul cites; no separate Tanakh add forced)
+--   v.5 (Thou meetest him that rejoiceth and worketh righteousness... behold, thou art wroth; for we have
+--          sinned) — woven into THREAD 2/THREAD 3 prose (the turn from those-who-work-righteousness to
+--          our sin); no separate add forced
+--   ★★ v.6 (we are all as an unclean thing, and all our righteousnesses are as filthy rags; and we all do
+--          fade as a leaf; and our iniquities, like the wind, have taken us away)
+--        NT:     ★★ Romans 3:10 (There is none righteous, no, not one), ★★ Philippians 3:9 (not having
+--                mine own righteousness, which is of the law, but that which is through the faith of
+--                Messiah) — THREAD 3 (flesh-merit excluded, NOT the Torah)
+--        Extras: none warranted
+--        Tanakh: ★★ Zechariah 3:3 (Joshua was clothed with filthy garments), ★★ Zechariah 3:4 (Take away
+--                the filthy garments from him... I have caused thine iniquity to pass from thee, and I will
+--                clothe thee with change of raiment) — THREAD 3 (the filthy garments TAKEN AWAY by mercy)
+--   v.7 (there is none that calleth upon thy name, that stirreth up himself to take hold of thee) — woven
+--          into THREAD 3 prose (the son-of-Adam frailty / fading leaf); no separate add forced
+--   ★★ v.8 (thou art our father; we are the clay, and thou our potter; and we all are the work of thy hand)
+--        NT:     ★★ Romans 9:20 (Shall the thing formed say to him that formed it, Why hast thou made me
+--                thus?), ★★ Romans 9:21 (Hath not the potter power over the clay) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 45:9 (Woe unto him that striveth with his Maker!... Shall the clay say to him
+--                that fashioneth it, What makest thou?), ★ Isaiah 29:16 (shall the thing framed say of him
+--                that framed it, He had no understanding?), ★ Jeremiah 18:6 (as the clay is in the potter's
+--                hand, so are ye in mine hand, O house of Yashar'el (Israel)) — THREAD 4
+--   v.9-12 (Be not wroth very sore... Zion is a wilderness, Jerusalem a desolation... Our holy and our
+--          beautiful house... is burned up with fire) — the lament-close; woven into THREAD 4 prose (the
+--          we-are-all-thy-people plea of the clay to the Father); no separate add forced
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-64-oh-that-thou-wouldest-rend-the-heavens-and-come-down — NT (Mark 1) + Tanakh (Psalm 18,
+--      Psalm 144) [free] (★ the theophany-descent; the One who rends the heavens is the Formed Son)
+--   2. isaiah-64-eye-hath-not-seen-what-he-hath-prepared-for-him-that-waiteth — NT (1 Corinthians 2) [free]
+--      (★ Paul quotes Isaiah 64:4 verbatim — the things prepared for them that wait on / love him)
+--   3. isaiah-64-all-our-righteousnesses-are-as-filthy-rags — NT (Romans 3, Philippians 3) + Tanakh
+--      (Zechariah 3) [free] (★★ flesh-merit excluded, the Torah is NEVER the filthy rags; mercy clothes us)
+--   4. isaiah-64-we-are-the-clay-and-thou-our-potter — NT (Romans 9) + Tanakh (Isaiah 45, Isaiah 29,
+--      Jeremiah 18) [free] (★★ thou art our father; the clay does not strive with the Maker)
+--
+-- Framing notes:
+--   ★ REND THE HEAVENS (THREAD 1): *Oh that thou wouldest rend the heavens, that thou wouldest come down,
+--      that the mountains might flow down at thy presence* (64:1); *thou camest down, the mountains flowed
+--      down at thy presence* (64:3). This is a theophany — the One who rends the heavens and descends is
+--      the Formed Son, the visible Glory drawn from the Formless Father (the Formed and the Formless; NOT
+--      co-equal trinitarian persons, NOT modalist). David sings the same descent: *He bowed the heavens
+--      also, and came down: and darkness was under his feet* (Psalm 18:9); *Bow thy heavens, O Yahuah
+--      (LORD), and come down: touch the mountains, and they shall smoke* (Psalm 144:5). And at the Jordan
+--      the heavens are literally torn open as the Spirit descends on the Son who took flesh: *coming up out
+--      of the water, he saw the heavens opened, and the Spirit like a dove descending upon him* (Mark 1:10)
+--      — the rending Isaiah longed for, granted upon the Formed Son made flesh.
+--   ★ EYE HATH NOT SEEN (THREAD 2): *For since the beginning of the world men have not heard, nor perceived
+--      by the ear, neither hath the eye seen, O Elohim (God), beside thee, what he hath prepared for him
+--      that waiteth for him* (64:4). Paul quotes this verse of Isaiah outright: *Eye hath not seen, nor ear
+--      heard, neither have entered into the heart of man, the things which Elohim (God) hath prepared for
+--      them that love him* (1 Corinthians 2:9) — the hidden wisdom prepared for those who wait on / love
+--      him, now revealed in the Messiah. The waiter of Isaiah 64:4 is the lover-of-Elohim of 1 Cor 2:9.
+--   ★★ FILTHY RAGS (THREAD 3 — the load-bearing one): *But we are all as an unclean thing, and all our
+--      righteousnesses are as filthy rags; and we all do fade as a leaf* (64:6). FRAME EXACTLY: the filthy
+--      rags are SELF-righteousnesses — flesh-merit presented APART FROM mercy and atonement — that is
+--      excluded; this is NEVER the Torah, never the commandments of Yahuah. The Torah is *holy, and just,
+--      and good* (Rom 7:12); the rags are man's OWN righteousness offered as if it could stand without the
+--      blood. Paul names the human verdict: *There is none righteous, no, not one* (Romans 3:10) — son-of-
+--      Adam frailty, *we all do fade as a leaf*. And his own resolution is the precise lens: he counts his
+--      flesh-credential loss — *not having mine own righteousness, which is of the law, but that which is
+--      through the faith of Messiah (Christ)* (Philippians 3:9): it is OWN-righteousness / self-merit that
+--      is renounced, not the law renounced. Zechariah shows mercy doing what the rags cannot: *Now Joshua
+--      was clothed with filthy garments, and stood before the angel* (Zechariah 3:3); *Take away the filthy
+--      garments from him... Behold, I have caused thine iniquity to pass from thee, and I will clothe thee
+--      with change of raiment* (Zechariah 3:4). The filthy garments are TAKEN AWAY and mercy clothes the
+--      priest — exactly the turn Isaiah's plea waits for. The rags are self-righteousness apart from
+--      atonement; never the Torah.
+--   ★★ THE CLAY AND THE POTTER (THREAD 4): *But now, O Yahuah (LORD), thou art our father; we are the clay,
+--      and thou our potter; and we all are the work of thy hand* (64:8). The surrender-word: the clay does
+--      not strive with the Maker. Paul builds his potter from here: *Nay but, O man, who art thou that
+--      repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made
+--      me thus?* (Romans 9:20); *Hath not the potter power over the clay, of the same lump to make one
+--      vessel unto honour, and another unto dishonour?* (Romans 9:21). Isaiah's own twin woes stand behind
+--      it: *Woe unto him that striveth with his Maker!... Shall the clay say to him that fashioneth it, What
+--      makest thou?* (Isaiah 45:9); *shall the thing framed say of him that framed it, He had no
+--      understanding?* (Isaiah 29:16). And Jeremiah's potter's house names the people in the Father's hand:
+--      *as the clay is in the potter's hand, so are ye in mine hand, O house of Yashar'el (Israel)*
+--      (Jeremiah 18:6) — the two-house people the Father re-forms; *we are all thy people* (64:9).
+--   VERSES WITH NO SEPARATE ADD: v.2 (the melting fire, to make thy name known — woven into THREAD 1's
+--      theophany), v.5 (thou meetest him that worketh righteousness... for we have sinned — the turn into
+--      THREAD 3), v.7 (none that calleth on thy name; the fading leaf — THREAD 3 prose), v.9-12 (the
+--      lament-close: Zion a wilderness, the burned house, we are all thy people — THREAD 4's clay-to-Father
+--      plea). All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa64_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Oh that thou wouldest rend the heavens and come down — the theophany-descent of the Formed Son
+    ('canon','isaiah',64,1,'canon','psalms',18,9,'free',
+      E'*He bowed the heavens also, and came down: and darkness was under his feet* (Psalm 18:9). The prophet''s longing *Oh that thou wouldest rend the heavens, that thou wouldest come down, that the mountains might flow down at thy presence* (Isaiah 64:1) is David''s theophany answered: *He bowed the heavens also, and came down*. The One who bends the sky and descends is the Formed Son — the visible Glory drawn from the Formless Father, who appeared and came down to lead Yashar''el (Israel).'),
+    ('canon','isaiah',64,1,'canon','psalms',144,5,'free',
+      E'*Bow thy heavens, O Yahuah (LORD), and come down: touch the mountains, and they shall smoke* (Psalm 144:5). David prays the very plea Isaiah prays — *that thou wouldest come down, that the mountains might flow down at thy presence* (Isaiah 64:1) — *touch the mountains, and they shall smoke*. The Formed Son who bows the heavens and makes the mountains smoke is the descending presence both prophets long to see.'),
+    ('canon','isaiah',64,3,'canon','mark',1,10,'free',
+      E'*And straightway coming up out of the water, he saw the heavens opened, and the Spirit like a dove descending upon him* (Mark 1:10). Isaiah cried *Oh that thou wouldest rend the heavens, that thou wouldest come down* (64:1), *thou camest down, the mountains flowed down at thy presence* (64:3) — and at the Jordan the heavens are torn open as the Spirit descends upon the Formed Son made flesh: *he saw the heavens opened*. The rending Isaiah longed for is granted upon Yahusha (Jesus).'),
+
+    -- THREAD 2 (★): Eye hath not seen what he hath prepared for him that waiteth for him — Paul quotes Isaiah 64:4
+    ('canon','isaiah',64,4,'canon','1-corinthians',2,9,'free',
+      E'*But as it is written, Eye hath not seen, nor ear heard, neither have entered into the heart of man, the things which Elohim (God) hath prepared for them that love him* (1 Corinthians 2:9). Paul quotes this very verse: *since the beginning of the world men have not heard, nor perceived by the ear, neither hath the eye seen, O Elohim (God), beside thee, what he hath prepared for him that waiteth for him* (Isaiah 64:4). The one who *waiteth for him* is the one who *love[s] him* — the hidden wisdom prepared from of old, now revealed in the Messiah.'),
+
+    -- THREAD 3 (★★): All our righteousnesses are as filthy rags — flesh-merit excluded, NOT the Torah
+    ('canon','isaiah',64,6,'canon','romans',3,10,'free',
+      E'*As it is written, There is none righteous, no, not one* (Romans 3:10). Paul pronounces the same verdict on the flesh that Isaiah confesses: *we are all as an unclean thing, and all our righteousnesses are as filthy rags; and we all do fade as a leaf* (Isaiah 64:6). It is man''s OWN righteousness — self-merit presented apart from mercy — that is *as filthy rags*: *There is none righteous, no, not one*. This is son-of-Adam frailty exposed; it is never the Torah of Yahuah, which is *holy, and just, and good* (Romans 7:12).'),
+    ('canon','isaiah',64,6,'canon','philippians',3,9,'free',
+      E'*And be found in him, not having mine own righteousness, which is of the law, but that which is through the faith of Messiah (Christ), the righteousness which is of Elohim (God) by faith* (Philippians 3:9). Paul names exactly what the *filthy rags* are: *mine own righteousness* — his flesh-credential, his self-merit — counted loss. Isaiah''s *all our righteousnesses are as filthy rags* (64:6) is this self-righteousness offered apart from atonement, not the commandments of Yahuah; the law is not renounced, OWN-righteousness is.'),
+    ('canon','isaiah',64,6,'canon','zechariah',3,3,'free',
+      E'*Now Joshua was clothed with filthy garments, and stood before the angel* (Zechariah 3:3). The high priest stands in literal *filthy garments* — the picture of Isaiah''s confession *all our righteousnesses are as filthy rags* (64:6). The defilement is real and cannot stand before the angel of Yahuah; the man clothed in his own soiled robes waits for mercy to act.'),
+    ('canon','isaiah',64,6,'canon','zechariah',3,4,'free',
+      E'*And he answered and spake unto those that stood before him, saying, Take away the filthy garments from him. And unto him he said, Behold, I have caused thine iniquity to pass from thee, and I will clothe thee with change of raiment* (Zechariah 3:4). Here is the turn Isaiah''s plea waits for: the *filthy garments* of 64:6 are TAKEN AWAY, the iniquity caused to pass, and the priest clothed in *change of raiment* by mercy. The filthy rags are man''s self-righteousness removed and replaced by the righteousness Yahuah gives — atonement clothing what the rags could never cover.'),
+
+    -- THREAD 4 (★★): We are the clay, and thou our potter — thou art our father; the clay does not strive with the Maker
+    ('canon','isaiah',64,8,'canon','romans',9,20,'free',
+      E'*Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20). Isaiah''s surrender — *thou art our father; we are the clay, and thou our potter; and we all are the work of thy hand* (64:8) — is Paul''s very ground: the *thing formed* does not answer back to him that formed it. The clay does not strive with the Maker; *we all are the work of thy hand*.'),
+    ('canon','isaiah',64,8,'canon','romans',9,21,'free',
+      E'*Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:21). Paul draws his potter straight from Isaiah''s confession *we are the clay, and thou our potter* (64:8). The Father who *art our father* shapes his own from one lump as he wills; *we all are the work of thy hand*.'),
+    ('canon','isaiah',64,8,'canon','isaiah',45,9,'free',
+      E'*Woe unto him that striveth with his Maker! Let the potsherd strive with the potsherds of the earth. Shall the clay say to him that fashioneth it, What makest thou? or thy work, He hath no hands?* (Isaiah 45:9). Isaiah''s own earlier woe stands behind 64:8 — *we are the clay, and thou our potter*: the clay that submits *we all are the work of thy hand* is the opposite of the clay that *striveth with his Maker*. The prophet who pronounced the woe now bows as the clay.'),
+    ('canon','isaiah',64,8,'canon','isaiah',29,16,'free',
+      E'*Surely your turning of things upside down shall be esteemed as the potter''s clay: for shall the work say of him that made it, He made me not? or shall the thing framed say of him that framed it, He had no understanding?* (Isaiah 29:16). The same potter-and-clay rebuke of the strivers — *shall the thing framed say of him that framed it, He had no understanding?* — is answered in 64:8 by the surrendered clay: *thou our potter; and we all are the work of thy hand*. The framed thing does not accuse the One who framed it.'),
+    ('canon','isaiah',64,8,'canon','jeremiah',18,6,'free',
+      E'*O house of Yashar''el (Israel), cannot I do with you as this potter? saith Yahuah (LORD). Behold, as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* (Jeremiah 18:6). Jeremiah''s potter''s house names the very people Isaiah confesses: *we are the clay, and thou our potter* (64:8). The Father holds the two-house people *in mine hand* to re-form them — *we are all thy people* (64:9) — the clay the Maker remakes, never discards.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-64-oh-that-thou-wouldest-rend-the-heavens-and-come-down',
+       E'Oh that thou wouldest rend the heavens and come down — the Formed Son descends',
+       E'The prophet''s intercession opens with a cry for theophany: *Oh that thou wouldest rend the heavens, that thou wouldest come down, that the mountains might flow down at thy presence, As when the melting fire burneth, the fire causeth the waters to boil, to make thy name known to thine adversaries* (Isaiah 64:1-2); *When thou didst terrible things which we looked not for, thou camest down, the mountains flowed down at thy presence* (64:3). The One who rends the heavens and descends is the Formed Son — the visible Glory drawn from the Formless Father, who appeared, spoke, and led Yashar''el (Israel); this is the Formed and the Formless, not co-equal trinitarian persons, not a modalist collapse. David sings the same descent: *He bowed the heavens also, and came down: and darkness was under his feet* (Psalm 18:9), and prays it: *Bow thy heavens, O Yahuah (LORD), and come down: touch the mountains, and they shall smoke* (Psalm 144:5). And at the Jordan the longing is granted in the flesh: *And straightway coming up out of the water, he saw the heavens opened, and the Spirit like a dove descending upon him* (Mark 1:10) — the heavens torn, the Spirit descending upon the Formed Son made flesh. The rending Isaiah waited for came down upon Yahusha (Jesus).',
+       sv.verse_id, ev.verse_id, 'free', 27575
+  FROM _s303_isa64_lookup sv, _s303_isa64_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=64 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-64-eye-hath-not-seen-what-he-hath-prepared-for-him-that-waiteth',
+       E'Eye hath not seen what he hath prepared for him that waiteth for him',
+       E'In the midst of the plea the prophet declares the unsearchable goodness laid up for those who wait: *For since the beginning of the world men have not heard, nor perceived by the ear, neither hath the eye seen, O Elohim (God), beside thee, what he hath prepared for him that waiteth for him* (Isaiah 64:4); *Thou meetest him that rejoiceth and worketh righteousness, those that remember thee in thy ways* (64:5). Paul quotes this verse outright as the heart of the hidden wisdom revealed in the Messiah: *But as it is written, Eye hath not seen, nor ear heard, neither have entered into the heart of man, the things which Elohim (God) hath prepared for them that love him* (1 Corinthians 2:9). The one who *waiteth for him* (Isaiah) is the one who *love[s] him* (Paul) — and what Elohim has prepared for that one no eye has seen nor ear heard. The waiting of the Tanakh and the loving of the apostle are the one posture before the one God who prepares what the eye cannot see.',
+       sv.verse_id, ev.verse_id, 'free', 27578
+  FROM _s303_isa64_lookup sv, _s303_isa64_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=64 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-64-all-our-righteousnesses-are-as-filthy-rags',
+       E'All our righteousnesses are as filthy rags — self-merit excluded, never the Torah',
+       E'The prophet''s confession is the most-quoted line of the chapter, and the one most often twisted: *But we are all as an unclean thing, and all our righteousnesses are as filthy rags; and we all do fade as a leaf; and our iniquities, like the wind, have taken us away* (Isaiah 64:6). Read it exactly: the *filthy rags* are OUR righteousnesses — flesh-merit, self-righteousness presented APART FROM mercy and atonement. They are NEVER the Torah, never the commandments of Yahuah, which are *holy, and just, and good* (Romans 7:12). What fades as a leaf is the son of Adam''s own goodness offered as if it could stand without the blood. Paul pronounces the same verdict on the flesh: *There is none righteous, no, not one* (Romans 3:10). And his own resolution draws the line precisely — he renounces *mine own righteousness, which is of the law*, not the law itself: *And be found in him, not having mine own righteousness, which is of the law, but that which is through the faith of Messiah (Christ), the righteousness which is of Elohim (God) by faith* (Philippians 3:9). What is cast off is OWN-righteousness, self-merit; what clothes is the righteousness Elohim gives. Zechariah shows mercy doing what the rags cannot: *Now Joshua was clothed with filthy garments, and stood before the angel* (Zechariah 3:3); *Take away the filthy garments from him... Behold, I have caused thine iniquity to pass from thee, and I will clothe thee with change of raiment* (Zechariah 3:4). The filthy garments are TAKEN AWAY — the iniquity caused to pass — and the priest clothed by grace. The rags are self-righteousness apart from atonement; the Torah is never the filthy rags.',
+       sv.verse_id, ev.verse_id, 'free', 27581
+  FROM _s303_isa64_lookup sv, _s303_isa64_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=64 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-64-we-are-the-clay-and-thou-our-potter',
+       E'We are the clay, and thou our potter — thou art our father, the work of thy hand',
+       E'The lament turns to surrender: *But now, O Yahuah (LORD), thou art our father; we are the clay, and thou our potter; and we all are the work of thy hand* (Isaiah 64:8); *behold, see, we beseech thee, we are all thy people* (64:9). The clay does not strive with the Maker — it yields to be re-formed. Paul builds his potter from exactly this ground: *Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20); *Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:21). Isaiah''s own earlier woes stand behind it: *Woe unto him that striveth with his Maker!... Shall the clay say to him that fashioneth it, What makest thou?* (Isaiah 45:9); *shall the thing framed say of him that framed it, He had no understanding?* (Isaiah 29:16) — the strivers rebuked, while the prophet here bows as the yielded clay. And Jeremiah''s potter''s house names the people in the Father''s hand: *as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* (Jeremiah 18:6). The Father holds the two-house people to re-form them — *we are all thy people* — even as the chapter closes in ruin: *Zion is a wilderness, Jerusalem a desolation* (64:10), *Our holy and our beautiful house... is burned up with fire* (64:11). The clay pleads to the Father who made it; the Maker remakes his own, he does not discard them.',
+       sv.verse_id, ev.verse_id, 'free', 27584
+  FROM _s303_isa64_lookup sv, _s303_isa64_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=64 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He bowed the heavens also, and came down: and darkness was under his feet* (Psalm 18:9) — David''s theophany answers the cry *that thou wouldest come down* (Isaiah 64:1); the Formed Son bends the sky and descends.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=1
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-oh-that-thou-wouldest-rend-the-heavens-and-come-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Bow thy heavens, O Yahuah (LORD), and come down: touch the mountains, and they shall smoke* (Psalm 144:5) — David prays Isaiah''s very plea; *the mountains might flow down at thy presence* (Isaiah 64:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=1
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=144 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-oh-that-thou-wouldest-rend-the-heavens-and-come-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he saw the heavens opened, and the Spirit like a dove descending upon him* (Mark 1:10) — the heavens *rent* (Isaiah 64:1) at the Jordan, the Spirit descending upon the Formed Son made flesh.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=3
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-oh-that-thou-wouldest-rend-the-heavens-and-come-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Eye hath not seen, nor ear heard... the things which Elohim (God) hath prepared for them that love him* (1 Corinthians 2:9) — Paul quotes Isaiah 64:4 verbatim; the one who *waiteth for him* is the one who *love[s] him*.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=4
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-eye-hath-not-seen-what-he-hath-prepared-for-him-that-waiteth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *There is none righteous, no, not one* (Romans 3:10) — the verdict on the FLESH that Isaiah confesses; *all our righteousnesses are as filthy rags* (64:6) is self-merit, never the Torah (which is *holy, and just, and good*, Romans 7:12).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=6
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-all-our-righteousnesses-are-as-filthy-rags'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *not having mine own righteousness, which is of the law, but that which is through the faith of Messiah (Christ)* (Philippians 3:9) — Paul names the rags: *mine own righteousness*, self-merit; OWN-righteousness is renounced, NOT the law.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=6
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=3 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-all-our-righteousnesses-are-as-filthy-rags'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Now Joshua was clothed with filthy garments, and stood before the angel* (Zechariah 3:3) — the high priest in literal *filthy garments*, the picture of *all our righteousnesses are as filthy rags* (64:6).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=6
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-all-our-righteousnesses-are-as-filthy-rags'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Take away the filthy garments from him... I have caused thine iniquity to pass from thee, and I will clothe thee with change of raiment* (Zechariah 3:4) — mercy does what the rags cannot: the filthy garments TAKEN AWAY, the priest clothed by grace.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=6
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=3 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-all-our-righteousnesses-are-as-filthy-rags'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20) — Paul''s ground is Isaiah''s surrender *we are the clay, and thou our potter* (64:8); the clay does not strive with the Maker.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=8
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-we-are-the-clay-and-thou-our-potter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:21) — Paul''s potter drawn straight from *thou our potter* (64:8).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=8
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-we-are-the-clay-and-thou-our-potter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Woe unto him that striveth with his Maker!... Shall the clay say to him that fashioneth it, What makest thou?* (Isaiah 45:9) — Isaiah''s own woe to the strivers; the surrendered clay of 64:8 is its opposite.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=8
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=45 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-we-are-the-clay-and-thou-our-potter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *shall the thing framed say of him that framed it, He had no understanding?* (Isaiah 29:16) — the framed thing does not accuse its Framer; answered by *we all are the work of thy hand* (64:8).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=8
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=29 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-we-are-the-clay-and-thou-our-potter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* (Jeremiah 18:6) — the Father holds the two-house people to re-form them; *we are all thy people* (64:9).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa64_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=64 AND sv.verse_number=8
+  JOIN _s303_isa64_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=18 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-64-we-are-the-clay-and-thou-our-potter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session303 — Isaiah cross-references complete.'
