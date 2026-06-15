@@ -8873,6 +8873,1128 @@ SELECT t.id, cr.id, m.sort_order, m.member_note
   JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_exodus_5.sql (Exodus 5) -----
+-- Chapter: Exodus 5 — "Who is Yahuah, that I should obey his voice?"; bricks without straw;
+--   the bondage deepened; Moses' complaint.  Tag: ex05.  Session prefix: s305.
+--   Sort band base 29100 (step 3): 29100, 29103, 29106, 29109.
+--
+-- Exodus 5 coverage:
+--   v.1   (Let my people go, that they may hold a feast unto me in the wilderness)
+--         NT:     none warranted (the feast-purpose is carried laterally; see thread 1)
+--         Extras: Jasher 79:48 (three days in the wilderness to sacrifice) — thread 1
+--         Tanakh: Exod 7:5 / 14:4 know-that-I-am-Yahuah (thread 2) — feast-purpose framed in thread 1 prose
+--   v.2   (Who is Yahuah... I know not Yahuah, neither will I let Yashar'el go) ★
+--         NT:     1 Cor — none; 2 Thessalonians 1:8 (them that know not Elohim) — thread 1
+--         Extras: Jasher 79:44 + 79:46 (I have not found the name... I know not Yahuah) — thread 1
+--         Tanakh: 1 Samuel 2:12 (sons of Belial, they knew not Yahuah); Psalm 14:1 (fool: no Elohim) — thread 1
+--                 Exod 7:5; 14:4 (the Egyptians SHALL know that I am Yahuah) — thread 2
+--   v.6-19 (bricks without straw; let more work be laid upon the men) ★
+--         NT:     none warranted (restrained; pattern of affliction-before-deliverance)
+--         Extras: Jasher 79:52 (ordered the labor more severe than yesterday) — thread 3
+--         Tanakh: Exodus 2:23-24 (the groaning that came up unto Elohim) — thread 3 (lateral)
+--   v.20-23 (Moses' complaint: wherefore hast thou so evil entreated this people?) ★
+--         NT:     none warranted (the prophet's lament answered in ch6, not the NT)
+--         Extras: Jasher 79:54 (Why have you ill treated your people?) — thread 4
+--         Tanakh: Habakkuk 1:2-3; Psalm 13:1; Jeremiah 20:7 (the sent one's why-hast-thou) — thread 4
+--
+-- Threads (4):
+--   1. exodus-5-who-is-yahuah-that-i-should-obey   (5:1-2)   tier=extras  [canon: 1Sam2:12, Ps14:1, 2Thess1:8 | extras: Jasher 79:44,46,48]
+--   2. exodus-5-the-egyptians-shall-know-i-am-yahuah (5:2)   tier=free    [canon: Exod7:5, Exod14:4]
+--   3. exodus-5-bricks-without-straw                (5:6-19)  tier=extras  [canon: Exod2:23, Exod2:24 | extras: Jasher 79:52]
+--   4. exodus-5-wherefore-hast-thou-so-evil-entreated (5:20-23) tier=extras [canon: Hab1:2, Ps13:1, Jer20:7 | extras: Jasher 79:54]
+--
+-- Framework notes:
+--   * 5:1-2 — the let-my-people-go demand is UNTO worship/the feast (Lev 23 appointed-times
+--     purpose of the Exodus); Pharaoh's "who is Yahuah" / "I know not Yahuah" is the archetype
+--     of the proud who will be brought to KNOW the Name. Jasher gives the same scene almost
+--     verbatim (he searches his records, cannot find the Name, declares "I know not Yahuah").
+--   * 5:2 answered by 7:5 / 14:4 — the plagues and the sea exist so "the Egyptians SHALL know
+--     that I am Yahuah." Defiant ignorance overturned into forced knowledge.
+--   * 5:6-19 — bondage made heavier the moment deliverance is announced; lateral to the
+--     groaning of 2:23-24. Restrained: the tightening of the oppressor's grip just before he breaks.
+--   * 5:20-23 — the sent one's honest "why hast thou" lament; lateral to Habakkuk, Psalm 13,
+--     Jeremiah 20. Yahuah's answer is ch6 (the covenant Name + the seven I-wills).
+
+CREATE TEMP VIEW _s305_ex05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- =========================================================================================
+-- B. cross_references
+-- =========================================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: who is Yahuah / I know not Yahuah (5:1-2)
+    ('canon','exodus',5,2,'canon','1-samuel',2,12,'free',
+      E'*Now the sons of Eli were sons of Belial; they knew not Yahuah (LORD).* (1 Samuel 2:12) Pharaoh''s *Who is Yahuah (LORD), that I should obey his voice... I know not Yahuah (LORD)* (Exodus 5:2) is the same root posture: not honest doubt but the contempt of the proud who will not bow. The sons of Belial wear the priest''s robe and still *knew not Yahuah* — willful ignorance of the Name is the mark of the one set against the covenant.'),
+    ('canon','exodus',5,2,'canon','psalms',14,1,'free',
+      E'*The fool hath said in his heart, There is no Elohim (God). They are corrupt, they have done abominable works, there is none that doeth good.* (Psalm 14:1) Pharaoh''s *I know not Yahuah (LORD), neither will I let Yashar''el (Israel) go* (Exodus 5:2) is that fool''s creed turned against the deliverer. To deny the Name is never neutral — it issues at once in *abominable works*, here the crushing of Yahuah''s firstborn son.'),
+    ('canon','exodus',5,2,'canon','2-thessalonians',1,8,'free',
+      E'*In flaming fire taking vengeance on them that know not Elohim (God), and that obey not the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ):* (2 Thessalonians 1:8) The judgment falls on *them that know not Elohim* — the very category Pharaoh names for himself: *I know not Yahuah (LORD)* (Exodus 5:2). The plagues that answer his boast are the down-payment of that flaming-fire vengeance reserved for every proud power that will not know the Name.'),
+    ('canon','exodus',5,2,'jasher','jasher',79,44,'extras',
+      E'*And Pharaoh said to Moses and Aaron, Behold I have not found the name of your Elohim written in this book, and his name I know not.* (Jasher 79:44) Jasher retells the very scene: Pharaoh ransacks the chronicles of Egypt''s kings for the Name and cannot find it. His *I know not Yahuah (LORD)* (Exodus 5:2) is here shown as a deliberate search that turns up empty because Yahuah is no idol catalogued among the dead gods of Egypt.'),
+    ('canon','exodus',5,2,'jasher','jasher',79,46,'extras',
+      E'*And Pharaoh turned to Moses and Aaron and said to them, I know not Yahuah (the Lord) whom you have declared, neither will I send his people.* (Jasher 79:46) Almost word for word with *I know not Yahuah (LORD), neither will I let Yashar''el (Israel) go* (Exodus 5:2). The restored witness preserves the same defiant pairing — ignorance of the Name welded to refusal to release the people.'),
+    ('canon','exodus',5,1,'jasher','jasher',79,48,'extras',
+      E'*Now therefore send us, that we may take a journey for three days in the wilderness, and there may sacrifice to him, for from the days of our going down to Egypt, he has not taken from our hands either burnt offering, oblation or sacrifice...* (Jasher 79:48) This unfolds the purpose behind *Let my people go, that they may hold a feast unto me in the wilderness* (Exodus 5:1): the Exodus is FOR worship — the wilderness sacrifice, the appointed feast unto Yahuah, owed since Egypt swallowed them.'),
+    -- Thread 2: the Egyptians shall know that I am Yahuah (5:2 answered)
+    ('canon','exodus',5,2,'canon','exodus',7,5,'free',
+      E'*And the Egyptians shall know that I am Yahuah (LORD), when I stretch forth mine hand upon Egypt, and bring out the children of Yashar''el (Israel) from among them.* (Exodus 7:5) This is the direct answer to *Who is Yahuah... I know not Yahuah* (Exodus 5:2). The boast is overturned point for point: the proud "I know not" becomes the forced *the Egyptians shall know that I am Yahuah*. The plagues exist to teach the Name Pharaoh refused.'),
+    ('canon','exodus',5,2,'canon','exodus',14,4,'free',
+      E'*And I will harden Pharaoh''s heart, that he shall follow after them; and I will be honoured upon Pharaoh, and upon all his host; that the Egyptians may know that I am Yahuah (LORD). And they did so.* (Exodus 14:4) At the sea the same purpose is sealed: *that the Egyptians may know that I am Yahuah*. The arc that opens with Pharaoh''s contemptuous *I know not Yahuah (LORD)* (Exodus 5:2) closes with all Egypt drowned in the knowledge of the Name they would not honour.'),
+    -- Thread 3: bricks without straw (5:6-19)
+    ('canon','exodus',5,7,'canon','exodus',2,23,'free',
+      E'*And it came to pass in process of time, that the king of Egypt died: and the children of Yashar''el (Israel) sighed by reason of the bondage, and they cried, and their cry came up unto Elohim (God) by reason of the bondage.* (Exodus 2:23) The straw withdrawn and the tale of bricks unchanged — *Ye shall no more give the people straw to make brick... yet not ought of your work shall be diminished* (Exodus 5:7) — deepens the very *bondage* whose groaning had already risen to Yahuah. The affliction tightens just before the redeemer''s hand is bared.'),
+    ('canon','exodus',5,9,'canon','exodus',2,24,'free',
+      E'*And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob.* (Exodus 2:24) Pharaoh''s *Let there more work be laid upon the men, that they may labour therein* (Exodus 5:9) only swells the groaning that Yahuah has already heard and bound to His covenant with the fathers. The heavier the burden, the nearer the remembered promise — the oppressor''s grip clenches hardest the moment before it is broken.'),
+    ('canon','exodus',5,9,'jasher','jasher',79,52,'extras',
+      E'*And he drove them from him, and he ordered the labor upon Israel to be more severe than it was yesterday and before.* (Jasher 79:52) The restored account names the same cruelty as *Let there more work be laid upon the men* (Exodus 5:9): the announcement of deliverance is answered by Pharaoh with intensified bondage — the tyrant''s instinct to crush harder the people he is about to lose.'),
+    -- Thread 4: Moses' complaint — wherefore hast thou so evil entreated (5:20-23)
+    ('canon','exodus',5,22,'canon','habakkuk',1,2,'free',
+      E'*O Yahuah (LORD), how long shall I cry, and thou wilt not hear! even cry out unto thee of violence, and thou wilt not save!* (Habakkuk 1:2) Moses'' *Yahuah (Lord), wherefore hast thou so evil entreated this people? why is it that thou hast sent me?* (Exodus 5:22) is the same honest lament of the sent one — the prophet who cries out when deliverance seems only to deepen the violence. The complaint is not unbelief; it is faith pressing Yahuah for the salvation He promised.'),
+    ('canon','exodus',5,22,'canon','psalms',13,1,'free',
+      E'*How long wilt thou forget me, O Yahuah (LORD)? for ever? how long wilt thou hide thy face from me?* (Psalm 13:1) Moses'' *wherefore hast thou so evil entreated this people?* (Exodus 5:22) sings in the same key — the believer who feels forgotten while the enemy is exalted. The Psalter validates the lament: such crying out is the covenant''s own language, not its breach.'),
+    ('canon','exodus',5,22,'canon','jeremiah',20,7,'free',
+      E'*O Yahuah (LORD), thou hast deceived me, and I was deceived: thou art stronger than I, and hast prevailed: I am in derision daily, every one mocketh me.* (Jeremiah 20:7) Jeremiah''s anguish at being SENT into reproach matches Moses'' *why is it that thou hast sent me?* (Exodus 5:22). Both prophets pour out the bitterness of obedience that seems only to worsen the affliction — and both are answered, not rebuked, by the One who sent them.'),
+    ('canon','exodus',5,23,'jasher','jasher',79,54,'extras',
+      E'*And Moses returned to Yahuah (the Lord) and said, Why have you ill treated your people? for since I came to speak to Pharaoh what you did send me for, he has exceedingly ill used the children of Israel.* (Jasher 79:54) The restored witness gives Moses'' complaint in the same breath as *he hath done evil to this people; neither hast thou delivered thy people at all* (Exodus 5:23) — the sent one''s honest grief that his obedience has, so far, only made the bondage heavier.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- =========================================================================================
+-- C. cross_reference_threads
+-- =========================================================================================
+-- Thread 1: who is Yahuah, that I should obey (5:1-2)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-5-who-is-yahuah-that-i-should-obey',
+       E'Who is Yahuah, that I should obey? — the proud who will be made to know the Name',
+       E'The demand is for worship: *Let my people go, that they may hold a feast unto me in the wilderness* (Exodus 5:1). The Exodus is not merely an escape from labour but a release UNTO the appointed feast — the same purpose Jasher preserves, *that we may take a journey for three days in the wilderness, and there may sacrifice to him* (Jasher 79:48). Pharaoh answers with the archetypal contempt of the proud: *Who is Yahuah (LORD), that I should obey his voice to let Yashar''el (Israel) go? I know not Yahuah (LORD), neither will I let Yashar''el (Israel) go* (Exodus 5:2). The restored Jasher shows this is no idle word — he searches the chronicles of Egypt''s kings for the Name and comes up empty: *Behold I have not found the name of your Elohim written in this book, and his name I know not* (Jasher 79:44), then declares almost verbatim with Moses, *I know not Yahuah (the Lord) whom you have declared, neither will I send his people* (Jasher 79:46). This willful ignorance of the Name is the canon''s signature of the covenant''s enemies: *Now the sons of Eli were sons of Belial; they knew not Yahuah (LORD)* (1 Samuel 2:12), and *The fool hath said in his heart, There is no Elohim (God)... there is none that doeth good* (Psalm 14:1). It runs forward to the final reckoning, when the flaming fire takes *vengeance on them that know not Elohim (God), and that obey not the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ)* (2 Thessalonians 1:8). Pharaoh''s "I know not" is the boast of every proud power that refuses to bow — and the whole book of the plagues exists to overturn it into the knowledge it would not give.',
+       sv.verse_id, ev.verse_id, 'extras', 29100
+  FROM _s305_ex05_lookup sv, _s305_ex05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=5 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2: the Egyptians shall know that I am Yahuah (5:2)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-5-the-egyptians-shall-know-i-am-yahuah',
+       E'I know not Yahuah — answered: that the Egyptians may know that I am Yahuah',
+       E'Pharaoh''s defiant *I know not Yahuah (LORD), neither will I let Yashar''el (Israel) go* (Exodus 5:2) is a boast the rest of the book exists to demolish. Yahuah names the very purpose of the plagues as the undoing of that ignorance: *And the Egyptians shall know that I am Yahuah (LORD), when I stretch forth mine hand upon Egypt, and bring out the children of Yashar''el (Israel) from among them* (Exodus 7:5). The arc is sealed at the sea: *I will be honoured upon Pharaoh, and upon all his host; that the Egyptians may know that I am Yahuah (LORD)* (Exodus 14:4). What opens as a proud "I know not" is overturned, point for point, into a forced "they shall know" — the Name Pharaoh would not honour is graven into Egypt by ten judgments and the drowning of the sea. The Most High will be known: by the willing, in worship; by the proud, in judgment.',
+       sv.verse_id, ev.verse_id, 'free', 29103
+  FROM _s305_ex05_lookup sv, _s305_ex05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=5 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=5 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3: bricks without straw (5:6-19)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-5-bricks-without-straw',
+       E'Bricks without straw — the bondage made heavier just before it breaks',
+       E'When deliverance is announced the oppressor''s grip clenches harder. Pharaoh commands *Ye shall no more give the people straw to make brick, as heretofore: let them go and gather straw for themselves* (Exodus 5:7), and yet the full tale of bricks must stand: *Let there more work be laid upon the men, that they may labour therein* (Exodus 5:9). The burden does not lighten at the word of freedom — it doubles. Yet this very deepening of the bondage runs straight back to the cry Yahuah has already heard: *the children of Yashar''el (Israel) sighed by reason of the bondage, and they cried, and their cry came up unto Elohim (God) by reason of the bondage* (Exodus 2:23), *And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob* (Exodus 2:24). The restored Jasher records the same cruelty: *he ordered the labor upon Israel to be more severe than it was yesterday and before* (Jasher 79:52). The pattern is set for the whole canon — the affliction tightens hardest in the hour before the redeemer''s hand is bared. The remembered covenant does not fail because the burden grows; the heavier the brick-tale, the nearer the promise to the fathers.',
+       sv.verse_id, ev.verse_id, 'extras', 29106
+  FROM _s305_ex05_lookup sv, _s305_ex05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=5 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4: Moses' complaint (5:20-23)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-5-wherefore-hast-thou-so-evil-entreated',
+       E'Wherefore hast thou so evil entreated this people? — the sent one''s honest lament',
+       E'When obedience seems only to worsen the affliction, the sent one cries out. The officers turn on Moses (*Yahuah (LORD) look upon you, and judge*, Exodus 5:21), and Moses turns to Yahuah: *Yahuah (Lord), wherefore hast thou so evil entreated this people? why is it that thou hast sent me? For since I came to Pharaoh to speak in thy name, he hath done evil to this people; neither hast thou delivered thy people at all* (Exodus 5:22-23). The restored Jasher carries the same complaint: *Why have you ill treated your people? for since I came to speak to Pharaoh what you did send me for, he has exceedingly ill used the children of Israel* (Jasher 79:54). This is not the speech of unbelief but the covenant''s own honest language, the prophet pressing Yahuah for the salvation He promised. Habakkuk cries it — *O Yahuah (LORD), how long shall I cry, and thou wilt not hear!* (Habakkuk 1:2); the Psalmist sings it — *How long wilt thou forget me, O Yahuah (LORD)? for ever?* (Psalm 13:1); and Jeremiah, sent into reproach, pours it out — *O Yahuah (LORD), thou hast deceived me... I am in derision daily, every one mocketh me* (Jeremiah 20:7). Each sent one is answered, not rebuked. Moses'' answer comes at once in the next chapter — the covenant Name spoken afresh and the seven I-wills of deliverance (Exodus 6).',
+       sv.verse_id, ev.verse_id, 'extras', 29109
+  FROM _s305_ex05_lookup sv, _s305_ex05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=5 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=5 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- =========================================================================================
+-- D. cross_reference_thread_members
+-- =========================================================================================
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (2,'canon','1-samuel',2,12,1,E'*they knew not Yahuah (LORD)* (1 Samuel 2:12) — the sons of Belial wear the priest''s robe yet share Pharaoh''s contempt of the Name; willful ignorance of Yahuah marks the covenant''s enemies.'),
+    (2,'canon','psalms',14,1,2,E'*The fool hath said in his heart, There is no Elohim (God)... there is none that doeth good* (Psalm 14:1) — the denial of the Name is never neutral; it issues at once in abominable works, here the crushing of Yahuah''s firstborn.'),
+    (2,'canon','2-thessalonians',1,8,3,E'*taking vengeance on them that know not Elohim (God)* (2 Thessalonians 1:8) — Pharaoh names his own category, *I know not Yahuah*; the plagues are the down-payment of the flaming-fire reckoning on every proud power that will not know the Name.'),
+    (2,'jasher','jasher',79,44,4,E'*Behold I have not found the name of your Elohim written in this book, and his name I know not* (Jasher 79:44) — the restored scene: Pharaoh ransacks Egypt''s royal chronicles for the Name and finds nothing, for Yahuah is no idol catalogued among the dead gods.'),
+    (2,'jasher','jasher',79,46,5,E'*I know not Yahuah (the Lord) whom you have declared, neither will I send his people* (Jasher 79:46) — almost word for word with Exodus 5:2; ignorance of the Name welded to refusal to release the people.'),
+    (1,'jasher','jasher',79,48,6,E'*that we may take a journey for three days in the wilderness, and there may sacrifice to him* (Jasher 79:48) — unfolds *that they may hold a feast unto me* (Exodus 5:1): the Exodus is FOR worship, the appointed sacrifice owed since Egypt.')
+  ) AS m(src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-5-who-is-yahuah-that-i-should-obey'
+  JOIN _s305_ex05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=5 AND sv.verse_number=m.src_v
+  JOIN _s305_ex05_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-5-who-is-yahuah-that-i-should-obey'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (7,5,1,E'*the Egyptians shall know that I am Yahuah (LORD)* (Exodus 7:5) — the direct answer to *I know not Yahuah*: the proud "I know not" overturned into the forced "they shall know."'),
+    (14,4,2,E'*that the Egyptians may know that I am Yahuah (LORD)* (Exodus 14:4) — at the sea the arc is sealed; the Name Pharaoh would not honour is graven into Egypt by judgment.')
+  ) AS m(tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-5-the-egyptians-shall-know-i-am-yahuah'
+  JOIN _s305_ex05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=5 AND sv.verse_number=2
+  JOIN _s305_ex05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (7,'canon','exodus',2,23,1,E'*their cry came up unto Elohim (God) by reason of the bondage* (Exodus 2:23) — the straw withdrawn deepens the very bondage whose groaning had already risen to Yahuah.'),
+    (9,'canon','exodus',2,24,2,E'*Elohim (God) heard their groaning, and... remembered his covenant with Abraham, with Isaac, and with Jacob* (Exodus 2:24) — the heavier the burden, the nearer the remembered promise to the fathers.'),
+    (9,'jasher','jasher',79,52,3,E'*he ordered the labor upon Israel to be more severe than it was yesterday and before* (Jasher 79:52) — the restored witness names the same cruelty: deliverance announced, bondage intensified.')
+  ) AS m(src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-5-bricks-without-straw'
+  JOIN _s305_ex05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=5 AND sv.verse_number=m.src_v
+  JOIN _s305_ex05_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-5-bricks-without-straw'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (22,'canon','habakkuk',1,2,1,E'*O Yahuah (LORD), how long shall I cry, and thou wilt not hear!* (Habakkuk 1:2) — the sent one''s honest lament; faith pressing Yahuah for the salvation He promised, not unbelief.'),
+    (22,'canon','psalms',13,1,2,E'*How long wilt thou forget me, O Yahuah (LORD)? for ever?* (Psalm 13:1) — the Psalter validates the cry of the one who feels forgotten while the enemy is exalted.'),
+    (22,'canon','jeremiah',20,7,3,E'*thou hast deceived me... I am in derision daily, every one mocketh me* (Jeremiah 20:7) — Jeremiah''s anguish at being SENT into reproach matches Moses'' *why is it that thou hast sent me?*'),
+    (23,'jasher','jasher',79,54,4,E'*Why have you ill treated your people? for since I came to speak to Pharaoh... he has exceedingly ill used the children of Israel* (Jasher 79:54) — the restored witness gives Moses'' grief in the same breath as Exodus 5:23.')
+  ) AS m(src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-5-wherefore-hast-thou-so-evil-entreated'
+  JOIN _s305_ex05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=5 AND sv.verse_number=m.src_v
+  JOIN _s305_ex05_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-5-wherefore-hast-thou-so-evil-entreated'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_18.sql (Exodus 18) -----
+-- Chapter: Exodus 18 — Jethro the priest of Midian comes, rejoices, blesses Yahuah, confesses
+--          Yahuah greater than all gods, offers sacrifice; counsels Moses to appoint able men
+--          (rulers of thousands/hundreds/fifties/tens) as judges over the people.
+-- Tag: ex18   Session: s305   Sort band base: 29425 (step 3)
+--
+-- Exodus 18 coverage:
+--   v.1     NT: none warranted  Extras: none warranted  Tanakh: covered by thread 4 frame (report of redemption reaches Midian)
+--   v.2-5   NT: none warranted  Extras: Jasher 79:17-18 (Zipporah sent to Reuel's house, remains till Exodus), Jubilees 48:1 (Midian sojourn)  Tanakh: none warranted  -> THREAD 4
+--   v.6-7   NT: none warranted  Extras: none warranted  Tanakh: none warranted (narrative reunion)
+--   v.8-12  NT: none warranted (forward note in summary)  Extras: none warranted  Tanakh: Joshua 2:9-11 (Rahab confesses), 1 Kings 8:41-43 (the stranger for thy name's sake), Psalm 86:8-10 (all nations come)  -> THREAD 1
+--   v.11    NT: none warranted  Extras: none warranted  Tanakh: Exodus 5:2 (Who is Yahuah), Exodus 9:16 (my name declared), Exodus 15:11 (who is like thee among the gods)  -> THREAD 2 (lateral, Pharaoh's pride answered)
+--   v.13-26 NT: Acts 6:2-4 (the seven appointed, men of honest report)  Extras: none warranted  Tanakh: Deuteronomy 1:9-18 (Moses recounts the delegation), Numbers 11:16-17 (the seventy elders)  -> THREAD 3
+--   v.27    NT: none warranted  Extras: none warranted  Tanakh: none warranted (Jethro departs)
+--
+-- Threads (4):
+--   1. exodus-18-now-i-know-yahuah-is-greater-than-all-gods   [FREE]  targets: canon Tanakh (Joshua, 1 Kings, Psalms)
+--        Frame: the report of the redemption draws the stranger to confess the Name; the
+--        Exodus testimony reaching outward; foreshadow of the nations gathered to Yashar'el's
+--        Elohim — but Yahuah's acts FOR his covenant people are the cause; never replacement.
+--   2. exodus-18-greater-than-all-gods-pharaohs-pride-answered  [FREE]  targets: canon Tanakh (Exodus laterals)
+--        Frame: 18:11 measure-for-measure — in the thing wherein they dealt proudly he was
+--        above them; Pharaoh's "Who is Yahuah" (5:2) answered, the Name declared (9:16), none
+--        like Yahuah among the gods (15:11).
+--   3. exodus-18-able-men-such-as-fear-elohim-shared-judgeship  [FREE]  targets: canon Tanakh (Deut, Numbers) + NT (Acts)
+--        Frame: Jethro's counsel — delegated, qualified, Elohim-fearing leadership; the Torah's
+--        pattern of just governance carried forward into the assembly (Acts 6 the seven).
+--   4. exodus-18-zipporah-returned-to-the-house-of-reuel  [EXTRAS]  targets: Jasher, Jubilees
+--        Frame: the reunion behind 18:2-5 (after he had sent her back) — Jasher/Jubilees retell
+--        Moses in Midian and Zipporah remaining at Reuel's house until the Exodus.
+--
+-- Contested/load-bearing framing:
+--   18:8-12 — Jethro's confession is NOT a Gentile-replaces-Israel proof-text. Yahuah's acts
+--   are FOR Yashar'el his people (v.1,8); the stranger is drawn IN to the same Name and
+--   covenant Elohim, never grafted as a new people. Rahab (Joshua 2:11), the stranger of
+--   1 Kings 8:41-43, and Psalm 86:9 are the foreshadow of the nations confessing the ONE
+--   Elohim of Yashar'el — the two-house ingathering's outward reach, never its substitution.
+
+CREATE TEMP VIEW _s305_ex18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== B. cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Now I know Yahuah is greater than all gods (the stranger confesses by the report)
+    ('canon','exodus',18,9,'canon','joshua',2,9,'free',
+      E'*And she said unto the men, I know that Yahuah (LORD) hath given you the land, and that your terror is fallen upon us, and that all the inhabitants of the land faint because of you* (Joshua 2:9). What stirs Jethro to *rejoice for all the goodness which Yahuah (LORD) had done to Yashar''el (Israel)* (Exodus 18:9) is the same thing that melts Rahab in Jericho — the report of the redemption travelling outward. The outsider hears what Yahuah did and is drawn to the Name.'),
+    ('canon','exodus',18,11,'canon','joshua',2,11,'free',
+      E'*And as soon as we had heard these things, our hearts did melt... for Yahuah Elohaychem (the LORD your God), he is Elohim (God) in heaven above, and in earth beneath* (Joshua 2:11). Jethro''s confession *Now I know that Yahuah (LORD) is greater than all gods* (Exodus 18:11) and Rahab''s *he is Elohim (God) in heaven above, and in earth beneath* are the same confession — the report of the Exodus draws the stranger to know the one Elohim of Yashar''el (Israel).'),
+    ('canon','exodus',18,11,'canon','1-kings',8,41,'free',
+      E'*Moreover concerning a stranger, that is not of thy people Yashar''el (Israel), but cometh out of a far country for thy name''s sake* (1 Kings 8:41). Solomon prays at the temple''s dedication for the very figure Jethro is — the stranger drawn from afar by the report of the Name. The confession *Yahuah (LORD) is greater than all gods* (Exodus 18:11) is the firstfruit of that prayer.'),
+    ('canon','exodus',18,11,'canon','1-kings',8,43,'free',
+      E'*Hear thou in heaven thy dwelling place, and do according to all that the stranger calleth to thee for: that all people of the earth may know thy name, to fear thee, as do thy people Yashar''el (Israel)* (1 Kings 8:43). The stranger is drawn to fear the Name *as do thy people Yashar''el* — IN to the same covenant Elohim, never grafted as a rival people. Jethro''s *Now I know that Yahuah (LORD) is greater than all gods* (Exodus 18:11) is exactly this knowing.'),
+    ('canon','exodus',18,11,'canon','psalms',86,8,'free',
+      E'*Among the gods there is none like unto thee, O Yahuah (Lord); neither are there any works like unto thy works* (Psalm 86:8). The Psalm sings Jethro''s very confession — *Now I know that Yahuah (LORD) is greater than all gods* (Exodus 18:11) — and turns it to praise; the works of the redemption are the proof there is none like Yahuah.'),
+    ('canon','exodus',18,9,'canon','psalms',86,9,'free',
+      E'*All nations whom thou hast made shall come and worship before thee, O Yahuah (Lord); and shall glorify thy name* (Psalm 86:9). Jethro''s rejoicing — *Jethro rejoiced for all the goodness which Yahuah (LORD) had done to Yashar''el (Israel)* (Exodus 18:9) — is the first drop of the nations'' worship the Psalm foresees, drawn by the report of what Yahuah did for his covenant people.'),
+
+    -- THREAD 2: greater than all gods — Pharaoh's pride answered (lateral within Exodus)
+    ('canon','exodus',18,11,'canon','exodus',5,2,'free',
+      E'*And Pharaoh said, Who is Yahuah (LORD), that I should obey his voice to let Yashar''el (Israel) go? I know not Yahuah (LORD)* (Exodus 5:2). Pharaoh''s arrogant *Who is Yahuah* is answered by Jethro''s *Now I know that Yahuah (LORD) is greater than all gods: for in the thing wherein they dealt proudly he was above them* (Exodus 18:11). The proud king did not know him; the priest of Midian now does — measure for measure.'),
+    ('canon','exodus',18,11,'canon','exodus',9,16,'free',
+      E'*And in very deed for this cause have I raised thee up, for to shew in thee my power; and that my name may be declared throughout all the earth* (Exodus 9:16). The plagues were aimed at exactly the outcome Jethro voices: the Name declared, the gods of Egypt overthrown. *In the thing wherein they dealt proudly he was above them* (Exodus 18:11) names the verdict the whole confrontation rendered.'),
+    ('canon','exodus',18,11,'canon','exodus',15,11,'free',
+      E'*Who is like unto thee, O Yahuah (LORD), among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?* (Exodus 15:11). The Song at the sea asks the question; Jethro at the mount gives the answer — *Yahuah (LORD) is greater than all gods* (Exodus 18:11). Both rise from the same drowning of Egypt''s pride.'),
+
+    -- THREAD 3: able men such as fear Elohim — shared, qualified judgeship
+    ('canon','exodus',18,21,'canon','deuteronomy',1,15,'free',
+      E'*So I took the chief of your tribes, wise men, and known, and made them heads over you, captains over thousands, and captains over hundreds, and captains over fifties, and captains over tens, and officers among your tribes* (Deuteronomy 1:15). Moses recounts the very pattern Jethro gave — *rulers of thousands, and rulers of hundreds, rulers of fifties, and rulers of tens* (Exodus 18:21) — as the abiding order of just governance in Yashar''el (Israel).'),
+    ('canon','exodus',18,21,'canon','deuteronomy',1,17,'free',
+      E'*Ye shall not respect persons in judgment; but ye shall hear the small as well as the great; ye shall not be afraid of the face of man; for the judgment is Elohim''s (God''s)* (Deuteronomy 1:17). The charge fills out what *able men, such as fear Elohim (God), men of truth, hating covetousness* (Exodus 18:21) means — judges who fear Elohim and not the face of man, because the judgment belongs to Elohim.'),
+    ('canon','exodus',18,18,'canon','numbers',11,16,'free',
+      E'*And Yahuah (LORD) said unto Moses, Gather unto me seventy men of the elders of Yashar''el (Israel)... that they may stand there with thee* (Numbers 11:16). Jethro warned *thou wilt surely wear away... thou art not able to perform it thyself alone* (Exodus 18:18); at the seventy elders Yahuah himself enacts the same remedy — burden shared so Moses bears it not alone.'),
+    ('canon','exodus',18,22,'canon','numbers',11,17,'free',
+      E'*And I will take of the spirit which is upon thee, and will put it upon them; and they shall bear the burden of the people with thee, that thou bear it not thyself alone* (Numbers 11:17). Jethro''s counsel — *they shall bear the burden with thee* (Exodus 18:22) — is what Yahuah brings to pass by the spirit at the seventy; the shared burden is sealed by the Ruach.'),
+    ('canon','exodus',18,21,'canon','acts',6,3,'free',
+      E'*Wherefore, brethren, look ye out among you seven men of honest report, full of the Ruach HaKodesh (Holy Spirit) and wisdom, whom we may appoint over this business* (Acts 6:3). The apostles carry Jethro''s Torah-pattern into the assembly — *men of honest report* answering *men of truth* (Exodus 18:21) — qualified, Spirit-filled men set over the work so the leaders are not worn away.'),
+    ('canon','exodus',18,18,'canon','acts',6,2,'free',
+      E'*Then the twelve called the multitude of the disciples unto them, and said, It is not reason that we should leave the word of Elohim (God), and serve tables* (Acts 6:2). The apostles face Jethro''s very danger — *the thing is too heavy for thee; thou art not able to perform it thyself alone* (Exodus 18:18) — and answer it by delegation, freeing themselves *to prayer, and to the ministry of the word* (Acts 6:4).'),
+
+    -- THREAD 4 (EXTRAS): Zipporah returned to the house of Reuel
+    ('canon','exodus',18,2,'jasher','jasher',79,17,'extras',
+      E'*And Aaron said to Moses, Send away the woman and her children that they may go to her father''s house, and Moses hearkened to the words of Aaron, and did so* (Jasher 79:17). Jasher fills the gap behind *Jethro... took Zipporah, Moses'' wife, after he had sent her back* (Exodus 18:2) — naming why Zipporah was sent home before the Exodus.'),
+    ('canon','exodus',18,5,'jasher','jasher',79,18,'extras',
+      E'*And Zipporah returned with her children, and they went to the house of Reuel, and remained there until the time arrived when Yahuah (the Lord) had visited his people, and brought them forth from Egypt* (Jasher 79:18). This is the home Jethro now travels from when he *came with his sons and his wife unto Moses into the wilderness* (Exodus 18:5) — Reuel''s house, where the family waited out the deliverance.'),
+    ('canon','exodus',18,3,'jubilees','jubilees',48,1,'extras',
+      E'*And in the sixth year of the third week of the forty-ninth jubilee you did depart and dwell in the land of Midian five weeks and one year. And you did return into Egypt* (Jubilees 48:1). Jubilees dates the Midian sojourn behind Gershom''s name — *I have been an alien in a strange land* (Exodus 18:3) — the years Moses dwelt as a stranger before Yahuah sent him back to Egypt.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== C. threads =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-18-now-i-know-yahuah-is-greater-than-all-gods',
+       E'Now I Know That Yahuah Is Greater Than All Gods — the stranger drawn to confess the Name',
+       E'When Jethro the priest of Midian hears *all that Yahuah (LORD) had done unto Pharaoh and to the Egyptians for Yashar''el''s (Israel''s) sake* (Exodus 18:8), he rejoices and breaks into confession: *Now I know that Yahuah (LORD) is greater than all gods* (Exodus 18:11), and he *took a burnt offering and sacrifices for Elohim (God)* (Exodus 18:12). The report of the redemption — Yahuah''s acts FOR his covenant people — reaches outward and draws the outsider to the Name.\n\nThis is the same melting that takes Rahab in Jericho: *I know that Yahuah (LORD) hath given you the land... for Yahuah Elohaychem (the LORD your God), he is Elohim (God) in heaven above, and in earth beneath* (Joshua 2:9, 11). It is the figure Solomon prays for at the temple — *concerning a stranger, that is not of thy people Yashar''el (Israel), but cometh out of a far country for thy name''s sake... that all people of the earth may know thy name, to fear thee, as do thy people Yashar''el* (1 Kings 8:41, 43). And it is the song of the Psalm: *Among the gods there is none like unto thee, O Yahuah (Lord)... All nations whom thou hast made shall come and worship before thee* (Psalm 86:8-9).\n\nThe stranger is drawn IN to the one Elohim of Yashar''el — to fear the Name *as do thy people Yashar''el* — never grafted as a rival people. Jethro''s confession is the firstfruit of the nations'' ingathering, and its cause is always Yahuah''s mighty acts for HIS covenant people.',
+       sv.verse_id, ev.verse_id, 'free', 29425
+  FROM _s305_ex18_lookup sv, _s305_ex18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=18 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-18-greater-than-all-gods-pharaohs-pride-answered',
+       E'In the Thing Wherein They Dealt Proudly He Was Above Them — Pharaoh''s pride answered',
+       E'Jethro''s confession carries a verdict on Egypt: *Now I know that Yahuah (LORD) is greater than all gods: for in the thing wherein they dealt proudly he was above them* (Exodus 18:11). The redemption was measure for measure — wherever Egypt exalted itself, Yahuah rose above it.\n\nIt answers Pharaoh''s opening arrogance directly: *Who is Yahuah (LORD), that I should obey his voice to let Yashar''el (Israel) go? I know not Yahuah (LORD)* (Exodus 5:2). The proud king said he did not know Yahuah; the priest of Midian now says *Now I know*. The plagues were aimed at exactly this: *for to shew in thee my power; and that my name may be declared throughout all the earth* (Exodus 9:16). And the Song at the sea had already asked the question Jethro answers: *Who is like unto thee, O Yahuah (LORD), among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?* (Exodus 15:11). Pharaoh''s pride drowned; the Name was declared; the stranger confessed.',
+       sv.verse_id, ev.verse_id, 'free', 29428
+  FROM _s305_ex18_lookup sv, _s305_ex18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=18 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-18-able-men-such-as-fear-elohim-shared-judgeship',
+       E'Able Men, Such As Fear Elohim — the Torah pattern of shared, qualified judgeship',
+       E'Jethro sees Moses judging the people alone *from the morning unto the evening* (Exodus 18:13) and warns him: *Thou wilt surely wear away, both thou, and this people that is with thee: for this thing is too heavy for thee; thou art not able to perform it thyself alone* (Exodus 18:18). His remedy is the Torah''s pattern of just governance: *provide out of all the people able men, such as fear Elohim (God), men of truth, hating covetousness... rulers of thousands, and rulers of hundreds, rulers of fifties, and rulers of tens* (Exodus 18:21), that *they shall bear the burden with thee* (Exodus 18:22).\n\nMoses recounts this very pattern in Deuteronomy: *I took the chief of your tribes, wise men, and known, and made them heads over you, captains over thousands, and captains over hundreds, and captains over fifties, and captains over tens* (Deuteronomy 1:15), charging them *ye shall not respect persons in judgment... for the judgment is Elohim''s (God''s)* (Deuteronomy 1:17). At the seventy elders, Yahuah himself enacts the burden-sharing: *I will take of the spirit which is upon thee, and will put it upon them; and they shall bear the burden of the people with thee, that thou bear it not thyself alone* (Numbers 11:17).\n\nThe apostles carry the same pattern into the assembly — *look ye out among you seven men of honest report, full of the Ruach HaKodesh (Holy Spirit) and wisdom* (Acts 6:3) — so that the leaders give themselves *to prayer, and to the ministry of the word* (Acts 6:4). Shared, qualified, Elohim-fearing leadership is one continuous covenant order from the mount to the assembly.',
+       sv.verse_id, ev.verse_id, 'free', 29431
+  FROM _s305_ex18_lookup sv, _s305_ex18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=18 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-18-zipporah-returned-to-the-house-of-reuel',
+       E'After He Had Sent Her Back — Zipporah returned to the house of Reuel',
+       E'The chapter opens with a quiet domestic note: *Then Jethro, Moses'' father in law, took Zipporah, Moses'' wife, after he had sent her back, And her two sons* (Exodus 18:2-3), and Jethro *came with his sons and his wife unto Moses into the wilderness* (Exodus 18:5). The restored library fills in what stands behind *after he had sent her back*.\n\nJasher tells it plainly: *And Aaron said to Moses, Send away the woman and her children that they may go to her father''s house, and Moses hearkened to the words of Aaron, and did so* (Jasher 79:17); *And Zipporah returned with her children, and they went to the house of Reuel, and remained there until the time arrived when Yahuah (the Lord) had visited his people, and brought them forth from Egypt* (Jasher 79:18). The family waited out the deliverance at Reuel''s house — the very home Jethro now travels from.\n\nJubilees dates the long Midian sojourn behind Gershom''s name — *I have been an alien in a strange land* (Exodus 18:3): *you did depart and dwell in the land of Midian five weeks and one year. And you did return into Egypt* (Jubilees 48:1). Moses had been the stranger; now the stranger''s house comes to rejoice at the redemption.',
+       sv.verse_id, ev.verse_id, 'extras', 29434
+  FROM _s305_ex18_lookup sv, _s305_ex18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=18 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== D. thread_members =====================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Rahab confesses *I know that Yahuah (LORD) hath given you the land* (Joshua 2:9) — the report of the redemption melts the outsider, as it stirs Jethro to rejoice.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=9
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-now-i-know-yahuah-is-greater-than-all-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He is Elohim (God) in heaven above, and in earth beneath* (Joshua 2:11) — Rahab''s confession is Jethro''s *Yahuah (LORD) is greater than all gods*, the stranger knowing the one Elohim of Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=11
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-now-i-know-yahuah-is-greater-than-all-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*A stranger... cometh out of a far country for thy name''s sake* (1 Kings 8:41) — Solomon prays for the very figure Jethro is, the outsider drawn by the report of the Name.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=11
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-now-i-know-yahuah-is-greater-than-all-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*That all people of the earth may know thy name, to fear thee, as do thy people Yashar''el (Israel)* (1 Kings 8:43) — the stranger is drawn IN to the same covenant Elohim, never grafted as a rival people.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=11
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-now-i-know-yahuah-is-greater-than-all-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Among the gods there is none like unto thee, O Yahuah (Lord); neither are there any works like unto thy works* (Psalm 86:8) — the Psalm turns Jethro''s confession into praise; the works are the proof.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=11
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=86 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-now-i-know-yahuah-is-greater-than-all-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*All nations whom thou hast made shall come and worship before thee... and shall glorify thy name* (Psalm 86:9) — Jethro''s rejoicing is the first drop of the nations'' worship, drawn by what Yahuah did for Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=9
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=86 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-now-i-know-yahuah-is-greater-than-all-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Who is Yahuah (LORD), that I should obey his voice... I know not Yahuah (LORD)* (Exodus 5:2) — Pharaoh''s arrogant question answered by Jethro''s *Now I know*.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=11
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-greater-than-all-gods-pharaohs-pride-answered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*That my name may be declared throughout all the earth* (Exodus 9:16) — the plagues aimed at the very outcome Jethro voices, the Name declared and the proud brought low.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=11
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=9 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-greater-than-all-gods-pharaohs-pride-answered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Who is like unto thee, O Yahuah (LORD), among the gods?* (Exodus 15:11) — the Song at the sea asks; Jethro answers *Yahuah (LORD) is greater than all gods*. Both rise from Egypt''s drowned pride.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=11
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-greater-than-all-gods-pharaohs-pride-answered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Heads over you, captains over thousands... hundreds... fifties... and tens* (Deuteronomy 1:15) — Moses recounts the very pattern Jethro gave as the abiding order of Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-able-men-such-as-fear-elohim-shared-judgeship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Ye shall not respect persons in judgment... for the judgment is Elohim''s (God''s)* (Deuteronomy 1:17) — fills out what *men of truth, hating covetousness* (Exodus 18:21) means: judges who fear Elohim, not the face of man.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-able-men-such-as-fear-elohim-shared-judgeship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Gather unto me seventy men of the elders of Yashar''el (Israel)... that they may stand there with thee* (Numbers 11:16) — Yahuah himself enacts Jethro''s remedy against *thou wilt surely wear away* (Exodus 18:18).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=18
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=11 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-able-men-such-as-fear-elohim-shared-judgeship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*They shall bear the burden of the people with thee, that thou bear it not thyself alone* (Numbers 11:17) — Jethro''s *they shall bear the burden with thee* (Exodus 18:22) sealed by the Ruach at the seventy.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=22
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=11 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-able-men-such-as-fear-elohim-shared-judgeship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Seven men of honest report, full of the Ruach HaKodesh (Holy Spirit) and wisdom* (Acts 6:3) — the apostles carry Jethro''s Torah-pattern into the assembly; *honest report* answers *men of truth* (Exodus 18:21).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=6 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-able-men-such-as-fear-elohim-shared-judgeship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*It is not reason that we should leave the word of Elohim (God), and serve tables* (Acts 6:2) — the apostles face Jethro''s danger (*the thing is too heavy for thee*, Exodus 18:18) and answer it by delegation.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=18
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=6 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-able-men-such-as-fear-elohim-shared-judgeship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 (EXTRAS)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Send away the woman and her children that they may go to her father''s house... and Moses... did so* (Jasher 79:17) — Jasher fills the gap behind *after he had sent her back* (Exodus 18:2).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=2
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=79 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-zipporah-returned-to-the-house-of-reuel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Zipporah returned with her children... to the house of Reuel, and remained there until... Yahuah... brought them forth from Egypt* (Jasher 79:18) — the home Jethro travels from in *came... unto Moses into the wilderness* (Exodus 18:5).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=79 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-zipporah-returned-to-the-house-of-reuel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*You did depart and dwell in the land of Midian five weeks and one year. And you did return into Egypt* (Jubilees 48:1) — dates the sojourn behind Gershom''s name, *I have been an alien in a strange land* (Exodus 18:3).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=18 AND sv.verse_number=3
+  JOIN _s305_ex18_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=48 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-18-zipporah-returned-to-the-house-of-reuel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_21.sql (Exodus 21) -----
+-- Chapter: Exodus 21 — THE MISHPATIM BEGIN, the covenant code of judgments ("Now these are the judgments which thou shalt set before them"): the Hebrew servant serves six years and goes free in the seventh, the servant who loves his master bored to the door post to serve for ever; the daughter sold as maidservant; the capital statutes — he that smiteth a man so that he die, the manslayer who flees to the appointed place, the presumptuous murderer taken from the altar to die, he that smiteth or curseth his father or his mother, the man-stealer; eye for eye, tooth for tooth, hand for hand, foot for foot (lex talionis, the court's measure); the goring ox and the open pit (liability and restitution). The civil Torah — Yahuah's righteous judgments — NOT abolished but the standing pattern of justice the Renewed Writings uphold and deepen; the curse is exile (Deuteronomy 28), never the Torah.
+-- Tag: ex21   Temp view: _s305_ex21_lookup
+-- Sort band: base 29500, step 3 -> threads at 29500, 29503, 29506, 29509, 29512 (5 threads)
+-- Source of EVERY row: 'canon','exodus',21,v
+--
+-- Exodus 21 coverage:
+--   ★ v.1-6 (the Hebrew servant six years, free in the seventh for nothing; the servant who says I love my master... I will not go out free, brought to the door post, his ear bored, he shall serve him for ever)
+--        NT:     none warranted distinct as MEMBER (the willing-devoted-servant type — *mine ears hast thou opened* — is carried by the Psalm 40 lateral, which the NT itself reads forward at Hebrews 10:5-7; not forced here as a separate member)
+--        Extras: none warranted (no clean witness on the seventh-year release adds over the strong Torah laterals)
+--        Tanakh: ★ Deuteronomy 15:12-17 (an Hebrew man... serve thee six years; then in the seventh year thou shalt let him go free... take an aul, and thrust it through his ear unto the door); ★ Leviticus 25:10 (proclaim liberty throughout all the land... it shall be a jubile); Leviticus 25:39-41 (sold unto thee... serve unto the year of jubile... then shall he depart); ★ Psalm 40:6 (mine ears hast thou opened — the willing devoted servant) — THREAD 1
+--   ★ v.12-17 (he that smiteth a man so that he die... the manslayer fled to the place I appoint... the presumptuous murderer taken from mine altar to die; HE THAT SMITETH his father or his mother; the man-stealer; HE THAT CURSETH his father or his mother shall surely be put to death)
+--        NT:     ★ Matthew 15:4 (Honour thy father and mother: and, He that curseth father or mother, let him die the death — Yahusha quotes 21:17 against the corban-tradition); ★ Mark 7:10 (Moses said, Honour thy father and thy mother; and, Whoso curseth father or mother, let him die the death) — THREAD 2
+--        Extras: none warranted distinct as MEMBER (the smiter/curser-of-parents capital weave is fully NT + Torah-lateral)
+--        Tanakh: ★ Leviticus 20:9 (every one that curseth his father or his mother shall be surely put to death); Leviticus 24:17 (he that killeth any man shall surely be put to death) — THREAD 2
+--   ★ v.12-14 (he that smiteth a man so that he die shall be surely put to death; if a man lie not in wait, but Elohim deliver him into his hand, I will appoint thee a place whither he shall flee; but the presumptuous slayer — thou shalt take him from mine altar, that he may die)
+--        NT:     none warranted distinct (the manslayer/blood-justice weave is carried Torah-lateral; no clean NT member forced)
+--        Extras: none warranted distinct as MEMBER (Jubilees 4:31 ordinance is bound into THREAD 3 with the eye-for-eye)
+--        Tanakh: ★ Numbers 35:11 (cities of refuge... that the slayer may flee thither, which killeth any person at unawares); ★ Numbers 35:30-31 (the murderer shall be put to death by the mouth of witnesses... ye shall take no satisfaction for the life of a murderer); ★ Numbers 35:33 (blood it defileth the land... cannot be cleansed... but by the blood of him that shed it); ★ Genesis 9:6 (Whoso sheddeth man's blood, by man shall his blood be shed: for in the image of Elohim made he man) — THREAD 4
+--   ★★ v.23-25 (if any mischief follow, then thou shalt give life for life, eye for eye, tooth for tooth, hand for hand, foot for foot, burning for burning, wound for wound, stripe for stripe — LEX TALIONIS, the court's measure of just proportion)
+--        NT:     ★★ Matthew 5:38-39 (Ye have heard... An eye for an eye, and a tooth for a tooth: But I say unto you, That ye resist not evil... turn to him the other also — Yahusha forbids PRIVATE retaliation/the abuse of the statute for personal revenge, NOT the court's judicial measure) — THREAD 3
+--        Extras: ★ Jubilees 4:31 (Cain killed by stone in righteous judgment — the heavenly-tables ordinance: with the instrument with which a man kills his neighbour with the same shall he be killed) — THREAD 3
+--        Tanakh: ★★ Leviticus 24:19-20 (as he hath done, so shall it be done to him; breach for breach, eye for eye, tooth for tooth); ★ Deuteronomy 19:21 (life shall go for life, eye for eye, tooth for tooth, hand for hand, foot for foot) — THREAD 3
+--   v.7-11 (the maidservant — redeemed, not sold to a strange nation, food/raiment/duty of marriage not diminished)  NT: none warranted  Extras: none warranted  Tanakh: the seventh-year/release frame is carried by THREAD 1; the redemption clause (let her be redeemed) folds into the liberty pattern — NO separate ADD forced
+--   v.18-22, 26-27 (the smiting in a strife; the servant's eye/tooth that perish → he goes free; the woman with child)  NT: none warranted  Extras: none warranted  Tanakh: the eye/tooth restitution (v.26-27) is the same just-measure principle carried by THREAD 3 (the servant freed FOR his eye's sake is the talion mercy-side); NO separate ADD forced
+--   ★ v.28-36 (the goring ox surely stoned, his flesh not eaten; the owner forewarned put to death; the ransom; thirty shekels for a servant; the open pit; ox for ox — liability and restitution)
+--        NT:     none warranted distinct (the restitution-justice weave is Torah-lateral)
+--        Extras: none warranted distinct as MEMBER
+--        Tanakh: ★ Leviticus 24:18 (he that killeth a beast shall make it good; beast for beast); ★ Leviticus 24:21 (he that killeth a beast, he shall restore it: and he that killeth a man, he shall be put to death); ★ Genesis 9:5 (at the hand of every beast will I require it... I will require the life of man) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. exodus-21-the-hebrew-servant-free-in-the-seventh-year — Tanakh (Deuteronomy, Leviticus, Psalm) [free] (★ the seventh-year release + jubilee liberty; the bored ear → the willing devoted servant of Psalm 40)
+--   2. exodus-21-he-that-curseth-his-father-or-his-mother-let-him-die — NT (Matthew, Mark) + Tanakh (Leviticus) [free] (★ Yahusha quotes 21:17 against the corban-tradition that voided the fifth word)
+--   3. exodus-21-eye-for-eye-the-courts-measure-of-just-recompense — NT (Matthew) + Tanakh (Leviticus, Deuteronomy) + Extras (Jubilees) [extras] (★★ lex talionis = the COURT'S limit on proportionate justice; Messiah forbids PRIVATE revenge, not the judicial standard)
+--   4. exodus-21-he-that-smiteth-a-man-so-that-he-die-the-manslayer-and-the-blood — Tanakh (Numbers, Genesis) [free] (★ the appointed place of refuge for the unaware slayer vs. the altar that cannot shelter the presumptuous murderer; blood defiles the land)
+--   5. exodus-21-the-goring-ox-and-the-open-pit-restitution — Tanakh (Leviticus, Genesis) [free] (★ liability and restitution; life required even at the hand of the beast; make it good)
+--
+-- Framing notes:
+--   ★ THREAD 1 (SEVENTH-YEAR LIBERTY): *in the seventh he shall go out free for nothing* (21:2) and the servant who loves his master *bored... for ever* (21:5-6) open the Mishpatim with Torah's built-in liberty/redemption pattern. Bound to Deuteronomy 15:12-17 (the second-law parallel, ear thrust through to the door) and the jubilee — *proclaim liberty throughout all the land* (Leviticus 25:10), *serve unto the year of jubile... then shall he depart* (Leviticus 25:40-41). Forward to *mine ears hast thou opened* (Psalm 40:6): the bored-ear devoted servant becomes the figure of the willing One who comes to do Yahuah's will. The seventh-year freedom is the Torah's own mercy, not a curse.
+--   ★ THREAD 2 (THE FIFTH WORD GUARDED): *he that... curseth his father, or his mother, shall surely be put to death* (21:15,17). ★ Yahusha quotes this very statute against the corban-tradition: *He that curseth father or mother, let him die the death* (Matthew 15:4; Mark 7:10) — UPHOLDING the Torah against the commandments of men that voided the fifth word. Lateral to Leviticus 20:9 (the same capital statute) and Leviticus 24:17 (he that killeth any man). The civil Torah is the standing pattern of justice Messiah defends.
+--   ★★ THREAD 3 (EYE FOR EYE — THE COURT'S MEASURE, framed CAREFULLY): *eye for eye, tooth for tooth, hand for hand, foot for foot* (21:24) is the COURT'S limit on proportionate justice — it restrains vengeance to exact measure, no more (Leviticus 24:19-20; Deuteronomy 19:21). When Yahusha says *Ye have heard... An eye for an eye... but I say unto you, That ye resist not evil* (Matthew 5:38-39), He forbids PRIVATE retaliation and the abuse of the statute for personal revenge — He does NOT abolish the judicial principle of just measure. The Torah-court standard stands; the disciple does not take the bench into his own hand. Jubilees 4:31 carries the heavenly-tables ordinance (Cain killed by stone *in righteous judgment*; with the instrument a man kills, by the same is he killed) — the measure-for-measure justice written before Sinai (clean self-contained clause; v.32 runs together with Noah's marriage so v.31 is the quoted member).
+--   ★ THREAD 4 (THE MANSLAYER AND THE BLOOD): *He that smiteth a man, so that he die, shall be surely put to death* (21:12); but for the unaware — *Elohim deliver him into his hand; then I will appoint thee a place whither he shall flee* (21:13) — the place of refuge (Numbers 35:11), while the presumptuous murderer is taken *from mine altar, that he may die* (21:14) — no altar shelters him, *ye shall take no satisfaction for the life of a murderer* (Numbers 35:31), *for blood it defileth the land* (Numbers 35:33). Rooted in the Noahide charge *Whoso sheddeth man's blood, by man shall his blood be shed: for in the image of Elohim made he man* (Genesis 9:6).
+--   ★ THREAD 5 (THE GORING OX / RESTITUTION): the ox surely stoned and the forewarned owner liable (21:28-29), the open pit made good (21:33-34), *ox for ox* (21:36). Lateral to Leviticus 24:18,21 (beast for beast; he shall restore it) and Genesis 9:5 (the life required even *at the hand of every beast*). Restitution-justice — make the loss good — the civil Torah's righteous order.
+--   EXTRAS: Jubilees DOUBLE-WRITTEN 'jubilees','jubilees' (edition AND book slug). Only Jubilees 4:31 warranted as a MEMBER (THREAD 3). No Jasher/Enoch/Apocrypha member forced.
+--   VERSES WITH NO ADD: v.7-11 (maidservant redemption folds into the liberty frame of THREAD 1, no separate ADD); v.18-22, 26-27 (the servant freed FOR his eye's/tooth's sake is the mercy-side of the same just-measure principle of THREAD 3 — no separate ADD forced).
+
+CREATE TEMP VIEW _s305_ex21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the Hebrew servant — free in the seventh year (the liberty/redemption pattern)
+    ('canon','exodus',21,2,'canon','deuteronomy',15,12,'free',
+      E'*And if thy brother, an Hebrew man, or an Hebrew woman, be sold unto thee, and serve thee six years; then in the seventh year thou shalt let him go free from thee* (Deuteronomy 15:12). The second law keeps the very statute of *six years he shall serve: and in the seventh he shall go out free for nothing* (Exodus 21:2) — the Hebrew servant is never a perpetual slave; the seventh year is the Torah''s own built-in liberty. Bondage among Yahuah''s (the LORD''s) people has a fixed term and an appointed release.'),
+    ('canon','exodus',21,3,'canon','deuteronomy',15,13,'free',
+      E'*And when thou sendest him out free from thee, thou shalt not let him go away empty* (Deuteronomy 15:13). The going-out of *if he came in by himself, he shall go out by himself* (Exodus 21:3) is no bare dismissal — the second law adds the master must furnish him liberally (15:14), *and thou shalt remember that thou wast a bondman in the land of Egypt, and Yahuah Elohayka (the LORD thy God) redeemed thee* (15:15). The release is patterned on Yahuah''s own redemption of His people from bondage; mercy, not mere law.'),
+    ('canon','exodus',21,6,'canon','deuteronomy',15,17,'free',
+      E'*Then thou shalt take an aul, and thrust it through his ear unto the door, and he shall be thy servant for ever. And also unto thy maidservant thou shalt do likewise* (Deuteronomy 15:17). The bored-ear sign of *his master shall bore his ear through with an aul; and he shall serve him for ever* (Exodus 21:6) is repeated word for word in the second law — the servant who, of love, chooses to stay. It is not compulsion but devotion fixed to the door post; the willing servant binds himself for love of his master and his house.'),
+    ('canon','exodus',21,2,'canon','leviticus',25,10,'free',
+      E'*And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family* (Leviticus 25:10). The seventh-year release of *in the seventh he shall go out free* (Exodus 21:2) opens the same Torah-architecture of liberty that crowns in the jubilee: *proclaim liberty throughout all the land*. Freedom and return are written into Yahuah''s (the LORD''s) calendar; the Torah is the charter of release, never of bondage.'),
+    ('canon','exodus',21,2,'canon','leviticus',25,40,'free',
+      E'*But as an hired servant, and as a sojourner, he shall be with thee, and shall serve thee unto the year of jubile: And then shall he depart from thee, both he and his children with him, and shall return unto his own family, and unto the possession of his fathers shall he return* (Leviticus 25:40-41). The bondservant of *six years he shall serve* (Exodus 21:2) is *not [to] compel... to serve as a bondservant* (Leviticus 25:39) but to be held as a hired man until the jubilee — *then shall he depart... and shall return*. The Torah binds every servitude to an appointed liberty and a homecoming.'),
+    ('canon','exodus',21,5,'canon','psalms',40,6,'free',
+      E'*Sacrifice and offering thou didst not desire; mine ears hast thou opened: burnt offering and sin offering hast thou not required* (Psalm 40:6). The servant who says *I love my master... I will not go out free* (Exodus 21:5) and has his ear bored to the door becomes the figure of the willing devoted servant — *mine ears hast thou opened*, the ear marked for glad obedience. The Psalm reads it forward to the One who comes saying *Lo, I come... I delight to do thy will, O my Elohim (God): yea, thy law is within my heart* (Psalm 40:7-8): the Formed Son, the devoted Servant whose opened ear hears and does the Father''s will.'),
+
+    -- THREAD 2: he that curseth his father or his mother (the fifth word guarded as a capital statute)
+    ('canon','exodus',21,17,'canon','matthew',15,4,'free',
+      E'*For Elohim (God) commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death* (Matthew 15:4). Yahusha (Jesus) quotes this very Mishpat — *he that curseth his father, or his mother, shall surely be put to death* (Exodus 21:17) — to expose the corban-tradition that let men withhold from their parents under cover of a vow. Far from abolishing the civil Torah, He wields it: the statute stands, and the commandments of men that void it are condemned.'),
+    ('canon','exodus',21,17,'canon','mark',7,10,'free',
+      E'*For Moses said, Honour thy father and thy mother; and, Whoso curseth father or mother, let him die the death* (Mark 7:10). Mark records the same defence: against those who *reject the commandment of Elohim (God), that ye may keep your own tradition* (Mark 7:9), Yahusha (Jesus) cites *he that curseth his father, or his mother, shall surely be put to death* (Exodus 21:17) as Yahuah''s (the LORD''s) own word through Moses. The judgment of the Mishpatim is the standing pattern of justice He upholds.'),
+    ('canon','exodus',21,17,'canon','leviticus',20,9,'free',
+      E'*For every one that curseth his father or his mother shall be surely put to death: he hath cursed his father or his mother; his blood shall be upon him* (Leviticus 20:9). The holiness law repeats the capital statute of *he that curseth his father, or his mother, shall surely be put to death* (Exodus 21:17) — the same judgment in another book, twice testified. To curse the father and mother is to assault the fifth word at its root; the Torah guards the honour of parents with the weight of life.'),
+    ('canon','exodus',21,15,'canon','leviticus',24,17,'free',
+      E'*And he that killeth any man shall surely be put to death* (Leviticus 24:17). The capital weight of *he that smiteth his father, or his mother, shall be surely put to death* (Exodus 21:15) belongs to the same body of judgments as *he that killeth any man shall surely be put to death*. The Mishpatim measure the gravity of violence — and the striking of one''s own father or mother carries the murderer''s sentence; the household is sacred ground in Yahuah''s (the LORD''s) law.'),
+
+    -- THREAD 3 (★★): eye for eye — the court's measure of just recompense (NOT private revenge)
+    ('canon','exodus',21,24,'canon','leviticus',24,19,'free',
+      E'*And if a man cause a blemish in his neighbour; as he hath done, so shall it be done to him; Breach for breach, eye for eye, tooth for tooth: as he hath caused a blemish in a man, so shall it be done to him again* (Leviticus 24:19-20). The lex talionis of *eye for eye, tooth for tooth, hand for hand, foot for foot* (Exodus 21:24) is the court''s rule of exact proportion: *as he hath done, so shall it be done*. It is not licence for vengeance but its restraint — the penalty is measured to the harm, no more, the judge holding the scales even.'),
+    ('canon','exodus',21,24,'canon','deuteronomy',19,21,'free',
+      E'*And thine eye shall not pity; but life shall go for life, eye for eye, tooth for tooth, hand for hand, foot for foot* (Deuteronomy 19:21). The second law sets the same measure of *eye for eye, tooth for tooth, hand for hand, foot for foot* (Exodus 21:24) — and names its place: the sentence the JUDGES pass upon the false witness who plotted his brother''s harm (Deuteronomy 19:18-19). The talion is a courtroom standard for the magistrate, the limit of just recompense, never a warrant for the wronged man to avenge himself.'),
+    ('canon','exodus',21,24,'canon','matthew',5,38,'free',
+      E'*Ye have heard that it hath been said, An eye for an eye, and a tooth for a tooth: But I say unto you, That ye resist not evil: but whosoever shall smite thee on thy right cheek, turn to him the other also* (Matthew 5:38-39). Yahusha (Jesus) takes up *eye for eye, tooth for tooth* (Exodus 21:24) — but He addresses the man who had seized the court''s measure as a licence for PERSONAL revenge. He forbids private retaliation and the heart that repays evil for evil; He does not abolish the judicial principle that a court must render just measure. The Torah-court standard stands; the disciple simply does not take the magistrate''s scales into his own hand.'),
+    ('canon','exodus',21,24,'jubilees','jubilees',4,31,'extras',
+      E'*At the close of this jubilee Cain was killed after him in the same year; for his house fell upon him and he died in the midst of his house, and he was killed by its stones, for with a stone he had killed Abel, and by a stone was he killed in righteous judgment* (Jubilees 4:31). The restored witness shows the measure-for-measure judgment of *eye for eye, tooth for tooth* (Exodus 21:24) written into the order of things before Sinai: Cain, who slew Abel with a stone, *was killed by its stones... in righteous judgment* — the ordinance of the heavenly tables, that with the instrument a man kills his neighbour, by the same shall he be dealt with. The just-measure of the Mishpatim is Yahuah''s (the LORD''s) ancient pattern of righteousness, not a harsh later invention.'),
+
+    -- THREAD 4: he that smiteth a man so that he die — the manslayer, the refuge, the blood
+    ('canon','exodus',21,13,'canon','numbers',35,11,'free',
+      E'*Then ye shall appoint you cities to be cities of refuge for you; that the slayer may flee thither, which killeth any person at unawares* (Numbers 35:11). The promise of *if a man lie not in wait, but Elohim (God) deliver him into his hand; then I will appoint thee a place whither he shall flee* (Exodus 21:13) is unfolded in the cities of refuge: the one who kills *at unawares* — without lying in wait — is sheltered from the avenger. The Mishpatim distinguish the accident from the murder; mercy and justice both have their appointed place.'),
+    ('canon','exodus',21,14,'canon','numbers',35,30,'free',
+      E'*Whoso killeth any person, the murderer shall be put to death by the mouth of witnesses: but one witness shall not testify against any person to cause him to die. Moreover ye shall take no satisfaction for the life of a murderer, which is guilty of death: but he shall be surely put to death* (Numbers 35:30-31). The presumptuous slayer of *if a man come presumptuously upon his neighbour, to slay him with guile; thou shalt take him from mine altar, that he may die* (Exodus 21:14) finds no ransom and no refuge: *ye shall take no satisfaction for the life of a murderer*. The altar itself cannot shelter the man of guile; blood-guilt is not bought off.'),
+    ('canon','exodus',21,14,'canon','numbers',35,33,'free',
+      E'*So ye shall not pollute the land wherein ye are: for blood it defileth the land: and the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33). The presumptuous murderer torn from the altar — *that he may die* (Exodus 21:14) — must die because *blood it defileth the land*, and the land *cannot be cleansed... but by the blood of him that shed it*. The justice of the Mishpatim is not vindictiveness but the cleansing of the land Yahuah (the LORD) dwells in; unavenged blood pollutes the inheritance.'),
+    ('canon','exodus',21,12,'canon','genesis',9,6,'free',
+      E'*Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man* (Genesis 9:6). The first statute of the code — *He that smiteth a man, so that he die, shall be surely put to death* (Exodus 21:12) — rests on the Noahide charge given to all flesh: blood for blood, *for in the image of Elohim made he man*. The life of man is weighty because he bears the image; the Mishpatim guard that image with the gravest of judgments.'),
+
+    -- THREAD 5: the goring ox and the open pit — liability and restitution
+    ('canon','exodus',21,36,'canon','leviticus',24,18,'free',
+      E'*And he that killeth a beast shall make it good; beast for beast* (Leviticus 24:18). The restitution of *he shall surely pay ox for ox; and the dead shall be his own* (Exodus 21:36) is the same just principle as *beast for beast*: the loss must be made good, like for like. The Mishpatim order property and harm by exact recompense — the careless owner restores in full what his beast destroyed.'),
+    ('canon','exodus',21,33,'canon','leviticus',24,21,'free',
+      E'*And he that killeth a beast, he shall restore it: and he that killeth a man, he shall be put to death* (Leviticus 24:21). The owner of the open pit — *the owner of the pit shall make it good, and give money unto the owner of them* (Exodus 21:34) — answers for the beast that perished, *he shall restore it*; while the same chapter weighs man''s life far higher, *he that killeth a man... shall be put to death*. The civil Torah scales its judgments rightly: beasts restored, but the image-bearer''s blood requires life.'),
+    ('canon','exodus',21,28,'canon','genesis',9,5,'free',
+      E'*And surely your blood of your lives will I require; at the hand of every beast will I require it, and at the hand of man; at the hand of every man''s brother will I require the life of man* (Genesis 9:5). The goring ox *surely stoned* (Exodus 21:28) enacts the Noahide word that Yahuah (the LORD) requires man''s life even *at the hand of every beast*: the beast that sheds human blood is itself put to death. The Mishpatim carry forward the ancient charge — every shedding of the image-bearer''s blood is called to account, even from the brute.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-21-the-hebrew-servant-free-in-the-seventh-year',
+       E'The Hebrew servant free in the seventh year — Torah''s liberty and the willing devoted servant',
+       E'*Now these are the judgments which thou shalt set before them. If thou buy an Hebrew servant, six years he shall serve: and in the seventh he shall go out free for nothing* (Exodus 21:1-2). The Mishpatim — the civil judgments of the covenant — open not with a harsh code but with LIBERTY: no Hebrew servant is a perpetual slave; the seventh year brings release for nothing. The second law keeps it word for word — *in the seventh year thou shalt let him go free from thee* (Deuteronomy 15:12) — and adds that he must not be sent away empty, *and thou shalt remember that thou wast a bondman in the land of Egypt, and Yahuah Elohayka (the LORD thy God) redeemed thee* (Deuteronomy 15:13,15): the release is patterned on Yahuah''s own redemption of His people from Egypt. The same architecture of liberty crowns in the jubilee — *proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile* (Leviticus 25:10) — when the bondservant *shall depart from thee... and shall return unto his own family, and unto the possession of his fathers* (Leviticus 25:41). Freedom, return, and homecoming are written into Yahuah''s calendar; the Torah is the charter of release, never of bondage — and never the curse. And then the tender exception: the servant who, of love, will not leave — *I love my master, my wife, and my children; I will not go out free* (Exodus 21:5) — has his ear bored to the door post to serve for ever (Exodus 21:6; Deuteronomy 15:17). The opened, marked ear is the sign of glad, chosen devotion; the Psalm reads it forward — *mine ears hast thou opened* (Psalm 40:6) — to the willing One who comes saying *Lo, I come... I delight to do thy will, O my Elohim (God): yea, thy law is within my heart* (Psalm 40:7-8): the Formed Son, the devoted Servant whose opened ear hears and does the Father''s will, the Torah within His heart.',
+       sv.verse_id, ev.verse_id, 'free', 29500
+  FROM _s305_ex21_lookup sv, _s305_ex21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=21 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=21 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-21-he-that-curseth-his-father-or-his-mother-let-him-die',
+       E'He that curseth his father or his mother — the capital statute Yahusha upholds against tradition',
+       E'*And he that smiteth his father, or his mother, shall be surely put to death... And he that curseth his father, or his mother, shall surely be put to death* (Exodus 21:15,17). The Mishpatim guard the fifth word — *Honour thy father and thy mother* (Exodus 20:12) — with the weight of life: to strike or curse one''s own father or mother is to assault the household at its root, and the Torah answers it as it answers murder, *he that killeth any man shall surely be put to death* (Leviticus 24:17). The holiness law repeats the very statute: *For every one that curseth his father or his mother shall be surely put to death: he hath cursed his father or his mother; his blood shall be upon him* (Leviticus 20:9) — twice testified, one judgment. And this is the statute the Formed Son Himself takes up: when the tradition of men let a son withhold from his parents under cover of a corban-vow, Yahusha (Jesus) cited it against them — *For Elohim (God) commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death* (Matthew 15:4); *For Moses said, Honour thy father and thy mother; and, Whoso curseth father or mother, let him die the death* (Mark 7:10). He does not abolish the civil Torah — He WIELDS it, condemning the *tradition of men* (Mark 7:8) that *reject the commandment of Elohim, that ye may keep your own tradition* (Mark 7:9). The Mishpatim are Yahuah''s (the LORD''s) righteous judgments; the honour of father and mother is sacred ground the Messiah defends.',
+       sv.verse_id, ev.verse_id, 'free', 29503
+  FROM _s305_ex21_lookup sv, _s305_ex21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=21 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=21 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-21-eye-for-eye-the-courts-measure-of-just-recompense',
+       E'Eye for eye, tooth for tooth — the court''s measure of just recompense, not private revenge',
+       E'*And if any mischief follow, then thou shalt give life for life, Eye for eye, tooth for tooth, hand for hand, foot for foot, Burning for burning, wound for wound, stripe for stripe* (Exodus 21:23-25). This is the lex talionis — and it must be framed rightly, for the antichrist reading turns it into proof that the Torah is cruel. It is the OPPOSITE. The eye-for-eye is the COURT''S rule of exact proportion: the penalty measured to the harm, no more — the magistrate''s limit ON vengeance, restraining the blood-feud that would take a life for a tooth. The holiness law states the principle plainly: *as he hath done, so shall it be done to him; Breach for breach, eye for eye, tooth for tooth: as he hath caused a blemish in a man, so shall it be done to him again* (Leviticus 24:19-20). And the second law fixes its setting — it is the sentence the JUDGES pass: *And thine eye shall not pity; but life shall go for life, eye for eye, tooth for tooth, hand for hand, foot for foot* (Deuteronomy 19:21), spoken of the false witness whom the court has tried (Deuteronomy 19:18). When Yahusha (Jesus) says *Ye have heard that it hath been said, An eye for an eye, and a tooth for a tooth: But I say unto you, That ye resist not evil: but whosoever shall smite thee on thy right cheek, turn to him the other also* (Matthew 5:38-39), He is NOT abolishing the judicial standard of just measure — He is forbidding the man who had seized the court''s rule as a licence for PERSONAL revenge. The disciple does not repay evil for evil nor take the magistrate''s scales into his own hand; but the Torah-court standard of proportionate justice stands. The restored witness shows the measure-for-measure judgment is Yahuah''s (the LORD''s) ancient pattern, written before Sinai: *with a stone he had killed Abel, and by a stone was he killed in righteous judgment* (Jubilees 4:31) — the ordinance of the heavenly tables, that with the instrument a man kills his neighbour, by the same shall he be dealt with. Just measure is righteousness, not cruelty; the court holds the scales even.',
+       sv.verse_id, ev.verse_id, 'extras', 29506
+  FROM _s305_ex21_lookup sv, _s305_ex21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=21 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=21 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-21-he-that-smiteth-a-man-so-that-he-die-the-manslayer-and-the-blood',
+       E'He that smiteth a man so that he die — the manslayer, the refuge, and the blood that defiles the land',
+       E'*He that smiteth a man, so that he die, shall be surely put to death* (Exodus 21:12). The first capital statute of the code rests on the Noahide charge given to all flesh: *Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man* (Genesis 9:6) — man''s life is weighty because he bears the image. But the Mishpatim carefully divide the accident from the murder. For the one who kills unawares — *if a man lie not in wait, but Elohim (God) deliver him into his hand; then I will appoint thee a place whither he shall flee* (Exodus 21:13) — Yahuah (the LORD) appoints refuge: *cities of refuge... that the slayer may flee thither, which killeth any person at unawares* (Numbers 35:11), sheltering him from the avenger of blood. But for the man of guile — *if a man come presumptuously upon his neighbour, to slay him with guile; thou shalt take him from mine altar, that he may die* (Exodus 21:14) — there is no shelter, not even the altar: *ye shall take no satisfaction for the life of a murderer, which is guilty of death: but he shall be surely put to death* (Numbers 35:31). Blood-guilt is not bought off, for *blood it defileth the land: and the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33). The justice of the Mishpatim is not vengeance but the cleansing of the land Yahuah dwells in — the image of Elohim guarded, the unaware slayer mercied, the murderer answered, the inheritance kept undefiled.',
+       sv.verse_id, ev.verse_id, 'free', 29509
+  FROM _s305_ex21_lookup sv, _s305_ex21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=21 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=21 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-21-the-goring-ox-and-the-open-pit-restitution',
+       E'The goring ox and the open pit — liability and restitution in the civil Torah',
+       E'*If an ox gore a man or a woman, that they die: then the ox shall be surely stoned, and his flesh shall not be eaten; but the owner of the ox shall be quit* (Exodus 21:28). The closing judgments of the chapter order property and harm by exact, righteous recompense. The goring ox that kills is *surely stoned* — enacting the Noahide word that Yahuah (the LORD) requires man''s life even *at the hand of every beast will I require it* (Genesis 9:5); the brute that sheds the image-bearer''s blood is itself put to death. The forewarned owner who *hath not kept him in* bears the heavier liability (Exodus 21:29). And where a beast or property perishes through negligence, the rule is make-it-good: the owner of the open pit *shall make it good, and give money unto the owner* (Exodus 21:34), and the careless herdsman *shall surely pay ox for ox* (Exodus 21:36) — the very principle of the holiness law, *he that killeth a beast shall make it good; beast for beast* (Leviticus 24:18), *he that killeth a beast, he shall restore it: and he that killeth a man, he shall be put to death* (Leviticus 24:21). The civil Torah scales its judgments rightly — beasts and goods restored in full, but the image-bearer''s blood requiring life. This is justice that makes the wronged whole, the standing pattern of righteous order the Renewed Writings never overturn.',
+       sv.verse_id, ev.verse_id, 'free', 29512
+  FROM _s305_ex21_lookup sv, _s305_ex21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=21 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=21 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (2,'deuteronomy',15,12,1,E'*then in the seventh year thou shalt let him go free from thee* (Deuteronomy 15:12) — the second law keeps the six-years-then-release statute word for word.'),
+    (3,'deuteronomy',15,13,2,E'*thou shalt not let him go away empty* (Deuteronomy 15:13) — the release is no bare dismissal but furnished, patterned on Yahuah''s own redemption of His bondmen.'),
+    (6,'deuteronomy',15,17,3,E'*thrust it through his ear unto the door, and he shall be thy servant for ever* (Deuteronomy 15:17) — the bored-ear sign of the servant who stays for love, repeated in the second law.'),
+    (2,'leviticus',25,10,4,E'*proclaim liberty throughout all the land... it shall be a jubile* (Leviticus 25:10) — the seventh-year release opens the same Torah-architecture of liberty crowned in the jubilee.'),
+    (2,'leviticus',25,40,5,E'*serve unto the year of jubile: And then shall he depart... and shall return unto his own family* (Leviticus 25:40-41) — every servitude bound to an appointed liberty and homecoming.'),
+    (5,'psalms',40,6,6,E'*mine ears hast thou opened* (Psalm 40:6) — the bored-ear devoted servant becomes the figure of the willing One who comes to do the Father''s will, the Torah within His heart.')
+  ) AS m(src_v,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=21 AND sv.verse_number=m.src_v
+  JOIN _s305_ex21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-21-the-hebrew-servant-free-in-the-seventh-year'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (17,'matthew',15,4,1,E'*He that curseth father or mother, let him die the death* (Matthew 15:4) — Yahusha quotes the very statute against the corban-tradition that voided the fifth word.'),
+    (17,'mark',7,10,2,E'*Whoso curseth father or mother, let him die the death* (Mark 7:10) — cited as Yahuah''s word through Moses against those who reject the commandment for their tradition.'),
+    (17,'leviticus',20,9,3,E'*every one that curseth his father or his mother shall be surely put to death* (Leviticus 20:9) — the holiness law repeats the capital statute, twice testified.'),
+    (15,'leviticus',24,17,4,E'*he that killeth any man shall surely be put to death* (Leviticus 24:17) — the smiter of father or mother weighed in the same body of judgments as the murderer.')
+  ) AS m(src_v,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=21 AND sv.verse_number=m.src_v
+  JOIN _s305_ex21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-21-he-that-curseth-his-father-or-his-mother-let-him-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','leviticus',24,19,1,E'*as he hath done, so shall it be done to him; Breach for breach, eye for eye, tooth for tooth* (Leviticus 24:19-20) — the court''s rule of exact proportion, penalty measured to the harm.'),
+    ('canon','deuteronomy',19,21,2,E'*life shall go for life, eye for eye, tooth for tooth, hand for hand, foot for foot* (Deuteronomy 19:21) — the sentence the JUDGES pass, the talion fixed as a courtroom standard.'),
+    ('canon','matthew',5,38,3,E'*An eye for an eye... but I say unto you, That ye resist not evil... turn to him the other also* (Matthew 5:38-39) — Yahusha forbids PRIVATE revenge, not the court''s judicial measure.'),
+    ('jubilees','jubilees',4,31,4,E'*with a stone he had killed Abel, and by a stone was he killed in righteous judgment* (Jubilees 4:31) — the heavenly-tables ordinance of measure-for-measure, written before Sinai.')
+  ) AS m(tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=21 AND sv.verse_number=24
+  JOIN _s305_ex21_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-21-eye-for-eye-the-courts-measure-of-just-recompense'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (13,'numbers',35,11,1,E'*cities of refuge... that the slayer may flee thither, which killeth any person at unawares* (Numbers 35:11) — the appointed place for the unaware slayer, mercy distinguished from murder.'),
+    (14,'numbers',35,30,2,E'*ye shall take no satisfaction for the life of a murderer... he shall be surely put to death* (Numbers 35:30-31) — the presumptuous slayer finds no ransom; blood-guilt is not bought off.'),
+    (14,'numbers',35,33,3,E'*blood it defileth the land: and the land cannot be cleansed... but by the blood of him that shed it* (Numbers 35:33) — the murderer dies because unavenged blood pollutes the inheritance Yahuah dwells in.'),
+    (12,'genesis',9,6,4,E'*Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim made he man* (Genesis 9:6) — the first capital statute rests on the Noahide charge to all flesh.')
+  ) AS m(src_v,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=21 AND sv.verse_number=m.src_v
+  JOIN _s305_ex21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-21-he-that-smiteth-a-man-so-that-he-die-the-manslayer-and-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (36,'leviticus',24,18,1,E'*he that killeth a beast shall make it good; beast for beast* (Leviticus 24:18) — the ox-for-ox restitution stated as the holiness-law principle of like-for-like recompense.'),
+    (33,'leviticus',24,21,2,E'*he that killeth a beast, he shall restore it: and he that killeth a man, he shall be put to death* (Leviticus 24:21) — beasts restored, but the image-bearer''s life weighed far higher.'),
+    (28,'genesis',9,5,3,E'*at the hand of every beast will I require it... I will require the life of man* (Genesis 9:5) — the goring ox stoned enacts the Noahide word: man''s blood required even from the brute.')
+  ) AS m(src_v,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=21 AND sv.verse_number=m.src_v
+  JOIN _s305_ex21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-21-the-goring-ox-and-the-open-pit-restitution'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_22.sql (Exodus 22) -----
+-- Chapter: Exodus 22 (Mishpatim continued — theft & restitution; usury & the pledged garment;
+--   the witch and the sacrificer to other gods; the stranger, widow, fatherless; the firstborn given).
+-- Tag: ex22   Session: s305   Sort band base: 29525 (step 3)
+-- CENTRAL FRAME: the Mishpatim are Yahuah's righteous judgments — the civil Torah is NOT abolished
+--   but the standing pattern of mercy-and-justice the prophets and apostles carry forward. The curse
+--   is exile for covenant-breaking, never the Torah itself.
+--
+-- ===== PER-VERSE COVERAGE CHECKLIST =====
+--   v.1-4   theft/restitution (restore five/four/double)
+--           NT:     Luke 19:8 (Zacchaeus restores fourfold) — THREADED
+--           Extras: none warranted
+--           Tanakh: none warranted (kept tight to NT fulfillment)
+--   v.5-15  restitution for fields/fire/deposit/borrowed beasts
+--           NT/Extras/Tanakh: folded into the restitution frame (anchor spans v.1-15)
+--   v.16-17 seduction of an unbetrothed maid — none warranted (no strong full-library weave)
+--   v.18    suffer not a witch to live
+--           NT:     Galatians 5:20 (witchcraft a work of the flesh); Rev 21:8 / 22:15 (sorcerers without) — THREADED
+--           Extras: none warranted (avoided apparatus noise)
+--           Tanakh: Deut 18:10-12; Lev 19:31 — THREADED
+--   v.19    bestiality put to death — none warranted (folded into seed-war/sorcery context, not threaded)
+--   v.20    sacrifice to any god save Yahuah — utterly destroyed
+--           NT:     (Rev 21:8 idolaters) covered in witch/sorcery thread
+--           Tanakh: Deut 18:9 abominations of the nations — covered laterally — THREADED w/ v.18
+--   v.21    vex not a stranger (ye were strangers in Egypt)
+--           NT:     James 1:27 (visit fatherless & widows) — THREADED
+--           Extras: Tobit 4:7 (give alms, turn not face from the poor) — THREADED
+--           Tanakh: Deut 10:18-19; Zech 7:10 — THREADED
+--   v.22-24 afflict not widow/fatherless; my wrath shall wax hot — same thread as v.21
+--   v.25-27 lend without usury; the pledged raiment returned by sunset
+--           NT:     none warranted (Tanakh-dense weave)
+--           Extras: none warranted
+--           Tanakh: Deut 24:12-13; Lev 25:35-37; Ps 15:5; Ezek 18:8 — THREADED
+--   v.28    revile not the gods/ruler — none warranted
+--   v.29-30 firstborn of sons & beasts given; eighth day
+--           NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Exod 13:2; Exod 13:13 (firstborn dedication, lateral) — THREADED
+--   v.31    be holy men; eat not flesh torn of beasts
+--           Tanakh: Lev 17:15 (that which is torn — set-apart eating, Torah standing) — THREADED w/ v.29-31
+--
+-- ===== THREADS (5) =====
+--   exodus-22-the-gospel-does-not-abolish-restitution-it-produces-it   [free]  src 22:1->22:15  -> Luke 19:8
+--   exodus-22-vex-not-the-stranger-afflict-not-the-widow-or-fatherless [extras] src 22:21->22:24 -> James 1:27, Deut 10:18-19, Zech 7:10, Tobit 4:7(apocrypha)
+--   exodus-22-the-pledged-garment-returned-before-the-sun-goes-down    [free]  src 22:25->22:27 -> Deut 24:12-13, Lev 25:35-37, Ps 15:5, Ezek 18:8
+--   exodus-22-thou-shalt-not-suffer-a-witch-to-live                    [free]  src 22:18->22:20 -> Deut 18:10-12, Lev 19:31, Gal 5:20, Rev 21:8, Rev 22:15
+--   exodus-22-the-firstborn-given-and-a-set-apart-people               [free]  src 22:29->22:31 -> Exod 13:2, Exod 13:13, Lev 17:15
+
+CREATE TEMP VIEW _s305_ex22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ B. cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: theft & restitution -> Luke 19:8
+    ('canon','exodus',22,1,'canon','luke',19,8,'free',
+      E'*And Zacchæus stood, and said unto Yahuah (Lord); Behold, Yahuah (Lord), the half of my goods I give to the poor; and if I have taken any thing from any man by false accusation, I restore him fourfold* (Luke 19:8). The Mishpat stands: *If a man shall steal an ox, or a sheep... he shall restore five oxen for an ox, and four sheep for a sheep* (Exodus 22:1). The tax-collector turned does not abolish the restitution law — he obeys it; the gospel produces the very fourfold restoring the Torah commands. Salvation that does not restore the neighbour is not the salvation of Yahuah.'),
+    ('canon','exodus',22,4,'canon','luke',19,8,'free',
+      E'*If the theft be certainly found in his hand alive, whether it be ox, or ass, or sheep; he shall restore double* (Exodus 22:4). Zacchæus: *if I have taken any thing from any man by false accusation, I restore him fourfold* (Luke 19:8) — the higher measure of the willing heart, going beyond the bare double. Grace does not cancel the debt to the wronged; it pays it.'),
+    -- THREAD 2: stranger / widow / fatherless
+    ('canon','exodus',22,21,'canon','james',1,27,'free',
+      E'*Pure religion and undefiled before Elohim (God) and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world* (James 1:27). This is the same heart commanded in *Thou shalt neither vex a stranger, nor oppress him... Ye shall not afflict any widow, or fatherless child* (Exodus 22:21-22). The apostle names the very Torah-mercy as the test of true religion — not a new ethic, the standing one the prophets carried.'),
+    ('canon','exodus',22,22,'canon','james',1,27,'free',
+      E'*To visit the fatherless and widows in their affliction* (James 1:27) is the apostolic echo of *Ye shall not afflict any widow, or fatherless child* (Exodus 22:22). The defenceless are Yahuah''s special charge from Sinai to the assembly; to oppress them is to invite the wrath that *shall wax hot* (Exodus 22:24).'),
+    ('canon','exodus',22,21,'canon','deuteronomy',10,18,'free',
+      E'*He doth execute the judgment of the fatherless and widow, and loveth the stranger, in giving him food and raiment* (Deuteronomy 10:18). Moses grounds the command in Yahuah''s own character; the very motive of *for ye were strangers in the land of Egypt* (Exodus 22:21) is repeated: *Love ye therefore the stranger: for ye were strangers in the land of Egypt* (Deuteronomy 10:19). Israel''s own bondage is the abiding reason it must not oppress.'),
+    ('canon','exodus',22,21,'canon','deuteronomy',10,19,'free',
+      E'*Love ye therefore the stranger: for ye were strangers in the land of Egypt* (Deuteronomy 10:19) — Moses repeats the Egypt-memory that anchors *for ye were strangers in the land of Egypt* (Exodus 22:21). The redeemed remember the iron furnace so that they become a refuge, not an oppressor.'),
+    ('canon','exodus',22,22,'canon','zechariah',7,10,'free',
+      E'*And oppress not the widow, nor the fatherless, the stranger, nor the poor; and let none of you imagine evil against his brother in your heart* (Zechariah 7:10). Centuries on, the prophet names the exact four the Mishpat protects — *Ye shall not afflict any widow, or fatherless child* (Exodus 22:22) — and the failure to keep it was the very sin that sent Israel into exile (Zechariah 7:12-14). The curse was exile for breaking the mercy-law, never the law itself.'),
+    ('canon','exodus',22,21,'apocrypha','tobit',4,7,'extras',
+      E'*Give alms of your substance; and when you give alms, let not your eye be envious, neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you* (Tobit 4:7). The exile-righteous Tobit lives the Mishpat among the nations: the open hand to the poor is the same mercy the Torah commands in *Thou shalt neither vex a stranger, nor oppress him* (Exodus 22:21). The promise mirrors the warning — turn not thy face from the poor, and Yahuah turns not His from thee.'),
+    -- THREAD 3: usury / pledged garment
+    ('canon','exodus',22,26,'canon','deuteronomy',24,12,'free',
+      E'*And if the man be poor, thou shalt not sleep with his pledge: In any case thou shalt deliver him the pledge again when the sun goeth down, that he may sleep in his own raiment, and bless thee: and it shall be righteousness unto thee before Yahuah Elohayka (the LORD thy God)* (Deuteronomy 24:12-13). Moses restates the sunset-mercy of *if thou at all take thy neighbour''s raiment to pledge, thou shalt deliver it unto him by that the sun goeth down* (Exodus 22:26). The covenant calls the returning of the cloak *righteousness* — the very thing the false reading says the Torah cannot give.'),
+    ('canon','exodus',22,27,'canon','deuteronomy',24,13,'free',
+      E'*In any case thou shalt deliver him the pledge again when the sun goeth down, that he may sleep in his own raiment, and bless thee: and it shall be righteousness unto thee* (Deuteronomy 24:13). This answers the cry of *For that is his covering only, it is his raiment for his skin: wherein shall he sleep?* (Exodus 22:27). The poor man''s blessing and Yahuah''s reckoning of righteousness hang on a single returned garment.'),
+    ('canon','exodus',22,25,'canon','leviticus',25,36,'free',
+      E'*Take thou no usury of him, or increase: but fear thy Elohim (God); that thy brother may live with thee* (Leviticus 25:36). The Jubilee-law repeats *thou shalt not be to him as an usurer, neither shalt thou lay upon him usury* (Exodus 22:25). To lend without increase is to fear Elohim and keep the poor brother alive in the land — mercy made law.'),
+    ('canon','exodus',22,25,'canon','leviticus',25,35,'free',
+      E'*And if thy brother be waxen poor, and fallen in decay with thee; then thou shalt relieve him: yea, though he be a stranger, or a sojourner; that he may live with thee* (Leviticus 25:35). The same poor brother of *If thou lend money to any of my people that is poor by thee* (Exodus 22:25) — and the stranger is gathered in with him, not shut out.'),
+    ('canon','exodus',22,25,'canon','psalms',15,5,'free',
+      E'*He that putteth not out his money to usury, nor taketh reward against the innocent. He that doeth these things shall never be moved* (Psalm 15:5). David names the usury-refuser among those who may dwell in Yahuah''s tabernacle — the living-out of *neither shalt thou lay upon him usury* (Exodus 22:25). The Torah-keeper, not the Torah-breaker, abides on the holy hill.'),
+    ('canon','exodus',22,26,'canon','ezekiel',18,8,'free',
+      E'*He that hath not given forth upon usury, neither hath taken any increase, that hath withdrawn his hand from iniquity, hath executed true judgment between man and man* (Ezekiel 18:8). The prophet marks the just man by the very Mishpatim of Exodus 22 — refusing usury (Exodus 22:25) and *hath restored to the debtor his pledge... hath covered the naked with a garment* (Ezekiel 18:7), the returned cloak of *thou shalt deliver it unto him by that the sun goeth down* (Exodus 22:26). The righteousness Ezekiel preaches is Torah-shaped, not Torah-free.'),
+    -- THREAD 4: the witch / sacrifice to other gods
+    ('canon','exodus',22,18,'canon','deuteronomy',18,10,'free',
+      E'*There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch* (Deuteronomy 18:10), *Or a charmer, or a consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:11), *For all that do these things are an abomination unto Yahuah* (Deuteronomy 18:12). Moses widens *Thou shalt not suffer a witch to live* (Exodus 22:18) into the whole catalogue of the nations'' sorcery — the seed-war against the dark arts the Watchers taught, judged by conduct, never by ethnicity.'),
+    ('canon','exodus',22,18,'canon','leviticus',19,31,'free',
+      E'*Regard not them that have familiar spirits, neither seek after wizards, to be defiled by them: I am Yahuah Elohaychem (the LORD your God)* (Leviticus 19:31). The same ban on sorcery that stands behind *Thou shalt not suffer a witch to live* (Exodus 22:18): to consult the spirits is to be defiled, to abandon the Holy One who alone is to be sought.'),
+    ('canon','exodus',22,18,'canon','galatians',5,20,'free',
+      E'Paul lists *Idolatry, witchcraft, hatred, variance, emulations, wrath, strife, seditions, heresies* (Galatians 5:20) among *the works of the flesh* (Galatians 5:19) that bar the kingdom. The apostle has not relaxed *Thou shalt not suffer a witch to live* (Exodus 22:18) — he carries the very judgment forward; witchcraft remains a flesh-work that shuts a soul out of the inheritance.'),
+    ('canon','exodus',22,20,'canon','revelation',21,8,'free',
+      E'*But the fearful, and unbelieving, and the abominable, and murderers, and whoremongers, and sorcerers, and idolaters, and all liars, shall have their part in the lake which burneth with fire and brimstone: which is the second death* (Revelation 21:8). The end answers the Mishpat: *He that sacrificeth unto any god, save unto Yahuah (LORD) only... shall be utterly destroyed* (Exodus 22:20). The sorcerer and the idolater meet the same utter destruction — the second death — at the last.'),
+    ('canon','exodus',22,18,'canon','revelation',22,15,'free',
+      E'*For without are dogs, and sorcerers, and whoremongers, and murderers, and idolaters, and whosoever loveth and maketh a lie* (Revelation 22:15). The sorcerer barred from the New Jerusalem is the witch of *Thou shalt not suffer a witch to live* (Exodus 22:18) — the same conduct, the same exclusion, from Sinai to the city of Yahuah.'),
+    -- THREAD 5: firstborn given / set-apart people
+    ('canon','exodus',22,29,'canon','exodus',13,2,'free',
+      E'*Sanctify unto me all the firstborn, whatsoever openeth the womb among the children of Yashar''el (Israel), both of man and of beast: it is mine* (Exodus 13:2). The Mishpat *the firstborn of thy sons shalt thou give unto me* (Exodus 22:29) gathers up the Passover-night claim: the firstborn spared by the blood belong wholly to Yahuah, a perpetual remembrance of the redemption out of Egypt.'),
+    ('canon','exodus',22,29,'canon','exodus',13,13,'free',
+      E'*And every firstling of an ass thou shalt redeem with a lamb; and if thou wilt not redeem it, then thou shalt break his neck: and all the firstborn of man among thy children shalt thou redeem* (Exodus 13:13). The firstborn of *the firstborn of thy sons shalt thou give unto me* (Exodus 22:29) is given by redemption — bought back by a lamb, the type of the Lamb who redeems the whole assembly of the firstborn.'),
+    ('canon','exodus',22,31,'canon','leviticus',17,15,'free',
+      E'*And every soul that eateth that which died of itself, or that which was torn with beasts, whether it be one of your own country, or a stranger, he shall both wash his clothes, and bathe himself in water, and be unclean until the even: then shall he be clean* (Leviticus 17:15). The holiness-eating of *ye shall be holy men unto me: neither shall ye eat any flesh that is torn of beasts in the field* (Exodus 22:31) stands across the Torah — to be set apart is to eat as a set-apart people, the dietary holiness never abolished.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ C. threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-22-the-gospel-does-not-abolish-restitution-it-produces-it',
+       E'The gospel does not abolish restitution — it produces it',
+       E'The Mishpatim open with the law of the thief: *If a man shall steal an ox, or a sheep, and kill it, or sell it; he shall restore five oxen for an ox, and four sheep for a sheep* (Exodus 22:1), and *If the theft be certainly found in his hand alive... he shall restore double* (Exodus 22:4). This is Yahuah''s righteous judgment — the wrong must be made right to the one wronged, not merely confessed to heaven.\n\nWhen the tax-collector is turned, watch what salvation does: *And Zacchæus stood, and said unto Yahuah (Lord); Behold, Yahuah (Lord), the half of my goods I give to the poor; and if I have taken any thing from any man by false accusation, I restore him fourfold* (Luke 19:8). And the answer comes: *This day is salvation come to this house* (Luke 19:9). The gospel does not cancel the restitution law — it produces the very fourfold restoring the Torah commands, and beyond it. A grace that leaves the neighbour unrepaid is not the grace of Yahuah; the civil Torah is the standing pattern of justice the Messiah''s mercy fulfils, never sweeps away.',
+       sv.verse_id, ev.verse_id, 'free', 29525
+  FROM _s305_ex22_lookup sv, _s305_ex22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=22 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-22-vex-not-the-stranger-afflict-not-the-widow-or-fatherless',
+       E'Vex not the stranger, afflict not the widow or the fatherless',
+       E'Here is the heart of the Mishpatim: *Thou shalt neither vex a stranger, nor oppress him: for ye were strangers in the land of Egypt* (Exodus 22:21); *Ye shall not afflict any widow, or fatherless child* (Exodus 22:22). And the warning is fierce — *If thou afflict them in any wise, and they cry at all unto me, I will surely hear their cry* (Exodus 22:23); *And my wrath shall wax hot* (Exodus 22:24). The defenceless are Yahuah''s own charge, and Israel''s memory of its own bondage is the abiding reason it must become a refuge, not an oppressor.\n\nMoses grounds it in Yahuah''s very character: *He doth execute the judgment of the fatherless and widow, and loveth the stranger... Love ye therefore the stranger: for ye were strangers in the land of Egypt* (Deuteronomy 10:18-19). The prophet names the same four, and their oppression as the sin that sent Israel into exile: *And oppress not the widow, nor the fatherless, the stranger, nor the poor* (Zechariah 7:10). The exile-righteous Tobit lives it among the nations: *Give alms of your substance... neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you* (Tobit 4:7). And the apostle makes it the very test of true religion: *Pure religion and undefiled before Elohim (God) and the Father is this, To visit the fatherless and widows in their affliction* (James 1:27). From Sinai to the assembly the mercy-law never moves — the curse was exile for breaking it, never the law itself.',
+       sv.verse_id, ev.verse_id, 'extras', 29528
+  FROM _s305_ex22_lookup sv, _s305_ex22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=22 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-22-the-pledged-garment-returned-before-the-sun-goes-down',
+       E'No usury, and the pledged garment returned before the sun goes down',
+       E'The Mishpat guards the poor brother in his need: *If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury* (Exodus 22:25). And the cloak taken in pledge must come back by nightfall: *If thou at all take thy neighbour''s raiment to pledge, thou shalt deliver it unto him by that the sun goeth down: For that is his covering only, it is his raiment for his skin: wherein shall he sleep?* (Exodus 22:26-27) — *and it shall come to pass, when he crieth unto me, that I will hear; for I am gracious* (Exodus 22:27).\n\nThe whole Tanakh carries this mercy forward. Moses calls the returned garment *righteousness*: *thou shalt deliver him the pledge again when the sun goeth down... and it shall be righteousness unto thee before Yahuah Elohayka (the LORD thy God)* (Deuteronomy 24:12-13). The Jubilee-law repeats the ban on increase: *Take thou no usury of him, or increase: but fear thy Elohim (God); that thy brother may live with thee* (Leviticus 25:36), the stranger gathered in beside him (Leviticus 25:35). David marks the usury-refuser as one who may dwell on the holy hill: *He that putteth not out his money to usury... shall never be moved* (Psalm 15:5). And Ezekiel makes it the very mark of the just man: *He that hath not given forth upon usury, neither hath taken any increase... hath restored to the debtor his pledge... hath covered the naked with a garment* (Ezekiel 18:7-8). The righteousness the prophets preach is Torah-shaped, never Torah-free.',
+       sv.verse_id, ev.verse_id, 'free', 29531
+  FROM _s305_ex22_lookup sv, _s305_ex22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=22 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-22-thou-shalt-not-suffer-a-witch-to-live',
+       E'Thou shalt not suffer a witch to live — the seed-war against the sorcery of the nations',
+       E'Two short Mishpatim strike at the dark arts and the worship of other elohim: *Thou shalt not suffer a witch to live* (Exodus 22:18), and *He that sacrificeth unto any god, save unto Yahuah (LORD) only, he shall be utterly destroyed* (Exodus 22:20). This is conduct, not ethnicity — the seed-war against the sorcery the nations learned from the fallen ones, and against the idolatry that draws the covenant-people away from the One who alone is to be served.\n\nMoses widens it into the whole catalogue: *There shall not be found among you... an enchanter, or a witch, Or a charmer, or a consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:10-11) — *all that do these things are an abomination unto Yahuah* (Deuteronomy 18:12). To seek the spirits is to be defiled: *Regard not them that have familiar spirits, neither seek after wizards, to be defiled by them: I am Yahuah Elohaychem (the LORD your God)* (Leviticus 19:31). And the apostles carry the same judgment forward, never relaxed: Paul lists *witchcraft* among *the works of the flesh* that bar the kingdom (Galatians 5:19-20); and the end seals it — *sorcerers... shall have their part in the lake which burneth with fire and brimstone: which is the second death* (Revelation 21:8); *For without are dogs, and sorcerers* (Revelation 22:15). The sorcerer barred from the city is the witch of Sinai: the same conduct, the same utter destruction, from the wilderness to the last day.',
+       sv.verse_id, ev.verse_id, 'free', 29534
+  FROM _s305_ex22_lookup sv, _s305_ex22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=22 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-22-the-firstborn-given-and-a-set-apart-people',
+       E'The firstborn given, and a set-apart people',
+       E'The chapter closes by drawing Israel back to the Passover-claim and to its calling as a holy people: *Thou shalt not delay to offer the first of thy ripe fruits, and of thy liquors: the firstborn of thy sons shalt thou give unto me* (Exodus 22:29); *And ye shall be holy men unto me: neither shall ye eat any flesh that is torn of beasts in the field; ye shall cast it to the dogs* (Exodus 22:31).\n\nThe firstborn-claim looks straight back to the night of the tenth plague: *Sanctify unto me all the firstborn, whatsoever openeth the womb among the children of Yashar''el (Israel), both of man and of beast: it is mine* (Exodus 13:2) — and the firstborn is given by redemption, bought back by a lamb: *all the firstborn of man among thy children shalt thou redeem* (Exodus 13:13), the type of the Lamb who redeems the whole assembly of the firstborn. And the set-apart eating stands across the Torah: *every soul that eateth that which died of itself, or that which was torn with beasts... he shall both wash his clothes, and bathe himself in water, and be unclean until the even* (Leviticus 17:15). To belong wholly to Yahuah is to eat as a set-apart people — the holiness never abolished, the mark of a people redeemed to be His own.',
+       sv.verse_id, ev.verse_id, 'free', 29537
+  FROM _s305_ex22_lookup sv, _s305_ex22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=22 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ D. thread_members ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*if I have taken any thing from any man by false accusation, I restore him fourfold* (Luke 19:8) — the turned tax-collector obeys the restitution law, going beyond the bare measure; the gospel produces what the Torah commands.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=1
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=19 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-the-gospel-does-not-abolish-restitution-it-produces-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he shall restore double* (Exodus 22:4) is the floor the Mishpat sets; Zacchæus *restore[s] him fourfold* (Luke 19:8) from a willing heart — grace pays the debt to the wronged, it does not cancel it.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=4
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=19 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-the-gospel-does-not-abolish-restitution-it-produces-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*To visit the fatherless and widows in their affliction* (James 1:27) — the apostle names the Torah-mercy of *Thou shalt neither vex a stranger, nor oppress him* (Exodus 22:21) as the very test of pure religion.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=21
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-vex-not-the-stranger-afflict-not-the-widow-or-fatherless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*To visit the fatherless and widows in their affliction* (James 1:27) echoes *Ye shall not afflict any widow, or fatherless child* (Exodus 22:22) — to oppress them invites the wrath that *shall wax hot* (Exodus 22:24).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-vex-not-the-stranger-afflict-not-the-widow-or-fatherless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He doth execute the judgment of the fatherless and widow, and loveth the stranger* (Deuteronomy 10:18) — Moses grounds *for ye were strangers in the land of Egypt* (Exodus 22:21) in Yahuah''s own character.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=21
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-vex-not-the-stranger-afflict-not-the-widow-or-fatherless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Love ye therefore the stranger: for ye were strangers in the land of Egypt* (Deuteronomy 10:19) — the Egypt-memory that anchors *for ye were strangers in the land of Egypt* (Exodus 22:21); the redeemed become a refuge, not an oppressor.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=21
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-vex-not-the-stranger-afflict-not-the-widow-or-fatherless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*And oppress not the widow, nor the fatherless, the stranger, nor the poor* (Zechariah 7:10) — the prophet names the exact four the Mishpat protects (Exodus 22:22); failing it was the sin that sent Israel into exile (Zechariah 7:12-14). The curse was exile, never the law.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=7 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-vex-not-the-stranger-afflict-not-the-widow-or-fatherless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Give alms of your substance... neither turn your face from any poor, and the face of Yahuah (God) shall not be turned away from you* (Tobit 4:7) — the exile-righteous Tobit lives the Mishpat of *Thou shalt neither vex a stranger, nor oppress him* (Exodus 22:21) among the nations.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=21
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=4 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-vex-not-the-stranger-afflict-not-the-widow-or-fatherless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt deliver him the pledge again when the sun goeth down... and it shall be righteousness unto thee* (Deuteronomy 24:12-13) — Moses restates the sunset-mercy of *deliver it unto him by that the sun goeth down* (Exodus 22:26) and calls it righteousness.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=26
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=24 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-the-pledged-garment-returned-before-the-sun-goes-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*that he may sleep in his own raiment, and bless thee: and it shall be righteousness unto thee* (Deuteronomy 24:13) answers the cry *wherein shall he sleep?* (Exodus 22:27) — the poor man''s blessing hangs on a returned garment.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=27
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=24 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-the-pledged-garment-returned-before-the-sun-goes-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And if thy brother be waxen poor... then thou shalt relieve him: yea, though he be a stranger* (Leviticus 25:35) — the poor brother of *that is poor by thee* (Exodus 22:25), the stranger gathered in beside him.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=25
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-the-pledged-garment-returned-before-the-sun-goes-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Take thou no usury of him, or increase: but fear thy Elohim (God); that thy brother may live with thee* (Leviticus 25:36) — the Jubilee-law repeats *neither shalt thou lay upon him usury* (Exodus 22:25); to lend without increase keeps the poor brother alive.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=25
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-the-pledged-garment-returned-before-the-sun-goes-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*He that putteth not out his money to usury... shall never be moved* (Psalm 15:5) — David names the usury-refuser of *neither shalt thou lay upon him usury* (Exodus 22:25) among those who dwell on the holy hill.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=25
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-the-pledged-garment-returned-before-the-sun-goes-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*He that hath not given forth upon usury... hath restored to the debtor his pledge... hath covered the naked with a garment* (Ezekiel 18:7-8) — the prophet marks the just man by the very Mishpatim of *deliver it unto him by that the sun goeth down* (Exodus 22:26).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=26
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-the-pledged-garment-returned-before-the-sun-goes-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*an enchanter, or a witch, Or a charmer, or a consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:10-11) — Moses widens *Thou shalt not suffer a witch to live* (Exodus 22:18) into the whole catalogue of the nations'' sorcery, *an abomination unto Yahuah*.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-thou-shalt-not-suffer-a-witch-to-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Regard not them that have familiar spirits, neither seek after wizards, to be defiled by them* (Leviticus 19:31) — the same ban behind *Thou shalt not suffer a witch to live* (Exodus 22:18); to consult the spirits is to be defiled.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-thou-shalt-not-suffer-a-witch-to-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Idolatry, witchcraft...* (Galatians 5:20) among *the works of the flesh* (Galatians 5:19) — Paul has not relaxed *Thou shalt not suffer a witch to live* (Exodus 22:18); witchcraft still shuts a soul out of the kingdom.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=5 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-thou-shalt-not-suffer-a-witch-to-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*sorcerers, and idolaters... shall have their part in the lake which burneth with fire and brimstone: which is the second death* (Revelation 21:8) — the end answers *He that sacrificeth unto any god... shall be utterly destroyed* (Exodus 22:20).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=20
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-thou-shalt-not-suffer-a-witch-to-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*For without are dogs, and sorcerers* (Revelation 22:15) — the sorcerer barred from the New Jerusalem is the witch of *Thou shalt not suffer a witch to live* (Exodus 22:18): the same conduct, the same exclusion.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-thou-shalt-not-suffer-a-witch-to-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Sanctify unto me all the firstborn, whatsoever openeth the womb... it is mine* (Exodus 13:2) — the firstborn-claim of *the firstborn of thy sons shalt thou give unto me* (Exodus 22:29) reaches back to the Passover-night redemption.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=29
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-the-firstborn-given-and-a-set-apart-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*all the firstborn of man among thy children shalt thou redeem* (Exodus 13:13) — the firstborn given (Exodus 22:29) is bought back by a lamb, the type of the Lamb who redeems the assembly of the firstborn.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=29
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-the-firstborn-given-and-a-set-apart-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*every soul that eateth that which died of itself, or that which was torn with beasts... shall... be unclean until the even* (Leviticus 17:15) — the set-apart eating of *neither shall ye eat any flesh that is torn of beasts* (Exodus 22:31) stands across the Torah, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=22 AND sv.verse_number=31
+  JOIN _s305_ex22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-22-the-firstborn-given-and-a-set-apart-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session305 — Exodus cross-references complete.'
