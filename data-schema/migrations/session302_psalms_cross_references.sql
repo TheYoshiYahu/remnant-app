@@ -12203,6 +12203,1497 @@ SELECT t.id, cr.id, 9, E'★ *Be not deceived; Elohim (God) is not mocked: for w
  WHERE t.slug='psalm-7-he-made-a-pit-and-is-fallen-into-the-ditch-he-made'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_9.sql (Psalm 9) -----
+-- Chapter: Psalm 9 — THANKSGIVING OF THE RIGHTEOUS-JUDGE ENTHRONED OVER THE NATIONS. Psalms 9 and
+-- 10 are one acrostic (Psalm 10 is authored separately — no duplication here). David praises with
+-- his whole heart (v.1-2) as the enemies are turned back at Yahuah''s presence (v.3); the throne is
+-- the load-bearing image: *thou satest in the throne judging right* (v.4), *Yahuah (LORD) shall
+-- endure for ever: he hath prepared his throne for judgment. And he shall judge the world in
+-- righteousness, he shall minister judgment to the people in uprightness* (v.7-8) — the very word
+-- Paul sets forward on Mars'' hill, *he hath appointed a day, in the which he will judge the world
+-- in righteousness by that man whom he hath ordained* (Acts 17:31), the Formed Son ordained Judge.
+-- The enthroned-Judge psalms sing the same: *he shall judge the world with righteousness* (Psalm
+-- 96:13), *with righteousness shall he judge the world* (Psalm 98:9). Yahuah is *a refuge for the
+-- oppressed* who *forgetteth not the cry of the humble* (v.9,12) and the needy *shall not alway be
+-- forgotten* (v.18). The wicked is taken in his own snare — *The heathen are sunk down in the pit
+-- that they made: in the net which they hid is their own foot taken* (v.15) — the pit-digger twin
+-- of Psalm 7:15-16. The closing plea: *Put them in fear, O Yahuah (LORD): that the nations may know
+-- themselves to be but men* (v.20).
+-- Tag: ps009   Temp view: _s302_ps009_lookup
+-- Sort band: base 22200, step 3 -> threads at 22200, 22203, 22206, 22209 (4 threads)
+-- Source of EVERY row: 'canon','psalms',9,v
+--
+-- Psalm 9 coverage:
+--   v.1-2 (I will praise thee, O Yahuah, with my whole heart... I will sing praise to thy name, O
+--          thou El Elyon (most High))
+--        NT/Extras/Tanakh: none warranted — the praise-incipit; the framework-bearing weaves rise
+--          from v.7-8 onward; held as the psalm''s own opening.
+--   v.3 (When mine enemies are turned back, they shall fall and perish at thy presence)
+--        NT/Extras/Tanakh: none warranted distinct — the enemies turned back; gathered into the
+--          throne-of-judgment prose of THREAD 1.
+--   v.4 (thou satest in the throne judging right)
+--        NT:     ★ carried in THREAD 1 (Acts 17:31, the ordained Judge enthroned)
+--        Extras: ★ carried in THREAD 1 (Wisdom 6:3-7, the Highest who tries the works of judges)
+--        Tanakh: ★ carried in THREAD 1 (Psalm 96:13, Psalm 98:9)
+--   ★★ v.7-8 (But Yahuah shall endure for ever: he hath prepared his throne for judgment. And he
+--          shall judge the world in righteousness, he shall minister judgment to the people in
+--          uprightness)
+--        NT:     ★★ Acts 17:31 (he hath appointed a day, in the which he will judge the world in
+--                righteousness by that man whom he hath ordained — the Formed Son ordained Judge) — THREAD 1
+--        Extras: ★ Wisdom 6:3 (power is given you of God... who shall try your works), Wisdom 6:7
+--                (he which is God over all shall fear no man''s person) — THREAD 1
+--        Tanakh: ★ Psalm 96:13 (he cometh to judge the earth: he shall judge the world with
+--                righteousness), ★ Psalm 98:9 (with righteousness shall he judge the world, and the
+--                people with equity) — THREAD 1
+--   ★ v.9,12,18 (Yahuah also will be a refuge for the oppressed... he forgetteth not the cry of the
+--          humble... the needy shall not alway be forgotten)
+--        NT:     none warranted distinct (the refuge-for-the-oppressed forward-weave is carried in
+--                prose; the load-bearing NT keystone is the enthroned-Judge of THREAD 1)
+--        Extras: ★ Sirach 35:12-14 (he will not accept any person against a poor man... will hear the
+--                prayer of the oppressed; the cry of the fatherless and widow) — THREAD 2
+--        Tanakh: ★ Psalm 10:17-18 (To judge the fatherless and the oppressed, that the man of the
+--                earth may no more oppress — the acrostic''s own resolution), Psalm 12:5 (For the
+--                oppression of the poor... now will I arise, saith Yahuah) — THREAD 2
+--   v.10-11 (they that know thy name will put their trust in thee... Sing praises to Yahuah, which
+--          dwelleth in Zion)
+--        NT/Extras/Tanakh: none warranted distinct — the trust-in-the-Name + Zion-doxology; gathered
+--          into the refuge prose of THREAD 2 (Yahuah dwelling in Zion is the refuge''s seat).
+--   v.13-14 (lift me up from the gates of death: that I may shew forth all thy praise in the gates of
+--          the daughter of Zion)
+--        NT/Extras/Tanakh: none warranted distinct — the personal plea + Zion-praise vow; held as the
+--          psalmist''s own thanksgiving, not forced to a separate target.
+--   ★ v.15-16 (The heathen are sunk down in the pit that they made: in the net which they hid is
+--          their own foot taken: Yahuah is known by the judgment which he executeth: the wicked is
+--          snared in the work of his own hands)
+--        NT:     none warranted distinct (the snared-in-his-own-work judgment is the psalter''s own
+--                lateral; the pit-digger twin is Psalm 7)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 7:15-16 (He made a pit, and digged it, and is fallen into the ditch which he
+--                made... his violent dealing shall come down upon his own pate — the pit-digger twin) — THREAD 3
+--   v.17 (The wicked shall be turned into hell, and all the nations that forget Elohim)
+--        NT/Extras/Tanakh: none warranted distinct — the sentence on the nations that forget Elohim;
+--          gathered into the snared-judgment prose of THREAD 3 and the but-men plea of THREAD 4.
+--   v.19 (Arise, O Yahuah; let not man prevail: let the heathen be judged in thy sight)
+--        NT/Extras/Tanakh: none warranted distinct — the Arise-plea; the companion of v.20, gathered
+--          into THREAD 4 (let not man prevail / the nations are but men).
+--   ★ v.20 (Put them in fear, O Yahuah: that the nations may know themselves to be but men. Selah)
+--        NT:     none warranted distinct (the nations-are-but-men forward-weave is carried in prose)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 10:18 (that the man of the earth may no more oppress — the acrostic''s close),
+--                ★ Isaiah 2:22 (Cease ye from man, whose breath is in his nostrils: for wherein is he
+--                to be accounted of?) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. psalm-9-he-shall-judge-the-world-in-righteousness — NT (Acts 17) + Extras (Wisdom of Solomon)
+--      + Tanakh (Psalm 96, Psalm 98) [extras] (★★ the enthroned righteous-Judge → the Formed Son
+--      ordained Judge of all the world)
+--   2. psalm-9-a-refuge-for-the-oppressed-the-cry-of-the-humble — Extras (Sirach/Ecclesiasticus) +
+--      Tanakh (Psalm 10, Psalm 12) [extras] (★ refuge for the oppressed; the cry of the humble not
+--      forgotten; the needy not forsaken)
+--   3. psalm-9-the-heathen-sunk-in-the-pit-that-they-made — Tanakh (Psalm 7) [free] (★ the wicked
+--      snared in his own work; the pit-digger twin of Psalm 7:15-16)
+--   4. psalm-9-the-nations-shall-know-themselves-but-men — Tanakh (Psalm 10, Isaiah 2) [free]
+--      (★ the nations are but men; cease ye from man)
+--
+-- Framing notes:
+--   ★★ THE ENTHRONED RIGHTEOUS-JUDGE (THREAD 1): the psalm''s keystone is the throne of judgment —
+--      *thou satest in the throne judging right* (9:4); *But Yahuah (LORD) shall endure for ever: he
+--      hath prepared his throne for judgment. And he shall judge the world in righteousness, he shall
+--      minister judgment to the people in uprightness* (9:7-8). Read FORWARD through the Formed and
+--      the Formless: the world-judgment Yahuah has prepared is committed to the One He ordained — Paul
+--      on Mars'' hill sets the psalm''s own clause word for word: *he hath appointed a day, in the which
+--      he will judge the world in righteousness by that man whom he hath ordained; whereof he hath
+--      given assurance unto all men, in that he hath raised him from the dead* (Acts 17:31). The
+--      Formed Son, raised, is the Man ordained to the world-judgment the psalm sings; he is Yahuah''s
+--      own, and he has a Father. The enthroned-Judge psalms sing the same coming: *he cometh to judge
+--      the earth: he shall judge the world with righteousness, and the people with his truth* (Psalm
+--      96:13); *with righteousness shall he judge the world, and the people with equity* (Psalm 98:9).
+--      And the restored Wisdom witness warns the judges of the earth under that throne: *power is given
+--      you of Yahuah (God), and sovereignty from the Highest, who shall try your works, and search out
+--      your counsels* (Wisdom 6:3); *he which is Yahuah (God) over all shall fear no man''s person,
+--      neither shall he stand in awe of any man''s greatness* (Wisdom 6:7) — the Judge who ministers
+--      judgment in uprightness fears no man''s person.
+--   ★ THE REFUGE FOR THE OPPRESSED (THREAD 2): the same throne that judges the world is a shelter for
+--      the lowly — *Yahuah (LORD) also will be a refuge for the oppressed, a refuge in times of
+--      trouble* (9:9); *When he maketh inquisition for blood, he remembereth them: he forgetteth not
+--      the cry of the humble* (9:12); *For the needy shall not alway be forgotten: the expectation of
+--      the poor shall not perish for ever* (9:18). The acrostic''s own second half resolves it: *Yahuah
+--      (LORD) is King for ever and ever... To judge the fatherless and the oppressed, that the man of
+--      the earth may no more oppress* (Psalm 10:16,18); the psalter says it plainly — *For the
+--      oppression of the poor, for the sighing of the needy, now will I arise, saith Yahuah (LORD); I
+--      will set him in safety from him that puffeth at him* (Psalm 12:5). And the restored Sirach
+--      witness names the same impartial hearing: *he will not accept any person against a poor
+--      man, but will hear the prayer of the oppressed. He will not despise the supplication of the
+--      fatherless; nor the widow, when she poureth out her complaint* (Sirach 35:13-14). The Judge who
+--      fears no man''s person (THREAD 1) is the very refuge who forgets not the cry of the humble.
+--   ★ THE PIT-DIGGER SNARED (THREAD 3): the wicked is taken in his own device — *The heathen are sunk
+--      down in the pit that they made: in the net which they hid is their own foot taken. Yahuah
+--      (LORD) is known by the judgment which he executeth: the wicked is snared in the work of his own
+--      hands* (9:15-16). This is the twin of the companion psalm: *He made a pit, and digged it, and
+--      is fallen into the ditch which he made. His mischief shall return upon his own head, and his
+--      violent dealing shall come down upon his own pate* (Psalm 7:15-16). The fuller pit-digger
+--      thread is authored at Psalm 7; this is the lateral that binds the two — the same righteous
+--      ordering of judgment where the snare recoils on the one who set it. (NOTE: the Psalm 7 thread
+--      is anchored on Psalm 7:15-16; this is the single lateral add, deliberately lean, not a
+--      duplicate dump.)
+--   ★ THE NATIONS BUT MEN (THREAD 4): the closing plea strips every prevailing power down to flesh —
+--      *Arise, O Yahuah (LORD); let not man prevail: let the heathen be judged in thy sight. Put them
+--      in fear, O Yahuah (LORD): that the nations may know themselves to be but men* (9:19-20). The
+--      acrostic closes the same — *that the man of the earth may no more oppress* (Psalm 10:18) — and
+--      Isaiah strips man of his pretension before the One who judges the world: *Cease ye from man,
+--      whose breath is in his nostrils: for wherein is he to be accounted of?* (Isaiah 2:22). The
+--      raging nations are but men; the throne prepared for judgment is Yahuah''s, ministered by the
+--      Man He ordained.
+--   EXTRAS: Wisdom of Solomon 6 (THREAD 1) and Sirach/Ecclesiasticus 35 (THREAD 2) are the warranted
+--      restored witnesses — both clean, both bearing the throne-of-judgment + refuge-for-the-oppressed
+--      weight. No 1 Enoch enthroned-Elect-One add is forced here (the psalm''s Judge is Yahuah''s own
+--      ordained Man, carried by Acts 17:31; the Enoch enthronement belongs where the text bears the
+--      Elect-One title).
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (praise-incipit), v.3 (enemies turned back — gathered into
+--      THREAD 1 prose), v.10-11 (trust-in-the-Name + Zion doxology — gathered into THREAD 2), v.13-14
+--      (personal plea + Zion-praise vow), v.17 (sentence on the nations that forget Elohim — gathered
+--      into THREADS 3/4). Each weighed across all three libraries and held in the gathered prose.
+
+CREATE TEMP VIEW _s302_ps009_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The enthroned righteous-Judge — he shall judge the world in righteousness
+    ('canon','psalms',9,8,'canon','acts',17,31,'free',
+      E'*Because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained; whereof he hath given assurance unto all men, in that he hath raised him from the dead* (Acts 17:31). The psalm''s own clause is set forward word for word — *he shall judge the world in righteousness, he shall minister judgment to the people in uprightness* (Psalm 9:8). Read through the Formed and the Formless: the world-judgment Yahuah has prepared upon His throne (9:7) is committed to *that man whom he hath ordained*, the Formed Son raised from the dead. He is Yahuah''s own, ordained Judge of all the world, and he has a Father.'),
+    ('canon','psalms',9,7,'canon','acts',17,31,'free',
+      E'*Because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained; whereof he hath given assurance unto all men, in that he hath raised him from the dead* (Acts 17:31). *Yahuah (LORD) shall endure for ever: he hath prepared his throne for judgment* (Psalm 9:7) — the throne prepared is the *day... appointed* for the world-judgment, ministered by the ordained Man. The everlasting throne and the appointed day are one: the enduring Yahuah judges the world by the Son He raised.'),
+    ('canon','psalms',9,8,'canon','psalms',96,13,'free',
+      E'*Before Yahuah (LORD): for he cometh, for he cometh to judge the earth: he shall judge the world with righteousness, and the people with his truth* (Psalm 96:13). The psalmist''s *he shall judge the world in righteousness, he shall minister judgment to the people in uprightness* (Psalm 9:8) is the very enthronement-coming the psalter sings — *he shall judge the world with righteousness, and the people with his truth*. The throne prepared for judgment is the throne from which He comes to judge the earth.'),
+    ('canon','psalms',9,8,'canon','psalms',98,9,'free',
+      E'*Before Yahuah (LORD); for he cometh to judge the earth: with righteousness shall he judge the world, and the people with equity* (Psalm 98:9). *He shall judge the world in righteousness, he shall minister judgment to the people in uprightness* (Psalm 9:8) is sung again at the close of the enthronement psalms — *with righteousness shall he judge the world, and the people with equity*. Righteousness and uprightness, righteousness and equity: the one throne, the one Judge of all the earth.'),
+    ('canon','psalms',9,8,'apocrypha','the-wisdom-of-solomon',6,3,'extras',
+      E'*For power is given you of Yahuah (God), and sovereignty from the Highest, who shall try your works, and search out your counsels* (Wisdom of Solomon 6:3). The Judge who *shall judge the world in righteousness* and *minister judgment to the people in uprightness* (Psalm 9:8) is the Highest from whom every ruler''s power is loaned and to whom every ruler answers — *who shall try your works, and search out your counsels*. The kings of the earth themselves stand under the throne prepared for judgment.'),
+    ('canon','psalms',9,8,'apocrypha','the-wisdom-of-solomon',6,7,'extras',
+      E'*For he which is Yahuah (God) over all shall fear no man''s person, neither shall he stand in awe of any man''s greatness: for he has made the small and great, and careth for all alike* (Wisdom of Solomon 6:7). The One who *shall minister judgment to the people in uprightness* (Psalm 9:8) is the Judge who *shall fear no man''s person* — judgment in uprightness is judgment that bows to no man''s greatness; the small and the great stand alike before the throne prepared for judgment.'),
+
+    -- THREAD 2 (★): A refuge for the oppressed — he forgetteth not the cry of the humble
+    ('canon','psalms',9,12,'apocrypha','ecclesiasticus',35,13,'extras',
+      E'*He will not accept any person against a poor man, but will hear the prayer of the oppressed* (Sirach 35:13). *When he maketh inquisition for blood, he remembereth them: he forgetteth not the cry of the humble* (Psalm 9:12) — the impartial Judge who fears no man''s person is the same who *will hear the prayer of the oppressed*. The cry of the humble is the cry the throne of judgment never forgets.'),
+    ('canon','psalms',9,18,'apocrypha','ecclesiasticus',35,14,'extras',
+      E'*He will not despise the supplication of the fatherless; nor the widow, when she poureth out her complaint* (Sirach 35:14). *For the needy shall not alway be forgotten: the expectation of the poor shall not perish for ever* (Psalm 9:18) — the needy not forgotten is the fatherless and widow not despised; the expectation of the poor is the complaint the Judge will surely hear.'),
+    ('canon','psalms',9,9,'canon','psalms',12,5,'free',
+      E'*For the oppression of the poor, for the sighing of the needy, now will I arise, saith Yahuah (LORD); I will set him in safety from him that puffeth at him* (Psalm 12:5). *Yahuah (LORD) also will be a refuge for the oppressed, a refuge in times of trouble* (Psalm 9:9) — the refuge is Yahuah arising for the oppressed: *now will I arise, saith Yahuah... I will set him in safety*. The throne that judges the world is the shelter the lowly run to.'),
+    ('canon','psalms',9,18,'canon','psalms',10,18,'free',
+      E'*To judge the fatherless and the oppressed, that the man of the earth may no more oppress* (Psalm 10:18). Psalms 9 and 10 are one acrostic, and the second half resolves the first: *the needy shall not alway be forgotten: the expectation of the poor shall not perish for ever* (Psalm 9:18) finds its answer in the King who judges *the fatherless and the oppressed, that the man of the earth may no more oppress*. The needy not forgotten is the oppressed at last delivered from the oppressor.'),
+
+    -- THREAD 3 (★): The heathen sunk in the pit that they made — the pit-digger twin (Psalm 7)
+    ('canon','psalms',9,15,'canon','psalms',7,15,'free',
+      E'*He made a pit, and digged it, and is fallen into the ditch which he made* (Psalm 7:15). *The heathen are sunk down in the pit that they made: in the net which they hid is their own foot taken* (Psalm 9:15) — the same righteous ordering: the pit-digger falls into his own ditch, the net-setter is caught in his own snare. The twin verses bind: the violence devised recoils on the one who devised it.'),
+    ('canon','psalms',9,16,'canon','psalms',7,16,'free',
+      E'*His mischief shall return upon his own head, and his violent dealing shall come down upon his own pate* (Psalm 7:16). *Yahuah (LORD) is known by the judgment which he executeth: the wicked is snared in the work of his own hands* (Psalm 9:16) — Yahuah is known by this very judgment, that *his mischief shall return upon his own head*. The wicked snared in his own work is the mischief returned upon the head that conceived it.'),
+
+    -- THREAD 4 (★): That the nations may know themselves to be but men
+    ('canon','psalms',9,20,'canon','psalms',10,18,'free',
+      E'*To judge the fatherless and the oppressed, that the man of the earth may no more oppress* (Psalm 10:18). *Put them in fear, O Yahuah (LORD): that the nations may know themselves to be but men* (Psalm 9:20) — the acrostic closes its own plea: the nations brought to know they are *but men* is *the man of the earth* made to *oppress no more*. The raging power is stripped to flesh, and the oppressor is silenced.'),
+    ('canon','psalms',9,20,'canon','isaiah',2,22,'free',
+      E'*Cease ye from man, whose breath is in his nostrils: for wherein is he to be accounted of?* (Isaiah 2:22). *That the nations may know themselves to be but men* (Psalm 9:20) is Isaiah''s same stripping of man''s pretension before the throne that judges the world — *Cease ye from man, whose breath is in his nostrils*. The nations who would prevail are but breath; only Yahuah, who prepared His throne for judgment, endures for ever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-9-he-shall-judge-the-world-in-righteousness',
+       E'He hath prepared his throne for judgment — he shall judge the world in righteousness',
+       E'The keystone of the psalm is the throne of judgment: *For thou hast maintained my right and my cause; thou satest in the throne judging right* (Psalm 9:4), *But Yahuah (LORD) shall endure for ever: he hath prepared his throne for judgment. And he shall judge the world in righteousness, he shall minister judgment to the people in uprightness* (Psalm 9:7-8). Read FORWARD through the Formed and the Formless: the world-judgment the everlasting Yahuah has prepared upon His throne is committed to the One He ordained. Paul on Mars'' hill sets the psalm''s own clause word for word: *Because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained; whereof he hath given assurance unto all men, in that he hath raised him from the dead* (Acts 17:31). The Formed Son, raised from the dead, is the Man ordained to the world-judgment the psalm sings — Yahuah''s own, who has a Father. The enthronement psalms sing the same coming Judge: *he cometh to judge the earth: he shall judge the world with righteousness, and the people with his truth* (Psalm 96:13); *with righteousness shall he judge the world, and the people with equity* (Psalm 98:9). And the restored Wisdom witness sets every ruler of the earth under that throne: *For power is given you of Yahuah (God), and sovereignty from the Highest, who shall try your works, and search out your counsels* (Wisdom of Solomon 6:3); *he which is Yahuah (God) over all shall fear no man''s person, neither shall he stand in awe of any man''s greatness* (Wisdom of Solomon 6:7). The throne prepared for judgment fears no man''s person; it judges the world in righteousness, and ministers judgment in uprightness, by the Man Yahuah has ordained.',
+       sv.verse_id, ev.verse_id, 'extras', 22200
+  FROM _s302_ps009_lookup sv, _s302_ps009_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=9 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-9-a-refuge-for-the-oppressed-the-cry-of-the-humble',
+       E'A refuge for the oppressed — he forgetteth not the cry of the humble',
+       E'The same throne that judges the world is a shelter for the lowly: *Yahuah (LORD) also will be a refuge for the oppressed, a refuge in times of trouble* (Psalm 9:9); *When he maketh inquisition for blood, he remembereth them: he forgetteth not the cry of the humble* (Psalm 9:12); *For the needy shall not alway be forgotten: the expectation of the poor shall not perish for ever* (Psalm 9:18). The Judge who fears no man''s person is the very refuge who never forgets the humble who cry. The psalter says it plainly: *For the oppression of the poor, for the sighing of the needy, now will I arise, saith Yahuah (LORD); I will set him in safety from him that puffeth at him* (Psalm 12:5). And the acrostic''s own second half resolves the expectation: the King *for ever and ever* judges *the fatherless and the oppressed, that the man of the earth may no more oppress* (Psalm 10:18). The restored Sirach witness names the same impartial hearing: *He will not accept any person against a poor man, but will hear the prayer of the oppressed* (Sirach 35:13); *He will not despise the supplication of the fatherless; nor the widow, when she poureth out her complaint* (Sirach 35:14). The cry of the humble is the cry the throne of judgment never forgets; the needy not forgotten is the oppressed at last delivered.',
+       sv.verse_id, ev.verse_id, 'extras', 22203
+  FROM _s302_ps009_lookup sv, _s302_ps009_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=9 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-9-the-heathen-sunk-in-the-pit-that-they-made',
+       E'The heathen sunk in the pit that they made — the wicked snared in his own work',
+       E'The wicked is taken in his own device: *The heathen are sunk down in the pit that they made: in the net which they hid is their own foot taken. Yahuah (LORD) is known by the judgment which he executeth: the wicked is snared in the work of his own hands* (Psalm 9:15-16). This is the twin of the companion psalm — *He made a pit, and digged it, and is fallen into the ditch which he made. His mischief shall return upon his own head, and his violent dealing shall come down upon his own pate* (Psalm 7:15-16). The pit-digger falls into his own ditch; the net-setter is caught in his own snare; the mischief recoils on the head that conceived it. Yahuah is KNOWN by this very judgment — the righteous ordering of the world in which violence devised comes home to its deviser. (The fuller pit-digger thread is authored at Psalm 7; this is the deliberate lateral that binds the two psalms, not a duplicate.)',
+       sv.verse_id, ev.verse_id, 'free', 22206
+  FROM _s302_ps009_lookup sv, _s302_ps009_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=9 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-9-the-nations-shall-know-themselves-but-men',
+       E'That the nations may know themselves to be but men',
+       E'The psalm closes by stripping every prevailing power down to flesh: *Arise, O Yahuah (LORD); let not man prevail: let the heathen be judged in thy sight. Put them in fear, O Yahuah (LORD): that the nations may know themselves to be but men. Selah* (Psalm 9:19-20). The wicked and the nations that forget Elohim (9:17) are not a match for the throne prepared for judgment — *let not man prevail*. The acrostic closes the same plea: the King judges *the fatherless and the oppressed, that the man of the earth may no more oppress* (Psalm 10:18). And Isaiah strips man of his pretension before the One who judges the world: *Cease ye from man, whose breath is in his nostrils: for wherein is he to be accounted of?* (Isaiah 2:22). The raging nations are but men, but breath in the nostrils; only Yahuah, who *shall endure for ever* and *hath prepared his throne for judgment* (9:7), is to be accounted of. The world-judgment is His, ministered by the Man He ordained.',
+       sv.verse_id, ev.verse_id, 'free', 22209
+  FROM _s302_ps009_lookup sv, _s302_ps009_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=9 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he will judge the world in righteousness by that man whom he hath ordained... in that he hath raised him from the dead* (Acts 17:31) — *he shall judge the world in righteousness* (9:8) set forward word for word; the Formed Son raised, ordained Judge of all the world.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=8
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-he-shall-judge-the-world-in-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he hath appointed a day, in the which he will judge the world in righteousness* (Acts 17:31) — the *throne... prepared for judgment* (9:7) is the *day... appointed*; the enduring Yahuah judges the world by the Son He raised.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-he-shall-judge-the-world-in-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he cometh to judge the earth: he shall judge the world with righteousness, and the people with his truth* (Psalm 96:13) — the throne prepared for judgment (9:7) is the throne from which He comes to judge.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=8
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=96 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-he-shall-judge-the-world-in-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*with righteousness shall he judge the world, and the people with equity* (Psalm 98:9) — *he shall judge the world in righteousness... in uprightness* (9:8) sung again: one throne, one Judge of all the earth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=8
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=98 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-he-shall-judge-the-world-in-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *power is given you of Yahuah (God), and sovereignty from the Highest, who shall try your works* (Wisdom of Solomon 6:3) — the kings of the earth stand under the throne prepared for judgment (9:7); their power is loaned, their works tried.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=8
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=6 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-he-shall-judge-the-world-in-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *he which is Yahuah (God) over all shall fear no man''s person, neither shall he stand in awe of any man''s greatness* (Wisdom of Solomon 6:7) — *judgment... in uprightness* (9:8) is judgment that bows to no man''s greatness; small and great alike before the throne.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=8
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-he-shall-judge-the-world-in-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He will not accept any person against a poor man, but will hear the prayer of the oppressed* (Sirach 35:13) — *he forgetteth not the cry of the humble* (9:12); the impartial Judge hears the oppressed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=12
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-a-refuge-for-the-oppressed-the-cry-of-the-humble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He will not despise the supplication of the fatherless; nor the widow, when she poureth out her complaint* (Sirach 35:14) — *the needy shall not alway be forgotten* (9:18); the expectation of the poor is the complaint surely heard.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=18
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-a-refuge-for-the-oppressed-the-cry-of-the-humble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*now will I arise, saith Yahuah (LORD); I will set him in safety from him that puffeth at him* (Psalm 12:5) — *a refuge for the oppressed* (9:9) is Yahuah arising for the oppressed and setting them in safety.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=9
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=12 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-a-refuge-for-the-oppressed-the-cry-of-the-humble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*To judge the fatherless and the oppressed, that the man of the earth may no more oppress* (Psalm 10:18) — the acrostic''s own resolution of *the needy shall not alway be forgotten* (9:18); the oppressed delivered from the oppressor.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=18
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=10 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-a-refuge-for-the-oppressed-the-cry-of-the-humble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He made a pit, and digged it, and is fallen into the ditch which he made* (Psalm 7:15) — the pit-digger twin of *the heathen are sunk down in the pit that they made* (9:15); the snare recoils on its setter.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=15
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=7 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-the-heathen-sunk-in-the-pit-that-they-made'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*His mischief shall return upon his own head, and his violent dealing shall come down upon his own pate* (Psalm 7:16) — *the wicked is snared in the work of his own hands* (9:16); Yahuah is known by this judgment.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=16
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-the-heathen-sunk-in-the-pit-that-they-made'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*that the man of the earth may no more oppress* (Psalm 10:18) — the acrostic''s close of *that the nations may know themselves to be but men* (9:20); the oppressor stripped to flesh and silenced.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=20
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=10 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-the-nations-shall-know-themselves-but-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Cease ye from man, whose breath is in his nostrils: for wherein is he to be accounted of?* (Isaiah 2:22) — *the nations... but men* (9:20); the raging power is but breath before the throne that endures for ever.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps009_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=9 AND sv.verse_number=20
+  JOIN _s302_ps009_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-9-the-nations-shall-know-themselves-but-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_10.sql (Psalm 10) -----
+-- Chapter: Psalm 10 — THE PORTRAIT OF THE WICKED, second half of the Psalm 9-10 acrostic. The
+-- practical-atheist who *will not seek after Elohim (God): Elohim (God) is not in all his thoughts*
+-- (v.4) — twin of the fool of Psalm 14:1 / 53:1; ★ *His mouth is full of cursing and deceit and
+-- fraud* (v.7), which Paul lifts into the none-righteous catena at Romans 3:14. The wicked says
+-- *Elohim (God) hath forgotten: he hideth his face; he will never see it* (v.11) — and the psalm
+-- answers: ★ *Yahuah (LORD) is King for ever and ever: the heathen are perished out of his land*
+-- (v.16); *thou art the helper of the fatherless* (v.14), *To judge the fatherless and the
+-- oppressed, that the man of the earth may no more oppress* (v.18). Psalm 9 (its acrostic partner)
+-- is authored separately — laterals back to it allowed, NOT its own threads duplicated.
+-- Tag: ps010   Temp view: _s302_ps010_lookup
+-- Sort band: base 22225, step 3 -> threads at 22225, 22228, 22231, 22234 (4 threads)
+-- Source of EVERY row: 'canon','psalms',10,v
+--
+-- Psalm 10 coverage:
+--   v.1 (Why standest thou afar off, O Yahuah; why hidest thou thyself in times of trouble?)
+--        NT/Extras: none warranted — the lament-incipit; the framework weaves rise from v.4 onward.
+--        Tanakh: held as the psalm's own opening (the hidden-face complaint resolved at v.11/14).
+--   v.2-3 (The wicked in his pride doth persecute the poor... boasteth of his heart's desire, and
+--          blesseth the covetous, whom Yahuah abhorreth)
+--        NT/Extras/Tanakh: gathered into THREAD 1 (the wicked-portrait) in prose; no separate add.
+--   ★ v.4 (The wicked, through the pride of his countenance, will not seek after Elohim: Elohim is
+--          not in all his thoughts)
+--        NT:     none warranted distinct (the practical-atheist's mouth is taken forward at v.7 →
+--                Romans, THREAD 2)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 14:1 (The fool hath said in his heart, There is no Elohim), ★ Psalm 53:1
+--                (same) — THREAD 1 (the practical-atheist = the fool; live threads, lateral sparingly)
+--   v.5-6 (His ways are always grievous... He hath said in his heart, I shall not be moved)
+--        NT/Extras/Tanakh: gathered into THREAD 1 in prose.
+--   ★★ v.7 (His mouth is full of cursing and deceit and fraud: under his tongue is mischief and vanity)
+--        NT:     ★★ Romans 3:14 (Whose mouth is full of cursing and bitterness) — KEYSTONE LATERAL;
+--                Paul quotes this verse in the none-righteous catena — THREAD 2
+--        Extras: none warranted
+--        Tanakh: the catena Paul builds (Romans 3:10-18) draws Psalm 14/53/5/140, Isaiah 59 — carried
+--                in THREAD 2 prose; the load-bearing add is the Romans quotation itself.
+--   v.8-10 (lurking places... he doth catch the poor, when he draweth him into his net)
+--        NT/Extras/Tanakh: gathered into THREAD 1 (the wicked-portrait) in prose; no separate add.
+--   v.11 (He hath said in his heart, Elohim hath forgotten: he hideth his face; he will never see it)
+--        NT/Extras: none warranted
+--        Tanakh: the wicked's lie (Elohim has forgotten / will never see) is answered by v.14 (Thou
+--                hast seen it) and v.16 (Yahuah is King); gathered into THREAD 1 + THREAD 3 prose.
+--   v.12-13 (Arise, O Yahuah... forget not the humble; Wherefore doth the wicked contemn Elohim?)
+--        NT/Extras/Tanakh: gathered into the prose; the petition Arise echoes Psalm 9:19.
+--   ★ v.14 (Thou hast seen it... the poor committeth himself unto thee; thou art the helper of the
+--          fatherless)
+--        NT:     none warranted distinct
+--        Extras: none warranted
+--        Tanakh: ★ Deuteronomy 10:18 (He doth execute the judgment of the fatherless and widow),
+--                ★ Psalm 68:5 (A father of the fatherless... is Elohim), Psalm 146:9 (he relieveth
+--                the fatherless and widow), Psalm 9:18 (the needy shall not alway be forgotten) — THREAD 4
+--   v.15 (Break thou the arm of the wicked... seek out his wickedness till thou find none)
+--        NT/Extras/Tanakh: gathered into THREAD 3 (the King who clears the land) in prose.
+--   ★★ v.16 (Yahuah is King for ever and ever: the heathen are perished out of his land)
+--        NT:     ★ Revelation 11:15 (The kingdoms of this world are become the kingdoms of our Lord,
+--                and of his Messiah; and he shall reign for ever and ever) — THREAD 3 (forward)
+--        Extras: none warranted (no clean restored-witness adds to the everlasting-King here)
+--        Tanakh: ★ Exodus 15:18 (Yahuah shall reign for ever and ever), ★ Jeremiah 10:10 (Yahuah is
+--                the true Elohim... an everlasting king) — THREAD 3
+--   v.17-18 (Yahuah, thou hast heard the desire of the humble... To judge the fatherless and the
+--          oppressed, that the man of the earth may no more oppress)
+--        NT:     none warranted distinct
+--        Extras: none warranted
+--        Tanakh: ★ Deuteronomy 10:18, Psalm 68:5, Psalm 146:9 — THREAD 4 (the Judge of the fatherless)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-10-elohim-is-not-in-all-his-thoughts-the-practical-atheist — Tanakh (Psalm 14, Psalm 53)
+--      [free] (the wicked who will not seek Elohim = the fool who says There is no Elohim)
+--   2. psalm-10-mouth-full-of-cursing-the-none-righteous-catena — NT (Romans 3) [free]
+--      (★★ KEYSTONE: Paul quotes 10:7 in the none-righteous catena, Romans 3:14)
+--   3. psalm-10-yahuah-is-king-for-ever-and-ever — NT (Revelation 11) + Tanakh (Exodus 15, Jeremiah 10)
+--      [free] (★ the everlasting-King answers the wicked's lie; the kingdom that shall reign for ever)
+--   4. psalm-10-thou-art-the-helper-of-the-fatherless — Tanakh (Deuteronomy 10, Psalm 68, Psalm 146,
+--      Psalm 9) [free] (the Judge of the fatherless and oppressed; Torah-rooted defence of the helpless)
+--
+-- Framing notes:
+--   ★ THE PRACTICAL-ATHEIST (THREAD 1): *The wicked, through the pride of his countenance, will not
+--      seek after Elohim (God): Elohim (God) is not in all his thoughts* (10:4). This is not the
+--      theoretical denier but the man who lives as if Yahuah does not see — the twin of *The fool
+--      hath said in his heart, There is no Elohim (God)* (Psalm 14:1 / 53:1). The pride that *will
+--      not seek* and the heart that says *There is no Elohim* are one corruption: *there is none
+--      that doeth good* (14:3). Lateral, sparingly — Psalm 14/53 carry their own threads; here they
+--      name the wicked of Psalm 10 by his root.
+--   ★★ THE NONE-RIGHTEOUS CATENA (THREAD 2, KEYSTONE): *His mouth is full of cursing and deceit and
+--      fraud: under his tongue is mischief and vanity* (10:7). Paul lifts this verse by name into the
+--      catena that proves *both Yahudim (Jews) and Gentiles, that they are all under sin* (Romans
+--      3:9): *Whose mouth is full of cursing and bitterness* (Romans 3:14). Read in the framework:
+--      Paul is not abolishing the Torah he quotes — he draws the Psalms and the prophets to stop
+--      every mouth (Romans 3:19), and ENDS the chapter *we establish the law* (3:31). The wicked's
+--      cursing mouth of Psalm 10 is the indictment Paul presses on all flesh.
+--   ★ THE EVERLASTING-KING (THREAD 3): the wicked says *Elohim (God) hath forgotten; he hideth his
+--      face; he will never see it* (10:11) — and the psalm answers with the throne: *Yahuah (LORD) is
+--      King for ever and ever: the heathen are perished out of his land* (10:16). This is the song of
+--      the sea — *Yahuah (LORD) shall reign for ever and ever* (Exodus 15:18) — and Jeremiah's
+--      confession — *Yahuah (LORD) is the true Elohim (God)... an everlasting king* (10:10) — carried
+--      FORWARD to the seventh trumpet: *The kingdoms of this world are become the kingdoms of our
+--      Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15).
+--      The King who clears the wicked out of His land (10:15-16) is the King whose reign has no end.
+--   THE HELPER OF THE FATHERLESS (THREAD 4): the wicked's lie that *Elohim hath forgotten* (10:11) is
+--      met — *Thou hast seen it... the poor committeth himself unto thee; thou art the helper of the
+--      fatherless* (10:14) — and the psalm closes *To judge the fatherless and the oppressed, that
+--      the man of the earth may no more oppress* (10:18). This is the Torah's own heart: *He doth
+--      execute the judgment of the fatherless and widow, and loveth the stranger* (Deuteronomy
+--      10:18); *A father of the fatherless, and a judge of the widows, is Elohim (God)* (Psalm 68:5);
+--      *he relieveth the fatherless and widow: but the way of the wicked he turneth upside down*
+--      (Psalm 146:9); and the acrostic-partner's promise *the needy shall not alway be forgotten*
+--      (Psalm 9:18). The King who judges the wicked is the Father who defends the helpless.
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — a deliberate, recorded answer. Psalms run
+--      extras-lean; the wicked-portrait, the none-righteous catena, the everlasting-King, and the
+--      defence of the fatherless are all carried in the NT and the Tanakh. No restored witness forced.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the hidden-face lament-incipit), v.2-3/5-6/8-10/12-13 (the
+--      wicked-portrait, gathered into THREAD 1 prose), v.11 (the wicked's lie, answered in THREADS
+--      3+4), v.15 (Break thou the arm of the wicked, the King's clearing of the land, THREAD 3 prose):
+--      the lament-frame and the unfolding portrait the four threads rise from; no separate
+--      framework-bearing target warranted beyond the gathered prose.
+
+CREATE TEMP VIEW _s302_ps010_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the practical-atheist = the fool who says There is no Elohim
+    ('canon','psalms',10,4,'canon','psalms',14,1,'free',
+      E'*The fool hath said in his heart, There is no Elohim (God). They are corrupt, they have done abominable works, there is none that doeth good* (Psalm 14:1). The wicked of this psalm, who *through the pride of his countenance, will not seek after Elohim (God): Elohim (God) is not in all his thoughts* (Psalm 10:4), is the very fool of Psalm 14 — not the theoretical denier but the man who lives as if Yahuah does not see. The heart that *will not seek* and the heart that says *There is no Elohim (God)* are one corruption.'),
+    ('canon','psalms',10,4,'canon','psalms',53,1,'free',
+      E'*The fool hath said in his heart, There is no Elohim (God). Corrupt are they, and have done abominable iniquity: there is none that doeth good* (Psalm 53:1). The practical-atheist of Psalm 10, in whose thoughts *Elohim (God) is not* (Psalm 10:4), is named again here — *there is none that doeth good* — the wicked who keeps Yahuah out of every reckoning. Psalm 10:4 draws the portrait; Psalm 14/53 give it its name.'),
+
+    -- THREAD 2 (★★ KEYSTONE): mouth full of cursing — Paul quotes it in the none-righteous catena
+    ('canon','psalms',10,7,'canon','romans',3,14,'free',
+      E'*Whose mouth is full of cursing and bitterness* (Romans 3:14). Paul lifts this verse by name into the catena that proves *both Yahudim (Jews) and Gentiles, that they are all under sin* (Romans 3:9): the wicked whose *mouth is full of cursing and deceit and fraud* (Psalm 10:7) is the indictment pressed on all flesh — *that every mouth may be stopped, and all the world may become guilty before Elohim (God)* (Romans 3:19). Paul does not void the Torah he quotes; he ends the very chapter *we establish the law* (Romans 3:31). The cursing mouth of the wicked is the proof that none is righteous.'),
+
+    -- THREAD 3 (★): Yahuah is King for ever and ever — the everlasting-King answers the wicked's lie
+    ('canon','psalms',10,16,'canon','exodus',15,18,'free',
+      E'*Yahuah (LORD) shall reign for ever and ever* (Exodus 15:18). The song of the sea closes with the throne, and Psalm 10 answers the wicked''s lie — *Elohim (God) hath forgotten... he will never see it* (10:11) — with the same word: *Yahuah (LORD) is King for ever and ever: the heathen are perished out of his land* (Psalm 10:16). The King who delivered Yashar''el (Israel) at the sea and *shall reign for ever and ever* is the King who clears the wicked out of His land.'),
+    ('canon','psalms',10,16,'canon','jeremiah',10,10,'free',
+      E'*But Yahuah (LORD) is the true Elohim (God), he is the living Elohim (God), and an everlasting king: at his wrath the earth shall tremble, and the nations shall not be able to abide his indignation* (Jeremiah 10:10). Against the idols that cannot speak, Jeremiah confesses the everlasting King — the very title of Psalm 10:16, *Yahuah (LORD) is King for ever and ever*. The wicked who said Elohim has forgotten meets *an everlasting king* whose wrath the nations cannot abide; *the heathen are perished out of his land* (Psalm 10:16).'),
+    ('canon','psalms',10,16,'canon','revelation',11,15,'free',
+      E'*And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). Psalm 10''s confession — *Yahuah (LORD) is King for ever and ever: the heathen are perished out of his land* (10:16) — is carried FORWARD to the seventh trumpet, where the kingdoms pass wholly to Yahuah and His Messiah, *and he shall reign for ever and ever*. The everlasting reign the psalm sings is the reign that swallows every kingdom of the wicked.'),
+
+    -- THREAD 4: thou art the helper of the fatherless — the Judge of the fatherless and oppressed
+    ('canon','psalms',10,14,'canon','deuteronomy',10,18,'free',
+      E'*He doth execute the judgment of the fatherless and widow, and loveth the stranger, in giving him food and raiment* (Deuteronomy 10:18). The psalm''s confession — *the poor committeth himself unto thee; thou art the helper of the fatherless* (Psalm 10:14) — is the Torah''s own heart: Yahuah *doth execute the judgment of the fatherless and widow*. The defence of the helpless is not a sentiment but the covenant character of Yahuah, written in the Torah and answered to in the psalm.'),
+    ('canon','psalms',10,14,'canon','psalms',68,5,'free',
+      E'*A father of the fatherless, and a judge of the widows, is Elohim (God) in his holy habitation* (Psalm 68:5). *Thou art the helper of the fatherless* (Psalm 10:14): the psalter sings it plainly — *A father of the fatherless... is Elohim (God)*. The fatherless who *committeth himself unto thee* finds in Yahuah the very Father he has lost.'),
+    ('canon','psalms',10,18,'canon','psalms',146,9,'free',
+      E'*Yahuah (LORD) preserveth the strangers; he relieveth the fatherless and widow: but the way of the wicked he turneth upside down* (Psalm 146:9). The close of Psalm 10 — *To judge the fatherless and the oppressed, that the man of the earth may no more oppress* (10:18) — is this same double act: Yahuah *relieveth the fatherless and widow* and *the way of the wicked he turneth upside down*. The helping of the helpless and the breaking of the oppressor are one judgment.'),
+    ('canon','psalms',10,14,'canon','psalms',9,18,'free',
+      E'*For the needy shall not alway be forgotten: the expectation of the poor shall not perish for ever* (Psalm 9:18). The acrostic-partner answers the wicked''s lie before Psalm 10 even voices it: against *Elohim (God) hath forgotten* (10:11), Psalm 9 promises *the needy shall not alway be forgotten*. The poor who *committeth himself unto thee* (10:14) is the needy Yahuah will not forget; the two psalms are one song.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps010_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps010_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-10-elohim-is-not-in-all-his-thoughts-the-practical-atheist',
+       E'Elohim is not in all his thoughts — the wicked who will not seek = the fool of Psalm 14',
+       E'The portrait of the wicked opens at the root: *The wicked, through the pride of his countenance, will not seek after Elohim (God): Elohim (God) is not in all his thoughts* (Psalm 10:4). This is not the theoretical denier but the practical-atheist — the man whose *ways are always grievous* (10:5), who *hath said in his heart, I shall not be moved: for I shall never be in adversity* (10:6), who lives as if Yahuah does not see. He is the twin of the fool of the psalter: *The fool hath said in his heart, There is no Elohim (God). They are corrupt, they have done abominable works, there is none that doeth good* (Psalm 14:1); and again, word for word, *The fool hath said in his heart, There is no Elohim (God). Corrupt are they, and have done abominable iniquity: there is none that doeth good* (Psalm 53:1). The pride that *will not seek* and the heart that says *There is no Elohim* are one corruption; *there is none that doeth good, no, not one* (14:3). Psalm 10:4 draws the portrait of the wicked; Psalm 14 and 53 give him his name — the fool who keeps Yahuah out of every thought.',
+       sv.verse_id, ev.verse_id, 'free', 22225
+  FROM _s302_ps010_lookup sv, _s302_ps010_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=10 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★ KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-10-mouth-full-of-cursing-the-none-righteous-catena',
+       E'His mouth is full of cursing — the none-righteous catena (Romans 3:14)',
+       E'At the center of the wicked''s portrait stands his mouth: *His mouth is full of cursing and deceit and fraud: under his tongue is mischief and vanity* (Psalm 10:7). Paul lifts this very verse by name into the great catena that proves all flesh is under sin. Building from psalm to psalm to prophet — *There is none righteous, no, not one* (Romans 3:10), *Their throat is an open sepulchre; with their tongues they have used deceit* (3:13) — he reaches Psalm 10: *Whose mouth is full of cursing and bitterness* (Romans 3:14). The point is to stop every mouth: *Now we know that what things soever the law saith, it saith to them who are under the law: that every mouth may be stopped, and all the world may become guilty before Elohim (God)* (Romans 3:19). Read in the framework, Paul is not abolishing the Torah and the Psalms he quotes — he is wielding them as the living indictment, and he ends the chapter without ambiguity: *Do we then make void the law through faith? Elohim (God) forbid: yea, we establish the law* (Romans 3:31). The cursing mouth of the wicked in Psalm 10 is the proof Paul presses on Yahudim (Jews) and Gentiles alike: none is righteous, and every mouth must be stopped before the Judge.',
+       sv.verse_id, ev.verse_id, 'free', 22228
+  FROM _s302_ps010_lookup sv, _s302_ps010_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=10 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-10-yahuah-is-king-for-ever-and-ever',
+       E'Yahuah is King for ever and ever — the everlasting King answers the wicked''s lie',
+       E'The wicked said in his heart *Elohim (God) hath forgotten: he hideth his face; he will never see it* (Psalm 10:11) — and the psalm answers him with the throne. *Break thou the arm of the wicked and the evil man; seek out his wickedness till thou find none* (10:15), and then the verdict: *Yahuah (LORD) is King for ever and ever: the heathen are perished out of his land* (10:16). This is the song of the sea — *Yahuah (LORD) shall reign for ever and ever* (Exodus 15:18) — the same everlasting reign sung after Pharaoh''s host sank. It is Jeremiah''s confession against the idols that cannot speak: *But Yahuah (LORD) is the true Elohim (God), he is the living Elohim (God), and an everlasting king: at his wrath the earth shall tremble, and the nations shall not be able to abide his indignation* (Jeremiah 10:10). And it is carried FORWARD to the seventh trumpet, where every kingdom of the wicked passes wholly to Yahuah and His Messiah: *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). The wicked who imagined Yahuah had forgotten meets the King whose reign has no end and whose land has no place for him.',
+       sv.verse_id, ev.verse_id, 'free', 22231
+  FROM _s302_ps010_lookup sv, _s302_ps010_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=10 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-10-thou-art-the-helper-of-the-fatherless',
+       E'Thou art the helper of the fatherless — the Judge of the fatherless and oppressed',
+       E'Against the wicked''s lie — *Elohim (God) hath forgotten; he hideth his face; he will never see it* (Psalm 10:11) — the psalm sets Yahuah''s seeing eye and helping hand: *Thou hast seen it; for thou beholdest mischief and spite, to requite it with thy hand: the poor committeth himself unto thee; thou art the helper of the fatherless* (10:14). And it closes with the King''s own work of judgment for the helpless: *To judge the fatherless and the oppressed, that the man of the earth may no more oppress* (10:18). This is the Torah''s own heart — *He doth execute the judgment of the fatherless and widow, and loveth the stranger, in giving him food and raiment* (Deuteronomy 10:18) — and the psalter sings it plainly: *A father of the fatherless, and a judge of the widows, is Elohim (God) in his holy habitation* (Psalm 68:5); *Yahuah (LORD) preserveth the strangers; he relieveth the fatherless and widow: but the way of the wicked he turneth upside down* (Psalm 146:9). Even the acrostic-partner answers the wicked before Psalm 10 voices the lie: *For the needy shall not alway be forgotten: the expectation of the poor shall not perish for ever* (Psalm 9:18). The defence of the fatherless and the breaking of the oppressor are one judgment — the King who reigns for ever (10:16) is the Father who will not forget the helpless.',
+       sv.verse_id, ev.verse_id, 'free', 22234
+  FROM _s302_ps010_lookup sv, _s302_ps010_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=10 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *The fool hath said in his heart, There is no Elohim (God)... there is none that doeth good* (Psalm 14:1) — the wicked who *will not seek after Elohim* (10:4) is the fool of Psalm 14 by his root.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps010_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=4
+  JOIN _s302_ps010_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=14 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-10-elohim-is-not-in-all-his-thoughts-the-practical-atheist'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *The fool hath said in his heart, There is no Elohim (God)... there is none that doeth good* (Psalm 53:1) — same portrait, same name: the wicked in whose thoughts *Elohim (God) is not* (10:4).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps010_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=4
+  JOIN _s302_ps010_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=53 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-10-elohim-is-not-in-all-his-thoughts-the-practical-atheist'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★ KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Whose mouth is full of cursing and bitterness* (Romans 3:14) — Paul quotes 10:7 by name in the none-righteous catena; the cursing mouth proves all flesh under sin, *yet we establish the law* (Rom 3:31).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps010_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=7
+  JOIN _s302_ps010_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-10-mouth-full-of-cursing-the-none-righteous-catena'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Yahuah (LORD) shall reign for ever and ever* (Exodus 15:18) — the song of the sea names the everlasting reign of 10:16; the King who drowned Pharaoh clears His land of the wicked.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps010_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=16
+  JOIN _s302_ps010_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-10-yahuah-is-king-for-ever-and-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahuah (LORD) is the true Elohim (God)... an everlasting king* (Jeremiah 10:10) — the title of 10:16; the wicked who said Elohim forgot meets the everlasting King the nations cannot abide.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps010_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=16
+  JOIN _s302_ps010_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-10-yahuah-is-king-for-ever-and-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15) — 10:16 carried FORWARD to the seventh trumpet; every kingdom of the wicked passes to the everlasting King.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps010_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=16
+  JOIN _s302_ps010_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-10-yahuah-is-king-for-ever-and-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He doth execute the judgment of the fatherless and widow, and loveth the stranger* (Deuteronomy 10:18) — *thou art the helper of the fatherless* (10:14) is the Torah''s own heart, Yahuah''s covenant character.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps010_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=14
+  JOIN _s302_ps010_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-10-thou-art-the-helper-of-the-fatherless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *A father of the fatherless, and a judge of the widows, is Elohim (God)* (Psalm 68:5) — *thou art the helper of the fatherless* (10:14); the fatherless who commits himself finds in Yahuah the Father he has lost.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps010_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=14
+  JOIN _s302_ps010_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=68 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-10-thou-art-the-helper-of-the-fatherless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he relieveth the fatherless and widow: but the way of the wicked he turneth upside down* (Psalm 146:9) — the close of 10:18 (judge the fatherless... the oppressor no more) is this double act: relieve the helpless, overturn the wicked.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps010_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=18
+  JOIN _s302_ps010_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=146 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-10-thou-art-the-helper-of-the-fatherless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the needy shall not alway be forgotten: the expectation of the poor shall not perish for ever* (Psalm 9:18) — the acrostic-partner answers the wicked''s lie (*Elohim hath forgotten*, 10:11) before 10 voices it; the poor who commits himself (10:14) is not forgotten.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps010_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=10 AND sv.verse_number=14
+  JOIN _s302_ps010_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=9 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-10-thou-art-the-helper-of-the-fatherless'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_11.sql (Psalm 11) -----
+-- Chapter: Psalm 11 — A PSALM OF TRUST UNDER THREAT. *In Yahuah (LORD) put I my trust* (v.1): the
+-- counsel to flee like a bird is answered by the enthroned Trier who sees and judges. Four
+-- framework-bearing weaves: ★ the foundations (v.3) — *If the foundations be destroyed, what can the
+-- righteous do?* answered by the sure foundation-stone (Isaiah 28:16 / 2 Timothy 2:19 the foundation
+-- standeth sure); ★ the enthroned heart-trier (v.4-5) — *Yahuah is in his holy temple... his eyes
+-- behold, his eyelids try, the children of Adam... Yahuah trieth the righteous* (Psalm 7:9 trieth the
+-- hearts; Habakkuk 2:20 in his holy temple; Revelation 4:2 the throne in heaven); ★ the Sodom
+-- judgment-pattern (v.6) — *Upon the wicked he shall rain snares, fire and brimstone* (Genesis 19:24
+-- rained brimstone and fire; Luke 17:29; Revelation 21:8 the lake of fire and brimstone); ★ the upright
+-- beholding his face (v.7) — *his countenance doth behold the upright* (Matthew 5:8 pure in heart see
+-- Elohim; Revelation 22:4 they shall see his face). Two-house only where text bears it — this psalm
+-- bears it nowhere, so it is not forced.
+-- Tag: ps011   Temp view: _s302_ps011_lookup
+-- Sort band: base 22250, step 3 -> threads at 22250, 22253, 22256, 22259 (4 threads)
+-- Source of EVERY row: 'canon','psalms',11,v
+--
+-- Psalm 11 coverage:
+--   v.1 (In Yahuah (LORD) put I my trust: how say ye to my soul, Flee as a bird to your mountain?)
+--        NT/Extras/Tanakh: none warranted — the opening profession of trust + the tempters' counsel to
+--          flee; the framework-bearing weaves rise from v.3 onward; held as the psalm's own setting.
+--   v.2 (For, lo, the wicked bend their bow... that they may privily shoot at the upright in heart)
+--        NT/Extras/Tanakh: none warranted distinct — the ambush of the upright; the wicked-vs-upright
+--          contrast is resolved in the Trier of v.4-5 and the judgment of v.6; carried in prose there.
+--   ★ v.3 (If the foundations be destroyed, what can the righteous do?)
+--        NT:     ★ 2 Timothy 2:19 (the foundation of Elohim standeth sure, having this seal) — THREAD 1
+--        Extras: none warranted (no clean restored witness adds to the foundation-stone weave)
+--        Tanakh: ★ Isaiah 28:16 (I lay in Zion for a foundation a stone, a tried stone... a sure
+--                foundation) — THREAD 1 (the foundation that CANNOT be destroyed answers the question)
+--   ★ v.4-5 (Yahuah is in his holy temple, the LORD'S throne is in heaven: his eyes behold, his eyelids
+--          try, the children of men. Yahuah trieth the righteous)
+--        NT:     ★ Revelation 4:2 (a throne was set in heaven, and one sat on the throne) — THREAD 2
+--        Extras: none warranted (no clean restored witness adds to the enthroned-Trier weave)
+--        Tanakh: ★ Psalm 7:9 (the righteous Elohim trieth the hearts and reins), ★ Habakkuk 2:20
+--                (Yahuah is in his holy temple: let all the earth keep silence before him) — THREAD 2
+--   ★ v.6 (Upon the wicked he shall rain snares, fire and brimstone, and an horrible tempest: this
+--          shall be the portion of their cup)
+--        NT:     ★ Luke 17:29 (it rained fire and brimstone from heaven, and destroyed them all),
+--                ★ Revelation 21:8 (their part in the lake which burneth with fire and brimstone) — THREAD 3
+--        Extras: none warranted (the Sodom-pattern is carried by canon Torah + NT; no extra forced)
+--        Tanakh: ★ Genesis 19:24 (Yahuah rained upon Sodom... brimstone and fire from Yahuah out of
+--                heaven) — THREAD 3 (the rain of fire and brimstone = the Sodom judgment-pattern)
+--   ★ v.7 (For the righteous Yahuah loveth righteousness; his countenance doth behold the upright)
+--        NT:     ★ Matthew 5:8 (Blessed are the pure in heart: for they shall see Elohim),
+--                ★ Revelation 22:4 (they shall see his face; and his name shall be in their
+--                foreheads) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: none warranted distinct — the countenance-beholding-the-upright forward-weave is
+--                carried FORWARD to the beatific seeing; no closer Tanakh lateral than the psalm itself.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-11-if-the-foundations-be-destroyed-the-sure-foundation — NT (2 Timothy 2) + Tanakh
+--      (Isaiah 28) [free] (★ the foundation that cannot be destroyed answers the psalm's question)
+--   2. psalm-11-yahuah-in-his-holy-temple-his-eyelids-try-the-children-of-men — NT (Revelation 4) +
+--      Tanakh (Psalm 7, Habakkuk 2) [free] (★ the enthroned heart-Trier in his holy temple)
+--   3. psalm-11-upon-the-wicked-he-shall-rain-fire-and-brimstone — NT (Luke 17, Revelation 21) +
+--      Tanakh (Genesis 19) [free] (★ the Sodom judgment-pattern: fire and brimstone, the portion of
+--      their cup)
+--   4. psalm-11-his-countenance-doth-behold-the-upright — NT (Matthew 5, Revelation 22) [free]
+--      (★ the upright beholding his face: pure in heart see Elohim, they shall see his face)
+--
+-- Framing notes:
+--   ★ THE SURE FOUNDATION (THREAD 1): the tempters press the despairing question — *If the foundations
+--      be destroyed, what can the righteous do?* (11:3). The answer is the foundation that cannot be
+--      destroyed: *Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner
+--      stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16) — and *the
+--      foundation of Elohim (God) standeth sure, having this seal, Yahuah (Lord) knoweth them that are
+--      his* (2 Timothy 2:19). Where the wicked would topple every foundation, Yahuah has laid one in
+--      Zion that holds; the righteous stand on what cannot be shaken.
+--   ★ THE ENTHRONED TRIER (THREAD 2): *Yahuah (LORD) is in his holy temple, the LORD'S throne is in
+--      heaven: his eyes behold, his eyelids try, the children of men* (11:4) — *Yahuah (LORD) trieth
+--      the righteous* (11:5). The same enthroned Trier sings through the psalter and the prophets:
+--      *the righteous Elohim (God) trieth the hearts and reins* (Psalm 7:9); *Yahuah (LORD) is in his
+--      holy temple: let all the earth keep silence before him* (Habakkuk 2:20); and John sees the very
+--      throne — *a throne was set in heaven, and one sat on the throne* (Revelation 4:2). The One in
+--      the holy temple whose eyelids try the children of Adam is the enthroned Judge before whom the
+--      earth is silent.
+--   ★ THE SODOM JUDGMENT-PATTERN (THREAD 3): *Upon the wicked he shall rain snares, fire and brimstone,
+--      and an horrible tempest: this shall be the portion of their cup* (11:6). The rain of fire and
+--      brimstone is the Sodom-pattern set in Torah — *Then Yahuah (LORD) rained upon Sodom and upon
+--      Gomorrah brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24) — named again by
+--      Yahusha — *it rained fire and brimstone from heaven, and destroyed them all* (Luke 17:29) — and
+--      brought to its consummation — *their part in the lake which burneth with fire and brimstone:
+--      which is the second death* (Revelation 21:8). The portion of the wicked's cup is the same fire
+--      and brimstone from Sodom to the last judgment.
+--   ★ THE UPRIGHT BEHOLD HIS FACE (THREAD 4): *For the righteous Yahuah (LORD) loveth righteousness;
+--      his countenance doth behold the upright* (11:7). His countenance beholding the upright is
+--      answered by the upright beholding his face: *Blessed are the pure in heart: for they shall see
+--      Elohim (God)* (Matthew 5:8); *And they shall see his face; and his name shall be in their
+--      foreheads* (Revelation 22:4). The trust of the psalm ends in sight — the upright whom his
+--      countenance beholds will behold his face.
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — a deliberate, recorded answer. The
+--      load-bearing weaves are the Tanakh (Isaiah 28, Psalm 7, Habakkuk 2, Genesis 19) and the NT
+--      (2 Timothy 2, Revelation 4/21/22, Luke 17, Matthew 5). No restored witness was forced.
+--   TWO-HOUSE: none warranted — this short trust-psalm carries no election/scattering/ingathering
+--      language; the two-house weave was weighed and deliberately not forced.
+--   VERSES WITH NO ADD: v.1 (the opening profession of trust + the tempters' counsel to flee) and v.2
+--      (the ambush of the upright): the psalm's own setting, the wicked-vs-upright contrast resolved in
+--      the Trier (v.4-5) and the judgment (v.6); no separate framework-bearing target warranted.
+
+CREATE TEMP VIEW _s302_ps011_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): If the foundations be destroyed — the sure foundation
+    ('canon','psalms',11,3,'canon','isaiah',28,16,'free',
+      E'*Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16). The despairing question *If the foundations be destroyed, what can the righteous do?* (Psalm 11:3) is answered by the foundation that cannot be destroyed — Yahuah Himself lays *in Zion for a foundation a stone, a tried stone... a sure foundation*. Where the wicked would topple every footing, the righteous stand on what Yahuah has laid sure.'),
+    ('canon','psalms',11,3,'canon','2-timothy',2,19,'free',
+      E'*Nevertheless the foundation of Elohim (God) standeth sure, having this seal, Yahuah (Lord) knoweth them that are his. And, Let every one that nameth the name of Messiah (Christ) depart from iniquity* (2 Timothy 2:19). To the psalm''s question *If the foundations be destroyed, what can the righteous do?* (Psalm 11:3) the answer stands: *the foundation of Elohim (God) standeth sure*. Though the wicked aim to shake every footing, the foundation Yahuah has laid holds, sealed — He *knoweth them that are his*.'),
+
+    -- THREAD 2 (★): Yahuah in his holy temple — his eyelids try the children of Adam
+    ('canon','psalms',11,5,'canon','psalms',7,9,'free',
+      E'*Oh let the wickedness of the wicked come to an end; but establish the just: for the righteous Elohim (God) trieth the hearts and reins* (Psalm 7:9). *Yahuah (LORD) trieth the righteous* (Psalm 11:5) is the same enthroned mercy: *the righteous Elohim (God) trieth the hearts and reins*. The One whose *eyelids try, the children of men* (11:4) is the Judge who searches the inward parts, ending the wickedness of the wicked and establishing the just.'),
+    ('canon','psalms',11,4,'canon','habakkuk',2,20,'free',
+      E'*But Yahuah (LORD) is in his holy temple: let all the earth keep silence before him* (Habakkuk 2:20). *Yahuah (LORD) is in his holy temple, the LORD''S throne is in heaven* (Psalm 11:4) is sung again by the prophet word for word — *Yahuah (LORD) is in his holy temple* — and the answer to the enthroned Trier is silence: *let all the earth keep silence before him*. The One whose eyes behold the children of Adam reigns in his holy temple, and the earth is hushed.'),
+    ('canon','psalms',11,4,'canon','revelation',4,2,'free',
+      E'*And immediately I was in the spirit: and, behold, a throne was set in heaven, and one sat on the throne* (Revelation 4:2). *The LORD''S throne is in heaven: his eyes behold, his eyelids try, the children of men* (Psalm 11:4) is the throne John is shown — *a throne was set in heaven, and one sat on the throne*. The enthroned One whose eyelids try the children of Adam is the One John beholds seated, before whom all things are tried.'),
+
+    -- THREAD 3 (★): Upon the wicked he shall rain fire and brimstone — the Sodom judgment-pattern
+    ('canon','psalms',11,6,'canon','genesis',19,24,'free',
+      E'*Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24). *Upon the wicked he shall rain snares, fire and brimstone, and an horrible tempest* (Psalm 11:6) is the Sodom-pattern set in Torah — *Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire*. The portion of the wicked''s cup is the very rain that fell from heaven upon the cities of the plain.'),
+    ('canon','psalms',11,6,'canon','luke',17,29,'free',
+      E'*But the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all* (Luke 17:29). When the psalm says *Upon the wicked he shall rain snares, fire and brimstone* (Psalm 11:6), Yahusha names the same judgment as the pattern of the day He is revealed — *it rained fire and brimstone from heaven, and destroyed them all*. The Sodom-rain is the standing token of the portion of the wicked''s cup.'),
+    ('canon','psalms',11,6,'canon','revelation',21,8,'free',
+      E'*But the fearful, and unbelieving, and the abominable, and murderers, and whoremongers, and sorcerers, and idolaters, and all liars, shall have their part in the lake which burneth with fire and brimstone: which is the second death* (Revelation 21:8). *This shall be the portion of their cup* (Psalm 11:6) — *fire and brimstone* — is brought to its consummation: the wicked''s *part in the lake which burneth with fire and brimstone, which is the second death*. The portion poured out is the same fire and brimstone from Sodom to the last judgment.'),
+
+    -- THREAD 4 (★): His countenance doth behold the upright — they shall see his face
+    ('canon','psalms',11,7,'canon','matthew',5,8,'free',
+      E'*Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8). *The righteous Yahuah (LORD) loveth righteousness; his countenance doth behold the upright* (Psalm 11:7): His countenance beholding the upright is met by the upright beholding Him — *Blessed are the pure in heart: for they shall see Elohim (God)*. The face turned toward the righteous is the face the pure in heart will see.'),
+    ('canon','psalms',11,7,'canon','revelation',22,4,'free',
+      E'*And they shall see his face; and his name shall be in their foreheads* (Revelation 22:4). The psalm''s *his countenance doth behold the upright* (Psalm 11:7) ends in sight: *they shall see his face; and his name shall be in their foreheads*. The upright whom His countenance beholds will at last behold His face — the trust of the psalm consummated in seeing.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps011_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps011_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-11-if-the-foundations-be-destroyed-the-sure-foundation',
+       E'If the foundations be destroyed — the sure foundation that cannot be shaken',
+       E'The tempters press the despairing question: *If the foundations be destroyed, what can the righteous do?* (Psalm 11:3). The answer is not despair but the foundation that cannot be destroyed. Yahuah Himself has laid one in Zion: *Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16). And against every effort of the wicked to topple every footing, *the foundation of Elohim (God) standeth sure, having this seal, Yahuah (Lord) knoweth them that are his. And, Let every one that nameth the name of Messiah (Christ) depart from iniquity* (2 Timothy 2:19). The righteous are not left without recourse when the foundations seem to fall — Yahuah has laid a sure foundation that holds, a tried stone the wicked cannot shake, sealed and known to Him.',
+       sv.verse_id, ev.verse_id, 'free', 22250
+  FROM _s302_ps011_lookup sv, _s302_ps011_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=11 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-11-yahuah-in-his-holy-temple-his-eyelids-try-the-children-of-men',
+       E'Yahuah is in his holy temple — his eyelids try the children of Adam',
+       E'The psalm lifts its eyes from the threat to the throne: *Yahuah (LORD) is in his holy temple, the LORD''S throne is in heaven: his eyes behold, his eyelids try, the children of men. Yahuah (LORD) trieth the righteous: but the wicked and him that loveth violence his soul hateth* (Psalm 11:4-5). The enthroned One in his holy temple is the Trier of hearts — the same searching judge the psalter and the prophets sing. *Oh let the wickedness of the wicked come to an end; but establish the just: for the righteous Elohim (God) trieth the hearts and reins* (Psalm 7:9). Habakkuk takes up the psalm''s own words: *But Yahuah (LORD) is in his holy temple: let all the earth keep silence before him* (Habakkuk 2:20). And John is shown the very throne: *a throne was set in heaven, and one sat on the throne* (Revelation 4:2). The One whose eyelids try the children of Adam reigns in his holy temple, sees all, judges the inward parts, and before Him the whole earth is hushed.',
+       sv.verse_id, ev.verse_id, 'free', 22253
+  FROM _s302_ps011_lookup sv, _s302_ps011_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=11 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-11-upon-the-wicked-he-shall-rain-fire-and-brimstone',
+       E'Upon the wicked he shall rain fire and brimstone — the Sodom judgment-pattern',
+       E'The portion of the wicked is the rain that fell on the plain: *Upon the wicked he shall rain snares, fire and brimstone, and an horrible tempest: this shall be the portion of their cup* (Psalm 11:6). This is the Sodom-pattern, set in Torah and standing as the token of the wicked''s end. *Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24). Yahusha names the same rain as the pattern of the day He is revealed: *the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all* (Luke 17:29). And it is brought to its consummation: *the fearful, and unbelieving... and all liars, shall have their part in the lake which burneth with fire and brimstone: which is the second death* (Revelation 21:8). From the cities of the plain to the last judgment, the portion of the wicked''s cup is the same fire and brimstone — Yahuah rains it, and it does not change.',
+       sv.verse_id, ev.verse_id, 'free', 22256
+  FROM _s302_ps011_lookup sv, _s302_ps011_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=11 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-11-his-countenance-doth-behold-the-upright',
+       E'His countenance doth behold the upright — they shall see his face',
+       E'The psalm of trust ends turned toward the face of Yahuah: *For the righteous Yahuah (LORD) loveth righteousness; his countenance doth behold the upright* (Psalm 11:7). His countenance turned toward the upright is answered by the upright turned toward His face — the seeing the trusting heart is brought to. *Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8). And at the end of all things: *And they shall see his face; and his name shall be in their foreheads* (Revelation 22:4). The trust that opened the psalm — *In Yahuah (LORD) put I my trust* (11:1) — closes in sight: the upright whom His countenance beholds will behold His face, His name on their foreheads.',
+       sv.verse_id, ev.verse_id, 'free', 22259
+  FROM _s302_ps011_lookup sv, _s302_ps011_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=11 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation* (Isaiah 28:16) — the foundation that cannot be destroyed answers the psalm''s question (11:3); Yahuah has laid a sure stone in Zion.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps011_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=3
+  JOIN _s302_ps011_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=28 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-11-if-the-foundations-be-destroyed-the-sure-foundation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the foundation of Elohim (God) standeth sure, having this seal, Yahuah (Lord) knoweth them that are his* (2 Timothy 2:19) — though the wicked aim to topple every footing (11:3), Yahuah''s foundation holds, sealed and known to Him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps011_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=3
+  JOIN _s302_ps011_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-11-if-the-foundations-be-destroyed-the-sure-foundation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the righteous Elohim (God) trieth the hearts and reins* (Psalm 7:9) — *Yahuah trieth the righteous* (11:5); the One whose eyelids try the children of Adam searches the inward parts.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps011_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=5
+  JOIN _s302_ps011_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-11-yahuah-in-his-holy-temple-his-eyelids-try-the-children-of-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) is in his holy temple: let all the earth keep silence before him* (Habakkuk 2:20) — the psalm''s own words (11:4) sung by the prophet; the answer to the enthroned Trier is silence.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps011_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s302_ps011_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-11-yahuah-in-his-holy-temple-his-eyelids-try-the-children-of-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *a throne was set in heaven, and one sat on the throne* (Revelation 4:2) — *the LORD''S throne is in heaven* (11:4) is the throne John is shown; the enthroned One who tries the children of Adam.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps011_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s302_ps011_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=4 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-11-yahuah-in-his-holy-temple-his-eyelids-try-the-children-of-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24) — the Sodom-pattern set in Torah; the portion of the wicked''s cup (11:6) is the rain that fell on the plain.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps011_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s302_ps011_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-11-upon-the-wicked-he-shall-rain-fire-and-brimstone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *it rained fire and brimstone from heaven, and destroyed them all* (Luke 17:29) — Yahusha names the same rain (11:6) as the pattern of the day He is revealed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps011_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s302_ps011_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=17 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-11-upon-the-wicked-he-shall-rain-fire-and-brimstone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *their part in the lake which burneth with fire and brimstone: which is the second death* (Revelation 21:8) — *this shall be the portion of their cup* (11:6) brought to its consummation; the same fire and brimstone from Sodom to the last judgment.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps011_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s302_ps011_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-11-upon-the-wicked-he-shall-rain-fire-and-brimstone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8) — His countenance beholding the upright (11:7) is met by the upright beholding Him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps011_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=7
+  JOIN _s302_ps011_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-11-his-countenance-doth-behold-the-upright'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they shall see his face; and his name shall be in their foreheads* (Revelation 22:4) — the trust of the psalm (11:7) consummated in sight; the upright behold His face.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps011_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=11 AND sv.verse_number=7
+  JOIN _s302_ps011_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-11-his-countenance-doth-behold-the-upright'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_12.sql (Psalm 12) -----
+-- Chapter: Psalm 12 — A lament over the failing of the faithful and the dominion of flattering,
+-- double-hearted speech, resolved in the KEYSTONE: *The words of Yahuah (LORD) are pure words: as
+-- silver tried in a furnace of earth, purified seven times* (v.6). The psalm opens with the godly
+-- man ceasing and the faithful failing *from among the children of men* (v.1 — the remnant motif,
+-- Micah 7:2 / Isaiah 57:1, handled WITHOUT replacement); the tongues of men *speak vanity... with
+-- flattering lips and with a double heart* (v.2-4 — the double tongue, Sirach 5:9-14 / 28:13);
+-- Yahuah arises for *the oppression of the poor* (v.5); and over against the lying lips of men
+-- stand the PURE words of Yahuah, tried sevenfold (v.6 — twin of Psalm 19:7-8, Proverbs 30:5),
+-- which He keeps and preserves *from this generation for ever* (v.7 — Isaiah 40:8, Matthew 24:35,
+-- 1 Peter 1:25). The word of man fails; the Word of Yahuah stands.
+-- Tag: ps012   Temp view: _s302_ps012_lookup
+-- Sort band: base 22275, step 3 -> threads at 22275, 22278, 22281, 22284 (4 threads)
+-- Source of EVERY row: 'canon','psalms',12,v
+--
+-- Psalm 12 coverage:
+--   ★ v.1 (Help, Yahuah; for the godly man ceaseth; for the faithful fail from among the children of men)
+--        NT:     none warranted (no clean NT lateral adds beyond the prophets' own remnant-lament;
+--                the forward weight of the chapter is the PRESERVED WORD, carried at v.7)
+--        Extras: none warranted (the double-tongue extras belong at v.2; no clean remnant-lament witness here)
+--        Tanakh: ★ Micah 7:2 (The good man is perished out of the earth: and there is none upright among
+--                men), ★ Isaiah 57:1 (The righteous perisheth, and no man layeth it to heart... none
+--                considering that the righteous is taken away from the evil to come) — THREAD 1
+--   v.2-4 (They speak vanity every one with his neighbour: with flattering lips and with a double heart
+--          do they speak. Yahuah shall cut off all flattering lips, and the tongue that speaketh proud
+--          things... With our tongue will we prevail; our lips are our own)
+--        NT:     none warranted distinct (the lying-lips / proud-tongue judgment is carried in the
+--                Tanakh + the wisdom witnesses; no closer NT lateral than the prose)
+--        Extras: ★ Sirach (Ecclesiasticus) 5:9 (so does the sinner that has a double tongue), 5:14
+--                (an evil condemnation upon the double tongue), ★ 28:13 (Curse the whisperer and
+--                doubletongued: for such have destroyed many that were at peace) — THREAD 2
+--        Tanakh: the double heart of 12:2 is the wisdom-witnesses' double tongue; carried in THREAD 2 prose
+--   v.5 (For the oppression of the poor, for the sighing of the needy, now will I arise, saith Yahuah;
+--          I will set him in safety from him that puffeth at him)
+--        NT/Extras/Tanakh: none warranted distinct — the Yahuah-arises-for-the-needy turn; the safety
+--          set for the oppressed is gathered into the chapter's pure-word resolution, held in prose, not
+--          a separate framework-bearing add.
+--   ★★ v.6 (The words of Yahuah are pure words: as silver tried in a furnace of earth, purified seven times)
+--        NT:     none warranted distinct (the pure-word keystone weaves LATERALLY to the psalter's own
+--                law-of-Yahuah-is-perfect and to Proverbs; the forward fulfillment is the PRESERVED word at v.7)
+--        Extras: none warranted (no clean restored witness improves on Psalm 19 / Proverbs 30 here)
+--        Tanakh: ★★ Psalm 19:7 (The law of Yahuah is perfect, converting the soul), ★ Psalm 19:8 (the
+--                commandment of Yahuah is pure, enlightening the eyes), ★ Proverbs 30:5 (Every word of
+--                Elohim is pure: he is a shield unto them that put their trust in him) — THREAD 3 (KEYSTONE)
+--   ★ v.7 (Thou shalt keep them, O Yahuah, thou shalt preserve them from this generation for ever)
+--        NT:     ★ Matthew 24:35 (Heaven and earth shall pass away, but my words shall not pass away),
+--                ★ 1 Peter 1:25 (But the word of Yahuah endureth for ever) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 40:8 (The grass withereth, the flower fadeth: but the word of our Elohim shall
+--                stand for ever) — THREAD 4
+--   v.8 (The wicked walk on every side, when the vilest men are exalted)
+--        NT/Extras/Tanakh: none warranted — the closing observation; the dominion of the vile is the
+--          dark backdrop against which v.6-7 shines, gathered in the prose of THREADS 1 and 2, not a
+--          separate add.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-12-the-faithful-fail-from-among-the-children-of-men — Tanakh (Micah 7, Isaiah 57) [free]
+--      (the godly man ceaseth; the remnant-lament, handled WITHOUT replacement)
+--   2. psalm-12-flattering-lips-and-a-double-heart — Extras (Sirach 5, Sirach 28) [extras]
+--      (the double heart = the wisdom-witnesses' double tongue; the whisperer cursed)
+--   3. psalm-12-the-words-of-yahuah-are-pure-words-purified-seven-times — Tanakh (Psalm 19, Proverbs 30)
+--      [free] (★★ KEYSTONE: the pure word, twin of the perfect law; lateral to the LIVE Psalm 19 thread)
+--   4. psalm-12-thou-shalt-preserve-them-from-this-generation-for-ever — NT (Matthew 24, 1 Peter 1)
+--      + Tanakh (Isaiah 40) [free] (★ the preserved word that stands for ever; the word of man fails)
+--
+-- Framing notes:
+--   ★ THE FAITHFUL FAIL (THREAD 1): *Help, Yahuah (LORD); for the godly man ceaseth; for the faithful
+--      fail from among the children of men* (12:1). This is the prophets' remnant-lament, not a verdict
+--      that Yahuah's people are cast off: Micah cries *The good man is perished out of the earth: and
+--      there is none upright among men* (Micah 7:2), yet ends *He will turn again, he will have
+--      compassion upon us* (Micah 7:19) and *Thou wilt perform the truth to Jacob, and the mercy to
+--      Abraham* (Micah 7:20); Isaiah names the same loss as MERCY hidden — *The righteous perisheth, and
+--      no man layeth it to heart: and merciful men are taken away, none considering that the righteous
+--      is taken away from the evil to come* (Isaiah 57:1). The faithful failing is the thinning of the
+--      remnant in a faithless generation, NEVER the end of the covenant people. (Romans 11:1-2 guards
+--      it: Yahuah hath not cast away his people.)
+--   THE DOUBLE HEART (THREAD 2): *They speak vanity every one with his neighbour: with flattering lips
+--      and with a double heart do they speak* (12:2). The wisdom-witnesses name the very sin: *Winnow
+--      not with every wind... for so does the sinner that has a double tongue* (Sirach 5:9), *an evil
+--      condemnation upon the double tongue* (Sirach 5:14); and the whisperer is cursed — *Curse the
+--      whisperer and doubletongued: for such have destroyed many that were at peace* (Sirach 28:13).
+--      The *double heart* of the psalm is the *double tongue* of Sirach: the flattering, two-faced
+--      speech Yahuah will *cut off* (12:3).
+--   ★★ THE PURE WORDS (THREAD 3 — KEYSTONE): over against the lying lips of men stands the word of
+--      Yahuah: *The words of Yahuah (LORD) are pure words: as silver tried in a furnace of earth,
+--      purified seven times* (12:6). This is the twin of the psalter's great Torah-hymn — *The law of
+--      Yahuah (LORD) is perfect, converting the soul... the commandment of Yahuah (LORD) is pure,
+--      enlightening the eyes* (Psalm 19:7-8) — and of Agur's witness, *Every word of Elohim (God) is
+--      pure: he is a shield unto them that put their trust in him* (Proverbs 30:5). The word of man is
+--      double and flattering; the word of Yahuah is single, tried, and pure — His perfect Torah, not
+--      abolished but refined seven times. (Laterals to the LIVE thread
+--      psalm-19-the-law-of-yahuah-is-perfect-converting-the-soul.)
+--   ★ THE PRESERVED WORD (THREAD 4): *Thou shalt keep them, O Yahuah (LORD), thou shalt preserve them
+--      from this generation for ever* (12:7). The pure words are KEPT: *The grass withereth, the flower
+--      fadeth: but the word of our Elohim (God) shall stand for ever* (Isaiah 40:8); the Formed Son sets
+--      it forward — *Heaven and earth shall pass away, but my words shall not pass away* (Matthew 24:35);
+--      and the apostle seals it — *But the word of Yahuah (Lord) endureth for ever* (1 Peter 1:25),
+--      quoting Isaiah 40 by name. The faithful fail and the vilest are exalted (12:1,8), but the Word
+--      that judges them is preserved from this generation for ever; the word of man fails, the Word of
+--      Yahuah stands.
+--   EXTRAS: warranted ONLY at v.2 (Sirach on the double tongue / the cursed whisperer — a clean, natural
+--      wisdom-lit hit). Recorded as NONE WARRANTED elsewhere — a deliberate, recorded answer; the
+--      load-bearing weaves are the Tanakh (Micah 7, Isaiah 57, Psalm 19, Proverbs 30, Isaiah 40) and the
+--      NT (Matthew 24, 1 Peter 1).
+--   VERSES WITH NO ADD: v.5 (Yahuah arises for the poor and needy — gathered into the chapter's
+--      resolution), v.8 (the wicked walk on every side, the vilest exalted — the dark backdrop against
+--      which the pure, preserved Word shines): held in the THREAD 1 / 2 prose, no separate framework-
+--      bearing target warranted.
+
+CREATE TEMP VIEW _s302_ps012_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: The faithful fail from among the children of men (the remnant-lament, no replacement)
+    ('canon','psalms',12,1,'canon','micah',7,2,'free',
+      E'*The good man is perished out of the earth: and there is none upright among men: they all lie in wait for blood; they hunt every man his brother with a net* (Micah 7:2). *The godly man ceaseth; the faithful fail from among the children of men* (Psalm 12:1) is Micah''s very lament — the good man perished, none upright. This is the thinning of the faithful in a faithless generation, not the end of the covenant people: Micah ends *He will turn again, he will have compassion upon us* (Micah 7:19) and *Thou wilt perform the truth to Jacob, and the mercy to Abraham* (Micah 7:20).'),
+    ('canon','psalms',12,1,'canon','isaiah',57,1,'free',
+      E'*The righteous perisheth, and no man layeth it to heart: and merciful men are taken away, none considering that the righteous is taken away from the evil to come* (Isaiah 57:1). *The godly man ceaseth; the faithful fail from among the children of men* (Psalm 12:1) is the same loss Isaiah grieves — the righteous and the merciful taken away while a careless generation does not lay it to heart. The faithful failing is the remnant drawn out of the evil to come, never the casting-off of Yahuah''s people.'),
+
+    -- THREAD 2: Flattering lips and a double heart (the double tongue, the whisperer cursed) [extras]
+    ('canon','psalms',12,2,'apocrypha','ecclesiasticus',5,9,'extras',
+      E'*Winnow not with every wind, and go not into every way: for so does the sinner that has a double tongue* (Sirach 5:9). *They speak vanity every one with his neighbour: with flattering lips and with a double heart do they speak* (Psalm 12:2): the psalm''s *double heart* is the wisdom-witness''s *double tongue* — the man who winnows with every wind, whose word is not single. Sirach names the very duplicity Yahuah will *cut off* (Psalm 12:3).'),
+    ('canon','psalms',12,2,'apocrypha','ecclesiasticus',5,14,'extras',
+      E'*Be not called a whisperer, and lie not in wait with your tongue: for a foul shame is upon the thief, and an evil condemnation upon the double tongue* (Sirach 5:14). The *flattering lips and... double heart* of Psalm 12:2 stand under Sirach''s sentence — *an evil condemnation upon the double tongue*. The two-faced, lying-in-wait speech of the psalm is the very thing the wise condemn.'),
+    ('canon','psalms',12,2,'apocrypha','ecclesiasticus',28,13,'extras',
+      E'*Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Sirach 28:13). They who *speak vanity every one with his neighbour: with flattering lips and with a double heart* (Psalm 12:2) are the whisperers and doubletongued Sirach curses — the speech that destroys the peace between neighbours. The double heart of the psalm is the doubletongue that has *destroyed many that were at peace*.'),
+
+    -- THREAD 3 (★★ KEYSTONE): The words of Yahuah are pure words, purified seven times
+    ('canon','psalms',12,6,'canon','psalms',19,7,'free',
+      E'*The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple* (Psalm 19:7). *The words of Yahuah (LORD) are pure words: as silver tried in a furnace of earth, purified seven times* (Psalm 12:6) is the twin of the psalter''s great Torah-hymn: the word of man is double and flattering, but the law of Yahuah is PERFECT — His refined, tried, single Word. The pure words are His Torah, not abolished but purified seven times.'),
+    ('canon','psalms',12,6,'canon','psalms',19,8,'free',
+      E'*The statutes of Yahuah (LORD) are right, rejoicing the heart: the commandment of Yahuah (LORD) is pure, enlightening the eyes* (Psalm 19:8). *The words of Yahuah (LORD) are pure words* (Psalm 12:6) is sung again here — *the commandment of Yahuah (LORD) is pure, enlightening the eyes*. The same word in both psalms: over against the impure, flattering lips of men, the commandment of Yahuah is PURE; His Torah is the silver tried sevenfold.'),
+    ('canon','psalms',12,6,'canon','proverbs',30,5,'free',
+      E'*Every word of Elohim (God) is pure: he is a shield unto them that put their trust in him* (Proverbs 30:5). *The words of Yahuah (LORD) are pure words: as silver tried in a furnace of earth, purified seven times* (Psalm 12:6) is Agur''s witness exactly — *Every word of Elohim (God) is pure*. The tried, purified word of the psalm is the shield of Proverbs: His word holds no dross, and Agur warns *Add thou not unto his words, lest he reprove thee* (Proverbs 30:6).'),
+
+    -- THREAD 4 (★): Thou shalt preserve them from this generation for ever (the word that stands)
+    ('canon','psalms',12,7,'canon','isaiah',40,8,'free',
+      E'*The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever* (Isaiah 40:8). *Thou shalt keep them, O Yahuah (LORD), thou shalt preserve them from this generation for ever* (Psalm 12:7): the pure words of v.6 are KEPT — though the faithful fail and the flower of men fades, *the word of our Elohim (God) shall stand for ever*. The word of man is grass; the Word of Yahuah is preserved from this generation and every generation, for ever.'),
+    ('canon','psalms',12,7,'canon','matthew',24,35,'free',
+      E'*Heaven and earth shall pass away, but my words shall not pass away* (Matthew 24:35). *Thou shalt keep them, O Yahuah (LORD), thou shalt preserve them... for ever* (Psalm 12:7) is set forward by the Formed Son in his own voice — *my words shall not pass away*. The preserved word of the psalm is the Word that outlasts heaven and earth; the One who speaks it is Yahuah''s own expressed Word, and he has a Father.'),
+    ('canon','psalms',12,7,'canon','1-peter',1,25,'free',
+      E'*But the word of Yahuah (Lord) endureth for ever. And this is the word which by the gospel is preached unto you* (1 Peter 1:25). *Thou shalt keep them, O Yahuah (LORD), thou shalt preserve them from this generation for ever* (Psalm 12:7) is sealed by the apostle, who quotes Isaiah 40 — *all flesh is as grass* (1 Peter 1:24) — and answers, *the word of Yahuah (Lord) endureth for ever*. The flattering lips of men perish; the preserved Word abides.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-12-the-faithful-fail-from-among-the-children-of-men',
+       E'The godly man ceaseth — the faithful fail from among the children of men',
+       E'The psalm opens with a cry over a thinning faithful: *Help, Yahuah (LORD); for the godly man ceaseth; for the faithful fail from among the children of men* (Psalm 12:1). This is the prophets'' remnant-lament, NOT a verdict that Yahuah''s people are cast off. Micah grieves the same loss: *The good man is perished out of the earth: and there is none upright among men: they all lie in wait for blood; they hunt every man his brother with a net* (Micah 7:2) — yet his very chapter ends in mercy, *He will turn again, he will have compassion upon us; he will subdue our iniquities* (Micah 7:19), *Thou wilt perform the truth to Jacob, and the mercy to Abraham, which thou hast sworn unto our fathers from the days of old* (Micah 7:20). Isaiah names the same vanishing as a hidden MERCY: *The righteous perisheth, and no man layeth it to heart: and merciful men are taken away, none considering that the righteous is taken away from the evil to come* (Isaiah 57:1). The faithful failing is the remnant drawn thin in a faithless generation and gathered out of the evil to come — never the end of the covenant people. (Romans 11:1-2 guards it: Yahuah hath NOT cast away his people whom he foreknew.) Against this dark backdrop the psalm sets the pure, preserved Word that no failing of men can touch.',
+       sv.verse_id, ev.verse_id, 'free', 22275
+  FROM _s302_ps012_lookup sv, _s302_ps012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=12 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 [extras]
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-12-flattering-lips-and-a-double-heart',
+       E'Flattering lips and a double heart — the double tongue Yahuah cuts off',
+       E'The faithful having ceased, the speech of men is laid bare: *They speak vanity every one with his neighbour: with flattering lips and with a double heart do they speak* (Psalm 12:2). And Yahuah''s answer: *Yahuah (LORD) shall cut off all flattering lips, and the tongue that speaketh proud things* (Psalm 12:3), the tongue of those who boast *With our tongue will we prevail; our lips are our own: who is lord over us?* (Psalm 12:4). The wisdom-witnesses name this very sin — the DOUBLE tongue. Ben Sira warns, *Winnow not with every wind, and go not into every way: for so does the sinner that has a double tongue* (Sirach 5:9), and seals it, *Be not called a whisperer, and lie not in wait with your tongue: for a foul shame is upon the thief, and an evil condemnation upon the double tongue* (Sirach 5:14). And the whisperer is cursed outright: *Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Sirach 28:13). The *double heart* of the psalm is the *double tongue* of the wise: the two-faced, flattering, peace-destroying speech that Yahuah will cut off. Over against it the next verses set the SINGLE, pure word of Yahuah, tried seven times.',
+       sv.verse_id, ev.verse_id, 'extras', 22278
+  FROM _s302_ps012_lookup sv, _s302_ps012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=12 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★ KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-12-the-words-of-yahuah-are-pure-words-purified-seven-times',
+       E'The words of Yahuah are pure words — silver tried, purified seven times',
+       E'The keystone of the psalm turns from the lying lips of men to the Word of Yahuah Himself: *The words of Yahuah (LORD) are pure words: as silver tried in a furnace of earth, purified seven times* (Psalm 12:6). Where man''s word is double and flattering (12:2), Yahuah''s word is SINGLE, refined, and pure — silver run seven times through the fire until no dross remains. This is the twin of the psalter''s great Torah-hymn: *The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple* (Psalm 19:7); *The statutes of Yahuah (LORD) are right, rejoicing the heart: the commandment of Yahuah (LORD) is pure, enlightening the eyes* (Psalm 19:8). The pure words of Psalm 12 are the perfect law of Psalm 19 — His Torah, not abolished but PURIFIED. Agur bears the same witness: *Every word of Elohim (God) is pure: he is a shield unto them that put their trust in him* (Proverbs 30:5), and warns *Add thou not unto his words, lest he reprove thee, and thou be found a liar* (Proverbs 30:6). The word of man fails and flatters; the Word of Yahuah is pure, tried sevenfold, a shield to all who trust it — and, as the next verse declares, kept and preserved for ever.',
+       sv.verse_id, ev.verse_id, 'free', 22281
+  FROM _s302_ps012_lookup sv, _s302_ps012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=12 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-12-thou-shalt-preserve-them-from-this-generation-for-ever',
+       E'Thou shalt preserve them from this generation for ever — the Word that stands',
+       E'The pure words of v.6 are not only refined but KEPT: *Thou shalt keep them, O Yahuah (LORD), thou shalt preserve them from this generation for ever* (Psalm 12:7). Though *the godly man ceaseth* and *the wicked walk on every side, when the vilest men are exalted* (12:1,8), the Word that judges them is preserved through every generation. Isaiah sets the contrast plainly: *The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever* (Isaiah 40:8). The Formed Son sets it forward in his own voice: *Heaven and earth shall pass away, but my words shall not pass away* (Matthew 24:35). And the apostle seals it, quoting Isaiah 40 by name — *For all flesh is as grass, and all the glory of man as the flower of grass. The grass withereth, and the flower thereof falleth away: But the word of Yahuah (Lord) endureth for ever* (1 Peter 1:24-25). The faithful fail, the vilest are exalted, the flower of men fades — but the pure Word of Yahuah is preserved from this generation for ever. The word of man fails; the Word of Yahuah stands.',
+       sv.verse_id, ev.verse_id, 'free', 22284
+  FROM _s302_ps012_lookup sv, _s302_ps012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=12 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *The good man is perished out of the earth: and there is none upright among men* (Micah 7:2) — the godly man ceasing (12:1) is Micah''s lament; the chapter ends in mercy (7:19-20), no casting-off.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-12-the-faithful-fail-from-among-the-children-of-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *The righteous perisheth, and no man layeth it to heart... taken away from the evil to come* (Isaiah 57:1) — the faithful failing (12:1) is the remnant drawn out of the evil to come, not the end of the covenant people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=57 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-12-the-faithful-fail-from-among-the-children-of-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members [extras]
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Winnow not with every wind... for so does the sinner that has a double tongue* (Sirach 5:9) — the *double heart* of 12:2 is the wisdom-witness''s double tongue, the word that is not single.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=5 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-12-flattering-lips-and-a-double-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*an evil condemnation upon the double tongue* (Sirach 5:14) — the flattering, double-hearted lips of 12:2 stand under the wise''s sentence.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=5 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-12-flattering-lips-and-a-double-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Sirach 28:13) — the double heart of 12:2 is the doubletongue that destroys the peace between neighbours.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=28 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-12-flattering-lips-and-a-double-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★ KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *The law of Yahuah (LORD) is perfect, converting the soul* (Psalm 19:7) — the pure words tried sevenfold (12:6) are the PERFECT Torah; the word of man is double, the law of Yahuah single and refined.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-12-the-words-of-yahuah-are-pure-words-purified-seven-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the commandment of Yahuah (LORD) is pure, enlightening the eyes* (Psalm 19:8) — the same word as 12:6: the commandment of Yahuah is PURE, over against the impure flattering lips of men.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-12-the-words-of-yahuah-are-pure-words-purified-seven-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Every word of Elohim (God) is pure: he is a shield unto them that put their trust in him* (Proverbs 30:5) — Agur''s witness exact to 12:6; the tried word holds no dross and shields all who trust it.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=30 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-12-the-words-of-yahuah-are-pure-words-purified-seven-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever* (Isaiah 40:8) — the preserved words of 12:7 stand though the flower of men fades.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-12-thou-shalt-preserve-them-from-this-generation-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Heaven and earth shall pass away, but my words shall not pass away* (Matthew 24:35) — the Formed Son sets 12:7 forward in his own voice; the preserved Word outlasts heaven and earth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-12-thou-shalt-preserve-them-from-this-generation-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the word of Yahuah (Lord) endureth for ever* (1 Peter 1:25) — the apostle seals 12:7, quoting Isaiah 40; the flattering lips perish, the preserved Word abides.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps012_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s302_ps012_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-12-thou-shalt-preserve-them-from-this-generation-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_13.sql (Psalm 13) -----
+-- Chapter: Psalm 13 — A SHORT LAMENT-TO-TRUST. The fourfold *How long?* opens it: *How long wilt
+-- thou forget me, O Yahuah (LORD)? for ever? how long wilt thou hide thy face from me? How long
+-- shall I take counsel in my soul, having sorrow in my heart daily? how long shall mine enemy be
+-- exalted over me?* (v.1-2) — the hidden-face cry of the afflicted, the same cry of Psalm 22:1
+-- (*why hast thou forsaken me?*) and Psalm 89:46 (*How long, Yahuah? wilt thou hide thyself for
+-- ever?*), carried FORWARD to the martyrs under the altar — *How long, O Yahuah (Lord), holy and
+-- true, dost thou not judge and avenge our blood?* (Revelation 6:10). Then the prayer for light:
+-- *lighten mine eyes, lest I sleep the sleep of death* (v.3) — deliverance from the sleep-of-death,
+-- the eyes lightened, against the slept-and-awaked confidence of Psalm 3:5 / 4:8. Then the turn:
+-- *But I have trusted in thy mercy; my heart shall rejoice in thy salvation. I will sing unto
+-- Yahuah (LORD), because he hath dealt bountifully with me* (v.5-6) — lament resolved into trust,
+-- the hope Paul carries forward (*the Elohim of hope fill you with all joy*, Romans 15:13) and the
+-- psalter's own *our heart shall rejoice in him, because we have trusted in his holy name*
+-- (Psalm 33:21).
+-- Tag: ps013   Temp view: _s302_ps013_lookup
+-- Sort band: base 22300, step 3 -> threads at 22300, 22303, 22306 (3 threads)
+-- Source of EVERY row: 'canon','psalms',13,v
+--
+-- Psalm 13 coverage:
+--   ★ v.1-2 (How long wilt thou forget me, O Yahuah? for ever? how long wilt thou hide thy face
+--          from me? ... how long shall mine enemy be exalted over me?)
+--        NT:     ★ Revelation 6:10 (the martyrs under the altar cry How long... dost thou not judge
+--                and avenge our blood?) — THREAD 1 (the How-long cry carried forward)
+--        Extras: none warranted — no clean restored-witness sharpens the hidden-face cry beyond the
+--                Tanakh laterals and the martyrs' cry; not forced.
+--        Tanakh: ★ Psalm 22:1 (My Elohim, my Elohim, why hast thou forsaken me?), ★ Psalm 89:46
+--                (How long, Yahuah? wilt thou hide thyself for ever?) — THREAD 1
+--   ★ v.3 (Consider and hear me, O Yahuah my Elohim: lighten mine eyes, lest I sleep the sleep of death)
+--        NT:     none warranted distinct — the resurrection-light forward-weave is handled as figure
+--                in the prose (the Formed Son who lightens the eyes from the sleep of death); no single
+--                clean NT verse warrants a separate member here over the psalter's own sleep-laterals.
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 3:5 (I laid me down and slept; I awaked; for Yahuah sustained me), Psalm 4:8
+--                (I will both lay me down in peace, and sleep: for thou makest me dwell in safety) — THREAD 2
+--   ★ v.5-6 (But I have trusted in thy mercy; my heart shall rejoice in thy salvation. I will sing
+--          unto Yahuah, because he hath dealt bountifully with me)
+--        NT:     ★ Romans 15:13 (Now the Elohim of hope fill you with all joy and peace in believing,
+--                that ye may abound in hope) — THREAD 3 (trust resolved into rejoicing-hope)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 33:21 (For our heart shall rejoice in him, because we have trusted in his
+--                holy name), Psalm 33:22 (Let thy mercy, O Yahuah, be upon us, according as we hope in
+--                thee) — THREAD 3
+--   v.4 (Lest mine enemy say, I have prevailed against him; and those that trouble me rejoice when I
+--        am moved)
+--        NT/Extras/Tanakh: none warranted distinct — the enemy's-boast verse is the hinge between the
+--          cry (v.1-3) and the turn (v.5-6); gathered into the prose of THREAD 1, not a separate add.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-13-the-fourfold-how-long-wilt-thou-hide-thy-face — NT (Revelation 6) + Tanakh (Psalm 22,
+--      Psalm 89) [free] (★ the hidden-face How-long cry; the afflicted, the forsaken-cry, the martyrs)
+--   2. psalm-13-lighten-mine-eyes-lest-i-sleep-the-sleep-of-death — Tanakh (Psalm 3, Psalm 4) [free]
+--      (the eyes lightened from the sleep of death; the slept-and-awaked confidence; the Formed Son
+--      who lightens, handled as figure in prose)
+--   3. psalm-13-but-i-have-trusted-in-thy-mercy — NT (Romans 15) + Tanakh (Psalm 33) [free]
+--      (the turn from lament to trust; trusted-in-mercy resolved into rejoicing-hope)
+--
+-- Framing notes:
+--   ★ THE HOW-LONG CRY (THREAD 1): the fourfold *How long?* — *How long wilt thou forget me, O Yahuah
+--      (LORD)? for ever? how long wilt thou hide thy face from me?* (13:1) — is the cry of the afflicted
+--      who is not abandoned but feels the hidden face. It is the same lament that opens Psalm 22, *My
+--      Elohim (God), my Elohim (God), why hast thou forsaken me?* (22:1) — the forsaken-cry the Formed
+--      Son takes on his own lips in flesh — and the same *How long, Yahuah (LORD)? wilt thou hide
+--      thyself for ever?* (89:46) of the Davidic-covenant psalm. The cry is carried FORWARD to the
+--      souls under the altar: *they cried with a loud voice, saying, How long, O Yahuah (Lord), holy
+--      and true, dost thou not judge and avenge our blood on them that dwell on the earth?*
+--      (Revelation 6:10). The how-long of the single lamenter is the how-long of the whole suffering
+--      people, the enemy *exalted over me* (13:2) until Yahuah arises. NOT despair — the very cry is
+--      addressed TO Yahuah, the prayer of one who knows whose face is hidden.
+--   ★ LIGHTEN MINE EYES (THREAD 2): *Consider and hear me, O Yahuah (LORD) my Elohim (God): lighten
+--      mine eyes, lest I sleep the sleep of death* (13:3) — the prayer for the eyes to be lightened,
+--      lest the sleep close into the sleep of death. The psalter answers it in the slept-and-awaked
+--      confidence: *I laid me down and slept; I awaked; for Yahuah (LORD) sustained me* (3:5), and *I
+--      will both lay me down in peace, and sleep: for thou, Yahuah (LORD), only makest me dwell in
+--      safety* (4:8). Read as figure, the eyes lightened from the sleep of death is the resurrection-
+--      light: the Formed Son, who is the light, lightens the eyes and brings up from sleep. The one
+--      who prays *lighten mine eyes* trusts the One who sustains through the night and wakes the
+--      sleeper.
+--   ★ I HAVE TRUSTED IN THY MERCY (THREAD 3): the turn — *But I have trusted in thy mercy; my heart
+--      shall rejoice in thy salvation. I will sing unto Yahuah (LORD), because he hath dealt
+--      bountifully with me* (13:5-6). The lament resolves into trust before the deliverance is seen;
+--      the heart rejoices in salvation already. The psalter sings the same resolve: *For our heart
+--      shall rejoice in him, because we have trusted in his holy name. Let thy mercy, O Yahuah (LORD),
+--      be upon us, according as we hope in thee* (33:21-22) — trusted-in-mercy, heart-rejoicing, hope
+--      in His mercy, the same triad. And Paul carries the trust-into-rejoicing FORWARD: *Now the
+--      Elohim (God) of hope fill you with all joy and peace in believing, that ye may abound in hope,
+--      through the power of the Ruach HaKodesh (Holy Spirit)* (Romans 15:13). The one who *trusted in
+--      thy mercy* abounds in the hope that fills with joy.
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — a deliberate, recorded answer. This is a
+--      lean six-verse lament; the load-bearing weaves are the Tanakh laterals (the forsaken-cry, the
+--      hide-thyself cry, the slept-and-awaked psalms, the trust-and-hope psalm) and the NT forward
+--      (the martyrs' How-long, the Elohim of hope). No restored witness was forced.
+--   VERSES WITH NO ADD: v.4 (*Lest mine enemy say, I have prevailed against him*) — the enemy's-boast
+--      hinge between the cry and the turn; gathered into THREAD 1's prose, no separate framework-bearing
+--      target warranted.
+
+CREATE TEMP VIEW _s302_ps013_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): The fourfold How long — wilt thou hide thy face from me
+    ('canon','psalms',13,1,'canon','psalms',22,1,'free',
+      E'*My Elohim (God), my Elohim (God), why hast thou forsaken me? why art thou so far from helping me, and from the words of my roaring?* (Psalm 22:1). The cry *How long wilt thou forget me, O Yahuah (LORD)? for ever? how long wilt thou hide thy face from me?* (Psalm 13:1) is the same lament that opens Psalm 22 — the forsaken-cry of the afflicted who is not abandoned but feels the face hidden. It is the cry the Formed Son takes on his own lips in flesh; the one who feels forgotten still cries TO Yahuah, knowing whose face is hidden.'),
+    ('canon','psalms',13,1,'canon','psalms',89,46,'free',
+      E'*How long, Yahuah (LORD)? wilt thou hide thyself for ever? shall thy wrath burn like fire?* (Psalm 89:46). The fourfold *How long... how long wilt thou hide thy face from me?* (Psalm 13:1) is sung again in the great Davidic-covenant psalm — *How long, Yahuah (LORD)? wilt thou hide thyself for ever?* The hidden face is the felt absence under affliction, and the very asking is the prayer of one who trusts the covenant-keeping Yahuah to turn and remember.'),
+    ('canon','psalms',13,2,'canon','revelation',6,10,'free',
+      E'*And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* (Revelation 6:10). The how-long of the single lamenter — *how long shall mine enemy be exalted over me?* (Psalm 13:2) — is carried forward to the souls under the altar, who cry the same *How long, O Yahuah (Lord)?* The cry of one afflicted is the cry of the whole suffering people: the enemy exalted, the wicked unpunished, until Yahuah arises to judge and avenge.'),
+
+    -- THREAD 2 (★): Lighten mine eyes, lest I sleep the sleep of death
+    ('canon','psalms',13,3,'canon','psalms',3,5,'free',
+      E'*I laid me down and slept; I awaked; for Yahuah (LORD) sustained me* (Psalm 3:5). The prayer *lighten mine eyes, lest I sleep the sleep of death* (Psalm 13:3) is answered in the slept-and-awaked confidence of the neighbouring psalm — *I laid me down and slept; I awaked; for Yahuah (LORD) sustained me*. The eyes lightened from the sleep of death is the One who sustains through the night and brings up the sleeper; read as figure, it is the resurrection-light, the Formed Son who is the light and wakes those who sleep.'),
+    ('canon','psalms',13,3,'canon','psalms',4,8,'free',
+      E'*I will both lay me down in peace, and sleep: for thou, Yahuah (LORD), only makest me dwell in safety* (Psalm 4:8). Against the dread of *lest I sleep the sleep of death* (Psalm 13:3), the companion psalm lays down in peace — *I will both lay me down in peace, and sleep: for thou, Yahuah (LORD), only makest me dwell in safety*. The lamenter who fears the closing of the eyes is met by the trust that sleeps in safety; the lightening of the eyes is the same Yahuah who keeps the sleeper.'),
+
+    -- THREAD 3 (★): But I have trusted in thy mercy — the turn to rejoicing hope
+    ('canon','psalms',13,5,'canon','psalms',33,21,'free',
+      E'*For our heart shall rejoice in him, because we have trusted in his holy name* (Psalm 33:21). The turn *But I have trusted in thy mercy; my heart shall rejoice in thy salvation* (Psalm 13:5) is the psalter''s own resolve — *our heart shall rejoice in him, because we have trusted in his holy name*. Trusted, and therefore the heart rejoices: the same triad of trust-then-rejoicing, the lament resolved into joy before the deliverance is even seen.'),
+    ('canon','psalms',13,5,'canon','psalms',33,22,'free',
+      E'*Let thy mercy, O Yahuah (LORD), be upon us, according as we hope in thee* (Psalm 33:22). *But I have trusted in thy mercy* (Psalm 13:5) is the very prayer of the psalter — *Let thy mercy, O Yahuah (LORD), be upon us, according as we hope in thee*. The mercy trusted is the mercy hoped in; the lamenter rests his whole turn on Yahuah''s covenant mercy, the hope that does not put to shame.'),
+    ('canon','psalms',13,5,'canon','romans',15,13,'free',
+      E'*Now the Elohim (God) of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Ruach HaKodesh (Holy Spirit)* (Romans 15:13). The trust that turns lament into rejoicing — *I have trusted in thy mercy; my heart shall rejoice in thy salvation* (Psalm 13:5) — is carried forward to the *Elohim (God) of hope* who fills with *all joy and peace in believing*. The one who trusted in mercy is the one who abounds in hope; the rejoicing heart of the psalm is the joy the Spirit fills.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps013_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps013_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-13-the-fourfold-how-long-wilt-thou-hide-thy-face',
+       E'How long wilt thou hide thy face from me — the cry of the afflicted',
+       E'The psalm opens with a fourfold *How long?*: *How long wilt thou forget me, O Yahuah (LORD)? for ever? how long wilt thou hide thy face from me? How long shall I take counsel in my soul, having sorrow in my heart daily? how long shall mine enemy be exalted over me?* (Psalm 13:1-2). This is the cry of one afflicted who is not abandoned but feels the face hidden — and the very asking is addressed TO Yahuah, the prayer of one who knows whose face it is. It is the same lament that opens Psalm 22, *My Elohim (God), my Elohim (God), why hast thou forsaken me? why art thou so far from helping me?* (22:1) — the forsaken-cry the Formed Son takes on his own lips in flesh — and the same *How long, Yahuah (LORD)? wilt thou hide thyself for ever? shall thy wrath burn like fire?* (89:46) of the great Davidic-covenant psalm. And the cry is carried FORWARD to the souls under the altar: *they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* (Revelation 6:10). The how-long of the single lamenter is the how-long of the whole suffering people — the enemy *exalted over me* (13:2), the wicked unpunished — until Yahuah arises to remember, to judge, to avenge. Not despair: the cry itself is faith, the prayer that the hidden face will turn.',
+       sv.verse_id, ev.verse_id, 'free', 22300
+  FROM _s302_ps013_lookup sv, _s302_ps013_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=13 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-13-lighten-mine-eyes-lest-i-sleep-the-sleep-of-death',
+       E'Lighten mine eyes, lest I sleep the sleep of death',
+       E'From the cry the psalm turns to a prayer for light: *Consider and hear me, O Yahuah (LORD) my Elohim (God): lighten mine eyes, lest I sleep the sleep of death; Lest mine enemy say, I have prevailed against him* (Psalm 13:3-4). The eyes growing dim is the failing of life itself; the prayer is that they be lightened before the sleep closes into the sleep of death. The psalter answers it in the slept-and-awaked confidence of the neighbouring psalms: *I laid me down and slept; I awaked; for Yahuah (LORD) sustained me* (3:5), and *I will both lay me down in peace, and sleep: for thou, Yahuah (LORD), only makest me dwell in safety* (4:8). The One who sustains through the night and keeps the sleeper in safety is the One who lightens the eyes. Read as figure, the eyes lightened from the sleep of death is the resurrection-light — the Formed Son, who is the light, lightens the eyes and brings up those who sleep. The lamenter who dreads the closing of his eyes prays to the very One who wakes the sleeper.',
+       sv.verse_id, ev.verse_id, 'free', 22303
+  FROM _s302_ps013_lookup sv, _s302_ps013_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=13 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=13 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-13-but-i-have-trusted-in-thy-mercy',
+       E'But I have trusted in thy mercy — the turn from lament to rejoicing',
+       E'The lament turns to trust before the deliverance is ever seen: *But I have trusted in thy mercy; my heart shall rejoice in thy salvation. I will sing unto Yahuah (LORD), because he hath dealt bountifully with me* (Psalm 13:5-6). The *But* is the hinge of the whole psalm — the how-long cry resolves into a heart already rejoicing in salvation, a mouth already singing. The psalter sings the same resolve: *For our heart shall rejoice in him, because we have trusted in his holy name. Let thy mercy, O Yahuah (LORD), be upon us, according as we hope in thee* (33:21-22) — trusted, and therefore the heart rejoices; mercy trusted, mercy hoped in, the same triad of trust-then-joy. And Paul carries the trust-into-rejoicing FORWARD to the *Elohim (God) of hope*: *Now the Elohim (God) of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Ruach HaKodesh (Holy Spirit)* (Romans 15:13). The one who *trusted in thy mercy* is the one who abounds in hope; the rejoicing heart of the psalm is the joy the Spirit fills, the lament become a song because Yahuah *hath dealt bountifully with me*.',
+       sv.verse_id, ev.verse_id, 'free', 22306
+  FROM _s302_ps013_lookup sv, _s302_ps013_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=13 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *My Elohim (God), my Elohim (God), why hast thou forsaken me?* (Psalm 22:1) — the *how long wilt thou hide thy face* (13:1) is the same forsaken-cry, the lament the Formed Son takes on his lips.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps013_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=13 AND sv.verse_number=1
+  JOIN _s302_ps013_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-13-the-fourfold-how-long-wilt-thou-hide-thy-face'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *How long, Yahuah (LORD)? wilt thou hide thyself for ever?* (Psalm 89:46) — the fourfold *How long... wilt thou hide thy face* (13:1) sung again in the Davidic-covenant psalm.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps013_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=13 AND sv.verse_number=1
+  JOIN _s302_ps013_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-13-the-fourfold-how-long-wilt-thou-hide-thy-face'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *they cried with a loud voice... How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood?* (Revelation 6:10) — the how-long of *mine enemy be exalted over me* (13:2) carried forward to the martyrs under the altar.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps013_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=13 AND sv.verse_number=2
+  JOIN _s302_ps013_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-13-the-fourfold-how-long-wilt-thou-hide-thy-face'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I laid me down and slept; I awaked; for Yahuah (LORD) sustained me* (Psalm 3:5) — *lighten mine eyes, lest I sleep the sleep of death* (13:3) answered in the slept-and-awaked confidence; the Formed Son who wakes the sleeper.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps013_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s302_ps013_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-13-lighten-mine-eyes-lest-i-sleep-the-sleep-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will both lay me down in peace, and sleep: for thou, Yahuah (LORD), only makest me dwell in safety* (Psalm 4:8) — against the dread of *the sleep of death* (13:3), the trust that sleeps in safety; the same Yahuah keeps the sleeper.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps013_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s302_ps013_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-13-lighten-mine-eyes-lest-i-sleep-the-sleep-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*For our heart shall rejoice in him, because we have trusted in his holy name* (Psalm 33:21) — *I have trusted in thy mercy; my heart shall rejoice* (13:5) is the psalter''s own trust-then-rejoicing.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps013_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=13 AND sv.verse_number=5
+  JOIN _s302_ps013_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-13-but-i-have-trusted-in-thy-mercy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Let thy mercy, O Yahuah (LORD), be upon us, according as we hope in thee* (Psalm 33:22) — *I have trusted in thy mercy* (13:5): the mercy trusted is the mercy hoped in.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps013_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=13 AND sv.verse_number=5
+  JOIN _s302_ps013_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-13-but-i-have-trusted-in-thy-mercy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Now the Elohim (God) of hope fill you with all joy and peace in believing, that ye may abound in hope* (Romans 15:13) — *I have trusted in thy mercy; my heart shall rejoice* (13:5) carried forward to the joy the Spirit fills.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps013_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=13 AND sv.verse_number=5
+  JOIN _s302_ps013_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-13-but-i-have-trusted-in-thy-mercy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
