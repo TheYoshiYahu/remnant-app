@@ -4586,6 +4586,2394 @@ SELECT t.id, cr.id, 6, E'*arrayed in fine linen, clean and white: for the fine l
  WHERE t.slug='proverbs-31-the-bride-made-ready-yasharel-restored'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_proverbs_5.sql (Proverbs 5) -----
+-- Chapter: Proverbs 5 — the first FULL strange-woman / adultery discourse, the seventh word set as a fatherly warning. The chapter runs three movements: the seduction-unto-death of the strange woman whose *lips drop as an honeycomb* but whose *end is bitter as wormwood* and whose *feet go down to death* (5:3-6); the bitter lament of the ruined man who *hated instruction* (5:11-14); and — the framework heart — the call to covenant-marriage faithfulness, *Drink waters out of thine own cistern... rejoice with the wife of thy youth* (5:15-19). It closes on the all-seeing eye — *the ways of man are before the eyes of Yahuah (LORD)* (5:21) — and on sin self-binding — *His own iniquities shall take the wicked himself* (5:22). The seventh commandment (Exodus 20:14 / Deuteronomy 5:18) stands behind the whole chapter: Torah affirmed, not abolished. Pairs with the ch2 and ch7 strange-woman discourses.
+-- Tag: pr05   Temp view: _s304_pr05_lookup
+-- Sort band: base 28100, step 3 -> threads at 28100, 28103, 28106, 28109, 28112 (5 threads)
+-- Source of EVERY row: 'canon','proverbs',5,v
+--
+-- Proverbs 5 coverage:
+--   ★ v.3-6 (the lips of a strange woman drop as an honeycomb... her end is bitter as wormwood... Her feet go down to death; her steps take hold on hell)
+--        NT:     ★ 2 Peter 2:18-19 (great swelling words of vanity, they allure through the lusts of the flesh... while they promise them liberty, they themselves are the servants of corruption) — THREAD 1
+--        Extras: ★ Sirach 9:3 (Meet not with an harlot, lest you fall into her snares); Sirach 9:8 (Turn away your eye from a beautiful woman... for many have been deceived) — THREAD 1
+--        Tanakh: ★★ Proverbs 2:18-19 (her house inclineth unto death... None that go unto her return again); Proverbs 7:26-27 (many strong men have been slain by her. Her house is the way to hell); Proverbs 14:12 (a way which seemeth right unto a man, but the end thereof are the ways of death) — THREAD 1
+--   v.7-10 (Remove thy way far from her... Lest thou give thine honour unto others, and thy years unto the cruel)
+--        folded into THREAD 1 (the "remove thy way far from her" is the practical edge of the death-figure; 7:25 lateral touched in prose)
+--   v.11-14 (And thou mourn at the last... How have I hated instruction, and my heart despised reproof; And have not obeyed the voice of my teachers)
+--        NT:     none warranted distinct (the despised-reproof lament carried whole by Proverbs laterals)
+--        Extras: none warranted distinct
+--        Tanakh: ★ Proverbs 1:24-26 (I have called, and ye refused... I also will laugh at your calamity); Proverbs 29:1 (He, that being often reproved hardeneth his neck, shall suddenly be destroyed) — THREAD 2
+--   ★★ v.15-19 (Drink waters out of thine own cistern... rejoice with the wife of thy youth... be thou ravished always with her love) — THE FRAMEWORK HEART (covenant-marriage faithfulness)
+--        NT:     ★ Hebrews 13:4 (Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge) — THREAD 3
+--        Extras: none warranted distinct (the own-fountain figure carried by Song + Malachi; Sirach pulled into THREAD 1/4)
+--        Tanakh: ★★ Malachi 2:14-15 (the wife of thy youth... yet is she thy companion, and the wife of thy covenant... That he might seek a godly seed); Genesis 2:24 (shall cleave unto his wife: and they shall be one flesh); Song of Solomon 4:12 (A garden inclosed... a spring shut up, a fountain sealed); Exodus 20:14 / Deuteronomy 5:18 (Thou shalt not commit adultery) — THREAD 3 (the seventh word behind the whole chapter)
+--   v.20 (why wilt thou, my son, be ravished with a strange woman, and embrace the bosom of a stranger?)
+--        folded into THREAD 3 (the contrast that the own-fountain answers; the "strange woman" reaches back to THREAD 1)
+--   ★ v.21 (For the ways of man are before the eyes of Yahuah (LORD), and he pondereth all his goings)
+--        NT:     ★ Hebrews 4:13 (all things are naked and opened unto the eyes of him with whom we have to do) — THREAD 4
+--        Extras: ★ Sirach 23:18-19 (Who seeth me?... the eyes of Yahuah (God) are ten thousand times brighter than the sun, beholding all the ways of men) — THREAD 4
+--        Tanakh: ★ Proverbs 15:3 (The eyes of Yahuah (LORD) are in every place, beholding the evil and the good) — THREAD 4
+--   ★ v.22-23 (His own iniquities shall take the wicked himself... He shall die without instruction)
+--        NT:     ★ Galatians 6:7-8 (whatsoever a man soweth, that shall he also reap... he that soweth to his flesh shall of the flesh reap corruption) — THREAD 5
+--        Extras: none warranted distinct
+--        Tanakh: ★ Numbers 32:23 (ye have sinned against Yahuah (LORD): and be sure your sin will find you out) — THREAD 5
+--   v.1-2 (My son, attend unto my wisdom... that thy lips may keep knowledge): none warranted (the standard fatherly preamble; folded contextually into the chapter frame, no thread)
+--
+-- Threads (slug — target libraries):
+--   1. proverbs-5-the-strange-womans-lips-drop-honeycomb-but-her-end-is-bitter-as-wormwood — Tanakh (Proverbs) + NT (2 Peter) + Extras (Sirach) [extras] (the seduction-unto-death figure; the way that seemeth right whose end is death; pairs with ch2/ch7)
+--   2. proverbs-5-thou-mourn-at-the-last-how-have-i-hated-instruction — Tanakh (Proverbs) [free] (the lament of the ruined man who despised reproof too late)
+--   3. proverbs-5-drink-waters-out-of-thine-own-cistern-rejoice-with-the-wife-of-thy-youth — Tanakh (Malachi, Genesis, Song, Exodus, Deuteronomy) + NT (Hebrews) [free] (★★ covenant-marriage faithfulness; the seventh word affirmed, not abolished)
+--   4. proverbs-5-the-ways-of-man-are-before-the-eyes-of-yahuah — Tanakh (Proverbs) + NT (Hebrews) + Extras (Sirach) [extras] (the all-seeing eye; nothing hid from Yahuah)
+--   5. proverbs-5-his-own-iniquities-shall-take-the-wicked-himself — Tanakh (Numbers) + NT (Galatians) [free] (sin self-binding; whatsoever a man soweth he reaps; your sin will find you out)
+--
+-- Framing notes:
+--   ★ STRANGE WOMAN (THREAD 1): *For the lips of a strange woman drop as an honeycomb, and her mouth is smoother than oil: But her end is bitter as wormwood, sharp as a twoedged sword. Her feet go down to death; her steps take hold on hell* (5:3-5). The honey-then-wormwood figure is the seduction-unto-death the whole book names: *her house inclineth unto death, and her paths unto the dead. None that go unto her return again* (2:18-19); *many strong men have been slain by her. Her house is the way to hell, going down to the chambers of death* (7:26-27). It is the very paradigm of *There is a way which seemeth right unto a man, but the end thereof are the ways of death* (14:12) — the sweet beginning, the bitter end. The restored witness guards the same gate — *Meet not with an harlot, lest you fall into her snares* (Sirach 9:3); *Turn away your eye from a beautiful woman... for many have been deceived by the beauty of a woman* (Sirach 9:8). And the NT carries the figure forward into the false teachers who seduce by the same flattery and the same false promise: *when they speak great swelling words of vanity, they allure through the lusts of the flesh... While they promise them liberty, they themselves are the servants of corruption* (2 Peter 2:18-19). The strange woman is VICTIM-and-snare both — the warning dismantles the seduction, not the person; the son is bidden *Remove thy way far from her* (5:8).
+--   ★ THE LAMENT TOO LATE (THREAD 2): *And thou mourn at the last, when thy flesh and thy body are consumed, And say, How have I hated instruction, and my heart despised reproof; And have not obeyed the voice of my teachers* (5:11-13). This is the cry Wisdom foretold at the book's opening — *Because I have called, and ye refused... I also will laugh at your calamity* (1:24-26) — and the doom of the hardened neck: *He, that being often reproved hardeneth his neck, shall suddenly be destroyed, and that without remedy* (29:1). The reproof despised in the day of choosing becomes the reproof mourned in the day of ruin.
+--   ★★ THE OWN CISTERN / WIFE OF THY YOUTH (THREAD 3): *Drink waters out of thine own cistern, and running waters out of thine own well... rejoice with the wife of thy youth* (5:15-18) — the framework heart of the chapter, covenant-marriage faithfulness. Malachi names the same wife and the same covenant: *Yahuah (LORD) hath been witness between thee and the wife of thy youth, against whom thou hast dealt treacherously: yet is she thy companion, and the wife of thy covenant* (2:14), and gives the reason — *That he might seek a godly seed* (2:15), tying marriage to the seed-of-promise itself. It reaches back to the one-flesh ordinance of the garden — *shall cleave unto his wife: and they shall be one flesh* (Genesis 2:24) — and the Song sings the sealed, kept fountain — *A garden inclosed is my sister, my spouse; a spring shut up, a fountain sealed* (4:12). Behind the whole chapter stands the seventh word, unrepealed: *Thou shalt not commit adultery* (Exodus 20:14; Deuteronomy 5:18) — and the NT keeps it whole, never abolishing it: *Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge* (Hebrews 13:4). The own-fountain is the covenant kept; the strange woman is the covenant betrayed.
+--   ★ THE ALL-SEEING EYE (THREAD 4): *For the ways of man are before the eyes of Yahuah (LORD), and he pondereth all his goings* (5:21) — the answer to the adulterer who thinks himself hidden. The same book says it plainly: *The eyes of Yahuah (LORD) are in every place, beholding the evil and the good* (15:3). The restored witness draws the very self-deceiving thought and shatters it: *A man that breaks wedlock, saying thus in his heart, Who seeth me?... knoweth not that the eyes of Yahuah (God) are ten thousand times brighter than the sun, beholding all the ways of men* (Sirach 23:18-19). And the NT seals it: *all things are naked and opened unto the eyes of him with whom we have to do* (Hebrews 4:13). There is no secret place for the strange-woman's path.
+--   ★ SIN SELF-BINDING (THREAD 5): *His own iniquities shall take the wicked himself, and he shall be holden with the cords of his sins* (5:22). The sin is its own snare and its own jailer — the principle the Torah set at Jordan: *be sure your sin will find you out* (Numbers 32:23) — and the NT keeps as unbreakable law: *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap. For he that soweth to his flesh shall of the flesh reap corruption* (Galatians 6:7-8). The man who would not be bound by instruction (5:23) is bound instead by the cords of his own sins.
+--   EXTRAS: Sirach (Ecclesiasticus) double-written edition 'apocrypha' + book 'ecclesiasticus'. Clean witnesses pulled: 9:3, 9:8 (the harlot/strange woman, THREAD 1), 23:18, 23:19 (the adulterer who says "who seeth me", THREAD 4). Sirach 23:22-27 (the wife that breaks wedlock) weighed but not forced — 23:18-19 carries the all-seeing-eye nexus cleanest against 5:21.
+
+CREATE TEMP VIEW _s304_pr05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: The strange woman's lips drop honeycomb but her end is bitter as wormwood
+    ('canon','proverbs',5,3,'canon','proverbs',2,18,'free',
+      E'*For her house inclineth unto death, and her paths unto the dead* (Proverbs 2:18). The honey-mouthed strange woman whose *lips of a strange woman drop as an honeycomb* (Proverbs 5:3) is the same figure the book has already drawn: *her house inclineth unto death, and her paths unto the dead*. The sweetness on the lips and the death at the end are one warning sounded twice.'),
+    ('canon','proverbs',5,4,'canon','proverbs',2,19,'free',
+      E'*None that go unto her return again, neither take they hold of the paths of life* (Proverbs 2:19). Why is *her end... bitter as wormwood, sharp as a twoedged sword* (Proverbs 5:4)? Because, as the book has said, *None that go unto her return again, neither take they hold of the paths of life*. The path that seems sweet does not loop back to life; it is a one-way descent.'),
+    ('canon','proverbs',5,5,'canon','proverbs',7,27,'free',
+      E'*Her house is the way to hell, going down to the chambers of death* (Proverbs 7:27). The feet of the strange woman that *go down to death; her steps take hold on hell* (Proverbs 5:5) are the same feet the ch7 discourse traces: *Her house is the way to hell, going down to the chambers of death*. The address is identical — the door of the strange woman opens on the grave.'),
+    ('canon','proverbs',5,5,'canon','proverbs',7,26,'free',
+      E'*For she hath cast down many wounded: yea, many strong men have been slain by her* (Proverbs 7:26). The death of *Her feet go down to death; her steps take hold on hell* (Proverbs 5:5) is no idle threat: *she hath cast down many wounded: yea, many strong men have been slain by her*. Strength is no defence; the strong men lie among her slain.'),
+    ('canon','proverbs',5,6,'canon','proverbs',14,12,'free',
+      E'*There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). The strange woman''s path, whose *ways are moveable, that thou canst not know them* (Proverbs 5:6), is the very paradigm of the way that *seemeth right unto a man, but the end thereof are the ways of death*. The honey on the lips is the seeming-right; the wormwood is the end.'),
+    ('canon','proverbs',5,4,'canon','2-peter',2,18,'extras',
+      E'*For when they speak great swelling words of vanity, they allure through the lusts of the flesh, through much wantonness, those that were clean escaped from them who live in error* (2 Peter 2:18). The smoother-than-oil mouth of the strange woman, whose *end is bitter as wormwood* (Proverbs 5:4), is carried forward in the false teachers who *speak great swelling words of vanity, they allure through the lusts of the flesh*. The seduction-by-flattery unto death is one figure across the library.'),
+    ('canon','proverbs',5,4,'canon','2-peter',2,19,'extras',
+      E'*While they promise them liberty, they themselves are the servants of corruption: for of whom a man is overcome, of the same is he brought in bondage* (2 Peter 2:19). The bitter end of *her end is bitter as wormwood* (Proverbs 5:4) is exactly this false promise: *they promise them liberty, they themselves are the servants of corruption*. The strange woman and the false teacher both sell a liberty that is bondage.'),
+    ('canon','proverbs',5,3,'apocrypha','ecclesiasticus',9,3,'extras',
+      E'*Meet not with an harlot, lest you fall into her snares* (Sirach 9:3). The honey-lipped strange woman of *the lips of a strange woman drop as an honeycomb* (Proverbs 5:3) is the harlot the restored witness warns against: *Meet not with an harlot, lest you fall into her snares*. The wisdom is one — keep far, for the snare is set in the sweetness.'),
+    ('canon','proverbs',5,3,'apocrypha','ecclesiasticus',9,8,'extras',
+      E'*Turn away your eye from a beautiful woman, and look not upon another''s beauty; for many have been deceived by the beauty of a woman; for herewith love is kindled as a fire* (Sirach 9:8). The smoother-than-oil mouth of Proverbs 5:3 deceives as the restored witness warns: *many have been deceived by the beauty of a woman; for herewith love is kindled as a fire*. The counsel matches the proverb''s — *Remove thy way far from her* (5:8) is *Turn away your eye*.'),
+
+    -- THREAD 2: Thou mourn at the last — How have I hated instruction
+    ('canon','proverbs',5,12,'canon','proverbs',1,24,'free',
+      E'*Because I have called, and ye refused; I have stretched out my hand, and no man regarded* (Proverbs 1:24). The latter-day cry *How have I hated instruction, and my heart despised reproof* (Proverbs 5:12) is the answer to Wisdom''s long-rejected call: *I have called, and ye refused; I have stretched out my hand, and no man regarded*. The hating of instruction was the refusing of the outstretched hand.'),
+    ('canon','proverbs',5,12,'canon','proverbs',1,26,'free',
+      E'*I also will laugh at your calamity; I will mock when your fear cometh* (Proverbs 1:26). The mourning *at the last, when thy flesh and thy body are consumed* (Proverbs 5:11) is the calamity Wisdom foretold: *I also will laugh at your calamity; I will mock when your fear cometh*. The reproof despised in the day of choosing is the calamity wept over in the day of ruin.'),
+    ('canon','proverbs',5,13,'canon','proverbs',29,1,'free',
+      E'*He, that being often reproved hardeneth his neck, shall suddenly be destroyed, and that without remedy* (Proverbs 29:1). The man who *have not obeyed the voice of my teachers, nor inclined mine ear to them that instructed me* (Proverbs 5:13) is the often-reproved one who *hardeneth his neck*, and so *shall suddenly be destroyed, and that without remedy*. The unbent neck breaks beyond mending.'),
+
+    -- THREAD 3: Drink waters out of thine own cistern — rejoice with the wife of thy youth (THE HEART)
+    ('canon','proverbs',5,18,'canon','malachi',2,14,'free',
+      E'*Yet ye say, Wherefore? Because Yahuah (LORD) hath been witness between thee and the wife of thy youth, against whom thou hast dealt treacherously: yet is she thy companion, and the wife of thy covenant* (Malachi 2:14). The very phrase of *rejoice with the wife of thy youth* (Proverbs 5:18) returns in Malachi as a covenant Yahuah Himself witnesses: *the wife of thy youth... is thy companion, and the wife of thy covenant*. Marriage is not appetite but covenant, and Yahuah stands witness to it.'),
+    ('canon','proverbs',5,18,'canon','malachi',2,15,'free',
+      E'*And did not he make one? Yet had he the residue of the spirit. And wherefore one? That he might seek a godly seed. Therefore take heed to your spirit, and let none deal treacherously against the wife of his youth* (Malachi 2:15). The own-fountain faithfulness of Proverbs 5:18 is bound by Malachi to the seed-of-promise itself: the one-flesh union is *That he might seek a godly seed*. Covenant marriage carries the godly seed; treachery against the wife of one''s youth strikes at the lineage of promise.'),
+    ('canon','proverbs',5,15,'canon','genesis',2,24,'free',
+      E'*Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh* (Genesis 2:24). The own cistern, the own well of *Drink waters out of thine own cistern* (Proverbs 5:15), is the one-flesh ordinance set in the garden: *shall cleave unto his wife: and they shall be one flesh*. The fountain a man drinks from is the wife he is made one with; to go elsewhere is to break the one flesh.'),
+    ('canon','proverbs',5,18,'canon','song-of-solomon',4,12,'free',
+      E'*A garden inclosed is my sister, my spouse; a spring shut up, a fountain sealed* (Song of Solomon 4:12). The blessed, kept fountain of *Let thy fountain be blessed: and rejoice with the wife of thy youth* (Proverbs 5:18) is the Song''s sealed garden: *a spring shut up, a fountain sealed*. The fountain is for the covenant spouse alone — *Let them be only thine own, and not strangers'' with thee* (5:17).'),
+    ('canon','proverbs',5,20,'canon','exodus',20,14,'free',
+      E'*Thou shalt not commit adultery* (Exodus 20:14). Behind the whole question of *why wilt thou, my son, be ravished with a strange woman, and embrace the bosom of a stranger?* (Proverbs 5:20) stands the seventh word, spoken at Sinai and never repealed: *Thou shalt not commit adultery*. The chapter is the seventh commandment unfolded into a father''s plea.'),
+    ('canon','proverbs',5,20,'canon','deuteronomy',5,18,'free',
+      E'*Neither shalt thou commit adultery* (Deuteronomy 5:18). The strange-woman warning of Proverbs 5:20 rests on the word Moses set before all Yashar''el (Israel) a second time: *Neither shalt thou commit adultery*. The Torah is not the curse but the covenant fence around the wife of one''s youth; Proverbs only preaches what Sinai commanded.'),
+    ('canon','proverbs',5,19,'canon','hebrews',13,4,'free',
+      E'*Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge* (Hebrews 13:4). The delight commanded in *let her breasts satisfy thee at all times; and be thou ravished always with her love* (Proverbs 5:19) is the honourable, undefiled bed the NT upholds: *Marriage is honourable in all, and the bed undefiled*. The same verse keeps the seventh word standing — *whoremongers and adulterers Elohim (God) will judge*.'),
+
+    -- THREAD 4: The ways of man are before the eyes of Yahuah
+    ('canon','proverbs',5,21,'canon','proverbs',15,3,'free',
+      E'*The eyes of Yahuah (LORD) are in every place, beholding the evil and the good* (Proverbs 15:3). The all-seeing answer to the secret-keeping adulterer, *the ways of man are before the eyes of Yahuah (LORD), and he pondereth all his goings* (Proverbs 5:21), is stated plain by the same book: *The eyes of Yahuah (LORD) are in every place, beholding the evil and the good*. There is no path the eye does not see.'),
+    ('canon','proverbs',5,21,'canon','hebrews',4,13,'free',
+      E'*Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do* (Hebrews 4:13). The pondered goings of *he pondereth all his goings* (Proverbs 5:21) are the NT''s *all things are naked and opened unto the eyes of him with whom we have to do*. The eye that weighs every step is unchanged from Proverbs to the apostles; nothing is hid.'),
+    ('canon','proverbs',5,21,'apocrypha','ecclesiasticus',23,18,'extras',
+      E'*A man that breaks wedlock, saying thus in his heart, Who seeth me? I am compassed about with darkness, the walls cover me, and no body seeth me; what need I to fear? the Most High will not remember my sins* (Sirach 23:18). The restored witness draws the very self-deceiving thought Proverbs 5:21 refutes — the wedlock-breaker who says *Who seeth me?* — against whom *the ways of man are before the eyes of Yahuah (LORD)* stands as the answer. The darkness he trusts is no cover at all.'),
+    ('canon','proverbs',5,21,'apocrypha','ecclesiasticus',23,19,'extras',
+      E'*Such a man only fears the eyes of men, and knoweth not that the eyes of Yahuah (God) are ten thousand times brighter than the sun, beholding all the ways of men, and considering the most secret parts* (Sirach 23:19). This is *the ways of man are before the eyes of Yahuah (LORD)* (Proverbs 5:21) made vivid: *the eyes of Yahuah (God) are ten thousand times brighter than the sun, beholding all the ways of men*. The eye that beholds all the ways is the eye before which the strange-woman''s path is laid bare.'),
+
+    -- THREAD 5: His own iniquities shall take the wicked himself
+    ('canon','proverbs',5,22,'canon','numbers',32,23,'free',
+      E'*But if ye will not do so, behold, ye have sinned against Yahuah (LORD): and be sure your sin will find you out* (Numbers 32:23). The self-binding of *His own iniquities shall take the wicked himself, and he shall be holden with the cords of his sins* (Proverbs 5:22) is the principle Moses set at Jordan: *be sure your sin will find you out*. The sin is its own pursuer; it lays hold of the sinner himself.'),
+    ('canon','proverbs',5,22,'canon','galatians',6,7,'free',
+      E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). The cords of one''s own sins in *he shall be holden with the cords of his sins* (Proverbs 5:22) are the harvest of *whatsoever a man soweth, that shall he also reap*. The NT keeps the proverb as unbreakable law — the wicked is taken by his own iniquities.'),
+    ('canon','proverbs',5,23,'canon','galatians',6,8,'free',
+      E'*For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting* (Galatians 6:8). The man who *shall die without instruction; and in the greatness of his folly he shall go astray* (Proverbs 5:23) is he who *soweth to his flesh* and *shall of the flesh reap corruption*. The strange-woman''s path is sowing to the flesh, and its wage is the corruption Proverbs calls dying without instruction.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-5-the-strange-womans-lips-drop-honeycomb-but-her-end-is-bitter-as-wormwood',
+       E'The strange woman''s lips drop honeycomb — but her end is bitter as wormwood',
+       E'The chapter''s first warning is the seduction-unto-death: *For the lips of a strange woman drop as an honeycomb, and her mouth is smoother than oil: But her end is bitter as wormwood, sharp as a twoedged sword. Her feet go down to death; her steps take hold on hell* (Proverbs 5:3-5). The honey on the lips and the wormwood at the end are one figure the whole book sounds again and again: *her house inclineth unto death, and her paths unto the dead. None that go unto her return again, neither take they hold of the paths of life* (2:18-19); *she hath cast down many wounded: yea, many strong men have been slain by her. Her house is the way to hell, going down to the chambers of death* (7:26-27). It is the very paradigm of *There is a way which seemeth right unto a man, but the end thereof are the ways of death* (14:12) — the sweetness is the seeming-right, the wormwood the end. The restored witness keeps the same gate: *Meet not with an harlot, lest you fall into her snares* (Sirach 9:3); *Turn away your eye from a beautiful woman... for many have been deceived by the beauty of a woman; for herewith love is kindled as a fire* (Sirach 9:8). And the New Testament carries the figure forward into the false teachers who seduce by the same flattery and the same false promise: *when they speak great swelling words of vanity, they allure through the lusts of the flesh, through much wantonness* (2 Peter 2:18); *While they promise them liberty, they themselves are the servants of corruption* (2 Peter 2:19). The counsel is the same in every witness — *Remove thy way far from her, and come not nigh the door of her house* (5:8) — for the door of the strange woman opens on the grave. The warning dismantles the snare, never the person: she is the seduction the son must flee, and the father pleads for his son''s life.',
+       sv.verse_id, ev.verse_id, 'extras', 28100
+  FROM _s304_pr05_lookup sv, _s304_pr05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=5 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-5-thou-mourn-at-the-last-how-have-i-hated-instruction',
+       E'Thou mourn at the last — How have I hated instruction',
+       E'The chapter turns to the bitter latter-day cry of the man who took the strange-woman''s path: *And thou mourn at the last, when thy flesh and thy body are consumed, And say, How have I hated instruction, and my heart despised reproof; And have not obeyed the voice of my teachers, nor inclined mine ear to them that instructed me!* (Proverbs 5:11-13). This is the very calamity Wisdom foretold at the book''s opening, to the ones who would not hear: *Because I have called, and ye refused; I have stretched out my hand, and no man regarded* (1:24), *I also will laugh at your calamity; I will mock when your fear cometh* (1:26). The hating of instruction in the day of choosing becomes the mourning over instruction in the day of ruin. And it is the doom of the hardened neck: *He, that being often reproved hardeneth his neck, shall suddenly be destroyed, and that without remedy* (29:1). The reproof a man will not bend his ear to in time becomes the reproof he weeps over too late, when flesh and body are consumed and there is no remedy left.',
+       sv.verse_id, ev.verse_id, 'free', 28103
+  FROM _s304_pr05_lookup sv, _s304_pr05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=5 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (THE HEART)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-5-drink-waters-out-of-thine-own-cistern-rejoice-with-the-wife-of-thy-youth',
+       E'Drink waters out of thine own cistern — rejoice with the wife of thy youth',
+       E'Against the strange woman the chapter sets its framework heart — covenant-marriage faithfulness: *Drink waters out of thine own cistern, and running waters out of thine own well... Let them be only thine own, and not strangers'' with thee. Let thy fountain be blessed: and rejoice with the wife of thy youth* (Proverbs 5:15-18). The very phrase returns in Malachi as a covenant Yahuah (LORD) Himself witnesses: *Yahuah (LORD) hath been witness between thee and the wife of thy youth, against whom thou hast dealt treacherously: yet is she thy companion, and the wife of thy covenant* (Malachi 2:14) — and Malachi binds the one-flesh union to the seed of promise: *And wherefore one? That he might seek a godly seed. Therefore take heed to your spirit, and let none deal treacherously against the wife of his youth* (2:15). The own cistern reaches back to the ordinance set in the garden — *shall cleave unto his wife: and they shall be one flesh* (Genesis 2:24) — and the Song sings the kept, sealed fountain: *A garden inclosed is my sister, my spouse; a spring shut up, a fountain sealed* (Song of Solomon 4:12). Behind the whole chapter stands the seventh word, spoken at Sinai and never repealed: *Thou shalt not commit adultery* (Exodus 20:14; Deuteronomy 5:18) — the Torah is not the curse but the covenant fence around the wife of one''s youth. And the New Testament keeps that word whole, never abolishing it: *Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge* (Hebrews 13:4). So the chapter''s closing question answers itself — *why wilt thou, my son, be ravished with a strange woman, and embrace the bosom of a stranger?* (5:20) — when the blessed fountain, the wife of thy youth, is thine own.',
+       sv.verse_id, ev.verse_id, 'free', 28106
+  FROM _s304_pr05_lookup sv, _s304_pr05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=5 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-5-the-ways-of-man-are-before-the-eyes-of-yahuah',
+       E'The ways of man are before the eyes of Yahuah',
+       E'To the adulterer who thinks himself hidden the chapter sets the all-seeing eye: *For the ways of man are before the eyes of Yahuah (LORD), and he pondereth all his goings* (Proverbs 5:21). The same book says it plainly: *The eyes of Yahuah (LORD) are in every place, beholding the evil and the good* (15:3). The restored witness draws the very self-deceiving thought of the wedlock-breaker and shatters it: *A man that breaks wedlock, saying thus in his heart, Who seeth me? I am compassed about with darkness, the walls cover me, and no body seeth me; what need I to fear?* (Sirach 23:18) — *Such a man only fears the eyes of men, and knoweth not that the eyes of Yahuah (God) are ten thousand times brighter than the sun, beholding all the ways of men, and considering the most secret parts* (Sirach 23:19). And the New Testament seals it: *Neither is there any creature that is not manifest in his sight: but all things are naked and opened unto the eyes of him with whom we have to do* (Hebrews 4:13). The darkness the strange-woman''s path trusts is no cover at all; every secret going is pondered before the eyes of Yahuah.',
+       sv.verse_id, ev.verse_id, 'extras', 28109
+  FROM _s304_pr05_lookup sv, _s304_pr05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=5 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-5-his-own-iniquities-shall-take-the-wicked-himself',
+       E'His own iniquities shall take the wicked himself',
+       E'The chapter closes on sin as its own snare and jailer: *His own iniquities shall take the wicked himself, and he shall be holden with the cords of his sins. He shall die without instruction; and in the greatness of his folly he shall go astray* (Proverbs 5:22-23). This is the principle Moses set before Yashar''el (Israel) at the Jordan: *behold, ye have sinned against Yahuah (LORD): and be sure your sin will find you out* (Numbers 32:23) — the sin is its own pursuer, and it lays hold of the sinner himself. And the New Testament keeps it as unbreakable law: *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap. For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting* (Galatians 6:7-8). The man who would not be bound by instruction is bound instead by the cords of his own sins; the strange-woman''s path is sowing to the flesh, and its wage is the corruption Proverbs calls dying without instruction.',
+       sv.verse_id, ev.verse_id, 'free', 28112
+  FROM _s304_pr05_lookup sv, _s304_pr05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=5 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*her house inclineth unto death, and her paths unto the dead* (Proverbs 2:18) — the honey-mouthed strange woman of 5:3 is the same death-figure the book already drew.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=3
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=2 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-strange-womans-lips-drop-honeycomb-but-her-end-is-bitter-as-wormwood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*None that go unto her return again, neither take they hold of the paths of life* (Proverbs 2:19) — why her end is bitter as wormwood (5:4): the path does not loop back to life.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=4
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-strange-womans-lips-drop-honeycomb-but-her-end-is-bitter-as-wormwood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Her house is the way to hell, going down to the chambers of death* (Proverbs 7:27) — the feet that go down to death (5:5) reach the same address the ch7 discourse traces.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=5
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=7 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-strange-womans-lips-drop-honeycomb-but-her-end-is-bitter-as-wormwood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*many strong men have been slain by her* (Proverbs 7:26) — the death of 5:5 is no idle threat; strength is no defence against her.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=5
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=7 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-strange-womans-lips-drop-honeycomb-but-her-end-is-bitter-as-wormwood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12) — the strange-woman''s moveable ways (5:6) are the paradigm of the seeming-right path with a death-end.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=6
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-strange-womans-lips-drop-honeycomb-but-her-end-is-bitter-as-wormwood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*they allure through the lusts of the flesh, through much wantonness* (2 Peter 2:18) — the smoother-than-oil mouth of 5:4 carried forward into the false teachers who seduce by the same flattery.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=4
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-strange-womans-lips-drop-honeycomb-but-her-end-is-bitter-as-wormwood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*they promise them liberty, they themselves are the servants of corruption* (2 Peter 2:19) — the bitter end of 5:4 is the false promise; the strange woman and the false teacher both sell a liberty that is bondage.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=4
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-strange-womans-lips-drop-honeycomb-but-her-end-is-bitter-as-wormwood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Meet not with an harlot, lest you fall into her snares* (Sirach 9:3) — the restored witness keeps the same gate as 5:3; the snare is set in the sweetness.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=3
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=9 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-strange-womans-lips-drop-honeycomb-but-her-end-is-bitter-as-wormwood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*many have been deceived by the beauty of a woman; for herewith love is kindled as a fire* (Sirach 9:8) — the deceiving sweetness of 5:3; the restored counsel matches "Remove thy way far from her" (5:8).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=3
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=9 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-strange-womans-lips-drop-honeycomb-but-her-end-is-bitter-as-wormwood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I have called, and ye refused; I have stretched out my hand, and no man regarded* (Proverbs 1:24) — the cry "How have I hated instruction" (5:12) answers Wisdom''s long-rejected call.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=12
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=1 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-thou-mourn-at-the-last-how-have-i-hated-instruction'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I also will laugh at your calamity; I will mock when your fear cometh* (Proverbs 1:26) — the mourning at the last (5:11) is the calamity Wisdom foretold for the reproof-despiser.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=12
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=1 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-thou-mourn-at-the-last-how-have-i-hated-instruction'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*being often reproved hardeneth his neck, shall suddenly be destroyed, and that without remedy* (Proverbs 29:1) — the man who inclined no ear to his teachers (5:13) is the hardened neck that breaks beyond mending.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=13
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=29 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-thou-mourn-at-the-last-how-have-i-hated-instruction'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the wife of thy youth... is thy companion, and the wife of thy covenant* (Malachi 2:14) — the very phrase of 5:18 returns as a covenant Yahuah Himself witnesses.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=18
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-drink-waters-out-of-thine-own-cistern-rejoice-with-the-wife-of-thy-youth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And wherefore one? That he might seek a godly seed* (Malachi 2:15) — the own-fountain faithfulness of 5:18 bound to the seed of promise; marriage carries the godly seed.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=18
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-drink-waters-out-of-thine-own-cistern-rejoice-with-the-wife-of-thy-youth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*shall cleave unto his wife: and they shall be one flesh* (Genesis 2:24) — the own cistern of 5:15 is the one-flesh ordinance set in the garden.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=15
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-drink-waters-out-of-thine-own-cistern-rejoice-with-the-wife-of-thy-youth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a spring shut up, a fountain sealed* (Song of Solomon 4:12) — the blessed, kept fountain of 5:18 is the Song''s sealed garden, for the covenant spouse alone.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=18
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='song-of-solomon' AND tv.chapter_number=4 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-drink-waters-out-of-thine-own-cistern-rejoice-with-the-wife-of-thy-youth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Thou shalt not commit adultery* (Exodus 20:14) — the seventh word at Sinai stands behind the strange-woman question of 5:20; the chapter is that commandment unfolded.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=20
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-drink-waters-out-of-thine-own-cistern-rejoice-with-the-wife-of-thy-youth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Neither shalt thou commit adultery* (Deuteronomy 5:18) — Moses set the word a second time before all Yashar''el; the Torah is the covenant fence Proverbs 5:20 preaches.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=20
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-drink-waters-out-of-thine-own-cistern-rejoice-with-the-wife-of-thy-youth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge* (Hebrews 13:4) — the delight commanded in 5:19 is the honourable bed the NT upholds; the seventh word stands.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=19
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-drink-waters-out-of-thine-own-cistern-rejoice-with-the-wife-of-thy-youth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The eyes of Yahuah (LORD) are in every place, beholding the evil and the good* (Proverbs 15:3) — the all-seeing answer to 5:21 stated plain by the same book.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=21
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-ways-of-man-are-before-the-eyes-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*all things are naked and opened unto the eyes of him with whom we have to do* (Hebrews 4:13) — the pondered goings of 5:21 unchanged into the NT; nothing is hid.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=21
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-ways-of-man-are-before-the-eyes-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*A man that breaks wedlock, saying thus in his heart, Who seeth me?* (Sirach 23:18) — the very self-deceiving thought 5:21 refutes; the darkness he trusts is no cover.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=21
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=23 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-ways-of-man-are-before-the-eyes-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the eyes of Yahuah (God) are ten thousand times brighter than the sun, beholding all the ways of men* (Sirach 23:19) — 5:21 made vivid; the eye that beholds all the ways lays the strange-woman''s path bare.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=21
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=23 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-the-ways-of-man-are-before-the-eyes-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*ye have sinned against Yahuah (LORD): and be sure your sin will find you out* (Numbers 32:23) — the self-binding of 5:22 is the principle Moses set at Jordan; sin is its own pursuer.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=22
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=32 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-his-own-iniquities-shall-take-the-wicked-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*whatsoever a man soweth, that shall he also reap* (Galatians 6:7) — the cords of one''s own sins (5:22) are the harvest; the NT keeps the proverb as unbreakable law.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=22
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-his-own-iniquities-shall-take-the-wicked-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he that soweth to his flesh shall of the flesh reap corruption* (Galatians 6:8) — the man who dies without instruction (5:23) sows to the flesh; the strange-woman''s path reaps corruption.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=5 AND sv.verse_number=23
+  JOIN _s304_pr05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-5-his-own-iniquities-shall-take-the-wicked-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_proverbs_7.sql (Proverbs 7) -----
+-- Chapter: Proverbs 7 — the SECOND full strange-woman chapter: the seduction of the young man void of understanding, the harlot's house as the road to death, the climactic warning before ch8's Wisdom. The chapter opens on a Torah-keeping charge that is the anti-antinomian hinge of the whole passage — *Keep my commandments, and live; and my law as the apple of thine eye* (7:2) — then narrates a single seduction (7:6-23) as a window-scene cautionary tale, and closes on the destination figure — *Her house is the way to hell, going down to the chambers of death* (7:27). VICTIMS-NOT-ENEMIES: the seduced youth is a lost sheep, *a young man void of understanding* (7:7); the warning is for his deliverance, not his condemnation. The seventh commandment (Exodus 20:14 / Deuteronomy 5:18) stands behind the whole — Torah, not abolished.
+-- Tag: pr07   Temp view: _s304_pr07_lookup
+-- Sort band: base 28150, step 3 -> threads at 28150, 28153, 28156, 28159, 28162 (5 threads)
+-- Source of EVERY row: 'canon','proverbs',7,v
+--
+-- Proverbs 7 coverage:
+--   ★★ v.1-3 (My son, keep my words... Keep my commandments, and live; and my law as the apple of thine eye. Bind them upon thy fingers, write them upon the table of thine heart)
+--        NT:     none warranted distinct (the keep-and-LIVE / Torah-on-the-heart figure carried whole by Deuteronomy + Proverbs 3 + Jeremiah 31; NT laterals belong to the heavier ch-3/ch-6 builds) -> THREAD 1
+--        Extras: none warranted (Torah-internalization carried by canon laterals)
+--        Tanakh: ★ Deuteronomy 6:6-8 (these words... shall be in thine heart... bind them for a sign upon thine hand); ★ Proverbs 3:1 (forget not my law; but let thine heart keep my commandments) + 3:3 (write them upon the table of thine heart); ★ Jeremiah 31:33 (I will put my law in their inward parts, and write it in their hearts); ★ Deuteronomy 32:10 (he kept him as the apple of his eye) -> THREAD 1 (load-bearing: keep-the-commandments-and-LIVE / Torah internalized, the anti-antinomian hinge)
+--   v.4-5 (Say unto wisdom, Thou art my sister... That they may keep thee from the strange woman)
+--        NT:     none warranted distinct
+--        Extras: none warranted distinct
+--        Tanakh: ★ Proverbs 2:3-4 (cry after knowledge... seekest her as silver); Proverbs 9:1 (Wisdom hath builded her house) -> THREAD 2 (wisdom as kin, the guard against the strange woman; anticipates ch8/9)
+--   v.6-23 (the window-scene seduction: the young man void of understanding... she caught him... With her much fair speech she caused him to yield... He goeth after her... as an ox goeth to the slaughter)
+--        NT:     ★ 2 Peter 2:14 (eyes full of adultery... beguiling unstable souls); ★ James 1:14-15 (drawn away of his own lust... lust hath conceived, it bringeth forth sin... death) -> THREAD 3
+--        Extras: ★ Sirach 9:3 (Meet not with an harlot, lest you fall into her snares); Sirach 19:2 (he that cleaveth to harlots will become impudent) -> THREAD 3
+--        Tanakh: ★ Proverbs 2:16-17 (the strange woman... which forsaketh the guide of her youth); ★ Proverbs 5:3-4 (the lips of a strange woman drop as an honeycomb... her end is bitter as wormwood); ★ Ecclesiastes 7:26 (the woman, whose heart is snares and nets... the sinner shall be taken by her) -> THREAD 3 (the seduction as the way-that-seemeth-right unto death)
+--   ★ v.27 (Her house is the way to hell, going down to the chambers of death) + v.26 (she hath cast down many wounded)
+--        NT:     ★ Matthew 7:13 (wide is the gate, and broad is the way, that leadeth to destruction) -> THREAD 4
+--        Extras: none warranted distinct (the Sheol-destination carried by the Proverbs laterals + Matthew)
+--        Tanakh: ★ Proverbs 2:18 (her house inclineth unto death, and her paths unto the dead); Proverbs 5:5 (Her feet go down to death; her steps take hold on hell); Proverbs 9:18 (the dead are there; her guests are in the depths of hell) -> THREAD 4 (the destination figure: the harlot's house = the road to Sheol)
+--   v.24-26 (Hearken unto me... Let not thine heart decline to her ways... For she hath cast down many wounded: yea, many strong men have been slain by her)
+--        NT:     none warranted distinct (the Decalogue ground carried by the seventh-commandment Tanakh members)
+--        Extras: none warranted distinct
+--        Tanakh: ★★ Exodus 20:14 (Thou shalt not commit adultery); ★ Deuteronomy 5:18 (Neither shalt thou commit adultery) -> THREAD 5 (the seventh commandment standing behind the whole chapter — Torah, not abolished)
+--   PRUDENTIAL / NARRATIVE detail, none warranted distinct (folded into the seduction-narrative prose, no separate thread): v.6-7 (the window/casement scene, the simple ones), v.8-9 (passing through the street in the twilight), v.10-12 (the attire of an harlot, loud and stubborn), v.13-20 (the impudent face, peace offerings, the decked bed, the goodman gone a journey), v.21-23 (the much fair speech, the ox to slaughter, the dart through the liver, the bird to the snare): the seduction tableau itself, framed in THREAD 3 prose.
+--
+-- Threads (slug — target libraries):
+--   1. proverbs-7-keep-my-commandments-and-live-the-torah-as-the-apple-of-thine-eye — Tanakh (Deuteronomy, Proverbs, Jeremiah) [free] (★★ the anti-antinomian hinge: keep-the-commandments-and-LIVE; the Torah bound on the hand, written on the heart, kept as the apple of the eye)
+--   2. proverbs-7-say-unto-wisdom-thou-art-my-sister — Tanakh (Proverbs) [free] (wisdom as kinswoman, the guard against the strange woman; anticipates ch8/9)
+--   3. proverbs-7-the-strange-woman-and-the-young-man-void-of-understanding — Tanakh (Proverbs, Ecclesiastes) + NT (2 Peter, James) + Extras (Sirach) [extras] (the seduction narrative; the lost-sheep youth drawn away of his own lust unto death)
+--   4. proverbs-7-her-house-is-the-way-to-hell-going-down-to-the-chambers-of-death — Tanakh (Proverbs) + NT (Matthew) [free] (★ the destination figure: the harlot's house = the broad road to Sheol)
+--   5. proverbs-7-the-seventh-commandment-thou-shalt-not-commit-adultery — Tanakh (Exodus, Deuteronomy) [free] (the Decalogue standing behind the whole chapter — Torah, not abolished)
+--
+-- Framing notes:
+--   ★★ THE HINGE (THREAD 1): the chapter does not open on the harlot but on the Torah — *My son, keep my words, and lay up my commandments with thee. Keep my commandments, and live; and my law as the apple of thine eye. Bind them upon thy fingers, write them upon the table of thine heart* (7:1-3). Keep-the-commandments-and-LIVE is the anti-antinomian hinge: the deliverance from the strange woman (7:5) is the KEPT Torah, internalized. The binding *upon thy fingers* and writing *upon the table of thine heart* is the Shema's own command — *these words... shall be in thine heart... thou shalt bind them for a sign upon thine hand* (Deuteronomy 6:6-8) — and the very thing the new covenant promises, never abolishing but internalizing: *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33). *The apple of thine eye* is the Torah held as Yahuah held Yashar'el (Israel): *he kept him as the apple of his eye* (Deuteronomy 32:10). Proverbs 3 said the same twice over — *forget not my law* (3:1), *write them upon the table of thine heart* (3:3).
+--   ★ WISDOM AS KIN (THREAD 2): *Say unto wisdom, Thou art my sister; and call understanding thy kinswoman: That they may keep thee from the strange woman* (7:4-5). Wisdom embraced as kin is the guard against the seductress — the same seeking Proverbs 2 commanded — *if thou criest after knowledge... If thou seekest her as silver* (2:3-4) — and the hostess of ch9 who builds her house against Dame Folly — *Wisdom hath builded her house* (9:1). The chapter sets wise-Lady against strange-woman, anticipating the great Wisdom hymn of ch8.
+--   ★ THE SEDUCTION (THREAD 3): the window-scene tableau (7:6-23) shows *a young man void of understanding* (7:7) drawn step by step to ruin: *With her much fair speech she caused him to yield* (7:21); *He goeth after her straightway, as an ox goeth to the slaughter* (7:22). VICTIMS-NOT-ENEMIES: he is a lost sheep, not an enemy; the warning is for his deliverance. This is the strange woman of ch2 — *which flattereth with her words... her house inclineth unto death* (2:16-18) — and ch5 — *the lips of a strange woman drop as an honeycomb... But her end is bitter as wormwood* (5:3-4). Qoheleth knows her too — *more bitter than death the woman, whose heart is snares and nets* (Ecclesiastes 7:26). The NT names the mechanism whole: *every man is tempted, when he is drawn away of his own lust, and enticed. Then when lust hath conceived, it bringeth forth sin: and sin... bringeth forth death* (James 1:14-15) — the very ox-to-slaughter arc; and *Having eyes full of adultery... beguiling unstable souls* (2 Peter 2:14). The restored witness warns plainly — *Meet not with an harlot, lest you fall into her snares* (Sirach 9:3).
+--   ★ THE DESTINATION (THREAD 4): *Her house is the way to hell, going down to the chambers of death* (7:27). The figure runs through the book — *her house inclineth unto death, and her paths unto the dead* (2:18); *Her feet go down to death; her steps take hold on hell* (5:5); Dame Folly's guests *are in the depths of hell* (9:18). Yahusha (Jesus) names the same broad road: *wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat* (Matthew 7:13). The harlot's house is one mouth of that broad way.
+--   ★★ THE SEVENTH COMMANDMENT (THREAD 5): the whole chapter is an exposition of one word of the Decalogue — *Thou shalt not commit adultery* (Exodus 20:14); *Neither shalt thou commit adultery* (Deuteronomy 5:18). The strange-woman warnings are not new ethics but the Torah's own seventh commandment unfolded as a cautionary tale; *she hath cast down many wounded: yea, many strong men have been slain by her* (7:26) shows the cost of breaking it. Torah, not abolished — the commandment stands behind the warning.
+--   EXTRAS: Sirach (Ecclesiasticus) double-written edition 'apocrypha' + book 'ecclesiasticus'. Clean witnesses pulled: 9:3 (Meet not with an harlot, lest you fall into her snares), 19:2 (he that cleaveth to harlots will become impudent). Sirach 26:9-12 weighed but not forced (the chosen two carry the snare/cleaving figure cleanest, matching the seduction-narrative thread).
+
+CREATE TEMP VIEW _s304_pr07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Keep my commandments, and live; the Torah as the apple of thine eye (the hinge)
+    ('canon','proverbs',7,2,'canon','deuteronomy',6,6,'free',
+      E'*And these words, which I command thee this day, shall be in thine heart* (Deuteronomy 6:6). The charge to *Keep my commandments, and live; and my law as the apple of thine eye* (Proverbs 7:2) is the Shema''s own command brought into the heart: the words of Yahuah (LORD) *shall be in thine heart*. The proverb does not invent a piety apart from the Torah — it internalizes the very Torah Moses laid up in the heart.'),
+    ('canon','proverbs',7,3,'canon','deuteronomy',6,8,'free',
+      E'*And thou shalt bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes* (Deuteronomy 6:8). *Bind them upon thy fingers, write them upon the table of thine heart* (Proverbs 7:3) speaks the Shema verbatim — Moses said *bind them for a sign upon thine hand*. The wisdom-father is teaching his son the same Torah-binding Yahuah commanded all Yashar''el (Israel); the commandments are to be worn on the hand and graven on the heart.'),
+    ('canon','proverbs',7,2,'canon','proverbs',3,1,'free',
+      E'*My son, forget not my law; but let thine heart keep my commandments* (Proverbs 3:1). The same book sounds the charge of *Keep my commandments, and live; and my law as the apple of thine eye* (Proverbs 7:2) twice: *forget not my law; but let thine heart keep my commandments*. The kept Torah is the life of the son — and the guard, in ch7, against the strange woman.'),
+    ('canon','proverbs',7,3,'canon','proverbs',3,3,'free',
+      E'*Let not mercy and truth forsake thee: bind them about thy neck; write them upon the table of thine heart* (Proverbs 3:3). The very words of *write them upon the table of thine heart* (Proverbs 7:3) stand in Proverbs 3:3 — *write them upon the table of thine heart*. The Torah is not an external code to be kept at arm''s length but an inscription on the inward man; what is written on the heart cannot be flattered away by a stranger''s lips.'),
+    ('canon','proverbs',7,3,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). To *write them upon the table of thine heart* (Proverbs 7:3) is the very promise of the new covenant: *I will put my law in their inward parts, and write it in their hearts*. The new covenant is not the Torah abolished but the Torah internalized — exactly what the wisdom-father presses upon his son.'),
+    ('canon','proverbs',7,2,'canon','deuteronomy',32,10,'free',
+      E'*He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye* (Deuteronomy 32:10). When the son is told to hold *my law as the apple of thine eye* (Proverbs 7:2), it is to hold the Torah as Yahuah (LORD) held Yashar''el (Israel) — *he kept him as the apple of his eye*. The Torah is to be guarded as the most precious and tender thing, the way Yahuah guarded His people in the wilderness.'),
+
+    -- THREAD 2: Say unto wisdom, Thou art my sister (wisdom as kin, the guard)
+    ('canon','proverbs',7,4,'canon','proverbs',2,3,'free',
+      E'*Yea, if thou criest after knowledge, and liftest up thy voice for understanding* (Proverbs 2:3). To *Say unto wisdom, Thou art my sister; and call understanding thy kinswoman* (Proverbs 7:4) is the embrace Proverbs 2 commanded: *if thou criest after knowledge, and liftest up thy voice for understanding*. Wisdom claimed as kin is wisdom sought with the whole voice; the one who calls understanding his kinswoman is kept from the stranger.'),
+    ('canon','proverbs',7,5,'canon','proverbs',2,16,'free',
+      E'*To deliver thee from the strange woman, even from the stranger which flattereth with her words* (Proverbs 2:16). The very purpose of claiming wisdom as kin — *That they may keep thee from the strange woman, from the stranger which flattereth with her words* (Proverbs 7:5) — is word-for-word the deliverance of Proverbs 2:16: *to deliver thee from the strange woman... which flattereth with her words*. Wisdom embraced is the guard; the strange woman''s flattery is the danger both chapters name.'),
+    ('canon','proverbs',7,4,'canon','proverbs',9,1,'free',
+      E'*Wisdom hath builded her house, she hath hewn out her seven pillars* (Proverbs 9:1). The wisdom called *my sister* (Proverbs 7:4) is the Lady who, two chapters on, *hath builded her house* (Proverbs 9:1) and sets her table against Dame Folly. The chapter pairs wise-Lady against strange-woman; to call understanding thy kinswoman is to sit at Wisdom''s table, not Folly''s.')
+,
+    -- THREAD 3: The strange woman and the young man void of understanding (the seduction)
+    ('canon','proverbs',7,7,'canon','proverbs',2,17,'free',
+      E'*Which forsaketh the guide of her youth, and forgetteth the covenant of her Elohim (God)* (Proverbs 2:17). The harlot who meets *a young man void of understanding* (Proverbs 7:7) is the same strange woman of ch2, one *which forsaketh the guide of her youth, and forgetteth the covenant of her Elohim (God)*. Her seduction is covenant-breaking dressed as love; the youth, drawn in, is a victim of a snare she set first against her own covenant.'),
+    ('canon','proverbs',7,21,'canon','proverbs',5,3,'free',
+      E'*For the lips of a strange woman drop as an honeycomb, and her mouth is smoother than oil* (Proverbs 5:3). *With her much fair speech she caused him to yield, with the flattering of her lips she forced him* (Proverbs 7:21) is the honeycomb-lips of Proverbs 5:3 at work: *the lips of a strange woman drop as an honeycomb*. The sweetness is the bait; the much fair speech is the smoothness that forces the unguarded heart.'),
+    ('canon','proverbs',7,22,'canon','proverbs',5,4,'free',
+      E'*But her end is bitter as wormwood, sharp as a twoedged sword* (Proverbs 5:4). The youth who *goeth after her straightway, as an ox goeth to the slaughter* (Proverbs 7:22) walks toward the end Proverbs 5:4 named: *her end is bitter as wormwood, sharp as a twoedged sword*. The honeycomb of her lips drops to a sword; the ox does not see the slaughter until the dart strikes the liver.'),
+    ('canon','proverbs',7,23,'canon','ecclesiastes',7,26,'free',
+      E'*And I find more bitter than death the woman, whose heart is snares and nets, and her hands as bands: whoso pleaseth Elohim (God) shall escape from her; but the sinner shall be taken by her* (Ecclesiastes 7:26). The snare into which the youth rushes — *as a bird hasteth to the snare, and knoweth not that it is for his life* (Proverbs 7:23) — is the very woman *whose heart is snares and nets* (Ecclesiastes 7:26). Qoheleth says the deliverance is the same the wisdom-father teaches: the one who pleases Elohim (God) — who keeps the commandments — escapes; the sinner is taken.'),
+    ('canon','proverbs',7,22,'canon','james',1,14,'free',
+      E'*But every man is tempted, when he is drawn away of his own lust, and enticed* (James 1:14). The ox led to slaughter — *He goeth after her straightway, as an ox goeth to the slaughter* (Proverbs 7:22) — is Ya''aqob''s (James''s) every man *drawn away of his own lust, and enticed*. The strange woman''s fair speech works on a lust already in the youth; he is enticed, drawn, and led.'),
+    ('canon','proverbs',7,23,'canon','james',1,15,'free',
+      E'*Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death* (James 1:15). The dart through the liver, the snare that is *for his life* (Proverbs 7:23), is the end Ya''aqob (James) traces: *sin, when it is finished, bringeth forth death*. The whole window-scene is this one sentence acted out — lust conceives, brings forth sin, and the sin is finished in death.'),
+    ('canon','proverbs',7,21,'canon','2-peter',2,14,'free',
+      E'*Having eyes full of adultery, and that cannot cease from sin; beguiling unstable souls: an heart they have exercised with covetous practices; cursed children* (2 Peter 2:14). The flattery that *caused him to yield* (Proverbs 7:21) is the beguiling Kepha (Peter) names: those *having eyes full of adultery... beguiling unstable souls*. The young man void of understanding is exactly the unstable soul; the harlot is the beguiler whose eyes are full of adultery.'),
+    ('canon','proverbs',7,7,'apocrypha','ecclesiasticus',9,3,'extras',
+      E'*Meet not with an harlot, lest you fall into her snares* (Sirach 9:3). The restored witness gives the plain counsel the youth of Proverbs 7:7 did not heed: *Meet not with an harlot, lest you fall into her snares*. The young man *void of understanding* went the way to her house and fell into the very snare Sirach warns against.'),
+    ('canon','proverbs',7,22,'apocrypha','ecclesiasticus',19,2,'extras',
+      E'*Wine and women will make men of understanding to fall away: and he that cleaveth to harlots will become impudent* (Sirach 19:2). The ox-to-slaughter of Proverbs 7:22 is the falling-away Sirach names: *he that cleaveth to harlots will become impudent*. Even *men of understanding* are made to fall; how much more the young man void of understanding who goeth after her straightway.')
+,
+    -- THREAD 4: Her house is the way to hell (the destination figure)
+    ('canon','proverbs',7,27,'canon','proverbs',2,18,'free',
+      E'*For her house inclineth unto death, and her paths unto the dead* (Proverbs 2:18). *Her house is the way to hell, going down to the chambers of death* (Proverbs 7:27) is the verdict of Proverbs 2:18 sharpened: *her house inclineth unto death, and her paths unto the dead*. The strange woman''s door is the same door in both chapters — it opens onto Sheol.'),
+    ('canon','proverbs',7,27,'canon','proverbs',5,5,'free',
+      E'*Her feet go down to death; her steps take hold on hell* (Proverbs 5:5). The chambers of death of *Her house is the way to hell* (Proverbs 7:27) are where Proverbs 5:5 says her every step is going: *Her feet go down to death; her steps take hold on hell*. To follow her steps is to be carried down the way she herself walks.'),
+    ('canon','proverbs',7,27,'canon','proverbs',9,18,'free',
+      E'*But he knoweth not that the dead are there; and that her guests are in the depths of hell* (Proverbs 9:18). The going *down to the chambers of death* (Proverbs 7:27) is the table of Dame Folly in ch9: *the dead are there; and... her guests are in the depths of hell*. The harlot''s house and Folly''s house are one house; the guests do not know, until too late, where the table is set.'),
+    ('canon','proverbs',7,27,'canon','matthew',7,13,'free',
+      E'*Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat* (Matthew 7:13). The way of *Her house is the way to hell* (Proverbs 7:27) is one mouth of the broad way Yahusha (Jesus) names: *wide is the gate, and broad is the way, that leadeth to destruction*. The strange woman''s door is broad and easy; the strait gate is the kept Torah of 7:2 — and the many who go in at the broad way are the strong men she has slain.')
+,
+    -- THREAD 5: The seventh commandment standing behind the whole chapter
+    ('canon','proverbs',7,25,'canon','exodus',20,14,'free',
+      E'*Thou shalt not commit adultery* (Exodus 20:14). The charge *Let not thine heart decline to her ways, go not astray in her paths* (Proverbs 7:25) is one word of the Decalogue unfolded as a warning: *Thou shalt not commit adultery*. The whole chapter is an exposition of the seventh commandment — the strange-woman warning is not a new ethic but the Torah''s own word made vivid; the commandment stands behind it, not abolished.'),
+    ('canon','proverbs',7,26,'canon','deuteronomy',5,18,'free',
+      E'*Neither shalt thou commit adultery* (Deuteronomy 5:18). *For she hath cast down many wounded: yea, many strong men have been slain by her* (Proverbs 7:26) shows the cost of breaking the word repeated at Horeb: *Neither shalt thou commit adultery*. The many wounded and slain are the price of the commandment despised; the Torah''s word is the wall that would have kept them, and they went over it to their death.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-7-keep-my-commandments-and-live-the-torah-as-the-apple-of-thine-eye',
+       E'Keep my commandments, and live — the Torah as the apple of thine eye',
+       E'The strange-woman chapter does not open on the harlot but on the Torah, and that is the whole frame: *My son, keep my words, and lay up my commandments with thee. Keep my commandments, and live; and my law as the apple of thine eye. Bind them upon thy fingers, write them upon the table of thine heart* (Proverbs 7:1-3). Keep-the-commandments-and-LIVE is the anti-antinomian hinge of the passage — the deliverance from the seductress (7:5) is the KEPT Torah, internalized so deeply it cannot be flattered away. The binding *upon thy fingers* and writing *upon the table of thine heart* is the Shema''s own command: *And these words, which I command thee this day, shall be in thine heart... thou shalt bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes* (Deuteronomy 6:6-8). The wisdom-father teaches his son nothing other than the Torah Moses laid up in the heart. And this internalizing is the very promise of the new covenant — not Torah abolished but Torah written within: *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). To hold *my law as the apple of thine eye* is to hold it as Yahuah (LORD) held Yashar''el (Israel) in the wilderness: *he kept him as the apple of his eye* (Deuteronomy 32:10). The same book sounded the charge already, twice over — *forget not my law; but let thine heart keep my commandments* (3:1); *write them upon the table of thine heart* (3:3). The kept Torah, graven on the heart, is the son''s life and his guard.',
+       sv.verse_id, ev.verse_id, 'free', 28150
+  FROM _s304_pr07_lookup sv, _s304_pr07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=7 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-7-say-unto-wisdom-thou-art-my-sister',
+       E'Say unto wisdom, Thou art my sister — the guard against the strange woman',
+       E'Between the Torah-charge and the seduction the father sets the safeguard: *Say unto wisdom, Thou art my sister; and call understanding thy kinswoman: That they may keep thee from the strange woman, from the stranger which flattereth with her words* (Proverbs 7:4-5). Wisdom embraced as kin is the wall against the seductress — and the purpose-clause is word-for-word the deliverance of ch2: *To deliver thee from the strange woman, even from the stranger which flattereth with her words* (Proverbs 2:16). To claim wisdom as sister is to seek her as ch2 commanded — *if thou criest after knowledge, and liftest up thy voice for understanding* (2:3) — with the whole voice, not a casual nod. And the wisdom called *my sister* here is the Lady who, two chapters on, *hath builded her house, she hath hewn out her seven pillars* (9:1) and spreads her table against Dame Folly. The chapter sets wise-Lady against strange-woman, kinswoman against stranger; the one who sits at Wisdom''s table is kept from the harlot''s door. This is the bridge into the great Wisdom hymn of ch8.',
+       sv.verse_id, ev.verse_id, 'free', 28153
+  FROM _s304_pr07_lookup sv, _s304_pr07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=7 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-7-the-strange-woman-and-the-young-man-void-of-understanding',
+       E'The strange woman and the young man void of understanding',
+       E'The heart of the chapter is a single window-scene tableau (Proverbs 7:6-23): the father looks out his casement and watches *a young man void of understanding* (7:7) pass through the street near her corner in the twilight, met by *a woman with the attire of an harlot, and subtil of heart* (7:10), until *With her much fair speech she caused him to yield, with the flattering of her lips she forced him* (7:21), and *He goeth after her straightway, as an ox goeth to the slaughter... as a bird hasteth to the snare, and knoweth not that it is for his life* (7:22-23). VICTIMS-NOT-ENEMIES: the youth is a lost sheep, not an enemy; the whole scene is told for his deliverance, a warning held up so the next simple one will not walk that street. The seductress is the strange woman of ch2 — *which forsaketh the guide of her youth, and forgetteth the covenant of her Elohim (God)* (2:17) — and of ch5, whose lips drop as a honeycomb to a bitter end: *the lips of a strange woman drop as an honeycomb... But her end is bitter as wormwood, sharp as a twoedged sword* (5:3-4). Qoheleth weighed her too: *more bitter than death the woman, whose heart is snares and nets... whoso pleaseth Elohim (God) shall escape from her; but the sinner shall be taken by her* (Ecclesiastes 7:26) — and names the same escape the wisdom-father teaches: the one who keeps the commandments gets free. The New Testament traces the exact mechanism: *every man is tempted, when he is drawn away of his own lust, and enticed. Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death* (James 1:14-15) — the ox-to-slaughter arc in one sentence; and Kepha (Peter) names the beguiler — *Having eyes full of adultery... beguiling unstable souls* (2 Peter 2:14), the unstable soul being just this young man void of understanding. The restored witness gives the plain counsel he did not heed: *Meet not with an harlot, lest you fall into her snares* (Sirach 9:3); *he that cleaveth to harlots will become impudent* (Sirach 19:2). From Torah-wisdom to apostle to the restored witnesses, the testimony is one: the lust within is drawn out by the flattery without, and the way that seemeth right ends in the chambers of death.',
+       sv.verse_id, ev.verse_id, 'extras', 28156
+  FROM _s304_pr07_lookup sv, _s304_pr07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=7 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-7-her-house-is-the-way-to-hell-going-down-to-the-chambers-of-death',
+       E'Her house is the way to hell — going down to the chambers of death',
+       E'The chapter closes on the destination, the figure the whole warning has been driving toward: *Her house is the way to hell, going down to the chambers of death* (Proverbs 7:27). The seductress'' door is not the gate to the love she promised but the mouth of Sheol — and the book says so again and again. In ch2: *For her house inclineth unto death, and her paths unto the dead* (2:18). In ch5: *Her feet go down to death; her steps take hold on hell* (5:5) — to follow her steps is to be carried down the road she herself walks. In ch9, Dame Folly''s table is the same house: *he knoweth not that the dead are there; and that her guests are in the depths of hell* (9:18) — the guests do not know, until too late, where they have been seated. And Yahusha (Jesus) names the broad road of which the harlot''s house is one mouth: *wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat* (Matthew 7:13). Her door is broad and easy; the strait gate is the kept Torah of 7:2. The *many strong men* she has slain (7:26) are the many who go in at the broad way.',
+       sv.verse_id, ev.verse_id, 'free', 28159
+  FROM _s304_pr07_lookup sv, _s304_pr07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=7 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-7-the-seventh-commandment-thou-shalt-not-commit-adultery',
+       E'The seventh commandment — Thou shalt not commit adultery',
+       E'Behind the whole window-scene stands one word of the Decalogue, and the chapter is its exposition: *Thou shalt not commit adultery* (Exodus 20:14), the word repeated at Horeb — *Neither shalt thou commit adultery* (Deuteronomy 5:18). The strange-woman warning is not a new ethic improvised by a wisdom-teacher but the Torah''s own seventh commandment made vivid, dramatized in a single seduction so the simple one will see where it ends. The closing charge — *Let not thine heart decline to her ways, go not astray in her paths* (7:25) — is that commandment turned toward the heart, before the foot ever moves; and the toll — *For she hath cast down many wounded: yea, many strong men have been slain by her* (7:26) — is the cost of the commandment despised. The Torah''s word is the wall that would have kept the many wounded; they went over it to their death. Torah, not abolished: the commandment is the ground the whole chapter is built on.',
+       sv.verse_id, ev.verse_id, 'free', 28162
+  FROM _s304_pr07_lookup sv, _s304_pr07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=7 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And these words, which I command thee this day, shall be in thine heart* (Deuteronomy 6:6) — the keep-my-commandments of 7:2 is the Shema brought into the heart.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-keep-my-commandments-and-live-the-torah-as-the-apple-of-thine-eye'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thou shalt bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes* (Deuteronomy 6:8) — *bind them upon thy fingers* of 7:3 is the Shema verbatim; the Torah worn on the hand.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=3
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-keep-my-commandments-and-live-the-torah-as-the-apple-of-thine-eye'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*My son, forget not my law; but let thine heart keep my commandments* (Proverbs 3:1) — the same book sounds the keep-and-live charge of 7:2 already.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-keep-my-commandments-and-live-the-torah-as-the-apple-of-thine-eye'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*write them upon the table of thine heart* (Proverbs 3:3) — the very words of 7:3; the Torah graven on the inward man.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=3
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-keep-my-commandments-and-live-the-torah-as-the-apple-of-thine-eye'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — to write the Torah on the heart (7:3) is the new covenant itself; Torah internalized, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=3
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-keep-my-commandments-and-live-the-torah-as-the-apple-of-thine-eye'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*he kept him as the apple of his eye* (Deuteronomy 32:10) — to hold the law as the apple of thine eye (7:2) is to hold it as Yahuah held Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-keep-my-commandments-and-live-the-torah-as-the-apple-of-thine-eye'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*if thou criest after knowledge, and liftest up thy voice for understanding* (Proverbs 2:3) — to call wisdom thy sister (7:4) is to seek her with the whole voice.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=4
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-say-unto-wisdom-thou-art-my-sister'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*To deliver thee from the strange woman... which flattereth with her words* (Proverbs 2:16) — the purpose-clause of 7:5 word-for-word; wisdom embraced is the guard.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=5
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=2 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-say-unto-wisdom-thou-art-my-sister'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Wisdom hath builded her house, she hath hewn out her seven pillars* (Proverbs 9:1) — the sister-wisdom of 7:4 is the Lady whose table stands against Dame Folly.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=4
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=9 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-say-unto-wisdom-thou-art-my-sister'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Which forsaketh the guide of her youth, and forgetteth the covenant of her Elohim (God)* (Proverbs 2:17) — the harlot who meets the youth (7:7) is the covenant-breaking strange woman of ch2.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=7
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=2 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-the-strange-woman-and-the-young-man-void-of-understanding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the lips of a strange woman drop as an honeycomb* (Proverbs 5:3) — the much fair speech that caused him to yield (7:21) is the honeycomb-lips at work.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=21
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=5 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-the-strange-woman-and-the-young-man-void-of-understanding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*her end is bitter as wormwood, sharp as a twoedged sword* (Proverbs 5:4) — the ox-to-slaughter of 7:22 walks toward the end ch5 named.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=22
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-the-strange-woman-and-the-young-man-void-of-understanding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the woman, whose heart is snares and nets... the sinner shall be taken by her* (Ecclesiastes 7:26) — the snare for his life (7:23); the one who pleases Elohim escapes, the sinner is taken.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=23
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=7 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-the-strange-woman-and-the-young-man-void-of-understanding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*every man is tempted, when he is drawn away of his own lust, and enticed* (James 1:14) — the ox led to slaughter (7:22) is the man drawn away of his own lust.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=22
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-the-strange-woman-and-the-young-man-void-of-understanding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*sin, when it is finished, bringeth forth death* (James 1:15) — the dart through the liver (7:23) is lust conceived and finished in death.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=23
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-the-strange-woman-and-the-young-man-void-of-understanding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Having eyes full of adultery... beguiling unstable souls* (2 Peter 2:14) — the flattery that caused him to yield (7:21) is Kepha''s beguiling; the youth is the unstable soul.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=21
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-the-strange-woman-and-the-young-man-void-of-understanding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Meet not with an harlot, lest you fall into her snares* (Sirach 9:3) — the plain counsel the youth of 7:7 did not heed.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=7
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=9 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-the-strange-woman-and-the-young-man-void-of-understanding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*he that cleaveth to harlots will become impudent* (Sirach 19:2) — even men of understanding fall away; how much more the young man void of understanding (7:22).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=22
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=19 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-the-strange-woman-and-the-young-man-void-of-understanding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*her house inclineth unto death, and her paths unto the dead* (Proverbs 2:18) — the way-to-hell of 7:27 is the verdict of ch2; the same door in both chapters.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=27
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=2 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-her-house-is-the-way-to-hell-going-down-to-the-chambers-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Her feet go down to death; her steps take hold on hell* (Proverbs 5:5) — to follow her steps (7:27) is to be carried down the road she herself walks.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=27
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-her-house-is-the-way-to-hell-going-down-to-the-chambers-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the dead are there; and... her guests are in the depths of hell* (Proverbs 9:18) — the chambers of death (7:27) are Dame Folly''s table; the guests do not know where they sit.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=27
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=9 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-her-house-is-the-way-to-hell-going-down-to-the-chambers-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*wide is the gate, and broad is the way, that leadeth to destruction* (Matthew 7:13) — the harlot''s house (7:27) is one mouth of the broad way; the strait gate is the kept Torah of 7:2.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=27
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-her-house-is-the-way-to-hell-going-down-to-the-chambers-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt not commit adultery* (Exodus 20:14) — the charge of 7:25 is the seventh commandment unfolded; the whole chapter is its exposition.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=25
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-the-seventh-commandment-thou-shalt-not-commit-adultery'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Neither shalt thou commit adultery* (Deuteronomy 5:18) — the many wounded and slain of 7:26 are the cost of the word repeated at Horeb, despised.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=7 AND sv.verse_number=26
+  JOIN _s304_pr07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-7-the-seventh-commandment-thou-shalt-not-commit-adultery'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_proverbs_10.sql (Proverbs 10) -----
+-- Chapter: Proverbs 10 — THE main Solomonic antithetic-couplet collection BEGINS here (*The proverbs of Solomon*, 10:1). The righteous and the wicked are set against each other through their mouth, memory, labour, and end. The couplets are clustered THEMATICALLY (not one thread per verse): the keystone love-covereth-sins (10:12, quoted twice in the NT), the tongue/mouth of the righteous vs the wicked (10:11,20-21,31-32), the memory and name of the just vs the wicked (10:7), the everlasting foundation / never-removed (10:25,30), the blessing of Yahuah that maketh rich (10:22), and the fear-of-Yahuah-prolongeth-days motto echo (10:27).
+-- Tag: pr10   Temp view: _s304_pr10_lookup
+-- Sort band: base 28225, step 3 -> threads at 28225, 28228, 28231, 28234, 28237, 28240 (6 threads)
+-- Source of EVERY row: 'canon','proverbs',10,v
+--
+-- Proverbs 10 coverage:
+--   v.1 (A wise son maketh a glad father: but a foolish son is the heaviness of his mother)
+--        NT/Extras/Tanakh: none warranted distinct (the wise-son/glad-father motif recurs across Proverbs 15:20, 23:24-25, 29:3; merely-introductory couplet, touched in prose where relevant; no thread forced)
+--   v.6 (Blessings are upon the head of the just: but violence covereth the mouth of the wicked)
+--        folded into THREAD 2 (the mouth/tongue cluster — v.6b = v.11b verbatim, *violence covereth the mouth of the wicked*)
+--   ★ v.7 (The memory of the just is blessed: but the name of the wicked shall rot)
+--        NT:     none warranted distinct (the memorial of the just carried whole by Psalm 112 + Ecclesiastes)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 112:6 (the righteous shall be in everlasting remembrance); Ecclesiastes 7:1 (A good name is better than precious ointment) — THREAD 3
+--   ★★ v.11 (The mouth of a righteous man is a well of life: but violence covereth the mouth of the wicked) — THE TONGUE CLUSTER ANCHOR
+--        NT:     ★ Matthew 12:34-35,37 (out of the abundance of the heart the mouth speaketh; by thy words... justified/condemned); James 3:8-10 (the tongue can no man tame) — THREAD 2
+--        Extras: ★ Sirach 5:13 (the tongue of man is his fall); Sirach 28:17-18 (the stroke of the tongue breaks the bones) — THREAD 2
+--        Tanakh: ★ Proverbs 12:18 (the tongue of the wise is health); Proverbs 18:21 (Death and life are in the power of the tongue); Psalm 37:30 (the mouth of the righteous speaketh wisdom) — THREAD 2
+--   ★★★ v.12 (Hatred stirreth up strifes: but love covereth all sins) — THE KEYSTONE
+--        NT:     ★★ 1 Peter 4:8 (charity shall cover the multitude of sins); James 5:20 (he which converteth the sinner... shall hide a multitude of sins) — THREAD 1 (quoted TWICE by name in the NT)
+--        Extras: none warranted distinct (the two NT quotations carry the keystone whole)
+--        Tanakh: ★ Proverbs 17:9 (He that covereth a transgression seeketh love) — THREAD 1
+--   v.20-21 (The tongue of the just is as choice silver... The lips of the righteous feed many)
+--        folded into THREAD 2 (the tongue cluster)
+--   ★ v.22 (The blessing of Yahuah, it maketh rich, and he addeth no sorrow with it)
+--        NT:     1 Timothy 6:6 (godliness with contentment is great gain) — THREAD 5
+--        Extras: none warranted distinct
+--        Tanakh: ★ Deuteronomy 8:18 (it is he that giveth thee power to get wealth); Psalm 127:1-2 (Except Yahuah build the house, they labour in vain... so he giveth his beloved sleep) — THREAD 5
+--   ★ v.25 (As the whirlwind passeth, so is the wicked no more: but the righteous is an everlasting foundation)
+--        NT:     ★ Matthew 7:24-25,27 (built his house upon a rock... it fell not / upon the sand... great was the fall) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 125:1 (which cannot be removed, but abideth for ever) — THREAD 4
+--   ★ v.27 (The fear of Yahuah prolongeth days: but the years of the wicked shall be shortened)
+--        NT:     none warranted distinct (the long-life-of-the-fearer carried whole by Torah + Proverbs + Sirach)
+--        Extras: ★ Sirach 1:12 (The fear of Yahuah makes a merry heart... and a long life); Sirach 1:20 (The root of wisdom is to fear Yahuah, and the branches thereof are long life) — THREAD 6
+--        Tanakh: ★ Proverbs 1:7 / 9:10 (the fear of Yahuah is the beginning of knowledge/wisdom); Proverbs 3:1-2 (length of days, and long life... shall they add); Deuteronomy 5:33 (that ye may prolong your days); Exodus 20:12 (Honour thy father and thy mother: that thy days may be long) — THREAD 6
+--   ★ v.30 (The righteous shall never be removed: but the wicked shall not inhabit the earth)
+--        NT:     none warranted distinct (folded into THREAD 4)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 37:9-11,29 (those that wait upon Yahuah... shall inherit the earth; the meek shall inherit the earth; the righteous shall inherit the land... for ever) — THREAD 4 (the two-ways / inherit-the-earth)
+--   v.31-32 (The mouth of the just bringeth forth wisdom... The lips of the righteous know what is acceptable)
+--        folded into THREAD 2 (the tongue cluster — the chapter closes on the righteous mouth)
+--   PRUDENTIAL COUPLETS, none warranted (folded contextually or merely-prudential, no thread): v.2-5 (treasures of wickedness/righteousness delivereth/diligent hand/gathereth in summer — v.2 *righteousness delivereth from death* touched in prose), v.8-10 (wise receive commandments/walketh uprightly/winketh with the eye), v.13-19 (lips of understanding/wise lay up knowledge/rich man's wealth/labour of the righteous/keepeth instruction/hideth hatred/multitude of words — v.16 *labour of the righteous tendeth to life* touched in prose), v.23-24,26,28-29 (sport to a fool/fear of the wicked/vinegar to the teeth/hope of the righteous/the way of Yahuah is strength): merely-prudential, no framework-bearing weave forced.
+--
+-- Threads (slug — target libraries):
+--   1. proverbs-10-love-covereth-all-sins — Tanakh (Proverbs) + NT (1 Peter, James) [free] (★★★ THE KEYSTONE: *love covereth all sins* (10:12) quoted TWICE in the NT — *charity shall cover the multitude of sins* (1 Pet 4:8), *shall hide a multitude of sins* (James 5:20))
+--   2. proverbs-10-the-mouth-of-the-righteous-is-a-well-of-life — Tanakh (Proverbs, Psalm) + NT (Matthew, James) + Extras (Sirach) [extras] (the tongue/mouth of the righteous vs the wicked, clustered: 10:11,20-21,31-32)
+--   3. proverbs-10-the-memory-of-the-just-is-blessed — Tanakh (Psalm, Ecclesiastes) [free] (the memorial of the just vs the rotting name of the wicked: 10:7)
+--   4. proverbs-10-the-righteous-is-an-everlasting-foundation — Tanakh (Psalm) + NT (Matthew) [free] (the everlasting foundation / never-removed / inherit-the-earth: 10:25,30)
+--   5. proverbs-10-the-blessing-of-yahuah-it-maketh-rich — Tanakh (Deuteronomy, Psalm) + NT (1 Timothy) [free] (the blessing from above, not from toil-anxiety: 10:22)
+--   6. proverbs-10-the-fear-of-yahuah-prolongeth-days — Tanakh (Proverbs, Deuteronomy, Exodus) + Extras (Sirach) [extras] (the fear-of-Yahuah motto echo + the Torah's long-days promise: 10:27)
+--
+-- Framing notes:
+--   ★★★ THE KEYSTONE (THREAD 1): *Hatred stirreth up strifes: but love covereth all sins* (10:12). This is one of the rare Proverbs verses the NT quotes by name TWICE — and both times to teach covering, not exposing, a brother's sin. Kepha (Peter): *And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins* (1 Peter 4:8). Ya'akov (James): *Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins* (James 5:20). The same book sets the measure again — *He that covereth a transgression seeketh love; but he that repeateth a matter separateth very friends* (Proverbs 17:9). Love does not parade the fault; it covers, and so it heals. (NB: this covering is the OPPOSITE of the self-covering condemned in 28:13 — there a man hides his OWN sin and does not prosper; here love covers a BROTHER's sin and restores him.)
+--   ★★ THE TONGUE CLUSTER (THREAD 2): the chapter returns again and again to the mouth — *The mouth of a righteous man is a well of life: but violence covereth the mouth of the wicked* (10:11), *The tongue of the just is as choice silver: the heart of the wicked is little worth* (10:20), *The lips of the righteous feed many: but fools die for want of wisdom* (10:21), and closes on it: *The mouth of the just bringeth forth wisdom: but the froward tongue shall be cut out* (10:31), *The lips of the righteous know what is acceptable: but the mouth of the wicked speaketh frowardness* (10:32). The same book weighs the tongue twice over — *the tongue of the wise is health* (12:18), *Death and life are in the power of the tongue* (18:21) — and the Psalmist sings it: *The mouth of the righteous speaketh wisdom, and his tongue talketh of judgment* (Psalm 37:30). Yahusha (Jesus) roots the mouth in the heart and binds it to the judgment: *out of the abundance of the heart the mouth speaketh* (Matthew 12:34), *by thy words thou shalt be justified, and by thy words thou shalt be condemned* (12:37). Ya'akov (James) names the tongue untameable apart from the new heart: *the tongue can no man tame; it is an unruly evil, full of deadly poison* (3:8). And the restored witness keeps the weight: *the tongue of man is his fall* (Sirach 5:13), *the stroke of the tongue breaks the bones* (Sirach 28:17). The well-of-life mouth and the violence-covered mouth are the two hearts speaking.
+--   ★ THE MEMORY OF THE JUST (THREAD 3): *The memory of the just is blessed: but the name of the wicked shall rot* (10:7). The just man is not forgotten — *Surely he shall not be moved for ever: the righteous shall be in everlasting remembrance* (Psalm 112:6) — and his name outlasts his life: *A good name is better than precious ointment; and the day of death than the day of one's birth* (Ecclesiastes 7:1). The wicked man's name, by contrast, rots away. The memorial of the righteous endures because their righteousness endures.
+--   ★ THE EVERLASTING FOUNDATION (THREAD 4): *As the whirlwind passeth, so is the wicked no more: but the righteous is an everlasting foundation* (10:25), and *The righteous shall never be removed: but the wicked shall not inhabit the earth* (10:30). Yahusha (Jesus) draws the same two ends in the parable of the two builders: *whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock... and it fell not: for it was founded upon a rock* (Matthew 7:24-25), while the hearer-and-not-doer built upon sand and *great was the fall of it* (7:27). The Psalmist sings the same foundation — *They that trust in Yahuah (LORD) shall be as mount Zion, which cannot be removed, but abideth for ever* (Psalm 125:1) — and the inherit-the-earth promise of the two ways: *those that wait upon Yahuah (LORD), they shall inherit the earth* (Psalm 37:9), *the meek shall inherit the earth* (37:11), *The righteous shall inherit the land, and dwell therein for ever* (37:29). The wicked passes like a whirlwind; the righteous stands forever, and inherits the land.
+--   ★ THE BLESSING THAT MAKETH RICH (THREAD 5): *The blessing of Yahuah (LORD), it maketh rich, and he addeth no sorrow with it* (10:22). The wealth that lasts comes from above, not from the anxious grasp of the slack-or-diligent hand the chapter has just been weighing (10:4). The Torah says it plainly: *thou shalt remember Yahuah Elohayka (the LORD thy God): for it is he that giveth thee power to get wealth* (Deuteronomy 8:18) — the boast *My power and the might of mine hand hath gotten me this wealth* (8:17) is exactly what 10:22 corrects. The Psalmist sings the toil-anxiety the blessing relieves: *Except Yahuah (LORD) build the house, they labour in vain... It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep* (Psalm 127:1-2). And the apostle keeps the lesson: *godliness with contentment is great gain* (1 Timothy 6:6). The blessing adds no sorrow because it does not depend on the grasping hand.
+--   ★ FEAR OF YAHUAH PROLONGETH DAYS (THREAD 6): *The fear of Yahuah (LORD) prolongeth days: but the years of the wicked shall be shortened* (10:27). This is the book's own motto sounding again — *The fear of Yahuah (LORD) is the beginning of knowledge* (1:7), *The fear of Yahuah (LORD) is the beginning of wisdom* (9:10) — now tied to length of days, exactly as the father's charge promised: *My son, forget not my law... For length of days, and long life, and peace, shall they add to thee* (3:1-2). The long-days promise is the Torah's own: *Ye shall walk in all the ways which Yahuah Elohaychem (the LORD your God) hath commanded you... that ye may prolong your days* (Deuteronomy 5:33), and the first commandment with promise: *Honour thy father and thy mother: that thy days may be long upon the land* (Exodus 20:12). The restored witness binds the fear to long life twice: *The fear of Yahuah (God) makes a merry heart, and gives joy, and gladness, and a long life* (Sirach 1:12); *The root of wisdom is to fear Yahuah (God), and the branches thereof are long life* (Sirach 1:20). The fear of Yahuah is no abolished old-covenant dread but the living root of a long and blessed life.
+--   EXTRAS: Sirach (Ecclesiasticus) double-written edition 'apocrypha' + book 'ecclesiasticus'. Clean witnesses pulled: 5:13, 28:17, 28:18 (the tongue's fall/the stroke that breaks the bones); 1:12, 1:20 (the fear of Yahuah = long life). Sirach 28:13-14,21 weighed but the two chosen carry the tongue-as-weapon cleanest; 1:11 weighed (honour/crown) but 1:12 + 1:20 carry the LONG-LIFE nexus that ties to 10:27.
+
+CREATE TEMP VIEW _s304_pr10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Love covereth all sins (THE KEYSTONE — quoted twice by name in the NT)
+    ('canon','proverbs',10,12,'canon','1-peter',4,8,'free',
+      E'*And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins* (1 Peter 4:8). Kepha (Peter) quotes the keystone of *love covereth all sins* (Proverbs 10:12) almost word for word: *charity shall cover the multitude of sins*. Love does not parade a brother''s fault but covers it — the very opposite of the hatred that *stirreth up strifes*.'),
+    ('canon','proverbs',10,12,'canon','james',5,20,'free',
+      E'*Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins* (James 5:20). Ya''akov (James) quotes the keystone of *love covereth all sins* (Proverbs 10:12) the second time the NT reaches for it: the love that *converteth the sinner* both saves a soul and *shall hide a multitude of sins*. Covering is not concealing guilt but restoring the sinner — the labour of love, not of hatred.'),
+    ('canon','proverbs',10,12,'canon','proverbs',17,9,'free',
+      E'*He that covereth a transgression seeketh love; but he that repeateth a matter separateth very friends* (Proverbs 17:9). The same book sets the measure of *love covereth all sins* (10:12) again: *He that covereth a transgression seeketh love*. To cover a fault is to seek love; to repeat and parade it is the hatred that stirreth up strife and *separateth very friends*.'),
+
+    -- THREAD 2: The mouth of the righteous is a well of life (the tongue cluster)
+    ('canon','proverbs',10,11,'canon','proverbs',12,18,'free',
+      E'*There is that speaketh like the piercings of a sword: but the tongue of the wise is health* (Proverbs 12:18). The well-of-life mouth of *The mouth of a righteous man is a well of life* (10:11) is the same book''s *tongue of the wise is health*. The righteous mouth gives life and health; the wicked tongue pierces like a sword.'),
+    ('canon','proverbs',10,11,'canon','proverbs',18,21,'free',
+      E'*Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof* (Proverbs 18:21). The two mouths of *The mouth of a righteous man is a well of life: but violence covereth the mouth of the wicked* (10:11) are weighed plainly here: *Death and life are in the power of the tongue*. The righteous mouth is a well of life; the wicked mouth pours out death.'),
+    ('canon','proverbs',10,11,'canon','psalms',37,30,'free',
+      E'*The mouth of the righteous speaketh wisdom, and his tongue talketh of judgment* (Psalm 37:30). The Psalmist sings the well-of-life mouth of Proverbs 10:11 (and the chapter''s close, *The mouth of the just bringeth forth wisdom*, 10:31): *The mouth of the righteous speaketh wisdom*. The next verse names the spring of it — *The law of his Elohim (God) is in his heart* (37:31) — for the mouth speaks what the heart holds.'),
+    ('canon','proverbs',10,11,'canon','matthew',12,34,'free',
+      E'*O generation of vipers, how can ye, being evil, speak good things? for out of the abundance of the heart the mouth speaketh* (Matthew 12:34). Yahusha (Jesus) names WHY the righteous mouth is *a well of life* and the wicked mouth pours violence (Proverbs 10:11): *out of the abundance of the heart the mouth speaketh*. The mouth only ladles out what the heart already holds — choice silver from the just, *little worth* from the wicked (10:20).'),
+    ('canon','proverbs',10,11,'canon','matthew',12,37,'free',
+      E'*For by thy words thou shalt be justified, and by thy words thou shalt be condemned* (Matthew 12:37). The two mouths of Proverbs 10:11 are weighed at the judgment: *by thy words thou shalt be justified, and by thy words thou shalt be condemned*. The well-of-life tongue and the violence-covered mouth are not idle — they are the man, and they answer for him.'),
+    ('canon','proverbs',10,11,'canon','james',3,8,'free',
+      E'*But the tongue can no man tame; it is an unruly evil, full of deadly poison* (James 3:8). Ya''akov (James) shows why only the righteous heart yields a well-of-life mouth (Proverbs 10:11): *the tongue can no man tame*. No man masters his own tongue by effort; out of the same mouth come blessing and cursing (3:10) until the heart itself is made righteous.'),
+    ('canon','proverbs',10,11,'apocrypha','ecclesiasticus',5,13,'extras',
+      E'*Honour and shame is in talk: and the tongue of man is his fall* (Sirach 5:13). The restored witness weighs the wicked mouth of Proverbs 10:11: *the tongue of man is his fall*. The mouth that pours out violence is the man''s own undoing — *the froward tongue shall be cut out* (10:31).'),
+    ('canon','proverbs',10,11,'apocrypha','ecclesiasticus',28,17,'extras',
+      E'*The stroke of the whip makes marks in the flesh: but the stroke of the tongue breaks the bones* (Sirach 28:17). The violence that *covereth the mouth of the wicked* (Proverbs 10:11) strikes deeper than the lash: *the stroke of the tongue breaks the bones*. The wicked tongue is a weapon; the righteous tongue, by contrast, is *as choice silver* (10:20) and *feed[s] many* (10:21).'),
+    ('canon','proverbs',10,11,'apocrypha','ecclesiasticus',28,18,'extras',
+      E'*Many have fallen by the edge of the sword: but not so many as have fallen by the tongue* (Sirach 28:18). The wicked mouth of Proverbs 10:11 slays more than the sword does: *not so many as have fallen by the tongue*. Against this stands the well-of-life mouth — *The lips of the righteous feed many* (10:21) — the tongue that heals rather than kills.'),
+
+    -- THREAD 3: The memory of the just is blessed
+    ('canon','proverbs',10,7,'canon','psalms',112,6,'free',
+      E'*Surely he shall not be moved for ever: the righteous shall be in everlasting remembrance* (Psalm 112:6). The blessing of *The memory of the just is blessed* (Proverbs 10:7) is sung whole here: *the righteous shall be in everlasting remembrance*. The just man is not moved and not forgotten, while the name of the wicked rots away.'),
+    ('canon','proverbs',10,7,'canon','ecclesiastes',7,1,'free',
+      E'*A good name is better than precious ointment; and the day of death than the day of one''s birth* (Ecclesiastes 7:1). The blessed memory of *The memory of the just is blessed: but the name of the wicked shall rot* (Proverbs 10:7) is the good name Qoheleth prizes above precious ointment. The just man''s name is his lasting treasure; the wicked man''s name decays.'),
+
+    -- THREAD 4: The righteous is an everlasting foundation
+    ('canon','proverbs',10,25,'canon','matthew',7,24,'free',
+      E'*Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock* (Matthew 7:24). Yahusha (Jesus) draws the everlasting foundation of *the righteous is an everlasting foundation* (Proverbs 10:25): the doer of His sayings *built his house upon a rock*. The hearer-and-doer stands; the wicked, by contrast, passes away as the whirlwind.'),
+    ('canon','proverbs',10,25,'canon','matthew',7,27,'free',
+      E'*And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell: and great was the fall of it* (Matthew 7:27). The whirlwind of *As the whirlwind passeth, so is the wicked no more* (Proverbs 10:25) is the storm that takes the sand-builder: *the winds blew, and beat upon that house; and it fell*. The wicked has no foundation and is swept away; the righteous stands.'),
+    ('canon','proverbs',10,25,'canon','psalms',125,1,'free',
+      E'*They that trust in Yahuah (LORD) shall be as mount Zion, which cannot be removed, but abideth for ever* (Psalm 125:1). The everlasting foundation of Proverbs 10:25 (and *The righteous shall never be removed*, 10:30) is sung as Mount Zion: *which cannot be removed, but abideth for ever*. The trusting righteous are immovable as the mountain Yahuah is round about.'),
+    ('canon','proverbs',10,30,'canon','psalms',37,9,'free',
+      E'*For evildoers shall be cut off: but those that wait upon Yahuah (LORD), they shall inherit the earth* (Psalm 37:9). The two ends of *The righteous shall never be removed: but the wicked shall not inhabit the earth* (Proverbs 10:30) are the two ways of the Psalm: *evildoers shall be cut off: but those that wait upon Yahuah (LORD), they shall inherit the earth*. The same Psalm that Yahusha (Jesus) takes up in the Beatitudes.'),
+    ('canon','proverbs',10,30,'canon','psalms',37,11,'free',
+      E'*But the meek shall inherit the earth; and shall delight themselves in the abundance of peace* (Psalm 37:11). The promise of *The righteous shall never be removed* (Proverbs 10:30) is the inheritance Yahusha (Jesus) blessed: *the meek shall inherit the earth*. The wicked shall not inhabit the earth, but the meek and righteous shall possess it in peace.'),
+    ('canon','proverbs',10,30,'canon','psalms',37,29,'free',
+      E'*The righteous shall inherit the land, and dwell therein for ever* (Psalm 37:29). The never-removed standing of *The righteous shall never be removed: but the wicked shall not inhabit the earth* (Proverbs 10:30) is the Psalm''s settled inheritance: *The righteous shall inherit the land, and dwell therein for ever*. The everlasting foundation is also an everlasting dwelling.'),
+
+    -- THREAD 5: The blessing of Yahuah, it maketh rich
+    ('canon','proverbs',10,22,'canon','deuteronomy',8,18,'free',
+      E'*But thou shalt remember Yahuah Elohayka (the LORD thy God): for it is he that giveth thee power to get wealth, that he may establish his covenant which he sware unto thy fathers, as it is this day* (Deuteronomy 8:18). The riches of *The blessing of Yahuah (LORD), it maketh rich* (Proverbs 10:22) are the Torah''s own teaching: *it is he that giveth thee power to get wealth*. The boast *My power... hath gotten me this wealth* (8:17) is exactly what the blessing corrects — wealth is a gift bound to the covenant, not a grasp of the hand.'),
+    ('canon','proverbs',10,22,'canon','psalms',127,1,'free',
+      E'*Except Yahuah (LORD) build the house, they labour in vain that build it: except Yahuah (LORD) keep the city, the watchman waketh but in vain* (Psalm 127:1). The blessing that *maketh rich* and *addeth no sorrow with it* (Proverbs 10:22) is the labour Yahuah Himself prospers: *Except Yahuah (LORD) build the house, they labour in vain*. The next verse names the sorrow the blessing relieves — *It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep* (127:2).'),
+    ('canon','proverbs',10,22,'canon','1-timothy',6,6,'free',
+      E'*But godliness with contentment is great gain* (1 Timothy 6:6). The sorrowless riches of *The blessing of Yahuah (LORD), it maketh rich, and he addeth no sorrow with it* (Proverbs 10:22) are kept whole in the apostle''s charge: *godliness with contentment is great gain*. The blessing adds no sorrow because the godly heart is content with what Yahuah gives, not grasping after more.'),
+
+    -- THREAD 6: The fear of Yahuah prolongeth days
+    ('canon','proverbs',10,27,'canon','proverbs',1,7,'free',
+      E'*The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction* (Proverbs 1:7). The fear that *prolongeth days* (Proverbs 10:27) is the book''s own motto sounding again: *The fear of Yahuah (LORD) is the beginning of knowledge*. The fear of Yahuah is the root from which both wisdom and long life grow.'),
+    ('canon','proverbs',10,27,'canon','proverbs',9,10,'free',
+      E'*The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding* (Proverbs 9:10). The fear that *prolongeth days* (Proverbs 10:27) is the same fear that begins wisdom: *The fear of Yahuah (LORD) is the beginning of wisdom*. The motto of the whole book stands behind the long-days promise.'),
+    ('canon','proverbs',10,27,'canon','proverbs',3,2,'free',
+      E'*For length of days, and long life, and peace, shall they add to thee* (Proverbs 3:2). The prolonged days of *The fear of Yahuah (LORD) prolongeth days* (10:27) are exactly the father''s promise over the kept Torah: *forget not my law... For length of days, and long life, and peace, shall they add to thee* (3:1-2). The fear of Yahuah and the kept law carry the same reward of long life.'),
+    ('canon','proverbs',10,27,'canon','deuteronomy',5,33,'free',
+      E'*Ye shall walk in all the ways which Yahuah Elohaychem (the LORD your God) hath commanded you, that ye may live, and that it may be well with you, and that ye may prolong your days in the land which ye shall possess* (Deuteronomy 5:33). The prolonging of days in *The fear of Yahuah (LORD) prolongeth days* (Proverbs 10:27) is the Torah''s own covenant promise: *that ye may prolong your days in the land*. The fear of Yahuah walked out in His commanded ways is the long-life path.'),
+    ('canon','proverbs',10,27,'canon','exodus',20,12,'free',
+      E'*Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Exodus 20:12). The long days of *The fear of Yahuah (LORD) prolongeth days* (Proverbs 10:27) are the very promise hung on the first commandment-with-promise: *Honour thy father and thy mother: that thy days may be long*. The Torah binds long life to the fear of Yahuah lived out toward father and mother — never abolished, but the wisdom Proverbs echoes.'),
+    ('canon','proverbs',10,27,'apocrypha','ecclesiasticus',1,12,'extras',
+      E'*The fear of Yahuah (God) makes a merry heart, and gives joy, and gladness, and a long life* (Sirach 1:12). The restored witness binds the fear to long life exactly as *The fear of Yahuah (LORD) prolongeth days* (Proverbs 10:27) does: *The fear of Yahuah (God)... gives joy, and gladness, and a long life*. The fear of Yahuah is no old-covenant dread but the spring of a glad and lengthened life.'),
+    ('canon','proverbs',10,27,'apocrypha','ecclesiasticus',1,20,'extras',
+      E'*The root of wisdom is to fear Yahuah (God), and the branches thereof are long life* (Sirach 1:20). The restored witness draws the same tree as *The fear of Yahuah (LORD) prolongeth days* (Proverbs 10:27): *The root of wisdom is to fear Yahuah (God), and the branches thereof are long life*. Fear at the root, long life on the branches — the very harvest the proverb promises.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (THE KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-10-love-covereth-all-sins',
+       E'Hatred stirreth up strifes — but love covereth all sins',
+       E'The Solomonic collection sets its keystone early: *Hatred stirreth up strifes: but love covereth all sins* (Proverbs 10:12). This is one of the rare proverbs the New Testament quotes by name TWICE — and both times to teach that love COVERS a brother''s sin rather than parading it. Kepha (Peter): *And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins* (1 Peter 4:8). Ya''akov (James): *Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins* (James 5:20). The same book of Proverbs states the measure again — *He that covereth a transgression seeketh love; but he that repeateth a matter separateth very friends* (Proverbs 17:9). To cover a transgression is to seek love and to restore the sinner; to repeat and broadcast it is the very hatred that stirreth up strife. (Note: this covering of a BROTHER''S sin is the opposite of the self-covering condemned in 28:13 — *He that covereth his sins shall not prosper* — where a man hides his OWN sin and does not prosper. Love covers another''s fault to heal him; the guilty man uncovers his own to find mercy.)',
+       sv.verse_id, ev.verse_id, 'free', 28225
+  FROM _s304_pr10_lookup sv, _s304_pr10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=10 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (the tongue cluster)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-10-the-mouth-of-the-righteous-is-a-well-of-life',
+       E'The mouth of the righteous is a well of life — the two tongues',
+       E'The Solomonic collection returns again and again to the mouth, setting the tongue of the righteous against the tongue of the wicked: *The mouth of a righteous man is a well of life: but violence covereth the mouth of the wicked* (Proverbs 10:11); *The tongue of the just is as choice silver: the heart of the wicked is little worth* (10:20); *The lips of the righteous feed many: but fools die for want of wisdom* (10:21); and the chapter closes on it — *The mouth of the just bringeth forth wisdom: but the froward tongue shall be cut out* (10:31), *The lips of the righteous know what is acceptable: but the mouth of the wicked speaketh frowardness* (10:32). The same book weighs the tongue twice over — *the tongue of the wise is health* (12:18), *Death and life are in the power of the tongue* (18:21) — and the Psalmist sings its spring: *The mouth of the righteous speaketh wisdom, and his tongue talketh of judgment* (Psalm 37:30), for *The law of his Elohim (God) is in his heart* (37:31). Yahusha (Jesus) roots the mouth in the heart and binds it to the judgment: *out of the abundance of the heart the mouth speaketh* (Matthew 12:34); *by thy words thou shalt be justified, and by thy words thou shalt be condemned* (12:37). Ya''akov (James) shows why no man yields a well-of-life mouth by effort: *the tongue can no man tame; it is an unruly evil, full of deadly poison* (3:8) — out of the same mouth proceed blessing and cursing until the heart itself is made righteous. And the restored witness keeps the weight whole: *the tongue of man is his fall* (Sirach 5:13); *the stroke of the tongue breaks the bones* (Sirach 28:17); *Many have fallen by the edge of the sword: but not so many as have fallen by the tongue* (28:18). The well-of-life mouth and the violence-covered mouth are simply the two hearts speaking — the just heart pours out choice silver and feeds many; the wicked heart pours out death.',
+       sv.verse_id, ev.verse_id, 'extras', 28228
+  FROM _s304_pr10_lookup sv, _s304_pr10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=10 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (the memory of the just)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-10-the-memory-of-the-just-is-blessed',
+       E'The memory of the just is blessed — but the name of the wicked shall rot',
+       E'*The memory of the just is blessed: but the name of the wicked shall rot* (Proverbs 10:7). The just man is not moved and not forgotten — *Surely he shall not be moved for ever: the righteous shall be in everlasting remembrance* (Psalm 112:6) — and his name outlasts his life as the truest of treasures: *A good name is better than precious ointment; and the day of death than the day of one''s birth* (Ecclesiastes 7:1). The wicked man''s name, by contrast, rots away into nothing. The memorial of the righteous endures because their righteousness endures; what a man is remembered for is the harvest of how he lived.',
+       sv.verse_id, ev.verse_id, 'free', 28231
+  FROM _s304_pr10_lookup sv, _s304_pr10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=10 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (the everlasting foundation)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-10-the-righteous-is-an-everlasting-foundation',
+       E'The righteous is an everlasting foundation — never removed from the earth',
+       E'The collection draws the two ends of the righteous and the wicked: *As the whirlwind passeth, so is the wicked no more: but the righteous is an everlasting foundation* (Proverbs 10:25), and *The righteous shall never be removed: but the wicked shall not inhabit the earth* (10:30). Yahusha (Jesus) tells the same in the parable of the two builders: *whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock... and it fell not: for it was founded upon a rock* (Matthew 7:24-25), while the hearer-and-not-doer built upon sand, and when *the winds blew, and beat upon that house; and it fell: and great was the fall of it* (7:27). The whirlwind is the storm that takes the foundationless. The Psalmist sings the immovable foundation — *They that trust in Yahuah (LORD) shall be as mount Zion, which cannot be removed, but abideth for ever* (Psalm 125:1) — and joins it to the inherit-the-earth promise of the two ways: *evildoers shall be cut off: but those that wait upon Yahuah (LORD), they shall inherit the earth* (Psalm 37:9); *the meek shall inherit the earth* (37:11); *The righteous shall inherit the land, and dwell therein for ever* (37:29) — the very blessing Yahusha (Jesus) took up in the Beatitudes. The wicked passes like a whirlwind and shall not inhabit the earth; the righteous stands on an everlasting foundation and inherits the land forever.',
+       sv.verse_id, ev.verse_id, 'free', 28234
+  FROM _s304_pr10_lookup sv, _s304_pr10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=10 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (the blessing that maketh rich)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-10-the-blessing-of-yahuah-it-maketh-rich',
+       E'The blessing of Yahuah, it maketh rich — and addeth no sorrow',
+       E'In the midst of the couplets on the slack and the diligent hand stands the verse that sources all true wealth above the hand altogether: *The blessing of Yahuah (LORD), it maketh rich, and he addeth no sorrow with it* (Proverbs 10:22). The riches that last and carry no sorrow come from the blessing of Yahuah, not from the anxious grasp. The Torah teaches it plainly: *thou shalt remember Yahuah Elohayka (the LORD thy God): for it is he that giveth thee power to get wealth, that he may establish his covenant which he sware unto thy fathers* (Deuteronomy 8:18) — and the boast it corrects, *My power and the might of mine hand hath gotten me this wealth* (8:17), is the exact opposite of the blessing. The Psalmist sings the toil-anxiety the blessing relieves: *Except Yahuah (LORD) build the house, they labour in vain that build it... It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep* (Psalm 127:1-2). And the apostle keeps the lesson: *godliness with contentment is great gain* (1 Timothy 6:6). The blessing addeth no sorrow because it does not hang on the grasping hand but on the open hand of Yahuah, who gives His beloved sleep.',
+       sv.verse_id, ev.verse_id, 'free', 28237
+  FROM _s304_pr10_lookup sv, _s304_pr10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=10 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (the fear of Yahuah prolongeth days)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-10-the-fear-of-yahuah-prolongeth-days',
+       E'The fear of Yahuah prolongeth days — the motto and the long-life promise',
+       E'*The fear of Yahuah (LORD) prolongeth days: but the years of the wicked shall be shortened* (Proverbs 10:27). The book''s great motto sounds here again, now tied to length of days: *The fear of Yahuah (LORD) is the beginning of knowledge* (1:7); *The fear of Yahuah (LORD) is the beginning of wisdom* (9:10). And the long-days reward is exactly the father''s promise over the kept Torah: *My son, forget not my law; but let thine heart keep my commandments: For length of days, and long life, and peace, shall they add to thee* (3:1-2). That promise is the Torah''s own — *Ye shall walk in all the ways which Yahuah Elohaychem (the LORD your God) hath commanded you... that ye may prolong your days in the land* (Deuteronomy 5:33) — and it is hung on the first commandment-with-promise: *Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Exodus 20:12). The fear of Yahuah is no abolished old-covenant dread but the living root of a long and blessed life — as the restored witness sings it twice: *The fear of Yahuah (God) makes a merry heart, and gives joy, and gladness, and a long life* (Sirach 1:12); *The root of wisdom is to fear Yahuah (God), and the branches thereof are long life* (Sirach 1:20). Fear at the root, long life on the branches.',
+       sv.verse_id, ev.verse_id, 'extras', 28240
+  FROM _s304_pr10_lookup sv, _s304_pr10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=10 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*charity shall cover the multitude of sins* (1 Peter 4:8) — Kepha quotes 10:12 almost word for word; love covers a brother''s fault, the opposite of strife-stirring hatred.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-love-covereth-all-sins'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he which converteth the sinner... shall hide a multitude of sins* (James 5:20) — Ya''akov''s quotation of 10:12; love that restores the sinner covers his sins.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-love-covereth-all-sins'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He that covereth a transgression seeketh love* (Proverbs 17:9) — the same book sets the measure of 10:12 again; covering a fault seeks love, repeating it separates friends.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-love-covereth-all-sins'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the tongue of the wise is health* (Proverbs 12:18) — the well-of-life mouth of 10:11 in the same book; the righteous tongue heals, the wicked pierces like a sword.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=12 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-mouth-of-the-righteous-is-a-well-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Death and life are in the power of the tongue* (Proverbs 18:21) — the two mouths of 10:11 weighed plainly; the righteous mouth a well of life, the wicked pouring death.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-mouth-of-the-righteous-is-a-well-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The mouth of the righteous speaketh wisdom, and his tongue talketh of judgment* (Psalm 37:30) — the well-of-life mouth of 10:11/10:31; its spring is the law in the heart (37:31).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-mouth-of-the-righteous-is-a-well-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*out of the abundance of the heart the mouth speaketh* (Matthew 12:34) — Yahusha names WHY the mouth is a well of life or pours violence (10:11); the mouth ladles out the heart.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-mouth-of-the-righteous-is-a-well-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*by thy words thou shalt be justified, and by thy words thou shalt be condemned* (Matthew 12:37) — the two mouths of 10:11 weighed at the judgment; words are the man and answer for him.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-mouth-of-the-righteous-is-a-well-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the tongue can no man tame; it is an unruly evil, full of deadly poison* (James 3:8) — why only the righteous heart yields a well-of-life mouth (10:11); no man masters his tongue by effort.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-mouth-of-the-righteous-is-a-well-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the tongue of man is his fall* (Sirach 5:13) — the restored witness weighs the wicked mouth of 10:11; the violent tongue is the man''s own undoing.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=5 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-mouth-of-the-righteous-is-a-well-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*the stroke of the tongue breaks the bones* (Sirach 28:17) — the violence that covers the wicked mouth (10:11) strikes deeper than the lash.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=28 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-mouth-of-the-righteous-is-a-well-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*not so many as have fallen by the tongue* (Sirach 28:18) — the wicked mouth of 10:11 slays more than the sword; against it stands the well-of-life mouth that feeds many (10:21).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=28 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-mouth-of-the-righteous-is-a-well-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the righteous shall be in everlasting remembrance* (Psalm 112:6) — the blessing of 10:7 sung whole; the just man is not moved and not forgotten.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=7
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=112 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-memory-of-the-just-is-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*A good name is better than precious ointment* (Ecclesiastes 7:1) — the blessed memory of 10:7; the just man''s name is his lasting treasure, the wicked''s decays.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=7
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=7 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-memory-of-the-just-is-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*built his house upon a rock* (Matthew 7:24) — Yahusha draws the everlasting foundation of 10:25; the doer of His sayings stands.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=25
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-righteous-is-an-everlasting-foundation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the winds blew... and it fell: and great was the fall of it* (Matthew 7:27) — the whirlwind of 10:25 that takes the foundationless sand-builder.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=25
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-righteous-is-an-everlasting-foundation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*as mount Zion, which cannot be removed, but abideth for ever* (Psalm 125:1) — the everlasting foundation of 10:25 / never-removed of 10:30 sung as immovable Zion.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=25
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=125 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-righteous-is-an-everlasting-foundation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*those that wait upon Yahuah (LORD), they shall inherit the earth* (Psalm 37:9) — the two ends of 10:30; evildoers cut off, the waiting righteous inherit.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=30
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-righteous-is-an-everlasting-foundation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the meek shall inherit the earth* (Psalm 37:11) — the promise of 10:30 that Yahusha blessed in the Beatitudes.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=30
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-righteous-is-an-everlasting-foundation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*The righteous shall inherit the land, and dwell therein for ever* (Psalm 37:29) — the never-removed standing of 10:30 as the settled, everlasting inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=30
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-righteous-is-an-everlasting-foundation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*it is he that giveth thee power to get wealth* (Deuteronomy 8:18) — the riches of 10:22 are the Torah''s teaching; the boast of *mine own hand* (8:17) is what the blessing corrects.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=22
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=8 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-blessing-of-yahuah-it-maketh-rich'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Except Yahuah (LORD) build the house, they labour in vain* (Psalm 127:1) — the blessing that maketh rich and addeth no sorrow (10:22); the labour Yahuah prospers, who giveth His beloved sleep (127:2).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=22
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=127 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-blessing-of-yahuah-it-maketh-rich'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*godliness with contentment is great gain* (1 Timothy 6:6) — the sorrowless riches of 10:22 kept whole; the godly heart is content with what Yahuah gives.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=22
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-blessing-of-yahuah-it-maketh-rich'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The fear of Yahuah (LORD) is the beginning of knowledge* (Proverbs 1:7) — the fear that prolongeth days (10:27) is the book''s own motto sounding again.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=27
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-fear-of-yahuah-prolongeth-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The fear of Yahuah (LORD) is the beginning of wisdom* (Proverbs 9:10) — the same fear of 10:27 that begins wisdom stands behind the long-days promise.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=27
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=9 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-fear-of-yahuah-prolongeth-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*For length of days, and long life, and peace, shall they add to thee* (Proverbs 3:2) — the prolonged days of 10:27 are the father''s promise over the kept Torah (3:1-2).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=27
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-fear-of-yahuah-prolongeth-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*that ye may prolong your days in the land* (Deuteronomy 5:33) — the prolonging of days of 10:27 is the Torah''s own covenant promise over the commanded walk.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=27
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-fear-of-yahuah-prolongeth-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Honour thy father and thy mother: that thy days may be long* (Exodus 20:12) — the long days of 10:27 hung on the first commandment-with-promise; the Torah binds long life to the fear of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=27
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-fear-of-yahuah-prolongeth-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*The fear of Yahuah (God) makes a merry heart, and gives joy, and gladness, and a long life* (Sirach 1:12) — the restored witness binds the fear to long life exactly as 10:27.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=27
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-fear-of-yahuah-prolongeth-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*The root of wisdom is to fear Yahuah (God), and the branches thereof are long life* (Sirach 1:20) — the same tree as 10:27: fear at the root, long life on the branches.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=10 AND sv.verse_number=27
+  JOIN _s304_pr10_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=1 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-10-the-fear-of-yahuah-prolongeth-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_proverbs_11.sql (Proverbs 11) -----
+-- Chapter: Proverbs 11 — the Solomonic antithetic collection (righteous-vs-wicked), opening on the Torah weights-and-measures law set as a proverb (11:1) and closing on two framework keystones: the fruit of the righteous as a tree of life and the soul-winner's wisdom (11:30), and the righteous recompensed in the earth (11:31) — the verse 1 Peter 4:18 quotes nearly verbatim. Between them run the integrity/righteousness-delivereth cluster (riches profit not in the day of wrath, but righteousness delivereth from death), the pride-bringeth-shame couplet, and the open-handed liberal soul.
+-- Tag: pr11   Temp view: _s304_pr11_lookup
+-- Sort band: base 28250, step 3 -> threads at 28250, 28253, 28256, 28259, 28262, 28265 (6 threads)
+-- Source of EVERY row: 'canon','proverbs',11,v
+--
+-- Proverbs 11 coverage:
+--   ★ v.1 (A false balance is abomination to Yahuah: but a just weight is his delight)
+--        NT:     none warranted (the weights law is carried whole by Torah + prophets)
+--        Extras: none warranted (clean Torah/prophet witness suffices; Sirach noise on the topic)
+--        Tanakh: ★ Leviticus 19:35-36 (no unrighteousness in weight; just balances, just weights); Deuteronomy 25:13-16 (divers weights an abomination; a perfect and just weight); Proverbs 20:10,23 (divers weights both abomination; a false balance not good); Micah 6:11 (the bag of deceitful weights); Amos 8:5 (making the ephah small, falsifying the balances) — THREAD 1 (Torah affirmed: honest weights as covenant righteousness)
+--   v.2 (When pride cometh, then cometh shame: but with the lowly is wisdom)
+--        NT:     none warranted distinct (humility/grace carried in ch3's grace-to-humble thread; cross-lateral not dup)
+--        Extras: ★ Sirach 10:7 (pride hateful before Yahuah and man); 10:12-13 (the beginning of pride is when one departs from Yahuah; pride is the beginning of sin) — THREAD 2
+--        Tanakh: ★ Proverbs 16:18 (Pride goeth before destruction) — THREAD 2
+--   ★ v.4 / v.6 / v.18-19 / v.28 (Riches profit not in the day of wrath: but righteousness delivereth from death; the righteousness of the upright shall deliver them; to him that soweth righteousness shall be a sure reward; he that trusteth in his riches shall fall)
+--        NT:     ★ Galatians 6:7-8 (whatsoever a man soweth, that shall he also reap) — THREAD 3
+--        Extras: none warranted distinct (the riches-cannot-deliver figure carried whole by Ezekiel/Zephaniah/Psalm)
+--        Tanakh: ★ Ezekiel 7:19 (silver and gold not able to deliver in the day of the wrath of Yahuah); Zephaniah 1:18 (neither silver nor gold able to deliver in the day of the LORD'S wrath); Psalm 49:6-8 (they that trust in their wealth... none can redeem his brother) — THREAD 3
+--   v.13 (A talebearer revealeth secrets), v.14 (in the multitude of counsellors there is safety), v.15 (surety for a stranger), v.16, v.17 (the merciful man doeth good to his own soul): merely-prudential, no framework-bearing weave warranted (v.17 mercy touched in THREAD 4 prose)
+--   ★ v.24-25 (There is that scattereth, and yet increaseth... The liberal soul shall be made fat: and he that watereth shall be watered also himself)
+--        NT:     ★ 2 Corinthians 9:6,8 (soweth bountifully shall reap bountifully; Elohim able to make all grace abound); Luke 6:38 (Give, and it shall be given... with the same measure) — THREAD 4
+--        Extras: ★ Sirach 7:32 (stretch your hand to the poor, that your blessing may be perfected); Sirach 35:10 (give with a cheerful eye) — THREAD 4
+--        Tanakh: ★ Proverbs 19:17 (He that hath pity upon the poor lendeth unto Yahuah) — THREAD 4 (cross-lateral to ch28's open-hand thread, not dup)
+--   v.22 (As a jewel of gold in a swine's snout, so is a fair woman without discretion): folly's incongruity, stands alone, no framework weave warranted (none)
+--   ★★ v.30 (The fruit of the righteous is a tree of life; and he that winneth souls is wise) — KEYSTONE
+--        NT:     ★ Revelation 22:2 (the tree of life... the leaves for the healing of the nations); 22:14 (right to the tree of life by doing his commandments); ★ Daniel 12:3 (they that turn many to righteousness as the stars); James 5:20 (he which converteth the sinner shall save a soul); 1 Corinthians 9:22 (that I might by all means save some) — THREAD 5
+--        Extras: none warranted distinct (1 Enoch ch25 tree-of-life parse is bad per brief — AVOID; the figure carried whole by Genesis + Revelation)
+--        Tanakh: ★ Genesis 2:9 (the tree of life in the midst of the garden); 3:22-24 (lest he take of the tree of life; the way of the tree of life kept); Proverbs 3:18 (She is a tree of life) — THREAD 5
+--   ★★ v.31 (Behold, the righteous shall be recompensed in the earth: much more the wicked and the sinner) — KEYSTONE
+--        NT:     ★★ 1 Peter 4:18 (if the righteous scarcely be saved, where shall the ungodly and the sinner appear?) — quotes 11:31 nearly verbatim from the LXX shape — THREAD 6
+--        Extras: ★ Wisdom of Solomon 3:1 (the souls of the righteous are in the hand of Yahuah); 5:15-16 (the righteous live for evermore; their reward with Yahuah) — THREAD 6
+--        Tanakh: ★ Proverbs 13:21 (Evil pursueth sinners: but to the righteous good shall be repayed); Psalm 1:5-6 (the ungodly shall not stand in the judgment; the way of the ungodly shall perish) — THREAD 6
+--
+-- Threads (slug — target libraries):
+--   1. proverbs-11-a-false-balance-is-abomination-a-just-weight-his-delight — Tanakh (Leviticus, Deuteronomy, Proverbs, Micah, Amos) [free] (the Torah weights-and-measures law set as a proverb; honest weights as covenant righteousness)
+--   2. proverbs-11-when-pride-cometh-then-cometh-shame — Tanakh (Proverbs) + Extras (Sirach) [extras] (pride goeth before destruction; the beginning of pride is departing from Yahuah)
+--   3. proverbs-11-riches-profit-not-in-the-day-of-wrath-righteousness-delivereth — Tanakh (Ezekiel, Zephaniah, Psalm) + NT (Galatians) [free] (riches cannot deliver in the day of wrath; righteousness delivereth from death; sow/reap)
+--   4. proverbs-11-the-liberal-soul-shall-be-made-fat — Tanakh (Proverbs) + NT (2 Corinthians, Luke) + Extras (Sirach) [extras] (the scattering that increaseth; the watered waterer; the open hand)
+--   5. proverbs-11-the-fruit-of-the-righteous-is-a-tree-of-life — Tanakh (Genesis, Proverbs) + NT (Revelation, Daniel, James, 1 Corinthians) [free] (★★ KEYSTONE: tree-of-life figure Eden-to-New-Jerusalem + the soul-winner's wisdom)
+--   6. proverbs-11-the-righteous-recompensed-in-the-earth — Tanakh (Proverbs, Psalm) + NT (1 Peter) + Extras (Wisdom of Solomon) [extras] (★★ KEYSTONE: 1 Peter 4:18 quotes it; the righteous and the sinner each recompensed)
+--
+-- Framing notes:
+--   ★ TORAH WEIGHTS (THREAD 1): *A false balance is abomination to Yahuah (LORD): but a just weight is his delight* (11:1) is the Leviticus/Deuteronomy weights-and-measures law set as a proverb — *Just balances, just weights, a just ephah, and a just hin, shall ye have* (Leviticus 19:36); *Thou shalt not have in thy bag divers weights... For all that do such things... are an abomination unto Yahuah Elohayka* (Deuteronomy 25:13,16). The same book repeats it (Proverbs 20:10,23), and the prophets prosecute its breach (Micah 6:11; Amos 8:5). Torah affirmed: honest dealing IS covenant righteousness, an abomination to break.
+--   ★★ TREE OF LIFE / SOUL-WINNER (THREAD 5, KEYSTONE): *The fruit of the righteous is a tree of life; and he that winneth souls is wise* (11:30). The tree-of-life figure runs Eden to New Jerusalem — *the tree of life also in the midst of the garden* (Genesis 2:9), barred after the fall (Genesis 3:22-24), reopened in the consummation *the leaves of the tree were for the healing of the nations* (Revelation 22:2), entered by *they that do his commandments* (Revelation 22:14) — and Wisdom herself is that tree (Proverbs 3:18). The soul-winner's wisdom is filled by Daniel — *they that turn many to righteousness as the stars for ever and ever* (Daniel 12:3) — and the apostles — *he which converteth the sinner from the error of his way shall save a soul* (James 5:20).
+--   ★★ RECOMPENSED IN THE EARTH (THREAD 6, KEYSTONE): *Behold, the righteous shall be recompensed in the earth: much more the wicked and the sinner* (11:31). Peter quotes it nearly verbatim from the LXX shape — *And if the righteous scarcely be saved, where shall the ungodly and the sinner appear?* (1 Peter 4:18) — the "much more" of the wicked becoming the "where shall they appear." The same book restates it (Proverbs 13:21), the Psalter opens with it (Psalm 1:5-6), and the restored witness keeps the reward sure (Wisdom 3:1; 5:15-16).
+--   EXTRAS: Sirach (edition 'apocrypha' + book 'ecclesiasticus') on pride (10:7,12,13) and the open hand (7:32, 35:10); Wisdom of Solomon (edition 'apocrypha' + book 'the-wisdom-of-solomon') on the righteous recompensed (3:1, 5:15-16). 1 Enoch ch25 tree-of-life is the bad-parse the brief flags — DELIBERATELY not used in THREAD 5.
+
+CREATE TEMP VIEW _s304_pr11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: A false balance is abomination — a just weight his delight (the Torah weights law)
+    ('canon','proverbs',11,1,'canon','leviticus',19,35,'free',
+      E'*Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure* (Leviticus 19:35). The proverb *A false balance is abomination to Yahuah (LORD): but a just weight is his delight* (Proverbs 11:1) is the Torah''s own commerce-law set as a couplet: *Ye shall do no unrighteousness... in weight, or in measure*. Honest dealing is not mere prudence but covenant obedience, written into the holiness code itself.'),
+    ('canon','proverbs',11,1,'canon','leviticus',19,36,'free',
+      E'*Just balances, just weights, a just ephah, and a just hin, shall ye have: I am Yahuah Elohaychem (the LORD your God), which brought you out of the land of Egypt* (Leviticus 19:36). The *just weight* that is Yahuah''s *delight* (Proverbs 11:1) is the Torah''s direct command — *Just balances, just weights... shall ye have* — sealed with the Name and the deliverance from Egypt. The merchant''s scale is a matter of the covenant.'),
+    ('canon','proverbs',11,1,'canon','deuteronomy',25,13,'free',
+      E'*Thou shalt not have in thy bag divers weights, a great and a small* (Deuteronomy 25:13). The *false balance* that is an *abomination* (Proverbs 11:1) is the bag of divers weights the Torah forbids — *a great and a small* — one for buying and one for selling. The proverb names as abomination exactly what Deuteronomy commands against.'),
+    ('canon','proverbs',11,1,'canon','deuteronomy',25,15,'free',
+      E'*But thou shalt have a perfect and just weight, a perfect and just measure shalt thou have: that thy days may be lengthened in the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Deuteronomy 25:15). The *just weight* of Yahuah''s *delight* (Proverbs 11:1) is here joined to the land-promise: *a perfect and just weight... that thy days may be lengthened in the land*. Honest weights are bound to the covenant inheritance itself.'),
+    ('canon','proverbs',11,1,'canon','deuteronomy',25,16,'free',
+      E'*For all that do such things, and all that do unrighteously, are an abomination unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 25:16). The very word of Proverbs 11:1 — *A false balance is abomination to Yahuah (LORD)* — is the Torah''s own verdict: *all that do unrighteously, are an abomination unto Yahuah Elohayka*. The proverb is quoting the law''s judgment back, not softening it.'),
+    ('canon','proverbs',11,1,'canon','proverbs',20,10,'free',
+      E'*Divers weights, and divers measures, both of them are alike abomination to Yahuah (LORD)* (Proverbs 20:10). The same book sets the weights-law down twice more: as *A false balance is abomination to Yahuah (LORD)* (11:1), so *Divers weights, and divers measures, both of them are alike abomination to Yahuah (LORD)* (20:10). The repetition marks how weighty the matter is to Yahuah.'),
+    ('canon','proverbs',11,1,'canon','proverbs',20,23,'free',
+      E'*Divers weights are an abomination unto Yahuah (LORD); and a false balance is not good* (Proverbs 20:23). Proverbs echoes 11:1 almost word for word — *a false balance is not good* — binding the divers weights and the false balance together as one abomination. Twice over the book makes honest scales a test of the covenant heart.'),
+    ('canon','proverbs',11,1,'canon','micah',6,11,'free',
+      E'*Shall I count them pure with the wicked balances, and with the bag of deceitful weights?* (Micah 6:11). Micah prosecutes the breach of Proverbs 11:1 in a covenant lawsuit: Yahuah will not *count them pure with the wicked balances, and with the bag of deceitful weights*. The *false balance* that is His abomination is the very thing the prophet arraigns the city for.'),
+    ('canon','proverbs',11,1,'canon','amos',8,5,'free',
+      E'*Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?* (Amos 8:5). Amos shows the *false balance* of Proverbs 11:1 in the marketplace — *making the ephah small, and the shekel great, and falsifying the balances by deceit* — joined to contempt for the new moon and the sabbath. The dishonest scale and the despised appointed-times are one corruption Yahuah judges.'),
+
+    -- THREAD 2: When pride cometh, then cometh shame
+    ('canon','proverbs',11,2,'canon','proverbs',16,18,'free',
+      E'*Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18). The shame that follows pride in *When pride cometh, then cometh shame* (Proverbs 11:2) is the same sequence the book states again — *Pride goeth before destruction, and an haughty spirit before a fall*. Pride is no small fault but the harbinger of ruin; *with the lowly is wisdom*.'),
+    ('canon','proverbs',11,2,'apocrypha','ecclesiasticus',10,7,'extras',
+      E'*Pride is hateful before Yahuah (God) and man: and by both does one commit iniquity* (Sirach 10:7). The restored witness sets pride where Proverbs 11:2 does — *Pride is hateful before Yahuah (God) and man* — the very thing that brings shame. What is hateful before Yahuah cannot but end in the shame the proverb foretells.'),
+    ('canon','proverbs',11,2,'apocrypha','ecclesiasticus',10,12,'extras',
+      E'*The beginning of pride is when one departs from Yahuah (God), and his heart is turned away from his Maker* (Sirach 10:12). Sirach traces the pride of Proverbs 11:2 to its root: *the beginning of pride is when one departs from Yahuah (God), and his heart is turned away from his Maker*. The lowly, by contrast, keep near their Maker — and *with the lowly is wisdom*.'),
+    ('canon','proverbs',11,2,'apocrypha','ecclesiasticus',10,13,'extras',
+      E'*For pride is the beginning of sin, and he that has it shall pour out abomination: and therefore Yahuah (God) brought upon them strange calamities, and overthrew them utterly* (Sirach 10:13). The shame of *When pride cometh, then cometh shame* (Proverbs 11:2) is here drawn to its end — *Yahuah (God) brought upon them strange calamities, and overthrew them utterly*. Pride is named *the beginning of sin*, and its wage is the overthrow the proverb warns of.'),
+
+    -- THREAD 3: Riches profit not in the day of wrath — righteousness delivereth from death
+    ('canon','proverbs',11,4,'canon','ezekiel',7,19,'free',
+      E'*They shall cast their silver in the streets, and their gold shall be removed: their silver and their gold shall not be able to deliver them in the day of the wrath of Yahuah (LORD): they shall not satisfy their souls, neither fill their bowels: because it is the stumblingblock of their iniquity* (Ezekiel 7:19). Ezekiel draws out *Riches profit not in the day of wrath* (Proverbs 11:4) in full: *their silver and their gold shall not be able to deliver them in the day of the wrath of Yahuah*. What cannot deliver in that day is righteousness'' opposite; only *righteousness delivereth from death*.'),
+    ('canon','proverbs',11,4,'canon','zephaniah',1,18,'free',
+      E'*Neither their silver nor their gold shall be able to deliver them in the day of the LORD''S wrath; but the whole land shall be devoured by the fire of his jealousy* (Zephaniah 1:18). Zephaniah names the same day Proverbs 11:4 names — *the day of the LORD''S wrath* — and the same powerlessness of wealth: *Neither their silver nor their gold shall be able to deliver them*. Riches profit not; the only thing that delivers from death is righteousness.'),
+    ('canon','proverbs',11,4,'canon','psalms',49,7,'free',
+      E'*None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him* (Psalm 49:7). The Psalter sings the futility of riches of Proverbs 11:4 — *They that trust in their wealth, and boast themselves in the multitude of their riches* (49:6) — and shows their limit: *None of them can by any means redeem his brother*. Wealth cannot buy back a soul; *righteousness delivereth from death*.'),
+    ('canon','proverbs',11,18,'canon','galatians',6,7,'free',
+      E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). The sowing of *to him that soweth righteousness shall be a sure reward* (Proverbs 11:18) is the law Paul states whole: *whatsoever a man soweth, that shall he also reap*. The sure reward of the righteous sower and the death of him that *pursueth evil* (11:19) are one harvest-principle, never abolished.'),
+    ('canon','proverbs',11,19,'canon','galatians',6,8,'free',
+      E'*For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting* (Galatians 6:8). Paul draws out the two ends of *As righteousness tendeth to life: so he that pursueth evil pursueth it to his own death* (Proverbs 11:19): *he that soweth to his flesh shall... reap corruption; but he that soweth to the Spirit shall... reap life everlasting*. Righteousness to life, evil to death — the same two roads.'),
+
+    -- THREAD 4: The liberal soul shall be made fat (the open hand)
+    ('canon','proverbs',11,24,'canon','2-corinthians',9,6,'free',
+      E'*But this I say, He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully* (2 Corinthians 9:6). Paul states the paradox of *There is that scattereth, and yet increaseth* (Proverbs 11:24): *he which soweth bountifully shall reap also bountifully*. The scattering hand is the sowing hand; the one who gives freely is the one who increases.'),
+    ('canon','proverbs',11,25,'canon','2-corinthians',9,8,'free',
+      E'*And Elohim (God) is able to make all grace abound toward you; that ye, always having all sufficiency in all things, may abound to every good work* (2 Corinthians 9:8). The watered waterer of *he that watereth shall be watered also himself* (Proverbs 11:25) is kept by Paul: *Elohim (God) is able to make all grace abound toward you... that ye... may abound to every good work*. The liberal soul is made fat because Yahuah Himself fills again the hand that pours out.'),
+    ('canon','proverbs',11,25,'canon','luke',6,38,'free',
+      E'*Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over, shall men give into your bosom. For with the same measure that ye mete withal it shall be measured to you again* (Luke 6:38). Yahusha (Jesus) speaks *The liberal soul shall be made fat* (Proverbs 11:25) plainly: *Give, and it shall be given unto you; good measure... running over*. The measure poured out returns; the watering hand is watered.'),
+    ('canon','proverbs',11,25,'canon','proverbs',19,17,'free',
+      E'*He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again* (Proverbs 19:17). The same book tells WHY *he that watereth shall be watered also himself* (Proverbs 11:25): the gift to the poor is a loan to Yahuah — *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again*. The liberal soul is made fat because Yahuah is no man''s debtor.'),
+    ('canon','proverbs',11,25,'apocrypha','ecclesiasticus',7,32,'extras',
+      E'*And stretch yours hand to the poor, that your blessing may be perfected* (Sirach 7:32). The restored witness joins the open hand of *The liberal soul shall be made fat* (Proverbs 11:25) to a perfected blessing: *stretch yours hand to the poor, that your blessing may be perfected*. The scattering that increaseth is the hand stretched out, and the blessing it draws back is made full.'),
+    ('canon','proverbs',11,25,'apocrypha','ecclesiasticus',35,10,'extras',
+      E'*Give to the Most High according as he has enriched you; and as you have gotten, give with a cheerful eye* (Sirach 35:10). The liberal soul of Proverbs 11:25 gives as the restored witness charges — *with a cheerful eye* — out of what the Most High has given. The withholder who *tendeth to poverty* (11:24) gives grudgingly or not at all; the cheerful giver is the watered waterer.'),
+
+    -- THREAD 5: The fruit of the righteous is a tree of life (KEYSTONE)
+    ('canon','proverbs',11,30,'canon','genesis',2,9,'free',
+      E'*And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil* (Genesis 2:9). The figure of *The fruit of the righteous is a tree of life* (Proverbs 11:30) reaches back to Eden — *the tree of life also in the midst of the garden*. The righteous bears the fruit of that very tree; his life feeds others as the garden-tree fed Adam.'),
+    ('canon','proverbs',11,30,'canon','genesis',3,22,'free',
+      E'*And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever* (Genesis 3:22). The *tree of life* of Proverbs 11:30 is the one barred after the fall — *lest he put forth his hand, and take also of the tree of life, and eat, and live for ever*. What was guarded from the fallen man, the fruit of the righteous now extends toward again.'),
+    ('canon','proverbs',11,30,'canon','genesis',3,24,'free',
+      E'*So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24). The way to the *tree of life* (Proverbs 11:30) was kept by *Cherubims, and a flaming sword*; the whole canon moves toward reopening it. The righteous, bearing its fruit, points the way back that was barred.'),
+    ('canon','proverbs',11,30,'canon','proverbs',3,18,'free',
+      E'*She is a tree of life to them that lay hold upon her: and happy is every one that retaineth her* (Proverbs 3:18). The same book names Wisdom herself the tree: *She is a tree of life to them that lay hold upon her*. The fruit of the righteous (11:30) is the fruit of laying hold on Wisdom — the tree-of-life figure binds the righteous man and Wisdom into one.'),
+    ('canon','proverbs',11,30,'canon','revelation',22,2,'free',
+      E'*In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations* (Revelation 22:2). The *tree of life* of Proverbs 11:30 is restored in the consummation — *the leaves of the tree were for the healing of the nations*. The fruit the righteous bears now is a foretaste of the tree barred in Eden and reopened in the New Jerusalem.'),
+    ('canon','proverbs',11,30,'canon','revelation',22,14,'free',
+      E'*Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city* (Revelation 22:14). Access to the *tree of life* (Proverbs 11:30) is for *they that do his commandments* — the same Torah-keeping righteousness whose fruit the proverb calls a tree of life. The righteous bears the fruit and gains the right; commandment-keeping and the tree are joined end to end.'),
+    ('canon','proverbs',11,30,'canon','daniel',12,3,'free',
+      E'*And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever* (Daniel 12:3). Daniel fills the second half of Proverbs 11:30 — *he that winneth souls is wise* — with everlasting glory: *they that turn many to righteousness as the stars for ever and ever*. The soul-winner''s wisdom shines forever; the fruit of the righteous becomes a harvest of stars.'),
+    ('canon','proverbs',11,30,'canon','james',5,20,'free',
+      E'*Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins* (James 5:20). Yaaqob (James) states *he that winneth souls is wise* (Proverbs 11:30) as a saving work: *he which converteth the sinner from the error of his way shall save a soul from death*. The wise soul-winner does the very thing the tree of life does — turns death toward life.'),
+    ('canon','proverbs',11,30,'canon','1-corinthians',9,22,'free',
+      E'*To the weak became I as weak, that I might gain the weak: I am made all things to all men, that I might by all means save some* (1 Corinthians 9:22). Paul lives out *he that winneth souls is wise* (Proverbs 11:30): *I am made all things to all men, that I might by all means save some*. The winning of souls is the wisdom that spends itself for others, bearing the fruit of the tree of life.'),
+
+    -- THREAD 6: The righteous recompensed in the earth (KEYSTONE — 1 Peter 4:18)
+    ('canon','proverbs',11,31,'canon','1-peter',4,18,'free',
+      E'*And if the righteous scarcely be saved, where shall the ungodly and the sinner appear?* (1 Peter 4:18). Peter quotes Proverbs 11:31 nearly word for word from the Greek shape: where the proverb says *the righteous shall be recompensed in the earth: much more the wicked and the sinner*, Peter draws the "much more" out as a question — *if the righteous scarcely be saved, where shall the ungodly and the sinner appear?* The recompense of the righteous measures the far heavier reckoning of the wicked.'),
+    ('canon','proverbs',11,31,'canon','proverbs',13,21,'free',
+      E'*Evil pursueth sinners: but to the righteous good shall be repayed* (Proverbs 13:21). The same book states the recompense of Proverbs 11:31 plainly: *Evil pursueth sinners: but to the righteous good shall be repayed*. Each is paid in his own coin — good to the righteous, evil hunting down the sinner.'),
+    ('canon','proverbs',11,31,'canon','psalms',1,5,'free',
+      E'*Therefore the ungodly shall not stand in the judgment, nor sinners in the congregation of the righteous* (Psalm 1:5). The Psalter opens on the recompense of Proverbs 11:31: *the ungodly shall not stand in the judgment, nor sinners in the congregation of the righteous*. The *much more* owed to the wicked is their not standing; the righteous, recompensed, stand.'),
+    ('canon','proverbs',11,31,'canon','psalms',1,6,'free',
+      E'*For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6). The two recompenses of Proverbs 11:31 are the two ways of Psalm 1: *Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish*. The righteous recompensed and the wicked answered are the known way and the perishing way.'),
+    ('canon','proverbs',11,31,'apocrypha','the-wisdom-of-solomon',3,1,'extras',
+      E'*But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom of Solomon 3:1). The restored witness keeps the recompense of *the righteous shall be recompensed in the earth* (Proverbs 11:31): *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them*. The recompense of the righteous is safe-keeping in Yahuah''s own hand.'),
+    ('canon','proverbs',11,31,'apocrypha','the-wisdom-of-solomon',5,15,'extras',
+      E'*But the righteous live for evermore; their reward also is with Yahuah (God), and the care of them is with the Most High* (Wisdom of Solomon 5:15). The recompense of Proverbs 11:31 is here made everlasting: *the righteous live for evermore; their reward also is with Yahuah (God)*. The "recompensed in the earth" opens onto a reward kept with the Most High Himself.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-11-a-false-balance-is-abomination-a-just-weight-his-delight',
+       E'A false balance is abomination — a just weight his delight',
+       E'The chapter opens with the Torah''s weights-and-measures law set as a proverb: *A false balance is abomination to Yahuah (LORD): but a just weight is his delight* (Proverbs 11:1). This is no mere business maxim — it is the holiness code quoted back: *Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure* (Leviticus 19:35); *Just balances, just weights, a just ephah, and a just hin, shall ye have: I am Yahuah Elohaychem (the LORD your God)* (Leviticus 19:36). Deuteronomy forbids the very *false balance* the proverb names — *Thou shalt not have in thy bag divers weights, a great and a small* (25:13) — and ties honest weights to the land-promise: *thou shalt have a perfect and just weight... that thy days may be lengthened in the land* (25:15), pronouncing the proverb''s own verdict, *all that do unrighteously, are an abomination unto Yahuah Elohayka (the LORD thy God)* (25:16). The same book repeats the law twice more — *Divers weights, and divers measures, both of them are alike abomination to Yahuah (LORD)* (20:10), *a false balance is not good* (20:23) — and the prophets prosecute its breach as covenant treason: *Shall I count them pure with the wicked balances, and with the bag of deceitful weights?* (Micah 6:11); *making the ephah small, and the shekel great, and falsifying the balances by deceit* (Amos 8:5), joined there to contempt for the new moon and the sabbath. Torah affirmed: honest dealing IS covenant righteousness, an abomination to break, and Yahuah''s delight to keep.',
+       sv.verse_id, ev.verse_id, 'free', 28250
+  FROM _s304_pr11_lookup sv, _s304_pr11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=11 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-11-when-pride-cometh-then-cometh-shame',
+       E'When pride cometh, then cometh shame — with the lowly is wisdom',
+       E'*When pride cometh, then cometh shame: but with the lowly is wisdom* (Proverbs 11:2). The book states the same sequence elsewhere with the end made plain — *Pride goeth before destruction, and an haughty spirit before a fall* (16:18) — pride is no small fault but the harbinger of ruin. The restored witness traces it to its root and its end: *Pride is hateful before Yahuah (God) and man: and by both does one commit iniquity* (Sirach 10:7); *The beginning of pride is when one departs from Yahuah (God), and his heart is turned away from his Maker* (Sirach 10:12); *For pride is the beginning of sin, and he that has it shall pour out abomination: and therefore Yahuah (God) brought upon them strange calamities, and overthrew them utterly* (Sirach 10:13). The shame the proverb foretells is the overthrow Sirach describes, and the lowly — who keep near their Maker rather than departing from Him — are the ones with whom wisdom dwells. (The grace given to the humble runs as its own thread at Proverbs 3; here the couplet stands on pride''s certain shame.)',
+       sv.verse_id, ev.verse_id, 'extras', 28253
+  FROM _s304_pr11_lookup sv, _s304_pr11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=11 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-11-riches-profit-not-in-the-day-of-wrath-righteousness-delivereth',
+       E'Riches profit not in the day of wrath — righteousness delivereth from death',
+       E'The chapter''s great antithesis runs through several couplets: *Riches profit not in the day of wrath: but righteousness delivereth from death* (Proverbs 11:4); *The righteousness of the upright shall deliver them* (11:6); *to him that soweth righteousness shall be a sure reward* (11:18); *As righteousness tendeth to life: so he that pursueth evil pursueth it to his own death* (11:19); *He that trusteth in his riches shall fall: but the righteous shall flourish as a branch* (11:28). The prophets draw out the futility of wealth in the day of wrath in full: *their silver and their gold shall not be able to deliver them in the day of the wrath of Yahuah (LORD)* (Ezekiel 7:19); *Neither their silver nor their gold shall be able to deliver them in the day of the LORD''S wrath* (Zephaniah 1:18). The Psalter sings the same limit: *They that trust in their wealth, and boast themselves in the multitude of their riches* (Psalm 49:6) cannot redeem a soul — *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him* (49:7). And the New Testament keeps the sowing-and-reaping principle whole, never abolishing it: *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7); *he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting* (6:8). Riches cannot deliver from death; only righteousness — the sowing to the Spirit — tends to life.',
+       sv.verse_id, ev.verse_id, 'free', 28256
+  FROM _s304_pr11_lookup sv, _s304_pr11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=11 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-11-the-liberal-soul-shall-be-made-fat',
+       E'The liberal soul shall be made fat — the open hand watered',
+       E'The chapter sets down one of the great paradoxes of the open hand: *There is that scattereth, and yet increaseth; and there is that withholdeth more than is meet, but it tendeth to poverty. The liberal soul shall be made fat: and he that watereth shall be watered also himself* (Proverbs 11:24-25). The scattering hand is the sowing hand — Paul states it whole: *He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully* (2 Corinthians 9:6), for *Elohim (God) is able to make all grace abound toward you... that ye... may abound to every good work* (9:8). Yahusha (Jesus) speaks it plainly: *Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over, shall men give into your bosom. For with the same measure that ye mete withal it shall be measured to you again* (Luke 6:38). And the same book of Proverbs tells WHY the waterer is watered: the gift to the poor is a loan to Yahuah Himself — *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again* (19:17). The restored witness joins the open hand to a perfected blessing and a cheerful eye: *stretch yours hand to the poor, that your blessing may be perfected* (Sirach 7:32); *Give to the Most High according as he has enriched you; and as you have gotten, give with a cheerful eye* (Sirach 35:10). The liberal soul is made fat because Yahuah is no man''s debtor; the withholder, hoarding more than is meet, tends to poverty.',
+       sv.verse_id, ev.verse_id, 'extras', 28259
+  FROM _s304_pr11_lookup sv, _s304_pr11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=11 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-11-the-fruit-of-the-righteous-is-a-tree-of-life',
+       E'The fruit of the righteous is a tree of life — and he that winneth souls is wise',
+       E'A keystone closes the chapter: *The fruit of the righteous is a tree of life; and he that winneth souls is wise* (Proverbs 11:30). The tree-of-life figure runs the whole canon from Eden to the New Jerusalem. It stood *in the midst of the garden* (Genesis 2:9); it was barred after the fall — *lest he put forth his hand, and take also of the tree of life, and eat, and live for ever* (Genesis 3:22) — its way kept by *Cherubims, and a flaming sword which turned every way* (3:24); the same book names Wisdom herself that tree — *She is a tree of life to them that lay hold upon her* (Proverbs 3:18); and it is reopened in the consummation — *the tree of life, which bare twelve manner of fruits... and the leaves of the tree were for the healing of the nations* (Revelation 22:2), entered by *they that do his commandments* (22:14). The righteous, bearing the fruit of that tree, feeds others and points the way back that was barred. The second half — *he that winneth souls is wise* — is filled by Daniel and the apostles: *they that turn many to righteousness as the stars for ever and ever* (Daniel 12:3); *he which converteth the sinner from the error of his way shall save a soul from death* (James 5:20); *I am made all things to all men, that I might by all means save some* (1 Corinthians 9:22). The soul-winner''s wisdom does the very work of the tree of life — turning death toward life — and shines forever.',
+       sv.verse_id, ev.verse_id, 'free', 28262
+  FROM _s304_pr11_lookup sv, _s304_pr11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=11 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-11-the-righteous-recompensed-in-the-earth',
+       E'The righteous recompensed in the earth — much more the wicked and the sinner',
+       E'The chapter''s final keystone: *Behold, the righteous shall be recompensed in the earth: much more the wicked and the sinner* (Proverbs 11:31). Peter quotes it nearly word for word from the Greek shape, turning the "much more" into a question: *And if the righteous scarcely be saved, where shall the ungodly and the sinner appear?* (1 Peter 4:18) — the recompense of the righteous measures the far heavier reckoning of the wicked. The same book states it plainly — *Evil pursueth sinners: but to the righteous good shall be repayed* (Proverbs 13:21) — and the Psalter opens the whole Psalter on it: *the ungodly shall not stand in the judgment, nor sinners in the congregation of the righteous* (Psalm 1:5); *Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (1:6). The restored witness keeps the recompense sure and everlasting: *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom of Solomon 3:1); *the righteous live for evermore; their reward also is with Yahuah (God), and the care of them is with the Most High* (5:15). Each is paid in his own coin — the righteous recompensed and kept, the wicked and the sinner answered with a far heavier reckoning.',
+       sv.verse_id, ev.verse_id, 'extras', 28265
+  FROM _s304_pr11_lookup sv, _s304_pr11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=11 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure* (Leviticus 19:35) — the holiness code behind 11:1; honest weights are covenant obedience.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-a-false-balance-is-abomination-a-just-weight-his-delight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Just balances, just weights, a just ephah, and a just hin, shall ye have: I am Yahuah Elohaychem* (Leviticus 19:36) — the just weight of Yahuah''s delight (11:1) is the Torah''s command, sealed with the Name.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-a-false-balance-is-abomination-a-just-weight-his-delight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou shalt not have in thy bag divers weights, a great and a small* (Deuteronomy 25:13) — the false balance of 11:1 is the bag of divers weights the Torah forbids.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-a-false-balance-is-abomination-a-just-weight-his-delight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a perfect and just weight... that thy days may be lengthened in the land* (Deuteronomy 25:15) — the just weight of 11:1 bound to the land-promise.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-a-false-balance-is-abomination-a-just-weight-his-delight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*all that do unrighteously, are an abomination unto Yahuah Elohayka* (Deuteronomy 25:16) — the very verdict 11:1 quotes back: a false balance is abomination.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-a-false-balance-is-abomination-a-just-weight-his-delight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Divers weights, and divers measures, both of them are alike abomination to Yahuah (LORD)* (Proverbs 20:10) — the same book sets the weights-law down again.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=20 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-a-false-balance-is-abomination-a-just-weight-his-delight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Divers weights are an abomination unto Yahuah (LORD); and a false balance is not good* (Proverbs 20:23) — Proverbs echoes 11:1 almost word for word.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=20 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-a-false-balance-is-abomination-a-just-weight-his-delight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Shall I count them pure with the wicked balances, and with the bag of deceitful weights?* (Micah 6:11) — the prophet prosecutes the breach of 11:1 as covenant treason.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=6 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-a-false-balance-is-abomination-a-just-weight-his-delight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*making the ephah small, and the shekel great, and falsifying the balances by deceit* (Amos 8:5) — the false balance of 11:1 in the marketplace, joined to despising the new moon and sabbath.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=1
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-a-false-balance-is-abomination-a-just-weight-his-delight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18) — the same sequence as 11:2, with the end made plain.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=2
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-when-pride-cometh-then-cometh-shame'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Pride is hateful before Yahuah (God) and man* (Sirach 10:7) — what is hateful before Yahuah cannot but end in the shame 11:2 foretells.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=2
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=10 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-when-pride-cometh-then-cometh-shame'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The beginning of pride is when one departs from Yahuah (God)* (Sirach 10:12) — the root of the pride 11:2 names; the lowly keep near their Maker.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=2
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=10 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-when-pride-cometh-then-cometh-shame'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*pride is the beginning of sin... and overthrew them utterly* (Sirach 10:13) — the shame of 11:2 drawn to its end, the overthrow.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=2
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=10 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-when-pride-cometh-then-cometh-shame'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*their silver and their gold shall not be able to deliver them in the day of the wrath of Yahuah (LORD)* (Ezekiel 7:19) — 11:4 drawn out in full.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=7 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-riches-profit-not-in-the-day-of-wrath-righteousness-delivereth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Neither their silver nor their gold shall be able to deliver them in the day of the LORD''S wrath* (Zephaniah 1:18) — the same day, the same powerlessness of wealth, as 11:4.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-riches-profit-not-in-the-day-of-wrath-righteousness-delivereth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him* (Psalm 49:7) — wealth cannot buy back a soul; only righteousness delivereth (11:4).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=49 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-riches-profit-not-in-the-day-of-wrath-righteousness-delivereth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*whatsoever a man soweth, that shall he also reap* (Galatians 6:7) — the sowing of 11:18 stated whole; the sure reward never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=18
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-riches-profit-not-in-the-day-of-wrath-righteousness-delivereth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*he that soweth to the Spirit shall of the Spirit reap life everlasting* (Galatians 6:8) — the two ends of 11:19: righteousness to life, evil to death.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=19
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-riches-profit-not-in-the-day-of-wrath-righteousness-delivereth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he which soweth bountifully shall reap also bountifully* (2 Corinthians 9:6) — the scattering that increaseth (11:24); the giving hand is the sowing hand.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=24
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=9 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-liberal-soul-shall-be-made-fat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Elohim (God) is able to make all grace abound toward you... that ye... may abound to every good work* (2 Corinthians 9:8) — the watered waterer of 11:25; Yahuah fills the hand that pours out.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=25
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=9 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-liberal-soul-shall-be-made-fat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Give, and it shall be given unto you; good measure... running over* (Luke 6:38) — Yahusha speaks 11:25 plainly; the measure poured out returns.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=25
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-liberal-soul-shall-be-made-fat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*He that hath pity upon the poor lendeth unto Yahuah (LORD)* (Proverbs 19:17) — why the waterer is watered: the gift is a loan to Yahuah, no man''s debtor.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=25
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=19 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-liberal-soul-shall-be-made-fat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*stretch yours hand to the poor, that your blessing may be perfected* (Sirach 7:32) — the open hand of 11:25 draws back a perfected blessing.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=25
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=7 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-liberal-soul-shall-be-made-fat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*give with a cheerful eye* (Sirach 35:10) — the liberal soul of 11:25 gives gladly; the withholder tends to poverty.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=25
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-liberal-soul-shall-be-made-fat'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the tree of life also in the midst of the garden* (Genesis 2:9) — the figure of 11:30 reaches back to Eden.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=30
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-fruit-of-the-righteous-is-a-tree-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*lest he put forth his hand, and take also of the tree of life... and live for ever* (Genesis 3:22) — the tree of 11:30 barred after the fall.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=30
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-fruit-of-the-righteous-is-a-tree-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24) — the way to the tree of 11:30 guarded; the canon moves to reopen it.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=30
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-fruit-of-the-righteous-is-a-tree-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*She is a tree of life to them that lay hold upon her* (Proverbs 3:18) — the same book names Wisdom herself the tree; the fruit of 11:30 is the fruit of laying hold on Wisdom.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=30
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-fruit-of-the-righteous-is-a-tree-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the tree of life... the leaves of the tree were for the healing of the nations* (Revelation 22:2) — the tree of 11:30 restored in the consummation.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=30
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-fruit-of-the-righteous-is-a-tree-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Blessed are they that do his commandments, that they may have right to the tree of life* (Revelation 22:14) — access to the tree of 11:30 is for commandment-keepers.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=30
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-fruit-of-the-righteous-is-a-tree-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*they that turn many to righteousness as the stars for ever and ever* (Daniel 12:3) — the soul-winner''s wisdom of 11:30 filled with everlasting glory.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=30
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-fruit-of-the-righteous-is-a-tree-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*he which converteth the sinner from the error of his way shall save a soul from death* (James 5:20) — winning souls (11:30) is a saving work.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=30
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-fruit-of-the-righteous-is-a-tree-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*I am made all things to all men, that I might by all means save some* (1 Corinthians 9:22) — Paul lives out the soul-winner''s wisdom of 11:30.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=30
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=9 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-fruit-of-the-righteous-is-a-tree-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*if the righteous scarcely be saved, where shall the ungodly and the sinner appear?* (1 Peter 4:18) — Peter quotes 11:31 nearly verbatim from the Greek shape.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-righteous-recompensed-in-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Evil pursueth sinners: but to the righteous good shall be repayed* (Proverbs 13:21) — the same book states the recompense of 11:31 plainly.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=13 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-righteous-recompensed-in-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the ungodly shall not stand in the judgment, nor sinners in the congregation of the righteous* (Psalm 1:5) — the much-more owed to the wicked (11:31).'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-righteous-recompensed-in-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the way of the ungodly shall perish* (Psalm 1:6) — the two recompenses of 11:31 are the two ways of Psalm 1.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-righteous-recompensed-in-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom of Solomon 3:1) — the recompense of 11:31 is safe-keeping in Yahuah''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-righteous-recompensed-in-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the righteous live for evermore; their reward also is with Yahuah (God)* (Wisdom of Solomon 5:15) — the recompense of 11:31 made everlasting.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s304_pr11_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-11-the-righteous-recompensed-in-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_proverbs_12.sql (Proverbs 12) -----
+-- Chapter: Proverbs 12 — the Solomonic antithetic register of the righteous-vs-wicked: the ROOT and standing of the two men (v.3,7,12), the WAY of the two men with the keystone *The way of a fool is right in his own eyes* (v.15) closing on *In the way of righteousness is life; and in the pathway thereof there is no death* (v.28), the WORKS of covenant-mercy reaching even to the beast — *A righteous man regardeth the life of his beast* (v.10) — and the WORDS/TONGUE of truth against the lying lip (v.17-19,22).
+-- Tag: pr12   Temp view: _s304_pr12_lookup
+-- Sort band: base 28275, step 3 -> threads at 28275, 28278, 28281, 28284 (4 threads)
+-- Source of EVERY row: 'canon','proverbs',12,v
+--
+-- Proverbs 12 coverage:
+--   v.1 (Whoso loveth instruction loveth knowledge: but he that hateth reproof is brutish)
+--        NT/Extras/Tanakh: folded contextually into THREAD 2 prose (hearkening to counsel = the wise way); no distinct thread warranted
+--   v.2 (A good man obtaineth favour of Yahuah: but a man of wicked devices will he condemn)
+--        NT/Extras/Tanakh: merely-prudential/folded into THREAD 1 prose (the good man established); none warranted distinct
+--   ★ v.3 (A man shall not be established by wickedness: but the root of the righteous shall not be moved)
+--        NT:     Matthew 7:24-25 (built his house upon a rock... it fell not) — THREAD 1
+--        Extras: none warranted (the tree/root figure carried whole by Psalm 1 + Jeremiah 17 + Matthew 7)
+--        Tanakh: ★ Psalm 1:3 (a tree planted by the rivers of water); ★ Jeremiah 17:7-8 (as a tree planted by the waters) — THREAD 1
+--   v.4 (A virtuous woman is a crown to her husband)
+--        NT/Extras/Tanakh: none warranted (the Prov 31 virtuous-woman lateral belongs to that pack; merely-prudential here)
+--   v.5/v.6 (thoughts of the righteous right / words of the wicked lie in wait for blood)
+--        folded into THREAD 4 prose (the deceit of the wicked mouth vs the righteous lip)
+--   ★ v.7 (The wicked are overthrown, and are not: but the house of the righteous shall stand)
+--        NT:     Matthew 7:24-27 (the house on the rock stood / the house on sand fell) — THREAD 1
+--        Tanakh: Psalm 1 (the ungodly... chaff the wind driveth away) — THREAD 1 (the never-moved house)
+--   v.8/v.9 (commended according to wisdom / despised with a servant better than self-honouring)
+--        none warranted distinct (merely-prudential)
+--   ★ v.10 (A righteous man regardeth the life of his beast: but the tender mercies of the wicked are cruel) — BEAST-MERCY, the Torah's own creature-compassion
+--        NT:     ★ 1 Corinthians 9:9 (Thou shalt not muzzle the mouth of the ox); 1 Timothy 5:18 (Thou shalt not muzzle the ox that treadeth out the corn) — THREAD 3
+--        Extras: none warranted (Torah + Numbers + Paul carry it whole)
+--        Tanakh: ★ Deuteronomy 25:4 (Thou shalt not muzzle the ox); ★ Deuteronomy 22:6-7 (the bird's nest); Exodus 23:5 (lift up the fallen ass of him that hateth thee); Numbers 22:32 (the angel rebukes Balaam's beating of the ass) — THREAD 3
+--   v.11 (He that tilleth his land shall be satisfied with bread)
+--        none warranted distinct (diligence-couplet, folded prudentially; weighed Gen 3:19 / 2 Thess 3:10 — left to the diligence packs elsewhere)
+--   ★ v.12 (The wicked desireth the net of evil men: but the root of the righteous yieldeth fruit)
+--        Tanakh: Psalm 1:3 (bringeth forth his fruit in his season) — THREAD 1 (the fruit-bearing root)
+--   v.13 (The wicked is snared by the transgression of his lips: but the just shall come out of trouble)
+--        folded into THREAD 4 prose (the snare of the lying lip)
+--   v.14 (A man shall be satisfied with good by the fruit of his mouth)
+--        folded into THREAD 4 prose (the fruit of the mouth)
+--   ★★ v.15 (The way of a fool is right in his own eyes: but he that hearkeneth unto counsel is wise) — KEYSTONE: the way-that-seemeth-right / the two ways
+--        NT:     ★ Matthew 7:13-14 (wide is the gate... that leadeth to destruction / narrow is the way... unto life) — THREAD 2
+--        Extras: none warranted (the two-ways frame carried whole by Proverbs laterals + Matthew + Judges)
+--        Tanakh: ★★ Proverbs 14:12 / Proverbs 16:25 (a way which seemeth right unto a man, but the end... the ways of death); Proverbs 3:7 (Be not wise in thine own eyes); Judges 21:25 (every man did that which was right in his own eyes) — THREAD 2
+--   v.16 (A fool's wrath is presently known: but a prudent man covereth shame)
+--        none warranted distinct (prudential)
+--   ★ v.17 (He that speaketh truth sheweth forth righteousness: but a false witness deceit)
+--        NT:     Ephesians 4:25 (putting away lying, speak every man truth); Colossians 3:9 (Lie not one to another) — THREAD 4
+--        Extras: ★ Sirach 5:13-14 (the tongue of man is his fall... the double tongue) — THREAD 4
+--        Tanakh: ★ Proverbs 6:17 (a lying tongue... among the seven Yahuah hates); Psalm 15:2 (speaketh the truth in his heart); Zechariah 8:16-17 (Speak ye every man the truth... love no false oath) — THREAD 4
+--   ★ v.18 (the tongue of the wise is health) / ★ v.19 (The lip of truth shall be established for ever: but a lying tongue is but for a moment)
+--        Extras: Sirach 28:13 (Curse the whisperer and doubletongued); Sirach 28:17-18 (the stroke of the tongue breaks the bones) — THREAD 4
+--        folded into THREAD 4 (the healing tongue vs the piercing/lying tongue)
+--   v.20/v.21 (Deceit in the heart that imagine evil / no evil happen to the just)
+--        folded into THREAD 4 prose (deceit vs the counsellors of peace)
+--   ★ v.22 (Lying lips are abomination to Yahuah: but they that deal truly are his delight)
+--        NT:     Revelation 21:8 (all liars... the second death); Revelation 22:15 (whosoever loveth and maketh a lie) — THREAD 4
+--        Tanakh: Proverbs 6:17 (lying tongue Yahuah hates) — THREAD 4 (the abomination of the lying lip)
+--   v.23 (A prudent man concealeth knowledge: but the heart of fools proclaimeth foolishness)
+--        none warranted distinct (prudential; touched in THREAD 4 prose)
+--   v.24/v.27 (The hand of the diligent shall bear rule / the slothful roasteth not his hunting)
+--        none warranted distinct (diligence-couplets, prudential; weighed 2 Thess 3:10, left to diligence packs)
+--   v.25 (Heaviness in the heart maketh it stoop: but a good word maketh it glad)
+--        folded into THREAD 4 prose (the good word = the healing tongue of v.18)
+--   v.26 (The righteous is more excellent than his neighbour: but the way of the wicked seduceth them)
+--        folded into THREAD 2 prose (the way of the wicked seduceth = the way that seemeth right)
+--   ★ v.28 (In the way of righteousness is life; and in the pathway thereof there is no death) — the way-of-life close to the two-ways thread
+--        NT:     ★ John 14:6 (I am the way, the truth, and the life); Romans 6:23 (the wages of sin is death; but the gift of Elohim is eternal life) — THREAD 2
+--        Extras: none warranted (the way-of-life carried whole by Proverbs laterals + John + Romans)
+--        Tanakh: ★ Proverbs 4:18 (the path of the just is as the shining light); Proverbs 8:35 (whoso findeth me findeth life); Psalm 16:11 (Thou wilt shew me the path of life) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. proverbs-12-the-root-of-the-righteous-shall-not-be-moved — Tanakh (Psalm, Jeremiah) + NT (Matthew) [free] (the root/house/tree of the righteous that stands and yields fruit; the never-moved planting)
+--   2. proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways — Tanakh (Proverbs, Judges, Psalm) + NT (Matthew, John, Romans) [free] (★★ KEYSTONE: the way that seemeth right / the two ways, closing on the way of righteousness wherein is life and no death)
+--   3. proverbs-12-a-righteous-man-regardeth-the-life-of-his-beast — Tanakh (Deuteronomy, Exodus, Numbers) + NT (1 Corinthians, 1 Timothy) [free] (★ beast-mercy: covenant-righteousness reaches to the creature; the Torah's own compassion laws, quoted by Paul AS binding)
+--   4. proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment — Tanakh (Proverbs, Psalm, Zechariah) + NT (Ephesians, Colossians, Revelation) + Extras (Sirach) [extras] (★ the words/tongue cluster: truth shewn forth vs the lying lip an abomination; the healing tongue vs the piercing one)
+--
+-- Framing notes:
+--   ★ ROOT / HOUSE / TREE (THREAD 1): *A man shall not be established by wickedness: but the root of the righteous shall not be moved* (12:3); *The wicked are overthrown, and are not: but the house of the righteous shall stand* (12:7); *the root of the righteous yieldeth fruit* (12:12). The figure is the planted tree of the first psalm — *he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither* (Psalm 1:3) — set against the chaff the wind driveth away. Jeremiah draws the same contrast between the man who trusts in flesh and the man who trusts in Yahuah: *he shall be as a tree planted by the waters... her leaf shall be green... neither shall cease from yielding fruit* (Jeremiah 17:8). And Yahusha (Jesus) closes the Sermon with it as a house — *whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock... and it fell not* (Matthew 7:24-25), while the doer-not built on sand and great was the fall of it. The root not moved, the house that stands, the tree that yields fruit — one figure, root in the law-meditating, doing man.
+--   ★★ THE TWO WAYS / THE WAY THAT SEEMETH RIGHT (THREAD 2, KEYSTONE): *The way of a fool is right in his own eyes: but he that hearkeneth unto counsel is wise* (12:15). This is the two-ways register of the whole book, stated twice verbatim elsewhere — *There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12; 16:25). The fool trusts his own eyes; the charge of Proverbs 3 forbids exactly this — *Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (3:7). The book of Judges names the era of every-man-his-own-eyes as the era of no king and no Torah heard — *In those days there was no king in Yashar'el (Israel): every man did that which was right in his own eyes* (Judges 21:25). The NT keeps the two ways exactly: *wide is the gate, and broad is the way, that leadeth to destruction... narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:13-14). And the chapter itself closes on the way of life: *In the way of righteousness is life; and in the pathway thereof there is no death* (12:28) — the shining path of the just (Proverbs 4:18), the finding of wisdom that is the finding of life (Proverbs 8:35), the path of life Yahuah shews (Psalm 16:11). The Formed Son IS that way: *I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6); and the wages of the other way are named — *the wages of sin is death; but the gift of Elohim (God) is eternal life through Yahusha HaMashiach (Jesus Christ)* (Romans 6:23). Two ways; one seems right and ends in death, one is righteousness and in it there is no death.
+--   ★ BEAST-MERCY (THREAD 3): *A righteous man regardeth the life of his beast: but the tender mercies of the wicked are cruel* (12:10). Covenant-righteousness reaches even to the creature, and this is no sentiment but the Torah's own law: *Thou shalt not muzzle the ox when he treadeth out the corn* (Deuteronomy 25:4); *thou shalt not take the dam with the young: But thou shalt in any wise let the dam go* (Deuteronomy 22:6-7); *If thou see the ass of him that hateth thee lying under his burden... thou shalt surely help with him* (Exodus 23:5). When Balaam beat his faithful ass, the Angel of Yahuah — the Formed Son who bears the Name — rebuked the cruelty: *Wherefore hast thou smitten thine ass these three times?* (Numbers 22:32). And Paul quotes the muzzle-law AS binding scripture, never abolished: *it is written in the law of Moses, Thou shalt not muzzle the mouth of the ox* (1 Corinthians 9:9); *the scripture saith, Thou shalt not muzzle the ox that treadeth out the corn* (1 Timothy 5:18). The man whose mercy reaches the beast is the righteous man; the man whose very tender mercies are cruel is the wicked.
+--   ★ THE LIP OF TRUTH / THE LYING TONGUE (THREAD 4): *He that speaketh truth sheweth forth righteousness: but a false witness deceit* (12:17); *the tongue of the wise is health* (12:18); *The lip of truth shall be established for ever: but a lying tongue is but for a moment* (12:19); *Lying lips are abomination to Yahuah (LORD): but they that deal truly are his delight* (12:22). The lying tongue is among the very things Yahuah hates — *a lying tongue, and hands that shed innocent blood... A false witness that speaketh lies* (Proverbs 6:17,19). The one who abides with Yahuah *speaketh the truth in his heart* (Psalm 15:2); the covenant-renewal command is *Speak ye every man the truth to his neighbour... and love no false oath: for all these are things that I hate, saith Yahuah (LORD)* (Zechariah 8:16-17). The NT keeps the same: *putting away lying, speak every man truth with his neighbour* (Ephesians 4:25); *Lie not one to another, seeing that ye have put off the old man* (Colossians 3:9); and the lying tongue, established only for a moment, is shut out at the end — *all liars, shall have their part in the lake which burneth with fire* (Revelation 21:8); *whosoever loveth and maketh a lie* is without (Revelation 22:15). The restored witness weighs the tongue the same way — *Honour and shame is in talk: and the tongue of man is his fall* (Sirach 5:13); *the stroke of the tongue breaks the bones* (Sirach 28:17). The lip of truth stands for ever; the lying tongue is but for a moment.
+--   EXTRAS: Sirach (Ecclesiasticus) double-written edition 'apocrypha' + book 'ecclesiasticus'. Clean witnesses pulled for THREAD 4: 5:13 (the tongue of man is his fall), 5:14 (the double tongue), 28:13 (curse the whisperer and doubletongued), 28:17 (the stroke of the tongue breaks the bones). No extras forced on the other three threads — the beast-mercy, two-ways, and root figures are carried whole by Torah/Prophets/Psalms + NT.
+
+CREATE TEMP VIEW _s304_pr12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: The root of the righteous shall not be moved (root / house / tree)
+    ('canon','proverbs',12,3,'canon','psalms',1,3,'free',
+      E'*And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper* (Psalm 1:3). The *root of the righteous* that *shall not be moved* (Proverbs 12:3) is the planted tree of the first psalm: rooted by the waters, fruitful in season, its leaf never withering. The man who delights in the law of Yahuah is the tree; the wicked, like *the chaff which the wind driveth away* (Psalm 1:4), have no root to hold them.'),
+    ('canon','proverbs',12,3,'canon','jeremiah',17,8,'free',
+      E'*For he shall be as a tree planted by the waters, and that spreadeth out her roots by the river, and shall not see when heat cometh, but her leaf shall be green; and shall not be careful in the year of drought, neither shall cease from yielding fruit* (Jeremiah 17:8). Jeremiah draws out the *root of the righteous shall not be moved* (Proverbs 12:3): the man who trusts in Yahuah spreads out his roots by the river and never ceases from yielding fruit, while the one who trusts in flesh is *like the heath in the desert* (17:6). Root in Yahuah, and the drought cannot move you.'),
+    ('canon','proverbs',12,7,'canon','matthew',7,24,'free',
+      E'*Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock* (Matthew 7:24). The standing *house of the righteous* (Proverbs 12:7) is the house Yahusha (Jesus) builds on rock — the house of the one who hears AND does. Hearing-and-doing is the rock; the root not moved and the house that stands are one figure of the doer of the word.'),
+    ('canon','proverbs',12,7,'canon','matthew',7,25,'free',
+      E'*And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock* (Matthew 7:25). *The wicked are overthrown, and are not: but the house of the righteous shall stand* (Proverbs 12:7) — the storm that beats the house of the doer cannot overthrow it, *for it was founded upon a rock*, while the house on the sand falls and great is the fall of it. The overthrown wicked and the standing righteous, drawn as two houses in the storm.'),
+    ('canon','proverbs',12,12,'canon','psalms',1,3,'free',
+      E'*And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season* (Psalm 1:3). *The root of the righteous yieldeth fruit* (Proverbs 12:12) is the fruit-bearing tree of the first psalm: the planted, watered root *bringeth forth his fruit in his season*. The wicked desire the net of evil men and grasp at nothing that lasts; the righteous root quietly yields its fruit.'),
+
+    -- THREAD 2: The way of a fool right in his own eyes (the two ways) — KEYSTONE
+    ('canon','proverbs',12,15,'canon','proverbs',14,12,'free',
+      E'*There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). *The way of a fool is right in his own eyes* (Proverbs 12:15) is this very way-that-seemeth-right: it looks right to the man who walks it, but its end is death. The fool''s confidence in his own eyes is no proof the way is right — only the hearkening to counsel is wisdom.'),
+    ('canon','proverbs',12,15,'canon','proverbs',16,25,'free',
+      E'*There is a way that seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 16:25). The book states the warning of *The way of a fool is right in his own eyes* (Proverbs 12:15) twice over, word for word: the way that *seemeth right* to a man''s own eyes ends in death. What seems right to the fool and what IS right are not the same; the end reveals the way.'),
+    ('canon','proverbs',12,15,'canon','proverbs',3,7,'free',
+      E'*Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (Proverbs 3:7). The folly of *The way of a fool is right in his own eyes* (Proverbs 12:15) is exactly what this charge forbids — *Be not wise in thine own eyes*. To be right in one''s own eyes is to lean on self instead of the fear of Yahuah; the wise man hearkens to counsel and departs from evil.'),
+    ('canon','proverbs',12,15,'canon','judges',21,25,'free',
+      E'*In those days there was no king in Yashar''el (Israel): every man did that which was right in his own eyes* (Judges 21:25). The era of *right in his own eyes* (Proverbs 12:15) is named by Judges as the era of no king and no Torah heeded — *every man did that which was right in his own eyes*. When each man''s own eyes are his measure, the result is the chaos the book of Judges records; the way of a fool, multiplied over a people.'),
+    ('canon','proverbs',12,15,'canon','matthew',7,13,'free',
+      E'*Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat* (Matthew 7:13). The two ways of *The way of a fool... but he that hearkeneth unto counsel is wise* (Proverbs 12:15) are the two gates Yahusha (Jesus) sets before all: *wide is the gate, and broad is the way, that leadeth to destruction*. The broad way is the one that seems right to many; the fool walks it confident in his own eyes.'),
+    ('canon','proverbs',12,15,'canon','matthew',7,14,'free',
+      E'*Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:14). Over against the fool''s own-eyed way (Proverbs 12:15) stands the narrow way the wise hearken into: *narrow is the way, which leadeth unto life, and few there be that find it*. Few find it because it is not the way that merely seems right — it is the way of life the chapter closes upon (12:28).'),
+    ('canon','proverbs',12,28,'canon','proverbs',4,18,'free',
+      E'*But the path of the just is as the shining light, that shineth more and more unto the perfect day* (Proverbs 4:18). The way-of-life close — *In the way of righteousness is life; and in the pathway thereof there is no death* (Proverbs 12:28) — is the shining path of the just: it brightens toward the perfect day, while *The way of the wicked is as darkness: they know not at what they stumble* (4:19). The righteous pathway is light and life; the way that seemed right was darkness.'),
+    ('canon','proverbs',12,28,'canon','psalms',16,11,'free',
+      E'*Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore* (Psalm 16:11). *In the way of righteousness is life* (Proverbs 12:28) is the *path of life* David sings — the way Yahuah Himself shews, leading not to death but to fulness of joy in His presence. The pathway wherein *there is no death* is the path of life at His right hand.'),
+    ('canon','proverbs',12,28,'canon','john',14,6,'free',
+      E'*Yahusha (Jesus) saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6). The way wherein is life and *no death* (Proverbs 12:28) is at last a Person: the Formed Son says *I am the way, the truth, and the life*. The way of righteousness the proverb names is the way He IS; in Him there is no death, for He is the life by whom one comes to the Father.'),
+    ('canon','proverbs',12,28,'canon','romans',6,23,'free',
+      E'*For the wages of sin is death; but the gift of Elohim (God) is eternal life through Yahusha HaMashiach (Jesus Christ) our Lord* (Romans 6:23). The two ends of the two ways of Proverbs 12 are stated plainly: the way that seemed right pays *the wages of sin is death*, but in the way of righteousness — *In the way of righteousness is life; and in the pathway thereof there is no death* (12:28) — is *the gift of Elohim (God)... eternal life*. Death is the wage of the one way; life with no death the gift of the other.'),
+
+    -- THREAD 3: A righteous man regardeth the life of his beast (beast-mercy / Torah)
+    ('canon','proverbs',12,10,'canon','deuteronomy',25,4,'free',
+      E'*Thou shalt not muzzle the ox when he treadeth out the corn* (Deuteronomy 25:4). That *A righteous man regardeth the life of his beast* (Proverbs 12:10) is no mere sentiment but the Torah''s own command: *Thou shalt not muzzle the ox when he treadeth out the corn*. The labouring beast is to eat as it works; the righteous man''s regard for the creature is obedience to the law, not kindness invented.'),
+    ('canon','proverbs',12,10,'canon','deuteronomy',22,6,'free',
+      E'*If a bird''s nest chance to be before thee in the way in any tree, or on the ground, whether they be young ones, or eggs, and the dam sitting upon the young, or upon the eggs, thou shalt not take the dam with the young* (Deuteronomy 22:6). The regard for *the life of his beast* (Proverbs 12:10) reaches even to the bird in the nest: the Torah forbids taking the mother with the young. Covenant-righteousness extends mercy to the smallest creature; the tender mercy the proverb commends is written into the law.'),
+    ('canon','proverbs',12,10,'canon','deuteronomy',22,7,'free',
+      E'*But thou shalt in any wise let the dam go, and take the young to thee; that it may be well with thee, and that thou mayest prolong thy days* (Deuteronomy 22:7). The mercy to the beast of Proverbs 12:10 carries a blessing in the Torah — *let the dam go... that it may be well with thee, and that thou mayest prolong thy days*. The righteous man who regards the creature''s life walks in the very law that promises him length of days.'),
+    ('canon','proverbs',12,10,'canon','exodus',23,5,'free',
+      E'*If thou see the ass of him that hateth thee lying under his burden, and wouldest forbear to help him, thou shalt surely help with him* (Exodus 23:5). The regard for *the life of his beast* (Proverbs 12:10) reaches even to the beast of an enemy: the Torah commands lifting the fallen ass *of him that hateth thee*. Mercy to the creature overrides enmity to the man; the cruelty of the wicked spares neither beast nor foe, but the righteous lift even an enemy''s ass.'),
+    ('canon','proverbs',12,10,'canon','numbers',22,32,'free',
+      E'*And the angel of Yahuah (LORD) said unto him, Wherefore hast thou smitten thine ass these three times? behold, I went out to withstand thee, because thy way is perverse before me* (Numbers 22:32). When Balaam beat his faithful ass, the Angel of Yahuah — the Formed Son who bears the Name — rebuked the cruelty the proverb names: *the tender mercies of the wicked are cruel* (Proverbs 12:10). The ass had saved his life, and he repaid it with the staff; Heaven itself stood in the way to withstand the man whose mercies were cruel.'),
+    ('canon','proverbs',12,10,'canon','1-corinthians',9,9,'free',
+      E'*For it is written in the law of Moses, Thou shalt not muzzle the mouth of the ox that treadeth out the corn. Doth Elohim (God) take care for oxen?* (1 Corinthians 9:9). Paul quotes the beast-mercy law of Proverbs 12:10 AS binding scripture, never abolished — *it is written in the law of Moses, Thou shalt not muzzle the mouth of the ox* — and draws from it that the labourer deserves his keep. The Torah''s regard for the ox stands; it teaches still.'),
+    ('canon','proverbs',12,10,'canon','1-timothy',5,18,'free',
+      E'*For the scripture saith, Thou shalt not muzzle the ox that treadeth out the corn. And, The labourer is worthy of his reward* (1 Timothy 5:18). Again the Torah''s creature-mercy of Proverbs 12:10 is quoted as living *scripture* — *Thou shalt not muzzle the ox that treadeth out the corn* — set beside the worthiness of the labourer. The law that teaches the righteous to regard the life of his beast is the same law the apostle binds upon the assembly.'),
+
+    -- THREAD 4: The lip of truth, the lying tongue but for a moment (words / tongue)
+    ('canon','proverbs',12,17,'canon','proverbs',6,17,'free',
+      E'*A proud look, a lying tongue, and hands that shed innocent blood* (Proverbs 6:17). *He that speaketh truth sheweth forth righteousness: but a false witness deceit* (Proverbs 12:17) — and the *false witness* and *lying tongue* are among the very things Yahuah hates, *a lying tongue, and hands that shed innocent blood*. The deceit of the false witness is no small fault but an abomination listed with bloodshed.'),
+    ('canon','proverbs',12,17,'canon','psalms',15,2,'free',
+      E'*He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart* (Psalm 15:2). The one who *speaketh truth sheweth forth righteousness* (Proverbs 12:17) is the one who may abide in Yahuah''s tabernacle: he *speaketh the truth in his heart*. Truth spoken is righteousness shewn forth; the truthful tongue is the mark of the man who dwells with Yahuah.'),
+    ('canon','proverbs',12,17,'canon','zechariah',8,16,'free',
+      E'*These are the things that ye shall do; Speak ye every man the truth to his neighbour; execute the judgment of truth and peace in your gates* (Zechariah 8:16). The truth-speaking of Proverbs 12:17 is the very thing Yahuah commands in the restored Jerusalem: *Speak ye every man the truth to his neighbour*. The lip of truth is not a private virtue but the covenant-conduct of the gathered people.'),
+    ('canon','proverbs',12,19,'canon','ephesians',4,25,'free',
+      E'*Wherefore putting away lying, speak every man truth with his neighbour: for we are members one of another* (Ephesians 4:25). *The lip of truth shall be established for ever: but a lying tongue is but for a moment* (Proverbs 12:19) is kept whole in the NT: *putting away lying, speak every man truth with his neighbour*. The lying tongue is the old man put off; the established lip of truth is the new man''s speech.'),
+    ('canon','proverbs',12,19,'canon','colossians',3,9,'free',
+      E'*Lie not one to another, seeing that ye have put off the old man with his deeds* (Colossians 3:9). The lying tongue that is *but for a moment* (Proverbs 12:19) belongs to the old man: *Lie not one to another, seeing that ye have put off the old man with his deeds*. The momentary lie is cast off with the old self; only the lip of truth is established for ever.'),
+    ('canon','proverbs',12,22,'canon','revelation',21,8,'free',
+      E'*But the fearful, and unbelieving, and the abominable, and murderers, and whoremongers, and sorcerers, and idolaters, and all liars, shall have their part in the lake which burneth with fire and brimstone: which is the second death* (Revelation 21:8). *Lying lips are abomination to Yahuah (LORD)* (Proverbs 12:22) — and at the end *all liars* are shut out into the second death. The lying tongue that lasted but for a moment finds its moment ended; the abomination is put outside the city.'),
+    ('canon','proverbs',12,22,'canon','revelation',22,15,'free',
+      E'*For without are dogs, and sorcerers, and whoremongers, and murderers, and idolaters, and whosoever loveth and maketh a lie* (Revelation 22:15). The abomination of *Lying lips* (Proverbs 12:22) stands outside the New Jerusalem: *whosoever loveth and maketh a lie* is without. They that deal truly are Yahuah''s delight and enter in; the lover of the lie is left at the gate.'),
+    ('canon','proverbs',12,17,'apocrypha','ecclesiasticus',5,13,'extras',
+      E'*Honour and shame is in talk: and the tongue of man is his fall* (Sirach 5:13). The restored witness weighs the tongue as Proverbs 12:17 does — *He that speaketh truth sheweth forth righteousness: but a false witness deceit* — for *the tongue of man is his fall*. Honour or shame, righteousness or deceit, hang on what the tongue speaks.'),
+    ('canon','proverbs',12,19,'apocrypha','ecclesiasticus',5,14,'extras',
+      E'*Be not called a whisperer, and lie not in wait with your tongue: for a foul shame is upon the thief, and an evil condemnation upon the double tongue* (Sirach 5:14). The *lying tongue... but for a moment* (Proverbs 12:19) earns the restored witness''s *evil condemnation upon the double tongue*. The deceitful, double tongue carries a foul shame; only the single, truthful lip is established for ever.'),
+    ('canon','proverbs',12,18,'apocrypha','ecclesiasticus',28,17,'extras',
+      E'*The stroke of the whip makes marks in the flesh: but the stroke of the tongue breaks the bones* (Sirach 28:17). *There is that speaketh like the piercings of a sword: but the tongue of the wise is health* (Proverbs 12:18) — and the restored witness names the wounding tongue: *the stroke of the tongue breaks the bones*. The piercing tongue does deeper harm than the whip; the wise tongue, by contrast, is health.'),
+    ('canon','proverbs',12,22,'apocrypha','ecclesiasticus',28,13,'extras',
+      E'*Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Sirach 28:13). The lying lips that are *abomination to Yahuah (LORD)* (Proverbs 12:22) are the restored witness''s *whisperer and doubletongued* — cursed because *such have destroyed many that were at peace*. The deceitful tongue is no light matter; it is an abomination that wrecks the peace of many.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-12-the-root-of-the-righteous-shall-not-be-moved',
+       E'The root of the righteous shall not be moved — the house that stands',
+       E'Through the chapter runs one figure of the two men''s standing: *A man shall not be established by wickedness: but the root of the righteous shall not be moved* (Proverbs 12:3); *The wicked are overthrown, and are not: but the house of the righteous shall stand* (12:7); *The wicked desireth the net of evil men: but the root of the righteous yieldeth fruit* (12:12). Root, house, fruit — the same picture the first psalm paints of the man whose delight is in the law of Yahuah: *he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither* (Psalm 1:3), while the wicked are *like the chaff which the wind driveth away* (1:4) — no root to hold them. Jeremiah draws the same contrast between the man who trusts in flesh and the man who trusts in Yahuah: the first is *like the heath in the desert* (Jeremiah 17:6), but the second *shall be as a tree planted by the waters, and that spreadeth out her roots by the river... and shall not be careful in the year of drought, neither shall cease from yielding fruit* (17:8). And Yahusha (Jesus) seals the figure as a house in the storm: *whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock... and it fell not: for it was founded upon a rock* (Matthew 7:24-25) — while the hearer who does not do builds on sand, and great is the fall of it. The root not moved, the house that stands, the tree that yields fruit: one root, the law-meditating, doing man, whom no drought and no storm can overthrow.',
+       sv.verse_id, ev.verse_id, 'free', 28275
+  FROM _s304_pr12_lookup sv, _s304_pr12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=12 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways',
+       E'The way of a fool is right in his own eyes — the two ways',
+       E'The keystone of the chapter sets the two ways before every reader: *The way of a fool is right in his own eyes: but he that hearkeneth unto counsel is wise* (Proverbs 12:15). The peril is the way-that-merely-seems-right — and the book states the warning twice over, word for word: *There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12; 16:25). What seems right to the fool''s own eyes and what IS right are not the same; the end reveals the way. The charge of Proverbs 3 forbids exactly the fool''s posture: *Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (3:7). And the book of Judges names the era of every-man-his-own-eyes as the era of no king and no Torah heard — *In those days there was no king in Yashar''el (Israel): every man did that which was right in his own eyes* (Judges 21:25). The New Testament keeps the two ways exactly: *wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat... narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:13-14). The broad way is the one that seems right to many; the narrow way few find, because it is not the way that flatters the eye. The chapter itself closes on the way of life: *In the way of righteousness is life; and in the pathway thereof there is no death* (12:28) — the shining path of the just that *shineth more and more unto the perfect day* (Proverbs 4:18), the *path of life* Yahuah shews (Psalm 16:11). At last the way of life is a Person: *I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6). And the two ends are named plainly — *the wages of sin is death; but the gift of Elohim (God) is eternal life through Yahusha HaMashiach (Jesus Christ) our Lord* (Romans 6:23). Two ways: one seems right and ends in death; one is righteousness, and in it there is no death.',
+       sv.verse_id, ev.verse_id, 'free', 28278
+  FROM _s304_pr12_lookup sv, _s304_pr12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=12 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-12-a-righteous-man-regardeth-the-life-of-his-beast',
+       E'A righteous man regardeth the life of his beast — the Torah''s creature-mercy',
+       E'One couplet reaches lower than any prudential rule: *A righteous man regardeth the life of his beast: but the tender mercies of the wicked are cruel* (Proverbs 12:10). Covenant-righteousness extends mercy even to the creature — and this is no invented sentiment but the Torah''s own law. *Thou shalt not muzzle the ox when he treadeth out the corn* (Deuteronomy 25:4): the labouring beast is to eat as it works. *If a bird''s nest chance to be before thee... thou shalt not take the dam with the young: But thou shalt in any wise let the dam go... that it may be well with thee, and that thou mayest prolong thy days* (Deuteronomy 22:6-7): mercy reaches even to the bird in the nest, and carries a blessing. *If thou see the ass of him that hateth thee lying under his burden... thou shalt surely help with him* (Exodus 23:5): the regard for the beast overrides even enmity to its owner. And when Balaam beat his faithful ass — the ass that had saved his life — the Angel of Yahuah, the Formed Son who bears the Name, stood in the way to withstand him: *Wherefore hast thou smitten thine ass these three times? behold, I went out to withstand thee, because thy way is perverse before me* (Numbers 22:32). Heaven itself rebuked the man whose tender mercies were cruel. And the apostle Paul quotes the muzzle-law AS living, binding scripture, never abolished: *it is written in the law of Moses, Thou shalt not muzzle the mouth of the ox that treadeth out the corn* (1 Corinthians 9:9); *the scripture saith, Thou shalt not muzzle the ox that treadeth out the corn. And, The labourer is worthy of his reward* (1 Timothy 5:18). The man whose mercy reaches the beast is the righteous man of the Torah; the man whose very tender mercies are cruel has cut himself off from the compassion the law writes into the covenant.',
+       sv.verse_id, ev.verse_id, 'free', 28281
+  FROM _s304_pr12_lookup sv, _s304_pr12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=12 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment',
+       E'The lip of truth established for ever — the lying tongue but for a moment',
+       E'The chapter gathers a cluster on the tongue: *He that speaketh truth sheweth forth righteousness: but a false witness deceit* (Proverbs 12:17); *There is that speaketh like the piercings of a sword: but the tongue of the wise is health* (12:18); *The lip of truth shall be established for ever: but a lying tongue is but for a moment* (12:19); *Lying lips are abomination to Yahuah (LORD): but they that deal truly are his delight* (12:22). The lying tongue is among the very things Yahuah hates — *a proud look, a lying tongue, and hands that shed innocent blood... A false witness that speaketh lies* (Proverbs 6:17,19). The one who may abide in Yahuah''s tabernacle *speaketh the truth in his heart* (Psalm 15:2); and the covenant-conduct of the restored Jerusalem is *Speak ye every man the truth to his neighbour... and love no false oath: for all these are things that I hate, saith Yahuah (LORD)* (Zechariah 8:16-17). The New Testament keeps the same measure, never loosening it: *putting away lying, speak every man truth with his neighbour: for we are members one of another* (Ephesians 4:25); *Lie not one to another, seeing that ye have put off the old man with his deeds* (Colossians 3:9). And at the end the lying tongue, established only for a moment, is shut out of the city — *all liars, shall have their part in the lake which burneth with fire and brimstone: which is the second death* (Revelation 21:8); *whosoever loveth and maketh a lie* is without (Revelation 22:15). The restored witness weighs the tongue the same way: *Honour and shame is in talk: and the tongue of man is his fall* (Sirach 5:13); *an evil condemnation upon the double tongue* (Sirach 5:14); *the stroke of the tongue breaks the bones* (Sirach 28:17); *Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Sirach 28:13). From Torah-rooted Proverbs to the prophets to the apostles to the restored witnesses, one verdict stands: the lip of truth is established for ever, and the lying tongue is but for a moment.',
+       sv.verse_id, ev.verse_id, 'extras', 28284
+  FROM _s304_pr12_lookup sv, _s304_pr12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='proverbs' AND ev.chapter_number=12 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither* (Psalm 1:3) — the *root of the righteous shall not be moved* (12:3) is the planted, watered tree; the wicked are chaff with no root.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-root-of-the-righteous-shall-not-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*as a tree planted by the waters... neither shall cease from yielding fruit* (Jeremiah 17:8) — the unmoved root of 12:3 spread out by the river; the one who trusts Yahuah outlasts the drought.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=17 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-root-of-the-righteous-shall-not-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*built his house upon a rock* (Matthew 7:24) — the standing *house of the righteous* (12:7) is the house of the one who hears AND does; hearing-and-doing is the rock.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-root-of-the-righteous-shall-not-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*it fell not: for it was founded upon a rock* (Matthew 7:25) — the storm cannot overthrow the *house of the righteous* (12:7); the wicked and the righteous drawn as two houses in the storm.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-root-of-the-righteous-shall-not-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*bringeth forth his fruit in his season* (Psalm 1:3) — *the root of the righteous yieldeth fruit* (12:12) is the fruit-bearing tree of the first psalm; the righteous root quietly yields what the wicked grasp at and miss.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=12
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-root-of-the-righteous-shall-not-be-moved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12) — *the way of a fool is right in his own eyes* (12:15) is the way-that-seemeth-right; the end reveals it.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=15
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*a way that seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 16:25) — the book states the warning of 12:15 twice, word for word; what seems right and what IS right are not the same.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=15
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (Proverbs 3:7) — the folly of 12:15 is exactly what this charge forbids; to be right in one''s own eyes is to lean on self.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=15
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*every man did that which was right in his own eyes* (Judges 21:25) — the era of *right in his own eyes* (12:15) named: no king, no Torah heeded; the way of a fool multiplied over a people.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=15
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=21 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*wide is the gate, and broad is the way, that leadeth to destruction* (Matthew 7:13) — the two ways of 12:15; the broad way is the one that seems right to many.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=15
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:14) — the way the wise hearken into (12:15); few find it because it is not the way that merely seems right.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=15
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the path of the just is as the shining light, that shineth more and more unto the perfect day* (Proverbs 4:18) — the way-of-life close *In the way of righteousness is life* (12:28) is the shining path; the way of the wicked is darkness.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=28
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Thou wilt shew me the path of life... at thy right hand there are pleasures for evermore* (Psalm 16:11) — *In the way of righteousness is life* (12:28) is the path of life Yahuah shews, leading to joy in His presence.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=28
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6) — the way wherein is life and *no death* (12:28) is at last a Person: the Formed Son IS the way of righteousness.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=28
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*the wages of sin is death; but the gift of Elohim (God) is eternal life* (Romans 6:23) — the two ends of the two ways: death the wage of the one, life with no death (12:28) the gift of the other.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=28
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=6 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-way-of-a-fool-right-in-his-own-eyes-the-two-ways'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt not muzzle the ox when he treadeth out the corn* (Deuteronomy 25:4) — that the righteous *regardeth the life of his beast* (12:10) is the Torah''s own command; the labouring ox is to eat as it works.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-a-righteous-man-regardeth-the-life-of-his-beast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thou shalt not take the dam with the young* (Deuteronomy 22:6) — regard for *the life of his beast* (12:10) reaches even to the bird in the nest; mercy to the smallest creature is law.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=22 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-a-righteous-man-regardeth-the-life-of-his-beast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*let the dam go... that it may be well with thee, and that thou mayest prolong thy days* (Deuteronomy 22:7) — the beast-mercy of 12:10 carries a blessing in the Torah; the righteous man walks in the law that lengthens his days.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=22 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-a-righteous-man-regardeth-the-life-of-his-beast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*If thou see the ass of him that hateth thee lying under his burden... thou shalt surely help with him* (Exodus 23:5) — regard for the beast (12:10) overrides enmity to its owner; mercy to the creature even of an enemy.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-a-righteous-man-regardeth-the-life-of-his-beast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Wherefore hast thou smitten thine ass these three times?* (Numbers 22:32) — the Angel of Yahuah, the Formed Son, rebukes Balaam''s cruelty; *the tender mercies of the wicked are cruel* (12:10), and Heaven withstood it.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=22 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-a-righteous-man-regardeth-the-life-of-his-beast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*it is written in the law of Moses, Thou shalt not muzzle the mouth of the ox* (1 Corinthians 9:9) — Paul quotes the beast-mercy law of 12:10 AS binding scripture, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=9 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-a-righteous-man-regardeth-the-life-of-his-beast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the scripture saith, Thou shalt not muzzle the ox that treadeth out the corn* (1 Timothy 5:18) — the Torah''s creature-mercy of 12:10 quoted again as living scripture, bound upon the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=5 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-a-righteous-man-regardeth-the-life-of-his-beast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*a proud look, a lying tongue, and hands that shed innocent blood* (Proverbs 6:17) — the *false witness* of 12:17 is among the seven things Yahuah hates; the lying tongue listed with bloodshed.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=17
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He that walketh uprightly... and speaketh the truth in his heart* (Psalm 15:2) — the one who *speaketh truth sheweth forth righteousness* (12:17) is the one who may abide in Yahuah''s tabernacle.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=17
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Speak ye every man the truth to his neighbour* (Zechariah 8:16) — the truth-speaking of 12:17 commanded as the covenant-conduct of the restored Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=17
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=8 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*putting away lying, speak every man truth with his neighbour* (Ephesians 4:25) — *the lip of truth shall be established for ever* (12:19) kept whole; the lying tongue is the old man put off.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=19
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=4 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Lie not one to another, seeing that ye have put off the old man with his deeds* (Colossians 3:9) — the lying tongue *but for a moment* (12:19) cast off with the old self.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=19
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=3 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*all liars, shall have their part in the lake which burneth with fire* (Revelation 21:8) — *Lying lips are abomination to Yahuah* (12:22); at the end all liars are shut out into the second death.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=22
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*whosoever loveth and maketh a lie* (Revelation 22:15) — the abomination of *Lying lips* (12:22) stands outside the New Jerusalem; they that deal truly enter in.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=22
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Honour and shame is in talk: and the tongue of man is his fall* (Sirach 5:13) — the restored witness weighs the tongue as 12:17 does; righteousness or deceit hangs on what it speaks.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=17
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=5 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*an evil condemnation upon the double tongue* (Sirach 5:14) — the *lying tongue but for a moment* (12:19) earns the restored witness''s condemnation of the double tongue; only the single, truthful lip endures.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=19
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=5 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*the stroke of the tongue breaks the bones* (Sirach 28:17) — *that speaketh like the piercings of a sword* (12:18); the wounding tongue does deeper harm than the whip, while the wise tongue is health.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=18
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=28 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Sirach 28:13) — the lying lips that are *abomination to Yahuah* (12:22); the deceitful tongue wrecks the peace of many.'
+  FROM cross_reference_threads t
+  JOIN _s304_pr12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='proverbs' AND sv.chapter_number=12 AND sv.verse_number=22
+  JOIN _s304_pr12_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=28 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='proverbs-12-the-lip-of-truth-the-lying-tongue-but-for-a-moment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session304 — Proverbs cross-references complete.'
