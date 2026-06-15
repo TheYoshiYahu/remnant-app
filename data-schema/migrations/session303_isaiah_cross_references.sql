@@ -17093,6 +17093,1446 @@ SELECT t.id, cr.id, 1, E'★★ *behold, I come quickly; and my reward is with m
  WHERE t.slug='isaiah-62-behold-thy-salvation-cometh-his-reward-is-with-him'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_isaiah_4.sql (Isaiah 4) -----
+-- Chapter: Isaiah 4 — the bright close to the ch2-4 unit, six verses, heavy with the Branch,
+-- the sanctified remnant, the purging fire, and the restored pillar of cloud and fire over all
+-- of Zion. ★★ *In that day shall the branch of Yahuah (LORD) be beautiful and glorious... for
+-- them that are escaped of Yashar'el (Israel)* (4:2) — the Branch of Yahuah is the Messianic
+-- Branch, the Formed Son, lateral to *a rod out of the stem of Jesse, and a Branch* (Isaiah
+-- 11:1), *a righteous Branch... Yahuah Tsidkenu* (Jeremiah 23:5-6), *the Branch of righteousness*
+-- (Jeremiah 33:15-16), *my servant the BRANCH* (Zechariah 3:8), *the man whose name is The
+-- BRANCH* (Zechariah 6:12) — glorifying the two-house remnant that escaped. ★ *he that is left
+-- in Zion... shall be called holy, even every one that is written among the living* (4:3) — the
+-- book of life, lateral Revelation 21:27 / Philippians 4:3. ★★ 4:4 the filth washed away *by the
+-- spirit of judgment, and by the spirit of burning* — refiner's fire (Malachi 3:2-3; Matthew
+-- 3:11-12, baptize with the Ruach HaKodesh and with fire), purging UNTO holiness, never to
+-- discard. ★★ 4:5-6 Yahuah creates over every dwelling of Zion *a cloud and smoke by day, and
+-- the shining of a flaming fire by night... a tabernacle for a shadow... a place of refuge* —
+-- the wilderness pillar (Exodus 13:21; Exodus 40:34) restored as a chuppah over the whole
+-- assembly; lateral to *the tabernacle of Elohim (God) is with men* (Revelation 21:3) and
+-- *neither shall the sun light on them, nor any heat* (Revelation 7:15-16).
+-- Tag: isa04   Temp view: _s303_isa04_lookup
+-- Sort band: base 26075, step 3 -> threads at 26075, 26078, 26081, 26084 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',4,v
+--
+-- Isaiah 4 coverage:
+--   v.1 (seven women shall take hold of one man... only let us be called by thy name, to take
+--          away our reproach)
+--        NT:     none warranted (the desolation-of-men tail of ch3 carries here; the reproach-
+--                removed note is woven into prose, not a single NT verse)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (the dearth of men is the ch3 judgment continuing; held
+--                in prose as the dark foil to the bright "in that day" that follows)
+--   ★★ v.2 (In that day shall the branch of Yahuah (LORD) be beautiful and glorious... for them
+--          that are escaped of Yashar'el (Israel))
+--        NT:     ★ Jeremiah/Zechariah are the Tanakh Branch-cluster; the NT names him at the
+--                tree (woven in prose) — the heaviest weave here is the prophetic Branch chorus
+--        Extras: none warranted (the Branch chorus is canon-prophetic; no clean extras add)
+--        Tanakh: ★★ Isaiah 11:1 (a rod out of the stem of Jesse, and a Branch), ★★ Jeremiah 23:5
+--                + 23:6 (a righteous Branch... Yahuah Tsidkenu), ★★ Jeremiah 33:15 (the Branch
+--                of righteousness), ★★ Zechariah 3:8 (my servant the BRANCH), ★★ Zechariah 6:12
+--                (the man whose name is The BRANCH) — THREAD 1
+--   ★ v.3 (he that is left in Zion, and he that remaineth in Jerusalem, shall be called holy,
+--          even every one that is written among the living in Jerusalem)
+--        NT:     ★ Revelation 21:27 (they which are written in the Lamb's book of life), ★
+--                Philippians 4:3 (whose names are in the book of life) — THREAD 2
+--        Extras: none warranted (clean book-of-life witnesses are the canon NT pair)
+--        Tanakh: woven in prose (the remnant left/remaining = the two-house remnant of Isaiah 6)
+--   ★★ v.4 (When Yahuah (Lord) shall have washed away the filth of the daughters of Zion, and
+--          shall have purged the blood of Jerusalem... by the spirit of judgment, and by the
+--          spirit of burning)
+--        NT:     ★★ Matthew 3:11 (he shall baptize you with the Ruach HaKodesh (Holy Spirit),
+--                and with fire), ★★ Matthew 3:12 (throughly purge his floor... burn up the chaff)
+--                — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Malachi 3:2 (he is like a refiner's fire), ★★ Malachi 3:3 (he shall sit as
+--                a refiner and purifier of silver... purify the sons of Levi) — THREAD 3
+--   ★★ v.5-6 (Yahuah (LORD) will create upon every dwelling place of mount Zion... a cloud and
+--          smoke by day, and the shining of a flaming fire by night... a tabernacle for a shadow...
+--          a place of refuge... a covert from storm and from rain)
+--        NT:     ★★ Revelation 21:3 (the tabernacle of Elohim (God) is with men), ★ Revelation
+--                7:15 (he that sitteth on the throne shall dwell among them) — THREAD 4
+--        Extras: none warranted (the cloud-glory parses in extras carry watcher/apparatus noise;
+--                clean canon witnesses chosen)
+--        Tanakh: ★★ Exodus 13:21 (a pillar of a cloud... a pillar of fire), ★★ Exodus 40:34 (a
+--                cloud covered the tent... the glory of Yahuah (LORD) filled the tabernacle) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-4-the-branch-of-yahuah-beautiful-and-glorious — Tanakh (Isaiah 11, Jeremiah 23+33,
+--      Zechariah 3+6) [free]  (★★ the Branch of Yahuah = the Messianic Branch, the Formed Son)
+--   2. isaiah-4-written-among-the-living-called-holy — NT (Revelation 21, Philippians 4) [free]
+--      (★ the remnant sanctified; the book of life)
+--   3. isaiah-4-the-spirit-of-judgment-and-of-burning — Tanakh (Malachi 3) + NT (Matthew 3) [free]
+--      (★★ the refiner's fire that purges UNTO holiness, never to discard)
+--   4. isaiah-4-a-cloud-and-fire-a-tabernacle-for-a-shadow — Tanakh (Exodus 13+40) + NT
+--      (Revelation 21+7) [free]  (★★ the wilderness pillar restored as a chuppah over all Zion)
+--
+-- Framing notes:
+--   ★★ THE BRANCH OF YAHUAH (THREAD 1): *In that day shall the branch of Yahuah (LORD) be
+--      beautiful and glorious, and the fruit of the earth shall be excellent and comely for them
+--      that are escaped of Yashar'el (Israel)* (4:2). The "branch of Yahuah" is read across the
+--      prophets as the Messianic Branch — the Formed Son drawn from the Formless Father, who has
+--      a Father and is Yahuah. Isaiah's own later word draws him from Jesse's felled stem (11:1);
+--      Jeremiah names him *a righteous Branch... Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)*
+--      (23:5-6) under whom *Yahudah (Judah) shall be saved, and Yashar'el (Israel) shall dwell
+--      safely* — the two houses; Jeremiah 33:15 repeats it as *the Branch of righteousness*;
+--      Zechariah twice names him outright — *my servant the BRANCH* (3:8) and *the man whose name
+--      is The BRANCH* who *shall build the temple of Yahuah (LORD)* (6:12). He is *beautiful and
+--      glorious* for the remnant *that are escaped* — the two-house remnant.
+--   ★ WRITTEN AMONG THE LIVING (THREAD 2): *he that is left in Zion, and he that remaineth in
+--      Jerusalem, shall be called holy, even every one that is written among the living in
+--      Jerusalem* (4:3). The remnant left and remaining is sanctified — written among the living,
+--      the book of life: *they which are written in the Lamb's book of life* (Revelation 21:27),
+--      *whose names are in the book of life* (Philippians 4:3). Called holy = set apart for the
+--      covenant, the same remnant Isaiah 6:13 keeps as the holy seed.
+--   ★★ THE SPIRIT OF JUDGMENT AND OF BURNING (THREAD 3): *When Yahuah (Lord) shall have washed
+--      away the filth of the daughters of Zion... by the spirit of judgment, and by the spirit of
+--      burning* (4:4). The burning is a refiner's fire — it purges UNTO holiness, it does not
+--      discard: *he is like a refiner's fire... he shall sit as a refiner and purifier of silver:
+--      and he shall purify the sons of Levi, and purge them as gold and silver, that they may
+--      offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:2-3). The Messiah's own
+--      baptism is the same fire: *he shall baptize you with the Ruach HaKodesh (Holy Spirit), and
+--      with fire* (Matthew 3:11), *throughly purge his floor* (3:12). Judgment-and-burning that
+--      cleanses the daughters of Zion is mercy in the shape of fire — victims purified, not
+--      enemies destroyed.
+--   ★★ A CLOUD AND FIRE, A TABERNACLE FOR A SHADOW (THREAD 4): *Yahuah (LORD) will create upon
+--      every dwelling place of mount Zion, and upon her assemblies, a cloud and smoke by day, and
+--      the shining of a flaming fire by night... And there shall be a tabernacle for a shadow in
+--      the daytime from the heat, and for a place of refuge, and for a covert from storm and from
+--      rain* (4:5-6). This is the wilderness pillar restored — *Yahuah (LORD) went before them by
+--      day in a pillar of a cloud... and by night in a pillar of fire* (Exodus 13:21) — and the
+--      glory that filled the tabernacle — *a cloud covered the tent of the congregation, and the
+--      glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34) — now spread as a chuppah
+--      over the WHOLE assembly, *upon every dwelling place*. The consummation answers it: *the
+--      tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3),
+--      where *neither shall the sun light on them, nor any heat* (Revelation 7:15-16) — the
+--      shadow from the heat made eternal.
+--   VERSES WITH NO SEPARATE ADD: v.1 (seven women take hold of one man — the dearth of men, the
+--      tail of the ch3 judgment, the dark foil to the bright "in that day"; held in prose, not
+--      forced to a target). All recorded, none silently skipped. No extras warranted this chapter:
+--      the Branch chorus is canon-prophetic, the book-of-life and tabernacle witnesses are clean
+--      canon, and the available extras cloud-glory parses carry watcher/apparatus noise.
+
+CREATE TEMP VIEW _s303_isa04_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The branch of Yahuah, beautiful and glorious — the Messianic Branch
+    ('canon','isaiah',4,2,'canon','isaiah',11,1,'free',
+      E'*And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1). The *branch of Yahuah (LORD)* that shall be *beautiful and glorious* (Isaiah 4:2) is the Branch Isaiah later draws from Jesse''s felled stem — *a Branch shall grow out of his roots*. The Messianic Branch, the Formed Son, springs from the remnant-stump to glorify those *that are escaped of Yashar''el (Israel)*.'),
+    ('canon','isaiah',4,2,'canon','jeremiah',23,5,'free',
+      E'*Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth* (Jeremiah 23:5). The *branch of Yahuah (LORD)* (Isaiah 4:2) is Jeremiah''s *righteous Branch* raised to David — the King who reigns in judgment and justice. The Branch is no abstraction but the Davidic Messiah, beautiful and glorious for the escaped of Yashar''el (Israel).'),
+    ('canon','isaiah',4,2,'canon','jeremiah',23,6,'free',
+      E'*In his days Yahudah (Judah) shall be saved, and Yashar''el (Israel) shall dwell safely: and this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* (Jeremiah 23:6). Under the Branch BOTH houses are restored — *Yahudah (Judah) shall be saved, and Yashar''el (Israel) shall dwell safely* — the two sticks made one. The *branch of Yahuah (LORD)* glorious for *them that are escaped of Yashar''el (Israel)* (Isaiah 4:2) is the King whose very name is Yahuah Tsidkenu.'),
+    ('canon','isaiah',4,2,'canon','jeremiah',33,15,'free',
+      E'*In those days, and at that time, will I cause the Branch of righteousness to grow up unto David; and he shall execute judgment and righteousness in the land* (Jeremiah 33:15). Jeremiah repeats the promise — *the Branch of righteousness to grow up unto David* — to *the house of Yashar''el (Israel) and to the house of Yahudah (Judah)* (33:14), both houses again. The *branch of Yahuah (LORD)* of Isaiah 4:2 is this growing Branch of righteousness.'),
+    ('canon','isaiah',4,2,'canon','zechariah',3,8,'free',
+      E'*Hear now, O Joshua the high priest... for, behold, I will bring forth my servant the BRANCH* (Zechariah 3:8). Zechariah names him outright — *my servant the BRANCH* — the same Branch Isaiah saw *beautiful and glorious* (Isaiah 4:2). The branch of Yahuah is a Person: the servant-Branch Yahuah brings forth, the Formed Son who serves the Father.'),
+    ('canon','isaiah',4,2,'canon','zechariah',6,12,'free',
+      E'*And speak unto him, saying, Thus speaketh Yahuah Tseva''ot (LORD of hosts), saying, Behold the man whose name is The BRANCH; and he shall grow up out of his place, and he shall build the temple of Yahuah (LORD)* (Zechariah 6:12). The clearest naming of all — *the man whose name is The BRANCH* who *shall build the temple of Yahuah (LORD)*. The *branch of Yahuah (LORD)* of Isaiah 4:2 is the man who is the Branch, priest-king who builds the house and is glorious for the remnant.'),
+
+    -- THREAD 2 (★): Written among the living, called holy — the remnant sanctified, the book of life
+    ('canon','isaiah',4,3,'canon','revelation',21,27,'free',
+      E'*And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb''s book of life* (Revelation 21:27). *He that is left in Zion... shall be called holy, even every one that is written among the living in Jerusalem* (Isaiah 4:3) — the remnant written among the living is the company *written in the Lamb''s book of life*, those who enter the holy city. The remaining ones are the sanctified, named in the register of life.'),
+    ('canon','isaiah',4,3,'canon','philippians',4,3,'free',
+      E'*And I intreat thee also, true yokefellow, help those women which laboured with me in the gospel, with Clement also, and with other my fellowlabourers, whose names are in the book of life* (Philippians 4:3). To be *written among the living in Jerusalem* (Isaiah 4:3) is to have one''s name *in the book of life*. The remnant *left in Zion* and *called holy* is the same enrolled people Paul knows by name — written, living, set apart.'),
+
+    -- THREAD 3 (★★): The spirit of judgment and of burning — the refiner's fire that purges unto holiness
+    ('canon','isaiah',4,4,'canon','malachi',3,2,'free',
+      E'*But who may abide the day of his coming? and who shall stand when he appeareth? for he is like a refiner’s fire, and like fullers’ soap* (Malachi 3:2). The washing of Zion''s filth *by the spirit of judgment, and by the spirit of burning* (Isaiah 4:4) is the work of *a refiner''s fire... and fullers'' soap* — fire that cleanses, not consumes. The burning is purgation unto holiness, the daughters of Zion made clean.'),
+    ('canon','isaiah',4,4,'canon','malachi',3,3,'free',
+      E'*And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3). The *spirit of burning* (Isaiah 4:4) is the refiner who *shall sit* and *purify*, *purge them as gold and silver* — the dross removed so the offering is righteous. Judgment-and-burning is mercy in the shape of fire; the people are refined, not discarded — victims purified, not enemies destroyed.'),
+    ('canon','isaiah',4,4,'canon','matthew',3,11,'free',
+      E'*I indeed baptize you with water unto repentance: but he that cometh after me is mightier than I... he shall baptize you with the Ruach HaKodesh (Holy Spirit), and with fire* (Matthew 3:11). The *spirit of judgment, and... the spirit of burning* (Isaiah 4:4) is the Messiah''s own baptism — *with the Ruach HaKodesh (Holy Spirit), and with fire*. The Spirit and the fire together wash and purge; the burning that cleanses Zion is the Spirit-and-fire baptism of the One who comes.'),
+    ('canon','isaiah',4,4,'canon','matthew',3,12,'free',
+      E'*Whose fan is in his hand, and he will throughly purge his floor, and gather his wheat into the garner; but he will burn up the chaff with unquenchable fire* (Matthew 3:12). The purging fire of Isaiah 4:4 separates and cleanses — *he will throughly purge his floor*, the wheat gathered, the chaff burned. The burning washes away *the filth of the daughters of Zion* so the remnant stands holy; the fire is for cleansing the threshing-floor of His people.'),
+
+    -- THREAD 4 (★★): A cloud and fire, a tabernacle for a shadow — the wilderness pillar restored over all Zion
+    ('canon','isaiah',4,5,'canon','exodus',13,21,'free',
+      E'*And Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; to go by day and night* (Exodus 13:21). The cloud and fire Yahuah *will create upon every dwelling place of mount Zion... a cloud and smoke by day, and the shining of a flaming fire by night* (Isaiah 4:5) is the wilderness pillar restored — *a pillar of a cloud* by day, *a pillar of fire* by night. The Presence that led the redeemed out of Egypt now canopies the whole assembly of Zion.'),
+    ('canon','isaiah',4,5,'canon','exodus',40,34,'free',
+      E'*Then a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34). The cloud over *every dwelling place of mount Zion, and upon her assemblies* (Isaiah 4:5) — *for upon all the glory shall be a defence* — is the glory-cloud that filled the tabernacle, now spread over the whole congregation. The Presence once confined to the tent is the canopy *upon all*.'),
+    ('canon','isaiah',4,6,'canon','revelation',21,3,'free',
+      E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The *tabernacle for a shadow... a place of refuge* (Isaiah 4:6) over Zion is the consummation — *the tabernacle of Elohim (God) is with men, and he will dwell with them*. Yahuah dwelling among His people, the cloud-canopy made eternal, *they shall be his people*.'),
+    ('canon','isaiah',4,6,'canon','revelation',7,15,'free',
+      E'*Therefore are they before the throne of Elohim (God), and serve him day and night in his temple: and he that sitteth on the throne shall dwell among them* (Revelation 7:15). The *tabernacle for a shadow in the daytime from the heat... a covert from storm and from rain* (Isaiah 4:6) is fulfilled where *he that sitteth on the throne shall dwell among them*, and *neither shall the sun light on them, nor any heat* (7:16). The shadow from the heat is the throne-canopy spread over the gathered people for ever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-4-the-branch-of-yahuah-beautiful-and-glorious',
+       E'The branch of Yahuah, beautiful and glorious — the Messianic Branch',
+       E'After the dark dearth of men (4:1), the chapter turns bright: *In that day shall the branch of Yahuah (LORD) be beautiful and glorious, and the fruit of the earth shall be excellent and comely for them that are escaped of Yashar''el (Israel)* (Isaiah 4:2). The "branch of Yahuah" is read across the prophets as the Messianic Branch — the Formed Son drawn from the Formless Father, who is Yahuah and HAS a Father. Isaiah''s own later throne-word draws him from Jesse''s felled stem: *And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1). Jeremiah names him the righteous King: *I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth* (Jeremiah 23:5), under whom BOTH houses are restored — *In his days Yahudah (Judah) shall be saved, and Yashar''el (Israel) shall dwell safely: and this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* (23:6) — and again *the Branch of righteousness to grow up unto David* (Jeremiah 33:15). Zechariah names him twice outright: *behold, I will bring forth my servant the BRANCH* (Zechariah 3:8), and *Behold the man whose name is The BRANCH... and he shall build the temple of Yahuah (LORD)* (Zechariah 6:12). The branch of Yahuah is a Person — the priest-king Messiah, beautiful and glorious for the two-house remnant *that are escaped of Yashar''el (Israel)*.',
+       sv.verse_id, ev.verse_id, 'free', 26075
+  FROM _s303_isa04_lookup sv, _s303_isa04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=4 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-4-written-among-the-living-called-holy',
+       E'Written among the living, called holy — the remnant sanctified, the book of life',
+       E'The Branch glorifies a people who *are escaped* (4:2), and that remnant is named: *And it shall come to pass, that he that is left in Zion, and he that remaineth in Jerusalem, shall be called holy, even every one that is written among the living in Jerusalem* (Isaiah 4:3). The one left, the one remaining — the two-house remnant Isaiah keeps as the holy seed (6:13) — is *called holy* and *written among the living*. That register is the book of life. The holy city admits only those names: *And there shall in no wise enter into it any thing that defileth... but they which are written in the Lamb''s book of life* (Revelation 21:27). And Paul knows his fellowlabourers by it: *whose names are in the book of life* (Philippians 4:3). To be left in Zion and remain in Jerusalem is to be enrolled among the living, set apart for the covenant — the sanctified remnant the Branch came to glorify.',
+       sv.verse_id, ev.verse_id, 'free', 26078
+  FROM _s303_isa04_lookup sv, _s303_isa04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=4 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-4-the-spirit-of-judgment-and-of-burning',
+       E'The spirit of judgment and of burning — the refiner''s fire that purges unto holiness',
+       E'How is the remnant made holy? Not by being spared the fire, but by passing through it: *When Yahuah (Lord) shall have washed away the filth of the daughters of Zion, and shall have purged the blood of Jerusalem from the midst thereof by the spirit of judgment, and by the spirit of burning* (Isaiah 4:4). The burning is a REFINER''S fire — it cleanses, it does not consume. Malachi sets the same scene: *who shall stand when he appeareth? for he is like a refiner''s fire, and like fullers'' soap* (Malachi 3:2); *And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (3:3) — the dross removed so the offering is righteous. And the Messiah''s own baptism IS this fire: *he shall baptize you with the Ruach HaKodesh (Holy Spirit), and with fire* (Matthew 3:11); *Whose fan is in his hand, and he will throughly purge his floor* (3:12). The Spirit and the fire together wash and purge. Read it as covenant-mercy in the shape of fire: the daughters of Zion are CLEANSED, not cast off; the people refined, the victims purified — never enemies destroyed.',
+       sv.verse_id, ev.verse_id, 'free', 26081
+  FROM _s303_isa04_lookup sv, _s303_isa04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=4 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-4-a-cloud-and-fire-a-tabernacle-for-a-shadow',
+       E'A cloud and fire, a tabernacle for a shadow — the wilderness pillar restored over all Zion',
+       E'The cleansed remnant is canopied with the Presence: *And Yahuah (LORD) will create upon every dwelling place of mount Zion, and upon her assemblies, a cloud and smoke by day, and the shining of a flaming fire by night: for upon all the glory shall be a defence. And there shall be a tabernacle for a shadow in the daytime from the heat, and for a place of refuge, and for a covert from storm and from rain* (Isaiah 4:5-6). This is the wilderness pillar restored — *Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light* (Exodus 13:21) — and the glory-cloud that once filled one tent — *a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34) — now spread as a chuppah over EVERY dwelling and over all *her assemblies* (her appointed gatherings). The consummation answers it: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3), where *he that sitteth on the throne shall dwell among them* and *neither shall the sun light on them, nor any heat* (Revelation 7:15-16). The shadow from the heat, the covert from the storm, the cloud and fire — the Presence that led the redeemed out of Egypt becomes the eternal canopy over the whole gathered people.',
+       sv.verse_id, ev.verse_id, 'free', 26084
+  FROM _s303_isa04_lookup sv, _s303_isa04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=4 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1) — the *branch of Yahuah (LORD)* (Isaiah 4:2) springs from the remnant-stump of Jesse.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=2
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-the-branch-of-yahuah-beautiful-and-glorious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I will raise unto David a righteous Branch, and a King shall reign and prosper* (Jeremiah 23:5) — the branch of Yahuah is the Davidic King who reigns in judgment and justice.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=2
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-the-branch-of-yahuah-beautiful-and-glorious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Yahudah (Judah) shall be saved, and Yashar''el (Israel) shall dwell safely... Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* (Jeremiah 23:6) — under the Branch BOTH houses are restored; his name is Yahuah Tsidkenu.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=2
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-the-branch-of-yahuah-beautiful-and-glorious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the Branch of righteousness to grow up unto David* (Jeremiah 33:15) — promised to *the house of Yashar''el (Israel) and to the house of Yahudah (Judah)* (33:14); the branch of Yahuah grows for both houses.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=2
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=33 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-the-branch-of-yahuah-beautiful-and-glorious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *behold, I will bring forth my servant the BRANCH* (Zechariah 3:8) — Zechariah names him outright: the servant-Branch Yahuah brings forth.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=2
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-the-branch-of-yahuah-beautiful-and-glorious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Behold the man whose name is The BRANCH... and he shall build the temple of Yahuah (LORD)* (Zechariah 6:12) — the clearest naming: the man who IS the Branch, the priest-king who builds the house.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=2
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=6 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-the-branch-of-yahuah-beautiful-and-glorious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *they which are written in the Lamb''s book of life* (Revelation 21:27) — *every one that is written among the living in Jerusalem* (Isaiah 4:3) enters the holy city; the remnant enrolled in the book of life.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=3
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-written-among-the-living-called-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *whose names are in the book of life* (Philippians 4:3) — to be *written among the living* (Isaiah 4:3) is to be named in the book of life; the sanctified remnant known by name.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=3
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-written-among-the-living-called-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he is like a refiner’s fire, and like fullers’ soap* (Malachi 3:2) — the *spirit of burning* (Isaiah 4:4) cleanses; fire that refines, not consumes.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-the-spirit-of-judgment-and-of-burning'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *he shall purify the sons of Levi, and purge them as gold and silver* (Malachi 3:3) — the refiner removes the dross unto an offering in righteousness; the people refined, not discarded.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-the-spirit-of-judgment-and-of-burning'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *he shall baptize you with the Ruach HaKodesh (Holy Spirit), and with fire* (Matthew 3:11) — the *spirit of judgment, and... burning* (Isaiah 4:4) is the Messiah''s Spirit-and-fire baptism that washes Zion.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=3 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-the-spirit-of-judgment-and-of-burning'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *he will throughly purge his floor, and gather his wheat into the garner; but he will burn up the chaff* (Matthew 3:12) — the purging fire of Isaiah 4:4 cleanses the threshing-floor of His people.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-the-spirit-of-judgment-and-of-burning'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Yahuah (LORD) went before them by day in a pillar of a cloud... and by night in a pillar of fire* (Exodus 13:21) — the cloud and fire of Isaiah 4:5 is the wilderness pillar restored over Zion.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=5
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-a-cloud-and-fire-a-tabernacle-for-a-shadow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34) — the glory-cloud once filling one tent now spread *upon every dwelling place of mount Zion* (Isaiah 4:5).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=5
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=40 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-a-cloud-and-fire-a-tabernacle-for-a-shadow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3) — the *tabernacle for a shadow... a place of refuge* (Isaiah 4:6) is the consummation, Yahuah dwelling among His people.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=6
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-a-cloud-and-fire-a-tabernacle-for-a-shadow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *he that sitteth on the throne shall dwell among them* and *neither shall the sun light on them, nor any heat* (Revelation 7:15-16) — the *shadow in the daytime from the heat* (Isaiah 4:6) made eternal under the throne-canopy.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=4 AND sv.verse_number=6
+  JOIN _s303_isa04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-4-a-cloud-and-fire-a-tabernacle-for-a-shadow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_24.sql (Isaiah 24) -----
+-- Chapter: Isaiah 24 — the opening of ISAIAH'S APOCALYPSE (ch24-27), the earth-wide judgment.
+-- *Behold, Yahuah (LORD) maketh the earth empty, and maketh it waste, and turneth it upside down*
+-- (24:1). The load-bearer is the indictment: *The earth also is defiled under the inhabitants
+-- thereof; because they have transgressed the laws, changed the ordinance, broken the everlasting
+-- covenant* (24:5) — the anti-antinomian verse of the chapter: the earth is judged FOR transgressing
+-- the laws, FOR changing the ordinance, FOR breaking the everlasting covenant. The Torah is never the
+-- fault; covenant-breaking is. *Therefore hath the curse devoured the earth... few men left* (24:6) is
+-- the remnant motif. The showpiece is *Yahuah (LORD) shall punish the host of the high ones that are
+-- on high... they shall be gathered together, as prisoners are gathered in the pit, and shall be shut
+-- up in the prison, and after many days shall they be visited* (24:21-22) — the rebel powers / Watchers
+-- bound in the abyss till judgment (1 Enoch 10/18/21, 2 Peter 2:4, Jude 6, Revelation 20). And it ends
+-- in the everlasting reign: *Then the moon shall be confounded, and the sun ashamed, when Yahuah
+-- Tseva'ot (LORD of hosts) shall reign in mount Zion* (24:23) — the city needing no sun (Revelation 21:23).
+-- Tag: isa24   Temp view: _s303_isa24_lookup
+-- Sort band: base 26575, step 3 -> threads at 26575, 26578, 26581, 26584 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',24,v
+--
+-- Isaiah 24 coverage:
+--   v.1-3 (Yahuah maketh the earth empty... the land shall be utterly emptied... for Yahuah hath spoken)
+--        NT:     none warranted distinct (the earth-wide judgment is set by the indictment of v.4-5,
+--                woven into THREAD 1; the emptying is the verdict THREAD 1 explains)
+--        Extras: none warranted distinct (held in prose)
+--        Tanakh: woven into THREAD 1 (the cause of the desolation = transgression)
+--   ★★ v.4-5 (The earth mourneth and fadeth away... the earth also is defiled under the inhabitants
+--          thereof; because they have transgressed the laws, changed the ordinance, broken the
+--          everlasting covenant)
+--        NT:     ★ Romans 8:20-22 (the creature was made subject to vanity... the whole creation
+--                groaneth and travaileth in pain together until now) — THREAD 1 (the land/creation
+--                suffers under man's covenant-breaking)
+--        Extras: none warranted (the everlasting-covenant frame is best carried by Genesis 9 itself)
+--        Tanakh: ★★ Hosea 4:1-3 (Yahuah hath a controversy with the inhabitants of the land... therefore
+--                shall the land mourn) — THREAD 1; ★★ Genesis 9:16 (the everlasting covenant between
+--                Elohim and every living creature... upon the earth) — THREAD 1 (the broken covenant named)
+--   ★ v.6 (Therefore hath the curse devoured the earth... the inhabitants of the earth are burned, and
+--          few men left)
+--        NT:     none warranted distinct (the remnant forward-weave is carried in THREAD 2's prose)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 1:9 (Except Yahuah Tseva'ot had left unto us a very small remnant) — THREAD 2;
+--                ★ Isaiah 17:6 (yet gleaning grapes shall be left... as the shaking of an olive tree) — THREAD 2
+--   v.7-12 (the new wine mourneth... the city of confusion is broken down... in the city is left
+--          desolation)
+--        NT:     none warranted (the ruined-city lament is the body of the judgment, woven in prose)
+--        Extras: none warranted
+--        Tanakh: held in prose (the desolation the remnant of THREAD 2 survives)
+--   v.13 (there shall be as the shaking of an olive tree, and as the gleaning grapes when the vintage
+--          is done) — the remnant image
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 17:6 (the shaking of an olive tree, two or three berries) — THREAD 2 (same image)
+--   v.14-16 (they shall sing for the majesty of Yahuah... glorify ye Yahuah in the fires... glory to the
+--          righteous)
+--        NT:     none warranted (the remnant's song; woven into THREAD 2's prose as the answering praise)
+--        Extras: none warranted
+--        Tanakh: held in prose
+--   v.17-20 (Fear, and the pit, and the snare... the earth shall reel to and fro like a drunkard...
+--          the transgression thereof shall be heavy upon it)
+--        NT:     none warranted distinct
+--        Extras: none warranted distinct (the "transgression heavy upon the earth" reinforces THREAD 1;
+--                kept in THREAD 1 prose)
+--        Tanakh: woven into THREAD 1 (v.20 the transgression heavy upon the earth = the same indictment)
+--   ★★ v.21-22 (Yahuah shall punish the host of the high ones that are on high... they shall be gathered
+--          together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after
+--          many days shall they be visited)
+--        NT:     ★★ 2 Peter 2:4 (Elohim spared not the angels that sinned... delivered them into chains
+--                of darkness, to be reserved unto judgment) — THREAD 3; ★★ Jude 1:6 (the angels which
+--                kept not their first estate... reserved in everlasting chains under darkness unto the
+--                judgment of the great day) — THREAD 3; ★ Revelation 20:3 (cast him into the bottomless
+--                pit, and shut him up... till the thousand years should be fulfilled) — THREAD 3
+--        Extras: ★★★ 1 Enoch 21:6-7 (the stars which... have transgressed the commandment of Yahuah...
+--                because they did not come forth at their appointed times... bound them) — THREAD 3
+--                (showpiece); ★★ 1 Enoch 10:12-13 (bind them fast... till the day of their judgement...
+--                the abyss of fire... the prison in which they shall be confined) — THREAD 3; ★ 1 Enoch
+--                18:14 (He was wroth with them, and bound them till the time when their guilt should be
+--                consummated) — THREAD 3
+--        Tanakh: woven (the host of high ones = the rebel powers; the canon's own naming, framed in prose)
+--   ★★ v.23 (Then the moon shall be confounded, and the sun ashamed, when Yahuah Tseva'ot shall reign
+--          in mount Zion, and in Jerusalem, and before his ancients gloriously)
+--        NT:     ★★ Revelation 21:23 (the city had no need of the sun, neither of the moon... for the
+--                glory of Elohim did lighten it) — THREAD 4; ★ Revelation 11:15 (the kingdoms of this
+--                world are become the kingdoms of our Lord, and of his Messiah; and he shall reign for
+--                ever and ever) — THREAD 4
+--        Extras: none warranted (clean NT reign-witnesses carry it)
+--        Tanakh: woven in prose (the reign in Zion = the Davidic everlasting throne)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-24-they-have-transgressed-the-laws-broken-the-everlasting-covenant
+--      — Tanakh (Hosea 4, Genesis 9) + NT (Romans 8) [free]
+--      (★★ THE anti-antinomian load-bearer: the earth judged FOR breaking the everlasting covenant —
+--       Torah never the fault; covenant-breaking is)
+--   2. isaiah-24-the-curse-devoured-the-earth-yet-a-gleaning-remnant-left
+--      — Tanakh (Isaiah 1, Isaiah 17) [free]
+--      (★ the curse devours, but a remnant is left — the shaking of an olive tree, the very small remnant)
+--   3. isaiah-24-the-host-of-the-high-ones-shut-up-in-the-prison
+--      — Extras (1 Enoch 21, 10, 18) + NT (2 Peter 2, Jude, Revelation 20) [extras] (SHOWPIECE)
+--      (★★ the host of high ones / the rebel powers / Watchers gathered in the pit, shut in the prison,
+--       visited after many days — the library's one judgment-history of the bound powers)
+--   4. isaiah-24-the-moon-confounded-the-sun-ashamed-when-yahuah-shall-reign
+--      — NT (Revelation 21, Revelation 11) [free]
+--      (★★ the everlasting reign in Zion; the city needing no sun nor moon, the kingdoms become Yahuah's)
+--
+-- Framing notes:
+--   ★★ THREAD 1 — THE EVERLASTING COVENANT BROKEN (the chapter's anti-antinomian load-bearer): *The earth
+--      also is defiled under the inhabitants thereof; because they have transgressed the laws, changed the
+--      ordinance, broken the everlasting covenant* (24:5). The judgment falls FOR transgressing the laws —
+--      the Torah is the thing broken, never the thing abolished, never the curse. The "everlasting
+--      covenant" reaches back to the creation-ordinance Yahuah set with all flesh after the flood: *I will
+--      remember my covenant... the everlasting covenant between Elohim (God) and every living creature of
+--      all flesh that is upon the earth* (Genesis 9:16). Hosea names the same lawsuit: *Yahuah (LORD) hath
+--      a controversy with the inhabitants of the land... Therefore shall the land mourn* (Hosea 4:1-3) — by
+--      *swearing, and lying, and killing, and stealing* the land itself mourns. Paul hears the creation
+--      groaning under it: *the whole creation groaneth and travaileth in pain together until now* (Romans
+--      8:22). The land mourns because the people broke covenant — the Torah stands, the breakers fall.
+--   ★ THREAD 2 — THE GLEANING REMNANT: *Therefore hath the curse devoured the earth... few men left* (24:6),
+--      yet *there shall be as the shaking of an olive tree, and as the gleaning grapes when the vintage is
+--      done* (24:13) — a remnant always left. Isaiah's own gleaning-image elsewhere: *yet gleaning grapes
+--      shall be left in it, as the shaking of an olive tree, two or three berries* (Isaiah 17:6); and the
+--      remnant that keeps Yashar'el from Sodom's end: *Except Yahuah Tseva'ot (LORD of hosts) had left unto
+--      us a very small remnant, we should have been as Sodom* (Isaiah 1:9). The few men left lift their
+--      voice and sing for the majesty of Yahuah (24:14) — the surviving remnant is the singing remnant.
+--   ★★ THREAD 3 (SHOWPIECE) — THE HOST OF THE HIGH ONES SHUT IN THE PRISON: *Yahuah (LORD) shall punish the
+--      host of the high ones that are on high... they shall be gathered together, as prisoners are gathered
+--      in the pit, and shall be shut up in the prison, and after many days shall they be visited* (24:21-22).
+--      The rebel powers above are bound in the pit until the day of visitation — the very judgment-history
+--      the restored witness records: *the stars which roll over the fire are they which have transgressed
+--      the commandment of Yahuah (God)... because they did not come forth at their appointed times. And He
+--      was wroth with them, and bound them* (1 Enoch 21:6-7); *bind them fast... till the day of their
+--      judgement... they shall be led off to the abyss of fire: and to the torment and the prison in which
+--      they shall be confined* (1 Enoch 10:12-13); *He was wroth with them, and bound them till the time
+--      when their guilt should be consummated* (1 Enoch 18:14). The NT confirms the same chained-host: *Elohim
+--      (God) spared not the angels that sinned... delivered them into chains of darkness, to be reserved unto
+--      judgment* (2 Peter 2:4); *the angels which kept not their first estate... he hath reserved in
+--      everlasting chains under darkness unto the judgment of the great day* (Jude 1:6); and the dragon *cast
+--      into the bottomless pit, and shut him up... till the thousand years should be fulfilled* (Revelation
+--      20:3) — *shut up in the prison, and after many days... visited*. One coherent judgment of the bound powers.
+--   ★★ THREAD 4 — WHEN YAHUAH SHALL REIGN: *Then the moon shall be confounded, and the sun ashamed, when
+--      Yahuah Tseva'ot (LORD of hosts) shall reign in mount Zion, and in Jerusalem, and before his ancients
+--      gloriously* (24:23). The luminaries are eclipsed by the glory of the reigning King — the city that
+--      needs no sun: *the city had no need of the sun, neither of the moon, to shine in it: for the glory of
+--      Elohim (God) did lighten it* (Revelation 21:23); and the kingdom made His: *The kingdoms of this world
+--      are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever*
+--      (Revelation 11:15). The everlasting reign in Zion is where the apocalypse of ch24-27 is heading.
+--   VERSES WITH NO SEPARATE ADD: v.1-3 (the emptying — the verdict THREAD 1 explains), v.7-12 (the ruined-city
+--      lament — the body of the judgment, woven in prose), v.14-16 (the remnant's song — THREAD 2 prose),
+--      v.17-20 (the pit and snare, the reeling earth, the transgression heavy upon it — reinforces THREAD 1's
+--      indictment, kept in prose). All weighed across NT/Extras/Tanakh; none silently skipped.
+
+CREATE TEMP VIEW _s303_isa24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): they have transgressed the laws — broken the everlasting covenant
+    ('canon','isaiah',24,5,'canon','genesis',9,16,'free',
+      E'*And the bow shall be in the cloud; and I will look upon it, that I may remember the everlasting covenant between Elohim (God) and every living creature of all flesh that is upon the earth* (Genesis 9:16). The earth is judged *because they have transgressed the laws, changed the ordinance, broken the everlasting covenant* (Isaiah 24:5) — and the everlasting covenant reaches back to the creation-ordinance Yahuah set with all flesh after the flood, *the everlasting covenant between Elohim (God) and every living creature... upon the earth*. The covenant is the thing broken by the breakers; never the fault, never abolished.'),
+    ('canon','isaiah',24,5,'canon','hosea',4,1,'free',
+      E'*Hear the word of Yahuah (LORD), ye children of Yashar''el (Israel): for Yahuah (LORD) hath a controversy with the inhabitants of the land, because there is no truth, nor mercy, nor knowledge of Elohim (God) in the land* (Hosea 4:1). Isaiah''s indictment — *they have transgressed the laws, changed the ordinance* (24:5) — is Hosea''s covenant-lawsuit: Yahuah *hath a controversy with the inhabitants of the land*. The land is defiled because the people broke covenant, not because the law failed.'),
+    ('canon','isaiah',24,4,'canon','hosea',4,3,'free',
+      E'*Therefore shall the land mourn, and every one that dwelleth therein shall languish, with the beasts of the field, and with the fowls of heaven; yea, the fishes of the sea also shall be taken away* (Hosea 4:3). *The earth mourneth and fadeth away, the world languisheth and fadeth away* (Isaiah 24:4) is the same groaning land — *the land mourn, and every one that dwelleth therein shall languish* — the creation itself suffering under man''s covenant-breaking.'),
+    ('canon','isaiah',24,4,'canon','romans',8,22,'free',
+      E'*For we know that the whole creation groaneth and travaileth in pain together until now* (Romans 8:22). *The earth mourneth and fadeth away, the world languisheth* (Isaiah 24:4) — Paul names what the mourning earth is doing: *the whole creation groaneth and travaileth in pain together*. The creature was *made subject to vanity* (Romans 8:20) by man''s transgression, and groans for the deliverance the reign of Yahuah will bring (Isaiah 24:23).'),
+
+    -- THREAD 2 (★): the curse devoured the earth — yet a gleaning remnant left
+    ('canon','isaiah',24,6,'canon','isaiah',1,9,'free',
+      E'*Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah* (Isaiah 1:9). Though *the curse devoured the earth... few men left* (Isaiah 24:6), a remnant is always kept — *a very small remnant* without which Yashar''el would have been as Sodom. The few men left are the seed preserved through the burning.'),
+    ('canon','isaiah',24,13,'canon','isaiah',17,6,'free',
+      E'*Yet gleaning grapes shall be left in it, as the shaking of an olive tree, two or three berries in the top of the uppermost bough, four or five in the outmost fruitful branches thereof, saith Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Isaiah 17:6). The remnant image of Isaiah 24:13 — *as the shaking of an olive tree, and as the gleaning grapes when the vintage is done* — is Isaiah''s own picture of the few left: *gleaning grapes... two or three berries*. The vintage is stripped, but the gleaning remains; a remnant survives the judgment.'),
+
+    -- THREAD 3 (★★ SHOWPIECE): the host of the high ones shut up in the prison (the bound rebel powers / Watchers)
+    ('canon','isaiah',24,21,'enoch','1-enoch',21,6,'extras',
+      E'*And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times* (1 Enoch 21:6). *Yahuah (LORD) shall punish the host of the high ones that are on high* (Isaiah 24:21) — the restored witness names that host: the stars that *transgressed the commandment of Yahuah (God)*, the rebel powers above who *did not come forth at their appointed times*. The high ones on high are the transgressing host bound for judgment.'),
+    ('canon','isaiah',24,22,'enoch','1-enoch',21,7,'extras',
+      E'*And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years* (1 Enoch 21:7). *They shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited* (Isaiah 24:22) — exactly the sentence Enoch sees: *bound them till the time when their guilt should be consummated*. The host is shut in the pit *till the time* of visitation; the prophet and the witness see one judgment.'),
+    ('canon','isaiah',24,22,'enoch','1-enoch',10,12,'extras',
+      E'*And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated* (1 Enoch 10:12). The Watchers are *bind them fast... till the day of their judgement* — the very *shut up in the prison, and after many days... visited* of Isaiah 24:22. Bound now, judged at the appointed day.'),
+    ('canon','isaiah',24,22,'enoch','1-enoch',10,13,'extras',
+      E'*In those days they shall be led off to the abyss of fire: and to the torment and the prison in which they shall be confined for ever* (1 Enoch 10:13). *Shut up in the prison* (Isaiah 24:22) is Enoch''s own word — *the prison in which they shall be confined* — the abyss where the host of high ones is held until the day of visitation.'),
+    ('canon','isaiah',24,21,'enoch','1-enoch',18,14,'extras',
+      E'*And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years* (1 Enoch 18:14). The *host of the high ones that are on high* whom Yahuah will *punish* (Isaiah 24:21) are the stars of heaven who transgressed — and Yahuah *bound them till the time when their guilt should be consummated*. The punishment of the high host is their binding in the prison of the abyss.'),
+    ('canon','isaiah',24,22,'canon','2-peter',2,4,'extras',
+      E'*For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4). *Shut up in the prison, and after many days shall they be visited* (Isaiah 24:22) is the chained-and-reserved host Peter names: the angels *delivered into chains of darkness, to be reserved unto judgment*. Bound now in the pit; visited at the judgment.'),
+    ('canon','isaiah',24,22,'canon','jude',1,6,'extras',
+      E'*And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 1:6). The host of high ones *gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison* (Isaiah 24:22) are Jude''s rebel angels *reserved in everlasting chains under darkness unto the judgment of the great day*. The pit holds them until *the great day* of visitation.'),
+    ('canon','isaiah',24,22,'canon','revelation',20,3,'extras',
+      E'*And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season* (Revelation 20:3). The dragon *cast into the bottomless pit, and shut him up... till the thousand years should be fulfilled* is the same binding-then-visitation as Isaiah 24:22 — *shut up in the prison, and after many days shall they be visited*. The rebel power held in the pit until the appointed loosing and judgment.'),
+
+    -- THREAD 4 (★★): the moon confounded, the sun ashamed — when Yahuah shall reign
+    ('canon','isaiah',24,23,'canon','revelation',21,23,'free',
+      E'*And the city had no need of the sun, neither of the moon, to shine in it: for the glory of Elohim (God) did lighten it, and the Lamb is the light thereof* (Revelation 21:23). *Then the moon shall be confounded, and the sun ashamed, when Yahuah Tseva''ot (LORD of hosts) shall reign in mount Zion* (Isaiah 24:23) — the luminaries are eclipsed because the glory of the reigning King outshines them: *the city had no need of the sun, neither of the moon... for the glory of Elohim (God) did lighten it*. The same reign, the same surpassing glory.'),
+    ('canon','isaiah',24,23,'canon','revelation',11,15,'free',
+      E'*And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). *When Yahuah Tseva''ot (LORD of hosts) shall reign in mount Zion, and in Jerusalem... gloriously* (Isaiah 24:23) is the kingdom made His: *the kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever*. The apocalypse of ch24-27 is heading to the everlasting reign.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-24-they-have-transgressed-the-laws-broken-the-everlasting-covenant',
+       E'They have transgressed the laws — the earth defiled for breaking the everlasting covenant',
+       E'At the head of Isaiah''s apocalypse the earth is unmade: *Behold, Yahuah (LORD) maketh the earth empty, and maketh it waste, and turneth it upside down, and scattereth abroad the inhabitants thereof* (Isaiah 24:1). The cause is named with precision: *The earth also is defiled under the inhabitants thereof; because they have transgressed the laws, changed the ordinance, broken the everlasting covenant* (24:5). This is the chapter''s load-bearing word: the judgment falls FOR transgressing the laws, FOR changing the ordinance, FOR breaking the covenant — the Torah is the thing broken, never the thing abolished, never the curse. The "everlasting covenant" reaches back to the creation-ordinance Yahuah set with all flesh after the flood: *And the bow shall be in the cloud; and I will look upon it, that I may remember the everlasting covenant between Elohim (God) and every living creature of all flesh that is upon the earth* (Genesis 9:16). Hosea pleads the identical lawsuit: *Yahuah (LORD) hath a controversy with the inhabitants of the land, because there is no truth, nor mercy, nor knowledge of Elohim (God) in the land* (Hosea 4:1) — and *Therefore shall the land mourn, and every one that dwelleth therein shall languish* (Hosea 4:3). So too here: *The earth mourneth and fadeth away, the world languisheth and fadeth away* (Isaiah 24:4). Paul hears what the mourning earth is doing: *the whole creation groaneth and travaileth in pain together until now* (Romans 8:22), the creature *made subject to vanity, not willingly* (8:20) by man''s transgression, groaning for the deliverance the reign of Yahuah will bring (24:23). The land mourns because the people broke covenant — *the transgression thereof shall be heavy upon it* (24:20). The Torah stands; the breakers fall.',
+       sv.verse_id, ev.verse_id, 'free', 26575
+  FROM _s303_isa24_lookup sv, _s303_isa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=24 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-24-the-curse-devoured-the-earth-yet-a-gleaning-remnant-left',
+       E'The curse devoured the earth — yet a gleaning remnant left',
+       E'The covenant-breaking brings the curse: *Therefore hath the curse devoured the earth, and they that dwell therein are desolate: therefore the inhabitants of the earth are burned, and few men left* (Isaiah 24:6). But "few men left" is the remnant motif — judgment never empties the seed entirely. Isaiah draws the picture of the few who remain: *When thus it shall be in the midst of the land among the people, there shall be as the shaking of an olive tree, and as the gleaning grapes when the vintage is done* (24:13). The same gleaning-image runs through his book: *Yet gleaning grapes shall be left in it, as the shaking of an olive tree, two or three berries in the top of the uppermost bough, four or five in the outmost fruitful branches thereof, saith Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Isaiah 17:6) — the vintage stripped, but the gleaning kept. And the remnant is what keeps Yashar''el from Sodom''s utter end: *Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah* (Isaiah 1:9). The few men left are not the dregs of judgment but the preserved seed — and they answer with song: *They shall lift up their voice, they shall sing for the majesty of Yahuah (LORD)... Wherefore glorify ye Yahuah (LORD) in the fires* (24:14-15). The surviving remnant is the singing remnant.',
+       sv.verse_id, ev.verse_id, 'free', 26578
+  FROM _s303_isa24_lookup sv, _s303_isa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=24 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★ SHOWPIECE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-24-the-host-of-the-high-ones-shut-up-in-the-prison',
+       E'The host of the high ones shut up in the prison — the rebel powers bound till they be visited',
+       E'The earth-wide judgment reaches above the earth: *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth. And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited* (Isaiah 24:21-22). The rebel powers above — the host of the high ones — are gathered into the pit and shut in the prison until the day of visitation. The restored witness records exactly this judgment-history of the bound powers. The fallen stars are the host that broke command: *the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times. And He was wroth with them, and bound them till the time when their guilt should be consummated* (1 Enoch 21:6-7; cf. 18:14). The Watchers'' sentence is the same binding-then-judgment: *bind them fast... till the day of their judgement and of their consummation* (1 Enoch 10:12); *In those days they shall be led off to the abyss of fire: and to the torment and the prison in which they shall be confined* (1 Enoch 10:13) — *shut up in the prison* indeed. The New Testament confirms the chained, reserved host: *Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4); *the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 1:6); and the dragon is *cast... into the bottomless pit, and shut him up... till the thousand years should be fulfilled* (Revelation 20:3). Across the whole library it is one coherent judgment: the high host bound in the pit now, *visited* at the appointed day.',
+       sv.verse_id, ev.verse_id, 'extras', 26581
+  FROM _s303_isa24_lookup sv, _s303_isa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=24 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-24-the-moon-confounded-the-sun-ashamed-when-yahuah-shall-reign',
+       E'The moon confounded, the sun ashamed — when Yahuah shall reign in mount Zion',
+       E'The apocalypse closes not in ruin but in reign: *Then the moon shall be confounded, and the sun ashamed, when Yahuah Tseva''ot (LORD of hosts) shall reign in mount Zion, and in Jerusalem, and before his ancients gloriously* (Isaiah 24:23). The sun and moon are put to shame — not destroyed, but outshone — because the glory of the reigning King surpasses them. John sees the consummation of that very scene: *And the city had no need of the sun, neither of the moon, to shine in it: for the glory of Elohim (God) did lighten it, and the Lamb is the light thereof* (Revelation 21:23). The luminaries are *confounded* and *ashamed* because *the glory of Elohim (God) did lighten it*. And the kingdom itself is made His: *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). The reign *in mount Zion, and in Jerusalem* is the everlasting kingdom toward which the whole apocalypse of chapters 24-27 is moving — Yahuah Tseva''ot reigning gloriously before His ancients.',
+       sv.verse_id, ev.verse_id, 'free', 26584
+  FROM _s303_isa24_lookup sv, _s303_isa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=24 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the whole creation groaneth and travaileth in pain together until now* (Romans 8:22) — *the earth mourneth and fadeth away* (Isaiah 24:4) is the creation groaning under man''s covenant-breaking.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=4
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-they-have-transgressed-the-laws-broken-the-everlasting-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Therefore shall the land mourn, and every one that dwelleth therein shall languish* (Hosea 4:3) — the mourning languishing land of Isaiah 24:4 is Hosea''s same suffering creation.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=4
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-they-have-transgressed-the-laws-broken-the-everlasting-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Yahuah (LORD) hath a controversy with the inhabitants of the land... because there is no... knowledge of Elohim (God)* (Hosea 4:1) — *they have transgressed the laws, changed the ordinance* (Isaiah 24:5) is the same covenant-lawsuit; the land defiled by covenant-breaking, not by the law.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=5
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-they-have-transgressed-the-laws-broken-the-everlasting-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the everlasting covenant between Elohim (God) and every living creature of all flesh that is upon the earth* (Genesis 9:16) — the *everlasting covenant* broken in Isaiah 24:5 is the creation-ordinance set with all flesh; the Torah is the thing broken, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=5
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-they-have-transgressed-the-laws-broken-the-everlasting-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom* (Isaiah 1:9) — the *few men left* (Isaiah 24:6) is the remnant always kept; without it Yashar''el were Sodom.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=6
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-curse-devoured-the-earth-yet-a-gleaning-remnant-left'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *gleaning grapes shall be left in it, as the shaking of an olive tree, two or three berries* (Isaiah 17:6) — the very gleaning-image of Isaiah 24:13; the vintage stripped, but the remnant kept.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=13
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=17 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-curse-devoured-the-earth-yet-a-gleaning-remnant-left'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★ SHOWPIECE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *the stars which... have transgressed the commandment of Yahuah (God)... because they did not come forth at their appointed times* (1 Enoch 21:6) — the *host of the high ones that are on high* (Isaiah 24:21) named: the rebel stars that broke command.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=21
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=21 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-host-of-the-high-ones-shut-up-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *He was wroth with them, and bound them till the time when their guilt should be consummated* (1 Enoch 21:7) — exactly *shut up in the prison, and after many days shall they be visited* (Isaiah 24:22); bound till the day of visitation.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=22
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=21 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-host-of-the-high-ones-shut-up-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *bind them fast... till the day of their judgement and of their consummation* (1 Enoch 10:12) — the Watchers'' sentence is the *gathered... in the pit, and... shut up in the prison* of Isaiah 24:22.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=22
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-host-of-the-high-ones-shut-up-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *they shall be led off to the abyss of fire: and to the torment and the prison in which they shall be confined* (1 Enoch 10:13) — *shut up in the prison* (Isaiah 24:22) in Enoch''s own word; the abyss that holds the host.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=22
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-host-of-the-high-ones-shut-up-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *He was wroth with them, and bound them till the time when their guilt should be consummated* (1 Enoch 18:14) — the *punish*-ing of the high host (Isaiah 24:21) is their binding in the abyss till judgment.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=21
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=18 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-host-of-the-high-ones-shut-up-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Elohim (God) spared not the angels that sinned... delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4) — the host *shut up in the prison... visited* (Isaiah 24:22) is Peter''s chained-and-reserved angels.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=22
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-host-of-the-high-ones-shut-up-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *the angels which kept not their first estate... he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 1:6) — the pit holds the high host *till the great day* of visitation (Isaiah 24:22).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=22
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-host-of-the-high-ones-shut-up-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *cast him into the bottomless pit, and shut him up... till the thousand years should be fulfilled* (Revelation 20:3) — the same binding-then-visitation as *shut up in the prison, and after many days shall they be visited* (Isaiah 24:22).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=22
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-host-of-the-high-ones-shut-up-in-the-prison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the city had no need of the sun, neither of the moon, to shine in it: for the glory of Elohim (God) did lighten it* (Revelation 21:23) — the moon *confounded* and the sun *ashamed* (Isaiah 24:23) because the reigning King''s glory outshines them.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=23
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-moon-confounded-the-sun-ashamed-when-yahuah-shall-reign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15) — *when Yahuah Tseva''ot shall reign in mount Zion* (Isaiah 24:23) is the kingdom made His for ever.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=24 AND sv.verse_number=23
+  JOIN _s303_isa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-24-the-moon-confounded-the-sun-ashamed-when-yahuah-shall-reign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_31.sql (Isaiah 31) -----
+-- Chapter: Isaiah 31 — WOE TO THEM THAT GO DOWN TO EGYPT FOR HELP. The twin of ch30's
+-- trust-in-the-arm-of-flesh rebuke, but with its own emphasis: horses-and-flesh vs. Yahuah's
+-- defending, hovering, PASSING-OVER presence. *Woe to them that go down to Egypt for help; and
+-- stay on horses, and trust in chariots... but they look not unto the Holy One of Yashar'el
+-- (Israel), neither seek Yahuah (LORD)!* (31:1); the antithesis *Now the Egyptians are men, and
+-- not Elohim (God); and their horses flesh, and not spirit* (31:3) — the arm of flesh against the
+-- Spirit. Then the contrast: Yahuah Tseva'ot comes down to fight for Zion as a lion (31:4) and as
+-- a bird hovering — *As birds flying, so will Yahuah Tseva'ot (LORD of hosts) defend Jerusalem;
+-- defending also he will deliver it; and passing over he will preserve it* (31:5), the very word
+-- PASSING-OVER echoing the Passover deliverance. The teshuvah call *Turn ye unto him from whom the
+-- children of Yashar'el (Israel) have deeply revolted* (31:6) with the idols cast away (31:7); and
+-- the oppressor felled not by flesh: *Then shall the Assyrian fall with the sword, not of a mighty
+-- man* (31:8) — Yahuah's own hand, His fire in Zion (31:9).
+-- Tag: isa31   Temp view: _s303_isa31_lookup
+-- Sort band: base 26750, step 3 -> threads at 26750, 26753, 26756, 26759 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',31,v
+--
+-- Isaiah 31 coverage:
+--   ★★ v.1+v.3 (Woe to them that go down to Egypt for help; and stay on horses, and trust in
+--          chariots... but they look not unto the Holy One of Yashar'el (Israel), neither seek
+--          Yahuah! ... Now the Egyptians are men, and not Elohim (God); and their horses flesh,
+--          and not spirit)
+--        NT:     none warranted distinct (the flesh-vs-Spirit antithesis is OT-rooted here; the NT
+--                weave on trust runs through Romans 8 in prose, not forced to a single verse)
+--        Extras: none warranted (Wisdom's arm-of-flesh material belongs on the Passover thread)
+--        Tanakh: ★★ Psalm 20:7 (Some trust in chariots, and some in horses: but we will remember
+--                the name of Yahuah Eloheinu) — THREAD 1; ★★ Jeremiah 17:5 (Cursed be the man that
+--                trusteth in man, and maketh flesh his arm, and whose heart departeth from Yahuah)
+--                + 17:7 (Blessed is the man that trusteth in Yahuah) — THREAD 1; lateral Isaiah
+--                30:15-16 (In returning and rest shall ye be saved... But ye said... we will flee
+--                upon horses) named in prose, NOT duplicated as a member (ch30 is its own pack)
+--   v.2 (Yet he also is wise, and will bring evil, and will not call back his words)
+--        all: woven into THREAD 1 prose (the help of the evildoers fails); no separate add
+--   ★★ v.4-5 (so shall Yahuah Tseva'ot come down to fight for mount Zion... As birds flying, so
+--          will Yahuah Tseva'ot defend Jerusalem; defending also he will deliver it; and passing
+--          over he will preserve it)
+--        NT:     none warranted distinct (the hovering-protection figure is Passover-rooted;
+--                carried in prose)
+--        Extras: ★ Wisdom of Solomon 18:25 (To these the destroyer gave place, and was afraid of
+--                them) + 18:14-15 (your Almighty word leaped down from heaven... into the midst of
+--                a land of destruction) — THREAD 2 (the Passover night; the destroyer passes/gives
+--                place) [extras]
+--        Tanakh: ★★ Exodus 12:13 (when I see the blood, I will pass over you, and the plague shall
+--                not be upon you to destroy you) + 12:23 (Yahuah will pass over the door, and will
+--                not suffer the destroyer to come in) — THREAD 2 (PASSING-OVER = the Passover
+--                architecture of deliverance, an appointed time)
+--   ★ v.6-7 (Turn ye unto him from whom the children of Yashar'el have deeply revolted. For in
+--          that day every man shall cast away his idols of silver, and his idols of gold)
+--        NT:     none warranted distinct (the teshuvah/idol-renouncing weave is Tanakh-dense)
+--        Extras: none warranted
+--        Tanakh: ★★ Hosea 14:3 (Asshur shall not save us; we will not ride upon horses: neither
+--                will we say any more to the work of our hands, Ye are our gods) + 14:1 (O
+--                Yashar'el, return unto Yahuah Elohayka) — THREAD 3 (return + horses-rejected +
+--                idols-renounced in ONE breath; the very seam of 31:1,6,7); ★ Isaiah 2:20 (In that
+--                day a man shall cast his idols of silver, and his idols of gold... to the moles
+--                and to the bats) — THREAD 3 (the idols cast off in that day); lateral Isaiah 30:22
+--                named in prose
+--   ★ v.8-9 (Then shall the Assyrian fall with the sword, not of a mighty man... saith Yahuah,
+--          whose fire is in Zion, and his furnace in Jerusalem)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 37:36 (Then the angel of Yahuah went forth, and smote in the camp of
+--                the Assyrians a hundred and fourscore and five thousand) + 37:33 (He shall not
+--                come into this city) — THREAD 4 (the oppressor felled by Yahuah's own hand, not
+--                flesh — the historical fulfilment within Isaiah's own book)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-31-the-egyptians-are-men-and-not-elohim-their-horses-flesh — Tanakh (Psalm 20,
+--      Jeremiah 17) [free]  (★★ the arm of flesh vs. the Spirit; horses/chariots vs. the Name)
+--   2. isaiah-31-passing-over-he-will-preserve-it — Tanakh (Exodus 12) + Extras (Wisdom 18)
+--      [extras]  (★★ Yahuah's hovering defence; PASSING-OVER = the Passover deliverance, an
+--      appointed time; the destroyer gives place)
+--   3. isaiah-31-turn-ye-and-cast-away-your-idols-of-silver-and-gold — Tanakh (Hosea 14,
+--      Isaiah 2) [free]  (★ the teshuvah call; horses-rejected and idols-renounced together)
+--   4. isaiah-31-the-assyrian-shall-fall-with-the-sword-not-of-a-mighty-man — Tanakh (Isaiah 37)
+--      [free]  (★ the oppressor felled by Yahuah's own hand, not by flesh)
+--
+-- Framing notes:
+--   ★★ THE ARM OF FLESH (THREAD 1): *Woe to them that go down to Egypt for help; and stay on
+--      horses, and trust in chariots... but they look not unto the Holy One of Yashar'el (Israel),
+--      neither seek Yahuah (LORD)!* (31:1); *Now the Egyptians are men, and not Elohim (God); and
+--      their horses flesh, and not spirit* (31:3). The same antithesis David already sang —
+--      *Some trust in chariots, and some in horses: but we will remember the name of Yahuah
+--      Eloheinu (the LORD our God)* (Psalm 20:7) — and Jeremiah set as the covenant verdict:
+--      *Cursed be the man that trusteth in man, and maketh flesh his arm... Blessed is the man that
+--      trusteth in Yahuah (LORD)* (Jeremiah 17:5,7). Flesh against Spirit; the strong horses are
+--      still flesh, and they fail together when Yahuah stretches out his hand (31:3). The ch30
+--      twin — *In returning and rest shall ye be saved... But ye said, No; for we will flee upon
+--      horses* (Isaiah 30:15-16) — stands alongside (not duplicated here; its own pack carries it).
+--   ★★ PASSING OVER (THREAD 2): *As birds flying, so will Yahuah Tseva'ot (LORD of hosts) defend
+--      Jerusalem; defending also he will deliver it; and passing over he will preserve it* (31:5).
+--      The hovering bird-wing defence and the word PASSING-OVER reach straight back to the night of
+--      deliverance: *when I see the blood, I will pass over you, and the plague shall not be upon
+--      you to destroy you* (Exodus 12:13); *Yahuah (LORD) will pass over the door, and will not
+--      suffer the destroyer to come in unto your houses to smite you* (Exodus 12:23). The Passover
+--      is the architecture of deliverance — an appointed time of Yahuah (Exodus 12:14), the blood
+--      that turns the destroyer aside. The restored witness sings that same night: *your Almighty
+--      word leaped down from heaven out of your royal throne... into the midst of a land of
+--      destruction* (Wisdom 18:15), and *To these the destroyer gave place, and was afraid of them*
+--      (Wisdom 18:25). Yahuah defends Zion the way He passed over Egypt — by His own covering, not
+--      by horses.
+--   ★ TURN YE / CAST AWAY THE IDOLS (THREAD 3): *Turn ye unto him from whom the children of
+--      Yashar'el (Israel) have deeply revolted. For in that day every man shall cast away his idols
+--      of silver, and his idols of gold* (31:6-7). Hosea binds the whole seam in a single
+--      confession of return: *O Yashar'el (Israel), return unto Yahuah Elohayka (the LORD thy God)*
+--      (Hosea 14:1); *Asshur shall not save us; we will not ride upon horses: neither will we say
+--      any more to the work of our hands, Ye are our gods* (Hosea 14:3) — the foreign help refused,
+--      the horses refused, the idols refused, all in one breath, the very things Isaiah 31 names.
+--      And Isaiah's own earlier word: *In that day a man shall cast his idols of silver, and his
+--      idols of gold... to the moles and to the bats* (Isaiah 2:20). Teshuvah is the turn from the
+--      arm of flesh AND from the idol of one's own hands (cf. 30:22, named, not duplicated).
+--   ★ THE ASSYRIAN FELLED NOT BY FLESH (THREAD 4): *Then shall the Assyrian fall with the sword,
+--      not of a mighty man; and the sword, not of a mean man, shall devour him* (31:8); *saith
+--      Yahuah (LORD), whose fire is in Zion, and his furnace in Jerusalem* (31:9). Isaiah's own book
+--      records the fulfilment within a few chapters — the oppressor felled by no human sword:
+--      *Then the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred
+--      and fourscore and five thousand* (Isaiah 37:36), after the word *He shall not come into this
+--      city... saith Yahuah* (Isaiah 37:33-34). The one who trusted his own chariots (37:24) is
+--      undone by Yahuah's hand alone — the perfect counter-seal to the chapter's whole rebuke of
+--      flesh.
+--   EXTRAS: Wisdom of Solomon 18 (the Passover night; the destroyer gives place) — clean witness,
+--      parse verified. No extras forced on the arm-of-flesh, the teshuvah, or the Assyrian threads.
+--   VERSES WITH NO SEPARATE ADD: v.2 (the help of the evildoers fails — woven into THREAD 1 prose),
+--      and the fragments of v.4 (the lion fighting for Zion) and v.9 (fire in Zion) woven into
+--      THREADS 2 and 4 respectively. All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa31_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The Egyptians are men, and not Elohim; their horses flesh, and not spirit
+    ('canon','isaiah',31,1,'canon','psalms',20,7,'free',
+      E'*Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God)* (Psalm 20:7). The very choice Isaiah condemns — *stay on horses, and trust in chariots... but they look not unto the Holy One of Yashar''el (Israel), neither seek Yahuah (LORD)!* (Isaiah 31:1) — David already drew as the line between flesh and faith: chariots and horses on one side, *the name of Yahuah Eloheinu* on the other. And the end is fixed: *They are brought down and fallen: but we are risen, and stand upright* (Psalm 20:8).'),
+    ('canon','isaiah',31,3,'canon','jeremiah',17,5,'free',
+      E'*Thus saith Yahuah (LORD); Cursed be the man that trusteth in man, and maketh flesh his arm, and whose heart departeth from Yahuah (LORD)* (Jeremiah 17:5). This is Isaiah''s antithesis as covenant verdict: *Now the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit* (Isaiah 31:3). To lean on Egypt is to make *flesh* one''s arm; when *Yahuah (LORD) shall stretch out his hand, both he that helpeth shall fall, and he that is holpen shall fall down* (31:3) — the curse on the arm of flesh.'),
+    ('canon','isaiah',31,3,'canon','jeremiah',17,7,'free',
+      E'*Blessed is the man that trusteth in Yahuah (LORD), and whose hope Yahuah (LORD) is* (Jeremiah 17:7). Against the horses that are *flesh, and not spirit* (Isaiah 31:3) stands the blessed alternative: not the strong arm of Egypt but Yahuah Himself as hope — *as a tree planted by the waters... her leaf shall be green* (Jeremiah 17:8). The chapter''s whole woe drives toward this: look unto the Holy One of Yashar''el, seek Yahuah (31:1), and live.'),
+
+    -- THREAD 2 (★★): Passing over he will preserve it — the Passover defence of Zion
+    ('canon','isaiah',31,5,'canon','exodus',12,13,'free',
+      E'*And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt* (Exodus 12:13). Isaiah''s word for Yahuah''s defence of Zion is the Passover word: *As birds flying, so will Yahuah Tseva''ot (LORD of hosts) defend Jerusalem; defending also he will deliver it; and passing over he will preserve it* (Isaiah 31:5). The same *passing over* that spared the blood-marked houses in Egypt is the hovering protection over Jerusalem — deliverance by Yahuah''s own covering, not by horses.'),
+    ('canon','isaiah',31,5,'canon','exodus',12,23,'free',
+      E'*For Yahuah (LORD) will pass through to smite the Egyptians; and when he seeth the blood upon the lintel, and on the two side posts, Yahuah (LORD) will pass over the door, and will not suffer the destroyer to come in unto your houses to smite you* (Exodus 12:23). *Passing over he will preserve it* (Isaiah 31:5) reaches back to this very ordinance — Yahuah passing over the door, holding the destroyer out. The Passover is an appointed time, *a feast by an ordinance for ever* (Exodus 12:14): the architecture of how Yahuah delivers His people — by His passing-over, not by the strength of Egypt.'),
+    ('canon','isaiah',31,5,'apocrypha','the-wisdom-of-solomon',18,15,'extras',
+      E'*Your Almighty word leaped down from heaven out of your royal throne, as a fierce man of war into the midst of a land of destruction* (Wisdom of Solomon 18:15). The restored witness sings the Passover night when Yahuah defended His own — the same hovering, descending deliverance Isaiah names: *defending also he will deliver it; and passing over he will preserve it* (Isaiah 31:5). The Word leaps down to defend; the city is preserved not by chariots but by the One who comes down to fight for it (31:4).'),
+    ('canon','isaiah',31,5,'apocrypha','the-wisdom-of-solomon',18,25,'extras',
+      E'*To these the destroyer gave place, and was afraid of them: for it was enough that they only tasted of the wrath* (Wisdom of Solomon 18:25). On the Passover night the destroyer *gave place* before the covenant token — exactly as Isaiah promises for Zion: Yahuah *passing over he will preserve it* (Isaiah 31:5). The destroyer turns aside, the people preserved; the deliverance is Yahuah''s passing-over, the same architecture from Egypt to Jerusalem.'),
+
+    -- THREAD 3 (★): Turn ye, and cast away your idols of silver and gold
+    ('canon','isaiah',31,6,'canon','hosea',14,1,'free',
+      E'*O Yashar''el (Israel), return unto Yahuah Elohayka (the LORD thy God); for thou hast fallen by thine iniquity* (Hosea 14:1). Isaiah''s teshuvah call — *Turn ye unto him from whom the children of Yashar''el (Israel) have deeply revolted* (Isaiah 31:6) — is Hosea''s closing plea: return to Yahuah from the deep revolt. The turn is the whole answer to the woe: stop going down to Egypt, and come back.'),
+    ('canon','isaiah',31,7,'canon','hosea',14,3,'free',
+      E'*Asshur shall not save us; we will not ride upon horses: neither will we say any more to the work of our hands, Ye are our gods: for in thee the fatherless findeth mercy* (Hosea 14:3). This single verse binds the whole seam of Isaiah 31: the foreign help refused (Asshur shall not save us), the horses refused (*stay on horses* — 31:1), and the idols refused (*cast away his idols of silver, and his idols of gold, which your own hands have made* — 31:7). Teshuvah renounces the arm of flesh AND the work of one''s own hands in one breath.'),
+    ('canon','isaiah',31,7,'canon','isaiah',2,20,'free',
+      E'*In that day a man shall cast his idols of silver, and his idols of gold, which they made each one for himself to worship, to the moles and to the bats* (Isaiah 2:20). Isaiah''s own earlier word matches the promise of 31:7 phrase for phrase — *in that day every man shall cast away his idols of silver, and his idols of gold, which your own hands have made unto you for a sin*. The day of return is the day the hand-made gods are flung away; the idols *he shall utterly abolish* (Isaiah 2:18).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 4 (★): The Assyrian shall fall — Isaiah 37 self-link (the angel smote the camp)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','isaiah',31,8,'canon','isaiah',37,36,'free',
+      E'*Then the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses* (Isaiah 37:36). This is the fulfilment of 31:8 within Isaiah''s own book: *Then shall the Assyrian fall with the sword, not of a mighty man; and the sword, not of a mean man, shall devour him* — no human sword at all, but the angel of Yahuah. The one who boasted *By the multitude of my chariots am I come up* (37:24) is felled by Yahuah''s own hand.'),
+    ('canon','isaiah',31,8,'canon','isaiah',37,33,'free',
+      E'*Therefore thus saith Yahuah (LORD) concerning the king of Assyria, He shall not come into this city, nor shoot an arrow there, nor come before it with shields, nor cast a bank against it* (Isaiah 37:33). The Assyrian who *shall flee from the sword* (Isaiah 31:8) is the same king Yahuah turns back — *He shall not come into this city*. Zion is defended exactly as 31:5 promised: not by flesh, but by Yahuah, *whose fire is in Zion, and his furnace in Jerusalem* (31:9).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-31-the-egyptians-are-men-and-not-elohim-their-horses-flesh',
+       E'The Egyptians are men, and not Elohim; their horses flesh, and not spirit',
+       E'The woe is for leaning on the arm of flesh: *Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many; and in horsemen, because they are very strong; but they look not unto the Holy One of Yashar''el (Israel), neither seek Yahuah (LORD)!* (Isaiah 31:1). The chapter''s hinge draws the line bare: *Now the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit. When Yahuah (LORD) shall stretch out his hand, both he that helpeth shall fall, and he that is holpen shall fall down, and they all shall fail together* (31:3). Flesh against Spirit — and the flesh fails. David sang the same line: *Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God). They are brought down and fallen: but we are risen, and stand upright* (Psalm 20:7-8). And Jeremiah set it as the covenant verdict: *Cursed be the man that trusteth in man, and maketh flesh his arm, and whose heart departeth from Yahuah (LORD)* (Jeremiah 17:5) — over against *Blessed is the man that trusteth in Yahuah (LORD), and whose hope Yahuah (LORD) is* (17:7). This is the twin of the ch30 rebuke — *In returning and rest shall ye be saved... But ye said, No; for we will flee upon horses* (Isaiah 30:15-16) — but here the emphasis is the antithesis itself: the strongest horses are still flesh, and they cannot save against the hand of Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 26750
+  FROM _s303_isa31_lookup sv, _s303_isa31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=31 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-31-passing-over-he-will-preserve-it',
+       E'Passing over he will preserve it — Zion defended as Egypt was passed over',
+       E'Against the failing arm of flesh stands the defence of Yahuah Himself, who comes down to fight for Zion as a lion that will not be frightened off (Isaiah 31:4), and then as a hovering wing: *As birds flying, so will Yahuah Tseva''ot (LORD of hosts) defend Jerusalem; defending also he will deliver it; and passing over he will preserve it* (Isaiah 31:5). That word — *passing over* — is the word of the night of deliverance. *And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you* (Exodus 12:13); *Yahuah (LORD) will pass over the door, and will not suffer the destroyer to come in unto your houses to smite you* (Exodus 12:23). The Passover is the architecture of deliverance — *a feast by an ordinance for ever* (Exodus 12:14), an appointed time of Yahuah — the blood-token that turns the destroyer aside. The restored witness sings that same night: *your Almighty word leaped down from heaven out of your royal throne, as a fierce man of war into the midst of a land of destruction* (Wisdom of Solomon 18:15), and *To these the destroyer gave place, and was afraid of them* (Wisdom of Solomon 18:25). Yahuah defends Jerusalem the way He passed over Egypt — by His own covering presence, the destroyer turned aside, the people preserved; never by horses.',
+       sv.verse_id, ev.verse_id, 'extras', 26753
+  FROM _s303_isa31_lookup sv, _s303_isa31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=31 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-31-turn-ye-and-cast-away-your-idols-of-silver-and-gold',
+       E'Turn ye — and in that day cast away your idols of silver and gold',
+       E'The answer to the woe is teshuvah: *Turn ye unto him from whom the children of Yashar''el (Israel) have deeply revolted* (Isaiah 31:6); and the turn carries the renouncing of the hand-made gods: *For in that day every man shall cast away his idols of silver, and his idols of gold, which your own hands have made unto you for a sin* (31:7). Hosea closes his book with the whole seam in one confession of return: *O Yashar''el (Israel), return unto Yahuah Elohayka (the LORD thy God); for thou hast fallen by thine iniquity* (Hosea 14:1); *Asshur shall not save us; we will not ride upon horses: neither will we say any more to the work of our hands, Ye are our gods: for in thee the fatherless findeth mercy* (Hosea 14:3) — the foreign help refused, the horses refused, the idols refused, all together, the very things Isaiah 31 names. And Isaiah''s own earlier word matches the promise phrase for phrase: *In that day a man shall cast his idols of silver, and his idols of gold, which they made each one for himself to worship, to the moles and to the bats* (Isaiah 2:20); *the idols he shall utterly abolish* (2:18). To turn back to Yahuah is to be done with the arm of flesh and the work of one''s own hands at once.',
+       sv.verse_id, ev.verse_id, 'free', 26756
+  FROM _s303_isa31_lookup sv, _s303_isa31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=31 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-31-the-assyrian-shall-fall-with-the-sword-not-of-a-mighty-man',
+       E'The Assyrian shall fall with the sword, not of a mighty man',
+       E'The chapter ends where it began — flesh cannot stand against Yahuah — now turned on the oppressor: *Then shall the Assyrian fall with the sword, not of a mighty man; and the sword, not of a mean man, shall devour him: but he shall flee from the sword, and his young men shall be discomfited* (Isaiah 31:8); *saith Yahuah (LORD), whose fire is in Zion, and his furnace in Jerusalem* (31:9). Isaiah''s own book records the fulfilment a few chapters on, with no human sword at all: *Then the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses* (Isaiah 37:36) — after Yahuah''s word, *He shall not come into this city, nor shoot an arrow there... By the way that he came, by the same shall he return* (Isaiah 37:33-34). The king who boasted *By the multitude of my chariots am I come up to the height of the mountains* (37:24) is undone by the hand of Yahuah alone — the perfect counter-seal to the whole chapter''s rebuke of horses and chariots. Zion is defended not by flesh, but by the One whose fire is in Zion.',
+       sv.verse_id, ev.verse_id, 'free', 26759
+  FROM _s303_isa31_lookup sv, _s303_isa31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=31 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God)* (Psalm 20:7) — the exact line of Isaiah 31:1, chariots-and-horses over against the Name; *They are brought down and fallen: but we are risen* (20:8).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=1
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-the-egyptians-are-men-and-not-elohim-their-horses-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Cursed be the man that trusteth in man, and maketh flesh his arm* (Jeremiah 17:5) — the covenant verdict on Isaiah''s *their horses flesh, and not spirit* (31:3); to lean on Egypt is to make flesh one''s arm.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=3
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=17 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-the-egyptians-are-men-and-not-elohim-their-horses-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Blessed is the man that trusteth in Yahuah (LORD), and whose hope Yahuah (LORD) is* (Jeremiah 17:7) — the blessed alternative to the horses that are *flesh, and not spirit* (31:3); seek the Holy One of Yashar''el, and live.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=3
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=17 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-the-egyptians-are-men-and-not-elohim-their-horses-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you* (Exodus 12:13) — Isaiah''s *passing over he will preserve it* (31:5) is the Passover word; deliverance by Yahuah''s covering, not by horses.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=5
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-passing-over-he-will-preserve-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Yahuah (LORD) will pass over the door, and will not suffer the destroyer to come in* (Exodus 12:23) — the appointed-time ordinance behind 31:5; Yahuah holds the destroyer out, the blood-marked house preserved.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=5
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-passing-over-he-will-preserve-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*your Almighty word leaped down from heaven out of your royal throne... into the midst of a land of destruction* (Wisdom of Solomon 18:15) — the restored witness of the Passover night; the Word leaps down to defend, as Yahuah comes down to fight for Zion (31:4-5).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=5
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=18 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-passing-over-he-will-preserve-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*To these the destroyer gave place, and was afraid of them* (Wisdom of Solomon 18:25) — the destroyer turns aside before the covenant token, exactly as Yahuah *passing over... will preserve* Jerusalem (31:5).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=5
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=18 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-passing-over-he-will-preserve-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*O Yashar''el (Israel), return unto Yahuah Elohayka (the LORD thy God)* (Hosea 14:1) — Hosea''s closing plea is Isaiah''s *Turn ye unto him from whom... they have deeply revolted* (31:6); return from the deep revolt.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=6
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=14 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-turn-ye-and-cast-away-your-idols-of-silver-and-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Asshur shall not save us; we will not ride upon horses: neither will we say any more to the work of our hands, Ye are our gods* (Hosea 14:3) — one verse binding the whole seam of Isaiah 31: foreign help, horses, and idols all refused together.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=7
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=14 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-turn-ye-and-cast-away-your-idols-of-silver-and-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*In that day a man shall cast his idols of silver, and his idols of gold... to the moles and to the bats* (Isaiah 2:20) — Isaiah''s own earlier word, matching 31:7 phrase for phrase; the day of return is the day the hand-made gods are flung away.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=7
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-turn-ye-and-cast-away-your-idols-of-silver-and-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Then the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and fourscore and five thousand* (Isaiah 37:36) — the fulfilment of 31:8 within Isaiah''s own book; the Assyrian felled by no human sword, but the angel of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=8
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-the-assyrian-shall-fall-with-the-sword-not-of-a-mighty-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He shall not come into this city, nor shoot an arrow there... By the way that he came, by the same shall he return* (Isaiah 37:33-34) — the Assyrian who *shall flee from the sword* (31:8) is the king Yahuah turns back; Zion defended not by flesh but by Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=31 AND sv.verse_number=8
+  JOIN _s303_isa31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-31-the-assyrian-shall-fall-with-the-sword-not-of-a-mighty-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_33.sql (Isaiah 33) -----
+-- Chapter: Isaiah 33 — THE WOE TO THE SPOILER / THE PRAYER FOR GRACE, climaxing in the King and
+-- the secure Zion. The keystone is the threefold office gathered into ONE: *For Yahuah (LORD) is
+-- our judge, Yahuah (LORD) is our lawgiver, Yahuah (LORD) is our king; he will save us* (33:22) —
+-- the One who gave the Torah at Sinai is the One who saves; the Lawgiver and the Saviour are ONE.
+-- James reaches back to this very verse: *There is one lawgiver, who is able to save and to
+-- destroy* (James 4:12) — Torah-giver and Deliverer never split, Torah never abolished. The chapter
+-- moves from the spoiler's doom to the saved seeing *the king in his beauty* (33:17), to the
+-- question of who may dwell with the *devouring fire* (33:14) answered by the righteous walk
+-- (33:15-16), to the *fear of Yahuah* as the treasure (33:6), to *Zion, the city of our
+-- solemnities* secure forever (33:20) — the city of the appointed feasts that shall not be moved.
+-- Tag: isa33   Temp view: _s303_isa33_lookup
+-- Sort band: base 26800, step 3 -> threads at 26800, 26803, 26806, 26809, 26812 (5 threads)
+-- Source of EVERY row: 'canon','isaiah',33,v
+--
+-- Isaiah 33 coverage:
+--   v.1 (Woe to thee that spoilest... when thou shalt cease to spoil, thou shalt be spoiled)
+--        NT:     none warranted (the lex-talionis of the spoiler woven in prose under THREAD 5's Zion-security)
+--        Extras: none warranted
+--        Tanakh: held in prose (the spoiler's reversal is the frame the secure Zion answers)
+--   v.2 (O Yahuah, be gracious unto us; we have waited for thee... our salvation in the time of trouble)
+--        NT/Extras/Tanakh: none warranted distinct (the prayer for grace is the chapter's posture, woven
+--                throughout; the salvation answered at 33:22 — held in THREAD 1's prose)
+--   v.3-4 (At the noise of the tumult the people fled... your spoil shall be gathered like the caterpiller)
+--        all: none warranted (the scattering of the nations / gathered spoil; prose under THREAD 5)
+--   ★ v.5-6 (Yahuah is exalted; for he dwelleth on high... wisdom and knowledge shall be the stability
+--          of thy times... the fear of Yahuah is his treasure)
+--        NT:     none warranted distinct (the fear-of-Yahuah treasure is rooted in the wisdom Tanakh)
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 1:7 (The fear of Yahuah is the beginning of knowledge), ★ Proverbs 9:10
+--                (The fear of Yahuah is the beginning of wisdom), ★ Psalm 111:10 (The fear of Yahuah is
+--                the beginning of wisdom: a good understanding have all they that do his commandments) — THREAD 4
+--   v.7-9 (their valiant ones shall cry without... the earth mourneth and languisheth)
+--        all: none warranted (the land's mourning under the broken covenant; prose under the chapter's lawsuit frame)
+--   v.10-13 (Now will I rise, saith Yahuah... ye that are far off... ye that are near, acknowledge my might)
+--        all: none warranted distinct (Yahuah rising in judgment; the far-and-near hearers — woven in prose)
+--   ★ v.14-16 (Who among us shall dwell with the devouring fire?... He that walketh righteously... he
+--          shall dwell on high)
+--        NT:     ★ Hebrews 12:29 (For our Elohim (God) is a consuming fire) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 15:1-2 (Yahuah, who shall abide in thy tabernacle?... He that walketh uprightly),
+--                ★ Psalm 24:3-4 (Who shall ascend into the hill of Yahuah?... He that hath clean hands,
+--                and a pure heart) — THREAD 3 (who may dwell; the righteous walk the condition)
+--   ★ v.17 (Thine eyes shall see the king in his beauty: they shall behold the land that is very far off)
+--        NT:     ★ Matthew 5:8 (Blessed are the pure in heart: for they shall see Elohim (God)),
+--                ★ Revelation 22:4 (And they shall see his face; and his name shall be in their foreheads) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: held in prose (the King in his beauty = the Formed Son; bound forward to the beatific seeing)
+--   v.18-19 (Thine heart shall meditate terror. Where is the scribe?... a people of a deeper speech)
+--        all: none warranted (the terror past, the oppressor's officials gone — prose under THREAD 5)
+--   ★ v.20 (Look upon Zion, the city of our solemnities... a quiet habitation... a tabernacle that shall
+--          not be taken down)
+--        NT:     none warranted distinct (the appointed-times anchor is in the Torah; held forward in prose)
+--        Extras: none warranted
+--        Tanakh: ★ Leviticus 23:2 (Concerning the feasts of Yahuah, which ye shall proclaim to be holy
+--                convocations), ★ Deuteronomy 16:16 (Three times in a year shall all thy males appear before
+--                Yahuah Elohayka... in the feast of unleavened bread, and in the feast of weeks, and in the
+--                feast of tabernacles), ★ Isaiah 66:23 (from one new moon to another, and from one sabbath
+--                to another, shall all flesh come to worship before me) — THREAD 5 (Zion = the city of the mo'edim)
+--   ★★ v.21-22 (the glorious Yahuah will be unto us a place of broad rivers... Yahuah is our judge,
+--          Yahuah is our lawgiver, Yahuah is our king; he will save us)
+--        NT:     ★★ James 4:12 (There is one lawgiver, who is able to save and to destroy) — THREAD 1 (load-bearing)
+--        Extras: none warranted
+--        Tanakh: woven in THREAD 1 prose (the Sinai Lawgiver who is the saving King)
+--   v.23-24 (Thy tacklings are loosed... the lame take the prey... the people shall be forgiven their iniquity)
+--        all: none warranted distinct (the spoiler's wreck plundered; the forgiven, healed Zion — held in
+--                THREAD 5's Zion-security and THREAD 1's salvation prose)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-33-yahuah-our-lawgiver-our-king-he-will-save-us — NT (James 4) [free]
+--      (★★ judge/lawgiver/king all in Yahuah; the Sinai Torah-giver is the saving King — Torah never abolished)
+--   2. isaiah-33-thine-eyes-shall-see-the-king-in-his-beauty — NT (Matthew 5, Revelation 22) [free]
+--      (★ the King in his beauty = the Formed Son; the pure in heart shall see him, his face beheld)
+--   3. isaiah-33-who-shall-dwell-with-the-devouring-fire — NT (Hebrews 12) + Tanakh (Psalm 15, Psalm 24) [free]
+--      (★ who may dwell with Yahuah the consuming fire; the righteous walk the condition — holiness kept)
+--   4. isaiah-33-the-fear-of-yahuah-is-his-treasure — Tanakh (Proverbs 1, Proverbs 9, Psalm 111) [free]
+--      (★ the fear of Yahuah the treasure; the beginning of wisdom/knowledge — bound to doing his commandments)
+--   5. isaiah-33-zion-the-city-of-our-solemnities — Tanakh (Leviticus 23, Deuteronomy 16, Isaiah 66) [free]
+--      (★ Zion = the city of the appointed feasts (mo'edim), the tabernacle not taken down, secure forever)
+--
+-- Framing notes:
+--   ★★ THE LAWGIVER WHO SAVES (THREAD 1): *For Yahuah (LORD) is our judge, Yahuah (LORD) is our
+--      lawgiver, Yahuah (LORD) is our king; he will save us* (33:22). The three offices — judge,
+--      lawgiver, king — are not divided among rivals; they are ONE in Yahuah, and that same One *will
+--      save us*. James quotes this exact union: *There is one lawgiver, who is able to save and to
+--      destroy* (James 4:12). The One who gave the Torah at Sinai is the One who saves — the Lawgiver
+--      and the Saviour never split. This is the Formed Son who spoke the commandments and who delivers;
+--      Torah is the covenant of the saving King, never abolished, never a curse to be escaped.
+--   ★ THE KING IN HIS BEAUTY (THREAD 2): *Thine eyes shall see the king in his beauty: they shall
+--      behold the land that is very far off* (33:17). The King beheld is the Formed Son. The promise of
+--      seeing him is carried forward to the pure: *Blessed are the pure in heart: for they shall see
+--      Elohim (God)* (Matthew 5:8), and consummated: *And they shall see his face; and his name shall
+--      be in their foreheads* (Revelation 22:4). The same eyes that meditated terror (33:18) shall
+--      behold the King unveiled.
+--   ★ WHO SHALL DWELL WITH THE DEVOURING FIRE (THREAD 3): *Who among us shall dwell with the devouring
+--      fire? who among us shall dwell with everlasting burnings?* (33:14) — answered: *He that walketh
+--      righteously, and speaketh uprightly... he shall dwell on high* (33:15-16). The same question and
+--      answer the Psalms ask at the holy hill: *Yahuah (LORD), who shall abide in thy tabernacle?...
+--      He that walketh uprightly, and worketh righteousness* (Psalm 15:1-2); *Who shall ascend into the
+--      hill of Yahuah?... He that hath clean hands, and a pure heart* (Psalm 24:3-4). Yahuah IS that
+--      fire: *For our Elohim (God) is a consuming fire* (Hebrews 12:29). The righteous walk is the
+--      condition of dwelling — holiness kept, never optional.
+--   ★ THE FEAR OF YAHUAH HIS TREASURE (THREAD 4): *wisdom and knowledge shall be the stability of thy
+--      times, and strength of salvation: the fear of Yahuah (LORD) is his treasure* (33:6). The wisdom
+--      Tanakh names the same treasure as the foundation: *The fear of Yahuah (LORD) is the beginning of
+--      knowledge* (Proverbs 1:7); *The fear of Yahuah (LORD) is the beginning of wisdom* (Proverbs
+--      9:10); *The fear of Yahuah (LORD) is the beginning of wisdom: a good understanding have all they
+--      that do his commandments* (Psalm 111:10) — the fear of Yahuah bound to DOING his commandments,
+--      the stability of the saved times.
+--   ★ ZION, THE CITY OF OUR SOLEMNITIES (THREAD 5): *Look upon Zion, the city of our solemnities: thine
+--      eyes shall see Jerusalem a quiet habitation, a tabernacle that shall not be taken down* (33:20).
+--      The solemnities are the appointed feasts — the mo'edim: *Concerning the feasts of Yahuah (LORD),
+--      which ye shall proclaim to be holy convocations* (Leviticus 23:2); *Three times in a year shall
+--      all thy males appear before Yahuah Elohayka (the LORD thy God)... in the feast of unleavened
+--      bread, and in the feast of weeks, and in the feast of tabernacles* (Deuteronomy 16:16). The
+--      secure Zion is the city where those feasts are kept forever: *from one new moon to another, and
+--      from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)*
+--      (Isaiah 66:23) — the tabernacle not taken down, the appointed-times city that shall not be moved.
+--   EXTRAS: none warranted on this chapter — the Zion/throne/wisdom material here is most precisely and
+--      load-bearingly carried by the canon witnesses (James 4, the wisdom Tanakh, Leviticus 23 / Deut 16
+--      / Isaiah 66); no extra-canonical add forced.
+--   VERSES WITH NO SEPARATE ADD: v.1-4 (the spoiler's reversal, the scattered nations, the gathered
+--      spoil — the lawsuit frame, woven in prose), v.7-13 (the land's mourning under the broken
+--      covenant, Yahuah rising in judgment, the far-and-near hearers — prose), v.18-19 (the terror
+--      past, the oppressor's scribe/receiver gone — prose), v.23-24 (the spoiler's wreck plundered, the
+--      forgiven and healed Zion — held in THREAD 1's salvation and THREAD 5's security). All recorded,
+--      none silently skipped.
+
+CREATE TEMP VIEW _s303_isa33_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Yahuah our lawgiver, our king; he will save us — the Sinai Torah-giver is the saving King
+    ('canon','isaiah',33,22,'canon','james',4,12,'free',
+      E'*There is one lawgiver, who is able to save and to destroy: who art thou that judgest another?* (James 4:12). Isaiah gathers the three offices into ONE: *For Yahuah (LORD) is our judge, Yahuah (LORD) is our lawgiver, Yahuah (LORD) is our king; he will save us* (Isaiah 33:22) — and James names that one Lawgiver as the One *able to save and to destroy*. The One who gave the Torah at Sinai is the saving King; the Lawgiver and the Deliverer are never split. This is the Formed Son who spoke the commandments and who saves — Torah is the covenant of the saving King, never abolished.'),
+
+    -- THREAD 2 (★): Thine eyes shall see the king in his beauty — the Formed Son beheld
+    ('canon','isaiah',33,17,'canon','matthew',5,8,'free',
+      E'*Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8). The promise *Thine eyes shall see the king in his beauty* (Isaiah 33:17) is the seeing held out to the pure: *the pure in heart... shall see Elohim (God)*. The King in his beauty is the Formed Son, the visible Glory; the cleansed eye is the one that beholds him.'),
+    ('canon','isaiah',33,17,'canon','revelation',22,4,'free',
+      E'*And they shall see his face; and his name shall be in their foreheads* (Revelation 22:4). The eyes that *shall see the king in his beauty* (Isaiah 33:17) reach their consummation here: *they shall see his face*. The King once beheld from afar is seen face to face, his Name upon his own — the seeing Isaiah promised, fulfilled in the city of the throne.'),
+
+    -- THREAD 3 (★): Who shall dwell with the devouring fire — the righteous walk the condition; Yahuah the consuming fire
+    ('canon','isaiah',33,14,'canon','hebrews',12,29,'free',
+      E'*For our Elohim (God) is a consuming fire* (Hebrews 12:29). Isaiah asks *Who among us shall dwell with the devouring fire? who among us shall dwell with everlasting burnings?* (Isaiah 33:14) — and the answer is that Yahuah HIMSELF is that fire: *our Elohim (God) is a consuming fire*. To dwell with him is to dwell with the fire; only the righteous walk endures it.'),
+    ('canon','isaiah',33,15,'canon','psalms',15,1,'free',
+      E'*Yahuah (LORD), who shall abide in thy tabernacle? who shall dwell in thy holy hill? He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart* (Psalm 15:1-2). Isaiah''s answer to who may dwell with the devouring fire — *He that walketh righteously, and speaketh uprightly* (Isaiah 33:15) — is the Psalm''s own answer to who may abide in the tabernacle: *He that walketh uprightly, and worketh righteousness*. The righteous walk is the one condition of dwelling with Yahuah; holiness kept, not waived.'),
+    ('canon','isaiah',33,15,'canon','psalms',24,3,'free',
+      E'*Who shall ascend into the hill of Yahuah (LORD)? or who shall stand in his holy place? He that hath clean hands, and a pure heart; who hath not lifted up his soul unto vanity, nor sworn deceitfully* (Psalm 24:3-4). The man who *despiseth the gain of oppressions, that shaketh his hands from holding of bribes* (Isaiah 33:15) is the man of *clean hands, and a pure heart* who ascends the holy hill. The same conditions — clean hands, true speech, no fraud — qualify the one who shall *dwell on high* (Isaiah 33:16).'),
+
+    -- THREAD 4 (★): The fear of Yahuah is his treasure — the beginning of wisdom, bound to doing his commandments
+    ('canon','isaiah',33,6,'canon','proverbs',1,7,'free',
+      E'*The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction* (Proverbs 1:7). Isaiah names the treasure of the stable times: *wisdom and knowledge shall be the stability of thy times, and strength of salvation: the fear of Yahuah (LORD) is his treasure* (Isaiah 33:6). The wisdom Tanakh roots that very wisdom and knowledge in the same fear: *the fear of Yahuah (LORD) is the beginning of knowledge*. The treasure of Zion''s times is the fear of Yahuah.'),
+    ('canon','isaiah',33,6,'canon','proverbs',9,10,'free',
+      E'*The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding* (Proverbs 9:10). The *wisdom and knowledge* that are *the stability of thy times* (Isaiah 33:6) begin where Proverbs says all wisdom begins: *the fear of Yahuah (LORD) is the beginning of wisdom*. The fear of Yahuah, Isaiah''s treasure, is the foundation the saved times stand upon.'),
+    ('canon','isaiah',33,6,'canon','psalms',111,10,'free',
+      E'*The fear of Yahuah (LORD) is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever* (Psalm 111:10). The treasure Isaiah names — *the fear of Yahuah (LORD) is his treasure* (Isaiah 33:6) — is the fear the Psalm binds to obedience: *a good understanding have all they that do his commandments*. The fear of Yahuah is not bare dread but the doing of his commandments; the treasure of the stable times is a Torah-keeping fear.'),
+
+    -- THREAD 5 (★): Zion, the city of our solemnities — the city of the appointed feasts, secure forever
+    ('canon','isaiah',33,20,'canon','leviticus',23,2,'free',
+      E'*Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts* (Leviticus 23:2). Isaiah calls Zion *the city of our solemnities* (Isaiah 33:20) — the city of the appointed feasts, the mo''edim Yahuah named *my feasts*. The secure, untaken tabernacle is the place where the holy convocations are kept; the solemnities are the feasts of Yahuah themselves.'),
+    ('canon','isaiah',33,20,'canon','deuteronomy',16,16,'free',
+      E'*Three times in a year shall all thy males appear before Yahuah Elohayka (the LORD thy God) in the place which he shall choose; in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles: and they shall not appear before Yahuah (LORD) empty* (Deuteronomy 16:16). The *solemnities* of *Zion, the city of our solemnities* (Isaiah 33:20) are these three pilgrim feasts kept *in the place which he shall choose* — the secure Jerusalem, the *quiet habitation, a tabernacle that shall not be taken down*. The appointed times gather all Yashar''el to the unmovable city.'),
+    ('canon','isaiah',33,20,'canon','isaiah',66,23,'free',
+      E'*And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23). The *city of our solemnities* whose *tabernacle... shall not be taken down* (Isaiah 33:20) is the Zion of perpetual worship in Isaiah''s own close: *from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me*. The appointed times — new moons and sabbaths — are kept forever in the secure city; the solemnities are not abolished but everlasting.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-33-yahuah-our-lawgiver-our-king-he-will-save-us',
+       E'Yahuah our lawgiver, our king — the Sinai Torah-giver is the saving King',
+       E'The chapter''s climax gathers every office into one Person: *But there the glorious Yahuah (LORD) will be unto us a place of broad rivers and streams... For Yahuah (LORD) is our judge, Yahuah (LORD) is our lawgiver, Yahuah (LORD) is our king; he will save us* (Isaiah 33:21-22). Judge, lawgiver, king — not three rivals, but the ONE Yahuah, and that same One *will save us*. James reaches back to this very verse and names the Lawgiver as the Saviour: *There is one lawgiver, who is able to save and to destroy: who art thou that judgest another?* (James 4:12). The One who gave the Torah at Sinai is the One who delivers — the Lawgiver and the Saviour are never split, never set against each other. This is the Formed Son, the One who spoke the commandments out of the fire and who saves his people; Torah is not a defunct yoke escaped by grace but the covenant instruction of the saving King, never abolished. To know Yahuah as Saviour is to know him as Lawgiver; the salvation prayed for at the chapter''s opening — *O Yahuah (LORD), be gracious unto us... our salvation also in the time of trouble* (33:2) — is the salvation of the King who is our Lawgiver.',
+       sv.verse_id, ev.verse_id, 'free', 26800
+  FROM _s303_isa33_lookup sv, _s303_isa33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=33 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-33-thine-eyes-shall-see-the-king-in-his-beauty',
+       E'Thine eyes shall see the king in his beauty — the Formed Son beheld',
+       E'To the saved Zion comes the promise of seeing the King: *Thine eyes shall see the king in his beauty: they shall behold the land that is very far off* (Isaiah 33:17). The same eyes that *meditate terror* (33:18) under the oppressor shall behold the King unveiled. The King in his beauty is the Formed Son, the visible Glory drawn from the Formless Father. The promise of seeing him is held out to the pure: *Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8) — the cleansed eye is the one that beholds him. And it is consummated in the city of the throne: *And they shall see his face; and his name shall be in their foreheads* (Revelation 22:4). The King once beheld from afar is at last seen face to face, his Name written upon his own. What Isaiah promised the eyes of Zion is the beatific seeing of the Formed Son in his beauty.',
+       sv.verse_id, ev.verse_id, 'free', 26803
+  FROM _s303_isa33_lookup sv, _s303_isa33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=33 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-33-who-shall-dwell-with-the-devouring-fire',
+       E'Who shall dwell with the devouring fire — the righteous walk the condition',
+       E'The sinners in Zion tremble and ask the deepest question: *The sinners in Zion are afraid; fearfulness hath surprised the hypocrites. Who among us shall dwell with the devouring fire? who among us shall dwell with everlasting burnings?* (Isaiah 33:14). The answer is a walk, not a wish: *He that walketh righteously, and speaketh uprightly; he that despiseth the gain of oppressions, that shaketh his hands from holding of bribes, that stoppeth his ears from hearing of blood, and shutteth his eyes from seeing evil; He shall dwell on high* (33:15-16). This is the Psalms'' own question at the holy hill: *Yahuah (LORD), who shall abide in thy tabernacle? who shall dwell in thy holy hill? He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart* (Psalm 15:1-2); *Who shall ascend into the hill of Yahuah (LORD)? or who shall stand in his holy place? He that hath clean hands, and a pure heart* (Psalm 24:3-4). And the fire is Yahuah himself: *For our Elohim (God) is a consuming fire* (Hebrews 12:29). To dwell with Yahuah is to dwell with the fire, and only the righteous walk — clean hands, upright speech, hands that refuse bribes — can endure it. Holiness kept is the one condition of dwelling on high; the walk is not optional but the very gate.',
+       sv.verse_id, ev.verse_id, 'free', 26806
+  FROM _s303_isa33_lookup sv, _s303_isa33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=33 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-33-the-fear-of-yahuah-is-his-treasure',
+       E'The fear of Yahuah is his treasure — the beginning of wisdom',
+       E'The stability of the saved times rests on a single treasure: *Yahuah (LORD) is exalted; for he dwelleth on high: he hath filled Zion with judgment and righteousness. And wisdom and knowledge shall be the stability of thy times, and strength of salvation: the fear of Yahuah (LORD) is his treasure* (Isaiah 33:5-6). The wisdom and the knowledge that steady the times are no abstraction — they begin where the wisdom Tanakh says all wisdom begins: *The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction* (Proverbs 1:7); *The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding* (Proverbs 9:10). And that fear is no bare dread, but the doing of his commandments: *The fear of Yahuah (LORD) is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever* (Psalm 111:10). The treasure of Zion''s times is a Torah-keeping fear — the wisdom that walks in his commandments, the strength of salvation laid up where the proud cannot spend it.',
+       sv.verse_id, ev.verse_id, 'free', 26809
+  FROM _s303_isa33_lookup sv, _s303_isa33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=33 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-33-zion-the-city-of-our-solemnities',
+       E'Zion, the city of our solemnities — the city of the appointed feasts, secure forever',
+       E'When the terror is past, the eye turns to a secure city kept for the feasts: *Look upon Zion, the city of our solemnities: thine eyes shall see Jerusalem a quiet habitation, a tabernacle that shall not be taken down; not one of the stakes thereof shall ever be removed, neither shall any of the cords thereof be broken* (Isaiah 33:20). The *solemnities* are the appointed feasts — the mo''edim that Yahuah claimed as his own: *Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts* (Leviticus 23:2). They are the three pilgrim feasts that gather all Yashar''el to the chosen place: *Three times in a year shall all thy males appear before Yahuah Elohayka (the LORD thy God) in the place which he shall choose; in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles* (Deuteronomy 16:16). And in Isaiah''s own close, the secure Zion keeps those appointed times forever: *from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23). The city of the solemnities is the tabernacle not taken down, its stakes unremoved, its cords unbroken — the appointed-times city that shall not be moved; the feasts and sabbaths are not abolished but everlasting.',
+       sv.verse_id, ev.verse_id, 'free', 26812
+  FROM _s303_isa33_lookup sv, _s303_isa33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=33 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *There is one lawgiver, who is able to save and to destroy* (James 4:12) — the one Lawgiver of *Yahuah (LORD) is our lawgiver, Yahuah (LORD) is our king; he will save us* (Isaiah 33:22) is the Saviour himself; the Sinai Torah-giver is the saving King, Torah never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=22
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-yahuah-our-lawgiver-our-king-he-will-save-us'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8) — the promise *Thine eyes shall see the king in his beauty* (Isaiah 33:17) held out to the pure; the cleansed eye beholds the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=17
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-thine-eyes-shall-see-the-king-in-his-beauty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *And they shall see his face; and his name shall be in their foreheads* (Revelation 22:4) — the *king in his beauty* (Isaiah 33:17) seen at last face to face in the city of the throne, his Name upon his own.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=17
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-thine-eyes-shall-see-the-king-in-his-beauty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *For our Elohim (God) is a consuming fire* (Hebrews 12:29) — Yahuah himself is the *devouring fire* of Isaiah 33:14; to dwell with him is to dwell with the fire.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=14
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-who-shall-dwell-with-the-devouring-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahuah (LORD), who shall abide in thy tabernacle?... He that walketh uprightly, and worketh righteousness* (Psalm 15:1-2) — the same question and the same answer as Isaiah''s *He that walketh righteously... he shall dwell on high* (Isaiah 33:15-16).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=15
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-who-shall-dwell-with-the-devouring-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Who shall ascend into the hill of Yahuah (LORD)?... He that hath clean hands, and a pure heart* (Psalm 24:3-4) — the man who *shaketh his hands from holding of bribes* (Isaiah 33:15) is the clean-handed one who ascends the holy hill.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=15
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=24 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-who-shall-dwell-with-the-devouring-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *The fear of Yahuah (LORD) is the beginning of knowledge* (Proverbs 1:7) — the *wisdom and knowledge* that are *the stability of thy times* (Isaiah 33:6) begin in the fear that is Isaiah''s treasure.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=6
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-the-fear-of-yahuah-is-his-treasure'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *The fear of Yahuah (LORD) is the beginning of wisdom: and the knowledge of the holy is understanding* (Proverbs 9:10) — the foundation under the *wisdom and knowledge* of Isaiah 33:6.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=6
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=9 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-the-fear-of-yahuah-is-his-treasure'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the fear of Yahuah (LORD) is the beginning of wisdom: a good understanding have all they that do his commandments* (Psalm 111:10) — Isaiah''s *treasure* (33:6) is a Torah-keeping fear, bound to doing his commandments.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=6
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=111 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-the-fear-of-yahuah-is-his-treasure'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts* (Leviticus 23:2) — the *solemnities* of *the city of our solemnities* (Isaiah 33:20) are the mo''edim Yahuah named *my feasts*.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=20
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-zion-the-city-of-our-solemnities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Three times in a year shall all thy males appear before Yahuah Elohayka (the LORD thy God)... in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles* (Deuteronomy 16:16) — the pilgrim feasts that gather Yashar''el to the secure city of Isaiah 33:20.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=20
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=16 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-zion-the-city-of-our-solemnities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23) — the appointed times kept forever in the *tabernacle that shall not be taken down* (Isaiah 33:20); the feasts everlasting, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=33 AND sv.verse_number=20
+  JOIN _s303_isa33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-33-zion-the-city-of-our-solemnities'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session303 — Isaiah cross-references complete.'
