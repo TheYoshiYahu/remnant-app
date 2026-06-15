@@ -50065,6 +50065,1178 @@ SELECT t.id, cr.id, m.sort_order, m.member_note
   JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_131.sql (Psalm 131) -----
+-- Chapter: Psalm 131 (A Song of degrees of David) — the weaned-child humility
+-- Tag: ps131   Session: s302   sort_order band base: 25250 (25250, 25253, 25256)
+--
+-- Psalm 131 coverage:
+--   v.1 (heart not haughty, eyes not lofty, no great matters too high)
+--        NT:     Matt 11:29 (meek and lowly in heart); Rom 12:3 (not think more highly);
+--                Rom 12:16 (mind not high things); Jas 4:6 / 1Pet 5:5 (grace to the humble) — WOVEN
+--        Extras: none warranted (the wisdom-lit humility is fully carried by Proverbs canon)
+--        Tanakh: Prov 3:5-7 (lean not to thine own understanding / be not wise in thine own eyes) — WOVEN
+--   v.2 (behaved and quieted myself, as a weaned child)
+--        NT:     Matt 18:3 (become as little children); Matt 18:4 (humble himself as this little child);
+--                Mark 10:15 (receive the kingdom as a little child) — WOVEN
+--        Extras: none warranted
+--        Tanakh: none warranted (the weaned-child figure is unique; NT fills it directly)
+--   v.3 (Let Yashar'el hope in Yahuah from henceforth and for ever)
+--        NT:     Rom 11:1 (Hath Elohim cast away his people? Elohim forbid); Rom 11:2 (not cast away
+--                his people which he foreknew) — two-house RESTORATION guard — WOVEN
+--        Extras: none warranted
+--        Tanakh: Ps 130:7 (Let Yashar'el hope in Yahuah) — lateral, the twin Ascent close — WOVEN
+--
+-- Threads (3, all members canon → tier 'free'):
+--   psalm-131-not-haughty-the-lowly-covenant-heart        [NT + Tanakh]  sort 25250
+--   psalm-131-as-a-weaned-child-the-stilled-trusting-soul [NT]           sort 25253
+--   psalm-131-let-israel-hope-in-yahuah-the-two-house-call [NT + Tanakh] sort 25256
+-- ---------------------------------------------------------------------------
+
+CREATE TEMP VIEW _s302_ps131_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== B. cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- v.1 — the lowly covenant heart
+    ('canon','psalms',131,1,'canon','matthew',11,29,'free',
+     E'*Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls.* (Matthew 11:29) David''s confession — *Yahuah (LORD), my heart is not haughty, nor mine eyes lofty: neither do I exercise myself in great matters, or in things too high for me* (Psalm 131:1) — is the very posture the Formed Son takes upon himself and calls his people into; the *meek and lowly in heart* is the weaned heart of this Psalm, and the *rest unto your souls* is the stilled soul of the next verse.'),
+    ('canon','psalms',131,1,'canon','romans',12,3,'free',
+     E'*For I say, through the grace given unto me, to every man that is among you, not to think of himself more highly than he ought to think; but to think soberly, according as Elohim (God) hath dealt to every man the measure of faith.* (Romans 12:3) Sha''ul presses the same lowliness — *my heart is not haughty, nor mine eyes lofty* (Psalm 131:1) — onto the gathered body: not to reach above the measure given, but to think soberly under Yahuah.'),
+    ('canon','psalms',131,1,'canon','romans',12,16,'free',
+     E'*Be of the same mind one toward another. Mind not high things, but condescend to men of low estate. Be not wise in your own conceits.* (Romans 12:16) *Mind not high things* is Psalm 131:1 verbatim in the apostolic key — *neither do I exercise myself in great matters, or in things too high for me*; the covenant heart stoops to the low estate rather than climbing.'),
+    ('canon','psalms',131,1,'canon','proverbs',3,5,'free',
+     E'*Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding.* (Proverbs 3:5) The wisdom of the fathers is the root of David''s song: to refuse *things too high for me* (Psalm 131:1) is to *lean not unto thine own understanding* — the heart that trusts rather than over-reaches.'),
+    ('canon','psalms',131,1,'canon','proverbs',3,7,'free',
+     E'*Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil.* (Proverbs 3:7) David''s *nor mine eyes lofty* (Psalm 131:1) is the lived form of this charge — eyes lowered, not *wise in thine own eyes*, the fear of Yahuah that turns from the proud heart.'),
+    ('canon','psalms',131,1,'canon','james',4,6,'free',
+     E'*But he giveth more grace. Wherefore he saith, Elohim (God) resisteth the proud, but giveth grace unto the humble.* (James 4:6) The whole canon weighs the proud against the humble, and Psalm 131:1 — *my heart is not haughty* — stands on the side grace is given to: Yahuah resists the lofty eye and bends to the lowly.'),
+    ('canon','psalms',131,1,'canon','1-peter',5,5,'free',
+     E'*Likewise, ye younger, submit yourselves unto the elder. Yea, all of you be subject one to another, and be clothed with humility: for Elohim (God) resisteth the proud, and giveth grace to the humble.* (1 Peter 5:5) Kepha clothes the flock in the garment of Psalm 131 — *my heart is not haughty, nor mine eyes lofty* (Psalm 131:1) — the humility Yahuah crowns with grace.'),
+    -- v.2 — the weaned, stilled, trusting soul
+    ('canon','psalms',131,2,'canon','matthew',18,3,'free',
+     E'*And said, Verily I say unto you, Except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven.* (Matthew 18:3) David has already become what the Formed Son commands — *my soul is even as a weaned child* (Psalm 131:2); the weaned, quieted soul IS the little-child heart without which none enters the kingdom.'),
+    ('canon','psalms',131,2,'canon','matthew',18,4,'free',
+     E'*Whosoever therefore shall humble himself as this little child, the same is greatest in the kingdom of heaven.* (Matthew 18:4) *Surely I have behaved and quieted myself, as a child that is weaned of his mother* (Psalm 131:2) — the greatness of the kingdom is measured downward, in the stilled child-soul David here describes.'),
+    ('canon','psalms',131,2,'canon','mark',10,15,'free',
+     E'*Verily I say unto you, Whosoever shall not receive the kingdom of Elohim (God) as a little child, he shall not enter therein.* (Mark 10:15) To *receive the kingdom... as a little child* is to come with the quieted, trusting soul of Psalm 131:2 — *my soul is even as a weaned child* — emptied of grasping, resting wholly on the Father.'),
+    -- v.3 — let Yashar'el hope: the two-house restoration call
+    ('canon','psalms',131,3,'canon','psalms',130,7,'free',
+     E'*Let Yashar''el (Israel) hope in Yahuah (LORD): for with Yahuah (LORD) there is mercy, and with him is plenteous redemption.* (Psalm 130:7) The Song of Ascents before this one closes with the very words David repeats — *Let Yashar''el (Israel) hope in Yahuah (LORD) from henceforth and for ever* (Psalm 131:3); the stilled personal soul widens into the hope of the whole house, grounded in Yahuah''s mercy and plenteous redemption.'),
+    ('canon','psalms',131,3,'canon','romans',11,1,'free',
+     E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.* (Romans 11:1) David bids *Yashar''el (Israel) hope in Yahuah... from henceforth and for ever* (Psalm 131:3) precisely because Yahuah has not cast away his people; the hope is restoration, not replacement.'),
+    ('canon','psalms',131,3,'canon','romans',11,2,'free',
+     E'*Elohim (God) hath not cast away his people which he foreknew. Wot ye not what the scripture saith of Elias? how he maketh intercession to Elohim (God) against Yashar''el (Israel), saying,* (Romans 11:2) The everlasting hope of Psalm 131:3 — *from henceforth and for ever* — rests on the foreknown, uncast-away people; the two-house call to hope is anchored in Yahuah''s unbroken covenant, never in any new people grafted in to displace them.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== C. cross_reference_threads =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-131-not-haughty-the-lowly-covenant-heart',
+       E'Not Haughty, Nor Mine Eyes Lofty — the Lowly Covenant Heart',
+       E'David opens his short Song of Ascents with a confession that runs against the grain of the proud heart: *Yahuah (LORD), my heart is not haughty, nor mine eyes lofty: neither do I exercise myself in great matters, or in things too high for me* (Psalm 131:1). This is not false modesty but the covenant posture — the heart that refuses to climb above the measure Yahuah has given.\n\nThe wisdom of the fathers is its root: *Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding* (Proverbs 3:5), and *Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (Proverbs 3:7). David''s lowered eyes are exactly the eyes *not wise in their own sight*.\n\nThe Formed Son takes this same heart upon himself and calls his people into it: *Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls* (Matthew 11:29). Sha''ul presses it onto the gathered body — *not to think of himself more highly than he ought to think; but to think soberly* (Romans 12:3) and *Mind not high things, but condescend to men of low estate* (Romans 12:16), where *mind not high things* is Psalm 131:1 in the apostolic key. And the whole canon weighs the proud against the humble: *Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6), echoed in *be clothed with humility: for Elohim (God) resisteth the proud, and giveth grace to the humble* (1 Peter 5:5). The lowly heart of Psalm 131 is the one Yahuah crowns with grace.',
+       sv.verse_id, ev.verse_id, 'free', 25250
+  FROM _s302_ps131_lookup sv, _s302_ps131_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=131 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-131-as-a-weaned-child-the-stilled-trusting-soul',
+       E'As a Weaned Child — the Stilled, Trusting Soul',
+       E'The heart of the Psalm is one image: *Surely I have behaved and quieted myself, as a child that is weaned of his mother: my soul is even as a weaned child* (Psalm 131:2). The weaned child no longer cries for the breast — it has learned to rest near the mother for her own sake, content and quieted. So David has stilled his soul before Yahuah, not grasping, simply resting.\n\nThis is precisely the heart the Formed Son sets as the door of the kingdom: *Except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven* (Matthew 18:3), and *Whosoever therefore shall humble himself as this little child, the same is greatest in the kingdom of heaven* (Matthew 18:4). The greatness of the kingdom is measured downward, in the stilled child-soul. *Whosoever shall not receive the kingdom of Elohim (God) as a little child, he shall not enter therein* (Mark 10:15) — and to receive it so is to come with the quieted, weaned soul of Psalm 131:2, emptied of grasping, resting wholly on the Father.',
+       sv.verse_id, ev.verse_id, 'free', 25253
+  FROM _s302_ps131_lookup sv, _s302_ps131_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=131 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-131-let-israel-hope-in-yahuah-the-two-house-call',
+       E'Let Yashar''el Hope in Yahuah — the Two-House Call from Henceforth and For Ever',
+       E'The Psalm does not stay personal. The stilled, weaned soul widens into a call to the whole people: *Let Yashar''el (Israel) hope in Yahuah (LORD) from henceforth and for ever* (Psalm 131:3). These are the very words that close the Song of Ascents just before it: *Let Yashar''el (Israel) hope in Yahuah (LORD): for with Yahuah (LORD) there is mercy, and with him is plenteous redemption* (Psalm 130:7). The lateral echo binds the two Ascents: the humbled individual heart becomes the posture of the gathered house, and its ground is Yahuah''s mercy and plenteous redemption.\n\nThat hope reaches *from henceforth and for ever* because Yahuah has not cast off his people. *Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1), and *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The everlasting hope of Psalm 131:3 is restoration, never replacement — anchored in Yahuah''s unbroken covenant with Yashar''el, never in any new people grafted in to displace the foreknown house.',
+       sv.verse_id, ev.verse_id, 'free', 25256
+  FROM _s302_ps131_lookup sv, _s302_ps131_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=131 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== D. cross_reference_thread_members =====================
+-- Thread 1: psalm-131-not-haughty-the-lowly-covenant-heart
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Take my yoke upon you, and learn of me; for I am meek and lowly in heart* (Matthew 11:29) — the Formed Son embodies and commands the very lowliness of *my heart is not haughty* (Psalm 131:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=1
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-not-haughty-the-lowly-covenant-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Not to think of himself more highly than he ought to think; but to think soberly* (Romans 12:3) — Psalm 131:1''s un-haughty heart pressed onto the gathered body.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=1
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-not-haughty-the-lowly-covenant-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Mind not high things, but condescend to men of low estate* (Romans 12:16) — Psalm 131:1''s *things too high for me* in the apostolic key.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=1
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-not-haughty-the-lowly-covenant-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Trust in Yahuah (LORD) with all thine heart; and lean not unto thine own understanding* (Proverbs 3:5) — the wisdom-root of refusing *things too high for me*.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=1
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-not-haughty-the-lowly-covenant-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (Proverbs 3:7) — the lived form of *nor mine eyes lofty* (Psalm 131:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=1
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-not-haughty-the-lowly-covenant-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6) — the lowly heart of Psalm 131:1 stands on the side grace is given to.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=1
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-not-haughty-the-lowly-covenant-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Be clothed with humility: for Elohim (God) resisteth the proud, and giveth grace to the humble* (1 Peter 5:5) — Psalm 131''s lowliness as the garment Yahuah crowns with grace.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=1
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-not-haughty-the-lowly-covenant-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: psalm-131-as-a-weaned-child-the-stilled-trusting-soul
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven* (Matthew 18:3) — the weaned soul of Psalm 131:2 IS the little-child heart of entry.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=2
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=18 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-as-a-weaned-child-the-stilled-trusting-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Whosoever therefore shall humble himself as this little child, the same is greatest in the kingdom of heaven* (Matthew 18:4) — greatness measured downward into the stilled child-soul of Psalm 131:2.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=2
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=18 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-as-a-weaned-child-the-stilled-trusting-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Whosoever shall not receive the kingdom of Elohim (God) as a little child, he shall not enter therein* (Mark 10:15) — to receive it so is to come with the quieted, weaned soul of Psalm 131:2.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=2
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=10 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-as-a-weaned-child-the-stilled-trusting-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: psalm-131-let-israel-hope-in-yahuah-the-two-house-call
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Let Yashar''el (Israel) hope in Yahuah (LORD): for with Yahuah (LORD) there is mercy, and with him is plenteous redemption* (Psalm 130:7) — the twin Ascent close; lateral echo binding the gathered house''s hope to Yahuah''s mercy.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=3
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=130 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-let-israel-hope-in-yahuah-the-two-house-call'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1) — the everlasting hope of Psalm 131:3 rests on Yahuah''s uncast-away people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=3
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-let-israel-hope-in-yahuah-the-two-house-call'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2) — *from henceforth and for ever* (Psalm 131:3) is restoration of the foreknown house, never replacement.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps131_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=131 AND sv.verse_number=3
+  JOIN _s302_ps131_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-131-let-israel-hope-in-yahuah-the-two-house-call'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+DROP VIEW _s302_ps131_lookup;
+
+-- ----- fragment: minion_psalms_133.sql (Psalm 133) -----
+--
+-- Chapter: Psalm 133 (of David — a Song of Ascents; KEYSTONE: brethren dwelling in unity)
+-- Tag: s302 / ps133    Sort band base: 25300 (25300, 25303, 25306, 25309)
+-- Source rows ALWAYS 'canon','psalms',133,v   |   slugs SINGULAR prefix psalm-133-
+--
+-- Psalm 133 coverage:
+--   v.1  Behold, how good and how pleasant it is for brethren to dwell together in unity!
+--        NT:     John 17:21, John 17:23 (that they all may be one); Eph 4:3,4:6 (unity of the Spirit; one body, one Elohim and Father) — WARRANTED
+--        Extras: Ecclesiasticus (Sirach) 25:1 (the unity of brothers) — WARRANTED
+--        Tanakh: Ezek 37:17 (one in thine hand), 37:22 (no more two nations) two-house reunion; Gen 13:8 (we be brethren); Rom 11:1 two-house guard — WARRANTED
+--   v.2  the precious ointment upon the head... Aaron's beard... skirts of his garments
+--        NT:     1 John 2:20 (an unction from the Holy One), 2:27 (the anointing... abideth in you) — WARRANTED (oil from Head to body = Spirit)
+--        Extras: none warranted (Exod-anointing already canon; no cleaner extras witness)
+--        Tanakh: Exod 30:25 (an holy anointing oil), 30:30 (anoint Aaron); Ps 45:7 (anointed with the oil of gladness above thy fellows) — WARRANTED
+--   v.3  As the dew of Hermon... dew upon the mountains of Zion: for there Yahuah commanded the blessing, even life for evermore
+--        NT:     John 10:10 (life... more abundantly) — WARRANTED (life-for-evermore weave)
+--        Extras: none warranted (clean canon witnesses carry the dew/blessing/life weave)
+--        Tanakh: Deut 33:13 (dew, of Joseph/Ephraim), 33:28 (heavens drop down dew); Lev 25:21 (I will command my blessing); Dan 12:2 (everlasting life); Ezek 37:26 (everlasting covenant) — WARRANTED
+--
+-- Threads (4):
+--   psalm-133-brethren-dwell-in-unity-the-two-houses-made-one  [Tanakh + NT + extras] tier=extras  v1
+--   psalm-133-the-precious-anointing-oil-from-the-head-to-the-body  [Tanakh + NT] tier=free  v2
+--   psalm-133-as-the-dew-of-hermon-the-commanded-blessing  [Tanakh] tier=free  v3
+--   psalm-133-there-yahuah-commanded-life-for-evermore  [Tanakh + NT] tier=free  v3
+--
+-- Framework-load-bearing framing notes:
+--   * v1 read as the TWO-HOUSE reunion (Judah + Ephraim/Joseph made one, Ezek 37), NOT a generic
+--     fellowship sentiment and NOT a replacement people — Rom 11:1 guard quoted in-thread.
+--   * v2 oil flows FROM the head DOWN to the body = the Spirit from the Anointed Head to the members
+--     (1 John 2:20,27); Ps 45:7 = the King anointed above his fellows. No co-equal grammar.
+--   * v3 "commanded the blessing, even life for evermore" = the covenant blessing (Lev 25:21) issuing
+--     in everlasting life (Dan 12:2) under the everlasting covenant of peace (Ezek 37:26) — not a poetic
+--     flourish but the resurrection-life of the gathered house.
+
+CREATE TEMP VIEW _s302_ps133_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ B. cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- ---- v1 brethren in unity / two-house reunion ----
+    ('canon','psalms',133,1,'canon','ezekiel',37,17,'free',
+     E'*And join them one to another into one stick; and they shall become one in thine hand.* (Ezekiel 37:17) The *brethren* who *dwell together in unity* are the two sticks — *For Yahudah (Judah)* and *For Joseph, the stick of Ephraim* (37:16) — made one in the hand of Yahuah (LORD). The unity David sings is not a mood but the regathering of the divided house.'),
+    ('canon','psalms',133,1,'canon','ezekiel',37,22,'free',
+     E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel)... and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all.* (Ezekiel 37:22) *How good and how pleasant it is for brethren to dwell together in unity* is the prophesied end of the divorce — Ephraim and Yahudah no longer two, but one people under one shepherd.'),
+    ('canon','psalms',133,1,'canon','john',17,21,'free',
+     E'*That they all may be one; as thou, Father, art in me, and I in thee, that they also may be one in us: that the world may believe that thou hast sent me.* (John 17:21) Yahusha (Jesus) prays Psalm 133 forward — the *unity* of the *brethren* is the oneness the Son asks the Father to keep, the gathered house made one.'),
+    ('canon','psalms',133,1,'canon','john',17,23,'free',
+     E'*I in them, and thou in me, that they may be made perfect in one; and that the world may know that thou hast sent me.* (John 17:23) The *brethren* dwelling *in unity* are *made perfect in one* — the two houses and all the scattered seed gathered into the one body of the Anointed, the Formed Son in them and the Father in him.'),
+    ('canon','psalms',133,1,'canon','ephesians',4,3,'free',
+     E'*Endeavouring to keep the unity of the Spirit in the bond of peace.* (Ephesians 4:3) The *unity* of *brethren* is kept by the Spirit in the bond of peace — the same covenant of peace Yahuah (LORD) makes with the regathered house (Ezekiel 37:26).'),
+    ('canon','psalms',133,1,'canon','ephesians',4,6,'free',
+     E'*One Elohim (God) and Father of all, who is above all, and through all, and in you all.* (Ephesians 4:6) *There is one body, and one Spirit... One Elohim and Father* — the *unity* of the *brethren* rests on the one Father, the formless Source, never two peoples and never co-equal persons but one household gathered to him.'),
+    ('canon','psalms',133,1,'canon','genesis',13,8,'free',
+     E'*And Abram said unto Lot, Let there be no strife, I pray thee, between me and thee, and between my herdmen and thy herdmen; for we be brethren.* (Genesis 13:8) The pattern of *brethren* who refuse strife runs from the father of the promise; what Abram kept toward Lot, the whole seed will keep when it *dwells together in unity*.'),
+    ('canon','psalms',133,1,'canon','romans',11,1,'free',
+     E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.* (Romans 11:1) The *brethren* gathered *in unity* are the one people never cast off — the guard against any reading that makes the reunited house a replacement people instead of Yashar''el (Israel) restored.'),
+    ('canon','psalms',133,1,'apocrypha','ecclesiasticus',25,1,'extras',
+     E'*In three things I was beautified, and stood up beautiful both before Yahuah (God) and men: the unity of brothers, the love of neighbours, a man and a wife that agree together.* (Ecclesiasticus 25:1) The wisdom of the second Temple names *the unity of brothers* first among the things beautiful before Yahuah (God) — the very *brethren... in unity* whose goodness and pleasantness David beholds.'),
+    -- ---- v2 the precious anointing oil ----
+    ('canon','psalms',133,2,'canon','exodus',30,25,'free',
+     E'*And thou shalt make it an oil of holy ointment, an ointment compound after the art of the apothecary: it shall be an holy anointing oil.* (Exodus 30:25) The *precious ointment* poured *upon the head* is the *holy anointing oil* of the sanctuary — not a common perfume but the consecrating oil that makes whatever it touches most holy.'),
+    ('canon','psalms',133,2,'canon','exodus',30,30,'free',
+     E'*And thou shalt anoint Aaron and his sons, and consecrate them, that they may minister unto me in the priest''s office.* (Exodus 30:30) The oil that *ran down... even Aaron''s beard... to the skirts of his garments* is the priestly anointing of Aaron — the unity of the *brethren* pictured as the consecrating oil that sets apart the whole house to minister.'),
+    ('canon','psalms',133,2,'canon','psalms',45,7,'free',
+     E'*Thou lovest righteousness, and hatest wickedness: therefore Elohim (God), thy Elohim (God), hath anointed thee with the oil of gladness above thy fellows.* (Psalm 45:7) The oil *upon the head* is the King anointed *above his fellows* — the Anointed (Messiah) on whose head the oil first rests before it flows down to the body.'),
+    ('canon','psalms',133,2,'canon','1-john',2,20,'free',
+     E'*But ye have an unction from the Holy One, and ye know all things.* (1 John 2:20) The oil running down from *the head* to *the skirts of his garments* is the *unction from the Holy One* — the Spirit poured on the Anointed Head and flowing down to every member of the body.'),
+    ('canon','psalms',133,2,'canon','1-john',2,27,'free',
+     E'*But the anointing which ye have received of him abideth in you... and even as it hath taught you, ye shall abide in him.* (1 John 2:27) The oil that descends *upon the beard... to the skirts of his garments* is the *anointing... received of him* that abides in the body — the Spirit reaching from the Head down to the very hem.'),
+    -- ---- v3 the dew of Hermon / commanded blessing ----
+    ('canon','psalms',133,3,'canon','deuteronomy',33,13,'free',
+     E'*And of Joseph he said, Blessed of Yahuah (LORD) be his land, for the precious things of heaven, for the dew, and for the deep that coucheth beneath.* (Deuteronomy 33:13) Moses blesses Joseph (Ephraim, the northern house) *for the dew* — the same *dew of Hermon* descending in blessing, binding the unity of the brethren to the blessing of the scattered house.'),
+    ('canon','psalms',133,3,'canon','deuteronomy',33,28,'free',
+     E'*Yashar''el (Israel) then shall dwell in safety alone: the fountain of Jacob shall be upon a land of corn and wine; also his heavens shall drop down dew.* (Deuteronomy 33:28) When Yashar''el (Israel) *dwells in safety*, the heavens *drop down dew* — the dwelling of the brethren in unity and the falling of the dew are one promised blessing.'),
+    ('canon','psalms',133,3,'canon','leviticus',25,21,'free',
+     E'*Then I will command my blessing upon you in the sixth year, and it shall bring forth fruit for three years.* (Leviticus 25:21) *There Yahuah commanded the blessing* echoes the Sabbath-year promise where Yahuah (LORD) *commands the blessing* — the commanded blessing is covenant provision, life sustained by his word.'),
+    -- ---- v3 life for evermore ----
+    ('canon','psalms',133,3,'canon','john',10,10,'free',
+     E'*I am come that they might have life, and that they might have it more abundantly.* (John 10:10) *There Yahuah commanded the blessing, even life for evermore* — the one shepherd of the gathered house gives the abundant, unending life the dew of blessing foreshadows.'),
+    ('canon','psalms',133,3,'canon','daniel',12,2,'free',
+     E'*And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2) The *life for evermore* that Yahuah commands is the *everlasting life* of the resurrection — the blessing reaches past death to the awakening of the sleeping.'),
+    ('canon','psalms',133,3,'canon','ezekiel',37,26,'free',
+     E'*Moreover I will make a covenant of peace with them; it shall be an everlasting covenant with them.* (Ezekiel 37:26) Where the brethren are *one* in the hand of Yahuah (LORD), there he commands *life for evermore* — the *everlasting covenant* of peace with the regathered house, the same place where the dew of blessing falls.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps133_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps133_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ C. threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-133-brethren-dwell-in-unity-the-two-houses-made-one',
+       E'Brethren Dwell in Unity — the Two Houses Made One',
+       E'*Behold, how good and how pleasant it is for brethren to dwell together in unity!* (Psalm 133:1) David''s keystone is read here not as a sentiment of fellowship but as the prophesied reunion of the divided house. The *brethren* are Yahudah (Judah) and Ephraim/Joseph — the two sticks of Ezekiel''s sign: *And join them one to another into one stick; and they shall become one in thine hand* (Ezekiel 37:17), *and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The Formed Son prays this oneness forward: *That they all may be one; as thou, Father, art in me, and I in thee* (John 17:21), *that they may be made perfect in one* (John 17:23). It is *the unity of the Spirit in the bond of peace* (Ephesians 4:3) resting on *One Elohim (God) and Father of all* (Ephesians 4:6) — one household, never two peoples, never co-equal persons. The pattern goes back to the father of the promise: *for we be brethren* (Genesis 13:8). And the second-Temple wisdom names it among the things beautiful before Yahuah (God): *the unity of brothers* (Ecclesiasticus 25:1). The guard stands over all of it — *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1): the brethren made one are Yashar''el (Israel) restored, never a replacement people.',
+       sv.verse_id, ev.verse_id, 'extras', 25300
+  FROM _s302_ps133_lookup sv, _s302_ps133_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=133 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=133 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-133-the-precious-anointing-oil-from-the-head-to-the-body',
+       E'The Precious Anointing Oil — from the Head to the Body',
+       E'*It is like the precious ointment upon the head, that ran down upon the beard, even Aaron''s beard: that went down to the skirts of his garments* (Psalm 133:2). The picture of unity is the holy oil of the sanctuary: *thou shalt make it an oil of holy ointment... it shall be an holy anointing oil* (Exodus 30:25), the oil with which *thou shalt anoint Aaron and his sons, and consecrate them, that they may minister unto me in the priest''s office* (Exodus 30:30). The oil is poured first *upon the head* and flows down — to the beard, to the hem. So it is with the Anointed (Messiah): *therefore Elohim (God), thy Elohim (God), hath anointed thee with the oil of gladness above thy fellows* (Psalm 45:7). The oil rests on the Head above his fellows, then runs down to the whole body: *ye have an unction from the Holy One, and ye know all things* (1 John 2:20), *the anointing which ye have received of him abideth in you* (1 John 2:27). The Spirit poured on the Head reaches every member down to the very skirts — the brethren made one by one anointing flowing from one Head.',
+       sv.verse_id, ev.verse_id, 'free', 25303
+  FROM _s302_ps133_lookup sv, _s302_ps133_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=133 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=133 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-133-as-the-dew-of-hermon-the-commanded-blessing',
+       E'As the Dew of Hermon — the Commanded Blessing',
+       E'*As the dew of Hermon, and as the dew that descended upon the mountains of Zion: for there Yahuah (LORD) commanded the blessing* (Psalm 133:3). The dew is the sign of covenant blessing on the land. Moses pronounces it over Joseph — the northern house, Ephraim: *Blessed of Yahuah (LORD) be his land, for the precious things of heaven, for the dew* (Deuteronomy 33:13); and over all Yashar''el (Israel) when it dwells in safety: *also his heavens shall drop down dew* (Deuteronomy 33:28). The dwelling of the brethren in unity and the falling of the dew are one promised gift. And the blessing here is *commanded* — the same word of Yahuah (LORD) that secures the Sabbath-year provision: *Then I will command my blessing upon you in the sixth year, and it shall bring forth fruit for three years* (Leviticus 25:21). The commanded blessing is covenant life sustained by his word, descending like dew on the gathered, unified house.',
+       sv.verse_id, ev.verse_id, 'free', 25306
+  FROM _s302_ps133_lookup sv, _s302_ps133_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=133 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=133 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-133-there-yahuah-commanded-life-for-evermore',
+       E'There Yahuah Commanded Life for Evermore',
+       E'*For there Yahuah (LORD) commanded the blessing, even life for evermore* (Psalm 133:3). The psalm closes not on a long life but on unending life — the blessing reaches past death. The one shepherd of the gathered house gives it: *I am come that they might have life, and that they might have it more abundantly* (John 10:10). It is the resurrection-life of Daniel''s vision: *many of them that sleep in the dust of the earth shall awake, some to everlasting life* (Daniel 12:2). And it is held in the everlasting covenant Yahuah (LORD) makes where the brethren are made one: *I will make a covenant of peace with them; it shall be an everlasting covenant with them* (Ezekiel 37:26). Where the two houses dwell together in unity, there — in that very place — Yahuah commands *life for evermore*.',
+       sv.verse_id, ev.verse_id, 'free', 25309
+  FROM _s302_ps133_lookup sv, _s302_ps133_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=133 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=133 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ D. thread_members ============================
+-- T1 brethren / two houses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    ('canon','ezekiel',37,17,1,E'*they shall become one in thine hand* (Ezekiel 37:17) — the two sticks, Yahudah and Joseph, joined into one.'),
+    ('canon','ezekiel',37,22,2,E'*they shall be no more two nations* (Ezekiel 37:22) — the divorce ended, one people under one shepherd.'),
+    ('canon','john',17,21,3,E'*That they all may be one* (John 17:21) — the Son prays Psalm 133 forward.'),
+    ('canon','john',17,23,4,E'*made perfect in one* (John 17:23) — the gathered house perfected into one body.'),
+    ('canon','ephesians',4,3,5,E'*the unity of the Spirit in the bond of peace* (Ephesians 4:3) — unity kept by the Spirit.'),
+    ('canon','ephesians',4,6,6,E'*One Elohim (God) and Father of all* (Ephesians 4:6) — one household on one Father.'),
+    ('canon','genesis',13,8,7,E'*for we be brethren* (Genesis 13:8) — Abram''s pattern of brethren without strife.'),
+    ('canon','romans',11,1,8,E'*Hath Elohim cast away his people? Elohim forbid* (Romans 11:1) — the guard: Yashar''el restored, not replaced.'),
+    ('apocrypha','ecclesiasticus',25,1,9,E'*the unity of brothers* (Ecclesiasticus 25:1) — named beautiful before Yahuah (God).')
+  ) AS m(tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN _s302_ps133_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=133 AND sv.verse_number=1
+  JOIN _s302_ps133_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-133-brethren-dwell-in-unity-the-two-houses-made-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- T2 anointing oil
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    ('canon','exodus',30,25,1,E'*it shall be an holy anointing oil* (Exodus 30:25) — the oil of the sanctuary, not common perfume.'),
+    ('canon','exodus',30,30,2,E'*thou shalt anoint Aaron and his sons* (Exodus 30:30) — the priestly anointing pictured as the oil on Aaron''s beard.'),
+    ('canon','psalms',45,7,3,E'*anointed thee with the oil of gladness above thy fellows* (Psalm 45:7) — the Anointed Head above his fellows.'),
+    ('canon','1-john',2,20,4,E'*ye have an unction from the Holy One* (1 John 2:20) — the oil flowing from the Head to the body.'),
+    ('canon','1-john',2,27,5,E'*the anointing which ye have received of him abideth in you* (1 John 2:27) — the Spirit reaching to the very hem.')
+  ) AS m(tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN _s302_ps133_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=133 AND sv.verse_number=2
+  JOIN _s302_ps133_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-133-the-precious-anointing-oil-from-the-head-to-the-body'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- T3 dew / commanded blessing
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    ('canon','deuteronomy',33,13,1,E'*Blessed of Yahuah be his land... for the dew* (Deuteronomy 33:13) — the dew blessing on Joseph/Ephraim.'),
+    ('canon','deuteronomy',33,28,2,E'*his heavens shall drop down dew* (Deuteronomy 33:28) — Yashar''el dwelling in safety, the heavens dropping dew.'),
+    ('canon','leviticus',25,21,3,E'*I will command my blessing upon you* (Leviticus 25:21) — the commanded blessing as covenant provision.')
+  ) AS m(tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN _s302_ps133_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=133 AND sv.verse_number=3
+  JOIN _s302_ps133_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-133-as-the-dew-of-hermon-the-commanded-blessing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- T4 life for evermore
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    ('canon','john',10,10,1,E'*that they might have life... more abundantly* (John 10:10) — the shepherd''s abundant, unending life.'),
+    ('canon','daniel',12,2,2,E'*some to everlasting life* (Daniel 12:2) — the resurrection-life reaching past the dust.'),
+    ('canon','ezekiel',37,26,3,E'*an everlasting covenant with them* (Ezekiel 37:26) — life for evermore held in the covenant of peace with the one house.')
+  ) AS m(tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN _s302_ps133_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=133 AND sv.verse_number=3
+  JOIN _s302_ps133_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-133-there-yahuah-commanded-life-for-evermore'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_134.sql (Psalm 134) -----
+-- Chapter: Psalm 134 — the closing Song of Ascents, the night-watch benediction.
+-- Tag: ps134   Session prefix: s302   Sort band base: 25325 (25325, 25328, 25331)
+-- Member table: cross_reference_thread_members. Source rows always ('canon','psalms',134,v).
+-- Thread slugs SINGULAR prefix psalm-134-...  (checked EXISTING_SLUGS.txt — none present).
+-- All members are canon Tanakh / NT → every cross_reference row tier 'free', every thread tier 'free'.
+--
+-- Psalm 134 coverage:
+--   v.1  (Behold, bless ye Yahuah, all ye servants... which by night stand in the house of Yahuah)
+--        NT:     Revelation 7:15 (serve him day and night in his temple); Luke 2:37 (Anna served... night and day) — used
+--        Extras: none warranted (the night-watch temple service is witnessed full within canon)
+--        Tanakh: 1 Chronicles 9:33 (the singers... employed in that work day and night); Leviticus 8:35 (abide... day and night... keep the charge) — used
+--   v.2  (Lift up your hands in the sanctuary, and bless Yahuah)
+--        NT:     1 Timothy 2:8 (lifting up holy hands) — used
+--        Extras: none warranted (lifted-hands worship fully witnessed in the Psalter)
+--        Tanakh: Psalm 28:2 (lift up my hands toward thy holy oracle); Psalm 141:2 (lifting up of my hands as the evening sacrifice) — used
+--   v.3  (Yahuah that made heaven and earth bless thee out of Zion)
+--        NT:     John 1:3 (All things were made by him) — used, the Formed Word as the Maker's hand
+--        Extras: none warranted (Maker-of-heaven-and-earth + priestly blessing fully canon)
+--        Tanakh: Psalm 121:2 / Psalm 124:8 (made heaven and earth); Psalm 128:5 (bless thee out of Zion); Numbers 6:24-26 (the priestly blessing) — used
+--
+-- Threads (3):
+--   1. psalm-134-servants-that-by-night-stand-in-the-house        [Tanakh + NT]  v1
+--   2. psalm-134-lift-up-your-hands-in-the-sanctuary-and-bless     [Tanakh + NT]  v2
+--   3. psalm-134-the-maker-of-heaven-and-earth-bless-thee-out-of-zion  [Tanakh + NT]  v3
+-- Framework-load-bearing: v3 framed as the Maker working BY the Formed Word (John 1:3) — the
+-- formless Father who made heaven and earth blesses from Zion through the priestly benediction
+-- (Num 6:24-26) answered back up to him; lateral seam to the twin Ascents Ps 128:5.
+
+CREATE TEMP VIEW _s302_ps134_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- v.1 — the night watches in the house of Yahuah
+    ('canon','psalms',134,1,'canon','1-chronicles',9,33,'free',
+     E'*And these are the singers, chief of the fathers of the Levites, who remaining in the chambers were free: for they were employed in that work day and night* (1 Chronicles 9:33). The Levitical singers were posted in the temple chambers around the clock — the very office the psalm hails when it says *all ye servants of Yahuah (LORD), which by night stand in the house of Yahuah (LORD)* (Psalm 134:1). The night watch is not idle waiting but appointed ministry.'),
+    ('canon','psalms',134,1,'canon','leviticus',8,35,'free',
+     E'*Therefore shall ye abide at the door of the tabernacle of the congregation day and night seven days, and keep the charge of Yahuah (LORD), that ye die not: for so I am commanded* (Leviticus 8:35). From the priesthood''s consecration the charge was kept *day and night* at the door of the sanctuary — the standing duty Psalm 134 calls *servants of Yahuah (LORD), which by night stand in the house of Yahuah (LORD)* (Psalm 134:1).'),
+    ('canon','psalms',134,1,'canon','revelation',7,15,'free',
+     E'*Therefore are they before the throne of Elohim (God), and serve him day and night in his temple: and he that sitteth on the throne shall dwell among them* (Revelation 7:15). The temple night-watch of Psalm 134 — *servants of Yahuah (LORD), which by night stand in the house of Yahuah (LORD)* (Psalm 134:1) — opens forward to the gathered multitude who *serve him day and night in his temple*: the same ceaseless ministry, consummated.'),
+    ('canon','psalms',134,1,'canon','luke',2,37,'free',
+     E'*And she was a widow of about fourscore and four years, which departed not from the temple, but served Elohim (God) with fastings and prayers night and day* (Luke 2:37). Anna kept the very watch of Psalm 134 — she stood by night in the house of Yahuah (LORD), one of the *servants of Yahuah (LORD), which by night stand in the house* (Psalm 134:1), waiting on the Formed Son she was about to behold.'),
+
+    -- v.2 — lift up your hands in the sanctuary
+    ('canon','psalms',134,2,'canon','1-timothy',2,8,'free',
+     E'*I will therefore that men pray every where, lifting up holy hands, without wrath and doubting* (1 Timothy 2:8). The sanctuary posture of *Lift up your hands in the sanctuary, and bless Yahuah (LORD)* (Psalm 134:2) is carried forward unbroken — *lifting up holy hands* — the same act of blessing worship, now in every place where Yahuah (LORD) is named.'),
+    ('canon','psalms',134,2,'canon','psalms',28,2,'free',
+     E'*Hear the voice of my supplications, when I cry unto thee, when I lift up my hands toward thy holy oracle* (Psalm 28:2). The hands lifted *toward thy holy oracle* are the same hands the night-watch raises in *Lift up your hands in the sanctuary, and bless Yahuah (LORD)* (Psalm 134:2) — worship directed to the holy place where Yahuah (LORD) sets his Name.'),
+    ('canon','psalms',134,2,'canon','psalms',141,2,'free',
+     E'*Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice* (Psalm 141:2). David weds the lifted hands to the appointed offering — the evening sacrifice — so the gesture of *Lift up your hands in the sanctuary, and bless Yahuah (LORD)* (Psalm 134:2) is itself an offering, prayer rising at the hour of the appointed service.'),
+
+    -- v.3 — Yahuah that made heaven and earth bless thee out of Zion
+    ('canon','psalms',134,3,'canon','john',1,3,'free',
+     E'*All things were made by him; and without him was not any thing made that was made* (John 1:3). When Psalm 134 names *Yahuah (LORD) that made heaven and earth* (Psalm 134:3), the making is done by the Formed Word — the expressed Word drawn from the formless Father, the hand by whom all things were made. The Most High who blesses out of Zion is the same who created by his Son.'),
+    ('canon','psalms',134,3,'canon','psalms',121,2,'free',
+     E'*My help cometh from Yahuah (LORD), which made heaven and earth* (Psalm 121:2). The Songs of Ascents press this title again and again — the Maker is the helper — and Psalm 134 closes the climb by turning it into blessing: *Yahuah (LORD) that made heaven and earth bless thee out of Zion* (Psalm 134:3). The same Maker who is our help now sends his blessing down.'),
+    ('canon','psalms',134,3,'canon','psalms',124,8,'free',
+     E'*Our help is in the name of Yahuah (LORD), who made heaven and earth* (Psalm 124:8). The pilgrim refrain names the Maker as the source of help; Psalm 134 answers it with benediction — *Yahuah (LORD) that made heaven and earth bless thee out of Zion* (Psalm 134:3) — Creator-power bent toward the worshipper''s good.'),
+    ('canon','psalms',134,3,'canon','psalms',128,5,'free',
+     E'*Yahuah (LORD) shall bless thee out of Zion: and thou shalt see the good of Jerusalem all the days of thy life* (Psalm 128:5). The twin Ascent speaks the very blessing Psalm 134 now pronounces — *bless thee out of Zion* (Psalm 134:3) — the night-watch lifting the benediction over all who fear Yahuah (LORD), out from the dwelling place of his Name.'),
+    ('canon','psalms',134,3,'canon','numbers',6,24,'free',
+     E'*Yahuah (LORD) bless thee, and keep thee* (Numbers 6:24). The priestly blessing Aaron was commanded to lay on the children of Yashar''el (Israel) is the blessing the servants bless Yahuah (LORD) with, and which Yahuah (LORD) returns *out of Zion* (Psalm 134:3): the worship lifted up in verse 2 answered by the Maker''s benediction sent down in verse 3.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps134_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps134_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-134-servants-that-by-night-stand-in-the-house',
+       E'Servants that by night stand in the house of Yahuah',
+       E'Psalm 134 opens with the night watch: *Behold, bless ye Yahuah (LORD), all ye servants of Yahuah (LORD), which by night stand in the house of Yahuah (LORD)* (Psalm 134:1). This is no idle vigil but appointed ministry. The Levitical singers kept it from the first — *And these are the singers, chief of the fathers of the Levites, who remaining in the chambers were free: for they were employed in that work day and night* (1 Chronicles 9:33) — and the charge itself ran round the clock from the priesthood''s consecration: *Therefore shall ye abide at the door of the tabernacle of the congregation day and night seven days, and keep the charge of Yahuah (LORD), that ye die not* (Leviticus 8:35). The watch opens forward to its consummation — the gathered multitude who *serve him day and night in his temple* (Revelation 7:15) — and one faithful keeper of it, Anna, *served Elohim (God) with fastings and prayers night and day* (Luke 2:37) until she beheld the Formed Son. The night belongs to Yahuah (LORD); his servants stand and bless.',
+       sv.verse_id, ev.verse_id, 'free', 25325
+  FROM _s302_ps134_lookup sv, _s302_ps134_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=134 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=134 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-134-lift-up-your-hands-in-the-sanctuary-and-bless',
+       E'Lift up your hands in the sanctuary, and bless Yahuah',
+       E'The watch does not merely stand; it worships: *Lift up your hands in the sanctuary, and bless Yahuah (LORD)* (Psalm 134:2). The lifted hand is the body''s posture of blessing, aimed at the holy place — *Hear the voice of my supplications, when I cry unto thee, when I lift up my hands toward thy holy oracle* (Psalm 28:2) — and joined to the appointed offering, *Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice* (Psalm 141:2), so the gesture itself rises as sacrifice at the hour of service. The posture is never abolished; it is carried forward into every place his Name is called — *I will therefore that men pray every where, lifting up holy hands, without wrath and doubting* (1 Timothy 2:8). Holy hands, lifted in the sanctuary, blessing Yahuah (LORD).',
+       sv.verse_id, ev.verse_id, 'free', 25328
+  FROM _s302_ps134_lookup sv, _s302_ps134_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=134 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=134 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-134-the-maker-of-heaven-and-earth-bless-thee-out-of-zion',
+       E'The Maker of heaven and earth bless thee out of Zion',
+       E'The last Song of Ascents ends where the climb began — with the Maker — and turns his creating power into blessing: *Yahuah (LORD) that made heaven and earth bless thee out of Zion* (Psalm 134:3). The making is done by the Formed Word, the expressed Word drawn from the formless Father: *All things were made by him; and without him was not any thing made that was made* (John 1:3) — the Most High who blesses out of Zion is the same who created by his Son. The pilgrim refrain has named this Maker all the way up the road — *My help cometh from Yahuah (LORD), which made heaven and earth* (Psalm 121:2); *Our help is in the name of Yahuah (LORD), who made heaven and earth* (Psalm 124:8) — and the twin Ascent already spoke this very benediction: *Yahuah (LORD) shall bless thee out of Zion: and thou shalt see the good of Jerusalem all the days of thy life* (Psalm 128:5). So the worship lifted up in verse 2 is answered by the priestly blessing sent down: *Yahuah (LORD) bless thee, and keep thee* (Numbers 6:24) — Creator-power bent, out of the dwelling place of his Name, toward the good of those who serve him.',
+       sv.verse_id, ev.verse_id, 'free', 25331
+  FROM _s302_ps134_lookup sv, _s302_ps134_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=134 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=134 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1: servants that by night stand
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (134,1,'canon','1-chronicles',9,33,1,E'1 Chronicles 9:33 — *the singers... were employed in that work day and night*: the Levitical night watch the psalm hails.'),
+    (134,1,'canon','leviticus',8,35,2,E'Leviticus 8:35 — *abide at the door of the tabernacle... day and night... and keep the charge of Yahuah (LORD)*: the standing duty from the priesthood''s consecration.'),
+    (134,1,'canon','revelation',7,15,3,E'Revelation 7:15 — *serve him day and night in his temple*: the night-watch consummated in the gathered multitude.'),
+    (134,1,'canon','luke',2,37,4,E'Luke 2:37 — Anna *served Elohim (God) with fastings and prayers night and day*: one faithful keeper of the watch, awaiting the Formed Son.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-134-servants-that-by-night-stand-in-the-house'
+  JOIN _s302_ps134_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps134_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: lift up your hands
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (134,2,'canon','psalms',28,2,1,E'Psalm 28:2 — *when I lift up my hands toward thy holy oracle*: hands raised toward the holy place.'),
+    (134,2,'canon','psalms',141,2,2,E'Psalm 141:2 — *the lifting up of my hands as the evening sacrifice*: the gesture itself an offering at the appointed hour.'),
+    (134,2,'canon','1-timothy',2,8,3,E'1 Timothy 2:8 — *lifting up holy hands*: the sanctuary posture carried forward into every place his Name is named.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-134-lift-up-your-hands-in-the-sanctuary-and-bless'
+  JOIN _s302_ps134_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps134_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the Maker bless thee out of Zion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (134,3,'canon','john',1,3,1,E'John 1:3 — *All things were made by him*: the making done by the Formed Word, the Father''s hand in creation.'),
+    (134,3,'canon','psalms',121,2,2,E'Psalm 121:2 — *My help cometh from Yahuah (LORD), which made heaven and earth*: the Ascent refrain, Maker as helper.'),
+    (134,3,'canon','psalms',124,8,3,E'Psalm 124:8 — *Our help is in the name of Yahuah (LORD), who made heaven and earth*: the pilgrim refrain answered now with blessing.'),
+    (134,3,'canon','psalms',128,5,4,E'Psalm 128:5 — *Yahuah (LORD) shall bless thee out of Zion*: the twin Ascent speaking the very benediction.'),
+    (134,3,'canon','numbers',6,24,5,E'Numbers 6:24 — *Yahuah (LORD) bless thee, and keep thee*: the priestly blessing returned out of Zion, answering the worship lifted up.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-134-the-maker-of-heaven-and-earth-bless-thee-out-of-zion'
+  JOIN _s302_ps134_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps134_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+DROP VIEW _s302_ps134_lookup;
+
+-- ----- fragment: minion_psalms_135.sql (Psalm 135) -----
+-- Chapter: Psalm 135 — a Hallelujah praise-anthology woven from Exodus, Deuteronomy,
+--          Jeremiah 10, and Psalm 115 (its twin idol-polemic / threefold-call psalm).
+-- Tag: ps135   Session prefix: s302   Sort band base: 25350 (step 3)
+-- Slug prefix (SINGULAR): psalm-135-...   (checked EXISTING_SLUGS.txt — no collisions)
+--
+-- Threads (5):
+--   25350  psalm-135-yahuah-hath-chosen-jacob-for-his-peculiar-treasure      [Tanakh + NT]  free
+--   25353  psalm-135-whatsoever-yahuah-pleased-the-sovereign-maker           [Tanakh]       free
+--   25356  psalm-135-who-smote-egypt-and-gave-the-land-for-an-heritage       [Tanakh]       free
+--   25359  psalm-135-the-idols-of-the-heathen-are-the-work-of-mens-hands     [Tanakh+NT+Extras] extras
+--   25362  psalm-135-bless-yahuah-o-house-of-israel-the-threefold-call       [Tanakh]       free
+--
+-- Psalm 135 coverage:
+--   v.1-3  (Praise ye Yahuah ... ye that stand in the house of Yahuah)
+--          NT:     none warranted (temple-court doxology framing)
+--          Extras: none warranted
+--          Tanakh: Ps 134:1 lateral (servants standing in the house) — folded into the
+--                  threefold-call thread's frame; not its own thread (call-to-praise envelope).
+--   v.4    (Yahuah hath chosen Jacob ... Israel for his peculiar treasure)
+--          NT:     Titus 2:14 / 1 Peter 2:9 (a peculiar people — restoration, NOT replacement); Rom 11:1-2 guard
+--          Extras: none warranted
+--          Tanakh: Exod 19:5 (peculiar treasure), Deut 7:6 (chosen ... special people), Mal 3:17 (mine ... my jewels)
+--          → THREAD 1
+--   v.5-7  (Yahuah is great ... whatsoever Yahuah pleased ... wind out of his treasuries)
+--          NT:     none warranted (Formed-Maker named in prose)
+--          Extras: none warranted
+--          Tanakh: Ps 115:3 (done whatsoever he pleased), Jer 10:12-13 (which this psalm quotes)
+--          → THREAD 2
+--   v.8-12 (smote the firstborn of Egypt ... gave their land for an heritage unto Israel)
+--          NT:     none warranted (Exodus recital)
+--          Extras: none warranted
+--          Tanakh: Exod 12:29 (smote all the firstborn), Deut 4:34 (signs and wonders), Num 21:34 /
+--                  Deut 2:33 (Sihon & Og), Ps 136:10/21 lateral, Deut 32:9 (Jacob the lot of his inheritance)
+--          → THREAD 3
+--   v.13-14 (Thy name endureth for ever ... Yahuah will judge his people)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deut 32:9/36 themes — folded into the heritage thread's frame; not its own thread.
+--   v.15-18 (idols of the heathen are silver and gold ... they that make them are like unto them)
+--          NT:     1 Cor 8:4 (an idol is nothing), 1 Thess 1:9 (turned from idols), Rev 9:20 (repented not ... idols)
+--          Extras: Wisdom of Solomon 15:15-16 (idols neither see nor hear nor breathe; man made them) — clean witness
+--          Tanakh: Ps 115:4 (the twin it echoes), Jer 10:5 (cannot speak/go), Isa 44:9 (graven image ... vanity)
+--          → THREAD 4 (extras-bearing)
+--   v.19-20 (Bless Yahuah O house of Israel ... house of Aaron ... house of Levi ... ye that fear Yahuah)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Ps 115:9-11 (twin threefold call), Ps 118:2-4 (the threefold "let ... now say")
+--          → THREAD 5
+--   v.21  (Blessed be Yahuah out of Zion ... Praise ye Yahuah)
+--          NT/Extras/Tanakh: none warranted (Zion benediction close; Ps 134:3 lateral noted in frame)
+
+CREATE TEMP VIEW _s302_ps135_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================================
+-- B. cross_references
+-- ============================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: v.4 — chosen Jacob / peculiar treasure (election of the WHOLE house)
+    ('canon','psalms',135,4,'canon','exodus',19,5,'free',
+     E'*Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine* (Exodus 19:5). The psalm''s *Yahuah (LORD) hath chosen Jacob unto himself, and Yashar''el (Israel) for his peculiar treasure* (Psalm 135:4) sings back the Sinai election word: the same Hebrew *segullah*, peculiar-treasure, bound to obeying his voice and keeping his covenant — election is covenant-kept, never lineage-only and never confession-only.'),
+    ('canon','psalms',135,4,'canon','deuteronomy',7,6,'free',
+     E'*For thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth* (Deuteronomy 7:6). The psalm''s *hath chosen Jacob unto himself* (Psalm 135:4) is this Deuteronomy choosing exactly — the one whole house set apart, the two-house people Yahuah took for his own.'),
+    ('canon','psalms',135,4,'canon','malachi',3,17,'free',
+     E'*And they shall be mine, saith Yahuah Tseva''ot (LORD of hosts), in that day when I make up my jewels; and I will spare them, as a man spareth his own son that serveth him* (Malachi 3:17). The *peculiar treasure* of Psalm 135:4 reaches forward to the day Yahuah gathers his jewels — the elect house preserved, not cast off, *as a man spareth his own son*.'),
+    ('canon','psalms',135,4,'canon','titus',2,14,'free',
+     E'*Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works* (Titus 2:14). The *peculiar treasure* of Psalm 135:4 is the *peculiar people* the Formed Son redeems and purifies — restoration of the same chosen house unto Torah-zeal, never the replacement of it.'),
+    ('canon','psalms',135,4,'canon','1-peter',2,9,'free',
+     E'*But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light* (1 Peter 2:9). Peter lays the Sinai-and-psalm titles — *chosen*, *holy nation*, *a peculiar people* — on the regathered house; the *peculiar treasure* of Psalm 135:4 is gathered out of darkness, not annulled.'),
+    ('canon','psalms',135,4,'canon','romans',11,1,'free',
+     E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). The guard on the election of Psalm 135:4: because Yahuah *hath chosen Jacob*, his people are never cast away — Paul stands as living proof of the unbroken covenant line.'),
+    ('canon','psalms',135,4,'canon','romans',11,2,'free',
+     E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The *chosen ... peculiar treasure* of Psalm 135:4 is foreknown and kept; the choosing of Jacob is irrevocable — the two-house people stand because Yahuah set his love upon them, not because of merit they brought.'),
+
+    -- THREAD 2: v.5-7 — the sovereign Maker (the Formed Word), quoting Jeremiah 10
+    ('canon','psalms',135,6,'canon','psalms',115,3,'free',
+     E'*But our Elohim (God) is in the heavens: he hath done whatsoever he hath pleased* (Psalm 115:3). The twin idol-psalm''s confession is Psalm 135''s opening of the same theme — *Whatsoever Yahuah (LORD) pleased, that did he in heaven, and in earth* (Psalm 135:6): the living Maker who acts at will set against the idols that cannot act at all.'),
+    ('canon','psalms',135,7,'canon','jeremiah',10,12,'free',
+     E'*He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion* (Jeremiah 10:12). Psalm 135:6-7 draws straight from Jeremiah''s great Maker — the Formed Word by whom the earth was made — the same hand that *causeth the vapours to ascend* over against the dead idols of the surrounding verse.'),
+    ('canon','psalms',135,7,'canon','jeremiah',10,13,'free',
+     E'*When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures* (Jeremiah 10:13). Psalm 135:7 — *he causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries* — is this Jeremiah verse almost word for word: the psalm consciously sings the prophet''s polemic that the Maker speaks and the storehouses obey, while idols are nothing.'),
+
+    -- THREAD 3: v.8-12 — smote Egypt, smote the kings, gave the land for an heritage
+    ('canon','psalms',135,8,'canon','exodus',12,29,'free',
+     E'*And it came to pass, that at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt, from the firstborn of Pharaoh that sat on his throne unto the firstborn of the captive that was in the dungeon; and all the firstborn of cattle* (Exodus 12:29). Psalm 135:8 — *Who smote the firstborn of Egypt, both of man and beast* — recites the Passover night itself, the tenth blow by which Yahuah brought his people out.'),
+    ('canon','psalms',135,9,'canon','deuteronomy',4,34,'free',
+     E'*Or hath Elohim (God) assayed to go and take him a nation from the midst of another nation, by temptations, by signs, and by wonders, and by war, and by a mighty hand ... according to all that Yahuah Elohaychem (the LORD your God) did for you in Egypt before your eyes?* (Deuteronomy 4:34). The *tokens and wonders* Yahuah *sent into the midst of thee, O Egypt* (Psalm 135:9) are these very signs and wonders by which a nation was taken from the midst of a nation — the unique Exodus deliverance.'),
+    ('canon','psalms',135,11,'canon','numbers',21,34,'free',
+     E'*And Yahuah (LORD) said unto Moses, Fear him not: for I have delivered him into thy hand, and all his people, and his land; and thou shalt do to him as thou didst unto Sihon king of the Amorites, which dwelt at Heshbon* (Numbers 21:34). Psalm 135:11 names *Sihon king of the Amorites, and Og king of Bashan* — the two kings of Numbers 21 whose defeat opened the heritage east of Jordan.'),
+    ('canon','psalms',135,11,'canon','deuteronomy',2,33,'free',
+     E'*And Yahuah Eloheinu (the LORD our God) delivered him before us; and we smote him, and his sons, and all his people* (Deuteronomy 2:33). Moses'' recital of the fall of Sihon stands behind Psalm 135:10-11 — *Who smote great nations, and slew mighty kings; Sihon king of the Amorites* — the deliverance Yahuah wrought, not Israel''s own arm.'),
+    ('canon','psalms',135,10,'canon','psalms',136,17,'free',
+     E'*To him which smote great kings: for his mercy endureth for ever* (Psalm 136:17). Psalm 135 and its companion Psalm 136 sing the same conquest; the psalm''s *Who smote great nations, and slew mighty kings* (Psalm 135:10) is Psalm 136''s refrain that every blow against the kings was an act of enduring mercy toward the heritage-people.'),
+    ('canon','psalms',135,12,'canon','psalms',136,21,'free',
+     E'*And gave their land for an heritage: for his mercy endureth for ever* (Psalm 136:21). Psalm 135:12 — *And gave their land for an heritage, an heritage unto Yashar''el (Israel) his people* — is Psalm 136''s same gift, the land bestowed as covenant inheritance on the whole house.'),
+    ('canon','psalms',135,12,'canon','deuteronomy',32,9,'free',
+     E'*For the LORD''S portion is his people; Jacob is the lot of his inheritance* (Deuteronomy 32:9). The land *for an heritage ... unto Yashar''el (Israel) his people* (Psalm 135:12) rests on the deeper inheritance of the Song of Moses: the people themselves are Yahuah''s portion, Jacob his allotted heritage — the two-house people belong to him.'),
+
+    -- THREAD 4: v.15-18 — the idol polemic (extras-bearing)
+    ('canon','psalms',135,15,'canon','psalms',115,4,'free',
+     E'*Their idols are silver and gold, the work of men''s hands* (Psalm 115:4). Psalm 135:15 is the twin verse it echoes — *The idols of the heathen are silver and gold, the work of men''s hands* — the two idol-psalms standing back to back against the lifeless gods.'),
+    ('canon','psalms',135,16,'canon','jeremiah',10,5,'free',
+     E'*They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go ... Be not afraid of them; for they cannot do evil, neither also is it in them to do good* (Jeremiah 10:5). Psalm 135:16 — *They have mouths, but they speak not; eyes have they, but they see not* — sings Jeremiah''s mockery: the idol cannot speak, cannot walk, can neither harm nor help.'),
+    ('canon','psalms',135,15,'canon','isaiah',44,9,'free',
+     E'*They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed* (Isaiah 44:9). Isaiah''s long idol-satire underwrites Psalm 135:15-18: the maker of the image is vanity, the image sees not — *They that make them are like unto them* (Psalm 135:18).'),
+    ('canon','psalms',135,16,'apocrypha','the-wisdom-of-solomon',15,15,'extras',
+     E'*For they counted all the idols of the heathen to be gods: which neither have the use of eyes to see, nor noses to draw breath, nor ears to hear, nor fingers of hands to handle; and as for their feet, they are slow to go* (Wisdom of Solomon 15:15). The Wisdom-writer carries the psalm''s very catalogue — *They have mouths, but they speak not; eyes have they, but they see not ... neither is there any breath in their mouths* (Psalm 135:16-17): eyes, breath, ears, hands, feet, all lifeless.'),
+    ('canon','psalms',135,18,'apocrypha','the-wisdom-of-solomon',15,16,'extras',
+     E'*For man made them, and he that borrowed his own spirit fashioned them: but no man can make a god like to himself* (Wisdom of Solomon 15:16). This is the psalm''s verdict of verse 18 — *They that make them are like unto them: so is every one that trusteth in them*: the mortal fashions a dead thing and sinks to its level; trust in the work of hands deadens the truster.'),
+    ('canon','psalms',135,18,'canon','1-corinthians',8,4,'free',
+     E'*As concerning therefore the eating of those things that are offered in sacrifice unto idols, we know that an idol is nothing in the world, and that there is none other Elohim (God) but one* (1 Corinthians 8:4). Paul carries the psalm forward: the idol is *nothing* — *They that make them are like unto them* (Psalm 135:18), so there is none other Elohim but the one living Maker the psalm has just praised.'),
+    ('canon','psalms',135,18,'canon','1-thessalonians',1,9,'free',
+     E'*For they themselves shew of us what manner of entering in we had unto you, and how ye turned to Elohim (God) from idols to serve the living and true Elohim (God)* (1 Thessalonians 1:9). The psalm''s warning that *every one that trusteth in them* (Psalm 135:18) becomes as lifeless as the idol is answered in the turning the apostle describes: from dead idols to *the living and true Elohim*.'),
+    ('canon','psalms',135,18,'canon','revelation',9,20,'free',
+     E'*And the rest of the men which were not killed by these plagues yet repented not of the works of their hands, that they should not worship devils, and idols of gold, and silver, and brass, and stone, and of wood: which neither can see, nor hear, nor walk* (Revelation 9:20). The end-time refusal repeats the psalm''s indictment exactly — idols of *gold, and silver ... which neither can see, nor hear, nor walk* — and the worshippers, hardened, are *like unto them* (Psalm 135:18).'),
+
+    -- THREAD 5: v.19-20 — the houses called to bless (threefold call)
+    ('canon','psalms',135,19,'canon','psalms',115,9,'free',
+     E'*O Yashar''el (Israel), trust thou in Yahuah (LORD): he is their help and their shield* (Psalm 115:9). The twin psalm''s call to the house of Israel matches Psalm 135:19 — *Bless Yahuah (LORD), O house of Yashar''el (Israel)* — the same congregation summoned, there to trust, here to bless.'),
+    ('canon','psalms',135,19,'canon','psalms',115,10,'free',
+     E'*O house of Aaron, trust in Yahuah (LORD): he is their help and their shield* (Psalm 115:10). Psalm 135:19 calls the same *house of Aaron* to bless that Psalm 115 calls to trust — the priestly house joined to the whole house in the one worship.'),
+    ('canon','psalms',135,20,'canon','psalms',115,11,'free',
+     E'*Ye that fear Yahuah (LORD), trust in Yahuah (LORD): he is their help and their shield* (Psalm 115:11). The threefold close of Psalm 135:20 — *ye that fear Yahuah (LORD), bless Yahuah (LORD)* — gathers in *ye that fear Yahuah* exactly as the twin psalm does: house of Israel, house of Aaron, and all the Yahuah-fearers, one chorus.'),
+    ('canon','psalms',135,19,'canon','psalms',118,2,'free',
+     E'*Let Yashar''el (Israel) now say, that his mercy endureth for ever* (Psalm 118:2). The antiphonal *let ... now say* of Psalm 118 is the same liturgical summons as Psalm 135:19''s *Bless Yahuah (LORD), O house of Yashar''el (Israel)* — the congregation of the whole house called first to confess his mercy.'),
+    ('canon','psalms',135,19,'canon','psalms',118,3,'free',
+     E'*Let the house of Aaron now say, that his mercy endureth for ever* (Psalm 118:3). Psalm 118''s second call to the *house of Aaron* answers Psalm 135:19''s *bless Yahuah (LORD), O house of Aaron* — the priestly house given its part in the responsive praise.'),
+    ('canon','psalms',135,20,'canon','psalms',118,4,'free',
+     E'*Let them now that fear Yahuah (LORD) say, that his mercy endureth for ever* (Psalm 118:4). The third call of Psalm 118 — *them now that fear Yahuah* — is the third call of Psalm 135:20, *ye that fear Yahuah (LORD), bless Yahuah (LORD)*: the same threefold structure, Israel, Aaron, and the Yahuah-fearers, sealing the psalm in united blessing.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps135_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps135_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================================
+-- C. cross_reference_threads
+-- ============================================================================
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-135-yahuah-hath-chosen-jacob-for-his-peculiar-treasure',
+       E'Yahuah hath chosen Jacob for his peculiar treasure',
+       E'At the heart of the praise stands the election of the whole house: *For Yahuah (LORD) hath chosen Jacob unto himself, and Yashar''el (Israel) for his peculiar treasure* (Psalm 135:4). The phrase is lifted straight from Sinai — *if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people* (Exodus 19:5) — and from Moses'' charge, *Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people* (Deuteronomy 7:6). Election is covenant-kept, not lineage-only and not confession-only. It reaches forward to the day Yahuah gathers his own: *they shall be mine, saith Yahuah Tseva''ot (LORD of hosts), in that day when I make up my jewels* (Malachi 3:17). The Formed Son redeems this same treasure — *purify unto himself a peculiar people, zealous of good works* (Titus 2:14) — and Peter lays the Sinai titles on the regathered house: *ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9). This is restoration of the chosen house, never its replacement, and the guard is fixed: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1); *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). Because Yahuah chose Jacob, the two-house people stand.',
+       sv.verse_id, ev.verse_id, 'free', 25350
+  FROM _s302_ps135_lookup sv, _s302_ps135_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=135 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=135 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-135-whatsoever-yahuah-pleased-the-sovereign-maker',
+       E'Whatsoever Yahuah pleased: the sovereign Maker',
+       E'Against the dead idols the psalm sets the living Maker who does as he pleases: *Whatsoever Yahuah (LORD) pleased, that did he in heaven, and in earth, in the seas, and all deep places* (Psalm 135:6); *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries* (Psalm 135:7). This is the confession of the twin idol-psalm — *our Elohim (God) is in the heavens: he hath done whatsoever he hath pleased* (Psalm 115:3) — and it is drawn almost word for word from Jeremiah''s great Maker-polemic: *He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion* (Jeremiah 10:12); *he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures* (Jeremiah 10:13). The Formed Word by whom the earth was made commands the storehouses of wind and rain at his pleasure; the idol of the next breath cannot lift a finger. The Maker speaks and creation obeys.',
+       sv.verse_id, ev.verse_id, 'free', 25353
+  FROM _s302_ps135_lookup sv, _s302_ps135_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=135 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=135 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-135-who-smote-egypt-and-gave-the-land-for-an-heritage',
+       E'Who smote Egypt and gave the land for an heritage',
+       E'The psalm recites the founding deliverance: *Who smote the firstborn of Egypt, both of man and beast* (Psalm 135:8) — the Passover night itself, *at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt* (Exodus 12:29). The *tokens and wonders* sent into the midst of Egypt (Psalm 135:9) are the signs by which a nation was taken from the midst of a nation: *by signs, and by wonders, and by war, and by a mighty hand* (Deuteronomy 4:34). Then the conquest: *Who smote great nations, and slew mighty kings; Sihon king of the Amorites, and Og king of Bashan* (Psalm 135:10-11) — the kings of Numbers 21, *I have delivered him into thy hand* (Numbers 21:34), *Yahuah Eloheinu (the LORD our God) delivered him before us* (Deuteronomy 2:33), every blow an act of enduring mercy in the companion psalm: *To him which smote great kings: for his mercy endureth for ever* (Psalm 136:17). And the gift: *And gave their land for an heritage, an heritage unto Yashar''el (Israel) his people* (Psalm 135:12); *And gave their land for an heritage: for his mercy endureth for ever* (Psalm 136:21). Beneath the land lies the deeper inheritance — *the LORD''S portion is his people; Jacob is the lot of his inheritance* (Deuteronomy 32:9): the two-house people themselves are Yahuah''s heritage.',
+       sv.verse_id, ev.verse_id, 'free', 25356
+  FROM _s302_ps135_lookup sv, _s302_ps135_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=135 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=135 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-135-the-idols-of-the-heathen-are-the-work-of-mens-hands',
+       E'The idols of the heathen are the work of men''s hands',
+       E'The psalm turns its sharpest edge on the lifeless gods: *The idols of the heathen are silver and gold, the work of men''s hands. They have mouths, but they speak not; eyes have they, but they see not; They have ears, but they hear not; neither is there any breath in their mouths* (Psalm 135:15-17). It is the twin of Psalm 115 — *Their idols are silver and gold, the work of men''s hands* (Psalm 115:4) — and of Jeremiah''s mockery, *they must needs be borne, because they cannot go ... they cannot do evil, neither also is it in them to do good* (Jeremiah 10:5), and Isaiah''s satire, *They that make a graven image are all of them vanity ... they see not, nor know* (Isaiah 44:9). The restored Wisdom-witness carries the very catalogue: idols *which neither have the use of eyes to see, nor noses to draw breath, nor ears to hear, nor fingers of hands to handle* (Wisdom of Solomon 15:15), and *man made them ... but no man can make a god like to himself* (Wisdom of Solomon 15:16). Then the verdict that binds it all: *They that make them are like unto them: so is every one that trusteth in them* (Psalm 135:18) — the maker sinks to the level of the dead thing he trusts. The apostles carry it forward — *an idol is nothing in the world* (1 Corinthians 8:4); the Thessalonians *turned to Elohim (God) from idols to serve the living and true Elohim (God)* (1 Thessalonians 1:9) — and the end-time hardened *repented not ... idols of gold, and silver ... which neither can see, nor hear, nor walk* (Revelation 9:20). The whole library answers idolatry with one voice.',
+       sv.verse_id, ev.verse_id, 'extras', 25359
+  FROM _s302_ps135_lookup sv, _s302_ps135_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=135 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=135 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-135-bless-yahuah-o-house-of-israel-the-threefold-call',
+       E'Bless Yahuah, O house of Israel: the threefold call',
+       E'The psalm closes by summoning the congregation in three ranks: *Bless Yahuah (LORD), O house of Yashar''el (Israel): bless Yahuah (LORD), O house of Aaron: Bless Yahuah (LORD), O house of Levi: ye that fear Yahuah (LORD), bless Yahuah (LORD)* (Psalm 135:19-20). It is the antiphonal liturgy of the twin psalm — *O Yashar''el (Israel), trust thou in Yahuah (LORD)* (Psalm 115:9); *O house of Aaron, trust in Yahuah (LORD)* (Psalm 115:10); *Ye that fear Yahuah (LORD), trust in Yahuah (LORD)* (Psalm 115:11) — and of the great Hallel: *Let Yashar''el (Israel) now say, that his mercy endureth for ever* (Psalm 118:2); *Let the house of Aaron now say* (Psalm 118:3); *Let them now that fear Yahuah (LORD) say* (Psalm 118:4). The same three ranks every time: the whole house of Israel, the priestly house, and all who fear the Name — gathered into one chorus of blessing, the worship of the chosen people whose every breath answers the Maker that idols cannot.',
+       sv.verse_id, ev.verse_id, 'free', 25362
+  FROM _s302_ps135_lookup sv, _s302_ps135_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=135 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=135 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================================
+-- D. cross_reference_thread_members
+-- ============================================================================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','psalms',135,4,'canon','exodus',19,5,1,E'Exodus 19:5 — *a peculiar treasure unto me above all people*, the Sinai election bound to keeping the covenant.'),
+    ('canon','psalms',135,4,'canon','deuteronomy',7,6,2,E'Deuteronomy 7:6 — *hath chosen thee to be a special people unto himself*, the choosing of the one whole house.'),
+    ('canon','psalms',135,4,'canon','malachi',3,17,3,E'Malachi 3:17 — *they shall be mine ... when I make up my jewels*, the peculiar treasure gathered and spared.'),
+    ('canon','psalms',135,4,'canon','titus',2,14,4,E'Titus 2:14 — *purify unto himself a peculiar people, zealous of good works*, the Formed Son redeeming the same treasure unto Torah-zeal.'),
+    ('canon','psalms',135,4,'canon','1-peter',2,9,5,E'1 Peter 2:9 — *a chosen generation ... a peculiar people*, the Sinai titles laid on the regathered house, restoration not replacement.'),
+    ('canon','psalms',135,4,'canon','romans',11,1,6,E'Romans 11:1 — *Hath Elohim (God) cast away his people? Elohim (God) forbid*, the guard on the irrevocable election.'),
+    ('canon','psalms',135,4,'canon','romans',11,2,7,E'Romans 11:2 — *Elohim (God) hath not cast away his people which he foreknew*, the chosen house kept because foreknown.')
+  ) AS m(s_ed,s_slug,s_ch,s_v,t_ed,t_slug,t_ch,t_v,sort_order,member_note)
+  JOIN _s302_ps135_lookup sv ON sv.edition_slug=m.s_ed AND sv.book_slug=m.s_slug AND sv.chapter_number=m.s_ch AND sv.verse_number=m.s_v
+  JOIN _s302_ps135_lookup tv ON tv.edition_slug=m.t_ed AND tv.book_slug=m.t_slug AND tv.chapter_number=m.t_ch AND tv.verse_number=m.t_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-135-yahuah-hath-chosen-jacob-for-his-peculiar-treasure'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','psalms',135,6,'canon','psalms',115,3,1,E'Psalm 115:3 — *he hath done whatsoever he hath pleased*, the twin psalm''s confession of the living Maker.'),
+    ('canon','psalms',135,7,'canon','jeremiah',10,12,2,E'Jeremiah 10:12 — *He hath made the earth by his power ... stretched out the heavens by his discretion*, the Formed Word the Maker.'),
+    ('canon','psalms',135,7,'canon','jeremiah',10,13,3,E'Jeremiah 10:13 — *he causeth the vapours to ascend ... bringeth forth the wind out of his treasures*, the verse Psalm 135:7 sings almost word for word.')
+  ) AS m(s_ed,s_slug,s_ch,s_v,t_ed,t_slug,t_ch,t_v,sort_order,member_note)
+  JOIN _s302_ps135_lookup sv ON sv.edition_slug=m.s_ed AND sv.book_slug=m.s_slug AND sv.chapter_number=m.s_ch AND sv.verse_number=m.s_v
+  JOIN _s302_ps135_lookup tv ON tv.edition_slug=m.t_ed AND tv.book_slug=m.t_slug AND tv.chapter_number=m.t_ch AND tv.verse_number=m.t_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-135-whatsoever-yahuah-pleased-the-sovereign-maker'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','psalms',135,8,'canon','exodus',12,29,1,E'Exodus 12:29 — *Yahuah (LORD) smote all the firstborn in the land of Egypt*, the Passover night recited.'),
+    ('canon','psalms',135,9,'canon','deuteronomy',4,34,2,E'Deuteronomy 4:34 — *by signs, and by wonders ... a nation from the midst of another nation*, the tokens and wonders of the deliverance.'),
+    ('canon','psalms',135,11,'canon','numbers',21,34,3,E'Numbers 21:34 — *I have delivered him into thy hand*, the defeat of Og following Sihon.'),
+    ('canon','psalms',135,11,'canon','deuteronomy',2,33,4,E'Deuteronomy 2:33 — *Yahuah Eloheinu (the LORD our God) delivered him before us*, the fall of Sihon king of the Amorites.'),
+    ('canon','psalms',135,10,'canon','psalms',136,17,5,E'Psalm 136:17 — *To him which smote great kings: for his mercy endureth for ever*, the companion psalm''s refrain over the same conquest.'),
+    ('canon','psalms',135,12,'canon','psalms',136,21,6,E'Psalm 136:21 — *And gave their land for an heritage: for his mercy endureth for ever*, the same gift of the land.'),
+    ('canon','psalms',135,12,'canon','deuteronomy',32,9,7,E'Deuteronomy 32:9 — *Jacob is the lot of his inheritance*, the deeper heritage: the people themselves are Yahuah''s portion.')
+  ) AS m(s_ed,s_slug,s_ch,s_v,t_ed,t_slug,t_ch,t_v,sort_order,member_note)
+  JOIN _s302_ps135_lookup sv ON sv.edition_slug=m.s_ed AND sv.book_slug=m.s_slug AND sv.chapter_number=m.s_ch AND sv.verse_number=m.s_v
+  JOIN _s302_ps135_lookup tv ON tv.edition_slug=m.t_ed AND tv.book_slug=m.t_slug AND tv.chapter_number=m.t_ch AND tv.verse_number=m.t_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-135-who-smote-egypt-and-gave-the-land-for-an-heritage'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','psalms',135,15,'canon','psalms',115,4,1,E'Psalm 115:4 — *Their idols are silver and gold, the work of men''s hands*, the twin verse Psalm 135:15 echoes.'),
+    ('canon','psalms',135,16,'canon','jeremiah',10,5,2,E'Jeremiah 10:5 — idols *cannot do evil, neither ... do good*, the prophet''s mockery of the mute, motionless god.'),
+    ('canon','psalms',135,15,'canon','isaiah',44,9,3,E'Isaiah 44:9 — *They that make a graven image are all of them vanity ... they see not, nor know*, the great idol-satire.'),
+    ('canon','psalms',135,16,'apocrypha','the-wisdom-of-solomon',15,15,4,E'Wisdom of Solomon 15:15 — idols *neither have the use of eyes to see, nor noses to draw breath, nor ears to hear*, the psalm''s very catalogue.'),
+    ('canon','psalms',135,18,'apocrypha','the-wisdom-of-solomon',15,16,5,E'Wisdom of Solomon 15:16 — *man made them ... but no man can make a god like to himself*, the verdict that the maker is like the dead thing.'),
+    ('canon','psalms',135,18,'canon','1-corinthians',8,4,6,E'1 Corinthians 8:4 — *an idol is nothing in the world ... none other Elohim (God) but one*, Paul carrying the polemic forward.'),
+    ('canon','psalms',135,18,'canon','1-thessalonians',1,9,7,E'1 Thessalonians 1:9 — *turned to Elohim (God) from idols to serve the living and true Elohim (God)*, the turning from dead trust to the living Maker.'),
+    ('canon','psalms',135,18,'canon','revelation',9,20,8,E'Revelation 9:20 — *idols of gold, and silver ... which neither can see, nor hear, nor walk*, the end-time hardened made like what they worship.')
+  ) AS m(s_ed,s_slug,s_ch,s_v,t_ed,t_slug,t_ch,t_v,sort_order,member_note)
+  JOIN _s302_ps135_lookup sv ON sv.edition_slug=m.s_ed AND sv.book_slug=m.s_slug AND sv.chapter_number=m.s_ch AND sv.verse_number=m.s_v
+  JOIN _s302_ps135_lookup tv ON tv.edition_slug=m.t_ed AND tv.book_slug=m.t_slug AND tv.chapter_number=m.t_ch AND tv.verse_number=m.t_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-135-the-idols-of-the-heathen-are-the-work-of-mens-hands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','psalms',135,19,'canon','psalms',115,9,1,E'Psalm 115:9 — *O Yashar''el (Israel), trust thou in Yahuah (LORD)*, the first rank of the twin psalm''s call.'),
+    ('canon','psalms',135,19,'canon','psalms',115,10,2,E'Psalm 115:10 — *O house of Aaron, trust in Yahuah (LORD)*, the priestly house summoned.'),
+    ('canon','psalms',135,20,'canon','psalms',115,11,3,E'Psalm 115:11 — *Ye that fear Yahuah (LORD), trust in Yahuah (LORD)*, the third rank, all the Yahuah-fearers.'),
+    ('canon','psalms',135,19,'canon','psalms',118,2,4,E'Psalm 118:2 — *Let Yashar''el (Israel) now say, that his mercy endureth for ever*, the Hallel''s antiphonal call to the whole house.'),
+    ('canon','psalms',135,19,'canon','psalms',118,3,5,E'Psalm 118:3 — *Let the house of Aaron now say*, the priestly house given its part.'),
+    ('canon','psalms',135,20,'canon','psalms',118,4,6,E'Psalm 118:4 — *Let them now that fear Yahuah (LORD) say*, the third call sealing the same threefold structure.')
+  ) AS m(s_ed,s_slug,s_ch,s_v,t_ed,t_slug,t_ch,t_v,sort_order,member_note)
+  JOIN _s302_ps135_lookup sv ON sv.edition_slug=m.s_ed AND sv.book_slug=m.s_slug AND sv.chapter_number=m.s_ch AND sv.verse_number=m.s_v
+  JOIN _s302_ps135_lookup tv ON tv.edition_slug=m.t_ed AND tv.book_slug=m.t_slug AND tv.chapter_number=m.t_ch AND tv.verse_number=m.t_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='psalm-135-bless-yahuah-o-house-of-israel-the-threefold-call'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_136.sql (Psalm 136) -----
+-- Chapter: Psalm 136 — THE GREAT HALLEL (a KEYSTONE: "for his mercy endureth for ever")
+-- Tag: ps136   Session prefix: s302   Sort band base: 25375 (25375, 25378, 25381, 25384, 25387, 25390)
+-- Source rows ALWAYS 'canon','psalms',136,v.   Thread slug prefix SINGULAR: psalm-136-...
+--
+-- THREADS (slug — target libraries):
+--   T1 psalm-136-give-thanks-for-his-mercy-endureth-for-ever-the-temple-antiphon   [Tanakh + NT]  (free)
+--        vv.1-3,26 the chesed-forever refrain = the standing temple liturgy (1Chr16/2Chr5/2Chr7/Ezra3/Jer33/Ps100), Luke1:50 forward
+--   T2 psalm-136-by-wisdom-he-made-the-heavens-and-the-great-lights                [Tanakh + NT]  (free)
+--        vv.4-9 creation by Wisdom/the Formed Word; lights = appointed-times root (Gen1:14)
+--   T3 psalm-136-he-smote-egypt-in-their-firstborn-and-brought-out-israel          [Tanakh + Extras] (extras)
+--        vv.10-12 the Passover plague + the exodus (Exod12:29; Jubilees 49:2 the festival night)
+--   T4 psalm-136-he-divided-the-red-sea-and-overthrew-pharaoh                      [Tanakh + NT + Extras] (extras)
+--        vv.13-15 Red Sea split, Pharaoh overthrown; 1Cor10:1-2 baptism-figure; WisSol 10/19 witnesses
+--   T5 psalm-136-he-led-his-people-through-the-wilderness-an-heritage-unto-israel  [Tanakh + NT]  (free)
+--        vv.16-22 wilderness + Sihon/Og + the land-heritage of Israel his servant; Rom11:1 guard (not cast away)
+--   T6 psalm-136-who-remembered-us-in-our-low-estate-and-giveth-food-to-all-flesh  [Tanakh + NT]  (free)
+--        vv.23-25 covenant remembrance + providence to all flesh; Luke1:48 Magnificat forward
+--
+-- Psalm 136 coverage checklist:
+--   v.1-3   NT: Luke1:50 (mercy generation to generation)   Extras: none warranted   Tanakh: 1Chr16:34, 2Chr5:13, 2Chr7:3, Ezra3:11, Jer33:11, Ps100:5  -> T1
+--   v.4     NT: none warranted   Extras: none warranted   Tanakh: folded into T2 (great wonders = creation) -- no standalone add
+--   v.5-9   NT: John1:3, Col1:16 (all things made by him)   Extras: none warranted   Tanakh: Gen1:1, Gen1:14, Gen1:16, Prov3:19, Prov8:27, Jer31:35  -> T2
+--   v.10-12 NT: none warranted (1Cor10 weighed -> placed at Red Sea T4)   Extras: Jubilees 49:2 (Passover night, firstborn)   Tanakh: Exod12:29  -> T3
+--   v.13-15 NT: 1Cor10:1-2 (baptism-figure)   Extras: WisSol 10:18, 19:7   Tanakh: Exod14:21,22,27,28  -> T4
+--   v.16-22 NT: Rom11:1 (people not cast away)   Extras: none warranted (Sihon/Og clean in canon)   Tanakh: Num21:23, Num21:34, Deut29:7, Josh12:2, Josh12:4  -> T5
+--   v.23-25 NT: Luke1:48 (low estate regarded), Matt6:26 (heavenly Father feeds)   Extras: none warranted   Tanakh: Gen8:1, Ps105:8, Ps145:15, Ps145:16  -> T6
+--
+-- Framework-load-bearing notes:
+--   * The refrain is the temple's standing antiphon (Asaph's Levites), not a poetic flourish: it is QUOTED as live
+--     liturgy at the ark's enthronement (1Chr16:34,41), at Solomon's dedication (2Chr5:13/7:3), and prophesied to
+--     RETURN after the captivity (Jer33:11, Ezra3:11) -> the two-house restoration sung in chesed.
+--   * Creation "by wisdom" (v.5) = the Formed Word/Wisdom as the agent of creation (Prov8; John1:3; Col1:16) -- the
+--     Formed Son who has a Father, NOT a co-equal trinitarian person. The "great lights" (vv.7-9) are the appointed-
+--     times root (Gen1:14, "for signs, and for seasons").
+--   * vv.21-22 the land "an heritage unto Yashar'el his servant" -> Rom11:1 guard: Yahuah has NOT cast away the
+--     covenant people; the heritage stands. No replacement.
+
+CREATE TEMP VIEW _s302_ps136_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- T1 the temple antiphon -----------------------------------------------------------------
+    ('canon','psalms',136,1,'canon','1-chronicles',16,34,'free',
+      E'*O give thanks unto Yahuah (LORD); for he is good; for his mercy endureth for ever.* (1 Chronicles 16:34) — the psalm''s opening line *O give thanks unto Yahuah (LORD); for he is good: for his mercy endureth for ever* is word-for-word the antiphon David set in the mouths of the Levites the day the ark came up; the Great Hallel is singing the temple''s own standing liturgy.'),
+    ('canon','psalms',136,1,'canon','2-chronicles',5,13,'free',
+      E'*…praised Yahuah (LORD), saying, For he is good; for his mercy endureth for ever: that then the house was filled with a cloud, even the house of Yahuah (LORD)* (2 Chronicles 5:13) — when the singers lifted this very refrain at Solomon''s dedication the Glory filled the house. The line *for his mercy endureth for ever* is the note that draws the Presence down.'),
+    ('canon','psalms',136,1,'canon','2-chronicles',7,3,'free',
+      E'*…they bowed themselves… and worshipped, and praised Yahuah (LORD), saying, For he is good; for his mercy endureth for ever.* (2 Chronicles 7:3) — as the fire fell, all Yashar''el (Israel) answered with the psalm''s refrain. *For his mercy endureth for ever* is the congregation''s antiphonal response, exactly the shape of Psalm 136.'),
+    ('canon','psalms',136,1,'canon','ezra',3,11,'free',
+      E'*And they sang together by course… because he is good, for his mercy endureth for ever toward Yashar''el (Israel)…* (Ezra 3:11) — when the second temple''s foundation was laid the returned remnant sang this same refrain "by course" (antiphonally). The chesed-forever song outlives the exile; it is the restoration anthem of the gathered people.'),
+    ('canon','psalms',136,1,'canon','jeremiah',33,11,'free',
+      E'*…the voice of them that shall say, Praise Yahuah Tseva''ot (LORD of hosts): for Yahuah (LORD) is good; for his mercy endureth for ever… For I will cause to return the captivity of the land…* (Jeremiah 33:11) — Yahuah promises that this exact refrain will be heard again in the desolate cities of Yahudah (Judah) when he returns the captivity. The Great Hallel is prophesied to be re-sung at the two-house ingathering.'),
+    ('canon','psalms',136,1,'canon','psalms',100,5,'free',
+      E'*For Yahuah (LORD) is good; his mercy is everlasting; and his truth endureth to all generations.* (Psalm 100:5) — the thanksgiving-psalm seals the same confession: *he is good*, his *mercy* (chesed) *everlasting*. Psalm 136 simply unfolds that everlasting mercy verse by verse through creation and the exodus.'),
+    ('canon','psalms',136,1,'canon','luke',1,50,'free',
+      E'*And his mercy is on them that fear him from generation to generation.* (Luke 1:50) — Miryam''s song carries the Hallel''s refrain forward: the *mercy* that *endureth for ever* is the mercy *from generation to generation* on them that fear him. The everlasting chesed of the temple antiphon is the very mercy magnified at the Messiah''s coming.'),
+    ('canon','psalms',136,26,'canon','1-chronicles',16,41,'free',
+      E'*…to give thanks to Yahuah (LORD), because his mercy endureth for ever* (1 Chronicles 16:41) — Heman and Jeduthun were appointed to sound precisely this clause continually. The psalm''s closing *O give thanks unto the Elohim (God) of heaven: for his mercy endureth for ever* (v.26) is the temple''s perpetual ministry put to song.'),
+
+    -- T2 creation by Wisdom / the great lights ----------------------------------------------
+    ('canon','psalms',136,5,'canon','genesis',1,1,'free',
+      E'*In the beginning Elohim (God) created the heaven and the earth.* (Genesis 1:1) — the psalm''s *To him that by wisdom made the heavens* sings Genesis 1 back as praise; the heavens and the earth of the first verse are made and spread out (vv.5-6) by the same hand.'),
+    ('canon','psalms',136,5,'canon','proverbs',3,19,'free',
+      E'*Yahuah (LORD) by wisdom hath founded the earth; by understanding hath he established the heavens.* (Proverbs 3:19) — the phrase *by wisdom made the heavens* is verbatim wisdom-of-creation language: the heavens are *established* by the same wisdom Proverbs names, the Formed Word at the founding of the world.'),
+    ('canon','psalms',136,5,'canon','proverbs',8,27,'free',
+      E'*When he prepared the heavens, I was there: when he set a compass upon the face of the depth* (Proverbs 8:27) — Wisdom speaks as the One present when the heavens were prepared. The Hallel''s *by wisdom made the heavens* confesses that Formed agent of creation, the Son drawn from the Formless Father, *there* at the founding.'),
+    ('canon','psalms',136,5,'canon','john',1,3,'free',
+      E'*All things were made by him; and without him was not any thing made that was made.* (John 1:3) — the Word who *by wisdom made the heavens* is the One John names: every made thing was made *by him*. The Formed Word of Psalm 136:5 took flesh; he is the agent, not a second God beside the Father.'),
+    ('canon','psalms',136,5,'canon','colossians',1,16,'free',
+      E'*For by him were all things created, that are in heaven, and that are in earth, visible and invisible… all things were created by him, and for him* (Colossians 1:16) — the heavens *made by wisdom* are the *all things created by him*. Psalm 136 hymns the Formed Son as the One through whom Yahuah wrought the world.'),
+    ('canon','psalms',136,7,'canon','genesis',1,14,'free',
+      E'*And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14) — *To him that made great lights* sings the fourth day. The lights are not décor: they are set *for signs, and for seasons* (moedim) — the appointed-times calendar is woven into creation itself.'),
+    ('canon','psalms',136,8,'canon','genesis',1,16,'free',
+      E'*And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* (Genesis 1:16) — vv.8-9, *the sun to rule by day… the moon and stars to rule by night*, are Genesis 1:16 turned to praise: the greater and lesser lights given dominion to mark Yahuah''s seasons.'),
+    ('canon','psalms',136,9,'canon','jeremiah',31,35,'free',
+      E'*Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night… Yahuah Tseva''ot (LORD of hosts) is his name* (Jeremiah 31:35) — the same Maker of *the moon and stars to rule by night* binds the fixed *ordinances* of those lights to his unbreakable covenant with Yashar''el (Israel). The creation-order and the covenant-order are one.'),
+
+    -- T3 the firstborn plague + the exodus --------------------------------------------------
+    ('canon','psalms',136,10,'canon','exodus',12,29,'free',
+      E'*And it came to pass, that at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt, from the firstborn of Pharaoh that sat on his throne unto the firstborn of the captive that was in the dungeon; and all the firstborn of cattle.* (Exodus 12:29) — *To him that smote Egypt in their firstborn* recites the Passover blow exactly: the firstborn from throne to dungeon, the night the covenant people were spared and Egypt struck.'),
+    ('canon','psalms',136,10,'jubilees','jubilees',49,2,'extras',
+      E'*For on this night–the beginning of the festival and the beginning of the joy–you were eating the passover in Egypt, when all the powers of Mastêmâ had been let loose to slay all the first-born in the land of Egypt, from the firstborn of Pharaoh to the first-born of the captive maidservant in the mill, and to the cattle.* (Jubilees 49:2) — the restored witness names the same firstborn-stroke, throne to mill to cattle, as the festival night of joy. The Hallel''s v.10 is the temple''s memory of the Passover Jubilees preserves.'),
+    ('canon','psalms',136,11,'canon','exodus',12,29,'free',
+      E'*…at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt… and all the firstborn of cattle.* (Exodus 12:29) — *And brought out Yashar''el (Israel) from among them* (v.11) is the other side of that same midnight: the blow on Egypt''s firstborn is what brought the covenant son out (Exodus 4:22, *Yashar''el is my son, even my firstborn*).'),
+
+    -- T4 the Red Sea ------------------------------------------------------------------------
+    ('canon','psalms',136,13,'canon','exodus',14,21,'free',
+      E'*And Moses stretched out his hand over the sea; and Yahuah (LORD) caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided.* (Exodus 14:21) — *To him which divided the Red sea into parts* sings this exact dividing: the strong wind, the waters parted, the dry path opened by the hand of Yahuah.'),
+    ('canon','psalms',136,14,'canon','exodus',14,22,'free',
+      E'*And the children of Yashar''el (Israel) went into the midst of the sea upon the dry ground: and the waters were a wall unto them on their right hand, and on their left.* (Exodus 14:22) — *And made Yashar''el (Israel) to pass through the midst of it* is Exodus 14:22 verbatim in praise: the people walked *through the midst*, walled by water on either hand.'),
+    ('canon','psalms',136,15,'canon','exodus',14,27,'free',
+      E'*And Moses stretched forth his hand over the sea, and the sea returned to his strength when the morning appeared… and Yahuah (LORD) overthrew the Egyptians in the midst of the sea.* (Exodus 14:27) — *But overthrew Pharaoh and his host in the Red sea* is the sea''s return: what was a wall for Yashar''el became the grave of Pharaoh''s host.'),
+    ('canon','psalms',136,15,'canon','exodus',14,28,'free',
+      E'*And the waters returned, and covered the chariots, and the horsemen, and all the host of Pharaoh that came into the sea after them; there remained not so much as one of them.* (Exodus 14:28) — the totality of the overthrow — *there remained not so much as one of them* — is the mercy sung in v.15: the same sea that delivered the people drowned the oppressor.'),
+    ('canon','psalms',136,14,'canon','1-corinthians',10,1,'free',
+      E'*Moreover, brethren, I would not that ye should be ignorant, how that all our fathers were under the cloud, and all passed through the sea* (1 Corinthians 10:1) — *all our fathers… passed through the sea* reads the Red Sea crossing of v.14 forward as the figure of baptism. The midst of the sea is where Yashar''el is brought through unto Yahuah.'),
+    ('canon','psalms',136,14,'canon','1-corinthians',10,2,'free',
+      E'*And were all baptized unto Moses in the cloud and in the sea* (1 Corinthians 10:2) — the passage *through the midst of it* (v.14) is named a baptism *unto Moses*: the deliverance through water that prefigures the deliverance of the gathered people in the Messiah.'),
+    ('canon','psalms',136,13,'apocrypha','the-wisdom-of-solomon',10,18,'extras',
+      E'*Brought them through the Red sea, and led them through much water* (Wisdom of Solomon 10:18) — the restored witness rehearses the same wonder Wisdom (the Formed agent of v.5) wrought: she *brought them through the Red sea*, dividing the deep that v.13 hymns.'),
+    ('canon','psalms',136,14,'apocrypha','the-wisdom-of-solomon',19,7,'extras',
+      E'*As namely, a cloud shadowing the camp; and where water stood before, dry land appeared; and out of the Red sea a way without impediment; and out of the violent stream a green field* (Wisdom of Solomon 19:7) — *out of the Red sea a way without impediment* is the dry path of v.14 seen by the same library: where the waters stood, the people of Yahuah passed.'),
+
+    -- T5 wilderness, Sihon & Og, the heritage of Israel -------------------------------------
+    ('canon','psalms',136,17,'canon','numbers',21,23,'free',
+      E'*And Sihon would not suffer Yashar''el (Israel) to pass through his border… and fought against Yashar''el (Israel).* (Numbers 21:23) — *To him which smote great kings* (v.17) begins with Sihon: the king who barred the way and was given into Yashar''el''s hand. The wilderness victories are Yahuah''s mercy, not Israel''s might.'),
+    ('canon','psalms',136,19,'canon','numbers',21,34,'free',
+      E'*And Yahuah (LORD) said unto Moses, Fear him not: for I have delivered him into thy hand, and all his people, and his land; and thou shalt do to him as thou didst unto Sihon king of the Amorites…* (Numbers 21:34) — *Sihon king of the Amorites* (v.19) and *Og the king of Bashan* (v.20) are named together because Yahuah delivered Og just as he delivered Sihon; both kings fell by the same delivering hand.'),
+    ('canon','psalms',136,19,'canon','deuteronomy',29,7,'free',
+      E'*And when ye came unto this place, Sihon the king of Heshbon, and Og the king of Bashan, came out against us unto battle, and we smote them* (Deuteronomy 29:7) — Moses pairs *Sihon… and Og* in the covenant-renewal recital exactly as the Hallel pairs them (vv.19-20): the two kings whose defeat opened the heritage east of Jordan.'),
+    ('canon','psalms',136,20,'canon','joshua',12,4,'free',
+      E'*And the coast of Og king of Bashan, which was of the remnant of the giants, that dwelt at Ashtaroth and at Edrei* (Joshua 12:4) — *Og the king of Bashan* (v.20) is the giant-king of the conquest list; his fall is part of the land-grant the psalm calls *an heritage unto Yashar''el (Israel)*.'),
+    ('canon','psalms',136,21,'canon','joshua',12,2,'free',
+      E'*Sihon king of the Amorites, who dwelt in Heshbon, and ruled from Aroer… even unto the river Jabbok…* (Joshua 12:2) — *And gave their land for an heritage* (v.21) is the conquest record of Joshua 12: the territory of the smitten kings handed over as the inheritance of the tribes.'),
+    ('canon','psalms',136,22,'canon','romans',11,1,'free',
+      E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham…* (Romans 11:1) — *an heritage unto Yashar''el (Israel) his servant* (v.22) is the standing covenant grant. Sha''ul (Paul) holds it fast: the heritage-people have NOT been cast away — the inheritance and the servant-people remain Yahuah''s, never replaced.'),
+
+    -- T6 covenant remembrance + providence -------------------------------------------------
+    ('canon','psalms',136,23,'canon','genesis',8,1,'free',
+      E'*And Elohim (God) remembered Noah, and every living thing… and Elohim (God) made a wind to pass over the earth, and the waters asswaged* (Genesis 8:1) — *Who remembered us in our low estate* (v.23) sings the covenant-remembrance that runs from the ark onward: when Yahuah "remembers," he acts to deliver. His remembering is rescue.'),
+    ('canon','psalms',136,23,'canon','psalms',105,8,'free',
+      E'*He hath remembered his covenant for ever, the word which he commanded to a thousand generations.* (Psalm 105:8) — the *remembered us in our low estate* of v.23 is the chesed-forever refrain in narrative: Yahuah *remembered his covenant for ever*; the mercy that *endureth for ever* is covenant-memory that never lapses.'),
+    ('canon','psalms',136,23,'canon','luke',1,48,'free',
+      E'*For he hath regarded the low estate of his handmaiden: for, behold, from henceforth all generations shall call me blessed.* (Luke 1:48) — *Who remembered us in our low estate* is carried forward in the Magnificat: he *hath regarded the low estate*. The same mercy that remembered Yashar''el in bondage regards the lowly at the Messiah''s coming.'),
+    ('canon','psalms',136,25,'canon','psalms',145,15,'free',
+      E'*The eyes of all wait upon thee; and thou givest them their meat in due season.* (Psalm 145:15) — *Who giveth food to all flesh* (v.25) is the open-handed providence of Psalm 145: every creature waits, and Yahuah feeds them *in due season*. The God of the exodus is also the daily Sustainer of all flesh.'),
+    ('canon','psalms',136,25,'canon','psalms',145,16,'free',
+      E'*Thou openest thine hand, and satisfiest the desire of every living thing.* (Psalm 145:16) — *giveth food to all flesh* is the opened hand of Psalm 145:16: Yahuah satisfies *every living thing*. His mercy reaches past the covenant people to sustain the whole creation he made by wisdom (v.5).'),
+    ('canon','psalms',136,25,'canon','matthew',6,26,'free',
+      E'*Behold the fowls of the air: for they sow not, neither do they reap, nor gather into barns; yet your heavenly Father feedeth them. Are ye not much better than they?* (Matthew 6:26) — the Messiah reads *Who giveth food to all flesh* forward to the *heavenly Father* who *feedeth* the birds. The Hallel''s providence becomes the ground of trust: the Father who feeds all flesh will surely feed his own.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps136_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps136_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-136-give-thanks-for-his-mercy-endureth-for-ever-the-temple-antiphon',
+       E'O give thanks; for his mercy endureth for ever — the temple antiphon',
+       E'The Great Hallel opens and closes on the same words: *O give thanks unto Yahuah (LORD); for he is good: for his mercy endureth for ever* (Psalm 136:1) … *O give thanks unto the Elohim (God) of heaven: for his mercy endureth for ever* (Psalm 136:26). Twenty-six times the refrain *for his mercy endureth for ever* answers each line — this is not poetic repetition but the temple''s standing antiphon, sung "by course," priest and congregation. It is the line David put in the Levites'' mouths when the ark came up: *O give thanks unto Yahuah (LORD); for he is good; for his mercy endureth for ever* (1 Chronicles 16:34), the clause Heman and Jeduthun were appointed to sound continually (1 Chronicles 16:41). It is the note that drew the Glory down at Solomon''s dedication — *…praised Yahuah (LORD), saying, For he is good; for his mercy endureth for ever: that then the house was filled with a cloud* (2 Chronicles 5:13) — and the cry of all Yashar''el (Israel) when the fire fell: *they bowed themselves… and praised Yahuah (LORD), saying, For he is good; for his mercy endureth for ever* (2 Chronicles 7:3). When the second temple''s foundation was laid the returned remnant sang it again: *they sang together by course… because he is good, for his mercy endureth for ever toward Yashar''el (Israel)* (Ezra 3:11). And Yeremyah (Jeremiah) prophesies it will be heard once more when Yahuah returns the captivity: *the voice of them that shall say… for Yahuah (LORD) is good; for his mercy endureth for ever… For I will cause to return the captivity of the land* (Jeremiah 33:11) — the two-house ingathering sung in the same chesed. *For Yahuah (LORD) is good; his mercy is everlasting* (Psalm 100:5) is the whole confession; Psalm 136 simply unfolds that everlasting mercy through creation and the exodus. Miryam carries it forward: *his mercy is on them that fear him from generation to generation* (Luke 1:50). The mercy (chesed) that *endureth for ever* is the covenant-loyalty of Yahuah that outlives exile and never lapses.',
+       sv.verse_id, ev.verse_id, 'free', 25375
+  FROM _s302_ps136_lookup sv, _s302_ps136_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=136 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=136 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-136-by-wisdom-he-made-the-heavens-and-the-great-lights',
+       E'By wisdom he made the heavens and the great lights',
+       E'The Hallel''s first wonder is creation, and it names the means: *To him that by wisdom made the heavens… To him that stretched out the earth above the waters* (Psalm 136:5-6). *Yahuah (LORD) by wisdom hath founded the earth; by understanding hath he established the heavens* (Proverbs 3:19) is the same confession, and Proverbs 8 lets that Wisdom speak: *When he prepared the heavens, I was there: when he set a compass upon the face of the depth* (Proverbs 8:27). This is the Formed Word — the Son drawn from the Formless Father — present and active at the founding of the world, not a second God beside him: *All things were made by him; and without him was not any thing made that was made* (John 1:3); *by him were all things created, that are in heaven, and that are in earth, visible and invisible… all things were created by him, and for him* (Colossians 1:16). The psalm then sings the fourth day: *To him that made great lights… The sun to rule by day… The moon and stars to rule by night* (Psalm 136:7-9), which is Genesis turned to praise — *Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also* (Genesis 1:16). And those lights are not décor: *let them be for signs, and for seasons, and for days, and years* (Genesis 1:14) — the appointed-times (moedim) calendar woven into creation itself. Yeremyah (Jeremiah) binds the fixed order of those lights to the covenant: *which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night… Yahuah Tseva''ot (LORD of hosts) is his name* (Jeremiah 31:35). The Maker of the seasons and the Keeper of the covenant are one.',
+       sv.verse_id, ev.verse_id, 'free', 25378
+  FROM _s302_ps136_lookup sv, _s302_ps136_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=136 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=136 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-136-he-smote-egypt-in-their-firstborn-and-brought-out-israel',
+       E'He smote Egypt in their firstborn and brought out Israel',
+       E'The recital turns from creation to redemption: *To him that smote Egypt in their firstborn… And brought out Yashar''el (Israel) from among them… With a strong hand, and with a stretched out arm* (Psalm 136:10-12). The Passover blow is recited exactly: *at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt, from the firstborn of Pharaoh that sat on his throne unto the firstborn of the captive that was in the dungeon; and all the firstborn of cattle* (Exodus 12:29). The restored witness preserves the same night, throne to mill to cattle, and calls it the *beginning of the festival and the beginning of the joy*: *you were eating the passover in Egypt, when all the powers of Mastêmâ had been let loose to slay all the first-born in the land of Egypt, from the firstborn of Pharaoh to the first-born of the captive maidservant in the mill, and to the cattle* (Jubilees 49:2). The smiting of Egypt''s firstborn is the deliverance of the covenant firstborn — *Yashar''el is my son, even my firstborn* (Exodus 4:22) — *brought out… from among them* by the strong hand and outstretched arm. Even judgment is mercy here: *for his mercy endureth for ever* answers the plague, because the same stroke that fell on Egypt set the covenant son free.',
+       sv.verse_id, ev.verse_id, 'extras', 25381
+  FROM _s302_ps136_lookup sv, _s302_ps136_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=136 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=136 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-136-he-divided-the-red-sea-and-overthrew-pharaoh',
+       E'He divided the Red sea and overthrew Pharaoh',
+       E'The exodus reaches its crisis at the sea: *To him which divided the Red sea into parts… And made Yashar''el (Israel) to pass through the midst of it… But overthrew Pharaoh and his host in the Red sea* (Psalm 136:13-15). The psalm narrates Exodus 14 line by line. The dividing: *Moses stretched out his hand over the sea; and Yahuah (LORD) caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided* (Exodus 14:21). The passage through: *the children of Yashar''el (Israel) went into the midst of the sea upon the dry ground: and the waters were a wall unto them on their right hand, and on their left* (Exodus 14:22). The overthrow: *the sea returned to his strength… and Yahuah (LORD) overthrew the Egyptians in the midst of the sea* (Exodus 14:27), *there remained not so much as one of them* (Exodus 14:28). The restored witnesses sing the same wonder — *Brought them through the Red sea, and led them through much water* (Wisdom of Solomon 10:18); *out of the Red sea a way without impediment* (Wisdom of Solomon 19:7) — the very dry path the psalm hymns. And Sha''ul (Paul) reads the crossing forward as the figure of baptism: *all our fathers were under the cloud, and all passed through the sea; and were all baptized unto Moses in the cloud and in the sea* (1 Corinthians 10:1-2). The same sea is a wall of deliverance for Yashar''el and a grave for the oppressor — mercy and judgment in one act, *for his mercy endureth for ever*.',
+       sv.verse_id, ev.verse_id, 'extras', 25384
+  FROM _s302_ps136_lookup sv, _s302_ps136_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=136 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=136 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-136-he-led-his-people-through-the-wilderness-an-heritage-unto-israel',
+       E'He led his people through the wilderness — an heritage unto Israel his servant',
+       E'From the sea the recital follows the people through the desert to the land: *To him which led his people through the wilderness… To him which smote great kings… And slew famous kings: Sihon king of the Amorites… And Og the king of Bashan… And gave their land for an heritage, even an heritage unto Yashar''el (Israel) his servant* (Psalm 136:16-22). The great kings are named from the conquest record. Sihon barred the way: *Sihon would not suffer Yashar''el (Israel) to pass through his border… and fought against Yashar''el (Israel)* (Numbers 21:23), and was given into their hand; then Og fell by the same word — *Fear him not: for I have delivered him into thy hand… as thou didst unto Sihon king of the Amorites* (Numbers 21:34). Moses pairs them in the covenant-renewal recital exactly as the psalm does: *Sihon the king of Heshbon, and Og the king of Bashan, came out against us unto battle, and we smote them* (Deuteronomy 29:7). The conquest list seals the grant — *Sihon king of the Amorites, who dwelt in Heshbon* (Joshua 12:2), *Og king of Bashan, which was of the remnant of the giants* (Joshua 12:4) — their territory *given for an heritage*. And the heritage is the covenant inheritance of *Yashar''el his servant*, which stands forever: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1). The land-grant of the Hallel is not revoked; the servant-people are not replaced. The mercy that gave the heritage *endureth for ever*.',
+       sv.verse_id, ev.verse_id, 'free', 25387
+  FROM _s302_ps136_lookup sv, _s302_ps136_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=136 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=136 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-136-who-remembered-us-in-our-low-estate-and-giveth-food-to-all-flesh',
+       E'Who remembered us in our low estate and giveth food to all flesh',
+       E'The recital ends not in the distant past but in the present mercy that reaches the singer: *Who remembered us in our low estate… And hath redeemed us from our enemies… Who giveth food to all flesh* (Psalm 136:23-25). When Yahuah "remembers," he acts to deliver — as from the flood: *Elohim (God) remembered Noah, and every living thing… and the waters asswaged* (Genesis 8:1). His remembering is covenant-memory that never lapses: *He hath remembered his covenant for ever, the word which he commanded to a thousand generations* (Psalm 105:8) — the chesed-forever refrain told as history. Miryam carries *remembered us in our low estate* forward in her song: *he hath regarded the low estate of his handmaiden* (Luke 1:48); the same mercy that remembered Yashar''el (Israel) in bondage regards the lowly at the Messiah''s coming. And the God of the exodus is also the daily Sustainer of all he made by wisdom: *Who giveth food to all flesh* (v.25) is the open hand of *The eyes of all wait upon thee; and thou givest them their meat in due season* (Psalm 145:15), *Thou openest thine hand, and satisfiest the desire of every living thing* (Psalm 145:16). The Messiah makes it the ground of trust: *Behold the fowls of the air… yet your heavenly Father feedeth them. Are ye not much better than they?* (Matthew 6:26). The Father who feeds all flesh will surely feed his own — *for his mercy endureth for ever*.',
+       sv.verse_id, ev.verse_id, 'free', 25390
+  FROM _s302_ps136_lookup sv, _s302_ps136_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=136 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=136 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    -- T1
+    ('psalm-136-give-thanks-for-his-mercy-endureth-for-ever-the-temple-antiphon','canon','psalms',136,1,'canon','1-chronicles',16,34,1,
+      E'*O give thanks unto Yahuah (LORD); for he is good; for his mercy endureth for ever.* (1 Chronicles 16:34) — David''s ark-antiphon, word-for-word the psalm''s opening line.'),
+    ('psalm-136-give-thanks-for-his-mercy-endureth-for-ever-the-temple-antiphon','canon','psalms',136,1,'canon','2-chronicles',5,13,2,
+      E'*…For he is good; for his mercy endureth for ever: that then the house was filled with a cloud* (2 Chronicles 5:13) — the refrain that drew the Glory down at the dedication.'),
+    ('psalm-136-give-thanks-for-his-mercy-endureth-for-ever-the-temple-antiphon','canon','psalms',136,1,'canon','2-chronicles',7,3,3,
+      E'*…praised Yahuah (LORD), saying, For he is good; for his mercy endureth for ever.* (2 Chronicles 7:3) — all Yashar''el (Israel) answering antiphonally as the fire fell.'),
+    ('psalm-136-give-thanks-for-his-mercy-endureth-for-ever-the-temple-antiphon','canon','psalms',136,1,'canon','ezra',3,11,4,
+      E'*…sang together by course… for his mercy endureth for ever toward Yashar''el (Israel)…* (Ezra 3:11) — the same refrain at the second temple''s foundation; the restoration anthem.'),
+    ('psalm-136-give-thanks-for-his-mercy-endureth-for-ever-the-temple-antiphon','canon','psalms',136,1,'canon','jeremiah',33,11,5,
+      E'*…for his mercy endureth for ever… For I will cause to return the captivity of the land* (Jeremiah 33:11) — the refrain prophesied to be re-sung at the two-house ingathering.'),
+    ('psalm-136-give-thanks-for-his-mercy-endureth-for-ever-the-temple-antiphon','canon','psalms',136,1,'canon','psalms',100,5,6,
+      E'*For Yahuah (LORD) is good; his mercy is everlasting…* (Psalm 100:5) — the whole confession Psalm 136 unfolds verse by verse.'),
+    ('psalm-136-give-thanks-for-his-mercy-endureth-for-ever-the-temple-antiphon','canon','psalms',136,1,'canon','luke',1,50,7,
+      E'*And his mercy is on them that fear him from generation to generation.* (Luke 1:50) — the everlasting chesed carried forward in Miryam''s song.'),
+    ('psalm-136-give-thanks-for-his-mercy-endureth-for-ever-the-temple-antiphon','canon','psalms',136,26,'canon','1-chronicles',16,41,8,
+      E'*…to give thanks to Yahuah (LORD), because his mercy endureth for ever* (1 Chronicles 16:41) — Heman and Jeduthun set to sound this clause continually; the psalm''s closing v.26.'),
+
+    -- T2
+    ('psalm-136-by-wisdom-he-made-the-heavens-and-the-great-lights','canon','psalms',136,5,'canon','genesis',1,1,1,
+      E'*In the beginning Elohim (God) created the heaven and the earth.* (Genesis 1:1) — the heavens *made by wisdom* are Genesis 1 sung back as praise.'),
+    ('psalm-136-by-wisdom-he-made-the-heavens-and-the-great-lights','canon','psalms',136,5,'canon','proverbs',3,19,2,
+      E'*Yahuah (LORD) by wisdom hath founded the earth…* (Proverbs 3:19) — verbatim wisdom-of-creation language behind *by wisdom made the heavens*.'),
+    ('psalm-136-by-wisdom-he-made-the-heavens-and-the-great-lights','canon','psalms',136,5,'canon','proverbs',8,27,3,
+      E'*When he prepared the heavens, I was there…* (Proverbs 8:27) — Wisdom, the Formed agent, present at the founding.'),
+    ('psalm-136-by-wisdom-he-made-the-heavens-and-the-great-lights','canon','psalms',136,5,'canon','john',1,3,4,
+      E'*All things were made by him; and without him was not any thing made that was made.* (John 1:3) — the Formed Word through whom the heavens were made.'),
+    ('psalm-136-by-wisdom-he-made-the-heavens-and-the-great-lights','canon','psalms',136,5,'canon','colossians',1,16,5,
+      E'*…by him were all things created… all things were created by him, and for him* (Colossians 1:16) — the Son as the agent of creation, not a second God.'),
+    ('psalm-136-by-wisdom-he-made-the-heavens-and-the-great-lights','canon','psalms',136,7,'canon','genesis',1,14,6,
+      E'*…let them be for signs, and for seasons, and for days, and years* (Genesis 1:14) — the *great lights* set for the appointed times (moedim).'),
+    ('psalm-136-by-wisdom-he-made-the-heavens-and-the-great-lights','canon','psalms',136,8,'canon','genesis',1,16,7,
+      E'*…the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* (Genesis 1:16) — vv.8-9 turned to praise.'),
+    ('psalm-136-by-wisdom-he-made-the-heavens-and-the-great-lights','canon','psalms',136,9,'canon','jeremiah',31,35,8,
+      E'*…the ordinances of the moon and of the stars for a light by night…* (Jeremiah 31:35) — the fixed order of the lights bound to the covenant with Yashar''el (Israel).'),
+
+    -- T3
+    ('psalm-136-he-smote-egypt-in-their-firstborn-and-brought-out-israel','canon','psalms',136,10,'canon','exodus',12,29,1,
+      E'*…Yahuah (LORD) smote all the firstborn in the land of Egypt, from the firstborn of Pharaoh… unto the firstborn of the captive…* (Exodus 12:29) — the Passover blow recited exactly.'),
+    ('psalm-136-he-smote-egypt-in-their-firstborn-and-brought-out-israel','canon','psalms',136,10,'jubilees','jubilees',49,2,2,
+      E'*…the beginning of the festival and the beginning of the joy… to slay all the first-born in the land of Egypt, from the firstborn of Pharaoh to the first-born of the captive maidservant in the mill…* (Jubilees 49:2) — the restored witness names the same firstborn-stroke as the festival night.'),
+    ('psalm-136-he-smote-egypt-in-their-firstborn-and-brought-out-israel','canon','psalms',136,11,'canon','exodus',12,29,3,
+      E'*…at midnight Yahuah (LORD) smote all the firstborn…* (Exodus 12:29) — the blow that *brought out Yashar''el (Israel) from among them* (the covenant firstborn freed).'),
+
+    -- T4
+    ('psalm-136-he-divided-the-red-sea-and-overthrew-pharaoh','canon','psalms',136,13,'canon','exodus',14,21,1,
+      E'*…Yahuah (LORD) caused the sea to go back by a strong east wind… and the waters were divided.* (Exodus 14:21) — *divided the Red sea into parts* exactly.'),
+    ('psalm-136-he-divided-the-red-sea-and-overthrew-pharaoh','canon','psalms',136,14,'canon','exodus',14,22,2,
+      E'*…went into the midst of the sea upon the dry ground: and the waters were a wall unto them…* (Exodus 14:22) — *made Yashar''el (Israel) to pass through the midst of it.*'),
+    ('psalm-136-he-divided-the-red-sea-and-overthrew-pharaoh','canon','psalms',136,15,'canon','exodus',14,27,3,
+      E'*…the sea returned to his strength… and Yahuah (LORD) overthrew the Egyptians in the midst of the sea.* (Exodus 14:27) — *overthrew Pharaoh and his host.*'),
+    ('psalm-136-he-divided-the-red-sea-and-overthrew-pharaoh','canon','psalms',136,15,'canon','exodus',14,28,4,
+      E'*…there remained not so much as one of them.* (Exodus 14:28) — the totality of the overthrow.'),
+    ('psalm-136-he-divided-the-red-sea-and-overthrew-pharaoh','canon','psalms',136,14,'canon','1-corinthians',10,1,5,
+      E'*…all our fathers were under the cloud, and all passed through the sea* (1 Corinthians 10:1) — the crossing read forward as baptism-figure.'),
+    ('psalm-136-he-divided-the-red-sea-and-overthrew-pharaoh','canon','psalms',136,14,'canon','1-corinthians',10,2,6,
+      E'*And were all baptized unto Moses in the cloud and in the sea* (1 Corinthians 10:2) — the passage through the midst named a baptism.'),
+    ('psalm-136-he-divided-the-red-sea-and-overthrew-pharaoh','canon','psalms',136,13,'apocrypha','the-wisdom-of-solomon',10,18,7,
+      E'*Brought them through the Red sea, and led them through much water* (Wisdom of Solomon 10:18) — the restored witness to the same dividing.'),
+    ('psalm-136-he-divided-the-red-sea-and-overthrew-pharaoh','canon','psalms',136,14,'apocrypha','the-wisdom-of-solomon',19,7,8,
+      E'*…out of the Red sea a way without impediment…* (Wisdom of Solomon 19:7) — the dry path of v.14 seen by the same library.'),
+
+    -- T5
+    ('psalm-136-he-led-his-people-through-the-wilderness-an-heritage-unto-israel','canon','psalms',136,17,'canon','numbers',21,23,1,
+      E'*Sihon would not suffer Yashar''el (Israel) to pass through his border… and fought against Yashar''el (Israel).* (Numbers 21:23) — the first of the *great kings* smitten.'),
+    ('psalm-136-he-led-his-people-through-the-wilderness-an-heritage-unto-israel','canon','psalms',136,19,'canon','numbers',21,34,2,
+      E'*…I have delivered him into thy hand… as thou didst unto Sihon king of the Amorites…* (Numbers 21:34) — Og delivered by the same word as Sihon.'),
+    ('psalm-136-he-led-his-people-through-the-wilderness-an-heritage-unto-israel','canon','psalms',136,19,'canon','deuteronomy',29,7,3,
+      E'*Sihon the king of Heshbon, and Og the king of Bashan, came out against us… and we smote them* (Deuteronomy 29:7) — Moses pairs them as the psalm does (vv.19-20).'),
+    ('psalm-136-he-led-his-people-through-the-wilderness-an-heritage-unto-israel','canon','psalms',136,20,'canon','joshua',12,4,4,
+      E'*…Og king of Bashan, which was of the remnant of the giants…* (Joshua 12:4) — the giant-king of the conquest list.'),
+    ('psalm-136-he-led-his-people-through-the-wilderness-an-heritage-unto-israel','canon','psalms',136,21,'canon','joshua',12,2,5,
+      E'*Sihon king of the Amorites, who dwelt in Heshbon, and ruled from Aroer…* (Joshua 12:2) — the territory *given for an heritage.*'),
+    ('psalm-136-he-led-his-people-through-the-wilderness-an-heritage-unto-israel','canon','psalms',136,22,'canon','romans',11,1,6,
+      E'*Hath Elohim (God) cast away his people? Elohim (God) forbid…* (Romans 11:1) — the heritage of *Yashar''el his servant* stands; the people are not cast away.'),
+
+    -- T6
+    ('psalm-136-who-remembered-us-in-our-low-estate-and-giveth-food-to-all-flesh','canon','psalms',136,23,'canon','genesis',8,1,1,
+      E'*And Elohim (God) remembered Noah… and the waters asswaged* (Genesis 8:1) — when Yahuah "remembers," he acts to deliver.'),
+    ('psalm-136-who-remembered-us-in-our-low-estate-and-giveth-food-to-all-flesh','canon','psalms',136,23,'canon','psalms',105,8,2,
+      E'*He hath remembered his covenant for ever, the word which he commanded to a thousand generations.* (Psalm 105:8) — the chesed-forever refrain told as covenant-memory.'),
+    ('psalm-136-who-remembered-us-in-our-low-estate-and-giveth-food-to-all-flesh','canon','psalms',136,23,'canon','luke',1,48,3,
+      E'*For he hath regarded the low estate of his handmaiden…* (Luke 1:48) — *remembered us in our low estate* carried forward in the Magnificat.'),
+    ('psalm-136-who-remembered-us-in-our-low-estate-and-giveth-food-to-all-flesh','canon','psalms',136,25,'canon','psalms',145,15,4,
+      E'*The eyes of all wait upon thee; and thou givest them their meat in due season.* (Psalm 145:15) — the open-handed providence of *food to all flesh.*'),
+    ('psalm-136-who-remembered-us-in-our-low-estate-and-giveth-food-to-all-flesh','canon','psalms',136,25,'canon','psalms',145,16,5,
+      E'*Thou openest thine hand, and satisfiest the desire of every living thing.* (Psalm 145:16) — mercy that sustains the whole creation made by wisdom (v.5).'),
+    ('psalm-136-who-remembered-us-in-our-low-estate-and-giveth-food-to-all-flesh','canon','psalms',136,25,'canon','matthew',6,26,6,
+      E'*…yet your heavenly Father feedeth them. Are ye not much better than they?* (Matthew 6:26) — the providence of v.25 made the ground of trust in the Father.')
+  ) AS m(slug,src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug=m.slug
+  JOIN _s302_ps136_lookup sv ON sv.edition_slug=m.src_edition AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps136_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
