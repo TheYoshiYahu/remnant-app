@@ -67,7 +67,7 @@ half and the standing minion protocol; this file governs the Tanakh half.
 | 16 | Nehemiah | 13 | 406 | 32100 | 316 | ⬜ |
 | 17 | Esther | 10 | 167 | 32500 | 317 | ⬜ |
 | 18 | Job | 42 | 1070 | 32800 | 318 | ⬜ |
-| 19 | Psalms | 150 | 2461 | 34000 | 319 | ⬜ (Messianic: 2,16,22,110; pilgrim/festival) |
+| 19 | Psalms | 150 | 2461 | 22000 | 319 | 🔄 47/150 ch LIVE (202 thr/698 mem, s302, origin ccb9ad0): Ps 1-24 contiguous + keystone/cluster chapters; RESUME numerical at Ps 25 |
 | 20 | Proverbs | 31 | 915 | 38000 | 320 | ⬜ (Wisdom personified → Formed) |
 | 21 | Ecclesiastes | 12 | 222 | 38900 | 321 | ⬜ |
 | 22 | Song of Solomon | 8 | 117 | 39300 | 322 | ⬜ |
