@@ -71,7 +71,7 @@ half and the standing minion protocol; this file governs the Tanakh half.
 | 20 | Proverbs | 31 | 915 | 38000 | 320 | ⬜ (Wisdom personified → Formed) |
 | 21 | Ecclesiastes | 12 | 222 | 38900 | 321 | ⬜ |
 | 22 | Song of Solomon | 8 | 117 | 39300 | 322 | ⬜ |
-| 23 | Isaiah | 66 | 1292 | 39600 | 323 | ⬜ (servant songs, two-house gathering, Lev-23 consummation) |
+| 23 | Isaiah | 66 | 1292 | 26000 | 323 | 🔄 session303, band 26000 (NOT 39600 — clears Psalms 22000-25725): Packs 1-2 LIVE+PUSHED — ch 6,7,9,11,40,52,53,54 = 47 thr/157 mem. NEXT heavyweights 61,56,65,66,35,42,49,50,55,58,59 then numerical fill. See memory s303-isaiah-xref-progress. |
 | 24 | Jeremiah | 52 | 1364 | 41400 | 324 | ⬜ (Jer 31 new covenant WITH both houses) |
 | 25 | Lamentations | 5 | 154 | 42800 | 325 | ⬜ |
 | 26 | Ezekiel | 48 | 1273 | 43000 | 326 | ⬜ (Ezek 37 two sticks; 36 new heart; 40-48 temple) |
