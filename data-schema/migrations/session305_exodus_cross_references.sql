@@ -12356,6 +12356,741 @@ SELECT t.id, cr.id, m.sort_order, m.member_note
   JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_exodus_37.sql (Exodus 37) -----
+-- Exodus 37 — Bezalel MAKES the holy-place furniture (the command of ch25/30 executed)
+-- Tag: ex37   Session prefix: s305   Sort band: 29900 step +3
+-- Temp view: _s305_ex37_lookup
+--
+-- Exodus 37 coverage:
+--   v.1-9   THE ARK & THE MERCY SEAT MADE (cherubim covering, faces toward the mercy seat)
+--           NT:     Romans 3:25 (propitiation/mercy-seat in his blood); Hebrews 9:5 (cherubims of glory shadowing the mercyseat)
+--           Tanakh: Leviticus 16:14-15 (blood on the mercy seat, Yom Kippur); Genesis 3:24 (cherubims guard the way to the tree of life)
+--           Extras: none warranted (clean canon weave carries the atonement type)
+--   v.10-16 THE TABLE OF SHEWBREAD MADE (bread of the Presence)
+--           NT:     Matthew 12:3-4 (the Son of Adam, David ate the shewbread); John 6:35 (I am the bread of life)
+--           Tanakh: Leviticus 24:5-9 (twelve cakes, everlasting covenant, most holy); 1 Samuel 21:6 (David given the hallowed shewbread)
+--           Extras: none warranted (1 Macc held for the restoration thread)
+--   v.17-24 THE PURE CANDLESTICK / MENORAH MADE (beaten gold, almond-bowls, seven lamps)
+--           NT:     Revelation 1:20 (the seven golden candlesticks); John 8:12 (I am the light of the world)
+--           Tanakh: Numbers 8:4 (menorah of beaten work, by the pattern shewn Moses); Numbers 17:8 (Aaron's rod budded almonds — chosen priesthood); Zechariah 4:6 (not by might, but by my spirit)
+--           Extras: none warranted on the make (1 Macc held for the restoration thread)
+--   v.25-29 THE INCENSE ALTAR & THE HOLY ANOINTING OIL & PURE INCENSE MADE
+--           NT:     Revelation 8:3-4 (golden altar, incense with the prayers of the saints)
+--           Tanakh: Psalm 141:2 (my prayer set forth as incense)
+--           Extras: 1 Maccabees 4:49-50 (the restored candlestick, incense altar, table, lamps lit at the rededication — two-house restoration witness)
+--
+-- Threads (slug — libraries):
+--   exodus-37-the-mercy-seat-made-the-place-of-atonement (free) — Tanakh + NT
+--   exodus-37-the-table-of-shewbread-the-bread-of-the-presence (free) — Tanakh + NT
+--   exodus-37-the-pure-candlestick-of-beaten-gold-the-light (free) — Tanakh + NT
+--   exodus-37-the-golden-altar-of-incense-and-the-prayers-restored (extras) — Tanakh + NT + Apocrypha (1 Maccabees)
+--
+-- Framework notes: the mercy-seat = hilasterion (Rom 3:25) — the made-object IS the atonement type the
+-- whole library fills; the shewbread = the Presence the Son of Adam, Lord of the sabbath, claims (Matt 12);
+-- the menorah's almond-bowls bind to Aaron's budded rod (the chosen priesthood) and the Spirit (Zech 4),
+-- the made lampstand the Light of the world fills; the 1 Macc rededication = the SAME furniture restored,
+-- a two-house restoration witness that the appointed worship is never abolished.
+
+CREATE TEMP VIEW _s305_ex37_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THE ARK & THE MERCY SEAT MADE (37:1-9)
+    ('canon','exodus',37,6,'canon','romans',3,25,'free',
+     E'*Whom Elohim (God) hath set forth to be a propitiation through faith in his blood, to declare his righteousness for the remission of sins that are past, through the forbearance of Elohim (God)* (Romans 3:25). When Bezalel *made the mercy seat of pure gold* (Exodus 37:6), he was fashioning the very place the apostle names: the propitiation (the mercy-seat, hilasterion) where Yahuah (LORD) meets his people in covering blood — set forth at last in the Messiah''s own.'),
+    ('canon','exodus',37,9,'canon','hebrews',9,5,'free',
+     E'*And over it the cherubims of glory shadowing the mercyseat; of which we can not now speak particularly* (Hebrews 9:5). Bezalel made *the cherubims spread out their wings on high... even to the mercy seatward were the faces of the cherubims* (Exodus 37:9); the writer to the Hebrews looks straight back at this made object — the cherubim of glory over the place of atonement — as the standing pattern of the heavenly things.'),
+    ('canon','exodus',37,9,'canon','leviticus',16,14,'free',
+     E'*And he shall take of the blood of the bullock, and sprinkle it with his finger upon the mercy seat eastward; and before the mercy seat shall he sprinkle of the blood with his finger seven times* (Leviticus 16:14). The mercy seat *made... of pure gold* with its covering cherubim (Exodus 37:6-9) is built for one day — Yom Kippur, when atoning blood is sprinkled upon it; the furniture is the appointed-time worship in advance.'),
+    ('canon','exodus',37,9,'canon','leviticus',16,15,'free',
+     E'*Then shall he kill the goat of the sin offering, that is for the people, and bring his blood within the vail, and do with that blood as he did with the blood of the bullock, and sprinkle it upon the mercy seat, and before the mercy seat* (Leviticus 16:15). The cherubim whose *faces* are *to the mercy seatward* (Exodus 37:9) look down on the very spot where the blood for the whole people is brought within the vail — the heart of the Day of Atonement.'),
+    ('canon','exodus',37,9,'canon','genesis',3,24,'free',
+     E'*So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24). The first cherubim guarded the way back to life; now cherubim are *made... on the two ends* of the mercy seat (Exodus 37:8) — the guarded way reopened, the place where Yahuah (LORD) again meets man over the covering blood.'),
+
+    -- THE TABLE OF SHEWBREAD MADE (37:10-16)
+    ('canon','exodus',37,16,'canon','leviticus',24,6,'free',
+     E'*And thou shalt set them in two rows, six on a row, upon the pure table before Yahuah (LORD)... Every sabbath he shall set it in order before Yahuah (LORD) continually, being taken from the children of Yashar''el (Israel) by an everlasting covenant* (Leviticus 24:6,8). The table *made... of shittim wood* overlaid with gold and its *vessels... of pure gold* (Exodus 37:10-16) holds the bread of the Presence — twelve cakes for the twelve tribes, an everlasting-covenant sign, never abolished.'),
+    ('canon','exodus',37,16,'canon','1-samuel',21,6,'free',
+     E'*So the priest gave him hallowed bread: for there was no bread there but the shewbread, that was taken from before Yahuah (LORD), to put hot bread in the day when it was taken away* (1 Samuel 21:6). The shewbread the table was *made* to carry (Exodus 37:10-16) is the very bread David receives in his need — the loaves of the Presence sustaining the LORD''s anointed-to-be.'),
+    ('canon','exodus',37,16,'canon','matthew',12,4,'free',
+     E'*How he entered into the house of Elohim (God), and did eat the shewbread, which was not lawful for him to eat, neither for them which were with him, but only for the priests?* (Matthew 12:4). The Son of Adam, Lord of the sabbath, points to David and this shewbread — the bread the golden table was *made* to bear (Exodus 37:10-16) — to teach that mercy and the Presence are the heart of the Torah, not its overthrow.'),
+    ('canon','exodus',37,16,'canon','john',6,35,'free',
+     E'*And Yahusha (Jesus) said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst* (John 6:35). The table *made... of pure gold* to hold the continual bread before Yahuah (LORD) (Exodus 37:10-16) foreshadows the Presence become bread — the Formed Son who is himself the bread of life set before the people.'),
+
+    -- THE PURE CANDLESTICK / MENORAH MADE (37:17-24)
+    ('canon','exodus',37,17,'canon','numbers',8,4,'free',
+     E'*And this work of the candlestick was of beaten gold, unto the shaft thereof, unto the flowers thereof, was beaten work: according unto the pattern which Yahuah (LORD) had shewed Moses, so he made the candlestick* (Numbers 8:4). Bezalel made the candlestick *of beaten work... of one beaten work of pure gold* (Exodus 37:17,22) — exactly the heavenly pattern shewn Moses; the lamp is no human design but the form revealed from above.'),
+    ('canon','exodus',37,19,'canon','numbers',17,8,'free',
+     E'*And, behold, the rod of Aaron for the house of Levi was budded, and brought forth buds, and bloomed blossoms, and yielded almonds* (Numbers 17:8). The candlestick''s *bowls made after the fashion of almonds... a knop and a flower* (Exodus 37:19) carry the same sign — the budding-almond of the chosen priesthood; the lamp that gives light is bound to the priesthood Yahuah (LORD) himself elected.'),
+    ('canon','exodus',37,17,'canon','zechariah',4,6,'free',
+     E'*Then he answered and spake unto me, saying, This is the word of Yahuah (LORD) unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). The all-gold candlestick *made... of beaten work* (Exodus 37:17) becomes the prophet''s vision of the lampstand fed continually — its light burns *not by might, nor by power, but by my spirit*; the menorah is the Ruach HaKodesh (Holy Spirit) in figure.'),
+    ('canon','exodus',37,23,'canon','revelation',1,20,'free',
+     E'*The seven stars are the angels of the seven churches: and the seven candlesticks which thou sawest are the seven churches* (Revelation 1:20). Bezalel made *his seven lamps... of pure gold* (Exodus 37:23); the seven golden lampstands stand at last among the assemblies of the saints, the one menorah become seven before the throne — the light of the Presence kept burning among the gathered people.'),
+    ('canon','exodus',37,23,'canon','john',8,12,'free',
+     E'*Then spake Yahusha (Jesus) again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life* (John 8:12). The candlestick *made... of pure gold* with *his seven lamps* (Exodus 37:17,23) was the only light in the holy place; the Formed Son names himself the light it was made to foreshadow — the light of life for all who follow.'),
+
+    -- THE INCENSE ALTAR & THE HOLY OIL & PURE INCENSE MADE (37:25-29)
+    ('canon','exodus',37,25,'canon','psalms',141,2,'free',
+     E'*Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice* (Psalm 141:2). The *incense altar* Bezalel *made... of shittim wood* overlaid with gold (Exodus 37:25-26) is built for the rising smoke that the psalmist reads as prayer ascending — the golden altar is intercession in figure.'),
+    ('canon','exodus',37,29,'canon','revelation',8,3,'extras',
+     E'*And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne* (Revelation 8:3). Bezalel made *the pure incense of sweet spices, according to the work of the apothecary* (Exodus 37:29); the same pure incense rises at last upon the golden altar before the throne, joined to the prayers of all the saints.'),
+    ('canon','exodus',37,29,'canon','revelation',8,4,'extras',
+     E'*And the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim (God) out of the angel''s hand* (Revelation 8:4). The *pure incense of sweet spices* made *according to the work of the apothecary* (Exodus 37:29) is no empty rite — its smoke ascends before Elohim (God) carrying the prayers of the saints; the made spice is the saints'' supplication.'),
+    ('canon','exodus',37,29,'apocrypha','1-maccabees',4,49,'extras',
+     E'*They made also new holy vessels, and into the temple they brought the candlestick, and the altar of burnt offerings, and of incense, and the table* (1 Maccabees 4:49). What Bezalel *made* — the candlestick, the incense altar, the table, the holy oil and pure incense (Exodus 37:17-29) — is the very furniture the faithful restore at the rededication; the appointed worship is taken up again, never abolished, a witness to the people gathered back.'),
+    ('canon','exodus',37,29,'apocrypha','1-maccabees',4,50,'extras',
+     E'*And upon the altar they burned incense, and the lamps that were upon the candlestick they lighted, that they might give light in the temple* (1 Maccabees 4:50). The pure incense and the lamps that Bezalel *made* (Exodus 37:23,29) burn again at the rededication — the incense rising, the menorah relit; the restored people resume the worship Yahuah (LORD) commanded from the first.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex37_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex37_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-37-the-mercy-seat-made-the-place-of-atonement',
+       E'The Mercy Seat Made — the Place of Atonement',
+       E'Bezalel *made the mercy seat of pure gold* and *made two cherubims of gold, beaten out of one piece... on the two ends of the mercy seat... even to the mercy seatward were the faces of the cherubims* (Exodus 37:6-9). This made object is the heart of the sanctuary: the covering over the testimony where Yahuah (LORD) meets his people. The whole library reads it as the place of atonement. On the Day of Atonement the blood is sprinkled here — *upon the mercy seat eastward... seven times* (Leviticus 16:14), and *the goat of the sin offering, that is for the people... sprinkle it upon the mercy seat* (Leviticus 16:15). The cherubim with downward faces recall the first cherubim who kept *the way of the tree of life* (Genesis 3:24): the guarded way to life reopened over covering blood. And the apostle names it directly — the Messiah is the one *Elohim (God) hath set forth to be a propitiation through faith in his blood* (Romans 3:25), the mercy-seat itself — while the writer to the Hebrews looks back at *the cherubims of glory shadowing the mercyseat* (Hebrews 9:5) as the standing pattern of the heavenly things. The furniture is the atonement, made in gold and waiting to be filled.',
+       sv.verse_id, ev.verse_id, 'free', 29900
+  FROM _s305_ex37_lookup sv, _s305_ex37_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=37 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=37 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-37-the-table-of-shewbread-the-bread-of-the-presence',
+       E'The Table of Shewbread Made — the Bread of the Presence',
+       E'Bezalel *made the table of shittim wood... overlaid it with pure gold... and made the vessels which were upon the table... of pure gold* (Exodus 37:10-16) — the table for the bread of the Presence. The Torah sets the meaning: *two rows, six on a row, upon the pure table before Yahuah (LORD)... every sabbath he shall set it in order... by an everlasting covenant* (Leviticus 24:6,8) — twelve cakes for the twelve tribes, a perpetual statute. When David is in need, the priest gives him *the shewbread, that was taken from before Yahuah (LORD)* (1 Samuel 21:6); and the Son of Adam, Lord of the sabbath, points back to that very moment — *did eat the shewbread, which was not lawful for him to eat... but only for the priests* (Matthew 12:4) — to show that mercy and the Presence are the Torah''s heart, not its overthrow. At last the Presence itself becomes the bread: *I am the bread of life: he that cometh to me shall never hunger* (John 6:35). The golden table was made to hold him in figure.',
+       sv.verse_id, ev.verse_id, 'free', 29903
+  FROM _s305_ex37_lookup sv, _s305_ex37_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=37 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=37 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-37-the-pure-candlestick-of-beaten-gold-the-light',
+       E'The Pure Candlestick of Beaten Gold — the Light',
+       E'Bezalel *made the candlestick of pure gold: of beaten work made he the candlestick*, with *bowls made after the fashion of almonds*, *his seven lamps... of pure gold*, *all of it... one beaten work of pure gold* (Exodus 37:17-24). The lamp is no human design: it was made *according unto the pattern which Yahuah (LORD) had shewed Moses* (Numbers 8:4), the heavenly form revealed from above. Its almond-bowls carry the sign of the chosen priesthood — *the rod of Aaron for the house of Levi was budded... and yielded almonds* (Numbers 17:8). And its burning is the Spirit: the prophet sees the all-gold lampstand fed continually and hears, *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). The made lamp opens at last into the seven golden lampstands among the assemblies — *the seven candlesticks... are the seven churches* (Revelation 1:20) — and the Formed Son names himself the light it foreshadowed: *I am the light of the world... shall have the light of life* (John 8:12).',
+       sv.verse_id, ev.verse_id, 'free', 29906
+  FROM _s305_ex37_lookup sv, _s305_ex37_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=37 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=37 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-37-the-golden-altar-of-incense-and-the-prayers-restored',
+       E'The Golden Altar of Incense — the Prayers, and the Worship Restored',
+       E'Bezalel *made the incense altar of shittim wood... overlaid it with pure gold... also he made the holy anointing oil, and the pure incense of sweet spices, according to the work of the apothecary* (Exodus 37:25-29). The rising smoke is read as prayer ascending: *Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice* (Psalm 141:2). At the throne the figure is fulfilled — an angel with *much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne* (Revelation 8:3), and *the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim (God)* (Revelation 8:4). And when the people are gathered back from exile and defilement, this very furniture is restored: *into the temple they brought the candlestick, and the altar of... incense, and the table* (1 Maccabees 4:49), and *upon the altar they burned incense, and the lamps that were upon the candlestick they lighted* (1 Maccabees 4:50). The appointed worship Yahuah (LORD) commanded from the first is taken up again, never abolished — a witness to a people restored.',
+       sv.verse_id, ev.verse_id, 'extras', 29909
+  FROM _s305_ex37_lookup sv, _s305_ex37_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=37 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=37 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- Thread 1: the mercy seat made
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (37,6,'canon','romans',3,25,1,E'*set forth to be a propitiation through faith in his blood* (Romans 3:25) — the made mercy-seat IS the propitiation the Messiah fills.'),
+    (37,9,'canon','hebrews',9,5,2,E'*the cherubims of glory shadowing the mercyseat* (Hebrews 9:5) — the made cherubim as the pattern of heavenly things.'),
+    (37,9,'canon','leviticus',16,14,3,E'*sprinkle... upon the mercy seat eastward... seven times* (Leviticus 16:14) — the made seat built for the Day of Atonement.'),
+    (37,9,'canon','leviticus',16,15,4,E'*sprinkle it upon the mercy seat... for the people* (Leviticus 16:15) — atoning blood for the whole people on this very seat.'),
+    (37,9,'canon','genesis',3,24,5,E'*Cherubims... to keep the way of the tree of life* (Genesis 3:24) — the guarded way to life reopened over the mercy seat.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-37-the-mercy-seat-made-the-place-of-atonement'
+  JOIN _s305_ex37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=37 AND sv.verse_number=m.src_v
+  JOIN _s305_ex37_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the table of shewbread
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (37,16,'canon','leviticus',24,6,1,E'*two rows, six on a row, upon the pure table... by an everlasting covenant* (Leviticus 24:6,8) — twelve cakes for the twelve tribes, perpetual.'),
+    (37,16,'canon','1-samuel',21,6,2,E'*the priest gave him... the shewbread, that was taken from before Yahuah (LORD)* (1 Samuel 21:6) — the loaves sustaining the anointed-to-be.'),
+    (37,16,'canon','matthew',12,4,3,E'*did eat the shewbread, which was not lawful... but only for the priests* (Matthew 12:4) — the Son of Adam: mercy and the Presence are the Torah''s heart.'),
+    (37,16,'canon','john',6,35,4,E'*I am the bread of life: he that cometh to me shall never hunger* (John 6:35) — the Presence become bread, foreshadowed by the golden table.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-37-the-table-of-shewbread-the-bread-of-the-presence'
+  JOIN _s305_ex37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=37 AND sv.verse_number=m.src_v
+  JOIN _s305_ex37_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the pure candlestick
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (37,17,'canon','numbers',8,4,1,E'*according unto the pattern which Yahuah (LORD) had shewed Moses* (Numbers 8:4) — the beaten-gold lamp is the heavenly form revealed.'),
+    (37,19,'canon','numbers',17,8,2,E'*the rod of Aaron... budded... and yielded almonds* (Numbers 17:8) — the almond-bowls carry the sign of the chosen priesthood.'),
+    (37,17,'canon','zechariah',4,6,3,E'*Not by might, nor by power, but by my spirit* (Zechariah 4:6) — the all-gold lampstand is the Ruach HaKodesh (Holy Spirit) in figure.'),
+    (37,23,'canon','revelation',1,20,4,E'*the seven candlesticks... are the seven churches* (Revelation 1:20) — the seven lamps among the gathered assemblies.'),
+    (37,23,'canon','john',8,12,5,E'*I am the light of the world... shall have the light of life* (John 8:12) — the Formed Son the menorah was made to foreshadow.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-37-the-pure-candlestick-of-beaten-gold-the-light'
+  JOIN _s305_ex37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=37 AND sv.verse_number=m.src_v
+  JOIN _s305_ex37_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: the golden altar of incense + restoration
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (37,25,'canon','psalms',141,2,1,E'*Let my prayer be set forth before thee as incense* (Psalm 141:2) — the rising smoke read as prayer ascending.'),
+    (37,29,'canon','revelation',8,3,2,E'*much incense... with the prayers of all saints upon the golden altar* (Revelation 8:3) — the pure incense at the throne.'),
+    (37,29,'canon','revelation',8,4,3,E'*the smoke of the incense... ascended up before Elohim (God)* (Revelation 8:4) — the made spice become the saints'' supplication.'),
+    (37,29,'apocrypha','1-maccabees',4,49,4,E'*into the temple they brought the candlestick, and the altar of... incense, and the table* (1 Maccabees 4:49) — the made furniture restored at the rededication.'),
+    (37,29,'apocrypha','1-maccabees',4,50,5,E'*they burned incense, and the lamps... they lighted* (1 Maccabees 4:50) — the appointed worship taken up again, never abolished.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-37-the-golden-altar-of-incense-and-the-prayers-restored'
+  JOIN _s305_ex37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=37 AND sv.verse_number=m.src_v
+  JOIN _s305_ex37_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_38.sql (Exodus 38) -----
+-- Chapter: Exodus 38 (the brazen altar, the laver of the women''s mirrors, the court,
+--   the SUM of the tabernacle of the testimony counted, the redemption-silver reckoned)
+-- Tag: ex38   Session prefix: s305   Sort band: 29925 step +3
+-- Temp view: _s305_ex38_lookup
+--
+-- THREADS (4):
+--   exodus-38-the-brazen-altar-of-burnt-offering-made-foursquare      [free: canon]
+--   exodus-38-the-laver-from-the-womens-mirrors-the-washing-of-the-word [free: canon]
+--   exodus-38-the-tabernacle-of-the-testimony-the-earthly-copy-of-the-heavenly [free: canon]
+--   exodus-38-the-redemption-silver-of-every-numbered-soul-the-ransom  [free: canon]
+--
+-- Exodus 38 coverage:
+--   v.1-2  THE BRAZEN ALTAR MADE
+--          NT:     none warranted (horns/altar-typology carried at Exod 27 lateral; light touch)
+--          Extras: none warranted
+--          Tanakh: Exod 27:1-2 (the altar-command this builds) -> THREAD 1
+--   v.3-7  altar vessels, grate, staves -- construction detail; none warranted (folded under v.1-2)
+--   v.8    THE LAVER OF BRASS FROM THE LOOKINGGLASSES OF THE WOMEN
+--          NT:     Eph 5:26 (washing of water by the word); 2 Cor 3:18 (beholding as in a glass, changed into the image);
+--                  James 1:23 + 1:25 (beholding the natural face in a glass vs the perfect law of liberty) -> THREAD 2
+--          Extras: none warranted (Sirach 50 = later Simon/altar, not the laver; not load-bearing)
+--          Tanakh: 1 Sam 2:22 (the women that assembled at the door) -> THREAD 2
+--   v.9-20 THE COURT: hangings of fine twined linen, pillars, sockets -- gate/fine-linen weave carried at ch27; none added here
+--   v.21   THE SUM OF THE TABERNACLE OF TESTIMONY, AS IT WAS COUNTED
+--          NT:     Heb 8:5 (example and shadow, the pattern in the mount); Heb 9:23-24 (the patterns of things in the heavens, the figures of the true);
+--                  Rev 15:5 (the temple of the tabernacle of the testimony in heaven opened) -> THREAD 3
+--                  [complementary to live Revelation-anchored slug revelation-15-...-exodus-38; this is the EXODUS-38-anchored direction]
+--          Extras: none warranted
+--          Tanakh: none warranted (Heb supplies the pattern-language)
+--   v.22-23 Bezaleel of Yahudah, Aholiab of Dan -- builders named; folded under v.21 (made all that Yahuah commanded)
+--   v.24    the gold of the offering -- folded under the reckoning (v.25-31)
+--   v.25-27 THE SILVER OF THE NUMBERED CONGREGATION, A BEKAH FOR EVERY MAN, BECAME THE SOCKETS
+--          NT:     1 Pet 1:18-19 (redeemed not with silver but the precious blood of Messiah) -> THREAD 4
+--          Extras: none warranted
+--          Tanakh: Exod 30:12-16 (the ransom for the soul, the atonement-money); Num 1:2-3 (the numbering, twenty years and upward) -> THREAD 4
+--   v.28-31 the silver hooks, the brass sockets/altar/pins -- construction tally; folded under v.25-27
+
+CREATE TEMP VIEW _s305_ex38_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the brazen altar of burnt offering made foursquare
+    ('canon','exodus',38,1,'canon','exodus',27,1,'free',
+     E'*And thou shalt make an altar of shittim wood, five cubits long, and five cubits broad; the altar shall be foursquare: and the height thereof shall be three cubits.* (Exodus 27:1). What Yahuah (LORD) commanded in the mount is now built to the cubit: *And he made the altar of burnt offering of shittim wood: five cubits was the length thereof, and five cubits the breadth thereof; it was foursquare* (Exodus 38:1). The pattern given becomes the pattern made -- exactly, nothing added, nothing left out.'),
+    ('canon','exodus',38,2,'canon','exodus',27,2,'free',
+     E'*And thou shalt make the horns of it upon the four corners thereof: his horns shall be of the same: and thou shalt overlay it with brass.* (Exodus 27:2). The horns of the altar -- the place atonement-blood was put -- are made as commanded: *And he made the horns thereof on the four corners of it; the horns thereof were of the same: and he overlaid it with brass* (Exodus 38:2). The altar of burnt offering is the door of approach, the brass that bears the fire of judgment.'),
+    -- THREAD 2: the laver from the women''s mirrors -- the washing of the word
+    ('canon','exodus',38,8,'canon','ephesians',5,26,'free',
+     E'*That he might sanctify and cleanse it with the washing of water by the word,* (Ephesians 5:26). The laver of brass -- the basin of washing -- was made *of the lookingglasses of the women assembling* (Exodus 38:8); the bride is now cleansed at that laver by the water of the word. The vessel of cleansing was forged from surrendered mirrors, and its waters wash the gathered people clean.'),
+    ('canon','exodus',38,8,'canon','2-corinthians',3,18,'free',
+     E'*But we all, with open face beholding as in a glass the glory of Yahuah (Lord), are changed into the same image from glory to glory, even as by the Spirit of Yahuah (Lord).* (2 Corinthians 3:18). The women gave up the *lookingglasses* (Exodus 38:8) in which they saw themselves, and the brass became the laver. The glass that once returned self-reflection now, surrendered, returns his glory -- and the beholder is changed into that same image.'),
+    ('canon','exodus',38,8,'canon','james',1,23,'free',
+     E'*For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass:* (James 1:23). The mirror that shows only the *natural face* is the un-surrendered glass; the women''s *lookingglasses* (Exodus 38:8) were given up to be made the laver of washing, the glass exchanged for the cleansing of the word that one must DO, not merely behold.'),
+    ('canon','exodus',38,8,'canon','james',1,25,'free',
+     E'*But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed.* (James 1:25). Against the vain mirror stands the *perfect law of liberty* -- the Torah looked into and kept. The women''s mirrors of self (Exodus 38:8) were melted into the laver of cleansing, the same exchange: self set down, the doing of the word taken up.'),
+    ('canon','exodus',38,8,'canon','1-samuel',2,22,'free',
+     E'*Now Eli was very old, and heard all that his sons did unto all Yashar''el (Israel); and how they lay with the women that assembled at the door of the tabernacle of the congregation.* (1 Samuel 2:22). The *women assembling, which assembled at the door of the tabernacle of the congregation* (Exodus 38:8) are the same serving women at the same door -- the laver born of their self-surrender stands as the rebuke of the priests who defiled them.'),
+    -- THREAD 3: the tabernacle of the testimony -- earthly copy of the heavenly
+    ('canon','exodus',38,21,'canon','hebrews',8,5,'free',
+     E'*Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount.* (Hebrews 8:5). *This is the sum of the tabernacle, even of the tabernacle of testimony, as it was counted, according to the commandment of Moses* (Exodus 38:21) -- every cubit of it built to the pattern shown in the mount, the earthly shadow of the heavenly true.'),
+    ('canon','exodus',38,21,'canon','hebrews',9,23,'free',
+     E'*It was therefore necessary that the patterns of things in the heavens should be purified with these; but the heavenly things themselves with better sacrifices than these.* (Hebrews 9:23). The *tabernacle of testimony* (Exodus 38:21) is named one of *the patterns of things in the heavens* -- a copy that points to its original; the figure was cleansed with blood, the heavenly itself with a better sacrifice.'),
+    ('canon','exodus',38,21,'canon','hebrews',9,24,'free',
+     E'*For Messiah (Christ) is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of Elohim (God) for us:* (Hebrews 9:24). The *tabernacle of testimony* counted in Exodus 38:21 is one of the *holy places made with hands, which are the figures of the true* -- the Formed Son entered not the copy but heaven itself, the original it always pointed to.'),
+    ('canon','exodus',38,21,'canon','revelation',15,5,'free',
+     E'*And after that I looked, and, behold, the temple of the tabernacle of the testimony in heaven was opened:* (Revelation 15:5). The very phrase Moses'' record uses -- *the tabernacle of testimony* (Exodus 38:21) -- John sees standing OPEN in heaven: the heavenly original of which the wilderness tent was the counted copy. The pattern made on earth is the shadow of the temple now opened above.'),
+    -- THREAD 4: the redemption-silver of every numbered soul -- the ransom
+    ('canon','exodus',38,25,'canon','exodus',30,12,'free',
+     E'*When thou takest the sum of the children of Yashar''el (Israel) after their number, then shall they give every man a ransom for his soul unto Yahuah (LORD), when thou numberest them; that there be no plague among them, when thou numberest them.* (Exodus 30:12). The *silver of them that were numbered of the congregation* (Exodus 38:25) is exactly this ransom -- *a ransom for his soul* -- now reckoned and weighed; every counted soul gave its redemption-price.'),
+    ('canon','exodus',38,26,'canon','exodus',30,13,'free',
+     E'*This they shall give, every one that passeth among them that are numbered, half a shekel after the shekel of the sanctuary: (a shekel is twenty gerahs:) an half shekel shall be the offering of Yahuah (LORD).* (Exodus 30:13). The reckoning fulfils the command to the gerah: *A bekah for every man, that is, half a shekel, after the shekel of the sanctuary* (Exodus 38:26) -- the rich no more, the poor no less, every soul ransomed at the same price.'),
+    ('canon','exodus',38,26,'canon','exodus',30,16,'free',
+     E'*And thou shalt take the atonement money of the children of Yashar''el (Israel), and shalt appoint it for the service of the tabernacle of the congregation; that it may be a memorial unto the children of Yashar''el (Israel) before Yahuah (LORD), to make an atonement for your souls.* (Exodus 30:16). The *atonement money* was to build the dwelling; in Exodus 38:26-27 it does -- *from twenty years old and upward, for six hundred thousand and three thousand and five hundred and fifty men* -- the ransom of every soul becoming the foundation it rests on.'),
+    ('canon','exodus',38,26,'canon','numbers',1,2,'free',
+     E'*Take ye the sum of all the congregation of the children of Yashar''el (Israel), after their families, by the house of their fathers, with the number of their names, every male by their polls;* (Numbers 1:2). The numbering reckoned in Exodus 38:26 -- *for every one that went to be numbered, from twenty years old and upward* -- is this census of the redeemed congregation, each soul named, counted, and ransomed.'),
+    ('canon','exodus',38,26,'canon','numbers',1,3,'free',
+     E'*From twenty years old and upward, all that are able to go forth to war in Yashar''el (Israel): thou and Aaron shall number them by their armies.* (Numbers 1:3). The age-line is identical -- *from twenty years old and upward* (Exodus 38:26) -- the ransomed host of warriors whose half-shekels were cast into the sockets of the sanctuary.'),
+    ('canon','exodus',38,27,'canon','1-peter',1,18,'free',
+     E'*Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers;* (1 Peter 1:18). The silver of the ransom was cast into *the sockets of the sanctuary* (Exodus 38:27) -- the whole dwelling resting on redemption-money. Peter unfolds the type: the true redemption is not by silver at all.'),
+    ('canon','exodus',38,27,'canon','1-peter',1,19,'free',
+     E'*But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot:* (1 Peter 1:19). Every soul''s silver became *the sockets of the sanctuary... a talent for a socket* (Exodus 38:27) -- the house standing on the ransom of the people. The shadow of half-shekels finds its substance in the precious blood of the spotless Lamb on which the true sanctuary stands.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== threads =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-38-the-brazen-altar-of-burnt-offering-made-foursquare',
+       E'The Brazen Altar of Burnt Offering — Made Foursquare as Commanded',
+       E'In the mount Yahuah (LORD) gave the pattern: *And thou shalt make an altar of shittim wood, five cubits long, and five cubits broad; the altar shall be foursquare: and the height thereof shall be three cubits* (Exodus 27:1), *And thou shalt make the horns of it upon the four corners thereof... and thou shalt overlay it with brass* (Exodus 27:2). Now it is built to the cubit, nothing added, nothing left undone: *And he made the altar of burnt offering of shittim wood: five cubits was the length thereof, and five cubits the breadth thereof; it was foursquare* (Exodus 38:1), *And he made the horns thereof on the four corners of it... and he overlaid it with brass* (Exodus 38:2). The brazen altar is the place of approach — the brass that bears the fire of judgment, the horns where atonement-blood was put. The command given becomes the work made, exactly.',
+       sv.verse_id, ev.verse_id, 'free', 29925
+  FROM _s305_ex38_lookup sv, _s305_ex38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=38 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-38-the-laver-from-the-womens-mirrors-the-washing-of-the-word',
+       E'The Laver from the Women''s Mirrors — Self Surrendered to the Washing of the Word',
+       E'*And he made the laver of brass, and the foot of it of brass, of the lookingglasses of the women assembling, which assembled at the door of the tabernacle of the congregation* (Exodus 38:8). The serving women gave up their mirrors — the very glass in which they saw themselves — and that brass was forged into the laver of cleansing. The whole gospel of sanctification is in the exchange: the glass that returned self-reflection, surrendered, becomes the vessel of washing. So the bride is *sanctif[ied] and cleanse[d]... with the washing of water by the word* (Ephesians 5:26); so *we all, with open face beholding as in a glass the glory of Yahuah (Lord), are changed into the same image from glory to glory* (2 Corinthians 3:18) — the mirror now shows his glory, not the self, and the beholder is transformed. James draws the same line: the un-surrendered man is *like unto a man beholding his natural face in a glass* (James 1:23), but the blessed man *looketh into the perfect law of liberty, and continueth therein... a doer of the work* (James 1:25) — the Torah looked into and kept, not the vain mirror of self. And these are the same *women that assembled at the door of the tabernacle of the congregation* (1 Samuel 2:22) whom Eli''s sons defiled — their self-surrender stands as the rebuke of the priests who profaned the door.',
+       sv.verse_id, ev.verse_id, 'free', 29928
+  FROM _s305_ex38_lookup sv, _s305_ex38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=38 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-38-the-tabernacle-of-the-testimony-the-earthly-copy-of-the-heavenly',
+       E'The Tabernacle of the Testimony — The Earthly Copy of the Heavenly Original',
+       E'*This is the sum of the tabernacle, even of the tabernacle of testimony, as it was counted, according to the commandment of Moses* (Exodus 38:21). The wilderness tent is named *the tabernacle of testimony* — and it is not the original but the copy. *Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God)... See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5): every cubit was built to a heavenly pattern. It is one of *the patterns of things in the heavens* (Hebrews 9:23), one of the *holy places made with hands, which are the figures of the true* — into which the Formed Son entered not, *but into heaven itself, now to appear in the presence of Elohim (God) for us* (Hebrews 9:24). And John sees the original standing open: *the temple of the tabernacle of the testimony in heaven was opened* (Revelation 15:5) — the very phrase of Moses'' record, the heavenly true of which the counted tent below was always the shadow.',
+       sv.verse_id, ev.verse_id, 'free', 29931
+  FROM _s305_ex38_lookup sv, _s305_ex38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=38 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-38-the-redemption-silver-of-every-numbered-soul-the-ransom',
+       E'The Redemption-Silver of Every Numbered Soul — The Ransom that Built the House',
+       E'*And the silver of them that were numbered of the congregation was an hundred talents... A bekah for every man, that is, half a shekel, after the shekel of the sanctuary, for every one that went to be numbered, from twenty years old and upward, for six hundred thousand and three thousand and five hundred and fifty men* (Exodus 38:25-26); *And of the hundred talents of silver were cast the sockets of the sanctuary... a talent for a socket* (Exodus 38:27). Every ransomed soul''s silver became the foundation the dwelling rested on. This is the atonement-money commanded: *then shall they give every man a ransom for his soul unto Yahuah (LORD)* (Exodus 30:12), *half a shekel after the shekel of the sanctuary... an half shekel shall be the offering of Yahuah (LORD)* (Exodus 30:13), to be appointed *for the service of the tabernacle... to make an atonement for your souls* (Exodus 30:16). It is the census of Numbers — *Take ye the sum of all the congregation... every male by their polls* (Numbers 1:2), *From twenty years old and upward* (Numbers 1:3) — each soul named, counted, ransomed. And the type opens forward: *ye were not redeemed with corruptible things, as silver and gold... but with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:18-19). The shadow of half-shekels finds its substance in the blood on which the true sanctuary stands.',
+       sv.verse_id, ev.verse_id, 'free', 29934
+  FROM _s305_ex38_lookup sv, _s305_ex38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=38 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== thread_members =====================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And thou shalt make an altar of shittim wood, five cubits long, and five cubits broad; the altar shall be foursquare* (Exodus 27:1) — the altar-command given in the mount, now built to the cubit in 38:1.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=1
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=27 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-brazen-altar-of-burnt-offering-made-foursquare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And thou shalt make the horns of it upon the four corners thereof... and thou shalt overlay it with brass* (Exodus 27:2) — the horns where atonement-blood was put, made as commanded in 38:2.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=2
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=27 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-brazen-altar-of-burnt-offering-made-foursquare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*That he might sanctify and cleanse it with the washing of water by the word* (Ephesians 5:26) — the laver of cleansing, forged from surrendered mirrors, fulfilled as the washing of the word.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=5 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-laver-from-the-womens-mirrors-the-washing-of-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...with open face beholding as in a glass the glory of Yahuah (Lord), are changed into the same image* (2 Corinthians 3:18) — the mirror of self, surrendered, now returns his glory.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-laver-from-the-womens-mirrors-the-washing-of-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...like unto a man beholding his natural face in a glass* (James 1:23) — the un-surrendered mirror of self, set against the laver of washing.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-laver-from-the-womens-mirrors-the-washing-of-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*But whoso looketh into the perfect law of liberty, and continueth therein... a doer of the work* (James 1:25) — the Torah looked into and kept, the doing of the word taken up.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-laver-from-the-womens-mirrors-the-washing-of-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*...the women that assembled at the door of the tabernacle of the congregation* (1 Samuel 2:22) — the same serving women at the same door, their self-surrender rebuking the priests who defiled them.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-laver-from-the-womens-mirrors-the-washing-of-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5) — the counted tent built to a heavenly pattern, the shadow of heavenly things.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=21
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-tabernacle-of-the-testimony-the-earthly-copy-of-the-heavenly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...the patterns of things in the heavens should be purified with these* (Hebrews 9:23) — the testimony-tent named a copy of the heavenly original.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=21
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-tabernacle-of-the-testimony-the-earthly-copy-of-the-heavenly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...the figures of the true; but into heaven itself* (Hebrews 9:24) — the Formed Son entered not the copy made with hands but the heavenly original.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=21
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-tabernacle-of-the-testimony-the-earthly-copy-of-the-heavenly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*...the temple of the tabernacle of the testimony in heaven was opened* (Revelation 15:5) — the heavenly original, named in Moses'' very phrase, seen standing open.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=21
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-tabernacle-of-the-testimony-the-earthly-copy-of-the-heavenly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...then shall they give every man a ransom for his soul unto Yahuah (LORD), when thou numberest them* (Exodus 30:12) — the silver of the numbered is exactly this ransom for the soul.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=25
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-redemption-silver-of-every-numbered-soul-the-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...half a shekel after the shekel of the sanctuary... an half shekel shall be the offering of Yahuah (LORD)* (Exodus 30:13) — the bekah reckoned in 38:26, the rich no more, the poor no less.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=26
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-redemption-silver-of-every-numbered-soul-the-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...the atonement money... appoint it for the service of the tabernacle... to make an atonement for your souls* (Exodus 30:16) — the ransom becoming the dwelling it rests on.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=26
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-redemption-silver-of-every-numbered-soul-the-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Take ye the sum of all the congregation... every male by their polls* (Numbers 1:2) — the census of the ransomed, each soul named and counted.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=26
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-redemption-silver-of-every-numbered-soul-the-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*From twenty years old and upward... thou and Aaron shall number them by their armies* (Numbers 1:3) — the identical age-line of the ransomed host whose silver built the sockets.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=26
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-redemption-silver-of-every-numbered-soul-the-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*...ye were not redeemed with corruptible things, as silver and gold... from your fathers* (1 Peter 1:18) — the silver cast into the sockets is the shadow; the true redemption is not by silver.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=27
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-redemption-silver-of-every-numbered-soul-the-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:19) — the substance of the half-shekels: the true sanctuary stands on the blood of the spotless Lamb.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=38 AND sv.verse_number=27
+  JOIN _s305_ex38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-38-the-redemption-silver-of-every-numbered-soul-the-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_39.sql (Exodus 39) -----
+-- Exodus 39 — the priestly garments MADE + the "as Yahuah commanded Moses" refrain + Moses blesses the finished work
+-- Session prefix s305 | tag ex39 | temp view _s305_ex39_lookup | sort band 29950 step +3
+--
+-- Exodus 39 coverage:
+--   v.1,5     (cloths of service / curious girdle "as Yahuah commanded Moses") — folded into the refrain thread (v.42-43 anchor); NT: none warranted alone; Extras: Ecclesiasticus 45 (garments) used at stones/bells/crown; Tanakh: Exod 28 command-side.
+--   v.2-5     (the ephod made) — Tanakh: Exod 28:6-8 command (folded into stones thread context); NT: none warranted alone; Extras: Ecclesiasticus 45:8-10 robe/ephod.
+--   v.6-7,14  (★ onyx stones + breastplate, twelve-tribe names, "stones for a memorial") — Tanakh: Exod 28:9-12,21; NT: Rev 21:12-14 (twelve tribes named on the gates); Extras: Ecclesiasticus 45:11 (stones graven like seals, after the number of the tribes). THREAD 1.
+--   v.8-21    (breastplate construction) — folded with v.6-7/14 (the borne-on-the-heart two-house thread).
+--   v.22-24   (robe / hems / pomegranates) — feeds the bells thread.
+--   v.25-26   (bells of pure gold between pomegranates "to minister in") — Extras: Ecclesiasticus 45:9 (golden bells, a sound heard, a memorial); NT: none warranted; Tanakh: Exod 28:33-35. THREAD 2.
+--   v.27-29   (coats/mitre/breeches/girdle made) — none warranted beyond refrain (folded).
+--   v.30-31   (★ the plate of the holy crown, HOLINESS TO THE Yahuah) — Tanakh: Zech 14:20-21, Lev 19:2; NT: 1 Pet 1:16; Extras: Ecclesiasticus 45:12 (crown engraved "Holiness"). THREAD 3.
+--   v.32      (the work of the tabernacle FINISHED, Israel did all that Yahuah commanded) — NT: Rev 21:3 (the tabernacle of Elohim is with men); Extras: Jubilees 1:17 (I shall build My sanctuary and dwell with them). THREAD 4.
+--   v.33-41   (the brought-finished furniture inventory) — none warranted (descriptive list; the finished-dwelling weight carried by v.32/v.42-43).
+--   v.42-43   (★★★ "According to all that Yahuah commanded Moses... and Moses blessed them") — Tanakh: Exod 25:40, Gen 1:31, Gen 2:1-2, Gen 6:22, Exod 40:16; NT: Heb 8:5, Heb 3:2, John 17:4, John 19:30, Matt 7:24; Extras: none warranted (Ecclesiasticus 45 used at garments). THREAD 5.
+--
+-- THREADS (slug — target libraries):
+--   1. exodus-39-the-twelve-tribe-stones-borne-for-a-memorial-rev-21   [canon Tanakh + NT + apocrypha/ecclesiasticus] tier extras
+--   2. exodus-39-the-bells-and-pomegranates-the-sound-of-ministry      [canon Tanakh + apocrypha/ecclesiasticus] tier extras
+--   3. exodus-39-holiness-to-yahuah-the-golden-crown                   [canon Tanakh + NT + apocrypha/ecclesiasticus] tier extras
+--   4. exodus-39-the-tabernacle-finished-yahuah-dwells-with-his-people [canon NT + jubilees] tier extras
+--   5. exodus-39-as-yahuah-commanded-moses-the-finished-obedient-work  [canon Tanakh + NT] tier free
+-- ============================================================================
+
+CREATE TEMP VIEW _s305_ex39_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ---------- B. cross_references ----------
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the twelve-tribe stones borne for a memorial → Rev 21
+    ('canon','exodus',39,6,'canon','exodus',28,11,'free',
+     E'*With the work of an engraver in stone, like the engravings of a signet, shalt thou engrave the two stones with the names of the children of Yashar''el (Israel): thou shalt make them to be set in ouches of gold* (Exodus 28:11). What Yahuah commanded on the mount is here MADE: *they wrought onyx stones inclosed in ouches of gold, graven, as signets are graven, with the names of the children of Yashar''el* (Exodus 39:6) — the pattern reproduced exactly.'),
+    ('canon','exodus',39,7,'canon','exodus',28,12,'free',
+     E'*And thou shalt put the two stones upon the shoulders of the ephod for stones of memorial unto the children of Yashar''el (Israel): and Aaron shall bear their names before Yahuah (LORD) upon his two shoulders for a memorial* (Exodus 28:12). The high priest BEARS the whole twelve-tribe people: *he put them on the shoulders of the ephod, that they should be stones for a memorial to the children of Yashar''el* (Exodus 39:7) — the two-house people carried, never one tribe forgotten.'),
+    ('canon','exodus',39,14,'canon','exodus',28,21,'free',
+     E'*And the stones shall be with the names of the children of Yashar''el (Israel), twelve, according to their names, like the engravings of a signet; every one with his name shall they be according to the twelve tribes* (Exodus 28:21). Made exactly so: *the stones were according to the names of the children of Yashar''el, twelve, according to their names... every one with his name, according to the twelve tribes* (Exodus 39:14) — all twelve borne on the heart of the priest.'),
+    ('canon','exodus',39,14,'canon','revelation',21,12,'free',
+     E'*And had a wall great and high, and had twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar''el (Israel)* (Revelation 21:12). The twelve names graven on the breastplate — *twelve, according to their names... according to the twelve tribes* (Exodus 39:14) — are the same twelve names written on the gates of the restored city: the whole borne-people brought home.'),
+    ('canon','exodus',39,14,'canon','revelation',21,14,'free',
+     E'*And the wall of the city had twelve foundations, and in them the names of the twelve apostles of the Lamb* (Revelation 21:14). The twelve tribe-stones in their settings of gold (Exodus 39:14) and the twelve foundation-stones of the New Jerusalem are one architecture: the two-house people written into the eternal dwelling, no tribe lost.'),
+    ('canon','exodus',39,14,'apocrypha','ecclesiasticus',45,11,'extras',
+     E'*With twisted scarlet, the work of the cunning workman, with precious stones graven like seals, and set in gold, the work of the jeweller, with a writing engraved for a memorial, after the number of the tribes of Yashar''el (Israel)* (Ecclesiasticus 45:11). The restored sage sings the very breastplate of Exodus 39:14 — *precious stones graven like seals... after the number of the tribes* — the twelve-tribe memorial worn before Yahuah.'),
+
+    -- THREAD 2: the bells and pomegranates, the sound of ministry
+    ('canon','exodus',39,25,'apocrypha','ecclesiasticus',45,9,'extras',
+     E'*And he compassed him with pomegranates, and with many golden bells round about, that as he went there might be a sound, and a noise made that might be heard in the temple, for a memorial to the children of his people* (Ecclesiasticus 45:9). The made hem of Exodus 39:25 — *bells of pure gold... between the pomegranates upon the hem of the robe* — is the same robe the sage praises: the golden bells sounding ministry, a memorial for the people.'),
+    ('canon','exodus',39,26,'apocrypha','ecclesiasticus',45,9,'extras',
+     E'*And he compassed him with pomegranates, and with many golden bells round about, that as he went there might be a sound, and a noise made that might be heard in the temple, for a memorial to the children of his people* (Ecclesiasticus 45:9). *A bell and a pomegranate, a bell and a pomegranate, round about the hem of the robe to minister in* (Exodus 39:26) — the heard sound marks the priest accepted as he ministers, the people remembered before Yahuah.'),
+
+    -- THREAD 3: HOLINESS TO YAHUAH, the golden crown
+    ('canon','exodus',39,30,'canon','zechariah',14,20,'free',
+     E'*In that day shall there be upon the bells of the horses, HOLINESS UNTO THE Yahuah (LORD); and the pots in the LORD''S house shall be like the bowls before the altar* (Zechariah 14:20). The crown that only the high priest wore — *they made the plate of the holy crown of pure gold, and wrote upon it... HOLINESS TO THE Yahuah* (Exodus 39:30) — is, in the day of restoration, written upon everything: all Yahudah made holy as the priest was.'),
+    ('canon','exodus',39,30,'canon','leviticus',19,2,'free',
+     E'*Speak unto all the congregation of the children of Yashar''el (Israel), and say unto them, Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2). The plate worn on the priest''s brow declares the calling of the whole people: *HOLINESS TO THE Yahuah* (Exodus 39:30) — set-apartness to Yahuah is the command on every Yashar''elite, borne visibly by the one who represents them.'),
+    ('canon','exodus',39,30,'canon','1-peter',1,16,'free',
+     E'*Because it is written, Be ye holy; for I am holy* (1 Peter 1:16). The golden crown engraved *HOLINESS TO THE Yahuah* (Exodus 39:30) is quoted forward into the restored people: the same Torah-command (Leviticus 19:2) borne on the priest is laid on all who are called — holiness affirmed, never abolished.'),
+    ('canon','exodus',39,30,'apocrypha','ecclesiasticus',45,12,'extras',
+     E'*He set a crown of gold upon the mitre, in which was engraved Holiness, an ornament of honour, a costly work, the desires of the eyes, goodly and beautiful* (Ecclesiasticus 45:12). The sage names the very plate of Exodus 39:30 — *the holy crown of pure gold... HOLINESS TO THE Yahuah* — the crown engraved Holiness, the glory of Aaron''s garments.'),
+
+    -- THREAD 4: the tabernacle finished — Yahuah dwells with his people
+    ('canon','exodus',39,32,'canon','revelation',21,3,'free',
+     E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The first finished tabernacle — *thus was all the work of the tabernacle of the tent of the congregation finished* (Exodus 39:32) — is the down-payment of the last: Yahuah dwelling in the midst of his people forever.'),
+    ('canon','exodus',39,32,'jubilees','jubilees',1,17,'extras',
+     E'*And I shall build My sanctuary in their midst, and I shall dwell with them, and I shall be their Elohim (God) and they will be My people in truth and righteousness* (Jubilees 1:17). The tabernacle finished by Israel''s hands (Exodus 39:32) is the visible promise Yahuah speaks to Moses on the mount: a sanctuary in their midst, Yahuah dwelling, the covenant people his own.'),
+
+    -- THREAD 5: as Yahuah commanded Moses — the finished, obedient work
+    ('canon','exodus',39,42,'canon','exodus',25,40,'free',
+     E'*And look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). The refrain reaches its summit: *according to all that Yahuah commanded Moses, so the children of Yashar''el made all the work* (Exodus 39:42) — the heavenly pattern reproduced on earth in perfect obedience, nothing added, nothing left undone.'),
+    ('canon','exodus',39,42,'canon','hebrews',8,5,'free',
+     E'*Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5). The made tabernacle is the shadow of the heavenly: *they made all the work* (Exodus 39:42) exactly to the pattern — earth conformed to heaven by obedience.'),
+    ('canon','exodus',39,42,'canon','genesis',2,1,'free',
+     E'*Thus the heavens and the earth were finished, and all the host of them* (Genesis 2:1). The tabernacle-build mirrors the creation-finishing: *thus was all the work of the tabernacle... finished* (Exodus 39:32) and *they made all the work* (Exodus 39:42) — the dwelling is a new creation, the work completed and brought to rest.'),
+    ('canon','exodus',39,42,'canon','genesis',2,2,'free',
+     E'*And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day from all his work which he had made* (Genesis 2:2). As Elohim ended and rested, so Israel ended the dwelling — *they made all the work* (Exodus 39:42); the finished tabernacle and the finished creation are one pattern, the work brought to completion and Sabbath.'),
+    ('canon','exodus',39,42,'canon','genesis',6,22,'free',
+     E'*Thus did Noah; according to all that Elohim (God) commanded him, so did he* (Genesis 6:22). The same formula of complete obedience: as Noah built the ark, so Israel built the tabernacle — *according to all that Yahuah commanded Moses, so the children of Yashar''el made all the work* (Exodus 39:42); the doer who obeys all is the one delivered.'),
+    ('canon','exodus',39,43,'canon','exodus',40,16,'free',
+     E'*Thus did Moses: according to all that Yahuah (LORD) commanded him, so did he* (Exodus 40:16). The blessing of the finished work flows into the rearing-up: *Moses did look upon all the work... they had done it as Yahuah had commanded... and Moses blessed them* (Exodus 39:43), then Moses himself does all as commanded — obedience whole, top to bottom.'),
+    ('canon','exodus',39,43,'canon','genesis',1,31,'free',
+     E'*And Elohim (God) saw every thing that he had made, and, behold, it was very good* (Genesis 1:31). As Elohim looked and saw it very good, so *Moses did look upon all the work, and, behold, they had done it as Yahuah had commanded... and Moses blessed them* (Exodus 39:43) — the inspecting-and-blessing of the finished dwelling echoes the inspecting-and-blessing of finished creation.'),
+    ('canon','exodus',39,43,'canon','hebrews',3,2,'free',
+     E'*Who was faithful to him that appointed him, as also Moses was faithful in all his house* (Hebrews 3:2). The blessing rests on faithfulness: *they had done it as Yahuah had commanded, even so had they done it: and Moses blessed them* (Exodus 39:43) — Moses faithful in all his house, the Torah kept in full, the doer blessed.'),
+    ('canon','exodus',39,43,'canon','john',17,4,'free',
+     E'*I have glorified thee on the earth: I have finished the work which thou gavest me to do* (John 17:4). The Formed Son speaks the language of the finished tabernacle: as the work was *done... as Yahuah had commanded* and Moses blessed them (Exodus 39:43), so the Son finishes the work the Father gave — the obedient completing of the appointed task.'),
+    ('canon','exodus',39,43,'canon','john',19,30,'free',
+     E'*When Yahusha (Jesus) therefore had received the vinegar, he said, It is finished: and he bowed his head, and gave up the ghost* (John 19:30). The cry "It is finished" answers the finished work blessed by Moses (Exodus 39:43): the dwelling completed in obedience foreshadows the work of the Formed Son brought to its end, the pattern fulfilled.'),
+    ('canon','exodus',39,43,'canon','matthew',7,24,'free',
+     E'*Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock* (Matthew 7:24). The blessed builders of Exodus 39:43 — who *had done it as Yahuah had commanded* — are the doers, not hearers only; the wise man builds by doing what is commanded, and the house stands.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex39_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex39_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ---------- C. threads ----------
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-39-the-twelve-tribe-stones-borne-for-a-memorial-rev-21',
+       E'The Twelve-Tribe Stones, Borne for a Memorial → the Gates of the City',
+       E'On the mount Yahuah commanded the stones; here they are MADE: *they wrought onyx stones inclosed in ouches of gold, graven, as signets are graven, with the names of the children of Yashar''el (Israel)* (Exodus 39:6), and the breastplate set with *four rows of stones... according to the names of the children of Yashar''el, twelve, according to their names... every one with his name, according to the twelve tribes* (Exodus 39:14). The command-side stood already: *Aaron shall bear their names before Yahuah (LORD) upon his two shoulders for a memorial* (Exodus 28:12). The high priest BEARS the whole twelve-tribe people on his shoulders and over his heart — not one tribe of the two houses forgotten. The restored sage saw it: *with precious stones graven like seals, and set in gold... with a writing engraved for a memorial, after the number of the tribes of Yashar''el* (Ecclesiasticus 45:11). And the apparatus reaches its end in the city: *names written thereon, which are the names of the twelve tribes of the children of Yashar''el* (Revelation 21:12), *and the wall of the city had twelve foundations* (Revelation 21:14). The twelve names borne on the breastplate are the twelve names written on the gates — the two-house people carried before Yahuah from the wilderness tent to the eternal dwelling, every name kept.',
+       sv.verse_id, ev.verse_id, 'extras', 29950
+  FROM _s305_ex39_lookup sv, _s305_ex39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=39 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=39 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-39-the-bells-and-pomegranates-the-sound-of-ministry',
+       E'The Bells and the Pomegranates — the Sound of Ministry',
+       E'On the hem of the high priest''s robe they made *pomegranates of blue, and purple, and scarlet, and twined linen* (Exodus 39:24) and *bells of pure gold... between the pomegranates upon the hem of the robe... A bell and a pomegranate, a bell and a pomegranate, round about the hem of the robe to minister in* (Exodus 39:25-26). The bell sounded as the priest moved in the holy place — the heard mark of accepted ministry. The restored sage describes the same robe: *he compassed him with pomegranates, and with many golden bells round about, that as he went there might be a sound, and a noise made that might be heard in the temple, for a memorial to the children of his people* (Ecclesiasticus 45:9). The sound is a memorial — the people carried before Yahuah even in the ringing of the bells, the priest serving on their behalf, alive and accepted.',
+       sv.verse_id, ev.verse_id, 'extras', 29953
+  FROM _s305_ex39_lookup sv, _s305_ex39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=39 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=39 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-39-holiness-to-yahuah-the-golden-crown',
+       E'HOLINESS TO YAHUAH — the Golden Crown',
+       E'*And they made the plate of the holy crown of pure gold, and wrote upon it a writing, like to the engravings of a signet, HOLINESS TO THE Yahuah (LORD)* (Exodus 39:30). The high priest bore on his brow the calling of the whole people: *Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2). The restored sage names the crown: *he set a crown of gold upon the mitre, in which was engraved Holiness, an ornament of honour... goodly and beautiful* (Ecclesiasticus 45:12). What is worn by the one priest is, in the day of restoration, written upon everything: *In that day shall there be upon the bells of the horses, HOLINESS UNTO THE Yahuah (LORD); and the pots in the LORD''S house shall be like the bowls before the altar* (Zechariah 14:20) — all Yahudah made as holy as the high priest. And the command is carried forward to the called people: *Be ye holy; for I am holy* (1 Peter 1:16) — the Torah-word of Leviticus borne on the crown, never abolished, laid on all who bear the Name.',
+       sv.verse_id, ev.verse_id, 'extras', 29956
+  FROM _s305_ex39_lookup sv, _s305_ex39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=39 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=39 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-39-the-tabernacle-finished-yahuah-dwells-with-his-people',
+       E'The Tabernacle Finished — Yahuah Dwells with His People',
+       E'*Thus was all the work of the tabernacle of the tent of the congregation finished: and the children of Yashar''el (Israel) did according to all that Yahuah (LORD) commanded Moses, so did they* (Exodus 39:32). The whole point of the dwelling is the indwelling. Yahuah had spoken it to Moses on the mount: *I shall build My sanctuary in their midst, and I shall dwell with them, and I shall be their Elohim (God) and they will be My people in truth and righteousness* (Jubilees 1:17). The first finished tabernacle is the down-payment of the last: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). From the wilderness tent to the New Jerusalem the promise is one and unbroken — Yahuah in the midst of his covenant people, his dwelling among them.',
+       sv.verse_id, ev.verse_id, 'extras', 29959
+  FROM _s305_ex39_lookup sv, _s305_ex39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=39 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=39 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-39-as-yahuah-commanded-moses-the-finished-obedient-work',
+       E'As Yahuah Commanded Moses — the Finished, Obedient Work',
+       E'The chapter beats out a refrain — *as Yahuah commanded Moses* — eight times, climbing to its summit: *According to all that Yahuah (LORD) commanded Moses, so the children of Yashar''el (Israel) made all the work. And Moses did look upon all the work, and, behold, they had done it as Yahuah (LORD) had commanded, even so had they done it: and Moses blessed them* (Exodus 39:42-43). The work was built EXACTLY to the heavenly pattern: *look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40); *See... that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5). The finishing mirrors the creation-finishing: *thus the heavens and the earth were finished* (Genesis 2:1); *on the seventh day Elohim (God) ended his work... and he rested* (Genesis 2:2); *Elohim (God) saw every thing that he had made, and, behold, it was very good* (Genesis 1:31) — as Elohim looked and blessed, so Moses looked and blessed. The dwelling is a new creation brought to rest. It is the formula of complete obedience: *thus did Noah; according to all that Elohim (God) commanded him, so did he* (Genesis 6:22); *thus did Moses: according to all that Yahuah (LORD) commanded him, so did he* (Exodus 40:16); *Moses was faithful in all his house* (Hebrews 3:2). And the Formed Son speaks the same language: *I have finished the work which thou gavest me to do* (John 17:4); *It is finished* (John 19:30). The doer is the one blessed: *whosoever heareth these sayings of mine, and doeth them... I will liken him unto a wise man, which built his house upon a rock* (Matthew 7:24). Obedience finishes the dwelling — the Torah kept in full, nothing abolished, the doer blessed.',
+       sv.verse_id, ev.verse_id, 'free', 29962
+  FROM _s305_ex39_lookup sv, _s305_ex39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=39 AND sv.verse_number=42
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=39 AND ev.verse_number=43
+ON CONFLICT (slug) DO NOTHING;
+
+-- ---------- D. thread_members ----------
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (39,6,'canon','exodus',28,11,1,E'*Like the engravings of a signet, shalt thou engrave the two stones with the names of the children of Yashar''el* (Exodus 28:11) — the command on the mount, now MADE.'),
+    (39,7,'canon','exodus',28,12,2,E'*Aaron shall bear their names before Yahuah upon his two shoulders for a memorial* (Exodus 28:12) — the priest bears the whole people.'),
+    (39,14,'canon','exodus',28,21,3,E'*Twelve, according to their names... according to the twelve tribes* (Exodus 28:21) — every tribe of the two houses set in gold.'),
+    (39,14,'canon','revelation',21,12,4,E'*The names of the twelve tribes of the children of Yashar''el* (Revelation 21:12) — the same twelve names on the gates of the city.'),
+    (39,14,'canon','revelation',21,14,5,E'*The wall of the city had twelve foundations* (Revelation 21:14) — the breastplate-stones become the foundation-stones.'),
+    (39,14,'apocrypha','ecclesiasticus',45,11,6,E'*Precious stones graven like seals... after the number of the tribes of Yashar''el* (Ecclesiasticus 45:11) — the restored sage sings the breastplate.')
+  ) AS m(srcv_ch,srcv,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=39 AND sv.verse_number=m.srcv
+  JOIN _s305_ex39_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-39-the-twelve-tribe-stones-borne-for-a-memorial-rev-21'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (39,25,'apocrypha','ecclesiasticus',45,9,1,E'*Pomegranates, and... many golden bells round about, that as he went there might be a sound* (Ecclesiasticus 45:9) — the bells made on the hem.'),
+    (39,26,'apocrypha','ecclesiasticus',45,9,2,E'*A noise made that might be heard in the temple, for a memorial to the children of his people* (Ecclesiasticus 45:9) — the sound of accepted ministry, the people remembered.')
+  ) AS m(srcv_ch,srcv,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=39 AND sv.verse_number=m.srcv
+  JOIN _s305_ex39_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-39-the-bells-and-pomegranates-the-sound-of-ministry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (39,30,'canon','leviticus',19,2,1,E'*Ye shall be holy: for I Yahuah Elohaychem am holy* (Leviticus 19:2) — the calling the crown declares for the whole people.'),
+    (39,30,'canon','zechariah',14,20,2,E'*HOLINESS UNTO THE Yahuah* upon the bells of the horses (Zechariah 14:20) — in the day of restoration all is made holy as the priest.'),
+    (39,30,'canon','1-peter',1,16,3,E'*Be ye holy; for I am holy* (1 Peter 1:16) — Leviticus quoted forward onto the called people, holiness affirmed.'),
+    (39,30,'apocrypha','ecclesiasticus',45,12,4,E'*A crown of gold... in which was engraved Holiness* (Ecclesiasticus 45:12) — the sage names the very plate.')
+  ) AS m(srcv_ch,srcv,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=39 AND sv.verse_number=m.srcv
+  JOIN _s305_ex39_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-39-holiness-to-yahuah-the-golden-crown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (39,32,'jubilees','jubilees',1,17,1,E'*I shall build My sanctuary in their midst, and I shall dwell with them* (Jubilees 1:17) — the promise the finished tent makes visible.'),
+    (39,32,'canon','revelation',21,3,2,E'*The tabernacle of Elohim is with men, and he will dwell with them* (Revelation 21:3) — the first tent the down-payment of the last.')
+  ) AS m(srcv_ch,srcv,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=39 AND sv.verse_number=m.srcv
+  JOIN _s305_ex39_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-39-the-tabernacle-finished-yahuah-dwells-with-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (39,42,'canon','exodus',25,40,1,E'*Make them after their pattern, which was shewed thee in the mount* (Exodus 25:40) — the work built exactly to the pattern.'),
+    (39,42,'canon','hebrews',8,5,2,E'*Make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5) — the made tent the shadow of the heavenly.'),
+    (39,42,'canon','genesis',2,1,3,E'*The heavens and the earth were finished* (Genesis 2:1) — the dwelling-build mirrors the creation-finishing.'),
+    (39,42,'canon','genesis',2,2,4,E'*On the seventh day Elohim ended his work... and he rested* (Genesis 2:2) — the finished work brought to rest.'),
+    (39,42,'canon','genesis',6,22,5,E'*Thus did Noah; according to all that Elohim commanded him, so did he* (Genesis 6:22) — the same formula of complete obedience.'),
+    (39,43,'canon','genesis',1,31,6,E'*Elohim saw every thing... and, behold, it was very good* (Genesis 1:31) — looked-and-blessed, as Moses looked and blessed.'),
+    (39,43,'canon','exodus',40,16,7,E'*Thus did Moses: according to all that Yahuah commanded him, so did he* (Exodus 40:16) — obedience whole, top to bottom.'),
+    (39,43,'canon','hebrews',3,2,8,E'*Moses was faithful in all his house* (Hebrews 3:2) — the blessing rests on faithfulness.'),
+    (39,43,'canon','john',17,4,9,E'*I have finished the work which thou gavest me to do* (John 17:4) — the Formed Son finishes the appointed work.'),
+    (39,43,'canon','john',19,30,10,E'*It is finished* (John 19:30) — the cry that answers the finished, blessed work.'),
+    (39,43,'canon','matthew',7,24,11,E'*Whosoever heareth these sayings... and doeth them... built his house upon a rock* (Matthew 7:24) — the doer blessed, the house stands.')
+  ) AS m(srcv_ch,srcv,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s305_ex39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=39 AND sv.verse_number=m.srcv
+  JOIN _s305_ex39_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='exodus-39-as-yahuah-commanded-moses-the-finished-obedient-work'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session305 — Exodus cross-references complete.'
